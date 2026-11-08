@@ -3,20 +3,26 @@ Original valid-route regression remains a separate unchanged-coordinate check.
 """
 from pathlib import Path
 import argparse,collections,csv,hashlib,json,math,os,subprocess
+from roster_candidate_sources import arguments as candidate_arguments,select as candidate_select
 ROOT=Path(__file__).resolve().parents[1];BASE=ROOT/'development/levels/rebuild';OUT=BASE/'flat-circulation-pass/verification';BUILD=ROOT/'build/current-flat-probe'
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def latest(site):
  return next((BASE/f/site.lower(),stem) for f,stem in [('stair-connection-pass','connected-stairs'),('stair-terrain-pass/assemblies','benched-terrain'),('stair-bay-pass','bayed-stairs'),('stair-opening-pass','opened-stairs'),('stair-landing-pass','supported-stairs'),('floor-closure-pass','closed-floors')] if (BASE/f/site.lower()/(stem+'.hcs2')).exists())
 def main():
  global OUT,BUILD
- p=argparse.ArgumentParser();p.add_argument('--arrival-pass',action='store_true');args=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--sites',nargs='+');p.add_argument('--arrival-pass',action='store_true');candidate_arguments(p,output=True);args=p.parse_args()
  if args.arrival_pass:OUT=BASE/'arrival-bearing-pass/verification';BUILD=ROOT/'build/arrival-flat-probe'
+ if args.source_manifest:
+  assert args.output;OUT=ROOT/args.output;BUILD=ROOT/'build/manifest-flat-probe'
  OUT.mkdir(parents=True,exist_ok=True)
  BUILD.mkdir(parents=True,exist_ok=True);sites=json.loads((BASE/'furnishings/room-programs.json').read_text())['sites'];paths=[];names=[];lane_names=[];lanes=[];bindings={}
+ if args.sites:sites=[s for s in sites if s in args.sites]
  for site in sites:
   before,stem=(BASE/'flat-circulation-pass'/site.lower(),'open-circulation') if args.arrival_pass else latest(site);current=BASE/'flat-circulation-pass'/site.lower();variants=[('before',before,stem),('after',current,'open-circulation')] if (current/'construction.json').exists() else [('before',before,stem),('after',before,stem)];bindings[site]={}
   if args.arrival_pass:
    current=BASE/'arrival-bearing-pass'/site.lower();variants=[('before',before,stem),('after',current,'supported-arrival')] if (current/'construction.json').exists() else [('before',before,stem),('after',before,stem)]
+  if args.source_manifest:
+   old,new,selected,current=candidate_select(args,site);variants=[('before',old[0],Path(old[2]).stem),('after',new[0],Path(new[2]).stem)]
   for phase,folder,name in variants:
    c=folder/'construction.json';meta=json.loads(c.read_text());layout=ROOT/(json.loads((current/'construction.json').read_text())['before_layout'] if phase=='before' and (current/'construction.json').exists() else meta['layout']);data=json.loads(layout.read_text());native=folder/(name+'.hcs2');digest=sha(native);assert digest==meta['physics_sha256'];stairs=meta.get('stair_components',json.loads((BASE/'furnishings'/site.lower()/'physics-contract.json').read_text())['stair_components']);names.extend(site+':'+phase+'\t'+n for n in stairs);bindings[site][phase]=dict(contract=c.relative_to(ROOT).as_posix(),contract_sha256=sha(c),layout=layout.relative_to(ROOT).as_posix(),layout_sha256=sha(layout),native=native.relative_to(ROOT).as_posix(),native_sha256=digest)
    if phase=='after':
@@ -50,7 +56,7 @@ def main():
    selected=[r for r in rows if r['site']==site and r['variant']==phase];result[phase]=dict(flat_links=len(selected),pass_both_directions=sum(r['authored_forward']=='PASS' and r['authored_reverse']=='PASS' for r in selected))
   selected=[r for r in lane_rows if r['site']==site];failed=[r for r in findings if r['site']==site];result['current_lanes']=dict(samples=len(selected),valid_standing=sum(r['after_valid']=='true' for r in selected),invalid_standing=len(failed),reasons=dict(collections.Counter(r['reason'] for r in failed)),physical_components=collections.Counter(r['component'] for r in failed if r['reason']=='PHYSICAL_COMPONENT').most_common(25));summary[site]=result
  before={(r['site'],r['link']):r for r in rows if r['variant']=='before'};after={(r['site'],r['link']):r for r in rows if r['variant']=='after'};assert before.keys()==after.keys();regressions=[dict(site=key[0],link=key[1],field=field,before=before[key][field],after=after[key][field]) for key in before for field in ['authored_forward','authored_reverse'] if before[key][field]=='PASS' and after[key][field]!='PASS']
- report=dict(status='CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE',sites=summary,source_bindings=bindings,complete_link_regressions=regressions,source_hashes={p.relative_to(ROOT).as_posix():sha(p) for p in sources+[Path(__file__)]},evidence_hashes={p.relative_to(ROOT).as_posix():sha(p) for p in OUT.glob('current-flat-*.tsv')},scope='Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance.')
+ report=dict(status='CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE',sites=summary,source_bindings=bindings,complete_link_regressions=regressions,source_hashes={p.relative_to(ROOT).as_posix():sha(p) for p in sources+[Path(__file__)]+([ROOT/'tools/roster_candidate_sources.py',ROOT/args.source_manifest] if args.source_manifest else [])},evidence_hashes={p.relative_to(ROOT).as_posix():sha(p) for p in OUT.glob('current-flat-*.tsv')},scope='Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance.')
  (OUT/'current-flat-movement.json').write_bytes((json.dumps(report,indent=2)+'\n').encode());print('CURRENT_FLAT',len(lane_rows),'samples',len(bad),'invalid',sum(r['after']['pass_both_directions'] for r in summary.values()),'complete links passing both ways',len(regressions),'regressions',flush=True)
  assert not regressions,'New authored flat routes regress previously passing complete link directions'
 if __name__=='__main__':main()

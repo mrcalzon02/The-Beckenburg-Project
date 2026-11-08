@@ -1,0 +1,152 @@
+{
+  "id": "FARMHOUSE",
+  "source_world": "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world",
+  "source_height_sha256": "150f8219d6c2267fe6bdd2a7fc2376e4a4ab46c176bd0cf8ba5d95e67e75839b",
+  "source_native_sha256": "173b1936a8c96207123d170d6c42fa60067eda91632c100fe40d90c802067203",
+  "source": {
+    "id": "FARMHOUSE",
+    "construction": "development/levels/rebuild/arrival-bearing-pass/farmhouse/construction.json",
+    "layout": "development/levels/rebuild/arrival-bearing-pass/farmhouse/authored-layout.json",
+    "glb": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.glb",
+    "native": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.hcs2",
+    "blend": "development/levels/rebuild/arrival-bearing-pass/farmhouse/supported-arrival.blend",
+    "native_sha256": "f668b6cbb16efdb3958f5fb23ae227442bdf33a04051e6bb5868e1e53292013d",
+    "glb_sha256": "388ac64c2d6dfb1438d877c072d35b187d11a27eff2087b3ee1d87f6df4874fe"
+  },
+  "program": [
+    {
+      "link": "L22",
+      "segment": 0,
+      "points": [
+        [
+          25.5,
+          0,
+          17
+        ],
+        [
+          28.5,
+          0,
+          17
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.7,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L22",
+      "segment": 1,
+      "points": [
+        [
+          28.5,
+          0,
+          17
+        ],
+        [
+          28.5,
+          0,
+          6.5
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.7,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L22",
+      "segment": 2,
+      "points": [
+        [
+          28.5,
+          0,
+          6.5
+        ],
+        [
+          37,
+          0,
+          6.5
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.7,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L22",
+      "segment": 3,
+      "points": [
+        [
+          37,
+          0,
+          6.5
+        ],
+        [
+          37,
+          0,
+          9
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.7,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L22",
+      "segment": 4,
+      "points": [
+        [
+          37,
+          0,
+          9
+        ],
+        [
+          37,
+          0,
+          16.5
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.7,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    }
+  ],
+  "grading_limit": "LOWER_ONLY",
+  "prior_grades_retained_exactly": true,
+  "new_basement_punches": [],
+  "reason": "Remove measured soil/body intersections while preserving original landform away from circulation and every saved basement punch",
+  "source_world_files_preserved": {
+    "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/adaptive-topology.bin": "b0436ee7ba4b58cc9235fd191a621c0759c47603fa8cd7f01163752a455dac73",
+    "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/authored-cuts.tsv": "aedaabc00e432f97507aec323428813a717f049f5ec265ce7cf44c88a4c857bb",
+    "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/source-provenance.json": "ed01734b6eaa53b0887672163325d211cc616450ec192746d15cc524a57088ff",
+    "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/terrain-physics.hcs2": "173b1936a8c96207123d170d6c42fa60067eda91632c100fe40d90c802067203",
+    "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/tile_0_0.png": "150f8219d6c2267fe6bdd2a7fc2376e4a4ab46c176bd0cf8ba5d95e67e75839b",
+    "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/verification.json": "350ec980287a18b2cc48d345e68011bb8248ef94131b453d93c31ce10efe015b",
+    "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/world.properties": "0e12235a84c4342eedc6598c3e2e799ae78a7b14f5f574c531389d32f7cf9bcb",
+    "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/scene-package/scene.bin": "44002e984975bd7a47a6f8a57bdea7324178ceb272176bd6f5cf8cc68ab51f3a",
+    "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/scene-package/meshes/site.obj": "fbafb6b2066c7b57590eb4d95a037d97c9e940b27044411ff2b63acce96e9857"
+  },
+  "world": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/adaptive-topology.bin": "b0436ee7ba4b58cc9235fd191a621c0759c47603fa8cd7f01163752a455dac73",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/authored-cuts.tsv": "aedaabc00e432f97507aec323428813a717f049f5ec265ce7cf44c88a4c857bb",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/authored-path-grading.sha256": "a75cca3015b44ad680526f7cea4aa40d221c6e05761774086a300597d6f55a57",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/source-provenance.json": "7fcad786367f4eb54020c5d97393a58524c3cc5bce9068979b4ff9d936b313b0",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/terrain-physics.hcs2": "223afd0202f2028e904cbdce3be62a6b66dd352e302d262fe482ad226d914165",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/tile_0_0.png": "150f8219d6c2267fe6bdd2a7fc2376e4a4ab46c176bd0cf8ba5d95e67e75839b",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/verification.json": "ccb02dbb74e8858a72357b39418876686eb20a163f8b5b9a6b56833f5f7b4fd7",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/world.properties": "0e12235a84c4342eedc6598c3e2e799ae78a7b14f5f574c531389d32f7cf9bcb",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/scene-package/.scene.bin.editor.previous": "44002e984975bd7a47a6f8a57bdea7324178ceb272176bd6f5cf8cc68ab51f3a",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/scene-package/scene.bin": "c96a56967d4a5ed6e35c0abfc01cfdc05834ba7349352c2fb01f0985813783bd",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/terrain-layers/tile_0_0.bin": "7fff94eabf0ad91537912142cc7addd1c64d233d23df801f490af249b263eaff",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/scene-package/meshes/site.obj": "0660f517348aa8f590c65fcaf7c6ca83485e87d760135dcecfb7cf23cdd1688a"
+  },
+  "author_sha256": "4ef03772427ff6f31acae5b21b8146d5357fae01628e8dc18541c6a0e1b46fa4",
+  "builder_sha256": "de0763d64f58440f0f7b97ef0247443df44f6553d318030836385ca08052f2b8",
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "status": "SAVED_EDITOR_CIRCULATION_CUT_CANDIDATE_NOT_TERRAIN_ACCEPTANCE"
+}

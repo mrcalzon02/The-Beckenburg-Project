@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1905,
-  "unique_local_file_hashes": 1751,
+  "local_files": 1917,
+  "unique_local_file_hashes": 1760,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -11,8 +11,8 @@
     "source_library_masters": 120,
     "additional_custom_model_sources": 22,
     "review_assemblies": 173,
-    "reference_and_rejected_studies": 85,
-    "native_map_exports": 228
+    "reference_and_rejected_studies": 94,
+    "native_map_exports": 231
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -27208,6 +27208,150 @@
       "bytes": 1793736
     },
     {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/cut-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "229058dd8fa4bfc83a79f98d0b631ccc668f6267a61a181d9487c24d644532fa",
+      "bytes": 3402616
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+      "bytes": 4270208
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/cut-terrain.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+      "bytes": 2750448
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/academy/cut-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "d3e6703a33a8d7158b424cbe7fc10514a0a8487dd107204b0a81cb6937b2ce34",
+      "bytes": 3314276
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-09/cut-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+      "bytes": 4270208
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-18/cut-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "590a83ee96e78bb36f08b2156ebeba33d5bdc486894068f42bf4b0e6d93b83ed",
+      "bytes": 2750448
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/academy/cut-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "52fd4d902a5671d621cb558cc02eb33611320cc220a09baebe853ceb876a294f",
+      "bytes": 2605092
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-09/cut-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+      "bytes": 4270208
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-18/cut-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f6e89dd36dced90acb0644d9d0524adcba9462b87744e5cdca900df6bd594165",
+      "bytes": 2746800
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/academy/cut-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "e4702eca9898232e2f146a97ccbc7e3914abdd8abc1aa47bc3b290536e69be50",
+      "bytes": 2668132
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-09/cut-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+      "bytes": 4270208
+    },
+    {
+      "id": "cut-terrain",
+      "label": "cut-terrain",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-18/cut-terrain.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "7224a1e8fb798627281e368e9542568ecdad6691d1649d5871c126329bc3dea4",
+      "bytes": 2749156
+    },
+    {
       "id": "closed-floors",
       "label": "closed-floors",
       "maps": [],
@@ -30423,6 +30567,15 @@
       "paths": [
         "development/levels/rebuild/deck-fit-pass/wld-16/deck-terrain.glb",
         "development/levels/rebuild/floor-closure-pass/wld-16/closed-floors.glb"
+      ]
+    },
+    {
+      "sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+      "paths": [
+        "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/cut-terrain.glb",
+        "development/levels/rebuild/flat-terrain-pass/rejected/boundary-ray-rooting-pilot/wld-09/cut-terrain.glb",
+        "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot/wld-09/cut-terrain.glb",
+        "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot/wld-09/cut-terrain.glb"
       ]
     },
     {

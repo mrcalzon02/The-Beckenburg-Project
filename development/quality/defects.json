@@ -4907,6 +4907,50 @@
       "action": "Preserve rejected GLB/native/Blender/layout and paired PNGs with exact relocation hashes. Keep flat-circulation-pass/wld-09 as the active source. Next coordinated terrain/arrival revision must remove actual soil intrusion while preserving saved basement holes, intended landform, stable coordinates and passing vertical routes. Do not hide it with fog or move a spawn independently.",
       "evidence": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09; development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09; verification/current-flat-failure-contacts.tsv",
       "older_maps": "Audit arrival/van bodies against actual saved terrain across all locations; individually verify support and body/head clearance. Other unsupported anchors may mask additional terrain/wall collisions."
+    },
+    {
+      "id": "DEV-454",
+      "title": "Lower-only terrain cuts expose missing pavement beneath previously valid standing poses",
+      "status": "SOURCE PILOT FIX VERIFIED; BROAD NATIVE BATCH PENDING",
+      "affected": "Academy circulation L02 during saved circulation terrain pilot; all remaining sites need the same actual standing regression check",
+      "symptom": "Soil-only pilot gains313strict poses but loses20previously valid Academy full-foot positions; complete links and body-only checks do not detect this regression.",
+      "cause": "Rough path prisms do not cover revised circulation coordinates. Old soil supplied walking support before the cut.",
+      "action": "Retain exact failing sources/probes/captures. Build actual closed terrain-rooted walkway beds outside real stair openings and closed context. Final three-site pilot recovers999positions at16104unchanged samples, zero new failures. Native and exported beds share exact coordinates; no physics threshold change.",
+      "evidence": "development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot; pilot-verification/strict-standing-regression.json; tools/build_cut_walkway_beds.py",
+      "older_maps": "Run identical-coordinate full-foot comparisons after every terrain cut; a net improvement or passing centre/body/stair check never excuses newly unsupported poses."
+    },
+    {
+      "id": "DEV-455",
+      "title": "Whole-strip and boundary-ray bed tests reject valid ground beside a punched landform edge",
+      "status": "SOURCE PILOT FIX VERIFIED; FULL TERRAIN/LAYOUT GATE OPEN",
+      "affected": "Academy L02 near [50.75,0,61.88]; other soil-edge and punched-hole receivers",
+      "symptom": "Whole2mstrip receiver rejection leaves7new failures; clipping to terrain still leaves3because BVH rays miss exact source-triangle edge vertices.",
+      "cause": "A section crosses a real landform void; refusing the whole section drops valid near-side ground. Exact boundary ray misses are not evidence that its backing native triangle is absent.",
+      "action": "Clip each new pavement footprint to exact saved soil triangle coverage, carry its native triangle identity, and compute root heights on that actual plane. Independent checks verify footprint coverage, triangle bytes, native/export match and15cmembedding. Do not extend terrain, fill holes or relax production support. Preserve both failed whole-strip and boundary-ray studies. Three-site unchanged-position regression now passes with0newinvalid positions.",
+      "evidence": "development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot; rejected/boundary-ray-rooting-pilot; pilot-verification/independent-sources.json; tools/review_flat_terrain.py",
+      "older_maps": "Individually audit punched boundaries, genuine stair shafts and road/terrain ownership. Route portions that actually leave the landform still require coherent rerouting; this bed repair does not accept them."
+    },
+    {
+      "id": "DEV-456",
+      "title": "WLD-16 terrain body collisions have no exact persistent editor-world owner in current sources",
+      "status": "OPEN; ORIGINAL AUTHORED TERRAIN PRESERVED",
+      "affected": "WLD-16 route-12/13/14,211current terrain body contacts",
+      "symptom": "Actual native terrain geometry does not match any existing saved terrain world for this site.",
+      "cause": "The current source retains its original authored roadside terrain rather than the later saved macroterrain candidate.",
+      "action": "Keep the exact original mesh and native coordinates. Record the missing owner; require a deliberate geometry-preserving editor/native migration or coordinated terrain redesign. Never swap in a merely similar world. Independent matched worlds can continue in this batch.",
+      "evidence": "development/levels/rebuild/flat-terrain-pass/terrain-repair-plan.json; tools/plan_flat_terrain_repairs.py",
+      "older_maps": "Resolve every terrain replacement through exact transformed native geometry and saved-world provenance. No other location is accepted because eight saved sources match."
+    },
+    {
+      "id": "DEV-457",
+      "title": "New terrain review camera and scoped-chain check use unscoped source assumptions",
+      "status": "FIX VERIFIED IN THREE-SITE PILOT",
+      "affected": "tools/review_flat_terrain.py camera; tools/audit_roster_stairs.py --sites pilot mode",
+      "symptom": "Contact camera uses the first flat segment instead of the actual diagnosed segment; selected three-site stair check incorrectly requires cemetery chains outside its scope.",
+      "cause": "New batch tooling did not carry contact segment identity and selected-site declaration scope through its assertions.",
+      "action": "Use actual diagnosed segment index for the paired camera. Require exactly all declared chains belonging to selected sites; full-roster mode still requires both cemetery loops. Final three-site source/standing/body/stair checks pass; the final25site batch must rerun full loop controls. Retain original failed check logs and rejected camera captures.",
+      "evidence": "development/levels/rebuild/flat-terrain-pass/verification/logs; pilot-verification/stair-movement.json; pilot-verification/captures.json",
+      "older_maps": "Label capture type and actual tested sites. Do not infer whole-roster route coverage from a selected pilot or treat an empty selected declaration set as whole-roster verification."
     }
   ],
   "audit_categories": [

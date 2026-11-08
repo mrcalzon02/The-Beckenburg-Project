@@ -1,0 +1,33 @@
+{
+  "status": "THREE_SITE_SOURCE_PILOT_REVIEWED_NOT_MAP_ACCEPTANCE",
+  "tested_sites": [
+    "ACADEMY",
+    "WLD-09",
+    "WLD-18"
+  ],
+  "construction_score": 2,
+  "finish_score": 1,
+  "sheets": [
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-pilot-sheet.png",
+      "sha256": "9717074f20523ce2f2943f8cb6fd1361ab95cb02304818e7797608d221b3ab8b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-pilot-sheet.png",
+      "sha256": "060f07038e4f899437bd13c6fc7165801b74b17044c5c29630ef5d1aa9d03bb8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-pilot-sheet.png",
+      "sha256": "730528da741bd23989ffc1d48211dfc2f56e5d6be37eb58b34d13db473065312"
+    }
+  ],
+  "observed": true,
+  "findings": [
+    "Actual soil-body conflicts are reduced; original macroform and punch topology remain.",
+    "Rooted pavement follows existing earth coverage rather than filling real voids. Academy routes beyond the actual landform still require redesign.",
+    "WLD09approach is now visible past the cut; steep coarse banks remain visibly rough.",
+    "WLD18contact view still exposes unresolved banks/geometry beyond the sampled area; no full-site clearance or visual acceptance.",
+    "Many native bed fragments need later mesh/component consolidation without losing actual terrain fit; no performance claim.",
+    "No canonical van, runtime atmosphere/light path or whole-map optical/service acceptance."
+  ]
+}

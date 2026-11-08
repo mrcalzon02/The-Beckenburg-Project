@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8545,
+  "count": 8631,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -75404,6 +75404,866 @@
       "height": 600,
       "bytes": 320887,
       "sha256": "e15edd9e52dc4c9dc7fa06240787f4fd5e2380ff327ca56a215baf7f151eab1e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-after.png",
+      "title": "Academy body contact after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 457317,
+      "sha256": "68a53355d4c25041c810f25e0dc6b6cf5e917fae53014c2067c2d95d18f63e52"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-before.png",
+      "title": "Academy body contact before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 443847,
+      "sha256": "34ff0c19394dbe69039e2f220437563c3bf361612de3db286147edbee1df2f81"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/academy-saved-terrain.png",
+      "title": "Academy saved terrain",
+      "kind": "Actual saved editor terrain inspection; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 45415,
+      "sha256": "fa6cd2f29d925c41bb2921847c07cb6c0df4815b0861667410c7e4b0efc95952"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-after.png",
+      "title": "Academy terrain only after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 229416,
+      "sha256": "dc382b1e59b814d5e4cd91e4bf03afdfbdd239418b896b60df05c28d18e8a5d1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-before.png",
+      "title": "Academy terrain only before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 229243,
+      "sha256": "cad59c40d0cb1381ed3108ca98c4000206bf9d07e51ff2f6973e6e54f576fd73"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-pilot-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-pilot-sheet.png",
+      "title": "Academy terrain pilot sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 213776,
+      "sha256": "9717074f20523ce2f2943f8cb6fd1361ab95cb02304818e7797608d221b3ab8b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-after.png",
+      "title": "Academy whole site after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 310957,
+      "sha256": "c74187d5ef8c0d34bd095dc31ad9adb526849396dcdefbaf9ce3aabda974eacd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-before.png",
+      "title": "Academy whole site before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 307011,
+      "sha256": "2f13d1aabd936577cbf5bf0c4d36a77c1f7073a37844b88a8f11619e460cb111"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-saved-terrain.png",
+      "title": "Farmhouse saved terrain",
+      "kind": "Actual saved editor terrain inspection; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 61570,
+      "sha256": "ee6b48a89df6b663f1f2a2410c9be1bef2375529b024b138cb4f50683e92aa58"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-body-contact-after.png",
+      "title": "Academy body contact after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 457317,
+      "sha256": "22c78cd4f191c53be9468f7b804c5e296a0d7ab557199c6e427dcd2e6c7d95aa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-body-contact-before.png",
+      "title": "Academy body contact before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 443847,
+      "sha256": "f6ee3a28d47441880c9600dbf77115273e3d79d91fb087a090b7964dfad0065f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-terrain-only-after.png",
+      "title": "Academy terrain only after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 229416,
+      "sha256": "81842defb7703aa1d34800de61cb574df61b25432d5f20c1b07dc29f97f7c853"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-terrain-only-before.png",
+      "title": "Academy terrain only before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 229243,
+      "sha256": "74e15687e8b7792d40c9f8f8ea182f38b7eb3500167e9f106d696826e76f45c0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-whole-site-after.png",
+      "title": "Academy whole site after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 310827,
+      "sha256": "13c80d17dbcf743cbbcec9b121cfc12599a66cee9e184b734a90837cf9fce01f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/academy-whole-site-before.png",
+      "title": "Academy whole site before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 307011,
+      "sha256": "61a5569862ff30acfad936ad25cdc3a8bb0eeeb4fc641b3e099774d0107ef02d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-body-contact-after.png",
+      "title": "Wld 09 body contact after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 409019,
+      "sha256": "00d14c576241a61ca0311eae3ed3deee9809ffe29759f85b62e6b18d6e1ec7aa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-body-contact-before.png",
+      "title": "Wld 09 body contact before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 395407,
+      "sha256": "3f7fd073af51eb152cb947a33f40fa854dbdc739489deff524d29982e9153e46"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-terrain-only-after.png",
+      "title": "Wld 09 terrain only after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 260230,
+      "sha256": "34f744f05802e9a7a5eb8e0c33accdc1e2b7c8c35cab3a49dc816096445ceabe"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-terrain-only-before.png",
+      "title": "Wld 09 terrain only before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 259150,
+      "sha256": "699ae497a7ab31c4f695d1ea81dfda5fdab2a3db75e0290ec1353c4f16356cc8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-whole-site-after.png",
+      "title": "Wld 09 whole site after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 326633,
+      "sha256": "e965ef0273106038adb40d09c58cb84d0e5a7e62cf0ddbda8031dc2869fafcad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-09-whole-site-before.png",
+      "title": "Wld 09 whole site before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 324006,
+      "sha256": "6efe6e0264b807154519cebd6af78c21521bef395ce1afbd4552a925d52fc25a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-body-contact-after.png",
+      "title": "Wld 18 body contact after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 433369,
+      "sha256": "94370a124e7b62b9230a68eec2d59487bfa431bfb9267cd97d1d09f022c14454"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-body-contact-before.png",
+      "title": "Wld 18 body contact before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 430905,
+      "sha256": "5cc206107a6a0d3498b8ea61eafe641c3ae8f61ea9c8d88d72844e0b2fc6d435"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-terrain-only-after.png",
+      "title": "Wld 18 terrain only after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 268333,
+      "sha256": "189d0ca01aadc27a826e90c9f758eeecf90163559fdb5112ed5ae37a04687e94"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-terrain-only-before.png",
+      "title": "Wld 18 terrain only before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 268223,
+      "sha256": "bd53aa6f40dda7ab9d7fe900f498513f365a18832779115c8f3fc06abb8ae468"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-whole-site-after.png",
+      "title": "Wld 18 whole site after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 293041,
+      "sha256": "00418f3d77f8ecaa6010885e2a9879c7ff27c3edc571dea2b067d3c3934413ab"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-boundary-ray-rooting-pilot/wld-18-whole-site-before.png",
+      "title": "Wld 18 whole site before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 292854,
+      "sha256": "6d386b42e47cf7cfb55e87abc65b19df3d0851e976ff7c82ff9b8d6e7946c5f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-body-contact-after.png",
+      "title": "Academy body contact after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 125565,
+      "sha256": "5a6fbd1da2c3887679a3360718f94fdc96798b63c94a81ccb209c4e813bdf119"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-body-contact-before.png",
+      "title": "Academy body contact before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 125565,
+      "sha256": "7e2ebb85523d3fba141e21b29a990334a133b4f999e50d014df5bad653f15c69"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-terrain-only-after.png",
+      "title": "Academy terrain only after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 229416,
+      "sha256": "3e76acf1161d75a2998508bfb34f75da3c613459ee16227800d4bd1bb066b183"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-terrain-only-before.png",
+      "title": "Academy terrain only before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 229243,
+      "sha256": "08e3c933f615922a52620d523cb0d3e29fe1affa5a4eaa0f69d9cbd84764679e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-terrain-pilot-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-terrain-pilot-sheet.png",
+      "title": "Academy terrain pilot sheet",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 96347,
+      "sha256": "79f18be7dbe7d03fee4eda8c3b2c90d0419b8badd4fcdd535f623f6ff553081f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-whole-site-after.png",
+      "title": "Academy whole site after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 308605,
+      "sha256": "dc921ac5a62e3662584f0b44334461681c8b9374ec462d13941cd6a65bbb083b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/academy-whole-site-before.png",
+      "title": "Academy whole site before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 307011,
+      "sha256": "f285228a20b3c6196cc1e4a6aefa2fd67593ad032dec7c115bf7f6942fa3862c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-body-contact-after.png",
+      "title": "Wld 09 body contact after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 409019,
+      "sha256": "c5a2cd45153c2b476635662ad56baa3f142fbe3cc70f9ae7d2b05be511d0cd17"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-body-contact-before.png",
+      "title": "Wld 09 body contact before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 395407,
+      "sha256": "93c49f361c1056764a82ccb7c3653fc285f28ffdc13d89cceec2915a3498241a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-terrain-only-after.png",
+      "title": "Wld 09 terrain only after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 260230,
+      "sha256": "11281fe0d3b39b42eda2b3a4a160cc37668977698552b05ca7c11cb264d1bf38"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-terrain-only-before.png",
+      "title": "Wld 09 terrain only before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 259150,
+      "sha256": "07fb7c780bf9818cd860b29cc9de37767e1c055c06e56839955d769f6be83964"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-terrain-pilot-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-terrain-pilot-sheet.png",
+      "title": "Wld 09 terrain pilot sheet",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 238638,
+      "sha256": "060f07038e4f899437bd13c6fc7165801b74b17044c5c29630ef5d1aa9d03bb8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-whole-site-after.png",
+      "title": "Wld 09 whole site after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 326633,
+      "sha256": "e0ea6448cf3a31b80fe6d69067a819afb38ca71db03ceae3ab6b8ebc07f10b68"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-09-whole-site-before.png",
+      "title": "Wld 09 whole site before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 324006,
+      "sha256": "d68d6fe1f7272a347823646cf9b4dbfe07c6e07bff4628eca0819d6eb28a7291"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-body-contact-after.png",
+      "title": "Wld 18 body contact after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 433369,
+      "sha256": "7c8450fc065b42923cff2596fd8497f49b1b5baec3c4d5b618c115ae61d562c9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-body-contact-before.png",
+      "title": "Wld 18 body contact before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 430905,
+      "sha256": "efa71d0c015ceb8ab361a408208f99927f16b49734702a84fcf3b6ac98c7e611"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-terrain-only-after.png",
+      "title": "Wld 18 terrain only after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 268333,
+      "sha256": "d3ec36d5c7c07c3501c0ce7b62d5cd5b35b771a8322e17b7e3d378bd1aec42d9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-terrain-only-before.png",
+      "title": "Wld 18 terrain only before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 268223,
+      "sha256": "a93e464e7687bab2e426ae8517468225fa9fba40c1646c62b3475d28287f9192"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-terrain-pilot-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-terrain-pilot-sheet.png",
+      "title": "Wld 18 terrain pilot sheet",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 240835,
+      "sha256": "f2ef50c8febce5538ea06ce37af93850acaaef3574367c92fe3f7da8e142f482"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-whole-site-after.png",
+      "title": "Wld 18 whole site after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 293024,
+      "sha256": "709d7517dc1c17b01fa8a67ed758e13cca715b0204e440b48a8fd6abd8790d54"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-soil-support-only-pilot/wld-18-whole-site-before.png",
+      "title": "Wld 18 whole site before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 292854,
+      "sha256": "f2c6c036ba10df5dd5a7994ab22d594cc8598185806ea423b9aba4def8930244"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-body-contact-after.png",
+      "title": "Academy body contact after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 457195,
+      "sha256": "31b98f409ac69e35d8a2efeb9ce74b09c78d92429a0b7d16363ab2b214a95d63"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-body-contact-before.png",
+      "title": "Academy body contact before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 443847,
+      "sha256": "371c456dc5d9feebef50a3b4c3859189fac903008c18ec6e72331b93ad1e8681"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-terrain-only-after.png",
+      "title": "Academy terrain only after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 229416,
+      "sha256": "c8f7aa772d0beff45795cfcfd6d48a3bc4efeea00948a8b33cb1216518a44023"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-terrain-only-before.png",
+      "title": "Academy terrain only before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 229243,
+      "sha256": "8392d3c2ca61b4ba45a9d59ec7ee3960f74006f93184f51ddebd95a4d04e9d15"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-whole-site-after.png",
+      "title": "Academy whole site after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 310667,
+      "sha256": "1b1b0d2953c3ffccda88db3a53f218e8ec7772309c15dab760308d153ff4a1b7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/academy-whole-site-before.png",
+      "title": "Academy whole site before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 307011,
+      "sha256": "6181e1d15257f069f6c60e252aa9dcc277bed6e0e5c25f673dc6cba67500e4b3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-body-contact-after.png",
+      "title": "Wld 09 body contact after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 409019,
+      "sha256": "651923b0a9255db88c069b2db87354fe3c787ca85d9ffbfd4c4f3c1fa759ad7c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-body-contact-before.png",
+      "title": "Wld 09 body contact before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 395407,
+      "sha256": "945014a7ead963825c1fd957b93253e7b0b4c84995e8d8345e57d04ed8827642"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-terrain-only-after.png",
+      "title": "Wld 09 terrain only after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 260230,
+      "sha256": "eaff7894feb5e0fab1286b904c47ea505d920e40c355383b7ea4647fa0d5ed01"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-terrain-only-before.png",
+      "title": "Wld 09 terrain only before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 259150,
+      "sha256": "cf73914dcbb9070510a8a3aa233608e37fc28879701caae662b9367b0e05f1cd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-whole-site-after.png",
+      "title": "Wld 09 whole site after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 326633,
+      "sha256": "10442e7dd208ee9db06907a8d316630c53fec26a92e9fdc439952009414aec85"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-09-whole-site-before.png",
+      "title": "Wld 09 whole site before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 324006,
+      "sha256": "e4b0412792cb2edc8e4e0cc5039b9290b4f722f36636e97dda3b5237217f3093"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-body-contact-after.png",
+      "title": "Wld 18 body contact after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 433369,
+      "sha256": "622941b8fab59eaffcfff680e9a7d90fc80d7c05bfee9aa83091ce9f8542060a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-body-contact-before.png",
+      "title": "Wld 18 body contact before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 430905,
+      "sha256": "33ab3247ba0287595cb4ecc383f3512900d33d1b7c3e5b3b1af0f70f8508b96c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-terrain-only-after.png",
+      "title": "Wld 18 terrain only after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 268333,
+      "sha256": "5cb455b48d21dd1864de14bbcb5ce4a0b21a5f60ec3577e6f2ad236cd6105957"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-terrain-only-before.png",
+      "title": "Wld 18 terrain only before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 268223,
+      "sha256": "b4e8fd7b0c1e269c212117de9242b7c7e590c55ee5b9de640b1f0af65478bcdc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-whole-site-after.png",
+      "title": "Wld 18 whole site after",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 293041,
+      "sha256": "a51a03de44a725158ae846d765d21041098a40710f775db3000cc5a0c32ac667"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/rejected-whole-strip-rooting-pilot/wld-18-whole-site-before.png",
+      "title": "Wld 18 whole site before",
+      "kind": "Rejected native circulation/terrain construction study",
+      "width": 900,
+      "height": 650,
+      "bytes": 292854,
+      "sha256": "efc13e937f0d400ab7256b50a837b39dd78f86a63cffcb93af410585eb0d2748"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-saved-terrain.png",
+      "title": "Wld 05 saved terrain",
+      "kind": "Actual saved editor terrain inspection; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 58940,
+      "sha256": "ee9fa36488d976797c2f55c635807b4bc23de31a61d5bb3c531b92a6b2eb19d1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-saved-terrain.png",
+      "title": "Wld 08 saved terrain",
+      "kind": "Actual saved editor terrain inspection; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 44821,
+      "sha256": "3f671d9c8f91e0ea6cbb45281956206ff116ba4f245e9f27a3b865681a045dd4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-after.png",
+      "title": "Wld 09 body contact after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 409019,
+      "sha256": "742b7fd7457883ffb41fcf0273a88f47c92f1ab3424b086258794d4deb8484b7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-before.png",
+      "title": "Wld 09 body contact before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 395407,
+      "sha256": "6e2b023895cb769a48118e4fdfca7044f7920d8c8066556a9d7af2ae3ff44061"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-saved-terrain.png",
+      "title": "Wld 09 saved terrain",
+      "kind": "Actual saved editor terrain inspection; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 45997,
+      "sha256": "292f5c4d49456c3dcbee62d514af69afe4a3c683619e13b29d49849dfed5c287"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-after.png",
+      "title": "Wld 09 terrain only after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 260230,
+      "sha256": "c9e2b0305281a6c81b9bfb9fc5eb6d6a0e71aa52b8029e828084e8654b68f655"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-before.png",
+      "title": "Wld 09 terrain only before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 259150,
+      "sha256": "48950000a35e73d565af26fa28f1a35faebbe3a99728cab2dfeb3879616a3838"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-pilot-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-pilot-sheet.png",
+      "title": "Wld 09 terrain pilot sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 238638,
+      "sha256": "060f07038e4f899437bd13c6fc7165801b74b17044c5c29630ef5d1aa9d03bb8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-after.png",
+      "title": "Wld 09 whole site after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 326633,
+      "sha256": "c3797d95aba817dd01c3aea94d440ca26886373914e3be61391613df618be616"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-before.png",
+      "title": "Wld 09 whole site before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 324006,
+      "sha256": "1c461f79677f05bef0fd99e3141ae3bf355acfa7eeed9821e239d8990a3a4eca"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-saved-terrain.png",
+      "title": "Wld 10 saved terrain",
+      "kind": "Actual saved editor terrain inspection; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 62515,
+      "sha256": "59ce2ea797b629e068045bb1343f4002ccbaba6684f43614decdced007870cc1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-saved-terrain.png",
+      "title": "Wld 13 saved terrain",
+      "kind": "Actual saved editor terrain inspection; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 47748,
+      "sha256": "a8fe342dd70af7b2acf32a099e3e6a95f10a7266d6c6a08165cd0eb64514ea2c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-after.png",
+      "title": "Wld 18 body contact after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 433369,
+      "sha256": "790394a0406a9c8f6229b01b27b1eed3ec74747ca667ad3875250187c5391943"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-before.png",
+      "title": "Wld 18 body contact before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 430905,
+      "sha256": "012f0e0b1a20d50693adc31dfeca791ec8c02a60c17d72bfeda92c72ac8121bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-saved-terrain.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-saved-terrain.png",
+      "title": "Wld 18 saved terrain",
+      "kind": "Actual saved editor terrain inspection; not runtime",
+      "width": 1000,
+      "height": 1000,
+      "bytes": 61389,
+      "sha256": "e5b0b1c52592b54ebc51ac3e556f092797eed6b7b1b1ae4a04e992f461ba773f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-after.png",
+      "title": "Wld 18 terrain only after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 268333,
+      "sha256": "7d3d2d484b96d62f250dcf1e7f30a80bd079fc59740fb1c8b30d8ee47aa7a518"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-before.png",
+      "title": "Wld 18 terrain only before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 268223,
+      "sha256": "8051bfec3f5ca6d24cd692119e96c5cf050edd906df945c46146ead220d6e355"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-pilot-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-pilot-sheet.png",
+      "title": "Wld 18 terrain pilot sheet",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 1000,
+      "height": 1170,
+      "bytes": 240844,
+      "sha256": "730528da741bd23989ffc1d48211dfc2f56e5d6be37eb58b34d13db473065312"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-after.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-after.png",
+      "title": "Wld 18 whole site after",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 293041,
+      "sha256": "652a9d04000dd4d89001cfe7046ab7dc01379481008ab860a00af114f27b2a1e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-before.png",
+      "url": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-before.png",
+      "title": "Wld 18 whole site before",
+      "kind": "Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance",
+      "width": 900,
+      "height": 650,
+      "bytes": 292854,
+      "sha256": "88e23b28228f6412b6f79fd91bdf0e0e95aba8debda0d6ab6eb363f5ee2ea4b2"
     },
     {
       "path": "development/levels/rebuild/captures/floor-closure-batch/academy-repaired-plates.png",

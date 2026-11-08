@@ -1,0 +1,59 @@
+{
+  "status": "PASS_SCOPED_TERRAIN_NATIVE_SOURCE_NOT_MAP_ACCEPTANCE",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "PASS_SCOPED_SAVED_WORLD_EXPORT_NATIVE_EDITABLE_PRESERVATION",
+      "glb_sha256": "52fd4d902a5671d621cb558cc02eb33611320cc220a09baebe853ceb876a294f",
+      "native_sha256": "65123f6a8696f738d8b07f3d342ce96498168a400acdb057bbc8d0f451ec03a6",
+      "blend_sha256": "502329ef95cca605c620dca108720b8670fa8ccd31d7f52c3752514ec7bde0fe",
+      "contract_sha256": "a4e7e990499a8c088c81c3f83c0b5b97c5816d5e3736709ac2c8fa9d531a1055",
+      "packed_images": 13,
+      "lowered_native_vertices": 423,
+      "native_vertices": 3280,
+      "raised_native_vertices": 0,
+      "source_height_and_topology_bytes_unchanged": true,
+      "clear_saved_hole_probes": 901,
+      "retained_native_parts": 627,
+      "new_closed_parts": [],
+      "footing_contact_samples": []
+    },
+    {
+      "id": "WLD-09",
+      "status": "PASS_SCOPED_SAVED_WORLD_EXPORT_NATIVE_EDITABLE_PRESERVATION",
+      "glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+      "native_sha256": "50122353470fcf2a579951e15996026d78997f0145412a154484739c7a7848cc",
+      "blend_sha256": "7a4704fcaed05336f8b827aa0aea4cff9c17228676da01181e55f207d10d5aa1",
+      "contract_sha256": "221d9580ddcc73515d8b48eb698b5c281cb31b9298927cf76ccd2ee40ab13471",
+      "packed_images": 24,
+      "lowered_native_vertices": 118,
+      "native_vertices": 6201,
+      "raised_native_vertices": 0,
+      "source_height_and_topology_bytes_unchanged": true,
+      "clear_saved_hole_probes": 1727,
+      "retained_native_parts": 310,
+      "new_closed_parts": [
+        "Arrival end bearing WLD-09 0"
+      ],
+      "footing_contact_samples": []
+    },
+    {
+      "id": "WLD-18",
+      "status": "PASS_SCOPED_SAVED_WORLD_EXPORT_NATIVE_EDITABLE_PRESERVATION",
+      "glb_sha256": "f6e89dd36dced90acb0644d9d0524adcba9462b87744e5cdca900df6bd594165",
+      "native_sha256": "b14ec2d700dbf2a0f75263813f0c50f010b87f2c1e3e8ac58a6791caaf00ae50",
+      "blend_sha256": "3329126f6b293f93735a9cac35d86ed7c4610e59d165d6a95896f3690786f91c",
+      "contract_sha256": "8e77053b13d69208551e225431e0cdeaff735795ec65594fb72c4dcd9c706e90",
+      "packed_images": 13,
+      "lowered_native_vertices": 104,
+      "native_vertices": 5328,
+      "raised_native_vertices": 0,
+      "source_height_and_topology_bytes_unchanged": true,
+      "clear_saved_hole_probes": 830,
+      "retained_native_parts": 329,
+      "new_closed_parts": [],
+      "footing_contact_samples": []
+    }
+  ],
+  "checker_sha256": "08e4c8e98394f99ed8fa075a8469f887b00f62a0f1c120f7e5a0ef485b1bb890"
+}

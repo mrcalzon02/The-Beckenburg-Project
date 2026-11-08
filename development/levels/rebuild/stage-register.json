@@ -6459,5 +6459,49 @@
       "scope": "Scoped source pass. All29 packets retain individual landscape/structure/services/art/runtime/gameplay/network/hardware acceptance obligations."
     },
     "source_sha": "414d8df61549685b84e6746ef62eee8fae1c8147"
+  },
+  "flat_terrain_checkpoint": {
+    "status": "IN_PROGRESS_THREE_SITE_NATIVE_PILOT_EIGHT_SAVED_WORLDS",
+    "evidence": "development/levels/rebuild/flat-terrain-pass/roster.json",
+    "aggregate": {
+      "revised_native_sources": 3,
+      "saved_editor_worlds": 8,
+      "tested_sites": [
+        "ACADEMY",
+        "WLD-09",
+        "WLD-18"
+      ],
+      "standing_samples": 16104,
+      "standing_recovered": 999,
+      "new_standing_failures": 0,
+      "current_invalid": 1265,
+      "complete_flat_links_before": 48,
+      "complete_flat_links_after": 49,
+      "complete_flat_links_total": 65,
+      "flights": 16,
+      "flights_up": 16,
+      "flights_down": 16,
+      "complete_vertical_links": {
+        "routes": 14,
+        "legacy_forward": 0,
+        "legacy_reverse": 0,
+        "authored_forward": 14,
+        "authored_reverse": 14
+      },
+      "historical_body": {
+        "samples": 14064,
+        "baseline_valid": 12399,
+        "after_valid": 12803,
+        "new_block": 0,
+        "new_sweep_block": 0,
+        "recovered_pose": 404
+      },
+      "lowered_native_vertices": 645,
+      "native_vertex_total": 14809,
+      "saved_hole_probes": 3458,
+      "new_closed_parts": 553,
+      "rooted_walkway_probes": 4460,
+      "scope": "Counts cover tested_sites only. Immutable earlier controls and unchanged sources are not silently counted as rerun. No map/runtime/landscape acceptance."
+    }
   }
 }

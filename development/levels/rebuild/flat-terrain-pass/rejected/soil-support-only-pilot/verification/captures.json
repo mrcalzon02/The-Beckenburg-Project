@@ -1,0 +1,206 @@
+[
+  {
+    "site": "ACADEMY",
+    "phase": "before",
+    "view": "whole-site",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-before.png",
+    "sha256": "f285228a20b3c6196cc1e4a6aefa2fd67593ad032dec7c115bf7f6942fa3862c",
+    "source_glb_sha256": "0d6c919e196d88efe872824cc56d77980547ae74fb515382238be19ba3677243",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "ACADEMY",
+    "phase": "before",
+    "view": "terrain-only",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-before.png",
+    "sha256": "08e3c933f615922a52620d523cb0d3e29fe1affa5a4eaa0f69d9cbd84764679e",
+    "source_glb_sha256": "0d6c919e196d88efe872824cc56d77980547ae74fb515382238be19ba3677243",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "ACADEMY",
+    "phase": "before",
+    "view": "body-contact",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-before.png",
+    "sha256": "7e2ebb85523d3fba141e21b29a990334a133b4f999e50d014df5bad653f15c69",
+    "source_glb_sha256": "0d6c919e196d88efe872824cc56d77980547ae74fb515382238be19ba3677243",
+    "eye": [
+      59.62,
+      1.62,
+      54.5
+    ],
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "ACADEMY",
+    "phase": "after",
+    "view": "whole-site",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-after.png",
+    "sha256": "dc921ac5a62e3662584f0b44334461681c8b9374ec462d13941cd6a65bbb083b",
+    "source_glb_sha256": "52fd4d902a5671d621cb558cc02eb33611320cc220a09baebe853ceb876a294f",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "ACADEMY",
+    "phase": "after",
+    "view": "terrain-only",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-after.png",
+    "sha256": "3e76acf1161d75a2998508bfb34f75da3c613459ee16227800d4bd1bb066b183",
+    "source_glb_sha256": "52fd4d902a5671d621cb558cc02eb33611320cc220a09baebe853ceb876a294f",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "ACADEMY",
+    "phase": "after",
+    "view": "body-contact",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-after.png",
+    "sha256": "5a6fbd1da2c3887679a3360718f94fdc96798b63c94a81ccb209c4e813bdf119",
+    "source_glb_sha256": "52fd4d902a5671d621cb558cc02eb33611320cc220a09baebe853ceb876a294f",
+    "eye": [
+      59.62,
+      1.62,
+      54.5
+    ],
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-09",
+    "phase": "before",
+    "view": "whole-site",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-before.png",
+    "sha256": "d68d6fe1f7272a347823646cf9b4dbfe07c6e07bff4628eca0819d6eb28a7291",
+    "source_glb_sha256": "dfa0dc6a6c0b6d444848aa116d5114f34574274e1ba8fe468ebfacc03ad40408",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-09",
+    "phase": "before",
+    "view": "terrain-only",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-before.png",
+    "sha256": "07fb7c780bf9818cd860b29cc9de37767e1c055c06e56839955d769f6be83964",
+    "source_glb_sha256": "dfa0dc6a6c0b6d444848aa116d5114f34574274e1ba8fe468ebfacc03ad40408",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-09",
+    "phase": "before",
+    "view": "body-contact",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-before.png",
+    "sha256": "93c49f361c1056764a82ccb7c3653fc285f28ffdc13d89cceec2915a3498241a",
+    "source_glb_sha256": "dfa0dc6a6c0b6d444848aa116d5114f34574274e1ba8fe468ebfacc03ad40408",
+    "eye": [
+      36.73,
+      1.62,
+      71.25
+    ],
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-09",
+    "phase": "after",
+    "view": "whole-site",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-after.png",
+    "sha256": "e0ea6448cf3a31b80fe6d69067a819afb38ca71db03ceae3ab6b8ebc07f10b68",
+    "source_glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-09",
+    "phase": "after",
+    "view": "terrain-only",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-after.png",
+    "sha256": "11281fe0d3b39b42eda2b3a4a160cc37668977698552b05ca7c11cb264d1bf38",
+    "source_glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-09",
+    "phase": "after",
+    "view": "body-contact",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-after.png",
+    "sha256": "c5a2cd45153c2b476635662ad56baa3f142fbe3cc70f9ae7d2b05be511d0cd17",
+    "source_glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+    "eye": [
+      36.73,
+      1.62,
+      71.25
+    ],
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-18",
+    "phase": "before",
+    "view": "whole-site",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-before.png",
+    "sha256": "f2c6c036ba10df5dd5a7994ab22d594cc8598185806ea423b9aba4def8930244",
+    "source_glb_sha256": "7bd52a27880d366df6d70eaf3653fb5aee8cea6dcd241bddcf2f870fef6ddb0c",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-18",
+    "phase": "before",
+    "view": "terrain-only",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-before.png",
+    "sha256": "a93e464e7687bab2e426ae8517468225fa9fba40c1646c62b3475d28287f9192",
+    "source_glb_sha256": "7bd52a27880d366df6d70eaf3653fb5aee8cea6dcd241bddcf2f870fef6ddb0c",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-18",
+    "phase": "before",
+    "view": "body-contact",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-before.png",
+    "sha256": "efa71d0c015ceb8ab361a408208f99927f16b49734702a84fcf3b6ac98c7e611",
+    "source_glb_sha256": "7bd52a27880d366df6d70eaf3653fb5aee8cea6dcd241bddcf2f870fef6ddb0c",
+    "eye": [
+      19.0,
+      1.62,
+      47.52
+    ],
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-18",
+    "phase": "after",
+    "view": "whole-site",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-after.png",
+    "sha256": "709d7517dc1c17b01fa8a67ed758e13cca715b0204e440b48a8fd6abd8790d54",
+    "source_glb_sha256": "f6e89dd36dced90acb0644d9d0524adcba9462b87744e5cdca900df6bd594165",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-18",
+    "phase": "after",
+    "view": "terrain-only",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-after.png",
+    "sha256": "d3ec36d5c7c07c3501c0ce7b62d5cd5b35b771a8322e17b7e3d378bd1aec42d9",
+    "source_glb_sha256": "f6e89dd36dced90acb0644d9d0524adcba9462b87744e5cdca900df6bd594165",
+    "eye": null,
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  },
+  {
+    "site": "WLD-18",
+    "phase": "after",
+    "view": "body-contact",
+    "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-after.png",
+    "sha256": "7c8450fc065b42923cff2596fd8497f49b1b5baec3c4d5b618c115ae61d562c9",
+    "source_glb_sha256": "f6e89dd36dced90acb0644d9d0524adcba9462b87744e5cdca900df6bd594165",
+    "eye": [
+      19.0,
+      1.62,
+      47.52
+    ],
+    "type": "Native saved terrain/circulation construction review; before contact camera may be buried, no canonical van or runtime/landscape acceptance"
+  }
+]

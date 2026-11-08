@@ -119,3 +119,16 @@ tools/java/FlatRouteDesigner.java text eol=lf
 # Raw route TSV ends with an intentionally empty points field on failed designs.
 development/levels/rebuild/route-design-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
 development/levels/rebuild/arrival-bearing-pass/**/*.log -diff
+
+# Exact saved circulation terrain source, raw probes and rejection records.
+development/levels/rebuild/flat-terrain-pass/** -text
+development/levels/rebuild/flat-terrain-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+development/levels/rebuild/flat-terrain-pass/**/*.log -diff
+tools/plan_flat_terrain_repairs.py text eol=lf
+tools/author_flat_terrain.py text eol=lf
+tools/compose_flat_terrain.py text eol=lf
+tools/build_cut_walkway_beds.py text eol=lf
+tools/review_flat_terrain.py text eol=lf
+tools/roster_candidate_sources.py text eol=lf
+tools/compare_native_standing.py text eol=lf
+tools/update_flat_terrain_checkpoint.py text eol=lf

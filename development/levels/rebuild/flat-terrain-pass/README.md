@@ -1,0 +1,11 @@
+# Saved circulation terrain construction
+
+Eight terrain sources were matched exactly to their saved editor worlds. The actual lower-only editor brush has authored circulation cuts while retaining every original source height PNG and adaptive punch topology byte. WLD-16 retains its original authored terrain: no saved world matches its native geometry, so substitution is deferred explicitly. All 29 location decisions and 25 direct construction sources are recorded in roster.json.
+
+Pilot milestone: Academy, WLD-09 and WLD-18 are composed and independently checked. At 16,104 unchanged full-foot positions, 999 recover and none newly fail. At 14,064 separate historical body positions, 404 recover without new standing/sweep blocks. All 16 tested flights and 14 complete vertical links pass both ways. Complete flat links improve 48 to 49 of 65 in those three sites. Counts are scoped to these sites; full-roster replay and five remaining composites are the next step.
+
+Actual native/export/editable checks pass, including 3,458 saved-hole probes and 4,460 rooted pavement receiver samples. Three paired whole-site/terrain/contact sheets have been viewed. Construction 2/5, finish 1/5. Coarse cut banks, rough blue paths, excessive native pavement fragmentation, physical edges, roof/light/furniture interfaces, canonical van arrival, runtime ownership and full services/art/network/hardware acceptance remain open. Original models, UVs, images, pivots and non-terrain native records are preserved. WLD-09 reuses the earlier rejected end-slab only after the actual saved terrain body conflict is removed.
+
+Three failed source studies retain exact Blender/GLB/native/layouts, generation drivers, raw probe archives and captures: soil-only support loss (20 new failures), whole-strip receiver rejection (7), and boundary-ray misses (3). Final bed footprints are clipped to literal saved soil triangles; root planes are derived from those exact triangles and independently checked. No movement threshold was changed and no real stair/landform hole was filled.
+
+The actual authoring path uses RosterTerrainBuild, TerrainLayerStack and AdaptiveTerrainTopology. No local editor UI, round-duration test or map unlock. Read NEXT.md before continuing. Gallery deployment is observed separately from source publication.

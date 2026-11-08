@@ -6,15 +6,17 @@ Compare default and explicit stair movement through complete authored flights.
 from pathlib import Path
 import argparse,csv,hashlib,json,math,os,subprocess
 
+from roster_candidate_sources import arguments as candidate_arguments,select as candidate_select
 ROOT=Path(__file__).resolve().parents[1]
 def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True);parser.add_argument('--require-authored-chains',action='store_true');parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');parser.add_argument('--occupancy-pass',action='store_true');parser.add_argument('--closure-pass',action='store_true');parser.add_argument('--stair-end-pass',action='store_true');parser.add_argument('--opening-pass',action='store_true');parser.add_argument('--bay-pass',action='store_true');parser.add_argument('--bench-pass',action='store_true');parser.add_argument('--connection-pass',action='store_true');parser.add_argument('--flat-pass',action='store_true');parser.add_argument('--arrival-pass',action='store_true');args=parser.parse_args();args.flat_pass=args.flat_pass or args.arrival_pass;assert sum([args.bearing_pass,args.deck_pass,args.occupancy_pass,args.closure_pass,args.stair_end_pass,args.opening_pass,args.bay_pass,args.bench_pass,args.connection_pass,args.flat_pass])<=1
-    comparing=args.bearing_pass or args.deck_pass or args.occupancy_pass or args.closure_pass or args.stair_end_pass or args.opening_pass or args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass
+    parser=argparse.ArgumentParser();parser.add_argument('--sites',nargs='+');parser.add_argument('--output',type=Path,required=True);parser.add_argument('--require-authored-chains',action='store_true');parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');parser.add_argument('--occupancy-pass',action='store_true');parser.add_argument('--closure-pass',action='store_true');parser.add_argument('--stair-end-pass',action='store_true');parser.add_argument('--opening-pass',action='store_true');parser.add_argument('--bay-pass',action='store_true');parser.add_argument('--bench-pass',action='store_true');parser.add_argument('--connection-pass',action='store_true');parser.add_argument('--flat-pass',action='store_true');parser.add_argument('--arrival-pass',action='store_true');candidate_arguments(parser);args=parser.parse_args();args.flat_pass=args.flat_pass or args.arrival_pass;assert sum([args.bearing_pass,args.deck_pass,args.occupancy_pass,args.closure_pass,args.stair_end_pass,args.opening_pass,args.bay_pass,args.bench_pass,args.connection_pass,args.flat_pass])<=1
+    comparing=bool(args.source_manifest) or args.bearing_pass or args.deck_pass or args.occupancy_pass or args.closure_pass or args.stair_end_pass or args.opening_pass or args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass
     build=ROOT/'build/roster-stair-probe';build.mkdir(parents=True,exist_ok=True)
     sites=json.loads((ROOT/'development/levels/rebuild/furnishings/room-programs.json').read_text(encoding='utf-8'))['sites']
     chain_path=ROOT/'development/levels/rebuild/movement-chains.json';declared=json.loads(chain_path.read_text())['sites']
     rows=[];paths=[];names=[];bindings={};chain_bindings=[];variant_keys=['before_bearing','after_bearing'] if comparing else ['structure','furnished']
+    if args.sites:sites=[s for s in sites if s in args.sites]
     for site in sites:
         base=ROOT/f'development/levels/rebuild/structures/{site.lower()}'
         implementation=json.loads((base/'implementation.json').read_text(encoding='utf-8'))
@@ -92,6 +94,8 @@ def main():
                 bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,'open-circulation.glb','open-circulation.hcs2'),('after_bearing',out,'supported-arrival.glb','supported-arrival.hcs2')]
             else:
                 out=before;bearing=json.loads((before/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256'],before_layout=bearing['layout'],before_segment_map=bearing.get('source_segment_map',{}),before_stair_components=bearing['stair_components']);variants=[('before_bearing',before,'open-circulation.glb','open-circulation.hcs2'),('after_bearing',before,'open-circulation.glb','open-circulation.hcs2')]
+        if args.source_manifest:
+            old,new,bearing,desired=candidate_select(args,site);out=new[0];variants=[('before_bearing',*old),('after_bearing',*new)]
         for variant,folder,mesh,physics in variants:
             active_layout_path=layout_path
             mapping={}
@@ -100,7 +104,7 @@ def main():
                 if variant=='after_bearing':mapping=bearing.get('source_segment_map',{})
             if args.opening_pass:
                 active_layout_path=ROOT/bearing['layout'];mapping=bearing.get('source_segment_map',{})
-            if args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass:
+            if args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass or args.source_manifest:
                 active_layout_path=ROOT/bearing.get('before_layout',bearing['layout']) if variant=='before_bearing' else ROOT/bearing['layout']
                 mapping=bearing.get('before_segment_map',bearing.get('source_segment_map',{})) if variant=='before_bearing' else bearing.get('source_segment_map',{})
             layout=json.loads(active_layout_path.read_text(encoding='utf-8'))
@@ -111,7 +115,7 @@ def main():
             bindings[site]['variants'][variant]={'contract':sha(contract_path),'physics':sha(folder/physics),'glb':sha(folder/mesh),'layout':sha(active_layout_path)}
             if args.stair_end_pass and variant=='after_bearing' and (ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}/construction.json').exists():contract['stair_components']=bearing['stair_components']
             if args.opening_pass and 'stair_components' in bearing:contract['stair_components']=bearing['stair_components']
-            if (args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass) and 'stair_components' in bearing:contract['stair_components']=bearing.get('before_stair_components',bearing['stair_components']) if variant=='before_bearing' else bearing['stair_components']
+            if (args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass or args.source_manifest) and 'stair_components' in bearing:contract['stair_components']=bearing.get('before_stair_components',bearing['stair_components']) if variant=='before_bearing' else bearing['stair_components']
             for name in contract['stair_components']:
                 assert '\t' not in name and '\n' not in name
                 names.append(f'{site}:{variant}\t{name}')
@@ -171,7 +175,7 @@ def main():
         for site in sites:
             selected=[r for r in result if r['site']==site and r['variant']==variant]
             summary[variant][site]={'flights':len(selected),**{key:sum(r[key]=='PASS' for r in selected) for key in ['legacy_up','legacy_down','authored_up','authored_down']}}
-    report={'status':'CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE','bindings':bindings,'source_hashes':{s:sha(ROOT/s) for s in sources+['tools/audit_roster_stairs.py']},'dependency_jar_sha256':sha(jar),'sites':summary,'limitation':'Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.'}
+    report={'status':'CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE','bindings':bindings,'source_hashes':{s:sha(ROOT/s) for s in sources+['tools/audit_roster_stairs.py']+(['tools/roster_candidate_sources.py',(ROOT/args.source_manifest).relative_to(ROOT).as_posix()] if args.source_manifest else [])},'dependency_jar_sha256':sha(jar),'sites':summary,'limitation':'Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.'}
     chains=list(csv.DictReader((build/'chains.tsv').read_text(encoding='utf-8').splitlines(),delimiter='\t'))
     report['complete_routes']={v:{'routes':len([r for r in chains if r['variant']==v and not r['link'].startswith(('CHAIN/','AUTHORED/'))]),**{k:sum(r[k]=='PASS' for r in chains if r['variant']==v and not r['link'].startswith(('CHAIN/','AUTHORED/'))) for k in ['legacy_forward','legacy_reverse','authored_forward','authored_reverse']}} for v in variant_keys}
     if comparing:
@@ -191,7 +195,9 @@ def main():
     print({v:{k:sum(s[k] for s in per.values()) for k in ['flights','legacy_up','legacy_down','authored_up','authored_down']} for v,per in summary.items()})
     print(report['complete_routes'])
     print(report['authored_routes'])
-    if args.require_authored_chains:assert report['authored_routes'] and all(r['authored_forward']=='PASS' and r['authored_reverse']=='PASS' for r in report['authored_routes']),'Declared circulation route is not physically complete'
+    if args.require_authored_chains:
+        expected=sum(len(declared.get(site,[])) for site in sites)*len(variant_keys)
+        assert len(report['authored_routes'])==expected and all(r['authored_forward']=='PASS' and r['authored_reverse']=='PASS' for r in report['authored_routes']),'Declared circulation route is missing or not physically complete within selected sites'
     if comparing:assert not any(report['bearing_regressions'].values()),'New bearing construction regressed an existing passing flight or complete route'
 
 if __name__=='__main__':main()

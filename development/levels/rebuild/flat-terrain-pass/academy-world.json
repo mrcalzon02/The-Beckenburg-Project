@@ -1,0 +1,172 @@
+{
+  "id": "ACADEMY",
+  "source_world": "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world",
+  "source_height_sha256": "53d0c844bc6619c7600d65d662b18e9512cac5a175b5794e10a2923e9862841f",
+  "source_native_sha256": "abaf156b07792527645fb5832fce6c7450f02e84cad2005a120dd5f7988d87cf",
+  "source": {
+    "id": "ACADEMY",
+    "construction": "development/levels/rebuild/arrival-bearing-pass/academy/construction.json",
+    "layout": "development/levels/rebuild/arrival-bearing-pass/academy/authored-layout.json",
+    "glb": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.glb",
+    "native": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.hcs2",
+    "blend": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.blend",
+    "native_sha256": "bc6dfb54d2f18ff364a8d336400117a98b90da3c0a2c7d3c3cf3cf28d43732c1",
+    "glb_sha256": "0d6c919e196d88efe872824cc56d77980547ae74fb515382238be19ba3677243"
+  },
+  "program": [
+    {
+      "link": "L02",
+      "segment": 0,
+      "points": [
+        [
+          32.5,
+          0,
+          61.5
+        ],
+        [
+          60,
+          0,
+          61.5
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.15,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L02",
+      "segment": 1,
+      "points": [
+        [
+          60,
+          0,
+          61.5
+        ],
+        [
+          60,
+          0,
+          55
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.15,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L02",
+      "segment": 2,
+      "points": [
+        [
+          60,
+          0,
+          55
+        ],
+        [
+          60,
+          0,
+          27.5
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.15,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L02",
+      "segment": 3,
+      "points": [
+        [
+          60,
+          0,
+          27.5
+        ],
+        [
+          32.5,
+          0,
+          27.5
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.15,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L42",
+      "segment": 0,
+      "points": [
+        [
+          51.0,
+          0,
+          50.0
+        ],
+        [
+          57,
+          0,
+          50
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.15,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L42",
+      "segment": 1,
+      "points": [
+        [
+          57,
+          0,
+          50
+        ],
+        [
+          32.5,
+          0,
+          27.5
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.15,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    }
+  ],
+  "grading_limit": "LOWER_ONLY",
+  "prior_grades_retained_exactly": true,
+  "new_basement_punches": [],
+  "reason": "Remove measured soil/body intersections while preserving original landform away from circulation and every saved basement punch",
+  "source_world_files_preserved": {
+    "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/adaptive-topology.bin": "0ce8b023109a00280be8d85407e37447ab484844cdfd7d72bac6490116f1b3bc",
+    "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/authored-cuts.tsv": "70890708e26f1172286e0c3be15cfe08e85bda3718aceb3946c7963fd3cf493b",
+    "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/source-provenance.json": "0735fbe84081561a16c995252276db90eb150f179841b7c4697ff1761e561665",
+    "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/terrain-physics.hcs2": "abaf156b07792527645fb5832fce6c7450f02e84cad2005a120dd5f7988d87cf",
+    "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/tile_0_0.png": "53d0c844bc6619c7600d65d662b18e9512cac5a175b5794e10a2923e9862841f",
+    "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/verification.json": "f2ef0f2a5ccffc1f9b24c7a229f13697f0b92f04fd3f2f006264a458dc7ccfdd",
+    "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/world.properties": "da9399f6bfa565e7d2e2b313b6cc52dbdd6ec141e1c07d29aeeaa576e85601de",
+    "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/scene-package/scene.bin": "b1ed403cbd97640d7a48c6bd197703b9a823dd457bae0413cc924988c1c796c2",
+    "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/scene-package/meshes/site.obj": "cacc202cf13fa2af821a8a938c40dc8b51c4fa1043e7c22a5adb395798aea85d"
+  },
+  "world": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/adaptive-topology.bin": "0ce8b023109a00280be8d85407e37447ab484844cdfd7d72bac6490116f1b3bc",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/authored-cuts.tsv": "70890708e26f1172286e0c3be15cfe08e85bda3718aceb3946c7963fd3cf493b",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/authored-path-grading.sha256": "8102ea0be6d08a202ea230ea9a5393cb86cee2e16c19372ca210aa7733f7f2e0",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/source-provenance.json": "de7f333715d3f11bfd656306016fbb9eca4fa61f8b7137d9d7d3fc3f476e9506",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/terrain-physics.hcs2": "4fe9ab026da67efe124dec35b95a2a4a468a32687d1dcc9518586bb8efc3a7d9",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/tile_0_0.png": "53d0c844bc6619c7600d65d662b18e9512cac5a175b5794e10a2923e9862841f",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/verification.json": "ab1ca3e965cfdfa404e10aea18d69eb2b13764260b250797ce62468f7fd89ab8",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/world.properties": "da9399f6bfa565e7d2e2b313b6cc52dbdd6ec141e1c07d29aeeaa576e85601de",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/scene-package/.scene.bin.editor.previous": "b1ed403cbd97640d7a48c6bd197703b9a823dd457bae0413cc924988c1c796c2",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/scene-package/scene.bin": "eac9e7f1cd8a4b7b8471c956199f987c9434fa8074bc0bfe0c91d97cf6ad6fd5",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/terrain-layers/tile_0_0.bin": "cd65e28f21a74e9f4583a1c3b147a555163f2fb118c3fb9c2e984ed01a38fd1c",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/scene-package/meshes/site.obj": "f134f688d51bd2fc6cc8b65e01d861222af4c5022f843a0f8e9c24bfc83d209b"
+  },
+  "author_sha256": "4ef03772427ff6f31acae5b21b8146d5357fae01628e8dc18541c6a0e1b46fa4",
+  "builder_sha256": "de0763d64f58440f0f7b97ef0247443df44f6553d318030836385ca08052f2b8",
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "status": "SAVED_EDITOR_CIRCULATION_CUT_CANDIDATE_NOT_TERRAIN_ACCEPTANCE"
+}
