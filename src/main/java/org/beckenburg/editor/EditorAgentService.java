@@ -42,6 +42,7 @@ public final class EditorAgentService<S> {
     private final EditorHistory<S> history;
     private final java.util.function.Consumer<EditorChange> changed;
     private final Runnable saved;
+    private EditorChange lastChange;
     public EditorAgentService(Host<S> host, EditorHistory<S> history) {
         this(host,history,()->{},()->{});
     }
@@ -65,7 +66,8 @@ public final class EditorAgentService<S> {
         // Metadata failure cannot conceal a committed native mutation or undo.
         try{details=Objects.requireNonNull(host.changes(before,host.project().snapshot()));}
         catch(RuntimeException failure){details=EditorChange.Details.full();}
-        changed.accept(new EditorChange(host.project().id(),host.project().documentPath(),revision,host.revision(),details));
+        lastChange = new EditorChange(host.project().id(),host.project().documentPath(),revision,host.revision(),details);
+        changed.accept(lastChange);
     }
     public Inspection<S> inspect() {
         capable(Capability.INSPECT);
@@ -76,6 +78,27 @@ public final class EditorAgentService<S> {
     public record Summary(String sceneId, long revision, Set<Capability> capabilities,
                           List<String> operations, List<String> tests) {}
     public record NodePage(int total, int offset, List<EditorProject.Node> nodes) {}
+    public record ChangePage(long beforeRevision, boolean fullScene, int total, int offset,
+                             List<EditorChange.Node> nodes) {}
+
+    /** Read the host's latest commit notification, including human edits on the shared service. */
+    public Evidence<ChangePage> changes(long expected, int offset, int limit) {
+        capable(Capability.INSPECT);
+        require(expected);
+        if (lastChange == null || lastChange.revision() != expected || !lastChange.sceneId().equals(host.project().id()))
+            throw new IllegalStateException("No committed change available for this scene revision");
+        var details = lastChange.details();
+        var nodes = details.nodes();
+        int end = pageEnd(nodes.size(),offset,limit);
+        return evidence(new ChangePage(lastChange.beforeRevision(), details.fullScene(), nodes.size(), offset,
+            List.copyOf(nodes.subList(offset,end))));
+    }
+
+    private static int pageEnd(int size, int offset, int limit) {
+        if (offset < 0 || offset > size || limit < 1 || limit > 64)
+            throw new IllegalArgumentException("Expected a valid page offset and limit 1 to 64");
+        return offset + Math.min(limit,size-offset);
+    }
 
     public Summary summary() {
         capable(Capability.INSPECT);
@@ -89,8 +112,7 @@ public final class EditorAgentService<S> {
         if (offset < 0 || limit < 1 || limit > 64) throw new IllegalArgumentException("Expected offset >= 0 and limit 1 to 64");
         var project = host.project();
         var nodes = project.hierarchy();
-        if (offset > nodes.size()) throw new IllegalArgumentException("Offset exceeds hierarchy size");
-        int end = offset + Math.min(limit, nodes.size() - offset);
+        int end = pageEnd(nodes.size(),offset,limit);
         return new Evidence<>(project.id(), expected,
                 new NodePage(nodes.size(), offset, List.copyOf(nodes.subList(offset, end))));
     }

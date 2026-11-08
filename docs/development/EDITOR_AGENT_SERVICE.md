@@ -87,6 +87,8 @@ Both localized queries use the host's current human editor hierarchy on its owne
 
 ## Batched headless edits
 
+After an edit or undo, `changes<TAB>revision<TAB>offset<TAB>limit` pages through the latest committed native change in this session. Each page gives the preceding revision, total changed node count, and up to 64 stable IDs with change kinds and content fingerprints. Fetch a changed node with `node` to inspect its current value. Removed nodes carry only their previous fingerprint. When `fullScene` is true, the host requires whole-scene invalidation and the listed IDs may be incomplete. A new process starts without a last change. A stale revision or a revision without commit metadata returns an error.
+
 `batch` takes the expected revision followed by one to 64 ordinary edit operations. Separate operations with a literal `|` field. All fields use the same tab delimiter as `edit`. A pipe inside a `key=value` field is part of its value. For example, the following request moves two props in a single native history entry. Replace `7` with the revision from `summary`.
 
 ```text

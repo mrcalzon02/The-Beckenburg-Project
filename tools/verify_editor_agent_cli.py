@@ -59,6 +59,22 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     edits = f'batch\t{revision}\t{move(0, .125)}\t|\t{move(1, .25)}'
     accepted, inspected = run([edits, 'inspect'])
     after_revision = accepted['result']['revision']
+    pages = run([edits, f'changes\t{after_revision}\t0\t1', f'changes\t{after_revision}\t1\t1',
+                 f'changes\t{after_revision}\t2\t1'])[1:]
+    details = [row['result']['result'] for row in pages]
+    assert all(p['total'] == 2 and p['beforeRevision'] == revision for p in details)
+    nodes = details[0]['nodes'] + details[1]['nodes']
+    assert {n['id'] for n in nodes} == {'prop-0', 'prop-1'} and not details[2]['nodes']
+    assert all(n['kind'] == 'UPDATED' and n['fingerprint'] != n['beforeFingerprint'] for n in nodes)
+    undo = run([edits, f'undo\t{after_revision}', f'changes\t{after_revision + 1}\t0\t2'])[-1]
+    reversed_nodes = {n['id']: n for n in undo['result']['result']['nodes']}
+    for node in nodes:
+        inverse = reversed_nodes[node['id']]
+        assert inverse['fingerprint'] == node['beforeFingerprint']
+        assert inverse['beforeFingerprint'] == node['fingerprint']
+    invalid_pages = run([f'changes\t{revision}\t0\t1', edits, f'changes\t{revision}\t0\t1',
+                         f'changes\t{after_revision}\t0\t65'], expected=1)
+    assert [row['ok'] for row in invalid_pages] == [False, True, False, False]
     after = inspected['result']['state']
     for index, delta in enumerate((.125, .25)):
         assert after['props'][index]['x'] == first['state']['props'][index]['x'] + delta
@@ -112,6 +128,10 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
                        f'edit\t{revision}\tset-spawn\tx=13.5\tz=19\tyaw=1.125',
                        f'save\t{revision + 1}', 'inspect'])
     assert all(row['ok'] for row in rows_castle)
+    saved_revision = run(['summary'])[0]['result']['revision']
+    castle_change = run([f'edit\t{saved_revision}\tset-spawn\tx=12.5\tz=19\tyaw=1.125',
+                         f'changes\t{saved_revision + 1}\t0\t1'])[-1]
+    assert castle_change['result']['result']['fullScene'], 'Castle reports conservative invalidation'
     reopened_castle = run(['inspect'])[0]['result']
     assert reopened_castle['state'] == rows_castle[-1]['result']['state']
     recovered_castle = run([f'recover\t{reopened_castle["revision"]}', 'inspect'])[-1]['result']
