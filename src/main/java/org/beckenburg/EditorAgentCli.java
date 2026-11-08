@@ -82,9 +82,8 @@ public final class EditorAgentCli {
         return new EditorAgentService.Command(fields[start], arguments);
     }
 
-    private static java.util.List<EditorAgentService.Command> parseBatch(String[] fields) {
+    static java.util.List<EditorAgentService.Command> parseBatch(String[] fields,int start) {
         var commands = new java.util.ArrayList<EditorAgentService.Command>();
-        int start = 2;
         for (int i = start; i <= fields.length; i++) {
             if (i == fields.length || fields[i].equals("|")) {
                 if (commands.size() == 64) throw new IllegalArgumentException("Batch exceeds 64 operations");
@@ -119,7 +118,7 @@ public final class EditorAgentCli {
                         throw new IllegalArgumentException("Wrong argument count");
                     result=switch(command){
                         case "edit" -> service.transact(revision, java.util.List.of(parseEdit(parts, 2, parts.length)));
-                        case "batch" -> service.transact(revision, parseBatch(parts));
+                        case "batch" -> service.transact(revision, parseBatch(parts,2));
                         case "node" -> service.node(revision,parts[2]);
                         case "verify-position" -> service.verifyPosition(revision,parts[2],Double.parseDouble(parts[3]),Double.parseDouble(parts[4]),Double.parseDouble(parts[5]));
                         case "nodes" -> service.nodes(revision,java.util.Arrays.asList(parts).subList(2,parts.length));

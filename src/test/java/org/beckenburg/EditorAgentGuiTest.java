@@ -156,6 +156,10 @@ public final class EditorAgentGuiTest {
     }
     private static final HttpClient CLIENT=HttpClient.newHttpClient();
     private static Access openAccess(DeveloperLevelEditor editor)throws Exception{
+        return openAccess(editor,"observe");
+    }
+    private static Access openAccess(DeveloperLevelEditor editor,String scope)throws Exception{
+        boolean edit=!scope.equals("observe");
         var access=new AtomicReference<Access>();
         SwingUtilities.invokeAndWait(()->{
             Timer driver=new Timer(50,event->{
@@ -163,9 +167,12 @@ public final class EditorAgentGuiTest {
                     var pane=component(dialog,JOptionPane.class);if(pane==null)continue;
                     if(dialog.getTitle().equals("Scene verification")){
                         var choices=component(dialog,JComboBox.class);
-                        choices.setSelectedItem("START LOCAL OBSERVATION");
-                        pane.setInputValue("START LOCAL OBSERVATION");pane.setValue(JOptionPane.OK_OPTION);
-                    }else if(dialog.getTitle().equals("Read-only access to this editor scene")){
+                        String action=edit?"START LOCAL EDITING":"START LOCAL OBSERVATION";
+                        choices.setSelectedItem(action);
+                        pane.setInputValue(action);pane.setValue(JOptionPane.OK_OPTION);
+                    }else if(dialog.getTitle().equals("Local editing access")){
+                        component(dialog,JCheckBox.class).setSelected(scope.equals("save"));pane.setValue(JOptionPane.OK_OPTION);
+                    }else if(dialog.getTitle().equals(edit?"Editing access to this editor scene":"Read-only access to this editor scene")){
                         var lines=component(dialog,JTextArea.class).getText().split("\n");
                         access.set(new Access(lines[0].substring("Address  ".length()),lines[1].substring("Authorization: ".length())));
                         pane.setValue(JOptionPane.OK_OPTION);
@@ -175,6 +182,17 @@ public final class EditorAgentGuiTest {
             driver.start();try{button(editor,"VERIFY SCENE").doClick();}finally{driver.stop();}
         });
         check(access.get()!=null,"Actual editor displayed local session credentials");return access.get();
+    }
+    private static void verifyMcp(Access access,String scope)throws Exception{
+        String python=System.getenv("EDITOR_MCP_PYTHON");
+        if(python==null)return;
+        var process=new ProcessBuilder(python,"tools/verify_editor_mcp.py",scope).inheritIO();
+        process.environment().put("EDITOR_AGENT_URL",access.url());
+        process.environment().put("EDITOR_AGENT_TOKEN",access.bearer().substring("Bearer ".length()));
+        var child=process.start();
+        try{
+            check(child.waitFor(90,java.util.concurrent.TimeUnit.SECONDS) && child.exitValue()==0,"MCP client acceptance: "+scope);
+        }finally{if(child.isAlive())child.destroyForcibly();}
     }
     private static HttpResponse<byte[]> request(Access access,String path,String method,String auth)throws Exception{
         var request=HttpRequest.newBuilder(URI.create(access.url()+path)).timeout(java.time.Duration.ofSeconds(30))
@@ -266,6 +284,22 @@ public final class EditorAgentGuiTest {
                 }
                 check(editor.get()!=null,"Actual human editor opened");
             });
+            if(System.getenv("EDITOR_MCP_PYTHON")!=null){
+                SwingUtilities.invokeAndWait(()->{
+                    var service=editor.get().agentService();var rev=service.summary().revision();
+                    var spawn=service.node(rev,"start").result();
+                    service.transact(rev,"put-surface",Map.of("id","mcp-test-divider","kind","WALL",
+                        "x0",String.valueOf(spawn.x()-1),"z0",String.valueOf(spawn.z()),"x1",String.valueOf(spawn.x()+1),"z1",String.valueOf(spawn.z()),
+                        "base","0","height","2","material","0"));
+                });
+                var writable=openAccess(editor.get(),"save");verifyMcp(writable,"save");
+                SwingUtilities.invokeAndWait(()->{
+                    var undo=button(editor.get(),"UNDO");undo.doClick();
+                    check(CastleLevelEdits.current().surfaceById("mcp-test-divider")!=null,"Human undo restored the agent-removed wall");
+                    undo.doClick();undo.doClick();
+                    check(CastleLevelEdits.current().surfaceById("mcp-test-divider")==null,"Fixture edits reversed through shared history");
+                });
+            }
             SwingUtilities.invokeAndWait(()->{
                 try{
                     var e=editor.get();var castle=e.agentService();var state=castle.inspect();
@@ -326,6 +360,7 @@ public final class EditorAgentGuiTest {
             var access=openAccess(editor.get());
             check(host.connected()==1 && hostBefore.equals(host.devAdminSnapshot()),"Playtests changed independent LAN host state");
             verifyObservation(editor.get(),output,access);
+            verifyMcp(access,"observe");
             SwingUtilities.invokeAndWait(()->{
                 try{
                     var open=DeveloperLevelEditor.class.getDeclaredMethod("openMission",HouseMap.Site.class);
@@ -334,7 +369,9 @@ public final class EditorAgentGuiTest {
             });
             try{request(access,"/summary","GET",access.bearer());throw new AssertionError("Old scene session is reachable");}
             catch(java.io.IOException expected){}
-            var next=openAccess(editor.get());
+            var next=openAccess(editor.get(),"edit");
+            check(request(next,"/save?revision="+revision(next),"POST",next.bearer()).statusCode()==403,"Edit access does not grant native save");
+            verifyMcp(next,"edit");
             check(request(next,"/summary","GET",access.bearer()).statusCode()==401,"Old scene token refused on new session");
             SwingUtilities.invokeAndWait(()->window.get().dispose());
             SwingUtilities.invokeAndWait(()->{});

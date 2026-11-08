@@ -1335,29 +1335,38 @@ public final class DeveloperLevelEditor extends JPanel {
     private void stopObservation(){
         if(observation!=null){observation.close();observation=null;}
     }
-    private void startObservation()throws IOException{
+    private void startObservation(EditorObservationBridge.Scope scope)throws IOException{
         requireEditorThread();
         if(observation!=null)throw new IllegalStateException("Observation session already open");
-        observation=new EditorObservationBridge(agentService());
+        observation=new EditorObservationBridge(agentService(),scope);
     }
     private void showAgentEvidence(){
         var service=agentService();
         var choices=new ArrayList<>(List.of("INSPECT","TEST","CAPTURE PNG","REOPEN SAVED"));
         if(chosen!=null)choices.add("VERIFY POSITION");
         if(service.summary().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
-        choices.add(observation==null?"START LOCAL OBSERVATION":"STOP LOCAL OBSERVATION");
+        choices.add(observation==null?"START LOCAL OBSERVATION":"STOP LOCAL ACCESS");
+        if(observation==null)choices.add("START LOCAL EDITING");
         String choice=(String)JOptionPane.showInputDialog(window,"Inspect, test or capture the active game scene.",
             "Scene verification",JOptionPane.PLAIN_MESSAGE,null,
             choices.toArray(),"INSPECT");
         if(choice==null)return;
         try{
-            if(choice.equals("STOP LOCAL OBSERVATION")){stopObservation();status.setText("Local observation stopped");return;}
-            if(choice.equals("START LOCAL OBSERVATION")){
-                startObservation();
+            if(choice.equals("STOP LOCAL ACCESS")){stopObservation();status.setText("Local access stopped");return;}
+            if(choice.equals("START LOCAL OBSERVATION") || choice.equals("START LOCAL EDITING")){
+                var scope=EditorObservationBridge.Scope.OBSERVE;
+                if(choice.equals("START LOCAL EDITING")){
+                    var allowSave=new JCheckBox("Also allow saving this document");
+                    if(JOptionPane.showConfirmDialog(window,new Object[]{"Allow local clients with this token to edit this scene and use undo/redo?",allowSave},
+                        "Local editing access",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+                    scope=allowSave.isSelected()?EditorObservationBridge.Scope.EDIT_AND_SAVE:EditorObservationBridge.Scope.EDIT;
+                }
+                startObservation(scope);
                 var access=new JTextArea("Address  "+observation.url()+"\nAuthorization: Bearer "+observation.token(),3,68);
                 access.setEditable(false);
-                JOptionPane.showMessageDialog(window,access,"Read-only access to this editor scene",JOptionPane.INFORMATION_MESSAGE);
-                status.setText("Local observation enabled • Verify Scene to stop");return;
+                String title=scope==EditorObservationBridge.Scope.OBSERVE?"Read-only access to this editor scene":"Editing access to this editor scene";
+                JOptionPane.showMessageDialog(window,access,title,JOptionPane.INFORMATION_MESSAGE);
+                status.setText("Local access enabled ("+scope+") • Verify Scene to stop");return;
             }
             var state=service.summary();Object result;
             switch(choice){

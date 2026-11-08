@@ -13,8 +13,10 @@ import java.util.concurrent.*;
 import javax.swing.SwingUtilities;
 import org.beckenburg.editor.EditorAgentService;
 
-/** Optional read-only access to one open editor. Every observation is made on its owner thread. */
+/** Session-scoped access to one open editor. Every service call runs on its owner thread. */
 final class EditorObservationBridge implements AutoCloseable {
+    enum Scope { OBSERVE, EDIT, EDIT_AND_SAVE }
+    private final Scope scope;
     private static final int MAX_BYTES=4*1024*1024;
     private final HttpServer server;
     private final ExecutorService worker;
@@ -22,8 +24,8 @@ final class EditorObservationBridge implements AutoCloseable {
     private final String token;
     private volatile boolean closed;
 
-    EditorObservationBridge(EditorAgentService<?> service)throws IOException{
-        this.service=service;
+    EditorObservationBridge(EditorAgentService<?> service,Scope scope)throws IOException{
+        this.service=service;this.scope=scope;
         var secret=new byte[32];new SecureRandom().nextBytes(secret);
         token=Base64.getUrlEncoder().withoutPadding().encodeToString(secret);
         server=HttpServer.create(new InetSocketAddress(InetAddress.getByName("127.0.0.1"),0),8);
@@ -46,22 +48,29 @@ final class EditorObservationBridge implements AutoCloseable {
             if(!("127.0.0.1:"+server.getAddress().getPort()).equals(headers.getFirst("Host")) || headers.containsKey("Origin")){
                 error(exchange,403,"Local client required");return;
             }
-            if(!exchange.getRequestMethod().equals("GET")){error(exchange,405,"Only GET is supported");return;}
+            boolean write=exchange.getRequestMethod().equals("POST");
+            if(!exchange.getRequestMethod().equals("GET") && !(write && scope!=Scope.OBSERVE)){
+                error(exchange,405,"Method unavailable in this session");return;
+            }
+            String path=exchange.getRequestURI().getRawPath();
+            if(write && !writeRoutes().contains(path)){error(exchange,403,"Action outside session scope");return;}
             String length=headers.getFirst("Content-Length");
             if(exchange.getRequestURI().toASCIIString().length()>4096 || headers.containsKey("Transfer-Encoding") ||
-                (length!=null && !length.equals("0"))){
+                (length!=null && (!length.matches("[0-9]{1,5}") || Integer.parseInt(length)>(write?16384:0)))){
                 error(exchange,400,"Invalid observation request");return;
             }
             Reply reply;
             try{
                 var uri=exchange.getRequestURI();
+                byte[] body=write?exchange.getRequestBody().readNBytes(16385):new byte[0];
+                if(body.length>16384)throw new IllegalArgumentException();
                 var params=parameters(uri.getRawQuery(),uri.getRawPath().equals("/nodes"));
                 var task=new FutureTask<>(()->{
                     if(closed)throw new IllegalStateException("Observation session closed");
-                    return observe(uri.getRawPath(),params);
+                    return write?mutate(path,params.fields,body):observe(path,params);
                 });
                 SwingUtilities.invokeLater(task);
-                try{reply=task.get(30,TimeUnit.SECONDS);}
+                try{reply=write?task.get():task.get(30,TimeUnit.SECONDS);}
                 finally{task.cancel(false);}
             }catch(ExecutionException failure){
                 var cause=failure.getCause();
@@ -91,12 +100,37 @@ final class EditorObservationBridge implements AutoCloseable {
         return new Query(result,ids);
     }
     private record Reply(String type,byte[] bytes,Long revision){}
+    private List<String> writeRoutes(){
+        return switch(scope){
+            case OBSERVE -> List.of();
+            case EDIT -> List.of("/edit","/undo","/redo");
+            case EDIT_AND_SAVE -> List.of("/edit","/undo","/redo","/save");
+        };
+    }
+    private Reply mutate(String path,Map<String,String> args,byte[] body)throws Exception{
+        requireKeys(args,"revision");long revision=Long.parseLong(args.get("revision"));
+        if(!path.equals("/edit") && body.length!=0)throw new IllegalArgumentException();
+        EditorAgentService.Evidence<?> result;
+        switch(path){
+            case "/edit" -> {
+                String batch=StandardCharsets.UTF_8.newDecoder().decode(java.nio.ByteBuffer.wrap(body)).toString();
+                if(batch.contains("\r")||batch.contains("\n"))throw new IllegalArgumentException();
+                result=service.transact(revision,EditorAgentCli.parseBatch(batch.split("\t",-1),0));
+            }
+            case "/undo" -> result=service.undo(revision);
+            case "/redo" -> result=service.redo(revision);
+            case "/save" -> result=service.save(revision);
+            default -> throw new IllegalArgumentException();
+        }
+        return json(result,result.revision());
+    }
     private Reply observe(String path,Query query)throws Exception{
         var summary=service.summary();
         var args=query.fields;
         if(path.equals("/summary") && args.isEmpty())
             return json(Map.of("sceneId",summary.sceneId(),"revision",summary.revision(),"tests",summary.tests(),
-                "routes",List.of("/summary","/hierarchy","/node","/nodes","/changes","/assets","/verify-position","/test","/capture")),summary.revision());
+                "routes",List.of("/summary","/hierarchy","/node","/nodes","/changes","/assets","/verify-position","/test","/capture"),
+                "writeRoutes",writeRoutes(),"operations",scope==Scope.OBSERVE?Map.of():service.operationParameters()),summary.revision());
         long revision=Long.parseLong(args.remove("revision"));
         if(revision!=summary.revision())throw new IllegalStateException("Stale revision");
         Object value;

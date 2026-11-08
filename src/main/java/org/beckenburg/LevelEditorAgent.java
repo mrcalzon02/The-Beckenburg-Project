@@ -33,8 +33,10 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     public void checkAccess(){access.run();}
     public java.util.Set<EditorAgentService.Capability> capabilities(){return java.util.Set.of(EditorAgentService.Capability.values());}
     public List<String> operations(){return List.of("move-prop");}
+    private static final Map<String,String> MOVE_FIELDS=Map.of("id","string","x","number","y","number","z","number");
+    public Map<String,Map<String,String>> operationParameters(){return Map.of("move-prop",MOVE_FIELDS);}
     public void apply(String operation,Map<String,String> args){
-        if(!operation.equals("move-prop")||!args.keySet().equals(java.util.Set.of("id","x","y","z")))
+        if(!operation.equals("move-prop")||!args.keySet().equals(MOVE_FIELDS.keySet()))
             throw new IllegalArgumentException("Expected move-prop with id, x, y, z");
         String id=args.get("id");
         int index=session.indexOf(id);

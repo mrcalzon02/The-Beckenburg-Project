@@ -30,6 +30,7 @@ public final class EditorAgentService<S> {
         void checkAccess();
         Set<Capability> capabilities();
         List<String> operations();
+        default Map<String,Map<String,String>> operationParameters(){return Map.of();}
         void apply(String operation, Map<String,String> arguments);
         void validate();
         /** Derive metadata from actual native snapshots. Unknown hosts invalidate all dependencies. */
@@ -108,6 +109,10 @@ public final class EditorAgentService<S> {
         capable(Capability.INSPECT);
         return new Summary(host.project().id(), host.revision(), Set.copyOf(host.capabilities()),
                 List.copyOf(host.operations()), List.copyOf(host.tests()));
+    }
+    public Map<String,Map<String,String>> operationParameters(){
+        capable(Capability.INSPECT);
+        return host.operationParameters();
     }
 
     public Evidence<NodePage> hierarchy(long expected, int offset, int limit) {

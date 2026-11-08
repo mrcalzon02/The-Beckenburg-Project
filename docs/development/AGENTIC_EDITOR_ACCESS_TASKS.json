@@ -263,8 +263,9 @@
         {
           "id": "M5-01",
           "name": "MCP tools/resources adapter mapping directly to service capabilities",
-          "scope": [],
-          "status": "planned",
+          "scope": ["tools/editor_mcp.py", "src/main/java/org/beckenburg/EditorObservationBridge.java"],
+          "status": "tested",
+          "implementationEvidence": "An official SDK client discovered typed tools and the live summary resource over stdio in three human-issued session scopes. The Castle fixture verified transactional editing, stale refusal, undo/redo, explicit save, collision audit and native PNG. House verified unsaved human edits and edit-only access. The native bridge limits targets to the active scene and its own document path.",
           "dependsOn": [
             "M4-01",
             "M3-02"
@@ -279,7 +280,8 @@
           "id": "M5-02",
           "name": "Real installed editor agent repair demonstration",
           "scope": [],
-          "status": "planned",
+          "status": "in_progress",
+          "implementationEvidence": "A separate MCP client removed a deliberately misplaced Castle wall in the running desktop fixture, verified removal in the native change page and cleared the spawn collision audit. The human undo control restored the wall. Installed executable acceptance remains open.",
           "dependsOn": [
             "M5-01"
           ],

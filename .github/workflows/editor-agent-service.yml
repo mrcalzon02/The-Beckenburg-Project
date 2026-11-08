@@ -5,6 +5,7 @@ on:
     paths:
       - 'src/main/java/org/beckenburg/*EditorAgent*.java'
       - 'src/main/java/org/beckenburg/EditorAgentCli.java'
+      - 'src/main/java/org/beckenburg/EditorObservationBridge.java'
       - 'src/main/java/org/beckenburg/DeveloperLevelEditor.java'
       - 'src/main/java/org/beckenburg/LevelAuthoringSession.java'
       - 'src/main/java/org/beckenburg/CastleLevelEdits.java'
@@ -17,6 +18,9 @@ on:
       - 'src/test/java/org/beckenburg/LevelAuthoringRecoveryTest.java'
       - 'tools/verify_editor_agent_host.cmd'
       - 'tools/verify_editor_agent_cli.py'
+      - 'tools/editor_mcp.py'
+      - 'tools/editor_mcp_requirements.txt'
+      - 'tools/verify_editor_mcp.py'
       - '.github/workflows/editor-agent-service.yml'
   workflow_dispatch:
 permissions:
@@ -34,7 +38,14 @@ jobs:
       - name: Build actual host and resources
         shell: cmd
         run: call build.cmd package
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install MCP SDK for the stdio client and adapter
+        run: python -m pip install -r tools/editor_mcp_requirements.txt
       - name: Verify native service, actual Windows editor and headless protocol
+        env:
+          EDITOR_MCP_PYTHON: python
         shell: cmd
         run: call tools\verify_editor_agent_host.cmd
       - uses: actions/upload-artifact@v4

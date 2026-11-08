@@ -87,20 +87,25 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
         return java.util.EnumSet.allOf(EditorAgentService.Capability.class);
     }
     public List<String> operations(){return List.of("set-spawn","put-surface","remove-surface");}
+    private static final Map<String,Map<String,String>> PARAMETERS=Map.of(
+        "set-spawn",Map.of("x","number","z","number","yaw","number"),
+        "put-surface",Map.of("id","string","kind",String.join("|",java.util.Arrays.stream(CastleLevelEdits.Kind.values()).map(Enum::name).toList()),
+            "x0","number","z0","number","x1","number","z1","number","base","number","height","number","material","integer"),
+        "remove-surface",Map.of("id","string"));
+    public Map<String,Map<String,String>> operationParameters(){return PARAMETERS;}
     public void apply(String operation, Map<String,String> args){
+        var fields=PARAMETERS.get(operation);
+        if(fields==null || !args.keySet().equals(fields.keySet()))throw new IllegalArgumentException("Incorrect fields for "+operation);
         switch(operation){
             case "set-spawn" -> {
-                exact(args,"x","z","yaw");
                 scene.setSpawn(number(args,"x"),number(args,"z"),number(args,"yaw"));
             }
             case "put-surface" -> {
-                exact(args,"id","kind","x0","z0","x1","z1","base","height","material");
                 scene.put(new CastleLevelEdits.Surface(args.get("id"),CastleLevelEdits.Kind.valueOf(args.get("kind")),
                     number(args,"x0"),number(args,"z0"),number(args,"x1"),number(args,"z1"),
                     number(args,"base"),number(args,"height"),Integer.parseInt(args.get("material"))));
             }
             case "remove-surface" -> {
-                exact(args,"id");
                 if(scene.surfaces().stream().noneMatch(s->s.id().equals(args.get("id"))))
                     throw new IllegalArgumentException("Unknown native Castle surface");
                 scene.removeSurface(args.get("id"));
@@ -109,9 +114,6 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
         }
     }
     private static double number(Map<String,String> args,String key){return Double.parseDouble(args.get(key));}
-    private static void exact(Map<String,String> args,String...keys){
-        if(!args.keySet().equals(java.util.Set.of(keys)))throw new IllegalArgumentException("Expected fields: "+String.join(", ",keys));
-    }
     public void validate(){
         for(var node:project.hierarchy())
             if(!Double.isFinite(node.x())||!Double.isFinite(node.y())||!Double.isFinite(node.z()))
