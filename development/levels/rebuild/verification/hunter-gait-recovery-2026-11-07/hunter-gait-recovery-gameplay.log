@@ -1,0 +1,23 @@
+2026-11-08T00:17:32.526175700Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:17:32.549684300Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:17:32.549684300Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:17:32.562458Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:17:32.563963Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:17:32.570008700Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:17:32.588565400Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:17:32.596635400Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:17:32.596635400Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:17:32.604671900Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:17:32.604671900Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:17:32.608617Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:17:32.626571200Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:17:32.635168500Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:17:32.635168500Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:17:32.640706800Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:17:32.640706800Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-08T00:17:32.644791400Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-08T00:17:34.199873300Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=108379 visible_faces=57762 culled_faces=50617 target=320x200 build_ms=1120 lighting_raster_ms=390
+PASS gameplay cleric: TCP STEP -> WALK_A/WALK_B; stop -> IDLE; Ctrl -> CROUCH -> IDLE; scene reset
+PASS gameplay observer: TCP STEP -> WALK_A/WALK_B; stop -> IDLE; Ctrl -> CROUCH -> IDLE; scene reset
+PASS gameplay demonologist: TCP STEP -> WALK_A/WALK_B; stop -> IDLE; Ctrl -> CROUCH -> IDLE; scene reset
+PASS real TCP and live gameplay panel hunter animation; captures=build\e2e\hunter-animation-gameplay

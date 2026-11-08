@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7394,
+  "count": 7411,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -3794,6 +3794,56 @@
       "sha256": "4dd4c4ad349a670528bc48ba4ef6c67a192cb096f0bca9b86ef2da9a2b048b4f"
     },
     {
+      "path": "development/captures/house-native-migration/saved-built-in-house-cellar-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-cellar-runtime.png",
+      "title": "Saved built in house cellar runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 594544,
+      "sha256": "953f906ff1aa17419850b9ec104cd8ef89f5e1c1464122e4c0eee93a06665d20"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-kitchen-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-kitchen-runtime.png",
+      "title": "Saved built in house kitchen runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 636479,
+      "sha256": "ed18075df34a153f652187211d1a05f5d8a579eca22e354613ee48eef7edef3c"
+    },
+    {
+      "path": "development/captures/house-native-migration/saved-built-in-house-landing-runtime.png",
+      "url": "development/captures/house-native-migration/saved-built-in-house-landing-runtime.png",
+      "title": "Saved built in house landing runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 1000,
+      "height": 625,
+      "bytes": 583115,
+      "sha256": "bc7026b916da563ed25da548f8fc8ac20e96eee83e72914ff36b0180e701aecc"
+    },
+    {
+      "path": "development/captures/house-native-migration/windows-editor-rebuilt-kitchen-runtime.png",
+      "url": "development/captures/house-native-migration/windows-editor-rebuilt-kitchen-runtime.png",
+      "title": "Windows editor rebuilt kitchen runtime",
+      "kind": "Runtime saved native House migration",
+      "width": 560,
+      "height": 350,
+      "bytes": 106586,
+      "sha256": "999793bb4266accd57cbe5d56601cddba0da52077cae8f963e2496f6c8310750"
+    },
+    {
+      "path": "development/captures/house-native-recovery/legacy-house-cli-recovery-control-runtime.png",
+      "url": "development/captures/house-native-recovery/legacy-house-cli-recovery-control-runtime.png",
+      "title": "Legacy house cli recovery control runtime",
+      "kind": "Runtime legacy House editor recovery control",
+      "width": 560,
+      "height": 350,
+      "bytes": 121836,
+      "sha256": "b364e01fc8b0dac26a0a6188f6035c76e7641f7be9a9913a0ecfc2af3480528c"
+    },
+    {
       "path": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/east.png",
       "url": "development/captures/house-room-review/house_rebuild_services/00-entrance-and-coat-vestibule/east.png",
       "title": "East",
@@ -4902,6 +4952,126 @@
       "height": 625,
       "bytes": 791470,
       "sha256": "0b5af25693c11ef2ff0946dbb0b3f8b7d0d265257f0b4059a0b9cf72f077f199"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/cleric-crouch.png",
+      "url": "development/captures/hunter-gait-recovery-software/cleric-crouch.png",
+      "title": "Cleric crouch",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96243,
+      "sha256": "d910edc472148faa7edc3e9f08111fbc63c49a82a88a0e3acf30fe4a7c183794"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/cleric-idle.png",
+      "url": "development/captures/hunter-gait-recovery-software/cleric-idle.png",
+      "title": "Cleric idle",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96438,
+      "sha256": "8a5a1e4267912ee9b55b12629498d1e4cde75ea97a1e842355fa77bbec35a9ea"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/cleric-walk_a.png",
+      "url": "development/captures/hunter-gait-recovery-software/cleric-walk_a.png",
+      "title": "Cleric walk a",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 94868,
+      "sha256": "6fba91632e0f5bc9691a1e2c07765c1412fc97409fb48dabcf629a8f83ca3d89"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/cleric-walk_b.png",
+      "url": "development/captures/hunter-gait-recovery-software/cleric-walk_b.png",
+      "title": "Cleric walk b",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 97283,
+      "sha256": "471ead6989fd23caae856f18d067ddf37737577e2b7e36e6f994619355af96de"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/demonologist-crouch.png",
+      "url": "development/captures/hunter-gait-recovery-software/demonologist-crouch.png",
+      "title": "Demonologist crouch",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96169,
+      "sha256": "a07e6c54fcea3e04f52476e9e3a52c101e0e5f0ba2b175b9f93bf43218f5278d"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/demonologist-idle.png",
+      "url": "development/captures/hunter-gait-recovery-software/demonologist-idle.png",
+      "title": "Demonologist idle",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96730,
+      "sha256": "67029f1f62756108a908f586a9ae5485ff0047ba1a8af5bcd740c253e279a943"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/demonologist-walk_a.png",
+      "url": "development/captures/hunter-gait-recovery-software/demonologist-walk_a.png",
+      "title": "Demonologist walk a",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 94895,
+      "sha256": "3d1614862cde8b824af4e9b2c67d4f6f46832fa366f64fd2a36edb21020e88a1"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/demonologist-walk_b.png",
+      "url": "development/captures/hunter-gait-recovery-software/demonologist-walk_b.png",
+      "title": "Demonologist walk b",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 97397,
+      "sha256": "9203ce6b75fb37533807fd0b595d0a89be3abe6d2285bb48a31b479319b9f05e"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/observer-crouch.png",
+      "url": "development/captures/hunter-gait-recovery-software/observer-crouch.png",
+      "title": "Observer crouch",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96262,
+      "sha256": "78c85e01672b23e4bd4733c5a30b21800e5aba7237e1f3a99e9f735fab7c253c"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/observer-idle.png",
+      "url": "development/captures/hunter-gait-recovery-software/observer-idle.png",
+      "title": "Observer idle",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 96516,
+      "sha256": "34d83caed8b5c320951546d1514759fe79c2f6c69d26d8e50b17b0bfad30d275"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/observer-walk_a.png",
+      "url": "development/captures/hunter-gait-recovery-software/observer-walk_a.png",
+      "title": "Observer walk a",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 94940,
+      "sha256": "0dfd087bcc35c33c6f72250134e73fa4887a4dda8e4f5a289740b5ebcd7be6ff"
+    },
+    {
+      "path": "development/captures/hunter-gait-recovery-software/observer-walk_b.png",
+      "url": "development/captures/hunter-gait-recovery-software/observer-walk_b.png",
+      "title": "Observer walk b",
+      "kind": "Runtime software hunter gait diagnostic",
+      "width": 320,
+      "height": 200,
+      "bytes": 97330,
+      "sha256": "6c3e6b84586b7f065f08872483185f484ffd40ae8eb1d1adc9ca49acfdd21e6e"
     },
     {
       "path": "development/captures/wall-lamp-runtime/after/wall-lamp-0-off.png",
