@@ -640,6 +640,10 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         return previewMaterialChange(material,material.withStyle(style),"BASE COLOR / "+style.blend()+" / "+style.opacity()+"%");
     }
     public enum LayerEdit { ADD, CONFIGURE, UP, DOWN, REMOVE }
+    public synchronized EditPreview previewLayerOpacity(long faceId,String layerId,int opacity){
+        var layer=boundPaintMaterial(faceId).stack().layer(layerId);
+        return previewPaintLayer(faceId,layerId,LayerEdit.CONFIGURE,layer.name(),new EditorMeshMaterial.PaintStyle(layer.style().blend(),opacity));
+    }
     public synchronized EditPreview previewPaintLayer(long faceId,String id,LayerEdit edit,String name,EditorMeshMaterial.PaintStyle style){
         var material=boundPaintMaterial(faceId);
         var stack=material.stack();

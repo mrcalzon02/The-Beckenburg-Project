@@ -17,6 +17,7 @@ public final class EditorObservationBridge implements AutoCloseable {
     private final Scope scope;
     private final Executor owner;
     private final Set<EditorAgentService.Capability> capabilities;
+    private final boolean selection;
     private static final int MAX_BYTES=4*1024*1024;
     private final HttpServer server;
     private final ExecutorService worker;
@@ -28,6 +29,7 @@ public final class EditorObservationBridge implements AutoCloseable {
     public EditorObservationBridge(EditorAgentService<?> service,Scope scope,Executor owner)throws IOException{
         this.service=Objects.requireNonNull(service);this.scope=Objects.requireNonNull(scope);this.owner=Objects.requireNonNull(owner);
         capabilities=Set.copyOf(service.summary().capabilities());
+        selection=service.supportsSelection();
         var secret=new byte[32];new SecureRandom().nextBytes(secret);
         token=Base64.getUrlEncoder().withoutPadding().encodeToString(secret);
         server=HttpServer.create(new InetSocketAddress(InetAddress.getByName("127.0.0.1"),0),8);
@@ -116,6 +118,7 @@ public final class EditorObservationBridge implements AutoCloseable {
     }
     private List<String> readRoutes(){
         var routes=new ArrayList<>(List.of("/summary","/revision","/hierarchy","/node","/nodes","/changes","/assets","/verify-position"));
+        if(selection)routes.add("/selection");
         if(capabilities.contains(EditorAgentService.Capability.TEST))routes.add("/test");
         if(capabilities.contains(EditorAgentService.Capability.CAPTURE))routes.add("/capture");
         return routes;
@@ -156,6 +159,7 @@ public final class EditorObservationBridge implements AutoCloseable {
         if(revision!=current.revision())throw new IllegalStateException("Stale revision");
         Object value;
         switch(path){
+            case "/selection" -> {requireKeys(args);if(!selection)throw new IllegalArgumentException();value=service.selection(revision);}
             case "/node" -> {requireKeys(args,"id");value=service.node(revision,args.get("id"));}
             case "/verify-position" -> {
                 requireKeys(args,"id","x","y","z");

@@ -953,7 +953,7 @@ public final class G2TexturedModelGuiTest {
         reviewPixels();
         var opaque=(MaterialReviewFrame)field(ui,"projectedFrame");
         var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
-        var session=new AtomicReference<EditorObservationBridge>();edt(()->session.set(ui.startMaterialObservation()));
+        var session=new AtomicReference<EditorObservationBridge>();edt(()->session.set(ui.startMaterialAccess(EditorObservationBridge.Scope.OBSERVE)));
         var access=session.get();
         edt(()->{
             ((JSpinner)field(workspace,"projectionPadding")).setValue(1);
@@ -975,6 +975,7 @@ public final class G2TexturedModelGuiTest {
             check(improved>0,"Padding must preserve more ink in the filtered model view at angle index "+angle);
         }
         verifyMaterialObservation(access);
+        if(System.getenv("EDITOR_MCP_PYTHON")!=null)access=verifyMaterialEditing(access);
         long observedRevision=project.revision();
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(before),"Undo padded stroke");
         check(materialRequest(access,"/capture?revision="+observedRevision).statusCode()==409,"Human undo must invalidate material capture");
@@ -998,9 +999,13 @@ public final class G2TexturedModelGuiTest {
         catch(java.io.IOException expected){}
     }
     private static java.net.http.HttpResponse<byte[]> materialRequest(EditorObservationBridge access,String route)throws Exception{
+        return materialRequest(access,route,false);
+    }
+    private static java.net.http.HttpResponse<byte[]> materialRequest(EditorObservationBridge access,String route,boolean post)throws Exception{
         var request=java.net.http.HttpRequest.newBuilder(java.net.URI.create(access.url()+route))
-            .header("Authorization","Bearer "+access.token()).timeout(java.time.Duration.ofSeconds(8)).GET().build();
-        return java.net.http.HttpClient.newHttpClient().send(request,java.net.http.HttpResponse.BodyHandlers.ofByteArray());
+            .header("Authorization","Bearer "+access.token()).timeout(java.time.Duration.ofSeconds(8));
+        if(post)request.POST(java.net.http.HttpRequest.BodyPublishers.noBody());else request.GET();
+        return java.net.http.HttpClient.newHttpClient().send(request.build(),java.net.http.HttpResponse.BodyHandlers.ofByteArray());
     }
     private void verifyMaterialObservation(EditorObservationBridge access)throws Exception{
         long revision=project.revision();var state=project.snapshot();
@@ -1023,14 +1028,7 @@ public final class G2TexturedModelGuiTest {
         check(capture.statusCode()==200,"Active material capture refused");
         var image=ImageIO.read(new java.io.ByteArrayInputStream(capture.body()));
         check(Arrays.equals(displayed,image.getRGB(0,0,image.getWidth(),image.getHeight(),null,0,image.getWidth())),"Agent PNG differs from human runtime pixels");
-        String python=System.getenv("EDITOR_MCP_PYTHON");
-        if(python!=null){
-            var child=new ProcessBuilder(python,"tools/verify_editor_mcp.py","material").inheritIO();
-            child.environment().put("EDITOR_AGENT_URL",access.url());child.environment().put("EDITOR_AGENT_TOKEN",access.token());
-            child.environment().put("EDITOR_EXPECT_SCENE",project.id());child.environment().put("EDITOR_EXPECT_VERTEX",node.id());
-            child.environment().put("EDITOR_EXPECT_PNG",java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(capture.body())));
-            check(child.start().waitFor()==0,"Material MCP client failed");
-        }
+        if(System.getenv("EDITOR_MCP_PYTHON")!=null)materialClient(access,"material",node.id(),capture.body());
         var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
         var faces=(JList<?>)field(workspace,"faceList");int selected=faces.getSelectedIndex();
         edt(()->faces.setSelectedIndex(2));reviewPixels();
@@ -1039,6 +1037,40 @@ public final class G2TexturedModelGuiTest {
         check(covered.statusCode()==200&&json.contains("\"code\":\"VISIBLE_FACE\",\"passed\":false"),"Covered rear face falsely passed visibility");
         edt(()->faces.setSelectedIndex(selected));reviewPixels();
         check(state==project.snapshot()&&revision==project.revision(),"Material observation edited the native document");
+    }
+    private void materialClient(EditorObservationBridge access,String scope,String vertex,byte[] png)throws Exception{
+        var child=new ProcessBuilder(System.getenv("EDITOR_MCP_PYTHON"),"tools/verify_editor_mcp.py",scope).inheritIO();
+        child.environment().put("EDITOR_AGENT_URL",access.url());child.environment().put("EDITOR_AGENT_TOKEN",access.token());
+        child.environment().put("EDITOR_EXPECT_SCENE",project.id());child.environment().put("EDITOR_EXPECT_VERTEX",vertex);
+        child.environment().put("EDITOR_EXPECT_PNG",java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(png)));
+        check(child.start().waitFor()==0,"Material MCP client failed for "+scope);
+    }
+    private EditorObservationBridge verifyMaterialEditing(EditorObservationBridge old)throws Exception{
+        var before=project.snapshot();int[] colors=reviewPixels();
+        var next=new AtomicReference<EditorObservationBridge>();
+        edt(()->{((JMenuItem)field(ui,"materialAccess")).doClick();next.set(ui.startMaterialAccess(EditorObservationBridge.Scope.EDIT));});
+        for(String route:List.of("save","reopen"))
+            check(materialRequest(next.get(),"/"+route+"?revision="+project.revision(),true).statusCode()==403,"Edit-only access allowed "+route);
+        edt(()->{((JMenuItem)field(ui,"materialAccess")).doClick();next.set(ui.startMaterialAccess(EditorObservationBridge.Scope.EDIT_AND_SAVE));});
+        var access=next.get();
+        check(!old.token().equals(access.token()),"Editing requires a new session token");
+        long rev=project.revision();
+        materialClient(access,"material-save",project.hierarchyPage(0,1).nodes().get(0).id(),materialRequest(access,"/capture?revision="+rev).body());
+        check(!Arrays.equals(colors,reviewPixels()),"Agent opacity edit did not affect displayed runtime pixels");
+        var saved=EditorTopologyProject.open(project.documentPath());
+        check(saved.snapshot().equals(project.snapshot())&&saved.savedWorkspace()!=null,"Native save must retain both mesh and human workspace");
+        published.set(null);edt(()->button(ui,"apply"));await(()->published.get()!=null);
+        var game=GlbProps.model(published.get());var texture=saved.snapshot().materials().get(0);
+        var png=ImageIO.read(new java.io.ByteArrayInputStream(texture.png()));
+        int sampled=GlbProps.sample(game.triangles().get(0).material(),.28,.5);
+        check(sampled==(png.getRGB(4,4)&0xffffff),"Published game did not sample the agent-edited layer");
+        for(int expected:new int[]{70,40}){
+            edt(()->button(ui,"undoMesh"));await(()->ready(ui));
+            check(project.snapshot().materials().get(0).layers().get(0).style().opacity()==expected,"Human undo after agent reopen, expected "+expected);
+        }
+        edt(()->button(ui,"undoMesh"));await(()->ready(ui));
+        check(project.snapshot().equals(before)&&Arrays.equals(colors,reviewPixels()),"Human undo must restore exact pre-agent document and render");
+        return access;
     }
     private static void projectedMouse(JLabel view,int type,int x,int y){
         view.dispatchEvent(new java.awt.event.MouseEvent(view,type,System.currentTimeMillis(),java.awt.event.InputEvent.BUTTON1_DOWN_MASK,

@@ -16,6 +16,11 @@ public final class EditorAgentService<S> {
     public record Check(String code, boolean passed, String detail) {}
     public enum DiskState { MATCHES, DIFFERS, MISSING, UNREADABLE, UNSUPPORTED }
     public record PositionProof(EditorProject.Node actual,boolean verified,boolean committed,DiskState diskState){}
+    public record Selection(String kind,String id,Map<String,String> properties){
+        public Selection { properties=Map.copyOf(properties); }
+    }
+    /** Implement only in a host that can read the active human selection on its owner thread. */
+    public interface SelectionSource { Selection selection(); }
     public record Inspection<S>(String sceneId, long revision, Path document,
                                 S state, List<EditorProject.Node> hierarchy,
                                 Set<Capability> capabilities, List<String> operations, List<String> tests) {}
@@ -36,7 +41,9 @@ public final class EditorAgentService<S> {
         /** Derive metadata from actual native snapshots. Unknown hosts invalidate all dependencies. */
         default EditorChange.Details changes(S before,S after){return EditorChange.Details.full();}
         default DiskState compareSaved(S live)throws IOException{return DiskState.UNSUPPORTED;}
+        default void save()throws IOException{project().save();}
         void reopen() throws IOException;
+        default void didReopen(){}
         default void recoverPrevious()throws IOException{throw new UnsupportedOperationException("Previous-save recovery unavailable");}
         Capture capture(Path destination) throws IOException;
         List<String> tests();
@@ -85,6 +92,12 @@ public final class EditorAgentService<S> {
     public SceneRevision sceneRevision(){
         capable(Capability.INSPECT);
         return new SceneRevision(host.project().id(),host.revision());
+    }
+    public boolean supportsSelection(){capable(Capability.INSPECT);return host instanceof SelectionSource;}
+    public Evidence<Selection> selection(long expected){
+        capable(Capability.INSPECT);require(expected);
+        if(host instanceof SelectionSource source)return evidence(source.selection());
+        throw new UnsupportedOperationException("Host does not expose a selection");
     }
     public record NodePage(int total, int offset, List<EditorProject.Node> nodes) {}
     public record AssetPage(int total,int offset,String catalogFingerprint,List<EditorProject.Asset> assets){}
@@ -225,7 +238,7 @@ public final class EditorAgentService<S> {
         boolean ok=history.redo();if(ok)publish(before,expected);return evidence(ok);
     }
     public Evidence<Path> save(long expected) throws IOException {
-        require(expected);capable(Capability.SAVE);host.validate();host.project().save();saved.run();return evidence(host.project().documentPath());
+        require(expected);capable(Capability.SAVE);host.validate();host.save();saved.run();return evidence(host.project().documentPath());
     }
     /** Reopen is undoable; malformed files cannot replace the live scene. */
     public Evidence<Void> reopen(long expected) throws IOException {
@@ -234,6 +247,7 @@ public final class EditorAgentService<S> {
         try {
             edit(()->{try{host.reopen();}catch(IOException failure){throw new java.io.UncheckedIOException(failure);}});
         } catch(java.io.UncheckedIOException failure) {throw failure.getCause();}
+        host.didReopen();
         return evidence(null);
     }
     public Evidence<Capture> capture(long expected, Path destination) throws IOException {

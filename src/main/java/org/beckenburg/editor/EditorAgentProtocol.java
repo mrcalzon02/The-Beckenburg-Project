@@ -74,6 +74,7 @@ public final class EditorAgentProtocol {
                         case "edit" -> service.transact(revision, java.util.List.of(parseEdit(parts, 2, parts.length)));
                         case "batch" -> service.transact(revision, parseBatch(parts,2));
                         case "node" -> service.node(revision,parts[2]);
+                        case "selection" -> service.selection(revision);
                         case "verify-position" -> service.verifyPosition(revision,parts[2],Double.parseDouble(parts[3]),Double.parseDouble(parts[4]),Double.parseDouble(parts[5]));
                         case "nodes" -> service.nodes(revision,java.util.Arrays.asList(parts).subList(2,parts.length));
                         case "assets" -> service.assets(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));

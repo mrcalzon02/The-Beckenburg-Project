@@ -180,6 +180,7 @@ public final class AssetImportDialog {
     private MaterialReviewFrame projectedFrame;
     private EditorObservationBridge materialObservation;
     private final JMenuItem materialAccess=new JMenuItem("Start local observation…");
+    private final JMenuItem materialEditAccess=new JMenuItem("Start local material editing…");
     private MaterialReviewMip.Cache reviewMips=new MaterialReviewMip.Cache();
     private MaterialReviewStroke projectedStroke;
     private int reviewWidth,reviewHeight;
@@ -297,8 +298,7 @@ public final class AssetImportDialog {
         exportMesh.addActionListener(e->chooseObjExport());
         exportGlb.addActionListener(e->{if(topologyProject==null||busy||modelingPreview!=null)return;var chooser=new JFileChooser();chooser.setDialogTitle("Export a .gltf or .glb copy");chooser.setSelectedFile(topologyProject.documentPath().resolveSibling("mesh-export.glb").toFile());if(chooser.showSaveDialog(dialog)==JFileChooser.APPROVE_OPTION)exportGlb(chooser.getSelectedFile().toPath());});
         reopenMesh.addActionListener(e->{boolean opened=meshEdit(()->{try{
-            topologyProject.reopen();
-            if(path!=null&&path.toAbsolutePath().normalize().equals(topologyProject.documentPath()))reviewedSourceFingerprint=topologyProject.diskFingerprint();
+            reopenAuthoringDocument();
         }catch(IOException failure){throw new java.io.UncheckedIOException(failure);}});if(opened)restoreWorkspace(topologyProject.savedWorkspace());});
         for(var item:List.of(new Object[]{"W",primitiveWidth},new Object[]{"H",primitiveHeight},new Object[]{"D",primitiveDepth},
                 new Object[]{"Segments",primitiveSegments},new Object[]{"Rings/grid",primitiveRings})){
@@ -489,10 +489,18 @@ public final class AssetImportDialog {
     private boolean saveAuthoring(){
         if(topologyProject==null||busy)return false;
         try{
-            topologyProject.save(captureWorkspace());
-            if(path!=null&&path.toAbsolutePath().normalize().equals(topologyProject.documentPath()))reviewedSourceFingerprint=topologyProject.diskFingerprint();
-            details.append("\nSAVED MESH "+topologyProject.documentPath());refreshMeshControls();return true;
+            saveAuthoringDocument();return true;
         }catch(IOException failure){details.append("\nSAVE FAILED: "+failure.getMessage());return false;}
+    }
+    private void updateReviewedFingerprint(){
+        if(path!=null&&path.toAbsolutePath().normalize().equals(topologyProject.documentPath()))reviewedSourceFingerprint=topologyProject.diskFingerprint();
+    }
+    private void saveAuthoringDocument()throws IOException{
+        topologyProject.save(captureWorkspace());updateReviewedFingerprint();
+        details.append("\nSAVED MESH "+topologyProject.documentPath());refreshMeshControls();
+    }
+    private void reopenAuthoringDocument()throws IOException{
+        topologyProject.reopen();updateReviewedFingerprint();
     }
     private void chooseObjExport(){
         if(topologyProject==null||busy||modelingPreview!=null)return;
@@ -660,14 +668,16 @@ public final class AssetImportDialog {
             }catch(RuntimeException failure){materialWorkspace.previewIssue(rootMessage(failure));}});
             materialAccess.addActionListener(e->{
                 if(materialObservation!=null){stopMaterialObservation();return;}
-                try{
-                    var access=startMaterialObservation();
-                    var info=new JTextArea("Address  "+access.url()+"\nAuthorization: Bearer "+access.token(),3,68);
-                    info.setEditable(false);JOptionPane.showMessageDialog(materialDialog,info,"Read-only material observation",JOptionPane.INFORMATION_MESSAGE);
-                }catch(IOException|RuntimeException failure){materialWorkspace.previewIssue(rootMessage(failure));}
+                showMaterialAccess(EditorObservationBridge.Scope.OBSERVE);
+            });
+            materialEditAccess.addActionListener(e->{
+                var disk=new JCheckBox("Also allow saving and reopening this mesh document");
+                if(JOptionPane.showConfirmDialog(materialDialog,new Object[]{"Allow local clients to edit layer opacity and use this document's undo history?",disk},
+                    "Local material editing",JOptionPane.OK_CANCEL_OPTION)==JOptionPane.OK_OPTION)
+                    showMaterialAccess(disk.isSelected()?EditorObservationBridge.Scope.EDIT_AND_SAVE:EditorObservationBridge.Scope.EDIT);
             });
             var fileMenu=new JMenuBar();var file=EditorTopologyWorkspace.menu("File",openPaintRecovery,verify);
-            file.add(materialAccess);fileMenu.add(file);materialDialog.setJMenuBar(fileMenu);
+            file.add(materialAccess);file.add(materialEditAccess);fileMenu.add(file);materialDialog.setJMenuBar(fileMenu);
             var panel=new JPanel(new BorderLayout());panel.add(materialWorkspace,BorderLayout.CENTER);panel.add(paintRecoveryStatus,BorderLayout.SOUTH);
             materialDialog.setContentPane(panel);materialDialog.setSize(1160,760);materialDialog.setMinimumSize(new Dimension(900,600));materialDialog.setLocationRelativeTo(dialog);
         }
@@ -678,21 +688,39 @@ public final class AssetImportDialog {
         if(modelingPreview!=null)clearModelingPreview();
         materialDialog.setVisible(false);
     }
-    EditorObservationBridge startMaterialObservation()throws IOException{
+    private void showMaterialAccess(EditorObservationBridge.Scope scope){
+        try{
+            var access=startMaterialAccess(scope);
+            var info=new JTextArea("Address  "+access.url()+"\nAuthorization: Bearer "+access.token(),3,68);
+            info.setEditable(false);
+            JOptionPane.showMessageDialog(materialDialog,info,scope==EditorObservationBridge.Scope.OBSERVE?
+                "Read-only material observation":"Local material editing and shared undo/redo",JOptionPane.INFORMATION_MESSAGE);
+        }catch(IOException|RuntimeException failure){materialWorkspace.previewIssue(rootMessage(failure));}
+    }
+    EditorObservationBridge startMaterialAccess(EditorObservationBridge.Scope scope)throws IOException{
         if(materialObservation!=null)throw new IllegalStateException("Material observation is already active");
-        materialObservation=new EditorObservationBridge(materialService(),EditorObservationBridge.Scope.OBSERVE,SwingUtilities::invokeLater);
-        materialAccess.setText("Stop local observation");
+        java.util.Objects.requireNonNull(scope);
+        var document=topologyProject;
+        materialObservation=new EditorObservationBridge(materialService(),scope,task->SwingUtilities.invokeLater(()->{
+            try{task.run();}finally{
+                // Failed native batches restore their before-state at a new revision.
+                if(document==topologyProject&&!busy&&!document.isCurrent(workingObservation)){
+                    refreshWorkingObservation();refreshMeshControls();
+                }
+            }
+        }));
+        materialAccess.setText("Stop local access");materialEditAccess.setEnabled(false);
         return materialObservation;
     }
     private void stopMaterialObservation(){
         if(materialObservation!=null){materialObservation.close();materialObservation=null;}
-        materialAccess.setText("Start local observation…");
+        materialAccess.setText("Start local observation…");materialEditAccess.setEnabled(true);
     }
     private EditorAgentService<EditorTopologyProject.State> materialService(){
         var host=new MaterialHost(topologyProject);host.checkAccess();
-        return new EditorAgentService<>(host,meshHistory);
+        return new EditorAgentService<>(host,meshHistory,this::meshChanged,()->{});
     }
-    private final class MaterialHost implements EditorAgentService.Host<EditorTopologyProject.State>{
+    private final class MaterialHost implements EditorAgentService.Host<EditorTopologyProject.State>,EditorAgentService.SelectionSource{
         private final EditorTopologyProject document;
         MaterialHost(EditorTopologyProject document){this.document=document;}
         public void checkAccess(){
@@ -707,13 +735,34 @@ public final class AssetImportDialog {
         }
         public long revision(){return document.revision();}
         public java.util.Set<EditorAgentService.Capability> capabilities(){
-            return java.util.Set.of(EditorAgentService.Capability.INSPECT,EditorAgentService.Capability.CAPTURE,EditorAgentService.Capability.TEST);
+            return java.util.Set.of(EditorAgentService.Capability.INSPECT,EditorAgentService.Capability.CAPTURE,EditorAgentService.Capability.TEST,
+                EditorAgentService.Capability.TRANSACT,EditorAgentService.Capability.UNDO,EditorAgentService.Capability.REDO,
+                EditorAgentService.Capability.SAVE,EditorAgentService.Capability.REOPEN);
         }
-        public List<String> operations(){return List.of();}
+        public List<String> operations(){return List.of("set-layer-opacity");}
+        public Map<String,Map<String,String>> operationParameters(){
+            return Map.of("set-layer-opacity",Map.of("face","integer","layer","string","opacity","integer"));
+        }
+        public EditorAgentService.Selection selection(){
+            if(selectedHit==null)return null;
+            var face=document.snapshot().faces().stream().filter(f->f.id()==selectedHit.faceId()).findFirst().orElse(null);
+            if(face==null)return null;
+            var details=new LinkedHashMap<String,String>();details.put("material",face.material());
+            var layer=paintLayer.getSelectedValue();
+            if(layer!=null){details.put("layer",layer.id());details.put("opacity",Integer.toString(layer.style().opacity()));details.put("blend",layer.style().blend().name());}
+            return new EditorAgentService.Selection("FACE",Long.toString(face.id()),details);
+        }
         public List<String> tests(){return List.of("visible-material");}
-        public void apply(String operation,Map<String,String> arguments){throw new UnsupportedOperationException("Observation only");}
-        public void validate(){throw new UnsupportedOperationException("Observation only");}
-        public void reopen(){throw new UnsupportedOperationException("Observation only");}
+        public void apply(String operation,Map<String,String> arguments){
+            if(!operation.equals("set-layer-opacity")||!arguments.keySet().equals(java.util.Set.of("face","layer","opacity")))
+                throw new IllegalArgumentException("Expected face, layer and opacity");
+            var preview=document.previewLayerOpacity(Long.parseLong(arguments.get("face")),arguments.get("layer"),Integer.parseInt(arguments.get("opacity")));
+            document.applyPreview(preview);
+        }
+        public void validate(){checkAccess();} // Every native preview constructs a validated immutable State.
+        public void save()throws IOException{saveAuthoringDocument();}
+        public void reopen()throws IOException{reopenAuthoringDocument();}
+        public void didReopen(){restoreWorkspace(document.savedWorkspace());}
         private MaterialReviewFrame frame(){
             if(materialRendering||projectedFrame==null||materialRenderState!=document.snapshot()||
                 !(materialRuntime.getIcon() instanceof ImageIcon icon)||icon.getImage()!=projectedFrame.image)

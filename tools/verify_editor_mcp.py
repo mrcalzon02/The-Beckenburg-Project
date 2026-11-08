@@ -19,8 +19,8 @@ async def verify(scope):
         await client.initialize()
         tools = {tool.name: tool for tool in (await client.list_tools()).tools}
         assert ("edit" in tools) == (scope not in ("observe", "material"))
-        assert ("save" in tools) == (scope == "save")
-        assert ("reopen" in tools) == (scope == "save")
+        assert ("save" in tools) == (scope in ("save", "material-save"))
+        assert ("reopen" in tools) == (scope in ("save", "material-save"))
         assert set(tools["verify_position"].inputSchema["required"]) == {"revision", "id", "x", "y", "z"}
 
         async def call(name, **args):
@@ -34,8 +34,14 @@ async def verify(scope):
         assert await call("inspect_scene", revision_only=True) == {"sceneId": state["sceneId"], "revision": revision}
         resource = await client.read_resource("editor://active/summary")
         assert json.loads(resource.contents[0].text) == state
-        if scope == "material":
-            assert state["sceneId"] == os.environ["EDITOR_EXPECT_SCENE"] and state["writeRoutes"] == []
+        if scope in ("material", "material-edit", "material-save"):
+            assert state["sceneId"] == os.environ["EDITOR_EXPECT_SCENE"]
+            routes = set() if scope == "material" else {"/edit", "/undo", "/redo"}
+            if scope == "material-save":
+                routes.update(("/save", "/reopen"))
+            assert set(state["writeRoutes"]) == routes
+            selection = (await call("inspect_selection", revision=revision))["result"]
+            assert selection["kind"] == "FACE" and selection["properties"]["opacity"] == "100"
             key = os.environ["EDITOR_EXPECT_VERTEX"]
             node = (await call("inspect_nodes", revision=revision, ids=[key]))["result"][0]
             assert node["id"] == key and node["kind"] == "VERTEX"
@@ -44,6 +50,32 @@ async def verify(scope):
             captured = await client.call_tool("capture_viewport", {"revision": revision})
             assert not captured.isError and captured.content[0].mimeType == "image/png"
             assert hashlib.sha256(base64.b64decode(captured.content[0].data)).hexdigest() == os.environ["EDITOR_EXPECT_PNG"]
+            if scope != "material":
+                arguments = dict(face=int(selection["id"]), layer=selection["properties"]["layer"], opacity=40)
+                change = dict(operation="set-layer-opacity", arguments=arguments)
+                invalid = dict(operation="set-layer-opacity", arguments=dict(arguments, opacity=101))
+                rejected = await client.call_tool("edit", {"revision": revision, "commands": [change, invalid]})
+                assert rejected.isError
+                revision = (await call("inspect_scene", revision_only=True))["revision"]
+                assert (await call("inspect_selection", revision=revision))["result"] == selection
+                edited = (await call("edit", revision=revision, commands=[change]))["revision"]
+                assert (await call("inspect_selection", revision=edited))["result"]["properties"]["opacity"] == "40"
+                undone = (await call("undo", revision=edited))["revision"]
+                assert (await call("inspect_selection", revision=undone))["result"] == selection
+                redone = (await call("redo", revision=undone))["revision"]
+                assert (await call("inspect_selection", revision=redone))["result"]["properties"]["opacity"] == "40"
+                if scope == "material-save":
+                    await call("save", revision=redone)
+                    xyz = {axis: node[axis] for axis in "xyz"}
+                    assert (await call("verify_position", revision=redone, id=key, **xyz))["result"]["diskState"] == "MATCHES"
+                    later = dict(operation="set-layer-opacity", arguments=dict(arguments, opacity=70))
+                    later_rev = (await call("edit", revision=redone, commands=[later]))["revision"]
+                    assert (await call("verify_position", revision=later_rev, id=key, **xyz))["result"]["diskState"] == "DIFFERS"
+                    reopened = (await call("reopen", revision=later_rev))["revision"]
+                    readback = (await call("inspect_selection", revision=reopened))["result"]
+                    assert readback["id"] == selection["id"] and readback["properties"]["opacity"] == "40"
+                    assert (await call("verify_position", revision=reopened, id=key, **xyz))["result"]["diskState"] == "MATCHES"
+                print("PASS MCP material opacity: rejected batch restored the layer; edit, undo and redo read back")
             print("PASS Material Editor MCP: native vertex, visible face binding and exact displayed runtime PNG")
             return
         if scope == "portable":

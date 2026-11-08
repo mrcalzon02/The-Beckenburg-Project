@@ -101,6 +101,12 @@ def server(editor: LiveEditor):
     def page(route, revision, offset, limit):
         return editor.call(route, {"revision": revision, "offset": offset, "limit": limit})
 
+    if "/selection" in summary["routes"]:
+        @native_tool
+        def inspect_selection(revision: int) -> str:
+            """Read the current human selection and its host-specific properties."""
+            return editor.call("/selection", {"revision": revision})
+
     @native_tool
     def hierarchy(revision: int, offset: int = 0, limit: int = 32) -> str:
         """Read up to 64 hierarchy rows in editor order."""
