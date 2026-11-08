@@ -13,6 +13,13 @@ final class EditorPaintLayer {
 
     private EditorPaintLayer(Map<Integer,int[]> tiles){this.tiles=Collections.unmodifiableMap(tiles);}
     int size(){return tiles.size();}
+    long deltaBytes(EditorPaintLayer after) {
+        if(this==after)return 0;
+        int changed=0;
+        for(var entry:tiles.entrySet())if(entry.getValue()!=after.tiles.get(entry.getKey()))changed++;
+        for(var entry:after.tiles.entrySet())if(entry.getValue()!=tiles.get(entry.getKey()))changed++;
+        return (long)changed*COUNT*Integer.BYTES;
+    }
     EditorPaintLayer stroke(int width,int height,Collection<Integer> texels,int argb) {
         var changed=new HashMap<Integer,int[]>();
         int columns=(width+SIDE-1)/SIDE;

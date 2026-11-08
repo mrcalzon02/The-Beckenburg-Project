@@ -8,22 +8,41 @@ import java.util.Objects;
  */
 public final class EditorHistory<S> {
     private final EditorProject<S> project;
-    private final ArrayDeque<S> undo=new ArrayDeque<>(),redo=new ArrayDeque<>();
+    private record Entry<S>(S state,long bytes) {}
+    private final ArrayDeque<Entry<S>> undo=new ArrayDeque<>(),redo=new ArrayDeque<>();
     private final int capacity;
+    private final long budget;
+    private final java.util.function.ToLongBiFunction<S,S> cost;
+    private long retainedBytes;
     public EditorHistory(EditorProject<S> project,int capacity){
+        this(project,capacity,Long.MAX_VALUE,null);
+    }
+    /** Cost is measured on each successful state transition and follows it between undo and redo. */
+    public EditorHistory(EditorProject<S> project,int capacity,long budget,java.util.function.ToLongBiFunction<S,S> cost){
         this.project=Objects.requireNonNull(project);
-        if(capacity<1)throw new IllegalArgumentException("History must be positive");
+        if(capacity<1 || budget<1)throw new IllegalArgumentException("History capacity and budget must be positive");
+        if(budget!=Long.MAX_VALUE && cost==null)throw new IllegalArgumentException("A finite undo budget requires a cost function");
         this.capacity=capacity;
+        this.budget=budget;
+        this.cost=cost;
     }
     public void execute(Runnable command){
         Objects.requireNonNull(command);
         S before=project.snapshot();
-        try{command.run();}
+        long bytes;
+        try{
+            command.run();
+            bytes=cost==null?0:cost.applyAsLong(before,project.snapshot());
+            if(bytes<0 || bytes>budget)throw new IllegalArgumentException("Edit exceeds undo byte budget");
+        }
         catch(RuntimeException|Error failure){rollback(before,failure);throw failure;}
-        undo.push(before);
-        if(undo.size()>capacity)undo.removeLast();
+        for(var entry:redo)retainedBytes-=entry.bytes();
         redo.clear();
+        while(undo.size()>=capacity || retainedBytes>budget-bytes)retainedBytes-=undo.removeLast().bytes();
+        undo.push(new Entry<>(before,bytes));
+        retainedBytes+=bytes;
     }
+    public long retainedBytes(){return retainedBytes;}
     public boolean canUndo(){return !undo.isEmpty();}
     public boolean isFor(EditorProject<?> candidate){return project==candidate;}
     public boolean canRedo(){return !redo.isEmpty();}
@@ -33,13 +52,15 @@ public final class EditorHistory<S> {
     public boolean undo(){
         if(undo.isEmpty())return false;
         S before=project.snapshot();
-        try{project.restore(undo.peek());}catch(RuntimeException|Error failure){rollback(before,failure);throw failure;}
-        undo.pop();redo.push(before);return true;
+        var entry=undo.peek();
+        try{project.restore(entry.state());}catch(RuntimeException|Error failure){rollback(before,failure);throw failure;}
+        undo.pop();redo.push(new Entry<>(before,entry.bytes()));return true;
     }
     public boolean redo(){
         if(redo.isEmpty())return false;
         S before=project.snapshot();
-        try{project.restore(redo.peek());}catch(RuntimeException|Error failure){rollback(before,failure);throw failure;}
-        redo.pop();undo.push(before);return true;
+        var entry=redo.peek();
+        try{project.restore(entry.state());}catch(RuntimeException|Error failure){rollback(before,failure);throw failure;}
+        redo.pop();undo.push(new Entry<>(before,entry.bytes()));return true;
     }
 }

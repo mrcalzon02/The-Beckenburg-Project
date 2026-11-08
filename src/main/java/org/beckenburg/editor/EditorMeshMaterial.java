@@ -42,6 +42,18 @@ public final class EditorMeshMaterial {
         return layer==paint?this:new EditorMeshMaterial(this,key,layer);
     }
     public int paintedTileCount(){return paint.size();}
+    static long paintHistoryBytes(List<EditorMeshMaterial> before,List<EditorMeshMaterial> after){
+        if(before==after)return 0;
+        var remaining=new HashMap<String,EditorPaintLayer>();
+        for(var m:before)if(m.paintedTileCount()>0)remaining.put(m.key,m.paint);
+        long bytes=0;
+        for(var m:after){
+            var old=remaining.remove(m.key);
+            bytes+=(old==null?EditorPaintLayer.EMPTY:old).deltaBytes(m.paint);
+        }
+        for(var old:remaining.values())bytes+=old.deltaBytes(EditorPaintLayer.EMPTY);
+        return bytes;
+    }
     public byte[] originalPng(){return png.clone();}
     public synchronized byte[] png(){
         if(paint.size()==0)return originalPng();

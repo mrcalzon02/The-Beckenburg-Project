@@ -65,6 +65,10 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     }
     public static EditorTopologyProject fromGlb(String name,byte[] original,Path path)throws IOException{var document=EditorGlbReader.read(original);document.requireEditable();try{var project=fromMesh(document.mesh(name),document.fingerprint(),path);project.snapshotBytes();return project;}catch(IllegalArgumentException invalid){throw new IOException("GLB topology exceeds supported native authoring capabilities",invalid);}}
     public String id(){return id;}
+    public EditorHistory<State> createHistory(int capacity){
+        return new EditorHistory<>(this,capacity,8L*1024*1024,
+            (before,after)->EditorMeshMaterial.paintHistoryBytes(before.materials(),after.materials()));
+    }
     public synchronized String title(){return state.name();}
     public Path documentPath(){return path;}
     public synchronized long revision(){return revision;}

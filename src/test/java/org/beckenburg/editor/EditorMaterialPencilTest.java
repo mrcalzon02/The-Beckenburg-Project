@@ -25,12 +25,39 @@ public final class EditorMaterialPencilTest {
             throw new AssertionError("Paint reader accepted excess tiles");
         } catch(IOException expected) {}
     }
+    private static void historyEviction(EditorTopologyProject p){
+        var clean=p.snapshot();
+        long face=clean.faces().get(10).id();
+        var history=new EditorHistory<>(p,60,3072,(before,after)->
+            EditorMeshMaterial.paintHistoryBytes(before.materials(),after.materials()));
+        history.execute(()->p.applyPreview(p.previewPencil(face,List.of(1),0xffff00ff)));
+        check(history.retainedBytes()==1024,"First stroke retains one new tile");
+        history.execute(()->p.applyPreview(p.previewPencil(face,List.of(1),0xff0000ff)));
+        var blue=p.snapshot();
+        check(history.retainedBytes()==3072,"Replacement charges old and new tile payloads");
+        history.execute(()->p.applyPreview(p.previewPencil(face,List.of(2),0xff00ff00)));
+        check(history.retainedBytes()==2048 && history.undo() && p.snapshot().equals(blue) && !history.canUndo(),
+            "Evict oldest complete transactions at byte budget");
+        check(history.canRedo() && history.retainedBytes()==2048,"Undo and redo share one byte budget");
+        history.execute(()->p.applyPreview(p.previewPencil(face,List.of(3),0xffffffff)));
+        check(history.retainedBytes()==2048 && !history.canRedo(),"A new branch releases redo tile cost");
+        var before=p.snapshot();
+        var small=new EditorHistory<>(p,60,512,(a,b)->EditorMeshMaterial.paintHistoryBytes(a.materials(),b.materials()));
+        try {
+            small.execute(()->p.applyPreview(p.previewPencil(face,List.of(3),0xff00ffff)));
+            throw new AssertionError("Oversized undo accepted");
+        }catch(IllegalArgumentException expected){
+            check(before.equals(p.snapshot()) && !small.canUndo() && small.retainedBytes()==0,"Oversized edit must roll back");
+        }
+        p.restore(clean);
+    }
     public static void main(String[] args)throws Exception {
         historyBudget();
         Path dir=Files.createTempDirectory("pencil-native-");
         try {
             Path glb=Path.of("development/quality/evidence/g2-textured-roundtrip-2026-11-07/edited.glb");
             var project=EditorTopologyProject.fromGlb("box.glb",Files.readAllBytes(glb),dir.resolve("box.btop"));
+            historyEviction(project);
             var original=project.snapshot();
             var face=original.faces().get(10);
             var preview=project.previewPencil(face.id(),List.of(1,2,3),0xffff00ff);

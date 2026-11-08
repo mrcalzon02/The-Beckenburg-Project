@@ -664,7 +664,7 @@ public final class AssetImportDialog {
             Path document=Path.of(System.getProperty("user.home"),".beckenburg","editor","topology",java.util.UUID.randomUUID()+".btop");
             var mesh=new EditorMeshPipeline.Mesh("New mesh",List.of(),0);
             var project=EditorTopologyProject.fromMesh(mesh,EditorMeshPipeline.sourceFingerprint("native-mesh-v1".getBytes(java.nio.charset.StandardCharsets.UTF_8)),document);
-            project.save();clearPrimitivePreview();selectedHit=null;normalAnchor=null;selectionLabel.setText("Click a triangle in the working mesh");topologyProject=project;meshHistory=new EditorHistory<>(project,60);workingObservation=project.observe();source=workingObservation.mesh();result=null;
+            project.save();clearPrimitivePreview();selectedHit=null;normalAnchor=null;selectionLabel.setText("Click a triangle in the working mesh");topologyProject=project;meshHistory=project.createHistory(60);workingObservation=project.observe();source=workingObservation.mesh();result=null;
             path=document;sourceCapture=null;gltfSource=null;paintRecovery=null;paintRecoveryStatus.setText("");reviewedSourceFingerprint=project.diskFingerprint();authoringNote="Native primitive authoring; generated fallback atlas.";sourceTextureBytes=0;
             vertexId.setValue(0L);selectVertex();refreshMeshControls();pathLabel.setText(document.getFileName()+" | native authoring");
             if(slider.getValue()!=0)slider.setValue(0);else recalculate();
@@ -808,7 +808,7 @@ public final class AssetImportDialog {
                 choose.setEnabled(true);busy=false;
                 try{
                     var loaded=get();sourceCapture=loaded.capture();gltfSource=loaded.gltf();source=loaded.mesh();topologyProject=loaded.project();workingObservation=topologyProject==null?null:topologyProject.observe();if(workingObservation!=null)source=workingObservation.mesh();authoringNote=loaded.note();reviewedSourceFingerprint=loaded.reviewedFingerprint();
-                    meshHistory=topologyProject==null?null:new EditorHistory<>(topologyProject,60);
+                    meshHistory=topologyProject==null?null:topologyProject.createHistory(60);
                     paintRecovery=null;paintRecoveryStatus.setText("");path=recovering?topologyProject.documentPath():candidate;vertexId.setValue(topologyProject==null||topologyProject.snapshot().vertices().isEmpty()?0L:topologyProject.snapshot().vertices().get(0).id());
                     selectVertex();refreshMeshControls();slider.setValue(0);
                     pathLabel.setText(candidate.getFileName()+" | "+source.triangles().size()+" source triangles");
