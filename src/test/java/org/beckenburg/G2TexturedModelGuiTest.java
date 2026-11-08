@@ -98,8 +98,10 @@ public final class G2TexturedModelGuiTest {
         for (int i=0;i<12;i++) {
             final int face = i;
             var original=new AtomicReference<EditorMeshPipeline.Mesh>();
+            var graph=new AtomicReference<EditorMeshTopology>();
             edt(() -> {
                 original.set((EditorMeshPipeline.Mesh)field(ui,"source"));
+                graph.set(((EditorTopologyProject.Observation)field(ui,"workingObservation")).topology());
                 var faces = (JList<?>)field(field(ui,"materialWorkspace"),"faceList");
                 faces.clearSelection();
                 faces.setSelectedIndex(face);
@@ -115,6 +117,8 @@ public final class G2TexturedModelGuiTest {
             edt(() -> {
                 var next=(EditorMeshPipeline.Mesh)field(ui,"source");
                 check(next.equals(project.mesh()),"Incremental viewport must equal full native derivation");
+                check(((EditorTopologyProject.Observation)field(ui,"workingObservation")).topology()==graph.get(),
+                    "Material-only edits retain native adjacency");
                 for (int j=0;j<next.triangles().size();j++) {
                     var prior=original.get().triangles().get(j);
                     var current=next.triangles().get(j);

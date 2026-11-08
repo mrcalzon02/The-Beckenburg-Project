@@ -92,6 +92,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         private Observation(EditorTopologyProject owner,State state,long revision){this.owner=owner;this.state=state;this.revision=revision;}
         private Map<Long,Vertex> vertexIndex;
         private volatile EditorMeshPipeline.Mesh derivedMesh;
+        private volatile EditorMeshTopology derivedTopology;
         /** Lookup in this immutable native observation. Built once per gesture when needed. */
         public synchronized Vertex vertex(long id) {
             if (vertexIndex==null) vertexIndex=indexVertices(state.vertices());
@@ -103,7 +104,10 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             if(derivedMesh==null) derivedMesh=EditorTopologyProject.mesh(state);
             return derivedMesh;
         }
-        public EditorMeshTopology topology(){return EditorTopologyProject.topology(state,mesh());}
+        public synchronized EditorMeshTopology topology(){
+            if (derivedTopology==null) derivedTopology=EditorTopologyProject.topology(state,mesh());
+            return derivedTopology;
+        }
         /** Ordered native vertices on the manifold boundary containing the picked edge. */
         public List<Vertex> boundaryLoop(long first, long second) {
             var graph = topology();
@@ -139,6 +143,9 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         var next=observe();
         if (previous!=null && previous.owner==this && previous.derivedMesh!=null) {
             next.derivedMesh=state==previous.state ? previous.derivedMesh : updateMesh(previous.derivedMesh,state);
+            if (previous.derivedTopology!=null)
+                next.derivedTopology=previous.derivedTopology.update(previous.derivedMesh,next.derivedMesh,
+                    previous.state.vertices(),state.vertices());
         }
         return next;
     }

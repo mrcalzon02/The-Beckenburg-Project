@@ -41,6 +41,46 @@ public final class EditorMeshUpdateTest {
         doc.restore(initial);
         if (!doc.observe(after).mesh().equals(before.mesh())) throw new AssertionError("Restore lost original connectivity");
     }
+    private static void checkSeamUpdate() {
+        var doc=EditorTopologyProject.fromMesh(new EditorMeshPipeline.Mesh("seams",List.of(),0),
+            "0".repeat(64),Path.of("seams.btop"));
+        var empty=doc.snapshot();
+        var vertices=List.of(new Vertex(0,"grid",0,0,0),new Vertex(1,"grid",1,0,0),
+            new Vertex(2,"grid",0,1,0),new Vertex(3,"grid",1,1,0));
+        var first=face(0,0,1,2);
+        var second=new Face(1,"grid",new Corner(1,1,0),new Corner(3,1,1),new Corner(2,0,1));
+        var original=new State(empty.sceneId(),empty.sourceFingerprint(),"seams",0,vertices,List.of(first,second));
+        doc.restore(original);
+        var before=doc.observe();
+        var noSeams=before.topology();
+        var edit=new Face(1,"grid",new Corner(1,.5,0),second.b(),second.c());
+        doc.restore(new State(original.sceneId(),original.sourceFingerprint(),"seams",0,vertices,List.of(first,edit)));
+        var after=doc.observe(before);
+        var withSeam=after.topology();
+        var fresh=doc.topology();
+        if (noSeams.uvSeams()!=0 || withSeam.uvSeams()!=1 || !fresh.edges().equals(withSeam.edges()) ||
+            withSeam.edges().get(0)!=noSeams.edges().get(0) || withSeam.faces().get(0)!=noSeams.faces().get(0))
+            throw new AssertionError("UV edits must update the twin seam and reuse unchanged adjacency");
+        doc.restore(original);
+        var restored=doc.observe(after).topology();
+        if (restored.uvSeams()!=0 || !restored.edges().equals(noSeams.edges()))
+            throw new AssertionError("Restoring UVs must clear both half-edge seams");
+        var positions=new ArrayList<>(vertices);
+        positions.set(3,new Vertex(3,"grid",1,1,.25));
+        doc.restore(new State(original.sceneId(),original.sourceFingerprint(),"seams",0,positions,original.faces()));
+        var shifted=doc.observe(before);
+        var shiftedGraph=shifted.topology();
+        if (!shiftedGraph.vertices().equals(doc.topology().vertices()) || shiftedGraph.edges()!=noSeams.edges() ||
+            shiftedGraph.vertices().get(0)!=noSeams.vertices().get(0) || noSeams.vertices().get(3).z()!=0)
+            throw new AssertionError("Vertex movement must retain unchanged positions and native adjacency");
+        positions.set(3,new Vertex(3,"grid",1,0,0));
+        doc.restore(new State(original.sceneId(),original.sourceFingerprint(),"seams",0,positions,original.faces()));
+        var collapsed=doc.observe(shifted);
+        if (collapsed.topology().manifold() || !collapsed.topology().issues().equals(doc.topology().issues()))
+            throw new AssertionError("Collapsed face must report the full native diagnostic");
+        doc.restore(original);
+        if (!doc.observe(collapsed).topology().manifold()) throw new AssertionError("Repair retained stale diagnostics");
+    }
     private static void checkPickingRefit() {
         var vertices=new ArrayList<Vertex>();
         var faces=new ArrayList<Face>();
@@ -87,6 +127,7 @@ public final class EditorMeshUpdateTest {
     }
     public static void main(String[] args) {
         checkConnectivityChange();
+        checkSeamUpdate();
         checkPickingRefit();
         var project=EditorTopologyProject.fromMesh(new EditorMeshPipeline.Mesh("grid",List.of(),0),
             "0".repeat(64),Path.of("grid.btop"));
@@ -106,8 +147,13 @@ public final class EditorMeshUpdateTest {
         project.restore(initial);
         var before=project.observe();
         var original=before.mesh();
+        var graph=before.topology();
         project.moveVertex(0,0,0,.25);
-        var updated=project.observe(before).mesh();
+        var observation=project.observe(before);
+        var updated=observation.mesh();
+        var movedGraph=observation.topology();
+        if (graph.edges().size()!=360000 || movedGraph.edges()!=graph.edges() || !movedGraph.manifold() ||
+            movedGraph.vertices().get(0).z()!=.25) throw new AssertionError("Maximum mesh did not reuse valid adjacency");
         int replacements=0, corners=0;
         for (int i=0;i<original.triangles().size();i++) {
             var prior=original.triangles().get(i);
