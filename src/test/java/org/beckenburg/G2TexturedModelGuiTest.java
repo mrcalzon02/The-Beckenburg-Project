@@ -133,6 +133,7 @@ public final class G2TexturedModelGuiTest {
             catch (Exception e) { throw new RuntimeException(e); }
         });
         verifyVisibility();
+        verifyTiledPencil(png);
         verifyPencil(png);
         edt(() -> {
             var window = (JDialog)field(ui,"materialDialog");
@@ -148,6 +149,65 @@ public final class G2TexturedModelGuiTest {
             "Captured original PNG bytes");
         check(state.faces().stream().allMatch(f -> f.material().equals(state.materials().get(0).key())),
             "All native faces must use the selected material");
+    }
+    private void verifyTiledPencil(Path png)throws Exception{
+        var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+        var before=project.snapshot();
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            select("materialWrap",2);
+            ui.previewPngMaterial(png);
+        });
+        applyReview();
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(11);
+            ui.previewPngMaterial(png);
+        });
+        applyReview();
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            ((JComboBox<?>)field(ui,"uvOperation")).setSelectedItem(EditorTopologyProject.UvTransform.MOVE);
+            select("uvScope",0);spin("uvFirst",1d);spin("uvSecond",-1d);
+            button(ui,"previewUv");
+        });
+        applyReview();
+        edt(()->{
+            button(workspace,"faceTile");
+            check(workspace.tile().equals(new EditorUvTile(1,-1)),"Locate the selected face in its actual UV tile");
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(11);
+            var canvas=(JPanel)field(workspace,"canvas");
+            double[] r=(double[])call(workspace,"imageRect",new Class<?>[0]);
+            int x=(int)(r[0]+.375*r[2]),y=(int)(r[1]+.625*r[3]);
+
+            canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,java.awt.event.MouseEvent.MOUSE_PRESSED,
+                System.currentTimeMillis(),0,x,y,1,false,1));
+            check(((EditorMeshPicking.Hit)field(ui,"selectedHit")).faceId()==before.faces().get(10).id(),"Pick mirrored face");
+            ((JToggleButton)field(workspace,"pencil")).doClick();
+            for(int type:List.of(java.awt.event.MouseEvent.MOUSE_PRESSED,java.awt.event.MouseEvent.MOUSE_RELEASED))
+                canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,type,System.currentTimeMillis(),0,x,y,1,false,1));
+        });
+        applyReview();
+        await(()->{try{return !(boolean)field(ui,"materialRendering") && field(ui,"materialRenderState")==project.snapshot() &&
+            ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}catch(Exception e){throw new RuntimeException(e);}});
+        edt(()->{
+            var shown=(EditorMeshMaterial)((JComboBox<?>)field(ui,"materialList")).getSelectedItem();
+            check(shown.key().equals(project.snapshot().faces().get(10).material()) && shown.paintedTileCount()==1,
+                "Swatch must show the actual edited binding even when PNG names match");
+            captureMaterial("tiled-material.png");
+        });
+        edt(()->button(ui,"apply"));
+        await(()->published.get()!=null);
+        var game=GlbProps.model(published.get());
+        int binding=game.triangles().get(10).material();
+        check(GlbProps.sampleRgba(binding,1.625,-.625)==0xffff00ff,"Published mirrored UV samples the painted image pixel");
+        check(GlbProps.sampleRgba(binding,1.875,-.625)==0xff0000ff,"Adjacent original blue texel remains unchanged");
+        published.set(null);
+        edt(()->{
+            ((JToggleButton)field(workspace,"pencil")).doClick();
+            ((JSpinner)field(workspace,"tileU")).setValue(0);((JSpinner)field(workspace,"tileV")).setValue(0);
+        });
+        for(int i=0;i<4;i++){edt(()->button(ui,"undoMesh"));await(()->ready(ui));}
+        check(project.snapshot().equals(before),"Undo restores the original sampler, UVs and pixels");
     }
     private void verifyVisibility() throws Exception {
         var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");

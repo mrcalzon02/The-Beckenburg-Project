@@ -119,6 +119,33 @@ public final class EditorMaterialPencilTest {
             EditorObjBundle.validate(state,Files.readAllBytes(dir.resolve(name+".obj.zip")));
         }
     }
+    private static void tiledFace(EditorTopologyProject p)throws Exception{
+        var original=p.snapshot();
+        long face=original.faces().get(10).id();
+        byte[] png=Files.readAllBytes(Path.of("development/quality/evidence/material-pencil-2026-11-07/checker.png"));
+        for(int wrap:List.of(10497,33648))for(var origin:EditorMeshMaterial.Origin.values()){
+            var binding=EditorMeshMaterial.fromPng("tile.png",png,wrap,wrap,EditorMeshMaterial.Alpha.OPAQUE,origin);
+            p.applyPreview(p.previewBindMaterial(face,binding));
+            p.applyPreview(p.previewUvTransform(face,false,EditorTopologyProject.UvTransform.MOVE,.75,-.25,false));
+            var current=p.snapshot();
+            int row=wrap==10497?3:0;
+            boolean bottom=origin==EditorMeshMaterial.Origin.BOTTOM_LEFT;
+            int left=3+4*(bottom?3-row:row);
+            int right=(wrap==10497?1:2)+(bottom?12:0);
+            try{
+                p.previewPencil(face,"paint",List.of(left),0xff00ffff,new EditorUvTile(-5,1));
+                throw new AssertionError("Painted an unrelated UV tile");
+            }catch(IllegalArgumentException expected){check(p.snapshot()==current,"Rejected tile changed geometry");}
+            p.applyPreview(p.previewPencil(face,"paint",List.of(left),0xff00ffff,new EditorUvTile(0,-1)));
+            p.applyPreview(p.previewPencil(face,"paint",List.of(right),0xffff00ff,new EditorUvTile(1,0)));
+            var material=p.snapshot().materials().stream().filter(m->m.key().equals(binding.key())).findFirst().orElseThrow();
+            var im=javax.imageio.ImageIO.read(new ByteArrayInputStream(material.png()));
+            check(im.getRGB(left%4,left/4)==0xff00ffff && im.getRGB(right%4,right/4)==0xffff00ff,
+                "Both sides of a tile boundary must address the expected original-image texels");
+            EditorGlbWriter.validate(p.mesh(),EditorGlbWriter.encode(p.mesh()));
+            p.restore(original);
+        }
+    }
     public static void main(String[] args)throws Exception {
         historyBudget();
         blendModes();
@@ -129,6 +156,7 @@ public final class EditorMaterialPencilTest {
             var project=EditorTopologyProject.fromGlb("box.glb",Files.readAllBytes(glb),dir.resolve("box.btop"));
             historyEviction(project);
             stackContracts(project);
+            tiledFace(project);
             var original=project.snapshot();
             var face=original.faces().get(10);
             var preview=project.previewPencil(face.id(),List.of(1,2,3),0xffff00ff);

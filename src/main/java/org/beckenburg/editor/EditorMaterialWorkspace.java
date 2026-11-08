@@ -42,6 +42,15 @@ public final class EditorMaterialWorkspace extends JPanel {
     private Color paintColor=new Color(255,0,255);
     private java.util.LinkedHashSet<Integer> stroke;
     private Point lastPixel;
+    private final JSpinner tileU=tileSpinner(),tileV=tileSpinner();
+    private final JButton faceTile=new JButton("Face tile");
+    private EditorUvTile tile=EditorUvTile.ORIGIN;
+    public EditorUvTile tile(){return tile;}
+    private static JSpinner tileSpinner(){
+        var spinner=new JSpinner(new SpinnerNumberModel(0,Integer.MIN_VALUE,Integer.MAX_VALUE,1));
+        ((JSpinner.DefaultEditor)spinner.getEditor()).getTextField().setColumns(5);
+        return spinner;
+    }
     private int strokeColor;
     private final LongConsumer selection;
     private final DefaultListModel<EditorTopologyProject.Face> faces=new DefaultListModel<>();
@@ -75,6 +84,17 @@ public final class EditorMaterialWorkspace extends JPanel {
         canvas.setBackground(new Color(29,33,39));canvas.setPreferredSize(new Dimension(520,500));
         var reset=new JButton("Fit texture");reset.addActionListener(e->{zoom=1;panX=panY=0;canvas.repaint();});
         var center=new JPanel(new BorderLayout(3,5));var heading=new JPanel(new BorderLayout());heading.add(new JLabel("TEXTURE / UV VIEW"),BorderLayout.WEST);heading.add(reset,BorderLayout.EAST);center.add(heading,BorderLayout.NORTH);center.add(canvas,BorderLayout.CENTER);
+        var tiles=new JPanel(new FlowLayout(FlowLayout.LEFT,5,1));
+        tiles.add(new JLabel("Tile U"));tiles.add(tileU);tiles.add(new JLabel("V"));tiles.add(tileV);tiles.add(faceTile);
+        center.add(tiles,BorderLayout.SOUTH);
+        tileU.addChangeListener(e->changeTile());tileV.addChangeListener(e->changeTile());
+        faceTile.setToolTipText("Show the UV tile containing the center of the selected face");
+        faceTile.addActionListener(e->{
+            var f=faceList.getSelectedValue();
+            if(f==null)return;
+            var target=new EditorUvTile(centerTile(f.a().u(),f.b().u(),f.c().u()),centerTile(f.a().v(),f.b().v(),f.c().v())).forMaterial(material);
+            tileU.setValue(target.u());tileV.setValue(target.v());
+        });
         var paintTools=new JPanel(new FlowLayout(FlowLayout.CENTER,4,0));
         pencil.setToolTipText("Drag to preview a one-texel stroke. Shift-drag erases the paint layer. Escape cancels the drag.");
         paintTools.add(pencil);paintTools.add(ink);heading.add(paintTools,BorderLayout.CENTER);
@@ -121,6 +141,11 @@ public final class EditorMaterialWorkspace extends JPanel {
         var bottom=new JPanel(new BorderLayout(4,4));bottom.add(status,BorderLayout.NORTH);bottom.add(commands,BorderLayout.SOUTH);add(bottom,BorderLayout.SOUTH);
     }
     public void setPencilAction(PencilAction action){pencilAction=action;}
+    private static int centerTile(double a,double b,double c){return (int)Math.floor(a/3+b/3+c/3);}
+    private void changeTile(){
+        tile=new EditorUvTile((Integer)tileU.getValue(),(Integer)tileV.getValue());
+        stroke=null;lastPixel=null;canvas.repaint();
+    }
     private void sample(Point mouse) {
         var r=imageRect();
         int x=(int)Math.floor((mouse.x-r[0])*material.width()/r[2]),y=(int)Math.floor((mouse.y-r[1])*material.height()/r[3]);
@@ -150,7 +175,9 @@ public final class EditorMaterialWorkspace extends JPanel {
     public void observe(EditorTopologyProject.State value,Long face,EditorMeshMaterial displayed,boolean pending){
         if(state!=value || !java.util.Objects.equals(selectedFace,face) || pending){stroke=null;lastPixel=null;}
         if(state==null || value==null || !state.sceneId().equals(value.sceneId()) ||
-            !state.sourceFingerprint().equals(value.sourceFingerprint())) visibility=ALL;
+            !state.sourceFingerprint().equals(value.sourceFingerprint())){
+            visibility=ALL;tileU.setValue(0);tileV.setValue(0);
+        }
         if(state!=value || refreshRows){state=value;refreshRows=false;updating=true;faces.clear();if(value!=null)for(var f:value.faces())if(visibility.includes(f.id()))faces.addElement(f);updating=false;}
         selectedFace=face!=null && visibility.includes(face) ? face : null;
         updating=true;faceList.clearSelection();for(int i=0;i<faces.size();i++)if(selectedFace!=null&&faces.get(i).id()==selectedFace)faceList.setSelectedIndex(i);updating=false;
@@ -160,11 +187,16 @@ public final class EditorMaterialWorkspace extends JPanel {
         pencil.setEnabled(!pending && bound && pencilAction!=null);
         ink.setEnabled(pencil.isEnabled());
         if(!java.util.Objects.equals(material,displayed)){material=displayed;texture=null;if(displayed!=null)try{texture=ImageIO.read(new ByteArrayInputStream(displayed.png()));}catch(IOException bad){throw new UncheckedIOException(bad);}}
+        var allowed=tile.forMaterial(material);
+        tileU.setValue(allowed.u());tileV.setValue(allowed.v());
+        tileU.setEnabled(!pending && (material==null || material.wrapS()!=33071));
+        tileV.setEnabled(!pending && (material==null || material.wrapT()!=33071));
+        faceTile.setEnabled(!pending && selectedFace!=null);
         status.setText((pending?"PREVIEW / Apply or Cancel":"NATIVE DOCUMENT")+" | "+(selectedFace==null?"Select a face":"Face "+selectedFace)+" | "+(displayed==null?"Unbound material":displayed.name()+" / "+displayed.width()+" x "+displayed.height()+" / "+displayed.origin())+" | Wheel zoom / middle-drag pan");canvas.repaint();
     }
     private double[] imageRect(){double size=Math.max(20,Math.min(canvas.getWidth()-40,canvas.getHeight()-40))*zoom;double w=texture==null?size:size*texture.getWidth()/Math.max(texture.getWidth(),texture.getHeight()),h=texture==null?size:size*texture.getHeight()/Math.max(texture.getWidth(),texture.getHeight());return new double[]{(canvas.getWidth()-w)/2+panX,(canvas.getHeight()-h)/2+panY,w,h};}
-    private int x(double u,double[] r){return (int)Math.round(r[0]+u*r[2]);}
-    private int y(double v,double[] r){return (int)Math.round(r[1]+(material!=null&&material.origin()==EditorMeshMaterial.Origin.TOP_LEFT?v:1-v)*r[3]);}
+    private int x(double u,double[] r){return (int)Math.rint(r[0]+tile.imageU(u,material)*r[2]);}
+    private int y(double v,double[] r){return (int)Math.rint(r[1]+tile.imageV(v,material)*r[3]);}
     private void paintTexture(Graphics2D original){var g=(Graphics2D)original.create();try{
         double[] r=imageRect();int left=(int)r[0],top=(int)r[1],w=(int)r[2],h=(int)r[3];g.clipRect(left,top,w+1,h+1);
         for(int yy=top;yy<top+h;yy+=16)for(int xx=left;xx<left+w;xx+=16){g.setColor(((xx-left)/16+(yy-top)/16)%2==0?new Color(82,86,91):new Color(56,60,65));g.fillRect(xx,yy,16,16);}
@@ -190,8 +222,10 @@ public final class EditorMaterialWorkspace extends JPanel {
             boolean chosen=selectedFace!=null&&face.id()==selectedFace;g.setColor(chosen?new Color(255,219,80):new Color(220,235,248,140));g.setStroke(new BasicStroke(chosen?3:1));var corners=List.of(face.a(),face.b(),face.c());for(int i=0;i<3;i++){var a=corners.get(i);var b=corners.get((i+1)%3);g.drawLine(x(a.u(),r),y(a.v(),r),x(b.u(),r),y(b.v(),r));}
         }
     }finally{g.dispose();}}
-    private void pick(Point point){if(state==null)return;double[] r=imageRect();double u=(point.x-r[0])/r[2],v=(point.y-r[1])/r[3];if(material==null||material.origin()==EditorMeshMaterial.Origin.BOTTOM_LEFT)v=1-v;
-        for(int i=faces.size()-1;i>=0;i--){var f=faces.get(i);if(material==null?!f.material().isEmpty():!f.material().equals(material.key()))continue;double a=cross(f.a(),f.b(),u,v),b=cross(f.b(),f.c(),u,v),c=cross(f.c(),f.a(),u,v);double area=cross(f.a(),f.b(),f.c().u(),f.c().v());if(Math.abs(area)>1e-15&&(a>=0&&b>=0&&c>=0||a<=0&&b<=0&&c<=0)){selection.accept(f.id());return;}}
+    private void pick(Point point){if(state==null)return;double[] r=imageRect();
+        double x=(point.x-r[0])/r[2],y=(point.y-r[1])/r[3];
+        if(x<0 || x>1 || y<0 || y>1)return;
+        double u=tile.nativeU(x,material),v=tile.nativeV(y,material);
+        for(int i=faces.size()-1;i>=0;i--){var f=faces.get(i);if(material==null?!f.material().isEmpty():!f.material().equals(material.key()))continue;if(EditorUvTile.contains(f,u,v)){selection.accept(f.id());return;}}
     }
-    private static double cross(EditorTopologyProject.Corner a,EditorTopologyProject.Corner b,double u,double v){return (b.u()-a.u())*(v-a.v())-(b.v()-a.v())*(u-a.u());}
 }

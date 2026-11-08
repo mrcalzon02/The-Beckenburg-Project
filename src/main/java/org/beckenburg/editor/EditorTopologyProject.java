@@ -504,18 +504,20 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         return previewPencil(faceId,null,texels,color);
     }
     public synchronized EditPreview previewPencil(long faceId,String layer,Collection<Integer> texels,int color) {
+        return previewPencil(faceId,layer,texels,color,EditorUvTile.ORIGIN);
+    }
+    public synchronized EditPreview previewPencil(long faceId,String layer,Collection<Integer> texels,int color,EditorUvTile tile) {
         var face=state.faces().stream().filter(f->f.id()==faceId).findFirst().orElseThrow();
         var material=state.materials().stream().filter(m->m.key().equals(face.material())).findFirst()
             .orElseThrow(()->new IllegalArgumentException("Bind a PNG before painting"));
         if(texels.isEmpty() || texels.size()>65536)throw new IllegalArgumentException("Stroke exceeds texel budget");
+        if(!tile.equals(tile.forMaterial(material)))throw new IllegalArgumentException("Clamped texture axis requires tile zero");
         var inside=new ArrayList<Integer>();
         for(int p:texels){
             if(p<0 || p>=material.width()*material.height())throw new IllegalArgumentException("Paint outside texture");
-            double u=(p%material.width()+.5)/material.width(),v=(p/material.width()+.5)/material.height();
-            if(material.origin()==EditorMeshMaterial.Origin.BOTTOM_LEFT)v=1-v;
-            double a=uvSide(face.a(),face.b(),u,v),b=uvSide(face.b(),face.c(),u,v),c=uvSide(face.c(),face.a(),u,v);
-            if (Math.abs(uvSide(face.a(),face.b(),face.c().u(),face.c().v()))>1e-15 &&
-                ((a>=0&&b>=0&&c>=0)||(a<=0&&b<=0&&c<=0))) inside.add(p);
+            double u=tile.nativeU((p%material.width()+.5)/material.width(),material);
+            double v=tile.nativeV((p/material.width()+.5)/material.height(),material);
+            if(EditorUvTile.contains(face,u,v))inside.add(p);
         }
         if(inside.isEmpty())throw new IllegalArgumentException("No texel centers inside the selected face");
         var painted=material.pencil(material.key(),layer==null?material.layers().get(0).id():layer,inside,color);
@@ -567,9 +569,6 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             case REMOVE -> stack.remove(id);
         };
         return previewMaterialChange(material,material.withStack(next),"BASE COLOR / "+edit);
-    }
-    private static double uvSide(Corner a,Corner b,double u,double v){
-        return (b.u()-a.u())*(v-a.v())-(b.v()-a.v())*(u-a.u());
     }
     /** UV islands follow actual half-edge twins, authored seams and material boundaries. */
     public synchronized EditPreview previewUvTransform(long faceId,boolean island,UvTransform operation,double first,double second,boolean origin){

@@ -179,6 +179,8 @@ public final class AssetImportDialog {
     private double materialRenderedRotation=Double.NaN;
     private boolean materialRendering;
     private EditorTopologyProject.State listedMaterials;
+    private Long listedMaterialFace;
+    private boolean updatingMaterialList;
     private EditorObjMaterials.Capture sourceCapture;
     private EditorGltfSource gltfSource;
     private EditorPaintRecovery paintRecovery;
@@ -270,7 +272,7 @@ public final class AssetImportDialog {
         faceOperation.addActionListener(e->clearModelingPreview());faceAmount.addChangeListener(e->clearModelingPreview());
         materialSwatch.setPreferredSize(new Dimension(250,112));
         materialList.setRenderer(new DefaultListCellRenderer(){public Component getListCellRendererComponent(JList<?> list,Object value,int index,boolean selected,boolean focus){putClientProperty("html.disable",true);return super.getListCellRendererComponent(list,value,index,selected,focus);}});
-        materialList.addActionListener(e->{refreshMaterialSwatch();refreshMaterialWindow();});
+        materialList.addActionListener(e->{if(!updatingMaterialList){refreshMaterialSwatch();refreshMaterialWindow();}});
         openMaterials.addActionListener(e->openMaterials());
         uvOperation.addActionListener(e->{clearModelingPreview();var operation=(EditorTopologyProject.UvTransform)uvOperation.getSelectedItem();uvFirstLabel.setText(operation==EditorTopologyProject.UvTransform.ROTATE?"Degrees":operation==EditorTopologyProject.UvTransform.SCALE?"U factor":"U distance");uvSecondLabel.setText(operation==EditorTopologyProject.UvTransform.SCALE?"V factor":"V distance");uvSecond.setVisible(operation!=EditorTopologyProject.UvTransform.ROTATE);uvSecondLabel.setVisible(operation!=EditorTopologyProject.UvTransform.ROTATE);uvFirst.setValue(operation==EditorTopologyProject.UvTransform.ROTATE?90d:operation==EditorTopologyProject.UvTransform.SCALE?1d:.1);uvSecond.setValue(operation==EditorTopologyProject.UvTransform.SCALE?1d:0d);});
         uvScope.addActionListener(e->clearModelingPreview());uvPivot.addActionListener(e->clearModelingPreview());uvFirst.addChangeListener(e->clearModelingPreview());uvSecond.addChangeListener(e->clearModelingPreview());
@@ -556,8 +558,9 @@ public final class AssetImportDialog {
             });
             materialWorkspace.setPencilAction((face,texels,color)->{
                 var layer=paintLayer.getSelectedValue();
+                var tile=materialWorkspace.tile();
                 if(!busy && modelingPreview==null && layer!=null && materialWorkspace.visibility().includes(face))
-                    beginMaterialPreview(p->p.previewPencil(face,layer.id(),texels,color));
+                    beginMaterialPreview(p->p.previewPencil(face,layer.id(),texels,color,tile));
             });
             var fileMenu=new JMenuBar();fileMenu.add(EditorTopologyWorkspace.menu("File",openPaintRecovery));materialDialog.setJMenuBar(fileMenu);
             var panel=new JPanel(new BorderLayout());panel.add(materialWorkspace,BorderLayout.CENTER);panel.add(paintRecoveryStatus,BorderLayout.SOUTH);
@@ -647,7 +650,27 @@ public final class AssetImportDialog {
         if(restoringWorkspace)return;
         if (edgeObservation != null && !hasEdgeSelection()) clearEdgeSelection();
         var materialState=topologyProject==null?null:topologyProject.snapshot();
-        if(listedMaterials!=materialState){listedMaterials=materialState;Object selected=materialList.getSelectedItem();materialList.removeAllItems();if(materialState!=null)for(var m:materialState.materials())materialList.addItem(m);if(selected!=null)for(int i=0;i<materialList.getItemCount();i++)if(materialList.getItemAt(i).equals(selected))materialList.setSelectedIndex(i);refreshMaterialSwatch();}
+        Long faceId=selectedHit==null?null:selectedHit.faceId();
+        if(listedMaterials!=materialState || !java.util.Objects.equals(faceId,listedMaterialFace)){
+            var previous=(EditorMeshMaterial)materialList.getSelectedItem();
+            String key=previous==null?"":previous.key();
+            if(materialState!=null && faceId!=null)for(var face:materialState.faces())if(face.id()==faceId){
+                if(!face.material().isEmpty())key=face.material();
+                break;
+            }
+            updatingMaterialList=true;
+            try{
+                if(listedMaterials!=materialState){
+                    materialList.removeAllItems();
+                    if(materialState!=null)for(var m:materialState.materials())materialList.addItem(m);
+                }
+                for(int i=0;i<materialList.getItemCount();i++)if(materialList.getItemAt(i).key().equals(key)){
+                    materialList.setSelectedIndex(i);break;
+                }
+                listedMaterials=materialState;listedMaterialFace=faceId;
+            }finally{updatingMaterialList=false;}
+            refreshMaterialSwatch();
+        }
 
         if(topologyProject==null?listedParts!=null:listedParts!=topologyProject.snapshot()){refreshPartRows();if(topologyProject==null)listedParts=null;}
 
