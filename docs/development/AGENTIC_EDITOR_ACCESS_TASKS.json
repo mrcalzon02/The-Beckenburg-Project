@@ -812,6 +812,18 @@
         "Exact current-source CI not yet terminal",
         "Authenticated MCP, full G0-G12 and physical installed/hardware gates remain separate"
       ]
+    },
+    {
+      "sourceSha": "dcd23da27dcd8c8b71ba77203f011b6f17c8250e",
+      "scope": "Installed Castle furnishing and collision, human and agent gameplay, mesh stdio parity, idempotent actions and bounded audit events",
+      "nativeHostCi": {"run": 42494433267, "status": "completed", "conclusion": "success"},
+      "standaloneCi": {"run": 42494433465, "status": "completed", "conclusion": "success"},
+      "evidence": "development/quality/evidence/agent-upper-furnishing-2026-11-08",
+      "limitations": [
+        "The actor's playtest starts at the native player spawn. Upper-floor before/after PNGs come from the editor camera.",
+        "Eleven light-wall advisories remain in the Castle audit.",
+        "Receipts and action history are scoped to a live session. Subsequent processes must inspect the native document."
+      ]
     }
   ],
   "nextGoalWork": [
