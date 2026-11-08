@@ -3164,7 +3164,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3216,7 +3216,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -4089,7 +4089,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
           "evidence": [
             "development/levels/rebuild/structures/wld-11/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4141,7 +4141,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -4652,7 +4652,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
           "evidence": [
             "development/levels/rebuild/structures/wld-14/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4709,7 +4709,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
           "evidence": [
             "development/levels/rebuild/wld-14/terrain-world/verification.json",
             "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
@@ -4853,7 +4853,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
           "evidence": [
             "development/levels/rebuild/structures/wld-15/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4907,7 +4907,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -5042,7 +5042,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
           "evidence": [
             "development/levels/rebuild/structures/wld-16/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -5094,7 +5094,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -5792,6 +5792,6 @@
       "WLD-16"
     ],
     "evidence": "development/levels/rebuild/deck-fit-pass/roster.json",
-    "source_sha": null
+    "source_sha": "790b3cc4a9ac4fef6ad66bc54c4f6f22ece6a93d"
   }
 }
