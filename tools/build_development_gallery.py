@@ -19,6 +19,7 @@ for path in sorted(set(paths)):
     kind='Development review'
     if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
     elif '/hiding-energy/' in path:kind='Runtime hiding-location energy material'
+    elif '/house-final-lighting/' in path:kind='Runtime matched House door and circuit lighting review'
     elif '/house-functional-fill/' in path:kind='Rejected runtime inspection' if p.stem.startswith('rejected-') else 'Native geometry overview' if p.stem.startswith('native-') else 'Runtime daily household and garden functions'
     elif '/house-template-compatibility/' in path:kind='Rejected runtime layout inspection' if p.stem.startswith('rejected-') else 'Runtime native editor custom House compatibility'
     elif '/house-native-migration/' in path:kind='Runtime saved native House migration'

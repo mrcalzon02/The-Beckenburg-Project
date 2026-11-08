@@ -395,3 +395,11 @@ Encounter WIP d8e6da1c is preserved and remotely verified on map/house-encounter
 Isolated corrupt-primary recovery implementationf3e215fc6c7c9c39464edd405645835a48cfb9ad; exact expanded native/CLI tests and control capture are committed. Publish isolated checkpoint and rerun failed native acceptance; keep live parent365 handle42424140271 unchanged until terminal.
 
 Reconciled isolated recovery sourcec93d141d into encounter work; parent PR82 remains on the same corrected source under its own acceptance runs.
+
+## Furnished House matched lighting checkpoint — 7 November 2026
+
+Previous goal turn made concrete progress: verified and published encounter integration checkpoint4afae307, preserving corrected native recovery and owner fridge placement. Resume verified parent full365 run42426485514 is live; no restart or inferred acceptance. Main1fe0e249 still current at fetch; recorded raw362/0/0/362, native/editor and installer remain scoped parent evidence. PR84 now reviews encounter4afae307, with full42427846432, native42427846331 and GPU42427852522 live/queued; PR82 remains protectedc93d141d pending its actual365summary. Preserve concurrent PR83 hunter work.
+
+New branch map/house-final-review preserves those frozen sources. Actual256MB SceneRenderer CLASSIC captures cover both upper and lower joins at all15authored traversable spawns, each with six matched door/circuit/blackout/torch states:180runtime PNGs and30contact sheets. Every sheet was inspected. No new visible join leak was identified in this bounded view set; expected real doorway/stair light and independent van power are retained. Current45props/131793tri/230images and fridge14.9/14.1925 remain unchanged. Record exact review limits in house/final-lighting-review.md; these selected views do not accept whole rooms, GPU parity or physical FPS. Gallery actual PNGs/index generated/checked; deployment still requires accepted merge and actual readback.
+
+Next: parent365 raw result/PR82 merge and gallery deployment; exact encounter full/native/GPU; latest furnished compass and targeted source/receiver joins; fresh default promotion and complete client/mission/location acceptance. Continue all29packets and later unfinished maps. No round-duration testing.
