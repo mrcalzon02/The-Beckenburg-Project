@@ -24,8 +24,8 @@ def native_faces(path):
 def face_keys(records):
     return collections.Counter((tuple(sorted(tuple(xyz[n:n+3]) for n in [0,3,6])),flags) for xyz,flags in records)
 
-def export(folder):
-    source=folder/'rough-shell.glb';before=hashlib.sha256(source.read_bytes()).hexdigest()
+def export(folder,furnished=False):
+    source=folder/('furnished.glb' if furnished else 'rough-shell.glb');before=hashlib.sha256(source.read_bytes()).hexdigest()
     bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(source))
     parts=[];poses=[];stairs=[];dropped=0;terrain_faces=[]
     for number,obj in enumerate(obj for obj in bpy.context.scene.objects if obj.type=='MESH'):
@@ -51,7 +51,7 @@ def export(folder):
         if role=='structural-stair-step':
             poses.append(dict(link=obj['link'],component=name,x=sum(p.x for p in worldpoints)/len(worldpoints),
                 y=max(p.z for p in worldpoints),z=-sum(p.y for p in worldpoints)/len(worldpoints)))
-    target=folder/'structure-physics.hcs2'
+    target=folder/('furnished-physics.hcs2' if furnished else 'structure-physics.hcs2')
     with target.open('wb') as stream:
         stream.write(struct.pack('>III',0x48435332,len(parts),sum(len(records) for name,closed,records in parts)))
         for name,closed,records in parts:
@@ -76,11 +76,13 @@ def export(folder):
 def main():
     parser=argparse.ArgumentParser();selection=parser.add_mutually_exclusive_group(required=True)
     selection.add_argument('--sites',nargs='+');selection.add_argument('--remaining',action='store_true')
+    parser.add_argument('--furnished',action='store_true')
     args=parser.parse_args(sys.argv[sys.argv.index('--')+1:] if '--' in sys.argv else [])
     if args.remaining:
         roster=json.loads((ROOT/'development/levels/rebuild/structures/roster.json').read_text(encoding='utf-8'))
         folders=[(ROOT/row['evidence']).parent for row in roster['sites'] if row['status']=='NATIVE_STRUCTURE_BLOCKING_RUNTIME_GATES_OPEN']
     else:folders=[ROOT/'development/levels/rebuild/structures'/name.lower() for name in args.sites]
-    for folder in folders:export(folder)
+    if args.furnished:folders=[ROOT/'development/levels/rebuild/furnishings'/p.name for p in folders]
+    for folder in folders:export(folder,args.furnished)
 
 if __name__=='__main__':main()

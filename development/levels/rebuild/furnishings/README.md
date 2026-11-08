@@ -31,3 +31,13 @@ The tool reads the canonical inventory and does not rewrite source GLBs, pivots,
 UVs or materials. Use each map's existing site-kit assignments and room functions
 when allocating actual floor/wall/ceiling placements. Preserve source identities
 when subsequent model/texture refinement is committed.
+
+## Initial native allocation batch
+
+Actual existing source roughs are now placed in25native candidates:124instances
+from60designs,16120prop triangles. Per-site .blend/.glb/HCS2 and placements.json
+are in site folders. room-programs.json is the authored first allocation;
+roster.json explicitly retains the other4mature maps. verification.json and
+the native contact sheets are bound to current sources. Full room capacity,
+remaining site-kit models, mounts and later refinement remain open. Exact
+physical checks and rejected studies are in ../verification/roster-prop-allocation-2026-11-07/.

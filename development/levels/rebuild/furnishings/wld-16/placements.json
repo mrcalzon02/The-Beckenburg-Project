@@ -1,0 +1,277 @@
+{
+  "site": "WLD-16",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-16/rough-layout.json",
+  "source_layout_sha256": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
+  "structure_glb_sha256": "2e340ebf09090f1acf17b7491f4e2c436167737be4ffe2d5df10a478002576aa",
+  "furnished_glb_sha256": "db101b4d5f692826961bed4d615ad67a1c411fdb275ad4b72048c5e7ca4ce2a2",
+  "native_sha256": "72a0ff6e61f6e318994cf0243aa5fba2fd5ca2cdcdd9084794f3c650833fc354",
+  "requests": 10,
+  "placements": [
+    {
+      "id": "WLD-16:office:0:0",
+      "zone": "office",
+      "purpose": "Reception and key desk / Eight Pines motel reception counter with ledger / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_reception_counter",
+      "asset": "level_blockout_motel_reception_counter",
+      "source_sha256": "69487fa4779aaa0388081c0af076099a27105054c2c644741dc08cf230f1c69a",
+      "bounds": [
+        19.390501022338867,
+        -43.07999801635742,
+        0.0,
+        21.74049949645996,
+        -42.15999984741211,
+        1.4250000715255737
+      ],
+      "rect": [
+        19.390500081062317,
+        42.16,
+        21.740499985694886,
+        43.079999986886975
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 60
+    },
+    {
+      "id": "WLD-16:laundry:1:0",
+      "zone": "laundry",
+      "purpose": "Linen and laundry / Eight Pines washer/dryer pair / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_laundry_unit",
+      "asset": "level_blockout_motel_laundry_unit",
+      "source_sha256": "a809a38ce02730bc6c8cc324a5ea9663c0af5a6404a08990dfee0122480f81b7",
+      "bounds": [
+        44.817501068115234,
+        -42.58449935913086,
+        0.0,
+        45.84000015258789,
+        -40.734500885009766,
+        1.100000023841858
+      ],
+      "rect": [
+        44.817500021457676,
+        40.734499996423715,
+        45.84,
+        42.58450002026557
+      ],
+      "floor_y": 0,
+      "yaw": -1.5707963267948966,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 168
+    },
+    {
+      "id": "WLD-16:room1:2:0",
+      "zone": "room1",
+      "purpose": "West guest room 1 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        7.11799955368042,
+        -22.549999237060547,
+        0.0,
+        9.007999420166016,
+        -20.15999984741211,
+        1.5399999618530273
+      ],
+      "rect": [
+        7.118000002861024,
+        20.16,
+        9.007999988555909,
+        22.549999985694885
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-16:room2:3:0",
+      "zone": "room2",
+      "purpose": "West guest room 2 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        7.11799955368042,
+        -27.549999237060547,
+        0.0,
+        9.007999420166016,
+        -25.15999984741211,
+        1.5399999618530273
+      ],
+      "rect": [
+        7.118000002861024,
+        25.16,
+        9.007999988555909,
+        27.549999985694885
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-16:room3:4:0",
+      "zone": "room3",
+      "purpose": "West guest room 3 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        7.11799955368042,
+        -32.54999923706055,
+        0.0,
+        9.007999420166016,
+        -30.15999984741211,
+        1.5399999618530273
+      ],
+      "rect": [
+        7.118000002861024,
+        30.16,
+        9.007999988555909,
+        32.54999998569489
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-16:room4:5:0",
+      "zone": "room4",
+      "purpose": "West guest room 4 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        7.11799955368042,
+        -37.55000305175781,
+        0.0,
+        9.007999420166016,
+        -35.15999984741211,
+        1.5399999618530273
+      ],
+      "rect": [
+        7.118000002861024,
+        35.16,
+        9.007999988555909,
+        37.54999998569488
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-16:room5:6:0",
+      "zone": "room5",
+      "purpose": "East guest room 5 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        43.23149871826172,
+        -22.549999237060547,
+        0.0,
+        45.121498107910156,
+        -20.15999984741211,
+        1.5399999618530273
+      ],
+      "rect": [
+        43.231500012159344,
+        20.16,
+        45.12149999785423,
+        22.549999985694885
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-16:room6:7:0",
+      "zone": "room6",
+      "purpose": "East guest room 6 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        43.23149871826172,
+        -27.549999237060547,
+        0.0,
+        45.121498107910156,
+        -25.15999984741211,
+        1.5399999618530273
+      ],
+      "rect": [
+        43.231500012159344,
+        25.16,
+        45.12149999785423,
+        27.549999985694885
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-16:room7:8:0",
+      "zone": "room7",
+      "purpose": "East guest room 7 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        43.23149871826172,
+        -32.54999923706055,
+        0.0,
+        45.121498107910156,
+        -30.15999984741211,
+        1.5399999618530273
+      ],
+      "rect": [
+        43.231500012159344,
+        30.16,
+        45.12149999785423,
+        32.54999998569489
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-16:room8:9:0",
+      "zone": "room8",
+      "purpose": "East guest room 8 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        43.23149871826172,
+        -37.55000305175781,
+        0.0,
+        45.121498107910156,
+        -35.15999984741211,
+        1.5399999618530273
+      ],
+      "rect": [
+        43.231500012159344,
+        35.16,
+        45.12149999785423,
+        37.54999998569488
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "6d5c55587fdf062146177b44d675f9151dfcd435dcd5b161060fffb695fbd98d",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 10,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

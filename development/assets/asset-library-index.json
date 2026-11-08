@@ -1,8 +1,8 @@
 {
-  "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_ARTIFACTS_PENDING_RETRIEVAL",
+  "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1667,
-  "unique_local_file_hashes": 1534,
+  "local_files": 1692,
+  "unique_local_file_hashes": 1559,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 22,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 27,
-    "native_map_exports": 48
+    "native_map_exports": 73
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -30,19 +30,36 @@
       "id": "6aed02d7-4bd4-83e8-9fa5-6ab9071863a4",
       "title": "Continue Map Modeling",
       "url": "https://chatgpt.com/c/6aed02d7-4bd4-83e8-9fa5-6ab9071863a4",
-      "retrieval": "HISTORY_RATE_LIMITED_PENDING_ARTIFACT_IMPORT"
+      "history_status": "LATEST_TURN_READ_SOURCE_REFERENCES_CONFIRMED",
+      "referenced_commit": "533ad1cc3547b735e677159a0c34889ac9247e4a",
+      "local_references": [
+        "development/levels/primitive-props-v1/catalog.json",
+        "development/levels/primitive-props-v1/refinement/index.json",
+        "development/levels/primitive-props-v1/site-kits/index.json"
+      ],
+      "remaining": "Older history/attachments not exhaustively reviewed; latest source references already exist locally."
     },
     {
       "id": "6aecd6f0-6b90-83e8-aee9-269bd7bff42b",
       "title": "Continue Map Prop Modeling",
       "url": "https://chatgpt.com/c/6aecd6f0-6b90-83e8-aee9-269bd7bff42b",
-      "retrieval": "HISTORY_RATE_LIMITED_PENDING_ARTIFACT_IMPORT"
+      "history_status": "HISTORY_LOAD_TIMED_OUT",
+      "local_references": [],
+      "remaining": "Retry history retrieval and trace any additional artifacts without treating the stockpile as absent."
     },
     {
       "id": "6aec37d7-9848-83e8-aaaa-a68233bd9345",
       "title": "Map Prop Modeling",
       "url": "https://chatgpt.com/c/6aec37d7-9848-83e8-aaaa-a68233bd9345",
-      "retrieval": "HISTORY_RATE_LIMITED_PENDING_ARTIFACT_IMPORT"
+      "history_status": "RECENT_THREE_TURNS_READ_SOURCE_REFERENCES_CONFIRMED",
+      "referenced_commit": "5e6046f3d35c8d90e7fc90a6ef07dc36d45d45e7",
+      "local_references": [
+        "development/levels/primitive-props-v1/models",
+        "development/levels/primitive-props-v1/site-kits/index.json",
+        "development/levels/primitive-props-v1/relic-review/relic-inventory.json",
+        "development/levels/primitive-props-v1/crypt-review/castle-crypt-count.json"
+      ],
+      "remaining": "Older history/attachments not exhaustively reviewed. Historical139/160model counts are superseded by the current local index."
     }
   ],
   "model_files": [
@@ -26027,6 +26044,306 @@
       "bytes": 54348
     },
     {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/academy/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "82b060617e68960f24a38f6f9b521f8d6225581894e8c7e572bd6912d80771ff",
+      "bytes": 922396
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/asylum/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "99908e1b676471644097396db8537425d2b27adb1f64381950f71614aa7c89b8",
+      "bytes": 941048
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/church/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "fcae3babfdbb0e1aa6d3952a11a9149fe667b58ec6e588f4a055a60b95ee26a5",
+      "bytes": 633672
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/college/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "31aca6d57d897cb110c52ba7393369e180dbd213b54efbc1ee54d35c7eea419e",
+      "bytes": 1142620
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/farmhouse/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "3accb54ce020e206c4ab5185b72abb01593b474647754b1a013f3ee324fd595f",
+      "bytes": 655208
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/mansion/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "bc07ca757fd3bd871619ef14ed8bdd64cc3272007412dd7dec1c739964c5ad80",
+      "bytes": 930272
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/prison/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "c7b5fe3f830b74b3a87e811b240f56080bfa877eb93bb1471c0877dae8d5d2ba",
+      "bytes": 1166836
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/school/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "bab2075d8ef30c078d765ed8b6fcb42b2b850a711f53f2f4fa3722816f19b4e2",
+      "bytes": 736732
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-03/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "b537e19ad1c2bd2893d2ab3dfb7cfc2ee051bf0bb5d34976a2284a6fabc67037",
+      "bytes": 315516
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-04/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "a551e31150806f61f58b875604394cf36ee3488049e450b99a3332fe393ce35c",
+      "bytes": 391012
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-05/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "84d988522c7f56f0edd4d6a5e52e486938d4531e69184791e4d68a03086ccdaf",
+      "bytes": 484372
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-06/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "7102280be55ab2513dc48c84be817b7d1a87c624301d909ab1681882cbb5a5a9",
+      "bytes": 274428
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-07-mortuary/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "4e7c87380adf7ea61be67eba3287cd34669b607e432b91cb12d44170290bb7bc",
+      "bytes": 1323432
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-07/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "570c97c328854f37085f70a7008c5d26e62490676d7d26f32814c3a765bd6e08",
+      "bytes": 271932
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-08/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "c37c66eb8214e4ea6c602f8756d4055186639ccfd8e28d140c964af1a7ec0357",
+      "bytes": 391164
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-09/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "4dd49798bd58711773191178637f4b19ff36286104440b444c72e59e888e8711",
+      "bytes": 665020
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-10/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "583951edd4eeafe44ca3d96eb8816821c09fd06ee88f96187220d34bb1bf03d2",
+      "bytes": 429436
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-11/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "7122e46aaa269b5dedb0c3fc86211ff621b250c400003c50d36fad4ea4ed0034",
+      "bytes": 185388
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-12/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "655e052b76bb8e4ad28fb86a01113bed32c1f53def62dfc678d2433508b22346",
+      "bytes": 290820
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-13/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "ddd6a28c9b69ff20a86fa2231508eb614fd24c5966a043b55f6b36f23b0dd226",
+      "bytes": 291380
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-14/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "e650dadc8e95b21ff3635168c13e43fd2da1f3e379c2af20b1a0dcd69fde4dad",
+      "bytes": 2438344
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-15/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "ba191c314009a9134699663e5c9a8a8816dd922eac9af54652015dc04e205098",
+      "bytes": 576332
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-16/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "db101b4d5f692826961bed4d615ad67a1c411fdb275ad4b72048c5e7ca4ce2a2",
+      "bytes": 429552
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-17/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "af753fe449aba13df7800721d33e3c7c5378b3dc348e8b3d342134c3fc6b7e7c",
+      "bytes": 762364
+    },
+    {
+      "id": "furnished",
+      "label": "furnished",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/furnishings/wld-18/furnished.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "75801a6ce1329ca384a53eee6389081cac185eabdb8ea2187c86285020f20f39",
+      "bytes": 1531932
+    },
+    {
       "id": "rough-shell",
       "label": "rough-shell",
       "maps": [],
@@ -26119,8 +26436,8 @@
       "collection": "native_map_exports",
       "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
-      "sha256": "ab8f207dd23581227547b495a5520e0383c0ab90e7606765474c566e7c86ae66",
-      "bytes": 556336
+      "sha256": "0161f8d6ddadd406704d2458dc8579c206c98f2c6051c530f962d1fb13384354",
+      "bytes": 556700
     },
     {
       "id": "rough-shell",
@@ -26335,7 +26652,7 @@
       "collection": "native_map_exports",
       "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
-      "sha256": "876131ab4b887a770d6a3569fb013b40021bc4cf5209edf5eb40e0645ffdc1ae",
+      "sha256": "2e340ebf09090f1acf17b7491f4e2c436167737be4ffe2d5df10a478002576aa",
       "bytes": 368196
     },
     {

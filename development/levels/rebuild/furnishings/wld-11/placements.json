@@ -1,0 +1,121 @@
+{
+  "site": "WLD-11",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/layouts/wld-11/layout.json",
+  "source_layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+  "structure_glb_sha256": "1a519c772329f646dd7d5945464a52d36ea1de10f66e0030c634df9e4f0029dc",
+  "furnished_glb_sha256": "7122e46aaa269b5dedb0c3fc86211ff621b250c400003c50d36fad4ea4ed0034",
+  "native_sha256": "2318f2b631014d25d7108bab101c49d70c8f25a8890b8a51daf88af2bcd00b28",
+  "requests": 4,
+  "placements": [
+    {
+      "id": "WLD-11:house-a:0:0",
+      "zone": "house-a",
+      "purpose": "West stilt house / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        14.917999267578125,
+        -40.55000305175781,
+        1.2000000476837158,
+        16.808000564575195,
+        -38.15999984741211,
+        2.740000009536743
+      ],
+      "rect": [
+        14.918000002861023,
+        38.16,
+        16.80799998855591,
+        40.54999998569488
+      ],
+      "floor_y": 1.2,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-11:chapel:1:0",
+      "zone": "chapel",
+      "purpose": "Settlement chapel / Parish pew bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_pew",
+      "asset": "level_blockout_pew",
+      "source_sha256": "3626a9597743d7ea10670ec405a40e61a3d164d361b7cbf570fe3df37e050b25",
+      "bounds": [
+        14.952000617980957,
+        -16.729999542236328,
+        1.2000000476837158,
+        16.672000885009766,
+        -16.15999984741211,
+        2.505000114440918
+      ],
+      "rect": [
+        14.951999994277955,
+        16.16,
+        16.672000022888184,
+        16.730000022649765
+      ],
+      "floor_y": 1.2,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 48
+    },
+    {
+      "id": "WLD-11:warehouse:2:0",
+      "zone": "warehouse",
+      "purpose": "Flooded warehouse dry deck / Pallet of strapped canning crates / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_cannery_cargo_pallet",
+      "asset": "level_blockout_cannery_cargo_pallet",
+      "source_sha256": "6881ba5f93c4dafedf976866835d5c543eb21a309559b48f547bd73cd5a8f6df",
+      "bounds": [
+        34.95199966430664,
+        -15.200000762939453,
+        1.2000000476837158,
+        36.672000885009766,
+        -14.15999984741211,
+        2.1875
+      ],
+      "rect": [
+        34.95199999427795,
+        14.16,
+        36.67200002288818,
+        15.199999961853027
+      ],
+      "floor_y": 1.2,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 156
+    },
+    {
+      "id": "WLD-11:pump:3:0",
+      "zone": "pump",
+      "purpose": "Pump / wash shelter / Camp bathhouse wash basin and privacy fixture / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_camp_washstand",
+      "asset": "level_blockout_camp_washstand",
+      "source_sha256": "a3bf68a5b2d3215f260c7d071b4cd1fc76918e6399e036a20ff2b258c538e4a7",
+      "bounds": [
+        54.198001861572266,
+        -54.904998779296875,
+        1.2000000476837158,
+        55.6879997253418,
+        -54.15999984741211,
+        3.880000114440918
+      ],
+      "rect": [
+        54.19799999809265,
+        54.16,
+        55.68800000762939,
+        54.90500000476837
+      ],
+      "floor_y": 1.2,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 132
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "9ab7f35a2f43e105393931b8a29910127c4ce58c2136a09d5d0be7fe2c983985",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 4,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

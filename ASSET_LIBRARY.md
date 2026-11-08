@@ -1,4 +1,4 @@
-# Beckenburg asset library — start here
+# Beckenburg asset library â€” start here
 
 **Consult this pointer before making, selecting, refining or placing a model.**
 The existing roughs are intended for allocating space, model budgets and actual
@@ -23,10 +23,10 @@ mount hints and source stages. The 24-model furniture inspection is a sample.
 | Additional custom model sources | 22 |
 | Review/contact assemblies | 173 |
 | Reference/rejected studies | 27 |
-| Native map exports | 48 |
-| **Total local GLB files** | **1,667** |
+| Native map exports | 73 |
+| **Total local GLB files** | **1,692** |
 
-1,534 distinct file hashes. Copies and review assemblies are indexed
+1,559 distinct file hashes. Copies and review assemblies are indexed
 without counting them as unique usable props. Source stage and intended use
 remain attached to every entry.
 
@@ -71,10 +71,14 @@ The owner identified these as further rough-model sources:
 - [Continue Map Prop Modeling](https://chatgpt.com/c/6aecd6f0-6b90-83e8-aee9-269bd7bff42b)
 - [Map Prop Modeling](https://chatgpt.com/c/6aec37d7-9848-83e8-aaaa-a68233bd9345)
 
-Their identities are recorded in the index. Conversation history was rate limited
-at this checkpoint; their additional downloadable artifacts remain to be traced
-and incorporated. Do not mistake this pending import for absent or disposable
-work, or call the local inventory the complete conversation stockpile.
+Recent turns from **Continue Map Modeling** and **Map Prop Modeling** have now
+been read and matched to existing catalogs, refinements, site kits and relic/crypt
+inventories. **Continue Map Prop Modeling** currently times out. Exact checked
+paths, historical commits and remaining retrieval work are in
+[model-source-conversations.json](development/assets/model-source-conversations.json).
+Older reported counts are historical; the generated local index supplies current
+file counts. Further history/artifact review remains open. Existing source roughs
+are already usable and being placed; retrieval delays do not make them absent.
 
 ## Keep this pointer current
 

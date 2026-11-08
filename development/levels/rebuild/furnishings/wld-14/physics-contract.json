@@ -1,0 +1,1424 @@
+{
+  "source_glb_sha256": "e650dadc8e95b21ff3635168c13e43fd2da1f3e379c2af20b1a0dcd69fde4dad",
+  "physics_sha256": "5803ed33334886acf5774c076aa663194ea1e6b70b6423b534cc7ebc0d026266",
+  "exporter_sha256": "34746a584f469e65906c1c9c5f34be4d3f5eff797d2175b3727303508cf3ca53",
+  "stair_components": [
+    "144:route-10 flight0 step1",
+    "145:route-10 flight0 step2",
+    "146:route-10 flight0 step3",
+    "147:route-10 flight0 step4",
+    "148:route-10 flight0 step5",
+    "149:route-10 flight0 step6",
+    "150:route-10 flight0 step7",
+    "151:route-10 flight0 step8",
+    "152:route-10 flight0 step9",
+    "153:route-10 flight0 step10",
+    "154:route-10 flight0 step11",
+    "155:route-10 flight0 step12",
+    "156:route-10 flight0 step13",
+    "157:route-10 flight0 step14",
+    "158:route-10 flight0 step15",
+    "159:route-10 flight0 step16",
+    "160:route-10 flight0 step17",
+    "161:route-10 flight0 step18",
+    "165:route-14 flight0 step1",
+    "166:route-14 flight0 step2",
+    "167:route-14 flight0 step3",
+    "168:route-14 flight0 step4",
+    "169:route-14 flight0 step5",
+    "170:route-14 flight0 step6",
+    "171:route-14 flight0 step7",
+    "172:route-14 flight0 step8",
+    "173:route-14 flight0 step9",
+    "174:route-14 flight0 step10",
+    "175:route-14 flight0 step11",
+    "176:route-14 flight0 step12",
+    "177:route-14 flight0 step13",
+    "178:route-14 flight0 step14",
+    "179:route-14 flight0 step15",
+    "180:route-14 flight0 step16",
+    "181:route-14 flight0 step17",
+    "182:route-14 flight0 step18",
+    "189:route-20 flight0 step1",
+    "190:route-20 flight1 step1",
+    "191:route-20 flight2 step1",
+    "192:route-20 flight3 step1",
+    "193:route-20 flight4 step1",
+    "194:route-20 flight5 step1",
+    "195:route-20 flight6 step1",
+    "196:route-20 flight7 step1",
+    "197:route-20 flight8 step1",
+    "198:route-20 flight9 step1",
+    "199:route-20 flight10 step1",
+    "200:route-20 flight11 step1",
+    "201:route-20 flight12 step1",
+    "202:route-20 flight13 step1",
+    "203:route-20 flight14 step1",
+    "204:route-20 flight15 step1",
+    "205:route-20 flight16 step1",
+    "206:route-20 flight17 step1",
+    "207:route-20 flight18 step1",
+    "208:route-20 flight19 step1",
+    "209:route-20 flight20 step1",
+    "210:route-20 flight21 step1",
+    "211:route-20 flight22 step1",
+    "212:route-20 flight23 step1",
+    "213:route-20 flight24 step1",
+    "214:route-20 flight25 step1",
+    "215:route-20 flight26 step1",
+    "216:route-20 flight27 step1",
+    "217:route-21 flight0 step1",
+    "218:route-21 flight1 step1",
+    "219:route-21 flight2 step1",
+    "220:route-21 flight3 step1",
+    "221:route-21 flight4 step1",
+    "222:route-21 flight5 step1",
+    "223:route-21 flight6 step1",
+    "224:route-21 flight7 step1",
+    "225:route-21 flight8 step1",
+    "226:route-21 flight9 step1",
+    "227:route-21 flight10 step1",
+    "228:route-21 flight11 step1",
+    "229:route-21 flight12 step1",
+    "230:route-21 flight13 step1",
+    "231:route-21 flight14 step1",
+    "232:route-21 flight15 step1",
+    "233:route-21 flight16 step1",
+    "234:route-21 flight17 step1",
+    "235:route-21 flight18 step1",
+    "236:route-21 flight19 step1",
+    "237:route-21 flight20 step1",
+    "238:route-21 flight21 step1",
+    "239:route-21 flight22 step1",
+    "240:route-21 flight23 step1",
+    "241:route-21 flight24 step1",
+    "242:route-21 flight25 step1",
+    "243:route-21 flight26 step1",
+    "244:route-21 flight27 step1",
+    "245:route-22 flight0 step1",
+    "246:route-22 flight1 step1",
+    "247:route-22 flight2 step1",
+    "248:route-22 flight3 step1",
+    "249:route-22 flight4 step1",
+    "250:route-22 flight5 step1",
+    "251:route-22 flight6 step1",
+    "252:route-22 flight7 step1",
+    "253:route-22 flight8 step1",
+    "254:route-22 flight9 step1",
+    "255:route-22 flight10 step1",
+    "256:route-22 flight11 step1",
+    "257:route-22 flight12 step1",
+    "258:route-22 flight13 step1",
+    "259:route-22 flight14 step1",
+    "260:route-22 flight15 step1",
+    "261:route-22 flight16 step1",
+    "262:route-22 flight17 step1",
+    "263:route-22 flight18 step1",
+    "264:route-22 flight19 step1",
+    "265:route-22 flight20 step1",
+    "266:route-22 flight21 step1",
+    "267:route-22 flight22 step1",
+    "268:route-22 flight23 step1",
+    "269:route-22 flight24 step1",
+    "270:route-22 flight25 step1",
+    "271:route-22 flight26 step1",
+    "272:route-22 flight27 step1",
+    "273:route-23 flight0 step1",
+    "274:route-23 flight1 step1",
+    "275:route-23 flight2 step1",
+    "276:route-23 flight3 step1",
+    "277:route-23 flight4 step1",
+    "278:route-23 flight5 step1",
+    "279:route-23 flight6 step1",
+    "280:route-23 flight7 step1",
+    "281:route-23 flight8 step1",
+    "282:route-23 flight9 step1",
+    "283:route-23 flight10 step1",
+    "284:route-23 flight11 step1",
+    "285:route-23 flight12 step1",
+    "286:route-23 flight13 step1",
+    "287:route-23 flight14 step1",
+    "288:route-23 flight15 step1",
+    "289:route-23 flight16 step1",
+    "290:route-23 flight17 step1",
+    "291:route-23 flight18 step1",
+    "292:route-23 flight19 step1",
+    "293:route-23 flight20 step1",
+    "294:route-23 flight21 step1",
+    "295:route-23 flight22 step1",
+    "296:route-23 flight23 step1",
+    "297:route-23 flight24 step1",
+    "298:route-23 flight25 step1",
+    "299:route-23 flight26 step1",
+    "300:route-23 flight27 step1",
+    "301:route-24 flight0 step1",
+    "302:route-24 flight1 step1",
+    "303:route-24 flight2 step1",
+    "304:route-24 flight3 step1",
+    "305:route-24 flight4 step1",
+    "306:route-24 flight5 step1",
+    "307:route-24 flight6 step1",
+    "308:route-24 flight7 step1",
+    "309:route-24 flight8 step1",
+    "310:route-24 flight9 step1",
+    "311:route-24 flight10 step1",
+    "312:route-24 flight11 step1",
+    "313:route-24 flight12 step1",
+    "314:route-24 flight13 step1",
+    "315:route-24 flight14 step1",
+    "316:route-24 flight15 step1",
+    "317:route-24 flight16 step1",
+    "318:route-24 flight17 step1",
+    "319:route-24 flight18 step1",
+    "320:route-24 flight19 step1",
+    "321:route-24 flight20 step1",
+    "322:route-24 flight21 step1",
+    "323:route-24 flight22 step1",
+    "324:route-24 flight23 step1",
+    "325:route-24 flight24 step1",
+    "326:route-24 flight25 step1",
+    "327:route-24 flight26 step1",
+    "328:route-24 flight27 step1"
+  ],
+  "tread_centres": [
+    {
+      "link": "route-10",
+      "component": "144:route-10 flight0 step1",
+      "x": 45.0,
+      "y": 0.17777776718139648,
+      "z": 47.77777862548828
+    },
+    {
+      "link": "route-10",
+      "component": "145:route-10 flight0 step2",
+      "x": 45.0,
+      "y": 0.35555556416511536,
+      "z": 47.33333206176758
+    },
+    {
+      "link": "route-10",
+      "component": "146:route-10 flight0 step3",
+      "x": 45.0,
+      "y": 0.5333333015441895,
+      "z": 46.88888931274414
+    },
+    {
+      "link": "route-10",
+      "component": "147:route-10 flight0 step4",
+      "x": 45.0,
+      "y": 0.7111110687255859,
+      "z": 46.44444274902344
+    },
+    {
+      "link": "route-10",
+      "component": "148:route-10 flight0 step5",
+      "x": 45.0,
+      "y": 0.8888888955116272,
+      "z": 46.0
+    },
+    {
+      "link": "route-10",
+      "component": "149:route-10 flight0 step6",
+      "x": 45.0,
+      "y": 1.0666667222976685,
+      "z": 45.55555725097656
+    },
+    {
+      "link": "route-10",
+      "component": "150:route-10 flight0 step7",
+      "x": 45.0,
+      "y": 1.2444443702697754,
+      "z": 45.11111068725586
+    },
+    {
+      "link": "route-10",
+      "component": "151:route-10 flight0 step8",
+      "x": 45.0,
+      "y": 1.4222221374511719,
+      "z": 44.66666793823242
+    },
+    {
+      "link": "route-10",
+      "component": "152:route-10 flight0 step9",
+      "x": 45.0,
+      "y": 1.600000023841858,
+      "z": 44.22222137451172
+    },
+    {
+      "link": "route-10",
+      "component": "153:route-10 flight0 step10",
+      "x": 45.0,
+      "y": 1.7777777910232544,
+      "z": 43.77777862548828
+    },
+    {
+      "link": "route-10",
+      "component": "154:route-10 flight0 step11",
+      "x": 45.0,
+      "y": 1.9555555582046509,
+      "z": 43.33333206176758
+    },
+    {
+      "link": "route-10",
+      "component": "155:route-10 flight0 step12",
+      "x": 45.0,
+      "y": 2.133333206176758,
+      "z": 42.88888931274414
+    },
+    {
+      "link": "route-10",
+      "component": "156:route-10 flight0 step13",
+      "x": 45.0,
+      "y": 2.3111109733581543,
+      "z": 42.44444274902344
+    },
+    {
+      "link": "route-10",
+      "component": "157:route-10 flight0 step14",
+      "x": 45.0,
+      "y": 2.488888740539551,
+      "z": 42.0
+    },
+    {
+      "link": "route-10",
+      "component": "158:route-10 flight0 step15",
+      "x": 45.0,
+      "y": 2.6666665077209473,
+      "z": 41.55555725097656
+    },
+    {
+      "link": "route-10",
+      "component": "159:route-10 flight0 step16",
+      "x": 45.0,
+      "y": 2.8444442749023438,
+      "z": 41.11111068725586
+    },
+    {
+      "link": "route-10",
+      "component": "160:route-10 flight0 step17",
+      "x": 45.0,
+      "y": 3.0222220420837402,
+      "z": 40.66666793823242
+    },
+    {
+      "link": "route-10",
+      "component": "161:route-10 flight0 step18",
+      "x": 45.0,
+      "y": 3.1999998092651367,
+      "z": 40.22222137451172
+    },
+    {
+      "link": "route-14",
+      "component": "165:route-14 flight0 step1",
+      "x": 14.0,
+      "y": 0.17777776718139648,
+      "z": 43.77777862548828
+    },
+    {
+      "link": "route-14",
+      "component": "166:route-14 flight0 step2",
+      "x": 14.0,
+      "y": 0.35555556416511536,
+      "z": 43.33333206176758
+    },
+    {
+      "link": "route-14",
+      "component": "167:route-14 flight0 step3",
+      "x": 14.0,
+      "y": 0.5333333015441895,
+      "z": 42.88888931274414
+    },
+    {
+      "link": "route-14",
+      "component": "168:route-14 flight0 step4",
+      "x": 14.0,
+      "y": 0.7111110687255859,
+      "z": 42.44444274902344
+    },
+    {
+      "link": "route-14",
+      "component": "169:route-14 flight0 step5",
+      "x": 14.0,
+      "y": 0.8888888955116272,
+      "z": 42.0
+    },
+    {
+      "link": "route-14",
+      "component": "170:route-14 flight0 step6",
+      "x": 14.0,
+      "y": 1.0666667222976685,
+      "z": 41.55555725097656
+    },
+    {
+      "link": "route-14",
+      "component": "171:route-14 flight0 step7",
+      "x": 14.0,
+      "y": 1.2444443702697754,
+      "z": 41.11111068725586
+    },
+    {
+      "link": "route-14",
+      "component": "172:route-14 flight0 step8",
+      "x": 14.0,
+      "y": 1.4222221374511719,
+      "z": 40.66666793823242
+    },
+    {
+      "link": "route-14",
+      "component": "173:route-14 flight0 step9",
+      "x": 14.0,
+      "y": 1.600000023841858,
+      "z": 40.22222137451172
+    },
+    {
+      "link": "route-14",
+      "component": "174:route-14 flight0 step10",
+      "x": 14.0,
+      "y": 1.7777777910232544,
+      "z": 39.77777862548828
+    },
+    {
+      "link": "route-14",
+      "component": "175:route-14 flight0 step11",
+      "x": 14.0,
+      "y": 1.9555555582046509,
+      "z": 39.33333206176758
+    },
+    {
+      "link": "route-14",
+      "component": "176:route-14 flight0 step12",
+      "x": 14.0,
+      "y": 2.133333206176758,
+      "z": 38.88888931274414
+    },
+    {
+      "link": "route-14",
+      "component": "177:route-14 flight0 step13",
+      "x": 14.0,
+      "y": 2.3111109733581543,
+      "z": 38.44444274902344
+    },
+    {
+      "link": "route-14",
+      "component": "178:route-14 flight0 step14",
+      "x": 14.0,
+      "y": 2.488888740539551,
+      "z": 38.0
+    },
+    {
+      "link": "route-14",
+      "component": "179:route-14 flight0 step15",
+      "x": 14.0,
+      "y": 2.6666665077209473,
+      "z": 37.55555725097656
+    },
+    {
+      "link": "route-14",
+      "component": "180:route-14 flight0 step16",
+      "x": 14.0,
+      "y": 2.8444442749023438,
+      "z": 37.11111068725586
+    },
+    {
+      "link": "route-14",
+      "component": "181:route-14 flight0 step17",
+      "x": 14.0,
+      "y": 3.0222220420837402,
+      "z": 36.66666793823242
+    },
+    {
+      "link": "route-14",
+      "component": "182:route-14 flight0 step18",
+      "x": 14.0,
+      "y": 3.1999998092651367,
+      "z": 36.22222137451172
+    },
+    {
+      "link": "route-20",
+      "component": "189:route-20 flight0 step1",
+      "x": 34.76490020751953,
+      "y": 0.12857142090797424,
+      "z": 10.311529159545898
+    },
+    {
+      "link": "route-20",
+      "component": "190:route-20 flight1 step1",
+      "x": 34.62625503540039,
+      "y": 0.2571428418159485,
+      "z": 10.918966293334961
+    },
+    {
+      "link": "route-20",
+      "component": "191:route-20 flight2 step1",
+      "x": 34.355918884277344,
+      "y": 0.3857142925262451,
+      "z": 11.48032283782959
+    },
+    {
+      "link": "route-20",
+      "component": "192:route-20 flight3 step1",
+      "x": 33.96744918823242,
+      "y": 0.514285683631897,
+      "z": 11.967450141906738
+    },
+    {
+      "link": "route-20",
+      "component": "193:route-20 flight4 step1",
+      "x": 33.480323791503906,
+      "y": 0.6428571343421936,
+      "z": 12.355920791625977
+    },
+    {
+      "link": "route-20",
+      "component": "194:route-20 flight5 step1",
+      "x": 32.918968200683594,
+      "y": 0.7714285850524902,
+      "z": 12.62625503540039
+    },
+    {
+      "link": "route-20",
+      "component": "195:route-20 flight6 step1",
+      "x": 32.31153154373169,
+      "y": 0.8999999761581421,
+      "z": 12.764899253845215
+    },
+    {
+      "link": "route-20",
+      "component": "196:route-20 flight7 step1",
+      "x": 31.6884708404541,
+      "y": 1.028571367263794,
+      "z": 12.764899253845215
+    },
+    {
+      "link": "route-20",
+      "component": "197:route-20 flight8 step1",
+      "x": 31.08103370666504,
+      "y": 1.1571428775787354,
+      "z": 12.62625503540039
+    },
+    {
+      "link": "route-20",
+      "component": "198:route-20 flight9 step1",
+      "x": 30.519676208496094,
+      "y": 1.2857142686843872,
+      "z": 12.355920791625977
+    },
+    {
+      "link": "route-20",
+      "component": "199:route-20 flight10 step1",
+      "x": 30.032550811767578,
+      "y": 1.414285659790039,
+      "z": 11.967450141906738
+    },
+    {
+      "link": "route-20",
+      "component": "200:route-20 flight11 step1",
+      "x": 29.644079208374023,
+      "y": 1.542857050895691,
+      "z": 11.48032283782959
+    },
+    {
+      "link": "route-20",
+      "component": "201:route-20 flight12 step1",
+      "x": 29.37374496459961,
+      "y": 1.6714285612106323,
+      "z": 10.918966293334961
+    },
+    {
+      "link": "route-20",
+      "component": "202:route-20 flight13 step1",
+      "x": 29.2351016998291,
+      "y": 1.7999999523162842,
+      "z": 10.311529159545898
+    },
+    {
+      "link": "route-20",
+      "component": "203:route-20 flight14 step1",
+      "x": 29.2351016998291,
+      "y": 1.928571343421936,
+      "z": 9.688470840454102
+    },
+    {
+      "link": "route-20",
+      "component": "204:route-20 flight15 step1",
+      "x": 29.37374496459961,
+      "y": 2.057142972946167,
+      "z": 9.081033706665039
+    },
+    {
+      "link": "route-20",
+      "component": "205:route-20 flight16 step1",
+      "x": 29.644079208374023,
+      "y": 2.1857142448425293,
+      "z": 8.51967716217041
+    },
+    {
+      "link": "route-20",
+      "component": "206:route-20 flight17 step1",
+      "x": 30.032550811767578,
+      "y": 2.3142857551574707,
+      "z": 8.032549858093262
+    },
+    {
+      "link": "route-20",
+      "component": "207:route-20 flight18 step1",
+      "x": 30.519676208496094,
+      "y": 2.442857027053833,
+      "z": 7.644079685211182
+    },
+    {
+      "link": "route-20",
+      "component": "208:route-20 flight19 step1",
+      "x": 31.08103370666504,
+      "y": 2.5714285373687744,
+      "z": 7.373744487762451
+    },
+    {
+      "link": "route-20",
+      "component": "209:route-20 flight20 step1",
+      "x": 31.6884708404541,
+      "y": 2.700000047683716,
+      "z": 7.235100746154785
+    },
+    {
+      "link": "route-20",
+      "component": "210:route-20 flight21 step1",
+      "x": 32.31153154373169,
+      "y": 2.828571319580078,
+      "z": 7.235100746154785
+    },
+    {
+      "link": "route-20",
+      "component": "211:route-20 flight22 step1",
+      "x": 32.918968200683594,
+      "y": 2.9571428298950195,
+      "z": 7.373744487762451
+    },
+    {
+      "link": "route-20",
+      "component": "212:route-20 flight23 step1",
+      "x": 33.480323791503906,
+      "y": 3.085714340209961,
+      "z": 7.644079685211182
+    },
+    {
+      "link": "route-20",
+      "component": "213:route-20 flight24 step1",
+      "x": 33.96744918823242,
+      "y": 3.2142856121063232,
+      "z": 8.032549858093262
+    },
+    {
+      "link": "route-20",
+      "component": "214:route-20 flight25 step1",
+      "x": 34.355918884277344,
+      "y": 3.3428571224212646,
+      "z": 8.51967716217041
+    },
+    {
+      "link": "route-20",
+      "component": "215:route-20 flight26 step1",
+      "x": 34.62625503540039,
+      "y": 3.471428632736206,
+      "z": 9.081033706665039
+    },
+    {
+      "link": "route-20",
+      "component": "216:route-20 flight27 step1",
+      "x": 34.76490020751953,
+      "y": 3.5999999046325684,
+      "z": 9.688470840454102
+    },
+    {
+      "link": "route-21",
+      "component": "217:route-21 flight0 step1",
+      "x": 34.76490020751953,
+      "y": 3.7285714149475098,
+      "z": 10.311529159545898
+    },
+    {
+      "link": "route-21",
+      "component": "218:route-21 flight1 step1",
+      "x": 34.62625503540039,
+      "y": 3.857142925262451,
+      "z": 10.918966293334961
+    },
+    {
+      "link": "route-21",
+      "component": "219:route-21 flight2 step1",
+      "x": 34.355918884277344,
+      "y": 3.9857141971588135,
+      "z": 11.48032283782959
+    },
+    {
+      "link": "route-21",
+      "component": "220:route-21 flight3 step1",
+      "x": 33.96744918823242,
+      "y": 4.114285945892334,
+      "z": 11.967450141906738
+    },
+    {
+      "link": "route-21",
+      "component": "221:route-21 flight4 step1",
+      "x": 33.480323791503906,
+      "y": 4.242856979370117,
+      "z": 12.355920791625977
+    },
+    {
+      "link": "route-21",
+      "component": "222:route-21 flight5 step1",
+      "x": 32.918968200683594,
+      "y": 4.371428489685059,
+      "z": 12.62625503540039
+    },
+    {
+      "link": "route-21",
+      "component": "223:route-21 flight6 step1",
+      "x": 32.31153154373169,
+      "y": 4.5,
+      "z": 12.764899253845215
+    },
+    {
+      "link": "route-21",
+      "component": "224:route-21 flight7 step1",
+      "x": 31.6884708404541,
+      "y": 4.628571510314941,
+      "z": 12.764899253845215
+    },
+    {
+      "link": "route-21",
+      "component": "225:route-21 flight8 step1",
+      "x": 31.08103370666504,
+      "y": 4.757143020629883,
+      "z": 12.62625503540039
+    },
+    {
+      "link": "route-21",
+      "component": "226:route-21 flight9 step1",
+      "x": 30.519676208496094,
+      "y": 4.885714054107666,
+      "z": 12.355920791625977
+    },
+    {
+      "link": "route-21",
+      "component": "227:route-21 flight10 step1",
+      "x": 30.032550811767578,
+      "y": 5.014285564422607,
+      "z": 11.967450141906738
+    },
+    {
+      "link": "route-21",
+      "component": "228:route-21 flight11 step1",
+      "x": 29.644079208374023,
+      "y": 5.142857074737549,
+      "z": 11.48032283782959
+    },
+    {
+      "link": "route-21",
+      "component": "229:route-21 flight12 step1",
+      "x": 29.37374496459961,
+      "y": 5.27142858505249,
+      "z": 10.918966293334961
+    },
+    {
+      "link": "route-21",
+      "component": "230:route-21 flight13 step1",
+      "x": 29.2351016998291,
+      "y": 5.400000095367432,
+      "z": 10.311529159545898
+    },
+    {
+      "link": "route-21",
+      "component": "231:route-21 flight14 step1",
+      "x": 29.2351016998291,
+      "y": 5.528571605682373,
+      "z": 9.688470840454102
+    },
+    {
+      "link": "route-21",
+      "component": "232:route-21 flight15 step1",
+      "x": 29.37374496459961,
+      "y": 5.657142639160156,
+      "z": 9.081033706665039
+    },
+    {
+      "link": "route-21",
+      "component": "233:route-21 flight16 step1",
+      "x": 29.644079208374023,
+      "y": 5.785714149475098,
+      "z": 8.51967716217041
+    },
+    {
+      "link": "route-21",
+      "component": "234:route-21 flight17 step1",
+      "x": 30.032550811767578,
+      "y": 5.914285659790039,
+      "z": 8.032549858093262
+    },
+    {
+      "link": "route-21",
+      "component": "235:route-21 flight18 step1",
+      "x": 30.519676208496094,
+      "y": 6.0428571701049805,
+      "z": 7.644079685211182
+    },
+    {
+      "link": "route-21",
+      "component": "236:route-21 flight19 step1",
+      "x": 31.08103370666504,
+      "y": 6.171428680419922,
+      "z": 7.373744487762451
+    },
+    {
+      "link": "route-21",
+      "component": "237:route-21 flight20 step1",
+      "x": 31.6884708404541,
+      "y": 6.300000190734863,
+      "z": 7.235100746154785
+    },
+    {
+      "link": "route-21",
+      "component": "238:route-21 flight21 step1",
+      "x": 32.31153154373169,
+      "y": 6.4285712242126465,
+      "z": 7.235100746154785
+    },
+    {
+      "link": "route-21",
+      "component": "239:route-21 flight22 step1",
+      "x": 32.918968200683594,
+      "y": 6.557142734527588,
+      "z": 7.373744487762451
+    },
+    {
+      "link": "route-21",
+      "component": "240:route-21 flight23 step1",
+      "x": 33.480323791503906,
+      "y": 6.685714244842529,
+      "z": 7.644079685211182
+    },
+    {
+      "link": "route-21",
+      "component": "241:route-21 flight24 step1",
+      "x": 33.96744918823242,
+      "y": 6.814285755157471,
+      "z": 8.032549858093262
+    },
+    {
+      "link": "route-21",
+      "component": "242:route-21 flight25 step1",
+      "x": 34.355918884277344,
+      "y": 6.942857265472412,
+      "z": 8.51967716217041
+    },
+    {
+      "link": "route-21",
+      "component": "243:route-21 flight26 step1",
+      "x": 34.62625503540039,
+      "y": 7.071428298950195,
+      "z": 9.081033706665039
+    },
+    {
+      "link": "route-21",
+      "component": "244:route-21 flight27 step1",
+      "x": 34.76490020751953,
+      "y": 7.199999809265137,
+      "z": 9.688470840454102
+    },
+    {
+      "link": "route-22",
+      "component": "245:route-22 flight0 step1",
+      "x": 34.76490020751953,
+      "y": 7.328571319580078,
+      "z": 10.311529159545898
+    },
+    {
+      "link": "route-22",
+      "component": "246:route-22 flight1 step1",
+      "x": 34.62625503540039,
+      "y": 7.4571428298950195,
+      "z": 10.918966293334961
+    },
+    {
+      "link": "route-22",
+      "component": "247:route-22 flight2 step1",
+      "x": 34.355918884277344,
+      "y": 7.585714340209961,
+      "z": 11.48032283782959
+    },
+    {
+      "link": "route-22",
+      "component": "248:route-22 flight3 step1",
+      "x": 33.96744918823242,
+      "y": 7.714285850524902,
+      "z": 11.967450141906738
+    },
+    {
+      "link": "route-22",
+      "component": "249:route-22 flight4 step1",
+      "x": 33.480323791503906,
+      "y": 7.8428568840026855,
+      "z": 12.355920791625977
+    },
+    {
+      "link": "route-22",
+      "component": "250:route-22 flight5 step1",
+      "x": 32.918968200683594,
+      "y": 7.971428394317627,
+      "z": 12.62625503540039
+    },
+    {
+      "link": "route-22",
+      "component": "251:route-22 flight6 step1",
+      "x": 32.31153154373169,
+      "y": 8.100000381469727,
+      "z": 12.764899253845215
+    },
+    {
+      "link": "route-22",
+      "component": "252:route-22 flight7 step1",
+      "x": 31.6884708404541,
+      "y": 8.228571891784668,
+      "z": 12.764899253845215
+    },
+    {
+      "link": "route-22",
+      "component": "253:route-22 flight8 step1",
+      "x": 31.08103370666504,
+      "y": 8.35714340209961,
+      "z": 12.62625503540039
+    },
+    {
+      "link": "route-22",
+      "component": "254:route-22 flight9 step1",
+      "x": 30.519676208496094,
+      "y": 8.48571491241455,
+      "z": 12.355920791625977
+    },
+    {
+      "link": "route-22",
+      "component": "255:route-22 flight10 step1",
+      "x": 30.032550811767578,
+      "y": 8.614286422729492,
+      "z": 11.967450141906738
+    },
+    {
+      "link": "route-22",
+      "component": "256:route-22 flight11 step1",
+      "x": 29.644079208374023,
+      "y": 8.742857933044434,
+      "z": 11.48032283782959
+    },
+    {
+      "link": "route-22",
+      "component": "257:route-22 flight12 step1",
+      "x": 29.37374496459961,
+      "y": 8.871429443359375,
+      "z": 10.918966293334961
+    },
+    {
+      "link": "route-22",
+      "component": "258:route-22 flight13 step1",
+      "x": 29.2351016998291,
+      "y": 9.0,
+      "z": 10.311529159545898
+    },
+    {
+      "link": "route-22",
+      "component": "259:route-22 flight14 step1",
+      "x": 29.2351016998291,
+      "y": 9.128571510314941,
+      "z": 9.688470840454102
+    },
+    {
+      "link": "route-22",
+      "component": "260:route-22 flight15 step1",
+      "x": 29.37374496459961,
+      "y": 9.257143020629883,
+      "z": 9.081033706665039
+    },
+    {
+      "link": "route-22",
+      "component": "261:route-22 flight16 step1",
+      "x": 29.644079208374023,
+      "y": 9.385714530944824,
+      "z": 8.51967716217041
+    },
+    {
+      "link": "route-22",
+      "component": "262:route-22 flight17 step1",
+      "x": 30.032550811767578,
+      "y": 9.514286041259766,
+      "z": 8.032549858093262
+    },
+    {
+      "link": "route-22",
+      "component": "263:route-22 flight18 step1",
+      "x": 30.519676208496094,
+      "y": 9.642857551574707,
+      "z": 7.644079685211182
+    },
+    {
+      "link": "route-22",
+      "component": "264:route-22 flight19 step1",
+      "x": 31.08103370666504,
+      "y": 9.771429061889648,
+      "z": 7.373744487762451
+    },
+    {
+      "link": "route-22",
+      "component": "265:route-22 flight20 step1",
+      "x": 31.6884708404541,
+      "y": 9.90000057220459,
+      "z": 7.235100746154785
+    },
+    {
+      "link": "route-22",
+      "component": "266:route-22 flight21 step1",
+      "x": 32.31153154373169,
+      "y": 10.028572082519531,
+      "z": 7.235100746154785
+    },
+    {
+      "link": "route-22",
+      "component": "267:route-22 flight22 step1",
+      "x": 32.918968200683594,
+      "y": 10.157143592834473,
+      "z": 7.373744487762451
+    },
+    {
+      "link": "route-22",
+      "component": "268:route-22 flight23 step1",
+      "x": 33.480323791503906,
+      "y": 10.285715103149414,
+      "z": 7.644079685211182
+    },
+    {
+      "link": "route-22",
+      "component": "269:route-22 flight24 step1",
+      "x": 33.96744918823242,
+      "y": 10.414286613464355,
+      "z": 8.032549858093262
+    },
+    {
+      "link": "route-22",
+      "component": "270:route-22 flight25 step1",
+      "x": 34.355918884277344,
+      "y": 10.54285717010498,
+      "z": 8.51967716217041
+    },
+    {
+      "link": "route-22",
+      "component": "271:route-22 flight26 step1",
+      "x": 34.62625503540039,
+      "y": 10.671428680419922,
+      "z": 9.081033706665039
+    },
+    {
+      "link": "route-22",
+      "component": "272:route-22 flight27 step1",
+      "x": 34.76490020751953,
+      "y": 10.800000190734863,
+      "z": 9.688470840454102
+    },
+    {
+      "link": "route-23",
+      "component": "273:route-23 flight0 step1",
+      "x": 34.76490020751953,
+      "y": 10.928571701049805,
+      "z": 10.311529159545898
+    },
+    {
+      "link": "route-23",
+      "component": "274:route-23 flight1 step1",
+      "x": 34.62625503540039,
+      "y": 11.057143211364746,
+      "z": 10.918966293334961
+    },
+    {
+      "link": "route-23",
+      "component": "275:route-23 flight2 step1",
+      "x": 34.355918884277344,
+      "y": 11.185714721679688,
+      "z": 11.48032283782959
+    },
+    {
+      "link": "route-23",
+      "component": "276:route-23 flight3 step1",
+      "x": 33.96744918823242,
+      "y": 11.314286231994629,
+      "z": 11.967450141906738
+    },
+    {
+      "link": "route-23",
+      "component": "277:route-23 flight4 step1",
+      "x": 33.480323791503906,
+      "y": 11.44285774230957,
+      "z": 12.355920791625977
+    },
+    {
+      "link": "route-23",
+      "component": "278:route-23 flight5 step1",
+      "x": 32.918968200683594,
+      "y": 11.571429252624512,
+      "z": 12.62625503540039
+    },
+    {
+      "link": "route-23",
+      "component": "279:route-23 flight6 step1",
+      "x": 32.31153154373169,
+      "y": 11.700000762939453,
+      "z": 12.764899253845215
+    },
+    {
+      "link": "route-23",
+      "component": "280:route-23 flight7 step1",
+      "x": 31.6884708404541,
+      "y": 11.828572273254395,
+      "z": 12.764899253845215
+    },
+    {
+      "link": "route-23",
+      "component": "281:route-23 flight8 step1",
+      "x": 31.08103370666504,
+      "y": 11.95714282989502,
+      "z": 12.62625503540039
+    },
+    {
+      "link": "route-23",
+      "component": "282:route-23 flight9 step1",
+      "x": 30.519676208496094,
+      "y": 12.085714340209961,
+      "z": 12.355920791625977
+    },
+    {
+      "link": "route-23",
+      "component": "283:route-23 flight10 step1",
+      "x": 30.032550811767578,
+      "y": 12.214285850524902,
+      "z": 11.967450141906738
+    },
+    {
+      "link": "route-23",
+      "component": "284:route-23 flight11 step1",
+      "x": 29.644079208374023,
+      "y": 12.342857360839844,
+      "z": 11.48032283782959
+    },
+    {
+      "link": "route-23",
+      "component": "285:route-23 flight12 step1",
+      "x": 29.37374496459961,
+      "y": 12.471428871154785,
+      "z": 10.918966293334961
+    },
+    {
+      "link": "route-23",
+      "component": "286:route-23 flight13 step1",
+      "x": 29.2351016998291,
+      "y": 12.600000381469727,
+      "z": 10.311529159545898
+    },
+    {
+      "link": "route-23",
+      "component": "287:route-23 flight14 step1",
+      "x": 29.2351016998291,
+      "y": 12.728571891784668,
+      "z": 9.688470840454102
+    },
+    {
+      "link": "route-23",
+      "component": "288:route-23 flight15 step1",
+      "x": 29.37374496459961,
+      "y": 12.85714340209961,
+      "z": 9.081033706665039
+    },
+    {
+      "link": "route-23",
+      "component": "289:route-23 flight16 step1",
+      "x": 29.644079208374023,
+      "y": 12.98571491241455,
+      "z": 8.51967716217041
+    },
+    {
+      "link": "route-23",
+      "component": "290:route-23 flight17 step1",
+      "x": 30.032550811767578,
+      "y": 13.114286422729492,
+      "z": 8.032549858093262
+    },
+    {
+      "link": "route-23",
+      "component": "291:route-23 flight18 step1",
+      "x": 30.519676208496094,
+      "y": 13.242857933044434,
+      "z": 7.644079685211182
+    },
+    {
+      "link": "route-23",
+      "component": "292:route-23 flight19 step1",
+      "x": 31.08103370666504,
+      "y": 13.371429443359375,
+      "z": 7.373744487762451
+    },
+    {
+      "link": "route-23",
+      "component": "293:route-23 flight20 step1",
+      "x": 31.6884708404541,
+      "y": 13.5,
+      "z": 7.235100746154785
+    },
+    {
+      "link": "route-23",
+      "component": "294:route-23 flight21 step1",
+      "x": 32.31153154373169,
+      "y": 13.628571510314941,
+      "z": 7.235100746154785
+    },
+    {
+      "link": "route-23",
+      "component": "295:route-23 flight22 step1",
+      "x": 32.918968200683594,
+      "y": 13.757143020629883,
+      "z": 7.373744487762451
+    },
+    {
+      "link": "route-23",
+      "component": "296:route-23 flight23 step1",
+      "x": 33.480323791503906,
+      "y": 13.885714530944824,
+      "z": 7.644079685211182
+    },
+    {
+      "link": "route-23",
+      "component": "297:route-23 flight24 step1",
+      "x": 33.96744918823242,
+      "y": 14.014286041259766,
+      "z": 8.032549858093262
+    },
+    {
+      "link": "route-23",
+      "component": "298:route-23 flight25 step1",
+      "x": 34.355918884277344,
+      "y": 14.142857551574707,
+      "z": 8.51967716217041
+    },
+    {
+      "link": "route-23",
+      "component": "299:route-23 flight26 step1",
+      "x": 34.62625503540039,
+      "y": 14.271429061889648,
+      "z": 9.081033706665039
+    },
+    {
+      "link": "route-23",
+      "component": "300:route-23 flight27 step1",
+      "x": 34.76490020751953,
+      "y": 14.40000057220459,
+      "z": 9.688470840454102
+    },
+    {
+      "link": "route-24",
+      "component": "301:route-24 flight0 step1",
+      "x": 34.76490020751953,
+      "y": 14.528572082519531,
+      "z": 10.311529159545898
+    },
+    {
+      "link": "route-24",
+      "component": "302:route-24 flight1 step1",
+      "x": 34.62625503540039,
+      "y": 14.657143592834473,
+      "z": 10.918966293334961
+    },
+    {
+      "link": "route-24",
+      "component": "303:route-24 flight2 step1",
+      "x": 34.355918884277344,
+      "y": 14.785715103149414,
+      "z": 11.48032283782959
+    },
+    {
+      "link": "route-24",
+      "component": "304:route-24 flight3 step1",
+      "x": 33.96744918823242,
+      "y": 14.914286613464355,
+      "z": 11.967450141906738
+    },
+    {
+      "link": "route-24",
+      "component": "305:route-24 flight4 step1",
+      "x": 33.480323791503906,
+      "y": 15.04285717010498,
+      "z": 12.355920791625977
+    },
+    {
+      "link": "route-24",
+      "component": "306:route-24 flight5 step1",
+      "x": 32.918968200683594,
+      "y": 15.171428680419922,
+      "z": 12.62625503540039
+    },
+    {
+      "link": "route-24",
+      "component": "307:route-24 flight6 step1",
+      "x": 32.31153154373169,
+      "y": 15.300000190734863,
+      "z": 12.764899253845215
+    },
+    {
+      "link": "route-24",
+      "component": "308:route-24 flight7 step1",
+      "x": 31.6884708404541,
+      "y": 15.428571701049805,
+      "z": 12.764899253845215
+    },
+    {
+      "link": "route-24",
+      "component": "309:route-24 flight8 step1",
+      "x": 31.08103370666504,
+      "y": 15.557143211364746,
+      "z": 12.62625503540039
+    },
+    {
+      "link": "route-24",
+      "component": "310:route-24 flight9 step1",
+      "x": 30.519676208496094,
+      "y": 15.685714721679688,
+      "z": 12.355920791625977
+    },
+    {
+      "link": "route-24",
+      "component": "311:route-24 flight10 step1",
+      "x": 30.032550811767578,
+      "y": 15.814286231994629,
+      "z": 11.967450141906738
+    },
+    {
+      "link": "route-24",
+      "component": "312:route-24 flight11 step1",
+      "x": 29.644079208374023,
+      "y": 15.94285774230957,
+      "z": 11.48032283782959
+    },
+    {
+      "link": "route-24",
+      "component": "313:route-24 flight12 step1",
+      "x": 29.37374496459961,
+      "y": 16.071428298950195,
+      "z": 10.918966293334961
+    },
+    {
+      "link": "route-24",
+      "component": "314:route-24 flight13 step1",
+      "x": 29.2351016998291,
+      "y": 16.19999885559082,
+      "z": 10.311529159545898
+    },
+    {
+      "link": "route-24",
+      "component": "315:route-24 flight14 step1",
+      "x": 29.2351016998291,
+      "y": 16.328571319580078,
+      "z": 9.688470840454102
+    },
+    {
+      "link": "route-24",
+      "component": "316:route-24 flight15 step1",
+      "x": 29.37374496459961,
+      "y": 16.457141876220703,
+      "z": 9.081033706665039
+    },
+    {
+      "link": "route-24",
+      "component": "317:route-24 flight16 step1",
+      "x": 29.644079208374023,
+      "y": 16.58571434020996,
+      "z": 8.51967716217041
+    },
+    {
+      "link": "route-24",
+      "component": "318:route-24 flight17 step1",
+      "x": 30.032550811767578,
+      "y": 16.714284896850586,
+      "z": 8.032549858093262
+    },
+    {
+      "link": "route-24",
+      "component": "319:route-24 flight18 step1",
+      "x": 30.519676208496094,
+      "y": 16.842857360839844,
+      "z": 7.644079685211182
+    },
+    {
+      "link": "route-24",
+      "component": "320:route-24 flight19 step1",
+      "x": 31.08103370666504,
+      "y": 16.97142791748047,
+      "z": 7.373744487762451
+    },
+    {
+      "link": "route-24",
+      "component": "321:route-24 flight20 step1",
+      "x": 31.6884708404541,
+      "y": 17.100000381469727,
+      "z": 7.235100746154785
+    },
+    {
+      "link": "route-24",
+      "component": "322:route-24 flight21 step1",
+      "x": 32.31153154373169,
+      "y": 17.22857093811035,
+      "z": 7.235100746154785
+    },
+    {
+      "link": "route-24",
+      "component": "323:route-24 flight22 step1",
+      "x": 32.918968200683594,
+      "y": 17.357141494750977,
+      "z": 7.373744487762451
+    },
+    {
+      "link": "route-24",
+      "component": "324:route-24 flight23 step1",
+      "x": 33.480323791503906,
+      "y": 17.485713958740234,
+      "z": 7.644079685211182
+    },
+    {
+      "link": "route-24",
+      "component": "325:route-24 flight24 step1",
+      "x": 33.96744918823242,
+      "y": 17.61428451538086,
+      "z": 8.032549858093262
+    },
+    {
+      "link": "route-24",
+      "component": "326:route-24 flight25 step1",
+      "x": 34.355918884277344,
+      "y": 17.742856979370117,
+      "z": 8.51967716217041
+    },
+    {
+      "link": "route-24",
+      "component": "327:route-24 flight26 step1",
+      "x": 34.62625503540039,
+      "y": 17.871427536010742,
+      "z": 9.081033706665039
+    },
+    {
+      "link": "route-24",
+      "component": "328:route-24 flight27 step1",
+      "x": 34.76490020751953,
+      "y": 18.0,
+      "z": 9.688470840454102
+    }
+  ],
+  "dropped_degenerate_triangles": 0,
+  "scope": "Candidate native collision; gameplay/ownership/terrain/network gates remain open",
+  "saved_editor_terrain_fidelity": {
+    "exact_float_triangle_and_flag_match": true,
+    "triangles": 10146,
+    "native_physics_sha256": "a775357a9e410201f13339e2b96eaa61338ef5f894bb16e76b419b9eec2bb279"
+  }
+}

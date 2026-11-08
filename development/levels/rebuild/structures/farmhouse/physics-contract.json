@@ -1,414 +1,414 @@
 {
-  "source_glb_sha256": "ab8f207dd23581227547b495a5520e0383c0ab90e7606765474c566e7c86ae66",
-  "physics_sha256": "6a40c990d523c3da67e0eb3f01f2bfcfc6da9b49eae0a4396fe1a6db8c317a83",
-  "exporter_sha256": "0f6106aff8e414895b01b4f62c94ec872f4d5e72af77f7df9fe04f2f6e941782",
+  "source_glb_sha256": "0161f8d6ddadd406704d2458dc8579c206c98f2c6051c530f962d1fb13384354",
+  "physics_sha256": "027c6befc8365fcd4c6feaf392e9ddaff795b61a7305809478b81e27f98e3aaa",
+  "exporter_sha256": "34746a584f469e65906c1c9c5f34be4d3f5eff797d2175b3727303508cf3ca53",
   "stair_components": [
-    "321:L34 flight0 step1",
-    "322:L34 flight0 step2",
-    "323:L34 flight0 step3",
-    "324:L34 flight0 step4",
-    "325:L34 flight0 step5",
-    "326:L34 flight0 step6",
-    "327:L34 flight0 step7",
-    "328:L34 flight0 step8",
-    "329:L34 flight0 step9",
-    "330:L34 flight0 step10",
-    "331:L34 flight0 step11",
-    "332:L34 flight0 step12",
-    "333:L34 flight0 step13",
-    "334:L34 flight0 step14",
-    "335:L34 flight0 step15",
-    "336:L34 flight0 step16",
-    "337:L34 flight0 step17",
-    "338:L35 flight0 step1",
-    "339:L35 flight0 step2",
-    "340:L35 flight0 step3",
-    "341:L35 flight0 step4",
-    "342:L35 flight0 step5",
-    "343:L35 flight0 step6",
-    "344:L35 flight0 step7",
-    "345:L35 flight0 step8",
-    "346:L35 flight0 step9",
-    "347:L35 flight0 step10",
-    "348:L35 flight0 step11",
-    "349:L35 flight0 step12",
-    "350:L35 flight0 step13",
-    "351:L35 flight0 step14",
-    "352:L35 flight0 step15",
-    "353:L35 flight0 step16",
-    "354:L35 flight0 step17",
-    "355:L36 flight0 step1",
-    "356:L36 flight0 step2",
-    "357:L36 flight0 step3",
-    "358:L36 flight0 step4",
-    "359:L36 flight0 step5",
-    "360:L36 flight0 step6",
-    "361:L36 flight0 step7",
-    "362:L36 flight0 step8",
-    "363:L36 flight0 step9",
-    "364:L36 flight0 step10",
-    "365:L36 flight0 step11",
-    "366:L36 flight0 step12",
-    "367:L36 flight0 step13",
-    "368:L36 flight0 step14",
-    "369:L36 flight0 step15",
-    "370:L36 flight0 step16",
-    "371:L36 flight0 step17"
+    "322:L34 flight0 step1",
+    "323:L34 flight0 step2",
+    "324:L34 flight0 step3",
+    "325:L34 flight0 step4",
+    "326:L34 flight0 step5",
+    "327:L34 flight0 step6",
+    "328:L34 flight0 step7",
+    "329:L34 flight0 step8",
+    "330:L34 flight0 step9",
+    "331:L34 flight0 step10",
+    "332:L34 flight0 step11",
+    "333:L34 flight0 step12",
+    "334:L34 flight0 step13",
+    "335:L34 flight0 step14",
+    "336:L34 flight0 step15",
+    "337:L34 flight0 step16",
+    "338:L34 flight0 step17",
+    "339:L35 flight0 step1",
+    "340:L35 flight0 step2",
+    "341:L35 flight0 step3",
+    "342:L35 flight0 step4",
+    "343:L35 flight0 step5",
+    "344:L35 flight0 step6",
+    "345:L35 flight0 step7",
+    "346:L35 flight0 step8",
+    "347:L35 flight0 step9",
+    "348:L35 flight0 step10",
+    "349:L35 flight0 step11",
+    "350:L35 flight0 step12",
+    "351:L35 flight0 step13",
+    "352:L35 flight0 step14",
+    "353:L35 flight0 step15",
+    "354:L35 flight0 step16",
+    "355:L35 flight0 step17",
+    "356:L36 flight0 step1",
+    "357:L36 flight0 step2",
+    "358:L36 flight0 step3",
+    "359:L36 flight0 step4",
+    "360:L36 flight0 step5",
+    "361:L36 flight0 step6",
+    "362:L36 flight0 step7",
+    "363:L36 flight0 step8",
+    "364:L36 flight0 step9",
+    "365:L36 flight0 step10",
+    "366:L36 flight0 step11",
+    "367:L36 flight0 step12",
+    "368:L36 flight0 step13",
+    "369:L36 flight0 step14",
+    "370:L36 flight0 step15",
+    "371:L36 flight0 step16",
+    "372:L36 flight0 step17"
   ],
   "tread_centres": [
     {
       "link": "L34",
-      "component": "321:L34 flight0 step1",
+      "component": "322:L34 flight0 step1",
       "x": 24.5,
       "y": 0.1764705777168274,
       "z": 13.74117660522461
     },
     {
       "link": "L34",
-      "component": "322:L34 flight0 step2",
+      "component": "323:L34 flight0 step2",
       "x": 24.5,
       "y": 0.3529411852359772,
       "z": 14.023529052734375
     },
     {
       "link": "L34",
-      "component": "323:L34 flight0 step3",
+      "component": "324:L34 flight0 step3",
       "x": 24.5,
       "y": 0.529411792755127,
       "z": 14.305882453918457
     },
     {
       "link": "L34",
-      "component": "324:L34 flight0 step4",
+      "component": "325:L34 flight0 step4",
       "x": 24.5,
       "y": 0.7058823108673096,
       "z": 14.588234901428223
     },
     {
       "link": "L34",
-      "component": "325:L34 flight0 step5",
+      "component": "326:L34 flight0 step5",
       "x": 24.5,
       "y": 0.8823529481887817,
       "z": 14.870588302612305
     },
     {
       "link": "L34",
-      "component": "326:L34 flight0 step6",
+      "component": "327:L34 flight0 step6",
       "x": 24.5,
       "y": 1.058823585510254,
       "z": 15.15294075012207
     },
     {
       "link": "L34",
-      "component": "327:L34 flight0 step7",
+      "component": "328:L34 flight0 step7",
       "x": 24.5,
       "y": 1.2352941036224365,
       "z": 15.435294151306152
     },
     {
       "link": "L34",
-      "component": "328:L34 flight0 step8",
+      "component": "329:L34 flight0 step8",
       "x": 24.5,
       "y": 1.4117646217346191,
       "z": 15.717646598815918
     },
     {
       "link": "L34",
-      "component": "329:L34 flight0 step9",
+      "component": "330:L34 flight0 step9",
       "x": 24.5,
       "y": 1.5882353782653809,
       "z": 16.0
     },
     {
       "link": "L34",
-      "component": "330:L34 flight0 step10",
+      "component": "331:L34 flight0 step10",
       "x": 24.5,
       "y": 1.7647058963775635,
       "z": 16.282352447509766
     },
     {
       "link": "L34",
-      "component": "331:L34 flight0 step11",
+      "component": "332:L34 flight0 step11",
       "x": 24.5,
       "y": 1.941176414489746,
       "z": 16.564706802368164
     },
     {
       "link": "L34",
-      "component": "332:L34 flight0 step12",
+      "component": "333:L34 flight0 step12",
       "x": 24.5,
       "y": 2.117647171020508,
       "z": 16.84705924987793
     },
     {
       "link": "L34",
-      "component": "333:L34 flight0 step13",
+      "component": "334:L34 flight0 step13",
       "x": 24.5,
       "y": 2.2941174507141113,
       "z": 17.129411697387695
     },
     {
       "link": "L34",
-      "component": "334:L34 flight0 step14",
+      "component": "335:L34 flight0 step14",
       "x": 24.5,
       "y": 2.470588207244873,
       "z": 17.41176414489746
     },
     {
       "link": "L34",
-      "component": "335:L34 flight0 step15",
+      "component": "336:L34 flight0 step15",
       "x": 24.5,
       "y": 2.6470589637756348,
       "z": 17.69411849975586
     },
     {
       "link": "L34",
-      "component": "336:L34 flight0 step16",
+      "component": "337:L34 flight0 step16",
       "x": 24.5,
       "y": 2.8235292434692383,
       "z": 17.976470947265625
     },
     {
       "link": "L34",
-      "component": "337:L34 flight0 step17",
+      "component": "338:L34 flight0 step17",
       "x": 24.5,
       "y": 3.0,
       "z": 18.25882339477539
     },
     {
       "link": "L35",
-      "component": "338:L35 flight0 step1",
+      "component": "339:L35 flight0 step1",
       "x": 21.5,
       "y": -2.8235294818878174,
       "z": 13.74117660522461
     },
     {
       "link": "L35",
-      "component": "339:L35 flight0 step2",
+      "component": "340:L35 flight0 step2",
       "x": 21.5,
       "y": -2.6470587253570557,
       "z": 14.023529052734375
     },
     {
       "link": "L35",
-      "component": "340:L35 flight0 step3",
+      "component": "341:L35 flight0 step3",
       "x": 21.5,
       "y": -2.470588207244873,
       "z": 14.305882453918457
     },
     {
       "link": "L35",
-      "component": "341:L35 flight0 step4",
+      "component": "342:L35 flight0 step4",
       "x": 21.5,
       "y": -2.2941176891326904,
       "z": 14.588234901428223
     },
     {
       "link": "L35",
-      "component": "342:L35 flight0 step5",
+      "component": "343:L35 flight0 step5",
       "x": 21.5,
       "y": -2.117647171020508,
       "z": 14.870588302612305
     },
     {
       "link": "L35",
-      "component": "343:L35 flight0 step6",
+      "component": "344:L35 flight0 step6",
       "x": 21.5,
       "y": -1.941176414489746,
       "z": 15.15294075012207
     },
     {
       "link": "L35",
-      "component": "344:L35 flight0 step7",
+      "component": "345:L35 flight0 step7",
       "x": 21.5,
       "y": -1.7647058963775635,
       "z": 15.435294151306152
     },
     {
       "link": "L35",
-      "component": "345:L35 flight0 step8",
+      "component": "346:L35 flight0 step8",
       "x": 21.5,
       "y": -1.5882352590560913,
       "z": 15.717646598815918
     },
     {
       "link": "L35",
-      "component": "346:L35 flight0 step9",
+      "component": "347:L35 flight0 step9",
       "x": 21.5,
       "y": -1.4117646217346191,
       "z": 16.0
     },
     {
       "link": "L35",
-      "component": "347:L35 flight0 step10",
+      "component": "348:L35 flight0 step10",
       "x": 21.5,
       "y": -1.2352941036224365,
       "z": 16.282352447509766
     },
     {
       "link": "L35",
-      "component": "348:L35 flight0 step11",
+      "component": "349:L35 flight0 step11",
       "x": 21.5,
       "y": -1.0588234663009644,
       "z": 16.564706802368164
     },
     {
       "link": "L35",
-      "component": "349:L35 flight0 step12",
+      "component": "350:L35 flight0 step12",
       "x": 21.5,
       "y": -0.8823530673980713,
       "z": 16.84705924987793
     },
     {
       "link": "L35",
-      "component": "350:L35 flight0 step13",
+      "component": "351:L35 flight0 step13",
       "x": 21.5,
       "y": -0.7058824300765991,
       "z": 17.129411697387695
     },
     {
       "link": "L35",
-      "component": "351:L35 flight0 step14",
+      "component": "352:L35 flight0 step14",
       "x": 21.5,
       "y": -0.529411792755127,
       "z": 17.41176414489746
     },
     {
       "link": "L35",
-      "component": "352:L35 flight0 step15",
+      "component": "353:L35 flight0 step15",
       "x": 21.5,
       "y": -0.3529411554336548,
       "z": 17.69411849975586
     },
     {
       "link": "L35",
-      "component": "353:L35 flight0 step16",
+      "component": "354:L35 flight0 step16",
       "x": 21.5,
       "y": -0.17647063732147217,
       "z": 17.976470947265625
     },
     {
       "link": "L35",
-      "component": "354:L35 flight0 step17",
+      "component": "355:L35 flight0 step17",
       "x": 21.5,
       "y": 0.0,
       "z": 18.25882339477539
     },
     {
       "link": "L36",
-      "component": "355:L36 flight0 step1",
+      "component": "356:L36 flight0 step1",
       "x": 41.0,
       "y": 0.1764705777168274,
       "z": 17.641176223754883
     },
     {
       "link": "L36",
-      "component": "356:L36 flight0 step2",
+      "component": "357:L36 flight0 step2",
       "x": 41.0,
       "y": 0.3529411852359772,
       "z": 17.92352867126465
     },
     {
       "link": "L36",
-      "component": "357:L36 flight0 step3",
+      "component": "358:L36 flight0 step3",
       "x": 41.0,
       "y": 0.529411792755127,
       "z": 18.205883026123047
     },
     {
       "link": "L36",
-      "component": "358:L36 flight0 step4",
+      "component": "359:L36 flight0 step4",
       "x": 41.0,
       "y": 0.7058823108673096,
       "z": 18.488235473632812
     },
     {
       "link": "L36",
-      "component": "359:L36 flight0 step5",
+      "component": "360:L36 flight0 step5",
       "x": 41.0,
       "y": 0.8823529481887817,
       "z": 18.770587921142578
     },
     {
       "link": "L36",
-      "component": "360:L36 flight0 step6",
+      "component": "361:L36 flight0 step6",
       "x": 41.0,
       "y": 1.058823585510254,
       "z": 19.052940368652344
     },
     {
       "link": "L36",
-      "component": "361:L36 flight0 step7",
+      "component": "362:L36 flight0 step7",
       "x": 41.0,
       "y": 1.2352941036224365,
       "z": 19.335294723510742
     },
     {
       "link": "L36",
-      "component": "362:L36 flight0 step8",
+      "component": "363:L36 flight0 step8",
       "x": 41.0,
       "y": 1.4117646217346191,
       "z": 19.617647171020508
     },
     {
       "link": "L36",
-      "component": "363:L36 flight0 step9",
+      "component": "364:L36 flight0 step9",
       "x": 41.0,
       "y": 1.5882353782653809,
       "z": 19.899999618530273
     },
     {
       "link": "L36",
-      "component": "364:L36 flight0 step10",
+      "component": "365:L36 flight0 step10",
       "x": 41.0,
       "y": 1.7647058963775635,
       "z": 20.18235206604004
     },
     {
       "link": "L36",
-      "component": "365:L36 flight0 step11",
+      "component": "366:L36 flight0 step11",
       "x": 41.0,
       "y": 1.941176414489746,
       "z": 20.464706420898438
     },
     {
       "link": "L36",
-      "component": "366:L36 flight0 step12",
+      "component": "367:L36 flight0 step12",
       "x": 41.0,
       "y": 2.117647171020508,
       "z": 20.747058868408203
     },
     {
       "link": "L36",
-      "component": "367:L36 flight0 step13",
+      "component": "368:L36 flight0 step13",
       "x": 41.0,
       "y": 2.2941174507141113,
       "z": 21.02941131591797
     },
     {
       "link": "L36",
-      "component": "368:L36 flight0 step14",
+      "component": "369:L36 flight0 step14",
       "x": 41.0,
       "y": 2.470588207244873,
       "z": 21.311763763427734
     },
     {
       "link": "L36",
-      "component": "369:L36 flight0 step15",
+      "component": "370:L36 flight0 step15",
       "x": 41.0,
       "y": 2.6470589637756348,
       "z": 21.594118118286133
     },
     {
       "link": "L36",
-      "component": "370:L36 flight0 step16",
+      "component": "371:L36 flight0 step16",
       "x": 41.0,
       "y": 2.8235292434692383,
       "z": 21.8764705657959
     },
     {
       "link": "L36",
-      "component": "371:L36 flight0 step17",
+      "component": "372:L36 flight0 step17",
       "x": 41.0,
       "y": 3.0,
       "z": 22.158823013305664

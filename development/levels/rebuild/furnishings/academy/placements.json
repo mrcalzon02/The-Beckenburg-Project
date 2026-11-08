@@ -1,0 +1,173 @@
+{
+  "site": "ACADEMY",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/academy/rough-layout.json",
+  "source_layout_sha256": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6",
+  "structure_glb_sha256": "9b73526d2674ed697964131dc9cf864dbd8792565bb2d62ec59d2f7d569826a1",
+  "furnished_glb_sha256": "82b060617e68960f24a38f6f9b521f8d6225581894e8c7e572bd6912d80771ff",
+  "native_sha256": "fffab5573d20773cc981f46e38c7216a00aa28c0643baec99f48170b9703f6cd",
+  "requests": 6,
+  "placements": [
+    {
+      "id": "ACADEMY:reception:0:0",
+      "zone": "reception",
+      "purpose": "Visitor reception and waiting / Headmaster's desk and writing accessories / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_headmaster_desk",
+      "asset": "level_blockout_headmaster_desk",
+      "source_sha256": "0c5e6f6383716091ccd60c36337dc6bae4fa2b0d9b0320e7b46c55c04516a617",
+      "bounds": [
+        23.72599983215332,
+        -46.02000045776367,
+        0.0,
+        25.575998306274414,
+        -45.15999984741211,
+        0.8050000071525574
+      ],
+      "rect": [
+        23.72599999523163,
+        45.16,
+        25.576000019073486,
+        46.02000001430511
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    },
+    {
+      "id": "ACADEMY:reading:1:0",
+      "zone": "reading",
+      "purpose": "Library quiet reading / Library and campus book return trolley / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_library_book_return_cart",
+      "asset": "level_blockout_library_book_return_cart",
+      "source_sha256": "a1179da3414cce1eb351d4d5eba920483e27c1535eb1218bba9fc80c73d410a9",
+      "bounds": [
+        9.300000190734863,
+        -32.810001373291016,
+        0.0,
+        10.279999732971191,
+        -32.15999984741211,
+        1.2389999628067017
+      ],
+      "rect": [
+        9.299999996185303,
+        32.16,
+        10.28000001525879,
+        32.81000000596046
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 272
+    },
+    {
+      "id": "ACADEMY:lecture:2:0",
+      "zone": "lecture",
+      "purpose": "Sixteen-place teaching room / Lecture lectern / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_lecture_lectern",
+      "asset": "level_blockout_lecture_lectern",
+      "source_sha256": "58c5a3f9eb3d85428035464f8b4cabebb2cf58ae65b0478c97426ff74d183e3b",
+      "bounds": [
+        47.27784729003906,
+        -33.03401565551758,
+        0.0,
+        48.368621826171875,
+        -32.15999984741211,
+        1.3650000095367432
+      ],
+      "rect": [
+        47.27784447288513,
+        32.16,
+        48.36862210845947,
+        33.03401664257049
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 48
+    },
+    {
+      "id": "ACADEMY:lab:3:0",
+      "zone": "lab",
+      "purpose": "Practical teaching benches and handwashing / Laboratory fume hood and extraction canopy / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_lab_fume_hood",
+      "asset": "level_blockout_lab_fume_hood",
+      "source_sha256": "332612ef5db9a984bb64123b46fcdc46094c0010bd68918e982826e4dec7d699",
+      "bounds": [
+        46.31999969482422,
+        -20.099998474121094,
+        0.0,
+        48.19999694824219,
+        -19.15999984741211,
+        2.2200000286102295
+      ],
+      "rect": [
+        46.32000000095367,
+        19.16,
+        48.1999999961853,
+        20.099999997615814
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 136
+    },
+    {
+      "id": "ACADEMY:dorm-1:4:0",
+      "zone": "dorm-1",
+      "purpose": "Four-place pupil sleeping room 1 / Dormitory bunk, divider and ladder / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_dorm_bunk_partition",
+      "asset": "level_blockout_dorm_bunk_partition",
+      "source_sha256": "4ee12b23e3261c963d1d4ac53b54249982a81cf1af761b156ecf4d324122a699",
+      "bounds": [
+        22.865999221801758,
+        -6.539999961853027,
+        3.5999999046325684,
+        25.016000747680664,
+        -4.159999847412109,
+        5.869999885559082
+      ],
+      "rect": [
+        22.86600000476837,
+        4.16,
+        25.015999980926512,
+        6.540000114440918
+      ],
+      "floor_y": 3.6,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 180
+    },
+    {
+      "id": "ACADEMY:archive:5:0",
+      "zone": "archive",
+      "purpose": "Dry institutional archive / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        8.079999923706055,
+        -22.687000274658203,
+        -3.0,
+        9.15999984741211,
+        -22.15999984741211,
+        -1.0
+      ],
+      "rect": [
+        8.079999991416932,
+        22.16,
+        9.160000034332276,
+        22.68699999511242
+      ],
+      "floor_y": -3,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "2ed271bf133f10f31baece06fa6bf95305346fb9ad3aca95ce92a00ffc59a59e",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 6,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

@@ -1,0 +1,121 @@
+{
+  "site": "WLD-10",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-10/rough-layout.json",
+  "source_layout_sha256": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9",
+  "structure_glb_sha256": "fce4e043a3413ba2ad0c8f5242666b1afd17d13f10d963247b71ff64d566cdbf",
+  "furnished_glb_sha256": "583951edd4eeafe44ca3d96eb8816821c09fd06ee88f96187220d34bb1bf03d2",
+  "native_sha256": "b7049688fea2c975c7d7b78b6bbae38b8d455cf5232633e0368f2404557399ca",
+  "requests": 4,
+  "placements": [
+    {
+      "id": "WLD-10:archive:0:0",
+      "zone": "archive",
+      "purpose": "Archive / Scriptorium writing desk and book rest / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_monastery_scriptorium",
+      "asset": "level_blockout_monastery_scriptorium",
+      "source_sha256": "326b0fe016f07cf1bddd1bca28ecc48d504ec7f285a82e8a56c4edae4d45ee91",
+      "bounds": [
+        11.760000228881836,
+        -3.1001012325286865,
+        0.0,
+        13.440000534057617,
+        -2.1599998474121094,
+        1.1349999904632568
+      ],
+      "rect": [
+        11.760000010490417,
+        2.16,
+        13.43999995803833,
+        3.1001013851165773
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 116
+    },
+    {
+      "id": "WLD-10:refectory:1:0",
+      "zone": "refectory",
+      "purpose": "Refectory / School cafeteria bench table / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_school_cafeteria_table",
+      "asset": "level_blockout_school_cafeteria_table",
+      "source_sha256": "019b3d3218e8b1e740e206fb7859fe549a24ff82c92ec88ea82f94f09081d849",
+      "bounds": [
+        53.2400016784668,
+        -31.950000762939453,
+        0.0,
+        55.52000045776367,
+        -30.15999984741211,
+        0.8650000095367432
+      ],
+      "rect": [
+        53.240000005722045,
+        30.16,
+        55.519999977111816,
+        31.949999961853027
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "WLD-10:dorm:2:0",
+      "zone": "dorm",
+      "purpose": "Dormitory / Dormitory bunk, divider and ladder / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_dorm_bunk_partition",
+      "asset": "level_blockout_dorm_bunk_partition",
+      "source_sha256": "4ee12b23e3261c963d1d4ac53b54249982a81cf1af761b156ecf4d324122a699",
+      "bounds": [
+        -5.134000301361084,
+        -24.540000915527344,
+        0.0,
+        -2.9839999675750732,
+        -22.15999984741211,
+        2.2699999809265137
+      ],
+      "rect": [
+        -5.133999995231628,
+        22.16,
+        -2.984000019073486,
+        24.540000114440918
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 180
+    },
+    {
+      "id": "WLD-10:chamber:3:0",
+      "zone": "chamber",
+      "purpose": "Subterranean chapter chamber / Parish chancel stone altar / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_stone_altar",
+      "asset": "level_blockout_stone_altar",
+      "source_sha256": "95aeb6f2597b8f13cbcc9f6219b9256e3ef24253e386075172cf19597694a603",
+      "bounds": [
+        11.631999969482422,
+        -3.3400001525878906,
+        -3.0,
+        13.95199966430664,
+        -2.1599998474121094,
+        -1.2300000190734863
+      ],
+      "rect": [
+        11.63200001335144,
+        2.16,
+        13.951999946594238,
+        3.3399999475479127
+      ],
+      "floor_y": -3,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 100
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "9687723c45bda319fd05eaf63ae09d9eb14870d9f81a2e66680bf750fd48d5ff",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 4,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

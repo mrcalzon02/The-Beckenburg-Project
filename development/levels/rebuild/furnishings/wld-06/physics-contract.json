@@ -1,0 +1,235 @@
+{
+  "source_glb_sha256": "7102280be55ab2513dc48c84be817b7d1a87c624301d909ab1681882cbb5a5a9",
+  "physics_sha256": "b5729dc36b77ed7ec9a8562a7253c969316ade18180ae63f6556e97272b6f0aa",
+  "exporter_sha256": "34746a584f469e65906c1c9c5f34be4d3f5eff797d2175b3727303508cf3ca53",
+  "stair_components": [
+    "85:L16 flight0 step1",
+    "86:L16 flight0 step2",
+    "87:L16 flight0 step3",
+    "88:L16 flight0 step4",
+    "89:L16 flight0 step5",
+    "90:L16 flight0 step6",
+    "91:L16 flight0 step7",
+    "92:L16 flight0 step8",
+    "93:L16 flight0 step9",
+    "94:L16 flight0 step10",
+    "95:L16 flight0 step11",
+    "96:L16 flight0 step12",
+    "97:L16 flight0 step13",
+    "98:L16 flight0 step14",
+    "99:L17 flight0 step1",
+    "100:L17 flight0 step2",
+    "101:L17 flight0 step3",
+    "102:L17 flight0 step4",
+    "103:L17 flight0 step5",
+    "104:L17 flight0 step6",
+    "105:L17 flight0 step7",
+    "106:L17 flight0 step8",
+    "107:L17 flight0 step9",
+    "108:L17 flight0 step10",
+    "109:L17 flight0 step11",
+    "110:L17 flight0 step12",
+    "111:L17 flight0 step13",
+    "112:L17 flight0 step14"
+  ],
+  "tread_centres": [
+    {
+      "link": "L16",
+      "component": "85:L16 flight0 step1",
+      "x": 31.5,
+      "y": -2.3214285373687744,
+      "z": 30.10714340209961
+    },
+    {
+      "link": "L16",
+      "component": "86:L16 flight0 step2",
+      "x": 30.5,
+      "y": -2.142857074737549,
+      "z": 30.321428298950195
+    },
+    {
+      "link": "L16",
+      "component": "87:L16 flight0 step3",
+      "x": 29.5,
+      "y": -1.9642857313156128,
+      "z": 30.535715103149414
+    },
+    {
+      "link": "L16",
+      "component": "88:L16 flight0 step4",
+      "x": 28.5,
+      "y": -1.7857143878936768,
+      "z": 30.75
+    },
+    {
+      "link": "L16",
+      "component": "89:L16 flight0 step5",
+      "x": 27.5,
+      "y": -1.6071428060531616,
+      "z": 30.964284420013428
+    },
+    {
+      "link": "L16",
+      "component": "90:L16 flight0 step6",
+      "x": 26.5,
+      "y": -1.4285714626312256,
+      "z": 31.178571701049805
+    },
+    {
+      "link": "L16",
+      "component": "91:L16 flight0 step7",
+      "x": 25.5,
+      "y": -1.25,
+      "z": 31.39285659790039
+    },
+    {
+      "link": "L16",
+      "component": "92:L16 flight0 step8",
+      "x": 24.5,
+      "y": -1.0714285373687744,
+      "z": 31.60714340209961
+    },
+    {
+      "link": "L16",
+      "component": "93:L16 flight0 step9",
+      "x": 23.5,
+      "y": -0.8928571343421936,
+      "z": 31.821428298950195
+    },
+    {
+      "link": "L16",
+      "component": "94:L16 flight0 step10",
+      "x": 22.5,
+      "y": -0.7142857313156128,
+      "z": 32.03571319580078
+    },
+    {
+      "link": "L16",
+      "component": "95:L16 flight0 step11",
+      "x": 21.5,
+      "y": -0.5357142686843872,
+      "z": 32.25
+    },
+    {
+      "link": "L16",
+      "component": "96:L16 flight0 step12",
+      "x": 20.5,
+      "y": -0.3571428060531616,
+      "z": 32.46428680419922
+    },
+    {
+      "link": "L16",
+      "component": "97:L16 flight0 step13",
+      "x": 19.5,
+      "y": -0.17857134342193604,
+      "z": 32.67856979370117
+    },
+    {
+      "link": "L16",
+      "component": "98:L16 flight0 step14",
+      "x": 18.5,
+      "y": 0.0,
+      "z": 32.89285659790039
+    },
+    {
+      "link": "L17",
+      "component": "99:L17 flight0 step1",
+      "x": 32.5,
+      "y": -2.3214285373687744,
+      "z": 30.10714340209961
+    },
+    {
+      "link": "L17",
+      "component": "100:L17 flight0 step2",
+      "x": 33.5,
+      "y": -2.142857074737549,
+      "z": 30.321428298950195
+    },
+    {
+      "link": "L17",
+      "component": "101:L17 flight0 step3",
+      "x": 34.5,
+      "y": -1.9642857313156128,
+      "z": 30.535715103149414
+    },
+    {
+      "link": "L17",
+      "component": "102:L17 flight0 step4",
+      "x": 35.5,
+      "y": -1.7857143878936768,
+      "z": 30.75
+    },
+    {
+      "link": "L17",
+      "component": "103:L17 flight0 step5",
+      "x": 36.5,
+      "y": -1.6071428060531616,
+      "z": 30.964284420013428
+    },
+    {
+      "link": "L17",
+      "component": "104:L17 flight0 step6",
+      "x": 37.5,
+      "y": -1.4285714626312256,
+      "z": 31.178571701049805
+    },
+    {
+      "link": "L17",
+      "component": "105:L17 flight0 step7",
+      "x": 38.5,
+      "y": -1.25,
+      "z": 31.39285659790039
+    },
+    {
+      "link": "L17",
+      "component": "106:L17 flight0 step8",
+      "x": 39.5,
+      "y": -1.0714285373687744,
+      "z": 31.60714340209961
+    },
+    {
+      "link": "L17",
+      "component": "107:L17 flight0 step9",
+      "x": 40.5,
+      "y": -0.8928571343421936,
+      "z": 31.821428298950195
+    },
+    {
+      "link": "L17",
+      "component": "108:L17 flight0 step10",
+      "x": 41.5,
+      "y": -0.7142857313156128,
+      "z": 32.03571319580078
+    },
+    {
+      "link": "L17",
+      "component": "109:L17 flight0 step11",
+      "x": 42.5,
+      "y": -0.5357142686843872,
+      "z": 32.25
+    },
+    {
+      "link": "L17",
+      "component": "110:L17 flight0 step12",
+      "x": 43.5,
+      "y": -0.3571428060531616,
+      "z": 32.46428680419922
+    },
+    {
+      "link": "L17",
+      "component": "111:L17 flight0 step13",
+      "x": 44.5,
+      "y": -0.17857134342193604,
+      "z": 32.67856979370117
+    },
+    {
+      "link": "L17",
+      "component": "112:L17 flight0 step14",
+      "x": 45.5,
+      "y": 0.0,
+      "z": 32.89285659790039
+    }
+  ],
+  "dropped_degenerate_triangles": 0,
+  "scope": "Candidate native collision; gameplay/ownership/terrain/network gates remain open"
+}

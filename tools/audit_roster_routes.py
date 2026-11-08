@@ -13,6 +13,7 @@ def main():
     selection=parser.add_mutually_exclusive_group(required=True)
     selection.add_argument('--sites',nargs='+');selection.add_argument('--remaining',action='store_true')
     parser.add_argument('--output',type=Path,required=True)
+    parser.add_argument('--furnished',action='store_true')
     parser.add_argument('--require-clear-spines',action='store_true',help='Fail if any tread lacks support or a clear head-height centre ray; does not accept capsule movement')
     args=parser.parse_args()
     if args.remaining:
@@ -21,13 +22,14 @@ def main():
     build=ROOT/'build/roster-route-probe';build.mkdir(parents=True,exist_ok=True)
     rows=[];sources={}
     for site in args.sites:
-        folder=ROOT/'development/levels/rebuild/structures'/site.lower()
+        folder=ROOT/('development/levels/rebuild/furnishings' if args.furnished else 'development/levels/rebuild/structures')/site.lower()
         contract=json.loads((folder/'physics-contract.json').read_text(encoding='utf-8'))
-        for filename,key in [('rough-shell.glb','source_glb_sha256'),('structure-physics.hcs2','physics_sha256')]:
+        mesh='furnished.glb' if args.furnished else 'rough-shell.glb';physics='furnished-physics.hcs2' if args.furnished else 'structure-physics.hcs2'
+        for filename,key in [(mesh,'source_glb_sha256'),(physics,'physics_sha256')]:
             assert hashlib.sha256((folder/filename).read_bytes()).hexdigest()==contract[key],(site,filename)
         sources[site]={key:contract[key] for key in ['source_glb_sha256','physics_sha256']}
         for pose in contract['tread_centres']:
-            rows.append('\t'.join(str(v) for v in [site,folder/'structure-physics.hcs2',contract['physics_sha256'],
+            rows.append('\t'.join(str(v) for v in [site,folder/physics,contract['physics_sha256'],
                 pose['link'],pose['component'],pose['x'],pose['y'],pose['z']]))
     manifest=build/'input.tsv';manifest.write_bytes(('\n'.join(rows)+'\n').encode('utf-8'))
     java=Path(os.environ.get('JAVA_HOME','C:/Program Files/Java/jdk-17'))/'bin'

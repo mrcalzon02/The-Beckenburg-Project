@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 7847,
+  "count": 7906,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -73636,6 +73636,106 @@
       "sha256": "c1cd9bb200f25f4070c6f8996a50778da9d0dd33b805bdb45d87becdab549769"
     },
     {
+      "path": "development/levels/rebuild/captures/furnishing-batch/academy-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/academy-export-overview.png",
+      "title": "Academy export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1054770,
+      "sha256": "2fb4d79cc12d0c4c5bd3b1bb6795772069651ab1d5d1d11e9b2f4b115a965d0b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/academy-room-reception.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/academy-room-reception.png",
+      "title": "Academy room reception",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1045991,
+      "sha256": "db875201a17cdd06094f6d872380338418483b037884a5c4bf27b5a81646df03"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/asylum-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/asylum-export-overview.png",
+      "title": "Asylum export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1069547,
+      "sha256": "c3c1b448aea0181eb09d417a8519d53effc0239f60bc8463ab43f90fb19ba9bc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/asylum-room-ground-north-a.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/asylum-room-ground-north-a.png",
+      "title": "Asylum room ground north a",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1094107,
+      "sha256": "03f857c7b66e1aa193d67f93e69f56b84e0fd1479c0a2025f1f87219247d0b85"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/church-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/church-export-overview.png",
+      "title": "Church export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1000089,
+      "sha256": "a75a27a60349762681ec7eac6e6fd22d261305fa8c00aa7a1e9e15b65f7f8b1f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/church-room-nave.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/church-room-nave.png",
+      "title": "Church room nave",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1049096,
+      "sha256": "b6e572ccf9760908019577f72985aa4d50fee62dde8f40b71cdd68b5859e414a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/college-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/college-export-overview.png",
+      "title": "College export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1054500,
+      "sha256": "4597e3626bed7c91ce0702e5f13164979ced2a89409c1ab2b11a94a2d5c76f1e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/college-room-lecture.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/college-room-lecture.png",
+      "title": "College room lecture",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1054176,
+      "sha256": "9046201f33232b812f69f8a80fd9a794cf8524c49488b1a3a6ebd57082b28859"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/farmhouse-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/farmhouse-export-overview.png",
+      "title": "Farmhouse export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1025536,
+      "sha256": "d1da63acda20e6d8cfead45ddc0c8ba8159747210003d914a829e86df94954df"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/farmhouse-room-stall-a.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/farmhouse-room-stall-a.png",
+      "title": "Farmhouse room stall a",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1089980,
+      "sha256": "d517ae9a570cd2dc34636141ca26ca83dc0b958ccaffa7547ad29a34b4929f77"
+    },
+    {
       "path": "development/levels/rebuild/captures/furnishing-batch/library-pilot.png",
       "url": "development/levels/rebuild/captures/furnishing-batch/library-pilot.png",
       "title": "Library pilot",
@@ -73646,6 +73746,156 @@
       "sha256": "20fabd40640cbf22fd4e650cfe0330f882ae84134f5e0619fb520219bb583ccb"
     },
     {
+      "path": "development/levels/rebuild/captures/furnishing-batch/mansion-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/mansion-export-overview.png",
+      "title": "Mansion export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1024639,
+      "sha256": "84589bee627be4a61a7376127276ce796e3314cd4ce2eeafecd6d8f1ac9f01cd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/mansion-room-library.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/mansion-room-library.png",
+      "title": "Mansion room library",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1082473,
+      "sha256": "934e8d11ff656b90cb5a7ba239d536d9df3503f927ff9c0d17aa5a95e343a3de"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/prison-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/prison-export-overview.png",
+      "title": "Prison export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1086634,
+      "sha256": "8a181d713cc4dd4a0d8d71e54402b62abd862d98ef76a12aea091d3f12c326bd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/prison-room-a-lower-cell-01.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/prison-room-a-lower-cell-01.png",
+      "title": "Prison room a lower cell 01",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1129248,
+      "sha256": "1b691caeb60e38345137a25af8a92781a763b93a99241eefdfc187a635d0ea0c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rejected-pilot/farmhouse-room-repair.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/rejected-pilot/farmhouse-room-repair.png",
+      "title": "Farmhouse room repair",
+      "kind": "Rejected native rough-prop placement study",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1079335,
+      "sha256": "5d8b6cea040788cce5b98b9743fbbef3636d1b6a9789fd18319015dae455628d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rejected-pilot/wld-09-room-control.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/rejected-pilot/wld-09-room-control.png",
+      "title": "Wld 09 room control",
+      "kind": "Rejected native rough-prop placement study",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1014459,
+      "sha256": "74d7406ee3c0113c2431c63d1d20ade973f82e3fa92c2099da5a2800365f42cd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-01.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-01.png",
+      "title": "Rough allocation sheet 01",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1920,
+      "height": 880,
+      "bytes": 757574,
+      "sha256": "285d5d6f29417a21d813c6f94665f67981f38d1a4fb522014a984408aaf9d79e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-02.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-02.png",
+      "title": "Rough allocation sheet 02",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1920,
+      "height": 880,
+      "bytes": 814706,
+      "sha256": "98ce08e2e3fc08ab9d46df06c098bba95cd89b95b54355a20f6d7f59e1ed6675"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-03.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-03.png",
+      "title": "Rough allocation sheet 03",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1920,
+      "height": 880,
+      "bytes": 680481,
+      "sha256": "331fbbaaef0fc7506791e1f90b828891032570e775663d8104751fbfa3a28f02"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-04.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-04.png",
+      "title": "Rough allocation sheet 04",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1920,
+      "height": 880,
+      "bytes": 718377,
+      "sha256": "8b745f1c79bf0f530399cb51dbbf3bad54201fba420136dd70c5776bf83088e1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-05.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-05.png",
+      "title": "Rough allocation sheet 05",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1920,
+      "height": 880,
+      "bytes": 745907,
+      "sha256": "29f0b6228d7fa87a0a85c69a622899b792a21ffe8a952e0114bb48a2243372fd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-06.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-06.png",
+      "title": "Rough allocation sheet 06",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1920,
+      "height": 880,
+      "bytes": 725006,
+      "sha256": "dfd78d6a9b633443bf1b086160119456d6d6049ab63ee3bd53261bd4e628259e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-07.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-07.png",
+      "title": "Rough allocation sheet 07",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1920,
+      "height": 880,
+      "bytes": 248230,
+      "sha256": "f5763f7a147e534728935d81a7e15c353550d6ead1c03736305855155967c71c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/school-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/school-export-overview.png",
+      "title": "School export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1035086,
+      "sha256": "accdf3faa82acc59b45cb55898e149db8f7f6c478a0d6217d0826f7072b7db74"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/school-room-class-a.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/school-room-class-a.png",
+      "title": "School room class a",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1087541,
+      "sha256": "0848be25e490b4f5a2763da58fd61061723e2e52b496acf1e60376e68208b8e2"
+    },
+    {
       "path": "development/levels/rebuild/captures/furnishing-batch/staged-source-inspection.png",
       "url": "development/levels/rebuild/captures/furnishing-batch/staged-source-inspection.png",
       "title": "Staged source inspection",
@@ -73654,6 +73904,346 @@
       "height": 1700,
       "bytes": 2638558,
       "sha256": "47c1a8940d78373de097b0b3b0a14e08b84abb2f37960e7d227d1a7305830a99"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-03-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-03-export-overview.png",
+      "title": "Wld 03 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 997357,
+      "sha256": "efca5b42e561c8f1b6a16bbd9eecdd407cf2f81b07a3f0b52b4ccbaf41269d2c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-03-room-shelter.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-03-room-shelter.png",
+      "title": "Wld 03 room shelter",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1017014,
+      "sha256": "a01059f5694f79d82cf17fc54ddcd353135b0ee8c8552e65114175939321f5d5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-04-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-04-export-overview.png",
+      "title": "Wld 04 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 990575,
+      "sha256": "cefb4cf0e6ce7270cda1d94075f6b954c06f623648cc2f77f88355676f3c1e77"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-04-room-hut.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-04-room-hut.png",
+      "title": "Wld 04 room hut",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1004309,
+      "sha256": "98fb6533eb0ef83613032c1b54a51e1073d12864834e178db2c4b5a596bb70a4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-05-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-05-export-overview.png",
+      "title": "Wld 05 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1040265,
+      "sha256": "12616c70a52aeff53ad1a65ca0f3decf3de63510212bfe612ab93ecd7c477a4d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-05-room-ore-west.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-05-room-ore-west.png",
+      "title": "Wld 05 room ore west",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1039009,
+      "sha256": "f4ec494ffef84bb3b7686a57a67af3f6514579d8fd5c35582e502d898ad175dd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-06-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-06-export-overview.png",
+      "title": "Wld 06 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1030280,
+      "sha256": "c7aa7dcafeef3e27021e7e46ccdf086e4dd4ec7f76b948c4c028077d2e6b1ee2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-06-room-cottage-a.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-06-room-cottage-a.png",
+      "title": "Wld 06 room cottage a",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1023463,
+      "sha256": "ce15833cfde7dade11fe682ba23e84d427d7261df5703e7d4d798af5883e94b0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-07-export-overview.png",
+      "title": "Wld 07 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1010748,
+      "sha256": "0e1fb900cb2ac3c49e395557ba5bfc17b0caa24623afec73e9009a5409cefb95"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-mortuary-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-07-mortuary-export-overview.png",
+      "title": "Wld 07 mortuary export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1175846,
+      "sha256": "9ccfa5a119d0b5ce65c7bb8da908df80ce22f8f95c85f0194ba21e25f7ad47f2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-mortuary-room-mort-prep.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-07-mortuary-room-mort-prep.png",
+      "title": "Wld 07 mortuary room mort prep",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1025717,
+      "sha256": "e80163d33fa2324828b7dc310688e462479428b54d3537715005cca73bb265c3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-room-chapel.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-07-room-chapel.png",
+      "title": "Wld 07 room chapel",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1050096,
+      "sha256": "78610e68e59e394d01cf994d1dbe86210115925eda5565619ef786e91c0b75bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-08-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-08-export-overview.png",
+      "title": "Wld 08 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1050002,
+      "sha256": "c682c07a7c0d576ca9f8cacdfb7ab78ccfbec1ffd81a4c587896aa0dde39cd3b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-08-room-lab.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-08-room-lab.png",
+      "title": "Wld 08 room lab",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1045495,
+      "sha256": "9fcdec6bb0b59ee1436bf9f72c8947289b9f1f5f635914207f7e3872fc6311b2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-09-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-09-export-overview.png",
+      "title": "Wld 09 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1046036,
+      "sha256": "e5e8e7a3c7103bac0f68f38389fed08824550b8f340bd29d66bcd71d8f523f3f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-09-room-turbine.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-09-room-turbine.png",
+      "title": "Wld 09 room turbine",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1066656,
+      "sha256": "6f7c0c2c0ffbf84413613814b48fd841c740269f53c1388c77d265d32df5eb1d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-10-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-10-export-overview.png",
+      "title": "Wld 10 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1048795,
+      "sha256": "5dd9e291ba8a64f60b10290578156cd86be17374abce9af2a8827926c387b822"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-10-room-archive.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-10-room-archive.png",
+      "title": "Wld 10 room archive",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1003964,
+      "sha256": "fc35ecf0ddeecfa6f6865da4d5b4a69c27dbb0b4df5973253f5a3af55ec7876f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-11-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-11-export-overview.png",
+      "title": "Wld 11 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 991329,
+      "sha256": "893f896deab1ae09ce3c2fe9ba1659e0fea854eff57870c1cc885f45a750e71c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-11-room-house-a.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-11-room-house-a.png",
+      "title": "Wld 11 room house a",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1062325,
+      "sha256": "a6c835daaf005bdfea907974e4268ce2afbc319170ed3f3ded6aaf6c43042670"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-12-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-12-export-overview.png",
+      "title": "Wld 12 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 994860,
+      "sha256": "03ea1b5992eea211b36e8e769337f2bee82accccd2f53a3e8986518f6c2898f7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-12-room-signal.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-12-room-signal.png",
+      "title": "Wld 12 room signal",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1038986,
+      "sha256": "84ab92d2d9083ff3df38e1e785a3b59b604f12b058c46aa53c43e5dd57b5d3b8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-13-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-13-export-overview.png",
+      "title": "Wld 13 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1024615,
+      "sha256": "15615dd7f650d3048f40823fc0d057b9524b146d17af000aea912e856d5dc6f9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-13-room-processing.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-13-room-processing.png",
+      "title": "Wld 13 room processing",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1038088,
+      "sha256": "9023a7552e19f6e87acdf979d53b3e24b1432a6c7d5b6d94975e95a7fdd773ba"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-14-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-14-export-overview.png",
+      "title": "Wld 14 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1164604,
+      "sha256": "903c52f9654f7eb5bfe9a1fadbdb455fc6c22c2ed78c29be9cc97b1f43747416"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-14-room-workroom.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-14-room-workroom.png",
+      "title": "Wld 14 room workroom",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1067433,
+      "sha256": "698744c59fe0334058cd9f7c3f88727b00ba6e91d37ab9456856cb99c9d37999"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-15-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-15-export-overview.png",
+      "title": "Wld 15 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1056304,
+      "sha256": "72583934a64b5a6bdfbcf6db7075923710694ad18821139397390ea0c663775b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-15-room-processing.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-15-room-processing.png",
+      "title": "Wld 15 room processing",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1018219,
+      "sha256": "a80a4797d8657d6ecfb01410fc08bad771468a01ce6109d4cd44ec36c5d3fea7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-16-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-16-export-overview.png",
+      "title": "Wld 16 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1122476,
+      "sha256": "997ba5597f02f41d11593491988f8dc8abeabdfb8b1b56f60d1edbe77895c82a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-16-room-office.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-16-room-office.png",
+      "title": "Wld 16 room office",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1053847,
+      "sha256": "199f7a44b758d8c90c48cc11c175089d721684c85b70313678a66168dc92f49d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-17-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-17-export-overview.png",
+      "title": "Wld 17 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1065322,
+      "sha256": "c05064ec1db238ac140b4b653a01bd57ec8165c7fbdf39004383864e044bd81e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-17-room-barracks.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-17-room-barracks.png",
+      "title": "Wld 17 room barracks",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1020035,
+      "sha256": "73d8f4d02333cd3a42bd8713fda5dbadb071e14550064f37bd9da3c7ab76c54d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-18-export-overview.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-18-export-overview.png",
+      "title": "Wld 18 export overview",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1037617,
+      "sha256": "6e0438463c4f65378cc5f3be49cb3eed5a65cd010befe74afb926cf477d3ad8f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-18-room-shop.png",
+      "url": "development/levels/rebuild/captures/furnishing-batch/wld-18-room-shop.png",
+      "title": "Wld 18 room shop",
+      "kind": "Native map rough-prop placement; refinement pending",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1010126,
+      "sha256": "a2449b27337f70585bc651f2208b053e5be7a5298fd18f5553541f2f0950d9f9"
     },
     {
       "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/east.png",
@@ -74492,8 +75082,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 960,
       "height": 720,
-      "bytes": 363289,
-      "sha256": "33a0b5f89d83a18f342a39dd023dda2b9af26fbb9befcab11e6b2a53bf69534f"
+      "bytes": 367598,
+      "sha256": "59cafbe12bc696caebef3c40e2369416f2883da553013a56078a57db62fec0bc"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/farmhouse/structure-export-cutaway.png",
@@ -74502,8 +75092,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 960,
       "height": 720,
-      "bytes": 407456,
-      "sha256": "967225d4630c16c2c53ad526d823967546b917dc23a5610710de304a878717a8"
+      "bytes": 409349,
+      "sha256": "1efd976f872c5e8f479804c1c257582b7dfd00ae92e70c17553ec75a5c80a367"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/mansion/structure-export-closed.png",
@@ -74562,8 +75152,8 @@
       "kind": "Native structural blocking review; runtime integration pending",
       "width": 1920,
       "height": 768,
-      "bytes": 383539,
-      "sha256": "17a7c3a4ad97913ff76d113dbb4e849132460a26ee7a499fa9ea6909c139bbdf"
+      "bytes": 384173,
+      "sha256": "17696b5c8fa8d15c1d396e6c3fc141c5d508fdf7989ec24533a44662388c9ba6"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-03.png",
@@ -74923,7 +75513,7 @@
       "width": 960,
       "height": 720,
       "bytes": 606209,
-      "sha256": "e4abfee2b0ef0cc58a880c0a4c16a533e8595a66ff6fafbfe6f7d384a745b353"
+      "sha256": "6a5c2097b55e081c689cf96dddc101c1754044f58b1dc1838a0f351f6feb0e9e"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-16/structure-export-cutaway.png",
@@ -74933,7 +75523,7 @@
       "width": 960,
       "height": 720,
       "bytes": 630885,
-      "sha256": "5d778b842a8703d34157bfc8203522551f66a45905f4cf30c85c3282373e108c"
+      "sha256": "09e2668484319e24396fa557019f3329b13e58d42dd9e2e2cd870295bb81d025"
     },
     {
       "path": "development/levels/rebuild/captures/structure-batch/wld-17/structure-export-closed.png",
@@ -75302,8 +75892,8 @@
       "kind": "Native planning-scene preview",
       "width": 960,
       "height": 720,
-      "bytes": 397298,
-      "sha256": "bc319799958e33bc4cb90b512c5d9e319ec1a9f26877d0d90a3a14742b6233d2"
+      "bytes": 399206,
+      "sha256": "4edabd8fc5da6fe2346f2151a21a756d119ba83f285b930f18b417c209e440bf"
     },
     {
       "path": "development/levels/rebuild/structures/farmhouse/structure-export-closed.png",
@@ -75312,8 +75902,8 @@
       "kind": "Reimported native structure export review",
       "width": 960,
       "height": 720,
-      "bytes": 363289,
-      "sha256": "33a0b5f89d83a18f342a39dd023dda2b9af26fbb9befcab11e6b2a53bf69534f"
+      "bytes": 367598,
+      "sha256": "59cafbe12bc696caebef3c40e2369416f2883da553013a56078a57db62fec0bc"
     },
     {
       "path": "development/levels/rebuild/structures/farmhouse/structure-export-cutaway.png",
@@ -75322,8 +75912,8 @@
       "kind": "Reimported native structure export review",
       "width": 960,
       "height": 720,
-      "bytes": 407456,
-      "sha256": "967225d4630c16c2c53ad526d823967546b917dc23a5610710de304a878717a8"
+      "bytes": 409349,
+      "sha256": "1efd976f872c5e8f479804c1c257582b7dfd00ae92e70c17553ec75a5c80a367"
     },
     {
       "path": "development/levels/rebuild/structures/mansion/preview.png",
@@ -75843,7 +76433,7 @@
       "width": 960,
       "height": 720,
       "bytes": 498097,
-      "sha256": "80314ec22a525c4bce48b6834be2696655b85f852824f62dcb3a2dad3d9607e4"
+      "sha256": "9b832f8a47e2c9890aa462e572e364825ca710379c50fd4a7cd31b0d22da8cad"
     },
     {
       "path": "development/levels/rebuild/structures/wld-16/structure-export-closed.png",
@@ -75853,7 +76443,7 @@
       "width": 960,
       "height": 720,
       "bytes": 606209,
-      "sha256": "e4abfee2b0ef0cc58a880c0a4c16a533e8595a66ff6fafbfe6f7d384a745b353"
+      "sha256": "6a5c2097b55e081c689cf96dddc101c1754044f58b1dc1838a0f351f6feb0e9e"
     },
     {
       "path": "development/levels/rebuild/structures/wld-16/structure-export-cutaway.png",
@@ -75863,7 +76453,7 @@
       "width": 960,
       "height": 720,
       "bytes": 630885,
-      "sha256": "5d778b842a8703d34157bfc8203522551f66a45905f4cf30c85c3282373e108c"
+      "sha256": "09e2668484319e24396fa557019f3329b13e58d42dd9e2e2cd870295bb81d025"
     },
     {
       "path": "development/levels/rebuild/structures/wld-17/preview.png",

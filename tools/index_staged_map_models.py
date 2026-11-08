@@ -1,14 +1,17 @@
 """Index existing source work; never substitute a small furnishing sample for it."""
 from pathlib import Path
-import argparse,collections,hashlib,json,subprocess
+import argparse,collections,hashlib,json,subprocess,os,tempfile
 
 ROOT=Path(__file__).resolve().parents[1]
 DEST=ROOT/'development/assets'
-CHATS=[
- ('6aed02d7-4bd4-83e8-9fa5-6ab9071863a4','Continue Map Modeling'),
- ('6aecd6f0-6b90-83e8-aee9-269bd7bff42b','Continue Map Prop Modeling'),
- ('6aec37d7-9848-83e8-aaaa-a68233bd9345','Map Prop Modeling'),
-]
+
+def write_atomic(path,raw):
+    handle,name=tempfile.mkstemp(prefix='.'+path.name+'-',dir=path.parent)
+    stage=Path(name)
+    try:
+        with os.fdopen(handle,'wb') as stream:stream.write(raw)
+        os.replace(stage,path)
+    finally:stage.unlink(missing_ok=True)
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');parser.add_argument('--query');parser.add_argument('--site')
@@ -44,7 +47,7 @@ def main():
         path=ROOT/name;assert path.is_file(),('Missing indexed model',name)
         if name.startswith('assets/libraries/'):collection='source_library_masters'
         elif any(s in name for s in ['/site-kits/','/previews/','/relic-review/','/crypt-review/','_kit_refined_']):collection='review_assemblies'
-        elif any(s in name for s in ['/rebuild/structures/','/blockouts/']):collection='native_map_exports'
+        elif any(s in name for s in ['/rebuild/structures/','/blockouts/','/rebuild/furnishings/']):collection='native_map_exports'
         elif any(s in name for s in ['/rejected/','/references/','/evidence/']):collection='reference_and_rejected_studies'
         else:collection='additional_custom_model_sources'
         aliases.append(dict(id=path.stem,label=path.stem,maps=[],category=collection,path=name,collection=collection,
@@ -55,17 +58,18 @@ def main():
         by_hash.setdefault(row['sha256'],[]).append(row['path'])
     archive=json.loads((ROOT/'development/assets/local-library-manifest.json').read_text(encoding='utf-8'))
     formats=collections.Counter(row['format'] for row in archive['files'])
-    result=dict(status='LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_ARTIFACTS_PENDING_RETRIEVAL',
+    source_chats=json.loads((DEST/'model-source-conversations.json').read_text(encoding='utf-8'))['sources']
+    result=dict(status='LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED',
         rule='Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.',
         local_files=len(aliases),unique_local_file_hashes=len(by_hash),collections=dict(collections.Counter(r['collection'] for r in aliases)),
         archive_index=dict(path='development/assets/local-library-manifest.json',entries=len(archive['files']),model_format_entries={k:formats[k] for k in ['.glb','.fbx','.obj','.blend']},note='Archive formats overlap; these are file representations, not a count of unique props. This index does not assert archive files were downloaded or inspected.'),
-        named_source_chats=[dict(id=i,title=t,url='https://chatgpt.com/c/'+i,retrieval='HISTORY_RATE_LIMITED_PENDING_ARTIFACT_IMPORT') for i,t in CHATS],
+        named_source_chats=source_chats,
         model_files=aliases,hash_aliases=[dict(sha256=sha,paths=paths) for sha,paths in by_hash.items() if len(paths)>1],
         sites=[dict(id=s['id'],title=s['title'],staged_rough_ids=s['prototypes'],requirements=s['requirements']) for s in catalog['sites']])
     DEST.mkdir(parents=True,exist_ok=True)
     raw=(json.dumps(result,indent=2,ensure_ascii=False)+'\n').encode()
     if args.check:assert target.read_bytes()==raw,'Asset library index is stale; regenerate it'
-    else:target.write_bytes(raw)
+    else:write_atomic(target,raw)
     pointer=ROOT/'ASSET_LIBRARY.md';text=pointer.read_text(encoding='utf-8')
     start='<!-- asset-library-counts:start -->';end='<!-- asset-library-counts:end -->'
     names={'existing_map_specific_roughs':'Map-specific rough props','existing_map_specific_refinements':'Existing prop refinements','existing_runtime_library':'Runtime model library',
@@ -75,7 +79,7 @@ def main():
     table+=f'| **Total local GLB files** | **{len(aliases):,}** |\n\n{len(by_hash):,} distinct file hashes. Copies and review assemblies are indexed\nwithout counting them as unique usable props. Source stage and intended use\nremain attached to every entry.\n\n'
     a=text.index(start)+len(start);b=text.index(end);updated=text[:a]+table+text[b:]
     if args.check:assert text==updated,'Asset library pointer counts are stale'
-    else:pointer.write_bytes(updated.encode())
+    else:write_atomic(pointer,updated.encode())
     print(result['local_files'],'local model files;',result['unique_local_file_hashes'],'distinct file hashes;',result['collections'])
 
 if __name__=='__main__':main()

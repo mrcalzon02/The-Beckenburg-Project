@@ -1,8 +1,8 @@
 {
   "id": "WLD-16",
   "title": "Eight Pines Motor Lodge",
-  "source": "layouts\\wld-16\\layout.json",
-  "source_sha256": "58c73bd8f3693cad8bc163b03546b177c5e84bf835d7715605d56a71af3fe054",
+  "source": "rebuild\\wld-16\\rough-layout.json",
+  "source_sha256": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
   "zones": 19,
   "routes": 22,
   "shell_openings": [
@@ -131,11 +131,11 @@
     "Court grade/drainage must not create unsupported flat exterior route strips."
   ],
   "native_reopened": true,
-  "blend_sha256": "4a73a7b6bf0d3e7625e83b0f30fdeba9b0164b2784e6f7f6f7a91886aad4ccf3",
+  "blend_sha256": "9a36230b76889735380910ce185462b705d44e6aefe074f02dd181e0f119ca81",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "876131ab4b887a770d6a3569fb013b40021bc4cf5209edf5eb40e0645ffdc1ae",
+    "glb_sha256": "2e340ebf09090f1acf17b7491f4e2c436167737be4ffe2d5df10a478002576aa",
     "independently_reimported": true,
     "meshes": 118,
     "triangles": 3636,
@@ -158,10 +158,10 @@
       "Source-matched terrain holes, services, van and LAN integration"
     ]
   },
-  "authoritative_input": "development/levels/layouts/wld-16/layout.json",
+  "authoritative_input": "development/levels/rebuild/wld-16/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/layouts/wld-16/layout.json": "58c73bd8f3693cad8bc163b03546b177c5e84bf835d7715605d56a71af3fe054",
+    "development/levels/rebuild/wld-16/rough-layout.json": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
     "development/levels/blockouts/wld-16/rough-shell.blend": "3fcc5b6c4344e6bf3fd57d5aac16c8da862fc076de2ef63c544a92754dba4ccf",
     "development/levels/blockouts/wld-16/rough-shell.glb": "5f5464357dad7b301301fb947a1b71e4234f0ba35800afe126a9859b2c8b0a61"
   },

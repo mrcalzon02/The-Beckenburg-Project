@@ -1,0 +1,147 @@
+{
+  "site": "WLD-09",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-09/rough-layout.json",
+  "source_layout_sha256": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4",
+  "structure_glb_sha256": "5fe0e02fb2708a36832973244eb8525d96968d629cca4500cbd9a668d2fe204b",
+  "furnished_glb_sha256": "4dd49798bd58711773191178637f4b19ff36286104440b444c72e59e888e8711",
+  "native_sha256": "70fcbcb2a54691d91d939fd8d5e7121ab85261c5961cf946bfbf8c2abdb83494",
+  "requests": 5,
+  "placements": [
+    {
+      "id": "WLD-09:turbine:0:0",
+      "zone": "turbine",
+      "purpose": "Turbine hall / Turbine housing and pipe stub / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_hydro_turbine",
+      "asset": "level_blockout_hydro_turbine",
+      "source_sha256": "d2acb9ce61de12727f85c72c7459b31ff82d9bbf5008a696eccc41de18f30ffd",
+      "bounds": [
+        52.79999923706055,
+        -40.04999923706055,
+        -6.0,
+        55.20000076293945,
+        -37.95000076293945,
+        -4.380000114440918
+      ],
+      "rect": [
+        52.799999952316284,
+        37.950000047683716,
+        55.200000047683716,
+        40.049999952316284
+      ],
+      "floor_y": -6,
+      "yaw": 0,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 168
+    },
+    {
+      "id": "WLD-09:control:1:0",
+      "zone": "control",
+      "purpose": "Control room / Operations desk and unlit console / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_console",
+      "asset": "level_blockout_console",
+      "source_sha256": "63b4f6691794b22bb0800edbc6100392c87bf927f3cae6cd130d784d19c8f096",
+      "bounds": [
+        11.375999450683594,
+        -34.90999984741211,
+        0.0,
+        12.97599983215332,
+        -34.15999984741211,
+        1.534999966621399
+      ],
+      "rect": [
+        11.375999995231629,
+        34.16,
+        12.976000019073487,
+        34.91
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    },
+    {
+      "id": "WLD-09:valve:2:0",
+      "zone": "valve",
+      "purpose": "Valve inspection room / Dam maintenance gallery valve array / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_dam_valve_manifold",
+      "asset": "level_blockout_dam_valve_manifold",
+      "source_sha256": "e5bcacdf6cf6f004c80cb94fcc3d031ab61780868f291a51e7fb1d33a27870ed",
+      "bounds": [
+        38.39200210571289,
+        -32.8599967956543,
+        -10.0,
+        40.9119987487793,
+        -32.15999984741211,
+        -8.109999656677246
+      ],
+      "rect": [
+        38.392000003814694,
+        32.16,
+        40.91199998474121,
+        32.85999998807907
+      ],
+      "floor_y": -10,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 336
+    },
+    {
+      "id": "WLD-09:workshop:3:0",
+      "zone": "workshop",
+      "purpose": "Maintenance workshop / Workshop or classroom bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_workbench",
+      "asset": "level_blockout_workbench",
+      "source_sha256": "118331bca686c16c1e75042c6d56bf917218bdc8902c68ba05b722869725c589",
+      "bounds": [
+        39.34600067138672,
+        -48.939998626708984,
+        -6.0,
+        41.09600067138672,
+        -48.15999984741211,
+        -5.090000152587891
+      ],
+      "rect": [
+        39.346,
+        48.16,
+        41.096,
+        48.93999997138977
+      ],
+      "floor_y": -6,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 72
+    },
+    {
+      "id": "WLD-09:office:4:0",
+      "zone": "office",
+      "purpose": "Shift records office / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        11.480000495910645,
+        -22.687000274658203,
+        0.0,
+        12.5600004196167,
+        -22.15999984741211,
+        2.0
+      ],
+      "rect": [
+        11.479999991416932,
+        22.16,
+        12.560000034332276,
+        22.68699999511242
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "3fad437e8c2035e3c3f9328c8eda6c7faae4830e570c919bc100a107d3c3ca8a",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 5,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

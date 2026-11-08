@@ -26,7 +26,7 @@ the exported boundary is ray-checked. Terrain support, enclosure returns and
 around/under/over bypasses remain actual runtime audit obligations. A threshold
 ray alone is not proof of a completely bounded forty-space playable envelope.
 
-Current native verification covers **147,060 triangles**, **6,537 closed solids**,
+Current native verification covers **147,072 triangles**, **6,537 closed solids**,
 **1,488 measured floor/deck parts**, **517 cap rays**, **1,720 treads** and
 **192 fixed-link boundary checks**. All25 GLBs independently reimport; generator
 and preserved-source hashes match. Eight unbuildable links and the later crossing

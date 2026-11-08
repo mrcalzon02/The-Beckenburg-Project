@@ -1,0 +1,561 @@
+{
+  "source_glb_sha256": "ba191c314009a9134699663e5c9a8a8816dd922eac9af54652015dc04e205098",
+  "physics_sha256": "bcfbf66614b3879d54b3f5fd53b622a97caf38ff86e578a0839aa812eb7fff84",
+  "exporter_sha256": "34746a584f469e65906c1c9c5f34be4d3f5eff797d2175b3727303508cf3ca53",
+  "stair_components": [
+    "97:route-13 landing0",
+    "98:route-13 landing2",
+    "99:route-13 flight0 step1",
+    "100:route-13 flight0 step2",
+    "101:route-13 flight0 step3",
+    "102:route-13 flight0 step4",
+    "103:route-13 flight0 step5",
+    "104:route-13 flight0 step6",
+    "105:route-13 flight0 step7",
+    "106:route-13 flight0 step8",
+    "107:route-13 flight0 step9",
+    "108:route-13 flight0 step10",
+    "109:route-13 flight0 step11",
+    "110:route-13 flight0 step12",
+    "111:route-13 flight0 step13",
+    "112:route-13 flight0 step14",
+    "113:route-13 flight0 step15",
+    "114:route-13 flight0 step16",
+    "115:route-13 flight0 step17",
+    "116:route-14 flight0 step1",
+    "117:route-14 flight0 step2",
+    "118:route-14 flight0 step3",
+    "119:route-14 flight0 step4",
+    "120:route-14 flight0 step5",
+    "121:route-14 flight0 step6",
+    "122:route-14 flight0 step7",
+    "123:route-14 flight0 step8",
+    "124:route-14 flight0 step9",
+    "125:route-14 flight0 step10",
+    "126:route-14 flight0 step11",
+    "127:route-14 flight0 step12",
+    "128:route-14 flight0 step13",
+    "129:route-14 flight0 step14",
+    "130:route-14 flight0 step15",
+    "131:route-14 flight0 step16",
+    "132:route-14 flight0 step17",
+    "135:route-17 landing0",
+    "136:route-17 landing2",
+    "137:route-17 flight0 step1",
+    "138:route-17 flight0 step2",
+    "139:route-17 flight0 step3",
+    "140:route-17 flight0 step4",
+    "141:route-17 flight0 step5",
+    "142:route-17 flight0 step6",
+    "143:route-17 flight0 step7",
+    "144:route-17 flight0 step8",
+    "145:route-17 flight0 step9",
+    "146:route-17 flight0 step10",
+    "147:route-17 flight0 step11",
+    "148:route-17 flight0 step12",
+    "149:route-17 flight0 step13",
+    "150:route-17 flight0 step14",
+    "151:route-17 flight0 step15",
+    "152:route-17 flight0 step16",
+    "153:route-17 flight0 step17",
+    "155:route-19 landing0",
+    "156:route-19 landing2",
+    "157:route-19 flight0 step1",
+    "158:route-19 flight0 step2",
+    "159:route-19 flight0 step3",
+    "160:route-19 flight0 step4",
+    "161:route-19 flight0 step5",
+    "162:route-19 flight0 step6",
+    "163:route-19 flight0 step7",
+    "164:route-19 flight0 step8",
+    "165:route-19 flight0 step9",
+    "166:route-19 flight0 step10",
+    "167:route-19 flight0 step11",
+    "168:route-19 flight0 step12",
+    "169:route-19 flight0 step13",
+    "170:route-19 flight0 step14",
+    "171:route-19 flight0 step15",
+    "172:route-19 flight0 step16",
+    "173:route-19 flight0 step17"
+  ],
+  "tread_centres": [
+    {
+      "link": "route-13",
+      "component": "99:route-13 flight0 step1",
+      "x": 23.0,
+      "y": -2.8235294818878174,
+      "z": 33.70588302612305
+    },
+    {
+      "link": "route-13",
+      "component": "100:route-13 flight0 step2",
+      "x": 23.0,
+      "y": -2.6470587253570557,
+      "z": 33.117645263671875
+    },
+    {
+      "link": "route-13",
+      "component": "101:route-13 flight0 step3",
+      "x": 23.0,
+      "y": -2.470588207244873,
+      "z": 32.52941131591797
+    },
+    {
+      "link": "route-13",
+      "component": "102:route-13 flight0 step4",
+      "x": 23.0,
+      "y": -2.2941176891326904,
+      "z": 31.941177368164062
+    },
+    {
+      "link": "route-13",
+      "component": "103:route-13 flight0 step5",
+      "x": 23.0,
+      "y": -2.117647171020508,
+      "z": 31.352941513061523
+    },
+    {
+      "link": "route-13",
+      "component": "104:route-13 flight0 step6",
+      "x": 23.0,
+      "y": -1.941176414489746,
+      "z": 30.764705657958984
+    },
+    {
+      "link": "route-13",
+      "component": "105:route-13 flight0 step7",
+      "x": 23.0,
+      "y": -1.7647058963775635,
+      "z": 30.176469802856445
+    },
+    {
+      "link": "route-13",
+      "component": "106:route-13 flight0 step8",
+      "x": 23.0,
+      "y": -1.5882352590560913,
+      "z": 29.58823585510254
+    },
+    {
+      "link": "route-13",
+      "component": "107:route-13 flight0 step9",
+      "x": 23.0,
+      "y": -1.4117646217346191,
+      "z": 29.0
+    },
+    {
+      "link": "route-13",
+      "component": "108:route-13 flight0 step10",
+      "x": 23.0,
+      "y": -1.2352941036224365,
+      "z": 28.41176414489746
+    },
+    {
+      "link": "route-13",
+      "component": "109:route-13 flight0 step11",
+      "x": 23.0,
+      "y": -1.0588234663009644,
+      "z": 27.823530197143555
+    },
+    {
+      "link": "route-13",
+      "component": "110:route-13 flight0 step12",
+      "x": 23.0,
+      "y": -0.8823530673980713,
+      "z": 27.235294342041016
+    },
+    {
+      "link": "route-13",
+      "component": "111:route-13 flight0 step13",
+      "x": 23.0,
+      "y": -0.7058824300765991,
+      "z": 26.647058486938477
+    },
+    {
+      "link": "route-13",
+      "component": "112:route-13 flight0 step14",
+      "x": 23.0,
+      "y": -0.529411792755127,
+      "z": 26.058822631835938
+    },
+    {
+      "link": "route-13",
+      "component": "113:route-13 flight0 step15",
+      "x": 23.0,
+      "y": -0.3529411554336548,
+      "z": 25.47058868408203
+    },
+    {
+      "link": "route-13",
+      "component": "114:route-13 flight0 step16",
+      "x": 23.0,
+      "y": -0.17647063732147217,
+      "z": 24.882352828979492
+    },
+    {
+      "link": "route-13",
+      "component": "115:route-13 flight0 step17",
+      "x": 23.0,
+      "y": 0.0,
+      "z": 24.294116973876953
+    },
+    {
+      "link": "route-14",
+      "component": "116:route-14 flight0 step1",
+      "x": 28.776470184326172,
+      "y": -2.8235294818878174,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "117:route-14 flight0 step2",
+      "x": 29.129411697387695,
+      "y": -2.6470587253570557,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "118:route-14 flight0 step3",
+      "x": 29.48235321044922,
+      "y": -2.470588207244873,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "119:route-14 flight0 step4",
+      "x": 29.835294723510742,
+      "y": -2.2941176891326904,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "120:route-14 flight0 step5",
+      "x": 30.188236236572266,
+      "y": -2.117647171020508,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "121:route-14 flight0 step6",
+      "x": 30.541175842285156,
+      "y": -1.941176414489746,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "122:route-14 flight0 step7",
+      "x": 30.89411735534668,
+      "y": -1.7647058963775635,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "123:route-14 flight0 step8",
+      "x": 31.247058868408203,
+      "y": -1.5882352590560913,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "124:route-14 flight0 step9",
+      "x": 31.600000381469727,
+      "y": -1.4117646217346191,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "125:route-14 flight0 step10",
+      "x": 31.952942848205566,
+      "y": -1.2352941036224365,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "126:route-14 flight0 step11",
+      "x": 32.30588150024414,
+      "y": -1.0588234663009644,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "127:route-14 flight0 step12",
+      "x": 32.6588249206543,
+      "y": -0.8823530673980713,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "128:route-14 flight0 step13",
+      "x": 33.01176452636719,
+      "y": -0.7058824300765991,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "129:route-14 flight0 step14",
+      "x": 33.36470413208008,
+      "y": -0.529411792755127,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "130:route-14 flight0 step15",
+      "x": 33.717647552490234,
+      "y": -0.3529411554336548,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "131:route-14 flight0 step16",
+      "x": 34.070587158203125,
+      "y": -0.17647063732147217,
+      "z": 1.0
+    },
+    {
+      "link": "route-14",
+      "component": "132:route-14 flight0 step17",
+      "x": 34.42353057861328,
+      "y": 0.0,
+      "z": 1.0
+    },
+    {
+      "link": "route-17",
+      "component": "137:route-17 flight0 step1",
+      "x": 23.0,
+      "y": 0.1764705777168274,
+      "z": 45.70588302612305
+    },
+    {
+      "link": "route-17",
+      "component": "138:route-17 flight0 step2",
+      "x": 23.0,
+      "y": 0.3529411852359772,
+      "z": 45.117645263671875
+    },
+    {
+      "link": "route-17",
+      "component": "139:route-17 flight0 step3",
+      "x": 23.0,
+      "y": 0.529411792755127,
+      "z": 44.52941131591797
+    },
+    {
+      "link": "route-17",
+      "component": "140:route-17 flight0 step4",
+      "x": 23.0,
+      "y": 0.7058823108673096,
+      "z": 43.94117736816406
+    },
+    {
+      "link": "route-17",
+      "component": "141:route-17 flight0 step5",
+      "x": 23.0,
+      "y": 0.8823529481887817,
+      "z": 43.35293960571289
+    },
+    {
+      "link": "route-17",
+      "component": "142:route-17 flight0 step6",
+      "x": 23.0,
+      "y": 1.058823585510254,
+      "z": 42.764705657958984
+    },
+    {
+      "link": "route-17",
+      "component": "143:route-17 flight0 step7",
+      "x": 23.0,
+      "y": 1.2352941036224365,
+      "z": 42.17647171020508
+    },
+    {
+      "link": "route-17",
+      "component": "144:route-17 flight0 step8",
+      "x": 23.0,
+      "y": 1.4117646217346191,
+      "z": 41.588233947753906
+    },
+    {
+      "link": "route-17",
+      "component": "145:route-17 flight0 step9",
+      "x": 23.0,
+      "y": 1.5882353782653809,
+      "z": 41.0
+    },
+    {
+      "link": "route-17",
+      "component": "146:route-17 flight0 step10",
+      "x": 23.0,
+      "y": 1.7647058963775635,
+      "z": 40.411766052246094
+    },
+    {
+      "link": "route-17",
+      "component": "147:route-17 flight0 step11",
+      "x": 23.0,
+      "y": 1.941176414489746,
+      "z": 39.82352828979492
+    },
+    {
+      "link": "route-17",
+      "component": "148:route-17 flight0 step12",
+      "x": 23.0,
+      "y": 2.117647171020508,
+      "z": 39.235294342041016
+    },
+    {
+      "link": "route-17",
+      "component": "149:route-17 flight0 step13",
+      "x": 23.0,
+      "y": 2.2941174507141113,
+      "z": 38.64706039428711
+    },
+    {
+      "link": "route-17",
+      "component": "150:route-17 flight0 step14",
+      "x": 23.0,
+      "y": 2.470588207244873,
+      "z": 38.05882263183594
+    },
+    {
+      "link": "route-17",
+      "component": "151:route-17 flight0 step15",
+      "x": 23.0,
+      "y": 2.6470589637756348,
+      "z": 37.47058868408203
+    },
+    {
+      "link": "route-17",
+      "component": "152:route-17 flight0 step16",
+      "x": 23.0,
+      "y": 2.8235292434692383,
+      "z": 36.882354736328125
+    },
+    {
+      "link": "route-17",
+      "component": "153:route-17 flight0 step17",
+      "x": 23.0,
+      "y": 3.0,
+      "z": 36.29411697387695
+    },
+    {
+      "link": "route-19",
+      "component": "157:route-19 flight0 step1",
+      "x": 23.0,
+      "y": 3.1764705181121826,
+      "z": 14.29411792755127
+    },
+    {
+      "link": "route-19",
+      "component": "158:route-19 flight0 step2",
+      "x": 23.0,
+      "y": 3.3529412746429443,
+      "z": 14.882352828979492
+    },
+    {
+      "link": "route-19",
+      "component": "159:route-19 flight0 step3",
+      "x": 23.0,
+      "y": 3.529411792755127,
+      "z": 15.470588684082031
+    },
+    {
+      "link": "route-19",
+      "component": "160:route-19 flight0 step4",
+      "x": 23.0,
+      "y": 3.7058823108673096,
+      "z": 16.05882215499878
+    },
+    {
+      "link": "route-19",
+      "component": "161:route-19 flight0 step5",
+      "x": 23.0,
+      "y": 3.882352828979492,
+      "z": 16.647058486938477
+    },
+    {
+      "link": "route-19",
+      "component": "162:route-19 flight0 step6",
+      "x": 23.0,
+      "y": 4.058823585510254,
+      "z": 17.235294342041016
+    },
+    {
+      "link": "route-19",
+      "component": "163:route-19 flight0 step7",
+      "x": 23.0,
+      "y": 4.235293865203857,
+      "z": 17.823530197143555
+    },
+    {
+      "link": "route-19",
+      "component": "164:route-19 flight0 step8",
+      "x": 23.0,
+      "y": 4.411764621734619,
+      "z": 18.41176414489746
+    },
+    {
+      "link": "route-19",
+      "component": "165:route-19 flight0 step9",
+      "x": 23.0,
+      "y": 4.588235378265381,
+      "z": 19.0
+    },
+    {
+      "link": "route-19",
+      "component": "166:route-19 flight0 step10",
+      "x": 23.0,
+      "y": 4.764705657958984,
+      "z": 19.58823585510254
+    },
+    {
+      "link": "route-19",
+      "component": "167:route-19 flight0 step11",
+      "x": 23.0,
+      "y": 4.941176414489746,
+      "z": 20.176469802856445
+    },
+    {
+      "link": "route-19",
+      "component": "168:route-19 flight0 step12",
+      "x": 23.0,
+      "y": 5.117647171020508,
+      "z": 20.764705657958984
+    },
+    {
+      "link": "route-19",
+      "component": "169:route-19 flight0 step13",
+      "x": 23.0,
+      "y": 5.2941179275512695,
+      "z": 21.352941513061523
+    },
+    {
+      "link": "route-19",
+      "component": "170:route-19 flight0 step14",
+      "x": 23.0,
+      "y": 5.470588207244873,
+      "z": 21.941177368164062
+    },
+    {
+      "link": "route-19",
+      "component": "171:route-19 flight0 step15",
+      "x": 23.0,
+      "y": 5.647058486938477,
+      "z": 22.52941131591797
+    },
+    {
+      "link": "route-19",
+      "component": "172:route-19 flight0 step16",
+      "x": 23.0,
+      "y": 5.823529243469238,
+      "z": 23.117647171020508
+    },
+    {
+      "link": "route-19",
+      "component": "173:route-19 flight0 step17",
+      "x": 23.0,
+      "y": 6.0,
+      "z": 23.705883026123047
+    }
+  ],
+  "dropped_degenerate_triangles": 0,
+  "scope": "Candidate native collision; gameplay/ownership/terrain/network gates remain open"
+}

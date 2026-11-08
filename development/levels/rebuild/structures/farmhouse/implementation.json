@@ -2,7 +2,7 @@
   "id": "FARMHOUSE",
   "title": "Hollowmere Farm \u2014 revised domestic and working-yard rough",
   "source": "rebuild\\farmhouse\\rough-layout.json",
-  "source_sha256": "c42aa3f6010bd379f15b410ad11e72953e6c5b25b151e7b69b4780cd0c43152d",
+  "source_sha256": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727",
   "zones": 34,
   "routes": 36,
   "shell_openings": [
@@ -297,13 +297,6 @@
       "zone": "barn-aisle",
       "side": "S",
       "link": "L23",
-      "width": 2.4,
-      "height": 2.45
-    },
-    {
-      "zone": "barn-aisle",
-      "side": "W",
-      "link": "L22",
       "width": 2.4,
       "height": 2.45
     },
@@ -826,7 +819,7 @@
       "height": 2.45
     }
   ],
-  "meshes": 376,
+  "meshes": 377,
   "issues": [
     {
       "zone": "mudroom",
@@ -1260,18 +1253,18 @@
   ],
   "source_refinement": [],
   "native_reopened": true,
-  "blend_sha256": "31962fb3d1585d3df79db130c3bb1d49ba27c05945273dccbce9ef34cf533663",
+  "blend_sha256": "39b8c9f7974094aee491a54ce025c14509b6c3ee97660155f6dd0c5b6ecdc5e8",
   "status": "rough-shell-blocked; runtime integration pending",
   "structural_review": {
     "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
-    "glb_sha256": "ab8f207dd23581227547b495a5520e0383c0ab90e7606765474c566e7c86ae66",
+    "glb_sha256": "0161f8d6ddadd406704d2458dc8579c206c98f2c6051c530f962d1fb13384354",
     "independently_reimported": true,
-    "meshes": 372,
-    "triangles": 4496,
+    "meshes": 373,
+    "triangles": 4508,
     "floor_parts": 52,
     "ceiling_cap_parts": 18,
     "stair_treads": 51,
-    "checked_closed_solids": 306,
+    "checked_closed_solids": 304,
     "measured_depth_parts": 70,
     "exported_cap_rays": 18,
     "fixed_infill_routes": 0,
@@ -1290,7 +1283,7 @@
   "authoritative_input": "development/levels/rebuild/farmhouse/rough-layout.json",
   "original_scene_preserved": true,
   "preserved_sources": {
-    "development/levels/rebuild/farmhouse/rough-layout.json": "c42aa3f6010bd379f15b410ad11e72953e6c5b25b151e7b69b4780cd0c43152d"
+    "development/levels/rebuild/farmhouse/rough-layout.json": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727"
   },
   "generator_sha256": {
     "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",

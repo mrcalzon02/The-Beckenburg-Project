@@ -5050,6 +5050,76 @@ Evidence and verification: ASSET_LIBRARY.md; development/assets/asset-library-in
 
 Older-map obligation: Reconcile every requested missing/new prop against this index and its site kits before creating a replacement. Imported chat packs must preserve provenance and update this pointer; no automatic quality or map acceptance from indexing.
 
+### DEV-368 — Furnishing export guard reads deleted Blender objects after independent reset
+
+**Status:** FIXED; all25final exports independently reimported · **Affected:** Shared staged-model furnishing generator
+
+First pilot aborts in the hidden-cache export guard with StructRNA Object has been removed.
+
+Cause / uncertainty: The guard retained Blender objects across read_factory_settings instead of storing their count.
+
+Fix / next action: Capture the structural mesh count before reset; compare imported unassigned meshes against that scalar. All124final source instances have independent bounds/UV and no hidden source-cache leak.
+
+Evidence and verification: development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/; furnishings/<site>/placements.json; room-programs.json; actual export captures
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
+
+### DEV-369 — Furnishing fit double-counts route buffers and overextends endpoint clearance
+
+**Status:** FIXED IN ROUGH ALLOCATION; source widths preserved · **Affected:** School office/changing rooms and shared allocation reservation geometry
+
+Valid small-room furniture allocations are rejected despite preserving the authored clear pedestrian width.
+
+Cause / uncertainty: The gate added an actor buffer to already clear route widths, then expanded longitudinal endpoints by the full corridor half-width.
+
+Fix / next action: Reserve the full authored lateral width,0.3m endpoint extension and0.12m prop separation. Use exact polygon/AABB separation for diagonal corridors. Validate the actual1.8m/.22m kernel before/after; no body/sweep regressions remain.
+
+Evidence and verification: development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/; furnishings/<site>/placements.json; room-programs.json; actual export captures
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
+
+### DEV-370 — Props can obstruct physical routes that cross rooms without naming those rooms
+
+**Status:** FIXED IN ROUGH ALLOCATION; zero new qualified route blocks · **Affected:** Asylum treatment, Church records, College cafe, Farmhouse stall and shared route reservation workflow
+
+Actual composite native physics finds46new body/support blocks and53new failed baseline-qualified sweeps in the first124-instance batch.
+
+Cause / uncertainty: The allocation gate reserved only links whose named endpoints included the room, missing routes physically passing through other rooms. Farm loading route L22 itself crossed stall A.
+
+Fix / next action: Reserve every physical link segment at the relevant height using polygon intersection, reposition props and reroute the2.4m farm loading approach around the stall while retaining its original barn threshold. Final109506samples preserve73058baseline-valid poses and68167baseline-valid sweeps with zero new failures. Preserve rejected rows and placements.
+
+Evidence and verification: development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/; furnishings/<site>/placements.json; room-programs.json; actual export captures
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
+
+### DEV-371 — Many authored flat route samples fail baseline native support or body checks
+
+**Status:** OPEN; native route/terrain/portal repair before playable acceptance · **Affected:** 25remaining native map candidates; per-site baseline-invalid counts in route-regressions.json
+
+Of109506flat-route centre/side samples,36448are already unsupported or body-blocked before furnishing. These are not valid walkable samples.
+
+Cause / uncertainty: Native proposals still include schematic connectors, terrain/foundation omissions, incomplete portal/ownership integration and physically conflicting routes; diagnosis is per source rather than inferred from closed solids.
+
+Fix / next action: Retain exact before/after rows and baseline invalid counts. Repair actual support, walls/portal thresholds, authored route coordinates and containment, then continuous human/AI/room-objective acceptance. Do not call zero new furniture regressions a complete circulation pass.
+
+Evidence and verification: development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/; furnishings/<site>/placements.json; room-programs.json; actual export captures
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
+
+### DEV-372 — Asset index regeneration encounters Windows invalid-argument error on direct overwrite
+
+**Status:** ATOMIC PUBLICATION IMPLEMENTED; regeneration and stale check PASS, exact OS cause unconfirmed · **Affected:** Canonical development/assets/asset-library-index.json and generated root pointer
+
+One direct Path.write_bytes overwrite returned OSError errno22; the prior readable index remained stale until successful regeneration.
+
+Cause / uncertainty: Direct canonical-file overwrite failed on Windows; the tool output does not establish which OS reader or filesystem condition caused it.
+
+Fix / next action: Write a temporary sibling, close it and atomically replace the canonical file/pointer. Regeneration and --check pass with1692current GLBs. Preserve the old canonical artifact if replacement fails.
+
+Evidence and verification: tools/index_staged_map_models.py write_atomic; current asset-library-index.json and furnishing index-verification.json; observed OSError errno22 during direct overwrite in this authoring session
+
+Older-map obligation: Publish generated source indexes atomically and retain authoritative prior bytes on failure. This changes no asset or runtime geometry.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
