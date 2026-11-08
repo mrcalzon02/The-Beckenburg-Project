@@ -4,6 +4,7 @@ import org.beckenburg.editor.EditorGlbWriter;
 import org.beckenburg.editor.EditorGltfFile;
 import org.beckenburg.editor.EditorGltfSource;
 import org.beckenburg.editor.EditorPaintRecovery;
+import org.beckenburg.editor.EditorUvDensity;
 import org.beckenburg.editor.EditorDocumentStore;
 import org.beckenburg.editor.EditorTopologyWorkspace;
 import org.beckenburg.editor.EditorMaterialWorkspace;
@@ -176,6 +177,11 @@ public final class AssetImportDialog {
     private boolean updatingPaintLayers;
     private EditorTopologyProject.State materialRenderState;
     private EditorMaterialWorkspace.Visibility materialRenderedVisibility;
+    private final JComboBox<String> materialReviewMode=new JComboBox<>(new String[]{"Material","Checker · 1 texel","Checker · 8 texels","Checker · 32 texels"});
+    private static final int[] CHECKER_SIZES={0,1,8,32};
+    private int renderedChecker;
+    private final JLabel uvDensity=new JLabel("Select a bound face to measure UVs");
+    private final JButton fixUvStretch=new JButton("Fix selected face stretch");
     private double materialRenderedRotation=Double.NaN;
     private boolean materialRendering;
     private EditorTopologyProject.State listedMaterials;
@@ -519,10 +525,15 @@ public final class AssetImportDialog {
             materialDialog=new JDialog(dialog,"Material Editor - Texture & UV",false);materialDialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
             materialDialog.addWindowListener(new WindowAdapter(){public void windowClosing(WindowEvent e){if(modelingPreview!=null)clearModelingPreview();materialDialog.setVisible(false);}});
             materialRuntime.setPreferredSize(new Dimension(280,190));
-            var runtime=new JPanel(new BorderLayout(4,4));runtime.add(new JLabel("ACTUAL RUNTIME PREVIEW"),BorderLayout.NORTH);runtime.add(materialRuntime,BorderLayout.CENTER);runtime.add(EditorTopologyWorkspace.form("Model rotation",materialRotation),BorderLayout.SOUTH);materialRotation.addChangeListener(e->refreshMaterialWindow());
+            var runtime=new JPanel(new BorderLayout(4,4));runtime.add(new JLabel("ACTUAL RUNTIME PREVIEW"),BorderLayout.NORTH);runtime.add(materialRuntime,BorderLayout.CENTER);runtime.add(EditorTopologyWorkspace.column(uvDensity,EditorTopologyWorkspace.form("Preview",materialReviewMode,"Model rotation",materialRotation)),BorderLayout.SOUTH);materialReviewMode.addActionListener(e->refreshMaterialWindow());materialRotation.addChangeListener(e->refreshMaterialWindow());
             var bindings=EditorTopologyWorkspace.column(new JLabel("MATERIAL PROPERTIES"),EditorTopologyWorkspace.form("Material",materialList),materialSwatch,previewMaterial,new JSeparator(),EditorTopologyWorkspace.form("New PNG wrap",materialWrap,"Alpha",materialAlpha,"UV origin",materialOrigin),chooseMaterial,new JLabel("<html>PNG changes are captured in a native preview.<br>Apply commits one face assignment.</html>"));
             var values=new JPanel(new GridLayout(0,2,5,5));values.add(uvFirstLabel);values.add(uvFirst);values.add(uvSecondLabel);values.add(uvSecond);
-            var uvSettings=EditorTopologyWorkspace.column(new JLabel("NATIVE CORNER UVS"),EditorTopologyWorkspace.form("Operation",uvOperation,"Scope",uvScope,"Pivot",uvPivot),values,previewUv,new JLabel("<html>Island traversal stops at UV seams<br>and material boundaries.<br>Negative scale mirrors UVs.<br>Zero scale is refused.<br>Apply / Cancel uses native history.</html>"));
+            var uvSettings=EditorTopologyWorkspace.column(new JLabel("NATIVE CORNER UVS"),EditorTopologyWorkspace.form("Operation",uvOperation,"Scope",uvScope,"Pivot",uvPivot),values,previewUv,fixUvStretch,new JLabel("<html>Island traversal stops at UV seams<br>and material boundaries.<br>Negative scale mirrors UVs.<br>Zero scale is refused.<br>Apply / Cancel uses native history.</html>"));
+            fixUvStretch.setToolTipText("Preview uniform texel scale on this face while preserving its UV area and center");
+            fixUvStretch.addActionListener(e->{
+                if(selectedHit==null)return;
+                long id=selectedHit.faceId();beginMaterialPreview(p->p.previewFixFaceStretch(id));
+            });
             materialTools=new JTabbedPane();materialTools.addTab("Materials",bindings);materialTools.addTab("UV transform",uvSettings);
             var layerButtons=new JPanel(new GridLayout(1,4,2,0));
             for(var b:List.of(addPaintLayer,removePaintLayer,raisePaintLayer,lowerPaintLayer)){
@@ -591,7 +602,13 @@ public final class AssetImportDialog {
     private void refreshMaterialWindow(){
         if(materialWorkspace==null||materialDialog==null||!materialDialog.isVisible())return;
         var state=modelingPreview!=null?modelingPreview.snapshot():topologyProject==null?null:topologyProject.snapshot();Long face=selectedHit==null?null:selectedHit.faceId();EditorMeshMaterial material=null;
-        if(state!=null&&face!=null){var found=state.faces().stream().filter(f->f.id()==face).findFirst().orElse(null);if(found!=null)material=state.materials().stream().filter(m->m.key().equals(found.material())).findFirst().orElse(null);}
+        int faceIndex=-1;
+        if(state!=null && face!=null)for(int i=0;i<state.faces().size();i++){
+            var f=state.faces().get(i);
+            if(f.id()!=face)continue;
+            faceIndex=i;material=state.materials().stream().filter(m->m.key().equals(f.material())).findFirst().orElse(null);break;
+        }
+        boolean bound=material!=null;
         if(material==null&&materialList.getSelectedItem() instanceof EditorMeshMaterial m)material=m;
         materialWorkspace.observe(state,face,material,modelingPreview!=null);
         if(material!=shownPaintMaterial){
@@ -612,7 +629,7 @@ public final class AssetImportDialog {
             updatingPaintLayers=false;shownPaintMaterial=material;showLayerSettings();
         }
         boolean layerEditable=!busy && modelingPreview==null && face!=null && materialWorkspace.visibility().includes(face) &&
-            state!=null && material!=null && state.faces().stream().anyMatch(f->f.id()==face && f.material().equals(shownPaintMaterial.key()));
+            bound;
         previewPaintStyle.setEnabled(layerEditable);paintBlend.setEnabled(layerEditable);paintOpacity.setEnabled(layerEditable);
         paintLayer.setEnabled(layerEditable);paintLayerName.setEnabled(layerEditable);
         addPaintLayer.setEnabled(layerEditable && paintLayers.size()<16);removePaintLayer.setEnabled(layerEditable && paintLayers.size()>1);
@@ -620,16 +637,27 @@ public final class AssetImportDialog {
         lowerPaintLayer.setEnabled(layerEditable && paintLayer.getSelectedIndex()+1<paintLayers.size());
         double rotation=((Number)materialRotation.getValue()).doubleValue();
         var visibility=materialWorkspace.visibility();
+        fixUvStretch.setEnabled(false);
+        if(bound && visibility.includes(face) && (modelingPreview!=null ||
+            workingObservation!=null && workingObservation.snapshot()==state)){
+            var nativeMesh=modelingPreview!=null?modelingMesh:workingObservation.mesh();
+            var density=EditorUvDensity.measure(nativeMesh.triangles().get(faceIndex),material.width(),material.height());
+            fixUvStretch.setEnabled(layerEditable && density.filter(d->d.texelsPerUnit()>0 && d.stretch()>1+1e-10).isPresent());
+            uvDensity.setText(density.map(d->d.texelsPerUnit()==0?"Collapsed UV triangle":
+                String.format(Locale.ROOT,"%.2f texels/unit · %.2f× stretch",d.texelsPerUnit(),d.stretch())).orElse("Degenerate model triangle"));
+        }else uvDensity.setText("Select a bound face to measure UVs");
+        int checker=CHECKER_SIZES[materialReviewMode.getSelectedIndex()];
         if(materialWorkspace.visibleFaces()==0){
             materialRenderState=null;materialRuntime.setIcon(null);materialRuntime.setText("No visible faces");return;
         }
-        if(materialRendering||state==materialRenderState&&rotation==materialRenderedRotation&&visibility.equals(materialRenderedVisibility))return;
-        materialRenderState=state;materialRenderedRotation=rotation;materialRenderedVisibility=visibility;materialRendering=true;materialRuntime.setIcon(null);materialRuntime.setText("Rendering captured native state...");
-        var captured=state;var mesh=modelingPreview!=null?modelingPreview.mesh():topologyProject.mesh();
+        if(materialRendering||state==materialRenderState&&rotation==materialRenderedRotation&&checker==renderedChecker&&visibility.equals(materialRenderedVisibility))return;
+        materialRenderState=state;materialRenderedRotation=rotation;materialRenderedVisibility=visibility;renderedChecker=checker;materialRendering=true;materialRuntime.setIcon(null);materialRuntime.setText("Rendering captured native state...");
+        var captured=state;var mesh=modelingPreview!=null?modelingMesh:
+            workingObservation!=null && workingObservation.snapshot()==state ? workingObservation.mesh() : topologyProject.mesh();
         new SwingWorker<java.awt.image.BufferedImage,Void>(){
-            protected java.awt.image.BufferedImage doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(280,190);return GlbProps.renderNativeMaterialReview(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation),mesh.faceIds(),visibility.filtered()?visibility::includes:null);}
+            protected java.awt.image.BufferedImage doInBackground()throws Exception{var renderer=new SceneRenderer();renderer.setRenderSize(280,190);return GlbProps.renderNativeMaterialReview(EditorGlbWriter.encode(mesh),renderer,Math.toRadians(rotation),mesh.faceIds(),visibility.filtered()?visibility::includes:null,checker);}
             protected void done(){materialRendering=false;var current=modelingPreview!=null?modelingPreview.snapshot():topologyProject==null?null:topologyProject.snapshot();
-                if(current==captured&&visibility.equals(materialWorkspace.visibility())&&rotation==((Number)materialRotation.getValue()).doubleValue()){try{materialRuntime.setIcon(new ImageIcon(get()));materialRuntime.setText("");}catch(Exception failure){materialRuntime.setIcon(null);materialRuntime.setText("Preview unavailable: "+rootMessage(failure));}}
+                if(current==captured&&checker==CHECKER_SIZES[materialReviewMode.getSelectedIndex()]&&visibility.equals(materialWorkspace.visibility())&&rotation==((Number)materialRotation.getValue()).doubleValue()){try{materialRuntime.setIcon(new ImageIcon(get()));materialRuntime.setText("");}catch(Exception failure){materialRuntime.setIcon(null);materialRuntime.setText("Preview unavailable: "+rootMessage(failure));}}
                 refreshMaterialWindow();
             }
         }.execute();

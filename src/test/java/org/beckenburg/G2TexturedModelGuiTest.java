@@ -133,6 +133,7 @@ public final class G2TexturedModelGuiTest {
             catch (Exception e) { throw new RuntimeException(e); }
         });
         verifyVisibility();
+        verifyChecker();
         verifyTiledPencil(png);
         verifyPencil(png);
         edt(() -> {
@@ -149,6 +150,61 @@ public final class G2TexturedModelGuiTest {
             "Captured original PNG bytes");
         check(state.faces().stream().allMatch(f -> f.material().equals(state.materials().get(0).key())),
             "All native faces must use the selected material");
+    }
+    private int[] reviewPixels()throws Exception{
+        await(()->{try{return !(boolean)field(ui,"materialRendering") && ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}
+            catch(Exception e){throw new RuntimeException(e);}});
+        var result=new AtomicReference<int[]>();
+        edt(()->{
+            var image=(BufferedImage)((ImageIcon)((JLabel)field(ui,"materialRuntime")).getIcon()).getImage();
+            result.set(image.getRGB(0,0,image.getWidth(),image.getHeight(),null,0,image.getWidth()));
+        });
+        return result.get();
+    }
+    private void verifyChecker()throws Exception{
+        var state=project.snapshot();long revision=project.revision();
+        var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            var measurement=(JLabel)field(ui,"uvDensity");
+            check(measurement.isShowing() && measurement.getHeight()>0 &&
+                measurement.getText().equals("2.83 texels/unit · 2.00× stretch"),
+                "Measure 4×4 texels over the native 2×1 box face");
+        });
+        int[] original=reviewPixels();
+        edt(()->select("materialReviewMode",1));
+        int[] fine=reviewPixels();
+        edt(()->captureMaterial("uv-density.png"));
+        edt(()->select("materialReviewMode",2));
+        int[] coarse=reviewPixels();
+        check(!Arrays.equals(fine,original) && !Arrays.equals(fine,coarse),"Runtime checker must reflect texel cell size");
+        edt(()->select("materialReviewMode",0));
+        check(Arrays.equals(original,reviewPixels()) && project.snapshot()==state && project.revision()==revision,
+            "Leaving checker must restore exact runtime pixels without changing the native document");
+        edt(()->{
+            ((JTabbedPane)field(ui,"materialTools")).setSelectedIndex(1);
+            button(ui,"fixUvStretch");
+        });
+        await(()->reviewed(ui));
+        check(project.snapshot()==state,"Stretch preview must leave the native mesh unchanged");
+        applyReview();
+        var corrected=project.snapshot();
+        edt(()->check(((JLabel)field(ui,"uvDensity")).getText().equals("2.83 texels/unit · 1.00× stretch"),
+            "Correction removes stretch and retains texel density"));
+        edt(()->select("materialReviewMode",1));
+        reviewPixels();
+        edt(()->captureMaterial("uv-relaxed.png"));
+        var f=corrected.faces().get(10);
+        for(int i=0;i<state.faces().size();i++)if(i!=10)check(state.faces().get(i)==corrected.faces().get(i),"Changed another UV face");
+        edt(()->button(ui,"apply"));
+        await(()->published.get()!=null);
+        var t=GlbProps.model(published.get()).triangles().get(10);
+        near(t.a().u(),f.a().u());near(t.b().v(),f.b().v());near(t.c().u(),f.c().u());
+        published.set(null);
+        edt(()->button(ui,"undoMesh"));
+        await(()->ready(ui));
+        check(project.snapshot().equals(state),"Undo must restore original native UVs");
+        edt(()->select("materialReviewMode",0));
     }
     private void verifyTiledPencil(Path png)throws Exception{
         var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");

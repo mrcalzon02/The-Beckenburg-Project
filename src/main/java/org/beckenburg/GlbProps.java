@@ -410,9 +410,29 @@ public final class GlbProps {
     }
     static synchronized BufferedImage renderNativeMaterialReview(byte[] bytes,SceneRenderer renderer,double rotation,
             List<Long> faceIds,java.util.function.LongPredicate visibleFace)throws IOException{
+        return renderNativeMaterialReview(bytes,renderer,rotation,faceIds,visibleFace,0);
+    }
+    static synchronized BufferedImage renderNativeMaterialReview(byte[] bytes,SceneRenderer renderer,double rotation,
+            List<Long> faceIds,java.util.function.LongPredicate visibleFace,int checkerSize)throws IOException{
+        if(checkerSize<0 || checkerSize>2048)throw new IOException("Invalid checker size");
         List<List<?>> tables=List.of(textures,vehicleUvMaterials,samplerWrapS,samplerWrapT,materialNames,diffuseFactors);int[] lengths=tables.stream().mapToInt(List::size).toArray();int first=TEXTURE_BASE+textures.size();
         try{
             var model=decode(bytes,null);
+            if(checkerSize>0)for(int i=lengths[0];i<textures.size();i++){
+                var image=textures.get(i);
+                var checker=new BufferedImage(image.getWidth(),image.getHeight(),BufferedImage.TYPE_INT_ARGB);
+                var row=new int[image.getWidth()];
+                for(int y=0;y<image.getHeight();y++){
+                    image.getRGB(0,y,row.length,1,row,0,row.length);
+                    for(int x=0;x<row.length;x++){
+                        int shade=((x/checkerSize+y/checkerSize)&1)==0?0xeeeeee:0x555555;
+                        row[x]=(row[x]&0xff000000)|shade;
+                    }
+                    checker.setRGB(0,y,row.length,1,row,0,row.length);
+                }
+                textures.set(i,checker);
+                diffuseFactors.set(i,new double[]{1,1,1,diffuseFactors.get(i)[3]});
+            }
             if(visibleFace!=null){
                 if(model.triangles().size()!=faceIds.size())throw new IOException("Native face order unavailable");
                 var faces=new ArrayList<Triangle>();

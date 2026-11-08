@@ -499,6 +499,18 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         return new EditPreview(this,state,after,revision,"BIND MATERIAL / face "+faceId+" / "+material.name());
     }
     public enum UvTransform { MOVE, ROTATE, SCALE }
+    public synchronized EditPreview previewFixFaceStretch(long faceId){
+        var material=boundPaintMaterial(faceId);
+        var faces=new ArrayList<>(state.faces());
+        for(int i=0;i<faces.size();i++)if(faces.get(i).id()==faceId){
+            var face=faces.get(i);
+            faces.set(i,EditorUvDensity.correct(face,triangle(face,indexVertices(state.vertices())),material.width(),material.height()));
+            var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,state.materials(),
+                state.glbSource(),state.frames(),state.quads());
+            return new EditPreview(this,state,after,revision,"FIX UV STRETCH / face "+faceId);
+        }
+        throw new IllegalArgumentException("Unknown native face");
+    }
     /** Paint the selected face's shared base-color texture in one reviewable native edit. */
     public synchronized EditPreview previewPencil(long faceId,Collection<Integer> texels,int color) {
         return previewPencil(faceId,null,texels,color);

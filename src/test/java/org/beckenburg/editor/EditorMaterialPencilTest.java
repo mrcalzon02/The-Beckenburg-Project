@@ -47,6 +47,35 @@ public final class EditorMaterialPencilTest {
             check(EditorMeshMaterial.paintHistoryBytes(List.of(full),List.of(half))==0,"Style-only edit copied tiles");
         }
     }
+    private static void uvDensity(){
+        var a=new EditorMeshPipeline.Vertex(0,0,0,0,0);
+        var b=new EditorMeshPipeline.Vertex(0,2,0,1,0);
+        var c=new EditorMeshPipeline.Vertex(0,0,1,0,1);
+        var triangle=new EditorMeshPipeline.Triangle("metric",a,b,c);
+        var uniform=EditorUvDensity.measure(triangle,16,8).orElseThrow();
+        check(uniform.texelsPerUnit()==8 && uniform.stretch()==1,"Uniform texel density on a rotated face");
+        var stretched=EditorUvDensity.measure(triangle,32,8).orElseThrow();
+        check(Math.abs(stretched.texelsPerUnit()-Math.sqrt(128))<1e-10 && Math.abs(stretched.stretch()-2)<1e-10,
+            "Non-square texture measures principal stretch");
+        var shear=new EditorMeshPipeline.Vertex(0,0,1,.5,1);
+        var sheared=EditorUvDensity.measure(new EditorMeshPipeline.Triangle("metric",a,b,shear),16,8).orElseThrow();
+        check(sheared.texelsPerUnit()==8 && Math.abs(sheared.stretch()-(3+Math.sqrt(5))/2)<1e-10,"Shear distortion");
+        var mirror=new EditorMeshPipeline.Vertex(0,2,0,-1,0);
+        check(EditorUvDensity.measure(new EditorMeshPipeline.Triangle("metric",a,mirror,c),16,8).orElseThrow().equals(uniform),
+            "Mirrored UVs preserve density");
+        var collapsed=new EditorMeshPipeline.Vertex(0,0,1,0,0);
+        check(EditorUvDensity.measure(new EditorMeshPipeline.Triangle("metric",a,b,collapsed),16,8).orElseThrow().texelsPerUnit()==0,
+            "Collapsed UVs have zero texel area");
+        check(EditorUvDensity.measure(new EditorMeshPipeline.Triangle("metric",a,b,b),16,8).isEmpty(),
+            "Degenerate world triangle has no density");
+        var face=new EditorTopologyProject.Face(9,"metric",new EditorTopologyProject.Corner(3,0,0),
+            new EditorTopologyProject.Corner(4,-1,0),new EditorTopologyProject.Corner(5,.5,1));
+        var fixed=EditorUvDensity.correct(face,new EditorMeshPipeline.Triangle("metric",a,mirror,shear),16,8);
+        double signed=(fixed.b().u()-fixed.a().u())*(fixed.c().v()-fixed.a().v())-
+            (fixed.b().v()-fixed.a().v())*(fixed.c().u()-fixed.a().u());
+        check(Math.abs(signed+1)<1e-10 && Math.abs(fixed.a().u()+fixed.b().u()+fixed.c().u()+.5)<1e-10 &&
+            Math.abs(fixed.a().v()+fixed.b().v()+fixed.c().v()-1)<1e-10,"Relax must preserve signed area and centroid");
+    }
     private static void historyEviction(EditorTopologyProject p){
         var clean=p.snapshot();
         long face=clean.faces().get(10).id();
@@ -149,6 +178,7 @@ public final class EditorMaterialPencilTest {
     public static void main(String[] args)throws Exception {
         historyBudget();
         blendModes();
+        uvDensity();
         legacyPaintFiles();
         Path dir=Files.createTempDirectory("pencil-native-");
         try {
