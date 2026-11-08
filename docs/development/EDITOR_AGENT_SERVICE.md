@@ -65,13 +65,15 @@ After a normal game build, run Java 17:
 java -cp build/beckenburg-game.jar org.beckenburg.EditorAgentCli HOUSE C:/path/to/isolated-project-home
 ```
 
-Use `CASTLE` or a supported `HouseMap.Site` name. The explicit home selects existing host documents and preferences rather than constructing an agent-only scene. Use the same project home as the human editor to compare saved scene data. A separate headless process does not attach to another editor's unsaved state: the in-process active service is the attachment point for a future authenticated transport.
+Use `CASTLE` or a supported `HouseMap.Site` name. The explicit home selects the host's documents and preferences. To inspect unsaved changes in an open human editor, connect to that editor's authenticated session.
 
-Requests are UTF-8 lines, fields separated by **literal tabs**. Read a fresh `inspect` response for every revision; do not predict revisions after rollback/reopen. Commands:
+Requests are UTF-8 lines with fields separated by **literal tabs**. Start with `summary` for the active revision, then use the revision returned by each operation. For a local edit, use `node` to read the target and `verify-position` to check the resulting coordinates. Use `inspect` when you need the entire scene.
 
 ```text
-inspect
+summary
+node<TAB>revision<TAB>prop-0
 edit<TAB>revision<TAB>move-prop<TAB>id=prop-0<TAB>x=4.5<TAB>y=0<TAB>z=8
+verify-position<TAB>returned-revision<TAB>prop-0<TAB>4.5<TAB>0<TAB>8
 undo<TAB>revision
 redo<TAB>revision
 save<TAB>revision
@@ -128,6 +130,8 @@ For a sparse selection, `nodes<TAB>revision<TAB>id1<TAB>id2` returns up to 64 na
 The CLI also accepts `assets<TAB>revision<TAB>offset<TAB>limit`. Asset pages follow the active editor's unfiltered palette order. An import can change the runtime catalog without editing the scene. Compare the catalog fingerprint across pages and restart at offset zero if it changes.
 
 Use `verify-position<TAB>revision<TAB>id<TAB>x<TAB>y<TAB>z` to check an expected position, or choose **Verify Scene → Verify Position** with a row selected. The proof reads the authoritative node again. `verified` compares its three coordinates exactly. `committed` means the native change record for that revision lists the object as added or updated. A fresh host has no commit record. `diskState` compares the complete live authoring snapshot with the decoded bytes currently on disk and reports MATCHES, DIFFERS, MISSING, UNREADABLE or UNSUPPORTED. This read leaves the document, journal and history untouched.
+
+The November 8 House fixture moved two props in one transaction and verified the first prop at the returned revision. The receipt was 78 UTF-8 bytes. The position proof was 257 bytes and matched the native hierarchy row in the 42,296-byte full inspection. The localized path returned 335 bytes in total versus 42,374 bytes with full inspection. The headless acceptance test writes these measurements to `localized-edit-response.json` in its evidence directory. Model tokens, tool schema overhead and elapsed time are separate measurements.
 
 ## Batched headless edits
 

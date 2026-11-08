@@ -101,6 +101,18 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     assert missing['verified'] and not missing['committed'] and missing['diskState'] == 'MISSING'
     accepted, inspected = run([edits, 'inspect'])
     after_revision = accepted['result']['revision']
+    # Compare the bytes an agent receives for the same edit and resulting native state.
+    sizes = []
+    edit_reply, full_reply, proof_reply = run([edits, 'inspect', verify_prop(after_revision, moved_x)], sizes=sizes)
+    proof = proof_reply['result']
+    assert edit_reply == accepted and full_reply['result']['state'] == inspected['result']['state']
+    assert proof['revision'] == after_revision and proof['result']['verified'] and proof['result']['committed']
+    assert proof['result']['actual'] == next(row for row in full_reply['result']['hierarchy'] if row['id'] == 'prop-0')
+    assert sizes[2] < sizes[1]
+    response_bytes = {'scene': first['sceneId'], 'revision': after_revision, 'unit': 'UTF-8 response bytes',
+                      'editReceipt': sizes[0], 'fullInspection': sizes[1], 'positionProof': sizes[2]}
+    (output / 'localized-edit-response.json').write_text(json.dumps(response_bytes, indent=2) + '\n', encoding='utf-8')
+    print(f'House edit plus position proof: {sizes[0]+sizes[2]} bytes; same edit plus full inspection: {sizes[0]+sizes[1]} bytes')
     pages = run([edits, f'changes\t{after_revision}\t0\t1', f'changes\t{after_revision}\t1\t1',
                  f'changes\t{after_revision}\t2\t1'])[1:]
     details = [row['result']['result'] for row in pages]
