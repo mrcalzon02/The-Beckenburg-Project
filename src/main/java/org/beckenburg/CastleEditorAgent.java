@@ -23,6 +23,9 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
     }
     public CastleEditorProject project(){return project;}
     public long revision(){return scene.revision();}
+    public EditorAgentService.DiskState compareSaved(CastleLevelEdits.Snapshot live)throws IOException{
+        return scene.matchesSaved(live)?EditorAgentService.DiskState.MATCHES:EditorAgentService.DiskState.DIFFERS;
+    }
     private record Station(double x,double z) {}
     private record Spawn(double x,double z,double yaw) {}
     private static Spawn spawn(CastleLevelEdits.Snapshot s) { return new Spawn(s.spawnX(),s.spawnZ(),s.spawnYaw()); }

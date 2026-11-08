@@ -55,6 +55,28 @@ public final class EditorAgentGuiTest {
         check(failure.get()==null&&stage.get()==3,"Actual human recovery menu completed: "+failure.get());
     }
     private record Access(String url,String bearer){}
+    private static void verifyMismatchThroughMenu(DeveloperLevelEditor editor){
+        var report=new AtomicReference<String>();
+        Timer driver=new Timer(50,event->{
+            for(Window window:Window.getWindows())if(window instanceof JDialog dialog && dialog.isShowing()){
+                var pane=component(dialog,JOptionPane.class);if(pane==null)continue;
+                switch(dialog.getTitle()){
+                    case "Scene verification" -> {
+                        component(dialog,JComboBox.class).setSelectedItem("VERIFY POSITION");
+                        pane.setInputValue("VERIFY POSITION");pane.setValue(JOptionPane.OK_OPTION);
+                    }
+                    case "Verify position" -> {
+                        component(dialog,JTextField.class).setText("123456");pane.setValue(JOptionPane.OK_OPTION);
+                    }
+                    case "Scene evidence" -> {report.set(component(dialog,JTextArea.class).getText());pane.setValue(JOptionPane.OK_OPTION);}
+                    case "Scene verification failed" -> pane.setValue(JOptionPane.OK_OPTION);
+                }
+            }
+        });
+        driver.start();try{button(editor,"VERIFY SCENE").doClick();}finally{driver.stop();}
+        check(report.get()!=null && report.get().contains("Position matches: false") &&
+            report.get().contains("Saved document: DIFFERS"),"Human position proof reported mismatch and unsaved document");
+    }
     private static Object member(Object instance,String name)throws Exception{
         var field=instance.getClass().getDeclaredField(name);field.setAccessible(true);return field.get(instance);
     }
@@ -198,6 +220,14 @@ public final class EditorAgentGuiTest {
             catch(Exception failure){throw new RuntimeException(failure);}
         });
         check(after.statusCode()==200 && expected.get().equals(new String(after.body(),StandardCharsets.UTF_8)),"Read native row after human move");
+        var target=new AtomicReference<org.beckenburg.editor.EditorProject.Node>();
+        SwingUtilities.invokeAndWait(()->target.set(editor.agentService().node(changed,"prop-0").result()));
+        var p=target.get();
+        var match=request(access,"/verify-position?revision="+changed+"&id=prop-0&x="+p.x()+"&y="+p.y()+"&z="+p.z(),"GET",access.bearer());
+        var proof=new String(match.body(),StandardCharsets.UTF_8);
+        check(match.statusCode()==200 && proof.contains("\"verified\":true") && proof.contains("\"committed\":true") &&
+            proof.contains("\"diskState\":\"DIFFERS\""),"Prove human move independently of saved native file");
+        SwingUtilities.invokeAndWait(()->verifyMismatchThroughMenu(editor));
         var batch=request(access,"/nodes?revision="+changed+"&id=prop-1&id=prop-0","GET",access.bearer());
         SwingUtilities.invokeAndWait(()->{
             try{expected.set(EditorAgentCli.json(editor.agentService().nodes(changed,java.util.List.of("prop-1","prop-0"))));}
@@ -246,6 +276,9 @@ public final class EditorAgentGuiTest {
                     castle.transact(castle.inspect().revision(),"set-spawn",Map.of("x","13.5","z","19","yaw","1.125"));
                     castle.save(castle.inspect().revision());
                     Files.writeString(castle.inspect().document(),"format=invalid");
+                    var corrupt=castle.verifyPosition(castle.summary().revision(),"start",13.5,0,19).result();
+                    check(corrupt.verified() && corrupt.diskState()==org.beckenburg.editor.EditorAgentService.DiskState.UNREADABLE &&
+                        Files.readString(castle.inspect().document()).equals("format=invalid"),"Corrupt Castle readback must leave disk untouched");
                     recoverThroughMenu(e);
                     check(CastleLevelEdits.current().spawn()[2]==originalYaw,"Human Castle recovery uses same singleton");
                     button(e,"UNDO").doClick();

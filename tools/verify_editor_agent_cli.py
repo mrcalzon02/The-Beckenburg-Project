@@ -95,6 +95,10 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
         return f'move-prop\tid=prop-{index}\tx={item["x"] + delta}\ty={item["y"]}\tz={item["z"]}'
 
     edits = f'batch\t{revision}\t{move(0, .125)}\t|\t{move(1, .25)}'
+    def verify_prop(rev, x):
+        return f'verify-position\t{rev}\tprop-0\t{x}\t{prop["y"]}\t{prop["z"]}'
+    missing = run([verify_prop(revision, prop['x'])])[0]['result']['result']
+    assert missing['verified'] and not missing['committed'] and missing['diskState'] == 'MISSING'
     accepted, inspected = run([edits, 'inspect'])
     after_revision = accepted['result']['revision']
     pages = run([edits, f'changes\t{after_revision}\t0\t1', f'changes\t{after_revision}\t1\t1',
@@ -103,6 +107,10 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     assert all(p['total'] == 2 and p['beforeRevision'] == revision for p in details)
     nodes = details[0]['nodes'] + details[1]['nodes']
     assert {n['id'] for n in nodes} == {'prop-0', 'prop-1'} and not details[2]['nodes']
+    proof = run([edits, verify_prop(after_revision, moved_x), verify_prop(after_revision, prop['x'])])
+    matched, mismatch = [r['result']['result'] for r in proof[1:]]
+    assert matched['verified'] and matched['committed'] and matched['actual']['x'] == moved_x
+    assert not mismatch['verified'] and mismatch['actual'] == matched['actual']
     assert all(n['kind'] == 'UPDATED' and n['fingerprint'] != n['beforeFingerprint'] for n in nodes)
     undo = run([edits, f'undo\t{after_revision}', f'changes\t{after_revision + 1}\t0\t2'])[-1]
     reversed_nodes = {n['id']: n for n in undo['result']['result']['nodes']}
@@ -138,6 +146,8 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     assert rows[-1]['result']['state']['props'][0]['x'] == moved_x
     assert all(check['passed'] for check in rows[-2]['result']['result'])
     assert Path(rows[4]['result']['result']['file']).read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
+    live_proof = run([verify_prop(run(['summary'])[0]['result']['revision'], moved_x)])[0]['result']['result']
+    assert live_proof['verified'] and not live_proof['committed'] and live_proof['diskState'] == 'MATCHES'
     fresh_revision = run(['summary'])[0]['result']['revision']
     local = run([f'node\t{fresh_revision}\tprop-0'])[0]['result']
     assert local['result']['x'] == moved_x, 'Fresh host localized read observes the saved move'
@@ -167,6 +177,8 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
                        f'save\t{revision + 1}', 'inspect'])
     assert all(row['ok'] for row in rows_castle)
     saved_revision = run(['summary'])[0]['result']['revision']
+    saved_spawn = run([f'verify-position\t{saved_revision}\tstart\t13.5\t0\t19'])[0]['result']['result']
+    assert saved_spawn['verified'] and not saved_spawn['committed'] and saved_spawn['diskState'] == 'MATCHES'
     castle_change = run([f'edit\t{saved_revision}\tset-spawn\tx=12.5\tz=19\tyaw=1.125',
                          f'changes\t{saved_revision + 1}\t0\t1'])[-1]
     spawn_change = castle_change['result']['result']

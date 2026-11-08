@@ -479,6 +479,7 @@ public final class CastleLevelEdits {
     public static void recoverSavedDocument()throws IOException{recoverPreviousDocument(defaultPath());}
     private static void recoverPreviousDocument(Path path)throws IOException{EditorDocumentStore.restorePrevious(path,CastleLevelEdits::decode);}
     public synchronized void recoverPrevious()throws IOException{recoverPreviousDocument(path);reopen();}
+    synchronized boolean matchesSaved(Snapshot live)throws IOException{return live.equals(decode(path).snapshot());}
     private void decode(Properties p)throws IOException{
         if(!"1".equals(p.getProperty("format")))
             throw new IOException("Unsupported castle editor document version");

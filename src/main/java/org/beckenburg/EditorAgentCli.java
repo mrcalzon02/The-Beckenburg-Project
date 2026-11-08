@@ -114,13 +114,14 @@ public final class EditorAgentCli {
                 }else{
                     if(parts.length<2)throw new IllegalArgumentException("Expected scene revision");
                     long revision=Long.parseLong(parts[1]);
-                    int expected=switch(command){case "edit","batch","nodes"->-1;case "capture","test","node"->3;case "hierarchy","changes","assets"->4;default->2;};
+                    int expected=switch(command){case "edit","batch","nodes"->-1;case "capture","test","node"->3;case "hierarchy","changes","assets"->4;case "verify-position"->6;default->2;};
                     if((expected>=0&&parts.length!=expected)||(expected<0&&parts.length<3))
                         throw new IllegalArgumentException("Wrong argument count");
                     result=switch(command){
                         case "edit" -> service.transact(revision, java.util.List.of(parseEdit(parts, 2, parts.length)));
                         case "batch" -> service.transact(revision, parseBatch(parts));
                         case "node" -> service.node(revision,parts[2]);
+                        case "verify-position" -> service.verifyPosition(revision,parts[2],Double.parseDouble(parts[3]),Double.parseDouble(parts[4]),Double.parseDouble(parts[5]));
                         case "nodes" -> service.nodes(revision,java.util.Arrays.asList(parts).subList(2,parts.length));
                         case "assets" -> service.assets(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));
                         case "hierarchy" -> service.hierarchy(revision,Integer.parseInt(parts[2]),Integer.parseInt(parts[3]));

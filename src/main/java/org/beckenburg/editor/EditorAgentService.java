@@ -14,6 +14,8 @@ import java.util.Set;
 public final class EditorAgentService<S> {
     public enum Capability { INSPECT, TRANSACT, UNDO, REDO, SAVE, REOPEN, RECOVER_PREVIOUS, CAPTURE, TEST }
     public record Check(String code, boolean passed, String detail) {}
+    public enum DiskState { MATCHES, DIFFERS, MISSING, UNREADABLE, UNSUPPORTED }
+    public record PositionProof(EditorProject.Node actual,boolean verified,boolean committed,DiskState diskState){}
     public record Inspection<S>(String sceneId, long revision, Path document,
                                 S state, List<EditorProject.Node> hierarchy,
                                 Set<Capability> capabilities, List<String> operations, List<String> tests) {}
@@ -32,6 +34,7 @@ public final class EditorAgentService<S> {
         void validate();
         /** Derive metadata from actual native snapshots. Unknown hosts invalidate all dependencies. */
         default EditorChange.Details changes(S before,S after){return EditorChange.Details.full();}
+        default DiskState compareSaved(S live)throws IOException{return DiskState.UNSUPPORTED;}
         void reopen() throws IOException;
         default void recoverPrevious()throws IOException{throw new UnsupportedOperationException("Previous-save recovery unavailable");}
         Capture capture(Path destination) throws IOException;
@@ -122,6 +125,20 @@ public final class EditorAgentService<S> {
         require(expected);
         var project = host.project();
         return new Evidence<>(project.id(), expected, project.node(id));
+    }
+    /** Explicit proof request. Disk comparison reads the published native document without reopening the editor. */
+    public Evidence<PositionProof> verifyPosition(long expected,String id,double x,double y,double z){
+        capable(Capability.INSPECT);require(expected);
+        if(!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))throw new IllegalArgumentException("Expected finite native coordinates");
+        var project=host.project();var actual=project.node(id);
+        boolean verified=actual.x()==x && actual.y()==y && actual.z()==z;
+        boolean committed=lastChange!=null && lastChange.revision()==expected && lastChange.sceneId().equals(project.id()) &&
+            lastChange.details().nodes().stream().anyMatch(n->n.id().equals(id) && n.kind()!=EditorChange.Kind.REMOVED);
+        DiskState disk;
+        try{disk=host.compareSaved(project.snapshot());}
+        catch(java.nio.file.NoSuchFileException missing){disk=DiskState.MISSING;}
+        catch(IOException invalid){disk=DiskState.UNREADABLE;}
+        return evidence(new PositionProof(actual,verified,committed,disk));
     }
     /** Use the active project's human palette source. Imports can change it between scene edits. */
     public Evidence<AssetPage> assets(long expected,int offset,int limit){

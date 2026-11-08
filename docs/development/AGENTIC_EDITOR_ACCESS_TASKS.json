@@ -176,7 +176,7 @@
             "Failures are structured, revisioned and truthful",
             "Real engine-generated evidence; no source artwork substitute"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "Revision-bound verify-position is available from the human Verify Scene menu, the trusted CLI and the authenticated observation bridge. Live node coordinates, commit membership and an independent native disk comparison are checked separately. Real GUI and process tests cover exact match, mismatched coordinates, unsaved changes, fresh reopen and corrupt disk. Broader component/reference and collision audit evidence remains open."
         },
         {
           "id": "M3-02",

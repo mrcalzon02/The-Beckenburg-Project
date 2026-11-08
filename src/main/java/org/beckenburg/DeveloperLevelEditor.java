@@ -1343,6 +1343,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private void showAgentEvidence(){
         var service=agentService();
         var choices=new ArrayList<>(List.of("INSPECT","TEST","CAPTURE PNG","REOPEN SAVED"));
+        if(chosen!=null)choices.add("VERIFY POSITION");
         if(service.summary().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
         choices.add(observation==null?"START LOCAL OBSERVATION":"STOP LOCAL OBSERVATION");
         String choice=(String)JOptionPane.showInputDialog(window,"Inspect, test or capture the active game scene.",
@@ -1360,6 +1361,21 @@ public final class DeveloperLevelEditor extends JPanel {
             }
             var state=service.summary();Object result;
             switch(choice){
+                case "VERIFY POSITION" -> {
+                    String id=mission==null?chosen.id:mission.nodeId(selectedProp());
+                    var node=service.node(state.revision(),id).result();
+                    String kind=mission!=null?"PROP":chosen.kind.equals("SURFACE")?data.surfaceById(id).kind().name():chosen.kind;
+                    if(!kind.equals(node.kind()))throw new IllegalArgumentException("Another hierarchy object takes precedence for this ID");
+                    var px=new JTextField(Double.toString(node.x()),12);
+                    var py=new JTextField(Double.toString(node.y()),12);
+                    var pz=new JTextField(Double.toString(node.z()),12);
+                    Object[] fields={"Expected position for "+node.label(),"X",px,"Y",py,"Z",pz};
+                    if(JOptionPane.showConfirmDialog(window,fields,"Verify position",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+                    var proof=service.verifyPosition(state.revision(),id,Double.parseDouble(px.getText()),Double.parseDouble(py.getText()),Double.parseDouble(pz.getText())).result();
+                    result="Revision "+state.revision()+"\nPosition matches: "+proof.verified()+"\nActual position: "+
+                        proof.actual().x()+", "+proof.actual().y()+", "+proof.actual().z()+
+                        "\nLatest commit includes this object: "+proof.committed()+"\nSaved document: "+proof.diskState();
+                }
                 case "TEST" -> result=service.test(state.revision(),state.tests().get(0));
                 case "CAPTURE PNG" -> {
                     JFileChooser chooser=new JFileChooser();chooser.setSelectedFile(new java.io.File("editor-scene.png"));

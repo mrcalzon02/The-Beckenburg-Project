@@ -174,7 +174,13 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     private static Loaded loadRevision(Path path,String id,LevelDefinition source) throws IOException {
         RuntimeSceneDocument.recoverPending(path);
         if(!Files.exists(path))return new Loaded(sourceState(id,source.props()),null);
-        var loaded=RuntimeSceneDocument.loadRevision(path);var scene=loaded.scene();
+        return readStored(path,id,source);
+    }
+    synchronized boolean matchesSaved(Snapshot live)throws IOException{
+        return live.equals(readStored(document,documentId,source).state());
+    }
+    private static Loaded readStored(Path path,String id,LevelDefinition source)throws IOException{
+        var loaded=RuntimeSceneDocument.readStoredRevision(path);var scene=loaded.scene();
         if(!scene.sceneId().equals(id))
             throw new IOException("Level document identity mismatch: "+path);
         ArrayList<Prop> result=new ArrayList<>();

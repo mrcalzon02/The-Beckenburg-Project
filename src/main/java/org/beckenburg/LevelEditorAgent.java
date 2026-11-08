@@ -27,6 +27,9 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     }
     public LevelAuthoringSession project(){return session;}
     public long revision(){return session.revision();}
+    public EditorAgentService.DiskState compareSaved(LevelAuthoringSession.Snapshot live)throws IOException{
+        return session.matchesSaved(live)?EditorAgentService.DiskState.MATCHES:EditorAgentService.DiskState.DIFFERS;
+    }
     public void checkAccess(){access.run();}
     public java.util.Set<EditorAgentService.Capability> capabilities(){return java.util.Set.of(EditorAgentService.Capability.values());}
     public List<String> operations(){return List.of("move-prop");}

@@ -19,6 +19,7 @@ Read `/summary` for the active scene ID, revision, supported observation routes 
 | `/nodes` | revision, repeated id | Up to 64 native rows in request order |
 | `/changes` | revision, offset, limit | Latest committed change page |
 | `/assets` | revision, offset, limit | Active editor palette entries and catalog fingerprint |
+| `/verify-position` | revision, id, x, y, z | Actual node, expected-position match, latest commit membership and native disk comparison |
 | `/test` | revision, id | Named host test with individual structured checks |
 | `/capture` | revision | PNG from the active host renderer |
 
@@ -110,6 +111,8 @@ Both localized queries use the host's current human editor hierarchy on its owne
 For a sparse selection, `nodes<TAB>revision<TAB>id1<TAB>id2` returns up to 64 native hierarchy rows in request order under one revision. A missing ID or stale revision fails the entire read. This also lets a client fetch the current values for several updated IDs from a change page in one request.
 
 The CLI also accepts `assets<TAB>revision<TAB>offset<TAB>limit`. Asset pages follow the active editor's unfiltered palette order. An import can change the runtime catalog without editing the scene. Compare the catalog fingerprint across pages and restart at offset zero if it changes.
+
+Use `verify-position<TAB>revision<TAB>id<TAB>x<TAB>y<TAB>z` to check an expected position, or choose **Verify Scene → Verify Position** with a row selected. The proof reads the authoritative node again. `verified` compares its three coordinates exactly. `committed` means the native change record for that revision lists the object as added or updated. A fresh host has no commit record. `diskState` compares the complete live authoring snapshot with the decoded bytes currently on disk and reports MATCHES, DIFFERS, MISSING, UNREADABLE or UNSUPPORTED. This read leaves the document, journal and history untouched.
 
 ## Batched headless edits
 
