@@ -1,0 +1,13 @@
+Exception in thread "main" java.io.IOException: Degenerate native triangle
+	at org.beckenburg.AuthoredSitePhysics.read(AuthoredSitePhysics.java:91)
+	at FurnishingRouteProbe.main(FurnishingRouteProbe.java:20)
+Traceback (most recent call last):
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_macroterrain_fit.py", line 82, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_macroterrain_fit.py", line 71, in main
+    results=BUILD/'results.tsv';subprocess.run([str(java/'java.exe'),'-Djava.awt.headless=true','-Xmx2g','-cp',str(BUILD)+os.pathsep+str(jar),'FurnishingRouteProbe',str(source),str(results),str(stairs)],check=True)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-Xmx2g', '-cp', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\macroterrain-fit;C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\beckenburg-game.jar', 'FurnishingRouteProbe', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\macroterrain-fit\\input.tsv', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\macroterrain-fit\\results.tsv', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\macroterrain-fit\\stairs.tsv']' returned non-zero exit status 1.

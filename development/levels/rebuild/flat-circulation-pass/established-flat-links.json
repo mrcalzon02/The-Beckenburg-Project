@@ -1,0 +1,406 @@
+{
+  "status": "DESIGN_INPUT_PRESERVE_ACTUALLY_PASSING_SOURCE_POLYLINES_NOT_ACCEPTANCE",
+  "sites": {
+    "ACADEMY": {
+      "source_native_sha256": "5cb1dbeb02f8a08ca2c8dfe174246034610526e66128a95476d4307abfdaab41",
+      "preserve_complete_paths": [
+        "L04",
+        "L11",
+        "L12",
+        "L14",
+        "L16",
+        "L18",
+        "L27",
+        "L28",
+        "L35",
+        "L37",
+        "L38",
+        "L48",
+        "L49",
+        "L58",
+        "L59",
+        "L60",
+        "L61",
+        "L64"
+      ]
+    },
+    "ASYLUM": {
+      "source_native_sha256": "5306941b5135d5dc5d6a43ec84b0ce31c3cfca8c40e2aaf2be1995675d0f098e",
+      "preserve_complete_paths": [
+        "L16",
+        "L22",
+        "L23",
+        "L24",
+        "L26",
+        "L29",
+        "L34",
+        "L37",
+        "L39",
+        "L40",
+        "L41",
+        "L42",
+        "L43",
+        "L56",
+        "L64"
+      ]
+    },
+    "CHURCH": {
+      "source_native_sha256": "eda5a20f20c7a803e2caa75bfc706a0a8e21108a71812eb4f6b50be1210250fd",
+      "preserve_complete_paths": [
+        "L03",
+        "L05",
+        "L06",
+        "L07",
+        "L08",
+        "L09",
+        "L10",
+        "L11",
+        "L12",
+        "L13",
+        "L14",
+        "L15",
+        "L16",
+        "L21",
+        "L22",
+        "L23",
+        "L31",
+        "L32"
+      ]
+    },
+    "COLLEGE": {
+      "source_native_sha256": "a0abc59c7784c618bb0881ec946e548854df076da6269463ea560f690f1a7295",
+      "preserve_complete_paths": [
+        "L04",
+        "L06",
+        "L08",
+        "L14",
+        "L15",
+        "L42",
+        "L52",
+        "L56",
+        "L57",
+        "L67",
+        "L69",
+        "L76",
+        "L88"
+      ]
+    },
+    "FARMHOUSE": {
+      "source_native_sha256": "106153346b7697e77b0f86042be61345c127a01a9247e5c5d88aa7b090a7cee8",
+      "preserve_complete_paths": [
+        "L04",
+        "L05",
+        "L06",
+        "L07",
+        "L09",
+        "L10",
+        "L12",
+        "L17",
+        "L19",
+        "L20",
+        "L21",
+        "L25",
+        "L31",
+        "L32"
+      ]
+    },
+    "MANSION": {
+      "source_native_sha256": "ac058d9645730ed6d118bbe1e3567a20cc584807e0de273717e17b88546eb3f1",
+      "preserve_complete_paths": [
+        "L05",
+        "L07",
+        "L09",
+        "L10",
+        "L11",
+        "L12",
+        "L13",
+        "L14",
+        "L15",
+        "L16",
+        "L18",
+        "L21",
+        "L24",
+        "L32",
+        "L33",
+        "L37",
+        "L42",
+        "L44",
+        "L46",
+        "L47",
+        "L48",
+        "L54",
+        "L57"
+      ]
+    },
+    "PRISON": {
+      "source_native_sha256": "5f0445f96cb144c20c36bd83189e99eef79345846817a2543dff5c413dc7e7fa",
+      "preserve_complete_paths": [
+        "L034",
+        "L050",
+        "L067",
+        "L068",
+        "L073",
+        "L074",
+        "L077",
+        "L078",
+        "L080",
+        "L088",
+        "L100",
+        "L103",
+        "L104"
+      ]
+    },
+    "SCHOOL": {
+      "source_native_sha256": "d98772e3780cb28a1e16f326231d12752e65e8fff91d5527c7819ddc83cd097f",
+      "preserve_complete_paths": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L07",
+        "L11",
+        "L13",
+        "L14",
+        "L15",
+        "L16",
+        "L17",
+        "L18",
+        "L22",
+        "L23",
+        "L24",
+        "L31",
+        "L32",
+        "L34"
+      ]
+    },
+    "WLD-03": {
+      "source_native_sha256": "fc4b409a8ef03a5326c73ea98d95acf4823f96b010db200255931c1ac8443ab0",
+      "preserve_complete_paths": [
+        "L02",
+        "L03",
+        "L05",
+        "L06",
+        "L11",
+        "L12"
+      ]
+    },
+    "WLD-04": {
+      "source_native_sha256": "766d059f61672303843b9586bccefd4f584237c156cb37f89470d2c962596a85",
+      "preserve_complete_paths": [
+        "L08"
+      ]
+    },
+    "WLD-05": {
+      "source_native_sha256": "f9f6fa9a23a62ae5a00fccdfbad9828d495d96c0385c9b14d9a6e76f3069d18a",
+      "preserve_complete_paths": [
+        "L02",
+        "L03",
+        "L04",
+        "L07",
+        "L11",
+        "L12",
+        "L13",
+        "L14",
+        "L18"
+      ]
+    },
+    "WLD-06": {
+      "source_native_sha256": "81a1c3cc7fa52ab16bb34e26084f149c964ef25d25d2ee997a9be886909e1956",
+      "preserve_complete_paths": [
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "L06",
+        "L08",
+        "L09",
+        "L11",
+        "L12",
+        "L13"
+      ]
+    },
+    "WLD-07": {
+      "source_native_sha256": "cc908857dd10a717c0a729fc823d0f90241200a1d96c1e314cc2b4db61980524",
+      "preserve_complete_paths": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "L06",
+        "L07",
+        "L08",
+        "L09",
+        "L10",
+        "L11",
+        "L12",
+        "L13",
+        "L16"
+      ]
+    },
+    "WLD-08": {
+      "source_native_sha256": "7c05868ea7e2e2bd70c9edbdc689b3285511f9017f030237fa98b484b0f30e99",
+      "preserve_complete_paths": [
+        "L02",
+        "L10"
+      ]
+    },
+    "WLD-09": {
+      "source_native_sha256": "50fbd8f405d342276be9ed7dce83fd384133c008f68c86b524bbbccca1dd2c87",
+      "preserve_complete_paths": [
+        "L04",
+        "L05",
+        "L08",
+        "L13",
+        "L15",
+        "L16"
+      ]
+    },
+    "WLD-10": {
+      "source_native_sha256": "9e2122cdd84950ba1fec8d3f25d3428e33e49608e2d79d2d3d5f27efc813cd17",
+      "preserve_complete_paths": [
+        "L02",
+        "L03",
+        "L08",
+        "L10",
+        "L12",
+        "L14"
+      ]
+    },
+    "WLD-11": {
+      "source_native_sha256": "a9a9f4ef211b8bdcd3d2118309bdd06ea673bb53e26c9348157fcba0176b4742",
+      "preserve_complete_paths": [
+        "L04",
+        "L05",
+        "L06",
+        "L13"
+      ]
+    },
+    "WLD-12": {
+      "source_native_sha256": "f64a770b8d4f58f52bc3b62cdc9cc43994add98312271235eedf0589bd50aa6a",
+      "preserve_complete_paths": [
+        "L05",
+        "L08",
+        "L10",
+        "L11",
+        "L12",
+        "L15",
+        "L18"
+      ]
+    },
+    "WLD-13": {
+      "source_native_sha256": "a619ca847615a001e3a6af167c715e166209650d9d9871cdb5bfa192627fe664",
+      "preserve_complete_paths": [
+        "L02",
+        "L03",
+        "L04",
+        "L06",
+        "L07",
+        "L10",
+        "L11",
+        "L14",
+        "L15",
+        "L16"
+      ]
+    },
+    "WLD-14": {
+      "source_native_sha256": "8b1718fdb15ac04bf780dabfd8d82ad9057aef0bc1fc0ab7eb8ac39bf152829a",
+      "preserve_complete_paths": [
+        "route-02",
+        "route-03",
+        "route-04",
+        "route-05",
+        "route-06",
+        "route-07",
+        "route-08",
+        "route-12",
+        "route-16"
+      ]
+    },
+    "WLD-15": {
+      "source_native_sha256": "65ea86d5f1c611f2d35cd6c1198e57dca62302302e4b4ba401be50e47640c21c",
+      "preserve_complete_paths": [
+        "route-01",
+        "route-02",
+        "route-04",
+        "route-05",
+        "route-08",
+        "route-09",
+        "route-10",
+        "route-16",
+        "route-18"
+      ]
+    },
+    "WLD-16": {
+      "source_native_sha256": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a",
+      "preserve_complete_paths": [
+        "route-02",
+        "route-04",
+        "route-05",
+        "route-06",
+        "route-07",
+        "route-11",
+        "route-15",
+        "route-16",
+        "route-17",
+        "route-18",
+        "route-19",
+        "route-20",
+        "route-21",
+        "route-22"
+      ]
+    },
+    "WLD-17": {
+      "source_native_sha256": "3a7f0af68702dcfaa0244a777020b56464d13be376a87c6154995fef1751c32f",
+      "preserve_complete_paths": [
+        "route-06",
+        "route-07",
+        "route-08",
+        "route-09",
+        "route-15",
+        "route-16",
+        "route-17"
+      ]
+    },
+    "WLD-18": {
+      "source_native_sha256": "022550b758eb5fac8e443659de182827d1aa5e5230408c81dbcf0c4dd0324346",
+      "preserve_complete_paths": [
+        "route-02",
+        "route-04",
+        "route-05",
+        "route-06",
+        "route-10",
+        "route-19"
+      ]
+    },
+    "WLD-07-MORTUARY": {
+      "source_native_sha256": "2ae50247d945d2c6d5b3b60aedbfdfea2b9b27975cfae041648f0ba80243aa5d",
+      "preserve_complete_paths": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "L06",
+        "L07",
+        "L08",
+        "L09",
+        "L10",
+        "L11",
+        "L12",
+        "L13",
+        "L16",
+        "mort-17",
+        "mort-18",
+        "mort-19",
+        "mort-20",
+        "mort-21",
+        "mort-22",
+        "mort-23",
+        "mort-24"
+      ]
+    }
+  },
+  "source_evidence": "rejected/slab-and-established-approach-pilot/verification/current-flat-movement.json",
+  "reason": "Only failing approach designs require normalization; preserve current proven source polylines and require unchanged complete-link/centre-side/vertical comparisons."
+}

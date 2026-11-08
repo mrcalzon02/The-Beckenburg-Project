@@ -22,11 +22,11 @@ mount hints and source stages. The 24-model furniture inspection is a sample.
 | Source-library masters | 120 |
 | Additional custom model sources | 22 |
 | Review/contact assemblies | 173 |
-| Reference/rejected studies | 39 |
-| Native map exports | 182 |
-| **Total local GLB files** | **1,813** |
+| Reference/rejected studies | 84 |
+| Native map exports | 207 |
+| **Total local GLB files** | **1,883** |
 
-1,659 distinct file hashes. Copies and review assemblies are indexed
+1,729 distinct file hashes. Copies and review assemblies are indexed
 without counting them as unique usable props. Source stage and intended use
 remain attached to every entry.
 

@@ -6066,11 +6066,137 @@ All221vertical flights and84complete vertical links pass, but101280of110409flat 
 
 Cause / uncertainty: Existing flat route reservations intersect actual walls/caps/terrain/props or lack full support. Zero new regressions cannot be treated as all routes passing.
 
-Fix / next action: Retain complete native failed-pose table and per-site component/segment/reason counts. Next batch authors real wall/door/cap apertures, coherent flat approaches, terrain/body clearance and prop moves against current shared source coordinates; repeat all flat/vertical/chained regressions. Preserve search envelope, services and reusable asset library.
+Fix / next action: Retain complete native failed-pose table and per-site component/segment/reason counts. Next batch authors real wall/door/cap apertures, coherent flat approaches, terrain/body clearance and prop moves against current shared source coordinates; repeat all flat/vertical/chained regressions. Preserve search envelope, services and reusable asset library. Latest flat-circulation checkpoint: original110409body samples now102726valid/7683invalid,1446recovered with0newstanding/0newsweep failures. Separate current strict full-footprint table119775samples/13483invalid and380of566complete flat links passing both ways; do not compare different sample sets.
 
-Evidence and verification: development/levels/rebuild/stair-connection-pass/verification/remaining-flat-routes.json; remaining-flat-contacts.tsv; remaining-flat-input.tsv; tools/diagnose_remaining_flat_routes.py
+Evidence and verification: development/levels/rebuild/stair-connection-pass/verification/remaining-flat-routes.json; remaining-flat-contacts.tsv; remaining-flat-input.tsv; tools/diagnose_remaining_flat_routes.py; development/levels/rebuild/flat-circulation-pass/verification/current-flat-movement.json; native-route-fit.json
 
 Older-map obligation: Each of29packets and follow-on maps needs actual native and runtime route/support audit; four mature sources are not covered by the25candidate table. No acceptance inferred from vertical routes alone.
+
+### DEV-441 — Diagonal threshold approaches graze walls and create oversized longitudinal aperture slots
+
+**Status:** FIX VERIFIED FOR SOURCE APPROACHES; remaining route design is open · **Affected:** ACADEMYeast cloister L41 and other explicit shared-wall threshold approaches in25candidate layouts
+
+Initial flat aperture pilot followed schematic diagonal approaches close to a wall, carving a long slot instead of a normal doorway.
+
+Cause / uncertainty: Treating a threshold reservation point as a complete approach design; route lines converged toward the boundary from far down a narrow corridor.
+
+Fix / next action: Preserve actual route endpoints and threshold coordinates, route perpendicular to the actual shared wall using interior approach legs, then construct body apertures along those authored approaches. Preserve grazing pilot exports/native/scenes/probes and verify current complete links plus unchanged valid-coordinate controls.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot; tools/build_flat_circulation.py; captures/flat-circulation-batch/flat-pilot-sheet.png
+
+Older-map obligation: Audit doorway angle, usable jamb/approach space and wall continuity individually; native recovery counts cannot justify incoherent wall slots.
+
+### DEV-442 — Raised tunnel ceiling overlaps the occupied shed floor above it
+
+**Status:** FIX VERIFIED: five shared ceiling ownership cases /1,072actual top/underside probes; fixture/runtime acceptance open · **Affected:** WLD08generator tunnel-n ceiling topY0.5 beneath generator floorY0; audit other fully stacked source zones
+
+Actual cap96:Ceiling cap tunnel-n.003 occupiesY0.34..0.5 above the generator walking floor. Path-only cutting creates a partial roof trench through the upper room.
+
+Cause / uncertainty: Lower tunnelY-2.5 retained nominal3mheight even though an actual occupied floor atY0 already owns the shared ceiling.
+
+Fix / next action: Assign the fully covering upper floor as ceiling owner, set lower zone height2.5m, retire raised lower caps and trim lower walls/headers to the shared datum. Preserve actual upper floor depth/shaft openings and verify lower/upper routes and visual closure. Partial overlaps require separate design, not blanket lowering.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench; tools/build_flat_circulation.py; captures/flat-circulation-batch/rejected-partial-cap-wld-08-threshold-after.png
+
+Older-map obligation: Audit stacked floor/ceiling/volume ownership at authoritative elevations; fixture remounting, ceiling rays, service heights and whole room visual acceptance remain individual obligations.
+
+### DEV-443 — Body-only flat standing counters omit unsupported capsule-foot footprints
+
+**Status:** AUDIT VERIFIED FOR25CURRENTSOURCES;13483strictinvalidsamples/186incompleteflatlinks remain OPEN · **Affected:** All25source candidates and original flat-route comparison interpretation
+
+Original flat after_valid counter checked centre support and capsule body only; full movement/traversable can still reject neighbouring feet. Threshold rerouting also changes which samples represent current design.
+
+Cause / uncertainty: Reusing a historical unchanged-coordinate regression table as proof of every current authored path being fully usable.
+
+Fix / next action: Keep historical body/sweep regression unchanged. Add explicit opt-in strict-footprints production traversable probes of actual current centre/side lanes and continuous forward/reverse complete flat links with original endpoints. Bind exact layouts/native hashes and diagnose every remaining strict invalid sample; never compare counts across different sample sets as if unchanged.
+
+Evidence and verification: tools/audit_current_flat_routes.py; tools/java/FurnishingRouteProbe.java; development/levels/rebuild/flat-circulation-pass/verification/current-flat-movement.json
+
+Older-map obligation: Verify physical full-footprint support and complete current routes individually, including four mature sources outside25candidate scope. No runtime/full-map acceptance from body-only samples or green vertical routes.
+
+### DEV-444 — Independent stacked-ceiling checker imports blockout geometry before installing its module path
+
+**Status:** FIX VERIFIED: all25independent source checks execute · **Affected:** tools/check_flat_circulation.py added stacked ceiling audit
+
+First ceiling ownership check stopped at ModuleNotFoundError structural_pass before running native/source checks.
+
+Cause / uncertainty: New helper import preceded setup of the repository blockout module directory.
+
+Fix / next action: Add explicit repository tools/blockout paths before importing deck_openings. Reopen actual editable/export sources;544actual upper-floor/underside probes pass outside source stair openings, lower walls/headers stay below shared datum.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/verification/rejected-checker-import.log; verification/flat-check-pilot.log; verification/ceiling-ownership.json
+
+Older-map obligation: A stopped checker and Blender zero process exit are not a validation pass. Require actual current per-site reports and assertions.
+
+### DEV-445 — Redundant rough route prisms share coplanar room-floor faces and produce black native surface patches
+
+**Status:** FIX VERIFIED FOR673FULLYOWNEDROUGHPRISMS; partial overlays/other dark regions remain open · **Affected:** WLD08L12support1 and other original fully covered rough flat-route supports across25candidates
+
+Actual exported pixel rays hit Floor generator.006 and L12support1 at identical distances. Native image contains a black triangular floor region despite544floor/underside coverage probes passing.
+
+Cause / uncertainty: Retained schematic route support prisms lie exactly on actual owned room floors, giving multiple surfaces the same floor plane.
+
+Fix / next action: Remove only original rough route prisms whose complete actual upward top surface is covered by real equal-height floor triangles, keeping props, treads/landings, floors, partial/exterior bearings and all original mesh resources. Independent checker replays source-prism coverage and requires complete flat extrusion. Pilot14removed beams eliminate the large triangular black patch in matched native view; narrower partial overlaps remain unaccepted.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/verification/native-dark-floor-rays.json; rejected/coplanar-floor-pilot; tools/resolve_flat_floor_ownership.py; verification/floor-surface-ownership.json; captures/flat-circulation-batch/rejected-coplanar-wld-08-threshold-after.png; captures/flat-circulation-batch/wld-08-threshold-after.png
+
+Older-map obligation: Audit actual floor ownership and render overlaps independently acrossall29packets; this scoped removal does not resolve all dark regions, partial overlays, stair overlaps, optical/runtime or complete map acceptance.
+
+### DEV-446 — Powerhouse Boolean wall slivers collapse after native float coordinate transforms
+
+**Status:** FIX VERIFIED: all25current native files parse; exact rejected states retained · **Affected:** WLD09Flat route shell Bayed shell Wall turbine S and generated shell family; final established-route build also exposes4WLD03generated-shell zero-area float triangles
+
+Actual native parser rejects26zero-area triangles. Independent source check also refuses the payload; Blender process exit alone had not shown the failure.
+
+Cause / uncertainty: Very short CSG edges remained distinct in local mesh coordinates but coincided after float world transforms atX43metres.
+
+Fix / next action: Preserve actual rejected export/native/editable state and failed raw logs. Bake only25newowned wall/cap parts to native world coordinate precision, weld20micrometres/dissolve10micrometreedges, restore closed outward triangles and appendexact render/native replacements. Original assets/resources/stairs, terrain and literal movement tolerances retained. Update construction/layout replacement identities together. Final exact-float scan retains both actual bad input families; apply the same closed world-coordinate repair to WLD03/WLD09 only. Preserve exact driver versions for replay. Final authoring bakes new wall world coordinates before Boolean operations. Four remaining Asylum near-degenerate panels use closed extrusion of actual front/back silhouette intersection on a10micrometreprofile grid. Original resources stay exact. Final25native/export/editable checks and literal production parser pass; broad weld cleanup failures remain rejected.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse; verification/precision-repair.log; tools/repair_flat_native_precision.py
+
+Older-map obligation: Require actual native parser and closed/export/UV/native checks for every new source. Never remove triangles only from collision, suppress degeneracy rejection or call a stopped checker successful.
+
+### DEV-447 — Blanket flat-route slab cuts and unnecessary normalization regress working upper floors and approaches
+
+**Status:** FIX VERIFIED:0newold-coordinate standing/sweep failures and0complete-path regressions; current invalid footprints remain open · **Affected:** ChurchL18/MansionL28/SchoolL36old-coordinate probes; establishedMansion/School/WLD03/WLD07/WLD09/mortuaryflat links and cemetery loops
+
+Initial complete batch recovered1739body poses but introduced1standing/2sweep failures and regressed already-passing complete paths, including both cemetery loops.
+
+Cause / uncertainty: Flat2.2mheadroom cutters cut into upper floors over low spaces, and normalizing already-working approaches moved them off existing supports or toward stair conflicts.
+
+Fix / next action: Preserve actual rejected all25payloads/raw probes. Flat routes do not cut floor/roof slabs; full shared stacked ceiling conflicts use actual ownership design. Preserve source polylines already passing complete native movement; normalize only failing threshold approaches, keeping endpoints/thresholds. Rerun unchanged old-coordinate, strict actual-current flat, vertical and cemetery-loop gates without loosening movement. Flat wall cuts now start at the actual walking plane, preserving old wall-top bearings. The School probe remains strict-footprint-invalid in BOTH original and final sources; that older defect is not mislabeled newly fixed. Both cemetery loops pass14segments again.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot; established-flat-links.json; verification/initial-failure-contacts.tsv; tools/build_flat_circulation.py
+
+Older-map obligation: Existing complete movement is protected but does not accept a whole map. Low headroom, flat/stair crossings, terrain, full widths and final architectural elevation design remain individual obligations across29packets.
+
+### DEV-448 — Active flat wall apertures reopen permanently sealed context boundaries
+
+**Status:** FIX VERIFIED AT192LINKS/750BOUNDARYCENTRE RAYS; full envelope/runtime acceptance open · **Affected:** ACADEMYL39and retrospective192fixed links across25source candidates
+
+Fresh reimported boundary audit finds AcademyL39open after flat cuts. Actual preceding source independently passes all26Academysealed link boundaries.
+
+Cause / uncertainty: Preserving explicit infill nodes alone is insufficient when a nearby active path cuts another wall belonging to the closed room shell.
+
+Fix / next action: Preserve complete sealed room volumes and full fixed-mouth reservations in source authoring; never apply a wall cutter where it conflicts with those protected bounds. Preserve all source sealed definitions and actual original walls there. Record each withheld conflict for subsequent spatial rerouting; independently rerun all fixed boundary rays, old/current movement and source preservation. Final authoring records394withheldwall/corridor conflicts instead of cutting protected bounds.186completeflatlinks and13,483strictcurrentstanding samples remain unaccepted; reroute coherently before runtime integration.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot; verification/fixed-boundary-before.log; tools/build_flat_circulation.py; verification/fixed-context-boundaries.json
+
+Older-map obligation: Actual full width/body/around/under/ghost/object and runtime40space envelope audits remain required; centre rays do not accept whole boundaries.
+
+### DEV-449 — Boolean union of clipped protected wall fragments creates a nonmanifold reception shell
+
+**Status:** FIX VERIFIED: no fragment unions; source solids/volume/native/retained-resource checks pass · **Affected:** ACADEMYFlat route shell Wall reception E.001during sealed-context guard pilot
+
+Closed-solid assertion stops the source build before export; Blender still returns process exit0.
+
+Cause / uncertainty: Unioning exact original protected fragments into a repeatedly cut wall produces point-touching/degenerate topology.
+
+Fix / next action: Retain exact failing builder and raw log; remove fragment-union strategy. Withhold conflicting aperture cutters before geometry generation and keep original protected wall architecture. No manifold/volume/native rejection threshold changed.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/union-guard-nonmanifold; tools/build_flat_circulation.py
+
+Older-map obligation: Require fresh actual reports and per-part assertions; a Blender process exit or unexecuted construction design is not successful source generation.
 
 ## Required audit categories
 

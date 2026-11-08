@@ -1,0 +1,13 @@
+Exception in thread "main" java.io.IOException: Degenerate native triangle
+	at org.beckenburg.AuthoredSitePhysics.read(AuthoredSitePhysics.java:91)
+	at org.beckenburg.AuthoredSitePhysics.read(AuthoredSitePhysics.java:60)
+	at RosterStairMovementProbe.main(RosterStairMovementProbe.java:67)
+Traceback (most recent call last):
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_current_flat_routes.py", line 50, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_current_flat_routes.py", line 32, in main
+    subprocess.run([str(java/'java.exe'),'-Djava.awt.headless=true','-Xmx2g','-cp',cp,'RosterStairMovementProbe',str(OUT/'current-flat-names.tsv'),str(empty),str(BUILD/'empty-results.tsv'),str(OUT/'current-flat-links.tsv'),str(OUT/'current-flat-paths.tsv')],check=True)
+  File "C:\Users\Admin\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['C:\\Program Files\\Java\\jdk-17\\bin\\java.exe', '-Djava.awt.headless=true', '-Xmx2g', '-cp', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\current-flat-probe;C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\beckenburg-game.jar', 'RosterStairMovementProbe', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\flat-circulation-pass\\verification\\current-flat-names.tsv', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\current-flat-probe\\empty-flights.tsv', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\build\\current-flat-probe\\empty-results.tsv', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\flat-circulation-pass\\verification\\current-flat-links.tsv', 'C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\flat-circulation-pass\\verification\\current-flat-paths.tsv']' returned non-zero exit status 1.

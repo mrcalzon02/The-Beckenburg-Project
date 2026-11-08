@@ -1,0 +1,34 @@
+{
+  "versions": {
+    "66cf54785b5ea899e8f90d757f40f122f5ae163f9c7d0c5e11e3582517deaf74": "tools/build_flat_circulation.py",
+    "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/flat-builder-v4.py"
+  },
+  "sites": {
+    "ACADEMY": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "ASYLUM": "66cf54785b5ea899e8f90d757f40f122f5ae163f9c7d0c5e11e3582517deaf74",
+    "CHURCH": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "COLLEGE": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "FARMHOUSE": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "MANSION": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "PRISON": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "SCHOOL": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-03": "66cf54785b5ea899e8f90d757f40f122f5ae163f9c7d0c5e11e3582517deaf74",
+    "WLD-04": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-05": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-06": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-07": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-07-MORTUARY": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-08": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-09": "66cf54785b5ea899e8f90d757f40f122f5ae163f9c7d0c5e11e3582517deaf74",
+    "WLD-10": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-11": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-12": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-13": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-14": "66cf54785b5ea899e8f90d757f40f122f5ae163f9c7d0c5e11e3582517deaf74",
+    "WLD-15": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-16": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-17": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32",
+    "WLD-18": "b51d66e9aab056635bd347aeb7483458b423ae69a52cb2147a1602fec1b45b32"
+  },
+  "reason": "Four models regenerated with world-coordinate Boolean authoring; the other21retain their completed prior generator version. Exact generator bytes are retained."
+}

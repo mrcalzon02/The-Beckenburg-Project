@@ -1,0 +1,4841 @@
+{
+  "checks": [
+    {
+      "site": "ACADEMY",
+      "removed_prisms": [
+        {
+          "name": "L03 support 1",
+          "native_name": "406:L03 support 1",
+          "actual_source_top_area": 5.1999969482421875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 0",
+          "native_name": "407:L04 support 0",
+          "actual_source_top_area": 7.000697333351127,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 1",
+          "native_name": "408:L04 support 1",
+          "actual_source_top_area": 2.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "409:L06 support 0",
+          "actual_source_top_area": 5.1999969482421875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 1",
+          "native_name": "410:L06 support 1",
+          "actual_source_top_area": 6.7861785888671875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 0",
+          "native_name": "411:L07 support 0",
+          "actual_source_top_area": 13.000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 0",
+          "native_name": "413:L08 support 0",
+          "actual_source_top_area": 13.000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 0",
+          "native_name": "415:L09 support 0",
+          "actual_source_top_area": 12.999992370605469,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 0",
+          "native_name": "417:L10 support 0",
+          "actual_source_top_area": 12.999992370605469,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "419:L11 support 0",
+          "actual_source_top_area": 1.9500017166137695,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "421:L12 support 0",
+          "actual_source_top_area": 1.9500017166137695,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 0",
+          "native_name": "423:L13 support 0",
+          "actual_source_top_area": 8.040055274963379,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 1",
+          "native_name": "424:L13 support 1",
+          "actual_source_top_area": 7.800018310546875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 0",
+          "native_name": "425:L14 support 0",
+          "actual_source_top_area": 2.343608856201172,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 1",
+          "native_name": "426:L14 support 1",
+          "actual_source_top_area": 7.799995422363281,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "427:L16 support 0",
+          "actual_source_top_area": 2.5999984741210938,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "428:L16 support 1",
+          "actual_source_top_area": 6.499996185302734,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 0",
+          "native_name": "429:L17 support 0",
+          "actual_source_top_area": 13.788579940795898,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 1",
+          "native_name": "430:L17 support 1",
+          "actual_source_top_area": 7.799995422363281,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 0",
+          "native_name": "431:L18 support 0",
+          "actual_source_top_area": 3.250002861022949,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 1",
+          "native_name": "432:L18 support 1",
+          "actual_source_top_area": 6.499996185302734,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L26 support 0",
+          "native_name": "433:L26 support 0",
+          "actual_source_top_area": 5.553600311279297,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L26 support 1",
+          "native_name": "434:L26 support 1",
+          "actual_source_top_area": 6.499996185302734,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L27 support 0",
+          "native_name": "435:L27 support 0",
+          "actual_source_top_area": 8.720661163330078,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L27 support 1",
+          "native_name": "436:L27 support 1",
+          "actual_source_top_area": 3.8999977111816406,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 0",
+          "native_name": "437:L28 support 0",
+          "actual_source_top_area": 2.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 1",
+          "native_name": "438:L28 support 1",
+          "actual_source_top_area": 3.9000091552734375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L35 support 0",
+          "native_name": "439:L35 support 0",
+          "actual_source_top_area": 2.3436050415039062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L35 support 1",
+          "native_name": "440:L35 support 1",
+          "actual_source_top_area": 7.827033996582031,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L36 support 0",
+          "native_name": "441:L36 support 0",
+          "actual_source_top_area": 8.67208194732666,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L36 support 1",
+          "native_name": "442:L36 support 1",
+          "actual_source_top_area": 7.799995422363281,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L37 support 0",
+          "native_name": "443:L37 support 0",
+          "actual_source_top_area": 3.25,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L37 support 1",
+          "native_name": "444:L37 support 1",
+          "actual_source_top_area": 6.5000152587890625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L38 support 0",
+          "native_name": "445:L38 support 0",
+          "actual_source_top_area": 5.8137664794921875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L38 support 1",
+          "native_name": "446:L38 support 1",
+          "actual_source_top_area": 2.5999984741210938,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L40 support 0",
+          "native_name": "447:L40 support 0",
+          "actual_source_top_area": 16.366597175598145,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L40 support 1",
+          "native_name": "448:L40 support 1",
+          "actual_source_top_area": 9.374431610107422,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L41 support 0",
+          "native_name": "449:L41 support 0",
+          "actual_source_top_area": 22.185848236083984,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L41 support 1",
+          "native_name": "450:L41 support 1",
+          "actual_source_top_area": 9.374420166015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L42 support 0",
+          "native_name": "451:L42 support 0",
+          "actual_source_top_area": 7.800018310546875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L43 support 0",
+          "native_name": "453:L43 support 0",
+          "actual_source_top_area": 26.07304096221924,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L44 support 1",
+          "native_name": "456:L44 support 1",
+          "actual_source_top_area": 14.949991226196289,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L45 support 1",
+          "native_name": "458:L45 support 1",
+          "actual_source_top_area": 23.400054931640625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L46 support 0",
+          "native_name": "459:L46 support 0",
+          "actual_source_top_area": 22.185848236083984,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L46 support 1",
+          "native_name": "460:L46 support 1",
+          "actual_source_top_area": 9.374420166015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L47 support 0",
+          "native_name": "461:L47 support 0",
+          "actual_source_top_area": 18.95058250427246,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L47 support 1",
+          "native_name": "462:L47 support 1",
+          "actual_source_top_area": 7.799995422363281,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L48 support 0",
+          "native_name": "463:L48 support 0",
+          "actual_source_top_area": 5.076661109924316,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L48 support 1",
+          "native_name": "464:L48 support 1",
+          "actual_source_top_area": 3.249998092651367,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L49 support 0",
+          "native_name": "465:L49 support 0",
+          "actual_source_top_area": 5.076662778228638,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L49 support 1",
+          "native_name": "466:L49 support 1",
+          "actual_source_top_area": 3.249998092651367,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L58 support 0",
+          "native_name": "467:L58 support 0",
+          "actual_source_top_area": 2.3436050415039062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L58 support 1",
+          "native_name": "468:L58 support 1",
+          "actual_source_top_area": 7.827033996582031,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L59 support 0",
+          "native_name": "469:L59 support 0",
+          "actual_source_top_area": 8.144470273258776,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L59 support 1",
+          "native_name": "470:L59 support 1",
+          "actual_source_top_area": 4.687215367157478,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L60 support 0",
+          "native_name": "471:L60 support 0",
+          "actual_source_top_area": 4.687213897705078,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L60 support 1",
+          "native_name": "472:L60 support 1",
+          "actual_source_top_area": 10.399993896484375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L61 support 0",
+          "native_name": "473:L61 support 0",
+          "actual_source_top_area": 4.687215367157478,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L61 support 1",
+          "native_name": "474:L61 support 1",
+          "actual_source_top_area": 10.399993896484375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L62 support 0",
+          "native_name": "475:L62 support 0",
+          "actual_source_top_area": 13.78857707977295,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L62 support 1",
+          "native_name": "476:L62 support 1",
+          "actual_source_top_area": 8.221918471675963,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L64 support 0",
+          "native_name": "477:L64 support 0",
+          "actual_source_top_area": 2.757711410522461,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L64 support 1",
+          "native_name": "478:L64 support 1",
+          "actual_source_top_area": 8.221941359857738,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "ASYLUM",
+      "removed_prisms": [
+        {
+          "name": "L01 support 0",
+          "native_name": "446:L01 support 0",
+          "actual_source_top_area": 4.899998664855957,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L01 support 1",
+          "native_name": "447:L01 support 1",
+          "actual_source_top_area": 7.308218002319336,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L03 support 0",
+          "native_name": "448:L03 support 0",
+          "actual_source_top_area": 4.899998664855957,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L03 support 1",
+          "native_name": "449:L03 support 1",
+          "actual_source_top_area": 7.308218002319336,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 0",
+          "native_name": "450:L05 support 0",
+          "actual_source_top_area": 2.799999237060547,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 1",
+          "native_name": "451:L05 support 1",
+          "actual_source_top_area": 23.8924503326416,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 0",
+          "native_name": "452:L07 support 0",
+          "actual_source_top_area": 2.821793556213379,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 1",
+          "native_name": "453:L07 support 1",
+          "actual_source_top_area": 10.022476196289062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 0",
+          "native_name": "454:L09 support 0",
+          "actual_source_top_area": 11.20001220703125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 1",
+          "native_name": "455:L09 support 1",
+          "actual_source_top_area": 14.849241256713867,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 0",
+          "native_name": "456:L10 support 0",
+          "actual_source_top_area": 4.899998664855957,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "457:L10 support 1",
+          "actual_source_top_area": 7.308218002319336,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "458:L12 support 0",
+          "actual_source_top_area": 4.899998664855957,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "459:L12 support 1",
+          "actual_source_top_area": 7.308218002319336,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "460:L16 support 0",
+          "actual_source_top_area": 2.821793556213379,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "461:L16 support 1",
+          "actual_source_top_area": 3.499998092651367,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 0",
+          "native_name": "462:L18 support 0",
+          "actual_source_top_area": 11.20001220703125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 1",
+          "native_name": "463:L18 support 1",
+          "actual_source_top_area": 7.981233596801758,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L22 support 0",
+          "native_name": "468:L22 support 0",
+          "actual_source_top_area": 6.894195556640625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L22 support 1",
+          "native_name": "469:L22 support 1",
+          "actual_source_top_area": 4.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L23 support 0",
+          "native_name": "470:L23 support 0",
+          "actual_source_top_area": 3.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L23 support 1",
+          "native_name": "471:L23 support 1",
+          "actual_source_top_area": 3.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 0",
+          "native_name": "472:L24 support 0",
+          "actual_source_top_area": 6.9999847412109375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 1",
+          "native_name": "473:L24 support 1",
+          "actual_source_top_area": 26.60002899169922,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L25 support 1",
+          "native_name": "475:L25 support 1",
+          "actual_source_top_area": 11.20001220703125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L26 support 0",
+          "native_name": "476:L26 support 0",
+          "actual_source_top_area": 7.000007629394531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L27 support 0",
+          "native_name": "478:L27 support 0",
+          "actual_source_top_area": 4.899998664855957,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 0",
+          "native_name": "480:L28 support 0",
+          "actual_source_top_area": 21.104724884033203,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 1",
+          "native_name": "481:L28 support 1",
+          "actual_source_top_area": 4.2000017166137695,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L29 support 0",
+          "native_name": "482:L29 support 0",
+          "actual_source_top_area": 5.0477752685546875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L29 support 1",
+          "native_name": "483:L29 support 1",
+          "actual_source_top_area": 13.30001449584961,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L32 support 0",
+          "native_name": "484:L32 support 0",
+          "actual_source_top_area": 4.69573974609375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L32 support 1",
+          "native_name": "485:L32 support 1",
+          "actual_source_top_area": 5.93969344134166,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L33 support 0",
+          "native_name": "486:L33 support 0",
+          "actual_source_top_area": 5.980795860290527,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L33 support 1",
+          "native_name": "487:L33 support 1",
+          "actual_source_top_area": 4.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L34 support 0",
+          "native_name": "488:L34 support 0",
+          "actual_source_top_area": 4.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L34 support 1",
+          "native_name": "489:L34 support 1",
+          "actual_source_top_area": 7.000007629394531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L35 support 1",
+          "native_name": "491:L35 support 1",
+          "actual_source_top_area": 13.30001449584961,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L37 support 0",
+          "native_name": "492:L37 support 0",
+          "actual_source_top_area": 3.1304931640625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L37 support 1",
+          "native_name": "493:L37 support 1",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L39 support 0",
+          "native_name": "494:L39 support 0",
+          "actual_source_top_area": 7.82623291015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L39 support 1",
+          "native_name": "495:L39 support 1",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L40 support 0",
+          "native_name": "496:L40 support 0",
+          "actual_source_top_area": 7.82623291015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L40 support 1",
+          "native_name": "497:L40 support 1",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L41 support 0",
+          "native_name": "498:L41 support 0",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L41 support 1",
+          "native_name": "499:L41 support 1",
+          "actual_source_top_area": 4.949760437011719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L42 support 0",
+          "native_name": "500:L42 support 0",
+          "actual_source_top_area": 4.949760437011719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L42 support 1",
+          "native_name": "501:L42 support 1",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L43 support 0",
+          "native_name": "502:L43 support 0",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L43 support 1",
+          "native_name": "503:L43 support 1",
+          "actual_source_top_area": 7.82623291015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L44 support 0",
+          "native_name": "504:L44 support 0",
+          "actual_source_top_area": 19.712177276611328,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L44 support 1",
+          "native_name": "505:L44 support 1",
+          "actual_source_top_area": 8.400009155273438,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L53 support 0",
+          "native_name": "506:L53 support 0",
+          "actual_source_top_area": 18.20001983642578,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L53 support 1",
+          "native_name": "507:L53 support 1",
+          "actual_source_top_area": 7.504988468172087,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L54 support 0",
+          "native_name": "508:L54 support 0",
+          "actual_source_top_area": 2.940001068112906,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L54 support 1",
+          "native_name": "509:L54 support 1",
+          "actual_source_top_area": 13.30001449584961,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L55 support 0",
+          "native_name": "510:L55 support 0",
+          "actual_source_top_area": 6.894201788232749,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L55 support 1",
+          "native_name": "511:L55 support 1",
+          "actual_source_top_area": 2.8861751556396484,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L56 support 0",
+          "native_name": "512:L56 support 0",
+          "actual_source_top_area": 3.9598045349121094,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L56 support 1",
+          "native_name": "513:L56 support 1",
+          "actual_source_top_area": 5.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L62 support 0",
+          "native_name": "514:L62 support 0",
+          "actual_source_top_area": 3.499998092651367,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L62 support 1",
+          "native_name": "515:L62 support 1",
+          "actual_source_top_area": 4.058787890537133,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L63 support 0",
+          "native_name": "516:L63 support 0",
+          "actual_source_top_area": 8.658525466918945,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L63 support 1",
+          "native_name": "517:L63 support 1",
+          "actual_source_top_area": 18.20001983642578,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L64 support 0",
+          "native_name": "518:L64 support 0",
+          "actual_source_top_area": 2.5238876342773438,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L64 support 1",
+          "native_name": "519:L64 support 1",
+          "actual_source_top_area": 13.30001449584961,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L65 support 0",
+          "native_name": "520:L65 support 0",
+          "actual_source_top_area": 6.894199371337891,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L65 support 1",
+          "native_name": "521:L65 support 1",
+          "actual_source_top_area": 8.400009155273438,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L71 support 1",
+          "native_name": "523:L71 support 1",
+          "actual_source_top_area": 5.600002288818359,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L74 support 1",
+          "native_name": "529:L74 support 1",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "CHURCH",
+      "removed_prisms": [
+        {
+          "name": "L02 support 1",
+          "native_name": "253:L02 support 1",
+          "actual_source_top_area": 3.000001907348633,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L03 support 0",
+          "native_name": "254:L03 support 0",
+          "actual_source_top_area": 3.000001907348633,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L03 support 1",
+          "native_name": "255:L03 support 1",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 0",
+          "native_name": "256:L04 support 0",
+          "actual_source_top_area": 5.366554260253906,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 1",
+          "native_name": "257:L04 support 1",
+          "actual_source_top_area": 2.999997138977051,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 0",
+          "native_name": "258:L05 support 0",
+          "actual_source_top_area": 3.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 1",
+          "native_name": "259:L05 support 1",
+          "actual_source_top_area": 3.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "260:L06 support 0",
+          "actual_source_top_area": 2.683281014739805,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 1",
+          "native_name": "261:L06 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 0",
+          "native_name": "262:L07 support 0",
+          "actual_source_top_area": 2.999997138977051,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 1",
+          "native_name": "263:L07 support 1",
+          "actual_source_top_area": 1.7999982833862305,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 0",
+          "native_name": "264:L08 support 0",
+          "actual_source_top_area": 6.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 1",
+          "native_name": "265:L08 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 0",
+          "native_name": "266:L09 support 0",
+          "actual_source_top_area": 3.3941168062829092,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 1",
+          "native_name": "267:L09 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 0",
+          "native_name": "268:L10 support 0",
+          "actual_source_top_area": 3.3941168062829092,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "269:L10 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "270:L11 support 0",
+          "actual_source_top_area": 4.947719573974609,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "271:L11 support 1",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "272:L12 support 0",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "273:L12 support 1",
+          "actual_source_top_area": 3.2310972213745117,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 0",
+          "native_name": "274:L13 support 0",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 1",
+          "native_name": "275:L13 support 1",
+          "actual_source_top_area": 7.421579360961914,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 0",
+          "native_name": "276:L14 support 0",
+          "actual_source_top_area": 3.8418731689453125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 1",
+          "native_name": "277:L14 support 1",
+          "actual_source_top_area": 1.8000004291534424,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 0",
+          "native_name": "278:L15 support 0",
+          "actual_source_top_area": 3.8418731689453125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 1",
+          "native_name": "279:L15 support 1",
+          "actual_source_top_area": 1.8000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "280:L16 support 0",
+          "actual_source_top_area": 7.421579360961914,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 0",
+          "native_name": "282:L17 support 0",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 0",
+          "native_name": "284:L18 support 0",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L19 support 0",
+          "native_name": "286:L19 support 0",
+          "actual_source_top_area": 1.951640303053864,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L19 support 1",
+          "native_name": "287:L19 support 1",
+          "actual_source_top_area": 4.686154365539551,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L20 support 0",
+          "native_name": "288:L20 support 0",
+          "actual_source_top_area": 2.139585443343094,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L20 support 1",
+          "native_name": "289:L20 support 1",
+          "actual_source_top_area": 6.18465256690979,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L21 support 0",
+          "native_name": "290:L21 support 0",
+          "actual_source_top_area": 4.415603392968478,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L21 support 1",
+          "native_name": "291:L21 support 1",
+          "actual_source_top_area": 3.706426276388811,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L22 support 0",
+          "native_name": "292:L22 support 0",
+          "actual_source_top_area": 3.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L22 support 1",
+          "native_name": "293:L22 support 1",
+          "actual_source_top_area": 3.000001907348633,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L23 support 0",
+          "native_name": "294:L23 support 0",
+          "actual_source_top_area": 3.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L23 support 1",
+          "native_name": "295:L23 support 1",
+          "actual_source_top_area": 2.999997138977051,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 0",
+          "native_name": "296:L24 support 0",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 1",
+          "native_name": "297:L24 support 1",
+          "actual_source_top_area": 8.736125946044922,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L25 support 0",
+          "native_name": "298:L25 support 0",
+          "actual_source_top_area": 8.736125946044922,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L25 support 1",
+          "native_name": "299:L25 support 1",
+          "actual_source_top_area": 7.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L31 support 0",
+          "native_name": "302:L31 support 0",
+          "actual_source_top_area": 53.199989318847656,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L31 support 1",
+          "native_name": "303:L31 support 1",
+          "actual_source_top_area": 30.399993896484375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L32 support 0",
+          "native_name": "304:L32 support 0",
+          "actual_source_top_area": 14.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L32 support 1",
+          "native_name": "305:L32 support 1",
+          "actual_source_top_area": 6.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "COLLEGE",
+      "removed_prisms": [
+        {
+          "name": "L03 support 1",
+          "native_name": "522:L03 support 1",
+          "actual_source_top_area": 5.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 0",
+          "native_name": "523:L04 support 0",
+          "actual_source_top_area": 6.260986328125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 1",
+          "native_name": "524:L04 support 1",
+          "actual_source_top_area": 30.800033569335938,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 0",
+          "native_name": "525:L05 support 0",
+          "actual_source_top_area": 17.031726246787002,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 1",
+          "native_name": "526:L05 support 1",
+          "actual_source_top_area": 9.800010681152344,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "527:L06 support 0",
+          "actual_source_top_area": 6.260986328125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 1",
+          "native_name": "528:L06 support 1",
+          "actual_source_top_area": 9.899494171142578,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 0",
+          "native_name": "529:L07 support 0",
+          "actual_source_top_area": 12.907356262207031,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 1",
+          "native_name": "530:L07 support 1",
+          "actual_source_top_area": 9.800010681152344,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 0",
+          "native_name": "531:L08 support 0",
+          "actual_source_top_area": 1.979898452758789,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 1",
+          "native_name": "532:L08 support 1",
+          "actual_source_top_area": 8.51586419060186,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "533:L11 support 0",
+          "actual_source_top_area": 17.031726246787002,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 0",
+          "native_name": "535:L14 support 0",
+          "actual_source_top_area": 6.260986328125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 1",
+          "native_name": "536:L14 support 1",
+          "actual_source_top_area": 5.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 0",
+          "native_name": "537:L15 support 0",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 1",
+          "native_name": "538:L15 support 1",
+          "actual_source_top_area": 5.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 1",
+          "native_name": "540:L17 support 1",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L19 support 0",
+          "native_name": "541:L19 support 0",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L19 support 1",
+          "native_name": "542:L19 support 1",
+          "actual_source_top_area": 8.400009155273438,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 1",
+          "native_name": "544:L24 support 1",
+          "actual_source_top_area": 30.800033569335938,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 0",
+          "native_name": "545:L28 support 0",
+          "actual_source_top_area": 8.8543701171875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 1",
+          "native_name": "546:L28 support 1",
+          "actual_source_top_area": 7.91961669921875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L33 support 0",
+          "native_name": "547:L33 support 0",
+          "actual_source_top_area": 11.544692993164062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L33 support 1",
+          "native_name": "548:L33 support 1",
+          "actual_source_top_area": 5.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L34 support 0",
+          "native_name": "549:L34 support 0",
+          "actual_source_top_area": 5.643585205078125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L34 support 1",
+          "native_name": "550:L34 support 1",
+          "actual_source_top_area": 7.571662902832031,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L42 support 0",
+          "native_name": "551:L42 support 0",
+          "actual_source_top_area": 30.800033569335938,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L42 support 1",
+          "native_name": "552:L42 support 1",
+          "actual_source_top_area": 5.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L43 support 0",
+          "native_name": "553:L43 support 0",
+          "actual_source_top_area": 3.1304931640625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L43 support 1",
+          "native_name": "554:L43 support 1",
+          "actual_source_top_area": 5.85090512278839,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L44 support 0",
+          "native_name": "555:L44 support 0",
+          "actual_source_top_area": 5.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L45 support 0",
+          "native_name": "557:L45 support 0",
+          "actual_source_top_area": 4.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L47 support 0",
+          "native_name": "559:L47 support 0",
+          "actual_source_top_area": 17.031726246787002,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L47 support 1",
+          "native_name": "560:L47 support 1",
+          "actual_source_top_area": 6.973317896525259,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L51 support 0",
+          "native_name": "561:L51 support 0",
+          "actual_source_top_area": 5.936006149291643,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L51 support 1",
+          "native_name": "562:L51 support 1",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L52 support 0",
+          "native_name": "563:L52 support 0",
+          "actual_source_top_area": 4.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L52 support 1",
+          "native_name": "564:L52 support 1",
+          "actual_source_top_area": 14.000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L55 support 1",
+          "native_name": "566:L55 support 1",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L56 support 0",
+          "native_name": "567:L56 support 0",
+          "actual_source_top_area": 2.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L56 support 1",
+          "native_name": "568:L56 support 1",
+          "actual_source_top_area": 1.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L57 support 0",
+          "native_name": "569:L57 support 0",
+          "actual_source_top_area": 5.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L57 support 1",
+          "native_name": "570:L57 support 1",
+          "actual_source_top_area": 25.200027465820312,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L62 support 0",
+          "native_name": "571:L62 support 0",
+          "actual_source_top_area": 17.031723022460938,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L62 support 1",
+          "native_name": "572:L62 support 1",
+          "actual_source_top_area": 5.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L63 support 0",
+          "native_name": "573:L63 support 0",
+          "actual_source_top_area": 5.643585205078125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L63 support 1",
+          "native_name": "574:L63 support 1",
+          "actual_source_top_area": 5.54209635668667,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L67 support 0",
+          "native_name": "575:L67 support 0",
+          "actual_source_top_area": 6.260986328125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L67 support 1",
+          "native_name": "576:L67 support 1",
+          "actual_source_top_area": 5.772350311279297,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L68 support 0",
+          "native_name": "577:L68 support 0",
+          "actual_source_top_area": 11.544696195793222,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L68 support 1",
+          "native_name": "578:L68 support 1",
+          "actual_source_top_area": 4.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L69 support 0",
+          "native_name": "579:L69 support 0",
+          "actual_source_top_area": 4.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L69 support 1",
+          "native_name": "580:L69 support 1",
+          "actual_source_top_area": 11.20001220703125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L70 support 1",
+          "native_name": "582:L70 support 1",
+          "actual_source_top_area": 16.800018310546875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L71 support 0",
+          "native_name": "583:L71 support 0",
+          "actual_source_top_area": 16.800018310546875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L71 support 1",
+          "native_name": "584:L71 support 1",
+          "actual_source_top_area": 8.8543701171875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L72 support 0",
+          "native_name": "585:L72 support 0",
+          "actual_source_top_area": 21.185829162597656,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L72 support 1",
+          "native_name": "586:L72 support 1",
+          "actual_source_top_area": 5.772346496582031,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L76 support 0",
+          "native_name": "587:L76 support 0",
+          "actual_source_top_area": 5.0477752685546875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L76 support 1",
+          "native_name": "588:L76 support 1",
+          "actual_source_top_area": 5.772346496582031,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L86 support 1",
+          "native_name": "686:L86 support 1",
+          "actual_source_top_area": 2.799999237060547,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L87 support 0",
+          "native_name": "687:L87 support 0",
+          "actual_source_top_area": 2.799999237060547,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L88 support 0",
+          "native_name": "689:L88 support 0",
+          "actual_source_top_area": 1.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L88 support 1",
+          "native_name": "690:L88 support 1",
+          "actual_source_top_area": 5.600006103515625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "FARMHOUSE",
+      "removed_prisms": [
+        {
+          "name": "L03 support 1",
+          "native_name": "258:L03 support 1",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 0",
+          "native_name": "259:L04 support 0",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 1",
+          "native_name": "260:L04 support 1",
+          "actual_source_top_area": 4.947719573974609,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 0",
+          "native_name": "261:L05 support 0",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "263:L06 support 0",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 1",
+          "native_name": "264:L06 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 0",
+          "native_name": "265:L07 support 0",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 1",
+          "native_name": "266:L07 support 1",
+          "actual_source_top_area": 1.8000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 0",
+          "native_name": "267:L08 support 0",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 0",
+          "native_name": "269:L09 support 0",
+          "actual_source_top_area": 2.163329203433932,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 1",
+          "native_name": "270:L09 support 1",
+          "actual_source_top_area": 1.8973665237426758,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 0",
+          "native_name": "271:L10 support 0",
+          "actual_source_top_area": 3.000001907348633,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "272:L10 support 1",
+          "actual_source_top_area": 1.8000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "275:L12 support 0",
+          "actual_source_top_area": 6.000003814697266,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "276:L12 support 1",
+          "actual_source_top_area": 1.2000007629394531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 0",
+          "native_name": "277:L13 support 0",
+          "actual_source_top_area": 3.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 0",
+          "native_name": "279:L14 support 0",
+          "actual_source_top_area": 5.692102432250977,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 1",
+          "native_name": "280:L14 support 1",
+          "actual_source_top_area": 1.8000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 0",
+          "native_name": "281:L15 support 0",
+          "actual_source_top_area": 9.17823600769043,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 1",
+          "native_name": "282:L15 support 1",
+          "actual_source_top_area": 1.8000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "283:L16 support 0",
+          "actual_source_top_area": 6.264183044433594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "284:L16 support 1",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 0",
+          "native_name": "285:L17 support 0",
+          "actual_source_top_area": 3.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 1",
+          "native_name": "286:L17 support 1",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 0",
+          "native_name": "287:L18 support 0",
+          "actual_source_top_area": 9.17823600769043,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 1",
+          "native_name": "288:L18 support 1",
+          "actual_source_top_area": 4.837352752685547,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L19 support 0",
+          "native_name": "289:L19 support 0",
+          "actual_source_top_area": 6.000003814697266,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L19 support 1",
+          "native_name": "290:L19 support 1",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L20 support 0",
+          "native_name": "291:L20 support 0",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L20 support 1",
+          "native_name": "292:L20 support 1",
+          "actual_source_top_area": 6.788236213431446,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L21 support 0",
+          "native_name": "293:L21 support 0",
+          "actual_source_top_area": 8.400005340576172,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L21 support 1",
+          "native_name": "294:L21 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L22 support 4",
+          "native_name": "299:L22 support 4",
+          "actual_source_top_area": 18.000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L23 support 1",
+          "native_name": "301:L23 support 1",
+          "actual_source_top_area": 18.000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 0",
+          "native_name": "302:L24 support 0",
+          "actual_source_top_area": 5.909309387207031,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 1",
+          "native_name": "303:L24 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L25 support 0",
+          "native_name": "304:L25 support 0",
+          "actual_source_top_area": 3.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L25 support 1",
+          "native_name": "305:L25 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L26 support 0",
+          "native_name": "306:L26 support 0",
+          "actual_source_top_area": 7.589469909667969,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L26 support 1",
+          "native_name": "307:L26 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L27 support 0",
+          "native_name": "308:L27 support 0",
+          "actual_source_top_area": 5.909309387207031,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L27 support 1",
+          "native_name": "309:L27 support 1",
+          "actual_source_top_area": 2.473865509033203,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 0",
+          "native_name": "310:L28 support 0",
+          "actual_source_top_area": 2.6832821543976024,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 1",
+          "native_name": "311:L28 support 1",
+          "actual_source_top_area": 3.8418731689453125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L29 support 0",
+          "native_name": "312:L29 support 0",
+          "actual_source_top_area": 2.70416259765625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L29 support 1",
+          "native_name": "313:L29 support 1",
+          "actual_source_top_area": 6.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L31 support 0",
+          "native_name": "316:L31 support 0",
+          "actual_source_top_area": 3.4985694885253906,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L31 support 1",
+          "native_name": "317:L31 support 1",
+          "actual_source_top_area": 1.8000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L32 support 0",
+          "native_name": "318:L32 support 0",
+          "actual_source_top_area": 3.8418731689453125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L32 support 1",
+          "native_name": "319:L32 support 1",
+          "actual_source_top_area": 1.7999982833862305,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L33 support 1",
+          "native_name": "321:L33 support 1",
+          "actual_source_top_area": 4.200002670288086,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "MANSION",
+      "removed_prisms": [
+        {
+          "name": "L02 support 1",
+          "native_name": "380:L02 support 1",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 0",
+          "native_name": "381:L05 support 0",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 1",
+          "native_name": "382:L05 support 1",
+          "actual_source_top_area": 5.3665618896484375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "383:L06 support 0",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 1",
+          "native_name": "384:L06 support 1",
+          "actual_source_top_area": 7.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 0",
+          "native_name": "385:L07 support 0",
+          "actual_source_top_area": 4.79998779296875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 1",
+          "native_name": "386:L07 support 1",
+          "actual_source_top_area": 8.04983139038086,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 0",
+          "native_name": "387:L08 support 0",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 1",
+          "native_name": "388:L08 support 1",
+          "actual_source_top_area": 7.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 0",
+          "native_name": "389:L09 support 0",
+          "actual_source_top_area": 7.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 1",
+          "native_name": "390:L09 support 1",
+          "actual_source_top_area": 8.400005340576172,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 0",
+          "native_name": "391:L10 support 0",
+          "actual_source_top_area": 4.947719573974609,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "392:L10 support 1",
+          "actual_source_top_area": 7.589466094970703,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "393:L11 support 0",
+          "actual_source_top_area": 6.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "394:L11 support 1",
+          "actual_source_top_area": 8.049837112426758,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "395:L12 support 0",
+          "actual_source_top_area": 5.9999847412109375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "396:L12 support 1",
+          "actual_source_top_area": 4.79998779296875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 0",
+          "native_name": "397:L13 support 0",
+          "actual_source_top_area": 7.199981689453125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 1",
+          "native_name": "398:L13 support 1",
+          "actual_source_top_area": 9.138923645019531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 0",
+          "native_name": "399:L14 support 0",
+          "actual_source_top_area": 7.199981689453125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 1",
+          "native_name": "400:L14 support 1",
+          "actual_source_top_area": 11.063484191894531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 0",
+          "native_name": "401:L15 support 0",
+          "actual_source_top_area": 5.9999847412109375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 1",
+          "native_name": "402:L15 support 1",
+          "actual_source_top_area": 2.399993896484375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "403:L16 support 0",
+          "actual_source_top_area": 3.394114349870506,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "404:L16 support 1",
+          "actual_source_top_area": 4.799995422363281,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 0",
+          "native_name": "405:L17 support 0",
+          "actual_source_top_area": 5.3665618896484375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 1",
+          "native_name": "406:L17 support 1",
+          "actual_source_top_area": 4.79998779296875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 0",
+          "native_name": "407:L18 support 0",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 1",
+          "native_name": "408:L18 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L21 support 0",
+          "native_name": "409:L21 support 0",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L21 support 1",
+          "native_name": "410:L21 support 1",
+          "actual_source_top_area": 3.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L22 support 0",
+          "native_name": "411:L22 support 0",
+          "actual_source_top_area": 7.299324035644531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L22 support 1",
+          "native_name": "412:L22 support 1",
+          "actual_source_top_area": 8.590690612792969,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L23 support 0",
+          "native_name": "413:L23 support 0",
+          "actual_source_top_area": 9.5999755859375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 0",
+          "native_name": "415:L24 support 0",
+          "actual_source_top_area": 2.163330078125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 1",
+          "native_name": "416:L24 support 1",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L26 support 0",
+          "native_name": "417:L26 support 0",
+          "actual_source_top_area": 3.5999908447265625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 0",
+          "native_name": "419:L28 support 0",
+          "actual_source_top_area": 7.199981689453125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L29 support 0",
+          "native_name": "421:L29 support 0",
+          "actual_source_top_area": 7.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L30 support 0",
+          "native_name": "423:L30 support 0",
+          "actual_source_top_area": 8.399978637695312,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L32 support 0",
+          "native_name": "427:L32 support 0",
+          "actual_source_top_area": 4.947719573974609,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L32 support 1",
+          "native_name": "428:L32 support 1",
+          "actual_source_top_area": 7.199981689453125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L33 support 0",
+          "native_name": "429:L33 support 0",
+          "actual_source_top_area": 3.3941078186035156,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L33 support 1",
+          "native_name": "430:L33 support 1",
+          "actual_source_top_area": 6.000003814697266,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L34 support 0",
+          "native_name": "431:L34 support 0",
+          "actual_source_top_area": 5.366554260253906,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L34 support 1",
+          "native_name": "432:L34 support 1",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L36 support 1",
+          "native_name": "434:L36 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L37 support 0",
+          "native_name": "435:L37 support 0",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L37 support 1",
+          "native_name": "436:L37 support 1",
+          "actual_source_top_area": 5.126407623291016,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L42 support 1",
+          "native_name": "438:L42 support 1",
+          "actual_source_top_area": 7.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L43 support 0",
+          "native_name": "439:L43 support 0",
+          "actual_source_top_area": 5.126407623291016,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L43 support 1",
+          "native_name": "440:L43 support 1",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L44 support 0",
+          "native_name": "441:L44 support 0",
+          "actual_source_top_area": 2.399993896484375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L44 support 1",
+          "native_name": "442:L44 support 1",
+          "actual_source_top_area": 4.32666015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L46 support 0",
+          "native_name": "443:L46 support 0",
+          "actual_source_top_area": 4.32666015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L46 support 1",
+          "native_name": "444:L46 support 1",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L47 support 0",
+          "native_name": "445:L47 support 0",
+          "actual_source_top_area": 4.32666015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L47 support 1",
+          "native_name": "446:L47 support 1",
+          "actual_source_top_area": 3.5999908447265625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L48 support 0",
+          "native_name": "447:L48 support 0",
+          "actual_source_top_area": 7.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L48 support 1",
+          "native_name": "448:L48 support 1",
+          "actual_source_top_area": 1.8000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L49 support 0",
+          "native_name": "449:L49 support 0",
+          "actual_source_top_area": 7.299324035644531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L49 support 1",
+          "native_name": "450:L49 support 1",
+          "actual_source_top_area": 8.590690612792969,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L50 support 0",
+          "native_name": "451:L50 support 0",
+          "actual_source_top_area": 9.5999755859375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L50 support 1",
+          "native_name": "452:L50 support 1",
+          "actual_source_top_area": 7.421579360961914,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L51 support 1",
+          "native_name": "454:L51 support 1",
+          "actual_source_top_area": 8.399978637695312,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L52 support 0",
+          "native_name": "455:L52 support 0",
+          "actual_source_top_area": 4.02491569519043,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L52 support 1",
+          "native_name": "456:L52 support 1",
+          "actual_source_top_area": 7.224952697753906,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L53 support 0",
+          "native_name": "457:L53 support 0",
+          "actual_source_top_area": 5.126407623291016,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L53 support 1",
+          "native_name": "458:L53 support 1",
+          "actual_source_top_area": 7.224952697753906,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L54 support 0",
+          "native_name": "459:L54 support 0",
+          "actual_source_top_area": 7.421579360961914,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L54 support 1",
+          "native_name": "460:L54 support 1",
+          "actual_source_top_area": 8.399978637695312,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L55 support 0",
+          "native_name": "461:L55 support 0",
+          "actual_source_top_area": 5.126407623291016,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L55 support 1",
+          "native_name": "462:L55 support 1",
+          "actual_source_top_area": 4.8000030517578125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L56 support 0",
+          "native_name": "463:L56 support 0",
+          "actual_source_top_area": 4.02491569519043,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L56 support 1",
+          "native_name": "464:L56 support 1",
+          "actual_source_top_area": 7.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L57 support 0",
+          "native_name": "465:L57 support 0",
+          "actual_source_top_area": 6.788230895996094,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L57 support 1",
+          "native_name": "466:L57 support 1",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "PRISON",
+      "removed_prisms": [
+        {
+          "name": "L001 support 0",
+          "native_name": "612:L001 support 0",
+          "actual_source_top_area": 2.281786884574103,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L001 support 1",
+          "native_name": "613:L001 support 1",
+          "actual_source_top_area": 12.01597330817276,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L009 support 0",
+          "native_name": "614:L009 support 0",
+          "actual_source_top_area": 2.281786884574103,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L009 support 1",
+          "native_name": "615:L009 support 1",
+          "actual_source_top_area": 15.15641935444728,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L017 support 0",
+          "native_name": "616:L017 support 0",
+          "actual_source_top_area": 2.281786884574103,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L017 support 1",
+          "native_name": "617:L017 support 1",
+          "actual_source_top_area": 12.015951564397255,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L025 support 0",
+          "native_name": "618:L025 support 0",
+          "actual_source_top_area": 2.281786884574103,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L025 support 1",
+          "native_name": "619:L025 support 1",
+          "actual_source_top_area": 15.15641935444728,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L033 support 0",
+          "native_name": "620:L033 support 0",
+          "actual_source_top_area": 16.800010681152344,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L033 support 1",
+          "native_name": "621:L033 support 1",
+          "actual_source_top_area": 2.683277130126953,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L034 support 0",
+          "native_name": "622:L034 support 0",
+          "actual_source_top_area": 16.800010681152344,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L034 support 1",
+          "native_name": "623:L034 support 1",
+          "actual_source_top_area": 4.326665878295898,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L042 support 0",
+          "native_name": "624:L042 support 0",
+          "actual_source_top_area": 3.3541011810302734,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L042 support 1",
+          "native_name": "625:L042 support 1",
+          "actual_source_top_area": 28.853055953979492,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L045 support 0",
+          "native_name": "626:L045 support 0",
+          "actual_source_top_area": 5.4083155784828705,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L045 support 1",
+          "native_name": "627:L045 support 1",
+          "actual_source_top_area": 4.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L049 support 0",
+          "native_name": "649:L049 support 0",
+          "actual_source_top_area": 16.799957275390625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L049 support 1",
+          "native_name": "650:L049 support 1",
+          "actual_source_top_area": 2.6832809448242188,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L050 support 0",
+          "native_name": "651:L050 support 0",
+          "actual_source_top_area": 16.799957275390625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L050 support 1",
+          "native_name": "652:L050 support 1",
+          "actual_source_top_area": 4.32666015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L058 support 0",
+          "native_name": "653:L058 support 0",
+          "actual_source_top_area": 3.3541030883789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L058 support 1",
+          "native_name": "654:L058 support 1",
+          "actual_source_top_area": 28.853050231933594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L061 support 0",
+          "native_name": "655:L061 support 0",
+          "actual_source_top_area": 5.4083251953125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L061 support 1",
+          "native_name": "656:L061 support 1",
+          "actual_source_top_area": 4.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L062 support 0",
+          "native_name": "657:L062 support 0",
+          "actual_source_top_area": 4.726915927036316,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L065 support 1",
+          "native_name": "679:L065 support 1",
+          "actual_source_top_area": 5.9999847412109375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L066 support 1",
+          "native_name": "681:L066 support 1",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L067 support 0",
+          "native_name": "682:L067 support 0",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L067 support 1",
+          "native_name": "683:L067 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L068 support 0",
+          "native_name": "684:L068 support 0",
+          "actual_source_top_area": 4.79998779296875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L068 support 1",
+          "native_name": "685:L068 support 1",
+          "actual_source_top_area": 2.399993896484375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L073 support 0",
+          "native_name": "686:L073 support 0",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L073 support 1",
+          "native_name": "687:L073 support 1",
+          "actual_source_top_area": 3.7947311401367188,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L074 support 0",
+          "native_name": "688:L074 support 0",
+          "actual_source_top_area": 9.89544677734375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L074 support 1",
+          "native_name": "689:L074 support 1",
+          "actual_source_top_area": 4.79998779296875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L077 support 0",
+          "native_name": "690:L077 support 0",
+          "actual_source_top_area": 4.79998779296875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L077 support 1",
+          "native_name": "691:L077 support 1",
+          "actual_source_top_area": 5.3665618896484375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L078 support 0",
+          "native_name": "692:L078 support 0",
+          "actual_source_top_area": 6.1188201904296875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L078 support 1",
+          "native_name": "693:L078 support 1",
+          "actual_source_top_area": 3.5999908447265625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L080 support 0",
+          "native_name": "694:L080 support 0",
+          "actual_source_top_area": 5.9999847412109375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L085 support 0",
+          "native_name": "700:L085 support 0",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L088 support 0",
+          "native_name": "702:L088 support 0",
+          "actual_source_top_area": 12.074782441442949,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L088 support 1",
+          "native_name": "703:L088 support 1",
+          "actual_source_top_area": 10.799972534179688,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L089 support 0",
+          "native_name": "704:L089 support 0",
+          "actual_source_top_area": 7.421579360961914,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L089 support 1",
+          "native_name": "705:L089 support 1",
+          "actual_source_top_area": 28.800018310546875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L091 support 0",
+          "native_name": "706:L091 support 0",
+          "actual_source_top_area": 5.977474212646484,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L091 support 1",
+          "native_name": "707:L091 support 1",
+          "actual_source_top_area": 3.000001907348633,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L094 support 0",
+          "native_name": "708:L094 support 0",
+          "actual_source_top_area": 6.841045379638672,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L094 support 1",
+          "native_name": "709:L094 support 1",
+          "actual_source_top_area": 5.400003433227539,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L095 support 0",
+          "native_name": "710:L095 support 0",
+          "actual_source_top_area": 21.8979597026796,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L095 support 1",
+          "native_name": "711:L095 support 1",
+          "actual_source_top_area": 7.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L100 support 0",
+          "native_name": "712:L100 support 0",
+          "actual_source_top_area": 6.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L100 support 1",
+          "native_name": "713:L100 support 1",
+          "actual_source_top_area": 7.200004577636719,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L103 support 0",
+          "native_name": "714:L103 support 0",
+          "actual_source_top_area": 4.326656341552734,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L103 support 1",
+          "native_name": "715:L103 support 1",
+          "actual_source_top_area": 4.200002670288086,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L104 support 0",
+          "native_name": "716:L104 support 0",
+          "actual_source_top_area": 4.200002670288086,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L104 support 1",
+          "native_name": "717:L104 support 1",
+          "actual_source_top_area": 4.200002670288086,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L105 support 0",
+          "native_name": "718:L105 support 0",
+          "actual_source_top_area": 4.32666015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L105 support 1",
+          "native_name": "719:L105 support 1",
+          "actual_source_top_area": 9.138923645019531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "SCHOOL",
+      "removed_prisms": [
+        {
+          "name": "L01 support 0",
+          "native_name": "298:L01 support 0",
+          "actual_source_top_area": 3.4985694885253906,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L01 support 1",
+          "native_name": "299:L01 support 1",
+          "actual_source_top_area": 2.999997138977051,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L02 support 0",
+          "native_name": "300:L02 support 0",
+          "actual_source_top_area": 3.4985694885253906,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L02 support 1",
+          "native_name": "301:L02 support 1",
+          "actual_source_top_area": 1.4999961853027344,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L03 support 0",
+          "native_name": "302:L03 support 0",
+          "actual_source_top_area": 2.3430771827697754,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L03 support 1",
+          "native_name": "303:L03 support 1",
+          "actual_source_top_area": 1.8000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 0",
+          "native_name": "304:L04 support 0",
+          "actual_source_top_area": 3.7947330474853516,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 1",
+          "native_name": "305:L04 support 1",
+          "actual_source_top_area": 10.800006866455078,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 0",
+          "native_name": "306:L05 support 0",
+          "actual_source_top_area": 5.126407623291016,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 1",
+          "native_name": "307:L05 support 1",
+          "actual_source_top_area": 2.5904407497218926,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "308:L06 support 0",
+          "actual_source_top_area": 9.17823600769043,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 1",
+          "native_name": "309:L06 support 1",
+          "actual_source_top_area": 1.2000007629394531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 0",
+          "native_name": "310:L07 support 0",
+          "actual_source_top_area": 3.188481277349638,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 1",
+          "native_name": "311:L07 support 1",
+          "actual_source_top_area": 1.8039951628961717,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 0",
+          "native_name": "312:L08 support 0",
+          "actual_source_top_area": 6.4622039794921875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 1",
+          "native_name": "313:L08 support 1",
+          "actual_source_top_area": 2.0406395175959915,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 0",
+          "native_name": "314:L09 support 0",
+          "actual_source_top_area": 1.8000011444091797,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 1",
+          "native_name": "315:L09 support 1",
+          "actual_source_top_area": 6.378089904785156,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 0",
+          "native_name": "316:L10 support 0",
+          "actual_source_top_area": 7.421579360961914,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "317:L10 support 1",
+          "actual_source_top_area": 6.46220588684082,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "318:L11 support 0",
+          "actual_source_top_area": 6.000003814697266,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "319:L11 support 1",
+          "actual_source_top_area": 1.2000007629394531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "320:L12 support 0",
+          "actual_source_top_area": 5.126407623291016,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "321:L12 support 1",
+          "actual_source_top_area": 6.029929580972748,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 0",
+          "native_name": "322:L13 support 0",
+          "actual_source_top_area": 5.909313678741455,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 1",
+          "native_name": "323:L13 support 1",
+          "actual_source_top_area": 2.9999985694885254,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 0",
+          "native_name": "324:L14 support 0",
+          "actual_source_top_area": 4.368062973022461,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 1",
+          "native_name": "325:L14 support 1",
+          "actual_source_top_area": 6.788230895996094,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 0",
+          "native_name": "326:L15 support 0",
+          "actual_source_top_area": 4.947723388671875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 1",
+          "native_name": "327:L15 support 1",
+          "actual_source_top_area": 2.6832809448242188,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "328:L16 support 0",
+          "actual_source_top_area": 2.6832809448242188,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "329:L16 support 1",
+          "actual_source_top_area": 2.6832809448242188,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 0",
+          "native_name": "330:L17 support 0",
+          "actual_source_top_area": 6.7882232666015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 1",
+          "native_name": "331:L17 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 0",
+          "native_name": "332:L18 support 0",
+          "actual_source_top_area": 2.399993896484375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 1",
+          "native_name": "333:L18 support 1",
+          "actual_source_top_area": 10.733108520507812,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L19 support 0",
+          "native_name": "334:L19 support 0",
+          "actual_source_top_area": 6.378089904785156,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L19 support 1",
+          "native_name": "335:L19 support 1",
+          "actual_source_top_area": 3.7947349548339844,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L20 support 0",
+          "native_name": "336:L20 support 0",
+          "actual_source_top_area": 3.7947349548339844,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L20 support 1",
+          "native_name": "337:L20 support 1",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L21 support 0",
+          "native_name": "338:L21 support 0",
+          "actual_source_top_area": 5.5317277908325195,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L21 support 1",
+          "native_name": "339:L21 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L22 support 0",
+          "native_name": "340:L22 support 0",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L22 support 1",
+          "native_name": "341:L22 support 1",
+          "actual_source_top_area": 1.2000007629394531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L23 support 0",
+          "native_name": "342:L23 support 0",
+          "actual_source_top_area": 2.163330078125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L23 support 1",
+          "native_name": "343:L23 support 1",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 0",
+          "native_name": "344:L24 support 0",
+          "actual_source_top_area": 2.4000015258789062,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L24 support 1",
+          "native_name": "345:L24 support 1",
+          "actual_source_top_area": 1.2000007629394531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L25 support 0",
+          "native_name": "346:L25 support 0",
+          "actual_source_top_area": 13.084404748366069,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L25 support 1",
+          "native_name": "347:L25 support 1",
+          "actual_source_top_area": 4.480357249798544,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L26 support 0",
+          "native_name": "348:L26 support 0",
+          "actual_source_top_area": 7.188999492984294,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L26 support 1",
+          "native_name": "349:L26 support 1",
+          "actual_source_top_area": 4.480353911938437,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L27 support 0",
+          "native_name": "350:L27 support 0",
+          "actual_source_top_area": 6.264183044433594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 0",
+          "native_name": "352:L28 support 0",
+          "actual_source_top_area": 10.948983192443848,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L28 support 1",
+          "native_name": "353:L28 support 1",
+          "actual_source_top_area": 4.199989318847656,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L29 support 0",
+          "native_name": "354:L29 support 0",
+          "actual_source_top_area": 7.421579360961914,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L29 support 1",
+          "native_name": "355:L29 support 1",
+          "actual_source_top_area": 6.000003814697266,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L30 support 0",
+          "native_name": "356:L30 support 0",
+          "actual_source_top_area": 8.590690612792969,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L30 support 1",
+          "native_name": "357:L30 support 1",
+          "actual_source_top_area": 6.000003814697266,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L31 support 0",
+          "native_name": "358:L31 support 0",
+          "actual_source_top_area": 6.000003814697266,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L31 support 1",
+          "native_name": "359:L31 support 1",
+          "actual_source_top_area": 1.2000007629394531,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L32 support 0",
+          "native_name": "360:L32 support 0",
+          "actual_source_top_area": 4.199989318847656,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L32 support 1",
+          "native_name": "361:L32 support 1",
+          "actual_source_top_area": 8.049837112426758,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L33 support 0",
+          "native_name": "362:L33 support 0",
+          "actual_source_top_area": 3.756594657897949,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L33 support 1",
+          "native_name": "363:L33 support 1",
+          "actual_source_top_area": 4.199998979568591,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L34 support 0",
+          "native_name": "364:L34 support 0",
+          "actual_source_top_area": 4.919995936649684,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L34 support 1",
+          "native_name": "365:L34 support 1",
+          "actual_source_top_area": 6.029932022094727,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L35 support 0",
+          "native_name": "366:L35 support 0",
+          "actual_source_top_area": 3.6000022888183594,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L39 support 0",
+          "native_name": "374:L39 support 0",
+          "actual_source_top_area": 9.5999755859375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L40 support 0",
+          "native_name": "376:L40 support 0",
+          "actual_source_top_area": 2.3999977111816406,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-03",
+      "removed_prisms": [
+        {
+          "name": "L03 support 1",
+          "native_name": "72:L03 support 1",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 1",
+          "native_name": "97:L05 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "98:L06 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 1",
+          "native_name": "126:L09 support 1",
+          "actual_source_top_area": 16.199996948242188,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 0",
+          "native_name": "127:L10 support 0",
+          "actual_source_top_area": 12.14999771118164,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "128:L10 support 1",
+          "actual_source_top_area": 7.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "129:L11 support 0",
+          "actual_source_top_area": 13.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "130:L11 support 1",
+          "actual_source_top_area": 14.230201721191406,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 0",
+          "native_name": "155:L14 support 0",
+          "actual_source_top_area": 18.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "158:L16 support 0",
+          "actual_source_top_area": 11.063469494110905,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "159:L16 support 1",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-04",
+      "removed_prisms": [
+        {
+          "name": "L05 support 1",
+          "native_name": "82:L05 support 1",
+          "actual_source_top_area": 1.49462890625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 1",
+          "native_name": "101:L07 support 1",
+          "actual_source_top_area": 8.04573070758488,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 0",
+          "native_name": "102:L08 support 0",
+          "actual_source_top_area": 12.369331359863281,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 1",
+          "native_name": "103:L08 support 1",
+          "actual_source_top_area": 7.286041259765625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-05",
+      "removed_prisms": [
+        {
+          "name": "L04 support 0",
+          "native_name": "114:L04 support 0",
+          "actual_source_top_area": 12.505921270338149,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 1",
+          "native_name": "115:L04 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 0",
+          "native_name": "119:L07 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 1",
+          "native_name": "120:L07 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "158:L10 support 1",
+          "actual_source_top_area": 12.15000057220459,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "159:L11 support 0",
+          "actual_source_top_area": 14.881586865436475,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "160:L11 support 1",
+          "actual_source_top_area": 20.124615029506458,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "161:L12 support 0",
+          "actual_source_top_area": 20.124618530273438,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "162:L12 support 1",
+          "actual_source_top_area": 18.124542236328125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 0",
+          "native_name": "163:L13 support 0",
+          "actual_source_top_area": 13.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 0",
+          "native_name": "165:L14 support 0",
+          "actual_source_top_area": 24.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 1",
+          "native_name": "166:L14 support 1",
+          "actual_source_top_area": 7.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-06",
+      "removed_prisms": [
+        {
+          "name": "L05 support 0",
+          "native_name": "63:L05 support 0",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "65:L06 support 0",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "76:L11 support 1",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "78:L12 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 1",
+          "native_name": "80:L13 support 1",
+          "actual_source_top_area": 14.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-07",
+      "removed_prisms": [
+        {
+          "name": "L05 support 0",
+          "native_name": "83:L05 support 0",
+          "actual_source_top_area": 18.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 1",
+          "native_name": "90:L08 support 1",
+          "actual_source_top_area": 18.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "95:L11 support 0",
+          "actual_source_top_area": 10.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "96:L11 support 1",
+          "actual_source_top_area": 6.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "139:L16 support 0",
+          "actual_source_top_area": 10.816650947546805,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "140:L16 support 1",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-07-MORTUARY",
+      "removed_prisms": [
+        {
+          "name": "L05 support 0",
+          "native_name": "141:L05 support 0",
+          "actual_source_top_area": 18.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 1",
+          "native_name": "148:L08 support 1",
+          "actual_source_top_area": 18.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "153:L11 support 0",
+          "actual_source_top_area": 10.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "154:L11 support 1",
+          "actual_source_top_area": 6.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "197:L16 support 0",
+          "actual_source_top_area": 10.816650947546805,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "198:L16 support 1",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "mort-17 support 0",
+          "native_name": "201:mort-17 support 0",
+          "actual_source_top_area": 18.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "mort-18 support 0",
+          "native_name": "202:mort-18 support 0",
+          "actual_source_top_area": 18.248291015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "mort-19 support 0",
+          "native_name": "203:mort-19 support 0",
+          "actual_source_top_area": 13.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "mort-20 support 0",
+          "native_name": "204:mort-20 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "mort-21 support 0",
+          "native_name": "205:mort-21 support 0",
+          "actual_source_top_area": 18.553985595703125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "mort-22 support 0",
+          "native_name": "206:mort-22 support 0",
+          "actual_source_top_area": 16.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "mort-23 support 0",
+          "native_name": "207:mort-23 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "mort-24 support 0",
+          "native_name": "208:mort-24 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-08",
+      "removed_prisms": [
+        {
+          "name": "L03 support 1",
+          "native_name": "117:L03 support 1",
+          "actual_source_top_area": 1.0430488586425781,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 0",
+          "native_name": "118:L04 support 0",
+          "actual_source_top_area": 12.68803666544045,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 1",
+          "native_name": "119:L04 support 1",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 1",
+          "native_name": "122:L06 support 1",
+          "actual_source_top_area": 1.0430488586425781,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 1",
+          "native_name": "124:L07 support 1",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 1",
+          "native_name": "127:L09 support 1",
+          "actual_source_top_area": 14.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 0",
+          "native_name": "128:L10 support 0",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "129:L10 support 1",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "130:L11 support 0",
+          "actual_source_top_area": 14.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "132:L12 support 0",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "133:L12 support 1",
+          "actual_source_top_area": 12.985339114577073,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 0",
+          "native_name": "134:L13 support 0",
+          "actual_source_top_area": 6.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 1",
+          "native_name": "135:L13 support 1",
+          "actual_source_top_area": 9.014433607579122,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "140:L16 support 1",
+          "actual_source_top_area": 8.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-09",
+      "removed_prisms": [
+        {
+          "name": "L03 support 1",
+          "native_name": "114:L03 support 1",
+          "actual_source_top_area": 14.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 0",
+          "native_name": "115:L04 support 0",
+          "actual_source_top_area": 10.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 1",
+          "native_name": "116:L04 support 1",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 0",
+          "native_name": "117:L05 support 0",
+          "actual_source_top_area": 13.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 1",
+          "native_name": "118:L05 support 1",
+          "actual_source_top_area": 12.564155260079133,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "119:L06 support 0",
+          "actual_source_top_area": 25.099998474121094,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 0",
+          "native_name": "155:L08 support 0",
+          "actual_source_top_area": 20.892555236816406,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 0",
+          "native_name": "260:L13 support 0",
+          "actual_source_top_area": 20.892555236816406,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 1",
+          "native_name": "261:L13 support 1",
+          "actual_source_top_area": 10.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 0",
+          "native_name": "285:L15 support 0",
+          "actual_source_top_area": 12.903491851669969,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 1",
+          "native_name": "286:L15 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "287:L16 support 0",
+          "actual_source_top_area": 10.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "288:L16 support 1",
+          "actual_source_top_area": 10.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 0",
+          "native_name": "289:L17 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 1",
+          "native_name": "290:L17 support 1",
+          "actual_source_top_area": 12.903491851669969,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-10",
+      "removed_prisms": [
+        {
+          "name": "L02 support 1",
+          "native_name": "133:L02 support 1",
+          "actual_source_top_area": 6.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L03 support 0",
+          "native_name": "134:L03 support 0",
+          "actual_source_top_area": 4.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L03 support 1",
+          "native_name": "135:L03 support 1",
+          "actual_source_top_area": 6.3639678955078125,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 1",
+          "native_name": "137:L04 support 1",
+          "actual_source_top_area": 21.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 0",
+          "native_name": "138:L05 support 0",
+          "actual_source_top_area": 21.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 1",
+          "native_name": "141:L06 support 1",
+          "actual_source_top_area": 21.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 0",
+          "native_name": "142:L07 support 0",
+          "actual_source_top_area": 21.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 0",
+          "native_name": "144:L08 support 0",
+          "actual_source_top_area": 6.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 0",
+          "native_name": "148:L10 support 0",
+          "actual_source_top_area": 4.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "149:L10 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "151:L11 support 1",
+          "actual_source_top_area": 10.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "152:L12 support 0",
+          "actual_source_top_area": 15.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "153:L12 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 0",
+          "native_name": "154:L13 support 0",
+          "actual_source_top_area": 10.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 0",
+          "native_name": "156:L14 support 0",
+          "actual_source_top_area": 7.499992370605469,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 1",
+          "native_name": "157:L14 support 1",
+          "actual_source_top_area": 13.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 0",
+          "native_name": "158:L15 support 0",
+          "actual_source_top_area": 15.660438537597656,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 1",
+          "native_name": "159:L15 support 1",
+          "actual_source_top_area": 8.746429443359375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 0",
+          "native_name": "194:L17 support 0",
+          "actual_source_top_area": 10.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L20 support 0",
+          "native_name": "215:L20 support 0",
+          "actual_source_top_area": 17.10264425531568,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L20 support 1",
+          "native_name": "216:L20 support 1",
+          "actual_source_top_area": 10.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-11",
+      "removed_prisms": [
+        {
+          "name": "L07 support 1",
+          "native_name": "68:L07 support 1",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L08 support 1",
+          "native_name": "70:L08 support 1",
+          "actual_source_top_area": 14.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 1",
+          "native_name": "72:L09 support 1",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "74:L10 support 1",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "75:L11 support 0",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "78:L12 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-12",
+      "removed_prisms": [
+        {
+          "name": "L03 support 0",
+          "native_name": "72:L03 support 0",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "76:L06 support 0",
+          "actual_source_top_area": 8.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 0",
+          "native_name": "81:L09 support 0",
+          "actual_source_top_area": 8.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "85:L11 support 0",
+          "actual_source_top_area": 20.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "86:L11 support 1",
+          "actual_source_top_area": 30.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "87:L12 support 0",
+          "actual_source_top_area": 9.124139785766602,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 1",
+          "native_name": "88:L12 support 1",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 0",
+          "native_name": "89:L13 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-13",
+      "removed_prisms": [
+        {
+          "name": "L04 support 0",
+          "native_name": "98:L04 support 0",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L04 support 1",
+          "native_name": "99:L04 support 1",
+          "actual_source_top_area": 13.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 0",
+          "native_name": "100:L05 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L05 support 1",
+          "native_name": "101:L05 support 1",
+          "actual_source_top_area": 20.124664306640625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 0",
+          "native_name": "102:L06 support 0",
+          "actual_source_top_area": 20.124664306640625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L06 support 1",
+          "native_name": "103:L06 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L07 support 0",
+          "native_name": "104:L07 support 0",
+          "actual_source_top_area": 18.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 0",
+          "native_name": "107:L09 support 0",
+          "actual_source_top_area": 24.23324203491211,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L09 support 1",
+          "native_name": "108:L09 support 1",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 0",
+          "native_name": "109:L10 support 0",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L10 support 1",
+          "native_name": "110:L10 support 1",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 0",
+          "native_name": "111:L11 support 0",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L11 support 1",
+          "native_name": "112:L11 support 1",
+          "actual_source_top_area": 24.23324203491211,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L12 support 0",
+          "native_name": "113:L12 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L13 support 1",
+          "native_name": "116:L13 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 0",
+          "native_name": "117:L14 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L14 support 1",
+          "native_name": "118:L14 support 1",
+          "actual_source_top_area": 12.816017873166857,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 0",
+          "native_name": "119:L15 support 0",
+          "actual_source_top_area": 13.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L15 support 1",
+          "native_name": "120:L15 support 1",
+          "actual_source_top_area": 13.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 0",
+          "native_name": "121:L16 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L16 support 1",
+          "native_name": "122:L16 support 1",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L17 support 0",
+          "native_name": "123:L17 support 0",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "L18 support 1",
+          "native_name": "126:L18 support 1",
+          "actual_source_top_area": 16.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-14",
+      "removed_prisms": [
+        {
+          "name": "route-04 support 0",
+          "native_name": "138:route-04 support 0",
+          "actual_source_top_area": 12.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-05 support 0",
+          "native_name": "139:route-05 support 0",
+          "actual_source_top_area": 18.248291015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-06 support 0",
+          "native_name": "140:route-06 support 0",
+          "actual_source_top_area": 19.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-07 support 0",
+          "native_name": "141:route-07 support 0",
+          "actual_source_top_area": 18.248291015625,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-08 support 0",
+          "native_name": "142:route-08 support 0",
+          "actual_source_top_area": 13.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-09 support 0",
+          "native_name": "143:route-09 support 0",
+          "actual_source_top_area": 17.49285888671875,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-11 support 0",
+          "native_name": "162:route-11 support 0",
+          "actual_source_top_area": 15.918485032219905,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-12 support 0",
+          "native_name": "163:route-12 support 0",
+          "actual_source_top_area": 19.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-13 support 0",
+          "native_name": "164:route-13 support 0",
+          "actual_source_top_area": 13.312479758260451,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-15 support 0",
+          "native_name": "183:route-15 support 0",
+          "actual_source_top_area": 14.999979019165039,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-16 support 0",
+          "native_name": "184:route-16 support 0",
+          "actual_source_top_area": 21.47675323486328,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-17 support 1",
+          "native_name": "186:route-17 support 1",
+          "actual_source_top_area": 6.155489398623104,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-15",
+      "removed_prisms": [
+        {
+          "name": "route-08 support 0",
+          "native_name": "92:route-08 support 0",
+          "actual_source_top_area": 24.73865509033203,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-09 support 0",
+          "native_name": "93:route-09 support 0",
+          "actual_source_top_area": 24.73865509033203,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-10 support 0",
+          "native_name": "94:route-10 support 0",
+          "actual_source_top_area": 24.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-15 support 0",
+          "native_name": "133:route-15 support 0",
+          "actual_source_top_area": 19.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-16 support 0",
+          "native_name": "134:route-16 support 0",
+          "actual_source_top_area": 27.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-16",
+      "removed_prisms": [
+        {
+          "name": "route-05 support 0",
+          "native_name": "98:route-05 support 0",
+          "actual_source_top_area": 12.837909698486328,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-11 support 0",
+          "native_name": "104:route-11 support 0",
+          "actual_source_top_area": 9.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-17",
+      "removed_prisms": [
+        {
+          "name": "route-06 support 0",
+          "native_name": "157:route-06 support 0",
+          "actual_source_top_area": 27.37243865947312,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-07 support 0",
+          "native_name": "158:route-07 support 0",
+          "actual_source_top_area": 27.3724365234375,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-08 support 0",
+          "native_name": "159:route-08 support 0",
+          "actual_source_top_area": 19.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-09 support 0",
+          "native_name": "160:route-09 support 0",
+          "actual_source_top_area": 19.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-13 support 0",
+          "native_name": "229:route-13 support 0",
+          "actual_source_top_area": 30.88690790594228,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-14 support 0",
+          "native_name": "230:route-14 support 0",
+          "actual_source_top_area": 30.88689422607422,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-15 support 0",
+          "native_name": "231:route-15 support 0",
+          "actual_source_top_area": 16.77053451538086,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-16 support 0",
+          "native_name": "232:route-16 support 0",
+          "actual_source_top_area": 15.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-17 support 0",
+          "native_name": "233:route-17 support 0",
+          "actual_source_top_area": 19.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    },
+    {
+      "site": "WLD-18",
+      "removed_prisms": [
+        {
+          "name": "route-06 support 0",
+          "native_name": "170:route-06 support 0",
+          "actual_source_top_area": 19.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-10 support 0",
+          "native_name": "220:route-10 support 0",
+          "actual_source_top_area": 19.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-17 support 0",
+          "native_name": "278:route-17 support 0",
+          "actual_source_top_area": 18.0,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        },
+        {
+          "name": "route-19 support 0",
+          "native_name": "302:route-19 support 0",
+          "actual_source_top_area": 25.5,
+          "uncovered_area": 0,
+          "extruded_prism_verified": true
+        }
+      ]
+    }
+  ],
+  "checker_sha256": "4495dfbf47303d7def88d7f8a860b6381942f1396cd1df0bb0035ed0413122ed"
+}

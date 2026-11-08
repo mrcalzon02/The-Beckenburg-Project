@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8444,
+  "count": 8494,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -74394,6 +74394,506 @@
       "height": 350,
       "bytes": 319657,
       "sha256": "c1cd9bb200f25f4070c6f8996a50778da9d0dd33b805bdb45d87becdab549769"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-after.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-after.png",
+      "title": "Academy threshold after",
+      "kind": "Native paired intact flat-threshold inspection, neutral150Wfill; not runtime",
+      "width": 800,
+      "height": 600,
+      "bytes": 362667,
+      "sha256": "d35e2f34cc4faed6464c65b45d1e01e05c7783e8824b6776dcd5ee4b4386a0c0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-before.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-before.png",
+      "title": "Academy threshold before",
+      "kind": "Native paired intact flat-threshold inspection, neutral150Wfill; not runtime",
+      "width": 800,
+      "height": 600,
+      "bytes": 355486,
+      "sha256": "fcd54076321aed6e448cf023341298dfc5b6aea2ffb5d62892d217e66a4e5b6a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/academy-whole-site.png",
+      "title": "Academy whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 331866,
+      "sha256": "6b26e30158bc9b847d60269904ef0e50ab364d3fae6098a253d25c670e31e73c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-0--1.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-0--1.png",
+      "title": "Asylum profile 0  1",
+      "kind": "Native isolated actual exported wall profile; all other context hidden",
+      "width": 800,
+      "height": 600,
+      "bytes": 199633,
+      "sha256": "a8c26c98cc9d7a40ee4c9469df2f7cd3a2c862f31ad35b01c5969e05f1ce3561"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-0-1.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-0-1.png",
+      "title": "Asylum profile 0 1",
+      "kind": "Native isolated actual exported wall profile; all other context hidden",
+      "width": 800,
+      "height": 600,
+      "bytes": 200128,
+      "sha256": "e8f73e6f2e71c5a941b756d532e01ed51549049babdf77a14bc69a34cddc4d09"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-1--1.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-1--1.png",
+      "title": "Asylum profile 1  1",
+      "kind": "Native isolated actual exported wall profile; all other context hidden",
+      "width": 800,
+      "height": 600,
+      "bytes": 199628,
+      "sha256": "d7a3a79139eb000ec185fac09a16efdfe49ef44a0eaacd54152485de4e5c2c7e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-1-1.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-1-1.png",
+      "title": "Asylum profile 1 1",
+      "kind": "Native isolated actual exported wall profile; all other context hidden",
+      "width": 800,
+      "height": 600,
+      "bytes": 200205,
+      "sha256": "db45675df5c7496b793b387a20010fb42908c43bc58483f558d6d58a2c5717bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-2--1.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-2--1.png",
+      "title": "Asylum profile 2  1",
+      "kind": "Native isolated actual exported wall profile; all other context hidden",
+      "width": 800,
+      "height": 600,
+      "bytes": 182892,
+      "sha256": "bdabe9147e65c5c5f1ee88bc8e2e71c4a879833a13602438d9856084ef6fbc43"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-2-1.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-2-1.png",
+      "title": "Asylum profile 2 1",
+      "kind": "Native isolated actual exported wall profile; all other context hidden",
+      "width": 800,
+      "height": 600,
+      "bytes": 182966,
+      "sha256": "b9494d7f1b68e6301bacd28bd8f01e984ef6f11455202216530826a9956eae14"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-3--1.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-3--1.png",
+      "title": "Asylum profile 3  1",
+      "kind": "Native isolated actual exported wall profile; all other context hidden",
+      "width": 800,
+      "height": 600,
+      "bytes": 182896,
+      "sha256": "e99021aac38e997c7854d8a85542474d78df0e9f3ed88dac646b819b9b9987f4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-3-1.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-3-1.png",
+      "title": "Asylum profile 3 1",
+      "kind": "Native isolated actual exported wall profile; all other context hidden",
+      "width": 800,
+      "height": 600,
+      "bytes": 183045,
+      "sha256": "d7bca6f01f85d03c529675f652c17eb24c764a043110d5e14fce732888cf9479"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/asylum-whole-site.png",
+      "title": "Asylum whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 331732,
+      "sha256": "1eaea4cfd5699a81a78ef8af096cf358698bc2def1eb38578feb8c270ba1d846"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/church-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/church-whole-site.png",
+      "title": "Church whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 315150,
+      "sha256": "c25be08af1c49e8dd13fb10f65ad2233dd1d8b32a4fe4e3d9c1ab60973952fe6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/college-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/college-whole-site.png",
+      "title": "College whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 327265,
+      "sha256": "d1668830098e232e2b9e460b7710ae8860457d1dd389bc04df410f05d7988a35"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/farmhouse-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/farmhouse-whole-site.png",
+      "title": "Farmhouse whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 332374,
+      "sha256": "a5000d14e6c69ec5e6605029a464ae4f4326a24d2527f7a0da60f90903d4640e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-pilot-sheet.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/flat-pilot-sheet.png",
+      "title": "Flat pilot sheet",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 1000,
+      "height": 790,
+      "bytes": 394364,
+      "sha256": "9ec12af8027e2697b951051b21c756b6bc3fda3aeb68d41b326aad466f190b8a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-profiles-sheet-1.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/flat-profiles-sheet-1.png",
+      "title": "Flat profiles sheet 1",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 1000,
+      "height": 790,
+      "bytes": 126431,
+      "sha256": "027a57faf54bf97575877bf86fc04a949b73e27ae563df0c039533eb9110eec1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-profiles-sheet-2.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/flat-profiles-sheet-2.png",
+      "title": "Flat profiles sheet 2",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 1000,
+      "height": 790,
+      "bytes": 105495,
+      "sha256": "b0d61b8151092c29fe5959ee04397fb5c767b688d92669e26ebaf30a51333fd1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-1.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-1.png",
+      "title": "Flat roster sheet 1",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 1000,
+      "height": 1185,
+      "bytes": 443337,
+      "sha256": "7c3bcb51cd1fb2fcf208434f4784387c4ff7cc9cf8b21c07677684537096bf63"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-2.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-2.png",
+      "title": "Flat roster sheet 2",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 1000,
+      "height": 1185,
+      "bytes": 513739,
+      "sha256": "99f75735519929601be248092efe47d8577b39b98e9a6127dcaf904e4cad5f08"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-3.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-3.png",
+      "title": "Flat roster sheet 3",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 1000,
+      "height": 1185,
+      "bytes": 472816,
+      "sha256": "2dfb960f847f4b73b550438c78b44f440c0a3efb84d6469d658d2ebc6de0de7b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-4.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-4.png",
+      "title": "Flat roster sheet 4",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 1000,
+      "height": 1185,
+      "bytes": 484334,
+      "sha256": "11499e355dec0534da18d7e74582528340abe83950db52e4c46cea0b2b679896"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-5.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-5.png",
+      "title": "Flat roster sheet 5",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 1000,
+      "height": 395,
+      "bytes": 100007,
+      "sha256": "72a62a0a0c5206d4ac30db6641c3ff05a1a93904081aff9d8809beae2a194d3b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/mansion-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/mansion-whole-site.png",
+      "title": "Mansion whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 326296,
+      "sha256": "07c6c87f8c6be70ec69d0d8d99c90fe2378c3d7d130ec31663eef94521ec5c37"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/prison-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/prison-whole-site.png",
+      "title": "Prison whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 355871,
+      "sha256": "855ab9c41efd316bb1eca81dbc33435d8f703c3e8fece8f16b02822b5bf219a2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/rejected-coplanar-wld-08-threshold-after.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/rejected-coplanar-wld-08-threshold-after.png",
+      "title": "Rejected coplanar wld 08 threshold after",
+      "kind": "Native rejected flat-circulation study; not final source",
+      "width": 800,
+      "height": 600,
+      "bytes": 379954,
+      "sha256": "2381c4a3b98a4515aa65352738ce8d44876e46a9bba8540cefe1f14dedfdf0d4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/rejected-partial-cap-wld-08-threshold-after.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/rejected-partial-cap-wld-08-threshold-after.png",
+      "title": "Rejected partial cap wld 08 threshold after",
+      "kind": "Native rejected flat-circulation study; not final source",
+      "width": 800,
+      "height": 600,
+      "bytes": 375334,
+      "sha256": "9744c79917d59a149a09062b816f7368fc167799ab716074c4ae588e61d447ba"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/rejected-partial-cap-wld-08-threshold-before.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/rejected-partial-cap-wld-08-threshold-before.png",
+      "title": "Rejected partial cap wld 08 threshold before",
+      "kind": "Native rejected flat-circulation study; not final source",
+      "width": 800,
+      "height": 600,
+      "bytes": 391889,
+      "sha256": "73d077b36b22c4e0912bd96183888017aa8782bb244d1fdfcad26ae8da67703d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/rejected-partial-cap-wld-08-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/rejected-partial-cap-wld-08-whole-site.png",
+      "title": "Rejected partial cap wld 08 whole site",
+      "kind": "Native rejected flat-circulation study; not final source",
+      "width": 800,
+      "height": 600,
+      "bytes": 343351,
+      "sha256": "4f1b1ffe7c74c7988343f1ba233171ee3fca17f07ab101a62db8cf9fa829099e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/rejected-precision-wld-09-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/rejected-precision-wld-09-whole-site.png",
+      "title": "Rejected precision wld 09 whole site",
+      "kind": "Native rejected flat-circulation study; not final source",
+      "width": 800,
+      "height": 600,
+      "bytes": 342474,
+      "sha256": "ccffae63cd894599f08e4d5b7d2204faf0671c88eda719f8eff6c21a6992b06c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/school-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/school-whole-site.png",
+      "title": "School whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 418304,
+      "sha256": "1159c24f4510a7423b779666630bc0cdb4921d1cd8ef42bbf85ac1e40fae3536"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-03-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-03-whole-site.png",
+      "title": "Wld 03 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 358922,
+      "sha256": "3e3aa42acd5dfc773fe2a1e61504430f50fdeb16ff362a5671b5e73c8c73f94f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-04-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-04-whole-site.png",
+      "title": "Wld 04 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 335166,
+      "sha256": "f3e40198020705d45b692dec0a660bbf99db1b1f32ecdd5f1229e5db11ff1c73"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-05-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-05-whole-site.png",
+      "title": "Wld 05 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 334030,
+      "sha256": "2d8dcaf38dbc4962ee1b767e3e9af25eb7cbe9aa498d3092f4dc1b1230565328"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-06-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-06-whole-site.png",
+      "title": "Wld 06 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 332858,
+      "sha256": "260ffcb378c9728406dbcce135d98bfd7196f475a23b15ec6f5b69f5bbc6a5c2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-07-mortuary-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-07-mortuary-whole-site.png",
+      "title": "Wld 07 mortuary whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 368219,
+      "sha256": "a3ff00a4a5f59837ce930e6306a90fd326bf1c862295fe9bfd2bd210eddeb2b3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-07-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-07-whole-site.png",
+      "title": "Wld 07 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 323123,
+      "sha256": "3d860e435892d256c91080f9bbe9d019cd4562b38b84c6f224489dae78494c23"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-threshold-after.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-threshold-after.png",
+      "title": "Wld 08 threshold after",
+      "kind": "Native paired intact flat-threshold inspection, neutral150Wfill; not runtime",
+      "width": 800,
+      "height": 600,
+      "bytes": 399299,
+      "sha256": "1040efc3ec063565c5ad04d938156a46919dde2637cb6655e5cd745f7d069089"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-threshold-before.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-threshold-before.png",
+      "title": "Wld 08 threshold before",
+      "kind": "Native paired intact flat-threshold inspection, neutral150Wfill; not runtime",
+      "width": 800,
+      "height": 600,
+      "bytes": 391889,
+      "sha256": "eb5672e077c9cbe0868b640be90aa3fe5133dbc376d114191f6da18cb93cd90a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-whole-site.png",
+      "title": "Wld 08 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 341706,
+      "sha256": "7cc6eaa1298322b4b016fe26c9d266d6f4cf557101cb9755d3cde93f80abbe7c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-09-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-09-whole-site.png",
+      "title": "Wld 09 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 342370,
+      "sha256": "6b1b5bca8c0f6a88d9d320e377827694b918bd976b8949b2f51b67a8605a21ef"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-10-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-10-whole-site.png",
+      "title": "Wld 10 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 349028,
+      "sha256": "1c2b97fb3a5338dac919c1be82b8941d4565ee6c8c420056ea7d3b43b6e61e38"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-11-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-11-whole-site.png",
+      "title": "Wld 11 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 316347,
+      "sha256": "e9002df8bbd9f2804218b2c24722d7b0f5c061d786cd16196c43ce9469f4b09e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-12-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-12-whole-site.png",
+      "title": "Wld 12 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 319707,
+      "sha256": "12ae647e5253c2d5add6d0fb8cf34055683f323f6bf7ed89758ae0b1258b73d5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-13-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-13-whole-site.png",
+      "title": "Wld 13 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 337895,
+      "sha256": "c6e3d26728dde77f08de3a028e18f790fea13f1d625a9be79e54caba51ffc96e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-14-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-14-whole-site.png",
+      "title": "Wld 14 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 384769,
+      "sha256": "037e88162f59edc32e44a991f9e9392669c8d0cb6897f3bf1189959903fcbaaa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-15-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-15-whole-site.png",
+      "title": "Wld 15 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 332569,
+      "sha256": "e7d64a6ca3f74373b309df9d94aea6866c6221829b16d09dbf9e4aa6793ed10b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-16-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-16-whole-site.png",
+      "title": "Wld 16 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 364354,
+      "sha256": "571f601bf457a4b24fd1ebe5d9a7c18bd1b5062804846e6d4206ef8758f8f92e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-17-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-17-whole-site.png",
+      "title": "Wld 17 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 330255,
+      "sha256": "587cbc8ea906285e7c05f1bcf6292ea7ae4759ef2bd37809ae394cf0f117defa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-18-whole-site.png",
+      "url": "development/levels/rebuild/captures/flat-circulation-batch/wld-18-whole-site.png",
+      "title": "Wld 18 whole site",
+      "kind": "Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance",
+      "width": 800,
+      "height": 600,
+      "bytes": 320887,
+      "sha256": "e15edd9e52dc4c9dc7fa06240787f4fd5e2380ff327ca56a215baf7f151eab1e"
     },
     {
       "path": "development/levels/rebuild/captures/floor-closure-batch/academy-repaired-plates.png",

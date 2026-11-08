@@ -1,0 +1,1141 @@
+{
+  "status": "CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE",
+  "bindings": {
+    "ACADEMY": {
+      "layout": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6",
+      "variants": {
+        "before_bearing": {
+          "contract": "3847ef596a8bd6f285db4410036d5c50d2bcb2b36c7d61d5cf0dd80bc49b742f",
+          "physics": "5cb1dbeb02f8a08ca2c8dfe174246034610526e66128a95476d4307abfdaab41",
+          "glb": "d4e6ac582bd4f685b73b7330134b5ff810d6bfae4a5d858d94d8c4085c874bff",
+          "layout": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6"
+        },
+        "after_bearing": {
+          "contract": "3847ef596a8bd6f285db4410036d5c50d2bcb2b36c7d61d5cf0dd80bc49b742f",
+          "physics": "f548b8696ed82994343dd1fe0ce853d10d3400708e896244758f007b91bda16e",
+          "glb": "a7a30b3f8c4b569ee3056ddfee5ad1d71e3c072e921e1154610b1d39433822ae",
+          "layout": "e44e6dc381ef07297a4b1c67ed4278595b4766ebe792cdd708f2e9d46e5274bb"
+        }
+      }
+    },
+    "ASYLUM": {
+      "layout": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30",
+      "variants": {
+        "before_bearing": {
+          "contract": "4864791efd068aa226e97df30a29c0fb5d2b71a89c0ec508507340251a5b8e91",
+          "physics": "5306941b5135d5dc5d6a43ec84b0ce31c3cfca8c40e2aaf2be1995675d0f098e",
+          "glb": "252b6e9dc4f9c1f795891e6f245604eb226747632ac4178d8494d22dd7e0faf7",
+          "layout": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30"
+        },
+        "after_bearing": {
+          "contract": "4864791efd068aa226e97df30a29c0fb5d2b71a89c0ec508507340251a5b8e91",
+          "physics": "aa6b4b6ebf4584d978f77158ec399713a173976e562159ddbe527897c61fbab3",
+          "glb": "abeb53b241297f971e0e45580c6c0bf3f76a415e8bc60c605efe89f23e9a4f3b",
+          "layout": "ae527fd8c5f0c2a05f668f62670862618abbfe467b46e5aeaa21e36cc311fa1f"
+        }
+      }
+    },
+    "CHURCH": {
+      "layout": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05",
+      "variants": {
+        "before_bearing": {
+          "contract": "98b0aed5798e4a56b102c499396313995ac507f0678242374e8ebab42d785eb7",
+          "physics": "eda5a20f20c7a803e2caa75bfc706a0a8e21108a71812eb4f6b50be1210250fd",
+          "glb": "a468b86717a032c9f394f96cd2c36de36cd1572c63d18d77a30afd7a441f25cf",
+          "layout": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05"
+        },
+        "after_bearing": {
+          "contract": "98b0aed5798e4a56b102c499396313995ac507f0678242374e8ebab42d785eb7",
+          "physics": "873387b91a485a16e39730cd6efb2a2135e37f6d18b70382317992216124a1b8",
+          "glb": "377cbd0715c0efdb0bf5f7ca9ca5456f56511277ea5c6e0fca24f0b837f3f5ea",
+          "layout": "14c8b25669f732e3816ff52235d1294ea83e42585a2bf0522b067d950148eb8e"
+        }
+      }
+    },
+    "COLLEGE": {
+      "layout": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d",
+      "variants": {
+        "before_bearing": {
+          "contract": "d031bd65b84987aa854abf3402fb2f5d72ca14e96ba296f1bd7d40782492755e",
+          "physics": "a0abc59c7784c618bb0881ec946e548854df076da6269463ea560f690f1a7295",
+          "glb": "d40df9082b1410c7b632b8536d2d7ceaf9253ddf175d26277da12234f8b39555",
+          "layout": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d"
+        },
+        "after_bearing": {
+          "contract": "d031bd65b84987aa854abf3402fb2f5d72ca14e96ba296f1bd7d40782492755e",
+          "physics": "604604f25733f534b808bc6c8367ceb38899003ec5b4529c88bcac5c75d1824c",
+          "glb": "1a82ccdae364f1ff0b0586e06746e3bb48d8292eaf6dbfe29861b87197e8e02d",
+          "layout": "34067cc9ed7bffa7f4471c05d84ead0ec3d339b8f5751296b7a44ce2cc1e1f36"
+        }
+      }
+    },
+    "FARMHOUSE": {
+      "layout": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727",
+      "variants": {
+        "before_bearing": {
+          "contract": "1ee8545f9456d7205d50dccb1631e502e05e4062553758337dc0b4135a505750",
+          "physics": "106153346b7697e77b0f86042be61345c127a01a9247e5c5d88aa7b090a7cee8",
+          "glb": "39f262d69a872623f9027e66fbd0c50f219f37c595d2e60ddf3ca3484256527e",
+          "layout": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727"
+        },
+        "after_bearing": {
+          "contract": "1ee8545f9456d7205d50dccb1631e502e05e4062553758337dc0b4135a505750",
+          "physics": "0207241287245ee3e0a068d91da9a2885180ee64f4b4dcd1c9095c48eaa8d67e",
+          "glb": "a1cc9849f76ef5f876d0f330820a948fe3d448978d41c74eb7b37fd8f8166a45",
+          "layout": "6077fadd769c543322a6f33a2072c80dbef092a0a91eee5d70be752af326bc82"
+        }
+      }
+    },
+    "MANSION": {
+      "layout": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d",
+      "variants": {
+        "before_bearing": {
+          "contract": "5f203275cf9bb358fa1a13bb86dc5547252c513a9be9a0e5afa5ee10a0bd26a4",
+          "physics": "ac058d9645730ed6d118bbe1e3567a20cc584807e0de273717e17b88546eb3f1",
+          "glb": "621ce73eeed2b3153b2a6a9e04e7f1446729610dcb220e3910556ab994e97d91",
+          "layout": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d"
+        },
+        "after_bearing": {
+          "contract": "5f203275cf9bb358fa1a13bb86dc5547252c513a9be9a0e5afa5ee10a0bd26a4",
+          "physics": "3b75ec332548f823e0503e204ee89dd225e53c922cdd640a2fbb775019ca429c",
+          "glb": "e20b924cd56790aa0a3dfdc79d109075285a9e0278dfd365cf79c31f8743a323",
+          "layout": "6f0459ca0f7af6010c72b40e7068b6ff52a85af5f6a81dcf9b1ff03e03f5a54d"
+        }
+      }
+    },
+    "PRISON": {
+      "layout": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c",
+      "variants": {
+        "before_bearing": {
+          "contract": "43dafd463d64e27b8626a34f023d41424ff8868ca847766c52bbd076f0a10e4a",
+          "physics": "5f0445f96cb144c20c36bd83189e99eef79345846817a2543dff5c413dc7e7fa",
+          "glb": "e1d27f13672b2a33181decf5dfd0f1bd1a7927fe77c0a6a075aa8f5b3cc1b825",
+          "layout": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c"
+        },
+        "after_bearing": {
+          "contract": "43dafd463d64e27b8626a34f023d41424ff8868ca847766c52bbd076f0a10e4a",
+          "physics": "b49b00454cde3bdb4565dc7d28c6d0e428dde88315d6eb4fd5048674d0e388bd",
+          "glb": "09d9955353f94b7582f6344fdac00c8319a8e72f095517059220f1eece83f148",
+          "layout": "f3429d57b197116be500db4534c3158849c9bd925a7d6f238396e89358a22c06"
+        }
+      }
+    },
+    "SCHOOL": {
+      "layout": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e",
+      "variants": {
+        "before_bearing": {
+          "contract": "d43c76f52a70c47365f19296fc1c31e8107e8c475190e34f414c81301010dbc9",
+          "physics": "d98772e3780cb28a1e16f326231d12752e65e8fff91d5527c7819ddc83cd097f",
+          "glb": "ca3d75d73422c3e509b554cf508376f7c2f13d07307ef1f013d7be67ef5a4a53",
+          "layout": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e"
+        },
+        "after_bearing": {
+          "contract": "d43c76f52a70c47365f19296fc1c31e8107e8c475190e34f414c81301010dbc9",
+          "physics": "9a393deb78dae76676bde5f2ab9100de8d01d175d62245d4b70e57d8f5a5533f",
+          "glb": "7918ff3ca2095514c9d5d726b77c3c86448adad9a309270409d050554db18690",
+          "layout": "ae82fd691f0e79cbd805bdc1ce3f86c4900f52ece98b311818f3cef19f5c705a"
+        }
+      }
+    },
+    "WLD-03": {
+      "layout": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+      "variants": {
+        "before_bearing": {
+          "contract": "1c36dc3a3bccebf0cf13493f5ff0dca7d5a437b61eb3d9d2f6e516a34d800b7f",
+          "physics": "fc4b409a8ef03a5326c73ea98d95acf4823f96b010db200255931c1ac8443ab0",
+          "glb": "c8d7de3841892a75eb5daced79c74faecf33fd8a04a8e9e7c6acaa286f7c8c3e",
+          "layout": "fb1284e7793ae54a04b4b99695f5babbf12ebee11d31f85ffd9844493e4c8e80"
+        },
+        "after_bearing": {
+          "contract": "1c36dc3a3bccebf0cf13493f5ff0dca7d5a437b61eb3d9d2f6e516a34d800b7f",
+          "physics": "6ff1e3f5ab67747ceb9ac41677eb4fb5965c7b125b10e7c8d26495df37b1274b",
+          "glb": "1f431778750604bd1c0cf55f7cf82400baeb9815e9de5211452d758f29eff1fe",
+          "layout": "22237c8f3e29f86cc51b50aa0144d4022bb9c2d14f464451edc604e552dc4c8a"
+        }
+      }
+    },
+    "WLD-04": {
+      "layout": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+      "variants": {
+        "before_bearing": {
+          "contract": "b30b4805f03e37c001bc4728bd7b81c2ab024bbd824c4821c3c0477c462fec1c",
+          "physics": "766d059f61672303843b9586bccefd4f584237c156cb37f89470d2c962596a85",
+          "glb": "0b651d47c432a6a166cde1caf60cf6590330841d6832611177e08125928209b6",
+          "layout": "d3e747e9aba5d64b55548a33ee3b570f539cd8a468aa0f57c72c5968cdf86e6e"
+        },
+        "after_bearing": {
+          "contract": "b30b4805f03e37c001bc4728bd7b81c2ab024bbd824c4821c3c0477c462fec1c",
+          "physics": "501093519e6571ed19d5628f96cefd8c9074a331c99edddefa2677dcb94db905",
+          "glb": "6c168e0a6b25221320dd5b52aac8a6fbcc48b8c5e062a000f734d141d46e33dc",
+          "layout": "ed91da179307cf0d94f0cdd335d219002eeac50486684a2310ebce67dba0a1d7"
+        }
+      }
+    },
+    "WLD-05": {
+      "layout": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467",
+      "variants": {
+        "before_bearing": {
+          "contract": "f4ae5bd71775fe104b14ea6f26a054bc73bceb450a067ad7e46afebed22bb824",
+          "physics": "f9f6fa9a23a62ae5a00fccdfbad9828d495d96c0385c9b14d9a6e76f3069d18a",
+          "glb": "cc60805247fc26bfc05669ebc51d0ab564c4ea62f26a22636ec700494c7b11dc",
+          "layout": "5b57286e2b7e86477a781408bb5530673100f6367fc4dd2dba1706796966219a"
+        },
+        "after_bearing": {
+          "contract": "f4ae5bd71775fe104b14ea6f26a054bc73bceb450a067ad7e46afebed22bb824",
+          "physics": "760d5d1fd74fb7812418acfeb421419c230b9d76d2cdb3dbd0757e5e094aa76c",
+          "glb": "8dc4804e4f77904b0bece24f0ebca382ce7155b2d4df55dd062086e455a79454",
+          "layout": "6e3b31c254a70f28485064ee19e0654ec478c2468121879ae605ffa292166a90"
+        }
+      }
+    },
+    "WLD-06": {
+      "layout": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+      "variants": {
+        "before_bearing": {
+          "contract": "e0902f0e4a0b0fd733bf64073f0ff12895f4e50fede086ce490663add3197502",
+          "physics": "81a1c3cc7fa52ab16bb34e26084f149c964ef25d25d2ee997a9be886909e1956",
+          "glb": "d5d32696363ceca0accdc61f924683d3519f715a83d6eeac5c71ff7e2b7e30cc",
+          "layout": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304"
+        },
+        "after_bearing": {
+          "contract": "e0902f0e4a0b0fd733bf64073f0ff12895f4e50fede086ce490663add3197502",
+          "physics": "79821cf51f4a836dd6865da84f541b80687443853598c9e25aecf8578858f198",
+          "glb": "73dca896208524ab037bd63f4722b14939c42a2272fdd0bbc852fa9a0ac713d5",
+          "layout": "d8f312a488befbaacf6b81f815dc5720ed6fc38adddd5641f0fb42b6e1af56b3"
+        }
+      }
+    },
+    "WLD-07": {
+      "layout": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a",
+      "variants": {
+        "before_bearing": {
+          "contract": "3a970583eefb8daed601b2a617291c0d9bb663aad2f2e1f774bb60f345fab1b5",
+          "physics": "cc908857dd10a717c0a729fc823d0f90241200a1d96c1e314cc2b4db61980524",
+          "glb": "aecd7aad299cc492b6b6979b8c81cefe844bb695c8703f45b4a08ba7722154d7",
+          "layout": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a"
+        },
+        "after_bearing": {
+          "contract": "3a970583eefb8daed601b2a617291c0d9bb663aad2f2e1f774bb60f345fab1b5",
+          "physics": "dbcbac7db2c6edae6eab154b2c2e49e281b85dc473597eedcd641380bb44488f",
+          "glb": "c0835f2a8da1d2d5fb74397a5870087cbee1bf353e143c7a272a90d3f1ac2fc5",
+          "layout": "59d5e76ec39dc169a94138246812243b8b12e05e9485c63506c942b888043daf"
+        }
+      }
+    },
+    "WLD-08": {
+      "layout": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+      "variants": {
+        "before_bearing": {
+          "contract": "6e8a6e4adeb27fd55dedfdb0ce67d77cc33a36b0e67a11177bf97d24a6d2e4d4",
+          "physics": "7c05868ea7e2e2bd70c9edbdc689b3285511f9017f030237fa98b484b0f30e99",
+          "glb": "5847fa47893086dfe45c274e9df08b4562cc07bc6edcdfef26d3e5ff44ad853d",
+          "layout": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b"
+        },
+        "after_bearing": {
+          "contract": "6e8a6e4adeb27fd55dedfdb0ce67d77cc33a36b0e67a11177bf97d24a6d2e4d4",
+          "physics": "712c56150d4e7fc42135190609c30c67cecae4c059f7e41cbff6d018a340c026",
+          "glb": "99fbc1aadc8c382f925b41bf863eefd2a6792b237d903ad97203007cd188a346",
+          "layout": "e3cac309bb0d4e0d48e221487538b122e33b176279cb42467eaef9cdf41e087e"
+        }
+      }
+    },
+    "WLD-09": {
+      "layout": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4",
+      "variants": {
+        "before_bearing": {
+          "contract": "1bdf339c746ae9c2f05250f07c7f56b61ed99f320b0834fa0334496873074ed3",
+          "physics": "50fbd8f405d342276be9ed7dce83fd384133c008f68c86b524bbbccca1dd2c87",
+          "glb": "b6724d04e3904677f5efcfc999384cc1e4aa325a061ee55ba5ca78e8cab398a5",
+          "layout": "32d4e9c0a9636a7c72a3f89dcc0385b0d3e937bb922c3bae7f84387c786439b2"
+        },
+        "after_bearing": {
+          "contract": "1bdf339c746ae9c2f05250f07c7f56b61ed99f320b0834fa0334496873074ed3",
+          "physics": "f9a54f267327e12fe4d887ac4f32404d3e3e3932572996b607d03730d30806d9",
+          "glb": "dfa0dc6a6c0b6d444848aa116d5114f34574274e1ba8fe468ebfacc03ad40408",
+          "layout": "e2f82db74a6fd5e1d39b9f6e1813c2f5932dd54bba5660735076df86eb4e5718"
+        }
+      }
+    },
+    "WLD-10": {
+      "layout": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9",
+      "variants": {
+        "before_bearing": {
+          "contract": "f41b57cff9e7143e2b6f444712621ed55182e4b6120266510a60369fc51bb269",
+          "physics": "9e2122cdd84950ba1fec8d3f25d3428e33e49608e2d79d2d3d5f27efc813cd17",
+          "glb": "e1c26be107b1abff82c5cebc3a111e866a3485fc4da20641ea205ef55e2e2f8b",
+          "layout": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9"
+        },
+        "after_bearing": {
+          "contract": "f41b57cff9e7143e2b6f444712621ed55182e4b6120266510a60369fc51bb269",
+          "physics": "67bf33884c36418ec93d57eef30cf899dc3b1ff9a456b83a2a28208698ac145f",
+          "glb": "4ec4158aa2ed89159de03cf38e87250dd884438b4d5bd07810ef71d16d7f0180",
+          "layout": "174bf662d24d472fd1e089fd11eec5748a865698681226ba07d18f2f7f8e0ff1"
+        }
+      }
+    },
+    "WLD-11": {
+      "layout": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+      "variants": {
+        "before_bearing": {
+          "contract": "10b5177ddd191ab9014fae958095b932cb280152af8957cc31ef25b06abe1d03",
+          "physics": "a9a9f4ef211b8bdcd3d2118309bdd06ea673bb53e26c9348157fcba0176b4742",
+          "glb": "38168aaac87f855c5de0dcf9b0b9de047ac21e30879b87483f05846b9bbb990d",
+          "layout": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf"
+        },
+        "after_bearing": {
+          "contract": "10b5177ddd191ab9014fae958095b932cb280152af8957cc31ef25b06abe1d03",
+          "physics": "4eb95de0b8e6f4251d01b3455939c0747bbe8cdc6fa833ec9f6b3b9b564366e6",
+          "glb": "a8467a6e0c5b59c4b3ae18d4289e08d455b7e3f58f646b9e56b8d9ac2226a851",
+          "layout": "3fde7248675385c404ff07eff16f56b03d4f663acf991f0919dedc1d8d8c2929"
+        }
+      }
+    },
+    "WLD-12": {
+      "layout": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8",
+      "variants": {
+        "before_bearing": {
+          "contract": "e4c9d31898aa3b4ff10f8b080b0900ec081de90888df3e3f2ee90385ef1c9965",
+          "physics": "f64a770b8d4f58f52bc3b62cdc9cc43994add98312271235eedf0589bd50aa6a",
+          "glb": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+          "layout": "47958e12195200b8f3178c9a640750ccb9fe2a77fcb42ff04c3193ff0227eb77"
+        },
+        "after_bearing": {
+          "contract": "e4c9d31898aa3b4ff10f8b080b0900ec081de90888df3e3f2ee90385ef1c9965",
+          "physics": "da0e062878daef37a57daeedcd46bf4b9a0c9f80616a4edb5e4494ffbe00e2cc",
+          "glb": "5df37d8e883429903e37e5bbbee836f6514dd8fe81346272b5da111dd9b483f3",
+          "layout": "756abc1558d99a94a37cbb808da954d27abfb1d5cffccdde64afdc47877582e3"
+        }
+      }
+    },
+    "WLD-13": {
+      "layout": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+      "variants": {
+        "before_bearing": {
+          "contract": "5f3869f5d3a5be7ae61f617c85bf4c1b9444c2e8ca938048c2fb21a4b1b27a0b",
+          "physics": "a619ca847615a001e3a6af167c715e166209650d9d9871cdb5bfa192627fe664",
+          "glb": "191b5e8e3990565770e1c6c7213e56925a5a75d2fc182d3c6ecb1c59715f67a0",
+          "layout": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732"
+        },
+        "after_bearing": {
+          "contract": "5f3869f5d3a5be7ae61f617c85bf4c1b9444c2e8ca938048c2fb21a4b1b27a0b",
+          "physics": "55132f292414635d0cc8f00e7fe501e8f3a3b17a36c8eaa685fd119e9620b784",
+          "glb": "92034c9c5a24c6deee74bec163d08fe76e94bee60ee5da109d238c394aecc214",
+          "layout": "9a5706c016ac459e04b097a8a2b72517799ea5172e6ab5d3a8d94f7e466bbbb2"
+        }
+      }
+    },
+    "WLD-14": {
+      "layout": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e",
+      "variants": {
+        "before_bearing": {
+          "contract": "1684174eef5c0eb1e634b323add86e85fa80da8ef1989e12424f5c9cc0b37c61",
+          "physics": "8b1718fdb15ac04bf780dabfd8d82ad9057aef0bc1fc0ab7eb8ac39bf152829a",
+          "glb": "de67d0bcc375d5d1f809ef0ea3a29b65f608f45f9871ce2829efbb2a5afa4f0b",
+          "layout": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e"
+        },
+        "after_bearing": {
+          "contract": "1684174eef5c0eb1e634b323add86e85fa80da8ef1989e12424f5c9cc0b37c61",
+          "physics": "d15fe2d88a16151a9f9bffa7f32d2d56997d254c6731fa4d4bb139d4bcef941d",
+          "glb": "8775054acaaf098f9bf70be98139664b320e6aeb29996add2f47d3d4ecd39cec",
+          "layout": "2b2392502c431f4d539ca0615540e71632430d10fbade5a93ff481579162342b"
+        }
+      }
+    },
+    "WLD-15": {
+      "layout": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
+      "variants": {
+        "before_bearing": {
+          "contract": "1f16d45c21e37c9bda37137eac37f44dabf7f1db143b6fd785c3425518ff108d",
+          "physics": "65ea86d5f1c611f2d35cd6c1198e57dca62302302e4b4ba401be50e47640c21c",
+          "glb": "dfb08915bb4aca584cb6f3640441853b37256a3e7cc6d8c1c51ac00baa2fe6f6",
+          "layout": "9b695ab72aa0c45689047fbde49d468a88b8a7fd2a8e0a7845816725ba1cb424"
+        },
+        "after_bearing": {
+          "contract": "1f16d45c21e37c9bda37137eac37f44dabf7f1db143b6fd785c3425518ff108d",
+          "physics": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+          "glb": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+          "layout": "f2d6903a4ed8914d3668c23bd1dc6d9adbfa5c2c52a8568156ffa88a18a57acf"
+        }
+      }
+    },
+    "WLD-16": {
+      "layout": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
+      "variants": {
+        "before_bearing": {
+          "contract": "d39911afab8e828c90791532495ab4494ce04103d3cf9dd4e135f4f8620d2900",
+          "physics": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a",
+          "glb": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
+          "layout": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb"
+        },
+        "after_bearing": {
+          "contract": "d39911afab8e828c90791532495ab4494ce04103d3cf9dd4e135f4f8620d2900",
+          "physics": "b9cddbea86c91d3254d78575d8bebc9eedb13db419576d8bf183a8e7e7de7314",
+          "glb": "21138278f6d0d1c739d1553d921aff519e53ae24d11f245cac37c1347a4db553",
+          "layout": "2f62f3f1f514d26cbe3c04c111db0c01efa79743a14df3ad7daa4ec8c8a91794"
+        }
+      }
+    },
+    "WLD-17": {
+      "layout": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+      "variants": {
+        "before_bearing": {
+          "contract": "b286d8e80b3bb22cdc2cd538061a202ff7cef1f926f027dcfac4b6871f23fd67",
+          "physics": "3a7f0af68702dcfaa0244a777020b56464d13be376a87c6154995fef1751c32f",
+          "glb": "f78ae198db1ff17d7504bcce2f0fde3539c8e25b0931384f72f2a7e005177ac8",
+          "layout": "4661cf6a727c12c6c2a5e333f772feaefcee0432ed0bae147deb5497b68cc92d"
+        },
+        "after_bearing": {
+          "contract": "b286d8e80b3bb22cdc2cd538061a202ff7cef1f926f027dcfac4b6871f23fd67",
+          "physics": "5b2ffe426f4fcf283302228cb06f287a553ddb9f07b5143c3861ae9166c2cdbf",
+          "glb": "c24a2b367c59930b49bd8e41cb5a9308d30614c4ae844424733f53f126cbd1dc",
+          "layout": "a5d4d7e10e0f5a1d1798d27d47c76f0f26a04892b40929145456dc851add2c31"
+        }
+      }
+    },
+    "WLD-18": {
+      "layout": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d",
+      "variants": {
+        "before_bearing": {
+          "contract": "79b4f0dbbab8222559d65bc0970c8cd301fd2b8b858ccaec2894bbbd9cbed4fd",
+          "physics": "022550b758eb5fac8e443659de182827d1aa5e5230408c81dbcf0c4dd0324346",
+          "glb": "8628719c0b461e64f89f25e018ed3fc260ce372e250380d26e3ea34e59441a74",
+          "layout": "17e94c67b4e51c54662073807f85d128cb70c3f8672b6de7acf2f8502a68356d"
+        },
+        "after_bearing": {
+          "contract": "79b4f0dbbab8222559d65bc0970c8cd301fd2b8b858ccaec2894bbbd9cbed4fd",
+          "physics": "904f4536c95ec05f6f9fc0f9f7d2a7548f77b994363116ccac2072742ebfd68c",
+          "glb": "5b76ba44bf0a9265374c084e1e5aa66cbd2eda5c96ddbcd1a2baeceae7dc615d",
+          "layout": "8eabcb9002a0f92104ce8b459a60092695b92aeed6294300d2408889deab0eae"
+        }
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "layout": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
+      "variants": {
+        "before_bearing": {
+          "contract": "99c4fef3b22e278d17720a1adb01813b879393cfe44bb2b23c9991977755dcb9",
+          "physics": "2ae50247d945d2c6d5b3b60aedbfdfea2b9b27975cfae041648f0ba80243aa5d",
+          "glb": "90dc20ba98abca7fd91f7e3ddbae1e5363dcc9b5d15ac37f28cc1bdda3322101",
+          "layout": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c"
+        },
+        "after_bearing": {
+          "contract": "99c4fef3b22e278d17720a1adb01813b879393cfe44bb2b23c9991977755dcb9",
+          "physics": "4dfaf5f74664ed78e970f91e5faf796e9c8293a92eb2edb03e1f5bd7e97c9b82",
+          "glb": "16139753b6b42685b50cea0d9471d19d0565aa59a68f4b3a6efae3dd7e8568b9",
+          "layout": "4ccbc4b4d9a58439c43b7ec86bf057328663e701aca7001faf1334ecc7a53431"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_roster_stairs.py": "ce3df3b1a39269bbbda1b0332a563fefb28037e11fbc63d7db47cbe95f3a34ce",
+    "development/levels/rebuild/movement-chains.json": "36f6e9e7a913163fb457beee851a412b7584cff2be6ee55dbcd640ae662a6d4b"
+  },
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "sites": {
+    "before_bearing": {
+      "ACADEMY": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "ASYLUM": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "CHURCH": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "COLLEGE": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 5,
+        "authored_down": 5
+      },
+      "FARMHOUSE": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "MANSION": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      },
+      "PRISON": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "SCHOOL": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-03": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-04": {
+        "flights": 9,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 9,
+        "authored_down": 9
+      },
+      "WLD-05": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      },
+      "WLD-06": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-07": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-08": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-09": {
+        "flights": 7,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 7,
+        "authored_down": 7
+      },
+      "WLD-10": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-11": {
+        "flights": 1,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      },
+      "WLD-12": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-13": {
+        "flights": 1,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      },
+      "WLD-14": {
+        "flights": 142,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 142,
+        "authored_down": 142
+      },
+      "WLD-15": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      },
+      "WLD-16": {
+        "flights": 0,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-17": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 5,
+        "authored_down": 5
+      },
+      "WLD-18": {
+        "flights": 6,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 6,
+        "authored_down": 6
+      },
+      "WLD-07-MORTUARY": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      }
+    },
+    "after_bearing": {
+      "ACADEMY": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "ASYLUM": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "CHURCH": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "COLLEGE": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 5,
+        "authored_down": 5
+      },
+      "FARMHOUSE": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "MANSION": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      },
+      "PRISON": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "SCHOOL": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-03": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-04": {
+        "flights": 9,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 9,
+        "authored_down": 9
+      },
+      "WLD-05": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      },
+      "WLD-06": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-07": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-08": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-09": {
+        "flights": 7,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 7,
+        "authored_down": 7
+      },
+      "WLD-10": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "WLD-11": {
+        "flights": 1,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      },
+      "WLD-12": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "WLD-13": {
+        "flights": 1,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 1,
+        "authored_down": 1
+      },
+      "WLD-14": {
+        "flights": 142,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 142,
+        "authored_down": 142
+      },
+      "WLD-15": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      },
+      "WLD-16": {
+        "flights": 0,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 0,
+        "authored_down": 0
+      },
+      "WLD-17": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 5,
+        "authored_down": 5
+      },
+      "WLD-18": {
+        "flights": 6,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 6,
+        "authored_down": 6
+      },
+      "WLD-07-MORTUARY": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      }
+    }
+  },
+  "limitation": "Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.",
+  "complete_routes": {
+    "before_bearing": {
+      "routes": 84,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 84,
+      "authored_reverse": 84
+    },
+    "after_bearing": {
+      "routes": 84,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 84,
+      "authored_reverse": 84
+    }
+  },
+  "bearing_regressions": {
+    "flights": [],
+    "complete_paths": []
+  },
+  "authored_routes": [
+    {
+      "site": "WLD-07",
+      "variant": "before_bearing",
+      "link": "AUTHORED/ossuary-and-surface-loop",
+      "segments": "14",
+      "legacy_forward": "BLOCKED_SEGMENT_3_AT_2_OF_55",
+      "legacy_reverse": "BLOCKED_SEGMENT_7_AT_2_OF_55",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-07",
+      "variant": "after_bearing",
+      "link": "AUTHORED/ossuary-and-surface-loop",
+      "segments": "14",
+      "legacy_forward": "BLOCKED_SEGMENT_3_AT_2_OF_55",
+      "legacy_reverse": "BLOCKED_SEGMENT_7_AT_2_OF_55",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-07-MORTUARY",
+      "variant": "before_bearing",
+      "link": "AUTHORED/ossuary-and-surface-loop",
+      "segments": "14",
+      "legacy_forward": "BLOCKED_SEGMENT_3_AT_2_OF_55",
+      "legacy_reverse": "BLOCKED_SEGMENT_7_AT_2_OF_55",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-07-MORTUARY",
+      "variant": "after_bearing",
+      "link": "AUTHORED/ossuary-and-surface-loop",
+      "segments": "14",
+      "legacy_forward": "BLOCKED_SEGMENT_3_AT_2_OF_55",
+      "legacy_reverse": "BLOCKED_SEGMENT_7_AT_2_OF_55",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    }
+  ],
+  "cross_link_chains": {
+    "bindings": [
+      {
+        "site": "COLLEGE",
+        "variant": "before_bearing",
+        "id": "CHAIN/L84/L80",
+        "links": [
+          "L84",
+          "L80"
+        ]
+      },
+      {
+        "site": "COLLEGE",
+        "variant": "after_bearing",
+        "id": "CHAIN/L84/L80",
+        "links": [
+          "L84",
+          "L80"
+        ]
+      },
+      {
+        "site": "MANSION",
+        "variant": "before_bearing",
+        "id": "CHAIN/L59/L60/L61",
+        "links": [
+          "L59",
+          "L60",
+          "L61"
+        ]
+      },
+      {
+        "site": "MANSION",
+        "variant": "after_bearing",
+        "id": "CHAIN/L59/L60/L61",
+        "links": [
+          "L59",
+          "L60",
+          "L61"
+        ]
+      },
+      {
+        "site": "WLD-03",
+        "variant": "before_bearing",
+        "id": "CHAIN/L04/L07",
+        "links": [
+          "L04",
+          "L07"
+        ]
+      },
+      {
+        "site": "WLD-03",
+        "variant": "after_bearing",
+        "id": "CHAIN/L04/L07",
+        "links": [
+          "L04",
+          "L07"
+        ]
+      },
+      {
+        "site": "WLD-04",
+        "variant": "before_bearing",
+        "id": "CHAIN/L13/L14/L14B",
+        "links": [
+          "L13",
+          "L14",
+          "L14B"
+        ]
+      },
+      {
+        "site": "WLD-04",
+        "variant": "after_bearing",
+        "id": "CHAIN/L13/L14/L14B",
+        "links": [
+          "L13",
+          "L14",
+          "L14B"
+        ]
+      },
+      {
+        "site": "WLD-05",
+        "variant": "before_bearing",
+        "id": "CHAIN/L16/L17",
+        "links": [
+          "L16",
+          "L17"
+        ]
+      },
+      {
+        "site": "WLD-05",
+        "variant": "after_bearing",
+        "id": "CHAIN/L16/L17",
+        "links": [
+          "L16",
+          "L17"
+        ]
+      },
+      {
+        "site": "WLD-14",
+        "variant": "before_bearing",
+        "id": "CHAIN/route-20/route-21/route-22/route-23/route-24",
+        "links": [
+          "route-20",
+          "route-21",
+          "route-22",
+          "route-23",
+          "route-24"
+        ]
+      },
+      {
+        "site": "WLD-14",
+        "variant": "after_bearing",
+        "id": "CHAIN/route-20/route-21/route-22/route-23/route-24",
+        "links": [
+          "route-20",
+          "route-21",
+          "route-22",
+          "route-23",
+          "route-24"
+        ]
+      },
+      {
+        "site": "WLD-17",
+        "variant": "before_bearing",
+        "id": "CHAIN/route-02/route-03",
+        "links": [
+          "route-02",
+          "route-03"
+        ]
+      },
+      {
+        "site": "WLD-17",
+        "variant": "after_bearing",
+        "id": "CHAIN/route-02/route-03",
+        "links": [
+          "route-02",
+          "route-03"
+        ]
+      }
+    ],
+    "results": [
+      {
+        "site": "COLLEGE",
+        "variant": "before_bearing",
+        "link": "CHAIN/L84/L80",
+        "segments": "4",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_1_OF_58",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "COLLEGE",
+        "variant": "after_bearing",
+        "link": "CHAIN/L84/L80",
+        "segments": "4",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_1_OF_58",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "MANSION",
+        "variant": "before_bearing",
+        "link": "CHAIN/L59/L60/L61",
+        "segments": "7",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_1_OF_60",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "MANSION",
+        "variant": "after_bearing",
+        "link": "CHAIN/L59/L60/L61",
+        "segments": "7",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_1_OF_60",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-03",
+        "variant": "before_bearing",
+        "link": "CHAIN/L04/L07",
+        "segments": "2",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_11_OF_285",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-03",
+        "variant": "after_bearing",
+        "link": "CHAIN/L04/L07",
+        "segments": "2",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_11_OF_285",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-04",
+        "variant": "before_bearing",
+        "link": "CHAIN/L13/L14/L14B",
+        "segments": "10",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_1_AT_1_OF_39",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-04",
+        "variant": "after_bearing",
+        "link": "CHAIN/L13/L14/L14B",
+        "segments": "10",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_1_AT_1_OF_39",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-05",
+        "variant": "before_bearing",
+        "link": "CHAIN/L16/L17",
+        "segments": "10",
+        "legacy_forward": "BLOCKED_SEGMENT_3_AT_11_OF_13",
+        "legacy_reverse": "BLOCKED_SEGMENT_1_AT_3_OF_155",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-05",
+        "variant": "after_bearing",
+        "link": "CHAIN/L16/L17",
+        "segments": "10",
+        "legacy_forward": "BLOCKED_SEGMENT_3_AT_11_OF_13",
+        "legacy_reverse": "BLOCKED_SEGMENT_1_AT_3_OF_155",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-14",
+        "variant": "before_bearing",
+        "link": "CHAIN/route-20/route-21/route-22/route-23/route-24",
+        "segments": "142",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_2_AT_5_OF_7",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-14",
+        "variant": "after_bearing",
+        "link": "CHAIN/route-20/route-21/route-22/route-23/route-24",
+        "segments": "142",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_2_AT_5_OF_7",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-17",
+        "variant": "before_bearing",
+        "link": "CHAIN/route-02/route-03",
+        "segments": "4",
+        "legacy_forward": "BLOCKED_SEGMENT_0_AT_38_OF_40",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_5_OF_80",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "WLD-17",
+        "variant": "after_bearing",
+        "link": "CHAIN/route-02/route-03",
+        "segments": "4",
+        "legacy_forward": "BLOCKED_SEGMENT_0_AT_38_OF_40",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_5_OF_80",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      }
+    ],
+    "scope": "Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks."
+  },
+  "chain_scope": "Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network."
+}

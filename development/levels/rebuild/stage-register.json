@@ -6245,5 +6245,41 @@
       "battery_new_footing_gaps": 0
     },
     "source_sha": "de44cde37f713484e59c5b11b987deb2372dd17e"
+  },
+  "flat_circulation_checkpoint": {
+    "status": "IN_PROGRESS_SOURCE_REVISED_CURRENT_ROUTES_REMAIN_OPEN",
+    "evidence": "development/levels/rebuild/flat-circulation-pass/roster.json",
+    "aggregate": {
+      "revised_sites": 25,
+      "new_closed_parts": 1283,
+      "new_triangles": 41894,
+      "replaced_or_removed_source_meshes": 1959,
+      "normal_threshold_approaches": 181,
+      "withheld_wall_corridor_conflicts": 394,
+      "redundant_owned_route_prisms_removed": 673,
+      "new_indoor_bearing_parts": 6,
+      "shared_ceiling_cases": 5,
+      "paired_ceiling_samples": 1072,
+      "source_sealed_links_checked": 192,
+      "boundary_centre_rays": 750,
+      "flights_pass_both_directions": 221,
+      "flight_total": 221,
+      "complete_vertical_links_pass": 84,
+      "vertical_link_total": 84,
+      "complete_flat_links_before": 274,
+      "complete_flat_links_after": 380,
+      "complete_flat_links_total": 566,
+      "complete_flat_links_remaining": 186,
+      "current_strict_flat_samples": 119775,
+      "current_strict_invalid": 13483,
+      "current_strict_valid": 106292,
+      "original_coordinate_samples": 110409,
+      "original_valid_before": 101280,
+      "original_qualified_sweeps": 96292,
+      "original_valid_after": 102726,
+      "recovered_original_body_poses": 1446,
+      "new_original_body_blocks": 0,
+      "new_original_sweep_blocks": 0
+    }
   }
 }
