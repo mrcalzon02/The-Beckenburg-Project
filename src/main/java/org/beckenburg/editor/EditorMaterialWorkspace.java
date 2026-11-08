@@ -35,6 +35,14 @@ public final class EditorMaterialWorkspace extends JPanel {
     private final Runnable visibilityChanged;
     public int visibleFaces() { return faces.size(); }
     public Visibility visibility() { return visibility; }
+    public interface PencilAction { void preview(long face,List<Integer> texels,int color); }
+    private PencilAction pencilAction;
+    private final JToggleButton pencil=new JToggleButton("Pencil");
+    private final JButton ink=new JButton("Color");
+    private Color paintColor=new Color(255,0,255);
+    private java.util.LinkedHashSet<Integer> stroke;
+    private Point lastPixel;
+    private int strokeColor;
     private final LongConsumer selection;
     private final DefaultListModel<EditorTopologyProject.Face> faces=new DefaultListModel<>();
     private final JList<EditorTopologyProject.Face> faceList=new JList<>(faces);
@@ -67,11 +75,65 @@ public final class EditorMaterialWorkspace extends JPanel {
         canvas.setBackground(new Color(29,33,39));canvas.setPreferredSize(new Dimension(520,500));
         var reset=new JButton("Fit texture");reset.addActionListener(e->{zoom=1;panX=panY=0;canvas.repaint();});
         var center=new JPanel(new BorderLayout(3,5));var heading=new JPanel(new BorderLayout());heading.add(new JLabel("TEXTURE / UV VIEW"),BorderLayout.WEST);heading.add(reset,BorderLayout.EAST);center.add(heading,BorderLayout.NORTH);center.add(canvas,BorderLayout.CENTER);
+        var paintTools=new JPanel(new FlowLayout(FlowLayout.CENTER,4,0));
+        pencil.setToolTipText("Drag to preview a one-texel stroke. Shift-drag erases the paint layer. Escape cancels the drag.");
+        paintTools.add(pencil);paintTools.add(ink);heading.add(paintTools,BorderLayout.CENTER);
+        ink.setIcon(new Icon(){
+            public int getIconWidth(){return 14;}
+            public int getIconHeight(){return 14;}
+            public void paintIcon(Component c,Graphics g,int x,int y){
+                g.setColor(c.getForeground());g.drawRect(x,y,13,13);
+                g.setColor(paintColor);g.fillRect(x+1,y+1,12,12);
+            }
+        });
+        ink.addActionListener(e->{var color=JColorChooser.showDialog(this,"Pencil color",paintColor);
+            if(color!=null){paintColor=color;ink.repaint();}});
         canvas.addMouseWheelListener(e->{zoom=Math.max(.25,Math.min(16,zoom*Math.pow(1.15,-e.getPreciseWheelRotation())));canvas.repaint();});
-        var mouse=new MouseAdapter(){public void mousePressed(MouseEvent e){if(SwingUtilities.isMiddleMouseButton(e))panStart=e.getPoint();else if(SwingUtilities.isLeftMouseButton(e))pick(e.getPoint());}public void mouseDragged(MouseEvent e){if(panStart!=null){panX+=e.getX()-panStart.x;panY+=e.getY()-panStart.y;panStart=e.getPoint();canvas.repaint();}}public void mouseReleased(MouseEvent e){panStart=null;}};canvas.addMouseListener(mouse);canvas.addMouseMotionListener(mouse);
+        var mouse=new MouseAdapter(){
+            public void mousePressed(MouseEvent e){
+                if(SwingUtilities.isMiddleMouseButton(e))panStart=e.getPoint();
+                else if(SwingUtilities.isLeftMouseButton(e)){
+                    if(pencil.isSelected() && pencil.isEnabled()){
+                        strokeColor=e.isShiftDown()?0:paintColor.getRGB();
+                        stroke=new java.util.LinkedHashSet<>();lastPixel=null;sample(e.getPoint());
+                    }else pick(e.getPoint());
+                }
+            }
+            public void mouseDragged(MouseEvent e){
+                if(stroke!=null)sample(e.getPoint());
+                else if(panStart!=null){panX+=e.getX()-panStart.x;panY+=e.getY()-panStart.y;panStart=e.getPoint();canvas.repaint();}
+            }
+            public void mouseReleased(MouseEvent e){
+                panStart=null;
+                if(stroke==null || !SwingUtilities.isLeftMouseButton(e))return;
+                sample(e.getPoint());
+                var points=stroke;stroke=null;lastPixel=null;
+                canvas.repaint();
+                if(points!=null && !points.isEmpty() && selectedFace!=null)pencilAction.preview(selectedFace,List.copyOf(points),strokeColor);
+            }
+        };canvas.addMouseListener(mouse);canvas.addMouseMotionListener(mouse);
+        getInputMap(WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke("ESCAPE"),"cancelPencil");
+        getActionMap().put("cancelPencil",new AbstractAction(){public void actionPerformed(ActionEvent e){
+            stroke=null;lastPixel=null;canvas.repaint();
+        }});
         var right=new JPanel(new BorderLayout(4,8));var properties=new JScrollPane(new Properties(settings));properties.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);right.add(properties,BorderLayout.CENTER);right.add(runtime,BorderLayout.SOUTH);right.setPreferredSize(new Dimension(300,500));right.setMinimumSize(new Dimension(240,200));
         var split=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,center,right);split.setResizeWeight(.7);split.setBorder(null);add(left,BorderLayout.WEST);add(split,BorderLayout.CENTER);
         var bottom=new JPanel(new BorderLayout(4,4));bottom.add(status,BorderLayout.NORTH);bottom.add(commands,BorderLayout.SOUTH);add(bottom,BorderLayout.SOUTH);
+    }
+    public void setPencilAction(PencilAction action){pencilAction=action;}
+    private void sample(Point mouse) {
+        var r=imageRect();
+        int x=(int)Math.floor((mouse.x-r[0])*material.width()/r[2]),y=(int)Math.floor((mouse.y-r[1])*material.height()/r[3]);
+        if(x<0||y<0||x>=material.width()||y>=material.height()){lastPixel=null;return;}
+        int startX=lastPixel==null?x:lastPixel.x,startY=lastPixel==null?y:lastPixel.y;
+        int steps=Math.max(1,Math.max(Math.abs(x-startX),Math.abs(y-startY)));
+        for(int i=0;i<=steps;i++){
+            int px=startX+(int)Math.round((x-startX)*(double)i/steps),py=startY+(int)Math.round((y-startY)*(double)i/steps);
+            stroke.add(py*material.width()+px);
+            if(stroke.size()>65536){stroke=null;lastPixel=null;status.setText("Stroke exceeds 65536 texels");return;}
+        }
+        lastPixel=new Point(x,y);
+        canvas.repaint();
     }
     private void bind(String key,JButton control) {
         getInputMap(WHEN_ANCESTOR_OF_FOCUSED_COMPONENT).put(KeyStroke.getKeyStroke(key),key);
@@ -86,12 +148,17 @@ public final class EditorMaterialWorkspace extends JPanel {
         visibilityChanged.run();
     }
     public void observe(EditorTopologyProject.State value,Long face,EditorMeshMaterial displayed,boolean pending){
+        if(state!=value || !java.util.Objects.equals(selectedFace,face) || pending){stroke=null;lastPixel=null;}
         if(state==null || value==null || !state.sceneId().equals(value.sceneId()) ||
             !state.sourceFingerprint().equals(value.sourceFingerprint())) visibility=ALL;
         if(state!=value || refreshRows){state=value;refreshRows=false;updating=true;faces.clear();if(value!=null)for(var f:value.faces())if(visibility.includes(f.id()))faces.addElement(f);updating=false;}
         selectedFace=face!=null && visibility.includes(face) ? face : null;
         updating=true;faceList.clearSelection();for(int i=0;i<faces.size();i++)if(selectedFace!=null&&faces.get(i).id()==selectedFace)faceList.setSelectedIndex(i);updating=false;
         isolate.setEnabled(!pending && selectedFace!=null);hide.setEnabled(isolate.isEnabled());showAll.setEnabled(!pending && visibility.filtered());
+        boolean bound=selectedFace!=null && displayed!=null && faceList.getSelectedValue()!=null &&
+            faceList.getSelectedValue().material().equals(displayed.key());
+        pencil.setEnabled(!pending && bound && pencilAction!=null);
+        ink.setEnabled(pencil.isEnabled());
         if(!java.util.Objects.equals(material,displayed)){material=displayed;texture=null;if(displayed!=null)try{texture=ImageIO.read(new ByteArrayInputStream(displayed.png()));}catch(IOException bad){throw new UncheckedIOException(bad);}}
         status.setText((pending?"PREVIEW / Apply or Cancel":"NATIVE DOCUMENT")+" | "+(selectedFace==null?"Select a face":"Face "+selectedFace)+" | "+(displayed==null?"Unbound material":displayed.name()+" / "+displayed.width()+" x "+displayed.height()+" / "+displayed.origin())+" | Wheel zoom / middle-drag pan");canvas.repaint();
     }
@@ -102,6 +169,22 @@ public final class EditorMaterialWorkspace extends JPanel {
         double[] r=imageRect();int left=(int)r[0],top=(int)r[1],w=(int)r[2],h=(int)r[3];g.clipRect(left,top,w+1,h+1);
         for(int yy=top;yy<top+h;yy+=16)for(int xx=left;xx<left+w;xx+=16){g.setColor(((xx-left)/16+(yy-top)/16)%2==0?new Color(82,86,91):new Color(56,60,65));g.fillRect(xx,yy,16,16);}
         g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);if(texture!=null)g.drawImage(texture,left,top,w,h,null);
+        var selected=faceList.getSelectedValue();
+        if(stroke!=null && material!=null && selected!=null){
+            var overlay=(Graphics2D)g.create();
+            try{
+                var clip=new Polygon();
+                for(var c:List.of(selected.a(),selected.b(),selected.c()))clip.addPoint(x(c.u(),r),y(c.v(),r));
+                overlay.clip(clip);
+                overlay.setColor(strokeColor==0?Color.WHITE:new Color(strokeColor,true));
+                for(int p:stroke){
+                    int px=p%material.width(),py=p/material.width();
+                    int x0=left+px*w/material.width(),y0=top+py*h/material.height();
+                    int dx=Math.max(1,left+(px+1)*w/material.width()-x0),dy=Math.max(1,top+(py+1)*h/material.height()-y0);
+                    if(strokeColor==0)overlay.drawRect(x0,y0,dx,dy);else overlay.fillRect(x0,y0,dx,dy);
+                }
+            }finally{overlay.dispose();}
+        }
         if(state==null)return;for(int row=0;row<faces.size();row++){var face=faces.get(row);
             if(material==null?!face.material().isEmpty():!face.material().equals(material.key()))continue;
             boolean chosen=selectedFace!=null&&face.id()==selectedFace;g.setColor(chosen?new Color(255,219,80):new Color(220,235,248,140));g.setStroke(new BasicStroke(chosen?3:1));var corners=List.of(face.a(),face.b(),face.c());for(int i=0;i<3;i++){var a=corners.get(i);var b=corners.get((i+1)%3);g.drawLine(x(a.u(),r),y(a.v(),r),x(b.u(),r),y(b.v(),r));}

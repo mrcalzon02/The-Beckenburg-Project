@@ -513,6 +513,10 @@ public final class AssetImportDialog {
                 }
                 refreshMeshControls();preview.repaint();
             });
+            materialWorkspace.setPencilAction((face,texels,color)->{
+                if(!busy && modelingPreview==null && materialWorkspace.visibility().includes(face))
+                    beginModelingPreview(p->p.previewPencil(face,texels,color));
+            });
             materialDialog.setContentPane(materialWorkspace);materialDialog.setSize(1160,760);materialDialog.setMinimumSize(new Dimension(900,600));materialDialog.setLocationRelativeTo(dialog);
         }
         materialDialog.setVisible(true);refreshMaterialWindow();

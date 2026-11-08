@@ -23,6 +23,8 @@ public final class EditorGlbWriter {
         var originalOffsets=new java.util.HashMap<String,Long>();int originalAccessors=0;long sourceFace=0;
         if(expected.glbSource()!=null){originalAccessors=EditorGlbReader.arr(expected.glbSource().root().get("accessors")).size();for(var face:expected.glbSource().faces())originalOffsets.put(EditorMeshOrder.key(face.primitive().node(),face.primitive().primitive(),face.triangle()),face.identity());var before=EditorGlbReader.arr(expected.glbSource().root().get("materials"));var after=EditorGlbReader.arr(actual.root().get("materials"));for(int i=0;i<before.size();i++)if(!before.get(i).equals(after.get(i)))throw new IOException("GLB readback changed original material metadata");}
         var seen=new java.util.HashSet<Long>();long ordinal=0;
+        record Binding(String nativeKey,int runtimeIndex) {}
+        var verifiedMaterials=new java.util.HashSet<Binding>();
         for(var primitive:actual.primitives())for(int i=0;i<primitive.indices().size();i+=3){
             boolean generated=expected.glbSource()!=null&&primitive.positionAccessor()>=originalAccessors;
             long id=expected.glbSource()==null?(expected.frames().isEmpty()?(expected.faceIds().isEmpty()?ordinal++:expected.faceIds().get((int)ordinal++)):primitive.faceIds().get(i/3)):generated?primitive.faceIds().get(i/3):originalOffsets.get(EditorMeshOrder.key(primitive.node(),primitive.primitive(),i/3));
@@ -31,6 +33,7 @@ public final class EditorGlbWriter {
                 if(generated&&ids.containsKey(id)&&!primitive.positionIds().get(index).equals(ids.get(id).get(c)))throw new IOException("GLB readback changed native position connectivity");
                 if(b.normal()!=null){var n=EditorMeshNormals.unit(b.normal());if(a.normal()==null||!near(a.normal().x(),n.x())||!near(a.normal().y(),n.y())||!near(a.normal().z(),n.z()))throw new IOException("GLB readback changed transformed corner normal");}
             }
+            if(!verifiedMaterials.add(new Binding(triangle.material(),primitive.material())))continue;
             var material=expected.materials().stream().filter(m->m.key().equals(triangle.material())).findFirst().orElse(EditorMeshMaterial.fallback());var sample=actual.materials().get(primitive.material());var color=sample.color();var factor=material.color();String origin=sample.explicitOrigin()==null?sample.defaultOrigin():sample.explicitOrigin();
             if(!java.util.Arrays.equals(sample.png(),material.png())||!near(color[0],factor.r())||!near(color[1],factor.g())||!near(color[2],factor.b())||!near(color[3],factor.a())||sample.wrapS()!=material.wrapS()||sample.wrapT()!=material.wrapT()||!sample.alpha().equals(material.alpha().name())||!near(sample.cutoff(),material.cutoff())||!origin.equals(material.origin().name()))throw new IOException("GLB readback changed original PNG/material sampling");
         }

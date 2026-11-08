@@ -133,6 +133,7 @@ public final class G2TexturedModelGuiTest {
             catch (Exception e) { throw new RuntimeException(e); }
         });
         verifyVisibility();
+        verifyPencil(png);
         edt(() -> {
             var window = (JDialog)field(ui,"materialDialog");
             var pane = window.getContentPane();
@@ -186,6 +187,62 @@ public final class G2TexturedModelGuiTest {
         });
         await(()->{try{return !(boolean)field(ui,"materialRendering") && ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}
             catch(Exception e){throw new RuntimeException(e);}});
+    }
+    private void verifyPencil(Path sourcePng) throws Exception {
+        var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+        var original=project.snapshot();
+        edt(()->{
+            ((JList<?>)field(workspace,"faceList")).setSelectedIndex(10);
+            var pencil=(JToggleButton)field(workspace,"pencil");
+            check(pencil.isEnabled(),"Pencil must act on the selected native binding");
+            pencil.doClick();
+            var canvas=(JPanel)field(workspace,"canvas");
+            double[] bounds=(double[])call(workspace,"imageRect",new Class<?>[0]);
+            int y=(int)(bounds[1]+bounds[3]*.125);
+            int[] events={java.awt.event.MouseEvent.MOUSE_PRESSED,java.awt.event.MouseEvent.MOUSE_DRAGGED,java.awt.event.MouseEvent.MOUSE_RELEASED};
+            for(int i=0;i<events.length;i++)canvas.dispatchEvent(new java.awt.event.MouseEvent(canvas,events[i],
+                System.currentTimeMillis(),i==2?0:java.awt.event.InputEvent.BUTTON1_DOWN_MASK,
+                (int)(bounds[0]+bounds[2]*(i==0?.375:.875)),y,1,false,i==1?0:1));
+        });
+        await(()->reviewed(ui));
+        check(project.snapshot()==original,"Pencil preview must leave the native state intact");
+        applyReview();
+        var painted=project.snapshot();
+        var material=painted.materials().get(0);
+        check(material.paintedTileCount()==1 && Arrays.equals(material.originalPng(),Files.readAllBytes(sourcePng)),
+            "One stroke edits one tile and preserves source PNG");
+        var composed=ImageIO.read(new java.io.ByteArrayInputStream(material.png()));
+        for(int x=1;x<4;x++)check(composed.getRGB(x,0)==0xffff00ff,"Pencil interpolates each touched texel");
+        edt(()->button(ui,"undoMesh"));
+        await(()->ready(ui));
+        check(project.snapshot().equals(original),"One undo removes the whole stroke");
+        edt(()->button(ui,"redoMesh"));
+        await(()->ready(ui));
+        check(project.snapshot().equals(painted),"Redo restores the painted layer");
+        edt(()->((JList<?>)field(workspace,"faceList")).setSelectedIndex(10));
+        await(()->{try{return !(boolean)field(ui,"materialRendering") && field(ui,"materialRenderState")==project.snapshot()
+            && ((JLabel)field(ui,"materialRuntime")).getIcon()!=null;}catch(Exception e){throw new RuntimeException(e);}});
+        edt(()->{
+            var pane=((JDialog)field(ui,"materialDialog")).getContentPane();
+            var shot=new BufferedImage(pane.getWidth(),pane.getHeight(),BufferedImage.TYPE_INT_ARGB);
+            var graphics=shot.createGraphics();
+            try{pane.printAll(graphics);}finally{graphics.dispose();}
+            ImageIO.write(shot,"png",output.resolve("painted-workspace.png").toFile());
+            button(ui,"saveMesh");
+            check(ui.exportObj(output.resolve("painted.obj.zip")),"Painted OBJ bundle export");
+            button(ui,"apply");
+        });
+        await(()->published.get()!=null);
+        var archive=ImportedAssetLibrary.root().resolve(published.get()+".authoring.btop");
+        check(EditorTopologyProject.open(archive).snapshot().equals(painted),"Published archive retains editable tiles");
+        var game=GlbProps.model(published.get());
+        check(GlbProps.sampleRgba(game.triangles().get(10).material(),.375,.125)==0xffff00ff,"Game samples painted texel");
+        Files.copy(archive,output.resolve("painted.btop"),StandardCopyOption.REPLACE_EXISTING);
+        Files.write(output.resolve("painted.png"),material.png());
+        published.set(null);
+        edt(()->button(ui,"undoMesh"));
+        await(()->ready(ui));
+        check(project.snapshot().equals(original),"Return fixture to the original textured state after publication");
     }
     private static void near(double actual,double expected) {
         check(Math.abs(actual-expected)<1e-5,"Expected "+expected+", got "+actual);

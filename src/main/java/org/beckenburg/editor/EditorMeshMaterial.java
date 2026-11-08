@@ -13,6 +13,8 @@ public final class EditorMeshMaterial {
     public record Color(double r,double g,double b,double a){public Color{for(double c:new double[]{r,g,b,a})if(!Double.isFinite(c)||c<0||c>1)throw new IllegalArgumentException("Invalid material color factor");}}
     private final String key,name;
     private final byte[] png;
+    private final EditorPaintLayer paint;
+    private java.lang.ref.WeakReference<byte[]> composited;
     private final int width,height,wrapS,wrapT;
     private final Color color;
     private final Alpha alpha;
@@ -27,17 +29,57 @@ public final class EditorMeshMaterial {
         if(!wrap(wrapS)||!wrap(wrapT)||!Double.isFinite(cutoff)||cutoff<0||cutoff>1)throw new IOException("Invalid material sampler/alpha cutoff");
         var props=new TreeMap<String,String>();if(properties==null||properties.size()>32)throw new IOException("Material property budget exceeded");
         for(var e:properties.entrySet()){String k=e.getKey(),v=e.getValue();if(k==null||!k.matches("[A-Za-z0-9_.-]{1,64}")||v==null||v.length()>4096||v.chars().anyMatch(c->Character.isISOControl(c)&&c!='\t'))throw new IOException("Invalid material provenance property");props.put(k,v);}
-        this.key=key;this.name=name;this.png=png.clone();width=w;height=h;this.color=Objects.requireNonNull(color);this.alpha=Objects.requireNonNull(alpha);this.origin=Objects.requireNonNull(origin);this.wrapS=wrapS;this.wrapT=wrapT;this.cutoff=cutoff;sourceProperties=Collections.unmodifiableMap(props);
+        this.key=key;this.name=name;this.png=png.clone();paint=EditorPaintLayer.EMPTY;width=w;height=h;this.color=Objects.requireNonNull(color);this.alpha=Objects.requireNonNull(alpha);this.origin=Objects.requireNonNull(origin);this.wrapS=wrapS;this.wrapT=wrapT;this.cutoff=cutoff;sourceProperties=Collections.unmodifiableMap(props);
+    }
+    private EditorMeshMaterial(EditorMeshMaterial base,String key,EditorPaintLayer paint) {
+        this.key=key;name=base.name;png=base.png;this.paint=paint;width=base.width;height=base.height;
+        color=base.color;alpha=base.alpha;origin=base.origin;cutoff=base.cutoff;wrapS=base.wrapS;wrapT=base.wrapT;
+        sourceProperties=base.sourceProperties;
+    }
+    EditorMeshMaterial pencil(String key,Collection<Integer> texels,int color) {
+        if(color!=0 && (color>>>24)!=255)throw new IllegalArgumentException("Pencil requires an opaque color");
+        var layer=paint.stroke(width,height,texels,color);
+        return layer==paint?this:new EditorMeshMaterial(this,key,layer);
+    }
+    public int paintedTileCount(){return paint.size();}
+    public byte[] originalPng(){return png.clone();}
+    public synchronized byte[] png(){
+        if(paint.size()==0)return originalPng();
+        byte[] cached=composited==null?null:composited.get();
+        if(cached==null)try{
+            var base=ImageIO.read(new ByteArrayInputStream(png));
+            var image=new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
+            image.setRGB(0,0,width,height,base.getRGB(0,0,width,height,null,0,width),0,width);
+            paint.draw(image);
+            var output=new ByteArrayOutputStream();
+            if(!ImageIO.write(image,"png",output))throw new IOException("PNG encoder unavailable");
+            cached=output.toByteArray();composited=new java.lang.ref.WeakReference<>(cached);
+        }catch(IOException invalid){throw new UncheckedIOException(invalid);}
+        return cached.clone();
+    }
+    static boolean hasPaint(List<EditorMeshMaterial> materials){return materials.stream().anyMatch(m->m.paint.size()>0);}
+    static void writePaint(DataOutputStream out,List<EditorMeshMaterial> materials)throws IOException{
+        for(var m:materials)m.paint.write(out);
+    }
+    static List<EditorMeshMaterial> readPaint(DataInputStream in,List<EditorMeshMaterial> materials)throws IOException{
+        var result=new ArrayList<EditorMeshMaterial>();
+        int remaining=EditorPaintLayer.MAX_TILES;
+        for(var m:materials){
+            var layer=EditorPaintLayer.read(in,m.width,m.height,remaining);
+            remaining-=layer.size();
+            result.add(layer.size()==0?m:new EditorMeshMaterial(m,m.key,layer));
+        }
+        return List.copyOf(result);
     }
     private static boolean wrap(int value){return value==10497||value==33071||value==33648;}
-    public String key(){return key;}public String name(){return name;}public byte[] png(){return png.clone();}public int width(){return width;}public int height(){return height;}public int wrapS(){return wrapS;}public int wrapT(){return wrapT;}public Color color(){return color;}public Alpha alpha(){return alpha;}public double cutoff(){return cutoff;}public Origin origin(){return origin;}public Map<String,String> sourceProperties(){return sourceProperties;}
+    public String key(){return key;}public String name(){return name;}public int width(){return width;}public int height(){return height;}public int wrapS(){return wrapS;}public int wrapT(){return wrapT;}public Color color(){return color;}public Alpha alpha(){return alpha;}public double cutoff(){return cutoff;}public Origin origin(){return origin;}public Map<String,String> sourceProperties(){return sourceProperties;}
     @Override public String toString(){return name;}
-    @Override public boolean equals(Object o){return o instanceof EditorMeshMaterial m&&key.equals(m.key)&&name.equals(m.name)&&Arrays.equals(png,m.png)&&color.equals(m.color)&&wrapS==m.wrapS&&wrapT==m.wrapT&&alpha==m.alpha&&cutoff==m.cutoff&&origin==m.origin&&sourceProperties.equals(m.sourceProperties);}
-    @Override public int hashCode(){return Objects.hash(key,name,Arrays.hashCode(png),color,wrapS,wrapT,alpha,cutoff,origin,sourceProperties);}
+    @Override public boolean equals(Object o){return o instanceof EditorMeshMaterial m&&key.equals(m.key)&&name.equals(m.name)&&Arrays.equals(png,m.png)&&paint.equals(m.paint)&&color.equals(m.color)&&wrapS==m.wrapS&&wrapT==m.wrapT&&alpha==m.alpha&&cutoff==m.cutoff&&origin==m.origin&&sourceProperties.equals(m.sourceProperties);}
+    @Override public int hashCode(){return Objects.hash(key,name,Arrays.hashCode(png),paint,color,wrapS,wrapT,alpha,cutoff,origin,sourceProperties);}
     public static void validateTable(List<EditorMeshMaterial> materials){
-        if(materials.size()>64)throw new IllegalArgumentException("Material count budget exceeded");var keys=new HashSet<String>();long bytes=0,pixels=0,props=0;
-        for(var m:materials){if(m==null||m.key.isEmpty()||!keys.add(m.key))throw new IllegalArgumentException("Duplicate/missing material identity");bytes+=m.png.length;pixels+=(long)m.width*m.height;for(var value:m.sourceProperties.values())props+=value.length();}
-        if(bytes>4_000_000||pixels>16_777_216||props>262144)throw new IllegalArgumentException("Native material memory budget exceeded");
+        if(materials.size()>64)throw new IllegalArgumentException("Material count budget exceeded");var keys=new HashSet<String>();long bytes=0,pixels=0,props=0,tiles=0;
+        for(var m:materials){if(m==null||m.key.isEmpty()||!keys.add(m.key))throw new IllegalArgumentException("Duplicate/missing material identity");tiles+=m.paint.size();bytes+=m.png.length;pixels+=(long)m.width*m.height;for(var value:m.sourceProperties.values())props+=value.length();}
+        if(tiles>EditorPaintLayer.MAX_TILES||bytes>4_000_000||pixels>16_777_216||props>262144)throw new IllegalArgumentException("Native material memory budget exceeded");
     }
     static void writeTable(DataOutputStream out,List<EditorMeshMaterial> values)throws IOException{
         out.writeInt(values.size());for(var m:values){out.writeUTF(m.key);out.writeUTF(m.name);out.writeInt(m.png.length);out.write(m.png);out.writeDouble(m.color.r());out.writeDouble(m.color.g());out.writeDouble(m.color.b());out.writeDouble(m.color.a());out.writeInt(m.wrapS);out.writeInt(m.wrapT);out.writeUTF(m.alpha.name());out.writeDouble(m.cutoff);out.writeUTF(m.origin.name());out.writeInt(m.sourceProperties.size());for(var p:m.sourceProperties.entrySet()){out.writeUTF(p.getKey());out.writeUTF(p.getValue());}}
