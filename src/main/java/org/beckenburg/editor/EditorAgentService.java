@@ -26,6 +26,10 @@ public final class EditorAgentService<S> {
     public interface SelectionSource { Selection selection(); }
     public interface WalkingCollision { boolean walkable(double x,double y,double z); }
     public interface NodeFocus { void focus(EditorProject.Node node); }
+    public interface PropertySource { Map<String,Object> properties(EditorProject.Node node); }
+    public record NodeProperties(EditorProject.Node node,Map<String,Object> fields){
+        public NodeProperties { fields=Map.copyOf(fields); }
+    }
     public record Walkability(double x,double y,double z,boolean walkable){}
     public record Inspection<S>(String sceneId, long revision, Path document,
                                 S state, List<EditorProject.Node> hierarchy,
@@ -108,6 +112,12 @@ public final class EditorAgentService<S> {
     }
     public boolean supportsSelection(){capable(Capability.INSPECT);return host instanceof SelectionSource;}
     public boolean supportsWalkability(){capable(Capability.INSPECT);return host instanceof WalkingCollision;}
+    public boolean supportsProperties(){capable(Capability.INSPECT);return host instanceof PropertySource;}
+    public Evidence<NodeProperties> properties(long expected,String id){
+        var actual=node(expected,id).result();
+        if(host instanceof PropertySource source)return evidence(new NodeProperties(actual,source.properties(actual)));
+        throw new UnsupportedOperationException("Host does not expose native node properties");
+    }
     public boolean supportsFocus(){capable(Capability.INSPECT);return host instanceof NodeFocus;}
     public Evidence<EditorProject.Node> focus(long expected,String id){
         var node=node(expected,id);

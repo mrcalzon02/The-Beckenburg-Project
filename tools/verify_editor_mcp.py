@@ -23,6 +23,7 @@ async def verify(scope):
         assert ("reopen" in tools) == (scope in ("save", "material-save"))
         assert ("playtest" in tools) == (scope in ("edit", "save"))
         assert ("check_walkability" in tools) == (scope in ("observe", "edit", "save"))
+        assert ("inspect_properties" in tools) == (scope in ("observe", "edit", "save"))
         assert ("recent_actions" in tools) == (scope not in ("observe", "material"))
         assert set(tools["verify_position"].inputSchema["required"]) == {"revision", "id", "x", "y", "z"}
 
@@ -103,6 +104,8 @@ async def verify(scope):
         key = "start" if castle else "prop-0"
         node = (await call("inspect_nodes", revision=revision, ids=[key]))["result"][0]
         xyz = {axis: node[axis] for axis in "xyz"}
+        props = (await call("inspect_properties", revision=revision, id=key))["result"]
+        assert props["node"] == node and "yawDegrees" in props["fields"]
         proof = await call("verify_position", revision=revision, id=key, **xyz)
         assert proof["result"]["verified"]
         if scope == "observe":
@@ -288,6 +291,52 @@ async def verify(scope):
                 (output / "mcp-cellar-passage.json").write_text(json.dumps(
                     {"source": os.environ.get("GITHUB_SHA"), "baseline": baseline, "blockedLanding": blocked,
                      "missingOpening": capped, "restoredRevision": final}, indent=2), encoding="utf-8")
+                async def properties(rev, native_id):
+                    return (await call("inspect_properties", revision=rev, id=native_id))["result"]
+                async def capture_at(rev, name):
+                    captured = await client.call_tool("capture_viewport", {"revision": rev})
+                    assert not captured.isError
+                    pixels = base64.b64decode(captured.content[0].data, validate=True)
+                    (output / name).write_bytes(pixels)
+                    return pixels
+                await call("focus_node", revision=final, id=prop_id)
+                original_prop = await properties(final, prop_id)
+                lamp_id = "mcp-upper-lodging-light"
+                lamp = dict(operation="place-ceiling-lamp", arguments=dict(id=lamp_id,
+                            x=spot["x"]+.65, floorY=spot["y"], z=spot["z"]+.4, radius=8, power=0))
+                def field(kind, native_id, name, value):
+                    return dict(operation=f"set-{kind}-field", arguments=dict(id=native_id, field=name, value=value))
+                edits = [lamp, field("prop", prop_id, "SCALE", .92), field("prop", prop_id, "YAW_DEGREES", 30),
+                         field("prop", prop_id, "COLLISION_Z", 1.1)]
+                trial = (await call("edit", revision=final, commands=edits, sequence=50))["revision"]
+                assert not await walk(trial, aisle)
+                transformed = await properties(trial, prop_id)
+                assert transformed["fields"]["scale"] == .92 and abs(transformed["fields"]["yawDegrees"]-30) < 1e-8
+                assert transformed["fields"]["collisionZ"] == 1.1
+                unlit = await capture_at(trial, "mcp-lamp-zero.png")
+                bright = (await call("edit", revision=trial, commands=[field("lamp", lamp_id, "POWER", 8),
+                              field("lamp", lamp_id, "RADIUS", 9)], sequence=51))["revision"]
+                fixture = await properties(bright, lamp_id)
+                assert fixture["fields"]["power"] == 8 and fixture["fields"]["radius"] == 9 and fixture["fields"]["mount"] == "CEILING"
+                assert abs(fixture["node"]["y"] - (spot["y"] + 3.38)) < 1e-8
+                assert await capture_at(bright, "mcp-lamp-powered.png") != unlit
+                removed = (await call("edit", revision=bright, commands=[
+                    dict(operation="remove-lamp", arguments=dict(id=lamp_id)), dict(operation="remove-prop", arguments=dict(id=prop_id))]))["revision"]
+                assert await walk(removed, spot)
+                lit = (await call("undo", revision=removed))["revision"]
+                assert await properties(lit, lamp_id) == fixture
+                await call("save", revision=lit)
+                reverted = (await call("undo", revision=lit))["revision"]
+                assert (await properties(reverted, lamp_id))["fields"]["power"] == 0
+                opened = (await call("reopen", revision=reverted))["revision"]
+                assert await properties(opened, lamp_id) == fixture and await properties(opened, prop_id) == transformed
+                reverted = (await call("undo", revision=opened))["revision"]
+                final = (await call("undo", revision=reverted))["revision"]
+                assert await properties(final, prop_id) == original_prop and await walk(final, aisle)
+                await call("save", revision=final)
+                (output / "mcp-lamp-properties.json").write_text(json.dumps(
+                    {"source": os.environ.get("GITHUB_SHA"), "fixture": fixture, "transformedProp": transformed,
+                     "restoredProp": original_prop, "restoredRevision": final}, indent=2), encoding="utf-8")
         print(f"PASS MCP {scope} {state['sceneId']}: authenticated typed discovery, live readback, resource, diagnostic and PNG")
 
 

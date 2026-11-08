@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
 /** Mission adapter: reads/writes the active authoring session; the supplied
  * HouseMap is the same native game map used by the human editor viewport.
  */
-public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuthoringSession.Snapshot>,EditorAgentService.WalkingCollision {
+public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuthoringSession.Snapshot>,EditorAgentService.WalkingCollision,EditorAgentService.PropertySource {
     private final LevelAuthoringSession session;
     private final Supplier<HouseMap> map;
     private final SceneRenderer renderer;
@@ -28,6 +28,13 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     public LevelAuthoringSession project(){return session;}
     public long revision(){return session.revision();}
     public boolean walkable(double x,double y,double z){return map.get().traversable(x,y,z);}
+    public Map<String,Object> properties(org.beckenburg.editor.EditorProject.Node node){
+        var p=session.prop(session.indexOf(node.id()));
+        var fields=new java.util.LinkedHashMap<String,Object>(Map.of("mesh",p.mesh(),"room",p.room(),"scale",p.scale(),
+            "yawDegrees",Math.toDegrees(p.yaw()),"collisionX",p.halfX(),"collisionZ",p.halfZ(),"height",p.height()));
+        if(p.support()!=null)fields.put("support",p.support());
+        return fields;
+    }
     public EditorAgentService.DiskState compareSaved(LevelAuthoringSession.Snapshot live)throws IOException{
         return session.matchesSaved(live)?EditorAgentService.DiskState.MATCHES:EditorAgentService.DiskState.DIFFERS;
     }

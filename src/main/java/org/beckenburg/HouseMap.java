@@ -9,6 +9,9 @@ public final class HouseMap {
     public static final int WIDTH=128,HEIGHT=128,GRAND_WIDTH=128,GRAND_HEIGHT=128,EXTRACTION_ROOM=14;
     public enum Site { HOUSE,FARMHOUSE,SCHOOL,MANSION,PRISON,ASYLUM,ACADEMY,COLLEGE,CHURCH,HOLLOW_CREEK,USER }
     private final Site site;
+    private volatile List<SafeAreaBarrier.Volume> temporarySafeAreas=List.of();
+    public List<SafeAreaBarrier.Volume> temporarySafeAreas(){return temporarySafeAreas;}
+    public void setTemporarySafeAreas(List<SafeAreaBarrier.Volume> areas){temporarySafeAreas=List.copyOf(areas);}
     private final LevelDefinition level;
     private final SiteTerrain terrain;
     private final AuthoredSitePhysics nativeSite;
@@ -191,7 +194,8 @@ public final class HouseMap {
         return changed;
     }
     public List<Integer> adjacentRooms(int room){checkRoom(room);return level.portalsFrom(room).stream().filter(p->!p.kind().equals("window")).map(p->p.a()==room?p.b():p.a()).filter(next->next!=room).distinct().toList();}
-    public List<Integer> ghostExits(int room){return room==14?List.of():adjacentRooms(room).stream().filter(r->r!=14).toList();}
+    public List<Integer> ghostExits(int room){return room==14?List.of():adjacentRooms(room).stream()
+        .filter(r->r!=14&&SafeAreaBarrier.ghostSpawn(this,r)!=null).toList();}
     public int[] doorBetweenRooms(int a,int b){for(Portal p:level.portals())if(p.joins(a,b)&&p.door())return new int[]{(int)p.x(),(int)p.z()};return null;}
     public boolean doorwayAlongX(int x,int z){return level.portals().stream().anyMatch(p->(int)p.x()==x&&(int)p.z()==z&&!p.alongX());}
     public VanStaging.Position hidingSpot(int room,int density){

@@ -200,6 +200,9 @@ LanGhostHidingBoundaryTest
 MaterialAtlasTest
 TeamCalloutTest
 VanStagingTest
+SafeAreaBarrierTest
+SafeAreaHazeTest
+LanSafeAreaBarrierTest
 VanWheelWellTest
 VanRearFitTest
 VanNavigationVisualTest
@@ -339,6 +342,7 @@ WallLampMountPlateTest
 CastleMuseumConstructionTest
 CastleTesterBedTest
 CastleFireplaceTest
+
 CastleResidentAnimationTest
 EntityFootShadowTest
 SpriteFloorContactTest

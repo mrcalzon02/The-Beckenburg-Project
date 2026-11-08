@@ -404,10 +404,39 @@ public final class CastleLevelEdits {
     }
     /** Place a new model with the Castle palette's scale, orientation and collision footprint. */
     synchronized void placePaletteProp(String id,String mesh,double x,double y,double z){
+        requireNewId(id);
+        put(new Prop(id,mesh,x,y,z,.8,0,.4,.4,y>2));
+    }
+    private void requireNewId(String id){
         if(props.containsKey(id)||surfaces.containsKey(id)||lamps.containsKey(id)||"start".equals(id)||
             stations.keySet().stream().anyMatch(station->station.name().equals(id)))
             throw new IllegalArgumentException("Castle hierarchy ID already in use: "+id);
-        put(new Prop(id,mesh,x,y,z,.8,0,.4,.4,y>2));
+    }
+    synchronized void placeCeilingLamp(String id,double x,double floorY,double z,double radius,double power){
+        requireNewId(id);
+        if(!Double.isFinite(floorY)||floorY< -12||floorY>24)throw new IllegalArgumentException("Invalid editor work plane");
+        double y=Math.max(CastleWorldBounds.MIN_Y,Math.min(9,floorY+3.38));
+        put(new Lamp(id,"ceiling_lamp_1_on","ceiling_lamp_1_off",x,y,z,.8,0,CastleHubDecor.Mount.CEILING,radius,power));
+    }
+    enum Field { X,Y,Z,SCALE,YAW_DEGREES,COLLISION_X,COLLISION_Z,RADIUS,POWER }
+    synchronized void editProp(String id,Map<Field,Double> fields){
+        var p=props.get(id);
+        if(p==null||fields.isEmpty()||fields.containsKey(Field.RADIUS)||fields.containsKey(Field.POWER))
+            throw new IllegalArgumentException("Unknown Castle prop or property");
+        put(new Prop(id,p.mesh(),fields.getOrDefault(Field.X,p.x()),fields.getOrDefault(Field.Y,p.y()),fields.getOrDefault(Field.Z,p.z()),
+            fields.getOrDefault(Field.SCALE,p.scale()),yaw(fields,p.yaw()),fields.getOrDefault(Field.COLLISION_X,p.halfX()),
+            fields.getOrDefault(Field.COLLISION_Z,p.halfZ()),p.upper()));
+    }
+    synchronized void editLamp(String id,Map<Field,Double> fields){
+        var l=lamps.get(id);
+        if(l==null||fields.isEmpty()||fields.containsKey(Field.COLLISION_X)||fields.containsKey(Field.COLLISION_Z))
+            throw new IllegalArgumentException("Unknown Castle lamp or property");
+        put(new Lamp(id,l.on(),l.off(),fields.getOrDefault(Field.X,l.x()),fields.getOrDefault(Field.Y,l.y()),fields.getOrDefault(Field.Z,l.z()),
+            fields.getOrDefault(Field.SCALE,l.scale()),yaw(fields,l.yaw()),l.mount(),fields.getOrDefault(Field.RADIUS,l.radius()),
+            fields.getOrDefault(Field.POWER,l.power())));
+    }
+    private static double yaw(Map<Field,Double> fields,double previous){
+        var degrees=fields.get(Field.YAW_DEGREES);return degrees==null?previous:Math.toRadians(degrees);
     }
     public synchronized void removeProp(String id){if(props.remove(id)!=null)revision++;}
     public synchronized void put(Lamp light){

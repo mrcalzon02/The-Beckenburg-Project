@@ -19,6 +19,7 @@ public final class EditorObservationBridge implements AutoCloseable {
     private final Set<EditorAgentService.Capability> capabilities;
     private final boolean selection;
     private final boolean walkingCollision;
+    private final boolean properties;
     private final boolean focus;
     private final Set<String> knownOperations;
     private final EditorRequestJournal<Reply> requests=new EditorRequestJournal<>(r->r.bytes.length);
@@ -37,6 +38,7 @@ public final class EditorObservationBridge implements AutoCloseable {
         knownOperations=Set.copyOf(summary.operations());
         selection=service.supportsSelection();
         walkingCollision=service.supportsWalkability();
+        properties=service.supportsProperties();
         focus=service.supportsFocus();
         var secret=new byte[32];new SecureRandom().nextBytes(secret);
         token=Base64.getUrlEncoder().withoutPadding().encodeToString(secret);
@@ -130,6 +132,7 @@ public final class EditorObservationBridge implements AutoCloseable {
         var routes=new ArrayList<>(List.of("/summary","/revision","/hierarchy","/node","/nodes","/changes","/assets","/verify-position"));
         if(selection)routes.add("/selection");
         if(walkingCollision)routes.add("/walkability");
+        if(properties)routes.add("/properties");
         if(scope!=Scope.OBSERVE)routes.add("/actions");
         if(capabilities.contains(EditorAgentService.Capability.TEST))routes.add("/test");
         if(capabilities.contains(EditorAgentService.Capability.CAPTURE))routes.add("/capture");
@@ -207,6 +210,10 @@ public final class EditorObservationBridge implements AutoCloseable {
                 value=service.walkability(revision,Double.parseDouble(args.get("x")),Double.parseDouble(args.get("y")),Double.parseDouble(args.get("z")));
             }
             case "/node" -> {requireKeys(args,"id");value=service.node(revision,args.get("id"));}
+            case "/properties" -> {
+                requireKeys(args,"id");if(!properties)throw new IllegalArgumentException();
+                value=service.properties(revision,args.get("id"));
+            }
             case "/verify-position" -> {
                 requireKeys(args,"id","x","y","z");
                 value=service.verifyPosition(revision,args.get("id"),Double.parseDouble(args.get("x")),Double.parseDouble(args.get("y")),Double.parseDouble(args.get("z")));

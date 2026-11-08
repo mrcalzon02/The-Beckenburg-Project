@@ -20,6 +20,8 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import org.beckenburg.CastleLevelEdits.Field;
 import java.util.Set;
 
 /** Actual Java 17, game-rendered 3D editor, not an in-game placeholder.
@@ -809,8 +811,7 @@ public final class DeveloperLevelEditor extends JPanel {
         double px=renderer.x+Math.sin(renderer.yaw)*2;
         double pz=renderer.z+Math.cos(renderer.yaw)*2;
         String id="light"+System.nanoTime();
-        operate(()->data.put(new CastleLevelEdits.Lamp(id,"ceiling_lamp_1_on",
-            "ceiling_lamp_1_off",px,3.38,pz,.8,0,CastleHubDecor.Mount.CEILING,9.8,2.5)));
+        operate(()->data.placeCeilingLamp(id,px,0,pz,9.8,2.5));
         refresh();selectId("LAMP",id);
     }
     private void remove(){
@@ -895,16 +896,12 @@ public final class DeveloperLevelEditor extends JPanel {
         operate(()->{
             switch(r.kind){
                 case "PROP" ->{
-                    var old=data.props().stream().filter(p->p.id().equals(r.id)).findFirst().orElseThrow();
-                    data.put(new CastleLevelEdits.Prop(r.id,old.mesh(),value(x),value(y),
-                        value(z),value(scale),Math.toRadians(value(yaw)),
-                        value(width),value(depth),old.upper()));
+                    data.editProp(r.id,Map.of(Field.X,value(x),Field.Y,value(y),Field.Z,value(z),Field.SCALE,value(scale),
+                        Field.YAW_DEGREES,value(yaw),Field.COLLISION_X,value(width),Field.COLLISION_Z,value(depth)));
                 }
                 case "LAMP" ->{
-                    var old=data.lamps().stream().filter(p->p.id().equals(r.id)).findFirst().orElseThrow();
-                    data.put(new CastleLevelEdits.Lamp(r.id,old.on(),old.off(),value(x),
-                        value(y),value(z),value(scale),Math.toRadians(value(yaw)),
-                        old.mount(),value(radius),value(power)));
+                    data.editLamp(r.id,Map.of(Field.X,value(x),Field.Y,value(y),Field.Z,value(z),Field.SCALE,value(scale),
+                        Field.YAW_DEGREES,value(yaw),Field.RADIUS,value(radius),Field.POWER,value(power)));
                 }
                 case "SURFACE" -> {
                     var old=data.surfaces().stream().filter(v->v.id().equals(r.id))
@@ -1282,10 +1279,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private void addLamp(Point target){
         if(mission!=null){status.setText("Mission fixtures use authored level light sockets");return;}
         String id="light"+System.nanoTime();
-        operate(()->data.put(new CastleLevelEdits.Lamp(id,"ceiling_lamp_1_on",
-            "ceiling_lamp_1_off",target.x,clamp(value(workPlane)+3.38,CastleWorldBounds.MIN_Y,9),
-            target.z,.8,0,CastleHubDecor.Mount.CEILING,
-            value(radius),value(power))));
+        operate(()->data.placeCeilingLamp(id,target.x,value(workPlane),target.z,value(radius),value(power)));
         refresh();selectId("LAMP",id);
     }
     private void duplicate(){

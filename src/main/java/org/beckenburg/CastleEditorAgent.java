@@ -10,7 +10,7 @@ import java.util.Map;
 import javax.imageio.ImageIO;
 
 /** Adapter for the same singleton consumed by CastleHubMap and SceneRenderer. */
-public final class CastleEditorAgent implements EditorAgentService.Host<CastleLevelEdits.Snapshot>,EditorAgentService.WalkingCollision,EditorAgentService.NodeFocus {
+public final class CastleEditorAgent implements EditorAgentService.Host<CastleLevelEdits.Snapshot>,EditorAgentService.WalkingCollision,EditorAgentService.NodeFocus,EditorAgentService.PropertySource {
     private final CastleLevelEdits scene=CastleLevelEdits.current();
     private final CastleEditorProject project;
     private final CastleHubMap map;
@@ -123,20 +123,50 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
         renderer.yaw=Math.atan2(x-renderer.x,z-renderer.z);renderer.pitch=-.12;
         renderer.setEditorSelection(x,y,z);
     }
-    public List<String> operations(){return List.of("set-spawn","put-surface","remove-surface","place-prop","set-door","set-nav-cell");}
-    private static final Map<String,Map<String,String>> PARAMETERS=Map.of(
-        "set-spawn",Map.of("x","number","z","number","yaw","number"),
-        "put-surface",Map.of("id","string","kind",String.join("|",java.util.Arrays.stream(CastleLevelEdits.Kind.values()).map(Enum::name).toList()),
-            "x0","number","z0","number","x1","number","z1","number","base","number","height","number","material","integer"),
-        "remove-surface",Map.of("id","string"),
-        "place-prop",Map.of("id","string","mesh","string","x","number","y","number","z","number"),
-        "set-door",Map.of("slot","string","leaf","EMPTY|WOOD|PORTCULLIS"),
-        "set-nav-cell",Map.of("x","integer","z","integer","state","BLOCKED|CLEAR"));
+    public Map<String,Object> properties(EditorProject.Node node){
+        return switch(node.kind()){
+            case "PROP" -> {
+                var p=scene.propById(node.id());
+                yield Map.of("mesh",p.mesh(),"scale",p.scale(),"yawDegrees",Math.toDegrees(p.yaw()),
+                    "collisionX",p.halfX(),"collisionZ",p.halfZ(),"upper",p.upper());
+            }
+            case "LAMP" -> {
+                var l=scene.lampById(node.id());
+                yield Map.of("on",l.on(),"off",l.off(),"scale",l.scale(),"yawDegrees",Math.toDegrees(l.yaw()),
+                    "mount",l.mount().name(),"radius",l.radius(),"power",l.power());
+            }
+            case "SPAWN" -> Map.of("yawDegrees",Math.toDegrees(scene.spawn()[2]));
+            case "STATION" -> Map.of();
+            default -> {
+                var s=scene.surfaceById(node.id());
+                yield Map.of("x0",s.x0(),"z0",s.z0(),"x1",s.x1(),"z1",s.z1(),"base",s.base(),"height",s.height(),"material",s.material());
+            }
+        };
+    }
+    public List<String> operations(){return PARAMETERS.keySet().stream().sorted().toList();}
+    private static final Map<String,Map<String,String>> PARAMETERS=Map.ofEntries(
+        Map.entry("set-spawn",Map.of("x","number","z","number","yaw","number")),
+        Map.entry("put-surface",Map.of("id","string","kind",String.join("|",java.util.Arrays.stream(CastleLevelEdits.Kind.values()).map(Enum::name).toList()),
+            "x0","number","z0","number","x1","number","z1","number","base","number","height","number","material","integer")),
+        Map.entry("remove-surface",Map.of("id","string")),
+        Map.entry("place-prop",Map.of("id","string","mesh","string","x","number","y","number","z","number")),
+        Map.entry("set-door",Map.of("slot","string","leaf","EMPTY|WOOD|PORTCULLIS")),
+        Map.entry("set-nav-cell",Map.of("x","integer","z","integer","state","BLOCKED|CLEAR")),
+        Map.entry("place-ceiling-lamp",Map.of("id","string","x","number","floorY","number","z","number","radius","number","power","number")),
+        Map.entry("set-prop-field",Map.of("id","string","field","X|Y|Z|SCALE|YAW_DEGREES|COLLISION_X|COLLISION_Z","value","number")),
+        Map.entry("set-lamp-field",Map.of("id","string","field","X|Y|Z|SCALE|YAW_DEGREES|RADIUS|POWER","value","number")),
+        Map.entry("remove-prop",Map.of("id","string")),Map.entry("remove-lamp",Map.of("id","string")));
     public Map<String,Map<String,String>> operationParameters(){return PARAMETERS;}
     public void apply(String operation, Map<String,String> args){
         var fields=PARAMETERS.get(operation);
         if(fields==null || !args.keySet().equals(fields.keySet()))throw new IllegalArgumentException("Incorrect fields for "+operation);
         switch(operation){
+            case "place-ceiling-lamp" -> scene.placeCeilingLamp(args.get("id"),number(args,"x"),number(args,"floorY"),
+                number(args,"z"),number(args,"radius"),number(args,"power"));
+            case "set-prop-field" -> scene.editProp(requireKind(args.get("id"),"PROP"),fieldChange(args));
+            case "set-lamp-field" -> scene.editLamp(requireKind(args.get("id"),"LAMP"),fieldChange(args));
+            case "remove-prop" -> scene.removeProp(requireKind(args.get("id"),"PROP"));
+            case "remove-lamp" -> scene.removeLamp(requireKind(args.get("id"),"LAMP"));
             case "set-door" -> scene.setSocketLeaf(args.get("slot"),CastleDoorSlots.Type.valueOf(args.get("leaf")));
             case "set-nav-cell" -> {
                 boolean blocked=switch(args.get("state")){
@@ -162,6 +192,13 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
         }
     }
     private static double number(Map<String,String> args,String key){return Double.parseDouble(args.get(key));}
+    private String requireKind(String id,String kind){
+        if(!project.node(id).kind().equals(kind))throw new IllegalArgumentException("Expected Castle "+kind);
+        return id;
+    }
+    private static Map<CastleLevelEdits.Field,Double> fieldChange(Map<String,String> args){
+        return Map.of(CastleLevelEdits.Field.valueOf(args.get("field")),number(args,"value"));
+    }
     public void validate(){
         for(var node:project.hierarchy())
             if(!Double.isFinite(node.x())||!Double.isFinite(node.y())||!Double.isFinite(node.z()))

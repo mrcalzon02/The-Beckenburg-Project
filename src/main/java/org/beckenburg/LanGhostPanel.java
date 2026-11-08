@@ -38,6 +38,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     private String ghostSpecies="UNKNOWN",behaviorName="RESTLESS";
     private GhostIdentity.Type revealedType;
     private SceneRenderer.Apparition companion; // actual host AI sister, never a player-offset placeholder
+    private SafeAreaBarrier.Receiver safeAreas=new SafeAreaBarrier.Receiver();
 
     public LanGhostPanel(LanClient client){
         this.client=Objects.requireNonNull(client);
@@ -62,6 +63,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 buildingAudio.setMap(map);audio.clearFixtures();
                 feedback="SPECTRAL TERRITORY: "+map.site();
                 companion=null;camera.setAdditionalGhostBodies(List.of());
+                safeAreas=new SafeAreaBarrier.Receiver();
+            }else if(p.get(0).equals("SAFEBEGIN")||p.get(0).equals("SAFEAREA")||p.get(0).equals("SAFEEND")){
+                safeAreas.accept(map,p);
             }else if(p.size()==5&&p.get(0).equals("DEVICE_SOUND")){
                 var device=map.fixtures().state(LanProtocol.integer(p.get(1),1,100));audio.playFixture(device,new LanSound.CueEvent(device.kind().cue(),LanProtocol.integer(p.get(2),-100,100),LanProtocol.integer(p.get(3),0,100),LanProtocol.integer(p.get(4),0,99999999)));
             }else if(p.size()==6&&p.get(0).equals("FIXTURE")){

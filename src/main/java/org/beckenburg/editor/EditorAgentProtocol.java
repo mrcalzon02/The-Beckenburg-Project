@@ -73,13 +73,14 @@ public final class EditorAgentProtocol {
             }else{
                 if(parts.length<2)throw new IllegalArgumentException("Expected scene revision");
                 long revision=Long.parseLong(parts[1]);
-                int expected=switch(command){case "edit","batch","nodes"->-1;case "capture","playtest","test","node","focus"->3;case "hierarchy","changes","assets"->4;case "walkability"->5;case "verify-position"->6;default->2;};
+                int expected=switch(command){case "edit","batch","nodes"->-1;case "capture","playtest","test","node","focus","properties"->3;case "hierarchy","changes","assets"->4;case "walkability"->5;case "verify-position"->6;default->2;};
                 if((expected>=0&&parts.length!=expected)||(expected<0&&parts.length<3))
                     throw new IllegalArgumentException("Wrong argument count");
                 result=switch(command){
                     case "edit" -> service.transact(revision, java.util.List.of(parseEdit(parts, 2, parts.length)));
                     case "batch" -> service.transact(revision, parseBatch(parts,2));
                     case "node" -> service.node(revision,parts[2]);
+                    case "properties" -> service.properties(revision,parts[2]);
                     case "focus" -> service.focus(revision,parts[2]);
                     case "selection" -> service.selection(revision);
                     case "walkability" -> service.walkability(revision,Double.parseDouble(parts[2]),Double.parseDouble(parts[3]),Double.parseDouble(parts[4]));

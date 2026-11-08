@@ -123,6 +123,12 @@ def server(editor: LiveEditor):
             """Check standing foot coordinates with the active game's walking collision."""
             return editor.call("/walkability", dict(revision=revision, x=x, y=y, z=z))
 
+    if "/properties" in summary["routes"]:
+        @native_tool
+        def inspect_properties(revision: int, id: str) -> str:
+            """Read the native inspector fields of a single hierarchy object."""
+            return editor.call("/properties", dict(revision=revision, id=id))
+
     @native_tool
     def hierarchy(revision: int, offset: int = 0, limit: int = 32) -> str:
         """Read up to 64 hierarchy rows in editor order."""

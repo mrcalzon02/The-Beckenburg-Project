@@ -38,20 +38,6 @@ Evidence and verification: EditorAgentGuiTest failed at aa4b8956 on the Castle-o
 
 Older-map obligation: All mission sites share this selection path. Desktop parity was verified directly for House and Castle.
 
-### DEV-267 — Hunters stay upright after damage and incapacitation
-
-**Status:** fixed-scoped; reaction assets, real TCP and native OpenGL review pass; installed acceptance pending · **Affected:** Cleric, Observer and Demonologist world sprites, all six hunter seats and hunter camera lenses
-
-No pain pose is selected for real damage and a downed teammate retains their last standing/walking cutout.
-
-Cause / uncertainty: Only locomotion poses exist; the host stops publishing dead bodies, and the hunter-down view accepts only three seat IDs.
-
-Fix / next action: Add four directional pain cutouts and one overhead body texture per class. Broadcast timed pain only after actual host health loss, retain downed BODY/posture snapshots to hunters, render bodies as horizontal floor cards, and share state with video/photo views. Make duplicate down snapshots idempotent; preserve ghost privacy and reset on site/departure.
-
-Evidence and verification: development/quality/evidence/hunter-reactions-2026-11-07/; fifteen validated transparent sprites, real TCP damage/down/privacy checks, seven focused regressions and six real native RTX 5070 pain/body captures. Initial Demonologist backdrop rejected and repaired as a separate alpha-v2 source.
-
-Older-map obligation: Shared hunter rendering applies across maps. Review captures cover the actual House; floor cards use local horizontal support and are not ragdolls or a sloped-terrain corpse mesh.
-
 ### DEV-268 — Committed Markdown development logs contain non-UTF8 Windows punctuation bytes
 
 **Status:** fixed-scoped; UTF-8 ledger decode verified · **Affected:** development/quality/DEFECT_LEDGER.md and development/RECOVERY_PLAN_2026-10-25.md
@@ -65,6 +51,20 @@ Fix / next action: Normalize invalid legacy bytes to their equivalent Unicode pu
 Evidence and verification: Baseline 62c6a66f contains invalid UTF-8 byte 0x97 in both Markdown files; scoped normalization now decodes as UTF-8. The JSON registry was already valid UTF-8.
 
 Older-map obligation: Documentation encoding repair does not certify map fitness or close existing issues.
+
+### DEV-267 — Hunters stay upright after damage and incapacitation
+
+**Status:** fixed-scoped; reaction assets, real TCP and native OpenGL review pass; installed acceptance pending · **Affected:** Cleric, Observer and Demonologist world sprites, all six hunter seats and hunter camera lenses
+
+No pain pose is selected for real damage and a downed teammate retains their last standing/walking cutout.
+
+Cause / uncertainty: Only locomotion poses exist; the host stops publishing dead bodies, and the hunter-down view accepts only three seat IDs.
+
+Fix / next action: Add four directional pain cutouts and one overhead body texture per class. Broadcast timed pain only after actual host health loss, retain downed BODY/posture snapshots to hunters, render bodies as horizontal floor cards, and share state with video/photo views. Make duplicate down snapshots idempotent; preserve ghost privacy and reset on site/departure.
+
+Evidence and verification: development/quality/evidence/hunter-reactions-2026-11-07/; fifteen validated transparent sprites, real TCP damage/down/privacy checks, seven focused regressions and six real native RTX 5070 pain/body captures. Initial Demonologist backdrop rejected and repaired as a separate alpha-v2 source.
+
+Older-map obligation: Shared hunter rendering applies across maps. Review captures cover the actual House; floor cards use local horizontal support and are not ragdolls or a sloped-terrain corpse mesh.
 
 ### DEV-266 — Default player lacks jumping and portable airborne crouch capability
 
@@ -163,6 +163,34 @@ Fix / next action: Rebuild all five standing turnarounds with complete boots and
 Evidence and verification: development/quality/evidence/resident-animation-2026-11-03/ and development/levels/previews/resident-animation-2026-11-04/
 
 Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
+
+### DEV-254 — Safe areas lack a shared animated energy boundary matching ghost exclusion
+
+**Status:** fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending · **Affected:** Shared van at investigation sites, entire Castle HQ, and settled active protective wards
+
+The investigation van has no recognizable sanctuary haze; the old optional arena cue uses rectangular motes rather than a circular fading dome.
+
+Cause / uncertainty: Protection and visualization use separate room/rectangle rules; normal investigations do not enable the prior arena-only presentation.
+
+Fix / next action: Add a shared circular van dome and whole-Castle sanctuary, animated blue cloud/wisp material with continuous wall-to-crown fading, settled-ward reuse, swept host exclusion, protected spawning/combat, Twins handling and public ghost-view snapshots.
+
+Evidence and verification: development/levels/previews/safe-area-barrier/: actual runtime frames and two 12-frame animations. SafeAreaBarrierTest, SafeAreaHazeTest, LanSafeAreaBarrierTest, existing ghost/counter/Twins/van checks and complete TCP round pass. Actual RTX 5070 OpenGL frames pass. Logs: development/quality/evidence/safe-area-barrier-2026-11-03/.
+
+Older-map obligation: All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched.
+
+### DEV-255 — Ward ground seals remain at world Y zero and appear before landing
+
+**Status:** fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending · **Affected:** Shared van at investigation sites, entire Castle HQ, and settled active protective wards
+
+A thrown or upstairs ward can show its seal at ground-floor height rather than at its actual settled support.
+
+Cause / uncertainty: The renderer hardcodes Y .038 and does not distinguish a landed ward from a flying projectile when drawing ground bars.
+
+Fix / next action: Resolve the settled support once for both seal and haze; keep airborne projectiles visible without advertising sanctuary; place upstairs seals at the authoritative floor height.
+
+Evidence and verification: development/levels/previews/safe-area-barrier/: actual runtime frames and two 12-frame animations. SafeAreaBarrierTest, SafeAreaHazeTest, LanSafeAreaBarrierTest, existing ghost/counter/Twins/van checks and complete TCP round pass. Actual RTX 5070 OpenGL frames pass. Logs: development/quality/evidence/safe-area-barrier-2026-11-03/.
+
+Older-map obligation: All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched.
 
 ### DEV-234 — Castle native bounds reject coherent west annex and cellar construction
 
