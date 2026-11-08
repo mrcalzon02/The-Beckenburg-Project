@@ -6,6 +6,34 @@ import java.nio.file.*;
 import java.util.*;
 
 public final class EditorMaterialPencilTest {
+    private static EditorTopologyProject.Face tiny(EditorMeshMaterial material,EditorUvTile tile,long id,int x,int y){
+        var c=new EditorTopologyProject.Corner[3];
+        for(int i=0;i<3;i++)c[i]=new EditorTopologyProject.Corner(id*3+i,
+            tile.nativeU((x+(i==1?.13:.02))/material.width(),material),
+            tile.nativeV((y+(i==2?.13:.02))/material.height(),material));
+        return new EditorTopologyProject.Face(id,"gutter",c[0],c[1],c[2],material.key());
+    }
+    private static void projectionPadding()throws Exception{
+        var png=new ByteArrayOutputStream();
+        javax.imageio.ImageIO.write(new java.awt.image.BufferedImage(12,6,java.awt.image.BufferedImage.TYPE_INT_ARGB),"png",png);
+        for(var origin:EditorMeshMaterial.Origin.values())for(int wrap:List.of(10497,33648,33071)){
+            var m=EditorMeshMaterial.fromPng("gutter.png",png.toByteArray(),wrap,wrap,EditorMeshMaterial.Alpha.OPAQUE,origin);
+            var tile=wrap==33071?EditorUvTile.ORIGIN:new EditorUvTile(-1,3);
+            var faces=List.of(tiny(m,tile,1,2,2),tiny(m,tile,2,6,2));int row=24;
+            var padded=new EditorPaintPadding(m).expand(faces,Set.of(row+2),3);
+            check(padded.contains(row+3) && !padded.contains(row+4) && !padded.contains(row+5) && !padded.contains(row+6),
+                "Protect ties and the competing island");
+            check(padded.contains(row+11)==(wrap==10497),"Padding must honor the source image sampler at its borders");
+            var sliver=tiny(m,tile,3,3,3);
+            var protectedArea=new EditorPaintPadding(m).expand(List.of(faces.get(0),sliver),Set.of(row+2),2);
+            check(!protectedArea.contains(row+12+3),"Protect triangles too small to cover a texel center");
+            if(wrap==33071){
+                var outside=tiny(m,tile,4,-3,2);
+                check(!new EditorPaintPadding(m).expand(List.of(faces.get(0),outside),Set.of(row+2),3).contains(row),
+                    "Off-image clamped geometry owns its border texel");
+            }
+        }
+    }
     private static void check(boolean ok,String message){if(!ok)throw new AssertionError(message);}
     private static void historyBudget() throws IOException {
         var dots=new ArrayList<Integer>();
@@ -205,6 +233,7 @@ public final class EditorMaterialPencilTest {
         }
     }
     public static void main(String[] args)throws Exception {
+        projectionPadding();
         historyBudget();
         blendModes();
         uvDensity();

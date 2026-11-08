@@ -10,15 +10,15 @@ final class MaterialReviewStroke {
     final EditorTopologyProject.Observation observed;
     final long anchor;
     final String layer;
-    final int color;
+    final int color,padding;
     private final String material;
     final Map<Long,Set<Integer>> samples=new LinkedHashMap<>();
     final BitSet coverage=new BitSet();
     private int pairs;
     boolean overflow;
     private Point previous;
-    MaterialReviewStroke(MaterialReviewFrame frame,EditorTopologyProject.Observation observed,long anchor,String layer,int color,String material){
-        this.frame=frame;this.observed=observed;this.anchor=anchor;this.layer=layer;this.color=color;this.material=material;
+    MaterialReviewStroke(MaterialReviewFrame frame,EditorTopologyProject.Observation observed,long anchor,String layer,int color,String material,int padding){
+        this.frame=frame;this.observed=observed;this.anchor=anchor;this.layer=layer;this.color=color;this.material=material;this.padding=padding;
     }
     void sample(Point p){
         if(frame.pixel(p.x,p.y)<0){previous=null;return;}

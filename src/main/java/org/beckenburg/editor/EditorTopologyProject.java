@@ -572,13 +572,17 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         return new EditPreview(this,state,after,revision,label);
     }
     /** Samples come from the game renderer's visible pixels for the captured native revision. */
-    public synchronized EditPreview previewProjectedPencil(Observation observed,long faceId,String layer,
+    public EditPreview previewProjectedPencil(Observation observed,long faceId,String layer,
             Map<Long,? extends Collection<Integer>> samples,int color){
+        return previewProjectedPencil(observed,faceId,layer,samples,color,0);
+    }
+    public EditPreview previewProjectedPencil(Observation observed,long faceId,String layer,
+            Map<Long,? extends Collection<Integer>> samples,int color,int padding){
         if(!isCurrent(observed))throw new IllegalArgumentException("Model changed during projected stroke");
-        var material=boundPaintMaterial(faceId);
+        var before=observed.snapshot();var material=boundPaintMaterial(before,faceId);
         if(samples==null||samples.isEmpty()||samples.size()>65536)throw new IllegalArgumentException("Projected stroke has no paintable faces or exceeds budget");
         var texels=new LinkedHashSet<Integer>();int found=0,count=0;
-        for(var face:state.faces()){
+        for(var face:before.faces()){
             var touched=samples.get(face.id());if(touched==null)continue;
             if(touched.isEmpty())throw new IllegalArgumentException("Projected face has no sampled pixels");
             if(!material.key().equals(face.material()))throw new IllegalArgumentException("Projected stroke crossed the active material");
@@ -590,8 +594,14 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             }
         }
         if(found!=samples.size()||texels.isEmpty())throw new IllegalArgumentException("Projected stroke has no valid native samples");
-        var painted=material.pencil(material.key(),layer,texels,color);
-        return previewMaterialChange(material,painted,"PROJECTED PENCIL / "+found+" faces / "+texels.size()+" texels");
+        var expanded=new EditorPaintPadding(material).expand(before.faces(),texels,padding);
+        var painted=material.pencil(material.key(),layer,expanded,color);
+        int added=expanded.size()-texels.size();
+        synchronized(this){
+            if(!isCurrent(observed))throw new IllegalArgumentException("Model changed during projected stroke");
+            return previewMaterialChange(material,painted,"PROJECTED PENCIL / "+found+" faces / "+texels.size()+" texels"+
+                (padding==0?"":" + "+added+" gutter texels"));
+        }
     }
     private String paintKey(String original){
         String prefix="paint-"+EditorChange.fingerprint(original).substring(0,32);

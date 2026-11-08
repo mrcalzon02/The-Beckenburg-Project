@@ -43,6 +43,7 @@ public final class EditorMaterialWorkspace extends JPanel {
     private Runnable cancelProjection=()->{};
     private Runnable viewChanged=()->{};
     private final JComboBox<String> materialView=new JComboBox<>(new String[]{"Texture / UV","Model projection"});
+    private final JSpinner projectionPadding=new JSpinner(new SpinnerNumberModel(0,0,16,1));
     private final JToggleButton pencil=new JToggleButton("Pencil");
     private final JButton ink=new JButton("Color");
     private Color paintColor=new Color(255,0,255);
@@ -105,7 +106,11 @@ public final class EditorMaterialWorkspace extends JPanel {
         });
         var paintTools=new JPanel(new FlowLayout(FlowLayout.CENTER,4,0));
         pencil.setToolTipText("Drag to preview a one-texel stroke. Shift-drag erases the paint layer. Escape cancels the drag.");
-        paintTools.add(pencil);paintTools.add(ink);heading.add(paintTools,BorderLayout.CENTER);
+        paintTools.add(pencil);paintTools.add(ink);
+        var paddingLabel=new JLabel("Padding");paddingLabel.setLabelFor(projectionPadding);
+        projectionPadding.setToolTipText("Extend this stroke into unused atlas texels. Surface ties stay unchanged.");
+        paintTools.add(paddingLabel);paintTools.add(projectionPadding);
+        paddingLabel.setVisible(false);projectionPadding.setVisible(false);heading.add(paintTools,BorderLayout.CENTER);
         ink.setIcon(new Icon(){
             public int getIconWidth(){return 14;}
             public int getIconHeight(){return 14;}
@@ -158,7 +163,8 @@ public final class EditorMaterialWorkspace extends JPanel {
                 thumbnail.remove(canvas);right.remove(thumbnail);center.remove(runtime);
                 center.add(canvas,BorderLayout.CENTER);right.add(runtime,BorderLayout.SOUTH);
             }
-            tiles.setVisible(!modelView());reset.setVisible(!modelView());revalidate();repaint();
+            tiles.setVisible(!modelView());reset.setVisible(!modelView());paddingLabel.setVisible(modelView());
+            projectionPadding.setVisible(modelView());revalidate();repaint();
             SwingUtilities.invokeLater(viewChanged);
         });
         var bottom=new JPanel(new BorderLayout(4,4));bottom.add(status,BorderLayout.NORTH);bottom.add(commands,BorderLayout.SOUTH);add(bottom,BorderLayout.SOUTH);
@@ -169,6 +175,7 @@ public final class EditorMaterialWorkspace extends JPanel {
     public boolean modelView(){return materialView.getSelectedIndex()==1;}
     public boolean pencilActive(){return pencil.isSelected()&&pencil.isEnabled();}
     public int pencilColor(){return paintColor.getRGB();}
+    public int projectionPadding(){return modelView()?(int)projectionPadding.getValue():0;}
     private static int centerTile(double a,double b,double c){return (int)Math.floor(a/3+b/3+c/3);}
     private void changeTile(){
         tile=new EditorUvTile((Integer)tileU.getValue(),(Integer)tileV.getValue());
@@ -218,6 +225,7 @@ public final class EditorMaterialWorkspace extends JPanel {
         boolean bound=selectedFace!=null && displayed!=null && faceList.getSelectedValue()!=null &&
             faceList.getSelectedValue().material().equals(displayed.key());
         pencil.setEnabled(!pending && bound && pencilAction!=null);
+        projectionPadding.setEnabled(!pending && bound);
         ink.setEnabled(pencil.isEnabled());
         if(!java.util.Objects.equals(material,displayed)){material=displayed;texture=null;if(displayed!=null)try{texture=ImageIO.read(new ByteArrayInputStream(displayed.png()));}catch(IOException bad){throw new UncheckedIOException(bad);}}
         var allowed=tile.forMaterial(material);

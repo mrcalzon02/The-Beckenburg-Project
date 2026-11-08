@@ -887,6 +887,7 @@ public final class G2TexturedModelGuiTest {
             var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");button(workspace,"showAll");
             ((JList<?>)field(workspace,"faceList")).setSelectedIndex(0);
         });reviewPixels();
+        int[] gesture=new int[3];
         edt(()->{
             var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
             var frame=(MaterialReviewFrame)field(ui,"projectedFrame");
@@ -910,6 +911,7 @@ public final class G2TexturedModelGuiTest {
             long first=frame.face(frame.pixel(left,y)),last=frame.face(frame.pixel(right,y));
             check(first!=last && frame.texel(frame.pixel(left,y))==(first==a?69:72) && frame.texel(frame.pixel(right,y))==(last==a?69:72),"Runtime texel provenance");
             int dx=(view.getWidth()-frame.image.getWidth())/2,dy=(view.getHeight()-frame.image.getHeight())/2;
+            gesture[0]=left+dx;gesture[1]=right+dx;gesture[2]=y+dy;
             projectedMouse(view,java.awt.event.MouseEvent.MOUSE_PRESSED,left+dx,y+dy);
             check(((JList<?>)field(workspace,"faceList")).getSelectedIndex()==(first==a?0:1),"3D pick did not select the native face");
             pencil.doClick();
@@ -939,6 +941,19 @@ public final class G2TexturedModelGuiTest {
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(before),"Undo complete projected seam stroke");
         reviewPixels();
         var opaque=(MaterialReviewFrame)field(ui,"projectedFrame");
+        var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+        edt(()->{
+            ((JSpinner)field(workspace,"projectionPadding")).setValue(1);
+            var view=(JLabel)field(ui,"materialRuntime");
+            projectedMouse(view,java.awt.event.MouseEvent.MOUSE_PRESSED,gesture[0],gesture[2]);
+            projectedMouse(view,java.awt.event.MouseEvent.MOUSE_DRAGGED,gesture[1],gesture[2]);
+            projectedMouse(view,java.awt.event.MouseEvent.MOUSE_RELEASED,gesture[1],gesture[2]);
+        });
+        await(()->reviewed(ui));check(project.snapshot()==before,"Gutter preview modified source");
+        applyReview();
+        var padded=ImageIO.read(new java.io.ByteArrayInputStream(project.snapshot().materials().get(0).png()));
+        for(int x=0;x<16;x++)check(padded.getRGB(x,4)==(x>=3&&x<=11?ink:image.getRGB(x,4)),"Padded seam texel "+x);
+        edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(before),"Undo padded stroke");
         for(int x=0;x<8;x++)image.setRGB(x,4,image.getRGB(x,4)&0xffffff);
         var png=new java.io.ByteArrayOutputStream();ImageIO.write(image,"PNG",png);
         var cutout=EditorMeshMaterial.fromPng("cutout.png",png.toByteArray(),10497,10497,

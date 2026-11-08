@@ -670,7 +670,7 @@ public final class AssetImportDialog {
                 var layer=paintLayer.getSelectedValue();
                 if(selectedHit==null||layer==null||shownPaintMaterial==null)return;
                 projectedStroke=new MaterialReviewStroke(frame,topologyProject.observe(),selectedHit.faceId(),layer.id(),
-                    e.isShiftDown()?0:materialWorkspace.pencilColor(),shownPaintMaterial.key());
+                    e.isShiftDown()?0:materialWorkspace.pencilColor(),shownPaintMaterial.key(),materialWorkspace.projectionPadding());
                 projectedStroke.sample(point);
                 materialRuntime.repaint();
             }
@@ -684,7 +684,7 @@ public final class AssetImportDialog {
                     !paintLayer.getSelectedValue().id().equals(stroke.layer) || !materialWorkspace.pencilActive())return;
                 stroke.sample(reviewPoint(e,stroke.frame));
                 if(stroke.overflow){materialWorkspace.previewIssue("Projected stroke exceeds the 65536 face/texel sample limit");return;}
-                if(!stroke.samples.isEmpty())beginMaterialPreview(p->p.previewProjectedPencil(stroke.observed,stroke.anchor,stroke.layer,stroke.samples,stroke.color));
+                if(!stroke.samples.isEmpty())beginMaterialPreview(p->p.previewProjectedPencil(stroke.observed,stroke.anchor,stroke.layer,stroke.samples,stroke.color,stroke.padding));
             }
         };
         materialRuntime.addMouseListener(mouse);materialRuntime.addMouseMotionListener(mouse);
