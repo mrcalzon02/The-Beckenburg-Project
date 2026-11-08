@@ -18,6 +18,7 @@ for path in sorted(set(paths)):
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
     if '/atmosphere-all-levels/' in path:kind='Runtime shared fog and skybox comparison' if 'sheet' in p.name else 'Runtime OpenGL atmosphere capture' if '/opengl/' in path else 'Runtime software atmosphere capture'
+    elif '/roof-construction-batch/' in path:kind='Native exported enclosed roof construction; rough source, no gameplay integration acceptance'
     elif '/access-route-batch/' in path:kind='Rejected partial native route-review selector study; not final review' if '/rejected-' in path else 'Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance'
     elif '/flat-terrain-batch/' in path:kind='Rejected native circulation/terrain construction study' if '/rejected-' in path else 'Native frozen three-site terrain pilot; not runtime' if '/pilot-archive/' in path else 'Actual saved editor terrain inspection; not runtime' if '-saved-terrain' in p.name else 'Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance'
     elif '/arrival-bearing-batch/' in path:kind='Rejected native arrival bearing; terrain intrusion unresolved' if '/rejected-' in path else 'Native paired arrival end-bearing construction; no canonical van/runtime acceptance'

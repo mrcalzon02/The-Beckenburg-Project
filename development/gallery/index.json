@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8849,
+  "count": 8852,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -81284,6 +81284,36 @@
       "height": 900,
       "bytes": 703263,
       "sha256": "8aee32108482f1a6fe4f0d71e472544b7b41f8bbd431892afadc404bdc9aa469"
+    },
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/farmhouse.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/farmhouse.png",
+      "title": "Farmhouse",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 776088,
+      "sha256": "e0a968b8448b5d79257515b9b36b560cb5e9575ce56005c75b1d714daf270fda"
+    },
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/mansion.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/mansion.png",
+      "title": "Mansion",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 759779,
+      "sha256": "6cda8331904ec6bd6eca6c0ae19573a0a83b42f5b5b6964ef1bfbdf73af7fe87"
+    },
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/school.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/school.png",
+      "title": "School",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 975229,
+      "sha256": "0feff6cf826ede30d2f57342b0eb15af075be63e8f7b0e63ff649eaf999b9b01"
     },
     {
       "path": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-01.png",

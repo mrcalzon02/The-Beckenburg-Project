@@ -6394,6 +6394,34 @@ Evidence and verification: development/levels/rebuild/access-route-pass/verifica
 
 Older-map obligation: Select stages from exact manifest and explicit revision fields; inherited construction metadata cannot prove that a map was revised by a later pass.
 
+### DEV-464 — Exported roof closure review must weld UV seam vertices
+
+**Status:** FIXED IN ROOF CHECKER · **Affected:** Farmhouse, Mansion and School roof construction verifier
+
+Initial exported-solid check rejected a closed roof because glTF splits vertices at UV seams.
+
+Cause / uncertainty: Raw edge topology on imported UV split vertices is not geometric closure.
+
+Fix / next action: Weld coincident vertices only in temporary inspection BMesh; require manifold edges, positive volume and exact render/native triangle identity. Source assets remain untouched.
+
+Evidence and verification: tools/build_roster_enclosed_roofs.py exported closure checks; final three construction contracts and captures.
+
+Older-map obligation: Use geometric closure after seam welding for other GLB solids; retain exact triangle comparison.
+
+### DEV-465 — New wing roofs retain unfinished weather joins and runtime integration
+
+**Status:** OPEN · **Affected:** Farmhouse barn and house; Mansion stepped wings; School assembly/gym/health roofs
+
+Closed native roof blocking is present, but step flashing, gutters and standing-height junction review are unfinished; live maps still use previous runtime authorities.
+
+Cause / uncertainty: This bounded construction batch adds roof geometry to current native source candidates; whole-site runtime conversion remains a separate unfinished gate.
+
+Fix / next action: Fit roof-to-taller-wall flashing and drainage; inspect joins under live lights; integrate exact source coordinates across runtime systems before acceptance or unlock.
+
+Evidence and verification: development/levels/rebuild/roof-construction-pass/roster.json; captures/roof-construction-batch native overviews; native collision and route comparisons.
+
+Older-map obligation: Other roster roofs remain individually unaudited; this batch confers no acceptance on retained sources.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

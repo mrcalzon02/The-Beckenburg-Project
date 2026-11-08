@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1936,
-  "unique_local_file_hashes": 1765,
+  "local_files": 1939,
+  "unique_local_file_hashes": 1768,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 580,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 22,
+    "additional_custom_model_sources": 25,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 94,
     "native_map_exports": 250
@@ -28214,6 +28214,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "da33479302c5f67b54a7ca5aff9e49f8c37ed6791eeadd4c00cb2a91800ebab1",
       "bytes": 1225432
+    },
+    {
+      "id": "enclosed-roofs",
+      "label": "enclosed-roofs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/roof-construction-pass/farmhouse/enclosed-roofs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "2fbfec9b1ac463b2caba3d8dd38548eb7374783134490a5f1403762db758929e",
+      "bytes": 1859032
+    },
+    {
+      "id": "enclosed-roofs",
+      "label": "enclosed-roofs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/roof-construction-pass/mansion/enclosed-roofs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "802cd08d8cdc6436021514f12191b770961a26b6bc0222e1811dc8bf270dd8c3",
+      "bytes": 2078288
+    },
+    {
+      "id": "enclosed-roofs",
+      "label": "enclosed-roofs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/roof-construction-pass/school/enclosed-roofs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "97cd14efb251c2666c4ab66d9ce82fb74d99858e75a9d78fef89c26a8563e9b3",
+      "bytes": 2114568
     },
     {
       "id": "bayed-stairs",

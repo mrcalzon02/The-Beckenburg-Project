@@ -1,0 +1,340 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "FARMHOUSE": {
+      "before": {
+        "flat_links": 33,
+        "pass_both_directions": 25
+      },
+      "after": {
+        "flat_links": 33,
+        "pass_both_directions": 25
+      },
+      "current_lanes": {
+        "samples": 4278,
+        "valid_standing": 3999,
+        "invalid_standing": 279,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 6,
+          "NO_FOOT_SUPPORT_0.22_0.0": 8,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 36,
+          "NO_CENTRE_SUPPORT": 128,
+          "FOOT_HEIGHT_SPREAD": 21,
+          "PHYSICAL_COMPONENT": 75,
+          "NO_FOOT_SUPPORT_0.0_0.22": 5
+        },
+        "physical_components": [
+          [
+            "333:L34 flight0 step12",
+            14
+          ],
+          [
+            "334:L34 flight0 step13",
+            12
+          ],
+          [
+            "332:L34 flight0 step11",
+            8
+          ],
+          [
+            "335:L34 flight0 step14",
+            6
+          ],
+          [
+            "338:L34 flight0 step17",
+            5
+          ],
+          [
+            "337:L34 flight0 step16",
+            5
+          ],
+          [
+            "336:L34 flight0 step15",
+            5
+          ],
+          [
+            "329:L34 flight0 step8",
+            5
+          ],
+          [
+            "330:L34 flight0 step9",
+            5
+          ],
+          [
+            "331:L34 flight0 step10",
+            4
+          ],
+          [
+            "328:L34 flight0 step7",
+            3
+          ],
+          [
+            "327:L34 flight0 step6",
+            2
+          ],
+          [
+            "326:L34 flight0 step5",
+            1
+          ]
+        ]
+      }
+    },
+    "MANSION": {
+      "before": {
+        "flat_links": 45,
+        "pass_both_directions": 38
+      },
+      "after": {
+        "flat_links": 45,
+        "pass_both_directions": 38
+      },
+      "current_lanes": {
+        "samples": 7911,
+        "valid_standing": 6806,
+        "invalid_standing": 1105,
+        "reasons": {
+          "NO_FOOT_SUPPORT_-0.22_0.0": 17,
+          "NO_CENTRE_SUPPORT": 933,
+          "NO_FOOT_SUPPORT_0.0_0.22": 9,
+          "FOOT_HEIGHT_SPREAD": 23,
+          "PHYSICAL_COMPONENT": 109,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 2,
+          "NO_FOOT_SUPPORT_0.22_0.0": 12
+        },
+        "physical_components": [
+          [
+            "468:L58 flight0 step2",
+            18
+          ],
+          [
+            "114:Wall pantry E",
+            15
+          ],
+          [
+            "98:Wall kitchen N",
+            9
+          ],
+          [
+            "140:Wall receiving E",
+            9
+          ],
+          [
+            "Flat route shell Wall scullery E",
+            8
+          ],
+          [
+            "116:Wall cold-store N",
+            8
+          ],
+          [
+            "Flat route shell Wall kitchen E",
+            7
+          ],
+          [
+            "255:Wall staff-corridor N.001",
+            6
+          ],
+          [
+            "159:Wall service-stair W.001",
+            4
+          ],
+          [
+            "469:L58 flight0 step3",
+            3
+          ],
+          [
+            "145:Wall refuse E",
+            3
+          ],
+          [
+            "Flat route shell Wall staff-corridor S",
+            3
+          ],
+          [
+            "490:L59 flight0 step2",
+            3
+          ],
+          [
+            "509:L60 flight0 step2",
+            3
+          ],
+          [
+            "529:L61 flight0 step2",
+            3
+          ],
+          [
+            "Flat route shell Wall foyer N.001",
+            1
+          ],
+          [
+            "Flat route shell Wall hall E.002",
+            1
+          ],
+          [
+            "467:L58 flight0 step1",
+            1
+          ],
+          [
+            "492:L59 flight0 step4",
+            1
+          ],
+          [
+            "491:L59 flight0 step3",
+            1
+          ],
+          [
+            "508:L60 flight0 step1",
+            1
+          ],
+          [
+            "528:L61 flight0 step1",
+            1
+          ]
+        ]
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "flat_links": 42,
+        "pass_both_directions": 33
+      },
+      "after": {
+        "flat_links": 42,
+        "pass_both_directions": 33
+      },
+      "current_lanes": {
+        "samples": 6483,
+        "valid_standing": 5503,
+        "invalid_standing": 980,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 39,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 18,
+          "NO_CENTRE_SUPPORT": 871,
+          "FOOT_HEIGHT_SPREAD": 26,
+          "NO_FOOT_SUPPORT_0.0_0.22": 8,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 7,
+          "NO_FOOT_SUPPORT_0.22_0.0": 11
+        },
+        "physical_components": [
+          [
+            "418:L44 flight0 step17",
+            8
+          ],
+          [
+            "410:L44 flight0 step9",
+            6
+          ],
+          [
+            "415:L44 flight0 step14",
+            6
+          ],
+          [
+            "411:L44 flight0 step10",
+            3
+          ],
+          [
+            "412:L44 flight0 step11",
+            3
+          ],
+          [
+            "413:L44 flight0 step12",
+            3
+          ],
+          [
+            "414:L44 flight0 step13",
+            3
+          ],
+          [
+            "416:L44 flight0 step15",
+            3
+          ],
+          [
+            "417:L44 flight0 step16",
+            3
+          ],
+          [
+            "382:L43 flight0 step1",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "FARMHOUSE": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+        "contract_sha256": "abb1e7c554db35e6c98783fca0e0b9a78572ab07249d8c681fb8911416dcfdce",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "layout_sha256": "c70b77cb435c9d129646cfb18902eb854d4525b7886b33a62a803ff2aaeaf35e",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/roof-construction-pass/farmhouse/construction.json",
+        "contract_sha256": "f3f5d7f0d492fd3e3bc70a355468d6eb9193f01a0c7022f5e4128671f8466b8f",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+        "layout_sha256": "c70b77cb435c9d129646cfb18902eb854d4525b7886b33a62a803ff2aaeaf35e",
+        "native": "development/levels/rebuild/roof-construction-pass/farmhouse/enclosed-roofs.hcs2",
+        "native_sha256": "901a74a9065d8eb3f7cc4f0004869f1210aab213ebfcae114b308d46c78041f9"
+      }
+    },
+    "MANSION": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/mansion/construction.json",
+        "contract_sha256": "eea37ff8df50741567fa65409f8679aa364943c67656750de06b3dc2ccf00352",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+        "layout_sha256": "75e016d3e318419dee89e3a2a98d63ad1eca32aa32af458ad8b958499eb75790",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/mansion/access-routes.hcs2",
+        "native_sha256": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/roof-construction-pass/mansion/construction.json",
+        "contract_sha256": "eeee17614469fce8147d458dda1845c1be39ea3a26ca1a07e4b5e01c37bc894c",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/mansion/authored-layout.json",
+        "layout_sha256": "75e016d3e318419dee89e3a2a98d63ad1eca32aa32af458ad8b958499eb75790",
+        "native": "development/levels/rebuild/roof-construction-pass/mansion/enclosed-roofs.hcs2",
+        "native_sha256": "853da0dafd5668449f886bbdbbbfc2cf218aa8355e00f8ab84aad1eb69be6d8a"
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/school/construction.json",
+        "contract_sha256": "9b8c8758fa179bf8f773d4b6321ed2c0669fb831d7c4efdfa1027d24af579580",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "layout_sha256": "e659b75d67ce08bbbcd9a68efc66bceb69b487fcce241d2527e03ddd46739e11",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/school/access-routes.hcs2",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/roof-construction-pass/school/construction.json",
+        "contract_sha256": "17c3bf9d6b824398476531de8f9a06e8ecbcd588b8be3fe90fcc4835fad5d19f",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "layout_sha256": "e659b75d67ce08bbbcd9a68efc66bceb69b487fcce241d2527e03ddd46739e11",
+        "native": "development/levels/rebuild/roof-construction-pass/school/enclosed-roofs.hcs2",
+        "native_sha256": "35532dc7ce334d0d6752dc93143896e4f4bac97e66cf4f8a1693c3504b063211"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/access-route-pass/roster.json": "f294cb6fc4ff57cc4c7934b89a0c39898d2d56d96574b99a967ac8004939079c"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/roof-construction-pass/verification/current-flat-failure-contacts.tsv": "3fbcac299809cd5f497d634df373f706b39504d72f9715fb4a9c653e1d27d0cb",
+    "development/levels/rebuild/roof-construction-pass/verification/current-flat-failure-input.tsv": "0e70f68831747c46bb764ab56aaae1561fcc1560739c0f9cd70ac74ef9cb6a31",
+    "development/levels/rebuild/roof-construction-pass/verification/current-flat-lane-input.tsv": "e39cd8b2c6d9405b3355dc3627a9356f0f94e5d3bfb6a402791369c61f642989",
+    "development/levels/rebuild/roof-construction-pass/verification/current-flat-lane-names.tsv": "487b3ea3d1f7281af920f3f4ae4df5b56745aa4a83f4189af6e875d37aea12c9",
+    "development/levels/rebuild/roof-construction-pass/verification/current-flat-lanes.tsv": "b6bd3164c8b8391e1da3f2b6ac88bf24ad7bf7e18b2c56e27100b015c4d6b1c7",
+    "development/levels/rebuild/roof-construction-pass/verification/current-flat-links.tsv": "846702bc9a9a626b71fbdf1d4bcffc1421e8acfcc488827e1ee55e7b0cf36c97",
+    "development/levels/rebuild/roof-construction-pass/verification/current-flat-names.tsv": "487b3ea3d1f7281af920f3f4ae4df5b56745aa4a83f4189af6e875d37aea12c9",
+    "development/levels/rebuild/roof-construction-pass/verification/current-flat-paths.tsv": "5f63715410c25271e00dc005c887b257889dc03f5904d684b17d1e0cfe72a57f"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}
