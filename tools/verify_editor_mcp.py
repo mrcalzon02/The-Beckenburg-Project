@@ -318,7 +318,9 @@ async def verify(scope):
                               field("lamp", lamp_id, "RADIUS", 9)], sequence=51))["revision"]
                 fixture = await properties(bright, lamp_id)
                 assert fixture["fields"]["power"] == 8 and fixture["fields"]["radius"] == 9 and fixture["fields"]["mount"] == "CEILING"
-                assert abs(fixture["node"]["y"] - (spot["y"] + 3.38)) < 1e-8
+                # The native model's top is fixed to the underside of the upper 6.8 m ceiling
+                # (22 cm structural slab), not embedded 20 cm into the roof.
+                assert abs(fixture["node"]["y"] - (spot["y"] + 3.4 - .22)) < 1e-8
                 assert await capture_at(bright, "mcp-lamp-powered.png") != unlit
                 removed = (await call("edit", revision=bright, commands=[
                     dict(operation="remove-lamp", arguments=dict(id=lamp_id)), dict(operation="remove-prop", arguments=dict(id=prop_id))]))["revision"]

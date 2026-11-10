@@ -62,7 +62,11 @@ public final class CastleAgentLampProbe {
                     p[0],p[1],p[2],clear,a.r(),a.g(),a.b(),b.r(),b.g(),b.b(),delta);
             }
             System.out.printf(Locale.ROOT,"CASTLE_AGENT_LAMP_PROBE_MAX_DELTA=%.8f%n",max);
-            if(max < 0.005)System.out.println("DIAGNOSTIC: No visible-energy receiver was identified; check source/ceiling/LOS before changing screenshot test.");
+            if(sourceOn.y()>=CastleRooms.mountHeight(lx,lz,true)-0.02)
+                throw new AssertionError("Native emitter buried in the upper ceiling slab");
+            if(max<0.005)
+                throw new AssertionError("Edited native ceiling lamp emits no verified lighting to room receivers");
+            System.out.println("PASS authoritative Castle lamp emissive placement, LOS and power receiver regression");
         } finally {
             System.setProperty("user.home", oldHome);
             // Diagnostic temp data is isolated from the machine's real editor.

@@ -431,7 +431,14 @@ public final class CastleLevelEdits {
     synchronized void placeCeilingLamp(String id,double x,double floorY,double z,double radius,double power){
         requireNewId(id);
         if(!Double.isFinite(floorY)||floorY< -12||floorY>24)throw new IllegalArgumentException("Invalid editor work plane");
-        double y=Math.max(CastleWorldBounds.MIN_Y,Math.min(9,floorY+3.38));
+        // A ceiling fixture's imported GLB is anchored by its TOP face. Mount that
+        // face at the native room soffit, not inside the structural 22 cm slab.
+        // Keep the previous fallback only for nonstandard/cellar editor planes.
+        boolean authoredFloor=Math.abs(floorY)<1e-7
+            ||Math.abs(floorY-CastleHubArchitecturalPlan.GROUND_CEILING)<1e-7;
+        double y=authoredFloor
+            ?CastleRooms.mountHeight(x,z,floorY>2)
+            :Math.max(CastleWorldBounds.MIN_Y,Math.min(9,floorY+3.38));
         put(new Lamp(id,"ceiling_lamp_1_on","ceiling_lamp_1_off",x,y,z,.8,0,CastleHubDecor.Mount.CEILING,radius,power));
     }
     enum Field { X,Y,Z,SCALE,YAW_DEGREES,COLLISION_X,COLLISION_Z,RADIUS,POWER }
