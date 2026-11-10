@@ -590,10 +590,10 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                     var fields=node.components().get(0).properties();
                     if(!fields.keySet().equals(java.util.Set.of("stairId","extension")))
                         throw new IllegalArgumentException("Unknown stair landing keys");
-                    int id=Integer.parseInt(fields.get("stairId"));
+                    int stairId=Integer.parseInt(fields.get("stairId"));
                     double extension=Double.parseDouble(fields.get("extension"));
-                    if(!node.id().equals(STAIR_PREFIX+id)||
-                        stairExtensions.putIfAbsent(id,extension)!=null)
+                    if(!node.id().equals(STAIR_PREFIX+stairId)||
+                        stairExtensions.putIfAbsent(stairId,extension)!=null)
                         throw new IllegalArgumentException("Contradictory stair landing identity");
                 }catch(RuntimeException invalid){
                     throw new IOException("Invalid native stair landing "+node.id(),invalid);
