@@ -47,6 +47,7 @@ on:
       - 'tools/verify_editor_agent_cli.py'
       - 'tools/verify_mesh_agent_cli.py'
       - 'tools/editor_mcp.py'
+      - 'tools/verify_editor_mcp_schema.py'
       - 'tools/editor_mcp_requirements.txt'
       - 'tools/verify_editor_mcp.py'
       - 'tools/verify_installed_editor_mcp.ps1'
@@ -141,6 +142,9 @@ jobs:
               Stop-Process -Id $server.Id -Force -ErrorAction SilentlyContinue
             }
           }
+      - name: Verify MCP native operation schema without a live scene
+        shell: pwsh
+        run: python tools/verify_editor_mcp_schema.py
       - name: Verify native service, actual Windows editor and headless protocol
         env:
           EDITOR_MCP_PYTHON: python

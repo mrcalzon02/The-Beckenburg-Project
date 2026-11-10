@@ -51,7 +51,16 @@ def edit_type(operations):
     for name, fields in sorted(operations.items()):
         parameters = {}
         for key, kind in fields.items():
-            value_type = Literal[tuple(kind.split("|"))] if "|" in kind else types[kind]
+            # A native field can be a primitive type or a single/multi-choice
+            # enum. The House rebuild has exactly one legal baseline, ORIGINAL.
+            # Treating that singleton as a primitive used to crash MCP startup.
+            if kind in types:
+                value_type = types[kind]
+            else:
+                choices = kind.split("|")
+                if not all(re.fullmatch(r"[A-Z][A-Z0-9_]*", choice) for choice in choices):
+                    raise ValueError(f"Unknown native editor field kind: {kind!r}")
+                value_type = Literal[tuple(choices)]
             parameters[key] = (value_type, ...)
         args = create_model(name + "-arguments", __config__=ConfigDict(extra="forbid"), **parameters)
         variants.append(create_model(name, __config__=ConfigDict(extra="forbid"),
