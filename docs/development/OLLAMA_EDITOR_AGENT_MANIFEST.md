@@ -61,3 +61,8 @@ To run this on WLD-14, first expose the Lighthouse's actual Blender/GLB/HCS2 aut
 
 ## CI hygiene
 Extend existing .github/workflows/editor-agent-service.yml only; keep its one Windows job and its normal acceptance behavior. Trigger an explicit workflow_dispatch input run_ollama_pilot or a single checkpoint commit containing [ollama-editor-pilot]. GitHub-hosted Windows avoids relying on the self-hosted runner registered elsewhere. No extra workflows, background agents or automatic CI commits.
+
+## Exact before/after camera proof (2026-11-10 refinement)
+- The first successful School pilot completed native move/save/reopen, but refocused the camera after the move, causing unrelated whole-frame changes. The current controller retains the initial focus camera through the after-capture and rejects an identical-image edit.
+- Castle and mission editor captures now temporarily select SceneRenderer's existing synchronous software-raster path for one genuine scene render, restoring GPU availability afterwards. This is neither a fabricated frame nor a claim that asynchronous GPU gameplay performance has passed.
+- Broader MCP Castle lamp acceptance separately remains authoritative: a power change must produce a visual difference from the same camera; failing it is a real regression, not reason to weaken the assertion.

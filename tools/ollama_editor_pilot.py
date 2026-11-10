@@ -227,16 +227,20 @@ def main():
                     persisted = editor.ask(f"verify-position\t{reloaded_rev}\t{identifier}\t{x}\t{y}\t{z}")["result"]
                     if not persisted["verified"] or persisted["diskState"] != "MATCHES":
                         raise RuntimeError("Native disk parity did not pass")
-                    editor.ask(f"focus\t{reloaded_rev}\t{identifier}")
+                    # Keep the exact same native renderer camera pose for before/after proof.
+                    # Refocusing here follows the moved prop and contaminates the visual diff.
                     after_png = output / "after.png"
                     editor.ask(f"capture\t{reloaded_rev}\t{after_png}")
                     if not after_png.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
                         raise RuntimeError("After-capture not an actual PNG")
+                    if file_hash(first_png) == file_hash(after_png):
+                        raise RuntimeError("Native edit not visible in identical-camera renderer captures")
                     saved = home / ".beckenburg" / "editor" / "levels" / "school.bscn"
                     if not saved.is_file():
                         raise RuntimeError("Expected native BSCN document missing")
                     shutil.copy2(saved, output / "school-reviewed.bscn")
                     report.update({"status": "SAVED_REOPENED_ISOLATED", "final_revision": reloaded_rev,
+                                   "camera_fixed_between_captures": True,
                                    "before_png_sha256": file_hash(first_png),
                                    "after_png_sha256": file_hash(after_png),
                                    "native_document_sha256": file_hash(output / "school-reviewed.bscn"),

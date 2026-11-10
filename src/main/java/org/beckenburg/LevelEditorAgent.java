@@ -106,7 +106,8 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     public void reopen()throws IOException{session.reopen();}
     public void recoverPrevious()throws IOException{session.recoverPrevious();}
     public EditorAgentService.Capture capture(Path destination)throws IOException{
-        renderer.drawPractice(map.get(),List.of(),0);
+        // Same actual mission renderer as the live editor, exact frame without stale GPU readback.
+        renderer.renderExactFrame(()->renderer.drawPractice(map.get(),List.of(),0));
         var image=renderer.image();
         Path file=destination.toAbsolutePath().normalize();
         if(!ImageIO.write(image,"png",file.toFile()))throw new IOException("PNG writer unavailable");

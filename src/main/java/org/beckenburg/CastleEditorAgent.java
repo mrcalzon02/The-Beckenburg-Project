@@ -211,8 +211,9 @@ public final class CastleEditorAgent implements EditorAgentService.Host<CastleLe
     public void reopen()throws IOException{scene.reopen();}
     public void recoverPrevious()throws IOException{scene.recoverPrevious();}
     public EditorAgentService.Capture capture(Path destination)throws IOException{
-        // Render now. Never return the previous timer frame or a synthetic preview.
-        renderer.drawCastle(map,0,true);
+        // Capture the real live scene synchronously, never a previous asynchronous GPU readback.
+        // Restore GPU behavior immediately for subsequent human editor frames.
+        renderer.renderExactFrame(()->renderer.drawCastle(map,0,true));
         var image=renderer.image();
         Path file=destination.toAbsolutePath().normalize();
         if(!ImageIO.write(image,"png",file.toFile()))throw new IOException("PNG writer unavailable");

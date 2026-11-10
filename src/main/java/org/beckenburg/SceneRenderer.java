@@ -61,6 +61,17 @@ public final class SceneRenderer {
     // asynchronous GPU readback. Normal gameplay continues using the GPU.
     private boolean photographicSoftwareRaster;
     void photographicSoftwareRaster(){photographicSoftwareRaster=true;}
+    /** Only the exact capture call uses the synchronous in-game software rasterizer.
+     * Restore GPU availability even if rendering throws, so the human editor and
+     * normal game keep their own GPU frame pipeline. Never return stale readback.
+     */
+    void renderExactFrame(Runnable rendering){
+        Objects.requireNonNull(rendering);
+        boolean previouslyPhotographic=photographicSoftwareRaster;
+        photographicSoftwareRaster=true;
+        try{rendering.run();}
+        finally{photographicSoftwareRaster=previouslyPhotographic;}
+    }
     private boolean gpuAvailable(){return !photographicSoftwareRaster&&GpuWorldRenderer.active()!=null;}
     private int renderWidth=W,renderHeight=H;
     private double nativeFocal=153; // fixed vertical lens; widescreen adds peripheral geometry
