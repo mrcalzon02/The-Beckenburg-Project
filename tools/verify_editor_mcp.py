@@ -101,7 +101,14 @@ async def verify(scope):
             print("PASS standalone JAR: MCP dispatches another project's typed edit, native readback and undo")
             return
         castle = state["sceneId"] == "beckenburg/castle"
-        key = "start" if castle else "prop-0"
+        # House rebuilds intentionally remove original prop-0/prop-1.
+        # Resolve one stable native ID from the live editor hierarchy instead.
+        if castle:
+            key = "start"
+        else:
+            first_page = (await call("hierarchy", revision=revision, offset=0, limit=2))["result"]
+            assert first_page["total"] >= 2 and len(first_page["nodes"]) == 2
+            key = first_page["nodes"][0]["id"]
         node = (await call("inspect_nodes", revision=revision, ids=[key]))["result"][0]
         xyz = {axis: node[axis] for axis in "xyz"}
         props = (await call("inspect_properties", revision=revision, id=key))["result"]

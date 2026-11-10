@@ -278,7 +278,18 @@ public final class EditorAgentGuiTest {
         return reply.headers().firstValueAsLong("X-Editor-Revision").orElseThrow();
     }
     private static void verifyObservation(DeveloperLevelEditor editor,Path output,Access access)throws Exception{
-        long rev=revision(access);String node="/node?id=prop-0&revision=";
+        long rev=revision(access);
+        // Rebuilt House documents preserve real surviving IDs, not deleted prop-0/prop-1.
+        // Discover active human-editor rows on its owner thread before remote reads.
+        var nativeIds=new AtomicReference<java.util.List<String>>();
+        SwingUtilities.invokeAndWait(()->{
+            var inspection=editor.agentService().inspect();
+            check(inspection.revision()==rev,"Observed revision matches active human editor");
+            nativeIds.set(inspection.hierarchy().stream().limit(2).map(n->n.id()).toList());
+        });
+        check(nativeIds.get()!=null&&nativeIds.get().size()==2,"Two surviving native hierarchy IDs");
+        String firstId=nativeIds.get().get(0),secondId=nativeIds.get().get(1);
+        String node="/node?id="+java.net.URLEncoder.encode(firstId,StandardCharsets.UTF_8)+"&revision=";
         check(request(access,"/summary","GET",null).statusCode()==401,"Anonymous observation denied");
         check(request(access,"/summary","GET","Bearer invalid").statusCode()==401,"Incorrect token denied");
         check(request(access,"/edit","POST",access.bearer()).statusCode()==405,"Mutation method denied");
@@ -291,12 +302,12 @@ public final class EditorAgentGuiTest {
         var expected=new AtomicReference<String>();
         var movedX=new AtomicReference<Double>();
         SwingUtilities.invokeAndWait(()->{
-            try{expected.set(EditorAgentProtocol.json(editor.agentService().node(rev,"prop-0")));
+            try{expected.set(EditorAgentProtocol.json(editor.agentService().node(rev,firstId)));
                 var hierarchy=DeveloperLevelEditor.class.getDeclaredField("hierarchy");hierarchy.setAccessible(true);
                 ((JList<?>)hierarchy.get(editor)).setSelectedIndex(0);
                 var xField=DeveloperLevelEditor.class.getDeclaredField("x");xField.setAccessible(true);
                 var x=(JSpinner)xField.get(editor);
-                movedX.set(editor.agentService().node(rev,"prop-0").result().x()+.25);
+                movedX.set(editor.agentService().node(rev,firstId).result().x()+.25);
                 x.setValue(movedX.get());
             }catch(Exception failure){throw new RuntimeException(failure);}
         });
@@ -305,28 +316,28 @@ public final class EditorAgentGuiTest {
         long changed=revision(access);
         var after=request(access,node+changed,"GET",access.bearer());
         SwingUtilities.invokeAndWait(()->{
-            try{var observed=editor.agentService().node(changed,"prop-0");
+            try{var observed=editor.agentService().node(changed,firstId);
                 check(observed.result().x()==movedX.get(),"Manual X move reached native state");
                 expected.set(EditorAgentProtocol.json(observed));}
             catch(Exception failure){throw new RuntimeException(failure);}
         });
         check(after.statusCode()==200 && expected.get().equals(new String(after.body(),StandardCharsets.UTF_8)),"Read native row after human move");
         var target=new AtomicReference<org.beckenburg.editor.EditorProject.Node>();
-        SwingUtilities.invokeAndWait(()->target.set(editor.agentService().node(changed,"prop-0").result()));
+        SwingUtilities.invokeAndWait(()->target.set(editor.agentService().node(changed,firstId).result()));
         var p=target.get();
-        var match=request(access,"/verify-position?revision="+changed+"&id=prop-0&x="+p.x()+"&y="+p.y()+"&z="+p.z(),"GET",access.bearer());
+        var match=request(access,"/verify-position?revision="+changed+"&id="+firstId+"&x="+p.x()+"&y="+p.y()+"&z="+p.z(),"GET",access.bearer());
         var proof=new String(match.body(),StandardCharsets.UTF_8);
         check(match.statusCode()==200 && proof.contains("\"verified\":true") && proof.contains("\"committed\":true") &&
             proof.contains("\"diskState\":\"DIFFERS\""),"Prove human move independently of saved native file");
         SwingUtilities.invokeAndWait(()->verifyMismatchThroughMenu(editor));
-        var batch=request(access,"/nodes?revision="+changed+"&id=prop-1&id=prop-0","GET",access.bearer());
+        var batch=request(access,"/nodes?revision="+changed+"&id="+secondId+"&id="+firstId,"GET",access.bearer());
         SwingUtilities.invokeAndWait(()->{
-            try{expected.set(EditorAgentProtocol.json(editor.agentService().nodes(changed,java.util.List.of("prop-1","prop-0"))));}
+            try{expected.set(EditorAgentProtocol.json(editor.agentService().nodes(changed,java.util.List.of(secondId,firstId))));}
             catch(Exception failure){throw new RuntimeException(failure);}
         });
         check(batch.statusCode()==200 && expected.get().equals(new String(batch.body(),StandardCharsets.UTF_8)),"Ordered sparse observation");
         var changes=request(access,"/changes?revision="+changed+"&offset=0&limit=1","GET",access.bearer());
-        check(changes.statusCode()==200 && new String(changes.body(),StandardCharsets.UTF_8).contains("\"prop-0\""),"Expose human move metadata");
+        check(changes.statusCode()==200 && new String(changes.body(),StandardCharsets.UTF_8).contains("\""+firstId+"\""),"Expose human move metadata");
         check(request(access,"/test?revision="+changed+"&id=mission-runtime-parity","GET",access.bearer()).statusCode()==200,"Read focused diagnostic");
         var assets=request(access,"/assets?revision="+changed+"&offset=0&limit=2","GET",access.bearer());
         SwingUtilities.invokeAndWait(()->{
