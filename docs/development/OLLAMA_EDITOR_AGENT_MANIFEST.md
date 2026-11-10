@@ -2,6 +2,8 @@
 
 This is a manifest of operations *implemented by the actual Java level editor* and guardrails for the single-edit Ollama test. The model is a proposal generator, NOT a shell agent and NOT an independent scene author. The existing EditorAgentCli, EditorAgentProtocol, EditorAgentService, LevelAuthoringSession, HouseMap and SceneRenderer remain authoritative.
 
+For comprehensive full-map construction prerequisites and explicit human-only versus agent-exposed capabilities, use [AGENTIC_MAP_BUILDER_READINESS.md](AGENTIC_MAP_BUILDER_READINESS.md). The pilot manifest below is deliberately narrower.
+
 ## Target and current capability
 - Current pilot: Ravenshade School (SCHOOL), scene identity beckenburg/school. It is an unfinished built-in mission supported by HouseMap.Site and LevelPlans.buildSource.
 - Its real native document lives under an isolated CI user home at .beckenburg/editor/levels/school.bscn. Its current editor agent operation is move-prop only.

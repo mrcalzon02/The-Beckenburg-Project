@@ -8,6 +8,8 @@
 
 **2026-11-01 owner priority update:** finish a small reusable service over proven existing editor operations first, then continue G0–G12. [Implemented service and evidence](EDITOR_AGENT_SERVICE.md) covers native mission and Castle adapters, shared human/agent transactions/history, save/reopen, genuine captures, structured tests and local headless protocol. No authenticated network/MCP adapter is claimed. Terrain-specific controls still require their human/runtime gates; the broader milestone acceptance below remains open.
 
+**Current full-map readiness audit:** [Agentic Map Builder Capability and Acceptance Register](AGENTIC_MAP_BUILDER_READINESS.md) and its [machine-readable requirements](AGENTIC_MAP_BUILDER_REQUIREMENTS.json). The proven agent transport is not the complete 29-site construction interface; see the detailed gap/status matrix.
+
 ## 1. User outcome and scope
 
 On November 8, 2026, the Windows editor passed authenticated loopback observation, isolated local playtests and MCP editing. In the installed executable a client repaired a wall across the Castle spawn, captured the renderer, saved the repair and returned control to the human editor, whose Undo restored the wall. Other Castle audit findings remain independent of this repair. [Installed Windows acceptance](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42473083566)
