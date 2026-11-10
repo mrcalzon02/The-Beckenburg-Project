@@ -23,18 +23,31 @@ import java.util.Objects;
  */
 public final class LevelAuthoringSession implements EditorProject<LevelAuthoringSession.Snapshot> {
     private static final String COMPONENT = "beckenburg.level.prop";
+    private static final String PORTAL_COMPONENT = "beckenburg.level.door-width";
+    private static final String PORTAL_PREFIX = "beckenburg-door-width-";
     private final String documentId;
     private final Path document;
     private LevelDefinition source;
     private final boolean builtInHouse;
     private final ArrayList<Prop> props = new ArrayList<>();
     private final ArrayList<String> propIds = new ArrayList<>();
+    /** Overrides only existing source doorway widths; no second structural scene. */
+    private final java.util.LinkedHashMap<Integer,Double> doorWidths = new java.util.LinkedHashMap<>();
     private long revision=1;
     private String diskFingerprint;
     /** Identity is authoring metadata paired with the native props, not another scene. */
-    public record Snapshot(String sceneId,List<String> ids,List<Prop> props,String architecture){
-        public Snapshot(String sceneId,List<String> ids,List<Prop> props){this(sceneId,ids,props,null);}
+    public record Snapshot(String sceneId,List<String> ids,List<Prop> props,String architecture,
+                           Map<Integer,Double> doorWidths){
+        public Snapshot(String sceneId,List<String> ids,List<Prop> props){this(sceneId,ids,props,null,Map.of());}
+        public Snapshot(String sceneId,List<String> ids,List<Prop> props,String architecture){
+            this(sceneId,ids,props,architecture,Map.of());
+        }
         public Snapshot{
+            doorWidths=Map.copyOf(Objects.requireNonNull(doorWidths));
+            if(doorWidths.size()>128||doorWidths.entrySet().stream().anyMatch(entry->
+                entry.getKey()==null||entry.getKey()<0||entry.getValue()==null||
+                !Double.isFinite(entry.getValue())||entry.getValue()<.75||entry.getValue()>2.8))
+                throw new IllegalArgumentException("Invalid native doorway widths");
             Objects.requireNonNull(sceneId);ids=List.copyOf(ids);props=List.copyOf(props);
             if(sceneId.isBlank()||ids.size()!=props.size()||ids.size()>4096
                 ||new java.util.HashSet<>(ids).size()!=ids.size()
@@ -87,7 +100,62 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     }
     public synchronized void remove(int index){HouseAuthoringAttachments.change(source,props.get(index),null,propIds.get(index));props.remove(index);propIds.remove(index);revision++;}
     public synchronized long revision(){return revision;}
-    public synchronized void validate(){snapshot();for(Prop prop:props)checkProp(prop);HouseAuthoringAttachments.validate(source,props);}
+    public synchronized void validate(){
+        snapshot();
+        for(Prop prop:props)checkProp(prop);
+        HouseAuthoringAttachments.validate(source,props);
+        validateDoorWidths(source,doorWidths);
+    }
+    /** Resize only an existing physical DOOR. Apertures, leaves and player
+     * collision all consume the same LevelDefinition portal. */
+    public synchronized void resizeDoor(int id,double width){
+        if(HollowCreekLevel.is(source))throw new UnsupportedOperationException(
+            "Native outdoor site structural door adapter is not implemented");
+        var candidate=new java.util.LinkedHashMap<>(doorWidths);
+        var original=source.portals().stream().filter(p->p.id()==id&&p.door()).findFirst()
+            .orElseThrow(()->new IllegalArgumentException("Unknown native doorway "+id));
+        if(!Double.isFinite(width))throw new IllegalArgumentException("Non-finite doorway width");
+        if(Math.abs(width-original.width())<1e-10)candidate.remove(id);
+        else candidate.put(id,width);
+        validateDoorWidths(source,candidate);
+        if(candidate.equals(doorWidths))return;
+        doorWidths.clear();doorWidths.putAll(candidate);
+        revision++;
+    }
+    private static void validateDoorWidths(LevelDefinition source,Map<Integer,Double> widths){
+        for(var entry:widths.entrySet()){
+            var p=source.portals().stream().filter(q->q.id()==entry.getKey()&&q.door()).findFirst()
+                .orElseThrow(()->new IllegalArgumentException("Door width override lacks native portal "+entry.getKey()));
+            double width=entry.getValue();
+            if(!Double.isFinite(width)||width<.75||width>2.8)
+                throw new IllegalArgumentException("Door width must be 0.75 to 2.8 metres");
+            for(int roomId:new int[]{p.a(),p.b()}){
+                var room=source.room(roomId);
+                double center=p.alongX()?p.x():p.z(),lo=p.alongX()?room.x0():room.z0(),
+                    hi=p.alongX()?room.x1():room.z1();
+                if(center-width/2<lo+.12||center+width/2>hi-.12)
+                    throw new IllegalArgumentException("Door cut intersects room corner "+roomId);
+            }
+            for(var other:source.portals()){
+                if(other.id()==p.id()||other.kind().equals("stair")||
+                    other.alongX()!=p.alongX()||Math.abs(other.y()-p.y())>.08||
+                    Math.abs((p.alongX()?p.z():p.x())-(p.alongX()?other.z():other.x()))>.1)continue;
+                double otherWidth=widths.getOrDefault(other.id(),other.width());
+                double separation=Math.abs((p.alongX()?p.x():p.z())-(p.alongX()?other.x():other.z()));
+                if(separation<(width+otherWidth)/2+.15)
+                    throw new IllegalArgumentException("Door cut intersects adjacent aperture "+other.id());
+            }
+        }
+    }
+    private static List<Portal> effectivePortals(LevelDefinition source,Map<Integer,Double> widths){
+        if(widths.isEmpty())return source.portals();
+        var result=new ArrayList<Portal>();
+        for(var p:source.portals()){
+            double width=widths.getOrDefault(p.id(),p.width());
+            result.add(width==p.width()?p:new Portal(p.id(),p.a(),p.b(),p.x(),p.y(),p.z(),width,p.alongX(),p.kind(),p.loss()));
+        }
+        return List.copyOf(result);
+    }
     public synchronized void reopen()throws IOException{
         var loaded=loadRevision(document,documentId,source);restore(loaded.state());diskFingerprint=loaded.fingerprint();
     }
@@ -127,6 +195,8 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     public synchronized boolean canRebuildHouse(){return builtInHouse;}
     public synchronized void rebuildHouse(){
         if(!builtInHouse)throw new IllegalArgumentException("House rebuild requires the built-in House document");
+        if(!doorWidths.isEmpty())throw new IllegalStateException(
+            "Reset native doorway edits before changing the House architectural source");
         if(source.id().equals("briar-rebuild"))return;
         var next=HouseRebuildUpgrade.plan(snapshot());
         // Validate a candidate without changing live source, history, revision or disk.
@@ -134,18 +204,22 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         restore(next.state());
     }
     public synchronized LevelDefinition sourceLevel(){return source;}
-    public synchronized Snapshot snapshot(){return new Snapshot(documentId,propIds,props,builtInHouse?HouseSourceVersions.generation(source):null);}
+    public synchronized Snapshot snapshot(){return new Snapshot(documentId,propIds,props,
+        builtInHouse?HouseSourceVersions.generation(source):null,doorWidths);}
     public synchronized void restore(Snapshot snapshot){
         Objects.requireNonNull(snapshot);
         if(!documentId.equals(snapshot.sceneId()))throw new IllegalArgumentException("Snapshot belongs to another mission");
         if(builtInHouse&&snapshot.ids().contains(HouseSourceVersions.NODE))throw new IllegalArgumentException("Reserved House source metadata ID");
         var restoredSource=builtInHouse?HouseSourceVersions.source(snapshot.architecture()==null?UserLevelLibrary.HOUSE_ORIGINAL:snapshot.architecture()):source;
         for(Prop prop:snapshot.props())checkProp(prop,restoredSource);
+        validateDoorWidths(restoredSource,snapshot.doorWidths());
         source=restoredSource;
-        props.clear();props.addAll(snapshot.props());propIds.clear();propIds.addAll(snapshot.ids());revision++;
+        props.clear();props.addAll(snapshot.props());propIds.clear();propIds.addAll(snapshot.ids());
+        doorWidths.clear();doorWidths.putAll(snapshot.doorWidths());
+        revision++;
     }
     public synchronized LevelDefinition level(){
-        return compose(source,props);
+        return compose(source,props,doorWidths);
     }
     public synchronized List<Node> hierarchy(){
         ArrayList<Node> result=new ArrayList<>();
@@ -205,6 +279,13 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                     "support",p.support())))));
         }
         if(state.architecture()!=null)document.replace(HouseSourceVersions.node(state.architecture()));
+        for(var entry:new java.util.TreeMap<>(state.doorWidths()).entrySet()){
+            String portalId=PORTAL_PREFIX+entry.getKey();
+            document.replace(new RuntimeScene.Node(portalId,"Native door width",null,"metadata",
+                RuntimeScene.Transform.identity(),List.of(new RuntimeScene.Component(PORTAL_COMPONENT,
+                    Map.of("portalId",Integer.toString(entry.getKey()),
+                        "width",Double.toString(entry.getValue()))))));
+        }
         return document;
     }
     private record Loaded(Snapshot state,String fingerprint){}
@@ -226,8 +307,27 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
             throw new IOException("Level document identity mismatch: "+path);
         ArrayList<Prop> result=new ArrayList<>();
         ArrayList<String> ids=new ArrayList<>();
+        var widths=new java.util.LinkedHashMap<Integer,Double>();
         for(var node:scene.nodes()){
             if(node.id().equals(HouseSourceVersions.NODE)&&id.equals("beckenburg/house"))continue;
+            if(node.id().startsWith(PORTAL_PREFIX)){
+                try{
+                    if(node.components().size()!=1||!node.components().get(0).type().equals(PORTAL_COMPONENT)
+                        ||!node.name().equals("Native door width")||!node.layer().equals("metadata")
+                        ||node.parentId()!=null||!node.transform().equals(RuntimeScene.Transform.identity()))
+                        throw new IllegalArgumentException("Unsupported native door node shape");
+                    var data=node.components().get(0).properties();
+                    if(!data.keySet().equals(java.util.Set.of("portalId","width")))
+                        throw new IllegalArgumentException("Invalid door metadata keys");
+                    int portalId=Integer.parseInt(data.get("portalId"));
+                    if(!node.id().equals(PORTAL_PREFIX+portalId)||
+                        widths.putIfAbsent(portalId,Double.parseDouble(data.get("width")))!=null)
+                        throw new IllegalArgumentException("Duplicate or contradictory door identity");
+                }catch(RuntimeException malformed){
+                    throw new IOException("Invalid native door width "+node.id(),malformed);
+                }
+                continue;
+            }
             if(node.components().size()!=1
                 ||!node.components().get(0).type().equals(COMPONENT))
                 throw new IOException("Unsupported level node "+node.id());
@@ -261,7 +361,11 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                 throw new IOException("Invalid level object "+node.id()+" in "+path,invalid);
             }
         }
-        return new Loaded(new Snapshot(id,ids,result,id.equals("beckenburg/house")?HouseSourceVersions.generation(scene):null),loaded.fingerprint());
+        var architecture=id.equals("beckenburg/house")?HouseSourceVersions.generation(scene):null;
+        var authority=architecture==null?source:HouseSourceVersions.source(architecture);
+        try{validateDoorWidths(authority,widths);}
+        catch(IllegalArgumentException invalid){throw new IOException("Native door width invalid",invalid);}
+        return new Loaded(new Snapshot(id,ids,result,architecture,widths),loaded.fingerprint());
     }
     static LevelDefinition apply(HouseMap.Site site,LevelDefinition source){
         try{
@@ -269,7 +373,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
             if(!Files.exists(path(site)))return source;
             var state=loadState(path(site),sceneId(site),source);
             var authority=site==HouseMap.Site.HOUSE?HouseSourceVersions.source(state.architecture()):source;
-            return compose(authority,state.props());
+            return compose(authority,state.props(),state.doorWidths());
         }
         catch(IOException bad){
             throw new IllegalStateException("Cannot load authored "+site+" level",bad);
@@ -281,8 +385,12 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
      * helper used by LevelPlans during initial map construction.
      */
     static LevelDefinition compose(LevelDefinition source,List<Prop> edited){
+        return compose(source,edited,Map.of());
+    }
+    static LevelDefinition compose(LevelDefinition source,List<Prop> edited,Map<Integer,Double> widths){
         HouseAuthoringAttachments.validate(source,edited);
-        if(source.props().equals(edited))return source;
+        validateDoorWidths(source,widths);
+        if(source.props().equals(edited)&&widths.isEmpty())return source;
         ArrayList<Collider> collision=new ArrayList<>(source.colliders());
         var added=new ArrayList<>(edited);
         for(Prop p:source.props()){
@@ -296,7 +404,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         }
         for(Prop p:added)collision.addAll(LevelPlans.propColliders(source,p));
         return new LevelDefinition(source.id(),source.revision(),source.title(),
-            source.rooms(),source.portals(),source.stairs(),source.voids(),
+            source.rooms(),effectivePortals(source,widths),source.stairs(),source.voids(),
             List.copyOf(edited),source.sockets(),collision,source.dock(),
             source.ambience(),source.water(),source.sounds());
     }

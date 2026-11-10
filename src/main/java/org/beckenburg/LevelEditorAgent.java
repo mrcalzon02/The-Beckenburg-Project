@@ -65,6 +65,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     public List<String> operations(){
         var ops=new java.util.ArrayList<>(List.of("move-prop","place-prop","transform-prop",
             "duplicate-prop","remove-prop"));
+        if(!HollowCreekLevel.is(session.sourceLevel()))ops.add("resize-door");
         if(session.canRebuildHouse())ops.add("rebuild-house");
         return List.copyOf(ops);
     }
@@ -75,6 +76,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         "y","number","z","number","scale","number","yawDegrees","number");
     private static final Map<String,String> DUPLICATE_FIELDS=MOVE_FIELDS;
     private static final Map<String,String> REMOVE_FIELDS=Map.of("id","string");
+    private static final Map<String,String> DOOR_FIELDS=Map.of("id","integer","width","number");
     public Map<String,Map<String,String>> operationParameters(){
         var result=new java.util.LinkedHashMap<String,Map<String,String>>();
         result.put("move-prop",MOVE_FIELDS);
@@ -82,6 +84,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         result.put("transform-prop",TRANSFORM_FIELDS);
         result.put("duplicate-prop",DUPLICATE_FIELDS);
         result.put("remove-prop",REMOVE_FIELDS);
+        if(!HollowCreekLevel.is(session.sourceLevel()))result.put("resize-door",DOOR_FIELDS);
         if(session.canRebuildHouse())result.put("rebuild-house",Map.of("baseline","ORIGINAL"));
         return Map.copyOf(result);
     }
@@ -186,6 +189,11 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                 if(!args.keySet().equals(REMOVE_FIELDS.keySet()))throw new IllegalArgumentException("Expected exact native prop id");
                 session.remove(session.indexOf(args.get("id")));
             }
+            case "resize-door" -> {
+                if(!args.keySet().equals(DOOR_FIELDS.keySet()))
+                    throw new IllegalArgumentException("Expected native portal id and clear opening width");
+                session.resizeDoor(Integer.parseInt(args.get("id")),number(args,"width"));
+            }
             default -> throw new IllegalArgumentException("Unsupported mission operation: "+operation);
         }
     }
@@ -213,7 +221,8 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                 }
             }
         }
-        boolean reordered=!before.ids().equals(after.ids())||!java.util.Objects.equals(before.architecture(),after.architecture());
+        boolean reordered=!before.ids().equals(after.ids())||!java.util.Objects.equals(before.architecture(),after.architecture())
+            ||!before.doorWidths().equals(after.doorWidths());
         return new EditorChange.Details(nodes,assets,nodes.isEmpty()&&!reordered?java.util.Set.of():java.util.Set.of(EditorChange.Dependency.values()),bounds,reordered);
     }
     public void validate(){session.validate();}
@@ -227,8 +236,16 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         if(!ImageIO.write(image,"png",file.toFile()))throw new IOException("PNG writer unavailable");
         return new EditorAgentService.Capture(file,image.getWidth(),image.getHeight(),"SceneRenderer.drawPractice");
     }
-    public List<String> tests(){return List.of("mission-runtime-parity","mission-open-routes");}
+    public List<String> tests(){return List.of("mission-runtime-parity","mission-open-routes","mission-door-catalog");}
     public List<EditorAgentService.Check> test(String id){
+        if(id.equals("mission-door-catalog")){
+            // Read-only discovery of the source-backed architectural door IDs.
+            // All metadata comes from the same LevelDefinition the game uses.
+            return session.level().portals().stream().filter(LevelDefinition.Portal::door).map(p->
+                new EditorAgentService.Check("NATIVE_DOOR_"+p.id(),true,
+                    "id="+p.id()+" rooms="+p.a()+","+p.b()+" xyz="+p.x()+","+p.y()+","+p.z()+
+                        " width="+p.width()+" alongX="+p.alongX()+" kind="+p.kind())).toList();
+        }
         if(id.equals("mission-open-routes")){
             var result=LevelTraversalAudit.inspect(map.get());
             var checks=new java.util.ArrayList<EditorAgentService.Check>();
