@@ -2,6 +2,8 @@
 
 **Authority:** source inspection of `mrcalzon02/The-Beckenburg-Project` at main `3160f2723b57cb9b96d758ff5242dc8895f58d2c`, November 10, 2026. **Machine-readable companion:** [AGENTIC_MAP_BUILDER_REQUIREMENTS.json](AGENTIC_MAP_BUILDER_REQUIREMENTS.json). Recheck live source and CI before claiming any row has advanced. This is a requirements/gap register, NOT evidence of new construction.
 
+**Staged engineering design:** [Full architectural implementation specification](AGENTIC_MAP_BUILDER_ARCHITECTURE.md), [implementation stages and gates](AGENTIC_MAP_BUILDER_IMPLEMENTATION_STAGES.md), [machine-readable stage DAG](AGENTIC_MAP_BUILDER_STAGES.json). **Build sequence:** finish task-critical editor operations → agentic scheduler/iteration → complete playable Lighthouse proof → full map rebuild. These additional documents are plans, not delivered runtime.
+
 **User outcome:** say “build Morrow Point Lightstation” and have an authorized agent inspect the approved source, construct real geometry and gameplay systems through the **same native editor** a human uses, iterate with genuine rendered and gameplay review, save/reopen/recover, and produce a reviewable map. Multiple map tasks may execute concurrently only with independent scene ownership and shared-asset safeguards.
 
 ## Why the editor work is real, but not yet a complete map-building agent

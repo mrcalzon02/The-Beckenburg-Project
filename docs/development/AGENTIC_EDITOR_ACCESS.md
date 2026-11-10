@@ -8,6 +8,8 @@
 
 **2026-11-01 owner priority update:** finish a small reusable service over proven existing editor operations first, then continue G0–G12. [Implemented service and evidence](EDITOR_AGENT_SERVICE.md) covers native mission and Castle adapters, shared human/agent transactions/history, save/reopen, genuine captures, structured tests and local headless protocol. No authenticated network/MCP adapter is claimed. Terrain-specific controls still require their human/runtime gates; the broader milestone acceptance below remains open.
 
+**Current implementation design:** [Agentic Map Builder Architecture](AGENTIC_MAP_BUILDER_ARCHITECTURE.md), [stage-by-stage runbook](AGENTIC_MAP_BUILDER_IMPLEMENTATION_STAGES.md) and [stage DAG](AGENTIC_MAP_BUILDER_STAGES.json). Complete the task-critical editor upgrades before automated full-roster rebuild. These are future-stage specifications, not proof of implementation.
+
 **Current full-map readiness audit:** [Agentic Map Builder Capability and Acceptance Register](AGENTIC_MAP_BUILDER_READINESS.md) and its [machine-readable requirements](AGENTIC_MAP_BUILDER_REQUIREMENTS.json). The proven agent transport is not the complete 29-site construction interface; see the detailed gap/status matrix.
 
 ## 1. User outcome and scope

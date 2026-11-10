@@ -1,0 +1,918 @@
+{
+  "schema": "beckenburg.agentic-map-builder.stages/v1",
+  "version": 1,
+  "status": "DESIGN_SPECIFIED_NOT_IMPLEMENTED",
+  "authored_on": "2026-11-10",
+  "based_on_main_commit": "cc3ea3a4e6e0f07a2c194909d8067e41a07cb323",
+  "source_documents": [
+    "docs/development/AGENTIC_MAP_BUILDER_REQUIREMENTS.json",
+    "docs/editor/requirements/STAGED_INTEGRATION_PLAN.md",
+    "development/levels/FIRST_PRINCIPLES_REBUILD_PLAN.md",
+    "development/levels/rebuild/stage-register.json",
+    "development/RECOVERY_PLAN_2026-10-25.md"
+  ],
+  "authorities": {
+    "engine_stages": "G0-G12 (existing plan; not overridden)",
+    "site_stages": "S00-S11 (existing first-principles plan; not overridden)",
+    "site_scope": {
+      "base": 28,
+      "annex": 1,
+      "total": 29
+    }
+  },
+  "stage_status_vocabulary": [
+    "NOT_STARTED",
+    "IMPLEMENTING",
+    "BLOCKED",
+    "READY_FOR_REVIEW",
+    "ACCEPTED"
+  ],
+  "status_rule": "No stage is marked accepted from documentation, compile only, diagram, or successful independent narrow test. Record exact source commit, native test, CI run, real artifact and site-specific proof.",
+  "planned_default_budgets_NOT_ENFORCED": {
+    "concurrent_scene_writers_per_site": 1,
+    "independent_scene_workers": 2,
+    "shared_ollama_inference_slots": 1,
+    "edit_batch_commands_max": 16,
+    "scoped_edit_rounds_per_task_max": 3,
+    "model_calls_per_round_max": 4,
+    "retry_attempts_max": 3,
+    "failed_check_breaks_iteration": true,
+    "save_after_every_accepted_round": true,
+    "source_asset_mutations_during_scene_work": false
+  },
+  "gates": {
+    "required_release_functional": [
+      "build",
+      "launch",
+      "essential-gameplay",
+      "required-multiplayer",
+      "required-updater"
+    ],
+    "map_design_approval": [
+      "physical_geometry",
+      "runtime_parity",
+      "native_rendered_views",
+      "evidence_lore",
+      "human_visual_acceptance"
+    ],
+    "nonprogress": [
+      "renames",
+      "unchanged_copies",
+      "route_coordinate_only",
+      "generated_reports",
+      "passing_unrelated_tests"
+    ]
+  },
+  "stage_count": 16,
+  "requirement_count": 124,
+  "stages": [
+    {
+      "id": "AMB-00",
+      "title": "Authority, scope and six-check preflight",
+      "state": "NOT_STARTED",
+      "dependencies": [],
+      "requirement_ids": [
+        "G01"
+      ],
+      "goal": "Establish verified source ownership, recovery priority, task scope and preflight before edits.",
+      "code_targets": [
+        "AGENTS.md",
+        "development/RECOVERY_PLAN_2026-10-25.md",
+        "development/levels/rebuild/stage-register.json"
+      ],
+      "implementation_tasks": [
+        "Reconcile main SHA and the required recovery, installer, full multiplayer and native editor results; identify concurrent owners.",
+        "Record per-site canonical source paths, concept approvals, all 28 base locations and annex; distinguish Castle headquarters and playable missions.",
+        "Define six-check preflight: owner/scope, source hash, backup, dependencies, reversible operation, verification/review.",
+        "Do not infer installed/hardware acceptance from a package build or a documentation checkpoint."
+      ],
+      "acceptance_checks": [
+        "Inventory at exact SHA; no content overwritten.",
+        "Recovery REC-01/02 blockers remain prominent.",
+        "Baseline fixture and owner-map register read back from repository."
+      ],
+      "risk_controls": [
+        "Never force-push or retag.",
+        "No new CI workflows for design-only changes."
+      ],
+      "site_rebuild_stages": [
+        "S00",
+        "S01"
+      ],
+      "engine_stages": [
+        "G0",
+        "G1"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-01",
+      "title": "Runtime scene capability broker",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-00"
+      ],
+      "requirement_ids": [
+        "A01",
+        "A02",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "F01",
+        "F02",
+        "G02",
+        "G03",
+        "H01",
+        "H02"
+      ],
+      "goal": "Unify typed operation discovery, revisions and scene authority without adding a second scene.",
+      "code_targets": [
+        "src/main/java/org/beckenburg/editor/EditorAgentService.java",
+        "src/main/java/org/beckenburg/editor/RuntimeScene.java",
+        "src/main/java/org/beckenburg/EditorAgentCli.java",
+        "tools/editor_mcp.py"
+      ],
+      "implementation_tasks": [
+        "Define SceneDescriptor with site ID, scene ID, document codec/hash, source commit, runtime modules, allowed operations and unsupported reasons.",
+        "Route all planner commands through the same native host/service used by Swing and the CLI; never let model code call a free-form Runnable.",
+        "Make coordinate units/angles, stable IDs, scene revision, side effects and dependency invalidations explicit.",
+        "Keep serialized owner-thread commits and shared history; adapt per-site capability sets rather than advertising universal controls.",
+        "Constrain MCP/CLI authorization, target site, document root and revision; include immutable source fingerprints."
+      ],
+      "acceptance_checks": [
+        "Castle and House human/headless/MCP equal-state readback.",
+        "Wrong owner, unsupported operation, stale revision and unauthorized scope fail without side effects.",
+        "Existing save/reopen and old document fixtures pass on Windows."
+      ],
+      "risk_controls": [
+        "No parallel scene storage.",
+        "Use existing single-writer save lock and request idempotency."
+      ],
+      "site_rebuild_stages": [
+        "S00",
+        "S03"
+      ],
+      "engine_stages": [
+        "G1",
+        "G10",
+        "G11"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-02",
+      "title": "Mission prop parity and safe scene cloning",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-01"
+      ],
+      "requirement_ids": [
+        "A05",
+        "A06",
+        "B11",
+        "B12",
+        "D01",
+        "D02",
+        "D03",
+        "D04",
+        "D05"
+      ],
+      "goal": "Expose existing human mission prop actions to the agent using stable IDs and protected attachments.",
+      "code_targets": [
+        "src/main/java/org/beckenburg/LevelEditorAgent.java",
+        "src/main/java/org/beckenburg/LevelAuthoringSession.java",
+        "src/main/java/org/beckenburg/HouseAuthoringAttachments.java",
+        "src/main/java/org/beckenburg/DeveloperLevelEditor.java"
+      ],
+      "implementation_tasks": [
+        "Implement place, duplicate, remove, transform XYZ/yaw/scale and approved mesh replace with native room/support/bounds validation.",
+        "Reuse human editor native mutation and transaction/history instead of an agent-specific props list.",
+        "Retain source-bound plumbing, fixtures and dependent controls; infer no support from a mesh name alone.",
+        "Support an explicitly scoped USER level cloned from an approved template without claiming empty-site construction.",
+        "Publish typed schema and actual GUI/headless/MCP parity tests with invalid-asset and protected-fixture negatives."
+      ],
+      "acceptance_checks": [
+        "Mission objects can be placed, rotated, duplicated and deleted, saved/reopened/undone without changing others.",
+        "Attached kitchen/service geometry remains protected even under planner input.",
+        "Legacy House/USER BSCN compatibility retained."
+      ],
+      "risk_controls": [
+        "No standalone edit of source-bound assemblies.",
+        "Site clones do not confer WLD-14 identity."
+      ],
+      "site_rebuild_stages": [
+        "S03",
+        "S07"
+      ],
+      "engine_stages": [
+        "G1",
+        "G11"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-03",
+      "title": "Mission foundations, walls, floors, roofs and openings",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-02"
+      ],
+      "requirement_ids": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B14",
+        "B15",
+        "B16",
+        "B17"
+      ],
+      "goal": "Implement real structural authoring on a mission, not only Castle surfaces and loose objects.",
+      "code_targets": [
+        "src/main/java/org/beckenburg/LevelEditorAgent.java",
+        "src/main/java/org/beckenburg/LevelPlans.java",
+        "src/main/java/org/beckenburg/editor/RuntimeScene.java"
+      ],
+      "implementation_tasks": [
+        "Add typed foundation, thick-wall-run, joined-wall, floor-slab with underside, roof-shell and cut-aperture operations.",
+        "Support actual frame/sill/doorway/void geometry; no zero-thickness facade, alpha-only holes or route-only metadata.",
+        "Bind every geometry patch to the same rendered/collision/room/nav/portal/acoustic revisions, with scoped invalidation.",
+        "Use native IDs, metric coordinates, measured bounds, material/pivot references and capped batch complexity.",
+        "Implement atomic rollback of structural edits and correct both-direction raster/body checks."
+      ],
+      "acceptance_checks": [
+        "Construct an enclosed new room in School or Farmhouse with physical aperture and real floor support.",
+        "Undo/save/reopen yields exactly matching geometry, render and standing collision.",
+        "Negative unsupported roof/opening/foundation edit leaves document identical."
+      ],
+      "risk_controls": [
+        "Do not copy Castle surface JSON and call it mission construction.",
+        "Reject unsupported mesh and floating support."
+      ],
+      "site_rebuild_stages": [
+        "S03",
+        "S05"
+      ],
+      "engine_stages": [
+        "G1",
+        "G2",
+        "G4",
+        "G11"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-04",
+      "title": "Multi-storey rooms, portals and circulation",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-03"
+      ],
+      "requirement_ids": [
+        "B08",
+        "B09",
+        "B10",
+        "B18",
+        "E02",
+        "E03",
+        "E04"
+      ],
+      "goal": "Complete actual floor-to-floor access, named spaces and shared circulation/room ownership.",
+      "code_targets": [
+        "src/main/java/org/beckenburg/LevelPlans.java",
+        "src/main/java/org/beckenburg/editor/AdaptiveNavMeshEditor.java",
+        "src/main/java/org/beckenburg/editor/AdaptiveNavigationRegions.java"
+      ],
+      "implementation_tasks": [
+        "Author continuous stairs/landings/ramps, upper-floor cutouts, rail/guards and supported cellar transitions.",
+        "Model subordinate rooms and gameplay zones with stable ownership and meaningful privacy/service routes.",
+        "Derive nav, acoustic portals, optical visibility and door collision from the same physical room boundaries.",
+        "Run native swept capsule routes up/down and between all required rooms at standing and crouched height.",
+        "Expose stable portal/room IDs and diagnostic coordinates for blocked points."
+      ],
+      "acceptance_checks": [
+        "A native two-level site can be traversed in both directions without penetrating floor slabs.",
+        "Doors open into real authored apertures and actual room identities agree in graphics/physics/nav.",
+        "Invalid headroom/landing or orphan portal fails visibly."
+      ],
+      "risk_controls": [
+        "No disconnected graph-only stairs.",
+        "No arbitrary generic room coordinates substituted for physical geometry."
+      ],
+      "site_rebuild_stages": [
+        "S02",
+        "S03",
+        "S05"
+      ],
+      "engine_stages": [
+        "G4",
+        "G5",
+        "G11"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-05",
+      "title": "Stitched terrain, caves, roads, water and boundaries",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-01",
+        "AMB-03"
+      ],
+      "requirement_ids": [
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C12"
+      ],
+      "goal": "Bind existing human terrain modules to native agent commands and outdoor runtime/physics.",
+      "code_targets": [
+        "src/main/java/org/beckenburg/editor/StitchedWorldEditor.java",
+        "src/main/java/org/beckenburg/editor/TerrainScenePackageEditor.java",
+        "src/main/java/org/beckenburg/editor/AdaptiveTerrainTopology.java",
+        "src/main/java/org/beckenburg/editor/TerrainSeamSculptEditor.java"
+      ],
+      "implementation_tasks": [
+        "Expose safe height brush, seam, adaptive topology, terrain layer, cutout/cave and existing terrain-scene package operations through site-owned commands.",
+        "Ensure cross-tile joins are atomic and edited terrain support/visibility/body uses exact published triangle geometry.",
+        "Author graded foundations, roads, rails/bridges, shoreline/water interface, retaining slopes and permanent perimeters.",
+        "Maintain matching van parking elevation and extraction clearances after regrading.",
+        "Preserve source PNG/BLEND/GLB ownership and prevent generated preview assets from replacing native source.",
+        "Test real underpass/floor hole with body and optical passes across tile edges."
+      ],
+      "acceptance_checks": [
+        "3x3 native world sculpt/seam roundtrip with rollback and no cracks.",
+        "One outdoor site renders, collides and rays against the same modified terrain revision.",
+        "Van access, upper views and perimeter/horizon checks survive regrade."
+      ],
+      "risk_controls": [
+        "No display-only 2D terrain claimed as playable.",
+        "Water and terrain cannot leak into enclosed interiors."
+      ],
+      "site_rebuild_stages": [
+        "S03",
+        "S04"
+      ],
+      "engine_stages": [
+        "G4",
+        "G10",
+        "G11"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-06",
+      "title": "Electrical, environmental and ghost-gameplay services",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-04",
+        "AMB-05"
+      ],
+      "requirement_ids": [
+        "E05",
+        "E06",
+        "E07",
+        "E08",
+        "E09",
+        "E10",
+        "E11",
+        "E12",
+        "E13",
+        "E14",
+        "E15",
+        "E16"
+      ],
+      "goal": "Expose native site services as typed components tied to geometry and real host gameplay.",
+      "code_targets": [
+        "src/main/java/org/beckenburg/FixtureLighting.java",
+        "src/main/java/org/beckenburg/editor/EnvironmentModules.java",
+        "src/main/java/org/beckenburg/LevelPlans.java"
+      ],
+      "implementation_tasks": [
+        "Implement room-scoped light/switch/mount commands, remote generator and breaker/distribution ownership.",
+        "Attach actual ghost/hunter spawns, evidence/ritual locations, hiding sockets, cameras and canonical van equipment locations.",
+        "Bind audio volumes, openings/occlusion, weather/water and room circuits to physical revision owners.",
+        "Validate HidingBudget.MAXIMUM, accessible search envelope, AI/pursuit routes and ordinary site service functions.",
+        "Enforce host-authoritative gameplay, no independent physics AI/audio replica or fabricated encounter pass."
+      ],
+      "acceptance_checks": [
+        "A native game room light and switch change affects exact in-game rendered lighting and real source state.",
+        "Generator trip/reset, evidence and ritual placement pass native and multiplayer checks.",
+        "Sealed geometry does not leak sound, weather/water or uncontrolled lighting after edit."
+      ],
+      "risk_controls": [
+        "No auto-solved clues or replacement of existing ghost AI.",
+        "Do not invalidate full-world lighting for a local door change."
+      ],
+      "site_rebuild_stages": [
+        "S06",
+        "S10"
+      ],
+      "engine_stages": [
+        "G5",
+        "G6",
+        "G8",
+        "G9",
+        "G11"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-07",
+      "title": "Asset/prefab, model and material operations",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-02",
+        "AMB-03"
+      ],
+      "requirement_ids": [
+        "B13",
+        "D06",
+        "D07",
+        "D08",
+        "D09",
+        "D10",
+        "D11",
+        "D12"
+      ],
+      "goal": "Reuse approved model, texture, fixture and prefab workspaces through measured, reversible operations.",
+      "code_targets": [
+        "src/main/java/org/beckenburg/MaterialEditorAgent.java",
+        "src/main/java/org/beckenburg/AssetImportDialog.java",
+        "src/main/java/org/beckenburg/editor/EditorTopologyProject.java"
+      ],
+      "implementation_tasks": [
+        "Expose approved palette and source manifest with license, exact bounds/pivot, support and material identifiers.",
+        "Add safe prefab/part assembly, replace-in-place, surface mount, drop-to-support and measured placement macros.",
+        "Bridge selected already-tested topology, UV and material operations to native agent API; do not give arbitrary Blender/script execution.",
+        "Apply deterministic bounded scatter and visual wear without altering shared original assets.",
+        "Use immutable version-pinned shared-library references while concurrent map tasks execute."
+      ],
+      "acceptance_checks": [
+        "An approved GLB replacement retains geometry/material/UV/collision and survives native save/reopen.",
+        "A model agent cannot mutate the shared binary during concurrent scene edits.",
+        "Unsupported rig/UV transforms and missing original assets refuse safely."
+      ],
+      "risk_controls": [
+        "No pasted generic collision box for all models.",
+        "No missing-source or unsafe-license material publication."
+      ],
+      "site_rebuild_stages": [
+        "S07",
+        "S08",
+        "S09"
+      ],
+      "engine_stages": [
+        "G2",
+        "G3",
+        "G7",
+        "G11"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-08",
+      "title": "Runtime verification, renderer proofs and defect evidence",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-03",
+        "AMB-04"
+      ],
+      "requirement_ids": [
+        "E01",
+        "F03",
+        "F04",
+        "F05",
+        "F06",
+        "F07",
+        "F08",
+        "F09",
+        "F10",
+        "F11",
+        "F12",
+        "F13",
+        "F14",
+        "F15",
+        "F16",
+        "F17",
+        "F18"
+      ],
+      "goal": "Extend genuine native inspection to full geometry, gameplay and reproducible fixed-camera evidence.",
+      "code_targets": [
+        "src/main/java/org/beckenburg/editor/EditorAgentService.java",
+        "src/main/java/org/beckenburg/SceneRenderer.java",
+        "tools/verify_editor_agent_cli.py"
+      ],
+      "implementation_tasks": [
+        "Build targeted checks for support, exact wall/roof/portal containment, clipped objects, 3D capsule sweeps and source/collider parity.",
+        "Record stable camera, render mode, light/time/weather state, actual before/after PNG and changed geometry IDs.",
+        "Attach exact failed code, object/room ID, scene revision, coordinates and source hashes to defect ledger.",
+        "Distinguish visual/surface advisory issues from required build/launch/host/network/update release failures.",
+        "Verify scene across real renderer, physics, nav, rooms, acoustics and services before promotion."
+      ],
+      "acceptance_checks": [
+        "A deliberately blocked stair, open roof or embedded lamp fails a real check; repair makes it pass.",
+        "Camera-mismatched or identical PNG alone never certifies a structural change.",
+        "Evidence bundle has source SHA, native document digest, receipts, PNGs, tests and unresolved issues."
+      ],
+      "risk_controls": [
+        "Never weaken an assertion to turn CI green.",
+        "Do not claim physical GPU/FPS or installed acceptance from headless software render."
+      ],
+      "site_rebuild_stages": [
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S11"
+      ],
+      "engine_stages": [
+        "G1",
+        "G4",
+        "G11",
+        "G12"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-09",
+      "title": "Bounded multi-round agentic map iteration",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-02",
+        "AMB-08"
+      ],
+      "requirement_ids": [
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "goal": "Turn the single-choice Ollama test into staged observe–plan–edit–test–review–replan.",
+      "code_targets": [
+        "tools/ollama_editor_pilot.py",
+        "docs/development/OLLAMA_EDITOR_AGENT_MANIFEST.md",
+        "docs/development/AGENTIC_MAP_BUILDER_REQUIREMENTS.json"
+      ],
+      "implementation_tasks": [
+        "Compile typed site goals and S00–S11 work packages into dependencies and read-only context, filtered to host capabilities.",
+        "Let Ollama propose only listed native commands; trusted broker validates state, model output, ownership, budget and dependencies.",
+        "Apply bounded atomic batches, rerun actual tests, capture matching camera views and inspect physical diffs.",
+        "Checkpoint accepted rounds; replan on diagnosed failure, and stop on no progress or human approval requirement.",
+        "Track substantive physical work separately from tiny cosmetic edits, renamed metadata and screenshots."
+      ],
+      "acceptance_checks": [
+        "One site completes at least three meaningful dependent edits and post-edit tests through the real editor.",
+        "Injected unsafe proposal, stale revision, and failed multi-command batch never persist partial edits.",
+        "A planner cannot execute shell commands or write GitHub directly."
+      ],
+      "risk_controls": [
+        "Model is not granted arbitrary source-code execution.",
+        "One revision owner per iterative scene."
+      ],
+      "site_rebuild_stages": [
+        "S02",
+        "S03",
+        "S05",
+        "S07",
+        "S08"
+      ],
+      "engine_stages": [
+        "G10",
+        "G11"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-10",
+      "title": "Durable task journal, retry and checkpoint restoration",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-01",
+        "AMB-09"
+      ],
+      "requirement_ids": [
+        "G10",
+        "H03",
+        "H04",
+        "H08",
+        "H09",
+        "H10",
+        "H11"
+      ],
+      "goal": "Preserve atomic task progress across crashes, runner restarts, unknown responses and resource interruptions.",
+      "code_targets": [
+        "src/main/java/org/beckenburg/editor/EditorRequestJournal.java",
+        "src/main/java/org/beckenburg/editor/EditorDocumentStore.java",
+        "tools/ollama_editor_pilot.py"
+      ],
+      "implementation_tasks": [
+        "Create versioned TaskEnvelope, dependency DAG, work item states, budgets and manifest-identity checks.",
+        "Persist task records, lease/snapshot metadata, edit sequence, request digest, source state and result hash on durable runner storage plus immutable artifact checkpoints.",
+        "On retry reconcile native saved scene and sequence receipts; never blindly replay uncertain non-idempotent mutations.",
+        "Bound model calls, retries, infer context size, worker memory, total rounds and execution time.",
+        "Prove interruption at before-commit, after-commit-before-response, after-save and during image upload."
+      ],
+      "acceptance_checks": [
+        "All interrupted tasks resume without duplicate geometry or leaked scene ownership.",
+        "Bounded retries surface unresolvable conflicts, not infinite background loops.",
+        "Reviewable report links exact scene document, native transactions and evidence hashes."
+      ],
+      "risk_controls": [
+        "Scheduled tasks are never silently disabled.",
+        "Runner artifacts cannot stand in for a verified canonical source revision."
+      ],
+      "site_rebuild_stages": [
+        "S00",
+        "S03",
+        "S11"
+      ],
+      "engine_stages": [
+        "G1",
+        "G10",
+        "G11"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-11",
+      "title": "Concurrent site task allocation, worker leases and merge safety",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-08",
+        "AMB-10"
+      ],
+      "requirement_ids": [
+        "C13",
+        "G11",
+        "G12",
+        "H05",
+        "H06",
+        "H07",
+        "H12",
+        "H13",
+        "H14"
+      ],
+      "goal": "Run at least two independent maps concurrently without concurrent writers to one native scene.",
+      "code_targets": [
+        "tools/ollama_editor_pilot.py",
+        "src/main/java/org/beckenburg/editor/EditorAgentService.java",
+        "development/levels/rebuild/stage-register.json"
+      ],
+      "implementation_tasks": [
+        "Allocate one owner process and fenced lease per scene; forbid stale lease writes even when native revision appears equal.",
+        "Schedule two isolated native site workers and a shared, bounded Ollama planning queue.",
+        "Pin shared asset catalog and source revision; shared model edits are dependency tasks with separate ownership.",
+        "Use durable task DAG with block/retry/review states, per-site receipts, workspace paths and artefact manifests.",
+        "Inject a stale writer, worker timeout and shared-asset conflict; only the affected task fails.",
+        "Reconcile upstream Git commits before any reviewed promotion; no automated force-push."
+      ],
+      "acceptance_checks": [
+        "School and Farmhouse complete independently checkable multi-round real edits with distinct saved documents and captures.",
+        "Same-scene dual writer and expired lease cannot commit.",
+        "Failure/rollback of one task leaves the other map and shared library unchanged."
+      ],
+      "risk_controls": [
+        "Never launch multiple workflows per task.",
+        "Do not run multiple CPU/GPU-heavy planners simultaneously on one constrained runner by default."
+      ],
+      "site_rebuild_stages": [
+        "S03",
+        "S05",
+        "S07"
+      ],
+      "engine_stages": [
+        "G10",
+        "G11",
+        "G12"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-12",
+      "title": "First-class WLD-14/outdoor site adapter",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-03",
+        "AMB-04",
+        "AMB-05",
+        "AMB-08"
+      ],
+      "requirement_ids": [
+        "A03",
+        "A04"
+      ],
+      "goal": "Make Morrow Point Lightstation a native, runtime-linked editable site rather than a renamed template.",
+      "code_targets": [
+        "src/main/java/org/beckenburg/HouseMap.java",
+        "src/main/java/org/beckenburg/EditorAgentCli.java",
+        "development/levels/layouts/wld-14/layout.json",
+        "development/levels/rebuild/wld-14/brief.md"
+      ],
+      "implementation_tasks": [
+        "Identify existing WLD-14 editable Blender/GLB/HCS2/terrain source and its exact runtime loader/owner; preserve all originals.",
+        "Bind the actual site geometry and required services to a native editor adapter, saved scene and catalog identity.",
+        "Expose safe structural/terrain changes through existing CLI/MCP host, with real render/collider/room consistency.",
+        "Prove native save/reopen and the same changed location in the installed game, leaving any unintegrated systems catalog-locked.",
+        "Do not copy unchanged School or generic wing geometry and relabel it WLD-14."
+      ],
+      "acceptance_checks": [
+        "Morrow Point opens by its own stable site ID with real authored model, terrain and native revision.",
+        "One bounded structural edit produces a saved native scene and matching runtime render/body change.",
+        "Game-site availability remains gated until whole-mission acceptance."
+      ],
+      "risk_controls": [
+        "No fake placeholder mission unlock.",
+        "Existing map packets are planning until physically consumed by game."
+      ],
+      "site_rebuild_stages": [
+        "S00",
+        "S02",
+        "S03",
+        "S04"
+      ],
+      "engine_stages": [
+        "G4",
+        "G8",
+        "G9",
+        "G11"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-13",
+      "title": "Lighthouse complete construction and visual/gameplay pilot",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-06",
+        "AMB-07",
+        "AMB-09",
+        "AMB-11",
+        "AMB-12"
+      ],
+      "requirement_ids": [
+        "I01",
+        "I02",
+        "I03"
+      ],
+      "goal": "Supervise one start-to-finish true Lighthouse build across all site construction/acceptance stages.",
+      "code_targets": [
+        "development/levels/rebuild/wld-14",
+        "development/levels/FIRST_PRINCIPLES_REBUILD_PLAN.md",
+        "development/levels/MAP_COMPLETION_GOAL.md"
+      ],
+      "implementation_tasks": [
+        "Construct tower/lantern, keeper house/covered passage, generator/oil house, cistern, real coastal grading and bounded search zones.",
+        "Build genuine stairs, floors/voids, windows, access, room/portal, services, van/extraction and correct lighting/weather.",
+        "Iteratively furnish/age/author encounters using approved assets; preserve normal former function and approved story.",
+        "Run day/dusk/night fixed camera review, full body/optical/nav/hiding/ritual checks, installed case gameplay and TCP.",
+        "Publish exact source hashes, accepted construction diffs, rejected alternatives and human approval; retain max 40 accessible search spaces."
+      ],
+      "acceptance_checks": [
+        "Real site structure and subsystems are committed through native editor and survive reopen.",
+        "Game mission starts and can progress through equipment, evidence, ritual and extraction under actual host/guest.",
+        "Human confirms legible layout/material and full-map status; before approval keep locked."
+      ],
+      "risk_controls": [
+        "Not complete from design packets or 2D route study.",
+        "No promotional release from artwork-only acceptance."
+      ],
+      "site_rebuild_stages": [
+        "S00",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09",
+        "S10",
+        "S11"
+      ],
+      "engine_stages": [
+        "G9",
+        "G10",
+        "G11",
+        "G12"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-14",
+      "title": "Full-roster staged production and metrics",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-13"
+      ],
+      "requirement_ids": [
+        "I06",
+        "I09"
+      ],
+      "goal": "Apply the proven pipeline to the existing 28 base plus annex, retaining blocked sites visibly.",
+      "code_targets": [
+        "development/levels/rebuild/stage-register.json",
+        "development/levels/FIRST_PRINCIPLES_SITE_PACKAGES.md"
+      ],
+      "implementation_tasks": [
+        "Sync per-site S00–S11 status and evidence; Castle-first owner priority is preserved while other planning can proceed.",
+        "Allocate independent construction batches by map readiness, prerequisites, native system support and resource budgets.",
+        "Only count changed physical geometry and genuinely playable integrations; keep graphics/asset refinements separate.",
+        "Capture actual per-site tested source, scene, gallery evidence, unresolved defects and review records.",
+        "Measure validated edits/hour, retries, token/model budget, collisions, worker overlap and map stage throughput."
+      ],
+      "acceptance_checks": [
+        "All 29 sites either show evidence-backed stage acceptance or explicit blockers; none silently omitted.",
+        "Per-site review links actual render/collision/nav/service progress, not reports or filenames.",
+        "Concurrent tasks do not clobber shared source models or native saved documents."
+      ],
+      "risk_controls": [
+        "No automatic completion percentage from packet count.",
+        "No unrelated workflow proliferation."
+      ],
+      "site_rebuild_stages": [
+        "S00",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09",
+        "S10",
+        "S11"
+      ],
+      "engine_stages": [
+        "G10",
+        "G11",
+        "G12"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    },
+    {
+      "id": "AMB-15",
+      "title": "Controlled promotion, installed acceptance and operational handoff",
+      "state": "NOT_STARTED",
+      "dependencies": [
+        "AMB-13",
+        "AMB-14"
+      ],
+      "requirement_ids": [
+        "A11",
+        "A12",
+        "I04",
+        "I05",
+        "I07",
+        "I08"
+      ],
+      "goal": "Close only genuinely accepted maps and promote under existing recovery/release gates.",
+      "code_targets": [
+        "development/RECOVERY_PLAN_2026-10-25.md",
+        "development/quality/MAP_FITNESS_CHECKLIST.md",
+        "development/levels/MAP_COMPLETION_GOAL.md"
+      ],
+      "implementation_tasks": [
+        "Review source diff, exact native document/scene/multiplayer/renderer/acoustics/AI parity and license/source provenance.",
+        "Run required game build, launch, updater, essential gameplay and TCP multiplayer tests; distinguish release blockers from advisory design checks.",
+        "Require human visual approval before map promotion and preserve existing saves/paths with migrations.",
+        "Push only reconciled authorized main changes, record commit SHA and artifact/gallery readback; never force-push or retag.",
+        "Provide supervisor stop/retry/intervention controls, failure receipts and cost/reproducibility dashboards."
+      ],
+      "acceptance_checks": [
+        "Accepted site survives installed launch, real case, network, save/reopen and next launch as appropriate.",
+        "User-review result and exact source/artifact evidence accompany remote commit.",
+        "No unfinished map is presented as complete and no failed release gate bypassed."
+      ],
+      "risk_controls": [
+        "No release claimed from a green editor test alone.",
+        "Do not silently overwrite installed or player-owned documents."
+      ],
+      "site_rebuild_stages": [
+        "S11"
+      ],
+      "engine_stages": [
+        "G10",
+        "G11",
+        "G12"
+      ],
+      "evidence_state": "NOT_PRODUCED"
+    }
+  ]
+}
