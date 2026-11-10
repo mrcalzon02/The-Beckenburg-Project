@@ -49,6 +49,32 @@ public final class EditorAgentMissionPropsTest {
         return Map.of("id",id,"x",Double.toString(spot.x()),"y",Double.toString(spot.y()),
             "z",Double.toString(spot.z()));
     }
+    /** A camera must have an actual unobstructed view of the target position.
+     * The first CI attempt stared at a stone wall and produced identical captures,
+     * despite native prop/collider parity. Keep real renderer proof, change the
+     * physical vantage rather than weakening the comparison.
+     */
+    private static List<double[]> visibleCameras(HouseMap map,LevelDefinition.Room room,Spot target){
+        var result=new java.util.ArrayList<double[]>();
+        for(double radius:new double[]{1.5,2.2,3.0}) {
+            for(int angle=0;angle<12;angle++){
+                double t=angle*Math.PI/6,cx=target.x()+Math.sin(t)*radius,
+                    cz=target.z()+Math.cos(t)*radius;
+                if(!room.contains(cx,target.y(),cz)||!map.traversable(cx,target.y(),cz)
+                    ||!map.clearLineOfSight(cx,target.y()+1.45,cz,
+                        target.x(),target.y()+.65,target.z()))continue;
+                result.add(new double[]{cx,cz});
+                if(result.size()>=4)return result;
+            }
+        }
+        return result;
+    }
+    private static void aim(SceneRenderer renderer,Spot target,double[] view){
+        renderer.x=view[0];renderer.z=view[1];renderer.eyeHeight=target.y()+1.62;
+        double distance=Math.hypot(target.x()-view[0],target.z()-view[1]);
+        renderer.yaw=Math.atan2(target.x()-view[0],target.z()-view[1]);
+        renderer.pitch=Math.atan2(target.y()+.65-renderer.eyeHeight,distance);
+    }
     public static void main(String[] args)throws Exception{
         Path home=Files.createTempDirectory("mission-agent-props-");
         String previous=System.getProperty("user.home");
@@ -69,17 +95,15 @@ public final class EditorAgentMissionPropsTest {
             check(!operations.contains("rebuild-house"),"School must not expose House rebuild");
             var bounds=SceneRenderer.castleBounds("chair_mp_5");
             var room=session.level().room(first.room());
-            double px=first.x()-2,pz=first.z()-2;
-            if(!map.traversable(px,first.y(),pz)){
-                px=first.x()+2;pz=first.z()+2;
-            }
-            if(!map.traversable(px,first.y(),pz)){px=room.spawn().x();pz=room.spawn().z();}
-            renderer.x=px;renderer.z=pz;renderer.eyeHeight=first.y()+1.62;
-            renderer.yaw=Math.atan2(first.x()-px,first.z()-pz);renderer.pitch=-.20;
+            var views=visibleCameras(map,room,first);
+            check(!views.isEmpty(),"Find a real room-supported, line-of-sight camera for the native prop");
             Path proof=Path.of("build","editor-agent-evidence","mission-agent-props");
             Files.createDirectories(proof);
             int originalSize=session.size();long originalRev=session.revision();
-            agent.capture(originalRev,proof.resolve("before.png"));
+            for(int i=0;i<views.size();i++){
+                aim(renderer,first,views.get(i));
+                agent.capture(originalRev,proof.resolve("before-"+i+".png"));
+            }
             agent.transact(originalRev,"place-prop",place(first,"chair_mp_5"));
             check(session.size()==originalSize+1,"Placed real mission prop");
             String added=session.nodeId(session.size()-1);
@@ -92,10 +116,21 @@ public final class EditorAgentMissionPropsTest {
                 "Native source mesh dimensions define the physical collider");
             check(agent.test(session.revision(),"mission-runtime-parity").result().stream().allMatch(EditorAgentService.Check::passed),
                 "Real runtime collision consumes added prop");
-            agent.capture(session.revision(),proof.resolve("after.png"));
-            check(!Arrays.equals(Files.readAllBytes(proof.resolve("before.png")),
-                Files.readAllBytes(proof.resolve("after.png"))),
-                "Actual fixed-camera renderer must show the new placed object");
+            boolean visibleDifference=false;
+            for(int i=0;i<views.size();i++){
+                aim(renderer,first,views.get(i));
+                Path before=proof.resolve("before-"+i+".png"),after=proof.resolve("after-"+i+".png");
+                agent.capture(session.revision(),after);
+                if(!Arrays.equals(Files.readAllBytes(before),Files.readAllBytes(after))){
+                    Files.copy(before,proof.resolve("before.png"),java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+                    Files.copy(after,proof.resolve("after.png"),java.nio.file.StandardCopyOption.REPLACE_EXISTING);
+                    System.out.println("Mission native prop visible from camera "+i+" at "+
+                        views.get(i)[0]+","+views.get(i)[1]);
+                    visibleDifference=true;break;
+                }
+            }
+            check(visibleDifference,"Actual fixed-camera renderer must show the newly authored native object; "+
+                "all LOS-verified camera captures were unchanged");
 
             var transformed=Map.of("id",added,"x",Double.toString(first.x()+.125),
                 "y",Double.toString(first.y()),"z",Double.toString(first.z()),
