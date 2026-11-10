@@ -45,7 +45,7 @@ public final class EditorAgentMissionDoorTest {
         renderer.yaw=Math.atan2(p.x()-v[0],p.z()-v[1]);
         renderer.pitch=Math.atan2(1.20-1.62,Math.hypot(p.x()-v[0],p.z()-v[1]));
     }
-    public static void main(String[] ignored)throws Exception {
+    public static void main(String[] args)throws Exception {
         Path home=Files.createTempDirectory("mission-door-authoring-");
         String previous=System.getProperty("user.home");
         System.setProperty("user.home",home.toString());
