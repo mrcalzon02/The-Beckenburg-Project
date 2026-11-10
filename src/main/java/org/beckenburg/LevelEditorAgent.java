@@ -13,7 +13,7 @@ import javax.imageio.ImageIO;
 /** Mission adapter: reads/writes the active authoring session; the supplied
  * HouseMap is the same native game map used by the human editor viewport.
  */
-public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuthoringSession.Snapshot>,EditorAgentService.WalkingCollision,EditorAgentService.PropertySource {
+public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuthoringSession.Snapshot>,EditorAgentService.WalkingCollision,EditorAgentService.PropertySource,EditorAgentService.NodeFocus {
     private final LevelAuthoringSession session;
     private final Supplier<HouseMap> map;
     private final SceneRenderer renderer;
@@ -24,6 +24,22 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         this.map=java.util.Objects.requireNonNull(map);
         this.renderer=java.util.Objects.requireNonNull(renderer);
         this.access=java.util.Objects.requireNonNull(access);
+    }
+    /** Aim the authoritative renderer from a traversable room point, without editing geometry. */
+    public void focus(org.beckenburg.editor.EditorProject.Node node){
+        var prop=session.prop(session.indexOf(node.id()));
+        var room=session.level().room(prop.room());
+        var spawn=room.spawn();
+        double dx=prop.x()-spawn.x(), dz=prop.z()-spawn.z();
+        double length=Math.hypot(dx,dz);
+        double fraction=length>2.6?(length-2.6)/length:0;
+        double px=spawn.x()+dx*fraction, pz=spawn.z()+dz*fraction;
+        if(!map.get().traversable(px,spawn.y(),pz)){
+            px=spawn.x();pz=spawn.z();
+        }
+        renderer.x=px;renderer.z=pz;renderer.eyeHeight=spawn.y()+1.62;
+        renderer.yaw=Math.atan2(prop.x()-px,prop.z()-pz);
+        renderer.pitch=-.12;
     }
     public LevelAuthoringSession project(){return session;}
     public long revision(){return session.revision();}
