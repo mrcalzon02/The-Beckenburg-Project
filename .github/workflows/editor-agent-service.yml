@@ -84,34 +84,53 @@ jobs:
         if: ${{ (github.event_name == 'workflow_dispatch' && inputs.run_ollama_pilot) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[ollama-editor-pilot]')) }}
         shell: pwsh
         run: python tools/ollama_editor_pilot.py --self-test
-      - name: Prepare loopback Ollama for bounded editor pilot
+      - name: Run loopback Ollama and bounded native School edit in the SAME step
         if: ${{ (github.event_name == 'workflow_dispatch' && inputs.run_ollama_pilot) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[ollama-editor-pilot]')) }}
         shell: pwsh
+        timeout-minutes: 16
         run: |
           $ErrorActionPreference = 'Stop'
+          # GitHub-hosted runner cleans up orphan processes between steps.
+          # Keep Ollama and its Python client alive together, then terminate it explicitly.
           $env:OLLAMA_HOST = '127.0.0.1:11434'
           $env:OLLAMA_MODELS = Join-Path $env:RUNNER_TEMP 'ollama-models'
+          $evidence = Join-Path 'build/editor-agent-evidence' 'ollama-pilot'
+          New-Item -ItemType Directory -Path $evidence -Force | Out-Null
           $toolDir = Join-Path $env:RUNNER_TEMP 'beckenburg-ollama'
           $exe = Join-Path $toolDir 'ollama.exe'
-          if (-not (Test-Path $exe)) {
-            $archive = Join-Path $env:RUNNER_TEMP 'ollama-windows-amd64.zip'
-            Invoke-WebRequest -Uri 'https://github.com/ollama/ollama/releases/latest/download/ollama-windows-amd64.zip' -OutFile $archive
-            Expand-Archive -Path $archive -DestinationPath $toolDir -Force
+          $server = $null
+          try {
+            if (-not (Test-Path $exe)) {
+              $archive = Join-Path $env:RUNNER_TEMP 'ollama-windows-amd64.zip'
+              Invoke-WebRequest -Uri 'https://github.com/ollama/ollama/releases/latest/download/ollama-windows-amd64.zip' -OutFile $archive
+              Expand-Archive -Path $archive -DestinationPath $toolDir -Force
+            }
+            if (-not (Test-Path $exe)) { throw 'Official Ollama CLI missing after extraction' }
+            $server = Start-Process -FilePath $exe -ArgumentList 'serve' -PassThru -WindowStyle Hidden `
+              -RedirectStandardOutput (Join-Path $evidence 'ollama-server-stdout.log') `
+              -RedirectStandardError (Join-Path $evidence 'ollama-server-stderr.log')
+            $ready = $false
+            for ($i=0; $i -lt 45; $i++) {
+              if ($server.HasExited) { throw "Ollama exited unexpectedly with $($server.ExitCode)" }
+              try {
+                Invoke-RestMethod -Uri 'http://127.0.0.1:11434/api/tags' -TimeoutSec 3 | Out-Null
+                $ready = $true
+                break
+              } catch { Start-Sleep -Seconds 2 }
+            }
+            if (-not $ready) { throw 'Ollama loopback server did not become ready' }
+            & $exe pull qwen2.5:0.5b
+            if ($LASTEXITCODE -ne 0) { throw 'Could not pull the pilot model' }
+            # Verify the serving endpoint after the model download, not just before it.
+            Invoke-RestMethod -Uri 'http://127.0.0.1:11434/api/tags' -TimeoutSec 8 | Out-Null
+            python tools/ollama_editor_pilot.py --site SCHOOL --output $evidence
+            if ($LASTEXITCODE -ne 0) { throw "Native editor pilot exited with $LASTEXITCODE" }
           }
-          if (-not (Test-Path $exe)) { throw 'Official Ollama CLI missing after extraction' }
-          Start-Process -FilePath $exe -ArgumentList 'serve' -PassThru -WindowStyle Hidden -RedirectStandardOutput (Join-Path $env:RUNNER_TEMP 'ollama-stdout.log') -RedirectStandardError (Join-Path $env:RUNNER_TEMP 'ollama-stderr.log') | Out-Null
-          $ready = $false
-          for ($i=0; $i -lt 45; $i++) {
-            try { Invoke-RestMethod -Uri 'http://127.0.0.1:11434/api/tags' -TimeoutSec 3 | Out-Null; $ready = $true; break }
-            catch { Start-Sleep -Seconds 2 }
+          finally {
+            if ($server -and -not $server.HasExited) {
+              Stop-Process -Id $server.Id -Force -ErrorAction SilentlyContinue
+            }
           }
-          if (-not $ready) { throw 'Ollama loopback server did not become ready' }
-          & $exe pull qwen2.5:0.5b
-          if ($LASTEXITCODE -ne 0) { throw 'Could not pull the pinned pilot model' }
-      - name: Test one Ollama-directed native School editor change
-        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.run_ollama_pilot) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[ollama-editor-pilot]')) }}
-        shell: pwsh
-        run: python tools/ollama_editor_pilot.py --site SCHOOL --output build/editor-agent-evidence/ollama-pilot
       - name: Verify native service, actual Windows editor and headless protocol
         env:
           EDITOR_MCP_PYTHON: python
