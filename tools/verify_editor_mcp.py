@@ -106,9 +106,24 @@ async def verify(scope):
         if castle:
             key = "start"
         else:
-            first_page = (await call("hierarchy", revision=revision, offset=0, limit=2))["result"]
-            assert first_page["total"] >= 2 and len(first_page["nodes"]) == 2
-            key = first_page["nodes"][0]["id"]
+            # The first retained rebuilt House node is a source-bound kitchen
+            # counter. A legal editor test must choose a movable, floor-supported
+            # object, rather than bypass HouseAuthoringAttachments protection.
+            offset = 0
+            key = None
+            while True:
+                page = (await call("hierarchy", revision=revision, offset=offset, limit=64))["result"]
+                for row in page["nodes"]:
+                    if row["kind"] != "PROP" or not row["label"].startswith("chair_mp_5 /"):
+                        continue
+                    native = (await call("inspect_properties", revision=revision, id=row["id"]))["result"]
+                    if native["fields"].get("support") == "floor":
+                        key = row["id"]
+                        break
+                if key is not None or offset + len(page["nodes"]) >= page["total"]:
+                    break
+                offset += len(page["nodes"])
+            assert key is not None, "No movable native chair in the rebuilt House"
         node = (await call("inspect_nodes", revision=revision, ids=[key]))["result"][0]
         xyz = {axis: node[axis] for axis in "xyz"}
         props = (await call("inspect_properties", revision=revision, id=key))["result"]

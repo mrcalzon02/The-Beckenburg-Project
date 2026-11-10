@@ -282,10 +282,30 @@ public final class EditorAgentGuiTest {
         // Rebuilt House documents preserve real surviving IDs, not deleted prop-0/prop-1.
         // Discover active human-editor rows on its owner thread before remote reads.
         var nativeIds=new AtomicReference<java.util.List<String>>();
+        var selectedIndex=new AtomicReference<Integer>();
         SwingUtilities.invokeAndWait(()->{
             var inspection=editor.agentService().inspect();
             check(inspection.revision()==rev,"Observed revision matches active human editor");
-            nativeIds.set(inspection.hierarchy().stream().limit(2).map(n->n.id()).toList());
+            var state=(LevelAuthoringSession.Snapshot)inspection.state();
+            var source=HouseSourceVersions.source(state.architecture());
+            var rows=inspection.hierarchy();
+            check(rows.size()==state.props().size()&&rows.size()>1,"Live native hierarchy matches House source");
+            int movable=-1;
+            for(int i=0;i<rows.size();i++){
+                var prop=state.props().get(i);
+                // Never drag a first-in-list fixture (e.g. the serviced kitchen counter).
+                // Such edits must be rejected by HouseAuthoringAttachments, and would
+                // open a real human error dialog when driven through a Swing spinner.
+                if(prop.mesh().equals("chair_mp_5")&&prop.support().equals("floor")
+                    &&!HouseAuthoringAttachments.required(source,prop)){
+                    movable=i;
+                    break;
+                }
+            }
+            check(movable>=0,"A non-attached movable chair exists in the active rebuilt House");
+            selectedIndex.set(movable);
+            nativeIds.set(java.util.List.of(rows.get(movable).id(),rows.get(movable==0?1:0).id()));
+            System.out.println("GUI observation native target: "+rows.get(movable).id()+" / "+rows.get(movable).label());
         });
         check(nativeIds.get()!=null&&nativeIds.get().size()==2,"Two surviving native hierarchy IDs");
         String firstId=nativeIds.get().get(0),secondId=nativeIds.get().get(1);
@@ -304,7 +324,9 @@ public final class EditorAgentGuiTest {
         SwingUtilities.invokeAndWait(()->{
             try{expected.set(EditorAgentProtocol.json(editor.agentService().node(rev,firstId)));
                 var hierarchy=DeveloperLevelEditor.class.getDeclaredField("hierarchy");hierarchy.setAccessible(true);
-                ((JList<?>)hierarchy.get(editor)).setSelectedIndex(0);
+                var nativeList=(JList<?>)hierarchy.get(editor);
+                check(nativeList.getModel().getSize()>selectedIndex.get(),"Human prop index exists in editor list");
+                nativeList.setSelectedIndex(selectedIndex.get());
                 var xField=DeveloperLevelEditor.class.getDeclaredField("x");xField.setAccessible(true);
                 var x=(JSpinner)xField.get(editor);
                 movedX.set(editor.agentService().node(rev,firstId).result().x()+.25);
