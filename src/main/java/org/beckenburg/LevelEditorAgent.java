@@ -27,10 +27,13 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     }
     /** Aim the authoritative renderer from a traversable room point, without editing geometry. */
     public void focus(org.beckenburg.editor.EditorProject.Node node){
-        var prop=session.prop(session.indexOf(node.id()));
-        var room=session.level().room(prop.room());
+        int roomId=node.kind().equals("WALL")?session.walls().stream()
+            .filter(w->(MissionStructuralWall.NODE_PREFIX+w.id()).equals(node.id()))
+            .findFirst().orElseThrow().room()
+            :session.prop(session.indexOf(node.id())).room();
+        var room=session.level().room(roomId);
         var spawn=room.spawn();
-        double dx=prop.x()-spawn.x(), dz=prop.z()-spawn.z();
+        double dx=node.x()-spawn.x(), dz=node.z()-spawn.z();
         double length=Math.hypot(dx,dz);
         double fraction=length>2.6?(length-2.6)/length:0;
         double px=spawn.x()+dx*fraction, pz=spawn.z()+dz*fraction;
@@ -38,13 +41,20 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             px=spawn.x();pz=spawn.z();
         }
         renderer.x=px;renderer.z=pz;renderer.eyeHeight=spawn.y()+1.62;
-        renderer.yaw=Math.atan2(prop.x()-px,prop.z()-pz);
+        renderer.yaw=Math.atan2(node.x()-px,node.z()-pz);
         renderer.pitch=-.12;
     }
     public LevelAuthoringSession project(){return session;}
     public long revision(){return session.revision();}
     public boolean walkable(double x,double y,double z){return map.get().traversable(x,y,z);}
     public Map<String,Object> properties(org.beckenburg.editor.EditorProject.Node node){
+        if(node.kind().equals("WALL")){
+            var wall=session.walls().stream().filter(w->
+                (MissionStructuralWall.NODE_PREFIX+w.id()).equals(node.id())).findFirst().orElseThrow();
+            return Map.of("room",wall.room(),"x0",wall.x0(),"z0",wall.z0(),
+                "x1",wall.x1(),"z1",wall.z1(),"base",wall.base(),
+                "height",wall.height(),"thickness",wall.thickness(),"material",wall.material());
+        }
         var p=session.prop(session.indexOf(node.id()));
         var fields=new java.util.LinkedHashMap<String,Object>(Map.of("mesh",p.mesh(),"room",p.room(),"scale",p.scale(),
             "yawDegrees",Math.toDegrees(p.yaw()),"collisionX",p.halfX(),"collisionZ",p.halfZ(),"height",p.height()));
@@ -65,7 +75,11 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     public List<String> operations(){
         var ops=new java.util.ArrayList<>(List.of("move-prop","place-prop","transform-prop",
             "duplicate-prop","remove-prop"));
-        if(!HollowCreekLevel.is(session.sourceLevel()))ops.add("resize-door");
+        if(!HollowCreekLevel.is(session.sourceLevel())){
+            ops.add("resize-door");
+            ops.add("place-wall");
+            ops.add("remove-wall");
+        }
         if(session.canRebuildHouse())ops.add("rebuild-house");
         return List.copyOf(ops);
     }
@@ -77,6 +91,11 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     private static final Map<String,String> DUPLICATE_FIELDS=MOVE_FIELDS;
     private static final Map<String,String> REMOVE_FIELDS=Map.of("id","string");
     private static final Map<String,String> DOOR_FIELDS=Map.of("id","integer","width","number");
+    private static final Map<String,String> WALL_FIELDS=Map.ofEntries(
+        Map.entry("id","string"),Map.entry("room","integer"),Map.entry("x0","number"),
+        Map.entry("z0","number"),Map.entry("x1","number"),Map.entry("z1","number"),
+        Map.entry("base","number"),Map.entry("height","number"),Map.entry("thickness","number"),
+        Map.entry("material","integer"));
     public Map<String,Map<String,String>> operationParameters(){
         var result=new java.util.LinkedHashMap<String,Map<String,String>>();
         result.put("move-prop",MOVE_FIELDS);
@@ -84,7 +103,11 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         result.put("transform-prop",TRANSFORM_FIELDS);
         result.put("duplicate-prop",DUPLICATE_FIELDS);
         result.put("remove-prop",REMOVE_FIELDS);
-        if(!HollowCreekLevel.is(session.sourceLevel()))result.put("resize-door",DOOR_FIELDS);
+        if(!HollowCreekLevel.is(session.sourceLevel())){
+            result.put("resize-door",DOOR_FIELDS);
+            result.put("place-wall",WALL_FIELDS);
+            result.put("remove-wall",REMOVE_FIELDS);
+        }
         if(session.canRebuildHouse())result.put("rebuild-house",Map.of("baseline","ORIGINAL"));
         return Map.copyOf(result);
     }
@@ -194,6 +217,19 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                     throw new IllegalArgumentException("Expected native portal id and clear opening width");
                 session.resizeDoor(Integer.parseInt(args.get("id")),number(args,"width"));
             }
+            case "place-wall" -> {
+                if(!args.keySet().equals(WALL_FIELDS.keySet()))
+                    throw new IllegalArgumentException("Expected bounded native partition geometry");
+                session.placeWall(new MissionStructuralWall(args.get("id"),
+                    Integer.parseInt(args.get("room")),number(args,"x0"),number(args,"z0"),
+                    number(args,"x1"),number(args,"z1"),number(args,"base"),
+                    number(args,"height"),number(args,"thickness"),Integer.parseInt(args.get("material"))));
+            }
+            case "remove-wall" -> {
+                if(!args.keySet().equals(REMOVE_FIELDS.keySet()))
+                    throw new IllegalArgumentException("Expected exact native structural wall node id");
+                session.removeWall(args.get("id"));
+            }
             default -> throw new IllegalArgumentException("Unsupported mission operation: "+operation);
         }
     }
@@ -219,6 +255,30 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                         collider.x()+rx,collider.y()+collider.height(),collider.z()+rz);
                     bounds=bounds==null?region:bounds.union(region);
                 }
+            }
+        }
+        // Wall changes have stable structural node IDs and physical bounds.
+        // They must invalidate actual collision, room visibility and renderer,
+        // not merely alter a metadata fingerprint.
+        var previousWalls=new java.util.LinkedHashMap<String,MissionStructuralWall>();
+        var currentWalls=new java.util.LinkedHashMap<String,MissionStructuralWall>();
+        for(var wall:before.walls())previousWalls.put(wall.id(),wall);
+        for(var wall:after.walls())currentWalls.put(wall.id(),wall);
+        var wallIds=new java.util.LinkedHashSet<>(previousWalls.keySet());
+        wallIds.addAll(currentWalls.keySet());
+        for(var id:wallIds){
+            var a=previousWalls.get(id);var b=currentWalls.get(id);
+            if(java.util.Objects.equals(a,b))continue;
+            nodes.add(new EditorChange.Node(MissionStructuralWall.NODE_PREFIX+id,
+                a==null?EditorChange.Kind.ADDED:b==null?EditorChange.Kind.REMOVED:EditorChange.Kind.UPDATED,
+                a==null?null:EditorChange.fingerprint("native-wall/v1:"+a),
+                b==null?null:EditorChange.fingerprint("native-wall/v1:"+b)));
+            for(var wall:new MissionStructuralWall[]{a,b})if(wall!=null){
+                var region=new EditorChange.Bounds(Math.min(wall.x0(),wall.x1())-wall.thickness()/2,
+                    wall.base(),Math.min(wall.z0(),wall.z1())-wall.thickness()/2,
+                    Math.max(wall.x0(),wall.x1())+wall.thickness()/2,wall.base()+wall.height(),
+                    Math.max(wall.z0(),wall.z1())+wall.thickness()/2);
+                bounds=bounds==null?region:bounds.union(region);
             }
         }
         boolean reordered=!before.ids().equals(after.ids())||!java.util.Objects.equals(before.architecture(),after.architecture())

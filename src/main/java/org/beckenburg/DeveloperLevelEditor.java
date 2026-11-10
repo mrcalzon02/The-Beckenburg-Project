@@ -823,6 +823,11 @@ public final class DeveloperLevelEditor extends JPanel {
     private void remove(){
         if(chosen==null)return;
         if(mission!=null){
+            if(chosen.kind.equals("MISSION_WALL")){
+                String nodeId=chosen.id;
+                operate(()->mission.removeWall(nodeId));
+                chosen=null;refresh();return;
+            }
             int index=selectedProp();
             if(index<0){status.setText("Select a mission object to remove");return;}
             operate(()->mission.remove(index));chosen=null;refresh();return;
@@ -850,6 +855,14 @@ public final class DeveloperLevelEditor extends JPanel {
                 x.setValue(p.x());y.setValue(p.y());z.setValue(p.z());
                 yaw.setValue(Math.toDegrees(p.yaw()));scale.setValue(p.scale());
                 width.setValue(p.halfX());depth.setValue(p.halfZ());
+            }else if(row.kind.equals("MISSION_WALL")&&mission!=null){
+                var wall=mission.walls().stream().filter(w->
+                    (MissionStructuralWall.NODE_PREFIX+w.id()).equals(row.id)).findFirst().orElse(null);
+                if(wall==null)return;
+                x.setValue(wall.cx());y.setValue(wall.base());z.setValue(wall.cz());
+                yaw.setValue(Math.toDegrees(wall.yaw()));scale.setValue(1);
+                width.setValue(wall.halfX());depth.setValue(wall.halfZ());
+                status.setText("Native solid partition • inspect or REMOVE; edit through typed structural commands");
             }else if(row.kind.equals("PROP")){
                 CastleLevelEdits.Prop item=data.props().stream().filter(p->p.id().equals(row.id))
                     .findFirst().orElse(null);
@@ -943,6 +956,9 @@ public final class DeveloperLevelEditor extends JPanel {
                 list.add(new Row("MISSION_PROP",Integer.toString(i),
                     "PROP • "+i+" • "+p.mesh()+" [room "+p.room()+"]"));
             }
+            for(var wall:mission.walls())
+                list.add(new Row("MISSION_WALL",MissionStructuralWall.NODE_PREFIX+wall.id(),
+                    "WALL • "+wall.id()+" [room "+wall.room()+", "+wall.length()+"m]"));
             for(Row row:list)if(q.isEmpty()||row.description.toLowerCase(Locale.ROOT).contains(q))
                 rows.addElement(row);
             selectId(kind,id);updateNav();return;

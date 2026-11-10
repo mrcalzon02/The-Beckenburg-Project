@@ -2645,10 +2645,31 @@ public final class SceneRenderer {
             else appendRetainedWorld(out,geometry,key,map);
         }
         for(var s:map.level().sockets()){
-            if(!objectInView(s.x(),s.z(),4,20))continue;
+            // Native structural partitions are authored world geometry, not
+            // small near-camera interactive fittings; retain them at long view.
+            if(!objectInView(s.x(),s.z(),4,s.type().equals(MissionStructuralWall.SOCKET_TYPE)?64:20))continue;
             var key=new SocketGeometryKey(s,environmentPowerOn);
             var geometry=authoredFixtureGeometry.computeIfAbsent(key,k->{
             List<Face> part=new ArrayList<>();
+            if(s.type().equals(MissionStructuralWall.SOCKET_TYPE)){
+                // This physical box uses the very same length, thickness, yaw,
+                // bottom and height as MissionStructuralWall.body(), so
+                // renderer depth, shadow and game collider cannot diverge.
+                String[] shape=s.style().split(":",-1);
+                if(shape.length!=4)throw new IllegalArgumentException("Invalid native structural wall packet");
+                double length=Double.parseDouble(shape[0]),thickness=Double.parseDouble(shape[1]),
+                    height=Double.parseDouble(shape[2]);
+                int material=Integer.parseInt(shape[3]);
+                if(length<.75||length>4.0||thickness<.12||thickness>.5||
+                    height<1.8||height>4.5||!MissionStructuralWall.MATERIALS.contains(material))
+                    throw new IllegalArgumentException("Unsupported native structural wall geometry");
+                var local=new ArrayList<Face>();
+                texturedBox(local,-length/2,0,-thickness/2,length,height,thickness,material);
+                for(Face face:local)
+                    part.add(new Face(mountPoint(face.a,s),mountPoint(face.b,s),
+                        mountPoint(face.c,s),face.color,face.material,
+                        face.au,face.av,face.bu,face.bv,face.cu,face.cv));
+            }
             if(s.type().equals("device")&&s.style().equals("LIGHT_SWITCH"))imported(part,"light_switch_1",s.x(),s.y(),s.z(),1,s.yaw());
             if(s.type().equals("switch"))imported(part,"light_switch_1",s.x(),s.y(),s.z(),1,-s.yaw());
             if(s.type().equals("light")){
