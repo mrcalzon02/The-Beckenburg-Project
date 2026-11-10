@@ -823,6 +823,11 @@ public final class DeveloperLevelEditor extends JPanel {
     private void remove(){
         if(chosen==null)return;
         if(mission!=null){
+            if(chosen.kind.equals("MISSION_STAIR")){
+                int id=Integer.parseInt(chosen.id.substring("beckenburg-stair-landing-".length()));
+                operate(()->mission.extendStairOpening(id,0));
+                chosen=null;refresh();return;
+            }
             if(chosen.kind.equals("MISSION_FLOOR")){
                 int room=Integer.parseInt(chosen.id.substring("beckenburg-floor-depth-".length()));
                 operate(()->mission.setFloorDepth(room,0));
@@ -860,6 +865,16 @@ public final class DeveloperLevelEditor extends JPanel {
                 x.setValue(p.x());y.setValue(p.y());z.setValue(p.z());
                 yaw.setValue(Math.toDegrees(p.yaw()));scale.setValue(p.scale());
                 width.setValue(p.halfX());depth.setValue(p.halfZ());
+            }else if(row.kind.equals("MISSION_STAIR")&&mission!=null){
+                int id=Integer.parseInt(row.id.substring("beckenburg-stair-landing-".length()));
+                var stair=mission.sourceLevel().stairs().stream()
+                    .filter(q->q.id()==id).findFirst().orElse(null);
+                if(stair==null)return;
+                x.setValue(stair.x1());y.setValue(stair.y1());z.setValue(stair.z1());
+                yaw.setValue(0);scale.setValue(1);
+                width.setValue(stair.width()/2);
+                depth.setValue(mission.stairExtensions().getOrDefault(id,0.0));
+                status.setText("Native stair landing cut • REMOVE to restore source lip if no deep slab depends on it");
             }else if(row.kind.equals("MISSION_FLOOR")&&mission!=null){
                 int room=Integer.parseInt(row.id.substring("beckenburg-floor-depth-".length()));
                 var sourceRoom=mission.sourceLevel().room(room);
@@ -977,6 +992,9 @@ public final class DeveloperLevelEditor extends JPanel {
             for(var entry:new java.util.TreeMap<>(mission.floorDepths()).entrySet())
                 list.add(new Row("MISSION_FLOOR","beckenburg-floor-depth-"+entry.getKey(),
                     "FLOOR • room "+entry.getKey()+" • "+entry.getValue()+"m slab depth"));
+            for(var entry:new java.util.TreeMap<>(mission.stairExtensions()).entrySet())
+                list.add(new Row("MISSION_STAIR","beckenburg-stair-landing-"+entry.getKey(),
+                    "STAIR • "+entry.getKey()+" • "+entry.getValue()+"m upper terminal opening"));
             for(Row row:list)if(q.isEmpty()||row.description.toLowerCase(Locale.ROOT).contains(q))
                 rows.addElement(row);
             selectId(kind,id);updateNav();return;

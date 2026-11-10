@@ -27,8 +27,12 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     }
     /** Aim the authoritative renderer from a traversable room point, without editing geometry. */
     public void focus(org.beckenburg.editor.EditorProject.Node node){
-        int roomId=node.kind().equals("FLOOR_SLAB")
-            ?Integer.parseInt(node.id().substring("beckenburg-floor-depth-".length()))
+        int roomId=node.kind().equals("STAIR_OPENING")
+            ?session.sourceLevel().stairs().stream()
+                .filter(q->("beckenburg-stair-landing-"+q.id()).equals(node.id()))
+                .findFirst().orElseThrow().b()
+            :node.kind().equals("FLOOR_SLAB")
+                ?Integer.parseInt(node.id().substring("beckenburg-floor-depth-".length()))
             :node.kind().equals("WALL")?session.walls().stream()
                 .filter(w->(MissionStructuralWall.NODE_PREFIX+w.id()).equals(node.id()))
                 .findFirst().orElseThrow().room()
@@ -50,6 +54,15 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     public long revision(){return session.revision();}
     public boolean walkable(double x,double y,double z){return map.get().traversable(x,y,z);}
     public Map<String,Object> properties(org.beckenburg.editor.EditorProject.Node node){
+        if(node.kind().equals("STAIR_OPENING")){
+            int id=Integer.parseInt(node.id().substring("beckenburg-stair-landing-".length()));
+            var stair=session.sourceLevel().stairs().stream().filter(q->q.id()==id)
+                .findFirst().orElseThrow();
+            return Map.of("stairId",id,
+                "extension",session.stairExtensions().getOrDefault(id,0.0),
+                "upperRoom",stair.b(),"topY",stair.y1(),
+                "terminalX",stair.x1(),"terminalZ",stair.z1());
+        }
         if(node.kind().equals("FLOOR_SLAB")){
             int room=Integer.parseInt(node.id().substring("beckenburg-floor-depth-".length()));
             var r=session.sourceLevel().room(room);
@@ -89,6 +102,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             ops.add("place-wall");
             ops.add("remove-wall");
             ops.add("set-floor-depth");
+            ops.add("extend-stair-opening");
         }
         if(session.canRebuildHouse())ops.add("rebuild-house");
         return List.copyOf(ops);
@@ -102,6 +116,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     private static final Map<String,String> REMOVE_FIELDS=Map.of("id","string");
     private static final Map<String,String> DOOR_FIELDS=Map.of("id","integer","width","number");
     private static final Map<String,String> FLOOR_FIELDS=Map.of("room","integer","depth","number");
+    private static final Map<String,String> STAIR_FIELDS=Map.of("stairId","integer","extension","number");
     private static final Map<String,String> WALL_FIELDS=Map.ofEntries(
         Map.entry("id","string"),Map.entry("room","integer"),Map.entry("x0","number"),
         Map.entry("z0","number"),Map.entry("x1","number"),Map.entry("z1","number"),
@@ -119,6 +134,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             result.put("place-wall",WALL_FIELDS);
             result.put("remove-wall",REMOVE_FIELDS);
             result.put("set-floor-depth",FLOOR_FIELDS);
+            result.put("extend-stair-opening",STAIR_FIELDS);
         }
         if(session.canRebuildHouse())result.put("rebuild-house",Map.of("baseline","ORIGINAL"));
         return Map.copyOf(result);
@@ -247,6 +263,11 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                     throw new IllegalArgumentException("Expected real upper-floor room and thickness");
                 session.setFloorDepth(Integer.parseInt(args.get("room")),number(args,"depth"));
             }
+            case "extend-stair-opening" -> {
+                if(!args.keySet().equals(STAIR_FIELDS.keySet()))
+                    throw new IllegalArgumentException("Expected source stair ID and terminal extension");
+                session.extendStairOpening(Integer.parseInt(args.get("stairId")),number(args,"extension"));
+            }
             default -> throw new IllegalArgumentException("Unsupported mission operation: "+operation);
         }
     }
@@ -318,9 +339,31 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                 r.x1(),r.y(),r.z1());
             bounds=bounds==null?region:bounds.union(region);
         }
+        var stairIds=new java.util.TreeSet<Integer>();
+        stairIds.addAll(before.stairExtensions().keySet());
+        stairIds.addAll(after.stairExtensions().keySet());
+        for(int id:stairIds){
+            Double a=before.stairExtensions().get(id),b=after.stairExtensions().get(id);
+            if(java.util.Objects.equals(a,b))continue;
+            String nativeId="beckenburg-stair-landing-"+id;
+            nodes.add(new EditorChange.Node(nativeId,
+                a==null?EditorChange.Kind.ADDED:b==null?EditorChange.Kind.REMOVED:EditorChange.Kind.UPDATED,
+                a==null?null:EditorChange.fingerprint("native-stair-opening/v1:"+id+":"+a),
+                b==null?null:EditorChange.fingerprint("native-stair-opening/v1:"+id+":"+b)));
+            var stair=session.sourceLevel().stairs().stream().filter(x->x.id()==id).findFirst()
+                .orElseThrow();
+            double margin=stair.width()/2+.25;
+            var region=new EditorChange.Bounds(
+                Math.min(stair.x0(),stair.x1())-margin,stair.y1()-.45,
+                Math.min(stair.z0(),stair.z1())-margin,
+                Math.max(stair.x0(),stair.x1())+margin,stair.y1()+.03,
+                Math.max(stair.z0(),stair.z1())+margin);
+            bounds=bounds==null?region:bounds.union(region);
+        }
         boolean reordered=!before.ids().equals(after.ids())||!java.util.Objects.equals(before.architecture(),after.architecture())
             ||!before.doorWidths().equals(after.doorWidths())||
-                !before.floorDepths().equals(after.floorDepths());
+                !before.floorDepths().equals(after.floorDepths())||
+                !before.stairExtensions().equals(after.stairExtensions());
         return new EditorChange.Details(nodes,assets,nodes.isEmpty()&&!reordered?java.util.Set.of():java.util.Set.of(EditorChange.Dependency.values()),bounds,reordered);
     }
     public void validate(){session.validate();}
@@ -335,8 +378,17 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         return new EditorAgentService.Capture(file,image.getWidth(),image.getHeight(),"SceneRenderer.drawPractice");
     }
     public List<String> tests(){return List.of("mission-runtime-parity","mission-open-routes",
-        "mission-door-catalog","mission-deck-catalog");}
+        "mission-door-catalog","mission-deck-catalog","mission-stair-catalog");}
     public List<EditorAgentService.Check> test(String id){
+        if(id.equals("mission-stair-catalog")){
+            var nativeLevel=session.level();
+            return nativeLevel.stairs().stream().map(stair->new EditorAgentService.Check(
+                "NATIVE_STAIR_"+stair.id(),true,
+                "from="+stair.a()+" to="+stair.b()+" terminal="+stair.x1()+","+
+                    stair.y1()+","+stair.z1()+" extension="+
+                    session.stairExtensions().getOrDefault(stair.id(),0.0)+
+                    " actualVoids="+nativeLevel.voids().size())).toList();
+        }
         if(id.equals("mission-deck-catalog")){
             var current=session.level();
             return current.rooms().stream().filter(r->!r.outside()&&r.y()>.05)

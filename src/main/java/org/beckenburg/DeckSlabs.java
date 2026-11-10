@@ -56,6 +56,19 @@ public final class DeckSlabs {
             Room room=level.room(socket.room());
             double depth=thickness(level,room),top=room.y(),bottom=top-depth;
             if(depth<=0||feetY>=top-.02||feetY+bodyHeight<=bottom+.02)continue;
+            // At the last rising tread the capsule's radial footprint may
+            // overlap the first centimetres of the intact landing. Permit
+            // only a source-owned stair transition, within 6.5 cm vertically
+            // of the deck top, when a genuine authored floor Void already
+            // exposes the central stair. This cannot clear a wall, another
+            // storey, a missing landing opening or a distant approach.
+            boolean terminalTransition=level.floorVoid(x,top,z)&&
+                level.stairs().stream().anyMatch(stair->
+                    stair.b()==room.id()&&Math.abs(stair.y1()-top)<.025
+                    &&stair.contains(x,z,radius)
+                    &&Math.abs(stair.yAt(x,z)-feetY)<.035
+                    &&feetY>=top-.065&&feetY<=top+.015);
+            if(terminalTransition)continue;
             for(double[] offset:new double[][]{{0,0},{radius,0},{-radius,0},{0,radius},{0,-radius}})
                 if(solid(level,room,x+offset[0],z+offset[1]))return true;
         }
