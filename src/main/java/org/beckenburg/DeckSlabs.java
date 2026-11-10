@@ -43,6 +43,35 @@ public final class DeckSlabs {
         }
         return List.copyOf(out);
     }
+    /**
+     * Actual body collision against the same authored deck thickness and
+     * physical cutout cells consumed by levelDeck(). No decorative-only floor.
+     * Test cardinal capsule probes as well as the centre to prevent a player
+     * squeezing through a slab edge or floor opening.
+     */
+    public static boolean blocksBody(LevelDefinition level,double x,double feetY,
+                                     double z,double bodyHeight,double radius){
+        for(var socket:level.sockets()){
+            if(!socket.type().equals("deck_slab"))continue;
+            Room room=level.room(socket.room());
+            double depth=thickness(level,room),top=room.y(),bottom=top-depth;
+            if(depth<=0||feetY>=top-.02||feetY+bodyHeight<=bottom+.02)continue;
+            for(double[] offset:new double[][]{{0,0},{radius,0},{-radius,0},{0,radius},{0,-radius}})
+                if(solid(level,room,x+offset[0],z+offset[1]))return true;
+        }
+        return false;
+    }
+    /** Optical rays and the game capsule test the same solid deck cells. */
+    public static boolean blocksRay(LevelDefinition level,double x,double y,double z){
+        for(var socket:level.sockets()){
+            if(!socket.type().equals("deck_slab"))continue;
+            Room room=level.room(socket.room());
+            double depth=thickness(level,room);
+            if(depth>0&&y>room.y()-depth+.005&&y<room.y()-.005
+                &&solid(level,room,x,z))return true;
+        }
+        return false;
+    }
     public static LevelDefinition physical(LevelDefinition l){
         var colliders=new ArrayList<>(l.colliders());
         for(var r:l.rooms())for(var c:cells(l,r))colliders.add(new Collider((c.x0()+c.x1())/2,c.bottom(),(c.z0()+c.z1())/2,(c.x1()-c.x0())/2,(c.z1()-c.z0())/2,c.top()-c.bottom(),0));

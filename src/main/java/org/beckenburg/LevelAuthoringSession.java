@@ -28,6 +28,8 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     // A bounded native architectural partition is source geometry, not a prop.
     // LevelDefinition consumes it as one physical collider and one render socket.
     private static final String WALL_PREFIX = MissionStructuralWall.NODE_PREFIX;
+    private static final String FLOOR_PREFIX = "beckenburg-floor-depth-";
+    private static final String FLOOR_COMPONENT = "beckenburg.level.floor-depth";
     private final String documentId;
     private final Path document;
     private LevelDefinition source;
@@ -37,20 +39,34 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     /** Overrides only existing source doorway widths; no second structural scene. */
     private final java.util.LinkedHashMap<Integer,Double> doorWidths = new java.util.LinkedHashMap<>();
     private final ArrayList<MissionStructuralWall> walls = new ArrayList<>();
+    /** Per-room authored deck depth; built-in source slabs are retained unless overridden. */
+    private final java.util.LinkedHashMap<Integer,Double> floorDepths = new java.util.LinkedHashMap<>();
     private long revision=1;
     private String diskFingerprint;
     /** Identity is authoring metadata paired with the native props, not another scene. */
     public record Snapshot(String sceneId,List<String> ids,List<Prop> props,String architecture,
-                           Map<Integer,Double> doorWidths,List<MissionStructuralWall> walls){
-        public Snapshot(String sceneId,List<String> ids,List<Prop> props){this(sceneId,ids,props,null,Map.of(),List.of());}
+                           Map<Integer,Double> doorWidths,List<MissionStructuralWall> walls,
+                           Map<Integer,Double> floorDepths){
+        public Snapshot(String sceneId,List<String> ids,List<Prop> props){
+            this(sceneId,ids,props,null,Map.of(),List.of(),Map.of());
+        }
         public Snapshot(String sceneId,List<String> ids,List<Prop> props,String architecture){
-            this(sceneId,ids,props,architecture,Map.of(),List.of());
+            this(sceneId,ids,props,architecture,Map.of(),List.of(),Map.of());
         }
         public Snapshot(String sceneId,List<String> ids,List<Prop> props,String architecture,
                         Map<Integer,Double> doorWidths){
-            this(sceneId,ids,props,architecture,doorWidths,List.of());
+            this(sceneId,ids,props,architecture,doorWidths,List.of(),Map.of());
+        }
+        public Snapshot(String sceneId,List<String> ids,List<Prop> props,String architecture,
+                        Map<Integer,Double> doorWidths,List<MissionStructuralWall> walls){
+            this(sceneId,ids,props,architecture,doorWidths,walls,Map.of());
         }
         public Snapshot{
+            floorDepths=Map.copyOf(Objects.requireNonNull(floorDepths));
+            if(floorDepths.size()>12||floorDepths.entrySet().stream().anyMatch(entry->
+                entry.getKey()==null||entry.getKey()<0||entry.getValue()==null||
+                !Double.isFinite(entry.getValue())||entry.getValue()<.12||entry.getValue()>.45))
+                throw new IllegalArgumentException("Invalid native floor thickness overrides");
             walls=Objects.requireNonNull(walls).stream()
                 .sorted(java.util.Comparator.comparing(MissionStructuralWall::id)).toList();
             if(walls.size()>256||walls.stream().map(MissionStructuralWall::id).distinct().count()!=walls.size())
@@ -98,6 +114,50 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     public synchronized Prop prop(int index){return props.get(index);}
     public synchronized String nodeId(int index){return propIds.get(index);}
     public synchronized List<MissionStructuralWall> walls(){return List.copyOf(walls);}
+    public synchronized Map<Integer,Double> floorDepths(){return Map.copyOf(floorDepths);}
+    /** Existing upper decks become physical slabs with a genuine underside. */
+    public synchronized void setFloorDepth(int roomId,double depth){
+        if(HollowCreekLevel.is(source))
+            throw new UnsupportedOperationException("Outdoor floor adapter is not implemented");
+        if(!Double.isFinite(depth)||depth!=0&&(depth<.12||depth>.45))
+            throw new IllegalArgumentException("Native deck thickness must be 0 (revert) or 0.12..0.45 metres");
+        var candidate=new java.util.LinkedHashMap<>(floorDepths);
+        if(depth==0)candidate.remove(roomId);
+        else candidate.put(roomId,depth);
+        validateFloorDepths(source,candidate);
+        if(candidate.equals(floorDepths))return;
+        floorDepths.clear();floorDepths.putAll(candidate);revision++;
+    }
+    private static void validateFloorDepths(LevelDefinition source,Map<Integer,Double> values){
+        if(values.size()>12)throw new IllegalArgumentException("Too many native floor-depth overrides");
+        for(var entry:values.entrySet()){
+            int id=entry.getKey();double depth=entry.getValue();
+            if(id<0||id>=source.rooms().size()||!Double.isFinite(depth)||depth<.12||depth>.45)
+                throw new IllegalArgumentException("Unsupported native floor depth");
+            var upper=source.room(id);
+            if(upper.outside()||upper.y()<=.05)
+                throw new IllegalArgumentException("Floor slabs require an existing upper-storey room");
+            double mx=(upper.x0()+upper.x1())/2,mz=(upper.z0()+upper.z1())/2;
+            boolean supported=source.rooms().stream().anyMatch(lower->
+                lower.id()!=id&&!lower.outside()&&lower.y()<upper.y()-1.0
+                &&lower.y()+lower.height()>=upper.y()-.20
+                &&mx>lower.x0()&&mx<lower.x1()&&mz>lower.z0()&&mz<lower.z1());
+            if(!supported)throw new IllegalArgumentException("Upper deck has no existing structural room beneath it");
+        }
+    }
+    private static List<Socket> effectiveFloorSockets(LevelDefinition source,Map<Integer,Double> depths){
+        if(depths.isEmpty())return source.sockets();
+        var result=new ArrayList<Socket>();
+        for(var socket:source.sockets())
+            if(!socket.type().equals("deck_slab")||!depths.containsKey(socket.room()))result.add(socket);
+        for(var entry:new java.util.TreeMap<>(depths).entrySet()){
+            var room=source.room(entry.getKey());
+            result.add(new Socket(FLOOR_PREFIX+entry.getKey(),"deck_slab",room.id(),
+                (room.x0()+room.x1())/2,room.y(),(room.z0()+room.z1())/2,
+                0,Double.toString(entry.getValue())));
+        }
+        return List.copyOf(result);
+    }
     public synchronized void placeWall(MissionStructuralWall candidate){
         if(HollowCreekLevel.is(source))
             throw new UnsupportedOperationException("Native outdoor structural wall editing unavailable");
@@ -150,6 +210,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         HouseAuthoringAttachments.validate(source,props);
         validateDoorWidths(source,doorWidths);
         validateWalls(source,walls,props);
+        validateFloorDepths(source,floorDepths);
     }
     /** Resize only an existing physical DOOR. Apertures, leaves and player
      * collision all consume the same LevelDefinition portal. */
@@ -240,8 +301,9 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     public synchronized boolean canRebuildHouse(){return builtInHouse;}
     public synchronized void rebuildHouse(){
         if(!builtInHouse)throw new IllegalArgumentException("House rebuild requires the built-in House document");
-        if(!doorWidths.isEmpty()||!walls.isEmpty())throw new IllegalStateException(
-            "Reset native doorway or partition edits before changing the House architectural source");
+        if(!doorWidths.isEmpty()||!walls.isEmpty()||!floorDepths.isEmpty())
+            throw new IllegalStateException(
+                "Reset native structural edits before changing the House architectural source");
         if(source.id().equals("briar-rebuild"))return;
         var next=HouseRebuildUpgrade.plan(snapshot());
         // Validate a candidate without changing live source, history, revision or disk.
@@ -250,7 +312,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     }
     public synchronized LevelDefinition sourceLevel(){return source;}
     public synchronized Snapshot snapshot(){return new Snapshot(documentId,propIds,props,
-        builtInHouse?HouseSourceVersions.generation(source):null,doorWidths,walls);}
+        builtInHouse?HouseSourceVersions.generation(source):null,doorWidths,walls,floorDepths);}
     public synchronized void restore(Snapshot snapshot){
         Objects.requireNonNull(snapshot);
         if(!documentId.equals(snapshot.sceneId()))throw new IllegalArgumentException("Snapshot belongs to another mission");
@@ -259,29 +321,41 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         for(Prop prop:snapshot.props())checkProp(prop,restoredSource);
         validateDoorWidths(restoredSource,snapshot.doorWidths());
         validateWalls(restoredSource,snapshot.walls(),snapshot.props());
+        validateFloorDepths(restoredSource,snapshot.floorDepths());
         source=restoredSource;
         props.clear();props.addAll(snapshot.props());propIds.clear();propIds.addAll(snapshot.ids());
         doorWidths.clear();doorWidths.putAll(snapshot.doorWidths());
         walls.clear();walls.addAll(snapshot.walls());
+        floorDepths.clear();floorDepths.putAll(snapshot.floorDepths());
         revision++;
     }
     public synchronized LevelDefinition level(){
-        return compose(source,props,doorWidths,walls);
+        return compose(source,props,doorWidths,walls,floorDepths);
     }
     public synchronized List<Node> hierarchy(){
         ArrayList<Node> result=new ArrayList<>();
         for(int i=0;i<props.size();i++) result.add(propNode(i));
         for(var wall:walls)result.add(wallNode(wall));
+        for(var entry:new java.util.TreeMap<>(floorDepths).entrySet())
+            result.add(floorNode(entry.getKey(),entry.getValue()));
         return List.copyOf(result);
     }
     public synchronized Node node(String id) {
         for(var wall:walls)if((WALL_PREFIX+wall.id()).equals(id))return wallNode(wall);
+        for(var entry:floorDepths.entrySet())if((FLOOR_PREFIX+entry.getKey()).equals(id))
+            return floorNode(entry.getKey(),entry.getValue());
         return propNode(indexOf(id));
     }
     public synchronized HierarchyPage hierarchyPage(int offset,int limit) {
         var all=hierarchy();
         int end=HierarchyPage.end(all.size(),offset,limit);
         return new HierarchyPage(all.size(),offset,all.subList(offset,end));
+    }
+    private Node floorNode(int room,double depth){
+        var r=source.room(room);
+        return new Node(FLOOR_PREFIX+room,"FLOOR_SLAB",
+            "Native upper deck depth "+depth+"m / room "+room,
+            (r.x0()+r.x1())/2,r.y(),(r.z0()+r.z1())/2);
     }
     private static Node wallNode(MissionStructuralWall wall){
         return new Node(WALL_PREFIX+wall.id(),"WALL","Native solid partition / room "+wall.room(),
@@ -340,6 +414,13 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                     Map.of("portalId",Integer.toString(entry.getKey()),
                         "width",Double.toString(entry.getValue()))))));
         }
+        for(var entry:new java.util.TreeMap<>(state.floorDepths()).entrySet()){
+            document.replace(new RuntimeScene.Node(FLOOR_PREFIX+entry.getKey(),
+                "Native floor depth",null,"architecture",RuntimeScene.Transform.identity(),
+                List.of(new RuntimeScene.Component(FLOOR_COMPONENT,Map.of(
+                    "room",Integer.toString(entry.getKey()),
+                    "depth",Double.toString(entry.getValue()))))));
+        }
         for(var wall:state.walls()){
             var fields=Map.of("room",Integer.toString(wall.room()),
                 "x0",Double.toString(wall.x0()),"z0",Double.toString(wall.z0()),
@@ -373,8 +454,30 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         ArrayList<String> ids=new ArrayList<>();
         var widths=new java.util.LinkedHashMap<Integer,Double>();
         var walls=new ArrayList<MissionStructuralWall>();
+        var floorDepths=new java.util.LinkedHashMap<Integer,Double>();
         for(var node:scene.nodes()){
             if(node.id().equals(HouseSourceVersions.NODE)&&id.equals("beckenburg/house"))continue;
+            if(node.id().startsWith(FLOOR_PREFIX)){
+                try{
+                    if(node.components().size()!=1||
+                        !node.components().get(0).type().equals(FLOOR_COMPONENT)||
+                        !node.name().equals("Native floor depth")||
+                        !node.layer().equals("architecture")||node.parentId()!=null||
+                        !node.transform().equals(RuntimeScene.Transform.identity()))
+                        throw new IllegalArgumentException("Unsupported native floor node");
+                    var fields=node.components().get(0).properties();
+                    if(!fields.keySet().equals(java.util.Set.of("room","depth")))
+                        throw new IllegalArgumentException("Unsupported floor-depth properties");
+                    int room=Integer.parseInt(fields.get("room"));
+                    double depth=Double.parseDouble(fields.get("depth"));
+                    if(!node.id().equals(FLOOR_PREFIX+room)||
+                        floorDepths.putIfAbsent(room,depth)!=null)
+                        throw new IllegalArgumentException("Duplicate/contradictory floor ID");
+                }catch(RuntimeException bad){
+                    throw new IOException("Invalid native floor-depth "+node.id(),bad);
+                }
+                continue;
+            }
             if(node.id().startsWith(WALL_PREFIX)){
                 try{
                     if(node.components().size()!=1||
@@ -455,10 +558,11 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         try{
             validateDoorWidths(authority,widths);
             validateWalls(authority,walls,result);
+            validateFloorDepths(authority,floorDepths);
         }catch(IllegalArgumentException invalid){
             throw new IOException("Native structural metadata invalid",invalid);
         }
-        return new Loaded(new Snapshot(id,ids,result,architecture,widths,walls),loaded.fingerprint());
+        return new Loaded(new Snapshot(id,ids,result,architecture,widths,walls,floorDepths),loaded.fingerprint());
     }
     static LevelDefinition apply(HouseMap.Site site,LevelDefinition source){
         try{
@@ -466,7 +570,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
             if(!Files.exists(path(site)))return source;
             var state=loadState(path(site),sceneId(site),source);
             var authority=site==HouseMap.Site.HOUSE?HouseSourceVersions.source(state.architecture()):source;
-            return compose(authority,state.props(),state.doorWidths(),state.walls());
+            return compose(authority,state.props(),state.doorWidths(),state.walls(),state.floorDepths());
         }
         catch(IOException bad){
             throw new IllegalStateException("Cannot load authored "+site+" level",bad);
@@ -485,10 +589,16 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     }
     static LevelDefinition compose(LevelDefinition source,List<Prop> edited,Map<Integer,Double> widths,
                                    List<MissionStructuralWall> walls){
+        return compose(source,edited,widths,walls,Map.of());
+    }
+    static LevelDefinition compose(LevelDefinition source,List<Prop> edited,Map<Integer,Double> widths,
+                                   List<MissionStructuralWall> walls,Map<Integer,Double> floorDepths){
         HouseAuthoringAttachments.validate(source,edited);
         validateDoorWidths(source,widths);
         validateWalls(source,walls,edited);
-        if(source.props().equals(edited)&&widths.isEmpty()&&walls.isEmpty())return source;
+        validateFloorDepths(source,floorDepths);
+        if(source.props().equals(edited)&&widths.isEmpty()&&walls.isEmpty()&&floorDepths.isEmpty())
+            return source;
         ArrayList<Collider> collision=new ArrayList<>(source.colliders());
         var added=new ArrayList<>(edited);
         for(Prop p:source.props()){
@@ -501,7 +611,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
             }
         }
         for(Prop p:added)collision.addAll(LevelPlans.propColliders(source,p));
-        var sockets=new ArrayList<>(source.sockets());
+        var sockets=new ArrayList<>(effectiveFloorSockets(source,floorDepths));
         for(var wall:walls){collision.add(wall.body());sockets.add(wall.socket());}
         return new LevelDefinition(source.id(),source.revision(),source.title(),
             source.rooms(),effectivePortals(source,widths),source.stairs(),source.voids(),

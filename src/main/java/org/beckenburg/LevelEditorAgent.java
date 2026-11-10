@@ -27,9 +27,11 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     }
     /** Aim the authoritative renderer from a traversable room point, without editing geometry. */
     public void focus(org.beckenburg.editor.EditorProject.Node node){
-        int roomId=node.kind().equals("WALL")?session.walls().stream()
-            .filter(w->(MissionStructuralWall.NODE_PREFIX+w.id()).equals(node.id()))
-            .findFirst().orElseThrow().room()
+        int roomId=node.kind().equals("FLOOR_SLAB")
+            ?Integer.parseInt(node.id().substring("beckenburg-floor-depth-".length()))
+            :node.kind().equals("WALL")?session.walls().stream()
+                .filter(w->(MissionStructuralWall.NODE_PREFIX+w.id()).equals(node.id()))
+                .findFirst().orElseThrow().room()
             :session.prop(session.indexOf(node.id())).room();
         var room=session.level().room(roomId);
         var spawn=room.spawn();
@@ -48,6 +50,13 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     public long revision(){return session.revision();}
     public boolean walkable(double x,double y,double z){return map.get().traversable(x,y,z);}
     public Map<String,Object> properties(org.beckenburg.editor.EditorProject.Node node){
+        if(node.kind().equals("FLOOR_SLAB")){
+            int room=Integer.parseInt(node.id().substring("beckenburg-floor-depth-".length()));
+            var r=session.sourceLevel().room(room);
+            double depth=session.floorDepths().getOrDefault(room,0.0);
+            return Map.of("room",room,"depth",depth,"top",r.y(),
+                "underside",r.y()-depth,"x0",r.x0(),"z0",r.z0(),"x1",r.x1(),"z1",r.z1());
+        }
         if(node.kind().equals("WALL")){
             var wall=session.walls().stream().filter(w->
                 (MissionStructuralWall.NODE_PREFIX+w.id()).equals(node.id())).findFirst().orElseThrow();
@@ -79,6 +88,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             ops.add("resize-door");
             ops.add("place-wall");
             ops.add("remove-wall");
+            ops.add("set-floor-depth");
         }
         if(session.canRebuildHouse())ops.add("rebuild-house");
         return List.copyOf(ops);
@@ -91,6 +101,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     private static final Map<String,String> DUPLICATE_FIELDS=MOVE_FIELDS;
     private static final Map<String,String> REMOVE_FIELDS=Map.of("id","string");
     private static final Map<String,String> DOOR_FIELDS=Map.of("id","integer","width","number");
+    private static final Map<String,String> FLOOR_FIELDS=Map.of("room","integer","depth","number");
     private static final Map<String,String> WALL_FIELDS=Map.ofEntries(
         Map.entry("id","string"),Map.entry("room","integer"),Map.entry("x0","number"),
         Map.entry("z0","number"),Map.entry("x1","number"),Map.entry("z1","number"),
@@ -107,6 +118,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             result.put("resize-door",DOOR_FIELDS);
             result.put("place-wall",WALL_FIELDS);
             result.put("remove-wall",REMOVE_FIELDS);
+            result.put("set-floor-depth",FLOOR_FIELDS);
         }
         if(session.canRebuildHouse())result.put("rebuild-house",Map.of("baseline","ORIGINAL"));
         return Map.copyOf(result);
@@ -230,6 +242,11 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                     throw new IllegalArgumentException("Expected exact native structural wall node id");
                 session.removeWall(args.get("id"));
             }
+            case "set-floor-depth" -> {
+                if(!args.keySet().equals(FLOOR_FIELDS.keySet()))
+                    throw new IllegalArgumentException("Expected real upper-floor room and thickness");
+                session.setFloorDepth(Integer.parseInt(args.get("room")),number(args,"depth"));
+            }
             default -> throw new IllegalArgumentException("Unsupported mission operation: "+operation);
         }
     }
@@ -281,8 +298,29 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                 bounds=bounds==null?region:bounds.union(region);
             }
         }
+        // Native slab changes invalidate the same rendered floor, underside,
+        // optical rays and swept body volume; always report physical bounds.
+        var floorRooms=new java.util.TreeSet<Integer>();
+        floorRooms.addAll(before.floorDepths().keySet());
+        floorRooms.addAll(after.floorDepths().keySet());
+        for(int room:floorRooms){
+            Double prev=before.floorDepths().get(room),nextDepth=after.floorDepths().get(room);
+            if(java.util.Objects.equals(prev,nextDepth))continue;
+            String id="beckenburg-floor-depth-"+room;
+            nodes.add(new EditorChange.Node(id,
+                prev==null?EditorChange.Kind.ADDED:nextDepth==null?
+                    EditorChange.Kind.REMOVED:EditorChange.Kind.UPDATED,
+                prev==null?null:EditorChange.fingerprint("native-floor-depth/v1:"+room+":"+prev),
+                nextDepth==null?null:EditorChange.fingerprint("native-floor-depth/v1:"+room+":"+nextDepth)));
+            var r=session.sourceLevel().room(room);
+            double depth=Math.max(prev==null?0:prev,nextDepth==null?0:nextDepth);
+            var region=new EditorChange.Bounds(r.x0(),r.y()-depth,r.z0(),
+                r.x1(),r.y(),r.z1());
+            bounds=bounds==null?region:bounds.union(region);
+        }
         boolean reordered=!before.ids().equals(after.ids())||!java.util.Objects.equals(before.architecture(),after.architecture())
-            ||!before.doorWidths().equals(after.doorWidths());
+            ||!before.doorWidths().equals(after.doorWidths())||
+                !before.floorDepths().equals(after.floorDepths());
         return new EditorChange.Details(nodes,assets,nodes.isEmpty()&&!reordered?java.util.Set.of():java.util.Set.of(EditorChange.Dependency.values()),bounds,reordered);
     }
     public void validate(){session.validate();}
@@ -296,8 +334,16 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         if(!ImageIO.write(image,"png",file.toFile()))throw new IOException("PNG writer unavailable");
         return new EditorAgentService.Capture(file,image.getWidth(),image.getHeight(),"SceneRenderer.drawPractice");
     }
-    public List<String> tests(){return List.of("mission-runtime-parity","mission-open-routes","mission-door-catalog");}
+    public List<String> tests(){return List.of("mission-runtime-parity","mission-open-routes",
+        "mission-door-catalog","mission-deck-catalog");}
     public List<EditorAgentService.Check> test(String id){
+        if(id.equals("mission-deck-catalog")){
+            var current=session.level();
+            return current.rooms().stream().filter(r->!r.outside()&&r.y()>.05)
+                .map(r->new EditorAgentService.Check("NATIVE_UPPER_DECK_"+r.id(),true,
+                    "room="+r.id()+" elevation="+r.y()+" depth="+DeckSlabs.thickness(current,r)+
+                        " floorVoidCount="+current.voids().size())).toList();
+        }
         if(id.equals("mission-door-catalog")){
             // Read-only discovery of the source-backed architectural door IDs.
             // All metadata comes from the same LevelDefinition the game uses.

@@ -291,6 +291,7 @@ public final class HouseMap {
             if(WorldWater.module(level.water()).bodies().stream().anyMatch(w->y<w.y()-.01&&w.wet(x,z)))return false;
             return !blocked&&(grounded?nativeSite.traversable(new Vec(x,y,z),bodyHeight):!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius));}
         if((grounded&&!supported(x,y,z,radius))||wallBlocked(x,y,z,radius,false,-1,bodyHeight))return false;
+        if(DeckSlabs.blocksBody(level,x,y,z,bodyHeight,radius))return false;
         if(grounded&&!colliderSupport(x,y,z))for(double[] d:new double[][]{{-radius,0},{radius,0},{0,-radius},{0,radius}})
             if(!supported(x+d[0],y,z+d[1],0)&&!(terrain!=null&&terrain.playable(x+d[0],z+d[1])&&!terrain.indoors(x+d[0],z+d[1])&&Math.abs(y-terrain.height(x+d[0],z+d[1]))<.20))return false;
         for(Portal p:level.portals())if(p.door()&&!doorOpen(p.id())&&boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.alongX()?p.width()/2:.10,p.alongX()?.10:p.width()/2,2.4,0,bodyHeight))return false;
@@ -405,7 +406,8 @@ public final class HouseMap {
             boolean inside=false;
             for(Room r:level.rooms())if(r.contains(x,y,z)){inside=true;break;}
             for(Portal p:level.portals())if(!p.kind().equals("stair")&&y>=p.y()&&y<p.y()+2.4&&inPortal(p,x,z,0)){inside=true;if(p.door()&&!doorOpen(p.id())&&p.id()!=selectedPortal)return false;}
-            if(!inside||wallBlocked(x,y,z,.015,true,selectedPortal))return false;
+            if(!inside||wallBlocked(x,y,z,.015,true,selectedPortal)
+                ||DeckSlabs.blocksRay(level,x,y,z))return false;
             for(Room r:level.rooms())if((Math.abs(y-surface(r,x,z))<.06||terrain!=null&&r.outside()&&r.id()!=14&&y<terrain.height(x,z))&&x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()&&!level.floorVoid(x,r.y(),z))return false;
             for(Collider p:level.colliders())if(y>p.y()&&y<p.y()+p.height()&&boxHit(x,y-1,z,0,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw()))return false;
             for(Collider p:closetColliders)if(y>p.y()&&y<p.y()+p.height()&&boxHit(x,y-1,z,0,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw()))return false;

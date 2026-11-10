@@ -823,6 +823,11 @@ public final class DeveloperLevelEditor extends JPanel {
     private void remove(){
         if(chosen==null)return;
         if(mission!=null){
+            if(chosen.kind.equals("MISSION_FLOOR")){
+                int room=Integer.parseInt(chosen.id.substring("beckenburg-floor-depth-".length()));
+                operate(()->mission.setFloorDepth(room,0));
+                chosen=null;refresh();return;
+            }
             if(chosen.kind.equals("MISSION_WALL")){
                 String nodeId=chosen.id;
                 operate(()->mission.removeWall(nodeId));
@@ -855,6 +860,16 @@ public final class DeveloperLevelEditor extends JPanel {
                 x.setValue(p.x());y.setValue(p.y());z.setValue(p.z());
                 yaw.setValue(Math.toDegrees(p.yaw()));scale.setValue(p.scale());
                 width.setValue(p.halfX());depth.setValue(p.halfZ());
+            }else if(row.kind.equals("MISSION_FLOOR")&&mission!=null){
+                int room=Integer.parseInt(row.id.substring("beckenburg-floor-depth-".length()));
+                var sourceRoom=mission.sourceLevel().room(room);
+                double slab=mission.floorDepths().getOrDefault(room,0.0);
+                x.setValue((sourceRoom.x0()+sourceRoom.x1())/2);
+                y.setValue(sourceRoom.y());z.setValue((sourceRoom.z0()+sourceRoom.z1())/2);
+                yaw.setValue(0);scale.setValue(1);
+                width.setValue((sourceRoom.x1()-sourceRoom.x0())/2);
+                depth.setValue(slab);
+                status.setText("Native upper slab • "+slab+"m deep • REMOVE to restore source depth");
             }else if(row.kind.equals("MISSION_WALL")&&mission!=null){
                 var wall=mission.walls().stream().filter(w->
                     (MissionStructuralWall.NODE_PREFIX+w.id()).equals(row.id)).findFirst().orElse(null);
@@ -959,6 +974,9 @@ public final class DeveloperLevelEditor extends JPanel {
             for(var wall:mission.walls())
                 list.add(new Row("MISSION_WALL",MissionStructuralWall.NODE_PREFIX+wall.id(),
                     "WALL • "+wall.id()+" [room "+wall.room()+", "+wall.length()+"m]"));
+            for(var entry:new java.util.TreeMap<>(mission.floorDepths()).entrySet())
+                list.add(new Row("MISSION_FLOOR","beckenburg-floor-depth-"+entry.getKey(),
+                    "FLOOR • room "+entry.getKey()+" • "+entry.getValue()+"m slab depth"));
             for(Row row:list)if(q.isEmpty()||row.description.toLowerCase(Locale.ROOT).contains(q))
                 rows.addElement(row);
             selectId(kind,id);updateNav();return;
