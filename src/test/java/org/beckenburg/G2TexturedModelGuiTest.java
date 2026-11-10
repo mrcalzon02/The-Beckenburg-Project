@@ -655,7 +655,7 @@ public final class G2TexturedModelGuiTest {
         await(() -> published.get()!=null);
         EditorObjBundle.validate(edited,Files.readAllBytes(bundle));
         EditorGlbWriter.validate(project.mesh(),Files.readAllBytes(glb));
-        EditorGltfFileTest.verify(project.mesh(),Files.readAllBytes(gltf),Files.readAllBytes(png));
+        EditorGlbAuthoringTest.GltfFixture.verify(project.mesh(),Files.readAllBytes(gltf),Files.readAllBytes(png));
         byte[] reviewedJson=Files.readAllBytes(gltf);
         try {
             project.exportGlb(project.observe(),gltf,"0".repeat(64));
@@ -679,9 +679,9 @@ public final class G2TexturedModelGuiTest {
         renderer.drawDevAssetRoom(List.of(new DevAssetReviewCatalog.Entry(DevAssetReviewCatalog.Kind.IMPORTED,published.get())),0,.4);
         ImageIO.write(renderer.image(),"png",output.resolve("game.png").toFile());
         var multi=output.resolve("multi-buffer.gltf");
-        Files.write(multi,EditorGltfFileTest.splitBuffers(Files.readAllBytes(gltf)));
+        Files.write(multi,EditorGlbAuthoringTest.GltfFixture.splitBuffers(Files.readAllBytes(gltf)));
         EditorGlbWriter.validate(project.mesh(),EditorGltfFile.toGlb(Files.readAllBytes(multi)));
-        var external=EditorGltfFileTest.externalFiles(output.resolve("external"),reviewedJson,Files.readAllBytes(png));
+        var external=EditorGlbAuthoringTest.GltfFixture.externalFiles(output.resolve("external"),reviewedJson,Files.readAllBytes(png));
         for (Path source : List.of(bundle,glb,gltf,multi,external,output.resolve("edited.btop"))) {
             edt(() -> ui.loadSource(source));
             await(() -> ready(ui));
@@ -739,7 +739,7 @@ public final class G2TexturedModelGuiTest {
             +"36 runtime corners with transformed hard normals and UVs, undo/redo, OBJ bundle/GLB/glTF/native reopen");
     }
     private void verifyRelaxedFan()throws Exception{
-        var obj=EditorUvRelaxTest.source(Path.of(System.getProperty("user.home"),"fan"));
+        var obj=EditorMeshMaterialTest.UvFixture.source(Path.of(System.getProperty("user.home"),"fan"));
         byte[] originalObj=Files.readAllBytes(obj);
         edt(()->ui.loadSource(obj));await(()->ready(ui));
         edt(()->{
@@ -753,7 +753,7 @@ public final class G2TexturedModelGuiTest {
         });
         var original=project.snapshot();
         await(()->reviewed(ui));check(project.snapshot()==original,"Interior preview changed native document");
-        applyReview();EditorUvRelaxTest.verify(original,project.snapshot());
+        applyReview();EditorMeshMaterialTest.UvFixture.verify(original,project.snapshot());
         edt(()->select("materialReviewMode",1));reviewPixels();
         published.set(null);
         edt(()->{captureMaterial("uv-interior.png");button(ui,"apply");});
@@ -781,7 +781,7 @@ public final class G2TexturedModelGuiTest {
         });
         await(()->reviewed(ui));check(project.snapshot().equals(original),"Pack preview changed live UVs");
         applyReview();
-        var packed=project.snapshot();EditorUvRelaxTest.verifyPack(original,packed);
+        var packed=project.snapshot();EditorMeshMaterialTest.UvFixture.verifyPack(original,packed);
         published.set(null);
         reviewPixels();edt(()->{captureMaterial("uv-packed.png");button(ui,"apply");});
         await(()->published.get()!=null);

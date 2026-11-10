@@ -43,4 +43,117 @@ public final class EditorMeshMaterialTest {
             System.out.println("PASS native materials: exact PNG, face bindings/IDs/UV/normals, cancel/history, deterministic v3 fresh reopen, real OBJ/MTL dependencies/options guards, GLB and lossless-export refusal");
         }finally{try(var paths=Files.walk(root)){for(var path:paths.sorted(Comparator.reverseOrder()).toList())Files.deleteIfExists(path);}}
     }
+    /** Authored, texture-backed interior fan and independent boundary triangle for G2 UV GUI tests. */
+    public static final class UvFixture {
+        private UvFixture(){}
+        private static void check(boolean yes,String why){if(!yes)throw new AssertionError(why);}
+        private static boolean near(double x,double y){return Math.abs(x-y)<1e-5;}
+        /** Five physical triangles, with one distended shared interior UV that harmonic relaxation must fix. */
+        public static Path source(Path dir)throws Exception{
+            Files.createDirectories(dir);
+            var png=new BufferedImage(32,32,BufferedImage.TYPE_INT_ARGB);
+            for(int y=0;y<32;y++)for(int x=0;x<32;x++)
+                png.setRGB(x,y,(((x/8)+(y/8))&1)==0?0xffffc040:0xff245ac0);
+            ImageIO.write(png,"png",dir.resolve("checker.png").toFile());
+            Files.writeString(dir.resolve("fan.mtl"),"newmtl checker\nKd 1 1 1\nmap_Kd checker.png\n");
+            Path obj=dir.resolve("fan.obj");
+            Files.writeString(obj,"""
+                mtllib fan.mtl
+                o fan
+                v -1 -1 0
+                v 1 -1 0
+                v 1 1 0
+                v -1 1 0
+                v 0 0 0
+                v 3 0 0
+                v 4 0 0
+                v 3 1 0
+                vt 0 0
+                vt 1 0
+                vt 1 1
+                vt 0 1
+                vt 0.38 0.62
+                vt 0.1 0.1
+                vt 0.4 0.1
+                vt 0.1 0.4
+                usemtl checker
+                f 1/1 2/2 5/5
+                f 2/2 3/3 5/5
+                f 3/3 4/4 5/5
+                f 4/4 1/1 5/5
+                f 6/6 7/7 8/8
+                """);
+            var m=EditorObjMaterials.capture(obj).mesh();
+            check(m.triangles().size()==5&&m.materials().size()==1,
+                "Fixture must load five physical textured triangles");
+            return obj;
+        }
+        public static void verify(EditorTopologyProject.State before,EditorTopologyProject.State after){
+            check(before.faces().size()==5&&after.faces().size()==5,"Expected four-face fan and boundary");
+            check(before.vertices().equals(after.vertices())&&before.materials().equals(after.materials())&&
+                before.quads().equals(after.quads()),"Relaxation changed native geometry/materials");
+            long center=before.faces().get(0).c().vertex();
+            check(before.faces().subList(0,4).stream().allMatch(f->f.c().vertex()==center),
+                "Fixture has no physical four-triangle fan");
+            check(near(before.faces().get(0).c().u(),.38),"Fixture lacks UV distortion");
+            for(int i=0;i<5;i++){
+                var a=before.faces().get(i);var b=after.faces().get(i);
+                check(a.id()==b.id()&&a.material().equals(b.material())&&a.seamMask()==b.seamMask(),
+                    "Relaxation altered stable face metadata");
+                var old=List.of(a.a(),a.b(),a.c());var now=List.of(b.a(),b.b(),b.c());
+                for(int j=0;j<3;j++){
+                    var p=old.get(j);var n=now.get(j);
+                    check(p.vertex()==n.vertex()&&p.pinned()==n.pinned(),"Changed vertex or pin");
+                    if(i<4&&j==2)check(near(n.u(),.5)&&near(n.v(),.5),
+                        "Harmonic center must return to square center UV");
+                    else check(near(p.u(),n.u())&&near(p.v(),n.v()),"Boundary UV changed");
+                }
+                check(signed(a)*signed(b)>0,"Relaxation flipped or collapsed a face");
+            }
+            check(before.faces().get(4).equals(after.faces().get(4)),
+                "Independent boundary-only triangle must remain unchanged");
+        }
+        /** Each island must undergo uniform positive scale/translation without tearing native UV seams. */
+        public static void verifyPack(EditorTopologyProject.State before,EditorTopologyProject.State after){
+            check(before.faces().size()==after.faces().size()&&before.vertices().equals(after.vertices())&&
+                before.materials().equals(after.materials()),"Atlas packing changed mesh or material table");
+            var scaleByIsland=new HashMap<Integer,Double>();
+            boolean changed=false;
+            for(int i=0;i<before.faces().size();i++){
+                var a=before.faces().get(i);var b=after.faces().get(i);
+                check(a.id()==b.id()&&a.material().equals(b.material())&&a.seamMask()==b.seamMask(),
+                    "Packing altered face metadata");
+                var p=List.of(a.a(),a.b(),a.c());var q=List.of(b.a(),b.b(),b.c());
+                for(int j=0;j<3;j++){
+                    var old=p.get(j);var now=q.get(j);
+                    check(old.vertex()==now.vertex()&&old.pinned()==now.pinned(),"Packing changed identities");
+                    check(Double.isFinite(now.u())&&Double.isFinite(now.v())&&now.u()>=-1e-7&&now.u()<=1+1e-7&&
+                        now.v()>=-1e-7&&now.v()<=1+1e-7,"Packed UV outside atlas");
+                    if(!near(old.u(),now.u())||!near(old.v(),now.v()))changed=true;
+                }
+                double areaBefore=signed(a),areaAfter=signed(b);
+                check(areaBefore*areaAfter>0,"Packing flipped UV orientation");
+                double scale=Math.sqrt(Math.abs(areaAfter/areaBefore));
+                check(Double.isFinite(scale)&&scale>0,"Collapsed atlas face");
+                int island=i<4?0:1;
+                if(scaleByIsland.containsKey(island))
+                    check(Math.abs(scaleByIsland.get(island)-scale)<1e-5,"Non-uniform island scale");
+                scaleByIsland.put(island,scale);
+                for(int j=0;j<3;j++)for(int k=j+1;k<3;k++){
+                    double beforeEdge=Math.hypot(p.get(j).u()-p.get(k).u(),p.get(j).v()-p.get(k).v());
+                    double afterEdge=Math.hypot(q.get(j).u()-q.get(k).u(),q.get(j).v()-q.get(k).v());
+                    check(Math.abs(afterEdge-beforeEdge*scale)<1e-5,"Packed UV triangle distorted");
+                }
+            }
+            check(changed,"Atlas packing never moved any UV");
+            for(int i=1;i<4;i++)check(near(after.faces().get(0).c().u(),after.faces().get(i).c().u())&&
+                near(after.faces().get(0).c().v(),after.faces().get(i).c().v()),
+                "Packing tore shared center UV");
+        }
+        private static double signed(EditorTopologyProject.Face f){
+            return (f.b().u()-f.a().u())*(f.c().v()-f.a().v())-
+                (f.b().v()-f.a().v())*(f.c().u()-f.a().u());
+        }
+    }
+
 }
