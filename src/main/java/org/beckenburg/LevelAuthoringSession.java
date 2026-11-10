@@ -137,6 +137,16 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
             var upper=source.room(id);
             if(upper.outside()||upper.y()<=.05)
                 throw new IllegalArgumentException("Floor slabs require an existing upper-storey room");
+            // Direct stair top landings are not yet allowed to gain thickness:
+            // existing floor voids terminate just short of the landing so a
+            // deep slab would close the real player capsule's last riser.
+            // Until the stair/landing aperture authoring stage, fail closed
+            // instead of producing an apparently solid but unreachable map.
+            boolean stairLanding=source.stairs().stream().anyMatch(stair->
+                stair.b()==id&&Math.abs(stair.y1()-upper.y())<.05||
+                stair.a()==id&&Math.abs(stair.y0()-upper.y())<.05);
+            if(stairLanding)throw new IllegalArgumentException(
+                "Stair-connected upper floors require first-class landing aperture construction");
             double mx=(upper.x0()+upper.x1())/2,mz=(upper.z0()+upper.z1())/2;
             boolean supported=source.rooms().stream().anyMatch(lower->
                 lower.id()!=id&&!lower.outside()&&lower.y()<upper.y()-1.0

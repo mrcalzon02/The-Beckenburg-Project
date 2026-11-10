@@ -43,6 +43,13 @@ public final class EditorAgentMissionFloorTest {
         var level=game.level();
         for(var upper:level.rooms()){
             if(upper.outside()||upper.y()<1||DeckSlabs.thickness(level,upper)>.001)continue;
+            // A thicker upper-corridor slab once blocked the top stair riser.
+            // Test only decks that are currently safe to author, and below
+            // explicitly assert that landing-connected floors are rejected.
+            boolean landing=level.stairs().stream().anyMatch(stair->
+                stair.b()==upper.id()&&Math.abs(stair.y1()-upper.y())<.05||
+                stair.a()==upper.id()&&Math.abs(stair.y0()-upper.y())<.05);
+            if(landing)continue;
             for(var lower:level.rooms()){
                 if(lower.outside()||lower.y()>=upper.y()-1||
                     lower.y()+lower.height()<upper.y()-.18)continue;
@@ -145,6 +152,13 @@ public final class EditorAgentMissionFloorTest {
             }
             check(visible,"Real fixed-camera game render must reveal the new underside");
             var authored=session.snapshot();
+            int actualStairLanding=session.sourceLevel().stairs().stream()
+                .filter(stair->stair.y1()>1)
+                .findFirst().orElseThrow().b();
+            rejects(()->agent.transact(session.revision(),"set-floor-depth",
+                depth(actualStairLanding,DEPTH)));
+            check(authored.equals(session.snapshot()),
+                "An upper floor connected to a real staircase cannot be thickened into its top landing");
             rejects(()->agent.transact(session.revision(),"set-floor-depth",depth(1,DEPTH)));
             rejects(()->agent.transact(session.revision(),"set-floor-depth",depth(probe.room(),.60)));
             rejects(()->agent.transact(session.revision(),"set-floor-depth",depth(probe.room(),Double.NaN)));
