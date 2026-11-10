@@ -245,11 +245,13 @@ public final class CastleLevelEdits {
             return Double.compare(spawnX,other.spawnX)==0 && Double.compare(spawnZ,other.spawnZ)==0 &&
                 Double.compare(spawnYaw,other.spawnYaw)==0 && sameWorld(other);
         }
+        /** Compare world geometry/services only. Spawn is an independent hierarchy node,
+         * whose change must publish its own stable-ID delta rather than whole-scene invalidation. */
         boolean sameWorld(Snapshot other){
             if(!props.equals(other.props)||!lamps.equals(other.lamps)||!surfaces.equals(other.surfaces)
                 ||!floorPaint.equals(other.floorPaint)||!wallPaint.equals(other.wallPaint)||!navBlocked.equals(other.navBlocked)
-                ||!doors.equals(other.doors)||Double.compare(spawnX,other.spawnX)!=0||Double.compare(spawnZ,other.spawnZ)!=0
-                ||Double.compare(spawnYaw,other.spawnYaw)!=0||rebuildLayout!=other.rebuildLayout||!stations.keySet().equals(other.stations.keySet()))return false;
+                ||!doors.equals(other.doors)||rebuildLayout!=other.rebuildLayout
+                ||!stations.keySet().equals(other.stations.keySet()))return false;
             for(var entry:stations.entrySet())if(!java.util.Arrays.equals(entry.getValue(),other.stations.get(entry.getKey())))return false;
             return true;
         }
