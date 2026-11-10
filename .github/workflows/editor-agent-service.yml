@@ -80,14 +80,6 @@ jobs:
           python-version: '3.12'
       - name: Install MCP SDK for the stdio client and adapter
         run: python -m pip install -r tools/editor_mcp_requirements.txt
-      - name: Verify native service, actual Windows editor and headless protocol
-        env:
-          EDITOR_MCP_PYTHON: python
-        shell: cmd
-        run: call tools\verify_editor_agent_host.cmd
-      - name: Verify MCP repair in the installed Windows editor
-        shell: pwsh
-        run: ./tools/verify_installed_editor_mcp.ps1
       - name: Verify bounded Ollama planner safeguards
         if: ${{ (github.event_name == 'workflow_dispatch' && inputs.run_ollama_pilot) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[ollama-editor-pilot]')) }}
         shell: pwsh
@@ -120,6 +112,14 @@ jobs:
         if: ${{ (github.event_name == 'workflow_dispatch' && inputs.run_ollama_pilot) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[ollama-editor-pilot]')) }}
         shell: pwsh
         run: python tools/ollama_editor_pilot.py --site SCHOOL --output build/editor-agent-evidence/ollama-pilot
+      - name: Verify native service, actual Windows editor and headless protocol
+        env:
+          EDITOR_MCP_PYTHON: python
+        shell: cmd
+        run: call tools\verify_editor_agent_host.cmd
+      - name: Verify MCP repair in the installed Windows editor
+        shell: pwsh
+        run: ./tools/verify_installed_editor_mcp.ps1
       - uses: actions/upload-artifact@v4
         if: always()
         with:
