@@ -56,24 +56,138 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     }
     public void checkAccess(){access.run();}
     public java.util.Set<EditorAgentService.Capability> capabilities(){return java.util.Set.of(EditorAgentService.Capability.values());}
-    public List<String> operations(){return session.canRebuildHouse()?List.of("move-prop","rebuild-house"):List.of("move-prop");}
+    /**
+     * Mission command parity: the human level editor already edits these exact
+     * LevelAuthoringSession props. This typed interface admits only loose floor
+     * objects for new placements/duplicates; protected source assemblies cannot
+     * be torn apart by an untrusted planner.
+     */
+    public List<String> operations(){
+        var ops=new java.util.ArrayList<>(List.of("move-prop","place-prop","transform-prop",
+            "duplicate-prop","remove-prop"));
+        if(session.canRebuildHouse())ops.add("rebuild-house");
+        return List.copyOf(ops);
+    }
     private static final Map<String,String> MOVE_FIELDS=Map.of("id","string","x","number","y","number","z","number");
+    private static final Map<String,String> PLACE_FIELDS=Map.of("mesh","string","room","integer",
+        "x","number","y","number","z","number","scale","number","yawDegrees","number");
+    private static final Map<String,String> TRANSFORM_FIELDS=Map.of("id","string","x","number",
+        "y","number","z","number","scale","number","yawDegrees","number");
+    private static final Map<String,String> DUPLICATE_FIELDS=MOVE_FIELDS;
+    private static final Map<String,String> REMOVE_FIELDS=Map.of("id","string");
     public Map<String,Map<String,String>> operationParameters(){
-        return session.canRebuildHouse()?Map.of("move-prop",MOVE_FIELDS,"rebuild-house",Map.of("baseline","ORIGINAL")):Map.of("move-prop",MOVE_FIELDS);
+        var result=new java.util.LinkedHashMap<String,Map<String,String>>();
+        result.put("move-prop",MOVE_FIELDS);
+        result.put("place-prop",PLACE_FIELDS);
+        result.put("transform-prop",TRANSFORM_FIELDS);
+        result.put("duplicate-prop",DUPLICATE_FIELDS);
+        result.put("remove-prop",REMOVE_FIELDS);
+        if(session.canRebuildHouse())result.put("rebuild-house",Map.of("baseline","ORIGINAL"));
+        return Map.copyOf(result);
+    }
+    private static double number(Map<String,String> args,String name){
+        double value=Double.parseDouble(args.get(name));
+        if(!Double.isFinite(value))throw new IllegalArgumentException("Non-finite mission "+name);
+        return value;
+    }
+    private static double yaw(Map<String,String> args){
+        double degrees=number(args,"yawDegrees");
+        if(Math.abs(degrees)>3600)throw new IllegalArgumentException("Mission yaw exceeds ten turns");
+        return Math.toRadians(degrees);
+    }
+    private static void floorOnly(Prop prop){
+        if(!"floor".equals(prop.support()))throw new IllegalArgumentException(
+            "Only loose floor-supported props may use this operation");
+    }
+    private void safeFloorPlacement(Prop prop,String ignoreId,boolean newObject){
+        floorOnly(prop);
+        var level=session.sourceLevel();
+        if(prop.room()<0||prop.room()>=level.rooms().size())
+            throw new IllegalArgumentException("Unknown mission room");
+        var room=level.room(prop.room());
+        if(!room.contains(prop.x(),prop.y(),prop.z())||Math.abs(prop.y()-room.y())>.02)
+            throw new IllegalArgumentException("Floor prop must belong to a physical room at its standing height");
+        double c=Math.abs(Math.cos(prop.yaw())),s=Math.abs(Math.sin(prop.yaw()));
+        double rx=c*prop.halfX()+s*prop.halfZ(),rz=s*prop.halfX()+c*prop.halfZ();
+        double edge=.08;
+        if(prop.x()-rx<room.x0()+edge||prop.x()+rx>room.x1()-edge||
+            prop.z()-rz<room.z0()+edge||prop.z()+rz>room.z1()-edge)
+            throw new IllegalArgumentException("Prop footprint crosses its assigned room boundary");
+        for(int i=0;i<session.size();i++){
+            if(ignoreId!=null&&ignoreId.equals(session.nodeId(i)))continue;
+            var other=session.prop(i);
+            if(other.room()!=prop.room()||other.halfX()<=0||other.halfZ()<=0)continue;
+            double oc=Math.abs(Math.cos(other.yaw())),os=Math.abs(Math.sin(other.yaw()));
+            double ox=oc*other.halfX()+os*other.halfZ(),oz=os*other.halfX()+oc*other.halfZ();
+            if(prop.x()-rx<other.x()+ox&&prop.x()+rx>other.x()-ox
+                &&prop.z()-rz<other.z()+oz&&prop.z()+rz>other.z()-oz
+                &&prop.y()<other.y()+other.height()&&other.y()<prop.y()+prop.height())
+                throw new IllegalArgumentException("Prop footprint intersects another native object");
+        }
+        if(newObject&&!map.get().traversable(prop.x(),prop.y(),prop.z()))
+            throw new IllegalArgumentException("Floor prop has no clear native standing position");
+    }
+    private static boolean approvedLooseMesh(LevelDefinition level,String mesh){
+        if(mesh==null||!GlbProps.availableModels().contains(mesh))return false;
+        // Do not create apparent stand-alone copies of authored service devices.
+        return level.props().stream().noneMatch(p->p.mesh().equals(mesh)
+            &&HouseAuthoringAttachments.required(level,p));
+    }
+    private Prop looseProp(String mesh,int room,double x,double y,double z,double scale,double yaw){
+        if(!approvedLooseMesh(session.sourceLevel(),mesh))
+            throw new IllegalArgumentException("Unapproved or source-attached mission mesh");
+        if(!Double.isFinite(scale)||scale<=0||scale>10)throw new IllegalArgumentException("Invalid prop scale");
+        double[] bounds=SceneRenderer.castleBounds(mesh);
+        var prop=new Prop(mesh,room,x,y,z,scale,yaw,
+            Math.max(0,bounds[3]*scale/2),Math.max(0,bounds[5]*scale/2),
+            Math.max(0,bounds[4]*scale),"floor");
+        safeFloorPlacement(prop,null,true);
+        return prop;
     }
     public void apply(String operation,Map<String,String> args){
         if(operation.equals("rebuild-house")){
             if(!args.equals(Map.of("baseline","ORIGINAL")))throw new IllegalArgumentException("Expected rebuild-house baseline ORIGINAL");
             session.rebuildHouse();return;
         }
-        if(!operation.equals("move-prop")||!args.keySet().equals(MOVE_FIELDS.keySet()))
-            throw new IllegalArgumentException("Expected move-prop with id, x, y, z");
-        String id=args.get("id");
-        int index=session.indexOf(id);
-        var p=session.prop(index);
-        session.put(index,new Prop(p.mesh(),p.room(),Double.parseDouble(args.get("x")),
-            Double.parseDouble(args.get("y")),Double.parseDouble(args.get("z")),
-            p.scale(),p.yaw(),p.halfX(),p.halfZ(),p.height(),p.support()));
+        switch(operation){
+            case "move-prop" -> {
+                if(!args.keySet().equals(MOVE_FIELDS.keySet()))throw new IllegalArgumentException("Expected id, x, y, z");
+                int index=session.indexOf(args.get("id"));
+                var p=session.prop(index);
+                session.put(index,new Prop(p.mesh(),p.room(),number(args,"x"),number(args,"y"),number(args,"z"),
+                    p.scale(),p.yaw(),p.halfX(),p.halfZ(),p.height(),p.support()));
+            }
+            case "place-prop" -> {
+                if(!args.keySet().equals(PLACE_FIELDS.keySet()))throw new IllegalArgumentException("Expected native place-prop fields");
+                var prop=looseProp(args.get("mesh"),Integer.parseInt(args.get("room")),
+                    number(args,"x"),number(args,"y"),number(args,"z"),number(args,"scale"),yaw(args));
+                session.add(prop);
+            }
+            case "transform-prop" -> {
+                if(!args.keySet().equals(TRANSFORM_FIELDS.keySet()))throw new IllegalArgumentException("Expected native transform-prop fields");
+                int index=session.indexOf(args.get("id"));var old=session.prop(index);floorOnly(old);
+                double scale=number(args,"scale"),ratio=scale/old.scale();
+                var candidate=new Prop(old.mesh(),old.room(),number(args,"x"),number(args,"y"),number(args,"z"),
+                    scale,yaw(args),old.halfX()*ratio,old.halfZ()*ratio,old.height()*ratio,old.support());
+                safeFloorPlacement(candidate,args.get("id"),false);
+                session.put(index,candidate);
+            }
+            case "duplicate-prop" -> {
+                if(!args.keySet().equals(DUPLICATE_FIELDS.keySet()))throw new IllegalArgumentException("Expected id, x, y, z");
+                var old=session.prop(session.indexOf(args.get("id")));floorOnly(old);
+                if(HouseAuthoringAttachments.required(session.sourceLevel(),old))
+                    throw new IllegalArgumentException("Cannot duplicate an authored service/story assembly");
+                var duplicate=new Prop(old.mesh(),old.room(),number(args,"x"),number(args,"y"),number(args,"z"),
+                    old.scale(),old.yaw(),old.halfX(),old.halfZ(),old.height(),old.support());
+                safeFloorPlacement(duplicate,null,true);
+                session.add(duplicate);
+            }
+            case "remove-prop" -> {
+                if(!args.keySet().equals(REMOVE_FIELDS.keySet()))throw new IllegalArgumentException("Expected exact native prop id");
+                session.remove(session.indexOf(args.get("id")));
+            }
+            default -> throw new IllegalArgumentException("Unsupported mission operation: "+operation);
+        }
     }
     public EditorChange.Details changes(LevelAuthoringSession.Snapshot before,LevelAuthoringSession.Snapshot after){
         if(!session.id().equals(before.sceneId())||!session.id().equals(after.sceneId()))
