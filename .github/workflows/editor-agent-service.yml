@@ -75,6 +75,16 @@ jobs:
       - name: Build actual host and resources
         shell: cmd
         run: call build.cmd package
+      - name: Diagnose native Castle lamp emitter and roof occlusion
+        shell: cmd
+        run: |
+          if not exist build\editor-agent-evidence mkdir build\editor-agent-evidence
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleAgentLampProbe.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.CastleAgentLampProbe > build\editor-agent-evidence\castle-lamp-source-probe.txt 2>&1
+          if errorlevel 1 exit /b 1
+          type build\editor-agent-evidence\castle-lamp-source-probe.txt
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
