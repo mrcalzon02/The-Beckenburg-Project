@@ -18,7 +18,7 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
     static final Set<Integer> MATERIALS=Set.of(LevelMaterials.PLASTER,LevelMaterials.WOOD,
         LevelMaterials.TILE,LevelMaterials.CONCRETE,LevelMaterials.STONE,LevelMaterials.WALL_TILE);
 
-    MissionStructuralWall {
+    public MissionStructuralWall {
         if(id==null||!id.matches("[A-Za-z0-9_-]{1,64}"))
             throw new IllegalArgumentException("Invalid stable wall ID");
         if(!Double.isFinite(x0+z0+x1+z1+base+height+thickness)||
