@@ -24,6 +24,7 @@ on:
       - 'src/test/java/org/beckenburg/G2TexturedModelGuiTest.java'
       - 'src/test/java/org/beckenburg/editor/EditorMaterialPencilTest.java'
       - 'src/main/java/org/beckenburg/LevelAuthoringSession.java'
+      - 'src/main/java/org/beckenburg/MissionStructuralWall.java'
       - 'src/main/java/org/beckenburg/LevelPlans.java'
       - 'src/main/java/org/beckenburg/UserLevelLibrary.java'
       - 'src/main/java/org/beckenburg/HouseSourceVersions.java'
