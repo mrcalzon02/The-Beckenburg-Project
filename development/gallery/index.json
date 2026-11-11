@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 8210,
+  "count": 8212,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -13084,6 +13084,26 @@
       "height": 510,
       "bytes": 29209,
       "sha256": "df6188012a1a7ebc53e79e348af4eaa6b1fc07e89807507ba381001bf97d90bd"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/county-castle-board-3d.png",
+      "url": "development/levels/previews/menu-workflow/county-castle-board-3d.png",
+      "title": "County castle board 3d",
+      "kind": "Game UI verification",
+      "width": 1200,
+      "height": 880,
+      "bytes": 468124,
+      "sha256": "d0dd7f7500295140319ca68b32728f6e70327ddd586cf7c7630168a5e63d6097"
+    },
+    {
+      "path": "development/levels/previews/menu-workflow/county-castle-board-front.png",
+      "url": "development/levels/previews/menu-workflow/county-castle-board-front.png",
+      "title": "County castle board front",
+      "kind": "Game UI verification",
+      "width": 1200,
+      "height": 880,
+      "bytes": 889551,
+      "sha256": "71dd53982bb92c1dd38949a97b7494a17e24d16c48200f788fd8b6af0cf32627"
     },
     {
       "path": "development/levels/previews/menu-workflow/county-map-coastal-focus.png",
