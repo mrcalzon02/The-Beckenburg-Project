@@ -31,3 +31,7 @@ The initial points in `locations.tsv` are proposed cartographic positions only; 
   - [Full map with dynamically drawn names](../development/levels/previews/menu-workflow/county-map-dynamic-names.png)
   - [Coastal site focused and enlarged](../development/levels/previews/menu-workflow/county-map-coastal-focus.png)
 - Still required: visually inspect the county map in the installed Windows game at several window sizes, click clustered markers, launch a genuinely unlocked built mission, return to Castle, and verify the post-round saved chapter selection. Do not treat a headless test as that physical sign-off.
+
+## Castle world-space selector
+
+The ground-floor Castle briefing room now has a real, fixed-position framed board carrying this approved map as an embedded diffuse texture. The old contract table/book workstation is replaced by `level_county_campaign_board`. Face the board and press **E** to open the **COUNTY MAP** page of the existing campaign selector, retaining all chapter gates. The physical board is editor-available, solid, and follows its authoritative Castle station coordinate. See [Castle board construction, verification and source](COUNTY_CASTLE_BILLBOARD.md).

@@ -188,6 +188,11 @@ public final class CampaignBoardPanel extends JPanel {
         roster.setText("1 HOST + UP TO "+profile.missionHires()+" HIRES / GUESTS REPLACE HIRES / SIX TOTAL");
         updateSelection();
     }
+    /** In-world Castle map board enters the county atlas directly, not a menu list. */
+    public void showCountyMap(){
+        countyMap.refreshState();
+        ((CardLayout)pages.getLayout()).show(pages,"county");
+    }
     private void updateSelection(){
         Entry entry=contracts.getSelectedValue();
         int stage=contracts.getSelectedIndex();

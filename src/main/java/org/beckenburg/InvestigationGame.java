@@ -202,10 +202,13 @@ public final class InvestigationGame {
             @Override public void castle(){showCastle();}
             @Override public void tutorial(){showCastleOrientation();}
         });
-        // The contract board is a workstation in the retained Castle scene.
+        // The physical framed County board in the live Castle is the in-world
+        // level selector. Reuse the genuine campaign lobby and saved dispatch
+        // guards, opening the same interactive map directly on activation.
+        campaign.showCountyMap();
         if(castle!=null){
             showCastle();
-            castle.openService("CAMPAIGN CONTRACT BOARD",campaign,this::showCastle);
+            castle.openService("BECKENBURG COUNTY / LOCATION SELECTION",campaign,this::showCastle);
         }else page("campaign",campaign);
         SwingUtilities.invokeLater(campaign::requestFocusInWindow);
     }

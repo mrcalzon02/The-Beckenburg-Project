@@ -30,8 +30,10 @@ public final class CastleServiceFixtures {
                 }
                 case ROLE -> floor(out,"wardrobe_mp_1",x,z,.9,Math.PI);
                 case CONTRACT -> {
-                    floor(out,"dinner_table_1",x,z,.74,0);
-                    supported(out,"open_book_mp_1",x,z,.48,"dinner_table_1",.74);
+                    // The physical Castle world selector: actual framed, map-textured
+                    // GLB geometry fixed to the edited contract station position.
+                    // Its collision and aiming use this same station coordinate.
+                    floor(out,"level_county_campaign_board",x,z,1.0,0);
                 }
                 case EXPEDITION -> {
                     floor(out,"tv_table_1_4",x,z,.84,0);

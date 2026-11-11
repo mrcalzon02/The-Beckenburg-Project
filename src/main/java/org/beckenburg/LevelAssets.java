@@ -18,6 +18,7 @@ public final class LevelAssets {
         "level_camp_tent_fitted_pitch_04","level_camp_tent_fitted_pitch_05","level_camp_tent_fitted_pitch_06");
     public static final Set<String> TAILORED_FABRIC=Set.of("level_camp_tent_ridge_tailored","level_camp_tent_dome_tailored","level_camp_bedroll_rolled_tailored");
     public static final Set<String> AUTHORED_SURFACES=Set.of(
+        "level_county_campaign_board", // approved fixed Castle campaign-map billboard (editor-visible)
         "level_house_fridge_worn",
         "level_castle_keeper_statue",
         "level_castle_training_banishment","level_castle_training_cleansing","level_castle_training_absolution",
