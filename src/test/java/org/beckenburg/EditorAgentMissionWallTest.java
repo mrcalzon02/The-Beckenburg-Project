@@ -196,6 +196,13 @@ public final class EditorAgentMissionWallTest {
             rejects(()->service.transact(session.revision(),"place-wall",place(crossing)));
             check(session.snapshot().equals(jointState),
                 "Misaligned and crossing runs are rejected atomically, preserving the joint");
+            // Undo the construction transaction BEFORE reopen, which is
+            // itself an undoable editor operation with its own history entry.
+            service.undo(session.revision());
+            check(session.walls().isEmpty(),"One undo removes the whole two-wall batch");
+            service.redo(session.revision());
+            check(new java.util.HashSet<>(session.walls()).equals(java.util.Set.of(wall,corner)),
+                "One redo restores the complete supported L-corner and stable native IDs");
             aim(renderer,candidate);
             service.capture(session.revision(),evidence.resolve("joined-corner.png"));
             service.save(session.revision());
@@ -205,11 +212,6 @@ public final class EditorAgentMissionWallTest {
             var reloaded=new HouseMap(site);
             check(!reloaded.traversable(corner.cx(),corner.base(),corner.cz()),
                 "Independent game loader still enforces L-corner physics");
-            service.undo(session.revision());
-            check(session.walls().isEmpty(),"One undo removes the whole two-wall batch");
-            service.redo(session.revision());
-            check(session.walls().equals(List.of(wall,corner)),
-                "One redo restores the complete supported L-corner");
             System.out.println("PASS native mission wall: rendered solid segments, exact terminal joints, rejected overlaps/crossings, runtime collision/LOS, stable IDs, batch rollback, BSCN save/reopen, independent load and undo/redo");
         } finally {
             System.setProperty("user.home",previous);
