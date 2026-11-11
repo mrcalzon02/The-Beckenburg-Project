@@ -29,23 +29,28 @@ public final class EditorAgentArchitecturalRoomTest {
     private static Site findRoom(LevelAuthoringSession session,HouseMap map){
         var gym=map.level().room(6);
         // Bounded authentic Gymnasium construction, not a synthetic room map.
+        var reasons=new TreeMap<String,Integer>();
+        int walked=0,attempted=0;
         for(double x=35.3;x<42.3;x+=.65)
             for(double z=9.0;z<19.0;z+=.65){
                 var site=new Site(x,z,x+2.65,z+2.65);
                 double cx=(site.x0()+site.x1())*.5,cz=site.z1()+1.5;
                 if(!gym.contains(cx,gym.y(),cz)||!map.traversable(cx,gym.y(),cz))
                     continue;
+                walked++;attempted++;
                 try{
                     session.buildRoom("gym-store",6,site.x0(),site.z0(),
                         site.x1(),site.z1(),2.35,LevelMaterials.PLASTER,"S");
                     session.removeRoom(MissionArchitecturalRoom.NODE_STEM+"gym-store");
                     return site;
                 }catch(IllegalArgumentException rejected){
+                    reasons.merge(rejected.getMessage(),1,Integer::sum);
                     check(session.architecturalRooms().isEmpty(),
                         "Rejected candidate cannot leave partial construction in scene");
                 }
             }
-        throw new AssertionError("School Gymnasium has no valid floor for an authored child room");
+        throw new AssertionError("School gym child-room placement rejected: walkable="+walked+
+            " attempted="+attempted+" reasons="+reasons);
     }
     private static void aim(SceneRenderer renderer,Site site,double floor){
         renderer.x=(site.x0()+site.x1())*.5;
