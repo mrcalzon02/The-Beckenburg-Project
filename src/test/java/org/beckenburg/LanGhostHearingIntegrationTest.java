@@ -37,17 +37,32 @@ public final class LanGhostHearingIntegrationTest {
             a.client.ready();b.client.ready();c.client.ready();g.client.ready();
             a.await("LOBBY|3|HUMAN|4|WAITING");a.client.start();a.await("INFO|mission started");
             g.client.viewGhost3D();g.await("ACCEPT|GVIEW3D");g.await("GPOSE|");
+            g.await("GLISTEN|1|");
             for(int r:AuthoredLevelNetworkTest.path(new HouseMap(),14,4)){a.client.move(r);a.await("ACCEPT|MOVE|"+r);}
             LanGhostHearing.Event step=LanGhostHearing.decode(g.await("GHEAR|FOOTSTEP|"));
             ok(step.source()==LanGhostPursuit.Sound.FOOTSTEP,"validated movement made sound");
-            ok(step.frame().split("\\|").length==5,"ghost cannot see exact room or coordinates");
+            ok(step.frame().split("\\|").length==5,"GHEAR remains a coarse five-field cue");
+            var sourceRipple=GhostSoundRipples.Ripple.decode(g.await("GRIPPLE|FOOTSTEP|"),new HouseMap());
+            ok(sourceRipple.kind()==LanGhostPursuit.Sound.FOOTSTEP,
+                "Stationary ghost receives a transient positional footstep ripple");
+            ok(sourceRipple.frame().split("\\|",-1).length==6,
+                "Ripple carries event location, not a hunter seat, health or team telemetry");
             a.client.scan(LanCase.Tool.EMF);a.await("ACCEPT|SCAN");
             ok(LanGhostHearing.decode(g.await("GHEAR|EQUIPMENT|")).source()
                 ==LanGhostPursuit.Sound.EQUIPMENT,"legal scanner sent equipment cue");
+            ok(GhostSoundRipples.Ripple.decode(g.await("GRIPPLE|EQUIPMENT|"),new HouseMap())
+                .kind()==LanGhostPursuit.Sound.EQUIPMENT,
+                "The real hunter tool emits a source-anchored sound ring");
+            g.client.ghostStep(100,0);
+            g.await("ACCEPT|GSTEP");g.await("GLISTEN|0|");
+            // A ghost cannot forge its own audible source or request
+            // another team's live BODY/telemetry frames.
+            g.client.send("GRIPPLE|FOOTSTEP|1000|0|1000|20");
+            g.await("REJECT|unknown command");
             g.client.send("GHEAR|RITUAL|LEFT|LOUD|20");
             g.await("REJECT|unknown command");
             ok(server.running(),"forged cue cannot change mission");
-            System.out.println("PASS: four-socket ghost sound cues, no private telemetry or forged sound authority");
+            System.out.println("PASS: four-socket ghost hearing and real source ripples, move-to-mute host control, bounded sound packets, no hunter BODY leakage or forged ripple authority");
         }
     }
 }

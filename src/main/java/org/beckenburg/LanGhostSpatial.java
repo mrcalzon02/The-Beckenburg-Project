@@ -11,6 +11,17 @@ public final class LanGhostSpatial {
     }
     private final HouseMap map;
     private int room,heading=180,lastStepTick=-1,slowedUntil=-1;
+    // Four quiet 100ms host ticks to settle after physically moving.
+    // Camera turns are stationary; successful world steps and DRIFT aren't.
+    public static final int LISTEN_SETTLE_TICKS=4;
+    private int lastMovedTick=-100000;
+    public boolean listening(int currentTick){
+        return currentTick>=0&&currentTick-lastMovedTick>=LISTEN_SETTLE_TICKS;
+    }
+    void markTravel(int tick){
+        if(tick<0)throw new IllegalArgumentException("Invalid ghost movement tick");
+        lastMovedTick=tick;
+    }
     private double ghostSpeed=1,speciesSpeed=1;
     private int burstCapacity=30,burstStamina=30,lastBurstTick=-1000;
     public void configureSpeed(int percent){
@@ -95,6 +106,7 @@ public final class LanGhostSpatial {
         if(SafeAreaBarrier.blocks(map,new LevelDefinition.Vec(x,y,z),destination))
             throw new IllegalArgumentException("anti-ghost safe-area barrier");
         x=destination.x();y=destination.y();z=destination.z();
+        markTravel(tick);
         if(burst){burstStamina--;lastBurstTick=tick;}
         return true;
     }

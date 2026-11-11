@@ -814,7 +814,7 @@ public final class LanHost implements AutoCloseable {
                     if(voice!=null)reply(peer,"VOICEKEY|"+voice.port()+"|"+voice.register(peer.slot,peer.socket.getInetAddress()));else reply(peer,"INFO|Voice disabled on secure transport (NET-VOICE)");
                     reply(peer,"GTYPE|"+ghostType+"|"+ghostType.behavior());
                     for(String safeFrame:SafeAreaBarrier.wardFrames(map,tick))reply(peer,safeFrame);
-                    reply(peer,ghostPose.frame(tick));reply(peer,frenzyFrame());
+                    reply(peer,ghostPose.frame(tick));reply(peer,"GLISTEN|"+(ghostPose.listening(tick)?1:0)+"|"+tick);reply(peer,frenzyFrame());
                     if(twinCompanion!=null)reply(peer,twinCompanion.playerFrame(ghostType.ancient(),tick));
                     broadcastState();sendGhostPrompt();
                 }
@@ -828,7 +828,7 @@ public final class LanHost implements AutoCloseable {
                     int staminaBefore=ghostPose.stamina();
                     ghostPose.step(dx,dz,tick,bursting);
                     animation.moved(tick,ghostPose.stamina()<staminaBefore);
-                    reply(peer,"ACCEPT|GSTEP");reply(peer,ghostPose.frame(tick));broadcastApparitions();
+                    reply(peer,"ACCEPT|GSTEP");reply(peer,ghostPose.frame(tick));reply(peer,"GLISTEN|0|"+tick);broadcastApparitions();
                     if(ghost.manifested()&&tick%5==0)broadcastGhostSound(LanSound.Cue.FOOTFALL);
                 }
                 case "GTURN" -> {
@@ -2014,7 +2014,7 @@ public final class LanHost implements AutoCloseable {
                     speaker.room(),new LevelDefinition.Vec(speaker.x(),speaker.y(),speaker.z()));
                 double range=Math.hypot(Math.hypot(speaker.x()-spectralPose.x(),
                                         speaker.z()-spectralPose.z()),speaker.y()-spectralPose.y());
-                if(attenuation<=3&&range<=9){
+                if(attenuation<=3&&range<=9&&ghostPose.listening(tick)){
                     Peer spectral=seats[GHOST_SEAT];
                     if(spectral!=null&&spectral.ghostWorldMode)
                         voice.forward(GHOST_SEAT,seat,frame,
@@ -2097,6 +2097,11 @@ public final class LanHost implements AutoCloseable {
             hunterRooms[seat],new LevelDefinition.Vec(body.x(),body.y(),body.z()),
             type,weather.state());}
         finally{aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HEARING,acousticStart);}
+        // Only a human ghost player loses hearing while moving. AI ghosts
+        // and autonomous Twins keep their existing physical hearing behavior.
+        Peer humanGhost=seats[GHOST_SEAT];
+        if(humanGhost!=null&&humanGhost.ghostWorldMode&&!ghostPose.listening(tick))
+            heard=false;
         if(heard){
             lastGhostSoundTick=tick;
             lastGhostSoundRoom=hunterRooms[seat];
@@ -2118,6 +2123,10 @@ public final class LanHost implements AutoCloseable {
             if(cue!=null&&(type!=LanGhostPursuit.Sound.FOOTSTEP
                     ||tick-lastGhostFootstepCueTick[seat]>=4)){
                 reply(seats[GHOST_SEAT],cue.frame());
+                // Event-only source position, visible through walls, never
+                // a continuous BODY or TEAMMAP stream for a silent hunter.
+                reply(seats[GHOST_SEAT],
+                    new GhostSoundRipples.Ripple(type,body.x(),body.y(),body.z(),tick).frame());
                 if(type==LanGhostPursuit.Sound.FOOTSTEP)lastGhostFootstepCueTick[seat]=tick;
             }
         }
@@ -2207,6 +2216,9 @@ public final class LanHost implements AutoCloseable {
     /** Every successful room transition uses an actual door or produces a wall-phase trace. */
     private void onGhostTravel(int from,int to){
         if(from==to)return;
+        ghostPose.markTravel(tick);
+        Peer human=seats[GHOST_SEAT];
+        if(human!=null&&human.ghostWorldMode)reply(human,"GLISTEN|0|"+tick);
         GhostTraits.Profile trait=GhostTraits.of(ghostType);
         if(trait.passage()==GhostTraits.Passage.DOORS && map.openDoorBetweenRooms(from,to))
             broadcastWorld();
@@ -2921,6 +2933,7 @@ public final class LanHost implements AutoCloseable {
             if(tick%5==0){broadcastState();broadcastApparitions();broadcastProgress();broadcastWorld();
                 if(seats[GHOST_SEAT]!=null&&seats[GHOST_SEAT].ghostWorldMode){
                     reply(seats[GHOST_SEAT],ghostPose.frame(tick));
+                    reply(seats[GHOST_SEAT],"GLISTEN|"+(ghostPose.listening(tick)?1:0)+"|"+tick);
                     if(twinCompanion!=null)
                         reply(seats[GHOST_SEAT],twinCompanion.playerFrame(ghostType.ancient(),tick));
                     sendGhostPrompt();
@@ -3159,7 +3172,7 @@ public final class LanHost implements AutoCloseable {
             boolean isGhost=i==GHOST_SEAT;
             int myRoom=isGhost?o.room():hunterRooms[i];
             int visible=isGhost?-1:(o.manifested()&&myRoom==o.room()?o.room():-1);
-            reply(peer,"STATE|"+tick+"|"+myRoom+"|"+visible+"|"+(isGhost?o.energy():-1)+"|"+(isGhost?o.legalActions().toString().replace(" ",""):("role:"+peer.slot))+"|"+(isGhost&&tick-lastGhostSoundTick<12?1:0));
+            reply(peer,"STATE|"+tick+"|"+myRoom+"|"+visible+"|"+(isGhost?o.energy():-1)+"|"+(isGhost?o.legalActions().toString().replace(" ",""):("role:"+peer.slot))+"|"+(isGhost&&ghostPose.listening(tick)&&tick-lastGhostSoundTick<12?1:0));
         }
     }
     private void broadcastLobby(){
