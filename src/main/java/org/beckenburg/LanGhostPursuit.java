@@ -56,15 +56,39 @@ public final class LanGhostPursuit {
         int attenuation;
         try{attenuation=LanAcoustics.cost(map,ghostRoom,sourceRoom);}
         finally{diagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HEARING,hearingStart);}
-        if(attenuation > kind.budget)return;
-        // Doors, masonry and wind shorten each finite-lived acoustic clue.
+        rememberSound(sourceRoom,x,z,kind,tick,attenuation);
+    }
+    /** The live host provides its authoritative spectral pose, not a
+     * client-supplied location. Child-room doors now affect AI hearing even
+     * when both actors remain inside the same legacy gameplay zone. */
+    public void heard(LanGhostSpatial.Pose ghost,int sourceRoom,
+                      double x,double sourceY,double z,Sound kind,int tick){
+        Objects.requireNonNull(kind);
+        if(ghost==null||ghost.room()<0||ghost.room()>=HouseMap.EXTRACTION_ROOM||
+            sourceRoom<0||sourceRoom>=HouseMap.EXTRACTION_ROOM||
+            !Double.isFinite(ghost.x()+ghost.y()+ghost.z()+x+sourceY+z)||
+            tick<0||map.roomAt(ghost.x(),ghost.y(),ghost.z())!=ghost.room()||
+            map.roomAt(x,sourceY,z)!=sourceRoom)return;
+        long hearingStart=diagnostics.begin();
+        int attenuation;
+        try{
+            attenuation=LanAcoustics.costAt(map,ghost.room(),
+                new LevelDefinition.Vec(ghost.x(),ghost.y(),ghost.z()),
+                sourceRoom,new LevelDefinition.Vec(x,sourceY,z));
+        }finally{diagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HEARING,hearingStart);}
+        rememberSound(sourceRoom,x,z,kind,tick,attenuation);
+    }
+    private void rememberSound(int sourceRoom,double x,double z,
+                               Sound kind,int tick,int attenuation){
+        if(attenuation>kind.budget)return;
+        // Doors, masonry and weather-adjusted hearing windows shorten clues.
         int lifetime=kind.lifetime-attenuation*5;
         if(lifetime<=0)return;
-        // Tile-centred estimate, not an exact hunter body position.
+        // Tile-centred estimate, NEVER a hunter-body position subscription.
         double cx=2*Math.floor(x/2)+1,cz=2*Math.floor(z/2)+1;
         Echo candidate=new Echo(sourceRoom,cx,cz,tick,tick+lifetime,kind);
-        if(memory==null || tick>=memory.expiryTick() || kind.ordinal()>=memory.source().ordinal()
-                || memory.heardTick()+10<tick) { memory=candidate; search=null; }
+        if(memory==null||tick>=memory.expiryTick()||kind.ordinal()>=memory.source().ordinal()
+                ||memory.heardTick()+10<tick){memory=candidate;search=null;}
     }
     /** Time-limited immutable ghost observation, not a feed of all hunter locations. */
     public Echo memory(int tick) {

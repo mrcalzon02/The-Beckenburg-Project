@@ -44,7 +44,12 @@ public final class LanGhostHearing {
             ||map.roomAt(ghost.x(),ghost.y(),ghost.z())!=ghost.room()
             ||!Double.isFinite(sourceX)||!Double.isFinite(sourceZ)
             ||map.roomAt(sourceX,map.groundHeight(sourceX,sourceZ,sourceRoom),sourceZ)!=sourceRoom)return null;
-        int absorption=LanAcoustics.cost(map,ghost.room(),sourceRoom);
+        // Human ghosts hear through the same real wall-door aperture as
+        // recorded hunter audio. Only coarse direction/strength goes on wire.
+        int absorption=LanAcoustics.costAt(map,ghost.room(),
+            new LevelDefinition.Vec(ghost.x(),ghost.y(),ghost.z()),sourceRoom,
+            new LevelDefinition.Vec(sourceX,
+                map.groundHeight(sourceX,sourceZ,sourceRoom),sourceZ));
         if(absorption>kind.budget)return null;
         double dx=sourceX-ghost.x(),dz=sourceZ-ghost.z();
         double distance=Math.hypot(dx,dz),heading=Math.toRadians(ghost.heading());

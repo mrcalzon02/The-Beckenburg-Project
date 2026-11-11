@@ -141,6 +141,38 @@ public final class EditorAgentArchitecturalRoomTest {
             check(map.architecturalSoundLoss(child.cx(),child.base(),child.cz(),
                     listener.x(),listener.y(),listener.z())==3,
                 "Native closed door attenuates same-gameplay-zone sounds");
+            var spectralInside=new LanGhostSpatial.Pose(
+                6,child.cx(),child.base(),child.cz(),0);
+            var ghostFeet=new LevelDefinition.Vec(
+                spectralInside.x(),spectralInside.y(),spectralInside.z());
+            var hunterFeet=new LevelDefinition.Vec(
+                listener.x(),listener.y(),listener.z());
+            check(LanAcoustics.costAt(map,6,ghostFeet,6,ghostFeet)==0,
+                "A real child-room acoustic source remains audible to an occupant of that same room");
+            check(LanAcoustics.costAt(map,6,ghostFeet,6,hunterFeet)==3,
+                "Ghost hearing uses the actual closed native door even within one gameplay zone");
+            var calm=new MissionWeather.State(EvidenceSignals.Season.AUTUMN,
+                EvidenceSignals.Weather.CLEAR,MissionWeather.Mode.FIXED,1,0);
+            check(!LanAcoustics.audibleAt(map,6,ghostFeet,6,hunterFeet,
+                LanGhostPursuit.Sound.FOOTSTEP,calm),
+                "Authoritative host cannot report closed-room footsteps to its ghost");
+            check(LanGhostHearing.project(map,spectralInside,6,
+                    listener.x(),listener.z(),LanGhostPursuit.Sound.FOOTSTEP,10)==null,
+                "Human ghosts receive no impossible footsteps through a closed child-room door");
+            var aiHearing=new LanGhostPursuit(map,42L);
+            aiHearing.heard(spectralInside,6,listener.x(),listener.y(),listener.z(),
+                LanGhostPursuit.Sound.FOOTSTEP,10);
+            check(aiHearing.memory(10)==null,
+                "AI ghost cannot memorize an inaudible closed-door footstep");
+            var shutTwin=new TwinCompanionAi(map,spectralInside,712L);
+            check("gym-store".equals(map.architecturalRoomAt(
+                    shutTwin.pose().x(),shutTwin.pose().y(),shutTwin.pose().z())),
+                "Independent Twin starts physically inside the authored enclosure");
+            shutTwin.heard(6,listener.x(),listener.y(),listener.z(),
+                LanGhostPursuit.Sound.FOOTSTEP,10,calm);
+            shutTwin.advance(10,spectralInside);
+            check(shutTwin.intent()!=TwinCompanionAi.Intent.INVESTIGATE,
+                "Closed native door must not trigger the independently simulated Twin to investigate");
             var shutSound=LanSound.project(map,listener,6,child.cx(),child.base(),
                 child.cz(),LanSound.Cue.DOOR,10);
             check(shutSound!=null,"Closed child-room door still transmits muffled noise");
@@ -149,6 +181,25 @@ public final class EditorAgentArchitecturalRoomTest {
             check(map.architecturalSoundLoss(child.cx(),child.base(),child.cz(),
                     listener.x(),listener.y(),listener.z())==1,
                 "Real open door reduces physical acoustic absorption");
+            check(LanAcoustics.costAt(map,6,ghostFeet,6,hunterFeet)==1,
+                "Opening the door immediately updates authoritative ghost-hearing cost");
+            check(LanAcoustics.audibleAt(map,6,ghostFeet,6,hunterFeet,
+                LanGhostPursuit.Sound.FOOTSTEP,calm),
+                "Open architectural door permits genuine ghost hearing in the host");
+            var ghostCue=LanGhostHearing.project(map,spectralInside,6,
+                listener.x(),listener.z(),LanGhostPursuit.Sound.FOOTSTEP,11);
+            check(ghostCue!=null&&ghostCue.frame().startsWith("GHEAR|FOOTSTEP|"),
+                "Human ghost receives a coarse directional footstep cue, never hunter coordinates");
+            aiHearing.heard(spectralInside,6,listener.x(),listener.y(),listener.z(),
+                LanGhostPursuit.Sound.FOOTSTEP,11);
+            check(aiHearing.memory(11)!=null&&aiHearing.memory(11).room()==6,
+                "AI ghost remembers the newly audible event only as a bounded coarse zone clue");
+            var openTwin=new TwinCompanionAi(map,spectralInside,712L);
+            openTwin.heard(6,listener.x(),listener.y(),listener.z(),
+                LanGhostPursuit.Sound.FOOTSTEP,11,calm);
+            openTwin.advance(11,spectralInside);
+            check(openTwin.intent()==TwinCompanionAi.Intent.INVESTIGATE,
+                "Independent Twin investigates footsteps only when the physical door carries sound");
             var openSound=LanSound.project(map,listener,6,child.cx(),child.base(),
                 child.cz(),LanSound.Cue.DOOR,10);
             check(openSound!=null&&openSound.volume()>=shutSound.volume()+20,

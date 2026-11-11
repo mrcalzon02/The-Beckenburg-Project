@@ -41,12 +41,23 @@ public final class TwinCompanionAi {
     public boolean moved(){return moved;}
     public int lastActivityTick(){return lastActivityTick;}
 
-    /** A real in-world acoustic event, not perpetual access to hunter locations. */
+    /** Legacy callers can still submit room-stationary source events. */
     public void heard(int room,double x,double z,LanGhostPursuit.Sound sound,int tick,MissionWeather.State weather){
+        if(room<0||room>=HouseMap.EXTRACTION_ROOM||!Double.isFinite(x+z))return;
+        heard(room,x,map.groundHeight(x,z,room),z,sound,tick,weather);
+    }
+    /** Host-authorized world-space sound. The independent Twin listens with
+     * its OWN live pose and the very same authored door state as human ghosts,
+     * not an omniscient shortcut through a shared gameplay-zone ID. */
+    public void heard(int room,double x,double sourceY,double z,
+                      LanGhostPursuit.Sound sound,int tick,MissionWeather.State weather){
         Objects.requireNonNull(sound);
-        if(tick<0||!Double.isFinite(x)||!Double.isFinite(z)||room<0
-                ||room>=HouseMap.EXTRACTION_ROOM)return;
-        if(!LanAcoustics.audible(map,pose.room(),room,sound,Objects.requireNonNull(weather)))return;
+        if(tick<0||!Double.isFinite(x+sourceY+z)||room<0||
+            room>=HouseMap.EXTRACTION_ROOM)return;
+        if(!LanAcoustics.audibleAt(map,pose.room(),
+                new LevelDefinition.Vec(pose.x(),pose.y(),pose.z()),
+                room,new LevelDefinition.Vec(x,sourceY,z),
+                sound,Objects.requireNonNull(weather)))return;
         lastNoiseTick=tick;
         noiseRoom=room;
         noiseX=x;noiseZ=z;

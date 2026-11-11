@@ -2008,9 +2008,12 @@ public final class LanHost implements AutoCloseable {
             // The ghost hears a nearby physical voice, including somebody speaking
             // into a radio. The ghost cannot listen to the RADIO broadcast itself.
             if(speaker.room()>=0&&speaker.room()<HouseMap.EXTRACTION_ROOM){
-                int attenuation=LanAcoustics.cost(map,ghost.room(),speaker.room());
-                double range=Math.hypot(Math.hypot(speaker.x()-ghostPose.pose().x(),
-                                        speaker.z()-ghostPose.pose().z()),speaker.y()-ghostPose.pose().y());
+                var spectral=ghostPose.pose();
+                int attenuation=LanAcoustics.costAt(map,ghost.room(),
+                    new LevelDefinition.Vec(spectral.x(),spectral.y(),spectral.z()),
+                    speaker.room(),new LevelDefinition.Vec(speaker.x(),speaker.y(),speaker.z()));
+                double range=Math.hypot(Math.hypot(speaker.x()-spectral.x(),
+                                        speaker.z()-spectral.z()),speaker.y()-spectral.y());
                 if(attenuation<=3&&range<=9){
                     Peer spectral=seats[GHOST_SEAT];
                     if(spectral!=null&&spectral.ghostWorldMode)
@@ -2084,11 +2087,15 @@ public final class LanHost implements AutoCloseable {
                 actorCue(seat,cue);
         }
         if(twinCompanion!=null)
-            twinCompanion.heard(hunterRooms[seat],body.x(),body.z(),type,tick,weather.state());
+            twinCompanion.heard(hunterRooms[seat],body.x(),body.y(),body.z(),
+                type,tick,weather.state());
         long acousticStart=aiDiagnostics.begin();
         boolean heard;
-        try{heard=LanAcoustics.audible(map,ghost.room(),hunterRooms[seat],type,
-            weather.state());}
+        var spectral=ghostPose.pose();
+        try{heard=LanAcoustics.audibleAt(map,ghost.room(),
+            new LevelDefinition.Vec(spectral.x(),spectral.y(),spectral.z()),
+            hunterRooms[seat],new LevelDefinition.Vec(body.x(),body.y(),body.z()),
+            type,weather.state());}
         finally{aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HEARING,acousticStart);}
         if(heard){
             lastGhostSoundTick=tick;
@@ -2104,9 +2111,9 @@ public final class LanHost implements AutoCloseable {
             }
         }
         if(heard&&seats[GHOST_SEAT]==null){
-            ai.heard(ghost.room(),hunterRooms[seat],body.x(),body.z(),type,tick);
+            ai.heard(spectral,hunterRooms[seat],body.x(),body.y(),body.z(),type,tick);
         }else if(heard&&seats[GHOST_SEAT]!=null&&seats[GHOST_SEAT].ghostWorldMode){
-            LanGhostHearing.Event cue=LanGhostHearing.project(map,ghostPose.pose(),
+            LanGhostHearing.Event cue=LanGhostHearing.project(map,spectral,
                     hunterRooms[seat],body.x(),body.z(),type,tick);
             if(cue!=null&&(type!=LanGhostPursuit.Sound.FOOTSTEP
                     ||tick-lastGhostFootstepCueTick[seat]>=4)){
