@@ -80,6 +80,8 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             fields.put("openingOffset",wall.cutOffset());
             fields.put("openingWidth",wall.cutWidth());
             fields.put("openingClearHeight",wall.cutHeight());
+            fields.put("doorPortalId",wall.doorPortalId());
+            fields.put("operableDoor",wall.hasDoor());
             return Map.copyOf(fields);
         }
         var p=session.prop(session.indexOf(node.id()));
@@ -107,6 +109,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             ops.add("place-wall");
             ops.add("extend-wall");
             ops.add("set-wall-opening");
+            ops.add("set-wall-door");
             ops.add("remove-wall");
             ops.add("set-floor-depth");
             ops.add("extend-stair-opening");
@@ -124,6 +127,8 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     private static final Map<String,String> DOOR_FIELDS=Map.of("id","integer","width","number");
     private static final Map<String,String> OPEN_WALL_FIELDS=Map.of(
         "id","string","offset","number","width","number","clearHeight","number");
+    private static final Map<String,String> WALL_DOOR_FIELDS=Map.of(
+        "id","string","state","string");
     private static final Map<String,String> EXTEND_WALL_FIELDS=Map.of("id","string","anchor","string",
         "endpoint","string","turn","string","length","number");
     private static final Map<String,String> FLOOR_FIELDS=Map.of("room","integer","depth","number");
@@ -145,6 +150,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             result.put("place-wall",WALL_FIELDS);
             result.put("extend-wall",EXTEND_WALL_FIELDS);
             result.put("set-wall-opening",OPEN_WALL_FIELDS);
+            result.put("set-wall-door",WALL_DOOR_FIELDS);
             result.put("remove-wall",REMOVE_FIELDS);
             result.put("set-floor-depth",FLOOR_FIELDS);
             result.put("extend-stair-opening",STAIR_FIELDS);
@@ -304,6 +310,16 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                     throw new IllegalArgumentException("Expected native wall ID and offset, width, clearHeight");
                 session.setWallOpening(args.get("id"),number(args,"offset"),
                     number(args,"width"),number(args,"clearHeight"));
+            }
+            case "set-wall-door" -> {
+                if(!args.keySet().equals(WALL_DOOR_FIELDS.keySet()))
+                    throw new IllegalArgumentException("Expected native wall ID and INSTALL/REMOVE state");
+                boolean installed=switch(args.get("state")){
+                    case "INSTALL" -> true;
+                    case "REMOVE" -> false;
+                    default -> throw new IllegalArgumentException("Door state must be INSTALL or REMOVE");
+                };
+                session.setWallDoor(args.get("id"),installed);
             }
             case "remove-wall" -> {
                 if(!args.keySet().equals(REMOVE_FIELDS.keySet()))

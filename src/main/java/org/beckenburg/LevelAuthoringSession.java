@@ -286,6 +286,35 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         walls.set(index,next);
         revision++;
     }
+    /** Attach an operable in-game door to an existing bounded wall cut.
+     * Its network/interaction portal ID is persisted on the same native wall.
+     * This does not create a new investigation zone or substitute a room graph. */
+    public synchronized void setWallDoor(String nodeId,boolean installed){
+        if(nodeId==null||!nodeId.startsWith(WALL_PREFIX))
+            throw new IllegalArgumentException("Expected native wall node");
+        String id=nodeId.substring(WALL_PREFIX.length());
+        int index=-1;
+        for(int i=0;i<walls.size();i++)if(walls.get(i).id().equals(id)){index=i;break;}
+        if(index<0)throw new IllegalArgumentException("Unknown native wall");
+        var wall=walls.get(index);
+        if(installed==wall.hasDoor())return;
+        int doorId=-1;
+        if(installed){
+            if(!wall.hasOpening())
+                throw new IllegalArgumentException("Door needs a physical opening before installation");
+            var occupied=new java.util.HashSet<Integer>();
+            for(var portal:source.portals())occupied.add(portal.id());
+            for(var other:walls)if(other.hasDoor())occupied.add(other.doorPortalId());
+            doorId=1000;
+            while(occupied.contains(doorId)&&doorId<=999999)doorId++;
+            if(doorId>999999)throw new IllegalStateException("No available native door portal IDs");
+        }
+        var next=wall.withDoorPortal(doorId);
+        var candidate=new ArrayList<>(walls);
+        candidate.set(index,next);
+        validateWalls(source,candidate,props);
+        walls.set(index,next);revision++;
+    }
     public synchronized void removeWall(String nodeId){
         if(nodeId==null||!nodeId.startsWith(WALL_PREFIX))
             throw new IllegalArgumentException("Expected stable structural wall node ID");
@@ -297,8 +326,12 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     }
     private static void validateWalls(LevelDefinition source,List<MissionStructuralWall> walls,List<Prop> props){
         var prior=new ArrayList<MissionStructuralWall>();
+        var occupied=new java.util.HashSet<Integer>();
+        for(var portal:source.portals())occupied.add(portal.id());
         for(var wall:walls){
             wall.validate(source,prior);
+            if(wall.hasDoor()&&!occupied.add(wall.doorPortalId()))
+                throw new IllegalArgumentException("Duplicate native door portal ID "+wall.doorPortalId());
             for(var p:props)if(p.room()==wall.room()&&p.halfX()>0&&p.halfZ()>0
                 &&Math.abs(p.y()-wall.base())<wall.height()+.15
                 &&wall.near(p.x(),p.z(),Math.hypot(p.halfX(),p.halfZ())+.28))
@@ -571,6 +604,8 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                 fields.put("cutWidth",Double.toString(wall.cutWidth()));
                 fields.put("cutHeight",Double.toString(wall.cutHeight()));
             }
+            if(wall.hasDoor())
+                fields.put("doorPortalId",Integer.toString(wall.doorPortalId()));
             document.replace(new RuntimeScene.Node(WALL_PREFIX+wall.id(),"Native structural wall",
                 null,"architecture",RuntimeScene.Transform.identity(),
                 List.of(new RuntimeScene.Component(MissionStructuralWall.COMPONENT,fields))));
@@ -656,7 +691,10 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                         "base","height","thickness","material");
                     var apertured=new java.util.HashSet<>(original);
                     apertured.addAll(java.util.Set.of("cutOffset","cutWidth","cutHeight"));
-                    boolean hasCut=props.keySet().equals(apertured);
+                    var withDoor=new java.util.HashSet<>(apertured);
+                    withDoor.add("doorPortalId");
+                    boolean hasDoor=props.keySet().equals(withDoor);
+                    boolean hasCut=hasDoor||props.keySet().equals(apertured);
                     if(!hasCut&&!props.keySet().equals(original))
                         throw new IllegalArgumentException("Unsupported structural wall properties");
                     var wall=new MissionStructuralWall(node.id().substring(WALL_PREFIX.length()),
@@ -667,7 +705,8 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                         Integer.parseInt(props.get("material")),
                         hasCut?Double.parseDouble(props.get("cutOffset")):0,
                         hasCut?Double.parseDouble(props.get("cutWidth")):0,
-                        hasCut?Double.parseDouble(props.get("cutHeight")):0);
+                        hasCut?Double.parseDouble(props.get("cutHeight")):0,
+                        hasDoor?Integer.parseInt(props.get("doorPortalId")):-1);
                     walls.add(wall);
                 }catch(RuntimeException bad){
                     throw new IOException("Invalid native structural wall "+node.id(),bad);
@@ -793,9 +832,13 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         }
         for(Prop p:added)collision.addAll(LevelPlans.propColliders(source,p));
         var sockets=new ArrayList<>(effectiveFloorSockets(source,floorDepths));
-        for(var wall:walls){collision.addAll(wall.bodies());sockets.add(wall.socket());}
+        var portals=new ArrayList<>(effectivePortals(source,widths));
+        for(var wall:walls){
+            collision.addAll(wall.bodies());sockets.add(wall.socket());
+            if(wall.hasDoor())portals.add(wall.doorPortal());
+        }
         return new LevelDefinition(source.id(),source.revision(),source.title(),
-            source.rooms(),effectivePortals(source,widths),source.stairs(),effectiveVoids(source,stairExtensions),
+            source.rooms(),portals,source.stairs(),effectiveVoids(source,stairExtensions),
             List.copyOf(edited),sockets,collision,source.dock(),
             source.ambience(),source.water(),source.sounds());
     }

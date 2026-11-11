@@ -13,10 +13,17 @@ import org.beckenburg.LevelDefinition.*;
  */
 public record MissionStructuralWall(String id,int room,double x0,double z0,double x1,double z1,
                              double base,double height,double thickness,int material,
-                             double cutOffset,double cutWidth,double cutHeight) {
+                             double cutOffset,double cutWidth,double cutHeight,int doorPortalId) {
+    /** Legacy sealed walls and existing aperture documents remain compatible. */
     public MissionStructuralWall(String id,int room,double x0,double z0,double x1,double z1,
                                  double base,double height,double thickness,int material){
-        this(id,room,x0,z0,x1,z1,base,height,thickness,material,0,0,0);
+        this(id,room,x0,z0,x1,z1,base,height,thickness,material,0,0,0,-1);
+    }
+    public MissionStructuralWall(String id,int room,double x0,double z0,double x1,double z1,
+                                 double base,double height,double thickness,int material,
+                                 double cutOffset,double cutWidth,double cutHeight){
+        this(id,room,x0,z0,x1,z1,base,height,thickness,material,
+            cutOffset,cutWidth,cutHeight,-1);
     }
     static final String NODE_PREFIX="beckenburg-wall-";
     static final String COMPONENT="beckenburg.level.structural-wall";
@@ -46,11 +53,30 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
             cutOffset-cutWidth/2 < -length/2+.25-1e-6||
             cutOffset+cutWidth/2 > length/2-.25+1e-6)
             throw new IllegalArgumentException("Wall opening requires 0.25m piers, a solid lintel and human clearance");
+        if(doorPortalId!=-1&&(doorPortalId<1000||doorPortalId>999999||cutWidth==0))
+            throw new IllegalArgumentException("Native door portal requires an aperture and a six-digit-safe ID");
     }
     public boolean hasOpening(){return cutWidth>0;}
+    public boolean hasDoor(){return doorPortalId>=0;}
     public MissionStructuralWall withOpening(double offset,double width,double clearHeight){
         return new MissionStructuralWall(id,room,x0,z0,x1,z1,base,height,thickness,
-            material,offset,width,clearHeight);
+            material,offset,width,clearHeight,width==0?-1:doorPortalId);
+    }
+    public MissionStructuralWall withDoorPortal(int id){
+        if(!hasOpening()&&id!=-1)
+            throw new IllegalArgumentException("A door requires an existing physical wall opening");
+        return new MissionStructuralWall(this.id,room,x0,z0,x1,z1,base,height,thickness,
+            material,cutOffset,cutWidth,cutHeight,id);
+    }
+    /** One stable native game portal, with real door leaf, interaction and collision.
+     * It is inside its source gameplay zone; child architectural room identities
+     * are a separate capability and MUST NOT be inferred from this opening. */
+    Portal doorPortal(){
+        if(!hasDoor())throw new IllegalStateException("No authored door portal");
+        boolean alongX=z0==z1;
+        return new Portal(doorPortalId,room,room,
+            cx()+(alongX?cutOffset:0),base,
+            cz()+(alongX?0:cutOffset),cutWidth,alongX,"door",1.0);
     }
     double length(){return Math.hypot(x1-x0,z1-z0);}
     double cx(){return (x0+x1)/2;}

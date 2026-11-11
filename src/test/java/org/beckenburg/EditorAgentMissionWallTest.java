@@ -268,15 +268,90 @@ public final class EditorAgentMissionWallTest {
             check(RuntimeSceneDocument.load(session.documentPath()).find(nodeId).components()
                 .get(0).properties().containsKey("cutWidth"),
                 "The versioned scene document stores real aperture dimensions");
+            // A bounded native door joins the SAME investigation zone on
+            // both sides. It must be interactable, rendered, collision-solid
+            // when shut, traversable when opened, and network-replicable.
+            var install=Map.of("id",nodeId,"state","INSTALL");
+            check(service.summary().operations().contains("set-wall-door"),
+                "The agent advertises native door leaf installation");
+            service.transact(session.revision(),"set-wall-door",install);
+            var withDoor=session.snapshot();
+            var doorWall=session.walls().stream().filter(w->w.id().equals(wall.id()))
+                .findFirst().orElseThrow();
+            check(doorWall.hasDoor(),"A wall cut owns one operable native portal");
+            int doorId=doorWall.doorPortalId();
+            check(doorId>=1000&&doorId<1000000,"Native wall door ID is network-snapshot safe");
+            var doorMap=new HouseMap(site,session.level());
+            var nativeDoor=doorMap.level().portals().stream().filter(p->p.id()==doorId)
+                .findFirst().orElseThrow();
+            check(nativeDoor.door()&&nativeDoor.a()==wall.room()&&nativeDoor.b()==wall.room()
+                &&nativeDoor.alongX()&&Math.abs(nativeDoor.x()-wall.cx())<1e-8
+                &&Math.abs(nativeDoor.z()-wall.cz())<1e-8
+                &&Math.abs(nativeDoor.width()-.8)<1e-8,
+                "The actual game receives a dimension-matched same-zone native door portal");
+            check(!doorMap.traversable(wall.cx(),wall.base(),wall.cz()),
+                "Closed physical door blocks the standing game capsule");
+            doorMap.toggleDoor(doorId);
+            check(doorMap.traversable(wall.cx(),wall.base(),wall.cz()),
+                "Opening the native door frees the true wall aperture");
+            check(doorMap.doorSnapshot().equals(Integer.toString(doorId)),
+                "Authoritative door network snapshot includes the authored portal ID");
+            var replicated=new HouseMap(site,session.level());
+            replicated.applyDoorSnapshot(doorMap.doorSnapshot());
+            check(replicated.doorOpen(doorId)
+                &&replicated.traversable(wall.cx(),wall.base(),wall.cz()),
+                "Network replica consumes the same operable native portal and collision");
+            doorMap.toggleDoor(doorId);
+            check(!doorMap.traversable(wall.cx(),wall.base(),wall.cz()),
+                "Closing the native door restores exact body obstruction");
+            aim(renderer,candidate);
+            service.capture(session.revision(),evidence.resolve("native-wall-door-closed.png"));
+            check(!Arrays.equals(Files.readAllBytes(evidence.resolve("native-aperture.png")),
+                Files.readAllBytes(evidence.resolve("native-wall-door-closed.png"))),
+                "The native renderer adds a real closed door leaf at the physical aperture");
+            rejects(()->service.transact(session.revision(),"set-wall-door",Map.of(
+                "id",nodeId,"state","UNLOCK")));
+            rejects(()->service.transact(session.revision(),"set-wall-door",Map.of(
+                "id","missing-wall","state","INSTALL")));
+            check(session.snapshot().equals(withDoor),
+                "Invalid agent door operations cannot mutate the actual scene");
+            service.undo(session.revision());
+            check(session.snapshot().equals(opened),
+                "Single undo removes the door without plugging the source aperture");
+            service.redo(session.revision());
+            check(session.snapshot().equals(withDoor),
+                "Single redo restores the same stable native door and wall");
+            service.save(session.revision());
+            service.reopen(session.revision());
+            check(session.snapshot().equals(withDoor),
+                "Native source wall door identity survives save/reopen");
+            var gameDoorMap=new HouseMap(site);
+            check(gameDoorMap.level().portals().stream().anyMatch(p->p.id()==doorId&&p.door())
+                &&!gameDoorMap.traversable(wall.cx(),wall.base(),wall.cz()),
+                "Independent playable game load sees the closed physical wall door");
+            gameDoorMap.toggleDoor(doorId);
+            check(gameDoorMap.traversable(wall.cx(),wall.base(),wall.cz()),
+                "Independent playable game can open the authored door");
+            check(RuntimeSceneDocument.load(session.documentPath()).find(nodeId).components()
+                .get(0).properties().get("doorPortalId").equals(Integer.toString(doorId)),
+                "Versioned BSCN stores the native door portal ID with its wall");
+            service.transact(session.revision(),"set-wall-door",Map.of(
+                "id",nodeId,"state","REMOVE"));
+            check(session.snapshot().equals(opened)&&session.level().portals().stream()
+                .noneMatch(p->p.id()==doorId),
+                "Removing the leaf restores a free-standing passage, never an orphan door");
             service.transact(session.revision(),"set-wall-opening",Map.of(
                 "id",nodeId,"offset","0","width","0","clearHeight","0"));
             check(session.snapshot().equals(beforeCut),
                 "Sealing the cut reconstructs the original solid wall");
+            rejects(()->service.transact(session.revision(),"set-wall-door",install));
+            check(session.snapshot().equals(beforeCut),
+                "The agent cannot put a visual-only door into an uncut solid wall");
             service.undo(session.revision());
             check(session.snapshot().equals(opened),"Undo restores the opening and stable wall identity");
             service.redo(session.revision());
             check(session.snapshot().equals(beforeCut),"Redo restores the original solid geometry");
-            System.out.println("PASS native mission wall: corner joins, anchored extensions, three-body aperture and lintel, real render, independent game load, validation, persistence and history");
+            System.out.println("PASS native mission wall and portal: corner joins, physical cut/lintel, operable rendered leaf, real collision open/close, network snapshot, stable saved door ID, undo/redo and independent game load");
         } finally {
             System.setProperty("user.home",previous);
             try(var paths=Files.walk(temp)){
