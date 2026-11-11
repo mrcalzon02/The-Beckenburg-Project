@@ -9,7 +9,7 @@ javac --release 17 -encoding UTF-8 -d build/classes src/main/java/hbnet/*.java w
 java -Djava.awt.headless=true -cp build/classes org.beckenburg.UiAssetBake . build/classes/org/beckenburg build/Beckenburg.ico
 mkdir -p build/classes/META-INF
 cp water-module/src/main/resources/META-INF/*.txt build/classes/META-INF/
-for family in water water-imports sounds mission-board; do
+for family in water water-imports sounds mission-board campaign; do
   if [ -d "assets/runtime/$family" ]; then
     mkdir -p "build/classes/org/beckenburg/$family"
     for water_file in assets/runtime/"$family"/*; do
@@ -161,6 +161,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.Ho
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.HorrorAudioRoutingTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CastleHubIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignBoardPanelTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CountyCampaignMapPanelTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CastleContainedMenuTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignMenuWorkflowTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignCoopLobbyTest

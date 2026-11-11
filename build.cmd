@@ -41,6 +41,11 @@ if exist assets\runtime\mission-board (
   if not exist build\classes\org\beckenburg\mission-board mkdir build\classes\org\beckenburg\mission-board
   copy /Y assets\runtime\mission-board\*.png build\classes\org\beckenburg\mission-board\ >nul || exit /b 1
 )
+if not exist assets\runtime\campaign\beckenburg-county.jpg (echo ERROR: approved county map missing & exit /b 1)
+if not exist assets\runtime\campaign\locations.tsv (echo ERROR: county node registry missing & exit /b 1)
+if not exist build\classes\org\beckenburg\campaign mkdir build\classes\org\beckenburg\campaign
+copy /Y assets\runtime\campaign\beckenburg-county.jpg build\classes\org\beckenburg\campaign\ >nul || exit /b 1
+copy /Y assets\runtime\campaign\locations.tsv build\classes\org\beckenburg\campaign\ >nul || exit /b 1
 if exist assets\runtime\water-imports (
   if not exist build\classes\org\beckenburg\water-imports mkdir build\classes\org\beckenburg\water-imports
   copy /Y assets\runtime\water-imports\*.png build\classes\org\beckenburg\water-imports\ >nul
