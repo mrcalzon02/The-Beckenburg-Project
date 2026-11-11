@@ -36,6 +36,10 @@ public final class CountyCampaignMapPanel extends JPanel {
     private final JLabel title = new JLabel();
     private final JTextArea details = new JTextArea();
     private final MapCanvas canvas = new MapCanvas();
+    private final JComboBox<MissionSites.Entry> siteFinder =
+        new JComboBox<>(chapters.toArray(MissionSites.Entry[]::new));
+    private final JCheckBox showNames = new JCheckBox("SITE NAMES");
+    private boolean syncingFinder;
     private Consumer<MissionSites.Entry> selectionListener = entry -> { };
     private int selected = 0;
 
@@ -84,7 +88,35 @@ public final class CountyCampaignMapPanel extends JPanel {
         reset.addActionListener(e -> canvas.reset());
         focus.addActionListener(e -> canvas.focus(chapters.get(selected).id()));
         for (JButton button : new JButton[]{minus, plus, reset, focus}) zoom.add(button);
-        bottom.add(zoom, BorderLayout.SOUTH);
+        JPanel find = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 0));
+        find.setOpaque(false);
+        JLabel findLabel = new JLabel("GO TO");
+        findLabel.setForeground(PAPER);
+        siteFinder.setName("campaign.county.site.find");
+        siteFinder.setPreferredSize(new Dimension(218, 28));
+        siteFinder.setMaximumRowCount(12);
+        siteFinder.getAccessibleContext().setAccessibleName("Choose county location");
+        siteFinder.addActionListener(event -> {
+            if (syncingFinder) return;
+            MissionSites.Entry site = (MissionSites.Entry) siteFinder.getSelectedItem();
+            if (site != null) {
+                select(site.id());
+                canvas.focus(site.id());
+            }
+        });
+        showNames.setName("campaign.county.names");
+        showNames.setOpaque(false);
+        showNames.setForeground(PAPER);
+        showNames.setToolTipText("Optional map labels; never part of the base artwork");
+        showNames.addActionListener(event -> canvas.repaint());
+        find.add(findLabel);
+        find.add(siteFinder);
+        find.add(showNames);
+        JPanel toolbar = new JPanel(new BorderLayout(6, 0));
+        toolbar.setOpaque(false);
+        toolbar.add(find, BorderLayout.WEST);
+        toolbar.add(zoom, BorderLayout.EAST);
+        bottom.add(toolbar, BorderLayout.SOUTH);
         add(bottom, BorderLayout.SOUTH);
         refreshDetails();
     }
@@ -130,6 +162,14 @@ public final class CountyCampaignMapPanel extends JPanel {
     public int chapterNodeCount() { return chapters.size(); }
     public double zoomFactor() { return canvas.zoom; }
     public MissionSites.Entry selected() { return chapters.get(selected); }
+    /** Current image-space marker position after pan/zoom; for UI diagnostics and click tests. */
+    Point nodeScreenPoint(String id) {
+        for (Marker marker : markers) if (marker.id.equals(id)) return canvas.position(marker);
+        throw new IllegalArgumentException("Unknown county node: " + id);
+    }
+    Rectangle imageScreenBounds() { return canvas.imageBounds(); }
+    /** Refresh progression colors/dossier after a saved chapter or site readiness changes. */
+    public void refreshState() { refreshDetails(); canvas.repaint(); }
     public void onSelection(Consumer<MissionSites.Entry> listener) {
         selectionListener = java.util.Objects.requireNonNull(listener);
     }
@@ -137,10 +177,12 @@ public final class CountyCampaignMapPanel extends JPanel {
     public void select(String siteId) {
         Integer index = chapterIndex.get(siteId);
         if (index == null) throw new IllegalArgumentException("No selectable chapter node: " + siteId);
-        if (selected == index) return;
+        if (selected == index) { refreshState(); return; }
         selected = index;
-        refreshDetails();
-        canvas.repaint();
+        syncingFinder = true;
+        try { siteFinder.setSelectedIndex(index); }
+        finally { syncingFinder = false; }
+        refreshState();
         selectionListener.accept(chapters.get(index));
     }
     private void refreshDetails() {
@@ -171,21 +213,35 @@ public final class CountyCampaignMapPanel extends JPanel {
                     if (pressed == null) return;
                     int dx = e.getX() - pressed.x, dy = e.getY() - pressed.y;
                     if (dx * dx + dy * dy > 25) dragged = true;
-                    if (dragged) { panX = pressPanX + dx; panY = pressPanY + dy; repaint(); }
+                    if (dragged) {
+                        panX = pressPanX + dx; panY = pressPanY + dy;
+                        clampPan(); repaint();
+                    }
                 }
                 @Override public void mouseReleased(MouseEvent e) {
                     if (pressed == null) return;
                     if (!dragged) {
                         Marker hit = hit(e.getX(), e.getY());
-                        if (hit != null && !hit.id.equals("CASTLE")) {
-                            select(hit.id());
-                            if (e.getClickCount() >= 2) focus(hit.id());
+                        if (hit != null) {
+                            // Do not select the wrong chapter when full-map dots overlap.
+                            if (nearbyCount(e.getX(), e.getY()) > 1 && zoom < 3.2) {
+                                zoomAt(Math.max(1.4, 2.4 / zoom), e.getX(), e.getY());
+                            } else if (hit.id.equals("CASTLE")) {
+                                focus("CASTLE"); // headquarters view, never a deployable chapter
+                            } else {
+                                select(hit.id());
+                                if (e.getClickCount() >= 2) focus(hit.id());
+                            }
                         }
                     }
                     pressed = null;
                 }
                 @Override public void mouseWheelMoved(MouseWheelEvent e) {
                     zoomAt(Math.pow(1.18, -e.getPreciseWheelRotation()), e.getX(), e.getY());
+                }
+                @Override public void mouseMoved(MouseEvent e) {
+                    setCursor(Cursor.getPredefinedCursor(hit(e.getX(), e.getY()) == null
+                        ? Cursor.DEFAULT_CURSOR : Cursor.HAND_CURSOR));
                 }
             };
             addMouseListener(mouse);
@@ -195,10 +251,11 @@ public final class CountyCampaignMapPanel extends JPanel {
             bind("EQUALS", "zoom-equals", () -> zoomAt(1.25, getWidth() / 2.0, getHeight() / 2.0));
             bind("MINUS", "zoom-out", () -> zoomAt(0.8, getWidth() / 2.0, getHeight() / 2.0));
             bind("HOME", "full-map", this::reset);
-            bind("LEFT", "pan-left", () -> {panX += 55; repaint();});
-            bind("RIGHT", "pan-right", () -> {panX -= 55; repaint();});
-            bind("UP", "pan-up", () -> {panY += 55; repaint();});
-            bind("DOWN", "pan-down", () -> {panY -= 55; repaint();});
+            bind("LEFT", "pan-left", () -> panBy(55, 0));
+            bind("RIGHT", "pan-right", () -> panBy(-55, 0));
+            bind("UP", "pan-up", () -> panBy(0, 55));
+            bind("DOWN", "pan-down", () -> panBy(0, -55));
+            bind("ENTER", "focus-selected", () -> focus(selected().id()));
         }
         private void bind(String key, String action, Runnable command) {
             getInputMap(WHEN_FOCUSED).put(KeyStroke.getKeyStroke(key), action);
@@ -209,6 +266,25 @@ public final class CountyCampaignMapPanel extends JPanel {
         private double imageScale() {
             if (getWidth() <= 0 || getHeight() <= 0) return 1;
             return Math.min(getWidth() / (double) background.getWidth(), getHeight() / (double) background.getHeight()) * zoom;
+        }
+        /** At minimum zoom keep the fitted map centered; at higher zoom never expose empty
+         * space beyond the genuine map edges. This applies to dragging, keys and zoom. */
+        private void clampPan() {
+            double horizontal = Math.max(0, (background.getWidth() * imageScale() - getWidth()) / 2.0);
+            double vertical = Math.max(0, (background.getHeight() * imageScale() - getHeight()) / 2.0);
+            panX = Math.max(-horizontal, Math.min(horizontal, panX));
+            panY = Math.max(-vertical, Math.min(vertical, panY));
+        }
+        private void panBy(double dx, double dy) {
+            panX += dx; panY += dy;
+            clampPan(); repaint();
+        }
+        Rectangle imageBounds() {
+            double scale = imageScale();
+            int w = (int)Math.round(background.getWidth() * scale);
+            int h = (int)Math.round(background.getHeight() * scale);
+            return new Rectangle((int)Math.round((getWidth() - w) / 2.0 + panX),
+                (int)Math.round((getHeight() - h) / 2.0 + panY), w, h);
         }
         private Point position(Marker marker) {
             double scale = imageScale();
@@ -225,17 +301,28 @@ public final class CountyCampaignMapPanel extends JPanel {
             double scale = imageScale();
             panX = mouseX - getWidth() / 2.0 - imageX * scale;
             panY = mouseY - getHeight() / 2.0 - imageY * scale;
+            clampPan();
             repaint();
         }
-        void reset() {zoom = 1; panX = panY = 0; repaint();}
+        void reset() {zoom = 1; panX = panY = 0; clampPan(); repaint();}
         void focus(String id) {
             for (Marker marker : markers) if (marker.id.equals(id)) {
                 zoom = 2.4;
                 panX = (.5 - marker.x) * background.getWidth() * imageScale();
                 panY = (.5 - marker.y) * background.getHeight() * imageScale();
+                clampPan();
                 repaint();
                 break;
             }
+        }
+        private int nearbyCount(int x, int y) {
+            int count = 0;
+            for (Marker marker : markers) {
+                Point p = position(marker);
+                int dx = p.x - x, dy = p.y - y;
+                if (dx * dx + dy * dy <= 19 * 19) count++;
+            }
+            return count;
         }
         private Marker hit(int x, int y) {
             Marker nearest = null;
@@ -250,10 +337,36 @@ public final class CountyCampaignMapPanel extends JPanel {
         @Override public String getToolTipText(MouseEvent event) {
             Marker marker = hit(event.getX(), event.getY());
             if (marker == null) return null;
+            if (nearbyCount(event.getX(), event.getY()) > 1 && zoom < 3.2)
+                return "Several locations here — click to zoom in and choose";
             if (marker.id.equals("CASTLE")) return "Castle Beckenburg — headquarters";
             MissionSites.Entry site = MissionSites.byId(marker.id);
             int index = chapterIndex.get(marker.id);
             return site.title() + (!unlocked.test(index) ? " (locked)" : !site.playable() ? " (in development)" : " (available)");
+        }
+        /** Text and overlays are generated at draw time; the JPEG never changes. */
+        private void drawName(Graphics2D g, Marker marker, List<Rectangle> occupied) {
+            Point p = position(marker);
+            if (p.x < 4 || p.y < 4 || p.x >= getWidth() - 4 || p.y >= getHeight() - 4) return;
+            String text = marker.id.equals("CASTLE") ? "Castle Beckenburg" : MissionSites.byId(marker.id).title();
+            g.setFont(new Font(Font.SERIF, Font.BOLD, 13));
+            FontMetrics fm = g.getFontMetrics();
+            int w = fm.stringWidth(text) + 16;
+            int h = 22;
+            if (w + 8 > getWidth()) return;
+            int x = p.x + 16;
+            if (x + w > getWidth() - 4) x = p.x - w - 16;
+            x = Math.max(4, Math.min(getWidth() - w - 4, x));
+            int y = p.y - 26;
+            if (y < 4) y = p.y + 14;
+            y = Math.max(4, Math.min(getHeight() - h - 4, y));
+            Rectangle r = new Rectangle(x, y, w, h);
+            for (Rectangle previous : occupied) if (previous.intersects(r)) return;
+            occupied.add(r);
+            g.setColor(new Color(20, 23, 24, 222));
+            g.fillRoundRect(x, y, w, h, 7, 7);
+            g.setColor(marker.id.equals(selected().id()) ? GOLD : PAPER);
+            g.drawString(text, x + 8, y + 16);
         }
         @Override protected void paintComponent(Graphics base) {
             super.paintComponent(base);
@@ -261,12 +374,9 @@ public final class CountyCampaignMapPanel extends JPanel {
             try {
                 g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
                 g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                double s = imageScale();
-                int width = (int)Math.round(background.getWidth() * s);
-                int height = (int)Math.round(background.getHeight() * s);
-                int x = (int)Math.round((getWidth() - width) / 2.0 + panX);
-                int y = (int)Math.round((getHeight() - height) / 2.0 + panY);
-                g.drawImage(background, x, y, width, height, null);
+                clampPan();
+                Rectangle frame = imageBounds();
+                g.drawImage(background, frame.x, frame.y, frame.width, frame.height, null);
                 for (Marker marker : markers) {
                     Point p = position(marker);
                     if (p.x < -24 || p.y < -24 || p.x > getWidth() + 24 || p.y > getHeight() + 24) continue;
@@ -294,6 +404,14 @@ public final class CountyCampaignMapPanel extends JPanel {
                         g.setFont(new Font(Font.SERIF, Font.BOLD, 16));
                         g.drawString("✦", p.x - 6, p.y + 6);
                     }
+                }
+                if (showNames.isSelected()) {
+                    List<Rectangle> occupied = new ArrayList<>();
+                    // The active site's text always gets priority over background labels.
+                    for (Marker marker : markers) if (marker.id.equals(selected().id()))
+                        drawName(g, marker, occupied);
+                    for (Marker marker : markers) if (!marker.id.equals(selected().id()))
+                        drawName(g, marker, occupied);
                 }
             } finally {g.dispose();}
         }

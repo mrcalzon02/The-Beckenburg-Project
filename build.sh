@@ -162,6 +162,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.Ho
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CastleHubIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignBoardPanelTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CountyCampaignMapPanelTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CountyCampaignMapNavigationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CastleContainedMenuTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignMenuWorkflowTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignCoopLobbyTest
