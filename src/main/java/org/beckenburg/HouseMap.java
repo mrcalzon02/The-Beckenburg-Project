@@ -132,6 +132,45 @@ public final class HouseMap {
         }
         return null;
     }
+    /**
+     * Additional sound attenuation across authored physical child-room
+     * thresholds, even when both points retain the SAME gameplay-zone ID.
+     * Read only source-backed wall sockets and live native door state; never
+     * invent room-graph edges or transmit a new multiplayer room number.
+     */
+    public int architecturalSoundLoss(double sourceX,double sourceY,double sourceZ,
+                                      double listenerX,double listenerY,double listenerZ){
+        if(!finite(sourceX,sourceY,sourceZ,listenerX,listenerY,listenerZ))
+            throw new IllegalArgumentException("Sound endpoints must be finite");
+        String from=architecturalRoomAt(sourceX,sourceY,sourceZ);
+        String to=architecturalRoomAt(listenerX,listenerY,listenerZ);
+        if(Objects.equals(from,to))return 0;
+        return (from==null?0:architecturalThresholdLoss(from))
+            +(to==null?0:architecturalThresholdLoss(to));
+    }
+    private int architecturalThresholdLoss(String id){
+        String prefix=MissionStructuralWall.NODE_PREFIX+MissionArchitecturalRoom.WALL_STEM+id+"-";
+        int doorId=-1;
+        for(var socket:level.sockets()){
+            if(!socket.type().equals(MissionStructuralWall.SOCKET_TYPE))continue;
+            boolean member=socket.id().equals(prefix+"N")||socket.id().equals(prefix+"E")||
+                socket.id().equals(prefix+"S")||socket.id().equals(prefix+"W");
+            if(!member)continue;
+            String[] packet=socket.style().split(":",-1);
+            if(packet.length==8){
+                if(doorId>=0)throw new IllegalStateException("Child room has multiple physical doors");
+                doorId=Integer.parseInt(packet[7]);
+            }
+        }
+        if(doorId<0)throw new IllegalStateException("Child room lost its native acoustic doorway");
+        boolean portalFound=false;
+        for(var p:level.portals())if(p.id()==doorId&&p.door()){
+            portalFound=true;break;
+        }
+        if(!portalFound)throw new IllegalStateException("Child-room acoustic portal is not in the game");
+        // The real leaf, collision and replicated door snapshot own this state.
+        return doorOpen(doorId)?1:3;
+    }
     public int roomAt(double x,double y,double z){
         if(!finite(x,y,z))return -1;
         if(nativeSite!=null){var local=van.local(x,z);if(Math.abs(local.x())<VanStaging.INTERIOR_HALF_WIDTH&&local.z()>=VanStaging.FRONT&&local.z()<VanStaging.REAR&&y>=van.floorY()-.22&&y<van.placement().y()+VanStaging.ROOF_Y)return 14;var support=nativeSite.support(x,z,y,4);return support==null?-1:HollowCreekLevel.owner(x,z);}

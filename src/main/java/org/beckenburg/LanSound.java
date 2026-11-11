@@ -124,7 +124,13 @@ public final class LanSound {
                 ||listener.room()==HouseMap.EXTRACTION_ROOM))return null;
         int absorption=ghost?LanAcoustics.cost(map,listener.room(),sourceRoom)
             :LanAcoustics.physicalCost(map,listener.room(),sourceRoom);
-        if(absorption>cue.acousticBudget)return null;
+        // The legacy fifteen-zone route omits boundaries of newly constructed
+        // rooms inside a zone. Add only the real authored door threshold cost
+        // from their native sockets and current replicated open/closed state.
+        int local=map.architecturalSoundLoss(sourceX,sourceY,sourceZ,
+            listener.x(),listener.y(),listener.z());
+        if(absorption>cue.acousticBudget-local)return null;
+        absorption+=local;
         double dx=sourceX-listener.x(),dy=sourceY-listener.y(),dz=sourceZ-listener.z();
         double horizontal=Math.hypot(dx,dz),distance=Math.sqrt(dx*dx+dy*dy+dz*dz);
         // Nearby sounds remain useful; distance and material both lower their perceptibility.

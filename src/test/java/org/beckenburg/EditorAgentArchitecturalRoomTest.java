@@ -79,7 +79,11 @@ public final class EditorAgentArchitecturalRoomTest {
             var preMap=new HouseMap(site,session.level());
             var area=findRoom(session,preMap);
             var renderer=new SceneRenderer();
-            renderer.setRenderSize(360,225);
+            renderer.setRenderSize(480,300);
+            // Bright diagnostic flashlight for readable actual-game captures.
+            renderer.lamp=true;renderer.lampIntensity=2.4;
+            renderer.lampReach=14;renderer.lampWidth=1.15;
+            renderer.roomLights=new RoomLighting();
             aim(renderer,area,0);
             var service=new EditorAgentService<>(
                 new LevelEditorAgent(session,
@@ -130,18 +134,59 @@ public final class EditorAgentArchitecturalRoomTest {
             check(door.a()==6&&door.b()==6&&door.door()&&door.alongX(),
                 "Real game doorway preserves its original gameplay protocol zone");
             check(!map.traversable(dx,door.y(),dz),"Real closed door blocks standing capsule");
+            var listener=new LanWorld.Body(child.cx(),child.base(),child.z1()+1.5,0,6);
+            check(map.architecturalSoundLoss(child.cx(),child.base(),child.cz(),
+                    child.cx(),child.base(),child.cz())==0,
+                "A sound staying inside an authored room crosses no phantom threshold");
+            check(map.architecturalSoundLoss(child.cx(),child.base(),child.cz(),
+                    listener.x(),listener.y(),listener.z())==3,
+                "Native closed door attenuates same-gameplay-zone sounds");
+            var shutSound=LanSound.project(map,listener,6,child.cx(),child.base(),
+                child.cz(),LanSound.Cue.DOOR,10);
+            check(shutSound!=null,"Closed child-room door still transmits muffled noise");
             map.toggleDoor(door.id());
             check(map.traversable(dx,door.y(),dz),"Open door permits player through the authored passage");
+            check(map.architecturalSoundLoss(child.cx(),child.base(),child.cz(),
+                    listener.x(),listener.y(),listener.z())==1,
+                "Real open door reduces physical acoustic absorption");
+            var openSound=LanSound.project(map,listener,6,child.cx(),child.base(),
+                child.cz(),LanSound.Cue.DOOR,10);
+            check(openSound!=null&&openSound.volume()>=shutSound.volume()+20,
+                "Host-projected event is louder through the open native doorway");
             var remote=new HouseMap(site,level);
             remote.applyDoorSnapshot(map.doorSnapshot());
             check(remote.doorOpen(door.id())&&remote.traversable(dx,door.y(),dz),
                 "Network snapshot replicates the exact live authoring door");
+            check(remote.architecturalSoundLoss(child.cx(),child.base(),child.cz(),
+                    listener.x(),listener.y(),listener.z())==1,
+                "Replicated door state also replicates architectural sound isolation");
             aim(renderer,area,0);
             service.capture(session.revision(),captures.resolve("school-built.png"));
             check(!Arrays.equals(Files.readAllBytes(captures.resolve("school-before.png")),
                 Files.readAllBytes(captures.resolve("school-built.png"))),
                 "Actual fixed-camera renderer displays newly constructed walls/ceiling/door");
+            renderer.x=child.cx();renderer.z=child.cz();
+            renderer.eyeHeight=child.base()+1.62;renderer.yaw=Math.PI/2;renderer.pitch=.18;
+            service.capture(session.revision(),captures.resolve("school-interior.png"));
             var constructed=session.snapshot();
+            // Full furniture footprint must clear native walls, not just its
+            // walkable centre. Prove rejected and accepted real prop geometry.
+            var clipped=Map.of("mesh","chair_mp_5","room","6",
+                "x",Double.toString(child.x0()+.34),
+                "y",Double.toString(child.base()),"z",Double.toString(child.cz()),
+                "scale","1","yawDegrees","0");
+            rejects(()->service.transact(session.revision(),"place-prop",clipped));
+            check(session.snapshot().equals(constructed),
+                "Rejected wall-clipping furniture cannot mutate the scene");
+            var interiorChair=Map.of("mesh","chair_mp_5","room","6",
+                "x",Double.toString(child.cx()),"y",Double.toString(child.base()),
+                "z",Double.toString(child.cz()),"scale",".65","yawDegrees","0");
+            service.transact(session.revision(),"place-prop",interiorChair);
+            check(session.size()==constructed.props().size()+1,
+                "Agent can actually furnish the authored interior");
+            service.undo(session.revision());
+            check(session.snapshot().equals(constructed),
+                "One undo restores the unfurnished native structure");
             rejects(()->service.transact(session.revision(),"build-room",room(area)));
             rejects(()->service.transact(session.revision(),"remove-wall",
                 Map.of("id",MissionStructuralWall.NODE_PREFIX+"archroom-gym-store-N")));
@@ -167,6 +212,9 @@ public final class EditorAgentArchitecturalRoomTest {
                     LevelPlans.sameBody(c,child.roofBody())) &&
                 !independent.traversable(dx,door.y(),dz),
                 "Independently loaded actual game reads the same room, roof and shut door");
+            check(independent.architecturalSoundLoss(child.cx(),child.base(),child.cz(),
+                    listener.x(),listener.y(),listener.z())==3,
+                "Save/reopen retains physical acoustic room identity and closed-door attenuation");
             var savedFile=RuntimeSceneDocument.load(session.documentPath());
             for(var segment:session.walls())
                 check(savedFile.find(MissionStructuralWall.NODE_PREFIX+segment.id())!=null,
@@ -179,7 +227,7 @@ public final class EditorAgentArchitecturalRoomTest {
                 "Removal deletes the entire native room, roof and portal without orphaning game objects");
             service.undo(session.revision());
             check(session.snapshot().equals(constructed),"Undo of demolition restores exact complete room");
-            System.out.println("PASS real School child room: 4 thick native walls, actual door, solid ceiling, stable architectural identity, standing/airborne collision, renderer captures, network snapshot, atomic rollback, BSCN independent game load, undo/redo");
+            System.out.println("PASS real School child room: 4 thick walls, real door/ceiling, same-zone acoustic isolation, OBB-safe furnishing, illuminated native captures, network sync, BSCN game load and undo/redo");
         }finally{
             System.setProperty("user.home",old);
             try(var stream=Files.walk(home)){

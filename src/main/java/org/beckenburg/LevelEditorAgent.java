@@ -221,6 +221,22 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                 &&prop.y()<other.y()+other.height()&&other.y()<prop.y()+prop.height())
                 throw new IllegalArgumentException("Prop footprint intersects another native object");
         }
+        // An agent may position a prop inside a constructed room, but its full
+        // native collision footprint must clear its real walls and ceiling.
+        // Centre-only traversability was allowing shelves/chairs to clip masonry.
+        var body=new org.beckenburg.LevelDefinition.Collider(prop.x(),prop.y(),prop.z(),
+            prop.halfX(),prop.halfZ(),prop.height(),prop.yaw());
+        for(var wall:session.walls())if(wall.room()==prop.room()&&
+            prop.y()<wall.base()+wall.height()&&
+            prop.y()+prop.height()>wall.base()&&
+            wall.intersectsNativeCollider(body,.035))
+            throw new IllegalArgumentException("Loose prop intersects authored solid wall "+wall.id());
+        for(var child:session.architecturalRooms())if(child.zone()==prop.room()&&
+            prop.y()<child.base()+child.height()&&
+            prop.y()+prop.height()>child.base()+child.height()-MissionArchitecturalRoom.ROOF_DEPTH-.025&&
+            prop.x()-rx<child.x1()&&prop.x()+rx>child.x0()&&
+            prop.z()-rz<child.z1()&&prop.z()+rz>child.z0())
+            throw new IllegalArgumentException("Loose prop intersects child-room solid ceiling "+child.id());
         if(newObject&&!map.get().traversable(prop.x(),prop.y(),prop.z()))
             throw new IllegalArgumentException("Floor prop has no clear native standing position");
     }
