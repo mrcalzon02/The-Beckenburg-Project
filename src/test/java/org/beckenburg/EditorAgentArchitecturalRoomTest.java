@@ -66,6 +66,16 @@ public final class EditorAgentArchitecturalRoomTest {
         try {
             var site=HouseMap.Site.SCHOOL;
             var session=new LevelAuthoringSession(site);
+            // A long distant native fence has a huge enclosing radius but
+            // does NOT physically intersect an interior partition.
+            var wallProbe=new MissionStructuralWall("sat-probe",6,36,10,38.65,10,
+                0,2.35,.20,LevelMaterials.PLASTER);
+            check(!wallProbe.intersectsNativeCollider(
+                new LevelDefinition.Collider(37,0,28,40,.12,2,0),.20),
+                "Remote long fence must not prevent legitimate indoor construction");
+            check(wallProbe.intersectsNativeCollider(
+                new LevelDefinition.Collider(37,0,10,.35,.30,2,Math.PI/4),.20),
+                "Rotated physical native collider still rejects genuine contact");
             var preMap=new HouseMap(site,session.level());
             var area=findRoom(session,preMap);
             var renderer=new SceneRenderer();

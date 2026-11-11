@@ -180,8 +180,8 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
                 .3+Math.hypot(p.halfX(),p.halfZ())))
             throw new IllegalArgumentException("Wall overlaps a built-in physical prop");
         for(Collider c:source.colliders())if(c.halfX()>0&&c.halfZ()>0&&
-            Math.abs(c.y()-base)<height+.2&&near(c.x(),c.z(),
-                .2+Math.hypot(c.halfX(),c.halfZ())))
+            base<=c.y()+c.height()+.20&&base+height>=c.y()-.20&&
+            intersectsNativeCollider(c,.20))
             throw new IllegalArgumentException("Wall overlaps a native collider");
         for(MissionStructuralWall w:previous)if(!w.id().equals(id)&&w.room()==room&&
             Math.abs(w.base()-base)<height+.2&&!terminalJoint(w)&&
@@ -190,6 +190,29 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
             throw new IllegalArgumentException("Wall overlaps another authored partition");
         if(near(r.spawn().x(),r.spawn().z(),.75))
             throw new IllegalArgumentException("Wall blocks room arrival or player approach");
+    }
+    /**
+     * Exact 2D SAT against a source OBB, expanded by a small placement margin.
+     * A distant 80m fence must not reject construction merely because its
+     * enclosing-circle radius reaches the room. This retains true wall/prop
+     * intersections, including rotated native colliders.
+     */
+    boolean intersectsNativeCollider(Collider c,double margin){
+        double wx=(x0==x1?thickness:length())/2,
+            wz=(x0==x1?length():thickness)/2;
+        double cos=Math.cos(c.yaw()),sin=Math.sin(c.yaw());
+        double dx=c.x()-cx(),dz=c.z()-cz();
+        double[][] axes={{1,0},{0,1},{cos,sin},{-sin,cos}};
+        for(var axis:axes){
+            double ax=axis[0],az=axis[1];
+            double wallRadius=wx*Math.abs(ax)+wz*Math.abs(az)
+                +margin*(Math.abs(ax)+Math.abs(az));
+            double sourceRadius=c.halfX()*Math.abs(ax*cos+az*sin)
+                +c.halfZ()*Math.abs(-ax*sin+az*cos);
+            if(Math.abs(dx*ax+dz*az)>wallRadius+sourceRadius+1e-8)
+                return false;
+        }
+        return true;
     }
     boolean near(double x,double z,double clearance){
         // AABB distance to the occupied physical rectangular wall, X/Z up to
