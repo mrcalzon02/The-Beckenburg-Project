@@ -41,8 +41,10 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
                 throw new IllegalArgumentException("A sealed wall cannot retain aperture dimensions");
         }else if(cutWidth<.78||cutWidth>1.6||cutHeight<1.90||
             cutHeight>2.35||cutHeight>height-.22||
-            cutOffset-cutWidth/2 < -length/2+.25||
-            cutOffset+cutWidth/2 > length/2-.25)
+            // World-space lengths may differ by a few ULPs after subtraction.
+            // Keep the 25cm minimum; ignore sub-micron rounding only.
+            cutOffset-cutWidth/2 < -length/2+.25-1e-6||
+            cutOffset+cutWidth/2 > length/2-.25+1e-6)
             throw new IllegalArgumentException("Wall opening requires 0.25m piers, a solid lintel and human clearance");
     }
     public boolean hasOpening(){return cutWidth>0;}
