@@ -30,6 +30,8 @@ public final class EditorAgentMissionWallTest {
                         px+.65,pz,room.y(),2.2,.2,LevelMaterials.PLASTER);
                     try{wall.validate(session.sourceLevel(),List.of());}
                     catch(IllegalArgumentException rejected){continue;}
+                    try{findJoin(session,wall);}
+                    catch(AssertionError cannotJoin){continue;}
                     if(!map.traversable(px,room.y(),pz))continue;
                     for(double side:new double[]{-1.65,1.65}){
                         double cameraZ=pz+side;
@@ -42,6 +44,19 @@ public final class EditorAgentMissionWallTest {
             }
         }
         throw new AssertionError("No native school space for a supported new wall and camera");
+    }
+    /** Find a source-safe real L-corner at a terminal, not a crossing. */
+    private static MissionStructuralWall findJoin(LevelAuthoringSession session,MissionStructuralWall first){
+        for(double endpoint:new double[]{first.x0(),first.x1()})
+            for(double direction:new double[]{-1,1})
+                for(double length:new double[]{.85,1.20,1.60}){
+                    var joined=new MissionStructuralWall("test-corner",first.room(),
+                        endpoint,first.z0(),endpoint,first.z0()+direction*length,
+                        first.base(),first.height(),first.thickness(),first.material());
+                    try{joined.validate(session.sourceLevel(),List.of(first));return joined;}
+                    catch(IllegalArgumentException blocked){/* Try another supported native corner. */}
+                }
+        throw new AssertionError("No supported corner at the candidate School wall");
     }
     private static Map<String,String> place(MissionStructuralWall w){
         return Map.of("id",w.id(),"room",Integer.toString(w.room()),
@@ -145,7 +160,57 @@ public final class EditorAgentMissionWallTest {
             check(session.walls().equals(List.of(wall)),"Undo restores the same native structural wall ID");
             service.redo(session.revision());
             check(session.walls().isEmpty(),"Redo removes the native wall without touching other geometry");
-            System.out.println("PASS native mission wall: solid rendered geometry, actual body/LOS, safe routes, revisions, stable IDs, rejected overlap, batch rollback, BSCN save/reopen, independent game load, undo/redo");
+            // Build a real two-segment L shell in ONE agent transaction, using
+            // the source wall's corner as the exact shared world-space vertex.
+            // Both solids must be native renderer/collider objects, not a
+            // decorative screen mesh or separate agent-only scene.
+            var corner=findJoin(session,wall);
+            service.transact(session.revision(),List.of(
+                new EditorAgentService.Command("place-wall",place(wall)),
+                new EditorAgentService.Command("place-wall",place(corner))));
+            check(session.walls().equals(List.of(wall,corner)),
+                "Atomic native agent batch creates two physically joined wall segments");
+            var nativeJoined=new HouseMap(site,session.level());
+            for(var segment:List.of(wall,corner)){
+                check(nativeJoined.level().sockets().stream().anyMatch(s->
+                    s.id().equals(MissionStructuralWall.NODE_PREFIX+segment.id())&&
+                        s.type().equals(MissionStructuralWall.SOCKET_TYPE)),
+                    "Each corner segment is a native rendered structural-wall socket");
+                check(nativeJoined.level().colliders().stream().anyMatch(c->
+                    Math.abs(c.x()-segment.cx())<1e-8&&Math.abs(c.z()-segment.cz())<1e-8
+                        &&Math.abs(c.height()-segment.height())<1e-8),
+                    "Native game collision contains both continuous wall segments");
+                check(!nativeJoined.traversable(segment.cx(),segment.base(),segment.cz()),
+                    "Neither wall segment can be walked through");
+            }
+            var jointState=session.snapshot();
+            // Non-welded near misses and crossed interiors are not legitimate
+            // joints. The batch must leave live geometry and revision unchanged.
+            var gap=new MissionStructuralWall("test-near-miss",wall.room(),
+                corner.x0()+.04,corner.z0(),corner.x1()+.04,corner.z1(),
+                corner.base(),corner.height(),corner.thickness(),corner.material());
+            rejects(()->service.transact(session.revision(),"place-wall",place(gap)));
+            var crossing=new MissionStructuralWall("test-cross",wall.room(),
+                wall.cx(),wall.z0()-.55,wall.cx(),wall.z0()+.55,
+                wall.base(),wall.height(),wall.thickness(),wall.material());
+            rejects(()->service.transact(session.revision(),"place-wall",place(crossing)));
+            check(session.snapshot().equals(jointState),
+                "Misaligned and crossing runs are rejected atomically, preserving the joint");
+            aim(renderer,candidate);
+            service.capture(session.revision(),evidence.resolve("joined-corner.png"));
+            service.save(session.revision());
+            service.reopen(session.revision());
+            check(session.snapshot().equals(jointState),
+                "Joined native wall geometry and stable IDs survive a BSCN save/reopen");
+            var reloaded=new HouseMap(site);
+            check(!reloaded.traversable(corner.cx(),corner.base(),corner.cz()),
+                "Independent game loader still enforces L-corner physics");
+            service.undo(session.revision());
+            check(session.walls().isEmpty(),"One undo removes the whole two-wall batch");
+            service.redo(session.revision());
+            check(session.walls().equals(List.of(wall,corner)),
+                "One redo restores the complete supported L-corner");
+            System.out.println("PASS native mission wall: rendered solid segments, exact terminal joints, rejected overlaps/crossings, runtime collision/LOS, stable IDs, batch rollback, BSCN save/reopen, independent load and undo/redo");
         } finally {
             System.setProperty("user.home",previous);
             try(var paths=Files.walk(temp)){

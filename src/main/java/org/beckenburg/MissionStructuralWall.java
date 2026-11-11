@@ -36,6 +36,33 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
     double halfX(){return length()/2;}
     double halfZ(){return thickness/2;}
     Collider body(){return new Collider(cx(),base,cz(),halfX(),halfZ(),height,yaw());}
+    /**
+     * Two solid wall runs may meet precisely at their TERMINAL endpoints.
+     * L-corners and end-to-end straight runs form one continuous shell, while
+     * T-junctions, crossing walls, near misses and overlapping parallel runs
+     * remain unsafe until the native junction cutter supports them.
+     */
+    private boolean terminalJoint(MissionStructuralWall other){
+        if(room!=other.room||Math.abs(base-other.base)>1e-6||
+            Math.abs(height-other.height)>1e-6||
+            Math.abs(thickness-other.thickness)>1e-6)return false;
+        boolean alongX=z0==z1,otherAlongX=other.z0==other.z1;
+        for(int a=0;a<2;a++){
+            double ax=a==0?x0:x1,az=a==0?z0:z1;
+            double dx=(a==0?x1:x0)-ax,dz=(a==0?z1:z0)-az;
+            for(int b=0;b<2;b++){
+                double bx=b==0?other.x0:other.x1,bz=b==0?other.z0:other.z1;
+                if(Math.abs(ax-bx)>1e-6||Math.abs(az-bz)>1e-6)continue;
+                // Perpendicular L-joints share a solid corner; collinear runs
+                // must extend AWAY from one another to avoid doubled bodies.
+                if(alongX!=otherAlongX)return true;
+                double odx=(b==0?other.x1:other.x0)-bx,
+                    odz=(b==0?other.z1:other.z0)-bz;
+                if(dx*odx+dz*odz < -1e-8)return true;
+            }
+        }
+        return false;
+    }
     Socket socket(){
         return new Socket(NODE_PREFIX+id,SOCKET_TYPE,room,cx(),base,cz(),yaw(),
             length()+":"+thickness+":"+height+":"+material);
@@ -77,7 +104,8 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
                 .2+Math.hypot(c.halfX(),c.halfZ())))
             throw new IllegalArgumentException("Wall overlaps a native collider");
         for(MissionStructuralWall w:previous)if(!w.id().equals(id)&&w.room()==room&&
-            Math.abs(w.base()-base)<height+.2&&(near(w.cx(),w.cz(),w.length()/2+.25)
+            Math.abs(w.base()-base)<height+.2&&!terminalJoint(w)&&
+            (near(w.cx(),w.cz(),w.length()/2+.25)
                 ||w.near(cx(),cz(),length()/2+.25)))
             throw new IllegalArgumentException("Wall overlaps another authored partition");
         if(near(r.spawn().x(),r.spawn().z(),.75))
