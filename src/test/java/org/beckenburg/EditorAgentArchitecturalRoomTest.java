@@ -156,6 +156,12 @@ public final class EditorAgentArchitecturalRoomTest {
             check(!LanAcoustics.audibleAt(map,6,ghostFeet,6,hunterFeet,
                 LanGhostPursuit.Sound.FOOTSTEP,calm),
                 "Authoritative host cannot report closed-room footsteps to its ghost");
+            check(LanAcoustics.costAt(map,6,ghostFeet,6,
+                    new LevelDefinition.Vec(Double.NaN,0,0))==Integer.MAX_VALUE,
+                "Invalid sound positions cannot bypass physical room authority");
+            check(LanAcoustics.costAt(map,6,ghostFeet,HouseMap.EXTRACTION_ROOM,
+                    map.spawn(HouseMap.EXTRACTION_ROOM))==Integer.MAX_VALUE,
+                "Spectral sound routing never enters the protected extraction van");
             check(LanGhostHearing.project(map,spectralInside,6,
                     listener.x(),listener.z(),LanGhostPursuit.Sound.FOOTSTEP,10)==null,
                 "Human ghosts receive no impossible footsteps through a closed child-room door");
