@@ -2651,7 +2651,9 @@ public final class SceneRenderer {
         for(var s:map.level().sockets()){
             // Native structural partitions are authored world geometry, not
             // small near-camera interactive fittings; retain them at long view.
-            if(!objectInView(s.x(),s.z(),4,s.type().equals(MissionStructuralWall.SOCKET_TYPE)?64:20))continue;
+            if(!objectInView(s.x(),s.z(),4,
+                (s.type().equals(MissionStructuralWall.SOCKET_TYPE)||
+                    s.type().equals(MissionArchitecturalRoom.ROOF_TYPE))?64:20))continue;
             var key=new SocketGeometryKey(s,environmentPowerOn);
             var geometry=authoredFixtureGeometry.computeIfAbsent(key,k->{
             List<Face> part=new ArrayList<>();
@@ -2691,6 +2693,26 @@ public final class SceneRenderer {
                     part.add(new Face(mountPoint(face.a,s),mountPoint(face.b,s),
                         mountPoint(face.c,s),face.color,face.material,
                         face.au,face.av,face.bu,face.bv,face.cu,face.cv));
+            }
+            if(s.type().equals(MissionArchitecturalRoom.ROOF_TYPE)){
+                // Native child-room ceiling: the actual same six closed faces
+                // and dimensions consumed by its game collision collider.
+                String[] roof=s.style().split(":",-1);
+                if(roof.length!=5)
+                    throw new IllegalArgumentException("Invalid authored child-room ceiling");
+                double width=Double.parseDouble(roof[0]),depth=Double.parseDouble(roof[1]),
+                    thickness=Double.parseDouble(roof[2]),floor=Double.parseDouble(roof[4]);
+                int material=Integer.parseInt(roof[3]);
+                if(width<2||width>3.8||depth<2||depth>3.8||
+                    Math.abs(thickness-MissionArchitecturalRoom.ROOF_DEPTH)>1e-8||
+                    !Double.isFinite(floor)||!MissionStructuralWall.MATERIALS.contains(material))
+                    throw new IllegalArgumentException("Unsupported physical child-room ceiling");
+                var roofFaces=new ArrayList<Face>();
+                texturedBox(roofFaces,-width/2,0,-depth/2,width,thickness,depth,material);
+                for(Face f:roofFaces)
+                    part.add(new Face(mountPoint(f.a,s),mountPoint(f.b,s),
+                        mountPoint(f.c,s),f.color,f.material,
+                        f.au,f.av,f.bu,f.bv,f.cu,f.cv));
             }
             if(s.type().equals("device")&&s.style().equals("LIGHT_SWITCH"))imported(part,"light_switch_1",s.x(),s.y(),s.z(),1,s.yaw());
             if(s.type().equals("switch"))imported(part,"light_switch_1",s.x(),s.y(),s.z(),1,-s.yaw());

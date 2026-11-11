@@ -25,6 +25,7 @@ on:
       - 'src/test/java/org/beckenburg/editor/EditorMaterialPencilTest.java'
       - 'src/main/java/org/beckenburg/LevelAuthoringSession.java'
       - 'src/main/java/org/beckenburg/MissionStructuralWall.java'
+      - 'src/main/java/org/beckenburg/MissionArchitecturalRoom.java'
       - 'src/main/java/org/beckenburg/DeckSlabs.java'
       - 'src/main/java/org/beckenburg/HouseMap.java'
       - 'src/main/java/org/beckenburg/LevelPlans.java'
@@ -165,6 +166,15 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\EditorAgentMissionWallTest.java
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.EditorAgentMissionWallTest
+          if errorlevel 1 exit /b 1
+      - name: Construct real School child room with roof and playable door
+        shell: cmd
+        timeout-minutes: 8
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\EditorAgentArchitecturalRoomTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.EditorAgentArchitecturalRoomTest
           if errorlevel 1 exit /b 1
       - name: Verify native upper-floor depth, underside and game collision
         shell: cmd

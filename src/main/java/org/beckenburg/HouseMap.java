@@ -114,6 +114,24 @@ public final class HouseMap {
     public double centerZ(int room){return spawn(room).z();}
     public String roomName(int room){return room<0||room>=15?"OUTSIDE":level.room(room).name();}
     public String roomName(double x,double z){return roomName(roomAt(x,z));}
+    /** Stable architectural child-room identity at a real world-space point.
+     * These rooms are backed by native four-wall/door/ceiling construction and
+     * retain their parent's fifteen-zone network and ghost-evidence owner. */
+    public String architecturalRoomAt(double x,double y,double z){
+        if(!finite(x,y,z))return null;
+        for(var socket:level.sockets())if(socket.type().equals(MissionArchitecturalRoom.ROOF_TYPE)
+            &&socket.id().startsWith(MissionArchitecturalRoom.ROOF_STEM)){
+            String[] shape=socket.style().split(":",-1);
+            if(shape.length!=5)throw new IllegalStateException("Invalid native architectural roof socket");
+            double width=Double.parseDouble(shape[0]),depth=Double.parseDouble(shape[1]),
+                floor=Double.parseDouble(shape[4]);
+            if(y>=floor-.04&&y<socket.y()&&
+                Math.abs(x-socket.x())<width/2-MissionArchitecturalRoom.WALL_THICKNESS*.5&&
+                Math.abs(z-socket.z())<depth/2-MissionArchitecturalRoom.WALL_THICKNESS*.5)
+                return socket.id().substring(MissionArchitecturalRoom.ROOF_STEM.length());
+        }
+        return null;
+    }
     public int roomAt(double x,double y,double z){
         if(!finite(x,y,z))return -1;
         if(nativeSite!=null){var local=van.local(x,z);if(Math.abs(local.x())<VanStaging.INTERIOR_HALF_WIDTH&&local.z()>=VanStaging.FRONT&&local.z()<VanStaging.REAR&&y>=van.floorY()-.22&&y<van.placement().y()+VanStaging.ROOF_Y)return 14;var support=nativeSite.support(x,z,y,4);return support==null?-1:HollowCreekLevel.owner(x,z);}

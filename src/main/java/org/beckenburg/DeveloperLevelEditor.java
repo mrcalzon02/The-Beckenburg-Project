@@ -272,6 +272,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private final JCheckBox navBlocked=new JCheckBox("Block player navigation here");
     private final JButton doorSockets=button("DOOR SOCKETS…");
     private final JButton missionWallOpening=button("WALL CUT…");
+    private final JButton missionBuildRoom=button("ROOM+");
     private final JLabel status=new JLabel("WASD fly  •  Q/E altitude  •  Mouse drag look  •  Wheel forward/back  •  Ctrl+S save");
     private final JTextArea navInfo=new JTextArea(6,25);
     private final Set<Integer> keys=new HashSet<>();
@@ -700,7 +701,7 @@ public final class DeveloperLevelEditor extends JPanel {
         for(JSpinner input:new JSpinner[]{x,y,z,yaw,scale,width,depth,radius,power,surfaceHeight})
             input.addChangeListener(e->applySelection());
         panel.add(fields,BorderLayout.CENTER);
-        JPanel actions=new JPanel(new GridLayout(1,5,4,0));
+        JPanel actions=new JPanel(new GridLayout(1,6,4,0));
         JButton here=button("PLACE AHEAD"),remove=button("REMOVE"),addLight=button("ADD LIGHT");
         JButton duplicate=button("DUPLICATE");
         duplicate.addActionListener(e->duplicate());
@@ -709,8 +710,10 @@ public final class DeveloperLevelEditor extends JPanel {
         addLight.addActionListener(e->addLamp());
         missionWallOpening.setToolTipText("Native wall cut and optional operable door in the same game scene");
         missionWallOpening.addActionListener(e->editMissionWallOpening());
+        missionBuildRoom.setToolTipText("Build a real four-wall native child room with ceiling and door");
+        missionBuildRoom.addActionListener(e->buildMissionRoom());
         actions.add(here);actions.add(remove);actions.add(addLight);actions.add(duplicate);
-        actions.add(missionWallOpening);
+        actions.add(missionWallOpening);actions.add(missionBuildRoom);
         panel.add(actions,BorderLayout.SOUTH);
         return panel;
     }
@@ -816,6 +819,43 @@ public final class DeveloperLevelEditor extends JPanel {
         operate(()->data.placePaletteProp(id,mesh,aheadX,renderer.eyeHeight>3?CastleHubArchitecturalPlan.GROUND_CEILING:0,aheadZ));
         refresh();selectId("PROP",id);
     }
+    /** Human and headless editors use the same four-wall, ceiling and door
+     * constructor. No special-case GUI geometry or duplicate scene ownership. */
+    private void buildMissionRoom(){
+        if(mission==null){status.setText("Open a mission before building a room");return;}
+        int zone=-1;
+        for(var room:mission.level().rooms())if(!room.outside()&&
+                room.contains(renderer.x,room.y(),renderer.z)){
+            zone=room.id();break;
+        }
+        final int suggested=Math.max(0,zone);
+        double px=renderer.x,pz=renderer.z;
+        JTextField name=new JTextField("store-room");
+        JTextField room=new JTextField(Integer.toString(suggested));
+        JTextField left=new JTextField(Double.toString(Math.floor(px*10)/10));
+        JTextField top=new JTextField(Double.toString(Math.floor(pz*10)/10));
+        JTextField right=new JTextField(Double.toString(Math.floor(px*10)/10+2.65));
+        JTextField bottom=new JTextField(Double.toString(Math.floor(pz*10)/10+2.65));
+        JTextField height=new JTextField("2.35");
+        JComboBox<String> side=new JComboBox<>(new String[]{"S","N","E","W"});
+        var fields=new JPanel(new GridLayout(0,2,4,4));
+        fields.add(new JLabel("Stable architectural ID"));fields.add(name);
+        fields.add(new JLabel("Existing gameplay zone"));fields.add(room);
+        fields.add(new JLabel("X minimum (m)"));fields.add(left);
+        fields.add(new JLabel("Z minimum (m)"));fields.add(top);
+        fields.add(new JLabel("X maximum (m)"));fields.add(right);
+        fields.add(new JLabel("Z maximum (m)"));fields.add(bottom);
+        fields.add(new JLabel("Wall/ceiling height (m)"));fields.add(height);
+        fields.add(new JLabel("Door side"));fields.add(side);
+        if(JOptionPane.showConfirmDialog(window,fields,"Construct physical child room",
+                JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE)!=JOptionPane.OK_OPTION)return;
+        operate(()->mission.buildRoom(name.getText().trim(),Integer.parseInt(room.getText().trim()),
+            Double.parseDouble(left.getText().trim()),Double.parseDouble(top.getText().trim()),
+            Double.parseDouble(right.getText().trim()),Double.parseDouble(bottom.getText().trim()),
+            Double.parseDouble(height.getText().trim()),LevelMaterials.PLASTER,
+            (String)side.getSelectedItem()));
+        refresh();
+    }
     /** Human/editor and agent share exactly the same validated transaction,
      * game collision, renderer and serialized wall/door authority. */
     private void editMissionWallOpening(){
@@ -867,6 +907,11 @@ public final class DeveloperLevelEditor extends JPanel {
             if(chosen.kind.equals("MISSION_FLOOR")){
                 int room=Integer.parseInt(chosen.id.substring("beckenburg-floor-depth-".length()));
                 operate(()->mission.setFloorDepth(room,0));
+                chosen=null;refresh();return;
+            }
+            if(chosen.kind.equals("MISSION_ROOM")){
+                String nodeId=chosen.id;
+                operate(()->mission.removeRoom(nodeId));
                 chosen=null;refresh();return;
             }
             if(chosen.kind.equals("MISSION_WALL")){
@@ -921,6 +966,15 @@ public final class DeveloperLevelEditor extends JPanel {
                 width.setValue((sourceRoom.x1()-sourceRoom.x0())/2);
                 depth.setValue(slab);
                 status.setText("Native upper slab • "+slab+"m deep • REMOVE to restore source depth");
+            }else if(row.kind.equals("MISSION_ROOM")&&mission!=null){
+                var child=mission.architecturalRooms().stream().filter(c->c.nodeId().equals(row.id))
+                    .findFirst().orElse(null);
+                if(child==null)return;
+                x.setValue(child.cx());y.setValue(child.base());z.setValue(child.cz());
+                yaw.setValue(0);scale.setValue(1);
+                width.setValue(child.width()/2);depth.setValue(child.depth()/2);
+                status.setText("Native enclosed room • "+child.id()+" • zone "+child.zone()+
+                    " • door "+child.doorPortalId()+" • REMOVE deletes complete room");
             }else if(row.kind.equals("MISSION_WALL")&&mission!=null){
                 var wall=mission.walls().stream().filter(w->
                     (MissionStructuralWall.NODE_PREFIX+w.id()).equals(row.id)).findFirst().orElse(null);
@@ -1022,6 +1076,9 @@ public final class DeveloperLevelEditor extends JPanel {
                 list.add(new Row("MISSION_PROP",Integer.toString(i),
                     "PROP • "+i+" • "+p.mesh()+" [room "+p.room()+"]"));
             }
+            for(var child:mission.architecturalRooms())
+                list.add(new Row("MISSION_ROOM",child.nodeId(),
+                    "ROOM • "+child.id()+" [zone "+child.zone()+", four walls, door, solid ceiling]"));
             for(var wall:mission.walls())
                 list.add(new Row("MISSION_WALL",MissionStructuralWall.NODE_PREFIX+wall.id(),
                     "WALL • "+wall.id()+" [room "+wall.room()+", "+wall.length()+"m]"));
@@ -1049,6 +1106,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private void updateNav(){
         doorSockets.setEnabled(mission==null);
         missionWallOpening.setEnabled(mission!=null);
+        missionBuildRoom.setEnabled(mission!=null);
         if(mission!=null){
             navInfo.setText("LEVEL  "+mission.title()
                 +"\nAuthoritative game scene: "+mission.documentPath()

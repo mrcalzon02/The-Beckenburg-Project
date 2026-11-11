@@ -27,7 +27,10 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     }
     /** Aim the authoritative renderer from a traversable room point, without editing geometry. */
     public void focus(org.beckenburg.editor.EditorProject.Node node){
-        int roomId=node.kind().equals("STAIR_OPENING")
+        int roomId=node.kind().equals("ARCH_ROOM")
+            ?session.architecturalRooms().stream().filter(c->c.nodeId().equals(node.id()))
+                .findFirst().orElseThrow().zone()
+            :node.kind().equals("STAIR_OPENING")
             ?session.sourceLevel().stairs().stream()
                 .filter(q->("beckenburg-stair-landing-"+q.id()).equals(node.id()))
                 .findFirst().orElseThrow().b()
@@ -54,6 +57,19 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     public long revision(){return session.revision();}
     public boolean walkable(double x,double y,double z){return map.get().traversable(x,y,z);}
     public Map<String,Object> properties(org.beckenburg.editor.EditorProject.Node node){
+        if(node.kind().equals("ARCH_ROOM")){
+            var child=session.architecturalRooms().stream()
+                .filter(c->c.nodeId().equals(node.id())).findFirst().orElseThrow();
+            return Map.ofEntries(
+                Map.entry("architecturalId",child.id()),Map.entry("parentGameplayZone",child.zone()),
+                Map.entry("x0",child.x0()),Map.entry("z0",child.z0()),
+                Map.entry("x1",child.x1()),Map.entry("z1",child.z1()),
+                Map.entry("floor",child.base()),Map.entry("ceiling",child.base()+child.height()),
+                Map.entry("ceilingThickness",MissionArchitecturalRoom.ROOF_DEPTH),
+                Map.entry("doorSide",child.doorSide()),
+                Map.entry("doorPortalId",child.doorPortalId()),
+                Map.entry("physicalWallCount",4));
+        }
         if(node.kind().equals("STAIR_OPENING")){
             int id=Integer.parseInt(node.id().substring("beckenburg-stair-landing-".length()));
             var stair=session.sourceLevel().stairs().stream().filter(q->q.id()==id)
@@ -111,6 +127,8 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             ops.add("set-wall-opening");
             ops.add("set-wall-door");
             ops.add("remove-wall");
+            ops.add("build-room");
+            ops.add("remove-room");
             ops.add("set-floor-depth");
             ops.add("extend-stair-opening");
         }
@@ -133,6 +151,10 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         "endpoint","string","turn","string","length","number");
     private static final Map<String,String> FLOOR_FIELDS=Map.of("room","integer","depth","number");
     private static final Map<String,String> STAIR_FIELDS=Map.of("stairId","integer","extension","number");
+    private static final Map<String,String> ROOM_FIELDS=Map.of(
+        "id","string","room","integer","x0","number","z0","number",
+        "x1","number","z1","number","height","number","material","integer",
+        "doorSide","string");
     private static final Map<String,String> WALL_FIELDS=Map.ofEntries(
         Map.entry("id","string"),Map.entry("room","integer"),Map.entry("x0","number"),
         Map.entry("z0","number"),Map.entry("x1","number"),Map.entry("z1","number"),
@@ -152,6 +174,8 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             result.put("set-wall-opening",OPEN_WALL_FIELDS);
             result.put("set-wall-door",WALL_DOOR_FIELDS);
             result.put("remove-wall",REMOVE_FIELDS);
+            result.put("build-room",ROOM_FIELDS);
+            result.put("remove-room",REMOVE_FIELDS);
             result.put("set-floor-depth",FLOOR_FIELDS);
             result.put("extend-stair-opening",STAIR_FIELDS);
         }
@@ -326,6 +350,18 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                     throw new IllegalArgumentException("Expected exact native structural wall node id");
                 session.removeWall(args.get("id"));
             }
+            case "build-room" -> {
+                if(!args.keySet().equals(ROOM_FIELDS.keySet()))
+                    throw new IllegalArgumentException("Expected bounded native child-room coordinates and door side");
+                session.buildRoom(args.get("id"),Integer.parseInt(args.get("room")),
+                    number(args,"x0"),number(args,"z0"),number(args,"x1"),number(args,"z1"),
+                    number(args,"height"),Integer.parseInt(args.get("material")),args.get("doorSide"));
+            }
+            case "remove-room" -> {
+                if(!args.keySet().equals(REMOVE_FIELDS.keySet()))
+                    throw new IllegalArgumentException("Expected exact native architectural room node ID");
+                session.removeRoom(args.get("id"));
+            }
             case "set-floor-depth" -> {
                 if(!args.keySet().equals(FLOOR_FIELDS.keySet()))
                     throw new IllegalArgumentException("Expected real upper-floor room and thickness");
@@ -384,6 +420,27 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                     wall.base(),Math.min(wall.z0(),wall.z1())-wall.thickness()/2,
                     Math.max(wall.x0(),wall.x1())+wall.thickness()/2,wall.base()+wall.height(),
                     Math.max(wall.z0(),wall.z1())+wall.thickness()/2);
+                bounds=bounds==null?region:bounds.union(region);
+            }
+        }
+        // The child-room identity is derived from its four real wall members.
+        // Include its physical roof bounds in incremental scene invalidation.
+        var oldRooms=new java.util.LinkedHashMap<String,MissionArchitecturalRoom.Cell>();
+        var newRooms=new java.util.LinkedHashMap<String,MissionArchitecturalRoom.Cell>();
+        for(var child:MissionArchitecturalRoom.discover(before.walls()))oldRooms.put(child.id(),child);
+        for(var child:MissionArchitecturalRoom.discover(after.walls()))newRooms.put(child.id(),child);
+        var roomIds=new java.util.TreeSet<String>();
+        roomIds.addAll(oldRooms.keySet());roomIds.addAll(newRooms.keySet());
+        for(var id:roomIds){
+            var a=oldRooms.get(id);var b=newRooms.get(id);
+            if(java.util.Objects.equals(a,b))continue;
+            nodes.add(new EditorChange.Node(MissionArchitecturalRoom.NODE_STEM+id,
+                a==null?EditorChange.Kind.ADDED:b==null?EditorChange.Kind.REMOVED:EditorChange.Kind.UPDATED,
+                a==null?null:EditorChange.fingerprint("native-child-room/v1:"+a),
+                b==null?null:EditorChange.fingerprint("native-child-room/v1:"+b)));
+            for(var child:new MissionArchitecturalRoom.Cell[]{a,b})if(child!=null){
+                var region=new EditorChange.Bounds(child.x0(),child.base(),child.z0(),
+                    child.x1(),child.base()+child.height(),child.z1());
                 bounds=bounds==null?region:bounds.union(region);
             }
         }
@@ -446,8 +503,25 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         return new EditorAgentService.Capture(file,image.getWidth(),image.getHeight(),"SceneRenderer.drawPractice");
     }
     public List<String> tests(){return List.of("mission-runtime-parity","mission-open-routes",
-        "mission-door-catalog","mission-deck-catalog","mission-stair-catalog");}
+        "mission-door-catalog","mission-deck-catalog","mission-stair-catalog",
+        "mission-architectural-rooms");}
     public List<EditorAgentService.Check> test(String id){
+        if(id.equals("mission-architectural-rooms")){
+            var game=map.get();
+            return session.architecturalRooms().stream().map(c->{
+                boolean roof=game.level().sockets().stream().anyMatch(s->
+                    s.id().equals(MissionArchitecturalRoom.ROOF_STEM+c.id())
+                        &&s.type().equals(MissionArchitecturalRoom.ROOF_TYPE));
+                boolean portal=game.level().portals().stream().anyMatch(p->
+                    p.id()==c.doorPortalId()&&p.door()&&p.a()==c.zone()&&p.b()==c.zone());
+                boolean collider=game.level().colliders().stream().anyMatch(p->
+                    LevelPlans.sameBody(p,c.roofBody()));
+                boolean identity=c.id().equals(game.architecturalRoomAt(c.cx(),c.base(),c.cz()));
+                return new EditorAgentService.Check("ARCH_ROOM_"+c.id(),roof&&portal&&collider&&identity,
+                    "physicalWalls=4 ceiling="+roof+" door="+portal+
+                        " body="+collider+" runtimeIdentity="+identity);
+            }).toList();
+        }
         if(id.equals("mission-stair-catalog")){
             var nativeLevel=session.level();
             return nativeLevel.stairs().stream().map(stair->new EditorAgentService.Check(

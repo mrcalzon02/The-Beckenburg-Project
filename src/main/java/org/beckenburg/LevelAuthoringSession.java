@@ -128,6 +128,11 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     public synchronized Prop prop(int index){return props.get(index);}
     public synchronized String nodeId(int index){return propIds.get(index);}
     public synchronized List<MissionStructuralWall> walls(){return List.copyOf(walls);}
+    /** These stable architectural identities are derived from real walls,
+     * not stored in a parallel scene or a second metadata-only room list. */
+    public synchronized List<MissionArchitecturalRoom.Cell> architecturalRooms(){
+        return MissionArchitecturalRoom.discover(walls);
+    }
     public synchronized Map<Integer,Double> floorDepths(){return Map.copyOf(floorDepths);}
     public synchronized Map<Integer,Double> stairExtensions(){return Map.copyOf(stairExtensions);}
     /** Move a source stair's upper cut through its actual terminal riser.
@@ -260,6 +265,8 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         return List.copyOf(result);
     }
     public synchronized void placeWall(MissionStructuralWall candidate){
+        if(MissionArchitecturalRoom.reserved(candidate.id()))
+            throw new IllegalArgumentException("Use build-room for complete native architectural enclosures");
         if(HollowCreekLevel.is(source))
             throw new UnsupportedOperationException("Native outdoor structural wall editing unavailable");
         Objects.requireNonNull(candidate);
@@ -270,8 +277,50 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         validateWalls(source,next,props);
         walls.add(candidate);revision++;
     }
+    /** An atomic, source-backed four-wall room with an actual framed door and
+     * physical ceiling, all derived from the persisted wall nodes. */
+    public synchronized void buildRoom(String id,int zone,double x0,double z0,
+                                       double x1,double z1,double height,
+                                       int material,String doorSide){
+        if(HollowCreekLevel.is(source))
+            throw new UnsupportedOperationException("Outdoor native child-room adapter unavailable");
+        if(architecturalRooms().stream().anyMatch(r->r.id().equals(id)))
+            throw new IllegalArgumentException("Duplicate child-room ID");
+        if(zone<0||zone>=source.rooms().size())
+            throw new IllegalArgumentException("Unknown native gameplay owner");
+        int doorId=1000;
+        var occupied=new java.util.HashSet<Integer>();
+        for(var p:source.portals())occupied.add(p.id());
+        for(var wall:walls)if(wall.hasDoor())occupied.add(wall.doorPortalId());
+        while(occupied.contains(doorId)&&doorId<=999999)doorId++;
+        if(doorId>999999)throw new IllegalStateException("No available source-owned door portal");
+        var candidate=new ArrayList<>(walls);
+        candidate.addAll(MissionArchitecturalRoom.construct(id,zone,x0,z0,x1,z1,
+            source.room(zone).y(),height,material,doorSide,doorId));
+        validateWalls(source,candidate,props);
+        if(candidate.size()>256)throw new IllegalArgumentException("Wall count budget exceeded");
+        walls.clear();walls.addAll(candidate);revision++;
+    }
+    public synchronized void removeRoom(String nodeId){
+        if(nodeId==null||!nodeId.startsWith(MissionArchitecturalRoom.NODE_STEM))
+            throw new IllegalArgumentException("Expected native architectural room identity");
+        String id=nodeId.substring(MissionArchitecturalRoom.NODE_STEM.length());
+        if(architecturalRooms().stream().noneMatch(c->c.id().equals(id)))
+            throw new IllegalArgumentException("Unknown native architectural room");
+        var candidate=new ArrayList<>(walls);
+        candidate.removeIf(w->w.id().startsWith(MissionArchitecturalRoom.WALL_STEM+id+"-"));
+        validateWalls(source,candidate,props);
+        walls.clear();walls.addAll(candidate);revision++;
+    }
+    /** Individual edits cannot orphan a grouped, physical architectural room. */
+    private static void requireIndependentWall(String nodeId){
+        if(nodeId!=null&&nodeId.startsWith(WALL_PREFIX)&&
+            MissionArchitecturalRoom.reserved(nodeId.substring(WALL_PREFIX.length())))
+            throw new IllegalArgumentException("Edit or remove the entire native room, not one load-bearing member");
+    }
     /** Edit the same native wall node and scene history, never a shadow mesh. */
     public synchronized void setWallOpening(String nodeId,double offset,double width,double clearHeight){
+        requireIndependentWall(nodeId);
         if(nodeId==null||!nodeId.startsWith(WALL_PREFIX))
             throw new IllegalArgumentException("Expected authored structural wall node");
         String id=nodeId.substring(WALL_PREFIX.length());
@@ -290,6 +339,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
      * Its network/interaction portal ID is persisted on the same native wall.
      * This does not create a new investigation zone or substitute a room graph. */
     public synchronized void setWallDoor(String nodeId,boolean installed){
+        requireIndependentWall(nodeId);
         if(nodeId==null||!nodeId.startsWith(WALL_PREFIX))
             throw new IllegalArgumentException("Expected native wall node");
         String id=nodeId.substring(WALL_PREFIX.length());
@@ -316,6 +366,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         walls.set(index,next);revision++;
     }
     public synchronized void removeWall(String nodeId){
+        requireIndependentWall(nodeId);
         if(nodeId==null||!nodeId.startsWith(WALL_PREFIX))
             throw new IllegalArgumentException("Expected stable structural wall node ID");
         String id=nodeId.substring(WALL_PREFIX.length());
@@ -338,6 +389,8 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                 throw new IllegalArgumentException("Wall overlaps an authored source prop");
             prior.add(wall);
         }
+        for(var child:MissionArchitecturalRoom.discover(walls))
+            child.validate(source,props);
     }
     public synchronized int indexOf(String id){
         int index=propIds.indexOf(Objects.requireNonNull(id));
@@ -490,6 +543,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         ArrayList<Node> result=new ArrayList<>();
         for(int i=0;i<props.size();i++) result.add(propNode(i));
         for(var wall:walls)result.add(wallNode(wall));
+        for(var child:MissionArchitecturalRoom.discover(walls))result.add(roomNode(child));
         for(var entry:new java.util.TreeMap<>(floorDepths).entrySet())
             result.add(floorNode(entry.getKey(),entry.getValue()));
         for(var entry:new java.util.TreeMap<>(stairExtensions).entrySet())
@@ -497,6 +551,8 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         return List.copyOf(result);
     }
     public synchronized Node node(String id) {
+        for(var child:MissionArchitecturalRoom.discover(walls))
+            if(child.nodeId().equals(id))return roomNode(child);
         for(var wall:walls)if((WALL_PREFIX+wall.id()).equals(id))return wallNode(wall);
         for(var entry:floorDepths.entrySet())if((FLOOR_PREFIX+entry.getKey()).equals(id))
             return floorNode(entry.getKey(),entry.getValue());
@@ -524,6 +580,11 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
     private static Node wallNode(MissionStructuralWall wall){
         return new Node(WALL_PREFIX+wall.id(),"WALL","Native solid partition / room "+wall.room(),
             wall.cx(),wall.base(),wall.cz());
+    }
+    private static Node roomNode(MissionArchitecturalRoom.Cell cell){
+        return new Node(cell.nodeId(),"ARCH_ROOM",
+            "Physical child room "+cell.id()+" / gameplay zone "+cell.zone(),
+            cell.cx(),cell.base(),cell.cz());
     }
     private Node propNode(int index) {
         var prop = props.get(index);
@@ -833,9 +894,17 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         for(Prop p:added)collision.addAll(LevelPlans.propColliders(source,p));
         var sockets=new ArrayList<>(effectiveFloorSockets(source,floorDepths));
         var portals=new ArrayList<>(effectivePortals(source,widths));
-        for(var wall:walls){
+        // Native network revision MUST NOT depend on the order in which an
+        // agent happened to build walls versus a later BSCN save/reopen.
+        var orderedWalls=walls.stream()
+            .sorted(java.util.Comparator.comparing(MissionStructuralWall::id)).toList();
+        for(var wall:orderedWalls){
             collision.addAll(wall.bodies());sockets.add(wall.socket());
             if(wall.hasDoor())portals.add(wall.doorPortal());
+        }
+        for(var child:MissionArchitecturalRoom.discover(orderedWalls)){
+            collision.add(child.roofBody());
+            sockets.add(child.roofSocket());
         }
         return new LevelDefinition(source.id(),source.revision(),source.title(),
             source.rooms(),portals,source.stairs(),effectiveVoids(source,stairExtensions),
