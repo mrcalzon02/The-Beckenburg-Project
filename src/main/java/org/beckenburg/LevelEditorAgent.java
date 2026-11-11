@@ -73,9 +73,14 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         if(node.kind().equals("WALL")){
             var wall=session.walls().stream().filter(w->
                 (MissionStructuralWall.NODE_PREFIX+w.id()).equals(node.id())).findFirst().orElseThrow();
-            return Map.of("room",wall.room(),"x0",wall.x0(),"z0",wall.z0(),
+            var fields=new java.util.LinkedHashMap<String,Object>(Map.of(
+                "room",wall.room(),"x0",wall.x0(),"z0",wall.z0(),
                 "x1",wall.x1(),"z1",wall.z1(),"base",wall.base(),
-                "height",wall.height(),"thickness",wall.thickness(),"material",wall.material());
+                "height",wall.height(),"thickness",wall.thickness(),"material",wall.material()));
+            fields.put("openingOffset",wall.cutOffset());
+            fields.put("openingWidth",wall.cutWidth());
+            fields.put("openingClearHeight",wall.cutHeight());
+            return Map.copyOf(fields);
         }
         var p=session.prop(session.indexOf(node.id()));
         var fields=new java.util.LinkedHashMap<String,Object>(Map.of("mesh",p.mesh(),"room",p.room(),"scale",p.scale(),
@@ -101,6 +106,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             ops.add("resize-door");
             ops.add("place-wall");
             ops.add("extend-wall");
+            ops.add("set-wall-opening");
             ops.add("remove-wall");
             ops.add("set-floor-depth");
             ops.add("extend-stair-opening");
@@ -116,6 +122,8 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     private static final Map<String,String> DUPLICATE_FIELDS=MOVE_FIELDS;
     private static final Map<String,String> REMOVE_FIELDS=Map.of("id","string");
     private static final Map<String,String> DOOR_FIELDS=Map.of("id","integer","width","number");
+    private static final Map<String,String> OPEN_WALL_FIELDS=Map.of(
+        "id","string","offset","number","width","number","clearHeight","number");
     private static final Map<String,String> EXTEND_WALL_FIELDS=Map.of("id","string","anchor","string",
         "endpoint","string","turn","string","length","number");
     private static final Map<String,String> FLOOR_FIELDS=Map.of("room","integer","depth","number");
@@ -136,6 +144,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
             result.put("resize-door",DOOR_FIELDS);
             result.put("place-wall",WALL_FIELDS);
             result.put("extend-wall",EXTEND_WALL_FIELDS);
+            result.put("set-wall-opening",OPEN_WALL_FIELDS);
             result.put("remove-wall",REMOVE_FIELDS);
             result.put("set-floor-depth",FLOOR_FIELDS);
             result.put("extend-stair-opening",STAIR_FIELDS);
@@ -289,6 +298,12 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                 session.placeWall(new MissionStructuralWall(args.get("id"),parent.room(),
                     x,z,x+vx*length,z+vz*length,parent.base(),parent.height(),
                     parent.thickness(),parent.material()));
+            }
+            case "set-wall-opening" -> {
+                if(!args.keySet().equals(OPEN_WALL_FIELDS.keySet()))
+                    throw new IllegalArgumentException("Expected native wall ID and offset, width, clearHeight");
+                session.setWallOpening(args.get("id"),number(args,"offset"),
+                    number(args,"width"),number(args,"clearHeight"));
             }
             case "remove-wall" -> {
                 if(!args.keySet().equals(REMOVE_FIELDS.keySet()))

@@ -87,7 +87,7 @@ public final class EditorAgentMissionWallTest {
             var service=new EditorAgentService<>(new LevelEditorAgent(session,
                 ()->new HouseMap(site,session.level()),renderer,()->{}),
                 new EditorHistory<>(session,60));
-            check(service.summary().operations().containsAll(List.of("place-wall","extend-wall","remove-wall")),
+            check(service.summary().operations().containsAll(List.of("place-wall","extend-wall","set-wall-opening","remove-wall")),
                 "Native mission agent advertises actual partition construction and deletion");
             long before=session.revision();
             var beforeState=session.snapshot();
@@ -224,7 +224,59 @@ public final class EditorAgentMissionWallTest {
             var reloaded=new HouseMap(site);
             check(!reloaded.traversable(corner.cx(),corner.base(),corner.cz()),
                 "Independent game loader still enforces L-corner physics");
-            System.out.println("PASS native mission wall: rendered solid segments, exact terminal joints, rejected overlaps/crossings, runtime collision/LOS, stable IDs, batch rollback, BSCN save/reopen, independent load and undo/redo");
+            // Real structural aperture: two physical side piers and a lintel,
+            // not a fake texture cut or a second level-editor-only scene.
+            var cut=Map.of("id",nodeId,"offset","0","width",".8","clearHeight","1.92");
+            var beforeCut=session.snapshot();
+            service.transact(session.revision(),"set-wall-opening",cut);
+            var openWall=session.walls().stream().filter(w->w.id().equals(wall.id()))
+                .findFirst().orElseThrow();
+            check(openWall.hasOpening()&&openWall.bodies().size()==3,
+                "Source wall splits into two actual solid piers and a lintel");
+            var openMap=new HouseMap(site,session.level());
+            check(openMap.traversable(wall.cx(),wall.base(),wall.cz()),
+                "Wall cut frees the true game capsule center");
+            check(!openMap.traversable(wall.x0()+.12,wall.base(),wall.z0()),
+                "The native solid pier still blocks gameplay traversal");
+            check(openMap.level().colliders().stream().filter(c->
+                Math.abs(c.z()-wall.cz())<.2&&
+                    Math.abs(c.y()-(wall.base()+1.92))<1e-7).anyMatch(c->
+                    Math.abs(c.height()-(wall.height()-1.92))<1e-7),
+                "Real game collision retains the overhead wall lintel");
+            check(service.properties(session.revision(),nodeId).result().fields()
+                .get("openingWidth").equals(.8),
+                "Native agent inspection reports the actual opening width");
+            aim(renderer,candidate);
+            service.capture(session.revision(),evidence.resolve("native-aperture.png"));
+            check(!Arrays.equals(Files.readAllBytes(evidence.resolve("joined-corner.png")),
+                Files.readAllBytes(evidence.resolve("native-aperture.png"))),
+                "The actual fixed-camera renderer shows the new physical cutout");
+            var opened=session.snapshot();
+            rejects(()->service.transact(session.revision(),"set-wall-opening",Map.of(
+                "id",nodeId,"offset","0","width","1.29","clearHeight","2.1")));
+            rejects(()->service.transact(session.revision(),"set-wall-opening",Map.of(
+                "id",nodeId,"offset","0","width","1.2","clearHeight","1.2")));
+            check(session.snapshot().equals(opened),
+                "Invalid apertures are rejected without altering scene geometry");
+            service.save(session.revision());
+            service.reopen(session.revision());
+            check(session.snapshot().equals(opened),
+                "The native wall aperture survives save/reopen with stable IDs");
+            var loadedWithOpening=new HouseMap(site);
+            check(loadedWithOpening.traversable(wall.cx(),wall.base(),wall.cz()),
+                "Independent game load sees the saved physical opening");
+            check(RuntimeSceneDocument.load(session.documentPath()).find(nodeId).components()
+                .get(0).properties().containsKey("cutWidth"),
+                "The versioned scene document stores real aperture dimensions");
+            service.transact(session.revision(),"set-wall-opening",Map.of(
+                "id",nodeId,"offset","0","width","0","clearHeight","0"));
+            check(session.snapshot().equals(beforeCut),
+                "Sealing the cut reconstructs the original solid wall");
+            service.undo(session.revision());
+            check(session.snapshot().equals(opened),"Undo restores the opening and stable wall identity");
+            service.redo(session.revision());
+            check(session.snapshot().equals(beforeCut),"Redo restores the original solid geometry");
+            System.out.println("PASS native mission wall: corner joins, anchored extensions, three-body aperture and lintel, real render, independent game load, validation, persistence and history");
         } finally {
             System.setProperty("user.home",previous);
             try(var paths=Files.walk(temp)){

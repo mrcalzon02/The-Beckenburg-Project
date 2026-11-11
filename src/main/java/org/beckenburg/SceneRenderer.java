@@ -2652,11 +2652,11 @@ public final class SceneRenderer {
             var geometry=authoredFixtureGeometry.computeIfAbsent(key,k->{
             List<Face> part=new ArrayList<>();
             if(s.type().equals(MissionStructuralWall.SOCKET_TYPE)){
-                // This physical box uses the very same length, thickness, yaw,
-                // bottom and height as MissionStructuralWall.body(), so
-                // renderer depth, shadow and game collider cannot diverge.
+                // These boxes match MissionStructuralWall.bodies() exactly,
+                // including the empty lower doorway and the solid upper lintel.
                 String[] shape=s.style().split(":",-1);
-                if(shape.length!=4)throw new IllegalArgumentException("Invalid native structural wall packet");
+                if(shape.length!=4&&shape.length!=7)
+                    throw new IllegalArgumentException("Invalid native structural wall packet");
                 double length=Double.parseDouble(shape[0]),thickness=Double.parseDouble(shape[1]),
                     height=Double.parseDouble(shape[2]);
                 int material=Integer.parseInt(shape[3]);
@@ -2664,7 +2664,24 @@ public final class SceneRenderer {
                     height<1.8||height>4.5||!MissionStructuralWall.MATERIALS.contains(material))
                     throw new IllegalArgumentException("Unsupported native structural wall geometry");
                 var local=new ArrayList<Face>();
-                texturedBox(local,-length/2,0,-thickness/2,length,height,thickness,material);
+                if(shape.length==4){
+                    texturedBox(local,-length/2,0,-thickness/2,length,height,thickness,material);
+                }else{
+                    double offset=Double.parseDouble(shape[4]),
+                        width=Double.parseDouble(shape[5]),clearHeight=Double.parseDouble(shape[6]);
+                    // Refuse malformed wall packets before emitting any
+                    // visual-only cut or divergent body geometry.
+                    new MissionStructuralWall(s.id().substring(MissionStructuralWall.NODE_PREFIX.length()),
+                        s.room(),0,0,length,0,s.y(),height,thickness,material,
+                        offset,width,clearHeight);
+                    double leftEnd=offset-width/2,rightStart=offset+width/2;
+                    texturedBox(local,-length/2,0,-thickness/2,leftEnd+length/2,
+                        height,thickness,material);
+                    texturedBox(local,rightStart,0,-thickness/2,length/2-rightStart,
+                        height,thickness,material);
+                    texturedBox(local,leftEnd,clearHeight,-thickness/2,width,
+                        height-clearHeight,thickness,material);
+                }
                 for(Face face:local)
                     part.add(new Face(mountPoint(face.a,s),mountPoint(face.b,s),
                         mountPoint(face.c,s),face.color,face.material,

@@ -7,11 +7,17 @@ import org.beckenburg.LevelDefinition.*;
 /**
  * One editable, solid, axis-aligned mission partition. This is intentionally
  * NOT a new room, a decorative billboard or a substitute floor/roof API.
- * The same dimensions feed one native collision body and an actual textured
- * renderer mesh through a versioned wall socket in LevelDefinition.
+ * The same dimensions feed native colliders and an actual textured renderer
+ * mesh through a versioned wall socket in LevelDefinition. Optional openings
+ * subtract real material from both rather than painting a fake doorway.
  */
 public record MissionStructuralWall(String id,int room,double x0,double z0,double x1,double z1,
-                             double base,double height,double thickness,int material) {
+                             double base,double height,double thickness,int material,
+                             double cutOffset,double cutWidth,double cutHeight) {
+    public MissionStructuralWall(String id,int room,double x0,double z0,double x1,double z1,
+                                 double base,double height,double thickness,int material){
+        this(id,room,x0,z0,x1,z1,base,height,thickness,material,0,0,0);
+    }
     static final String NODE_PREFIX="beckenburg-wall-";
     static final String COMPONENT="beckenburg.level.structural-wall";
     static final String SOCKET_TYPE="structural_wall";
@@ -28,6 +34,21 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
         if(length<.75||length>4.0||height<1.8||height>4.5||
            thickness<.12||thickness>.50||!MATERIALS.contains(material))
             throw new IllegalArgumentException("Wall length, height, thickness or material out of bounds");
+        if(!Double.isFinite(cutOffset)||!Double.isFinite(cutWidth)||!Double.isFinite(cutHeight))
+            throw new IllegalArgumentException("Non-finite wall aperture");
+        if(cutWidth==0){
+            if(cutOffset!=0||cutHeight!=0)
+                throw new IllegalArgumentException("A sealed wall cannot retain aperture dimensions");
+        }else if(cutWidth<.78||cutWidth>1.6||cutHeight<1.90||
+            cutHeight>2.35||cutHeight>height-.22||
+            cutOffset-cutWidth/2 < -length/2+.25||
+            cutOffset+cutWidth/2 > length/2-.25)
+            throw new IllegalArgumentException("Wall opening requires 0.25m piers, a solid lintel and human clearance");
+    }
+    public boolean hasOpening(){return cutWidth>0;}
+    public MissionStructuralWall withOpening(double offset,double width,double clearHeight){
+        return new MissionStructuralWall(id,room,x0,z0,x1,z1,base,height,thickness,
+            material,offset,width,clearHeight);
     }
     double length(){return Math.hypot(x1-x0,z1-z0);}
     double cx(){return (x0+x1)/2;}
@@ -35,7 +56,25 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
     double yaw(){return x0==x1?Math.PI/2:0;}
     double halfX(){return length()/2;}
     double halfZ(){return thickness/2;}
-    Collider body(){return new Collider(cx(),base,cz(),halfX(),halfZ(),height,yaw());}
+    Collider body(){
+        if(hasOpening())throw new IllegalStateException("Use physical wall segments for an aperture");
+        return new Collider(cx(),base,cz(),halfX(),halfZ(),height,yaw());
+    }
+    /** The renderer and collision engine consume these exact same solid box runs. */
+    List<Collider> bodies(){
+        if(!hasOpening())return List.of(body());
+        double half=length()/2,leftEnd=cutOffset-cutWidth/2,
+            rightStart=cutOffset+cutWidth/2;
+        return List.of(box(-half,leftEnd,base,height),
+            box(rightStart,half,base,height),
+            box(leftEnd,rightStart,base+cutHeight,height-cutHeight));
+    }
+    private Collider box(double localStart,double localEnd,double bottom,double boxHeight){
+        double localX=(localStart+localEnd)/2;
+        return new Collider(cx()+Math.cos(yaw())*localX,bottom,
+            cz()+Math.sin(yaw())*localX,(localEnd-localStart)/2,
+            thickness/2,boxHeight,yaw());
+    }
     /**
      * Two solid wall runs may meet precisely at their TERMINAL endpoints.
      * L-corners and end-to-end straight runs form one continuous shell, while
@@ -64,8 +103,9 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
         return false;
     }
     Socket socket(){
-        return new Socket(NODE_PREFIX+id,SOCKET_TYPE,room,cx(),base,cz(),yaw(),
-            length()+":"+thickness+":"+height+":"+material);
+        String style=length()+":"+thickness+":"+height+":"+material;
+        if(hasOpening())style+=":"+cutOffset+":"+cutWidth+":"+cutHeight;
+        return new Socket(NODE_PREFIX+id,SOCKET_TYPE,room,cx(),base,cz(),yaw(),style);
     }
     void validate(LevelDefinition source,List<MissionStructuralWall> previous){
         if(room<0||room>=source.rooms().size())

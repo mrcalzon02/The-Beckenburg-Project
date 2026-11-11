@@ -270,6 +270,22 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         validateWalls(source,next,props);
         walls.add(candidate);revision++;
     }
+    /** Edit the same native wall node and scene history, never a shadow mesh. */
+    public synchronized void setWallOpening(String nodeId,double offset,double width,double clearHeight){
+        if(nodeId==null||!nodeId.startsWith(WALL_PREFIX))
+            throw new IllegalArgumentException("Expected authored structural wall node");
+        String id=nodeId.substring(WALL_PREFIX.length());
+        int index=-1;
+        for(int i=0;i<walls.size();i++)if(walls.get(i).id().equals(id)){index=i;break;}
+        if(index<0)throw new IllegalArgumentException("Unknown native structural wall");
+        var next=walls.get(index).withOpening(offset,width,clearHeight);
+        if(next.equals(walls.get(index)))return;
+        var candidate=new ArrayList<>(walls);
+        candidate.set(index,next);
+        validateWalls(source,candidate,props);
+        walls.set(index,next);
+        revision++;
+    }
     public synchronized void removeWall(String nodeId){
         if(nodeId==null||!nodeId.startsWith(WALL_PREFIX))
             throw new IllegalArgumentException("Expected stable structural wall node ID");
@@ -544,11 +560,17 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                     "depth",Double.toString(entry.getValue()))))));
         }
         for(var wall:state.walls()){
-            var fields=Map.of("room",Integer.toString(wall.room()),
+            var fields=new java.util.LinkedHashMap<String,String>(Map.of(
+                "room",Integer.toString(wall.room()),
                 "x0",Double.toString(wall.x0()),"z0",Double.toString(wall.z0()),
                 "x1",Double.toString(wall.x1()),"z1",Double.toString(wall.z1()),
                 "base",Double.toString(wall.base()),"height",Double.toString(wall.height()),
-                "thickness",Double.toString(wall.thickness()),"material",Integer.toString(wall.material()));
+                "thickness",Double.toString(wall.thickness()),"material",Integer.toString(wall.material())));
+            if(wall.hasOpening()){
+                fields.put("cutOffset",Double.toString(wall.cutOffset()));
+                fields.put("cutWidth",Double.toString(wall.cutWidth()));
+                fields.put("cutHeight",Double.toString(wall.cutHeight()));
+            }
             document.replace(new RuntimeScene.Node(WALL_PREFIX+wall.id(),"Native structural wall",
                 null,"architecture",RuntimeScene.Transform.identity(),
                 List.of(new RuntimeScene.Component(MissionStructuralWall.COMPONENT,fields))));
@@ -630,15 +652,22 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
                         !node.transform().equals(RuntimeScene.Transform.identity()))
                         throw new IllegalArgumentException("Unsupported native structural wall record");
                     var props=node.components().get(0).properties();
-                    if(!props.keySet().equals(java.util.Set.of("room","x0","z0","x1","z1",
-                        "base","height","thickness","material")))
+                    var original=java.util.Set.of("room","x0","z0","x1","z1",
+                        "base","height","thickness","material");
+                    var apertured=new java.util.HashSet<>(original);
+                    apertured.addAll(java.util.Set.of("cutOffset","cutWidth","cutHeight"));
+                    boolean hasCut=props.keySet().equals(apertured);
+                    if(!hasCut&&!props.keySet().equals(original))
                         throw new IllegalArgumentException("Unsupported structural wall properties");
                     var wall=new MissionStructuralWall(node.id().substring(WALL_PREFIX.length()),
                         Integer.parseInt(props.get("room")),Double.parseDouble(props.get("x0")),
                         Double.parseDouble(props.get("z0")),Double.parseDouble(props.get("x1")),
                         Double.parseDouble(props.get("z1")),Double.parseDouble(props.get("base")),
                         Double.parseDouble(props.get("height")),Double.parseDouble(props.get("thickness")),
-                        Integer.parseInt(props.get("material")));
+                        Integer.parseInt(props.get("material")),
+                        hasCut?Double.parseDouble(props.get("cutOffset")):0,
+                        hasCut?Double.parseDouble(props.get("cutWidth")):0,
+                        hasCut?Double.parseDouble(props.get("cutHeight")):0);
                     walls.add(wall);
                 }catch(RuntimeException bad){
                     throw new IOException("Invalid native structural wall "+node.id(),bad);
@@ -764,7 +793,7 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
         }
         for(Prop p:added)collision.addAll(LevelPlans.propColliders(source,p));
         var sockets=new ArrayList<>(effectiveFloorSockets(source,floorDepths));
-        for(var wall:walls){collision.add(wall.body());sockets.add(wall.socket());}
+        for(var wall:walls){collision.addAll(wall.bodies());sockets.add(wall.socket());}
         return new LevelDefinition(source.id(),source.revision(),source.title(),
             source.rooms(),effectivePortals(source,widths),source.stairs(),effectiveVoids(source,stairExtensions),
             List.copyOf(edited),sockets,collision,source.dock(),
