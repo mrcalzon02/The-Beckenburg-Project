@@ -289,6 +289,11 @@ public final class EditorAgentMissionWallTest {
                 &&Math.abs(nativeDoor.z()-wall.cz())<1e-8
                 &&Math.abs(nativeDoor.width()-.8)<1e-8,
                 "The actual game receives a dimension-matched same-zone native door portal");
+            check(Math.abs(MissionStructuralWall.doorLeafHeight(doorMap.level(),nativeDoor)-1.92)<1e-8,
+                "Door rendering and interaction scale to the physical 1.92m lintel opening");
+            check(doorMap.level().sockets().stream().anyMatch(socket->
+                socket.id().equals(nodeId)&&socket.style().split(":",-1).length==8),
+                "Native wall socket retains the paired door ID and actual clear height");
             check(!doorMap.traversable(wall.cx(),wall.base(),wall.cz()),
                 "Closed physical door blocks the standing game capsule");
             doorMap.toggleDoor(doorId);

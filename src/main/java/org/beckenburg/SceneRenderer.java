@@ -2616,8 +2616,12 @@ public final class SceneRenderer {
             boolean moving=p.door()&&map.doorMoving(p.id());
             int pose=moving?Math.max(0,Math.min(16,(int)Math.round(opening*16))):0;
             if(moving)opening=pose/16.0;
+            double doorHeight=p.door()?MissionStructuralWall.doorLeafHeight(map.level(),p):2.28;
             Object key=moving?new DoorPoseGeometryKey(p,pose):
                 new PortalGeometryKey(p,map.doorOpen(p.id()),map.windowOpen(p.id()));
+            // Changes to the wall lintel can change door mesh height without
+            // changing the portal position. Include that height in its cache key.
+            if(doorHeight!=2.28)key=List.of(key,doorHeight);
             List<Face> geometry=authoredFixtureGeometry.get(key);
             if(geometry==null){
                 List<Face> part=new ArrayList<>();
@@ -2626,8 +2630,8 @@ public final class SceneRenderer {
                     double hx=p.x()+(p.alongX()?p.width()/2:0),hz=p.z()+(p.alongX()?0:p.width()/2);
                     double leaf=p.width()>1.5?p.width()/2:p.width();
                     double swing=opening*Math.PI/2;
-                    imported(part,"door_1_loose",hx,p.y(),hz,leaf,2.28/2.1,1,angle+swing);
-                    if(p.width()>1.5)imported(part,"door_1_loose",p.x()-(p.alongX()?p.width()/2:0),p.y(),p.z()-(p.alongX()?0:p.width()/2),leaf,2.28/2.1,1,angle+Math.PI-swing);
+                    imported(part,"door_1_loose",hx,p.y(),hz,leaf,doorHeight/2.1,1,angle+swing);
+                    if(p.width()>1.5)imported(part,"door_1_loose",p.x()-(p.alongX()?p.width()/2:0),p.y(),p.z()-(p.alongX()?0:p.width()/2),leaf,doorHeight/2.1,1,angle+Math.PI-swing);
                     if(p.kind().equals("gate"))for(double t=-p.width()/2;t<=p.width()/2;t+=.15)
                         box(part,p.x()+(p.alongX()?t:0)-.015,p.y(),p.z()+(p.alongX()?0:t)-.015,.03,2.3,.03,0x77797a);
                 }else if(p.kind().equals("window")){
@@ -2655,7 +2659,7 @@ public final class SceneRenderer {
                 // These boxes match MissionStructuralWall.bodies() exactly,
                 // including the empty lower doorway and the solid upper lintel.
                 String[] shape=s.style().split(":",-1);
-                if(shape.length!=4&&shape.length!=7)
+                if(shape.length!=4&&shape.length!=7&&shape.length!=8)
                     throw new IllegalArgumentException("Invalid native structural wall packet");
                 double length=Double.parseDouble(shape[0]),thickness=Double.parseDouble(shape[1]),
                     height=Double.parseDouble(shape[2]);
@@ -2673,7 +2677,8 @@ public final class SceneRenderer {
                     // visual-only cut or divergent body geometry.
                     new MissionStructuralWall(s.id().substring(MissionStructuralWall.NODE_PREFIX.length()),
                         s.room(),0,0,length,0,s.y(),height,thickness,material,
-                        offset,width,clearHeight);
+                        offset,width,clearHeight,
+                        shape.length==8?Integer.parseInt(shape[7]):-1);
                     double leftEnd=offset-width/2,rightStart=offset+width/2;
                     texturedBox(local,-length/2,0,-thickness/2,leftEnd+length/2,
                         height,thickness,material);

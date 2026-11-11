@@ -133,7 +133,19 @@ public record MissionStructuralWall(String id,int room,double x0,double z0,doubl
     Socket socket(){
         String style=length()+":"+thickness+":"+height+":"+material;
         if(hasOpening())style+=":"+cutOffset+":"+cutWidth+":"+cutHeight;
+        if(hasDoor())style+=":"+doorPortalId;
         return new Socket(NODE_PREFIX+id,SOCKET_TYPE,room,cx(),base,cz(),yaw(),style);
+    }
+    /** Source-backed native door opening height. Legacy doors keep their
+     * original 2.28m model scale, while new wall doors fit below the lintel.
+     * The same value drives rendering AND aimed interaction hit testing. */
+    static double doorLeafHeight(LevelDefinition level,Portal door){
+        for(var socket:level.sockets())if(socket.type().equals(SOCKET_TYPE)){
+            String[] fields=socket.style().split(":",-1);
+            if(fields.length==8&&Integer.toString(door.id()).equals(fields[7]))
+                return Double.parseDouble(fields[6]);
+        }
+        return 2.28;
     }
     void validate(LevelDefinition source,List<MissionStructuralWall> previous){
         if(room<0||room>=source.rooms().size())

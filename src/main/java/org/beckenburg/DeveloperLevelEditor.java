@@ -271,6 +271,7 @@ public final class DeveloperLevelEditor extends JPanel {
     private volatile boolean editorClosed;
     private final JCheckBox navBlocked=new JCheckBox("Block player navigation here");
     private final JButton doorSockets=button("DOOR SOCKETS…");
+    private final JButton missionWallOpening=button("WALL CUT…");
     private final JLabel status=new JLabel("WASD fly  •  Q/E altitude  •  Mouse drag look  •  Wheel forward/back  •  Ctrl+S save");
     private final JTextArea navInfo=new JTextArea(6,25);
     private final Set<Integer> keys=new HashSet<>();
@@ -699,14 +700,17 @@ public final class DeveloperLevelEditor extends JPanel {
         for(JSpinner input:new JSpinner[]{x,y,z,yaw,scale,width,depth,radius,power,surfaceHeight})
             input.addChangeListener(e->applySelection());
         panel.add(fields,BorderLayout.CENTER);
-        JPanel actions=new JPanel(new GridLayout(1,4,4,0));
+        JPanel actions=new JPanel(new GridLayout(1,5,4,0));
         JButton here=button("PLACE AHEAD"),remove=button("REMOVE"),addLight=button("ADD LIGHT");
         JButton duplicate=button("DUPLICATE");
         duplicate.addActionListener(e->duplicate());
         here.addActionListener(e->placeAhead());
         remove.addActionListener(e->remove());
         addLight.addActionListener(e->addLamp());
+        missionWallOpening.setToolTipText("Native wall cut and optional operable door in the same game scene");
+        missionWallOpening.addActionListener(e->editMissionWallOpening());
         actions.add(here);actions.add(remove);actions.add(addLight);actions.add(duplicate);
+        actions.add(missionWallOpening);
         panel.add(actions,BorderLayout.SOUTH);
         return panel;
     }
@@ -811,6 +815,38 @@ public final class DeveloperLevelEditor extends JPanel {
         String id="custom"+System.nanoTime();
         operate(()->data.placePaletteProp(id,mesh,aheadX,renderer.eyeHeight>3?CastleHubArchitecturalPlan.GROUND_CEILING:0,aheadZ));
         refresh();selectId("PROP",id);
+    }
+    /** Human/editor and agent share exactly the same validated transaction,
+     * game collision, renderer and serialized wall/door authority. */
+    private void editMissionWallOpening(){
+        if(mission==null||chosen==null||!chosen.kind.equals("MISSION_WALL")){
+            status.setText("Select a native mission wall before editing its opening");return;
+        }
+        var wall=mission.walls().stream()
+            .filter(w->(MissionStructuralWall.NODE_PREFIX+w.id()).equals(chosen.id))
+            .findFirst().orElse(null);
+        if(wall==null){status.setText("Selected mission wall no longer exists");return;}
+        String nodeId=chosen.id;
+        JTextField offset=new JTextField(Double.toString(wall.cutOffset()));
+        JTextField width=new JTextField(Double.toString(wall.hasOpening()?wall.cutWidth():.8));
+        JTextField height=new JTextField(Double.toString(wall.hasOpening()?wall.cutHeight():1.92));
+        JComboBox<String> leaf=new JComboBox<>(new String[]{"Open passage","Operable door"});
+        leaf.setSelectedIndex(wall.hasDoor()?1:0);
+        var fields=new JPanel(new GridLayout(0,2,4,4));
+        fields.add(new JLabel("Offset along wall (m)"));fields.add(offset);
+        fields.add(new JLabel("Clear width (m; 0 seals)"));fields.add(width);
+        fields.add(new JLabel("Clear height (m; 0 seals)"));fields.add(height);
+        fields.add(new JLabel("Leaf"));fields.add(leaf);
+        if(JOptionPane.showConfirmDialog(window,fields,"Mission wall aperture",
+                JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE)!=JOptionPane.OK_OPTION)return;
+        operate(()->{
+            double x=Double.parseDouble(offset.getText().trim());
+            double w=Double.parseDouble(width.getText().trim());
+            double h=Double.parseDouble(height.getText().trim());
+            mission.setWallOpening(nodeId,x,w,h);
+            mission.setWallDoor(nodeId,leaf.getSelectedIndex()==1);
+        });
+        refresh();
     }
     private void addLamp(){
         if(mission!=null){status.setText("Castle-only fixture; mission lighting must use level sockets");return;}
@@ -1012,6 +1048,7 @@ public final class DeveloperLevelEditor extends JPanel {
     }
     private void updateNav(){
         doorSockets.setEnabled(mission==null);
+        missionWallOpening.setEnabled(mission!=null);
         if(mission!=null){
             navInfo.setText("LEVEL  "+mission.title()
                 +"\nAuthoritative game scene: "+mission.documentPath()
