@@ -100,6 +100,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         if(!HollowCreekLevel.is(session.sourceLevel())){
             ops.add("resize-door");
             ops.add("place-wall");
+            ops.add("extend-wall");
             ops.add("remove-wall");
             ops.add("set-floor-depth");
             ops.add("extend-stair-opening");
@@ -115,6 +116,8 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
     private static final Map<String,String> DUPLICATE_FIELDS=MOVE_FIELDS;
     private static final Map<String,String> REMOVE_FIELDS=Map.of("id","string");
     private static final Map<String,String> DOOR_FIELDS=Map.of("id","integer","width","number");
+    private static final Map<String,String> EXTEND_WALL_FIELDS=Map.of("id","string","anchor","string",
+        "endpoint","string","turn","string","length","number");
     private static final Map<String,String> FLOOR_FIELDS=Map.of("room","integer","depth","number");
     private static final Map<String,String> STAIR_FIELDS=Map.of("stairId","integer","extension","number");
     private static final Map<String,String> WALL_FIELDS=Map.ofEntries(
@@ -132,6 +135,7 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
         if(!HollowCreekLevel.is(session.sourceLevel())){
             result.put("resize-door",DOOR_FIELDS);
             result.put("place-wall",WALL_FIELDS);
+            result.put("extend-wall",EXTEND_WALL_FIELDS);
             result.put("remove-wall",REMOVE_FIELDS);
             result.put("set-floor-depth",FLOOR_FIELDS);
             result.put("extend-stair-opening",STAIR_FIELDS);
@@ -252,6 +256,39 @@ public final class LevelEditorAgent implements EditorAgentService.Host<LevelAuth
                     Integer.parseInt(args.get("room")),number(args,"x0"),number(args,"z0"),
                     number(args,"x1"),number(args,"z1"),number(args,"base"),
                     number(args,"height"),number(args,"thickness"),Integer.parseInt(args.get("material"))));
+            }
+            case "extend-wall" -> {
+                if(!args.keySet().equals(EXTEND_WALL_FIELDS.keySet()))
+                    throw new IllegalArgumentException("Expected new wall ID, existing wall anchor, START/END, LEFT/RIGHT/STRAIGHT and length");
+                var parent=session.walls().stream().filter(w->
+                    (MissionStructuralWall.NODE_PREFIX+w.id()).equals(args.get("anchor")))
+                    .findFirst().orElseThrow(()->new IllegalArgumentException("Unknown native wall anchor"));
+                boolean start=switch(args.get("endpoint")){
+                    case "START" -> true;
+                    case "END" -> false;
+                    default -> throw new IllegalArgumentException("Endpoint must be START or END");
+                };
+                double length=number(args,"length");
+                if(length<.75||length>4)
+                    throw new IllegalArgumentException("Wall extension must be 0.75..4m");
+                double dx=parent.x1()-parent.x0(),dz=parent.z1()-parent.z0();
+                double span=Math.hypot(dx,dz);
+                double ux=dx/span,uz=dz/span;
+                if(start){ux=-ux;uz=-uz;}
+                double vx,vz;
+                switch(args.get("turn")){
+                    case "STRAIGHT" -> {vx=ux;vz=uz;}
+                    case "LEFT" -> {vx=-uz;vz=ux;}
+                    case "RIGHT" -> {vx=uz;vz=-ux;}
+                    default -> throw new IllegalArgumentException("Turn must be LEFT, RIGHT or STRAIGHT");
+                }
+                double x=start?parent.x0():parent.x1(),z=start?parent.z0():parent.z1();
+                // Endpoints inherit all source geometry attributes, so their
+                // native collider seams share an EXACT anchor, not planner-
+                // guessed tolerances or a second hidden coordinate frame.
+                session.placeWall(new MissionStructuralWall(args.get("id"),parent.room(),
+                    x,z,x+vx*length,z+vz*length,parent.base(),parent.height(),
+                    parent.thickness(),parent.material()));
             }
             case "remove-wall" -> {
                 if(!args.keySet().equals(REMOVE_FIELDS.keySet()))

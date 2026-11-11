@@ -87,7 +87,7 @@ public final class EditorAgentMissionWallTest {
             var service=new EditorAgentService<>(new LevelEditorAgent(session,
                 ()->new HouseMap(site,session.level()),renderer,()->{}),
                 new EditorHistory<>(session,60));
-            check(service.summary().operations().containsAll(List.of("place-wall","remove-wall")),
+            check(service.summary().operations().containsAll(List.of("place-wall","extend-wall","remove-wall")),
                 "Native mission agent advertises actual partition construction and deletion");
             long before=session.revision();
             var beforeState=session.snapshot();
@@ -165,9 +165,15 @@ public final class EditorAgentMissionWallTest {
             // Both solids must be native renderer/collider objects, not a
             // decorative screen mesh or separate agent-only scene.
             var corner=findJoin(session,wall);
+            boolean start=Math.abs(corner.x0()-wall.x0())<1e-8;
+            boolean goesPositiveZ=corner.z1()>corner.z0();
+            String turn=(start==goesPositiveZ)?"RIGHT":"LEFT";
+            var exactExtension=Map.of("id",corner.id(),"anchor",nodeId,
+                "endpoint",start?"START":"END","turn",turn,
+                "length",Double.toString(Math.abs(corner.z1()-corner.z0())));
             service.transact(session.revision(),List.of(
                 new EditorAgentService.Command("place-wall",place(wall)),
-                new EditorAgentService.Command("place-wall",place(corner))));
+                new EditorAgentService.Command("extend-wall",exactExtension)));
             check(session.walls().equals(List.of(wall,corner)),
                 "Atomic native agent batch creates two physically joined wall segments");
             var nativeJoined=new HouseMap(site,session.level());
@@ -194,6 +200,12 @@ public final class EditorAgentMissionWallTest {
                 wall.cx(),wall.z0()-.55,wall.cx(),wall.z0()+.55,
                 wall.base(),wall.height(),wall.thickness(),wall.material());
             rejects(()->service.transact(session.revision(),"place-wall",place(crossing)));
+            rejects(()->service.transact(session.revision(),"extend-wall",Map.of(
+                "id","test-invalid-turn","anchor",nodeId,"endpoint","START",
+                "turn","BACKWARD","length","1.2")));
+            rejects(()->service.transact(session.revision(),"extend-wall",Map.of(
+                "id","test-invalid-span","anchor",nodeId,"endpoint","END",
+                "turn","LEFT","length","12")));
             check(session.snapshot().equals(jointState),
                 "Misaligned and crossing runs are rejected atomically, preserving the joint");
             // Undo the construction transaction BEFORE reopen, which is
