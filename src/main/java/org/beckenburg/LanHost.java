@@ -2008,12 +2008,12 @@ public final class LanHost implements AutoCloseable {
             // The ghost hears a nearby physical voice, including somebody speaking
             // into a radio. The ghost cannot listen to the RADIO broadcast itself.
             if(speaker.room()>=0&&speaker.room()<HouseMap.EXTRACTION_ROOM){
-                var spectral=ghostPose.pose();
+                var spectralPose=ghostPose.pose();
                 int attenuation=LanAcoustics.costAt(map,ghost.room(),
-                    new LevelDefinition.Vec(spectral.x(),spectral.y(),spectral.z()),
+                    new LevelDefinition.Vec(spectralPose.x(),spectralPose.y(),spectralPose.z()),
                     speaker.room(),new LevelDefinition.Vec(speaker.x(),speaker.y(),speaker.z()));
-                double range=Math.hypot(Math.hypot(speaker.x()-spectral.x(),
-                                        speaker.z()-spectral.z()),speaker.y()-spectral.y());
+                double range=Math.hypot(Math.hypot(speaker.x()-spectralPose.x(),
+                                        speaker.z()-spectralPose.z()),speaker.y()-spectralPose.y());
                 if(attenuation<=3&&range<=9){
                     Peer spectral=seats[GHOST_SEAT];
                     if(spectral!=null&&spectral.ghostWorldMode)
