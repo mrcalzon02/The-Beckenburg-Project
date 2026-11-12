@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-355 — GPU solo smoke falsely fails after retirement of GamePanel and obsolete startup counters
+
+**Status:** test source repaired and pushed; exact-source GPU native and full launch acceptance pending · **Affected:** gpu-client GpuUiSmoke (Castle -> solo -> shared-LAN hunter -> van retreat -> Castle), all default smoke sites
+
+In exact-source GPU run 43179085546 the standalone OpenGL geometry/lighting/resident-VBO checks and eleven-map residency review succeeded, but the UI stage reported 'solo.deploy was invoked but no live GamePanel appeared' and produced only a CSV header, with no persisted failure screenshot.
+
+Cause / uncertainty: The acceptance harness still searched for a retired '$GamePanel' nested class. Current solo returns a real LanWorldPanel. Subsequent reflective reads referenced retired scene, initialFrameReady, prewarmGpu* and session fields, and its VK_X/glass-pane exit flow was no longer the physical host-authoritative van-door action.
+
+Fix / next action: GpuUiSmoke now discovers LanWorldPanel and actual map/renderer/opening/frameCount; gates on first real cinematic preview and GPU readback; verifies physical hunter movement, authenticated VANDOOR/RESULT|RETREATED, and the registered return-to-Castle handler; emits case-stage and native failure capture if a case cannot start. Keep actual multi-site Mesa and installed Windows checks; do not weaken GPU or multiplayer functional gates.
+
+Evidence and verification: Baseline failed Mesa job in https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43179085546 and artifact https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43179085546/artifacts/13925468541. Source commits edb17ece56186bcd561f305730934a8c530ecdd9 and 2f83b2fadfc9834781efd189f3751618afd4f5ae (latter fixes package-private cinematic access); exact-source GPU https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43258886439 pending. Do not interpret older passed Windows LAN startup as Mesa GPU-UI acceptance.
+
+Older-map obligation: The shared GPU UI smoke cycles House, Farmhouse and School. Verify each actual launch, movement, extraction and return individually; Castle and the other map types have separate native residency checks. Windows hardware FPS and headphones remain outside Mesa acceptance.
+
 ### DEV-354 — Blackpine editor snapshot disagreed with live stairwell landing aperture
 
 **Status:** source/snapshot synchronized; editor save/reopen and installed visual verification pending · **Affected:** Blackpine mill loft serialized development definition and live mission geometry
@@ -149,6 +163,7 @@ Fix / next action: Add a shared critically damped camera transition, retain inde
 Evidence and verification: development/quality/evidence/crouch-smoothing-2026-11-04/: CrouchCameraTest, expanded real TCP CrouchNetworkTest, low-ceiling/sprint/feet checks, hunter animation gameplay, Castle interaction and sprite floor regressions.
 
 Older-map obligation: Shared player camera paths cover investigation sites and Castle; physical posture dimensions and movement rules remain unchanged.
+
 ### DEV-276 — Closing Beckenburg leaves hidden GPU worker and Java process alive
 
 **Status:** SOURCE FIX COMMITTED; Java child-process regression and installed Windows GPU exit acceptance pending · **Affected:** Normal desktop Exit, main window X, Castle gate, solo pause Exit, GPU launcher and auxiliary water editor, interactive DEV asset showroom and headless DEV room captures
@@ -627,15 +642,15 @@ Older-map obligation: Inspect brackets, fixture backs and circuit access at ever
 
 ### DEV-007 — Added slab blocks final stair approach
 
-**Status:** fixed-scoped — 378/378 regression plus native renderer review and installer published; physical multiplayer review pending · **Affected:** Blackpine mill stair; introduced during DEV-001 fix
+**Status:** fixed-scoped · **Affected:** Blackpine mill stair; introduced during DEV-001 fix
 
-The complete advisory manifest for source `7951f049` ran 377 tests, 376 passed, and `BlackpineGrayboxTest` still failed at ascent step **110**.
+Exact-source full manifest at 7951f049 failed at stair ascent step 110 (376 passed, 1 failed), despite prior partial stair fixes.
 
-Cause: The actual loft deck opening stopped at Z=31.30. At step 110 the player centre reaches Z=31.10; the 0.22m capsule radius overlaps solid deck while feet remain 0.25m below it, before the strictly bounded terminal-stair exception applies. A collision waiver cannot repair a geometrically premature floor edge.
+Cause / uncertainty: Authored loft floor void ended at Z31.30; at step 110 the capsule centre reaches Z31.10 and its 0.22m radius enters solid slab while feet remain 0.25m beneath the deck and beyond the permitted terminal contact band.
 
-Construction correction: Extend the actual authored void to Z=31.60, ten centimetres beyond the top of the rising stair (Z=31.50), retain solid loft deck beyond Z=31.60 and keep the physical railing. Preserve narrow real-stair-only landing contact; add a direct step-110 guard, bidirectional 120-step route, off-stair negative, and native scene-renderer captures.
+Fix / next action: Extend the real visual and physical loft aperture to Z31.60 (10cm beyond ramp end), retain intact deck beyond it, and preserve narrow stair-owned collision exception and railing. Add direct step-110 and bidirectional proof plus native renderer captures.
 
-Evidence and verification: [Full-round 43145009915](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43145009915) passed as a workflow but its advisory suite reported 376/377, with this defect the only failure. Corrective source [c2810734](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/c2810734140cf76fc9cf07b9f0d3d9029acf469b) has now **PASSED the exact-source focused Blackpine stair and native renderer stage** in [run 43148970756](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43148970756). The tests traverse ascent/descent, assert off-stair solidity and genuine stair opening, and generate two actual game-camera image files. The same [run 43148970756](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43148970756) has since completed **378/378 passed, zero failures/skips**, including real Windows executable startup. The repeat [run 43157419417](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43157419417) passed its exact-source stair stage and uploaded [small original native screenshots (artifact 13916144218)](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43157419417/artifacts/13916144218). Those actual renderer views were retrieved and inspected: the timber stairs, supporting rails and loft opening are visible, though quite dark. The complete corrected code was published in [Beckenburg v0.1.319](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.319), whose immutable tag resolves to tested source `6ce17c0c`. **Physical two-PC player walkthrough and in-headset ghost hearing remain unverified**; older-map and production readiness acceptance are still open.
+Evidence and verification: Exact-source main c2810734 full-round run 43148970756 PASS: 378/378 advisory regressions, zero skipped/failures, real 120-step bidirectional ascent/descent, solid off-stair floor, renderer proof, packaged TCP and installed Windows native executable. Repeat native screenshots in run 43157419417 targeted PASS; independently retrieved and visually reviewed PNG artifact 13916144218 (stair approach, railings, loft opening, overhead landing; scene is very dark). v0.1.319 tag points exactly to 6ce17c0c and includes the geometry correction; installer run 43157419403 SUCCESS. Physical two-Windows-PC player navigation/headphone review remains open; this is a scoped correction only.
 
 Older-map obligation: Every structural-depth retrofit must recheck both stair directions and landing transitions.
 

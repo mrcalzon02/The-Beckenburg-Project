@@ -1,5 +1,11 @@
 # Codex A–G execution checkpoint log
 
+## 2026-11-12 — GPU solo UI acceptance source repair / cold-frame debt
+
+- Baseline `5216f206`, [Mesa run 43179085546](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43179085546): source GPU compile and Windows package succeeded; Mesa's real OpenGL scene, flashlight, resident-VBO, map residency, and continuous-route tests passed. The GPU-first UI test failed after `solo.deploy` because it looked for the retired `$GamePanel`, not the current `LanWorldPanel`. Artefact 13925468541 contains genuine graphics results but only a CSV header for case loops; **no solo GPU case acceptance** was achieved. No root-cause renderer failure was shown by these logs.
+- Source `edb17ece` replaced stale panel/fields and added actual GPU readback, hunter movement, authenticated van door `RESULT|RETREATED`, return-to-Castle, and failure evidence. Initial CI compile exposed package-private `LevelOpeningCinematic` visibility; source [`2f83b2fa`](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/2f83b2fadfc9834781efd189f3751618afd4f5ae) corrected the boundary. [Exact-source renderer 43258886439](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43258886439) **PENDING**.
+- Actual Mesa llvmpipe profiling from baseline: van cold `3261.94ms` (3104.54ms CPU GPU-geometry/light preparation; 278,058 shadow rays), warm identical view `51.47ms` (0 shadow rays, 46,566 cache hits), House continuous route `p95 125.596ms` over 33 samples. Distinguish cold cache fill from interactive warm performance; no performance improvement claimed yet. Next work: exact-source live UI acceptance, matched cold-frame samples under production GPU settings, then optimize source/influence selection without invalidating light leakage or doors.
+
 This record is the per-project progress ledger for the FINISH plan. Update **after each verified commit**; never backfill "passed" from an unrelated SHA.
 
 ## Scheduled follow-up checkpoint (2026-10-29)
