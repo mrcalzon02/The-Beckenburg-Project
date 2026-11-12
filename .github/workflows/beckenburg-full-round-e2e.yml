@@ -74,6 +74,15 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.LanVoiceHostIntegrationTest
           if errorlevel 1 exit /b 1
+      - name: Inspect Blackpine mill stair and capture native in-game views (advisory)
+        continue-on-error: true
+        shell: cmd
+        timeout-minutes: 5
+        run: |
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.BlackpineGrayboxTest
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.BlackpineStairVisualTest
+          if errorlevel 1 exit /b 1
       - name: Diagnose full regression manifest (advisory; not a release gate)
         continue-on-error: true
         shell: cmd
