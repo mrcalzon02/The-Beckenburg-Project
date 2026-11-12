@@ -2,6 +2,25 @@ name: Ship Beckenburg Windows Installer
 on:
   push:
     branches: [main]
+    # Installer binaries must not be reissued for recovery notes, galleries,
+    # screenshots or website-only revisions. A mixed code+docs push still runs.
+    paths-ignore:
+      - 'AGENTS.md'
+      - 'README.md'
+      - 'RELEASES.md'
+      - 'IMPLEMENTATION_SLICE.md'
+      - 'docs/**'
+      - 'development/RECOVERY_PLAN_2026-10-25.md'
+      - 'development/gallery/**'
+      - 'development/levels/previews/**'
+      - 'development/quality/evidence/**'
+      - 'beckenburg-development-gallery.html'
+      - 'beckenburg-asset-libraries.html'
+      - 'index.html'
+      - 'beckenburg.html'
+      - 'styles.css'
+      - 'workspace-landing.css'
+      - '.nojekyll'
   workflow_dispatch:
 
 permissions:
