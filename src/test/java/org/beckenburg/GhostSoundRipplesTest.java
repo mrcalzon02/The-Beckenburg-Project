@@ -82,7 +82,8 @@ public final class GhostSoundRipplesTest {
             source.x(),source.y(),source.z(),45,GhostSoundProfile.chat(2));
         var extendedChat=new GhostSoundRipples.Ripple(LanGhostPursuit.Sound.CHAT,
             source.x(),source.y(),source.z(),45,GhostSoundProfile.chat(80));
-        var shortWaves=new GhostSoundRipples(),longWaves=new GhostSoundRipples();
+        var shortWaves=new GhostSoundRipples();
+        var longWaves=new GhostSoundRipples();
         shortWaves.accept(brief,45,now);longWaves.accept(extendedChat,45,now);
         long late=now+2_850_000_000L;
         BufferedImage longScene=new BufferedImage(480,300,BufferedImage.TYPE_INT_RGB);
