@@ -102,6 +102,45 @@ public final class ArchitecturalLightOcclusionAllocationParityTest {
         System.out.println("PASS architectural shadow differential "+map.level().id()
             +" "+state+" 3200 rays ("+clear+" clear, "+blocked+" blocked)");
     }
+    /** Include grazing and near-coplanar samples: pruning a room must not
+     * change any real slab, wall, door or window shadow at tolerance edges. */
+    private static void boundaryParity(HouseMap map,Random random,String state){
+        List<Vec> probes=new ArrayList<>(endpoints(map));
+        double delta=1e-6;
+        for(Room r:map.level().rooms())if(!r.outside()){
+            double x=(r.x0()+r.x1())/2,z=(r.z0()+r.z1())/2,y=r.y()+1.4;
+            for(double offset:new double[]{-HALF-delta,-HALF+delta,
+                    -delta,0,delta,HALF-delta,HALF+delta}){
+                probes.add(new Vec(r.x0()+offset,y,z));
+                probes.add(new Vec(r.x1()+offset,y,z));
+                probes.add(new Vec(x,y,r.z0()+offset));
+                probes.add(new Vec(x,y,r.z1()+offset));
+                probes.add(new Vec(x,r.y()+offset,z));
+                probes.add(new Vec(x,r.y()+r.height()-.04+offset,z));
+            }
+        }
+        for(var hole:map.level().voids()){
+            double midX=(hole.x0()+hole.x1())/2,midZ=(hole.z0()+hole.z1())/2;
+            for(double offset:new double[]{-delta,0,delta}){
+                probes.add(new Vec(hole.x0()+offset,hole.y()+.04,midZ));
+                probes.add(new Vec(hole.x1()+offset,hole.y()-.04,midZ));
+                probes.add(new Vec(midX,hole.y()+.04,hole.z0()+offset));
+                probes.add(new Vec(midX,hole.y()-.04,hole.z1()+offset));
+            }
+        }
+        for(int i=0;i<500;i++){
+            Vec from=probes.get(random.nextInt(probes.size()));
+            Vec to=i%37==0?from:probes.get(random.nextInt(probes.size()));
+            boolean want=legacy(map,from.x(),from.y(),from.z(),to.x(),to.y(),to.z());
+            boolean got=ArchitecturalLightOcclusion.architecturalClear(map,
+                from.x(),from.y(),from.z(),to.x(),to.y(),to.z());
+            if(want!=got)throw new AssertionError("Ray broadphase tolerance mismatch "
+                +map.level().id()+" "+state+" case "+i+" "+from+" -> "+to
+                +" expected="+want+" got="+got);
+        }
+        System.out.println("PASS architectural shadow broadphase tolerance "
+            +map.level().id()+" "+state+" 500 near-edge rays");
+    }
     private static void indexMatchesOriginalPortalOwnership(HouseMap map){
         for(int room=0;room<map.level().rooms().size();room++){
             final int owner=room;
@@ -118,13 +157,16 @@ public final class ArchitecturalLightOcclusionAllocationParityTest {
         indexMatchesOriginalPortalOwnership(map);
         var random=new Random(0xB3CC61EEL+seed);
         check(map,random,"closed");
+        boundaryParity(map,random,"closed");
         var doors=map.level().portals().stream().filter(p->p.door()).limit(2).toList();
         if(!doors.isEmpty()){
             map.toggleDoor(doors.get(0).id());
             check(map,random,"first-door-open");
+            boundaryParity(map,random,"first-door-open");
             if(doors.size()>1){
                 map.toggleDoor(doors.get(1).id());
                 check(map,random,"two-doors-open");
+                boundaryParity(map,random,"two-doors-open");
             }
         }
     }
@@ -136,6 +178,7 @@ public final class ArchitecturalLightOcclusionAllocationParityTest {
         exercise(new HouseMap(HouseMap.Site.MANSION),5);
         exercise(BlackpineLevel.map(),6);
         System.out.println("PASS allocation-free architectural shadow parity: "
-            +"cross-storey slabs, real apertures and actual door states");
+            +"cross-storey slabs, real apertures, real door states and "
+            +"conservative ray-bounds pruning");
     }
 }

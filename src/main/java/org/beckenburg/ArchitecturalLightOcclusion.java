@@ -31,7 +31,19 @@ public final class ArchitecturalLightOcclusion {
         return value;
     }
     public static boolean architecturalClear(HouseMap map,double ax,double ay,double az,double bx,double by,double bz){
+        // Conservative segment/room broadphase. Every possible deck hit lies
+        // within the room's XZ rectangle; every wall hit lies within its
+        // WALL_HALF_THICKNESS-expanded bounds and vertical room extent.
+        // If a segment cannot overlap that volume, none of the original
+        // ordered narrow-phase tests can reject it. Never approximate a
+        // doorway, stair void, light leak or visibility result here.
+        double minX=Math.min(ax,bx),maxX=Math.max(ax,bx);
+        double minY=Math.min(ay,by),maxY=Math.max(ay,by);
+        double minZ=Math.min(az,bz),maxZ=Math.max(az,bz);
         for(var r:map.level().rooms())if(!r.outside()){
+            if(maxX<r.x0()-HALF-1e-7||minX>r.x1()+HALF+1e-7
+                    ||maxZ<r.z0()-HALF-1e-7||minZ>r.z1()+HALF+1e-7
+                    ||maxY<r.y()-1e-7||minY>r.y()+r.height()+1e-7)continue;
             // This is the cold shadow-ray hot path: millions of rays can
             // visit every room. Iterate the same two planes without creating
             // a new double[2] for each room on each ray.
