@@ -56,18 +56,18 @@ public final class DeckSlabs {
             Room room=level.room(socket.room());
             double depth=thickness(level,room),top=room.y(),bottom=top-depth;
             if(depth<=0||feetY>=top-.02||feetY+bodyHeight<=bottom+.02)continue;
-            // At the last rising tread the capsule's radial footprint may
-            // overlap the first centimetres of the intact landing. Permit
-            // only a source-owned stair transition, within 6.5 cm vertically
-            // of the deck top, when a genuine authored floor Void already
-            // exposes the central stair. This cannot clear a wall, another
-            // storey, a missing landing opening or a distant approach.
+            // Within the last 20 cm of a real riser, the capsule's 22 cm
+            // radial footprint necessarily crosses the first intact deck
+            // cells before the feet reach the landing. Permit that narrow
+            // overlap only while the body is on a source-authored stair,
+            // supported by its actual sloped surface, inside the real deck
+            // aperture. A nearby unsupported player still collides with it.
             boolean terminalTransition=level.floorVoid(x,top,z)&&
                 level.stairs().stream().anyMatch(stair->
                     stair.b()==room.id()&&Math.abs(stair.y1()-top)<.025
                     &&stair.contains(x,z,radius)
                     &&Math.abs(stair.yAt(x,z)-feetY)<.035
-                    &&feetY>=top-.065&&feetY<=top+.015);
+                    &&feetY>=top-.205&&feetY<=top+.015);
             if(terminalTransition)continue;
             for(double[] offset:new double[][]{{0,0},{radius,0},{-radius,0},{0,radius},{0,-radius}})
                 if(solid(level,room,x+offset[0],z+offset[1]))return true;
@@ -94,7 +94,7 @@ public final class DeckSlabs {
      * authored stair onto the deck. This grants no passage through other edges. */
     public static boolean landingContact(LevelDefinition l,Collider c,double x,double y,double z){
         double top=c.y()+c.height();
-        if(c.yaw()!=0||top-y<0||top-y>.20)return false;
+        if(c.yaw()!=0||top-y<0||top-y>.205||!l.floorVoid(x,top,z))return false;
         for(var s:l.sockets())if(s.type().equals("deck_slab")&&Math.abs(l.room(s.room()).y()-top)<.0001
                 &&Math.abs(Double.parseDouble(s.style())-c.height())<.0001)
             for(var stair:l.stairs())if(stair.b()==s.room()&&stair.contains(x,z,0)
