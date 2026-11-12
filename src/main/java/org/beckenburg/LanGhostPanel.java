@@ -150,11 +150,11 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 if(hearingEnabled()&&cue.tick()>=lastHearingTick&&cue.tick()>=tick-18){
                     hearing=cue;lastHearingTick=cue.tick();
                     LanSound.Cue sound=switch(cue.source()){
-                        case FOOTSTEP->LanSound.Cue.FOOTFALL;
+                        case FOOTSTEP,EMOTE->LanSound.Cue.FOOTFALL;
                         case DOOR->LanSound.Cue.DOOR;
                         case EQUIPMENT->LanSound.Cue.EQUIPMENT;
                         case RITUAL->LanSound.Cue.RITUAL;
-                        case VOICE->LanSound.Cue.WHISPER;
+                        case CHAT,VOICE->LanSound.Cue.WHISPER;
                     };
                     int pan=switch(cue.direction()){
                         case LEFT->-75;case RIGHT->75;case AHEAD,BEHIND,HERE->0;
@@ -162,6 +162,8 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                     int volume=switch(cue.strength()){
                         case FAINT->30;case NEAR->58;case LOUD->86;
                     };
+                    volume=Math.max(1,Math.min(100,
+                        (int)Math.round(volume*cue.profile().intensity()/55.0)));
                     audio.playHeard(new LanSound.CueEvent(sound,pan,volume,cue.tick()));
                 }
             }else if(p.get(0).equals("GRIPPLE")){
@@ -290,7 +292,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     public String automaticAction(){return lastAutomaticAction;}
     public boolean isCaptured(){return mouseLook.captured();}
     public String currentHearing(){
-        return hearingFade.gain()>.02&&hearing!=null&&tick<=hearing.tick()+18?hearing.caption():"";
+        return hearingFade.gain()>.02&&hearing!=null
+            &&tick<=hearing.tick()+Math.max(18,hearing.profile().durationTicks())
+                ?hearing.caption():"";
     }
     @Override public void keyPressed(KeyEvent e){
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}

@@ -1786,8 +1786,33 @@ public final class LanHost implements AutoCloseable {
                     }
                     // The physical act of speaking creates a coarse ghost hearing cue,
                     // but the ghost receives neither transcript nor speaker identity.
-                    recordSound(peer.slot,LanGhostPursuit.Sound.VOICE);
+                    recordSound(peer.slot,LanGhostPursuit.Sound.CHAT,
+                        GhostSoundProfile.chat(message.length()));
                     reply(peer,"ACCEPT|SAY|"+channel);
+                }
+                case "EMOTE" -> {
+                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=3)
+                        throw new IllegalArgumentException("hunter world emote required");
+                    HunterEmote action=HunterEmote.valueOf(p.get(1));
+                    acceptHunterSequence(peer,LanProtocol.sequence(p.get(2)));
+                    ensureActiveHunter(peer);
+                    if(tick-peer.lastEmoteTick<8)
+                        throw new IllegalArgumentException("emote cooling down");
+                    peer.lastEmoteTick=tick;
+                    LanWorld.Body actor=world.body(peer.slot);
+                    for(int i=0;i<HUNTERS;i++){
+                        Peer recipient=seats[i];
+                        if(recipient==null||!recipient.worldMode)continue;
+                        LanWorld.Body observer=world.body(i);
+                        double distance=Math.hypot(Math.hypot(actor.x()-observer.x(),
+                            actor.z()-observer.z()),actor.y()-observer.y());
+                        if(i==peer.slot||(actor.room()==observer.room()&&distance<=8
+                            &&map.clearLineOfSight(actor.x(),actor.y()+1.1,actor.z(),
+                                observer.x(),observer.y()+1.1,observer.z())))
+                            reply(recipient,"EMOTE|"+peer.slot+"|"+action+"|"+tick);
+                    }
+                    recordSound(peer.slot,LanGhostPursuit.Sound.EMOTE);
+                    reply(peer,"ACCEPT|EMOTE|"+action);
                 }
                 case "NOTE" -> {
                     if(!running||peer.slot==GHOST_SEAT||p.size()!=4)
@@ -2030,7 +2055,15 @@ public final class LanHost implements AutoCloseable {
             }
         }
     }
-    private void recordSound(int seat,LanGhostPursuit.Sound type){recordSound(seat,type,null);}
+    private void recordSound(int seat,LanGhostPursuit.Sound type){
+        recordSound(seat,type,null,GhostSoundProfile.forSound(type));
+    }
+    private void recordSound(int seat,LanGhostPursuit.Sound type,LanSound.Cue cue){
+        recordSound(seat,type,cue,GhostSoundProfile.forSound(type));
+    }
+    private void recordSound(int seat,LanGhostPursuit.Sound type,GhostSoundProfile.Profile profile){
+        recordSound(seat,type,null,profile);
+    }
     /** The handheld box, not an omnipresent ghost, produces this spoken sample.
      * Its real physical location determines listeners and live recorder capture.
      * Audio never grants proof or reveals hidden entity coordinates. */
@@ -2061,15 +2094,19 @@ public final class LanHost implements AutoCloseable {
             reply(actor,new LanSound.CueEvent(cue,0,Math.min(100,cue.baseGain),tick).frame());
     }
     /** Host owns the sound source and ghost hearing stimulus; cue picks only its texture. */
-    private void recordSound(int seat,LanGhostPursuit.Sound type,LanSound.Cue selectedCue){
+    private void recordSound(int seat,LanGhostPursuit.Sound type,LanSound.Cue selectedCue,
+                             GhostSoundProfile.Profile profile){
         LanWorld.Body body=world.body(seat);
-        // These are the same real synthesized game sounds played by listeners.
-        // Raw voice packets use their own media path and are not replaced with invented speech.
-        if(type!=LanGhostPursuit.Sound.VOICE&&(type!=LanGhostPursuit.Sound.FOOTSTEP
-                ||tick-lastHunterSound[seat]>=4)){
+        // Chat and live voice use ghost cues but never invent speech PCM for
+        // other hunters; actual voice packets continue through the UDP relay.
+        if(type==LanGhostPursuit.Sound.CHAT||type==LanGhostPursuit.Sound.VOICE)
+            sensorSound(body.room(),body.x(),body.z(),Math.max(1,profile.intensity()/12));
+        if(type!=LanGhostPursuit.Sound.VOICE&&type!=LanGhostPursuit.Sound.CHAT
+                &&(type!=LanGhostPursuit.Sound.FOOTSTEP
+                    ||tick-lastHunterSound[seat]>=4)){
             lastHunterSound[seat]=tick;
             LanSound.Cue cue=selectedCue!=null?selectedCue:switch(type){
-                case FOOTSTEP->LanSound.stepCue(map,body.room());
+                case FOOTSTEP,EMOTE->LanSound.stepCue(map,body.room());
                 case DOOR->LanSound.Cue.DOOR;
                 case RITUAL->LanSound.Cue.RITUAL;
                 default->LanSound.Cue.EQUIPMENT;
@@ -2097,7 +2134,7 @@ public final class LanHost implements AutoCloseable {
         try{heard=LanAcoustics.audibleAt(map,ghost.room(),
             new LevelDefinition.Vec(spectral.x(),spectral.y(),spectral.z()),
             hunterRooms[seat],new LevelDefinition.Vec(body.x(),body.y(),body.z()),
-            type,weather.state());}
+            type,weather.state(),profile);}
         finally{aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HEARING,acousticStart);}
         // Only a human ghost player loses hearing while moving. AI ghosts
         // and autonomous Twins keep their existing physical hearing behavior.
@@ -2110,10 +2147,10 @@ public final class LanHost implements AutoCloseable {
             if(!frenzy.active()&&frenzy.phase()==GhostFrenzy.Phase.CALM){
                 switch(type){
                     case RITUAL -> frenzy.provoke(18);
-                    case VOICE -> frenzy.provoke(6);
+                    case VOICE,CHAT -> frenzy.provoke(6);
                     case EQUIPMENT -> frenzy.provoke(3);
                     case DOOR -> frenzy.provoke(2);
-                    case FOOTSTEP -> { /* ordinary movement is not a guaranteed provocation */ }
+                    case FOOTSTEP,EMOTE -> { /* quiet movement and emotes do not guarantee provocation */ }
                 }
             }
         }
@@ -2121,14 +2158,14 @@ public final class LanHost implements AutoCloseable {
             ai.heard(spectral,hunterRooms[seat],body.x(),body.y(),body.z(),type,tick);
         }else if(heard&&seats[GHOST_SEAT]!=null&&seats[GHOST_SEAT].ghostWorldMode){
             LanGhostHearing.Event cue=LanGhostHearing.project(map,spectral,
-                    hunterRooms[seat],body.x(),body.z(),type,tick);
+                    hunterRooms[seat],body.x(),body.z(),type,tick,profile);
             if(cue!=null&&(type!=LanGhostPursuit.Sound.FOOTSTEP
                     ||tick-lastGhostFootstepCueTick[seat]>=4)){
                 reply(seats[GHOST_SEAT],cue.frame());
                 // Event-only source position, visible through walls, never
                 // a continuous BODY or TEAMMAP stream for a silent hunter.
                 reply(seats[GHOST_SEAT],
-                    new GhostSoundRipples.Ripple(type,body.x(),body.y(),body.z(),tick).frame());
+                    new GhostSoundRipples.Ripple(type,body.x(),body.y(),body.z(),tick,profile).frame());
                 if(type==LanGhostPursuit.Sound.FOOTSTEP)lastGhostFootstepCueTick[seat]=tick;
             }
         }
@@ -3225,7 +3262,7 @@ public final class LanHost implements AutoCloseable {
         long lastGhostPoseSequence=-1,lastGhostActionSequence=-1;
         long pingSentNanos;
         int expectedPongTick=-1,lastPongTick;
-        int lastMonitorTick=-100000,lastChatTick=-100000,lastLightTick=-100000;
+        int lastMonitorTick=-100000,lastChatTick=-100000,lastEmoteTick=-100000,lastLightTick=-100000;
         long lastLobbyChatNanos;
         Peer(Socket s,Reader in,Writer out,int slot,String name){
             socket=s;input=in;output=out;this.slot=slot;this.name=name;

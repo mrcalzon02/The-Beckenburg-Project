@@ -53,6 +53,35 @@ public final class LanGhostHearingIntegrationTest {
             ok(GhostSoundRipples.Ripple.decode(g.await("GRIPPLE|EQUIPMENT|"),new HouseMap())
                 .kind()==LanGhostPursuit.Sound.EQUIPMENT,
                 "The real hunter tool emits a source-anchored sound ring");
+            a.client.emote(HunterEmote.WAVE);
+            a.await("ACCEPT|EMOTE|WAVE");
+            var gesture=LanGhostHearing.decode(g.await("GHEAR|EMOTE|"));
+            ok(gesture.profile().equals(GhostSoundProfile.forSound(
+                LanGhostPursuit.Sound.FOOTSTEP)),
+                "Host-accepted hunter emote has walking-level strength and duration");
+            var gestureRing=GhostSoundRipples.Ripple.decode(g.await("GRIPPLE|EMOTE|"),
+                new HouseMap());
+            ok(gestureRing.profile().equals(gesture.profile()),
+                "Genuine emote yields a transient sound-source ripple");
+            a.client.say(LanChat.Channel.LOCAL,"hi");
+            a.await("ACCEPT|SAY|LOCAL");
+            var shortChat=LanGhostHearing.decode(g.await("GHEAR|CHAT|"));
+            var shortRing=GhostSoundRipples.Ripple.decode(g.await("GRIPPLE|CHAT|"),
+                new HouseMap());
+            ok(shortChat.profile().equals(GhostSoundProfile.chat(2))
+                &&shortRing.profile().equals(shortChat.profile()),
+                "Short local chat is low-strength and time-bounded");
+            Thread.sleep(750); // Six host ticks between accepted text messages.
+            String speech="This is a substantially longer investigator message for the ghost";
+            a.client.say(LanChat.Channel.RADIO,speech);
+            a.await("ACCEPT|SAY|RADIO");
+            var longChat=LanGhostHearing.decode(g.await("GHEAR|CHAT|"));
+            var longRing=GhostSoundRipples.Ripple.decode(g.await("GRIPPLE|CHAT|"),
+                new HouseMap());
+            ok(longChat.profile().intensity()>shortChat.profile().intensity()
+                &&longChat.profile().durationTicks()>shortChat.profile().durationTicks()
+                &&longRing.profile().equals(longChat.profile()),
+                "Long radio text affects local source strength without leaking its text");
             g.client.ghostStep(100,0);
             g.await("ACCEPT|GSTEP");g.await("GLISTEN|0|");
             // A ghost cannot forge its own audible source or request
@@ -61,6 +90,8 @@ public final class LanGhostHearingIntegrationTest {
             g.await("REJECT|unknown command");
             g.client.send("GHEAR|RITUAL|LEFT|LOUD|20");
             g.await("REJECT|unknown command");
+            g.client.send("EMOTE|WAVE|99999");
+            g.await("REJECT|hunter world emote required");
             ok(server.running(),"forged cue cannot change mission");
             System.out.println("PASS: four-socket ghost hearing and real source ripples, move-to-mute host control, bounded sound packets, no hunter BODY leakage or forged ripple authority");
         }

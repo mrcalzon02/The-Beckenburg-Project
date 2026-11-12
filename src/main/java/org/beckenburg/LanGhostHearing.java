@@ -10,33 +10,52 @@ public final class LanGhostHearing {
     private LanGhostHearing() { }
     public enum Direction { AHEAD, RIGHT, BEHIND, LEFT, HERE }
     public enum Strength { FAINT, NEAR, LOUD }
-    public record Event(LanGhostPursuit.Sound source, Direction direction, Strength strength, int tick) {
+    public record Event(LanGhostPursuit.Sound source, Direction direction, Strength strength,
+                        int tick,GhostSoundProfile.Profile profile) {
+        public Event(LanGhostPursuit.Sound source,Direction direction,Strength strength,int tick){
+            this(source,direction,strength,tick,GhostSoundProfile.forSound(source));
+        }
         public Event {
-            Objects.requireNonNull(source);
-            Objects.requireNonNull(direction);
-            Objects.requireNonNull(strength);
+            Objects.requireNonNull(source);Objects.requireNonNull(direction);
+            Objects.requireNonNull(strength);Objects.requireNonNull(profile);
             if(tick<0||tick>99999999)throw new IllegalArgumentException("invalid ghost hearing tick");
         }
-        public String frame(){return "GHEAR|"+source+"|"+direction+"|"+strength+"|"+tick;}
+        public String frame(){
+            String base="GHEAR|"+source+"|"+direction+"|"+strength+"|"+tick;
+            return profile.equals(GhostSoundProfile.forSound(source))?base:
+                base+"|"+profile.intensity()+"|"+profile.durationTicks();
+        }
         public String caption(){
             String category=switch(source){
-                case FOOTSTEP->"FOOTSTEPS";case DOOR->"DOOR MOVEMENT";
-                case EQUIPMENT->"EQUIPMENT";case RITUAL->"RITUAL ACTIVITY";case VOICE->"DISTANT VOICES";
+                case FOOTSTEP->"FOOTSTEPS";case EMOTE->"PLAYER EMOTE";
+                case DOOR->"DOOR MOVEMENT";case EQUIPMENT->"EQUIPMENT";
+                case RITUAL->"RITUAL ACTIVITY";case CHAT->"PLAYER CHAT";
+                case VOICE->"DISTANT VOICES";
             };
             return category+" / "+direction+" / "+strength;
         }
     }
     public static Event decode(String frame){
         List<String> parts=LanProtocol.parts(frame);
-        if(parts.size()!=5||!parts.get(0).equals("GHEAR"))
+        if((parts.size()!=5&&parts.size()!=7)||!parts.get(0).equals("GHEAR"))
             throw new IllegalArgumentException("invalid hearing event");
-        return new Event(LanGhostPursuit.Sound.valueOf(parts.get(1)),
-            Direction.valueOf(parts.get(2)),Strength.valueOf(parts.get(3)),
-            LanProtocol.integer(parts.get(4),0,99999999));
+        LanGhostPursuit.Sound kind=LanGhostPursuit.Sound.valueOf(parts.get(1));
+        GhostSoundProfile.Profile profile=parts.size()==5
+            ?GhostSoundProfile.forSound(kind)
+            :new GhostSoundProfile.Profile(LanProtocol.integer(parts.get(5),1,100),
+                LanProtocol.integer(parts.get(6),1,GhostSoundProfile.MAX_DURATION_TICKS));
+        return new Event(kind,Direction.valueOf(parts.get(2)),Strength.valueOf(parts.get(3)),
+            LanProtocol.integer(parts.get(4),0,99999999),profile);
     }
     public static Event project(HouseMap map,LanGhostSpatial.Pose ghost,int sourceRoom,
                                 double sourceX,double sourceZ,LanGhostPursuit.Sound kind,int tick){
-        if(map==null||ghost==null||kind==null||tick<0||tick>99999999
+        return kind==null?null:project(map,ghost,sourceRoom,sourceX,sourceZ,kind,tick,
+            GhostSoundProfile.forSound(kind));
+    }
+    public static Event project(HouseMap map,LanGhostSpatial.Pose ghost,int sourceRoom,
+                                double sourceX,double sourceZ,LanGhostPursuit.Sound kind,int tick,
+                                GhostSoundProfile.Profile profile){
+        if(map==null||ghost==null||kind==null||profile==null||tick<0||tick>99999999
             ||ghost.room()<0||ghost.room()>=HouseMap.EXTRACTION_ROOM
             ||sourceRoom<0||sourceRoom>=HouseMap.EXTRACTION_ROOM
             ||ghost.heading()<0||ghost.heading()>359
@@ -50,7 +69,7 @@ public final class LanGhostHearing {
             new LevelDefinition.Vec(ghost.x(),ghost.y(),ghost.z()),sourceRoom,
             new LevelDefinition.Vec(sourceX,
                 map.groundHeight(sourceX,sourceZ,sourceRoom),sourceZ));
-        if(absorption>kind.budget)return null;
+        if(absorption>GhostSoundProfile.acousticBudget(kind,profile))return null;
         double dx=sourceX-ghost.x(),dz=sourceZ-ghost.z();
         double distance=Math.hypot(dx,dz),heading=Math.toRadians(ghost.heading());
         double forward=dx*Math.sin(heading)+dz*Math.cos(heading);
@@ -60,7 +79,10 @@ public final class LanGhostHearing {
                 ?(forward>=0?Direction.AHEAD:Direction.BEHIND)
                 :(right>=0?Direction.RIGHT:Direction.LEFT);
         Strength loudness=absorption==0&&distance<3?Strength.LOUD
-            :absorption>=kind.budget||distance>7?Strength.FAINT:Strength.NEAR;
-        return new Event(kind,bearing,loudness,tick);
+            :absorption>=GhostSoundProfile.acousticBudget(kind,profile)||distance>7
+                ?Strength.FAINT:Strength.NEAR;
+        if(kind==LanGhostPursuit.Sound.CHAT&&profile.intensity()<42
+                &&loudness==Strength.LOUD)loudness=Strength.NEAR;
+        return new Event(kind,bearing,loudness,tick,profile);
     }
 }

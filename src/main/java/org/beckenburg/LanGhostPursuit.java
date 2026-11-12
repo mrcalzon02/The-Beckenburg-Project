@@ -10,8 +10,8 @@ import java.util.Random;
  * dispatcher and LanGhostSpatial step method remain the only ways to move/affect the world.
  */
 public final class LanGhostPursuit {
-    public enum Sound { FOOTSTEP(1, 25), DOOR(4, 55), EQUIPMENT(4, 55),
-        VOICE(3, 45), RITUAL(8, 85);
+    public enum Sound { FOOTSTEP(1, 25), EMOTE(1, 25), DOOR(4, 55),
+        EQUIPMENT(4, 55), CHAT(3, 45), VOICE(3, 45), RITUAL(8, 85);
         final int budget, lifetime;
         Sound(int budget, int lifetime) { this.budget=budget;this.lifetime=lifetime; }
     }

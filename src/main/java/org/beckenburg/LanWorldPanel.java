@@ -251,7 +251,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private void submitChat(){
         String message=chatInput.getText();
         try{
-            client.say(chatChannel,message);
+            HunterEmote action=HunterEmote.fromCommand(message);
+            if(action!=null)client.emote(action);
+            else client.say(chatChannel,message);
             closeChat();
         }catch(IOException|IllegalArgumentException error){
             feedback="CHAT REJECTED: "+error.getMessage();
@@ -359,6 +361,15 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }else if(p.get(0).equals("CHAT")){
                 LanChat.Entry line=LanChat.Entry.decode(frame);
                 chatHistory.addLast(line);
+                if(chatHistory.size()>28)chatHistory.removeFirst();
+                chatVisibleUntil=tick+75;
+            }else if(p.size()==4&&p.get(0).equals("EMOTE")){
+                // Hunter-only local feedback; ghost gets just its sound ripple.
+                int who=LanProtocol.integer(p.get(1),0,5);
+                HunterEmote action=HunterEmote.valueOf(p.get(2));
+                int at=LanProtocol.integer(p.get(3),0,99999999);
+                chatHistory.addLast(new LanChat.Entry(LanChat.Channel.LOCAL,
+                    who,at,"* "+action.verb()));
                 if(chatHistory.size()>28)chatHistory.removeFirst();
                 chatVisibleUntil=tick+75;
             }else if(p.size()==2&&p.get(0).equals("EVIDENCELEVEL")){
@@ -1540,7 +1551,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         g.setColor(new Color(203,214,218));
         g.drawString(chatInput.isVisible()?
             ("CHAT / "+chatChannel+"  / ENTER SEND  ESC CANCEL"):
-            "TEAM COMMS / ENTER TEXT / TAB CHANNEL",x+9,y-5);
+            "TEAM COMMS / TEXT OR /WAVE /POINT /SHRUG /LAUGH",x+9,y-5);
         for(LanChat.Entry line:chatHistory){
             if(index++<start)continue;
             String author=line.seat()==seat?"YOU":

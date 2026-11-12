@@ -78,6 +78,26 @@ public final class GhostSoundRipplesTest {
         for(int i=0;i<original.length;i++)if(original[i]!=withWave[i])difference++;
         check(difference>=80,"Actual 3D door scene needs clearly visible through-wall sound rings");
         check(effect.size()==1,"Only one source event is stored, not a persistent hunter body");
+        var brief=new GhostSoundRipples.Ripple(LanGhostPursuit.Sound.CHAT,
+            source.x(),source.y(),source.z(),45,GhostSoundProfile.chat(2));
+        var extendedChat=new GhostSoundRipples.Ripple(LanGhostPursuit.Sound.CHAT,
+            source.x(),source.y(),source.z(),45,GhostSoundProfile.chat(80));
+        var shortWaves=new GhostSoundRipples(),longWaves=new GhostSoundRipples();
+        shortWaves.accept(brief,45,now);longWaves.accept(extendedChat,45,now);
+        long late=now+2_850_000_000L;
+        BufferedImage longScene=new BufferedImage(480,300,BufferedImage.TYPE_INT_RGB);
+        Graphics2D drawn=longScene.createGraphics();
+        drawn.drawImage(camera.image(),0,0,480,300,null);
+        shortWaves.draw(drawn,camera,480,300,late);
+        check(shortWaves.size()==0,"Brief chat ripples expire promptly");
+        longWaves.draw(drawn,camera,480,300,late);
+        drawn.dispose();
+        check(!Arrays.equals(pixels(before),pixels(longScene)),
+            "Long accepted chat visibly sustains waves after short chat has faded");
+        var decodedExtended=GhostSoundRipples.Ripple.decode(extendedChat.frame(),map);
+        check(decodedExtended.profile().equals(extendedChat.profile())
+                &&decodedExtended.frame().split("\\|",-1).length==8,
+            "Bounded intensity/duration survives wire without raw chat content");
         BufferedImage expired=new BufferedImage(480,300,BufferedImage.TYPE_INT_RGB);
         Graphics2D done=expired.createGraphics();
         done.drawImage(camera.image(),0,0,480,300,null);
@@ -95,6 +115,7 @@ public final class GhostSoundRipplesTest {
         Files.createDirectories(output);
         ImageIO.write(before,"png",output.resolve("closed-door-before.png").toFile());
         ImageIO.write(after,"png",output.resolve("ghost-sound-ripples-through-closed-door.png").toFile());
+        ImageIO.write(longScene,"png",output.resolve("long-chat-sustained-ripples.png").toFile());
         System.out.println("PASS ghost sound rings: source event wire, real hidden door, x-ray 3D world projection, visible expanding circles, expiry, bounded memory and privacy");
     }
 }

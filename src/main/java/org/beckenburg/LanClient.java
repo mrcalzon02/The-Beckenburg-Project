@@ -230,6 +230,10 @@ public final class LanClient implements AutoCloseable {
         Objects.requireNonNull(channel);
         send("SAY|"+channel+"|"+LanChat.clean(message)+"|"+(++sequence));
     }
+    public synchronized void emote(HunterEmote action)throws IOException{
+        Objects.requireNonNull(action);
+        send("EMOTE|"+action+"|"+(++sequence));
+    }
     public synchronized void note(GhostFieldGuide.Clue clue,FieldJournal.Status status)throws IOException{
         Objects.requireNonNull(clue);Objects.requireNonNull(status);
         send("NOTE|"+clue+"|"+status+"|"+(++sequence));

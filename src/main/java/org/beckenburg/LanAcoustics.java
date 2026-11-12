@@ -75,12 +75,19 @@ public final class LanAcoustics {
                                     LevelDefinition.Vec listener,int sourceRoom,
                                     LevelDefinition.Vec source,LanGhostPursuit.Sound sound,
                                     MissionWeather.State weather){
-        if(sound==null||weather==null||!valid(map,listenerRoom)||!valid(map,sourceRoom))
-            return false;
+        return sound!=null&&audibleAt(map,listenerRoom,listener,sourceRoom,source,
+            sound,weather,GhostSoundProfile.forSound(sound));
+    }
+    public static boolean audibleAt(HouseMap map,int listenerRoom,
+                                    LevelDefinition.Vec listener,int sourceRoom,
+                                    LevelDefinition.Vec source,LanGhostPursuit.Sound sound,
+                                    MissionWeather.State weather,GhostSoundProfile.Profile profile){
+        if(sound==null||weather==null||profile==null
+                ||!valid(map,listenerRoom)||!valid(map,sourceRoom))return false;
         int masking=weather.noiseMask()/4;
         if(map.outside(listenerRoom)||map.outside(sourceRoom))masking*=2;
         return costAt(map,listenerRoom,listener,sourceRoom,source)
-            <=Math.max(0,sound.budget-masking);
+            <=Math.max(0,GhostSoundProfile.acousticBudget(sound,profile)-masking);
     }
     private static int route(HouseMap map,int from,int to,boolean includeVan){
         if(!valid(map,from)||!valid(map,to)||!includeVan&&
