@@ -32,6 +32,14 @@ public final class BlackpineGrayboxTest {
             "off-stair capsule remains blocked by real upper-deck structure");
         check(!DeckSlabs.blocksRay(l,stair.x1(),stair.y1()-.08,nearLanding),
             "actual stair opening remains optically open, not a decorative hole");
+        // Near the final tread centre, the body's front touches intact deck
+        // before the sole reaches the upper Y. Support and void adjacency both
+        // authorize this, whereas the off-stair negative remains blocked.
+        double lastRampZ=stair.z0()+(stair.z1()-stair.z0())*118/120.;
+        double lastRampY=stair.yAt(stair.x0(),lastRampZ);
+        check(!DeckSlabs.blocksBody(l,stair.x0(),lastRampY,lastRampZ,
+                HunterPosture.STANDING_HEIGHT,.22),
+            "supported final riser is clear across the deck aperture lip");
         for(int i=119;i>=0;i--){double t=i/120.;at=map.resolveMove(at,stair.x0()+(stair.x1()-stair.x0())*t,stair.z0()+(stair.z1()-stair.z0())*t);check(at!=null,"mill stair continuously supports descent "+i);}
         System.out.println("PASS: Blackpine dimensions, sparse refuge, physical doors, spawns, three rites and supported mill stairs");
     }

@@ -43,6 +43,27 @@ public final class DeckSlabs {
         }
         return List.copyOf(out);
     }
+    /** During the final tread the player capsule overlaps the solid landing
+     * before its feet can rise to deck height. The exception is confined to a
+     * genuine authored stair, its supporting ramp, and its immediately adjacent
+     * floor opening (18 cm rearward, not a free pass through the deck).
+     */
+    private static boolean stairLandingContact(LevelDefinition level,Room room,
+                                               double x,double feetY,double z,double radius){
+        double top=room.y();
+        if(feetY<top-.205||feetY>top+.015)return false;
+        for(Stair stair:level.stairs()){
+            if(stair.b()!=room.id()||Math.abs(stair.y1()-top)>.025
+                    ||!stair.contains(x,z,radius)
+                    ||Math.abs(stair.yAt(x,z)-feetY)>=.035)continue;
+            double dx=stair.x1()-stair.x0(),dz=stair.z1()-stair.z0();
+            double length=Math.hypot(dx,dz);
+            if(length>.01&&(level.floorVoid(x,top,z)
+                    ||level.floorVoid(x-.18*dx/length,top,z-.18*dz/length)))
+                return true;
+        }
+        return false;
+    }
     /**
      * Actual body collision against the same authored deck thickness and
      * physical cutout cells consumed by levelDeck(). No decorative-only floor.
@@ -62,12 +83,8 @@ public final class DeckSlabs {
             // overlap only while the body is on a source-authored stair,
             // supported by its actual sloped surface, inside the real deck
             // aperture. A nearby unsupported player still collides with it.
-            boolean terminalTransition=level.floorVoid(x,top,z)&&
-                level.stairs().stream().anyMatch(stair->
-                    stair.b()==room.id()&&Math.abs(stair.y1()-top)<.025
-                    &&stair.contains(x,z,radius)
-                    &&Math.abs(stair.yAt(x,z)-feetY)<.035
-                    &&feetY>=top-.205&&feetY<=top+.015);
+            boolean terminalTransition=stairLandingContact(
+                level,room,x,feetY,z,radius);
             if(terminalTransition)continue;
             for(double[] offset:new double[][]{{0,0},{radius,0},{-radius,0},{0,radius},{0,-radius}})
                 if(solid(level,room,x+offset[0],z+offset[1]))return true;
@@ -94,11 +111,11 @@ public final class DeckSlabs {
      * authored stair onto the deck. This grants no passage through other edges. */
     public static boolean landingContact(LevelDefinition l,Collider c,double x,double y,double z){
         double top=c.y()+c.height();
-        if(c.yaw()!=0||top-y<0||top-y>.205||!l.floorVoid(x,top,z))return false;
-        for(var s:l.sockets())if(s.type().equals("deck_slab")&&Math.abs(l.room(s.room()).y()-top)<.0001
-                &&Math.abs(Double.parseDouble(s.style())-c.height())<.0001)
-            for(var stair:l.stairs())if(stair.b()==s.room()&&stair.contains(x,z,0)
-                    &&Math.abs(stair.yAt(x,z)-y)<.025&&Math.abs(stair.y1()-top)<.0001)return true;
+        if(c.yaw()!=0||top-y<0||top-y>.205)return false;
+        for(var s:l.sockets())if(s.type().equals("deck_slab")
+                &&Math.abs(l.room(s.room()).y()-top)<.0001
+                &&Math.abs(Double.parseDouble(s.style())-c.height())<.0001
+                &&stairLandingContact(l,l.room(s.room()),x,y,z,.22))return true;
         return false;
     }
 }
