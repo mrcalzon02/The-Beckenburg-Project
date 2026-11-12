@@ -2127,7 +2127,7 @@ public final class LanHost implements AutoCloseable {
         }
         if(twinCompanion!=null)
             twinCompanion.heard(hunterRooms[seat],body.x(),body.y(),body.z(),
-                type,tick,weather.state());
+                type,tick,weather.state(),profile);
         long acousticStart=aiDiagnostics.begin();
         boolean heard;
         var spectral=ghostPose.pose();
@@ -2155,7 +2155,7 @@ public final class LanHost implements AutoCloseable {
             }
         }
         if(heard&&seats[GHOST_SEAT]==null){
-            ai.heard(spectral,hunterRooms[seat],body.x(),body.y(),body.z(),type,tick);
+            ai.heard(spectral,hunterRooms[seat],body.x(),body.y(),body.z(),type,tick,profile);
         }else if(heard&&seats[GHOST_SEAT]!=null&&seats[GHOST_SEAT].ghostWorldMode){
             LanGhostHearing.Event cue=LanGhostHearing.project(map,spectral,
                     hunterRooms[seat],body.x(),body.z(),type,tick,profile);

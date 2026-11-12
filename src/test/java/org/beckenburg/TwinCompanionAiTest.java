@@ -86,6 +86,19 @@ public final class TwinCompanionAiTest {
             }
         }
         check(testedRemoteDoor,"The authored house must expose a reachable distant door");
+        // Both twins sample their OWN authentic pose. Longer chat leaves
+        // longer curiosity; neither twin receives a persistent hunter feed.
+        var quietTwin=new TwinCompanionAi(map,primary,504L);
+        var loudTwin=new TwinCompanionAi(map,primary,504L);
+        var quietAt=quietTwin.pose();
+        var loudAt=loudTwin.pose();
+        quietTwin.heard(quietAt.room(),quietAt.x(),quietAt.y(),quietAt.z(),
+            LanGhostPursuit.Sound.CHAT,500,calm,GhostSoundProfile.chat(2));
+        loudTwin.heard(loudAt.room(),loudAt.x(),loudAt.y(),loudAt.z(),
+            LanGhostPursuit.Sound.CHAT,500,calm,GhostSoundProfile.chat(80));
+        check(quietTwin.pendingSoundExpiryTick()<loudTwin.pendingSoundExpiryTick()
+                &&quietTwin.pendingSoundExpiryTick()>500,
+            "Twin's acoustic search lifetime increases with accepted message length");
         System.out.println("PASS human Twin keeps an autonomous AI sister, real geometry, ghost activity and one shared energy authority; doors require physical approach");
     }
 }

@@ -21,7 +21,7 @@ public final class TwinCompanionAi {
     private Intent intent=Intent.PATROL;
     private double targetX,targetZ;
     private int targetRoom,goalUntil,nextGoalTick,lastStepTick=-1,lastActionTick=-1000;
-    private int lastNoiseTick=-1000,noiseRoom=-1;
+    private int lastNoiseTick=-1000,noiseRoom=-1,noiseExpiryTick=-1000;
     private double noiseX,noiseZ;
     private int lastActivityTick=-1000;
     private boolean moved;
@@ -38,6 +38,7 @@ public final class TwinCompanionAi {
 
     public LanGhostSpatial.Pose pose(){return pose;}
     public Intent intent(){return intent;}
+    int pendingSoundExpiryTick(){return noiseExpiryTick;}
     public boolean moved(){return moved;}
     public int lastActivityTick(){return lastActivityTick;}
 
@@ -51,14 +52,22 @@ public final class TwinCompanionAi {
      * not an omniscient shortcut through a shared gameplay-zone ID. */
     public void heard(int room,double x,double sourceY,double z,
                       LanGhostPursuit.Sound sound,int tick,MissionWeather.State weather){
+        heard(room,x,sourceY,z,sound,tick,weather,GhostSoundProfile.forSound(sound));
+    }
+    public void heard(int room,double x,double sourceY,double z,
+                      LanGhostPursuit.Sound sound,int tick,MissionWeather.State weather,
+                      GhostSoundProfile.Profile profile){
         Objects.requireNonNull(sound);
+        Objects.requireNonNull(profile);
         if(tick<0||!Double.isFinite(x+sourceY+z)||room<0||
             room>=HouseMap.EXTRACTION_ROOM)return;
         if(!LanAcoustics.audibleAt(map,pose.room(),
                 new LevelDefinition.Vec(pose.x(),pose.y(),pose.z()),
                 room,new LevelDefinition.Vec(x,sourceY,z),
-                sound,Objects.requireNonNull(weather)))return;
+                sound,Objects.requireNonNull(weather),profile))return;
         lastNoiseTick=tick;
+        noiseExpiryTick=tick+(sound==LanGhostPursuit.Sound.CHAT
+            ?Math.min(70,profile.durationTicks()+14):70);
         noiseRoom=room;
         noiseX=x;noiseZ=z;
         nextGoalTick=Math.min(nextGoalTick,tick);
@@ -137,7 +146,7 @@ public final class TwinCompanionAi {
         return !map.traversable(pose.x(),pose.y(),pose.z());
     }
     private void chooseGoal(int tick,LanGhostSpatial.Pose sister){
-        boolean heard=tick-lastNoiseTick<70 && noiseRoom>=0;
+        boolean heard=tick<noiseExpiryTick && noiseRoom>=0;
         if(heard&&noiseRoom==pose.room()){
             intent=Intent.INVESTIGATE;
             targetRoom=pose.room();
