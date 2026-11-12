@@ -6,11 +6,19 @@ on:
     # screenshots or website-only revisions. A mixed code+docs push still runs.
     paths-ignore:
       - 'AGENTS.md'
+      # No gameplay binary changed for a test-only, workflow-only or
+      # diagnostics-only checkpoint. Explicit workflow_dispatch remains usable.
+      - '.github/workflows/ship-installer.yml'
+      - '.github/workflows/beckenburg-full-round-e2e.yml'
+      - 'regression-tests.txt'
+      - 'src/test/**'
       - 'README.md'
       - 'RELEASES.md'
       - 'IMPLEMENTATION_SLICE.md'
       - 'docs/**'
       - 'development/RECOVERY_PLAN_2026-10-25.md'
+      - 'development/quality/defects.json'
+      - 'development/quality/DEFECT_LEDGER.md'
       - 'development/gallery/**'
       - 'development/levels/previews/**'
       - 'development/quality/evidence/**'
