@@ -24,6 +24,21 @@ public final class GhostSoundProfile {
             case RITUAL->new Profile(85,18);
         };
     }
+    /** Common host-only prioritization law for primary ghosts and Twins:
+     * architectural sound loss lowers perceived strength, and old cues decay
+     * by one point per host tick. Three-point hysteresis prevents ping-pong
+     * between competing similar sources. Never uses private body updates.
+     */
+    public static int perceived(Profile profile,int attenuation){
+        Objects.requireNonNull(profile);
+        if(attenuation<0)throw new IllegalArgumentException("negative acoustic loss");
+        return Math.max(0,profile.intensity()-12*Math.min(attenuation,9));
+    }
+    public static boolean supersedes(int newStrength,int oldStrength,int ageTicks){
+        if(newStrength<0||newStrength>100||oldStrength< -1||oldStrength>100||ageTicks<0)
+            throw new IllegalArgumentException("invalid acoustic memory comparison");
+        return oldStrength<0 || newStrength>=Math.max(0,oldStrength-Math.min(100,ageTicks))+3;
+    }
     /** Chat size affects one architectural loss unit at most. */
     public static int acousticBudget(LanGhostPursuit.Sound sound,Profile profile){
         Objects.requireNonNull(profile);int base=Objects.requireNonNull(sound).budget;

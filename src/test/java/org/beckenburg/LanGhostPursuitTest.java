@@ -38,6 +38,22 @@ public final class LanGhostPursuitTest {
         ok(spatial.pose().room()==5&&map.roomAt(spatial.pose().x(),spatial.pose().y(),spatial.pose().z())==5,
                 "AI cannot step across a room wall");
         ok(brain.memory(80)==null,"the target must expire rather than persist forever");
+        // A faint chat must NOT override a loud fresh ritual or strong voice
+        // merely because CHAT has a later enum ordinal.
+        var focusAt=map.spawn(4);
+        var focusPose=new LanGhostSpatial.Pose(4,focusAt.x(),focusAt.y(),focusAt.z(),0);
+        var prioritized=new LanGhostPursuit(map,401);
+        prioritized.heard(focusPose,4,focusAt.x(),focusAt.y(),focusAt.z(),
+            LanGhostPursuit.Sound.RITUAL,200);
+        var firstSound=prioritized.memory(200);
+        prioritized.heard(focusPose,4,focusAt.x(),focusAt.y(),focusAt.z(),
+            LanGhostPursuit.Sound.CHAT,201,GhostSoundProfile.chat(2));
+        ok(prioritized.memory(201).equals(firstSound),
+            "A faint written message cannot overwrite a recent loud ritual");
+        prioritized.heard(focusPose,4,focusAt.x(),focusAt.y(),focusAt.z(),
+            LanGhostPursuit.Sound.CHAT,211,GhostSoundProfile.chat(80));
+        ok(prioritized.memory(211).source()==LanGhostPursuit.Sound.CHAT,
+            "Recent sustained loud speech can supersede a fading prior noise");
         // Text-chat size must alter the AI's event memory, not reveal a body.
         var nearby=map.spawn(4);
         var shortChat=new LanGhostPursuit(map,401);

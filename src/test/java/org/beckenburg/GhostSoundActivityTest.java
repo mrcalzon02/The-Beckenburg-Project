@@ -26,6 +26,15 @@ public final class GhostSoundActivityTest {
         ok(voice.intensity()==GhostSoundProfile.VOICE_INTENSITY
             &&voice.durationTicks()==10,
             "Live voice audio uses one constant-strength one-second sound pulse");
+        ok(GhostSoundProfile.perceived(walking,0)==walking.intensity()
+            &&GhostSoundProfile.perceived(walking,3)<walking.intensity(),
+            "Real architectural loss reduces event strength without changing source kind");
+        ok(!GhostSoundProfile.supersedes(31,85,1)
+            &&!GhostSoundProfile.supersedes(55,85,10)
+            &&GhostSoundProfile.supersedes(85,85,10)
+            &&GhostSoundProfile.supersedes(31,85,58),
+            "Quiet new chat cannot displace fresh loud noise, but older clues decay");
+        invalid(()->GhostSoundProfile.supersedes(90,-2,0));
         ok(GhostSoundProfile.acousticBudget(LanGhostPursuit.Sound.CHAT,shortText)
             <GhostSoundProfile.acousticBudget(LanGhostPursuit.Sound.CHAT,longText),
             "Long chat has bounded greater reach than brief text");

@@ -25,6 +25,7 @@ public final class LanGhostPursuit {
     private final Random random;
     private final org.beckenburg.editor.ai.NpcAiTelemetry diagnostics;
     private Echo memory;
+    private int memoryStrength=-1;
     private Search search;
     private long sequence;
     private int eventFrequency=100;
@@ -101,15 +102,19 @@ public final class LanGhostPursuit {
         // Tile-centred estimate, NEVER a hunter-body position subscription.
         double cx=2*Math.floor(x/2)+1,cz=2*Math.floor(z/2)+1;
         Echo candidate=new Echo(sourceRoom,cx,cz,tick,tick+lifetime,kind);
-        if(memory==null||tick>=memory.expiryTick()||kind.ordinal()>=memory.source().ordinal()
-                ||memory.heardTick()+10<tick){memory=candidate;search=null;}
+        int incoming=GhostSoundProfile.perceived(profile,attenuation);
+        if(memory==null||tick>=memory.expiryTick()
+                ||GhostSoundProfile.supersedes(incoming,memoryStrength,
+                    Math.max(0,tick-memory.heardTick()))){
+            memory=candidate;memoryStrength=incoming;search=null;
+        }
     }
     /** Time-limited immutable ghost observation, not a feed of all hunter locations. */
     public Echo memory(int tick) {
         if(memory!=null && tick>=memory.expiryTick()) {
             // Searching uses the expired clue, not a live position subscription.
             Echo ended=memory;
-            memory=null;
+            memory=null;memoryStrength=-1;
             search=new Search(ended.room(),ended.approximateX(),ended.approximateZ(),
                     ended.expiryTick(),ended.expiryTick()+24);
         }
@@ -117,7 +122,7 @@ public final class LanGhostPursuit {
         return memory;
     }
     public Search search(int tick) { memory(tick);return search; }
-    public void forget(){memory=null;search=null;}
+    public void forget(){memory=null;memoryStrength=-1;search=null;}
 
     /** Choose room actions from legal host observations and a finite memory of audible events. */
     public GhostDomain.Command decide(GhostDomain.Observation seen, boolean hasSpatialVictim) {

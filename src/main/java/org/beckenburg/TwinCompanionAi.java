@@ -21,7 +21,7 @@ public final class TwinCompanionAi {
     private Intent intent=Intent.PATROL;
     private double targetX,targetZ;
     private int targetRoom,goalUntil,nextGoalTick,lastStepTick=-1,lastActionTick=-1000;
-    private int lastNoiseTick=-1000,noiseRoom=-1,noiseExpiryTick=-1000;
+    private int lastNoiseTick=-1000,noiseRoom=-1,noiseExpiryTick=-1000,noiseStrength=-1;
     private double noiseX,noiseZ;
     private int lastActivityTick=-1000;
     private boolean moved;
@@ -65,7 +65,13 @@ public final class TwinCompanionAi {
                 new LevelDefinition.Vec(pose.x(),pose.y(),pose.z()),
                 room,new LevelDefinition.Vec(x,sourceY,z),
                 sound,Objects.requireNonNull(weather),profile))return;
-        lastNoiseTick=tick;
+        int loss=LanAcoustics.costAt(map,pose.room(),
+            new LevelDefinition.Vec(pose.x(),pose.y(),pose.z()),
+            room,new LevelDefinition.Vec(x,sourceY,z));
+        int incoming=GhostSoundProfile.perceived(profile,loss);
+        if(tick<noiseExpiryTick&&!GhostSoundProfile.supersedes(
+                incoming,noiseStrength,Math.max(0,tick-lastNoiseTick)))return;
+        lastNoiseTick=tick;noiseStrength=incoming;
         noiseExpiryTick=tick+(sound==LanGhostPursuit.Sound.CHAT
             ?Math.min(70,profile.durationTicks()+14):70);
         noiseRoom=room;
