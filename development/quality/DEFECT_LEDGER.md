@@ -12,7 +12,7 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ### DEV-355 — GPU solo smoke falsely fails after retirement of GamePanel and obsolete startup counters
 
-**Status:** test source repaired and pushed; exact-source GPU native and full launch acceptance pending · **Affected:** gpu-client GpuUiSmoke (Castle -> solo -> shared-LAN hunter -> van retreat -> Castle), all default smoke sites
+**Status:** fixed-scoped; exact-source Windows GPU/native and 3-site Mesa GPU-UI cycle passed; hardware performance acceptance pending · **Affected:** gpu-client GpuUiSmoke (Castle -> solo -> shared-LAN hunter -> van retreat -> Castle), all default smoke sites
 
 In exact-source GPU run 43179085546 the standalone OpenGL geometry/lighting/resident-VBO checks and eleven-map residency review succeeded, but the UI stage reported 'solo.deploy was invoked but no live GamePanel appeared' and produced only a CSV header, with no persisted failure screenshot.
 
@@ -20,7 +20,7 @@ Cause / uncertainty: The acceptance harness still searched for a retired '$GameP
 
 Fix / next action: GpuUiSmoke now discovers LanWorldPanel and actual map/renderer/opening/frameCount; gates on first real cinematic preview and GPU readback; verifies physical hunter movement, authenticated VANDOOR/RESULT|RETREATED, and the registered return-to-Castle handler; emits case-stage and native failure capture if a case cannot start. Keep actual multi-site Mesa and installed Windows checks; do not weaken GPU or multiplayer functional gates.
 
-Evidence and verification: Baseline failed Mesa job in https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43179085546 and artifact https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43179085546/artifacts/13925468541. Source commits edb17ece56186bcd561f305730934a8c530ecdd9 and 2f83b2fadfc9834781efd189f3751618afd4f5ae (latter fixes package-private cinematic access); exact-source GPU https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43258886439 pending. Do not interpret older passed Windows LAN startup as Mesa GPU-UI acceptance.
+Evidence and verification: Confirmed exact-source GPU acceptance https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43258886439 all three jobs SUCCESS: compile-gpu-java17, windows-build (actual packaged native software-recovery executable), and opengl-mesa-smoke (real OpenGL, world residency, UI). Native 3-site GPU artifact https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43258886439/artifacts/13962993117: HOUSE 5889ms 11 frames, FARMHOUSE 9845ms 8 frames, SCHOOL 3255ms 7 frames; each moved 0.31m, GPU readback=true, host RESULT RETREATED, returned to Castle. Exact source 2f83b2fadfc9834781efd189f3751618afd4f5ae. This repairs the old false-negative smoke. Hardware FPS and other individual location checks remain open.
 
 Older-map obligation: The shared GPU UI smoke cycles House, Farmhouse and School. Verify each actual launch, movement, extraction and return individually; Castle and the other map types have separate native residency checks. Windows hardware FPS and headphones remain outside Mesa acceptance.
 
