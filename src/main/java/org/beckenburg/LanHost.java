@@ -2041,7 +2041,14 @@ public final class LanHost implements AutoCloseable {
                     speaker.room(),new LevelDefinition.Vec(speaker.x(),speaker.y(),speaker.z()));
                 double range=Math.hypot(Math.hypot(speaker.x()-spectralPose.x(),
                                         speaker.z()-spectralPose.z()),speaker.y()-spectralPose.y());
-                if(attenuation<=3&&range<=9&&ghostPose.listening(tick)){
+                // Match the exact masking used by GHEAR/GRIPPLE. A noisy
+                // storm must not relay intelligible private voice when its
+                // physical event is acoustically inaudible. Calculate the
+                // authored doorway loss only once for this 20ms audio frame.
+                int masking=weather.state().noiseMask()/4;
+                if(map.outside(ghost.room())||map.outside(speaker.room()))masking*=2;
+                int voiceReach=Math.max(0,LanGhostPursuit.Sound.VOICE.budget-masking);
+                if(attenuation<=voiceReach&&range<=9&&ghostPose.listening(tick)){
                     Peer spectral=seats[GHOST_SEAT];
                     if(spectral!=null&&spectral.ghostWorldMode)
                         voice.forward(GHOST_SEAT,seat,frame,

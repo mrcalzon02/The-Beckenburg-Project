@@ -121,11 +121,35 @@ public final class LanVoiceHostIntegrationTest {
                 int sourceId=spectral.read().seat();
                 ok(LanVoicePacket.ghostStream(sourceId),
                     "nearby ghost hears a pseudonymous voice source");
+                // The same REAL authenticated UDP frame must create one
+                // fixed-strength spectral event, never speaker metadata.
+                var voiceCue=LanGhostHearing.decode(ghost.await("GHEAR|VOICE|"));
+                ok(voiceCue.profile().intensity()==GhostSoundProfile.VOICE_INTENSITY
+                    &&voiceCue.profile().durationTicks()==10,
+                    "Real mic traffic, not push-to-talk key state, emits a fixed voice pulse");
+                var voiceRipple=GhostSoundRipples.Ripple.decode(
+                    ghost.await("GRIPPLE|VOICE|"),new HouseMap());
+                ok(voiceRipple.profile().equals(voiceCue.profile())
+                    &&voiceRipple.kind()==LanGhostPursuit.Sound.VOICE,
+                    "Authenticated live voice produces an anonymous positional ripple");
                 distant.empty();
                 speaker.emit(LanVoicePacket.AUDIO,2,LanChat.Channel.RADIO,tone);
                 ok(distant.read().seat()==1,"house radio reaches distant van");
                 ok(spectral.read().seat()==sourceId,
                     "ghost hears the same anonymous speaker across local/radio modes");
+                // Sustained real transmission produces another event after the
+                // one-second host cadence, with unchanged per-pulse intensity.
+                Thread.sleep(1250);
+                speaker.emit(LanVoicePacket.AUDIO,3,LanChat.Channel.LOCAL,tone);
+                ok(spectral.read().seat()==sourceId,
+                    "same stable ghost-only alias during continuous live voice");
+                var nextPulse=LanGhostHearing.decode(ghost.await("GHEAR|VOICE|"));
+                var nextRipple=GhostSoundRipples.Ripple.decode(
+                    ghost.await("GRIPPLE|VOICE|"),new HouseMap());
+                ok(nextPulse.profile().equals(voiceCue.profile())
+                    &&nextRipple.profile().equals(voiceRipple.profile())
+                    &&nextRipple.tick()>voiceRipple.tick(),
+                    "Longer voice usage repeats constant-level events, never increases loudness");
                 spectral.emit(LanVoicePacket.AUDIO,1,LanChat.Channel.RADIO,tone);
                 distant.empty();
             }
