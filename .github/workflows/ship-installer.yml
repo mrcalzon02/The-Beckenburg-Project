@@ -13,6 +13,7 @@ on:
       # workflow-only housekeeping; manual workflow_dispatch is preserved.
       - '.github/workflows/ship-installer.yml'
       - '.github/workflows/beckenburg-full-round-e2e.yml'
+      - '.github/workflows/development-gallery.yml'
       - 'regression-tests.txt'
       - 'src/test/**'
       - 'README.md'

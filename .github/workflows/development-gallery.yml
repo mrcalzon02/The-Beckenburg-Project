@@ -12,6 +12,7 @@ concurrency:
   cancel-in-progress: false
 permissions:
   contents: write
+  actions: read  # Read one small, previously captured native game-renderer artifact.
 jobs:
   gallery:
     runs-on: ubuntu-latest
@@ -26,6 +27,8 @@ jobs:
       - name: Rebuild and push complete gallery index for new main captures
         if: github.event_name == 'push'
         shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
@@ -35,6 +38,38 @@ jobs:
             # may have committed more evidence while this job was queued.
             git fetch origin main
             git checkout -B gallery-index-write origin/main
+            # One-time permanent archival of the ORIGINAL native renderer
+            # screenshots from the successful focused Blackpine test.
+            # Reuse this existing gallery job, not a separate workflow. Once
+            # committed, subsequent runs skip all artifact/network work.
+            proof=development/levels/previews/blackpine/ci-stair-proof-43157419417
+            if [[ ! -s "$proof/blackpine-stair-native-proof.png" ]]; then
+              staging=$(mktemp -d)
+              gh run download 43157419417 --repo "$GITHUB_REPOSITORY" \
+                --name beckenburg-blackpine-native-proof-43157419417 --dir "$staging"
+              mkdir -p "$proof"
+              for file in blackpine-stair-native-proof.png stair-ascent-real-render.png loft-landing-real-render.png; do
+                test -s "$staging/$file"
+                cp "$staging/$file" "$proof/$file"
+              done
+              cat > "$proof/README.md" <<'PROVENANCE'
+# Blackpine mill stair — original native game screenshots
+
+Source: GitHub Actions full multiplayer acceptance run 43157419417,
+exact Git source 6ce17c0cad0ea4b79e36bba4ed5b22c38068a549.
+
+These three unaltered PNGs were written by BlackpineStairVisualTest
+using the real SceneRenderer, with the same authored geometry used for
+navigation, collision, stair support, deck underside and floor opening.
+The contact sheet is an original CI output (not an illustration).
+The scene is dark. This remains a controlled renderer review, not a
+human two-PC Windows playtest or headphone/ghost-hearing acceptance.
+
+The earlier 43148970756 exact-source full regression passed 378/378.
+PROVENANCE
+              git add "$proof"
+              rm -rf "$staging"
+            fi
             python tools/build_development_gallery.py --tracked-only
             python tools/build_development_gallery.py --tracked-only --check
             git add development/gallery/index.json beckenburg-development-gallery.html
