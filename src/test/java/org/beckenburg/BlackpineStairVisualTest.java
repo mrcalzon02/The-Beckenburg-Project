@@ -34,6 +34,18 @@ public final class BlackpineStairVisualTest {
         g.dispose();
         return image;
     }
+    private static double coord(Object triangle,String corner,String axis)throws Exception{
+        return ((Number)LevelSceneSource.read(LevelSceneSource.read(triangle,corner),axis)).doubleValue();
+    }
+    /** Inspect *emitted* native rail triangles rather than assuming an unbroken
+     * line of handrail on paper still leaves the actual staircase accessible. */
+    private static boolean railAt(List<?> triangles,double x)throws Exception{
+        for(Object triangle:triangles){
+            double a=coord(triangle,"a","x"),b=coord(triangle,"b","x"),c=coord(triangle,"c","x");
+            if(Math.min(a,Math.min(b,c))<=x+.02&&Math.max(a,Math.max(b,c))>=x-.02)return true;
+        }
+        return false;
+    }
     public static void main(String[] args)throws Exception{
         HouseMap map=BlackpineLevel.map();
         var level=map.level();
@@ -56,6 +68,36 @@ public final class BlackpineStairVisualTest {
             "final riser and stair endpoint are exposed by real architectural opening");
         check(!level.floorVoid(stair.x1(),stair.y1(),stair.z1()+.25),
             "upper landing retains solid structural floor");
+        check(level.sockets().stream().noneMatch(s->s.room()==11&&s.type().equals("enclosure")),
+            "loft must not add a second ring of fence models/colliders");
+        check(level.guards().size()==2,"only the two supported upper-deck opening guards remain");
+        for(var guard:level.guards()){
+            check(guard.y()==level.room(11).y(),"guard elevation matches its supporting loft");
+            check(Math.min(guard.z0(),guard.z1())>=level.room(11).z0()-.001,
+                "upper-deck guard must not hang above the unsupported lower stairs");
+            check(Math.max(guard.z0(),guard.z1())<=level.room(11).z1()+.001,
+                "guard must end on the upper deck");
+        }
+        var southRail=new java.util.ArrayList<Object>();
+        var wall=SceneRenderer.class.getDeclaredMethod("levelWall",List.class,
+            LevelDefinition.class,LevelDefinition.Room.class,boolean.class,
+            double.class,double.class,double.class);
+        wall.setAccessible(true);
+        var loft=level.room(11);
+        wall.invoke(null,southRail,level,loft,true,loft.z0(),loft.x0(),loft.x1());
+        check(railAt(southRail,47.0)&&railAt(southRail,51.7),
+            "real renderer keeps rails at both exposed sections of the loft edge");
+        check(!railAt(southRail,stair.x1()),
+            "real renderer must leave the stairwell entrance open, not bridge it with a rail");
+        for(double offset:new double[]{-.15,.15}){
+            Vec lane=new Vec(stair.x0()+offset,stair.y0(),stair.z0());
+            for(int i=1;i<=120;i++){
+                double t=i/120d;
+                lane=map.resolveMove(lane,stair.x1()+offset,
+                    stair.z0()+(stair.z1()-stair.z0())*t);
+                check(lane!=null,"off-centre stair lane remains accessible, offset "+offset+" step "+i);
+            }
+        }
         for(int i=119;i>=0;i--){
             double t=i/120d;
             at=map.resolveMove(at,stair.x0()+(stair.x1()-stair.x0())*t,

@@ -53,11 +53,10 @@ public final class BlackpineLevel {
         b.sockets.removeIf(s->s.type().equals("hide"));
         // Furniture stays outside the future defended rite footprints.
         b.props.removeIf(p->p.room()==0||p.room()==2||p.room()==5);
-        for(double[] rail:new double[][]{{46,30,49.5,30},{51.5,30,52,30},{46,30,46,38},{52,30,52,38},{46,38,52,38}}){
-            double dx=rail[2]-rail[0],dz=rail[3]-rail[1],length=Math.hypot(dx,dz),angle=Math.atan2(dz,dx);
-            b.socket("enclosure",11,(rail[0]+rail[2])/2,3,(rail[1]+rail[3])/2,-angle,"field:"+length);
-            b.colliders.add(new Collider((rail[0]+rail[2])/2,3,(rail[1]+rail[3])/2,length/2,.075,1.4,angle));
-        }
+        // The loft's exposed edges and stairwell guards are rendered from
+        // the shared room/deck opening source. Do not add enclosure-fence
+        // sockets or duplicate colliders here: they float outside the upper
+        // slab and can obstruct the stair access gap.
         for(double[] tree:new double[][]{{6,18},{15,8},{52,7},{64,36},{22,53}}){
             b.socket("landscape_tree",12,tree[0],0,tree[1],0,"level_tree_conifer_worn");
             b.colliders.add(new Collider(tree[0],0,tree[1],.26,.26,2.5,0));

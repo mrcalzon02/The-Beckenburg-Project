@@ -1672,7 +1672,29 @@ public final class SceneRenderer {
                 &&p.y()+p.height()>=r.y()+r.height()-.05&&p.x0()<=r.x0()&&p.x1()>=r.x1()&&p.z0()<=r.z0()&&p.z1()>=r.z1()).findFirst().orElse(null);
             if(parent!=null){
                 boolean perimeter=alongX?(nearPlane(plane,parent.z0())||nearPlane(plane,parent.z1())):(nearPlane(plane,parent.x0())||nearPlane(plane,parent.x1()));
-                if(!perimeter)levelRail(out,alongX?from:plane,r.y(),alongX?plane:from,alongX?to:plane,r.y(),alongX?plane:to);
+                if(!perimeter){
+                    // A loft edge is a railing, except across the *real* stair
+                    // aperture. A continuous handrail here seals the staircase.
+                    var cuts=new java.util.TreeSet<Double>();
+                    cuts.add(from);cuts.add(to);
+                    for(var hole:level.voids())if(Math.abs(hole.y()-r.y())<.05
+                            &&(alongX?(plane>hole.z0()&&plane<hole.z1())
+                                :(plane>hole.x0()&&plane<hole.x1()))){
+                        double low=alongX?hole.x0():hole.z0(),high=alongX?hole.x1():hole.z1();
+                        if(low>from+.001&&low<to-.001)cuts.add(low);
+                        if(high>from+.001&&high<to-.001)cuts.add(high);
+                    }
+                    Double start=null;
+                    for(double end:cuts){
+                        if(start!=null&&end-start>.03){
+                            double middle=(start+end)/2;
+                            if(!level.floorVoid(alongX?middle:plane,r.y(),alongX?plane:middle))
+                                levelRail(out,alongX?start:plane,r.y(),alongX?plane:start,
+                                    alongX?end:plane,r.y(),alongX?plane:end);
+                        }
+                        start=end;
+                    }
+                }
                 return;
             }
         }
