@@ -150,6 +150,19 @@ public final class LanVoiceHostIntegrationTest {
                     &&nextRipple.profile().equals(voiceRipple.profile())
                     &&nextRipple.tick()>voiceRipple.tick(),
                     "Longer voice usage repeats constant-level events, never increases loudness");
+                // Human ghost movement must close the actual UDP hearing
+                // gate, not merely hide captions or prevent future ripples.
+                // An accepted spatial step is host-authoritative; no client
+                // mute flag is trusted for this check.
+                ghost.send("GSTEP|100|0|0|1");
+                ghost.await("ACCEPT|GSTEP");
+                ghost.await("GLISTEN|0|");
+                speaker.emit(LanVoicePacket.AUDIO,4,LanChat.Channel.LOCAL,tone);
+                spectral.empty();
+                ghost.await("GLISTEN|1|");
+                speaker.emit(LanVoicePacket.AUDIO,5,LanChat.Channel.LOCAL,tone);
+                ok(spectral.read().seat()==sourceId,
+                    "real voice relay resumes only after host stillness settles");
                 spectral.emit(LanVoicePacket.AUDIO,1,LanChat.Channel.RADIO,tone);
                 distant.empty();
             }
