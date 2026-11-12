@@ -467,12 +467,12 @@
     {
       "id": "DEV-007",
       "title": "Added slab blocks final stair approach",
-      "status": "open",
+      "status": "fixed-scoped",
       "affected": "Blackpine mill stair; introduced during DEV-001 fix",
       "symptom": "Exact-source full manifest at 7951f049 failed at stair ascent step 110 (376 passed, 1 failed), despite prior partial stair fixes.",
       "cause": "Authored loft floor void ended at Z31.30; at step 110 the capsule centre reaches Z31.10 and its 0.22m radius enters solid slab while feet remain 0.25m beneath the deck and beyond the permitted terminal contact band.",
       "action": "Extend the real visual and physical loft aperture to Z31.60 (10cm beyond ramp end), retain intact deck beyond it, and preserve narrow stair-owned collision exception and railing. Add direct step-110 and bidirectional proof plus native renderer captures.",
-      "evidence": "Full multiplayer advisory regression run 43145009915: 376/377 passed with BlackpineGrayboxTest failing at step 110. Corrective source and targeted native renderer proof pending exact-source CI on next commit.",
+      "evidence": "Previous advisory manifest 43145009915 was 376/377, failing BlackpineGrayboxTest step 110. Exact-source 43148970756 on c2810734 PASSED its standalone BlackpineGrayboxTest plus BlackpineStairVisualTest stage (120-step bidirectional route, off-stair negative, real floor opening, two game-renderer captures). The broader advisory manifest and human image review remain pending.",
       "older_maps": "Every structural-depth retrofit must recheck both stair directions and landing transitions."
     },
     {

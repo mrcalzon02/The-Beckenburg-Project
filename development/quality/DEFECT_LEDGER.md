@@ -599,7 +599,7 @@ Older-map obligation: Inspect brackets, fixture backs and circuit access at ever
 
 ### DEV-007 — Added slab blocks final stair approach
 
-**Status:** open — exact-source retest required · **Affected:** Blackpine mill stair; introduced during DEV-001 fix
+**Status:** fixed-scoped — targeted CI passed, actual visual review pending · **Affected:** Blackpine mill stair; introduced during DEV-001 fix
 
 The complete advisory manifest for source `7951f049` ran 377 tests, 376 passed, and `BlackpineGrayboxTest` still failed at ascent step **110**.
 
@@ -607,7 +607,7 @@ Cause: The actual loft deck opening stopped at Z=31.30. At step 110 the player c
 
 Construction correction: Extend the actual authored void to Z=31.60, ten centimetres beyond the top of the rising stair (Z=31.50), retain solid loft deck beyond Z=31.60 and keep the physical railing. Preserve narrow real-stair-only landing contact; add a direct step-110 guard, bidirectional 120-step route, off-stair negative, and native scene-renderer captures.
 
-Evidence and verification: [Full-round 43145009915](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43145009915) PASS as a workflow, but its advisory test reported 376 pass / 1 fail. Corrected authored geometry **pending exact-source CI and native image review**, not yet accepted.
+Evidence and verification: [Full-round 43145009915](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43145009915) passed as a workflow but its advisory suite reported 376/377, with this defect the only failure. Corrective source [c2810734](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/c2810734140cf76fc9cf07b9f0d3d9029acf469b) has now **PASSED the exact-source focused Blackpine stair and native renderer stage** in [run 43148970756](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43148970756). The tests traverse ascent/descent, assert off-stair solidity and genuine stair opening, and generate two actual game-camera image files. The 378-test advisory manifest, native proof image review and physical Windows multiplayer acceptance remain pending; no per-map production acceptance is inferred.
 
 Older-map obligation: Every structural-depth retrofit must recheck both stair directions and landing transitions.
 
