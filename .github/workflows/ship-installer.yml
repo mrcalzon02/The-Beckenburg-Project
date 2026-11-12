@@ -8,8 +8,10 @@ on:
       - 'AGENTS.md'
       # No gameplay binary changed for a test-only, workflow-only or
       # diagnostics-only checkpoint. Explicit workflow_dispatch remains usable.
-      # Release-pipeline changes are intentionally exercised on main;
-      # test-only and documentation changes remain ignored.
+      # Release workflow itself was exercised and published successfully
+      # on 6ce17c0c / v0.1.319. Stop repeat installer builds for later
+      # workflow-only housekeeping; manual workflow_dispatch is preserved.
+      - '.github/workflows/ship-installer.yml'
       - '.github/workflows/beckenburg-full-round-e2e.yml'
       - 'regression-tests.txt'
       - 'src/test/**'
