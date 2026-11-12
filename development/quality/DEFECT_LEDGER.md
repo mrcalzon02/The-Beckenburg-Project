@@ -10,6 +10,34 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-354 — Blackpine editor snapshot disagreed with live stairwell landing aperture
+
+**Status:** source/snapshot synchronized; editor save/reopen and installed visual verification pending · **Affected:** Blackpine mill loft serialized development definition and live mission geometry
+
+The checked-in Blackpine source snapshot ended its upper stair aperture at Z31.4 while the current runtime aperture ends at Z31.6; the serialized scene also retained five obsolete loft fence sockets and colliders.
+
+Cause / uncertainty: The development export was not refreshed after the runtime last-riser collision fix and continued to carry out-of-date loft rail decorations.
+
+Fix / next action: Align the recorded upper opening at Z31.6 and remove only the five duplicated room-11 fence entries and colliders. Verify editor load/save parity before accepting the archive as a current construction source.
+
+Evidence and verification: Baseline b55948a0 had the divergent static aperture and five obsolete enclosure entries. The corrected static source is committed at 5216f206b8f7677b90fedd213ca748186f66a7be. Exact-source full-round 43179085398 was in progress at first inspection.
+
+Older-map obligation: Audit editor exports against live runtime stairs on each older map; correcting Blackpine does not certify the other saved maps.
+
+### DEV-353 — Overlapping unsupported loft railing sets obstruct Blackpine stair access
+
+**Status:** code committed; real native screenshot, exact-source regression and physical stair traversal acceptance pending · **Affected:** Blackpine sawmill flight and upper inspection loft; shared loft-wall rendering and opening-guard generation
+
+Five manual field-fence rails, automatic perimeter rails and automatic stair-void guard rails overlapped. Void guards extended three metres beyond the upper deck over the lower flight, and an uninterrupted loft-edge rail crossed the actual stairwell entry.
+
+Cause / uncertainty: Rail construction did not share one deck-and-aperture geometry contract: authored enclosure colliders duplicated renderer rails, side guards were not clipped to physical slabs, and loft edge generation failed to split at stair openings.
+
+Fix / next action: Delete five redundant loft fences and matching colliders; clip raised opening rails to supported upper floor, split the southern loft edge around the opening, and leave the physical stair handrails and deck intact. Reinspect actual rendering and both traversal lanes.
+
+Evidence and verification: Verified pushed main commit 5216f206b8f7677b90fedd213ca748186f66a7be modifies BlackpineLevel, LevelDefinition and SceneRenderer; BlackpineStairVisualTest now inspects emitted native rail triangles, supported guard segments and ±0.15 m ascent lanes. Full-round 43179085398 and installer 43179085274 were in progress when documented; 378/378 belongs to an older SHA.
+
+Older-map obligation: Shared guard clipping and loft-edge renderer require separate checks on House, Farmhouse, Church and other upper-level sites. Do not infer old maps are fixed from Blackpine.
+
 ### DEV-270 — Spectral practice camera ignored the current room elevation
 
 **Status:** fixed-scoped; real House cellar playtest verified · **Affected:** Ghost practice gameplay and mission playtests in rooms above or below ground
