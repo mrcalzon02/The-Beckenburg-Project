@@ -53,6 +53,9 @@ public final class LanGhostHearingIntegrationTest {
             ok(GhostSoundRipples.Ripple.decode(g.await("GRIPPLE|EQUIPMENT|"),new HouseMap())
                 .kind()==LanGhostPursuit.Sound.EQUIPMENT,
                 "The real hunter tool emits a source-anchored sound ring");
+            // Emotes and typed communication are physical hunter-world
+            // commands, not abstract room-map actions.
+            a.client.view3D();a.await("ACCEPT|VIEW3D");
             a.client.emote(HunterEmote.WAVE);
             a.await("ACCEPT|EMOTE|WAVE");
             var gesture=LanGhostHearing.decode(g.await("GHEAR|EMOTE|"));
