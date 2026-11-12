@@ -83,6 +83,19 @@ jobs:
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.BlackpineStairVisualTest
           if errorlevel 1 exit /b 1
+      # The full E2E artifact exceeds the connector's download size limit.
+      # Export the already generated actual game-camera PNGs separately,
+      # during the same job, before its longer diagnostic regression manifest.
+      - name: Upload inspectable Blackpine stair native screenshot proof
+        if: always()
+        continue-on-error: true
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-blackpine-native-proof-${{ github.run_id }}
+          path: build/e2e/blackpine-stair-evidence/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
       - name: Diagnose full regression manifest (advisory; not a release gate)
         continue-on-error: true
         shell: cmd
