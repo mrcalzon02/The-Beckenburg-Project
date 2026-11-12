@@ -8,7 +8,6 @@ import org.beckenburg.HouseMap;
 import org.beckenburg.HunterPosture;
 import org.beckenburg.LanWorldPanel;
 import org.beckenburg.LanClient;
-import org.beckenburg.LevelOpeningCinematic;
 import org.beckenburg.BeckenburgDiagnostics;
 import org.beckenburg.LevelDefinition;
 import org.beckenburg.SceneRenderer;
@@ -192,9 +191,20 @@ public final class GpuUiSmoke {
   return null;
  }
  private static boolean firstSceneReady(LanWorldPanel panel)throws Exception{
-  LevelOpeningCinematic opening=(LevelOpeningCinematic)field(panel,"opening");
-  if(opening!=null)return !opening.gpuFlight()||opening.previewStatus().firstFrameReady();
-  return (Integer)field(panel,"frameCount")>0;
+  // The cinematic and its PreviewStatus are package-private implementation
+  // details; the GPU harness lives in org.beckenburg.gpu. Inspect only the
+  // real readiness accessor instead of depending on a retired GamePanel field.
+  Object opening=field(panel,"opening");
+  if(opening==null)return (Integer)field(panel,"frameCount")>0;
+  var backend=opening.getClass().getDeclaredMethod("gpuFlight");
+  backend.setAccessible(true);
+  if(!Boolean.TRUE.equals(backend.invoke(opening)))return true;
+  var snapshot=opening.getClass().getDeclaredMethod("previewStatus");
+  snapshot.setAccessible(true);
+  Object preview=snapshot.invoke(opening);
+  var ready=preview.getClass().getDeclaredMethod("firstFrameReady");
+  ready.setAccessible(true);
+  return Boolean.TRUE.equals(ready.invoke(preview));
  }
  private static void failureEvidence(JFrame window)throws Exception{
   Files.writeString(OUTPUT.resolve("failure-stage.txt"),
