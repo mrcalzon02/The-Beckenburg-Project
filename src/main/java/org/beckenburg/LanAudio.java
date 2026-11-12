@@ -22,6 +22,9 @@ public final class LanAudio implements AutoCloseable {
     }
     private static final AudioFormat FORMAT=new AudioFormat(SAMPLE_RATE,16,2,true,false);
     private record Playback(LanSound.CueEvent cue,byte[] pcm,int source,int generation) { Playback(LanSound.CueEvent cue,byte[] pcm){this(cue,pcm,-1,0);} }
+    // Distinct from fixture IDs (positive). Only ghost-heard hunter audio is
+    // envelope-controlled; ghost actions and ambient sound remain unaffected.
+    private static final int HEARING_SOURCE=-2;
     private static final int BLOCK_FRAMES=512,MAX_VOICES=12;
     private final BlockingQueue<Playback> queue=new ArrayBlockingQueue<>(32);
     @FunctionalInterface interface OutputFactory {
@@ -31,6 +34,13 @@ public final class LanAudio implements AutoCloseable {
     private final Thread worker;
     private volatile SourceDataLine output;
     private volatile boolean closed;
+    private volatile double hearingGain=1.0;
+    private double hearingApplied=1.0;
+    public void setHearingGain(double gain){
+        if(!Double.isFinite(gain)||gain<0||gain>1)
+            throw new IllegalArgumentException("Hearing gain must be 0..1");
+        hearingGain=gain;
+    }
     /** A generation change cancels a source even if off/on occurs between two mixer blocks. */
     public static final class FixtureGate {
         private final java.util.Map<Integer,Boolean> active=new java.util.concurrent.ConcurrentHashMap<>();
@@ -98,6 +108,10 @@ public final class LanAudio implements AutoCloseable {
     public void play(LanSound.CueEvent cue){
         if(cue!=null)enqueue(new Playback(cue,null));
     }
+    /** Hunter-only sound cues retain their identity through queued/mixed playback. */
+    public void playHeard(LanSound.CueEvent cue){
+        if(cue!=null)enqueue(new Playback(cue,null,HEARING_SOURCE,0));
+    }
     /** Each authored beat joins the normal bounded, prioritized stereo mixer. */
     public void playHaunting(GhostHauntingChoreography.SoundFrame frame){
         if(frame==null)return;
@@ -140,14 +154,20 @@ public final class LanAudio implements AutoCloseable {
      * Does not depend on a hardware mixer; overlapping events remain audible.
      */
     private static byte[] mix(java.util.List<Voice> voices){
+        return mix(voices,1,1);
+    }
+    /** Interpolate within each hardware block to avoid gain zipper/clicks. */
+    private static byte[] mix(java.util.List<Voice> voices,double start,double end){
         byte[] output=new byte[BLOCK_FRAMES*4];
         for(int frame=0;frame<BLOCK_FRAMES;frame++){
             long left=0,right=0;
+            double hearScale=start+(end-start)*(frame+1)/BLOCK_FRAMES;
             for(Voice v:voices){
                 if(v.position+3>=v.pcm.length)continue;
                 int p=v.position;
-                left+=(short)((v.pcm[p]&255)|(v.pcm[p+1]<<8));
-                right+=(short)((v.pcm[p+2]&255)|(v.pcm[p+3]<<8));
+                double scale=v.source==HEARING_SOURCE?hearScale:1;
+                left+=Math.round((short)((v.pcm[p]&255)|(v.pcm[p+1]<<8))*scale);
+                right+=Math.round((short)((v.pcm[p+2]&255)|(v.pcm[p+3]<<8))*scale);
                 v.position+=4;
             }
             int l=(int)Math.max(Short.MIN_VALUE,Math.min(Short.MAX_VALUE,left));
@@ -167,6 +187,17 @@ public final class LanAudio implements AutoCloseable {
         java.util.List<Voice> voices=new java.util.ArrayList<>();
         admit(voices,new Voice(first,1));admit(voices,new Voice(second,4));
         return mix(voices);
+    }
+    /** Headless proof that hunter sound fades, while unrelated sound stays audible. */
+    public static byte[] mixHearingForTest(byte[] heard,byte[] ordinary,double start,double end){
+        if(heard==null||ordinary==null||heard.length!=BLOCK_FRAMES*4
+                ||ordinary.length!=BLOCK_FRAMES*4||!Double.isFinite(start)
+                ||!Double.isFinite(end)||start<0||end<0||start>1||end>1)
+            throw new IllegalArgumentException("Invalid hearing mixer test input");
+        java.util.List<Voice> voices=new java.util.ArrayList<>();
+        admit(voices,new Voice(heard,2,HEARING_SOURCE,0));
+        admit(voices,new Voice(ordinary,2));
+        return mix(voices,start,end);
     }
     /** Pure PCM fixture-cancellation check using the exact production voice filter and mixer. */
     public static byte[] mixFixtureBlock(byte[][] pcm,int[] ids,int[] generations,FixtureGate gate){
@@ -210,7 +241,9 @@ public final class LanAudio implements AutoCloseable {
                         System.err.println("Beckenburg effects audio output restored");
                         outputMissing=false;
                     }
-                    byte[] block=mix(voices);
+                    double target=hearingGain;
+                    byte[] block=mix(voices,hearingApplied,target);
+                    hearingApplied=target;
                     for(int offset=0;offset<block.length&&!closed;){
                         int written=line.write(block,offset,block.length-offset);
                         if(written<=0)throw new IllegalStateException("Effects device accepted no audio frames");

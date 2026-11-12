@@ -828,7 +828,9 @@ public final class LanHost implements AutoCloseable {
                     int staminaBefore=ghostPose.stamina();
                     ghostPose.step(dx,dz,tick,bursting);
                     animation.moved(tick,ghostPose.stamina()<staminaBefore);
-                    reply(peer,"ACCEPT|GSTEP");reply(peer,ghostPose.frame(tick));reply(peer,"GLISTEN|0|"+tick);broadcastApparitions();
+                    reply(peer,"ACCEPT|GSTEP");reply(peer,ghostPose.frame(tick));
+                    reply(peer,"GLISTEN|"+(ghostPose.listening(tick)?1:0)+"|"+tick);
+                    broadcastApparitions();
                     if(ghost.manifested()&&tick%5==0)broadcastGhostSound(LanSound.Cue.FOOTFALL);
                 }
                 case "GTURN" -> {
@@ -2930,10 +2932,13 @@ public final class LanHost implements AutoCloseable {
                     reply(seats[GHOST_SEAT],ghostPose.staminaFrame(tick));
             }
             if(tick%10==0)broadcastSensorReadings();
+            // Host tick (100ms) updates make short +/- tolerance changes
+            // responsive without trusting any client clock or camera keys.
+            if(seats[GHOST_SEAT]!=null&&seats[GHOST_SEAT].ghostWorldMode)
+                reply(seats[GHOST_SEAT],"GLISTEN|"+(ghostPose.listening(tick)?1:0)+"|"+tick);
             if(tick%5==0){broadcastState();broadcastApparitions();broadcastProgress();broadcastWorld();
                 if(seats[GHOST_SEAT]!=null&&seats[GHOST_SEAT].ghostWorldMode){
                     reply(seats[GHOST_SEAT],ghostPose.frame(tick));
-                    reply(seats[GHOST_SEAT],"GLISTEN|"+(ghostPose.listening(tick)?1:0)+"|"+tick);
                     if(twinCompanion!=null)
                         reply(seats[GHOST_SEAT],twinCompanion.playerFrame(ghostType.ancient(),tick));
                     sendGhostPrompt();

@@ -13,11 +13,18 @@ public final class LanGhostSpatialTest {
         fails(()->view.step(999,0,1),"oversized movement");
         double before=view.pose().x();
         ok(view.step(100,0,2)&&view.pose().x()>before,"local spectral position updated");
-        ok(!view.listening(2)&&!view.listening(5),
-            "Real spectral movement mutes hunters for four authoritative ticks");
-        ok(view.listening(6),"Holding still re-enables hunter sounds after settling");
+        ok(view.movementGateMetres()>=.035-1e-9&&view.movementGateMetres()<=.075+1e-9,
+            "Host movement tolerance stays within 5.5cm +/-2cm");
+        ok(!LanGhostSpatial.significantMotion(.018,.030,.055)
+                &&LanGhostSpatial.significantMotion(.018,.085,.055),
+            "Single noisy displacement is tolerated, cumulative movement is not");
+        int settledAt=2+view.listeningSettleTicks();
+        ok(view.listeningSettleTicks()>=3&&view.listeningSettleTicks()<=5,
+            "Listen settle duration stays within four ticks +/- one");
+        ok(!view.listening(settledAt-1)&&view.listening(settledAt),
+            "Real spectral movement mutes until host-selected settle threshold");
         view.turn(90);
-        ok(view.listening(6),"Turning in place does not count as movement");
+        ok(view.listening(settledAt),"Turning in place does not count as movement");
         fails(()->view.step(100,0,2),"same-tick speed bypass");
         fails(()->view.turn(-1),"invalid orientation");
         for(int i=3;i<45;i++){try{view.step(100,0,i);}catch(IllegalArgumentException ignored){}}
@@ -27,8 +34,8 @@ public final class LanGhostSpatialTest {
         ok(view.pose().room()==1&&Math.abs(view.pose().x()-map.centerX(1))<.001,"legitimate drift resets camera");
         ok(view.frame(45).startsWith("GPOSE|1|"),"bounded spectral packet");
         view.markTravel(45);
-        ok(!view.listening(45)&&view.listening(49),
-            "Room DRIFT resets listening until the spectral body settles");
+        ok(!view.listening(45)&&view.listening(45+view.listeningSettleTicks()),
+            "Room DRIFT resets listening until the varied host settle threshold");
         fails(()->view.markTravel(-1),"invalid travel tick");
         System.out.println("PASS: spectral pose bounded to room, fixed tick, safe van denied, drift resets pose");
     }

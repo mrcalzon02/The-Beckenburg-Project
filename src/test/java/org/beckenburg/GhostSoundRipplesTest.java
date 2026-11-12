@@ -66,6 +66,13 @@ public final class GhostSoundRipplesTest {
         painted.drawImage(camera.image(),0,0,480,300,null);
         effect.draw(painted,camera,480,300,now+430_000_000L);
         painted.dispose();
+        BufferedImage fullyMuted=new BufferedImage(480,300,BufferedImage.TYPE_INT_RGB);
+        Graphics2D muted=fullyMuted.createGraphics();
+        muted.drawImage(camera.image(),0,0,480,300,null);
+        effect.draw(muted,camera,480,300,now+430_000_000L,0);
+        muted.dispose();
+        check(Arrays.equals(pixels(before),pixels(fullyMuted)),
+            "Zero hearing gain cannot reveal through-wall source information");
         int difference=0;
         int[] original=pixels(before),withWave=pixels(after);
         for(int i=0;i<original.length;i++)if(original[i]!=withWave[i])difference++;

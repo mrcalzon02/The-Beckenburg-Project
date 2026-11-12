@@ -93,7 +93,14 @@ public final class GhostSoundRipples {
     }
     /** Draw AFTER scene depth/shading, BEFORE HUD: x-ray auditory rings. */
     public void draw(Graphics2D g,SceneRenderer camera,int width,int height,long now){
+        draw(g,camera,width,height,now,1.0);
+    }
+    /** All prior source pulses dim with the ghost's CURRENT hearing envelope. */
+    public void draw(Graphics2D g,SceneRenderer camera,int width,int height,long now,double hearingGain){
+        if(!Double.isFinite(hearingGain)||hearingGain<0||hearingGain>1)
+            throw new IllegalArgumentException("Hearing envelope must be 0..1");
         if(active.isEmpty()||width<=0||height<=0)return;
+        if(hearingGain==0){prune(now);return;}
         prune(now);
         if(active.isEmpty())return;
         Object previousAA=g.getRenderingHint(RenderingHints.KEY_ANTIALIASING);
@@ -110,7 +117,7 @@ public final class GhostSoundRipples {
                 if(phase<0||phase>=life-.28*band)continue;
                 double radius=.10+phase*2.0;
                 int alpha=(int)Math.max(0,Math.min(210,
-                    185*(1-phase/(life-.28*band))));
+                    185*(1-phase/(life-.28*band))*hearingGain));
                 Path2D.Double ring=new Path2D.Double();
                 boolean open=false;
                 for(int i=0;i<=STEPS;i++){
@@ -132,7 +139,7 @@ public final class GhostSoundRipples {
             // Brief source-point shimmer: never a persistent hunter marker.
             Point centre=project(camera,width,height,p.x(),p.y()+1.08,p.z());
             if(centre!=null&&age<.65){
-                int alpha=(int)(150*(1-age/.65));
+                int alpha=(int)(150*(1-age/.65)*hearingGain);
                 g.setColor(tint(p.kind(),Math.max(0,alpha)));
                 g.fillOval((int)centre.x()-3,(int)centre.y()-3,6,6);
             }

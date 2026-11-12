@@ -60,6 +60,8 @@ jobs:
         run: |
           java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.LanGhostSpatialTest
           if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.GhostHearingFadeTest
+          if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.GhostSoundRipplesTest
           if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.LanGhostHearingIntegrationTest
