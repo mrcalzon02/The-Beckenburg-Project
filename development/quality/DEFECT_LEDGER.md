@@ -20,13 +20,13 @@ Cause / uncertainty: The development export was not refreshed after the runtime 
 
 Fix / next action: Align the recorded upper opening at Z31.6 and remove only the five duplicated room-11 fence entries and colliders. Verify editor load/save parity before accepting the archive as a current construction source.
 
-Evidence and verification: Baseline b55948a0 had the divergent static aperture and five obsolete enclosure entries. The corrected static source is committed at 5216f206b8f7677b90fedd213ca748186f66a7be. Exact-source full-round 43179085398 was in progress at first inspection.
+Evidence and verification: Source snapshot vs runtime mismatch confirmed at b55948a0 and corrected in 5216f206. Exact-source Blackpine step in CI 43179085398 completed SUCCESS, with artifact 13926116342. Export/import/save-reopen acceptance not established by stair test.
 
 Older-map obligation: Audit editor exports against live runtime stairs on each older map; correcting Blackpine does not certify the other saved maps.
 
 ### DEV-353 — Overlapping unsupported loft railing sets obstruct Blackpine stair access
 
-**Status:** code committed; real native screenshot, exact-source regression and physical stair traversal acceptance pending · **Affected:** Blackpine sawmill flight and upper inspection loft; shared loft-wall rendering and opening-guard generation
+**Status:** focused exact-source native rail/route regression and Windows release passed; installed user-eye and hardware acceptance pending · **Affected:** Blackpine sawmill flight and upper inspection loft; shared loft-wall rendering and opening-guard generation
 
 Five manual field-fence rails, automatic perimeter rails and automatic stair-void guard rails overlapped. Void guards extended three metres beyond the upper deck over the lower flight, and an uninterrupted loft-edge rail crossed the actual stairwell entry.
 
@@ -34,7 +34,7 @@ Cause / uncertainty: Rail construction did not share one deck-and-aperture geome
 
 Fix / next action: Delete five redundant loft fences and matching colliders; clip raised opening rails to supported upper floor, split the southern loft edge around the opening, and leave the physical stair handrails and deck intact. Reinspect actual rendering and both traversal lanes.
 
-Evidence and verification: Verified pushed main commit 5216f206b8f7677b90fedd213ca748186f66a7be modifies BlackpineLevel, LevelDefinition and SceneRenderer; BlackpineStairVisualTest now inspects emitted native rail triangles, supported guard segments and ±0.15 m ascent lanes. Full-round 43179085398 and installer 43179085274 were in progress when documented; 378/378 belongs to an older SHA.
+Evidence and verification: Remote main source commit 5216f206b8f7677b90fedd213ca748186f66a7be. Full-round 43179085398 passed its packaged TCP, ghost-hearing, BlackpineGrayboxTest, BlackpineStairVisualTest and native screenshot upload steps. Original native screenshot artifact 13926116342 is downloadable at https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43179085398/artifacts/13926116342. Exact-source installer 43179085274 completed SUCCESS and released beckenburg-v0.1.320, targeting 5216f206. Full advisory manifest and physical/installed visual walkdown remain separate.
 
 Older-map obligation: Shared guard clipping and loft-edge renderer require separate checks on House, Farmhouse, Church and other upper-level sites. Do not infer old maps are fixed from Blackpine.
 
