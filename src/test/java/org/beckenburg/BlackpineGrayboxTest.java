@@ -25,7 +25,13 @@ public final class BlackpineGrayboxTest {
         check(Math.abs(at.y()-l.room(11).y())<.02,"actual upper deck elevation reached");
         // A body near the same deck lip but outside the authored stair may
         // NOT exploit the terminal-riser contact exception to enter the loft.
-        double nearLanding=stair.z1()-.20,beside=stair.x1()+.65;
+        double nearLanding=stair.z1()-.25,beside=stair.x1()+.65;
+        // The actual rendered upper deck now has an architectural opening
+        // above the final rising treads, not merely a collision waiver.
+        check(l.floorVoid(stair.x1(),stair.y1(),nearLanding),
+            "rising mill stair owns a true floor opening through the final riser");
+        check(!l.floorVoid(stair.x1(),stair.y1(),stair.z1()+.25),
+            "solid inspection loft landing remains intact beyond the staircase");
         double beneathDeck=stair.y1()-.125;
         check(DeckSlabs.blocksBody(l,beside,beneathDeck,nearLanding,
                 HunterPosture.STANDING_HEIGHT,.22),

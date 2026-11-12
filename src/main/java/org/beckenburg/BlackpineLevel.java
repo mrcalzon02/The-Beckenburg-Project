@@ -33,6 +33,15 @@ public final class BlackpineLevel {
         b.door(9,12,21,0,12,1.2,true);b.door(9,12,18,0,8,1.2,false);
         b.door(10,12,56,0,23,1.2,false);b.door(10,12,62,0,23,1.2,false);
         b.flight(0,11,50.5,26.7,50.5,31.5,0,3);
+        // This loft's landing must have a REAL cutout over the ascending
+        // treads. The generic flight initially ended the void .86m before
+        // the top, leaving a solid deck through the last 86cm of the ramp.
+        // Continue the same authored opening until 20cm before the upper
+        // landing; keep the remaining loft deck solid and preserve guards.
+        var loftVoid=b.voids.get(0);
+        var ascent=b.stairs.get(0);
+        b.voids.set(0,new LevelDefinition.Void(loftVoid.y(),loftVoid.x0(),
+            loftVoid.z0(),loftVoid.x1(),ascent.z1()-.20));
         b.window(6,12,24,0,13.5,false);b.window(6,12,30,0,9.5,false);
         b.window(7,12,34,0,8,false);b.window(4,12,16,0,18,false);
         b.window(2,12,22,0,42,false);b.window(3,12,14,0,33,false);
