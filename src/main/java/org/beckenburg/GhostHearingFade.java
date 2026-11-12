@@ -7,13 +7,14 @@ package org.beckenburg;
  */
 public final class GhostHearingFade {
     public static final long FADE_IN_NS=600_000_000L,FADE_OUT_NS=260_000_000L;
-    private long previous=Long.MIN_VALUE;
+    private long previous;
+    private boolean initialized;
     private double gain;
     public double gain(){return gain;}
-    public void reset(){previous=Long.MIN_VALUE;gain=0;}
+    public void reset(){initialized=false;previous=0;gain=0;}
     public double advance(boolean hostListening,long now){
-        if(now<0)throw new IllegalArgumentException("Invalid hearing clock");
-        if(previous==Long.MIN_VALUE){previous=now;return gain;}
+        // System.nanoTime() has an arbitrary origin and may be negative.
+        if(!initialized){initialized=true;previous=now;return gain;}
         // Cap a delayed render frame; never jump to full hearing after a stall.
         long nanos=Math.max(0,Math.min(200_000_000L,now-previous));
         previous=now;

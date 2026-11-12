@@ -35,7 +35,9 @@ public final class LanAudio implements AutoCloseable {
     private volatile SourceDataLine output;
     private volatile boolean closed;
     private volatile double hearingGain=1.0;
-    private double hearingApplied=1.0;
+    // Begin a newly created spectral channel at silence. Otherwise its
+    // first heard cue could jump briefly to full volume before fading down.
+    private double hearingApplied=0.0;
     public void setHearingGain(double gain){
         if(!Double.isFinite(gain)||gain<0||gain>1)
             throw new IllegalArgumentException("Hearing gain must be 0..1");

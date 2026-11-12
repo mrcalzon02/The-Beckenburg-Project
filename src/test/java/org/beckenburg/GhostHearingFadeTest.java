@@ -34,6 +34,10 @@ public final class GhostHearingFadeTest {
         fade.advance(false,900_000_000L);
         ok(fade.gain()==0,"260ms fade-out fully mutes previous hunter cues");
         fade.reset();ok(fade.gain()==0,"Site change resets sound envelope");
+        fade.advance(true,-500_000_000L);
+        ok(fade.advance(true,-400_000_000L)>.1,
+            "Negative but monotonic System.nanoTime clocks remain valid");
+        fade.reset();
         byte[] ghost=tone(1000),environment=tone(2000);
         byte[] silent=LanAudio.mixHearingForTest(ghost,environment,0,0);
         byte[] loud=LanAudio.mixHearingForTest(ghost,environment,1,1);

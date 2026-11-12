@@ -28,9 +28,12 @@ public final class LanGhostSpatial {
     void markTravel(int tick){
         if(tick<0)throw new IllegalArgumentException("Invalid ghost movement tick");
         lastMovedTick=tick;
-        settleTicks=LISTEN_SETTLE_TICKS+Math.floorMod(tick+room*7,3)-1;
+        settleTicks=LISTEN_SETTLE_TICKS+
+            Math.floorMod(tick+room*7,2*LISTEN_SETTLE_VARIATION_TICKS+1)
+            -LISTEN_SETTLE_VARIATION_TICKS;
         movementGateMetres=MOVEMENT_GATE_METRES+
-            (Math.floorMod(tick*17+room*13,5)-2)*.010;
+            (Math.floorMod(tick*17+room*13,5)-2)*
+                (MOVEMENT_GATE_VARIATION_METRES/2.0);
         movementAnchorX=x;movementAnchorZ=z;
     }
     private double ghostSpeed=1,speciesSpeed=1;
