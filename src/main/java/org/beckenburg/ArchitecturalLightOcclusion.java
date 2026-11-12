@@ -64,7 +64,7 @@ public final class ArchitecturalLightOcclusion {
         return true;
     }
     private static boolean aperture(HouseMap map,int room,boolean alongX,double plane,double tangent,double y){
-        for(var p:map.level().portals())if((p.a()==room||p.b()==room)&&p.alongX()==alongX&&!p.kind().equals("stair")&&Math.abs((alongX?p.z():p.x())-plane)<.01){
+        for(var p:map.lightPortals(room))if(p.alongX()==alongX&&!p.kind().equals("stair")&&Math.abs((alongX?p.z():p.x())-plane)<.01){
             if(Math.abs(tangent-(alongX?p.x():p.z()))>=p.width()/2-.001)continue;
             if(p.kind().equals("window")){if(y>p.y()+1.0&&y<p.y()+2.35)return true;}
             else if((!p.door()||map.doorOpen(p.id()))&&y>=p.y()-.10&&y<=p.y()+2.45)return true;

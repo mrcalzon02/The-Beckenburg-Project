@@ -102,7 +102,20 @@ public final class ArchitecturalLightOcclusionAllocationParityTest {
         System.out.println("PASS architectural shadow differential "+map.level().id()
             +" "+state+" 3200 rays ("+clear+" clear, "+blocked+" blocked)");
     }
+    private static void indexMatchesOriginalPortalOwnership(HouseMap map){
+        for(int room=0;room<map.level().rooms().size();room++){
+            final int owner=room;
+            var expected=map.level().portals().stream()
+                .filter(p->p.a()==owner||p.b()==owner).toList();
+            var actual=map.lightPortals(room);
+            if(!actual.equals(expected))
+                throw new AssertionError("Shadow portal index differs from authored order "
+                    +map.level().id()+" room "+room+" expected "+expected.size()
+                    +" got "+actual.size());
+        }
+    }
     private static void exercise(HouseMap map,int seed){
+        indexMatchesOriginalPortalOwnership(map);
         var random=new Random(0xB3CC61EEL+seed);
         check(map,random,"closed");
         var doors=map.level().portals().stream().filter(p->p.door()).limit(2).toList();

@@ -16,6 +16,10 @@ public final class HouseMap {
     private final SiteTerrain terrain;
     private final AuthoredSitePhysics nativeSite;
     private final List<List<Portal>> wallPortals;
+    /** Immutable owner-only portal index for repeated cold architectural
+     * shadow rays. Unlike wallPortals, this must not inherit child-room
+     * apertures: the shadow algorithm historically checks direct owners only. */
+    private final List<List<Portal>> lightPortals;
     private final AuthoredSitePhysics worldSurface;
     private final boolean editorTerrainWalking;
     private final HouseRebuildEnvelope.Geometry envelope,services;
@@ -84,6 +88,15 @@ public final class HouseMap {
     HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface){
         this.site=Objects.requireNonNull(site);level=Objects.requireNonNull(definition);guards=level.guards();
         wallPortals=level.rooms().stream().map(r->level.wallPortals(r.id())).toList();
+        var ownerPortals=new ArrayList<List<Portal>>(level.rooms().size());
+        for(int i=0;i<level.rooms().size();i++)ownerPortals.add(new ArrayList<>());
+        // Preserve the source portal iteration order for visibility parity,
+        // including portals whose endpoints coincide.
+        for(Portal p:level.portals()){
+            ownerPortals.get(p.a()).add(p);
+            if(p.b()!=p.a())ownerPortals.get(p.b()).add(p);
+        }
+        lightPortals=ownerPortals.stream().map(List::copyOf).toList();
         this.worldSurface=worldSurface;
         editorTerrainWalking=worldSurface!=null&&WorldTerrainSurface.walking(level);
         envelope=HouseRebuildEnvelope.geometry(level);
@@ -97,6 +110,8 @@ public final class HouseMap {
     }
     public Site site(){return site;}
     public LevelDefinition level(){return level;}
+    /** No per-ray filtering or stream allocation; topology belongs to this map instance. */
+    List<Portal> lightPortals(int room){return lightPortals.get(room);}
     public boolean authoredArchitecture(){return true;}
     public VanStaging van(){return van;}
     public boolean sheltered(double x,double eyeY,double z){if(nativeSite!=null)return !nativeSite.clearSight(new Vec(x,eyeY+.03,z),new Vec(x,eyeY+10,z))||!van.clearSight(x,eyeY+.03,z,x,eyeY+10,z);int room=roomAt(x,eyeY-1.3,z);return room>=0&&!outside(room);}
