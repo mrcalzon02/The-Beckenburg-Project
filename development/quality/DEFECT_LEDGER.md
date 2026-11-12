@@ -599,15 +599,15 @@ Older-map obligation: Inspect brackets, fixture backs and circuit access at ever
 
 ### DEV-007 — Added slab blocks final stair approach
 
-**Status:** fixed-scoped · **Affected:** Blackpine mill stair; introduced during DEV-001 fix
+**Status:** open — exact-source retest required · **Affected:** Blackpine mill stair; introduced during DEV-001 fix
 
-BlackpineGrayboxTest failed at ascent step 113 immediately after adding slab collision.
+The complete advisory manifest for source `7951f049` ran 377 tests, 376 passed, and `BlackpineGrayboxTest` still failed at ascent step **110**.
 
-Cause / uncertainty: The swept capsule overlaps the final riser before its feet reach landing height.
+Cause: The actual loft deck opening stopped at Z=31.30. At step 110 the player centre reaches Z=31.10; the 0.22m capsule radius overlaps solid deck while feet remain 0.25m below it, before the strictly bounded terminal-stair exception applies. A collision waiver cannot repair a geometrically premature floor edge.
 
-Fix / next action: Allow only an authored stair-to-slab landing contact within 200mm of the top and at the actual ramp elevation; other slab edges remain opaque/solid.
+Construction correction: Extend the actual authored void to Z=31.60, ten centimetres beyond the top of the rising stair (Z=31.50), retain solid loft deck beyond Z=31.60 and keep the physical railing. Preserve narrow real-stair-only landing contact; add a direct step-110 guard, bidirectional 120-step route, off-stair negative, and native scene-renderer captures.
 
-Evidence and verification: BlackpineGrayboxTest failed before transition correction and passes afterward; swept route test still reaches all 15 zones over 292910 positions.
+Evidence and verification: [Full-round 43145009915](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43145009915) PASS as a workflow, but its advisory test reported 376 pass / 1 fail. Corrected authored geometry **pending exact-source CI and native image review**, not yet accepted.
 
 Older-map obligation: Every structural-depth retrofit must recheck both stair directions and landing transitions.
 

@@ -30,8 +30,15 @@ public final class BlackpineGrayboxTest {
         // above the final rising treads, not merely a collision waiver.
         check(l.floorVoid(stair.x1(),stair.y1(),nearLanding),
             "rising mill stair owns a true floor opening through the final riser");
+        check(l.floorVoid(stair.x1(),stair.y1(),stair.z1()),
+            "ramp endpoint remains under the actual stair aperture");
         check(!l.floorVoid(stair.x1(),stair.y1(),stair.z1()+.25),
             "solid inspection loft landing remains intact beyond the staircase");
+        double contactZ=stair.z0()+(stair.z1()-stair.z0())*110/120.;
+        double contactY=stair.yAt(stair.x0(),contactZ);
+        check(!DeckSlabs.blocksBody(l,stair.x0(),contactY,contactZ,
+                HunterPosture.STANDING_HEIGHT,.22),
+            "step 110 capsule does not prematurely hit solid loft slab");
         double beneathDeck=stair.y1()-.125;
         check(DeckSlabs.blocksBody(l,beside,beneathDeck,nearLanding,
                 HunterPosture.STANDING_HEIGHT,.22),

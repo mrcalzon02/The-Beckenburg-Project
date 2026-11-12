@@ -51,8 +51,9 @@ public final class BlackpineStairVisualTest {
         }
         check(mid!=null&&Math.abs(at.y()-level.room(11).y())<.02,
             "actual collision path reaches loft floor at the correct height");
-        check(level.floorVoid(stair.x1(),stair.y1(),stair.z1()-.25),
-            "final riser is exposed by the real authored architectural opening");
+        check(level.floorVoid(stair.x1(),stair.y1(),stair.z1()-.25)
+            &&level.floorVoid(stair.x1(),stair.y1(),stair.z1()),
+            "final riser and stair endpoint are exposed by real architectural opening");
         check(!level.floorVoid(stair.x1(),stair.y1(),stair.z1()+.25),
             "upper landing retains solid structural floor");
         for(int i=119;i>=0;i--){
