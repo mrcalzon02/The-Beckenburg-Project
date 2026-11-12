@@ -32,7 +32,11 @@ public final class ArchitecturalLightOcclusion {
     }
     public static boolean architecturalClear(HouseMap map,double ax,double ay,double az,double bx,double by,double bz){
         for(var r:map.level().rooms())if(!r.outside()){
-            for(double deck:new double[]{r.y(),r.y()+r.height()-.04}){
+            // This is the cold shadow-ray hot path: millions of rays can
+            // visit every room. Iterate the same two planes without creating
+            // a new double[2] for each room on each ray.
+            for(int deckIndex=0;deckIndex<2;deckIndex++){
+                double deck=deckIndex==0?r.y():r.y()+r.height()-.04;
                 double t=at(ay,by,deck);
                 if(hit(t)){
                     double x=ax+(bx-ax)*t,z=az+(bz-az)*t;
@@ -40,9 +44,14 @@ public final class ArchitecturalLightOcclusion {
                     if(x>=r.x0()-1e-7&&x<=r.x1()+1e-7&&z>=r.z0()-1e-7&&z<=r.z1()+1e-7&&!map.level().floorVoid(x,voidY,z))return false;
                 }
             }
-            for(boolean alongX:new boolean[]{true,false}){
+            // Preserve the exact axis / low-high / inner-outer order of the
+            // old loops, but allocate no temporary boolean[] or double[].
+            for(int axis=0;axis<2;axis++){
+                boolean alongX=axis==0;
                 double low=alongX?r.z0():r.x0(),high=alongX?r.z1():r.x1();
-                for(double centre:new double[]{low,high})for(double side:new double[]{-HALF,HALF}){
+                for(int edge=0;edge<2;edge++)for(int sideIndex=0;sideIndex<2;sideIndex++){
+                    double centre=edge==0?low:high;
+                    double side=sideIndex==0?-HALF:HALF;
                     double t=at(alongX?az:ax,alongX?bz:bx,centre+side);
                     if(!hit(t))continue;
                     double y=ay+(by-ay)*t,tangent=alongX?ax+(bx-ax)*t:az+(bz-az)*t;
