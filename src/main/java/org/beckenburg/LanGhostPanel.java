@@ -149,13 +149,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 LanGhostHearing.Event cue=LanGhostHearing.decode(packet);
                 if(hearingEnabled()&&cue.tick()>=lastHearingTick&&cue.tick()>=tick-18){
                     hearing=cue;lastHearingTick=cue.tick();
-                    LanSound.Cue sound=switch(cue.source()){
-                        case FOOTSTEP,EMOTE->LanSound.Cue.FOOTFALL;
-                        case DOOR->LanSound.Cue.DOOR;
-                        case EQUIPMENT->LanSound.Cue.EQUIPMENT;
-                        case RITUAL->LanSound.Cue.RITUAL;
-                        case CHAT,VOICE->LanSound.Cue.WHISPER;
-                    };
+                    LanSound.Cue sound=heardFoley(cue.source());
                     int pan=switch(cue.direction()){
                         case LEFT->-75;case RIGHT->75;case AHEAD,BEHIND,HERE->0;
                     };
@@ -164,7 +158,8 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                     };
                     volume=Math.max(1,Math.min(100,
                         (int)Math.round(volume*cue.profile().intensity()/55.0)));
-                    audio.playHeard(new LanSound.CueEvent(sound,pan,volume,cue.tick()));
+                    if(sound!=null)
+                        audio.playHeard(new LanSound.CueEvent(sound,pan,volume,cue.tick()));
                 }
             }else if(p.get(0).equals("GRIPPLE")){
                 var pulse=GhostSoundRipples.Ripple.decode(packet,map);
@@ -291,6 +286,20 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     public List<GhostDomain.Action> offeredActions(){return offered;}
     public String automaticAction(){return lastAutomaticAction;}
     public boolean isCaptured(){return mouseLook.captured();}
+    /** These are HUNTER cues, not supernatural ghost vocalizations.
+     * Typed text is represented by a sound event/ring and caption without
+     * inventing spoken dialogue; actual voice uses the authenticated UDP
+     * stream instead of a duplicate synthesized ghost whisper.
+     */
+    static LanSound.Cue heardFoley(LanGhostPursuit.Sound source){
+        return switch(Objects.requireNonNull(source)){
+            case FOOTSTEP,EMOTE->LanSound.Cue.STEP;
+            case DOOR->LanSound.Cue.DOOR;
+            case EQUIPMENT->LanSound.Cue.EQUIPMENT;
+            case RITUAL->LanSound.Cue.RITUAL;
+            case CHAT,VOICE->null;
+        };
+    }
     public String currentHearing(){
         return hearingFade.gain()>.02&&hearing!=null
             &&tick<=hearing.tick()+Math.max(18,hearing.profile().durationTicks())

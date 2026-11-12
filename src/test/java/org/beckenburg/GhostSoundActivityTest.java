@@ -26,6 +26,15 @@ public final class GhostSoundActivityTest {
         ok(voice.intensity()==GhostSoundProfile.VOICE_INTENSITY
             &&voice.durationTicks()==10,
             "Live voice audio uses one constant-strength one-second sound pulse");
+        ok(LanGhostPanel.heardFoley(LanGhostPursuit.Sound.VOICE)==null
+            &&LanGhostPanel.heardFoley(LanGhostPursuit.Sound.CHAT)==null,
+            "Ghost hearing may not synthesize supernatural speech for hunter voice/text");
+        ok(LanGhostPanel.heardFoley(LanGhostPursuit.Sound.FOOTSTEP)==LanSound.Cue.STEP
+            &&LanGhostPanel.heardFoley(LanGhostPursuit.Sound.EMOTE)==LanSound.Cue.STEP,
+            "Hunter motion and gestures play ordinary human Foley, not ghost footfalls");
+        ok(RecordedSfx.ghostVoiceName(new LanSound.CueEvent(
+            LanGhostPanel.heardFoley(LanGhostPursuit.Sound.FOOTSTEP),0,55,45))==null,
+            "Walking Foley cannot randomly select supernatural speech recordings");
         ok(GhostSoundProfile.perceived(walking,0)==walking.intensity()
             &&GhostSoundProfile.perceived(walking,3)<walking.intensity(),
             "Real architectural loss reduces event strength without changing source kind");
