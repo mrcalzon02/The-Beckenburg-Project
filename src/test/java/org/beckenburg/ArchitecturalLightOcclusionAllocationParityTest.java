@@ -141,6 +141,51 @@ public final class ArchitecturalLightOcclusionAllocationParityTest {
         System.out.println("PASS architectural shadow broadphase tolerance "
             +map.level().id()+" "+state+" 500 near-edge rays");
     }
+    /** Compare the hot direct-loop aperture query with its original Stream
+     * definition, including strict X/Z edges and the Y tolerance boundary. */
+    private static void floorVoidParity(HouseMap map,Random random){
+        var level=map.level();
+        int checked=0;
+        for(var hole:level.voids()){
+            double midX=(hole.x0()+hole.x1())*.5,midZ=(hole.z0()+hole.z1())*.5;
+            double[] xs={hole.x0()-.000001,hole.x0(),hole.x0()+.000001,
+                midX,hole.x1()-.000001,hole.x1(),hole.x1()+.000001};
+            double[] zs={hole.z0()-.000001,hole.z0(),hole.z0()+.000001,
+                midZ,hole.z1()-.000001,hole.z1(),hole.z1()+.000001};
+            double[] ys={hole.y()-.050001,hole.y()-.05,hole.y()-.049999,
+                hole.y(),hole.y()+.049999,hole.y()+.05,hole.y()+.050001};
+            for(double x:xs)for(double y:ys)for(double z:zs){
+                boolean want=level.voids().stream().anyMatch(v->
+                    Math.abs(v.y()-y)<.05&&v.contains(x,z));
+                boolean got=level.floorVoid(x,y,z);
+                if(want!=got)throw new AssertionError("Floor void edge drift "
+                    +level.id()+" at "+x+","+y+","+z);
+                checked++;
+            }
+        }
+        for(int i=0;i<2000;i++){
+            var room=level.room(random.nextInt(level.rooms().size()));
+            double x=room.x0()+(room.x1()-room.x0())*random.nextDouble();
+            double z=room.z0()+(room.z1()-room.z0())*random.nextDouble();
+            double y=room.y()+random.nextDouble()*room.height();
+            boolean want=level.voids().stream().anyMatch(v->
+                Math.abs(v.y()-y)<.05&&v.contains(x,z));
+            boolean got=level.floorVoid(x,y,z);
+            if(want!=got)throw new AssertionError("Floor void random drift "
+                +level.id()+" case "+i);
+            checked++;
+        }
+        for(double special:new double[]{Double.NaN,Double.POSITIVE_INFINITY,
+                Double.NEGATIVE_INFINITY}){
+            boolean want=level.voids().stream().anyMatch(v->
+                Math.abs(v.y()-special)<.05&&v.contains(special,special));
+            if(level.floorVoid(special,special,special)!=want)
+                throw new AssertionError("Floor void nonfinite edge "+level.id());
+            checked++;
+        }
+        System.out.println("PASS floor opening direct-loop parity "+level.id()
+            +" "+checked+" strict-boundary/graded samples");
+    }
     private static void indexMatchesOriginalPortalOwnership(HouseMap map){
         for(int room=0;room<map.level().rooms().size();room++){
             final int owner=room;
@@ -156,6 +201,7 @@ public final class ArchitecturalLightOcclusionAllocationParityTest {
     private static void exercise(HouseMap map,int seed){
         indexMatchesOriginalPortalOwnership(map);
         var random=new Random(0xB3CC61EEL+seed);
+        floorVoidParity(map,random);
         check(map,random,"closed");
         boundaryParity(map,random,"closed");
         var doors=map.level().portals().stream().filter(p->p.door()).limit(2).toList();
@@ -167,7 +213,12 @@ public final class ArchitecturalLightOcclusionAllocationParityTest {
                 map.toggleDoor(doors.get(1).id());
                 check(map,random,"two-doors-open");
                 boundaryParity(map,random,"two-doors-open");
+                map.toggleDoor(doors.get(1).id());
+                check(map,random,"second-door-closed");
             }
+            map.toggleDoor(doors.get(0).id());
+            check(map,random,"doors-restored-closed");
+            boundaryParity(map,random,"doors-restored-closed");
         }
     }
     public static void main(String[] args){
@@ -179,6 +230,6 @@ public final class ArchitecturalLightOcclusionAllocationParityTest {
         exercise(BlackpineLevel.map(),6);
         System.out.println("PASS allocation-free architectural shadow parity: "
             +"cross-storey slabs, real apertures, real door states and "
-            +"conservative ray-bounds pruning");
+            +"conservative ray-bounds pruning and reversible door/void edges");
     }
 }

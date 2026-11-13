@@ -98,7 +98,13 @@ public record LevelDefinition(String id, String revision, String title,
         return false;
     }
     public Socket socket(String type,int room){return sockets.stream().filter(s->s.type().equals(type)&&s.room()==room).findFirst().orElse(null);}
-    public boolean floorVoid(double x,double y,double z){return voids.stream().anyMatch(v->Math.abs(v.y()-y)<.05&&v.contains(x,z));}
+    /** A hot query for slab collision and architectural lighting. Preserve the
+     * authoritative strict aperture edges and +/- 5cm floor tolerance without
+     * allocating a Stream/lambda on every ray or movement sample. */
+    public boolean floorVoid(double x,double y,double z){
+        for(Void v:voids)if(Math.abs(v.y()-y)<.05&&v.contains(x,z))return true;
+        return false;
+    }
     public List<Guard> guards(){return guardSegments(stairs,voids,rooms);}
     /** A horizontal guard exists only where an upper-floor slab actually supports
      * the side of an opening. The low stair approach is not an elevated deck. */
