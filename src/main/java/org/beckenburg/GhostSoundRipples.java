@@ -20,6 +20,9 @@ import java.util.Objects;
  */
 public final class GhostSoundRipples {
     public static final int LIFE_TICKS=22,MAX_LIFE_TICKS=60,MAX_ACTIVE=12;
+    // Host GPOSE is broadcast every five 100ms ticks. A valid GHEAR/GRIPPLE
+    // can arrive four ticks ahead of the last pose without being forged.
+    private static final int MAX_POSE_TICK_LAG=4;
     private static final int STEPS=48;
     private record Timed(Ripple pulse,long receivedAt){}
     private final Deque<Timed> active=new ArrayDeque<>();
@@ -71,7 +74,7 @@ public final class GhostSoundRipples {
     /** The UI accepts events only while the host says the ghost is listening. */
     public void accept(Ripple pulse,int currentTick,long receivedAt){
         Objects.requireNonNull(pulse);
-        if(pulse.tick()>currentTick+3||currentTick-pulse.tick()>lifeTicks(pulse))return;
+        if(pulse.tick()>currentTick+MAX_POSE_TICK_LAG||currentTick-pulse.tick()>lifeTicks(pulse))return;
         prune(receivedAt);
         if(active.size()>=MAX_ACTIVE)active.removeFirst();
         active.addLast(new Timed(pulse,receivedAt));

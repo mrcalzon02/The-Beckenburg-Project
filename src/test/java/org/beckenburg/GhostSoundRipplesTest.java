@@ -39,6 +39,25 @@ public final class GhostSoundRipplesTest {
             "Event location survives bounded millimetre protocol");
         check(!packet.contains("H1|")&&!packet.contains("BODY|")&&!packet.contains("TEAMMAP|"),
             "Ripple packet exposes neither a hunter identity nor inventory/telemetry");
+        // Genuine host GPOSE updates come every five ticks; a sound emitted
+        // four ticks after the latest pose must still render when GLISTEN is open.
+        // A fifth-tick advance without any host pose is not accepted. The
+        // receiving panel separately rejects every sound after GLISTEN=0.
+        for(var kind:new LanGhostPursuit.Sound[]{
+                LanGhostPursuit.Sound.FOOTSTEP,LanGhostPursuit.Sound.EMOTE,
+                LanGhostPursuit.Sound.CHAT,LanGhostPursuit.Sound.VOICE}){
+            var delayed=new GhostSoundRipples.Ripple(
+                kind,source.x(),source.y(),source.z(),44);
+            var pending=new GhostSoundRipples();
+            pending.accept(delayed,40,1_000_000_000L);
+            check(pending.size()==1,
+                "Four-tick legitimate host sound lost between GPOSE snapshots: "+kind);
+            pending.clear();
+            pending.accept(new GhostSoundRipples.Ripple(
+                kind,source.x(),source.y(),source.z(),45),40,1_000_000_000L);
+            check(pending.size()==0,
+                "Five-tick future sound must not bypass host pose ordering: "+kind);
+        }
         rejects(()->GhostSoundRipples.Ripple.decode("GRIPPLE|FOOTSTEP|NaN|0|1|45",map));
         rejects(()->GhostSoundRipples.Ripple.decode("GRIPPLE|FOOTSTEP|999999|0|1|45",map));
         rejects(()->GhostSoundRipples.Ripple.decode("GRIPPLE|INVALID|1|0|1|45",map));
