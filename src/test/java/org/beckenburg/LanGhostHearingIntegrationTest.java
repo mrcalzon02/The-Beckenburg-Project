@@ -26,6 +26,22 @@ public final class LanGhostHearingIntegrationTest {
             }
             throw new AssertionError("missing "+expected+" for "+client.seat());
         }
+        /** Inspect every real host frame until the next stillness gate opens.
+         * Do not use a fixed quiet-time sleep: it could miss a late cue or
+         * misclassify a legitimate sound emitted after the host reopens.
+         */
+        void assertNoSpectralCuesThroughReopen()throws Exception{
+            long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(6);
+            while(System.nanoTime()<deadline){
+                String packet=inbox.poll(80,TimeUnit.MILLISECONDS);
+                if(packet==null)continue;
+                if(packet.startsWith("GHEAR|")||packet.startsWith("GRIPPLE|")
+                        ||packet.startsWith("BODY|")||packet.startsWith("TEAMMAP|"))
+                    throw new AssertionError("moving ghost received private hunter telemetry: "+packet);
+                if(packet.startsWith("GLISTEN|1|"))return;
+            }
+            throw new AssertionError("host never reopened hearing after real movement");
+        }
         public void close(){client.close();}
     }
     public static void main(String[] args)throws Exception{
@@ -85,8 +101,50 @@ public final class LanGhostHearingIntegrationTest {
                 &&longChat.profile().durationTicks()>shortChat.profile().durationTicks()
                 &&longRing.profile().equals(longChat.profile()),
                 "Long radio text affects local source strength without leaking its text");
+            // Real 4-socket host/client boundary: while an actual ghost
+            // displacement keeps GLISTEN closed, not even a perfectly valid
+            // walker, emoter or chatting hunter may disclose a source point.
+            // Re-opened stationary hearing must deliver BOTH coarse GHEAR and
+            // source-only GRIPPLE, without BODY or chat transcripts.
             g.client.ghostStep(100,0);
             g.await("ACCEPT|GSTEP");g.await("GLISTEN|0|");
+            a.client.step(15,0);a.await("ACCEPT|STEP");
+            g.assertNoSpectralCuesThroughReopen();
+            Thread.sleep(550); // Host footstep cadence is four 100ms ticks.
+            a.client.step(-15,0);a.await("ACCEPT|STEP");
+            ok(LanGhostHearing.decode(g.await("GHEAR|FOOTSTEP|")).source()
+                ==LanGhostPursuit.Sound.FOOTSTEP,"settled ghost resumes genuine footsteps");
+            ok(GhostSoundRipples.Ripple.decode(g.await("GRIPPLE|FOOTSTEP|"),
+                new HouseMap()).kind()==LanGhostPursuit.Sound.FOOTSTEP,
+                "settled ghost resumes the actual walking source ripple");
+
+            g.client.ghostStep(-100,0);
+            g.await("ACCEPT|GSTEP");g.await("GLISTEN|0|");
+            a.client.emote(HunterEmote.WAVE);a.await("ACCEPT|EMOTE|WAVE");
+            g.assertNoSpectralCuesThroughReopen();
+            Thread.sleep(950); // Accepted emotes have an eight-tick cooldown.
+            a.client.emote(HunterEmote.LAUGH);a.await("ACCEPT|EMOTE|LAUGH");
+            ok(LanGhostHearing.decode(g.await("GHEAR|EMOTE|")).source()
+                ==LanGhostPursuit.Sound.EMOTE,"settled ghost hears genuine gestures");
+            ok(GhostSoundRipples.Ripple.decode(g.await("GRIPPLE|EMOTE|"),
+                new HouseMap()).kind()==LanGhostPursuit.Sound.EMOTE,
+                "settled ghost sees genuine gesture source");
+
+            g.client.ghostStep(100,0);
+            g.await("ACCEPT|GSTEP");g.await("GLISTEN|0|");
+            a.client.say(LanChat.Channel.LOCAL,"quiet");
+            a.await("ACCEPT|SAY|LOCAL");
+            g.assertNoSpectralCuesThroughReopen();
+            Thread.sleep(750); // Two accepted chat lines require six ticks.
+            a.client.say(LanChat.Channel.LOCAL,"audible again");
+            a.await("ACCEPT|SAY|LOCAL");
+            var resumedChat=LanGhostHearing.decode(g.await("GHEAR|CHAT|"));
+            var resumedRing=GhostSoundRipples.Ripple.decode(g.await("GRIPPLE|CHAT|"),
+                new HouseMap());
+            ok(resumedChat.source()==LanGhostPursuit.Sound.CHAT
+                &&resumedRing.kind()==LanGhostPursuit.Sound.CHAT
+                &&resumedChat.profile().equals(resumedRing.profile()),
+                "only after stillness can real text generate matched anonymous cues");
             // A ghost cannot forge its own audible source or request
             // another team's live BODY/telemetry frames.
             g.client.send("GRIPPLE|FOOTSTEP|1000|0|1000|20");

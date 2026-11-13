@@ -40,6 +40,21 @@ public final class LanVoiceHostIntegrationTest {
             }
             throw new AssertionError(seat+" missed "+prefix);
         }
+        /** Scan authentic TCP host output until the moving ghost settles.
+         * A quiet UDP socket alone cannot prove GHEAR/GRIPPLE privacy.
+         */
+        void assertNoSpectralCuesThroughReopen()throws Exception{
+            long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(6);
+            while(System.nanoTime()<deadline){
+                String packet=inbox.poll(80,TimeUnit.MILLISECONDS);
+                if(packet==null)continue;
+                if(packet.startsWith("GHEAR|")||packet.startsWith("GRIPPLE|")
+                        ||packet.startsWith("BODY|")||packet.startsWith("TEAMMAP|"))
+                    throw new AssertionError("muted ghost received voice/position telemetry: "+packet);
+                if(packet.startsWith("GLISTEN|1|"))return;
+            }
+            throw new AssertionError("real host never re-opened moving ghost voice gate");
+        }
         @Override public void close(){try{tcp.close();}catch(IOException ignored){}}
     }
     private static final class AudioPeer implements AutoCloseable{
@@ -159,10 +174,23 @@ public final class LanVoiceHostIntegrationTest {
                 ghost.await("GLISTEN|0|");
                 speaker.emit(LanVoicePacket.AUDIO,4,LanChat.Channel.LOCAL,tone);
                 spectral.empty();
-                ghost.await("GLISTEN|1|");
+                ghost.assertNoSpectralCuesThroughReopen();
                 speaker.emit(LanVoicePacket.AUDIO,5,LanChat.Channel.LOCAL,tone);
                 ok(spectral.read().seat()==sourceId,
                     "real voice relay resumes only after host stillness settles");
+                // Fresh voice after the one-second host cue cadence must
+                // produce BOTH anonymous TCP event types as well as UDP.
+                Thread.sleep(1150);
+                speaker.emit(LanVoicePacket.AUDIO,6,LanChat.Channel.LOCAL,tone);
+                ok(spectral.read().seat()==sourceId,
+                    "settled ghost receives fresh authenticated UDP voice");
+                var resumedVoice=LanGhostHearing.decode(ghost.await("GHEAR|VOICE|"));
+                var resumedRipple=GhostSoundRipples.Ripple.decode(
+                    ghost.await("GRIPPLE|VOICE|"),new HouseMap());
+                ok(resumedVoice.source()==LanGhostPursuit.Sound.VOICE
+                    &&resumedRipple.kind()==LanGhostPursuit.Sound.VOICE
+                    &&resumedVoice.profile().equals(resumedRipple.profile()),
+                    "host voice resumes matched anonymous acoustic cues after stillness");
                 spectral.emit(LanVoicePacket.AUDIO,1,LanChat.Channel.RADIO,tone);
                 distant.empty();
             }
