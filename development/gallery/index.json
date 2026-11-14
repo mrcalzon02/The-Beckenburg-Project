@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10904,
+  "count": 10905,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -105534,6 +105534,16 @@
       "height": 900,
       "bytes": 634306,
       "sha256": "51e61ace0fa2f720317593130edbcd04b6ee4b04d812b140be164a1577c5ef13"
+    },
+    {
+      "path": "development/levels/rebuild/captures/wharf-stair-cells-batch/wharf-stair-cells.png",
+      "url": "development/levels/rebuild/captures/wharf-stair-cells-batch/wharf-stair-cells.png",
+      "title": "Wharf stair cells",
+      "kind": "Native reconstructed rectangular Wharf stair cells; constant flights and supported landings, roof context hidden, runtime acceptance open",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1959103,
+      "sha256": "6f957975ca5c34b7b67e8313cd3c4c9a110096d73af4cbc542ee3d9c13ffbd23"
     },
     {
       "path": "development/levels/rebuild/previews/academy-revised-rough-plan.png",

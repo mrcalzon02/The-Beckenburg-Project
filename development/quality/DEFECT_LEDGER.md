@@ -6898,6 +6898,20 @@ Evidence and verification: tools/java/RebuildSiteEarthworks.java; tools/compose_
 
 Older-map obligation: Review joins against real floor edges and standing/crouched collision across all sites. Final drainage, edge materials, landscape/desquareify acceptance, canonical van arrival visualization and real-game renderer/room/portal/acoustic/spawn/service integration remain unfinished.
 
+### DEV-487 — Clearance-driven flared tread wings and copied ceiling cuts produced incoherent Wharf stair wells
+
+**Status:** WHARF STAIR CELLS RECONSTRUCTED; OTHER SITES AND RUNTIME OPEN · **Affected:** Wharf west/east stairs and undercroft roof; equivalent flared stair construction elsewhere requires rejection/rebuild
+
+Owner screenshots show giant tapered tread wings without sensible supports, fragmented rails and ceiling holes copied from those taper outlines.
+
+Cause / uncertainty: Earlier work widened treads to satisfy side-lane probes and used their shapes to cut floors/caps. This reversed the House method: real structural layout first, construction next, traversability as validation. Passing checks did not justify the architecture.
+
+Fix / next action: Remove both old flights, tapered treads/stringers, fragmented end landings and obsolete roof/wall fragments. Build constant2.4m gross tread flights inside2.6m clear rectangular cells,14regular risers over2.5m, supported upper landings, shared continuous cellar floor,0.25m retaining walls and0.30m roof/coping structure. Main cellar walls terminate at roof underside; clear lower height2.2m. Grade guards sit on real walls/coping and flight handrails on continuous stringers. Rectangular roof penetrations follow the stair cells, independent of tread outlines. East upper handrail extension is0.6m, preserving the actual landing bypass. Both flights/complete vertical routes and all16Wharf flatlinks pass both ways;5157strict foot samples have zero invalid poses. Inspect exported close view before accepting any further work.
+
+Evidence and verification: development/levels/rebuild/wharf-stair-cells-pass/roster.json; wld-06/rectangular-stair-cells.blend/glb/hcs2; verification/stairs and current-flat-movement.json; captures/wharf-stair-cells-batch/wharf-stair-cells.png
+
+Older-map obligation: Other active maps need the same architecture-first stair/shaft audit; Research lower tunnel still fails. Owner explicitly requires cleanup of all irregular doorway cuts throughout the roster with consistent door-type dimensions, real jambs/lintels and full wall depth. Preserve mature authorities. Whole-map load/soil/finish/runtime and availability gates remain open.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -256,3 +256,6 @@ The first visible success is a complete set of credible, measured places with pr
 ## Planning checkpoint validation
 
 Local checks passed for exact roster equality with the existing edge/sky catalog, 29 unique matching site packages, twelve stages per packet (348 decisions), existing prior-source paths, relative links in both new documents, strict UTF-8 decoding and `git diff --check`. All execution stages remain `NOT_AUDITED` with no claimed evidence or accepted revision. No runtime code or geometry changed, so no game compile, new render/gallery capture or gameplay test was run for this documentation-only delivery. Current recovery workflow observations are recorded separately in the recovery checkpoint log.
+
+
+Owner amendment13November2026: retain the House ordering—predictable real-world structure and supported landings/openings first, then traversability validation. Reject clearance-driven tread flares and matching arbitrary ceiling cuts. Clean all doorway openings across the full roster to consistent sill/head datums and appropriate door-type widths, with real jambs/lintels and wall thickness; navigation studies guide construction and never become physical ribbons or swept-cut architecture.

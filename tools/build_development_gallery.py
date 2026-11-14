@@ -17,7 +17,8 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/site-earthworks-batch/' in path:kind='Native actual saved editor geographic terrain sculpt; roof cutaway, rough materials, landscape/runtime acceptance open'
+    if '/wharf-stair-cells-batch/' in path:kind='Native reconstructed rectangular Wharf stair cells; constant flights and supported landings, roof context hidden, runtime acceptance open'
+    elif '/site-earthworks-batch/' in path:kind='Native actual saved editor geographic terrain sculpt; roof cutaway, rough materials, landscape/runtime acceptance open'
     elif '/courts-and-docks-batch/' in path:kind='Native area-built courtyards and piled dock construction; roofs hidden for review, terrain/finish/runtime gates open'
     elif '/study-solid-removal-batch/' in path:kind='Native correction after removing mistaken physical study lines; incomplete terrain/thresholds exposed, roofs hidden, NOT accepted construction'
     elif '/circulation-construction-batch/' in path:kind='Native exported piled perimeter walk, aligned service aisle or housed mezzanine stair; upper roof context hidden, no runtime acceptance'
