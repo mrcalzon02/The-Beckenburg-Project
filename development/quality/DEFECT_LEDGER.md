@@ -6828,6 +6828,20 @@ Evidence and verification: development/levels/rebuild/circulation-construction-p
 
 Older-map obligation: Preserve mature map authorities and all29packet roster. Research lower tunnel L19 remains an architecturally unaudited diagonal even though its native sweep now passes. Wharf east return/pier thresholds, Research courtyard excavation guards and full runtime binding remain open. Academy off-landform and WLD-16 terrain ownership remain explicit.
 
+### DEV-482 — Traversability studies were incorrectly extruded into physical architecture and coplanar room landings
+
+**Status:** ROOT GENERATORS CORRECTED; THREE SOURCES STRIPPED; FULL ROSTER REMEDIATION OPEN · **Affected:** All route-derived blockout candidates require audit; current removal at WLD-06 Wharf, WLD-08 Research and WLD-13 Cannery; mature Castle/House/Blackpine/Hollow Creek preserved
+
+Owner screenshot shows an amber approach strip flickering through Cannery hall floor. Cyan centerline supports and subsequent route-rooted bed fragments were physical mesh/collision and masked missing actual terrain/deck support.
+
+Cause / uncertainty: Navigation guidance was treated as a construction command. build_stair_bays passed landings_authored_in_shell while stair_flights reads landings_authored_in_zones, creating long coplanar landing boxes through existing room floors. Narrow movement passes were incorrectly used as evidence of coherent architecture.
+
+Fix / next action: Base blockout route_mesh now creates only non-rendering CURVE study objects, with no mesh or collision geometry. Correct the stair landing flag. Remove all rough route support, route-rooted fill fragments and line-end bearings from these three active candidates. Replace Cannery processing floor and ground approach boxes with one closed0.16m slab; retain actual stair/upper shaft/guards and reusable structures/assets. All6flights and6complete vertical routes pass both ways. Strict flat review now has4228invalid of15267samples,25passing complete links and28regressed directions over14links. Preserve failing evidence: previous strips supplied false support. Do not add ribbon geometry back or relax checks. Rebuild actual arrival terrain, quays/decks, thresholds and damaged architectural openings. Current candidate status is explicitly incomplete remediation, not accepted maps.
+
+Evidence and verification: Owner Cannery screenshot; development/levels/rebuild/study-solid-removal-pass/roster.json; per-site study_solid_removal lists; verification/current-flat-movement.json and verification/stairs; native correction cutaways; tools/remove_study_solids.py; build_blockouts.route_mesh and build_stair_bays landing flag
+
+Older-map obligation: Audit every remaining active candidate for physical study ribbons, coplanar landings and earlier route-driven wall/floor/roof cuts. Native checks do not validate architecture. Deliberately authored slabs/bridges also require sensible building/terrain review. Full production rebuild and runtime integration remain open; no unlock or held integration merge.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

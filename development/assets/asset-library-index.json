@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1975,
-  "unique_local_file_hashes": 1804,
+  "local_files": 1978,
+  "unique_local_file_hashes": 1807,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 53,
+    "additional_custom_model_sources": 56,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -29425,6 +29425,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "61d9b3f46afb0c53d41b6923ab3d62b5e6870963468af8dfdabae71c177df4ad",
       "bytes": 1445656
+    },
+    {
+      "id": "architecture-without-guides",
+      "label": "architecture-without-guides",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/study-solid-removal-pass/wld-06/architecture-without-guides.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "81768969f38e567b44e5b64b887e5338524f1ea8ae42e6bb051abf13b6df7717",
+      "bytes": 2505512
+    },
+    {
+      "id": "architecture-without-guides",
+      "label": "architecture-without-guides",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/study-solid-removal-pass/wld-08/architecture-without-guides.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "ffd324787004a58abbe877f236785d92d4af9a97eaffc25331a8d347ba68215f",
+      "bytes": 3102508
+    },
+    {
+      "id": "architecture-without-guides",
+      "label": "architecture-without-guides",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/study-solid-removal-pass/wld-13/architecture-without-guides.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "85b1f75f7354e8ce24bc59c2172108f5b11b8c4796348fc5c4f154f28935eba6",
+      "bytes": 3172620
     },
     {
       "id": "supported-terrain",

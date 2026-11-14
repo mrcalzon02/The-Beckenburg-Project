@@ -182,3 +182,7 @@ tools/build_deliberate_entrances.py -text whitespace=cr-at-eol
 # Physical circulation reconstruction binds exact scene/native receipts.
 development/levels/rebuild/circulation-construction-pass/** -text whitespace=cr-at-eol
 tools/build_circulation_construction.py -text whitespace=cr-at-eol
+
+# Exact-byte architectural correction sources, including failed movement findings.
+development/levels/rebuild/study-solid-removal-pass/** -text whitespace=cr-at-eol
+tools/remove_study_solids.py -text whitespace=cr-at-eol

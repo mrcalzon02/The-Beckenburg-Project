@@ -82,38 +82,14 @@ def slab(zone,holes,c,mat,role='floor',structural=False):
             if any(h[0]<(x0+x1)/2<h[2] and h[1]<(z0+z1)/2<h[3] for h in holes):continue
             box(('Floor ' if role=='floor' else 'Ceiling cap ')+zone['id'],(x0+x1)/2,zone['y']-.16,(z0+z1)/2,x1-x0,.16,z1-z0,mat,c,zone=zone['id'],role=role)
 def route_mesh(link,c,mat,structural_data=None):
-    for i,(p,q) in enumerate(zip(link['points'],link['points'][1:])):
-        dx=q[0]-p[0];dz=q[2]-p[2];run=math.hypot(dx,dz);width=link['width']
-        if run<.01:
-            if abs(q[1]-p[1])>.01:box(link['id']+' vertical core',p[0],min(p[1],q[1]),p[2],width,abs(q[1]-p[1]),width,mat,c,role='UNRESOLVED_VERTICAL_CORE')
-            continue
-        nx=-dz/run*width/2;nz=dx/run*width/2
-        vv=[(x,-z,y+depth) for depth in [-.12,0] for x,y,z in [(p[0]+nx,p[1],p[2]+nz),(p[0]-nx,p[1],p[2]-nz),(q[0]-nx,q[1],q[2]-nz),(q[0]+nx,q[1],q[2]+nz)]]
-        mesh=bpy.data.meshes.new(link['id']);mesh.from_pydata(vv,[],[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]);mesh.update()
-        o=bpy.data.objects.new(link['id']+' support '+str(i),mesh);c.objects.link(o);mesh.materials.append(mat)
-        o['role']='rough route support; stair/ramp engineering unverified';o['clear_width']=width
-        if structural_data and abs(p[1]-q[1])<.01:
-            # Reservation strips must not refill the floor openings already
-            # cut for an actual stair. They share the same authored aperture.
-            from structural_pass import deck_holes
-            for index,(x0,z0,x1,z1) in enumerate(deck_holes(p[1],structural_data)):
-                if x1<=min(p[0],q[0])-width or x0>=max(p[0],q[0])+width or z1<=min(p[2],q[2])-width or z0>=max(p[2],q[2])+width:continue
-                bpy.ops.mesh.primitive_cube_add(size=1,location=((x0+x1)/2,-(z0+z1)/2,p[1]-.06))
-                cutter=bpy.context.object;cutter.dimensions=(x1-x0,z1-z0,.6)
-                bpy.ops.object.transform_apply(location=False,rotation=False,scale=True)
-                bpy.context.view_layer.objects.active=o
-                modifier=o.modifiers.new('Shared stair shaft '+str(index),'BOOLEAN');modifier.operation='DIFFERENCE';modifier.object=cutter
-                bpy.ops.object.modifier_apply(modifier=modifier.name);bpy.data.objects.remove(cutter,do_unlink=True)
-            if not o.data.polygons:bpy.data.objects.remove(o,do_unlink=True);continue
-        # X/-Z authoring reverses the initial strip winding. Boolean cuts used
-        # to repair it incidentally, so untouched strips exposed their underside
-        # as the walking surface. Orient every real solid explicitly instead.
-        bm=bmesh.new();bm.from_mesh(o.data)
-        bmesh.ops.remove_doubles(bm,verts=list(bm.verts),dist=.0001)
-        bmesh.ops.dissolve_degenerate(bm,edges=list(bm.edges),dist=.0001)
-        bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces))
-        assert bm.calc_volume(signed=True)>0,(link['id'],i,'route support needs a closed outward solid')
-        bm.to_mesh(o.data);bm.free();o.data.update()
+    """Editor-only study line. A route is never architecture or collision."""
+    curve=bpy.data.curves.new(link['id']+' navigation study','CURVE');curve.dimensions='3D'
+    line=curve.splines.new('POLY');line.points.add(len(link['points'])-1)
+    for point,(x,y,z) in zip(line.points,link['points']):point.co=(x,-z,y,1)
+    obj=bpy.data.objects.new(link['id']+' nonphysical study',curve);c.objects.link(obj)
+    obj.hide_render=True;obj['role']='nonphysical navigation study guide';obj['link']=link['id']
+    obj['clear_width']=link['width'];obj['export_as_architecture']=False
+
 def build(path,output_root=None,structural=False):
     data=json.loads(path.read_text(encoding='utf-8'));folder=(output_root or ROOT)/path.parent.name;folder.mkdir(parents=True,exist_ok=True)
     sealed_links=[]
@@ -225,7 +201,7 @@ def build(path,output_root=None,structural=False):
         from structural_pass import inspect_export
         report['structural_review']=inspect_export(folder,data,sealed_links)
         (folder/'implementation.json').write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
-    (folder/'NEXT.md').write_text('# '+data['title']+' — next implementation steps\n\nRough shell blocking only. Source layout coordinates and elevations are retained.\n\n1. Review actual apertures, floor openings and connector support against the approved concept.\n2. Engineer every amber elevation link: real flights or paths, landings, headroom, guards and terrain.\n3. Resolve overlapping shell partitions and route crossings before building navigation collision.\n4. Integrate the canonical van, authored room volumes, circuits, acoustics and protocol IDs.\n5. Furnish, dress and test human/AI hunts and rituals; retain the map lock until accepted.\n\nSource-specific concerns:\n\n'+'\n'.join('- '+str(n) for n in data.get('refine',[]))+'\n\nSee implementation.json for every connector and floor-opening reservation.\n')
+    (folder/'NEXT.md').write_text('# '+data['title']+' â€” next implementation steps\n\nRough shell blocking only. Source layout coordinates and elevations are retained.\n\n1. Review actual apertures, floor openings and connector support against the approved concept.\n2. Engineer every amber elevation link: real flights or paths, landings, headroom, guards and terrain.\n3. Resolve overlapping shell partitions and route crossings before building navigation collision.\n4. Integrate the canonical van, authored room volumes, circuits, acoustics and protocol IDs.\n5. Furnish, dress and test human/AI hunts and rituals; retain the map lock until accepted.\n\nSource-specific concerns:\n\n'+'\n'.join('- '+str(n) for n in data.get('refine',[]))+'\n\nSee implementation.json for every connector and floor-opening reservation.\n')
     print('BLOCKED',data['id'],len(data['zones']),'zones',len(openings),'openings',flush=True)
     return report
 def main():

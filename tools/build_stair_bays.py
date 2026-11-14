@@ -87,7 +87,7 @@ def build(site,plan,source_options=None,output_stem="bayed-stairs"):
                 if all(abs(v.z-high)<.0001 for v in ps) and (ps[1]-ps[0]).cross(ps[2]-ps[0]).z>0:upper_tops.append((o['link'],high,[(v.x,-v.y) for v in ps]))
             removed.append(o.name);bpy.data.objects.remove(o,do_unlink=True)
     for key in plan['build']:
-        collection=bpy.data.collections.new('Authored bay '+key);bpy.context.scene.collection.children.link(collection);old=set(bpy.context.scene.objects);notes=[];link=dict(links[key],landings_authored_in_shell=True);assert stair_flights(link,collection,materials[key],box,notes)
+        collection=bpy.data.collections.new('Authored bay '+key);bpy.context.scene.collection.children.link(collection);old=set(bpy.context.scene.objects);notes=[];link=dict(links[key],landings_authored_in_zones=True);assert stair_flights(link,collection,materials[key],box,notes)
         for i,o in enumerate(o for o in bpy.context.scene.objects if o not in old):o.name=('Orthogonal stair ' if plan.get('preserve_upper_hubs') is False else 'Bayed stair ')+site+' '+key+' step'+str(i);built.append(o)
     cutters=[];seen_segments=set()
     retained_segments={tuple(sorted((tuple(a),tuple(b)))) for link in before['links'] if link['id'] not in changed for a,b in zip(link['points'],link['points'][1:])}

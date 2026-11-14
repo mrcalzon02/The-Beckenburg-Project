@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10895,
+  "count": 10898,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -104844,6 +104844,36 @@
       "height": 720,
       "bytes": 555906,
       "sha256": "153ec0f2e7f94d89e0a94932140f5fe484bbb1c8c7053277307a19064fb7c63b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/study-solid-removal-batch/wld-06.png",
+      "url": "development/levels/rebuild/captures/study-solid-removal-batch/wld-06.png",
+      "title": "Wld 06",
+      "kind": "Native correction after removing mistaken physical study lines; incomplete terrain/thresholds exposed, roofs hidden, NOT accepted construction",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1493659,
+      "sha256": "cd48a27058397f17eaa1bb68e6e736459e2b2d62f42dfe641216a4113cd05742"
+    },
+    {
+      "path": "development/levels/rebuild/captures/study-solid-removal-batch/wld-08.png",
+      "url": "development/levels/rebuild/captures/study-solid-removal-batch/wld-08.png",
+      "title": "Wld 08",
+      "kind": "Native correction after removing mistaken physical study lines; incomplete terrain/thresholds exposed, roofs hidden, NOT accepted construction",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1446419,
+      "sha256": "335afce69b2377f3019fb55d95ea1f4fec5b47741246f950884e3c64395fb73f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/study-solid-removal-batch/wld-13.png",
+      "url": "development/levels/rebuild/captures/study-solid-removal-batch/wld-13.png",
+      "title": "Wld 13",
+      "kind": "Native correction after removing mistaken physical study lines; incomplete terrain/thresholds exposed, roofs hidden, NOT accepted construction",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1489552,
+      "sha256": "2422d91b041de5d174d0b94fa5534dbfa451be5f943e26d4c300ac730a96db0f"
     },
     {
       "path": "development/levels/rebuild/captures/terrain-fit-batch/academy-overview.png",
