@@ -221,3 +221,6 @@ tools/audit_current_flat_routes.py -text whitespace=cr-at-eol
 development/levels/rebuild/constant-flight-construction-pass/** -text whitespace=cr-at-eol
 tools/build_constant_flight_cells.py -text whitespace=cr-at-eol
 tools/java/RebuildStairCellPunches.java -text whitespace=cr-at-eol
+
+development/levels/rebuild/arrival-grounds-construction-pass/** -text whitespace=cr-at-eol
+tools/compose_arrival_grounds.py -text whitespace=cr-at-eol

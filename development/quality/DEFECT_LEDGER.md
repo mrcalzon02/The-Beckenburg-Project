@@ -7138,17 +7138,59 @@ Older-map obligation: All29packets retained in roster; mature Castle/House/Black
 
 ### DEV-504 — Removing solid route-study supports exposes unfinished Railway and Cinder ground approaches
 
-**Status:** OPEN BLOCKER; ORDINARY-ROUTE REGRESSION CHECK FAILS · **Affected:** Railway L01/L02/L05/L08/L10/L15/L18; Cinder route-02/04/05
+**Status:** TEN REGRESSED SURFACE LINKS RECONNECTED; FOUR CINDER UNDERGROUND LINKS OPEN · **Affected:** Railway L01/L02/L05/L08/L10/L15/L18; Cinder route-02/04/05
 
 Ten previously passing ordinary links now fail in20directions after old artificial route support strips are removed.
 
 Cause / uncertainty: False narrow study solids had supplied missing ground beneath approaches; their removal reveals absent geographic construction and remaining door/ground interfaces.
 
-Fix / next action: Keep study strips removed and preserve failing check honestly. Research17/17ordinary links pass; Railway2/16 and Cinder7/14 pass, total26/47 versus35before. Broad samples retain3748invalid of13335. Next bounded grounds/entrance batch must build actual connected terrain and normal entrances. Do not restore ribbons, suppress regressions, unlock maps or claim runtime acceptance.
+Fix / next action: Keep study strips removed and preserve failing check honestly. Research17/17ordinary links pass; Railway2/16 and Cinder7/14 pass, total26/47 versus35before. Broad samples retain3748invalid of13335. Next bounded grounds/entrance batch must build actual connected terrain and normal entrances. Do not restore ribbons, suppress regressions, unlock maps or claim runtime acceptance. Follow-up arrival-grounds-construction-pass builds actual saved geographic grades and supported Railway approaches. All ten regressed links recover without solid study supports. Final Research17/17, Railway16/16, Cinder10/14ordinary links pass,43/47total; zero regressions against the previous constant-flight checkpoint. Four Cinder underground ring connections route-11/12/15/16 remain failing. Remaining older Cinder stairs and old doorway cuts require architectural construction; no map/runtime acceptance.
 
 Evidence and verification: development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch
 
 Older-map obligation: All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates.
+
+### DEV-505 — Missing geographic approach ground beneath Railway and Cinder circulation
+
+**Status:** SAVED THREE-SITE GROUNDS CONSTRUCTED; LANDSCAPE AND RUNTIME OPEN · **Affected:** Research forecourt/antenna grounds; Railway arrival/cutting/siding/crossing; Cinder arrival/service yard
+
+Removal of artificial route support strips exposed absent or mismatched actual ground.
+
+Cause / uncertainty: Routes previously passed on mistaken physical study solids rather than coherent landform.
+
+Fix / next action: Use existing TerrainLayerStack production writer for area-shaped clearings with feathered shoulders, excluding room interiors and excavation edge. Raise/lower real saved geographic terrain across3sites. Save/reopen and republish exact native/OBJ terrain. Source R16, adaptive topology and all previous cut rows remain byte-identical;1512Research/1943Railway/832Cinderhole controls remain clear. All original nonterrain parts retained except three explicitly replaced platform guard bays.43of47ordinary links pass versus26before, zero regressions; all11flights/10complete stair routes and51door profiles pass. Broad samples retain217invalid of13464. Terrain materials remain coarse, wider drainage/landscape/desquareify, canonical van arrival views and runtime gates open.
+
+Evidence and verification: development/levels/rebuild/arrival-grounds-construction-pass/roster.json; per-site construction.json/worlds; verification/source-and-structure-preservation.json/current-flat-movement.json/stairs/door-aperture-verification.json; captures/arrival-grounds-construction-batch
+
+Older-map obligation: All29packets remain explicit. Preserve mature maps and source assets; do not infer older stair/door/terrain or runtime acceptance from this batch.
+
+### DEV-506 — Ground grading intruded beside an existing below-grade Railway landing
+
+**Status:** EXCAVATION ENVELOPE RESTORED; TEN COMPLETE STAIR ROUTES PASS · **Affected:** Railway lower floor and west stair approach
+
+Initial geographic sculpt preserved hole topology but changed adjacent soil vertices enough to block the lower approach.
+
+Cause / uncertainty: Protecting only enclosed rooms omitted an open below-grade room and its terrain triangle neighbourhood.
+
+Fix / next action: Restore the original saved layers before reauthoring Railway. Protect the lower excavation neighbourhood26..36 by20..44in the earthworks program. Independently verify every protected grid point retains its source height and every old hole remains clear. Final all10complete stair routes pass both ways with no regression; no native tolerance relaxed.
+
+Evidence and verification: development/levels/rebuild/arrival-grounds-construction-pass/roster.json; per-site construction.json/worlds; verification/source-and-structure-preservation.json/current-flat-movement.json/stairs/door-aperture-verification.json; captures/arrival-grounds-construction-batch
+
+Older-map obligation: All29packets remain explicit. Preserve mature maps and source assets; do not infer older stair/door/terrain or runtime acceptance from this batch.
+
+### DEV-507 — Railway platform guard sealed its entrance and trestle approaches crossed saved voids
+
+**Status:** ACTUAL GUARD ENTRY AND FOUNDED BRIDGE APPROACHES BUILT · **Affected:** Railway maintenance platform south edge and trestle north/east approaches
+
+The complete south guard blocked ordinary platform access; north/east trestle approaches lost footing over saved terrain voids.
+
+Cause / uncertainty: Stair-only acceptance did not cover adjacent ordinary approaches. Initial abutment proposal assumed soil inside old saved cuts.
+
+Fix / next action: Replace three south guard bays with two supported end returns around a measured2m entry. Keep source materials/UVs. Build full-width north and east approach decks, concrete abutments founded beyond the saved voids and east exposed-edge guards. Reject missing-soil footing locations; record18actual soil receivers under final foundations. Normal approach turns follow actual platform entry and bridge access. Independently reimport8new volumes as closed positive solids and verify native/exported triangles; all16Railway ordinary links and both complete stair routes now pass. Existing older door cuts and broader edge/finish review remain open.
+
+Evidence and verification: development/levels/rebuild/arrival-grounds-construction-pass/roster.json; per-site construction.json/worlds; verification/source-and-structure-preservation.json/current-flat-movement.json/stairs/door-aperture-verification.json; captures/arrival-grounds-construction-batch
+
+Older-map obligation: All29packets remain explicit. Preserve mature maps and source assets; do not infer older stair/door/terrain or runtime acceptance from this batch.
 
 ## Required audit categories
 

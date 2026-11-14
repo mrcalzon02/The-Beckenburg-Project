@@ -1,0 +1,75 @@
+{
+  "source_world": "development/levels/rebuild/constant-flight-construction-pass/worlds/wld-18/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "1a75a36024cb056c5d8732d998801991de44d4180fe6954e219bda22c525ec23",
+    "authored-cuts.tsv": "7561a0e4a1ba124882e6b1cd43abd7332458dcebd9d3b32c4f158f237b96779e",
+    "authored-path-grading.sha256": "08d441fbe9e35e4aca099298ab89e74e9ef7b952c7460f39b72f8f9899737960",
+    "source-provenance.json": "0d54a356fdfac1c6ebf1ce2885deadb2cbc8e9eb74c9c8f767b17c55f4995694",
+    "stair-cell-punch-verification.json": "d3558a2c934a83570cbc4f017ae79f7c67d97238d015bfa046c058e4ea80b50e",
+    "terrain-physics.hcs2": "d54c97d7847a38cd0e27c027ff8ec1f7588a525482d29dd5349a0efa362cb46e",
+    "tile_0_0.png": "48b7b36ce1cf7a7403614d210855977420dae5e273cd1b50ac25aa285f3c183d",
+    "verification.json": "bcb1fa7f29414041c025b6a8576768e2caf07bf8930e877fa786df66f1fc8bb3",
+    "world.properties": "484945a0e995f5d9c50434269cede7fb3cf3532f5941d23826c58650a234579a",
+    "scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scene-package/.scene.bin.editor.previous": "70fdb9abfa530d0fce478afcb6ea9d5bb073dcb96c533957cce2fd7431f7aad3",
+    "scene-package/scene.bin": "dec503d5465461f78e2713b22fcf2a94fb59a6c4966e43cf02ac0d80220fa0bb",
+    "terrain-layers/tile_0_0.bin": "91827544b914ac971ffdc33ec3113c42a7196709898e22b55011aa7a625e13f8",
+    "scene-package/meshes/site.obj": "5934ba82ff38041b7e5d0114be3ec579e0c76ae3806fa6412e8df3cf33f2b79c"
+  },
+  "earthworks_features": [
+    {
+      "name": "Cinder surface arrival and service yard",
+      "material": "GRAVEL",
+      "feather": 5,
+      "profile": "arrival",
+      "polygon": [
+        [
+          9,
+          54
+        ],
+        [
+          24,
+          53
+        ],
+        [
+          51,
+          53
+        ],
+        [
+          57,
+          60
+        ],
+        [
+          52,
+          75
+        ],
+        [
+          45,
+          83
+        ],
+        [
+          43,
+          97
+        ],
+        [
+          38,
+          101
+        ],
+        [
+          24,
+          99
+        ],
+        [
+          21,
+          83
+        ],
+        [
+          9,
+          74
+        ]
+      ]
+    }
+  ],
+  "source_height_and_punched_topology_preserved": true,
+  "authoring": "Actual TerrainLayerStack geographic sculpt, not route support"
+}

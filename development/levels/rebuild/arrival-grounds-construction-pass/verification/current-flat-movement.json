@@ -1,0 +1,315 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "current_lanes": {
+        "samples": 5370,
+        "valid_standing": 5289,
+        "invalid_standing": 81,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 77,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 4
+        },
+        "physical_components": [
+          [
+            "WLD-08-z-56-11 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-08-x-44-16 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-08 constant-cell guard generator rim 12.225 0",
+            4
+          ],
+          [
+            "WLD-08 clean lab E pier0",
+            3
+          ],
+          [
+            "WLD-08 clean lab E end",
+            3
+          ],
+          [
+            "WLD-08 clean dorm W end",
+            3
+          ],
+          [
+            "WLD-08 clean dorm W pier0",
+            3
+          ],
+          [
+            "WLD-08 clean dorm S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean dorm S end",
+            3
+          ],
+          [
+            "WLD-08 clean mess S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean mess S end",
+            3
+          ],
+          [
+            "WLD-08 clean radio S end",
+            3
+          ],
+          [
+            "WLD-08 clean radio S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean radio E end",
+            3
+          ],
+          [
+            "WLD-08 clean radio E pier0",
+            3
+          ],
+          [
+            "WLD-08 clean records S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean records S end",
+            3
+          ],
+          [
+            "WLD-08 clean generator E pier0",
+            2
+          ],
+          [
+            "WLD-08 clean generator E end",
+            2
+          ],
+          [
+            "WLD-08 clean dorm N pier0",
+            2
+          ],
+          [
+            "WLD-08 clean dorm N end",
+            2
+          ],
+          [
+            "WLD-08 clean shelter W end",
+            2
+          ],
+          [
+            "WLD-08 clean shelter W pier0",
+            2
+          ],
+          [
+            "WLD-08-z-44-53 indexed jambs and head",
+            1
+          ],
+          [
+            "WLD-08 clean mess N pier0",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 2
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 4872,
+        "valid_standing": 4851,
+        "invalid_standing": 21,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 20,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 1
+        },
+        "physical_components": [
+          [
+            "WLD-12 north lower-landing end wall region0",
+            6
+          ],
+          [
+            "terrain-site-0-0:surface",
+            6
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight 0.83 0",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight -0.83 0",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight 0.83 2",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight -0.83 2",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L17 flight 0.83 0",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L17 flight -0.83 0",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L17 flight 0.83 8",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L17 flight -0.83 8",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 7
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 10
+      },
+      "current_lanes": {
+        "samples": 3222,
+        "valid_standing": 3107,
+        "invalid_standing": 115,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 21,
+          "NO_CENTRE_SUPPORT": 66,
+          "NO_FOOT_SUPPORT_0.22_0.0": 10,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 8,
+          "NO_FOOT_SUPPORT_0.0_0.22": 9,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 1
+        },
+        "physical_components": [
+          [
+            "Rebuilt stair WLD-18 route-14 flight1 part1",
+            11
+          ],
+          [
+            "WLD-18 covered escape connector wall 32.56 region0",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-18 route-14 flight0 part1",
+            3
+          ],
+          [
+            "Cinder escape full-depth service frame",
+            1
+          ],
+          [
+            "WLD-18 constant-cell guard route-08 flight -0.83 0",
+            1
+          ],
+          [
+            "Rebuilt stair WLD-18 route-07 flight0 part0",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/constant-flight-construction-pass/wld-08/construction.json",
+        "contract_sha256": "0633e73aedf4c37844462843d167b1cf0bfa06bbfbc4226d6839720242fd485a",
+        "layout": "development/levels/rebuild/constant-flight-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "5751313fc22760b1c1a78bce83f6d935e07cbeff3ee2ea3353ddb9a8681b8ad1",
+        "native": "development/levels/rebuild/constant-flight-construction-pass/wld-08/constant-cells.hcs2",
+        "native_sha256": "9561f8da9481e8aafe0a69511361f368e0fd2c936bc0912b8c3ea77131cdb37d"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/arrival-grounds-construction-pass/wld-08/construction.json",
+        "contract_sha256": "1f5e9d453130cb1172a02f010251834c18e7d2130a2caa0dec95f60e879d495c",
+        "layout": "development/levels/rebuild/arrival-grounds-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "4035e780cd51585fa6216d262d3f380ef565fe392ee3d25128006c60822fb1c7",
+        "native": "development/levels/rebuild/arrival-grounds-construction-pass/wld-08/saved-earthworks.hcs2",
+        "native_sha256": "cb13ae092e0eaf67650a48817dbd84ebe0240a38a0127e2f273e61f9fd1ae66c"
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "contract": "development/levels/rebuild/constant-flight-construction-pass/wld-12/construction.json",
+        "contract_sha256": "9ce51ea0ad4dda07682d94e53e1e328b69703ccb68f73325307e85df699c4a0a",
+        "layout": "development/levels/rebuild/constant-flight-construction-pass/wld-12/authored-layout.json",
+        "layout_sha256": "543af34cff497cbbf40574c22c250267a342ae32fdaf05be3b620d7bee280e99",
+        "native": "development/levels/rebuild/constant-flight-construction-pass/wld-12/constant-cells.hcs2",
+        "native_sha256": "e18d1e85a3860eb0b6fac4fd19e46a4822f1a798f9ca83e239d4f67d1d6e683d"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/arrival-grounds-construction-pass/wld-12/construction.json",
+        "contract_sha256": "8bd64d3fa4d4af087817fae0406d977a8570a167a4de9ce4ece22e240a496825",
+        "layout": "development/levels/rebuild/arrival-grounds-construction-pass/wld-12/authored-layout.json",
+        "layout_sha256": "1604f1a01f7088c425be0193a9905e13e175c2905bad9acff37912b981480389",
+        "native": "development/levels/rebuild/arrival-grounds-construction-pass/wld-12/saved-earthworks.hcs2",
+        "native_sha256": "767eb0fec3da9f95b1831d49d06b665b2904be7f489bd828e481ff21348e8b77"
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "contract": "development/levels/rebuild/constant-flight-construction-pass/wld-18/construction.json",
+        "contract_sha256": "1bf09c55f4864148cbd4a6bdf26d429ec46fe1918260c57ad297513462dd3be5",
+        "layout": "development/levels/rebuild/constant-flight-construction-pass/wld-18/authored-layout.json",
+        "layout_sha256": "91dfcc917b2c6960b31dd062dfc1a3fbac4ac571531cc41e194b5827d8bc1dc8",
+        "native": "development/levels/rebuild/constant-flight-construction-pass/wld-18/constant-cells.hcs2",
+        "native_sha256": "b93a74c6666b2635197c99a7dce76424d4923d7a384f73a4a46b1be827354eba"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/arrival-grounds-construction-pass/wld-18/construction.json",
+        "contract_sha256": "99e453c49df6971c863e9f8a6c83c3cb2624dd8fc4f261a0bbcce55f5449f309",
+        "layout": "development/levels/rebuild/arrival-grounds-construction-pass/wld-18/authored-layout.json",
+        "layout_sha256": "0a385a6524c6aead3999942f9228d0638714dc87d1d582fce6d94e64e9073c5e",
+        "native": "development/levels/rebuild/arrival-grounds-construction-pass/wld-18/saved-earthworks.hcs2",
+        "native_sha256": "aeae2180d66097fc4f2d960432a7ade549905021e595e81698bd75540a501329"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "2544d2a6bd5fb459800ff8cbf3badc779e5b42b6ac1bafd6d6b3312ac67bf43a",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/constant-flight-construction-pass/roster.json": "74c149e267ff40312ed0a679436fb4461295a925a18845edfbf301dfd6bf12a0"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/arrival-grounds-construction-pass/verification/current-flat-failure-contacts.tsv": "a2220159357b06e9bd3340f3a9e868285c37c3ce6cff2f85b81227dff25dfb4d",
+    "development/levels/rebuild/arrival-grounds-construction-pass/verification/current-flat-failure-input.tsv": "52a8b29c056b33c4fdb6bf4081417a33bf0df62cdcbedfb19eb8a0276dd6c924",
+    "development/levels/rebuild/arrival-grounds-construction-pass/verification/current-flat-lane-input.tsv": "8c36339b60b21b59bc5ed1b9fc101f082f8685772fd0ccd3aacb5730c8e79348",
+    "development/levels/rebuild/arrival-grounds-construction-pass/verification/current-flat-lane-names.tsv": "4c32fe5e0e942eca3bd6fda1865a9d0e9a800791e9ef235778bf289e2b6fc613",
+    "development/levels/rebuild/arrival-grounds-construction-pass/verification/current-flat-lanes.tsv": "eef4a58bb4d3ceb4db459a323e8e02bd758ace6048a9b2ef3439086aad0b756f",
+    "development/levels/rebuild/arrival-grounds-construction-pass/verification/current-flat-links.tsv": "919bcc75ed6b62ce59154754e5d77a748c02f9ba72d40b7e882654a401eb9f9c",
+    "development/levels/rebuild/arrival-grounds-construction-pass/verification/current-flat-names.tsv": "4c32fe5e0e942eca3bd6fda1865a9d0e9a800791e9ef235778bf289e2b6fc613",
+    "development/levels/rebuild/arrival-grounds-construction-pass/verification/current-flat-paths.tsv": "4f54fe7fd7eb6a890cb214d1db3ca97ce2bd4ee3c1bfbd9cb9cb1d37f76b6354"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}
