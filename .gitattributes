@@ -190,3 +190,8 @@ tools/remove_study_solids.py -text whitespace=cr-at-eol
 # Area-built courts and docks retain exact geometry/physics receipts.
 development/levels/rebuild/courts-and-docks-pass/** -text whitespace=cr-at-eol
 tools/build_site_courts_and_docks.py -text whitespace=cr-at-eol
+
+# Persistent geographic earthworks bind exact editor documents and exported/native data.
+development/levels/rebuild/site-earthworks-pass/** -text whitespace=cr-at-eol
+tools/compose_site_earthworks.py -text whitespace=cr-at-eol
+tools/java/RebuildSiteEarthworks.java -text whitespace=cr-at-eol

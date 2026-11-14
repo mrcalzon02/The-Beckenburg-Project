@@ -6870,6 +6870,34 @@ Evidence and verification: tools/build_site_courts_and_docks.py; courts-and-dock
 
 Older-map obligation: Review every courtyard-to-stair interface across full roster. Lower Research tunnel diagonal, arrival/array ground, fixture/door interaction bindings and real rendering/collision/room/portal/acoustic/spawn/service integration remain open.
 
+### DEV-485 — Arrival and field ground was absent beneath removed physical study supports
+
+**Status:** SAVED GEOGRAPHIC EARTHWORKS CONSTRUCTED; LANDSCAPE AND RUNTIME GATES OPEN · **Affected:** Wharf settlement arrival/forecourt; Research arrival and equipment grounds; Cannery arrival and workers woodland edge
+
+Ribbon-free maps retained unsupported arrivals, equipment-ground connections and woodland approaches despite useful building/dock construction.
+
+Cause / uncertainty: Earlier physical study strips concealed elevations and native terrain that did not reach the actual occupied thresholds.
+
+Fix / next action: Verify each current terrain mesh against its exact saved world, then sculpt real geographic clearings through TerrainLayerStack. Reopen and publish native terrain/OBJ in the existing editor scene; preserve source R16 and adaptive punched topology/cut rows byte-for-byte. Shape broad irregular arrival/settlement clearings, equipment grounds, and shallow undulating woodland earth; feather into retained landform. Remove obsolete Wharf cottage walk meshes where new soil owns the forecourt. Nonterrain native records remain byte-identical except those explicit walk removals. All3arrivals, equipment connections and woodland chains now pass continuous movement;49of51flatlinks and6complete vertical routes pass both ways with zero direction regressions. Woodland full-width checks at actual soil elevation pass522poses. Terrain material and landscape detail remain rough, not final acceptance.
+
+Evidence and verification: development/levels/rebuild/site-earthworks-pass/roster.json; persistent worlds and program/features; verification/spatial-and-source-preservation.json; verification/woodland-actual-ground-verification.json; native site-earthworks-batch cutaways
+
+Older-map obligation: Wharf L18 east-stair return and Research L19 lower tunnel still fail. Raw historical height0sampling retains343invalid of15525poses, including300woodland poses above actual undulating ground; do not confuse guidance Y with walking surface. Other22active candidates still need equivalent guide removal and construction. Academy off-landform and WLD-16 original terrain ownership remain open. No runtime/map availability promotion.
+
+### DEV-486 — Protective terrain setback left small collision lips at real floor boundaries
+
+**Status:** BOUNDARY GRADES CORRECTED; BROADER TERRAIN FITNESS OPEN · **Affected:** Arrival apron/floor joins across the selected3sites; Research equipment doors and Cannery workers doors
+
+An initial4cm below-slab sculpt allowance created a lip at actual floor boundaries, preventing capsule movement onto the preserved floors. Initial writer verification also parsed the optional cut-row reason as a height.
+
+Cause / uncertainty: The grade treated every point covered by a floor triangle as interior; it did not distinguish the outer surface boundary or authored-cut numeric columns from metadata.
+
+Fix / next action: Use the union of actual floor footprints to keep buried earth below interior surfaces while meeting their outer edges at floor elevation. Update the same saved sculpt layer relative to original source, preserving idempotence and outside-feature heights. Parse only the first4cut coordinates; resume verification of already-saved layers instead of duplicating edits. All saved worlds reopen and retain exact punch topology, with all stored hole controls clear. Verify actual terrain feet separately from historical flat-height sampling. No collision constants or acceptance checks were relaxed.
+
+Evidence and verification: tools/java/RebuildSiteEarthworks.java; tools/compose_site_earthworks.py; site-earthworks-pass/worlds/*/terrain-world/earthworks-verification.json; verification/stairs and current-flat-movement.json
+
+Older-map obligation: Review joins against real floor edges and standing/crouched collision across all sites. Final drainage, edge materials, landscape/desquareify acceptance, canonical van arrival visualization and real-game renderer/room/portal/acoustic/spawn/service integration remain unfinished.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

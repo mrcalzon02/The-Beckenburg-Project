@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1981,
-  "unique_local_file_hashes": 1810,
+  "local_files": 1984,
+  "unique_local_file_hashes": 1813,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 59,
+    "additional_custom_model_sources": 62,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -28585,6 +28585,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "ba20299a6d3a738a1b36d0e2a9292db5d10291393fd8e9602adb72d87696ae22",
       "bytes": 2788352
+    },
+    {
+      "id": "saved-earthworks",
+      "label": "saved-earthworks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/site-earthworks-pass/wld-06/saved-earthworks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "4ed8877dfc080638e5eeec2494bcf91d733879feea9a0030ebe1e9ea8a264223",
+      "bytes": 3905792
+    },
+    {
+      "id": "saved-earthworks",
+      "label": "saved-earthworks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/site-earthworks-pass/wld-08/saved-earthworks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "a57e1b21505af5e727d47122aaf019bedfeb7cd80104174da100c098a6538bb7",
+      "bytes": 4158716
+    },
+    {
+      "id": "saved-earthworks",
+      "label": "saved-earthworks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/site-earthworks-pass/wld-13/saved-earthworks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "7d2396e598dee9508ebf4b144f9753267eb09c3b32c437cb1116f3307b2d1863",
+      "bytes": 4483192
     },
     {
       "id": "bayed-stairs",

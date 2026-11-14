@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10901,
+  "count": 10904,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -101964,6 +101964,36 @@
       "height": 900,
       "bytes": 705867,
       "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
+    },
+    {
+      "path": "development/levels/rebuild/captures/site-earthworks-batch/wld-06.png",
+      "url": "development/levels/rebuild/captures/site-earthworks-batch/wld-06.png",
+      "title": "Wld 06",
+      "kind": "Native actual saved editor geographic terrain sculpt; roof cutaway, rough materials, landscape/runtime acceptance open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1478856,
+      "sha256": "36fcc39174483dfd5d23f072a18ea175f449bfef0aa25c84b569d7c5d288e720"
+    },
+    {
+      "path": "development/levels/rebuild/captures/site-earthworks-batch/wld-08.png",
+      "url": "development/levels/rebuild/captures/site-earthworks-batch/wld-08.png",
+      "title": "Wld 08",
+      "kind": "Native actual saved editor geographic terrain sculpt; roof cutaway, rough materials, landscape/runtime acceptance open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1486242,
+      "sha256": "f03d4de68be7b30b8cf942489c8e7780adfcb1661293ec133fad50498312023a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/site-earthworks-batch/wld-13.png",
+      "url": "development/levels/rebuild/captures/site-earthworks-batch/wld-13.png",
+      "title": "Wld 13",
+      "kind": "Native actual saved editor geographic terrain sculpt; roof cutaway, rough materials, landscape/runtime acceptance open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1516361,
+      "sha256": "5434dfb2024665adf206a430c3133b631417ca122e35bd92e75a327de4b29eb0"
     },
     {
       "path": "development/levels/rebuild/captures/stair-bay-batch/bay-sheet-1.png",
