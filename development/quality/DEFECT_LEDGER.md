@@ -7138,13 +7138,13 @@ Older-map obligation: All29packets retained in roster; mature Castle/House/Black
 
 ### DEV-504 — Removing solid route-study supports exposes unfinished Railway and Cinder ground approaches
 
-**Status:** TEN REGRESSED SURFACE LINKS RECONNECTED; FOUR CINDER UNDERGROUND LINKS OPEN · **Affected:** Railway L01/L02/L05/L08/L10/L15/L18; Cinder route-02/04/05
+**Status:** PRIOR SURFACE AND FOUR CINDER RING LINKS PHYSICALLY RECONNECTED; OTHER MAP GATES OPEN · **Affected:** Railway L01/L02/L05/L08/L10/L15/L18; Cinder route-02/04/05
 
 Ten previously passing ordinary links now fail in20directions after old artificial route support strips are removed.
 
 Cause / uncertainty: False narrow study solids had supplied missing ground beneath approaches; their removal reveals absent geographic construction and remaining door/ground interfaces.
 
-Fix / next action: Keep study strips removed and preserve failing check honestly. Research17/17ordinary links pass; Railway2/16 and Cinder7/14 pass, total26/47 versus35before. Broad samples retain3748invalid of13335. Next bounded grounds/entrance batch must build actual connected terrain and normal entrances. Do not restore ribbons, suppress regressions, unlock maps or claim runtime acceptance. Follow-up arrival-grounds-construction-pass builds actual saved geographic grades and supported Railway approaches. All ten regressed links recover without solid study supports. Final Research17/17, Railway16/16, Cinder10/14ordinary links pass,43/47total; zero regressions against the previous constant-flight checkpoint. Four Cinder underground ring connections route-11/12/15/16 remain failing. Remaining older Cinder stairs and old doorway cuts require architectural construction; no map/runtime acceptance.
+Fix / next action: Keep study strips removed and preserve failing check honestly. Research17/17ordinary links pass; Railway2/16 and Cinder7/14 pass, total26/47 versus35before. Broad samples retain3748invalid of13335. Next bounded grounds/entrance batch must build actual connected terrain and normal entrances. Do not restore ribbons, suppress regressions, unlock maps or claim runtime acceptance. Follow-up arrival-grounds-construction-pass builds actual saved geographic grades and supported Railway approaches. All ten regressed links recover without solid study supports. Final Research17/17, Railway16/16, Cinder10/14ordinary links pass,43/47total; zero regressions against the previous constant-flight checkpoint. Four Cinder underground ring connections route-11/12/15/16 remain failing. Remaining older Cinder stairs and old doorway cuts require architectural construction; no map/runtime acceptance. Service-portal construction now supplies the missing upper/lower annular gallery floors, thick enclosed roofs, continuous retaining walls/footing, fitted inner guards and rectangular doorway throats. Cinder route-11/12/15/16 all pass. Research source remains unchanged; Railway16/16 and Cinder14/14ordinary links pass. Motel original terrain remains a separate blocker (DEV-511).
 
 Evidence and verification: development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch
 
@@ -7191,6 +7191,62 @@ Fix / next action: Replace three south guard bays with two supported end returns
 Evidence and verification: development/levels/rebuild/arrival-grounds-construction-pass/roster.json; per-site construction.json/worlds; verification/source-and-structure-preservation.json/current-flat-movement.json/stairs/door-aperture-verification.json; captures/arrival-grounds-construction-batch
 
 Older-map obligation: All29packets remain explicit. Preserve mature maps and source assets; do not infer older stair/door/terrain or runtime acceptance from this batch.
+
+### DEV-508 — Cinder annular galleries existed only as room annotations
+
+**Status:** TWO ENCLOSED GALLERIES PHYSICALLY BUILT; FULL MAP/RUNTIME OPEN · **Affected:** Cinder upperring and lowring at-4/-8m
+
+Four ring-room connections ended over empty space despite declared gallery zones.
+
+Cause / uncertainty: The annular room description had never been converted into actual floor geometry.
+
+Fix / next action: Build continuous closed0.30m annular floors and roofs, continuous outer retaining walls down to the low ring footing, indexed inner shaft guards and rectangular west/east doorway throats with closed roof joins. Preserve the empty inert shaft liner. Both complete64segment gallery circuits pass both directions.16native vertical floor/roof controls were previously clear and now block. Source room contracts remain unchanged; real geometry now supplies their surfaces. Landscape/soil interface engineering and runtime integration remain unaccepted.
+
+Evidence and verification: development/levels/rebuild/service-portal-construction-pass/roster.json; per-site clean-doorways.blend/glb/hcs2 and construction.json; verification/; captures/service-portal-construction-batch including upper/lower native sections
+
+Older-map obligation: All29packets retained. Mature Castle/House/Blackpine/Hollow Creek and functional/van/fog/power/hiding/network contracts preserved. Audit remaining maps individually; source-native checks do not establish gameplay acceptance.
+
+### DEV-509 — Arbitrary route cuts left malformed ordinary doorways across Railway Motel and Cinder
+
+**Status:** THREE-SITE WALLS AND INDEXED FRAMES REBUILT; MOTEL TERRAIN BLOCKS ACCESS · **Affected:** Railway signal/coaches/store/tunnel/refuge; Motel office/manager/laundry/plant/eight guest rooms; Cinder surface entrances and four ring faces
+
+Earlier diagonal guides had cut corners and left irregular wall gaps.
+
+Cause / uncertainty: Navigation studies were used as aperture authority rather than actual rooms and normal door datums.
+
+Fix / next action: Rebuild selected wall faces as0.24m closed masonry with measured pedestrian/service openings, positive lintels and original indexed jamb/head geometry. Adjacent rooms share full-depth frames; underground portal identities include their elevation. Retain prior escape doorway. Route normal approaches through actual constructed doors, including Railway bypass of coach corner and Cinder headhouse west stair entry.35new frames independently measure to their exported width/height/jamb-depth/sill contracts. Of108actual door profiles,75pass;33Motel profiles remain blocked by unchanged terrain/ground defects. All Railway/Cinder profiles pass; no doorway/runtime acceptance for Motel.
+
+Evidence and verification: development/levels/rebuild/service-portal-construction-pass/roster.json; per-site clean-doorways.blend/glb/hcs2 and construction.json; verification/; captures/service-portal-construction-batch including upper/lower native sections
+
+Older-map obligation: All29packets retained. Mature Castle/House/Blackpine/Hollow Creek and functional/van/fog/power/hiding/network contracts preserved. Audit remaining maps individually; source-native checks do not establish gameplay acceptance.
+
+### DEV-510 — Cinder split-level stair and landing strips prevented a coherent upper floor
+
+**Status:** COMPACT TWO-FLIGHT U STAIR AND SUPPORTED ARRIVALS BUILT · **Affected:** Cinder route-14 split-level cell and route-13 upper/lower arrivals
+
+Initial floor restoration obstructed intermediate stair headroom; old landing ribbons crossed the new well and the upper room anchor lay over the void.
+
+Cause / uncertainty: Oversized retained stair layout and guide-derived landing strips were incompatible with a real supported floor and clear room circulation.
+
+Fix / next action: Replace both route-14flights with1.8m constant-width,12riser flights atX51and45, a solid shared-6m landing and one rectangular floor/ceiling well. Fit flight/rim/middle guards and leave a real upper entry. Construct complete shop stair-head floor/opening and supported lower arrival apron/beams; remove all old route-13landing ribbons, retaining its actual flight for later reconstruction. Restore continuous west floor around its actual crew-stair well. Move upper room anchor to48,-4,26.5on full floor; lower approaches use real aisles around stair toes. All8flights/7complete stair routes and the new exact-endpoint joined stair chain pass both directions. Checker preserves every old route/flight, rejects drops/unexpected identities and separately requires newly generated CHAIN routes to pass. Original kernel tolerances unchanged. Other old amber flights remain unfinished.
+
+Evidence and verification: development/levels/rebuild/service-portal-construction-pass/roster.json; per-site clean-doorways.blend/glb/hcs2 and construction.json; verification/; captures/service-portal-construction-batch including upper/lower native sections
+
+Older-map obligation: All29packets retained. Mature Castle/House/Blackpine/Hollow Creek and functional/van/fog/power/hiding/network contracts preserved. Audit remaining maps individually; source-native checks do not establish gameplay acceptance.
+
+### DEV-511 — Removing Motel solid guide strips exposes original terrain collisions and unsupported approaches
+
+**Status:** OPEN BLOCKER; ORDINARY ROUTE REGRESSION CHECK FAILS · **Affected:** WLD-16 original terrain owner, court/walks and arrival/door approaches
+
+Motel ordinary passes drop16to3of22;26direction regressions affect13links after false support strips are removed.33of42door profiles fail on original terrain or missing ground support.
+
+Cause / uncertainty: Original coarse landform intersects the walks and entrances; old guide strips concealed the missing geographic construction.
+
+Fix / next action: Keep strips removed and preserve the original terrain component and its native records byte-for-byte. Do not restore false supports, loosen tests, unlock the Motel or treat new doorway walls as map acceptance. Next physical batch must resolve original terrain ownership and construct actual motel geographic court/arcade/arrival interfaces, alongside Academy off-landform work and another unfinished site. Current three-site ordinary result is33/52versus42before: Railway16/16, Cinder14/14, Motel3/22. Broad samples retain2947invalid of12867. Stairs/gallery circuits and source-preservation checks pass independently.
+
+Evidence and verification: development/levels/rebuild/service-portal-construction-pass/roster.json; per-site clean-doorways.blend/glb/hcs2 and construction.json; verification/; captures/service-portal-construction-batch including upper/lower native sections
+
+Older-map obligation: All29packets retained. Mature Castle/House/Blackpine/Hollow Creek and functional/van/fog/power/hiding/network contracts preserved. Audit remaining maps individually; source-native checks do not establish gameplay acceptance.
 
 ## Required audit categories
 

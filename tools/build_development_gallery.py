@@ -17,7 +17,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/arrival-grounds-construction-batch/' in path:
+    if '/service-portal-construction-batch/' in path:
+        kind='Native Cinder gallery section; geometry above cut plane and terrain hidden only for inspection, other amber stairs unfinished, no runtime acceptance' if 'gallery-section' in p.name else 'Native reconstructed service doorways and Cinder galleries/U stair; roofs hidden, Motel original terrain and ordinary-route blockers remain open, no runtime acceptance'
+    elif '/arrival-grounds-construction-batch/' in path:
         kind='Native actual saved Research Railway Cinder arrival/workground earthworks with founded trestle approaches; pitched roofs hidden, unfinished Cinder underground connections and doorway/landscape/runtime gates open'
     elif '/constant-flight-construction-batch/' in path:
         kind='Native constant-width stair cells, supported landings, rectangular wells and saved terrain punches; pitched roofs hidden, Research tunnel roof retained for support context, other amber Cinder flights unfinished, ordinary-ground and runtime gates open'

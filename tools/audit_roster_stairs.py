@@ -180,8 +180,13 @@ def main():
     report['complete_routes']={v:{'routes':len([r for r in chains if r['variant']==v and not r['link'].startswith(('CHAIN/','AUTHORED/'))]),**{k:sum(r[k]=='PASS' for r in chains if r['variant']==v and not r['link'].startswith(('CHAIN/','AUTHORED/'))) for k in ['legacy_forward','legacy_reverse','authored_forward','authored_reverse']}} for v in variant_keys}
     if comparing:
         def regressions(items,identity,fields):
-            before={tuple(r[k] for k in identity):r for r in items if r['variant']=='before_bearing'};after={tuple(r[k] for k in identity):r for r in items if r['variant']=='after_bearing'};assert before.keys()==after.keys()
-            return [dict(identity=key,field=field,before=before[key][field],after=after[key][field]) for key in before for field in fields if before[key][field]=='PASS' and after[key][field]!='PASS']
+            before={tuple(r[k] for k in identity):r for r in items if r['variant']=='before_bearing'};after={tuple(r[k] for k in identity):r for r in items if r['variant']=='after_bearing'}
+            assert before.keys()<=after.keys(),'Dropped a previously audited flight or complete route'
+            added=after.keys()-before.keys()
+            assert all(identity==['site','link'] and after[key]['link'].startswith('CHAIN/') for key in added),'Unexpected new flight/route identity'
+            old_failures=[dict(identity=key,field=field,before=before[key][field],after=after[key][field]) for key in before for field in fields if before[key][field]=='PASS' and after[key][field]!='PASS']
+            new_failures=[dict(identity=key,field=field,before='NEW_CHAIN_REQUIRED_PASS',after=after[key][field]) for key in added for field in fields if after[key][field]!='PASS']
+            return old_failures+new_failures
         report['bearing_regressions']=dict(flights=regressions(result,['site','link','segment'],['authored_up','authored_down']),complete_paths=regressions(chains,['site','link'],['authored_forward','authored_reverse']))
     report['authored_routes']=[r for r in chains if r['link'].startswith('AUTHORED/')]
     report['source_hashes'][chain_path.relative_to(ROOT).as_posix()]=sha(chain_path)

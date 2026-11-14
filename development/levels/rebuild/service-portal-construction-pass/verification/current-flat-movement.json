@@ -1,0 +1,587 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-12": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 5409,
+        "valid_standing": 5106,
+        "invalid_standing": 303,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 230,
+          "PHYSICAL_COMPONENT": 72,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 1
+        },
+        "physical_components": [
+          [
+            "WLD-12-z-22-34-y0 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-12 north lower-landing end wall region0",
+            6
+          ],
+          [
+            "terrain-site-0-0:surface",
+            6
+          ],
+          [
+            "WLD-12-z-30-58-y0 indexed jambs and head",
+            4
+          ],
+          [
+            "WLD-12 clean signal E end",
+            3
+          ],
+          [
+            "WLD-12 clean signal E pier0",
+            3
+          ],
+          [
+            "WLD-12 clean coach-a W pier0",
+            3
+          ],
+          [
+            "WLD-12 clean coach-a W end",
+            3
+          ],
+          [
+            "WLD-12 clean signal N pier0",
+            3
+          ],
+          [
+            "WLD-12 clean signal N end",
+            3
+          ],
+          [
+            "WLD-12 clean coach-b E end",
+            3
+          ],
+          [
+            "WLD-12 clean coach-b E pier0",
+            3
+          ],
+          [
+            "WLD-12 clean refuge S pier0",
+            3
+          ],
+          [
+            "WLD-12 clean refuge S end",
+            3
+          ],
+          [
+            "WLD-12 clean signal S end",
+            2
+          ],
+          [
+            "WLD-12 clean signal S pier0",
+            2
+          ],
+          [
+            "WLD-12 clean coach-a E pier0",
+            2
+          ],
+          [
+            "WLD-12 clean coach-a E end",
+            2
+          ],
+          [
+            "WLD-12 clean coach-b W end",
+            2
+          ],
+          [
+            "WLD-12 clean coach-b W pier0",
+            2
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight 0.83 0",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight -0.83 0",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight 0.83 2",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight -0.83 2",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L17 flight 0.83 0",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-16": {
+      "before": {
+        "flat_links": 22,
+        "pass_both_directions": 16
+      },
+      "after": {
+        "flat_links": 22,
+        "pass_both_directions": 3
+      },
+      "current_lanes": {
+        "samples": 3480,
+        "valid_standing": 869,
+        "invalid_standing": 2611,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 2487,
+          "FOOT_HEIGHT_SPREAD": 93,
+          "PHYSICAL_COMPONENT": 26,
+          "NO_FOOT_SUPPORT_0.22_0.0": 4,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 1
+        },
+        "physical_components": [
+          [
+            "WLD-16 clean office W pier0",
+            2
+          ],
+          [
+            "WLD-16 clean office W end",
+            2
+          ],
+          [
+            "WLD-16 clean office S end",
+            1
+          ],
+          [
+            "WLD-16 clean office S pier0",
+            1
+          ],
+          [
+            "WLD-16 clean office N end",
+            1
+          ],
+          [
+            "WLD-16 clean office N pier0",
+            1
+          ],
+          [
+            "WLD-16 clean manager E pier0",
+            1
+          ],
+          [
+            "WLD-16 clean manager E end",
+            1
+          ],
+          [
+            "WLD-16 clean room1 E pier0",
+            1
+          ],
+          [
+            "WLD-16 clean room1 E end",
+            1
+          ],
+          [
+            "WLD-16 clean room2 E pier0",
+            1
+          ],
+          [
+            "WLD-16 clean room2 E end",
+            1
+          ],
+          [
+            "WLD-16 clean room3 E pier0",
+            1
+          ],
+          [
+            "WLD-16 clean room3 E end",
+            1
+          ],
+          [
+            "WLD-16 clean room4 E pier0",
+            1
+          ],
+          [
+            "WLD-16 clean room4 E end",
+            1
+          ],
+          [
+            "WLD-16 clean room5 W end",
+            1
+          ],
+          [
+            "WLD-16 clean room5 W pier0",
+            1
+          ],
+          [
+            "WLD-16 clean room6 W end",
+            1
+          ],
+          [
+            "WLD-16 clean room6 W pier0",
+            1
+          ],
+          [
+            "WLD-16 clean room7 W end",
+            1
+          ],
+          [
+            "WLD-16 clean room7 W pier0",
+            1
+          ],
+          [
+            "WLD-16 clean room8 W end",
+            1
+          ],
+          [
+            "WLD-16 clean room8 W pier0",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 10
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 3978,
+        "valid_standing": 3945,
+        "invalid_standing": 33,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 30,
+          "NO_CENTRE_SUPPORT": 2,
+          "NO_FOOT_SUPPORT_0.22_0.0": 1
+        },
+        "physical_components": [
+          [
+            "WLD-18 clean east W pier0",
+            5
+          ],
+          [
+            "WLD-18 covered escape connector wall 32.56 region0",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-18 route-07 flight0 part1",
+            4
+          ],
+          [
+            "WLD-18 clean exhibit W pier0",
+            3
+          ],
+          [
+            "WLD-18 clean servicehouse S end",
+            2
+          ],
+          [
+            "WLD-18 clean servicehouse S pier0",
+            2
+          ],
+          [
+            "WLD-18 clean servicehouse W end",
+            2
+          ],
+          [
+            "WLD-18 clean servicehouse W pier0",
+            2
+          ],
+          [
+            "Cinder escape full-depth service frame",
+            1
+          ],
+          [
+            "WLD-18 constant-cell guard route-08 flight -0.83 0",
+            1
+          ],
+          [
+            "WLD-18 clean exit E end",
+            1
+          ],
+          [
+            "WLD-18 clean exit E pier0",
+            1
+          ],
+          [
+            "WLD-18-x-42-28-y-4 indexed jambs and head",
+            1
+          ],
+          [
+            "WLD-18-x-42-28-y-8 indexed jambs and head",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-12": {
+      "before": {
+        "contract": "development/levels/rebuild/arrival-grounds-construction-pass/wld-12/construction.json",
+        "contract_sha256": "8bd64d3fa4d4af087817fae0406d977a8570a167a4de9ce4ece22e240a496825",
+        "layout": "development/levels/rebuild/arrival-grounds-construction-pass/wld-12/authored-layout.json",
+        "layout_sha256": "1604f1a01f7088c425be0193a9905e13e175c2905bad9acff37912b981480389",
+        "native": "development/levels/rebuild/arrival-grounds-construction-pass/wld-12/saved-earthworks.hcs2",
+        "native_sha256": "767eb0fec3da9f95b1831d49d06b665b2904be7f489bd828e481ff21348e8b77"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/service-portal-construction-pass/wld-12/construction.json",
+        "contract_sha256": "e5aa083f86a8a562989500b5c103b948184229cde1c679f2ad33430965b171c6",
+        "layout": "development/levels/rebuild/service-portal-construction-pass/wld-12/authored-layout.json",
+        "layout_sha256": "45a81936541a7925c26628656f6a1c8e507cb6ef2af78d634494c86773a4fdfe",
+        "native": "development/levels/rebuild/service-portal-construction-pass/wld-12/clean-doorways.hcs2",
+        "native_sha256": "ce32d6cfa1e3875c86851177ea7b940fbcafa9f8948004065b2baef12ddd7896"
+      }
+    },
+    "WLD-16": {
+      "before": {
+        "contract": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+        "contract_sha256": "255b3d0c48db6ddbb7944b154aa3361d459abdb91a3b0d2607d6970dc0e9c147",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+        "layout_sha256": "a0f3332257c81f17f031869203f940f2098ef7f6b9a2f4e667f583ffa55d97fd",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+        "native_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/service-portal-construction-pass/wld-16/construction.json",
+        "contract_sha256": "40ce1616aa82cad6c9c8c04ed9599ea52c55efbf5c6e652c03b35cf1b43ff8e2",
+        "layout": "development/levels/rebuild/service-portal-construction-pass/wld-16/authored-layout.json",
+        "layout_sha256": "5adb8dd8d55d6f74f4676b57f3843db1ee6b4a6c9b4bdd6e2c1e454ed511afa8",
+        "native": "development/levels/rebuild/service-portal-construction-pass/wld-16/clean-doorways.hcs2",
+        "native_sha256": "17860ff253d1757d3b51d684d99070dd1f1f1f692fb81f3463c7421c7b7ed7c6"
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "contract": "development/levels/rebuild/arrival-grounds-construction-pass/wld-18/construction.json",
+        "contract_sha256": "99e453c49df6971c863e9f8a6c83c3cb2624dd8fc4f261a0bbcce55f5449f309",
+        "layout": "development/levels/rebuild/arrival-grounds-construction-pass/wld-18/authored-layout.json",
+        "layout_sha256": "0a385a6524c6aead3999942f9228d0638714dc87d1d582fce6d94e64e9073c5e",
+        "native": "development/levels/rebuild/arrival-grounds-construction-pass/wld-18/saved-earthworks.hcs2",
+        "native_sha256": "aeae2180d66097fc4f2d960432a7ade549905021e595e81698bd75540a501329"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/service-portal-construction-pass/wld-18/construction.json",
+        "contract_sha256": "8c3bf39eb2a9ab2aa0bd4ce36dc5d5b7467ca50d32cc971cb817b31983877069",
+        "layout": "development/levels/rebuild/service-portal-construction-pass/wld-18/authored-layout.json",
+        "layout_sha256": "0d3c7097b0c374258c2c7f7a68a36b7427317fa599a2d7098669486fc39e8f4c",
+        "native": "development/levels/rebuild/service-portal-construction-pass/wld-18/clean-doorways.hcs2",
+        "native_sha256": "4196a2394355763752a3ef1d62425e3d4579c895469b931e61da6da50ed20f5b"
+      }
+    }
+  },
+  "complete_link_regressions": [
+    {
+      "site": "WLD-16",
+      "link": "route-02",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_1_AT_68_OF_110"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-02",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_38_OF_110"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-04",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_38_OF_50"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-04",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-06",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-06",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-07",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-07",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-10",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-10",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_1_AT_48_OF_90"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-15",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-15",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_33_OF_50"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-16",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-16",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_33_OF_50"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-17",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-17",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_33_OF_50"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-18",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-18",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_33_OF_50"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-19",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-19",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_33_OF_50"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-20",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-20",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_33_OF_50"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-21",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-21",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_33_OF_50"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-22",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-22",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_33_OF_50"
+    }
+  ],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "2544d2a6bd5fb459800ff8cbf3badc779e5b42b6ac1bafd6d6b3312ac67bf43a",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/arrival-grounds-construction-pass/roster.json": "6ca5ff6a083f4e457096949147b7cd592491ff115f01bacf095a02fcd3c37cb0"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/service-portal-construction-pass/verification/current-flat-failure-contacts.tsv": "7693ccec7472140fc337af2dbf38225780f98a6ff1a94275b0832607f50aef2e",
+    "development/levels/rebuild/service-portal-construction-pass/verification/current-flat-failure-input.tsv": "9a5ca1b2f0a0a032201a306d092832962ed376ffd8cac344a7322716849df542",
+    "development/levels/rebuild/service-portal-construction-pass/verification/current-flat-lane-input.tsv": "1338a9b0d7ff7fa5b7cfe419ef0a50513017e53c193bdc902e1f248f137887ca",
+    "development/levels/rebuild/service-portal-construction-pass/verification/current-flat-lane-names.tsv": "0d7bd1c47de8c057f4d9d63dd5afad2616c532586b1803fdd83ce2ef58f97011",
+    "development/levels/rebuild/service-portal-construction-pass/verification/current-flat-lanes.tsv": "23084fdc7fc8cbbd27b0127662e184bb28924c5e6f42eb04791fb14d74ddcb4c",
+    "development/levels/rebuild/service-portal-construction-pass/verification/current-flat-links.tsv": "60ab0a4d040bbe05a2a2f26e1822d9e73b1372c2d6f284ef8990a8e7e9e0ef83",
+    "development/levels/rebuild/service-portal-construction-pass/verification/current-flat-names.tsv": "468432bc349ae6d16ec6a184032468bb7ae9b58eec174a1425e8251a7966fcee",
+    "development/levels/rebuild/service-portal-construction-pass/verification/current-flat-paths.tsv": "121feace9690afacdb19547a38d3973632c0e6a541638dd0221c5e3a35e7e4df"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

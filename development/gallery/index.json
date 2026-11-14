@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10932,
+  "count": 10937,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -102184,6 +102184,56 @@
       "height": 900,
       "bytes": 705867,
       "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-portal-construction-batch/wld-12.png",
+      "url": "development/levels/rebuild/captures/service-portal-construction-batch/wld-12.png",
+      "title": "Wld 12",
+      "kind": "Native reconstructed service doorways and Cinder galleries/U stair; roofs hidden, Motel original terrain and ordinary-route blockers remain open, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1338295,
+      "sha256": "50315b8498054e3570cbea5dd2e26a0bd0e4e59fad461fb5ff47ad9620d2cc64"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-portal-construction-batch/wld-16.png",
+      "url": "development/levels/rebuild/captures/service-portal-construction-batch/wld-16.png",
+      "title": "Wld 16",
+      "kind": "Native reconstructed service doorways and Cinder galleries/U stair; roofs hidden, Motel original terrain and ordinary-route blockers remain open, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1598596,
+      "sha256": "0d0edf50a243f8c14b2416cbd43a95868f4123df821231219df4aaaf8b9169cb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-portal-construction-batch/wld-18-lower-gallery-section.png",
+      "url": "development/levels/rebuild/captures/service-portal-construction-batch/wld-18-lower-gallery-section.png",
+      "title": "Wld 18 lower gallery section",
+      "kind": "Native Cinder gallery section; geometry above cut plane and terrain hidden only for inspection, other amber stairs unfinished, no runtime acceptance",
+      "width": 1400,
+      "height": 1000,
+      "bytes": 1273752,
+      "sha256": "6dd44aaa96af51fd15c7eb72c39f9d2bfc2863822956ada3759e1fe8aa663a2f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-portal-construction-batch/wld-18-upper-gallery-section.png",
+      "url": "development/levels/rebuild/captures/service-portal-construction-batch/wld-18-upper-gallery-section.png",
+      "title": "Wld 18 upper gallery section",
+      "kind": "Native Cinder gallery section; geometry above cut plane and terrain hidden only for inspection, other amber stairs unfinished, no runtime acceptance",
+      "width": 1400,
+      "height": 1000,
+      "bytes": 1410397,
+      "sha256": "a25e7628f8a01d062f34a194a92568fab4dfeaec2e1c8d3ca12a46f556730ec0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-portal-construction-batch/wld-18.png",
+      "url": "development/levels/rebuild/captures/service-portal-construction-batch/wld-18.png",
+      "title": "Wld 18",
+      "kind": "Native reconstructed service doorways and Cinder galleries/U stair; roofs hidden, Motel original terrain and ordinary-route blockers remain open, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1419787,
+      "sha256": "2ef943a42fcac3c7064d30ae9833d7e2a8c51112f0ceff512ae76a2a1885c264"
     },
     {
       "path": "development/levels/rebuild/captures/site-earthworks-batch/wld-06.png",
