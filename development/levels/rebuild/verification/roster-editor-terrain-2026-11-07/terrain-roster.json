@@ -1,0 +1,150 @@
+{
+  "scope": 29,
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "ASYLUM",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAIN_MATURE_SOURCE_INDIVIDUAL_TERRAIN_HOLE_AUDIT_REQUIRED",
+      "saved_world": "development/levels/rebuild/castle/terrain-world"
+    },
+    {
+      "id": "CHURCH",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "COLLEGE",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAIN_MATURE_SOURCE_INDIVIDUAL_TERRAIN_HOLE_AUDIT_REQUIRED",
+      "saved_world": "development/levels/rebuild/house/terrain-world"
+    },
+    {
+      "id": "MANSION",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "PRISON",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "SCHOOL",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAIN_MATURE_SOURCE_INDIVIDUAL_TERRAIN_HOLE_AUDIT_REQUIRED",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAIN_MATURE_SOURCE_INDIVIDUAL_TERRAIN_HOLE_AUDIT_REQUIRED",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-03",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-04",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-05",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-06",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-07",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-08",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-09",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-10",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-11",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-12",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-13",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-14",
+      "status": "SAVED_EDITOR_HOLES_NATIVE_VERIFIED_TERRAIN_FINISH_OPEN",
+      "saved_world": "development/levels/rebuild/wld-14/terrain-world"
+    },
+    {
+      "id": "WLD-15",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-16",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-17",
+      "status": "TERRAIN_STAGE_PENDING_PRESERVE_ROUGH_SOURCE",
+      "saved_world": null
+    },
+    {
+      "id": "WLD-18",
+      "status": "SAVED_EDITOR_HOLES_NATIVE_VERIFIED_TERRAIN_FINISH_OPEN",
+      "saved_world": "development/levels/rebuild/wld-18/terrain-world"
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "SAVED_EDITOR_HOLES_NATIVE_VERIFIED_TERRAIN_FINISH_OPEN",
+      "saved_world": "development/levels/rebuild/wld-07-mortuary/terrain-world"
+    }
+  ]
+}

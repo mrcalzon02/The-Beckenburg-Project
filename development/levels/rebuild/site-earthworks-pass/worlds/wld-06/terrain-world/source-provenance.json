@@ -1,0 +1,70 @@
+{
+  "source_world": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "25654aa2897682852b024fc86c60d9e4a3156e1703516d34d8f07ab13000e74a",
+    "authored-cuts.tsv": "190e206e9ed5c9aee6256efa7b15f49c06a8e4cb70ee7330c06cbfc9f4fe9410",
+    "source-provenance.json": "85cdc766d12cd8e1f8be99b1915d1a252333afa0a97ea58a31871e1077fa03c2",
+    "terrain-physics.hcs2": "64708a2454ba28e70f47ac1b419ddde02b508d894e73954a6b9887c7cfa3f3f8",
+    "tile_0_0.png": "409a17cdef3d263a11251331b70b329b54f22118f571b69eaca1306c3f4ed016",
+    "verification.json": "c12f3c114bf7146940bbe733fd3e5270df1cd868fa1a2e6fb12cd177baf10b4e",
+    "world.properties": "6b147c274f7f0fad8e5e20ad2f49d2e4743824c85318ad89b65616174f691654",
+    "scene-package/scene.bin": "867c933bfb11abeaaa177f958b7e8c39db09eb0d1b3c5dd20aa0834bd3646633",
+    "scene-package/meshes/site.obj": "d986d9f9080b3f260fc78eb28f585800e633dfa68f8d9de315eb4631956fdd3c"
+  },
+  "earthworks_features": [
+    {
+      "name": "Harbour arrival clearing",
+      "material": "GRAVEL",
+      "feather": 5.0,
+      "profile": "arrival",
+      "polygon": [
+        [
+          7.0,
+          54.0
+        ],
+        [
+          57.0,
+          54.0
+        ],
+        [
+          57.0,
+          60.0
+        ],
+        [
+          44.0,
+          66.0
+        ],
+        [
+          44.0,
+          69.0
+        ],
+        [
+          43.0,
+          79.0
+        ],
+        [
+          38.0,
+          84.0
+        ],
+        [
+          26.0,
+          84.0
+        ],
+        [
+          20.0,
+          78.0
+        ],
+        [
+          20.0,
+          69.0
+        ],
+        [
+          7.0,
+          60.0
+        ]
+      ]
+    }
+  ],
+  "source_height_and_punched_topology_preserved": true,
+  "authoring": "Actual TerrainLayerStack geographic sculpt, not route support"
+}

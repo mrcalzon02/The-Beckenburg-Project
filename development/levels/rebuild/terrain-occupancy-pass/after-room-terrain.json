@@ -1,0 +1,206 @@
+{
+  "status": "MEASURED_ROOM_VOLUME_INTRUSIONS_NOT_MAP_ACCEPTANCE",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/academy/supported-terrain.glb",
+      "source_glb_sha256": "d4e6ac582bd4f685b73b7330134b5ff810d6bfae4a5d858d94d8c4085c874bff",
+      "layout": "development/levels/rebuild/academy/rough-layout.json",
+      "layout_sha256": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6",
+      "intrusions": []
+    },
+    {
+      "id": "ASYLUM",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/asylum/supported-terrain.glb",
+      "source_glb_sha256": "252b6e9dc4f9c1f795891e6f245604eb226747632ac4178d8494d22dd7e0faf7",
+      "layout": "development/levels/rebuild/asylum/rough-layout.json",
+      "layout_sha256": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30",
+      "intrusions": []
+    },
+    {
+      "id": "CHURCH",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/church/supported-terrain.glb",
+      "source_glb_sha256": "a468b86717a032c9f394f96cd2c36de36cd1572c63d18d77a30afd7a441f25cf",
+      "layout": "development/levels/rebuild/church/rough-layout.json",
+      "layout_sha256": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05",
+      "intrusions": []
+    },
+    {
+      "id": "COLLEGE",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/college/supported-terrain.glb",
+      "source_glb_sha256": "d40df9082b1410c7b632b8536d2d7ceaf9253ddf175d26277da12234f8b39555",
+      "layout": "development/levels/rebuild/college/rough-layout.json",
+      "layout_sha256": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d",
+      "intrusions": []
+    },
+    {
+      "id": "FARMHOUSE",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/farmhouse/supported-terrain.glb",
+      "source_glb_sha256": "39f262d69a872623f9027e66fbd0c50f219f37c595d2e60ddf3ca3484256527e",
+      "layout": "development/levels/rebuild/farmhouse/rough-layout.json",
+      "layout_sha256": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727",
+      "intrusions": []
+    },
+    {
+      "id": "MANSION",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/mansion/supported-terrain.glb",
+      "source_glb_sha256": "621ce73eeed2b3153b2a6a9e04e7f1446729610dcb220e3910556ab994e97d91",
+      "layout": "development/levels/rebuild/mansion/rough-layout.json",
+      "layout_sha256": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d",
+      "intrusions": []
+    },
+    {
+      "id": "PRISON",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/prison/supported-terrain.glb",
+      "source_glb_sha256": "e1d27f13672b2a33181decf5dfd0f1bd1a7927fe77c0a6a075aa8f5b3cc1b825",
+      "layout": "development/levels/rebuild/prison/rough-layout.json",
+      "layout_sha256": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c",
+      "intrusions": []
+    },
+    {
+      "id": "SCHOOL",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/school/supported-terrain.glb",
+      "source_glb_sha256": "ca3d75d73422c3e509b554cf508376f7c2f13d07307ef1f013d7be67ef5a4a53",
+      "layout": "development/levels/rebuild/school/rough-layout.json",
+      "layout_sha256": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-03",
+      "source_glb": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-03/occupied-terrain.glb",
+      "source_glb_sha256": "f701f6f728c5b70c8f9d436076d1d798051ab756ebfb02c5e23c46531de1a804",
+      "layout": "development/levels/rebuild/wld-03/rough-layout.json",
+      "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-04",
+      "source_glb": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-04/occupied-terrain.glb",
+      "source_glb_sha256": "b2a7f7098eeec354036c86c826b8d6a67448546db3ce34840b78e35e252c379a",
+      "layout": "development/levels/rebuild/wld-04/rough-layout.json",
+      "layout_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-05",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-05/supported-terrain.glb",
+      "source_glb_sha256": "9b98b5bc0cfa50b37a638981442b08e5ca646a5827573ca137e8323842bd6aa8",
+      "layout": "development/levels/rebuild/wld-05/rough-layout.json",
+      "layout_sha256": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-06",
+      "source_glb": "development/levels/rebuild/deck-fit-pass/wld-06/deck-terrain.glb",
+      "source_glb_sha256": "bc09795ec372a7ce1f4c67d08e2dc4249445a158d1d3d78dd6871eb03b3ac0e1",
+      "layout": "development/levels/layouts/wld-06/layout.json",
+      "layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-07",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-07/supported-terrain.glb",
+      "source_glb_sha256": "aecd7aad299cc492b6b6979b8c81cefe844bb695c8703f45b4a08ba7722154d7",
+      "layout": "development/levels/rebuild/wld-07/rough-layout.json",
+      "layout_sha256": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-08",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-08/supported-terrain.glb",
+      "source_glb_sha256": "bad9c0d45da64c46f4c38ad63c84d50f47af6d02b4cb218801a7b08682c9edff",
+      "layout": "development/levels/layouts/wld-08/layout.json",
+      "layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-09",
+      "source_glb": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-09/occupied-terrain.glb",
+      "source_glb_sha256": "f49b69c3ec1bd68accef5c71c6c4d3725874cedd32e08f0e90e40c6396e1a1be",
+      "layout": "development/levels/rebuild/wld-09/rough-layout.json",
+      "layout_sha256": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-10",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-10/supported-terrain.glb",
+      "source_glb_sha256": "e1c26be107b1abff82c5cebc3a111e866a3485fc4da20641ea205ef55e2e2f8b",
+      "layout": "development/levels/rebuild/wld-10/rough-layout.json",
+      "layout_sha256": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-11",
+      "source_glb": "development/levels/rebuild/deck-fit-pass/wld-11/deck-terrain.glb",
+      "source_glb_sha256": "dee9d5acce1a8c391cca55aa2cbc21d54dbcc82862ee43b863bff5fb124bbb82",
+      "layout": "development/levels/layouts/wld-11/layout.json",
+      "layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-12",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-12/supported-terrain.glb",
+      "source_glb_sha256": "37aebdfa43c4390c867edceb3a20773e87cd7d221d771d0ade2c20d61bc4b617",
+      "layout": "development/levels/rebuild/wld-12/rough-layout.json",
+      "layout_sha256": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-13",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-13/supported-terrain.glb",
+      "source_glb_sha256": "f0bb84a66c7be9d4a031d695c43cae7da3ef3542f06bb00483caa5d26cd358a1",
+      "layout": "development/levels/layouts/wld-13/layout.json",
+      "layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-14",
+      "source_glb": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-14/occupied-terrain.glb",
+      "source_glb_sha256": "52103b4b63a0044459a5071cd77ea2a5f3cf4c2df44917e1ae5f54c9329e2f88",
+      "layout": "development/levels/rebuild/wld-14/rough-layout.json",
+      "layout_sha256": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-15",
+      "source_glb": "development/levels/rebuild/deck-fit-pass/wld-15/deck-terrain.glb",
+      "source_glb_sha256": "362a6829df41f7877cc91563cca078c39f66f61a54743a614d503c2c07c07381",
+      "layout": "development/levels/rebuild/wld-15/rough-layout.json",
+      "layout_sha256": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-16",
+      "source_glb": "development/levels/rebuild/deck-fit-pass/wld-16/deck-terrain.glb",
+      "source_glb_sha256": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
+      "layout": "development/levels/rebuild/wld-16/rough-layout.json",
+      "layout_sha256": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-17",
+      "source_glb": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-17/occupied-terrain.glb",
+      "source_glb_sha256": "16e14a7dc6105b52c7a5c8c3ea7032b0ed32486211922302ccae4568ca971b75",
+      "layout": "development/levels/layouts/wld-17/layout.json",
+      "layout_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-18",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-18/supported-terrain.glb",
+      "source_glb_sha256": "31170fe77b5f4eb67752d66af9de3a136cc7553b806cac2d8f2fedd00b9b9ed3",
+      "layout": "development/levels/rebuild/wld-18/rough-layout.json",
+      "layout_sha256": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d",
+      "intrusions": []
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/supported-terrain.glb",
+      "source_glb_sha256": "90dc20ba98abca7fd91f7e3ddbae1e5363dcc9b5d15ac37f28cc1bdda3322101",
+      "layout": "development/levels/rebuild/wld-07-mortuary/rough-layout.json",
+      "layout_sha256": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
+      "intrusions": []
+    }
+  ],
+  "scope": "Actual source terrain triangles sampled every0.5m over non-exterior architectural room envelopes, including above-world-zero floors. No room pad heights inferred."
+}

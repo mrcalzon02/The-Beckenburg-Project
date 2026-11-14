@@ -82,7 +82,7 @@ public final class SafeAreaHaze {
                     if(hit<.035||hit>=depths[at]-.008)continue;
                     double wx=x+dx*hit,wy=eye+dy*hit-a.y(),wz=z+dz*hit;
                     double alpha=opacity(a,wx,wy,wz,clock);
-                    int blue=0xa9dfff;int old=pixels[at];double keep=1-alpha;
+                    int blue=LevelAtmosphere.shadePixel(0xa9dfff,hit,col,row);int old=pixels[at];double keep=1-alpha;
                     int r=(int)(((old>>16)&255)*keep+((blue>>16)&255)*alpha);
                     int g=(int)(((old>>8)&255)*keep+((blue>>8)&255)*alpha);
                     int b=(int)((old&255)*keep+(blue&255)*alpha);

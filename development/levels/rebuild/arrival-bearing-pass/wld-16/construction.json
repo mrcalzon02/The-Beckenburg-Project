@@ -1,0 +1,85 @@
+{
+  "id": "WLD-16",
+  "status": "PHYSICAL_ARRIVAL_END_BEARING_SOURCE_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/flat-circulation-pass/wld-16/construction.json",
+  "source_contract_sha256": "d39911afab8e828c90791532495ab4494ce04103d3cf9dd4e135f4f8620d2900",
+  "source_glb": "development/levels/rebuild/flat-circulation-pass/wld-16/open-circulation.glb",
+  "source_glb_sha256": "21138278f6d0d1c739d1553d921aff519e53ae24d11f245cac37c1347a4db553",
+  "source_physics": "development/levels/rebuild/flat-circulation-pass/wld-16/open-circulation.hcs2",
+  "source_physics_sha256": "b9cddbea86c91d3254d78575d8bebc9eedb13db419576d8bf183a8e7e7de7314",
+  "before_layout": "development/levels/rebuild/flat-circulation-pass/wld-16/authored-layout.json",
+  "before_layout_sha256": "2f62f3f1f514d26cbe3c04c111db0c01efa79743a14df3ad7daa4ec8c8a91794",
+  "layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+  "layout_sha256": "a0f3332257c81f17f031869203f940f2098ef7f6b9a2f4e667f583ffa55d97fd",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [],
+  "stair_components": [],
+  "glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c",
+  "physics_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+  "arrival_bearing": {
+    "link": "route-01",
+    "anchor": [
+      26.0,
+      0,
+      68.0
+    ],
+    "route_width": 1.5,
+    "extension_metres": 0.35,
+    "contact_owner": "route-01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        25.25,
+        68.35
+      ],
+      [
+        25.25,
+        68.0
+      ],
+      [
+        26.75,
+        68.0
+      ],
+      [
+        26.75,
+        68.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          25.25,
+          68.35
+        ],
+        [
+          25.25,
+          68.0
+        ],
+        [
+          26.75,
+          68.0
+        ],
+        [
+          26.75,
+          68.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing WLD-16 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing WLD-16 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f"
+}

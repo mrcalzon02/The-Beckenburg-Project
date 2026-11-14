@@ -1,0 +1,2476 @@
+{
+  "status": "MEASURED_BEARING_FIT_FINDINGS_NOT_TERRAIN_ACCEPTANCE",
+  "sites": [
+    {
+      "id": "WLD-03",
+      "samples": [
+        {
+          "part": "Bearing skirt 0000",
+          "point": [
+            6.0,
+            -0.37639007568359373,
+            58.35
+          ],
+          "before_terrain_y": -0.02639007568359375,
+          "after_terrain_y": -0.02639007568359375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0000",
+          "point": [
+            8.0,
+            -0.7685600280761719,
+            58.35
+          ],
+          "before_terrain_y": -0.4185600280761719,
+          "after_terrain_y": -0.4185600280761719,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0001",
+          "point": [
+            8.0,
+            -0.7685600280761719,
+            58.35
+          ],
+          "before_terrain_y": -0.4185600280761719,
+          "after_terrain_y": -0.4185600280761719,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0001",
+          "point": [
+            10.0,
+            -1.3761611938476563,
+            58.35
+          ],
+          "before_terrain_y": -1.0261611938476562,
+          "after_terrain_y": -1.0261611938476562,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0002",
+          "point": [
+            10.0,
+            -1.3761611938476563,
+            58.35
+          ],
+          "before_terrain_y": -1.0261611938476562,
+          "after_terrain_y": -1.0261611938476562,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0002",
+          "point": [
+            12.0,
+            -1.6481147766113282,
+            58.35
+          ],
+          "before_terrain_y": -1.2981147766113281,
+          "after_terrain_y": -1.2981147766113281,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0003",
+          "point": [
+            12.0,
+            -1.6481147766113282,
+            58.35
+          ],
+          "before_terrain_y": -1.2981147766113281,
+          "after_terrain_y": -1.2981147766113281,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0003",
+          "point": [
+            14.0,
+            -1.319768524169922,
+            58.35
+          ],
+          "before_terrain_y": -0.9697685241699219,
+          "after_terrain_y": -0.9697685241699219,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0004",
+          "point": [
+            14.0,
+            -1.319768524169922,
+            58.35
+          ],
+          "before_terrain_y": -0.9697685241699219,
+          "after_terrain_y": -0.9697685241699219,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0004",
+          "point": [
+            16.0,
+            -0.8012557983398437,
+            58.35
+          ],
+          "before_terrain_y": -0.45125579833984375,
+          "after_terrain_y": -0.45125579833984375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0005",
+          "point": [
+            16.0,
+            -0.8012557983398437,
+            58.35
+          ],
+          "before_terrain_y": -0.45125579833984375,
+          "after_terrain_y": -0.45125579833984375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0005",
+          "point": [
+            18.0,
+            -0.6180435180664062,
+            58.35
+          ],
+          "before_terrain_y": -0.26804351806640625,
+          "after_terrain_y": -0.26804351806640625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0006",
+          "point": [
+            18.0,
+            -0.6180435180664062,
+            58.35
+          ],
+          "before_terrain_y": -0.26804351806640625,
+          "after_terrain_y": -0.26804351806640625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0006",
+          "point": [
+            20.0,
+            -0.6412635803222656,
+            58.35
+          ],
+          "before_terrain_y": -0.2912635803222656,
+          "after_terrain_y": -0.2912635803222656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0007",
+          "point": [
+            20.35,
+            -0.545343017578125,
+            50.0
+          ],
+          "before_terrain_y": -0.195343017578125,
+          "after_terrain_y": -0.3498725891113281,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0007",
+          "point": [
+            20.35,
+            -0.607965087890625,
+            52.0
+          ],
+          "before_terrain_y": -0.257965087890625,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0008",
+          "point": [
+            20.35,
+            -0.607965087890625,
+            52.0
+          ],
+          "before_terrain_y": -0.257965087890625,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0008",
+          "point": [
+            20.35,
+            -0.620782470703125,
+            54.0
+          ],
+          "before_terrain_y": -0.270782470703125,
+          "after_terrain_y": -0.3499946594238281,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0009",
+          "point": [
+            20.35,
+            -0.620782470703125,
+            54.0
+          ],
+          "before_terrain_y": -0.270782470703125,
+          "after_terrain_y": -0.3499946594238281,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0009",
+          "point": [
+            20.35,
+            -0.6326194763183594,
+            56.0
+          ],
+          "before_terrain_y": -0.2826194763183594,
+          "after_terrain_y": -0.317718505859375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0010",
+          "point": [
+            20.35,
+            -0.6326194763183594,
+            56.0
+          ],
+          "before_terrain_y": -0.2826194763183594,
+          "after_terrain_y": -0.317718505859375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0010",
+          "point": [
+            20.35,
+            -0.643487548828125,
+            58.0
+          ],
+          "before_terrain_y": -0.293487548828125,
+          "after_terrain_y": -0.293487548828125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0011",
+          "point": [
+            48.0,
+            -0.7001014709472656,
+            58.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0011",
+          "point": [
+            50.0,
+            -0.7001014709472656,
+            58.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0012",
+          "point": [
+            50.0,
+            -0.7001014709472656,
+            58.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0012",
+          "point": [
+            52.0,
+            -0.7001014709472656,
+            58.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0013",
+          "point": [
+            52.0,
+            -0.7001014709472656,
+            58.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0013",
+          "point": [
+            54.0,
+            -0.7001014709472656,
+            58.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0014",
+          "point": [
+            54.0,
+            -0.7001014709472656,
+            58.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0014",
+          "point": [
+            56.0,
+            -0.7001014709472656,
+            58.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0015",
+          "point": [
+            56.0,
+            -0.7001014709472656,
+            58.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0015",
+          "point": [
+            58.0,
+            -0.6992965698242187,
+            58.35
+          ],
+          "before_terrain_y": -0.34929656982421875,
+          "after_terrain_y": -0.34929656982421875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0016",
+          "point": [
+            58.0,
+            -0.6992965698242187,
+            58.35
+          ],
+          "before_terrain_y": -0.34929656982421875,
+          "after_terrain_y": -0.34929656982421875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0016",
+          "point": [
+            60.0,
+            -0.6991249084472656,
+            58.35
+          ],
+          "before_terrain_y": -0.3491249084472656,
+          "after_terrain_y": -0.3491249084472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0017",
+          "point": [
+            47.65,
+            -0.6512733459472656,
+            50.0
+          ],
+          "before_terrain_y": -0.3012733459472656,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0017",
+          "point": [
+            47.65,
+            -0.7001014709472656,
+            52.0
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0018",
+          "point": [
+            47.65,
+            -0.7001014709472656,
+            52.0
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0018",
+          "point": [
+            47.65,
+            -0.7001014709472656,
+            54.0
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0019",
+          "point": [
+            47.65,
+            -0.7001014709472656,
+            54.0
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0019",
+          "point": [
+            47.65,
+            -0.7001014709472656,
+            56.0
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0020",
+          "point": [
+            47.65,
+            -0.7001014709472656,
+            56.0
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0020",
+          "point": [
+            47.65,
+            -0.7001014709472656,
+            58.0
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.3501014709472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0021",
+          "point": [
+            60.35,
+            -0.6470237731933594,
+            50.0
+          ],
+          "before_terrain_y": -0.2970237731933594,
+          "after_terrain_y": -0.2970237731933594,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0021",
+          "point": [
+            60.35,
+            -0.6970001220703125,
+            52.0
+          ],
+          "before_terrain_y": -0.3470001220703125,
+          "after_terrain_y": -0.3470001220703125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0022",
+          "point": [
+            60.35,
+            -0.6970001220703125,
+            52.0
+          ],
+          "before_terrain_y": -0.3470001220703125,
+          "after_terrain_y": -0.3470001220703125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0022",
+          "point": [
+            60.35,
+            -0.6979766845703125,
+            54.0
+          ],
+          "before_terrain_y": -0.3479766845703125,
+          "after_terrain_y": -0.3479766845703125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0023",
+          "point": [
+            60.35,
+            -0.6979766845703125,
+            54.0
+          ],
+          "before_terrain_y": -0.3479766845703125,
+          "after_terrain_y": -0.3479766845703125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0023",
+          "point": [
+            60.35,
+            -0.6989532470703125,
+            56.0
+          ],
+          "before_terrain_y": -0.3489532470703125,
+          "after_terrain_y": -0.3489532470703125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0024",
+          "point": [
+            60.35,
+            -0.6989532470703125,
+            56.0
+          ],
+          "before_terrain_y": -0.3489532470703125,
+          "after_terrain_y": -0.3489532470703125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0024",
+          "point": [
+            60.35,
+            -0.6991249084472656,
+            58.0
+          ],
+          "before_terrain_y": -0.3491249084472656,
+          "after_terrain_y": -0.3491249084472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0025",
+          "point": [
+            48.0,
+            3.1130661010742187,
+            40.35
+          ],
+          "before_terrain_y": 3.4630661010742188,
+          "after_terrain_y": 3.4630661010742188,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0025",
+          "point": [
+            50.0,
+            3.114851379394531,
+            40.35
+          ],
+          "before_terrain_y": 3.4648513793945312,
+          "after_terrain_y": 3.4648513793945312,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0026",
+          "point": [
+            50.0,
+            3.114851379394531,
+            40.35
+          ],
+          "before_terrain_y": 3.4648513793945312,
+          "after_terrain_y": 3.4648513793945312,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0026",
+          "point": [
+            52.0,
+            3.116632843017578,
+            40.35
+          ],
+          "before_terrain_y": 3.466632843017578,
+          "after_terrain_y": 3.466632843017578,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0027",
+          "point": [
+            52.0,
+            3.116632843017578,
+            40.35
+          ],
+          "before_terrain_y": 3.466632843017578,
+          "after_terrain_y": 3.466632843017578,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0027",
+          "point": [
+            54.0,
+            3.120367431640625,
+            40.35
+          ],
+          "before_terrain_y": 3.470367431640625,
+          "after_terrain_y": 3.470367431640625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0028",
+          "point": [
+            54.0,
+            3.120367431640625,
+            40.35
+          ],
+          "before_terrain_y": 3.470367431640625,
+          "after_terrain_y": 3.470367431640625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0028",
+          "point": [
+            56.0,
+            3.125078582763672,
+            40.35
+          ],
+          "before_terrain_y": 3.475078582763672,
+          "after_terrain_y": 3.475078582763672,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0029",
+          "point": [
+            56.0,
+            3.125078582763672,
+            40.35
+          ],
+          "before_terrain_y": 3.475078582763672,
+          "after_terrain_y": 3.475078582763672,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0029",
+          "point": [
+            58.0,
+            3.1323760986328124,
+            40.35
+          ],
+          "before_terrain_y": 3.4823760986328125,
+          "after_terrain_y": 3.4823760986328125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0030",
+          "point": [
+            58.0,
+            3.1323760986328124,
+            40.35
+          ],
+          "before_terrain_y": 3.4823760986328125,
+          "after_terrain_y": 3.4823760986328125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0030",
+          "point": [
+            60.0,
+            3.141802215576172,
+            40.35
+          ],
+          "before_terrain_y": 3.491802215576172,
+          "after_terrain_y": 3.491802215576172,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0031",
+          "point": [
+            60.0,
+            3.141802215576172,
+            40.35
+          ],
+          "before_terrain_y": 3.491802215576172,
+          "after_terrain_y": 3.491802215576172,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0031",
+          "point": [
+            62.0,
+            3.154619598388672,
+            40.35
+          ],
+          "before_terrain_y": 3.504619598388672,
+          "after_terrain_y": 3.504619598388672,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0032",
+          "point": [
+            62.0,
+            3.154619598388672,
+            40.35
+          ],
+          "before_terrain_y": 3.504619598388672,
+          "after_terrain_y": 3.504619598388672,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0032",
+          "point": [
+            64.0,
+            3.170538330078125,
+            40.35
+          ],
+          "before_terrain_y": 3.520538330078125,
+          "after_terrain_y": 3.520538330078125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0033",
+          "point": [
+            64.0,
+            3.170538330078125,
+            40.35
+          ],
+          "before_terrain_y": 3.520538330078125,
+          "after_terrain_y": 3.520538330078125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0033",
+          "point": [
+            66.0,
+            3.189043426513672,
+            40.35
+          ],
+          "before_terrain_y": 3.539043426513672,
+          "after_terrain_y": 3.539043426513672,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0034",
+          "point": [
+            65.65,
+            7.562548065185547,
+            30.0
+          ],
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0034",
+          "point": [
+            65.65,
+            7.140642547607422,
+            32.0
+          ],
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0035",
+          "point": [
+            65.65,
+            7.140642547607422,
+            32.0
+          ],
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0035",
+          "point": [
+            65.65,
+            6.439897918701172,
+            34.0
+          ],
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0036",
+          "point": [
+            65.65,
+            6.439897918701172,
+            34.0
+          ],
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0036",
+          "point": [
+            65.65,
+            5.5316108703613285,
+            36.0
+          ],
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0037",
+          "point": [
+            76.35,
+            7.543165588378907,
+            32.0
+          ],
+          "before_terrain_y": 7.893165588378906,
+          "after_terrain_y": 7.893165588378906,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0037",
+          "point": [
+            76.35,
+            6.752840423583985,
+            34.0
+          ],
+          "before_terrain_y": 7.102840423583984,
+          "after_terrain_y": 7.102840423583984,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0038",
+          "point": [
+            76.35,
+            6.752840423583985,
+            34.0
+          ],
+          "before_terrain_y": 7.102840423583984,
+          "after_terrain_y": 7.102840423583984,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0038",
+          "point": [
+            76.35,
+            5.768698120117188,
+            36.0
+          ],
+          "before_terrain_y": 6.1186981201171875,
+          "after_terrain_y": 6.1186981201171875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0039",
+          "point": [
+            76.35,
+            5.768698120117188,
+            36.0
+          ],
+          "before_terrain_y": 6.1186981201171875,
+          "after_terrain_y": 6.1186981201171875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0039",
+          "point": [
+            76.35,
+            4.663626098632813,
+            38.0
+          ],
+          "before_terrain_y": 5.0136260986328125,
+          "after_terrain_y": 5.0136260986328125,
+          "new_exposed_footing": false
+        }
+      ],
+      "new_exposed_footing_samples": 0,
+      "affected_parts": []
+    },
+    {
+      "id": "WLD-04",
+      "samples": [
+        {
+          "part": "Bearing skirt 0000",
+          "point": [
+            4.0,
+            4.500170135498047,
+            13.65
+          ],
+          "before_terrain_y": 4.850170135498047,
+          "after_terrain_y": 4.850170135498047,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0000",
+          "point": [
+            6.0,
+            4.8995918273925785,
+            13.65
+          ],
+          "before_terrain_y": 5.249591827392578,
+          "after_terrain_y": 5.249591827392578,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0001",
+          "point": [
+            6.0,
+            4.8995918273925785,
+            13.65
+          ],
+          "before_terrain_y": 5.249591827392578,
+          "after_terrain_y": 5.249591827392578,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0001",
+          "point": [
+            8.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0002",
+          "point": [
+            8.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0002",
+          "point": [
+            10.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0003",
+          "point": [
+            10.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0003",
+          "point": [
+            12.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0004",
+          "point": [
+            12.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0004",
+          "point": [
+            14.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0005",
+          "point": [
+            14.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0005",
+          "point": [
+            16.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0006",
+          "point": [
+            16.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0006",
+          "point": [
+            18.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0007",
+          "point": [
+            18.0,
+            5.29999008178711,
+            13.65
+          ],
+          "before_terrain_y": 5.649990081787109,
+          "after_terrain_y": 5.649990081787109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0007",
+          "point": [
+            20.0,
+            5.30096664428711,
+            13.65
+          ],
+          "before_terrain_y": 5.650966644287109,
+          "after_terrain_y": 5.650966644287109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0008",
+          "point": [
+            4.0,
+            4.498461151123047,
+            26.35
+          ],
+          "before_terrain_y": 4.848461151123047,
+          "after_terrain_y": 4.848461151123047,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0008",
+          "point": [
+            6.0,
+            4.885576629638672,
+            26.35
+          ],
+          "before_terrain_y": 5.235576629638672,
+          "after_terrain_y": 5.235576629638672,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0009",
+          "point": [
+            6.0,
+            4.885576629638672,
+            26.35
+          ],
+          "before_terrain_y": 5.235576629638672,
+          "after_terrain_y": 5.235576629638672,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0009",
+          "point": [
+            8.0,
+            5.29571762084961,
+            26.35
+          ],
+          "before_terrain_y": 5.645717620849609,
+          "after_terrain_y": 5.645717620849609,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0010",
+          "point": [
+            8.0,
+            5.29571762084961,
+            26.35
+          ],
+          "before_terrain_y": 5.645717620849609,
+          "after_terrain_y": 5.645717620849609,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0010",
+          "point": [
+            10.0,
+            5.29742660522461,
+            26.35
+          ],
+          "before_terrain_y": 5.647426605224609,
+          "after_terrain_y": 5.647426605224609,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0011",
+          "point": [
+            3.65,
+            4.570066833496094,
+            14.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0011",
+          "point": [
+            3.65,
+            4.570066833496094,
+            16.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0012",
+          "point": [
+            3.65,
+            4.570066833496094,
+            16.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0012",
+          "point": [
+            3.65,
+            4.570066833496094,
+            18.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0013",
+          "point": [
+            3.65,
+            4.570066833496094,
+            18.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0013",
+          "point": [
+            3.65,
+            4.570066833496094,
+            20.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0014",
+          "point": [
+            3.65,
+            4.570066833496094,
+            20.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0014",
+          "point": [
+            3.65,
+            4.570066833496094,
+            22.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0015",
+          "point": [
+            3.65,
+            4.570066833496094,
+            22.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0015",
+          "point": [
+            3.65,
+            4.570066833496094,
+            24.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0016",
+          "point": [
+            3.65,
+            4.570066833496094,
+            24.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0016",
+          "point": [
+            3.65,
+            4.570066833496094,
+            26.0
+          ],
+          "before_terrain_y": 4.920066833496094,
+          "after_terrain_y": 4.920066833496094,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0017",
+          "point": [
+            20.35,
+            5.30096664428711,
+            14.0
+          ],
+          "before_terrain_y": 5.650966644287109,
+          "after_terrain_y": 5.650966644287109,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0017",
+          "point": [
+            20.35,
+            5.300161743164063,
+            16.0
+          ],
+          "before_terrain_y": 5.6501617431640625,
+          "after_terrain_y": 5.650108337402344,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0018",
+          "point": [
+            20.35,
+            5.300161743164063,
+            16.0
+          ],
+          "before_terrain_y": 5.6501617431640625,
+          "after_terrain_y": 5.650108337402344,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0018",
+          "point": [
+            20.35,
+            5.300161743164063,
+            18.0
+          ],
+          "before_terrain_y": 5.6501617431640625,
+          "after_terrain_y": 5.649993896484375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0019",
+          "point": [
+            46.0,
+            3.375322723388672,
+            40.35
+          ],
+          "before_terrain_y": 3.725322723388672,
+          "after_terrain_y": 3.725322723388672,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0019",
+          "point": [
+            48.0,
+            3.380842590332031,
+            40.35
+          ],
+          "before_terrain_y": 3.7308425903320312,
+          "after_terrain_y": 3.7308425903320312,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0020",
+          "point": [
+            48.0,
+            3.380842590332031,
+            40.35
+          ],
+          "before_terrain_y": 3.7308425903320312,
+          "after_terrain_y": 3.7308425903320312,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0020",
+          "point": [
+            50.0,
+            3.383600616455078,
+            40.35
+          ],
+          "before_terrain_y": 3.733600616455078,
+          "after_terrain_y": 3.733600616455078,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0021",
+          "point": [
+            50.35,
+            5.5118354797363285,
+            30.0
+          ],
+          "before_terrain_y": 5.861835479736328,
+          "after_terrain_y": 5.860107421875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0021",
+          "point": [
+            50.35,
+            5.2056526184082035,
+            32.0
+          ],
+          "before_terrain_y": 5.555652618408203,
+          "after_terrain_y": 5.555652618408203,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0022",
+          "point": [
+            50.35,
+            5.2056526184082035,
+            32.0
+          ],
+          "before_terrain_y": 5.555652618408203,
+          "after_terrain_y": 5.555652618408203,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0022",
+          "point": [
+            50.35,
+            4.8389228820800785,
+            34.0
+          ],
+          "before_terrain_y": 5.188922882080078,
+          "after_terrain_y": 5.188922882080078,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0023",
+          "point": [
+            50.35,
+            4.8389228820800785,
+            34.0
+          ],
+          "before_terrain_y": 5.188922882080078,
+          "after_terrain_y": 5.188922882080078,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0023",
+          "point": [
+            50.35,
+            4.420774841308594,
+            36.0
+          ],
+          "before_terrain_y": 4.770774841308594,
+          "after_terrain_y": 4.770774841308594,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0024",
+          "point": [
+            50.35,
+            4.420774841308594,
+            36.0
+          ],
+          "before_terrain_y": 4.770774841308594,
+          "after_terrain_y": 4.770774841308594,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0024",
+          "point": [
+            50.35,
+            3.962419891357422,
+            38.0
+          ],
+          "before_terrain_y": 4.312419891357422,
+          "after_terrain_y": 4.312419891357422,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0025",
+          "point": [
+            50.35,
+            3.962419891357422,
+            38.0
+          ],
+          "before_terrain_y": 4.312419891357422,
+          "after_terrain_y": 4.312419891357422,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0025",
+          "point": [
+            50.35,
+            3.473150634765625,
+            40.0
+          ],
+          "before_terrain_y": 3.823150634765625,
+          "after_terrain_y": 3.823150634765625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0026",
+          "point": [
+            50.0,
+            5.456461334228516,
+            30.35
+          ],
+          "before_terrain_y": 5.806461334228516,
+          "after_terrain_y": 5.8047332763671875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0026",
+          "point": [
+            52.0,
+            5.466692352294922,
+            30.35
+          ],
+          "before_terrain_y": 5.816692352294922,
+          "after_terrain_y": 5.816692352294922,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0027",
+          "point": [
+            52.0,
+            5.466692352294922,
+            30.35
+          ],
+          "before_terrain_y": 5.816692352294922,
+          "after_terrain_y": 5.816692352294922,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0027",
+          "point": [
+            54.0,
+            5.456461334228516,
+            30.35
+          ],
+          "before_terrain_y": 5.806461334228516,
+          "after_terrain_y": 5.806461334228516,
+          "new_exposed_footing": false
+        }
+      ],
+      "new_exposed_footing_samples": 0,
+      "affected_parts": []
+    },
+    {
+      "id": "WLD-12",
+      "samples": [
+        {
+          "part": "Bearing skirt 0000",
+          "point": [
+            24.35,
+            -0.5179229736328125,
+            58.0
+          ],
+          "before_terrain_y": -0.1679229736328125,
+          "after_terrain_y": -0.3363609313964844,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0000",
+          "point": [
+            24.35,
+            -0.5398231506347656,
+            60.0
+          ],
+          "before_terrain_y": -0.18982315063476562,
+          "after_terrain_y": -0.22559356689453125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0001",
+          "point": [
+            24.35,
+            -0.5398231506347656,
+            60.0
+          ],
+          "before_terrain_y": -0.18982315063476562,
+          "after_terrain_y": -0.22559356689453125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0001",
+          "point": [
+            24.35,
+            -0.5609184265136719,
+            62.0
+          ],
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0002",
+          "point": [
+            18.0,
+            -0.514215087890625,
+            76.35
+          ],
+          "before_terrain_y": -0.164215087890625,
+          "after_terrain_y": -0.164215087890625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0002",
+          "point": [
+            20.0,
+            -0.5806938171386719,
+            76.35
+          ],
+          "before_terrain_y": -0.23069381713867188,
+          "after_terrain_y": -0.23069381713867188,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0003",
+          "point": [
+            20.0,
+            -0.5806938171386719,
+            76.35
+          ],
+          "before_terrain_y": -0.23069381713867188,
+          "after_terrain_y": -0.23069381713867188,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0003",
+          "point": [
+            22.0,
+            -0.633843994140625,
+            76.35
+          ],
+          "before_terrain_y": -0.283843994140625,
+          "after_terrain_y": -0.297821044921875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0004",
+          "point": [
+            22.0,
+            -0.633843994140625,
+            76.35
+          ],
+          "before_terrain_y": -0.283843994140625,
+          "after_terrain_y": -0.297821044921875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0004",
+          "point": [
+            24.0,
+            -0.6738296508789062,
+            76.35
+          ],
+          "before_terrain_y": -0.32382965087890625,
+          "after_terrain_y": -0.34198760986328125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0005",
+          "point": [
+            24.0,
+            -0.5438285827636719,
+            61.65
+          ],
+          "before_terrain_y": -0.19382858276367188,
+          "after_terrain_y": -0.19983291625976562,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0005",
+          "point": [
+            26.0,
+            -0.6203895568847656,
+            61.65
+          ],
+          "before_terrain_y": -0.2703895568847656,
+          "after_terrain_y": -0.2778472900390625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0006",
+          "point": [
+            26.0,
+            -0.6203895568847656,
+            61.65
+          ],
+          "before_terrain_y": -0.2703895568847656,
+          "after_terrain_y": -0.2778472900390625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0006",
+          "point": [
+            28.0,
+            -0.6721969604492187,
+            61.65
+          ],
+          "before_terrain_y": -0.32219696044921875,
+          "after_terrain_y": -0.33779144287109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0007",
+          "point": [
+            24.0,
+            -0.6738296508789062,
+            76.35
+          ],
+          "before_terrain_y": -0.32382965087890625,
+          "after_terrain_y": -0.34198760986328125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0007",
+          "point": [
+            26.0,
+            -0.7022720336914062,
+            76.35
+          ],
+          "before_terrain_y": -0.35227203369140625,
+          "after_terrain_y": -0.35227203369140625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0008",
+          "point": [
+            26.0,
+            -0.7022720336914062,
+            76.35
+          ],
+          "before_terrain_y": -0.35227203369140625,
+          "after_terrain_y": -0.35227203369140625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0008",
+          "point": [
+            28.0,
+            -0.7212921142578125,
+            76.35
+          ],
+          "before_terrain_y": -0.3712921142578125,
+          "after_terrain_y": -0.3712921142578125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0009",
+          "point": [
+            28.35,
+            -0.679376220703125,
+            62.0
+          ],
+          "before_terrain_y": -0.329376220703125,
+          "after_terrain_y": -0.3402595520019531,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0009",
+          "point": [
+            28.35,
+            -0.6866737365722656,
+            64.0
+          ],
+          "before_terrain_y": -0.3366737365722656,
+          "after_terrain_y": -0.3500404357910156,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0010",
+          "point": [
+            28.35,
+            -0.6866737365722656,
+            64.0
+          ],
+          "before_terrain_y": -0.3366737365722656,
+          "after_terrain_y": -0.3500404357910156,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0010",
+          "point": [
+            28.35,
+            -0.6938034057617187,
+            66.0
+          ],
+          "before_terrain_y": -0.34380340576171875,
+          "after_terrain_y": -0.3525810241699219,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0011",
+          "point": [
+            28.35,
+            -0.6938034057617187,
+            66.0
+          ],
+          "before_terrain_y": -0.34380340576171875,
+          "after_terrain_y": -0.3525810241699219,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0011",
+          "point": [
+            28.35,
+            -0.7011009216308594,
+            68.0
+          ],
+          "before_terrain_y": -0.3511009216308594,
+          "after_terrain_y": -0.3534355163574219,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0012",
+          "point": [
+            28.35,
+            -0.7011009216308594,
+            68.0
+          ],
+          "before_terrain_y": -0.3511009216308594,
+          "after_terrain_y": -0.3534355163574219,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0012",
+          "point": [
+            28.35,
+            -0.7074256896972656,
+            70.0
+          ],
+          "before_terrain_y": -0.3574256896972656,
+          "after_terrain_y": -0.3574256896972656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0013",
+          "point": [
+            28.35,
+            -0.7074256896972656,
+            70.0
+          ],
+          "before_terrain_y": -0.3574256896972656,
+          "after_terrain_y": -0.3574256896972656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0013",
+          "point": [
+            28.35,
+            -0.7127738952636719,
+            72.0
+          ],
+          "before_terrain_y": -0.3627738952636719,
+          "after_terrain_y": -0.3627738952636719,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0014",
+          "point": [
+            28.35,
+            -0.7127738952636719,
+            72.0
+          ],
+          "before_terrain_y": -0.3627738952636719,
+          "after_terrain_y": -0.3627738952636719,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0014",
+          "point": [
+            28.35,
+            -0.7182899475097656,
+            74.0
+          ],
+          "before_terrain_y": -0.3682899475097656,
+          "after_terrain_y": -0.3682899475097656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0015",
+          "point": [
+            28.35,
+            -0.7182899475097656,
+            74.0
+          ],
+          "before_terrain_y": -0.3682899475097656,
+          "after_terrain_y": -0.3682899475097656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0015",
+          "point": [
+            28.35,
+            -0.7228294372558594,
+            76.0
+          ],
+          "before_terrain_y": -0.3728294372558594,
+          "after_terrain_y": -0.3728294372558594,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0016",
+          "point": [
+            28.0,
+            -0.6401153564453125,
+            22.35
+          ],
+          "before_terrain_y": -0.2901153564453125,
+          "after_terrain_y": -1.666015625,
+          "new_exposed_footing": true
+        },
+        {
+          "part": "Bearing skirt 0016",
+          "point": [
+            30.0,
+            -0.694757080078125,
+            22.35
+          ],
+          "before_terrain_y": -0.344757080078125,
+          "after_terrain_y": -1.6982460021972656,
+          "new_exposed_footing": true
+        },
+        {
+          "part": "Bearing skirt 0017",
+          "point": [
+            30.0,
+            -0.694757080078125,
+            22.35
+          ],
+          "before_terrain_y": -0.344757080078125,
+          "after_terrain_y": -1.6982460021972656,
+          "new_exposed_footing": true
+        },
+        {
+          "part": "Bearing skirt 0017",
+          "point": [
+            32.0,
+            -0.7187057495117187,
+            22.35
+          ],
+          "before_terrain_y": -0.36870574951171875,
+          "after_terrain_y": -1.5378494262695312,
+          "new_exposed_footing": true
+        },
+        {
+          "part": "Bearing skirt 0018",
+          "point": [
+            32.0,
+            -0.7187057495117187,
+            22.35
+          ],
+          "before_terrain_y": -0.36870574951171875,
+          "after_terrain_y": -1.5378494262695312,
+          "new_exposed_footing": true
+        },
+        {
+          "part": "Bearing skirt 0018",
+          "point": [
+            34.0,
+            -0.718804931640625,
+            22.35
+          ],
+          "before_terrain_y": -0.368804931640625,
+          "after_terrain_y": -0.7385520935058594,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0019",
+          "point": [
+            34.0,
+            -0.718804931640625,
+            22.35
+          ],
+          "before_terrain_y": -0.368804931640625,
+          "after_terrain_y": -0.7385520935058594,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0019",
+          "point": [
+            36.0,
+            -0.7001014709472656,
+            22.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.36693572998046875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0020",
+          "point": [
+            36.0,
+            -0.7001014709472656,
+            22.35
+          ],
+          "before_terrain_y": -0.3501014709472656,
+          "after_terrain_y": -0.36693572998046875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0020",
+          "point": [
+            38.0,
+            -0.6573043823242187,
+            22.35
+          ],
+          "before_terrain_y": -0.30730438232421875,
+          "after_terrain_y": -0.3310127258300781,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0021",
+          "point": [
+            38.0,
+            -0.6573043823242187,
+            22.35
+          ],
+          "before_terrain_y": -0.30730438232421875,
+          "after_terrain_y": -0.3310127258300781,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0021",
+          "point": [
+            40.0,
+            -0.5976119995117187,
+            22.35
+          ],
+          "before_terrain_y": -0.24761199951171875,
+          "after_terrain_y": -0.3079109191894531,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0022",
+          "point": [
+            27.65,
+            -0.4473854064941406,
+            20.0
+          ],
+          "before_terrain_y": -0.09738540649414062,
+          "after_terrain_y": -0.09738540649414062,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0022",
+          "point": [
+            27.65,
+            -0.5502220153808594,
+            22.0
+          ],
+          "before_terrain_y": -0.20022201538085938,
+          "after_terrain_y": -1.1515464782714844,
+          "new_exposed_footing": true
+        },
+        {
+          "part": "Bearing skirt 0023",
+          "point": [
+            40.35,
+            -0.47038803100585935,
+            20.0
+          ],
+          "before_terrain_y": -0.12038803100585938,
+          "after_terrain_y": -0.14616775512695312,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0023",
+          "point": [
+            40.35,
+            -0.5822311401367187,
+            22.0
+          ],
+          "before_terrain_y": -0.23223114013671875,
+          "after_terrain_y": -0.306915283203125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0024",
+          "point": [
+            44.0,
+            -0.6263710021972656,
+            45.65
+          ],
+          "before_terrain_y": -0.2763710021972656,
+          "after_terrain_y": -0.2763710021972656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0024",
+          "point": [
+            46.0,
+            -0.5693374633789062,
+            45.65
+          ],
+          "before_terrain_y": -0.21933746337890625,
+          "after_terrain_y": -0.21933746337890625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0025",
+          "point": [
+            46.0,
+            -0.5693374633789062,
+            45.65
+          ],
+          "before_terrain_y": -0.21933746337890625,
+          "after_terrain_y": -0.21933746337890625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0025",
+          "point": [
+            48.0,
+            -0.49694976806640623,
+            45.65
+          ],
+          "before_terrain_y": -0.14694976806640625,
+          "after_terrain_y": -0.14694976806640625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0026",
+          "point": [
+            44.0,
+            -0.7245651245117187,
+            62.35
+          ],
+          "before_terrain_y": -0.37456512451171875,
+          "after_terrain_y": -0.37456512451171875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0026",
+          "point": [
+            46.0,
+            -0.7131858825683594,
+            62.35
+          ],
+          "before_terrain_y": -0.3631858825683594,
+          "after_terrain_y": -0.3631858825683594,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0027",
+          "point": [
+            46.0,
+            -0.7131858825683594,
+            62.35
+          ],
+          "before_terrain_y": -0.3631858825683594,
+          "after_terrain_y": -0.3631858825683594,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0027",
+          "point": [
+            48.0,
+            -0.6972671508789062,
+            62.35
+          ],
+          "before_terrain_y": -0.34726715087890625,
+          "after_terrain_y": -0.35117340087890625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0028",
+          "point": [
+            48.0,
+            -0.6972671508789062,
+            62.35
+          ],
+          "before_terrain_y": -0.34726715087890625,
+          "after_terrain_y": -0.35117340087890625,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0028",
+          "point": [
+            50.0,
+            -0.6784225463867187,
+            62.35
+          ],
+          "before_terrain_y": -0.32842254638671875,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0029",
+          "point": [
+            50.0,
+            -0.6784225463867187,
+            62.35
+          ],
+          "before_terrain_y": -0.32842254638671875,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0029",
+          "point": [
+            52.0,
+            -0.6548629760742187,
+            62.35
+          ],
+          "before_terrain_y": -0.30486297607421875,
+          "after_terrain_y": -0.349609375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0030",
+          "point": [
+            43.65,
+            -0.6366249084472656,
+            46.0
+          ],
+          "before_terrain_y": -0.2866249084472656,
+          "after_terrain_y": -0.2866249084472656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0030",
+          "point": [
+            43.65,
+            -0.6523719787597656,
+            48.0
+          ],
+          "before_terrain_y": -0.3023719787597656,
+          "after_terrain_y": -0.3023719787597656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0031",
+          "point": [
+            43.65,
+            -0.6523719787597656,
+            48.0
+          ],
+          "before_terrain_y": -0.3023719787597656,
+          "after_terrain_y": -0.3023719787597656,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0031",
+          "point": [
+            43.65,
+            -0.6671424865722656,
+            50.0
+          ],
+          "before_terrain_y": -0.3171424865722656,
+          "after_terrain_y": -0.31740570068359375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0032",
+          "point": [
+            43.65,
+            -0.6671424865722656,
+            50.0
+          ],
+          "before_terrain_y": -0.3171424865722656,
+          "after_terrain_y": -0.31740570068359375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0032",
+          "point": [
+            43.65,
+            -0.6807647705078125,
+            52.0
+          ],
+          "before_terrain_y": -0.3307647705078125,
+          "after_terrain_y": -0.34400177001953125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0033",
+          "point": [
+            43.65,
+            -0.6807647705078125,
+            52.0
+          ],
+          "before_terrain_y": -0.3307647705078125,
+          "after_terrain_y": -0.34400177001953125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0033",
+          "point": [
+            43.65,
+            -0.6919723510742187,
+            54.0
+          ],
+          "before_terrain_y": -0.34197235107421875,
+          "after_terrain_y": -0.35155487060546875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0034",
+          "point": [
+            43.65,
+            -0.6919723510742187,
+            54.0
+          ],
+          "before_terrain_y": -0.34197235107421875,
+          "after_terrain_y": -0.35155487060546875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0034",
+          "point": [
+            43.65,
+            -0.7020317077636719,
+            56.0
+          ],
+          "before_terrain_y": -0.3520317077636719,
+          "after_terrain_y": -0.352752685546875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0035",
+          "point": [
+            43.65,
+            -0.7020317077636719,
+            56.0
+          ],
+          "before_terrain_y": -0.3520317077636719,
+          "after_terrain_y": -0.352752685546875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0035",
+          "point": [
+            43.65,
+            -0.7112823486328125,
+            58.0
+          ],
+          "before_terrain_y": -0.3612823486328125,
+          "after_terrain_y": -0.3612823486328125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0036",
+          "point": [
+            43.65,
+            -0.7112823486328125,
+            58.0
+          ],
+          "before_terrain_y": -0.3612823486328125,
+          "after_terrain_y": -0.3612823486328125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0036",
+          "point": [
+            43.65,
+            -0.7185836791992187,
+            60.0
+          ],
+          "before_terrain_y": -0.36858367919921875,
+          "after_terrain_y": -0.36858367919921875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0037",
+          "point": [
+            43.65,
+            -0.7185836791992187,
+            60.0
+          ],
+          "before_terrain_y": -0.36858367919921875,
+          "after_terrain_y": -0.36858367919921875,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0037",
+          "point": [
+            43.65,
+            -0.7250762939453125,
+            62.0
+          ],
+          "before_terrain_y": -0.3750762939453125,
+          "after_terrain_y": -0.3750762939453125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0038",
+          "point": [
+            52.35,
+            -0.5101104736328125,
+            54.0
+          ],
+          "before_terrain_y": -0.1601104736328125,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0038",
+          "point": [
+            52.35,
+            -0.5530067443847656,
+            56.0
+          ],
+          "before_terrain_y": -0.20300674438476562,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0039",
+          "point": [
+            52.35,
+            -0.5530067443847656,
+            56.0
+          ],
+          "before_terrain_y": -0.20300674438476562,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0039",
+          "point": [
+            52.35,
+            -0.5890670776367187,
+            58.0
+          ],
+          "before_terrain_y": -0.23906707763671875,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0040",
+          "point": [
+            52.35,
+            -0.5890670776367187,
+            58.0
+          ],
+          "before_terrain_y": -0.23906707763671875,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0040",
+          "point": [
+            52.35,
+            -0.6207061767578125,
+            60.0
+          ],
+          "before_terrain_y": -0.2707061767578125,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0041",
+          "point": [
+            52.35,
+            -0.6207061767578125,
+            60.0
+          ],
+          "before_terrain_y": -0.2707061767578125,
+          "after_terrain_y": -0.34999847412109375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0041",
+          "point": [
+            52.35,
+            -0.6464859008789062,
+            62.0
+          ],
+          "before_terrain_y": -0.29648590087890625,
+          "after_terrain_y": -0.34712982177734375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0042",
+          "point": [
+            52.0,
+            -0.9389739990234375,
+            30.35
+          ],
+          "before_terrain_y": -0.5889739990234375,
+          "after_terrain_y": -0.5889739990234375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0042",
+          "point": [
+            54.0,
+            -0.37504730224609373,
+            30.35
+          ],
+          "before_terrain_y": -0.02504730224609375,
+          "after_terrain_y": -0.47614288330078125,
+          "new_exposed_footing": true
+        }
+      ],
+      "new_exposed_footing_samples": 7,
+      "affected_parts": [
+        "Bearing skirt 0016",
+        "Bearing skirt 0017",
+        "Bearing skirt 0018",
+        "Bearing skirt 0022",
+        "Bearing skirt 0042"
+      ]
+    }
+  ],
+  "auditor_sha256": "9b2654f522e1f3c5d94c658a38c43ab374f610d5bbf378fb255302bd3d8b7260",
+  "scope": "Actual before/after soil rays at prior authored footing probes; retained source feet never moved. New gaps require individual load-path/support revisions, not a gameplay or terrain acceptance claim."
+}

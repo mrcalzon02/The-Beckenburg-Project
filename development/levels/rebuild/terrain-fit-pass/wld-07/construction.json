@@ -1,0 +1,354 @@
+{
+  "id": "WLD-07",
+  "status": "NATIVE_BEARING_CONSTRUCTION_CANDIDATE_REVIEW_OPEN",
+  "source_glb": "development/levels/rebuild/furnishings/wld-07/furnished.glb",
+  "source_glb_sha256": "90386e1f028e2d63c24d45848dcf235c75e57418d6c035c1a54a51f0847be8f7",
+  "source_physics": "development/levels/rebuild/furnishings/wld-07/furnished-physics.hcs2",
+  "source_physics_sha256": "e816fc8b848b4e1bf03e2e1fc50e12c8bec9a2c1adf98d6ab6dd9b22a2ef62ff",
+  "layout": "development/levels/rebuild/wld-07/rough-layout.json",
+  "layout_sha256": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a",
+  "new_parts": 2,
+  "new_triangles": 24,
+  "original_physics_parts_byte_preserved": true,
+  "render_native_new_parts_exact": true,
+  "construction": [
+    {
+      "name": "Bearing skirt 0000",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          54.35,
+          42.0
+        ],
+        [
+          54.35,
+          44.0
+        ]
+      ],
+      "ground_y": [
+        -0.18017959594726562,
+        -0.14163970947265625
+      ],
+      "bottom_y": [
+        -0.5301795959472656,
+        -0.49163970947265623,
+        -0.49163970947265623,
+        -0.5301795959472656
+      ],
+      "footprint": [
+        [
+          53.9,
+          42.0
+        ],
+        [
+          53.9,
+          44.0
+        ],
+        [
+          54.35,
+          44.0
+        ],
+        [
+          54.35,
+          42.0
+        ]
+      ],
+      "supports": "Floor tool",
+      "bearing_point": [
+        53.96,
+        43.0
+      ]
+    },
+    {
+      "name": "Bearing skirt 0001",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          54.35,
+          50.0
+        ],
+        [
+          54.35,
+          52.0
+        ]
+      ],
+      "ground_y": [
+        -0.14163970947265625,
+        -0.18017959594726562
+      ],
+      "bottom_y": [
+        -0.49163970947265623,
+        -0.5301795959472656,
+        -0.5301795959472656,
+        -0.49163970947265623
+      ],
+      "footprint": [
+        [
+          53.9,
+          50.0
+        ],
+        [
+          53.9,
+          52.0
+        ],
+        [
+          54.35,
+          52.0
+        ],
+        [
+          54.35,
+          50.0
+        ]
+      ],
+      "supports": "Floor tool",
+      "bearing_point": [
+        53.96,
+        51.0
+      ]
+    }
+  ],
+  "open_findings": [
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          6.0,
+          12.0
+        ],
+        [
+          8.0,
+          12.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          8.0,
+          12.0
+        ],
+        [
+          10.0,
+          12.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          10.0,
+          12.0
+        ],
+        [
+          12.0,
+          12.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          14.0,
+          12.0
+        ],
+        [
+          16.0,
+          12.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          6.0,
+          12.0
+        ],
+        [
+          6.0,
+          14.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          16.0,
+          12.0
+        ],
+        [
+          16.0,
+          14.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          16.0,
+          14.0
+        ],
+        [
+          16.0,
+          16.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          16.0,
+          16.0
+        ],
+        [
+          16.0,
+          18.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          16.0,
+          18.0
+        ],
+        [
+          16.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          14.0,
+          56.0
+        ],
+        [
+          16.0,
+          56.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          16.0,
+          56.0
+        ],
+        [
+          18.0,
+          56.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          40.0,
+          12.0
+        ],
+        [
+          40.0,
+          14.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          40.0,
+          14.0
+        ],
+        [
+          40.0,
+          16.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          40.0,
+          16.0
+        ],
+        [
+          40.0,
+          18.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          40.0,
+          18.0
+        ],
+        [
+          40.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          46.0,
+          52.0
+        ],
+        [
+          46.0,
+          54.0
+        ]
+      ],
+      "elevation": 0
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-overview.png",
+      "sha256": "2e357431dd2dd9d0e9b00c032ee61decf30e6fd5a1580db500234346e3cd89d4",
+      "type": "native exported terrain/support construction candidate"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-support-side.png",
+      "sha256": "b644acb7fcf5a843e4a99bd7d521a74962a5a10c55b913893fd6c9cbdcf15216",
+      "type": "native exported terrain/support construction candidate"
+    }
+  ],
+  "glb_sha256": "aecd7aad299cc492b6b6979b8c81cefe844bb695c8703f45b4a08ba7722154d7",
+  "physics_sha256": "cc908857dd10a717c0a729fc823d0f90241200a1d96c1e314cc2b4db61980524",
+  "generator_sha256": "e2710b3e7d4fa7c3178a2bff2d1252284d16962cc78031c091911e4673b2c94b",
+  "limitations": "No master replacement or runtime unlock. Coarse foundation/pile construction only; actual native route regression, whole-site terrain fit, remaining unsupported spans/retaining/caves/water/guards and canonical van arrival require separate evidence."
+}

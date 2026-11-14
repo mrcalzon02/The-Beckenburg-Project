@@ -1,0 +1,25 @@
+{
+  "id": "CHURCH",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -3,
+    0,
+    3,
+    6
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "East graveyard swale runs past the crypt wing and away from the ceremonial approach.",
+  "construction_response": "Nave and parish wings share a shallow masonry plinth; crypt entrances require retained light wells, not sunken orange room pads.",
+  "source_layout": "development/levels/rebuild/church/rough-layout.json",
+  "source_layout_sha256": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05",
+  "spec_sha256": "63dffaddb47d2eae7d6b1dbd6142e2afc22e1286898b47ffe6e360fbf35a9cfb",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -0.8759998853836009,
+    0.23034498172074136
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

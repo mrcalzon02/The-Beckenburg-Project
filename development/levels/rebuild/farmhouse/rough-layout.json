@@ -1,7 +1,7 @@
 {
   "version": 2,
   "id": "FARMHOUSE",
-  "title": "Hollowmere Farm — revised domestic and working-yard rough",
+  "title": "Hollowmere Farm \u2014 revised domestic and working-yard rough",
   "status": "S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED",
   "site_bounds": [
     3,
@@ -1272,7 +1272,22 @@
         [
           25.5,
           0,
-          17.0
+          17
+        ],
+        [
+          28.5,
+          0,
+          17
+        ],
+        [
+          28.5,
+          0,
+          6.5
+        ],
+        [
+          37,
+          0,
+          6.5
         ],
         [
           37,
@@ -1280,7 +1295,7 @@
           9
         ],
         [
-          37.0,
+          37,
           0,
           16.5
         ]
@@ -1903,5 +1918,43 @@
     "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
     "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
     "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  },
+  "prop_allocation_revision": {
+    "reason": "Route workyard loading approach around the livestock stall walls instead of diagonally through stall A; retain the2.4m loading route and original barn threshold.",
+    "source_sha256": "c42aa3f6010bd379f15b410ad11e72953e6c5b25b151e7b69b4780cd0c43152d",
+    "original_links": {
+      "L22": {
+        "id": "L22",
+        "a": "grounds",
+        "b": "barn-aisle",
+        "kind": "level",
+        "width": 2.4,
+        "points": [
+          [
+            25.5,
+            0,
+            17.0
+          ],
+          [
+            37,
+            0,
+            9
+          ],
+          [
+            37.0,
+            0,
+            16.5
+          ]
+        ],
+        "threshold": [
+          37,
+          0,
+          9
+        ],
+        "access": "household",
+        "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+        "player_access": "OPEN_ROUTE"
+      }
+    }
   }
 }

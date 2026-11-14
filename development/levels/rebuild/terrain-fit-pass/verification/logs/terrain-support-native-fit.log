@@ -1,0 +1,177 @@
+{
+  "ACADEMY": {
+    "samples": 7908,
+    "baseline_valid": 7041,
+    "new_block": 0,
+    "baseline_sweep": 6690,
+    "new_sweep_block": 0
+  },
+  "ASYLUM": {
+    "samples": 7956,
+    "baseline_valid": 7172,
+    "new_block": 0,
+    "baseline_sweep": 6731,
+    "new_sweep_block": 0
+  },
+  "CHURCH": {
+    "samples": 3420,
+    "baseline_valid": 3176,
+    "new_block": 0,
+    "baseline_sweep": 2922,
+    "new_sweep_block": 0
+  },
+  "COLLEGE": {
+    "samples": 8289,
+    "baseline_valid": 7607,
+    "new_block": 0,
+    "baseline_sweep": 7211,
+    "new_sweep_block": 0
+  },
+  "FARMHOUSE": {
+    "samples": 4101,
+    "baseline_valid": 3707,
+    "new_block": 0,
+    "baseline_sweep": 3366,
+    "new_sweep_block": 0
+  },
+  "MANSION": {
+    "samples": 7311,
+    "baseline_valid": 6924,
+    "new_block": 0,
+    "baseline_sweep": 6492,
+    "new_sweep_block": 0
+  },
+  "PRISON": {
+    "samples": 6636,
+    "baseline_valid": 6034,
+    "new_block": 0,
+    "baseline_sweep": 5725,
+    "new_sweep_block": 0
+  },
+  "SCHOOL": {
+    "samples": 5811,
+    "baseline_valid": 5193,
+    "new_block": 0,
+    "baseline_sweep": 4759,
+    "new_sweep_block": 0
+  },
+  "WLD-03": {
+    "samples": 3549,
+    "baseline_valid": 2848,
+    "new_block": 0,
+    "baseline_sweep": 2685,
+    "new_sweep_block": 0
+  },
+  "WLD-04": {
+    "samples": 1413,
+    "baseline_valid": 853,
+    "new_block": 0,
+    "baseline_sweep": 750,
+    "new_sweep_block": 0
+  },
+  "WLD-05": {
+    "samples": 3510,
+    "baseline_valid": 2832,
+    "new_block": 0,
+    "baseline_sweep": 2705,
+    "new_sweep_block": 0
+  },
+  "WLD-06": {
+    "samples": 3744,
+    "baseline_valid": 3537,
+    "new_block": 0,
+    "baseline_sweep": 3365,
+    "new_sweep_block": 0
+  },
+  "WLD-07": {
+    "samples": 3579,
+    "baseline_valid": 3557,
+    "new_block": 0,
+    "baseline_sweep": 3460,
+    "new_sweep_block": 0
+  },
+  "WLD-08": {
+    "samples": 4062,
+    "baseline_valid": 3111,
+    "new_block": 0,
+    "baseline_sweep": 2967,
+    "new_sweep_block": 0
+  },
+  "WLD-09": {
+    "samples": 3123,
+    "baseline_valid": 2312,
+    "new_block": 0,
+    "baseline_sweep": 2211,
+    "new_sweep_block": 0
+  },
+  "WLD-10": {
+    "samples": 4152,
+    "baseline_valid": 3695,
+    "new_block": 0,
+    "baseline_sweep": 3547,
+    "new_sweep_block": 0
+  },
+  "WLD-11": {
+    "samples": 3663,
+    "baseline_valid": 3447,
+    "new_block": 0,
+    "baseline_sweep": 3260,
+    "new_sweep_block": 0
+  },
+  "WLD-12": {
+    "samples": 4173,
+    "baseline_valid": 3377,
+    "new_block": 0,
+    "baseline_sweep": 3254,
+    "new_sweep_block": 0
+  },
+  "WLD-13": {
+    "samples": 4239,
+    "baseline_valid": 3920,
+    "new_block": 0,
+    "baseline_sweep": 3795,
+    "new_sweep_block": 0
+  },
+  "WLD-14": {
+    "samples": 2583,
+    "baseline_valid": 2441,
+    "new_block": 0,
+    "baseline_sweep": 2349,
+    "new_sweep_block": 0
+  },
+  "WLD-15": {
+    "samples": 2940,
+    "baseline_valid": 2835,
+    "new_block": 0,
+    "baseline_sweep": 2725,
+    "new_sweep_block": 0
+  },
+  "WLD-16": {
+    "samples": 3243,
+    "baseline_valid": 2980,
+    "new_block": 0,
+    "baseline_sweep": 2847,
+    "new_sweep_block": 0
+  },
+  "WLD-17": {
+    "samples": 2913,
+    "baseline_valid": 1960,
+    "new_block": 0,
+    "baseline_sweep": 1867,
+    "new_sweep_block": 0
+  },
+  "WLD-18": {
+    "samples": 3033,
+    "baseline_valid": 2878,
+    "new_block": 0,
+    "baseline_sweep": 2759,
+    "new_sweep_block": 0
+  },
+  "WLD-07-MORTUARY": {
+    "samples": 5058,
+    "baseline_valid": 5012,
+    "new_block": 0,
+    "baseline_sweep": 4879,
+    "new_sweep_block": 0
+  }
+}

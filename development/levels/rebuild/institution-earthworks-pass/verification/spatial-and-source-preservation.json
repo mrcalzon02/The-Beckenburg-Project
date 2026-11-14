@@ -1,0 +1,53 @@
+{
+  "sites": [
+    {
+      "site": "ASYLUM",
+      "nonterrain_native_records_preserved": 809,
+      "protected_rooms_and_outside_feature_vertices_unchanged": true,
+      "original_height_punch_topology_cuts_preserved": true,
+      "changed_vertices": 1043,
+      "apron_extension": {
+        "bounds": [
+          26,
+          61,
+          35,
+          62
+        ],
+        "top_y": 0,
+        "foundation_bottom_y": -0.35
+      },
+      "saved_world": "development/levels/rebuild/institution-earthworks-pass/worlds/asylum/terrain-world",
+      "world_reopen_verified": true
+    },
+    {
+      "site": "PRISON",
+      "nonterrain_native_records_preserved": 1035,
+      "protected_rooms_and_outside_feature_vertices_unchanged": true,
+      "original_height_punch_topology_cuts_preserved": true,
+      "changed_vertices": 725,
+      "apron_extension": {
+        "bounds": [
+          10,
+          71,
+          18,
+          72
+        ],
+        "top_y": 0,
+        "foundation_bottom_y": -0.35
+      },
+      "saved_world": "development/levels/rebuild/institution-earthworks-pass/worlds/prison/terrain-world",
+      "world_reopen_verified": true
+    },
+    {
+      "site": "SCHOOL",
+      "nonterrain_native_records_preserved": 480,
+      "protected_rooms_and_outside_feature_vertices_unchanged": true,
+      "original_height_punch_topology_cuts_preserved": true,
+      "changed_vertices": 919,
+      "apron_extension": null,
+      "saved_world": "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world",
+      "world_reopen_verified": true
+    }
+  ],
+  "scope": "Actual persisted terrain geometry edits, unchanged building contracts and explicit new full-width apron extensions; not runtime acceptance"
+}

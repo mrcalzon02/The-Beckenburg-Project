@@ -1,0 +1,147 @@
+{
+  "site": "PRISON",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/prison/rough-layout.json",
+  "source_layout_sha256": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c",
+  "structure_glb_sha256": "de9a4619d5e2e3956bb4b7a03e4ae3ed063482fd635b8d46a7c5c75f7a784c60",
+  "furnished_glb_sha256": "5959bd48b3912d4b75b9a07bab076e90ec4ac6c616fdd428d4dd6e88ee241a0b",
+  "native_sha256": "1e49a2e6523347e39331ff02c1e77e9f422c1607ca479f06999ba2cda965ef5a",
+  "requests": 5,
+  "placements": [
+    {
+      "id": "PRISON:a-lower-cell-01:0:0",
+      "zone": "a-lower-cell-01",
+      "purpose": "A lower single cell 1 / Iron prison cell cot and thin bedding / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_prison_cell_cot",
+      "asset": "level_blockout_prison_cell_cot",
+      "source_sha256": "d5abc22925774e2046243f39a7ce838594af837e983373b498c9ae7da9ca7258",
+      "bounds": [
+        10.532000541687012,
+        -24.959999084472656,
+        0.0,
+        12.35200023651123,
+        -24.15999984741211,
+        1.2350000143051147
+      ],
+      "rect": [
+        10.531999989509583,
+        24.16,
+        12.35200004196167,
+        24.96000001192093
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    },
+    {
+      "id": "PRISON:b-lower-cell-01:1:0",
+      "zone": "b-lower-cell-01",
+      "purpose": "B lower single cell 1 / Iron prison cell cot and thin bedding / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_prison_cell_cot",
+      "asset": "level_blockout_prison_cell_cot",
+      "source_sha256": "d5abc22925774e2046243f39a7ce838594af837e983373b498c9ae7da9ca7258",
+      "bounds": [
+        54.53200149536133,
+        -24.959999084472656,
+        0.0,
+        56.35200119018555,
+        -24.15999984741211,
+        1.2350000143051147
+      ],
+      "rect": [
+        54.53199998950958,
+        24.16,
+        56.35200004196167,
+        24.96000001192093
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    },
+    {
+      "id": "PRISON:guard:2:0",
+      "zone": "guard",
+      "purpose": "Guard control and dispatch / Prison guard desk and custody rail / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_prison_guard_station",
+      "asset": "level_blockout_prison_guard_station",
+      "source_sha256": "3d5f06a67185f51e566de8ce50a1f9c1c5691c1f7fd353353c840617c5ab21e3",
+      "bounds": [
+        43.37199783325195,
+        -59.02000045776367,
+        0.0,
+        44.992000579833984,
+        -58.15999984741211,
+        1.6349999904632568
+      ],
+      "rect": [
+        43.371999999046324,
+        58.16,
+        44.992000003814695,
+        59.02000001430511
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 132
+    },
+    {
+      "id": "PRISON:records:3:0",
+      "zone": "records",
+      "purpose": "Prisoner records and staff work / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        18.67999839782715,
+        -62.6870002746582,
+        0.0,
+        19.760000228881836,
+        -62.15999984741211,
+        2.0
+      ],
+      "rect": [
+        18.67999999141693,
+        62.16,
+        19.760000034332275,
+        62.686999995112416
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "PRISON:isolation-cell-1:4:0",
+      "zone": "isolation-cell-1",
+      "purpose": "Isolation single cell one with sanitary bay / Isolation room hard bunk and wall bracket / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_prison_isolation_fixture",
+      "asset": "level_blockout_prison_isolation_fixture",
+      "source_sha256": "8d5d4fb02f3593a55415cf7c3c2da2f795fc72b75c436d5d04a797ed407f5849",
+      "bounds": [
+        64.16474914550781,
+        -20.020000457763672,
+        0.0,
+        65.30975341796875,
+        -18.15999984741211,
+        1.9300000667572021
+      ],
+      "rect": [
+        64.16474999088048,
+        18.16,
+        65.30975000160932,
+        20.020000014305115
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 72
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "71106cec7cca2cb014384ae0dcab110a8a719071282580d284156b2d31acdd57",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 5,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

@@ -1,0 +1,114 @@
+{
+  "id": "WLD-13",
+  "status": "PHYSICAL_STAIR_SHELL_APERTURE_CANDIDATE_NOT_RUNTIME_ACCEPTANCE",
+  "source_glb": "development/levels/rebuild/stair-landing-pass/wld-13/supported-stairs.glb",
+  "source_glb_sha256": "f0bb84a66c7be9d4a031d695c43cae7da3ef3542f06bb00483caa5d26cd358a1",
+  "source_physics": "development/levels/rebuild/stair-landing-pass/wld-13/supported-stairs.hcs2",
+  "source_physics_sha256": "5c5798a74c78c4859223091fa7566cd9cb3e30c04f1cbfde1c9617b48d653ba2",
+  "layout": "development/levels/layouts/wld-13/layout.json",
+  "layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+  "source_layout": "development/levels/layouts/wld-13/layout.json",
+  "source_layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {},
+    "L18": {},
+    "L19": {
+      "0": 0
+    }
+  },
+  "stair_components": [
+    "127:L19 flight0 step1",
+    "128:L19 flight0 step2",
+    "129:L19 flight0 step3",
+    "130:L19 flight0 step4",
+    "131:L19 flight0 step5",
+    "132:L19 flight0 step6",
+    "133:L19 flight0 step7",
+    "134:L19 flight0 step8",
+    "135:L19 flight0 step9",
+    "136:L19 flight0 step10",
+    "137:L19 flight0 step11",
+    "138:L19 flight0 step12",
+    "139:L19 flight0 step13",
+    "140:L19 flight0 step14",
+    "141:L19 flight0 step15",
+    "142:L19 flight0 step16",
+    "143:L19 flight0 step17"
+  ],
+  "removed_source_meshes": [
+    "Wall gallery E"
+  ],
+  "removed_native_parts": [
+    "93:Wall gallery E"
+  ],
+  "new_parts": 1,
+  "new_triangles": 32,
+  "changes": [
+    {
+      "source_mesh": "Wall gallery E",
+      "new_mesh": "Opened stair shell Wall gallery E",
+      "removed_volume_m3": 0.2956801405334275,
+      "source_role": "rough shell wall",
+      "source_origin": [
+        30.0,
+        -41.0,
+        4.5
+      ],
+      "cutters": [
+        "Stair opening corridor L19 segment0 wall"
+      ]
+    }
+  ],
+  "corridors": [
+    {
+      "link": "L19",
+      "source_segment": 0,
+      "actual_segment": 0,
+      "points": [
+        [
+          36.0,
+          0,
+          41.0
+        ],
+        [
+          27.0,
+          3,
+          41.0
+        ]
+      ],
+      "width": 1.54,
+      "bottom_offset": 0.005,
+      "wall_bottom_offset": -0.25,
+      "headroom": 2.2,
+      "terminal_extension": 0.35,
+      "cutter_name": "Stair opening corridor L19 segment0"
+    }
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1300472,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      93
+    ]
+  },
+  "glb_sha256": "191b5e8e3990565770e1c6c7213e56925a5a75d2fc182d3c6ecb1c59715f67a0",
+  "physics_sha256": "a619ca847615a001e3a6af167c715e166209650d9d9871cdb5bfa192627fe664",
+  "generator_sha256": "435d8c5853cb90832142438f9a78a515392a4ae7092d173a06871db47a13a63a",
+  "remaining": "Independent source/solid/native and all25flat/stair comparisons; terrain/crossed flights, framing/guards, finishes and runtime integration remain open."
+}

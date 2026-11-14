@@ -10,8 +10,8 @@ import java.util.Random;
  * dispatcher and LanGhostSpatial step method remain the only ways to move/affect the world.
  */
 public final class LanGhostPursuit {
-    public enum Sound { FOOTSTEP(1, 25), DOOR(4, 55), EQUIPMENT(4, 55),
-        VOICE(3, 45), RITUAL(8, 85);
+    public enum Sound { FOOTSTEP(1, 25), EMOTE(1, 25), DOOR(4, 55),
+        EQUIPMENT(4, 55), CHAT(3, 45), VOICE(3, 45), RITUAL(8, 85);
         final int budget, lifetime;
         Sound(int budget, int lifetime) { this.budget=budget;this.lifetime=lifetime; }
     }
@@ -25,6 +25,7 @@ public final class LanGhostPursuit {
     private final Random random;
     private final org.beckenburg.editor.ai.NpcAiTelemetry diagnostics;
     private Echo memory;
+    private int memoryStrength=-1;
     private Search search;
     private long sequence;
     private int eventFrequency=100;
@@ -47,7 +48,12 @@ public final class LanGhostPursuit {
     }
     /** World-authorized events only. Coarse 2m cells intentionally discard exact positions. */
     public void heard(int ghostRoom, int sourceRoom, double x, double z, Sound kind, int tick) {
+        heard(ghostRoom,sourceRoom,x,z,kind,tick,GhostSoundProfile.forSound(kind));
+    }
+    public void heard(int ghostRoom, int sourceRoom, double x, double z, Sound kind, int tick,
+                      GhostSoundProfile.Profile profile) {
         Objects.requireNonNull(kind);
+        Objects.requireNonNull(profile);
         if(ghostRoom<0||ghostRoom>=HouseMap.EXTRACTION_ROOM
                 ||sourceRoom<0||sourceRoom>=HouseMap.EXTRACTION_ROOM
                 ||!Double.isFinite(x)||!Double.isFinite(z)||tick<0
@@ -56,22 +62,59 @@ public final class LanGhostPursuit {
         int attenuation;
         try{attenuation=LanAcoustics.cost(map,ghostRoom,sourceRoom);}
         finally{diagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HEARING,hearingStart);}
-        if(attenuation > kind.budget)return;
-        // Doors, masonry and wind shorten each finite-lived acoustic clue.
-        int lifetime=kind.lifetime-attenuation*5;
+        rememberSound(sourceRoom,x,z,kind,tick,attenuation,profile);
+    }
+    /** The live host provides its authoritative spectral pose, not a
+     * client-supplied location. Child-room doors now affect AI hearing even
+     * when both actors remain inside the same legacy gameplay zone. */
+    public void heard(LanGhostSpatial.Pose ghost,int sourceRoom,
+                      double x,double sourceY,double z,Sound kind,int tick){
+        heard(ghost,sourceRoom,x,sourceY,z,kind,tick,GhostSoundProfile.forSound(kind));
+    }
+    public void heard(LanGhostSpatial.Pose ghost,int sourceRoom,
+                      double x,double sourceY,double z,Sound kind,int tick,
+                      GhostSoundProfile.Profile profile){
+        Objects.requireNonNull(kind);
+        Objects.requireNonNull(profile);
+        if(ghost==null||ghost.room()<0||ghost.room()>=HouseMap.EXTRACTION_ROOM||
+            sourceRoom<0||sourceRoom>=HouseMap.EXTRACTION_ROOM||
+            !Double.isFinite(ghost.x()+ghost.y()+ghost.z()+x+sourceY+z)||
+            tick<0||map.roomAt(ghost.x(),ghost.y(),ghost.z())!=ghost.room()||
+            map.roomAt(x,sourceY,z)!=sourceRoom)return;
+        long hearingStart=diagnostics.begin();
+        int attenuation;
+        try{
+            attenuation=LanAcoustics.costAt(map,ghost.room(),
+                new LevelDefinition.Vec(ghost.x(),ghost.y(),ghost.z()),
+                sourceRoom,new LevelDefinition.Vec(x,sourceY,z));
+        }finally{diagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HEARING,hearingStart);}
+        rememberSound(sourceRoom,x,z,kind,tick,attenuation,profile);
+    }
+    private void rememberSound(int sourceRoom,double x,double z,
+                               Sound kind,int tick,int attenuation,
+                               GhostSoundProfile.Profile profile){
+        if(attenuation>GhostSoundProfile.acousticBudget(kind,profile))return;
+        // Text length controls acoustic memory; one event never subscribes
+        // the ghost to subsequent hunter positions or transmitted words.
+        int lifetime=(kind==Sound.CHAT
+            ?Math.min(70,profile.durationTicks()+14):kind.lifetime)-attenuation*5;
         if(lifetime<=0)return;
-        // Tile-centred estimate, not an exact hunter body position.
+        // Tile-centred estimate, NEVER a hunter-body position subscription.
         double cx=2*Math.floor(x/2)+1,cz=2*Math.floor(z/2)+1;
         Echo candidate=new Echo(sourceRoom,cx,cz,tick,tick+lifetime,kind);
-        if(memory==null || tick>=memory.expiryTick() || kind.ordinal()>=memory.source().ordinal()
-                || memory.heardTick()+10<tick) { memory=candidate; search=null; }
+        int incoming=GhostSoundProfile.perceived(profile,attenuation);
+        if(memory==null||tick>=memory.expiryTick()
+                ||GhostSoundProfile.supersedes(incoming,memoryStrength,
+                    Math.max(0,tick-memory.heardTick()))){
+            memory=candidate;memoryStrength=incoming;search=null;
+        }
     }
     /** Time-limited immutable ghost observation, not a feed of all hunter locations. */
     public Echo memory(int tick) {
         if(memory!=null && tick>=memory.expiryTick()) {
             // Searching uses the expired clue, not a live position subscription.
             Echo ended=memory;
-            memory=null;
+            memory=null;memoryStrength=-1;
             search=new Search(ended.room(),ended.approximateX(),ended.approximateZ(),
                     ended.expiryTick(),ended.expiryTick()+24);
         }
@@ -79,7 +122,7 @@ public final class LanGhostPursuit {
         return memory;
     }
     public Search search(int tick) { memory(tick);return search; }
-    public void forget(){memory=null;search=null;}
+    public void forget(){memory=null;memoryStrength=-1;search=null;}
 
     /** Choose room actions from legal host observations and a finite memory of audible events. */
     public GhostDomain.Command decide(GhostDomain.Observation seen, boolean hasSpatialVictim) {

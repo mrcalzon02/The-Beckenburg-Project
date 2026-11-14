@@ -1,0 +1,159 @@
+{
+  "status": "PASS_CURRENT25ACTUAL_NATIVE_LOADS",
+  "sites": [
+    {
+      "site": "ACADEMY",
+      "native": "development/levels/rebuild/flat-circulation-pass/academy/open-circulation.hcs2",
+      "sha256": "f548b8696ed82994343dd1fe0ce853d10d3400708e896244758f007b91bda16e",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "ASYLUM",
+      "native": "development/levels/rebuild/flat-circulation-pass/asylum/open-circulation.hcs2",
+      "sha256": "aa6b4b6ebf4584d978f77158ec399713a173976e562159ddbe527897c61fbab3",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "CHURCH",
+      "native": "development/levels/rebuild/flat-circulation-pass/church/open-circulation.hcs2",
+      "sha256": "873387b91a485a16e39730cd6efb2a2135e37f6d18b70382317992216124a1b8",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "COLLEGE",
+      "native": "development/levels/rebuild/flat-circulation-pass/college/open-circulation.hcs2",
+      "sha256": "604604f25733f534b808bc6c8367ceb38899003ec5b4529c88bcac5c75d1824c",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "FARMHOUSE",
+      "native": "development/levels/rebuild/flat-circulation-pass/farmhouse/open-circulation.hcs2",
+      "sha256": "0207241287245ee3e0a068d91da9a2885180ee64f4b4dcd1c9095c48eaa8d67e",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "MANSION",
+      "native": "development/levels/rebuild/flat-circulation-pass/mansion/open-circulation.hcs2",
+      "sha256": "3b75ec332548f823e0503e204ee89dd225e53c922cdd640a2fbb775019ca429c",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "PRISON",
+      "native": "development/levels/rebuild/flat-circulation-pass/prison/open-circulation.hcs2",
+      "sha256": "b49b00454cde3bdb4565dc7d28c6d0e428dde88315d6eb4fd5048674d0e388bd",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "SCHOOL",
+      "native": "development/levels/rebuild/flat-circulation-pass/school/open-circulation.hcs2",
+      "sha256": "9a393deb78dae76676bde5f2ab9100de8d01d175d62245d4b70e57d8f5a5533f",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-03",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-03/open-circulation.hcs2",
+      "sha256": "6ff1e3f5ab67747ceb9ac41677eb4fb5965c7b125b10e7c8d26495df37b1274b",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-04",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-04/open-circulation.hcs2",
+      "sha256": "501093519e6571ed19d5628f96cefd8c9074a331c99edddefa2677dcb94db905",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-05",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-05/open-circulation.hcs2",
+      "sha256": "760d5d1fd74fb7812418acfeb421419c230b9d76d2cdb3dbd0757e5e094aa76c",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-06",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-06/open-circulation.hcs2",
+      "sha256": "79821cf51f4a836dd6865da84f541b80687443853598c9e25aecf8578858f198",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-07",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.hcs2",
+      "sha256": "dbcbac7db2c6edae6eab154b2c2e49e281b85dc473597eedcd641380bb44488f",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-07-MORTUARY",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.hcs2",
+      "sha256": "4dfaf5f74664ed78e970f91e5faf796e9c8293a92eb2edb03e1f5bd7e97c9b82",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-08",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-08/open-circulation.hcs2",
+      "sha256": "712c56150d4e7fc42135190609c30c67cecae4c059f7e41cbff6d018a340c026",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-09",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-09/open-circulation.hcs2",
+      "sha256": "f9a54f267327e12fe4d887ac4f32404d3e3e3932572996b607d03730d30806d9",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-10",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-10/open-circulation.hcs2",
+      "sha256": "67bf33884c36418ec93d57eef30cf899dc3b1ff9a456b83a2a28208698ac145f",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-11",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-11/open-circulation.hcs2",
+      "sha256": "4eb95de0b8e6f4251d01b3455939c0747bbe8cdc6fa833ec9f6b3b9b564366e6",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-12",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-12/open-circulation.hcs2",
+      "sha256": "da0e062878daef37a57daeedcd46bf4b9a0c9f80616a4edb5e4494ffbe00e2cc",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-13",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-13/open-circulation.hcs2",
+      "sha256": "55132f292414635d0cc8f00e7fe501e8f3a3b17a36c8eaa685fd119e9620b784",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-14",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-14/open-circulation.hcs2",
+      "sha256": "d15fe2d88a16151a9f9bffa7f32d2d56997d254c6731fa4d4bb139d4bcef941d",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-15",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.hcs2",
+      "sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-16",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-16/open-circulation.hcs2",
+      "sha256": "b9cddbea86c91d3254d78575d8bebc9eedb13db419576d8bf183a8e7e7de7314",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-17",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-17/open-circulation.hcs2",
+      "sha256": "5b2ffe426f4fcf283302228cb06f287a553ddb9f07b5143c3861ae9166c2cdbf",
+      "actual_parser_and_independent_native_checks": "PASS"
+    },
+    {
+      "site": "WLD-18",
+      "native": "development/levels/rebuild/flat-circulation-pass/wld-18/open-circulation.hcs2",
+      "sha256": "904f4536c95ec05f6f9fc0f9f7d2a7548f77b994363116ccac2072742ebfd68c",
+      "actual_parser_and_independent_native_checks": "PASS"
+    }
+  ],
+  "kernel_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+  "stair_evidence_sha256": "071eb0b28895e42727dd36497deec4159695f1105bd8c96122bfd31bd0ed14cf",
+  "independent_evidence_sha256": "1fcaa6fc7c1689f37fd37890fcff0b1f8a7c065465a5f06fac5a302713d043d0",
+  "scope": "Unchanged production native parser and independent native reader actually loaded all current candidates; their degeneracy/domain/flag checks were not loosened."
+}

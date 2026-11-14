@@ -1,0 +1,1610 @@
+{
+  "id": "FARMHOUSE",
+  "stair_components": [
+    "322:L34 flight0 step1",
+    "323:L34 flight0 step2",
+    "324:L34 flight0 step3",
+    "325:L34 flight0 step4",
+    "326:L34 flight0 step5",
+    "327:L34 flight0 step6",
+    "328:L34 flight0 step7",
+    "329:L34 flight0 step8",
+    "330:L34 flight0 step9",
+    "331:L34 flight0 step10",
+    "332:L34 flight0 step11",
+    "333:L34 flight0 step12",
+    "334:L34 flight0 step13",
+    "335:L34 flight0 step14",
+    "336:L34 flight0 step15",
+    "337:L34 flight0 step16",
+    "338:L34 flight0 step17",
+    "339:L35 flight0 step1",
+    "340:L35 flight0 step2",
+    "341:L35 flight0 step3",
+    "342:L35 flight0 step4",
+    "343:L35 flight0 step5",
+    "344:L35 flight0 step6",
+    "345:L35 flight0 step7",
+    "346:L35 flight0 step8",
+    "347:L35 flight0 step9",
+    "348:L35 flight0 step10",
+    "349:L35 flight0 step11",
+    "350:L35 flight0 step12",
+    "351:L35 flight0 step13",
+    "352:L35 flight0 step14",
+    "353:L35 flight0 step15",
+    "354:L35 flight0 step16",
+    "355:L35 flight0 step17",
+    "356:L36 flight0 step1",
+    "357:L36 flight0 step2",
+    "358:L36 flight0 step3",
+    "359:L36 flight0 step4",
+    "360:L36 flight0 step5",
+    "361:L36 flight0 step6",
+    "362:L36 flight0 step7",
+    "363:L36 flight0 step8",
+    "364:L36 flight0 step9",
+    "365:L36 flight0 step10",
+    "366:L36 flight0 step11",
+    "367:L36 flight0 step12",
+    "368:L36 flight0 step13",
+    "369:L36 flight0 step14",
+    "370:L36 flight0 step15",
+    "371:L36 flight0 step16",
+    "372:L36 flight0 step17"
+  ],
+  "source_segment_map": {},
+  "status": "ENCLOSED_ROOF_CONSTRUCTION_RUNTIME_INTEGRATION_OPEN",
+  "source_contract": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/construction.json",
+  "source_contract_sha256": "427c4441f24a22460dd6d2e95b405a5955b608c90255ebb2e93ca33c20ceb933",
+  "source_glb": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.glb",
+  "source_glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+  "source_physics": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/access-routes.hcs2",
+  "source_physics_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e",
+  "before_layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+  "before_layout_sha256": "c70b77cb435c9d129646cfb18902eb854d4525b7886b33a62a803ff2aaeaf35e",
+  "before_segment_map": {},
+  "before_stair_components": [
+    "322:L34 flight0 step1",
+    "323:L34 flight0 step2",
+    "324:L34 flight0 step3",
+    "325:L34 flight0 step4",
+    "326:L34 flight0 step5",
+    "327:L34 flight0 step6",
+    "328:L34 flight0 step7",
+    "329:L34 flight0 step8",
+    "330:L34 flight0 step9",
+    "331:L34 flight0 step10",
+    "332:L34 flight0 step11",
+    "333:L34 flight0 step12",
+    "334:L34 flight0 step13",
+    "335:L34 flight0 step14",
+    "336:L34 flight0 step15",
+    "337:L34 flight0 step16",
+    "338:L34 flight0 step17",
+    "339:L35 flight0 step1",
+    "340:L35 flight0 step2",
+    "341:L35 flight0 step3",
+    "342:L35 flight0 step4",
+    "343:L35 flight0 step5",
+    "344:L35 flight0 step6",
+    "345:L35 flight0 step7",
+    "346:L35 flight0 step8",
+    "347:L35 flight0 step9",
+    "348:L35 flight0 step10",
+    "349:L35 flight0 step11",
+    "350:L35 flight0 step12",
+    "351:L35 flight0 step13",
+    "352:L35 flight0 step14",
+    "353:L35 flight0 step15",
+    "354:L35 flight0 step16",
+    "355:L35 flight0 step17",
+    "356:L36 flight0 step1",
+    "357:L36 flight0 step2",
+    "358:L36 flight0 step3",
+    "359:L36 flight0 step4",
+    "360:L36 flight0 step5",
+    "361:L36 flight0 step6",
+    "362:L36 flight0 step7",
+    "363:L36 flight0 step8",
+    "364:L36 flight0 step9",
+    "365:L36 flight0 step10",
+    "366:L36 flight0 step11",
+    "367:L36 flight0 step12",
+    "368:L36 flight0 step13",
+    "369:L36 flight0 step14",
+    "370:L36 flight0 step15",
+    "371:L36 flight0 step16",
+    "372:L36 flight0 step17"
+  ],
+  "layout": "development/levels/rebuild/access-route-pass/assemblies/farmhouse/authored-layout.json",
+  "layout_sha256": "c70b77cb435c9d129646cfb18902eb854d4525b7886b33a62a803ff2aaeaf35e",
+  "glb_sha256": "2fbfec9b1ac463b2caba3d8dd38548eb7374783134490a5f1403762db758929e",
+  "physics_sha256": "901a74a9065d8eb3f7cc4f0004869f1210aab213ebfcae114b308d46c78041f9",
+  "removed_source_meshes": [
+    "Saved editor macroterrain FARMHOUSE"
+  ],
+  "removed_native_parts": [
+    "terrain-site:surface"
+  ],
+  "new_terrain_mesh": "Saved editor circulation terrain FARMHOUSE",
+  "native_terrain_parts": [
+    "terrain-site:surface"
+  ],
+  "new_closed_parts": [
+    "Rooted cut walkway FARMHOUSE 0",
+    "Rooted cut walkway FARMHOUSE 1",
+    "Rooted cut walkway FARMHOUSE 2",
+    "Rooted cut walkway FARMHOUSE 3"
+  ],
+  "new_closed_triangles": 44,
+  "world": "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/adaptive-topology.bin": "b0436ee7ba4b58cc9235fd191a621c0759c47603fa8cd7f01163752a455dac73",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/authored-cuts.tsv": "aedaabc00e432f97507aec323428813a717f049f5ec265ce7cf44c88a4c857bb",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/authored-path-grading.sha256": "a75cca3015b44ad680526f7cea4aa40d221c6e05761774086a300597d6f55a57",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/source-provenance.json": "7fcad786367f4eb54020c5d97393a58524c3cc5bce9068979b4ff9d936b313b0",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/terrain-physics.hcs2": "223afd0202f2028e904cbdce3be62a6b66dd352e302d262fe482ad226d914165",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/tile_0_0.png": "150f8219d6c2267fe6bdd2a7fc2376e4a4ab46c176bd0cf8ba5d95e67e75839b",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/verification.json": "ccb02dbb74e8858a72357b39418876686eb20a163f8b5b9a6b56833f5f7b4fd7",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/world.properties": "0e12235a84c4342eedc6598c3e2e799ae78a7b14f5f574c531389d32f7cf9bcb",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/scene-package/.scene.bin.editor.previous": "44002e984975bd7a47a6f8a57bdea7324178ceb272176bd6f5cf8cc68ab51f3a",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/scene-package/scene.bin": "c96a56967d4a5ed6e35c0abfc01cfdc05834ba7349352c2fb01f0985813783bd",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/terrain-layers/tile_0_0.bin": "7fff94eabf0ad91537912142cc7addd1c64d233d23df801f490af249b263eaff",
+    "development/levels/rebuild/flat-terrain-pass/worlds/farmhouse/terrain-world/scene-package/meshes/site.obj": "0660f517348aa8f590c65fcaf7c6ca83485e87d760135dcecfb7cf23cdd1688a"
+  },
+  "footing_extensions": [],
+  "unresolved_footings": [],
+  "rooted_walkway_beds": [
+    {
+      "name": "Rooted cut walkway FARMHOUSE 0",
+      "link": "L22",
+      "footprint": [
+        [
+          37.5,
+          6.5
+        ],
+        [
+          37.0,
+          6.5
+        ],
+        [
+          37.0,
+          6.0
+        ],
+        [
+          38.0,
+          6.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          37.5,
+          6.5
+        ],
+        [
+          37.0,
+          6.5
+        ],
+        [
+          37.0,
+          6.0
+        ],
+        [
+          38.0,
+          6.0
+        ],
+        [
+          37.25,
+          6.5
+        ],
+        [
+          37.0,
+          6.25
+        ],
+        [
+          37.5,
+          6.0
+        ],
+        [
+          37.75,
+          6.25
+        ],
+        [
+          37.375,
+          6.25
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 515,
+      "receiver_native_triangle_xyz": [
+        37.0,
+        -0.20000000298023224,
+        7.0,
+        38.0,
+        -0.20000000298023224,
+        6.0,
+        37.0,
+        -0.20000000298023224,
+        6.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway FARMHOUSE 1",
+      "link": "L22",
+      "footprint": [
+        [
+          38.0,
+          6.5
+        ],
+        [
+          37.5,
+          6.5
+        ],
+        [
+          38.0,
+          6.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          38.0,
+          6.5
+        ],
+        [
+          37.5,
+          6.5
+        ],
+        [
+          38.0,
+          6.0
+        ],
+        [
+          37.75,
+          6.5
+        ],
+        [
+          37.75,
+          6.25
+        ],
+        [
+          38.0,
+          6.25
+        ],
+        [
+          37.833333333333336,
+          6.333333333333333
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 516,
+      "receiver_native_triangle_xyz": [
+        37.0,
+        -0.20000000298023224,
+        7.0,
+        38.0,
+        -0.20000000298023224,
+        7.0,
+        38.0,
+        -0.20000000298023224,
+        6.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway FARMHOUSE 2",
+      "link": "L22",
+      "footprint": [
+        [
+          38.0,
+          6.0
+        ],
+        [
+          38.08140719356428,
+          6.0
+        ],
+        [
+          38.108655439013546,
+          6.040779881161892
+        ],
+        [
+          38.12550913560018,
+          6.125509135600179
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          38.0,
+          6.0
+        ],
+        [
+          38.08140719356428,
+          6.0
+        ],
+        [
+          38.108655439013546,
+          6.040779881161892
+        ],
+        [
+          38.12550913560018,
+          6.125509135600179
+        ],
+        [
+          38.04070359678214,
+          6.0
+        ],
+        [
+          38.09503131628891,
+          6.020389940580946
+        ],
+        [
+          38.117082287306864,
+          6.083144508381036
+        ],
+        [
+          38.06275456780009,
+          6.06275456780009
+        ],
+        [
+          38.078892942044504,
+          6.041572254190518
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.19996439476669006,
+        -0.19996496371628453,
+        -0.19998353745892905,
+        -0.19998219887346114,
+        -0.1999646792414873,
+        -0.1999742505876068,
+        -0.19999177021958064,
+        -0.19997822473053398
+      ],
+      "receiver_native_triangle_index": 521,
+      "receiver_native_triangle_xyz": [
+        38.5,
+        -0.19993440806865692,
+        6.5,
+        39.0,
+        -0.19956259429454803,
+        6.0,
+        38.0,
+        -0.20000000298023224,
+        6.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway FARMHOUSE 3",
+      "link": "L22",
+      "footprint": [
+        [
+          38.2,
+          6.5
+        ],
+        [
+          38.0,
+          6.5
+        ],
+        [
+          38.0,
+          6.0
+        ],
+        [
+          38.12550913560018,
+          6.125509135600179
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          38.2,
+          6.5
+        ],
+        [
+          38.0,
+          6.5
+        ],
+        [
+          38.0,
+          6.0
+        ],
+        [
+          38.12550913560018,
+          6.125509135600179
+        ],
+        [
+          38.1,
+          6.5
+        ],
+        [
+          38.0,
+          6.25
+        ],
+        [
+          38.06275456780009,
+          6.06275456780009
+        ],
+        [
+          38.16275456780009,
+          6.31275456780009
+        ],
+        [
+          38.081377283900046,
+          6.281377283900045
+        ]
+      ],
+      "terrain_y": [
+        -0.1999737650156021,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.19998353745892905,
+        -0.1999868839979172,
+        -0.20000000298023224,
+        -0.19999177021958064,
+        -0.1999786512372656,
+        -0.19998932710874892
+      ],
+      "receiver_native_triangle_index": 526,
+      "receiver_native_triangle_xyz": [
+        38.5,
+        -0.19993440806865692,
+        6.5,
+        38.0,
+        -0.20000000298023224,
+        6.0,
+        38.0,
+        -0.20000000298023224,
+        7.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    }
+  ],
+  "deferred_walkway_beds": [
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          29.7,
+          17.0
+        ],
+        [
+          29.608655439013543,
+          17.459220118838108
+        ],
+        [
+          29.54880004557894,
+          17.54880004557894
+        ],
+        [
+          29.0,
+          17.0
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          29.7,
+          17.0
+        ],
+        [
+          29.608655439013543,
+          17.459220118838108
+        ],
+        [
+          29.54880004557894,
+          17.54880004557894
+        ],
+        [
+          29.0,
+          17.0
+        ],
+        [
+          29.65432771950677,
+          17.229610059419052
+        ],
+        [
+          29.57872774229624,
+          17.504010082208524
+        ],
+        [
+          29.27440002278947,
+          17.27440002278947
+        ],
+        [
+          29.35,
+          17.0
+        ],
+        [
+          29.46436387114812,
+          17.252005041104262
+        ]
+      ],
+      "terrain_y": [
+        -0.7690546870231629,
+        -0.7808390123213004,
+        -0.7915534852553904,
+        -0.9091935753822327,
+        -0.7749468496722317,
+        -0.7861962487883454,
+        -0.8503735303188111,
+        -0.8391241312026975,
+        -0.8126601899955217
+      ],
+      "receiver_native_triangle_index": 1330,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          29.54880004557894,
+          17.54880004557894
+        ],
+        [
+          29.348528137423855,
+          17.848528137423855
+        ],
+        [
+          29.27864749002929,
+          17.895220893216877
+        ],
+        [
+          28.548945559681563,
+          17.451054440318437
+        ],
+        [
+          29.0,
+          17.0
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          29.54880004557894,
+          17.54880004557894
+        ],
+        [
+          29.348528137423855,
+          17.848528137423855
+        ],
+        [
+          29.27864749002929,
+          17.895220893216877
+        ],
+        [
+          28.548945559681563,
+          17.451054440318437
+        ],
+        [
+          29.0,
+          17.0
+        ],
+        [
+          29.4486640915014,
+          17.6986640915014
+        ],
+        [
+          29.31358781372657,
+          17.871874515320364
+        ],
+        [
+          28.913796524855428,
+          17.67313766676766
+        ],
+        [
+          28.77447277984078,
+          17.22552722015922
+        ],
+        [
+          29.27440002278947,
+          17.27440002278947
+        ],
+        [
+          29.14498424654273,
+          17.548720703307623
+        ]
+      ],
+      "terrain_y": [
+        -0.7915534852553904,
+        -0.8342393799229073,
+        -0.8491619873313119,
+        -1.0054405571882696,
+        -0.9091935753822327,
+        -0.8128964325891485,
+        -0.84170068362711,
+        -0.9273012722597903,
+        -0.9573170662852512,
+        -0.8503735303188111,
+        -0.8779177970160222
+      ],
+      "receiver_native_triangle_index": 1331,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          28.548945559681563,
+          17.451054440318437
+        ],
+        [
+          28.5,
+          17.42126148688808
+        ],
+        [
+          28.5,
+          17.0
+        ],
+        [
+          29.0,
+          17.0
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          28.548945559681563,
+          17.451054440318437
+        ],
+        [
+          28.5,
+          17.42126148688808
+        ],
+        [
+          28.5,
+          17.0
+        ],
+        [
+          29.0,
+          17.0
+        ],
+        [
+          28.52447277984078,
+          17.436157963603257
+        ],
+        [
+          28.5,
+          17.210630743444042
+        ],
+        [
+          28.75,
+          17.0
+        ],
+        [
+          28.77447277984078,
+          17.22552722015922
+        ],
+        [
+          28.63723638992039,
+          17.21807898180163
+        ]
+      ],
+      "terrain_y": [
+        -1.0054405571882696,
+        -1.0159231141745695,
+        -1.016128808259964,
+        -0.9091935753822327,
+        -1.0106818356814196,
+        -1.0160259612172666,
+        -0.9626611918210983,
+        -0.9573170662852512,
+        -0.9866715137512593
+      ],
+      "receiver_native_triangle_index": 1332,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          27.65147186257614,
+          5.651471862576142
+        ],
+        [
+          28.0,
+          5.41859280643572
+        ],
+        [
+          28.0,
+          6.0
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          27.65147186257614,
+          5.651471862576142
+        ],
+        [
+          28.0,
+          5.41859280643572
+        ],
+        [
+          28.0,
+          6.0
+        ],
+        [
+          27.825735931288072,
+          5.535032334505932
+        ],
+        [
+          28.0,
+          5.70929640321786
+        ],
+        [
+          27.825735931288072,
+          5.8257359312880705
+        ],
+        [
+          27.88382395419205,
+          5.690021556337288
+        ]
+      ],
+      "terrain_y": [
+        -0.9822727115926836,
+        -1.0484125462639975,
+        -1.0532387495040894,
+        -1.015342628928341,
+        -1.0508256478840432,
+        -1.0177557305483869,
+        -1.0279746691202571
+      ],
+      "receiver_native_triangle_index": 133,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          27.418592806435722,
+          6.0
+        ],
+        [
+          27.65147186257614,
+          5.651471862576143
+        ],
+        [
+          28.0,
+          6.0
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          27.418592806435722,
+          6.0
+        ],
+        [
+          27.65147186257614,
+          5.651471862576143
+        ],
+        [
+          28.0,
+          6.0
+        ],
+        [
+          27.53503233450593,
+          5.825735931288071
+        ],
+        [
+          27.825735931288072,
+          5.825735931288071
+        ],
+        [
+          27.709296403217863,
+          6.0
+        ],
+        [
+          27.690021556337285,
+          5.8838239541920485
+        ]
+      ],
+      "terrain_y": [
+        -0.9340030156942453,
+        -0.9822727115926836,
+        -1.0532387495040894,
+        -0.9581378636434644,
+        -1.0177557305483869,
+        -0.9936208825991677,
+        -0.9898381589303389
+      ],
+      "receiver_native_triangle_index": 134,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          28.33318213620807,
+          5.3331821362080705
+        ],
+        [
+          28.49999904111109,
+          5.300000190734863
+        ],
+        [
+          28.499999200925142,
+          5.49999920092514
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          28.33318213620807,
+          5.3331821362080705
+        ],
+        [
+          28.49999904111109,
+          5.300000190734863
+        ],
+        [
+          28.499999200925142,
+          5.49999920092514
+        ],
+        [
+          28.41659058865958,
+          5.316591163471466
+        ],
+        [
+          28.499999121018114,
+          5.399999695830002
+        ],
+        [
+          28.416590668566606,
+          5.416590668566606
+        ],
+        [
+          28.44439345941477,
+          5.377727175956025
+        ]
+      ],
+      "terrain_y": [
+        -1.0166299057734405,
+        -1.0007965998013106,
+        -1.0024567329303546,
+        -1.0087132527873754,
+        -1.0016266663658329,
+        -1.0095433193518977,
+        -1.0066277461683684
+      ],
+      "receiver_native_triangle_index": 136,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          28.499999200926418,
+          5.5000007990735815
+        ],
+        [
+          28.49999960046289,
+          6.0
+        ],
+        [
+          28.0,
+          6.0
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          28.499999200926418,
+          5.5000007990735815
+        ],
+        [
+          28.49999960046289,
+          6.0
+        ],
+        [
+          28.0,
+          6.0
+        ],
+        [
+          28.499999400694655,
+          5.750000399536791
+        ],
+        [
+          28.249999800231443,
+          6.0
+        ],
+        [
+          28.24999960046321,
+          5.750000399536791
+        ],
+        [
+          28.333332933796438,
+          5.833333599691194
+        ]
+      ],
+      "terrain_y": [
+        -1.0024567461963068,
+        -1.0066072121354412,
+        -1.0532387495040894,
+        -1.004531979165874,
+        -1.0299229808197654,
+        -1.0278477478501982,
+        -1.0207675692786122
+      ],
+      "receiver_native_triangle_index": 138,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          28.0,
+          6.0
+        ],
+        [
+          28.0,
+          5.41859280643572
+        ],
+        [
+          28.040779881161892,
+          5.3913445609864565
+        ],
+        [
+          28.33318213620807,
+          5.3331821362080705
+        ],
+        [
+          28.499999200926418,
+          5.500000799073581
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          28.0,
+          6.0
+        ],
+        [
+          28.0,
+          5.41859280643572
+        ],
+        [
+          28.040779881161892,
+          5.3913445609864565
+        ],
+        [
+          28.33318213620807,
+          5.3331821362080705
+        ],
+        [
+          28.499999200926418,
+          5.500000799073581
+        ],
+        [
+          28.0,
+          5.70929640321786
+        ],
+        [
+          28.020389940580948,
+          5.404968683711088
+        ],
+        [
+          28.18698100868498,
+          5.3622633485972635
+        ],
+        [
+          28.416590668567245,
+          5.416591467640826
+        ],
+        [
+          28.24999960046321,
+          5.75000039953679
+        ],
+        [
+          28.174792243659276,
+          5.528624060540766
+        ]
+      ],
+      "terrain_y": [
+        -1.0532387495040894,
+        -1.0484125462639975,
+        -1.0443830962858254,
+        -1.0166299057734405,
+        -1.0024567461963068,
+        -1.0508256478840432,
+        -1.0463978212749112,
+        -1.0305065010296328,
+        -1.0095433259848734,
+        -1.027847747850198,
+        -1.033024208804732
+      ],
+      "receiver_native_triangle_index": 139,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          27.5,
+          6.5
+        ],
+        [
+          27.3,
+          6.5
+        ],
+        [
+          27.391344560986457,
+          6.0407798811618925
+        ],
+        [
+          27.418592806435722,
+          6.0
+        ],
+        [
+          28.0,
+          6.0
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          27.5,
+          6.5
+        ],
+        [
+          27.3,
+          6.5
+        ],
+        [
+          27.391344560986457,
+          6.0407798811618925
+        ],
+        [
+          27.418592806435722,
+          6.0
+        ],
+        [
+          28.0,
+          6.0
+        ],
+        [
+          27.4,
+          6.5
+        ],
+        [
+          27.34567228049323,
+          6.270389940580946
+        ],
+        [
+          27.40496868371109,
+          6.020389940580946
+        ],
+        [
+          27.709296403217863,
+          6.0
+        ],
+        [
+          27.75,
+          6.25
+        ],
+        [
+          27.521987473484433,
+          6.208155976232378
+        ]
+      ],
+      "terrain_y": [
+        -0.9553368389606476,
+        -0.9143205821514131,
+        -0.9287932443664686,
+        -0.9340030156942454,
+        -1.0532387495040894,
+        -0.93482871055603,
+        -0.9215569132589408,
+        -0.9313981300303569,
+        -0.9936208825991677,
+        -1.0042877942323685,
+        -0.9571384861353722
+      ],
+      "receiver_native_triangle_index": 477,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          28.0,
+          6.5
+        ],
+        [
+          27.5,
+          6.5
+        ],
+        [
+          28.0,
+          6.0
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          28.0,
+          6.5
+        ],
+        [
+          27.5,
+          6.5
+        ],
+        [
+          28.0,
+          6.0
+        ],
+        [
+          27.75,
+          6.5
+        ],
+        [
+          27.75,
+          6.25
+        ],
+        [
+          28.0,
+          6.25
+        ],
+        [
+          27.833333333333332,
+          6.333333333333333
+        ]
+      ],
+      "terrain_y": [
+        -1.0578774809837341,
+        -0.9553368389606476,
+        -1.0532387495040894,
+        -1.0066071599721909,
+        -1.0042877942323685,
+        -1.0555581152439117,
+        -1.0221510231494901
+      ],
+      "receiver_native_triangle_index": 478,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          28.5,
+          6.5
+        ],
+        [
+          28.0,
+          6.0
+        ],
+        [
+          28.49999960046289,
+          6.0
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          28.5,
+          6.5
+        ],
+        [
+          28.0,
+          6.0
+        ],
+        [
+          28.49999960046289,
+          6.0
+        ],
+        [
+          28.25,
+          6.25
+        ],
+        [
+          28.249999800231443,
+          6.0
+        ],
+        [
+          28.499999800231443,
+          6.25
+        ],
+        [
+          28.333333200154296,
+          6.166666666666667
+        ]
+      ],
+      "terrain_y": [
+        -0.9980621039867401,
+        -1.0532387495040894,
+        -1.0066072121354412,
+        -1.0256504267454147,
+        -1.0299229808197654,
+        -1.002334658061091,
+        -1.0193026885420902
+      ],
+      "receiver_native_triangle_index": 481,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L22",
+      "footprint": [
+        [
+          28.5,
+          6.5
+        ],
+        [
+          28.0,
+          6.5
+        ],
+        [
+          28.0,
+          6.0
+        ]
+      ],
+      "terrain_probe_points": [
+        [
+          28.5,
+          6.5
+        ],
+        [
+          28.0,
+          6.5
+        ],
+        [
+          28.0,
+          6.0
+        ],
+        [
+          28.25,
+          6.5
+        ],
+        [
+          28.0,
+          6.25
+        ],
+        [
+          28.25,
+          6.25
+        ],
+        [
+          28.166666666666668,
+          6.333333333333333
+        ]
+      ],
+      "terrain_y": [
+        -0.9980621039867401,
+        -1.0578774809837341,
+        -1.0532387495040894,
+        -1.0279697924852371,
+        -1.0555581152439117,
+        -1.0256504267454147,
+        -1.0363927781581879
+      ],
+      "receiver_native_triangle_index": 485,
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    }
+  ],
+  "walkway_builder_sha256": "8821a2bb2fe8077e2aace17d1538676ebe95cc72d8197fe83cd470ae6566b454",
+  "reused_rejected_arrival_cap": [],
+  "composer_sha256": "3711886e11c108841bf2326646417e4ac79c7e7a9ef638b9e4f981d880796f41",
+  "remaining": "Runtime map adapter/rooms/portals/acoustics/spawns/services and native scene rendering are not integrated. Detailed roof step flashing, drainage, gutters, standing-height join/optical review and terrain/foundation defects remain open. Existing candidate availability unchanged.",
+  "blend_sha256": "7b0f5d5536c9e9acfad9fe85d508d1bd0f88ff88043036c739570a3e8ac25b24",
+  "access_route_changes": [
+    {
+      "site": "FARMHOUSE",
+      "link": "L13",
+      "rooms": [
+        "upper-hall",
+        "upper-stair"
+      ],
+      "before": [
+        [
+          21.5,
+          3,
+          19.0
+        ],
+        [
+          21.5,
+          3,
+          21
+        ],
+        [
+          23,
+          3,
+          21
+        ],
+        [
+          24.5,
+          3,
+          21
+        ],
+        [
+          24.5,
+          3,
+          17.0
+        ]
+      ],
+      "after": [
+        [
+          21.5,
+          3.0,
+          19.0
+        ],
+        [
+          22.0,
+          3.0,
+          21.0
+        ],
+        [
+          23.0,
+          3.0,
+          21.0
+        ],
+        [
+          24.0,
+          3.0,
+          21.0
+        ],
+        [
+          24.5,
+          3.0,
+          18.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        23,
+        3,
+        21
+      ],
+      "source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L28",
+      "rooms": [
+        "barn-aisle",
+        "loft-stair"
+      ],
+      "before": [
+        [
+          37.0,
+          0,
+          16.5
+        ],
+        [
+          37.0,
+          0,
+          17.5
+        ],
+        [
+          39,
+          0,
+          17.5
+        ],
+        [
+          41.0,
+          0,
+          17.5
+        ],
+        [
+          41.0,
+          0,
+          20.0
+        ]
+      ],
+      "after": [
+        [
+          37.0,
+          0.0,
+          16.5
+        ],
+        [
+          38.0,
+          0.0,
+          17.5
+        ],
+        [
+          39.0,
+          0.0,
+          17.5
+        ],
+        [
+          39.5,
+          0.0,
+          17.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        39,
+        0,
+        17.5
+      ],
+      "source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L29",
+      "rooms": [
+        "loft-landing",
+        "hayloft"
+      ],
+      "before": [
+        [
+          41.0,
+          3,
+          20.0
+        ],
+        [
+          41.0,
+          3,
+          23
+        ],
+        [
+          39,
+          3,
+          23
+        ],
+        [
+          35.0,
+          3,
+          23
+        ],
+        [
+          35.0,
+          3,
+          20.0
+        ]
+      ],
+      "after": [
+        [
+          41.0,
+          3.0,
+          22.5
+        ],
+        [
+          40.5,
+          3.0,
+          23.0
+        ],
+        [
+          39.0,
+          3.0,
+          23.0
+        ],
+        [
+          37.5,
+          3.0,
+          23.0
+        ],
+        [
+          35.0,
+          3.0,
+          20.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        39,
+        3,
+        23
+      ],
+      "source": {
+        "id": "FARMHOUSE",
+        "construction": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/authored-layout.json",
+        "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.glb",
+        "native": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.hcs2",
+        "blend": "development/levels/rebuild/flat-terrain-pass/assemblies/farmhouse/cut-terrain.blend",
+        "glb_sha256": "00348bdebcfff6d04db5e4115ef19183d3b46141a200f8c273038a04e9a6d77c",
+        "native_sha256": "ca57b306d4b767eea4b0fab3089c2f0d076af70edabcaa006cd874c4b0e1148e"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "roof_wings": [
+    {
+      "wing": "house",
+      "bounds": [
+        12,
+        10,
+        26,
+        28
+      ],
+      "ceiling": 6,
+      "ridge": 8.440000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "barn-stalls",
+      "bounds": [
+        31,
+        9,
+        43,
+        16
+      ],
+      "ceiling": 3,
+      "ridge": 4.54,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "barn-loft",
+      "bounds": [
+        31,
+        16,
+        43,
+        24
+      ],
+      "ceiling": 6,
+      "ridge": 8.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "workshop",
+      "bounds": [
+        27,
+        26,
+        39,
+        33
+      ],
+      "ceiling": 3,
+      "ridge": 4.640000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    }
+  ],
+  "new_parts": 24,
+  "roof_coverage_rays": 516,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/farmhouse.png",
+      "sha256": "e0a968b8448b5d79257515b9b36b560cb5e9575ce56005c75b1d714daf270fda",
+      "type": "native exported roof construction overview, not gameplay"
+    }
+  ],
+  "roof_generator_sha256": "cfa4e55508d2acd5e8cda538b04a8ea91dbfefa8c3f19527de936da46290eb51"
+}

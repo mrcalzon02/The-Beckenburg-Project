@@ -1,0 +1,173 @@
+{
+  "site": "MANSION",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/mansion/rough-layout.json",
+  "source_layout_sha256": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d",
+  "structure_glb_sha256": "fcd8f903947bb55e0b1ac954a9e4f967f1bd6e21f190a251a13b259a82a2679d",
+  "furnished_glb_sha256": "40e15fb5b8c00232901a67afb96c6032da5072cd33abe49ae367e57b7486f8ce",
+  "native_sha256": "124b5e706fed513a33b768f5641a4302335ae8b1c546857ba06b042957844a61",
+  "requests": 6,
+  "placements": [
+    {
+      "id": "MANSION:library:0:0",
+      "zone": "library",
+      "purpose": "Library shelves and reading tables / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        10.279999732971191,
+        -24.687000274658203,
+        0.0,
+        11.359999656677246,
+        -24.15999984741211,
+        2.0
+      ],
+      "rect": [
+        10.27999999141693,
+        24.16,
+        11.360000034332275,
+        24.68699999511242
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "MANSION:drawing:1:0",
+      "zone": "drawing",
+      "purpose": "Drawing room seated reception / Vale viewing-room chairs and memorial pedestal / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_mortuary_viewing_seat",
+      "asset": "level_blockout_mortuary_viewing_seat",
+      "source_sha256": "8b3ca97e88681d972d7f188f7bd6b7c8ab688b5d0f4e2bd97794a7ce17348ea1",
+      "bounds": [
+        10.120000839233398,
+        -37.8650016784668,
+        0.0,
+        12.0,
+        -36.15999984741211,
+        1.4299999475479126
+      ],
+      "rect": [
+        10.120000000953674,
+        36.16,
+        11.999999996185302,
+        37.864999983310696
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 132
+    },
+    {
+      "id": "MANSION:kitchen:2:0",
+      "zone": "kitchen",
+      "purpose": "Cooking and preparation with separate wash-up / Freestanding stove with four hot plates and oven / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_domestic_kitchen_range",
+      "asset": "level_blockout_domestic_kitchen_range",
+      "source_sha256": "9a024553c055d319ecbe298eaf4868045c7ed7ec3d6dfffd8912b452183ef396",
+      "bounds": [
+        29.503999710083008,
+        -20.90999984741211,
+        0.0,
+        30.463998794555664,
+        -20.15999984741211,
+        1.534999966621399
+      ],
+      "rect": [
+        29.504000004291534,
+        20.16,
+        30.46399998283386,
+        20.91
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 208
+    },
+    {
+      "id": "MANSION:suite-bed:3:0",
+      "zone": "suite-bed",
+      "purpose": "Principal bedroom / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        9.317998886108398,
+        -42.55000305175781,
+        3.5999999046325684,
+        11.207999229431152,
+        -40.15999984741211,
+        5.139999866485596
+      ],
+      "rect": [
+        9.318000002861023,
+        40.16,
+        11.207999988555908,
+        42.54999998569488
+      ],
+      "floor_y": 3.6,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "MANSION:staff-a:4:0",
+      "zone": "staff-a",
+      "purpose": "Two staff beds and personal storage A / Narrow institutional bed / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_ward_bed",
+      "asset": "level_blockout_ward_bed",
+      "source_sha256": "d3fc0a942ab53019935cac7c3a90ab62344eb888e25389c633b862d7f62a1553",
+      "bounds": [
+        29.119998931884766,
+        -16.15999984741211,
+        3.5999999046325684,
+        30.0,
+        -14.15999984741211,
+        4.869999885559082
+      ],
+      "rect": [
+        29.120000000953674,
+        14.16,
+        29.999999996185302,
+        16.16
+      ],
+      "floor_y": 3.6,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    },
+    {
+      "id": "MANSION:wine:5:0",
+      "zone": "wine",
+      "purpose": "Wine racks and retrieval aisle / Three-level freestanding shelf / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_storage_shelf",
+      "asset": "level_blockout_storage_shelf",
+      "source_sha256": "9e7baa1f1c128734b572d4e83de878db8ed2643eba544287eeb3034e74d88df1",
+      "bounds": [
+        36.68550109863281,
+        -20.90999984741211,
+        -3.0,
+        38.33550262451172,
+        -20.15999984741211,
+        -1.2000000476837158
+      ],
+      "rect": [
+        36.68550002026558,
+        20.16,
+        38.33549999642372,
+        20.91
+      ],
+      "floor_y": -3,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "9cc068ce9fe8d59ef06c19b9c9210d409a6756a4c07eb85ac0e6838d53a1b975",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 6,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

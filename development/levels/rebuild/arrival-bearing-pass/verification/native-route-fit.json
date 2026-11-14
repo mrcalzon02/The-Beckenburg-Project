@@ -1,0 +1,387 @@
+{
+  "status": "MEASURED_FIT_FINDINGS_NOT_TERRAIN_ACCEPTANCE",
+  "sites": {
+    "ACADEMY": {
+      "samples": 7908,
+      "baseline_valid": 7136,
+      "new_block": 0,
+      "baseline_sweep": 6816,
+      "new_sweep_block": 0,
+      "after_valid": 7136,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "ASYLUM": {
+      "samples": 7956,
+      "baseline_valid": 7250,
+      "new_block": 0,
+      "baseline_sweep": 6827,
+      "new_sweep_block": 0,
+      "after_valid": 7250,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "CHURCH": {
+      "samples": 3420,
+      "baseline_valid": 3197,
+      "new_block": 0,
+      "baseline_sweep": 2950,
+      "new_sweep_block": 0,
+      "after_valid": 3197,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "COLLEGE": {
+      "samples": 8289,
+      "baseline_valid": 7679,
+      "new_block": 0,
+      "baseline_sweep": 7298,
+      "new_sweep_block": 0,
+      "after_valid": 7679,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "FARMHOUSE": {
+      "samples": 4101,
+      "baseline_valid": 3867,
+      "new_block": 0,
+      "baseline_sweep": 3565,
+      "new_sweep_block": 0,
+      "after_valid": 3867,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "MANSION": {
+      "samples": 7311,
+      "baseline_valid": 7016,
+      "new_block": 0,
+      "baseline_sweep": 6614,
+      "new_sweep_block": 0,
+      "after_valid": 7016,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "PRISON": {
+      "samples": 6636,
+      "baseline_valid": 6064,
+      "new_block": 0,
+      "baseline_sweep": 5761,
+      "new_sweep_block": 0,
+      "after_valid": 6064,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "SCHOOL": {
+      "samples": 5811,
+      "baseline_valid": 5462,
+      "new_block": 0,
+      "baseline_sweep": 5103,
+      "new_sweep_block": 0,
+      "after_valid": 5462,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-03": {
+      "samples": 3549,
+      "baseline_valid": 3247,
+      "new_block": 0,
+      "baseline_sweep": 3089,
+      "new_sweep_block": 0,
+      "after_valid": 3247,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-04": {
+      "samples": 1413,
+      "baseline_valid": 1191,
+      "new_block": 0,
+      "baseline_sweep": 1095,
+      "new_sweep_block": 0,
+      "after_valid": 1191,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-05": {
+      "samples": 3510,
+      "baseline_valid": 3178,
+      "new_block": 0,
+      "baseline_sweep": 3082,
+      "new_sweep_block": 0,
+      "after_valid": 3178,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-06": {
+      "samples": 3744,
+      "baseline_valid": 3591,
+      "new_block": 0,
+      "baseline_sweep": 3454,
+      "new_sweep_block": 0,
+      "after_valid": 3591,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-07": {
+      "samples": 3579,
+      "baseline_valid": 3573,
+      "new_block": 0,
+      "baseline_sweep": 3483,
+      "new_sweep_block": 0,
+      "after_valid": 3573,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-08": {
+      "samples": 4062,
+      "baseline_valid": 3453,
+      "new_block": 0,
+      "baseline_sweep": 3283,
+      "new_sweep_block": 0,
+      "after_valid": 3453,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-09": {
+      "samples": 3123,
+      "baseline_valid": 2358,
+      "new_block": 0,
+      "baseline_sweep": 2264,
+      "new_sweep_block": 0,
+      "after_valid": 2358,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-10": {
+      "samples": 4152,
+      "baseline_valid": 3701,
+      "new_block": 0,
+      "baseline_sweep": 3555,
+      "new_sweep_block": 0,
+      "after_valid": 3701,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-11": {
+      "samples": 3663,
+      "baseline_valid": 3465,
+      "new_block": 0,
+      "baseline_sweep": 3326,
+      "new_sweep_block": 0,
+      "after_valid": 3465,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-12": {
+      "samples": 4173,
+      "baseline_valid": 4152,
+      "new_block": 0,
+      "baseline_sweep": 4036,
+      "new_sweep_block": 0,
+      "after_valid": 4152,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-13": {
+      "samples": 4239,
+      "baseline_valid": 3932,
+      "new_block": 0,
+      "baseline_sweep": 3812,
+      "new_sweep_block": 0,
+      "after_valid": 3932,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-14": {
+      "samples": 2583,
+      "baseline_valid": 2467,
+      "new_block": 0,
+      "baseline_sweep": 2394,
+      "new_sweep_block": 0,
+      "after_valid": 2467,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-15": {
+      "samples": 2940,
+      "baseline_valid": 2890,
+      "new_block": 0,
+      "baseline_sweep": 2806,
+      "new_sweep_block": 0,
+      "after_valid": 2890,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-16": {
+      "samples": 3243,
+      "baseline_valid": 3022,
+      "new_block": 0,
+      "baseline_sweep": 2937,
+      "new_sweep_block": 0,
+      "after_valid": 3022,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-17": {
+      "samples": 2913,
+      "baseline_valid": 2878,
+      "new_block": 0,
+      "baseline_sweep": 2813,
+      "new_sweep_block": 0,
+      "after_valid": 2878,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-18": {
+      "samples": 3033,
+      "baseline_valid": 2905,
+      "new_block": 0,
+      "baseline_sweep": 2802,
+      "new_sweep_block": 0,
+      "after_valid": 2905,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-07-MORTUARY": {
+      "samples": 5058,
+      "baseline_valid": 5052,
+      "new_block": 0,
+      "baseline_sweep": 4932,
+      "new_sweep_block": 0,
+      "after_valid": 5052,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    }
+  },
+  "source_bindings": {
+    "ACADEMY": {
+      "before": "f548b8696ed82994343dd1fe0ce853d10d3400708e896244758f007b91bda16e",
+      "after": "bc6dfb54d2f18ff364a8d336400117a98b90da3c0a2c7d3c3cf3cf28d43732c1",
+      "layout_sha256": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6"
+    },
+    "ASYLUM": {
+      "before": "aa6b4b6ebf4584d978f77158ec399713a173976e562159ddbe527897c61fbab3",
+      "after": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+      "layout_sha256": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30"
+    },
+    "CHURCH": {
+      "before": "873387b91a485a16e39730cd6efb2a2135e37f6d18b70382317992216124a1b8",
+      "after": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+      "layout_sha256": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05"
+    },
+    "COLLEGE": {
+      "before": "604604f25733f534b808bc6c8367ceb38899003ec5b4529c88bcac5c75d1824c",
+      "after": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+      "layout_sha256": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d"
+    },
+    "FARMHOUSE": {
+      "before": "0207241287245ee3e0a068d91da9a2885180ee64f4b4dcd1c9095c48eaa8d67e",
+      "after": "f668b6cbb16efdb3958f5fb23ae227442bdf33a04051e6bb5868e1e53292013d",
+      "layout_sha256": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727"
+    },
+    "MANSION": {
+      "before": "3b75ec332548f823e0503e204ee89dd225e53c922cdd640a2fbb775019ca429c",
+      "after": "fdd18c6a1aa8e7e4f5807e5c818a44902f49d0f04652e5792f4b6b225ec23522",
+      "layout_sha256": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d"
+    },
+    "PRISON": {
+      "before": "b49b00454cde3bdb4565dc7d28c6d0e428dde88315d6eb4fd5048674d0e388bd",
+      "after": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+      "layout_sha256": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c"
+    },
+    "SCHOOL": {
+      "before": "9a393deb78dae76676bde5f2ab9100de8d01d175d62245d4b70e57d8f5a5533f",
+      "after": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5",
+      "layout_sha256": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e"
+    },
+    "WLD-03": {
+      "before": "6ff1e3f5ab67747ceb9ac41677eb4fb5965c7b125b10e7c8d26495df37b1274b",
+      "after": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+      "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102"
+    },
+    "WLD-04": {
+      "before": "501093519e6571ed19d5628f96cefd8c9074a331c99edddefa2677dcb94db905",
+      "after": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0",
+      "layout_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104"
+    },
+    "WLD-05": {
+      "before": "760d5d1fd74fb7812418acfeb421419c230b9d76d2cdb3dbd0757e5e094aa76c",
+      "after": "9d82c6c1a087a9074e57dffef7bc034f5d3386aa960914327760f41ce434c1e2",
+      "layout_sha256": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467"
+    },
+    "WLD-06": {
+      "before": "79821cf51f4a836dd6865da84f541b80687443853598c9e25aecf8578858f198",
+      "after": "dbd5964da3ad901105f365a349d7f26a65d4a326f27f6a280ba245c56d6c6ab6",
+      "layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304"
+    },
+    "WLD-07": {
+      "before": "dbcbac7db2c6edae6eab154b2c2e49e281b85dc473597eedcd641380bb44488f",
+      "after": "dbcbac7db2c6edae6eab154b2c2e49e281b85dc473597eedcd641380bb44488f",
+      "layout_sha256": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a"
+    },
+    "WLD-08": {
+      "before": "712c56150d4e7fc42135190609c30c67cecae4c059f7e41cbff6d018a340c026",
+      "after": "705681e346e1447d24dff4ea01a9130945d4a230934aa770f99ee7efe051b25e",
+      "layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b"
+    },
+    "WLD-09": {
+      "before": "f9a54f267327e12fe4d887ac4f32404d3e3e3932572996b607d03730d30806d9",
+      "after": "f9a54f267327e12fe4d887ac4f32404d3e3e3932572996b607d03730d30806d9",
+      "layout_sha256": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4"
+    },
+    "WLD-10": {
+      "before": "67bf33884c36418ec93d57eef30cf899dc3b1ff9a456b83a2a28208698ac145f",
+      "after": "4993026e84e4b9d1aca2f15dcec72e7e0ca7ad9a594e3bff5ec8cb466f393dc0",
+      "layout_sha256": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9"
+    },
+    "WLD-11": {
+      "before": "4eb95de0b8e6f4251d01b3455939c0747bbe8cdc6fa833ec9f6b3b9b564366e6",
+      "after": "d47d1abfd8f43d2a3606e966ee1e390c472946edd45abc423d1006844bfa5703",
+      "layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf"
+    },
+    "WLD-12": {
+      "before": "da0e062878daef37a57daeedcd46bf4b9a0c9f80616a4edb5e4494ffbe00e2cc",
+      "after": "ae9152a762c3cbba562c2506a8eba2c56f50532139342bbb07ce65bc6f7ad796",
+      "layout_sha256": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8"
+    },
+    "WLD-13": {
+      "before": "55132f292414635d0cc8f00e7fe501e8f3a3b17a36c8eaa685fd119e9620b784",
+      "after": "89e9da35994a7d6aa371d09f4ab40591090c6ff5efb56c338d124d5674daf457",
+      "layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732"
+    },
+    "WLD-14": {
+      "before": "d15fe2d88a16151a9f9bffa7f32d2d56997d254c6731fa4d4bb139d4bcef941d",
+      "after": "9a54181977e940370c354c998a2d01231c3101868f479cf1113f0295b42cac51",
+      "layout_sha256": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e"
+    },
+    "WLD-15": {
+      "before": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+      "after": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8",
+      "layout_sha256": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f"
+    },
+    "WLD-16": {
+      "before": "b9cddbea86c91d3254d78575d8bebc9eedb13db419576d8bf183a8e7e7de7314",
+      "after": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+      "layout_sha256": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb"
+    },
+    "WLD-17": {
+      "before": "5b2ffe426f4fcf283302228cb06f287a553ddb9f07b5143c3861ae9166c2cdbf",
+      "after": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+      "layout_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37"
+    },
+    "WLD-18": {
+      "before": "904f4536c95ec05f6f9fc0f9f7d2a7548f77b994363116ccac2072742ebfd68c",
+      "after": "3ca38ad737d20d6ec6cead7d75493d91ec43dc53f47af29a8d25ab5bbb5063d6",
+      "layout_sha256": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d"
+    },
+    "WLD-07-MORTUARY": {
+      "before": "4dfaf5f74664ed78e970f91e5faf796e9c8293a92eb2edb03e1f5bd7e97c9b82",
+      "after": "4dfaf5f74664ed78e970f91e5faf796e9c8293a92eb2edb03e1f5bd7e97c9b82",
+      "layout_sha256": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c"
+    }
+  },
+  "kernel_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+  "probe_sha256": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+  "auditor_sha256": "45e1eb902fd84470c83c9be5c94b6d6ddb391ec3453c5c9dc2974dfd51299fbb",
+  "scope": "All25 small attached arrival-end bearings compared to exact current flat sources; unchanged authored flat centre/side routes with production capsules and qualified sweeps. Vertical routes, moved blockouts, terrain edges and runtime remain open.",
+  "next_action": "Revise blockout/terrain relationships at actual failed contacts. Original route coordinates are review inputs, not fixed constraints. Do not bury failures by increasing tolerances or flattening land around reservation pads."
+}

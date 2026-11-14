@@ -10,14 +10,66 @@ paths=subprocess.check_output(['git','ls-files','--cached',* ([] if args.tracked
 items=[]
 for path in sorted(set(paths)):
     if not path.lower().endswith('.png'):continue
-    if not any(t in path for t in ['/previews/','/captures/','/screenshots/','/blockouts/']):continue
+    if not any(t in path for t in ['/previews/','/captures/','/screenshots/','/blockouts/','/rebuild/structures/']):continue
     p=ROOT/path
     if not p.exists():continue
     data=p.read_bytes()
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    if '/terrain-ownership-construction-batch/' in path:
+        kind='Native Dam bearing section; deck above -0.8m, ceiling caps and terrain hidden only for load-path inspection; older amber flights unfinished, no runtime acceptance' if 'bearing-section' in p.name else 'Native actual saved Motel Academy Dam terrain and full floors/arrival structures; roofs hidden, landscape and older stair/runtime gates open'
+    elif '/service-portal-construction-batch/' in path:
+        kind='Native Cinder gallery section; geometry above cut plane and terrain hidden only for inspection, other amber stairs unfinished, no runtime acceptance' if 'gallery-section' in p.name else 'Native reconstructed service doorways and Cinder galleries/U stair; roofs hidden, Motel original terrain and ordinary-route blockers remain open, no runtime acceptance'
+    elif '/arrival-grounds-construction-batch/' in path:
+        kind='Native actual saved Research Railway Cinder arrival/workground earthworks with founded trestle approaches; pitched roofs hidden, unfinished Cinder underground connections and doorway/landscape/runtime gates open'
+    elif '/constant-flight-construction-batch/' in path:
+        kind='Native constant-width stair cells, supported landings, rectangular wells and saved terrain punches; pitched roofs hidden, Research tunnel roof retained for support context, other amber Cinder flights unfinished, ordinary-ground and runtime gates open'
+    elif '/stair-cell-construction-batch/' in path:
+        kind='Native enclosed Research tunnel elbow; ceiling/upper layers hidden, old flared flights unfinished, no runtime acceptance' if 'wld-08' in p.name else 'Native service stair cutaway; east wall and upper layers hidden only for inspection, no runtime acceptance' if 'lower-cell-section' in p.name else 'Native constant stair flights, complete landings and rectangular floor openings; roofs hidden, no runtime acceptance'
+    elif '/institution-earthworks-batch/' in path:kind='Native actual saved institution arrival and grounds sculpt with supported forecourt aprons; roofs hidden, rough materials, landscape/guard/runtime acceptance open'
+    elif '/institution-courts-batch/' in path:kind='Native constructed institution courts and normal exterior doorways; roofs hidden, unfinished grade/edge protection and runtime gates open'
+    elif '/institution-doorway-batch/' in path:kind='Native institutional entrance walls, indexed frames and soil-bearing landings; study solids removed, roofs hidden, outdoor movement defects and runtime gates open'
+    elif '/doorway-construction-batch/' in path:kind='Native architectural doorway construction; indexed full-depth jambs and heads, roofs hidden for inspection, runtime acceptance open'
+    elif '/wharf-stair-cells-batch/' in path:kind='Native reconstructed rectangular Wharf stair cells; constant flights and supported landings, roof context hidden, runtime acceptance open'
+    elif '/site-earthworks-batch/' in path:kind='Native actual saved editor geographic terrain sculpt; roof cutaway, rough materials, landscape/runtime acceptance open'
+    elif '/courts-and-docks-batch/' in path:kind='Native area-built courtyards and piled dock construction; roofs hidden for review, terrain/finish/runtime gates open'
+    elif '/study-solid-removal-batch/' in path:kind='Native correction after removing mistaken physical study lines; incomplete terrain/thresholds exposed, roofs hidden, NOT accepted construction'
+    elif '/circulation-construction-batch/' in path:kind='Native exported piled perimeter walk, aligned service aisle or housed mezzanine stair; upper roof context hidden, no runtime acceptance'
+    elif '/entrance-construction-batch/' in path:kind='Native exported entrance/courtyard construction cutaway; pitched roofs hidden for inspection, unresolved other routes, no runtime acceptance'
+    elif '/retaining-shoulder-batch/' in path:kind='Rejected native Cinder retaining-stub study; prior source retained' if '/rejected-' in path else 'Native retaining-shoulder construction; isolated views hide terrain/context, no runtime acceptance'
+    elif '/stair-end-batch/' in path:kind='Native widened stair and quay/undercroft construction; cutaway context hidden, incomplete guard returns, not runtime acceptance'
+    elif '/stair-guard-batch/' in path:kind='Native fitted library stair guards/stringers; cutaway context hidden, incomplete ends, not runtime acceptance'
+    elif '/orthogonal-stair-batch/' in path:kind='Native physical stair construction cutaway; context hidden, no runtime acceptance' if 'cutaway' in path else 'Native physical stair construction context; no runtime acceptance'
+    elif '/atmosphere-all-levels/' in path:kind='Runtime shared fog and skybox comparison' if 'sheet' in p.name else 'Runtime OpenGL atmosphere capture' if '/opengl/' in path else 'Runtime software atmosphere capture'
+    elif '/roof-construction-batch/' in path:kind='Rejected roof wing-selection study; superseded source, not runtime' if '/rejected-' in path else 'Native exported enclosed roof construction; rough source, no gameplay integration acceptance'
+    elif '/access-route-batch/' in path:kind='Rejected partial native route-review selector study; not final review' if '/rejected-' in path else 'Native exported floor cutaway with coloured route authoring guides; upper/lower layers hidden, no runtime/arrival acceptance'
+    elif '/stair-interface-construction-batch/' in path:kind='Native physical stair/landing construction iteration; pitched roofs hidden; Dam interface is a labeled underground section; not runtime/arrival acceptance'
+    elif '/flat-terrain-batch/' in path:kind='Rejected native circulation/terrain construction study' if '/rejected-' in path else 'Native frozen three-site terrain pilot; not runtime' if '/pilot-archive/' in path else 'Actual saved editor terrain inspection; not runtime' if '-saved-terrain' in p.name else 'Native paired terrain/whole-site/contact review; rough source, no canonical van/runtime acceptance'
+    elif '/arrival-bearing-batch/' in path:kind='Rejected native arrival bearing; terrain intrusion unresolved' if '/rejected-' in path else 'Native paired arrival end-bearing construction; no canonical van/runtime acceptance'
+    elif '/flat-circulation-batch/' in path:kind='Native rejected flat-circulation study; not final source' if 'rejected-' in path else 'Native isolated actual exported wall profile; all other context hidden' if '-profile-' in path else 'Native paired intact flat-threshold inspection, neutral150Wfill; not runtime' if '-threshold-' in path else 'Native flat circulation architectural context/contact sheet; no arrival/complete-join/runtime acceptance'
+    elif '/stair-connection-batch/' in path:kind='Native rejected connection pilot; not final candidate' if 'rejected-' in path else 'Native isolated stair hub; all other context hidden' if 'isolated-' in path else 'Actual saved editor terrain diagnostic; not runtime' if 'saved-terrain' in path else 'Native paired intact connection/landing inspection, neutral150Wfill; not runtime' if '-before.' in path or '-after.' in path else 'Native connection construction context/contact sheet; not arrival/runtime acceptance'
+    elif '/stair-terrain-batch/' in path:kind='Native rejected terrain pilot, not final source' if '/rejected-' in path else 'Native isolated soil-bearing construction; other site context hidden' if 'soil-bearing' in path else 'Actual saved editor terrain topology diagnostic; not runtime' if 'saved-terrain' in path else 'Native paired intact terrain/threshold inspection, neutral150Wfill; not runtime' if '-stair-' in path or '-threshold-' in path else 'Native terrain construction overview/contact sheet; no arrival/runtime acceptance'
+    elif '/stair-bay-batch/' in path:kind='Native superseded bay pilot; not final source' if 'superseded-' in path else 'Native stair bay cutaway; walls/terrain/higher floors hidden, not runtime' if 'cutaway' in path else 'Native authored stair bay construction inspection; not runtime'
+    elif '/stair-opening-batch/' in path:kind='Native rejected pilot aperture review; not final source' if 'pilot-before-' in path else 'Native physical stair aperture inspection; construction cameras, not runtime'
+    elif '/stair-landing-fit-batch/' in path:kind='Native stair closeup; overhead caps/distant context hidden, some joins occluded; not runtime' if 'closeup' in p.name else 'Native isolated stair additions; context hidden, not runtime' if 'new-landings' in p.name else 'Native stair/landing construction overview; runtime gates open'
+    elif '/floor-closure-batch/' in path:kind='Native paired structural plate inspection;150W neutral fill, not runtime' if '-room-' in p.name or 'paired-closure' in p.name else 'Native isolated floor/cap additions; zero-part outcomes may be empty' if 'repaired-plates' in p.name else 'Native floor/cap construction overview or comparison; runtime gates open'
+    elif '/room-terrain-batch/' in path:kind='Native first-person paired occupied-terrain review; neutral150W fill, not runtime' if '-room-' in p.name or 'paired-room' in p.name else 'Native saved editor occupied-room excavation review; construction candidate'
+    elif '/deck-fit-batch/' in path:kind='Native physical exterior deck construction review; runtime acceptance pending'
+    elif '/terrain-fit-batch/' in path:kind='Rejected native support placement study' if p.name.startswith('rejected-') else 'Native terrain and bearing construction review; runtime acceptance pending'
+    elif '/macroterrain-batch/' in path:kind='Native saved editor terrain topology; candidate, not runtime' if p.name.endswith('-saved-terrain.png') else 'Native macroterrain-only inspection; candidate, not runtime' if '-terrain-plan' in p.name else 'Native macroterrain and preserved structure composite; fit review open'
+    elif p.name.endswith('-saved-terrain.png'):kind='Native saved editor terrain inspection; punched physical geometry'
+    elif '/basement-batch/' in path:kind='Native first-person export inspection; neutral review illumination, not runtime'
+    elif '/landing-batch/' in path:kind='Native stair landing comparison; rejected and candidate geometry' if '-actual-export-contact' in p.name else 'Rejected native stair landing geometry' if 'rejected-' in p.name else 'Native stair landing construction candidate; runtime integration pending'
+    elif '/stair-movement-batch/' in path:kind='Rejected native curved-stair geometry' if 'rejected-' in p.name else 'Native curved-stair construction candidate; runtime acceptance pending'
+    elif '/furnishing-batch/' in path:kind='Rejected native rough-prop placement study' if '/rejected-' in path else 'Native staged rough-model inspection' if p.name=='staged-source-inspection.png' else 'Native map rough-prop placement; refinement pending' if '-export-overview' in p.name or '-room-' in p.name or 'rough-allocation-sheet-' in p.name else 'Native model-library sample inspection'
+    elif '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    elif '/structure-batch/' in path:kind='Native structural blocking review; runtime integration pending'
+    elif '/rebuild/structures/' in path:kind='Native planning-scene preview' if p.name=='preview.png' else 'Reimported native structure export review'
+    elif '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    elif '/runtime-gpu/' in path:kind='Runtime GPU capture'
+    elif '/hunter-reactions-' in path and '/raster/' in path:kind='Synthetic floor control'
+
     elif '/hunter-gait-recovery-software/' in path:kind='Runtime software hunter gait diagnostic'
     elif '/house-fresh-default/' in path:kind='Runtime fresh default House editor and CLI verification'
     elif '/hiding-energy/' in path:kind='Runtime hiding-location energy material'

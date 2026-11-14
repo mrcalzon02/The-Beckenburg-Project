@@ -1,0 +1,189 @@
+{
+  "id": "CHURCH",
+  "status": "PHYSICAL_ARRIVAL_END_BEARING_SOURCE_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/flat-circulation-pass/church/construction.json",
+  "source_contract_sha256": "98b0aed5798e4a56b102c499396313995ac507f0678242374e8ebab42d785eb7",
+  "source_glb": "development/levels/rebuild/flat-circulation-pass/church/open-circulation.glb",
+  "source_glb_sha256": "377cbd0715c0efdb0bf5f7ca9ca5456f56511277ea5c6e0fca24f0b837f3f5ea",
+  "source_physics": "development/levels/rebuild/flat-circulation-pass/church/open-circulation.hcs2",
+  "source_physics_sha256": "873387b91a485a16e39730cd6efb2a2135e37f6d18b70382317992216124a1b8",
+  "before_layout": "development/levels/rebuild/flat-circulation-pass/church/authored-layout.json",
+  "before_layout_sha256": "14c8b25669f732e3816ff52235d1294ea83e42585a2bf0522b067d950148eb8e",
+  "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+  "layout_sha256": "a59c9747db58f7b573ac966b176e4b62b23440b4697fb7050bf27f146841d430",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "306:L33 flight0 step1",
+    "307:L33 flight0 step2",
+    "308:L33 flight0 step3",
+    "309:L33 flight0 step4",
+    "310:L33 flight0 step5",
+    "311:L33 flight0 step6",
+    "312:L33 flight0 step7",
+    "313:L33 flight0 step8",
+    "314:L33 flight0 step9",
+    "315:L33 flight0 step10",
+    "316:L33 flight0 step11",
+    "317:L33 flight0 step12",
+    "318:L33 flight0 step13",
+    "319:L33 flight0 step14",
+    "320:L33 flight0 step15",
+    "321:L33 flight0 step16",
+    "322:L33 flight0 step17",
+    "323:L34 flight0 step1",
+    "324:L34 flight0 step2",
+    "325:L34 flight0 step3",
+    "326:L34 flight0 step4",
+    "327:L34 flight0 step5",
+    "328:L34 flight0 step6",
+    "329:L34 flight0 step7",
+    "330:L34 flight0 step8",
+    "331:L34 flight0 step9",
+    "332:L34 flight0 step10",
+    "333:L34 flight0 step11",
+    "334:L34 flight0 step12",
+    "335:L34 flight0 step13",
+    "336:L34 flight0 step14",
+    "337:L34 flight0 step15",
+    "338:L34 flight0 step16",
+    "339:L34 flight0 step17",
+    "340:L35 flight0 step1",
+    "341:L35 flight0 step2",
+    "342:L35 flight0 step3",
+    "343:L35 flight0 step4",
+    "344:L35 flight0 step5",
+    "345:L35 flight0 step6",
+    "346:L35 flight0 step7",
+    "347:L35 flight0 step8",
+    "348:L35 flight0 step9",
+    "349:L35 flight0 step10",
+    "350:L35 flight0 step11",
+    "351:L35 flight0 step12",
+    "352:L35 flight0 step13",
+    "353:L35 flight0 step14",
+    "354:L35 flight0 step15",
+    "355:L35 flight0 step16",
+    "356:L35 flight0 step17"
+  ],
+  "stair_components": [
+    "306:L33 flight0 step1",
+    "307:L33 flight0 step2",
+    "308:L33 flight0 step3",
+    "309:L33 flight0 step4",
+    "310:L33 flight0 step5",
+    "311:L33 flight0 step6",
+    "312:L33 flight0 step7",
+    "313:L33 flight0 step8",
+    "314:L33 flight0 step9",
+    "315:L33 flight0 step10",
+    "316:L33 flight0 step11",
+    "317:L33 flight0 step12",
+    "318:L33 flight0 step13",
+    "319:L33 flight0 step14",
+    "320:L33 flight0 step15",
+    "321:L33 flight0 step16",
+    "322:L33 flight0 step17",
+    "323:L34 flight0 step1",
+    "324:L34 flight0 step2",
+    "325:L34 flight0 step3",
+    "326:L34 flight0 step4",
+    "327:L34 flight0 step5",
+    "328:L34 flight0 step6",
+    "329:L34 flight0 step7",
+    "330:L34 flight0 step8",
+    "331:L34 flight0 step9",
+    "332:L34 flight0 step10",
+    "333:L34 flight0 step11",
+    "334:L34 flight0 step12",
+    "335:L34 flight0 step13",
+    "336:L34 flight0 step14",
+    "337:L34 flight0 step15",
+    "338:L34 flight0 step16",
+    "339:L34 flight0 step17",
+    "340:L35 flight0 step1",
+    "341:L35 flight0 step2",
+    "342:L35 flight0 step3",
+    "343:L35 flight0 step4",
+    "344:L35 flight0 step5",
+    "345:L35 flight0 step6",
+    "346:L35 flight0 step7",
+    "347:L35 flight0 step8",
+    "348:L35 flight0 step9",
+    "349:L35 flight0 step10",
+    "350:L35 flight0 step11",
+    "351:L35 flight0 step12",
+    "352:L35 flight0 step13",
+    "353:L35 flight0 step14",
+    "354:L35 flight0 step15",
+    "355:L35 flight0 step16",
+    "356:L35 flight0 step17"
+  ],
+  "glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7",
+  "physics_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+  "arrival_bearing": {
+    "link": "L01",
+    "anchor": [
+      22.0,
+      0,
+      51.5
+    ],
+    "route_width": 1.2,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        21.4,
+        51.85
+      ],
+      [
+        21.4,
+        51.5
+      ],
+      [
+        22.6,
+        51.5
+      ],
+      [
+        22.6,
+        51.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          21.4,
+          51.85
+        ],
+        [
+          21.4,
+          51.5
+        ],
+        [
+          22.6,
+          51.5
+        ],
+        [
+          22.6,
+          51.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing CHURCH 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing CHURCH 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f"
+}

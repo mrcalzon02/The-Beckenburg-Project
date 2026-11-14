@@ -1,0 +1,215 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 11
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 11
+      },
+      "current_lanes": {
+        "samples": 4476,
+        "valid_standing": 4241,
+        "invalid_standing": 235,
+        "reasons": {
+          "NO_FOOT_SUPPORT_-0.22_0.0": 14,
+          "NO_CENTRE_SUPPORT": 161,
+          "NO_FOOT_SUPPORT_0.22_0.0": 5,
+          "PHYSICAL_COMPONENT": 33,
+          "NO_FOOT_SUPPORT_0.0_0.22": 13,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 9
+        },
+        "physical_components": [
+          [
+            "43:Wall fish S",
+            26
+          ],
+          [
+            "Flat route shell Wall fish W",
+            7
+          ]
+        ]
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 11
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 11
+      },
+      "current_lanes": {
+        "samples": 5160,
+        "valid_standing": 4602,
+        "invalid_standing": 558,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "NO_CENTRE_SUPPORT": 499,
+          "NO_FOOT_SUPPORT_0.0_0.22": 17,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 16,
+          "NO_FOOT_SUPPORT_0.22_0.0": 17,
+          "FOOT_HEIGHT_SPREAD": 2,
+          "PHYSICAL_COMPONENT": 3
+        },
+        "physical_components": [
+          [
+            "171:L20 flight0 step2",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 4863,
+        "valid_standing": 4452,
+        "invalid_standing": 411,
+        "reasons": {
+          "NO_FOOT_SUPPORT_-0.22_0.0": 12,
+          "NO_CENTRE_SUPPORT": 286,
+          "NO_FOOT_SUPPORT_0.0_0.22": 3,
+          "PHYSICAL_COMPONENT": 94,
+          "NO_FOOT_SUPPORT_0.22_0.0": 5,
+          "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 3,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 8
+        },
+        "physical_components": [
+          [
+            "128:L19 flight0 step2",
+            28
+          ],
+          [
+            "137:L19 flight0 step11",
+            11
+          ],
+          [
+            "136:L19 flight0 step10",
+            9
+          ],
+          [
+            "129:L19 flight0 step3",
+            6
+          ],
+          [
+            "130:L19 flight0 step4",
+            6
+          ],
+          [
+            "131:L19 flight0 step5",
+            6
+          ],
+          [
+            "132:L19 flight0 step6",
+            6
+          ],
+          [
+            "133:L19 flight0 step7",
+            6
+          ],
+          [
+            "134:L19 flight0 step8",
+            6
+          ],
+          [
+            "135:L19 flight0 step9",
+            6
+          ],
+          [
+            "138:L19 flight0 step12",
+            4
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-06": {
+      "before": {
+        "contract": "development/levels/rebuild/harbor-research-roof-pass/wld-06/construction.json",
+        "contract_sha256": "ebc21e7380039d2793806d61976d79f2d1aaadbb4f5c57a27a8c287e07436484",
+        "layout": "development/levels/rebuild/stair-end-pass/wld-06/authored-layout.json",
+        "layout_sha256": "47f85ecfe5f400fadb6d92c9e1668b32c8bf5f8b27cf53e23adbc703ce8bc93f",
+        "native": "development/levels/rebuild/harbor-research-roof-pass/wld-06/enclosed-roofs.hcs2",
+        "native_sha256": "eea39ee1d56ae68f0cb839e559848f21d6edb5a01026411a275550aa943a0d98"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/entrance-construction-pass/wld-06/construction.json",
+        "contract_sha256": "110d33a294f887ed6941bce7b9988b37f4928a66c75bb13f3e88e0933e5ae6de",
+        "layout": "development/levels/rebuild/entrance-construction-pass/wld-06/authored-layout.json",
+        "layout_sha256": "8bab030ea4df565bd85e1578c07d461a590b177aa74c063f7cf9d2291ecebffe",
+        "native": "development/levels/rebuild/entrance-construction-pass/wld-06/rebuilt-entrances.hcs2",
+        "native_sha256": "9e247a8979cf01773ff7f7dba8db483dcb527b2c1530981fccea6188a3885006"
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/harbor-research-roof-pass/wld-08/construction.json",
+        "contract_sha256": "af8ef3dde39ab6f7820cf65d706445f0d2b886896fec1041a92ac7ab4635734b",
+        "layout": "development/levels/rebuild/orthogonal-stair-pass/wld-08/authored-layout.json",
+        "layout_sha256": "f52b795b0661867f4f4de7efb526a62605a5c8f1377920a276444f3969348738",
+        "native": "development/levels/rebuild/harbor-research-roof-pass/wld-08/enclosed-roofs.hcs2",
+        "native_sha256": "6d5e904b5a178f7887158f1515056a0af00a5b779949442260d9b5d852b4dee8"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/entrance-construction-pass/wld-08/construction.json",
+        "contract_sha256": "2d5bf9cd2b0ea56b2c04c81a94cda3953658cf1d13a1b29c6f6ca432c2e7f0e8",
+        "layout": "development/levels/rebuild/entrance-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "72ca5b1748fbc4f12167f375ba145097aed7a68cb9417e84d9f3ee8ec01c1568",
+        "native": "development/levels/rebuild/entrance-construction-pass/wld-08/rebuilt-entrances.hcs2",
+        "native_sha256": "8a7fd3773f7a377eb0bd54c3aca642a8ed4f2e1753b1ef77492539520b161616"
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "contract": "development/levels/rebuild/harbor-research-roof-pass/wld-13/construction.json",
+        "contract_sha256": "76cf2c01221d81aa2228227dff5d77c4b4aec139b3036e753745f61ec027db76",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-13/authored-layout.json",
+        "layout_sha256": "2dacbe38e45e78e9d555546426090086745e5011da8fec9cd8be63764ef32d0b",
+        "native": "development/levels/rebuild/harbor-research-roof-pass/wld-13/enclosed-roofs.hcs2",
+        "native_sha256": "96f438a927a2935edde2968b36b7db6986b9830e966dcd2a8d904d3811427344"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/entrance-construction-pass/wld-13/construction.json",
+        "contract_sha256": "0bc93834b5720bab790165c2415f82ca828654b7c901ab76241bbef75c28246c",
+        "layout": "development/levels/rebuild/entrance-construction-pass/wld-13/authored-layout.json",
+        "layout_sha256": "fc3d50b23ea898eab68e6e51a9e0adda96be89dfcadd8971745b5a333be6608e",
+        "native": "development/levels/rebuild/entrance-construction-pass/wld-13/rebuilt-entrances.hcs2",
+        "native_sha256": "5d1767a5b6792fe058fb17c847477cafb70ec48c2a5e862c561c9b7f0a06d98c"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/harbor-research-roof-pass/roster.json": "5ac0bdeba433c133123eb1c43cf7500a667010a5ad4c51099a5ebc8e7315ea56"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/entrance-construction-pass/verification/current-flat-failure-contacts.tsv": "7ddc54d408ab13e3fa757fa68797bb5ad5b81f614031d706779b9eae66f25b16",
+    "development/levels/rebuild/entrance-construction-pass/verification/current-flat-failure-input.tsv": "47c51d4834fc1dd26a7ad9d5d788404cd9d6cca148cd641a6dab79f185027f98",
+    "development/levels/rebuild/entrance-construction-pass/verification/current-flat-lane-input.tsv": "ef000491cce81cc3dfa159905332b1a1ae7a4eb27d6a745d25277e8c99984afc",
+    "development/levels/rebuild/entrance-construction-pass/verification/current-flat-lane-names.tsv": "db63f5774efd387046966aea1cb2e0f2fef6fc3aae783828b126a2b7a659ab55",
+    "development/levels/rebuild/entrance-construction-pass/verification/current-flat-lanes.tsv": "4a614e3cf6ab3210e2ee97ce7549b3db7b9efa22f1098db11f76feacb22f1748",
+    "development/levels/rebuild/entrance-construction-pass/verification/current-flat-links.tsv": "7c3e8adc2ae80e4f266b2a37eb08633392511e601f146af6bc521cffa728c85b",
+    "development/levels/rebuild/entrance-construction-pass/verification/current-flat-names.tsv": "db63f5774efd387046966aea1cb2e0f2fef6fc3aae783828b126a2b7a659ab55",
+    "development/levels/rebuild/entrance-construction-pass/verification/current-flat-paths.tsv": "ed340665793703487758799fc86c1081d52d2b986ca8a4770ad862fdfeea52d4"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

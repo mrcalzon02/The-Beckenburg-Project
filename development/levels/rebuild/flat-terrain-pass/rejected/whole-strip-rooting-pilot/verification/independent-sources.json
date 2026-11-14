@@ -1,0 +1,3444 @@
+{
+  "status": "PASS_SCOPED_TERRAIN_NATIVE_SOURCE_NOT_MAP_ACCEPTANCE",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "PASS_SCOPED_SAVED_WORLD_EXPORT_NATIVE_EDITABLE_PRESERVATION",
+      "glb_sha256": "e4702eca9898232e2f146a97ccbc7e3914abdd8abc1aa47bc3b290536e69be50",
+      "native_sha256": "d33a241a622ed46e388ecc73bc1a57cfd40809447e06a1dae936ad40f9c5e9be",
+      "blend_sha256": "52e2708ecb3e611d0c0cb9a257d57db37008fffda5b8927b24bae6aa5920de49",
+      "contract_sha256": "a01512c2bc8e3b036eabd806443b883b1fa0d1b27920cab4706a307ced6ffd92",
+      "packed_images": 13,
+      "lowered_native_vertices": 423,
+      "native_vertices": 3280,
+      "raised_native_vertices": 0,
+      "source_height_and_topology_bytes_unchanged": true,
+      "clear_saved_hole_probes": 901,
+      "retained_native_parts": 627,
+      "new_closed_parts": [
+        "Rooted cut walkway ACADEMY 0",
+        "Rooted cut walkway ACADEMY 1",
+        "Rooted cut walkway ACADEMY 2",
+        "Rooted cut walkway ACADEMY 3",
+        "Rooted cut walkway ACADEMY 4",
+        "Rooted cut walkway ACADEMY 5",
+        "Rooted cut walkway ACADEMY 6",
+        "Rooted cut walkway ACADEMY 7",
+        "Rooted cut walkway ACADEMY 8",
+        "Rooted cut walkway ACADEMY 9",
+        "Rooted cut walkway ACADEMY 10",
+        "Rooted cut walkway ACADEMY 11",
+        "Rooted cut walkway ACADEMY 12",
+        "Rooted cut walkway ACADEMY 13",
+        "Rooted cut walkway ACADEMY 14",
+        "Rooted cut walkway ACADEMY 15",
+        "Rooted cut walkway ACADEMY 16",
+        "Rooted cut walkway ACADEMY 17",
+        "Rooted cut walkway ACADEMY 18",
+        "Rooted cut walkway ACADEMY 19",
+        "Rooted cut walkway ACADEMY 20",
+        "Rooted cut walkway ACADEMY 21",
+        "Rooted cut walkway ACADEMY 22",
+        "Rooted cut walkway ACADEMY 23",
+        "Rooted cut walkway ACADEMY 24",
+        "Rooted cut walkway ACADEMY 25",
+        "Rooted cut walkway ACADEMY 26",
+        "Rooted cut walkway ACADEMY 27",
+        "Rooted cut walkway ACADEMY 28",
+        "Rooted cut walkway ACADEMY 29",
+        "Rooted cut walkway ACADEMY 30",
+        "Rooted cut walkway ACADEMY 31",
+        "Rooted cut walkway ACADEMY 32",
+        "Rooted cut walkway ACADEMY 33",
+        "Rooted cut walkway ACADEMY 34",
+        "Rooted cut walkway ACADEMY 35",
+        "Rooted cut walkway ACADEMY 36",
+        "Rooted cut walkway ACADEMY 37"
+      ],
+      "footing_contact_samples": [],
+      "rooted_walkway_samples": [
+        {
+          "name": "Rooted cut walkway ACADEMY 0",
+          "point": [
+            33.10192146526332,
+            62.15
+          ],
+          "bottom_y": -0.44254531860351565,
+          "soil_y": -0.2923316955566406
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 0",
+          "point": [
+            34.464285714285715,
+            62.15
+          ],
+          "bottom_y": -0.44254531860351565,
+          "soil_y": -0.28790283203125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 0",
+          "point": [
+            34.464285714285715,
+            61.70362304093002
+          ],
+          "bottom_y": -0.44254531860351565,
+          "soil_y": -0.28891754150390625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 0",
+          "point": [
+            33.111665057286295,
+            62.02333337803897
+          ],
+          "bottom_y": -0.44254531860351565,
+          "soil_y": -0.2925453186035156
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 0",
+          "point": [
+            33.78310358977451,
+            62.15
+          ],
+          "bottom_y": -0.44254531860351565,
+          "soil_y": -0.2900047302246094
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 0",
+          "point": [
+            34.464285714285715,
+            61.92681152046501
+          ],
+          "bottom_y": -0.44254531860351565,
+          "soil_y": -0.2883720397949219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 0",
+          "point": [
+            33.787975385786005,
+            61.8634782094845
+          ],
+          "bottom_y": -0.44254531860351565,
+          "soil_y": -0.2905464172363281
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 0",
+          "point": [
+            33.1067932612748,
+            62.08666668901948
+          ],
+          "bottom_y": -0.44254531860351565,
+          "soil_y": -0.2924385070800781
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 0",
+          "point": [
+            33.78553948778026,
+            62.00673910474225
+          ],
+          "bottom_y": -0.44254531860351565,
+          "soil_y": -0.29027557373046875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 1",
+          "point": [
+            34.464285714285715,
+            62.15
+          ],
+          "bottom_y": -0.43891754150390627,
+          "soil_y": -0.28790283203125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 1",
+          "point": [
+            36.42857142857143,
+            62.15
+          ],
+          "bottom_y": -0.43891754150390627,
+          "soil_y": -0.2821464538574219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 1",
+          "point": [
+            36.42857142857143,
+            61.2393373266443
+          ],
+          "bottom_y": -0.43891754150390627,
+          "soil_y": -0.2839241027832031
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 1",
+          "point": [
+            34.464285714285715,
+            61.70362304093002
+          ],
+          "bottom_y": -0.43891754150390627,
+          "soil_y": -0.28891754150390625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 1",
+          "point": [
+            35.44642857142857,
+            62.15
+          ],
+          "bottom_y": -0.43891754150390627,
+          "soil_y": -0.28502655029296875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 1",
+          "point": [
+            36.42857142857143,
+            61.69466866332215
+          ],
+          "bottom_y": -0.43891754150390627,
+          "soil_y": -0.2830352783203125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 1",
+          "point": [
+            35.44642857142857,
+            61.471480183787165
+          ],
+          "bottom_y": -0.43891754150390627,
+          "soil_y": -0.2866058349609375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 1",
+          "point": [
+            34.464285714285715,
+            61.92681152046501
+          ],
+          "bottom_y": -0.43891754150390627,
+          "soil_y": -0.2883720397949219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 1",
+          "point": [
+            35.44642857142857,
+            61.81074009189358
+          ],
+          "bottom_y": -0.43891754150390627,
+          "soil_y": -0.2857818603515625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            36.42857142857143,
+            62.15
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.2821464538574219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            38.392857142857146,
+            62.15
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.2760810852050781
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            38.392857142857146,
+            60.85
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.2785491943359375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            38.07576781052809,
+            60.85
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.27978515625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            36.42857142857143,
+            61.2393373266443
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.2839241027832031
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            37.41071428571429,
+            62.15
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.279266357421875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            38.392857142857146,
+            61.5
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.2772789001464844
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            38.23431247669262,
+            60.85
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.27916717529296875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            37.25216961954976,
+            61.044668663322156
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.2818946838378906
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            36.42857142857143,
+            61.69466866332215
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.2830352783203125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 2",
+          "point": [
+            37.54372499067705,
+            61.44786746532886
+          ],
+          "bottom_y": -0.43392410278320315,
+          "soil_y": -0.28025054931640625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 3",
+          "point": [
+            38.392857142857146,
+            62.15
+          ],
+          "bottom_y": -0.4285491943359375,
+          "soil_y": -0.2760810852050781
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 3",
+          "point": [
+            40.357142857142854,
+            62.15
+          ],
+          "bottom_y": -0.4285491943359375,
+          "soil_y": -0.26805877685546875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 3",
+          "point": [
+            40.357142857142854,
+            60.85
+          ],
+          "bottom_y": -0.4285491943359375,
+          "soil_y": -0.2705230712890625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 3",
+          "point": [
+            38.392857142857146,
+            60.85
+          ],
+          "bottom_y": -0.4285491943359375,
+          "soil_y": -0.2785491943359375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 3",
+          "point": [
+            39.375,
+            62.15
+          ],
+          "bottom_y": -0.4285491943359375,
+          "soil_y": -0.272247314453125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 3",
+          "point": [
+            40.357142857142854,
+            61.5
+          ],
+          "bottom_y": -0.4285491943359375,
+          "soil_y": -0.269256591796875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 3",
+          "point": [
+            39.375,
+            60.85
+          ],
+          "bottom_y": -0.4285491943359375,
+          "soil_y": -0.27471160888671875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 3",
+          "point": [
+            38.392857142857146,
+            61.5
+          ],
+          "bottom_y": -0.4285491943359375,
+          "soil_y": -0.2772789001464844
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 3",
+          "point": [
+            39.375,
+            61.5
+          ],
+          "bottom_y": -0.4285491943359375,
+          "soil_y": -0.2734413146972656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 4",
+          "point": [
+            40.357142857142854,
+            62.15
+          ],
+          "bottom_y": -0.4205230712890625,
+          "soil_y": -0.26805877685546875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 4",
+          "point": [
+            42.32142857142857,
+            62.15
+          ],
+          "bottom_y": -0.4205230712890625,
+          "soil_y": -0.25736236572265625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 4",
+          "point": [
+            42.32142857142857,
+            60.85
+          ],
+          "bottom_y": -0.4205230712890625,
+          "soil_y": -0.25911712646484375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 4",
+          "point": [
+            40.357142857142854,
+            60.85
+          ],
+          "bottom_y": -0.4205230712890625,
+          "soil_y": -0.2705230712890625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 4",
+          "point": [
+            41.33928571428571,
+            62.15
+          ],
+          "bottom_y": -0.4205230712890625,
+          "soil_y": -0.2632637023925781
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 4",
+          "point": [
+            42.32142857142857,
+            61.5
+          ],
+          "bottom_y": -0.4205230712890625,
+          "soil_y": -0.2581634521484375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 4",
+          "point": [
+            41.33928571428571,
+            60.85
+          ],
+          "bottom_y": -0.4205230712890625,
+          "soil_y": -0.2654914855957031
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 4",
+          "point": [
+            40.357142857142854,
+            61.5
+          ],
+          "bottom_y": -0.4205230712890625,
+          "soil_y": -0.269256591796875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 4",
+          "point": [
+            41.33928571428571,
+            61.5
+          ],
+          "bottom_y": -0.4205230712890625,
+          "soil_y": -0.26445770263671875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 5",
+          "point": [
+            42.32142857142857,
+            62.15
+          ],
+          "bottom_y": -0.40911712646484377,
+          "soil_y": -0.25736236572265625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 5",
+          "point": [
+            44.285714285714285,
+            62.15
+          ],
+          "bottom_y": -0.40911712646484377,
+          "soil_y": -0.2380218505859375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 5",
+          "point": [
+            44.285714285714285,
+            60.85
+          ],
+          "bottom_y": -0.40911712646484377,
+          "soil_y": -0.23822021484375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 5",
+          "point": [
+            42.32142857142857,
+            60.85
+          ],
+          "bottom_y": -0.40911712646484377,
+          "soil_y": -0.25911712646484375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 5",
+          "point": [
+            43.30357142857143,
+            62.15
+          ],
+          "bottom_y": -0.40911712646484377,
+          "soil_y": -0.24872589111328125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 5",
+          "point": [
+            44.285714285714285,
+            61.5
+          ],
+          "bottom_y": -0.40911712646484377,
+          "soil_y": -0.2378997802734375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 5",
+          "point": [
+            43.30357142857143,
+            60.85
+          ],
+          "bottom_y": -0.40911712646484377,
+          "soil_y": -0.2500457763671875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 5",
+          "point": [
+            42.32142857142857,
+            61.5
+          ],
+          "bottom_y": -0.40911712646484377,
+          "soil_y": -0.2581634521484375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 5",
+          "point": [
+            43.30357142857143,
+            61.5
+          ],
+          "bottom_y": -0.40911712646484377,
+          "soil_y": -0.24953460693359375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 6",
+          "point": [
+            44.285714285714285,
+            62.15
+          ],
+          "bottom_y": -0.38822021484375,
+          "soil_y": -0.2380218505859375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 6",
+          "point": [
+            46.25,
+            62.15
+          ],
+          "bottom_y": -0.38822021484375,
+          "soil_y": -0.20642471313476562
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 6",
+          "point": [
+            46.25,
+            60.85
+          ],
+          "bottom_y": -0.38822021484375,
+          "soil_y": -0.20489883422851562
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 6",
+          "point": [
+            44.285714285714285,
+            60.85
+          ],
+          "bottom_y": -0.38822021484375,
+          "soil_y": -0.23822021484375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 6",
+          "point": [
+            45.26785714285714,
+            62.15
+          ],
+          "bottom_y": -0.38822021484375,
+          "soil_y": -0.22075653076171875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 6",
+          "point": [
+            46.25,
+            61.5
+          ],
+          "bottom_y": -0.38822021484375,
+          "soil_y": -0.20584869384765625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 6",
+          "point": [
+            45.26785714285714,
+            60.85
+          ],
+          "bottom_y": -0.38822021484375,
+          "soil_y": -0.2201385498046875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 6",
+          "point": [
+            44.285714285714285,
+            61.5
+          ],
+          "bottom_y": -0.38822021484375,
+          "soil_y": -0.2378997802734375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 6",
+          "point": [
+            45.26785714285714,
+            61.5
+          ],
+          "bottom_y": -0.38822021484375,
+          "soil_y": -0.22063446044921875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 7",
+          "point": [
+            46.25,
+            62.15
+          ],
+          "bottom_y": -0.35642471313476565,
+          "soil_y": -0.20642471313476562
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 7",
+          "point": [
+            48.214285714285715,
+            62.15
+          ],
+          "bottom_y": -0.35642471313476565,
+          "soil_y": -0.19952392578125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 7",
+          "point": [
+            48.214285714285715,
+            60.85
+          ],
+          "bottom_y": -0.35642471313476565,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 7",
+          "point": [
+            46.25,
+            60.85
+          ],
+          "bottom_y": -0.35642471313476565,
+          "soil_y": -0.20489883422851562
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 7",
+          "point": [
+            47.23214285714286,
+            62.15
+          ],
+          "bottom_y": -0.35642471313476565,
+          "soil_y": -0.202728271484375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 7",
+          "point": [
+            48.214285714285715,
+            61.5
+          ],
+          "bottom_y": -0.35642471313476565,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 7",
+          "point": [
+            47.23214285714286,
+            60.85
+          ],
+          "bottom_y": -0.35642471313476565,
+          "soil_y": -0.20176315307617188
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 7",
+          "point": [
+            46.25,
+            61.5
+          ],
+          "bottom_y": -0.35642471313476565,
+          "soil_y": -0.20584869384765625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 7",
+          "point": [
+            47.23214285714286,
+            61.5
+          ],
+          "bottom_y": -0.35642471313476565,
+          "soil_y": -0.20215606689453125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 8",
+          "point": [
+            48.214285714285715,
+            62.15
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.19952392578125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 8",
+          "point": [
+            50.17857142857143,
+            62.15
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.19910812377929688
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 8",
+          "point": [
+            50.17857142857143,
+            60.85
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 8",
+          "point": [
+            48.214285714285715,
+            60.85
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 8",
+          "point": [
+            49.19642857142857,
+            62.15
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.19952392578125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 8",
+          "point": [
+            50.17857142857143,
+            61.5
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 8",
+          "point": [
+            49.19642857142857,
+            60.85
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.1999969482421875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 8",
+          "point": [
+            48.214285714285715,
+            61.5
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 8",
+          "point": [
+            49.19642857142857,
+            61.5
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 9",
+          "point": [
+            60.65,
+            56.625
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 9",
+          "point": [
+            60.65,
+            55.0
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 9",
+          "point": [
+            60.0,
+            55.0
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 9",
+          "point": [
+            60.38409322534736,
+            56.625
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 9",
+          "point": [
+            60.65,
+            55.8125
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 9",
+          "point": [
+            60.325,
+            55.0
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 9",
+          "point": [
+            60.19204661267368,
+            55.8125
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.1999969482421875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 9",
+          "point": [
+            60.51704661267368,
+            56.625
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 9",
+          "point": [
+            60.42102330633684,
+            55.8125
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000457763671875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 10",
+          "point": [
+            59.35,
+            55.82154511885209
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 10",
+          "point": [
+            59.35,
+            56.625
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 10",
+          "point": [
+            60.38409322534736,
+            56.625
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 10",
+          "point": [
+            60.14951705932617,
+            55.632568359375
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 10",
+          "point": [
+            59.35,
+            56.22327255942605
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 10",
+          "point": [
+            59.867046612673676,
+            56.625
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 10",
+          "point": [
+            60.266805142336764,
+            56.1287841796875
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 10",
+          "point": [
+            59.74975852966308,
+            55.72705673911355
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 10",
+          "point": [
+            59.808402571168386,
+            56.176028369556775
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.1999969482421875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 11",
+          "point": [
+            60.65,
+            54.73076478371238
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 11",
+          "point": [
+            60.65,
+            53.035714285714285
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 11",
+          "point": [
+            59.535711485843855,
+            53.035714285714285
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 11",
+          "point": [
+            59.71547254702399,
+            53.796237265919295
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 11",
+          "point": [
+            60.65,
+            53.88323953471333
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000457763671875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 11",
+          "point": [
+            60.09285574292193,
+            53.035714285714285
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 11",
+          "point": [
+            59.62559201643393,
+            53.41597577581679
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 11",
+          "point": [
+            60.18273627351199,
+            54.26350102481584
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 11",
+          "point": [
+            60.13779600821697,
+            53.649607655265065
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 12",
+          "point": [
+            60.65,
+            55.0
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 12",
+          "point": [
+            60.65,
+            54.73076478371238
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 12",
+          "point": [
+            60.459617614746044,
+            54.540382385253864
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 12",
+          "point": [
+            60.0,
+            55.0
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 12",
+          "point": [
+            60.65,
+            54.86538239185619
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 12",
+          "point": [
+            60.55480880737302,
+            54.635573584483126
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 12",
+          "point": [
+            60.22980880737302,
+            54.77019119262693
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 12",
+          "point": [
+            60.325,
+            55.0
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 12",
+          "point": [
+            60.43990440368651,
+            54.81778679224156
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 13",
+          "point": [
+            59.535711485843855,
+            53.035714285714285
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 13",
+          "point": [
+            59.35,
+            53.035714285714285
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 13",
+          "point": [
+            59.35,
+            53.43076469354681
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 13",
+          "point": [
+            59.71547254702399,
+            53.796237265919295
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 13",
+          "point": [
+            59.44285574292193,
+            53.035714285714285
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 13",
+          "point": [
+            59.35,
+            53.23323948963055
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000457763671875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 13",
+          "point": [
+            59.532736273512,
+            53.613500979733054
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 13",
+          "point": [
+            59.62559201643393,
+            53.41597577581679
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 13",
+          "point": [
+            59.48779600821696,
+            53.32460763272367
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 14",
+          "point": [
+            60.65,
+            53.035714285714285
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 14",
+          "point": [
+            60.65,
+            51.07142857142857
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 14",
+          "point": [
+            59.35,
+            51.07142857142857
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 14",
+          "point": [
+            59.35,
+            53.035714285714285
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 14",
+          "point": [
+            60.65,
+            52.05357142857143
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000457763671875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 14",
+          "point": [
+            60.0,
+            51.07142857142857
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 14",
+          "point": [
+            59.35,
+            52.05357142857143
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 14",
+          "point": [
+            60.0,
+            53.035714285714285
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 14",
+          "point": [
+            60.0,
+            52.05357142857143
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 15",
+          "point": [
+            60.65,
+            51.07142857142857
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 15",
+          "point": [
+            60.65,
+            49.107142857142854
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 15",
+          "point": [
+            59.35,
+            49.107142857142854
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 15",
+          "point": [
+            59.35,
+            51.07142857142857
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 15",
+          "point": [
+            60.65,
+            50.08928571428571
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 15",
+          "point": [
+            60.0,
+            49.107142857142854
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 15",
+          "point": [
+            59.35,
+            50.08928571428571
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 15",
+          "point": [
+            60.0,
+            51.07142857142857
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 15",
+          "point": [
+            60.0,
+            50.08928571428571
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 16",
+          "point": [
+            60.65,
+            49.107142857142854
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 16",
+          "point": [
+            60.65,
+            47.142857142857146
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 16",
+          "point": [
+            59.35,
+            47.142857142857146
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 16",
+          "point": [
+            59.35,
+            49.107142857142854
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 16",
+          "point": [
+            60.65,
+            48.125
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000457763671875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 16",
+          "point": [
+            60.0,
+            47.142857142857146
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 16",
+          "point": [
+            59.35,
+            48.125
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 16",
+          "point": [
+            60.0,
+            49.107142857142854
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 16",
+          "point": [
+            60.0,
+            48.125
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 17",
+          "point": [
+            60.65,
+            47.142857142857146
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 17",
+          "point": [
+            60.65,
+            45.17857142857143
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 17",
+          "point": [
+            59.35,
+            45.17857142857143
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 17",
+          "point": [
+            59.35,
+            47.142857142857146
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 17",
+          "point": [
+            60.65,
+            46.16071428571429
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 17",
+          "point": [
+            60.0,
+            45.17857142857143
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 17",
+          "point": [
+            59.35,
+            46.16071428571429
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 17",
+          "point": [
+            60.0,
+            47.142857142857146
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 17",
+          "point": [
+            60.0,
+            46.160714285714285
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 18",
+          "point": [
+            60.65,
+            45.17857142857143
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 18",
+          "point": [
+            60.65,
+            43.214285714285715
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 18",
+          "point": [
+            59.35,
+            43.214285714285715
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 18",
+          "point": [
+            59.35,
+            45.17857142857143
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 18",
+          "point": [
+            60.65,
+            44.19642857142857
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 18",
+          "point": [
+            60.0,
+            43.214285714285715
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 18",
+          "point": [
+            59.35,
+            44.19642857142857
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 18",
+          "point": [
+            60.0,
+            45.17857142857143
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 18",
+          "point": [
+            60.0,
+            44.19642857142857
+          ],
+          "bottom_y": -0.35000076293945315,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 19",
+          "point": [
+            60.65,
+            43.214285714285715
+          ],
+          "bottom_y": -0.35538711547851565,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 19",
+          "point": [
+            60.65,
+            41.25
+          ],
+          "bottom_y": -0.35538711547851565,
+          "soil_y": -0.20538711547851562
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 19",
+          "point": [
+            59.35,
+            41.25
+          ],
+          "bottom_y": -0.35538711547851565,
+          "soil_y": -0.20506668090820312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 19",
+          "point": [
+            59.35,
+            43.214285714285715
+          ],
+          "bottom_y": -0.35538711547851565,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 19",
+          "point": [
+            60.65,
+            42.23214285714286
+          ],
+          "bottom_y": -0.35538711547851565,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 19",
+          "point": [
+            60.0,
+            41.25
+          ],
+          "bottom_y": -0.35538711547851565,
+          "soil_y": -0.20538330078125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 19",
+          "point": [
+            59.35,
+            42.23214285714286
+          ],
+          "bottom_y": -0.35538711547851565,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 19",
+          "point": [
+            60.0,
+            43.214285714285715
+          ],
+          "bottom_y": -0.35538711547851565,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 19",
+          "point": [
+            60.0,
+            42.23214285714286
+          ],
+          "bottom_y": -0.35538711547851565,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 20",
+          "point": [
+            60.65,
+            41.25
+          ],
+          "bottom_y": -0.3746360778808594,
+          "soil_y": -0.20538711547851562
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 20",
+          "point": [
+            60.65,
+            39.285714285714285
+          ],
+          "bottom_y": -0.3746360778808594,
+          "soil_y": -0.22463607788085938
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 20",
+          "point": [
+            59.35,
+            39.285714285714285
+          ],
+          "bottom_y": -0.3746360778808594,
+          "soil_y": -0.22368240356445312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 20",
+          "point": [
+            59.35,
+            41.25
+          ],
+          "bottom_y": -0.3746360778808594,
+          "soil_y": -0.20506668090820312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 20",
+          "point": [
+            60.65,
+            40.26785714285714
+          ],
+          "bottom_y": -0.3746360778808594,
+          "soil_y": -0.21355438232421875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 20",
+          "point": [
+            60.0,
+            39.285714285714285
+          ],
+          "bottom_y": -0.3746360778808594,
+          "soil_y": -0.22272872924804688
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 20",
+          "point": [
+            59.35,
+            40.26785714285714
+          ],
+          "bottom_y": -0.3746360778808594,
+          "soil_y": -0.21212005615234375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 20",
+          "point": [
+            60.0,
+            41.25
+          ],
+          "bottom_y": -0.3746360778808594,
+          "soil_y": -0.20538330078125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 20",
+          "point": [
+            60.0,
+            40.26785714285714
+          ],
+          "bottom_y": -0.3746360778808594,
+          "soil_y": -0.21243667602539062
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 21",
+          "point": [
+            60.65,
+            39.285714285714285
+          ],
+          "bottom_y": -0.3943656921386719,
+          "soil_y": -0.22463607788085938
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 21",
+          "point": [
+            60.65,
+            37.32142857142857
+          ],
+          "bottom_y": -0.3943656921386719,
+          "soil_y": -0.24309921264648438
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 21",
+          "point": [
+            59.35,
+            37.32142857142857
+          ],
+          "bottom_y": -0.3943656921386719,
+          "soil_y": -0.24436569213867188
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 21",
+          "point": [
+            59.35,
+            39.285714285714285
+          ],
+          "bottom_y": -0.3943656921386719,
+          "soil_y": -0.22368240356445312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 21",
+          "point": [
+            60.65,
+            38.30357142857143
+          ],
+          "bottom_y": -0.3943656921386719,
+          "soil_y": -0.23513031005859375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 21",
+          "point": [
+            60.0,
+            37.32142857142857
+          ],
+          "bottom_y": -0.3943656921386719,
+          "soil_y": -0.24309539794921875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 21",
+          "point": [
+            59.35,
+            38.30357142857143
+          ],
+          "bottom_y": -0.3943656921386719,
+          "soil_y": -0.23519134521484375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 21",
+          "point": [
+            60.0,
+            39.285714285714285
+          ],
+          "bottom_y": -0.3943656921386719,
+          "soil_y": -0.22272872924804688
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 21",
+          "point": [
+            60.0,
+            38.30357142857143
+          ],
+          "bottom_y": -0.3943656921386719,
+          "soil_y": -0.2342376708984375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 22",
+          "point": [
+            60.65,
+            37.32142857142857
+          ],
+          "bottom_y": -0.4081443786621094,
+          "soil_y": -0.24309921264648438
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 22",
+          "point": [
+            60.65,
+            35.35714285714286
+          ],
+          "bottom_y": -0.4081443786621094,
+          "soil_y": -0.25560760498046875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 22",
+          "point": [
+            59.35,
+            35.35714285714286
+          ],
+          "bottom_y": -0.4081443786621094,
+          "soil_y": -0.2581443786621094
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 22",
+          "point": [
+            59.35,
+            37.32142857142857
+          ],
+          "bottom_y": -0.4081443786621094,
+          "soil_y": -0.24436569213867188
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 22",
+          "point": [
+            60.65,
+            36.339285714285715
+          ],
+          "bottom_y": -0.4081443786621094,
+          "soil_y": -0.2503204345703125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 22",
+          "point": [
+            60.0,
+            35.35714285714286
+          ],
+          "bottom_y": -0.4081443786621094,
+          "soil_y": -0.256561279296875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 22",
+          "point": [
+            59.35,
+            36.339285714285715
+          ],
+          "bottom_y": -0.4081443786621094,
+          "soil_y": -0.2520408630371094
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 22",
+          "point": [
+            60.0,
+            37.32142857142857
+          ],
+          "bottom_y": -0.4081443786621094,
+          "soil_y": -0.24309539794921875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 22",
+          "point": [
+            60.0,
+            36.339285714285715
+          ],
+          "bottom_y": -0.4081443786621094,
+          "soil_y": -0.25077056884765625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 23",
+          "point": [
+            60.65,
+            35.35714285714286
+          ],
+          "bottom_y": -0.4171470642089844,
+          "soil_y": -0.25560760498046875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 23",
+          "point": [
+            60.65,
+            33.39285714285714
+          ],
+          "bottom_y": -0.4171470642089844,
+          "soil_y": -0.2636756896972656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 23",
+          "point": [
+            59.35,
+            33.39285714285714
+          ],
+          "bottom_y": -0.4171470642089844,
+          "soil_y": -0.2671470642089844
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 23",
+          "point": [
+            59.35,
+            35.35714285714286
+          ],
+          "bottom_y": -0.4171470642089844,
+          "soil_y": -0.2581443786621094
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 23",
+          "point": [
+            60.65,
+            34.375
+          ],
+          "bottom_y": -0.4171470642089844,
+          "soil_y": -0.2601356506347656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 23",
+          "point": [
+            60.0,
+            33.39285714285714
+          ],
+          "bottom_y": -0.4171470642089844,
+          "soil_y": -0.2652626037597656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 23",
+          "point": [
+            59.35,
+            34.375
+          ],
+          "bottom_y": -0.4171470642089844,
+          "soil_y": -0.2629432678222656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 23",
+          "point": [
+            60.0,
+            35.35714285714286
+          ],
+          "bottom_y": -0.4171470642089844,
+          "soil_y": -0.256561279296875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 23",
+          "point": [
+            60.0,
+            34.375
+          ],
+          "bottom_y": -0.4171470642089844,
+          "soil_y": -0.2613563537597656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 24",
+          "point": [
+            60.65,
+            33.39285714285714
+          ],
+          "bottom_y": -0.42332305908203127,
+          "soil_y": -0.2636756896972656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 24",
+          "point": [
+            60.65,
+            31.428571428571427
+          ],
+          "bottom_y": -0.42332305908203127,
+          "soil_y": -0.2695159912109375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 24",
+          "point": [
+            59.35,
+            31.428571428571427
+          ],
+          "bottom_y": -0.42332305908203127,
+          "soil_y": -0.27332305908203125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 24",
+          "point": [
+            59.35,
+            33.39285714285714
+          ],
+          "bottom_y": -0.42332305908203127,
+          "soil_y": -0.2671470642089844
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 24",
+          "point": [
+            60.65,
+            32.410714285714285
+          ],
+          "bottom_y": -0.42332305908203127,
+          "soil_y": -0.26691436767578125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 24",
+          "point": [
+            60.0,
+            31.428571428571427
+          ],
+          "bottom_y": -0.42332305908203127,
+          "soil_y": -0.2714195251464844
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 24",
+          "point": [
+            59.35,
+            32.410714285714285
+          ],
+          "bottom_y": -0.42332305908203127,
+          "soil_y": -0.2705268859863281
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 24",
+          "point": [
+            60.0,
+            33.39285714285714
+          ],
+          "bottom_y": -0.42332305908203127,
+          "soil_y": -0.2652626037597656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 24",
+          "point": [
+            60.0,
+            32.410714285714285
+          ],
+          "bottom_y": -0.42332305908203127,
+          "soil_y": -0.2686195373535156
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 25",
+          "point": [
+            60.65,
+            31.428571428571427
+          ],
+          "bottom_y": -0.4281181335449219,
+          "soil_y": -0.2695159912109375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 25",
+          "point": [
+            60.65,
+            29.464285714285715
+          ],
+          "bottom_y": -0.4281181335449219,
+          "soil_y": -0.2743110656738281
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 25",
+          "point": [
+            59.35,
+            29.464285714285715
+          ],
+          "bottom_y": -0.4281181335449219,
+          "soil_y": -0.2781181335449219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 25",
+          "point": [
+            59.35,
+            31.428571428571427
+          ],
+          "bottom_y": -0.4281181335449219,
+          "soil_y": -0.27332305908203125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 25",
+          "point": [
+            60.65,
+            30.44642857142857
+          ],
+          "bottom_y": -0.4281181335449219,
+          "soil_y": -0.27191162109375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 25",
+          "point": [
+            60.0,
+            29.464285714285715
+          ],
+          "bottom_y": -0.4281181335449219,
+          "soil_y": -0.276214599609375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 25",
+          "point": [
+            59.35,
+            30.44642857142857
+          ],
+          "bottom_y": -0.4281181335449219,
+          "soil_y": -0.2757225036621094
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 25",
+          "point": [
+            60.0,
+            31.428571428571427
+          ],
+          "bottom_y": -0.4281181335449219,
+          "soil_y": -0.2714195251464844
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 25",
+          "point": [
+            60.0,
+            30.446428571428573
+          ],
+          "bottom_y": -0.4281181335449219,
+          "soil_y": -0.2738151550292969
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 26",
+          "point": [
+            60.65,
+            29.464285714285715
+          ],
+          "bottom_y": -0.4326690673828125,
+          "soil_y": -0.2743110656738281
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 26",
+          "point": [
+            60.65,
+            27.5
+          ],
+          "bottom_y": -0.4326690673828125,
+          "soil_y": -0.27886199951171875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 26",
+          "point": [
+            59.35,
+            27.5
+          ],
+          "bottom_y": -0.4326690673828125,
+          "soil_y": -0.2826690673828125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 26",
+          "point": [
+            59.35,
+            29.464285714285715
+          ],
+          "bottom_y": -0.4326690673828125,
+          "soil_y": -0.2781181335449219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 26",
+          "point": [
+            60.65,
+            28.482142857142858
+          ],
+          "bottom_y": -0.4326690673828125,
+          "soil_y": -0.27671051025390625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 26",
+          "point": [
+            60.0,
+            27.5
+          ],
+          "bottom_y": -0.4326690673828125,
+          "soil_y": -0.2807655334472656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 26",
+          "point": [
+            59.35,
+            28.482142857142858
+          ],
+          "bottom_y": -0.4326690673828125,
+          "soil_y": -0.280517578125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 26",
+          "point": [
+            60.0,
+            29.464285714285715
+          ],
+          "bottom_y": -0.4326690673828125,
+          "soil_y": -0.276214599609375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 26",
+          "point": [
+            60.0,
+            28.48214285714286
+          ],
+          "bottom_y": -0.4326690673828125,
+          "soil_y": -0.2786102294921875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 27",
+          "point": [
+            59.35,
+            26.85
+          ],
+          "bottom_y": -0.4377922058105469,
+          "soil_y": -0.2839393615722656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 27",
+          "point": [
+            58.035714285714285,
+            26.85
+          ],
+          "bottom_y": -0.4377922058105469,
+          "soil_y": -0.2877922058105469
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 27",
+          "point": [
+            58.035714285714285,
+            28.15
+          ],
+          "bottom_y": -0.4377922058105469,
+          "soil_y": -0.28517913818359375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 27",
+          "point": [
+            59.35,
+            28.15
+          ],
+          "bottom_y": -0.4377922058105469,
+          "soil_y": -0.2813262939453125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 27",
+          "point": [
+            58.69285714285714,
+            26.85
+          ],
+          "bottom_y": -0.4377922058105469,
+          "soil_y": -0.28586578369140625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 27",
+          "point": [
+            58.035714285714285,
+            27.5
+          ],
+          "bottom_y": -0.4377922058105469,
+          "soil_y": -0.28652191162109375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 27",
+          "point": [
+            58.69285714285714,
+            28.15
+          ],
+          "bottom_y": -0.4377922058105469,
+          "soil_y": -0.2832527160644531
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 27",
+          "point": [
+            59.35,
+            27.5
+          ],
+          "bottom_y": -0.4377922058105469,
+          "soil_y": -0.2826690673828125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 27",
+          "point": [
+            58.69285714285714,
+            27.5
+          ],
+          "bottom_y": -0.4377922058105469,
+          "soil_y": -0.2845916748046875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 28",
+          "point": [
+            60.0,
+            26.85
+          ],
+          "bottom_y": -0.43393936157226565,
+          "soil_y": -0.2820320129394531
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 28",
+          "point": [
+            59.35,
+            26.85
+          ],
+          "bottom_y": -0.43393936157226565,
+          "soil_y": -0.2839393615722656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 28",
+          "point": [
+            59.35,
+            27.5
+          ],
+          "bottom_y": -0.43393936157226565,
+          "soil_y": -0.2826690673828125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 28",
+          "point": [
+            60.0,
+            27.5
+          ],
+          "bottom_y": -0.43393936157226565,
+          "soil_y": -0.2807655334472656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 28",
+          "point": [
+            59.675,
+            26.85
+          ],
+          "bottom_y": -0.43393936157226565,
+          "soil_y": -0.2829856872558594
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 28",
+          "point": [
+            59.35,
+            27.175
+          ],
+          "bottom_y": -0.43393936157226565,
+          "soil_y": -0.2833061218261719
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 28",
+          "point": [
+            59.675,
+            27.5
+          ],
+          "bottom_y": -0.43393936157226565,
+          "soil_y": -0.2817192077636719
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 28",
+          "point": [
+            60.0,
+            27.175
+          ],
+          "bottom_y": -0.43393936157226565,
+          "soil_y": -0.2813987731933594
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 28",
+          "point": [
+            59.675,
+            27.175
+          ],
+          "bottom_y": -0.43393936157226565,
+          "soil_y": -0.2823524475097656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 29",
+          "point": [
+            58.035714285714285,
+            26.85
+          ],
+          "bottom_y": -0.44053115844726565,
+          "soil_y": -0.2877922058105469
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 29",
+          "point": [
+            57.1,
+            26.85
+          ],
+          "bottom_y": -0.44053115844726565,
+          "soil_y": -0.2905311584472656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 29",
+          "point": [
+            57.1,
+            28.15
+          ],
+          "bottom_y": -0.44053115844726565,
+          "soil_y": -0.2879219055175781
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 29",
+          "point": [
+            58.035714285714285,
+            28.15
+          ],
+          "bottom_y": -0.44053115844726565,
+          "soil_y": -0.28517913818359375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 29",
+          "point": [
+            57.56785714285714,
+            26.85
+          ],
+          "bottom_y": -0.44053115844726565,
+          "soil_y": -0.28916168212890625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 29",
+          "point": [
+            57.1,
+            27.5
+          ],
+          "bottom_y": -0.44053115844726565,
+          "soil_y": -0.2892608642578125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 29",
+          "point": [
+            57.56785714285714,
+            28.15
+          ],
+          "bottom_y": -0.44053115844726565,
+          "soil_y": -0.2865486145019531
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 29",
+          "point": [
+            58.035714285714285,
+            27.5
+          ],
+          "bottom_y": -0.44053115844726565,
+          "soil_y": -0.28652191162109375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 29",
+          "point": [
+            57.56785714285714,
+            27.5
+          ],
+          "bottom_y": -0.44053115844726565,
+          "soil_y": -0.2878913879394531
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 30",
+          "point": [
+            40.35714285714286,
+            26.85
+          ],
+          "bottom_y": -0.4972900390625,
+          "soil_y": -0.3415374755859375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 30",
+          "point": [
+            38.39285714285714,
+            26.85
+          ],
+          "bottom_y": -0.4972900390625,
+          "soil_y": -0.3472900390625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 30",
+          "point": [
+            38.39285714285714,
+            28.15
+          ],
+          "bottom_y": -0.4972900390625,
+          "soil_y": -0.34474945068359375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 30",
+          "point": [
+            40.35714285714286,
+            28.15
+          ],
+          "bottom_y": -0.4972900390625,
+          "soil_y": -0.33892059326171875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 30",
+          "point": [
+            39.375,
+            26.85
+          ],
+          "bottom_y": -0.4972900390625,
+          "soil_y": -0.34441375732421875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 30",
+          "point": [
+            38.39285714285714,
+            27.5
+          ],
+          "bottom_y": -0.4972900390625,
+          "soil_y": -0.3460235595703125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 30",
+          "point": [
+            39.375,
+            28.15
+          ],
+          "bottom_y": -0.4972900390625,
+          "soil_y": -0.3418731689453125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 30",
+          "point": [
+            40.35714285714286,
+            27.5
+          ],
+          "bottom_y": -0.4972900390625,
+          "soil_y": -0.34026336669921875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 30",
+          "point": [
+            39.375,
+            27.5
+          ],
+          "bottom_y": -0.4972900390625,
+          "soil_y": -0.3431434631347656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 31",
+          "point": [
+            38.39285714285714,
+            26.85
+          ],
+          "bottom_y": -0.5030464172363281,
+          "soil_y": -0.3472900390625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 31",
+          "point": [
+            36.42857142857143,
+            26.85
+          ],
+          "bottom_y": -0.5030464172363281,
+          "soil_y": -0.3530464172363281
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 31",
+          "point": [
+            36.42857142857143,
+            28.15
+          ],
+          "bottom_y": -0.5030464172363281,
+          "soil_y": -0.3505058288574219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 31",
+          "point": [
+            38.39285714285714,
+            28.15
+          ],
+          "bottom_y": -0.5030464172363281,
+          "soil_y": -0.34474945068359375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 31",
+          "point": [
+            37.410714285714285,
+            26.85
+          ],
+          "bottom_y": -0.5030464172363281,
+          "soil_y": -0.35016632080078125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 31",
+          "point": [
+            36.42857142857143,
+            27.5
+          ],
+          "bottom_y": -0.5030464172363281,
+          "soil_y": -0.351776123046875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 31",
+          "point": [
+            37.410714285714285,
+            28.15
+          ],
+          "bottom_y": -0.5030464172363281,
+          "soil_y": -0.3476295471191406
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 31",
+          "point": [
+            38.39285714285714,
+            27.5
+          ],
+          "bottom_y": -0.5030464172363281,
+          "soil_y": -0.3460235595703125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 31",
+          "point": [
+            37.410714285714285,
+            27.5
+          ],
+          "bottom_y": -0.5030464172363281,
+          "soil_y": -0.34889984130859375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 32",
+          "point": [
+            36.42857142857143,
+            26.85
+          ],
+          "bottom_y": -0.5087989807128906,
+          "soil_y": -0.3530464172363281
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 32",
+          "point": [
+            34.464285714285715,
+            26.85
+          ],
+          "bottom_y": -0.5087989807128906,
+          "soil_y": -0.3587989807128906
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 32",
+          "point": [
+            34.464285714285715,
+            28.15
+          ],
+          "bottom_y": -0.5087989807128906,
+          "soil_y": -0.35626220703125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 32",
+          "point": [
+            36.42857142857143,
+            28.15
+          ],
+          "bottom_y": -0.5087989807128906,
+          "soil_y": -0.3505058288574219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 32",
+          "point": [
+            35.44642857142857,
+            26.85
+          ],
+          "bottom_y": -0.5087989807128906,
+          "soil_y": -0.3559226989746094
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 32",
+          "point": [
+            34.464285714285715,
+            27.5
+          ],
+          "bottom_y": -0.5087989807128906,
+          "soil_y": -0.3575286865234375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 32",
+          "point": [
+            35.44642857142857,
+            28.15
+          ],
+          "bottom_y": -0.5087989807128906,
+          "soil_y": -0.35338592529296875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 32",
+          "point": [
+            36.42857142857143,
+            27.5
+          ],
+          "bottom_y": -0.5087989807128906,
+          "soil_y": -0.351776123046875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 32",
+          "point": [
+            35.44642857142857,
+            27.5
+          ],
+          "bottom_y": -0.5087989807128906,
+          "soil_y": -0.35465240478515625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 33",
+          "point": [
+            33.09693824701195,
+            26.85
+          ],
+          "bottom_y": -0.5141166687011719,
+          "soil_y": -0.3628044128417969
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 33",
+          "point": [
+            32.650001525878906,
+            26.85
+          ],
+          "bottom_y": -0.5141166687011719,
+          "soil_y": -0.3641166687011719
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 33",
+          "point": [
+            32.650001525878906,
+            27.336664860545724
+          ],
+          "bottom_y": -0.5141166687011719,
+          "soil_y": -0.36316680908203125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 33",
+          "point": [
+            32.87346988644543,
+            26.85
+          ],
+          "bottom_y": -0.5141166687011719,
+          "soil_y": -0.3634605407714844
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 33",
+          "point": [
+            32.650001525878906,
+            27.093332430272863
+          ],
+          "bottom_y": -0.5141166687011719,
+          "soil_y": -0.36363983154296875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 33",
+          "point": [
+            32.87346988644543,
+            27.093332430272863
+          ],
+          "bottom_y": -0.5141166687011719,
+          "soil_y": -0.36298370361328125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 33",
+          "point": [
+            32.79898043292325,
+            27.012221620181908
+          ],
+          "bottom_y": -0.5141166687011719,
+          "soil_y": -0.36336517333984375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 34",
+          "point": [
+            33.149997302602365,
+            26.85
+          ],
+          "bottom_y": -0.5129302978515625,
+          "soil_y": -0.36264801025390625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 34",
+          "point": [
+            33.09693824701195,
+            26.85
+          ],
+          "bottom_y": -0.5129302978515625,
+          "soil_y": -0.3628044128417969
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 34",
+          "point": [
+            32.93966293334961,
+            27.021255493164062
+          ],
+          "bottom_y": -0.5129302978515625,
+          "soil_y": -0.3629302978515625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 34",
+          "point": [
+            32.96003424777543,
+            27.039963843146964
+          ],
+          "bottom_y": -0.5129302978515625,
+          "soil_y": -0.3628349304199219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 34",
+          "point": [
+            33.12346777480715,
+            26.85
+          ],
+          "bottom_y": -0.5129302978515625,
+          "soil_y": -0.3627281188964844
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 34",
+          "point": [
+            33.01830059018078,
+            26.935627746582032
+          ],
+          "bottom_y": -0.5129302978515625,
+          "soil_y": -0.3628692626953125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 34",
+          "point": [
+            32.949848590562524,
+            27.030609668155513
+          ],
+          "bottom_y": -0.5129302978515625,
+          "soil_y": -0.362884521484375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 34",
+          "point": [
+            33.0550157751889,
+            26.944981921573483
+          ],
+          "bottom_y": -0.5129302978515625,
+          "soil_y": -0.3627433776855469
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 34",
+          "point": [
+            33.03665818268484,
+            26.940304834077757
+          ],
+          "bottom_y": -0.5129302978515625,
+          "soil_y": -0.3628082275390625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            34.464285714285715,
+            26.85
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.3587989807128906
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            33.149997302602365,
+            26.85
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.36264801025390625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            32.96003424777543,
+            27.039963843146964
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.3628349304199219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            34.168740285237625,
+            28.15
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.35712432861328125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            34.464285714285715,
+            28.15
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.35626220703125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            33.80714150844404,
+            26.85
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.36072540283203125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            33.0550157751889,
+            26.944981921573483
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.3627433776855469
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            33.56438726650653,
+            27.59498192157348
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.35997772216796875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            34.31651299976167,
+            28.15
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.3566932678222656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            34.464285714285715,
+            27.5
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.3575286865234375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 35",
+          "point": [
+            33.84146865283737,
+            27.407992768629395
+          ],
+          "bottom_y": -0.5128349304199219,
+          "soil_y": -0.35953521728515625
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.65,
+            27.5
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.27886199951171875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.0,
+            27.5
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.2807655334472656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.0,
+            26.85
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.2820320129394531
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.24874423103731,
+            26.899478303867664
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.28121185302734375
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.45961940777126,
+            27.040380592228743
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.2803153991699219
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.60052169613233,
+            27.25125576896269
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.2794914245605469
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.325,
+            27.5
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.2798118591308594
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.0,
+            27.175
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.2813987731933594
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.12437211551865,
+            26.87473915193383
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.28162384033203125
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.35418181940428,
+            26.969929448048205
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.28076171875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.530070551951795,
+            27.145818180595718
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.2799034118652344
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.62526084806616,
+            27.375627884481347
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.2791786193847656
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 36",
+          "point": [
+            60.32648088915681,
+            27.173519110843184
+          ],
+          "bottom_y": -0.43203201293945315,
+          "soil_y": -0.28044891357421875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.65,
+            50.0
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.60052169613234,
+            50.24874423103731
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.45961940777126,
+            50.45961940777126
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.24874423103731,
+            50.60052169613234
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.0,
+            50.65
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.0,
+            50.0
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.4363673252398,
+            49.52484404739408
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000457763671875
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.45961940777126,
+            49.54038059222874
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.60052169613233,
+            49.75125576896269
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.62526084806617,
+            50.12437211551865
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.530070551951795,
+            50.35418181940428
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.35418181940428,
+            50.530070551951795
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.12437211551865,
+            50.62526084806617
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.0,
+            50.325
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.2181836626199,
+            49.76242202369704
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.44799336650553,
+            49.53261231981141
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.530070551951795,
+            49.64581818059572
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.62526084806616,
+            49.87562788448135
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway ACADEMY 37",
+          "point": [
+            57.383932640453814,
+            50.08615174928072
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        }
+      ]
+    },
+    {
+      "id": "WLD-09",
+      "status": "PASS_SCOPED_SAVED_WORLD_EXPORT_NATIVE_EDITABLE_PRESERVATION",
+      "glb_sha256": "733984ac7a0db26a954d02ca4e737354f446bf2e5a42abbad9b4b4c4a1d198c6",
+      "native_sha256": "50122353470fcf2a579951e15996026d78997f0145412a154484739c7a7848cc",
+      "blend_sha256": "edc06a14adeea1ded66a14b56dd0dad04b5e0b852484f30db0e3678337c1f16b",
+      "contract_sha256": "d9c811f4aeea3b639ca4456187182288b235661bcf706774c160e16512b30c37",
+      "packed_images": 24,
+      "lowered_native_vertices": 118,
+      "native_vertices": 6201,
+      "raised_native_vertices": 0,
+      "source_height_and_topology_bytes_unchanged": true,
+      "clear_saved_hole_probes": 1727,
+      "retained_native_parts": 310,
+      "new_closed_parts": [
+        "Arrival end bearing WLD-09 0"
+      ],
+      "footing_contact_samples": [],
+      "rooted_walkway_samples": []
+    },
+    {
+      "id": "WLD-18",
+      "status": "PASS_SCOPED_SAVED_WORLD_EXPORT_NATIVE_EDITABLE_PRESERVATION",
+      "glb_sha256": "7224a1e8fb798627281e368e9542568ecdad6691d1649d5871c126329bc3dea4",
+      "native_sha256": "5517720e595f5b2b22af512da2e10191c89f7bea6738209e34960ea0dc53214d",
+      "blend_sha256": "9dcc679fa4d40562acce30854b2cf6374fc4bf31d460932cd89569780a39622c",
+      "contract_sha256": "dc29480f9f80ad402028d8e2083e118c4e0bed2ed558970f940f48d276804617",
+      "packed_images": 13,
+      "lowered_native_vertices": 104,
+      "native_vertices": 5328,
+      "raised_native_vertices": 0,
+      "source_height_and_topology_bytes_unchanged": true,
+      "clear_saved_hole_probes": 830,
+      "retained_native_parts": 329,
+      "new_closed_parts": [
+        "Rooted cut walkway WLD-18 0"
+      ],
+      "footing_contact_samples": [],
+      "rooted_walkway_samples": [
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            18.0,
+            48.75
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            17.712987425726183,
+            48.692909649383466
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            17.46966991411009,
+            48.53033008588991
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            17.307090350616534,
+            48.28701257427382
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.1999969482421875
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            17.25,
+            48.0
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            18.0,
+            48.0
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            17.85649371286309,
+            48.72145482469173
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            17.591328669918134,
+            48.61161986763669
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.1999969482421875
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            17.38838013236331,
+            48.40867133008186
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000457763671875
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            17.278545175308267,
+            48.14350628713691
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            17.625,
+            48.0
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            18.0,
+            48.375
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000457763671875
+        },
+        {
+          "name": "Rooted cut walkway WLD-18 0",
+          "point": [
+            17.623291281742134,
+            48.376708718257866
+          ],
+          "bottom_y": -0.35000457763671877,
+          "soil_y": -0.20000076293945312
+        }
+      ]
+    }
+  ],
+  "checker_sha256": "418da0fb5f4ffe6888f0ee89ef5fb8bcb8e7942f48e4380a2b9bdfe19b1bbab8"
+}

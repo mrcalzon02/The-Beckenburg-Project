@@ -1,0 +1,30 @@
+{
+  "development/levels/rebuild/arrival-bearing-pass/wld-09/authored-layout.json": {
+    "relocated": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/authored-layout.json",
+    "sha256": "ecc317d60d6b6b2778af0476d1fdf6e50ad3b48444ec80418a899e673204befe"
+  },
+  "development/levels/rebuild/arrival-bearing-pass/wld-09/construction.json": {
+    "relocated": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/construction.json",
+    "sha256": "ab932450c27c3a26ad0a8f407b15a41decd30f0ce613aeddf3b661f296e41f18"
+  },
+  "development/levels/rebuild/arrival-bearing-pass/wld-09/supported-arrival.blend": {
+    "relocated": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/supported-arrival.blend",
+    "sha256": "7fbc780d001c095d0c565858d114bd26da16dd3a3fad00e053666fd6bfa324d5"
+  },
+  "development/levels/rebuild/arrival-bearing-pass/wld-09/supported-arrival.glb": {
+    "relocated": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/supported-arrival.glb",
+    "sha256": "d5c5561100ac317da15b28e728a6f359628d9cc058589cf0186e0958cbb8ccce"
+  },
+  "development/levels/rebuild/arrival-bearing-pass/wld-09/supported-arrival.hcs2": {
+    "relocated": "development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09/supported-arrival.hcs2",
+    "sha256": "a0fdb46c31f984633f6436879539c906a0b4c1310fcb91982fd85b61f5a68f43"
+  },
+  "development/levels/rebuild/captures/arrival-bearing-batch/wld-09-arrival-after.png": {
+    "relocated": "development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09/wld-09-arrival-after.png",
+    "sha256": "3dc3208f3e2bd5f17856d22b60642cd25ce06aecbd64a668345fe1284ef083fd"
+  },
+  "development/levels/rebuild/captures/arrival-bearing-batch/wld-09-arrival-before.png": {
+    "relocated": "development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09/wld-09-arrival-before.png",
+    "sha256": "36eecbe9d362c73c0d3bda4aabbdb275445c7449c9a8ba361d67ed37fc9d6977"
+  }
+}

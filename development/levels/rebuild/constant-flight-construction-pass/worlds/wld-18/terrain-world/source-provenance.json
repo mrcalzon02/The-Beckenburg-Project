@@ -1,0 +1,33 @@
+{
+  "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "42091eb72753f63b9b099c8561728ce5bbd7f5e0322b597844bb438451c76ff6",
+    "authored-cuts.tsv": "aeabfb702bc562f197b6c4afe916439003da53fd0e99143ce2b4c2b58e9fe560",
+    "authored-path-grading.sha256": "08d441fbe9e35e4aca099298ab89e74e9ef7b952c7460f39b72f8f9899737960",
+    "source-provenance.json": "e394c2f2b818bc3715ed63a67fb6a08496f00730655e2366cbea3c57f8607cb0",
+    "terrain-physics.hcs2": "24c3e34adaaeea26b29e1f0a0335117f9781be1ed8085823fc8ee7b9c655125a",
+    "tile_0_0.png": "48b7b36ce1cf7a7403614d210855977420dae5e273cd1b50ac25aa285f3c183d",
+    "verification.json": "9e1dbca015b1daa9a70467c790c0b380b812b1f110eecefd3e633c08756f3988",
+    "world.properties": "484945a0e995f5d9c50434269cede7fb3cf3532f5941d23826c58650a234579a",
+    "scene-package/.scene.bin.editor.previous": "e6d4bff9d90598c656083fc91b0fcd38432990c2697c7fa27aa7dcecd07cad57",
+    "scene-package/scene.bin": "70fdb9abfa530d0fce478afcb6ea9d5bb073dcb96c533957cce2fd7431f7aad3",
+    "scene-package/meshes/site.obj": "7354431c4e9a3993a1b3bfec47a24ecb22ac9634f2ff3821f356d0257700bd5f",
+    "terrain-layers/tile_0_0.bin": "91827544b914ac971ffdc33ec3113c42a7196709898e22b55011aa7a625e13f8"
+  },
+  "rectangular_construction_cuts": [
+    [
+      4.75,
+      33.75,
+      7.25,
+      48.25
+    ],
+    [
+      6,
+      32.75,
+      8,
+      35.25
+    ]
+  ],
+  "source_height_and_layers_preserved": true,
+  "authoring": "Actual saved editor topology punches for structural wells/platform; no route-extrusion surfaces"
+}

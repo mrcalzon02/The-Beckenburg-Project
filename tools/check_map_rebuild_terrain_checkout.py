@@ -11,7 +11,7 @@ def git(*args):
 
 
 paths=[name for name in git('ls-files','-z','--','development/levels/rebuild').decode('utf-8').split('\0')
-       if '/terrain-world/' in name]
+       if '/terrain-world/' in name or '/terrain-overall-pass/samples/' in name]
 assert paths,'No saved editor terrain package to inspect'
 for path in paths:
     stored=git('show','HEAD:'+path)

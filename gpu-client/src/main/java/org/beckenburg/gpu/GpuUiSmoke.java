@@ -6,7 +6,9 @@ import org.beckenburg.CastleHubMap;
 import org.beckenburg.InvestigationGame;
 import org.beckenburg.HouseMap;
 import org.beckenburg.HunterPosture;
-import org.beckenburg.InvestigationSession;
+import org.beckenburg.LanWorldPanel;
+import org.beckenburg.LanClient;
+import org.beckenburg.BeckenburgDiagnostics;
 import org.beckenburg.LevelDefinition;
 import org.beckenburg.SceneRenderer;
 import org.beckenburg.SiteCatalog;
@@ -16,6 +18,7 @@ import java.awt.Window;
 import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.nio.file.Files;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
@@ -82,7 +85,7 @@ public final class GpuUiSmoke {
   if(value==null)throw new AssertionError(failure);
   return value;
  }
- private static Object field(JPanel game,String name)throws Exception{
+ private static Object field(LanWorldPanel game,String name)throws Exception{
   var field=game.getClass().getDeclaredField(name);field.setAccessible(true);return field.get(game);
  }
  private static JComboBox<?> sitePicker(Container owner){
@@ -109,8 +112,8 @@ public final class GpuUiSmoke {
   ImageIO.write(image,"png",OUTPUT.resolve(name+".png").toFile());
  }
  private record Walk(int key,int reverse,int second,int secondReverse,double x,double z){}
- private static Walk walk(JPanel panel)throws Exception{
-  SceneRenderer scene=(SceneRenderer)field(panel,"scene");
+ private static Walk walk(LanWorldPanel panel)throws Exception{
+  SceneRenderer scene=(SceneRenderer)field(panel,"renderer");
   HouseMap map=(HouseMap)field(panel,"map");
   return planWalk(map,scene);
  }
@@ -132,10 +135,10 @@ public final class GpuUiSmoke {
   }
   throw new AssertionError("No short collision-valid WASD route from van spawn: site="+map.site()+" x="+scene.x+" y="+feet+" z="+scene.z+" yaw="+scene.yaw);
  }
- private static double distance(JPanel panel,Walk route)throws Exception{
-  SceneRenderer scene=(SceneRenderer)field(panel,"scene");return Math.hypot(scene.x-route.x(),scene.z-route.z());
+ private static double distance(LanWorldPanel panel,Walk route)throws Exception{
+  SceneRenderer scene=(SceneRenderer)field(panel,"renderer");return Math.hypot(scene.x-route.x(),scene.z-route.z());
  }
- private static void move(JPanel panel,Walk route,boolean returning)throws Exception{
+ private static void move(LanWorldPanel panel,Walk route,boolean returning)throws Exception{
   int code=returning?route.reverse():route.key();
   int second=returning?route.secondReverse():route.second();
   try{
@@ -176,19 +179,50 @@ public final class GpuUiSmoke {
   }
   return null;
  }
- private static JPanel game(Container root){
+ private static LanWorldPanel game(Container root){
   for(Component c:root.getComponents()){
-   if(c instanceof JPanel panel&&c.getClass().getName().contains("$GamePanel")
-       &&panel.isShowing())return panel;
+   // Solo and multiplayer now share the real host-authoritative LAN viewport.
+   // The retired $GamePanel class is no longer created by InvestigationGame.
+   if(c instanceof LanWorldPanel panel&&panel.isShowing())return panel;
    if(c instanceof Container inner){
-    JPanel found=game(inner);if(found!=null)return found;
+    LanWorldPanel found=game(inner);if(found!=null)return found;
    }
   }
   return null;
  }
+ private static boolean firstSceneReady(LanWorldPanel panel)throws Exception{
+  // The cinematic and its PreviewStatus are package-private implementation
+  // details; the GPU harness lives in org.beckenburg.gpu. Inspect only the
+  // real readiness accessor instead of depending on a retired GamePanel field.
+  Object opening=field(panel,"opening");
+  if(opening==null)return (Integer)field(panel,"frameCount")>0;
+  var backend=opening.getClass().getDeclaredMethod("gpuFlight");
+  backend.setAccessible(true);
+  if(!Boolean.TRUE.equals(backend.invoke(opening)))return true;
+  var snapshot=opening.getClass().getDeclaredMethod("previewStatus");
+  snapshot.setAccessible(true);
+  Object preview=snapshot.invoke(opening);
+  var ready=preview.getClass().getDeclaredMethod("firstFrameReady");
+  ready.setAccessible(true);
+  return Boolean.TRUE.equals(ready.invoke(preview));
+ }
+ private static void failureEvidence(JFrame window)throws Exception{
+  Files.writeString(OUTPUT.resolve("failure-stage.txt"),
+      "GPU UI case startup incomplete\n"+
+      "diagnostic_phase="+BeckenburgDiagnostics.stageName()+"\n"+
+      "visible_castle="+(castle(window.getContentPane())!=null)+"\n"+
+      "visible_solo_dispatch="+(dispatch(window.getContentPane())!=null)+"\n"+
+      "visible_live_lan_hunter="+(game(window.getContentPane())!=null)+"\n",
+      StandardCharsets.UTF_8);
+  try{capture(window,"failed-ui");}
+  catch(Exception captureFailure){
+   Files.writeString(OUTPUT.resolve("capture-failure.txt"),
+       BeckenburgDiagnostics.redact(captureFailure.toString())+"\n",StandardCharsets.UTF_8);
+  }
+ }
  public static void execute(GpuWorldRenderer gpu)throws Exception{
   Files.createDirectories(OUTPUT);
-  StringBuilder results=new StringBuilder("site,opening,dispatch_to_hunter_ms,active_frames,walk_metres,outcome,gpu_prebake_submitted,gpu_prebake_confirmed,gpu_prebake_timeout\n");
+  StringBuilder results=new StringBuilder("site,opening,dispatch_to_hunter_ms,active_frames,walk_metres,outcome,gpu_readback_confirmed\n");
   InvestigationGame.main(new String[0]);
   JFrame window=waitFor(()->{
    JFrame candidate=launcher();
@@ -196,6 +230,7 @@ public final class GpuUiSmoke {
   },60);
   if(window==null)throw new AssertionError("GPU-loaded Castle home unavailable");
   System.out.println("GPU UI PASS real Castle home loaded");
+  boolean passed=false;
   try{
    var sites=System.getProperty("beckenburg.gpu.uiSmoke.sites","HOUSE,FARMHOUSE,SCHOOL").split(",");
    if(sites.length==0)throw new IllegalArgumentException("No GPU UI sites requested");
@@ -205,8 +240,10 @@ public final class GpuUiSmoke {
     runCase(gpu,window,site,index,index==1,results);
    }
    System.out.println("GPU UI PASS "+sites.length+" real case dispatch / hunter / movement / extraction / menu cycles");
+   passed=true;
   }finally{
-   Files.writeString(OUTPUT.resolve("case-cycles.csv"),results);
+   Files.writeString(OUTPUT.resolve("case-cycles.csv"),results,StandardCharsets.UTF_8);
+   if(!passed)failureEvidence(window);
    SwingUtilities.invokeLater(window::dispose);
   }
  }
@@ -238,29 +275,28 @@ public final class GpuUiSmoke {
    SwingUtilities.invokeLater(deploy::doClick);return Boolean.TRUE;
   },10,"Solo deploy blocked");
   System.out.println("GPU UI PASS invoked real solo.deploy / START ROUND action");
-  JPanel inGame=waitFor(()->game(window.getContentPane()),55);
+  LanWorldPanel inGame=waitFor(()->game(window.getContentPane()),55);
   if(inGame==null)throw new AssertionError(
-      "Solo deploy was invoked but no live GamePanel appeared; inspect persisted case-stage diagnostics");
-  require(()->Boolean.TRUE.equals(field(inGame,"initialFrameReady"))?Boolean.TRUE:null,65,
-      "First sized GPU case frame never became ready: "+site.name());
-  int prewarmSubmitted=(Integer)field(inGame,"prewarmGpuSubmitted");
-  int prewarmConfirmed=(Integer)field(inGame,"prewarmGpuConfirmed");
-  boolean prewarmTimedOut=(Boolean)field(inGame,"prewarmGpuTimedOut");
-  if(prewarmSubmitted<0||prewarmConfirmed<0||prewarmConfirmed>prewarmSubmitted
-      ||prewarmSubmitted>3)
-   throw new AssertionError("Invalid real GL prewarm completion counters");
-  System.out.println("GPU PREBAKE DIAGNOSTIC site="+site+" submitted="+prewarmSubmitted+
-      " GL_confirmed="+prewarmConfirmed+" timed_out="+prewarmTimedOut+
-      " priority=van_then_exterior_then_entry");
-  require(()->field(inGame,"opening")!=null?Boolean.TRUE:null,5,"Authored opening never started");
-  if(!naturalOpening)require(()->{key(inGame,KeyEvent.VK_SPACE,true);return Boolean.TRUE;},10,"Intro skip blocked");
+      "Solo deploy did not expose the live LAN hunter viewport: "+site.name());
+  require(()->{
+   HouseMap active=(HouseMap)field(inGame,"map");
+   return active.site().name().equals(site.name())?Boolean.TRUE:null;
+  },10,"Hunter received the wrong authored site: "+site.name());
+  require(()->field(inGame,"opening")!=null?Boolean.TRUE:null,5,
+      "Actual network hunter never entered the authored opening cinematic");
+  require(()->firstSceneReady(inGame)?Boolean.TRUE:null,65,
+      "First sized GPU case opening frame never became ready: "+site.name());
+  if(!naturalOpening)require(()->{
+   if(field(inGame,"opening")!=null)key(inGame,KeyEvent.VK_SPACE,true);
+   return Boolean.TRUE;
+  },10,"Intro skip blocked");
   require(()->field(inGame,"opening")==null&&(Integer)field(inGame,"frameCount")>=3?Boolean.TRUE:null,
-      65,"Opening did not hand off to advancing hunter frames: "+site.name());
+      65,"Opening did not hand off to advancing LAN hunter frames: "+site.name());
   long startupMillis=TimeUnit.NANOSECONDS.toMillis(System.nanoTime()-requested);
   require(()->{
-   var timing=((SceneRenderer)field(inGame,"scene")).frameDiagnostics();
+   var timing=((SceneRenderer)field(inGame,"renderer")).frameDiagnostics();
    return timing!=null&&timing.gpu()&&timing.gpuReadbackAvailable()?Boolean.TRUE:null;
-  },20,"Playable hunter did not use GPU readback");
+  },20,"Playable LAN hunter did not use real GPU framebuffer/readback");
   var first=gpu.latest();
   long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(60);
   boolean rendered=false;
@@ -280,23 +316,34 @@ public final class GpuUiSmoke {
   capture(window,index+"-"+site.name().toLowerCase()+"-hunter");
   move(inGame,route,true);
   int frames=require(()->(Integer)field(inGame,"frameCount"),10,"Hunter loop stopped");
-  // Extraction goes through the real X handler and session position checks.
-  SwingUtilities.invokeLater(()->key(inGame,KeyEvent.VK_X,true));
-  JButton ok=require(()->window.getGlassPane().isShowing()
-      &&window.getGlassPane() instanceof Container glass?button(glass,"OK"):null,
-      20,"Validated van extraction did not show debrief: "+site.name());
-  var outcome=require(()->((InvestigationSession)field(inGame,"session")).outcome(),10,"No extraction outcome");
-  if(outcome!=InvestigationSession.Outcome.RETREATED)throw new AssertionError("Expected real retreat, got "+outcome);
-  capture(window,index+"-"+site.name().toLowerCase()+"-debrief");
-  SwingUtilities.invokeLater(ok::doClick);
+  // Physical VIEW3D hunters must seal the VAN door; EXTRACT is intentionally
+  // rejected for them. Issue the same authenticated VANDOOR packet as the
+  // in-world rear-button action and verify the host-owned RESULT.
+  require(()->{
+   ((LanClient)field(inGame,"client")).vanDoor();
+   return Boolean.TRUE;
+  },10,"Physical van departure control unavailable");
+  String outcome=require(()->{
+   String result=(String)field(inGame,"caseResult");
+   return result.isBlank()?null:result;
+  },20,"Host never acknowledged the real van-door retreat: "+site.name());
+  if(!"RETREATED".equals(outcome))
+   throw new AssertionError("Expected host-authoritative RETREATED, got "+outcome);
+  capture(window,index+"-"+site.name().toLowerCase()+"-result");
+  // Invoke the actual menu's registered return handler after host settlement.
+  require(()->{
+   Object action=inGame.getClientProperty("beckenburg.returnToLobby");
+   if(!(action instanceof Runnable back))throw new AssertionError(
+       "Finished LAN hunter has no return-to-Castle action");
+   back.run();return Boolean.TRUE;
+  },15,"Finished case could not use the production return-to-lobby action");
   require(()->{
    var returnedCastle=castle(window.getContentPane());
    return returnedCastle!=null&&returnedCastle.isShowing()&&game(window.getContentPane())==null?Boolean.TRUE:null;
   },30,"Extraction did not return to Castle home");
   results.append(site.name()).append(',').append(naturalOpening?"natural":"skip").append(',')
       .append(startupMillis).append(',').append(frames).append(',').append(walked)
-      .append(',').append(outcome).append(',').append(prewarmSubmitted)
-      .append(',').append(prewarmConfirmed).append(',').append(prewarmTimedOut)
+      .append(',').append(outcome).append(',').append("true")
       .append('\n');
   Files.writeString(OUTPUT.resolve("case-cycles.csv"),results);
   System.out.println("GPU UI PASS "+site.name()+" hunter ready="+startupMillis+"ms, walk="+walked+

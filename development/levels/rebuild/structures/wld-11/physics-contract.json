@@ -1,0 +1,67 @@
+{
+  "source_glb_sha256": "946692ca5819a0ff9f463d1825a14a52f4d9bb8ddca85e55751842545cbdb10a",
+  "physics_sha256": "fa7499298aafa9e644ace387b8f06fd4b3ce61afee7ce6428903689d39310739",
+  "exporter_sha256": "0eebf9807ce7c05feaf327ec33e7ced6557034c1f7e579cc05cadad89d07284b",
+  "stair_components": [
+    "52:L02 flight0 step1",
+    "53:L02 flight0 step2",
+    "54:L02 flight0 step3",
+    "55:L02 flight0 step4",
+    "56:L02 flight0 step5",
+    "57:L02 flight0 step6",
+    "58:L02 flight0 step7"
+  ],
+  "tread_centres": [
+    {
+      "link": "L02",
+      "component": "52:L02 flight0 step1",
+      "x": 32.571430683135986,
+      "y": 0.17142856121063232,
+      "z": 68.28571319580078
+    },
+    {
+      "link": "L02",
+      "component": "53:L02 flight0 step2",
+      "x": 33.71428680419922,
+      "y": 0.34285715222358704,
+      "z": 66.85713958740234
+    },
+    {
+      "link": "L02",
+      "component": "54:L02 flight0 step3",
+      "x": 34.85714340209961,
+      "y": 0.514285683631897,
+      "z": 65.42857360839844
+    },
+    {
+      "link": "L02",
+      "component": "55:L02 flight0 step4",
+      "x": 36.0,
+      "y": 0.6857142448425293,
+      "z": 64.0
+    },
+    {
+      "link": "L02",
+      "component": "56:L02 flight0 step5",
+      "x": 37.14285659790039,
+      "y": 0.8571428656578064,
+      "z": 62.57143020629883
+    },
+    {
+      "link": "L02",
+      "component": "57:L02 flight0 step6",
+      "x": 38.28571319580078,
+      "y": 1.028571367263794,
+      "z": 61.14285659790039
+    },
+    {
+      "link": "L02",
+      "component": "58:L02 flight0 step7",
+      "x": 39.42856979370117,
+      "y": 1.2000000476837158,
+      "z": 59.71428680419922
+    }
+  ],
+  "dropped_degenerate_triangles": 0,
+  "scope": "Candidate native collision; gameplay/ownership/terrain/network gates remain open"
+}

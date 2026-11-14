@@ -1,0 +1,104 @@
+{
+  "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-08/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "bd109d05ae6c1414e690c9c44ec31923dcfa728cc291d519e6476ed54d0b8723",
+    "authored-cuts.tsv": "7b17b4e01fac94acf7388ecebb347f2b750a6b391f66d615c33cbffc8e2846fd",
+    "authored-path-grading.sha256": "d20bd54680f93b907f5d71a7686e023ea9454b6f76ce9f16026f445efb59b8f1",
+    "source-provenance.json": "952460910bd0f5e3a7eb0c17734389ab57fb77c21cd7bb205d9c7d4b5b158ae5",
+    "terrain-physics.hcs2": "80affa5b80eadec91498217ade0ce34656f21355a158bb77ebe8d663a0b6b1ec",
+    "tile_0_0.png": "52520d8fc7a747f2e846e536faad13fb232175b73087ecb15ab23facdbf6ae21",
+    "verification.json": "8777c8266eb7529abcb096d6addaedb2cb7bea325ccc95c270efc1817f216cc5",
+    "world.properties": "061685389ee0cafd56f51b8af8571f0f84d49ab32d7806ba8c2c3df0a6639c64",
+    "scene-package/.scene.bin.editor.previous": "7f7b12bc3a24fd448599a6d21a9a7bb794fde07e9e68c8360a3a60c7c17a83f9",
+    "scene-package/scene.bin": "95d32ab67d5c766f1e57b05c9eb5bd936ba9b88d8b7cd59a32f0213651c78b54",
+    "terrain-layers/tile_0_0.bin": "779a6e6d8c774bc964b3b14421d09cfb7cb0af94791f5819eb6071cd2a1ee716",
+    "scene-package/meshes/site-0-0.obj": "4c7c8e77defdc55c00f6416f54e51d707fb3f6a04a7eee1b14e27aad12d1df53",
+    "scene-package/meshes/site-0-1.obj": "41d530a1df283ba61656215ea1f3b9f652ef45fb50f9d9baf36125353222ff95",
+    "scene-package/meshes/site-1-0.obj": "2276e2d4bf74419e2fdd81bb04c1fc5b8a86858a624181ba9f253645fe9ebd2a",
+    "scene-package/meshes/site-1-1.obj": "d8d0c28efa93230b3a1a22432744f3bc96978abb04a8df18fdb5c8e1f1bac45c"
+  },
+  "earthworks_features": [
+    {
+      "name": "Research arrival clearing",
+      "material": "GRAVEL",
+      "feather": 5.0,
+      "profile": "arrival",
+      "polygon": [
+        [
+          24.0,
+          70.0
+        ],
+        [
+          40.0,
+          70.0
+        ],
+        [
+          44.0,
+          76.0
+        ],
+        [
+          43.0,
+          84.0
+        ],
+        [
+          37.0,
+          87.0
+        ],
+        [
+          26.0,
+          87.0
+        ],
+        [
+          21.0,
+          81.0
+        ],
+        [
+          21.0,
+          75.0
+        ]
+      ]
+    },
+    {
+      "name": "Array equipment grounds",
+      "material": "GRAVEL",
+      "feather": 4.0,
+      "profile": "array",
+      "polygon": [
+        [
+          44.0,
+          -1.0
+        ],
+        [
+          59.0,
+          -2.0
+        ],
+        [
+          64.0,
+          3.0
+        ],
+        [
+          65.0,
+          8.0
+        ],
+        [
+          62.0,
+          20.0
+        ],
+        [
+          60.0,
+          26.0
+        ],
+        [
+          46.0,
+          26.0
+        ],
+        [
+          43.0,
+          18.0
+        ]
+      ]
+    }
+  ],
+  "source_height_and_punched_topology_preserved": true,
+  "authoring": "Actual TerrainLayerStack geographic sculpt, not route support"
+}

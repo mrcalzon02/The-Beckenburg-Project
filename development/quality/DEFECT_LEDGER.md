@@ -10,6 +10,160 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-355 — GPU solo smoke falsely fails after retirement of GamePanel and obsolete startup counters
+
+**Status:** fixed-scoped; exact-source Windows GPU/native and 3-site Mesa GPU-UI cycle passed; hardware performance acceptance pending · **Affected:** gpu-client GpuUiSmoke (Castle -> solo -> shared-LAN hunter -> van retreat -> Castle), all default smoke sites
+
+In exact-source GPU run 43179085546 the standalone OpenGL geometry/lighting/resident-VBO checks and eleven-map residency review succeeded, but the UI stage reported 'solo.deploy was invoked but no live GamePanel appeared' and produced only a CSV header, with no persisted failure screenshot.
+
+Cause / uncertainty: The acceptance harness still searched for a retired '$GamePanel' nested class. Current solo returns a real LanWorldPanel. Subsequent reflective reads referenced retired scene, initialFrameReady, prewarmGpu* and session fields, and its VK_X/glass-pane exit flow was no longer the physical host-authoritative van-door action.
+
+Fix / next action: GpuUiSmoke now discovers LanWorldPanel and actual map/renderer/opening/frameCount; gates on first real cinematic preview and GPU readback; verifies physical hunter movement, authenticated VANDOOR/RESULT|RETREATED, and the registered return-to-Castle handler; emits case-stage and native failure capture if a case cannot start. Keep actual multi-site Mesa and installed Windows checks; do not weaken GPU or multiplayer functional gates.
+
+Evidence and verification: Confirmed exact-source GPU acceptance https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43258886439 all three jobs SUCCESS: compile-gpu-java17, windows-build (actual packaged native software-recovery executable), and opengl-mesa-smoke (real OpenGL, world residency, UI). Native 3-site GPU artifact https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43258886439/artifacts/13962993117: HOUSE 5889ms 11 frames, FARMHOUSE 9845ms 8 frames, SCHOOL 3255ms 7 frames; each moved 0.31m, GPU readback=true, host RESULT RETREATED, returned to Castle. Exact source 2f83b2fadfc9834781efd189f3751618afd4f5ae. This repairs the old false-negative smoke. Hardware FPS and other individual location checks remain open.
+
+Older-map obligation: The shared GPU UI smoke cycles House, Farmhouse and School. Verify each actual launch, movement, extraction and return individually; Castle and the other map types have separate native residency checks. Windows hardware FPS and headphones remain outside Mesa acceptance.
+
+### DEV-354 — Blackpine editor snapshot disagreed with live stairwell landing aperture
+
+**Status:** source/snapshot synchronized; editor save/reopen and installed visual verification pending · **Affected:** Blackpine mill loft serialized development definition and live mission geometry
+
+The checked-in Blackpine source snapshot ended its upper stair aperture at Z31.4 while the current runtime aperture ends at Z31.6; the serialized scene also retained five obsolete loft fence sockets and colliders.
+
+Cause / uncertainty: The development export was not refreshed after the runtime last-riser collision fix and continued to carry out-of-date loft rail decorations.
+
+Fix / next action: Align the recorded upper opening at Z31.6 and remove only the five duplicated room-11 fence entries and colliders. Verify editor load/save parity before accepting the archive as a current construction source.
+
+Evidence and verification: Source snapshot vs runtime mismatch confirmed at b55948a0 and corrected in 5216f206. Exact-source Blackpine step in CI 43179085398 completed SUCCESS, with artifact 13926116342. Export/import/save-reopen acceptance not established by stair test.
+
+Older-map obligation: Audit editor exports against live runtime stairs on each older map; correcting Blackpine does not certify the other saved maps.
+
+### DEV-353 — Overlapping unsupported loft railing sets obstruct Blackpine stair access
+
+**Status:** focused exact-source native rail/route regression and Windows release passed; installed user-eye and hardware acceptance pending · **Affected:** Blackpine sawmill flight and upper inspection loft; shared loft-wall rendering and opening-guard generation
+
+Five manual field-fence rails, automatic perimeter rails and automatic stair-void guard rails overlapped. Void guards extended three metres beyond the upper deck over the lower flight, and an uninterrupted loft-edge rail crossed the actual stairwell entry.
+
+Cause / uncertainty: Rail construction did not share one deck-and-aperture geometry contract: authored enclosure colliders duplicated renderer rails, side guards were not clipped to physical slabs, and loft edge generation failed to split at stair openings.
+
+Fix / next action: Delete five redundant loft fences and matching colliders; clip raised opening rails to supported upper floor, split the southern loft edge around the opening, and leave the physical stair handrails and deck intact. Reinspect actual rendering and both traversal lanes.
+
+Evidence and verification: Remote main source commit 5216f206b8f7677b90fedd213ca748186f66a7be. Full-round 43179085398 passed its packaged TCP, ghost-hearing, BlackpineGrayboxTest, BlackpineStairVisualTest and native screenshot upload steps. Original native screenshot artifact 13926116342 is downloadable at https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43179085398/artifacts/13926116342. Exact-source installer 43179085274 completed SUCCESS and released beckenburg-v0.1.320, targeting 5216f206. Full advisory manifest and physical/installed visual walkdown remain separate.
+
+Older-map obligation: Shared guard clipping and loft-edge renderer require separate checks on House, Farmhouse, Church and other upper-level sites. Do not infer old maps are fixed from Blackpine.
+
+### DEV-270 — Spectral practice camera ignored the current room elevation
+
+**Status:** fixed-scoped; real House cellar playtest verified · **Affected:** Ghost practice gameplay and mission playtests in rooms above or below ground
+
+In House Cellar Storage, the ghost HUD identified the basement but the renderer viewed it from ground-floor eye height.
+
+Cause / uncertainty: The practice camera copied room spawn X and Z while leaving the renderer eye height at its default 1.62 metres.
+
+Fix / next action: Set the camera from the authored spawn in all three axes on each sync, including after drifting rooms.
+
+Evidence and verification: The Windows editor test failed its room-height assertion before the fix. The corrected real renderer passed at -1.38 metres in Cellar Storage, whose authored floor is -3 metres. The desktop suite captures house-playtest.png.
+
+Older-map obligation: The shared practice panel uses the current room spawn on every map. Direct basement evidence covers House.
+
+### DEV-269 — Mission editor retained Castle assets after switching scenes
+
+**Status:** fixed-scoped; real Castle and House palette parity verified · **Affected:** Level Editor scene selection and post-import palette refresh
+
+After opening House the Assets tab still offered Castle materials and the Castle water module.
+
+Cause / uncertainty: The palette was created with the Castle project and refreshed against that project after imports regardless of the active level.
+
+Fix / next action: Reload from the active project on scene open and import. Serve paged assets through the same project adapter.
+
+Evidence and verification: EditorAgentGuiTest failed at aa4b8956 on the Castle-only Materials category in House. The corrected test compares every visible Castle and House row with the native catalog and verifies HTTP asset readback.
+
+Older-map obligation: All mission sites share this selection path. Desktop parity was verified directly for House and Castle.
+
+### DEV-268 — Committed Markdown development logs contain non-UTF8 Windows punctuation bytes
+
+**Status:** fixed-scoped; UTF-8 ledger decode verified · **Affected:** development/quality/DEFECT_LEDGER.md and development/RECOVERY_PLAN_2026-10-25.md
+
+Reading committed Markdown development logs as UTF-8 fails on standalone Windows-1252 dash bytes.
+
+Cause / uncertainty: A prior documentation writer emitted legacy punctuation outside the UTF-8 encoding used by quality tools.
+
+Fix / next action: Normalize invalid legacy bytes to their equivalent Unicode punctuation while preserving all valid Unicode and every issue entry. Keep registry and generated ledger writes explicitly UTF-8.
+
+Evidence and verification: Baseline 62c6a66f contains invalid UTF-8 byte 0x97 in both Markdown files; scoped normalization now decodes as UTF-8. The JSON registry was already valid UTF-8.
+
+Older-map obligation: Documentation encoding repair does not certify map fitness or close existing issues.
+
+### DEV-267 — Hunters stay upright after damage and incapacitation
+
+**Status:** fixed-scoped; reaction assets, real TCP and native OpenGL review pass; installed acceptance pending · **Affected:** Cleric, Observer and Demonologist world sprites, all six hunter seats and hunter camera lenses
+
+No pain pose is selected for real damage and a downed teammate retains their last standing/walking cutout.
+
+Cause / uncertainty: Only locomotion poses exist; the host stops publishing dead bodies, and the hunter-down view accepts only three seat IDs.
+
+Fix / next action: Add four directional pain cutouts and one overhead body texture per class. Broadcast timed pain only after actual host health loss, retain downed BODY/posture snapshots to hunters, render bodies as horizontal floor cards, and share state with video/photo views. Make duplicate down snapshots idempotent; preserve ghost privacy and reset on site/departure.
+
+Evidence and verification: development/quality/evidence/hunter-reactions-2026-11-07/; fifteen validated transparent sprites, real TCP damage/down/privacy checks, seven focused regressions and six real native RTX 5070 pain/body captures. Initial Demonologist backdrop rejected and repaired as a separate alpha-v2 source.
+
+Older-map obligation: Shared hunter rendering applies across maps. Review captures cover the actual House; floor cards use local horizontal support and are not ragdolls or a sloped-terrain corpse mesh.
+
+### DEV-266 — Default player lacks jumping and portable airborne crouch capability
+
+**Status:** fixed-scoped; focused physics/TCP acceptance; installed acceptance pending · **Affected:** Shared solo/co-op investigation controller and portable editor-kit default player motion
+
+The player can only move along continuous support; crouch lowers the body and cannot produce a tucked running jump.
+
+Cause / uncertainty: No independent airborne collision/gravity state or jump intent exists in the shared player package.
+
+Fix / next action: Add portable default jump controller, airborne capsule clearance and raised solid support; wire host clock, client intent and Space controls; reuse crouch art at raised feet and auto-stand after landing when headroom permits.
+
+Evidence and verification: development/quality/evidence/player-jump-2026-11-07/; PlayerJumpTest and PlayerJumpNetworkTest plus focused movement/crouch regressions.
+
+Older-map obligation: Audit stair openings, ledges, low ceilings and prop tops individually on older maps. Castle and downstream runtimes require their own jump adapter adoption; installed GPU acceptance remains open.
+
+### DEV-265 — Routine controls require function keys and solo uses a different equipment/runtime path
+
+**Status:** fixed-scoped; Java compilation and focused real localhost acceptance; installed acceptance pending · **Affected:** Castle movement, solo free play, solo campaign, LAN hunter and ghost controls
+
+Voice, books, props and equipment require F keys; solo uses a separate six-item GamePanel with different interactions and no shared gear drops.
+
+Cause / uncertainty: Duplicated solo and multiplayer view/controller implementations and scattered input prompts.
+
+Fix / next action: Remove GamePanel; launch private local LanHost/LanClient with LanWorldPanel for solo and campaign. Share the conventional keyboard layout and field-action menu, preserve host validation, expand physical drops to carried device types, and update live prompts and docs.
+
+Evidence and verification: development/quality/evidence/controls-audit-2026-11-06/; LocalInvestigationTest and focused network/control/equipment/campaign regressions. Exact scoped source and installed limitations recorded there.
+
+Older-map obligation: Shared controls apply to all selected runtime sites; this does not certify unaudited map geometry or installed release behavior.
+
+### DEV-264 — Rear van departure button cannot be used from front desk
+
+**Status:** fixed-scoped; Java 17 compilation, exact mesh and TCP extraction checks pass; installed acceptance pending · **Affected:** Shared expedition van; House, Farmhouse, School and Hollow Creek targeting; solo and LAN departure
+
+Rear wall control loses its prompt when standing at the front desk; legacy solo button toggles cargo doors without ending the mission.
+
+Cause / uncertainty: Two metre world targeting cap and 2.05 model-unit broad phase truncate the scaled button ray; legacy solo handler only toggles the shutter.
+
+Fix / next action: Allow exact visible button hits across the interior at cargo-deck height, preserve normal interaction reach, and settle legacy solo extraction after collision-safe closure. Retain the concurrent shared-host solo refactor.
+
+Evidence and verification: development/quality/evidence/van-departure-2026-11-06/: isolated and working-source compilation; VanCargoDoorTest, LanVanExtractionIntegrationTest, VanModuleIntegrationTest, VanHumanScaleTest. TCP test walks to front desk, sends aimed INTERACT, checks closed shutter and one RETREATED result.
+
+Older-map obligation: Shared van module covers all placements; physical installed gameplay remains unverified. Four-site targeting and three-site circulation checked; no broader map audit claimed.
+
+### DEV-263 — Crouch and stand snap the local camera between eye heights
+
+**Status:** fixed-scoped; camera math and actual TCP posture tests pass; installed acceptance pending · **Affected:** Castle, solo investigation and LAN hunter camera
+
+Pressing Ctrl abruptly jumps the eye by 0.70m; LAN only renders on the 110ms gameplay timer.
+
+Cause / uncertainty: Viewport eye height is assigned directly from the binary physical posture.
+
+Fix / next action: Add a shared critically damped camera transition, retain independent physical feet for collision/evidence and moving support, and animate LAN camera-only frames at 33ms without extra STEP/actions. Ignore Ctrl key-repeat in Castle and solo; retain host posture authority and reset on site changes.
+
+Evidence and verification: development/quality/evidence/crouch-smoothing-2026-11-04/: CrouchCameraTest, expanded real TCP CrouchNetworkTest, low-ceiling/sprint/feet checks, hunter animation gameplay, Castle interaction and sprite floor regressions.
+
+Older-map obligation: Shared player camera paths cover investigation sites and Castle; physical posture dimensions and movement rules remain unchanged.
+
 ### DEV-276 — Closing Beckenburg leaves hidden GPU worker and Java process alive
 
 **Status:** SOURCE FIX COMMITTED; Java child-process regression and installed Windows GPU exit acceptance pending · **Affected:** Normal desktop Exit, main window X, Castle gate, solo pause Exit, GPU launcher and auxiliary water editor, interactive DEV asset showroom and headless DEV room captures
@@ -248,6 +402,34 @@ Evidence and verification: development/quality/evidence/resident-animation-2026-
 
 Older-map obligation: Shared rendering changes cover visible actors across maps; individual terrain and installed-copy visual acceptance remain separate.
 
+### DEV-254 — Safe areas lack a shared animated energy boundary matching ghost exclusion
+
+**Status:** fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending · **Affected:** Shared van at investigation sites, entire Castle HQ, and settled active protective wards
+
+The investigation van has no recognizable sanctuary haze; the old optional arena cue uses rectangular motes rather than a circular fading dome.
+
+Cause / uncertainty: Protection and visualization use separate room/rectangle rules; normal investigations do not enable the prior arena-only presentation.
+
+Fix / next action: Add a shared circular van dome and whole-Castle sanctuary, animated blue cloud/wisp material with continuous wall-to-crown fading, settled-ward reuse, swept host exclusion, protected spawning/combat, Twins handling and public ghost-view snapshots.
+
+Evidence and verification: development/levels/previews/safe-area-barrier/: actual runtime frames and two 12-frame animations. SafeAreaBarrierTest, SafeAreaHazeTest, LanSafeAreaBarrierTest, existing ghost/counter/Twins/van checks and complete TCP round pass. Actual RTX 5070 OpenGL frames pass. Logs: development/quality/evidence/safe-area-barrier-2026-11-03/.
+
+Older-map obligation: All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched.
+
+### DEV-255 — Ward ground seals remain at world Y zero and appear before landing
+
+**Status:** fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending · **Affected:** Shared van at investigation sites, entire Castle HQ, and settled active protective wards
+
+A thrown or upstairs ward can show its seal at ground-floor height rather than at its actual settled support.
+
+Cause / uncertainty: The renderer hardcodes Y .038 and does not distinguish a landed ward from a flying projectile when drawing ground bars.
+
+Fix / next action: Resolve the settled support once for both seal and haze; keep airborne projectiles visible without advertising sanctuary; place upstairs seals at the authoritative floor height.
+
+Evidence and verification: development/levels/previews/safe-area-barrier/: actual runtime frames and two 12-frame animations. SafeAreaBarrierTest, SafeAreaHazeTest, LanSafeAreaBarrierTest, existing ghost/counter/Twins/van checks and complete TCP round pass. Actual RTX 5070 OpenGL frames pass. Logs: development/quality/evidence/safe-area-barrier-2026-11-03/.
+
+Older-map obligation: All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched.
+
 ### DEV-234 — Castle native bounds reject coherent west annex and cellar construction
 
 **Status:** fixed-scoped authoring/runtime foundation; full Castle geometry and terrain remain unfinished · **Affected:** Castle native geometry, human editor tools, shared agent service, ground support and cell persistence
@@ -462,13 +644,13 @@ Older-map obligation: Inspect brackets, fixture backs and circuit access at ever
 
 **Status:** fixed-scoped · **Affected:** Blackpine mill stair; introduced during DEV-001 fix
 
-BlackpineGrayboxTest failed at ascent step 113 immediately after adding slab collision.
+Exact-source full manifest at 7951f049 failed at stair ascent step 110 (376 passed, 1 failed), despite prior partial stair fixes.
 
-Cause / uncertainty: The swept capsule overlaps the final riser before its feet reach landing height.
+Cause / uncertainty: Authored loft floor void ended at Z31.30; at step 110 the capsule centre reaches Z31.10 and its 0.22m radius enters solid slab while feet remain 0.25m beneath the deck and beyond the permitted terminal contact band.
 
-Fix / next action: Allow only an authored stair-to-slab landing contact within 200mm of the top and at the actual ramp elevation; other slab edges remain opaque/solid.
+Fix / next action: Extend the real visual and physical loft aperture to Z31.60 (10cm beyond ramp end), retain intact deck beyond it, and preserve narrow stair-owned collision exception and railing. Add direct step-110 and bidirectional proof plus native renderer captures.
 
-Evidence and verification: BlackpineGrayboxTest failed before transition correction and passes afterward; swept route test still reaches all 15 zones over 292910 positions.
+Evidence and verification: Exact-source main c2810734 full-round run 43148970756 PASS: 378/378 advisory regressions, zero skipped/failures, real 120-step bidirectional ascent/descent, solid off-stair floor, renderer proof, packaged TCP and installed Windows native executable. Repeat native screenshots in run 43157419417 targeted PASS; independently retrieved and visually reviewed PNG artifact 13916144218 (stair approach, railings, loft opening, overhead landing; scene is very dark). v0.1.319 tag points exactly to 6ce17c0c and includes the geometry correction; installer run 43157419403 SUCCESS. Physical two-Windows-PC player navigation/headphone review remains open; this is a scoped correction only.
 
 Older-map obligation: Every structural-depth retrofit must recheck both stair directions and landing transitions.
 
@@ -4714,6 +4896,62 @@ Evidence and verification: house-migration-rejected-live-surface-name.log; Sourc
 
 Older-map obligation: No source/live-screen runtime failure inferred from the rejected test fixture.
 
+### DEV-345 — House CLI recovery reads corrupt primary architecture before restoring valid backup
+
+**Status:** SCOPED CORRECTION PASS; actual failing CLI script and expanded backup matrix pass locally; corrected-source native CI pending · **Affected:** PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption
+
+Windows native migration/GUI checks pass, but corrupt-start CLI recovery fails because LevelPlans.buildSource selects architecture by decoding the corrupt primary before the previous document is restored.
+
+Cause / uncertainty: New source selection preceded existing primary-corruption recovery.
+
+Fix / next action: Use a fixed legacy parse fallback for House bootstrap and select/validate architectural authority from the backup being restored. Preserve previous identity/future metadata checks and validate required rebuilt attachments before replacement. Added actual versionless/rebuilt byte-exact bootstrap plus foreign/future/detached-service refusal tests. Rerun the exact previously failing CLI script.
+
+Evidence and verification: development/levels/rebuild/verification/house-native-recovery-2026-11-07/; native-42424140546-failed.log; LevelAuthoringRecoveryTest; actual verify_editor_agent_cli.py PASS
+
+Older-map obligation: Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps.
+
+### DEV-350 — Live-clock gait acceptance skips stride under cold render delays
+
+**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
+
+Full42426485514 reports364/1/0/365; cleric renders IDLE/WALK_A but no WALK_B.
+
+Cause / uncertainty: Host advances during seconds-long renderer/capture work; tracker intentionally resets gait after missing a second of observations.
+
+Fix / next action: Quiesce scheduler, invoke every actual host tick and await normal network body/posture batches. Retain all original three-role movement/idle/Ctrl/reset/departure assertions and deliberately delay capture1.1seconds. Added stale-gap/reset/A-B recovery unit controls.
+
+Evidence and verification: development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; full-42426485514.log; hunter-gait-recovery-gameplay.log; hunter-gait-recovery-unit.log
+
+Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
+
+### DEV-351 — Gait fixture mistakes invalid zero-vector STEP for a stop command
+
+**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
+
+Controlled-clock fixture waits forever for a posture update after STEP(0,0).
+
+Cause / uncertainty: Motion vectors must be nonzero; the old live-clock test accidentally relied on unrelated periodic snapshots after rejection.
+
+Fix / next action: Stop sending movement, advance real ticks and await an actual stationary world snapshot; do not relax motion validation.
+
+Evidence and verification: development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-zero-step-fixture.log; hunter-gait-recovery-gameplay.log
+
+Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
+
+### DEV-352 — Controlled gait fixture reads STATE before completed body snapshot
+
+**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
+
+First controlled-clock stationary retry still renders an older moving body.
+
+Cause / uncertainty: Host periodic STATE precedes its world body/posture batch.
+
+Fix / next action: Wait through the actual final hunter posture row of that tick before rendering. No forged body or panel clock.
+
+Evidence and verification: development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-state-before-body-fixture.log; hunter-gait-recovery-gameplay.log
+
+Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
+
 ### DEV-344 — House authored train encounter has no runtime implementation
 
 **Status:** CORE/SOLO/REAL4TCP PASS LOCALLY; remote encounter and subjective audio/whole-location acceptance pending · **Affected:** House first-principles story/atmosphere stage
@@ -4727,20 +4965,6 @@ Fix / next action: Add an original once-per-round supported wooden-train turn wh
 Evidence and verification: HouseEncounterTest; HouseEncounterSessionTest; HouseEncounterNetworkTest; actual before/after captures and original windup WAV; house-encounter-2026-11-07 proof directory
 
 Older-map obligation: Each location needs its own authored encounter, predicates, host/privacy/evidence/reset and actual visual/audio review.
-
-### DEV-345 — House CLI recovery reads corrupt primary architecture before restoring valid backup
-
-**Status:** CORRECTED SOURCE NATIVE CI PASS 42426323930 at c93d141d; full365 run42426485514 still observed in progress · **Affected:** PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption
-
-Windows native migration/GUI checks pass, but corrupt-start CLI recovery fails because LevelPlans.buildSource selects architecture by decoding the corrupt primary before the previous document is restored.
-
-Cause / uncertainty: New source selection preceded existing primary-corruption recovery.
-
-Fix / next action: Use a fixed legacy parse fallback for House bootstrap and select/validate architectural authority from the backup being restored. Preserve previous identity/future metadata checks and validate required rebuilt attachments before replacement. Added actual versionless/rebuilt byte-exact bootstrap plus foreign/future/detached-service refusal tests. Rerun the exact previously failing CLI script.
-
-Evidence and verification: development/levels/rebuild/verification/house-native-recovery-2026-11-07/; native-42424140546-failed.log; LevelAuthoringRecoveryTest; actual verify_editor_agent_cli.py PASS; corrected native-42426323930.log actual complete native/CLI PASS
-
-Older-map obligation: Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps.
 
 ### DEV-346 — Encounter test compile omitted existing helper classes and used nonexistent resume API
 
@@ -4798,49 +5022,7 @@ Evidence and verification: development/levels/rebuild/verification/house-encount
 
 Older-map obligation: No older-map runtime defect or acceptance inferred from this fixture correction.
 
-### DEV-350 — Live-clock gait acceptance skips stride under cold render delays
-
-**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
-
-Full42426485514 reports364/1/0/365; cleric renders IDLE/WALK_A but no WALK_B.
-
-Cause / uncertainty: Host advances during seconds-long renderer/capture work; tracker intentionally resets gait after missing a second of observations.
-
-Fix / next action: Quiesce scheduler, invoke every actual host tick and await normal network body/posture batches. Retain all original three-role movement/idle/Ctrl/reset/departure assertions and deliberately delay capture1.1seconds. Added stale-gap/reset/A-B recovery unit controls.
-
-Evidence and verification: development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; full-42426485514.log; hunter-gait-recovery-gameplay.log; hunter-gait-recovery-unit.log
-
-Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
-
-### DEV-351 — Gait fixture mistakes invalid zero-vector STEP for a stop command
-
-**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
-
-Controlled-clock fixture waits forever for a posture update after STEP(0,0).
-
-Cause / uncertainty: Motion vectors must be nonzero; the old live-clock test accidentally relied on unrelated periodic snapshots after rejection.
-
-Fix / next action: Stop sending movement, advance real ticks and await an actual stationary world snapshot; do not relax motion validation.
-
-Evidence and verification: development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-zero-step-fixture.log; hunter-gait-recovery-gameplay.log
-
-Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
-
-### DEV-352 — Controlled gait fixture reads STATE before completed body snapshot
-
-**Status:** SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending · **Affected:** LanHunterAnimationGameplayTest and parent recovery acceptance
-
-First controlled-clock stationary retry still renders an older moving body.
-
-Cause / uncertainty: Host periodic STATE precedes its world body/posture batch.
-
-Fix / next action: Wait through the actual final hunter posture row of that tick before rendering. No forged body or panel clock.
-
-Evidence and verification: development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-state-before-body-fixture.log; hunter-gait-recovery-gameplay.log
-
-Older-map obligation: No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged.
-
-### DEV-353 — Fresh House promotion exposes editor fixtures that mutate the first attached assembly
+### DEV-356 — Fresh House promotion exposes editor fixtures that mutate the first attached assembly
 
 **Status:** SCOPED FIXTURE CORRECTION PASS; seven focused checks and actual256MB GUI/CLI PASS; remote candidate acceptance pending · **Affected:** Fresh-default candidate authoring identity/recovery/session/service and native CLI/GUI fixtures
 
@@ -4853,6 +5035,2344 @@ Fix / next action: Keep attachment protections. Select independent furniture by 
 Evidence and verification: development/levels/rebuild/verification/house-default-2026-11-07/; rejected/*.log; final seven focused test logs; actual house-default-gui.log and house-default-cli.log; both fresh runtime captures
 
 Older-map obligation: No older-map authoring, whole-location or hardware acceptance inferred; audit explicit architecture/attachment fixtures individually.
+
+### DEV-357 — Remaining native rough shells omit enclosed ceilings and reserve only top-end stair holes
+
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
+
+Earlier shell recipe adds walls/floors but no top enclosure; elevated links reserve a small endpoint hole rather than the full flight.
+
+Cause / uncertainty: Rough-only geometry was not yet engineered for enclosed structures.
+
+Fix / next action: Add closed160mm caps/undersides, share actual upper floor undersides, cut whole-flight openings and build measured treads where run permits.25native exports pass;8links/runtime/roof-form gates remain.
+
+Evidence and verification: development/levels/rebuild/structures/; development/levels/rebuild/verification/roster-structure-2026-11-07/; 25packet implementation.json and verification.json; final Blender log; all50export views
+
+Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
+
+### DEV-358 — Planning text and diagram stand-ins enter structural GLB exports
+
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
+
+Native labels can become large tessellated meshes; placeholder van and ritual diagram solids also enter a full-scene export.
+
+Cause / uncertainty: Unfiltered scene export treated editable planning annotations as construction geometry.
+
+Fix / next action: Keep editable native labels/marks, export structural meshes only and exclude diagram stand-ins. Actual Farmhouse export is5208triangles; shared pass131219across25. Canonical runtime van remains unchanged.
+
+Evidence and verification: development/levels/rebuild/structures/; development/levels/rebuild/verification/roster-structure-2026-11-07/; build_blockouts.py selection; native/GLB hashes; per-packet triangle and mesh counts
+
+Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
+
+### DEV-356 — Search-envelope annotations leave context doors and exterior service mouths open
+
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
+
+Native rough recipe opens SEALED_NO_ROUTE links. First repaired Prison still fails exported boundary L107 between entry and east-service.
+
+Cause / uncertainty: Annotations were not physical seals; exterior sectors have no building wall to fill automatically.
+
+Fix / next action: Exclude sealed openings/support routes, retain solid walls/caps and build full shared exterior-mouth infill. All192authored fixed boundary checks pass. Preserve failed Academy and Prison exports. Actual runtime terrain/enclosure returns and bypass checks remain open.
+
+Evidence and verification: development/levels/rebuild/structures/; development/levels/rebuild/verification/roster-structure-2026-11-07/; rejected/structure-open-context-v1/; roster-structure-seals.log actual Prison failure; final native boundary arrays
+
+Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
+
+### DEV-357 — Reusing an intermediate circular deck core can leave a top cap open
+
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
+
+Source review found shaped floor core fallback applied to ceiling copies, also duplicating intermediate upper-floor surfaces.
+
+Cause / uncertainty: The floor ring helper was reused without distinguishing the top enclosure from an intermediate stair/maintenance core.
+
+Fix / next action: Separate shaped structural decks, suppress caps already covered by the next floor, use a closed top disk and apply real apertures. Reimported lighthouse caps/decks and all final closed-solid/depth/ray checks pass; actual engine spiral/headroom/sky audit remains.
+
+Evidence and verification: development/levels/rebuild/structures/; development/levels/rebuild/verification/roster-structure-2026-11-07/; structural_pass.shaped_deck; WLD14 final exported source and reimported views; final Blender log
+
+Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
+
+### DEV-358 — Native batch review assumes Pillow is installed in the active Python
+
+**Status:** SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open · **Affected:** Remaining25structural candidates and shared rough/native export workflow
+
+Review command exits with ModuleNotFoundError before producing contact sheets.
+
+Cause / uncertainty: The environment lacks the image dependency used by the new review script.
+
+Fix / next action: Install dependency only under workspace build/structure-review-python, add its lookup and document reproduction. Review and --check pass; all7sheets manually viewed.
+
+Evidence and verification: development/levels/rebuild/structures/; development/levels/rebuild/verification/roster-structure-2026-11-07/; roster-structure-review-missing-pillow.log; dependency log; final review PASS
+
+Older-map obligation: Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks.
+
+### DEV-359 — Eight remote elevation links have zero or insufficient physical stair run
+
+**Status:** NATIVE ROUTE REDESIGN CHECKPOINT; capsule movement and runtime integration remain open · **Affected:** WLD-03 L13; WLD-04 L13/L14 plus new upper landing link L14B; WLD-05 L15; WLD-10 L16/L19; WLD-12 L16; WLD-15 route14
+
+Eight reservations cannot form 180mm risers / 240mm treads, including zero-run basement/tower links.
+
+Cause / uncertainty: Schematic centre lines were retained without a buildable flight or complete supporting storey.
+
+Fix / next action: Author six revised coordinate sources with measurable flights, separated lookout lanes/landings, continuous cave/tower volumes and explicit constructed railway/ship decks. Preserve original layouts and scenes. Verify actual reimported solids and tread poses. Do not unlock from native results.
+
+Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/; six revised rough-layout.json; structures/<site>/physics-contract.json and structure-physics.hcs2; tools/audit_roster_routes.py
+
+Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
+
+### DEV-360 — Level route reservation strips refill stair openings and obstruct heads
+
+**Status:** NATIVE SPINE OBSTRUCTIONS CORRECTED; swept capsule acceptance OPEN · **Affected:** Shared structural generator; reproduced WLD-03, WLD-04, WLD-05 and WLD-10; all other packets require individual audits
+
+Six-site headless native query found 45 obstructed tread-centre spine rays despite earlier floor-hole construction.
+
+Cause / uncertainty: Separate level connector strips were exported across the voids already reserved in floor slabs. Monastery L21 also crossed under the north catacomb stair.
+
+Fix / next action: Apply shared stair apertures to horizontal connector supports; move monastery west stair into its own shaft with source-authored level approach. All506 actual tread centres now have support and clear 0.3â€“1.8m spine rays. Retain rejected probe rows and GLB hashes. Full capsule traversal is not established.
+
+Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/; six revised rough-layout.json; structures/<site>/physics-contract.json and structure-physics.hcs2; tools/audit_roster_routes.py
+
+Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
+
+### DEV-361 — Native stepped candidates fail current body and traversability queries
+
+**Status:** PARTIAL: explicit stair movement implemented; source landings and runtime integration OPEN · **Affected:** Six revised remote candidates and potentially other new tread-based sites; existing mature maps not certified
+
+506 supported tread centres with clear spine rays still include capsule/body and four-footprint support failures; monastery has zero traversable tread centres in the current kernel.
+
+Cause / uncertainty: Authored treads, body clearance, edges and the kernel narrow neighbour-height allowance need component-specific diagnosis. Clear centre rays cannot establish a full body sweep.
+
+Fix / next action: Explicit step handling retained. Authored landing repairs now yield182/221vertical segments and44/84complete links passing both directions; all intermediate flat landings included. Continuous exact-endpoint College, Mansion and five-turn lighthouse chains PASS; four other chains fail.39vertical segments remain physical blockers. No runtime integration/guard/terrain acceptance inferred.
+
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/; prior stair checkpoint retains earlier failures
+
+Older-map obligation: Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance.
+
+### DEV-362 — Expanded stair apertures create collapsed ceiling sliver cells
+
+**Status:** NATIVE REPAIR VERIFIED across25exports; runtime acceptance remains open · **Affected:** WLD-14 keeper foyer ceiling; shared rectangular slab partitioner
+
+All-roster rebuild rejects reimported Ceiling cap foyer.010 as not closed after expanded shaft openings.
+
+Cause / uncertainty: Nearly coincident partition planes from different stair reservations form tiny cells that collapse under exported float/weld precision. Distant nonintersecting holes also unnecessarily subdivide slabs.
+
+Fix / next action: Preserve failed GLB and failure record. Filter cuts that do not intersect the slab and merge construction planes within0.1mm while retaining exact outer boundaries. Re-export lighthouse pilot, then regenerate coherent25-packet batch and retain closed-solid assertions. Circular aperture cleanup also welds/dissolves only sub0.1mm Boolean noise and recalculates normals. Final25 independent reimports pass6562closed solids and1528measured depth parts.
+
+Evidence and verification: development/levels/rebuild/rejected/route-shaft-sliver-wld14/; development/levels/blockouts/build_blockouts.py slab; roster-routes-2026-11-07 evidence
+
+Older-map obligation: Check every slab family after aperture changes. No unaudited source or circular Boolean mesh inherits acceptance from this rectangular-cell repair.
+
+### DEV-363 — Roster collision probe exposes crossing stairs and terrain covering authored flights
+
+**Status:** NATIVE HEAD-OBSTRUCTION REPAIRS VERIFIED across1720treads; full capsule/location acceptance OPEN · **Affected:** College L84; Mansion L59/L60; WLD-09 L14/L18; WLD-14 route14/20; WLD-18 route07/08/13/18; mortuary L14/L15
+
+All25 native collision exports load and1720tread centres have support, but90 head-height spine rays are obstructed across these6sites.
+
+Cause / uncertainty: Actual exported triangles identify crossing stair flights, a folded-back landing, gallery/exhibit walls and uncut proposal terrain over underground approaches. Native closed-solid checks cannot establish route clearance.
+
+Fix / next action: Retain exact per-pose overhead component names and hashes. Next separate crossing stair lanes/landings, repair wall passage coordinates and implement actual persisted terrain holes before physical terrain acceptance. Recheck full capsule routes, neighbouring routes and optical/solid negatives. Do not delete terrain visually or weaken collision to pass. Separated five-source revision removes48of90spine hits; College/Mansion/Hydroelectric386/386supported with clear spine rays. Remaining42hits all identify terrain triangles in Lighthouse/Silo/Mortuary. Evidence: verification/roster-separated-2026-11-07/. Real saved editor hole-punching in Lighthouse/Silo/Mortuary removes the last42terrain hits. All1720tread centres now supported and spine-clear. Actual GLB terrain matches saved native terrain triangles/flags; terrain finish and full actor movement remain open. Evidence: verification/roster-editor-terrain-2026-11-07/.
+
+Evidence and verification: development/levels/rebuild/verification/roster-routes-2026-11-07/all25/tread-probes.tsv and route-probes.json; structures/<site>/physics-contract.json
+
+Older-map obligation: Audit retained Castle/House/Blackpine/Hollow Creek separately. Zero-tread WLD-16 is not a route pass. No map is unlocked by this source-wide read-only probe.
+
+### DEV-364 — Hydroelectric return stair still needs authored shaft enclosure and foundations
+
+**Status:** OPEN CONSTRUCTION DETAIL; native candidate only · **Affected:** WLD-09 east return stair L18 and its connection to the east-stair volume
+
+Revised return clears other flights but the native overview shows the intermediate/upper stairs beyond the original east-stair shell; final supporting foundations/enclosure are absent.
+
+Cause / uncertainty: Original shell contains only the upper landing storey; separated return needs its own full-height structural program rather than intersecting existing flight masses.
+
+Fix / next action: Preserve revised clear circulation coordinates, author the shared shaft/landing/storey surfaces and properly elevated wall apertures, then foundation/terrain support and guards. Keep candidate locked and rerun neighbouring routes after those additions.
+
+Evidence and verification: development/levels/rebuild/structures/wld-09/; captures/structure-batch/roster-structure-sheet-04.png; verification/roster-separated-2026-11-07/
+
+Older-map obligation: Audit full stair load paths and room/shaft volume parity individually across remote and retained maps; solid tread boxes are not final structural engineering or terrain support acceptance.
+
+### DEV-365 — Offline terrain sampler resolves seed inputs using newly created working paths and can swallow Blender errors
+
+**Status:** FIXED IN AUTHORING TOOL; failed-sampling atomicity verified · **Affected:** Saved editor terrain reproduction for WLD-07-MORTUARY and shared offline terrain wrapper
+
+After creating a rebuilt annex source, sampling an earlier seed ref chooses that new path although it did not exist in the seed commit. Blender exits zero on an uncaught Python exception without --python-exit-code.
+
+Cause / uncertainty: Path selection consulted current filesystem rather than immutable seed tree, and the wrapper relied on Blender default exit semantics.
+
+Fix / next action: Resolve authoritative layout candidates inside the seed tree with git cat-file; pass --python-exit-code1 before sampling. Successful reproduction binds all three saved worlds. Invalid-site control exits nonzero and leaves27authoritative world files unchanged.
+
+Evidence and verification: verification/roster-editor-terrain-2026-11-07/terrain-rejected-seed-layout.log, failure-atomicity.json and fixed reproduction log; tools/sample_roster_terrain.py and build_roster_editor_terrain.py
+
+Older-map obligation: Use explicit immutable source refs and nonzero Python failure exits in other Blender authoring pipelines. Do not infer a sampler pass from a process returning normally.
+
+### DEV-366 — Saved terrain seeds retain rough proposal perimeters and unfinished aperture rims
+
+**Status:** OPEN DESQUAREIFY/CONSTRUCTION FINISH GATE · **Affected:** Lighthouse, Silo and Mortuary saved native terrain candidates; individual audits remain for all other maps
+
+Native inspection retains broadly rectangular extents; lighthouse cliff/water fringe shows raw slivers. Newly punched building/stair/shaft cuts need rims, retaining walls, guards and foundation finish.
+
+Cause / uncertainty: The saved-world bridge deliberately starts from existing rough terrain sources; correct persistent hole topology is not final geographic/architectural design.
+
+Fix / next action: Overall terrain-first audit now records18remaining native candidates without continuous terrain,3proposal landforms and4saved punched sources needing macro review. Settle landform/height layers, slopes/drainage/foundations and reshuffle blockouts as authorized before further isolated path repairs. Finish edges/rims/guards/canonical van/desquareify per site; retained4mature maps require individual audits.
+
+Evidence and verification: development/levels/rebuild/terrain-overall-pass/; verification/roster-basements-2026-11-07/; earlier saved-editor terrain evidence retained
+
+Older-map obligation: Audit every terrain footprint individually. Native hole success does not certify prior ground shapes, source padding, model support or boundary containment.
+
+### DEV-367 — Asset discovery overlooks staged site kits and treats a small runtime sample as the working library
+
+**Status:** CANONICAL DISCOVERY POINTER AND INDEX IMPLEMENTED; named chat pack imports remain pending · **Affected:** Map rebuild model selection, staged roughs/refinements, source-library masters and source-chat artifact discovery
+
+Initial furnishing preparation inspected24runtime furniture models without consulting the298map-specific roughs,15refinements, source-library masters or the owner-identified model conversations.
+
+Cause / uncertainty: No mandatory root-level inventory pointer connected the separate staged catalogs, masters, runtime set and conversation sources.
+
+Fix / next action: Add ASSET_LIBRARY.md and AGENTS/README lookup rule. Canonical index scans every tracked/unignored GLB, records paths/stages/map assignments/hashes and distinguishes aliases/map/review assemblies. Add query/site lookup, regeneration/staleness gate and313staged-model bounds. Rough assets are permitted for blocking/budget/placement now, refinement later; do not invent duplicate replacements. Three exact named chat references remain recorded, with history rate-limited and artifact import pending.
+
+Evidence and verification: ASSET_LIBRARY.md; development/assets/asset-library-index.json; tools/index_staged_map_models.py; development/levels/rebuild/furnishings/; native staged-source inspection and runtime sample images
+
+Older-map obligation: Reconcile every requested missing/new prop against this index and its site kits before creating a replacement. Imported chat packs must preserve provenance and update this pointer; no automatic quality or map acceptance from indexing.
+
+### DEV-368 — Furnishing export guard reads deleted Blender objects after independent reset
+
+**Status:** FIXED; all25final exports independently reimported · **Affected:** Shared staged-model furnishing generator
+
+First pilot aborts in the hidden-cache export guard with StructRNA Object has been removed.
+
+Cause / uncertainty: The guard retained Blender objects across read_factory_settings instead of storing their count.
+
+Fix / next action: Capture the structural mesh count before reset; compare imported unassigned meshes against that scalar. All124final source instances have independent bounds/UV and no hidden source-cache leak.
+
+Evidence and verification: development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/; furnishings/<site>/placements.json; room-programs.json; actual export captures
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
+
+### DEV-369 — Furnishing fit double-counts route buffers and overextends endpoint clearance
+
+**Status:** FIXED IN ROUGH ALLOCATION; source widths preserved · **Affected:** School office/changing rooms and shared allocation reservation geometry
+
+Valid small-room furniture allocations are rejected despite preserving the authored clear pedestrian width.
+
+Cause / uncertainty: The gate added an actor buffer to already clear route widths, then expanded longitudinal endpoints by the full corridor half-width.
+
+Fix / next action: Reserve the full authored lateral width,0.3m endpoint extension and0.12m prop separation. Use exact polygon/AABB separation for diagonal corridors. Validate the actual1.8m/.22m kernel before/after; no body/sweep regressions remain.
+
+Evidence and verification: development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/; furnishings/<site>/placements.json; room-programs.json; actual export captures
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
+
+### DEV-370 — Props can obstruct physical routes that cross rooms without naming those rooms
+
+**Status:** FIXED IN ROUGH ALLOCATION; zero new qualified route blocks · **Affected:** Asylum treatment, Church records, College cafe, Farmhouse stall and shared route reservation workflow
+
+Actual composite native physics finds46new body/support blocks and53new failed baseline-qualified sweeps in the first124-instance batch.
+
+Cause / uncertainty: The allocation gate reserved only links whose named endpoints included the room, missing routes physically passing through other rooms. Farm loading route L22 itself crossed stall A.
+
+Fix / next action: Reserve every physical link segment at the relevant height using polygon intersection, reposition props and reroute the2.4m farm loading approach around the stall while retaining its original barn threshold. Final109506samples preserve73058baseline-valid poses and68167baseline-valid sweeps with zero new failures. Preserve rejected rows and placements.
+
+Evidence and verification: development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/; furnishings/<site>/placements.json; room-programs.json; actual export captures
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
+
+### DEV-371 — Many authored flat route samples fail baseline native support or body checks
+
+**Status:** PARTIAL; path winding corrected,9511current baseline-invalid poses remain · **Affected:** 25remaining native map candidates; per-site baseline-invalid counts in route-regressions.json
+
+Of109506flat-route centre/side samples,36448are already unsupported or body-blocked before furnishing. These are not valid walkable samples.
+
+Cause / uncertainty: Native proposals still include schematic connectors, terrain/foundation omissions, incomplete portal/ownership integration and physically conflicting routes; diagnosis is per source rather than inferred from closed solids.
+
+Fix / next action: Current110409flat samples contain100898valid/9511invalid poses; both revision and furnishing gates have zero new qualified blocks. Corrected876inward walking tops, but remaining source support/wall/terrain conditions require terrain-first whole-site review. Preserve initial36448/109506failed evidence and current exact rows.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/; prior roster-prop-allocation-2026-11-07/; terrain-overall-pass/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/model/route audits. First spatial allocation does not certify complete model quality, capacity, services, native collision/navigation or map availability.
+
+### DEV-372 — Asset index regeneration encounters Windows invalid-argument error on direct overwrite
+
+**Status:** ATOMIC PUBLICATION IMPLEMENTED; regeneration and stale check PASS, exact OS cause unconfirmed · **Affected:** Canonical development/assets/asset-library-index.json and generated root pointer
+
+One direct Path.write_bytes overwrite returned OSError errno22; the prior readable index remained stale until successful regeneration.
+
+Cause / uncertainty: Direct canonical-file overwrite failed on Windows; the tool output does not establish which OS reader or filesystem condition caused it.
+
+Fix / next action: Write a temporary sibling, close it and atomically replace the canonical file/pointer. Regeneration and --check pass with1692current GLBs. Preserve the old canonical artifact if replacement fails.
+
+Evidence and verification: tools/index_staged_map_models.py write_atomic; current asset-library-index.json and furnishing index-verification.json; observed OSError errno22 during direct overwrite in this authoring session
+
+Older-map obligation: Publish generated source indexes atomically and retain authoritative prior bytes on failure. This changes no asset or runtime geometry.
+
+### DEV-373 — Rectangular stair treads overlap inside curved lighthouse flights and leave outside gaps
+
+**Status:** CURVED JOINS AND FULL TOWER CHAIN FIXED IN NATIVE CANDIDATE; guards/runtime OPEN · **Affected:** WLD-14 native stair candidate and shared opt-in native movement contract
+
+140 curved lighthouse tread solids have overlapping inner corners and visible outer gaps; whole-flight movement fails.
+
+Cause / uncertainty: Each chord was generated as an independently rotated rectangle rather than a ribbon with shared boundaries.
+
+Fix / next action: Shared cyclic miter boundaries join consecutive stair revolutions. Tangent/radial final landing connects lantern floor. All140treads retained at12triangles each; five-turn ground-to-lantern chain now passes actual continuous forward/reverse native sweeps without floor resets. Guards and runtime/story/room integration still open.
+
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/; previous rejected rectangle/first miter views retained
+
+Older-map obligation: All other locations and retained Castle/House/Blackpine/Hollow Creek require individual route and join audits. No inferred fix or playable unlock.
+
+### DEV-374 — Float32 shared stair joins can report unsupported micrometre seams
+
+**Status:** BOUNDED OPT-IN JOIN QUERY FIXED; analytic negative controls PASS · **Affected:** WLD-14 native stair candidate and shared opt-in native movement contract
+
+Mitered treads can disagree by several micrometres after separate GLB object transforms; exact shared path endpoints report START_UNSUPPORTED.
+
+Cause / uncertainty: Independent float32 transformed vertices cross an overly strict barycentric edge tolerance.
+
+Fix / next action: Permit at most10micrometres of world-space edge allowance on explicitly named stair components only. 6micrometre seam passes,0.1mm gap and absent tread remain unsupported. Ordinary floor and unannotated-reader tolerances are unchanged; HCS triangles and optical/body geometry remain exact.
+
+Evidence and verification: development/levels/rebuild/verification/roster-stair-movement-2026-11-07/
+
+Older-map obligation: All other locations and retained Castle/House/Blackpine/Hollow Creek require individual route and join audits. No inferred fix or playable unlock.
+
+### DEV-375 — Turn landings overhang the incoming stair flight and block standing movement
+
+**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open · **Affected:** COLLEGE, MANSION, WLD-14 and shared full-source route audit
+
+CollegeL84 and MansionL59/L60 fail ascent against the landing slab, and descent lacks foot support.
+
+Cause / uncertainty: The sideways landing full width extends behind the flight endpoint over its final treads; schematic endpoint joins are not a usable turn.
+
+Fix / next action: Set back each flight endpoint0.75m and author a straight landing before the sideways turn, preserving original clear widths/rooms. All complete links and actual connected College basement/upper and Mansion basement/service/upper chains pass native sweeps both directions. Three native blend/GLB/HCS2 composites regenerated; source rough placements unchanged.
+
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek and every remaining site require individual physical route/landing/guard/owner audits. These checks do not certify unevaluated maps, services, networking or finished art.
+
+### DEV-376 — Cyclic stair end boundaries and missing final landing interrupt lighthouse ascent
+
+**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open · **Affected:** COLLEGE, MANSION, WLD-14 and shared full-source route audit
+
+Nine individual lighthouse endpoint segments and allfive full spiral links remain blocked after the first mitered-tread revision.
+
+Cause / uncertainty: First/last offsets use separate tangent normals, leaving a cyclic gap; final upper floor lacks an authored tangent/radial landing.
+
+Fix / next action: Use shared averaged cyclic end normals and append actual tangent/radial lantern landing coordinates. Allfive revolutions and the connected142-segment chain pass1.8m/.22m production movement forward/reverse. Exported support/solids checked; no hidden ramp or collision waiver added.
+
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek and every remaining site require individual physical route/landing/guard/owner audits. These checks do not certify unevaluated maps, services, networking or finished art.
+
+### DEV-377 — Flight-only chain audit omits flat landing segments and resets at link boundaries
+
+**Status:** SCOPED NATIVE REPAIR VERIFIED; full map/runtime acceptance remains open · **Affected:** All25candidate route manifests and connected stair checks
+
+Previous82contiguous vertical chains do not prove intermediate flat landings or travel across an entire multi-link stair.
+
+Cause / uncertainty: The input manifest filtered level segments before joining, and separate link calls initialized a fresh feet pose.
+
+Fix / next action: Audit all84active vertically changing source links with every intermediate flat segment; also carry actual feet through seven maximal unique exact-endpoint chains.44links/three chains pass,40links/four chains remain failing and recorded. Failed source routes are not omitted or promoted.
+
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek and every remaining site require individual physical route/landing/guard/owner audits. These checks do not certify unevaluated maps, services, networking or finished art.
+
+### DEV-378 — Regenerated native scaffold next-step notes retain superseded sloped-mass instructions
+
+**Status:** CURRENT25HANDOFFS UPDATED; generator carry-forward remains OPEN · **Affected:** COLLEGE, MANSION, WLD-14 structure NEXT.md and future scaffold regenerations
+
+Generated notes can still say that tower stairs are only sloped masses after actual140treads and connected native sweeps have been delivered.
+
+Cause / uncertainty: The scaffold generator copies historical source refine bullets without reconciling later native implementation evidence.
+
+Fix / next action: All25current NEXT/workflow notes now reflect measured source results and owner terrain-first priority. Shared scaffold still copies historical refine notes on later regeneration; fix during the terrain-generator pass without treating them as runtime evidence.
+
+Evidence and verification: development/levels/rebuild/verification/roster-landings-2026-11-07/; structures/{college,mansion,wld-14}/NEXT.md; previous fe7f4972 notes
+
+Older-map obligation: Inspect each older map handoff against its actual current source and evidence; a regenerated planning note is not proof of a remaining runtime defect or of completed work.
+
+### DEV-379 — Legacy advisory stair run/riser fields lag the actual authored coordinate revision
+
+**Status:** KNOWN3DIMENSION HINTS CORRECTED; rest-of-roster metadata audit OPEN · **Affected:** COLLEGE L84, MANSION L59/L60 and retrospective roster stair dimension metadata
+
+Changed turn-landing paths retain inherited run_m/risers values; CollegeL84 advertises4.8m/18risers while its current flight coordinates span4.65m and actual native treads number17.
+
+Cause / uncertainty: The authored geometry builder derives steps from point coordinates, while inherited schematic dimension hints are independent fields and were not normalized during path revision.
+
+Fix / next action: Coordinated native regeneration normalizes CollegeL84/MansionL59/L60run/riser hints to their actual point geometry and exported tread counts. Preserve exact source geometry as authority; other inherited metadata still requires individual review.
+
+Evidence and verification: development/levels/rebuild/{college,mansion}/rough-layout.json; structures/{college,mansion}/physics-contract.json; verification/roster-landings-2026-11-07/
+
+Older-map obligation: Compare each older source metadata row to its actual built geometry before consuming it for runtime/AI/service authoring. No global metadata correctness inferred from tested native paths.
+
+### DEV-380 — Terrain sampling uses immutable seed-layout cuts instead of current authored basement entries
+
+**Status:** CURRENT CUT DATA IMPLEMENTED; selected worlds verified · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Saved terrain could retain requests from an earlier layout after stair/foundation revisions.
+
+Cause / uncertainty: The sampler used the seed layout for both stable height sampling and mutable foundation/stair cut requests.
+
+Fix / next action: Keep seed mesh/heights/coastline immutable, take current zone/link cuts separately and fingerprint the cut definition without the derived world binding. Both cemetery worlds persist/reopen current punches; older world cut definitions require individual audits.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-381 — Base cemetery lacks a terrain source and profile for saved-world integration
+
+**Status:** SHARED CEMETERY SOURCE AUTHORED; final terrain acceptance OPEN · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Base cemetery terrain sampling fails with no ground mesh; an attached saved world alone is not imported by the scaffold without a terrain contract.
+
+Cause / uncertainty: The older base packet omitted terrain while its mortuary annex already carried a same-world cemetery landform.
+
+Fix / next action: Explicitly sample the annex terrain at its immutable source SHA, cropped to base bounds. All13original cemetery zone coordinates match at that seed. Add the actual cemetery profile, import saved physical triangles, never silently substitute a flat or unrelated map. Invalid donor rejects and preserves18world files.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-382 — Cemetery ossuary stairs cross vestibule walls before reaching the basement floor
+
+**Status:** NATIVE BASEMENT LINKS AND DECLARED CIRCULATION LOOPS VERIFIED; runtime OPEN · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Both cemetery/annex routes hit west/east vestibule walls aroundY-0.9, while destination floor isY-3.
+
+Cause / uncertainty: A single schematic diagonal runs through the partition midway through the descent.
+
+Fix / next action: Allfour basement links pass continuous ascent/descent. Both14-segment source circulation loops include approaches, descent, passage, ascent and surface return; forward/reverse PASS in structural and furnished variants.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-383 — Native collision exporter overwrites its previous payload before terrain validation rejects a candidate
+
+**Status:** PREVALIDATE AND STAGED FILE REPLACEMENT IMPLEMENTED; negative controls PASS · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Rejected missing-terrain candidate changes the old HCS2 while leaving its old contract behind.
+
+Cause / uncertainty: Authoritative binary write precedes exact saved-terrain triangle/flag validation.
+
+Fix / next action: Build bytes in memory, finish geometry/fidelity assertions, stage binary/metadata and replace files only afterward. Actual legacy66942b34 negative control destroys the previous pair; corrected exporter rejects the same source and preserves both prior byte hashes. This is prevalidation/per-file replacement, not a crash-atomic two-file transaction.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-384 — Moving cemetery stair openings invalidates old approach endpoints and room-centre anchors
+
+**Status:** APPROACHES AND AUTHORITATIVE STANDING RESERVATIONS VERIFIED; runtime mapping OPEN · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Initial revision preserves vertical routes but creates67qualified flat-route blocks,48on the old entrance approaches.
+
+Cause / uncertainty: The new stair void passes through the former room-centre approach/spawn reservation.
+
+Fix / next action: Four authored upper standing anchors pass literal native walking; fourold room-centre negatives correctly fail. Both complete entrance/surface loops pass; unchanged route comparisons preserve allpreviously qualified samples/sweeps.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-385 — Uncut route slabs expose inward top faces and mark undersides as walking supports
+
+**Status:** ALL25CANDIDATE ROUTE SOLIDS FIXED;1015flat tops independently PASS · **Affected:** WLD-07/WLD-07-MORTUARY and shared terrain/export/route authoring; explicit per-site results in evidence
+
+Independent prior HCS2 inspection finds876of1011flat route solids with inward or nonwalking top faces. Some Boolean-trimmed strips happen to be correct.
+
+Cause / uncertainty: X/-Z authoring reverses original winding; Boolean operations incidentally repair some objects while untouched strips stay inside out.
+
+Fix / next action: Rebuilt25native/furnished scenes. Actual HCS2 audit finds0inward/nonwalking tops among1015flat12cm path solids, compared with876of1011at66942b34. Independent GLB checks validate1025outward closed route solids including10sloping ones. All124rough placements unchanged.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/
+
+Older-map obligation: Retained Castle/House/Blackpine/Hollow Creek require individual source/terrain/route audits. No playable availability, services, guards, final terrain, visuals or complete mission acceptance is inferred for unaudited maps.
+
+### DEV-386 — Local path grading can disturb adjoining route shoulders when overall terrain is unsettled
+
+**Status:** SOURCE NETWORK GRADING VERIFIED; overall terrain acceptance OPEN · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+
+A new terrain shoulder blocks a prior qualified crypt path, and isolated approach grading alters adjacent source routes.
+
+Cause / uncertainty: Coarse2m lattice and unrelated local path strokes do not establish a coherent shared walking network.
+
+Fix / next action: Use actual editable TerrainLayerStack gradePath layers on the connected source network. Raw height PNGs remain byte-identical to the original annex source; punches remain actual topology. Grade programs and documents fingerprinted, append-only updates preserve earlier layers, exact rerun preserves24world files. Owner now prioritizes full-site terrain/elevations and blockout reshuffles before further route refinements.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/; captures/structure-batch/roster-structure-sheet-02.png; captures/basement-batch/
+
+Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
+
+### DEV-387 — Before/after route comparator reuses old feet Y after valid terrain support changes
+
+**Status:** SCENE-SPECIFIC GROUNDING FIXED; independent negative controls PASS · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+
+A supported millimetre-scale terrain change can be reported as a body/sweep obstruction because the after scene is queried at the old ground height.
+
+Cause / uncertainty: The comparator reused one feet vector for two distinct native surfaces.
+
+Fix / next action: Each scene uses its own measured support Y within the original2cm comparison budget; body/footprint/production sweep rules remain unchanged. Exact ground heights emitted in rows. Independent1cm plane fixture reproduces old false positive; new low roof, missing support and excessive-height negatives still fail. Accepted unchanged-route and current prop-route audits have zero new blocks.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/; captures/structure-batch/roster-structure-sheet-02.png; captures/basement-batch/
+
+Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
+
+### DEV-388 — Prison blocking overview shows isolated unsupported boundary panels
+
+**Status:** OPEN; terrain/foundation and enclosure assembly required · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+
+Several exterior wall/barrier panels appear detached from the main prison structure with no visible ground or footing in the native overview.
+
+Cause / uncertainty: Fixed closure blockers were authored without the overall compound terrain/foundation context; exact structural attachment still requires per-panel inspection.
+
+Fix / next action: During terrain-first pass author the compound ground and continuous supporting enclosure/returns, then inspect each panel placement and containment route.192fixed boundary rays do not prove physical support or visual coherence.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/; captures/structure-batch/roster-structure-sheet-02.png; captures/basement-batch/
+
+Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
+
+### DEV-389 — Route reservation surfaces overlap real floor planes in rough native assemblies
+
+**Status:** OPEN; remove coplanar source overlaps during terrain/structure refinement · **Affected:** Cemetery/annex and shared native map authoring; PRISON specifically for DEV-388
+
+Native basement-entry views show a black foreground band; source route/floor surfaces share the same authored walking plane.
+
+Cause / uncertainty: Confirmed coplanar slab/floor geometry; renderer-specific contribution to the visible band still requires separation review.
+
+Fix / next action: Retain actual support while removing overlapping reservation geometry where real floors or accepted terrain already supply the surface. Review native/runtime images and normal/collision parity. Do not conceal the problem with lighting, alpha, a global collision change or a claimed visual pass.
+
+Evidence and verification: development/levels/rebuild/verification/roster-basements-2026-11-07/; captures/structure-batch/roster-structure-sheet-02.png; captures/basement-batch/
+
+Older-map obligation: Audit other maps individually. Neither physical path probes nor a native overview proves finished terrain, model support, lighting, services, networking or complete map acceptance.
+
+### DEV-390 — Thin outside-cut strips exhaust editor topology budget without adding footprint fidelity
+
+**Status:** AUTHORING DECOMPOSITION FIXED; independent2,013,824cell mask parity PASS · **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
+
+Asylum new terrain generation exceeds20,000cut leaves after the Academy pilot consumed19,595leaves.
+
+Cause / uncertainty: Sequential quarter-metre row strips unnecessarily subdivide fully absent source cells into64tiny leaves.
+
+Fix / next action: Use source-cell aligned dyadic cut rectangles. Exact quarter-metre mask is unchanged; all18worlds fit existing20,000cut limit. No core editor limit raised. Rejected pilot/log retained.
+
+Evidence and verification: terrain-overall-pass/rejected-row-stripes/; verification/source-integrity.json
+
+Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
+
+### DEV-391 — Prison construction footprint does not align with editable terrain leaves
+
+**Status:** OPEN PHYSICAL RIMS; explicit excavation envelope authored · **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
+
+Prison foundation edge46.8m cannot be represented by the quarter-metre editable grid; editor correctly rejects it.
+
+Cause / uncertainty: Existing construction reservations include off-grid dimensions.
+
+Fix / next action: Preserve building dimensions; new macroterrain source explicitly records aligned excavation bounds and every excess in samples/prison/provenance.json. Construct physical foundation rims before promotion; no claim that authoring an enlarged aperture fills the gap.
+
+Evidence and verification: terrain-overall-pass/rejected-row-stripes/unaligned-prison-foundation.log; samples/prison/provenance.json
+
+Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
+
+### DEV-392 — New site terrain exposes old flat-route and blockout elevation conflicts
+
+**Status:** OPEN; actual native failures retained, master maps preserved · **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
+
+87,060flat-route samples retain79,235baseline-valid poses, but2,453poses and2,355qualified sweeps become blocked in new macroterrain composites. Ten sites have new findings; eight have none in this scoped check.
+
+Cause / uncertainty: Historical routes and building groups were authored without coherent whole-site landform. Broad slopes/rock shoulders now physically meet or overtop those coordinates.
+
+Fix / next action: Revise terrain/blockout relationships in stage batches, moving structures/stair bays/links with shared coordinate bindings where needed. Do not force terrain around every orange pad or weaken physics. Newly authored composite candidates are not promoted to existing masters or unlocked. Current independent vertical comparison also exposes WLD-03/L13/segment0: the older furnished source passed but both terrain-before-bearing and terrain-after-bearing fail, leaving185/221vertical segments and47/84complete links passing. No new bearing regression; exact72failed directional poses retained.
+
+Evidence and verification: terrain-overall-pass/verification/native-route-fit.json and native-route-probes.tsv; captures/macroterrain-batch/
+
+Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
+
+### DEV-393 — Larger macroterrain sites exceed the single editor mesh export area
+
+**Status:** CHUNKED AUTHORING VERIFIED; runtime location integration OPEN · **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
+
+Prison terrain rectangle exceeds2,048source cells when published as one terrain mesh.
+
+Cause / uncertainty: The single-mesh editor API intentionally bounds source area; roster terrain needs multiple owned chunks.
+
+Fix / next action: Publish real64m source-aligned chunks through TerrainScenePackage, inspect reopened ownership/fingerprints and encode all nodes through actual TerrainSceneNativePhysics. No global export limit raised; composite GLB and native triangles match exactly.
+
+Evidence and verification: terrain-overall-pass/rejected-row-stripes/single-chunk-prison-limit.log; verification/source-integrity.json; worlds/prison/terrain-world/scene-package/
+
+Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
+
+### DEV-394 — Macroterrain composites expose unfinished supports, rock enclosure and angular boundaries
+
+**Status:** OPEN; construction and landscape fitness not accepted · **Affected:** 18new macroterrain candidates across remaining roster; exact affected sites/segments in terrain-overall-pass reports
+
+Native full-site views show unsupported marsh/harbour decks, cave shelves and canopy-like cave room slabs; boundaries and drainage cross-sections remain coarse and angular, canonical van missing.
+
+Cause / uncertainty: First broad ground surfaces have been composed with earlier rough structural exports; piles, foundations, cave mass, water/banks and location-specific enclosure were not yet built.
+
+Fix / next action: Build actual load-bearing/pile/retaining/cave volumes and supported van arrival. Revise broad landform silhouettes and contour cross-sections, not just edge colours. Current six sheets were viewed; construction2/5, landscape2/5, finish1/5, no visual acceptance. Bearing batch now adds1811closed parts (1646masonry skirts,152piles,13connected beams) across25candidates; exact contact/export/native checks pass with zero new flat or vertical regressions. Seven pre-existing terrain candidates now individually reviewed and all remain REVISE; full landscape/construction acceptance remains open.
+
+Evidence and verification: captures/macroterrain-batch/macroterrain-sheet-01.png through06.png; terrain-overall-pass/verification/visual-review.json
+
+Older-map obligation: No previous map receives terrain acceptance. Audit each existing terrain and mature map individually. Preserve original source/model IDs, UVs and transforms; re-run actual native and visual checks after each terrain/blockout/foundation revision.
+
+### DEV-395 — Support placement under a deck reservation can leave detached posts without a real deck mesh
+
+**Status:** SOURCE RULE FIXED;17actual missing-receiver negatives reproduced · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+
+Initial marsh pilot puts posts at corners of reserved boardwalk rectangles where no constructed deck exists.
+
+Cause / uncertainty: Source zone footprint was treated as a receiving structure instead of tracing actual exported underside geometry.
+
+Fix / next action: Require an actual downward-facing source underside for every support. Use real route/deck positions for piles and explicit connected bearing beams for displaced piles; verify native terrain contact and closed outward geometry independently.25finalexports pass; unsupported reservations remain withheld, not accepted.
+
+Evidence and verification: terrain-fit-pass/rejected/marsh-reservation-posts.json; captures/terrain-fit-batch/rejected-marsh-reservation-posts.png; verification/bearing-contact.json
+
+Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
+
+### DEV-396 — Masonry skirt can attach incidentally to a crossing route rather than its planned structural floor
+
+**Status:** SOURCE CLASSIFICATION FIXED; real deck construction still OPEN · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+
+Wharf quay reservation produced a masonry strip whose declared receiver was L02support rather than a constructed quay floor.
+
+Cause / uncertainty: Source reservation perimeter overlapped a narrow old route strip; a single underside ray did not establish that the intended floor existed.
+
+Fix / next action: Masonry now requires an actual Floor component receiver; piles may explicitly support real deck/path meshes. Exact declared mesh is queried independently to resolve coplanar BVH tie order without pretending duplicates are removed. Rejected wharf GLB/manifest retained.
+
+Evidence and verification: terrain-fit-pass/rejected/wharf-skirt-on-route.glb and .json; verification/bearing-contact.json; DEV-389
+
+Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
+
+### DEV-397 — Failure-contact diagnostic silently excludes new before/after variant names
+
+**Status:** SOURCE FIX VERIFIED; missing-phase negative rejects and preserves prior output · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+
+First bearing comparison reports zero diagnosed failures despite36failed vertical segments in the actual movement result.
+
+Cause / uncertainty: Diagnostic filter was hardcoded to structure; new before_bearing/after_bearing rows were all skipped.
+
+Fix / next action: Accept an explicit selected variant, require at least one selected input row and pass after_bearing from the driver. Actual final72failed directional poses diagnosed. Missing-variant control rejects and leaves prior output byte-identical. Native movement assertions were never changed.
+
+Evidence and verification: terrain-fit-pass/verification/stairs/failure-contacts.tsv; verification/empty-variant-negative.json; tools/java/RosterFailureContacts.java
+
+Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
+
+### DEV-398 — Exterior deck and walkway reservations lack continuous constructed mesh
+
+**Status:** OPEN; individually recorded across25support candidates · **Affected:** Remaining25native rebuild candidates; exact affected contacts in terrain-fit-pass/*/construction.json
+
+Native inspections show missing portions of wharf/quay/pier, motor-lodge walkways, keeper porch and marsh boardwalk reservations; existing cyan strips supply only narrower crossing routes.
+
+Cause / uncertainty: Structural rough generation omitted exterior floors unless explicitly constructed; zone rectangles and old route plates do not define complete physical decks.
+
+Fix / next action: Author actual measured constructed decks and their load-bearing connections with continuous clearances/openings. Use rectangles only for real deck objects; do not stamp a whole outdoor reservation into terrain. Revalidate all footprints, floor/underface depths, piles, actual native movement and canonical arrival.989withheld source contacts remain explicit in this pass, including missing ground and terrain-overfloor cases.
+
+Evidence and verification: terrain-fit-pass/existing-terrain-review.json; */construction.json; captures/terrain-fit-batch/; README.md
+
+Older-map obligation: Four mature maps retain individual audit obligations. No source master, saved terrain punch or reusable model was overwritten. Passing contact/native regression checks do not establish complete terrain, structures, visual, runtime/network or hardware acceptance.
+
+### DEV-399 — Distance fog bypassed by OpenGL and native-only far-haze selection
+
+**Status:** SHARED COMPOSITOR FIX VERIFIED LOCALLY; exact-source CI/release acceptance separate · **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
+
+Software triangles fade independently while OpenGL geometry bypasses the fog; only native-site render calls apply additional far haze.
+
+Cause / uncertainty: Atmosphere was embedded in one raster path and one map classification instead of the completed world-depth composition shared by Castle and investigation levels.
+
+Fix / next action: Use one shared radial distance law and immutable per-frame policy for software fragments, OpenGL fragment-shader uniforms, water, directional sprites, safe-area shells and foot shadows before alpha blending. Heavy baseline clear6m/fullyopaque24m; weather/mission fog can thicken it. Preserve depth and near colours; no per-map opt-in. Remove native-only haze.10focused checks, labeled synthetic frame-contract control, paired actual GPU shader controls and52actual runtime frames pass across12sources. Final surface-depth implementation supersedes the initial final-frame composite approach.
+
+Evidence and verification: src/main/java/org/beckenburg/LevelAtmosphere.java; SceneRenderer.java; development/levels/rebuild/verification/atmosphere-all-levels/; captures/atmosphere-all-levels/
+
+Older-map obligation: All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance.
+
+### DEV-400 — Hard-painted lower horizon differs from distant world fog colour
+
+**Status:** SHARED SKY HORIZON FIX VERIFIED LOCALLY; physical edge work remains OPEN · **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
+
+Visible empty space beyond map geometry exposes artificial dark hill bands and a different colour from the fogged far surfaces.
+
+Cause / uncertainty: The lower sky painted independent opaque sinusoidal hills, while software geometry blended toward another fixed colour.
+
+Fix / next action: Keep the existing world-anchored weather skybox/clouds and smoothly blend its horizon/lower hemisphere to the same weather-aware fog colour. Actual geometry occludes the background; sky/fog never write depth. Viewed all52software/OpenGLframes and5comparison sheets; weather sky anchoring and all tested sky/water/depth controls pass; final fog is evaluated at each receiving surface before transparency composition.
+
+Evidence and verification: LevelAtmosphere.skyboxHaze; SceneRenderer.paintSky; verification/atmosphere-all-levels/capture-manifest.json
+
+Older-map obligation: All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance.
+
+### DEV-401 — Relative JAR packaging target can fail final move from restricted system temp
+
+**Status:** WORKSPACE-LOCAL PACKAGE TARGET FIX; final package check recorded separately · **Affected:** Shared Castle/investigation rendering, including custom levels and future integrated native packets
+
+build.cmd package compiles/resources successfully but jartool final rename from sandbox system Temp to relative build/beckenburg-game.jar is denied, removing the previous output.
+
+Cause / uncertainty: Relative JAR target and default temporary directory select a protected/cross-sandbox temp location during replacement.
+
+Fix / next action: Preserve the previous terrain-authoring dependency JAR under ignored build, use an absolute workspace JAR target and explicit workspace-local JVM temp in the packaging command. Recover completed package with those arguments and verify packaged audio/classes. This is a local packaging reliability fix, not installer acceptance.
+
+Evidence and verification: build.cmd package_jar_only; verification/atmosphere-all-levels/packaging logs/receipt
+
+Older-map obligation: All12currently loadable runtime sources captured in software and real OpenGL. Remaining17rebuild packets inherit the common rendering path when integrated; this does not unlock them or establish complete terrain, physical boundary, gameplay/network or performance acceptance.
+
+### DEV-402 — Final-frame fog can erase nearby translucent objects against a distant background
+
+**Status:** FIX VERIFIED: surface-depth fog before alpha in both renderers and world layers · **Affected:** Initial atmosphere checkpoint862b65c2; shared world rendering and translucent ghost/material effects
+
+A nearby materializing ghost below220alpha retains background opaque depth; a final-depth fog pass can erase it using the distant wall depth.
+
+Cause / uncertainty: Post-composition fog has lost each translucent layer's own depth and cannot reconstruct correct foreground/background mixing.
+
+Fix / next action: Replace image post-fog with scoped shared per-surface policy. Software/GPU fog each fragment before blend; water, sprites, safe-area shells and foot shadows use their actual surface depth. Keep final depth inspection read-only. Real128-alpha ghost control passes near/far and unchanged depth; actual OpenGL fog-off/fog-on plane has exact fog colour and bit-identical depth. Legacy frame constructors preserve raw/studio callers; runtime policy is explicit. Register LevelAtmosphereTest in the full regression manifest (371entries; complete suite not claimed run).
+
+Evidence and verification: src/main/java/org/beckenburg/LevelAtmosphere.java; DirectionalSprites.java; GpuWorldRenderer.java; gpu-client/src/main/java/org/beckenburg/gpu/OpenGlWorldRenderer.java; verification/atmosphere-all-levels/
+
+Older-map obligation: All runtime maps share the same fix; source-only maps inherit on integration. Full map, physical terrain/boundary, installed multiplayer and performance acceptance remain open.
+
+### DEV-403 — Sequential coplanar deck Boolean leaves open or zero-thickness pieces
+
+**Status:** FIX VERIFIED: projected convex clipping and independently closed native export · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+
+The first marsh deck pilot failed strict solid checks at intersecting deck/route boundaries.
+
+Cause / uncertainty: Blender Boolean on exact/near-coplanar imported route solids left flat/sliver surfaces.
+
+Fix / next action: Use deterministic convex polygon difference on actual source top triangles, retain original sources, remove only recorded sub0.1mm boundary residues; independent closed/outward/native coverage checks pass. Preserve rejected pilot log.
+
+Evidence and verification: development/levels/rebuild/deck-fit-pass/verification/; tools/build_roster_decks.py; tools/check_roster_decks.py
+
+Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
+
+### DEV-404 — Collinear projected deck seam vertices export degenerate native triangles
+
+**Status:** FIX VERIFIED: authored polygon cleanup; unchanged production parser threshold · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+
+First deck native movement invocation rejected a zero-area face.
+
+Cause / uncertainty: Projected seam vertices remained collinear through prism fan triangulation and float export.
+
+Fix / next action: Clean projected collinear construction vertices before creating/exporting plates. Exact native parser/nondegenerate checker and current production capsule/flight audits pass; production physics tolerance unchanged. Preserve rejection log.
+
+Evidence and verification: development/levels/rebuild/deck-fit-pass/verification/; tools/build_roster_decks.py; tools/check_roster_decks.py
+
+Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
+
+### DEV-405 — Deck support receipts lose part names when original bearing names already exist
+
+**Status:** FIX VERIFIED: map each generated object directly to its proof row · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+
+Independent checker found missing support proofs despite real exported supports.
+
+Cause / uncertainty: Blender appends .001 to reused names but foundation generator proof used requested logical names.
+
+Fix / next action: Pair generated parts and proof rows before assigning unique Deck bearing identities. Independent expected new-mesh set equals every proof and every named upper/lower bearing contact passes.
+
+Evidence and verification: development/levels/rebuild/deck-fit-pass/verification/; tools/build_roster_decks.py; tools/check_roster_decks.py
+
+Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
+
+### DEV-406 — Exterior deck framing, edge guards and terrain transitions remain incomplete
+
+**Status:** OPEN: closed walking plates added across five sites, final structure/terrain refinement required · **Affected:** Five physical deck candidates WLD06/11/14/15/16; shared offline authoring/audit tools
+
+WLD06/11/14/15/16 had large authored pier/boardwalk/porch/walk envelopes with only narrow route strips; new plates still lack complete intermediate framing/guards.
+
+Cause / uncertainty: Exterior slab generation was omitted for outside zones; prior bearing generation correctly withheld supports without actual deck undersides.
+
+Fix / next action: Fifteen authored envelopes now have physical0.16m closed slabs, exact stair cutouts and84new native-grounded bearing parts. Quarter-metre coverage independently proves24796newly supported samples,11564retained source top samples; full terrain/guard/frame and gameplay acceptance remain open.
+
+Evidence and verification: development/levels/rebuild/deck-fit-pass/verification/; tools/build_roster_decks.py; tools/check_roster_decks.py
+
+Older-map obligation: All29roster decisions explicit; other24 sources retained individually, no unaudited older-map acceptance. Preserve true basement holes,40-space envelope, shared authored coordinates and canonical van contract.
+
+### DEV-407 — Independent deck audit misclassifies tiny closed plates and shared top boundaries
+
+**Status:** CHECKER FIX VERIFIED: translated double-precision volume and paired interior edge probes · **Affected:** Offline physical exterior deck verification; no production collision tolerance change
+
+World-origin float32 tetrahedra gave a false negative volume of -2.1484990914661523e-05 for closed WLD11 exterior service plate81; quarter-metre grid rays on an exact diagonal seam hit both disjoint tops.
+
+Cause / uncertainty: Cancellation in global-coordinate single-precision volume accumulation and treating shared polygon boundaries as interior overlap.
+
+Fix / next action: Translate all tetrahedra to a local vertex and accumulate in Python double precision; retain the closed edge count and positive-volume requirement. For a shared top hit, probe both interiors at0.2mm offsets and reject actual overlapping interiors. Actual five-site export/contact/coverage checks pass; production body/support/depth tolerances untouched.
+
+Evidence and verification: tools/check_roster_decks.py; development/levels/rebuild/deck-fit-pass/verification/export-contact-coverage.json; independent-export.log
+
+Older-map obligation: Retain prior independent map audit obligations. This is an audit numerical fix, not automatic terrain or map acceptance; rerun actual artifacts per site.
+
+### DEV-408 — Terrain excavation omits elevated and deeper occupied room volumes
+
+**Status:** FIX VERIFIED IN FIVE CANDIDATES; overall terrain/cave/runtime gates open · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+
+4749half-metre occupied-height terrain samples across13rooms in five actual native scenes.
+
+Cause / uncertainty: The cut programs only excavated rooms spanning world Y=0; the dam rooms lie below0 and cave/lookout rooms above0.
+
+Fix / next action: Measure actual terrain triangles inside room envelopes at every elevation and author real persistent room excavations. Four original saved height PNGs/worlds retained, one explicitly seeded battery world added. After audit clear across25candidates;1237flat poses recovered, zero new movement regressions, stair/link gains verified.
+
+Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py
+
+Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
+
+### DEV-409 — Conservative circular tower punch leaves earth inside the wall
+
+**Status:** FIX VERIFIED: actual stepped editor cut and physical retaining collar · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+
+Morrow tower retained12sampled interior earth contacts; first contained-cell revision left6.
+
+Cause / uncertainty: The circular cut used an artificial inset and only fully contained quarter-metre cells.
+
+Fix / next action: Punch cells intersecting the actual circular footing; add50closed curved retaining collar parts at real source soil, reserve circulation and existing unsupported joins. Actual room samples clear and exported/native solids pass. Final collar texture/edge and whole landscape acceptance remain open.
+
+Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py
+
+Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
+
+### DEV-410 — Diagonal stair AABBs remove unrelated room-floor and cap regions
+
+**Status:** BATCH REPAIR VERIFIED: six candidate sites; legacy producer migration and older-map audit OPEN · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+
+Excavation exposed4new blocked poses and2failed sweeps where the lookout ruin floor had been removed by an unrelated diagonal flight bounding box.
+
+Cause / uncertainty: Shared structural_pass.deck_holes reserves each entire axis-aligned flight rectangle instead of its actual shaft footprint.
+
+Fix / next action: Restore the ruin gap only outside exact diagonal flight polygons and source walking tops with12closed0.16m plates. Final all25comparison has zero new blocks and no passing stairs/links/chains regress. Preserve rejected raw probes. Next broad batch must correct exact floor/cap shaft reservations across all25candidates and individually audit older mature maps. Subsequent floor/cap pass audits25current candidates and adds296closed parts/9816triangles restoring580.964m² across6sites, retaining old source geometry. Joined exact polygons preserve all baseline passing stairs/links/chains/loops and recover248flat poses. The legacy broad-bounds helper remains for frozen producers; its migration and mature-source audits are not claimed complete.
+
+Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py
+
+Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
+
+### DEV-411 — Re-exporting retained GLB can shift an existing stair vertex
+
+**Status:** FIX VERIFIED: append new static resources without re-exporting retained geometry · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+
+Independent source preservation rejected L11flight0step12 at the lookout: a tiny position shift crossed the0.1mm rounding bin.
+
+Cause / uncertainty: Another Blender glTF import/export decomposes and recomposes the retained mesh transform.
+
+Fix / next action: Append selected new terrain/repair geometry to the original binary/resource arrays, preserving original meshes/accessors/UV/image/material data. Only explicit old terrain node mesh references are disabled. Actual source mesh/UV/image/transform and exact retained resource checks pass; no tolerance widened.
+
+Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py
+
+Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
+
+### DEV-412 — Disconnected retained GLB terrain node can still import as geometry
+
+**Status:** FIX VERIFIED: remove mesh binding on explicitly replaced terrain nodes · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline
+
+Independent export checker found the old terrain mesh present after first static append, despite removal from scene root lists.
+
+Cause / uncertainty: The importer can enumerate orphaned glTF nodes independently of default-scene reachability.
+
+Fix / next action: Remove the mesh reference from explicitly replaced terrain nodes while preserving other source nodes and all immutable original binary resources. Repeated actual-export room audit now clears all recorded volumes, and exactly one original terrain mesh is replaced per site.
+
+Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py
+
+Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
+
+### DEV-413 — Battery native room view has unresolved black floor regions
+
+**Status:** OPEN: inspect actual floor/shaft geometry and material/normal state · **Affected:** Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline; WLD04ruin dark interior floor region in paired threshold native inspection (cause unverified)
+
+The after native battery first-person frame exposes black rectangular and polygonal floor regions after earth is removed.
+
+Cause / uncertainty: Not yet established; could include authored stair openings or malformed/unrelated floor reservations/surfaces.
+
+Fix / next action: Retain paired intact PNG and actual source hashes. Inspect the exact exported floors, openings, normals/materials and native body/light behavior in the next roster-wide floor/shaft pass; do not infer that this image is accepted or that all black areas share one cause.
+
+Evidence and verification: development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py; WLD04ruin paired threshold views also show a residual dark L-shaped interior region; distinguish floor coverage from lighting/occlusion before visual acceptance.
+
+Older-map obligation: All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches.
+
+### DEV-414 — Convex clipping creates excessive structural fragments around circular floors
+
+**Status:** REJECTED FIRST STUDY; compact planar restoration verified · **Affected:** Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained
+
+The initial lighthouse floor restoration emitted9905parts/116128triangles for22.55m² before joined-turn correction.
+
+Cause / uncertainty: Subtracting disjoint triangles still split polygons along infinite edge lines; independent prisms retained every fragment.
+
+Fix / next action: Reject disjoint cutter intersections before splitting, union constrained planar patches, dissolve only coplanar seams and extrude edge-connected regions. Final whole6site batch296parts/9816triangles includes joined spiral headroom. Triangle/part counts are geometry evidence, not sustained FPS acceptance.
+
+Evidence and verification: development/levels/rebuild/floor-closure-pass/verification/; tools/build_roster_floor_closures.py; tools/planar_structure.py; structural_pass.deck_openings
+
+Older-map obligation: All29roster decisions explicit. Nineteenzero-addition results do not establish complete map fitness. Preserve source assets, exact native earth punches,40space envelope and canonical van/power/hiding/story; remaining35stairsegments/35links, legacy producer migration, mature-source and actual runtime/network/hardware gates remain.
+
+### DEV-415 — Merged planar floor patches can have pinched solids and degenerate triangulation
+
+**Status:** FIX VERIFIED: closed edge-connected regions and zero-area cleanup · **Affected:** Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained
+
+A merged circular plate had25nonmanifold vertical edges at point contacts; the native reader also rejected repeated-vertex triangles in a merged lookout floor.
+
+Cause / uncertainty: Regions touching only at a point shared extruded vertical edges; dissolved planar bridge loops produced zero-area triangles.
+
+Fix / next action: Extrude edge-connected planar regions independently, explicitly triangulate and remove zero-area planar faces before building thickness. Actual exported solids/native reader pass with exact edge closure and0.16m volume/area thickness. Production parser and collision tolerances unchanged; preserve rejected native log.
+
+Evidence and verification: development/levels/rebuild/floor-closure-pass/verification/; tools/build_roster_floor_closures.py; tools/planar_structure.py; structural_pass.deck_openings
+
+Older-map obligation: All29roster decisions explicit. Nineteenzero-addition results do not establish complete map fitness. Preserve source assets, exact native earth punches,40space envelope and canonical van/power/hiding/story; remaining35stairsegments/35links, legacy producer migration, mature-source and actual runtime/network/hardware gates remain.
+
+### DEV-416 — Independent flight rectangles leave spiral-turn headroom wedges
+
+**Status:** FIX VERIFIED: joined authored intermediate corridor corners · **Affected:** Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained
+
+First closure draft regressed80previously passing lighthouse stair segments in both directions, fivecomplete links and their automatic chain; the independent standing-body sample also failed.
+
+Cause / uncertainty: Adjacent chord rectangles meet at the centreline but leave outer turn wedges that were incorrectly restored as floor above the stair.
+
+Fix / next action: Add24-sided swept-corridor join polygons at intermediate connected points with unchanged2.2m clearance; retain original terminal landings. All221flights/84links compare without new passing-direction regressions,3237independent body shaft samples clear; both cemeteryloops remain pass both directions. Preserve full rejected stair/flight tables.
+
+Evidence and verification: development/levels/rebuild/floor-closure-pass/verification/; tools/build_roster_floor_closures.py; tools/planar_structure.py; structural_pass.deck_openings
+
+Older-map obligation: All29roster decisions explicit. Nineteenzero-addition results do not establish complete map fitness. Preserve source assets, exact native earth punches,40space envelope and canonical van/power/hiding/story; remaining35stairsegments/35links, legacy producer migration, mature-source and actual runtime/network/hardware gates remain.
+
+### DEV-417 — High stair landing overhangs descending treads; narrowing it removes walkway support
+
+**Status:** FIX VERIFIED IN NATIVE CANDIDATES: full25movement/source regression; runtime integration open · **Affected:** Battery WLD-17 routes11/12 and analogous high landing corners WLD-09/WLD-18
+
+Original high landing blocks standing headroom on descending treads. Rejected narrow-platform pilot passed stair centres but regressed six side-lane standing samples and sweeps.
+
+Cause / uncertainty: Treating the stair centre independently of the full-width adjoining flat walkway.
+
+Fix / next action: Retain original full landing and all flat route coordinates; inset the descending flight beyond the overhang, add a visible closed bridge and revise the shared authored route points. Never change support/body tolerances or remove blockers to manufacture passes. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186→196passing both ways,84full links49→56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass. Bay revision also retains existing terminal platform meshes and shallow upper tread standing surfaces when full tread columns move, preserving the adjoining full-width flat approaches.
+
+Evidence and verification: development/levels/rebuild/stair-landing-pass/rejected/battery-narrowed-turn-*; final verification and native captures under stair-landing-pass/
+
+Older-map obligation: Individually audit all29packets and older maps for stair/landing joins, guards, full-width circulation, depth and surface support; source candidate passes are not runtime integration.
+
+### DEV-418 — Unupdated tread rotation cuts an unsupported wedge from a new stair landing
+
+**Status:** FIX VERIFIED IN NATIVE CANDIDATES: full25movement/source regression; runtime integration open · **Affected:** Stair landing construction candidate WLD-17 route12; rebuilt high corners across WLD-09/WLD-18 also regenerated
+
+First full-width candidate retained all standing poses but introduced one side-lane sweep failure and lost support at the route12 stair-to-bridge transition.
+
+Cause / uncertainty: Blender matrix_world had not updated after rotating newly created tread boxes; planar subtraction used an unrotated top footprint. Splitting coplanar triangles and float slivers made the missing wedge harder to diagnose.
+
+Fix / next action: Update the dependency graph before reading final world top coordinates; subtract a complete convex top only when its area equals the actual triangle union. Snap authored cutters to10micrometres, bake only new transforms and triangulate before exact export/native comparison. Preserve rejected native results; do not modify production tolerances. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186→196passing both ways,84full links49→56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass.
+
+Evidence and verification: development/levels/rebuild/stair-landing-pass/rejected/stale-rotation-*; tools/build_stair_landings.py; tools/check_stair_landings.py
+
+Older-map obligation: Audit actual rotated object footprints after transform/geometry changes; preserve original props, UVs, pivots and saved terrain holes. All25candidate movement and source checks required; complete runtime/network/hardware acceptance remains open.
+
+### DEV-419 — New transformed tread boxes differ from their exported native triangle records
+
+**Status:** FIX VERIFIED: bake new transforms and triangulation; all11sources pass exact parity · **Affected:** Stair end/corner generator initial WLD-17 pilot; new transformed tread boxes
+
+Independent reimport stopped with export/native mismatch for Rebuilt stair WLD-17 route-11 flight0 part0.
+
+Cause / uncertainty: New box transforms and exporter triangulation applied after native world-float records were computed can produce different triangle/float representations.
+
+Fix / next action: Bake transforms on newly authored meshes only and triangulate before both GLB export and native record generation. Preserve all original pivots/resources; independently compare every new exported triangle and editable source to native records. Final eleven candidates pass.
+
+Evidence and verification: Observed interrupted build/stair-end-pilot.log traceback at session recovery (log later replaced by rerun); tools/build_stair_landings.py and tools/check_stair_landings.py; development/levels/rebuild/stair-landing-pass/verification/independent-sources.json
+
+Older-map obligation: Individually check render/native coordinates after transformed geometry generation; never globally reset original imported asset pivots or UV materials.
+
+### DEV-420 — Several native stair review cameras are occluded or too distant for join acceptance
+
+**Status:** OPEN: diagnostic framing/structural join review required · **Affected:** WLD04terrain closeup; WLD13/WLD18roof/wall closeups; isolated whole-site landing additions
+
+WLD04closeup is filled by terrain; several WLD13/WLD18joins remain behind walls/caps. Isolated additions in whole-site overviews are too small for detailed seam inspection.
+
+Cause / uncertainty: A common high-end camera and bounding-distance context rule does not guarantee a clear line of sight to every distinct architectural join.
+
+Fix / next action: Keep captures truthfully labeled and withheld from complete visual acceptance; retain geometry/physics blockers. Next native review should author per-join cameras/cut planes or physically resolve the terrain/wall/cap conflicts first. Do not remove those blockers from playable geometry to improve a diagnostic view.
+
+Evidence and verification: development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png; closeup-sheet-2.png; closeup-sheet-3.png; verification/captures.json; physical aperture batch nine actual native sheets reviewed; WLD03terrain/WLD05mine/WLD09turbine views still partly obstructed, not complete visual acceptance.; bay revision has19final native frames/four sheets: shaft plans expose actual mine opening, while several context cameras remain occluded. Not complete visual acceptance.
+
+Older-map obligation: Audit actual visible joins at standing/crouched height across all29packets. Whole-site and isolated exports do not replace in-room/native/runtime visual review.
+
+### DEV-421 — Authored stair routes intersect continuous structural walls and floor caps
+
+**Status:** PARTIAL NATIVE REPAIR VERIFIED: eight candidates; remaining terrain/crossed-flight blockers open · **Affected:** WLD03/04/05/06/08/09/13/18source stair corridors
+
+Production native sweeps stop at room/undercroft/lab/dorm/gallery walls and internal floor/cap cells along authored vertical routes.
+
+Cause / uncertainty: Original structural shell openings did not follow the full authored stair body volume, despite stair/route coordinates being present.
+
+Fix / next action: Replace29individually named shell parts with closed physical apertures; retain all unrelated meshes/resources/UVs/pivots/native records and fixed context.5049independent body samples and actual native sweep comparisons pass:221flights196→208and84links56→68bothways, zero previous passing-direction regression.13flights/16links remain failing; no runtime or whole-map completion inferred.
+
+Evidence and verification: development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; verification/failure-contacts.tsv; captures/stair-opening-batch/
+
+Older-map obligation: Audit all29packets and older sources individually for real render/body/optical openings,160mmdeck depth, wall thickness, supports and roof/light isolation; keep native runtime integration/power/hiding/story/hardware gates open.
+
+### DEV-422 — Flight-only headroom cuts leave blocked landing caps and tread-level wall thresholds
+
+**Status:** FIX VERIFIED IN EIGHT NATIVE CANDIDATES; broader map acceptance open · **Affected:** WLD08L20, WLD09wall crossings, WLD18route14landing/floor-cap cells
+
+First aperture draft cleared central wall areas but stopped at the terminal plane or remaining cap over the intermediate flat landing. Opened wall lower edge also struck the actual foot capsule between treads.
+
+Cause / uncertainty: Only the sloped centre flight was subtracted, excluding intermediate flats, endpoint footprint and stepped foot/body envelope.
+
+Fix / next action: Use the full existing continuous link including flat landings,350mmconstant-height terminal extensions,2.2mheadroom and full authored width+40mm. Wall lower face follows tread clearance down250mm; slab lower face retains supports atfeet+5mm. Do not change production movement tolerances. Exact closed source/native and complete-route comparisons pass; remaining failures explicitly preserved. Bay revision found the analogous sheared lower-cut wedge in an owned floor. Sloped vertical shaft cuts now remove full slab thickness, while flat supports remain; explicit new landing parts restore actual upper/lower walking faces.
+
+Evidence and verification: development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; verification/independent-sources.json; verification/flight-sweeps.tsv; development/levels/rebuild/stair-bay-pass/rejected/observed-construction-failures.txt
+
+Older-map obligation: Audit every stair/body footprint and all intermediate/terminal landings; one centreline ray or disconnected flight pass does not prove complete circulation.
+
+### DEV-423 — Crossed mine stair shaft removes support from an upper walkway
+
+**Status:** OPEN GEOMETRIC CONFLICT; rejected shaft deletion withheld and six regressions restored · **Affected:** WLD05L16stair and L18flat walkway atX11,Y-6,Z42
+
+Uncoupled shaft draft caused six previously valid flat samples to lose support at the centre and both side lanes, across two adjoining walkway segments.
+
+Cause / uncertainty: Existing rough stair bay climbs through the floor used by another authored route. Carving necessary headroom there destroys the higher walkway.
+
+Fix / next action: Preserve rejected actual GLB/HCS2/metadata and full failing probes. Withhold cuts for terrain/crossed-step-only links until a separate stair bay is authored; retain the original upper floor. Final110409flat samples restore all previous valid poses with zero new blocks/sweepfailures. Stair conflict remains a required redesign, not called fixed.
+
+Evidence and verification: development/levels/rebuild/stair-opening-pass/rejected/mine-walkway-conflict-*; rejected/uncoupled-shaft-native-route-probes.tsv; verification/native-route-fit.json
+
+Older-map obligation: Individually audit grade-separated crossings and all upper routes before removing floors for stair shafts. Preserve40space limits, geometry/native shared coordinates and actual saved terrain holes.
+
+### DEV-424 — Structural fit reporter could return success while recording new flat-route regressions
+
+**Status:** FIX VERIFIED: opening-pass now asserts no new blocks or sweep failures after preserving raw report · **Affected:** New structural opening batch using tools/audit_macroterrain_fit.py
+
+Initial draft produced6new_block findings while the general measurement script still exited0; manual raw-probe inspection caught and rejected it.
+
+Cause / uncertainty: The original tool was designed to report terrain findings, so a successful measurement process was not a no-regression acceptance gate.
+
+Fix / next action: For the new opening-pass mode, retain all raw probes/report then assert every site has zero new_block and new_sweep_block. Final complete run exits0 with both counters zero, and docs distinguish measured findings from map acceptance.
+
+Evidence and verification: development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; rejected/uncoupled-shaft-native-route-fit.json; verification/stair-openings-flat.log
+
+Older-map obligation: Do not infer geometry acceptance from reporter exit codes alone. Retain before/after production-pose evidence, all failed cases and per-map obligations; existing general terrain finding mode remains a measurement tool.
+
+### DEV-425 — Converging solid stair columns occupy room anchors and intersect independent routes
+
+**Status:** PARTIAL NATIVE BAY REPAIR VERIFIED: three sites; remaining mine/terrain conflicts open · **Affected:** WLD05ore-west/lower/vent, WLD09east/turbine/spillway/return, WLD12trestle/lower/return
+
+Multiple flights share a high anchor but their full solid columns overlap. Lower mine room centre lies inside a previous stair, and railway return crosses the descending column. First bay draft moved a mine flight into upper haul supportL10 and regressed a passing route.
+
+Cause / uncertainty: Rough links became separate full-height solid flights instead of a coherent shared stair hall or separated bays; moving one centreline did not account for all upper routes.
+
+Fix / next action: Mine: move shaft to west bay and share its actual flight with the lower return, retaining original link endpoints and rebuilding vacated floor shafts. Powerhouse: reuse existing main stair and add coherent lower bypass/landing; remove duplicate columns. Railway: separate descent and return with straight lead-ins. Preserve terminal pads and exact native component identities. Final25candidate checks:221flight segments208→214and84links68→73bothways,292recovered flat poses, zero previous passing-direction or flat regressions.7flights/11links remain, including mineL17and actual saved-terrain work.
+
+Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/first-bay-*; verification/remaining-links.json; source design and authored-layout.json
+
+Older-map obligation: Individually audit room/spawn anchors, upper paths, shared stair bays, full footprints and physical earth openings across29packets. Source candidates do not establish runtime ownership, global walkability, guard/framing or hardware acceptance.
+
+### DEV-426 — Stair exit clips diagonal tread corners when no physical toe landing is authored
+
+**Status:** FIX VERIFIED: actual closed toe landing and aligned lower approach; no kernel tolerance change · **Affected:** WLD09main east stair L09with new L11/L12routes; existing west stair L07lower approach
+
+Native complete paths stopped on first tread side/corner while standing poses remained valid; direct contacts identify L09flight0step1 and L07flight0step2.
+
+Cause / uncertainty: Flat approach left the diagonal flight sideways without a complete landing/straight lead-in. Generic floor ownership did not represent the actual stair transition, and full solid treads still occupied the approach.
+
+Fix / next action: Route away from the west stair low face before turning; align the main stair lower lead-in with its flight. Physically partition a measured2.5mclosed160mmtoe landing from the existing floor and give that actual native part its stair-landing identity. No phantom identities, broad whole-room stair tagging, movement exception or tolerance change. Widen physical upper hub; preserve existing pads and shallow upper tread standing surfaces while removing conflicting lower columns. Full native links and original110409flat comparisons pass with zero new regressions.
+
+Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/bay-path-contacts.tsv; bay-flat-contacts.tsv; verification/complete-route-sweeps.tsv; design.landing_pockets and hub_landings
+
+Older-map obligation: Audit actual foot/capsule corner clearance, complete flat-to-stair chains and landing dimensions. Centreline steps alone do not prove approach or exit circulation.
+
+### DEV-427 — Repeated cuts through already-authored shared passages create nonmanifold shell slivers
+
+**Status:** FIX VERIFIED: exact retained segment reuse and deduplicated physical cuts · **Affected:** Stair bay constructor WLD09workshop north wall existing physical aperture
+
+Generator rejected Bayed shell Opened stair shell Wall workshop N.001 as a new open solid.
+
+Cause / uncertainty: A shared route was independently recut through the same existing aperture, including overlapping duplicate cutter segments.
+
+Fix / next action: Retain exact pre-existing shared segment geometry; skip its duplicate shaft cutting and deduplicate equivalent new segments before Boolean work. Independent exported/native closed nondegenerate outward geometry checks pass for all3final sources. Preserve unrelated source resources and protected boundaries.
+
+Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/observed-construction-failures.txt; tools/check_stair_bays.py; verification/independent-sources.json
+
+Older-map obligation: Repeat independent geometric closure and exact native parity checks after every shared passage edit; never accept a Boolean merely because export succeeds.
+
+### DEV-428 — Bay floor restoration treats shaft-opening records as raw polygons
+
+**Status:** FIX VERIFIED: explicit polygon adapter; actual restored shaft solids checked · **Affected:** Initial tools/build_stair_bays.py old/new deck_openings integration
+
+Background authoring stopped with TypeError unhashable type slice while clipping a vacated shaft.
+
+Cause / uncertainty: deck_openings returns metadata records containing polygon coordinates, not polygon lists directly.
+
+Fix / next action: Read each record polygon explicitly before intersection/difference. Final three candidate builds and actual reopened exported/native/editable checks pass; movement comparisons recover292standing poses with no new flat or stair regressions.
+
+Evidence and verification: development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/observed-construction-failures.txt; restored_shaft_parts in actual construction metadata
+
+Older-map obligation: Preserve source helper contracts and exact saved-world fingerprints when migrating frozen map producers; no unverified old map fix inferred.
+
+### DEV-429 — Current saved-terrain layout points to a nonexistent scene descriptor
+
+**Status:** FIX VERIFIED: actual scene.bin bound and independently checked · **Affected:** Initial stair-terrain composite current_saved_editor_terrain contract
+
+New contract initially named scene-package/scene.properties although the persistent editor uses scene.bin.
+
+Cause / uncertainty: Assumed scene descriptor filename rather than inspecting the actual persisted package.
+
+Fix / next action: Bind actual scene.bin, current native physics, all published OBJ chunks and exact saved-world files. Independent checker requires the descriptor to exist and all declared files to match hashes. Shared producer consumes actual current contract.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/verification/independent-sources.json; tools/compose_stair_terrain.py
+
+Older-map obligation: Inspect real package filenames and saved topology, never infer editor/runtime integration from plausible metadata. Individual older-map contracts remain audit obligations.
+
+### DEV-430 — Unchanged terrain-pass fallback reuses stale prior-bay stair identities
+
+**Status:** FIX VERIFIED: unchanged cases normalize before state to their current source · **Affected:** tools/audit_roster_stairs.py --bench-pass unchanged WLD05/WLD09bay candidates
+
+Native reader correctly rejected unknown old L15/L16tread IDs because the fallback loaded a current bay payload with its prior-bay component set.
+
+Cause / uncertainty: Nested checkpoint metadata carried before_layout/before_stair_components from a previous construction comparison into an unchanged self-comparison.
+
+Fix / next action: Normalize unchanged before layout, segment mapping and explicit stair component identities to the current source metadata. Keep strict unknown-component rejection. Final221segment/84link comparison, all25bindings and source hashes pass with zero previously passing-direction regressions.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/verification/stair-movement.json; tools/audit_roster_stairs.py
+
+Older-map obligation: Audit every before/after source coordinate/layout/component binding when combining stage snapshots. Do not weaken physics or silently discard unknown stair identities.
+
+### DEV-431 — Isolated upper stair grading obstructs lower circulation through the same hillside
+
+**Status:** FIX VERIFIED FOR THREE NATIVE CANDIDATES; landscape/retaining acceptance open · **Affected:** WLD03L15lower path, WLD12L06/L07west return, coupled hillside/railway terrain levels
+
+First absolute grading draft introduced145standing and151sweep regressions. An upper-only lower-only draft still lowered previously high soil into lower paths headroom rather than below their circulation plane.
+
+Cause / uncertainty: Treating an upper path datum as an independent terrain target; existing lower paths sometimes ran beneath a higher ground surface. Raising/filling was also inappropriate for an excavation bench.
+
+Fix / next action: Use existing editor LOWER_ONLY brush API on named non-destructive layers; jointly constrain stair beds and every existing flat circulation segment. Preserve old source height PNGs and all punches. Independent comparison17010common vertices:2361lowered, zero raised. Final110409flat samples recover852poses with zero new standing/sweep regressions. Coarse cut banks remain explicitly unaccepted.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-*; rejected/upper-only-cut-*; rejected/bench-flat-contacts.tsv; verification/independent-sources.json; tools/java/RosterTerrainBuild.java
+
+Older-map obligation: Audit the complete terrain/floor hierarchy and buried or stacked circulation, not isolated connector ribbons. Retaining/cave/water/physical edges and canonical van arrival remain individual gates across29packets.
+
+### DEV-432 — Ruin threshold uses incidental soil instead of a complete structural walking surface
+
+**Status:** FIX VERIFIED: real closed160mmthreshold restores swept support · **Affected:** WLD04L07ruin west threshold X40,Y6,Z22; centre and left approach lanes
+
+Excavation left all standing samples valid but two previously passing sweeps lost foot support immediately west of the room floor.
+
+Cause / uncertainty: A small gap between the approach support and room slab had relied on the old terrain for footprint support.
+
+Fix / next action: Add a measured2mclear-width160mmclosed bearing threshold, subtracting existing top surfaces to avoid coplanar duplicates. Rendered/exported/native/editable source matches. Exact native contact diagnosis retained; final all25flat regression counters zero. Paired intact threshold images inspected. Actual pre-threshold native bytes restored with SHA c6853c362f4c0cd556c2b1137d164710388fc18ab625fd21c9d3dcdc819dcd4d matching captured failure:4directional failures versus0after the repair.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/rejected/bench-flat-sweep-contacts.tsv; assemblies/wld-04/construction.json; verification/independent-sources.json; captures/stair-terrain-batch/wld-04-threshold-after.png; verification/threshold-control.json; rejected/ruin-threshold-before.hcs2
+
+Older-map obligation: Audit complete threshold foot footprints at door/floor/route joins, including under changed terrain. Centre support alone is insufficient.
+
+### DEV-433 — Terrain excavation exposes previously embedded railway foundation feet
+
+**Status:** FIX VERIFIED: five physical extensions restore seven newly exposed footing samples · **Affected:** WLD12Bearing skirts0016/0017/0018/0022/0042after lower circulation excavation
+
+Before/after actual terrain rays found7previously embedded external footing samples above the revised soil.
+
+Cause / uncertainty: Preserved foundation geometry still referenced the former higher soil datum after terrain excavation.
+
+Fix / next action: Append closed connected extensions touching the original skirt bottoms and embedding350mminto the actual new soil; preserve original model pivots/resources/native records. Independent audit uses actual native extension vertices and soil rays, yielding zero new exposed footing samples across all3sites. Full native movement regressions remain zero; five isolated soil-contact renders inspected.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/rejected/pre-extension-bearing-contacts.json; verification/bearing-contacts.json; assemblies/wld-12/construction.json; captures/stair-terrain-batch/*soil-bearing.png
+
+Older-map obligation: Recheck foundations, piles, roots and ground-mounted facilities individually whenever terrain moves. This scoped footing repair does not establish all retaining/framing/guard or whole-map support acceptance.
+
+### DEV-434 — Excavated terrain banks remain coarse and serrated in native whole-site views
+
+**Status:** OPEN: authored slope/retaining/erosion and landscape visual refinement required · **Affected:** WLD03hillside and WLD04forestry terrace cuts; WLD12trench context
+
+Full-site native renders expose faceted deep banks around newly cleared routes, with rough structure/support geometry and incomplete edge treatment.
+
+Cause / uncertainty: Initial coherent circulation excavation uses the existing source grid/adaptive topology; physical usability correction is ahead of finished civil/rock/landscape construction.
+
+Fix / next action: Keep visual terrain acceptance open. Author site-specific retaining/rock transitions, coherent slope sections, drainage and physical boundaries, then review whole sites with the canonical van. Do not pass the desquareify/landscape gate from native route counts or conceal the banks with fog.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/verification/visual-review.json; captures/stair-terrain-batch/terrain-sheet-*.png; development/quality/DESQUAREIFY_GATE.md
+
+Older-map obligation: Individually audit all29packets, including older landforms; no blockout rectangle/material stamp or perturbed outer box counts as accepted terrain.
+
+### DEV-435 — Shared map producers ignore current saved terrain and chunked editor publications
+
+**Status:** FIX VERIFIED IN SHARED SOURCE CONSUMERS; runtime integration open · **Affected:** structural_pass.saved_editor_terrain, structural build caller, collision/furnishing terrain fidelity checks and envelope classification
+
+New composite layouts contain current_saved_editor_terrain with actual chunked publications; older consumers only recognized the single legacy saved_editor_terrain mesh field.
+
+Cause / uncertainty: Stage-specific terrain authority was bound in metadata without corresponding shared producer selection/OBJ-chunk support.
+
+Fix / next action: Prefer the explicit current contract, import each actual published chunk with correct vertex offsets, retain hash checking and exact legacy single-mesh behavior. Align structural/export/furnishing/envelope consumers. Actual3current worlds and real WLD18legacy control import with exact native triangle/flag equality; deliberately stale legacy control cannot replace current terrain. No installed runtime unlock inferred.
+
+Evidence and verification: development/levels/rebuild/stair-terrain-pass/verification/terrain-contract-consumer.json; tools/check_saved_terrain_consumer.py; development/levels/blockouts/structural_pass.py
+
+Older-map obligation: Migrate actual native/runtime ownership only through verified coordinate/layout/terrain contracts; metadata or export existence is not gameplay acceptance. Preserve frozen sources and legacy controls.
+
+### DEV-436 — New connection builder assumes every retained floor-stage contract already declares stair identities
+
+**Status:** FIX VERIFIED: explicit before/after identities pass native movement and export/source checks · **Affected:** WLD15retained floor-closure source during connection batch
+
+First source build stopped with KeyError stair_components after WLD04/05 exported.
+
+Cause / uncertainty: Floor-closure contracts predate the explicit per-map stair identity migration.
+
+Fix / next action: Use the actual original furnishings physics contract only when the current contract has no explicit stair_components; preserve current declarations otherwise. New source report records exact before/after identity sets, independently exercised by unchanged production movement.
+
+Evidence and verification: development/levels/rebuild/stair-connection-pass/verification/rejected-missing-floor-contract-build.log; tools/build_stair_bays.py
+
+Older-map obligation: Individually consume each source-stage contract; never infer a whole scene is stairs or relax unknown component checks.
+
+### DEV-437 — Saved-terrain continuation reads tile settings from the wrong source stage
+
+**Status:** FIXED AND ACTUAL BATTERY WORLD REOPENED · **Affected:** WLD17saved occupancy-world terrain continuation
+
+First authoring attempt failed because terrain-overall-pass/samples/wld-17/settings.tsv does not exist.
+
+Cause / uncertainty: Helper assumed every source world originated in macroterrain rather than occupancy construction.
+
+Fix / next action: Read settings from the exact selected saved worlds owning source package. Original WLD17world/height image retained; new lower-only layer verified against actual native/export/editable geometry, original sources and persistent hole probes.
+
+Evidence and verification: development/levels/rebuild/stair-connection-pass/verification/rejected-wrong-terrain-settings.log; terrain/wld-17-world.json; terrain/verification/independent-sources.json
+
+Older-map obligation: Saved-world/settings/height/layer/topology provenance must all refer to the same actual source; audit older worlds individually.
+
+### DEV-438 — Revised stair hubs and excavated entry joins expose incomplete full-footprint structural support
+
+**Status:** FIX VERIFIED FOR FIVE CANDIDATES; remaining flat/map acceptance open · **Affected:** WLD05L05/L08near adit high hub; WLD17route01/02lower entrance and route03approach
+
+First connection pilot passed all221flights but mine flat sweeps regressed twice; battery flat approach still hit terrain. Lowering actual soil then exposed two lower entry sweeps and a previously passing complete route02.
+
+Cause / uncertainty: Old hub/top tread and entry joins relied on incidental soil or incomplete platform edges; centre standing support did not prove the moving foot footprint.
+
+Fix / next action: Mine receives a real closed common hub plate after both sloping rises finish. Battery receives actual LOWER_ONLY saved terrain plus closed full-width approach and lower entry bearing plates; rerun all flat lanes and continuous flight/link/chain comparisons without changing movement tolerances. Final all25native comparison:221/221flight segments and84/84complete vertical links pass both ways, no passing direction/chain regression.110409flat samples recover149poses with0newstanding/0newsweep failures. All9129remaining pre-existing invalid flat samples diagnosed separately.
+
+Evidence and verification: development/levels/rebuild/stair-connection-pass/rejected/pilot-01/verification; rejected/pilot-02/verification; tools/build_stair_connections.py; tools/finish_connection_terrain.py
+
+Older-map obligation: Reaudit physical threshold/endpoint/turn footprints after terrain and stair revision. All29packets retain individual native/runtime/visual acceptance obligations.
+
+### DEV-439 — Native connection inspection shows black triangular landing regions and unfinished stair surfaces
+
+**Status:** OPEN: actual coverage/material/light attribution and final architecture review required · **Affected:** WLD04clearing/hut level landing; WLD05adit shared hub; audit other source landings individually; WLD18exhibit threshold black rectangular region in paired native views
+
+Paired neutral150Wnative captures show large black regions bounded by structural/old surface edges. New routes may pass while the visible joins remain unaccepted.
+
+Cause / uncertainty: Unverified: distinguish actual coverage voids, existing material faces/normals, adjacent slab occlusion and neutral-light shadowing with native triangle/face diagnostics and actual runtime light separation.
+
+Fix / next action: Keep construction/finish acceptance open; retain paired captures and audit floor coverage, underside/closed edges, original materials and actual circuits/roof/corner separation. Do not mask with fog or call source movement evidence a complete visual map approval.
+
+Evidence and verification: development/levels/rebuild/captures/stair-connection-batch/connection-sheet-1.png; wld-04-clearing-hub-after.png; wld-04-hut-entry-after.png; wld-05-adit-hub-after.png
+
+Older-map obligation: Complete individual MAP_FITNESS_CHECKLIST floor/light/material audits across all29packets and follow-on locations; isolated neutral construction views are not runtime acceptance.
+
+### DEV-440 — Complete vertical circulation does not close the remaining invalid flat route network
+
+**Status:** OPEN: actual native flat samples diagnosed, physical revisions required across all25candidates · **Affected:** All25rebuild candidates;9129of110409sampled flat positions still invalid after connection batch
+
+All221vertical flights and84complete vertical links pass, but101280of110409flat centre/side samples are valid.6714remaining pose diagnoses identify actual physical components,2079lack centre support,252closed-solid/interior or invalid poses; remaining84involve footprint/height spread.
+
+Cause / uncertainty: Existing flat route reservations intersect actual walls/caps/terrain/props or lack full support. Zero new regressions cannot be treated as all routes passing.
+
+Fix / next action: Retain complete native failed-pose table and per-site component/segment/reason counts. Next batch authors real wall/door/cap apertures, coherent flat approaches, terrain/body clearance and prop moves against current shared source coordinates; repeat all flat/vertical/chained regressions. Preserve search envelope, services and reusable asset library. Latest flat-circulation checkpoint: original110409body samples now102726valid/7683invalid,1446recovered with0newstanding/0newsweep failures. Separate current strict full-footprint table119775samples/13483invalid and380of566complete flat links passing both ways; do not compare different sample sets.
+
+Evidence and verification: development/levels/rebuild/stair-connection-pass/verification/remaining-flat-routes.json; remaining-flat-contacts.tsv; remaining-flat-input.tsv; tools/diagnose_remaining_flat_routes.py; development/levels/rebuild/flat-circulation-pass/verification/current-flat-movement.json; native-route-fit.json
+
+Older-map obligation: Each of29packets and follow-on maps needs actual native and runtime route/support audit; four mature sources are not covered by the25candidate table. No acceptance inferred from vertical routes alone.
+
+### DEV-441 — Diagonal threshold approaches graze walls and create oversized longitudinal aperture slots
+
+**Status:** FIX VERIFIED FOR SOURCE APPROACHES; remaining route design is open · **Affected:** ACADEMYeast cloister L41 and other explicit shared-wall threshold approaches in25candidate layouts
+
+Initial flat aperture pilot followed schematic diagonal approaches close to a wall, carving a long slot instead of a normal doorway.
+
+Cause / uncertainty: Treating a threshold reservation point as a complete approach design; route lines converged toward the boundary from far down a narrow corridor.
+
+Fix / next action: Preserve actual route endpoints and threshold coordinates, route perpendicular to the actual shared wall using interior approach legs, then construct body apertures along those authored approaches. Preserve grazing pilot exports/native/scenes/probes and verify current complete links plus unchanged valid-coordinate controls.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot; tools/build_flat_circulation.py; captures/flat-circulation-batch/flat-pilot-sheet.png
+
+Older-map obligation: Audit doorway angle, usable jamb/approach space and wall continuity individually; native recovery counts cannot justify incoherent wall slots.
+
+### DEV-442 — Raised tunnel ceiling overlaps the occupied shed floor above it
+
+**Status:** FIX VERIFIED: five shared ceiling ownership cases /1,072actual top/underside probes; fixture/runtime acceptance open · **Affected:** WLD08generator tunnel-n ceiling topY0.5 beneath generator floorY0; audit other fully stacked source zones
+
+Actual cap96:Ceiling cap tunnel-n.003 occupiesY0.34..0.5 above the generator walking floor. Path-only cutting creates a partial roof trench through the upper room.
+
+Cause / uncertainty: Lower tunnelY-2.5 retained nominal3mheight even though an actual occupied floor atY0 already owns the shared ceiling.
+
+Fix / next action: Assign the fully covering upper floor as ceiling owner, set lower zone height2.5m, retire raised lower caps and trim lower walls/headers to the shared datum. Preserve actual upper floor depth/shaft openings and verify lower/upper routes and visual closure. Partial overlaps require separate design, not blanket lowering.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench; tools/build_flat_circulation.py; captures/flat-circulation-batch/rejected-partial-cap-wld-08-threshold-after.png
+
+Older-map obligation: Audit stacked floor/ceiling/volume ownership at authoritative elevations; fixture remounting, ceiling rays, service heights and whole room visual acceptance remain individual obligations.
+
+### DEV-443 — Body-only flat standing counters omit unsupported capsule-foot footprints
+
+**Status:** AUDIT VERIFIED FOR25CURRENTSOURCES;13483strictinvalidsamples/186incompleteflatlinks remain OPEN · **Affected:** All25source candidates and original flat-route comparison interpretation
+
+Original flat after_valid counter checked centre support and capsule body only; full movement/traversable can still reject neighbouring feet. Threshold rerouting also changes which samples represent current design.
+
+Cause / uncertainty: Reusing a historical unchanged-coordinate regression table as proof of every current authored path being fully usable.
+
+Fix / next action: Keep historical body/sweep regression unchanged. Add explicit opt-in strict-footprints production traversable probes of actual current centre/side lanes and continuous forward/reverse complete flat links with original endpoints. Bind exact layouts/native hashes and diagnose every remaining strict invalid sample; never compare counts across different sample sets as if unchanged.
+
+Evidence and verification: tools/audit_current_flat_routes.py; tools/java/FurnishingRouteProbe.java; development/levels/rebuild/flat-circulation-pass/verification/current-flat-movement.json
+
+Older-map obligation: Verify physical full-footprint support and complete current routes individually, including four mature sources outside25candidate scope. No runtime/full-map acceptance from body-only samples or green vertical routes.
+
+### DEV-444 — Independent stacked-ceiling checker imports blockout geometry before installing its module path
+
+**Status:** FIX VERIFIED: all25independent source checks execute · **Affected:** tools/check_flat_circulation.py added stacked ceiling audit
+
+First ceiling ownership check stopped at ModuleNotFoundError structural_pass before running native/source checks.
+
+Cause / uncertainty: New helper import preceded setup of the repository blockout module directory.
+
+Fix / next action: Add explicit repository tools/blockout paths before importing deck_openings. Reopen actual editable/export sources;544actual upper-floor/underside probes pass outside source stair openings, lower walls/headers stay below shared datum.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/verification/rejected-checker-import.log; verification/flat-check-pilot.log; verification/ceiling-ownership.json
+
+Older-map obligation: A stopped checker and Blender zero process exit are not a validation pass. Require actual current per-site reports and assertions.
+
+### DEV-445 — Redundant rough route prisms share coplanar room-floor faces and produce black native surface patches
+
+**Status:** FIX VERIFIED FOR673FULLYOWNEDROUGHPRISMS; partial overlays/other dark regions remain open · **Affected:** WLD08L12support1 and other original fully covered rough flat-route supports across25candidates
+
+Actual exported pixel rays hit Floor generator.006 and L12support1 at identical distances. Native image contains a black triangular floor region despite544floor/underside coverage probes passing.
+
+Cause / uncertainty: Retained schematic route support prisms lie exactly on actual owned room floors, giving multiple surfaces the same floor plane.
+
+Fix / next action: Remove only original rough route prisms whose complete actual upward top surface is covered by real equal-height floor triangles, keeping props, treads/landings, floors, partial/exterior bearings and all original mesh resources. Independent checker replays source-prism coverage and requires complete flat extrusion. Pilot14removed beams eliminate the large triangular black patch in matched native view; narrower partial overlaps remain unaccepted.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/verification/native-dark-floor-rays.json; rejected/coplanar-floor-pilot; tools/resolve_flat_floor_ownership.py; verification/floor-surface-ownership.json; captures/flat-circulation-batch/rejected-coplanar-wld-08-threshold-after.png; captures/flat-circulation-batch/wld-08-threshold-after.png
+
+Older-map obligation: Audit actual floor ownership and render overlaps independently acrossall29packets; this scoped removal does not resolve all dark regions, partial overlays, stair overlaps, optical/runtime or complete map acceptance.
+
+### DEV-446 — Powerhouse Boolean wall slivers collapse after native float coordinate transforms
+
+**Status:** FIX VERIFIED: all25current native files parse; exact rejected states retained · **Affected:** WLD09Flat route shell Bayed shell Wall turbine S and generated shell family; final established-route build also exposes4WLD03generated-shell zero-area float triangles
+
+Actual native parser rejects26zero-area triangles. Independent source check also refuses the payload; Blender process exit alone had not shown the failure.
+
+Cause / uncertainty: Very short CSG edges remained distinct in local mesh coordinates but coincided after float world transforms atX43metres.
+
+Fix / next action: Preserve actual rejected export/native/editable state and failed raw logs. Bake only25newowned wall/cap parts to native world coordinate precision, weld20micrometres/dissolve10micrometreedges, restore closed outward triangles and appendexact render/native replacements. Original assets/resources/stairs, terrain and literal movement tolerances retained. Update construction/layout replacement identities together. Final exact-float scan retains both actual bad input families; apply the same closed world-coordinate repair to WLD03/WLD09 only. Preserve exact driver versions for replay. Final authoring bakes new wall world coordinates before Boolean operations. Four remaining Asylum near-degenerate panels use closed extrusion of actual front/back silhouette intersection on a10micrometreprofile grid. Original resources stay exact. Final25native/export/editable checks and literal production parser pass; broad weld cleanup failures remain rejected.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse; verification/precision-repair.log; tools/repair_flat_native_precision.py
+
+Older-map obligation: Require actual native parser and closed/export/UV/native checks for every new source. Never remove triangles only from collision, suppress degeneracy rejection or call a stopped checker successful.
+
+### DEV-447 — Blanket flat-route slab cuts and unnecessary normalization regress working upper floors and approaches
+
+**Status:** FIX VERIFIED:0newold-coordinate standing/sweep failures and0complete-path regressions; current invalid footprints remain open · **Affected:** ChurchL18/MansionL28/SchoolL36old-coordinate probes; establishedMansion/School/WLD03/WLD07/WLD09/mortuaryflat links and cemetery loops
+
+Initial complete batch recovered1739body poses but introduced1standing/2sweep failures and regressed already-passing complete paths, including both cemetery loops.
+
+Cause / uncertainty: Flat2.2mheadroom cutters cut into upper floors over low spaces, and normalizing already-working approaches moved them off existing supports or toward stair conflicts.
+
+Fix / next action: Preserve actual rejected all25payloads/raw probes. Flat routes do not cut floor/roof slabs; full shared stacked ceiling conflicts use actual ownership design. Preserve source polylines already passing complete native movement; normalize only failing threshold approaches, keeping endpoints/thresholds. Rerun unchanged old-coordinate, strict actual-current flat, vertical and cemetery-loop gates without loosening movement. Flat wall cuts now start at the actual walking plane, preserving old wall-top bearings. The School probe remains strict-footprint-invalid in BOTH original and final sources; that older defect is not mislabeled newly fixed. Both cemetery loops pass14segments again.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot; established-flat-links.json; verification/initial-failure-contacts.tsv; tools/build_flat_circulation.py
+
+Older-map obligation: Existing complete movement is protected but does not accept a whole map. Low headroom, flat/stair crossings, terrain, full widths and final architectural elevation design remain individual obligations across29packets.
+
+### DEV-448 — Active flat wall apertures reopen permanently sealed context boundaries
+
+**Status:** FIX VERIFIED AT192LINKS/750BOUNDARYCENTRE RAYS; full envelope/runtime acceptance open · **Affected:** ACADEMYL39and retrospective192fixed links across25source candidates
+
+Fresh reimported boundary audit finds AcademyL39open after flat cuts. Actual preceding source independently passes all26Academysealed link boundaries.
+
+Cause / uncertainty: Preserving explicit infill nodes alone is insufficient when a nearby active path cuts another wall belonging to the closed room shell.
+
+Fix / next action: Preserve complete sealed room volumes and full fixed-mouth reservations in source authoring; never apply a wall cutter where it conflicts with those protected bounds. Preserve all source sealed definitions and actual original walls there. Record each withheld conflict for subsequent spatial rerouting; independently rerun all fixed boundary rays, old/current movement and source preservation. Final authoring records394withheldwall/corridor conflicts instead of cutting protected bounds.186completeflatlinks and13,483strictcurrentstanding samples remain unaccepted; reroute coherently before runtime integration.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot; verification/fixed-boundary-before.log; tools/build_flat_circulation.py; verification/fixed-context-boundaries.json
+
+Older-map obligation: Actual full width/body/around/under/ghost/object and runtime40space envelope audits remain required; centre rays do not accept whole boundaries.
+
+### DEV-449 — Boolean union of clipped protected wall fragments creates a nonmanifold reception shell
+
+**Status:** FIX VERIFIED: no fragment unions; source solids/volume/native/retained-resource checks pass · **Affected:** ACADEMYFlat route shell Wall reception E.001during sealed-context guard pilot
+
+Closed-solid assertion stops the source build before export; Blender still returns process exit0.
+
+Cause / uncertainty: Unioning exact original protected fragments into a repeatedly cut wall produces point-touching/degenerate topology.
+
+Fix / next action: Retain exact failing builder and raw log; remove fragment-union strategy. Withhold conflicting aperture cutters before geometry generation and keep original protected wall architecture. No manifold/volume/native rejection threshold changed.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/rejected/union-guard-nonmanifold; tools/build_flat_circulation.py
+
+Older-map obligation: Require fresh actual reports and per-part assertions; a Blender process exit or unexecuted construction design is not successful source generation.
+
+### DEV-450 — Inherited layout hashes bind working CRLF bytes instead of published repository LF bytes
+
+**Status:** FIX VERIFIED: exact frozen inputs and alias-aware movement/source checks pass · **Affected:** Five inherited WLD06/08/11/13/17JSONinputs; current candidate before-layout references and historic route controls
+
+Staged-byte preflight finds existing layout working bytes differ from repository bytes despite identical JSON coordinates.
+
+Cause / uncertainty: Legacy layout paths predate hash-bound source attributes and inherit checkout newline conversion.
+
+Fix / next action: Freeze exact consumed input bytes inside the new hash-bound source package; preserve original layout files and all coordinates. Alias-aware builders and route audits load the byte-identical snapshots. Candidate before-layout bindings reference frozen copies, and original working/repository SHA values are recorded. No native/model/route geometry changes. All three movement comparisons and25source/native/editable reopens pass with unchanged counts. Actual geometry/image hashes remain identical to implementation49ad38e.
+
+Evidence and verification: development/levels/rebuild/flat-circulation-pass/verification/source-layout-aliases.json; source-layouts; tools/audit_current_flat_routes.py; tools/audit_roster_stairs.py; tools/audit_macroterrain_fit.py
+
+Older-map obligation: Audit legacy byte-bound inputs individually across platforms; do not rewrite unrelated original layouts or infer all prior contracts fixed.
+
+### DEV-451 — Finite arrival path prisms end under standing anchors without full footprint support
+
+**Status:** FIX VERIFIED FOR21SOURCE ANCHORS; OTHER ARRIVAL AND RUNTIME GATES OPEN · **Affected:** 21 revised roster construction sources; WLD-09 explicitly rejected; three already-supported source arrivals and four mature maps retained individually
+
+Standing anchor is supported at its centre but the rear .22m footprint falls beyond the authored finite route slab.
+
+Cause / uncertainty: Rough route prisms terminate exactly at the spawn/staging point, with no standing setback.
+
+Fix / next action: Append a .35m closed terminal slab at the actual path end, using its full route width, measured12cm depth and original source material. Preserve all existing GLB/node/resource/native/world records and source IDs. Verify21anchors with production full-foot traversal and inspect actual paired exported construction captures. Entire arrival routes, canonical van relationship and overall foundations remain separate.
+
+Evidence and verification: development/levels/rebuild/arrival-bearing-pass/roster.json; verification/current-flat-movement.json; verification/independent-sources.json; captures/arrival-bearing-batch
+
+Older-map obligation: Audit every other arrival/spawn/hiding/ritual anchor with actual full footprints, including mature Castle/House/Blackpine/Hollow Creek. This source repair does not accept runtime arrival/van/terrain or allmap circulation.
+
+### DEV-452 — New arrival source inspector mistakes exported UV seams and lazy image data for broken assets
+
+**Status:** FIX VERIFIED ON21FINAL SOURCES · **Affected:** tools/review_arrival_bearings.py; first local pilot checks only
+
+First checker reports open edges on a closed UV-split box; next checker rejects lazily loaded packed images after reopening Blender.
+
+Cause / uncertainty: GLB UV boundaries intentionally split vertices; Blender defers packed pixel decoding until used. Object-level topology and has_data alone are insufficient.
+
+Fix / next action: Inspect coordinate-coincident topology in a temporary bmesh at1micrometre, preserve actual source/export bytes, require packed referenced images with real dimensions and decoded pixel storage. Independently compare actual exported/native triangle flags and unchanged original binary/resource/node prefixes. Correct new construction metadata to report only newly appended parts, linking inherited work through its exact source contract.
+
+Evidence and verification: development/levels/rebuild/arrival-bearing-pass/verification/logs/arrival-pilot-review.log; arrival-pilot-review-final.log; independent-sources.json; tools/review_arrival_bearings.py
+
+Older-map obligation: Do not rewrite actual model UVs or weld production geometry merely to satisfy an inspector. Continue individual exported/editable/native checks for each source.
+
+### DEV-453 — WLD-09 saved terrain intersects the original arrival body; slab-only repair is buried
+
+**Status:** SOURCE TERRAIN/ARRIVAL FIX VERIFIED; FULL WLD09/RUNTIME GATES OPEN · **Affected:** WLD-09 arrival L01 original anchor [36,0,82]
+
+After filling the missing rear footprint, production traversal still fails against terrain-site-0-1:surface. Actual exported closeup shows terrain covering the proposed slab.
+
+Cause / uncertainty: Existing terrain/arrival datum conflict was masked by earlier missing-foot support diagnostics. Adding floor support cannot remove soil from the body volume.
+
+Fix / next action: Preserve rejected GLB/native/Blender/layout and paired PNGs with exact relocation hashes. Keep flat-circulation-pass/wld-09 as the active source. Next coordinated terrain/arrival revision must remove actual soil intrusion while preserving saved basement holes, intended landform, stable coordinates and passing vertical routes. Do not hide it with fog or move a spawn independently. Later saved circulation cuts remove all241measured WLD09soil contacts, including the arrival anchor. Reuse the exact end-slab only in that verified terrain context; the earlier buried study stays rejected.
+
+Evidence and verification: development/levels/rebuild/arrival-bearing-pass/rejected/terrain-blocked-wld09; development/levels/rebuild/captures/arrival-bearing-batch/rejected-terrain-wld09; verification/current-flat-failure-contacts.tsv
+
+Older-map obligation: Audit arrival/van bodies against actual saved terrain across all locations; individually verify support and body/head clearance. Other unsupported anchors may mask additional terrain/wall collisions.
+
+### DEV-454 — Lower-only terrain cuts expose missing pavement beneath previously valid standing poses
+
+**Status:** SOURCE FIX VERIFIED ACROSS FULL25CANDIDATE REPLAY; COMPLETE MAP GATES OPEN · **Affected:** Academy circulation L02 during saved circulation terrain pilot; all remaining sites need the same actual standing regression check
+
+Soil-only pilot gains313strict poses but loses20previously valid Academy full-foot positions; complete links and body-only checks do not detect this regression.
+
+Cause / uncertainty: Rough path prisms do not cover revised circulation coordinates. Old soil supplied walking support before the cut.
+
+Fix / next action: Retain exact failing sources/probes/captures. Build actual closed terrain-rooted walkway beds outside real stair openings and closed context. Final three-site pilot recovers999positions at16104unchanged samples, zero new failures. Native and exported beds share exact coordinates; no physics threshold change. Full batch: eight sources,1831recovered full-foot poses at119775unchanged samples,0newfailures;221flights/84vertical links and both cemetery loops remain passing.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/rejected/soil-support-only-pilot; pilot-verification/strict-standing-regression.json; tools/build_cut_walkway_beds.py
+
+Older-map obligation: Run identical-coordinate full-foot comparisons after every terrain cut; a net improvement or passing centre/body/stair check never excuses newly unsupported poses.
+
+### DEV-455 — Whole-strip and boundary-ray bed tests reject valid ground beside a punched landform edge
+
+**Status:** SOURCE FIX VERIFIED IN EIGHT-MAP BATCH; COMPLETE TERRAIN/LAYOUT GATE OPEN · **Affected:** Academy L02 near [50.75,0,61.88]; other soil-edge and punched-hole receivers
+
+Whole2mstrip receiver rejection leaves7new failures; clipping to terrain still leaves3because BVH rays miss exact source-triangle edge vertices.
+
+Cause / uncertainty: A section crosses a real landform void; refusing the whole section drops valid near-side ground. Exact boundary ray misses are not evidence that its backing native triangle is absent.
+
+Fix / next action: Clip each new pavement footprint to exact saved soil triangle coverage, carry its native triangle identity, and compute root heights on that actual plane. Independent checks verify footprint coverage, triangle bytes, native/export match and15cmembedding. Do not extend terrain, fill holes or relax production support. Preserve both failed whole-strip and boundary-ray studies. Three-site unchanged-position regression now passes with0newinvalid positions.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/rejected/whole-strip-rooting-pilot; rejected/boundary-ray-rooting-pilot; pilot-verification/independent-sources.json; tools/review_flat_terrain.py
+
+Older-map obligation: Individually audit punched boundaries, genuine stair shafts and road/terrain ownership. Route portions that actually leave the landform still require coherent rerouting; this bed repair does not accept them.
+
+### DEV-456 — WLD-16 terrain body collisions have no exact persistent editor-world owner in current sources
+
+**Status:** OPEN; ORIGINAL AUTHORED TERRAIN PRESERVED · **Affected:** WLD-16 route-12/13/14,211current terrain body contacts
+
+Actual native terrain geometry does not match any existing saved terrain world for this site.
+
+Cause / uncertainty: The current source retains its original authored roadside terrain rather than the later saved macroterrain candidate.
+
+Fix / next action: Keep the exact original mesh and native coordinates. Record the missing owner; require a deliberate geometry-preserving editor/native migration or coordinated terrain redesign. Never swap in a merely similar world. Independent matched worlds can continue in this batch.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/terrain-repair-plan.json; tools/plan_flat_terrain_repairs.py
+
+Older-map obligation: Resolve every terrain replacement through exact transformed native geometry and saved-world provenance. No other location is accepted because eight saved sources match.
+
+### DEV-457 — New terrain review camera and scoped-chain check use unscoped source assumptions
+
+**Status:** FIX VERIFIED IN THREE-SITE PILOT · **Affected:** tools/review_flat_terrain.py camera; tools/audit_roster_stairs.py --sites pilot mode
+
+Contact camera uses the first flat segment instead of the actual diagnosed segment; selected three-site stair check incorrectly requires cemetery chains outside its scope.
+
+Cause / uncertainty: New batch tooling did not carry contact segment identity and selected-site declaration scope through its assertions.
+
+Fix / next action: Use actual diagnosed segment index for the paired camera. Require exactly all declared chains belonging to selected sites; full-roster mode still requires both cemetery loops. Final three-site source/standing/body/stair checks pass; the final25site batch must rerun full loop controls. Retain original failed check logs and rejected camera captures. Full25site batch independently passes both cemetery14segmentloops after the scope correction.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/verification/logs; pilot-verification/stair-movement.json; pilot-verification/captures.json
+
+Older-map obligation: Label capture type and actual tested sites. Do not infer whole-roster route coverage from a selected pilot or treat an empty selected declaration set as whole-roster verification.
+
+### DEV-458 — Circulation excavations expose coarse cut banks and unfinished physical edge interfaces
+
+**Status:** OPEN; NATIVE SOURCE CLEARANCE DOES NOT ACCEPT LANDSCAPE · **Affected:** Eight revised terrain sources, especially WLD05/WLD09/WLD13cut banks and Academy perimeter
+
+Paired native sheets expose sawtooth excavation faces, rough pavement/rim junctions and unfinished protective edges after soil/body conflicts are removed.
+
+Cause / uncertainty: Two-metre persistent sculpt grids and rough circulation reservations establish coarse clearance before measured retaining/edge/landscape refinement.
+
+Fix / next action: Preserve landform and saved punches. Author supported retaining/rim/guard interfaces, refine grades/materials and inspect standing/crouched/photo and highest views with the canonical van. Consolidate bed components without changing support. Current2/5construction,1/5finish is not production terrain.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/verification/visual-review.json; captures/flat-terrain-batch/*-terrain-final-sheet.png; development/quality/DESQUAREIFY_GATE.md
+
+Older-map obligation: Every older map needs individual landform, physical edge and full-width route audits. Native contact samples do not establish containment, light separation, visual fitness or runtime readiness.
+
+### DEV-459 — Pilot and final native renders reuse filenames and invalidate older PNG hash bindings
+
+**Status:** FIX VERIFIED BEFORE FINAL BATCH PUBLICATION · **Affected:** Three-site saved-terrain pilot capture paths after full eight-site regeneration
+
+Exact staged preflight detects pilot captures.json SHA mismatch after final renders overwrite shared PNG filenames.
+
+Cause / uncertainty: Original review tool names frames by site/view/phase without a unique generation namespace.
+
+Fix / next action: Recover every exact pilot PNG blob from published8f759bd9, verify its original SHA and archive18PNGs under pilot-archive. Rebind only pilot report paths, retaining original hashes/models/cameras and full-batch frames. Save the exact v1checker executed for both model reviews; future renders use unique UTCmicrosecond run directories. No model, native geometry or test result changes.
+
+Evidence and verification: development/levels/rebuild/flat-terrain-pass/pilot-verification/capture-rebinding.json; verification/generators/review_flat_terrain-v1.py; tools/review_flat_terrain.py
+
+Older-map obligation: Keep immutable capture namespaces for every iteration; compare actual PNG bytes to reports before upload. An unchanged model or similar pixels does not prove an older image hash still matches.
+
+### DEV-460 — Route endpoints in a shared room do not establish physical room connectivity
+
+**Status:** OPEN; EXACT NATIVE ROOM SOCKET AUDIT RECORDED · **Affected:** Rooms touched by access-route-pass across14source maps; seven groups retain invalid original sockets,29groups have unproven direct joins
+
+Individual link paths can pass while other incident room sockets remain inside props or on opposite sides of physical obstacles.
+
+Cause / uncertainty: Original layout links reused room centres or independent door access points without proving intra-room movement.
+
+Fix / next action: Retain valid route changes, audit actual unique incident endpoints and bidirectional5cm production sweeps, then author physical room connections or refit interfering geometry. Do not claim map-wide connected navigation from matching room IDs.
+
+Evidence and verification: development/levels/rebuild/access-route-pass/verification/room-socket-connectivity.json; tools/audit_room_socket_connectivity.py; invalid and multi-component groups explicitly retained. Complete flat and stair regression checks remain separate.
+
+Older-map obligation: Audit actual endpoints and within-room connections separately for every location, including mature maps; direct-join failure does not prove that an indirect path is impossible.
+
+### DEV-461 — Native route search can find a physical path through unintended room domains
+
+**Status:** REJECTED BEFORE AUTHORITATIVE SOURCE ADOPTION · **Affected:** WLD-08 L15; WLD-15 route-03; WLD-16 route-03
+
+Three full-width proposals leave the union of their intended endpoint-room bounds.
+
+Cause / uncertainty: Physics and sealed-context checks alone do not enforce authored room relationships.
+
+Fix / next action: Preserve proposals as unadopted evidence; exclude them from access-route-pass. Redesign actual intended circulation/room arrangement instead of accepting a convenient physical shortcut.
+
+Evidence and verification: development/levels/rebuild/access-route-pass/verification/authoring.json rejected records; <=0.1m path-domain sampling with0.3m wall/door tolerance.51other proposals remain pending independent route/source review.
+
+Older-map obligation: Apply physical and intended-domain review to each older authored path. Ground support alone does not establish a coherent door/room connection.
+
+### DEV-462 — Headless route review assumes an imported GLB supplies a Blender world
+
+**Status:** FIXED;104REAL FINAL FRAMES AND26SHEETS HASH-VERIFIED · **Affected:** New tools/review_access_routes.py initial attempt; zero captures produced
+
+Blender exits0 but logs AttributeError on scene.world.color after factory reset and GLB import.
+
+Cause / uncertainty: Factory empty scenes have no world and GLB need not supply one; process exit alone is not a valid render acceptance check.
+
+Fix / next action: Create an explicit neutral review world; rerun in a fresh unique capture directory, inspect logs and require actual image hashes/counts.
+
+Evidence and verification: build/access-route-render.log initial terminal error; tools/review_access_routes.py corrected world creation; final captures.json will bind all actual PNGs and checker.
+
+Older-map obligation: Check actual render reports and PNGs; never infer render success from Blender exit0 alone.
+
+### DEV-463 — Generic route-change metadata confuses current and inherited map stages
+
+**Status:** FIXED; EXPLICIT14SITE SCOPE AND EXACT MODEL/ALL-FLOOR CAPTURE IDENTITY VERIFIED · **Affected:** New access route review selector at unchanged WLD-05 source; initial partial32frame render study
+
+Initial review followed an inherited route_changes field and then correctly failed its byte-identical GLB assertion on a map outside the new14site batch.
+
+Cause / uncertainty: Several authoring stages use route_changes; its presence does not identify the newest source revision.
+
+Fix / next action: Use an explicit access_route_changes field, preserve older metadata, scope review/audit to that new field, rerun movement/source bindings and keep partial captures under rejected-metadata-selector. Review all affected floors, not only the most common floor.
+
+Evidence and verification: development/levels/rebuild/access-route-pass/verification/rejected-capture-study.json; exact failed log retained; primary-floor-captures.json and supplemental captures retain separate exact checker hashes.
+
+Older-map obligation: Select stages from exact manifest and explicit revision fields; inherited construction metadata cannot prove that a map was revised by a later pass.
+
+### DEV-464 — Exported roof closure review must weld UV seam vertices
+
+**Status:** FIXED IN ROOF CHECKER · **Affected:** Farmhouse, Mansion and School roof construction verifier
+
+Initial exported-solid check rejected a closed roof because glTF splits vertices at UV seams.
+
+Cause / uncertainty: Raw edge topology on imported UV split vertices is not geometric closure.
+
+Fix / next action: Weld coincident vertices only in temporary inspection BMesh; require manifold edges, positive volume and exact render/native triangle identity. Source assets remain untouched.
+
+Evidence and verification: tools/build_roster_enclosed_roofs.py exported closure checks; final three construction contracts and captures.
+
+Older-map obligation: Use geometric closure after seam welding for other GLB solids; retain exact triangle comparison.
+
+### DEV-465 — New wing roofs retain unfinished weather joins and runtime integration
+
+**Status:** OPEN · **Affected:** Farmhouse barn and house; Mansion stepped wings; School assembly/gym/health roofs
+
+Closed native roof blocking is present, but step flashing, gutters and standing-height junction review are unfinished; live maps still use previous runtime authorities.
+
+Cause / uncertainty: This bounded construction batch adds roof geometry to current native source candidates; whole-site runtime conversion remains a separate unfinished gate.
+
+Fix / next action: Fit roof-to-taller-wall flashing and drainage; inspect joins under live lights; integrate exact source coordinates across runtime systems before acceptance or unlock.
+
+Evidence and verification: development/levels/rebuild/roof-construction-pass/roster.json; captures/roof-construction-batch native overviews; native collision and route comparisons.
+
+Older-map obligation: Other roster roofs remain individually unaudited; this batch confers no acceptance on retained sources.
+
+### DEV-466 — Diagonal lower-access stair columns and retained hub obstruction
+
+**Status:** PHYSICAL CANDIDATES REBUILT; WHOLE MAP ACCEPTANCE OPEN · **Affected:** WLD-06 Wharf L16/L17, WLD-08 Research L17/L18, WLD-12 Railway L17
+
+Long skewed flights cross building/undercroft axes; initial orthogonal reconstruction retained old upper tread-hub plates across descending openings.
+
+Cause / uncertainty: Path-first diagonal flights and generic hub-preservation assumptions did not represent stair-bay construction.
+
+Fix / next action: Rebuild five flights along site axes with level turns, real shaft booleans and vacated-shaft restoration. Disable old-hub preservation for these plans only. All seven selected vertical routes now pass both ways, with zero previously passing flat-link regressions.
+
+Evidence and verification: development/levels/rebuild/orthogonal-stair-pass/verification; captures/orthogonal-stair-batch; source/native/export checks in builder
+
+Older-map obligation: Institutional selected stairs are axis aligned; remaining diagonal outdoor slopes, spiral towers, whole roster terrain/room connectivity and runtime acceptance remain individually open.
+
+### DEV-467 — Stair guard ends obstruct turning landings unless construction reserves the approach
+
+**Status:** INTERMEDIATE COLLISIONS CORRECTED; GUARD RETURNS AND LANDING PERIMETERS OPEN · **Affected:** Wharf WLD06, Research WLD08, Railway WLD12 five rebuilt flights
+
+First fitted guards crossed approach/turn sweeps; short setback still invalidated nine previously valid strict lane samples.
+
+Cause / uncertainty: Full-flight rail bays and side stringers occupied sideways entry/exit clearance at the flight ends.
+
+Fix / next action: Use fitted existing guardrail profiles and seated side stringers on central flight sections, with1.6mend approach reserves. All7vertical routes and29flatlinks remain passing both ways; exact13791pose comparison has0newinvalid. End sections and landing perimeters still need widened landings/returned guard construction; not a completed safety enclosure.
+
+Evidence and verification: development/levels/rebuild/stair-guard-pass/verification/unchanged-lanes.json; native movement reports and captures/stair-guard-batch
+
+Older-map obligation: Audit each older flight/landing for full-width turning clearance; passing individual flights never proves the end-to-end route.
+
+### DEV-468 — Wharf pier approach crossed descending-stair headroom and raised undercroft roof
+
+**Status:** PHYSICAL CANDIDATE REBUILT; RUNTIME AND WHOLE-MAP GATES OPEN · **Affected:** WLD-06 L07/L16/L17; related widened approaches at WLD-08 and WLD-12
+
+Opening and widening the actual stairs exposed a pier path over the descending flight and an undercroft cap above surface level. Full end guards and end stringers also intercepted turning paths.
+
+Cause / uncertainty: Earlier path-oriented construction retained contradictory upper walking and lower headroom volumes, with insufficient straight landing depth before a turn.
+
+Fix / next action: Build a supported 2.4m-wide quay bypass with undercroft-floor bearings; re-seat undercroft cap by0.8m and shorten its wall tops; source undercroft height becomes2.2m. Add1.2m straight lower turning approaches, flared tread wings and matched physical openings across five flights in three maps. End guards/perimeter returns remain open rather than being accepted as safe. Final7vertical routes/31flatlinks pass both ways; zero complete-link regressions and zero new invalid positions among common XYZ lane samples.
+
+Evidence and verification: development/levels/rebuild/stair-end-pass/roster.json; verification/stairs, current-flat-movement.json and unchanged-lanes.json; six native views in captures/stair-end-batch
+
+Older-map obligation: Review other map upper/lower paths as physical volume relationships. Native passing paths do not prove arbitrary room connectivity, light separation, edge guarding or runtime integration.
+
+### DEV-469 — Repeated flared-shaft cuts produced degenerate float32 native plate triangles
+
+**Status:** CORRECTED IN CURRENT GENERATED CANDIDATES · **Affected:** Wharf procedural deck plates; Research cut-plate attempt
+
+Boolean outputs could appear closed in Blender but produce collinear or coincident native float32 triangle vertices; the unchanged production native loader rejected them.
+
+Cause / uncertainty: Repeated coplanar cuts and sub-millimetre residual polygons exceeded reliable export precision.
+
+Fix / next action: Reconstruct affected procedural floor/cap solids from their actual upward source triangles minus measured openings; remove below0.1mm boundary residuals and use a10micron coordinate grid on generated geometry only. Keep unaffected source binary resources and every retained native record unchanged. Final actual native loader, exact export/native triangle checks and movement replays pass.
+
+Evidence and verification: tools/build_stair_end_batch.py; source-bound construction contracts and native probes in stair-end-pass/verification
+
+Older-map obligation: Do not relax native-loader validity checks or claim Blender closure proves exported native correctness. Other scenes remain individually unaudited.
+
+### DEV-470 — Rough saved circulation cuts lack retaining construction at Mine Dam and Cannery
+
+**Status:** ROOTED SHOULDER CANDIDATES CONSTRUCTED; FULL TERRAIN AND RUNTIME ACCEPTANCE OPEN · **Affected:** WLD-05 Dead Mans Claim; WLD-09 Blackwater Dam; WLD-13 Greywater Cannery
+
+Earlier lower-only soil cuts established rough playable bed levels but left raw exposed grade shoulders without construction or edge treatment.
+
+Cause / uncertainty: Saved terrain excavation preceded retaining, drainage and terrain-to-structure finishing.
+
+Fix / next action: Construct closed 0.32m thick retaining runs outside route and room reservations, with horizontal footing bases sampled over actual terrain footprints. 750 reopened-export root probes retain at least0.39999m soil embedding. Source terrain/topology, models and existing native records remain unchanged. All12flights/11vertical routes,29flat links pass both ways;13,329unchanged strict positions have zero newly invalid samples.
+
+Evidence and verification: development/levels/rebuild/retaining-shoulder-pass/roster.json; individual construction root_checks and native/export bindings; verification/unchanged-lanes.json; terrain-interface closeups
+
+Older-map obligation: Coping, weeps/drainage, returns, terrain art and full landscape/runtime gates remain open. Academy off-landform paths and WLD16terrain ownership are not fixed by these walls.
+
+### DEV-471 — Cinder retaining stub attempt passes movement but lacks coherent bank construction
+
+**Status:** REJECTED; PRIOR CINDER SOURCE RETAINED · **Affected:** WLD-18 Cinder-6 two isolated retaining blocks
+
+A placement rule produced two individually rooted wall stubs rather than a coherent treatment of the cut bank.
+
+Cause / uncertainty: Local physical feasibility and movement checks do not establish an appropriate architectural arrangement.
+
+Fix / next action: Preserve the actual rejected model/native/editable files and native review images under rejected/cinder-6-stubs. Do not adopt that source. Redesign its bank as a whole before adding retention. Academy and Monastery also retain their sources because no justified wall fit was found.
+
+Evidence and verification: development/levels/rebuild/retaining-shoulder-pass/rejected/cinder-6-stubs; captures/retaining-shoulder-batch/rejected-cinder-6-stubs; explicit all29roster decisions
+
+Older-map obligation: Review every generated structural assembly visually; passing native probes cannot accept site design or runtime gameplay.
+
+### DEV-472 — Institutional roof construction initially omitted Academy north cloister
+
+**Status:** CORRECTED IN CURRENT ROOF CANDIDATES; FINISH AND RUNTIME GATES OPEN · **Affected:** Academy roof wing selection; Asylum and College complete aboveground footprint scope checked independently
+
+The first selected-wing program enclosed its declared wings but missed the low north cloister between taller Academy ranges.
+
+Cause / uncertainty: Checking only the chosen roof rectangles could not discover an omitted room footprint.
+
+Fix / next action: Add the actual north-cloister pitched roof with closed gables/eaves. Independently ray-check all aboveground indoor/context room footprints; retain below-ground ceiling/ground enclosure as a distinct obligation. Current kernel optical probes begin above the exposed old caps:423Academy,396Asylum and513College rays were open before and all are blocked after. Preserve the superseded Academy GLB/native/editable scene, original contract and PNG with corrected archive path provenance.
+
+Evidence and verification: development/levels/rebuild/institution-roof-pass/rejected/missing-north-cloister-roof; current construction contracts and verification/roof-optical-results.tsv
+
+Older-map obligation: Recheck per-room roof coverage independently of selected wing lists. Native optical closure is not full lighting, seam, camera or gameplay acceptance.
+
+### DEV-473 — Institutional new roof steps retain unfinished drainage flashing and runtime integration
+
+**Status:** OPEN · **Affected:** Academy residential/cloister tiers; Asylum ward/pavilion steps; College library/bridges/residence roof joins
+
+Closed roof forms are present but material refinement, drainage/flashings, detailed load framing and standing-height seam review remain unfinished. These sources are not loaded by normal gameplay dispatch.
+
+Cause / uncertainty: This batch establishes architectural roof mass and opaque native geometry; source-to-game ownership/render/room/service adapters remain incomplete.
+
+Fix / next action: Finish measured roof-to-wall steps, valleys, coping and drainage; review actual lighting and room volumes and integrate the exact sources without changing map availability until gates pass.
+
+Evidence and verification: development/levels/rebuild/institution-roof-pass/roster.json; current roof overviews and native route/optical verification
+
+Older-map obligation: Preserve Castle/House/Blackpine/Hollow Creek authorities; audit other roster roofs and all current candidate runtime bindings separately.
+
+### DEV-474 — Mixed Prison cellhouse cap heights require enclosing roof-bearing upper facades
+
+**Status:** CONSTRUCTED IN SOURCE CANDIDATE; DETAIL AND RUNTIME GATES OPEN · **Affected:** Prison west/east cellhouses; Church and Monastery distinct roof/tower construction retained in the same batch
+
+Existing cellhouse room caps end at3m or6.4m while taller dayhall/bypass construction reaches6.8m. A continuous roof at the taller datum needs actual masonry enclosure below its eaves.
+
+Cause / uncertainty: Room-first structural caps do not alone provide one coherent exterior cellhouse envelope.
+
+Fix / next action: Build the full pitched cellhouse roofs with0.24m thick closed upper-facade bands seated into the existing ceiling/wall tops. Preserve the old occupied rooms and stairs; add no accessible attic or sockets. Production native optical controls show74previously clear horizontal band rays now blocked. Longitudinal ridge handling and closed hipped Church/Monastery caps use the current measured footprints. All9flights/9complete vertical routes and69flatlinks retain passing movement;15,600unchanged XYZ poses have zero new invalid samples.
+
+Evidence and verification: development/levels/rebuild/secure-sacred-roof-pass/roster.json; individual roof_wings/facade_closures; verification/facade-optical-results.tsv and roof-optical-results.tsv; three native exported roof overviews
+
+Older-map obligation: Coping, roof-step drainage/flashing, loads/framing, standing seam review and actual runtime integration remain open. Earlier roof candidates remain byte-preserved; their joins are not automatically accepted by this batch.
+
+### DEV-475 — First facade-enabled roof build referenced an undefined imported-object list
+
+**Status:** CORRECTED; FINAL THREE-SITE BUILD AND NATIVE CHECKS PASS · **Affected:** Optional FACADE_CLOSURES mode in shared headless roof constructor
+
+First facade-enabled attempt stopped with NameError before model export while choosing an existing wall material.
+
+Cause / uncertainty: New mode referred to originals; the helper import list is named oldobjects.
+
+Fix / next action: Use the actual imported-object collection. Optional hip/long-axis/facade modes default off for prior builders. Build and inspect all three current sites, retaining original source resource bytes and passing native route/optical checks.
+
+Evidence and verification: development/quality/evidence/roof-facade-initial-error.txt; tools/build_roster_enclosed_roofs.py and current secure-sacred roof contracts
+
+Older-map obligation: No mature map or earlier model was regenerated by this change; preserve their independent physical/runtime obligations.
+
+### DEV-476 — Diagonal route slots cut building corners instead of deliberate entrances
+
+**Status:** SELECTED ENTRANCES RECONSTRUCTED; OTHER CIRCULATION OPEN · **Affected:** WLD-06 Wharf, WLD-08 Research, WLD-13 Cannery
+
+Old diagonal flat supports passed corner masonry; roofing the existing layout perpetuated the defect.
+
+Cause / uncertainty: Route research drove wall cuts before coherent building envelopes.
+
+Fix / next action: Reconstruct cottage/store/mess/wash/processing perimeters with0.24m solid walls, intact corners and explicit2.45m-high lintelled doors. Square approaches through actual doors have continuous0.25m pavement, complete turns and terrain-rooted bearings. All11changed links pass continuously both directions. Five old corner crossing native optical rays now block. Preserve existing props/stairs and source resources.
+
+Evidence and verification: development/levels/rebuild/entrance-construction-pass/roster.json; per-site construction.json; verification/current-flat-movement.json; verification/restored-corners-results.tsv; entrance-construction-batch native cutaways
+
+Older-map obligation: All29packets need individual architectural review. Next: Wharf L07 fish-house wall conflict, Research L13 generator-to-lab and L19 lower tunnel, Cannery L09 gallery stair conflict. Academy off-landform and WLD-16 exact terrain ownership remain unresolved. No runtime acceptance or map unlock.
+
+### DEV-477 — Research main tunnel cap projects above ground-level courtyard
+
+**Status:** GROUND-LEVEL DECK CONSTRUCTED; EDGE GUARDS AND RUNTIME OPEN · **Affected:** WLD-06 Wharf, WLD-08 Research, WLD-13 Cannery
+
+Tunnel floor-2.5 plus height3 put caps/wall tops at+0.5 through the y0 courtyard.
+
+Cause / uncertainty: Underground enclosure and outdoor walking datum were inconsistent.
+
+Fix / next action: Replace main tunnel caps with one0.30m-deep courtyard deck at0, underside-0.30, cutting only actual stair shafts. Trim main tunnel bearing wall tops to0 with closed solids. Floor stays-2.5 giving2.20m clearance; main tunnel envelope height2.5. Retain tunnel-n and exact saved terrain punches. All Research vertical routes pass. Edge guards, framing/load review and runtime ownership remain open.
+
+Evidence and verification: development/levels/rebuild/entrance-construction-pass/roster.json; per-site construction.json; verification/current-flat-movement.json; verification/restored-corners-results.tsv; entrance-construction-batch native cutaways
+
+Older-map obligation: All29packets need individual architectural review. Next: Wharf L07 fish-house wall conflict, Research L13 generator-to-lab and L19 lower tunnel, Cannery L09 gallery stair conflict. Academy off-landform and WLD-16 exact terrain ownership remain unresolved. No runtime acceptance or map unlock.
+
+### DEV-478 — First entrance repair lacked continuous threshold and excavation-spanning support
+
+**Status:** CORRECTED IN FINAL THREE-SITE CANDIDATE · **Affected:** WLD-06 Wharf, WLD-08 Research, WLD-13 Cannery
+
+Initial shallow-bed attempt regressed eight previously passing flat-link directions. Imported seam splits also stopped initial basement wall trims.
+
+Cause / uncertainty: Triangle-local shallow filling cannot bridge excavated ground or support full thresholds; imported UV seams require temporary welding before solid cuts.
+
+Fix / next action: Replace fragmented beds with continuous thick approach slabs and actual soil-rooted bearings at at most2m spacing, plus existing structure overlaps at thresholds. Weld temporary imported seams before solid trimming. Final six flights/six vertical routes and eleven changed flat routes pass both ways, with zero complete-link direction regressions. Strict full-footprint samples retain1204invalid of14499 across all inspected routes; these remain open rather than accepted.
+
+Evidence and verification: development/levels/rebuild/entrance-construction-pass/roster.json; per-site construction.json; verification/current-flat-movement.json; verification/restored-corners-results.tsv; entrance-construction-batch native cutaways
+
+Older-map obligation: All29packets need individual architectural review. Next: Wharf L07 fish-house wall conflict, Research L13 generator-to-lab and L19 lower tunnel, Cannery L09 gallery stair conflict. Academy off-landform and WLD-16 exact terrain ownership remain unresolved. No runtime acceptance or map unlock.
+
+### DEV-479 — Flat routing crosses Wharf fish house and Cannery transverse gallery stair
+
+**Status:** SELECTED PHYSICAL CIRCULATION RECONSTRUCTED; OTHER ROUTES OPEN · **Affected:** WLD-06 Wharf perimeter and west stair; WLD-08 Research generator/lab aisle; WLD-13 Cannery gallery stair
+
+Wharf west-pier path entered fish-house masonry; generator/lab link squiggled around a central stair; Cannery office approach crossed a transverse flight.
+
+Cause / uncertainty: Earlier path research accepted local collision solutions without coherent deck, doorway and stair arrangements.
+
+Fix / next action: Build a thick piled Wharf perimeter boardwalk around the existing stair, with steel spines/crossheads/girders rooted in exact native terrain and indexed guardrails around the actual joined perimeter. Boathouse and west stair return connect on this deck with1.5m clear routes. Rebuild Research generator/lab perimeter walls around aligned x7 doorway/aisle. Rehouse Cannery flight longitudinally within the mezzanine, provide a normal two-metre lower landing, restore old floor shaft and cut only the new real shaft. Fit library guards to flight, shaft returns and mezzanine edge. All5changed flat links and6complete vertical routes pass both ways; all strict sampled lanes on those changed links pass. Other routes retain993invalid of15267sampled poses.
+
+Evidence and verification: development/levels/rebuild/circulation-construction-pass/roster.json; per-site constructed-circulation.blend/glb/hcs2; verification/stairs and current-flat-movement.json; native circulation-construction-batch cutaways
+
+Older-map obligation: Preserve mature map authorities and all29packet roster. Research lower tunnel L19 remains an architecturally unaudited diagonal even though its native sweep now passes. Wharf east return/pier thresholds, Research courtyard excavation guards and full runtime binding remain open. Academy off-landform and WLD-16 terrain ownership remain explicit.
+
+### DEV-480 — Initial guard runs crossed walk turns and initial landing capped descending treads
+
+**Status:** CORRECTED IN FINAL THREE-SITE CONSTRUCTION · **Affected:** WLD-06 Wharf perimeter and west stair; WLD-08 Research generator/lab aisle; WLD-13 Cannery gallery stair
+
+First Cannery lower stair approach ran sideways through a guard. Segment-based Wharf guards crossed their own right-angle turns; a square terminal pad overhung the first descending west-stair treads. Fragmented old-floor subtraction also created a nonmanifold attempt.
+
+Cause / uncertainty: Terminal and perimeter construction were inferred independently from connected physical walking surfaces.
+
+Fix / next action: Approach Cannery flight along its axis with a real2m lower landing. Derive Wharf guards from joined deck outer boundaries with deliberate connection gaps. Stop the new landing and its bearing exactly at the descending stair lip. Deduct the boathouse floor as a coherent footprint instead of tiny overlapping triangles. Six flights and complete routes now pass continuously both ways with zero prior passing direction regressions. Three production native optical controls through the vacated gallery shaft are clear before and blocked after.
+
+Evidence and verification: development/levels/rebuild/circulation-construction-pass/roster.json; per-site constructed-circulation.blend/glb/hcs2; verification/stairs and current-flat-movement.json; native circulation-construction-batch cutaways
+
+Older-map obligation: Preserve mature map authorities and all29packet roster. Research lower tunnel L19 remains an architecturally unaudited diagonal even though its native sweep now passes. Wharf east return/pier thresholds, Research courtyard excavation guards and full runtime binding remain open. Academy off-landform and WLD-16 terrain ownership remain explicit.
+
+### DEV-481 — Imported parent axis reversed a reused Research bench translation
+
+**Status:** CORRECTED WITH VERIFIED WORLD TRANSFORM AND ACTUAL FLOOR RECEIVERS · **Affected:** WLD-06 Wharf perimeter and west stair; WLD-08 Research generator/lab aisle; WLD-13 Cannery gallery stair
+
+Initial local-x move shifted the indexed sample station east, compromising the new aisle. Its inherited placement also intersected the rebuilt north wall by0.08m.
+
+Cause / uncertainty: Imported parent transforms were not accounted for when changing local position; prior prop bounds used the old wall arrangement.
+
+Fix / next action: Apply explicit world translation x-2m and game-z+0.24m, preserving original asset mesh, UVs, pivot and materials. Exported bounds now x3.24..5.52 and z26.40..27.35, clear of the x7/1.5m aisle and north masonry endingz26.24. All four bottom corners and center ray-hit actual lab floor at0. Final aisle center and side-lane samples pass.
+
+Evidence and verification: development/levels/rebuild/circulation-construction-pass/roster.json; per-site constructed-circulation.blend/glb/hcs2; verification/stairs and current-flat-movement.json; native circulation-construction-batch cutaways; verification/reused-station-support.json
+
+Older-map obligation: Preserve mature map authorities and all29packet roster. Research lower tunnel L19 remains an architecturally unaudited diagonal even though its native sweep now passes. Wharf east return/pier thresholds, Research courtyard excavation guards and full runtime binding remain open. Academy off-landform and WLD-16 terrain ownership remain explicit.
+
+### DEV-482 — Traversability studies were incorrectly extruded into physical architecture and coplanar room landings
+
+**Status:** ROOT GENERATORS CORRECTED; THREE SOURCES STRIPPED; FULL ROSTER REMEDIATION OPEN · **Affected:** All route-derived blockout candidates require audit; current removal at WLD-06 Wharf, WLD-08 Research and WLD-13 Cannery; mature Castle/House/Blackpine/Hollow Creek preserved
+
+Owner screenshot shows an amber approach strip flickering through Cannery hall floor. Cyan centerline supports and subsequent route-rooted bed fragments were physical mesh/collision and masked missing actual terrain/deck support.
+
+Cause / uncertainty: Navigation guidance was treated as a construction command. build_stair_bays passed landings_authored_in_shell while stair_flights reads landings_authored_in_zones, creating long coplanar landing boxes through existing room floors. Narrow movement passes were incorrectly used as evidence of coherent architecture.
+
+Fix / next action: Base blockout route_mesh now creates only non-rendering CURVE study objects, with no mesh or collision geometry. Correct the stair landing flag. Remove all rough route support, route-rooted fill fragments and line-end bearings from these three active candidates. Replace Cannery processing floor and ground approach boxes with one closed0.16m slab; retain actual stair/upper shaft/guards and reusable structures/assets. All6flights and6complete vertical routes pass both ways. Strict flat review now has4228invalid of15267samples,25passing complete links and28regressed directions over14links. Preserve failing evidence: previous strips supplied false support. Do not add ribbon geometry back or relax checks. Rebuild actual arrival terrain, quays/decks, thresholds and damaged architectural openings. Current candidate status is explicitly incomplete remediation, not accepted maps.
+
+Evidence and verification: Owner Cannery screenshot; development/levels/rebuild/study-solid-removal-pass/roster.json; per-site study_solid_removal lists; verification/current-flat-movement.json and verification/stairs; native correction cutaways; tools/remove_study_solids.py; build_blockouts.route_mesh and build_stair_bays landing flag
+
+Older-map obligation: Audit every remaining active candidate for physical study ribbons, coplanar landings and earlier route-driven wall/floor/roof cuts. Native checks do not validate architecture. Deliberately authored slabs/bridges also require sensible building/terrain review. Full production rebuild and runtime integration remain open; no unlock or held integration merge.
+
+### DEV-483 — Dock and courtyard surfaces were incomplete around removed physical route guides
+
+**Status:** SELECTED ARCHITECTURAL AREAS CONSTRUCTED; FULL REMEDIATION OPEN · **Affected:** Wharf quay/jetty/crossdock and east stair head; Research compound courtyard/forecourt; Cannery loading dock/service yard
+
+Removing physical study strips exposed missing actual deck surfaces and unsupported ground-level outdoor circulation. Earlier narrow authoring surfaces also overlapped subsequent area slabs.
+
+Cause / uncertainty: Prior deck fragments had been built around study meshes instead of authoring the complete architectural deck/yard footprints.
+
+Fix / next action: Replace Wharf dock floor fragments with complete0.20m decks, actual stair-only voids, native-soil driven piles and a continuous orthogonal steel bearing grid. Enlarge east pier-head landing around the actual well. Build Research retaining/fill foundations and0.20m courtyard/forecourt/apron pavement, with guards on exposed retaining edges. Construct Cannery piled loading deck and chamfered service yard. Clip old Wharf porch/perimeter surfaces to terminate at real room/dock boundaries and cap perimeter guards at their jetty joins; remove obsolete rails within the joined deck. No route ribbon is restored. All6flights/6complete vertical routes pass both ways,40complete flatlinks pass with zero direction regressions from the ribbon-free source. Strict samples retain1333invalid of15525.
+
+Evidence and verification: development/levels/rebuild/courts-and-docks-pass/roster.json; per-site area_construction with source-soil receivers, real pile bottoms and framing coordinates; verification/current-flat-movement.json and stairs; native courts-and-docks-batch captures
+
+Older-map obligation: Arrival terrain is unfinished at all3sites; Research array/shelter and Cannery forest approaches remain unbuilt. Wharf outer guard continuity/underside/joins, courtyard drainage/finish and structure load/span detailing remain open. Other22active candidates still need guide-solid removal and architectural repair; preserve4mature authorities. No runtime acceptance, landscape/desquareify acceptance or availability promotion.
+
+### DEV-484 — Research courtyard connections crossed actual descending stair openings
+
+**Status:** SEPARATE COURT DOORWAYS CONSTRUCTED; RUNTIME OPEN · **Affected:** WLD-08 lab east face and dormitory west face; first Cannery wash approach and Wharf coplanar overlap corrected during same batch
+
+Court links used the same faces/positions as descending stairs, so a ground-level straight approach crossed the real lower-flight opening. First Cannery yard reuse also led an old wash approach outside the chosen chamfered yard.
+
+Cause / uncertainty: Earlier paths were treated as clearance commands rather than following actual doorway, floor and shaft arrangements.
+
+Fix / next action: Close the obsolete z35 ground-level court wall openings and build normal2.4m-wide/2.45m-high doorways atz41, preserving the below-grade stair geometry. Lab circulation approaches its upper stair from the west; dormitory approaches from the east. Actual courtyard construction precedes guide adjustment. Refit Cannery wash approach through the authored yard. Final strict center/side samples on the new Research entrances pass and all stair chains remain passing. Production native controls show the two former above-shaft wall crossings now block; three formerly open surface controls block on real new area floors.
+
+Evidence and verification: tools/build_site_courts_and_docks.py; courts-and-docks-pass/verification/new-surfaces-and-closed-stair-crossings-results.tsv; current-flat and stair checks; final native cutaways
+
+Older-map obligation: Review every courtyard-to-stair interface across full roster. Lower Research tunnel diagonal, arrival/array ground, fixture/door interaction bindings and real rendering/collision/room/portal/acoustic/spawn/service integration remain open.
+
+### DEV-485 — Arrival and field ground was absent beneath removed physical study supports
+
+**Status:** SAVED GEOGRAPHIC EARTHWORKS CONSTRUCTED; LANDSCAPE AND RUNTIME GATES OPEN · **Affected:** Wharf settlement arrival/forecourt; Research arrival and equipment grounds; Cannery arrival and workers woodland edge
+
+Ribbon-free maps retained unsupported arrivals, equipment-ground connections and woodland approaches despite useful building/dock construction.
+
+Cause / uncertainty: Earlier physical study strips concealed elevations and native terrain that did not reach the actual occupied thresholds.
+
+Fix / next action: Verify each current terrain mesh against its exact saved world, then sculpt real geographic clearings through TerrainLayerStack. Reopen and publish native terrain/OBJ in the existing editor scene; preserve source R16 and adaptive punched topology/cut rows byte-for-byte. Shape broad irregular arrival/settlement clearings, equipment grounds, and shallow undulating woodland earth; feather into retained landform. Remove obsolete Wharf cottage walk meshes where new soil owns the forecourt. Nonterrain native records remain byte-identical except those explicit walk removals. All3arrivals, equipment connections and woodland chains now pass continuous movement;49of51flatlinks and6complete vertical routes pass both ways with zero direction regressions. Woodland full-width checks at actual soil elevation pass522poses. Terrain material and landscape detail remain rough, not final acceptance.
+
+Evidence and verification: development/levels/rebuild/site-earthworks-pass/roster.json; persistent worlds and program/features; verification/spatial-and-source-preservation.json; verification/woodland-actual-ground-verification.json; native site-earthworks-batch cutaways
+
+Older-map obligation: Wharf L18 east-stair return and Research L19 lower tunnel still fail. Raw historical height0sampling retains343invalid of15525poses, including300woodland poses above actual undulating ground; do not confuse guidance Y with walking surface. Other22active candidates still need equivalent guide removal and construction. Academy off-landform and WLD-16 original terrain ownership remain open. No runtime/map availability promotion.
+
+### DEV-486 — Protective terrain setback left small collision lips at real floor boundaries
+
+**Status:** BOUNDARY GRADES CORRECTED; BROADER TERRAIN FITNESS OPEN · **Affected:** Arrival apron/floor joins across the selected3sites; Research equipment doors and Cannery workers doors
+
+An initial4cm below-slab sculpt allowance created a lip at actual floor boundaries, preventing capsule movement onto the preserved floors. Initial writer verification also parsed the optional cut-row reason as a height.
+
+Cause / uncertainty: The grade treated every point covered by a floor triangle as interior; it did not distinguish the outer surface boundary or authored-cut numeric columns from metadata.
+
+Fix / next action: Use the union of actual floor footprints to keep buried earth below interior surfaces while meeting their outer edges at floor elevation. Update the same saved sculpt layer relative to original source, preserving idempotence and outside-feature heights. Parse only the first4cut coordinates; resume verification of already-saved layers instead of duplicating edits. All saved worlds reopen and retain exact punch topology, with all stored hole controls clear. Verify actual terrain feet separately from historical flat-height sampling. No collision constants or acceptance checks were relaxed.
+
+Evidence and verification: tools/java/RebuildSiteEarthworks.java; tools/compose_site_earthworks.py; site-earthworks-pass/worlds/*/terrain-world/earthworks-verification.json; verification/stairs and current-flat-movement.json
+
+Older-map obligation: Review joins against real floor edges and standing/crouched collision across all sites. Final drainage, edge materials, landscape/desquareify acceptance, canonical van arrival visualization and real-game renderer/room/portal/acoustic/spawn/service integration remain unfinished.
+
+### DEV-487 — Clearance-driven flared tread wings and copied ceiling cuts produced incoherent Wharf stair wells
+
+**Status:** WHARF STAIR CELLS RECONSTRUCTED; OTHER SITES AND RUNTIME OPEN · **Affected:** Wharf west/east stairs and undercroft roof; equivalent flared stair construction elsewhere requires rejection/rebuild
+
+Owner screenshots show giant tapered tread wings without sensible supports, fragmented rails and ceiling holes copied from those taper outlines.
+
+Cause / uncertainty: Earlier work widened treads to satisfy side-lane probes and used their shapes to cut floors/caps. This reversed the House method: real structural layout first, construction next, traversability as validation. Passing checks did not justify the architecture.
+
+Fix / next action: Remove both old flights, tapered treads/stringers, fragmented end landings and obsolete roof/wall fragments. Build constant2.4m gross tread flights inside2.6m clear rectangular cells,14regular risers over2.5m, supported upper landings, shared continuous cellar floor,0.25m retaining walls and0.30m roof/coping structure. Main cellar walls terminate at roof underside; clear lower height2.2m. Grade guards sit on real walls/coping and flight handrails on continuous stringers. Rectangular roof penetrations follow the stair cells, independent of tread outlines. East upper handrail extension is0.6m, preserving the actual landing bypass. Both flights/complete vertical routes and all16Wharf flatlinks pass both ways;5157strict foot samples have zero invalid poses. Inspect exported close view before accepting any further work.
+
+Evidence and verification: development/levels/rebuild/wharf-stair-cells-pass/roster.json; wld-06/rectangular-stair-cells.blend/glb/hcs2; verification/stairs and current-flat-movement.json; captures/wharf-stair-cells-batch/wharf-stair-cells.png
+
+Older-map obligation: Other active maps need the same architecture-first stair/shaft audit; Research lower tunnel still fails. Owner explicitly requires cleanup of all irregular doorway cuts throughout the roster with consistent door-type dimensions, real jambs/lintels and full wall depth. Preserve mature authorities. Whole-map load/soil/finish/runtime and availability gates remain open.
+
+### DEV-488 — Irregular room openings lacked coherent door types and full-depth frames
+
+**Status:** THREE-SITE GROUND-ROOM DOORWAYS CONSTRUCTED; FULL ROSTER AND RUNTIME OPEN · **Affected:** WLD-06 Wharf5ground rooms; WLD-08 Research8ground rooms; WLD-13 Cannery8ground rooms
+
+Oversized or irregular rough wall cuts and arbitrary headers did not describe usable architectural doorways.
+
+Cause / uncertainty: Earlier wall cuts followed rough circulation allowances without explicit door schedules and common sill/head datums.
+
+Fix / next action: Rebuild selected room perimeter walls as0.24m closed solids with nonoverlapping corners and explicit pedestrian1.05x2.10m, service1.80x2.30m and loading2.40x2.60m clear openings. Place38unique instances using existing indexed level_blockout_doorway jamb/head geometry, original UVs/materials and unchanged source master. Flush thresholds; one frame spans both0.24m wall halves at shared boundaries. Build architecture before adjusting Wharf boathouse/net entrance guides. Independent GLB reimport verifies frame sill/head/width/depth; native body sweeps pass114actual-aperture profiles both ways. All50previously passing ordinary links and6complete stair routes remain passing; zero direction regressions. Three native optical controls close formerly oversized gaps. No door dimensions or physics constants changed to accommodate broad guidance lane samples.
+
+Evidence and verification: development/levels/rebuild/doorway-construction-pass/roster.json; per-site construction.json/authored-layout.json and clean-doorways.blend/glb/hcs2; verification/door-aperture-verification.json, exported-frame-dimensions.json, closed-oversized-openings-results.tsv, current-flat-movement.json and stairs; captures/doorway-construction-batch including standing shared-door close view
+
+Older-map obligation: 22active packets pending individual doorway construction;4mature authorities preserved and not inferred audited. Selected basements/upper floors and Research lower tunnel remain unfinished. Raw broad guidance footprints retain515invalid of15648poses, including lane shoulders wider than actual door apertures; do not widen doors to pass those samples. Research/WLD-12 flared stairs still require architectural reconstruction. Door leaves, interactions, room/portal/acoustic/service binding and real-game integration are open. No unlock, runtime or whole-map acceptance.
+
+### DEV-489 — Institution entrance blocks retained irregular circulation-cut walls and incomplete door frames
+
+**Status:** THREE ENTRANCE BLOCKS CONSTRUCTED; OTHER ROOMS AND RUNTIME OPEN · **Affected:** School foyer/interview/visitor WC/office and corridor south face; Asylum admission/interview/records and spine south face; Prison reception/intake/records and front-link south face
+
+Oversized/irregular study-cut wall openings, separate arbitrary headers and missing full-depth door assemblies survived outside the first waterfront doorway batch.
+
+Cause / uncertainty: Rough traversal allowances had replaced an architectural doorway schedule; original headers lacked zone extras and needed explicit wall/side identity matching.
+
+Fix / next action: Reconstruct10ground rooms plus3adjoining corridor faces around explicit1.05x2.10m pedestrian and1.80x2.30m service doors, thick closed masonry and complete jamb/head instances from the existing indexed standard doorway. Frames span both wall halves at shared openings. Remove original headers by actual wall/side identity through repair prefixes. Build full-width3m-deep entrance landings on solid plinths embedded below sampled original terrain at their outside bearing. Retain adjacent sealed-context walls and all access metadata. Normal approach guides follow the constructed room doorways.39actual-aperture center/side profiles pass continuous movement both directions,13exported frame dimensions/datums pass independent reimport, and three native optical controls show the old excessive opening heads now blocked at2.4m. All7flights and7complete stair routes remain passing. Final native overviews/standing entry views inspected.
+
+Evidence and verification: development/levels/rebuild/institution-doorway-pass/roster.json; per-site clean-doorways.blend/glb/hcs2, authored-layout.json and construction.json; verification/door-aperture-verification.json, exported-frame-dimensions.json, closed-oversized-openings-results.tsv, source-preservation.json and stairs; captures/institution-doorway-batch
+
+Older-map obligation: These are entrance blocks only: remaining institution rooms and upper/basement doors are unfinished. Roster retains3previous ground-room batches,3partial institution entrance blocks,19pending active packets and4mature authorities. Source world/native terrain, original floor/roof/stair/prop records except explicitly removed studies, zones/capacity/staging/punches and SEALED_CONTEXT remain unchanged. No whole-map or runtime acceptance, interactive door binding, availability promotion or held-parent merge.
+
+### DEV-490 — Removing institution study solids exposes missing court and service-ground construction
+
+**Status:** THREE EXPOSED LINKS PHYSICALLY RECONNECTED; OTHER OUTDOOR/GRADE WORK OPEN · **Affected:** Asylum L26 day room to court, Prison L080 sally port to yard, School L40 receiving to grounds; broader arrivals/outdoor routes on all3sites
+
+Before removal, physical blue study strips ran through actual entrance floors and beyond thresholds. Several ordinary links relied on those strips rather than proper ground/yard construction.
+
+Cause / uncertainty: The earlier studies became hard support geometry. School outdoor grounds also uses a broad envelope whose historical common route endpoint lies among actual building rooms, so its diagonal needs architectural reassessment rather than another hard ribbon.
+
+Fix / next action: Remove all active rough-route-support, rooted-circulation-bed and arrival-end-bearing study solids from the three current site exports and native collision. Keep real stairs/floors and author complete entrance landings instead of reconnecting lines. Source-preservation check retains all native records outside explicit wall/header/study removals byte-for-byte. Final complete-flat regression check correctly FAILS:96of121active ordinary links pass both ways versus99before;6direction regressions on3links. Strict broad samples retain4076invalid of22458poses. Keep the unweakened failing check and exact failure contacts. Do not restore strips or widen doors to hide missing areas. Subsequent institution-courts-pass builds actual Asylum patient court, Prison secure yard and School teaching/play/service courts with closed paving and terrain-embedded foundations. The three newly exposed links now pass both ways. School normal exterior exits and relocated outdoor anchor produce103of121passing links versus96before, zero direction regressions. Seven complete stair routes remain passing. Native terrain, saved punches, original roofs/floors/stairs/props are preserved; new foundations exclude all actual ground/below-grade room footprints.
+
+Evidence and verification: institution-doorway-pass/verification/current-flat-movement.json complete_link_regressions and source_bindings; current-flat-links.tsv and failure contacts; source-preservation.json; native entry images now show actual landing surfaces without blue strips
+
+Older-map obligation: Construct real court/yard and service-ground interfaces, reassess School grounds endpoint outside the building and its normal entrances/exits, then rerun the affected checks. Previously failing arrival/perimeter and School upper links remain open; removing guides does not establish terrain/desquareify, floor/stair or runtime acceptance. Other active maps still need individual study-solid removal and architecture-first rebuilding.
+
+### DEV-491 — School outdoor route hub lay inside actual building rooms and service exits lacked coherent exterior courts
+
+**Status:** NORMAL EXTERIOR DOORS AND REAL COURTS CONSTRUCTED; RUNTIME AND REMAINING ROUTES OPEN · **Affected:** School grounds hub and west science/classroom, north gym and east receiving exits; Asylum patient-court doors; Prison sally-port yard door
+
+The historical School outdoor envelope center at30,19 lay among the actual health/stair rooms. Exterior link diagonals cut through the building instead of using external circulation; removed guide solids exposed missing actual area surfaces at3sites.
+
+Cause / uncertainty: Outdoor envelope centers and traversal studies were treated as physical circulation architecture.
+
+Fix / next action: Construct School north playground, east receiving/gym service court, west teaching court and south forecourt as actual0.20m closed paving with foundations embedded below measured source soil. Exclude every existing ground/below-grade room, retained basement roof footprint, stair aperture and entrance landing from new construction; do not fill basements or duplicate existing floors. Build Asylum enclosed patient court and Prison secure exercise yard similarly. Reconstruct7normal exterior door faces with standard indexed frames and thick masonry. Relocate the School grounds circulation anchor to52,0,26 in its actual east service court; route west exits around the north playground and receiving exit directly to that court. All3previously exposed links now pass, plus4other newly continuous exterior connections:103of121complete ordinary links pass, zero regressions; all7complete stair routes pass.60actual aperture profiles across retained/new doors pass both ways;20exported frames satisfy independent dimensions/datums. Three native vertical controls previously clear now block on real new paving. Final native overviews inspected.
+
+Evidence and verification: development/levels/rebuild/institution-courts-pass/roster.json; per-site constructed-courts.blend/glb/hcs2, authored-layout.json/construction.json; verification/current-flat-movement.json, source-preservation.json, door-aperture-verification.json, exported-frame-dimensions.json and new-court-surfaces-results.tsv; captures/institution-courts-batch
+
+Older-map obligation: School L36 service-stair exterior start remains unsupported; L27/L33 upper routes, L35/L41/L42 arrival links still fail. Prison L065/L066/L084/L085/L111 and Asylum L19/L20/L71/L72/L73/L74/L76 remain incomplete. Actual runtime outdoor room ownership/portals/acoustics/spawn/service integration still open; the source circulation anchor does not establish runtime binding. Other institution doors and entire remaining roster require individual construction.
+
+### DEV-492 — Raised institution court edges and unfinished arrivals require final grade transitions and protection
+
+**Status:** SAVED ARRIVAL/COURT GRADES AND FORECOURT JOINS CONSTRUCTED; LANDSCAPE/GUARD/RUNTIME REVIEW OPEN · **Affected:** School new court outer edges/arrival transition, Asylum patient court west edge and all3site arrival interfaces
+
+Real paving is at building datum0while surrounding retained native soil is lower. School source soil under constructed areas ranges roughly-0.82to-0.30m; exposed retaining faces and unbuilt approach transitions remain.
+
+Cause / uncertainty: This bounded batch constructs courts and foundations while retaining the original saved landform. Geographic arrivals, drainage and protected transitions remain separate necessary physical work.
+
+Fix / next action: Give every court real0.20m depth, closed underside and continuous foundation below minimum measured soil; all sampled new court ground positions have actual soil receivers and no overlap with saved basement/stair holes. Preserve the original source terrain rather than edit a mesh without its saved world. Record raised-edge and arrival limitations explicitly. Do not call these courts landscape/desquareify, guarded-arrival or runtime acceptance. Subsequent institution-earthworks-pass authors actual saved geographic clearings and campus/patient grounds, joining court edges and main arrivals at0without physical study strips. Add continuous full-width Asylum/Prison public-entry apron extensions at their existing landing fronts, embedded below saved graded soil. Main arrival chains now pass all3sites. Preserve original saved punches, source R16/topology/cuts and room interiors; all prior nonterrain native records remain exact.
+
+Evidence and verification: institution-courts-pass per-site court_construction actual_soil_range/soil_range and constructed_polygons; native source-preservation.json and final overview images
+
+Older-map obligation: Build appropriate supported stairs/landings or saved terrain grades, edge protection and drainage at exposed interfaces; include canonical van in arrival acceptance. Preserve saved hole punches, all basement headroom, existing assets and functional contracts. Do not bridge missing grades with extruded study lines. Full roster, final materials and runtime remain open.
+
+### DEV-493 — Partial exterior wall repairs used shortened returns intended for all-new room corners
+
+**Status:** CONSTRUCTED RETURNS CORRECTED; THREE NATIVE OPTICAL CONTROLS PASS · **Affected:** School west science/classroom and east receiving wall corner joins in institution-courts-pass
+
+The first court checkpoint shortened W/E face ends by0.24m while adjoining retained N/S source walls were thinner/centered. This left small light/sight gaps near three corners.
+
+Cause / uncertainty: A corner convention appropriate when rebuilding all4walls was reused for a partial single-face repair against retained walls.
+
+Fix / next action: Extend each partial W/E face to its original full along-wall bounds, joining retained corner walls. Keep doorway locations/dimensions and all court/floor geometry. Export/native solids remain closed/positive. Three native rays that crossed the actual checkpoint corner gaps now block on the repaired wall returns; before geometry reproduced exactly from publishedd6c43dbgit object. Rerun final ordinary movement:103of121links pass with zero regressions. Seven complete stair routes and60actual door-aperture profiles remain passing;20frame dimensions verified after final reimport. Retained source records remain byte-identical.
+
+Evidence and verification: institution-courts-pass/verification/corner-return-source.json, corner-return-input.tsv and corner-return-results.tsv; current-flat-movement.json; door-aperture-verification.json; tools/build_institution_courts.py
+
+Older-map obligation: Audit all partial-face repairs against actual retained wall ends and thickness rather than applying a whole-room corner rule. Earlier institution entrance blocks replace whole rooms/N-S corridor faces; no inference that other older map corners are accepted. Runtime lighting, grade edges and other construction gates remain open.
+
+### DEV-494 — Institution arrivals and court perimeters retained lower unsupported ground after physical study removal
+
+**Status:** SAVED THREE-SITE EARTHWORKS AND ENTRY APRONS CONSTRUCTED; FINISH/RUNTIME OPEN · **Affected:** School arrival and teaching/service grounds; Prison public/service arrival; Asylum arrival, patient gardens and maintenance grounds
+
+Van staging/entry guide chains and several court edges stood above existing ground. Earlier hard study supports hid this missing geographic construction.
+
+Cause / uncertainty: Outdoor ground did not meet actual building/court datums and route endpoints did not consistently follow retained landform.
+
+Fix / next action: Verify current source terrain against exact saved original worlds. Author non-destructive TerrainLayerStack sculpt/material layers for broad geographic arrival and grounds clearings with feathered shoulders. Reopen all worlds and republish their scene meshes/native physics. Preserve source R16, adaptive topology and authored cut rows byte-for-byte; every stored hole control remains clear. Independently verify protected room interiors and vertices beyond feature influence unchanged. Retain every old nonterrain native record exactly and add only two closed positive full-width public-entry apron solids at Asylum and Prison to meet their existing landing fronts. Final actual arrivals pass all3sites;116of121ordinary links versus103before, zero regressions, all7complete stair routes and60actual door-aperture profiles pass. Final native exported terrain/assembly triangles agree;3native overviews inspected. Subsequent stair-cell-construction-pass reconstructs the School main/service and Prison plant cells and Research elbow. The five retained School/Prison approach failures are now passing through actual landings/bypasses; all96ordinary links across those3changed sites, including new School lobby link, pass. This does not promote other architecture or runtime.
+
+Evidence and verification: development/levels/rebuild/institution-earthworks-pass/roster.json; earthworks-program.json, program/*, worlds/*/terrain-world persistent source/layers/native meshes; per-site saved-earthworks.blend/glb/hcs2 and authored-layout/construction; verification/spatial-and-source-preservation.json, current-flat-movement.json, stairs, door-aperture-verification.json and closed-forecourt-aprons.json; captures/institution-earthworks-batch
+
+Older-map obligation: Remaining ordinary failures: School L27/L33upper approaches and L36service-stair start; Prison L084/L085plant approaches. All43Asylum ordinary routes pass continuous native movement, not architectural or runtime acceptance. Materials/clearing borders remain coarse and need landscape/drainage/desquareify review; guards and canonical van arrival visualization remain unaudited. No new guard placement or runtime acceptance is claimed. Academy off-landform and WLD-16 terrain ownership remain explicit next terrain outliers; all other unfinished packets stay open.
+
+### DEV-495 — Weaker overlapping geographic feature shoulders overwrote full arrival grades
+
+**Status:** INSTITUTION WRITER CORRECTED; SAVED OVERLAP REGRESSION POINTS PASS · **Affected:** Initial institution earthworks School forecourt margin and Asylum entrance/garden overlap
+
+An arrival core graded to0was subsequently restored toward its old lower soil height by a weaker overlapping campus/garden feather. Native checks exposed inconsistent terrain at actual thresholds.
+
+Cause / uncertainty: The reused first writer independently blended every field from the original baseline in list order. A later weak feature overwrote a prior full-strength one.
+
+Fix / next action: Use an institution-specific production writer that retains the strongest geographic influence per vertex. Edit the same named saved sculpt layer relative to the original source; no duplicate layers or physics tolerance changes. Recompile from checked-in writer source, reopen worlds, verify original punches/source images unchanged, and re-export exact geometry. Independent saved-grid regression checks require School22,44and28,44at0, Asylum28,60at-0.04below its actual landing and32,62at0at the forecourt edge. All pass. Full-width apron extensions give real continuous public-entry surfaces at the completed grade; no study ribbon returns.
+
+Evidence and verification: tools/java/RebuildInstitutionEarthworks.java; institution-earthworks-pass/verification/overlap-grade-regression.json; saved-grid.tsv and per-world earthworks-verification.json; final native movement checks
+
+Older-map obligation: Original RebuildSiteEarthworks writer and previous authored worlds remain unchanged for recovery; older multi-feature sites need individual overlap review. Terrain edit idempotence/protected room boundaries, real structural supports and runtime coordinate binding must remain explicit.
+
+### DEV-496 — Asylum outdoor route anchor and Prison reception approach ignored actual buildings and landform edges
+
+**Status:** AUTHORITATIVE GUIDES FOLLOW CONSTRUCTED GROUNDS AND FORMAL ENTRANCES; RUNTIME OPEN · **Affected:** Asylum grounds L71/L72/L73/L74/L76; Prison L066reception arrival
+
+Asylum outdoor center34,29was inside the main stair room, and several garden/service routes cut through buildings or followed unsupported original landform edges. Prison reception approach used an unsupported western staging corner.
+
+Cause / uncertainty: Envelope centers and straight study diagonals were treated as circulation architecture instead of using true entrances and saved soil ownership.
+
+Fix / next action: After actual geographic earthwork construction, move Asylum grounds anchor to7,0,35in its west patient garden. Approach chapel/court normally and reach public entry around the real day-room exterior. Service-stair and service-corridor chains use the existing staff entrance, corridor and supported upper landing bypass; reject unsupported north/east shortcuts. Prison reception approach follows the real arrival concourse via34,73and14,73. Preserve room bounds/access metadata, endpoints at real supported room/stair datums, capacity, staging/van transform, saved hole cuts and library assets. All43Asylum ordinary routes and all3main arrival chains now pass in the final construction.
+
+Evidence and verification: institution-earthworks-pass per-site authored-layout.json/authoritative_saved_terrain and current-flat-movement.json; source-preservation receipt; new saved clearing geometry
+
+Older-map obligation: Guide corrections support actual constructed ground and do not count as this batch by themselves. Source guides do not establish rendering/room/portal/acoustic/spawn/service integration. Review Academy off-landform routes and all other envelope-based outdoor centers individually; do not silently omit difficult packets.
+
+### DEV-497 — Stair-room route anchors and access doors pointed into actual floor openings
+
+**Status:** THREE FLIGHTS AND THEIR STAIR CELLS RECONSTRUCTED; FULL FITNESS/RUNTIME OPEN · **Affected:** School main upper stair and basement service stair; Prison plant access stair; Research lower tunnel connection
+
+School and Prison ordinary approach chains used room centers inside the stair voids or approached flights at the wrong level. Research tunnel branches only touched at a diagonal corner.
+
+Cause / uncertainty: Envelope centers and rough traversal cuts replaced explicit stair landings, supported bypasses, architectural openings and room connections.
+
+Fix / next action: Rebuild School main20-riser3.6m flight at constant1.8m gross width, upper rectangular opening and0.30m continuous decks; School service17-riser3m flight at constant1.2m gross width with separate supported east bypass and real lower/upper landings. Rebuild Prison plant17-riser3m flight at constant1.8m gross width with east bypass, full upper landing, lower access and wall/door arrangements. Close old mid-flight access; existing yard approach now reaches west upper-landing doorway. Use existing indexed guard/doorway geometry on actual support surfaces; frames span rebuilt plus retained shared wall thickness. Add actual School stair-head/lobby door and source linkL45. Build an enclosed Research tunnel elbow with real floor,0.24m walls and roof underside thickening beneath retained radio-room floor. Original saved terrain already covers its underground footprint with punched leaves; saved-world reopen/control proof retained, no new terrain construction claimed.
+
+Evidence and verification: development/levels/rebuild/stair-cell-construction-pass/roster.json; per-site constructed-cells.blend/glb/hcs2 and authored-layout/construction; verification/current-flat-movement.json, stairs, door-aperture-verification.json, source-preservation.json; captures/stair-cell-construction-batch
+
+Older-map obligation: All96ordinary source links now pass both directions across School43,Prison36,Research17, including1new physical lobby link;8complete stair routes and123door-aperture profiles pass. Broad lanes retain191invalid of21363poses. This is native authoring evidence only. Research existing flared flights remain rejected architecture, and all other maps need individual stair/opening/guard review. Remaining doors, fixture fit, terrain finish, load/structure review and actual room/portal/acoustic/spawn/service/runtime integration remain open.
+
+### DEV-498 — Obsolete diagonal Research tunnel cuts remained beside the new elbow room
+
+**Status:** BOTH STRAY WALL CUTS CLOSED; INTENDED DOOR/STair OPENINGS RETAINED · **Affected:** Research tunnel-n south wall and main tunnel west wall near their old corner connection
+
+Owner identified random wall holes beside the small corner room in the second lower-level review image. The new elbow doorways had been built while old diagonal study cuts remained in adjoining faces.
+
+Cause / uncertainty: Replacing the two new doorway faces did not also close the obsolete faces previously cut by the diagonal route.
+
+Fix / next action: Rebuild tunnel-n south face as a continuous thick wall. Rebuild the main tunnel west return from its north corner to the actual separate west stair-cell opening, retaining only that measured33.8..36stair passage. Do not add a window or leave the old study slit. Final8native horizontal optical controls:6previously clear,0clear after. Intended elbow doors and every complete route/stair remain passing. Updated lower-level cutaway inspected after correction.
+
+Evidence and verification: stair-cell-construction-pass/verification/obsolete-corner-holes-input.tsv and obsolete-corner-holes-results.tsv; final wld-08-lower-cell-section.png; tools/build_three_stair_cells.py
+
+Older-map obligation: Whenever an entrance/route is moved, explicitly close all superseded wall cuts on both adjoining rooms. Audit remaining older flat-route-cut walls individually; this fixes the identified Research corner, not every hole across the roster. Actual runtime lighting/optics remain separate.
+
+### DEV-499 — Research tunnel service frames exceeded the actual new ceiling headroom
+
+**Status:** STANDARD LOW-SERVICE DOOR TYPE AND POSITIVE HEADER DATUMS CONSTRUCTED · **Affected:** New Research tunnel-elbow shared doorways
+
+Initial2.30m service heads exceeded the new2.20m clear ceiling and produced an inverted masonry-header interval in the review image.
+
+Cause / uncertainty: An above-ground service door type was reused without checking the underground section and frame outer head.
+
+Fix / next action: Author consistent1.80x2.00m low-service openings under the2.20m ceiling, full-depth indexed frames and solid headers. Require high>low for every wall/header interval before geometry creation; do not rely on volume-normal repair to conceal an inverted datum. New source doorway-types metadata includes the explicit dimensions. Re-exported solids closed/positive and native/exported triangles agree; all actual aperture sweeps pass. Complete roof retained in authored files while cutaway images intentionally hide it.
+
+Evidence and verification: tools/build_three_stair_cells.py low-service type and wall/header guard; stair-cell-construction-pass/wld-08/authored-layout.json; final aperture checks and lower-room cutaway
+
+Older-map obligation: Check frame outer head, real ceiling underside, jamb thickness and sill for every underground doorway. Passing movement alone does not establish coherent sections or optical closure.
+
+### DEV-500 — Multiple stair-cell doors on one wall initially shared a portal identifier
+
+**Status:** UNIQUE DATUM-BASED PORTAL IDS VERIFIED · **Affected:** School main stair east wall two new doorways; all newly authored cell portals
+
+Actual aperture sweep input rejected a discontinuous manifest because two distinct doorways shared one portal ID.
+
+Cause / uncertainty: The initial identifier included room/face but omitted the distinct along-wall datum.
+
+Fix / next action: Include the architectural opening datum in each new portal identity. Verify per-site doorway IDs are unique before generating native aperture profiles. All123profiles now sweep both ways successfully. Keep existing published portal identifiers unchanged. Native flat-route comparison now preserves every prior active link, rejects removals/regressions, and separately requires newly built source links to pass; this supports real new School lobby connection without assuming identical link sets.
+
+Evidence and verification: tools/build_three_stair_cells.py portal IDs; tools/audit_current_flat_routes.py added-link gate; stair-cell-construction-pass/verification/door-aperture-verification.json and current-flat-movement.json
+
+Older-map obligation: Keep all renderer/collision/room/portal/acoustic/service identities distinct and consistently bound during actual gameplay integration. No runtime binding acceptance is inferred from source ID checks.
+
+### DEV-501 — Flared Research, Railway and western Cinder flights lacked independent architectural wells
+
+**Status:** SIX FLIGHTS REBUILT; OTHER CINDER FLIGHTS AND RUNTIME OPEN · **Affected:** Research L17/L18/L20; Railway L16/L17; Cinder route-08
+
+Old widened tread geometry and copied hole outlines left unsupported wings and incoherent floor/terrain joins.
+
+Cause / uncertainty: Study geometry had been used as construction authority.
+
+Fix / next action: Build straight1.8m gross-width closed tread flights, continuous bases, full landings, deep floors, independent rectangular openings, retaining walls and fitted indexed rails. Construct Research room/tunnel floors and roof joins, Railway trestle/lower decks and a west maintenance platform, and Cinder enclosed lower connector with full-depth1.8x2.3m service frame. Actual saved editor punches reopen and reproduce exported/native terrain exactly; source heights/layers and all previous cut rows retained. All6exported selected flights independently measure1.8m wide; all11flights and10complete stair routes pass both directions. Other Cinder stairs remain unrepaired.
+
+Evidence and verification: development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch
+
+Older-map obligation: All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates.
+
+### DEV-502 — Early stair rim guards and approach anchors crossed actual landing entries
+
+**Status:** SELECTED LANDINGS AND GUARD RETURNS CORRECTED · **Affected:** Research room anchors; Railway upper/lower landings; Cinder lower escape connector
+
+Initial guards obstructed stair entries and anchors sat over stair noses rather than full floors.
+
+Cause / uncertainty: Rims were extended past architectural wall/entry datums; approaches turned before clearing toes.
+
+Fix / next action: Place anchors on full landings, stop/split rim rails at actual walls, add supported rim end returns and move lower approach turns beyond tread toes. Cinder side connector has real north/south walls, enclosed roof and clear turn through lower landing. Research array approach now enters dorm normal to its actual north door. No kernel, width or step tolerance changed.
+
+Evidence and verification: development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch
+
+Older-map obligation: All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates.
+
+### DEV-503 — Railway west stair landing required actual excavation and soil-bearing structure
+
+**Status:** SUPPORTED PLATFORM BUILT; REMAINING SITE GROUNDS OPEN · **Affected:** Railway west maintenance platform and retaining edges
+
+Proposed piles at old cutout corners had no terrain receiver; native soil rose above the proposed platform edge.
+
+Cause / uncertainty: Assuming foundation support from visual plan extents ignored original saved terrain voids and uphill levels.
+
+Fix / next action: Reject unsupported corner piles. Build full platform10..16 by36..44.5, deep retaining walls/steel bearings, two southern piers into native soil, uphill concrete parapets and exposed-edge indexed guards. Save platform excavation and stair rim punches on the actual0.125m editor topology grid, retaining all original cuts. Final native stair routes pass both ways. Wider grounds/landscape/drainage and van arrival remain unaccepted.
+
+Evidence and verification: development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch
+
+Older-map obligation: All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates.
+
+### DEV-504 — Removing solid route-study supports exposes unfinished Railway and Cinder ground approaches
+
+**Status:** PRIOR SURFACE AND FOUR CINDER RING LINKS PHYSICALLY RECONNECTED; OTHER MAP GATES OPEN · **Affected:** Railway L01/L02/L05/L08/L10/L15/L18; Cinder route-02/04/05
+
+Ten previously passing ordinary links now fail in20directions after old artificial route support strips are removed.
+
+Cause / uncertainty: False narrow study solids had supplied missing ground beneath approaches; their removal reveals absent geographic construction and remaining door/ground interfaces.
+
+Fix / next action: Keep study strips removed and preserve failing check honestly. Research17/17ordinary links pass; Railway2/16 and Cinder7/14 pass, total26/47 versus35before. Broad samples retain3748invalid of13335. Next bounded grounds/entrance batch must build actual connected terrain and normal entrances. Do not restore ribbons, suppress regressions, unlock maps or claim runtime acceptance. Follow-up arrival-grounds-construction-pass builds actual saved geographic grades and supported Railway approaches. All ten regressed links recover without solid study supports. Final Research17/17, Railway16/16, Cinder10/14ordinary links pass,43/47total; zero regressions against the previous constant-flight checkpoint. Four Cinder underground ring connections route-11/12/15/16 remain failing. Remaining older Cinder stairs and old doorway cuts require architectural construction; no map/runtime acceptance. Service-portal construction now supplies the missing upper/lower annular gallery floors, thick enclosed roofs, continuous retaining walls/footing, fitted inner guards and rectangular doorway throats. Cinder route-11/12/15/16 all pass. Research source remains unchanged; Railway16/16 and Cinder14/14ordinary links pass. Motel original terrain remains a separate blocker (DEV-511).
+
+Evidence and verification: development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch
+
+Older-map obligation: All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates.
+
+### DEV-505 — Missing geographic approach ground beneath Railway and Cinder circulation
+
+**Status:** SAVED THREE-SITE GROUNDS CONSTRUCTED; LANDSCAPE AND RUNTIME OPEN · **Affected:** Research forecourt/antenna grounds; Railway arrival/cutting/siding/crossing; Cinder arrival/service yard
+
+Removal of artificial route support strips exposed absent or mismatched actual ground.
+
+Cause / uncertainty: Routes previously passed on mistaken physical study solids rather than coherent landform.
+
+Fix / next action: Use existing TerrainLayerStack production writer for area-shaped clearings with feathered shoulders, excluding room interiors and excavation edge. Raise/lower real saved geographic terrain across3sites. Save/reopen and republish exact native/OBJ terrain. Source R16, adaptive topology and all previous cut rows remain byte-identical;1512Research/1943Railway/832Cinderhole controls remain clear. All original nonterrain parts retained except three explicitly replaced platform guard bays.43of47ordinary links pass versus26before, zero regressions; all11flights/10complete stair routes and51door profiles pass. Broad samples retain217invalid of13464. Terrain materials remain coarse, wider drainage/landscape/desquareify, canonical van arrival views and runtime gates open.
+
+Evidence and verification: development/levels/rebuild/arrival-grounds-construction-pass/roster.json; per-site construction.json/worlds; verification/source-and-structure-preservation.json/current-flat-movement.json/stairs/door-aperture-verification.json; captures/arrival-grounds-construction-batch
+
+Older-map obligation: All29packets remain explicit. Preserve mature maps and source assets; do not infer older stair/door/terrain or runtime acceptance from this batch.
+
+### DEV-506 — Ground grading intruded beside an existing below-grade Railway landing
+
+**Status:** EXCAVATION ENVELOPE RESTORED; TEN COMPLETE STAIR ROUTES PASS · **Affected:** Railway lower floor and west stair approach
+
+Initial geographic sculpt preserved hole topology but changed adjacent soil vertices enough to block the lower approach.
+
+Cause / uncertainty: Protecting only enclosed rooms omitted an open below-grade room and its terrain triangle neighbourhood.
+
+Fix / next action: Restore the original saved layers before reauthoring Railway. Protect the lower excavation neighbourhood26..36 by20..44in the earthworks program. Independently verify every protected grid point retains its source height and every old hole remains clear. Final all10complete stair routes pass both ways with no regression; no native tolerance relaxed.
+
+Evidence and verification: development/levels/rebuild/arrival-grounds-construction-pass/roster.json; per-site construction.json/worlds; verification/source-and-structure-preservation.json/current-flat-movement.json/stairs/door-aperture-verification.json; captures/arrival-grounds-construction-batch
+
+Older-map obligation: All29packets remain explicit. Preserve mature maps and source assets; do not infer older stair/door/terrain or runtime acceptance from this batch.
+
+### DEV-507 — Railway platform guard sealed its entrance and trestle approaches crossed saved voids
+
+**Status:** ACTUAL GUARD ENTRY AND FOUNDED BRIDGE APPROACHES BUILT · **Affected:** Railway maintenance platform south edge and trestle north/east approaches
+
+The complete south guard blocked ordinary platform access; north/east trestle approaches lost footing over saved terrain voids.
+
+Cause / uncertainty: Stair-only acceptance did not cover adjacent ordinary approaches. Initial abutment proposal assumed soil inside old saved cuts.
+
+Fix / next action: Replace three south guard bays with two supported end returns around a measured2m entry. Keep source materials/UVs. Build full-width north and east approach decks, concrete abutments founded beyond the saved voids and east exposed-edge guards. Reject missing-soil footing locations; record18actual soil receivers under final foundations. Normal approach turns follow actual platform entry and bridge access. Independently reimport8new volumes as closed positive solids and verify native/exported triangles; all16Railway ordinary links and both complete stair routes now pass. Existing older door cuts and broader edge/finish review remain open.
+
+Evidence and verification: development/levels/rebuild/arrival-grounds-construction-pass/roster.json; per-site construction.json/worlds; verification/source-and-structure-preservation.json/current-flat-movement.json/stairs/door-aperture-verification.json; captures/arrival-grounds-construction-batch
+
+Older-map obligation: All29packets remain explicit. Preserve mature maps and source assets; do not infer older stair/door/terrain or runtime acceptance from this batch.
+
+### DEV-508 — Cinder annular galleries existed only as room annotations
+
+**Status:** TWO ENCLOSED GALLERIES PHYSICALLY BUILT; FULL MAP/RUNTIME OPEN · **Affected:** Cinder upperring and lowring at-4/-8m
+
+Four ring-room connections ended over empty space despite declared gallery zones.
+
+Cause / uncertainty: The annular room description had never been converted into actual floor geometry.
+
+Fix / next action: Build continuous closed0.30m annular floors and roofs, continuous outer retaining walls down to the low ring footing, indexed inner shaft guards and rectangular west/east doorway throats with closed roof joins. Preserve the empty inert shaft liner. Both complete64segment gallery circuits pass both directions.16native vertical floor/roof controls were previously clear and now block. Source room contracts remain unchanged; real geometry now supplies their surfaces. Landscape/soil interface engineering and runtime integration remain unaccepted.
+
+Evidence and verification: development/levels/rebuild/service-portal-construction-pass/roster.json; per-site clean-doorways.blend/glb/hcs2 and construction.json; verification/; captures/service-portal-construction-batch including upper/lower native sections
+
+Older-map obligation: All29packets retained. Mature Castle/House/Blackpine/Hollow Creek and functional/van/fog/power/hiding/network contracts preserved. Audit remaining maps individually; source-native checks do not establish gameplay acceptance.
+
+### DEV-509 — Arbitrary route cuts left malformed ordinary doorways across Railway Motel and Cinder
+
+**Status:** THREE-SITE WALLS AND INDEXED FRAMES REBUILT; MOTEL TERRAIN BLOCKS ACCESS · **Affected:** Railway signal/coaches/store/tunnel/refuge; Motel office/manager/laundry/plant/eight guest rooms; Cinder surface entrances and four ring faces
+
+Earlier diagonal guides had cut corners and left irregular wall gaps.
+
+Cause / uncertainty: Navigation studies were used as aperture authority rather than actual rooms and normal door datums.
+
+Fix / next action: Rebuild selected wall faces as0.24m closed masonry with measured pedestrian/service openings, positive lintels and original indexed jamb/head geometry. Adjacent rooms share full-depth frames; underground portal identities include their elevation. Retain prior escape doorway. Route normal approaches through actual constructed doors, including Railway bypass of coach corner and Cinder headhouse west stair entry.35new frames independently measure to their exported width/height/jamb-depth/sill contracts. Of108actual door profiles,75pass;33Motel profiles remain blocked by unchanged terrain/ground defects. All Railway/Cinder profiles pass; no doorway/runtime acceptance for Motel.
+
+Evidence and verification: development/levels/rebuild/service-portal-construction-pass/roster.json; per-site clean-doorways.blend/glb/hcs2 and construction.json; verification/; captures/service-portal-construction-batch including upper/lower native sections
+
+Older-map obligation: All29packets retained. Mature Castle/House/Blackpine/Hollow Creek and functional/van/fog/power/hiding/network contracts preserved. Audit remaining maps individually; source-native checks do not establish gameplay acceptance.
+
+### DEV-510 — Cinder split-level stair and landing strips prevented a coherent upper floor
+
+**Status:** COMPACT TWO-FLIGHT U STAIR AND SUPPORTED ARRIVALS BUILT · **Affected:** Cinder route-14 split-level cell and route-13 upper/lower arrivals
+
+Initial floor restoration obstructed intermediate stair headroom; old landing ribbons crossed the new well and the upper room anchor lay over the void.
+
+Cause / uncertainty: Oversized retained stair layout and guide-derived landing strips were incompatible with a real supported floor and clear room circulation.
+
+Fix / next action: Replace both route-14flights with1.8m constant-width,12riser flights atX51and45, a solid shared-6m landing and one rectangular floor/ceiling well. Fit flight/rim/middle guards and leave a real upper entry. Construct complete shop stair-head floor/opening and supported lower arrival apron/beams; remove all old route-13landing ribbons, retaining its actual flight for later reconstruction. Restore continuous west floor around its actual crew-stair well. Move upper room anchor to48,-4,26.5on full floor; lower approaches use real aisles around stair toes. All8flights/7complete stair routes and the new exact-endpoint joined stair chain pass both directions. Checker preserves every old route/flight, rejects drops/unexpected identities and separately requires newly generated CHAIN routes to pass. Original kernel tolerances unchanged. Other old amber flights remain unfinished.
+
+Evidence and verification: development/levels/rebuild/service-portal-construction-pass/roster.json; per-site clean-doorways.blend/glb/hcs2 and construction.json; verification/; captures/service-portal-construction-batch including upper/lower native sections
+
+Older-map obligation: All29packets retained. Mature Castle/House/Blackpine/Hollow Creek and functional/van/fog/power/hiding/network contracts preserved. Audit remaining maps individually; source-native checks do not establish gameplay acceptance.
+
+### DEV-511 — Removing Motel solid guide strips exposes original terrain collisions and unsupported approaches
+
+**Status:** SAVED TERRAIN OWNER AND FLOORS REBUILT; ALL22LINKS/42DOOR PROFILES PASS; FINAL GATES OPEN · **Affected:** WLD-16 original terrain owner, court/walks and arrival/door approaches
+
+Motel ordinary passes drop16to3of22;26direction regressions affect13links after false support strips are removed.33of42door profiles fail on original terrain or missing ground support.
+
+Cause / uncertainty: Original coarse landform intersects the walks and entrances; old guide strips concealed the missing geographic construction.
+
+Fix / next action: Keep strips removed and preserve the original terrain component and its native records byte-for-byte. Do not restore false supports, loosen tests, unlock the Motel or treat new doorway walls as map acceptance. Next physical batch must resolve original terrain ownership and construct actual motel geographic court/arcade/arrival interfaces, alongside Academy off-landform work and another unfinished site. Current three-site ordinary result is33/52versus42before: Railway16/16, Cinder14/14, Motel3/22. Broad samples retain2947invalid of12867. Stairs/gallery circuits and source-preservation checks pass independently. Terrain-ownership construction now samples the exact original terrain master into a real saved editor world, transfers render/native ownership once, and grades geographic court/arcade/arrival/service areas through saved layers. Reconstruct full room/arcade floors and a flush north service apron. Original coarse collider is absent from current export/native; source master is preserved. All22ordinary links and42door profiles pass without restoring study strips. Landscape/desquareify, canonical van arrival inspection and real runtime integration remain open.
+
+Evidence and verification: development/levels/rebuild/service-portal-construction-pass/roster.json; per-site clean-doorways.blend/glb/hcs2 and construction.json; verification/; captures/service-portal-construction-batch including upper/lower native sections
+
+Older-map obligation: All29packets retained. Mature Castle/House/Blackpine/Hollow Creek and functional/van/fog/power/hiding/network contracts preserved. Audit remaining maps individually; source-native checks do not establish gameplay acceptance.
+
+### DEV-512 — Motel original coarse landform obstructed the real court and arcades
+
+**Status:** SAVED OWNER TRANSFER AND GEOGRAPHIC/FLOOR CONSTRUCTION VERIFIED · **Affected:** Eight Pines Motor Lodge original terrain, courtyard, guest arcades, room floors and service court
+
+Original closed coarse terrain collided with doors/walks; removed guide strips had concealed missing geographic support.
+
+Cause / uncertainty: No persisted editor terrain owned the original Motel surface; fragmented thin floor patches and broad landform collided.
+
+Fix / next action: Sample original master into saved R16 terrain, publish actual editor topology with12foundation cuts, then author broad geographic grades/shoulders through saved layers. Retain source master and immutable seed world. Explicitly match the original GLB/native terrain part before removing it; one new saved-world owner supplies rendering/native terrain. Rebuild12room floors at0.30m and3arcade floors at0.22m, preserving staging and all library placement. A north arcade2cm height mismatch required a full-width flush service apron; grade the actual north court rather than restoring study support. All22ordinary links and42door profiles now pass, compared with3and9profiles before. New/source terrain triangles and saved source/cut/room contracts match. Materials/landscape/drainage/van/runtime acceptance remain open.
+
+Evidence and verification: development/levels/rebuild/terrain-ownership-construction-pass/roster.json; earthworks-program.json; worlds/original-worlds and per-site saved-earthworks.blend/glb/hcs2/construction.json; verification/; captures/terrain-ownership-construction-batch
+
+Older-map obligation: All29packets retained. Mature authorities/assets and source room/staging/capacity/ritual/power/hiding/network/van/fog/sky contracts preserved. Audit other unfinished maps and actual gameplay integration individually.
+
+### DEV-513 — Academy visitor guides left the landform and crossed teaching rooms
+
+**Status:** FORECOURT AND NORMAL RECEPTION ENTRANCE BUILT; TWO OTHER CONNECTIONS OPEN · **Affected:** Academy arrival, reception south door and quadrangle approach
+
+The arrival guide travelled outside actual landform and then across laboratory rooms to the quad.
+
+Cause / uncertainty: Old guidance was followed as a geographic/architectural shortcut rather than entering through reception and the cloister.
+
+Fix / next action: Grade actual arrival/visitor grounds, service perimeter and quadrangle while preserving protected interiors and all901saved holes. Construct thick reception south piers/lintel, indexed1.8x2.3m service frame and full-width soil-bearing visitor landing. Entry now follows reception, existing south cloister and actual quad doorway; reverse room access follows those same surfaces. Three actual door profiles pass; three previously clear native landing rays now block. Ordinary links37/39versus34before, no regressions. Preserve38OPEN_SEARCH/23SEALED_CONTEXT source spaces; no new unlock or runtime seal acceptance. L42east-stair exit and L43upper-main approach remain open.
+
+Evidence and verification: development/levels/rebuild/terrain-ownership-construction-pass/roster.json; earthworks-program.json; worlds/original-worlds and per-site saved-earthworks.blend/glb/hcs2/construction.json; verification/; captures/terrain-ownership-construction-batch
+
+Older-map obligation: All29packets retained. Mature authorities/assets and source room/staging/capacity/ritual/power/hiding/network/van/fog/sky contracts preserved. Audit other unfinished maps and actual gameplay integration individually.
+
+### DEV-514 — Dam arrival crossed the workshop excavation without a coherent upper structure
+
+**Status:** SUPPORTED CREST AND BRIDGE FORECOURT BUILT; OLD STAIR CELLS UNFINISHED · **Affected:** Dam crest/arrival decks above the existing workshop
+
+Arrival and crest support was missing despite a lower occupied room beneath; raw ground could not fill that room.
+
+Cause / uncertainty: The earlier approach had relied on partial study pieces and mismatched terrain instead of a real load path.
+
+Fix / next action: Grade geographic arrival ground and preserve lower excavation neighbourhood/all1727saved holes. Build0.60m closed full crest deck and broad bridge forecourt, wall-bearing piers and transverse girders above the retained lower-room roof. Four independent native-export wall cap receivers confirm original wall top-3m meets new pier bottom-3.1m. Fit supported perimeter guards/returns with arrival and east-stair openings; correct reflected guard normals before export. Actual approach passes across the constructed bridge without filling the room below. All10affected flights/9complete stair routes across this batch retain both-way passes. Dam ordinary links9/12versus7before. Older amber Dam flights/roof cuts and L06/L10/L17 remain architectural blockers; no runtime acceptance.
+
+Evidence and verification: development/levels/rebuild/terrain-ownership-construction-pass/roster.json; earthworks-program.json; worlds/original-worlds and per-site saved-earthworks.blend/glb/hcs2/construction.json; verification/; captures/terrain-ownership-construction-batch
+
+Older-map obligation: All29packets retained. Mature authorities/assets and source room/staging/capacity/ritual/power/hiding/network/van/fog/sky contracts preserved. Audit other unfinished maps and actual gameplay integration individually.
+
+### DEV-515 — Five Academy and Dam source connections remain physically incomplete
+
+**Status:** OPEN INDIVIDUAL CONSTRUCTION BLOCKERS · **Affected:** Academy L42east stair to grounds, L43upper-west to main stair; Dam L06west stair to crest, L10east stair to crest, L17lower return to gallery
+
+Five ordinary links still fail continuous native sweeps after this terrain/floor batch.
+
+Cause / uncertainty: Old stair-head/upper/deep connections and legacy flight arrangements have not received their individual architectural rebuilds.
+
+Fix / next action: Keep these failures visible in the full29roster. Current affected ordinary result68/73versus44before, zero regressions; broad samples336invalid of15987. All45door profiles,10flights/9complete stair routes, closed-solid/export/source preservation and saved-hole controls pass. Next bounded structural batch should reconstruct these actual stair/landing/room interfaces alongside another unfinished site. Do not infer runtime/map acceptance from candidate checks or copy source route shapes into solids.
+
+Evidence and verification: development/levels/rebuild/terrain-ownership-construction-pass/roster.json; earthworks-program.json; worlds/original-worlds and per-site saved-earthworks.blend/glb/hcs2/construction.json; verification/; captures/terrain-ownership-construction-batch
+
+Older-map obligation: All29packets retained. Mature authorities/assets and source room/staging/capacity/ritual/power/hiding/network/van/fog/sky contracts preserved. Audit other unfinished maps and actual gameplay integration individually.
+
+### DEV-516 — Landing slab edge clips the final ascending treads
+
+**Status:** FIXED_SCOPED_NATIVE · **Affected:** Academy L66/L67; Dam L07 construction pilot
+
+A slab starting over the last tread body clips the ascending capsule. Upper landing holes now extend to the true flight end. Dam receives an actual level stair-head landing and a separate split flight/mid-landing on floor-founded piers. All20flights and18complete stair routes pass without changing kernel thresholds.
+
+Cause / uncertainty: Physical source geometry and independently replayed capsule/footprint interfaces; earlier primitive or construction-pilot assumptions were incomplete.
+
+Fix / next action: Preserve retained models and prior native records; use the actual constructed cells/interfaces and keep remaining older work explicit.
+
+Evidence and verification: development/levels/rebuild/stair-interface-construction-pass/verification/checkpoint.json; source-and-structure-preservation.json; native movement reports and retained pilot logs.
+
+Older-map obligation: Retain full riser/landing/overhead/body checks when changing floors at any older stair.
+
+### DEV-517 — Dam platform footing proposal has no saved-soil receiver
+
+**Status:** REJECTED_AND_REPLACED_WITH_ACTUAL_BEARING · **Affected:** Dam east approach at67.3,47.2
+
+Four-corner terrain queries reject a proposed pier over a saved void. Actual west return girder now embeds in the existing crest slab; other three piers root into measured native soil. Two new mid-stair piers bear on four-corner-confirmed turbine floor receivers.
+
+Cause / uncertainty: Physical source geometry and independently replayed capsule/footprint interfaces; earlier primitive or construction-pilot assumptions were incomplete.
+
+Fix / next action: Preserve retained models and prior native records; use the actual constructed cells/interfaces and keep remaining older work explicit.
+
+Evidence and verification: development/levels/rebuild/stair-interface-construction-pass/verification/checkpoint.json; source-and-structure-preservation.json; native movement reports and retained pilot logs.
+
+Older-map obligation: Individually prove every soil or built-surface receiver; do not infer foundation support from a bounding box.
+
+### DEV-518 — New landing guards and supports intrude into circulation clearance
+
+**Status:** FIXED_SCOPED_NATIVE · **Affected:** Academy landing rims; Dam east platform and L13/L18 margins
+
+Construction review required aperture/platform guards. First fitting placed12side-foot samples against a guard and3against a pier; the south guard now mounts on a supported crest return and the pier clears the lower stair. Dam lower flight also stops clear of the shared turbine approach. All five repaired flat links now have zero centre/side-foot failures; all previously passing complete directions retained.
+
+Cause / uncertainty: Physical source geometry and independently replayed capsule/footprint interfaces; earlier primitive or construction-pilot assumptions were incomplete.
+
+Fix / next action: Preserve retained models and prior native records; use the actual constructed cells/interfaces and keep remaining older work explicit.
+
+Evidence and verification: development/levels/rebuild/stair-interface-construction-pass/verification/checkpoint.json; source-and-structure-preservation.json; native movement reports and retained pilot logs.
+
+Older-map obligation: Recheck full width and adjoining lower routes after guards, piers and stair undersides change; centre-only movement is insufficient.
+
+### DEV-519 — Lookout retains exposed older platforms and oversized lower stair masses
+
+**Status:** OPEN_RETAINED_OLDER_CONSTRUCTION · **Affected:** WLD-04 older L13, turn/cab exterior platforms and five ground links
+
+Current native views show an older exposed blue exterior platform, incomplete landing perimeter guards and the retained filled lower L13stair. This batch replaces only the two upper return flights and mounts their guards. Existing2/7ordinary links remain; five ground links and wider terrain/foundation/platform reconstruction remain open.
+
+Cause / uncertainty: Physical source geometry and independently replayed capsule/footprint interfaces; earlier primitive or construction-pilot assumptions were incomplete.
+
+Fix / next action: Preserve retained models and prior native records; use the actual constructed cells/interfaces and keep remaining older work explicit.
+
+Evidence and verification: development/levels/rebuild/stair-interface-construction-pass/verification/checkpoint.json; source-and-structure-preservation.json; native movement reports and retained pilot logs.
+
+Older-map obligation: Audit older lookout decks, actual wall/platform receivers, guards and geographic approaches before accepting the site.
+
+### DEV-520 — Historical split-flight declarations are mistaken for new flights in later batches
+
+**Status:** FIXED_CURRENT_AND_FOLLOWUP_NATIVE_CHECKS_PASS · **Affected:** tools/audit_roster_stairs.py when retaining the new Dam split flight in a subsequent source manifest
+
+An inherited declaration can wrongly require an already existing flight to appear again as a new identity.
+
+Cause / uncertainty: Comparator originally scoped declared additions to metadata presence without comparing actual before-layout flight identities.
+
+Fix / next action: Derive existing identities from exact before-layout points/mapping. Only genuinely new declarations require exact after coordinates and mandatory passing movement; still reject dropped old routes and unexpected new identities. Actual three-site20flight/18route replay and a no-change Dam follow-up control pass.
+
+Evidence and verification: stair-interface-construction-pass/verification/stairs/stair-movement.json; stair-interface-followup-control.log
+
+Older-map obligation: Carry forward actual split-flight identities without skipping any old flight or treating all historical declarations as new.
 
 ## Required audit categories
 

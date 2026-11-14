@@ -17,7 +17,7 @@ final class EditorGlbDocumentWriter {
     static byte[] encode(Mesh mesh)throws IOException{
         var source=mesh.glbSource();source.requireEditable();var baseline=source.mesh(mesh.name());
         if(mesh.faceIds().size()!=mesh.triangles().size()||mesh.cornerVertexIds().size()!=mesh.triangles().size()*3)throw new IOException("Source GLB export requires authoritative native face/position bindings");
-        if(mesh.triangles().equals(baseline.triangles())&&mesh.materials().equals(baseline.materials())&&mesh.cornerVertexIds().equals(baseline.cornerVertexIds())&&mesh.faceIds().equals(baseline.faceIds())&&mesh.frames().equals(baseline.frames()))return source.original();
+        if(mesh.triangles().equals(baseline.triangles())&&mesh.materials().equals(baseline.materials())&&mesh.cornerVertexIds().equals(baseline.cornerVertexIds())&&mesh.faceIds().equals(baseline.faceIds())&&mesh.frames().equals(baseline.frames())&&mesh.quads().equals(baseline.quads()))return source.original();
         for(var material:source.nativeMaterials())if(!mesh.materials().contains(material))throw new IOException("Source GLB original material definitions must remain available");
         var root=EditorGlbReader.obj(copy(source.root()));var nodes=EditorGlbReader.arr(root.get("nodes"));var meshes=EditorGlbReader.arr(root.get("meshes"));var views=EditorGlbReader.arr(root.get("bufferViews"));var accessors=EditorGlbReader.arr(root.get("accessors"));
         var binary=new ByteArrayOutputStream();binary.write(source.binary());align(binary);
@@ -50,7 +50,7 @@ final class EditorGlbDocumentWriter {
         for(var entry:source.frames().entrySet())if(!mesh.frames().containsKey(entry.getKey())){Integer node=originalParts.get(entry.getKey());if(node!=null&&EditorGlbReader.obj(nodes.get(node)).containsKey("mesh")){var target=EditorGlbReader.obj(nodes.get(node));var extensions=EditorGlbReader.obj(target.get("extensions"));extensions.remove("BECK_editor_frame");if(extensions.isEmpty())target.remove("extensions");}}
         if(nodes.size()>128||meshes.size()>128||views.size()>4096||accessors.size()>4096||images.size()>64)throw new IOException("Edited GLB exceeds existing runtime resource budget");
         var used=root.get("extensionsUsed")==null?new ArrayList<Object>():EditorGlbReader.arr(root.get("extensionsUsed"));if(!used.contains("BECK_native_mesh"))used.add("BECK_native_mesh");root.put("extensionsUsed",used);
-        align(binary);EditorMeshOrder.source(root,binary.toByteArray(),mesh,originalParts);var buffers=EditorGlbReader.arr(root.get("buffers"));if(buffers.size()!=1)throw new IOException("Source GLB external/multiple buffer export unsupported");EditorGlbReader.obj(buffers.get(0)).put("byteLength",binary.size());return container(root,binary.toByteArray(),source.trailing());
+        align(binary);EditorMeshQuad.writeGlb(root,mesh);EditorMeshOrder.source(root,binary.toByteArray(),mesh,originalParts);var buffers=EditorGlbReader.arr(root.get("buffers"));if(buffers.size()!=1)throw new IOException("Source GLB external/multiple buffer export unsupported");EditorGlbReader.obj(buffers.get(0)).put("byteLength",binary.size());return container(root,binary.toByteArray(),source.trailing());
     }
     private static Map<String,Object> primitive(Run run,Map<String,Object> template,double[] world,double[] inverse,ByteArrayOutputStream binary,List<Object> views,List<Object> accessors,Map<String,Integer> materials)throws IOException{
         record Key(Vertex vertex,long identity){}

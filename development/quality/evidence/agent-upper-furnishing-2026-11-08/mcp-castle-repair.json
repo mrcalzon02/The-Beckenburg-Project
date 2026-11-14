@@ -1,0 +1,162 @@
+{
+  "sceneId": "beckenburg/castle",
+  "revision": 11,
+  "sourceCommit": "dcd23da27dcd8c8b71ba77203f011b6f17c8250e",
+  "beforeAudit": [
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture7: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture8: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture9: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture10: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture11: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture12: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture13: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture14: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture15: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture16: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/lighting2_14: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "SPAWN_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "SPAWN/start: Player spawn centre is inside an authored solid wall."
+    }
+  ],
+  "change": {
+    "beforeRevision": 9,
+    "fullScene": true,
+    "total": 2,
+    "offset": 0,
+    "nodes": [
+      {
+        "id": "mcp-test-divider",
+        "kind": "REMOVED",
+        "beforeFingerprint": "d28e2ace15510d19f158eefdcd46a3b8af3169970689d67c682c986eb4444e98",
+        "fingerprint": null
+      },
+      {
+        "id": "mcp-upper-lodging-chair",
+        "kind": "ADDED",
+        "beforeFingerprint": null,
+        "fingerprint": "5ee2b92e7b7548b8da44cebc200057b9c6a696ca860b915978ddf348bda2a9aa"
+      }
+    ]
+  },
+  "audit": [
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture7: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture8: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture9: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture10: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture11: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture12: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture13: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture14: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture15: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/fixture16: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    },
+    {
+      "code": "LIGHT_WALL_INTERSECTION",
+      "passed": false,
+      "detail": "LAMP/lighting2_14: Light origin overlaps solid masonry. Verify actual wall mount and fixture mesh."
+    }
+  ],
+  "furnished": {
+    "actual": {
+      "id": "mcp-upper-lodging-chair",
+      "kind": "PROP",
+      "label": "mcp-upper-lodging-chair \u2022 armchair_1",
+      "x": 5.75,
+      "y": 3.4,
+      "z": 13.5
+    },
+    "verified": true,
+    "committed": true,
+    "diskState": "MISSING"
+  },
+  "clearAisle": {
+    "x": 5.75,
+    "y": 3.4,
+    "z": 14.35
+  }
+}

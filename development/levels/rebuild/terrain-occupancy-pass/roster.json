@@ -1,0 +1,224 @@
+{
+  "scope": 29,
+  "status": "BREADTH_BY_STAGE_ROOM_TERRAIN_CONSTRUCTION",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "ASYLUM",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Mature native map retained; individual room/terrain retrofit remains required",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "CHURCH",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "COLLEGE",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Mature native map retained; individual room/terrain retrofit remains required",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "MANSION",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "PRISON",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "SCHOOL",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Mature native map retained; individual room/terrain retrofit remains required",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Mature native map retained; individual room/terrain retrofit remains required",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-03",
+      "status": "ACTUAL_ROOM_TERRAIN_EXCAVATION_CANDIDATE_NATIVE_CHECKS_PASS_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-03/construction.json",
+      "rooms": [
+        "gallery",
+        "fork",
+        "chamber",
+        "lower-cave"
+      ],
+      "baseline_occupied_terrain_samples": 2751,
+      "after_occupied_terrain_samples": 0,
+      "recovered_flat_poses": 323,
+      "new_flat_blocks": 0,
+      "new_flat_sweep_failures": 0
+    },
+    {
+      "id": "WLD-04",
+      "status": "ACTUAL_ROOM_TERRAIN_EXCAVATION_CANDIDATE_NATIVE_CHECKS_PASS_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-04/construction.json",
+      "rooms": [
+        "ruin"
+      ],
+      "baseline_occupied_terrain_samples": 723,
+      "after_occupied_terrain_samples": 0,
+      "recovered_flat_poses": 149,
+      "new_flat_blocks": 0,
+      "new_flat_sweep_failures": 0
+    },
+    {
+      "id": "WLD-05",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-06",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-07",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-08",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-09",
+      "status": "ACTUAL_ROOM_TERRAIN_EXCAVATION_CANDIDATE_NATIVE_CHECKS_PASS_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-09/construction.json",
+      "rooms": [
+        "workshop",
+        "plant"
+      ],
+      "baseline_occupied_terrain_samples": 268,
+      "after_occupied_terrain_samples": 0,
+      "recovered_flat_poses": 8,
+      "new_flat_blocks": 0,
+      "new_flat_sweep_failures": 0
+    },
+    {
+      "id": "WLD-10",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-11",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-12",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-13",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-14",
+      "status": "ACTUAL_ROOM_TERRAIN_EXCAVATION_CANDIDATE_NATIVE_CHECKS_PASS_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-14/construction.json",
+      "rooms": [
+        "tower0"
+      ],
+      "baseline_occupied_terrain_samples": 12,
+      "after_occupied_terrain_samples": 0,
+      "recovered_flat_poses": 0,
+      "new_flat_blocks": 0,
+      "new_flat_sweep_failures": 0
+    },
+    {
+      "id": "WLD-15",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-16",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-17",
+      "status": "ACTUAL_ROOM_TERRAIN_EXCAVATION_CANDIDATE_NATIVE_CHECKS_PASS_RUNTIME_GATES_OPEN",
+      "evidence": "development/levels/rebuild/terrain-occupancy-pass/assemblies/wld-17/construction.json",
+      "rooms": [
+        "barracks",
+        "lowgallery",
+        "plant",
+        "records",
+        "pump"
+      ],
+      "baseline_occupied_terrain_samples": 995,
+      "after_occupied_terrain_samples": 0,
+      "recovered_flat_poses": 757,
+      "new_flat_blocks": 0,
+      "new_flat_sweep_failures": 0
+    },
+    {
+      "id": "WLD-18",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "RETAINED_INDIVIDUAL_OBLIGATIONS_OPEN",
+      "room_terrain_scope": "Half-metre architectural-envelope terrain audit clear; other geometry and runtime acceptance not inferred",
+      "next_action": "Continue broad exact floor/shaft and terrain/building fit across roster; do not substitute source-only checks for gameplay."
+    }
+  ],
+  "source_commit": "ade63e647bc0510ad99ef9e6f083c7fa459cba91"
+}

@@ -1,0 +1,147 @@
+{
+  "site": "COLLEGE",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/college/rough-layout.json",
+  "source_layout_sha256": "6762dc357a7c05c9f215c5d111ff67ba77c07c3125ef537f835a764cc1c95657",
+  "structure_glb_sha256": "d22736d78c590bd44f0799f48e3623188b9e566cd7284fa5747adcd65d19d819",
+  "furnished_glb_sha256": "70b09fef6a29c0fd0fe22883e396955efc2f663adf700891220e4bb4039f6b08",
+  "native_sha256": "75e2d8628204453bdf24fccadd50601584ce8b6901a837fa674ee27700f034d1",
+  "requests": 5,
+  "placements": [
+    {
+      "id": "COLLEGE:lecture:0:0",
+      "zone": "lecture",
+      "purpose": "Thirty-two-place clear-span lecture room / Tiered lecture seating row / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_lecture_tier_row",
+      "asset": "level_blockout_lecture_tier_row",
+      "source_sha256": "72cdcd9fbebc92201302754dd1915dfcf123810b34b0b6122258803a15bf862e",
+      "bounds": [
+        8.287999153137207,
+        -35.1150016784668,
+        0.0,
+        11.327999114990234,
+        -34.160003662109375,
+        1.3300000429153442
+      ],
+      "rect": [
+        8.288000007629394,
+        34.16,
+        11.327999969482422,
+        35.11500001311302
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "COLLEGE:lab:1:0",
+      "zone": "lab",
+      "purpose": "Sixteen-place practical teaching benches / School laboratory demonstration and optical bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_science_instrument_table",
+      "asset": "level_blockout_science_instrument_table",
+      "source_sha256": "37ad81a14c0dbcc369602bc756422a4be2d5cbd09dc3d01633cba1002b5387a9",
+      "bounds": [
+        7.7300004959106445,
+        -11.0,
+        0.0,
+        9.5600004196167,
+        -10.15999984741211,
+        1.598637342453003
+      ],
+      "rect": [
+        7.729999991416932,
+        10.16,
+        9.560000034332276,
+        10.999999973773956
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 244
+    },
+    {
+      "id": "COLLEGE:admin:2:0",
+      "zone": "admin",
+      "purpose": "Campus administration work room / Headmaster's desk and writing accessories / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_headmaster_desk",
+      "asset": "level_blockout_headmaster_desk",
+      "source_sha256": "0c5e6f6383716091ccd60c36337dc6bae4fa2b0d9b0320e7b46c55c04516a617",
+      "bounds": [
+        29.326000213623047,
+        -47.02000045776367,
+        0.0,
+        31.17599868774414,
+        -46.15999984741211,
+        0.8050000071525574
+      ],
+      "rect": [
+        29.32599999523163,
+        46.16,
+        31.176000019073488,
+        47.02000001430511
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    },
+    {
+      "id": "COLLEGE:cafe:3:0",
+      "zone": "cafe",
+      "purpose": "Twenty-place union cafe seating / Student cafe serving counter and sneeze guard / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_college_cafe_counter",
+      "asset": "level_blockout_college_cafe_counter",
+      "source_sha256": "51d04fe2adad32be4da39b0f7fdcf98b7c3da5a3d93c9addd171cb41598b1036",
+      "bounds": [
+        43.185997009277344,
+        -51.14999771118164,
+        0.0,
+        45.736000061035156,
+        -50.15999984741211,
+        2.1700000762939453
+      ],
+      "rect": [
+        43.18600000953674,
+        50.16,
+        45.735999961853025,
+        51.15000000953674
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "COLLEGE:maintenance:4:0",
+      "zone": "maintenance",
+      "purpose": "Campus maintenance and parts / Workshop or classroom bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_workbench",
+      "asset": "level_blockout_workbench",
+      "source_sha256": "118331bca686c16c1e75042c6d56bf917218bdc8902c68ba05b722869725c589",
+      "bounds": [
+        13.345999717712402,
+        -24.939998626708984,
+        -3.0,
+        15.095999717712402,
+        -24.15999984741211,
+        -2.0899999141693115
+      ],
+      "rect": [
+        13.346,
+        24.16,
+        15.096,
+        24.93999997138977
+      ],
+      "floor_y": -3,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 72
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "c090a960215df9f1a601baaacae55696e4893e78f77f4536fe49dd4d3a8c276e",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 5,
+  "source_builder_sha256": "3d19efcba059544d91e4de705a805faed4d87ceec04f2734023e9abb799250c7"
+}

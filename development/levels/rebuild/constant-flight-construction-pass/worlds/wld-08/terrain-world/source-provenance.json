@@ -1,0 +1,46 @@
+{
+  "source_world": "development/levels/rebuild/stair-cell-construction-pass/worlds/wld-08/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "bd109d05ae6c1414e690c9c44ec31923dcfa728cc291d519e6476ed54d0b8723",
+    "authored-cuts.tsv": "286a8e6358facb0b702ebda4ba37a6f2a71781d64f3c3f43471751ebec0560c5",
+    "authored-path-grading.sha256": "419fee60981dd503fefc38d58efe7ad29dd7281296b09a78898cb9f56d0caa62",
+    "earthworks-verification.json": "3c935c8b40c8fe7ef36399616428c8bc0d3cae924571b4df5281a8aa765948a0",
+    "source-provenance.json": "07638e06bf865c3e6a916d92b041f7b86d226308b2c2ee16e04522b636f1791c",
+    "terrain-physics.hcs2": "247566c8e6f8c74437a498eae66845c48937bf97a660593bbeb54912a1d12775",
+    "tile_0_0.png": "52520d8fc7a747f2e846e536faad13fb232175b73087ecb15ab23facdbf6ae21",
+    "tunnel-punch-verification.json": "c315bd7dbb00d868383e3e134b35b56304d3d1d315b141827f3a6617a24fceb4",
+    "verification.json": "3c935c8b40c8fe7ef36399616428c8bc0d3cae924571b4df5281a8aa765948a0",
+    "world.properties": "061685389ee0cafd56f51b8af8571f0f84d49ab32d7806ba8c2c3df0a6639c64",
+    "previous-authoring/source-provenance.json": "952460910bd0f5e3a7eb0c17734389ab57fb77c21cd7bb205d9c7d4b5b158ae5",
+    "previous-authoring/verification.json": "8777c8266eb7529abcb096d6addaedb2cb7bea325ccc95c270efc1817f216cc5",
+    "scene-package/.scene.bin.editor.previous": "c314f8d19ce3d36bbba92345e70af2f0c4d7b0b90550cd888e49eee9e23f22c3",
+    "scene-package/scene.bin": "44ab07f2f9f124bfe74f92bfb678c2645a1d3ef6b41e74d0dc3ffff283c1b388",
+    "scene-package/meshes/site-0-0.obj": "6132a17b685946652bd84b5cc4f6623b65b160754330368681d8e68c51b9ceb8",
+    "scene-package/meshes/site-0-1.obj": "581f2dd19e3091443ebf13fb19550a2b6a6b3cac5bc24ce1414d440fdfe81812",
+    "scene-package/meshes/site-1-0.obj": "e22f81de673add20dd8eec23e4aa909fa414eb6656323bfb1d7736dd7d50a431",
+    "scene-package/meshes/site-1-1.obj": "d8d0c28efa93230b3a1a22432744f3bc96978abb04a8df18fdb5c8e1f1bac45c",
+    "terrain-layers/tile_0_0.bin": "29261f43e56c1c4a8ac102179d30f0ea7dd6ecc77110856f4e1c934d39f3420e"
+  },
+  "rectangular_construction_cuts": [
+    [
+      11,
+      34,
+      22.3,
+      36
+    ],
+    [
+      41.7,
+      34,
+      53,
+      36
+    ],
+    [
+      9.9,
+      17,
+      12.1,
+      22.3
+    ]
+  ],
+  "source_height_and_layers_preserved": true,
+  "authoring": "Actual saved editor topology punches for structural wells/platform; no route-extrusion surfaces"
+}

@@ -149,6 +149,7 @@ public final class LanClient implements AutoCloseable {
         send("STEP|"+dx+"|"+dz+"|"+(running?1:0)+"|"+(++sequence));
     }
     public synchronized void vanMonitor()throws IOException {send("VANMON|"+(++sequence));}
+    public synchronized void jump()throws IOException {send("JUMP|"+(++sequence));}
     public synchronized void crouch(boolean low)throws IOException {send("CROUCH|"+(low?1:0)+"|"+(++sequence));}
     public synchronized void hide()throws IOException {send("HIDE|"+(++sequence));}
     public synchronized void interact(InteractionFocus.Target target,double yaw,double pitch)throws IOException {
@@ -178,6 +179,7 @@ public final class LanClient implements AutoCloseable {
     public synchronized void window()throws IOException {send("WINDOW|"+(++sequence));}
     public synchronized void door()throws IOException {send("DOOR|"+(++sequence));}
     public synchronized void vanDoor()throws IOException {send("VANDOOR|"+(++sequence));}
+    public synchronized void toggleFlashlight()throws IOException {send("TORCH|"+(++sequence));}
     public synchronized void light()throws IOException {send("LIGHT|"+(++sequence));}
     public synchronized void power()throws IOException {send("POWER|"+(++sequence));}
     public synchronized void scan(LanCase.Tool tool)throws IOException {
@@ -213,7 +215,7 @@ public final class LanClient implements AutoCloseable {
     /** Host-owned physical gear, not a visual-only clutter token. */
     public synchronized void dropHeldEquipment()throws IOException{send("GEARDROP|"+(++sequence));}
     public synchronized void pickupDroppedEquipment(long id)throws IOException{
-        if(id<1||id>6)throw new IllegalArgumentException("invalid dropped gear identity");
+        if(id<1||id>LanDroppedGear.MAX_ID)throw new IllegalArgumentException("invalid dropped gear identity");
         send("GEARPICK|"+id+"|"+(++sequence));
     }
     /** Deploy or retrieve a portable ground light at the real hunter position. */
@@ -227,6 +229,10 @@ public final class LanClient implements AutoCloseable {
     public synchronized void say(LanChat.Channel channel,String message)throws IOException{
         Objects.requireNonNull(channel);
         send("SAY|"+channel+"|"+LanChat.clean(message)+"|"+(++sequence));
+    }
+    public synchronized void emote(HunterEmote action)throws IOException{
+        Objects.requireNonNull(action);
+        send("EMOTE|"+action+"|"+(++sequence));
     }
     public synchronized void note(GhostFieldGuide.Clue clue,FieldJournal.Status status)throws IOException{
         Objects.requireNonNull(clue);Objects.requireNonNull(status);

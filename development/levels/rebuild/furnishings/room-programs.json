@@ -1,0 +1,2034 @@
+{
+  "stage": "FIRST_NATIVE_SPATIAL_ALLOCATION_NOT_FULL_ROOM_FURNISHING",
+  "source_inventory": "development/assets/asset-library-index.json",
+  "recipes": {
+    "level_blockout_headmaster_desk": [
+      [
+        "level_blockout_headmaster_desk",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_library_book_return_cart": [
+      [
+        "level_blockout_library_book_return_cart",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_lecture_lectern": [
+      [
+        "level_blockout_lecture_lectern",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_lab_fume_hood": [
+      [
+        "level_blockout_lab_fume_hood",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_dorm_bunk_partition": [
+      [
+        "level_blockout_dorm_bunk_partition",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_archive_cabinet": [
+      [
+        "level_blockout_archive_cabinet",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_ward_bed": [
+      [
+        "level_blockout_ward_bed",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_hospital_treatment_theatre": [
+      [
+        "level_blockout_hospital_treatment_theatre",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_hospital_hydro_tub": [
+      [
+        "level_blockout_hospital_hydro_tub",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_institution_linen_cabinet": [
+      [
+        "level_blockout_institution_linen_cabinet",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_pew": [
+      [
+        "level_blockout_pew",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_stone_altar": [
+      [
+        "level_blockout_stone_altar",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_organ_pipe_console": [
+      [
+        "level_blockout_organ_pipe_console",
+        0,
+        0,
+        3.141592653589793,
+        0.96
+      ]
+    ],
+    "level_blockout_confessional_screen": [
+      [
+        "level_blockout_confessional_screen",
+        0,
+        0,
+        0,
+        0.92
+      ]
+    ],
+    "level_blockout_lecture_tier_row": [
+      [
+        "level_blockout_lecture_tier_row",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_science_instrument_table": [
+      [
+        "level_blockout_science_instrument_table",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_college_cafe_counter": [
+      [
+        "level_blockout_college_cafe_counter",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_workbench": [
+      [
+        "level_blockout_workbench",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_barn_stall": [
+      [
+        "level_blockout_barn_stall",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_storage_shelf": [
+      [
+        "level_blockout_storage_shelf",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_barn_hayloft_bales": [
+      [
+        "level_blockout_barn_hayloft_bales",
+        0,
+        0,
+        0,
+        0.8
+      ]
+    ],
+    "level_blockout_domestic_kitchen_range": [
+      [
+        "level_blockout_domestic_kitchen_range",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_motel_guest_bed": [
+      [
+        "level_blockout_motel_guest_bed",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_mortuary_viewing_seat": [
+      [
+        "level_blockout_mortuary_viewing_seat",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_prison_cell_cot": [
+      [
+        "level_blockout_prison_cell_cot",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_prison_guard_station": [
+      [
+        "level_blockout_prison_guard_station",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_prison_isolation_fixture": [
+      [
+        "level_blockout_prison_isolation_fixture",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_student_desk": [
+      [
+        "level_blockout_student_desk",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_school_cafeteria_table": [
+      [
+        "level_blockout_school_cafeteria_table",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_school_locker_bank": [
+      [
+        "level_blockout_school_locker_bank",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_camp_field_cot": [
+      [
+        "level_blockout_camp_field_cot",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_research_sample_station": [
+      [
+        "level_blockout_research_sample_station",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_survey_marker_cases": [
+      [
+        "level_blockout_survey_marker_cases",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_lookout_spotter": [
+      [
+        "level_blockout_lookout_spotter",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_ore_cart": [
+      [
+        "level_blockout_ore_cart",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_mine_ventilation": [
+      [
+        "level_blockout_mine_ventilation",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_fish_sorting_bench": [
+      [
+        "level_blockout_fish_sorting_bench",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_wharf_crab_pot": [
+      [
+        "level_blockout_wharf_crab_pot",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_grave_caretaker_tools": [
+      [
+        "level_blockout_grave_caretaker_tools",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_sarcophagus_plain": [
+      [
+        "level_blockout_sarcophagus_plain",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_console": [
+      [
+        "level_blockout_console",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_hydro_turbine": [
+      [
+        "level_blockout_hydro_turbine",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_dam_valve_manifold": [
+      [
+        "level_blockout_dam_valve_manifold",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_monastery_scriptorium": [
+      [
+        "level_blockout_monastery_scriptorium",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_cannery_cargo_pallet": [
+      [
+        "level_blockout_cannery_cargo_pallet",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_camp_washstand": [
+      [
+        "level_blockout_camp_washstand",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_signal_hut_lever_bank": [
+      [
+        "level_blockout_signal_hut_lever_bank",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_rail_trackside_toolbox": [
+      [
+        "level_blockout_rail_trackside_toolbox",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_rail_luggage_cart": [
+      [
+        "level_blockout_rail_luggage_cart",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_lighthouse_oil_barrel_rack": [
+      [
+        "level_blockout_lighthouse_oil_barrel_rack",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_ship_crew_berth": [
+      [
+        "level_blockout_ship_crew_berth",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_wharf_open_fish_crates": [
+      [
+        "level_blockout_wharf_open_fish_crates",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_motel_reception_counter": [
+      [
+        "level_blockout_motel_reception_counter",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_motel_laundry_unit": [
+      [
+        "level_blockout_motel_laundry_unit",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_barracks_lockers": [
+      [
+        "level_blockout_barracks_lockers",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_diesel_generator_skid": [
+      [
+        "level_blockout_diesel_generator_skid",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_field_first_aid": [
+      [
+        "level_blockout_field_first_aid",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_mortuary_prep_table": [
+      [
+        "level_blockout_mortuary_prep_table",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_mortuary_cold_drawer_wall": [
+      [
+        "level_blockout_mortuary_cold_drawer_wall",
+        0,
+        0,
+        0
+      ]
+    ],
+    "level_blockout_mortuary_visitors_registry_desk": [
+      [
+        "level_blockout_mortuary_visitors_registry_desk",
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "sites": {
+    "ACADEMY": [
+      {
+        "zone": "reception",
+        "recipe": "level_blockout_headmaster_desk",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Visitor reception and waiting / Headmaster's desk and writing accessories / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "reading",
+        "recipe": "level_blockout_library_book_return_cart",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Library quiet reading / Library and campus book return trolley / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "lecture",
+        "recipe": "level_blockout_lecture_lectern",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Sixteen-place teaching room / Lecture lectern / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "lab",
+        "recipe": "level_blockout_lab_fume_hood",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Practical teaching benches and handwashing / Laboratory fume hood and extraction canopy / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "dorm-1",
+        "recipe": "level_blockout_dorm_bunk_partition",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Four-place pupil sleeping room 1 / Dormitory bunk, divider and ladder / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "archive",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Dry institutional archive / Archival filing case / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "ASYLUM": [
+      {
+        "zone": "ground-north-a",
+        "recipe": "level_blockout_ward_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Ground two-place patient room north-a / Narrow institutional bed / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "ground-south-a",
+        "recipe": "level_blockout_ward_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Ground two-place patient room south-a / Narrow institutional bed / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "treatment",
+        "recipe": "level_blockout_hospital_treatment_theatre",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Treatment examination and handwashing / Treatment theatre table with exam lamp / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "hydro-bath",
+        "recipe": "level_blockout_hospital_hydro_tub",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Assisted bathing treatment room / Hydrotherapy bath and pipe manifold / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "records",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Confidential records office / Archival filing case / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "clinical-soiled",
+        "recipe": "level_blockout_institution_linen_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Enclosed soiled treatment utility / Open hospital/prison linen cabinet / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "CHURCH": [
+      {
+        "zone": "nave",
+        "recipe": "level_blockout_pew",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Forty-place nave with centre and side aisles / Parish pew bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "chancel",
+        "recipe": "level_blockout_stone_altar",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Chancel and supported altar arrangement / Parish chancel stone altar / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "choir",
+        "recipe": "level_blockout_organ_pipe_console",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Choir seating and music stands / Parish pipe organ with tiered pipe ranks / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "confessional",
+        "recipe": "level_blockout_confessional_screen",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Private confessional conversation enclosure / Confessional screened booth / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "records",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Confidential parish records / Archival filing case / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "COLLEGE": [
+      {
+        "zone": "lecture",
+        "recipe": "level_blockout_lecture_tier_row",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Thirty-two-place clear-span lecture room / Tiered lecture seating row / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "lab",
+        "recipe": "level_blockout_science_instrument_table",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Sixteen-place practical teaching benches / School laboratory demonstration and optical bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "admin",
+        "recipe": "level_blockout_headmaster_desk",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Campus administration work room / Headmaster's desk and writing accessories / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "cafe",
+        "recipe": "level_blockout_college_cafe_counter",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Twenty-place union cafe seating / Student cafe serving counter and sneeze guard / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "maintenance",
+        "recipe": "level_blockout_workbench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Campus maintenance and parts / Workshop or classroom bench / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "FARMHOUSE": [
+      {
+        "zone": "stall-a",
+        "recipe": "level_blockout_barn_stall",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Livestock stall A and access gate / Stable stall wall and trough / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "repair",
+        "recipe": "level_blockout_workbench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Tool repair bench and clear work aisle / Workshop or classroom bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "parts",
+        "recipe": "level_blockout_storage_shelf",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Repair parts and dry tools / Three-level freestanding shelf / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "hayloft",
+        "recipe": "level_blockout_barn_hayloft_bales",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Supported hay deck with clear retrieval aisle / Barn loft hay bale and ladder silhouette / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "kitchen",
+        "recipe": "level_blockout_domestic_kitchen_range",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Cooking and sink cleanup / Freestanding stove with four hot plates and oven / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "parents",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Parents bedroom and personal storage / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "MANSION": [
+      {
+        "zone": "library",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Library shelves and reading tables / Archival filing case / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "drawing",
+        "recipe": "level_blockout_mortuary_viewing_seat",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Drawing room seated reception / Vale viewing-room chairs and memorial pedestal / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "kitchen",
+        "recipe": "level_blockout_domestic_kitchen_range",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Cooking and preparation with separate wash-up / Freestanding stove with four hot plates and oven / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "suite-bed",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Principal bedroom / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "staff-a",
+        "recipe": "level_blockout_ward_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Two staff beds and personal storage A / Narrow institutional bed / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "wine",
+        "recipe": "level_blockout_storage_shelf",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Wine racks and retrieval aisle / Three-level freestanding shelf / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "PRISON": [
+      {
+        "zone": "a-lower-cell-01",
+        "recipe": "level_blockout_prison_cell_cot",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "A lower single cell 1 / Iron prison cell cot and thin bedding / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "b-lower-cell-01",
+        "recipe": "level_blockout_prison_cell_cot",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "B lower single cell 1 / Iron prison cell cot and thin bedding / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "guard",
+        "recipe": "level_blockout_prison_guard_station",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Guard control and dispatch / Prison guard desk and custody rail / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "records",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Prisoner records and staff work / Archival filing case / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "isolation-cell-1",
+        "recipe": "level_blockout_prison_isolation_fixture",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Isolation single cell one with sanitary bay / Isolation room hard bunk and wall bracket / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "SCHOOL": [
+      {
+        "zone": "class-a",
+        "recipe": "level_blockout_student_desk",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Class A: 24 desks and teaching area / Student desk and chair proxy / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "class-b",
+        "recipe": "level_blockout_student_desk",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Class B: 24 desks and teaching area / Student desk and chair proxy / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "science",
+        "recipe": "level_blockout_science_instrument_table",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Shared practical science teaching / School laboratory demonstration and optical bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "dining",
+        "recipe": "level_blockout_school_cafeteria_table",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Dining: two classes in one sitting / School cafeteria bench table / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "change-a",
+        "recipe": "level_blockout_school_locker_bank",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Changing group A lockers and bench / Three separate school lockers / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "office",
+        "recipe": "level_blockout_headmaster_desk",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Administration work room / Headmaster's desk and writing accessories / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-03": [
+      {
+        "zone": "shelter",
+        "recipe": "level_blockout_camp_field_cot",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Modern expedition shelter / Collapsible tent cot and pillow / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "wash",
+        "recipe": "level_blockout_research_sample_station",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Expedition sample shelter / Field sample-tray research bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "alcove",
+        "recipe": "level_blockout_survey_marker_cases",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Expedition records alcove / Remote survey markers, sample cases and stakes / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-04": [
+      {
+        "zone": "hut",
+        "recipe": "level_blockout_workbench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Maintenance hut / Workshop or classroom bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "store",
+        "recipe": "level_blockout_storage_shelf",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Ranger store / Three-level freestanding shelf / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "cab",
+        "recipe": "level_blockout_lookout_spotter",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Lookout cab / Lookout spotting table and instrument / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-05": [
+      {
+        "zone": "ore-west",
+        "recipe": "level_blockout_ore_cart",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "West ore room / Small ore wagon / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "ore-east",
+        "recipe": "level_blockout_mine_ventilation",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "East ore room / Mine ventilation unit / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "stores",
+        "recipe": "level_blockout_storage_shelf",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Surface stores / Three-level freestanding shelf / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "shack",
+        "recipe": "level_blockout_camp_field_cot",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Miners shack / Collapsible tent cot and pillow / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "assay",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Assay office / Archival filing case / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-06": [
+      {
+        "zone": "cottage-a",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "West fisherman cottage / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "boathouse",
+        "recipe": "level_blockout_workbench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Boathouse / Workshop or classroom bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "fish",
+        "recipe": "level_blockout_fish_sorting_bench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Fish house / Wharf fish processing/sorting station / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "net",
+        "recipe": "level_blockout_wharf_crab_pot",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Net shed / Wire ribbed crab pot / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-07": [
+      {
+        "zone": "chapel",
+        "recipe": "level_blockout_pew",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Ruined chapel / Parish pew bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "tool",
+        "recipe": "level_blockout_grave_caretaker_tools",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Caretaker tool store / Caretaker's shovel, rake and upkeep rack / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "chamber",
+        "recipe": "level_blockout_sarcophagus_plain",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Memorial record chamber / Plain closed medieval stone sarcophagus / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "cottage",
+        "recipe": "level_blockout_domestic_kitchen_range",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Caretaker cottage / Freestanding stove with four hot plates and oven / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-08": [
+      {
+        "zone": "lab",
+        "recipe": "level_blockout_research_sample_station",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Observation laboratory / Field sample-tray research bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "radio",
+        "recipe": "level_blockout_console",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Radio room / Operations desk and unlit console / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "dorm",
+        "recipe": "level_blockout_camp_field_cot",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Dormitory / Collapsible tent cot and pillow / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "mess",
+        "recipe": "level_blockout_domestic_kitchen_range",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Mess / galley / Freestanding stove with four hot plates and oven / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "records",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Log archive / Archival filing case / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-09": [
+      {
+        "zone": "turbine",
+        "recipe": "level_blockout_hydro_turbine",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Turbine hall / Turbine housing and pipe stub / existing rough spatial allocation, refinement later",
+        "position": [
+          54,
+          39
+        ],
+        "yaw": 0
+      },
+      {
+        "zone": "control",
+        "recipe": "level_blockout_console",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Control room / Operations desk and unlit console / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "valve",
+        "recipe": "level_blockout_dam_valve_manifold",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Valve inspection room / Dam maintenance gallery valve array / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "workshop",
+        "recipe": "level_blockout_workbench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Maintenance workshop / Workshop or classroom bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "office",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Shift records office / Archival filing case / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-10": [
+      {
+        "zone": "archive",
+        "recipe": "level_blockout_monastery_scriptorium",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Archive / Scriptorium writing desk and book rest / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "refectory",
+        "recipe": "level_blockout_school_cafeteria_table",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Refectory / School cafeteria bench table / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "dorm",
+        "recipe": "level_blockout_dorm_bunk_partition",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Dormitory / Dormitory bunk, divider and ladder / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "chamber",
+        "recipe": "level_blockout_stone_altar",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Subterranean chapter chamber / Parish chancel stone altar / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-11": [
+      {
+        "zone": "house-a",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "West stilt house / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "chapel",
+        "recipe": "level_blockout_pew",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Settlement chapel / Parish pew bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "warehouse",
+        "recipe": "level_blockout_cannery_cargo_pallet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Flooded warehouse dry deck / Pallet of strapped canning crates / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "pump",
+        "recipe": "level_blockout_camp_washstand",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Pump / wash shelter / Camp bathhouse wash basin and privacy fixture / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-12": [
+      {
+        "zone": "signal",
+        "recipe": "level_blockout_signal_hut_lever_bank",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Signal hut / Railway signal hut lever-frame bank / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "store",
+        "recipe": "level_blockout_rail_trackside_toolbox",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Track stores hut / Trackside tools and metal-trimmed trunk / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "coach-b",
+        "recipe": "level_blockout_rail_luggage_cart",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Derailed baggage coach / Wheeled rail-platform baggage cart / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "refuge",
+        "recipe": "level_blockout_camp_field_cot",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Tunnel maintenance refuge / Collapsible tent cot and pillow / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-13": [
+      {
+        "zone": "processing",
+        "recipe": "level_blockout_fish_sorting_bench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Fish-processing floor / Wharf fish processing/sorting station / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "cold",
+        "recipe": "level_blockout_storage_shelf",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Refrigerated stores / Three-level freestanding shelf / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "office",
+        "recipe": "level_blockout_headmaster_desk",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Managers office / Headmaster's desk and writing accessories / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "bunk",
+        "recipe": "level_blockout_camp_field_cot",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Workers bunkhouse / Collapsible tent cot and pillow / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "stores",
+        "recipe": "level_blockout_cannery_cargo_pallet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Packing / dry stores / Pallet of strapped canning crates / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-14": [
+      {
+        "zone": "workroom",
+        "recipe": "level_blockout_workbench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Maintenance workroom / Workshop or classroom bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "bed",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Keeper bedroom / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "study",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Signal records study / Archival filing case / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "generator",
+        "recipe": "level_blockout_lighthouse_oil_barrel_rack",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Generator and oil house / Three lightstation supply oil drums / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-15": [
+      {
+        "zone": "processing",
+        "recipe": "level_blockout_fish_sorting_bench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Fish processing hall / Wharf fish processing/sorting station / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "bridge",
+        "recipe": "level_blockout_console",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Wheelhouse / Operations desk and unlit console / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "crew",
+        "recipe": "level_blockout_ship_crew_berth",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Crew bunks / Saint Elara berth, locker and galley module / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "galley",
+        "recipe": "level_blockout_domestic_kitchen_range",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Galley / Freestanding stove with four hot plates and oven / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "net",
+        "recipe": "level_blockout_wharf_open_fish_crates",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Net and gear store / Two wharf storage fish bins / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-16": [
+      {
+        "zone": "office",
+        "recipe": "level_blockout_motel_reception_counter",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Reception and key desk / Eight Pines motel reception counter with ledger / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "laundry",
+        "recipe": "level_blockout_motel_laundry_unit",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Linen and laundry / Eight Pines washer/dryer pair / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "room1",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "West guest room 1 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "room2",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "West guest room 2 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "room3",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "West guest room 3 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "room4",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "West guest room 4 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "room5",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "East guest room 5 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "room6",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "East guest room 6 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "room7",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "East guest room 7 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "room8",
+        "recipe": "level_blockout_motel_guest_bed",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "East guest room 8 / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-17": [
+      {
+        "zone": "barracks",
+        "recipe": "level_blockout_barracks_lockers",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Lower barrack room / Brackenhead barracks lockers and duty shelf / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "records",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Duty records room / Archival filing case / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "service",
+        "recipe": "level_blockout_workbench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Maintenance shelter / Workshop or classroom bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "plant",
+        "recipe": "level_blockout_diesel_generator_skid",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Ventilation and power room / Outdoor emergency generator and service skid / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-18": [
+      {
+        "zone": "shop",
+        "recipe": "level_blockout_workbench",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Maintenance workshop / Workshop or classroom bench / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "exhibit",
+        "recipe": "level_blockout_console",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Inert control equipment room / Operations desk and unlit console / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "crew",
+        "recipe": "level_blockout_dorm_bunk_partition",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Lower crew room / Dormitory bunk, divider and ladder / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "records",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Maintenance records / Archival filing case / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "servicehouse",
+        "recipe": "level_blockout_field_first_aid",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Surface service building / Logging/campsite first-aid storage and wall cabinet / existing rough spatial allocation, refinement later"
+      }
+    ],
+    "WLD-07-MORTUARY": [
+      {
+        "zone": "mort-prep",
+        "recipe": "level_blockout_mortuary_prep_table",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Preparation room / Vale mortuary drainage preparation table / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "mort-cold",
+        "recipe": "level_blockout_mortuary_cold_drawer_wall",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Cold storage / Three-drawer mortuary cold storage bank / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "mort-reception",
+        "recipe": "level_blockout_mortuary_visitors_registry_desk",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Vale Mortuary reception / Funeral guest register and small bell desk / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "mort-viewing",
+        "recipe": "level_blockout_mortuary_viewing_seat",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Viewing room / Vale viewing-room chairs and memorial pedestal / existing rough spatial allocation, refinement later"
+      },
+      {
+        "zone": "mort-office",
+        "recipe": "level_blockout_archive_cabinet",
+        "side": "N",
+        "fallback_sides": [
+          "E",
+          "S",
+          "W"
+        ],
+        "fraction": 0.2,
+        "purpose": "Mortuary office / Archival filing case / existing rough spatial allocation, refinement later"
+      }
+    ]
+  }
+}

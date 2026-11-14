@@ -378,14 +378,19 @@ public final class DirectionalSprites {
     public static void drawHunter(int[] pixels,double[] depth,double cameraX,double cameraZ,
             double yaw,double pitch,SceneRenderer.RemoteBody body,HunterSpriteAnimation.Pose pose,
             double elevation,boolean lamp,int renderWidth,int renderHeight,double focal){
-        int chosenView=stableFacing(body.appearance(),body.heading(),body.x(),body.z(),
-            cameraX,cameraZ);
-        BufferedImage image=HunterSpriteAnimation.frame(body.appearance(),chosenView,pose);
+        drawHunter(pixels,depth,cameraX,cameraZ,yaw,pitch,body,pose,elevation,lamp,renderWidth,renderHeight,focal,false);
+    }
+    public static void drawHunter(int[] pixels,double[] depth,double cameraX,double cameraZ,
+            double yaw,double pitch,SceneRenderer.RemoteBody body,HunterSpriteAnimation.Pose pose,
+            double elevation,boolean lamp,int renderWidth,int renderHeight,double focal,boolean pain){
+        int facing=stableFacing(body.appearance(),body.heading(),body.x(),body.z(),cameraX,cameraZ);
+        BufferedImage image=pain&&!body.crouched()?HunterReactionSprites.pain(body.appearance(),facing)
+            :HunterSpriteAnimation.frame(body.appearance(),facing,pose);
         var shape=CharacterVisuals.shape(body.appearance());
         double height=shape.height()*(body.crouched()?HunterPosture.CROUCH_HEIGHT/HunterPosture.STANDING_HEIGHT:1);
         drawPose(pixels,depth,cameraX,cameraZ,yaw,pitch,body.x(),body.z(),body.heading(),
             body.appearance(),height,shape.width(),elevation,255,lamp,renderWidth,renderHeight,focal,
-            false,LanGhostAnimation.Phase.LURK,0,image,chosenView);
+            false,LanGhostAnimation.Phase.LURK,0,image,facing);
     }
     public static void drawResident(int[] pixels,double[] depth,double cameraX,double cameraZ,
             double yaw,double pitch,CastleRelations.Resident resident,CastleResidentAnimation.Body body,
@@ -491,9 +496,11 @@ public final class DirectionalSprites {
                 int red=(int)(((argb>>>16)&255)*illumination),
                     green=(int)(((argb>>>8)&255)*illumination),
                     blue=(int)((argb&255)*illumination);
-                red=(int)(Math.min(255,red)*(1-fog)+18*fog);
-                green=(int)(Math.min(255,green)*(1-fog)+21*fog);
-                blue=(int)(Math.min(255,blue)*(1-fog)+30*fog);
+                if(!LevelAtmosphere.active()){
+                    red=(int)(Math.min(255,red)*(1-fog)+18*fog);
+                    green=(int)(Math.min(255,green)*(1-fog)+21*fog);
+                    blue=(int)(Math.min(255,blue)*(1-fog)+30*fog);
+                }
                 // Ancients already have their approved green variant stored in v3.
                 // Double tint is permitted only for the explicitly legacy base fallback.
                 if(ancientTint&&!GhostSpriteAtlas.supports(character)){
@@ -502,6 +509,8 @@ public final class DirectionalSprites {
                     blue=(int)(blue*.35);
                 }
                 int bg=pixels[k];
+                int atmospheric=LevelAtmosphere.shadePixel((Math.min(255,red)<<16)|(Math.min(255,green)<<8)|Math.min(255,blue),rowDepth,px,py);
+                red=(atmospheric>>>16)&255;green=(atmospheric>>>8)&255;blue=atmospheric&255;
                 if(alpha<255){
                     red=(red*alpha+((bg>>>16)&255)*(255-alpha))/255;
                     green=(green*alpha+((bg>>>8)&255)*(255-alpha))/255;
@@ -625,9 +634,14 @@ public final class DirectionalSprites {
                 int red=(int)Math.min(255,((argb>>>16)&255)*illumination);
                 int green=(int)Math.min(255,((argb>>>8)&255)*illumination);
                 int blue=(int)Math.min(255,(argb&255)*illumination);
-                red=(int)(red*(1-fog)+18*fog);
-                green=(int)(green*(1-fog)+21*fog);
-                blue=(int)(blue*(1-fog)+30*fog);
+                if(LevelAtmosphere.active()){
+                    int atmospheric=LevelAtmosphere.shadePixel((red<<16)|(green<<8)|blue,rayDepth,px,py);
+                    red=(atmospheric>>>16)&255;green=(atmospheric>>>8)&255;blue=atmospheric&255;
+                }else{
+                    red=(int)(red*(1-fog)+18*fog);
+                    green=(int)(green*(1-fog)+21*fog);
+                    blue=(int)(blue*(1-fog)+30*fog);
+                }
                 if(alpha<255){
                     int bg=pixels[pixel];
                     red=(red*alpha+((bg>>>16)&255)*(255-alpha))/255;

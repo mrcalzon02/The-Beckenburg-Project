@@ -1,0 +1,290 @@
+{
+  "source_glb_sha256": "406b7fd01cc49a0bb02b4998b5bcbead21f9cbc42ee54149470988e7228bcd46",
+  "physics_sha256": "d2ce97f5669ff08ff37807ae0a2ab9bd658567bb02bdcb4e8efbb085f1433f6f",
+  "exporter_sha256": "0eebf9807ce7c05feaf327ec33e7ced6557034c1f7e579cc05cadad89d07284b",
+  "stair_components": [
+    "103:L14 landing1",
+    "104:L14 flight0 step1",
+    "105:L14 flight0 step2",
+    "106:L14 flight0 step3",
+    "107:L14 flight0 step4",
+    "108:L14 flight0 step5",
+    "109:L14 flight0 step6",
+    "110:L14 flight0 step7",
+    "111:L14 flight0 step8",
+    "112:L14 flight0 step9",
+    "113:L14 flight0 step10",
+    "114:L14 flight0 step11",
+    "115:L14 flight0 step12",
+    "116:L14 flight0 step13",
+    "117:L14 flight0 step14",
+    "118:L14 flight0 step15",
+    "119:L14 flight0 step16",
+    "120:L14 flight0 step17",
+    "121:L15 landing0",
+    "122:L15 flight0 step1",
+    "123:L15 flight0 step2",
+    "124:L15 flight0 step3",
+    "125:L15 flight0 step4",
+    "126:L15 flight0 step5",
+    "127:L15 flight0 step6",
+    "128:L15 flight0 step7",
+    "129:L15 flight0 step8",
+    "130:L15 flight0 step9",
+    "131:L15 flight0 step10",
+    "132:L15 flight0 step11",
+    "133:L15 flight0 step12",
+    "134:L15 flight0 step13",
+    "135:L15 flight0 step14",
+    "136:L15 flight0 step15",
+    "137:L15 flight0 step16",
+    "138:L15 flight0 step17"
+  ],
+  "tread_centres": [
+    {
+      "link": "L14",
+      "component": "104:L14 flight0 step1",
+      "x": 13.838234901428223,
+      "y": -2.8235294818878174,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "105:L14 flight0 step2",
+      "x": 13.514705657958984,
+      "y": -2.6470587253570557,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "106:L14 flight0 step3",
+      "x": 13.191176414489746,
+      "y": -2.470588207244873,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "107:L14 flight0 step4",
+      "x": 12.867647171020508,
+      "y": -2.2941176891326904,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "108:L14 flight0 step5",
+      "x": 12.54411792755127,
+      "y": -2.117647171020508,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "109:L14 flight0 step6",
+      "x": 12.220588684082031,
+      "y": -1.941176414489746,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "110:L14 flight0 step7",
+      "x": 11.897058486938477,
+      "y": -1.7647058963775635,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "111:L14 flight0 step8",
+      "x": 11.573529243469238,
+      "y": -1.5882352590560913,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "112:L14 flight0 step9",
+      "x": 11.25,
+      "y": -1.4117646217346191,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "113:L14 flight0 step10",
+      "x": 10.926470756530762,
+      "y": -1.2352941036224365,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "114:L14 flight0 step11",
+      "x": 10.602941513061523,
+      "y": -1.0588234663009644,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "115:L14 flight0 step12",
+      "x": 10.279411315917969,
+      "y": -0.8823530673980713,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "116:L14 flight0 step13",
+      "x": 9.95588207244873,
+      "y": -0.7058824300765991,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "117:L14 flight0 step14",
+      "x": 9.632352828979492,
+      "y": -0.529411792755127,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "118:L14 flight0 step15",
+      "x": 9.308823585510254,
+      "y": -0.3529411554336548,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "119:L14 flight0 step16",
+      "x": 8.985294342041016,
+      "y": -0.17647063732147217,
+      "z": 16.0
+    },
+    {
+      "link": "L14",
+      "component": "120:L14 flight0 step17",
+      "x": 8.661765098571777,
+      "y": 0.0,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "122:L15 flight0 step1",
+      "x": 42.161766052246094,
+      "y": -2.8235294818878174,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "123:L15 flight0 step2",
+      "x": 42.485294342041016,
+      "y": -2.6470587253570557,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "124:L15 flight0 step3",
+      "x": 42.80882263183594,
+      "y": -2.470588207244873,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "125:L15 flight0 step4",
+      "x": 43.132354736328125,
+      "y": -2.2941176891326904,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "126:L15 flight0 step5",
+      "x": 43.45588302612305,
+      "y": -2.117647171020508,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "127:L15 flight0 step6",
+      "x": 43.77941131591797,
+      "y": -1.941176414489746,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "128:L15 flight0 step7",
+      "x": 44.10293960571289,
+      "y": -1.7647058963775635,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "129:L15 flight0 step8",
+      "x": 44.42647171020508,
+      "y": -1.5882352590560913,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "130:L15 flight0 step9",
+      "x": 44.75,
+      "y": -1.4117646217346191,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "131:L15 flight0 step10",
+      "x": 45.07352828979492,
+      "y": -1.2352941036224365,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "132:L15 flight0 step11",
+      "x": 45.39706039428711,
+      "y": -1.0588234663009644,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "133:L15 flight0 step12",
+      "x": 45.72058868408203,
+      "y": -0.8823530673980713,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "134:L15 flight0 step13",
+      "x": 46.04411697387695,
+      "y": -0.7058824300765991,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "135:L15 flight0 step14",
+      "x": 46.367645263671875,
+      "y": -0.529411792755127,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "136:L15 flight0 step15",
+      "x": 46.69117736816406,
+      "y": -0.3529411554336548,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "137:L15 flight0 step16",
+      "x": 47.014705657958984,
+      "y": -0.17647063732147217,
+      "z": 16.0
+    },
+    {
+      "link": "L15",
+      "component": "138:L15 flight0 step17",
+      "x": 47.338233947753906,
+      "y": 0.0,
+      "z": 16.0
+    }
+  ],
+  "dropped_degenerate_triangles": 0,
+  "scope": "Candidate native collision; gameplay/ownership/terrain/network gates remain open",
+  "saved_editor_terrain_fidelity": {
+    "exact_float_triangle_and_flag_match": true,
+    "triangles": 5491,
+    "native_physics_sha256": "0e8f951caa10fc934e02430c5e02bf646ecaefd9125efe45b0af24969e0f557b"
+  }
+}

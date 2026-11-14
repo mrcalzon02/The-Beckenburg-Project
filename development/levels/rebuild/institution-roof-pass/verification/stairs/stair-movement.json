@@ -1,0 +1,185 @@
+{
+  "status": "CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE",
+  "bindings": {
+    "ACADEMY": {
+      "layout": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6",
+      "variants": {
+        "before_bearing": {
+          "contract": "8d014388cb6299bf335ff4755bd3105bc0bc7103a365e94fe2d6e47f92d97340",
+          "physics": "e93ea5290af1b5da6fc96e04dd2172a7f44bf0e2af08eefa402e01cfbcc4374a",
+          "glb": "229058dd8fa4bfc83a79f98d0b631ccc668f6267a61a181d9487c24d644532fa",
+          "layout": "e6bf03a8d384fee58fad7d649c10651cf6e1ede97b314df6aa10fae8aad17348"
+        },
+        "after_bearing": {
+          "contract": "8d014388cb6299bf335ff4755bd3105bc0bc7103a365e94fe2d6e47f92d97340",
+          "physics": "d7014c708dfd91a70e6a1e378c0ed2046b8766554d1df179dff523fe48bdc86c",
+          "glb": "cbbd329e4563971a5de96bf07eb1ce9915582070740bfcd9561a9fcdee3aff6a",
+          "layout": "e6bf03a8d384fee58fad7d649c10651cf6e1ede97b314df6aa10fae8aad17348"
+        }
+      }
+    },
+    "ASYLUM": {
+      "layout": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30",
+      "variants": {
+        "before_bearing": {
+          "contract": "0ade274905dc7410babafdf3cf7713e82caf8a4e9aac78fff393be9cba66c6a5",
+          "physics": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+          "glb": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+          "layout": "71ce31e14d3a9ff51bd1dc53d7bd62c995f6d5d5d9b474d55925d671ef59be56"
+        },
+        "after_bearing": {
+          "contract": "0ade274905dc7410babafdf3cf7713e82caf8a4e9aac78fff393be9cba66c6a5",
+          "physics": "f93eeb4507a8be044b33de347229066baf8e35aa5918f0a205801a6d0bc87053",
+          "glb": "e3342fd1b09c599287fecd7c22b96c666aed6260e7d60ec0ee034c74bbe4d0f6",
+          "layout": "71ce31e14d3a9ff51bd1dc53d7bd62c995f6d5d5d9b474d55925d671ef59be56"
+        }
+      }
+    },
+    "COLLEGE": {
+      "layout": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d",
+      "variants": {
+        "before_bearing": {
+          "contract": "ddbf97f072d191bfe435b2c2ee36ee622cbdb12ea0985059d67f00b62a357755",
+          "physics": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+          "glb": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce",
+          "layout": "4c0b5d9c1813f55763daa617f716ce442d7f34cb01888b7baf6dac24d74fd752"
+        },
+        "after_bearing": {
+          "contract": "ddbf97f072d191bfe435b2c2ee36ee622cbdb12ea0985059d67f00b62a357755",
+          "physics": "b9c87b36b4df8a3101092838cb26e7cd9d833a5667b0157c8438a88ac88cc42d",
+          "glb": "7cda08dddb8e8cb93dff53adbc1437b5ed879c8ad462c437907eafdc4aed6f79",
+          "layout": "4c0b5d9c1813f55763daa617f716ce442d7f34cb01888b7baf6dac24d74fd752"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_roster_stairs.py": "7fba3d56a0f27af8f8dca7db4921a30bdaba7ac26f00a9eb5c2cc0f2b3fa5dd0",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/institution-roof-pass/verification/source-snapshots/development/levels/rebuild/retaining-shoulder-pass/roster.json": "508271a111d9390b4f320ca9b4a1cb2aa0e406b57ee40d4ea3b363ae514c2e65",
+    "development/levels/rebuild/movement-chains.json": "36f6e9e7a913163fb457beee851a412b7584cff2be6ee55dbcd640ae662a6d4b"
+  },
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "sites": {
+    "before_bearing": {
+      "ACADEMY": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "ASYLUM": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "COLLEGE": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 5,
+        "authored_down": 5
+      }
+    },
+    "after_bearing": {
+      "ACADEMY": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "ASYLUM": {
+        "flights": 2,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 2,
+        "authored_down": 2
+      },
+      "COLLEGE": {
+        "flights": 5,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 5,
+        "authored_down": 5
+      }
+    }
+  },
+  "limitation": "Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.",
+  "complete_routes": {
+    "before_bearing": {
+      "routes": 10,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 10,
+      "authored_reverse": 10
+    },
+    "after_bearing": {
+      "routes": 10,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 10,
+      "authored_reverse": 10
+    }
+  },
+  "bearing_regressions": {
+    "flights": [],
+    "complete_paths": []
+  },
+  "authored_routes": [],
+  "cross_link_chains": {
+    "bindings": [
+      {
+        "site": "COLLEGE",
+        "variant": "before_bearing",
+        "id": "CHAIN/L84/L80",
+        "links": [
+          "L84",
+          "L80"
+        ]
+      },
+      {
+        "site": "COLLEGE",
+        "variant": "after_bearing",
+        "id": "CHAIN/L84/L80",
+        "links": [
+          "L84",
+          "L80"
+        ]
+      }
+    ],
+    "results": [
+      {
+        "site": "COLLEGE",
+        "variant": "before_bearing",
+        "link": "CHAIN/L84/L80",
+        "segments": "4",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_1_OF_58",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "COLLEGE",
+        "variant": "after_bearing",
+        "link": "CHAIN/L84/L80",
+        "segments": "4",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_1_OF_58",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      }
+    ],
+    "scope": "Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks."
+  },
+  "chain_scope": "Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network.",
+  "exact_checkout_source_snapshots": {
+    "development/levels/rebuild/institution-roof-pass/verification/source-snapshots/development/levels/rebuild/retaining-shoulder-pass/roster.json": "development/levels/rebuild/retaining-shoulder-pass/roster.json"
+  }
+}

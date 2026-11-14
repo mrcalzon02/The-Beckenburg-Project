@@ -1,0 +1,120 @@
+{
+  "id": "WLD-13",
+  "status": "ACTUAL_STAIR_END_SUPPORT_CANDIDATE_FULL_ROUTE_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-13/closed-floors.glb",
+  "source_glb_sha256": "f0bb84a66c7be9d4a031d695c43cae7da3ef3542f06bb00483caa5d26cd358a1",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-13/closed-floors.hcs2",
+  "source_physics_sha256": "5c5798a74c78c4859223091fa7566cd9cb3e30c04f1cbfde1c9617b48d653ba2",
+  "layout": "development/levels/layouts/wld-13/layout.json",
+  "layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+  "targeted_segments": [
+    {
+      "link": "L19",
+      "segment": 0
+    }
+  ],
+  "new_parts": 0,
+  "new_triangles": 0,
+  "platforms": [],
+  "landing_trims": [],
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "decisions": [
+    {
+      "link": "L19",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        36.0,
+        0,
+        41.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor processing"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L19",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        27.0,
+        3,
+        41.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor gallery.001"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    }
+  ],
+  "stair_components": [
+    "127:L19 flight0 step1",
+    "128:L19 flight0 step2",
+    "129:L19 flight0 step3",
+    "130:L19 flight0 step4",
+    "131:L19 flight0 step5",
+    "132:L19 flight0 step6",
+    "133:L19 flight0 step7",
+    "134:L19 flight0 step8",
+    "135:L19 flight0 step9",
+    "136:L19 flight0 step10",
+    "137:L19 flight0 step11",
+    "138:L19 flight0 step12",
+    "139:L19 flight0 step13",
+    "140:L19 flight0 step14",
+    "141:L19 flight0 step15",
+    "142:L19 flight0 step16",
+    "143:L19 flight0 step17"
+  ],
+  "retained_glb_resources": {
+    "no_new_geometry": true
+  },
+  "glb_sha256": "f0bb84a66c7be9d4a031d695c43cae7da3ef3542f06bb00483caa5d26cd358a1",
+  "physics_sha256": "5c5798a74c78c4859223091fa7566cd9cb3e30c04f1cbfde1c9617b48d653ba2",
+  "generator_sha256": "38c042e4dfd641a017597a9f399273da313a7d655fe66ee9492578fb1fa77838",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-13-whole-site.png",
+      "sha256": "44c50134a31b282b66e2514fdf21cb9a63c92c6847d4fc4cf0061450001c0bbc",
+      "type": "native full scene"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-13-new-landings.png",
+      "sha256": "f21ae586fb2824d50fee22eac6bd1cea7059474e10b5c5e3a2c44bc70b90b4fa",
+      "type": "native isolated actual landing changes; context hidden"
+    }
+  ],
+  "source_layout": "development/levels/layouts/wld-13/layout.json",
+  "source_layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+  "flight_replacements": [],
+  "corner_bridges": [],
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {},
+    "L18": {},
+    "L19": {
+      "0": 0
+    }
+  },
+  "open_findings": [],
+  "remaining": "Independent solids/material/pivot/native checks and all25flat/continuous stair regressions. Wall/terrain penetrations, crossed flights, circulation, supports/guards and actual runtime/network/hardware gates remain open."
+}

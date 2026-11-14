@@ -1,0 +1,89 @@
+site	room	y	nodes	valid_nodes	direct_edges	components	invalid_indices	connected_pairs
+ASYLUM	spine	0	1	1	0	1		
+ASYLUM	upper-spine	3.4	1	1	0	1		
+ASYLUM	service-link	0	1	1	0	1		
+ASYLUM	main-stair	0.0	2	2	0	2		
+ASYLUM	service	0	1	1	0	1		
+ASYLUM	service-stair	0.0	3	2	1	1	1	0,2
+ASYLUM	upper-stair	3.4	2	2	0	2		
+ASYLUM	cellar-stair	-3.0	2	2	0	2		
+ASYLUM	cellar-service	-3.0	1	1	0	1		
+COLLEGE	issue	0	1	1	0	1		
+COLLEGE	library-stair	0.0	2	2	0	2		
+COLLEGE	north-cross	0	1	1	0	1		
+COLLEGE	north-stair	0.0	3	2	0	2	1	
+COLLEGE	rear-hall	0	1	1	0	1		
+COLLEGE	res-cellar-stair	0.0	2	2	1	1		0,1
+COLLEGE	upper-library-stair	3.6	3	3	1	2		0,1
+COLLEGE	upper-library-landing	3.6	1	1	0	1		
+COLLEGE	upper-north-cross	3.6	1	1	0	1		
+COLLEGE	upper-north-stair	3.6	2	2	0	2		
+COLLEGE	east-tunnel	-3	1	1	0	1		
+COLLEGE	east-cellar-stair	-3.0	2	2	0	2		
+COLLEGE	teaching-library-link	3.6	1	1	0	1		
+FARMHOUSE	upper-hall	3.0	1	1	0	1		
+FARMHOUSE	upper-stair	3.0	2	2	1	1		0,1
+FARMHOUSE	barn-aisle	0	1	1	0	1		
+FARMHOUSE	loft-stair	0.0	2	2	0	2		
+FARMHOUSE	loft-landing	3.0	2	2	1	1		0,1
+FARMHOUSE	hayloft	3.0	1	1	0	1		
+MANSION	hall	0	1	1	0	1		
+MANSION	grand-stair	0.0	2	2	0	2		
+MANSION	library	0.0	1	1	0	1		
+MANSION	service	0	1	1	0	1		
+MANSION	service-stair	0.0	2	2	0	2		
+MANSION	gallery	3.6	2	2	1	1		0,1
+MANSION	guest-a-entry	3.6	1	1	0	1		
+MANSION	upper-service	3.6	1	1	0	1		
+MANSION	upper-service-stair	3.6	2	2	0	2		
+MANSION	attic-stair	7.2	2	2	0	2		
+MANSION	attic-passage	7.2	1	1	0	1		
+PRISON	a-upper-gallery	3.4	1	1	0	1		
+PRISON	b-upper-gallery	3.4	1	1	0	1		
+PRISON	a-front-link	0	1	1	0	1		
+PRISON	a-stair	0.0	2	2	0	2		
+PRISON	a-upper-stair	3.4	2	2	1	1		0,1
+PRISON	b-front-link	0	1	1	0	1		
+PRISON	b-stair	0.0	2	2	0	2		
+PRISON	b-upper-stair	3.4	2	2	1	1		0,1
+PRISON	lower-stair	-3.0	2	2	0	2		
+PRISON	plant	-3.0	1	1	0	1		
+SCHOOL	main-stair	0.0	2	2	0	2		
+SCHOOL	service-stair	0.0	3	2	1	1	1	0,2
+WLD-03	dwellings	8	2	1	0	1	0	
+WLD-03	gallery	8.0	2	2	0	2		
+WLD-03	fork	8.0	1	1	0	1		
+WLD-03	lower-cave	4	2	2	0	2		
+WLD-03	return	4.0	2	1	0	1	1	
+WLD-03	alcove	8.0	1	1	0	1		
+WLD-04	clearing	6	2	2	1	1		0,1
+WLD-04	foot	6.0	2	2	0	2		
+WLD-08	lab	0	1	1	0	1		
+WLD-08	radio	0	1	1	0	1		
+WLD-08	generator	0.0	1	1	0	1		
+WLD-08	array	0	2	1	0	1	0	
+WLD-08	shelter	0.0	1	1	0	1		
+WLD-10	west	0	2	2	1	1		0,1
+WLD-10	north	0.0	3	3	0	3		
+WLD-10	east	0.0	1	1	0	1		
+WLD-10	garden	0	1	1	0	1		
+WLD-10	archive	0.0	1	1	0	1		
+WLD-10	vestry	0	1	1	0	1		
+WLD-10	tower-base	0.0	3	3	1	2		0,2
+WLD-10	rear	0.0	2	2	1	1		0,1
+WLD-10	catacombs	-3	3	3	0	3		
+WLD-10	chamber	-3.0	1	1	0	1		
+WLD-14	workroom	0	1	1	0	1		
+WLD-14	store	0	2	2	1	1		0,1
+WLD-14	stairs	0.0	2	2	0	2		
+WLD-14	service-stair	0	2	2	0	2		
+WLD-15	aft	0	5	3	1	2	0,4	2,3
+WLD-15	galley	0.0	1	1	0	1		
+WLD-15	mess	0.0	1	1	0	1		
+WLD-15	pump	-3	2	2	0	2		
+WLD-15	hold	-3.0	1	1	0	1		
+WLD-17	yard	4	3	3	0	3		
+WLD-17	west	4.0	1	1	0	1		
+WLD-17	east	4.0	1	1	0	1		
+WLD-18	crew	-8	3	3	1	2		0,1
+WLD-18	pump	-8.0	1	1	0	1		

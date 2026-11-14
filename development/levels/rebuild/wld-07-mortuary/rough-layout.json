@@ -1,0 +1,1517 @@
+{
+  "version": 1,
+  "id": "WLD-07-MORTUARY",
+  "title": "Saint Bartholomew's Cemetery & Vale Mortuary",
+  "region": "Northern Woodlands",
+  "scale": "Small-medium / enclosed grounds",
+  "status": "rough-layout-only",
+  "intent": "A bounded burial ground is organized by a main avenue and memorial ring. Ruined chapel and caretaker cottage face the approach; two ossuary entrances join underground. Add the adjoining Vale Mortuary as a separately reviewed east-side annex; the original cemetery packet remains the source of truth until this expansion is accepted.",
+  "site_bounds": [
+    2,
+    -4,
+    90,
+    88
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Cemetery-lane van apron",
+      "bounds": [
+        20,
+        72,
+        36,
+        84
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Lychgate and entry court",
+      "bounds": [
+        20,
+        60,
+        36,
+        72
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "avenue",
+      "name": "Main cemetery avenue",
+      "bounds": [
+        24,
+        20,
+        32,
+        60
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "chapel",
+      "name": "Ruined chapel",
+      "bounds": [
+        6,
+        38,
+        24,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cottage",
+      "name": "Caretaker cottage",
+      "bounds": [
+        32,
+        38,
+        46,
+        56
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "garden",
+      "name": "Memorial garden",
+      "bounds": [
+        6,
+        20,
+        24,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "east-graves",
+      "name": "East grave plots",
+      "bounds": [
+        32,
+        20,
+        50,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "old-graves",
+      "name": "Old numbered markers",
+      "bounds": [
+        16,
+        4,
+        40,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "tool",
+      "name": "Caretaker tool store",
+      "bounds": [
+        46,
+        42,
+        54,
+        52
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "west-stair",
+      "name": "West ossuary vestibule",
+      "bounds": [
+        6,
+        12,
+        16,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects",
+      "label_point": [
+        8.5,
+        0,
+        16
+      ],
+      "standing_anchor": [
+        8.5,
+        0,
+        16
+      ]
+    },
+    {
+      "id": "east-stair",
+      "name": "East ossuary vestibule",
+      "bounds": [
+        40,
+        12,
+        50,
+        20
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects",
+      "label_point": [
+        47.5,
+        0,
+        16
+      ],
+      "standing_anchor": [
+        47.5,
+        0,
+        16
+      ]
+    },
+    {
+      "id": "ossuary",
+      "name": "Ossuary passage",
+      "bounds": [
+        6,
+        12,
+        50,
+        20
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Continuous underground ossuary passage beneath both entrance vestibules; stair flights remain inside their bays."
+    },
+    {
+      "id": "chamber",
+      "name": "Memorial record chamber",
+      "bounds": [
+        16,
+        0,
+        28,
+        12
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "mort-reception",
+      "name": "Vale Mortuary reception",
+      "bounds": [
+        60,
+        54,
+        72,
+        64
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Vale Mortuary reception"
+    },
+    {
+      "id": "mort-viewing",
+      "name": "Viewing room",
+      "bounds": [
+        60,
+        40,
+        72,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Viewing room"
+    },
+    {
+      "id": "mort-prep",
+      "name": "Preparation room",
+      "bounds": [
+        72,
+        40,
+        84,
+        50
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Preparation room"
+    },
+    {
+      "id": "mort-cold",
+      "name": "Cold storage",
+      "bounds": [
+        72,
+        50,
+        84,
+        58
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Cold storage"
+    },
+    {
+      "id": "mort-office",
+      "name": "Mortuary office",
+      "bounds": [
+        72,
+        58,
+        84,
+        66
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Mortuary office"
+    },
+    {
+      "id": "mort-bay",
+      "name": "Discreet service bay",
+      "bounds": [
+        60,
+        64,
+        72,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Discreet service bay"
+    },
+    {
+      "id": "mort-hall",
+      "name": "Mortuary side hall",
+      "bounds": [
+        56,
+        40,
+        60,
+        64
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Mortuary side hall"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          78.0
+        ],
+        [
+          28.0,
+          0,
+          72.0
+        ],
+        [
+          28.0,
+          0,
+          66.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          72.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "avenue",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          28.0,
+          0,
+          60.0
+        ],
+        [
+          28.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          28.0,
+          0,
+          60.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L03",
+      "a": "entry",
+      "b": "chapel",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          15.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L04",
+      "a": "entry",
+      "b": "cottage",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          66.0
+        ],
+        [
+          39.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L05",
+      "a": "chapel",
+      "b": "garden",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0,
+          47.0
+        ],
+        [
+          15.0,
+          0,
+          38.0
+        ],
+        [
+          15.0,
+          0,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          15.0,
+          0,
+          38.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L06",
+      "a": "garden",
+      "b": "avenue",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0,
+          29.0
+        ],
+        [
+          24.0,
+          0,
+          29.0
+        ],
+        [
+          28.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          24.0,
+          0,
+          29.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L07",
+      "a": "avenue",
+      "b": "east-graves",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          40.0
+        ],
+        [
+          32.0,
+          0,
+          29.0
+        ],
+        [
+          41.0,
+          0,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          29.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L08",
+      "a": "east-graves",
+      "b": "cottage",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          41.0,
+          0,
+          29.0
+        ],
+        [
+          39.0,
+          0,
+          38.0
+        ],
+        [
+          39.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          39.0,
+          0,
+          38.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L09",
+      "a": "garden",
+      "b": "old-graves",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15.0,
+          0,
+          29.0
+        ],
+        [
+          20.0,
+          0,
+          20.0
+        ],
+        [
+          28.0,
+          0,
+          12.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          20.0,
+          0,
+          20.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L10",
+      "a": "old-graves",
+      "b": "east-graves",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          28.0,
+          0,
+          12.0
+        ],
+        [
+          36.0,
+          0,
+          20.0
+        ],
+        [
+          41.0,
+          0,
+          29.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          36.0,
+          0,
+          20.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L11",
+      "a": "cottage",
+      "b": "tool",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          39.0,
+          0,
+          47.0
+        ],
+        [
+          46.0,
+          0,
+          47.0
+        ],
+        [
+          50.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          46.0,
+          0,
+          47.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "L12",
+      "a": "garden",
+      "b": "west-stair",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          15,
+          0,
+          29
+        ],
+        [
+          7.5,
+          0,
+          20
+        ],
+        [
+          7.5,
+          0,
+          16
+        ],
+        [
+          8.5,
+          0,
+          16
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          7.5,
+          0,
+          20
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L13",
+      "a": "east-graves",
+      "b": "east-stair",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          41,
+          0,
+          29
+        ],
+        [
+          48.5,
+          0,
+          20
+        ],
+        [
+          48.5,
+          0,
+          16
+        ],
+        [
+          47.5,
+          0,
+          16
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.5,
+          0,
+          20
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L14",
+      "a": "west-stair",
+      "b": "ossuary",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          8.5,
+          0,
+          16
+        ],
+        [
+          14,
+          -3,
+          16
+        ],
+        [
+          28,
+          -3,
+          16
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Finish descent inside the entrance vestibule before crossing the basement partition; a real level lower landing joins the continuous ossuary. Saved terrain punching, native full body sweeps and guards remain required.",
+      "run_m": 5.5,
+      "risers": 17
+    },
+    {
+      "id": "L15",
+      "a": "ossuary",
+      "b": "east-stair",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          28,
+          -3,
+          16
+        ],
+        [
+          42,
+          -3,
+          16
+        ],
+        [
+          47.5,
+          0,
+          16
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Finish descent inside the entrance vestibule before crossing the basement partition; a real level lower landing joins the continuous ossuary. Saved terrain punching, native full body sweeps and guards remain required.",
+      "run_m": 5.5,
+      "risers": 17
+    },
+    {
+      "id": "L16",
+      "a": "ossuary",
+      "b": "chamber",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          28.0,
+          -3,
+          16.0
+        ],
+        [
+          22.0,
+          -3,
+          12.0
+        ],
+        [
+          22.0,
+          -3,
+          6.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          22.0,
+          -3,
+          12.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    {
+      "id": "mort-16",
+      "a": "entry",
+      "b": "mort-reception",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          28,
+          0,
+          66
+        ],
+        [
+          54,
+          0,
+          66
+        ],
+        [
+          66,
+          0,
+          59
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    {
+      "id": "mort-17",
+      "a": "mort-reception",
+      "b": "mort-viewing",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          66.0,
+          0,
+          59.0
+        ],
+        [
+          66.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    {
+      "id": "mort-18",
+      "a": "mort-viewing",
+      "b": "mort-prep",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          66.0,
+          0,
+          47.0
+        ],
+        [
+          78.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    {
+      "id": "mort-19",
+      "a": "mort-prep",
+      "b": "mort-cold",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          78.0,
+          0,
+          45.0
+        ],
+        [
+          78.0,
+          0,
+          54.0
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    {
+      "id": "mort-20",
+      "a": "mort-cold",
+      "b": "mort-office",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          78.0,
+          0,
+          54.0
+        ],
+        [
+          78.0,
+          0,
+          62.0
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    {
+      "id": "mort-21",
+      "a": "mort-office",
+      "b": "mort-reception",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          78.0,
+          0,
+          62.0
+        ],
+        [
+          66.0,
+          0,
+          59.0
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    {
+      "id": "mort-22",
+      "a": "mort-reception",
+      "b": "mort-bay",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          66.0,
+          0,
+          59.0
+        ],
+        [
+          66.0,
+          0,
+          70.0
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    {
+      "id": "mort-23",
+      "a": "mort-hall",
+      "b": "mort-reception",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          58,
+          0,
+          59
+        ],
+        [
+          66,
+          0,
+          59
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    },
+    {
+      "id": "mort-24",
+      "a": "mort-hall",
+      "b": "mort-viewing",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          58,
+          0,
+          47
+        ],
+        [
+          66,
+          0,
+          47
+        ]
+      ],
+      "note": "New mortuary annex threshold reservation; original cemetery links unchanged."
+    }
+  ],
+  "loops": [
+    [
+      "entry",
+      "chapel",
+      "garden",
+      "avenue",
+      "entry"
+    ],
+    [
+      "avenue",
+      "garden",
+      "old-graves",
+      "east-graves",
+      "avenue"
+    ],
+    [
+      "mort-reception",
+      "mort-viewing",
+      "mort-prep",
+      "mort-cold",
+      "mort-office",
+      "mort-reception"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      28.0,
+      0,
+      78.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        28.0,
+        0,
+        74.372
+      ],
+      [
+        28.0,
+        0,
+        66.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "chamber",
+      "point": [
+        22.0,
+        -3,
+        6.0
+      ],
+      "installation": "Modern removable containment seal"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "cottage",
+      "point": [
+        39.0,
+        0,
+        47.0
+      ],
+      "installation": "Caretaker wash purification"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "garden",
+      "point": [
+        15.0,
+        0,
+        29.0
+      ],
+      "installation": "Memorial reconciliation stand"
+    }
+  ],
+  "circulation": "Avenue and marker ring provide two surface search loops. Both underground vestibules have full stairs with matching openings; the record chamber is a short branch. Headstones remain fixed sightline objects across all detail settings.",
+  "systems": "Tree cover, wind, surface water and enclosed stone passages have distinct sound/temperature baselines. Memorial records offer narrative rather than a magic detector reading.",
+  "campaign": "Numbered markers, caretaker succession and missing parish entries connect provisionally to St. Brigid and Ashen Bells. Ordinary burial and remembrance are not implied sources of evil.",
+  "refine": [
+    "Research burial-ground circulation and ossuary structure before detailed construction; keep fictional history explicit.",
+    "Place no rites on graves or inaccessible marker tops; all reservation squares are on clear paths/floors.",
+    "Test underground exit visibility and tree-occlusion consistency.",
+    "Original cemetery geometry and ritual reservations are retained byte-for-byte in its separate source packet.",
+    "Review mortuary room hygiene/service separation before detailed dressing; use appropriate purpose-built fixtures."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md",
+    "User-requested mortuary extension, 23 October 2026; specialist architectural reference and detailed fixture dimensions still pending."
+  ],
+  "terrain": {
+    "profile": "cemetery",
+    "description": "Retain original cemetery terrain; annex foundation and east retaining bank are additive reservations, with a shallow approach swale."
+  },
+  "needed_models": [
+    "Purpose-built mortuary preparation table, sink and cold-storage doors",
+    "Viewing-room seating, curtains and discreet memorial furniture",
+    "Reception desk, document cabinets, office furniture and supported paperwork",
+    "Discreet service bay, trolley and screened approach",
+    "Annex shell, roof/drainage, sealed partitions and mortuary fixtures"
+  ],
+  "saved_editor_terrain": {
+    "status": "PERSISTED_EDITOR_PUNCH_CANDIDATE_NOT_TERRAIN_ACCEPTED",
+    "world": "development/levels/rebuild/wld-07-mortuary/terrain-world",
+    "mesh": "development/levels/rebuild/wld-07-mortuary/terrain-world/scene-package/meshes/site.obj",
+    "native_physics": "development/levels/rebuild/wld-07-mortuary/terrain-world/terrain-physics.hcs2",
+    "files_sha256": {
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/adaptive-topology.bin": "06bcebeaf8adc2d5ec10d99a07c0523bd47c2ec8f6700bca480d71c696192a3a",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/authored-cuts.tsv": "fbb3b8c4a6b143dc28a6d4a4ddbbf79e0d013ad9bbb92b593bcbcf015eddacb6",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/authored-path-grading.sha256": "7da39258bf50d9d7d42817a0d0d0b8a62f92bb07a000adb093845f1c25370cf3",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/source-provenance.json": "8cd2ecb0d44449e96714269da2c34a5c741aacc90fd03e5f4b7e156914c59e20",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/terrain-physics.hcs2": "48d4774a8605c733244c10e394f1143b21b8bd762cbe5d6e1edd503878bc7a6a",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/tile_0_0.png": "5b71777b8278d446d2478aed7539f5b68a66ff98dfba9034b087e6e2a86a2d89",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/verification.json": "ef09a244180ecf69831d9ef82cccb845a3f8bc4479307e8cf3a29f4829bf07aa",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/world.properties": "bde6105f86156aa33558244a2a666ee304c11947a61a91e8a1337e2acbdd9086",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/scene-package/.scene.bin.editor.previous": "5f18dfa5eec96048bf96493945e9a0ef62182d18d0515fd99944a55569e88179",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/scene-package/scene.bin": "7bee377e7f2f8a5bc63fbc3347b35318a5cf4f29f71c8e3704fdfbeca8a31097",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/terrain-layers/tile_0_0.bin": "66b10e8ca96b83410a54032e539784a33d8522404ccf0c1ebc6ebc4fb4ece0ba",
+      "development/levels/rebuild/wld-07-mortuary/terrain-world/scene-package/meshes/site.obj": "4c883f72221b726d9d99055bc62dc72b8a3b8699fd1d78df8d306384cdc5aab3"
+    },
+    "source_seed_commit": "de4edf80de20b86f9ac42f6a616913e109505894",
+    "builder_sha256": "bebc8c0262ca5f56e576825c5da57263d005dbfe290b26a753e9852411a893ab",
+    "kernel_jar_sha256": "8694a06b9483bea77f2af9130c14a4191e868f2389671b4460572f93a75edbe2",
+    "remaining": "Retaining/foundation rims, guards, arrival/canonical van, source-specific terrain finish and complete movement/visual acceptance"
+  },
+  "basement_entry_revision": {
+    "source_ref": "66942b34382507f77abbafac8e15ec9a9c2d2a53",
+    "previous_layout_sha256": "3970885c0973bf336f9e625656dba5d09ffb83794e9ff7ff831d598044e3d00f",
+    "previous_points": {
+      "L14": [
+        [
+          11.0,
+          0,
+          16.0
+        ],
+        [
+          28.0,
+          -3,
+          16.0
+        ]
+      ],
+      "L15": [
+        [
+          28.0,
+          -3,
+          16.0
+        ],
+        [
+          45.0,
+          0,
+          16.0
+        ]
+      ]
+    },
+    "previous_ossuary_bounds": [
+      16,
+      12,
+      40,
+      20
+    ],
+    "purpose": "Eliminate diagonal stair crossings through the vestibule wall/header at the wrong elevation. Retain both basement entrances and all existing room IDs/search-space counts.",
+    "previous_approaches": {
+      "L12": [
+        [
+          15.0,
+          0,
+          29.0
+        ],
+        [
+          11.0,
+          0,
+          20.0
+        ],
+        [
+          11.0,
+          0,
+          16.0
+        ]
+      ],
+      "L13": [
+        [
+          41.0,
+          0,
+          29.0
+        ],
+        [
+          45.0,
+          0,
+          20.0
+        ],
+        [
+          45.0,
+          0,
+          16.0
+        ]
+      ]
+    },
+    "upper_landing_clearance": "2m approaches turn on intact vestibule floor before the1.5m stair opening; actual standing anchors lie at the matched stair tops, not the old room centres."
+  },
+  "terrain_grading": [
+    {
+      "name": "West ossuary approach grade",
+      "link": "L12",
+      "segment": 0,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 1.5,
+      "purpose": "Grade the relocated approach and shoulder to its actual paving elevation through an editable layer; do not punch outdoor walking paths."
+    },
+    {
+      "name": "East ossuary approach grade",
+      "link": "L13",
+      "segment": 0,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 1.5,
+      "purpose": "Grade the relocated approach and shoulder to its actual paving elevation through an editable layer; do not punch outdoor walking paths."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L01",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L01",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L02",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L02",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L03",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L04",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L05",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L05",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L06",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L06",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L07",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L07",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L08",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L08",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L09",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L09",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L10",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L10",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L11",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L11",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L12",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L12",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L12",
+      "segment": 2,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L13",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L13",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "L13",
+      "segment": 2,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "mort-16",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "mort-16",
+      "segment": 1,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "mort-17",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "mort-18",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "mort-19",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "mort-20",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "mort-21",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "mort-22",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "mort-23",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    },
+    {
+      "name": "Authored public path network",
+      "link": "mort-24",
+      "segment": 0,
+      "half_width_metres": 4.0,
+      "shoulder_metres": 1.5,
+      "purpose": "Connect all authored surface routes to a coherent graded path/shoulder network on the2m source lattice. Preserve raw heights and actual punched basement masks; final fine terrain refinement remains open."
+    }
+  ]
+}

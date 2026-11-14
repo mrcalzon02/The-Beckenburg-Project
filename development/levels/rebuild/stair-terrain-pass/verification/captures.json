@@ -1,0 +1,190 @@
+[
+  {
+    "site": "WLD-03",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-stair-before.png",
+    "sha256": "2ef8960d00436ba000fdacc36926baa6c798f9dfcc031a37fd6e301b6756e921",
+    "source_glb_sha256": "141dbe4da15d1ff10059478606c00a86519fd3aeca39843d3db492273c1fffda",
+    "eye": [
+      12.0,
+      1.62,
+      53.0
+    ],
+    "target": [
+      12.0,
+      2.0,
+      47.0
+    ],
+    "type": "Native intact paired terrain/stair inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-03",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-stair-after.png",
+    "sha256": "5232e8279c7a299d843372c4d7d50f28ce1281dc44c90bc25d41c0c807714a0c",
+    "source_glb_sha256": "c8d7de3841892a75eb5daced79c74faecf33fd8a04a8e9e7c6acaa286f7c8c3e",
+    "eye": [
+      12.0,
+      1.62,
+      53.0
+    ],
+    "target": [
+      12.0,
+      2.0,
+      47.0
+    ],
+    "type": "Native intact paired terrain/stair inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-03",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-whole-site.png",
+    "sha256": "dcaca2170c53c3ce185a064fe2d4febcea4c7cffeb5a369a54fb19cd76206f7b",
+    "source_glb_sha256": "c8d7de3841892a75eb5daced79c74faecf33fd8a04a8e9e7c6acaa286f7c8c3e",
+    "type": "Native whole-site landform/structure context; no canonical van arrival or runtime acceptance"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-stair-before.png",
+    "sha256": "2e8ab284a23a841154bf2de6081067b1b01cf5c259cc4f73eff71414adafe260",
+    "source_glb_sha256": "1ce88b37867f4ca8b1a65398dca3a3b4f01565c246f81bd48037ccca6810c4de",
+    "eye": [
+      13.317681729793549,
+      1.62,
+      51.73105525970459
+    ],
+    "target": [
+      17.411591351032257,
+      2.0,
+      47.34472370147705
+    ],
+    "type": "Native intact paired terrain/stair inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-stair-after.png",
+    "sha256": "43ef2e4bc5a3289ce85cd01d601c809ec3f9173f150553731345d4e82705e30b",
+    "source_glb_sha256": "f0afa6f65a20899b82a84c1f4a48c1060e9d889b94202b5466e8be2de93a3fc9",
+    "eye": [
+      13.317681729793549,
+      1.62,
+      51.73105525970459
+    ],
+    "target": [
+      17.411591351032257,
+      2.0,
+      47.34472370147705
+    ],
+    "type": "Native intact paired terrain/stair inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-whole-site.png",
+    "sha256": "f42bfc3e675bbcf9cb1f6d54c0f5da3606d9c79253c9eda57c0f992cfa01ce40",
+    "source_glb_sha256": "f0afa6f65a20899b82a84c1f4a48c1060e9d889b94202b5466e8be2de93a3fc9",
+    "type": "Native whole-site landform/structure context; no canonical van arrival or runtime acceptance"
+  },
+  {
+    "site": "WLD-12",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-stair-before.png",
+    "sha256": "bbc6d375e54be4ddeb12be80a3775746c86517c31e7d8a4e4c855de8fca94f4c",
+    "source_glb_sha256": "492ce0fae4f521c6260eb98bf6119c77edc1ca2d20ac00535787ff0166abcd11",
+    "eye": [
+      28.0,
+      -1.38,
+      27.0
+    ],
+    "target": [
+      28.0,
+      -1.0,
+      33.0
+    ],
+    "type": "Native intact paired terrain/stair inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-12",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-stair-after.png",
+    "sha256": "a6cce8d1ab35c83d680f042d7015f913bf819a2ab0ff60b77e43966c6ea849a0",
+    "source_glb_sha256": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+    "eye": [
+      28.0,
+      -1.38,
+      27.0
+    ],
+    "target": [
+      28.0,
+      -1.0,
+      33.0
+    ],
+    "type": "Native intact paired terrain/stair inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-12",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-whole-site.png",
+    "sha256": "9123e932843332970270f6dba301f7c9d461c2ba1e4eb3dfb1fd60da33fba574",
+    "source_glb_sha256": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+    "type": "Native whole-site landform/structure context; no canonical van arrival or runtime acceptance"
+  },
+  {
+    "site": "WLD-12",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0016-soil-bearing.png",
+    "sha256": "342ac77d6b860116433de4ec6ff26ae00e13cbadf826fa496d07576bef8309ad",
+    "source_glb_sha256": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+    "type": "Native isolated original skirt/new extension/actual terrain; other site context hidden, not runtime"
+  },
+  {
+    "site": "WLD-12",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0017-soil-bearing.png",
+    "sha256": "8c746a215500d8c9a93baa7fc5a54d82bac70c1ee6a18290a3a005a395c77b9f",
+    "source_glb_sha256": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+    "type": "Native isolated original skirt/new extension/actual terrain; other site context hidden, not runtime"
+  },
+  {
+    "site": "WLD-12",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0018-soil-bearing.png",
+    "sha256": "b03333ac5db94151e35d8512e29cf9d570490ca347ce63116eff9c46a84e470d",
+    "source_glb_sha256": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+    "type": "Native isolated original skirt/new extension/actual terrain; other site context hidden, not runtime"
+  },
+  {
+    "site": "WLD-12",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0022-soil-bearing.png",
+    "sha256": "e65cb87e9a43dba1f9bcfe681524c7388c79c54fca651f44167c1a9627c14e43",
+    "source_glb_sha256": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+    "type": "Native isolated original skirt/new extension/actual terrain; other site context hidden, not runtime"
+  },
+  {
+    "site": "WLD-12",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0042-soil-bearing.png",
+    "sha256": "8da86f682211463ab5e20dc94144107ddf19114679869fcda0e6599e93ec411b",
+    "source_glb_sha256": "c35e18ab57ace05afb97dc58daace0c83d093f4255e960bc59b88917959a8672",
+    "type": "Native isolated original skirt/new extension/actual terrain; other site context hidden, not runtime"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-threshold-before.png",
+    "sha256": "5814b19d3a6f924a15b22875db997afd84f6887b91a3cfc702d307cb2ba451f5",
+    "source_glb_sha256": "1ce88b37867f4ca8b1a65398dca3a3b4f01565c246f81bd48037ccca6810c4de",
+    "type": "Native intact paired threshold and terrain inspection with150Wneutral fill; not runtime"
+  },
+  {
+    "site": "WLD-04",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-threshold-after.png",
+    "sha256": "8618123536e81c12b627a220e6dc6bf91f6879ccdbe48c5ca490f2f208754f24",
+    "source_glb_sha256": "f0afa6f65a20899b82a84c1f4a48c1060e9d889b94202b5466e8be2de93a3fc9",
+    "type": "Native intact paired threshold and terrain inspection with150Wneutral fill; not runtime"
+  }
+]

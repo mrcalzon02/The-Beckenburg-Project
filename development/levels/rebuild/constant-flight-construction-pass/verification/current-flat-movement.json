@@ -1,0 +1,474 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "current_lanes": {
+        "samples": 5370,
+        "valid_standing": 5289,
+        "invalid_standing": 81,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 77,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 4
+        },
+        "physical_components": [
+          [
+            "WLD-08-z-56-11 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-08-x-44-16 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-08 constant-cell guard generator rim 12.225 0",
+            4
+          ],
+          [
+            "WLD-08 clean lab E pier0",
+            3
+          ],
+          [
+            "WLD-08 clean lab E end",
+            3
+          ],
+          [
+            "WLD-08 clean dorm W end",
+            3
+          ],
+          [
+            "WLD-08 clean dorm W pier0",
+            3
+          ],
+          [
+            "WLD-08 clean dorm S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean dorm S end",
+            3
+          ],
+          [
+            "WLD-08 clean mess S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean mess S end",
+            3
+          ],
+          [
+            "WLD-08 clean radio S end",
+            3
+          ],
+          [
+            "WLD-08 clean radio S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean radio E end",
+            3
+          ],
+          [
+            "WLD-08 clean radio E pier0",
+            3
+          ],
+          [
+            "WLD-08 clean records S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean records S end",
+            3
+          ],
+          [
+            "WLD-08 clean generator E pier0",
+            2
+          ],
+          [
+            "WLD-08 clean generator E end",
+            2
+          ],
+          [
+            "WLD-08 clean dorm N pier0",
+            2
+          ],
+          [
+            "WLD-08 clean dorm N end",
+            2
+          ],
+          [
+            "WLD-08 clean shelter W end",
+            2
+          ],
+          [
+            "WLD-08 clean shelter W pier0",
+            2
+          ],
+          [
+            "WLD-08-z-44-53 indexed jambs and head",
+            1
+          ],
+          [
+            "WLD-08 clean mess N pier0",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 2
+      },
+      "current_lanes": {
+        "samples": 4743,
+        "valid_standing": 1898,
+        "invalid_standing": 2845,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 2729,
+          "FOOT_HEIGHT_SPREAD": 29,
+          "NO_FOOT_SUPPORT_0.22_0.0": 9,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 24,
+          "NO_FOOT_SUPPORT_0.0_0.22": 22,
+          "PHYSICAL_COMPONENT": 26,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 6
+        },
+        "physical_components": [
+          [
+            "WLD-12 north lower-landing end wall region0",
+            6
+          ],
+          [
+            "terrain-site-0-0:surface",
+            6
+          ],
+          [
+            "WLD-12 constant-cell guard platform south edge 0",
+            3
+          ],
+          [
+            "WLD-12 constant-cell guard platform south edge 1",
+            2
+          ],
+          [
+            "WLD-12 constant-cell guard platform south edge 2",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight 0.83 0",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight -0.83 0",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight 0.83 2",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L16 flight -0.83 2",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L17 flight 0.83 0",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L17 flight -0.83 0",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L17 flight 0.83 8",
+            1
+          ],
+          [
+            "WLD-12 constant-cell guard L17 flight -0.83 8",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 7
+      },
+      "current_lanes": {
+        "samples": 3222,
+        "valid_standing": 2400,
+        "invalid_standing": 822,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 761,
+          "FOOT_HEIGHT_SPREAD": 12,
+          "PHYSICAL_COMPONENT": 21,
+          "NO_FOOT_SUPPORT_0.22_0.0": 10,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 8,
+          "NO_FOOT_SUPPORT_0.0_0.22": 9,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 1
+        },
+        "physical_components": [
+          [
+            "Rebuilt stair WLD-18 route-14 flight1 part1",
+            11
+          ],
+          [
+            "WLD-18 covered escape connector wall 32.56 region0",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-18 route-14 flight0 part1",
+            3
+          ],
+          [
+            "Cinder escape full-depth service frame",
+            1
+          ],
+          [
+            "WLD-18 constant-cell guard route-08 flight -0.83 0",
+            1
+          ],
+          [
+            "Rebuilt stair WLD-18 route-07 flight0 part0",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-cell-construction-pass/wld-08/construction.json",
+        "contract_sha256": "8f33bbdb5f1215c5200de041bcdce99e139c66ba020271b527edc8673e7247c9",
+        "layout": "development/levels/rebuild/stair-cell-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "679f1e4b20459492f2fefd822666e4e7bdc5aa9fe6a5fb2fafedd944ea0c1a72",
+        "native": "development/levels/rebuild/stair-cell-construction-pass/wld-08/constructed-cells.hcs2",
+        "native_sha256": "b5b18bd32a92746f72137370fdc1df740587e49f653b635dad87fd1a43147171"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/constant-flight-construction-pass/wld-08/construction.json",
+        "contract_sha256": "0633e73aedf4c37844462843d167b1cf0bfa06bbfbc4226d6839720242fd485a",
+        "layout": "development/levels/rebuild/constant-flight-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "5751313fc22760b1c1a78bce83f6d935e07cbeff3ee2ea3353ddb9a8681b8ad1",
+        "native": "development/levels/rebuild/constant-flight-construction-pass/wld-08/constant-cells.hcs2",
+        "native_sha256": "9561f8da9481e8aafe0a69511361f368e0fd2c936bc0912b8c3ea77131cdb37d"
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-end-pass/wld-12/construction.json",
+        "contract_sha256": "d3de171c9f7e16ea4f90e61d8733285f743f3dcba340e5c40adc2d8fa7ef48e6",
+        "layout": "development/levels/rebuild/orthogonal-stair-pass/wld-12/authored-layout.json",
+        "layout_sha256": "806532626a0efe8315ed240c95a8482cf0322bb37842478603f5aae273c64367",
+        "native": "development/levels/rebuild/stair-end-pass/wld-12/finished-ends.hcs2",
+        "native_sha256": "47b56fbc85061ad253238f08f6af3c4e8bb8f5932f171533bf03a4939a7e740a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/constant-flight-construction-pass/wld-12/construction.json",
+        "contract_sha256": "9ce51ea0ad4dda07682d94e53e1e328b69703ccb68f73325307e85df699c4a0a",
+        "layout": "development/levels/rebuild/constant-flight-construction-pass/wld-12/authored-layout.json",
+        "layout_sha256": "543af34cff497cbbf40574c22c250267a342ae32fdaf05be3b620d7bee280e99",
+        "native": "development/levels/rebuild/constant-flight-construction-pass/wld-12/constant-cells.hcs2",
+        "native_sha256": "e18d1e85a3860eb0b6fac4fd19e46a4822f1a798f9ca83e239d4f67d1d6e683d"
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/wld-18/construction.json",
+        "contract_sha256": "49833ad22666eb9f102a024bece6a2ce0bee54ed00e380cae5c02315250f7874",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-18/authored-layout.json",
+        "layout_sha256": "d6bb00cadf5ba7ea90415d546fda876740f342ccb89f8617030f8ec45ec2c1dd",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.hcs2",
+        "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/constant-flight-construction-pass/wld-18/construction.json",
+        "contract_sha256": "1bf09c55f4864148cbd4a6bdf26d429ec46fe1918260c57ad297513462dd3be5",
+        "layout": "development/levels/rebuild/constant-flight-construction-pass/wld-18/authored-layout.json",
+        "layout_sha256": "91dfcc917b2c6960b31dd062dfc1a3fbac4ac571531cc41e194b5827d8bc1dc8",
+        "native": "development/levels/rebuild/constant-flight-construction-pass/wld-18/constant-cells.hcs2",
+        "native_sha256": "b93a74c6666b2635197c99a7dce76424d4923d7a384f73a4a46b1be827354eba"
+      }
+    }
+  },
+  "complete_link_regressions": [
+    {
+      "site": "WLD-12",
+      "link": "L01",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L01",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L02",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L02",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_101_OF_207"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L05",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L05",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_41_OF_149"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L08",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L08",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_41_OF_149"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L10",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L10",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_98_OF_100"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L15",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L15",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_69_OF_71"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L18",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-12",
+      "link": "L18",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_78_OF_227"
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-02",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_90_OF_199"
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-02",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_104_OF_199"
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-04",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_86_OF_153"
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-04",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_64_OF_153"
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-05",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_88_OF_157"
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-05",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_65_OF_157"
+    }
+  ],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "2544d2a6bd5fb459800ff8cbf3badc779e5b42b6ac1bafd6d6b3312ac67bf43a",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/stair-cell-construction-pass/roster.json": "1e509fcf8797abdfffa5d3751c042c555921ad87e075e911bed7e9b06356ab53"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/constant-flight-construction-pass/verification/current-flat-failure-contacts.tsv": "c6b7851e71b189ea7a2f9acb657ef196777f05319b26145b2644709e9244f378",
+    "development/levels/rebuild/constant-flight-construction-pass/verification/current-flat-failure-input.tsv": "abaa8fcf70d6312f501a9ed9a477b0dd0fdaba0e66491a357919e748ba691bb3",
+    "development/levels/rebuild/constant-flight-construction-pass/verification/current-flat-lane-input.tsv": "be84e51ce4624b9a970d5f15a20d6ae5e6898aebfdb72b5e95b2c32765f2a9f2",
+    "development/levels/rebuild/constant-flight-construction-pass/verification/current-flat-lane-names.tsv": "4c32fe5e0e942eca3bd6fda1865a9d0e9a800791e9ef235778bf289e2b6fc613",
+    "development/levels/rebuild/constant-flight-construction-pass/verification/current-flat-lanes.tsv": "d5f7925e8aa9874b77fb1232f8c970c7014851f9aaa6c2595e60a9eed4f83c55",
+    "development/levels/rebuild/constant-flight-construction-pass/verification/current-flat-links.tsv": "6ee915b7bd0e1fc1ef62f60365eb19508d665905791842994ed215ec3d5609cc",
+    "development/levels/rebuild/constant-flight-construction-pass/verification/current-flat-names.tsv": "512ca771cd3bf657a5934758f21eda658354d08048388f71f4cdedc8b0c227fc",
+    "development/levels/rebuild/constant-flight-construction-pass/verification/current-flat-paths.tsv": "f490b109b6eb8ce51b502ae7e7ced791ed47011f3d0fff312bb330e3861326d6"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

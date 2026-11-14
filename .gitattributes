@@ -7,9 +7,236 @@ docs/network/receipts/* -text -whitespace
 # Editor scene packages fingerprint exact source/OBJ bytes. CRLF conversion
 # would invalidate the persisted source and mesh SHA on Windows checkout.
 development/levels/rebuild/**/terrain-world/** -text
+# Authored sample programs are byte-compared to their persisted world receipts.
+development/levels/rebuild/terrain-overall-pass/samples/** -text
+# Bearing construction contracts and evidence bind exact source/scene hashes.
+development/levels/rebuild/terrain-fit-pass/** -text
 # Derived rough studies also carry exact source/render hashes and stale checks.
 development/levels/rebuild/**/rough-* -text
 
 # Frozen native rebuild baselines are fingerprinted byte-for-byte at runtime.
 assets/runtime/sites/castle-baseline-*.properties -text
 development/levels/rebuild/native-upgrade-baselines/*.properties -text
+
+# Physical deck candidates bind exact source/evidence bytes.
+development/levels/rebuild/deck-fit-pass/** -text
+
+# Occupancy excavation sources and receipts bind exact bytes.
+development/levels/rebuild/terrain-occupancy-pass/** -text
+
+# Floor/cap construction contracts bind exact source/evidence bytes.
+development/levels/rebuild/floor-closure-pass/** -text
+
+# Stair construction binds exact source/evidence bytes.
+development/levels/rebuild/stair-landing-pass/** -text
+
+# Hash-bound stair build/audit tools use stable checkout bytes.
+tools/build_stair_landings.py text eol=lf
+tools/check_stair_landings.py text eol=lf
+tools/render_stair_closeups.py text eol=lf
+tools/audit_roster_stairs.py text eol=lf
+tools/audit_macroterrain_fit.py text eol=lf
+
+# Physical stair shell source/evidence fingerprints.
+development/levels/rebuild/stair-opening-pass/** -text
+tools/build_stair_openings.py text eol=lf
+tools/check_stair_openings.py text eol=lf
+tools/render_stair_openings.py text eol=lf
+
+# Authored stair bay coordinate/source fingerprints.
+development/levels/rebuild/stair-bay-pass/** -text
+tools/build_stair_bays.py text eol=lf
+tools/check_stair_bays.py text eol=lf
+tools/render_stair_bays.py text eol=lf
+
+# Saved terrain layers, topology and source receipts bind exact checkout bytes.
+development/levels/rebuild/stair-terrain-pass/** -text
+tools/author_stair_terrain.py text eol=lf
+tools/compose_stair_terrain.py text eol=lf
+tools/check_stair_terrain.py text eol=lf
+tools/audit_stair_terrain_bearings.py text eol=lf
+tools/render_stair_terrain.py text eol=lf
+tools/render_stair_threshold.py text eol=lf
+tools/java/RosterTerrainBuild.java text eol=lf
+
+# Shared terrain contract consumer fingerprints.
+development/levels/blockouts/structural_pass.py text eol=lf
+development/levels/blockouts/build_blockouts.py text eol=lf
+tools/check_saved_terrain_consumer.py text eol=lf
+tools/export_roster_collision.py text eol=lf
+tools/review_roster_furnishings.py text eol=lf
+tools/audit_roster_terrain_envelopes.py text eol=lf
+
+# Physical stair connection source/evidence fingerprints.
+development/levels/rebuild/stair-connection-pass/** -text
+tools/build_stair_connections.py text eol=lf
+tools/check_stair_connections.py text eol=lf
+tools/render_stair_connections.py text eol=lf
+
+tools/author_connection_terrain.py text eol=lf
+tools/finish_connection_terrain.py text eol=lf
+
+tools/diagnose_remaining_flat_routes.py text eol=lf
+
+# Preserve raw Java TSV CRLF and Blender logs without rewriting evidence.
+development/levels/rebuild/stair-connection-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+development/levels/rebuild/stair-connection-pass/**/*.log -diff
+
+# Actual flat circulation source/evidence bytes.
+development/levels/rebuild/flat-circulation-pass/** -text
+development/levels/rebuild/flat-circulation-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+development/levels/rebuild/flat-circulation-pass/**/*.log -diff
+tools/build_flat_circulation.py text eol=lf
+tools/check_flat_circulation.py text eol=lf
+tools/render_flat_circulation.py text eol=lf
+
+tools/audit_current_flat_routes.py text eol=lf
+
+tools/java/FurnishingRouteProbe.java text eol=lf
+
+tools/resolve_flat_floor_ownership.py text eol=lf
+
+tools/repair_flat_native_precision.py text eol=lf
+
+tools/archive_flat_verification.py text eol=lf
+
+tools/rebuild_flat_wall_profiles.py text eol=lf
+
+tools/render_flat_wall_profiles.py text eol=lf
+
+# Frozen inherited JSON keeps its exact original CRLF bytes.
+development/levels/rebuild/flat-circulation-pass/source-layouts/** whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Exact arrival source contracts and native verification bytes.
+development/levels/rebuild/arrival-bearing-pass/** -text
+development/levels/rebuild/route-design-pass/** -text
+development/levels/rebuild/arrival-bearing-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/build_arrival_bearings.py text eol=lf
+tools/review_arrival_bearings.py text eol=lf
+tools/design_flat_routes.py text eol=lf
+tools/java/FlatRouteDesigner.java text eol=lf
+
+# Raw route TSV ends with an intentionally empty points field on failed designs.
+development/levels/rebuild/route-design-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
+development/levels/rebuild/arrival-bearing-pass/**/*.log -diff
+
+# Exact saved circulation terrain source, raw probes and rejection records.
+development/levels/rebuild/flat-terrain-pass/** -text
+development/levels/rebuild/flat-terrain-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+development/levels/rebuild/flat-terrain-pass/**/*.log -diff
+tools/plan_flat_terrain_repairs.py text eol=lf
+tools/author_flat_terrain.py text eol=lf
+tools/compose_flat_terrain.py text eol=lf
+tools/build_cut_walkway_beds.py text eol=lf
+tools/review_flat_terrain.py text eol=lf
+tools/roster_candidate_sources.py text eol=lf
+tools/compare_native_standing.py text eol=lf
+tools/update_flat_terrain_checkpoint.py text eol=lf
+
+# Exact route authoring, diagnostic inputs and capture provenance.
+development/levels/rebuild/access-route-pass/** -text
+development/levels/rebuild/room-access-pass/** -text
+development/levels/rebuild/circulation-layout-pass/** -text
+development/levels/rebuild/access-route-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+development/levels/rebuild/access-route-pass/**/*.log -diff
+tools/author_access_routes.py text eol=lf
+tools/audit_room_socket_connectivity.py text eol=lf
+tools/review_access_routes.py text eol=lf
+tools/verify_access_route_sources.py text eol=lf
+tools/design_room_access.py text eol=lf
+tools/design_flat_routes.py text eol=lf
+tools/build_development_gallery.py text eol=lf
+tools/index_staged_map_models.py text eol=lf
+tools/java/RoomAccessRouteDesigner.java text eol=lf
+tools/java/RoomSocketConnectivityProbe.java text eol=lf
+
+# Raw TSV terminal tabs encode intentionally empty columns; keep exact evidence bytes.
+development/levels/rebuild/access-route-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
+development/levels/rebuild/room-access-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
+development/levels/rebuild/circulation-layout-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
+
+# Institutional roof contracts and native optical evidence preserve exact bytes.
+development/levels/rebuild/institution-roof-pass/** -text
+development/levels/rebuild/institution-roof-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/build_institution_roof_batch.py -text
+tools/java/RebuildRoofOpticalProbe.java -text
+
+# CRLF is deliberate in exact-byte snapshots and generated native receipts.
+development/levels/rebuild/institution-roof-pass/** whitespace=cr-at-eol
+tools/build_institution_roof_batch.py whitespace=cr-at-eol
+tools/java/RebuildRoofOpticalProbe.java whitespace=cr-at-eol
+
+# Secure/sacred roofs bind exact scene and native optical evidence bytes.
+development/levels/rebuild/secure-sacred-roof-pass/** -text whitespace=cr-at-eol
+tools/build_roster_enclosed_roofs.py text eol=lf
+tools/build_secure_sacred_roof_batch.py text eol=lf
+tools/java/RebuildFacadeOpticalProbe.java text eol=lf
+
+# Exact-byte entrance reconstruction sources and their intermediate roof inputs.
+development/levels/rebuild/harbor-research-roof-pass/** -text whitespace=cr-at-eol
+development/levels/rebuild/entrance-construction-pass/** -text whitespace=cr-at-eol
+development/levels/rebuild/stair-end-pass/wld-06/authored-layout.json -text whitespace=cr-at-eol
+tools/build_harbor_research_roof_batch.py -text whitespace=cr-at-eol
+tools/build_deliberate_entrances.py -text whitespace=cr-at-eol
+
+# Physical circulation reconstruction binds exact scene/native receipts.
+development/levels/rebuild/circulation-construction-pass/** -text whitespace=cr-at-eol
+tools/build_circulation_construction.py -text whitespace=cr-at-eol
+
+# Exact-byte architectural correction sources, including failed movement findings.
+development/levels/rebuild/study-solid-removal-pass/** -text whitespace=cr-at-eol
+tools/remove_study_solids.py -text whitespace=cr-at-eol
+
+# Area-built courts and docks retain exact geometry/physics receipts.
+development/levels/rebuild/courts-and-docks-pass/** -text whitespace=cr-at-eol
+tools/build_site_courts_and_docks.py -text whitespace=cr-at-eol
+
+# Persistent geographic earthworks bind exact editor documents and exported/native data.
+development/levels/rebuild/site-earthworks-pass/** -text whitespace=cr-at-eol
+tools/compose_site_earthworks.py -text whitespace=cr-at-eol
+tools/java/RebuildSiteEarthworks.java -text whitespace=cr-at-eol
+
+# Rectangular Wharf stair-cell correction retains exact authored mesh receipts.
+development/levels/rebuild/wharf-stair-cells-pass/** -text whitespace=cr-at-eol
+tools/rebuild_wharf_stair_cells.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/doorway-construction-pass/** -text whitespace=cr-at-eol
+tools/build_architectural_doorways.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/institution-doorway-pass/** -text whitespace=cr-at-eol
+tools/build_institution_doorways.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/institution-courts-pass/** -text whitespace=cr-at-eol
+tools/build_institution_courts.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/institution-earthworks-pass/** -text whitespace=cr-at-eol
+tools/compose_institution_earthworks.py -text whitespace=cr-at-eol
+tools/java/RebuildInstitutionEarthworks.java -text whitespace=cr-at-eol
+
+development/levels/rebuild/stair-cell-construction-pass/** -text whitespace=cr-at-eol
+tools/build_three_stair_cells.py -text whitespace=cr-at-eol
+tools/java/RebuildResearchTunnelPunch.java -text whitespace=cr-at-eol
+tools/audit_current_flat_routes.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/constant-flight-construction-pass/** -text whitespace=cr-at-eol
+tools/build_constant_flight_cells.py -text whitespace=cr-at-eol
+tools/java/RebuildStairCellPunches.java -text whitespace=cr-at-eol
+
+development/levels/rebuild/arrival-grounds-construction-pass/** -text whitespace=cr-at-eol
+tools/compose_arrival_grounds.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/service-portal-construction-pass/** -text whitespace=cr-at-eol
+tools/build_service_portals.py -text whitespace=cr-at-eol
+tools/build_cinder_galleries.py -text whitespace=cr-at-eol
+tools/audit_roster_stairs.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/terrain-ownership-construction-pass/** -text whitespace=cr-at-eol
+tools/compose_terrain_ownership.py -text whitespace=cr-at-eol
+
+# Exact physical stair interface sources and measured native probes.
+development/levels/rebuild/stair-interface-construction-pass/** -text
+development/levels/rebuild/stair-interface-construction-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
+development/levels/rebuild/stair-interface-construction-pass/**/*.log -diff
+tools/build_stair_interfaces.py text eol=lf
+tools/review_stair_interfaces.py text eol=lf
+tools/audit_roster_stairs.py text eol=lf

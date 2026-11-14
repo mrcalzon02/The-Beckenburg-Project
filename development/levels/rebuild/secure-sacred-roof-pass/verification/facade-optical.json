@@ -1,0 +1,12 @@
+{
+  "status": "NATIVE_HORIZONTAL_ENCLOSURE_NOT_GAME_ACCEPTANCE",
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RebuildFacadeOpticalProbe.java": "76b3d0ac756d5384d647840d3ecb9c2a415f77c79d0af3268390b5ed67c39c0f"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/facade-optical-input.tsv": "47abdd0eba224aa42ddc69b27646c6dd1e33a6ada38d14f2e8d78362c079e499",
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/facade-optical-results.tsv": "1c054a4bb62386c9af702d56e906bf8bf410c0f4afa238867f0f0b2d2d823e8c"
+  },
+  "scope": "74 rays cross the actual exported Prison upper-wall-band thickness at0.2m above the previous supporting ceiling; all before rays clear and all after rays blocked. Geometry/native evidence only."
+}

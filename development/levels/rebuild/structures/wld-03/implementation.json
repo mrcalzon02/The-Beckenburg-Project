@@ -1,0 +1,380 @@
+{
+  "id": "WLD-03",
+  "title": "Red Mesa Ancestral Caves",
+  "source": "rebuild\\wld-03\\rough-layout.json",
+  "source_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+  "zones": 14,
+  "routes": 16,
+  "shell_openings": [
+    {
+      "zone": "shelter",
+      "side": "E",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "shelter",
+      "side": "E",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L06",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "W",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "W",
+      "link": "L09",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "gallery",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "fork",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "fork",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "fork",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "fork",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "W",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "lower-cave",
+      "side": "N",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "lower-cave",
+      "side": "N",
+      "link": "L14",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "alcove",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "alcove",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 164,
+  "issues": [
+    {
+      "zone": "lower-path",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.85,
+          34.0,
+          13.15,
+          52.0
+        ]
+      ]
+    },
+    {
+      "zone": "upper-path",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
+        ],
+        [
+          56.1,
+          26.5,
+          57.9,
+          33.5
+        ]
+      ]
+    },
+    {
+      "zone": "dwellings",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
+        ],
+        [
+          56.1,
+          26.5,
+          57.9,
+          33.5
+        ]
+      ]
+    },
+    {
+      "zone": "gallery",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
+        ],
+        [
+          56.1,
+          26.5,
+          57.9,
+          33.5
+        ]
+      ]
+    },
+    {
+      "zone": "fork",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
+        ],
+        [
+          56.1,
+          26.5,
+          57.9,
+          33.5
+        ]
+      ]
+    },
+    {
+      "zone": "chamber",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
+        ],
+        [
+          56.1,
+          26.5,
+          57.9,
+          33.5
+        ]
+      ]
+    },
+    {
+      "zone": "lower-cave",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.85,
+          34.0,
+          13.15,
+          52.0
+        ]
+      ]
+    },
+    {
+      "zone": "return",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          10.85,
+          34.0,
+          13.15,
+          52.0
+        ]
+      ]
+    },
+    {
+      "zone": "alcove",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          11.271776541204147,
+          15.109949105916181,
+          34.72822345879585,
+          34.89005089408382
+        ],
+        [
+          56.1,
+          26.5,
+          57.9,
+          33.5
+        ]
+      ]
+    },
+    {
+      "link": "L04",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L07",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L13",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [
+    "Third remote exemplar: shape actual irregular chamber polygons and switchbacks before building art.",
+    "The +4/+8 m terraces are reservations, not proven graded terrain. Engineer two-way routes, headroom and visible falls boundaries.",
+    "Modern rite installations must leave the fictional ancient fabric intact; validate all three against ghost interference."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "71c6a2a3a11e246f7ec9cf762518cdec4ecca997aa952e3f2f81a27ba6465f14",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "2144b3698eb139fe284aa6a63f4f5e9de41db79e66862f8b10fd1f4c01e3ddd0",
+    "independently_reimported": true,
+    "meshes": 160,
+    "triangles": 1940,
+    "floor_parts": 14,
+    "ceiling_cap_parts": 10,
+    "stair_treads": 69,
+    "checked_closed_solids": 160,
+    "measured_depth_parts": 24,
+    "exported_cap_rays": 10,
+    "route_support_solids": 24,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/rebuild/wld-03/rough-layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/rebuild/wld-03/rough-layout.json": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+    "development/levels/blockouts/wld-03/rough-shell.blend": "b807b01d85fc00fe33f79e1b6aec0ff5df570184e252d376f38500ba60f7d28c",
+    "development/levels/blockouts/wld-03/rough-shell.glb": "ee55b508ff0f1e90aab3d4cc30c5ef911c0b5026a990f74a3d2d3a47b67a1719"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

@@ -107,7 +107,11 @@ public final class RuntimeSceneDocument {
     public record Loaded(InMemoryRuntimeScene scene,String fingerprint){}
     public static InMemoryRuntimeScene load(Path path)throws IOException{return loadRevision(path).scene();}
     public static Loaded loadRevision(Path path)throws IOException{
-        Objects.requireNonNull(path);recoverPending(path);byte[] bytes=EditorDocumentStore.readDocument(path);
+        Objects.requireNonNull(path);recoverPending(path);return readStoredRevision(path);
+    }
+    /** Read only the currently installed bytes; an observation cannot perform journal recovery. */
+    public static Loaded readStoredRevision(Path path)throws IOException{
+        byte[] bytes=EditorDocumentStore.readDocument(path);
         return new Loaded(decode(bytes),EditorDocumentStore.fingerprint(bytes));
     }
     public static void recoverPending(Path path)throws IOException{

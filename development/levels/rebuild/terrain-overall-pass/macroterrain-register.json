@@ -1,0 +1,631 @@
+{
+  "scope": 29,
+  "status": "TERRAIN_FIRST_EXECUTION_IN_PROGRESS",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/academy/review.json",
+      "terrain_triangles": 5678,
+      "flat_route_probe": {
+        "samples": 7908,
+        "baseline_valid": 7215,
+        "new_block": 174,
+        "baseline_sweep": 6853,
+        "new_sweep_block": 160,
+        "affected_segments": {
+          "L02:0": 121,
+          "L02:1": 47,
+          "L42:0": 3,
+          "L42:1": 4
+        }
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "West perimeter swale drains south of the cloister; courtyard falls gently toward its south outlet.",
+      "next_action": "Keep one cloister foundation datum; replace raised reservation pads with a continuous lawn and a real perimeter drain. Review east service court against the shoulder.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "ASYLUM",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/asylum/review.json",
+      "terrain_triangles": 7193,
+      "flat_route_probe": {
+        "samples": 7956,
+        "baseline_valid": 7172,
+        "new_block": 0,
+        "baseline_sweep": 6731,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Shallow central drainage saddle between pavilion groups, discharging beside the arrival neck.",
+      "next_action": "Retain staggered pavilion datums. Inspect service spine drainage and move isolated outbuildings rather than spreading a site-wide raised slab.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "RETAIN_MATURE_NATIVE_INDIVIDUAL_TERRAIN_AUDIT_REQUIRED",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "CHURCH",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/church/review.json",
+      "terrain_triangles": 2831,
+      "flat_route_probe": {
+        "samples": 3420,
+        "baseline_valid": 3176,
+        "new_block": 0,
+        "baseline_sweep": 2922,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "East graveyard swale runs past the crypt wing and away from the ceremonial approach.",
+      "next_action": "Nave and parish wings share a shallow masonry plinth; crypt entrances require retained light wells, not sunken orange room pads.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "COLLEGE",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/college/review.json",
+      "terrain_triangles": 8601,
+      "flat_route_probe": {
+        "samples": 8289,
+        "baseline_valid": 7607,
+        "new_block": 0,
+        "baseline_sweep": 7211,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "One shallow landscaped drainage corridor separates the teaching and residence groups, bending toward the east arrival verge.",
+      "next_action": "Keep distinct three-building footprints and bridge supports. Evaluate bridge and service-tunnel levels against this shared valley; no whole-campus rectangular lawn plate.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/farmhouse/review.json",
+      "terrain_triangles": 3796,
+      "flat_route_probe": {
+        "samples": 4101,
+        "baseline_valid": 3715,
+        "new_block": 8,
+        "baseline_sweep": 3373,
+        "new_sweep_block": 7,
+        "affected_segments": {
+          "L22:3": 9
+        }
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Workyard falls toward the west field ditch; the domestic approach stays on the south shoulder.",
+      "next_action": "Separate barn and farmhouse foundation runs; yard remains graded earth. Add supported barn apron only at delivery doors, retain room/model IDs.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "RETAIN_MATURE_NATIVE_INDIVIDUAL_TERRAIN_AUDIT_REQUIRED",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "MANSION",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/mansion/review.json",
+      "terrain_triangles": 5411,
+      "flat_route_probe": {
+        "samples": 7311,
+        "baseline_valid": 6924,
+        "new_block": 0,
+        "baseline_sweep": 6492,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Estate service water leaves along the east edge; public approach stays on the broad south terrace.",
+      "next_action": "Masonry foundations support the household wings. Service yard should fit the eastern shoulder; review its stair bay before refining cellar path strips.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "PRISON",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/prison/review.json",
+      "terrain_triangles": 8286,
+      "flat_route_probe": {
+        "samples": 6636,
+        "baseline_valid": 6034,
+        "new_block": 0,
+        "baseline_sweep": 5725,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [
+        {
+          "zone": "staff",
+          "building_bounds": [
+            42,
+            64,
+            46.8,
+            68
+          ],
+          "authored_excavation_bounds": [
+            42.0,
+            64.0,
+            47.0,
+            68.0
+          ],
+          "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+        },
+        {
+          "zone": "staff-wc",
+          "building_bounds": [
+            46.8,
+            64,
+            50,
+            68
+          ],
+          "authored_excavation_bounds": [
+            46.75,
+            64.0,
+            50.0,
+            68.0
+          ],
+          "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+        }
+      ],
+      "drainage": "Security compound drainage runs inside the west perimeter and out beside the service approach.",
+      "next_action": "Wall panels need continuous concrete foundations, including the known unsupported perimeter pieces. Shape compound corners and arrival sally port around real construction, not the grounds rectangle.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "SCHOOL",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/school/review.json",
+      "terrain_triangles": 8001,
+      "flat_route_probe": {
+        "samples": 5811,
+        "baseline_valid": 5193,
+        "new_block": 0,
+        "baseline_sweep": 4759,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [
+        {
+          "zone": "staff",
+          "building_bounds": [
+            23,
+            15,
+            27.2,
+            20
+          ],
+          "authored_excavation_bounds": [
+            23.0,
+            15.0,
+            27.25,
+            20.0
+          ],
+          "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+        },
+        {
+          "zone": "staff-wc",
+          "building_bounds": [
+            25,
+            12,
+            27.2,
+            15
+          ],
+          "authored_excavation_bounds": [
+            25.0,
+            12.0,
+            27.25,
+            15.0
+          ],
+          "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+        },
+        {
+          "zone": "service-stair",
+          "building_bounds": [
+            27.2,
+            12,
+            30,
+            20
+          ],
+          "authored_excavation_bounds": [
+            27.0,
+            12.0,
+            30.0,
+            20.0
+          ],
+          "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+        },
+        {
+          "zone": "lower-stair",
+          "building_bounds": [
+            27.2,
+            12,
+            30,
+            20
+          ],
+          "authored_excavation_bounds": [
+            27.0,
+            12.0,
+            30.0,
+            20.0
+          ],
+          "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+        },
+        {
+          "zone": "plant",
+          "building_bounds": [
+            23,
+            12,
+            27.2,
+            20
+          ],
+          "authored_excavation_bounds": [
+            23.0,
+            12.0,
+            27.25,
+            20.0
+          ],
+          "status": "EXPLICIT_FOUNDATION_RIM_REQUIRED_NOT_YET_BUILT"
+        }
+      ],
+      "drainage": "West playing-ground swale carries roof/yard drainage clear of the pupil arrival route.",
+      "next_action": "Continuous teaching-block datum with distinct gym/service foundations. Recheck actual school bounds and entrance apron before promotion.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "RETAIN_MATURE_NATIVE_INDIVIDUAL_TERRAIN_AUDIT_REQUIRED",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "RETAIN_MATURE_NATIVE_INDIVIDUAL_TERRAIN_AUDIT_REQUIRED",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-03",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-03/review.json",
+      "terrain_triangles": 10254,
+      "flat_route_probe": {
+        "samples": 3549,
+        "baseline_valid": 3243,
+        "new_block": 395,
+        "baseline_sweep": 3076,
+        "new_sweep_block": 391,
+        "affected_segments": {
+          "L10:1": 4,
+          "L11:0": 106,
+          "L11:1": 117,
+          "L12:0": 171
+        }
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Mesa terraces shed runoff through the western gully; upper occupied rock shelf is eight metres over the wash.",
+      "next_action": "Rock mass and cave roof/sidewalls must be authored as volumes. Reposition crossing cave/terrace routes to the shelf rather than grading down every historical orange strip. This heightfield is the exterior skin only.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-04",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-04/review.json",
+      "terrain_triangles": 8599,
+      "flat_route_probe": {
+        "samples": 1413,
+        "baseline_valid": 1054,
+        "new_block": 205,
+        "baseline_sweep": 948,
+        "new_sweep_block": 196,
+        "affected_segments": {
+          "L02:0": 88,
+          "L07:1": 50,
+          "L08:0": 70
+        }
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Lookout stands on a six-metre ridge bench; the west gully drains down past the lower trail.",
+      "next_action": "Retain real tower footings at the ridge bench. Rework the three-metre switchback terrace and hut entry after whole-site sections; tower decks remain elevated structures.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-05",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-05/review.json",
+      "terrain_triangles": 9592,
+      "flat_route_probe": {
+        "samples": 3510,
+        "baseline_valid": 3114,
+        "new_block": 282,
+        "baseline_sweep": 2977,
+        "new_sweep_block": 272,
+        "affected_segments": {
+          "L05:0": 145,
+          "L08:0": 4,
+          "L08:1": 134
+        }
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Rock rises behind the adit; surface water drains east of the mine entrance and workyard.",
+      "next_action": "Adit portal requires a rock face and buried tunnel roof. The minus-six/minus-ten workings stay underground, not giant open pits punched through all surface ground.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-06",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-06/review.json",
+      "terrain_triangles": 8536,
+      "flat_route_probe": {
+        "samples": 3744,
+        "baseline_valid": 3537,
+        "new_block": 0,
+        "baseline_sweep": 3365,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Harbour bed drops north of the shore; west shore drain meets the inlet below the cottages.",
+      "next_action": "Piers/fish house/boathouse need piles and deck skirts over the basin, not filled square ground pads. Verify actual undercroft and stair walls against waterline before promotion.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-07",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "SAVED_PUNCHED_SOURCE_MACRO_REVIEW_OPEN",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-08",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-08/review.json",
+      "terrain_triangles": 8472,
+      "flat_route_probe": {
+        "samples": 4062,
+        "baseline_valid": 3184,
+        "new_block": 73,
+        "baseline_sweep": 3037,
+        "new_sweep_block": 67,
+        "affected_segments": {
+          "L16:0": 71,
+          "L16:1": 5
+        }
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Wind-scoured central trough runs between the station wings; snow/rock berms build beyond the outer service elevations.",
+      "next_action": "Keep station on short supported plinths; service tunnel remains a buried structure. Move shelter or antenna service route if berms obstruct their real clearances.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-09",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-09/review.json",
+      "terrain_triangles": 11318,
+      "flat_route_probe": {
+        "samples": 3123,
+        "baseline_valid": 2564,
+        "new_block": 252,
+        "baseline_sweep": 2452,
+        "new_sweep_block": 241,
+        "affected_segments": {
+          "L01:0": 75,
+          "L01:1": 87,
+          "L02:0": 93
+        }
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Dam crest divides the high west abutment from the six-metre lower tailrace; spill discharge follows the east rock channel.",
+      "next_action": "Construct an actual dam/retaining section and turbine foundations. Current ground-level crest may require blockout re-alignment; do not flatten the whole valley to keep it unchanged.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-10",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-10/review.json",
+      "terrain_triangles": 9528,
+      "flat_route_probe": {
+        "samples": 4152,
+        "baseline_valid": 3839,
+        "new_block": 144,
+        "baseline_sweep": 3682,
+        "new_sweep_block": 135,
+        "affected_segments": {
+          "L17:0": 3,
+          "L17:1": 51,
+          "L18:0": 87,
+          "L18:1": 4
+        }
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Monastery occupies a broad cut bench with higher rock to the northwest; water exits east of the cloister.",
+      "next_action": "Retain cloister identity and garden, construct bearing terrace and downhill retaining faces. Review the detached dormitory edge against the natural bench rather than a wide square pad.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-11",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-11/review.json",
+      "terrain_triangles": 11060,
+      "flat_route_probe": {
+        "samples": 3663,
+        "baseline_valid": 3447,
+        "new_block": 0,
+        "baseline_sweep": 3260,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Reed basin and main tidal channel sit below the stilt settlement; south roadhead rises gently above the water meadow.",
+      "next_action": "Raised houses and boardwalks remain 1.2m structures with actual piles. No dry land pad per building; engineer supported arrival-to-boardwalk rise and a real water/bank boundary.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-12",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-12/review.json",
+      "terrain_triangles": 12695,
+      "flat_route_probe": {
+        "samples": 4173,
+        "baseline_valid": 4065,
+        "new_block": 688,
+        "baseline_sweep": 3930,
+        "new_sweep_block": 670,
+        "affected_segments": {
+          "L04:0": 5,
+          "L06:0": 3,
+          "L06:1": 83,
+          "L07:0": 149,
+          "L07:1": 5,
+          "L09:1": 6,
+          "L13:1": 63,
+          "L14:0": 154,
+          "L15:0": 123,
+          "L15:1": 7,
+          "L18:0": 104
+        }
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Rock cutting crosses a ravine at the trestle; drainage follows that ravine rather than the track centreline.",
+      "next_action": "Track bed requires explicit supported embankment and bridge. Tunnel needs a solid hillside roof; lower ravine route must meet the banks. Reposition trestle approaches if their current angles fight this section.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-13",
+      "status": "SAVED_MACROTERRAIN_COMPOSITE_FIT_REVISE",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-13/review.json",
+      "terrain_triangles": 10437,
+      "flat_route_probe": {
+        "samples": 4239,
+        "baseline_valid": 4152,
+        "new_block": 232,
+        "baseline_sweep": 4011,
+        "new_sweep_block": 216,
+        "affected_segments": {
+          "L17:0": 3,
+          "L17:1": 113,
+          "L18:0": 113,
+          "L18:1": 5
+        }
+      },
+      "perimeter_corner_findings": 0,
+      "excavation_rims_open": [],
+      "drainage": "Cannery shore drops to the north dock; forest shoulder and service ditch drain toward that inlet.",
+      "next_action": "Industrial foundations follow the shore terrace. Dock/pile construction spans real water; bunk/mess block may need moving off the west rock shoulder. No continuous rectangular processing-yard stamp.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-14",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "SAVED_PUNCHED_SOURCE_MACRO_REVIEW_OPEN",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-15",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "PROPOSAL_MACRO_REVIEW_OPEN",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-16",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "PROPOSAL_MACRO_REVIEW_OPEN",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-17",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "PROPOSAL_MACRO_REVIEW_OPEN",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-18",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "SAVED_PUNCHED_SOURCE_MACRO_REVIEW_OPEN",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "RETAIN_EXISTING_TERRAIN_INDIVIDUAL_MACRO_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "existing_state": "SAVED_PUNCHED_SOURCE_MACRO_REVIEW_OPEN",
+      "next_action": "Inspect existing whole-site elevation/footprint and structure relationships individually; preserve current saved punches and mature source/model work. Include in next terrain revision batch.",
+      "master_replaced": false,
+      "runtime_accepted": false
+    }
+  ],
+  "source_commit": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+  "generator_sha256": "396be6342dde2779771fad08854823d155a7a7e577590fd5657a816b3ad675c9",
+  "limitations": "18new editable terrain/composite candidates; seven existing candidate terrains and four mature maps retained for individual macro review. No terrain/map/runtime acceptance; original map masters unchanged."
+}

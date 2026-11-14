@@ -33,6 +33,18 @@ public final class BlackpineLevel {
         b.door(9,12,21,0,12,1.2,true);b.door(9,12,18,0,8,1.2,false);
         b.door(10,12,56,0,23,1.2,false);b.door(10,12,62,0,23,1.2,false);
         b.flight(0,11,50.5,26.7,50.5,31.5,0,3);
+        // Real capsule sweep requires clearance through the final riser:
+        // centre at step 110 reaches Z31.10, its 22cm body radius reaches
+        // Z31.32 while its feet are still 25cm below the loft floor.
+        // Stopping the opening at Z31.30 therefore hits solid slab BEFORE
+        // the restricted last-riser contact transition can start.
+        // Extend the actual rendered/physical deck aperture 10cm beyond
+        // the stair's endpoint; ramp support safely overruns the endpoint,
+        // and the remaining loft landing beyond Z31.60 stays solid.
+        var loftVoid=b.voids.get(0);
+        var ascent=b.stairs.get(0);
+        b.voids.set(0,new LevelDefinition.Void(loftVoid.y(),loftVoid.x0(),
+            loftVoid.z0(),loftVoid.x1(),ascent.z1()+.10));
         b.window(6,12,24,0,13.5,false);b.window(6,12,30,0,9.5,false);
         b.window(7,12,34,0,8,false);b.window(4,12,16,0,18,false);
         b.window(2,12,22,0,42,false);b.window(3,12,14,0,33,false);
@@ -41,11 +53,10 @@ public final class BlackpineLevel {
         b.sockets.removeIf(s->s.type().equals("hide"));
         // Furniture stays outside the future defended rite footprints.
         b.props.removeIf(p->p.room()==0||p.room()==2||p.room()==5);
-        for(double[] rail:new double[][]{{46,30,49.5,30},{51.5,30,52,30},{46,30,46,38},{52,30,52,38},{46,38,52,38}}){
-            double dx=rail[2]-rail[0],dz=rail[3]-rail[1],length=Math.hypot(dx,dz),angle=Math.atan2(dz,dx);
-            b.socket("enclosure",11,(rail[0]+rail[2])/2,3,(rail[1]+rail[3])/2,-angle,"field:"+length);
-            b.colliders.add(new Collider((rail[0]+rail[2])/2,3,(rail[1]+rail[3])/2,length/2,.075,1.4,angle));
-        }
+        // The loft's exposed edges and stairwell guards are rendered from
+        // the shared room/deck opening source. Do not add enclosure-fence
+        // sockets or duplicate colliders here: they float outside the upper
+        // slab and can obstruct the stair access gap.
         for(double[] tree:new double[][]{{6,18},{15,8},{52,7},{64,36},{22,53}}){
             b.socket("landscape_tree",12,tree[0],0,tree[1],0,"level_tree_conifer_worn");
             b.colliders.add(new Collider(tree[0],0,tree[1],.26,.26,2.5,0));

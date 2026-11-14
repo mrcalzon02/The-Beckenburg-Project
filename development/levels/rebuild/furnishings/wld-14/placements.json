@@ -1,0 +1,121 @@
+{
+  "site": "WLD-14",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-14/rough-layout.json",
+  "source_layout_sha256": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e",
+  "structure_glb_sha256": "8cdf0d57937d4e7a591a3ffc4b5221e7c568b2a129ee9345bf3b8033d6cc6887",
+  "furnished_glb_sha256": "9b7d8ea6dc90b73f1bee8b06802986c5c77424bec121ec72a027dfb78ffbaab0",
+  "native_sha256": "dc7d4d368e6c4941f7b84a6cbf145bbe31f671a537818c0d93a589bebb2bb765",
+  "requests": 4,
+  "placements": [
+    {
+      "id": "WLD-14:workroom:0:0",
+      "zone": "workroom",
+      "purpose": "Maintenance workroom / Workshop or classroom bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_workbench",
+      "asset": "level_blockout_workbench",
+      "source_sha256": "118331bca686c16c1e75042c6d56bf917218bdc8902c68ba05b722869725c589",
+      "bounds": [
+        18.145999908447266,
+        -30.939998626708984,
+        0.0,
+        19.895999908447266,
+        -30.15999984741211,
+        0.9100000262260437
+      ],
+      "rect": [
+        18.146,
+        30.16,
+        19.896,
+        30.93999997138977
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 72
+    },
+    {
+      "id": "WLD-14:bed:1:0",
+      "zone": "bed",
+      "purpose": "Keeper bedroom / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        24.48150062561035,
+        -44.55000305175781,
+        3.200000047683716,
+        26.37150001525879,
+        -42.15999984741211,
+        4.739999771118164
+      ],
+      "rect": [
+        24.481500012159348,
+        42.16,
+        26.371499997854233,
+        44.54999998569488
+      ],
+      "floor_y": 3.2,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-14:study:2:0",
+      "zone": "study",
+      "purpose": "Signal records study / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        30.67999839782715,
+        -42.6870002746582,
+        3.200000047683716,
+        31.760000228881836,
+        -42.15999984741211,
+        5.199999809265137
+      ],
+      "rect": [
+        30.67999999141693,
+        42.16,
+        31.760000034332275,
+        42.686999995112416
+      ],
+      "floor_y": 3.2,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "WLD-14:generator:3:0",
+      "zone": "generator",
+      "purpose": "Generator and oil house / Three lightstation supply oil drums / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_lighthouse_oil_barrel_rack",
+      "asset": "level_blockout_lighthouse_oil_barrel_rack",
+      "source_sha256": "cd83d281818265248cf7707f8429306ab2dd0fb983ea32774022356b6d1e6378",
+      "bounds": [
+        49.65999984741211,
+        -35.070003509521484,
+        0.0,
+        51.84000015258789,
+        -34.15999984741211,
+        1.2300000190734863
+      ],
+      "rect": [
+        49.65999998664856,
+        34.16,
+        51.84000005340576,
+        35.07000002622604
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 300
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "d84db357b92cc05752b1cca17e40f01a195e19ecb12b3f53c05829403199c0bd",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 4,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

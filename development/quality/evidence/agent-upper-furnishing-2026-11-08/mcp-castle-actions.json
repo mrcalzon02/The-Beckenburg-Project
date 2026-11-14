@@ -1,0 +1,233 @@
+{
+  "sceneId": "beckenburg/castle",
+  "revision": 12,
+  "sourceCommit": "dcd23da27dcd8c8b71ba77203f011b6f17c8250e",
+  "actions": {
+    "firstAvailable": 1,
+    "lastEvent": 18,
+    "events": [
+      {
+        "event": 1,
+        "time": "2026-11-08T15:31:55.400915Z",
+        "action": "edit",
+        "operations": [
+          "set-spawn",
+          "remove-surface"
+        ],
+        "sequence": null,
+        "expectedRevision": 2,
+        "observedRevision": 4,
+        "outcome": "refused",
+        "digest": "2030df44b4fcbfd4e862afde2c9f0e7d998e483af2b899d8e2f42d15fac38b46"
+      },
+      {
+        "event": 2,
+        "time": "2026-11-08T15:31:56.136047700Z",
+        "action": "edit",
+        "operations": [
+          "set-spawn"
+        ],
+        "sequence": null,
+        "expectedRevision": 4,
+        "observedRevision": 5,
+        "outcome": "applied",
+        "digest": "8dae6415d74d605fa2e4c5ff922ff37dde60a300c5474aab663855dadb68153b"
+      },
+      {
+        "event": 3,
+        "time": "2026-11-08T15:31:56.147557800Z",
+        "action": "edit",
+        "operations": [
+          "set-spawn"
+        ],
+        "sequence": null,
+        "expectedRevision": 4,
+        "observedRevision": 5,
+        "outcome": "refused",
+        "digest": "8dae6415d74d605fa2e4c5ff922ff37dde60a300c5474aab663855dadb68153b"
+      },
+      {
+        "event": 4,
+        "time": "2026-11-08T15:31:57.025844200Z",
+        "action": "undo",
+        "operations": [],
+        "sequence": null,
+        "expectedRevision": 5,
+        "observedRevision": 6,
+        "outcome": "applied",
+        "digest": "4c34847c3100a24e1b8ea9e521490304133cf2ff2d775c1c034e43082d16d1cb"
+      },
+      {
+        "event": 5,
+        "time": "2026-11-08T15:31:57.042648500Z",
+        "action": "redo",
+        "operations": [],
+        "sequence": null,
+        "expectedRevision": 6,
+        "observedRevision": 7,
+        "outcome": "applied",
+        "digest": "2876b15a7d0c217d16dab7063c1ecd21e4abbe5e2d0e1c80d670df76bf2c6ee9"
+      },
+      {
+        "event": 6,
+        "time": "2026-11-08T15:31:57.809128800Z",
+        "action": "focus",
+        "operations": [],
+        "sequence": null,
+        "expectedRevision": 7,
+        "observedRevision": 7,
+        "outcome": "applied",
+        "digest": "e8d38125bb4160650e41d568ef017e3d3a5a4780969366bc3ebf0e8b7216f7f6"
+      },
+      {
+        "event": 7,
+        "time": "2026-11-08T15:31:58.912184900Z",
+        "action": "edit",
+        "operations": [
+          "place-prop",
+          "place-prop"
+        ],
+        "sequence": 10,
+        "expectedRevision": 7,
+        "observedRevision": 9,
+        "outcome": "refused",
+        "digest": "e57d758d7e3740a55bb9aab0037ab4d39093fe03c3b1289734f636ceb53f2a83"
+      },
+      {
+        "event": 8,
+        "time": "2026-11-08T15:31:58.920278100Z",
+        "action": "edit",
+        "operations": [
+          "place-prop",
+          "place-prop"
+        ],
+        "sequence": 10,
+        "expectedRevision": 7,
+        "observedRevision": 9,
+        "outcome": "replayed-refusal",
+        "digest": "e57d758d7e3740a55bb9aab0037ab4d39093fe03c3b1289734f636ceb53f2a83"
+      },
+      {
+        "event": 9,
+        "time": "2026-11-08T15:31:59.841651300Z",
+        "action": "edit",
+        "operations": [
+          "remove-surface",
+          "place-prop"
+        ],
+        "sequence": 11,
+        "expectedRevision": 9,
+        "observedRevision": 11,
+        "outcome": "applied",
+        "digest": "7d0c594953eb77ad793d177b6d5742bc347c7bb083adc4361ce7b69626929186"
+      },
+      {
+        "event": 10,
+        "time": "2026-11-08T15:31:59.857281700Z",
+        "action": "edit",
+        "operations": [
+          "remove-surface",
+          "place-prop"
+        ],
+        "sequence": 11,
+        "expectedRevision": 9,
+        "observedRevision": 11,
+        "outcome": "replayed",
+        "digest": "7d0c594953eb77ad793d177b6d5742bc347c7bb083adc4361ce7b69626929186"
+      },
+      {
+        "event": 11,
+        "time": "2026-11-08T15:32:00.510089900Z",
+        "action": "edit",
+        "operations": [
+          "place-prop"
+        ],
+        "sequence": 11,
+        "expectedRevision": 9,
+        "observedRevision": 11,
+        "outcome": "sequence-conflict",
+        "digest": "0b382af334e14c4496595ad603ec52ee12abde2de41612264550d4a79cda245a"
+      },
+      {
+        "event": 12,
+        "time": "2026-11-08T15:32:01.111367900Z",
+        "action": "focus",
+        "operations": [],
+        "sequence": null,
+        "expectedRevision": 11,
+        "observedRevision": 11,
+        "outcome": "applied",
+        "digest": "21bc333d6e7d40a49f447169732e7f19da2aee2df605e87315d10f911e62ee61"
+      },
+      {
+        "event": 13,
+        "time": "2026-11-08T15:32:01.180497800Z",
+        "action": "playtest",
+        "operations": [],
+        "sequence": null,
+        "expectedRevision": 10,
+        "observedRevision": 11,
+        "outcome": "refused",
+        "digest": "a14e8f016ad9058bed8197049af05b4679ca467a72765d4aa2babc8070df1478"
+      },
+      {
+        "event": 14,
+        "time": "2026-11-08T15:32:04.778880400Z",
+        "action": "playtest",
+        "operations": [],
+        "sequence": 30,
+        "expectedRevision": 11,
+        "observedRevision": 11,
+        "outcome": "applied",
+        "digest": "12630ac3eee18b0a3c2a3ce532c7e98b33cc4fd8a1706a420473073ff5a423b7"
+      },
+      {
+        "event": 15,
+        "time": "2026-11-08T15:32:04.804044200Z",
+        "action": "playtest",
+        "operations": [],
+        "sequence": 30,
+        "expectedRevision": 11,
+        "observedRevision": 11,
+        "outcome": "replayed",
+        "digest": "12630ac3eee18b0a3c2a3ce532c7e98b33cc4fd8a1706a420473073ff5a423b7"
+      },
+      {
+        "event": 16,
+        "time": "2026-11-08T15:32:05.738820700Z",
+        "action": "save",
+        "operations": [],
+        "sequence": null,
+        "expectedRevision": 11,
+        "observedRevision": 11,
+        "outcome": "applied",
+        "digest": "fa7742868cc0ceff702bf611c76c50a5a87fe764c9e8772eb4a323e3e3425b27"
+      },
+      {
+        "event": 17,
+        "time": "2026-11-08T15:32:06.239833500Z",
+        "action": "undo",
+        "operations": [],
+        "sequence": null,
+        "expectedRevision": 11,
+        "observedRevision": 12,
+        "outcome": "applied",
+        "digest": "64b2bbd3afdbb466b5499666e4cc5f8c60841bc4143415e8023080912a04a64a"
+      },
+      {
+        "event": 18,
+        "time": "2026-11-08T15:32:06.246019400Z",
+        "action": "edit",
+        "operations": [
+          "remove-surface",
+          "place-prop"
+        ],
+        "sequence": 11,
+        "expectedRevision": 9,
+        "observedRevision": 12,
+        "outcome": "replayed",
+        "digest": "7d0c594953eb77ad793d177b6d5742bc347c7bb083adc4361ce7b69626929186"
+      }
+    ]
+  }
+}

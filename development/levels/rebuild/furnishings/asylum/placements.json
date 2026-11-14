@@ -1,0 +1,173 @@
+{
+  "site": "ASYLUM",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/asylum/rough-layout.json",
+  "source_layout_sha256": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30",
+  "structure_glb_sha256": "1f09263cbf44280cfdb1e5c620c26530c176425327c232b9da00d43d081a38d8",
+  "furnished_glb_sha256": "95daca6096a01765c0c1be6b8fe0c5bc86a8e36a1650dc75d3a380ae0e8ce0f5",
+  "native_sha256": "9b094d888e53d4f8daab81ce655b30909523e82babec710fb022c58a6d9c5cf0",
+  "requests": 6,
+  "placements": [
+    {
+      "id": "ASYLUM:ground-north-a:0:0",
+      "zone": "ground-north-a",
+      "purpose": "Ground two-place patient room north-a / Narrow institutional bed / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_ward_bed",
+      "asset": "level_blockout_ward_bed",
+      "source_sha256": "d3fc0a942ab53019935cac7c3a90ab62344eb888e25389c633b862d7f62a1553",
+      "bounds": [
+        11.119999885559082,
+        -14.15999984741211,
+        0.0,
+        12.000000953674316,
+        -12.15999984741211,
+        1.2699999809265137
+      ],
+      "rect": [
+        11.120000000953674,
+        12.16,
+        11.999999996185302,
+        14.16
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    },
+    {
+      "id": "ASYLUM:ground-south-a:1:0",
+      "zone": "ground-south-a",
+      "purpose": "Ground two-place patient room south-a / Narrow institutional bed / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_ward_bed",
+      "asset": "level_blockout_ward_bed",
+      "source_sha256": "d3fc0a942ab53019935cac7c3a90ab62344eb888e25389c633b862d7f62a1553",
+      "bounds": [
+        11.119999885559082,
+        -24.15999984741211,
+        0.0,
+        12.000000953674316,
+        -22.15999984741211,
+        1.2699999809265137
+      ],
+      "rect": [
+        11.120000000953674,
+        22.16,
+        11.999999996185302,
+        24.16
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    },
+    {
+      "id": "ASYLUM:treatment:2:0",
+      "zone": "treatment",
+      "purpose": "Treatment examination and handwashing / Treatment theatre table with exam lamp / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_hospital_treatment_theatre",
+      "asset": "level_blockout_hospital_treatment_theatre",
+      "source_sha256": "f363d17f9ae0c1c15f7821e0e896d681675519d288fade268ee2671e956316a7",
+      "bounds": [
+        36.8129997253418,
+        -39.84000015258789,
+        0.0,
+        38.22800064086914,
+        -37.78999710083008,
+        2.7749998569488525
+      ],
+      "rect": [
+        36.81299999570846,
+        37.79000004768372,
+        38.22800001716613,
+        39.84
+      ],
+      "floor_y": 0,
+      "yaw": 0,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "ASYLUM:hydro-bath:3:0",
+      "zone": "hydro-bath",
+      "purpose": "Assisted bathing treatment room / Hydrotherapy bath and pipe manifold / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_hospital_hydro_tub",
+      "asset": "level_blockout_hospital_hydro_tub",
+      "source_sha256": "3c84866985f4fa1f2227b7829e367eceaa90defe02f373f6a14881c364fb9e38",
+      "bounds": [
+        49.634002685546875,
+        -31.290000915527344,
+        0.0,
+        51.944000244140625,
+        -30.15999984741211,
+        1.7000000476837158
+      ],
+      "rect": [
+        49.63400001144409,
+        30.16,
+        51.94399995422363,
+        31.28999999523163
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 124
+    },
+    {
+      "id": "ASYLUM:records:4:0",
+      "zone": "records",
+      "purpose": "Confidential records office / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        42.06999969482422,
+        -54.6870002746582,
+        0.0,
+        43.150001525878906,
+        -54.15999984741211,
+        2.0
+      ],
+      "rect": [
+        42.06999996352195,
+        54.16,
+        43.150000006437295,
+        54.686999995112416
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "ASYLUM:clinical-soiled:5:0",
+      "zone": "clinical-soiled",
+      "purpose": "Enclosed soiled treatment utility / Open hospital/prison linen cabinet / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_institution_linen_cabinet",
+      "asset": "level_blockout_institution_linen_cabinet",
+      "source_sha256": "a07874b1e13f0f72fd6c3ce90f95120ab81c5aedcb3af33d4a147afa84aa9157",
+      "bounds": [
+        44.2650032043457,
+        -27.97599983215332,
+        0.0,
+        44.840003967285156,
+        -26.626001358032227,
+        2.2249999046325684
+      ],
+      "rect": [
+        44.26499998211861,
+        26.625999995231627,
+        44.84,
+        27.976000019073485
+      ],
+      "floor_y": 0,
+      "yaw": -1.5707963267948966,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 192
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "16e0d67ddb435d68d15017622df77b8bbd03846655e14ead365a3ee51bda4145",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 6,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

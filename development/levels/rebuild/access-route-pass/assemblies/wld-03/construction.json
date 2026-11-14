@@ -1,0 +1,532 @@
+{
+  "id": "WLD-03",
+  "status": "AUTHORED_NATIVE_ROOM_ACCESS_ROUTES_NOT_RUNTIME_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+  "source_contract_sha256": "d3f7ab6a6059beaf67fa69257714d562c1342c24afea7e072d515196df83becb",
+  "source_glb": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+  "source_glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+  "source_physics": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+  "source_physics_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+  "before_layout": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+  "before_layout_sha256": "5ca539d8cfd9abd3d3db4978d798b0d1c4508e913a0edb30928b3633c9196f71",
+  "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-03/authored-layout.json",
+  "layout_sha256": "367f260d73ecd9827abb20ed673218d974098bfa222b3ef3de752b22c484e785",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {
+      "0": 0
+    },
+    "L05": {},
+    "L06": {},
+    "L07": {
+      "0": 0
+    },
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {
+      "0": 0
+    },
+    "L14": {},
+    "L15": {},
+    "L16": {}
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {
+      "0": 0
+    },
+    "L05": {},
+    "L06": {},
+    "L07": {
+      "0": 0
+    },
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {
+      "0": 0
+    },
+    "L14": {},
+    "L15": {},
+    "L16": {}
+  },
+  "before_stair_components": [
+    "73:L04 flight0 step1",
+    "74:L04 flight0 step2",
+    "75:L04 flight0 step3",
+    "76:L04 flight0 step4",
+    "77:L04 flight0 step5",
+    "78:L04 flight0 step6",
+    "79:L04 flight0 step7",
+    "80:L04 flight0 step8",
+    "81:L04 flight0 step9",
+    "82:L04 flight0 step10",
+    "83:L04 flight0 step11",
+    "84:L04 flight0 step12",
+    "85:L04 flight0 step13",
+    "86:L04 flight0 step14",
+    "87:L04 flight0 step15",
+    "88:L04 flight0 step16",
+    "89:L04 flight0 step17",
+    "90:L04 flight0 step18",
+    "91:L04 flight0 step19",
+    "92:L04 flight0 step20",
+    "93:L04 flight0 step21",
+    "94:L04 flight0 step22",
+    "95:L04 flight0 step23",
+    "100:L07 flight0 step1",
+    "101:L07 flight0 step2",
+    "102:L07 flight0 step3",
+    "103:L07 flight0 step4",
+    "104:L07 flight0 step5",
+    "105:L07 flight0 step6",
+    "106:L07 flight0 step7",
+    "107:L07 flight0 step8",
+    "108:L07 flight0 step9",
+    "109:L07 flight0 step10",
+    "110:L07 flight0 step11",
+    "111:L07 flight0 step12",
+    "112:L07 flight0 step13",
+    "113:L07 flight0 step14",
+    "114:L07 flight0 step15",
+    "115:L07 flight0 step16",
+    "116:L07 flight0 step17",
+    "117:L07 flight0 step18",
+    "118:L07 flight0 step19",
+    "119:L07 flight0 step20",
+    "120:L07 flight0 step21",
+    "121:L07 flight0 step22",
+    "122:L07 flight0 step23",
+    "132:L13 flight0 step1",
+    "133:L13 flight0 step2",
+    "134:L13 flight0 step3",
+    "135:L13 flight0 step4",
+    "136:L13 flight0 step5",
+    "137:L13 flight0 step6",
+    "138:L13 flight0 step7",
+    "139:L13 flight0 step8",
+    "140:L13 flight0 step9",
+    "141:L13 flight0 step10",
+    "142:L13 flight0 step11",
+    "143:L13 flight0 step12",
+    "144:L13 flight0 step13",
+    "145:L13 flight0 step14",
+    "146:L13 flight0 step15",
+    "147:L13 flight0 step16",
+    "148:L13 flight0 step17",
+    "149:L13 flight0 step18",
+    "150:L13 flight0 step19",
+    "151:L13 flight0 step20",
+    "152:L13 flight0 step21",
+    "153:L13 flight0 step22",
+    "154:L13 flight0 step23",
+    "Authored stair end WLD-03 L04 0 high region0",
+    "Authored stair end WLD-03 L07 0 low region0",
+    "Authored stair end WLD-03 L07 0 low region1",
+    "Authored stair end WLD-03 L07 0 high region0",
+    "Authored stair end WLD-03 L07 0 high region1"
+  ],
+  "stair_components": [
+    "73:L04 flight0 step1",
+    "74:L04 flight0 step2",
+    "75:L04 flight0 step3",
+    "76:L04 flight0 step4",
+    "77:L04 flight0 step5",
+    "78:L04 flight0 step6",
+    "79:L04 flight0 step7",
+    "80:L04 flight0 step8",
+    "81:L04 flight0 step9",
+    "82:L04 flight0 step10",
+    "83:L04 flight0 step11",
+    "84:L04 flight0 step12",
+    "85:L04 flight0 step13",
+    "86:L04 flight0 step14",
+    "87:L04 flight0 step15",
+    "88:L04 flight0 step16",
+    "89:L04 flight0 step17",
+    "90:L04 flight0 step18",
+    "91:L04 flight0 step19",
+    "92:L04 flight0 step20",
+    "93:L04 flight0 step21",
+    "94:L04 flight0 step22",
+    "95:L04 flight0 step23",
+    "100:L07 flight0 step1",
+    "101:L07 flight0 step2",
+    "102:L07 flight0 step3",
+    "103:L07 flight0 step4",
+    "104:L07 flight0 step5",
+    "105:L07 flight0 step6",
+    "106:L07 flight0 step7",
+    "107:L07 flight0 step8",
+    "108:L07 flight0 step9",
+    "109:L07 flight0 step10",
+    "110:L07 flight0 step11",
+    "111:L07 flight0 step12",
+    "112:L07 flight0 step13",
+    "113:L07 flight0 step14",
+    "114:L07 flight0 step15",
+    "115:L07 flight0 step16",
+    "116:L07 flight0 step17",
+    "117:L07 flight0 step18",
+    "118:L07 flight0 step19",
+    "119:L07 flight0 step20",
+    "120:L07 flight0 step21",
+    "121:L07 flight0 step22",
+    "122:L07 flight0 step23",
+    "132:L13 flight0 step1",
+    "133:L13 flight0 step2",
+    "134:L13 flight0 step3",
+    "135:L13 flight0 step4",
+    "136:L13 flight0 step5",
+    "137:L13 flight0 step6",
+    "138:L13 flight0 step7",
+    "139:L13 flight0 step8",
+    "140:L13 flight0 step9",
+    "141:L13 flight0 step10",
+    "142:L13 flight0 step11",
+    "143:L13 flight0 step12",
+    "144:L13 flight0 step13",
+    "145:L13 flight0 step14",
+    "146:L13 flight0 step15",
+    "147:L13 flight0 step16",
+    "148:L13 flight0 step17",
+    "149:L13 flight0 step18",
+    "150:L13 flight0 step19",
+    "151:L13 flight0 step20",
+    "152:L13 flight0 step21",
+    "153:L13 flight0 step22",
+    "154:L13 flight0 step23",
+    "Authored stair end WLD-03 L04 0 high region0",
+    "Authored stair end WLD-03 L07 0 low region0",
+    "Authored stair end WLD-03 L07 0 low region1",
+    "Authored stair end WLD-03 L07 0 high region0",
+    "Authored stair end WLD-03 L07 0 high region1"
+  ],
+  "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+  "physics_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+  "arrival_bearing": {
+    "link": "L01",
+    "anchor": [
+      34.0,
+      0,
+      86.0
+    ],
+    "route_width": 2,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        33.0,
+        86.35
+      ],
+      [
+        33.0,
+        86.0
+      ],
+      [
+        35.0,
+        86.0
+      ],
+      [
+        35.0,
+        86.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          33.0,
+          86.35
+        ],
+        [
+          33.0,
+          86.0
+        ],
+        [
+          35.0,
+          86.0
+        ],
+        [
+          35.0,
+          86.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing WLD-03 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing WLD-03 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "ef9f0b1898563fe52e499f4006e792ae0cc6d9ab7dbda5bde1532bf2c933b6c3",
+  "access_route_changes": [
+    {
+      "site": "WLD-03",
+      "link": "L09",
+      "rooms": [
+        "dwellings",
+        "gallery"
+      ],
+      "before": [
+        [
+          34.0,
+          8,
+          31.0
+        ],
+        [
+          48.0,
+          8,
+          31.0
+        ],
+        [
+          57.0,
+          8,
+          31.0
+        ]
+      ],
+      "after": [
+        [
+          36.0,
+          8.0,
+          31.0
+        ],
+        [
+          55.0,
+          8.0,
+          31.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-03",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.blend",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+        "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827"
+      }
+    },
+    {
+      "site": "WLD-03",
+      "link": "L10",
+      "rooms": [
+        "gallery",
+        "fork"
+      ],
+      "before": [
+        [
+          57.0,
+          8,
+          31.0
+        ],
+        [
+          66.0,
+          8,
+          31.0
+        ],
+        [
+          71.0,
+          8,
+          31.0
+        ]
+      ],
+      "after": [
+        [
+          55.0,
+          8.0,
+          31.0
+        ],
+        [
+          55.0,
+          8.0,
+          33.0
+        ],
+        [
+          55.5,
+          8.0,
+          34.5
+        ],
+        [
+          65.0,
+          8.0,
+          34.0
+        ],
+        [
+          65.0,
+          8.0,
+          31.5
+        ],
+        [
+          65.5,
+          8.0,
+          31.0
+        ],
+        [
+          71.0,
+          8.0,
+          31.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-03",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.blend",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+        "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827"
+      }
+    },
+    {
+      "site": "WLD-03",
+      "link": "L14",
+      "rooms": [
+        "lower-cave",
+        "return"
+      ],
+      "before": [
+        [
+          57.0,
+          4,
+          31.0
+        ],
+        [
+          57.0,
+          4,
+          22.0
+        ],
+        [
+          57.0,
+          4,
+          13.0
+        ]
+      ],
+      "after": [
+        [
+          55.0,
+          4.0,
+          31.0
+        ],
+        [
+          55.0,
+          4.0,
+          23.5
+        ],
+        [
+          56.5,
+          4.0,
+          23.0
+        ],
+        [
+          57.0,
+          4.0,
+          22.5
+        ],
+        [
+          57.0,
+          4.0,
+          14.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-03",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.blend",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+        "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827"
+      }
+    },
+    {
+      "site": "WLD-03",
+      "link": "L16",
+      "rooms": [
+        "gallery",
+        "alcove"
+      ],
+      "before": [
+        [
+          57.0,
+          8,
+          31.0
+        ],
+        [
+          54.0,
+          8,
+          31.0
+        ],
+        [
+          54.0,
+          8,
+          40.0
+        ],
+        [
+          54.0,
+          8,
+          46.0
+        ]
+      ],
+      "after": [
+        [
+          55.0,
+          8.0,
+          31.0
+        ],
+        [
+          54.0,
+          8.0,
+          40.0
+        ],
+        [
+          54.0,
+          8.0,
+          46.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-03",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-03/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-03/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-03/supported-arrival.blend",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d",
+        "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827"
+      }
+    }
+  ],
+  "geometry_unchanged": true,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock."
+}

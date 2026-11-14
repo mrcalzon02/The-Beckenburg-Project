@@ -1,0 +1,1657 @@
+{
+  "tested_links": 173,
+  "changed_links": 7,
+  "changed_sites": 3,
+  "changes": [
+    {
+      "site": "MANSION",
+      "link": "L23",
+      "before": [
+        [
+          41.5,
+          0,
+          22.0
+        ],
+        [
+          41.5,
+          0,
+          14
+        ],
+        [
+          41.5,
+          0,
+          8.0
+        ],
+        [
+          43.0,
+          0,
+          8.0
+        ]
+      ],
+      "after": [
+        [
+          41.5,
+          0.0,
+          22.0
+        ],
+        [
+          41.5,
+          0.0,
+          14.0
+        ],
+        [
+          42.0,
+          0.0,
+          11.0
+        ],
+        [
+          43.0,
+          0.0,
+          11.0
+        ],
+        [
+          43.0,
+          0.0,
+          8.0
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        41.5,
+        0,
+        14
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L36",
+      "before": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          24.0,
+          3.6,
+          28.5
+        ],
+        [
+          20,
+          3.6,
+          28.5
+        ],
+        [
+          18.0,
+          3.6,
+          28.5
+        ]
+      ],
+      "after": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          21.5,
+          3.6,
+          29.5
+        ],
+        [
+          21.5,
+          3.6,
+          28.5
+        ],
+        [
+          20.0,
+          3.6,
+          28.5
+        ],
+        [
+          18.0,
+          3.6,
+          28.5
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        20,
+        3.6,
+        28.5
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L50",
+      "before": [
+        [
+          41.5,
+          3.6,
+          22.0
+        ],
+        [
+          41.5,
+          3.6,
+          14
+        ],
+        [
+          41.5,
+          3.6,
+          8.0
+        ],
+        [
+          43.0,
+          3.6,
+          8.0
+        ]
+      ],
+      "after": [
+        [
+          41.5,
+          3.6,
+          22.0
+        ],
+        [
+          41.5,
+          3.6,
+          14.0
+        ],
+        [
+          41.5,
+          3.6,
+          12.0
+        ],
+        [
+          43.0,
+          3.6,
+          11.5
+        ],
+        [
+          43.0,
+          3.6,
+          8.0
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        41.5,
+        3.6,
+        14
+      ]
+    },
+    {
+      "site": "MANSION",
+      "link": "L51",
+      "before": [
+        [
+          43.0,
+          7.2,
+          8.0
+        ],
+        [
+          41.5,
+          7.2,
+          8.0
+        ],
+        [
+          41.5,
+          7.2,
+          14
+        ],
+        [
+          41.5,
+          7.2,
+          21.0
+        ]
+      ],
+      "after": [
+        [
+          43.0,
+          7.2,
+          8.0
+        ],
+        [
+          43.0,
+          7.2,
+          12.5
+        ],
+        [
+          41.5,
+          7.2,
+          12.5
+        ],
+        [
+          41.5,
+          7.2,
+          14.0
+        ],
+        [
+          41.5,
+          7.2,
+          21.0
+        ]
+      ],
+      "width": 1.2,
+      "required_threshold": [
+        41.5,
+        7.2,
+        14
+      ]
+    },
+    {
+      "site": "WLD-08",
+      "link": "L12",
+      "before": [
+        [
+          26.0,
+          0,
+          19.0
+        ],
+        [
+          20.0,
+          0,
+          19.0
+        ],
+        [
+          11.0,
+          0,
+          19.0
+        ],
+        [
+          11.0,
+          0,
+          17.0
+        ]
+      ],
+      "after": [
+        [
+          26.0,
+          0.0,
+          19.0
+        ],
+        [
+          13.0,
+          0.0,
+          19.0
+        ],
+        [
+          12.5,
+          0.0,
+          16.0
+        ],
+        [
+          11.0,
+          0.0,
+          16.0
+        ],
+        [
+          11.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "width": 1.5,
+      "required_threshold": null
+    },
+    {
+      "site": "WLD-08",
+      "link": "L13",
+      "before": [
+        [
+          11.0,
+          0,
+          17.0
+        ],
+        [
+          11.0,
+          0,
+          26.0
+        ],
+        [
+          11.0,
+          0,
+          35.0
+        ]
+      ],
+      "after": [
+        [
+          11.0,
+          0.0,
+          17.0
+        ],
+        [
+          11.0,
+          0.0,
+          16.5
+        ],
+        [
+          10.0,
+          0.0,
+          16.0
+        ],
+        [
+          9.5,
+          0.0,
+          16.5
+        ],
+        [
+          9.0,
+          0.0,
+          18.0
+        ],
+        [
+          9.5,
+          0.0,
+          25.0
+        ],
+        [
+          10.5,
+          0.0,
+          25.0
+        ],
+        [
+          11.0,
+          0.0,
+          25.5
+        ],
+        [
+          11.0,
+          0.0,
+          33.0
+        ],
+        [
+          10.0,
+          0.0,
+          33.5
+        ],
+        [
+          9.5,
+          0.0,
+          35.5
+        ],
+        [
+          11.0,
+          0.0,
+          35.0
+        ]
+      ],
+      "width": 1.5,
+      "required_threshold": null
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-17",
+      "before": [
+        [
+          15.0,
+          -8,
+          32.0
+        ],
+        [
+          15.0,
+          -8,
+          20.0
+        ]
+      ],
+      "after": [
+        [
+          15.0,
+          -8.0,
+          32.0
+        ],
+        [
+          11.5,
+          -8.0,
+          30.5
+        ],
+        [
+          11.0,
+          -8.0,
+          29.5
+        ],
+        [
+          11.0,
+          -8.0,
+          27.0
+        ],
+        [
+          14.5,
+          -8.0,
+          27.0
+        ],
+        [
+          15.0,
+          -8.0,
+          26.5
+        ],
+        [
+          15.0,
+          -8.0,
+          20.0
+        ]
+      ],
+      "width": 1.5,
+      "required_threshold": null
+    }
+  ],
+  "decisions": [
+    {
+      "site": "ACADEMY",
+      "link": "L01",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "5",
+      "points": ""
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L02",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "12",
+      "points": ""
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L03",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L42",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "2592",
+      "points": ""
+    },
+    {
+      "site": "ACADEMY",
+      "link": "L43",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "591",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L19",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "18",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L20",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "25",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L27",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "358",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L32",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "62",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L53",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "1",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L54",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L62",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "48",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L63",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L71",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "1665",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L72",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L73",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L74",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L76",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "CHURCH",
+      "link": "L01",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "36",
+      "points": ""
+    },
+    {
+      "site": "CHURCH",
+      "link": "L02",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "CHURCH",
+      "link": "L04",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "441",
+      "points": ""
+    },
+    {
+      "site": "CHURCH",
+      "link": "L17",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "CHURCH",
+      "link": "L18",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "CHURCH",
+      "link": "L19",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "CHURCH",
+      "link": "L20",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "CHURCH",
+      "link": "L30",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L01",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "18",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L02",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L03",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L11",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "995",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L17",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "255",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L19",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "1",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L24",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "218",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L34",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "1",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L43",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "1",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L44",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L45",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L51",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L63",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "1",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L68",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "580",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L71",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "1",
+      "points": ""
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L87",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "1",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L01",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L02",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L03",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L08",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "451",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L11",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L13",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "45",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L23",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L28",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "36",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L29",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L30",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "970",
+      "points": ""
+    },
+    {
+      "site": "FARMHOUSE",
+      "link": "L33",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "MANSION",
+      "link": "L01",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "18",
+      "points": ""
+    },
+    {
+      "site": "MANSION",
+      "link": "L02",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "28",
+      "points": ""
+    },
+    {
+      "site": "MANSION",
+      "link": "L06",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "1",
+      "points": ""
+    },
+    {
+      "site": "MANSION",
+      "link": "L08",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "MANSION",
+      "link": "L23",
+      "status": "REROUTED_FULL_WIDTH",
+      "checked_edges": "84",
+      "points": "41.5,0.0,22.0;41.5,0.0,14.0;42.0,0.0,11.0;43.0,0.0,11.0;43.0,0.0,8.0"
+    },
+    {
+      "site": "MANSION",
+      "link": "L26",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "MANSION",
+      "link": "L28",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "MANSION",
+      "link": "L29",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "MANSION",
+      "link": "L30",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "MANSION",
+      "link": "L31",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "MANSION",
+      "link": "L36",
+      "status": "REROUTED_FULL_WIDTH",
+      "checked_edges": "242",
+      "points": "24.0,3.6,37.0;21.5,3.6,29.5;21.5,3.6,28.5;20.0,3.6,28.5;18.0,3.6,28.5"
+    },
+    {
+      "site": "MANSION",
+      "link": "L50",
+      "status": "REROUTED_FULL_WIDTH",
+      "checked_edges": "90",
+      "points": "41.5,3.6,22.0;41.5,3.6,14.0;41.5,3.6,12.0;43.0,3.6,11.5;43.0,3.6,8.0"
+    },
+    {
+      "site": "MANSION",
+      "link": "L51",
+      "status": "REROUTED_FULL_WIDTH",
+      "checked_edges": "99",
+      "points": "43.0,7.2,8.0;43.0,7.2,12.5;41.5,7.2,12.5;41.5,7.2,14.0;41.5,7.2,21.0"
+    },
+    {
+      "site": "PRISON",
+      "link": "L045",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "PRISON",
+      "link": "L046",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "PRISON",
+      "link": "L061",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "PRISON",
+      "link": "L062",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "PRISON",
+      "link": "L065",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "PRISON",
+      "link": "L066",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "PRISON",
+      "link": "L084",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "PRISON",
+      "link": "L085",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "PRISON",
+      "link": "L105",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "PRISON",
+      "link": "L111",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L08",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "1",
+      "points": ""
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L27",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "812",
+      "points": ""
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L33",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L35",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "381",
+      "points": ""
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L36",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L37",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L38",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L39",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L41",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L42",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-03",
+      "link": "L08",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-03",
+      "link": "L09",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-03",
+      "link": "L10",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-03",
+      "link": "L14",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-03",
+      "link": "L15",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-03",
+      "link": "L16",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-04",
+      "link": "L01",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "84",
+      "points": ""
+    },
+    {
+      "site": "WLD-04",
+      "link": "L02",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "23",
+      "points": ""
+    },
+    {
+      "site": "WLD-04",
+      "link": "L05",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "73",
+      "points": ""
+    },
+    {
+      "site": "WLD-04",
+      "link": "L07",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "69",
+      "points": ""
+    },
+    {
+      "site": "WLD-04",
+      "link": "L12",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-04",
+      "link": "L15",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-05",
+      "link": "L01",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "48",
+      "points": ""
+    },
+    {
+      "site": "WLD-05",
+      "link": "L05",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "769",
+      "points": ""
+    },
+    {
+      "site": "WLD-05",
+      "link": "L06",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "94",
+      "points": ""
+    },
+    {
+      "site": "WLD-05",
+      "link": "L08",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "937",
+      "points": ""
+    },
+    {
+      "site": "WLD-05",
+      "link": "L10",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "18",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L07",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "1463",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L10",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "360",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L14",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "1272",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L15",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "19",
+      "points": ""
+    },
+    {
+      "site": "WLD-06",
+      "link": "L18",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "15",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L03",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "135",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L04",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "25",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L06",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "135",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L07",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "25",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L09",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "146",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L11",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "737",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L12",
+      "status": "REROUTED_FULL_WIDTH",
+      "checked_edges": "567",
+      "points": "26.0,0.0,19.0;13.0,0.0,19.0;12.5,0.0,16.0;11.0,0.0,16.0;11.0,0.0,17.0"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L13",
+      "status": "REROUTED_FULL_WIDTH",
+      "checked_edges": "1160",
+      "points": "11.0,0.0,17.0;11.0,0.0,16.5;10.0,0.0,16.0;9.5,0.0,16.5;9.0,0.0,18.0;9.5,0.0,25.0;10.5,0.0,25.0;11.0,0.0,25.5;11.0,0.0,33.0;10.0,0.0,33.5;9.5,0.0,35.5;11.0,0.0,35.0"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L14",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L15",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-08",
+      "link": "L16",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-09",
+      "link": "L02",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "22",
+      "points": ""
+    },
+    {
+      "site": "WLD-09",
+      "link": "L03",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "137",
+      "points": ""
+    },
+    {
+      "site": "WLD-09",
+      "link": "L06",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "23",
+      "points": ""
+    },
+    {
+      "site": "WLD-09",
+      "link": "L10",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "35",
+      "points": ""
+    },
+    {
+      "site": "WLD-09",
+      "link": "L17",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "1460",
+      "points": ""
+    },
+    {
+      "site": "WLD-10",
+      "link": "L05",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-10",
+      "link": "L06",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-10",
+      "link": "L09",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-10",
+      "link": "L11",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-10",
+      "link": "L13",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-10",
+      "link": "L15",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-10",
+      "link": "L17",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-10",
+      "link": "L20",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-11",
+      "link": "L01",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "91",
+      "points": ""
+    },
+    {
+      "site": "WLD-11",
+      "link": "L03",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "27",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L03",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "852",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L04",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "106",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L06",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "525",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L07",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "25",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L09",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "508",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L13",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "623",
+      "points": ""
+    },
+    {
+      "site": "WLD-12",
+      "link": "L14",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "23",
+      "points": ""
+    },
+    {
+      "site": "WLD-13",
+      "link": "L01",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "48",
+      "points": ""
+    },
+    {
+      "site": "WLD-13",
+      "link": "L08",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "19",
+      "points": ""
+    },
+    {
+      "site": "WLD-13",
+      "link": "L09",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "23",
+      "points": ""
+    },
+    {
+      "site": "WLD-13",
+      "link": "L12",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-13",
+      "link": "L13",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-09",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-11",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-13",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-15",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-17",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "505",
+      "points": ""
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-18",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-14",
+      "link": "route-19",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-03",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-06",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-07",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-11",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-12",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-15",
+      "link": "route-15",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-03",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-08",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-09",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-12",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-13",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-16",
+      "link": "route-14",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-17",
+      "link": "route-04",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-17",
+      "link": "route-05",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-03",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "83",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-11",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-12",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-15",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-16",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-17",
+      "status": "REROUTED_FULL_WIDTH",
+      "checked_edges": "570",
+      "points": "15.0,-8.0,32.0;11.5,-8.0,30.5;11.0,-8.0,29.5;11.0,-8.0,27.0;14.5,-8.0,27.0;15.0,-8.0,26.5;15.0,-8.0,20.0"
+    }
+  ],
+  "source_hashes": {
+    "tools/design_flat_routes.py": "90bf9b45f9e61fa3129b0d3df74e5128269e02ee659566ab89b0ec60561171e8",
+    "tools/java/FlatRouteDesigner.java": "5ca83fa688a6e45a8b50e43ca56e691cc4f4d00fc95dd1d00ddea9f5d733951a",
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115"
+  },
+  "scope": "Geometry and production physics unchanged. Required source movement and complete route widths, not runtime map acceptance."
+}

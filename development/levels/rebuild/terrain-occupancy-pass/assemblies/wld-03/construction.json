@@ -1,0 +1,40 @@
+{
+  "id": "WLD-03",
+  "status": "ACTUAL_OCCUPIED_ROOM_TERRAIN_COMPOSITE_REVIEW_OPEN",
+  "source_glb": "development/levels/rebuild/terrain-fit-pass/wld-03/supported-terrain.glb",
+  "source_glb_sha256": "91e60eb11422e0016149a41f8c65de7d87773d1151dded050d0066a278ac9fec",
+  "source_physics": "development/levels/rebuild/terrain-fit-pass/wld-03/supported-terrain.hcs2",
+  "source_physics_sha256": "c46e0e507a92d646dacfbe93a73067e65a4b9032d328f42e314b44cde3f4100d",
+  "layout": "development/levels/rebuild/wld-03/rough-layout.json",
+  "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+  "saved_world": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world",
+  "saved_native_sha256": "5a4622414250f2e72922e6eba4dbbb6ba20b52270aaaccaef96fbf5a5c3c7240",
+  "preserved_nonterrain_parts": 203,
+  "replaced_terrain_parts": 4,
+  "saved_terrain_triangles": 9462,
+  "glb_sha256": "f701f6f728c5b70c8f9d436076d1d798051ab756ebfb02c5e23c46531de1a804",
+  "physics_sha256": "842b83b7a9aa2b839a1e0fe554e9ff853bf40d7ae51136cff8fe503152f0c12c",
+  "composer_sha256": "ef0e7db1ff5d00660184d632a4f5b0c948e47e7190edb19b540e00c7ac4e1da5",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-overview.png",
+      "sha256": "6fdb682d089d7d666936efd96a89ac3cc09565c933ac60f551991b6ca39d3ef0",
+      "type": "native reimported occupied-room terrain candidate"
+    },
+    {
+      "path": "development/levels/rebuild/captures/room-terrain-batch/wld-03-terrain-only.png",
+      "sha256": "29276da888885575fc4355d108f29641b28cd610ef2aad70cb2728eb5303a554",
+      "type": "native reimported occupied-room terrain candidate"
+    }
+  ],
+  "remaining": "Independent non-terrain mesh/UV/pose preservation and complete flat/stair movement comparison; actual terrain/foundation/cave/retaining/roof fit and runtime/network/hardware acceptance remain open.",
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1252648,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      166
+    ]
+  },
+  "excavation_collars": [],
+  "floor_repairs": []
+}

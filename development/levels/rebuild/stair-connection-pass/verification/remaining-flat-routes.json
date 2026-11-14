@@ -1,0 +1,3965 @@
+{
+  "status": "ACTUAL_REMAINING_FLAT_ROUTE_DIAGNOSIS_NOT_ACCEPTANCE",
+  "invalid_samples": 9129,
+  "sites": {
+    "ACADEMY": {
+      "invalid_flat_samples": 867,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 836,
+        "NO_FOOT_SUPPORT_0.22_0.0": 4,
+        "FOOT_HEIGHT_SPREAD": 4,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 4,
+        "NO_CENTRE_SUPPORT": 19
+      },
+      "components": [
+        [
+          "terrain-site:surface",
+          166
+        ],
+        [
+          "227:Wall upper-west W.001",
+          81
+        ],
+        [
+          "21:Wall east W.001",
+          74
+        ],
+        [
+          "27:Wall east E.002",
+          60
+        ],
+        [
+          "13:Wall west E.001",
+          53
+        ],
+        [
+          "253:Wall upper-east E.001",
+          41
+        ],
+        [
+          "-",
+          31
+        ],
+        [
+          "232:Wall upper-west E.001",
+          30
+        ],
+        [
+          "6:Wall west W.003",
+          29
+        ],
+        [
+          "237:Wall upper-north N.001",
+          27
+        ],
+        [
+          "4:Wall west W.001",
+          24
+        ],
+        [
+          "241:Wall upper-north S",
+          23
+        ],
+        [
+          "174:Wall lecture S",
+          19
+        ],
+        [
+          "49:Wall south S.001",
+          18
+        ],
+        [
+          "26:Wall east E.001",
+          16
+        ],
+        [
+          "5:Wall west W.002",
+          15
+        ],
+        [
+          "500:L67 flight0 step2",
+          14
+        ],
+        [
+          "220:Wall east-stair E.001",
+          11
+        ],
+        [
+          "507:L67 flight0 step9",
+          11
+        ],
+        [
+          "508:L67 flight0 step10",
+          9
+        ]
+      ],
+      "segments": [
+        [
+          "L02:1/left",
+          43
+        ],
+        [
+          "L02:0/left",
+          41
+        ],
+        [
+          "L02:0/centre",
+          40
+        ],
+        [
+          "L02:0/right",
+          40
+        ],
+        [
+          "L02:1/centre",
+          39
+        ],
+        [
+          "L02:1/right",
+          39
+        ],
+        [
+          "L43:0/left",
+          32
+        ],
+        [
+          "L10:1/left",
+          27
+        ],
+        [
+          "L41:0/right",
+          27
+        ],
+        [
+          "L46:0/right",
+          27
+        ],
+        [
+          "L47:0/right",
+          23
+        ],
+        [
+          "L42:1/right",
+          21
+        ],
+        [
+          "L44:0/left",
+          21
+        ],
+        [
+          "L07:1/left",
+          20
+        ],
+        [
+          "L40:0/left",
+          20
+        ],
+        [
+          "L42:1/centre",
+          19
+        ],
+        [
+          "L42:1/left",
+          18
+        ],
+        [
+          "L09:1/right",
+          17
+        ],
+        [
+          "L17:0/right",
+          17
+        ],
+        [
+          "L62:0/left",
+          17
+        ]
+      ]
+    },
+    "ASYLUM": {
+      "invalid_flat_samples": 784,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 698,
+        "NO_CENTRE_SUPPORT": 86
+      },
+      "components": [
+        [
+          "-",
+          86
+        ],
+        [
+          "123:Wall spine E.001",
+          46
+        ],
+        [
+          "119:Wall spine W.003",
+          39
+        ],
+        [
+          "125:Wall spine E.003",
+          32
+        ],
+        [
+          "133:Wall main-stair S",
+          30
+        ],
+        [
+          "306:Wall service E",
+          27
+        ],
+        [
+          "124:Wall spine E.002",
+          21
+        ],
+        [
+          "303:Wall service W.001",
+          18
+        ],
+        [
+          "136:Wall main-stair E",
+          16
+        ],
+        [
+          "41:Wall ground-linen E",
+          14
+        ],
+        [
+          "25:Wall ground-ward-link N.001",
+          13
+        ],
+        [
+          "366:Wall lift N",
+          12
+        ],
+        [
+          "213:Wall clinical-clean N",
+          12
+        ],
+        [
+          "226:Wall clinical-service N",
+          12
+        ],
+        [
+          "149:Wall service-link S",
+          12
+        ],
+        [
+          "147:Wall service-link N.001",
+          12
+        ],
+        [
+          "262:Wall hydro-dry S",
+          12
+        ],
+        [
+          "279:Wall washup N",
+          12
+        ],
+        [
+          "29:Wall ground-ward-link E.001",
+          11
+        ],
+        [
+          "202:Wall treatment N",
+          11
+        ]
+      ],
+      "segments": [
+        [
+          "L71:0/left",
+          31
+        ],
+        [
+          "L74:0/right",
+          27
+        ],
+        [
+          "L74:0/centre",
+          25
+        ],
+        [
+          "L74:0/left",
+          25
+        ],
+        [
+          "L28:0/left",
+          24
+        ],
+        [
+          "L76:0/left",
+          24
+        ],
+        [
+          "L05:1/left",
+          23
+        ],
+        [
+          "L25:0/left",
+          22
+        ],
+        [
+          "L44:0/right",
+          22
+        ],
+        [
+          "L71:0/centre",
+          22
+        ],
+        [
+          "L71:0/right",
+          22
+        ],
+        [
+          "L73:0/left",
+          22
+        ],
+        [
+          "L35:0/right",
+          21
+        ],
+        [
+          "L76:0/centre",
+          21
+        ],
+        [
+          "L76:0/right",
+          20
+        ],
+        [
+          "L73:0/centre",
+          19
+        ],
+        [
+          "L73:0/right",
+          19
+        ],
+        [
+          "L72:0/centre",
+          18
+        ],
+        [
+          "L72:0/right",
+          18
+        ],
+        [
+          "L76:1/left",
+          18
+        ]
+      ]
+    },
+    "CHURCH": {
+      "invalid_flat_samples": 244,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 195,
+        "NO_CENTRE_SUPPORT": 49
+      },
+      "components": [
+        [
+          "-",
+          49
+        ],
+        [
+          "88:Wall chancel E.001",
+          13
+        ],
+        [
+          "9:Wall nave W.001",
+          12
+        ],
+        [
+          "48:Wall office E",
+          12
+        ],
+        [
+          "211:Wall crypt-stair W",
+          11
+        ],
+        [
+          "218:Wall crypt-aisle W",
+          11
+        ],
+        [
+          "50:Wall records N",
+          9
+        ],
+        [
+          "3:Wall nave N.001",
+          8
+        ],
+        [
+          "39:Wall parish-lobby W",
+          8
+        ],
+        [
+          "33:Wall parish-lobby N",
+          7
+        ],
+        [
+          "161:Wall choir-stair E",
+          7
+        ],
+        [
+          "158:Wall choir-stair W",
+          7
+        ],
+        [
+          "168:Wall choir E",
+          7
+        ],
+        [
+          "55:Wall parish-wc S",
+          7
+        ],
+        [
+          "318:L33 flight0 step13",
+          6
+        ],
+        [
+          "62:Wall conversation-entry W.001",
+          6
+        ],
+        [
+          "338:L34 flight0 step16",
+          6
+        ],
+        [
+          "180:Wall music-entry E.001",
+          6
+        ],
+        [
+          "317:L33 flight0 step12",
+          5
+        ],
+        [
+          "337:L34 flight0 step15",
+          5
+        ]
+      ],
+      "segments": [
+        [
+          "L30:0/centre",
+          19
+        ],
+        [
+          "L30:0/left",
+          19
+        ],
+        [
+          "L30:0/right",
+          18
+        ],
+        [
+          "L19:0/left",
+          11
+        ],
+        [
+          "L20:0/right",
+          11
+        ],
+        [
+          "L20:1/left",
+          11
+        ],
+        [
+          "L18:1/left",
+          10
+        ],
+        [
+          "L20:0/left",
+          10
+        ],
+        [
+          "L04:0/left",
+          9
+        ],
+        [
+          "L19:0/right",
+          9
+        ],
+        [
+          "L20:0/centre",
+          9
+        ],
+        [
+          "L04:0/centre",
+          8
+        ],
+        [
+          "L19:0/centre",
+          8
+        ],
+        [
+          "L20:1/centre",
+          8
+        ],
+        [
+          "L24:1/left",
+          8
+        ],
+        [
+          "L25:0/left",
+          8
+        ],
+        [
+          "L04:0/right",
+          7
+        ],
+        [
+          "L18:1/centre",
+          7
+        ],
+        [
+          "L20:1/right",
+          6
+        ],
+        [
+          "L18:1/right",
+          5
+        ]
+      ]
+    },
+    "COLLEGE": {
+      "invalid_flat_samples": 682,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 594,
+        "NO_CENTRE_SUPPORT": 83,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 5
+      },
+      "components": [
+        [
+          "-",
+          88
+        ],
+        [
+          "258:Wall upper-teaching E.001",
+          54
+        ],
+        [
+          "89:Wall admin E",
+          40
+        ],
+        [
+          "7:Wall teaching-hall W.002",
+          25
+        ],
+        [
+          "240:Wall res-cellar-stair E",
+          24
+        ],
+        [
+          "356:Wall upper-res-hall W.001",
+          24
+        ],
+        [
+          "12:Wall teaching-hall E",
+          23
+        ],
+        [
+          "359:Wall upper-res-hall E.001",
+          20
+        ],
+        [
+          "160:Wall union-common W",
+          17
+        ],
+        [
+          "141:Wall res-hall W",
+          15
+        ],
+        [
+          "6:Wall teaching-hall W.001",
+          14
+        ],
+        [
+          "164:Wall cafe W",
+          14
+        ],
+        [
+          "163:Wall cafe S",
+          12
+        ],
+        [
+          "643:L82 flight0 step15",
+          12
+        ],
+        [
+          "147:Wall res-hall E.001",
+          11
+        ],
+        [
+          "644:L82 flight0 step16",
+          11
+        ],
+        [
+          "642:L82 flight0 step14",
+          11
+        ],
+        [
+          "330:Wall bridge-lobby S",
+          11
+        ],
+        [
+          "464:Wall west-tunnel E",
+          11
+        ],
+        [
+          "159:Wall union-common S",
+          10
+        ]
+      ],
+      "segments": [
+        [
+          "L02:1/centre",
+          25
+        ],
+        [
+          "L02:1/left",
+          22
+        ],
+        [
+          "L86:0/left",
+          22
+        ],
+        [
+          "L45:1/right",
+          20
+        ],
+        [
+          "L02:1/right",
+          19
+        ],
+        [
+          "L71:1/right",
+          18
+        ],
+        [
+          "L44:1/left",
+          17
+        ],
+        [
+          "L72:0/right",
+          17
+        ],
+        [
+          "L44:1/centre",
+          16
+        ],
+        [
+          "L44:1/right",
+          16
+        ],
+        [
+          "L45:1/centre",
+          16
+        ],
+        [
+          "L45:1/left",
+          16
+        ],
+        [
+          "L24:0/left",
+          15
+        ],
+        [
+          "L05:0/left",
+          14
+        ],
+        [
+          "L11:0/right",
+          14
+        ],
+        [
+          "L11:1/right",
+          14
+        ],
+        [
+          "L47:0/right",
+          14
+        ],
+        [
+          "L62:0/left",
+          14
+        ],
+        [
+          "L24:0/centre",
+          13
+        ],
+        [
+          "L24:0/right",
+          13
+        ]
+      ]
+    },
+    "FARMHOUSE": {
+      "invalid_flat_samples": 394,
+      "reasons": {
+        "NO_CENTRE_SUPPORT": 70,
+        "PHYSICAL_COMPONENT": 324
+      },
+      "components": [
+        [
+          "-",
+          70
+        ],
+        [
+          "63:Wall stairs E",
+          68
+        ],
+        [
+          "154:Wall upper-hall W.001",
+          16
+        ],
+        [
+          "162:Wall upper-hall E.002",
+          14
+        ],
+        [
+          "155:Wall upper-hall W.002",
+          13
+        ],
+        [
+          "160:Wall upper-hall E",
+          11
+        ],
+        [
+          "60:Wall stairs S.001",
+          10
+        ],
+        [
+          "98:Wall stall-b S",
+          10
+        ],
+        [
+          "104:Wall feed W",
+          9
+        ],
+        [
+          "161:Wall upper-hall E.001",
+          8
+        ],
+        [
+          "terrain-site:surface",
+          8
+        ],
+        [
+          "103:Wall feed S",
+          8
+        ],
+        [
+          "333:L34 flight0 step12",
+          7
+        ],
+        [
+          "78:Wall barn-aisle W.001",
+          7
+        ],
+        [
+          "7:Wall mudroom S.001",
+          6
+        ],
+        [
+          "334:L34 flight0 step13",
+          6
+        ],
+        [
+          "105:Wall feed E",
+          6
+        ],
+        [
+          "86:Wall barn-aisle E.001",
+          6
+        ],
+        [
+          "3:Wall mudroom N.002",
+          5
+        ],
+        [
+          "329:L34 flight0 step8",
+          5
+        ]
+      ],
+      "segments": [
+        [
+          "L11:1/left",
+          19
+        ],
+        [
+          "L33:0/left",
+          19
+        ],
+        [
+          "L11:1/right",
+          17
+        ],
+        [
+          "L11:1/centre",
+          16
+        ],
+        [
+          "L23:0/left",
+          13
+        ],
+        [
+          "L13:1/right",
+          12
+        ],
+        [
+          "L23:0/right",
+          12
+        ],
+        [
+          "L02:1/left",
+          11
+        ],
+        [
+          "L02:1/right",
+          11
+        ],
+        [
+          "L03:0/left",
+          11
+        ],
+        [
+          "L18:0/right",
+          11
+        ],
+        [
+          "L23:0/centre",
+          11
+        ],
+        [
+          "L33:0/centre",
+          11
+        ],
+        [
+          "L30:0/right",
+          10
+        ],
+        [
+          "L15:0/right",
+          9
+        ],
+        [
+          "L30:0/centre",
+          9
+        ],
+        [
+          "L30:0/left",
+          9
+        ],
+        [
+          "L33:0/right",
+          9
+        ],
+        [
+          "L13:1/centre",
+          8
+        ],
+        [
+          "L22:3/right",
+          8
+        ]
+      ]
+    },
+    "MANSION": {
+      "invalid_flat_samples": 387,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 355,
+        "NO_CENTRE_SUPPORT": 16,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 16
+      },
+      "components": [
+        [
+          "89:Wall service-pass N.001",
+          32
+        ],
+        [
+          "-",
+          32
+        ],
+        [
+          "468:L58 flight0 step2",
+          18
+        ],
+        [
+          "114:Wall pantry E",
+          15
+        ],
+        [
+          "329:Wall attic-passage W.001",
+          12
+        ],
+        [
+          "356:Wall cellar-pass W.001",
+          12
+        ],
+        [
+          "481:L58 flight0 step15",
+          11
+        ],
+        [
+          "107:Wall scullery E",
+          11
+        ],
+        [
+          "127:Wall service E",
+          10
+        ],
+        [
+          "132:Wall receiving N",
+          10
+        ],
+        [
+          "55:Wall dining N.001",
+          10
+        ],
+        [
+          "62:Wall dining E",
+          10
+        ],
+        [
+          "85:Wall ballroom E.001",
+          10
+        ],
+        [
+          "98:Wall kitchen N",
+          9
+        ],
+        [
+          "480:L58 flight0 step14",
+          8
+        ],
+        [
+          "116:Wall cold-store N",
+          8
+        ],
+        [
+          "185:Wall suite-entry S.001",
+          8
+        ],
+        [
+          "283:Wall linen E",
+          8
+        ],
+        [
+          "108:Wall scullery E.001",
+          7
+        ],
+        [
+          "101:Wall kitchen E",
+          7
+        ]
+      ],
+      "segments": [
+        [
+          "L28:1/right",
+          18
+        ],
+        [
+          "L28:1/left",
+          17
+        ],
+        [
+          "L26:1/left",
+          15
+        ],
+        [
+          "L29:1/right",
+          15
+        ],
+        [
+          "L31:0/left",
+          14
+        ],
+        [
+          "L31:0/right",
+          14
+        ],
+        [
+          "L29:1/centre",
+          13
+        ],
+        [
+          "L29:1/left",
+          13
+        ],
+        [
+          "L28:1/centre",
+          12
+        ],
+        [
+          "L31:0/centre",
+          12
+        ],
+        [
+          "L22:1/right",
+          10
+        ],
+        [
+          "L26:1/centre",
+          10
+        ],
+        [
+          "L30:1/left",
+          10
+        ],
+        [
+          "L49:1/right",
+          9
+        ],
+        [
+          "L06:1/centre",
+          8
+        ],
+        [
+          "L06:1/left",
+          8
+        ],
+        [
+          "L06:1/right",
+          8
+        ],
+        [
+          "L26:1/right",
+          8
+        ],
+        [
+          "L50:1/right",
+          8
+        ],
+        [
+          "L30:1/centre",
+          7
+        ]
+      ]
+    },
+    "PRISON": {
+      "invalid_flat_samples": 602,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 510,
+        "NO_CENTRE_SUPPORT": 92
+      },
+      "components": [
+        [
+          "-",
+          92
+        ],
+        [
+          "101:Wall a-upper-gallery E",
+          56
+        ],
+        [
+          "283:Wall b-upper-gallery W",
+          56
+        ],
+        [
+          "65:Wall a-upper-cell-02 E",
+          25
+        ],
+        [
+          "247:Wall b-upper-cell-02 W",
+          25
+        ],
+        [
+          "12:Wall a-lower-cell-02 E",
+          21
+        ],
+        [
+          "194:Wall b-lower-cell-02 W",
+          21
+        ],
+        [
+          "539:Wall isolation-link E.001",
+          20
+        ],
+        [
+          "456:Wall cross N.001",
+          20
+        ],
+        [
+          "147:Wall a-change N",
+          15
+        ],
+        [
+          "330:Wall b-change N",
+          15
+        ],
+        [
+          "70:Wall a-upper-cell-03 E",
+          13
+        ],
+        [
+          "252:Wall b-upper-cell-03 W",
+          13
+        ],
+        [
+          "467:Wall cross E.001",
+          12
+        ],
+        [
+          "461:Wall cross S.002",
+          9
+        ],
+        [
+          "17:Wall a-lower-cell-03 E",
+          7
+        ],
+        [
+          "199:Wall b-lower-cell-03 W",
+          7
+        ],
+        [
+          "736:L112 flight0 step15",
+          6
+        ],
+        [
+          "106:Wall a-rear-link N",
+          5
+        ],
+        [
+          "290:Wall b-rear-link N.001",
+          5
+        ]
+      ],
+      "segments": [
+        [
+          "L046:1/left",
+          36
+        ],
+        [
+          "L062:1/right",
+          36
+        ],
+        [
+          "L009:1/left",
+          30
+        ],
+        [
+          "L025:1/right",
+          30
+        ],
+        [
+          "L001:1/left",
+          24
+        ],
+        [
+          "L017:1/right",
+          24
+        ],
+        [
+          "L046:1/centre",
+          18
+        ],
+        [
+          "L062:1/centre",
+          18
+        ],
+        [
+          "L042:1/left",
+          17
+        ],
+        [
+          "L058:1/right",
+          17
+        ],
+        [
+          "L009:1/centre",
+          16
+        ],
+        [
+          "L025:1/centre",
+          16
+        ],
+        [
+          "L085:0/centre",
+          16
+        ],
+        [
+          "L085:0/left",
+          16
+        ],
+        [
+          "L085:0/right",
+          16
+        ],
+        [
+          "L095:0/left",
+          14
+        ],
+        [
+          "L001:1/centre",
+          12
+        ],
+        [
+          "L017:1/centre",
+          12
+        ],
+        [
+          "L046:0/left",
+          10
+        ],
+        [
+          "L062:0/right",
+          10
+        ]
+      ]
+    },
+    "SCHOOL": {
+      "invalid_flat_samples": 618,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 505,
+        "NO_CENTRE_SUPPORT": 111,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 2
+      },
+      "components": [
+        [
+          "-",
+          113
+        ],
+        [
+          "33:Wall corridor W.001",
+          31
+        ],
+        [
+          "159:Wall health-link E.002",
+          30
+        ],
+        [
+          "212:Wall upper-corridor W.001",
+          26
+        ],
+        [
+          "155:Wall health-link W",
+          25
+        ],
+        [
+          "217:Wall upper-corridor E.001",
+          24
+        ],
+        [
+          "218:Wall upper-corridor E.002",
+          24
+        ],
+        [
+          "119:Wall dining N",
+          23
+        ],
+        [
+          "129:Wall kitchen N",
+          21
+        ],
+        [
+          "219:Wall upper-corridor E.003",
+          19
+        ],
+        [
+          "38:Wall corridor E.001",
+          16
+        ],
+        [
+          "76:Wall service-stair E",
+          16
+        ],
+        [
+          "39:Wall corridor E.002",
+          15
+        ],
+        [
+          "158:Wall health-link E.001",
+          13
+        ],
+        [
+          "123:Wall dining E",
+          13
+        ],
+        [
+          "173:Wall change-a S",
+          12
+        ],
+        [
+          "132:Wall kitchen E",
+          12
+        ],
+        [
+          "40:Wall corridor E.003",
+          11
+        ],
+        [
+          "182:Wall shower-a E",
+          8
+        ],
+        [
+          "142:Wall receiving E",
+          8
+        ]
+      ],
+      "segments": [
+        [
+          "L38:1/right",
+          19
+        ],
+        [
+          "L41:0/centre",
+          19
+        ],
+        [
+          "L36:1/left",
+          18
+        ],
+        [
+          "L40:1/left",
+          18
+        ],
+        [
+          "L41:0/right",
+          18
+        ],
+        [
+          "L36:1/centre",
+          17
+        ],
+        [
+          "L38:1/centre",
+          17
+        ],
+        [
+          "L39:1/left",
+          17
+        ],
+        [
+          "L40:1/centre",
+          17
+        ],
+        [
+          "L25:0/left",
+          16
+        ],
+        [
+          "L36:1/right",
+          16
+        ],
+        [
+          "L09:1/left",
+          15
+        ],
+        [
+          "L39:1/centre",
+          15
+        ],
+        [
+          "L41:0/left",
+          15
+        ],
+        [
+          "L40:1/right",
+          14
+        ],
+        [
+          "L28:0/right",
+          13
+        ],
+        [
+          "L38:1/left",
+          13
+        ],
+        [
+          "L39:1/right",
+          13
+        ],
+        [
+          "L09:1/centre",
+          12
+        ],
+        [
+          "L09:1/right",
+          12
+        ]
+      ]
+    },
+    "WLD-03": {
+      "invalid_flat_samples": 302,
+      "reasons": {
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 22,
+        "PHYSICAL_COMPONENT": 106,
+        "NO_CENTRE_SUPPORT": 174
+      },
+      "components": [
+        [
+          "-",
+          196
+        ],
+        [
+          "101:L07 flight0 step2",
+          18
+        ],
+        [
+          "102:L07 flight0 step3",
+          10
+        ],
+        [
+          "133:L13 flight0 step2",
+          9
+        ],
+        [
+          "103:L07 flight0 step4",
+          8
+        ],
+        [
+          "141:L13 flight0 step10",
+          6
+        ],
+        [
+          "137:L13 flight0 step6",
+          6
+        ],
+        [
+          "74:L04 flight0 step2",
+          5
+        ],
+        [
+          "105:L07 flight0 step6",
+          5
+        ],
+        [
+          "104:L07 flight0 step5",
+          5
+        ],
+        [
+          "146:L13 flight0 step15",
+          3
+        ],
+        [
+          "145:L13 flight0 step14",
+          3
+        ],
+        [
+          "144:L13 flight0 step13",
+          3
+        ],
+        [
+          "143:L13 flight0 step12",
+          3
+        ],
+        [
+          "142:L13 flight0 step11",
+          3
+        ],
+        [
+          "140:L13 flight0 step9",
+          3
+        ],
+        [
+          "139:L13 flight0 step8",
+          3
+        ],
+        [
+          "138:L13 flight0 step7",
+          3
+        ],
+        [
+          "136:L13 flight0 step5",
+          3
+        ],
+        [
+          "135:L13 flight0 step4",
+          3
+        ]
+      ],
+      "segments": [
+        [
+          "L08:1/centre",
+          37
+        ],
+        [
+          "L08:1/left",
+          37
+        ],
+        [
+          "L15:0/left",
+          32
+        ],
+        [
+          "L08:0/left",
+          20
+        ],
+        [
+          "L15:0/centre",
+          20
+        ],
+        [
+          "L08:0/centre",
+          19
+        ],
+        [
+          "L14:0/centre",
+          19
+        ],
+        [
+          "L14:0/left",
+          19
+        ],
+        [
+          "L14:0/right",
+          19
+        ],
+        [
+          "L16:0/centre",
+          11
+        ],
+        [
+          "L15:0/right",
+          9
+        ],
+        [
+          "L16:0/right",
+          9
+        ],
+        [
+          "L16:0/left",
+          6
+        ],
+        [
+          "L03:1/centre",
+          5
+        ],
+        [
+          "L03:1/left",
+          5
+        ],
+        [
+          "L09:1/centre",
+          4
+        ],
+        [
+          "L09:1/left",
+          4
+        ],
+        [
+          "L09:1/right",
+          4
+        ],
+        [
+          "L10:0/centre",
+          4
+        ],
+        [
+          "L10:0/left",
+          4
+        ]
+      ]
+    },
+    "WLD-04": {
+      "invalid_flat_samples": 222,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 2,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 25,
+        "NO_CENTRE_SUPPORT": 195
+      },
+      "components": [
+        [
+          "-",
+          220
+        ],
+        [
+          "121:L10 flight0 step1",
+          2
+        ]
+      ],
+      "segments": [
+        [
+          "L05:0/right",
+          37
+        ],
+        [
+          "L05:0/centre",
+          36
+        ],
+        [
+          "L05:0/left",
+          36
+        ],
+        [
+          "L07:0/centre",
+          33
+        ],
+        [
+          "L07:0/left",
+          32
+        ],
+        [
+          "L02:0/left",
+          11
+        ],
+        [
+          "L02:0/centre",
+          10
+        ],
+        [
+          "L15:0/centre",
+          7
+        ],
+        [
+          "L15:0/left",
+          7
+        ],
+        [
+          "L01:1/left",
+          4
+        ],
+        [
+          "L01:1/centre",
+          2
+        ],
+        [
+          "L14:1/centre",
+          1
+        ],
+        [
+          "L14:1/left",
+          1
+        ],
+        [
+          "L14:1/right",
+          1
+        ],
+        [
+          "L15:0/right",
+          1
+        ],
+        [
+          "L14B:1/centre",
+          1
+        ],
+        [
+          "L14B:1/left",
+          1
+        ],
+        [
+          "L14B:1/right",
+          1
+        ]
+      ]
+    },
+    "WLD-05": {
+      "invalid_flat_samples": 360,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 328,
+        "NO_CENTRE_SUPPORT": 14,
+        "NO_FOOT_SUPPORT_0.22_0.0": 3,
+        "NO_FOOT_SUPPORT_0.0_-0.22": 1,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 14
+      },
+      "components": [
+        [
+          "terrain-site:surface",
+          279
+        ],
+        [
+          "-",
+          32
+        ],
+        [
+          "Bayed stair WLD-05 L09 step3",
+          10
+        ],
+        [
+          "7:Wall shack N.001",
+          5
+        ],
+        [
+          "57:Wall ore-west N.001",
+          5
+        ],
+        [
+          "65:Wall ore-east N",
+          5
+        ],
+        [
+          "9:Wall shack S",
+          3
+        ],
+        [
+          "11:Wall shack E",
+          3
+        ],
+        [
+          "106:Wall wash W",
+          3
+        ],
+        [
+          "21:Wall assay W.001",
+          2
+        ],
+        [
+          "20:Wall assay W",
+          2
+        ],
+        [
+          "30:Wall stores E.001",
+          2
+        ],
+        [
+          "29:Wall stores E",
+          2
+        ],
+        [
+          "107:Wall wash W.001",
+          2
+        ],
+        [
+          "56:Wall ore-west N",
+          2
+        ],
+        [
+          "66:Wall ore-east N.001",
+          2
+        ],
+        [
+          "Bayed stair WLD-05 L09 step2",
+          1
+        ]
+      ],
+      "segments": [
+        [
+          "L05:0/left",
+          59
+        ],
+        [
+          "L05:0/centre",
+          53
+        ],
+        [
+          "L05:0/right",
+          50
+        ],
+        [
+          "L08:1/centre",
+          47
+        ],
+        [
+          "L08:1/left",
+          45
+        ],
+        [
+          "L08:1/right",
+          44
+        ],
+        [
+          "L08:0/left",
+          5
+        ],
+        [
+          "L10:0/centre",
+          5
+        ],
+        [
+          "L10:0/right",
+          5
+        ],
+        [
+          "L11:1/left",
+          5
+        ],
+        [
+          "L12:0/left",
+          5
+        ],
+        [
+          "L13:1/centre",
+          5
+        ],
+        [
+          "L13:1/right",
+          5
+        ],
+        [
+          "L18:1/centre",
+          5
+        ],
+        [
+          "L18:1/right",
+          5
+        ],
+        [
+          "L04:0/left",
+          4
+        ],
+        [
+          "L02:0/right",
+          3
+        ],
+        [
+          "L03:0/left",
+          2
+        ],
+        [
+          "L03:0/right",
+          2
+        ],
+        [
+          "L08:0/centre",
+          2
+        ]
+      ]
+    },
+    "WLD-06": {
+      "invalid_flat_samples": 201,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 50,
+        "NO_CENTRE_SUPPORT": 151
+      },
+      "components": [
+        [
+          "-",
+          151
+        ],
+        [
+          "40:Wall fish N",
+          12
+        ],
+        [
+          "41:Wall fish N.001",
+          12
+        ],
+        [
+          "35:Wall net W.001",
+          7
+        ],
+        [
+          "28:Wall boathouse E.001",
+          5
+        ],
+        [
+          "3:Wall cottage-a S",
+          4
+        ],
+        [
+          "13:Wall cottage-b S",
+          4
+        ],
+        [
+          "44:Wall fish W",
+          2
+        ],
+        [
+          "45:Wall fish E",
+          2
+        ],
+        [
+          "23:Wall boathouse S",
+          1
+        ],
+        [
+          "24:Wall boathouse S.001",
+          1
+        ]
+      ],
+      "segments": [
+        [
+          "L07:1/centre",
+          21
+        ],
+        [
+          "L07:1/left",
+          21
+        ],
+        [
+          "L07:1/right",
+          21
+        ],
+        [
+          "L10:0/centre",
+          21
+        ],
+        [
+          "L10:0/left",
+          21
+        ],
+        [
+          "L10:0/right",
+          21
+        ],
+        [
+          "L08:1/left",
+          14
+        ],
+        [
+          "L09:0/left",
+          14
+        ],
+        [
+          "L14:1/right",
+          8
+        ],
+        [
+          "L12:0/left",
+          7
+        ],
+        [
+          "L15:0/right",
+          6
+        ],
+        [
+          "L18:0/left",
+          6
+        ],
+        [
+          "L11:0/right",
+          5
+        ],
+        [
+          "L02:0/right",
+          4
+        ],
+        [
+          "L03:0/left",
+          4
+        ],
+        [
+          "L15:0/centre",
+          2
+        ],
+        [
+          "L18:0/centre",
+          2
+        ],
+        [
+          "L14:0/left",
+          1
+        ],
+        [
+          "L15:0/left",
+          1
+        ],
+        [
+          "L18:0/right",
+          1
+        ]
+      ]
+    },
+    "WLD-07": {
+      "invalid_flat_samples": 22,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 16,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 6
+      },
+      "components": [
+        [
+          "-",
+          6
+        ],
+        [
+          "65:Wall ossuary N.001",
+          4
+        ],
+        [
+          "7:Wall chapel S.001",
+          2
+        ],
+        [
+          "6:Wall chapel S",
+          2
+        ],
+        [
+          "17:Wall cottage S.001",
+          2
+        ],
+        [
+          "16:Wall cottage S",
+          2
+        ],
+        [
+          "41:Wall west-stair S.001",
+          2
+        ],
+        [
+          "55:Wall east-stair S",
+          2
+        ]
+      ],
+      "segments": [
+        [
+          "L16:0/left",
+          4
+        ],
+        [
+          "L03:0/left",
+          2
+        ],
+        [
+          "L03:0/right",
+          2
+        ],
+        [
+          "L04:0/left",
+          2
+        ],
+        [
+          "L04:0/right",
+          2
+        ],
+        [
+          "L12:0/left",
+          2
+        ],
+        [
+          "L13:0/right",
+          2
+        ],
+        [
+          "L14:1/centre",
+          1
+        ],
+        [
+          "L14:1/left",
+          1
+        ],
+        [
+          "L14:1/right",
+          1
+        ],
+        [
+          "L15:0/centre",
+          1
+        ],
+        [
+          "L15:0/left",
+          1
+        ],
+        [
+          "L15:0/right",
+          1
+        ]
+      ]
+    },
+    "WLD-07-MORTUARY": {
+      "invalid_flat_samples": 46,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 40,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 6
+      },
+      "components": [
+        [
+          "131:Wall mort-hall S",
+          15
+        ],
+        [
+          "-",
+          6
+        ],
+        [
+          "134:Wall mort-hall E.002",
+          5
+        ],
+        [
+          "65:Wall ossuary N.001",
+          4
+        ],
+        [
+          "7:Wall chapel S.001",
+          2
+        ],
+        [
+          "6:Wall chapel S",
+          2
+        ],
+        [
+          "17:Wall cottage S.001",
+          2
+        ],
+        [
+          "16:Wall cottage S",
+          2
+        ],
+        [
+          "41:Wall west-stair S.001",
+          2
+        ],
+        [
+          "55:Wall east-stair S",
+          2
+        ],
+        [
+          "87:Wall mort-reception W.002",
+          2
+        ],
+        [
+          "86:Wall mort-reception W.001",
+          2
+        ]
+      ],
+      "segments": [
+        [
+          "mort-16:1/centre",
+          8
+        ],
+        [
+          "mort-16:1/left",
+          8
+        ],
+        [
+          "mort-16:1/right",
+          8
+        ],
+        [
+          "L16:0/left",
+          4
+        ],
+        [
+          "L03:0/left",
+          2
+        ],
+        [
+          "L03:0/right",
+          2
+        ],
+        [
+          "L04:0/left",
+          2
+        ],
+        [
+          "L04:0/right",
+          2
+        ],
+        [
+          "L12:0/left",
+          2
+        ],
+        [
+          "L13:0/right",
+          2
+        ],
+        [
+          "L14:1/centre",
+          1
+        ],
+        [
+          "L14:1/left",
+          1
+        ],
+        [
+          "L14:1/right",
+          1
+        ],
+        [
+          "L15:0/centre",
+          1
+        ],
+        [
+          "L15:0/left",
+          1
+        ],
+        [
+          "L15:0/right",
+          1
+        ]
+      ]
+    },
+    "WLD-08": {
+      "invalid_flat_samples": 787,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 374,
+        "NO_FOOT_SUPPORT_0.0_-0.22": 19,
+        "NO_CENTRE_SUPPORT": 348,
+        "NO_FOOT_SUPPORT_0.22_0.0": 8,
+        "NO_FOOT_SUPPORT_-0.22_0.0": 8,
+        "NO_FOOT_SUPPORT_0.0_0.22": 8,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 22
+      },
+      "components": [
+        [
+          "-",
+          413
+        ],
+        [
+          "96:Ceiling cap tunnel-n.003",
+          72
+        ],
+        [
+          "80:Ceiling cap tunnel",
+          51
+        ],
+        [
+          "84:Ceiling cap tunnel.004",
+          51
+        ],
+        [
+          "95:Ceiling cap tunnel-n.002",
+          51
+        ],
+        [
+          "terrain-site-1-0:surface",
+          51
+        ],
+        [
+          "terrain-site-0-0:surface",
+          20
+        ],
+        [
+          "87:Wall tunnel N.001",
+          12
+        ],
+        [
+          "99:Wall tunnel-n S",
+          10
+        ],
+        [
+          "81:Ceiling cap tunnel.001",
+          6
+        ],
+        [
+          "85:Ceiling cap tunnel.005",
+          6
+        ],
+        [
+          "74:Wall store S",
+          5
+        ],
+        [
+          "34:Wall mess S",
+          5
+        ],
+        [
+          "89:Wall tunnel S",
+          4
+        ],
+        [
+          "Opened stair shell Wall tunnel W",
+          4
+        ],
+        [
+          "142:L17 flight0 step2",
+          4
+        ],
+        [
+          "101:Wall tunnel-n E",
+          3
+        ],
+        [
+          "Opened stair shell Wall tunnel-n N",
+          3
+        ],
+        [
+          "86:Wall tunnel N",
+          3
+        ],
+        [
+          "171:L20 flight0 step2",
+          3
+        ]
+      ],
+      "segments": [
+        [
+          "L09:0/left",
+          46
+        ],
+        [
+          "L11:1/left",
+          46
+        ],
+        [
+          "L09:0/centre",
+          45
+        ],
+        [
+          "L11:1/centre",
+          45
+        ],
+        [
+          "L09:0/right",
+          44
+        ],
+        [
+          "L11:1/right",
+          44
+        ],
+        [
+          "L12:1/right",
+          38
+        ],
+        [
+          "L13:0/centre",
+          35
+        ],
+        [
+          "L13:0/left",
+          35
+        ],
+        [
+          "L13:0/right",
+          35
+        ],
+        [
+          "L03:1/left",
+          31
+        ],
+        [
+          "L06:1/right",
+          31
+        ],
+        [
+          "L12:1/centre",
+          24
+        ],
+        [
+          "L16:0/centre",
+          24
+        ],
+        [
+          "L16:0/right",
+          24
+        ],
+        [
+          "L16:0/left",
+          23
+        ],
+        [
+          "L03:0/left",
+          18
+        ],
+        [
+          "L06:0/right",
+          18
+        ],
+        [
+          "L19:0/right",
+          18
+        ],
+        [
+          "L12:1/left",
+          16
+        ]
+      ]
+    },
+    "WLD-09": {
+      "invalid_flat_samples": 772,
+      "reasons": {
+        "NO_FOOT_SUPPORT_0.0_0.22": 3,
+        "PHYSICAL_COMPONENT": 301,
+        "NO_CENTRE_SUPPORT": 441,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 26,
+        "NO_FOOT_SUPPORT_0.22_0.0": 1
+      },
+      "components": [
+        [
+          "-",
+          471
+        ],
+        [
+          "terrain-site-0-1:surface",
+          241
+        ],
+        [
+          "6:Wall control S.001",
+          17
+        ],
+        [
+          "122:L07 flight0 step2",
+          10
+        ],
+        [
+          "158:L09 flight0 step2",
+          7
+        ],
+        [
+          "25:Wall west-stair S.001",
+          6
+        ],
+        [
+          "75:Wall gallery S.001",
+          6
+        ],
+        [
+          "Rebuilt stair WLD-09 L18 flight1 part1",
+          4
+        ],
+        [
+          "15:Wall office E.001",
+          3
+        ],
+        [
+          "283:L14 flight0 step22",
+          3
+        ],
+        [
+          "284:L14 flight0 step23",
+          2
+        ],
+        [
+          "Opened stair shell Wall turbine S.001",
+          1
+        ],
+        [
+          "55:Wall turbine N.001",
+          1
+        ]
+      ],
+      "segments": [
+        [
+          "L10:1/centre",
+          97
+        ],
+        [
+          "L10:1/left",
+          97
+        ],
+        [
+          "L10:1/right",
+          97
+        ],
+        [
+          "L10:0/right",
+          49
+        ],
+        [
+          "L10:0/centre",
+          48
+        ],
+        [
+          "L10:0/left",
+          48
+        ],
+        [
+          "L02:0/centre",
+          30
+        ],
+        [
+          "L02:0/right",
+          30
+        ],
+        [
+          "L01:1/centre",
+          29
+        ],
+        [
+          "L01:1/left",
+          29
+        ],
+        [
+          "L01:1/right",
+          29
+        ],
+        [
+          "L01:0/centre",
+          25
+        ],
+        [
+          "L01:0/left",
+          25
+        ],
+        [
+          "L01:0/right",
+          25
+        ],
+        [
+          "L02:0/left",
+          23
+        ],
+        [
+          "L03:0/left",
+          14
+        ],
+        [
+          "L08:1/right",
+          8
+        ],
+        [
+          "L08:1/centre",
+          7
+        ],
+        [
+          "L06:1/right",
+          6
+        ],
+        [
+          "L08:0/centre",
+          5
+        ]
+      ]
+    },
+    "WLD-10": {
+      "invalid_flat_samples": 457,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 322,
+        "NO_CENTRE_SUPPORT": 131,
+        "NO_FOOT_SUPPORT_0.22_0.0": 1,
+        "NO_FOOT_SUPPORT_0.0_-0.22": 1,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 2
+      },
+      "components": [
+        [
+          "terrain-site-1-0:surface",
+          142
+        ],
+        [
+          "-",
+          135
+        ],
+        [
+          "51:Wall north N.001",
+          17
+        ],
+        [
+          "16:Wall west S.001",
+          13
+        ],
+        [
+          "13:Wall west N.001",
+          13
+        ],
+        [
+          "24:Wall east N",
+          13
+        ],
+        [
+          "27:Wall east S",
+          13
+        ],
+        [
+          "32:Wall east E.001",
+          13
+        ],
+        [
+          "114:Wall catacombs N.001",
+          11
+        ],
+        [
+          "177:L16 flight0 step18",
+          7
+        ],
+        [
+          "180:L16 flight0 step21",
+          6
+        ],
+        [
+          "199:L19 flight0 step2",
+          6
+        ],
+        [
+          "62:Wall south N.001",
+          5
+        ],
+        [
+          "55:Wall north S.001",
+          5
+        ],
+        [
+          "56:Wall north S.002",
+          5
+        ],
+        [
+          "63:Wall south N.002",
+          5
+        ],
+        [
+          "203:L19 flight0 step6",
+          5
+        ],
+        [
+          "179:L16 flight0 step20",
+          4
+        ],
+        [
+          "175:L16 flight0 step16",
+          4
+        ],
+        [
+          "205:L19 flight0 step8",
+          4
+        ]
+      ],
+      "segments": [
+        [
+          "L18:0/centre",
+          29
+        ],
+        [
+          "L18:0/left",
+          29
+        ],
+        [
+          "L18:0/right",
+          29
+        ],
+        [
+          "L05:1/left",
+          25
+        ],
+        [
+          "L06:0/left",
+          25
+        ],
+        [
+          "L17:1/centre",
+          17
+        ],
+        [
+          "L17:1/left",
+          17
+        ],
+        [
+          "L17:1/right",
+          17
+        ],
+        [
+          "L20:0/left",
+          17
+        ],
+        [
+          "L05:1/centre",
+          16
+        ],
+        [
+          "L11:0/left",
+          16
+        ],
+        [
+          "L06:0/centre",
+          15
+        ],
+        [
+          "L20:0/centre",
+          15
+        ],
+        [
+          "L04:0/left",
+          14
+        ],
+        [
+          "L07:1/left",
+          14
+        ],
+        [
+          "L11:0/centre",
+          14
+        ],
+        [
+          "L20:0/right",
+          12
+        ],
+        [
+          "L05:1/right",
+          11
+        ],
+        [
+          "L11:0/right",
+          11
+        ],
+        [
+          "L13:1/left",
+          11
+        ]
+      ]
+    },
+    "WLD-11": {
+      "invalid_flat_samples": 212,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 148,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 5,
+        "NO_CENTRE_SUPPORT": 59
+      },
+      "components": [
+        [
+          "-",
+          64
+        ],
+        [
+          "13:Wall house-b W.001",
+          24
+        ],
+        [
+          "22:Wall chapel E.001",
+          19
+        ],
+        [
+          "29:Wall warehouse W.001",
+          19
+        ],
+        [
+          "32:Wall warehouse E.001",
+          19
+        ],
+        [
+          "39:Wall shack W.001",
+          19
+        ],
+        [
+          "26:Wall warehouse N",
+          14
+        ],
+        [
+          "5:Wall house-a E",
+          11
+        ],
+        [
+          "12:Wall house-b W",
+          11
+        ],
+        [
+          "46:Wall pump W",
+          8
+        ],
+        [
+          "11:Wall house-b S",
+          3
+        ],
+        [
+          "52:L02 flight0 step1",
+          1
+        ]
+      ],
+      "segments": [
+        [
+          "L03:0/centre",
+          30
+        ],
+        [
+          "L03:0/right",
+          28
+        ],
+        [
+          "L14:0/right",
+          27
+        ],
+        [
+          "L09:0/right",
+          15
+        ],
+        [
+          "L10:0/left",
+          15
+        ],
+        [
+          "L11:1/left",
+          15
+        ],
+        [
+          "L12:0/left",
+          15
+        ],
+        [
+          "L07:0/left",
+          10
+        ],
+        [
+          "L08:0/right",
+          10
+        ],
+        [
+          "L14:0/centre",
+          8
+        ],
+        [
+          "L05:1/left",
+          7
+        ],
+        [
+          "L06:0/left",
+          7
+        ],
+        [
+          "L01:1/left",
+          4
+        ],
+        [
+          "L09:0/centre",
+          4
+        ],
+        [
+          "L10:0/centre",
+          4
+        ],
+        [
+          "L11:1/centre",
+          4
+        ],
+        [
+          "L12:0/centre",
+          4
+        ],
+        [
+          "L01:1/centre",
+          2
+        ],
+        [
+          "L04:0/left",
+          1
+        ],
+        [
+          "L07:0/centre",
+          1
+        ]
+      ]
+    },
+    "WLD-12": {
+      "invalid_flat_samples": 96,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 92,
+        "NO_CENTRE_SUPPORT": 3,
+        "NO_FOOT_SUPPORT_-0.22_0.0": 1
+      },
+      "components": [
+        [
+          "38:Wall store W",
+          42
+        ],
+        [
+          "30:Wall coach-b E.001",
+          12
+        ],
+        [
+          "25:Wall coach-b S",
+          9
+        ],
+        [
+          "16:Wall coach-a W",
+          7
+        ],
+        [
+          "35:Wall store S",
+          6
+        ],
+        [
+          "7:Wall signal E",
+          5
+        ],
+        [
+          "-",
+          4
+        ],
+        [
+          "5:Wall signal S",
+          3
+        ],
+        [
+          "3:Wall signal N.001",
+          3
+        ],
+        [
+          "63:Wall refuge S.001",
+          3
+        ],
+        [
+          "20:Wall coach-a E.001",
+          1
+        ],
+        [
+          "27:Wall coach-b W.001",
+          1
+        ]
+      ],
+      "segments": [
+        [
+          "L14:0/left",
+          17
+        ],
+        [
+          "L14:0/centre",
+          16
+        ],
+        [
+          "L14:0/right",
+          16
+        ],
+        [
+          "L06:1/left",
+          8
+        ],
+        [
+          "L04:0/centre",
+          7
+        ],
+        [
+          "L04:0/left",
+          7
+        ],
+        [
+          "L04:0/right",
+          7
+        ],
+        [
+          "L03:1/right",
+          5
+        ],
+        [
+          "L02:0/right",
+          3
+        ],
+        [
+          "L07:1/right",
+          3
+        ],
+        [
+          "L13:1/right",
+          3
+        ],
+        [
+          "L05:0/right",
+          1
+        ],
+        [
+          "L07:0/right",
+          1
+        ],
+        [
+          "L08:0/left",
+          1
+        ],
+        [
+          "L09:1/left",
+          1
+        ]
+      ]
+    },
+    "WLD-13": {
+      "invalid_flat_samples": 319,
+      "reasons": {
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 22,
+        "PHYSICAL_COMPONENT": 289,
+        "NO_FOOT_SUPPORT_-0.22_0.0": 5,
+        "NO_FOOT_SUPPORT_0.22_0.0": 2,
+        "FOOT_HEIGHT_SPREAD": 1
+      },
+      "components": [
+        [
+          "terrain-site-0-0:surface",
+          224
+        ],
+        [
+          "-",
+          30
+        ],
+        [
+          "128:L19 flight0 step2",
+          21
+        ],
+        [
+          "74:Wall bunk W",
+          6
+        ],
+        [
+          "82:Wall mess W.001",
+          6
+        ],
+        [
+          "129:L19 flight0 step3",
+          5
+        ],
+        [
+          "41:Wall wash S.001",
+          3
+        ],
+        [
+          "40:Wall wash S",
+          3
+        ],
+        [
+          "130:L19 flight0 step4",
+          3
+        ],
+        [
+          "61:Wall stores N",
+          3
+        ],
+        [
+          "50:Wall office N.001",
+          3
+        ],
+        [
+          "11:Wall processing W.001",
+          2
+        ],
+        [
+          "131:L19 flight0 step5",
+          2
+        ],
+        [
+          "127:L19 flight0 step1",
+          2
+        ],
+        [
+          "14:Wall processing E.001",
+          2
+        ],
+        [
+          "3:Wall processing N.001",
+          2
+        ],
+        [
+          "132:L19 flight0 step6",
+          1
+        ],
+        [
+          "44:Wall wash W.001",
+          1
+        ]
+      ],
+      "segments": [
+        [
+          "L17:1/centre",
+          41
+        ],
+        [
+          "L17:1/right",
+          41
+        ],
+        [
+          "L18:0/centre",
+          41
+        ],
+        [
+          "L18:0/right",
+          41
+        ],
+        [
+          "L17:1/left",
+          37
+        ],
+        [
+          "L18:0/left",
+          37
+        ],
+        [
+          "L05:1/left",
+          15
+        ],
+        [
+          "L05:1/centre",
+          9
+        ],
+        [
+          "L02:0/right",
+          5
+        ],
+        [
+          "L09:0/centre",
+          5
+        ],
+        [
+          "L09:0/right",
+          5
+        ],
+        [
+          "L11:1/left",
+          5
+        ],
+        [
+          "L02:0/centre",
+          4
+        ],
+        [
+          "L05:1/right",
+          4
+        ],
+        [
+          "L03:0/left",
+          3
+        ],
+        [
+          "L03:0/right",
+          3
+        ],
+        [
+          "L11:1/centre",
+          3
+        ],
+        [
+          "L12:1/right",
+          3
+        ],
+        [
+          "L13:0/right",
+          3
+        ],
+        [
+          "L06:0/left",
+          2
+        ]
+      ]
+    },
+    "WLD-14": {
+      "invalid_flat_samples": 142,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 105,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 7,
+        "NO_CENTRE_SUPPORT": 30
+      },
+      "components": [
+        [
+          "-",
+          37
+        ],
+        [
+          "195:route-20 flight6 step1",
+          13
+        ],
+        [
+          "190:route-20 flight1 step1",
+          10
+        ],
+        [
+          "194:route-20 flight5 step1",
+          9
+        ],
+        [
+          "53:Wall stairs W.001",
+          7
+        ],
+        [
+          "55:Wall stairs E",
+          7
+        ],
+        [
+          "157:route-10 flight0 step14",
+          5
+        ],
+        [
+          "169:route-14 flight0 step5",
+          5
+        ],
+        [
+          "170:route-14 flight0 step6",
+          5
+        ],
+        [
+          "192:route-20 flight3 step1",
+          5
+        ],
+        [
+          "158:route-10 flight0 step15",
+          4
+        ],
+        [
+          "196:route-20 flight7 step1",
+          4
+        ],
+        [
+          "193:route-20 flight4 step1",
+          4
+        ],
+        [
+          "191:route-20 flight2 step1",
+          4
+        ],
+        [
+          "156:route-10 flight0 step13",
+          3
+        ],
+        [
+          "168:route-14 flight0 step4",
+          3
+        ],
+        [
+          "47:Wall store E.001",
+          2
+        ],
+        [
+          "159:route-10 flight0 step16",
+          2
+        ],
+        [
+          "70:Wall study E",
+          2
+        ],
+        [
+          "171:route-14 flight0 step7",
+          2
+        ]
+      ],
+      "segments": [
+        [
+          "route-17:1/centre",
+          18
+        ],
+        [
+          "route-17:1/left",
+          18
+        ],
+        [
+          "route-17:1/right",
+          9
+        ],
+        [
+          "route-15:0/right",
+          8
+        ],
+        [
+          "route-09:0/right",
+          7
+        ],
+        [
+          "route-11:0/right",
+          7
+        ],
+        [
+          "route-13:0/right",
+          7
+        ],
+        [
+          "route-09:0/left",
+          6
+        ],
+        [
+          "route-11:0/left",
+          6
+        ],
+        [
+          "route-18:0/centre",
+          6
+        ],
+        [
+          "route-09:0/centre",
+          5
+        ],
+        [
+          "route-11:0/centre",
+          5
+        ],
+        [
+          "route-13:0/centre",
+          5
+        ],
+        [
+          "route-13:0/left",
+          5
+        ],
+        [
+          "route-15:0/centre",
+          5
+        ],
+        [
+          "route-15:0/left",
+          5
+        ],
+        [
+          "route-17:0/centre",
+          4
+        ],
+        [
+          "route-18:0/left",
+          4
+        ],
+        [
+          "route-18:0/right",
+          4
+        ],
+        [
+          "route-17:0/left",
+          3
+        ]
+      ]
+    },
+    "WLD-15": {
+      "invalid_flat_samples": 105,
+      "reasons": {
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 19,
+        "PHYSICAL_COMPONENT": 86
+      },
+      "components": [
+        [
+          "16:Wall processing E",
+          30
+        ],
+        [
+          "-",
+          19
+        ],
+        [
+          "6:Wall processing N.001",
+          12
+        ],
+        [
+          "138:route-17 flight0 step2",
+          11
+        ],
+        [
+          "10:Wall processing S.002",
+          8
+        ],
+        [
+          "27:Wall mess S.001",
+          4
+        ],
+        [
+          "100:route-13 flight0 step2",
+          4
+        ],
+        [
+          "125:route-14 flight0 step10",
+          4
+        ],
+        [
+          "123:route-14 flight0 step8",
+          4
+        ],
+        [
+          "126:route-14 flight0 step11",
+          4
+        ],
+        [
+          "158:route-19 flight0 step2",
+          4
+        ],
+        [
+          "19:Wall galley S",
+          1
+        ]
+      ],
+      "segments": [
+        [
+          "route-12:0/right",
+          13
+        ],
+        [
+          "route-12:0/centre",
+          10
+        ],
+        [
+          "route-12:0/left",
+          9
+        ],
+        [
+          "route-05:0/centre",
+          7
+        ],
+        [
+          "route-05:0/right",
+          7
+        ],
+        [
+          "route-11:0/centre",
+          7
+        ],
+        [
+          "route-11:0/left",
+          7
+        ],
+        [
+          "route-11:0/right",
+          7
+        ],
+        [
+          "route-13:2/centre",
+          4
+        ],
+        [
+          "route-13:2/right",
+          4
+        ],
+        [
+          "route-15:0/centre",
+          4
+        ],
+        [
+          "route-15:0/left",
+          4
+        ],
+        [
+          "route-15:0/right",
+          4
+        ],
+        [
+          "route-17:0/centre",
+          4
+        ],
+        [
+          "route-17:0/left",
+          4
+        ],
+        [
+          "route-19:0/centre",
+          4
+        ],
+        [
+          "route-19:0/right",
+          4
+        ],
+        [
+          "route-06:0/right",
+          1
+        ],
+        [
+          "route-07:0/left",
+          1
+        ]
+      ]
+    },
+    "WLD-16": {
+      "invalid_flat_samples": 263,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 253,
+        "FOOT_HEIGHT_SPREAD": 2,
+        "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+        "NO_FOOT_SUPPORT_0.0_0.22": 3,
+        "NO_FOOT_SUPPORT_0.22_0.0": 2
+      },
+      "components": [
+        [
+          "0:Authored roadside terrain",
+          211
+        ],
+        [
+          "28:Wall laundry E",
+          13
+        ],
+        [
+          "-",
+          10
+        ],
+        [
+          "25:Wall laundry S.001",
+          9
+        ],
+        [
+          "90:Wall room8 W",
+          8
+        ],
+        [
+          "89:Wall room8 S",
+          5
+        ],
+        [
+          "21:Wall laundry N",
+          2
+        ],
+        [
+          "22:Wall laundry N.001",
+          2
+        ],
+        [
+          "7:Wall office S.001",
+          1
+        ],
+        [
+          "6:Wall office S",
+          1
+        ],
+        [
+          "91:Wall room8 W.001",
+          1
+        ]
+      ],
+      "segments": [
+        [
+          "route-13:1/right",
+          55
+        ],
+        [
+          "route-14:1/left",
+          49
+        ],
+        [
+          "route-13:0/right",
+          25
+        ],
+        [
+          "route-13:0/left",
+          24
+        ],
+        [
+          "route-13:1/left",
+          17
+        ],
+        [
+          "route-14:0/left",
+          17
+        ],
+        [
+          "route-12:0/left",
+          16
+        ],
+        [
+          "route-12:0/centre",
+          12
+        ],
+        [
+          "route-12:0/right",
+          12
+        ],
+        [
+          "route-14:0/right",
+          9
+        ],
+        [
+          "route-10:0/right",
+          8
+        ],
+        [
+          "route-14:1/right",
+          7
+        ],
+        [
+          "route-10:0/centre",
+          6
+        ],
+        [
+          "route-10:0/left",
+          4
+        ],
+        [
+          "route-02:0/left",
+          1
+        ],
+        [
+          "route-02:0/right",
+          1
+        ]
+      ]
+    },
+    "WLD-17": {
+      "invalid_flat_samples": 93,
+      "reasons": {
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 22,
+        "NO_FOOT_SUPPORT_0.0_-0.22": 2,
+        "PHYSICAL_COMPONENT": 69
+      },
+      "components": [
+        [
+          "-",
+          24
+        ],
+        [
+          "119:Wall records W",
+          6
+        ],
+        [
+          "117:Wall records S",
+          6
+        ],
+        [
+          "88:Wall lowgallery N.001",
+          6
+        ],
+        [
+          "126:Wall pump S",
+          6
+        ],
+        [
+          "127:Wall pump E.001",
+          6
+        ],
+        [
+          "89:Wall lowgallery N.002",
+          6
+        ],
+        [
+          "87:Wall lowgallery N",
+          5
+        ],
+        [
+          "90:Wall lowgallery N.003",
+          5
+        ],
+        [
+          "Rebuilt stair WLD-17 route-11 flight0 part1",
+          4
+        ],
+        [
+          "Rebuilt stair WLD-17 route-12 flight0 part1",
+          4
+        ],
+        [
+          "163:route-10 flight0 step2",
+          3
+        ],
+        [
+          "10:Wall west E.002",
+          2
+        ],
+        [
+          "21:Wall east W.002",
+          2
+        ],
+        [
+          "83:Wall barracks E.001",
+          2
+        ],
+        [
+          "110:Wall plant W.002",
+          2
+        ],
+        [
+          "9:Wall west E.001",
+          1
+        ],
+        [
+          "20:Wall east W.001",
+          1
+        ],
+        [
+          "82:Wall barracks E",
+          1
+        ],
+        [
+          "109:Wall plant W.001",
+          1
+        ]
+      ],
+      "segments": [
+        [
+          "route-13:0/centre",
+          8
+        ],
+        [
+          "route-13:0/left",
+          8
+        ],
+        [
+          "route-13:0/right",
+          8
+        ],
+        [
+          "route-14:0/centre",
+          8
+        ],
+        [
+          "route-14:0/left",
+          8
+        ],
+        [
+          "route-14:0/right",
+          8
+        ],
+        [
+          "route-03:0/centre",
+          4
+        ],
+        [
+          "route-03:0/right",
+          4
+        ],
+        [
+          "route-10:0/centre",
+          4
+        ],
+        [
+          "route-10:0/left",
+          4
+        ],
+        [
+          "route-11:2/centre",
+          4
+        ],
+        [
+          "route-11:2/left",
+          4
+        ],
+        [
+          "route-12:2/centre",
+          4
+        ],
+        [
+          "route-12:2/left",
+          4
+        ],
+        [
+          "route-04:0/right",
+          2
+        ],
+        [
+          "route-05:0/left",
+          2
+        ],
+        [
+          "route-15:0/left",
+          2
+        ],
+        [
+          "route-15:0/right",
+          2
+        ],
+        [
+          "route-02:0/centre",
+          1
+        ],
+        [
+          "route-02:0/left",
+          1
+        ]
+      ]
+    },
+    "WLD-18": {
+      "invalid_flat_samples": 152,
+      "reasons": {
+        "PHYSICAL_COMPONENT": 116,
+        "NO_FOOT_SUPPORT_-0.22_0.0": 1,
+        "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 27,
+        "NO_CENTRE_SUPPORT": 7,
+        "NO_FOOT_SUPPORT_0.22_0.0": 1
+      },
+      "components": [
+        [
+          "1:Saved editor terrain WLD-18",
+          52
+        ],
+        [
+          "-",
+          36
+        ],
+        [
+          "Rebuilt stair WLD-18 route-14 flight1 part1",
+          11
+        ],
+        [
+          "288:route-18 flight0 step10",
+          7
+        ],
+        [
+          "289:route-18 flight0 step11",
+          7
+        ],
+        [
+          "286:route-18 flight0 step8",
+          7
+        ],
+        [
+          "197:route-08 flight0 step2",
+          4
+        ],
+        [
+          "4:Wall servicehouse N",
+          3
+        ],
+        [
+          "Rebuilt stair WLD-18 route-14 flight0 part1",
+          3
+        ],
+        [
+          "6:Wall servicehouse S.001",
+          2
+        ],
+        [
+          "5:Wall servicehouse S",
+          2
+        ],
+        [
+          "32:Wall shop S.001",
+          2
+        ],
+        [
+          "31:Wall shop S",
+          2
+        ],
+        [
+          "45:Wall exit E.001",
+          2
+        ],
+        [
+          "68:Wall west E.001",
+          2
+        ],
+        [
+          "67:Wall west E",
+          2
+        ],
+        [
+          "149:Wall crew E",
+          2
+        ],
+        [
+          "150:Wall crew E.001",
+          2
+        ],
+        [
+          "16:Wall head S.001",
+          1
+        ],
+        [
+          "15:Wall head S",
+          1
+        ]
+      ],
+      "segments": [
+        [
+          "route-07:0/left",
+          27
+        ],
+        [
+          "route-07:0/right",
+          26
+        ],
+        [
+          "route-12:0/left",
+          7
+        ],
+        [
+          "route-15:0/centre",
+          7
+        ],
+        [
+          "route-15:0/right",
+          7
+        ],
+        [
+          "route-17:0/centre",
+          7
+        ],
+        [
+          "route-17:0/left",
+          7
+        ],
+        [
+          "route-17:0/right",
+          7
+        ],
+        [
+          "route-11:0/left",
+          6
+        ],
+        [
+          "route-08:0/centre",
+          4
+        ],
+        [
+          "route-08:0/right",
+          4
+        ],
+        [
+          "route-09:0/right",
+          4
+        ],
+        [
+          "route-14:2/centre",
+          4
+        ],
+        [
+          "route-14:2/left",
+          4
+        ],
+        [
+          "route-14:4/centre",
+          4
+        ],
+        [
+          "route-14:4/left",
+          4
+        ],
+        [
+          "route-02:0/left",
+          2
+        ],
+        [
+          "route-02:0/right",
+          2
+        ],
+        [
+          "route-05:0/left",
+          2
+        ],
+        [
+          "route-05:0/right",
+          2
+        ]
+      ]
+    }
+  },
+  "source_bindings": {
+    "ACADEMY": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\academy\\closed-floors.hcs2",
+      "sha256": "5cb1dbeb02f8a08ca2c8dfe174246034610526e66128a95476d4307abfdaab41"
+    },
+    "ASYLUM": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\asylum\\closed-floors.hcs2",
+      "sha256": "5306941b5135d5dc5d6a43ec84b0ce31c3cfca8c40e2aaf2be1995675d0f098e"
+    },
+    "CHURCH": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\church\\closed-floors.hcs2",
+      "sha256": "eda5a20f20c7a803e2caa75bfc706a0a8e21108a71812eb4f6b50be1210250fd"
+    },
+    "COLLEGE": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\college\\closed-floors.hcs2",
+      "sha256": "a0abc59c7784c618bb0881ec946e548854df076da6269463ea560f690f1a7295"
+    },
+    "FARMHOUSE": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\farmhouse\\closed-floors.hcs2",
+      "sha256": "106153346b7697e77b0f86042be61345c127a01a9247e5c5d88aa7b090a7cee8"
+    },
+    "MANSION": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\mansion\\closed-floors.hcs2",
+      "sha256": "ac058d9645730ed6d118bbe1e3567a20cc584807e0de273717e17b88546eb3f1"
+    },
+    "PRISON": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\prison\\closed-floors.hcs2",
+      "sha256": "5f0445f96cb144c20c36bd83189e99eef79345846817a2543dff5c413dc7e7fa"
+    },
+    "SCHOOL": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\school\\closed-floors.hcs2",
+      "sha256": "d98772e3780cb28a1e16f326231d12752e65e8fff91d5527c7819ddc83cd097f"
+    },
+    "WLD-03": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-terrain-pass\\assemblies\\wld-03\\benched-terrain.hcs2",
+      "sha256": "fc4b409a8ef03a5326c73ea98d95acf4823f96b010db200255931c1ac8443ab0"
+    },
+    "WLD-04": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-connection-pass\\wld-04\\connected-stairs.hcs2",
+      "sha256": "766d059f61672303843b9586bccefd4f584237c156cb37f89470d2c962596a85"
+    },
+    "WLD-05": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-connection-pass\\wld-05\\connected-stairs.hcs2",
+      "sha256": "f9f6fa9a23a62ae5a00fccdfbad9828d495d96c0385c9b14d9a6e76f3069d18a"
+    },
+    "WLD-06": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-opening-pass\\wld-06\\opened-stairs.hcs2",
+      "sha256": "81a1c3cc7fa52ab16bb34e26084f149c964ef25d25d2ee997a9be886909e1956"
+    },
+    "WLD-07": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\wld-07\\closed-floors.hcs2",
+      "sha256": "cc908857dd10a717c0a729fc823d0f90241200a1d96c1e314cc2b4db61980524"
+    },
+    "WLD-08": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-opening-pass\\wld-08\\opened-stairs.hcs2",
+      "sha256": "7c05868ea7e2e2bd70c9edbdc689b3285511f9017f030237fa98b484b0f30e99"
+    },
+    "WLD-09": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-bay-pass\\wld-09\\bayed-stairs.hcs2",
+      "sha256": "50fbd8f405d342276be9ed7dce83fd384133c008f68c86b524bbbccca1dd2c87"
+    },
+    "WLD-10": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\wld-10\\closed-floors.hcs2",
+      "sha256": "9e2122cdd84950ba1fec8d3f25d3428e33e49608e2d79d2d3d5f27efc813cd17"
+    },
+    "WLD-11": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-landing-pass\\wld-11\\supported-stairs.hcs2",
+      "sha256": "a9a9f4ef211b8bdcd3d2118309bdd06ea673bb53e26c9348157fcba0176b4742"
+    },
+    "WLD-12": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-terrain-pass\\assemblies\\wld-12\\benched-terrain.hcs2",
+      "sha256": "f64a770b8d4f58f52bc3b62cdc9cc43994add98312271235eedf0589bd50aa6a"
+    },
+    "WLD-13": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-opening-pass\\wld-13\\opened-stairs.hcs2",
+      "sha256": "a619ca847615a001e3a6af167c715e166209650d9d9871cdb5bfa192627fe664"
+    },
+    "WLD-14": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\wld-14\\closed-floors.hcs2",
+      "sha256": "8b1718fdb15ac04bf780dabfd8d82ad9057aef0bc1fc0ab7eb8ac39bf152829a"
+    },
+    "WLD-15": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-connection-pass\\wld-15\\connected-stairs.hcs2",
+      "sha256": "65ea86d5f1c611f2d35cd6c1198e57dca62302302e4b4ba401be50e47640c21c"
+    },
+    "WLD-16": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\wld-16\\closed-floors.hcs2",
+      "sha256": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a"
+    },
+    "WLD-17": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-connection-pass\\wld-17\\connected-stairs.hcs2",
+      "sha256": "3a7f0af68702dcfaa0244a777020b56464d13be376a87c6154995fef1751c32f"
+    },
+    "WLD-18": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\stair-connection-pass\\wld-18\\connected-stairs.hcs2",
+      "sha256": "022550b758eb5fac8e443659de182827d1aa5e5230408c81dbcf0c4dd0324346"
+    },
+    "WLD-07-MORTUARY": {
+      "path": "C:\\Users\\Admin\\.codex\\worktrees\\castle-textiles\\The-Beckenburg-Project\\development\\levels\\rebuild\\floor-closure-pass\\wld-07-mortuary\\closed-floors.hcs2",
+      "sha256": "2ae50247d945d2c6d5b3b60aedbfdfea2b9b27975cfae041648f0ba80243aa5d"
+    }
+  },
+  "inputs_sha256": "f868ab8663fec4d5e6372cd86d267dd50cb3d3c859b33eb73c46fe40f21a6c09",
+  "names_sha256": "399f760289fd830fa933b89f0867b81189e770b33171fe02a9a608be987df78f",
+  "contacts_sha256": "5057295d26db2840f775a73fca141267b30047bfd788e909c540e9fd699e0e23",
+  "diagnostic_sha256": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+  "kernel_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+  "driver_sha256": "98150c661b669006f7a745d57a66a427b6e9fdc9db807e756378c8ef0889dbb3",
+  "scope": "Every after_valid=false flat sample from final110409comparison; exact native actual-support-height pose diagnoses, no route or tolerance changes. Clear stairs do not prove remaining flat lanes or arbitrary movement."
+}

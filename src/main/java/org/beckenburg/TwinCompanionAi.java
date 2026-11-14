@@ -21,7 +21,7 @@ public final class TwinCompanionAi {
     private Intent intent=Intent.PATROL;
     private double targetX,targetZ;
     private int targetRoom,goalUntil,nextGoalTick,lastStepTick=-1,lastActionTick=-1000;
-    private int lastNoiseTick=-1000,noiseRoom=-1;
+    private int lastNoiseTick=-1000,noiseRoom=-1,noiseExpiryTick=-1000,noiseStrength=-1;
     private double noiseX,noiseZ;
     private int lastActivityTick=-1000;
     private boolean moved;
@@ -38,16 +38,42 @@ public final class TwinCompanionAi {
 
     public LanGhostSpatial.Pose pose(){return pose;}
     public Intent intent(){return intent;}
+    int pendingSoundExpiryTick(){return noiseExpiryTick;}
     public boolean moved(){return moved;}
     public int lastActivityTick(){return lastActivityTick;}
 
-    /** A real in-world acoustic event, not perpetual access to hunter locations. */
+    /** Legacy callers can still submit room-stationary source events. */
     public void heard(int room,double x,double z,LanGhostPursuit.Sound sound,int tick,MissionWeather.State weather){
+        if(room<0||room>=HouseMap.EXTRACTION_ROOM||!Double.isFinite(x+z))return;
+        heard(room,x,map.groundHeight(x,z,room),z,sound,tick,weather);
+    }
+    /** Host-authorized world-space sound. The independent Twin listens with
+     * its OWN live pose and the very same authored door state as human ghosts,
+     * not an omniscient shortcut through a shared gameplay-zone ID. */
+    public void heard(int room,double x,double sourceY,double z,
+                      LanGhostPursuit.Sound sound,int tick,MissionWeather.State weather){
+        heard(room,x,sourceY,z,sound,tick,weather,GhostSoundProfile.forSound(sound));
+    }
+    public void heard(int room,double x,double sourceY,double z,
+                      LanGhostPursuit.Sound sound,int tick,MissionWeather.State weather,
+                      GhostSoundProfile.Profile profile){
         Objects.requireNonNull(sound);
-        if(tick<0||!Double.isFinite(x)||!Double.isFinite(z)||room<0
-                ||room>=HouseMap.EXTRACTION_ROOM)return;
-        if(!LanAcoustics.audible(map,pose.room(),room,sound,Objects.requireNonNull(weather)))return;
-        lastNoiseTick=tick;
+        Objects.requireNonNull(profile);
+        if(tick<0||!Double.isFinite(x+sourceY+z)||room<0||
+            room>=HouseMap.EXTRACTION_ROOM)return;
+        if(!LanAcoustics.audibleAt(map,pose.room(),
+                new LevelDefinition.Vec(pose.x(),pose.y(),pose.z()),
+                room,new LevelDefinition.Vec(x,sourceY,z),
+                sound,Objects.requireNonNull(weather),profile))return;
+        int loss=LanAcoustics.costAt(map,pose.room(),
+            new LevelDefinition.Vec(pose.x(),pose.y(),pose.z()),
+            room,new LevelDefinition.Vec(x,sourceY,z));
+        int incoming=GhostSoundProfile.perceived(profile,loss);
+        if(tick<noiseExpiryTick&&!GhostSoundProfile.supersedes(
+                incoming,noiseStrength,Math.max(0,tick-lastNoiseTick)))return;
+        lastNoiseTick=tick;noiseStrength=incoming;
+        noiseExpiryTick=tick+(sound==LanGhostPursuit.Sound.CHAT
+            ?Math.min(70,profile.durationTicks()+14):70);
         noiseRoom=room;
         noiseX=x;noiseZ=z;
         nextGoalTick=Math.min(nextGoalTick,tick);
@@ -126,7 +152,7 @@ public final class TwinCompanionAi {
         return !map.traversable(pose.x(),pose.y(),pose.z());
     }
     private void chooseGoal(int tick,LanGhostSpatial.Pose sister){
-        boolean heard=tick-lastNoiseTick<70 && noiseRoom>=0;
+        boolean heard=tick<noiseExpiryTick && noiseRoom>=0;
         if(heard&&noiseRoom==pose.room()){
             intent=Intent.INVESTIGATE;
             targetRoom=pose.room();

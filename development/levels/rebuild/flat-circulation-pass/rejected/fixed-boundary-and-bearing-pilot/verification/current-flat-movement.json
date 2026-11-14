@@ -1,0 +1,2080 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "ACADEMY": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 18
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 34
+      },
+      "current_lanes": {
+        "samples": 8643,
+        "valid_standing": 7699,
+        "invalid_standing": 944,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 11,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 20,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+          "NO_CENTRE_SUPPORT": 825,
+          "NO_FOOT_SUPPORT_0.22_0.0": 14,
+          "PHYSICAL_COMPONENT": 55,
+          "FOOT_HEIGHT_SPREAD": 16
+        },
+        "physical_components": [
+          [
+            "terrain-site:surface",
+            14
+          ],
+          [
+            "500:L67 flight0 step2",
+            12
+          ],
+          [
+            "508:L67 flight0 step10",
+            7
+          ],
+          [
+            "509:L67 flight0 step11",
+            7
+          ],
+          [
+            "507:L67 flight0 step9",
+            7
+          ],
+          [
+            "501:L67 flight0 step3",
+            3
+          ],
+          [
+            "502:L67 flight0 step4",
+            2
+          ],
+          [
+            "504:L67 flight0 step6",
+            1
+          ],
+          [
+            "503:L67 flight0 step5",
+            1
+          ],
+          [
+            "499:L67 flight0 step1",
+            1
+          ]
+        ]
+      }
+    },
+    "ASYLUM": {
+      "before": {
+        "flat_links": 43,
+        "pass_both_directions": 15
+      },
+      "after": {
+        "flat_links": 43,
+        "pass_both_directions": 30
+      },
+      "current_lanes": {
+        "samples": 8715,
+        "valid_standing": 7586,
+        "invalid_standing": 1129,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 16,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 20,
+          "NO_CENTRE_SUPPORT": 967,
+          "FOOT_HEIGHT_SPREAD": 26,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "PHYSICAL_COMPONENT": 77,
+          "NO_FOOT_SUPPORT_0.22_0.0": 19
+        },
+        "physical_components": [
+          [
+            "550:L77 flight0 step19",
+            10
+          ],
+          [
+            "546:L77 flight0 step15",
+            9
+          ],
+          [
+            "548:L77 flight0 step17",
+            8
+          ],
+          [
+            "547:L77 flight0 step16",
+            8
+          ],
+          [
+            "549:L77 flight0 step18",
+            7
+          ],
+          [
+            "545:L77 flight0 step14",
+            7
+          ],
+          [
+            "543:L77 flight0 step12",
+            5
+          ],
+          [
+            "544:L77 flight0 step13",
+            4
+          ],
+          [
+            "542:L77 flight0 step11",
+            4
+          ],
+          [
+            "564:L78 flight0 step14",
+            4
+          ],
+          [
+            "562:L78 flight0 step12",
+            4
+          ],
+          [
+            "565:L78 flight0 step15",
+            4
+          ],
+          [
+            "541:L77 flight0 step10",
+            3
+          ]
+        ]
+      }
+    },
+    "CHURCH": {
+      "before": {
+        "flat_links": 28,
+        "pass_both_directions": 18
+      },
+      "after": {
+        "flat_links": 28,
+        "pass_both_directions": 20
+      },
+      "current_lanes": {
+        "samples": 3783,
+        "valid_standing": 3077,
+        "invalid_standing": 706,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 7,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "NO_FOOT_SUPPORT_0.22_0.0": 5,
+          "NO_CENTRE_SUPPORT": 611,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 26,
+          "PHYSICAL_COMPONENT": 42,
+          "FOOT_HEIGHT_SPREAD": 11
+        },
+        "physical_components": [
+          [
+            "360:level_blockout_confessional_screen.001",
+            21
+          ],
+          [
+            "320:L33 flight0 step15",
+            7
+          ],
+          [
+            "319:L33 flight0 step14",
+            7
+          ],
+          [
+            "321:L33 flight0 step16",
+            5
+          ],
+          [
+            "322:L33 flight0 step17",
+            2
+          ]
+        ]
+      }
+    },
+    "COLLEGE": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 24
+      },
+      "current_lanes": {
+        "samples": 8967,
+        "valid_standing": 8281,
+        "invalid_standing": 686,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 9,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 41,
+          "NO_CENTRE_SUPPORT": 478,
+          "NO_FOOT_SUPPORT_0.22_0.0": 2,
+          "FOOT_HEIGHT_SPREAD": 22,
+          "PHYSICAL_COMPONENT": 131
+        },
+        "physical_components": [
+          [
+            "643:L82 flight0 step15",
+            15
+          ],
+          [
+            "644:L82 flight0 step16",
+            10
+          ],
+          [
+            "642:L82 flight0 step14",
+            9
+          ],
+          [
+            "641:L82 flight0 step13",
+            7
+          ],
+          [
+            "657:L84 flight0 step7",
+            7
+          ],
+          [
+            "659:L84 flight0 step9",
+            7
+          ],
+          [
+            "623:L81 flight0 step15",
+            6
+          ],
+          [
+            "655:L84 flight0 step5",
+            6
+          ],
+          [
+            "590:L80 flight0 step2",
+            5
+          ],
+          [
+            "645:L82 flight0 step17",
+            4
+          ],
+          [
+            "640:L82 flight0 step12",
+            4
+          ],
+          [
+            "681:L85 flight0 step14",
+            4
+          ],
+          [
+            "682:L85 flight0 step15",
+            4
+          ],
+          [
+            "679:L85 flight0 step12",
+            4
+          ],
+          [
+            "628:L81 flight0 step20",
+            3
+          ],
+          [
+            "627:L81 flight0 step19",
+            3
+          ],
+          [
+            "626:L81 flight0 step18",
+            3
+          ],
+          [
+            "625:L81 flight0 step17",
+            3
+          ],
+          [
+            "624:L81 flight0 step16",
+            3
+          ],
+          [
+            "622:L81 flight0 step14",
+            3
+          ],
+          [
+            "648:L82 flight0 step20",
+            3
+          ],
+          [
+            "647:L82 flight0 step19",
+            3
+          ],
+          [
+            "646:L82 flight0 step18",
+            3
+          ],
+          [
+            "607:L80 flight0 step19",
+            2
+          ],
+          [
+            "601:L80 flight0 step13",
+            2
+          ]
+        ]
+      }
+    },
+    "FARMHOUSE": {
+      "before": {
+        "flat_links": 33,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 33,
+        "pass_both_directions": 22
+      },
+      "current_lanes": {
+        "samples": 4410,
+        "valid_standing": 4044,
+        "invalid_standing": 366,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 8,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 6,
+          "NO_FOOT_SUPPORT_0.22_0.0": 8,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 36,
+          "NO_CENTRE_SUPPORT": 170,
+          "FOOT_HEIGHT_SPREAD": 21,
+          "PHYSICAL_COMPONENT": 117
+        },
+        "physical_components": [
+          [
+            "333:L34 flight0 step12",
+            14
+          ],
+          [
+            "334:L34 flight0 step13",
+            12
+          ],
+          [
+            "357:L36 flight0 step2",
+            12
+          ],
+          [
+            "332:L34 flight0 step11",
+            8
+          ],
+          [
+            "terrain-site:surface",
+            8
+          ],
+          [
+            "335:L34 flight0 step14",
+            6
+          ],
+          [
+            "338:L34 flight0 step17",
+            5
+          ],
+          [
+            "337:L34 flight0 step16",
+            5
+          ],
+          [
+            "336:L34 flight0 step15",
+            5
+          ],
+          [
+            "329:L34 flight0 step8",
+            5
+          ],
+          [
+            "330:L34 flight0 step9",
+            5
+          ],
+          [
+            "331:L34 flight0 step10",
+            4
+          ],
+          [
+            "328:L34 flight0 step7",
+            3
+          ],
+          [
+            "358:L36 flight0 step3",
+            3
+          ],
+          [
+            "359:L36 flight0 step4",
+            3
+          ],
+          [
+            "360:L36 flight0 step5",
+            3
+          ],
+          [
+            "361:L36 flight0 step6",
+            3
+          ],
+          [
+            "362:L36 flight0 step7",
+            3
+          ],
+          [
+            "363:L36 flight0 step8",
+            3
+          ],
+          [
+            "364:L36 flight0 step9",
+            3
+          ],
+          [
+            "327:L34 flight0 step6",
+            2
+          ],
+          [
+            "326:L34 flight0 step5",
+            1
+          ],
+          [
+            "356:L36 flight0 step1",
+            1
+          ]
+        ]
+      }
+    },
+    "MANSION": {
+      "before": {
+        "flat_links": 45,
+        "pass_both_directions": 23
+      },
+      "after": {
+        "flat_links": 45,
+        "pass_both_directions": 32
+      },
+      "current_lanes": {
+        "samples": 7926,
+        "valid_standing": 6648,
+        "invalid_standing": 1278,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 12,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 23,
+          "NO_CENTRE_SUPPORT": 1074,
+          "FOOT_HEIGHT_SPREAD": 24,
+          "PHYSICAL_COMPONENT": 122,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 8,
+          "NO_FOOT_SUPPORT_0.22_0.0": 15
+        },
+        "physical_components": [
+          [
+            "468:L58 flight0 step2",
+            18
+          ],
+          [
+            "529:L61 flight0 step2",
+            12
+          ],
+          [
+            "481:L58 flight0 step15",
+            11
+          ],
+          [
+            "480:L58 flight0 step14",
+            8
+          ],
+          [
+            "536:L61 flight0 step9",
+            7
+          ],
+          [
+            "537:L61 flight0 step10",
+            7
+          ],
+          [
+            "533:L61 flight0 step6",
+            6
+          ],
+          [
+            "478:L58 flight0 step12",
+            4
+          ],
+          [
+            "538:L61 flight0 step11",
+            4
+          ],
+          [
+            "486:L58 flight0 step20",
+            3
+          ],
+          [
+            "485:L58 flight0 step19",
+            3
+          ],
+          [
+            "484:L58 flight0 step18",
+            3
+          ],
+          [
+            "483:L58 flight0 step17",
+            3
+          ],
+          [
+            "482:L58 flight0 step16",
+            3
+          ],
+          [
+            "469:L58 flight0 step3",
+            3
+          ],
+          [
+            "530:L61 flight0 step3",
+            3
+          ],
+          [
+            "531:L61 flight0 step4",
+            3
+          ],
+          [
+            "532:L61 flight0 step5",
+            3
+          ],
+          [
+            "534:L61 flight0 step7",
+            3
+          ],
+          [
+            "535:L61 flight0 step8",
+            3
+          ],
+          [
+            "490:L59 flight0 step2",
+            3
+          ],
+          [
+            "509:L60 flight0 step2",
+            3
+          ],
+          [
+            "479:L58 flight0 step13",
+            1
+          ],
+          [
+            "467:L58 flight0 step1",
+            1
+          ],
+          [
+            "492:L59 flight0 step4",
+            1
+          ]
+        ]
+      }
+    },
+    "PRISON": {
+      "before": {
+        "flat_links": 36,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 36,
+        "pass_both_directions": 26
+      },
+      "current_lanes": {
+        "samples": 7383,
+        "valid_standing": 6646,
+        "invalid_standing": 737,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 57,
+          "NO_CENTRE_SUPPORT": 620,
+          "NO_FOOT_SUPPORT_0.22_0.0": 15,
+          "NO_FOOT_SUPPORT_0.0_0.22": 12,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 21,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 5,
+          "FOOT_HEIGHT_SPREAD": 7
+        },
+        "physical_components": [
+          [
+            "644:L047 flight0 step15",
+            6
+          ],
+          [
+            "673:L063 flight0 step15",
+            6
+          ],
+          [
+            "738:L112 flight0 step17",
+            6
+          ],
+          [
+            "643:L047 flight0 step14",
+            3
+          ],
+          [
+            "645:L047 flight0 step16",
+            3
+          ],
+          [
+            "646:L047 flight0 step17",
+            3
+          ],
+          [
+            "647:L047 flight0 step18",
+            3
+          ],
+          [
+            "648:L047 flight0 step19",
+            3
+          ],
+          [
+            "672:L063 flight0 step14",
+            3
+          ],
+          [
+            "674:L063 flight0 step16",
+            3
+          ],
+          [
+            "675:L063 flight0 step17",
+            3
+          ],
+          [
+            "676:L063 flight0 step18",
+            3
+          ],
+          [
+            "677:L063 flight0 step19",
+            3
+          ],
+          [
+            "735:L112 flight0 step14",
+            3
+          ],
+          [
+            "736:L112 flight0 step15",
+            3
+          ],
+          [
+            "737:L112 flight0 step16",
+            3
+          ]
+        ]
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "flat_links": 42,
+        "pass_both_directions": 18
+      },
+      "after": {
+        "flat_links": 42,
+        "pass_both_directions": 32
+      },
+      "current_lanes": {
+        "samples": 6540,
+        "valid_standing": 5524,
+        "invalid_standing": 1016,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 905,
+          "PHYSICAL_COMPONENT": 39,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 18,
+          "FOOT_HEIGHT_SPREAD": 25,
+          "NO_FOOT_SUPPORT_0.0_0.22": 11,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 7,
+          "NO_FOOT_SUPPORT_0.22_0.0": 11
+        },
+        "physical_components": [
+          [
+            "418:L44 flight0 step17",
+            8
+          ],
+          [
+            "410:L44 flight0 step9",
+            6
+          ],
+          [
+            "415:L44 flight0 step14",
+            6
+          ],
+          [
+            "411:L44 flight0 step10",
+            3
+          ],
+          [
+            "412:L44 flight0 step11",
+            3
+          ],
+          [
+            "413:L44 flight0 step12",
+            3
+          ],
+          [
+            "414:L44 flight0 step13",
+            3
+          ],
+          [
+            "416:L44 flight0 step15",
+            3
+          ],
+          [
+            "417:L44 flight0 step16",
+            3
+          ],
+          [
+            "382:L43 flight0 step1",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-03": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 6
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 6
+      },
+      "current_lanes": {
+        "samples": 3582,
+        "valid_standing": 3233,
+        "invalid_standing": 349,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 4,
+          "FOOT_HEIGHT_SPREAD": 3,
+          "PHYSICAL_COMPONENT": 106,
+          "NO_FOOT_SUPPORT_0.22_0.0": 8,
+          "NO_CENTRE_SUPPORT": 160,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 65,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3
+        },
+        "physical_components": [
+          [
+            "101:L07 flight0 step2",
+            18
+          ],
+          [
+            "102:L07 flight0 step3",
+            10
+          ],
+          [
+            "133:L13 flight0 step2",
+            9
+          ],
+          [
+            "103:L07 flight0 step4",
+            8
+          ],
+          [
+            "141:L13 flight0 step10",
+            6
+          ],
+          [
+            "137:L13 flight0 step6",
+            6
+          ],
+          [
+            "74:L04 flight0 step2",
+            5
+          ],
+          [
+            "105:L07 flight0 step6",
+            5
+          ],
+          [
+            "104:L07 flight0 step5",
+            5
+          ],
+          [
+            "146:L13 flight0 step15",
+            3
+          ],
+          [
+            "145:L13 flight0 step14",
+            3
+          ],
+          [
+            "144:L13 flight0 step13",
+            3
+          ],
+          [
+            "143:L13 flight0 step12",
+            3
+          ],
+          [
+            "142:L13 flight0 step11",
+            3
+          ],
+          [
+            "140:L13 flight0 step9",
+            3
+          ],
+          [
+            "139:L13 flight0 step8",
+            3
+          ],
+          [
+            "138:L13 flight0 step7",
+            3
+          ],
+          [
+            "136:L13 flight0 step5",
+            3
+          ],
+          [
+            "135:L13 flight0 step4",
+            3
+          ],
+          [
+            "134:L13 flight0 step3",
+            3
+          ],
+          [
+            "106:L07 flight0 step7",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-04": {
+      "before": {
+        "flat_links": 7,
+        "pass_both_directions": 1
+      },
+      "after": {
+        "flat_links": 7,
+        "pass_both_directions": 1
+      },
+      "current_lanes": {
+        "samples": 1734,
+        "valid_standing": 1510,
+        "invalid_standing": 224,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 4,
+          "PHYSICAL_COMPONENT": 2,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 10,
+          "NO_CENTRE_SUPPORT": 191,
+          "NO_FOOT_SUPPORT_0.22_0.0": 14,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3
+        },
+        "physical_components": [
+          [
+            "121:L10 flight0 step1",
+            2
+          ]
+        ]
+      }
+    },
+    "WLD-05": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 9
+      },
+      "current_lanes": {
+        "samples": 4410,
+        "valid_standing": 3968,
+        "invalid_standing": 442,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 3,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 17,
+          "NO_CENTRE_SUPPORT": 223,
+          "NO_FOOT_SUPPORT_0.22_0.0": 11,
+          "PHYSICAL_COMPONENT": 183,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 5
+        },
+        "physical_components": [
+          [
+            "terrain-site:surface",
+            167
+          ],
+          [
+            "Bayed stair WLD-05 L09 step3",
+            10
+          ],
+          [
+            "Bayed stair WLD-05 L17 step2",
+            5
+          ],
+          [
+            "Bayed stair WLD-05 L09 step2",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 10
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 10
+      },
+      "current_lanes": {
+        "samples": 3942,
+        "valid_standing": 3719,
+        "invalid_standing": 223,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 13,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 12,
+          "NO_CENTRE_SUPPORT": 186,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 11,
+          "NO_FOOT_SUPPORT_0.22_0.0": 1
+        },
+        "physical_components": []
+      }
+    },
+    "WLD-07": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 3579,
+        "valid_standing": 3579,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 2
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 5
+      },
+      "current_lanes": {
+        "samples": 4440,
+        "valid_standing": 3235,
+        "invalid_standing": 1205,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 18,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 29,
+          "NO_CENTRE_SUPPORT": 997,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 36,
+          "NO_FOOT_SUPPORT_0.22_0.0": 31,
+          "PHYSICAL_COMPONENT": 86,
+          "FOOT_HEIGHT_SPREAD": 8
+        },
+        "physical_components": [
+          [
+            "80:Ceiling cap tunnel",
+            27
+          ],
+          [
+            "84:Ceiling cap tunnel.004",
+            27
+          ],
+          [
+            "terrain-site-1-0:surface",
+            25
+          ],
+          [
+            "142:L17 flight0 step2",
+            4
+          ],
+          [
+            "171:L20 flight0 step2",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "flat_links": 12,
+        "pass_both_directions": 6
+      },
+      "after": {
+        "flat_links": 12,
+        "pass_both_directions": 6
+      },
+      "current_lanes": {
+        "samples": 4368,
+        "valid_standing": 3190,
+        "invalid_standing": 1178,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 27,
+          "PHYSICAL_COMPONENT": 296,
+          "NO_CENTRE_SUPPORT": 827,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 11,
+          "FOOT_HEIGHT_SPREAD": 3,
+          "NO_FOOT_SUPPORT_0.22_0.0": 7,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 7
+        },
+        "physical_components": [
+          [
+            "terrain-site-0-1:surface",
+            241
+          ],
+          [
+            "274:L14 flight0 step13",
+            8
+          ],
+          [
+            "272:L14 flight0 step11",
+            8
+          ],
+          [
+            "271:L14 flight0 step10",
+            7
+          ],
+          [
+            "349:level_blockout_hydro_turbine.001",
+            6
+          ],
+          [
+            "122:L07 flight0 step2",
+            5
+          ],
+          [
+            "352:level_blockout_workbench.001",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-09 L18 flight1 part1",
+            4
+          ],
+          [
+            "281:L14 flight0 step20",
+            2
+          ],
+          [
+            "276:L14 flight0 step15",
+            2
+          ],
+          [
+            "284:L14 flight0 step23",
+            1
+          ],
+          [
+            "283:L14 flight0 step22",
+            1
+          ],
+          [
+            "282:L14 flight0 step21",
+            1
+          ],
+          [
+            "280:L14 flight0 step19",
+            1
+          ],
+          [
+            "279:L14 flight0 step18",
+            1
+          ],
+          [
+            "278:L14 flight0 step17",
+            1
+          ],
+          [
+            "277:L14 flight0 step16",
+            1
+          ],
+          [
+            "275:L14 flight0 step14",
+            1
+          ],
+          [
+            "273:L14 flight0 step12",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-10": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 6
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 8
+      },
+      "current_lanes": {
+        "samples": 4500,
+        "valid_standing": 4031,
+        "invalid_standing": 469,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 4,
+          "NO_CENTRE_SUPPORT": 202,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 10,
+          "NO_FOOT_SUPPORT_0.22_0.0": 7,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "PHYSICAL_COMPONENT": 242
+        },
+        "physical_components": [
+          [
+            "terrain-site-1-0:surface",
+            142
+          ],
+          [
+            "199:L19 flight0 step2",
+            9
+          ],
+          [
+            "188:L16 flight0 step29",
+            7
+          ],
+          [
+            "186:L16 flight0 step27",
+            7
+          ],
+          [
+            "180:L16 flight0 step21",
+            7
+          ],
+          [
+            "177:L16 flight0 step18",
+            7
+          ],
+          [
+            "183:L16 flight0 step24",
+            6
+          ],
+          [
+            "205:L19 flight0 step8",
+            6
+          ],
+          [
+            "201:L19 flight0 step4",
+            6
+          ],
+          [
+            "189:L16 flight0 step30",
+            4
+          ],
+          [
+            "175:L16 flight0 step16",
+            4
+          ],
+          [
+            "220:L21 flight0 step2",
+            4
+          ],
+          [
+            "187:L16 flight0 step28",
+            3
+          ],
+          [
+            "185:L16 flight0 step26",
+            3
+          ],
+          [
+            "184:L16 flight0 step25",
+            3
+          ],
+          [
+            "182:L16 flight0 step23",
+            3
+          ],
+          [
+            "181:L16 flight0 step22",
+            3
+          ],
+          [
+            "179:L16 flight0 step20",
+            3
+          ],
+          [
+            "178:L16 flight0 step19",
+            3
+          ],
+          [
+            "204:L19 flight0 step7",
+            3
+          ],
+          [
+            "203:L19 flight0 step6",
+            3
+          ],
+          [
+            "202:L19 flight0 step5",
+            3
+          ],
+          [
+            "200:L19 flight0 step3",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-11": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 4
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 11
+      },
+      "current_lanes": {
+        "samples": 3843,
+        "valid_standing": 3741,
+        "invalid_standing": 102,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 36,
+          "PHYSICAL_COMPONENT": 1,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 3,
+          "NO_CENTRE_SUPPORT": 59,
+          "NO_FOOT_SUPPORT_0.22_0.0": 3
+        },
+        "physical_components": [
+          [
+            "52:L02 flight0 step1",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 7
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 8
+      },
+      "current_lanes": {
+        "samples": 4599,
+        "valid_standing": 4037,
+        "invalid_standing": 562,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 18,
+          "FOOT_HEIGHT_SPREAD": 4,
+          "NO_FOOT_SUPPORT_0.22_0.0": 33,
+          "NO_CENTRE_SUPPORT": 468,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 37,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 2
+        },
+        "physical_components": []
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 10
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 11
+      },
+      "current_lanes": {
+        "samples": 4551,
+        "valid_standing": 3787,
+        "invalid_standing": 764,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 5,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 37,
+          "NO_CENTRE_SUPPORT": 550,
+          "PHYSICAL_COMPONENT": 153,
+          "NO_FOOT_SUPPORT_0.22_0.0": 5,
+          "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 3,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 8,
+          "FOOT_HEIGHT_SPREAD": 3
+        },
+        "physical_components": [
+          [
+            "terrain-site-0-0:surface",
+            64
+          ],
+          [
+            "128:L19 flight0 step2",
+            23
+          ],
+          [
+            "137:L19 flight0 step11",
+            11
+          ],
+          [
+            "136:L19 flight0 step10",
+            9
+          ],
+          [
+            "129:L19 flight0 step3",
+            6
+          ],
+          [
+            "130:L19 flight0 step4",
+            6
+          ],
+          [
+            "131:L19 flight0 step5",
+            6
+          ],
+          [
+            "132:L19 flight0 step6",
+            6
+          ],
+          [
+            "133:L19 flight0 step7",
+            6
+          ],
+          [
+            "134:L19 flight0 step8",
+            6
+          ],
+          [
+            "135:L19 flight0 step9",
+            6
+          ],
+          [
+            "138:L19 flight0 step12",
+            4
+          ]
+        ]
+      }
+    },
+    "WLD-14": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 9
+      },
+      "current_lanes": {
+        "samples": 2583,
+        "valid_standing": 2459,
+        "invalid_standing": 124,
+        "reasons": {
+          "FOOT_HEIGHT_SPREAD": 7,
+          "PHYSICAL_COMPONENT": 79,
+          "CLOSED_SOLID_INTERIOR_OR_INVALID_POSE": 1,
+          "NO_CENTRE_SUPPORT": 30,
+          "NO_FOOT_SUPPORT_0.22_0.0": 3,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 4
+        },
+        "physical_components": [
+          [
+            "195:route-20 flight6 step1",
+            13
+          ],
+          [
+            "190:route-20 flight1 step1",
+            10
+          ],
+          [
+            "194:route-20 flight5 step1",
+            9
+          ],
+          [
+            "157:route-10 flight0 step14",
+            5
+          ],
+          [
+            "169:route-14 flight0 step5",
+            5
+          ],
+          [
+            "170:route-14 flight0 step6",
+            5
+          ],
+          [
+            "192:route-20 flight3 step1",
+            5
+          ],
+          [
+            "158:route-10 flight0 step15",
+            4
+          ],
+          [
+            "196:route-20 flight7 step1",
+            4
+          ],
+          [
+            "193:route-20 flight4 step1",
+            4
+          ],
+          [
+            "191:route-20 flight2 step1",
+            4
+          ],
+          [
+            "156:route-10 flight0 step13",
+            3
+          ],
+          [
+            "168:route-14 flight0 step4",
+            3
+          ],
+          [
+            "159:route-10 flight0 step16",
+            2
+          ],
+          [
+            "171:route-14 flight0 step7",
+            2
+          ],
+          [
+            "172:route-14 flight0 step8",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-15": {
+      "before": {
+        "flat_links": 15,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 15,
+        "pass_both_directions": 9
+      },
+      "current_lanes": {
+        "samples": 2940,
+        "valid_standing": 2890,
+        "invalid_standing": 50,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+          "PHYSICAL_COMPONENT": 31,
+          "NO_FOOT_SUPPORT_0.0_0.22": 3,
+          "NO_FOOT_SUPPORT_0.22_0.0": 7,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 6
+        },
+        "physical_components": [
+          [
+            "138:route-17 flight0 step2",
+            11
+          ],
+          [
+            "100:route-13 flight0 step2",
+            4
+          ],
+          [
+            "125:route-14 flight0 step10",
+            4
+          ],
+          [
+            "123:route-14 flight0 step8",
+            4
+          ],
+          [
+            "126:route-14 flight0 step11",
+            4
+          ],
+          [
+            "158:route-19 flight0 step2",
+            4
+          ]
+        ]
+      }
+    },
+    "WLD-16": {
+      "before": {
+        "flat_links": 22,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 22,
+        "pass_both_directions": 15
+      },
+      "current_lanes": {
+        "samples": 3243,
+        "valid_standing": 3012,
+        "invalid_standing": 231,
+        "reasons": {
+          "FOOT_HEIGHT_SPREAD": 10,
+          "PHYSICAL_COMPONENT": 211,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "NO_FOOT_SUPPORT_0.0_0.22": 4,
+          "NO_FOOT_SUPPORT_0.22_0.0": 2
+        },
+        "physical_components": [
+          [
+            "0:Authored roadside terrain",
+            211
+          ]
+        ]
+      }
+    },
+    "WLD-17": {
+      "before": {
+        "flat_links": 12,
+        "pass_both_directions": 7
+      },
+      "after": {
+        "flat_links": 12,
+        "pass_both_directions": 9
+      },
+      "current_lanes": {
+        "samples": 2943,
+        "valid_standing": 2922,
+        "invalid_standing": 21,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 5,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+          "NO_FOOT_SUPPORT_0.22_0.0": 1,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 1,
+          "PHYSICAL_COMPONENT": 11
+        },
+        "physical_components": [
+          [
+            "Rebuilt stair WLD-17 route-11 flight0 part1",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-17 route-12 flight0 part1",
+            4
+          ],
+          [
+            "163:route-10 flight0 step2",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 6
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 7
+      },
+      "current_lanes": {
+        "samples": 3093,
+        "valid_standing": 2961,
+        "invalid_standing": 132,
+        "reasons": {
+          "FOOT_HEIGHT_SPREAD": 3,
+          "PHYSICAL_COMPONENT": 92,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 9,
+          "NO_FOOT_SUPPORT_0.0_0.22": 11,
+          "NO_FOOT_SUPPORT_0.22_0.0": 9,
+          "NO_CENTRE_SUPPORT": 7,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 1
+        },
+        "physical_components": [
+          [
+            "1:Saved editor terrain WLD-18",
+            52
+          ],
+          [
+            "Rebuilt stair WLD-18 route-14 flight1 part1",
+            11
+          ],
+          [
+            "288:route-18 flight0 step10",
+            7
+          ],
+          [
+            "289:route-18 flight0 step11",
+            7
+          ],
+          [
+            "286:route-18 flight0 step8",
+            7
+          ],
+          [
+            "197:route-08 flight0 step2",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-18 route-14 flight0 part1",
+            3
+          ],
+          [
+            "Rebuilt stair WLD-18 route-07 flight0 part0",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "before": {
+        "flat_links": 23,
+        "pass_both_directions": 22
+      },
+      "after": {
+        "flat_links": 23,
+        "pass_both_directions": 23
+      },
+      "current_lanes": {
+        "samples": 5058,
+        "valid_standing": 5058,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "ACADEMY": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/academy/construction.json",
+        "contract_sha256": "8cbb7899330b7477d7d412b77917453031e663d39673667c108608ad8cafa048",
+        "layout": "development/levels/rebuild/academy/rough-layout.json",
+        "layout_sha256": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6",
+        "native": "development/levels/rebuild/floor-closure-pass/academy/closed-floors.hcs2",
+        "native_sha256": "5cb1dbeb02f8a08ca2c8dfe174246034610526e66128a95476d4307abfdaab41"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/academy/construction.json",
+        "contract_sha256": "e2a3dd18536dd7c4df651796a57e360381e9a3ee4f47edb74b3374778689f475",
+        "layout": "development/levels/rebuild/flat-circulation-pass/academy/authored-layout.json",
+        "layout_sha256": "7d72110f322f77ba7c65b52fe86dd23cc39451c97cc350794d3d3db415c75d07",
+        "native": "development/levels/rebuild/flat-circulation-pass/academy/open-circulation.hcs2",
+        "native_sha256": "b8bf42dae4c5e617ea1fe4191aec8ea9f5847aaae8311cc7571f7d901311375c"
+      }
+    },
+    "ASYLUM": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/asylum/construction.json",
+        "contract_sha256": "0f2c3b8ae2fa51761bf1ee05af794d68d4821a08d9a0f5d19e97a7063b98fbfa",
+        "layout": "development/levels/rebuild/asylum/rough-layout.json",
+        "layout_sha256": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30",
+        "native": "development/levels/rebuild/floor-closure-pass/asylum/closed-floors.hcs2",
+        "native_sha256": "5306941b5135d5dc5d6a43ec84b0ce31c3cfca8c40e2aaf2be1995675d0f098e"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/asylum/construction.json",
+        "contract_sha256": "a8210b51fdb28c26ea364efc269b197f60a33d4c3eb101f529609a002f5349ff",
+        "layout": "development/levels/rebuild/flat-circulation-pass/asylum/authored-layout.json",
+        "layout_sha256": "58e498d446e5a2c962f9aa685aed96b49534c148cb63237e590bdb95853b6cb6",
+        "native": "development/levels/rebuild/flat-circulation-pass/asylum/open-circulation.hcs2",
+        "native_sha256": "6b8e50ac383638e7d4ede66a9e45c223ee7c1726aa70852d6247958d49cb5cc5"
+      }
+    },
+    "CHURCH": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/church/construction.json",
+        "contract_sha256": "31b2207e652d14230e21ec2993400d743b2e1af65dc887f0d2f0b623b4f08593",
+        "layout": "development/levels/rebuild/church/rough-layout.json",
+        "layout_sha256": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05",
+        "native": "development/levels/rebuild/floor-closure-pass/church/closed-floors.hcs2",
+        "native_sha256": "eda5a20f20c7a803e2caa75bfc706a0a8e21108a71812eb4f6b50be1210250fd"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/church/construction.json",
+        "contract_sha256": "38ff6b7f9bb5d730de7ad0c3c29602a5a99f8559633ba8fcf55b6c2911e33dd4",
+        "layout": "development/levels/rebuild/flat-circulation-pass/church/authored-layout.json",
+        "layout_sha256": "c18ecd04594176012ae64461e3bf869ee68c5399264626251fc80430f5eb0ee3",
+        "native": "development/levels/rebuild/flat-circulation-pass/church/open-circulation.hcs2",
+        "native_sha256": "ee132bd6998fa419a9c75a0eee74b016c3d15ac09326aa40121d015fb264684f"
+      }
+    },
+    "COLLEGE": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/college/construction.json",
+        "contract_sha256": "8ce2f9f858d263465aeaccecdf9ab42a890c84bd0cb05385b54f48cba0505e67",
+        "layout": "development/levels/rebuild/college/rough-layout.json",
+        "layout_sha256": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d",
+        "native": "development/levels/rebuild/floor-closure-pass/college/closed-floors.hcs2",
+        "native_sha256": "a0abc59c7784c618bb0881ec946e548854df076da6269463ea560f690f1a7295"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/college/construction.json",
+        "contract_sha256": "b393714007eed8e4607b76bde26f80a5069344502a372849e187bd8bb5125480",
+        "layout": "development/levels/rebuild/flat-circulation-pass/college/authored-layout.json",
+        "layout_sha256": "0a4f1f04ca318d8f88544fb97432323df3cd886de0957bbf6c1184bf4df4cf40",
+        "native": "development/levels/rebuild/flat-circulation-pass/college/open-circulation.hcs2",
+        "native_sha256": "61e3577c942b0c511013298a6e9511d7a4d77e2a123896b79aec0e0c07308ec1"
+      }
+    },
+    "FARMHOUSE": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/farmhouse/construction.json",
+        "contract_sha256": "91b9bce04e4caa7e81eb7b851a829bfed1b13fa4704ce9dc1c1696a62a38ae7e",
+        "layout": "development/levels/rebuild/farmhouse/rough-layout.json",
+        "layout_sha256": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727",
+        "native": "development/levels/rebuild/floor-closure-pass/farmhouse/closed-floors.hcs2",
+        "native_sha256": "106153346b7697e77b0f86042be61345c127a01a9247e5c5d88aa7b090a7cee8"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/farmhouse/construction.json",
+        "contract_sha256": "ff7091c74d08d3a58efa33042068cb64eeddea3269ece183e4299f6c450d39d8",
+        "layout": "development/levels/rebuild/flat-circulation-pass/farmhouse/authored-layout.json",
+        "layout_sha256": "16b5ba74d94fff5d991de19b6dbbf188dcfa557b921f1d668615e54ef1a63a16",
+        "native": "development/levels/rebuild/flat-circulation-pass/farmhouse/open-circulation.hcs2",
+        "native_sha256": "4921da8be025b9e212bdf6bde92e0e9e164d3976776f3a849dcbec4dd7d3f48e"
+      }
+    },
+    "MANSION": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/mansion/construction.json",
+        "contract_sha256": "73de236c45803a380bb1da94d72c4b51b778cd9e51bac8fec7309a4441f5c217",
+        "layout": "development/levels/rebuild/mansion/rough-layout.json",
+        "layout_sha256": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d",
+        "native": "development/levels/rebuild/floor-closure-pass/mansion/closed-floors.hcs2",
+        "native_sha256": "ac058d9645730ed6d118bbe1e3567a20cc584807e0de273717e17b88546eb3f1"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/mansion/construction.json",
+        "contract_sha256": "470514638d5fe14a7339dfd37a4a323605d5ed5d3eef371a361ba94ad0999a29",
+        "layout": "development/levels/rebuild/flat-circulation-pass/mansion/authored-layout.json",
+        "layout_sha256": "34b1f01d116b0838a392b17979dc50982a6e017112c18b48d83037a5ea3dff3e",
+        "native": "development/levels/rebuild/flat-circulation-pass/mansion/open-circulation.hcs2",
+        "native_sha256": "807fc82874d35a2cd9a5760d7a2fd9b276087ff685f99157ba36bfed0c115c56"
+      }
+    },
+    "PRISON": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/prison/construction.json",
+        "contract_sha256": "8ba36e8249df13d2401ca137167cea6c50cba41b205d4bcd3b71efc0e7120cdc",
+        "layout": "development/levels/rebuild/prison/rough-layout.json",
+        "layout_sha256": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c",
+        "native": "development/levels/rebuild/floor-closure-pass/prison/closed-floors.hcs2",
+        "native_sha256": "5f0445f96cb144c20c36bd83189e99eef79345846817a2543dff5c413dc7e7fa"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/prison/construction.json",
+        "contract_sha256": "7eea21ca1ecedaec4d44ce17527cfd8393e8446b27bc390a085a76ccc673b1a4",
+        "layout": "development/levels/rebuild/flat-circulation-pass/prison/authored-layout.json",
+        "layout_sha256": "194e87ecd8389759cc8364c49326d25e0e6dfc90357112d6ca6b186ba649e550",
+        "native": "development/levels/rebuild/flat-circulation-pass/prison/open-circulation.hcs2",
+        "native_sha256": "0276835b0bf5c3e9a6bea918ea73064581791ebd1e644b7ebcd24952e0099c6e"
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/school/construction.json",
+        "contract_sha256": "0a0e1489f9799aa659c7c5ce29e970b197eb065a70bf6b6f0748eea836de1332",
+        "layout": "development/levels/rebuild/school/rough-layout.json",
+        "layout_sha256": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e",
+        "native": "development/levels/rebuild/floor-closure-pass/school/closed-floors.hcs2",
+        "native_sha256": "d98772e3780cb28a1e16f326231d12752e65e8fff91d5527c7819ddc83cd097f"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/school/construction.json",
+        "contract_sha256": "a919f4b54a59d8cbbf9b20fea979b596121c68a931e2df31d7c04315b14693c9",
+        "layout": "development/levels/rebuild/flat-circulation-pass/school/authored-layout.json",
+        "layout_sha256": "ac225b7f770860c07b45548bf64b9248308dbfd10b228a9214bae2c52465f4fa",
+        "native": "development/levels/rebuild/flat-circulation-pass/school/open-circulation.hcs2",
+        "native_sha256": "88b2b2c9b6abf1a21766654e1026b91757d6f62b3a08936774b1c7308f53b4e4"
+      }
+    },
+    "WLD-03": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/construction.json",
+        "contract_sha256": "97a68b328684868826d08623f88f7b9915319d477ca071fd4f11215c38fc6c7b",
+        "layout": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/authored-layout.json",
+        "layout_sha256": "fb1284e7793ae54a04b4b99695f5babbf12ebee11d31f85ffd9844493e4c8e80",
+        "native": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/benched-terrain.hcs2",
+        "native_sha256": "fc4b409a8ef03a5326c73ea98d95acf4823f96b010db200255931c1ac8443ab0"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-03/construction.json",
+        "contract_sha256": "478eed551df0a4db7eacfc4568f13c1f3c1f685003e18f932a500b048c05ae6b",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-03/authored-layout.json",
+        "layout_sha256": "8762a11de23c816063c7ff7f013281215874329c61fd01826ebbce1229a91349",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-03/open-circulation.hcs2",
+        "native_sha256": "1076e43f808ae2fd4eddae8872415a61c43c8aabba4dd3452919a95710c23019"
+      }
+    },
+    "WLD-04": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-connection-pass/wld-04/construction.json",
+        "contract_sha256": "095523bbdfc50c01317f04d8c3999a69329cafcedca05920524df96c4d65c858",
+        "layout": "development/levels/rebuild/stair-connection-pass/wld-04/authored-layout.json",
+        "layout_sha256": "d3e747e9aba5d64b55548a33ee3b570f539cd8a468aa0f57c72c5968cdf86e6e",
+        "native": "development/levels/rebuild/stair-connection-pass/wld-04/connected-stairs.hcs2",
+        "native_sha256": "766d059f61672303843b9586bccefd4f584237c156cb37f89470d2c962596a85"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-04/construction.json",
+        "contract_sha256": "caac1ff46e0ffdf9d3536f2c704f8398f597cbed33dd77c1be43e02bb87151c9",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-04/authored-layout.json",
+        "layout_sha256": "aa61a843745804e2744f657ccab363e481f047001705efb6a82e477ceb5111ab",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-04/open-circulation.hcs2",
+        "native_sha256": "c84d61be44d4f5f5654ae7854ba629fbdc5631d31fff6f73418640e9173ba705"
+      }
+    },
+    "WLD-05": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-connection-pass/wld-05/construction.json",
+        "contract_sha256": "f415fbfbc0d8fd6d331c0f958887ddb5e6ec7fecf65751aef4e84cded311b24d",
+        "layout": "development/levels/rebuild/stair-connection-pass/wld-05/authored-layout.json",
+        "layout_sha256": "5b57286e2b7e86477a781408bb5530673100f6367fc4dd2dba1706796966219a",
+        "native": "development/levels/rebuild/stair-connection-pass/wld-05/connected-stairs.hcs2",
+        "native_sha256": "f9f6fa9a23a62ae5a00fccdfbad9828d495d96c0385c9b14d9a6e76f3069d18a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-05/construction.json",
+        "contract_sha256": "394374ac224d161abe7c95c2f4dbab914677c4c0a8b936928ab4947a1d9c8634",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-05/authored-layout.json",
+        "layout_sha256": "34fb769dc014d6e8e0b5968fa526bd3a6cf49c857fc845db5d12a0b0dee05ceb",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-05/open-circulation.hcs2",
+        "native_sha256": "ab6a6c74fbbd14c2df1aae01d538fb329f87b6071964b90d20a84414309e76be"
+      }
+    },
+    "WLD-06": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-opening-pass/wld-06/construction.json",
+        "contract_sha256": "3a38f14c1945963c8ace929d7e7236133c2c93aec652e433e968875fea84c461",
+        "layout": "development/levels/layouts/wld-06/layout.json",
+        "layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+        "native": "development/levels/rebuild/stair-opening-pass/wld-06/opened-stairs.hcs2",
+        "native_sha256": "81a1c3cc7fa52ab16bb34e26084f149c964ef25d25d2ee997a9be886909e1956"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-06/construction.json",
+        "contract_sha256": "31b5f16e5a128c6296be77eb0ba02830a5493f6adaf669679a0d13d96cae94b3",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-06/authored-layout.json",
+        "layout_sha256": "31bd6db975200750c4b50942b5a91e8eaea894ef977f22b94a08b57f1ab74808",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-06/open-circulation.hcs2",
+        "native_sha256": "54f61e7ac360ea349f713e7a34bf6e17683ef384d32143228bd8bdfb31968851"
+      }
+    },
+    "WLD-07": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/wld-07/construction.json",
+        "contract_sha256": "96111a2acbced78a9699e764b3b55ee192ea019eaf91704f074dc87361daac0b",
+        "layout": "development/levels/rebuild/wld-07/rough-layout.json",
+        "layout_sha256": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a",
+        "native": "development/levels/rebuild/floor-closure-pass/wld-07/closed-floors.hcs2",
+        "native_sha256": "cc908857dd10a717c0a729fc823d0f90241200a1d96c1e314cc2b4db61980524"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-07/construction.json",
+        "contract_sha256": "067a7e1d90d2c9ef1a9f1653d03cdc47a753cc550756205c41b7aea3f1c1d22e",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-07/authored-layout.json",
+        "layout_sha256": "996a21c2f486c2a8dd2b100f4aab56c563b9b60004f09b476c8ad3c84f6b4065",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.hcs2",
+        "native_sha256": "7881b7e8d10b70ba51d4a8c85ea2165afb5d637a46a46e23fe769351397e00cc"
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-opening-pass/wld-08/construction.json",
+        "contract_sha256": "29eb52facca171cc842ba6e115f9f5ed16a7f4841eba85c74a28d7bd20c68d55",
+        "layout": "development/levels/layouts/wld-08/layout.json",
+        "layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+        "native": "development/levels/rebuild/stair-opening-pass/wld-08/opened-stairs.hcs2",
+        "native_sha256": "7c05868ea7e2e2bd70c9edbdc689b3285511f9017f030237fa98b484b0f30e99"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-08/construction.json",
+        "contract_sha256": "aa1f2f7505825acdafa2a5280d657f69f467007ad639985522968babcc70264f",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-08/authored-layout.json",
+        "layout_sha256": "0fcc0324474f9b15a6c3f3cf14e22e27fb4195333d980531f9f7c09cad88b8f0",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-08/open-circulation.hcs2",
+        "native_sha256": "71c583fd91173032e4566c7202ed91a76199b2feaf260222ae94f1e7d5b597c7"
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-bay-pass/wld-09/construction.json",
+        "contract_sha256": "0b060343974e8db43f1f623c613de0e165345889d6328c8013ad074d39e3f14f",
+        "layout": "development/levels/rebuild/stair-bay-pass/wld-09/authored-layout.json",
+        "layout_sha256": "32d4e9c0a9636a7c72a3f89dcc0385b0d3e937bb922c3bae7f84387c786439b2",
+        "native": "development/levels/rebuild/stair-bay-pass/wld-09/bayed-stairs.hcs2",
+        "native_sha256": "50fbd8f405d342276be9ed7dce83fd384133c008f68c86b524bbbccca1dd2c87"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-09/construction.json",
+        "contract_sha256": "9d333475994417a69783b8a8bd1bf3ef2d6ed84203cd98880d25f69425eb4350",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-09/authored-layout.json",
+        "layout_sha256": "53deb4e198de732af7727250817d3f953d9fb753195f26ad55a855a5566ccb1b",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-09/open-circulation.hcs2",
+        "native_sha256": "02822203c8e962b723cbbb0b7db9321566d799e4bc53dccd6047e850df30a3fb"
+      }
+    },
+    "WLD-10": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/wld-10/construction.json",
+        "contract_sha256": "9fa6ba96c3c9fce3be225281d91c5c40ac28ca04fcc1fba5fd221065b73dc1c1",
+        "layout": "development/levels/rebuild/wld-10/rough-layout.json",
+        "layout_sha256": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9",
+        "native": "development/levels/rebuild/floor-closure-pass/wld-10/closed-floors.hcs2",
+        "native_sha256": "9e2122cdd84950ba1fec8d3f25d3428e33e49608e2d79d2d3d5f27efc813cd17"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-10/construction.json",
+        "contract_sha256": "a2ee1c98ae149f94cd35ab15220c509050a81f569f6c9dc5f5358fca07386758",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-10/authored-layout.json",
+        "layout_sha256": "0c1a5a6b6fcf7d0f8913608054af646dba5a94c5e127481269c90394aac4f89b",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-10/open-circulation.hcs2",
+        "native_sha256": "ee145a1d57e3f2bfe8135c54febf376fd154f1e27bb61ac48915800cfaeaefdc"
+      }
+    },
+    "WLD-11": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-landing-pass/wld-11/construction.json",
+        "contract_sha256": "ea7faae432fec6e13d95e564fa7e98aa15e566141421aa1462c1dc504b642f19",
+        "layout": "development/levels/layouts/wld-11/layout.json",
+        "layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+        "native": "development/levels/rebuild/stair-landing-pass/wld-11/supported-stairs.hcs2",
+        "native_sha256": "a9a9f4ef211b8bdcd3d2118309bdd06ea673bb53e26c9348157fcba0176b4742"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-11/construction.json",
+        "contract_sha256": "2b95899aceb7c3cbc14fa022cffabbf279c61d8bb19a1719c82d91fc7024394f",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-11/authored-layout.json",
+        "layout_sha256": "9da7f6d9450d615cf1b2060cc71c75eebd0c37907e9dfa1b65365173dc160ecd",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-11/open-circulation.hcs2",
+        "native_sha256": "df9051c192e25caff05680b5abdb53eed311441264d733e5d32c62b59f2625e5"
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/construction.json",
+        "contract_sha256": "45b58cc05a6887ee1b45fb69037fae9980c2487f32a78c0d9c1c5d7f752d9fd4",
+        "layout": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/authored-layout.json",
+        "layout_sha256": "47958e12195200b8f3178c9a640750ccb9fe2a77fcb42ff04c3193ff0227eb77",
+        "native": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/benched-terrain.hcs2",
+        "native_sha256": "f64a770b8d4f58f52bc3b62cdc9cc43994add98312271235eedf0589bd50aa6a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-12/construction.json",
+        "contract_sha256": "fc4489b74ea215a22d1ec57955b6aae20f5a0cfa10d537b91d8c64b05f144157",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-12/authored-layout.json",
+        "layout_sha256": "3e2b7bde139ade73cfd8fbe6ec92d686b33e573a9997ecc4e5e7401d7a098f1b",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-12/open-circulation.hcs2",
+        "native_sha256": "de95807d78f6f79a1d9923838b7ea806238013c81ee87ebd11734807f317b879"
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-opening-pass/wld-13/construction.json",
+        "contract_sha256": "e9d7e4c854c834d90f69d25a86b455e276d5c45c34f063ec65a5cb560c4a1825",
+        "layout": "development/levels/layouts/wld-13/layout.json",
+        "layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+        "native": "development/levels/rebuild/stair-opening-pass/wld-13/opened-stairs.hcs2",
+        "native_sha256": "a619ca847615a001e3a6af167c715e166209650d9d9871cdb5bfa192627fe664"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-13/construction.json",
+        "contract_sha256": "5dcf600dd5d1963d355b4319d63fa52844376a0d8f53afe76d751d76fe709e75",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-13/authored-layout.json",
+        "layout_sha256": "de4a86fd673198ef938bf5c9201061db3910854b2c80223f04fa3899073f0100",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-13/open-circulation.hcs2",
+        "native_sha256": "01619a6289aaa14bd402dd5214944c343362df80ee11c2e0ddad037761db91a5"
+      }
+    },
+    "WLD-14": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/wld-14/construction.json",
+        "contract_sha256": "ec56abc63ef3be9f24ceceadf9cc65d0349d3b0d7a14e3d6d09b6c144d5c31bf",
+        "layout": "development/levels/rebuild/wld-14/rough-layout.json",
+        "layout_sha256": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e",
+        "native": "development/levels/rebuild/floor-closure-pass/wld-14/closed-floors.hcs2",
+        "native_sha256": "8b1718fdb15ac04bf780dabfd8d82ad9057aef0bc1fc0ab7eb8ac39bf152829a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-14/construction.json",
+        "contract_sha256": "e4244d05de24b74cbec2fef6ff193c7ce46c0002aa54cd0438f212935bf82ea7",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-14/authored-layout.json",
+        "layout_sha256": "188eddbd4e1e5f347a6cae4b0366f4cda43af80bdf14e4c8e85a20b73d1b68ea",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-14/open-circulation.hcs2",
+        "native_sha256": "10477543362b32b918276a5d281babca1d1128fba4f8455f7b3f655e10605728"
+      }
+    },
+    "WLD-15": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-connection-pass/wld-15/construction.json",
+        "contract_sha256": "c8be47f12586a5f9acb3ed62fcea52ffc9aaefb1cfdb8e8022728db112b33cc1",
+        "layout": "development/levels/rebuild/stair-connection-pass/wld-15/authored-layout.json",
+        "layout_sha256": "9b695ab72aa0c45689047fbde49d468a88b8a7fd2a8e0a7845816725ba1cb424",
+        "native": "development/levels/rebuild/stair-connection-pass/wld-15/connected-stairs.hcs2",
+        "native_sha256": "65ea86d5f1c611f2d35cd6c1198e57dca62302302e4b4ba401be50e47640c21c"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-15/construction.json",
+        "contract_sha256": "579c880f5d935da2c7926b810a5ac853d518bdc60ce6a097270b9a4153e4fec3",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-15/authored-layout.json",
+        "layout_sha256": "65ee98b0b014e495ff4fbf93e80d072472dccd34b3d7b924168fdded933ee166",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.hcs2",
+        "native_sha256": "ff861c2fb01edeabc39737974cb9269a949d82c0b8baee585b7959e695a44642"
+      }
+    },
+    "WLD-16": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/wld-16/construction.json",
+        "contract_sha256": "3912ddbacd7e6d468651d7441c4b31a56d53000ea355db2f8cf43d222d2c7862",
+        "layout": "development/levels/rebuild/wld-16/rough-layout.json",
+        "layout_sha256": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
+        "native": "development/levels/rebuild/floor-closure-pass/wld-16/closed-floors.hcs2",
+        "native_sha256": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-16/construction.json",
+        "contract_sha256": "e941c35e89afd62f35490b70b4aa1fb98a913335e440c38d09df8933b076860c",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-16/authored-layout.json",
+        "layout_sha256": "68e595a70198112374b50c84a41194b4fd33fbd3b9dde07d294fe36ab9057611",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-16/open-circulation.hcs2",
+        "native_sha256": "39272b66ae42aff520407a191fb35863b81b9a9b082fb2a5176bd42d3f1c4c01"
+      }
+    },
+    "WLD-17": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-connection-pass/wld-17/construction.json",
+        "contract_sha256": "18fe731a8837239a42753f788da8405d7d2cc85ce9fd618c65177a6319eda809",
+        "layout": "development/levels/rebuild/stair-connection-pass/wld-17/authored-layout.json",
+        "layout_sha256": "4661cf6a727c12c6c2a5e333f772feaefcee0432ed0bae147deb5497b68cc92d",
+        "native": "development/levels/rebuild/stair-connection-pass/wld-17/connected-stairs.hcs2",
+        "native_sha256": "3a7f0af68702dcfaa0244a777020b56464d13be376a87c6154995fef1751c32f"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-17/construction.json",
+        "contract_sha256": "660a723a50d2f6f4d1c02ade7dfabb27a0b16c82abfade82f2fa8a4e71e087fd",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-17/authored-layout.json",
+        "layout_sha256": "dd61c38bb1198627388681a5d62975f540a807b3a5b25e8b087fb8abd90bf035",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-17/open-circulation.hcs2",
+        "native_sha256": "5396c2708d14cdcae7e89cd6e4a8b1ccb5fdd8760cc140e84490b93cc7520c00"
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-connection-pass/wld-18/construction.json",
+        "contract_sha256": "65ebe493011d7f89fd5f17d59268c8a17805370ce74efa5da96d7df1c7238501",
+        "layout": "development/levels/rebuild/stair-connection-pass/wld-18/authored-layout.json",
+        "layout_sha256": "17e94c67b4e51c54662073807f85d128cb70c3f8672b6de7acf2f8502a68356d",
+        "native": "development/levels/rebuild/stair-connection-pass/wld-18/connected-stairs.hcs2",
+        "native_sha256": "022550b758eb5fac8e443659de182827d1aa5e5230408c81dbcf0c4dd0324346"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-18/construction.json",
+        "contract_sha256": "5f9e986f2cdb86ebbbd9fd02dc2f9506862036784d6fbc9fa6a783e9eb4b9076",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-18/authored-layout.json",
+        "layout_sha256": "ec45245cdf8ed0fdad77580b08f700b16be13aaff1bbb7a500fc52db275560f4",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-18/open-circulation.hcs2",
+        "native_sha256": "470cf0a94618d9a7f9051d6f8e32037f24d63e91d2622df8aef045c02bc06c1a"
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "before": {
+        "contract": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/construction.json",
+        "contract_sha256": "5ea01dc6ef3d30d7d00e3893d45380b2952901e8012edeae64e4a27a90f97d41",
+        "layout": "development/levels/rebuild/wld-07-mortuary/rough-layout.json",
+        "layout_sha256": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
+        "native": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/closed-floors.hcs2",
+        "native_sha256": "2ae50247d945d2c6d5b3b60aedbfdfea2b9b27975cfae041648f0ba80243aa5d"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/construction.json",
+        "contract_sha256": "69f83aebd58b7d7c88fbe4a61497c8b6f218d81278b112752730aeb04f9d4ffe",
+        "layout": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/authored-layout.json",
+        "layout_sha256": "662906eb528bf065b396a0a550a99d3b09fcd9b32099cefd8f9e3a2f2fe48d4a",
+        "native": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.hcs2",
+        "native_sha256": "82248758a218739a1ec8786ab2ae53b14a44f0c46ff3a097c3aa4f9b5bc49e7f"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "e79b0ce7a66519a55196c9f2c95d89a7b6d31cad1fec3d94aa88356a03e0554c"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/flat-circulation-pass/verification/current-flat-failure-contacts.tsv": "6df5f0fe5ddd9fe265e057c8e49eafdf326a71b9b8a0333b58350d9e4bdb616e",
+    "development/levels/rebuild/flat-circulation-pass/verification/current-flat-failure-input.tsv": "d3e3a67dfedac74db2b5be69a80f8fa4bfdd0554ff52a2b85de69d085a6e5cfb",
+    "development/levels/rebuild/flat-circulation-pass/verification/current-flat-lane-input.tsv": "7a9ca8d0008a8610621c0700ac5c7be236d1e01133654982e0f54016c0a3ae3b",
+    "development/levels/rebuild/flat-circulation-pass/verification/current-flat-lane-names.tsv": "c991b3b5f9a6085eeb3e3fec8b18278abf87c78b2571f75d98a9066cb00ffcc2",
+    "development/levels/rebuild/flat-circulation-pass/verification/current-flat-lanes.tsv": "076cd31f4402df30fc9e172353f8735387946c3f82aefe06606964831ba7a366",
+    "development/levels/rebuild/flat-circulation-pass/verification/current-flat-links.tsv": "69994199e5668718d3c0b5a1fe9f0a04af46440be79e1e40c5362246fbe0b860",
+    "development/levels/rebuild/flat-circulation-pass/verification/current-flat-names.tsv": "c991b3b5f9a6085eeb3e3fec8b18278abf87c78b2571f75d98a9066cb00ffcc2",
+    "development/levels/rebuild/flat-circulation-pass/verification/current-flat-paths.tsv": "6b096d216d9e0139fa186aebf1bcd23d8d430778d150894ceafc202a1d137085"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

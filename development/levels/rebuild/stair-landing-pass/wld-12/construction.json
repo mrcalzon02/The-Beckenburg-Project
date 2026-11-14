@@ -1,0 +1,313 @@
+{
+  "id": "WLD-12",
+  "status": "ACTUAL_STAIR_END_SUPPORT_CANDIDATE_FULL_ROUTE_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-12/closed-floors.glb",
+  "source_glb_sha256": "37aebdfa43c4390c867edceb3a20773e87cd7d221d771d0ade2c20d61bc4b617",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-12/closed-floors.hcs2",
+  "source_physics_sha256": "8d23714db2c71a36b7ef5b6ddd0924738d6626ae4eb0da02da0d165ada919e35",
+  "layout": "development/levels/rebuild/wld-12/rough-layout.json",
+  "layout_sha256": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8",
+  "targeted_segments": [
+    {
+      "link": "L16",
+      "segment": 0
+    },
+    {
+      "link": "L17",
+      "segment": 0
+    }
+  ],
+  "new_parts": 2,
+  "new_triangles": 52,
+  "platforms": [
+    {
+      "name": "Authored stair end WLD-12 L16 0 high region0",
+      "link": "L16",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          30.0,
+          33.4
+        ],
+        [
+          30.0,
+          34.199999999999996
+        ],
+        [
+          32.0,
+          34.199999999999996
+        ],
+        [
+          32.0,
+          33.4
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-12 L17 0 high region0",
+      "link": "L17",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          10.55278640450004,
+          41.10557280900009
+        ],
+        [
+          9.837244651700107,
+          41.463343685400055
+        ],
+        [
+          10.731671842700027,
+          43.25219806739988
+        ],
+        [
+          11.44721359549996,
+          42.89442719099991
+        ]
+      ]
+    }
+  ],
+  "landing_trims": [],
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "decisions": [
+    {
+      "link": "L16",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        31,
+        -3,
+        28
+      ],
+      "actual_existing_top_receivers": [
+        "Floor lower"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L16",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        31,
+        0,
+        33.4
+      ],
+      "actual_existing_top_receivers": [
+        "Floor trestle.004"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            30.0,
+            33.4
+          ],
+          [
+            30.0,
+            34.199999999999996
+          ],
+          [
+            31.5143,
+            34.199999999999996
+          ],
+          [
+            31.5143,
+            33.4
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-12 L16 0 high region0"
+      ]
+    },
+    {
+      "link": "L17",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        31.0,
+        -3,
+        32.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor lower"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L17",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        11.0,
+        0,
+        42.0
+      ],
+      "actual_existing_top_receivers": [
+        "L06 support 1",
+        "L07 support 0",
+        "L17 flight0 step17"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            10.55278640450004,
+            41.10557280900009
+          ],
+          [
+            9.837244651700107,
+            41.463343685400055
+          ],
+          [
+            10.167973625869784,
+            42.1248016337394
+          ],
+          [
+            10.999995658513642,
+            41.99999131702728
+          ]
+        ],
+        [
+          [
+            10.4857,
+            42.21429
+          ],
+          [
+            10.999995658513642,
+            41.99999131702728
+          ],
+          [
+            10.4857,
+            42.07714
+          ]
+        ],
+        [
+          [
+            10.4857,
+            42.76025438199983
+          ],
+          [
+            10.619867809000088,
+            43.02859
+          ],
+          [
+            11.178887977499786,
+            43.02859
+          ],
+          [
+            11.447209595503576,
+            42.8944291909981
+          ],
+          [
+            10.999996707325714,
+            41.99999341465143
+          ],
+          [
+            10.4857,
+            42.21429
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-12 L17 0 high region0"
+      ]
+    }
+  ],
+  "stair_components": [
+    "94:L16 flight0 step1",
+    "95:L16 flight0 step2",
+    "96:L16 flight0 step3",
+    "97:L16 flight0 step4",
+    "98:L16 flight0 step5",
+    "99:L16 flight0 step6",
+    "100:L16 flight0 step7",
+    "101:L16 flight0 step8",
+    "102:L16 flight0 step9",
+    "103:L16 flight0 step10",
+    "104:L16 flight0 step11",
+    "105:L16 flight0 step12",
+    "106:L16 flight0 step13",
+    "107:L16 flight0 step14",
+    "108:L16 flight0 step15",
+    "109:L16 flight0 step16",
+    "110:L16 flight0 step17",
+    "111:L17 flight0 step1",
+    "112:L17 flight0 step2",
+    "113:L17 flight0 step3",
+    "114:L17 flight0 step4",
+    "115:L17 flight0 step5",
+    "116:L17 flight0 step6",
+    "117:L17 flight0 step7",
+    "118:L17 flight0 step8",
+    "119:L17 flight0 step9",
+    "120:L17 flight0 step10",
+    "121:L17 flight0 step11",
+    "122:L17 flight0 step12",
+    "123:L17 flight0 step13",
+    "124:L17 flight0 step14",
+    "125:L17 flight0 step15",
+    "126:L17 flight0 step16",
+    "127:L17 flight0 step17",
+    "Authored stair end WLD-12 L16 0 high region0",
+    "Authored stair end WLD-12 L17 0 high region0"
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1506528,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": []
+  },
+  "glb_sha256": "5ea1a8e7d264b75f61887fe600847e3c47c3d1257ca33b706d930ffb2726f3ae",
+  "physics_sha256": "c7e4f8fd4d1e9147540502e7525f4035cee5b61c5e18aed02aa0fa54cbd9ae18",
+  "generator_sha256": "38c042e4dfd641a017597a9f399273da313a7d655fe66ee9492578fb1fa77838",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-12-whole-site.png",
+      "sha256": "9b7bae9a342b3038ecaa737a2d5132139c87b15bb775b7a2d65ccdd8dd1a54b8",
+      "type": "native full scene"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-12-new-landings.png",
+      "sha256": "a01291fd6a4f9725045d15862e36a3eecf569aff7ec8bd0653dc237ba672cbd6",
+      "type": "native isolated actual landing changes; context hidden"
+    }
+  ],
+  "source_layout": "development/levels/rebuild/wld-12/rough-layout.json",
+  "source_layout_sha256": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8",
+  "flight_replacements": [],
+  "corner_bridges": [],
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "0": 0
+    },
+    "L17": {
+      "0": 0
+    },
+    "L18": {}
+  },
+  "open_findings": [],
+  "remaining": "Independent solids/material/pivot/native checks and all25flat/continuous stair regressions. Wall/terrain penetrations, crossed flights, circulation, supports/guards and actual runtime/network/hardware gates remain open."
+}

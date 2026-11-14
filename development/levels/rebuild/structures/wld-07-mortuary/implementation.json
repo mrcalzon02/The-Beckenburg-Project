@@ -1,0 +1,641 @@
+{
+  "id": "WLD-07-MORTUARY",
+  "title": "Saint Bartholomew's Cemetery & Vale Mortuary",
+  "source": "rebuild\\wld-07-mortuary\\rough-layout.json",
+  "source_sha256": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
+  "zones": 20,
+  "routes": 25,
+  "shell_openings": [
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "N",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "chapel",
+      "side": "S",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "N",
+      "link": "L08",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "S",
+      "link": "L04",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "E",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cottage",
+      "side": "E",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tool",
+      "side": "W",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "tool",
+      "side": "W",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "west-stair",
+      "side": "S",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "east-stair",
+      "side": "S",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "east-stair",
+      "side": "S",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ossuary",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ossuary",
+      "side": "N",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "chamber",
+      "side": "S",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-reception",
+      "side": "N",
+      "link": "mort-17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-reception",
+      "side": "S",
+      "link": "mort-22",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-reception",
+      "side": "W",
+      "link": "mort-16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-reception",
+      "side": "W",
+      "link": "mort-23",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-reception",
+      "side": "E",
+      "link": "mort-21",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-viewing",
+      "side": "S",
+      "link": "mort-17",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-viewing",
+      "side": "W",
+      "link": "mort-24",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-viewing",
+      "side": "E",
+      "link": "mort-18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-prep",
+      "side": "S",
+      "link": "mort-19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-prep",
+      "side": "W",
+      "link": "mort-18",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-cold",
+      "side": "N",
+      "link": "mort-19",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-cold",
+      "side": "S",
+      "link": "mort-20",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-office",
+      "side": "N",
+      "link": "mort-20",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-office",
+      "side": "W",
+      "link": "mort-21",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-bay",
+      "side": "N",
+      "link": "mort-22",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-hall",
+      "side": "E",
+      "link": "mort-23",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mort-hall",
+      "side": "E",
+      "link": "mort-24",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 213,
+  "issues": [
+    {
+      "zone": "stage",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "entry",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "avenue",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "chapel",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "cottage",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "garden",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "east-graves",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "old-graves",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "tool",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "west-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "east-stair",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "mort-reception",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "mort-viewing",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "mort-prep",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "mort-cold",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "mort-office",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "mort-bay",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "zone": "mort-hall",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          8.5,
+          15.1,
+          14.0,
+          16.9
+        ],
+        [
+          42.0,
+          15.1,
+          47.5,
+          16.9
+        ]
+      ]
+    },
+    {
+      "link": "L14",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L15",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [
+    "Research burial-ground circulation and ossuary structure before detailed construction; keep fictional history explicit.",
+    "Place no rites on graves or inaccessible marker tops; all reservation squares are on clear paths/floors.",
+    "Test underground exit visibility and tree-occlusion consistency.",
+    "Original cemetery geometry and ritual reservations are retained byte-for-byte in its separate source packet.",
+    "Review mortuary room hygiene/service separation before detailed dressing; use appropriate purpose-built fixtures."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "2b1d7656849281ee0e3f447f859a7ea0f4a2141830cf41e61f635be649bfd6aa",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "2458c67f8a78b95151f4aae8adb4684c90bb09e3219f96c5f71224f95a69164e",
+    "independently_reimported": true,
+    "meshes": 209,
+    "triangles": 11550,
+    "floor_parts": 28,
+    "ceiling_cap_parts": 16,
+    "stair_treads": 34,
+    "checked_closed_solids": 208,
+    "measured_depth_parts": 44,
+    "exported_cap_rays": 16,
+    "route_support_solids": 38,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/rebuild/wld-07-mortuary/rough-layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/rebuild/wld-07-mortuary/rough-layout.json": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
+    "development/levels/blockouts/wld-07-mortuary/rough-shell.blend": "014e0a8a06c078acbe305af9f6994a5c73698ff3abb52b9667fb01a8198fd13f",
+    "development/levels/blockouts/wld-07-mortuary/rough-shell.glb": "b2a89076c5721ac3f025855dffbd358a910227a3ebcc3f4bc40ba8c8bdb5a3ea"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "status": "MEASURED_FIT_FINDINGS_NOT_TERRAIN_ACCEPTANCE",
+  "sites": {
+    "ACADEMY": {
+      "samples": 7908,
+      "baseline_valid": 7136,
+      "new_block": 0,
+      "baseline_sweep": 6819,
+      "new_sweep_block": 0,
+      "after_valid": 7243,
+      "recovered_pose": 107,
+      "affected_segments": {}
+    },
+    "WLD-09": {
+      "samples": 3123,
+      "baseline_valid": 2358,
+      "new_block": 0,
+      "baseline_sweep": 2264,
+      "new_sweep_block": 0,
+      "after_valid": 2602,
+      "recovered_pose": 244,
+      "affected_segments": {}
+    },
+    "WLD-18": {
+      "samples": 3033,
+      "baseline_valid": 2905,
+      "new_block": 0,
+      "baseline_sweep": 2805,
+      "new_sweep_block": 0,
+      "after_valid": 2958,
+      "recovered_pose": 53,
+      "affected_segments": {}
+    }
+  },
+  "source_bindings": {
+    "ACADEMY": {
+      "before": "bc6dfb54d2f18ff364a8d336400117a98b90da3c0a2c7d3c3cf3cf28d43732c1",
+      "after": "e93ea5290af1b5da6fc96e04dd2172a7f44bf0e2af08eefa402e01cfbcc4374a",
+      "layout_sha256": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6"
+    },
+    "WLD-09": {
+      "before": "f9a54f267327e12fe4d887ac4f32404d3e3e3932572996b607d03730d30806d9",
+      "after": "50122353470fcf2a579951e15996026d78997f0145412a154484739c7a7848cc",
+      "layout_sha256": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4"
+    },
+    "WLD-18": {
+      "before": "3ca38ad737d20d6ec6cead7d75493d91ec43dc53f47af29a8d25ab5bbb5063d6",
+      "after": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c",
+      "layout_sha256": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d"
+    }
+  },
+  "kernel_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+  "probe_sha256": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+  "auditor_sha256": "a4a8a58816ffae2d2a24565b460378206c36a7e1395f5e6552d7f8a685c737e1",
+  "scope": "All3 explicit exact-manifest candidates compared to their current source geometry; unchanged authored flat centre/side routes with production capsules and qualified sweeps. Vertical routes, moved blockouts, terrain edges and runtime remain open.",
+  "next_action": "Revise blockout/terrain relationships at actual failed contacts. Original route coordinates are review inputs, not fixed constraints. Do not bury failures by increasing tolerances or flattening land around reservation pads."
+}

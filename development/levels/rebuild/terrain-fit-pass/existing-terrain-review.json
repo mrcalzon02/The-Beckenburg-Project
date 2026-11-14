@@ -1,0 +1,216 @@
+{
+  "status": "SEVEN_INDIVIDUAL_REVIEWS_COMPLETE_CONSTRUCTION_OPEN",
+  "sites": [
+    {
+      "id": "WLD-07",
+      "status": "INSPECTED_REVISE_NOT_TERRAIN_ACCEPTED",
+      "source_glb": "development/levels/rebuild/furnishings/wld-07/furnished.glb",
+      "source_glb_sha256": "90386e1f028e2d63c24d45848dcf235c75e57418d6c035c1a54a51f0847be8f7",
+      "native_ground_parts": [
+        {
+          "component": "0:Saved editor terrain WLD-07",
+          "triangles": 5491,
+          "min_y": -0.19775693118572235,
+          "max_y": 0.799328625202179
+        }
+      ],
+      "views": [
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-overview.png",
+          "sha256": "2e357431dd2dd9d0e9b00c032ee61decf30e6fd5a1580db500234346e3cd89d4",
+          "type": "native exported terrain/support construction candidate"
+        },
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-support-side.png",
+          "sha256": "b644acb7fcf5a843e4a99bd7d521a74962a5a10c55b913893fd6c9cbdcf15216",
+          "type": "native exported terrain/support construction candidate"
+        }
+      ],
+      "visual_finding": "Saved cemetery terrain retains the broad rectangular site edge and coarse path shoulder forms. Lower entrances/actual holes remain preserved; new isolated foundation skirts do not resolve the whole landscape.",
+      "next_action": "Shape actual cemetery ground and enclosure around grave sectors and chapel/cottage clusters. Build foundation/rim gaps and surface paths without closing the verified ossuary openings.",
+      "native_saved_holes_preserved": true,
+      "van_arrival_accepted": false
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "INSPECTED_REVISE_NOT_TERRAIN_ACCEPTED",
+      "source_glb": "development/levels/rebuild/furnishings/wld-07-mortuary/furnished.glb",
+      "source_glb_sha256": "d939dc7bf418a5bf445a4164460ed644952e2a7779ed139f11dd2ef8d1aea893",
+      "native_ground_parts": [
+        {
+          "component": "0:Saved editor terrain WLD-07-MORTUARY",
+          "triangles": 9014,
+          "min_y": -0.19775693118572235,
+          "max_y": 0.799328625202179
+        }
+      ],
+      "views": [
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-mortuary-overview.png",
+          "sha256": "b4128e92d5db17d295b3bb77c249fe87ecab35392ddbce746b8d77a9bc07def1",
+          "type": "native exported terrain/support construction candidate"
+        },
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-mortuary-support-side.png",
+          "sha256": "61e32716e55c8b21c1b7c2993f261c2714bc891dbecfcc3e1603d3707424c1c3",
+          "type": "native exported terrain/support construction candidate"
+        }
+      ],
+      "visual_finding": "Annex sits on a broad rectangular eastern expansion; sparse bearing additions leave several native-ground gaps. Base cemetery and annex remain one coherent world, not unrelated copied terrain.",
+      "next_action": "Reshape the east service/mortuary bank and its retaining/foundation transitions together with cemetery edges; preserve all source hole/entrance coordinates until a coordinated revision is verified.",
+      "native_saved_holes_preserved": true,
+      "van_arrival_accepted": false
+    },
+    {
+      "id": "WLD-14",
+      "status": "INSPECTED_REVISE_NOT_TERRAIN_ACCEPTED",
+      "source_glb": "development/levels/rebuild/furnishings/wld-14/furnished.glb",
+      "source_glb_sha256": "9b7d8ea6dc90b73f1bee8b06802986c5c77424bec121ec72a027dfb78ffbaab0",
+      "native_ground_parts": [
+        {
+          "component": "1:Saved editor terrain WLD-14",
+          "triangles": 10146,
+          "min_y": -16.683359146118164,
+          "max_y": 1.7944610118865967
+        }
+      ],
+      "views": [
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-14-overview.png",
+          "sha256": "aae260b173899deeefe41bece6448eff00e67ac8a5255008ba30201dec9bfb4d",
+          "type": "native exported terrain/support construction candidate"
+        },
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-14-support-side.png",
+          "sha256": "39167833ff56ccc873c3fed68b379d77c4c4e7d90c0d34f0ea1d01af821b56ab",
+          "type": "native exported terrain/support construction candidate"
+        }
+      ],
+      "visual_finding": "Headland cliff relief is present, but water/ground extents remain rectangular and cliff returns/porch deck are incomplete. Lighthouse stairs remain a separate previously measured contract.",
+      "next_action": "Fit cliff silhouette, physical edge returns and keeper foundations to the actual site; construct the real porch and canonical supported van/ramp arrival. Do not treat the water plane as containment.",
+      "native_saved_holes_preserved": true,
+      "van_arrival_accepted": false
+    },
+    {
+      "id": "WLD-15",
+      "status": "INSPECTED_REVISE_NOT_TERRAIN_ACCEPTED",
+      "source_glb": "development/levels/rebuild/furnishings/wld-15/furnished.glb",
+      "source_glb_sha256": "dbba6887c3731f22af0c8cd55b809b53f4238228d56643467575bd25b7332bad",
+      "native_ground_parts": [
+        {
+          "component": "0:Authored quay terrain",
+          "triangles": 3584,
+          "min_y": -5.2490410804748535,
+          "max_y": 0.0
+        }
+      ],
+      "views": [
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-15-overview.png",
+          "sha256": "5909c27abbf8bc8d46595db1fe66543e9739dcf646d4cda359e8dcd2937e59fa",
+          "type": "native exported terrain/support construction candidate"
+        },
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-15-support-side.png",
+          "sha256": "1d358556435601df90fc942cae435f9743c3ff59965b1dcc345587efd766bfe5",
+          "type": "native exported terrain/support construction candidate"
+        }
+      ],
+      "visual_finding": "Static pointed vessel hull is retained; broad rectangular sea/quay surfaces and missing constructed pier/deck meshes remain visible. Source quay/pier reservations cannot receive masonry just because a cyan route passes through them.",
+      "next_action": "Construct actual retained quay and pier decks with supported abutments/piles, preserve the floating hull rather than adding land foundations beneath it, and revise shoreline/water bounds and gangway contacts.",
+      "native_saved_holes_preserved": null,
+      "van_arrival_accepted": false
+    },
+    {
+      "id": "WLD-16",
+      "status": "INSPECTED_REVISE_NOT_TERRAIN_ACCEPTED",
+      "source_glb": "development/levels/rebuild/furnishings/wld-16/furnished.glb",
+      "source_glb_sha256": "1e3341905eedc10272186cc845893acb244840c31ffecba58837f4b8e26d23fc",
+      "native_ground_parts": [
+        {
+          "component": "0:Authored roadside terrain",
+          "triangles": 2232,
+          "min_y": -0.7613649368286133,
+          "max_y": 1.1990084648132324
+        }
+      ],
+      "views": [
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-16-overview.png",
+          "sha256": "6ce85b9cd5868590ee6a0fa27ab7107d56dcbcfe92be157554003edbaba015ac",
+          "type": "native exported terrain/support construction candidate"
+        },
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-16-support-side.png",
+          "sha256": "7477f03db63a22eb94e4407198ae41cc65c9608c7541f392e7a638a38c2b9786",
+          "type": "native exported terrain/support construction candidate"
+        }
+      ],
+      "visual_finding": "Motor-lodge room group is readable, but its terrain footprint remains rectangular with per-building grade bands. Walkway reservations lack continuous constructed decks in the source.",
+      "next_action": "Rework court camber/drainage, slope/road shoulders and physical site edges. Build the actual room walkways and thresholds, then replace redundant crossing route plates only with verified continuous support.",
+      "native_saved_holes_preserved": null,
+      "van_arrival_accepted": false
+    },
+    {
+      "id": "WLD-17",
+      "status": "INSPECTED_REVISE_NOT_TERRAIN_ACCEPTED",
+      "source_glb": "development/levels/rebuild/furnishings/wld-17/furnished.glb",
+      "source_glb_sha256": "7bfc9ab10908cc97d8ec5a563cb051923d788fc7003b9783230cf842499ad6b5",
+      "native_ground_parts": [
+        {
+          "component": "0:Authored battery terrain",
+          "triangles": 3400,
+          "min_y": -0.6986137628555298,
+          "max_y": 6.900000095367432
+        }
+      ],
+      "views": [
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-17-overview.png",
+          "sha256": "6fbe66482cd61f3e41e61d1d6f0e6cd61b56b7cba77ee43f2c04fd0848569335",
+          "type": "native exported terrain/support construction candidate"
+        },
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-17-support-side.png",
+          "sha256": "c0d0e21576910d9011b4aea4034d812bb8521df5015a33473cfe9e4bd58166cc",
+          "type": "native exported terrain/support construction candidate"
+        }
+      ],
+      "visual_finding": "Battery elevation layers exist, but its broad site remains a rectangle and terrain overtops several earlier low-floor reservations. A few supported skirts do not supply earth-covered gallery roofs or retaining sections.",
+      "next_action": "Set coherent battery crest/courtyard/arrival terraces and rock/retaining mass, then move or regrade structure/stair groups to fit. Preserve gallery room IDs and true apertures; do not hide earth conflicts with blanket pad flattening.",
+      "native_saved_holes_preserved": null,
+      "van_arrival_accepted": false
+    },
+    {
+      "id": "WLD-18",
+      "status": "INSPECTED_REVISE_NOT_TERRAIN_ACCEPTED",
+      "source_glb": "development/levels/rebuild/furnishings/wld-18/furnished.glb",
+      "source_glb_sha256": "a19b539b5712add8136ce780993b8322e3b38143590c364d6aa0ed4008802f95",
+      "native_ground_parts": [
+        {
+          "component": "1:Saved editor terrain WLD-18",
+          "triangles": 9313,
+          "min_y": -0.33936065435409546,
+          "max_y": 1.549340009689331
+        }
+      ],
+      "views": [
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-18-overview.png",
+          "sha256": "a74387288c6f5fd87b46e5a694fa0a55f68e062d2086b0a188e2a13112738f29",
+          "type": "native exported terrain/support construction candidate"
+        },
+        {
+          "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-18-support-side.png",
+          "sha256": "51e61ace0fa2f720317593130edbcd04b6ee4b04d812b140be164a1577c5ef13",
+          "type": "native exported terrain/support construction candidate"
+        }
+      ],
+      "visual_finding": "Actual central silo void and annular source levels remain; surrounding security-compound ground is rectangular and several foundation contacts are missing near underground connections.",
+      "next_action": "Refine compound/escape-bank silhouette and physical enclosure, construct correct shaft rim/guards and bearing transitions around underground exits, retain actual saved punched topology and inspect canonical arrival.",
+      "native_saved_holes_preserved": true,
+      "van_arrival_accepted": false
+    }
+  ],
+  "limitation": "Views are native construction exports, not runtime. Geometry presence and preserved saved holes do not prove drainage, traversability, containment, visual or gameplay acceptance."
+}

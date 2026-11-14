@@ -1,0 +1,95 @@
+{
+  "site": "WLD-04",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-04/rough-layout.json",
+  "source_layout_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+  "structure_glb_sha256": "51b691755879494c82467abefa14e399416640f00829cbf45106e94e6abd06ec",
+  "furnished_glb_sha256": "f9430d28dab5fed8459be1082a0ba0525786e059d8d12471c8a55988ca27cf3f",
+  "native_sha256": "036d64d6e73d0ed52e733b88f028bcdd2c04e6fa52bcc941ef230f4b9f27c62a",
+  "requests": 3,
+  "placements": [
+    {
+      "id": "WLD-04:hut:0:0",
+      "zone": "hut",
+      "purpose": "Maintenance hut / Workshop or classroom bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_workbench",
+      "asset": "level_blockout_workbench",
+      "source_sha256": "118331bca686c16c1e75042c6d56bf917218bdc8902c68ba05b722869725c589",
+      "bounds": [
+        6.946000099182129,
+        -14.940000534057617,
+        6.0,
+        8.696000099182129,
+        -14.15999984741211,
+        6.909999847412109
+      ],
+      "rect": [
+        6.946,
+        14.16,
+        8.696,
+        14.93999997138977
+      ],
+      "floor_y": 6,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 72
+    },
+    {
+      "id": "WLD-04:store:1:0",
+      "zone": "store",
+      "purpose": "Ranger store / Three-level freestanding shelf / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_storage_shelf",
+      "asset": "level_blockout_storage_shelf",
+      "source_sha256": "9e7baa1f1c128734b572d4e83de878db8ed2643eba544287eeb3034e74d88df1",
+      "bounds": [
+        46.98550033569336,
+        -30.90999984741211,
+        6.0,
+        48.635501861572266,
+        -30.15999984741211,
+        7.800000190734863
+      ],
+      "rect": [
+        46.985500020265576,
+        30.16,
+        48.63549999642372,
+        30.91
+      ],
+      "floor_y": 6,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    },
+    {
+      "id": "WLD-04:cab:2:0",
+      "zone": "cab",
+      "purpose": "Lookout cab / Lookout spotting table and instrument / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_lookout_spotter",
+      "asset": "level_blockout_lookout_spotter",
+      "source_sha256": "cb1c3d7cbb6c4fcc39394081fc8a087273166dbbede437eb1401587a51fff4c8",
+      "bounds": [
+        25.06599998474121,
+        -2.9100000858306885,
+        15.0,
+        26.216001510620117,
+        -2.1600000858306885,
+        16.15814781188965
+      ],
+      "rect": [
+        25.066000004768373,
+        2.16,
+        26.215999980926515,
+        2.91
+      ],
+      "floor_y": 15,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 144
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "2e1af770ea64f4cc583058dd52232f6d6bfa58fa42b2784b343ea80377c2ff5b",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 3,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

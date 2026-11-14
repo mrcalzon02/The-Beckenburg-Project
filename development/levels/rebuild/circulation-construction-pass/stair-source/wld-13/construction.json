@@ -1,0 +1,238 @@
+{
+  "id": "WLD-13",
+  "status": "AUTHORED_SHARED_STAIR_BAY_CANDIDATE_TERRAIN_RUNTIME_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/entrance-construction-pass/wld-13/rebuilt-entrances.glb",
+  "source_glb_sha256": "6656f438f5437d6dd3372dbb470ee98c1a234308b83f904a16f8a916f08b9733",
+  "source_physics": "development/levels/rebuild/entrance-construction-pass/wld-13/rebuilt-entrances.hcs2",
+  "source_physics_sha256": "5d1767a5b6792fe058fb17c847477cafb70ec48c2a5e862c561c9b7f0a06d98c",
+  "before_layout": "development/levels/rebuild/entrance-construction-pass/wld-13/authored-layout.json",
+  "before_layout_sha256": "fc3d50b23ea898eab68e6e51a9e0adda96be89dfcadd8971745b5a333be6608e",
+  "layout": "development/levels/rebuild/circulation-construction-pass/stair-source/wld-13/authored-layout.json",
+  "layout_sha256": "098a1bc085ad785c6107cbcaf0c00c8f5d4a0056bcd1eb872f6f5abb35fbf035",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {},
+    "L18": {},
+    "L19": {
+      "0": 0
+    }
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {},
+    "L18": {},
+    "L19": {
+      "3": 0
+    }
+  },
+  "before_stair_components": [
+    "127:L19 flight0 step1",
+    "128:L19 flight0 step2",
+    "129:L19 flight0 step3",
+    "130:L19 flight0 step4",
+    "131:L19 flight0 step5",
+    "132:L19 flight0 step6",
+    "133:L19 flight0 step7",
+    "134:L19 flight0 step8",
+    "135:L19 flight0 step9",
+    "136:L19 flight0 step10",
+    "137:L19 flight0 step11",
+    "138:L19 flight0 step12",
+    "139:L19 flight0 step13",
+    "140:L19 flight0 step14",
+    "141:L19 flight0 step15",
+    "142:L19 flight0 step16",
+    "143:L19 flight0 step17"
+  ],
+  "stair_components": [
+    "Orthogonal stair WLD-13 L19 step0",
+    "Orthogonal stair WLD-13 L19 step1",
+    "Orthogonal stair WLD-13 L19 step2",
+    "Orthogonal stair WLD-13 L19 step3",
+    "Orthogonal stair WLD-13 L19 step4",
+    "Orthogonal stair WLD-13 L19 step5",
+    "Orthogonal stair WLD-13 L19 step6",
+    "Orthogonal stair WLD-13 L19 step7",
+    "Orthogonal stair WLD-13 L19 step8",
+    "Orthogonal stair WLD-13 L19 step9",
+    "Orthogonal stair WLD-13 L19 step10",
+    "Orthogonal stair WLD-13 L19 step11",
+    "Orthogonal stair WLD-13 L19 step12",
+    "Orthogonal stair WLD-13 L19 step13",
+    "Orthogonal stair WLD-13 L19 step14",
+    "Orthogonal stair WLD-13 L19 step15",
+    "Orthogonal stair WLD-13 L19 step16",
+    "Orthogonal stair WLD-13 L19 step17",
+    "Orthogonal stair WLD-13 L19 step18",
+    "Orthogonal stair WLD-13 L19 step19",
+    "Orthogonal stair WLD-13 L19 step20"
+  ],
+  "removed_source_meshes": [
+    "L19 flight0 step1",
+    "L19 flight0 step2",
+    "L19 flight0 step3",
+    "L19 flight0 step4",
+    "L19 flight0 step5",
+    "L19 flight0 step6",
+    "L19 flight0 step7",
+    "L19 flight0 step8",
+    "L19 flight0 step9",
+    "L19 flight0 step10",
+    "L19 flight0 step11",
+    "L19 flight0 step12",
+    "L19 flight0 step13",
+    "L19 flight0 step14",
+    "L19 flight0 step15",
+    "L19 flight0 step16",
+    "L19 flight0 step17",
+    "Floor processing",
+    "Floor gallery.002",
+    "Floor gallery.004"
+  ],
+  "removed_native_parts": [
+    "127:L19 flight0 step1",
+    "128:L19 flight0 step2",
+    "129:L19 flight0 step3",
+    "130:L19 flight0 step4",
+    "131:L19 flight0 step5",
+    "132:L19 flight0 step6",
+    "133:L19 flight0 step7",
+    "134:L19 flight0 step8",
+    "135:L19 flight0 step9",
+    "136:L19 flight0 step10",
+    "137:L19 flight0 step11",
+    "138:L19 flight0 step12",
+    "139:L19 flight0 step13",
+    "140:L19 flight0 step14",
+    "141:L19 flight0 step15",
+    "142:L19 flight0 step16",
+    "143:L19 flight0 step17",
+    "0:Floor processing",
+    "86:Floor gallery.002",
+    "88:Floor gallery.004"
+  ],
+  "new_parts": 25,
+  "new_triangles": 380,
+  "restored_shaft_parts": [
+    "Restored bay WLD-13 gallery floor region0"
+  ],
+  "shell_changes": [
+    {
+      "source_mesh": "Floor processing",
+      "new_mesh": "Bayed shell Floor processing",
+      "removed_volume_m3": 0.11170140820884455
+    },
+    {
+      "source_mesh": "Floor gallery.002",
+      "new_mesh": "Bayed shell Floor gallery.002",
+      "removed_volume_m3": 0.74905640027532
+    },
+    {
+      "source_mesh": "Floor gallery.004",
+      "new_mesh": "Bayed shell Floor gallery.004",
+      "removed_volume_m3": 0.7490564004561993
+    }
+  ],
+  "design": {
+    "points": {
+      "L19": [
+        [
+          36,
+          0,
+          41
+        ],
+        [
+          36,
+          0,
+          53
+        ],
+        [
+          27,
+          0,
+          53
+        ],
+        [
+          27,
+          0,
+          51
+        ],
+        [
+          27,
+          3,
+          43
+        ],
+        [
+          27,
+          3,
+          41
+        ]
+      ]
+    },
+    "build": [
+      "L19"
+    ],
+    "shared": {},
+    "preserve_upper_hubs": false,
+    "reason": "House the gallery flight within the mezzanine strip; close the former transverse shaft and reserve the new longitudinal opening."
+  },
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 2580968,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      0,
+      86,
+      88,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143
+    ]
+  },
+  "glb_sha256": "13475541b21ad80db95ff2db5c90ec6c2a7ad833f411818619ac139eccfb3af4",
+  "physics_sha256": "0410c57fc553a33360389beace897448388e1150f46701de0e331b3a2796e065",
+  "generator_sha256": "e834a77051dac69dba57dbd96ca23ee2198a81df81f2f9977f44ea405d798fea",
+  "remaining": "Independent exact source/solid/native and all25route regression; real saved terrain grading/punches, guard/framing/finish and runtime ownership integration remain open."
+}

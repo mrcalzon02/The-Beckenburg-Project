@@ -5,8 +5,29 @@ on:
     paths:
       - 'src/main/java/org/beckenburg/*EditorAgent*.java'
       - 'src/main/java/org/beckenburg/EditorAgentCli.java'
+      - 'src/main/java/org/beckenburg/HeadlessMaterialEditor.java'
+      - 'src/main/java/org/beckenburg/MaterialEditorAgent.java'
+      - 'src/main/java/org/beckenburg/editor/EditorObservationBridge.java'
+      - 'src/main/java/org/beckenburg/editor/EditorAgentProtocol.java'
+      - 'src/main/java/org/beckenburg/editor/EditorRequestJournal.java'
       - 'src/main/java/org/beckenburg/DeveloperLevelEditor.java'
+      - 'src/main/java/org/beckenburg/EditorPlaytest.java'
+      - 'src/main/java/org/beckenburg/CastleHubPanel.java'
+      - 'src/main/java/org/beckenburg/GhostPracticePanel.java'
+      - 'src/main/java/org/beckenburg/AssetImportDialog.java'
+      - 'src/main/java/org/beckenburg/MaterialReview*.java'
+      - 'src/test/java/org/beckenburg/MaterialReviewMipTest.java'
+      - 'src/main/java/org/beckenburg/GlbProps.java'
+      - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - 'src/main/java/org/beckenburg/editor/EditorMaterialWorkspace.java'
+      - 'src/main/java/org/beckenburg/editor/EditorTopologyProject.java'
+      - 'src/test/java/org/beckenburg/G2TexturedModelGuiTest.java'
+      - 'src/test/java/org/beckenburg/editor/EditorMaterialPencilTest.java'
       - 'src/main/java/org/beckenburg/LevelAuthoringSession.java'
+      - 'src/main/java/org/beckenburg/MissionStructuralWall.java'
+      - 'src/main/java/org/beckenburg/MissionArchitecturalRoom.java'
+      - 'src/main/java/org/beckenburg/DeckSlabs.java'
+      - 'src/main/java/org/beckenburg/HouseMap.java'
       - 'src/main/java/org/beckenburg/LevelPlans.java'
       - 'src/main/java/org/beckenburg/UserLevelLibrary.java'
       - 'src/main/java/org/beckenburg/HouseSourceVersions.java'
@@ -28,14 +49,28 @@ on:
       - 'src/test/java/org/beckenburg/LevelAuthoringRecoveryTest.java'
       - 'tools/verify_editor_agent_host.cmd'
       - 'tools/verify_editor_agent_cli.py'
+      - 'tools/verify_mesh_agent_cli.py'
+      - 'tools/editor_mcp.py'
+      - 'tools/verify_editor_mcp_schema.py'
+      - 'tools/editor_mcp_requirements.txt'
+      - 'tools/verify_editor_mcp.py'
+      - 'tools/verify_installed_editor_mcp.ps1'
+      - 'src/test/java/org/beckenburg/InstalledEditorMcpTest.java'
+      - 'installer/beckenburg.iss'
       - '.github/workflows/editor-agent-service.yml'
   workflow_dispatch:
+    inputs:
+      run_ollama_pilot:
+        description: 'Exercise one bounded School editor change using local Ollama'
+        required: false
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
   native-editor-service:
     runs-on: windows-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -45,9 +80,128 @@ jobs:
       - name: Build actual host and resources
         shell: cmd
         run: call build.cmd package
+      - name: Diagnose native Castle lamp emitter and roof occlusion
+        shell: cmd
+        run: |
+          if not exist build\editor-agent-evidence mkdir build\editor-agent-evidence
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\CastleAgentLampProbe.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.CastleAgentLampProbe > build\editor-agent-evidence\castle-lamp-source-probe.txt 2>&1
+          if errorlevel 1 exit /b 1
+          type build\editor-agent-evidence\castle-lamp-source-probe.txt
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install MCP SDK for the stdio client and adapter
+        run: python -m pip install -r tools/editor_mcp_requirements.txt
+      - name: Verify bounded Ollama planner safeguards
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.run_ollama_pilot) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[ollama-editor-pilot]')) }}
+        shell: pwsh
+        run: python tools/ollama_editor_pilot.py --self-test
+      - name: Run loopback Ollama and bounded native School edit in the SAME step
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.run_ollama_pilot) || (github.event_name == 'push' && contains(github.event.head_commit.message, '[ollama-editor-pilot]')) }}
+        shell: pwsh
+        timeout-minutes: 16
+        run: |
+          $ErrorActionPreference = 'Stop'
+          # GitHub-hosted runner cleans up orphan processes between steps.
+          # Keep Ollama and its Python client alive together, then terminate it explicitly.
+          $env:OLLAMA_HOST = '127.0.0.1:11434'
+          $env:OLLAMA_MODELS = Join-Path $env:RUNNER_TEMP 'ollama-models'
+          $evidence = Join-Path 'build/editor-agent-evidence' 'ollama-pilot'
+          New-Item -ItemType Directory -Path $evidence -Force | Out-Null
+          $toolDir = Join-Path $env:RUNNER_TEMP 'beckenburg-ollama'
+          $exe = Join-Path $toolDir 'ollama.exe'
+          $server = $null
+          try {
+            if (-not (Test-Path $exe)) {
+              $archive = Join-Path $env:RUNNER_TEMP 'ollama-windows-amd64.zip'
+              Invoke-WebRequest -Uri 'https://github.com/ollama/ollama/releases/latest/download/ollama-windows-amd64.zip' -OutFile $archive
+              Expand-Archive -Path $archive -DestinationPath $toolDir -Force
+            }
+            if (-not (Test-Path $exe)) { throw 'Official Ollama CLI missing after extraction' }
+            $server = Start-Process -FilePath $exe -ArgumentList 'serve' -PassThru -WindowStyle Hidden `
+              -RedirectStandardOutput (Join-Path $evidence 'ollama-server-stdout.log') `
+              -RedirectStandardError (Join-Path $evidence 'ollama-server-stderr.log')
+            $ready = $false
+            for ($i=0; $i -lt 45; $i++) {
+              if ($server.HasExited) { throw "Ollama exited unexpectedly with $($server.ExitCode)" }
+              try {
+                Invoke-RestMethod -Uri 'http://127.0.0.1:11434/api/tags' -TimeoutSec 3 | Out-Null
+                $ready = $true
+                break
+              } catch { Start-Sleep -Seconds 2 }
+            }
+            if (-not $ready) { throw 'Ollama loopback server did not become ready' }
+            & $exe pull qwen2.5:0.5b
+            if ($LASTEXITCODE -ne 0) { throw 'Could not pull the pilot model' }
+            # Verify the serving endpoint after the model download, not just before it.
+            Invoke-RestMethod -Uri 'http://127.0.0.1:11434/api/tags' -TimeoutSec 8 | Out-Null
+            python tools/ollama_editor_pilot.py --site SCHOOL --output $evidence
+            if ($LASTEXITCODE -ne 0) { throw "Native editor pilot exited with $LASTEXITCODE" }
+          }
+          finally {
+            if ($server -and -not $server.HasExited) {
+              Stop-Process -Id $server.Id -Force -ErrorAction SilentlyContinue
+            }
+          }
+      - name: Verify MCP native operation schema without a live scene
+        shell: pwsh
+        run: python tools/verify_editor_mcp_schema.py
+      - name: Verify native mission doorway geometry and persistence
+        shell: cmd
+        timeout-minutes: 5
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\EditorAgentMissionDoorTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.EditorAgentMissionDoorTest
+          if errorlevel 1 exit /b 1
+      - name: Verify native mission partition wall, renderer and collision
+        shell: cmd
+        timeout-minutes: 8
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\EditorAgentMissionWallTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.EditorAgentMissionWallTest
+          if errorlevel 1 exit /b 1
+      - name: Construct real School child room with roof and playable door
+        shell: cmd
+        timeout-minutes: 8
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\EditorAgentArchitecturalRoomTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.EditorAgentArchitecturalRoomTest
+          if errorlevel 1 exit /b 1
+      - name: Verify native upper-floor depth, underside and game collision
+        shell: cmd
+        timeout-minutes: 10
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\EditorAgentMissionFloorTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.EditorAgentMissionFloorTest
+          if errorlevel 1 exit /b 1
+      - name: Verify native School stair terminal, deep slab and route clearance
+        shell: cmd
+        timeout-minutes: 12
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\EditorAgentMissionLandingTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.EditorAgentMissionLandingTest
+          if errorlevel 1 exit /b 1
       - name: Verify native service, actual Windows editor and headless protocol
+        env:
+          EDITOR_MCP_PYTHON: python
         shell: cmd
         run: call tools\verify_editor_agent_host.cmd
+      - name: Verify MCP repair in the installed Windows editor
+        shell: pwsh
+        run: ./tools/verify_installed_editor_mcp.ps1
       - uses: actions/upload-artifact@v4
         if: always()
         with:

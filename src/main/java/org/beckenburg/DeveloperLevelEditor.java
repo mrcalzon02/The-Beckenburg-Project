@@ -4,6 +4,7 @@ import javax.swing.*;
 import org.beckenburg.editor.EditorTool;
 import org.beckenburg.editor.EditorHistory;
 import org.beckenburg.editor.EditorAgentService;
+import org.beckenburg.editor.EditorObservationBridge;
 import org.beckenburg.LevelDefinition.Prop;
 import org.beckenburg.editor.EditorPalettePanel;
 import javax.swing.event.ChangeListener;
@@ -19,6 +20,8 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
+import org.beckenburg.CastleLevelEdits.Field;
 import java.util.Set;
 
 /** Actual Java 17, game-rendered 3D editor, not an in-game placeholder.
@@ -35,6 +38,8 @@ public final class DeveloperLevelEditor extends JPanel {
     private LevelAuthoringSession mission;
     private EditorHistory<LevelAuthoringSession.Snapshot> missionHistory;
     private EditorAgentService<LevelAuthoringSession.Snapshot> missionAgent;
+    private EditorObservationBridge observation;
+    private boolean playtesting;
     private HouseMap missionMap;
     private long missionMapRevision=-1;
     private HouseMap.Site missionSite;
@@ -68,7 +73,7 @@ public final class DeveloperLevelEditor extends JPanel {
         var loaded=new LevelAuthoringSession(site);
         // Use the playable HouseMap itself, not a second scene interpretation.
         var playable=new HouseMap(site,loaded.level());
-        mission=loaded;missionSite=site;
+        stopObservation();mission=loaded;missionSite=site;
         missionHistory=new EditorHistory<>(loaded,60);missionMap=playable;missionMapRevision=loaded.revision();
         missionAgent=new EditorAgentService<>(new LevelEditorAgent(loaded,this::currentMissionMap,renderer,()->{
             requireEditorThread();
@@ -77,13 +82,14 @@ public final class DeveloperLevelEditor extends JPanel {
             missionDirty=true;
             if(event.details().fullScene()||!event.details().dependencies().isEmpty())refreshMissionPreview();
             refresh();
-        },()->missionDirty=false);
+        },()->missionDirty=false,this::runPlaytest);
         var spawn=playable.level().room(0).spawn();
         renderer.x=spawn.x();renderer.z=spawn.z();
         renderer.eyeHeight=spawn.y()+1.62;renderer.yaw=0;renderer.pitch=-.12;
         workPlane.setValue(spawn.y());
     }
     private void finishSceneOpen(){
+        refreshAssetPalette();
         chosen=null;renderer.clearEditorSelection();lightVolumeOverlay.setSelected(false);
         lightVolume=null;lightVolumeKey="";filter.setText("");
         refresh();
@@ -113,7 +119,7 @@ public final class DeveloperLevelEditor extends JPanel {
         String previousUser=UserLevelLibrary.activeId();
         try{
             if(choice.equals("CASTLE BECKENBURG")){
-                mission=null;missionSite=null;missionHistory=null;missionMap=null;
+                stopObservation();mission=null;missionSite=null;missionHistory=null;missionMap=null;
                 double[] spawn=data.spawn();
                 renderer.x=spawn[0];renderer.z=spawn[1];renderer.eyeHeight=1.62;
                 renderer.yaw=spawn[2];renderer.pitch=-.12;
@@ -206,10 +212,11 @@ public final class DeveloperLevelEditor extends JPanel {
         new CastleEditorAgent(project,map,renderer,()->{
             requireEditorThread();
             if(mission!=null)throw new IllegalStateException("Castle is not the active scene");
-        }),history,()->{castleDirty=true;refresh();},()->castleDirty=false);
+        },this::selectForFocus),history,event->{castleDirty=true;refresh();},()->castleDirty=false,this::runPlaytest);
     private void requireEditorThread(){
         if(!SwingUtilities.isEventDispatchThread()||editorClosed)
             throw new IllegalStateException("Editor must be open and called on its event thread");
+        if(playtesting)throw new IllegalStateException("Return from playtest to access the editor");
     }
     /** Future transports must dispatch to the EDT and bind this active service. */
     public EditorAgentService<?> agentService(){
@@ -263,6 +270,9 @@ public final class DeveloperLevelEditor extends JPanel {
     private String lightVolumeKey="";
     private volatile boolean editorClosed;
     private final JCheckBox navBlocked=new JCheckBox("Block player navigation here");
+    private final JButton doorSockets=button("DOOR SOCKETS…");
+    private final JButton missionWallOpening=button("WALL CUT…");
+    private final JButton missionBuildRoom=button("ROOM+");
     private final JLabel status=new JLabel("WASD fly  •  Q/E altitude  •  Mouse drag look  •  Wheel forward/back  •  Ctrl+S save");
     private final JTextArea navInfo=new JTextArea(6,25);
     private final Set<Integer> keys=new HashSet<>();
@@ -303,6 +313,7 @@ public final class DeveloperLevelEditor extends JPanel {
             }
             @Override public void windowClosed(WindowEvent e){
                 editor.editorClosed=true;
+                editor.stopObservation();
                 editor.timer.stop();
                 editor.lightPreviewWorker.shutdownNow();
             }
@@ -459,6 +470,7 @@ public final class DeveloperLevelEditor extends JPanel {
         commands.add(undoButton);commands.add(redoButton);
         JButton evidence=button("VERIFY SCENE");
         evidence.addActionListener(e->showAgentEvidence());commands.add(evidence);
+        var playtest=button("PLAYTEST");playtest.addActionListener(e->playtest());commands.add(playtest);
         JButton authoringGuide=button("PSX GUIDE");
         authoringGuide.setToolTipText("Offline editor engineering reference and machine manifest");
         authoringGuide.addActionListener(e->org.beckenburg.editor.EditorAuthoringReference.show(window));
@@ -617,12 +629,8 @@ public final class DeveloperLevelEditor extends JPanel {
             // Clear hierarchy filtering so an affected scene object is selectable.
             filter.setText("");
             selectId(f.kind(),f.id());
-            renderer.x=Math.max(.5,Math.min(42.5,f.x()-1.8));
-            renderer.z=Math.max(.5,Math.min(35.5,f.z()-1.8));
-            renderer.eyeHeight=Math.max(.7,Math.min(10.5,f.y()+1.4));
-            renderer.yaw=Math.atan2(f.x()-renderer.x,f.z()-renderer.z);
-            renderer.pitch=-.12;
-            renderer.setEditorSelection(f.x(),f.y(),f.z());
+            if(!f.kind().equals("PROP")||!CastleEditorAgent.positionPropCamera(renderer,map,data.propById(f.id())))
+                CastleEditorAgent.positionCamera(renderer,f.x(),f.y(),f.z());
             status.setText("AUDIT: "+f.code()+" — "+f.id()+" (advisory)");
             dialog.dispose();
             viewport.requestFocusInWindow();
@@ -655,13 +663,16 @@ public final class DeveloperLevelEditor extends JPanel {
                 if(id.equals(library.getItemAt(i))){listed=true;break;}
             if(!listed)library.addItem(id);
             library.setSelectedItem(id);
-            if(assetPalette!=null)assetPalette.reload(project);
+            refreshAssetPalette();
             chooseTool(EditorTool.PROP);
             status.setText("Imported "+id+" — PROP click places in the live scene; Ctrl+S saves placement");
             viewport.requestFocusInWindow();
         });
     }
 
+    private void refreshAssetPalette(){
+        if(assetPalette!=null)assetPalette.reload(mission==null?project:mission);
+    }
     private static JButton button(String name){return new JButton(name);}
     void rebuildCastle(CastleRebuildUpgrade.Baseline baseline){
         requireEditorThread();if(mission!=null)throw new IllegalStateException("Castle is not the active scene");
@@ -690,14 +701,19 @@ public final class DeveloperLevelEditor extends JPanel {
         for(JSpinner input:new JSpinner[]{x,y,z,yaw,scale,width,depth,radius,power,surfaceHeight})
             input.addChangeListener(e->applySelection());
         panel.add(fields,BorderLayout.CENTER);
-        JPanel actions=new JPanel(new GridLayout(1,4,4,0));
+        JPanel actions=new JPanel(new GridLayout(1,6,4,0));
         JButton here=button("PLACE AHEAD"),remove=button("REMOVE"),addLight=button("ADD LIGHT");
         JButton duplicate=button("DUPLICATE");
         duplicate.addActionListener(e->duplicate());
         here.addActionListener(e->placeAhead());
         remove.addActionListener(e->remove());
         addLight.addActionListener(e->addLamp());
+        missionWallOpening.setToolTipText("Native wall cut and optional operable door in the same game scene");
+        missionWallOpening.addActionListener(e->editMissionWallOpening());
+        missionBuildRoom.setToolTipText("Build a real four-wall native child room with ceiling and door");
+        missionBuildRoom.addActionListener(e->buildMissionRoom());
         actions.add(here);actions.add(remove);actions.add(addLight);actions.add(duplicate);
+        actions.add(missionWallOpening);actions.add(missionBuildRoom);
         panel.add(actions,BorderLayout.SOUTH);
         return panel;
     }
@@ -740,6 +756,7 @@ public final class DeveloperLevelEditor extends JPanel {
         block.addActionListener(e->castleOnly(()->data.setNavBlocked(integer(tileX),
             integer(tileZ),navBlocked.isSelected())));
         tools.add(block);
+        doorSockets.addActionListener(e->editDoorSocket());tools.add(doorSockets);
         tools.add(navBlocked);tools.add(navOverlay);
         JButton spawn=button("SPAWN HERE");spawn.addActionListener(e->castleOnly(()->{
             data.setSpawn(renderer.x,renderer.z,renderer.yaw);
@@ -753,6 +770,24 @@ public final class DeveloperLevelEditor extends JPanel {
         return panel;
     }
     private static int integer(JSpinner s){return ((Number)s.getValue()).intValue();}
+    private void editDoorSocket(){
+        if(mission!=null){status.setText("Door sockets belong to the Castle");return;}
+        var sockets=new JComboBox<String>();for(var slot:CastleDoorSlots.all())if(CastleDoorSlots.available(slot))sockets.addItem(slot.id());
+        if(sockets.getItemCount()==0){status.setText("No physical Castle door sockets available");return;}
+        var location=new JLabel();var leaf=new JComboBox<CastleDoorSlots.Type>();
+        Runnable show=()->{
+            var slot=CastleDoorSlots.require((String)sockets.getSelectedItem());
+            location.setText("X "+slot.centerX()+"   Foot elevation "+slot.bottom()+"   Z "+slot.centerZ());
+            leaf.removeAllItems();leaf.addItem(CastleDoorSlots.Type.EMPTY);
+            leaf.addItem(slot.gate()?CastleDoorSlots.Type.PORTCULLIS:CastleDoorSlots.Type.WOOD);
+            leaf.setSelectedItem(data.doorType(slot.id()));
+        };
+        sockets.addActionListener(e->show.run());show.run();
+        if(JOptionPane.showConfirmDialog(window,new Object[]{"Physical socket",sockets,location,"Mounted leaf",leaf},
+            "Castle door sockets",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+        String id=(String)sockets.getSelectedItem();var target=(CastleDoorSlots.Type)leaf.getSelectedItem();
+        if(data.doorType(id)!=target)castleOnly(()->data.setSocketLeaf(id,target));
+    }
     private static double value(JSpinner s){return ((Number)s.getValue()).doubleValue();}
     private void castleOnly(Runnable action){
         if(mission!=null){
@@ -781,23 +816,109 @@ public final class DeveloperLevelEditor extends JPanel {
             status.setText("Move inside the level before placing an asset");return;
         }
         String id="custom"+System.nanoTime();
-        operate(()->data.put(new CastleLevelEdits.Prop(id,mesh,aheadX,
-            renderer.eyeHeight>3?CastleHubArchitecturalPlan.GROUND_CEILING:0,
-            aheadZ,.8,0,.4,.4,renderer.eyeHeight>3)));
+        operate(()->data.placePaletteProp(id,mesh,aheadX,renderer.eyeHeight>3?CastleHubArchitecturalPlan.GROUND_CEILING:0,aheadZ));
         refresh();selectId("PROP",id);
+    }
+    /** Human and headless editors use the same four-wall, ceiling and door
+     * constructor. No special-case GUI geometry or duplicate scene ownership. */
+    private void buildMissionRoom(){
+        if(mission==null){status.setText("Open a mission before building a room");return;}
+        int zone=-1;
+        for(var room:mission.level().rooms())if(!room.outside()&&
+                room.contains(renderer.x,room.y(),renderer.z)){
+            zone=room.id();break;
+        }
+        final int suggested=Math.max(0,zone);
+        double px=renderer.x,pz=renderer.z;
+        JTextField name=new JTextField("store-room");
+        JTextField room=new JTextField(Integer.toString(suggested));
+        JTextField left=new JTextField(Double.toString(Math.floor(px*10)/10));
+        JTextField top=new JTextField(Double.toString(Math.floor(pz*10)/10));
+        JTextField right=new JTextField(Double.toString(Math.floor(px*10)/10+2.65));
+        JTextField bottom=new JTextField(Double.toString(Math.floor(pz*10)/10+2.65));
+        JTextField height=new JTextField("2.35");
+        JComboBox<String> side=new JComboBox<>(new String[]{"S","N","E","W"});
+        var fields=new JPanel(new GridLayout(0,2,4,4));
+        fields.add(new JLabel("Stable architectural ID"));fields.add(name);
+        fields.add(new JLabel("Existing gameplay zone"));fields.add(room);
+        fields.add(new JLabel("X minimum (m)"));fields.add(left);
+        fields.add(new JLabel("Z minimum (m)"));fields.add(top);
+        fields.add(new JLabel("X maximum (m)"));fields.add(right);
+        fields.add(new JLabel("Z maximum (m)"));fields.add(bottom);
+        fields.add(new JLabel("Wall/ceiling height (m)"));fields.add(height);
+        fields.add(new JLabel("Door side"));fields.add(side);
+        if(JOptionPane.showConfirmDialog(window,fields,"Construct physical child room",
+                JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE)!=JOptionPane.OK_OPTION)return;
+        operate(()->mission.buildRoom(name.getText().trim(),Integer.parseInt(room.getText().trim()),
+            Double.parseDouble(left.getText().trim()),Double.parseDouble(top.getText().trim()),
+            Double.parseDouble(right.getText().trim()),Double.parseDouble(bottom.getText().trim()),
+            Double.parseDouble(height.getText().trim()),LevelMaterials.PLASTER,
+            (String)side.getSelectedItem()));
+        refresh();
+    }
+    /** Human/editor and agent share exactly the same validated transaction,
+     * game collision, renderer and serialized wall/door authority. */
+    private void editMissionWallOpening(){
+        if(mission==null||chosen==null||!chosen.kind.equals("MISSION_WALL")){
+            status.setText("Select a native mission wall before editing its opening");return;
+        }
+        var wall=mission.walls().stream()
+            .filter(w->(MissionStructuralWall.NODE_PREFIX+w.id()).equals(chosen.id))
+            .findFirst().orElse(null);
+        if(wall==null){status.setText("Selected mission wall no longer exists");return;}
+        String nodeId=chosen.id;
+        JTextField offset=new JTextField(Double.toString(wall.cutOffset()));
+        JTextField width=new JTextField(Double.toString(wall.hasOpening()?wall.cutWidth():.8));
+        JTextField height=new JTextField(Double.toString(wall.hasOpening()?wall.cutHeight():1.92));
+        JComboBox<String> leaf=new JComboBox<>(new String[]{"Open passage","Operable door"});
+        leaf.setSelectedIndex(wall.hasDoor()?1:0);
+        var fields=new JPanel(new GridLayout(0,2,4,4));
+        fields.add(new JLabel("Offset along wall (m)"));fields.add(offset);
+        fields.add(new JLabel("Clear width (m; 0 seals)"));fields.add(width);
+        fields.add(new JLabel("Clear height (m; 0 seals)"));fields.add(height);
+        fields.add(new JLabel("Leaf"));fields.add(leaf);
+        if(JOptionPane.showConfirmDialog(window,fields,"Mission wall aperture",
+                JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE)!=JOptionPane.OK_OPTION)return;
+        operate(()->{
+            double x=Double.parseDouble(offset.getText().trim());
+            double w=Double.parseDouble(width.getText().trim());
+            double h=Double.parseDouble(height.getText().trim());
+            mission.setWallOpening(nodeId,x,w,h);
+            mission.setWallDoor(nodeId,leaf.getSelectedIndex()==1);
+        });
+        refresh();
     }
     private void addLamp(){
         if(mission!=null){status.setText("Castle-only fixture; mission lighting must use level sockets");return;}
         double px=renderer.x+Math.sin(renderer.yaw)*2;
         double pz=renderer.z+Math.cos(renderer.yaw)*2;
         String id="light"+System.nanoTime();
-        operate(()->data.put(new CastleLevelEdits.Lamp(id,"ceiling_lamp_1_on",
-            "ceiling_lamp_1_off",px,3.38,pz,.8,0,CastleHubDecor.Mount.CEILING,9.8,2.5)));
+        operate(()->data.placeCeilingLamp(id,px,0,pz,9.8,2.5));
         refresh();selectId("LAMP",id);
     }
     private void remove(){
         if(chosen==null)return;
         if(mission!=null){
+            if(chosen.kind.equals("MISSION_STAIR")){
+                int id=Integer.parseInt(chosen.id.substring("beckenburg-stair-landing-".length()));
+                operate(()->mission.extendStairOpening(id,0));
+                chosen=null;refresh();return;
+            }
+            if(chosen.kind.equals("MISSION_FLOOR")){
+                int room=Integer.parseInt(chosen.id.substring("beckenburg-floor-depth-".length()));
+                operate(()->mission.setFloorDepth(room,0));
+                chosen=null;refresh();return;
+            }
+            if(chosen.kind.equals("MISSION_ROOM")){
+                String nodeId=chosen.id;
+                operate(()->mission.removeRoom(nodeId));
+                chosen=null;refresh();return;
+            }
+            if(chosen.kind.equals("MISSION_WALL")){
+                String nodeId=chosen.id;
+                operate(()->mission.removeWall(nodeId));
+                chosen=null;refresh();return;
+            }
             int index=selectedProp();
             if(index<0){status.setText("Select a mission object to remove");return;}
             operate(()->mission.remove(index));chosen=null;refresh();return;
@@ -825,6 +946,43 @@ public final class DeveloperLevelEditor extends JPanel {
                 x.setValue(p.x());y.setValue(p.y());z.setValue(p.z());
                 yaw.setValue(Math.toDegrees(p.yaw()));scale.setValue(p.scale());
                 width.setValue(p.halfX());depth.setValue(p.halfZ());
+            }else if(row.kind.equals("MISSION_STAIR")&&mission!=null){
+                int id=Integer.parseInt(row.id.substring("beckenburg-stair-landing-".length()));
+                var stair=mission.sourceLevel().stairs().stream()
+                    .filter(q->q.id()==id).findFirst().orElse(null);
+                if(stair==null)return;
+                x.setValue(stair.x1());y.setValue(stair.y1());z.setValue(stair.z1());
+                yaw.setValue(0);scale.setValue(1);
+                width.setValue(stair.width()/2);
+                depth.setValue(mission.stairExtensions().getOrDefault(id,0.0));
+                status.setText("Native stair landing cut • REMOVE to restore source lip if no deep slab depends on it");
+            }else if(row.kind.equals("MISSION_FLOOR")&&mission!=null){
+                int room=Integer.parseInt(row.id.substring("beckenburg-floor-depth-".length()));
+                var sourceRoom=mission.sourceLevel().room(room);
+                double slab=mission.floorDepths().getOrDefault(room,0.0);
+                x.setValue((sourceRoom.x0()+sourceRoom.x1())/2);
+                y.setValue(sourceRoom.y());z.setValue((sourceRoom.z0()+sourceRoom.z1())/2);
+                yaw.setValue(0);scale.setValue(1);
+                width.setValue((sourceRoom.x1()-sourceRoom.x0())/2);
+                depth.setValue(slab);
+                status.setText("Native upper slab • "+slab+"m deep • REMOVE to restore source depth");
+            }else if(row.kind.equals("MISSION_ROOM")&&mission!=null){
+                var child=mission.architecturalRooms().stream().filter(c->c.nodeId().equals(row.id))
+                    .findFirst().orElse(null);
+                if(child==null)return;
+                x.setValue(child.cx());y.setValue(child.base());z.setValue(child.cz());
+                yaw.setValue(0);scale.setValue(1);
+                width.setValue(child.width()/2);depth.setValue(child.depth()/2);
+                status.setText("Native enclosed room • "+child.id()+" • zone "+child.zone()+
+                    " • door "+child.doorPortalId()+" • REMOVE deletes complete room");
+            }else if(row.kind.equals("MISSION_WALL")&&mission!=null){
+                var wall=mission.walls().stream().filter(w->
+                    (MissionStructuralWall.NODE_PREFIX+w.id()).equals(row.id)).findFirst().orElse(null);
+                if(wall==null)return;
+                x.setValue(wall.cx());y.setValue(wall.base());z.setValue(wall.cz());
+                yaw.setValue(Math.toDegrees(wall.yaw()));scale.setValue(1);
+                width.setValue(wall.halfX());depth.setValue(wall.halfZ());
+                status.setText("Native solid partition • inspect or REMOVE; edit through typed structural commands");
             }else if(row.kind.equals("PROP")){
                 CastleLevelEdits.Prop item=data.props().stream().filter(p->p.id().equals(row.id))
                     .findFirst().orElse(null);
@@ -877,16 +1035,12 @@ public final class DeveloperLevelEditor extends JPanel {
         operate(()->{
             switch(r.kind){
                 case "PROP" ->{
-                    var old=data.props().stream().filter(p->p.id().equals(r.id)).findFirst().orElseThrow();
-                    data.put(new CastleLevelEdits.Prop(r.id,old.mesh(),value(x),value(y),
-                        value(z),value(scale),Math.toRadians(value(yaw)),
-                        value(width),value(depth),old.upper()));
+                    data.editProp(r.id,Map.of(Field.X,value(x),Field.Y,value(y),Field.Z,value(z),Field.SCALE,value(scale),
+                        Field.YAW_DEGREES,value(yaw),Field.COLLISION_X,value(width),Field.COLLISION_Z,value(depth)));
                 }
                 case "LAMP" ->{
-                    var old=data.lamps().stream().filter(p->p.id().equals(r.id)).findFirst().orElseThrow();
-                    data.put(new CastleLevelEdits.Lamp(r.id,old.on(),old.off(),value(x),
-                        value(y),value(z),value(scale),Math.toRadians(value(yaw)),
-                        old.mount(),value(radius),value(power)));
+                    data.editLamp(r.id,Map.of(Field.X,value(x),Field.Y,value(y),Field.Z,value(z),Field.SCALE,value(scale),
+                        Field.YAW_DEGREES,value(yaw),Field.RADIUS,value(radius),Field.POWER,value(power)));
                 }
                 case "SURFACE" -> {
                     var old=data.surfaces().stream().filter(v->v.id().equals(r.id))
@@ -922,6 +1076,18 @@ public final class DeveloperLevelEditor extends JPanel {
                 list.add(new Row("MISSION_PROP",Integer.toString(i),
                     "PROP • "+i+" • "+p.mesh()+" [room "+p.room()+"]"));
             }
+            for(var child:mission.architecturalRooms())
+                list.add(new Row("MISSION_ROOM",child.nodeId(),
+                    "ROOM • "+child.id()+" [zone "+child.zone()+", four walls, door, solid ceiling]"));
+            for(var wall:mission.walls())
+                list.add(new Row("MISSION_WALL",MissionStructuralWall.NODE_PREFIX+wall.id(),
+                    "WALL • "+wall.id()+" [room "+wall.room()+", "+wall.length()+"m]"));
+            for(var entry:new java.util.TreeMap<>(mission.floorDepths()).entrySet())
+                list.add(new Row("MISSION_FLOOR","beckenburg-floor-depth-"+entry.getKey(),
+                    "FLOOR • room "+entry.getKey()+" • "+entry.getValue()+"m slab depth"));
+            for(var entry:new java.util.TreeMap<>(mission.stairExtensions()).entrySet())
+                list.add(new Row("MISSION_STAIR","beckenburg-stair-landing-"+entry.getKey(),
+                    "STAIR • "+entry.getKey()+" • "+entry.getValue()+"m upper terminal opening"));
             for(Row row:list)if(q.isEmpty()||row.description.toLowerCase(Locale.ROOT).contains(q))
                 rows.addElement(row);
             selectId(kind,id);updateNav();return;
@@ -938,6 +1104,9 @@ public final class DeveloperLevelEditor extends JPanel {
         selectId(kind,id);updateNav();
     }
     private void updateNav(){
+        doorSockets.setEnabled(mission==null);
+        missionWallOpening.setEnabled(mission!=null);
+        missionBuildRoom.setEnabled(mission!=null);
         if(mission!=null){
             navInfo.setText("LEVEL  "+mission.title()
                 +"\nAuthoritative game scene: "+mission.documentPath()
@@ -1257,17 +1426,13 @@ public final class DeveloperLevelEditor extends JPanel {
         if(mission!=null){addMissionAsset(target.x,target.z);return;}
         String mesh=(String)library.getSelectedItem();if(mesh==null)return;
         String id="asset"+System.nanoTime();
-        operate(()->data.put(new CastleLevelEdits.Prop(id,mesh,target.x,
-            value(workPlane),target.z,.8,0,.4,.4,value(workPlane)>2)));
+        operate(()->data.placePaletteProp(id,mesh,target.x,value(workPlane),target.z));
         refresh();selectId("PROP",id);
     }
     private void addLamp(Point target){
         if(mission!=null){status.setText("Mission fixtures use authored level light sockets");return;}
         String id="light"+System.nanoTime();
-        operate(()->data.put(new CastleLevelEdits.Lamp(id,"ceiling_lamp_1_on",
-            "ceiling_lamp_1_off",target.x,clamp(value(workPlane)+3.38,CastleWorldBounds.MIN_Y,9),
-            target.z,.8,0,CastleHubDecor.Mount.CEILING,
-            value(radius),value(power))));
+        operate(()->data.placeCeilingLamp(id,target.x,value(workPlane),target.z,value(radius),value(power)));
         refresh();selectId("LAMP",id);
     }
     private void duplicate(){
@@ -1318,19 +1483,104 @@ public final class DeveloperLevelEditor extends JPanel {
         status.setText("Redo • scene modified, SAVE to persist");
     }
     private void save(){saveCurrent();}
+    private void playtest(){
+        try{runPlaytest(null);}
+        catch(IOException|RuntimeException failure){JOptionPane.showMessageDialog(window,failure.toString(),"Playtest failed",JOptionPane.ERROR_MESSAGE);}
+    }
+    private EditorAgentService.Capture runPlaytest(java.nio.file.Path capture)throws IOException{
+        requireEditorThread();
+        var activeMission=mission==null?null:currentMissionMap();
+        playtesting=true;timer.stop();keys.clear();
+        try{return EditorPlaytest.run(window,activeMission,capture);}
+        finally{
+            playtesting=false;
+            if(!editorClosed){timer.start();viewport.requestFocusInWindow();}
+        }
+    }
+    private void stopObservation(){
+        if(observation!=null){observation.close();observation=null;}
+    }
+    private void startObservation(EditorObservationBridge.Scope scope)throws IOException{
+        requireEditorThread();
+        if(observation!=null)throw new IllegalStateException("Observation session already open");
+        observation=new EditorObservationBridge(agentService(),scope,SwingUtilities::invokeLater);
+    }
+    private void selectForFocus(org.beckenburg.editor.EditorProject.Node node){
+        filter.setText("");
+        selectId(data.surfaceById(node.id())!=null?"SURFACE":node.kind(),node.id());
+        viewport.requestFocusInWindow();
+    }
     private void showAgentEvidence(){
         var service=agentService();
         var choices=new ArrayList<>(List.of("INSPECT","TEST","CAPTURE PNG","REOPEN SAVED"));
+        if(chosen!=null)choices.add("VERIFY POSITION");
+        if(chosen!=null&&service.supportsFocus())choices.add("FOCUS OBJECT");
+        if(service.supportsWalkability())choices.add("CHECK WALKABILITY");
+        if(service.summary().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
+        choices.add(observation==null?"START LOCAL OBSERVATION":"STOP LOCAL ACCESS");
+        if(observation==null)choices.add("START LOCAL EDITING");
         if(mission==null)choices.add("REBUILD CASTLE / RETAIN EDITS");
         else if(mission.canRebuildHouse())choices.add("REBUILD HOUSE / RETAIN EDITS");
-        if(service.inspect().capabilities().contains(EditorAgentService.Capability.RECOVER_PREVIOUS))choices.add("RECOVER PREVIOUS SAVE");
         String choice=(String)JOptionPane.showInputDialog(window,"Inspect, test or capture the active game scene.",
             "Scene verification",JOptionPane.PLAIN_MESSAGE,null,
             choices.toArray(),"INSPECT");
         if(choice==null)return;
         try{
-            var state=service.inspect();Object result;
+            if(choice.equals("STOP LOCAL ACCESS")){stopObservation();status.setText("Local access stopped");return;}
+            if(choice.equals("START LOCAL OBSERVATION") || choice.equals("START LOCAL EDITING")){
+                var scope=EditorObservationBridge.Scope.OBSERVE;
+                if(choice.equals("START LOCAL EDITING")){
+                    var allowSave=new JCheckBox("Also allow saving and reopening this document");
+                    if(JOptionPane.showConfirmDialog(window,new Object[]{"Allow local clients to edit this scene, use undo/redo and run a local playtest?",allowSave},
+                        "Local editing access",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+                    scope=allowSave.isSelected()?EditorObservationBridge.Scope.EDIT_AND_SAVE:EditorObservationBridge.Scope.EDIT;
+                }
+                startObservation(scope);
+                var access=new JTextArea("Address  "+observation.url()+"\nAuthorization: Bearer "+observation.token(),3,68);
+                access.setEditable(false);
+                String title=scope==EditorObservationBridge.Scope.OBSERVE?"Read-only access to this editor scene":"Editing access to this editor scene";
+                JOptionPane.showMessageDialog(window,access,title,JOptionPane.INFORMATION_MESSAGE);
+                status.setText("Local access enabled ("+scope+") • Verify Scene to stop");return;
+            }
+            var state=service.summary();Object result;
             switch(choice){
+                case "CHECK WALKABILITY" -> {
+                    var px=new JTextField(Double.toString(renderer.x),12);
+                    var py=new JTextField(Double.toString(value(workPlane)),12);
+                    var pz=new JTextField(Double.toString(renderer.z),12);
+                    Object[] fields={"Player standing position","X",px,"Foot elevation",py,"Z",pz};
+                    if(JOptionPane.showConfirmDialog(window,fields,"Check walkability",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+                    var proof=service.walkability(state.revision(),Double.parseDouble(px.getText()),Double.parseDouble(py.getText()),Double.parseDouble(pz.getText())).result();
+                    result="Revision "+state.revision()+"\nFoot position "+proof.x()+", "+proof.y()+", "+proof.z()+
+                        "\n"+(proof.walkable()?"Walkable":"Blocked or unsupported");
+                }
+                case "FOCUS OBJECT" -> {
+                    var node=service.node(state.revision(),chosen.id).result();
+                    String kind="SURFACE".equals(chosen.kind)?data.surfaceById(chosen.id).kind().name():chosen.kind;
+                    if(!kind.equals(node.kind()))throw new IllegalArgumentException("Another hierarchy object takes precedence for this ID");
+                    service.focus(state.revision(),chosen.id);return;
+                }
+                case "VERIFY POSITION" -> {
+                    String id=mission==null?chosen.id:mission.nodeId(selectedProp());
+                    var node=service.node(state.revision(),id).result();
+                    String kind=mission!=null?"PROP":chosen.kind.equals("SURFACE")?data.surfaceById(id).kind().name():chosen.kind;
+                    if(!kind.equals(node.kind()))throw new IllegalArgumentException("Another hierarchy object takes precedence for this ID");
+                    var px=new JTextField(Double.toString(node.x()),12);
+                    var py=new JTextField(Double.toString(node.y()),12);
+                    var pz=new JTextField(Double.toString(node.z()),12);
+                    Object[] fields={"Expected position for "+node.label(),"X",px,"Y",py,"Z",pz};
+                    if(JOptionPane.showConfirmDialog(window,fields,"Verify position",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
+                    var proof=service.verifyPosition(state.revision(),id,Double.parseDouble(px.getText()),Double.parseDouble(py.getText()),Double.parseDouble(pz.getText())).result();
+                    result="Revision "+state.revision()+"\nPosition matches: "+proof.verified()+"\nActual position: "+
+                        proof.actual().x()+", "+proof.actual().y()+", "+proof.actual().z()+
+                        "\nLatest commit includes this object: "+proof.committed()+"\nSaved document: "+proof.diskState();
+                }
+                case "TEST" -> {
+                    String test=(String)JOptionPane.showInputDialog(window,"Run a check against the active game scene.",
+                        "Scene diagnostics",JOptionPane.PLAIN_MESSAGE,null,state.tests().toArray(),state.tests().get(0));
+                    if(test==null)return;
+                    result=service.test(state.revision(),test);
+                }
                 case "REBUILD HOUSE / RETAIN EDITS" -> result=service.transact(state.revision(),"rebuild-house",java.util.Map.of("baseline","ORIGINAL"));
                 case "REBUILD CASTLE / RETAIN EDITS" -> {
                     if(data.snapshot().rebuildLayout()>=CastleRebuildUpgrade.VERSION){result="Castle already uses the rebuilt layout; saved edits are unchanged.";break;}
@@ -1339,7 +1589,6 @@ public final class DeveloperLevelEditor extends JPanel {
                         "Rebuild saved Castle",JOptionPane.PLAIN_MESSAGE,null,CastleRebuildUpgrade.Baseline.values(),CastleRebuildUpgrade.Baseline.ORIGINAL);
                     if(base==null)return;rebuildCastle(base);result="Castle rebuilt with saved edits retained. Use SAVE to write the scene.";
                 }
-                case "TEST" -> result=service.test(state.revision(),state.tests().get(0));
                 case "CAPTURE PNG" -> {
                     JFileChooser chooser=new JFileChooser();chooser.setSelectedFile(new java.io.File("editor-scene.png"));
                     if(chooser.showSaveDialog(window)!=JFileChooser.APPROVE_OPTION)return;
@@ -1355,7 +1604,7 @@ public final class DeveloperLevelEditor extends JPanel {
                         "Recover saved scene",JOptionPane.OK_CANCEL_OPTION)!=JOptionPane.OK_OPTION)return;
                     result=service.recoverPrevious(state.revision());
                 }
-                default -> result=state;
+                default -> result=service.inspect();
             }
             JTextArea report=new JTextArea(result.toString(),24,90);report.setEditable(false);report.setLineWrap(true);
             JOptionPane.showMessageDialog(window,new JScrollPane(report),"Scene evidence",JOptionPane.INFORMATION_MESSAGE);

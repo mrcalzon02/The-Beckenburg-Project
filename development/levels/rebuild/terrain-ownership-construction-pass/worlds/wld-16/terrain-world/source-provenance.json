@@ -1,0 +1,107 @@
+{
+  "source_world": "development/levels/rebuild/terrain-ownership-construction-pass/original-worlds/wld-16/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "773522c1865582b1cab2348c4e408651c13e99f33fe73d27bc5aa49ef33195d4",
+    "authored-cuts.tsv": "c5239d925269830f01d305384cf614511c9d53cf3a5c44aa6250ad1747f0c14d",
+    "source-provenance.json": "9d483aaad4204292b6cbc3fc127d0c3bad59483d3f5480647cd69a1c1eee330d",
+    "terrain-physics.hcs2": "c60e8005690f6978fbb4d827bb8fee38f93cc7c386a007679e91189a80ea859c",
+    "tile_0_0.png": "6a2078cc44d13f5c61a1894c743dfdad83a5e747172d2fb58ffeff27399b3496",
+    "verification.json": "ec1ad24725b6077ef01f5be3fe66211a06d059e88c8b6ca5dd4ada722530ed08",
+    "world.properties": "f7ed25b987fd594c7f19f771f5c7116c386725bc4c8f5d8cc0fd0e31f057e545",
+    "scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scene-package/scene.bin": "1f910e5c92dabdd814a566ecd68e24d440ce3d698df44347fb0b606606a02cbd",
+    "scene-package/meshes/site.obj": "a7418ec9634c9f10b84155c7f1cd25af7a1c4e80c65e7d956f9081318b4bb5c3"
+  },
+  "earthworks_features": [
+    {
+      "name": "Motel court arcades and arrival clearing",
+      "material": "GRAVEL",
+      "feather": 4,
+      "profile": "arrival",
+      "polygon": [
+        [
+          4,
+          16
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          39,
+          14
+        ],
+        [
+          48,
+          17
+        ],
+        [
+          57,
+          25
+        ],
+        [
+          58,
+          52
+        ],
+        [
+          48,
+          59
+        ],
+        [
+          37,
+          61
+        ],
+        [
+          36,
+          76
+        ],
+        [
+          16,
+          76
+        ],
+        [
+          12,
+          59
+        ],
+        [
+          3,
+          52
+        ]
+      ]
+    },
+    {
+      "name": "Motel north service court",
+      "material": "GRAVEL",
+      "feather": 4,
+      "profile": "arrival",
+      "polygon": [
+        [
+          10,
+          13
+        ],
+        [
+          43,
+          13
+        ],
+        [
+          54,
+          16
+        ],
+        [
+          57,
+          23
+        ],
+        [
+          48,
+          26
+        ],
+        [
+          12,
+          23
+        ]
+      ]
+    }
+  ],
+  "source_height_and_punched_topology_preserved": true,
+  "authoring": "Actual TerrainLayerStack geographic sculpt, not route support"
+}

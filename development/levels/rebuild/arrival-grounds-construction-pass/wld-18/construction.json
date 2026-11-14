@@ -1,0 +1,827 @@
+{
+  "id": "WLD-18",
+  "stair_components": [
+    "171:route-07 landing0",
+    "223:route-13 landing0",
+    "224:route-13 landing2",
+    "225:route-13 landing3",
+    "249:route-14 landing0",
+    "250:route-14 landing2",
+    "251:route-14 landing4",
+    "279:route-18 flight0 step1",
+    "280:route-18 flight0 step2",
+    "281:route-18 flight0 step3",
+    "282:route-18 flight0 step4",
+    "283:route-18 flight0 step5",
+    "284:route-18 flight0 step6",
+    "285:route-18 flight0 step7",
+    "286:route-18 flight0 step8",
+    "287:route-18 flight0 step9",
+    "288:route-18 flight0 step10",
+    "289:route-18 flight0 step11",
+    "290:route-18 flight0 step12",
+    "291:route-18 flight0 step13",
+    "292:route-18 flight0 step14",
+    "293:route-18 flight0 step15",
+    "294:route-18 flight0 step16",
+    "295:route-18 flight0 step17",
+    "296:route-18 flight0 step18",
+    "297:route-18 flight0 step19",
+    "298:route-18 flight0 step20",
+    "299:route-18 flight0 step21",
+    "300:route-18 flight0 step22",
+    "301:route-18 flight0 step23",
+    "Rebuilt stair WLD-18 route-07 flight0 part0",
+    "Rebuilt stair WLD-18 route-07 flight0 part1",
+    "Rebuilt stair WLD-18 route-07 flight0 part2",
+    "Rebuilt stair WLD-18 route-07 flight0 part3",
+    "Rebuilt stair WLD-18 route-07 flight0 part4",
+    "Rebuilt stair WLD-18 route-07 flight0 part5",
+    "Rebuilt stair WLD-18 route-07 flight0 part6",
+    "Rebuilt stair WLD-18 route-07 flight0 part7",
+    "Rebuilt stair WLD-18 route-07 flight0 part8",
+    "Rebuilt stair WLD-18 route-07 flight0 part9",
+    "Rebuilt stair WLD-18 route-07 flight0 part10",
+    "Rebuilt stair WLD-18 route-07 flight0 part11",
+    "Rebuilt stair WLD-18 route-07 flight0 part12",
+    "Rebuilt stair WLD-18 route-07 flight0 part13",
+    "Rebuilt stair WLD-18 route-07 flight0 part14",
+    "Rebuilt stair WLD-18 route-07 flight0 part15",
+    "Rebuilt stair WLD-18 route-07 flight0 part16",
+    "Rebuilt stair WLD-18 route-07 flight0 part17",
+    "Rebuilt stair WLD-18 route-07 flight0 part18",
+    "Rebuilt stair WLD-18 route-07 flight0 part19",
+    "Rebuilt stair WLD-18 route-07 flight0 part20",
+    "Rebuilt stair WLD-18 route-07 flight0 part21",
+    "Rebuilt stair WLD-18 route-07 flight0 part22",
+    "Rebuilt stair WLD-18 route-13 flight0 part0",
+    "Rebuilt stair WLD-18 route-13 flight0 part1",
+    "Rebuilt stair WLD-18 route-13 flight0 part2",
+    "Rebuilt stair WLD-18 route-13 flight0 part3",
+    "Rebuilt stair WLD-18 route-13 flight0 part4",
+    "Rebuilt stair WLD-18 route-13 flight0 part5",
+    "Rebuilt stair WLD-18 route-13 flight0 part6",
+    "Rebuilt stair WLD-18 route-13 flight0 part7",
+    "Rebuilt stair WLD-18 route-13 flight0 part8",
+    "Rebuilt stair WLD-18 route-13 flight0 part9",
+    "Rebuilt stair WLD-18 route-13 flight0 part10",
+    "Rebuilt stair WLD-18 route-13 flight0 part11",
+    "Rebuilt stair WLD-18 route-13 flight0 part12",
+    "Rebuilt stair WLD-18 route-13 flight0 part13",
+    "Rebuilt stair WLD-18 route-13 flight0 part14",
+    "Rebuilt stair WLD-18 route-13 flight0 part15",
+    "Rebuilt stair WLD-18 route-13 flight0 part16",
+    "Rebuilt stair WLD-18 route-13 flight0 part17",
+    "Rebuilt stair WLD-18 route-13 flight0 part18",
+    "Rebuilt stair WLD-18 route-13 flight0 part19",
+    "Rebuilt stair WLD-18 route-13 flight0 part20",
+    "Rebuilt stair WLD-18 route-13 flight0 part21",
+    "Rebuilt stair WLD-18 route-13 flight0 part22",
+    "Rebuilt stair WLD-18 route-14 flight0 part0",
+    "Rebuilt stair WLD-18 route-14 flight0 part1",
+    "Rebuilt stair WLD-18 route-14 flight0 part2",
+    "Rebuilt stair WLD-18 route-14 flight0 part3",
+    "Rebuilt stair WLD-18 route-14 flight0 part4",
+    "Rebuilt stair WLD-18 route-14 flight0 part5",
+    "Rebuilt stair WLD-18 route-14 flight0 part6",
+    "Rebuilt stair WLD-18 route-14 flight0 part7",
+    "Rebuilt stair WLD-18 route-14 flight0 part8",
+    "Rebuilt stair WLD-18 route-14 flight0 part9",
+    "Rebuilt stair WLD-18 route-14 flight0 part10",
+    "Rebuilt stair WLD-18 route-14 flight0 part11",
+    "Rebuilt stair WLD-18 route-14 flight1 part0",
+    "Rebuilt stair WLD-18 route-14 flight1 part1",
+    "Rebuilt stair WLD-18 route-14 flight1 part2",
+    "Rebuilt stair WLD-18 route-14 flight1 part3",
+    "Rebuilt stair WLD-18 route-14 flight1 part4",
+    "Rebuilt stair WLD-18 route-14 flight1 part5",
+    "Rebuilt stair WLD-18 route-14 flight1 part6",
+    "Rebuilt stair WLD-18 route-14 flight1 part7",
+    "Rebuilt stair WLD-18 route-14 flight1 part8",
+    "Rebuilt stair WLD-18 route-14 flight1 part9",
+    "Rebuilt stair WLD-18 route-14 flight1 part10",
+    "Rebuilt stair WLD-18 route-14 flight1 part11",
+    "Authored stair end WLD-18 route-07 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-13 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-14 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-14 1 low region0",
+    "Authored stair end WLD-18 route-14 3 corner-bridge region0",
+    "Bay landing WLD-18 route-13 7 region0",
+    "WLD-18 route-08 constant tread 0 region0",
+    "WLD-18 route-08 constant tread 1 region0",
+    "WLD-18 route-08 constant tread 2 region0",
+    "WLD-18 route-08 constant tread 3 region0",
+    "WLD-18 route-08 constant tread 4 region0",
+    "WLD-18 route-08 constant tread 5 region0",
+    "WLD-18 route-08 constant tread 6 region0",
+    "WLD-18 route-08 constant tread 7 region0",
+    "WLD-18 route-08 constant tread 8 region0",
+    "WLD-18 route-08 constant tread 9 region0",
+    "WLD-18 route-08 constant tread 10 region0",
+    "WLD-18 route-08 constant tread 11 region0",
+    "WLD-18 route-08 constant tread 12 region0",
+    "WLD-18 route-08 constant tread 13 region0",
+    "WLD-18 route-08 constant tread 14 region0",
+    "WLD-18 route-08 constant tread 15 region0",
+    "WLD-18 route-08 constant tread 16 region0",
+    "WLD-18 route-08 constant tread 17 region0",
+    "WLD-18 route-08 constant tread 18 region0",
+    "WLD-18 route-08 constant tread 19 region0",
+    "WLD-18 route-08 constant tread 20 region0",
+    "WLD-18 route-08 constant tread 21 region0",
+    "WLD-18 route-08 constant tread 22 region0",
+    "WLD-18 route-08 constant tread 23 region0"
+  ],
+  "source_segment_map": {
+    "route-01": {},
+    "route-02": {},
+    "route-03": {},
+    "route-04": {},
+    "route-05": {},
+    "route-06": {},
+    "route-07": {
+      "2": 1
+    },
+    "route-08": {
+      "4": 1
+    },
+    "route-09": {},
+    "route-10": {},
+    "route-11": {},
+    "route-12": {},
+    "route-13": {
+      "2": 1
+    },
+    "route-14": {
+      "2": 1,
+      "5": 3
+    },
+    "route-15": {},
+    "route-16": {},
+    "route-17": {},
+    "route-18": {
+      "0": 0
+    },
+    "route-19": {}
+  },
+  "status": "SAVED_GEOGRAPHIC_EARTHWORKS_CONSTRUCTION_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/constant-flight-construction-pass/wld-18/construction.json",
+  "source_contract_sha256": "beb22f89bf272269a95534e67c663f70399f7f67fc11fdc2fc6d18b91c8e201e",
+  "source_glb": "development/levels/rebuild/constant-flight-construction-pass/wld-18/constant-cells.glb",
+  "source_glb_sha256": "378350aebcbaae3c43f7241aceb1d2079dc2a51c9299d073ebdfbae1184e11fd",
+  "source_physics": "development/levels/rebuild/constant-flight-construction-pass/wld-18/constant-cells.hcs2",
+  "source_physics_sha256": "b93a74c6666b2635197c99a7dce76424d4923d7a384f73a4a46b1be827354eba",
+  "before_layout": "development/levels/rebuild/constant-flight-construction-pass/wld-18/authored-layout.json",
+  "before_layout_sha256": "91dfcc917b2c6960b31dd062dfc1a3fbac4ac571531cc41e194b5827d8bc1dc8",
+  "before_segment_map": {
+    "route-01": {},
+    "route-02": {},
+    "route-03": {},
+    "route-04": {},
+    "route-05": {},
+    "route-06": {},
+    "route-07": {
+      "2": 1
+    },
+    "route-08": {
+      "4": 1
+    },
+    "route-09": {},
+    "route-10": {},
+    "route-11": {},
+    "route-12": {},
+    "route-13": {
+      "2": 1
+    },
+    "route-14": {
+      "2": 1,
+      "5": 3
+    },
+    "route-15": {},
+    "route-16": {},
+    "route-17": {},
+    "route-18": {
+      "0": 0
+    },
+    "route-19": {}
+  },
+  "before_stair_components": [
+    "171:route-07 landing0",
+    "223:route-13 landing0",
+    "224:route-13 landing2",
+    "225:route-13 landing3",
+    "249:route-14 landing0",
+    "250:route-14 landing2",
+    "251:route-14 landing4",
+    "279:route-18 flight0 step1",
+    "280:route-18 flight0 step2",
+    "281:route-18 flight0 step3",
+    "282:route-18 flight0 step4",
+    "283:route-18 flight0 step5",
+    "284:route-18 flight0 step6",
+    "285:route-18 flight0 step7",
+    "286:route-18 flight0 step8",
+    "287:route-18 flight0 step9",
+    "288:route-18 flight0 step10",
+    "289:route-18 flight0 step11",
+    "290:route-18 flight0 step12",
+    "291:route-18 flight0 step13",
+    "292:route-18 flight0 step14",
+    "293:route-18 flight0 step15",
+    "294:route-18 flight0 step16",
+    "295:route-18 flight0 step17",
+    "296:route-18 flight0 step18",
+    "297:route-18 flight0 step19",
+    "298:route-18 flight0 step20",
+    "299:route-18 flight0 step21",
+    "300:route-18 flight0 step22",
+    "301:route-18 flight0 step23",
+    "Rebuilt stair WLD-18 route-07 flight0 part0",
+    "Rebuilt stair WLD-18 route-07 flight0 part1",
+    "Rebuilt stair WLD-18 route-07 flight0 part2",
+    "Rebuilt stair WLD-18 route-07 flight0 part3",
+    "Rebuilt stair WLD-18 route-07 flight0 part4",
+    "Rebuilt stair WLD-18 route-07 flight0 part5",
+    "Rebuilt stair WLD-18 route-07 flight0 part6",
+    "Rebuilt stair WLD-18 route-07 flight0 part7",
+    "Rebuilt stair WLD-18 route-07 flight0 part8",
+    "Rebuilt stair WLD-18 route-07 flight0 part9",
+    "Rebuilt stair WLD-18 route-07 flight0 part10",
+    "Rebuilt stair WLD-18 route-07 flight0 part11",
+    "Rebuilt stair WLD-18 route-07 flight0 part12",
+    "Rebuilt stair WLD-18 route-07 flight0 part13",
+    "Rebuilt stair WLD-18 route-07 flight0 part14",
+    "Rebuilt stair WLD-18 route-07 flight0 part15",
+    "Rebuilt stair WLD-18 route-07 flight0 part16",
+    "Rebuilt stair WLD-18 route-07 flight0 part17",
+    "Rebuilt stair WLD-18 route-07 flight0 part18",
+    "Rebuilt stair WLD-18 route-07 flight0 part19",
+    "Rebuilt stair WLD-18 route-07 flight0 part20",
+    "Rebuilt stair WLD-18 route-07 flight0 part21",
+    "Rebuilt stair WLD-18 route-07 flight0 part22",
+    "Rebuilt stair WLD-18 route-13 flight0 part0",
+    "Rebuilt stair WLD-18 route-13 flight0 part1",
+    "Rebuilt stair WLD-18 route-13 flight0 part2",
+    "Rebuilt stair WLD-18 route-13 flight0 part3",
+    "Rebuilt stair WLD-18 route-13 flight0 part4",
+    "Rebuilt stair WLD-18 route-13 flight0 part5",
+    "Rebuilt stair WLD-18 route-13 flight0 part6",
+    "Rebuilt stair WLD-18 route-13 flight0 part7",
+    "Rebuilt stair WLD-18 route-13 flight0 part8",
+    "Rebuilt stair WLD-18 route-13 flight0 part9",
+    "Rebuilt stair WLD-18 route-13 flight0 part10",
+    "Rebuilt stair WLD-18 route-13 flight0 part11",
+    "Rebuilt stair WLD-18 route-13 flight0 part12",
+    "Rebuilt stair WLD-18 route-13 flight0 part13",
+    "Rebuilt stair WLD-18 route-13 flight0 part14",
+    "Rebuilt stair WLD-18 route-13 flight0 part15",
+    "Rebuilt stair WLD-18 route-13 flight0 part16",
+    "Rebuilt stair WLD-18 route-13 flight0 part17",
+    "Rebuilt stair WLD-18 route-13 flight0 part18",
+    "Rebuilt stair WLD-18 route-13 flight0 part19",
+    "Rebuilt stair WLD-18 route-13 flight0 part20",
+    "Rebuilt stair WLD-18 route-13 flight0 part21",
+    "Rebuilt stair WLD-18 route-13 flight0 part22",
+    "Rebuilt stair WLD-18 route-14 flight0 part0",
+    "Rebuilt stair WLD-18 route-14 flight0 part1",
+    "Rebuilt stair WLD-18 route-14 flight0 part2",
+    "Rebuilt stair WLD-18 route-14 flight0 part3",
+    "Rebuilt stair WLD-18 route-14 flight0 part4",
+    "Rebuilt stair WLD-18 route-14 flight0 part5",
+    "Rebuilt stair WLD-18 route-14 flight0 part6",
+    "Rebuilt stair WLD-18 route-14 flight0 part7",
+    "Rebuilt stair WLD-18 route-14 flight0 part8",
+    "Rebuilt stair WLD-18 route-14 flight0 part9",
+    "Rebuilt stair WLD-18 route-14 flight0 part10",
+    "Rebuilt stair WLD-18 route-14 flight0 part11",
+    "Rebuilt stair WLD-18 route-14 flight1 part0",
+    "Rebuilt stair WLD-18 route-14 flight1 part1",
+    "Rebuilt stair WLD-18 route-14 flight1 part2",
+    "Rebuilt stair WLD-18 route-14 flight1 part3",
+    "Rebuilt stair WLD-18 route-14 flight1 part4",
+    "Rebuilt stair WLD-18 route-14 flight1 part5",
+    "Rebuilt stair WLD-18 route-14 flight1 part6",
+    "Rebuilt stair WLD-18 route-14 flight1 part7",
+    "Rebuilt stair WLD-18 route-14 flight1 part8",
+    "Rebuilt stair WLD-18 route-14 flight1 part9",
+    "Rebuilt stair WLD-18 route-14 flight1 part10",
+    "Rebuilt stair WLD-18 route-14 flight1 part11",
+    "Authored stair end WLD-18 route-07 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-13 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-14 1 corner-bridge region0",
+    "Authored stair end WLD-18 route-14 1 low region0",
+    "Authored stair end WLD-18 route-14 3 corner-bridge region0",
+    "Bay landing WLD-18 route-13 7 region0",
+    "WLD-18 route-08 constant tread 0 region0",
+    "WLD-18 route-08 constant tread 1 region0",
+    "WLD-18 route-08 constant tread 2 region0",
+    "WLD-18 route-08 constant tread 3 region0",
+    "WLD-18 route-08 constant tread 4 region0",
+    "WLD-18 route-08 constant tread 5 region0",
+    "WLD-18 route-08 constant tread 6 region0",
+    "WLD-18 route-08 constant tread 7 region0",
+    "WLD-18 route-08 constant tread 8 region0",
+    "WLD-18 route-08 constant tread 9 region0",
+    "WLD-18 route-08 constant tread 10 region0",
+    "WLD-18 route-08 constant tread 11 region0",
+    "WLD-18 route-08 constant tread 12 region0",
+    "WLD-18 route-08 constant tread 13 region0",
+    "WLD-18 route-08 constant tread 14 region0",
+    "WLD-18 route-08 constant tread 15 region0",
+    "WLD-18 route-08 constant tread 16 region0",
+    "WLD-18 route-08 constant tread 17 region0",
+    "WLD-18 route-08 constant tread 18 region0",
+    "WLD-18 route-08 constant tread 19 region0",
+    "WLD-18 route-08 constant tread 20 region0",
+    "WLD-18 route-08 constant tread 21 region0",
+    "WLD-18 route-08 constant tread 22 region0",
+    "WLD-18 route-08 constant tread 23 region0"
+  ],
+  "layout": "development/levels/rebuild/arrival-grounds-construction-pass/wld-18/authored-layout.json",
+  "layout_sha256": "0a385a6524c6aead3999942f9228d0638714dc87d1d582fce6d94e64e9073c5e",
+  "glb_sha256": "922966ebb7143f8502420e3921f1236b15c5f45e68cbd062891fe00338f89538",
+  "physics_sha256": "aeae2180d66097fc4f2d960432a7ade549905021e595e81698bd75540a501329",
+  "removed_source_meshes": [
+    "Saved editor terrain WLD-18"
+  ],
+  "removed_native_parts": [
+    "1:Saved editor terrain WLD-18"
+  ],
+  "new_terrain_mesh": "Saved editor circulation terrain WLD-18",
+  "native_terrain_parts": [
+    "terrain-site:surface"
+  ],
+  "new_closed_parts": [
+    "Rooted cut walkway WLD-18 0",
+    "Rooted cut walkway WLD-18 1"
+  ],
+  "new_closed_triangles": 24,
+  "world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/adaptive-topology.bin": "42091eb72753f63b9b099c8561728ce5bbd7f5e0322b597844bb438451c76ff6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/authored-cuts.tsv": "aeabfb702bc562f197b6c4afe916439003da53fd0e99143ce2b4c2b58e9fe560",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/authored-path-grading.sha256": "08d441fbe9e35e4aca099298ab89e74e9ef7b952c7460f39b72f8f9899737960",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/source-provenance.json": "e394c2f2b818bc3715ed63a67fb6a08496f00730655e2366cbea3c57f8607cb0",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/terrain-physics.hcs2": "24c3e34adaaeea26b29e1f0a0335117f9781be1ed8085823fc8ee7b9c655125a",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/tile_0_0.png": "48b7b36ce1cf7a7403614d210855977420dae5e273cd1b50ac25aa285f3c183d",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/verification.json": "9e1dbca015b1daa9a70467c790c0b380b812b1f110eecefd3e633c08756f3988",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/world.properties": "484945a0e995f5d9c50434269cede7fb3cf3532f5941d23826c58650a234579a",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/scene-package/.scene.bin.editor.previous": "e6d4bff9d90598c656083fc91b0fcd38432990c2697c7fa27aa7dcecd07cad57",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/scene-package/scene.bin": "70fdb9abfa530d0fce478afcb6ea9d5bb073dcb96c533957cce2fd7431f7aad3",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/terrain-layers/tile_0_0.bin": "91827544b914ac971ffdc33ec3113c42a7196709898e22b55011aa7a625e13f8",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world/scene-package/meshes/site.obj": "7354431c4e9a3993a1b3bfec47a24ecb22ac9634f2ff3821f356d0257700bd5f"
+  },
+  "footing_extensions": [],
+  "unresolved_footings": [],
+  "rooted_walkway_beds": [
+    {
+      "name": "Rooted cut walkway WLD-18 0",
+      "link": "route-07",
+      "footprint": [
+        [
+          17.469669914110092,
+          48.53033008588991
+        ],
+        [
+          17.307090350616534,
+          48.28701257427382
+        ],
+        [
+          17.25,
+          48.0
+        ],
+        [
+          18.0,
+          48.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          17.469669914110092,
+          48.53033008588991
+        ],
+        [
+          17.307090350616534,
+          48.28701257427382
+        ],
+        [
+          17.25,
+          48.0
+        ],
+        [
+          18.0,
+          48.0
+        ],
+        [
+          17.388380132363313,
+          48.40867133008186
+        ],
+        [
+          17.278545175308267,
+          48.14350628713691
+        ],
+        [
+          17.625,
+          48.0
+        ],
+        [
+          17.734834957055046,
+          48.26516504294496
+        ],
+        [
+          17.506690066181655,
+          48.20433566504093
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4544,
+      "receiver_native_triangle_xyz": [
+        17.0,
+        -0.20000000298023224,
+        49.0,
+        18.0,
+        -0.20000000298023224,
+        48.0,
+        17.0,
+        -0.20000000298023224,
+        48.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway WLD-18 1",
+      "link": "route-07",
+      "footprint": [
+        [
+          18.0,
+          48.75
+        ],
+        [
+          17.712987425726183,
+          48.692909649383466
+        ],
+        [
+          17.46966991411009,
+          48.53033008588991
+        ],
+        [
+          18.0,
+          48.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000000298023226,
+      "terrain_probe_points": [
+        [
+          18.0,
+          48.75
+        ],
+        [
+          17.712987425726183,
+          48.692909649383466
+        ],
+        [
+          17.46966991411009,
+          48.53033008588991
+        ],
+        [
+          18.0,
+          48.0
+        ],
+        [
+          17.85649371286309,
+          48.72145482469173
+        ],
+        [
+          17.591328669918134,
+          48.61161986763669
+        ],
+        [
+          17.734834957055043,
+          48.26516504294496
+        ],
+        [
+          18.0,
+          48.375
+        ],
+        [
+          17.795664334959067,
+          48.493309933818345
+        ]
+      ],
+      "terrain_y": [
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224,
+        -0.20000000298023224
+      ],
+      "receiver_native_triangle_index": 4545,
+      "receiver_native_triangle_xyz": [
+        17.0,
+        -0.20000000298023224,
+        49.0,
+        18.0,
+        -0.20000000298023224,
+        50.0,
+        18.0,
+        -0.20000000298023224,
+        48.0
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    }
+  ],
+  "deferred_walkway_beds": [],
+  "walkway_builder_sha256": "8821a2bb2fe8077e2aace17d1538676ebe95cc72d8197fe83cd470ae6566b454",
+  "reused_rejected_arrival_cap": [],
+  "composer_sha256": "3711886e11c108841bf2326646417e4ac79c7e7a9ef638b9e4f981d880796f41",
+  "remaining": "Actual native/current-route/standing/vertical regression, physical footing probes, exported/editable/visual checks and all per-map terrain/edge/runtime/services/art/network/hardware gates; no unlock or production-ready claim.",
+  "blend_sha256": "7192aeb062294a68b0a555bf5109f3173f9fc15f31d62707032cba0ea9e2ae31",
+  "access_route_changes": [
+    {
+      "site": "WLD-18",
+      "link": "route-17",
+      "before": [
+        [
+          15.0,
+          -8,
+          32.0
+        ],
+        [
+          15.0,
+          -8,
+          20.0
+        ]
+      ],
+      "after": [
+        [
+          15.0,
+          -8.0,
+          32.0
+        ],
+        [
+          11.5,
+          -8.0,
+          30.5
+        ],
+        [
+          11.0,
+          -8.0,
+          29.5
+        ],
+        [
+          11.0,
+          -8.0,
+          27.0
+        ],
+        [
+          14.5,
+          -8.0,
+          27.0
+        ],
+        [
+          15.0,
+          -8.0,
+          26.5
+        ],
+        [
+          15.0,
+          -8.0,
+          20.0
+        ]
+      ],
+      "width": 1.5,
+      "required_threshold": null
+    }
+  ],
+  "geometry_unchanged": true,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "doorways": [
+    {
+      "id": "WLD-18-west-escape-34",
+      "axis": "x",
+      "boundary": 8,
+      "along": 34,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": -4,
+      "frame_depth": 0.48,
+      "frame_span": [
+        7.76,
+        8.24
+      ],
+      "frame_center": [
+        8,
+        -4,
+        34
+      ],
+      "rooms": [
+        "west",
+        "escape-lower-connector"
+      ]
+    }
+  ],
+  "constant_flights": [
+    {
+      "link": "route-08",
+      "from_point": [
+        6,
+        -4,
+        34
+      ],
+      "to_point": [
+        6,
+        0,
+        48
+      ],
+      "gross_width": 1.8,
+      "nominal_clear_width": 1.5,
+      "risers": 24,
+      "regular_rise": 0.16666666666666666,
+      "constant_tread_depth": 0.5833333333333334
+    }
+  ],
+  "removed_flared_or_conflicting_parts": [
+    "Arrival end bearing WLD-18 0",
+    "Authored stair end WLD-18 route-08 1 low region0",
+    "Floor exit",
+    "Floor exit.001",
+    "Floor exit.002",
+    "Floor exit.003",
+    "Floor exit.004",
+    "Header west W",
+    "Opened stair shell Wall exit N",
+    "Opened stair shell Wall west W",
+    "Opened stair shell Wall west W.001",
+    "Rooted cut walkway WLD-18 0",
+    "Rooted cut walkway WLD-18 1",
+    "Saved editor circulation terrain WLD-18",
+    "route-01 support 0",
+    "route-02 support 0",
+    "route-03 support 0",
+    "route-04 support 0",
+    "route-05 support 0",
+    "route-08 flight0 step1",
+    "route-08 flight0 step10",
+    "route-08 flight0 step11",
+    "route-08 flight0 step12",
+    "route-08 flight0 step13",
+    "route-08 flight0 step14",
+    "route-08 flight0 step15",
+    "route-08 flight0 step16",
+    "route-08 flight0 step17",
+    "route-08 flight0 step18",
+    "route-08 flight0 step19",
+    "route-08 flight0 step2",
+    "route-08 flight0 step20",
+    "route-08 flight0 step21",
+    "route-08 flight0 step22",
+    "route-08 flight0 step23",
+    "route-08 flight0 step3",
+    "route-08 flight0 step4",
+    "route-08 flight0 step5",
+    "route-08 flight0 step6",
+    "route-08 flight0 step7",
+    "route-08 flight0 step8",
+    "route-08 flight0 step9",
+    "route-08 landing0",
+    "route-09 support 0",
+    "route-11 support 0",
+    "route-12 support 0",
+    "route-15 support 0",
+    "route-16 support 0"
+  ],
+  "saved_world": "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/adaptive-topology.bin": "1a75a36024cb056c5d8732d998801991de44d4180fe6954e219bda22c525ec23",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/authored-cuts.tsv": "7561a0e4a1ba124882e6b1cd43abd7332458dcebd9d3b32c4f158f237b96779e",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/authored-path-grading.sha256": "98119eeaefd99e823ce4b239fafa4342257acdbe75ff556ed28ac2b0567dc8a1",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/earthworks-verification.json": "3ccca2bb406b68e7558f0f68ddac69f1fe65fa73552e1df1232b61d34d10bce9",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/source-provenance.json": "013f18a4c80ff5cb6b06a5c486a3dd72bce90d08da099bef5ba2aeb8cdf32176",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/stair-cell-punch-verification.json": "d3558a2c934a83570cbc4f017ae79f7c67d97238d015bfa046c058e4ea80b50e",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/terrain-physics.hcs2": "fe10c4269f692d1a4dd5d9fb91e5b7a94b87688570797767048efd9ae8450d9c",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/tile_0_0.png": "48b7b36ce1cf7a7403614d210855977420dae5e273cd1b50ac25aa285f3c183d",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/verification.json": "3ccca2bb406b68e7558f0f68ddac69f1fe65fa73552e1df1232b61d34d10bce9",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/world.properties": "484945a0e995f5d9c50434269cede7fb3cf3532f5941d23826c58650a234579a",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/scene-package/.scene.bin.editor.previous": "dec503d5465461f78e2713b22fcf2a94fb59a6c4966e43cf02ac0d80220fa0bb",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/scene-package/scene.bin": "1be84d82db76e1486b33753a7ca0a296341b831a69ce9812bf7b0646add5e5e3",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/scene-package/meshes/site.obj": "554abeae6b28558346fa1d3feabbb0961bf32680a605965fb9cb089e52b540f1",
+    "development/levels/rebuild/arrival-grounds-construction-pass/worlds/wld-18/terrain-world/terrain-layers/tile_0_0.bin": "cb4ecb08b5bd6eb1076bd9b4ca3b6e30e7bc61fa044fcc48be477cfef95a7e80"
+  },
+  "cell_builder": "tools/build_constant_flight_cells.py",
+  "cell_builder_sha256": "e4d9682ce316c5d280cf31ea3e839c2304b79a47bca447784f33cb2bb9ae6c7b",
+  "terrain_punch_builder": "tools/java/RebuildStairCellPunches.java",
+  "terrain_punch_builder_sha256": "57288fc8976428f996f625bcfe2b44e0b7777e115eefe8848b1b72ca088b6455",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/arrival-grounds-construction-batch/wld-18.png",
+      "sha256": "8297f1b536777051eca355c196766560d938f16152aaf2ac471905bd42e0a077",
+      "type": "native exported actual saved terrain earthworks with roof cutaway; not gameplay"
+    }
+  ],
+  "program_files_sha256": {
+    "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-18/features.tsv": "a854e4fb5bbe078e35ee12017475a425d17840cb32348c94494087dce90c1896",
+    "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-18/protected-rooms.tsv": "7404049bf8351e5da8246fc04ebcfabc3e6ccf6e5455cd8b41fe61fa7079f508",
+    "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-18/saved-grid.tsv": "ed27323ff4fc6f9f104e6aa4a08986be01a41f25924df675c82acb60cb876a1d",
+    "development/levels/rebuild/arrival-grounds-construction-pass/program/wld-18/underlays.tsv": "098c2b30d44bb18b635293cfde63565822a594cf8feedaba9498e35b15d36103"
+  },
+  "approach_structure_parts": [],
+  "removed_platform_guards": [],
+  "approach_soil_receivers": [],
+  "earthworks": [
+    {
+      "name": "Cinder surface arrival and service yard",
+      "material": "GRAVEL",
+      "feather": 5,
+      "profile": "arrival",
+      "polygon": [
+        [
+          9,
+          54
+        ],
+        [
+          24,
+          53
+        ],
+        [
+          51,
+          53
+        ],
+        [
+          57,
+          60
+        ],
+        [
+          52,
+          75
+        ],
+        [
+          45,
+          83
+        ],
+        [
+          43,
+          97
+        ],
+        [
+          38,
+          101
+        ],
+        [
+          24,
+          99
+        ],
+        [
+          21,
+          83
+        ],
+        [
+          9,
+          74
+        ]
+      ]
+    }
+  ],
+  "earthworks_verification": {
+    "site": "WLD-18",
+    "changed_vertices": 513,
+    "raised_vertices": 262,
+    "lowered_vertices": 251,
+    "max_change_m": 1.104712367,
+    "source_height_sha256": "48b7b36ce1cf7a7403614d210855977420dae5e273cd1b50ac25aa285f3c183d",
+    "saved_topology_sha256": "1a75a36024cb056c5d8732d998801991de44d4180fe6954e219bda22c525ec23",
+    "saved_cuts_sha256": "7561a0e4a1ba124882e6b1cd43abd7332458dcebd9d3b32c4f158f237b96779e",
+    "hole_controls": 832,
+    "disk_reopen_verified": true,
+    "physics_sha256": "fe10c4269f692d1a4dd5d9fb91e5b7a94b87688570797767048efd9ae8450d9c",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "source_terrain": "development/levels/rebuild/constant-flight-construction-pass/worlds/wld-18/terrain-world",
+  "removed_redundant_cottage_walks": [],
+  "source_terrain_physics_sha256": "d54c97d7847a38cd0e27c027ff8ec1f7588a525482d29dd5349a0efa362cb46e",
+  "terrain_writer": "tools/java/RebuildInstitutionEarthworks.java",
+  "terrain_writer_sha256": "a8baf56f63c7640dddfce02a4f1abacfbbe80696e79c48181137b9afaee536fe",
+  "terrain_composer": "tools/compose_arrival_grounds.py",
+  "terrain_composer_sha256": "252bc0bfc9df034ed83d0fe064b89d0a28810d627fbe88dd1a881155c572a2e1"
+}

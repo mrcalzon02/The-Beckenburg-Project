@@ -1,0 +1,2512 @@
+{
+  "observed_utc": "2026-11-08T05:18:57.841216+00:00",
+  "source_checkpoint": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+  "remote_head_verified": "56cdf078541e261e40f5c3826dfd13729bdf4329",
+  "remote_tree_sha": "ac093fbb74f7b9b1960934c6cae44b5e310abae8",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for union of both checkpoint changed paths",
+  "checkpoints": [
+    {
+      "commit": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+      "changed_files": 617
+    },
+    {
+      "commit": "56cdf078541e261e40f5c3826dfd13729bdf4329",
+      "changed_files": 3
+    }
+  ],
+  "verified_file_count": 620,
+  "verified_blobs": [
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "7a20a620d2a5cada79e6e9dcf0cf09bacf557ea4"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "7b4497bb9a0580937acbb7daa66890a69074d7fa"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "75e19b52f8ee395dd31ef116c03d0f3f1377eb5b"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "d20e5c7850d6344f2a07436eef45fb903f2f178f"
+    },
+    {
+      "path": "development/levels/FIRST_PRINCIPLES_REBUILD_PLAN.md",
+      "sha": "299833b9b208e834ec92beac8b2e48f1327f8a44"
+    },
+    {
+      "path": "development/levels/blockouts/build_blockouts.py",
+      "sha": "78f87973bf1fd74301d47b06f5aa6efa97507c25"
+    },
+    {
+      "path": "development/levels/blockouts/structural_pass.py",
+      "sha": "77aa8fa3d7f9659793bbb9e1732f41621899d787"
+    },
+    {
+      "path": "development/levels/rebuild/academy/native-movement-batch.md",
+      "sha": "ff9c749ec7e107dc71aaf7b90740a96353a19e3f"
+    },
+    {
+      "path": "development/levels/rebuild/asylum/native-movement-batch.md",
+      "sha": "78123d3f9a6ca37a1a22a2b65a7d212f7974b841"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/capture-manifest.json",
+      "sha": "abf4a1d05f4935f41469b61bb24a2e532567141c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-east-entry.png",
+      "sha": "4675d896f516b711719b1740d966fe19a2e3ee2b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-lower-west-landing.png",
+      "sha": "5c90da25dbbd7936a8d22f29c4bcb6af6adba484"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-east-entry.png",
+      "sha": "ba37cf464514a33a2febdd5ab1e30ac27950e1a5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-lower-west-landing.png",
+      "sha": "1243a79f0a74d70d1f8e1188f498165ded2d0f7c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-mortuary-west-entry.png",
+      "sha": "49eb599cd23aa83408d5793e6d77ba7837eaf9ee"
+    },
+    {
+      "path": "development/levels/rebuild/captures/basement-batch/wld-07-west-entry.png",
+      "sha": "17fc2e398c13167ee86d796d068a77f843fedfe7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/academy-export-overview.png",
+      "sha": "6f74bb43d878f51e3c46abfd010df61f5ef644ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/academy-room-reception.png",
+      "sha": "c6803c407118657bc5de2e2574221fe86610b255"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/asylum-export-overview.png",
+      "sha": "217333e3f862f7a64616d8d41bc4867b7a839471"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/asylum-room-ground-north-a.png",
+      "sha": "75f6216148716e7daf17f5c3158a0b9429873552"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/church-export-overview.png",
+      "sha": "6a02ea8d2b89fb5dc86d2543f609bca47f64d0f4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/church-room-nave.png",
+      "sha": "ab9dcc2bda1b4ebb302dbec955c7d40ef528f510"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/college-export-overview.png",
+      "sha": "529d9be283f9ae9f54637603b14e18a53e3d3db2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/college-room-lecture.png",
+      "sha": "fe8fd08ceab08895618972c1ea9267f463c68174"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/farmhouse-export-overview.png",
+      "sha": "880fa5ec949347b029b16a813313c857170d9a80"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/farmhouse-room-stall-a.png",
+      "sha": "522c6479d7fc4ff929e8030707a95c6af0330598"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/mansion-export-overview.png",
+      "sha": "2a3c2a9b9442d133738739df21579cc3c3ab9d1d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/mansion-room-library.png",
+      "sha": "b69844afe0b9d011234da30c105ff9b0087ae3fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/prison-export-overview.png",
+      "sha": "84d12bfa2ab21454a506d7d632b37e7df6bdc383"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/prison-room-a-lower-cell-01.png",
+      "sha": "bb32171af93d5a42d2337f5a6b42e07fafb9e6ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-01.png",
+      "sha": "ed8384b48b3ff1c8cc4bce046360af01d762f955"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-02.png",
+      "sha": "726e30d4f759669d5fadff514a93222dc82426a9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-03.png",
+      "sha": "5a584517778498863ad72cc3e340f3ba2dfc8e72"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-04.png",
+      "sha": "e47119bc58ac60b85437cfdefa54b4a0287f72bd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-05.png",
+      "sha": "dd7716abdf4975c927c21d8d6c494244f0fed6d8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-06.png",
+      "sha": "b9de89f91a5b1d793ee8d1fa02b2e7d359b078c1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/rough-allocation-sheet-07.png",
+      "sha": "e5e5b224a9a90445486575b5765963cf0be772d0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/school-export-overview.png",
+      "sha": "f41c8d02146c6d508d2cddc94f308612972be01d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/school-room-class-a.png",
+      "sha": "6316bbfdfb77c44cbf96b8addbc90574410fe9b1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-03-export-overview.png",
+      "sha": "1d90bb25580627dc50f058320f09baeb3c2d399d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-03-room-shelter.png",
+      "sha": "7efefac44e936b392a83ae0cc5a720fcb2093304"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-04-export-overview.png",
+      "sha": "280ee7aae2bf681d1e4ac33263d44f04a3aa557e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-04-room-hut.png",
+      "sha": "3ff2402a11f0a75c880f503d8fc4a2a1d194232f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-05-export-overview.png",
+      "sha": "ced74c2e7407d5ff909fda95cbc63da84437c700"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-05-room-ore-west.png",
+      "sha": "288dda08ce304436283f5470d93de0d84826c907"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-06-export-overview.png",
+      "sha": "925d4ec3421d43ca2a3d7a11c65ffef4a459ae66"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-06-room-cottage-a.png",
+      "sha": "64cafbe5e664c1f6e02235e131252103b24a7bc5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-export-overview.png",
+      "sha": "a38df2f7143b05a318fe926632bb63f21c88f831"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-mortuary-export-overview.png",
+      "sha": "fc5e4a6254e55c224fdb9169db4cec2673a87ce7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-mortuary-room-mort-prep.png",
+      "sha": "ca1c2303fc370e17ac2818c6d1a32ec99a9552b3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-07-room-chapel.png",
+      "sha": "bc82d25d0f5045579ade1a7b5ec8783d65dd5dda"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-08-export-overview.png",
+      "sha": "a44b475aad2ec8c55163163199d53b4a18070754"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-08-room-lab.png",
+      "sha": "02fbecf3441d5a3581b774a0cea675381e5a959d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-09-export-overview.png",
+      "sha": "d65b3f59594416c05017f6d545b6db62d845b751"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-09-room-turbine.png",
+      "sha": "7989d4d577291fee87a8341d1dc014c6f01a0345"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-10-export-overview.png",
+      "sha": "563c26f712883ddcf4c9f069c7fc5f39aa5376c9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-10-room-archive.png",
+      "sha": "71fc336e5fa26e5132076b114bc8822fb7528d8a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-11-export-overview.png",
+      "sha": "82b11b0aeaec20f0bc14e53ccac8a4fcf67d0ae3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-11-room-house-a.png",
+      "sha": "6e4438816bc4390e02826d77080ff377e568e6bb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-12-export-overview.png",
+      "sha": "763607977ec18acbb3aaf78eaa4ea178bb5987df"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-12-room-signal.png",
+      "sha": "c08784bb906589a959f64f5fc141539591e83558"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-13-export-overview.png",
+      "sha": "95c9bda6080343fec75bc1878687226e427fe122"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-13-room-processing.png",
+      "sha": "46cf9cb0151f64847f52b712b6a201f44f62e611"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-14-export-overview.png",
+      "sha": "de5b8bb5ba6648fd40a6e0fb8fcad55a9c4cf550"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-14-room-workroom.png",
+      "sha": "8a836b6ca148b7f5f8539579855f62e6e978c85c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-15-export-overview.png",
+      "sha": "dfd288909d1e13c57cc888b31b29eb97fc15b2b1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-15-room-processing.png",
+      "sha": "a90aa2c61ea2ca70efc69a28a81d594c857ba1d6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-16-export-overview.png",
+      "sha": "2a871b1630bb432f7f71cde2ebb60f2aa45dd0f1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-16-room-office.png",
+      "sha": "31a7c8297161b3e6f163e2bd2bdd0e830ab470de"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-17-export-overview.png",
+      "sha": "08e29c6b49c741be4272e6a98d2ff1e92c50a3f8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-17-room-barracks.png",
+      "sha": "1cf964c932eb3c180b91d7fc6b9f6f5a81967d6b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-18-export-overview.png",
+      "sha": "eb017e0da05a6790f8affb0d07b4bccfc8f9f9dc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/furnishing-batch/wld-18-room-shop.png",
+      "sha": "287dc9ba46d48aa1a4256247c8f0ccb5dc2b6668"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/academy/structure-export-closed.png",
+      "sha": "5ac14fcee95da5c9dc3fa6a6638629f0156756e1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/academy/structure-export-cutaway.png",
+      "sha": "a6989ef372a9e1430cfd8469e336208c3a7b3f55"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/asylum/structure-export-closed.png",
+      "sha": "3e2a505ca5f5932d2eb6e9cbd9673f03d34ff628"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/asylum/structure-export-cutaway.png",
+      "sha": "33d82847af2329ce94879bdba03b2c9811b4c912"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/church/structure-export-closed.png",
+      "sha": "f8a183450da7c7bace4cd7380d8556b7c94f1fcf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/church/structure-export-cutaway.png",
+      "sha": "f00a4db33aac81cb8b507c80ceb42d01da287c67"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/college/structure-export-closed.png",
+      "sha": "5e22abd27c9e70e54db9c6e33446472c09d2defa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/college/structure-export-cutaway.png",
+      "sha": "edf8f1e8fcebb8f70b9190e56299707a3858244f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/farmhouse/structure-export-closed.png",
+      "sha": "bcdbe9a25e87133f884b9a158de6043d2bda87eb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/farmhouse/structure-export-cutaway.png",
+      "sha": "1a628418831136218a90d9a4d3be2c6760f8714d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/mansion/structure-export-closed.png",
+      "sha": "5765ce556b899a4ef3f1129b40e3bcd547295866"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/mansion/structure-export-cutaway.png",
+      "sha": "4d81ab566155941a1ee35ca35fcbc2da81bf9838"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/prison/structure-export-closed.png",
+      "sha": "4a4730ababa25440224f2fd91f5e8fbbbfb7eade"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/prison/structure-export-cutaway.png",
+      "sha": "058a040b22f23b4963d8f9a1c62141f776e0c4c2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-04.png",
+      "sha": "eae99009cab5c528b4389dd3472a75d7e05b0390"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/roster-structure-sheet-07.png",
+      "sha": "fab31a01658d5bfe8f2940fec4f31e3fd1bd07c1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/school/structure-export-closed.png",
+      "sha": "02b32970ef714c8f950e79f831d0b36ff6d6db4f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/school/structure-export-cutaway.png",
+      "sha": "eeb7d5cd125a4fdc297c6e0608905e96e03b4877"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-03/structure-export-closed.png",
+      "sha": "d26acf89a7bf5e0a5b3433dac8c0abd97f77f283"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-03/structure-export-cutaway.png",
+      "sha": "573c4b14e41586bf6757fc711f8206ef4a99bfc9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-04/structure-export-closed.png",
+      "sha": "4fa45425bc359885e00392ac986ddb3c16cfd909"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-04/structure-export-cutaway.png",
+      "sha": "4d65bbab7f400a120051959235faeae5b238a2a3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-05/structure-export-closed.png",
+      "sha": "a157f21e879bd376625a9120f287ee96a9a70d2f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-05/structure-export-cutaway.png",
+      "sha": "d46583c4e6aa27bbbdad0ebd23a7cd15589eccaf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-06/structure-export-closed.png",
+      "sha": "b0911f68ecdb8ccfdb6076d8fe3197d98a1cf753"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-06/structure-export-cutaway.png",
+      "sha": "2b9423cddf4eaff5853e9ede3867d230ff8d1511"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-07-mortuary/structure-export-closed.png",
+      "sha": "9967959844fdf26ae709ad50bcfa08a5105a3d34"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-07-mortuary/structure-export-cutaway.png",
+      "sha": "5a7abb8efd3c3eb201919bb2c6cc4ac44ac88df3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-07/structure-export-closed.png",
+      "sha": "a470fa693fe25bc2d623d2337eaf628007710b5c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-07/structure-export-cutaway.png",
+      "sha": "fe6e13926cf8437c94e40c37ddd8d35be264487e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-08/structure-export-closed.png",
+      "sha": "a0318a8af331d81c1f289513468555c54b42b907"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-08/structure-export-cutaway.png",
+      "sha": "219827b2f2cfa71d5ef30fdee386aa007bf7c482"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-09/structure-export-closed.png",
+      "sha": "d0cb63f97895471842ee58850bcae73280dece6e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-09/structure-export-cutaway.png",
+      "sha": "666b46236d9ac905b1867ce7bdbcc02b812a7263"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-10/structure-export-closed.png",
+      "sha": "d06e93ed967fd274af92bc526b048cbf44d01470"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-10/structure-export-cutaway.png",
+      "sha": "dbcf0f064b9ae0fbddee973b64cad19f89744d24"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-11/structure-export-closed.png",
+      "sha": "0bae02f1312f5b58e75af00f5673092e5ac78191"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-11/structure-export-cutaway.png",
+      "sha": "f5790801ee25bce33741e4455fc22b0149c45bb2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-12/structure-export-closed.png",
+      "sha": "4aa84382881313e8b3cdfd5f0e37c0ac77a03070"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-12/structure-export-cutaway.png",
+      "sha": "d4b5a41bcaf01319eb00f5a128e2432d8039ec77"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-13/structure-export-closed.png",
+      "sha": "0e39b202444004c691421cc9e1721aed84964e4d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-13/structure-export-cutaway.png",
+      "sha": "fad7b502208d3d8390ed9f1f0a60eb7ec3740484"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-closed.png",
+      "sha": "2973ca34dabd841b01808aabdd19eb66bb12a57c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-14/structure-export-cutaway.png",
+      "sha": "e234dabad18ff241093fac6a8851aa96c22847c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-15/structure-export-closed.png",
+      "sha": "73a9feadedad5a50371e379fa8c7b1700342c162"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-15/structure-export-cutaway.png",
+      "sha": "c4bab09a63d12d0a4732b6674d9aaca6318e49c3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-16/structure-export-closed.png",
+      "sha": "db79d063f1992bdf2318c114a0115baf2f0da6c0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-16/structure-export-cutaway.png",
+      "sha": "55439e0090c5e4719a6964cbc7b3b9621b0d58d6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-17/structure-export-closed.png",
+      "sha": "096ff745d25ba9dab6c0155ebd3361137c6c3604"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-17/structure-export-cutaway.png",
+      "sha": "4f27b0aca50dcb292b2f2da1f7db63b215172f12"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-18/structure-export-closed.png",
+      "sha": "df29990c4ef19568d1ba0ecfc0d258bebbf18d42"
+    },
+    {
+      "path": "development/levels/rebuild/captures/structure-batch/wld-18/structure-export-cutaway.png",
+      "sha": "5ae77f6c9828048bc2fe57000976f5802e4b70b3"
+    },
+    {
+      "path": "development/levels/rebuild/church/native-movement-batch.md",
+      "sha": "41b66c7b38e34e7f4eb910800f95abb4efe0651a"
+    },
+    {
+      "path": "development/levels/rebuild/college/native-movement-batch.md",
+      "sha": "22bbaa8bc54323ae37c0bdfeee6589475732161f"
+    },
+    {
+      "path": "development/levels/rebuild/college/rough-layout.json",
+      "sha": "d85c095033e8979c30f2dbf6c347471d34cbd959"
+    },
+    {
+      "path": "development/levels/rebuild/farmhouse/native-movement-batch.md",
+      "sha": "1703f0ec93d75b1e6de4ebb25c0781f1ebfce2a2"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/academy/furnished-physics.hcs2",
+      "sha": "9ee6ba52c4741d68a52f0752fe5300970be37784"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/academy/furnished.blend",
+      "sha": "d79a33024238c34cf11100548a3418e3869e9ce3"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/academy/furnished.glb",
+      "sha": "28a773ab5d878e5ae3b847c9989bf6a6134f3c67"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/academy/physics-contract.json",
+      "sha": "73048371696e9461b8c1dc8690ae7b757cd293f1"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/academy/placements.json",
+      "sha": "6b931f6c78bcaf79b160d3eb4c21cc7517ffa9e2"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/asylum/furnished-physics.hcs2",
+      "sha": "85dc1500ac2dbd979b5a31063f5eacb957e1d5d6"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/asylum/furnished.blend",
+      "sha": "f3d145ca825bd74e2b3fb61d55f4e09c0e25a353"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/asylum/furnished.glb",
+      "sha": "14ed614cfcf29477d6639e0115ab3b62f4ab714b"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/asylum/physics-contract.json",
+      "sha": "ff118e8f94a4e804a4b22b9585e17da512dc2fa5"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/asylum/placements.json",
+      "sha": "961acc6f07e6462dcc2c42533de5ebe547948e80"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/church/furnished-physics.hcs2",
+      "sha": "e32979e642efd37e5472c1f302df8a2529a2ffa7"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/church/furnished.blend",
+      "sha": "2ab2460c02bac597ab1e71eb749693ee05aec786"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/church/furnished.glb",
+      "sha": "90b947b7c311652cea903992e28f526756276858"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/church/physics-contract.json",
+      "sha": "59764a6b875deae295424016ee7037565b1b849f"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/church/placements.json",
+      "sha": "b44ce4cd534bb74d982d09a4f38ae8a3567a3718"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/college/furnished-physics.hcs2",
+      "sha": "b21cba719557f5f3cfc3f63200296d0ec218c15e"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/college/furnished.blend",
+      "sha": "0d80ea63e6b5b973699f9a11431a448e105e277e"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/college/furnished.glb",
+      "sha": "3af2b52707a7a05f1cf305f95f9c047567228fb7"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/college/physics-contract.json",
+      "sha": "a989d1d346169c294c81de956cdfb9491708cb82"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/college/placements.json",
+      "sha": "43f6ce4cf52f37813d57f678e45edce555fb1e24"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/farmhouse/furnished-physics.hcs2",
+      "sha": "250f4d19251ecb5b6e2ffd0b07df6bc1e2d52a54"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/farmhouse/furnished.blend",
+      "sha": "5702352ccb8195100e5a67eef897eda09c97a24d"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/farmhouse/furnished.glb",
+      "sha": "4f8a22b192b802733a5b24d175d6b36eabc01df1"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/farmhouse/physics-contract.json",
+      "sha": "e0e9ae759f54fb2d0e46293dabeda5de1cd0d271"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/farmhouse/placements.json",
+      "sha": "01d603f67e32d2def5477ad615686e22b1d6c0ca"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/mansion/furnished-physics.hcs2",
+      "sha": "29bf90b02fbf2724bc36601cab121d8669acaf79"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/mansion/furnished.blend",
+      "sha": "a58ebf032ff59d295119bb8373cc311b37ba7db5"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/mansion/furnished.glb",
+      "sha": "26659df6330266fa6f971c18a8263904a52318ed"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/mansion/physics-contract.json",
+      "sha": "c892fd4445ba6c43a97f1f8b38bf628dd3508256"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/mansion/placements.json",
+      "sha": "c0d35324fe6df0c1f768626fcf27de695724d1a2"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/prison/furnished-physics.hcs2",
+      "sha": "776bf0442202f2443576038384df41956de91062"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/prison/furnished.blend",
+      "sha": "d61ffef3941f6836273bf411552e054712ce65e6"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/prison/furnished.glb",
+      "sha": "c31d64ed3c02cb544bfb2cf4573d38b11db2632e"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/prison/physics-contract.json",
+      "sha": "6111f7c3a89dd0778977ccaa28cd6de4f9eb3b2b"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/prison/placements.json",
+      "sha": "46ef354316400ae23e0ac7d12296fad367421f75"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/school/furnished-physics.hcs2",
+      "sha": "d6033e2b94c2b54fb4fb6be69eee02330c03de6e"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/school/furnished.blend",
+      "sha": "93ccb9adb1789254d84fe580cb9a62fc0b23f1e5"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/school/furnished.glb",
+      "sha": "0d6e30972ba3e5faaacb20af4106cba05ee4e761"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/school/physics-contract.json",
+      "sha": "59baf6bc9f726949b12c13c8e84f3e1131e24062"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/school/placements.json",
+      "sha": "9996b5e3881c880281039c1327e49768e4abb2fc"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-03/furnished-physics.hcs2",
+      "sha": "8714c166dd04addd3dd2146edb064459fc50345c"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-03/furnished.blend",
+      "sha": "0871f11615cbac51ae2dfff1f2beaf628317849f"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-03/furnished.glb",
+      "sha": "da88af9fa3ad1f583c0ec10dd7eb12eae5b58715"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-03/physics-contract.json",
+      "sha": "6728f51d32945b1a91ea054adc46630903ec9ba4"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-03/placements.json",
+      "sha": "7e033e99ecce83e0cc620c448a6180848b7d417d"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-04/furnished-physics.hcs2",
+      "sha": "c0339fcdf58ca50a307adcd8df7cb6e9d46750da"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-04/furnished.blend",
+      "sha": "114f77f8fd4b7a04512810fb7fd8b4b431470696"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-04/furnished.glb",
+      "sha": "d6541214187e558c0907aa976de84da5a8037805"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-04/physics-contract.json",
+      "sha": "0b422471c54d9547a725b9b17db60f42ac56aedc"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-04/placements.json",
+      "sha": "19c359f5a58602f931b9fe45d017eb755e4a73da"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-05/furnished-physics.hcs2",
+      "sha": "5b004901ddafe3255308a4e255a1c78d67a6955e"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-05/furnished.blend",
+      "sha": "fcd2f902e40f98b2f3ce7c43bc347c7932568dd3"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-05/furnished.glb",
+      "sha": "56736013a0859b480694130b878a46c0ab58cd8a"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-05/physics-contract.json",
+      "sha": "bf60836840b2cf50634c24285abb9466d6db5a5d"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-05/placements.json",
+      "sha": "9c2281696d788f79227c7870ef54e08987a96a78"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-06/furnished-physics.hcs2",
+      "sha": "ba3b785981fee494b4bb3e8168e5c2c0f9319616"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-06/furnished.blend",
+      "sha": "039813a71e835581965b8e1ae8531949bc0fbf89"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-06/furnished.glb",
+      "sha": "aac71d659314e08406527f48a93133bf06b26a8d"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-06/physics-contract.json",
+      "sha": "6ee5a71f4b47a12c4f8012ceec16fb0e8b909e62"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-06/placements.json",
+      "sha": "7b388a41812784f936bfc46a6c478b0cbd43d231"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-07-mortuary/furnished-physics.hcs2",
+      "sha": "bd65c4b74d0f536954ac8210d15c337c8ee824c0"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-07-mortuary/furnished.blend",
+      "sha": "194ef339d964d79fb39868d92f3d043eca8c3c9e"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-07-mortuary/furnished.glb",
+      "sha": "f460a2220c8abadeab4b7a72cf666ce92e24ee3a"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-07-mortuary/physics-contract.json",
+      "sha": "4cdfed9f107c5b959e572176130f4038e8d8060f"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-07-mortuary/placements.json",
+      "sha": "e693499e9022a6a00600a915dd55b86961ec66a8"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-07/furnished-physics.hcs2",
+      "sha": "b55754286c6bd043ecb347498085ce9437eec9aa"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-07/furnished.blend",
+      "sha": "87a269eb4b9991f1510f8a5809a29fabec0937a0"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-07/furnished.glb",
+      "sha": "c492206005be983ca9fdd6b5a3d1de6a66576ef8"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-07/physics-contract.json",
+      "sha": "bf6bd389422aad6e689a3e7652689ee863b6b1f1"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-07/placements.json",
+      "sha": "cf94081505a12d6dede4b2f63eee72712ccd3c48"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-08/furnished-physics.hcs2",
+      "sha": "7603ebc199dac3f6dd4a9a232aa74dd42d9069fe"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-08/furnished.blend",
+      "sha": "e43e634aebfb61eedf074f41958d6eadd0974e66"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-08/furnished.glb",
+      "sha": "a8a0c58114c35acd77ff9f1216571aeba9f13d3d"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-08/physics-contract.json",
+      "sha": "001a15d90e1ae3435562e2404475dc8f7e92a438"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-08/placements.json",
+      "sha": "d9b3a46ab419f5ac8b6fc54405bfd840bbf5055d"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-09/furnished-physics.hcs2",
+      "sha": "c5e9167221a0035811e74a5c9f525c33c2d68a30"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-09/furnished.blend",
+      "sha": "77df5cb545677ce3770daf4c8b51939c2c98bb74"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-09/furnished.glb",
+      "sha": "02f49697eb6d37bd374633308e79b55d44078db7"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-09/physics-contract.json",
+      "sha": "fb37857153569b848b44a028af4d95d4a0ca8bbb"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-09/placements.json",
+      "sha": "7e00bf9964380e6ec33289e98ec0daca41eb7a2c"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-10/furnished-physics.hcs2",
+      "sha": "90b90d40545c1e3a0dca7db64893f9759932e507"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-10/furnished.blend",
+      "sha": "b96693e6c3c7ccb7c3edf27752d264d7c814f558"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-10/furnished.glb",
+      "sha": "24e39156e35f7ea5afd78bf593a7760076ffd2a6"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-10/physics-contract.json",
+      "sha": "055be35b73ff153a073846597f58e6a6ac209bf0"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-10/placements.json",
+      "sha": "a4b4227317b4364108f3a2435cee5a1057ec0ced"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-11/furnished-physics.hcs2",
+      "sha": "67044ea4e38f5cf7e854e203f0e25b8efb0736a5"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-11/furnished.blend",
+      "sha": "33330f62a57d6a742a140e3ac37c8116e9ca9c25"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-11/furnished.glb",
+      "sha": "6b0bbcd462e1466a896e5f8ede6d8c041772dba4"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-11/physics-contract.json",
+      "sha": "f0ec2d76153fe2c637b5b70a7b15f656d6258bab"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-11/placements.json",
+      "sha": "e561342949203e7f9e3c0c17f9d8250a250325bf"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-12/furnished-physics.hcs2",
+      "sha": "d6f51b9c2c96bb9c6275f6c49af9bbc926ca5cc5"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-12/furnished.blend",
+      "sha": "eeb66ac7b5324461a82b3d148f65d258363fbfb9"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-12/furnished.glb",
+      "sha": "1702affd1816833e132e1f34d1a85fe9ffd86485"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-12/physics-contract.json",
+      "sha": "49df1de1baac061577a99b6172105ae91075f1ee"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-12/placements.json",
+      "sha": "88b153755a21f3a5ee57be4762d1c46e105959d7"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-13/furnished-physics.hcs2",
+      "sha": "f3f6272c9c49e0158ff3061a8b663367da42b2b6"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-13/furnished.blend",
+      "sha": "ec75cc497f060f2afeb363a13c9ed41d2d1118ff"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-13/furnished.glb",
+      "sha": "4631cb3f9ea82c9c2262a775a53f89f481a4fa45"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-13/physics-contract.json",
+      "sha": "5e0c5cfc69fbef6c23468ee4e1179c91fdec5da9"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-13/placements.json",
+      "sha": "9f7dc70001e7389d9424563cfa31047236091428"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-14/furnished-physics.hcs2",
+      "sha": "3d6679c71e205238129e5a857b91219b6c5abd55"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-14/furnished.blend",
+      "sha": "031b2d2db8c1e94b56c8856adf4a486b2c668648"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-14/furnished.glb",
+      "sha": "25fd3149ec47e5d7179ce8176dc25e2fccbbc1de"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-14/physics-contract.json",
+      "sha": "93610a0e229bffd5326cbe29cc5ba818b9a072f4"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-14/placements.json",
+      "sha": "43be1d935392ad4cea04deef97af97e0fbdbe651"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-15/furnished-physics.hcs2",
+      "sha": "a09099581165b2b509b8ae812615041940a67baa"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-15/furnished.blend",
+      "sha": "09541593d51ed40a001b559a10344062c54af028"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-15/furnished.glb",
+      "sha": "e749b618b4df614f0ab6466d0f1df7a73116ebd4"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-15/physics-contract.json",
+      "sha": "ca48cb6ec02e4eb529aa260d3d89c9d2f6d12351"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-15/placements.json",
+      "sha": "91848019f486f5fc7486992f3832db9a2a4f1ac2"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-16/furnished-physics.hcs2",
+      "sha": "faed25043bc6b0b9e4547dfcca4313de460a177c"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-16/furnished.blend",
+      "sha": "52acd3f39f7b7f3c1b3ca0abd7e9938790c2f379"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-16/furnished.glb",
+      "sha": "2e45e2f3a43b01defe38e387ef972452a5eef62b"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-16/physics-contract.json",
+      "sha": "32758b457845c0fbd7eeeaa0493733190874cec2"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-16/placements.json",
+      "sha": "7a4cf64ec00526ab0e65316c81bb1477475cb736"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-17/furnished-physics.hcs2",
+      "sha": "f7e6911c3be487c01e272b2bd10eb6252666a28b"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-17/furnished.blend",
+      "sha": "98848a421c038a8cd802c3b9cd2b3f2446b3f0b2"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-17/furnished.glb",
+      "sha": "8df56f533deea4db7f16872599c3570d0a6f7c1c"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-17/physics-contract.json",
+      "sha": "66996042fb0c357a948ad00e9158bc799d0d7d89"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-17/placements.json",
+      "sha": "8f2036c736803db4744ebf9bf280642a3b53f7d5"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-18/furnished-physics.hcs2",
+      "sha": "42c51f5d2486786bc03b858b984498295214bcf3"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-18/furnished.blend",
+      "sha": "b38c56e71a981b6b1a2d778be5ec60f0f67c6358"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-18/furnished.glb",
+      "sha": "9edf5f9fd1769bb7aeced99fc8bc5601260b7cbc"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-18/physics-contract.json",
+      "sha": "f77fbe750ba91537e9620a5d9f10e3ac7f5039f7"
+    },
+    {
+      "path": "development/levels/rebuild/furnishings/wld-18/placements.json",
+      "sha": "eb109e29c97c0e871a0c2cd57396e02b49770ef4"
+    },
+    {
+      "path": "development/levels/rebuild/mansion/native-movement-batch.md",
+      "sha": "2f15462124eeb2c8ed4e53be110f37ec9895e5cc"
+    },
+    {
+      "path": "development/levels/rebuild/mansion/rough-layout.json",
+      "sha": "7a254cbe276cc2af20bb6ad730438cd7ae46d899"
+    },
+    {
+      "path": "development/levels/rebuild/movement-chains.json",
+      "sha": "9fb2bfcfa659318a46e22051a807ce5f53372f35"
+    },
+    {
+      "path": "development/levels/rebuild/previews/wld-07-saved-terrain.png",
+      "sha": "8c92da67199b63a7b4fa9b87f2b1ada2042d0089"
+    },
+    {
+      "path": "development/levels/rebuild/prison/native-movement-batch.md",
+      "sha": "c2cdd96169e725dfb672558f6b0a0608f625b2f0"
+    },
+    {
+      "path": "development/levels/rebuild/school/native-movement-batch.md",
+      "sha": "80d4dd83e30865cb0d328b784005ed9dc0df52cd"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "ed9f24692a3d7ce1ac0a8f3633139e33f70f0470"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/NEXT.md",
+      "sha": "ff9c749ec7e107dc71aaf7b90740a96353a19e3f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/implementation.json",
+      "sha": "4ee04f1b6081a876c9cb1997e9e4c5fd70bc5056"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/physics-contract.json",
+      "sha": "47c8631884c5aa87d0d6d2d1f5efda4252cc1da3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/preview.png",
+      "sha": "176d26f38448a11660328e55ac787c3375ba0bd5"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/rough-shell.blend",
+      "sha": "600b55289e2dab4c026353082d3d39d64653a852"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/rough-shell.glb",
+      "sha": "172d4fc8bbfdc8c35869aaa6cd62b193cb16184d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/structure-export-closed.png",
+      "sha": "5ac14fcee95da5c9dc3fa6a6638629f0156756e1"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/structure-export-cutaway.png",
+      "sha": "a6989ef372a9e1430cfd8469e336208c3a7b3f55"
+    },
+    {
+      "path": "development/levels/rebuild/structures/academy/structure-physics.hcs2",
+      "sha": "bf6ccea185499aae434290d56e2f49804fe1a2fc"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/NEXT.md",
+      "sha": "78123d3f9a6ca37a1a22a2b65a7d212f7974b841"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/implementation.json",
+      "sha": "d880ab053fa0264b77c373f3a82a78355fce4847"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/physics-contract.json",
+      "sha": "93873642a356240aeb5fb1b1e20681cc22e9ced5"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/preview.png",
+      "sha": "c3d89c257ae750cdef9152f4d7156197d825891e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/rough-shell.blend",
+      "sha": "dfd99200af580c8eb9eb2685e9efcf1b2c72168a"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/rough-shell.glb",
+      "sha": "23c6a98e90c2e445066d94f957ac391a7cbcc990"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/structure-export-closed.png",
+      "sha": "3e2a505ca5f5932d2eb6e9cbd9673f03d34ff628"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/structure-export-cutaway.png",
+      "sha": "33d82847af2329ce94879bdba03b2c9811b4c912"
+    },
+    {
+      "path": "development/levels/rebuild/structures/asylum/structure-physics.hcs2",
+      "sha": "d63fc9690a15bdc95f99f4b0646d23da56ef2d8c"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/NEXT.md",
+      "sha": "41b66c7b38e34e7f4eb910800f95abb4efe0651a"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/implementation.json",
+      "sha": "d891972434bb48e0470bcec95ddf023e407d841b"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/physics-contract.json",
+      "sha": "0f9b0289e012473c82a04a6629a7ae02d4b37749"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/preview.png",
+      "sha": "cc00621fdac6f8dd3ab6d9d9e6c819a15c27fa03"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/rough-shell.blend",
+      "sha": "e96fffc8e8267f3509a3731494d70e43f41930e7"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/rough-shell.glb",
+      "sha": "957f13ef42f243c73b2cfd65b8820be9c72b06b3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/structure-export-closed.png",
+      "sha": "f8a183450da7c7bace4cd7380d8556b7c94f1fcf"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/structure-export-cutaway.png",
+      "sha": "f00a4db33aac81cb8b507c80ceb42d01da287c67"
+    },
+    {
+      "path": "development/levels/rebuild/structures/church/structure-physics.hcs2",
+      "sha": "b825f73c6ecab9e113e94d8d7f6582d1c78368c2"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/NEXT.md",
+      "sha": "22bbaa8bc54323ae37c0bdfeee6589475732161f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/implementation.json",
+      "sha": "c45bff6c2bacfc2c9185a87133430f449ca54dbf"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/physics-contract.json",
+      "sha": "e8380756851078bc37b584367e2427c6a685b709"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/preview.png",
+      "sha": "e6144bde7807016fd915b6545231dc7b9c57adae"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/rough-shell.blend",
+      "sha": "e5c87a13fd0b7bfed990fcba959338d508977c51"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/rough-shell.glb",
+      "sha": "7e6041bae71e699ea365e6d09ac165ce8868ece7"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/structure-export-closed.png",
+      "sha": "5e22abd27c9e70e54db9c6e33446472c09d2defa"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/structure-export-cutaway.png",
+      "sha": "edf8f1e8fcebb8f70b9190e56299707a3858244f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/college/structure-physics.hcs2",
+      "sha": "0c111886a3e6d2c244b780484a71bd43fb2d0922"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/NEXT.md",
+      "sha": "1703f0ec93d75b1e6de4ebb25c0781f1ebfce2a2"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/implementation.json",
+      "sha": "96c6defac25e0d984e9e2b4a198b00bb093250a3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/physics-contract.json",
+      "sha": "fec20d147571ea59180ad7f7352a21629cb643f4"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/preview.png",
+      "sha": "98165e3d341c52d8bec3655cc4eb9347868fc2f9"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/rough-shell.blend",
+      "sha": "4fc7aad6543fbd560790601e87a85ec5e03c2113"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/rough-shell.glb",
+      "sha": "bfca6b6c954799b222f446e31e185eef41e4d68c"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/structure-export-closed.png",
+      "sha": "bcdbe9a25e87133f884b9a158de6043d2bda87eb"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/structure-export-cutaway.png",
+      "sha": "1a628418831136218a90d9a4d3be2c6760f8714d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/farmhouse/structure-physics.hcs2",
+      "sha": "b0bb30b83dcc6a385faadda7db24066790ac1a0f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/NEXT.md",
+      "sha": "2f15462124eeb2c8ed4e53be110f37ec9895e5cc"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/implementation.json",
+      "sha": "09c4f0400db122850aebc16c986c54075d1a640f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/physics-contract.json",
+      "sha": "79d89e48a632073577eb8ca7137113fce08eb6bc"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/preview.png",
+      "sha": "f9a15c6e921446f3ca15cc13560aec4b9e2a805f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/rough-shell.blend",
+      "sha": "af690c3fb89580301bf739b8b68624a649b077ab"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/rough-shell.glb",
+      "sha": "8e2b007499acdbecd2bf503048171f2619b8c77a"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/structure-export-closed.png",
+      "sha": "5765ce556b899a4ef3f1129b40e3bcd547295866"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/structure-export-cutaway.png",
+      "sha": "4d81ab566155941a1ee35ca35fcbc2da81bf9838"
+    },
+    {
+      "path": "development/levels/rebuild/structures/mansion/structure-physics.hcs2",
+      "sha": "95f10580114f6442b217b3d1b3c0bf429e188074"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/NEXT.md",
+      "sha": "c2cdd96169e725dfb672558f6b0a0608f625b2f0"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/implementation.json",
+      "sha": "c31313172f677bb04637b5666ca08b6b3d99451f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/physics-contract.json",
+      "sha": "208560af0c4920e059c09127789e921503867d5d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/preview.png",
+      "sha": "03dbecb57b7c92f4120bfbf9fb8c8b17193d3fb4"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/rough-shell.blend",
+      "sha": "1c70734d5a0ce35b5d4999ba1e1f1b7790bf1a77"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/rough-shell.glb",
+      "sha": "5cc8ff9d620d2170f6f7ba4e1cf9374a0d54b791"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/structure-export-closed.png",
+      "sha": "4a4730ababa25440224f2fd91f5e8fbbbfb7eade"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/structure-export-cutaway.png",
+      "sha": "058a040b22f23b4963d8f9a1c62141f776e0c4c2"
+    },
+    {
+      "path": "development/levels/rebuild/structures/prison/structure-physics.hcs2",
+      "sha": "d3186c5f921d120b720308fa7b32cec809824a51"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/NEXT.md",
+      "sha": "80d4dd83e30865cb0d328b784005ed9dc0df52cd"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/implementation.json",
+      "sha": "7a1c15d7c9c8b5d2fb6143290611cecc3616ed06"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/physics-contract.json",
+      "sha": "5d7ae8f2ac1b9f446f06f4b4960141a9af304d7d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/preview.png",
+      "sha": "4d494a58c72d583cff680f3e25da783f9cbe8e31"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/rough-shell.blend",
+      "sha": "f9242555df47d816278c6bd3be66d004492d97bf"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/rough-shell.glb",
+      "sha": "449f145faee4ffe9fa2fa5c0a9cbb1e3d7b880b3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/structure-export-closed.png",
+      "sha": "02b32970ef714c8f950e79f831d0b36ff6d6db4f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/structure-export-cutaway.png",
+      "sha": "eeb7d5cd125a4fdc297c6e0608905e96e03b4877"
+    },
+    {
+      "path": "development/levels/rebuild/structures/school/structure-physics.hcs2",
+      "sha": "9387edd38623d65fb2c0d3b8f8d0df1e86087cf0"
+    },
+    {
+      "path": "development/levels/rebuild/structures/verification.json",
+      "sha": "b3258fa03a83641591267d3873db700f3cb90e3e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/NEXT.md",
+      "sha": "1dba47f674de5a65198070a450c5cb63ca6921df"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/implementation.json",
+      "sha": "7ad6016fb8c5296cfef585906a1ca3d7426118f9"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/physics-contract.json",
+      "sha": "17bad9bd9dcf6f9b8661a807f8121a8ed32da66f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/preview.png",
+      "sha": "7b61e7c79098ef1e6a9856f68e432f46455a0a77"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/rough-shell.blend",
+      "sha": "a36985db5bbc7f8d7ec89e0e47dffb1a0bf1c131"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/rough-shell.glb",
+      "sha": "adb9b9b227aa90e0342d792814e51f1f85afc168"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/structure-export-closed.png",
+      "sha": "d26acf89a7bf5e0a5b3433dac8c0abd97f77f283"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/structure-export-cutaway.png",
+      "sha": "573c4b14e41586bf6757fc711f8206ef4a99bfc9"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-03/structure-physics.hcs2",
+      "sha": "464b6761cd42f41f2ec3ec703443cfcf7f10cd96"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/NEXT.md",
+      "sha": "48347791e479bec6e847e1abf0f1dab02aee43b5"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/implementation.json",
+      "sha": "bc58a21789700079e95a1d30a15aff582dc55718"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/physics-contract.json",
+      "sha": "807c4fbd969f494bda973e3fe73f3adad2608181"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/preview.png",
+      "sha": "1045dd54b6b917cc01cbe5c548273f12a80fb528"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/rough-shell.blend",
+      "sha": "9e2365c969ff6db16f59137a9ba6a6eb6994a20a"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/rough-shell.glb",
+      "sha": "f1f4ef6e547eb833b69bf203b32f0c2eb5ee6940"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/structure-export-closed.png",
+      "sha": "4fa45425bc359885e00392ac986ddb3c16cfd909"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/structure-export-cutaway.png",
+      "sha": "4d65bbab7f400a120051959235faeae5b238a2a3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-04/structure-physics.hcs2",
+      "sha": "3752b1c5947027538a9223269e4613abb45d745f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/NEXT.md",
+      "sha": "b7b18e6f959c6ced607ba43520d74eb9e23f024d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/implementation.json",
+      "sha": "907a0a3dde718644637881d6a3a8258cd241eabb"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/physics-contract.json",
+      "sha": "1a5382fc0fb22855f900d9b78ee76c0501584d85"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/preview.png",
+      "sha": "79038d4e0f57e0e39d4104d0f0098cb5434b0dac"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/rough-shell.blend",
+      "sha": "be9983c2b0fe6237b136ed94a081677e5cafc518"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/rough-shell.glb",
+      "sha": "d6a450fa512687ae128a3cd2f23b06c95077794c"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/structure-export-closed.png",
+      "sha": "a157f21e879bd376625a9120f287ee96a9a70d2f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/structure-export-cutaway.png",
+      "sha": "d46583c4e6aa27bbbdad0ebd23a7cd15589eccaf"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-05/structure-physics.hcs2",
+      "sha": "d8650098e4205747aada97063a725b5174780ccd"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/NEXT.md",
+      "sha": "25a5ac28d7d478848b5deda958900fa224f18576"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/implementation.json",
+      "sha": "f8e73a0e525c053755ca4d31b13197a2e55ab468"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/physics-contract.json",
+      "sha": "9fb0a8089b4f43aa1320853f349c4921bfe625c9"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/preview.png",
+      "sha": "3a81322b9ae5c4bc03ae7f3aac7c15e8b733f390"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/rough-shell.blend",
+      "sha": "a04b70cdd2334c898170fde10dd4ade129723906"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/rough-shell.glb",
+      "sha": "7d34fc2e67ad82be22a18c648d5d07b15d5cea1f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/structure-export-closed.png",
+      "sha": "b0911f68ecdb8ccfdb6076d8fe3197d98a1cf753"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/structure-export-cutaway.png",
+      "sha": "2b9423cddf4eaff5853e9ede3867d230ff8d1511"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-06/structure-physics.hcs2",
+      "sha": "70a865323c6efe11b1c7eefec6c34bf9e20c62c3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/NEXT.md",
+      "sha": "7e723174725369f6da2f11c4b6f41fc3c47588c5"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/implementation.json",
+      "sha": "d90823bea764877e2017d7bdb911491f5f59faf8"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/physics-contract.json",
+      "sha": "909b6679fe0d41aeac2268a5456e03296d3597a5"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/preview.png",
+      "sha": "dbe8e8373150c61bacd241403b677763d2490ea8"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/rough-shell.blend",
+      "sha": "24c4bddd7fe6194e5e8ea453e83a3d2d22adebca"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/rough-shell.glb",
+      "sha": "57372391c130e4d5284fb563ee5401d90bc8f096"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/structure-export-closed.png",
+      "sha": "9967959844fdf26ae709ad50bcfa08a5105a3d34"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/structure-export-cutaway.png",
+      "sha": "5a7abb8efd3c3eb201919bb2c6cc4ac44ac88df3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07-mortuary/structure-physics.hcs2",
+      "sha": "8abd2acb8696c50825d85477cd157e727f97eeb3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/NEXT.md",
+      "sha": "5f0817fc604cb721564568f008549fd94527e185"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/implementation.json",
+      "sha": "1593bfadfa5f613c56be16aed6933c34bdd84d96"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/physics-contract.json",
+      "sha": "eff0c73120c1e5afe33440176cb168f0693326e5"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/preview.png",
+      "sha": "873279a655a6464ad68f352cb7802989bc2b3195"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/rough-shell.blend",
+      "sha": "49db816aca10a44d7f2c5f9c1e6732c20bdf0eb7"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/rough-shell.glb",
+      "sha": "446bb8107a45365356b2c1666e1a8e51435e4971"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/structure-export-closed.png",
+      "sha": "a470fa693fe25bc2d623d2337eaf628007710b5c"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/structure-export-cutaway.png",
+      "sha": "fe6e13926cf8437c94e40c37ddd8d35be264487e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-07/structure-physics.hcs2",
+      "sha": "ef5af684a363831e0f55523b01264923596f5467"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/NEXT.md",
+      "sha": "6ea6e80d49f55460d2d5182d0e15fe38fc92a612"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/implementation.json",
+      "sha": "ce2b21795c778469b8d850a29a37f6d4adcb7495"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/physics-contract.json",
+      "sha": "297b01e3842987edfa931cbc9c683b56dd934691"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/preview.png",
+      "sha": "c53385d062dc5ac9d5effc8ec9c14b2c93487104"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/rough-shell.blend",
+      "sha": "6a623edc039e2681886ac97128729baf82075feb"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/rough-shell.glb",
+      "sha": "456ef29ef977d7856705b0fa9794620b78372525"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/structure-export-closed.png",
+      "sha": "a0318a8af331d81c1f289513468555c54b42b907"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/structure-export-cutaway.png",
+      "sha": "219827b2f2cfa71d5ef30fdee386aa007bf7c482"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-08/structure-physics.hcs2",
+      "sha": "7ef2be3e96c601f9e01d2dd0c8f74e843982ae59"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/NEXT.md",
+      "sha": "8e2cd6a1f40210efd657e51e6fd30635fbe1c6e0"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/implementation.json",
+      "sha": "0d2c217f85c3391ae61e4e39f6bf43574a8a5136"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/physics-contract.json",
+      "sha": "46aa0c631cd615e0ef60b4acef7c2cab6fd67da0"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/preview.png",
+      "sha": "38b5e4b75728e6a8d80347dfb3ad660b45e757a7"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/rough-shell.blend",
+      "sha": "ca8627044fb4ede88ed2cd8ef43ceee20b9a9b04"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/rough-shell.glb",
+      "sha": "8a966e7f32a236da1621e295574c7f2fbbb4afe2"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/structure-export-closed.png",
+      "sha": "d0cb63f97895471842ee58850bcae73280dece6e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/structure-export-cutaway.png",
+      "sha": "666b46236d9ac905b1867ce7bdbcc02b812a7263"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-09/structure-physics.hcs2",
+      "sha": "ae02974703533bed2eeea45d55775c68b7d00780"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/NEXT.md",
+      "sha": "93c221876977d3f1e47bf57808e4704da8708091"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/implementation.json",
+      "sha": "7a359ca558966a2747e7c3554706e93ade838e26"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/physics-contract.json",
+      "sha": "09b0e1008613f7a0cf8be70c3059bdd2b82b8108"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/preview.png",
+      "sha": "9eb1adc6eea0f8ac0ff21dce7499f2479259af51"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/rough-shell.blend",
+      "sha": "5c402396374d00b9447c8ec35d8070909bb6dd7e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/rough-shell.glb",
+      "sha": "fc66e5b771c6953681e1e1d2bae1572542baac65"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/structure-export-closed.png",
+      "sha": "d06e93ed967fd274af92bc526b048cbf44d01470"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/structure-export-cutaway.png",
+      "sha": "dbcf0f064b9ae0fbddee973b64cad19f89744d24"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-10/structure-physics.hcs2",
+      "sha": "98446d009e28116f655f323c98aef1f88890dd7e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/NEXT.md",
+      "sha": "eb9f686c14b9a392f6b3d146ebc09cbda0b3c603"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/implementation.json",
+      "sha": "1c88c0f32e7b68ba5360ae68a08f1ce80c4f0eb8"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/physics-contract.json",
+      "sha": "d3198dd7b131c70cc0404d7473154ba02f1b6524"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/preview.png",
+      "sha": "ce56e0f0b8bbfa8472b2caa233785106aa95931e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/rough-shell.blend",
+      "sha": "2acd9a5e7b2f8e21293846b715e5bbdf9d2a8f92"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/rough-shell.glb",
+      "sha": "8eef26867ea1d38bf35a9a53a570443d9d546729"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/structure-export-closed.png",
+      "sha": "0bae02f1312f5b58e75af00f5673092e5ac78191"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/structure-export-cutaway.png",
+      "sha": "f5790801ee25bce33741e4455fc22b0149c45bb2"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-11/structure-physics.hcs2",
+      "sha": "986b91dc18abeeee3f026eee59a1f37529b14417"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/NEXT.md",
+      "sha": "07981f942c014f8e19d4562525a7d2b2bca7d2c0"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/implementation.json",
+      "sha": "4a3f1d0206e7222a19dc61477382c75ed1d54da0"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/physics-contract.json",
+      "sha": "28e598bf5691bf092fbd1ef92b7d54a92a5792a4"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/preview.png",
+      "sha": "9aaaaa91381b5f9d6e6bd04adaf9e3792d6fed42"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/rough-shell.blend",
+      "sha": "04ab662056f3c75305c67b6babc90573074f82f3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/rough-shell.glb",
+      "sha": "2d2403c32e83253f2e2324d0de52abd9251076d7"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/structure-export-closed.png",
+      "sha": "4aa84382881313e8b3cdfd5f0e37c0ac77a03070"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/structure-export-cutaway.png",
+      "sha": "d4b5a41bcaf01319eb00f5a128e2432d8039ec77"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-12/structure-physics.hcs2",
+      "sha": "bb5d21cf61ce133e23715607f50733315018fb89"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/NEXT.md",
+      "sha": "43cf661d4b5f4ec589c57ff0ef67714101e15c70"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/implementation.json",
+      "sha": "d93d727390548fe045ab85faa1420ebe902a6d0e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/physics-contract.json",
+      "sha": "f097f5c2b11a64aac2c0f9dbba6703cc526ad54f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/preview.png",
+      "sha": "05cf5e00911031f2afbfb0e0f187453e2cc6dccd"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/rough-shell.blend",
+      "sha": "8c062532568c0bc5b863cf92d5a39582b33ad6c4"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/rough-shell.glb",
+      "sha": "cccd48cbe8c33a36862e6470d78a782d214c917a"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/structure-export-closed.png",
+      "sha": "0e39b202444004c691421cc9e1721aed84964e4d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/structure-export-cutaway.png",
+      "sha": "fad7b502208d3d8390ed9f1f0a60eb7ec3740484"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-13/structure-physics.hcs2",
+      "sha": "3397689dbb73bbe0366fa656c409be4b3267e40d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/NEXT.md",
+      "sha": "9ef039962ac52487da58b40927719147218ccecf"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/implementation.json",
+      "sha": "e2c7ac7b197852afe180e0f7ba86e25e26e104f3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/physics-contract.json",
+      "sha": "dfbefdcf8a18e892d56f0da93a2628aa05db0a4b"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/preview.png",
+      "sha": "6a2d88926dfc5839a4eb2a78fa136a3769f2db2d"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/rough-shell.blend",
+      "sha": "74cbc90a3bb71e49bde244505a3efbce61bab463"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/rough-shell.glb",
+      "sha": "4a903692a096bc5309bee7bbbe8a170dd85d8516"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/structure-export-closed.png",
+      "sha": "2973ca34dabd841b01808aabdd19eb66bb12a57c"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/structure-export-cutaway.png",
+      "sha": "e234dabad18ff241093fac6a8851aa96c22847c6"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-14/structure-physics.hcs2",
+      "sha": "f150df5e8bf31722ab43440d855decc6be9a9053"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/NEXT.md",
+      "sha": "53dc5d46e7b0ef40d8ac2fa24670e1fe301cd80a"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/implementation.json",
+      "sha": "0af28041d2548ba88652ff87aca8300f70d429ec"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/physics-contract.json",
+      "sha": "0021215f06ce8da6052715804785072f25213ca1"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/preview.png",
+      "sha": "2b1d4ac9002624d33e493a01d83a973ae0619d0f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/rough-shell.blend",
+      "sha": "fc1bfcab03dbd005563f7de78fbe3cf37e087cd9"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/rough-shell.glb",
+      "sha": "c28e6154a85b599798c8328b98befcfc5b66fae1"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/structure-export-closed.png",
+      "sha": "73a9feadedad5a50371e379fa8c7b1700342c162"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/structure-export-cutaway.png",
+      "sha": "c4bab09a63d12d0a4732b6674d9aaca6318e49c3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-15/structure-physics.hcs2",
+      "sha": "86e65b514687dfe6f3a0dd6114b41fc049a317a4"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/NEXT.md",
+      "sha": "b3cc5842c85bdc80740fcbb47ac1e060e4335b18"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/implementation.json",
+      "sha": "2ebf7e4946d28e4f99d5b9a4d7d360b86936a5df"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/physics-contract.json",
+      "sha": "9375e17a8345d6f7f10cfa83ba1e63200555f5ea"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/preview.png",
+      "sha": "928aa9090378f3bfdc7729b587f98ba3dc376e28"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/rough-shell.blend",
+      "sha": "9453dec28afc4d06ec60e7765687dcd78bd65692"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/rough-shell.glb",
+      "sha": "7c70882d08ff7a7ae0e04de956a73bd3ffea5186"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/structure-export-closed.png",
+      "sha": "db79d063f1992bdf2318c114a0115baf2f0da6c0"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/structure-export-cutaway.png",
+      "sha": "55439e0090c5e4719a6964cbc7b3b9621b0d58d6"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-16/structure-physics.hcs2",
+      "sha": "3fddcf7dcf2a59a97f23fed2e1e8689c75cb0b99"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/NEXT.md",
+      "sha": "1b967fcf38ce894fbae46421372731f6fd04e818"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/implementation.json",
+      "sha": "d67ac308200a0aeadca27ea1fefb05b56d4e3075"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/physics-contract.json",
+      "sha": "23d18886e78798572279fe7fac453c8c0508347e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/preview.png",
+      "sha": "4b04d53562bfe8529353267691aaed31c83e1d38"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/rough-shell.blend",
+      "sha": "935f53d777bf092b5a70d95f696715e2b432efb1"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/rough-shell.glb",
+      "sha": "99649d91db0f2df1322ae83f36af31829c50ac84"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/structure-export-closed.png",
+      "sha": "096ff745d25ba9dab6c0155ebd3361137c6c3604"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/structure-export-cutaway.png",
+      "sha": "4f27b0aca50dcb292b2f2da1f7db63b215172f12"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-17/structure-physics.hcs2",
+      "sha": "423492545d78a60716b9fa63a657b7f0bef8ea82"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/NEXT.md",
+      "sha": "a8ade605c0d18f3c84714b3b0bdcc115b059b57e"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/implementation.json",
+      "sha": "712e556b4c2b7a77fe1e46e77b3c89314cfdc7b6"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/physics-contract.json",
+      "sha": "89942112d590e0d23436d0ebd57b482ce28fcce1"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/preview.png",
+      "sha": "a80de8ad571babb48e21804170704ec032233bd3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/rough-shell.blend",
+      "sha": "897eb803f6cfa17c3d9d8f8d3971e2e5d7bd300f"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/rough-shell.glb",
+      "sha": "740c66e182a2d8932f56fa334da1d75807528950"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/structure-export-closed.png",
+      "sha": "df29990c4ef19568d1ba0ecfc0d258bebbf18d42"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/structure-export-cutaway.png",
+      "sha": "5ae77f6c9828048bc2fe57000976f5802e4b70b3"
+    },
+    {
+      "path": "development/levels/rebuild/structures/wld-18/structure-physics.hcs2",
+      "sha": "c329dd4ac28bcc75a746efe6595dd12c4268cd23"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/README.md",
+      "sha": "bac7f85b92d908a06647497e9ef741d197a3fcde"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
+      "sha": "6a86333dfc97a1856b57210a5643f35876dac6ec"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
+      "sha": "f701f484dd6323442eef613f6d16cfe6d9a492af"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/before-after-routes.tsv",
+      "sha": "b991034146a72e092145c3919e9d116c80262043"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+      "sha": "6cd54d0f077a20c34d4e0a90dbcc7adbbcc43392"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/before-after-routes.tsv",
+      "sha": "3d5b5f33d1ecbb006ddfa63298a702d751c81293"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
+      "sha": "4d91ed693fc241d2e9c860c4c164f69985f7bcb9"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/basement-captures.log",
+      "sha": "ee99c1915b954e19356442480fdc852ef2f4ca64"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/complete-route-sweeps.tsv",
+      "sha": "72b9589e15cc7ba4546983c35186b3491606c38e"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/current-export-failure-guard.log",
+      "sha": "c17bb80914deec456759878da6d7eb6b17b16e12"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/current-route-normals.json",
+      "sha": "9b259a8a521d9eb34f24baa8e777c6347b74e6d9"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/export-guard-current-result.json",
+      "sha": "570550ef0c6e210c01ae91fabd1cb91a4ca78eaf"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/export-guard-legacy-result.json",
+      "sha": "016fc9334cf7221244f268359ab36cbdb6008f3c"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/failure-contacts.tsv",
+      "sha": "2366c26ca29713e4ee555aba7ee22fa2723e7dca"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/final-idempotent-worlds.log",
+      "sha": "556430b4a9f0f768eb421449249daec1fa05396f"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/final-path-grading.log",
+      "sha": "a2eae5816e1b5f949b800361c64d10c38237b667"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/final-selected-furnished-physics.log",
+      "sha": "34ed6339f937f35bbf9a6a778edb454996cd1c61"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/final-selected-furnishings.log",
+      "sha": "cdfe64e268482f2b97c5e81f57bdd40de79b21ed"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/final-selected-physics.log",
+      "sha": "b7a1704264538b857ec33f43247a34e2dffeb0e2"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/final-selected-structures.log",
+      "sha": "2ab112f901791bebcd3975cfb4c67c0816c69edf"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/final-terrain-binding.log",
+      "sha": "042ae58bf7768ae4eab50baacfd5fafafab27118"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/first-terrain-authoring.log",
+      "sha": "3bc974b98243dcebc8fd5df4f040b782248458bd"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/flight-sweeps.tsv",
+      "sha": "e5467d5af280cb71e980ccb2f46817bc9e996853"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/furnished-export.log",
+      "sha": "e4349686b2d03cff1b5060a8a11b0009b75f3051"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/furnishing-refresh.log",
+      "sha": "2cf7d86678a1ca49ee6f7171eff93cf1aef13966"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-furnished-export.log",
+      "sha": "855e22f98a31d978bc5d9dbaac595f4751cb94f3"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-furnishings.log",
+      "sha": "79de09e784ea84cda8a0ecc9f29bbec0b0938c88"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-idempotence.json",
+      "sha": "642ab27805953d7ca6be309c23b1ae9cbb55984a"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-idempotence.log",
+      "sha": "124ecb0aeeda572b95c39dd2c42434b73c7c73c6"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-structure-export.log",
+      "sha": "0b663871327f404048c71e984e3b480205727113"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/graded-structure.log",
+      "sha": "1e253b5daa31b58e391644407e37c8c246c66a8c"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/grounding-controls.json",
+      "sha": "8de6795ad2bc69fe2d4ee23296c86465b04faf38"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/idempotent-terrain.log",
+      "sha": "c125c9d2ce8a023fb51863fe67c493e51e4fcfcc"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/invalid-donor-preservation.json",
+      "sha": "1950b3269e7a9fae91d860b6e53e694e474b7f58"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/legacy-export-failure-guard.log",
+      "sha": "ffca9569a4c9bc8527025f2be32a9ee286d9cb62"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/lighthouse-refinement.log",
+      "sha": "08cf1e3d8b243633cc53e339fc3f2e9cb17f427b"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/network-furnished-physics.log",
+      "sha": "9c772db0b981a8a2f17a1f8be6479a32b7d3704a"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/network-furnishings.log",
+      "sha": "e351818ae2009b77c6cc74e91864ea67b3eb9b8f"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/network-path-grading.log",
+      "sha": "58e3c209eb36503dbf8b9a7d6b4417ef7b24ac4c"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/network-physics.log",
+      "sha": "77cac9712de281d39a862417140e3b20b70f2922"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/network-structures.log",
+      "sha": "aaab55583e91d6b9249b469231add81b4935c947"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/path-grading.log",
+      "sha": "bdfcfab973e9137f95b77ed54e7bf5b0b8c24667"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
+      "sha": "9805017bc75c649897a86156e83147fe0449b466"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/previous-route-normals.json",
+      "sha": "04140d00b6b19697ff4e4d05de252a3b63cfd329"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/rejected-absent-bound-terrain.log",
+      "sha": "06e8cd9f0a6acda6164ac187e12ee32cfa67885b"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/rejected-first-shoulder/before-after-routes.tsv",
+      "sha": "68c665dcaa32c9fd13d7832433a1a225940b4223"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/rejected-first-shoulder/route-regressions.json",
+      "sha": "f700ce5ab50c65c8e1fb22444f9610902021d26b"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/rejected-incomplete-network/before-after-routes.tsv",
+      "sha": "0203ba095fb6858eaa615cf75b044497cb8acfc1"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/rejected-incomplete-network/route-regressions.json",
+      "sha": "3386c50586edd7f8b262dd4f3f5b7af114b90648"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/rejected-initial-approaches/before-after-routes.tsv",
+      "sha": "5de26c053e90b86b7104b61b62d221ccccba8776"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/rejected-initial-approaches/route-regressions.json",
+      "sha": "d3d7826cbcfbd49ef12fc840b5b073787ea1893f"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/rejected-invalid-donor.log",
+      "sha": "6e8ff899494ce8952e3ac95d3d7f597ba2c6d408"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/rejected-missing-terrain-seed.log",
+      "sha": "6b003250c9a62af16ab05d4d12c2020c46a5379f"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/rejected-route-normal-control.log",
+      "sha": "6fbeacd85eb97650e81d9c531e5b3308fef6b9b2"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/roster-furnished-export.log",
+      "sha": "98851a5eed7bfe3d4013a5da34978898424fa4d4"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/roster-furnishing-refresh.log",
+      "sha": "50cab739508e40bba4f39919b85e022659fd6be6"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/roster-structure-build.log",
+      "sha": "c11f4cb21122ac332cabbcc8b4a5034a2faefad3"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/roster-structure-export.log",
+      "sha": "e0a300a00b85bd6ba0f400ec7aae9be6809e1211"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/saved-terrain-proof.json",
+      "sha": "463975c7d374382a58840595620958a735d04ed6"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/saved-terrain.log",
+      "sha": "3bc974b98243dcebc8fd5df4f040b782248458bd"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/stair-movement.json",
+      "sha": "39423627f9d1e7841a9578d8e86b8c9f91fa809e"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/standing-anchor-bindings.json",
+      "sha": "5e00a55ccd5e2509abbe43a5dc0c6b31a0c99f73"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/standing-anchor-probes.tsv",
+      "sha": "4146203cd973e3e9a014c747605d94fd03fb89df"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/structure-build.log",
+      "sha": "47cb92c94696f5661d1d8a5a793677033c16cd20"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/structure-export.log",
+      "sha": "d93cd87578e55ab7f7f6cc0e6d3765b50ee4dc21"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/superseded-before-network-prop-routes/before-after-routes.tsv",
+      "sha": "820a7f8f96b0882c8f5f1fadc0c824c1f63065df"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/superseded-before-network-prop-routes/route-regressions.json",
+      "sha": "8664e5b300d1e6297a4503cd0759c943ad5ea1b7"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/terrain-checkout.log",
+      "sha": "196cc9e6e47ee6426a39d60af3aad68e49df14e4"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/tool-source-hashes.json",
+      "sha": "d2c3ba79d4fa08154a50c28fa5c1dc9132c1ebf4"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/tread-audit.log",
+      "sha": "1d47d310ae159839ab43edd22c58008bf36fa7b0"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/treads/route-probes.json",
+      "sha": "0ef2fee32fb0bf64671ca18c540978aa76074d16"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/treads/tread-probes.tsv",
+      "sha": "71bf3db9b9075ec8005e824b0e90cb8e6590aac4"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/visual-review.json",
+      "sha": "92fc16ee05becefba572b7d6252192f8dac2fd75"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/wld-07-authored-grades.tsv",
+      "sha": "87b303f2dcadc85d44f2fa225e3e8e3351878da5"
+    },
+    {
+      "path": "development/levels/rebuild/verification/roster-basements-2026-11-07/wld-07-mortuary-authored-grades.tsv",
+      "sha": "c3de1f29017b98dcd02ff76b4863030dec00c6e7"
+    },
+    {
+      "path": "development/levels/rebuild/wld-03/native-movement-batch.md",
+      "sha": "1dba47f674de5a65198070a450c5cb63ca6921df"
+    },
+    {
+      "path": "development/levels/rebuild/wld-04/native-movement-batch.md",
+      "sha": "48347791e479bec6e847e1abf0f1dab02aee43b5"
+    },
+    {
+      "path": "development/levels/rebuild/wld-05/native-movement-batch.md",
+      "sha": "b7b18e6f959c6ced607ba43520d74eb9e23f024d"
+    },
+    {
+      "path": "development/levels/rebuild/wld-06/native-movement-batch.md",
+      "sha": "25a5ac28d7d478848b5deda958900fa224f18576"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/native-movement-batch.md",
+      "sha": "7e723174725369f6da2f11c4b6f41fc3c47588c5"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/rough-layout.json",
+      "sha": "316a100bf4b2ae5ce6608938f00f0f14fe64acd8"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/terrain-world/authored-cuts.tsv",
+      "sha": "5d9840c589b179e23ba9e3f1183c01360887ac03"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/terrain-world/authored-path-grading.sha256",
+      "sha": "31f5f2c6096180968ec2f216f6956ef96bf0b75d"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "cdf2655e64eee050749885cc73855ad4f26b580d"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/terrain-world/scene-package/meshes/site.obj",
+      "sha": "8383ed8742fc8b57c5ddab6827ae00afbb60eba1"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/terrain-world/scene-package/scene.bin",
+      "sha": "eddfa141f59fba516936f19ec3a04f1e083d5ac1"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/terrain-world/source-provenance.json",
+      "sha": "40a395ccd4d5fd8fa44da0c8ccb8fa4727e90d07"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "4deee1a439c8b4bba7e0b88c30b7be26ef53f432"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/terrain-world/terrain-physics.hcs2",
+      "sha": "81ed81944092a7f5622a3b2cee313b2a833fe3cb"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07-mortuary/terrain-world/verification.json",
+      "sha": "f1440639ba83eb13b41bcc4648c192386fd20613"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/native-movement-batch.md",
+      "sha": "5f0817fc604cb721564568f008549fd94527e185"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/rough-layout.json",
+      "sha": "b6b379083d60e56674c2e27d5aa7c619ecdb098e"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/adaptive-topology.bin",
+      "sha": "efb997b1fa978dd175d6954ca955c63be205e166"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/authored-cuts.tsv",
+      "sha": "8f7d0078e7ab9c93cece76caecad2fe627098418"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/authored-path-grading.sha256",
+      "sha": "fe587e75fa3b232ad775b338dcf04e2ac04d3487"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "8e372ecc665afc58a24571fbd5db0add7336f74c"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/scene-package/meshes/site.obj",
+      "sha": "3721a34805c50df4e0fffb1363aaad443b0f4e5c"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/scene-package/scene.bin",
+      "sha": "e6e2fccfa651d544447e4610ac0323d64647ac88"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/source-provenance.json",
+      "sha": "d51ac3ced8a35d52aff4417600d3d83b1788a05f"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "27a8b2d99f77d7c0a44767f73aadfcf710c89e11"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/terrain-physics.hcs2",
+      "sha": "da6149edfcc46e402965c94d08828b5eb0bf65b4"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/tile_0_0.png",
+      "sha": "bbd8e644127c673368593a0da6bf111e9f2d71c4"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/verification.json",
+      "sha": "9ad3135042898475301212410cecf99c6464fa4d"
+    },
+    {
+      "path": "development/levels/rebuild/wld-07/terrain-world/world.properties",
+      "sha": "874f270f985ab8080867b32081997dd5f6efd9af"
+    },
+    {
+      "path": "development/levels/rebuild/wld-08/native-movement-batch.md",
+      "sha": "6ea6e80d49f55460d2d5182d0e15fe38fc92a612"
+    },
+    {
+      "path": "development/levels/rebuild/wld-09/native-movement-batch.md",
+      "sha": "8e2cd6a1f40210efd657e51e6fd30635fbe1c6e0"
+    },
+    {
+      "path": "development/levels/rebuild/wld-10/native-movement-batch.md",
+      "sha": "93c221876977d3f1e47bf57808e4704da8708091"
+    },
+    {
+      "path": "development/levels/rebuild/wld-11/native-movement-batch.md",
+      "sha": "eb9f686c14b9a392f6b3d146ebc09cbda0b3c603"
+    },
+    {
+      "path": "development/levels/rebuild/wld-12/native-movement-batch.md",
+      "sha": "07981f942c014f8e19d4562525a7d2b2bca7d2c0"
+    },
+    {
+      "path": "development/levels/rebuild/wld-13/native-movement-batch.md",
+      "sha": "43cf661d4b5f4ec589c57ff0ef67714101e15c70"
+    },
+    {
+      "path": "development/levels/rebuild/wld-14/native-movement-batch.md",
+      "sha": "9ef039962ac52487da58b40927719147218ccecf"
+    },
+    {
+      "path": "development/levels/rebuild/wld-15/native-movement-batch.md",
+      "sha": "53dc5d46e7b0ef40d8ac2fa24670e1fe301cd80a"
+    },
+    {
+      "path": "development/levels/rebuild/wld-16/native-movement-batch.md",
+      "sha": "b3cc5842c85bdc80740fcbb47ac1e060e4335b18"
+    },
+    {
+      "path": "development/levels/rebuild/wld-17/native-movement-batch.md",
+      "sha": "1b967fcf38ce894fbae46421372731f6fd04e818"
+    },
+    {
+      "path": "development/levels/rebuild/wld-18/native-movement-batch.md",
+      "sha": "a8ade605c0d18f3c84714b3b0bdcc115b059b57e"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "507293654f1f1f04d5fa6eed738b1a2d587d4892"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "1404f074e031cc146fd0568c24ea10e3c16931d6"
+    },
+    {
+      "path": "tools/audit_furnishing_routes.py",
+      "sha": "666e4ae60cd1e0aa34aea479c7d8d33d79eca47e"
+    },
+    {
+      "path": "tools/audit_roster_route_normals.py",
+      "sha": "c6a4b682f7e31720532019f5f774cffa49bfcd3d"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "2994c2884e3717a1a29b21403520424e469bb716"
+    },
+    {
+      "path": "tools/audit_roster_terrain_envelopes.py",
+      "sha": "e89a9736fa910d1275b51c35a9de30edcee806df"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "a89fca48348fcea60c6fd1b42fedabe0638821b4"
+    },
+    {
+      "path": "tools/build_roster_editor_terrain.py",
+      "sha": "b11815d6d35296f67699379e4cef02eb57e618b2"
+    },
+    {
+      "path": "tools/check_furnishing_route_grounding.py",
+      "sha": "96ffc7a843bfda74fea5444b55a8a21769f7a75f"
+    },
+    {
+      "path": "tools/check_roster_export_failure.py",
+      "sha": "a666587023cb7eb6d3766db3dfce57dcccd0a01f"
+    },
+    {
+      "path": "tools/export_roster_collision.py",
+      "sha": "4681ce40e5e91903ddb373c19261bb6d1cb83632"
+    },
+    {
+      "path": "tools/java/FurnishingRouteProbe.java",
+      "sha": "76da4884b5dc9201074452371f8b55bd994c7b1d"
+    },
+    {
+      "path": "tools/java/RosterFailureContacts.java",
+      "sha": "b065768b7f65c1802e90c696c3f68dda179fd103"
+    },
+    {
+      "path": "tools/java/RosterTerrainBuild.java",
+      "sha": "04c04f895000c653b67e9e770d487f31fc01a98e"
+    },
+    {
+      "path": "tools/render_roster_basement_entries.py",
+      "sha": "ab5b9f7a96bc8d5afe09dd83b55b15734188bb5d"
+    },
+    {
+      "path": "tools/review_roster_furnishings.py",
+      "sha": "b386f5dda2971da7fef70c09138b93fc2548e50c"
+    },
+    {
+      "path": "tools/review_roster_structures.py",
+      "sha": "cac2ac744d521176da925b257f8c19ad494fbc51"
+    },
+    {
+      "path": "tools/sample_roster_terrain.py",
+      "sha": "6ae3ed8ccb256b9be5d40001dc01c5b1dbf57d3c"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/basement-batch/wld-07-west-entry.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}

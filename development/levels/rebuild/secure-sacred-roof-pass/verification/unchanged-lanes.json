@@ -1,0 +1,6 @@
+{
+  "samples": 15600,
+  "new_invalid_positions": [],
+  "baseline": "development/levels/rebuild/access-route-pass/verification/current-flat-lanes.tsv.gz",
+  "scope": "Exact before-native SHA and identical site/link/lane/XYZ; not map acceptance."
+}

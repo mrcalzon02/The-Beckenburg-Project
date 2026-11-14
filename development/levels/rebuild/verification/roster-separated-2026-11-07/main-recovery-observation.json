@@ -1,0 +1,29 @@
+{
+  "main_head": "cc65453cdd33a8804405fb538f773ee20d82b43e",
+  "tested_source": "fad6c7a92b3025f62159f5ac7d53618a569adfe8",
+  "full": {
+    "run": 42431982917,
+    "passed": 365,
+    "failed": 0,
+    "skipped": 0,
+    "manifest": 365,
+    "raw_log_sha256": "0c50f20e3c3d838a739a355cf8c2d3d48e7b62063bee0093b34c38095347343f"
+  },
+  "renderer": {
+    "run": 42431982951,
+    "workflow_conclusion": "success",
+    "scope": "CI workflow observation; no new physical hardware acceptance"
+  },
+  "installer": {
+    "run": 42431982920,
+    "workflow_conclusion": "success",
+    "scope": "Packaging result, not gameplay proof"
+  },
+  "pages": {
+    "run": 42432530129,
+    "source": "cc65453c",
+    "conclusion": "success",
+    "scope": "Main deployment; new map branch captures not deployed"
+  },
+  "network_note": "Earlier unelevated CLI reads failed in restricted network context; network-enabled GitHub CLI readback succeeded. No actual GitHub outage established."
+}

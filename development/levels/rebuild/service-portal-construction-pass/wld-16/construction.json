@@ -1,0 +1,621 @@
+{
+  "id": "WLD-16",
+  "status": "ARCHITECTURAL_DOORWAYS_REBUILT_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/arrival-bearing-pass/wld-16/construction.json",
+  "source_contract_sha256": "d39911afab8e828c90791532495ab4494ce04103d3cf9dd4e135f4f8620d2900",
+  "source_glb": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.glb",
+  "source_glb_sha256": "ec67aa906397fd445590f1ffc71384a834fa68d793bef6c1288f3bcdc15f827c",
+  "source_physics": "development/levels/rebuild/arrival-bearing-pass/wld-16/supported-arrival.hcs2",
+  "source_physics_sha256": "7bee02548eb6d248fdac250cc4c71b5e33e3bcbb4a8501b08702d7bfc6f4e38d",
+  "before_layout": "development/levels/rebuild/arrival-bearing-pass/wld-16/authored-layout.json",
+  "before_layout_sha256": "a0f3332257c81f17f031869203f940f2098ef7f6b9a2f4e667f583ffa55d97fd",
+  "layout": "development/levels/rebuild/service-portal-construction-pass/wld-16/authored-layout.json",
+  "layout_sha256": "5adb8dd8d55d6f74f4676b57f3843db1ee6b4a6c9b4bdd6e2c1e454ed511afa8",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [],
+  "stair_components": [],
+  "glb_sha256": "fde1e97bd5adb5a1ca0dcdd9582b4a9f7ebc043232ce74a600bf2f2778498b20",
+  "physics_sha256": "17860ff253d1757d3b51d684d99070dd1f1f1f692fb81f3463c7421c7b7ed7c6",
+  "arrival_bearing": {
+    "link": "route-01",
+    "anchor": [
+      26.0,
+      0,
+      68.0
+    ],
+    "route_width": 1.5,
+    "extension_metres": 0.35,
+    "contact_owner": "route-01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        25.25,
+        68.35
+      ],
+      [
+        25.25,
+        68.0
+      ],
+      [
+        26.75,
+        68.0
+      ],
+      [
+        26.75,
+        68.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          25.25,
+          68.35
+        ],
+        [
+          25.25,
+          68.0
+        ],
+        [
+          26.75,
+          68.0
+        ],
+        [
+          26.75,
+          68.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing WLD-16 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing WLD-16 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "gallery_builder": "tools/build_cinder_galleries.py",
+  "gallery_builder_sha256": "9744e7017d2b95428a135665b3aea1ff6c203754f86e4d13b25be930de7a6005",
+  "blend_sha256": "19a15e9ec4e92e1a652f98a3bbfd57c74d97b297403772b97dc0935bf42f5ee9",
+  "doorways": [
+    {
+      "id": "WLD-16-z-42-18-y0",
+      "axis": "z",
+      "boundary": 42,
+      "along": 18,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        42,
+        42.24
+      ],
+      "rooms": [
+        "office"
+      ],
+      "side": "N",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        18,
+        0,
+        42.120000000000005
+      ],
+      "boundary_center": [
+        18,
+        0,
+        42
+      ]
+    },
+    {
+      "id": "WLD-16-z-50-18-y0",
+      "axis": "z",
+      "boundary": 50,
+      "along": 18,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        49.76,
+        50
+      ],
+      "rooms": [
+        "office"
+      ],
+      "side": "S",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        18,
+        0,
+        49.879999999999995
+      ],
+      "boundary_center": [
+        18,
+        0,
+        50
+      ]
+    },
+    {
+      "id": "WLD-16-x-13-45-y0",
+      "axis": "x",
+      "boundary": 13,
+      "along": 45,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        12.76,
+        13.24
+      ],
+      "rooms": [
+        "office",
+        "manager"
+      ],
+      "side": "W",
+      "frame_depth": 0.4800000000000004,
+      "frame_center": [
+        13.0,
+        0,
+        45
+      ],
+      "boundary_center": [
+        13,
+        0,
+        45
+      ]
+    },
+    {
+      "id": "WLD-16-z-46-42.5-y0",
+      "axis": "z",
+      "boundary": 46,
+      "along": 42.5,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        45.76,
+        46.24
+      ],
+      "rooms": [
+        "laundry",
+        "plant"
+      ],
+      "side": "S",
+      "frame_depth": 0.480000000000004,
+      "frame_center": [
+        42.5,
+        0,
+        46.0
+      ],
+      "boundary_center": [
+        42.5,
+        0,
+        46
+      ]
+    },
+    {
+      "id": "WLD-16-x-39-43-y0",
+      "axis": "x",
+      "boundary": 39,
+      "along": 43,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        39,
+        39.24
+      ],
+      "rooms": [
+        "laundry"
+      ],
+      "side": "W",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        39.120000000000005,
+        0,
+        43
+      ],
+      "boundary_center": [
+        39,
+        0,
+        43
+      ]
+    },
+    {
+      "id": "WLD-16-x-46-49-y0",
+      "axis": "x",
+      "boundary": 46,
+      "along": 49,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        45.76,
+        46
+      ],
+      "rooms": [
+        "plant"
+      ],
+      "side": "E",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        45.879999999999995,
+        0,
+        49
+      ],
+      "boundary_center": [
+        46,
+        0,
+        49
+      ]
+    },
+    {
+      "id": "WLD-16-x-13-22.5-y0",
+      "axis": "x",
+      "boundary": 13,
+      "along": 22.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        12.76,
+        13
+      ],
+      "rooms": [
+        "room1"
+      ],
+      "side": "E",
+      "frame_depth": 0.2400000000000002,
+      "frame_center": [
+        12.879999999999999,
+        0,
+        22.5
+      ],
+      "boundary_center": [
+        13,
+        0,
+        22.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-13-27.5-y0",
+      "axis": "x",
+      "boundary": 13,
+      "along": 27.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        12.76,
+        13
+      ],
+      "rooms": [
+        "room2"
+      ],
+      "side": "E",
+      "frame_depth": 0.2400000000000002,
+      "frame_center": [
+        12.879999999999999,
+        0,
+        27.5
+      ],
+      "boundary_center": [
+        13,
+        0,
+        27.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-13-32.5-y0",
+      "axis": "x",
+      "boundary": 13,
+      "along": 32.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        12.76,
+        13
+      ],
+      "rooms": [
+        "room3"
+      ],
+      "side": "E",
+      "frame_depth": 0.2400000000000002,
+      "frame_center": [
+        12.879999999999999,
+        0,
+        32.5
+      ],
+      "boundary_center": [
+        13,
+        0,
+        32.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-13-37.5-y0",
+      "axis": "x",
+      "boundary": 13,
+      "along": 37.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        12.76,
+        13
+      ],
+      "rooms": [
+        "room4"
+      ],
+      "side": "E",
+      "frame_depth": 0.2400000000000002,
+      "frame_center": [
+        12.879999999999999,
+        0,
+        37.5
+      ],
+      "boundary_center": [
+        13,
+        0,
+        37.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-39-22.5-y0",
+      "axis": "x",
+      "boundary": 39,
+      "along": 22.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        39,
+        39.24
+      ],
+      "rooms": [
+        "room5"
+      ],
+      "side": "W",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        39.120000000000005,
+        0,
+        22.5
+      ],
+      "boundary_center": [
+        39,
+        0,
+        22.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-39-27.5-y0",
+      "axis": "x",
+      "boundary": 39,
+      "along": 27.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        39,
+        39.24
+      ],
+      "rooms": [
+        "room6"
+      ],
+      "side": "W",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        39.120000000000005,
+        0,
+        27.5
+      ],
+      "boundary_center": [
+        39,
+        0,
+        27.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-39-32.5-y0",
+      "axis": "x",
+      "boundary": 39,
+      "along": 32.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        39,
+        39.24
+      ],
+      "rooms": [
+        "room7"
+      ],
+      "side": "W",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        39.120000000000005,
+        0,
+        32.5
+      ],
+      "boundary_center": [
+        39,
+        0,
+        32.5
+      ]
+    },
+    {
+      "id": "WLD-16-x-39-37.5-y0",
+      "axis": "x",
+      "boundary": 39,
+      "along": 37.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        39,
+        39.24
+      ],
+      "rooms": [
+        "room8"
+      ],
+      "side": "W",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        39.120000000000005,
+        0,
+        37.5
+      ],
+      "boundary_center": [
+        39,
+        0,
+        37.5
+      ]
+    }
+  ],
+  "door_types": {
+    "pedestrian": {
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0
+    },
+    "service": {
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0
+    },
+    "loading": {
+      "clear_width": 2.4,
+      "clear_height": 2.6,
+      "sill_y": 0
+    }
+  },
+  "doorway_builder": "tools/build_service_portals.py",
+  "doorway_builder_sha256": "a0ebb98916c693d278d79eb010149cdb045e19c5df2d6227569ee0c1c7e53213",
+  "doorframe_source": "development/levels/primitive-props-v1/models/level_blockout_doorway.glb",
+  "doorframe_source_sha256": "89f5c94c9d7b8f8ac0285c606bb322e9a71b04df715a75498af4cf53830ee7d2",
+  "doorframe_parts": "Original catalog left jamb, right jamb and header; source master/UVs/materials preserved. Threshold/hardware studies retained in library, not placed as a blocked/raised opening.",
+  "removed_fragmented_walls": [
+    "Arrival end bearing WLD-16 0",
+    "Flat route shell Wall laundry E",
+    "Flat route shell Wall laundry N",
+    "Flat route shell Wall laundry N.001",
+    "Flat route shell Wall laundry S",
+    "Flat route shell Wall laundry S.001",
+    "Flat route shell Wall manager E",
+    "Flat route shell Wall office N",
+    "Flat route shell Wall office N.001",
+    "Flat route shell Wall office S",
+    "Flat route shell Wall office S.001",
+    "Flat route shell Wall office W",
+    "Flat route shell Wall office W.001",
+    "Flat route shell Wall plant N.001",
+    "Flat route shell Wall plant N.002",
+    "Flat route shell Wall room1 E",
+    "Flat route shell Wall room1 E.001",
+    "Flat route shell Wall room2 E",
+    "Flat route shell Wall room2 E.001",
+    "Flat route shell Wall room3 E",
+    "Flat route shell Wall room3 E.001",
+    "Flat route shell Wall room4 E",
+    "Flat route shell Wall room4 E.001",
+    "Flat route shell Wall room5 W",
+    "Flat route shell Wall room5 W.001",
+    "Flat route shell Wall room6 W",
+    "Flat route shell Wall room6 W.001",
+    "Flat route shell Wall room7 W",
+    "Flat route shell Wall room7 W.001",
+    "Flat route shell Wall room8 S",
+    "Flat route shell Wall room8 W",
+    "Flat route shell Wall room8 W.001",
+    "Header laundry N",
+    "Header laundry S",
+    "Header office N",
+    "Header office S",
+    "Header office W",
+    "Header plant N.001",
+    "Header room1 E",
+    "Header room2 E",
+    "Header room3 E",
+    "Header room4 E",
+    "Header room5 W",
+    "Header room6 W",
+    "Header room7 W",
+    "Header room8 W",
+    "Wall laundry W",
+    "Wall manager N",
+    "Wall manager S",
+    "Wall manager W",
+    "Wall office E",
+    "Wall plant E",
+    "Wall plant S",
+    "Wall plant W",
+    "Wall room1 N",
+    "Wall room1 S",
+    "Wall room1 W",
+    "Wall room2 S",
+    "Wall room2 W",
+    "Wall room3 S",
+    "Wall room3 W",
+    "Wall room4 W",
+    "Wall room5 E",
+    "Wall room5 N",
+    "Wall room5 S",
+    "Wall room6 E",
+    "Wall room6 S",
+    "Wall room7 E",
+    "Wall room7 S",
+    "Wall room8 E",
+    "route-01 support 0",
+    "route-02 support 0",
+    "route-03 support 0",
+    "route-04 support 0",
+    "route-06 support 0",
+    "route-07 support 0",
+    "route-08 support 0",
+    "route-09 support 0",
+    "route-10 support 0",
+    "route-12 support 0",
+    "route-13 support 0",
+    "route-13 support 1",
+    "route-14 support 0",
+    "route-14 support 1",
+    "route-15 support 0",
+    "route-16 support 0",
+    "route-17 support 0",
+    "route-18 support 0",
+    "route-19 support 0",
+    "route-20 support 0",
+    "route-21 support 0",
+    "route-22 support 0"
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/service-portal-construction-batch/wld-16.png",
+      "sha256": "0d0edf50a243f8c14b2416cbd43a95868f4123df821231219df4aaaf8b9169cb",
+      "type": "native exported doorway construction with roof cutaway, not gameplay"
+    }
+  ]
+}

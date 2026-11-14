@@ -1,0 +1,2008 @@
+{
+  "observed_utc": "2026-11-08T05:40:45.233562+00:00",
+  "source_checkpoint": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+  "remote_head_verified": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+  "remote_tree_sha": "b24cec37a3528beb33243c2a443d92b5c4fd3767",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git blobs for every changed source-checkpoint path",
+  "checkpoints": [
+    {
+      "commit": "b71f45020f151077a8abcacb2fcd5a1b1bbe0d05",
+      "changed_files": 495
+    }
+  ],
+  "verified_file_count": 495,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "ea25cda939af7d52f55616e4d1b781bac37e558b"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "85d572bf343c2307ba8d31938fb2e4b84609d414"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "1ba83dc33fe95a6f854b833ee9b9f5750c593ee4"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "9e85552687d86b7c0229ff680653a342939a0bae"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "112e88115160700cad9ddbf0e479529085116b6e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/academy-saved-terrain.png",
+      "sha": "fb37642f33fa612fee8a2b2e5fc989c1e2aa9be4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/academy-terrain-plan.png",
+      "sha": "d7520ce22cfffcb4b3ea7366f60097a609a14fbc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/academy-whole-site.png",
+      "sha": "89ca01d688c4b5d0ce958b0f2e461c14d01e5705"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/asylum-saved-terrain.png",
+      "sha": "34dd72b86d196b6731f5fdc835d5f538d02c7b1d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/asylum-terrain-plan.png",
+      "sha": "47296f717716ffef99956d05bbd893c112ddd7d0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/asylum-whole-site.png",
+      "sha": "6a3afc8d44dce65a37378c5c1aca9bdf22fa83f5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/church-saved-terrain.png",
+      "sha": "183f9c9c78ee4ac2f56dd8454f8520a3ecf3d2e5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/church-terrain-plan.png",
+      "sha": "2a2bd36124b555433e79fba1a1b1ecd53b5fe9f1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/church-whole-site.png",
+      "sha": "2d365e60a15b50fe09844aa5a7fc45f29caeb8ce"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/college-saved-terrain.png",
+      "sha": "5e0abf27d51fd935916091b1343e7fe4c15a1e6a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/college-terrain-plan.png",
+      "sha": "b52b6c56dcb4eba562fab3f3076ecc667a87444d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/college-whole-site.png",
+      "sha": "25f9d484ce01d396b477ea04188b212be3a85790"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/farmhouse-saved-terrain.png",
+      "sha": "6d3392bd502defa926b6ceb8736aa61a64cd0a56"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/farmhouse-terrain-plan.png",
+      "sha": "ff04c45ba2f7a01a1e305d5664025ee2aa54c854"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/farmhouse-whole-site.png",
+      "sha": "1ba016b391d682b5cb71f9985d6fba8c164f7480"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-01.png",
+      "sha": "91df95257d8db3b7daa1a1df3429d7fab359f625"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-02.png",
+      "sha": "4fbd44eda02a74a88407a0d8bc454f5518f9e49a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-03.png",
+      "sha": "8eab24965cc212af3555b08b7db3e0eac172c31f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-04.png",
+      "sha": "d338863a467bec72ccb9d807ca3c1635824e598f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-05.png",
+      "sha": "2381bdaf733beb70dd840d41fc102e782700fa54"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-06.png",
+      "sha": "4522f27cfe7e8f79a220a1555ee8149e29412ed5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/mansion-saved-terrain.png",
+      "sha": "74aaeef7995f738b1f0160a3e7b9196b61612179"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/mansion-terrain-plan.png",
+      "sha": "41235f69bf4120f1c3b4b8656b517c1404aa9148"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/mansion-whole-site.png",
+      "sha": "ed4efb7e910fa62de6dedcea566f28727d5876a7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/prison-saved-terrain.png",
+      "sha": "de401099d46c995e0152b56bfc4da84049d2c12c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/prison-terrain-plan.png",
+      "sha": "46f9ca9353c5bbb075bad5d5e968b2fcf4626705"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/prison-whole-site.png",
+      "sha": "f2b955a5d344a3e5bea550ce414b5f95fec98df7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/school-saved-terrain.png",
+      "sha": "9a307c5bd64cc9db60e438aa88141680a845961d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/school-terrain-plan.png",
+      "sha": "61bed7b2aa81fce620b16444ef8fe8a4131e9270"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/school-whole-site.png",
+      "sha": "d5a324a9ba6888208d1f8184ddd777887e20283f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-03-saved-terrain.png",
+      "sha": "d133364788fe6fc9ba1d0c61553b6873d9597187"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-03-terrain-plan.png",
+      "sha": "e500a392c6e10a83dd7b6e01d0b083a4e7f1505e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-03-whole-site.png",
+      "sha": "b2554350f5bab01292b61330c75455fc2c224d57"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-04-saved-terrain.png",
+      "sha": "36047bc0b7f67e43d3d727088558a156f02d0114"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-04-terrain-plan.png",
+      "sha": "f57c8e31a80190b520186d1afbc9d60bf4ce7d04"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-04-whole-site.png",
+      "sha": "503f45953ff5b496545ccd9bbd0c85412b03b0fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-05-saved-terrain.png",
+      "sha": "c55d868a56c8fa209d9cafc5807d248226e0a197"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-05-terrain-plan.png",
+      "sha": "d32734db8cabe6e0d4bc5990b60666856e27ee84"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-05-whole-site.png",
+      "sha": "375dd50dbe71c02b8b5a6184761ce921f9c3c185"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-06-saved-terrain.png",
+      "sha": "006ab20f342241bad39949c0fdfb471c2bfc7169"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-06-terrain-plan.png",
+      "sha": "d87af0b3d090374c15848a71065066151ba22621"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-06-whole-site.png",
+      "sha": "29e4a7602c3f8126a349151285cdf46669456155"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-08-saved-terrain.png",
+      "sha": "7a53c8ed6d8a58c3eecb6242c7a340dd94f98b46"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-08-terrain-plan.png",
+      "sha": "25820722377861b94e445af52bc0e517840ac06f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-08-whole-site.png",
+      "sha": "4a5fcf0c36cbc1644a0e0718ef1dea3bc76872e4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-09-saved-terrain.png",
+      "sha": "2c5a577bc9e5e4cd3b3159f60615aca97622e974"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-09-terrain-plan.png",
+      "sha": "9a2b7bb47099530bb9c6714989ee84ee23cc412c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-09-whole-site.png",
+      "sha": "200332e4e4c9ed1aa48d33c59eedcc2754b916a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-10-saved-terrain.png",
+      "sha": "de0dca2ba23e0eb8881ca4adb5f92df72f994bc1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-10-terrain-plan.png",
+      "sha": "d338a3114aa1e805bbce3c37b4c5fd512c53f974"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-10-whole-site.png",
+      "sha": "36af2fe66f3960dc893f7d51b343aee83db4a9d8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-11-saved-terrain.png",
+      "sha": "a207eee9c911ae943658025a6f7ca2e35f00f509"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-11-terrain-plan.png",
+      "sha": "b5090e1bbbed0521f9201aa966e3bff1f987c342"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-11-whole-site.png",
+      "sha": "98f7379320b68916cb7489a4c1948e84efb5bcf5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-12-saved-terrain.png",
+      "sha": "3302d35e032553f8fd7076578cf0e479e3260d45"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-12-terrain-plan.png",
+      "sha": "6f4fcd5fad8a5fe3d8cc589d0e2e1456c7b24b47"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-12-whole-site.png",
+      "sha": "f07bc322914db1d0f14310c36993615fa9b2b260"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-13-saved-terrain.png",
+      "sha": "8462fd4901149d1ee74de6097d581cc27623e3d4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-13-terrain-plan.png",
+      "sha": "40e8b0a94bd716ee6b9807cb4a100a250d0e5a2f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/wld-13-whole-site.png",
+      "sha": "b1e4f7bfbb16434b52834b684148e203fbcd62af"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/BATCH.md",
+      "sha": "b157987dca9aca998b50394865a46c4f6e4ad550"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/academy/NEXT.md",
+      "sha": "02f05b95851278313e846192b2e3c6a24afce2fc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/academy/review.json",
+      "sha": "d5f63ee781da9f55c7a0613602ed880b5daf65c5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/academy/terrain-assembly.blend",
+      "sha": "d0e94325046fdb2c6a5371ecf9d6ca12c5c539cb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/academy/terrain-assembly.glb",
+      "sha": "3121f2efcfd6286729b968d164691dee51883fdd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/academy/terrain-assembly.hcs2",
+      "sha": "4c3dda364ee9f5c2978c707aac57a065cb585e41"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/asylum/NEXT.md",
+      "sha": "545601c5b0151530e4eebb1c159e22139474ed00"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/asylum/review.json",
+      "sha": "7bb800cc0543cf9cb6a14cc1f32644dbe97fe99e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/asylum/terrain-assembly.blend",
+      "sha": "1173bc9b539ad3d799887ca5d0b3819c4425aa5f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/asylum/terrain-assembly.glb",
+      "sha": "792a2db91db6b7b8b70127f2877779e67d61d244"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/asylum/terrain-assembly.hcs2",
+      "sha": "d09395ad95b57ed3a5148b657cacb0ed77b28f07"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/church/NEXT.md",
+      "sha": "35aba96a89f5023b3106a7e9cbe0e188edfa4f11"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/church/review.json",
+      "sha": "31d2ca02aef9bb176a5786ba138eca08267a8c3e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/church/terrain-assembly.blend",
+      "sha": "f23e500729b825b10a73ac9ef5d977cc45b6f820"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/church/terrain-assembly.glb",
+      "sha": "1c19a576d6e4a227fdc00a3b2c213b4f31a44635"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/church/terrain-assembly.hcs2",
+      "sha": "5c24a1b7532c358bf1232885a1b0c3661bda3bea"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/college/NEXT.md",
+      "sha": "3a15065461902c9a04a25462229c415bb323ba4d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/college/review.json",
+      "sha": "72181baf367e84a9bb4a66f44a825805b20eaf4d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/college/terrain-assembly.blend",
+      "sha": "59d029bcfc62105413146966058817c9e1640a93"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/college/terrain-assembly.glb",
+      "sha": "83dd681c17b41ad8a875bacdb71ba67ab471bf64"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/college/terrain-assembly.hcs2",
+      "sha": "a3a25a64bc7d5f85603ece1896396a56ef7be7ce"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/farmhouse/NEXT.md",
+      "sha": "3be61da00f2cdc2847fcdad6f367b86faea0884b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/farmhouse/review.json",
+      "sha": "a82b94c2bf625390cd988646defb11fd14047c46"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/farmhouse/terrain-assembly.blend",
+      "sha": "ec9f44b3569b915de18046d4261224ee4fa7a731"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/farmhouse/terrain-assembly.glb",
+      "sha": "e8ca55515a3fd3cfbe4156e66761293f5c326b30"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/farmhouse/terrain-assembly.hcs2",
+      "sha": "8c6e16aa1c01f6cc473d2fcbd35d850366b9d9a9"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/mansion/NEXT.md",
+      "sha": "1d3eeb9031e52d30b69af6708f9c61e72601d29d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/mansion/review.json",
+      "sha": "aac076e3f9f847042b002bfb48cebd8e4dce59fe"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/mansion/terrain-assembly.blend",
+      "sha": "71e1f4081f8fb39fb4184a6af052048f4ccf137f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/mansion/terrain-assembly.glb",
+      "sha": "5f9ea9c6a01d692a2ea8e9391d6e8b3c09b1ba64"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/mansion/terrain-assembly.hcs2",
+      "sha": "2bcdc06c08df939695c908ec3d0885c57ba6fa07"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/prison/NEXT.md",
+      "sha": "5e884335292ec8afc526ef68eed1c676160911fd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/prison/review.json",
+      "sha": "9e6fe6932193398a5e12b3c61cd4014b32ec1389"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/prison/terrain-assembly.blend",
+      "sha": "b58c1ed753ab140407fe60c97175cb3afbca069e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/prison/terrain-assembly.glb",
+      "sha": "34dbdd58f0301292c09f28b633c96f9e7767a500"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/prison/terrain-assembly.hcs2",
+      "sha": "87a752111111bd883ce7c20d6fbe8dd24f23e7f2"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/school/NEXT.md",
+      "sha": "e0bd18e1b35d1e67ea33e42864cf4b0941c0c274"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/school/review.json",
+      "sha": "1a4e2fce7bf86a9129b32bbdddff152feae2e7c6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/school/terrain-assembly.blend",
+      "sha": "56a605e35fc88ed6517e899e43f24d0b658ed057"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/school/terrain-assembly.glb",
+      "sha": "9621de71b44542b1c0ba82969484f1ac5618eba5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/school/terrain-assembly.hcs2",
+      "sha": "1a1a0693f90ecbab75356f6a3cb0ca50fae5dc60"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-03/NEXT.md",
+      "sha": "bc5cb91f60c2506da6890147c38bb5ecc5a99db4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-03/review.json",
+      "sha": "252ef0cebdac2eac92fdcfd867cc51042bcc2574"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-03/terrain-assembly.blend",
+      "sha": "3df397d1372ac42d89a95fbacd8ea342bfaefea8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-03/terrain-assembly.glb",
+      "sha": "645f561e6c361261f736832e859c35f0ad307576"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-03/terrain-assembly.hcs2",
+      "sha": "32cfe37cfb899f968db73dc69f9e72547827ee63"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-04/NEXT.md",
+      "sha": "e735a030cdd7a03d3e74aef061768d95203dd91a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-04/review.json",
+      "sha": "c1c11b0d92e2d17793a15d32c470e96494c1091b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-04/terrain-assembly.blend",
+      "sha": "a7896b5f58dc9afc5df9e450725e52fad8f644a6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-04/terrain-assembly.glb",
+      "sha": "8017278f94866494dead0a3b8e0176010b79e4df"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-04/terrain-assembly.hcs2",
+      "sha": "90998bc9fc1e391a95cab7c827e48e025cdd1400"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-05/NEXT.md",
+      "sha": "366c1788923b58cad20c9d4398faf2e64c8e9403"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-05/review.json",
+      "sha": "891f3f20be574ccb9832645b115a5903e7a7c749"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-05/terrain-assembly.blend",
+      "sha": "c8fb86d1ba7717b925e394da39525e774e9ba9e6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-05/terrain-assembly.glb",
+      "sha": "b05ada8abecea9686103f576bc125fb58bf3cc5a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-05/terrain-assembly.hcs2",
+      "sha": "abdd14ba87f2a1627fd448e43654c3e42ab5fd0d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-06/NEXT.md",
+      "sha": "e4ca5f8d92cd169a36e8f504b054d369572eeccf"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-06/review.json",
+      "sha": "72d3244a72c580bac5b8fce5a2b9886a62d840e2"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-06/terrain-assembly.blend",
+      "sha": "53d7d6d9f6b932464de30a89bbc59f5bb1682de6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-06/terrain-assembly.glb",
+      "sha": "e2a4862f8679d1440f1f7affd1e752e63e440e78"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-06/terrain-assembly.hcs2",
+      "sha": "32c51ee142b0697122834574dec8b2fb10dbe4da"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-08/NEXT.md",
+      "sha": "0267158f1d2c7ddc8adc7a8f34c8418e8070fcc6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-08/review.json",
+      "sha": "74864aefb72e2055d8ae336809cfd705ac812396"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-08/terrain-assembly.blend",
+      "sha": "c09012336ae42597d2835b54b538914090ba4b74"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-08/terrain-assembly.glb",
+      "sha": "5e5c07041d062228ca980f003dddf5050ae99c0d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-08/terrain-assembly.hcs2",
+      "sha": "455c5c74bdd35d463be5f41d900829c266c01e08"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-09/NEXT.md",
+      "sha": "57ec543c98f084bf2419de20c85788ed60c62add"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-09/review.json",
+      "sha": "167dd7650b11770d05876faf3db9a5e59a98d8dd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-09/terrain-assembly.blend",
+      "sha": "d5b04c69acdc2af76d1b013525c49a6f2611e126"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-09/terrain-assembly.glb",
+      "sha": "6ad3beb58412dc48131fdb5d6c96f08c9c8fcdfc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-09/terrain-assembly.hcs2",
+      "sha": "21bbc799142de35de05066315478b6c8177abd36"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-10/NEXT.md",
+      "sha": "6a7d0fe00dcfa194e8a1b819f8253ca148277ff3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-10/review.json",
+      "sha": "d9e1cd00991e7ac94d73ad6476027f040a16cb06"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-10/terrain-assembly.blend",
+      "sha": "9002b04a8a5534eaf7b66a6b7a53df07a6a07a36"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-10/terrain-assembly.glb",
+      "sha": "025b338d641c32bd305be09c37e4da3b6baa9313"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-10/terrain-assembly.hcs2",
+      "sha": "1c57cb8eddaf65502134f35d169b5bfc72e5b41f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-11/NEXT.md",
+      "sha": "be87487bcb8940fea70765f3f53d415a0b5da716"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-11/review.json",
+      "sha": "7731140d32aadc5bbb7c0cc24873019aecad2818"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-11/terrain-assembly.blend",
+      "sha": "024582f1261d1785ae1b29b2a5ec3948c55b2ff7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-11/terrain-assembly.glb",
+      "sha": "eb0e6939bcb577817be3adec22a8dc98143dfb37"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-11/terrain-assembly.hcs2",
+      "sha": "51a667798e1ca2e09a9c66a0415326e5700345a0"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-12/NEXT.md",
+      "sha": "e8bb77be04dc16bfcfb8985ce957ba66f64013ff"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-12/review.json",
+      "sha": "63e2ca4107e786194fabe873e4dff98ec0b6fef3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-12/terrain-assembly.blend",
+      "sha": "289c052f44f183ec0fefa4587e96e1e5d149607f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-12/terrain-assembly.glb",
+      "sha": "fc829f69ad6f95639a03a5de0f4ec213ffdda512"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-12/terrain-assembly.hcs2",
+      "sha": "c377295a41b8322412bd50997dc9e2803eabf4df"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-13/NEXT.md",
+      "sha": "df772b411170399003fd9e48d5ee87b0baeb5264"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-13/review.json",
+      "sha": "a5032dedda2aa7a6ba8ed0b74a677da9393b9661"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-13/terrain-assembly.blend",
+      "sha": "f58ec7075de534cd65d0f895f22e3ef141c2ecb5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-13/terrain-assembly.glb",
+      "sha": "23de58e198f3a1901ea774c13bdbb7a109637823"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/assemblies/wld-13/terrain-assembly.hcs2",
+      "sha": "a97da5442bc40a10a890d62ba8d829cecd3c6b8e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/macroterrain-register.json",
+      "sha": "a5d835bcfce9f75e97cc4e90374f788835beb8bf"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/macroterrain-specs.json",
+      "sha": "44d8f426e7267d68d3b05776fe7b71dbac0c3bd7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/academy-pre-surfacing-pilot.blend",
+      "sha": "ed14af81615f9ccc54d3f38ab16abd630e884b8f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/academy/terrain-world/adaptive-topology.bin",
+      "sha": "352e39a4b5e3245e5da6e0ca244a79753900419d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/academy/terrain-world/authored-cuts.tsv",
+      "sha": "e99dc141323ce02ad823e70753562eb5244d9dd5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/academy/terrain-world/scene-package/meshes/site.obj",
+      "sha": "6f8059a8170b8dab221677135b07b67d23abada8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/academy/terrain-world/scene-package/scene.bin",
+      "sha": "6e9de3213b077950124b21aa5e9d84c6e4220d63"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/academy/terrain-world/source-provenance.json",
+      "sha": "a600e8c3b9d28022604a821550013da2e7a6b1ae"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/academy/terrain-world/terrain-physics.hcs2",
+      "sha": "0c718c9e53f09916b7e0088cb18291ab4425bb83"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/academy/terrain-world/tile_0_0.png",
+      "sha": "935f58d891d23ab80314fa05f3a57066cd52c39b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/academy/terrain-world/verification.json",
+      "sha": "118cc7a19fd1f6fba4d33ce0081043b4df84900a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/academy/terrain-world/world.properties",
+      "sha": "03338babd55ef055cafec1fc61c59e4ae76c9aaa"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/cut-budget.log",
+      "sha": "5ea2c28f7f72ae140e151fdfb74633ebc243597a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/single-chunk-prison-limit.log",
+      "sha": "b507b841286646abc3674dae708f034b0039c71f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/rejected-row-stripes/unaligned-prison-foundation.log",
+      "sha": "12a4c71d2ff47b7bf70ebc1d6e9df55a32946f50"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/academy/cuts.tsv",
+      "sha": "bdbc0e76954516b5cfbdbafff7b767f1c846a720"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/academy/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/academy/heights.txt",
+      "sha": "760aae7c7954de893ee520215816d74fe6fbf9f6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/academy/provenance.json",
+      "sha": "690f954ede3c1f03038c5e72ec82f284a2b32e0b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/academy/settings.tsv",
+      "sha": "6a3d4eb55cd06a5a191e4b56a301f3006ee69bdb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/academy/source.png",
+      "sha": "935f58d891d23ab80314fa05f3a57066cd52c39b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/asylum/cuts.tsv",
+      "sha": "25bb7232f037955620ed60afbfab013628df5fcc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/asylum/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/asylum/heights.txt",
+      "sha": "11d62d827b7f53c9fa6c8e6333e03d42a154677e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/asylum/provenance.json",
+      "sha": "52b5b8501834688f05a4e642f5f65725645d87a3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/asylum/settings.tsv",
+      "sha": "29e0171a9f9bb03cd536be5f9ef4aa151c508b4a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/asylum/source.png",
+      "sha": "e35bc6fba1fa7ba86e9eba6d79dd18d71b129480"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/church/cuts.tsv",
+      "sha": "dad514a5971e0d210d60c029dff3653142368fcd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/church/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/church/heights.txt",
+      "sha": "72d7e479ca888cbe9c44a88dfbdb4885b49376dd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/church/provenance.json",
+      "sha": "9bc5a500e5bbf0aba324801850945c9d21eef9cc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/church/settings.tsv",
+      "sha": "99af5cb202676ec3db50b5a624a950859e096c49"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/church/source.png",
+      "sha": "278b7012d8cb400f96bda98a494130e7098fcc9e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/college/cuts.tsv",
+      "sha": "faa6d27f6f2395798d9ff53cdd34be2eeb0fa29a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/college/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/college/heights.txt",
+      "sha": "502ff25d43aab1d46f468e11a8550a79d0751ea1"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/college/provenance.json",
+      "sha": "a636dfb80e6578e4fb41fcd8a951a9a7a5dd3b7e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/college/settings.tsv",
+      "sha": "ec6e7d6749db58222a0d8bed2f807771f6815e81"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/college/source.png",
+      "sha": "997bc5dc2cc0e1c539002ea5c526acebabf3a7c6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/farmhouse/cuts.tsv",
+      "sha": "116165c82056dea2151e410e8e0d1484fc7043d4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/farmhouse/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/farmhouse/heights.txt",
+      "sha": "6ab6559595b0afede630905ee6950537fbeef671"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/farmhouse/provenance.json",
+      "sha": "23acc328ad313ffd2868a7728169500c8367565c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/farmhouse/settings.tsv",
+      "sha": "dc0d61b28d1cc09cee483323db37388d04a0bead"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/farmhouse/source.png",
+      "sha": "53315be0dfb05552c75218208a3db7bd609ef5a9"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/mansion/cuts.tsv",
+      "sha": "28f205014248caaf0b5af18aca717a5c09596c28"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/mansion/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/mansion/heights.txt",
+      "sha": "4da1180128e45821eb32a05236f38a69312501ce"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/mansion/provenance.json",
+      "sha": "cfc423001cc08cbac1e0c553eaa3ef7b9e37eabd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/mansion/settings.tsv",
+      "sha": "314ebfd2c276ee0642314640c6362ac7f784b9c8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/mansion/source.png",
+      "sha": "928eb987eaa92a7147a2f39a7a23ee657419e40e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/prison/cuts.tsv",
+      "sha": "bb279ee8248b3be3dc323f110956b94539ac5a26"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/prison/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/prison/heights.txt",
+      "sha": "7394c96c46a0fd8bbaa84401ea70399d96c75cfe"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/prison/provenance.json",
+      "sha": "6403d734c314eec79b53c2546aa6c74f70c11b5b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/prison/settings.tsv",
+      "sha": "b251373da0dc09d8f34852c053cf9ba316305364"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/prison/source.png",
+      "sha": "acfe0684e60fb2c30838aa1f65acc7d2d2a54fdf"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/school/cuts.tsv",
+      "sha": "d610413b112884cb8017dfb59704805e429adcda"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/school/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/school/heights.txt",
+      "sha": "61139fd6c1c1f90bfbc1090b86a3c6e4c858a363"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/school/provenance.json",
+      "sha": "8f296d7b2595594d725309a775a18c7fb5e11124"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/school/settings.tsv",
+      "sha": "c76a0373a27fa78209ed47e4a18d5169f8ea34ae"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/school/source.png",
+      "sha": "c11c672db233a31bfd2a63a221f68d2137bec90d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-03/cuts.tsv",
+      "sha": "82235991d0b89a790de3ca872fd986658ff85524"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-03/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-03/heights.txt",
+      "sha": "c842f229bc30be2624f51d3323b982400afe5ca5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-03/provenance.json",
+      "sha": "d4f56a274a88654079713846d51278d3df1b0829"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-03/settings.tsv",
+      "sha": "e1ab7f346ff4fef78170b4eadf04509920ffd689"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-03/source.png",
+      "sha": "56047e844183d09c2e118e184144d4c5299e3224"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-04/cuts.tsv",
+      "sha": "24cea9e3d776219331268ed71adda5450932be6a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-04/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-04/heights.txt",
+      "sha": "fe269de389ebc696b56f94aa7870cbfb71162e0a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-04/provenance.json",
+      "sha": "aa1645b643f866daae045a4444a828e2bf5241ec"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-04/settings.tsv",
+      "sha": "72ccc0d4f6fa5ea01e0b0eee8c1e5b4a54b8790b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-04/source.png",
+      "sha": "c91b8e605b74d22197d9a19bcfc2e16028ad679c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-05/cuts.tsv",
+      "sha": "8c102c1873d79182fe493b056eedc9bbafcde6ba"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-05/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-05/heights.txt",
+      "sha": "7a0054dd54f3c9cd1770d03a272aedf86d73452d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-05/provenance.json",
+      "sha": "eb8f93f64bc59c89f1bc518ee0b323ced051114b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-05/settings.tsv",
+      "sha": "9420c1291f7702c00f7e6bfd6cf48d2cf4902d11"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-05/source.png",
+      "sha": "80f6d802c8b26bc2f50fef9b27a5a53353404eb7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-06/cuts.tsv",
+      "sha": "dbf3456aa69f5835074e824e652dff2e7192a479"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-06/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-06/heights.txt",
+      "sha": "4050ee25b38d97aed6800260ba58a16379546e2a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-06/provenance.json",
+      "sha": "261ea3bb281285a8590af0741f3e4c143d9bd6c3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-06/settings.tsv",
+      "sha": "dc4bff84130583bc325b1e73b3e4cd2a227b2a09"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-06/source.png",
+      "sha": "070f3fb12a3e8829a349f4f7f92e701464faa61e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-08/cuts.tsv",
+      "sha": "51094408a06ff479d0c9e0b232c02c068c96bd4d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-08/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-08/heights.txt",
+      "sha": "99cc69fd0d1b0461ce4454a150bfabc1d5990e0a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-08/provenance.json",
+      "sha": "7f94ddc5ab32b0726a77a38284114c6e6fca574a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-08/settings.tsv",
+      "sha": "a57878d90788dfb7313ec7089c6024561f2d5ec7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-08/source.png",
+      "sha": "f659c84805e2465b64a94a6c78d738acc46e9d7c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-09/cuts.tsv",
+      "sha": "7de0079036006bb29f7b675b1e752d952298a802"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-09/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-09/heights.txt",
+      "sha": "7366a0b9668425a09761be8d60bf483c6b7c0337"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-09/provenance.json",
+      "sha": "e662c868fd385d498bd3b653434e6666ce84c318"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-09/settings.tsv",
+      "sha": "8a324bf8755e149686c74283a25ca691bd5c215d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-09/source.png",
+      "sha": "17529f679f581d6c22b9c93ada0088e9381e261f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-10/cuts.tsv",
+      "sha": "c86967ae35ffe015ffa3c02fea3bf474a5c79905"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-10/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-10/heights.txt",
+      "sha": "1f51fe6a6f39afa59d7a2be8c6bbe2fff89e674c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-10/provenance.json",
+      "sha": "d9abc694ef9eabbf20afb9fd35b11f9292084c94"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-10/settings.tsv",
+      "sha": "137543e664310c5e5cc32ec1ccadc749db096e9c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-10/source.png",
+      "sha": "6d1dace87be68df542b7f22b68049fc9c16c26cc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-11/cuts.tsv",
+      "sha": "0f1fe7c19521677376687a0c05fc9004d590500e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-11/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-11/heights.txt",
+      "sha": "84675c1f34ce79d8faa3e3367598e43d8311729d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-11/provenance.json",
+      "sha": "5a0c2bfcd0de460af14cb00bbff5ab2ccb060c98"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-11/settings.tsv",
+      "sha": "3a75ba369acb0e8ddecde06d1f5fc2f57f53164c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-11/source.png",
+      "sha": "a0fed10982224fef3fc18d6556e7d090ed0ea8e3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-12/cuts.tsv",
+      "sha": "9d6118f8ae453c978c7fe967a6e3eda3f6c730fb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-12/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-12/heights.txt",
+      "sha": "309b504f60d3d0bd579af066a227d19f8a2e7359"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-12/provenance.json",
+      "sha": "0975500ccb5461b58c214da94980b3f573c663cb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-12/settings.tsv",
+      "sha": "cc81ed3682d1701f382877a1759cc5e972f89895"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-12/source.png",
+      "sha": "e8ee2f3cfcead7971b3c28c7356273d9b0a224b3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-13/cuts.tsv",
+      "sha": "6370f1cf594b2ec7b49c026fa2fea9ad1a567400"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-13/grades.tsv",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-13/heights.txt",
+      "sha": "24334309be1cfea0c309b142b71a5b0eda770b54"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-13/provenance.json",
+      "sha": "bfe4dfe6fc7b597e85200dc6af0f0f5d101b2cf1"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-13/settings.tsv",
+      "sha": "586a8f9837fa00f84c1fac8df22a2bccb5ea0ddb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/samples/wld-13/source.png",
+      "sha": "316a580a8a8d1ccf7efce382927994b3f9523780"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/export-preservation.json",
+      "sha": "6ebc3fb9a50e198766aa818b32d57a92c5365457"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/idempotence.json",
+      "sha": "ff3ca352705336ee492c90afeaf6dfd49483eec5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/logs/macroterrain-batch-remaining.log",
+      "sha": "ec38129418ccea111e1e2f79438c1d5b9318cb44"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/logs/macroterrain-batch.log",
+      "sha": "12a4c71d2ff47b7bf70ebc1d6e9df55a32946f50"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/logs/macroterrain-export-preservation.log",
+      "sha": "997b0d7f32ef00a69254bc42c56248e95f9ba7a1"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/logs/macroterrain-final-repeat.log",
+      "sha": "6f5d8e5bcbb45b58eed5a6bcc1113919300280da"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/logs/macroterrain-native-fit.log",
+      "sha": "228d7c3bed77f258504a79dfe5b0ada5e8d976e1"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/logs/macroterrain-repeat.log",
+      "sha": "6f5d8e5bcbb45b58eed5a6bcc1113919300280da"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/logs/macroterrain-review-remaining.log",
+      "sha": "f7883561abe7cf5e523683547f3f6f2588a25c82"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/logs/macroterrain-review.log",
+      "sha": "048e33ea9141041833328b21b16d183dc3b28dc2"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/native-route-fit.json",
+      "sha": "62fbfe0e5456b81d654ffbddd43221355c16d044"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/native-route-probes.tsv",
+      "sha": "abe3df9c1719e15e26b24b63b1cedf62c735c725"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/source-integrity.json",
+      "sha": "f5cee01ab84f1daa4e50173a930eb863eb355a9b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/tool-source-hashes.json",
+      "sha": "eea54650ee25a0e6498f27a483087add51daa5f8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/verification/visual-review.json",
+      "sha": "724e76eb703c6c7c6fb29bf3d70e175ebd737a3f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/adaptive-topology.bin",
+      "sha": "b418566f1bff53382db74eddaa391870e1ba4e43"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/authored-cuts.tsv",
+      "sha": "bdbc0e76954516b5cfbdbafff7b767f1c846a720"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/scene-package/meshes/site.obj",
+      "sha": "0b1974e51a42c5c29276ef50b26842b5218b2fb5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/scene-package/scene.bin",
+      "sha": "0932546f3b523c486ad9d70bc9667081a76b1b25"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/source-provenance.json",
+      "sha": "690f954ede3c1f03038c5e72ec82f284a2b32e0b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/terrain-physics.hcs2",
+      "sha": "4ab1a6e599cba8688065febe8e0cb5c5baa00a85"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/tile_0_0.png",
+      "sha": "935f58d891d23ab80314fa05f3a57066cd52c39b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/verification.json",
+      "sha": "85d1a0640adf57a999755b591dfca1d02d602ee5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/academy/terrain-world/world.properties",
+      "sha": "03338babd55ef055cafec1fc61c59e4ae76c9aaa"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/asylum/terrain-world/adaptive-topology.bin",
+      "sha": "1f223a9e5888a0ebdec7f460cefbcf4ea1a8b072"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/asylum/terrain-world/authored-cuts.tsv",
+      "sha": "25bb7232f037955620ed60afbfab013628df5fcc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/asylum/terrain-world/scene-package/meshes/site.obj",
+      "sha": "7e3cd5d002cbd9b33da172eb98d98578968d5c44"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/asylum/terrain-world/scene-package/scene.bin",
+      "sha": "b0a5137ea4f06f809a06428f462f08d50f239151"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/asylum/terrain-world/source-provenance.json",
+      "sha": "52b5b8501834688f05a4e642f5f65725645d87a3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/asylum/terrain-world/terrain-physics.hcs2",
+      "sha": "41549556ffcae924a411542817c2091b602c8e33"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/asylum/terrain-world/tile_0_0.png",
+      "sha": "e35bc6fba1fa7ba86e9eba6d79dd18d71b129480"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/asylum/terrain-world/verification.json",
+      "sha": "b67f2b4bce8cfced55d7ea07bdb7acc0d34ddb00"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/asylum/terrain-world/world.properties",
+      "sha": "874f270f985ab8080867b32081997dd5f6efd9af"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/church/terrain-world/adaptive-topology.bin",
+      "sha": "aa074697066b39b897b8577081cc40aa341c758f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/church/terrain-world/authored-cuts.tsv",
+      "sha": "dad514a5971e0d210d60c029dff3653142368fcd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/church/terrain-world/scene-package/meshes/site.obj",
+      "sha": "2363f569f98ee176c57f5c707683dc6b70a26b03"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/church/terrain-world/scene-package/scene.bin",
+      "sha": "40a2f710870466cbafd0a742fcf898241f885c00"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/church/terrain-world/source-provenance.json",
+      "sha": "9bc5a500e5bbf0aba324801850945c9d21eef9cc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/church/terrain-world/terrain-physics.hcs2",
+      "sha": "40876ffd93e7d3fc94ce625a2b8c629b3a4ab3cf"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/church/terrain-world/tile_0_0.png",
+      "sha": "278b7012d8cb400f96bda98a494130e7098fcc9e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/church/terrain-world/verification.json",
+      "sha": "122360cca6a1904d01636b74f3139efadbc0c067"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/church/terrain-world/world.properties",
+      "sha": "874f270f985ab8080867b32081997dd5f6efd9af"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/college/terrain-world/adaptive-topology.bin",
+      "sha": "05dea67009acfe2dde2297b6ccb8b9385791e296"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/college/terrain-world/authored-cuts.tsv",
+      "sha": "faa6d27f6f2395798d9ff53cdd34be2eeb0fa29a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/college/terrain-world/scene-package/meshes/site.obj",
+      "sha": "ac89c36cb4e4867a770e15ecc54e68be48ab52a4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/college/terrain-world/scene-package/scene.bin",
+      "sha": "fa211030de8517dbaa3eee97f0a97ab34f8d0927"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/college/terrain-world/source-provenance.json",
+      "sha": "a636dfb80e6578e4fb41fcd8a951a9a7a5dd3b7e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/college/terrain-world/terrain-physics.hcs2",
+      "sha": "01ab06dd25089f13d3a20facce33519ae1ebf493"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/college/terrain-world/tile_0_0.png",
+      "sha": "997bc5dc2cc0e1c539002ea5c526acebabf3a7c6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/college/terrain-world/verification.json",
+      "sha": "1ce4cb0e4b0577a087952c8d97142ab350ec653f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/college/terrain-world/world.properties",
+      "sha": "acf4a1a5a06aaa0e1d4a9a42fc7fb6dee1fb5726"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/adaptive-topology.bin",
+      "sha": "9dd93244d2c69b56b3c892c7de127125988a2e32"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/authored-cuts.tsv",
+      "sha": "116165c82056dea2151e410e8e0d1484fc7043d4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/scene-package/meshes/site.obj",
+      "sha": "82274b88e0ca636671359d0ad40f8e0b4e8b36b6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/scene-package/scene.bin",
+      "sha": "1e0fd37241b32255a96c18af0fc3b111a296c26a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/source-provenance.json",
+      "sha": "23acc328ad313ffd2868a7728169500c8367565c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/terrain-physics.hcs2",
+      "sha": "f52d7c9a6f233c64200f6a86418e2ce787b2dbe8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/tile_0_0.png",
+      "sha": "53315be0dfb05552c75218208a3db7bd609ef5a9"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/verification.json",
+      "sha": "5b0c8cb06ea3780d5497fcd0296499a27eedb5ac"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/farmhouse/terrain-world/world.properties",
+      "sha": "00bdcbb51524592bf8f2e96ef8be2d5b7509ca45"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/mansion/terrain-world/adaptive-topology.bin",
+      "sha": "8a5458269bbed1d38edf4ddb4060b5f96ed18f96"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/mansion/terrain-world/authored-cuts.tsv",
+      "sha": "28f205014248caaf0b5af18aca717a5c09596c28"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/mansion/terrain-world/scene-package/meshes/site.obj",
+      "sha": "d184d9d7936f4b045b29f8450f29956a7dc437a4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/mansion/terrain-world/scene-package/scene.bin",
+      "sha": "1e26a4fe717a1edc98605a3484f10bfbefdd1925"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/mansion/terrain-world/source-provenance.json",
+      "sha": "cfc423001cc08cbac1e0c553eaa3ef7b9e37eabd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/mansion/terrain-world/terrain-physics.hcs2",
+      "sha": "486d7fb147a69ea3aea04f9a4c72905b22225669"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/mansion/terrain-world/tile_0_0.png",
+      "sha": "928eb987eaa92a7147a2f39a7a23ee657419e40e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/mansion/terrain-world/verification.json",
+      "sha": "80669de430a5215ab10a6bf6e8364bfe7f0db7c8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/mansion/terrain-world/world.properties",
+      "sha": "874f270f985ab8080867b32081997dd5f6efd9af"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/adaptive-topology.bin",
+      "sha": "dbdc0fd553639da2eb3ceeeb67b109debc967381"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/authored-cuts.tsv",
+      "sha": "bb279ee8248b3be3dc323f110956b94539ac5a26"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "b662ba6b06d03f275f202c4e59d5a5939db50484"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "fbe0ad225a0bfab2762d8421b968e413cd46dbc3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "a2d1399718e123e5854cb5d96f71a4b918504e8a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "f94c7913193f5c6b041d9e10bde8078f441860a3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "4681bbf7e33b0f4e3994df330d6c0d795088d874"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/scene-package/scene.bin",
+      "sha": "28b902fd350b4a069743a36804ce30710b0e5ef5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/source-provenance.json",
+      "sha": "6403d734c314eec79b53c2546aa6c74f70c11b5b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/terrain-physics.hcs2",
+      "sha": "990d376a6550069ff3c3c5c2156d3358e325d590"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/tile_0_0.png",
+      "sha": "acfe0684e60fb2c30838aa1f65acc7d2d2a54fdf"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/verification.json",
+      "sha": "90a437c891d80389ba64a1f10cf48acbb23a3d25"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world/world.properties",
+      "sha": "993e56e196aabb90ef733e0d1765ec807ac6fb58"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/school/terrain-world/adaptive-topology.bin",
+      "sha": "ed4f9d0d6b6d457c2e2a401b8ec52d8e5024a8ef"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/school/terrain-world/authored-cuts.tsv",
+      "sha": "d610413b112884cb8017dfb59704805e429adcda"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/school/terrain-world/scene-package/meshes/site.obj",
+      "sha": "f314107a5c95e21a699baa7e0b2547619a3ed563"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/school/terrain-world/scene-package/scene.bin",
+      "sha": "21b5b13649199df6a5e85d2cb2250e7847e10160"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/school/terrain-world/source-provenance.json",
+      "sha": "8f296d7b2595594d725309a775a18c7fb5e11124"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/school/terrain-world/terrain-physics.hcs2",
+      "sha": "98a26f33a8f7f8164a3ddd525e9eec518760335d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/school/terrain-world/tile_0_0.png",
+      "sha": "c11c672db233a31bfd2a63a221f68d2137bec90d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/school/terrain-world/verification.json",
+      "sha": "8b6d3ec0dbb98444ddeeb96ffe64dc6f72a78a88"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/school/terrain-world/world.properties",
+      "sha": "68385f7a1362f0334245c830ec3389656b5e4358"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/adaptive-topology.bin",
+      "sha": "5ff89fa53849d9bf9cfdd5f44a0070495c2f2f5a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/authored-cuts.tsv",
+      "sha": "82235991d0b89a790de3ca872fd986658ff85524"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "fd96861923b8bc52aa9ec47fa80b68f8e7e8a2aa"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "f416bda9f117d1ed17024c6b5801fa7076cd687c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "440cd5517396e3a4e24361768ee28ad321d93c02"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "b39c6de48953a55c5d127ece3dce077c735cf7ec"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "7371e1c480f5b0fd7fcd5a99400d5b7e264926ad"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/scene-package/scene.bin",
+      "sha": "26e9af75d677f4befc7be42f2baeadd8d632447f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/source-provenance.json",
+      "sha": "d4f56a274a88654079713846d51278d3df1b0829"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/terrain-physics.hcs2",
+      "sha": "8bcbe8f0b523423b9c9625a0b01255aa2949a790"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/tile_0_0.png",
+      "sha": "56047e844183d09c2e118e184144d4c5299e3224"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/verification.json",
+      "sha": "2a2261ffa718c50f1b15e9227cff69431d90b1ae"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-03/terrain-world/world.properties",
+      "sha": "33d5803c482aa81906073fe23effe1ac96852d9c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-04/terrain-world/adaptive-topology.bin",
+      "sha": "0a1cfdd854cf06d965918c309df4bfe6b75af4a2"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-04/terrain-world/authored-cuts.tsv",
+      "sha": "24cea9e3d776219331268ed71adda5450932be6a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-04/terrain-world/scene-package/meshes/site.obj",
+      "sha": "3e07d0a9db2bfc956d307541f921d16115415138"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-04/terrain-world/scene-package/scene.bin",
+      "sha": "de3300b9bf0eb6d465d254db8f982b1c0bfffc11"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-04/terrain-world/source-provenance.json",
+      "sha": "aa1645b643f866daae045a4444a828e2bf5241ec"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-04/terrain-world/terrain-physics.hcs2",
+      "sha": "f47b26dd69a271fe2fb96f4b1a0ef22f7dc8cc52"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-04/terrain-world/tile_0_0.png",
+      "sha": "c91b8e605b74d22197d9a19bcfc2e16028ad679c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-04/terrain-world/verification.json",
+      "sha": "28b2ea2cc534e387c669e796061cb91053acd4ec"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-04/terrain-world/world.properties",
+      "sha": "87756329f2a14dccb2a97381e4e47e3aa225dcab"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/adaptive-topology.bin",
+      "sha": "23c165d6cd95e5615f75eb6a7acd62aab1ab7870"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/authored-cuts.tsv",
+      "sha": "8c102c1873d79182fe493b056eedc9bbafcde6ba"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/scene-package/meshes/site.obj",
+      "sha": "f8d8a01ade95088c710b54f84004c4f0d2968638"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/scene-package/scene.bin",
+      "sha": "401e5f8e2a86fd46fd1ee315376e410c3b193a1f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/source-provenance.json",
+      "sha": "eb8f93f64bc59c89f1bc518ee0b323ced051114b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/terrain-physics.hcs2",
+      "sha": "73d0d3d2a334cff1e400322298c6e646ccda71d4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/tile_0_0.png",
+      "sha": "80f6d802c8b26bc2f50fef9b27a5a53353404eb7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/verification.json",
+      "sha": "2119be3154ce4510fd39e8685ce56cf3989be8c6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/world.properties",
+      "sha": "7b325231f0648bff63a6bc94f20dfaeb920f1486"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world/adaptive-topology.bin",
+      "sha": "4c7f6e9ea5acdcf8b2865412ea6111cd15218412"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world/authored-cuts.tsv",
+      "sha": "dbf3456aa69f5835074e824e652dff2e7192a479"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world/scene-package/meshes/site.obj",
+      "sha": "7c40e98a42addfc0efdc6899018a204196f87967"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world/scene-package/scene.bin",
+      "sha": "8eff4b5f792ff0ff3a041c57f116e486daf17e41"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world/source-provenance.json",
+      "sha": "261ea3bb281285a8590af0741f3e4c143d9bd6c3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world/terrain-physics.hcs2",
+      "sha": "0da8e851c4c903e0feb67a1354e1f22307e449a1"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world/tile_0_0.png",
+      "sha": "070f3fb12a3e8829a349f4f7f92e701464faa61e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world/verification.json",
+      "sha": "8862ba2020c86d2f38cf9dddef44a93341563dd2"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world/world.properties",
+      "sha": "33d5803c482aa81906073fe23effe1ac96852d9c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/adaptive-topology.bin",
+      "sha": "56930ad659e274cf709796aeae875b7266f12f7d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/authored-cuts.tsv",
+      "sha": "51094408a06ff479d0c9e0b232c02c068c96bd4d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "ed6149b39afbf5aaf7e69ec3253787011749f9c5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "83b0510d148d56c99a2ef2298bd3ab0f2b3d8cd6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "d054da4ba6893c47ee43eb570e651c7dbaafab07"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "b30cadbed426588778dda419c738c246fb91491a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "6b6c0c473fbaeb3843cd1e44ba5316870f5cc576"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/scene-package/scene.bin",
+      "sha": "68acb9b43c8ba47e12b929f6fda9105f741e3c75"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/source-provenance.json",
+      "sha": "7f94ddc5ab32b0726a77a38284114c6e6fca574a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/terrain-physics.hcs2",
+      "sha": "87ef710ca9a3df6bce20fa1d89f914f76a16a428"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/tile_0_0.png",
+      "sha": "f659c84805e2465b64a94a6c78d738acc46e9d7c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/verification.json",
+      "sha": "f13c614dd7ea00382b7365b0dbd11d108c7291ed"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-08/terrain-world/world.properties",
+      "sha": "03e7b7f12491f237a68072be82ba110b96228a3e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/adaptive-topology.bin",
+      "sha": "eaa35f6bb3a54c3626c55c61f92ba8ce7b9978c9"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/authored-cuts.tsv",
+      "sha": "7de0079036006bb29f7b675b1e752d952298a802"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "bac1d25b909eef044e37a065ce001d5813e3ea57"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "c4055f6f6f2ebea2ca4e4f9a97e7f25ea105a1b8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "d9328907734d776279df08bb6be69c5939a3a462"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "a5c415747da2762cf554e5e801efdbdd3f6784e7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "ec3937c35aace56f597911ede8547e55c352ed68"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/scene-package/scene.bin",
+      "sha": "313bc46be23c33fde55d00f471ee9f97cbff55e3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/source-provenance.json",
+      "sha": "e662c868fd385d498bd3b653434e6666ce84c318"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/terrain-physics.hcs2",
+      "sha": "ee2cec7aefd98e6d2be4c071a3f01e052a522144"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/tile_0_0.png",
+      "sha": "17529f679f581d6c22b9c93ada0088e9381e261f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/verification.json",
+      "sha": "a861ca4970a7901926b85b2189ba0926721cd973"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-09/terrain-world/world.properties",
+      "sha": "acf4a1a5a06aaa0e1d4a9a42fc7fb6dee1fb5726"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/adaptive-topology.bin",
+      "sha": "0399ceda71ec71b4c59905913e7f9bd7a7f2e874"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/authored-cuts.tsv",
+      "sha": "c86967ae35ffe015ffa3c02fea3bf474a5c79905"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "603b2368ab707caf18c08ddce2effbed5d6e66f8"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "36be2a53e15332ea8ec60a2bd57b12f24ac74d32"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "86112bffbff9796fe0046f8fe8562a3161d00bd5"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "85e4f912693fe5488e2821a4ee3a1a9a734771a2"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "f9d30eeb85bb03ecec1d8461a001496b7a47a3fd"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/scene-package/scene.bin",
+      "sha": "9aef5591069aae93064b53c5032ce6c0a9fa79a3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/source-provenance.json",
+      "sha": "d9abc694ef9eabbf20afb9fd35b11f9292084c94"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/terrain-physics.hcs2",
+      "sha": "8cb5b5f662db046b262fcb72a9c2e7b56b9a65ef"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/tile_0_0.png",
+      "sha": "6d1dace87be68df542b7f22b68049fc9c16c26cc"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/verification.json",
+      "sha": "74a2db81870870e49c87a803de41172b38988e1a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-10/terrain-world/world.properties",
+      "sha": "f621a47ac51967f570ba473c86e7377cfa0ec146"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-11/terrain-world/adaptive-topology.bin",
+      "sha": "179e4e5b298fb7bb4c760cfb74c11c5994a9d84a"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-11/terrain-world/authored-cuts.tsv",
+      "sha": "0f1fe7c19521677376687a0c05fc9004d590500e"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-11/terrain-world/scene-package/meshes/site.obj",
+      "sha": "76bf144595aa9c5e961cea2a4c634c994c50b353"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-11/terrain-world/scene-package/scene.bin",
+      "sha": "b8e9acf0571b7e7ae10ff7af5a2fcdf2ecdec2ba"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-11/terrain-world/source-provenance.json",
+      "sha": "5a0c2bfcd0de460af14cb00bbff5ab2ccb060c98"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-11/terrain-world/terrain-physics.hcs2",
+      "sha": "87ec0158c194b00eed2fc2a7843c9d5a7afafdbb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-11/terrain-world/tile_0_0.png",
+      "sha": "a0fed10982224fef3fc18d6556e7d090ed0ea8e3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-11/terrain-world/verification.json",
+      "sha": "7184445753fde1d2100a6d81bbc3b8efdd074685"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-11/terrain-world/world.properties",
+      "sha": "3cc484e2ac297ab5835d1288cb5db80db15d42aa"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/adaptive-topology.bin",
+      "sha": "3437c6c7829e85b65fb3be33385d1def47db1512"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/authored-cuts.tsv",
+      "sha": "9d6118f8ae453c978c7fe967a6e3eda3f6c730fb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "e4fca40eeef5f92953947797c24795f4d04d1c9c"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "cc32a2f4c42a132ea90154759bb769dcbcb48bea"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "42ed54ceb3c303e67e91ec7cc5aec242c56e36f6"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "ea6569e82e290d51567d336875dd0c51e552e2a4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "718cdbba7ef754edfe125ee9ad014e63eb752d44"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/scene.bin",
+      "sha": "0752b44fa8de9253b6cb4291220846216c8cc8a1"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/source-provenance.json",
+      "sha": "0975500ccb5461b58c214da94980b3f573c663cb"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/terrain-physics.hcs2",
+      "sha": "038bbbeb673149c2285246cdc23082912b663b01"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/tile_0_0.png",
+      "sha": "e8ee2f3cfcead7971b3c28c7356273d9b0a224b3"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/verification.json",
+      "sha": "1b5a0caa1ab4dc999a49b650fc383c03535a4bc4"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/world.properties",
+      "sha": "b59cb0a638b3287047ba1a283351eb57896eb094"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/adaptive-topology.bin",
+      "sha": "3b7f3d0dd9e93248a003622724883cb243b92560"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/authored-cuts.tsv",
+      "sha": "6370f1cf594b2ec7b49c026fa2fea9ad1a567400"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "31f820fbd5a2fa0a74c7c01d779b10f4ebb700ae"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "5cb562373ecd5ccd90927b1adc15b9fe2e27384f"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "dc925d71ada1ff31f32d2bc1f0a894a8112443ee"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "e8987214f30d0aed8b103e48d0312edcd009abe7"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "75ae299a83793b05c8dba5fcb7af9116a265c677"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/scene-package/scene.bin",
+      "sha": "5abb54b3f957fd1cac3aa01dd44c68709973d51d"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/source-provenance.json",
+      "sha": "bfe4dfe6fc7b597e85200dc6af0f0f5d101b2cf1"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/terrain-physics.hcs2",
+      "sha": "e972f1394a4b422e759d9d38dbfe34d67b9e5376"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/tile_0_0.png",
+      "sha": "316a580a8a8d1ccf7efce382927994b3f9523780"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/verification.json",
+      "sha": "4dfff1cba1955eb892dc9cb02ab2f884ded9e91b"
+    },
+    {
+      "path": "development/levels/rebuild/terrain-overall-pass/worlds/wld-13/terrain-world/world.properties",
+      "sha": "20a43911bc49ef21b5b68cfa4e24c9fc9432d551"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "cd0aae579803f8238438f93d5d08cbe37a546275"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "1796649c67780b2c8ed7b40a92acf05a8eaa5bdd"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "c858e4641f3b0d2bde643e35d9309700f32cfe5d"
+    },
+    {
+      "path": "tools/author_roster_macroterrain.py",
+      "sha": "367714922d96d43e9bff02508cb1a0fce2280d63"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "d002cce1c87a46e220d9b6e72594b0be7a684ea8"
+    },
+    {
+      "path": "tools/check_macroterrain_exports.py",
+      "sha": "6095341c51a24b0c93b4814b16e7f230a62b7c28"
+    },
+    {
+      "path": "tools/check_macroterrain_sources.py",
+      "sha": "3506d0f7c63b78ac5850c9f368a31a50a873221f"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "1009b12b57594e57f349bbd3cb7545cfbb5328d6"
+    },
+    {
+      "path": "tools/java/RosterTerrainBuild.java",
+      "sha": "fc61bc1712ebc032ac7d269e419aa2f4af1a34df"
+    },
+    {
+      "path": "tools/review_roster_macroterrain.py",
+      "sha": "150caea0dfa3dc06ca4198221af7f9adaba79f17"
+    },
+    {
+      "path": "tools/summarize_roster_macroterrain.py",
+      "sha": "c0dbe29d6c72a832a9f86237eebb81ae9f67ed27"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/macroterrain-batch/macroterrain-sheet-06.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}

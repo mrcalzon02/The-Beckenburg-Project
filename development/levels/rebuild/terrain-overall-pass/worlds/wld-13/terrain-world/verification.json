@@ -1,0 +1,17 @@
+{
+  "site":"wld-13",
+  "cutout_leaves":2497,
+  "new_cutouts":0,
+  "clear_hole_probes":1917,
+  "triangles":10437,
+  "source_height_sha256":"846f7bf4eca48accad59887a9385145c37e7b573d655b58f7e87dec085baafab",
+  "physics_sha256":"a2e112bf28e991d6ee622dd29cf806167eef69c9c4a9249605d3b3866dfe1dfe",
+  "obj_chunks":4,
+  "obj_sha256_semantics":"SHA256 of ordered chunk SHA256 values with LF",
+  "obj_sha256":"269f4c57816c24956d91fbcfb4cff2cc29ff58074caa8c9f3c495212cd9d17fa",
+  "source_heights_unchanged_by_punch":true,
+  "disk_reopen_verified":true,
+  "unpunched_optical_negative_verified":true,
+  "punched_body_clear_and_unpunched_body_blocked":true,
+  "status":"SAVED_EDITOR_TERRAIN_CANDIDATE_NOT_LOCATION_ACCEPTED"
+}

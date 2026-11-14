@@ -1,0 +1,409 @@
+{
+  "id": "WLD-04",
+  "title": "Widow's Peak Fire Lookout",
+  "source": "rebuild\\wld-04\\rough-layout.json",
+  "source_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+  "zones": 14,
+  "routes": 16,
+  "shell_openings": [
+    {
+      "zone": "hut",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "hut",
+      "side": "E",
+      "link": "L05",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ruin",
+      "side": "S",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ruin",
+      "side": "S",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "ruin",
+      "side": "W",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "ruin",
+      "side": "W",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "N",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "store",
+      "side": "N",
+      "link": "L08",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cab",
+      "side": "E",
+      "link": "L15",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cab",
+      "side": "E",
+      "link": "L15",
+      "width": 2,
+      "height": 2.45
+    }
+  ],
+  "meshes": 214,
+  "issues": [
+    {
+      "zone": "bend",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          13.1592864415207,
+          35.21533401208599,
+          28.840713558479298,
+          51.78466598791401
+        ],
+        [
+          27.18682720163547,
+          50.186827201635474,
+          43.813172798364526,
+          66.81317279836453
+        ]
+      ]
+    },
+    {
+      "zone": "clearing",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.86155808228966,
+          21.837365440327094,
+          31.13844191771034,
+          36.1626345596729
+        ],
+        [
+          11.18682720163547,
+          19.18682720163547,
+          28.81317279836453,
+          36.813172798364526
+        ],
+        [
+          41.858880441779284,
+          34.85736005522241,
+          46.141119558220716,
+          51.14263994477759
+        ],
+        [
+          28.950614276807805,
+          21.529585710293155,
+          44.049385723192195,
+          51.470414289706845
+        ]
+      ]
+    },
+    {
+      "zone": "hut",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.86155808228966,
+          21.837365440327094,
+          31.13844191771034,
+          36.1626345596729
+        ],
+        [
+          11.18682720163547,
+          19.18682720163547,
+          28.81317279836453,
+          36.813172798364526
+        ],
+        [
+          41.858880441779284,
+          34.85736005522241,
+          46.141119558220716,
+          51.14263994477759
+        ],
+        [
+          28.950614276807805,
+          21.529585710293155,
+          44.049385723192195,
+          51.470414289706845
+        ]
+      ]
+    },
+    {
+      "zone": "ruin",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.86155808228966,
+          21.837365440327094,
+          31.13844191771034,
+          36.1626345596729
+        ],
+        [
+          11.18682720163547,
+          19.18682720163547,
+          28.81317279836453,
+          36.813172798364526
+        ],
+        [
+          41.858880441779284,
+          34.85736005522241,
+          46.141119558220716,
+          51.14263994477759
+        ],
+        [
+          28.950614276807805,
+          21.529585710293155,
+          44.049385723192195,
+          51.470414289706845
+        ]
+      ]
+    },
+    {
+      "zone": "store",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.86155808228966,
+          21.837365440327094,
+          31.13844191771034,
+          36.1626345596729
+        ],
+        [
+          11.18682720163547,
+          19.18682720163547,
+          28.81317279836453,
+          36.813172798364526
+        ],
+        [
+          41.858880441779284,
+          34.85736005522241,
+          46.141119558220716,
+          51.14263994477759
+        ],
+        [
+          28.950614276807805,
+          21.529585710293155,
+          44.049385723192195,
+          51.470414289706845
+        ]
+      ]
+    },
+    {
+      "zone": "return",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          13.1592864415207,
+          35.21533401208599,
+          28.840713558479298,
+          51.78466598791401
+        ],
+        [
+          27.18682720163547,
+          50.186827201635474,
+          43.813172798364526,
+          66.81317279836453
+        ]
+      ]
+    },
+    {
+      "zone": "foot",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          26.86155808228966,
+          21.837365440327094,
+          31.13844191771034,
+          36.1626345596729
+        ],
+        [
+          11.18682720163547,
+          19.18682720163547,
+          28.81317279836453,
+          36.813172798364526
+        ],
+        [
+          41.858880441779284,
+          34.85736005522241,
+          46.141119558220716,
+          51.14263994477759
+        ],
+        [
+          28.950614276807805,
+          21.529585710293155,
+          44.049385723192195,
+          51.470414289706845
+        ]
+      ]
+    },
+    {
+      "zone": "landing",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          24.85,
+          4.2,
+          27.15,
+          12.2
+        ]
+      ]
+    },
+    {
+      "zone": "cab",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.3,
+          4.2,
+          29.099999999999998,
+          8.1
+        ]
+      ]
+    },
+    {
+      "zone": "deck",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.3,
+          4.2,
+          29.099999999999998,
+          8.1
+        ]
+      ]
+    },
+    {
+      "zone": "upper-turn-platform",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          29.900000000000002,
+          4.2,
+          31.7,
+          8.1
+        ]
+      ]
+    },
+    {
+      "link": "L03",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L04",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L06",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L09",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L10",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L11",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L13",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L14",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    },
+    {
+      "link": "L14B",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [
+    "Refine tower into at least four actual stair flights with landings; the two diagram connectors are grouped reservations.",
+    "The single tower exit is a deliberate risk requiring playtest; do not promise hunt fairness from graph connectivity.",
+    "Hillside grades and contour return need terrain support and collision tests."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "e60e974cae4e23c15a60106071ceb7ac6bec522ca53b2dbdf38019a3a1e647f0",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "51b691755879494c82467abefa14e399416640f00829cbf45106e94e6abd06ec",
+    "independently_reimported": true,
+    "meshes": 210,
+    "triangles": 2560,
+    "floor_parts": 16,
+    "ceiling_cap_parts": 4,
+    "stair_treads": 153,
+    "checked_closed_solids": 210,
+    "measured_depth_parts": 20,
+    "exported_cap_rays": 4,
+    "route_support_solids": 13,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/rebuild/wld-04/rough-layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/rebuild/wld-04/rough-layout.json": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104",
+    "development/levels/blockouts/wld-04/rough-shell.blend": "d3174563d6f470f765188b86c6fa00157b09d3dbbed88bdc23fbc44478c424f9",
+    "development/levels/blockouts/wld-04/rough-shell.glb": "db76a58bdb589b28e3fb80f32846780af6a7283ede47a773e9175007eeeed728"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

@@ -1,0 +1,7 @@
+Exception in thread "main" java.lang.IllegalStateException: Cutout budget exceeded
+	at org.beckenburg.editor.AdaptiveTerrainTopology.punch(AdaptiveTerrainTopology.java:154)
+	at org.beckenburg.editor.TerrainFootprintCutout.cut(TerrainFootprintCutout.java:48)
+	at org.beckenburg.editor.TerrainFootprintCutout.cut(TerrainFootprintCutout.java:57)
+	at org.beckenburg.editor.TerrainFootprintCutout.punch(TerrainFootprintCutout.java:28)
+	at org.beckenburg.RosterTerrainBuild.build(RosterTerrainBuild.java:99)
+	at org.beckenburg.RosterTerrainBuild.main(RosterTerrainBuild.java:31)

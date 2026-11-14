@@ -1,0 +1,147 @@
+{
+  "site": "WLD-15",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-15/rough-layout.json",
+  "source_layout_sha256": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f",
+  "structure_glb_sha256": "b409333f0ce1588b83cb93c0a85fd3f4528d2ef915e55a3f8d1b09d04abace11",
+  "furnished_glb_sha256": "dbba6887c3731f22af0c8cd55b809b53f4238228d56643467575bd25b7332bad",
+  "native_sha256": "a2a049c125ab53375c95bda781db91d79f55034954742a4dc29a4bca124f5a46",
+  "requests": 5,
+  "placements": [
+    {
+      "id": "WLD-15:processing:0:0",
+      "zone": "processing",
+      "purpose": "Fish processing hall / Wharf fish processing/sorting station / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_fish_sorting_bench",
+      "asset": "level_blockout_fish_sorting_bench",
+      "source_sha256": "7903a1648b2d1743a979e67bb8e18d50c4f44557f0f6f70217e4cdc982160d2d",
+      "bounds": [
+        26.84400177001953,
+        -9.165000915527344,
+        0.0,
+        29.104000091552734,
+        -8.160000801086426,
+        1.0750000476837158
+      ],
+      "rect": [
+        26.84400000190735,
+        8.16,
+        29.103999992370607,
+        9.164999995231629
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-15:bridge:1:0",
+      "zone": "bridge",
+      "purpose": "Wheelhouse / Operations desk and unlit console / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_console",
+      "asset": "level_blockout_console",
+      "source_sha256": "63b4f6691794b22bb0800edbc6100392c87bf927f3cae6cd130d784d19c8f096",
+      "bounds": [
+        26.97599983215332,
+        -18.90999984741211,
+        6.0,
+        28.575998306274414,
+        -18.15999984741211,
+        7.534999847412109
+      ],
+      "rect": [
+        26.97599999523163,
+        18.16,
+        28.576000019073486,
+        18.91
+      ],
+      "floor_y": 6,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    },
+    {
+      "id": "WLD-15:crew:2:0",
+      "zone": "crew",
+      "purpose": "Crew bunks / Saint Elara berth, locker and galley module / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_ship_crew_berth",
+      "asset": "level_blockout_ship_crew_berth",
+      "source_sha256": "f9551f7808c939022bc258f771012bb3eb7c51e9a95f196bd75a3b660a228680",
+      "bounds": [
+        26.871999740600586,
+        -32.290000915527344,
+        3.0,
+        28.99199867248535,
+        -30.15999984741211,
+        4.820000171661377
+      ],
+      "rect": [
+        26.872000022888184,
+        30.16,
+        28.991999908447266,
+        32.29000011444092
+      ],
+      "floor_y": 3,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 60
+    },
+    {
+      "id": "WLD-15:galley:3:0",
+      "zone": "galley",
+      "purpose": "Galley / Freestanding stove with four hot plates and oven / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_domestic_kitchen_range",
+      "asset": "level_blockout_domestic_kitchen_range",
+      "source_sha256": "9a024553c055d319ecbe298eaf4868045c7ed7ec3d6dfffd8912b452183ef396",
+      "bounds": [
+        25.503999710083008,
+        -30.90999984741211,
+        0.0,
+        26.463998794555664,
+        -30.15999984741211,
+        1.534999966621399
+      ],
+      "rect": [
+        25.504000004291534,
+        30.16,
+        26.46399998283386,
+        30.91
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 208
+    },
+    {
+      "id": "WLD-15:net:4:0",
+      "zone": "net",
+      "purpose": "Net and gear store / Two wharf storage fish bins / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_wharf_open_fish_crates",
+      "asset": "level_blockout_wharf_open_fish_crates",
+      "source_sha256": "460d3c0c3465387fc59f03ffe60a83ee4913274fbb1ac3501c008d03039c0f86",
+      "bounds": [
+        26.860000610351562,
+        -8.880001068115234,
+        3.0,
+        29.040000915527344,
+        -8.15999984741211,
+        3.799999952316284
+      ],
+      "rect": [
+        26.85999998664856,
+        8.16,
+        29.040000053405763,
+        8.88000002861023
+      ],
+      "floor_y": 3,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 144
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "349da2ead9cef774b360ad29df5ccd306f3477eafa930ff531c6c2e09ebf54f5",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 5,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

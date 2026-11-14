@@ -1,0 +1,29 @@
+{
+  "status": "PASS_SCOPED_SOURCE_SOLID_NATIVE_EDITABLE_CHECKS",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "retained_source_meshes": 546,
+      "replaced_source_parts": 144,
+      "closed_new_parts": 144,
+      "new_triangles": 5220,
+      "packed_images": 13,
+      "blend_sha256": "ea07933c7a9c81cf0a1c8bc85f4580933bc6bddf3160c6dc47bb316abd268858",
+      "glb_sha256": "59bf1b715744b4ad11384f63eb63d9cdbb93a3e5bed9b6f1be71d0c2d08ce173",
+      "physics_sha256": "b85afa617de49871a8ad1e6e0c1e8d263fda31d7e86d782d5b46ec9dd18a6087"
+    },
+    {
+      "id": "WLD-08",
+      "retained_source_meshes": 228,
+      "replaced_source_parts": 47,
+      "closed_new_parts": 47,
+      "new_triangles": 1854,
+      "packed_images": 14,
+      "blend_sha256": "4820a7eb460fb7245992d0e4e7906ea5147028cdce10b39e3cfd27a278e56d03",
+      "glb_sha256": "b812a817d6e9023552bf273930b9655f511f240b507df7cf1f53305b14e4a31f",
+      "physics_sha256": "f4f71ff8b880e271215e7db137c78616f04ce379e37b3ec71ffb85b6b41ef65e"
+    }
+  ],
+  "checker_sha256": "2f81edfe256a1677fb2e2ff43d4270777039334a1d4b8fd454efaf5a658b3ccd",
+  "limitations": "No full map, guard/support engineering, runtime/network or hardware acceptance."
+}

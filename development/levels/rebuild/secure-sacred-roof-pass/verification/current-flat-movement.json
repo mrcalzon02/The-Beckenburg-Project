@@ -1,0 +1,237 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "CHURCH": {
+      "before": {
+        "flat_links": 28,
+        "pass_both_directions": 20
+      },
+      "after": {
+        "flat_links": 28,
+        "pass_both_directions": 20
+      },
+      "current_lanes": {
+        "samples": 3783,
+        "valid_standing": 3025,
+        "invalid_standing": 758,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "NO_FOOT_SUPPORT_0.22_0.0": 5,
+          "NO_FOOT_SUPPORT_0.0_0.22": 4,
+          "NO_CENTRE_SUPPORT": 611,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 26,
+          "PHYSICAL_COMPONENT": 98,
+          "FOOT_HEIGHT_SPREAD": 10
+        },
+        "physical_components": [
+          [
+            "360:level_blockout_confessional_screen.001",
+            15
+          ],
+          [
+            "88:Wall chancel E.001",
+            13
+          ],
+          [
+            "8:Wall nave W",
+            11
+          ],
+          [
+            "73:Wall confessional W",
+            9
+          ],
+          [
+            "3:Wall nave N.001",
+            8
+          ],
+          [
+            "320:L33 flight0 step15",
+            7
+          ],
+          [
+            "319:L33 flight0 step14",
+            7
+          ],
+          [
+            "62:Wall conversation-entry W.001",
+            6
+          ],
+          [
+            "61:Wall conversation-entry W",
+            6
+          ],
+          [
+            "321:L33 flight0 step16",
+            5
+          ],
+          [
+            "119:Wall vestry E.001",
+            4
+          ],
+          [
+            "11:Wall nave E",
+            3
+          ],
+          [
+            "322:L33 flight0 step17",
+            2
+          ],
+          [
+            "96:Wall chapel S.001",
+            1
+          ],
+          [
+            "107:Wall vestry N",
+            1
+          ]
+        ]
+      }
+    },
+    "PRISON": {
+      "before": {
+        "flat_links": 36,
+        "pass_both_directions": 31
+      },
+      "after": {
+        "flat_links": 36,
+        "pass_both_directions": 31
+      },
+      "current_lanes": {
+        "samples": 7206,
+        "valid_standing": 6546,
+        "invalid_standing": 660,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 13,
+          "NO_FOOT_SUPPORT_0.22_0.0": 15,
+          "NO_FOOT_SUPPORT_0.0_0.22": 9,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 21,
+          "NO_CENTRE_SUPPORT": 590,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 5,
+          "FOOT_HEIGHT_SPREAD": 7
+        },
+        "physical_components": [
+          [
+            "Flat route shell Wall plant-stair W.001",
+            4
+          ],
+          [
+            "Flat route shell Wall medical-link E",
+            3
+          ],
+          [
+            "Flat route shell Wall a-lower-gallery S",
+            2
+          ],
+          [
+            "Flat route shell Wall b-lower-gallery S.001",
+            2
+          ],
+          [
+            "585:Wall plant-stair S.001",
+            1
+          ],
+          [
+            "584:Wall plant-stair S",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-10": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "current_lanes": {
+        "samples": 4611,
+        "valid_standing": 4610,
+        "invalid_standing": 1,
+        "reasons": {
+          "FOOT_HEIGHT_SPREAD": 1
+        },
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "CHURCH": {
+      "before": {
+        "contract": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+        "contract_sha256": "b46b4d8c908507b4b34f3c35dddbfcb90241bd67bbd3b92db9f1b5e5589345a8",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "layout_sha256": "a59c9747db58f7b573ac966b176e4b62b23440b4697fb7050bf27f146841d430",
+        "native": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+        "native_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/secure-sacred-roof-pass/church/construction.json",
+        "contract_sha256": "d8e8d42adba7f1e8c4cb1c34cef6ec526c76b7a06542316dba949d117bd35193",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+        "layout_sha256": "a59c9747db58f7b573ac966b176e4b62b23440b4697fb7050bf27f146841d430",
+        "native": "development/levels/rebuild/secure-sacred-roof-pass/church/enclosed-roofs.hcs2",
+        "native_sha256": "cd59f34898b1a431da79a35abb6943d1133b3654860b526defba0cf0bcc014bf"
+      }
+    },
+    "PRISON": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/prison/construction.json",
+        "contract_sha256": "d8f188f5a56cf187a1d50578e3e20668d1ce30ba44aa946990d454f13a7decde",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+        "layout_sha256": "6372b06e9251e02d76adf24fda6a1382c37c5b674f0fcd56676b8744f6c4eb85",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/prison/access-routes.hcs2",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/secure-sacred-roof-pass/prison/construction.json",
+        "contract_sha256": "5074ee89651955b588564eaafdf2ea877fb345646671497affaaa299b788e76e",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+        "layout_sha256": "6372b06e9251e02d76adf24fda6a1382c37c5b674f0fcd56676b8744f6c4eb85",
+        "native": "development/levels/rebuild/secure-sacred-roof-pass/prison/enclosed-roofs.hcs2",
+        "native_sha256": "df46effe467c327ab261ddc26a4b06d20c302b2b131248e11d9010376c7e4bc9"
+      }
+    },
+    "WLD-10": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/wld-10/construction.json",
+        "contract_sha256": "1d5deb97b2d177f1b87ac16715fe87c69212099a96a965904d738e6b0e9850e7",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-10/authored-layout.json",
+        "layout_sha256": "236f2a0bc6ca43d7cf1360e533eea0de32b50c25f28c9681a1dd6153942eee82",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-10/access-routes.hcs2",
+        "native_sha256": "e0de91c2570edea9fe8bf8944056a47e4631696d354a57b50d4e1d8c4936814a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/secure-sacred-roof-pass/wld-10/construction.json",
+        "contract_sha256": "fb84d3b78945c810dbf0d51ce6fb3c1376eb24f1a443b0dc0b56c147b8dd3722",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-10/authored-layout.json",
+        "layout_sha256": "236f2a0bc6ca43d7cf1360e533eea0de32b50c25f28c9681a1dd6153942eee82",
+        "native": "development/levels/rebuild/secure-sacred-roof-pass/wld-10/enclosed-roofs.hcs2",
+        "native_sha256": "b13a1c1216c585751423192eb4d7947b3c09af24bc66ac78afda0d86aef6897e"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/institution-roof-pass/roster.json": "57163526d494ce9f5e5f8a2155be4ed15b168bc56949ca04798eacf706afbfee"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/current-flat-failure-contacts.tsv": "01788f16b308619688808cfb107d480e4880d4a396184dd50238045540a678b1",
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/current-flat-failure-input.tsv": "5f42b46ea52feab6814086dd5fd5bae0b8820fdd068c1ad8d5ca120d102e4a83",
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/current-flat-lane-input.tsv": "b48e9165ccbaad74dffc8ec5d18bd68c2233dec614041fe146da2812604256b5",
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/current-flat-lane-names.tsv": "cbe43d58a367292ab6966e37eb33ca06c9cd2b8a73ecfe7b3b72aa333adb4691",
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/current-flat-lanes.tsv": "02dd34b97d865bff43f4c9d0673b67c216e76b0a7c9a4b096d2d2cb3892cb175",
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/current-flat-links.tsv": "1cb847034a0e1a54b5be77a6d60ce532eeedc800cac87ab56f629ea919945459",
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/current-flat-names.tsv": "cbe43d58a367292ab6966e37eb33ca06c9cd2b8a73ecfe7b3b72aa333adb4691",
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/current-flat-paths.tsv": "e953328e072a9dd8e3a14a354548d74889c561d647273cf427e844894481d4fc"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

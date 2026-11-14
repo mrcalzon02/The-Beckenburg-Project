@@ -1,0 +1,90 @@
+{
+  "id": "WLD-03",
+  "source_world": "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world",
+  "source_height_sha256": "4a55dfe0924a92660897220f5525a7c27d63adee7849af6cdc1253b986150c42",
+  "layout": "development/levels/rebuild/wld-03/rough-layout.json",
+  "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+  "program": [
+    {
+      "link": "L04",
+      "points": [
+        [
+          12.0,
+          0,
+          52.0
+        ],
+        [
+          12.0,
+          4,
+          34.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    },
+    {
+      "link": "L07",
+      "points": [
+        [
+          12.0,
+          4,
+          34.0
+        ],
+        [
+          34.0,
+          8,
+          16.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    }
+  ],
+  "grading_limit": "LOWER_ONLY",
+  "new_basement_punches": [],
+  "method": "Actual editor non-destructive lower-only bench layers and persistent footprint topology punches; retain source landforms/source16bitPNG and previous holes; no room-pad snapping or render-only hole.",
+  "source_glb": "development/levels/rebuild/stair-opening-pass/wld-03/opened-stairs.glb",
+  "source_glb_sha256": "141dbe4da15d1ff10059478606c00a86519fd3aeca39843d3db492273c1fffda",
+  "source_physics": "development/levels/rebuild/stair-opening-pass/wld-03/opened-stairs.hcs2",
+  "source_physics_sha256": "3ceb5739144d5a805f070e225019fa5ad01b52eaa72b7ec7da44bfc8af4237e4",
+  "source_world_files_preserved": {
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/adaptive-topology.bin": "938923743ba10cacb029404add7e2d9eed377ec0dde9c5c77ff4bf2cb6e29b16",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/authored-cuts.tsv": "c8f831622e7c93a737f3360f32c3efd95fbf29bce921796cc2af4fb11817b862",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/source-provenance.json": "0e77c25320bac0bf09eba9ab756fb96f174d924b53e3abe5a4adf50f969d9505",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/terrain-physics.hcs2": "5a4622414250f2e72922e6eba4dbbb6ba20b52270aaaccaef96fbf5a5c3c7240",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/tile_0_0.png": "4a55dfe0924a92660897220f5525a7c27d63adee7849af6cdc1253b986150c42",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/verification.json": "70a393b79b41cce04671153c47087bc58937359ba69f56c138fdefacdf3565b7",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/world.properties": "6b147c274f7f0fad8e5e20ad2f49d2e4743824c85318ad89b65616174f691654",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous": "dca695119e6f8ca42b064117fa278042f3e5c9d0e2f7035f8c5a1207e5961cda",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/scene.bin": "b775f32932e646646fdda3cfeba2112b29277c4041b259e4a5f0362af40bfc3e",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj": "8be071fbd7ed7ebcfff0fd4b40db5faa67b52a64b8af2c411a392a6309be1e67",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj": "c5b1fa70f3fd3787de23b2a9e10899fe2eb0335630ebb3f927f716e56531deff",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj": "73a3dff0047ba11727281937b0c015ae9edda8ceeb60b32cf356a5782d902090",
+    "development/levels/rebuild/terrain-occupancy-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj": "b17102bced21039fbd89c6b283657773f555af875e4e4171ed6bd016a2246618"
+  },
+  "world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/adaptive-topology.bin": "938923743ba10cacb029404add7e2d9eed377ec0dde9c5c77ff4bf2cb6e29b16",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/authored-cuts.tsv": "c8f831622e7c93a737f3360f32c3efd95fbf29bce921796cc2af4fb11817b862",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/authored-path-grading.sha256": "6e3b54eafe42c0180e1496c1778412ca7ac5e3b1d59c8d097b3de8b0537bab10",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/source-provenance.json": "90d030d87676948a7cb3cec18e6e4279b246ab27af20793945f1908560a46c7c",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/terrain-physics.hcs2": "5b0a9e900e0b91a28dc108db975b6227e069a9b00f746455290d5fdb3784ea8f",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/tile_0_0.png": "4a55dfe0924a92660897220f5525a7c27d63adee7849af6cdc1253b986150c42",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/verification.json": "bb91656c1c76913fe6311adccc9bd2795ac978c866a1d582cfae7fad08869f65",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/world.properties": "6b147c274f7f0fad8e5e20ad2f49d2e4743824c85318ad89b65616174f691654",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous": "ae85f3b97cf47813cf7caa4f25ebc4bc83f9f0f448dd5bb075740a458d26a1d8",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/scene.bin": "fbc9fd3064d5233b617b417bb967c9769cfacae66fdd4eb16751a804b8b68775",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/terrain-layers/tile_0_0.bin": "4874a59d7520d3641dc251c20e0f33f76e6727e34aeb0c4c5a4311b1d7c8951f",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj": "6c4cf7017fc926fbedfa175514dfe1e5e41d048c7a14146549c3c68e27894fd5",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj": "c5b1fa70f3fd3787de23b2a9e10899fe2eb0335630ebb3f927f716e56531deff",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj": "73a3dff0047ba11727281937b0c015ae9edda8ceeb60b32cf356a5782d902090",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj": "b17102bced21039fbd89c6b283657773f555af875e4e4171ed6bd016a2246618"
+  },
+  "author_sha256": "01a1cfaf38b3a74f0c23b2ab9ad83b3bf636c913c94b2d680aee6d4b554e5601",
+  "builder_sha256": "de0763d64f58440f0f7b97ef0247443df44f6553d318030836385ca08052f2b8",
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "status": "SAVED_EDITOR_STAIR_BED_AND_BASEMENT_PUNCH_CANDIDATE_NOT_TERRAIN_ACCEPTANCE",
+  "remaining": "Actual composite/export/native regression and full-site landscape, retaining/cave/edge/arrival acceptance; no runtime integration or unlock."
+}

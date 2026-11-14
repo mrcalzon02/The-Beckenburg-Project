@@ -1,0 +1,33 @@
+{
+  "reason": "Full arrival grade must not be overwritten by a weaker overlapping garden/campus shoulder; saved values checked after disk reopen",
+  "checks": [
+    {
+      "site": "school",
+      "x": 22,
+      "z": 44,
+      "expected_y": 0,
+      "actual_saved_y": 7.360199560935143e-09
+    },
+    {
+      "site": "school",
+      "x": 28,
+      "z": 44,
+      "expected_y": 0,
+      "actual_saved_y": 7.362928045040462e-09
+    },
+    {
+      "site": "asylum",
+      "x": 28,
+      "z": 60,
+      "expected_y": -0.04,
+      "actual_saved_y": -0.04000001416796195
+    },
+    {
+      "site": "asylum",
+      "x": 32,
+      "z": 62,
+      "expected_y": 0,
+      "actual_saved_y": 7.375206223514397e-09
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+# Stair end and corner construction checkpoint
+
+All29packets have an explicit decision in roster.json. Eleven source-only candidates add visible closed end supports. Battery and other overhanging high landings retain the original walkway; descending flights move inward with full-width flat lead-ins and updated authored-layout.json coordinates. Native stair component identities are explicit. Original geometry, UVs, resources, pivots and collision remain exact except the individually named replaced stair treads. Saved terrain and its holes remain unchanged.
+
+All25native candidates compared:110409flat samples,99937baseline-valid standing poses,94879qualified sweeps,47recovered poses, zero new blocks/sweep failures.221vertical segments improve186→196 passing both ways;84full links improve49→56; no previous passing direction regresses. Both cemetery14segmentloops remain pass both ways. Independent exact resource/mesh/native/closed solid/nondegenerate and editable packed-source checks pass across11new candidates. Rejected narrowing and stale-rotation evidence remains labeled and excluded from usable asset counts.
+
+Native overview/isolated/closeup captures are construction evidence only. Closeup sheets show actual battery lead-ins and other repairs; several terrain/roof/wall views remain occluded. Construction3/5, finish1/5. No full visual acceptance or runtime unlock.
+
+Next batch:25failed flight segments and28failed complete links remain. Author real wall/portal/floor openings, earth grading/holes and separate crossed-flight bays; preserve the40space budget and asset library. Recheck exact support/headroom and full routes after each structural revision. Guards/framing, canonical van arrival, power/hiding/story, native runtime integration, networking, installed hardware and recovery gates stay open. Do not use fog to excuse unfinished structure. No editor UI or round-duration testing.

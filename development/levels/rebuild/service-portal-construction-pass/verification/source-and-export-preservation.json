@@ -1,0 +1,3567 @@
+{
+  "sites": [
+    {
+      "site": "WLD-12",
+      "original_nonremoved_records_exact": true,
+      "original_terrain_exact": true,
+      "source_room_contracts_preserved": true,
+      "removed_parts": 47
+    },
+    {
+      "site": "WLD-16",
+      "original_nonremoved_records_exact": true,
+      "original_terrain_exact": true,
+      "source_room_contracts_preserved": true,
+      "removed_parts": 92
+    },
+    {
+      "site": "WLD-18",
+      "original_nonremoved_records_exact": true,
+      "original_terrain_exact": true,
+      "source_room_contracts_preserved": true,
+      "removed_parts": 132
+    }
+  ],
+  "frames": [
+    {
+      "id": "WLD-12-z-62-14-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-12-z-76-20-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-12-x-28-69-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-12-x-16-54-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-12-x-24-54-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-12-x-44-54-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-12-x-52-54-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-12-z-30-58-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-12-z-22-34-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-12-x-40-6-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-12-z-12-46-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-z-42-18-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-z-50-18-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-13-45-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-z-46-42.5-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-39-43-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-46-49-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-13-22.5-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-13-27.5-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-13-32.5-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-13-37.5-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-39-22.5-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-39-27.5-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-39-32.5-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-16-x-39-37.5-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-18-z-70-19-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-18-x-10-56-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-18-z-54-34-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-18-x-28-48-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-18-x-40-48-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-18-z-54-47-y0",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-18-x-22-28-y-4",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-18-x-42-28-y-4",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-18-x-42-28-y-8",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    },
+    {
+      "id": "WLD-18-x-22-28-y-8",
+      "dimensions_and_sill_match_export": true,
+      "original_header_projection_preserved": true
+    }
+  ],
+  "new_closed_positive_solids": [
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean signal N pier0",
+      "closed": true,
+      "positive_volume": 0.9712867762755195
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean signal N lintel0",
+      "closed": true,
+      "positive_volume": 0.23491310781899483
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean signal N end",
+      "closed": true,
+      "positive_volume": 9.611347201080207
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean signal S pier0",
+      "closed": true,
+      "positive_volume": 5.291233572686906
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean signal S lintel0",
+      "closed": true,
+      "positive_volume": 0.23490902987432205
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean signal S end",
+      "closed": true,
+      "positive_volume": 5.291233572686906
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean signal W end",
+      "closed": true,
+      "positive_volume": 9.734391046142264
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean signal E pier0",
+      "closed": true,
+      "positive_volume": 4.398473893663322
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean signal E lintel0",
+      "closed": true,
+      "positive_volume": 0.2349115850406731
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean signal E end",
+      "closed": true,
+      "positive_volume": 4.398476640242734
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-a N end",
+      "closed": true,
+      "positive_volume": 5.760040283203125
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-a S end",
+      "closed": true,
+      "positive_volume": 5.760040283203125
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-a W pier0",
+      "closed": true,
+      "positive_volume": 5.118473207017814
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-a W lintel0",
+      "closed": true,
+      "positive_volume": 0.2349115850406731
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-a W end",
+      "closed": true,
+      "positive_volume": 5.118473207017814
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-a E pier0",
+      "closed": true,
+      "positive_volume": 5.118473207017814
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-a E lintel0",
+      "closed": true,
+      "positive_volume": 0.23491158504067355
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-a E end",
+      "closed": true,
+      "positive_volume": 5.118473207017814
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-b N end",
+      "closed": true,
+      "positive_volume": 5.760040283203125
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-b S end",
+      "closed": true,
+      "positive_volume": 5.760040283203125
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-b W pier0",
+      "closed": true,
+      "positive_volume": 5.118513885026914
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-b W lintel0",
+      "closed": true,
+      "positive_volume": 0.23491345195193425
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-b W end",
+      "closed": true,
+      "positive_volume": 5.118513885026914
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-b E pier0",
+      "closed": true,
+      "positive_volume": 5.118513885026914
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-b E lintel0",
+      "closed": true,
+      "positive_volume": 0.2349134519519307
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean coach-b E end",
+      "closed": true,
+      "positive_volume": 5.118513885026914
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean store N end",
+      "closed": true,
+      "positive_volume": 8.639991760253906
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean store S pier0",
+      "closed": true,
+      "positive_volume": 3.516475833435834
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean store S lintel0",
+      "closed": true,
+      "positive_volume": 0.28800676646092493
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean store S end",
+      "closed": true,
+      "positive_volume": 3.516475833435834
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean store W end",
+      "closed": true,
+      "positive_volume": 9.73446840820543
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean store E end",
+      "closed": true,
+      "positive_volume": 9.73446840820543
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean tunnel N end",
+      "closed": true,
+      "positive_volume": 8.639991760253906
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean tunnel S pier0",
+      "closed": true,
+      "positive_volume": 3.516475833435834
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean tunnel S lintel0",
+      "closed": true,
+      "positive_volume": 0.2880067664608832
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean tunnel S end",
+      "closed": true,
+      "positive_volume": 3.516475833435834
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean tunnel W end",
+      "closed": true,
+      "positive_volume": 21.25438005981414
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean tunnel E pier0",
+      "closed": true,
+      "positive_volume": 9.103743706054956
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean tunnel E lintel0",
+      "closed": true,
+      "positive_volume": 0.2880088092182369
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean tunnel E end",
+      "closed": true,
+      "positive_volume": 10.543753776855738
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean refuge N end",
+      "closed": true,
+      "positive_volume": 8.639999806880951
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean refuge S pier0",
+      "closed": true,
+      "positive_volume": 3.8512756240088493
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean refuge S lintel0",
+      "closed": true,
+      "positive_volume": 0.2349115850406729
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean refuge S end",
+      "closed": true,
+      "positive_volume": 3.8512756240088493
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean refuge W pier0",
+      "closed": true,
+      "positive_volume": 3.343703261918108
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean refuge W lintel0",
+      "closed": true,
+      "positive_volume": 0.2880088092182369
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean refuge W end",
+      "closed": true,
+      "positive_volume": 3.3437034228518314
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12 clean refuge E end",
+      "closed": true,
+      "positive_volume": 8.29445817647104
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-z-62-14-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056855300621125
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-z-76-20-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.1805661847331198
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-x-28-69-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056699339341475
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-x-16-54-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.1805668093315865
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-x-24-54-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056699339343446
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-x-44-54-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056765125903093
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-x-52-54-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056765125902735
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-z-30-58-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.33902420865345445
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-z-22-34-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.3390242086534574
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-x-40-6-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.6780517927219816
+    },
+    {
+      "site": "WLD-12",
+      "name": "WLD-12-z-12-46-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056662526959175
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean office N pier0",
+      "closed": true,
+      "positive_volume": 3.1313025691270013
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean office N lintel0",
+      "closed": true,
+      "positive_volume": 0.23491276368598635
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean office N end",
+      "closed": true,
+      "positive_volume": 3.1313025691270013
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean office S pier0",
+      "closed": true,
+      "positive_volume": 3.1313025691270013
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean office S lintel0",
+      "closed": true,
+      "positive_volume": 0.23491276368598013
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean office S end",
+      "closed": true,
+      "positive_volume": 3.1313025691270013
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean office W pier0",
+      "closed": true,
+      "positive_volume": 1.5184766402453533
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean office W lintel0",
+      "closed": true,
+      "positive_volume": 0.2349115850406731
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean office W end",
+      "closed": true,
+      "positive_volume": 2.9584752669543377
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean office E end",
+      "closed": true,
+      "positive_volume": 5.414392419435899
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean manager N end",
+      "closed": true,
+      "positive_volume": 5.040035247802734
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean manager S end",
+      "closed": true,
+      "positive_volume": 5.040035247802734
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean manager W end",
+      "closed": true,
+      "positive_volume": 6.854391046144883
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean manager E pier0",
+      "closed": true,
+      "positive_volume": 2.9584752669543377
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean manager E lintel0",
+      "closed": true,
+      "positive_volume": 0.2349115850406731
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean manager E end",
+      "closed": true,
+      "positive_volume": 2.9584752669543377
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean laundry N end",
+      "closed": true,
+      "positive_volume": 5.040035247802734
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean laundry S pier0",
+      "closed": true,
+      "positive_volume": 1.7164911914005643
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean laundry S lintel0",
+      "closed": true,
+      "positive_volume": 0.28800905533522525
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean laundry S end",
+      "closed": true,
+      "positive_volume": 1.7164911914005643
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean laundry W pier0",
+      "closed": true,
+      "positive_volume": 1.1836862566997297
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean laundry W lintel0",
+      "closed": true,
+      "positive_volume": 0.2880090553351824
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean laundry W end",
+      "closed": true,
+      "positive_volume": 1.1836862566997297
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean laundry E end",
+      "closed": true,
+      "positive_volume": 3.9744253784010652
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean plant N pier0",
+      "closed": true,
+      "positive_volume": 1.7164911914005643
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean plant N lintel0",
+      "closed": true,
+      "positive_volume": 0.28800905533525833
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean plant N end",
+      "closed": true,
+      "positive_volume": 1.7164911914005643
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean plant S end",
+      "closed": true,
+      "positive_volume": 5.040035247802734
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean plant W end",
+      "closed": true,
+      "positive_volume": 3.9744253784010652
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean plant E pier0",
+      "closed": true,
+      "positive_volume": 1.1836862566997297
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean plant E lintel0",
+      "closed": true,
+      "positive_volume": 0.28800905533526056
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean plant E end",
+      "closed": true,
+      "positive_volume": 1.1836862566997297
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room1 N end",
+      "closed": true,
+      "positive_volume": 5.039995193481445
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room1 S end",
+      "closed": true,
+      "positive_volume": 5.039995193481445
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room1 W end",
+      "closed": true,
+      "positive_volume": 3.254397225951834
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room1 E pier0",
+      "closed": true,
+      "positive_volume": 1.1584797301475191
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room1 E lintel0",
+      "closed": true,
+      "positive_volume": 0.23491089678013388
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room1 E end",
+      "closed": true,
+      "positive_volume": 1.1584797301475191
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room2 N end",
+      "closed": true,
+      "positive_volume": 5.039995193481445
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room2 S end",
+      "closed": true,
+      "positive_volume": 5.039995193481445
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room2 W end",
+      "closed": true,
+      "positive_volume": 3.254397225951834
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room2 E pier0",
+      "closed": true,
+      "positive_volume": 1.1584797301475191
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room2 E lintel0",
+      "closed": true,
+      "positive_volume": 0.23491089678011567
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room2 E end",
+      "closed": true,
+      "positive_volume": 1.1584797301475191
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room3 N end",
+      "closed": true,
+      "positive_volume": 5.039995193481445
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room3 S end",
+      "closed": true,
+      "positive_volume": 5.040035247802734
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room3 W end",
+      "closed": true,
+      "positive_volume": 3.254395852662128
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room3 E pier0",
+      "closed": true,
+      "positive_volume": 1.1584797301475191
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room3 E lintel0",
+      "closed": true,
+      "positive_volume": 0.23491124091039417
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room3 E end",
+      "closed": true,
+      "positive_volume": 1.1584769835681072
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room4 N end",
+      "closed": true,
+      "positive_volume": 5.040035247802734
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room4 S end",
+      "closed": true,
+      "positive_volume": 5.040035247802734
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room4 W end",
+      "closed": true,
+      "positive_volume": 3.254394479372422
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room4 E pier0",
+      "closed": true,
+      "positive_volume": 1.1584769835681072
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room4 E lintel0",
+      "closed": true,
+      "positive_volume": 0.2349115850406731
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room4 E end",
+      "closed": true,
+      "positive_volume": 1.1584769835681072
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room5 N end",
+      "closed": true,
+      "positive_volume": 5.039995193481445
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room5 S end",
+      "closed": true,
+      "positive_volume": 5.039995193481445
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room5 W pier0",
+      "closed": true,
+      "positive_volume": 1.1584889369260054
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room5 W lintel0",
+      "closed": true,
+      "positive_volume": 0.2349127636859869
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room5 W end",
+      "closed": true,
+      "positive_volume": 1.1584889369260054
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room5 E end",
+      "closed": true,
+      "positive_volume": 3.2544230896019144
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room6 N end",
+      "closed": true,
+      "positive_volume": 5.039995193481445
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room6 S end",
+      "closed": true,
+      "positive_volume": 5.039995193481445
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room6 W pier0",
+      "closed": true,
+      "positive_volume": 1.1584889369260054
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room6 W lintel0",
+      "closed": true,
+      "positive_volume": 0.23491276368598513
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room6 W end",
+      "closed": true,
+      "positive_volume": 1.1584889369260054
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room6 E end",
+      "closed": true,
+      "positive_volume": 3.2544230896019144
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room7 N end",
+      "closed": true,
+      "positive_volume": 5.039995193481445
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room7 S end",
+      "closed": true,
+      "positive_volume": 5.040035247802734
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room7 W pier0",
+      "closed": true,
+      "positive_volume": 1.1584889369260054
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room7 W lintel0",
+      "closed": true,
+      "positive_volume": 0.23491310781900054
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room7 W end",
+      "closed": true,
+      "positive_volume": 1.1584861903247656
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room7 E end",
+      "closed": true,
+      "positive_volume": 3.2544217163012945
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room8 N end",
+      "closed": true,
+      "positive_volume": 5.040035247802734
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room8 S end",
+      "closed": true,
+      "positive_volume": 5.040035247802734
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room8 W pier0",
+      "closed": true,
+      "positive_volume": 1.1584861903247656
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room8 W lintel0",
+      "closed": true,
+      "positive_volume": 0.23491345195193247
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room8 W end",
+      "closed": true,
+      "positive_volume": 1.1584861903247656
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16 clean room8 E end",
+      "closed": true,
+      "positive_volume": 3.2544203430006746
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-z-42-18-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056750046598197
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-z-50-18-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056750046599818
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-13-45-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.36113325053916484
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-z-46-42.5-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.6780508876714642
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-39-43-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.33902544383542854
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-46-49-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.3390254438357312
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-13-22.5-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.1805664744766407
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-13-27.5-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056647447664026
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-13-32.5-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056654987310872
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-13-37.5-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.1805666252695914
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-39-22.5-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056750046598707
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-39-27.5-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.1805675004658393
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-39-32.5-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056757586227976
+    },
+    {
+      "site": "WLD-16",
+      "name": "WLD-16-x-39-37.5-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056765125870486
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean servicehouse N end",
+      "closed": true,
+      "positive_volume": 12.960090637207031
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean servicehouse S pier0",
+      "closed": true,
+      "positive_volume": 6.0112271639955
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean servicehouse S lintel0",
+      "closed": true,
+      "positive_volume": 0.23490902987428297
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean servicehouse S end",
+      "closed": true,
+      "positive_volume": 6.0112271639955
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean servicehouse W pier0",
+      "closed": true,
+      "positive_volume": 0.7984773268908611
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean servicehouse W lintel0",
+      "closed": true,
+      "positive_volume": 0.23491158504067267
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean servicehouse W end",
+      "closed": true,
+      "positive_volume": 9.43847183372418
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean servicehouse E end",
+      "closed": true,
+      "positive_volume": 11.174389672851248
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean head N end",
+      "closed": true,
+      "positive_volume": 8.640060424804688
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean head S pier0",
+      "closed": true,
+      "positive_volume": 3.516503779901541
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean head S lintel0",
+      "closed": true,
+      "positive_volume": 0.2880090553351967
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean head S end",
+      "closed": true,
+      "positive_volume": 3.516503779901541
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean head W pier0",
+      "closed": true,
+      "positive_volume": 3.3436747897358146
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean head W lintel0",
+      "closed": true,
+      "positive_volume": 0.28800676646092427
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean head W end",
+      "closed": true,
+      "positive_volume": 3.3436747897358146
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean head E pier0",
+      "closed": true,
+      "positive_volume": 3.3437013629009016
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean head E lintel0",
+      "closed": true,
+      "positive_volume": 0.28800905533522414
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean head E end",
+      "closed": true,
+      "positive_volume": 3.3437013629009016
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean shop N end",
+      "closed": true,
+      "positive_volume": 10.080070495605469
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean shop S pier0",
+      "closed": true,
+      "positive_volume": 4.2365088153019315
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean shop S lintel0",
+      "closed": true,
+      "positive_volume": 0.28800905533527255
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean shop S end",
+      "closed": true,
+      "positive_volume": 4.2365088153019315
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean shop W pier0",
+      "closed": true,
+      "positive_volume": 3.3437013629009016
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean shop W lintel0",
+      "closed": true,
+      "positive_volume": 0.2880090553352197
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean shop W end",
+      "closed": true,
+      "positive_volume": 3.3437013629009016
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean shop E end",
+      "closed": true,
+      "positive_volume": 8.294455590803409
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean exit E pier0",
+      "closed": true,
+      "positive_volume": 9.611270130844787
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean exit E lintel0",
+      "closed": true,
+      "positive_volume": 0.2349115850406729
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean exit E end",
+      "closed": true,
+      "positive_volume": 3.8512756240088493
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean west E pier0",
+      "closed": true,
+      "positive_volume": 0.6364799533075711
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean west E lintel0",
+      "closed": true,
+      "positive_volume": 0.28800627423083824
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean west E end",
+      "closed": true,
+      "positive_volume": 6.396474460143509
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean exhibit W pier0",
+      "closed": true,
+      "positive_volume": 6.396525294803723
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean exhibit W lintel0",
+      "closed": true,
+      "positive_volume": 0.2880085631012044
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean exhibit W end",
+      "closed": true,
+      "positive_volume": 6.396525294803723
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean east W pier0",
+      "closed": true,
+      "positive_volume": 6.396525294803723
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean east W lintel0",
+      "closed": true,
+      "positive_volume": 0.28800869081807434
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean east W end",
+      "closed": true,
+      "positive_volume": 6.396525294803723
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean crew E pier0",
+      "closed": true,
+      "positive_volume": 0.8486399377434282
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean crew E lintel0",
+      "closed": true,
+      "positive_volume": 0.823685517547613
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 clean crew E end",
+      "closed": true,
+      "positive_volume": 8.528632613524678
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18-z-70-19-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.18056618473312158
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18-x-10-56-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.3611332505391575
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18-z-54-34-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.33902544383572275
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18-x-28-48-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.33902420865347155
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18-x-40-48-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.6780508876714646
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18-z-54-47-y0 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.33902544383572186
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18-x-22-28-y-4 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.33902403113880686
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18-x-42-28-y-4 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.3390252663217238
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18-x-42-28-y-8 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.33902527868152244
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18-x-22-28-y-8 indexed jambs and head",
+      "closed": true,
+      "positive_volume": 0.33902404349839055
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring full continuous gallery floor",
+      "closed": true,
+      "positive_volume": 35.396844729496834
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring enclosed gallery ceiling",
+      "closed": true,
+      "positive_volume": 35.39681659862992
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 0",
+      "closed": true,
+      "positive_volume": 0.015613054439044852
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 1",
+      "closed": true,
+      "positive_volume": 0.015612995413755642
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 2 region0",
+      "closed": true,
+      "positive_volume": 1.023666354896477
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 2",
+      "closed": true,
+      "positive_volume": 0.01561276285474894
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 3 region0",
+      "closed": true,
+      "positive_volume": 1.0236676117735826
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 3",
+      "closed": true,
+      "positive_volume": 0.015612795395760087
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 4 region0",
+      "closed": true,
+      "positive_volume": 1.0236682053748467
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 4",
+      "closed": true,
+      "positive_volume": 0.015613002042277668
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 5 region0",
+      "closed": true,
+      "positive_volume": 1.0236654570643182
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 5",
+      "closed": true,
+      "positive_volume": 0.015612880187170228
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 6 region0",
+      "closed": true,
+      "positive_volume": 1.0236690286510637
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 6",
+      "closed": true,
+      "positive_volume": 0.015612798481940235
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 7 region0",
+      "closed": true,
+      "positive_volume": 1.0236700049185217
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 7",
+      "closed": true,
+      "positive_volume": 0.015613165798214012
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 8 region0",
+      "closed": true,
+      "positive_volume": 1.0236700049185217
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 8",
+      "closed": true,
+      "positive_volume": 0.015613165798218476
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 9 region0",
+      "closed": true,
+      "positive_volume": 1.0236690286510353
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 9",
+      "closed": true,
+      "positive_volume": 0.015612798481930996
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 10 region0",
+      "closed": true,
+      "positive_volume": 1.023665457064304
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 10",
+      "closed": true,
+      "positive_volume": 0.015613034773774062
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 11 region0",
+      "closed": true,
+      "positive_volume": 1.0236655754841593
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 11",
+      "closed": true,
+      "positive_volume": 0.01561278333267425
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 12 region0",
+      "closed": true,
+      "positive_volume": 1.0236671652822125
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 12",
+      "closed": true,
+      "positive_volume": 0.015612727708884796
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 13 region0",
+      "closed": true,
+      "positive_volume": 1.0236644478204724
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 13",
+      "closed": true,
+      "positive_volume": 0.015613202007142038
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 14 region0",
+      "closed": true,
+      "positive_volume": 1.023674806913867
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 14",
+      "closed": true,
+      "positive_volume": 0.015613029043694587
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 15 region0",
+      "closed": true,
+      "positive_volume": 1.023682640582713
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 15",
+      "closed": true,
+      "positive_volume": 0.015613118330366365
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 16 region0",
+      "closed": true,
+      "positive_volume": 1.023682640582713
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 16",
+      "closed": true,
+      "positive_volume": 0.015613070657774323
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 17 region0",
+      "closed": true,
+      "positive_volume": 1.0236728621845366
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 17",
+      "closed": true,
+      "positive_volume": 0.015612995413756086
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 18 region0",
+      "closed": true,
+      "positive_volume": 1.0236663548964593
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 18",
+      "closed": true,
+      "positive_volume": 0.015612762854745629
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 19 region0",
+      "closed": true,
+      "positive_volume": 1.0236676117735826
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 19",
+      "closed": true,
+      "positive_volume": 0.015612795395763102
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 20 region0",
+      "closed": true,
+      "positive_volume": 1.0236673527206825
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 20",
+      "closed": true,
+      "positive_volume": 0.015613002042278187
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 21 region0",
+      "closed": true,
+      "positive_volume": 1.0236654570643111
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 21",
+      "closed": true,
+      "positive_volume": 0.0156129117423001
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 22 region0",
+      "closed": true,
+      "positive_volume": 1.0236674495525495
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 22",
+      "closed": true,
+      "positive_volume": 0.015612909011301338
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 23 region0",
+      "closed": true,
+      "positive_volume": 1.0236714616234028
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 23",
+      "closed": true,
+      "positive_volume": 0.015612818291057687
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 24 region0",
+      "closed": true,
+      "positive_volume": 1.0236747198432634
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 24",
+      "closed": true,
+      "positive_volume": 0.015613190871106632
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 25 region0",
+      "closed": true,
+      "positive_volume": 1.0236755709958005
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 25",
+      "closed": true,
+      "positive_volume": 0.015612922999104262
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 26 region0",
+      "closed": true,
+      "positive_volume": 1.0236764420464337
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 26",
+      "closed": true,
+      "positive_volume": 0.015612940662389616
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 27 region0",
+      "closed": true,
+      "positive_volume": 1.0236755685945358
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 27",
+      "closed": true,
+      "positive_volume": 0.015613010084023346
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 28 region0",
+      "closed": true,
+      "positive_volume": 1.0236711151632871
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 28",
+      "closed": true,
+      "positive_volume": 0.01561284591063311
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 29 region0",
+      "closed": true,
+      "positive_volume": 1.0236747337501555
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 29",
+      "closed": true,
+      "positive_volume": 0.01561272427421832
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 30",
+      "closed": true,
+      "positive_volume": 0.015612944248217223
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 31",
+      "closed": true,
+      "positive_volume": 0.015612933247909707
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 32",
+      "closed": true,
+      "positive_volume": 0.015612933247910242
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 33",
+      "closed": true,
+      "positive_volume": 0.015612944248207397
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 34 region0",
+      "closed": true,
+      "positive_volume": 1.023674733750152
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 34",
+      "closed": true,
+      "positive_volume": 0.01561272427420533
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 35 region0",
+      "closed": true,
+      "positive_volume": 1.023671115163289
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 35",
+      "closed": true,
+      "positive_volume": 0.015612845910625367
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 36 region0",
+      "closed": true,
+      "positive_volume": 1.0236747159481716
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 36",
+      "closed": true,
+      "positive_volume": 0.015613010084020523
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 37 region0",
+      "closed": true,
+      "positive_volume": 1.0236764420464937
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 37",
+      "closed": true,
+      "positive_volume": 0.015612972217460185
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 38 region0",
+      "closed": true,
+      "positive_volume": 1.0236739918818714
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 38",
+      "closed": true,
+      "positive_volume": 0.015613033529179716
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 39 region0",
+      "closed": true,
+      "positive_volume": 1.0236761765638107
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 39",
+      "closed": true,
+      "positive_volume": 0.01561284336809196
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 40 region0",
+      "closed": true,
+      "positive_volume": 1.0236761765638107
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 40",
+      "closed": true,
+      "positive_volume": 0.015612843368091905
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 41 region0",
+      "closed": true,
+      "positive_volume": 1.0236739918818714
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 41",
+      "closed": true,
+      "positive_volume": 0.01561303352918279
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 42 region0",
+      "closed": true,
+      "positive_volume": 1.0236764420465008
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 42",
+      "closed": true,
+      "positive_volume": 0.015612972217461496
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 43 region0",
+      "closed": true,
+      "positive_volume": 1.0236747159481716
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 43",
+      "closed": true,
+      "positive_volume": 0.015613010084022615
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 44 region0",
+      "closed": true,
+      "positive_volume": 1.023671115163289
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 44",
+      "closed": true,
+      "positive_volume": 0.015612845910630446
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 45 region0",
+      "closed": true,
+      "positive_volume": 1.023674733750152
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 45",
+      "closed": true,
+      "positive_volume": 0.01561272427420792
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 46 region0",
+      "closed": true,
+      "positive_volume": 1.0236725737064152
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 46",
+      "closed": true,
+      "positive_volume": 0.015612944248212208
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 47 region0",
+      "closed": true,
+      "positive_volume": 1.0236745051388496
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 47",
+      "closed": true,
+      "positive_volume": 0.015612949466651501
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 48 region0",
+      "closed": true,
+      "positive_volume": 1.023674505138846
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 48",
+      "closed": true,
+      "positive_volume": 0.015612997139126429
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 49 region0",
+      "closed": true,
+      "positive_volume": 1.0236745184357332
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 49",
+      "closed": true,
+      "positive_volume": 0.015612977871159098
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 50 region0",
+      "closed": true,
+      "positive_volume": 1.023672826658653
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 50",
+      "closed": true,
+      "positive_volume": 0.015613163426816196
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 51 region0",
+      "closed": true,
+      "positive_volume": 1.0236706686797108
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 51",
+      "closed": true,
+      "positive_volume": 0.015612778216081388
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 52 region0",
+      "closed": true,
+      "positive_volume": 1.02367293869614
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 52",
+      "closed": true,
+      "positive_volume": 0.015612791374144851
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 53 region0",
+      "closed": true,
+      "positive_volume": 1.0236764420464322
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 53",
+      "closed": true,
+      "positive_volume": 0.015613095250969723
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 54 region0",
+      "closed": true,
+      "positive_volume": 1.0236755709958034
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 54",
+      "closed": true,
+      "positive_volume": 0.015612922999101905
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 55 region0",
+      "closed": true,
+      "positive_volume": 1.0236747198432639
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 55",
+      "closed": true,
+      "positive_volume": 0.015613190871104448
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 56 region0",
+      "closed": true,
+      "positive_volume": 1.0236714616234046
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 56",
+      "closed": true,
+      "positive_volume": 0.015612818291062017
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 57 region0",
+      "closed": true,
+      "positive_volume": 1.0236674495525442
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 57",
+      "closed": true,
+      "positive_volume": 0.015612909011297934
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 58 region0",
+      "closed": true,
+      "positive_volume": 1.0236654570640908
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 58",
+      "closed": true,
+      "positive_volume": 0.015612911742264347
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 59 region0",
+      "closed": true,
+      "positive_volume": 1.0236673527207572
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 59",
+      "closed": true,
+      "positive_volume": 0.015613002042378442
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 60 region0",
+      "closed": true,
+      "positive_volume": 1.0236676117735932
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 60",
+      "closed": true,
+      "positive_volume": 0.01561279539577128
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring curved retaining wall 61 region0",
+      "closed": true,
+      "positive_volume": 1.0236663548964557
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 61",
+      "closed": true,
+      "positive_volume": 0.015612762854742281
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 62",
+      "closed": true,
+      "positive_volume": 0.015612995413747333
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring supported inner shaft guard 63",
+      "closed": true,
+      "positive_volume": 0.01561305443904352
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring west doorway throat floor region0",
+      "closed": true,
+      "positive_volume": 2.4480003662101826
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring west enclosed throat roof region0",
+      "closed": true,
+      "positive_volume": 2.447998420715522
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring west throat return 26 region0",
+      "closed": true,
+      "positive_volume": 0.7636790693667024
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring west throat return 29.76 region0",
+      "closed": true,
+      "positive_volume": 0.7636790693667024
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring east doorway throat floor region0",
+      "closed": true,
+      "positive_volume": 2.4480026550299954
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring east enclosed throat roof region0",
+      "closed": true,
+      "positive_volume": 2.448000709533517
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring east throat return 26 region0",
+      "closed": true,
+      "positive_volume": 0.7636810377487429
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upperring east throat return 29.76 region0",
+      "closed": true,
+      "positive_volume": 0.7636810377487429
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring full continuous gallery floor",
+      "closed": true,
+      "positive_volume": 35.39684472949677
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring enclosed gallery ceiling",
+      "closed": true,
+      "positive_volume": 35.39684472949683
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 0",
+      "closed": true,
+      "positive_volume": 0.015613095711919378
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 1",
+      "closed": true,
+      "positive_volume": 0.015613036687111653
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 2 region0",
+      "closed": true,
+      "positive_volume": 0.7856044224570233
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 2",
+      "closed": true,
+      "positive_volume": 0.01561280412753537
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 3 region0",
+      "closed": true,
+      "positive_volume": 0.7856053870370836
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 3",
+      "closed": true,
+      "positive_volume": 0.015612836668322666
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 4 region0",
+      "closed": true,
+      "positive_volume": 0.7856058425916217
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 4",
+      "closed": true,
+      "positive_volume": 0.015613043314876082
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 5 region0",
+      "closed": true,
+      "positive_volume": 0.7856037334230095
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 5",
+      "closed": true,
+      "positive_volume": 0.015612921459991932
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 6 region0",
+      "closed": true,
+      "positive_volume": 0.7856064744082687
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 6",
+      "closed": true,
+      "positive_volume": 0.015612839753907442
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 7 region0",
+      "closed": true,
+      "positive_volume": 0.7856072236367453
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 7",
+      "closed": true,
+      "positive_volume": 0.015613207071327538
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 8 region0",
+      "closed": true,
+      "positive_volume": 0.7856072236367453
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 8",
+      "closed": true,
+      "positive_volume": 0.015613207071340257
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 9 region0",
+      "closed": true,
+      "positive_volume": 0.785606474408258
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 9",
+      "closed": true,
+      "positive_volume": 0.015612839753923682
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 10 region0",
+      "closed": true,
+      "positive_volume": 0.7856037334230059
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 10",
+      "closed": true,
+      "positive_volume": 0.015613076046719613
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 11 region0",
+      "closed": true,
+      "positive_volume": 0.7856038243033652
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 11",
+      "closed": true,
+      "positive_volume": 0.015612824605300706
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 12 region0",
+      "closed": true,
+      "positive_volume": 0.7856050443809224
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 12",
+      "closed": true,
+      "positive_volume": 0.015612768981317601
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 13 region0",
+      "closed": true,
+      "positive_volume": 0.7856029588870328
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 13",
+      "closed": true,
+      "positive_volume": 0.015613243279934224
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 14 region0",
+      "closed": true,
+      "positive_volume": 0.7856109088890193
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 14",
+      "closed": true,
+      "positive_volume": 0.015613070316877236
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 15 region0",
+      "closed": true,
+      "positive_volume": 0.7856169207745047
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 15",
+      "closed": true,
+      "positive_volume": 0.015613159603174942
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 16 region0",
+      "closed": true,
+      "positive_volume": 0.7856169207745722
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 16",
+      "closed": true,
+      "positive_volume": 0.015613111930690815
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 17 region0",
+      "closed": true,
+      "positive_volume": 0.7856094164223819
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 17",
+      "closed": true,
+      "positive_volume": 0.015613036687118442
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 18 region0",
+      "closed": true,
+      "positive_volume": 0.7856044224568564
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 18",
+      "closed": true,
+      "positive_volume": 0.015612804127528709
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 19 region0",
+      "closed": true,
+      "positive_volume": 0.7856053870372399
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 19",
+      "closed": true,
+      "positive_volume": 0.015612836668327246
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 20 region0",
+      "closed": true,
+      "positive_volume": 0.785605188228887
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 20",
+      "closed": true,
+      "positive_volume": 0.015613043314881708
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 21 region0",
+      "closed": true,
+      "positive_volume": 0.7856037334228603
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 21",
+      "closed": true,
+      "positive_volume": 0.015612953014874864
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 22 region0",
+      "closed": true,
+      "positive_volume": 0.7856052625418908
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 22",
+      "closed": true,
+      "positive_volume": 0.015612950284196478
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 23 region0",
+      "closed": true,
+      "positive_volume": 0.785608341573047
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 23",
+      "closed": true,
+      "positive_volume": 0.015612859563629716
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 24 region0",
+      "closed": true,
+      "positive_volume": 0.7856108420674075
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 24",
+      "closed": true,
+      "positive_volume": 0.015613232144457811
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 25 region0",
+      "closed": true,
+      "positive_volume": 0.7856114952775125
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 25",
+      "closed": true,
+      "positive_volume": 0.015612964271446917
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 26 region0",
+      "closed": true,
+      "positive_volume": 0.7856121637582101
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 26",
+      "closed": true,
+      "positive_volume": 0.015612981935507586
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 27 region0",
+      "closed": true,
+      "positive_volume": 0.7856114934346836
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 27",
+      "closed": true,
+      "positive_volume": 0.015613051356949719
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 28 region0",
+      "closed": true,
+      "positive_volume": 0.7856080756850723
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 28",
+      "closed": true,
+      "positive_volume": 0.015612887183198438
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 29 region0",
+      "closed": true,
+      "positive_volume": 0.7856108527401338
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 29",
+      "closed": true,
+      "positive_volume": 0.015612765546959118
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 30",
+      "closed": true,
+      "positive_volume": 0.015612985521181105
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 31",
+      "closed": true,
+      "positive_volume": 0.01561297452075496
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 32",
+      "closed": true,
+      "positive_volume": 0.015612974520765911
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 33",
+      "closed": true,
+      "positive_volume": 0.015612985521175331
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 34 region0",
+      "closed": true,
+      "positive_volume": 0.7856108527401684
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 34",
+      "closed": true,
+      "positive_volume": 0.015612765546972461
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 35 region0",
+      "closed": true,
+      "positive_volume": 0.785608075685067
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 35",
+      "closed": true,
+      "positive_volume": 0.015612887183206487
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 36 region0",
+      "closed": true,
+      "positive_volume": 0.7856108390780925
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 36",
+      "closed": true,
+      "positive_volume": 0.01561305135693783
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 37 region0",
+      "closed": true,
+      "positive_volume": 0.78561216375833
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 37",
+      "closed": true,
+      "positive_volume": 0.015613013490344739
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 38 region0",
+      "closed": true,
+      "positive_volume": 0.7856102833993184
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 38",
+      "closed": true,
+      "positive_volume": 0.015613074802443165
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 39 region0",
+      "closed": true,
+      "positive_volume": 0.7856119600158422
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 39",
+      "closed": true,
+      "positive_volume": 0.015612884640905203
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 40 region0",
+      "closed": true,
+      "positive_volume": 0.7856119600158564
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 40",
+      "closed": true,
+      "positive_volume": 0.015612884640915418
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 41 region0",
+      "closed": true,
+      "positive_volume": 0.7856102833993255
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 41",
+      "closed": true,
+      "positive_volume": 0.015613074802433763
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 42 region0",
+      "closed": true,
+      "positive_volume": 0.7856121637583229
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 42",
+      "closed": true,
+      "positive_volume": 0.015613013490344885
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 43 region0",
+      "closed": true,
+      "positive_volume": 0.7856108390780978
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 43",
+      "closed": true,
+      "positive_volume": 0.015613051356946156
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 44 region0",
+      "closed": true,
+      "positive_volume": 0.7856080756850723
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 44",
+      "closed": true,
+      "positive_volume": 0.015612887183201585
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 45 region0",
+      "closed": true,
+      "positive_volume": 0.7856108527401648
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 45",
+      "closed": true,
+      "positive_volume": 0.015612765546968221
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 46 region0",
+      "closed": true,
+      "positive_volume": 0.7856091950320359
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 46",
+      "closed": true,
+      "positive_volume": 0.015612985521185157
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 47 region0",
+      "closed": true,
+      "positive_volume": 0.7856106772942795
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 47",
+      "closed": true,
+      "positive_volume": 0.015612990739572749
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 48 region0",
+      "closed": true,
+      "positive_volume": 0.785610677294283
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 48",
+      "closed": true,
+      "positive_volume": 0.015613038411946428
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 49 region0",
+      "closed": true,
+      "positive_volume": 0.7856106874987736
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 49",
+      "closed": true,
+      "positive_volume": 0.015613019143958093
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 50 region0",
+      "closed": true,
+      "positive_volume": 0.7856093891582621
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 50",
+      "closed": true,
+      "positive_volume": 0.015613204699590228
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 51 region0",
+      "closed": true,
+      "positive_volume": 0.7856077330348628
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 51",
+      "closed": true,
+      "positive_volume": 0.015612819488527219
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 52 region0",
+      "closed": true,
+      "positive_volume": 0.7856094751405437
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 52",
+      "closed": true,
+      "positive_volume": 0.01561283264705545
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 53 region0",
+      "closed": true,
+      "positive_volume": 0.785612163758211
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 53",
+      "closed": true,
+      "positive_volume": 0.015613136524227314
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 54 region0",
+      "closed": true,
+      "positive_volume": 0.7856114952775197
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 54",
+      "closed": true,
+      "positive_volume": 0.015612964271456791
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 55 region0",
+      "closed": true,
+      "positive_volume": 0.7856108420674097
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 55",
+      "closed": true,
+      "positive_volume": 0.015613232144467748
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 56 region0",
+      "closed": true,
+      "positive_volume": 0.7856083415730488
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 56",
+      "closed": true,
+      "positive_volume": 0.015612859563639114
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 57 region0",
+      "closed": true,
+      "positive_volume": 0.7856052625418943
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 57",
+      "closed": true,
+      "positive_volume": 0.015612950284205656
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 58 region0",
+      "closed": true,
+      "positive_volume": 0.7856037334228567
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 58",
+      "closed": true,
+      "positive_volume": 0.015612953014834487
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 59 region0",
+      "closed": true,
+      "positive_volume": 0.7856051882288853
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 59",
+      "closed": true,
+      "positive_volume": 0.015613043314980072
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 60 region0",
+      "closed": true,
+      "positive_volume": 0.7856053870372399
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 60",
+      "closed": true,
+      "positive_volume": 0.015612836668330207
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring curved retaining wall 61 region0",
+      "closed": true,
+      "positive_volume": 0.7856044224568883
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 61",
+      "closed": true,
+      "positive_volume": 0.015612804127512259
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 62",
+      "closed": true,
+      "positive_volume": 0.015613036687109838
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring supported inner shaft guard 63",
+      "closed": true,
+      "positive_volume": 0.015613095711903707
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring west doorway throat floor region0",
+      "closed": true,
+      "positive_volume": 2.4480003662101826
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring west enclosed throat roof region0",
+      "closed": true,
+      "positive_volume": 2.448000366210181
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring west throat return 26 region0",
+      "closed": true,
+      "positive_volume": 0.5860792936707835
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring west throat return 29.76 region0",
+      "closed": true,
+      "positive_volume": 0.5860792936708599
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring east doorway throat floor region0",
+      "closed": true,
+      "positive_volume": 2.4480026550299954
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring east enclosed throat roof region0",
+      "closed": true,
+      "positive_volume": 2.4480026550299954
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring east throat return 26 region0",
+      "closed": true,
+      "positive_volume": 0.5860808042894892
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 lowring east throat return 29.76 region0",
+      "closed": true,
+      "positive_volume": 0.5860808042896437
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 continuous outer gallery ring footing",
+      "closed": true,
+      "positive_volume": 21.648060606470697
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 shop floor with rectangular escape-stair well region0",
+      "closed": true,
+      "positive_volume": 3.2400056219103135
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 shop floor with rectangular escape-stair well region0.001",
+      "closed": true,
+      "positive_volume": 26.72399495077142
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 shop floor with rectangular escape-stair well region0.002",
+      "closed": true,
+      "positive_volume": 17.004005550861876
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact stair upper floor region0",
+      "closed": true,
+      "positive_volume": 42.00002670288086
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact stair upper floor region0.001",
+      "closed": true,
+      "positive_volume": 11.700012016299294
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact stair upper floor region0.002",
+      "closed": true,
+      "positive_volume": 6.060002937316305
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact stair upper floor region0.003",
+      "closed": true,
+      "positive_volume": 4.560006561281632
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact stair lower room ceiling region0",
+      "closed": true,
+      "positive_volume": 42.00002670288086
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact stair lower room ceiling region0.001",
+      "closed": true,
+      "positive_volume": 11.700012016299294
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact stair lower room ceiling region0.002",
+      "closed": true,
+      "positive_volume": 6.060002937316305
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact stair lower room ceiling region0.003",
+      "closed": true,
+      "positive_volume": 4.560006561281632
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 west continuous upper floor and rectangular crew-stair well region0",
+      "closed": true,
+      "positive_volume": 8.820007209778861
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 west continuous upper floor and rectangular crew-stair well region0.001",
+      "closed": true,
+      "positive_volume": 8.910005321502467
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 west continuous upper floor and rectangular crew-stair well region0.002",
+      "closed": true,
+      "positive_volume": 26.730018253327227
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 west continuous upper floor and rectangular crew-stair well region0.003",
+      "closed": true,
+      "positive_volume": 2.1600004577630916
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 upper escape arrival landing region0",
+      "closed": true,
+      "positive_volume": 2.375997207640239
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 escape arrival bearing on lower plant north wall region0",
+      "closed": true,
+      "positive_volume": 0.8448044341941259
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 escape arrival longitudinal beam 50.9 region0",
+      "closed": true,
+      "positive_volume": 0.28799520874643747
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 escape arrival longitudinal beam 52.9 region0",
+      "closed": true,
+      "positive_volume": 0.28799520874643747
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread0 region0",
+      "closed": true,
+      "positive_volume": 3.870006732940965
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread1 region0",
+      "closed": true,
+      "positive_volume": 3.7200066216791896
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread2 region0",
+      "closed": true,
+      "positive_volume": 3.570006081263273
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread3 region0",
+      "closed": true,
+      "positive_volume": 3.4200059700015117
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread4 region0",
+      "closed": true,
+      "positive_volume": 3.2700058587397436
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread5 region0",
+      "closed": true,
+      "positive_volume": 3.1200053183238055
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread6 region0",
+      "closed": true,
+      "positive_volume": 2.9700052070620657
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread7 region0",
+      "closed": true,
+      "positive_volume": 2.8200050958002976
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread8 region0",
+      "closed": true,
+      "positive_volume": 2.6700045553843736
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread9 region0",
+      "closed": true,
+      "positive_volume": 2.5200044441226055
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread10 region0",
+      "closed": true,
+      "positive_volume": 2.3700043328608302
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight0 tread11 region0",
+      "closed": true,
+      "positive_volume": 2.2200037924449134
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread0 region0",
+      "closed": true,
+      "positive_volume": 2.0700036811831453
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread1 region0",
+      "closed": true,
+      "positive_volume": 1.9200035699213842
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread2 region0",
+      "closed": true,
+      "positive_volume": 1.7700030295054745
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread3 region0",
+      "closed": true,
+      "positive_volume": 1.6200029182436921
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread4 region0",
+      "closed": true,
+      "positive_volume": 1.4700028069819382
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread5 region0",
+      "closed": true,
+      "positive_volume": 1.3200022665660072
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread6 region0",
+      "closed": true,
+      "positive_volume": 1.1700021553042461
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread7 region0",
+      "closed": true,
+      "positive_volume": 1.0200020440424815
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread8 region0",
+      "closed": true,
+      "positive_volume": 0.870001503626554
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread9 region0",
+      "closed": true,
+      "positive_volume": 0.7200013923647912
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread10 region0",
+      "closed": true,
+      "positive_volume": 0.5700012811030302
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair flight1 tread11 region0",
+      "closed": true,
+      "positive_volume": 0.4200007406871018
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair solid middle landing region0",
+      "closed": true,
+      "positive_volume": 37.719989089964656
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard west rim 0",
+      "closed": true,
+      "positive_volume": 0.031364493259467996
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard west rim 1",
+      "closed": true,
+      "positive_volume": 0.031364493259321
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard west rim 2",
+      "closed": true,
+      "positive_volume": 0.03136417520653991
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard west rim 3",
+      "closed": true,
+      "positive_volume": 0.03136421621347024
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard west rim 4",
+      "closed": true,
+      "positive_volume": 0.03136417520639281
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard east rim 0",
+      "closed": true,
+      "positive_volume": 0.03664869843128758
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard east rim 1",
+      "closed": true,
+      "positive_volume": 0.03664886770953245
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard east rim 2",
+      "closed": true,
+      "positive_volume": 0.03664886770939124
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard east rim 3",
+      "closed": true,
+      "positive_volume": 0.03664882670243125
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard back rim 0",
+      "closed": true,
+      "positive_volume": 0.032122762685218006
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard back rim 1",
+      "closed": true,
+      "positive_volume": 0.03212242412750155
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard back rim 2",
+      "closed": true,
+      "positive_volume": 0.03212242412729434
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard back rim 3",
+      "closed": true,
+      "positive_volume": 0.032122424127501034
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard back rim 4",
+      "closed": true,
+      "positive_volume": 0.03212276268521748
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard head west return 0",
+      "closed": true,
+      "positive_volume": 0.03001971969756171
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard head west return 1",
+      "closed": true,
+      "positive_volume": 0.030019678689346407
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard head west return 2",
+      "closed": true,
+      "positive_volume": 0.030019976231274836
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard head west return 3",
+      "closed": true,
+      "positive_volume": 0.030019678689427044
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard head east return 0",
+      "closed": true,
+      "positive_volume": 0.0064397130273249155
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard middle back 0",
+      "closed": true,
+      "positive_volume": 0.036933539332182796
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard middle back 1",
+      "closed": true,
+      "positive_volume": 0.03693324178292042
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard middle back 2",
+      "closed": true,
+      "positive_volume": 0.03693324178292031
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard middle back 3",
+      "closed": true,
+      "positive_volume": 0.03693353933218246
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight0 side-0.83 0",
+      "closed": true,
+      "positive_volume": 0.03787959283203996
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight0 side-0.83 1",
+      "closed": true,
+      "positive_volume": 0.037879582163054336
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight0 side-0.83 2",
+      "closed": true,
+      "positive_volume": 0.037879643524711626
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight0 side0.83 0",
+      "closed": true,
+      "positive_volume": 0.037879592832039954
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight0 side0.83 1",
+      "closed": true,
+      "positive_volume": 0.037879582163053815
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight0 side0.83 2",
+      "closed": true,
+      "positive_volume": 0.037879643524711404
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight1 side-0.83 0",
+      "closed": true,
+      "positive_volume": 0.03787964352471122
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight1 side-0.83 1",
+      "closed": true,
+      "positive_volume": 0.03787958153719283
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight1 side-0.83 2",
+      "closed": true,
+      "positive_volume": 0.03787964352471
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight1 side0.83 0",
+      "closed": true,
+      "positive_volume": 0.037879643524711216
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight1 side0.83 1",
+      "closed": true,
+      "positive_volume": 0.037879581537192085
+    },
+    {
+      "site": "WLD-18",
+      "name": "WLD-18 compact U stair guard flight1 side0.83 2",
+      "closed": true,
+      "positive_volume": 0.037879643524709815
+    }
+  ],
+  "full29roster_retained": true,
+  "measured_compact_stair_treads": [
+    {
+      "name": "WLD-18 compact U stair flight0 tread0 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread1 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread2 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread3 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread4 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread5 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread6 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread7 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread8 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread9 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread10 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight0 tread11 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread0 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread1 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread2 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread3 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread4 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread5 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread6 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread7 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread8 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread9 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread10 region0",
+      "actual_exported_width": 1.8000030517578125
+    },
+    {
+      "name": "WLD-18 compact U stair flight1 tread11 region0",
+      "actual_exported_width": 1.8000030517578125
+    }
+  ]
+}

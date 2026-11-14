@@ -1,0 +1,1451 @@
+Traceback (most recent call last):
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\modules\addon_utils.py", line 432, in enable
+    mod = importlib.import_module(module_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\python\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\__init__.py", line 2, in <module>
+    from . import BAM_MaterialManager_M
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\BAM_MaterialManager_M.py", line 41, in <module>
+    from .BAM_MatOverlay_M import bmoverlay
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\BAM_MatOverlay_M.py", line 223, in <module>
+    bmoverlay = BAMMaterialOverlay()
+                ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\BAM\BAM_MatOverlay_M.py", line 63, in __init__
+    self.shader = gpu.shader.from_builtin('UNIFORM_COLOR')
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SystemError: GPU functions for drawing are not available in background mode
+Traceback (most recent call last):
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\modules\addon_utils.py", line 432, in enable
+    mod = importlib.import_module(module_name)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Blender Foundation\Blender 5.0\5.0\python\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\wheel_o_matic\__init__.py", line 24, in <module>
+    from . import wom_render
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\wheel_o_matic\wom_render.py", line 99, in <module>
+    class OBJECT_OT_wom_draw_locators(bpy.types.Operator):
+  File "C:\Users\Admin\AppData\Roaming\Blender Foundation\Blender\5.0\extensions\blender_org\wheel_o_matic\wom_render.py", line 135, in OBJECT_OT_wom_draw_locators
+    shader = gpu.shader.from_builtin('UNIFORM_COLOR')
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+SystemError: GPU functions for drawing are not available in background mode
+INFO:glTFImporter:Data are loaded, start creating Blender stuff
+Extensions: writing cache failed ([Errno 13] Permission denied: 'C:\\Users\\Admin\\AppData\\Roaming\\Blender Foundation\\Blender\\5.0\\extensions\\.cache\\compat.dat').
+Reloading external rigs...
+Reloading external metarigs...
+[BAM] MaterialManager Module Loaded
+Batch Material Helper: Properties registered successfully
+Batch Material Helper: Properties unregistered successfully
+Extensions: writing cache failed ([Errno 13] Permission denied: 'C:\\Users\\Admin\\AppData\\Roaming\\Blender Foundation\\Blender\\5.0\\extensions\\.cache\\compat.dat').
+03:31:18 | INFO: Data are loaded, start creating Blender stuff
+03:31:18 | INFO: Blender create Mesh node Cube
+INFO:glTFImporter:Blender create Mesh node Cube
+03:31:18 | INFO: Blender create Mesh node Cube.001
+INFO:glTFImporter:Blender create Mesh node Cube.001
+03:31:18 | INFO: Blender create Mesh node Cube.004
+INFO:glTFImporter:Blender create Mesh node Cube.004
+03:31:18 | INFO: Blender create Mesh node Cube.006
+INFO:glTFImporter:Blender create Mesh node Cube.006
+03:31:18 | INFO: Blender create Mesh node Cube.007
+INFO:glTFImporter:Blender create Mesh node Cube.007
+03:31:18 | INFO: Blender create Mesh node Cube.008
+INFO:glTFImporter:Blender create Mesh node Cube.008
+03:31:18 | INFO: Blender create Mesh node Cube.009
+INFO:glTFImporter:Blender create Mesh node Cube.009
+03:31:18 | INFO: Blender create Mesh node Cube.010
+INFO:glTFImporter:Blender create Mesh node Cube.010
+03:31:18 | INFO: Blender create Mesh node Cube.012
+INFO:glTFImporter:Blender create Mesh node Cube.012
+03:31:18 | INFO: Blender create Mesh node Cube.013
+INFO:glTFImporter:Blender create Mesh node Cube.013
+03:31:18 | INFO: Blender create Mesh node Cube.016
+INFO:glTFImporter:Blender create Mesh node Cube.016
+03:31:18 | INFO: Blender create Mesh node Cube.020
+INFO:glTFImporter:Blender create Mesh node Cube.020
+03:31:18 | INFO: Blender create Mesh node Cube.022
+INFO:glTFImporter:Blender create Mesh node Cube.022
+03:31:18 | INFO: Blender create Mesh node Cube.023
+INFO:glTFImporter:Blender create Mesh node Cube.023
+03:31:18 | INFO: Blender create Mesh node Cube.024
+INFO:glTFImporter:Blender create Mesh node Cube.024
+03:31:18 | INFO: Blender create Mesh node Cube.025
+INFO:glTFImporter:Blender create Mesh node Cube.025
+03:31:18 | INFO: Blender create Mesh node Cube.026
+INFO:glTFImporter:Blender create Mesh node Cube.026
+03:31:18 | INFO: Blender create Mesh node Cube.028
+INFO:glTFImporter:Blender create Mesh node Cube.028
+03:31:18 | INFO: Blender create Mesh node Cube.029
+INFO:glTFImporter:Blender create Mesh node Cube.029
+03:31:18 | INFO: Blender create Mesh node Cube.038
+INFO:glTFImporter:Blender create Mesh node Cube.038
+03:31:18 | INFO: Blender create Mesh node Cube.041
+INFO:glTFImporter:Blender create Mesh node Cube.041
+03:31:18 | INFO: Blender create Mesh node Cube.043
+INFO:glTFImporter:Blender create Mesh node Cube.043
+INFO:glTFImporter:Blender create Mesh node Cube.044
+03:31:18 | INFO: Blender create Mesh node Cube.044
+INFO:glTFImporter:Blender create Mesh node Cube.045
+03:31:18 | INFO: Blender create Mesh node Cube.045
+03:31:18 | INFO: Blender create Mesh node Cube.046
+INFO:glTFImporter:Blender create Mesh node Cube.046
+03:31:18 | INFO: Blender create Mesh node Cube.049
+INFO:glTFImporter:Blender create Mesh node Cube.049
+03:31:18 | INFO: Blender create Mesh node Cube.051
+INFO:glTFImporter:Blender create Mesh node Cube.051
+03:31:18 | INFO: Blender create Mesh node Cube.053
+INFO:glTFImporter:Blender create Mesh node Cube.053
+03:31:18 | INFO: Blender create Mesh node Cube.054
+INFO:glTFImporter:Blender create Mesh node Cube.054
+03:31:18 | INFO: Blender create Mesh node Cube.055
+INFO:glTFImporter:Blender create Mesh node Cube.055
+03:31:18 | INFO: Blender create Mesh node Cube.056
+INFO:glTFImporter:Blender create Mesh node Cube.056
+03:31:18 | INFO: Blender create Mesh node Cube.057
+INFO:glTFImporter:Blender create Mesh node Cube.057
+03:31:18 | INFO: Blender create Mesh node Cube.058
+INFO:glTFImporter:Blender create Mesh node Cube.058
+03:31:18 | INFO: Blender create Mesh node Cube.059
+INFO:glTFImporter:Blender create Mesh node Cube.059
+03:31:18 | INFO: Blender create Mesh node Cube.062
+INFO:glTFImporter:Blender create Mesh node Cube.062
+03:31:18 | INFO: Blender create Mesh node Cube.064
+INFO:glTFImporter:Blender create Mesh node Cube.064
+03:31:18 | INFO: Blender create Mesh node Cube.066
+INFO:glTFImporter:Blender create Mesh node Cube.066
+03:31:18 | INFO: Blender create Mesh node Cube.067
+INFO:glTFImporter:Blender create Mesh node Cube.067
+03:31:18 | INFO: Blender create Mesh node Cube.068
+INFO:glTFImporter:Blender create Mesh node Cube.068
+03:31:18 | INFO: Blender create Mesh node Cube.069
+INFO:glTFImporter:Blender create Mesh node Cube.069
+03:31:18 | INFO: Blender create Mesh node Cube.070
+INFO:glTFImporter:Blender create Mesh node Cube.070
+03:31:18 | INFO: Blender create Mesh node Cube.071
+INFO:glTFImporter:Blender create Mesh node Cube.071
+03:31:18 | INFO: Blender create Mesh node Cube.074
+INFO:glTFImporter:Blender create Mesh node Cube.074
+03:31:18 | INFO: Blender create Mesh node Cube.076
+INFO:glTFImporter:Blender create Mesh node Cube.076
+03:31:18 | INFO: Blender create Mesh node Cube.077
+INFO:glTFImporter:Blender create Mesh node Cube.077
+03:31:18 | INFO: Blender create Mesh node Cube.078
+INFO:glTFImporter:Blender create Mesh node Cube.078
+03:31:18 | INFO: Blender create Mesh node Cube.079
+INFO:glTFImporter:Blender create Mesh node Cube.079
+03:31:18 | INFO: Blender create Mesh node Cube.080
+INFO:glTFImporter:Blender create Mesh node Cube.080
+03:31:18 | INFO: Blender create Mesh node Cube.081
+INFO:glTFImporter:Blender create Mesh node Cube.081
+03:31:18 | INFO: Blender create Mesh node Cube.083
+INFO:glTFImporter:Blender create Mesh node Cube.083
+03:31:18 | INFO: Blender create Mesh node Cube.084
+INFO:glTFImporter:Blender create Mesh node Cube.084
+03:31:18 | INFO: Blender create Mesh node Cube.085
+INFO:glTFImporter:Blender create Mesh node Cube.085
+03:31:18 | INFO: Blender create Mesh node Cube.088
+INFO:glTFImporter:Blender create Mesh node Cube.088
+03:31:18 | INFO: Blender create Mesh node Cube.090
+INFO:glTFImporter:Blender create Mesh node Cube.090
+03:31:18 | INFO: Blender create Mesh node Cube.091
+INFO:glTFImporter:Blender create Mesh node Cube.091
+03:31:18 | INFO: Blender create Mesh node Cube.092
+INFO:glTFImporter:Blender create Mesh node Cube.092
+03:31:18 | INFO: Blender create Mesh node Cube.093
+INFO:glTFImporter:Blender create Mesh node Cube.093
+03:31:18 | INFO: Blender create Mesh node Cube.094
+INFO:glTFImporter:Blender create Mesh node Cube.094
+INFO:glTFImporter:Blender create Mesh node Cube.095
+03:31:18 | INFO: Blender create Mesh node Cube.095
+INFO:glTFImporter:Blender create Mesh node Cube.096
+03:31:18 | INFO: Blender create Mesh node Cube.096
+03:31:18 | INFO: Blender create Mesh node Cube.098
+INFO:glTFImporter:Blender create Mesh node Cube.098
+03:31:18 | INFO: Blender create Mesh node Cube.099
+INFO:glTFImporter:Blender create Mesh node Cube.099
+03:31:18 | INFO: Blender create Mesh node Cube.100
+INFO:glTFImporter:Blender create Mesh node Cube.100
+03:31:18 | INFO: Blender create Mesh node Cube.109
+INFO:glTFImporter:Blender create Mesh node Cube.109
+03:31:18 | INFO: Blender create Mesh node Cube.112
+INFO:glTFImporter:Blender create Mesh node Cube.112
+03:31:18 | INFO: Blender create Mesh node Cube.114
+INFO:glTFImporter:Blender create Mesh node Cube.114
+03:31:18 | INFO: Blender create Mesh node Cube.115
+INFO:glTFImporter:Blender create Mesh node Cube.115
+03:31:18 | INFO: Blender create Mesh node Cube.116
+INFO:glTFImporter:Blender create Mesh node Cube.116
+03:31:18 | INFO: Blender create Mesh node Cube.117
+INFO:glTFImporter:Blender create Mesh node Cube.117
+03:31:18 | INFO: Blender create Mesh node Cube.118
+INFO:glTFImporter:Blender create Mesh node Cube.118
+03:31:18 | INFO: Blender create Mesh node Cube.119
+INFO:glTFImporter:Blender create Mesh node Cube.119
+03:31:18 | INFO: Blender create Mesh node Cube.120
+INFO:glTFImporter:Blender create Mesh node Cube.120
+03:31:18 | INFO: Blender create Mesh node Cube.121
+INFO:glTFImporter:Blender create Mesh node Cube.121
+03:31:18 | INFO: Blender create Mesh node Cube.123
+INFO:glTFImporter:Blender create Mesh node Cube.123
+03:31:18 | INFO: Blender create Mesh node Cube.124
+INFO:glTFImporter:Blender create Mesh node Cube.124
+03:31:18 | INFO: Blender create Mesh node Cube.125
+INFO:glTFImporter:Blender create Mesh node Cube.125
+03:31:18 | INFO: Blender create Mesh node Cube.126
+INFO:glTFImporter:Blender create Mesh node Cube.126
+03:31:18 | INFO: Blender create Mesh node Cube.127
+INFO:glTFImporter:Blender create Mesh node Cube.127
+03:31:18 | INFO: Blender create Mesh node Cube.128
+INFO:glTFImporter:Blender create Mesh node Cube.128
+03:31:18 | INFO: Blender create Mesh node Cube.129
+INFO:glTFImporter:Blender create Mesh node Cube.129
+03:31:18 | INFO: Blender create Mesh node Cube.130
+INFO:glTFImporter:Blender create Mesh node Cube.130
+03:31:18 | INFO: Blender create Mesh node Cube.133
+INFO:glTFImporter:Blender create Mesh node Cube.133
+03:31:18 | INFO: Blender create Mesh node Cube.135
+INFO:glTFImporter:Blender create Mesh node Cube.135
+03:31:18 | INFO: Blender create Mesh node Cube.136
+INFO:glTFImporter:Blender create Mesh node Cube.136
+03:31:18 | INFO: Blender create Mesh node Cube.138
+INFO:glTFImporter:Blender create Mesh node Cube.138
+03:31:18 | INFO: Blender create Mesh node Cube.139
+INFO:glTFImporter:Blender create Mesh node Cube.139
+03:31:18 | INFO: Blender create Mesh node Cube.140
+INFO:glTFImporter:Blender create Mesh node Cube.140
+03:31:18 | INFO: Blender create Mesh node Cube.141
+INFO:glTFImporter:Blender create Mesh node Cube.141
+03:31:18 | INFO: Blender create Mesh node Cube.142
+INFO:glTFImporter:Blender create Mesh node Cube.142
+03:31:18 | INFO: Blender create Mesh node Cube.143
+INFO:glTFImporter:Blender create Mesh node Cube.143
+03:31:18 | INFO: Blender create Mesh node Cube.146
+INFO:glTFImporter:Blender create Mesh node Cube.146
+03:31:18 | INFO: Blender create Mesh node Cube.159
+INFO:glTFImporter:Blender create Mesh node Cube.159
+03:31:18 | INFO: Blender create Mesh node Cube.166
+INFO:glTFImporter:Blender create Mesh node Cube.166
+03:31:18 | INFO: Blender create Mesh node Cube.168
+INFO:glTFImporter:Blender create Mesh node Cube.168
+03:31:18 | INFO: Blender create Mesh node Cube.170
+INFO:glTFImporter:Blender create Mesh node Cube.170
+03:31:18 | INFO: Blender create Mesh node Cube.172
+INFO:glTFImporter:Blender create Mesh node Cube.172
+03:31:18 | INFO: Blender create Mesh node Cube.174
+INFO:glTFImporter:Blender create Mesh node Cube.174
+03:31:18 | INFO: Blender create Mesh node Cube.175
+INFO:glTFImporter:Blender create Mesh node Cube.175
+03:31:18 | INFO: Blender create Mesh node Cube.181
+INFO:glTFImporter:Blender create Mesh node Cube.181
+03:31:18 | INFO: Blender create Mesh node Cube.182
+INFO:glTFImporter:Blender create Mesh node Cube.182
+03:31:18 | INFO: Blender create Mesh node Cube.183
+INFO:glTFImporter:Blender create Mesh node Cube.183
+INFO:glTFImporter:Blender create Mesh node Cube.184
+03:31:18 | INFO: Blender create Mesh node Cube.184
+03:31:18 | INFO: Blender create Mesh node Cube.192
+INFO:glTFImporter:Blender create Mesh node Cube.192
+03:31:18 | INFO: Blender create Mesh node Cube.194
+INFO:glTFImporter:Blender create Mesh node Cube.194
+03:31:18 | INFO: Blender create Mesh node Cube.195
+INFO:glTFImporter:Blender create Mesh node Cube.195
+03:31:18 | INFO: Blender create Mesh node Cube.198
+INFO:glTFImporter:Blender create Mesh node Cube.198
+03:31:18 | INFO: Blender create Mesh node Cube.200
+INFO:glTFImporter:Blender create Mesh node Cube.200
+03:31:18 | INFO: Blender create Mesh node Cube.207
+INFO:glTFImporter:Blender create Mesh node Cube.207
+03:31:18 | INFO: Blender create Mesh node Cube.209
+INFO:glTFImporter:Blender create Mesh node Cube.209
+03:31:18 | INFO: Blender create Mesh node Cube.210
+INFO:glTFImporter:Blender create Mesh node Cube.210
+03:31:18 | INFO: Blender create Mesh node Cube.217
+INFO:glTFImporter:Blender create Mesh node Cube.217
+03:31:18 | INFO: Blender create Mesh node Cube.219
+INFO:glTFImporter:Blender create Mesh node Cube.219
+03:31:18 | INFO: Blender create Mesh node Cube.222
+INFO:glTFImporter:Blender create Mesh node Cube.222
+03:31:18 | INFO: Blender create Mesh node Cube.224
+INFO:glTFImporter:Blender create Mesh node Cube.224
+03:31:18 | INFO: Blender create Mesh node Cube.225
+INFO:glTFImporter:Blender create Mesh node Cube.225
+03:31:18 | INFO: Blender create Mesh node Cube.226
+INFO:glTFImporter:Blender create Mesh node Cube.226
+03:31:18 | INFO: Blender create Mesh node Cube.227
+INFO:glTFImporter:Blender create Mesh node Cube.227
+03:31:18 | INFO: Blender create Mesh node Cube.229
+INFO:glTFImporter:Blender create Mesh node Cube.229
+03:31:18 | INFO: Blender create Mesh node Cube.235
+INFO:glTFImporter:Blender create Mesh node Cube.235
+03:31:18 | INFO: Blender create Mesh node Cube.236
+INFO:glTFImporter:Blender create Mesh node Cube.236
+03:31:18 | INFO: Blender create Mesh node Cube.237
+INFO:glTFImporter:Blender create Mesh node Cube.237
+03:31:18 | INFO: Blender create Mesh node Cube.238
+INFO:glTFImporter:Blender create Mesh node Cube.238
+03:31:18 | INFO: Blender create Mesh node Cube.239
+INFO:glTFImporter:Blender create Mesh node Cube.239
+03:31:18 | INFO: Blender create Mesh node Cube.240
+INFO:glTFImporter:Blender create Mesh node Cube.240
+03:31:18 | INFO: Blender create Mesh node Cube.241
+INFO:glTFImporter:Blender create Mesh node Cube.241
+03:31:18 | INFO: Blender create Mesh node Cube.242
+INFO:glTFImporter:Blender create Mesh node Cube.242
+03:31:18 | INFO: Blender create Mesh node Cube.243
+INFO:glTFImporter:Blender create Mesh node Cube.243
+03:31:18 | INFO: Blender create Mesh node Cube.244
+INFO:glTFImporter:Blender create Mesh node Cube.244
+03:31:18 | INFO: Blender create Mesh node Cube.248
+INFO:glTFImporter:Blender create Mesh node Cube.248
+03:31:18 | INFO: Blender create Mesh node Cube.250
+INFO:glTFImporter:Blender create Mesh node Cube.250
+03:31:18 | INFO: Blender create Mesh node Cube.251
+INFO:glTFImporter:Blender create Mesh node Cube.251
+03:31:18 | INFO: Blender create Mesh node Cube.252
+INFO:glTFImporter:Blender create Mesh node Cube.252
+03:31:18 | INFO: Blender create Mesh node Cube.255
+INFO:glTFImporter:Blender create Mesh node Cube.255
+03:31:18 | INFO: Blender create Mesh node Cube.257
+INFO:glTFImporter:Blender create Mesh node Cube.257
+03:31:18 | INFO: Blender create Mesh node Cube.258
+INFO:glTFImporter:Blender create Mesh node Cube.258
+03:31:18 | INFO: Blender create Mesh node Cube.263
+INFO:glTFImporter:Blender create Mesh node Cube.263
+03:31:18 | INFO: Blender create Mesh node Cube.264
+INFO:glTFImporter:Blender create Mesh node Cube.264
+03:31:18 | INFO: Blender create Mesh node Cube.266
+INFO:glTFImporter:Blender create Mesh node Cube.266
+03:31:18 | INFO: Blender create Mesh node Cube.273
+INFO:glTFImporter:Blender create Mesh node Cube.273
+03:31:18 | INFO: Blender create Mesh node Cube.275
+INFO:glTFImporter:Blender create Mesh node Cube.275
+03:31:18 | INFO: Blender create Mesh node Cube.276
+INFO:glTFImporter:Blender create Mesh node Cube.276
+03:31:18 | INFO: Blender create Mesh node Cube.279
+INFO:glTFImporter:Blender create Mesh node Cube.279
+03:31:18 | INFO: Blender create Mesh node Cube.281
+INFO:glTFImporter:Blender create Mesh node Cube.281
+03:31:18 | INFO: Blender create Mesh node Cube.286
+INFO:glTFImporter:Blender create Mesh node Cube.286
+03:31:18 | INFO: Blender create Mesh node Cube.289
+INFO:glTFImporter:Blender create Mesh node Cube.289
+03:31:18 | INFO: Blender create Mesh node Cube.291
+INFO:glTFImporter:Blender create Mesh node Cube.291
+03:31:18 | INFO: Blender create Mesh node Cube.293
+INFO:glTFImporter:Blender create Mesh node Cube.293
+03:31:18 | INFO: Blender create Mesh node Cube.294
+INFO:glTFImporter:Blender create Mesh node Cube.294
+03:31:18 | INFO: Blender create Mesh node Cube.295
+INFO:glTFImporter:Blender create Mesh node Cube.295
+03:31:18 | INFO: Blender create Mesh node Cube.296
+INFO:glTFImporter:Blender create Mesh node Cube.296
+03:31:18 | INFO: Blender create Mesh node Cube.297
+INFO:glTFImporter:Blender create Mesh node Cube.297
+03:31:18 | INFO: Blender create Mesh node Cube.298
+INFO:glTFImporter:Blender create Mesh node Cube.298
+03:31:18 | INFO: Blender create Mesh node Cube.299
+INFO:glTFImporter:Blender create Mesh node Cube.299
+03:31:18 | INFO: Blender create Mesh node Cube.300
+INFO:glTFImporter:Blender create Mesh node Cube.300
+03:31:18 | INFO: Blender create Mesh node Cube.303
+INFO:glTFImporter:Blender create Mesh node Cube.303
+03:31:18 | INFO: Blender create Mesh node Cube.310
+INFO:glTFImporter:Blender create Mesh node Cube.310
+03:31:18 | INFO: Blender create Mesh node Cube.311
+INFO:glTFImporter:Blender create Mesh node Cube.311
+03:31:18 | INFO: Blender create Mesh node Cube.312
+INFO:glTFImporter:Blender create Mesh node Cube.312
+03:31:18 | INFO: Blender create Mesh node Cube.313
+INFO:glTFImporter:Blender create Mesh node Cube.313
+03:31:18 | INFO: Blender create Mesh node Cube.318
+INFO:glTFImporter:Blender create Mesh node Cube.318
+03:31:18 | INFO: Blender create Mesh node Cube.319
+INFO:glTFImporter:Blender create Mesh node Cube.319
+03:31:18 | INFO: Blender create Mesh node Cube.320
+INFO:glTFImporter:Blender create Mesh node Cube.320
+03:31:18 | INFO: Blender create Mesh node Cube.321
+INFO:glTFImporter:Blender create Mesh node Cube.321
+03:31:18 | INFO: Blender create Mesh node Cube.323
+INFO:glTFImporter:Blender create Mesh node Cube.323
+03:31:18 | INFO: Blender create Mesh node Cube.324
+INFO:glTFImporter:Blender create Mesh node Cube.324
+03:31:18 | INFO: Blender create Mesh node Cube.325
+INFO:glTFImporter:Blender create Mesh node Cube.325
+03:31:18 | INFO: Blender create Mesh node Cube.326
+INFO:glTFImporter:Blender create Mesh node Cube.326
+03:31:18 | INFO: Blender create Mesh node Cube.327
+INFO:glTFImporter:Blender create Mesh node Cube.327
+03:31:18 | INFO: Blender create Mesh node Cube.328
+INFO:glTFImporter:Blender create Mesh node Cube.328
+03:31:18 | INFO: Blender create Mesh node Cube.329
+INFO:glTFImporter:Blender create Mesh node Cube.329
+03:31:18 | INFO: Blender create Mesh node Cube.330
+INFO:glTFImporter:Blender create Mesh node Cube.330
+03:31:18 | INFO: Blender create Mesh node Cube.331
+INFO:glTFImporter:Blender create Mesh node Cube.331
+03:31:18 | INFO: Blender create Mesh node Cube.332
+INFO:glTFImporter:Blender create Mesh node Cube.332
+03:31:18 | INFO: Blender create Mesh node Cube.334
+INFO:glTFImporter:Blender create Mesh node Cube.334
+03:31:18 | INFO: Blender create Mesh node Cube.335
+INFO:glTFImporter:Blender create Mesh node Cube.335
+03:31:18 | INFO: Blender create Mesh node Cube.336
+INFO:glTFImporter:Blender create Mesh node Cube.336
+03:31:18 | INFO: Blender create Mesh node Cube.337
+INFO:glTFImporter:Blender create Mesh node Cube.337
+03:31:18 | INFO: Blender create Mesh node Cube.338
+INFO:glTFImporter:Blender create Mesh node Cube.338
+03:31:18 | INFO: Blender create Mesh node Cube.340
+INFO:glTFImporter:Blender create Mesh node Cube.340
+03:31:18 | INFO: Blender create Mesh node Cube.343
+INFO:glTFImporter:Blender create Mesh node Cube.343
+03:31:18 | INFO: Blender create Mesh node Cube.344
+INFO:glTFImporter:Blender create Mesh node Cube.344
+03:31:18 | INFO: Blender create Mesh node Cube.345
+INFO:glTFImporter:Blender create Mesh node Cube.345
+03:31:18 | INFO: Blender create Mesh node Cube.347
+INFO:glTFImporter:Blender create Mesh node Cube.347
+03:31:18 | INFO: Blender create Mesh node Cube.348
+INFO:glTFImporter:Blender create Mesh node Cube.348
+03:31:18 | INFO: Blender create Mesh node Cube.349
+INFO:glTFImporter:Blender create Mesh node Cube.349
+03:31:18 | INFO: Blender create Mesh node Cube.350
+INFO:glTFImporter:Blender create Mesh node Cube.350
+03:31:18 | INFO: Blender create Mesh node Cube.356
+INFO:glTFImporter:Blender create Mesh node Cube.356
+03:31:18 | INFO: Blender create Mesh node Cube.358
+INFO:glTFImporter:Blender create Mesh node Cube.358
+03:31:18 | INFO: Blender create Mesh node Cube.359
+INFO:glTFImporter:Blender create Mesh node Cube.359
+03:31:18 | INFO: Blender create Mesh node Cube.360
+INFO:glTFImporter:Blender create Mesh node Cube.360
+03:31:18 | INFO: Blender create Mesh node Cube.362
+INFO:glTFImporter:Blender create Mesh node Cube.362
+03:31:18 | INFO: Blender create Mesh node Cube.371
+INFO:glTFImporter:Blender create Mesh node Cube.371
+03:31:18 | INFO: Blender create Mesh node Cube.372
+INFO:glTFImporter:Blender create Mesh node Cube.372
+03:31:18 | INFO: Blender create Mesh node Cube.373
+INFO:glTFImporter:Blender create Mesh node Cube.373
+03:31:18 | INFO: Blender create Mesh node Cube.374
+INFO:glTFImporter:Blender create Mesh node Cube.374
+03:31:18 | INFO: Blender create Mesh node Cube.379
+INFO:glTFImporter:Blender create Mesh node Cube.379
+03:31:18 | INFO: Blender create Mesh node Cube.380
+INFO:glTFImporter:Blender create Mesh node Cube.380
+03:31:18 | INFO: Blender create Mesh node Cube.381
+INFO:glTFImporter:Blender create Mesh node Cube.381
+03:31:18 | INFO: Blender create Mesh node Cube.382
+INFO:glTFImporter:Blender create Mesh node Cube.382
+03:31:18 | INFO: Blender create Mesh node Cube.383
+INFO:glTFImporter:Blender create Mesh node Cube.383
+03:31:18 | INFO: Blender create Mesh node Cube.384
+INFO:glTFImporter:Blender create Mesh node Cube.384
+03:31:18 | INFO: Blender create Mesh node Cube.385
+INFO:glTFImporter:Blender create Mesh node Cube.385
+03:31:18 | INFO: Blender create Mesh node Cube.386
+INFO:glTFImporter:Blender create Mesh node Cube.386
+03:31:18 | INFO: Blender create Mesh node Cube.387
+INFO:glTFImporter:Blender create Mesh node Cube.387
+03:31:18 | INFO: Blender create Mesh node Cube.388
+INFO:glTFImporter:Blender create Mesh node Cube.388
+03:31:18 | INFO: Blender create Mesh node Cube.389
+INFO:glTFImporter:Blender create Mesh node Cube.389
+03:31:18 | INFO: Blender create Mesh node Cube.391
+INFO:glTFImporter:Blender create Mesh node Cube.391
+03:31:18 | INFO: Blender create Mesh node Cube.392
+INFO:glTFImporter:Blender create Mesh node Cube.392
+03:31:18 | INFO: Blender create Mesh node Cube.393
+INFO:glTFImporter:Blender create Mesh node Cube.393
+03:31:18 | INFO: Blender create Mesh node Cube.394
+INFO:glTFImporter:Blender create Mesh node Cube.394
+03:31:18 | INFO: Blender create Mesh node Cube.395
+INFO:glTFImporter:Blender create Mesh node Cube.395
+03:31:18 | INFO: Blender create Mesh node Cube.396
+INFO:glTFImporter:Blender create Mesh node Cube.396
+03:31:18 | INFO: Blender create Mesh node Cube.397
+INFO:glTFImporter:Blender create Mesh node Cube.397
+03:31:18 | INFO: Blender create Mesh node Cube.398
+INFO:glTFImporter:Blender create Mesh node Cube.398
+03:31:18 | INFO: Blender create Mesh node Cube.399
+INFO:glTFImporter:Blender create Mesh node Cube.399
+03:31:18 | INFO: Blender create Mesh node Cube.400
+INFO:glTFImporter:Blender create Mesh node Cube.400
+03:31:18 | INFO: Blender create Mesh node Cube.402
+INFO:glTFImporter:Blender create Mesh node Cube.402
+03:31:18 | INFO: Blender create Mesh node Cube.403
+INFO:glTFImporter:Blender create Mesh node Cube.403
+03:31:18 | INFO: Blender create Mesh node Cube.404
+INFO:glTFImporter:Blender create Mesh node Cube.404
+03:31:18 | INFO: Blender create Mesh node Cube.405
+INFO:glTFImporter:Blender create Mesh node Cube.405
+03:31:18 | INFO: Blender create Mesh node Cube.406
+INFO:glTFImporter:Blender create Mesh node Cube.406
+03:31:18 | INFO: Blender create Mesh node Cube.409
+INFO:glTFImporter:Blender create Mesh node Cube.409
+03:31:18 | INFO: Blender create Mesh node Cube.410
+INFO:glTFImporter:Blender create Mesh node Cube.410
+03:31:18 | INFO: Blender create Mesh node Cube.411
+INFO:glTFImporter:Blender create Mesh node Cube.411
+03:31:18 | INFO: Blender create Mesh node Cube.414
+INFO:glTFImporter:Blender create Mesh node Cube.414
+03:31:18 | INFO: Blender create Mesh node Cube.416
+INFO:glTFImporter:Blender create Mesh node Cube.416
+03:31:18 | INFO: Blender create Mesh node Cube.418
+INFO:glTFImporter:Blender create Mesh node Cube.418
+03:31:18 | INFO: Blender create Mesh node Cube.419
+INFO:glTFImporter:Blender create Mesh node Cube.419
+03:31:18 | INFO: Blender create Mesh node Cube.422
+INFO:glTFImporter:Blender create Mesh node Cube.422
+03:31:18 | INFO: Blender create Mesh node Cube.424
+INFO:glTFImporter:Blender create Mesh node Cube.424
+03:31:18 | INFO: Blender create Mesh node Cube.425
+INFO:glTFImporter:Blender create Mesh node Cube.425
+03:31:18 | INFO: Blender create Mesh node Cube.427
+INFO:glTFImporter:Blender create Mesh node Cube.427
+03:31:18 | INFO: Blender create Mesh node Cube.428
+INFO:glTFImporter:Blender create Mesh node Cube.428
+03:31:18 | INFO: Blender create Mesh node Cube.429
+INFO:glTFImporter:Blender create Mesh node Cube.429
+03:31:18 | INFO: Blender create Mesh node Cube.430
+INFO:glTFImporter:Blender create Mesh node Cube.430
+03:31:18 | INFO: Blender create Mesh node Cube.431
+INFO:glTFImporter:Blender create Mesh node Cube.431
+03:31:18 | INFO: Blender create Mesh node Cube.432
+INFO:glTFImporter:Blender create Mesh node Cube.432
+03:31:18 | INFO: Blender create Mesh node Cube.433
+INFO:glTFImporter:Blender create Mesh node Cube.433
+03:31:18 | INFO: Blender create Mesh node Cube.434
+INFO:glTFImporter:Blender create Mesh node Cube.434
+03:31:18 | INFO: Blender create Mesh node Cube.435
+INFO:glTFImporter:Blender create Mesh node Cube.435
+03:31:18 | INFO: Blender create Mesh node Cube.436
+INFO:glTFImporter:Blender create Mesh node Cube.436
+03:31:18 | INFO: Blender create Mesh node Cube.437
+INFO:glTFImporter:Blender create Mesh node Cube.437
+03:31:18 | INFO: Blender create Mesh node Cube.438
+INFO:glTFImporter:Blender create Mesh node Cube.438
+03:31:18 | INFO: Blender create Mesh node Cube.439
+INFO:glTFImporter:Blender create Mesh node Cube.439
+03:31:18 | INFO: Blender create Mesh node Cube.440
+INFO:glTFImporter:Blender create Mesh node Cube.440
+03:31:18 | INFO: Blender create Mesh node Cube.441
+INFO:glTFImporter:Blender create Mesh node Cube.441
+03:31:18 | INFO: Blender create Mesh node Cube.444
+INFO:glTFImporter:Blender create Mesh node Cube.444
+03:31:18 | INFO: Blender create Mesh node Cube.450
+INFO:glTFImporter:Blender create Mesh node Cube.450
+03:31:18 | INFO: Blender create Mesh node Cube.455
+INFO:glTFImporter:Blender create Mesh node Cube.455
+03:31:18 | INFO: Blender create Mesh node Cube.456
+INFO:glTFImporter:Blender create Mesh node Cube.456
+03:31:18 | INFO: Blender create Mesh node Cube.457
+INFO:glTFImporter:Blender create Mesh node Cube.457
+03:31:18 | INFO: Blender create Mesh node Cube.458
+INFO:glTFImporter:Blender create Mesh node Cube.458
+03:31:18 | INFO: Blender create Mesh node Cube.461
+INFO:glTFImporter:Blender create Mesh node Cube.461
+03:31:18 | INFO: Blender create Mesh node Cube.467
+INFO:glTFImporter:Blender create Mesh node Cube.467
+03:31:18 | INFO: Blender create Mesh node Cube.468
+INFO:glTFImporter:Blender create Mesh node Cube.468
+03:31:18 | INFO: Blender create Mesh node Cube.469
+INFO:glTFImporter:Blender create Mesh node Cube.469
+03:31:18 | INFO: Blender create Mesh node Cube.470
+INFO:glTFImporter:Blender create Mesh node Cube.470
+03:31:18 | INFO: Blender create Mesh node Cube.471
+INFO:glTFImporter:Blender create Mesh node Cube.471
+03:31:18 | INFO: Blender create Mesh node Cube.476
+INFO:glTFImporter:Blender create Mesh node Cube.476
+03:31:18 | INFO: Blender create Mesh node Cube.477
+INFO:glTFImporter:Blender create Mesh node Cube.477
+03:31:18 | INFO: Blender create Mesh node Cube.478
+INFO:glTFImporter:Blender create Mesh node Cube.478
+03:31:18 | INFO: Blender create Mesh node Cube.479
+INFO:glTFImporter:Blender create Mesh node Cube.479
+03:31:18 | INFO: Blender create Mesh node Cube.480
+INFO:glTFImporter:Blender create Mesh node Cube.480
+03:31:18 | INFO: Blender create Mesh node Cube.481
+INFO:glTFImporter:Blender create Mesh node Cube.481
+03:31:18 | INFO: Blender create Mesh node Cube.483
+INFO:glTFImporter:Blender create Mesh node Cube.483
+03:31:18 | INFO: Blender create Mesh node Cube.484
+INFO:glTFImporter:Blender create Mesh node Cube.484
+03:31:18 | INFO: Blender create Mesh node Cube.485
+INFO:glTFImporter:Blender create Mesh node Cube.485
+03:31:18 | INFO: Blender create Mesh node Cube.486
+INFO:glTFImporter:Blender create Mesh node Cube.486
+03:31:18 | INFO: Blender create Mesh node Cube.488
+INFO:glTFImporter:Blender create Mesh node Cube.488
+03:31:18 | INFO: Blender create Mesh node Cube.489
+INFO:glTFImporter:Blender create Mesh node Cube.489
+03:31:18 | INFO: Blender create Mesh node Cube.490
+INFO:glTFImporter:Blender create Mesh node Cube.490
+03:31:18 | INFO: Blender create Mesh node Cube.491
+INFO:glTFImporter:Blender create Mesh node Cube.491
+03:31:18 | INFO: Blender create Mesh node Cube.492
+INFO:glTFImporter:Blender create Mesh node Cube.492
+03:31:18 | INFO: Blender create Mesh node Cube.495
+INFO:glTFImporter:Blender create Mesh node Cube.495
+03:31:18 | INFO: Blender create Mesh node Cube.497
+INFO:glTFImporter:Blender create Mesh node Cube.497
+03:31:18 | INFO: Blender create Mesh node Cube.498
+INFO:glTFImporter:Blender create Mesh node Cube.498
+03:31:18 | INFO: Blender create Mesh node Cube.499
+INFO:glTFImporter:Blender create Mesh node Cube.499
+03:31:18 | INFO: Blender create Mesh node Cube.500
+INFO:glTFImporter:Blender create Mesh node Cube.500
+03:31:18 | INFO: Blender create Mesh node Cube.501
+INFO:glTFImporter:Blender create Mesh node Cube.501
+03:31:18 | INFO: Blender create Mesh node Cube.502
+INFO:glTFImporter:Blender create Mesh node Cube.502
+INFO:glTFImporter:Blender create Mesh node Cube.503
+INFO:glTFImporter:Blender create Mesh node Cube.504
+INFO:glTFImporter:Blender create Mesh node Cube.505
+INFO:glTFImporter:Blender create Mesh node Cube.506
+INFO:glTFImporter:Blender create Mesh node Cube.507
+INFO:glTFImporter:Blender create Mesh node Cube.517
+INFO:glTFImporter:Blender create Mesh node Cube.519
+INFO:glTFImporter:Blender create Mesh node Cube.520
+03:31:18 | INFO: Blender create Mesh node Cube.503
+03:31:18 | INFO: Blender create Mesh node Cube.504
+03:31:18 | INFO: Blender create Mesh node Cube.505
+03:31:18 | INFO: Blender create Mesh node Cube.506
+03:31:18 | INFO: Blender create Mesh node Cube.507
+03:31:18 | INFO: Blender create Mesh node Cube.517
+03:31:18 | INFO: Blender create Mesh node Cube.519
+03:31:18 | INFO: Blender create Mesh node Cube.520
+03:31:18 | INFO: Blender create Mesh node Cube.521
+INFO:glTFImporter:Blender create Mesh node Cube.521
+03:31:18 | INFO: Blender create Mesh node Cube.522
+INFO:glTFImporter:Blender create Mesh node Cube.522
+03:31:18 | INFO: Blender create Mesh node Cube.523
+INFO:glTFImporter:Blender create Mesh node Cube.523
+03:31:18 | INFO: Blender create Mesh node Cube.524
+INFO:glTFImporter:Blender create Mesh node Cube.524
+03:31:18 | INFO: Blender create Mesh node Cube.525
+INFO:glTFImporter:Blender create Mesh node Cube.525
+03:31:18 | INFO: Blender create Mesh node Cube.526
+INFO:glTFImporter:Blender create Mesh node Cube.526
+03:31:18 | INFO: Blender create Mesh node Cube.527
+INFO:glTFImporter:Blender create Mesh node Cube.527
+03:31:18 | INFO: Blender create Mesh node Cube.528
+INFO:glTFImporter:Blender create Mesh node Cube.528
+INFO:glTFImporter:Blender create Mesh node Cube.529
+03:31:18 | INFO: Blender create Mesh node Cube.529
+03:31:18 | INFO: Blender create Mesh node Cube.534
+INFO:glTFImporter:Blender create Mesh node Cube.534
+03:31:18 | INFO: Blender create Mesh node Cube.535
+INFO:glTFImporter:Blender create Mesh node Cube.535
+03:31:18 | INFO: Blender create Mesh node Cube.536
+INFO:glTFImporter:Blender create Mesh node Cube.536
+03:31:18 | INFO: Blender create Mesh node Cube.537
+INFO:glTFImporter:Blender create Mesh node Cube.537
+03:31:18 | INFO: Blender create Mesh node Cube.538
+INFO:glTFImporter:Blender create Mesh node Cube.538
+INFO:glTFImporter:Blender create Mesh node Cube.539
+03:31:18 | INFO: Blender create Mesh node Cube.539
+INFO:glTFImporter:Blender create Mesh node Cube.540
+03:31:18 | INFO: Blender create Mesh node Cube.540
+03:31:18 | INFO: Blender create Mesh node Cube.541
+INFO:glTFImporter:Blender create Mesh node Cube.541
+INFO:glTFImporter:Blender create Mesh node Cube.542
+03:31:18 | INFO: Blender create Mesh node Cube.542
+INFO:glTFImporter:Blender create Mesh node Cube.545
+03:31:18 | INFO: Blender create Mesh node Cube.545
+INFO:glTFImporter:Blender create Mesh node Cube.547
+03:31:18 | INFO: Blender create Mesh node Cube.547
+INFO:glTFImporter:Blender create Mesh node Cube.548
+03:31:18 | INFO: Blender create Mesh node Cube.548
+03:31:18 | INFO: Blender create Mesh node Cube.549
+INFO:glTFImporter:Blender create Mesh node Cube.549
+03:31:18 | INFO: Blender create Mesh node Cube.554
+INFO:glTFImporter:Blender create Mesh node Cube.554
+03:31:18 | INFO: Blender create Mesh node Cube.557
+INFO:glTFImporter:Blender create Mesh node Cube.557
+03:31:18 | INFO: Blender create Mesh node Cube.559
+INFO:glTFImporter:Blender create Mesh node Cube.559
+03:31:18 | INFO: Blender create Mesh node Cube.560
+INFO:glTFImporter:Blender create Mesh node Cube.560
+03:31:18 | INFO: Blender create Mesh node Cube.563
+INFO:glTFImporter:Blender create Mesh node Cube.563
+03:31:18 | INFO: Blender create Mesh node Cube.565
+INFO:glTFImporter:Blender create Mesh node Cube.565
+03:31:18 | INFO: Blender create Mesh node Cube.566
+INFO:glTFImporter:Blender create Mesh node Cube.566
+03:31:18 | INFO: Blender create Mesh node Cube.571
+INFO:glTFImporter:Blender create Mesh node Cube.571
+03:31:18 | INFO: Blender create Mesh node Cube.572
+INFO:glTFImporter:Blender create Mesh node Cube.572
+03:31:18 | INFO: Blender create Mesh node Cube.577
+INFO:glTFImporter:Blender create Mesh node Cube.577
+03:31:18 | INFO: Blender create Mesh node Cube.578
+INFO:glTFImporter:Blender create Mesh node Cube.578
+03:31:18 | INFO: Blender create Mesh node Cube.579
+INFO:glTFImporter:Blender create Mesh node Cube.579
+03:31:18 | INFO: Blender create Mesh node Cube.580
+INFO:glTFImporter:Blender create Mesh node Cube.580
+03:31:18 | INFO: Blender create Mesh node Cube.581
+INFO:glTFImporter:Blender create Mesh node Cube.581
+03:31:18 | INFO: Blender create Mesh node Cube.582
+INFO:glTFImporter:Blender create Mesh node Cube.582
+03:31:18 | INFO: Blender create Mesh node Cube.583
+INFO:glTFImporter:Blender create Mesh node Cube.583
+03:31:18 | INFO: Blender create Mesh node Cube.585
+INFO:glTFImporter:Blender create Mesh node Cube.585
+INFO:glTFImporter:Blender create Mesh node Cube.586
+03:31:18 | INFO: Blender create Mesh node Cube.586
+03:31:18 | INFO: Blender create Mesh node Cube.587
+INFO:glTFImporter:Blender create Mesh node Cube.587
+03:31:18 | INFO: Blender create Mesh node Cube.588
+INFO:glTFImporter:Blender create Mesh node Cube.588
+03:31:18 | INFO: Blender create Mesh node Cube.589
+INFO:glTFImporter:Blender create Mesh node Cube.589
+03:31:18 | INFO: Blender create Mesh node Cube.590
+INFO:glTFImporter:Blender create Mesh node Cube.590
+03:31:18 | INFO: Blender create Mesh node Cube.591
+INFO:glTFImporter:Blender create Mesh node Cube.591
+03:31:18 | INFO: Blender create Mesh node Cube.592
+INFO:glTFImporter:Blender create Mesh node Cube.592
+03:31:18 | INFO: Blender create Mesh node Cube.593
+INFO:glTFImporter:Blender create Mesh node Cube.593
+03:31:18 | INFO: Blender create Mesh node Cube.595
+INFO:glTFImporter:Blender create Mesh node Cube.595
+03:31:18 | INFO: Blender create Mesh node Cube.596
+INFO:glTFImporter:Blender create Mesh node Cube.596
+03:31:18 | INFO: Blender create Mesh node Cube.597
+INFO:glTFImporter:Blender create Mesh node Cube.597
+03:31:18 | INFO: Blender create Mesh node Cube.598
+INFO:glTFImporter:Blender create Mesh node Cube.598
+03:31:18 | INFO: Blender create Mesh node Cube.600
+INFO:glTFImporter:Blender create Mesh node Cube.600
+03:31:18 | INFO: Blender create Mesh node L19
+INFO:glTFImporter:Blender create Mesh node L19
+03:31:18 | INFO: Blender create Mesh node L19.001
+INFO:glTFImporter:Blender create Mesh node L19.001
+03:31:18 | INFO: Blender create Mesh node L20
+INFO:glTFImporter:Blender create Mesh node L20
+03:31:18 | INFO: Blender create Mesh node L20.001
+INFO:glTFImporter:Blender create Mesh node L20.001
+03:31:18 | INFO: Blender create Mesh node L25
+INFO:glTFImporter:Blender create Mesh node L25
+03:31:18 | INFO: Blender create Mesh node L26.001
+INFO:glTFImporter:Blender create Mesh node L26.001
+03:31:18 | INFO: Blender create Mesh node L27.001
+INFO:glTFImporter:Blender create Mesh node L27.001
+03:31:18 | INFO: Blender create Mesh node L35
+INFO:glTFImporter:Blender create Mesh node L35
+03:31:18 | INFO: Blender create Mesh node L71
+INFO:glTFImporter:Blender create Mesh node L71
+03:31:18 | INFO: Blender create Mesh node L72
+INFO:glTFImporter:Blender create Mesh node L72
+03:31:18 | INFO: Blender create Mesh node L72.001
+INFO:glTFImporter:Blender create Mesh node L72.001
+03:31:18 | INFO: Blender create Mesh node L73
+INFO:glTFImporter:Blender create Mesh node L73
+03:31:18 | INFO: Blender create Mesh node L73.001
+INFO:glTFImporter:Blender create Mesh node L73.001
+03:31:18 | INFO: Blender create Mesh node L74
+INFO:glTFImporter:Blender create Mesh node L74
+03:31:18 | INFO: Blender create Mesh node L76
+INFO:glTFImporter:Blender create Mesh node L76
+03:31:18 | INFO: Blender create Mesh node L76.001
+INFO:glTFImporter:Blender create Mesh node L76.001
+03:31:18 | INFO: Blender create Mesh node Cube.606
+INFO:glTFImporter:Blender create Mesh node Cube.606
+03:31:18 | INFO: Blender create Mesh node Cube.607
+INFO:glTFImporter:Blender create Mesh node Cube.607
+03:31:18 | INFO: Blender create Mesh node Cube.608
+INFO:glTFImporter:Blender create Mesh node Cube.608
+03:31:18 | INFO: Blender create Mesh node Cube.609
+INFO:glTFImporter:Blender create Mesh node Cube.609
+03:31:18 | INFO: Blender create Mesh node Cube.610
+INFO:glTFImporter:Blender create Mesh node Cube.610
+03:31:18 | INFO: Blender create Mesh node Cube.611
+INFO:glTFImporter:Blender create Mesh node Cube.611
+03:31:18 | INFO: Blender create Mesh node Cube.612
+INFO:glTFImporter:Blender create Mesh node Cube.612
+03:31:18 | INFO: Blender create Mesh node Cube.613
+INFO:glTFImporter:Blender create Mesh node Cube.613
+03:31:18 | INFO: Blender create Mesh node Cube.614
+INFO:glTFImporter:Blender create Mesh node Cube.614
+03:31:18 | INFO: Blender create Mesh node Cube.615
+INFO:glTFImporter:Blender create Mesh node Cube.615
+03:31:18 | INFO: Blender create Mesh node Cube.616
+INFO:glTFImporter:Blender create Mesh node Cube.616
+03:31:18 | INFO: Blender create Mesh node Cube.617
+INFO:glTFImporter:Blender create Mesh node Cube.617
+03:31:18 | INFO: Blender create Mesh node Cube.618
+INFO:glTFImporter:Blender create Mesh node Cube.618
+03:31:18 | INFO: Blender create Mesh node Cube.619
+INFO:glTFImporter:Blender create Mesh node Cube.619
+03:31:18 | INFO: Blender create Mesh node Cube.620
+INFO:glTFImporter:Blender create Mesh node Cube.620
+03:31:18 | INFO: Blender create Mesh node Cube.621
+INFO:glTFImporter:Blender create Mesh node Cube.621
+03:31:18 | INFO: Blender create Mesh node Cube.622
+INFO:glTFImporter:Blender create Mesh node Cube.622
+03:31:18 | INFO: Blender create Mesh node Cube.623
+INFO:glTFImporter:Blender create Mesh node Cube.623
+03:31:18 | INFO: Blender create Mesh node Cube.624
+INFO:glTFImporter:Blender create Mesh node Cube.624
+03:31:18 | INFO: Blender create Mesh node Cube.625
+INFO:glTFImporter:Blender create Mesh node Cube.625
+03:31:18 | INFO: Blender create Mesh node Cube.626
+INFO:glTFImporter:Blender create Mesh node Cube.626
+03:31:18 | INFO: Blender create Mesh node Cube.627
+INFO:glTFImporter:Blender create Mesh node Cube.627
+INFO:glTFImporter:Blender create Mesh node Cube.628
+03:31:18 | INFO: Blender create Mesh node Cube.628
+03:31:18 | INFO: Blender create Mesh node Cube.629
+INFO:glTFImporter:Blender create Mesh node Cube.629
+03:31:18 | INFO: Blender create Mesh node Cube.630
+INFO:glTFImporter:Blender create Mesh node Cube.630
+03:31:18 | INFO: Blender create Mesh node Cube.631
+INFO:glTFImporter:Blender create Mesh node Cube.631
+03:31:18 | INFO: Blender create Mesh node Cube.632
+INFO:glTFImporter:Blender create Mesh node Cube.632
+03:31:18 | INFO: Blender create Mesh node Cube.633
+INFO:glTFImporter:Blender create Mesh node Cube.633
+03:31:18 | INFO: Blender create Mesh node Cube.634
+INFO:glTFImporter:Blender create Mesh node Cube.634
+03:31:18 | INFO: Blender create Mesh node Cube.635
+INFO:glTFImporter:Blender create Mesh node Cube.635
+03:31:18 | INFO: Blender create Mesh node Cube.636
+INFO:glTFImporter:Blender create Mesh node Cube.636
+03:31:18 | INFO: Blender create Mesh node Cube.637
+INFO:glTFImporter:Blender create Mesh node Cube.637
+03:31:18 | INFO: Blender create Mesh node Cube.638
+INFO:glTFImporter:Blender create Mesh node Cube.638
+INFO:glTFImporter:Blender create Mesh node Cube.639
+03:31:18 | INFO: Blender create Mesh node Cube.639
+03:31:18 | INFO: Blender create Mesh node Cube.640
+INFO:glTFImporter:Blender create Mesh node Cube.640
+03:31:18 | INFO: Blender create Mesh node Cube.641
+INFO:glTFImporter:Blender create Mesh node Cube.641
+03:31:18 | INFO: Blender create Mesh node Narrow institutional bed
+INFO:glTFImporter:Blender create Mesh node Narrow institutional bed
+03:31:18 | INFO: Blender create Mesh node Treatment theatre table with exam lamp
+INFO:glTFImporter:Blender create Mesh node Treatment theatre table with exam lamp
+INFO:glTFImporter:Blender create Mesh node Hydrotherapy bath and pipe manifold
+03:31:18 | INFO: Blender create Mesh node Hydrotherapy bath and pipe manifold
+03:31:18 | INFO: Blender create Mesh node Archival filing case
+INFO:glTFImporter:Blender create Mesh node Archival filing case
+03:31:18 | INFO: Blender create Mesh node Open hospital/prison linen cabinet
+INFO:glTFImporter:Blender create Mesh node Open hospital/prison linen cabinet
+03:31:18 | INFO: Blender create Mesh node Persistent terrain triangles
+INFO:glTFImporter:Blender create Mesh node Persistent terrain triangles
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0000
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0000
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0001
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0001
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0002
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0002
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0003
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0003
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0004
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0004
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0005
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0005
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0006
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0006
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0007
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0007
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0008
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0008
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0009
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0009
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0010
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0010
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0011
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0011
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0012
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0012
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0013
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0013
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0014
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0014
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0015
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0015
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0016
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0016
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0017
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0017
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0018
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0018
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0019
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0019
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0020
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0020
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0021
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0021
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0022
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0022
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0023
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0023
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0024
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0024
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0025
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0025
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0026
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0026
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0027
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0027
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0028
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0028
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0029
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0029
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0030
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0030
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0031
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0031
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0032
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0032
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0033
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0033
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0034
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0034
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0035
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0035
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0036
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0036
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0037
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0037
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0038
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0038
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0039
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0039
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0040
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0040
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0041
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0041
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0042
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0042
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0043
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0043
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0044
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0044
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0045
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0045
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0046
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0046
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0047
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0047
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0048
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0048
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0049
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0049
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0050
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0050
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0051
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0051
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0052
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0052
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0053
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0053
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0054
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0054
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0055
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0055
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0056
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0056
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0057
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0057
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0058
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0058
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0059
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0059
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0060
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0060
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0061
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0061
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0062
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0062
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0063
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0063
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0064
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0064
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0065
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0065
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0066
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0066
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0067
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0067
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0068
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0068
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0069
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0069
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0070
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0070
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0071
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0071
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0072
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0072
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0073
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0073
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0074
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0074
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0075
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0075
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0076
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0076
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0077
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0077
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0078
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0078
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0079
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0079
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0080
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0080
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0081
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0081
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0082
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0082
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0083
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0083
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0084
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0084
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0085
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0085
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0086
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0086
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0087
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0087
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0088
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0088
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0089
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0089
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0090
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0090
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0091
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0091
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0092
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0092
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0093
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0093
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0094
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0094
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0095
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0095
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0096
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0096
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0097
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0097
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0098
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0098
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0099
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0099
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0100
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0100
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0101
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0101
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0102
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0102
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0103
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0103
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0104
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0104
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0105
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0105
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0106
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0106
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0107
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0107
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0108
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0108
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0109
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0109
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0110
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0110
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0111
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0111
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0112
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0112
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0113
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0113
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0114
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0114
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0115
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0115
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0116
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0116
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0117
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0117
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0118
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0118
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0119
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0119
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0120
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0120
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0121
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0121
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0122
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0122
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0123
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0123
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0124
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0124
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0125
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0125
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0126
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0126
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0127
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0127
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0128
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0128
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0129
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0129
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0130
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0130
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0131
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0131
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0132
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0132
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0133
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0133
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0134
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0134
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0135
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0135
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0136
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0136
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0137
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0137
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0138
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0138
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0139
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0139
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0140
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0140
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0141
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0141
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0142
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0142
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0143
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0143
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0144
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0144
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0145
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0145
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0146
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0146
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0147
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0147
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0148
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0148
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0149
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0149
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0150
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0150
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0151
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0151
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0152
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0152
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0153
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0153
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0154
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0154
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0155
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0155
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0156
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0156
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0157
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0157
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0158
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0158
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0159
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0159
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0160
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0160
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0161
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0161
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0162
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0162
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0163
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0163
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0164
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0164
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0165
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0165
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0166
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0166
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0167
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0167
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0168
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0168
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0169
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0169
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0170
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0170
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0171
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0171
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0172
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0172
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0173
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0173
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0174
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0174
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0175
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0175
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0176
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0176
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0177
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0177
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0178
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0178
+03:31:18 | INFO: Blender create Mesh node Bearing skirt 0179
+INFO:glTFImporter:Blender create Mesh node Bearing skirt 0179
+03:31:18 | INFO: Blender create Mesh node Cube.604
+INFO:glTFImporter:Blender create Mesh node Cube.604
+03:31:18 | INFO: Blender create Mesh node Cube.605
+INFO:glTFImporter:Blender create Mesh node Cube.605
+03:31:18 | INFO: Blender create Mesh node Cube.642
+INFO:glTFImporter:Blender create Mesh node Cube.642
+03:31:18 | INFO: Blender create Mesh node Cube.643
+INFO:glTFImporter:Blender create Mesh node Cube.643
+03:31:18 | INFO: Blender create Mesh node Cube.644
+INFO:glTFImporter:Blender create Mesh node Cube.644
+03:31:18 | INFO: Blender create Mesh node Cube.645
+INFO:glTFImporter:Blender create Mesh node Cube.645
+03:31:18 | INFO: Blender create Mesh node Cube.647
+INFO:glTFImporter:Blender create Mesh node Cube.647
+03:31:18 | INFO: Blender create Mesh node Cube.648
+INFO:glTFImporter:Blender create Mesh node Cube.648
+03:31:18 | INFO: Blender create Mesh node Cube.649
+INFO:glTFImporter:Blender create Mesh node Cube.649
+03:31:18 | INFO: Blender create Mesh node Cube.650
+INFO:glTFImporter:Blender create Mesh node Cube.650
+03:31:18 | INFO: Blender create Mesh node Cube.651
+INFO:glTFImporter:Blender create Mesh node Cube.651
+03:31:18 | INFO: Blender create Mesh node Cube.652
+INFO:glTFImporter:Blender create Mesh node Cube.652
+03:31:18 | INFO: Blender create Mesh node Cube.653
+INFO:glTFImporter:Blender create Mesh node Cube.653
+03:31:18 | INFO: Blender create Mesh node Cube.654
+INFO:glTFImporter:Blender create Mesh node Cube.654
+03:31:18 | INFO: Blender create Mesh node Cube.655
+INFO:glTFImporter:Blender create Mesh node Cube.655
+03:31:18 | INFO: Blender create Mesh node Cube.656
+INFO:glTFImporter:Blender create Mesh node Cube.656
+03:31:18 | INFO: Blender create Mesh node Cube.657
+INFO:glTFImporter:Blender create Mesh node Cube.657
+03:31:18 | INFO: Blender create Mesh node Cube.658
+INFO:glTFImporter:Blender create Mesh node Cube.658
+03:31:18 | INFO: Blender create Mesh node Cube.659
+INFO:glTFImporter:Blender create Mesh node Cube.659
+03:31:18 | INFO: Blender create Mesh node Cube.660
+INFO:glTFImporter:Blender create Mesh node Cube.660
+03:31:18 | INFO: Blender create Mesh node Cube.661
+INFO:glTFImporter:Blender create Mesh node Cube.661
+03:31:18 | INFO: Blender create Mesh node Cube.662
+INFO:glTFImporter:Blender create Mesh node Cube.662
+03:31:18 | INFO: Blender create Mesh node Cube.663
+INFO:glTFImporter:Blender create Mesh node Cube.663
+03:31:18 | INFO: Blender create Mesh node Cube.664
+INFO:glTFImporter:Blender create Mesh node Cube.664
+03:31:18 | INFO: Blender create Mesh node Cube.666
+INFO:glTFImporter:Blender create Mesh node Cube.666
+03:31:18 | INFO: Blender create Mesh node Cube.667
+INFO:glTFImporter:Blender create Mesh node Cube.667
+03:31:18 | INFO: Blender create Mesh node Cube.668
+INFO:glTFImporter:Blender create Mesh node Cube.668
+03:31:18 | INFO: Blender create Mesh node Cube.669
+INFO:glTFImporter:Blender create Mesh node Cube.669
+03:31:18 | INFO: Blender create Mesh node Cube.670
+INFO:glTFImporter:Blender create Mesh node Cube.670
+03:31:18 | INFO: Blender create Mesh node Cube.671
+INFO:glTFImporter:Blender create Mesh node Cube.671
+03:31:18 | INFO: Blender create Mesh node Cube.672
+INFO:glTFImporter:Blender create Mesh node Cube.672
+03:31:18 | INFO: Blender create Mesh node Cube.673
+INFO:glTFImporter:Blender create Mesh node Cube.673
+03:31:18 | INFO: Blender create Mesh node Cube.674
+INFO:glTFImporter:Blender create Mesh node Cube.674
+03:31:18 | INFO: Blender create Mesh node Cube.675
+INFO:glTFImporter:Blender create Mesh node Cube.675
+03:31:18 | INFO: Blender create Mesh node Cube.676
+INFO:glTFImporter:Blender create Mesh node Cube.676
+03:31:18 | INFO: Blender create Mesh node Cube.678
+INFO:glTFImporter:Blender create Mesh node Cube.678
+03:31:18 | INFO: Blender create Mesh node Cube.679
+INFO:glTFImporter:Blender create Mesh node Cube.679
+03:31:18 | INFO: Blender create Mesh node Cube.680
+INFO:glTFImporter:Blender create Mesh node Cube.680
+03:31:18 | INFO: Blender create Mesh node Cube.682
+INFO:glTFImporter:Blender create Mesh node Cube.682
+03:31:18 | INFO: Blender create Mesh node Cube.683
+INFO:glTFImporter:Blender create Mesh node Cube.683
+03:31:18 | INFO: Blender create Mesh node Cube.684
+INFO:glTFImporter:Blender create Mesh node Cube.684
+03:31:18 | INFO: Blender create Mesh node Cube.685
+INFO:glTFImporter:Blender create Mesh node Cube.685
+03:31:18 | INFO: Blender create Mesh node Cube.686
+INFO:glTFImporter:Blender create Mesh node Cube.686
+03:31:18 | INFO: Blender create Mesh node Cube.687
+INFO:glTFImporter:Blender create Mesh node Cube.687
+03:31:18 | INFO: Blender create Mesh node Cube.688
+INFO:glTFImporter:Blender create Mesh node Cube.688
+03:31:18 | INFO: Blender create Mesh node Cube.689
+INFO:glTFImporter:Blender create Mesh node Cube.689
+03:31:18 | INFO: Blender create Mesh node Cube.690
+INFO:glTFImporter:Blender create Mesh node Cube.690
+03:31:18 | INFO: Blender create Mesh node Cube.691
+INFO:glTFImporter:Blender create Mesh node Cube.691
+03:31:18 | INFO: Blender create Mesh node Cube.692
+INFO:glTFImporter:Blender create Mesh node Cube.692
+03:31:18 | INFO: Blender create Mesh node Cube.693
+INFO:glTFImporter:Blender create Mesh node Cube.693
+03:31:18 | INFO: Blender create Mesh node Cube.694
+INFO:glTFImporter:Blender create Mesh node Cube.694
+03:31:18 | INFO: Blender create Mesh node Cube.696
+INFO:glTFImporter:Blender create Mesh node Cube.696
+03:31:18 | INFO: Blender create Mesh node Cube.697
+INFO:glTFImporter:Blender create Mesh node Cube.697
+03:31:18 | INFO: Blender create Mesh node Cube.700
+INFO:glTFImporter:Blender create Mesh node Cube.700
+03:31:18 | INFO: Blender create Mesh node Cube.701
+INFO:glTFImporter:Blender create Mesh node Cube.701
+03:31:18 | INFO: Blender create Mesh node Cube.702
+INFO:glTFImporter:Blender create Mesh node Cube.702
+03:31:18 | INFO: Blender create Mesh node Cube.703
+INFO:glTFImporter:Blender create Mesh node Cube.703
+03:31:18 | INFO: Blender create Mesh node Cube.704
+INFO:glTFImporter:Blender create Mesh node Cube.704
+03:31:18 | INFO: Blender create Mesh node Cube.705
+INFO:glTFImporter:Blender create Mesh node Cube.705
+03:31:18 | INFO: Blender create Mesh node Cube.706
+INFO:glTFImporter:Blender create Mesh node Cube.706
+03:31:18 | INFO: Blender create Mesh node Cube.707
+INFO:glTFImporter:Blender create Mesh node Cube.707
+03:31:18 | INFO: Blender create Mesh node Cube.708
+INFO:glTFImporter:Blender create Mesh node Cube.708
+03:31:18 | INFO: Blender create Mesh node Cube.709
+INFO:glTFImporter:Blender create Mesh node Cube.709
+03:31:18 | INFO: Blender create Mesh node Cube.710
+INFO:glTFImporter:Blender create Mesh node Cube.710
+03:31:18 | INFO: Blender create Mesh node Cube.711
+INFO:glTFImporter:Blender create Mesh node Cube.711
+03:31:18 | INFO: Blender create Mesh node Cube.712
+INFO:glTFImporter:Blender create Mesh node Cube.712
+03:31:18 | INFO: Blender create Mesh node Cube.713
+INFO:glTFImporter:Blender create Mesh node Cube.713
+03:31:18 | INFO: Blender create Mesh node Cube.714
+INFO:glTFImporter:Blender create Mesh node Cube.714
+03:31:18 | INFO: Blender create Mesh node Cube.715
+INFO:glTFImporter:Blender create Mesh node Cube.715
+03:31:18 | INFO: Blender create Mesh node Cube.716
+INFO:glTFImporter:Blender create Mesh node Cube.716
+03:31:18 | INFO: Blender create Mesh node Cube.717
+INFO:glTFImporter:Blender create Mesh node Cube.717
+03:31:18 | INFO: Blender create Mesh node Cube.718
+INFO:glTFImporter:Blender create Mesh node Cube.718
+03:31:18 | INFO: Blender create Mesh node Cube.719
+INFO:glTFImporter:Blender create Mesh node Cube.719
+03:31:18 | INFO: Blender create Mesh node Cube.720
+INFO:glTFImporter:Blender create Mesh node Cube.720
+03:31:18 | INFO: Blender create Mesh node Cube.722
+INFO:glTFImporter:Blender create Mesh node Cube.722
+03:31:18 | INFO: Blender create Mesh node Cube.723
+INFO:glTFImporter:Blender create Mesh node Cube.723
+03:31:18 | INFO: Blender create Mesh node Cube.724
+INFO:glTFImporter:Blender create Mesh node Cube.724
+03:31:18 | INFO: Blender create Mesh node Cube.725
+INFO:glTFImporter:Blender create Mesh node Cube.725
+03:31:18 | INFO: Blender create Mesh node Cube.727
+INFO:glTFImporter:Blender create Mesh node Cube.727
+03:31:18 | INFO: Blender create Mesh node Cube.728
+INFO:glTFImporter:Blender create Mesh node Cube.728
+03:31:18 | INFO: Blender create Mesh node Cube.729
+INFO:glTFImporter:Blender create Mesh node Cube.729
+03:31:18 | INFO: Blender create Mesh node Cube.730
+INFO:glTFImporter:Blender create Mesh node Cube.730
+03:31:18 | INFO: Blender create Mesh node Cube.731
+INFO:glTFImporter:Blender create Mesh node Cube.731
+03:31:18 | INFO: Blender create Mesh node Cube.732
+INFO:glTFImporter:Blender create Mesh node Cube.732
+03:31:18 | INFO: Blender create Mesh node Cube.733
+INFO:glTFImporter:Blender create Mesh node Cube.733
+03:31:18 | INFO: Blender create Mesh node Cube.734
+INFO:glTFImporter:Blender create Mesh node Cube.734
+03:31:18 | INFO: Blender create Mesh node Cube.736
+INFO:glTFImporter:Blender create Mesh node Cube.736
+03:31:18 | INFO: Blender create Mesh node Cube.738
+INFO:glTFImporter:Blender create Mesh node Cube.738
+03:31:18 | INFO: Blender create Mesh node Cube.739
+INFO:glTFImporter:Blender create Mesh node Cube.739
+03:31:18 | INFO: Blender create Mesh node Cube.741
+INFO:glTFImporter:Blender create Mesh node Cube.741
+03:31:18 | INFO: Blender create Mesh node Cube.742
+INFO:glTFImporter:Blender create Mesh node Cube.742
+03:31:18 | INFO: Blender create Mesh node Cube.743
+INFO:glTFImporter:Blender create Mesh node Cube.743
+03:31:18 | INFO: Blender create Mesh node Cube.744
+INFO:glTFImporter:Blender create Mesh node Cube.744
+INFO:glTFImporter:Blender create Mesh node Cube.745
+03:31:18 | INFO: Blender create Mesh node Cube.745
+03:31:18 | INFO: Blender create Mesh node Cube.746
+INFO:glTFImporter:Blender create Mesh node Cube.746
+03:31:18 | INFO: Blender create Mesh node Cube.747
+INFO:glTFImporter:Blender create Mesh node Cube.747
+03:31:18 | INFO: Blender create Mesh node Cube.748
+INFO:glTFImporter:Blender create Mesh node Cube.748
+03:31:18 | INFO: Blender create Mesh node Cube.749
+INFO:glTFImporter:Blender create Mesh node Cube.749
+03:31:18 | INFO: Blender create Mesh node Cube.750
+INFO:glTFImporter:Blender create Mesh node Cube.750
+03:31:18 | INFO: Blender create Mesh node Cube.751
+INFO:glTFImporter:Blender create Mesh node Cube.751
+03:31:18 | INFO: Blender create Mesh node Cube.752
+INFO:glTFImporter:Blender create Mesh node Cube.752
+03:31:18 | INFO: Blender create Mesh node Cube.753
+INFO:glTFImporter:Blender create Mesh node Cube.753
+03:31:18 | INFO: Blender create Mesh node Cube.754
+INFO:glTFImporter:Blender create Mesh node Cube.754
+03:31:18 | INFO: Blender create Mesh node Cube.755
+INFO:glTFImporter:Blender create Mesh node Cube.755
+03:31:18 | INFO: Blender create Mesh node Cube.756
+INFO:glTFImporter:Blender create Mesh node Cube.756
+03:31:18 | INFO: Blender create Mesh node Cube.757
+INFO:glTFImporter:Blender create Mesh node Cube.757
+03:31:18 | INFO: glTF import finished in 0.55s
+INFO:glTFImporter:glTF import finished in 0.55s
+Info: Saved as "open-circulation.blend"
+INFO:glTFImporter:Starting glTF 2.0 export
+INFO Draco mesh compression is available, use library at C:\Program Files\Blender Foundation\Blender 5.0\5.0\scripts\addons_core\io_scene_gltf2\extern_draco.dll
+03:31:19 | INFO: Starting glTF 2.0 export
+03:31:19 | INFO: Extracting primitive: Profile Flat route shell Wall upper-ward-link N.001
+INFO:glTFImporter:Extracting primitive: Profile Flat route shell Wall upper-ward-link N.001
+03:31:19 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+03:31:19 | INFO: Extracting primitive: Profile Flat route shell Wall upper-ward-link S.001
+INFO:glTFImporter:Extracting primitive: Profile Flat route shell Wall upper-ward-link S.001
+03:31:19 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+03:31:19 | INFO: Extracting primitive: Profile Flat route shell Wall upper-spine W.002
+INFO:glTFImporter:Extracting primitive: Profile Flat route shell Wall upper-spine W.002
+03:31:19 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+03:31:19 | INFO: Extracting primitive: Profile Flat route shell Wall upper-spine E
+INFO:glTFImporter:Extracting primitive: Profile Flat route shell Wall upper-spine E
+03:31:19 | INFO: Primitives created: 1
+INFO:glTFImporter:Primitives created: 1
+03:31:19 | INFO: Finished glTF 2.0 export in 0.03587007522583008 s
+INFO:glTFImporter:Finished glTF 2.0 export in 0.03587007522583008 s
+
+CLOSED_WALL_PROFILES 4 4 3618
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit

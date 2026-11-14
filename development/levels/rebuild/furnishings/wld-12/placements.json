@@ -1,0 +1,121 @@
+{
+  "site": "WLD-12",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-12/rough-layout.json",
+  "source_layout_sha256": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8",
+  "structure_glb_sha256": "c25f3b5d0e444d7dda6cd1eaa275629c8f2f887b957fdf04b0decb39bf7a19f1",
+  "furnished_glb_sha256": "c4e0b1d6c702d756d059ad6aea9f2f143b60e5f0e3b8fb6b4d96e8b041c523fa",
+  "native_sha256": "35026ef5323a44bb07a088a255c2cb9c00958e44d29af3badd2c684cbf16e13a",
+  "requests": 4,
+  "placements": [
+    {
+      "id": "WLD-12:signal:0:0",
+      "zone": "signal",
+      "purpose": "Signal hut / Railway signal hut lever-frame bank / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_signal_hut_lever_bank",
+      "asset": "level_blockout_signal_hut_lever_bank",
+      "source_sha256": "f95e4ceb6cf62e7e0b6770a82fbdc7cd0cdf623bf27830d8eee688e0e9a5183e",
+      "bounds": [
+        23.770999908447266,
+        -62.97999954223633,
+        0.0,
+        25.791000366210938,
+        -62.15999984741211,
+        2.004999876022339
+      ],
+      "rect": [
+        23.77100001621246,
+        62.16,
+        25.790999997138975,
+        62.97999999284744
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 284
+    },
+    {
+      "id": "WLD-12:store:1:0",
+      "zone": "store",
+      "purpose": "Track stores hut / Trackside tools and metal-trimmed trunk / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_rail_trackside_toolbox",
+      "asset": "level_blockout_rail_trackside_toolbox",
+      "source_sha256": "5bcefd30fef8cea1d74d4bdbc2f8fde1a2ccacbf2c95494baf36e51d1e31a1e0",
+      "bounds": [
+        54.22999954223633,
+        -16.845001220703125,
+        0.0,
+        55.560001373291016,
+        -16.15999984741211,
+        0.8424999713897705
+      ],
+      "rect": [
+        54.229999991416925,
+        16.16,
+        55.56000003433227,
+        16.845000002384186
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    },
+    {
+      "id": "WLD-12:coach-b:2:0",
+      "zone": "coach-b",
+      "purpose": "Derailed baggage coach / Wheeled rail-platform baggage cart / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_rail_luggage_cart",
+      "asset": "level_blockout_rail_luggage_cart",
+      "source_sha256": "3b9182d1ba905e06d892f2b28816afa7427c4e31ec15dc12dc7cee0210ad36ba",
+      "bounds": [
+        45.48400115966797,
+        -47.739444732666016,
+        0.0,
+        46.54399871826172,
+        -46.15999984741211,
+        1.4500000476837158
+      ],
+      "rect": [
+        45.48400001144409,
+        46.16,
+        46.54399995422363,
+        47.73944369316101
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 232
+    },
+    {
+      "id": "WLD-12:refuge:3:0",
+      "zone": "refuge",
+      "purpose": "Tunnel maintenance refuge / Collapsible tent cot and pillow / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_camp_field_cot",
+      "asset": "level_blockout_camp_field_cot",
+      "source_sha256": "bed0b8ba5acec83bd08a44d865d27b658691dd7d2d2526166f1a4deebb3b308f",
+      "bounds": [
+        42.31999969482422,
+        -2.1000001430511475,
+        0.0,
+        43.19999694824219,
+        -0.15999990701675415,
+        0.6850000023841858
+      ],
+      "rect": [
+        42.32000000095367,
+        0.15999999999999992,
+        43.1999999961853,
+        2.100000057220459
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "8df86325a8171f76a3b9bb0e1632c4fef3ec74490f6dee7004510e27db85c48a",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 4,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

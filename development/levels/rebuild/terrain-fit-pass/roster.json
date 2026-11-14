@@ -1,0 +1,641 @@
+{
+  "scope": 29,
+  "status": "BREADTH_BY_STAGE_BEARING_CONSTRUCTION_IN_PROGRESS",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/academy/construction.json",
+      "parts": 147,
+      "triangles": 1764,
+      "kinds": {
+        "skirt": 147
+      },
+      "open_contacts": {
+        "NO_NATIVE_GROUND": 8,
+        "EARTH_OVERTOPS_WALKING_FLOOR": 9
+      },
+      "flat_route_comparison": {
+        "samples": 7908,
+        "baseline_valid": 7041,
+        "new_block": 0,
+        "baseline_sweep": 6690,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "ASYLUM",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/asylum/construction.json",
+      "parts": 180,
+      "triangles": 2160,
+      "kinds": {
+        "skirt": 180
+      },
+      "open_contacts": {
+        "NO_NATIVE_GROUND": 34
+      },
+      "flat_route_comparison": {
+        "samples": 7956,
+        "baseline_valid": 7172,
+        "new_block": 0,
+        "baseline_sweep": 6731,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "CASTLE",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_BEARING_AUDIT_REQUIRED",
+      "next_action": "Inspect mature terrain/structure/arrival individually; preserve current source, props and placement contracts.",
+      "runtime_accepted": false
+    },
+    {
+      "id": "CHURCH",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/church/construction.json",
+      "parts": 45,
+      "triangles": 540,
+      "kinds": {
+        "skirt": 45
+      },
+      "open_contacts": {
+        "NO_NATIVE_GROUND": 15,
+        "EARTH_OVERTOPS_WALKING_FLOOR": 1
+      },
+      "flat_route_comparison": {
+        "samples": 3420,
+        "baseline_valid": 3176,
+        "new_block": 0,
+        "baseline_sweep": 2922,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "COLLEGE",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/college/construction.json",
+      "parts": 201,
+      "triangles": 2412,
+      "kinds": {
+        "skirt": 201
+      },
+      "open_contacts": {
+        "NO_NATIVE_GROUND": 11
+      },
+      "flat_route_comparison": {
+        "samples": 8289,
+        "baseline_valid": 7607,
+        "new_block": 0,
+        "baseline_sweep": 7211,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "FARMHOUSE",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/farmhouse/construction.json",
+      "parts": 85,
+      "triangles": 1020,
+      "kinds": {
+        "skirt": 85
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 7
+      },
+      "flat_route_comparison": {
+        "samples": 4101,
+        "baseline_valid": 3707,
+        "new_block": 0,
+        "baseline_sweep": 3366,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "HOUSE",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_BEARING_AUDIT_REQUIRED",
+      "next_action": "Inspect mature terrain/structure/arrival individually; preserve current source, props and placement contracts.",
+      "runtime_accepted": false
+    },
+    {
+      "id": "MANSION",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/mansion/construction.json",
+      "parts": 111,
+      "triangles": 1332,
+      "kinds": {
+        "skirt": 111
+      },
+      "open_contacts": {
+        "NO_NATIVE_GROUND": 4
+      },
+      "flat_route_comparison": {
+        "samples": 7311,
+        "baseline_valid": 6924,
+        "new_block": 0,
+        "baseline_sweep": 6492,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "PRISON",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/prison/construction.json",
+      "parts": 216,
+      "triangles": 2592,
+      "kinds": {
+        "skirt": 216
+      },
+      "open_contacts": {
+        "NO_NATIVE_GROUND": 42
+      },
+      "flat_route_comparison": {
+        "samples": 6636,
+        "baseline_valid": 6034,
+        "new_block": 0,
+        "baseline_sweep": 5725,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "SCHOOL",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/school/construction.json",
+      "parts": 82,
+      "triangles": 984,
+      "kinds": {
+        "skirt": 82
+      },
+      "open_contacts": {
+        "NO_NATIVE_GROUND": 2
+      },
+      "flat_route_comparison": {
+        "samples": 5811,
+        "baseline_valid": 5193,
+        "new_block": 0,
+        "baseline_sweep": 4759,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-01",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_BEARING_AUDIT_REQUIRED",
+      "next_action": "Inspect mature terrain/structure/arrival individually; preserve current source, props and placement contracts.",
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-02",
+      "status": "RETAIN_MATURE_NATIVE_INDIVIDUAL_BEARING_AUDIT_REQUIRED",
+      "next_action": "Inspect mature terrain/structure/arrival individually; preserve current source, props and placement contracts.",
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-03",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-03/construction.json",
+      "parts": 40,
+      "triangles": 480,
+      "kinds": {
+        "skirt": 40
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 91,
+        "REQUIRES_DEEP_RETAINING_OR_ROCK_VOLUME": 8
+      },
+      "flat_route_comparison": {
+        "samples": 3549,
+        "baseline_valid": 2848,
+        "new_block": 0,
+        "baseline_sweep": 2685,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-04",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-04/construction.json",
+      "parts": 28,
+      "triangles": 336,
+      "kinds": {
+        "skirt": 28
+      },
+      "open_contacts": {
+        "RESERVE_LOW_ROUTE_L06": 9,
+        "NO_ACTUAL_DECK_UNDERSIDE": 23,
+        "NO_STRUCTURAL_FLOOR_BEARING": 1,
+        "EARTH_OVERTOPS_WALKING_FLOOR": 18,
+        "RESERVE_LOW_ROUTE_L11": 10,
+        "RESERVE_LOW_ROUTE_L09": 2
+      },
+      "flat_route_comparison": {
+        "samples": 1413,
+        "baseline_valid": 853,
+        "new_block": 0,
+        "baseline_sweep": 750,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-05",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-05/construction.json",
+      "parts": 36,
+      "triangles": 432,
+      "kinds": {
+        "skirt": 36
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 58,
+        "RESERVE_LOW_ROUTE_L17": 2
+      },
+      "flat_route_comparison": {
+        "samples": 3510,
+        "baseline_valid": 2832,
+        "new_block": 0,
+        "baseline_sweep": 2705,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-06",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-06/construction.json",
+      "parts": 99,
+      "triangles": 1188,
+      "kinds": {
+        "skirt": 41,
+        "pile": 45,
+        "connected-bearing-beam": 13
+      },
+      "open_contacts": {
+        "NO_STRUCTURAL_FLOOR_BEARING": 9,
+        "NO_ACTUAL_DECK_UNDERSIDE": 34,
+        "PILE_FOOTPRINT_NOT_FULLY_SUPPORTED": 2,
+        "PILE_NATIVE_GROUND_MISSING_OR_OVERTOPPED": 11,
+        "RESERVE_LOW_ROUTE_L16": 1
+      },
+      "flat_route_comparison": {
+        "samples": 3744,
+        "baseline_valid": 3537,
+        "new_block": 0,
+        "baseline_sweep": 3365,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-07",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-07/construction.json",
+      "parts": 2,
+      "triangles": 24,
+      "kinds": {
+        "skirt": 2
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 6,
+        "NO_NATIVE_GROUND": 10
+      },
+      "flat_route_comparison": {
+        "samples": 3579,
+        "baseline_valid": 3557,
+        "new_block": 0,
+        "baseline_sweep": 3460,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-08",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-08/construction.json",
+      "parts": 75,
+      "triangles": 900,
+      "kinds": {
+        "skirt": 75
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 56,
+        "NO_NATIVE_GROUND": 18,
+        "RESERVE_LOW_ROUTE_L17": 3,
+        "RESERVE_LOW_ROUTE_L18": 3
+      },
+      "flat_route_comparison": {
+        "samples": 4062,
+        "baseline_valid": 3111,
+        "new_block": 0,
+        "baseline_sweep": 2967,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-09",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-09/construction.json",
+      "parts": 12,
+      "triangles": 144,
+      "kinds": {
+        "skirt": 12
+      },
+      "open_contacts": {
+        "REQUIRES_DEEP_RETAINING_OR_ROCK_VOLUME": 29,
+        "NO_NATIVE_GROUND": 12,
+        "RESERVE_LOW_ROUTE_L07": 1
+      },
+      "flat_route_comparison": {
+        "samples": 3123,
+        "baseline_valid": 2312,
+        "new_block": 0,
+        "baseline_sweep": 2211,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-10",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-10/construction.json",
+      "parts": 134,
+      "triangles": 1608,
+      "kinds": {
+        "skirt": 134
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 46,
+        "NO_NATIVE_GROUND": 11
+      },
+      "flat_route_comparison": {
+        "samples": 4152,
+        "baseline_valid": 3695,
+        "new_block": 0,
+        "baseline_sweep": 3547,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-11",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-11/construction.json",
+      "parts": 105,
+      "triangles": 1260,
+      "kinds": {
+        "pile": 105
+      },
+      "open_contacts": {
+        "NO_ACTUAL_DECK_UNDERSIDE": 21
+      },
+      "flat_route_comparison": {
+        "samples": 3663,
+        "baseline_valid": 3447,
+        "new_block": 0,
+        "baseline_sweep": 3260,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-12",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-12/construction.json",
+      "parts": 43,
+      "triangles": 516,
+      "kinds": {
+        "skirt": 43
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 93,
+        "NO_NATIVE_GROUND": 2
+      },
+      "flat_route_comparison": {
+        "samples": 4173,
+        "baseline_valid": 3377,
+        "new_block": 0,
+        "baseline_sweep": 3254,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-13",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-13/construction.json",
+      "parts": 83,
+      "triangles": 996,
+      "kinds": {
+        "skirt": 83
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 18,
+        "NO_NATIVE_GROUND": 3,
+        "REQUIRES_DEEP_RETAINING_OR_ROCK_VOLUME": 16
+      },
+      "flat_route_comparison": {
+        "samples": 4239,
+        "baseline_valid": 3920,
+        "new_block": 0,
+        "baseline_sweep": 3795,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-14",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-14/construction.json",
+      "parts": 27,
+      "triangles": 324,
+      "kinds": {
+        "skirt": 27
+      },
+      "open_contacts": {
+        "NO_NATIVE_GROUND": 4,
+        "NO_ACTUAL_DECK_UNDERSIDE": 20
+      },
+      "flat_route_comparison": {
+        "samples": 2583,
+        "baseline_valid": 2441,
+        "new_block": 0,
+        "baseline_sweep": 2349,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-15",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-15/construction.json",
+      "parts": 2,
+      "triangles": 24,
+      "kinds": {
+        "pile": 2
+      },
+      "open_contacts": {
+        "NO_ACTUAL_DECK_UNDERSIDE": 34,
+        "PILE_NATIVE_GROUND_MISSING_OR_OVERTOPPED": 3
+      },
+      "flat_route_comparison": {
+        "samples": 2940,
+        "baseline_valid": 2835,
+        "new_block": 0,
+        "baseline_sweep": 2725,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-16",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-16/construction.json",
+      "parts": 7,
+      "triangles": 84,
+      "kinds": {
+        "skirt": 7
+      },
+      "open_contacts": {
+        "NO_ACTUAL_DECK_UNDERSIDE": 49,
+        "NO_STRUCTURAL_FLOOR_BEARING": 12
+      },
+      "flat_route_comparison": {
+        "samples": 3243,
+        "baseline_valid": 2980,
+        "new_block": 0,
+        "baseline_sweep": 2847,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-17",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-17/construction.json",
+      "parts": 20,
+      "triangles": 240,
+      "kinds": {
+        "skirt": 20
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 72,
+        "RESERVE_LOW_ROUTE_route-13": 2,
+        "RESERVE_LOW_ROUTE_route-14": 2
+      },
+      "flat_route_comparison": {
+        "samples": 2913,
+        "baseline_valid": 1960,
+        "new_block": 0,
+        "baseline_sweep": 1867,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-18",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-18/construction.json",
+      "parts": 18,
+      "triangles": 216,
+      "kinds": {
+        "skirt": 18
+      },
+      "open_contacts": {
+        "RESERVE_LOW_ROUTE_route-08": 2,
+        "NO_NATIVE_GROUND": 4,
+        "RESERVE_LOW_ROUTE_route-13": 2
+      },
+      "flat_route_comparison": {
+        "samples": 3033,
+        "baseline_valid": 2878,
+        "new_block": 0,
+        "baseline_sweep": 2759,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    },
+    {
+      "id": "WLD-07-MORTUARY",
+      "status": "NATIVE_BEARING_CONSTRUCTION_REVIEW_OPEN",
+      "evidence": "development/levels/rebuild/terrain-fit-pass/wld-07-mortuary/construction.json",
+      "parts": 13,
+      "triangles": 156,
+      "kinds": {
+        "skirt": 13
+      },
+      "open_contacts": {
+        "EARTH_OVERTOPS_WALKING_FLOOR": 10,
+        "NO_NATIVE_GROUND": 13
+      },
+      "flat_route_comparison": {
+        "samples": 5058,
+        "baseline_valid": 5012,
+        "new_block": 0,
+        "baseline_sweep": 4879,
+        "new_sweep_block": 0,
+        "affected_segments": {}
+      },
+      "master_replaced": false,
+      "runtime_accepted": false
+    }
+  ],
+  "source_commit": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+  "generator_sha256": "b4fb0746e5e6fac4dc7309ee59a6155741287a57d2aaeefe3c0e6280a1b15145",
+  "limitations": "25editable candidates, four mature sources retained. No master replacement, terrain/engineering/runtime acceptance or map unlock."
+}

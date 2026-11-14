@@ -1,0 +1,81 @@
+{
+  "status": "PASS_SCOPED_NATIVE_EXPORT_DECK_CHECKS",
+  "sites": [
+    {
+      "id": "WLD-06",
+      "original_meshes_preserved": 219,
+      "closed_new_parts": 160,
+      "new_triangles": 1872,
+      "coverage": {
+        "preserved_source_top_samples": 4258,
+        "new_closed_deck_samples": 6878,
+        "shared_edge_samples": 2,
+        "clear_aperture_samples": 640
+      },
+      "supports": 14,
+      "source_glb_sha256": "d9c7674bb7de9c6be49c5f7f0f5cc8fc93c1d4cee4ccd4e132a6faf0b41f4d20",
+      "glb_sha256": "bc09795ec372a7ce1f4c67d08e2dc4249445a158d1d3d78dd6871eb03b3ac0e1",
+      "physics_sha256": "6d503bc7e886215b7316356c4a7ee2d767dbe1ecdc64bfcb46ba89427c25860e"
+    },
+    {
+      "id": "WLD-11",
+      "original_meshes_preserved": 193,
+      "closed_new_parts": 171,
+      "new_triangles": 2000,
+      "coverage": {
+        "new_closed_deck_samples": 6823,
+        "preserved_source_top_samples": 5249,
+        "clear_aperture_samples": 600
+      },
+      "supports": 14,
+      "source_glb_sha256": "446e2536020be93dc783f692c7ec7833ee579f15f3be5a3b8c54b27b0a11b2e1",
+      "glb_sha256": "dee9d5acce1a8c391cca55aa2cbc21d54dbcc82862ee43b863bff5fb124bbb82",
+      "physics_sha256": "bbb06bffe3af3091d2eae604475c9df0c914919ba90f8a938f70b6f084498239"
+    },
+    {
+      "id": "WLD-14",
+      "original_meshes_preserved": 362,
+      "closed_new_parts": 25,
+      "new_triangles": 300,
+      "coverage": {
+        "new_closed_deck_samples": 2777,
+        "preserved_source_top_samples": 295,
+        "shared_edge_samples": 1
+      },
+      "supports": 15,
+      "source_glb_sha256": "0f9eece750be3a71e096cc6dd20b9ad468a87b282c3ee8cb5ea25dfebbc23df9",
+      "glb_sha256": "c0e3bade34567c01a69c809ccf6e0e6d0857946a23d9084c8935fc37e5fcd12e",
+      "physics_sha256": "b81d1853e0a21cbd33a52673a1df5583148c68973c7a4538b88cf92bfdc2d1f4"
+    },
+    {
+      "id": "WLD-15",
+      "original_meshes_preserved": 181,
+      "closed_new_parts": 38,
+      "new_triangles": 452,
+      "coverage": {
+        "new_closed_deck_samples": 5664,
+        "preserved_source_top_samples": 480
+      },
+      "supports": 10,
+      "source_glb_sha256": "731cde313c6ec175529340e3f82cf4cc3a82bcd6fafc9c286420a765eb7e78fb",
+      "glb_sha256": "362a6829df41f7877cc91563cca078c39f66f61a54743a614d503c2c07c07381",
+      "physics_sha256": "b836230754987dc7f3ce21d5be84c985cfe4d61d6c2bd0a7c22582ab217b95b3"
+    },
+    {
+      "id": "WLD-16",
+      "original_meshes_preserved": 135,
+      "closed_new_parts": 97,
+      "new_triangles": 1132,
+      "coverage": {
+        "new_closed_deck_samples": 2654,
+        "preserved_source_top_samples": 1282
+      },
+      "supports": 31,
+      "source_glb_sha256": "6ce78d1089cdabc0c63036e907a7011dfd3fbdd336146dacc0d41088c07eea7c",
+      "glb_sha256": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
+      "physics_sha256": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a"
+    }
+  ],
+  "checker_sha256": "8ebe25ecb2d65ea5a435ee9779607fa6f3806593d98cc74fa204aed2891d5528",
+  "scope": "Every original mesh/UV/image/pose preserved; every appended native triangle finite/nondegenerate, closed outward and exact exported/native; quarter-metre deck grid checks actual top/underside, source top exclusivity, authored apertures and named terrain/bearing contacts. Not finished framing, terrain/boundary, runtime or gameplay acceptance."
+}

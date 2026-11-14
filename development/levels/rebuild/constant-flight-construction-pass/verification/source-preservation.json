@@ -1,0 +1,27 @@
+{
+  "sites": [
+    {
+      "site": "WLD-08",
+      "old_rooms_retained": true,
+      "room_count": 15,
+      "native_parts_retained": 292,
+      "staging_capacity_unchanged": true
+    },
+    {
+      "site": "WLD-12",
+      "old_rooms_retained": true,
+      "room_count": 15,
+      "native_parts_retained": 111,
+      "staging_capacity_unchanged": true
+    },
+    {
+      "site": "WLD-18",
+      "old_rooms_retained": true,
+      "room_count": 17,
+      "native_parts_retained": 284,
+      "staging_capacity_unchanged": true
+    }
+  ],
+  "source_heights_layers_and_all_prior_cut_rows_preserved": true,
+  "scope": "Explicit new/modified structural cells and additional persisted hole punches; not full-map or runtime acceptance"
+}

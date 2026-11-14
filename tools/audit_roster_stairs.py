@@ -1,0 +1,215 @@
+"""Headless opt-in native stair movement audit; does not unlock candidate maps.
+
+Exact saved component identities come from the hash-bound physics contracts.
+Compare default and explicit stair movement through complete authored flights.
+"""
+from pathlib import Path
+import argparse,csv,hashlib,json,math,os,subprocess
+
+from roster_candidate_sources import arguments as candidate_arguments,select as candidate_select
+ROOT=Path(__file__).resolve().parents[1]
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+def main():
+    parser=argparse.ArgumentParser();parser.add_argument('--sites',nargs='+');parser.add_argument('--output',type=Path,required=True);parser.add_argument('--require-authored-chains',action='store_true');parser.add_argument('--bearing-pass',action='store_true');parser.add_argument('--deck-pass',action='store_true');parser.add_argument('--occupancy-pass',action='store_true');parser.add_argument('--closure-pass',action='store_true');parser.add_argument('--stair-end-pass',action='store_true');parser.add_argument('--opening-pass',action='store_true');parser.add_argument('--bay-pass',action='store_true');parser.add_argument('--bench-pass',action='store_true');parser.add_argument('--connection-pass',action='store_true');parser.add_argument('--flat-pass',action='store_true');parser.add_argument('--arrival-pass',action='store_true');candidate_arguments(parser);args=parser.parse_args();args.flat_pass=args.flat_pass or args.arrival_pass;assert sum([args.bearing_pass,args.deck_pass,args.occupancy_pass,args.closure_pass,args.stair_end_pass,args.opening_pass,args.bay_pass,args.bench_pass,args.connection_pass,args.flat_pass])<=1
+    comparing=bool(args.source_manifest) or args.bearing_pass or args.deck_pass or args.occupancy_pass or args.closure_pass or args.stair_end_pass or args.opening_pass or args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass
+    build=ROOT/'build/roster-stair-probe';build.mkdir(parents=True,exist_ok=True)
+    sites=json.loads((ROOT/'development/levels/rebuild/furnishings/room-programs.json').read_text(encoding='utf-8'))['sites']
+    chain_path=ROOT/'development/levels/rebuild/movement-chains.json';declared=json.loads(chain_path.read_text())['sites']
+    rows=[];paths=[];names=[];bindings={};chain_bindings=[];declared_new_flights=set();variant_keys=['before_bearing','after_bearing'] if comparing else ['structure','furnished']
+    if args.sites:sites=[s for s in sites if s in args.sites]
+    for site in sites:
+        base=ROOT/f'development/levels/rebuild/structures/{site.lower()}'
+        implementation=json.loads((base/'implementation.json').read_text(encoding='utf-8'))
+        layout_path=ROOT/implementation['authoritative_input'];alias_file=ROOT/'development/levels/rebuild/flat-circulation-pass/verification/source-layout-aliases.json'
+        if args.flat_pass and alias_file.exists():layout_path=ROOT/json.loads(alias_file.read_text())['files'].get(layout_path.relative_to(ROOT).as_posix(),{}).get('frozen_path',layout_path.relative_to(ROOT).as_posix())
+        layout=json.loads(layout_path.read_text(encoding='utf-8'))
+        bindings[site]={'layout':sha(layout_path),'variants':{}}
+        variants=[('structure',base,'rough-shell.glb','structure-physics.hcs2'),('furnished',ROOT/f'development/levels/rebuild/furnishings/{site.lower()}','furnished.glb','furnished-physics.hcs2')]
+        if comparing:
+            out=ROOT/f'development/levels/rebuild/terrain-fit-pass/{site.lower()}';bearing=json.loads((out/'construction.json').read_text());source=ROOT/bearing['source_glb'];source_physics=ROOT/bearing['source_physics'];assert source.parent==source_physics.parent
+            variants=[('before_bearing',source.parent,source.name,source_physics.name),('after_bearing',out,'supported-terrain.glb','supported-terrain.hcs2')]
+        if args.deck_pass:
+            before=ROOT/f'development/levels/rebuild/terrain-fit-pass/{site.lower()}';out=ROOT/f'development/levels/rebuild/deck-fit-pass/{site.lower()}';candidate=out/'deck-terrain.glb'
+            if candidate.exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,'supported-terrain.glb','supported-terrain.hcs2'),('after_bearing',out,'deck-terrain.glb','deck-terrain.hcs2')]
+            else:
+                out=before;bearing=json.loads((before/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,'supported-terrain.glb','supported-terrain.hcs2'),('after_bearing',before,'supported-terrain.glb','supported-terrain.hcs2')]
+        if args.occupancy_pass:
+            before=ROOT/f'development/levels/rebuild/deck-fit-pass/{site.lower()}';oldmesh='deck-terrain.glb';oldphysics='deck-terrain.hcs2'
+            if not (before/oldmesh).exists():before=ROOT/f'development/levels/rebuild/terrain-fit-pass/{site.lower()}';oldmesh='supported-terrain.glb';oldphysics='supported-terrain.hcs2'
+            out=ROOT/f'development/levels/rebuild/terrain-occupancy-pass/assemblies/{site.lower()}';candidate=out/'occupied-terrain.glb'
+            if candidate.exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,oldmesh,oldphysics),('after_bearing',out,'occupied-terrain.glb','occupied-terrain.hcs2')]
+            else:
+                out=before;bearing=json.loads((before/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,oldmesh,oldphysics),('after_bearing',before,oldmesh,oldphysics)]
+        if args.closure_pass:
+            options=[(ROOT/f'development/levels/rebuild/terrain-occupancy-pass/assemblies/{site.lower()}','occupied-terrain'),(ROOT/f'development/levels/rebuild/deck-fit-pass/{site.lower()}','deck-terrain'),(ROOT/f'development/levels/rebuild/terrain-fit-pass/{site.lower()}','supported-terrain')];before,stem=next((p,n) for p,n in options if (p/(n+'.glb')).exists());out=ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}';bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',out,'closed-floors.glb','closed-floors.hcs2')]
+        if args.stair_end_pass:
+            before=ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}';out=ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}';candidate=out/'supported-stairs.glb'
+            if candidate.exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,'closed-floors.glb','closed-floors.hcs2'),('after_bearing',out,'supported-stairs.glb','supported-stairs.hcs2')]
+            else:
+                out=before;bearing=json.loads((out/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,'closed-floors.glb','closed-floors.hcs2'),('after_bearing',before,'closed-floors.glb','closed-floors.hcs2')]
+        if args.opening_pass:
+            before=ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}';stem='supported-stairs'
+            if not (before/(stem+'.glb')).exists():before=ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}';stem='closed-floors'
+            out=ROOT/f'development/levels/rebuild/stair-opening-pass/{site.lower()}'
+            if (out/'construction.json').exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',out,'opened-stairs.glb','opened-stairs.hcs2')]
+            else:
+                out=before;bearing=json.loads((out/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',before,stem+'.glb',stem+'.hcs2')]
+        if args.bay_pass:
+            options=[(ROOT/f'development/levels/rebuild/stair-opening-pass/{site.lower()}','opened-stairs'),(ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}','supported-stairs'),(ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}','closed-floors')];before,stem=next((p,s) for p,s in options if (p/(s+'.glb')).exists());out=ROOT/f'development/levels/rebuild/stair-bay-pass/{site.lower()}'
+            if (out/'construction.json').exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',out,'bayed-stairs.glb','bayed-stairs.hcs2')]
+            else:
+                out=before;bearing=json.loads((out/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',before,stem+'.glb',stem+'.hcs2')]
+        if args.bench_pass:
+            options=[(ROOT/f'development/levels/rebuild/stair-bay-pass/{site.lower()}','bayed-stairs'),(ROOT/f'development/levels/rebuild/stair-opening-pass/{site.lower()}','opened-stairs'),(ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}','supported-stairs'),(ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}','closed-floors')];before,stem=next((p,s) for p,s in options if (p/(s+'.glb')).exists());out=ROOT/f'development/levels/rebuild/stair-terrain-pass/assemblies/{site.lower()}'
+            if (out/'construction.json').exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',out,'benched-terrain.glb','benched-terrain.hcs2')]
+            else:
+                out=before;bearing=json.loads((out/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',before,stem+'.glb',stem+'.hcs2')]
+                if 'before_layout' in bearing:
+                    bearing['before_layout']=bearing['layout'];bearing['before_segment_map']=bearing.get('source_segment_map',{});bearing['before_stair_components']=bearing['stair_components']
+        if args.connection_pass:
+            options=[(ROOT/f'development/levels/rebuild/stair-terrain-pass/assemblies/{site.lower()}','benched-terrain'),(ROOT/f'development/levels/rebuild/stair-bay-pass/{site.lower()}','bayed-stairs'),(ROOT/f'development/levels/rebuild/stair-opening-pass/{site.lower()}','opened-stairs'),(ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}','supported-stairs'),(ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}','closed-floors')];before,stem=next((p,s) for p,s in options if (p/(s+'.glb')).exists());out=ROOT/f'development/levels/rebuild/stair-connection-pass/{site.lower()}'
+            if (out/'construction.json').exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',out,'connected-stairs.glb','connected-stairs.hcs2')]
+            else:
+                out=before;bearing=json.loads((out/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',before,stem+'.glb',stem+'.hcs2')]
+                if 'before_layout' in bearing:
+                    bearing['before_layout']=bearing['layout'];bearing['before_segment_map']=bearing.get('source_segment_map',{});bearing['before_stair_components']=bearing['stair_components']
+        if args.flat_pass:
+            options=[(ROOT/f'development/levels/rebuild/stair-connection-pass/{site.lower()}','connected-stairs'),(ROOT/f'development/levels/rebuild/stair-terrain-pass/assemblies/{site.lower()}','benched-terrain'),(ROOT/f'development/levels/rebuild/stair-bay-pass/{site.lower()}','bayed-stairs'),(ROOT/f'development/levels/rebuild/stair-opening-pass/{site.lower()}','opened-stairs'),(ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}','supported-stairs'),(ROOT/f'development/levels/rebuild/floor-closure-pass/{site.lower()}','closed-floors')];before,stem=next((p,s) for p,s in options if (p/(s+'.glb')).exists());out=ROOT/f'development/levels/rebuild/flat-circulation-pass/{site.lower()}'
+            if (out/'construction.json').exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',out,'open-circulation.glb','open-circulation.hcs2')]
+            else:
+                out=before;bearing=json.loads((out/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256']);variants=[('before_bearing',before,stem+'.glb',stem+'.hcs2'),('after_bearing',before,stem+'.glb',stem+'.hcs2')]
+                if 'before_layout' in bearing:
+                    bearing['before_layout']=bearing['layout'];bearing['before_segment_map']=bearing.get('source_segment_map',{});bearing['before_stair_components']=bearing['stair_components']
+        if args.arrival_pass:
+            before=ROOT/f'development/levels/rebuild/flat-circulation-pass/{site.lower()}';out=ROOT/f'development/levels/rebuild/arrival-bearing-pass/{site.lower()}'
+            if (out/'construction.json').exists():
+                bearing=json.loads((out/'construction.json').read_text());variants=[('before_bearing',before,'open-circulation.glb','open-circulation.hcs2'),('after_bearing',out,'supported-arrival.glb','supported-arrival.hcs2')]
+            else:
+                out=before;bearing=json.loads((before/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256'],before_layout=bearing['layout'],before_segment_map=bearing.get('source_segment_map',{}),before_stair_components=bearing['stair_components']);variants=[('before_bearing',before,'open-circulation.glb','open-circulation.hcs2'),('after_bearing',before,'open-circulation.glb','open-circulation.hcs2')]
+        if args.source_manifest:
+            old,new,bearing,desired=candidate_select(args,site);out=new[0];variants=[('before_bearing',*old),('after_bearing',*new)]
+            previous_layout=json.loads((ROOT/bearing.get('before_layout',bearing['layout'])).read_text());previous_mapping=bearing.get('before_segment_map',{})
+            existing_flights={(site,l['id'],str(previous_mapping.get(l['id'],{}).get(str(i),i))) for l in previous_layout['links'] for i,(a,b) in enumerate(zip(l['points'],l['points'][1:])) if abs(a[1]-b[1])>.01}
+            for added in bearing.get('interface_added_flights',[]):
+                if (site,added['link'],str(added['segment'])) in existing_flights:continue # Historical declarations are not new in later batches.
+                revised=json.loads((ROOT/bearing['layout']).read_text());link=next(l for l in revised['links'] if l['id']==added['link']);index=added['layout_segment'];assert link['points'][index:index+2]==added['points'];assert abs(added['points'][0][1]-added['points'][1][1])>.01
+                assert str(bearing.get('source_segment_map',{}).get(added['link'],{}).get(str(index),index))==str(added['segment']);declared_new_flights.add((site,added['link'],str(added['segment'])))
+        for variant,folder,mesh,physics in variants:
+            active_layout_path=layout_path
+            mapping={}
+            if args.stair_end_pass and 'source_layout' in bearing:
+                active_layout_path=ROOT/bearing['source_layout' if variant=='before_bearing' else 'layout']
+                if variant=='after_bearing':mapping=bearing.get('source_segment_map',{})
+            if args.opening_pass:
+                active_layout_path=ROOT/bearing['layout'];mapping=bearing.get('source_segment_map',{})
+            if args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass or args.source_manifest:
+                active_layout_path=ROOT/bearing.get('before_layout',bearing['layout']) if variant=='before_bearing' else ROOT/bearing['layout']
+                mapping=bearing.get('before_segment_map',bearing.get('source_segment_map',{})) if variant=='before_bearing' else bearing.get('source_segment_map',{})
+            layout=json.loads(active_layout_path.read_text(encoding='utf-8'))
+            if comparing:
+                contract_path=out/'construction.json';original=json.loads((ROOT/f'development/levels/rebuild/furnishings/{site.lower()}/physics-contract.json').read_text());contract=dict(stair_components=original['stair_components'],source_glb_sha256=bearing['source_glb_sha256'] if variant=='before_bearing' else bearing['glb_sha256'],physics_sha256=bearing['source_physics_sha256'] if variant=='before_bearing' else bearing['physics_sha256'])
+            else:contract_path=folder/'physics-contract.json';contract=json.loads(contract_path.read_text(encoding='utf-8'))
+            assert sha(folder/mesh)==contract['source_glb_sha256'] and sha(folder/physics)==contract['physics_sha256'],(site,variant)
+            bindings[site]['variants'][variant]={'contract':sha(contract_path),'physics':sha(folder/physics),'glb':sha(folder/mesh),'layout':sha(active_layout_path)}
+            if args.stair_end_pass and variant=='after_bearing' and (ROOT/f'development/levels/rebuild/stair-landing-pass/{site.lower()}/construction.json').exists():contract['stair_components']=bearing['stair_components']
+            if args.opening_pass and 'stair_components' in bearing:contract['stair_components']=bearing['stair_components']
+            if (args.bay_pass or args.bench_pass or args.connection_pass or args.flat_pass or args.source_manifest) and 'stair_components' in bearing:contract['stair_components']=bearing.get('before_stair_components',bearing['stair_components']) if variant=='before_bearing' else bearing['stair_components']
+            for name in contract['stair_components']:
+                assert '\t' not in name and '\n' not in name
+                names.append(f'{site}:{variant}\t{name}')
+            for link in layout['links']:
+                if link.get('player_access')=='SEALED_NO_ROUTE':continue
+                vertical=any(abs(p[1]-q[1])>=.01 for p,q in zip(link['points'],link['points'][1:]))
+                for i,(p,q) in enumerate(zip(link['points'],link['points'][1:])):
+                    row='\t'.join(map(str,[site,variant,folder/physics,contract['physics_sha256'],link['id'],i,*p,*q]))
+                    if vertical:paths.append(row)
+                    if abs(p[1]-q[1])<.01:continue
+                    assert math.hypot(q[0]-p[0],q[2]-p[2])>.01,(site,link['id'])
+                    # Stable baseline identity; coordinates are the revised physical flight.
+                    source_index=mapping.get(link['id'],{}).get(str(i),i)
+                    rows.append('\t'.join(map(str,[site,variant,folder/physics,contract['physics_sha256'],link['id'],source_index,*p,*q])))
+            # Join only unique, exact authored endpoints. No inferred connector
+            # or reset at a floor boundary: carry the actual feet position from
+            # one full source link into the next.
+            active=[]
+            for link in layout['links']:
+                if link.get('player_access')=='SEALED_NO_ROUTE' or not any(abs(p[1]-q[1])>=.01 for p,q in zip(link['points'],link['points'][1:])):continue
+                points=link['points'] if link['points'][-1][1]>link['points'][0][1] else list(reversed(link['points']))
+                active.append((link['id'],points))
+            ends={tuple(points[-1]) for _,points in active}
+            for identity,points in active:
+                if tuple(points[0]) in ends:continue
+                used=[identity];joined=list(points)
+                while True:
+                    following=[(key,p) for key,p in active if key not in used and p[0]==joined[-1]]
+                    if len(following)!=1:break
+                    key,p=following[0];used.append(key);joined.extend(p[1:])
+                if len(used)<2:continue
+                chain='CHAIN/'+'/'.join(used);chain_bindings.append(dict(site=site,variant=variant,id=chain,links=used))
+                for i,(p,q) in enumerate(zip(joined,joined[1:])):
+                    paths.append('\t'.join(map(str,[site,variant,folder/physics,contract['physics_sha256'],chain,i,*p,*q])))
+            by_id={link['id']:link for link in layout['links']}
+            for authored in declared.get(site,[]):
+                joined=[]
+                for step in authored['links']:
+                    link=by_id[step['link']];assert link.get('player_access')!='SEALED_NO_ROUTE'
+                    points=list(reversed(link['points'])) if step.get('reverse') else link['points']
+                    if joined:assert joined[-1]==points[0],(site,authored['id'],'Disconnected authored source endpoints')
+                    joined.extend(points if not joined else points[1:])
+                if authored.get('closed'):assert joined[0]==joined[-1],(site,'Circulation loop not closed')
+                for i,(p,q) in enumerate(zip(joined,joined[1:])):
+                    paths.append('\t'.join(map(str,[site,variant,folder/physics,contract['physics_sha256'],'AUTHORED/'+authored['id'],i,*p,*q])))
+    for filename,data in [('names.tsv',names),('flights.tsv',rows),('full-paths.tsv',paths)]:
+        (build/filename).write_bytes(('\n'.join(data)+'\n').encode())
+    java=Path(os.environ.get('JAVA_HOME','C:/Program Files/Java/jdk-17'))/'bin';jar=ROOT/'build/beckenburg-game.jar'
+    sources=['src/main/java/org/beckenburg/AuthoredSitePhysics.java','tools/java/RosterStairMovementProbe.java','tools/java/RosterFailureContacts.java']
+    subprocess.run([str(java/'javac.exe'),'-cp',str(jar),'-d',str(build),*[str(ROOT/s) for s in sources]],check=True)
+    subprocess.run([str(java/'java.exe'),'-Djava.awt.headless=true','-cp',str(build)+os.pathsep+str(jar),'RosterStairMovementProbe',str(build/'names.tsv'),str(build/'flights.tsv'),str(build/'results.tsv'),str(build/'chains.tsv'),str(build/'full-paths.tsv')],check=True)
+    subprocess.run([str(java/'java.exe'),'-Djava.awt.headless=true','-cp',str(build)+os.pathsep+str(jar),'RosterFailureContacts',str(build/'names.tsv'),str(build/'flights.tsv'),str(build/'failure-contacts.tsv'),*(['sweeps','after_bearing'] if comparing else [])],check=True)
+    result=list(csv.DictReader((build/'results.tsv').read_text(encoding='utf-8').splitlines(),delimiter='\t'))
+    summary={}
+    for variant in variant_keys:
+        summary[variant]={}
+        for site in sites:
+            selected=[r for r in result if r['site']==site and r['variant']==variant]
+            summary[variant][site]={'flights':len(selected),**{key:sum(r[key]=='PASS' for r in selected) for key in ['legacy_up','legacy_down','authored_up','authored_down']}}
+    report={'status':'CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE','bindings':bindings,'source_hashes':{s:sha(ROOT/s) for s in sources+['tools/audit_roster_stairs.py']+(['tools/roster_candidate_sources.py',(ROOT/args.source_manifest).relative_to(ROOT).as_posix()] if args.source_manifest else [])},'dependency_jar_sha256':sha(jar),'sites':summary,'limitation':'Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.'}
+    chains=list(csv.DictReader((build/'chains.tsv').read_text(encoding='utf-8').splitlines(),delimiter='\t'))
+    report['complete_routes']={v:{'routes':len([r for r in chains if r['variant']==v and not r['link'].startswith(('CHAIN/','AUTHORED/'))]),**{k:sum(r[k]=='PASS' for r in chains if r['variant']==v and not r['link'].startswith(('CHAIN/','AUTHORED/'))) for k in ['legacy_forward','legacy_reverse','authored_forward','authored_reverse']}} for v in variant_keys}
+    if comparing:
+        def regressions(items,identity,fields):
+            before={tuple(r[k] for k in identity):r for r in items if r['variant']=='before_bearing'};after={tuple(r[k] for k in identity):r for r in items if r['variant']=='after_bearing'}
+            assert before.keys()<=after.keys(),'Dropped a previously audited flight or complete route'
+            added=after.keys()-before.keys()
+            assert all(identity==['site','link'] and after[key]['link'].startswith('CHAIN/') or identity==['site','link','segment'] and key in declared_new_flights for key in added),'Unexpected new flight/route identity'
+            if identity==['site','link','segment']:assert declared_new_flights<=added,'Declared added flight missing or not genuinely new'
+            old_failures=[dict(identity=key,field=field,before=before[key][field],after=after[key][field]) for key in before for field in fields if before[key][field]=='PASS' and after[key][field]!='PASS']
+            new_failures=[dict(identity=key,field=field,before='NEW_CHAIN_REQUIRED_PASS',after=after[key][field]) for key in added for field in fields if after[key][field]!='PASS']
+            return old_failures+new_failures
+        report['bearing_regressions']=dict(flights=regressions(result,['site','link','segment'],['authored_up','authored_down']),complete_paths=regressions(chains,['site','link'],['authored_forward','authored_reverse']))
+    report['authored_routes']=[r for r in chains if r['link'].startswith('AUTHORED/')]
+    report['source_hashes'][chain_path.relative_to(ROOT).as_posix()]=sha(chain_path)
+    report['cross_link_chains']={'bindings':chain_bindings,'results':[r for r in chains if r['link'].startswith('CHAIN/')],'scope':'Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks.'}
+    report['chain_scope']='Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network.'
+    args.output.mkdir(parents=True,exist_ok=True)
+    (args.output/'flight-sweeps.tsv').write_bytes((build/'results.tsv').read_bytes().replace(b'\r\n',b'\n'))
+    (args.output/'complete-route-sweeps.tsv').write_bytes((build/'chains.tsv').read_bytes().replace(b'\r\n',b'\n'))
+    (args.output/'failure-contacts.tsv').write_bytes((build/'failure-contacts.tsv').read_bytes().replace(b'\r\n',b'\n'))
+    (args.output/'stair-movement.json').write_bytes((json.dumps(report,indent=2)+'\n').encode())
+    print({v:{k:sum(s[k] for s in per.values()) for k in ['flights','legacy_up','legacy_down','authored_up','authored_down']} for v,per in summary.items()})
+    print(report['complete_routes'])
+    print(report['authored_routes'])
+    if args.require_authored_chains:
+        expected=sum(len(declared.get(site,[])) for site in sites)*len(variant_keys)
+        assert len(report['authored_routes'])==expected and all(r['authored_forward']=='PASS' and r['authored_reverse']=='PASS' for r in report['authored_routes']),'Declared circulation route is missing or not physically complete within selected sites'
+    if comparing:assert not any(report['bearing_regressions'].values()),'New bearing construction regressed an existing passing flight or complete route'
+
+if __name__=='__main__':main()

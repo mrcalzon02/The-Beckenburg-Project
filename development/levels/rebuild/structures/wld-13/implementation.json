@@ -1,0 +1,413 @@
+{
+  "id": "WLD-13",
+  "title": "Greywater Cannery",
+  "source": "layouts\\wld-13\\layout.json",
+  "source_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+  "zones": 14,
+  "routes": 19,
+  "shell_openings": [
+    {
+      "zone": "processing",
+      "side": "N",
+      "link": "L09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "N",
+      "link": "L09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "N",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "S",
+      "link": "L02",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "W",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "W",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "E",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "processing",
+      "side": "E",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cold",
+      "side": "S",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cold",
+      "side": "S",
+      "link": "L07",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "cold",
+      "side": "W",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "cold",
+      "side": "W",
+      "link": "L06",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "boiler",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "boiler",
+      "side": "S",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "boiler",
+      "side": "W",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "boiler",
+      "side": "W",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "boiler",
+      "side": "E",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "boiler",
+      "side": "E",
+      "link": "L05",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "N",
+      "link": "L04",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "S",
+      "link": "L03",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "wash",
+      "side": "W",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "N",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "N",
+      "link": "L13",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "S",
+      "link": "L09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "S",
+      "link": "L09",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "office",
+      "side": "E",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "N",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "N",
+      "link": "L12",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "S",
+      "link": "L11",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "stores",
+      "side": "W",
+      "link": "L10",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "bunk",
+      "side": "N",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "bunk",
+      "side": "N",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "bunk",
+      "side": "W",
+      "link": "L17",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "bunk",
+      "side": "W",
+      "link": "L17",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "bunk",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "bunk",
+      "side": "E",
+      "link": "L14",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "S",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "S",
+      "link": "L15",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "W",
+      "link": "L18",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "W",
+      "link": "L18",
+      "width": 2,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "E",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    },
+    {
+      "zone": "mess",
+      "side": "E",
+      "link": "L16",
+      "width": 1.5,
+      "height": 2.45
+    }
+  ],
+  "meshes": 148,
+  "issues": [
+    {
+      "zone": "gallery",
+      "issue": "Deck openings reserved; final stair headroom, guards and landings required",
+      "openings": [
+        [
+          27.0,
+          40.1,
+          36.0,
+          41.9
+        ]
+      ]
+    },
+    {
+      "link": "L19",
+      "issue": "Measured treads built; capsule/headroom/guards/end landing and runtime integration still require verification",
+      "flights": 1
+    }
+  ],
+  "source_refinement": [
+    "Research cannery processing/boiler separation and shore construction before detailed meshes.",
+    "Refine machine islands around at least two clear hall lanes and a reachable cold-store manual release.",
+    "Cold-store doors must always have an interior escape; no powered lock may create a permanent hunt trap."
+  ],
+  "native_reopened": true,
+  "blend_sha256": "2f38cd5244947ebaa1b78f21c7e1cbe636445bc78ab350757a7233ef85c5fb2d",
+  "status": "rough-shell-blocked; runtime integration pending",
+  "structural_review": {
+    "stage": "STRUCTURE_BLOCKING_NOT_RUNTIME_ACCEPTED",
+    "glb_sha256": "d7a3bc3daa6449abcabde4dd3e23d0ab22d7b67e95d52b6702fe659bdee7ff04",
+    "independently_reimported": true,
+    "meshes": 144,
+    "triangles": 1728,
+    "floor_parts": 13,
+    "ceiling_cap_parts": 9,
+    "stair_treads": 17,
+    "checked_closed_solids": 144,
+    "measured_depth_parts": 22,
+    "exported_cap_rays": 9,
+    "route_support_solids": 33,
+    "fixed_infill_routes": 0,
+    "exported_fixed_boundary_checks": [],
+    "wall_depth_m": 0.16,
+    "floor_depth_m": 0.16,
+    "terrain": "Exterior zone pads omitted; real saved terrain/hole work remains",
+    "roof": "Closed ceiling/deck caps only; authored exterior roof form/weathering remains",
+    "remaining": [
+      "Capsule/optical/body/object and roof/skylight rays in actual engine",
+      "All remaining unresolved elevation routes and landings/guards",
+      "Original source asset fit and supported furnishings",
+      "Source-matched terrain holes, services, van and LAN integration"
+    ]
+  },
+  "authoritative_input": "development/levels/layouts/wld-13/layout.json",
+  "original_scene_preserved": true,
+  "preserved_sources": {
+    "development/levels/layouts/wld-13/layout.json": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+    "development/levels/blockouts/wld-13/rough-shell.blend": "77fdeac0c3c3774a53807b8f992db88983cc89ab808026a25dc6afa62a5a08f3",
+    "development/levels/blockouts/wld-13/rough-shell.glb": "d815edf727f4543d79e5f1d8ab1297d67e105a738a1e89f85d0daf0bb6a0e531"
+  },
+  "generator_sha256": {
+    "tools/build_roster_structures.py": "feb03202409f0f12d889c61882b817785d0173b3c60dab94114d2de9b4ee2b13",
+    "development/levels/blockouts/build_blockouts.py": "a79d81e4aed21ba6c86caf18273f9374e98dd4702f9434a294797ac138e69395",
+    "development/levels/blockouts/structural_pass.py": "9bbf596ad782cd629371cc9986d3fb198c6eec411be54496008e37028ebd276b",
+    "development/levels/blockouts/proposal_landforms.py": "0407493e747230f8037472a5ac90ac96bf8a5b92beb95ce019b59cce5466bf7e"
+  }
+}

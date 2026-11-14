@@ -106,7 +106,7 @@ public final class BeckenburgDesktopE2ETest {
     }
     private static Component visibleSoloCase(Container surface){
         for(Component c:surface.getComponents()){
-            if(c.getClass().getSimpleName().equals("GamePanel") && c.isShowing())return c;
+            if(c.getClass().getSimpleName().equals("LanWorldPanel") && c.isShowing())return c;
             if(c instanceof Container nested){
                 Component found=visibleSoloCase(nested);
                 if(found!=null)return found;
@@ -125,9 +125,11 @@ public final class BeckenburgDesktopE2ETest {
         return field.getInt(game);
     }
     private static boolean soloInitialFrameReady(Component game)throws Exception{
-        Field field=game.getClass().getDeclaredField("initialFrameReady");
+        Field field=game.getClass().getDeclaredField("opening");
         field.setAccessible(true);
-        return field.getBoolean(game);
+        LevelOpeningCinematic opening=(LevelOpeningCinematic)field.get(game);
+        if(opening!=null)return !opening.gpuFlight()||opening.previewStatus().firstFrameReady();
+        return soloFrameCount(game)>0;
     }
     private static JComboBox<?> sitePicker(Container container){
         for(Component c:container.getComponents()){
@@ -246,7 +248,7 @@ public final class BeckenburgDesktopE2ETest {
             });
             Component solo=waitForResponsive(()->visibleSoloCase(frame.getContentPane()),25);
             if(solo==null)throw new AssertionError(
-                "Case dispatch never displayed an actual GamePanel");
+                "Case dispatch never displayed an actual LanWorldPanel");
             Component rendered=waitForResponsive(
                 ()->soloInitialFrameReady(solo)?solo:null,65);
             if(rendered==null)throw new AssertionError(

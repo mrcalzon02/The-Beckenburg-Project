@@ -41,6 +41,54 @@ public final class LanAcoustics {
     /** Lowest-cost route for ghost hearing; excludes the safe expedition van. */
     public static int cost(HouseMap map,int from,int to){return route(map,from,to,false);}
     public static int physicalCost(HouseMap map,int from,int to){return route(map,from,to,true);}
+
+    /**
+     * Real source/listener location adds any bounded architectural thresholds
+     * inside the existing 15 gameplay zones. The existing zone graph and wire
+     * protocol remain stable; only a live authored door's physical state can
+     * alter this extra attenuation. Invalid endpoints never become audible.
+     */
+    public static int costAt(HouseMap map,int from,LevelDefinition.Vec listener,
+                             int to,LevelDefinition.Vec source){
+        return positionCost(map,from,listener,to,source,false);
+    }
+    public static int physicalCostAt(HouseMap map,int from,LevelDefinition.Vec listener,
+                                     int to,LevelDefinition.Vec source){
+        return positionCost(map,from,listener,to,source,true);
+    }
+    private static int positionCost(HouseMap map,int from,LevelDefinition.Vec listener,
+                                    int to,LevelDefinition.Vec source,boolean includeVan){
+        int graph=includeVan?physicalCost(map,from,to):cost(map,from,to);
+        if(graph==Integer.MAX_VALUE||listener==null||source==null||
+           !Double.isFinite(listener.x()+listener.y()+listener.z()+
+                            source.x()+source.y()+source.z())||
+           map.roomAt(listener.x(),listener.y(),listener.z())!=from||
+           map.roomAt(source.x(),source.y(),source.z())!=to)
+            return Integer.MAX_VALUE;
+        int extra=map.architecturalSoundLoss(source.x(),source.y(),source.z(),
+            listener.x(),listener.y(),listener.z());
+        return graph>Integer.MAX_VALUE-extra?Integer.MAX_VALUE:graph+extra;
+    }
+
+    /** Weather, host ghost AI and human-ghost hearing use the same real door. */
+    public static boolean audibleAt(HouseMap map,int listenerRoom,
+                                    LevelDefinition.Vec listener,int sourceRoom,
+                                    LevelDefinition.Vec source,LanGhostPursuit.Sound sound,
+                                    MissionWeather.State weather){
+        return sound!=null&&audibleAt(map,listenerRoom,listener,sourceRoom,source,
+            sound,weather,GhostSoundProfile.forSound(sound));
+    }
+    public static boolean audibleAt(HouseMap map,int listenerRoom,
+                                    LevelDefinition.Vec listener,int sourceRoom,
+                                    LevelDefinition.Vec source,LanGhostPursuit.Sound sound,
+                                    MissionWeather.State weather,GhostSoundProfile.Profile profile){
+        if(sound==null||weather==null||profile==null
+                ||!valid(map,listenerRoom)||!valid(map,sourceRoom))return false;
+        int masking=weather.noiseMask()/4;
+        if(map.outside(listenerRoom)||map.outside(sourceRoom))masking*=2;
+        return costAt(map,listenerRoom,listener,sourceRoom,source)
+            <=Math.max(0,GhostSoundProfile.acousticBudget(sound,profile)-masking);
+    }
     private static int route(HouseMap map,int from,int to,boolean includeVan){
         if(!valid(map,from)||!valid(map,to)||!includeVan&&
                 (from==HouseMap.EXTRACTION_ROOM||to==HouseMap.EXTRACTION_ROOM))return Integer.MAX_VALUE;

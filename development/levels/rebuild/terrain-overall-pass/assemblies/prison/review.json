@@ -1,0 +1,776 @@
+{
+  "id": "PRISON",
+  "status": "NATIVE_MACROTERRAIN_ASSEMBLY_REVIEW_OPEN",
+  "preserved_sources": {
+    "development\\levels\\rebuild\\furnishings\\prison\\furnished.glb": "5959bd48b3912d4b75b9a07bab076e90ec4ac6c616fdd428d4dd6e88ee241a0b",
+    "development\\levels\\rebuild\\furnishings\\prison\\furnished-physics.hcs2": "e1b4969cc444aa98b756272504837230df9abbd2d7c7118e55b0e4e4ae19ec2f",
+    "development\\levels\\rebuild\\prison\\rough-layout.json": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c"
+  },
+  "saved_terrain_triangles": 8286,
+  "existing_triangles": 9380,
+  "composite_triangles": 17666,
+  "exact_render_native_terrain_parity": true,
+  "original_collision_parts_byte_preserved": true,
+  "route_terrain_relationship_findings": [
+    {
+      "link": "L001",
+      "segment": 0,
+      "samples": 6,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 6,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L001",
+      "segment": 1,
+      "samples": 24,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 24,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L009",
+      "segment": 0,
+      "samples": 6,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 6,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L009",
+      "segment": 1,
+      "samples": 30,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 30,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L017",
+      "segment": 0,
+      "samples": 6,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 6,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L017",
+      "segment": 1,
+      "samples": 24,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 24,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L025",
+      "segment": 0,
+      "samples": 6,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 6,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L025",
+      "segment": 1,
+      "samples": 30,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 30,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L033",
+      "segment": 0,
+      "samples": 29,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 29,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L033",
+      "segment": 1,
+      "samples": 6,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 6,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L034",
+      "segment": 0,
+      "samples": 29,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 29,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L034",
+      "segment": 1,
+      "samples": 9,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 9,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L042",
+      "segment": 0,
+      "samples": 6,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 6,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L042",
+      "segment": 1,
+      "samples": 40,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 40,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L045",
+      "segment": 0,
+      "samples": 9,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 9,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L045",
+      "segment": 1,
+      "samples": 7,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 7,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L046",
+      "segment": 0,
+      "samples": 10,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 10,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L046",
+      "segment": 1,
+      "samples": 32,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 32,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L047",
+      "segment": 0,
+      "samples": 14,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 14,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L049",
+      "segment": 0,
+      "samples": 29,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 29,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L049",
+      "segment": 1,
+      "samples": 6,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 6,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L050",
+      "segment": 0,
+      "samples": 29,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 29,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L050",
+      "segment": 1,
+      "samples": 9,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 9,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L058",
+      "segment": 0,
+      "samples": 6,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 6,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L058",
+      "segment": 1,
+      "samples": 40,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 40,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L061",
+      "segment": 0,
+      "samples": 9,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 9,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L061",
+      "segment": 1,
+      "samples": 7,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 7,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L062",
+      "segment": 0,
+      "samples": 10,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 10,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L062",
+      "segment": 1,
+      "samples": 32,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 32,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L063",
+      "segment": 0,
+      "samples": 14,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 14,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L065",
+      "segment": 0,
+      "samples": 29,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 1,
+      "delta_range": [
+        -0.3904571533203125,
+        -0.3452186584472656
+      ],
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L065",
+      "segment": 1,
+      "samples": 11,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 11,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L066",
+      "segment": 0,
+      "samples": 56,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 1,
+      "delta_range": [
+        -0.4305915832519531,
+        -0.3452186584472656
+      ],
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L066",
+      "segment": 1,
+      "samples": 7,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 7,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L067",
+      "segment": 0,
+      "samples": 7,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 7,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L067",
+      "segment": 1,
+      "samples": 5,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 5,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L068",
+      "segment": 0,
+      "samples": 9,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 9,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L068",
+      "segment": 1,
+      "samples": 5,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 5,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L073",
+      "segment": 0,
+      "samples": 5,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 5,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L073",
+      "segment": 1,
+      "samples": 8,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 8,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L074",
+      "segment": 0,
+      "samples": 18,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 18,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L074",
+      "segment": 1,
+      "samples": 9,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 9,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L077",
+      "segment": 0,
+      "samples": 9,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 9,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L077",
+      "segment": 1,
+      "samples": 10,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 10,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L078",
+      "segment": 0,
+      "samples": 12,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 12,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L078",
+      "segment": 1,
+      "samples": 7,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 7,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L080",
+      "segment": 0,
+      "samples": 11,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 10,
+      "delta_range": [
+        -0.42237091064453125,
+        -0.42237091064453125
+      ],
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L080",
+      "segment": 1,
+      "samples": 37,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 5,
+      "delta_range": [
+        -0.46875762939453125,
+        -0.42237091064453125
+      ],
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L083",
+      "segment": 0,
+      "samples": 39,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 39,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L083",
+      "segment": 1,
+      "samples": 15,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 15,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L084",
+      "segment": 0,
+      "samples": 28,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 28,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L084",
+      "segment": 1,
+      "samples": 5,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 5,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L085",
+      "segment": 0,
+      "samples": 13,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 13,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L085",
+      "segment": 1,
+      "samples": 11,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 11,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L088",
+      "segment": 0,
+      "samples": 22,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 22,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L088",
+      "segment": 1,
+      "samples": 19,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 19,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L089",
+      "segment": 0,
+      "samples": 14,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 14,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L089",
+      "segment": 1,
+      "samples": 49,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 49,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L091",
+      "segment": 0,
+      "samples": 11,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 11,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L091",
+      "segment": 1,
+      "samples": 6,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 6,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L094",
+      "segment": 0,
+      "samples": 13,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 13,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L094",
+      "segment": 1,
+      "samples": 10,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 10,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L095",
+      "segment": 0,
+      "samples": 38,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 38,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L095",
+      "segment": 1,
+      "samples": 13,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 13,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L100",
+      "segment": 0,
+      "samples": 11,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 11,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L100",
+      "segment": 1,
+      "samples": 13,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 13,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L103",
+      "segment": 0,
+      "samples": 9,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 9,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L103",
+      "segment": 1,
+      "samples": 8,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 8,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L104",
+      "segment": 0,
+      "samples": 8,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 8,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L104",
+      "segment": 1,
+      "samples": 8,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 8,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L105",
+      "segment": 0,
+      "samples": 9,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 9,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L105",
+      "segment": 1,
+      "samples": 17,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 17,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    },
+    {
+      "link": "L112",
+      "segment": 0,
+      "samples": 13,
+      "terrain_above_route_samples": 0,
+      "terrain_below_route_samples": 0,
+      "no_terrain_samples": 13,
+      "delta_range": null,
+      "interpretation": "Terrain relationship review only; floors, tunnels and elevated bridges intentionally differ. Not a body movement test."
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/prison-whole-site.png",
+      "sha256": "8e3d381cf5d9c43077b03e7af7fd0f9f75b34f0aa4783fd15975413bd2c2adbc",
+      "type": "native export composite",
+      "limitation": "Terrain fit candidate; no canonical van/runtime/finished art acceptance"
+    },
+    {
+      "path": "development/levels/rebuild/captures/macroterrain-batch/prison-terrain-plan.png",
+      "sha256": "23a1ec6d9bbd005b8f2d71429d811d505ecc4f70b64757bd96430f2d33a368c1",
+      "type": "saved native terrain-only overhead",
+      "limitation": "Terrain fit candidate; no canonical van/runtime/finished art acceptance"
+    }
+  ],
+  "generator_sha256": "810144c51053d6002bb8fc5a4cec749f391a40cf8f386500480f2cc007af11cc",
+  "native_glb_sha256": "ea1c37bdc0e67d9ee381fe20117761f35da76c9423e82884ccb5043415d0b93e",
+  "native_physics_sha256": "f1de0c41f99d0b6819b95ebd5c5f55971693f055e4e9f6fb2f07adca466be98e",
+  "limitations": "No master replacement or map unlock. Real foundations/retaining edges/guards, terrain-to-blockout reshuffles, actual van arrival and all runtime gates remain open."
+}

@@ -1,0 +1,44 @@
+{
+  "scope": "2 candidate maps; flat authored routes at centre/side lanes, with actual actor capsule and baseline-qualified movement sweeps",
+  "revision_ref": "66942b34382507f77abbafac8e15ec9a9c2d2a53",
+  "changed_links_excluded": {
+    "WLD-07": [
+      "L14",
+      "L15"
+    ],
+    "WLD-07-MORTUARY": [
+      "L14",
+      "L15"
+    ]
+  },
+  "physics": {
+    "WLD-07": {
+      "before": "9cc00b9ac5e7a946b0032cebf45fa5d866c287d9b02d4447b35c2fa3712bb899",
+      "after": "2cea757fda95d3d0e36e9390b867b49e766933b71132c4555311395b5ae16dfe"
+    },
+    "WLD-07-MORTUARY": {
+      "before": "5dabc68186d47453a59db5ec6f35e637b743150a4d467b457c4528cf70d1f79b",
+      "after": "5ad0404357f113fd291f5a5901ecef277052599a2f16207248085542d323588d"
+    }
+  },
+  "kernel_jar_sha256": "8694a06b9483bea77f2af9130c14a4191e868f2389671b4460572f93a75edbe2",
+  "sites": {
+    "WLD-07": {
+      "samples": 3165,
+      "baseline_valid": 1093,
+      "new_block": 34,
+      "baseline_sweep": 990,
+      "new_sweep_block": 29
+    },
+    "WLD-07-MORTUARY": {
+      "samples": 4644,
+      "baseline_valid": 2242,
+      "new_block": 33,
+      "baseline_sweep": 2089,
+      "new_sweep_block": 29
+    }
+  },
+  "kernel_source_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+  "authored_stairs": true,
+  "limitation": "Preserving previously valid paths does not accept pre-existing failures, stairs, complete navigation, gameplay or finished models."
+}

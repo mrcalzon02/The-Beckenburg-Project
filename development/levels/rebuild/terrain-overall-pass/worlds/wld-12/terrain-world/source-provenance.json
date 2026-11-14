@@ -1,0 +1,23 @@
+{
+  "id": "WLD-12",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -3,
+    0
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "Rock cutting crosses a ravine at the trestle; drainage follows that ravine rather than the track centreline.",
+  "construction_response": "Track bed requires explicit supported embankment and bridge. Tunnel needs a solid hillside roof; lower ravine route must meet the banks. Reposition trestle approaches if their current angles fight this section.",
+  "source_layout": "development/levels/rebuild/wld-12/rough-layout.json",
+  "source_layout_sha256": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8",
+  "spec_sha256": "191d51842a2c383d97bc0eb9cf7e2674a87a8ccce208a7208a7de9023280fd55",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -4.143196920805262,
+    6.413015530350652
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

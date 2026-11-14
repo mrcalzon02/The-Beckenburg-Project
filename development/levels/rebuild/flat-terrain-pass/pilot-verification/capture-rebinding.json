@@ -1,0 +1,132 @@
+{
+  "status": "EXACT_PUBLISHED_PILOT_PNG_BLOBS_RESTORED_TO_IMMUTABLE_CAPTURE_NAMESPACE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-before.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-whole-site-before.png",
+      "original_sha256": "2f13d1aabd936577cbf5bf0c4d36a77c1f7073a37844b88a8f11619e460cb111",
+      "final_shared_path_sha256": "d4eeedd95cc12a5df4b8cec011b6a7b6654fcf0eae9ec2ce400b9dbc616cfb7a",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-before.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-terrain-only-before.png",
+      "original_sha256": "cad59c40d0cb1381ed3108ca98c4000206bf9d07e51ff2f6973e6e54f576fd73",
+      "final_shared_path_sha256": "ecff69ae35575f0688664552238dd66362032f6b8b9a86f2e8777a0c76b2e47e",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-before.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-body-contact-before.png",
+      "original_sha256": "34ff0c19394dbe69039e2f220437563c3bf361612de3db286147edbee1df2f81",
+      "final_shared_path_sha256": "896cff79a288d2d6f4b3679cc00eca9967cf5a271c8a2b324b59ae8c4809275c",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/academy-whole-site-after.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-whole-site-after.png",
+      "original_sha256": "c74187d5ef8c0d34bd095dc31ad9adb526849396dcdefbaf9ce3aabda974eacd",
+      "final_shared_path_sha256": "f55f44b52e2aaf3e18423259c55b1fca39e3ae8380ba3a15657d3d1c213d9c21",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-only-after.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-terrain-only-after.png",
+      "original_sha256": "dc382b1e59b814d5e4cd91e4bf03afdfbdd239418b896b60df05c28d18e8a5d1",
+      "final_shared_path_sha256": "e67317c138b5908362b94c08af6aef73c6fc0867f86d174a60160a77b04f0535",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/academy-body-contact-after.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/academy-body-contact-after.png",
+      "original_sha256": "68a53355d4c25041c810f25e0dc6b6cf5e917fae53014c2067c2d95d18f63e52",
+      "final_shared_path_sha256": "bc5da316499878facb3e72b5ad72b10473a88c74a1aa89a7805742deeefcc9ca",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-before.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-whole-site-before.png",
+      "original_sha256": "1c461f79677f05bef0fd99e3141ae3bf355acfa7eeed9821e239d8990a3a4eca",
+      "final_shared_path_sha256": "baa7a29567ba428b980f5e008cba6ce55c74667217871ccaa4fef42d930b08f7",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-before.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-terrain-only-before.png",
+      "original_sha256": "48950000a35e73d565af26fa28f1a35faebbe3a99728cab2dfeb3879616a3838",
+      "final_shared_path_sha256": "4b0da9dc72d77319ece6796f2f80f1cf1e9effa1504b47bdce855ac73ac5fc75",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-before.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-body-contact-before.png",
+      "original_sha256": "6e2b023895cb769a48118e4fdfca7044f7920d8c8066556a9d7af2ae3ff44061",
+      "final_shared_path_sha256": "d46ba48c6a1d684d65e7f780e97a0724b6048fcfb242f48e42454f764480422d",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-whole-site-after.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-whole-site-after.png",
+      "original_sha256": "c3797d95aba817dd01c3aea94d440ca26886373914e3be61391613df618be616",
+      "final_shared_path_sha256": "4388aa6b94db02587899eff3b27d0e899970cd1ee5c93888a146be5992968707",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-only-after.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-terrain-only-after.png",
+      "original_sha256": "c9e2b0305281a6c81b9bfb9fc5eb6d6a0e71aa52b8029e828084e8654b68f655",
+      "final_shared_path_sha256": "28d4d21093ec74887216607ede32cff8fda5114876c71005701a4250a133155f",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-body-contact-after.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-09-body-contact-after.png",
+      "original_sha256": "742b7fd7457883ffb41fcf0273a88f47c92f1ab3424b086258794d4deb8484b7",
+      "final_shared_path_sha256": "d41afa9d8e5e4aa32e0d2c420f01e30c26941f2bc28bedbc44083a6e5c337554",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-before.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-whole-site-before.png",
+      "original_sha256": "88e23b28228f6412b6f79fd91bdf0e0e95aba8debda0d6ab6eb363f5ee2ea4b2",
+      "final_shared_path_sha256": "2cf3f13a7c5d7c1b28074f64766934489006f64bfb881bebe5b288f3676386ec",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-before.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-terrain-only-before.png",
+      "original_sha256": "8051bfec3f5ca6d24cd692119e96c5cf050edd906df945c46146ead220d6e355",
+      "final_shared_path_sha256": "df2e377f20292c4e370fc38c75c38d0c0d9fa12b6245be92032b63827fbdf3e1",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-before.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-body-contact-before.png",
+      "original_sha256": "012f0e0b1a20d50693adc31dfeca791ec8c02a60c17d72bfeda92c72ac8121bf",
+      "final_shared_path_sha256": "57700ca60f5ace6b85a2139cd4699ac6ad36b7978c691438fe4cb21086b574fc",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-whole-site-after.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-whole-site-after.png",
+      "original_sha256": "652a9d04000dd4d89001cfe7046ab7dc01379481008ab860a00af114f27b2a1e",
+      "final_shared_path_sha256": "a9b0ef02b286d13f882e44a18bbe11b311f7690b2a73e52a6465aa1a8d0cb056",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-only-after.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-terrain-only-after.png",
+      "original_sha256": "7d3d2d484b96d62f250dcf1e7f30a80bd079fc59740fb1c8b30d8ee47aa7a518",
+      "final_shared_path_sha256": "a116ac2d0728ec00d4d561d0f2b1e5ac895c0d1cd40a297a9551098a392d034c",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    },
+    {
+      "original_path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-body-contact-after.png",
+      "archived_path": "development/levels/rebuild/captures/flat-terrain-batch/pilot-archive/wld-18-body-contact-after.png",
+      "original_sha256": "790394a0406a9c8f6229b01b27b1eed3ec74747ca667ad3875250187c5391943",
+      "final_shared_path_sha256": "2d16132c1c612eeb0561e26d5b4b79f1056fbfa99224077a3ba7a7e61e553575",
+      "source_commit": "8f759bd986b9c3aa71d2fadc73f942c10fbdf758"
+    }
+  ],
+  "scope": "Only capture report paths change; original SHA256/model/camera bindings retained. Final shared filenames retain actual full-batch render bytes."
+}

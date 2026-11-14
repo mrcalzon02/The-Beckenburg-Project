@@ -1,0 +1,24 @@
+{
+  "id": "FARMHOUSE",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -3,
+    0,
+    3
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "Workyard falls toward the west field ditch; the domestic approach stays on the south shoulder.",
+  "construction_response": "Separate barn and farmhouse foundation runs; yard remains graded earth. Add supported barn apron only at delivery doors, retain room/model IDs.",
+  "source_layout": "development/levels/rebuild/farmhouse/rough-layout.json",
+  "source_layout_sha256": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727",
+  "spec_sha256": "ee2b9c5fd149897afe2ebe4947cd733eb48cc13857a1271b72b99d7b9772ff9e",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -1.1235340946537564,
+    0.7
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

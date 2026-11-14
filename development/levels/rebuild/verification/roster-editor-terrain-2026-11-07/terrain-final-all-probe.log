@@ -1,0 +1,177 @@
+{
+  "ACADEMY": {
+    "treads": 57,
+    "supported": 57,
+    "spine_clear": 57,
+    "body_clear": 3,
+    "traversable": 0
+  },
+  "ASYLUM": {
+    "treads": 36,
+    "supported": 36,
+    "spine_clear": 36,
+    "body_clear": 2,
+    "traversable": 0
+  },
+  "CHURCH": {
+    "treads": 51,
+    "supported": 51,
+    "spine_clear": 51,
+    "body_clear": 3,
+    "traversable": 0
+  },
+  "COLLEGE": {
+    "treads": 94,
+    "supported": 94,
+    "spine_clear": 94,
+    "body_clear": 5,
+    "traversable": 1
+  },
+  "FARMHOUSE": {
+    "treads": 51,
+    "supported": 51,
+    "spine_clear": 51,
+    "body_clear": 3,
+    "traversable": 0
+  },
+  "MANSION": {
+    "treads": 77,
+    "supported": 77,
+    "spine_clear": 77,
+    "body_clear": 4,
+    "traversable": 2
+  },
+  "PRISON": {
+    "treads": 55,
+    "supported": 55,
+    "spine_clear": 55,
+    "body_clear": 3,
+    "traversable": 0
+  },
+  "SCHOOL": {
+    "treads": 37,
+    "supported": 37,
+    "spine_clear": 37,
+    "body_clear": 2,
+    "traversable": 0
+  },
+  "WLD-03": {
+    "treads": 69,
+    "supported": 69,
+    "spine_clear": 69,
+    "body_clear": 46,
+    "traversable": 45
+  },
+  "WLD-04": {
+    "treads": 153,
+    "supported": 153,
+    "spine_clear": 153,
+    "body_clear": 99,
+    "traversable": 96
+  },
+  "WLD-05": {
+    "treads": 114,
+    "supported": 114,
+    "spine_clear": 114,
+    "body_clear": 85,
+    "traversable": 84
+  },
+  "WLD-06": {
+    "treads": 28,
+    "supported": 28,
+    "spine_clear": 28,
+    "body_clear": 28,
+    "traversable": 28
+  },
+  "WLD-07": {
+    "treads": 34,
+    "supported": 34,
+    "spine_clear": 34,
+    "body_clear": 34,
+    "traversable": 34
+  },
+  "WLD-08": {
+    "treads": 42,
+    "supported": 42,
+    "spine_clear": 42,
+    "body_clear": 29,
+    "traversable": 28
+  },
+  "WLD-09": {
+    "treads": 215,
+    "supported": 215,
+    "spine_clear": 215,
+    "body_clear": 179,
+    "traversable": 155
+  },
+  "WLD-10": {
+    "treads": 68,
+    "supported": 68,
+    "spine_clear": 68,
+    "body_clear": 3,
+    "traversable": 0
+  },
+  "WLD-11": {
+    "treads": 7,
+    "supported": 7,
+    "spine_clear": 7,
+    "body_clear": 7,
+    "traversable": 7
+  },
+  "WLD-12": {
+    "treads": 34,
+    "supported": 34,
+    "spine_clear": 34,
+    "body_clear": 17,
+    "traversable": 16
+  },
+  "WLD-13": {
+    "treads": 17,
+    "supported": 17,
+    "spine_clear": 17,
+    "body_clear": 16,
+    "traversable": 16
+  },
+  "WLD-14": {
+    "treads": 176,
+    "supported": 176,
+    "spine_clear": 176,
+    "body_clear": 176,
+    "traversable": 176
+  },
+  "WLD-15": {
+    "treads": 68,
+    "supported": 68,
+    "spine_clear": 68,
+    "body_clear": 49,
+    "traversable": 48
+  },
+  "WLD-16": {
+    "treads": 0,
+    "supported": 0,
+    "spine_clear": 0,
+    "body_clear": 0,
+    "traversable": 0
+  },
+  "WLD-17": {
+    "treads": 87,
+    "supported": 87,
+    "spine_clear": 87,
+    "body_clear": 43,
+    "traversable": 43
+  },
+  "WLD-18": {
+    "treads": 116,
+    "supported": 116,
+    "spine_clear": 116,
+    "body_clear": 68,
+    "traversable": 67
+  },
+  "WLD-07-MORTUARY": {
+    "treads": 34,
+    "supported": 34,
+    "spine_clear": 34,
+    "body_clear": 34,
+    "traversable": 34
+  }
+}

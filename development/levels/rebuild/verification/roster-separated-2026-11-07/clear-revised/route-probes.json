@@ -1,0 +1,43 @@
+{
+  "status": "MEASURED_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "kernel": "AuthoredSitePhysics from build/beckenburg-game.jar",
+  "kernel_jar_sha256": "8694a06b9483bea77f2af9130c14a4191e868f2389671b4460572f93a75edbe2",
+  "sources": {
+    "COLLEGE": {
+      "source_glb_sha256": "d22736d78c590bd44f0799f48e3623188b9e566cd7284fa5747adcd65d19d819",
+      "physics_sha256": "39c9639c4b5681375d5fe048abce093c100ff3ce92d6f4ca8348ebd4b1893d56"
+    },
+    "MANSION": {
+      "source_glb_sha256": "35b198492962b42deadbcaad57e16d6e96eb57a4a33a39d06f76c224e45c9d0e",
+      "physics_sha256": "f146c7bbbbe26f176e2059c024c68f67fe976bb2fb3efdb243d8dc1c6f1cc228"
+    },
+    "WLD-09": {
+      "source_glb_sha256": "5fe0e02fb2708a36832973244eb8525d96968d629cca4500cbd9a668d2fe204b",
+      "physics_sha256": "589bd8ea7122b73284aa8b8f343913f9f6d7432bf011a893a3672d47a0a059ab"
+    }
+  },
+  "sites": {
+    "COLLEGE": {
+      "treads": 94,
+      "supported": 94,
+      "spine_clear": 94,
+      "body_clear": 5,
+      "traversable": 1
+    },
+    "MANSION": {
+      "treads": 77,
+      "supported": 77,
+      "spine_clear": 77,
+      "body_clear": 4,
+      "traversable": 2
+    },
+    "WLD-09": {
+      "treads": 215,
+      "supported": 215,
+      "spine_clear": 215,
+      "body_clear": 179,
+      "traversable": 155
+    }
+  },
+  "limitation": "Tread-centre support and spine rays do not prove swept movement. Full body/traversable failures remain blockers; no editor UI or playable unlock."
+}

@@ -35,6 +35,13 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     private String lastAutomaticAction="";
     private LanGhostHearing.Event hearing;
     private int lastHearingTick=-1;
+    private final GhostSoundRipples soundRipples=new GhostSoundRipples();
+    private boolean listening;
+    private int lastListeningTick=-1;
+    private final GhostHearingFade hearingFade=new GhostHearingFade();
+    // Only the authoritative host may open the hearing gate. No keypress-only
+    // muting: pressing into a wall, or cancelled directions, is not movement.
+    private boolean hearingEnabled(){return listening&&!finished;}
     private String ghostSpecies="UNKNOWN",behaviorName="RESTLESS";
     private GhostIdentity.Type revealedType;
     private SceneRenderer.Apparition companion; // actual host AI sister, never a player-offset placeholder
@@ -48,9 +55,10 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         mouseLook=new MouseLook(this,(dx,dy)->MouseLook.rotate(camera,dx,dy));
         addKeyListener(this);addMouseListener(mouseLook);addMouseMotionListener(mouseLook);
         addFocusListener(this);addFocusListener(mouseLook);
+        audio.setHearingGain(0);
         timer=new javax.swing.Timer(110,e->frame());timer.start();
     }
-    public void close(){timer.stop();keys.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();}
+    public void close(){timer.stop();keys.clear();soundRipples.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();}
     /** Accept only frames addressed to ghost; never interpret BODY/TEAMMAP/PROGRESS. */
     public void onEvent(String packet){
         if(!SwingUtilities.isEventDispatchThread())throw new IllegalStateException("ghost UI update must be on EDT");
@@ -63,6 +71,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 buildingAudio.setMap(map);audio.clearFixtures();
                 feedback="SPECTRAL TERRITORY: "+map.site();
                 companion=null;camera.setAdditionalGhostBodies(List.of());
+                soundRipples.clear();hearing=null;lastHearingTick=-1;
+                listening=false;lastListeningTick=-1;hearingFade.reset();
+                audio.setHearingGain(0);
                 safeAreas=new SafeAreaBarrier.Receiver();
             }else if(p.get(0).equals("SAFEBEGIN")||p.get(0).equals("SAFEAREA")||p.get(0).equals("SAFEEND")){
                 safeAreas.accept(map,p);
@@ -90,6 +101,15 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 if(map.roomAt(x,y,z)!=next)throw new IllegalArgumentException("inconsistent spectral coordinates");
                 room=next;camera.x=x;camera.z=z;camera.eyeHeight=y+1.62;
                 feedback="HOST SPECTRAL POSE SYNCHRONIZED";
+            }else if(p.size()==3&&p.get(0).equals("GLISTEN")){
+                boolean hostListening=LanProtocol.integer(p.get(1),0,1)==1;
+                int sample=LanProtocol.integer(p.get(2),0,99999999);
+                if(sample>=lastListeningTick){
+                    lastListeningTick=sample;
+                    listening=hostListening;
+                    // Existing pulses and playing sound decay through fade-out;
+                    // new hunter cues still require the open host gate.
+                }
             }else if(p.size()==7&&p.get(0).equals("GCOMPANION")){
                 double x=LanProtocol.integer(p.get(1),0,map.width()*1000)/1000.0;
                 double y=LanProtocol.integer(p.get(2),-50000,50000)/1000.0;
@@ -127,23 +147,24 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 behaviorName=GhostIdentity.Behavior.valueOf(p.get(2)).name();
             }else if(p.get(0).equals("GHEAR")){
                 LanGhostHearing.Event cue=LanGhostHearing.decode(packet);
-                if(!finished&&cue.tick()>=lastHearingTick&&cue.tick()>=tick-18){
+                if(hearingEnabled()&&cue.tick()>=lastHearingTick&&cue.tick()>=tick-18){
                     hearing=cue;lastHearingTick=cue.tick();
-                    LanSound.Cue sound=switch(cue.source()){
-                        case FOOTSTEP->LanSound.Cue.FOOTFALL;
-                        case DOOR->LanSound.Cue.DOOR;
-                        case EQUIPMENT->LanSound.Cue.EQUIPMENT;
-                        case RITUAL->LanSound.Cue.RITUAL;
-                        case VOICE->LanSound.Cue.WHISPER;
-                    };
+                    LanSound.Cue sound=heardFoley(cue.source());
                     int pan=switch(cue.direction()){
                         case LEFT->-75;case RIGHT->75;case AHEAD,BEHIND,HERE->0;
                     };
                     int volume=switch(cue.strength()){
                         case FAINT->30;case NEAR->58;case LOUD->86;
                     };
-                    audio.play(new LanSound.CueEvent(sound,pan,volume,cue.tick()));
+                    volume=Math.max(1,Math.min(100,
+                        (int)Math.round(volume*cue.profile().intensity()/55.0)));
+                    if(sound!=null)
+                        audio.playHeard(new LanSound.CueEvent(sound,pan,volume,cue.tick()));
                 }
+            }else if(p.get(0).equals("GRIPPLE")){
+                var pulse=GhostSoundRipples.Ripple.decode(packet,map);
+                if(hearingEnabled())
+                    soundRipples.accept(pulse,tick,System.nanoTime());
             }else if(p.get(0).equals("WEATHER")){
                 MissionWeather.State current=MissionWeather.State.parse(packet);
                 if(currentWeather==null||current.revision()>=currentWeather.revision()){
@@ -205,6 +226,11 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     }
     private void frame(){
         long diagnosticStart=System.nanoTime();
+        double hearingGain=hearingFade.advance(hearingEnabled(),diagnosticStart);
+        audio.setHearingGain(hearingGain);
+        LanVoiceClientAudio voice=client.voice();
+        if(voice!=null)voice.setSpectralHearingGain(hearingGain);
+        if(!hearingEnabled()&&hearingGain<=0){soundRipples.clear();hearing=null;}
         atmosphere.setActive(isShowing()&&!finished);
         buildingAudio.setActive(isShowing()&&!finished);
         buildingAudio.setContext(room,lights.breaker());buildingAudio.listener(camera.x,camera.eyeHeight,camera.z,camera.yaw,lights.breaker());camera.roomLightTick=tick;
@@ -260,19 +286,35 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     public List<GhostDomain.Action> offeredActions(){return offered;}
     public String automaticAction(){return lastAutomaticAction;}
     public boolean isCaptured(){return mouseLook.captured();}
+    /** These are HUNTER cues, not supernatural ghost vocalizations.
+     * Typed text is represented by a sound event/ring and caption without
+     * inventing spoken dialogue; actual voice uses the authenticated UDP
+     * stream instead of a duplicate synthesized ghost whisper.
+     */
+    static LanSound.Cue heardFoley(LanGhostPursuit.Sound source){
+        return switch(Objects.requireNonNull(source)){
+            case FOOTSTEP,EMOTE->LanSound.Cue.STEP;
+            case DOOR->LanSound.Cue.DOOR;
+            case EQUIPMENT->LanSound.Cue.EQUIPMENT;
+            case RITUAL->LanSound.Cue.RITUAL;
+            case CHAT,VOICE->null;
+        };
+    }
     public String currentHearing(){
-        return !finished&&hearing!=null&&tick<=hearing.tick()+18?hearing.caption():"";
+        return hearingFade.gain()>.02&&hearing!=null
+            &&tick<=hearing.tick()+Math.max(18,hearing.profile().durationTicks())
+                ?hearing.caption():"";
     }
     @Override public void keyPressed(KeyEvent e){
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         switch(e.getKeyCode()){
-            case KeyEvent.VK_F5 -> {
+            case KeyEvent.VK_E -> {
                 var device=map.fixtures().aimed(camera.x,camera.eyeHeight-1.62,camera.z,camera.yaw,camera.pitch);
                 if(device!=null)try{client.ghostFixture(device.id());feedback="Requesting fixture haunting: "+device.kind();}catch(java.io.IOException failure){feedback="Fixture request failed: "+failure.getMessage();}
             }
             case KeyEvent.VK_ESCAPE -> {keys.clear();mouseLook.release();InGamePauseMenu.execute(this);}
-            case KeyEvent.VK_OPEN_BRACKET -> choice--;
-            case KeyEvent.VK_CLOSE_BRACKET -> choice++;
+            case KeyEvent.VK_Z -> choice--;
+            case KeyEvent.VK_Q -> choice++;
             case KeyEvent.VK_SPACE,KeyEvent.VK_ENTER -> ability(GhostDomain.Action.DRIFT);
             case KeyEvent.VK_1 -> chosen(0);
             case KeyEvent.VK_2 -> chosen(1);
@@ -306,14 +348,23 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);
             if(room>=0)g.drawImage(camera.image(),0,0,w,h,null);
             g.setColor(new Color(76,26,100,36));g.fillRect(0,0,w,h);
+            // Source-anchored acoustic rings are drawn AFTER the opaque 3D
+            // scene to reveal sound through real walls without giving any
+            // continuous live hunter-body feed.
+            if(hearingFade.gain()>.001)
+                soundRipples.draw(g,camera,w,h,System.nanoTime(),hearingFade.gain());
             g.setFont(new Font(Font.MONOSPACED,Font.BOLD,13));
             int identityWidth=Math.min(w-24,480);
             g.setColor(new Color(22,13,31,219));g.fillRoundRect(12,10,identityWidth,65,9,9);
             g.setColor(new Color(232,208,247));
             g.drawString("SPECTRAL / "+ghostSpecies+" / "+behaviorName,23,30);
             g.drawString(map.roomName(room)+"  |  ENERGY "+energy+"/100",23,50);
-            g.setColor(audible?new Color(238,166,151):new Color(192,167,210));
-            g.drawString(audible?"SOUND DETECTED":"QUIET",23,66);
+            g.setColor(audible&&hearingFade.gain()>.15?new Color(238,166,151):new Color(192,167,210));
+            String listenStatus=!hearingEnabled()
+                ?(hearingFade.gain()>.02?"HEARING FADING":"MOVE TO MUTE / HOLD STILL TO LISTEN")
+                :hearingFade.gain()<.98?"ATTUNING / "+(int)Math.round(hearingFade.gain()*100)+"%"
+                :audible?"SOUND DETECTED":"LISTENING / QUIET";
+            g.drawString(listenStatus,23,66);
             g.setColor(new Color(233,210,248));g.drawString("+",w/2,h/2);
             SprintHud.draw(g,12,h-163,Math.min(255,w-24),
                 "GHOST BURST / SHIFT",burstRemaining,burstMax,bursting);
@@ -327,7 +378,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             List<Integer> exits=exits();
             int width=Math.min(w-24,620),panelY=h-117;
             g.setColor(new Color(23,14,32,225));g.fillRoundRect(12,panelY,width,105,8,8);
-            g.setColor(new Color(235,206,244));g.drawString("SPECTRAL ACTIONS / F5 ACTIVATE AIMED FIXTURE",24,panelY+22);
+            g.setColor(new Color(235,206,244));g.drawString("SPECTRAL ACTIONS / E ACTIVATE AIMED FIXTURE",24,panelY+22);
             g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
             StringBuilder actions=new StringBuilder();
             for(int i=0;i<offered.size();i++)actions.append(i+1).append(": ").append(offered.get(i)).append("   ");
@@ -335,7 +386,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             String abilities=actions.toString();
             if(abilities.length()>66)abilities=abilities.substring(0,63)+"...";
             g.drawString(abilities,24,panelY+42);
-            g.drawString("[ / ] EXIT: "+(exits.isEmpty()?"NONE":map.roomName(exits.get(Math.floorMod(choice,exits.size()))))+
+            g.drawString("Z / Q EXIT: "+(exits.isEmpty()?"NONE":map.roomName(exits.get(Math.floorMod(choice,exits.size()))))+
                 "   SPACE DRIFT",24,panelY+62);
             int remaining=actionDueTick<0?-1:Math.max(0,(actionDueTick-tick+9)/10);
             g.setColor(remaining>=0&&remaining<=3?new Color(255,174,166):new Color(194,207,217));

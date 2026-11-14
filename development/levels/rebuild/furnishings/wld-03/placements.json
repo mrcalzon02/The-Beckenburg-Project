@@ -1,0 +1,95 @@
+{
+  "site": "WLD-03",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-03/rough-layout.json",
+  "source_layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102",
+  "structure_glb_sha256": "2144b3698eb139fe284aa6a63f4f5e9de41db79e66862f8b10fd1f4c01e3ddd0",
+  "furnished_glb_sha256": "90c023afab9d9bab9a3d113ba0752a43b5c667d1d1af9f9ac174c34130296ee6",
+  "native_sha256": "07dc8b8e8986581f6f92ec031b5747213ea7ef0effb06b6f831614d3a4e0909f",
+  "requests": 3,
+  "placements": [
+    {
+      "id": "WLD-03:shelter:0:0",
+      "zone": "shelter",
+      "purpose": "Modern expedition shelter / Collapsible tent cot and pillow / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_camp_field_cot",
+      "asset": "level_blockout_camp_field_cot",
+      "source_sha256": "bed0b8ba5acec83bd08a44d865d27b658691dd7d2d2526166f1a4deebb3b308f",
+      "bounds": [
+        7.119999885559082,
+        -48.10000228881836,
+        0.0,
+        8.0,
+        -46.15999984741211,
+        0.6850000023841858
+      ],
+      "rect": [
+        7.120000000953675,
+        46.16,
+        7.999999996185303,
+        48.100000057220456
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    },
+    {
+      "id": "WLD-03:wash:1:0",
+      "zone": "wash",
+      "purpose": "Expedition sample shelter / Field sample-tray research bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_research_sample_station",
+      "asset": "level_blockout_research_sample_station",
+      "source_sha256": "00f5f9ac73578478ad6c8c9d2292352f88fd2cb92c1ad5803ab0431b1cdb55f9",
+      "bounds": [
+        50.040000915527344,
+        -47.1099967956543,
+        0.0,
+        52.31999969482422,
+        -46.15999984741211,
+        1.6399999856948853
+      ],
+      "rect": [
+        50.04000000572204,
+        46.16,
+        52.31999997711181,
+        47.10999998807907
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 192
+    },
+    {
+      "id": "WLD-03:alcove:2:0",
+      "zone": "alcove",
+      "purpose": "Expedition records alcove / Remote survey markers, sample cases and stakes / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_survey_marker_cases",
+      "asset": "level_blockout_survey_marker_cases",
+      "source_sha256": "dfc667ca156895d5a3f4575e70dd00e85594acf8445c949217876915c5efd3b4",
+      "bounds": [
+        50.17000198364258,
+        -41.71000289916992,
+        8.0,
+        51.79999923706055,
+        -40.160003662109375,
+        9.270000457763672
+      ],
+      "rect": [
+        50.17000000095367,
+        40.16,
+        51.7999999961853,
+        41.710000011920926
+      ],
+      "floor_y": 8,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "0cea7e42639134810b1aa19d2e6b2e23e2eceff48bdcdb423a8e96253de8e28c",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 3,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

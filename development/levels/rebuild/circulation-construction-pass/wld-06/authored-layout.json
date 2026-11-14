@@ -1,0 +1,2313 @@
+{
+  "version": 1,
+  "id": "WLD-06",
+  "title": "Drowned Fisherman's Wharf",
+  "region": "Coastal Territories",
+  "scale": "Medium / shore and piers",
+  "status": "rough-layout-only",
+  "intent": "A shore street feeds two parallel working piers joined by a cross-dock. Cottages sit on land, work sheds on piles, and a dry tidal undercroft is reached by two guarded descents.",
+  "site_bounds": [
+    0,
+    2,
+    64,
+    84
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Shore-road van apron",
+      "bounds": [
+        24,
+        68,
+        40,
+        80
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Shore street",
+      "bounds": [
+        20,
+        54,
+        44,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cottage-a",
+      "name": "West fisherman cottage",
+      "bounds": [
+        4,
+        42,
+        20,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cottage-b",
+      "name": "East fisherman cottage",
+      "bounds": [
+        44,
+        42,
+        60,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "quay",
+      "name": "Quay apron",
+      "bounds": [
+        20,
+        36,
+        44,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "pier-w",
+      "name": "West dock walkway",
+      "bounds": [
+        20,
+        10,
+        24,
+        36
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "pier-e",
+      "name": "East dock walkway",
+      "bounds": [
+        40,
+        10,
+        44,
+        36
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "crossdock",
+      "name": "Cross-dock",
+      "bounds": [
+        20,
+        6,
+        44,
+        10
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "boathouse",
+      "name": "Boathouse",
+      "bounds": [
+        4,
+        10,
+        20,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "net",
+      "name": "Net shed",
+      "bounds": [
+        44,
+        10,
+        56,
+        24
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "fish",
+      "name": "Fish house",
+      "bounds": [
+        24,
+        10,
+        40,
+        24
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "undercroft",
+      "name": "Dry tidal undercroft",
+      "bounds": [
+        24,
+        24,
+        40,
+        36
+      ],
+      "y": -2.5,
+      "height": 2.2,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "west-stair",
+      "name": "West shore stair bay",
+      "bounds": [
+        12,
+        28,
+        24,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "east-stair",
+      "name": "East shore stair bay",
+      "bounds": [
+        40,
+        28,
+        52,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          74.0
+        ],
+        [
+          32.0,
+          0,
+          68.0
+        ],
+        [
+          32.0,
+          0,
+          61.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          68.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "cottage-a",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32,
+          0,
+          61
+        ],
+        [
+          12,
+          0,
+          61
+        ],
+        [
+          12,
+          0,
+          54
+        ],
+        [
+          12,
+          0,
+          48
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L03",
+      "a": "entry",
+      "b": "cottage-b",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32,
+          0,
+          61
+        ],
+        [
+          52,
+          0,
+          61
+        ],
+        [
+          52,
+          0,
+          54
+        ],
+        [
+          52,
+          0,
+          48
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L04",
+      "a": "entry",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          61.0
+        ],
+        [
+          32.0,
+          0,
+          54.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          54.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L05",
+      "a": "cottage-a",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          12,
+          0,
+          48
+        ],
+        [
+          20,
+          0,
+          48
+        ],
+        [
+          32,
+          0,
+          48
+        ],
+        [
+          32,
+          0,
+          45
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          20.0,
+          0,
+          48.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L06",
+      "a": "cottage-b",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          52,
+          0,
+          48
+        ],
+        [
+          44,
+          0,
+          48
+        ],
+        [
+          32,
+          0,
+          48
+        ],
+        [
+          32,
+          0,
+          45
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          44.0,
+          0,
+          48.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L07",
+      "a": "quay",
+      "b": "pier-w",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32,
+          0,
+          45
+        ],
+        [
+          22,
+          0,
+          45
+        ],
+        [
+          22,
+          0,
+          39
+        ],
+        [
+          14,
+          0,
+          39
+        ],
+        [
+          14,
+          0,
+          29
+        ],
+        [
+          22,
+          0,
+          29
+        ],
+        [
+          22,
+          0,
+          23
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          22.0,
+          0,
+          36.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L08",
+      "a": "pier-w",
+      "b": "crossdock",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          22.0,
+          0,
+          23.0
+        ],
+        [
+          22.0,
+          0,
+          10.0
+        ],
+        [
+          32.0,
+          0,
+          8.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          22.0,
+          0,
+          10.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L09",
+      "a": "crossdock",
+      "b": "pier-e",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          8.0
+        ],
+        [
+          42.0,
+          0,
+          10.0
+        ],
+        [
+          42.0,
+          0,
+          23.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          42.0,
+          0,
+          10.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L10",
+      "a": "pier-e",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          42.0,
+          0,
+          23.0
+        ],
+        [
+          42.0,
+          0,
+          36.0
+        ],
+        [
+          42.0,
+          0,
+          45.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          42.0,
+          0,
+          36.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L11",
+      "a": "pier-w",
+      "b": "boathouse",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          22.0,
+          0,
+          23.0
+        ],
+        [
+          20.0,
+          0,
+          19.0
+        ],
+        [
+          12.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          20.0,
+          0,
+          19.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L12",
+      "a": "pier-e",
+      "b": "net",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          42.0,
+          0,
+          23.0
+        ],
+        [
+          44.0,
+          0,
+          17.0
+        ],
+        [
+          50.0,
+          0,
+          17.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          44.0,
+          0,
+          17.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L13",
+      "a": "crossdock",
+      "b": "fish",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          8.0
+        ],
+        [
+          32.0,
+          0,
+          10.0
+        ],
+        [
+          32.0,
+          0,
+          17.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          10.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L14",
+      "a": "boathouse",
+      "b": "west-stair",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          12,
+          0,
+          19
+        ],
+        [
+          16,
+          0,
+          19
+        ],
+        [
+          16,
+          0,
+          28
+        ],
+        [
+          16,
+          0,
+          29
+        ],
+        [
+          14,
+          0,
+          29
+        ],
+        [
+          14,
+          0,
+          33
+        ],
+        [
+          18,
+          0,
+          33
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          16.0,
+          0,
+          28.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L15",
+      "a": "west-stair",
+      "b": "quay",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          18,
+          0,
+          33
+        ],
+        [
+          14,
+          0,
+          33
+        ],
+        [
+          14,
+          0,
+          39
+        ],
+        [
+          22,
+          0,
+          39
+        ],
+        [
+          22,
+          0,
+          45
+        ],
+        [
+          32,
+          0,
+          45
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          22.0,
+          0,
+          37.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L16",
+      "a": "west-stair",
+      "b": "undercroft",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          18,
+          0,
+          33
+        ],
+        [
+          26,
+          -2.5,
+          33
+        ],
+        [
+          27.2,
+          -2.5,
+          33
+        ],
+        [
+          27.2,
+          -2.5,
+          30
+        ],
+        [
+          32,
+          -2.5,
+          30
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 2.5,
+      "construction": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L17",
+      "a": "undercroft",
+      "b": "east-stair",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          32,
+          -2.5,
+          30
+        ],
+        [
+          36.8,
+          -2.5,
+          30
+        ],
+        [
+          36.8,
+          -2.5,
+          33
+        ],
+        [
+          38,
+          -2.5,
+          33
+        ],
+        [
+          46,
+          0,
+          33
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 2.5,
+      "construction": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L18",
+      "a": "east-stair",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          46.0,
+          0,
+          33.0
+        ],
+        [
+          42.0,
+          0,
+          37.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          42.0,
+          0,
+          37.0
+        ],
+        "clear_width_m": 2
+      }
+    }
+  ],
+  "loops": [
+    [
+      "quay",
+      "pier-w",
+      "crossdock",
+      "pier-e",
+      "quay"
+    ],
+    [
+      "quay",
+      "west-stair",
+      "undercroft",
+      "east-stair",
+      "quay"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      74.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        70.372
+      ],
+      [
+        32.0,
+        0,
+        61.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "boathouse",
+      "point": [
+        12.0,
+        0,
+        19.0
+      ],
+      "installation": "Moored iron containment frame"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "fish",
+      "point": [
+        32.0,
+        0,
+        17.0
+      ],
+      "installation": "Fish-house purification wash"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "cottage-a",
+      "point": [
+        12.0,
+        0,
+        48.0
+      ],
+      "installation": "Departure remembrance table"
+    }
+  ],
+  "circulation": "A pier ladder is never the only way out: wide supported deck returns run on both sides. Undercroft remains dry for the entire mission seed; rising-tide hazards cannot strand a player or remove the required extraction path.",
+  "systems": "Tidal boundary, wave impacts, wet timber, cold storage and wind have stable baselines. Boat silhouettes are scenery with collision barriers, not undeclared transport. Safe van stays on land.",
+  "campaign": "Logbooks at fish house and cottage, storm records in boathouse. A shipment record can link Greywater Cannery while contradicting departure dates.",
+  "refine": [
+    "Refine support piles, edge rails, guard openings and at least 2 m clear deck paths; diagrams show deck envelopes.",
+    "Choose and lock tide envelope before mission start; no required wading.",
+    "Research working-wharf and fish-house construction before detailed shell authoring."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ],
+  "physical_flat_circulation_revision": {
+    "withheld_context_conflicts": [],
+    "context_protection": [],
+    "ceiling_revisions": {},
+    "route_changes": [
+      {
+        "link": "L07",
+        "before": [
+          [
+            32.0,
+            0,
+            45.0
+          ],
+          [
+            22.0,
+            0,
+            36.0
+          ],
+          [
+            22.0,
+            0,
+            23.0
+          ]
+        ],
+        "after": [
+          [
+            32.0,
+            0,
+            45.0
+          ],
+          [
+            22.0,
+            0,
+            45.0
+          ],
+          [
+            22.0,
+            0,
+            36.0
+          ],
+          [
+            22.0,
+            0,
+            23.0
+          ]
+        ],
+        "threshold": [
+          22.0,
+          0,
+          36.0
+        ],
+        "crossing_axis": 2,
+        "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+      },
+      {
+        "link": "L10",
+        "before": [
+          [
+            42.0,
+            0,
+            23.0
+          ],
+          [
+            42.0,
+            0,
+            36.0
+          ],
+          [
+            32.0,
+            0,
+            45.0
+          ]
+        ],
+        "after": [
+          [
+            42.0,
+            0,
+            23.0
+          ],
+          [
+            42.0,
+            0,
+            36.0
+          ],
+          [
+            42.0,
+            0,
+            45.0
+          ],
+          [
+            32.0,
+            0,
+            45.0
+          ]
+        ],
+        "threshold": [
+          42.0,
+          0,
+          36.0
+        ],
+        "crossing_axis": 2,
+        "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+      },
+      {
+        "link": "L14",
+        "before": [
+          [
+            12.0,
+            0,
+            19.0
+          ],
+          [
+            16.0,
+            0,
+            28.0
+          ],
+          [
+            18.0,
+            0,
+            33.0
+          ]
+        ],
+        "after": [
+          [
+            12.0,
+            0,
+            19.0
+          ],
+          [
+            16.0,
+            0,
+            19.0
+          ],
+          [
+            16.0,
+            0,
+            28.0
+          ],
+          [
+            16.0,
+            0,
+            33.0
+          ],
+          [
+            18.0,
+            0,
+            33.0
+          ]
+        ],
+        "threshold": [
+          16.0,
+          0,
+          28.0
+        ],
+        "crossing_axis": 2,
+        "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+      }
+    ],
+    "corridors": [
+      {
+        "link": "L01",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            74.0
+          ],
+          [
+            32.0,
+            0,
+            68.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L01",
+        "segment": 1,
+        "points": [
+          [
+            32.0,
+            0,
+            68.0
+          ],
+          [
+            32.0,
+            0,
+            61.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L02",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            61.0
+          ],
+          [
+            12.0,
+            0,
+            48.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L03",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            61.0
+          ],
+          [
+            52.0,
+            0,
+            48.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L04",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            61.0
+          ],
+          [
+            32.0,
+            0,
+            54.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L04",
+        "segment": 1,
+        "points": [
+          [
+            32.0,
+            0,
+            54.0
+          ],
+          [
+            32.0,
+            0,
+            45.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L05",
+        "segment": 0,
+        "points": [
+          [
+            12.0,
+            0,
+            48.0
+          ],
+          [
+            20.0,
+            0,
+            48.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L05",
+        "segment": 1,
+        "points": [
+          [
+            20.0,
+            0,
+            48.0
+          ],
+          [
+            32.0,
+            0,
+            45.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L06",
+        "segment": 0,
+        "points": [
+          [
+            52.0,
+            0,
+            48.0
+          ],
+          [
+            44.0,
+            0,
+            48.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L06",
+        "segment": 1,
+        "points": [
+          [
+            44.0,
+            0,
+            48.0
+          ],
+          [
+            32.0,
+            0,
+            45.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L07",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            45.0
+          ],
+          [
+            22.0,
+            0,
+            45.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L07",
+        "segment": 1,
+        "points": [
+          [
+            22.0,
+            0,
+            45.0
+          ],
+          [
+            22.0,
+            0,
+            36.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L07",
+        "segment": 2,
+        "points": [
+          [
+            22.0,
+            0,
+            36.0
+          ],
+          [
+            22.0,
+            0,
+            23.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L08",
+        "segment": 0,
+        "points": [
+          [
+            22.0,
+            0,
+            23.0
+          ],
+          [
+            22.0,
+            0,
+            10.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L08",
+        "segment": 1,
+        "points": [
+          [
+            22.0,
+            0,
+            10.0
+          ],
+          [
+            32.0,
+            0,
+            8.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L09",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            8.0
+          ],
+          [
+            42.0,
+            0,
+            10.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L09",
+        "segment": 1,
+        "points": [
+          [
+            42.0,
+            0,
+            10.0
+          ],
+          [
+            42.0,
+            0,
+            23.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L10",
+        "segment": 0,
+        "points": [
+          [
+            42.0,
+            0,
+            23.0
+          ],
+          [
+            42.0,
+            0,
+            36.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L10",
+        "segment": 1,
+        "points": [
+          [
+            42.0,
+            0,
+            36.0
+          ],
+          [
+            42.0,
+            0,
+            45.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L10",
+        "segment": 2,
+        "points": [
+          [
+            42.0,
+            0,
+            45.0
+          ],
+          [
+            32.0,
+            0,
+            45.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L11",
+        "segment": 0,
+        "points": [
+          [
+            22.0,
+            0,
+            23.0
+          ],
+          [
+            20.0,
+            0,
+            19.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L11",
+        "segment": 1,
+        "points": [
+          [
+            20.0,
+            0,
+            19.0
+          ],
+          [
+            12.0,
+            0,
+            19.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L12",
+        "segment": 0,
+        "points": [
+          [
+            42.0,
+            0,
+            23.0
+          ],
+          [
+            44.0,
+            0,
+            17.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L12",
+        "segment": 1,
+        "points": [
+          [
+            44.0,
+            0,
+            17.0
+          ],
+          [
+            50.0,
+            0,
+            17.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L13",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            8.0
+          ],
+          [
+            32.0,
+            0,
+            10.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L13",
+        "segment": 1,
+        "points": [
+          [
+            32.0,
+            0,
+            10.0
+          ],
+          [
+            32.0,
+            0,
+            17.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L14",
+        "segment": 0,
+        "points": [
+          [
+            12.0,
+            0,
+            19.0
+          ],
+          [
+            16.0,
+            0,
+            19.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L14",
+        "segment": 1,
+        "points": [
+          [
+            16.0,
+            0,
+            19.0
+          ],
+          [
+            16.0,
+            0,
+            28.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L14",
+        "segment": 2,
+        "points": [
+          [
+            16.0,
+            0,
+            28.0
+          ],
+          [
+            16.0,
+            0,
+            33.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L14",
+        "segment": 3,
+        "points": [
+          [
+            16.0,
+            0,
+            33.0
+          ],
+          [
+            18.0,
+            0,
+            33.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L15",
+        "segment": 0,
+        "points": [
+          [
+            18.0,
+            0,
+            33.0
+          ],
+          [
+            22.0,
+            0,
+            37.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L15",
+        "segment": 1,
+        "points": [
+          [
+            22.0,
+            0,
+            37.0
+          ],
+          [
+            32.0,
+            0,
+            45.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L18",
+        "segment": 0,
+        "points": [
+          [
+            46.0,
+            0,
+            33.0
+          ],
+          [
+            42.0,
+            0,
+            37.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "L18",
+        "segment": 1,
+        "points": [
+          [
+            42.0,
+            0,
+            37.0
+          ],
+          [
+            32.0,
+            0,
+            45.0
+          ]
+        ],
+        "width": 2.04,
+        "terminal_extension": 0.35,
+        "wall_bottom": 0,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      }
+    ],
+    "shell_changes": [
+      {
+        "source_mesh": "Wall cottage-a S",
+        "new_mesh": "Flat route shell Wall cottage-a S",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.22557251637180809,
+        "cutters": [
+          "Flat body L02 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall cottage-a E",
+        "new_mesh": "Flat route shell Wall cottage-a E",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.018090515069935975,
+        "cutters": [
+          "Flat body L02 0 True",
+          "Flat body L05 0 True",
+          "Flat body L05 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall cottage-a E.001",
+        "new_mesh": "Flat route shell Wall cottage-a E.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.018090472553190073,
+        "cutters": [
+          "Flat body L02 0 True",
+          "Flat body L05 0 True",
+          "Flat body L05 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall cottage-a E.002",
+        "new_mesh": "Flat route shell Wall cottage-a E.002",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.0563199987030029,
+        "cutters": [
+          "Flat body L02 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall cottage-b S",
+        "new_mesh": "Flat route shell Wall cottage-b S",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.22557234207973664,
+        "cutters": [
+          "Flat body L03 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall cottage-b W",
+        "new_mesh": "Flat route shell Wall cottage-b W",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.018090502550043297,
+        "cutters": [
+          "Flat body L03 0 True",
+          "Flat body L06 0 True",
+          "Flat body L06 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall cottage-b W.001",
+        "new_mesh": "Flat route shell Wall cottage-b W.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.018090472510012612,
+        "cutters": [
+          "Flat body L03 0 True",
+          "Flat body L06 0 True",
+          "Flat body L06 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall cottage-b W.002",
+        "new_mesh": "Flat route shell Wall cottage-b W.002",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.0563199987030029,
+        "cutters": [
+          "Flat body L03 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall boathouse S",
+        "new_mesh": "Flat route shell Wall boathouse S",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040161128044176,
+        "cutters": [
+          "Flat body L14 1 True",
+          "Flat body L14 2 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall boathouse S.001",
+        "new_mesh": "Flat route shell Wall boathouse S.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.0070401611280437315,
+        "cutters": [
+          "Flat body L14 1 True",
+          "Flat body L14 2 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall boathouse E",
+        "new_mesh": "Flat route shell Wall boathouse E",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040161128044176,
+        "cutters": [
+          "Flat body L11 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall boathouse E.001",
+        "new_mesh": "Flat route shell Wall boathouse E.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.45083752274623823,
+        "cutters": [
+          "Flat body L11 0 True",
+          "Flat body L11 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall net W",
+        "new_mesh": "Flat route shell Wall net W",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040161128044176,
+        "cutters": [
+          "Flat body L12 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall net W.001",
+        "new_mesh": "Flat route shell Wall net W.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.7833820807933587,
+        "cutters": [
+          "Flat body L12 0 True",
+          "Flat body L12 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall fish N",
+        "new_mesh": "Flat route shell Wall fish N",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 1.133792909833765,
+        "cutters": [
+          "Flat body L08 1 True",
+          "Flat body L13 0 True",
+          "Flat body L13 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall fish N.001",
+        "new_mesh": "Flat route shell Wall fish N.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 1.1337925723734235,
+        "cutters": [
+          "Flat body L09 0 True",
+          "Flat body L13 0 True",
+          "Flat body L13 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall fish W",
+        "new_mesh": "Flat route shell Wall fish W",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.2253505122609134,
+        "cutters": [
+          "Flat body L08 1 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall fish E",
+        "new_mesh": "Flat route shell Wall fish E",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.22535053359133972,
+        "cutters": [
+          "Flat body L09 0 True"
+        ]
+      }
+    ],
+    "indoor_bearings": [],
+    "limitation": "Source coordinate construction only; actual portals/services/runtime integration and finish remain open"
+  },
+  "floor_surface_ownership": {
+    "removed_redundant_prisms": [
+      {
+        "name": "L05 support 0",
+        "native_name": "63:L05 support 0",
+        "top_y": 0.0,
+        "bottom_y": -0.11999999731779099,
+        "complete_floor_depth_ownership": true,
+        "original_top_polygons": [
+          [
+            [
+              12.0,
+              49.0
+            ],
+            [
+              20.0,
+              49.0
+            ],
+            [
+              20.0,
+              47.0
+            ]
+          ],
+          [
+            [
+              12.0,
+              49.0
+            ],
+            [
+              20.0,
+              47.0
+            ],
+            [
+              12.0,
+              47.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 16.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor cottage-a"
+        ],
+        "source_native_record_sha256": "6dfbe181cdfa1f6e7577fc98d613b1a71206169499bc6ef4d12e4d0888a76536",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L06 support 0",
+        "native_name": "65:L06 support 0",
+        "top_y": 0.0,
+        "bottom_y": -0.11999999731779099,
+        "complete_floor_depth_ownership": true,
+        "original_top_polygons": [
+          [
+            [
+              52.0,
+              47.0
+            ],
+            [
+              44.0,
+              47.0
+            ],
+            [
+              44.0,
+              49.0
+            ]
+          ],
+          [
+            [
+              52.0,
+              47.0
+            ],
+            [
+              44.0,
+              49.0
+            ],
+            [
+              52.0,
+              49.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 16.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor cottage-b"
+        ],
+        "source_native_record_sha256": "944e64987b6179486d5b6f54889d994cf06ae37881fa5285da6b20c78bc3e436",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L11 support 1",
+        "native_name": "76:L11 support 1",
+        "top_y": 0.0,
+        "bottom_y": -0.11999999731779099,
+        "complete_floor_depth_ownership": true,
+        "original_top_polygons": [
+          [
+            [
+              20.0,
+              18.0
+            ],
+            [
+              12.0,
+              18.0
+            ],
+            [
+              12.0,
+              20.0
+            ]
+          ],
+          [
+            [
+              20.0,
+              18.0
+            ],
+            [
+              12.0,
+              20.0
+            ],
+            [
+              20.0,
+              20.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 16.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor boathouse"
+        ],
+        "source_native_record_sha256": "dbbed53e271e77fd54d05d12f07002b13b7b236c5169525d650dd71ebb7b0fa8",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L12 support 1",
+        "native_name": "78:L12 support 1",
+        "top_y": 0.0,
+        "bottom_y": -0.11999999731779099,
+        "complete_floor_depth_ownership": true,
+        "original_top_polygons": [
+          [
+            [
+              44.0,
+              18.0
+            ],
+            [
+              50.0,
+              18.0
+            ],
+            [
+              50.0,
+              16.0
+            ]
+          ],
+          [
+            [
+              44.0,
+              18.0
+            ],
+            [
+              50.0,
+              16.0
+            ],
+            [
+              44.0,
+              16.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 12.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor net"
+        ],
+        "source_native_record_sha256": "385b13167b9fe0c50732dcf463e810b6d3a0e5a4a46d39b72ac78a75ece52fbf",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L13 support 1",
+        "native_name": "80:L13 support 1",
+        "top_y": 0.0,
+        "bottom_y": -0.11999999731779099,
+        "complete_floor_depth_ownership": true,
+        "original_top_polygons": [
+          [
+            [
+              31.0,
+              10.0
+            ],
+            [
+              31.0,
+              17.0
+            ],
+            [
+              33.0,
+              17.0
+            ]
+          ],
+          [
+            [
+              31.0,
+              10.0
+            ],
+            [
+              33.0,
+              17.0
+            ],
+            [
+              33.0,
+              10.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 14.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor fish"
+        ],
+        "source_native_record_sha256": "ea2aa4976ca839623492cce0177a8b89096849cbee2f5c2a7305391b533fd370",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      }
+    ],
+    "input_hashes": {
+      "glb_sha256": "2184f942008f2f73d2ce1c7d907aac90c456639d14daec3e77e8d0256f772f92",
+      "native_sha256": "b2c913894d4494e6eab6aadab29158e1af99ebc0d04087a2faf6e6eab529b790"
+    },
+    "generator_sha256": "a6336eb115e29021e65b11d366b0d3d67821e585626c93fad7368053e2efc058",
+    "limitation": "Only completely covered original rough flat-route prisms; partial overlays, other duplicate structural surfaces, all optical/runtime and whole-map support acceptance remain open"
+  },
+  "arrival_end_bearing": {
+    "link": "L01",
+    "anchor": [
+      32.0,
+      0,
+      74.0
+    ],
+    "route_width": 2,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        31.0,
+        74.35
+      ],
+      [
+        31.0,
+        74.0
+      ],
+      [
+        33.0,
+        74.0
+      ],
+      [
+        33.0,
+        74.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          31.0,
+          74.35
+        ],
+        [
+          31.0,
+          74.0
+        ],
+        [
+          33.0,
+          74.0
+        ],
+        [
+          33.0,
+          74.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing WLD-06 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "stair_bay_revision": {
+    "reason": "Wharf: opposed straight access flights follow west/east stair bays; level turns enter undercroft instead of diagonal columns crossing the quay.",
+    "shared_physical_flights": {}
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "MANSION",
+  "status": "MACROTERRAIN_CANDIDATE_FIT_REVIEW_OPEN",
+  "foundation_datums": [
+    -3,
+    0,
+    3.6,
+    7.2
+  ],
+  "perimeter_fit_failures": [],
+  "excavation_rim_requirements": [],
+  "drainage": "Estate service water leaves along the east edge; public approach stays on the broad south terrace.",
+  "construction_response": "Masonry foundations support the household wings. Service yard should fit the eastern shoulder; review its stair bay before refining cellar path strips.",
+  "source_layout": "development/levels/rebuild/mansion/rough-layout.json",
+  "source_layout_sha256": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d",
+  "spec_sha256": "26042e88ecc3e8c68047fa280b2d5ad5c3b35cac50841851c2ceaff911543bb4",
+  "author_sha256": "ea0e833ddbcaeb6322b9e2cd533f5ca928655a2de4d7183d888fab76676c85c1",
+  "height_range": [
+    -0.9619999999907651,
+    0.9004450828007835
+  ],
+  "pad_snapping": false,
+  "path_snapping": false,
+  "remaining": "Inspect native full-site/sections; reshape blockouts, construct real retaining/foundation transitions and canonical arrival. Source grids are newly authored designs, not measured surveys or terrain acceptance."
+}

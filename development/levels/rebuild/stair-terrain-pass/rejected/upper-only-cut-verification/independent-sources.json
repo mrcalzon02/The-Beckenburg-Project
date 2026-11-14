@@ -1,0 +1,43 @@
+{
+  "status": "PASS_SCOPED_SAVED_WORLD_SOURCE_NATIVE_EDITABLE_CHECKS",
+  "sites": [
+    {
+      "id": "WLD-03",
+      "preserved_nonterrain_meshes": 208,
+      "preserved_nonterrain_native_parts": 208,
+      "actual_shared_terrain_triangles": 9462,
+      "source_height_unchanged": true,
+      "prior_world_unchanged": true,
+      "packed_images": 12,
+      "blend_sha256": "d22ba582e9298d23855639a3ea17714c19a5706fed0a6321920075ed721eb08d",
+      "glb_sha256": "62cd5ff6df5c0ad857324fb78de7b256366a9b8d44299db408538a925522d7b2",
+      "physics_sha256": "09d599aa4803d19a2ee577ba21f630a4c5a5fe8762e0bb8575ce17c59e110b03"
+    },
+    {
+      "id": "WLD-04",
+      "preserved_nonterrain_meshes": 275,
+      "preserved_nonterrain_native_parts": 275,
+      "actual_shared_terrain_triangles": 8375,
+      "source_height_unchanged": true,
+      "prior_world_unchanged": true,
+      "packed_images": 6,
+      "blend_sha256": "1a8efcec065edf50a0839ed02138e0abca31cf409016f6c818a30be442e51fa3",
+      "glb_sha256": "729bc72a5a34ee4c30a7068718914dcd3fb130d61f4761568a807cb6d9a705f1",
+      "physics_sha256": "67be93af646a9f10e0fad71bc770659f8cb56cde07fd17f3f52af0b1475bf728"
+    },
+    {
+      "id": "WLD-12",
+      "preserved_nonterrain_meshes": 194,
+      "preserved_nonterrain_native_parts": 194,
+      "actual_shared_terrain_triangles": 12702,
+      "source_height_unchanged": true,
+      "prior_world_unchanged": true,
+      "packed_images": 9,
+      "blend_sha256": "47d64487de11c0a21b5815e574a0a8a0da34daa61aa1c1d148c4b8b5da988dfb",
+      "glb_sha256": "1269a3b505c45b074ed4eaa091530ffc6396c054e64df2c3cba847268694c415",
+      "physics_sha256": "583f2fb47fb34b9091d5ecec1c3acfb55504ccf8428cedd432bdca03f770ac02"
+    }
+  ],
+  "checker_sha256": "76369def387ac75d45dda795c0e0c1c97c3804b1779215d0324a5ffcff29fe12",
+  "limitations": "No terrain aesthetic/retaining/cave/physical edge/van arrival or actual runtime/hardware acceptance."
+}

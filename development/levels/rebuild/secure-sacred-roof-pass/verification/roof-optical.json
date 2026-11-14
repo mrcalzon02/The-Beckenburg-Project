@@ -1,0 +1,14 @@
+{
+  "status": "NATIVE_OPTICAL_CLOSURE_NOT_GAME_ACCEPTANCE",
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RebuildRoofOpticalProbe.java": "f67e9f9253c50423a261cb841263fe58725daeb52fb1868eab360e0b4335c13f",
+    "tools/build_secure_sacred_roof_batch.py": "6f791db6028130471f88e4bfaa06743bb7d8142ff8af8a297bcecd24dec2706b",
+    "tools/build_roster_enclosed_roofs.py": "df3d626b33285cd350a451cd113571b615df645d7e59618a1f67711b424b9c58"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/roof-optical-input.tsv": "bd2550867cee8f53c497846606a9720bde47afe2ff71553f541169bc843bd666",
+    "development/levels/rebuild/secure-sacred-roof-pass/verification/roof-optical-results.tsv": "32afae0af786c29142e42b0ffe356282df3dab6405ed993cd2d21ac96d50fc92"
+  },
+  "scope": "Native kernel reads before/after HCS2 and exact hashes. Rays start0.03m above the highest existing authored exposed room cap and end40m above;909rays open before, zero after. Real game renderer/lighting acceptance remains open."
+}

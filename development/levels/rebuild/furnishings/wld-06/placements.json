@@ -1,0 +1,121 @@
+{
+  "site": "WLD-06",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/layouts/wld-06/layout.json",
+  "source_layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+  "structure_glb_sha256": "4f3befdc0ae3efd39a93c24a0f1a7b8bf4f02d7e0e5302d50e4d461e3b484040",
+  "furnished_glb_sha256": "c062fec987ceba2c2e634023a500ed10b700ae28100d5f5bf522cb4bbf6b1ad6",
+  "native_sha256": "61c562d9fe39f8f7a7d852c9d988aa515f16abfa4a5090aa41734e81d7787ed0",
+  "requests": 4,
+  "placements": [
+    {
+      "id": "WLD-06:cottage-a:0:0",
+      "zone": "cottage-a",
+      "purpose": "West fisherman cottage / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        6.917999744415283,
+        -44.55000305175781,
+        0.0,
+        8.807999610900879,
+        -42.15999984741211,
+        1.5399999618530273
+      ],
+      "rect": [
+        6.918000002861023,
+        42.16,
+        8.807999988555908,
+        44.54999998569488
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-06:boathouse:1:0",
+      "zone": "boathouse",
+      "purpose": "Boathouse / Workshop or classroom bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_workbench",
+      "asset": "level_blockout_workbench",
+      "source_sha256": "118331bca686c16c1e75042c6d56bf917218bdc8902c68ba05b722869725c589",
+      "bounds": [
+        6.946000099182129,
+        -10.940000534057617,
+        0.0,
+        8.696000099182129,
+        -10.15999984741211,
+        0.9100000262260437
+      ],
+      "rect": [
+        6.946,
+        10.16,
+        8.696,
+        10.93999997138977
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 72
+    },
+    {
+      "id": "WLD-06:fish:2:0",
+      "zone": "fish",
+      "purpose": "Fish house / Wharf fish processing/sorting station / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_fish_sorting_bench",
+      "asset": "level_blockout_fish_sorting_bench",
+      "source_sha256": "7903a1648b2d1743a979e67bb8e18d50c4f44557f0f6f70217e4cdc982160d2d",
+      "bounds": [
+        38.834999084472656,
+        -14.704000473022461,
+        0.0,
+        39.84000015258789,
+        -12.444000244140625,
+        1.0750000476837158
+      ],
+      "rect": [
+        38.835000004768375,
+        12.444000001907348,
+        39.84,
+        14.703999992370605
+      ],
+      "floor_y": 0,
+      "yaw": -1.5707963267948966,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    },
+    {
+      "id": "WLD-06:net:3:0",
+      "zone": "net",
+      "purpose": "Net shed / Wire ribbed crab pot / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_wharf_crab_pot",
+      "asset": "level_blockout_wharf_crab_pot",
+      "source_sha256": "0831fc02580f2c34bc7e53df4efcc1d6488af4499c05ba6c31be602215c0242b",
+      "bounds": [
+        46.2599983215332,
+        -11.34000015258789,
+        0.0,
+        47.439998626708984,
+        -10.15999984741211,
+        0.6225000023841858
+      ],
+      "rect": [
+        46.260000010490415,
+        10.16,
+        47.43999995803833,
+        11.339999947547913
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 424
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "8742bf736f7ebdd2053e9af8b779821619ab1116949aff77c49fe069c0256943",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 4,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

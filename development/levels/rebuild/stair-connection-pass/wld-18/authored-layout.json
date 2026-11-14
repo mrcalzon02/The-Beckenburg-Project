@@ -1,0 +1,1125 @@
+{
+  "version": 1,
+  "id": "WLD-18",
+  "title": "Site Cinder-6",
+  "region": "Beckenburg coast and hinterland",
+  "scale": "Measured rough site / metres",
+  "status": "rough-layout-only",
+  "intent": "A decommissioned fictional missile-site maintenance complex, with an empty shaft, annular galleries and inert service equipment. No launch mechanics or working weapon.",
+  "site_bounds": [
+    0,
+    0,
+    64,
+    102
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Service road van apron",
+      "bounds": [
+        24,
+        84,
+        40,
+        96
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Service road van apron"
+    },
+    {
+      "id": "entry",
+      "name": "Security approach",
+      "bounds": [
+        24,
+        70,
+        40,
+        84
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Security approach"
+    },
+    {
+      "id": "servicehouse",
+      "name": "Surface service building",
+      "bounds": [
+        10,
+        54,
+        28,
+        70
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Surface service building"
+    },
+    {
+      "id": "yard",
+      "name": "Fenced maintenance yard",
+      "bounds": [
+        28,
+        54,
+        52,
+        70
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Fenced maintenance yard"
+    },
+    {
+      "id": "head",
+      "name": "Access headhouse",
+      "bounds": [
+        28,
+        42,
+        40,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Access headhouse"
+    },
+    {
+      "id": "shop",
+      "name": "Maintenance workshop",
+      "bounds": [
+        40,
+        42,
+        54,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Maintenance workshop"
+    },
+    {
+      "id": "exit",
+      "name": "Hillside emergency exit",
+      "bounds": [
+        4,
+        42,
+        10,
+        62
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Hillside emergency exit"
+    },
+    {
+      "id": "upperring",
+      "name": "Upper shaft gallery",
+      "bounds": [
+        22,
+        18,
+        42,
+        38
+      ],
+      "y": -4,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Upper shaft gallery",
+      "shape": "annulus",
+      "radius": 10,
+      "inner_radius": 8,
+      "label_point": [
+        23,
+        -4,
+        28
+      ]
+    },
+    {
+      "id": "lowring",
+      "name": "Lower shaft gallery",
+      "bounds": [
+        22,
+        18,
+        42,
+        38
+      ],
+      "y": -8,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Lower shaft gallery",
+      "shape": "annulus",
+      "radius": 10,
+      "inner_radius": 8,
+      "label_point": [
+        23,
+        -8,
+        28
+      ]
+    },
+    {
+      "id": "west",
+      "name": "Upper west access",
+      "bounds": [
+        8,
+        26,
+        22,
+        38
+      ],
+      "y": -4,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Upper west access"
+    },
+    {
+      "id": "records",
+      "name": "Maintenance records",
+      "bounds": [
+        8,
+        38,
+        22,
+        52
+      ],
+      "y": -4,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Maintenance records"
+    },
+    {
+      "id": "exhibit",
+      "name": "Inert control equipment room",
+      "bounds": [
+        42,
+        18,
+        56,
+        38
+      ],
+      "y": -4,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Inert control equipment room"
+    },
+    {
+      "id": "east",
+      "name": "Lower east access",
+      "bounds": [
+        42,
+        18,
+        56,
+        38
+      ],
+      "y": -8,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Lower east access"
+    },
+    {
+      "id": "crew",
+      "name": "Lower crew room",
+      "bounds": [
+        8,
+        26,
+        22,
+        38
+      ],
+      "y": -8,
+      "height": 4,
+      "kind": "inside",
+      "purpose": "Lower crew room"
+    },
+    {
+      "id": "pump",
+      "name": "Sump and pump room",
+      "bounds": [
+        8,
+        14,
+        22,
+        26
+      ],
+      "y": -8,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Sump and pump room"
+    },
+    {
+      "id": "plant",
+      "name": "Lower ventilation plant",
+      "bounds": [
+        42,
+        38,
+        56,
+        52
+      ],
+      "y": -8,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Lower ventilation plant"
+    }
+  ],
+  "links": [
+    {
+      "id": "route-01",
+      "a": "stage",
+      "b": "entry",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          90.0
+        ],
+        [
+          32.0,
+          0,
+          77.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-02",
+      "a": "entry",
+      "b": "servicehouse",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          77.0
+        ],
+        [
+          19.0,
+          0,
+          62.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-03",
+      "a": "entry",
+      "b": "yard",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          77.0
+        ],
+        [
+          40.0,
+          0,
+          62.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-04",
+      "a": "yard",
+      "b": "head",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          40.0,
+          0,
+          62.0
+        ],
+        [
+          34.0,
+          0,
+          48.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-05",
+      "a": "yard",
+      "b": "shop",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          40.0,
+          0,
+          62.0
+        ],
+        [
+          47.0,
+          0,
+          48.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-06",
+      "a": "shop",
+      "b": "head",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          47.0,
+          0,
+          48.0
+        ],
+        [
+          34.0,
+          0,
+          48.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-07",
+      "a": "head",
+      "b": "west",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          32,
+          0,
+          48
+        ],
+        [
+          18,
+          0,
+          48
+        ],
+        [
+          18.0,
+          0,
+          47.2
+        ],
+        [
+          18,
+          -4,
+          32
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 4
+    },
+    {
+      "id": "route-08",
+      "a": "west",
+      "b": "exit",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          14,
+          -4,
+          34
+        ],
+        [
+          6,
+          -4,
+          34
+        ],
+        [
+          6,
+          0,
+          48
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 4
+    },
+    {
+      "id": "route-09",
+      "a": "exit",
+      "b": "servicehouse",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          7.0,
+          0,
+          52.0
+        ],
+        [
+          19.0,
+          0,
+          62.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-10",
+      "a": "west",
+      "b": "records",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          15.0,
+          -4,
+          32.0
+        ],
+        [
+          15.0,
+          -4,
+          45.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-11",
+      "a": "west",
+      "b": "upperring",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          18,
+          -4,
+          32
+        ],
+        [
+          23,
+          -4,
+          28
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-12",
+      "a": "upperring",
+      "b": "exhibit",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          41,
+          -4,
+          28
+        ],
+        [
+          48,
+          -4,
+          28
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-13",
+      "a": "head",
+      "b": "exhibit",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          36,
+          0,
+          48
+        ],
+        [
+          52,
+          0,
+          48
+        ],
+        [
+          52,
+          0,
+          47.2
+        ],
+        [
+          52,
+          -4,
+          40.5
+        ],
+        [
+          52,
+          -4,
+          34
+        ],
+        [
+          48,
+          -4,
+          34
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Complete the descent before the exhibit south wall, then enter through a level threshold at actual floor elevation; preserve 1.5m clear approach and terrain-hole obligation.",
+      "rise_m": 4
+    },
+    {
+      "id": "route-14",
+      "a": "exhibit",
+      "b": "east",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          48,
+          -4,
+          28
+        ],
+        [
+          54,
+          -4,
+          28
+        ],
+        [
+          54.0,
+          -4,
+          28.8
+        ],
+        [
+          54,
+          -6,
+          34
+        ],
+        [
+          44,
+          -6,
+          34
+        ],
+        [
+          44.0,
+          -6,
+          33.2
+        ],
+        [
+          44,
+          -8,
+          28
+        ],
+        [
+          48,
+          -8,
+          28
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 4
+    },
+    {
+      "id": "route-15",
+      "a": "east",
+      "b": "lowring",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          48,
+          -8,
+          28
+        ],
+        [
+          41,
+          -8,
+          28
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-16",
+      "a": "lowring",
+      "b": "crew",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          23,
+          -8,
+          28
+        ],
+        [
+          18,
+          -8,
+          32
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-17",
+      "a": "crew",
+      "b": "pump",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          15.0,
+          -8,
+          32.0
+        ],
+        [
+          15.0,
+          -8,
+          20.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-18",
+      "a": "crew",
+      "b": "west",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          12,
+          -8,
+          29
+        ],
+        [
+          19,
+          -4,
+          29
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Authored separated flight/landing coordinates. Verify actual exported support, head/body clearance, approaches, guards and continuous runtime sweeps; no acceptance from centre lines.",
+      "rise_m": 4
+    },
+    {
+      "id": "route-19",
+      "a": "east",
+      "b": "plant",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          49.0,
+          -8,
+          28.0
+        ],
+        [
+          49.0,
+          -8,
+          45.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    }
+  ],
+  "loops": [
+    [
+      "head",
+      "west",
+      "upperring",
+      "exhibit",
+      "head"
+    ],
+    [
+      "upperring",
+      "exhibit",
+      "east",
+      "lowring",
+      "crew",
+      "west",
+      "upperring"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      90.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        86.372
+      ],
+      [
+        32.0,
+        0,
+        77.0
+      ]
+    ],
+    "logistics": "Reuse the canonical van on the roadhead/quay; remote travel is an expedition transition. No new driving or sailing system."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "yard",
+      "point": [
+        40.0,
+        0,
+        62.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "records",
+      "point": [
+        15.0,
+        -4,
+        45.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    },
+    {
+      "rite": "Absolution",
+      "zone": "plant",
+      "point": [
+        49.0,
+        -8,
+        45.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    }
+  ],
+  "circulation": "Two declared graph cycles reserve retreat options. Optional tower/bridge branches must never host mandatory evidence without separate fairness review. Actual physical routes and timing remain unaccepted.",
+  "systems": "Terrain and water boundaries first; then solid architecture with floor depth, fitted doors and circuit isolation. Separate exterior/interior acoustics, supported fixtures and surface-mounted UV evidence. All gameplay integration remains locked.",
+  "campaign": "Fictional location and records connect to the district investigation; narrative never predetermines the ghost or prevents an evidence-led outcome.",
+  "refine": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "Public decommissioned-site context only; not a reconstruction of an operational facility.",
+    "Keep every mandatory route off the shaft void. Real ring guards, falling protection and stair headroom require engineering."
+  ],
+  "sources": [
+    "https://www.nps.gov/places/delta-09.htm"
+  ],
+  "terrain": {
+    "profile": "silo",
+    "shaft": {
+      "center": [
+        32,
+        28
+      ],
+      "radius": 8,
+      "bottom": -16
+    },
+    "description": "Uneven security compound and escape bank surround an open empty silo; two annular maintenance levels retain a real central void."
+  },
+  "needed_models": [
+    "Empty cylindrical shaft liner, bottom and annular floor/guard kit",
+    "Sealed headhouse and purpose-built escape stair/landing modules",
+    "Inert consoles, equipment racks and records furniture",
+    "Blast-door shell, ventilation ducts and cable-tray supports",
+    "Sump pumps, grates, service lights and circuit labels",
+    "Security fence, hillside exit, concrete pads and eroded banks"
+  ],
+  "circulation_revision": {
+    "status": "AUTHORED_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+    "source": "development/levels/layouts/wld-18/layout.json",
+    "source_sha256": "64ef060d286f7f0e3b3b8b128b857df006de4ff34ce1390c3da94c5420f8fbc1",
+    "original_links": {
+      "route-18": {
+        "id": "route-18",
+        "a": "crew",
+        "b": "west",
+        "width": 1.5,
+        "kind": "stairs",
+        "points": [
+          [
+            12,
+            -8,
+            32
+          ],
+          [
+            12,
+            -8,
+            36
+          ],
+          [
+            20,
+            -4,
+            36
+          ],
+          [
+            20,
+            -4,
+            32
+          ]
+        ],
+        "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+        "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+        "rise_m": 4
+      },
+      "route-13": {
+        "id": "route-13",
+        "a": "head",
+        "b": "exhibit",
+        "width": 1.5,
+        "kind": "stairs",
+        "points": [
+          [
+            36,
+            0,
+            48
+          ],
+          [
+            52,
+            0,
+            48
+          ],
+          [
+            52,
+            -4,
+            34
+          ],
+          [
+            48,
+            -4,
+            34
+          ]
+        ],
+        "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+        "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+        "rise_m": 4
+      }
+    },
+    "reason": "Separate intersecting flights and remove folded-back landing obstructions; preserve functions and search envelope. Terrain holes and complete capsule sweeps remain required."
+  },
+  "saved_editor_terrain": {
+    "status": "PERSISTED_EDITOR_PUNCH_CANDIDATE_NOT_TERRAIN_ACCEPTED",
+    "world": "development/levels/rebuild/wld-18/terrain-world",
+    "mesh": "development/levels/rebuild/wld-18/terrain-world/scene-package/meshes/site.obj",
+    "native_physics": "development/levels/rebuild/wld-18/terrain-world/terrain-physics.hcs2",
+    "files_sha256": {
+      "development/levels/rebuild/wld-18/terrain-world/adaptive-topology.bin": "42091eb72753f63b9b099c8561728ce5bbd7f5e0322b597844bb438451c76ff6",
+      "development/levels/rebuild/wld-18/terrain-world/authored-cuts.tsv": "aeabfb702bc562f197b6c4afe916439003da53fd0e99143ce2b4c2b58e9fe560",
+      "development/levels/rebuild/wld-18/terrain-world/source-provenance.json": "1b687f82e12b43c44ec02a9be379069a4e87a0e6126a70ef0a32624b814c2aa4",
+      "development/levels/rebuild/wld-18/terrain-world/terrain-physics.hcs2": "77f59d010f4b8a0385c7d8a0269fd650e79f14c02f36f46561667dfd88a3f270",
+      "development/levels/rebuild/wld-18/terrain-world/tile_0_0.png": "48b7b36ce1cf7a7403614d210855977420dae5e273cd1b50ac25aa285f3c183d",
+      "development/levels/rebuild/wld-18/terrain-world/verification.json": "51b753afeed63387ace221a21a8fa8371eef713d9fcd0e6eb4ca644d27f6440a",
+      "development/levels/rebuild/wld-18/terrain-world/world.properties": "484945a0e995f5d9c50434269cede7fb3cf3532f5941d23826c58650a234579a",
+      "development/levels/rebuild/wld-18/terrain-world/scene-package/scene.bin": "e6d4bff9d90598c656083fc91b0fcd38432990c2697c7fa27aa7dcecd07cad57",
+      "development/levels/rebuild/wld-18/terrain-world/scene-package/meshes/site.obj": "bbcd379029fc2e2182b96826a346ce526ca811ae3beb83caa1b62132d83159e8"
+    },
+    "source_seed_commit": "de4edf80de20b86f9ac42f6a616913e109505894",
+    "builder_sha256": "dc477b61263d90a69996a7d54d212edc61996582e26387fe8145a3456e8b54de",
+    "kernel_jar_sha256": "8694a06b9483bea77f2af9130c14a4191e868f2389671b4460572f93a75edbe2",
+    "remaining": "Retaining/foundation rims, guards, arrival/canonical van, source-specific terrain finish and complete movement/visual acceptance"
+  },
+  "stair_corner_revisions": [
+    {
+      "link": "route-07",
+      "source_segment": 1,
+      "old_points": [
+        [
+          18,
+          0,
+          48
+        ],
+        [
+          18,
+          -4,
+          32
+        ]
+      ],
+      "new_points": [
+        [
+          18.0,
+          0,
+          47.2
+        ],
+        [
+          18,
+          -4,
+          32
+        ]
+      ],
+      "shift_metres": 0.8,
+      "original_landings_retained": [
+        "route-07 landing0"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-18 route-07 flight0 part0",
+        "Rebuilt stair WLD-18 route-07 flight0 part1",
+        "Rebuilt stair WLD-18 route-07 flight0 part2",
+        "Rebuilt stair WLD-18 route-07 flight0 part3",
+        "Rebuilt stair WLD-18 route-07 flight0 part4",
+        "Rebuilt stair WLD-18 route-07 flight0 part5",
+        "Rebuilt stair WLD-18 route-07 flight0 part6",
+        "Rebuilt stair WLD-18 route-07 flight0 part7",
+        "Rebuilt stair WLD-18 route-07 flight0 part8",
+        "Rebuilt stair WLD-18 route-07 flight0 part9",
+        "Rebuilt stair WLD-18 route-07 flight0 part10",
+        "Rebuilt stair WLD-18 route-07 flight0 part11",
+        "Rebuilt stair WLD-18 route-07 flight0 part12",
+        "Rebuilt stair WLD-18 route-07 flight0 part13",
+        "Rebuilt stair WLD-18 route-07 flight0 part14",
+        "Rebuilt stair WLD-18 route-07 flight0 part15",
+        "Rebuilt stair WLD-18 route-07 flight0 part16",
+        "Rebuilt stair WLD-18 route-07 flight0 part17",
+        "Rebuilt stair WLD-18 route-07 flight0 part18",
+        "Rebuilt stair WLD-18 route-07 flight0 part19",
+        "Rebuilt stair WLD-18 route-07 flight0 part20",
+        "Rebuilt stair WLD-18 route-07 flight0 part21",
+        "Rebuilt stair WLD-18 route-07 flight0 part22"
+      ]
+    },
+    {
+      "link": "route-13",
+      "source_segment": 1,
+      "old_points": [
+        [
+          52,
+          0,
+          48
+        ],
+        [
+          52,
+          -4,
+          40.5
+        ]
+      ],
+      "new_points": [
+        [
+          52.0,
+          0,
+          47.2
+        ],
+        [
+          52,
+          -4,
+          40.5
+        ]
+      ],
+      "shift_metres": 0.8,
+      "original_landings_retained": [
+        "route-13 landing0"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-18 route-13 flight0 part0",
+        "Rebuilt stair WLD-18 route-13 flight0 part1",
+        "Rebuilt stair WLD-18 route-13 flight0 part2",
+        "Rebuilt stair WLD-18 route-13 flight0 part3",
+        "Rebuilt stair WLD-18 route-13 flight0 part4",
+        "Rebuilt stair WLD-18 route-13 flight0 part5",
+        "Rebuilt stair WLD-18 route-13 flight0 part6",
+        "Rebuilt stair WLD-18 route-13 flight0 part7",
+        "Rebuilt stair WLD-18 route-13 flight0 part8",
+        "Rebuilt stair WLD-18 route-13 flight0 part9",
+        "Rebuilt stair WLD-18 route-13 flight0 part10",
+        "Rebuilt stair WLD-18 route-13 flight0 part11",
+        "Rebuilt stair WLD-18 route-13 flight0 part12",
+        "Rebuilt stair WLD-18 route-13 flight0 part13",
+        "Rebuilt stair WLD-18 route-13 flight0 part14",
+        "Rebuilt stair WLD-18 route-13 flight0 part15",
+        "Rebuilt stair WLD-18 route-13 flight0 part16",
+        "Rebuilt stair WLD-18 route-13 flight0 part17",
+        "Rebuilt stair WLD-18 route-13 flight0 part18",
+        "Rebuilt stair WLD-18 route-13 flight0 part19",
+        "Rebuilt stair WLD-18 route-13 flight0 part20",
+        "Rebuilt stair WLD-18 route-13 flight0 part21",
+        "Rebuilt stair WLD-18 route-13 flight0 part22"
+      ]
+    },
+    {
+      "link": "route-14",
+      "source_segment": 1,
+      "old_points": [
+        [
+          54,
+          -4,
+          28
+        ],
+        [
+          54,
+          -6,
+          34
+        ]
+      ],
+      "new_points": [
+        [
+          54.0,
+          -4,
+          28.8
+        ],
+        [
+          54,
+          -6,
+          34
+        ]
+      ],
+      "shift_metres": 0.8,
+      "original_landings_retained": [
+        "route-14 landing0"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-18 route-14 flight0 part0",
+        "Rebuilt stair WLD-18 route-14 flight0 part1",
+        "Rebuilt stair WLD-18 route-14 flight0 part2",
+        "Rebuilt stair WLD-18 route-14 flight0 part3",
+        "Rebuilt stair WLD-18 route-14 flight0 part4",
+        "Rebuilt stair WLD-18 route-14 flight0 part5",
+        "Rebuilt stair WLD-18 route-14 flight0 part6",
+        "Rebuilt stair WLD-18 route-14 flight0 part7",
+        "Rebuilt stair WLD-18 route-14 flight0 part8",
+        "Rebuilt stair WLD-18 route-14 flight0 part9",
+        "Rebuilt stair WLD-18 route-14 flight0 part10",
+        "Rebuilt stair WLD-18 route-14 flight0 part11"
+      ]
+    },
+    {
+      "link": "route-14",
+      "source_segment": 3,
+      "old_points": [
+        [
+          44,
+          -6,
+          34
+        ],
+        [
+          44,
+          -8,
+          28
+        ]
+      ],
+      "new_points": [
+        [
+          44.0,
+          -6,
+          33.2
+        ],
+        [
+          44,
+          -8,
+          28
+        ]
+      ],
+      "shift_metres": 0.8,
+      "original_landings_retained": [
+        "route-14 landing2"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-18 route-14 flight1 part0",
+        "Rebuilt stair WLD-18 route-14 flight1 part1",
+        "Rebuilt stair WLD-18 route-14 flight1 part2",
+        "Rebuilt stair WLD-18 route-14 flight1 part3",
+        "Rebuilt stair WLD-18 route-14 flight1 part4",
+        "Rebuilt stair WLD-18 route-14 flight1 part5",
+        "Rebuilt stair WLD-18 route-14 flight1 part6",
+        "Rebuilt stair WLD-18 route-14 flight1 part7",
+        "Rebuilt stair WLD-18 route-14 flight1 part8",
+        "Rebuilt stair WLD-18 route-14 flight1 part9",
+        "Rebuilt stair WLD-18 route-14 flight1 part10",
+        "Rebuilt stair WLD-18 route-14 flight1 part11"
+      ]
+    }
+  ],
+  "stair_bay_revision": {
+    "reason": "Close the lower exhibit entry/endpoint support around the preserved floor-height wall aperture and existing stair.",
+    "shared_physical_flights": {}
+  }
+}

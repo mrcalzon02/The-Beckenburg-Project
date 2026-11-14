@@ -1,0 +1,5 @@
+Transcribed observations from actual tool output in this development session; this file is a note, not an original process log.
+1. First bay generator incorrectly passed deck_openings records to polygon intersection: TypeError unhashable type slice; each record supplies its polygon field.
+2. Repeated subtraction of existing shared passages produced nonmanifold Bayed shell Opened stair shell Wall workshop N.001 in WLD09; generator rejected it before delivery.
+3. Later native contact at WLD05L15, up and down, X5,Y-6.173913478851318,Z33.35241935483871: PHYSICAL_COMPONENT Bayed shell Floor ore-west.002. A sloped floor lower-cut face left a capsule-blocking wedge; vertical shaft cuts now remove full slab depth.
+4. Native foot/contact files preserved alongside these notes show the actual missing east-hub foot footprint and diagonal toe contacts, not invented fixtures.

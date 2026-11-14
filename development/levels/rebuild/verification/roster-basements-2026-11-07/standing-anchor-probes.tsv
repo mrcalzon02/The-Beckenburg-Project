@@ -1,0 +1,9 @@
+site	link	component	x	y	z	supported	spine_clear	body_clear	traversable	overhead_component
+WLD-07	west-stair	authored	8.5	0	16	true	true	true	true	-
+WLD-07	west-stair	obsolete-centre	11.0	0	16.0	false	true	true	false	-
+WLD-07	east-stair	authored	47.5	0	16	true	true	true	true	-
+WLD-07	east-stair	obsolete-centre	45.0	0	16.0	false	true	true	false	-
+WLD-07-MORTUARY	west-stair	authored	8.5	0	16	true	true	true	true	-
+WLD-07-MORTUARY	west-stair	obsolete-centre	11.0	0	16.0	false	true	true	false	-
+WLD-07-MORTUARY	east-stair	authored	47.5	0	16	true	true	true	true	-
+WLD-07-MORTUARY	east-stair	obsolete-centre	45.0	0	16.0	false	true	true	false	-

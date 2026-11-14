@@ -1,0 +1,224 @@
+{
+  "id": "WLD-08",
+  "status": "ACTUAL_STAIR_END_SUPPORT_CANDIDATE_FULL_ROUTE_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-08/closed-floors.glb",
+  "source_glb_sha256": "1525ec3f37fbf6774619681d9d59f04def3dd3c1741beeb8576d1ff60a275fb5",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-08/closed-floors.hcs2",
+  "source_physics_sha256": "273bb9b709d2c9c3d32cd44112c21fe402c2b07f6af28e7198aab9d6a14f7064",
+  "layout": "development/levels/layouts/wld-08/layout.json",
+  "layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+  "targeted_segments": [
+    {
+      "link": "L17",
+      "segment": 0
+    },
+    {
+      "link": "L18",
+      "segment": 0
+    },
+    {
+      "link": "L20",
+      "segment": 0
+    }
+  ],
+  "new_parts": 0,
+  "new_triangles": 0,
+  "platforms": [],
+  "landing_trims": [],
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "decisions": [
+    {
+      "link": "L17",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        32.0,
+        -2.5,
+        31.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor tunnel"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L17",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        11.0,
+        0,
+        35.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor lab.001",
+        "Floor lab.002",
+        "L17 flight0 step14",
+        "Restored floor lab 0 region0"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L18",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        32.0,
+        -2.5,
+        31.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor tunnel"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L18",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        53.0,
+        0,
+        35.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor dorm.003",
+        "Floor dorm.004",
+        "L18 flight0 step14",
+        "Restored floor dorm 3 region1"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L20",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        11.0,
+        -2.5,
+        22.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor tunnel-n"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L20",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        11.0,
+        0,
+        17.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor generator.003"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    }
+  ],
+  "stair_components": [
+    "141:L17 flight0 step1",
+    "142:L17 flight0 step2",
+    "143:L17 flight0 step3",
+    "144:L17 flight0 step4",
+    "145:L17 flight0 step5",
+    "146:L17 flight0 step6",
+    "147:L17 flight0 step7",
+    "148:L17 flight0 step8",
+    "149:L17 flight0 step9",
+    "150:L17 flight0 step10",
+    "151:L17 flight0 step11",
+    "152:L17 flight0 step12",
+    "153:L17 flight0 step13",
+    "154:L17 flight0 step14",
+    "155:L18 flight0 step1",
+    "156:L18 flight0 step2",
+    "157:L18 flight0 step3",
+    "158:L18 flight0 step4",
+    "159:L18 flight0 step5",
+    "160:L18 flight0 step6",
+    "161:L18 flight0 step7",
+    "162:L18 flight0 step8",
+    "163:L18 flight0 step9",
+    "164:L18 flight0 step10",
+    "165:L18 flight0 step11",
+    "166:L18 flight0 step12",
+    "167:L18 flight0 step13",
+    "168:L18 flight0 step14",
+    "170:L20 flight0 step1",
+    "171:L20 flight0 step2",
+    "172:L20 flight0 step3",
+    "173:L20 flight0 step4",
+    "174:L20 flight0 step5",
+    "175:L20 flight0 step6",
+    "176:L20 flight0 step7",
+    "177:L20 flight0 step8",
+    "178:L20 flight0 step9",
+    "179:L20 flight0 step10",
+    "180:L20 flight0 step11",
+    "181:L20 flight0 step12",
+    "182:L20 flight0 step13",
+    "183:L20 flight0 step14"
+  ],
+  "retained_glb_resources": {
+    "no_new_geometry": true
+  },
+  "glb_sha256": "1525ec3f37fbf6774619681d9d59f04def3dd3c1741beeb8576d1ff60a275fb5",
+  "physics_sha256": "273bb9b709d2c9c3d32cd44112c21fe402c2b07f6af28e7198aab9d6a14f7064",
+  "generator_sha256": "38c042e4dfd641a017597a9f399273da313a7d655fe66ee9492578fb1fa77838",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-08-whole-site.png",
+      "sha256": "55c4f5843c353ce2c3d172cfe7e844bad5289367bb13d959c2f6ebbaef809d96",
+      "type": "native full scene"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-08-new-landings.png",
+      "sha256": "ca2b1ab1ee93bd04b8cd3a4285ce199076e2dc0279649f1a96ab4e423e283a3e",
+      "type": "native isolated actual landing changes; context hidden"
+    }
+  ],
+  "source_layout": "development/levels/layouts/wld-08/layout.json",
+  "source_layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+  "flight_replacements": [],
+  "corner_bridges": [],
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {
+      "0": 0
+    },
+    "L18": {
+      "0": 0
+    },
+    "L19": {},
+    "L20": {
+      "0": 0
+    }
+  },
+  "open_findings": [],
+  "remaining": "Independent solids/material/pivot/native checks and all25flat/continuous stair regressions. Wall/terrain penetrations, crossed flights, circulation, supports/guards and actual runtime/network/hardware gates remain open."
+}

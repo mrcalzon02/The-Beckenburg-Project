@@ -43,7 +43,7 @@ public final class EditorGlbReader {
         public Mesh mesh(String name)throws IOException{
             var triangles=new ArrayList<Triangle>();var ids=new ArrayList<Long>();var sources=new HashMap<String,Long>();
             for(var face:faces){var p=face.primitive();int i=face.triangle()*3;var a=p.indices.get(i);var b=p.indices.get(i+1);var c=p.indices.get(i+2);triangles.add(new Triangle(p.part(),p.world.get(a),p.world.get(b),p.world.get(c),key(p.material)));for(int index:new int[]{a,b,c})ids.add(sources.computeIfAbsent(p.node+":"+(p.positionIds.isEmpty()?p.positionAccessor+":"+index:"native:"+p.positionIds.get(index)),k->(long)sources.size()));}
-            try{return new Mesh(name,triangles,original.length,ids,nativeMaterials(),this,java.util.stream.LongStream.range(0,triangles.size()).boxed().toList(),frames);}catch(UncheckedIOException e){throw e.getCause();}catch(IllegalArgumentException bad){throw new IOException("GLB exceeds native material/mesh budgets",bad);}
+            try{return new Mesh(name,triangles,original.length,ids,nativeMaterials(),this,java.util.stream.LongStream.range(0,triangles.size()).boxed().toList(),frames,EditorMeshQuad.readGlb(root,triangles.size()));}catch(UncheckedIOException e){throw e.getCause();}catch(IllegalArgumentException bad){throw new IOException("GLB exceeds native material/mesh budgets",bad);}
         }
         @Override public boolean equals(Object o){return o==this||o instanceof Document d&&Arrays.equals(original,d.original);}
         @Override public int hashCode(){return Arrays.hashCode(original);}
