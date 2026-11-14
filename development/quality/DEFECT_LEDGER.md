@@ -6970,13 +6970,13 @@ Older-map obligation: School L36 service-stair exterior start remains unsupporte
 
 ### DEV-492 — Raised institution court edges and unfinished arrivals require final grade transitions and protection
 
-**Status:** CONSTRUCTION OPEN; NOT TERRAIN OR WHOLE-MAP ACCEPTANCE · **Affected:** School new court outer edges/arrival transition, Asylum patient court west edge and all3site arrival interfaces
+**Status:** SAVED ARRIVAL/COURT GRADES AND FORECOURT JOINS CONSTRUCTED; LANDSCAPE/GUARD/RUNTIME REVIEW OPEN · **Affected:** School new court outer edges/arrival transition, Asylum patient court west edge and all3site arrival interfaces
 
 Real paving is at building datum0while surrounding retained native soil is lower. School source soil under constructed areas ranges roughly-0.82to-0.30m; exposed retaining faces and unbuilt approach transitions remain.
 
 Cause / uncertainty: This bounded batch constructs courts and foundations while retaining the original saved landform. Geographic arrivals, drainage and protected transitions remain separate necessary physical work.
 
-Fix / next action: Give every court real0.20m depth, closed underside and continuous foundation below minimum measured soil; all sampled new court ground positions have actual soil receivers and no overlap with saved basement/stair holes. Preserve the original source terrain rather than edit a mesh without its saved world. Record raised-edge and arrival limitations explicitly. Do not call these courts landscape/desquareify, guarded-arrival or runtime acceptance.
+Fix / next action: Give every court real0.20m depth, closed underside and continuous foundation below minimum measured soil; all sampled new court ground positions have actual soil receivers and no overlap with saved basement/stair holes. Preserve the original source terrain rather than edit a mesh without its saved world. Record raised-edge and arrival limitations explicitly. Do not call these courts landscape/desquareify, guarded-arrival or runtime acceptance. Subsequent institution-earthworks-pass authors actual saved geographic clearings and campus/patient grounds, joining court edges and main arrivals at0without physical study strips. Add continuous full-width Asylum/Prison public-entry apron extensions at their existing landing fronts, embedded below saved graded soil. Main arrival chains now pass all3sites. Preserve original saved punches, source R16/topology/cuts and room interiors; all prior nonterrain native records remain exact.
 
 Evidence and verification: institution-courts-pass per-site court_construction actual_soil_range/soil_range and constructed_polygons; native source-preservation.json and final overview images
 
@@ -6995,6 +6995,48 @@ Fix / next action: Extend each partial W/E face to its original full along-wall 
 Evidence and verification: institution-courts-pass/verification/corner-return-source.json, corner-return-input.tsv and corner-return-results.tsv; current-flat-movement.json; door-aperture-verification.json; tools/build_institution_courts.py
 
 Older-map obligation: Audit all partial-face repairs against actual retained wall ends and thickness rather than applying a whole-room corner rule. Earlier institution entrance blocks replace whole rooms/N-S corridor faces; no inference that other older map corners are accepted. Runtime lighting, grade edges and other construction gates remain open.
+
+### DEV-494 — Institution arrivals and court perimeters retained lower unsupported ground after physical study removal
+
+**Status:** SAVED THREE-SITE EARTHWORKS AND ENTRY APRONS CONSTRUCTED; FINISH/RUNTIME OPEN · **Affected:** School arrival and teaching/service grounds; Prison public/service arrival; Asylum arrival, patient gardens and maintenance grounds
+
+Van staging/entry guide chains and several court edges stood above existing ground. Earlier hard study supports hid this missing geographic construction.
+
+Cause / uncertainty: Outdoor ground did not meet actual building/court datums and route endpoints did not consistently follow retained landform.
+
+Fix / next action: Verify current source terrain against exact saved original worlds. Author non-destructive TerrainLayerStack sculpt/material layers for broad geographic arrival and grounds clearings with feathered shoulders. Reopen all worlds and republish their scene meshes/native physics. Preserve source R16, adaptive topology and authored cut rows byte-for-byte; every stored hole control remains clear. Independently verify protected room interiors and vertices beyond feature influence unchanged. Retain every old nonterrain native record exactly and add only two closed positive full-width public-entry apron solids at Asylum and Prison to meet their existing landing fronts. Final actual arrivals pass all3sites;116of121ordinary links versus103before, zero regressions, all7complete stair routes and60actual door-aperture profiles pass. Final native exported terrain/assembly triangles agree;3native overviews inspected.
+
+Evidence and verification: development/levels/rebuild/institution-earthworks-pass/roster.json; earthworks-program.json, program/*, worlds/*/terrain-world persistent source/layers/native meshes; per-site saved-earthworks.blend/glb/hcs2 and authored-layout/construction; verification/spatial-and-source-preservation.json, current-flat-movement.json, stairs, door-aperture-verification.json and closed-forecourt-aprons.json; captures/institution-earthworks-batch
+
+Older-map obligation: Remaining ordinary failures: School L27/L33upper approaches and L36service-stair start; Prison L084/L085plant approaches. All43Asylum ordinary routes pass continuous native movement, not architectural or runtime acceptance. Materials/clearing borders remain coarse and need landscape/drainage/desquareify review; guards and canonical van arrival visualization remain unaudited. No new guard placement or runtime acceptance is claimed. Academy off-landform and WLD-16 terrain ownership remain explicit next terrain outliers; all other unfinished packets stay open.
+
+### DEV-495 — Weaker overlapping geographic feature shoulders overwrote full arrival grades
+
+**Status:** INSTITUTION WRITER CORRECTED; SAVED OVERLAP REGRESSION POINTS PASS · **Affected:** Initial institution earthworks School forecourt margin and Asylum entrance/garden overlap
+
+An arrival core graded to0was subsequently restored toward its old lower soil height by a weaker overlapping campus/garden feather. Native checks exposed inconsistent terrain at actual thresholds.
+
+Cause / uncertainty: The reused first writer independently blended every field from the original baseline in list order. A later weak feature overwrote a prior full-strength one.
+
+Fix / next action: Use an institution-specific production writer that retains the strongest geographic influence per vertex. Edit the same named saved sculpt layer relative to the original source; no duplicate layers or physics tolerance changes. Recompile from checked-in writer source, reopen worlds, verify original punches/source images unchanged, and re-export exact geometry. Independent saved-grid regression checks require School22,44and28,44at0, Asylum28,60at-0.04below its actual landing and32,62at0at the forecourt edge. All pass. Full-width apron extensions give real continuous public-entry surfaces at the completed grade; no study ribbon returns.
+
+Evidence and verification: tools/java/RebuildInstitutionEarthworks.java; institution-earthworks-pass/verification/overlap-grade-regression.json; saved-grid.tsv and per-world earthworks-verification.json; final native movement checks
+
+Older-map obligation: Original RebuildSiteEarthworks writer and previous authored worlds remain unchanged for recovery; older multi-feature sites need individual overlap review. Terrain edit idempotence/protected room boundaries, real structural supports and runtime coordinate binding must remain explicit.
+
+### DEV-496 — Asylum outdoor route anchor and Prison reception approach ignored actual buildings and landform edges
+
+**Status:** AUTHORITATIVE GUIDES FOLLOW CONSTRUCTED GROUNDS AND FORMAL ENTRANCES; RUNTIME OPEN · **Affected:** Asylum grounds L71/L72/L73/L74/L76; Prison L066reception arrival
+
+Asylum outdoor center34,29was inside the main stair room, and several garden/service routes cut through buildings or followed unsupported original landform edges. Prison reception approach used an unsupported western staging corner.
+
+Cause / uncertainty: Envelope centers and straight study diagonals were treated as circulation architecture instead of using true entrances and saved soil ownership.
+
+Fix / next action: After actual geographic earthwork construction, move Asylum grounds anchor to7,0,35in its west patient garden. Approach chapel/court normally and reach public entry around the real day-room exterior. Service-stair and service-corridor chains use the existing staff entrance, corridor and supported upper landing bypass; reject unsupported north/east shortcuts. Prison reception approach follows the real arrival concourse via34,73and14,73. Preserve room bounds/access metadata, endpoints at real supported room/stair datums, capacity, staging/van transform, saved hole cuts and library assets. All43Asylum ordinary routes and all3main arrival chains now pass in the final construction.
+
+Evidence and verification: institution-earthworks-pass per-site authored-layout.json/authoritative_saved_terrain and current-flat-movement.json; source-preservation receipt; new saved clearing geometry
+
+Older-map obligation: Guide corrections support actual constructed ground and do not count as this batch by themselves. Source guides do not establish rendering/room/portal/acoustic/spawn/service integration. Review Academy off-landform routes and all other envelope-based outdoor centers individually; do not silently omit difficult packets.
 
 ## Required audit categories
 

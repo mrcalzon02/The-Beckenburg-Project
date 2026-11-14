@@ -1,0 +1,114 @@
+{
+  "source_world": "development/levels/rebuild/terrain-overall-pass/worlds/asylum/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "bbd657f9fe09a8b2df425585d8c39572b2c3f13db8ecf9167d4f4bcc9a35d816",
+    "authored-cuts.tsv": "f5f7b408e294fa917b2decf7d7414bd2a2bb2dff3a33687b1636a655ecc5e169",
+    "source-provenance.json": "561c2b107d0ea0f40a2ce537f39d69bdd2bcbf87fe437cb088705eaf54c878d4",
+    "terrain-physics.hcs2": "29a2989888a0d26287529d748751c0feaaee3beddcfb8d71f877c4446dc388bb",
+    "tile_0_0.png": "ed81639526e54613f8946d9f3d7356f6d3276fc75c65764414f9e0040c482ae2",
+    "verification.json": "d35aa14baf0b57e95a4c5d37ddb1592960e33704c833720d710cd897113bed44",
+    "world.properties": "bde6105f86156aa33558244a2a666ee304c11947a61a91e8a1337e2acbdd9086",
+    "scene-package/scene.bin": "c71265a565bc734d74537c3e33b3be9a51fe10fffe0682367919afee6b96574c",
+    "scene-package/meshes/site.obj": "e4f3b769ce7716e889d543879c2d0af9df5aec1a64070b5180679ed221a3d22b"
+  },
+  "earthworks_features": [
+    {
+      "name": "Asylum public arrival grounds",
+      "material": "GRAVEL",
+      "feather": 5,
+      "profile": "arrival",
+      "polygon": [
+        [
+          16,
+          56
+        ],
+        [
+          46,
+          56
+        ],
+        [
+          53,
+          63
+        ],
+        [
+          48,
+          81
+        ],
+        [
+          39,
+          87
+        ],
+        [
+          22,
+          86
+        ],
+        [
+          13,
+          77
+        ],
+        [
+          13,
+          64
+        ]
+      ]
+    },
+    {
+      "name": "Patient gardens and maintenance grounds",
+      "material": "GRAVEL",
+      "feather": 3,
+      "profile": "grounds",
+      "polygon": [
+        [
+          5,
+          -3
+        ],
+        [
+          60,
+          -3
+        ],
+        [
+          64,
+          1
+        ],
+        [
+          64,
+          53
+        ],
+        [
+          62,
+          61
+        ],
+        [
+          52,
+          65
+        ],
+        [
+          35,
+          65
+        ],
+        [
+          24,
+          64
+        ],
+        [
+          14,
+          68
+        ],
+        [
+          5,
+          64
+        ],
+        [
+          4,
+          43
+        ],
+        [
+          4,
+          15
+        ]
+      ]
+    }
+  ],
+  "source_height_and_punched_topology_preserved": true,
+  "authoring": "Actual TerrainLayerStack geographic sculpt, not route support"
+}

@@ -1,0 +1,1256 @@
+{
+  "id": "SCHOOL",
+  "status": "SAVED_GEOGRAPHIC_EARTHWORKS_CONSTRUCTION_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/institution-courts-pass/school/construction.json",
+  "source_contract_sha256": "b049585fc5a93d5231e0bb15bb3b505eeb181a2dd87a4b0b2738209c75120ebc",
+  "source_glb": "development/levels/rebuild/institution-courts-pass/school/constructed-courts.glb",
+  "source_glb_sha256": "3284a12d58054c96e2b8777158e7c43e4e361dc1d4b89c1181da11488fe3ef0e",
+  "source_physics": "development/levels/rebuild/institution-courts-pass/school/constructed-courts.hcs2",
+  "source_physics_sha256": "fd842b2e4bd4f844c39811347809a4341ce80f1d0223fe70e773ce99083a9621",
+  "before_layout": "development/levels/rebuild/institution-courts-pass/school/authored-layout.json",
+  "before_layout_sha256": "aa7c5e8750c611eca6cbb5587e6535d11ac1bf805c88804a359e1c52ba37ebf5",
+  "layout": "development/levels/rebuild/institution-earthworks-pass/school/authored-layout.json",
+  "layout_sha256": "c224be02132c681344ffbdd4c141d9b8d87e5f395c23188b5384d7d41ef5d9b1",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "382:L43 flight0 step1",
+    "383:L43 flight0 step2",
+    "384:L43 flight0 step3",
+    "385:L43 flight0 step4",
+    "386:L43 flight0 step5",
+    "387:L43 flight0 step6",
+    "388:L43 flight0 step7",
+    "389:L43 flight0 step8",
+    "390:L43 flight0 step9",
+    "391:L43 flight0 step10",
+    "392:L43 flight0 step11",
+    "393:L43 flight0 step12",
+    "394:L43 flight0 step13",
+    "395:L43 flight0 step14",
+    "396:L43 flight0 step15",
+    "397:L43 flight0 step16",
+    "398:L43 flight0 step17",
+    "399:L43 flight0 step18",
+    "400:L43 flight0 step19",
+    "401:L43 flight0 step20",
+    "402:L44 flight0 step1",
+    "403:L44 flight0 step2",
+    "404:L44 flight0 step3",
+    "405:L44 flight0 step4",
+    "406:L44 flight0 step5",
+    "407:L44 flight0 step6",
+    "408:L44 flight0 step7",
+    "409:L44 flight0 step8",
+    "410:L44 flight0 step9",
+    "411:L44 flight0 step10",
+    "412:L44 flight0 step11",
+    "413:L44 flight0 step12",
+    "414:L44 flight0 step13",
+    "415:L44 flight0 step14",
+    "416:L44 flight0 step15",
+    "417:L44 flight0 step16",
+    "418:L44 flight0 step17"
+  ],
+  "stair_components": [
+    "382:L43 flight0 step1",
+    "383:L43 flight0 step2",
+    "384:L43 flight0 step3",
+    "385:L43 flight0 step4",
+    "386:L43 flight0 step5",
+    "387:L43 flight0 step6",
+    "388:L43 flight0 step7",
+    "389:L43 flight0 step8",
+    "390:L43 flight0 step9",
+    "391:L43 flight0 step10",
+    "392:L43 flight0 step11",
+    "393:L43 flight0 step12",
+    "394:L43 flight0 step13",
+    "395:L43 flight0 step14",
+    "396:L43 flight0 step15",
+    "397:L43 flight0 step16",
+    "398:L43 flight0 step17",
+    "399:L43 flight0 step18",
+    "400:L43 flight0 step19",
+    "401:L43 flight0 step20",
+    "402:L44 flight0 step1",
+    "403:L44 flight0 step2",
+    "404:L44 flight0 step3",
+    "405:L44 flight0 step4",
+    "406:L44 flight0 step5",
+    "407:L44 flight0 step6",
+    "408:L44 flight0 step7",
+    "409:L44 flight0 step8",
+    "410:L44 flight0 step9",
+    "411:L44 flight0 step10",
+    "412:L44 flight0 step11",
+    "413:L44 flight0 step12",
+    "414:L44 flight0 step13",
+    "415:L44 flight0 step14",
+    "416:L44 flight0 step15",
+    "417:L44 flight0 step16",
+    "418:L44 flight0 step17"
+  ],
+  "glb_sha256": "3cfc6a9af3f2fadb9a1a6baf02950c854c98185c939c04ca77872d934df9496a",
+  "physics_sha256": "00b584d4b7aa27401f6fcdef7fc5c1e7a2bed112d219cdfc5d206e33ce96c26c",
+  "arrival_bearing": {
+    "link": "L42",
+    "anchor": [
+      28.0,
+      0,
+      51.5
+    ],
+    "route_width": 1.2,
+    "extension_metres": 0.35,
+    "contact_owner": "L42 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        27.4,
+        51.85
+      ],
+      [
+        27.4,
+        51.5
+      ],
+      [
+        28.6,
+        51.5
+      ],
+      [
+        28.6,
+        51.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          27.4,
+          51.85
+        ],
+        [
+          27.4,
+          51.5
+        ],
+        [
+          28.6,
+          51.5
+        ],
+        [
+          28.6,
+          51.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing SCHOOL 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": 30,
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "b77fd45f61f7aa3b5ed1b0067a5c1c886ec99b63f31989de934886d1c85f3491",
+  "access_route_changes": [
+    {
+      "site": "SCHOOL",
+      "link": "L08",
+      "rooms": [
+        "main-stair",
+        "service-stair"
+      ],
+      "before": [
+        [
+          26.5,
+          0,
+          25.0
+        ],
+        [
+          28.5,
+          0,
+          25.0
+        ],
+        [
+          28.5,
+          0,
+          20
+        ],
+        [
+          28.5,
+          0,
+          16.0
+        ],
+        [
+          28.6,
+          0,
+          16.0
+        ]
+      ],
+      "after": [
+        [
+          26.5,
+          0.0,
+          25.0
+        ],
+        [
+          28.5,
+          0.0,
+          20.0
+        ],
+        [
+          28.5,
+          0.0,
+          18.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        28.5,
+        0,
+        20
+      ],
+      "source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/school/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/school/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.blend",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "roof_wings": [
+    {
+      "wing": "teaching",
+      "bounds": [
+        10,
+        12,
+        30,
+        36
+      ],
+      "ceiling": 7.2,
+      "ridge": 9.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "assembly",
+      "bounds": [
+        30,
+        24,
+        42,
+        36
+      ],
+      "ceiling": 8.1,
+      "ridge": 10.14,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "gym",
+      "bounds": [
+        38,
+        8,
+        50,
+        24
+      ],
+      "ceiling": 7.2,
+      "ridge": 9.440000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "health",
+      "bounds": [
+        30,
+        12,
+        38,
+        24
+      ],
+      "ceiling": 3.6,
+      "ridge": 5.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "receiving",
+      "bounds": [
+        42,
+        28,
+        46,
+        36
+      ],
+      "ceiling": 3.6,
+      "ridge": 4.54,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    }
+  ],
+  "roof_coverage_rays": 944,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/institution-earthworks-batch/school.png",
+      "sha256": "e33a3d7fc4ac0ae96b797d37c0eb681736c56fcbf1463476e9c194a18feb4be3",
+      "type": "native exported actual saved terrain earthworks with roof cutaway; not gameplay"
+    }
+  ],
+  "roof_generator_sha256": "cfa4e55508d2acd5e8cda538b04a8ea91dbfefa8c3f19527de936da46290eb51",
+  "remaining": "Runtime map adapter/rooms/portals/acoustics/spawns/services and native scene rendering are not integrated. Detailed roof step flashing, drainage, gutters, standing-height join/optical review and terrain/foundation defects remain open. Existing candidate availability unchanged.",
+  "entrance_landing": {
+    "bounds": [
+      20,
+      36,
+      25,
+      39
+    ],
+    "top_y": 0,
+    "foundation_bottom_y": -0.7568412780761719,
+    "soil_receivers": [
+      {
+        "x": 20.1,
+        "z": 38.9,
+        "soil_y": -0.4068412780761719
+      },
+      {
+        "x": 24.9,
+        "z": 38.9,
+        "soil_y": -0.39746665954589844
+      },
+      {
+        "x": 22.5,
+        "z": 38.9,
+        "soil_y": -0.40215301513671875
+      },
+      {
+        "x": 22.5,
+        "z": 38.01,
+        "soil_y": -0.40476226806640625
+      }
+    ]
+  },
+  "study_solid_removal": [
+    "Arrival end bearing SCHOOL 0",
+    "L27 support 1",
+    "L35 support 1",
+    "L36 support 0",
+    "L36 support 1",
+    "L37 support 0",
+    "L37 support 1",
+    "L38 support 0",
+    "L38 support 1",
+    "L39 support 1",
+    "L40 support 1",
+    "L41 support 0",
+    "L41 support 1",
+    "L42 support 0",
+    "L42 support 1"
+  ],
+  "doorways": [
+    {
+      "id": "SCHOOL-z-30-21.5",
+      "axis": "z",
+      "boundary": 30,
+      "along": 21.5,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        29.76,
+        30.24
+      ],
+      "rooms": [
+        "foyer",
+        "corridor"
+      ],
+      "side": "N",
+      "frame_depth": 0.4799999999999969,
+      "frame_center": [
+        21.5,
+        0,
+        30.0
+      ],
+      "boundary_center": [
+        21.5,
+        0,
+        30
+      ]
+    },
+    {
+      "id": "SCHOOL-z-36-22.5",
+      "axis": "z",
+      "boundary": 36,
+      "along": 22.5,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        35.76,
+        36
+      ],
+      "rooms": [
+        "foyer"
+      ],
+      "side": "S",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        22.5,
+        0,
+        35.879999999999995
+      ],
+      "boundary_center": [
+        22.5,
+        0,
+        36
+      ]
+    },
+    {
+      "id": "SCHOOL-x-25-31.5",
+      "axis": "x",
+      "boundary": 25,
+      "along": 31.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        24.76,
+        25.24
+      ],
+      "rooms": [
+        "foyer",
+        "interview"
+      ],
+      "side": "E",
+      "frame_depth": 0.4799999999999969,
+      "frame_center": [
+        25.0,
+        0,
+        31.5
+      ],
+      "boundary_center": [
+        25,
+        0,
+        31.5
+      ]
+    },
+    {
+      "id": "SCHOOL-x-25-34.5",
+      "axis": "x",
+      "boundary": 25,
+      "along": 34.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        24.76,
+        25.24
+      ],
+      "rooms": [
+        "foyer",
+        "visitor-wc"
+      ],
+      "side": "E",
+      "frame_depth": 0.4799999999999969,
+      "frame_center": [
+        25.0,
+        0,
+        34.5
+      ],
+      "boundary_center": [
+        25,
+        0,
+        34.5
+      ]
+    },
+    {
+      "id": "SCHOOL-z-33-28.75",
+      "axis": "z",
+      "boundary": 33,
+      "along": 28.75,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        32.76,
+        33.24
+      ],
+      "rooms": [
+        "interview",
+        "office"
+      ],
+      "side": "S",
+      "frame_depth": 0.480000000000004,
+      "frame_center": [
+        28.75,
+        0,
+        33.0
+      ],
+      "boundary_center": [
+        28.75,
+        0,
+        33
+      ]
+    },
+    {
+      "id": "SCHOOL-court-science-W",
+      "axis": "x",
+      "boundary": 10,
+      "along": 16,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        10,
+        10.24
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "science"
+      ],
+      "side": "W",
+      "frame_center": [
+        10.120000000000001,
+        0,
+        16
+      ],
+      "boundary_center": [
+        10,
+        0,
+        16
+      ]
+    },
+    {
+      "id": "SCHOOL-court-class-a-W",
+      "axis": "x",
+      "boundary": 10,
+      "along": 28,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        10,
+        10.24
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "class-a"
+      ],
+      "side": "W",
+      "frame_center": [
+        10.120000000000001,
+        0,
+        28
+      ],
+      "boundary_center": [
+        10,
+        0,
+        28
+      ]
+    },
+    {
+      "id": "SCHOOL-court-gym-N",
+      "axis": "z",
+      "boundary": 8,
+      "along": 44,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        8,
+        8.24
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "gym"
+      ],
+      "side": "N",
+      "frame_center": [
+        44,
+        0,
+        8.120000000000001
+      ],
+      "boundary_center": [
+        44,
+        0,
+        8
+      ]
+    },
+    {
+      "id": "SCHOOL-court-receiving-E",
+      "axis": "x",
+      "boundary": 46,
+      "along": 32,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        45.76,
+        46
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "receiving"
+      ],
+      "side": "E",
+      "frame_center": [
+        45.879999999999995,
+        0,
+        32
+      ],
+      "boundary_center": [
+        46,
+        0,
+        32
+      ]
+    }
+  ],
+  "door_types": {
+    "pedestrian": {
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0
+    },
+    "service": {
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0
+    },
+    "loading": {
+      "clear_width": 2.4,
+      "clear_height": 2.6,
+      "sill_y": 0
+    }
+  },
+  "doorway_builder": "tools/build_institution_doorways.py",
+  "doorway_builder_sha256": "413350004259ad30868c6b1ccfa796b017c29400ef4eefd88452185b025968a6",
+  "doorframe_source": "development/levels/primitive-props-v1/models/level_blockout_doorway.glb",
+  "doorframe_source_sha256": "89f5c94c9d7b8f8ac0285c606bb322e9a71b04df715a75498af4cf53830ee7d2",
+  "doorframe_parts": "Original catalog left jamb, right jamb and header; source master/UVs/materials preserved. Threshold/hardware studies retained in library, not placed as a blocked/raised opening.",
+  "rooms_rebuilt": [
+    "foyer",
+    "interview",
+    "visitor-wc",
+    "office"
+  ],
+  "corridor_faces": {
+    "corridor": [
+      "S"
+    ]
+  },
+  "sealed_context_policy": "Existing SEALED_CONTEXT walls/access metadata retained; no new context-room openings",
+  "removed_fragmented_walls": [
+    "Arrival end bearing SCHOOL 0",
+    "Flat route shell Wall corridor S.001",
+    "Flat route shell Wall foyer E",
+    "Flat route shell Wall foyer E.001",
+    "Flat route shell Wall foyer E.002",
+    "Flat route shell Wall foyer N",
+    "Flat route shell Wall foyer N.001",
+    "Flat route shell Wall foyer S",
+    "Flat route shell Wall foyer S.001",
+    "Flat route shell Wall interview S",
+    "Flat route shell Wall interview S.001",
+    "Flat route shell Wall interview W.001",
+    "Flat route shell Wall office N",
+    "Flat route shell Wall visitor-wc W",
+    "Header foyer E",
+    "Header foyer E.002",
+    "Header foyer N",
+    "Header foyer S",
+    "Header interview S",
+    "L27 support 1",
+    "L35 support 1",
+    "L36 support 0",
+    "L36 support 1",
+    "L37 support 0",
+    "L37 support 1",
+    "L38 support 0",
+    "L38 support 1",
+    "L39 support 1",
+    "L40 support 1",
+    "L41 support 0",
+    "L41 support 1",
+    "L42 support 0",
+    "L42 support 1",
+    "Wall foyer W",
+    "Wall interview E",
+    "Wall interview N",
+    "Wall office E",
+    "Wall office S",
+    "Wall visitor-wc E",
+    "Wall visitor-wc N",
+    "Wall visitor-wc S"
+  ],
+  "court_construction": [
+    {
+      "area": "north school playground",
+      "architectural_footprint": [
+        [
+          5,
+          2
+        ],
+        [
+          55,
+          2
+        ],
+        [
+          55,
+          12
+        ],
+        [
+          5,
+          12
+        ]
+      ],
+      "constructed_polygons": [
+        [
+          [
+            5,
+            2
+          ],
+          [
+            55,
+            2
+          ],
+          [
+            55.0,
+            8.0
+          ],
+          [
+            5.0,
+            8.0
+          ]
+        ],
+        [
+          [
+            55.0,
+            8.0
+          ],
+          [
+            55,
+            12
+          ],
+          [
+            50.0,
+            12.0
+          ],
+          [
+            50.0,
+            8.0
+          ]
+        ],
+        [
+          [
+            38.0,
+            12.0
+          ],
+          [
+            5,
+            12
+          ],
+          [
+            5.0,
+            8.0
+          ],
+          [
+            38.0,
+            8.0
+          ]
+        ]
+      ],
+      "surface_y": 0,
+      "pavement_depth": 0.2,
+      "foundation_bottom_y": -0.9088455200195312,
+      "soil_range": [
+        -0.5588455200195312,
+        -0.42066001892089844
+      ],
+      "soil_samples": 452,
+      "saved_hole_samples": 0,
+      "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+    },
+    {
+      "area": "east receiving and gym service court",
+      "architectural_footprint": [
+        [
+          46,
+          12
+        ],
+        [
+          55,
+          12
+        ],
+        [
+          55,
+          36
+        ],
+        [
+          46,
+          36
+        ]
+      ],
+      "constructed_polygons": [
+        [
+          [
+            50.0,
+            12.0
+          ],
+          [
+            55,
+            12
+          ],
+          [
+            55,
+            36
+          ],
+          [
+            50.0,
+            36.0
+          ]
+        ],
+        [
+          [
+            50.0,
+            24.0
+          ],
+          [
+            50.0,
+            36.0
+          ],
+          [
+            46,
+            36
+          ],
+          [
+            46.0,
+            24.0
+          ]
+        ]
+      ],
+      "surface_y": 0,
+      "pavement_depth": 0.2,
+      "foundation_bottom_y": -0.7757869720458984,
+      "soil_range": [
+        -0.42578697204589844,
+        -0.34424400329589844
+      ],
+      "soil_samples": 168,
+      "saved_hole_samples": 0,
+      "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+    },
+    {
+      "area": "west teaching-room court",
+      "architectural_footprint": [
+        [
+          5,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          10,
+          36
+        ],
+        [
+          5,
+          36
+        ]
+      ],
+      "constructed_polygons": [
+        [
+          [
+            5,
+            12
+          ],
+          [
+            10,
+            12
+          ],
+          [
+            10,
+            36
+          ],
+          [
+            5,
+            36
+          ]
+        ]
+      ],
+      "surface_y": 0,
+      "pavement_depth": 0.2,
+      "foundation_bottom_y": -1.067052459716797,
+      "soil_range": [
+        -0.7170524597167969,
+        -0.43848419189453125
+      ],
+      "soil_samples": 120,
+      "saved_hole_samples": 0,
+      "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+    },
+    {
+      "area": "south school forecourt",
+      "architectural_footprint": [
+        [
+          5,
+          36
+        ],
+        [
+          55,
+          36
+        ],
+        [
+          55,
+          42
+        ],
+        [
+          5,
+          42
+        ]
+      ],
+      "constructed_polygons": [
+        [
+          [
+            25.0,
+            36.0
+          ],
+          [
+            55,
+            36
+          ],
+          [
+            55,
+            42
+          ],
+          [
+            25.0,
+            42.0
+          ]
+        ],
+        [
+          [
+            25.0,
+            39.0
+          ],
+          [
+            25.0,
+            42.0
+          ],
+          [
+            5,
+            42
+          ],
+          [
+            5.0,
+            39.0
+          ]
+        ],
+        [
+          [
+            5,
+            36
+          ],
+          [
+            20.0,
+            36.0
+          ],
+          [
+            20.0,
+            39.0
+          ],
+          [
+            5.0,
+            39.0
+          ]
+        ]
+      ],
+      "surface_y": 0,
+      "pavement_depth": 0.2,
+      "foundation_bottom_y": -1.169347381591797,
+      "soil_range": [
+        -0.8193473815917969,
+        -0.3002967834472656
+      ],
+      "soil_samples": 285,
+      "saved_hole_samples": 0,
+      "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+    }
+  ],
+  "exterior_doorways": [
+    {
+      "id": "SCHOOL-court-science-W",
+      "axis": "x",
+      "boundary": 10,
+      "along": 16,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        10,
+        10.24
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "science"
+      ],
+      "side": "W",
+      "frame_center": [
+        10.120000000000001,
+        0,
+        16
+      ],
+      "boundary_center": [
+        10,
+        0,
+        16
+      ]
+    },
+    {
+      "id": "SCHOOL-court-class-a-W",
+      "axis": "x",
+      "boundary": 10,
+      "along": 28,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        10,
+        10.24
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "class-a"
+      ],
+      "side": "W",
+      "frame_center": [
+        10.120000000000001,
+        0,
+        28
+      ],
+      "boundary_center": [
+        10,
+        0,
+        28
+      ]
+    },
+    {
+      "id": "SCHOOL-court-gym-N",
+      "axis": "z",
+      "boundary": 8,
+      "along": 44,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        8,
+        8.24
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "gym"
+      ],
+      "side": "N",
+      "frame_center": [
+        44,
+        0,
+        8.120000000000001
+      ],
+      "boundary_center": [
+        44,
+        0,
+        8
+      ]
+    },
+    {
+      "id": "SCHOOL-court-receiving-E",
+      "axis": "x",
+      "boundary": 46,
+      "along": 32,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        45.76,
+        46
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "receiving"
+      ],
+      "side": "E",
+      "frame_center": [
+        45.879999999999995,
+        0,
+        32
+      ],
+      "boundary_center": [
+        46,
+        0,
+        32
+      ]
+    }
+  ],
+  "removed_exterior_walls": [
+    "Flat route shell Wall class-a W",
+    "Flat route shell Wall class-a W.001",
+    "Flat route shell Wall gym N",
+    "Flat route shell Wall gym N.001",
+    "Flat route shell Wall receiving E",
+    "Flat route shell Wall receiving E.001",
+    "Flat route shell Wall science W",
+    "Flat route shell Wall science W.001",
+    "Header class-a W",
+    "Header gym N",
+    "Header receiving E",
+    "Header science W"
+  ],
+  "court_builder": "tools/build_institution_courts.py",
+  "court_builder_sha256": "409597be06ebaf702f4a1c45424e72be39e6efa94453ef40a879ed95c128c8d0",
+  "doorframe_helper_sha256": "c66b31639ee87f27f1dec6a1142eb07a3fec3c2d8102ebc2235e22172fbb001c",
+  "saved_world": "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/adaptive-topology.bin": "54c21592280e0c2c46b8fac8eac5dc75c08832a182ef121b6f22b75bd67e28ad",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/authored-cuts.tsv": "34c21872cee4ef647c5ccaf042e7c312d48c9e401e9b25afcf9dedc6ae75dc0a",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/earthworks-verification.json": "c53f31031fc36ba82900e938f5cb87b25d668bca0ea7defe42558be655456956",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/source-provenance.json": "197733fc30903a9685cff255a0c8bf11a18914672e630af0ea7d5e45d5bf5c95",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/terrain-physics.hcs2": "649af16f74105ac2800f834f5b0c79936ab06cdeaa5828ebd9ea3d26995e1960",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/tile_0_0.png": "3d91b65bdca5323ea167f3b51876681e56f9855686e8ea3c06c4de77c0c364bf",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/verification.json": "c53f31031fc36ba82900e938f5cb87b25d668bca0ea7defe42558be655456956",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/world.properties": "a8e105f9a6995f6d1bd59eccb6ace298f41b72d1e0dd45bca1b60794d7080d3c",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/scene-package/.scene.bin.editor.previous": "6c472d4b46999f05336ef6f15336683721ba821e128900ee8eaed2a5638a5c38",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/scene-package/scene.bin": "19a29a398ca7c07c20bbced68049b1cfed755cda64c76a6d3da19edee53f47c1",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/scene-package/meshes/site.obj": "1871785146e59aaa087a4f975132022c1c678cbc99d28b9fb8aff0c7bdf32ced",
+    "development/levels/rebuild/institution-earthworks-pass/worlds/school/terrain-world/terrain-layers/tile_0_0.bin": "b2f64d2bc7a2514de2ee5ee357ef02a17282c78f9c5e85f044b602c1f2babd5a"
+  },
+  "earthworks": [
+    {
+      "name": "School arrival clearing",
+      "material": "GRAVEL",
+      "feather": 5,
+      "profile": "arrival",
+      "polygon": [
+        [
+          4,
+          38
+        ],
+        [
+          15,
+          36
+        ],
+        [
+          28,
+          38
+        ],
+        [
+          51,
+          36
+        ],
+        [
+          58,
+          42
+        ],
+        [
+          57,
+          55
+        ],
+        [
+          48,
+          61
+        ],
+        [
+          12,
+          61
+        ],
+        [
+          2,
+          53
+        ]
+      ]
+    },
+    {
+      "name": "Teaching and service grounds",
+      "material": "GRAVEL",
+      "feather": 4,
+      "profile": "grounds",
+      "polygon": [
+        [
+          2,
+          0
+        ],
+        [
+          53,
+          -1
+        ],
+        [
+          58,
+          7
+        ],
+        [
+          59,
+          35
+        ],
+        [
+          54,
+          41
+        ],
+        [
+          4,
+          41
+        ],
+        [
+          0,
+          32
+        ],
+        [
+          1,
+          10
+        ]
+      ]
+    }
+  ],
+  "entrance_apron_extension": null,
+  "earthworks_verification": {
+    "site": "SCHOOL",
+    "changed_vertices": 919,
+    "raised_vertices": 894,
+    "lowered_vertices": 25,
+    "max_change_m": 1.028824329,
+    "source_height_sha256": "3d91b65bdca5323ea167f3b51876681e56f9855686e8ea3c06c4de77c0c364bf",
+    "saved_topology_sha256": "54c21592280e0c2c46b8fac8eac5dc75c08832a182ef121b6f22b75bd67e28ad",
+    "saved_cuts_sha256": "34c21872cee4ef647c5ccaf042e7c312d48c9e401e9b25afcf9dedc6ae75dc0a",
+    "hole_controls": 1309,
+    "disk_reopen_verified": true,
+    "physics_sha256": "649af16f74105ac2800f834f5b0c79936ab06cdeaa5828ebd9ea3d26995e1960",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "source_terrain": "development/levels/rebuild/terrain-overall-pass/worlds/school/terrain-world",
+  "removed_redundant_cottage_walks": [],
+  "source_terrain_physics_sha256": "3367751c0cbec4d8d2c984e5611ae0eafb77f6050b88b5100dfed69eacd99b9f",
+  "terrain_writer": "tools/java/RebuildInstitutionEarthworks.java",
+  "terrain_writer_sha256": "a8baf56f63c7640dddfce02a4f1abacfbbe80696e79c48181137b9afaee536fe",
+  "terrain_composer": "tools/compose_institution_earthworks.py",
+  "terrain_composer_sha256": "9dc4f7ecb7636e3a1e8f5d83bcdfc0f37e83bb249cbab2a67144bef7b5db0198"
+}

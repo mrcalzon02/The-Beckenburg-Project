@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1994,
-  "unique_local_file_hashes": 1823,
+  "local_files": 1997,
+  "unique_local_file_hashes": 1826,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 72,
+    "additional_custom_model_sources": 75,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -28453,6 +28453,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "9b29533c49399a4c87ddbb4b7faf30e0a8eb6abaf9d8075fb6e4aa214151f653",
       "bytes": 2188024
+    },
+    {
+      "id": "saved-earthworks",
+      "label": "saved-earthworks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/institution-earthworks-pass/asylum/saved-earthworks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "31ae823c4e6bed2b9dc34d0eaf9bae8d5b47ab0590c319fefb611fe113b020ba",
+      "bytes": 3276700
+    },
+    {
+      "id": "saved-earthworks",
+      "label": "saved-earthworks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/institution-earthworks-pass/prison/saved-earthworks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "7e6606cbcd7cd136d4532647a1a1ffe096640cce71bfc51c6d584fe0fb7a121b",
+      "bytes": 3767632
+    },
+    {
+      "id": "saved-earthworks",
+      "label": "saved-earthworks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/institution-earthworks-pass/school/saved-earthworks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "3cfc6a9af3f2fadb9a1a6baf02950c854c98185c939c04ca77872d934df9496a",
+      "bytes": 3059444
     },
     {
       "id": "enclosed-roofs",

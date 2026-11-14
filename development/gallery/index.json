@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10918,
+  "count": 10921,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -100764,6 +100764,36 @@
       "height": 1100,
       "bytes": 1682587,
       "sha256": "247a4a4cabefc6b45029795476845926404d9aed81a451954beea6f23654de96"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-earthworks-batch/asylum.png",
+      "url": "development/levels/rebuild/captures/institution-earthworks-batch/asylum.png",
+      "title": "Asylum",
+      "kind": "Native actual saved institution arrival and grounds sculpt with supported forecourt aprons; roofs hidden, rough materials, landscape/guard/runtime acceptance open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1467989,
+      "sha256": "c4873d37ee96635d5d147adceb4d282d727f3a2bbd7914339636b4f2e5c5bc21"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-earthworks-batch/prison.png",
+      "url": "development/levels/rebuild/captures/institution-earthworks-batch/prison.png",
+      "title": "Prison",
+      "kind": "Native actual saved institution arrival and grounds sculpt with supported forecourt aprons; roofs hidden, rough materials, landscape/guard/runtime acceptance open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1561485,
+      "sha256": "2137d7d9b16eed7f66f9528a15f3d80c1a043008ad7bfaedc8ac32dfe51ad75c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-earthworks-batch/school.png",
+      "url": "development/levels/rebuild/captures/institution-earthworks-batch/school.png",
+      "title": "School",
+      "kind": "Native actual saved institution arrival and grounds sculpt with supported forecourt aprons; roofs hidden, rough materials, landscape/guard/runtime acceptance open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1775365,
+      "sha256": "e33a3d7fc4ac0ae96b797d37c0eb681736c56fcbf1463476e9c194a18feb4be3"
     },
     {
       "path": "development/levels/rebuild/captures/landing-batch/college-actual-export-contact.png",
