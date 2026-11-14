@@ -6982,6 +6982,20 @@ Evidence and verification: institution-courts-pass per-site court_construction a
 
 Older-map obligation: Build appropriate supported stairs/landings or saved terrain grades, edge protection and drainage at exposed interfaces; include canonical van in arrival acceptance. Preserve saved hole punches, all basement headroom, existing assets and functional contracts. Do not bridge missing grades with extruded study lines. Full roster, final materials and runtime remain open.
 
+### DEV-493 — Partial exterior wall repairs used shortened returns intended for all-new room corners
+
+**Status:** CONSTRUCTED RETURNS CORRECTED; THREE NATIVE OPTICAL CONTROLS PASS · **Affected:** School west science/classroom and east receiving wall corner joins in institution-courts-pass
+
+The first court checkpoint shortened W/E face ends by0.24m while adjoining retained N/S source walls were thinner/centered. This left small light/sight gaps near three corners.
+
+Cause / uncertainty: A corner convention appropriate when rebuilding all4walls was reused for a partial single-face repair against retained walls.
+
+Fix / next action: Extend each partial W/E face to its original full along-wall bounds, joining retained corner walls. Keep doorway locations/dimensions and all court/floor geometry. Export/native solids remain closed/positive. Three native rays that crossed the actual checkpoint corner gaps now block on the repaired wall returns; before geometry reproduced exactly from publishedd6c43dbgit object. Rerun final ordinary movement:103of121links pass with zero regressions. Seven complete stair routes and60actual door-aperture profiles remain passing;20frame dimensions verified after final reimport. Retained source records remain byte-identical.
+
+Evidence and verification: institution-courts-pass/verification/corner-return-source.json, corner-return-input.tsv and corner-return-results.tsv; current-flat-movement.json; door-aperture-verification.json; tools/build_institution_courts.py
+
+Older-map obligation: Audit all partial-face repairs against actual retained wall ends and thickness rather than applying a whole-room corner rule. Earlier institution entrance blocks replace whole rooms/N-S corridor faces; no inference that other older map corners are accepted. Runtime lighting, grade edges and other construction gates remain open.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

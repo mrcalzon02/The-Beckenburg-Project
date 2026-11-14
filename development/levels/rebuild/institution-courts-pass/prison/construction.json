@@ -192,7 +192,7 @@
   "removed_source_meshes": [],
   "removed_native_parts": [],
   "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
-  "blend_sha256": "717aedba4d7785accc1476e146575e2ec47bd40abcb0a62695a6898090977ea0",
+  "blend_sha256": "7b81ed594e78a941f7d8395f1e39f3eaffca357c01f78464fb1ec6fdbd43b663",
   "access_route_changes": [
     {
       "site": "PRISON",
@@ -1343,7 +1343,7 @@
   "captures": [
     {
       "path": "development/levels/rebuild/captures/institution-courts-batch/prison.png",
-      "sha256": "40ef3ffb0aaed28249f0edb3f6b4b6cdf995ab5df4db9f9c8c20261da7a7d540",
+      "sha256": "79d02d5c70681a2e6e8201916d5e1b1f5b8aef885d11f81375a1a466c6bc4e27",
       "type": "Native exported court construction, roof cutaway, not gameplay"
     }
   ],
@@ -1761,6 +1761,6 @@
     "Header sally N"
   ],
   "court_builder": "tools/build_institution_courts.py",
-  "court_builder_sha256": "39dcbe89e243628821af1a27ad290711a198f6ba1a325f9cc7729b912d899a9a",
+  "court_builder_sha256": "409597be06ebaf702f4a1c45424e72be39e6efa94453ef40a879ed95c128c8d0",
   "doorframe_helper_sha256": "c66b31639ee87f27f1dec6a1142eb07a3fec3c2d8102ebc2235e22172fbb001c"
 }

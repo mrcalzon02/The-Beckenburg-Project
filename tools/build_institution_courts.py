@@ -85,7 +85,8 @@ def build(s):
  for zone,faces in schedule.items():
   z=zones[zone];a,b,c,d=z['bounds'];h=z['height'];assert z['y']==0
   for side,openings in faces.items():
-   along=side in ['N','S'];lo,hi=(a,c) if along else (b+.24,d-.24);fixed={'N':b,'S':d,'W':a,'E':c}[side]
+   # A single repaired face returns fully into the retained original corner wall.
+   along=side in ['N','S'];lo,hi=(a,c) if along else (b,d);fixed={'N':b,'S':d,'W':a,'E':c}[side]
    def wall(start,end,low,high,label):
     if end-start<.000001:return
     foot=rect(start,fixed,end,fixed+.24) if side=='N' else rect(start,fixed-.24,end,fixed) if side=='S' else rect(fixed,start,fixed+.24,end) if side=='W' else rect(fixed-.24,start,fixed,end)

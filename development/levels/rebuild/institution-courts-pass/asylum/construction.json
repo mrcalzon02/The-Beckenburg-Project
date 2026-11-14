@@ -154,7 +154,7 @@
   "removed_source_meshes": [],
   "removed_native_parts": [],
   "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
-  "blend_sha256": "f24f2bcb47c98122c0c18b82fa8fd9288e0402c5455e2651d8436b8464205b89",
+  "blend_sha256": "c17ed0cc9f6677a67b21caeab2ee93c525b471ca7e43bcb17d167d09d957321c",
   "access_route_changes": [
     {
       "site": "ASYLUM",
@@ -814,7 +814,7 @@
   "captures": [
     {
       "path": "development/levels/rebuild/captures/institution-courts-batch/asylum.png",
-      "sha256": "7edba392d81f81a0202de268947079e7b50cbd5fbf9786da087c27ee5e50c535",
+      "sha256": "5a846dd0f86765b5051ff100097c6bd3c3df205348ac3ea964f5cd3cc2501964",
       "type": "Native exported court construction, roof cutaway, not gameplay"
     }
   ],
@@ -1284,6 +1284,6 @@
     "Header ground-south-a S"
   ],
   "court_builder": "tools/build_institution_courts.py",
-  "court_builder_sha256": "39dcbe89e243628821af1a27ad290711a198f6ba1a325f9cc7729b912d899a9a",
+  "court_builder_sha256": "409597be06ebaf702f4a1c45424e72be39e6efa94453ef40a879ed95c128c8d0",
   "doorframe_helper_sha256": "c66b31639ee87f27f1dec6a1142eb07a3fec3c2d8102ebc2235e22172fbb001c"
 }

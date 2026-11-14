@@ -91,8 +91,8 @@
     "417:L44 flight0 step16",
     "418:L44 flight0 step17"
   ],
-  "glb_sha256": "e151781db819ed13b1110f936b7cf1cec62b6b95019478d9e45d92e9eac10fa0",
-  "physics_sha256": "a7a368fcfe3594334c2df27f8b46c8be8de1f07a3bde4b294d94107f127b9b35",
+  "glb_sha256": "3284a12d58054c96e2b8777158e7c43e4e361dc1d4b89c1181da11488fe3ef0e",
+  "physics_sha256": "fd842b2e4bd4f844c39811347809a4341ce80f1d0223fe70e773ce99083a9621",
   "arrival_bearing": {
     "link": "L42",
     "anchor": [
@@ -156,7 +156,7 @@
   "removed_source_meshes": [],
   "removed_native_parts": [],
   "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
-  "blend_sha256": "05a6a5e987711dc9003db5f85e0f5be50cc15eb799cffeba0bbffcee95f45eb9",
+  "blend_sha256": "ed571d19225c8f479a34b9a8c1aabe317e5c6e846bd64e01764e5e7a2f023ab5",
   "access_route_changes": [
     {
       "site": "SCHOOL",
@@ -300,7 +300,7 @@
   "captures": [
     {
       "path": "development/levels/rebuild/captures/institution-courts-batch/school.png",
-      "sha256": "01c353d58fbfb84c1308b1d9c899ec227b33ca6aed22728c9a639b377f4a8a57",
+      "sha256": "3b729ac5a0db616eef4aa2c5c667a4c8eaa6d6fc0177f1799d26db3f1d3c0b23",
       "type": "Native exported court construction, roof cutaway, not gameplay"
     }
   ],
@@ -1128,6 +1128,6 @@
     "Header science W"
   ],
   "court_builder": "tools/build_institution_courts.py",
-  "court_builder_sha256": "39dcbe89e243628821af1a27ad290711a198f6ba1a325f9cc7729b912d899a9a",
+  "court_builder_sha256": "409597be06ebaf702f4a1c45424e72be39e6efa94453ef40a879ed95c128c8d0",
   "doorframe_helper_sha256": "c66b31639ee87f27f1dec6a1142eb07a3fec3c2d8102ebc2235e22172fbb001c"
 }

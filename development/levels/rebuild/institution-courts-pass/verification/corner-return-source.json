@@ -1,0 +1,8 @@
+{
+  "before_git_object": "d6c43db9167993288f79e9621e43c78652f0d23a:development/levels/rebuild/institution-courts-pass/school/constructed-courts.hcs2",
+  "reproduce_before": "git show d6c43db9167993288f79e9621e43c78652f0d23a:development/levels/rebuild/institution-courts-pass/school/constructed-courts.hcs2 (raw binary bytes)",
+  "before_sha256": "a7a368fcfe3594334c2df27f8b46c8be8de1f07a3bde4b294d94107f127b9b35",
+  "after_sha256": "fd842b2e4bd4f844c39811347809a4341ce80f1d0223fe70e773ce99083a9621",
+  "cause": "Partial W/E repairs must return fully into retained old N/S corners; shortened all-new-room corner convention left a gap",
+  "fix": "Return each partial W/E face to the full original along-wall bounds; retain door positions/dimensions"
+}
