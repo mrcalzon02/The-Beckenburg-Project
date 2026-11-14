@@ -160,3 +160,8 @@ development/levels/rebuild/institution-roof-pass/** -text
 development/levels/rebuild/institution-roof-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tools/build_institution_roof_batch.py -text
 tools/java/RebuildRoofOpticalProbe.java -text
+
+# CRLF is deliberate in exact-byte snapshots and generated native receipts.
+development/levels/rebuild/institution-roof-pass/** whitespace=cr-at-eol
+tools/build_institution_roof_batch.py whitespace=cr-at-eol
+tools/java/RebuildRoofOpticalProbe.java whitespace=cr-at-eol
