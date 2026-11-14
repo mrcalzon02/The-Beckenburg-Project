@@ -5776,6 +5776,17 @@
       "action": "Preserve retained models and prior native records; use the actual constructed cells/interfaces and keep remaining older work explicit.",
       "evidence": "development/levels/rebuild/stair-interface-construction-pass/verification/checkpoint.json; source-and-structure-preservation.json; native movement reports and retained pilot logs.",
       "older_maps": "Audit older lookout decks, actual wall/platform receivers, guards and geographic approaches before accepting the site."
+    },
+    {
+      "id": "DEV-520",
+      "title": "Historical split-flight declarations are mistaken for new flights in later batches",
+      "status": "FIXED_CURRENT_AND_FOLLOWUP_NATIVE_CHECKS_PASS",
+      "affected": "tools/audit_roster_stairs.py when retaining the new Dam split flight in a subsequent source manifest",
+      "symptom": "An inherited declaration can wrongly require an already existing flight to appear again as a new identity.",
+      "cause": "Comparator originally scoped declared additions to metadata presence without comparing actual before-layout flight identities.",
+      "action": "Derive existing identities from exact before-layout points/mapping. Only genuinely new declarations require exact after coordinates and mandatory passing movement; still reject dropped old routes and unexpected new identities. Actual three-site20flight/18route replay and a no-change Dam follow-up control pass.",
+      "evidence": "stair-interface-construction-pass/verification/stairs/stair-movement.json; stair-interface-followup-control.log",
+      "older_maps": "Carry forward actual split-flight identities without skipping any old flight or treating all historical declarations as new."
     }
   ],
   "audit_categories": [

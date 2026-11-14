@@ -96,7 +96,10 @@ def main():
                 out=before;bearing=json.loads((before/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256'],before_layout=bearing['layout'],before_segment_map=bearing.get('source_segment_map',{}),before_stair_components=bearing['stair_components']);variants=[('before_bearing',before,'open-circulation.glb','open-circulation.hcs2'),('after_bearing',before,'open-circulation.glb','open-circulation.hcs2')]
         if args.source_manifest:
             old,new,bearing,desired=candidate_select(args,site);out=new[0];variants=[('before_bearing',*old),('after_bearing',*new)]
+            previous_layout=json.loads((ROOT/bearing.get('before_layout',bearing['layout'])).read_text());previous_mapping=bearing.get('before_segment_map',{})
+            existing_flights={(site,l['id'],str(previous_mapping.get(l['id'],{}).get(str(i),i))) for l in previous_layout['links'] for i,(a,b) in enumerate(zip(l['points'],l['points'][1:])) if abs(a[1]-b[1])>.01}
             for added in bearing.get('interface_added_flights',[]):
+                if (site,added['link'],str(added['segment'])) in existing_flights:continue # Historical declarations are not new in later batches.
                 revised=json.loads((ROOT/bearing['layout']).read_text());link=next(l for l in revised['links'] if l['id']==added['link']);index=added['layout_segment'];assert link['points'][index:index+2]==added['points'];assert abs(added['points'][0][1]-added['points'][1][1])>.01
                 assert str(bearing.get('source_segment_map',{}).get(added['link'],{}).get(str(index),index))==str(added['segment']);declared_new_flights.add((site,added['link'],str(added['segment'])))
         for variant,folder,mesh,physics in variants:

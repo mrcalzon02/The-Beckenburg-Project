@@ -1,0 +1,10 @@
+Diagnosed 298 failed directional flights in after without altering physics
+CURRENT_FLAT 14406 samples 298 invalid 50 complete links passing both ways 2 regressions
+Traceback (most recent call last):
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_current_flat_routes.py", line 63, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\audit_current_flat_routes.py", line 61, in main
+    assert not regressions,'New authored flat routes regress previously passing complete link directions'
+           ^^^^^^^^^^^^^^^
+AssertionError: New authored flat routes regress previously passing complete link directions

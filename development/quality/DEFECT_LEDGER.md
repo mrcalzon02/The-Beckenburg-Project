@@ -7360,6 +7360,20 @@ Evidence and verification: development/levels/rebuild/stair-interface-constructi
 
 Older-map obligation: Audit older lookout decks, actual wall/platform receivers, guards and geographic approaches before accepting the site.
 
+### DEV-520 — Historical split-flight declarations are mistaken for new flights in later batches
+
+**Status:** FIXED_CURRENT_AND_FOLLOWUP_NATIVE_CHECKS_PASS · **Affected:** tools/audit_roster_stairs.py when retaining the new Dam split flight in a subsequent source manifest
+
+An inherited declaration can wrongly require an already existing flight to appear again as a new identity.
+
+Cause / uncertainty: Comparator originally scoped declared additions to metadata presence without comparing actual before-layout flight identities.
+
+Fix / next action: Derive existing identities from exact before-layout points/mapping. Only genuinely new declarations require exact after coordinates and mandatory passing movement; still reject dropped old routes and unexpected new identities. Actual three-site20flight/18route replay and a no-change Dam follow-up control pass.
+
+Evidence and verification: stair-interface-construction-pass/verification/stairs/stair-movement.json; stair-interface-followup-control.log
+
+Older-map obligation: Carry forward actual split-flight identities without skipping any old flight or treating all historical declarations as new.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
