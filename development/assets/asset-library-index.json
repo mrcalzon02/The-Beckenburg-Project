@@ -1,17 +1,17 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1939,
-  "unique_local_file_hashes": 1768,
+  "local_files": 1948,
+  "unique_local_file_hashes": 1777,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
-    "existing_runtime_library": 580,
+    "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 25,
+    "additional_custom_model_sources": 28,
     "review_assemblies": 173,
-    "reference_and_rejected_studies": 94,
+    "reference_and_rejected_studies": 99,
     "native_map_exports": 250
   },
   "archive_index": {
@@ -14629,6 +14629,17 @@
       "bytes": 119904
     },
     {
+      "id": "level_county_campaign_board",
+      "label": "level_county_campaign_board",
+      "maps": [],
+      "category": "runtime_model",
+      "path": "assets/runtime/models/level_county_campaign_board.glb",
+      "collection": "existing_runtime_library",
+      "status": "EXISTING_SHIPPED_SOURCE_NOT_NEW_REVIEW_ACCEPTANCE",
+      "sha256": "4b24aee22335051964142e58aa45fa2c6968849a7cb88664b86d94a9627b7a1f",
+      "bytes": 1104024
+    },
+    {
       "id": "level_domestic_light",
       "label": "level_domestic_light",
       "maps": [],
@@ -28180,6 +28191,42 @@
       "bytes": 1531932
     },
     {
+      "id": "aligned-stairs",
+      "label": "aligned-stairs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/orthogonal-stair-pass/wld-06/aligned-stairs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "06bf9e3a71683fc9c04388db7ccdadf7d0eb07b03d79a98a0870663c304fe442",
+      "bytes": 1711100
+    },
+    {
+      "id": "aligned-stairs",
+      "label": "aligned-stairs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/orthogonal-stair-pass/wld-08/aligned-stairs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "459c0b73b7b3e4b12fafa37932190080d50c129402e48d60a3c92efbf9b8f649",
+      "bytes": 2524036
+    },
+    {
+      "id": "aligned-stairs",
+      "label": "aligned-stairs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/orthogonal-stair-pass/wld-12/aligned-stairs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "ac7c2c74d860d1fe5907728d0316feb65c70773e06093e4b12b2b19dbed76365",
+      "bytes": 3186688
+    },
+    {
       "id": "rough-shell",
       "label": "rough-shell",
       "maps": [],
@@ -29644,6 +29691,18 @@
       "bytes": 1358908
     },
     {
+      "id": "human-authored-quads",
+      "label": "human-authored-quads",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/quality/evidence/authored-quads-2026-11-07/human-authored-quads.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "17c2d32a7ed03d2f34cca1ae91e8d8cad3979b4abbe600182f4aa33a051718f9",
+      "bytes": 3076
+    },
+    {
       "id": "corner-normals-runtime",
       "label": "corner-normals-runtime",
       "maps": [],
@@ -29654,6 +29713,18 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "fd253dbf0b6e934e06960bdecbe21f6bcf2d24159b6d1838f66e2fa95f517c7c",
       "bytes": 1372
+    },
+    {
+      "id": "edited",
+      "label": "edited",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/quality/evidence/g2-textured-roundtrip-2026-11-07/edited.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "45c891d0b897595ca4bc7efa017d42f266fbf5adfe905d0dc87ddf17a1650cdf",
+      "bytes": 3492
     },
     {
       "id": "human-local-copy",
@@ -29740,6 +29811,18 @@
       "bytes": 1112
     },
     {
+      "id": "human-slide-runtime",
+      "label": "human-slide-runtime",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/quality/evidence/model-slide-2026-11-07/human-slide-runtime.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "736ca0d3abab836c891d34f541026206185a4a34821bf1afe1a059de1a235731",
+      "bytes": 1584
+    },
+    {
       "id": "edge",
       "label": "edge",
       "maps": [],
@@ -29798,6 +29881,18 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "42463bcbfc1f2f6a9f1309b13d0b921d8cd18cdace5a833a1c6f5caae74893da",
       "bytes": 1180
+    },
+    {
+      "id": "human-loop-slide",
+      "label": "human-loop-slide",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/quality/evidence/quad-slide-2026-11-07/human-loop-slide.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "bc921c23eaa626db293f6781a598822d0310ef33be2d18125232d5d2e3298143",
+      "bytes": 2984
     },
     {
       "id": "edited",
@@ -29906,6 +30001,18 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "79c9b901e6af985a5a0a571272f2d885a45b191857e7fdc3c8814eb3cf2bd69a",
       "bytes": 2028
+    },
+    {
+      "id": "human-snap",
+      "label": "human-snap",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/quality/evidence/vertex-snap-2026-11-07/human-snap.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "c154eec39ba500e5b8b89ff51f448c02fc73bdbdb4ca4e78cea6067b1dfa9904",
+      "bytes": 3448
     }
   ],
   "hash_aliases": [

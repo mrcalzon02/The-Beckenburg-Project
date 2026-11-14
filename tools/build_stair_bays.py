@@ -88,7 +88,7 @@ def build(site,plan,source_options=None,output_stem="bayed-stairs"):
             removed.append(o.name);bpy.data.objects.remove(o,do_unlink=True)
     for key in plan['build']:
         collection=bpy.data.collections.new('Authored bay '+key);bpy.context.scene.collection.children.link(collection);old=set(bpy.context.scene.objects);notes=[];link=dict(links[key],landings_authored_in_shell=True);assert stair_flights(link,collection,materials[key],box,notes)
-        for i,o in enumerate(o for o in bpy.context.scene.objects if o not in old):o.name='Bayed stair '+site+' '+key+' step'+str(i);built.append(o)
+        for i,o in enumerate(o for o in bpy.context.scene.objects if o not in old):o.name=('Orthogonal stair ' if plan.get('preserve_upper_hubs') is False else 'Bayed stair ')+site+' '+key+' step'+str(i);built.append(o)
     cutters=[];seen_segments=set()
     retained_segments={tuple(sorted((tuple(a),tuple(b)))) for link in before['links'] if link['id'] not in changed for a,b in zip(link['points'],link['points'][1:])}
     for key in sorted(changed):
@@ -137,7 +137,7 @@ def build(site,plan,source_options=None,output_stem="bayed-stairs"):
         polys=subtract_tops([hub['polygon']],hub['elevation'],list(bpy.context.scene.objects));built.extend(add_plate('East stair hub bearing ledge '+str(number),polys,hub['elevation'],materials[hub['link']],'structural-stair-landing',hub['link']))
     # Preserve the upper standing surface of removed converging tread columns
     # as a shallow hub landing; the conflicting lower columns stay removed.
-    for number,(key,e,poly) in enumerate(upper_tops):
+    for number,(key,e,poly) in enumerate(upper_tops if plan.get("preserve_upper_hubs",True) else []):
         bpy.context.view_layer.update();polys=subtract_tops([poly],e,list(bpy.context.scene.objects));built.extend(add_plate('Retained upper hub '+site+' '+key+' '+str(number),polys,e,materials[key],'structural-stair-landing',key))
     # Intermediate flats and complete end footprints are visible structural plates.
     for key in sorted(changed):
@@ -154,6 +154,7 @@ def build(site,plan,source_options=None,output_stem="bayed-stairs"):
     bpy.ops.object.select_all(action='DESELECT')
     for o in built:
         o.select_set(True);bpy.context.view_layer.objects.active=o;bpy.ops.object.transform_apply(location=False,rotation=True,scale=True);bm=bmesh.new();bm.from_mesh(o.data);bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces));bmesh.ops.triangulate(bm,faces=list(bm.faces));assert all(e.is_manifold for e in bm.edges),(site,o.name,'new solid open');bm.to_mesh(o.data);bm.free();o.select_set(False)
+    built=[o for o in built if len(o.data.polygons)>0]
     bpy.ops.wm.save_as_mainfile(filepath=str(folder/(output_stem+'.blend')),compress=True)
     for o in built:o.select_set(True)
     addition=ROOT/'build'/('bay-addition-'+site.lower()+'.glb');bpy.ops.export_scene.gltf(filepath=str(addition),export_format='GLB',export_extras=True,use_selection=True);retained=append(source,addition,folder/(output_stem+'.glb'),remove_mesh_names=removed);oldparts=split_native(native);names={n.split(':',1)[-1]:n for n,count,raw in oldparts};removed_native=[names[n] for n in removed];kept=[p for p in oldparts if p[0] not in removed_native];parts=[(o.name,records(o)) for o in built];payload=struct.pack('>III',0x48435332,len(kept)+len(parts),sum(n for name,n,raw in kept)+sum(len(ts) for name,ts in parts))+b''.join(raw for name,n,raw in kept)
@@ -161,7 +162,7 @@ def build(site,plan,source_options=None,output_stem="bayed-stairs"):
         raw=name.encode();payload+=struct.pack('>H',len(raw))+raw+struct.pack('>BI',1,len(ts))+b''.join(struct.pack('>9fB',*xyz,flags) for xyz,flags in ts)
     (folder/(output_stem+'.hcs2')).write_bytes(payload);stairs=[n for n in r['stair_components'] if n not in removed_native]+[o.name for o in built if o.get('role') in ['structural-stair-step','structural-stair-landing']];bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(folder/(output_stem+'.glb')));expected={n:face_keys(ts) for n,ts in parts}
     for o in bpy.context.scene.objects:
-        if o.name in expected:assert face_keys(records(o))==expected.pop(o.name),(site,o.name,'export/native mismatch')
+        if o.name in expected:assert o.type=='MESH',(site,o.name,o.type);assert face_keys(records(o))==expected.pop(o.name),(site,o.name,'export/native mismatch')
     assert not expected
     report=dict(id=site,status='AUTHORED_SHARED_STAIR_BAY_CANDIDATE_TERRAIN_RUNTIME_GATES_OPEN',source_glb=source.relative_to(ROOT).as_posix(),source_glb_sha256=sha(source),source_physics=native.relative_to(ROOT).as_posix(),source_physics_sha256=sha(native),before_layout=before_layout.relative_to(ROOT).as_posix(),before_layout_sha256=sha(before_layout),layout=layout.relative_to(ROOT).as_posix(),layout_sha256=sha(layout),before_segment_map=r.get('source_segment_map',{}),source_segment_map=mapping,before_stair_components=r['stair_components'],stair_components=stairs,removed_source_meshes=removed,removed_native_parts=removed_native,new_parts=len(parts),new_triangles=sum(len(ts) for n,ts in parts),restored_shaft_parts=restored,shell_changes=changes,design=plan,retained_glb_resources=retained,glb_sha256=sha(folder/(output_stem+'.glb')),physics_sha256=sha(folder/(output_stem+'.hcs2')),generator_sha256=sha(Path(__file__)),remaining='Independent exact source/solid/native and all25route regression; real saved terrain grading/punches, guard/framing/finish and runtime ownership integration remain open.')
     (folder/'construction.json').write_bytes((json.dumps(report,indent=2)+'\n').encode());print('AUTHORED_SHARED_STAIR_BAY',site,len(parts),len(removed),flush=True)

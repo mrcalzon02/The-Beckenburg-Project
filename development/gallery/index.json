@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10853,
+  "count": 10859,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -101294,6 +101294,66 @@
       "height": 900,
       "bytes": 703263,
       "sha256": "8aee32108482f1a6fe4f0d71e472544b7b41f8bbd431892afadc404bdc9aa469"
+    },
+    {
+      "path": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-06-context.png",
+      "url": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-06-context.png",
+      "title": "Wld 06 context",
+      "kind": "Native physical stair construction context; no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1178590,
+      "sha256": "73a9f36d25ad60fe96c703149e923457902ea46a84b0648156ea4def0a276560"
+    },
+    {
+      "path": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-06-cutaway.png",
+      "url": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-06-cutaway.png",
+      "title": "Wld 06 cutaway",
+      "kind": "Native physical stair construction cutaway; context hidden, no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 562257,
+      "sha256": "d6711f2dbf145c4fa092485d336b583ea9d5323caf85a7669377d20f62cbaccc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-08-context.png",
+      "url": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-08-context.png",
+      "title": "Wld 08 context",
+      "kind": "Native physical stair construction context; no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1138035,
+      "sha256": "6423feeccc46ba890fe5b00aaef38632708142b29cf8b4da2cca94aafc344efc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-08-cutaway.png",
+      "url": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-08-cutaway.png",
+      "title": "Wld 08 cutaway",
+      "kind": "Native physical stair construction cutaway; context hidden, no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 526619,
+      "sha256": "46b93b8c2b5d0e21654aec926afcfc431e5b5bf88501ec2f173537904e39dfc4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-12-context.png",
+      "url": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-12-context.png",
+      "title": "Wld 12 context",
+      "kind": "Native physical stair construction context; no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1110165,
+      "sha256": "5956b5ddca7e4654b35a2160f7ba95289a2ff2dfc2855e3d63b5a1d8d67353d4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-12-cutaway.png",
+      "url": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-12-cutaway.png",
+      "title": "Wld 12 cutaway",
+      "kind": "Native physical stair construction cutaway; context hidden, no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 615570,
+      "sha256": "6523bdeab73a69081481e6146f9a302f47123100e8a41793a9d72676a4b38aa0"
     },
     {
       "path": "development/levels/rebuild/captures/roof-construction-batch/farmhouse.png",

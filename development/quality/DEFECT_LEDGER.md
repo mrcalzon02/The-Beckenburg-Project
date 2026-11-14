@@ -6604,6 +6604,20 @@ Evidence and verification: development/levels/rebuild/roof-construction-pass/ros
 
 Older-map obligation: Other roster roofs remain individually unaudited; this batch confers no acceptance on retained sources.
 
+### DEV-466 — Diagonal lower-access stair columns and retained hub obstruction
+
+**Status:** PHYSICAL CANDIDATES REBUILT; WHOLE MAP ACCEPTANCE OPEN · **Affected:** WLD-06 Wharf L16/L17, WLD-08 Research L17/L18, WLD-12 Railway L17
+
+Long skewed flights cross building/undercroft axes; initial orthogonal reconstruction retained old upper tread-hub plates across descending openings.
+
+Cause / uncertainty: Path-first diagonal flights and generic hub-preservation assumptions did not represent stair-bay construction.
+
+Fix / next action: Rebuild five flights along site axes with level turns, real shaft booleans and vacated-shaft restoration. Disable old-hub preservation for these plans only. All seven selected vertical routes now pass both ways, with zero previously passing flat-link regressions.
+
+Evidence and verification: development/levels/rebuild/orthogonal-stair-pass/verification; captures/orthogonal-stair-batch; source/native/export checks in builder
+
+Older-map obligation: Institutional selected stairs are axis aligned; remaining diagonal outdoor slopes, spiral towers, whole roster terrain/room connectivity and runtime acceptance remain individually open.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
