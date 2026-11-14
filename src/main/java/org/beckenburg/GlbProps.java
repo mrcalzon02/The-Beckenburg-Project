@@ -185,6 +185,9 @@ public final class GlbProps {
     static int imageRow(double v,int height,boolean gltfTopLeft){
         return imageRow(v,height,gltfTopLeft,10497);
     }
+    private static int imageColumn(double u,int width,int wrap){
+        return Math.min(width-1,(int)(wrapUv(u,wrap)*width));
+    }
     static int imageRow(double v,int height,boolean gltfTopLeft,int wrap){
         if(height<1)throw new IllegalArgumentException("UV image height");
         double coord=wrapUv(v,wrap);
@@ -371,7 +374,7 @@ public final class GlbProps {
         if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))
             throw new IllegalArgumentException("Invalid imported texture");
         BufferedImage image=material==vanCrtMaterial?vanCrtImage:textures.get(index);
-        int x=Math.min(image.getWidth()-1,(int)(wrapUv(u,samplerWrapS.get(index))*image.getWidth()));
+        int x=imageColumn(u,image.getWidth(),samplerWrapS.get(index));
         // GGBot's Blender source uses the actual glTF image origin at top-left.
         int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),samplerWrapT.get(index));
         int rgb=image.getRGB(x,y)&0xffffff;
@@ -392,8 +395,7 @@ public final class GlbProps {
         if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))
             throw new IllegalArgumentException("Invalid glTF RGBA material");
         BufferedImage image=textures.get(index);
-        int x=Math.min(image.getWidth()-1,
-            (int)(wrapUv(u,samplerWrapS.get(index))*image.getWidth()));
+        int x=imageColumn(u,image.getWidth(),samplerWrapS.get(index));
         int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),
             samplerWrapT.get(index));
         int source=image.getRGB(x,y);
@@ -411,7 +413,7 @@ public final class GlbProps {
         if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))
             throw new IllegalArgumentException("Invalid imported alpha");
         BufferedImage image=textures.get(index);
-        int x=Math.min(image.getWidth()-1,(int)(wrapUv(u,samplerWrapS.get(index))*image.getWidth()));
+        int x=imageColumn(u,image.getWidth(),samplerWrapS.get(index));
         int y=imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),samplerWrapT.get(index));
         int texAlpha=(image.getRGB(x,y)>>>24)&255;
         return Math.max(0,Math.min(255,(int)Math.round(
@@ -422,8 +424,75 @@ public final class GlbProps {
     }
     /** Render a captured native candidate using real runtime materials, then release all transient registrations. */
     static synchronized BufferedImage renderNativeMaterialReview(byte[] bytes,SceneRenderer renderer,double rotation)throws IOException{
+        return renderNativeMaterialReview(bytes,renderer,rotation,List.of(),null);
+    }
+    static synchronized BufferedImage renderNativeMaterialReview(byte[] bytes,SceneRenderer renderer,double rotation,
+            List<Long> faceIds,java.util.function.LongPredicate visibleFace)throws IOException{
+        return renderNativeMaterialReview(bytes,renderer,rotation,faceIds,visibleFace,0);
+    }
+    static synchronized BufferedImage renderNativeMaterialReview(byte[] bytes,SceneRenderer renderer,double rotation,
+            List<Long> faceIds,java.util.function.LongPredicate visibleFace,int checkerSize)throws IOException{
+        renderReview(bytes,renderer,rotation,faceIds,visibleFace,checkerSize,0,null,null);
+        return renderer.image();
+    }
+    static synchronized MaterialReviewFrame materialReviewFrame(byte[] bytes,SceneRenderer renderer,double rotation,
+            org.beckenburg.editor.EditorMeshPipeline.Mesh source,java.util.function.LongPredicate visibleFace,int checkerSize)throws IOException{
+        return materialReviewFrame(bytes,renderer,rotation,source,visibleFace,checkerSize,0,null);
+    }
+    static synchronized MaterialReviewFrame materialReviewFrame(byte[] bytes,SceneRenderer renderer,double rotation,
+            org.beckenburg.editor.EditorMeshPipeline.Mesh source,java.util.function.LongPredicate visibleFace,int checkerSize,int mip,MaterialReviewMip.Cache cache)throws IOException{
+        var frame=new MaterialReviewFrame(renderer.image(),mip==0);
+        renderReview(bytes,renderer,rotation,source.faceIds(),visibleFace,checkerSize,mip,frame,cache);
+        frame.bindVisible(source);
+        return frame;
+    }
+    static int reviewTexel(int material,double u,double v){
+        int index=material-TEXTURE_BASE;
+        if(index<0||index>=textures.size()||!Double.isFinite(u)||!Double.isFinite(v))return -1;
+        var image=textures.get(index);
+        int x=imageColumn(u,image.getWidth(),samplerWrapS.get(index));
+        return x+image.getWidth()*imageRow(v,image.getHeight(),vehicleUvMaterials.get(index),samplerWrapT.get(index));
+    }
+    private static void renderReview(byte[] bytes,SceneRenderer renderer,double rotation,
+            List<Long> faceIds,java.util.function.LongPredicate visibleFace,int checkerSize,int mip,MaterialReviewFrame frame,MaterialReviewMip.Cache cache)throws IOException{
+        if(checkerSize<0 || checkerSize>2048)throw new IOException("Invalid checker size");
         List<List<?>> tables=List.of(textures,vehicleUvMaterials,samplerWrapS,samplerWrapT,materialNames,diffuseFactors);int[] lengths=tables.stream().mapToInt(List::size).toArray();int first=TEXTURE_BASE+textures.size();
-        try{renderer.drawNativeMaterialReview(decode(bytes,null),rotation);return renderer.image();}
+        try{
+            var model=decode(bytes,null);
+            if(checkerSize>0)for(int i=lengths[0];i<textures.size();i++){
+                var image=textures.get(i);
+                var checker=new BufferedImage(image.getWidth(),image.getHeight(),BufferedImage.TYPE_INT_ARGB);
+                var row=new int[image.getWidth()];
+                for(int y=0;y<image.getHeight();y++){
+                    image.getRGB(0,y,row.length,1,row,0,row.length);
+                    for(int x=0;x<row.length;x++){
+                        int shade=((x/checkerSize+y/checkerSize)&1)==0?0xeeeeee:0x555555;
+                        row[x]=(row[x]&0xff000000)|shade;
+                    }
+                    checker.setRGB(0,y,row.length,1,row,0,row.length);
+                }
+                textures.set(i,checker);
+                diffuseFactors.set(i,new double[]{1,1,1,diffuseFactors.get(i)[3]});
+            }
+            if(mip>0)for(int i=lengths[0];i<textures.size();i++){
+                int material=TEXTURE_BASE+i;
+                boolean alpha=gltfBlendMaterials.contains(material)||gltfMaskCutoffs.containsKey(material);
+                var image=textures.get(i);
+                textures.set(i,cache==null?MaterialReviewMip.level(image,mip,alpha):
+                    cache.level(i-lengths[0],image,mip,alpha,checkerSize==0?bytes:null));
+            }
+            var ids=faceIds;
+            if(frame!=null && model.triangles().size()!=faceIds.size())throw new IOException("Native face order unavailable");
+            if(visibleFace!=null){
+                if(model.triangles().size()!=faceIds.size())throw new IOException("Native face order unavailable");
+                var faces=new ArrayList<Triangle>();
+                var visibleIds=new ArrayList<Long>();
+                for(int i=0;i<faceIds.size();i++)if(visibleFace.test(faceIds.get(i))){faces.add(model.triangles().get(i));visibleIds.add(faceIds.get(i));}
+                ids=visibleIds;
+                model=new Model(List.copyOf(faces));
+            }
+            renderer.drawNativeMaterialReview(model,rotation,ids,frame);
+        }
         finally{for(int i=0;i<tables.size();i++)tables.get(i).subList(lengths[i],tables.get(i).size()).clear();gltfBlendMaterials.removeIf(id->id>=first);gltfMaskCutoffs.keySet().removeIf(id->id>=first);}
     }
     /** Developer asset room only: preserve the actual named asset's UV origin

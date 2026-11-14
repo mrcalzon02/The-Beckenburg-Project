@@ -55,7 +55,14 @@ public final class LanChatIntegrationTest {
             b.client.say(LanChat.Channel.LOCAL,"I heard it moving.");
             ok(b.await("CHAT|LOCAL|1|").endsWith("|I heard it moving."),"local source receives chat");
             b.await("ACCEPT|SAY|LOCAL");
-            ok(ghost.await("GHEAR|VOICE|").contains("GHEAR|VOICE|"),"nearby spoken text attracts ghost");
+            // Typed local chat is a distinct CHAT event with host-selected
+            // intensity and duration, not a forged live-microphone VOICE packet.
+            var nearbyChat=LanGhostHearing.decode(ghost.await("GHEAR|CHAT|"));
+            ok(nearbyChat.source()==LanGhostPursuit.Sound.CHAT
+                &&nearbyChat.profile().equals(GhostSoundProfile.chat("I heard it moving.".length())),
+                "nearby written chat attracts ghost with bounded length-derived sound");
+            ok(ghost.history.stream().noneMatch(x->x.startsWith("CHAT|")),
+                "ghost never receives chat text or sender seat");
             Thread.sleep(150);
             ok(!a.seen("CHAT|LOCAL|1|"),"distant local talk is not team chat");
             b.client.say(LanChat.Channel.LOCAL,"flood");

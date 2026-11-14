@@ -60,8 +60,9 @@ public final class VanStaging {
     }
     public boolean nearDoorButton(double x,double z){
         if(!Double.isFinite(x)||!Double.isFinite(z))return false;
-        Position p=doorButton();
-        return Math.hypot(x-p.x(),z-p.z())<1.10;
+        Position p=local(x,z);
+        return Math.abs(p.x())<INTERIOR_HALF_WIDTH
+                &&p.z()>=FRONT&&p.z()<REAR-WALL_THICKNESS;
     }
     public boolean toggleCargoDoor(){
         cargoDoorClosed=!cargoDoorClosed;

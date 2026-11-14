@@ -158,3 +158,112 @@ EditorLocalFrameTest covers native v5/OBJ/bundle/GLB roundtrip, exact shared his
 
 
 **2026-11-02 native bevel checkpoint:** Model Editor Bevel card previews and commits a single flat convex support-edge/corner cut through authoritative native history. Closed topology, original retained IDs, seam UV/raw normal interpolation, active-face cap material, PNG/source/frame preservation and native/OBJ bundle/GLB readback are verified. Actual human controls, save/reopen, source-backed GLB publication and production renderer capture pass; near-maximum119988-face input passes under256MiB in independent Java17 kit. Evidence: `development/quality/evidence/native-bevel-2026-11-02`. Full G2 remains open: segmented/concave/region bevels, loop/ring, slide, incremental buffers and later painting/gates are not accepted by this checkpoint.
+
+## Vertex slide
+
+In the Model Editor, pick an edge in EDGE mode and open Move. Slide fraction sets how far the first endpoint moves toward the second. Reverse edge direction swaps the endpoints. Preview, Apply and Cancel use the same native revision and history controls as the other model tools. The fraction must be strictly between zero and one. The direction must lie in every incident face plane and follow any open outline edges. Collapsed or reversed triangles are refused. Native IDs, UVs, raw corner normals, material bindings, part frames and original source ownership stay with the model.
+
+The actual UI test slides an interior OBJ vertex, checks its unchanged outline and attributes, undoes and redoes the edit, reopens the native file and compares every published game corner and the native archive. Evidence is in `development/quality/evidence/model-slide-2026-11-07`. Whole-loop sliding and loop/ring selection remain open G2 requirements.
+
+## Boundary loop selection
+
+In EDGE mode, click a rim edge and choose **Select Boundary Loop** in the Select inspector. The highlighted loop follows the native half-edges all the way around that perimeter. It can trace the outside of a part or the edge of a hole. Transforms and movement gizmos then operate on every vertex of that loop. Interior edges and invalid topology are refused. Selection runs against an immutable observation of the current native project and expires when its revision changes.
+
+AssetImportBoundaryGuiTest picks the hole in an OBJ ring with a separate part, scales only its inner rim, undoes/redoes the edit, reopens the saved file and compares each game vertex. Capture: `development/quality/evidence/model-boundary-2026-11-07/human-boundary-loop.png`. Interior loop/ring selection and whole-loop slide remain open.
+
+## Incremental wireframe drawing
+
+The Model Editor retains separate projected corner buffers for its working and comparison views. Repaints reuse coordinates when the immutable triangle list and camera are unchanged. After a mesh edit, sampled corners whose world positions changed are projected again. A viewport resize or pan remaps projected coordinates to pixels. A new camera projection rebuilds them. Equivalent fitted perspective cameras retain their identity when an interior edit leaves the bounds and orbit unchanged. Hidden comparison buffers are released.
+
+ModelWireframeBufferTest compares every output pixel to direct triangle drawing, including translucency, reordering, perspective and resize. Under a 256 MiB heap, a 120,000-triangle fixture produced 36,000 initial sampled corner projections. Changing one sampled corner required one projection. In a native eight-face grid, moving its center required six of 24 corner projections. Hover, resize and UV-only edits required zero. Actual perspective, hover, slide, boundary and publication checks pass. The drawing buffer still submits the sampled polygons each repaint. Mesh generation, picking acceleration rebuilds and runtime GPU buffers have separate costs. These counts measure projection work, not elapsed frame time.
+
+## Authored quad boundaries
+
+An original four-corner OBJ face and each generated primitive quad now retain the pair of native triangles that make up that face. Separately authored triangles stay independent even when coplanar. The original triangle positions, winding, order, per-corner attributes and IDs remain the geometry consumed by the game. Quad metadata records the author's grouping for modeling tools.
+
+Native BTOP version 6 stores these pairs by stable face ID. Documents without pairs still use versions 1 through 5 as appropriate. Geometry, UV and material edits preserve existing pairs. Replacing the corners of either constituent triangle invalidates that pair. Undo restores the original grouping. Appending a primitive allocates its pairs with the new native face IDs.
+
+OBJ export writes ordinary four-corner faces when both triangles can share the required corner attributes. A split UV, shading or material binding uses two triangles plus versioned native OBJ comments so a Beckenburg reimport can preserve the group. Other OBJ readers can display those triangles with the separate attributes. The GLB writer records ordered face pairs in optional `BECK_authored_quads` metadata. Its shared decoder validates that the referenced triangles actually form the declared fan. Unchanged supported source GLBs still export byte for byte. Native files and GLB preserve the authored source of the pair without trying to infer quads in triangle-only files.
+
+`EditorMeshQuadTest` covers split triangles, primitive append, invalidation by inset/bevel, undo, native fresh reopen, OBJ/bundle/GLB roundtrip and invalid metadata. `AssetImportBoundaryGuiTest` verifies original OBJ groups in a native editor session and its published runtime GLB. Files are in `development/quality/evidence/authored-quads-2026-11-07`. Interior ring and loop traversal use these relationships in the next G2 step.
+
+## Selecting quad loops and rings
+
+In EDGE mode, pick an authored quad side. In the Select inspector choose **Quad loop** or **Quad ring**, then **Select edges**. Quad loops follow the opposite spoke at regular interior vertices and can continue along a regular open rim. They stop at poles, triangle-only regions and ambiguous branches. Quad rings cross to the opposite side of each authored quad until reaching an open end or closing once around the mesh. An internal triangulation diagonal cannot seed either selection. **Boundary loop** remains available for manifold perimeters without authored quad metadata.
+
+Selection uses the observed native revision. Gizmos and transforms consume the exact endpoint IDs of the highlighted segments. The actual desktop test selects an interior row, applies a scale, checks every unselected vertex for exact equality and undoes the change. The same viewport selects parallel ring edges, a hole perimeter and a separate part without mixing them. The portable traversal test covers open grids, closed cylinders, poles, triangles and a 120,000-face grid under 256 MiB. Captures are in `development/quality/evidence/quad-traversal-2026-11-07`.
+
+## Sliding an entire quad loop
+
+Select a **Quad loop**, open **Move**, set the slide fraction and choose **Preview Loop Slide**. The quad under the original edge click determines the side. **Use opposite quad side** reverses it. Each selected vertex moves the same fraction along its own connected side edge. Both open rows and closed loops use one native preview and one history entry.
+
+The editor requires a continuous, unambiguous neighboring quad strip. It rejects stale selections, intersecting or merged rails, changes to an incident surface or open outline, and collapsed or reversed triangles. Original faces, authored quad pairs, UVs, normals, materials, part frames and source GLB ownership survive the edit. The desktop test previews both sides of a five-vertex row, cancels, applies, undoes, redoes, saves/reopens and compares every published game corner and UV. The portable test also slides a closed cylinder loop and a row in a 120,000-face grid under 256 MiB. Evidence is in `development/quality/evidence/quad-slide-2026-11-07`.
+
+## Vertex snapping
+
+In **Move**, choose **Snap to vertex**. A single selected vertex becomes the anchor immediately. For a larger selection, click an anchor inside it, then point at a stationary target in the working view. The orange guide connects the anchor to the target and labels its native vertex ID. Click to preview, then Apply or Cancel. Escape cancels the pick. Target picking uses the visible native triangle and a 12-pixel vertex radius.
+
+Apply moves the selected group together, assigns the anchor the exact target coordinates, preserves distinct vertex IDs and transports partial-face normals through the existing native edit path. A complete part carries its editing frame. Already aligned anchors, selected targets, stale observations, newly degenerate geometry and reversed partial faces refuse. For widely separated coordinates the other positions are calculated relative to the selected anchor to retain local offsets.
+
+The actual desktop test aligns two originally separate OBJ parts, verifies visible guide pixels and Escape, previews/cancels/applies, undoes/redoes, reopens the saved BTOP and checks every game corner and all six distinct reimported vertex IDs. Portable checks cover large-coordinate cancellation, original GLB provenance and 120,000 faces/360,000 vertices under 256 MiB. Captures and native/runtime files are in `development/quality/evidence/vertex-snap-2026-11-07`.
+
+## Saving the Model Editor workspace
+
+**Save Mesh** writes the current model and Model Editor workspace in one checked native save. Reopen or open the `.btop` in a new Model Editor to restore its camera projection, orbit, pan, zoom, active tool, transform/snap/creation settings, selection, overlays and inspector/focus layout. Active edge groups resolve again from their saved native seed and traversal mode. Uncommitted previews and pointer gestures end when the document is reopened. Undo and redo operate within the editing session.
+
+BTOP version7 stores the bounded workspace section. Files without workspace metadata continue to use versions1–6 according to their geometry and attributes. Older readers refuse version7. A stale save cannot overwrite another editor's workspace. Recovery restores the geometry and view from the same file. Editor preferences do not change the geometry revision. Native publication archives the current workspace, so its content-based archive ID can differ when the view changes. The compiled game mesh for unchanged geometry is byte-identical. Material editing retains its own window and layout.
+
+The portable and actual desktop acceptance cases are `EditorModelWorkspaceTest` and `AssetImportWorkspaceGuiTest`. Fresh-window capture, native sample, prior-reader control and final native suite output are in `development/quality/evidence/model-workspace-2026-11-07`.
+
+### JSON glTF interchange
+
+Use **File → EXPORT glTF / GLB**, then give the copy a `.gltf` filename to export one self-contained JSON file. The source chooser reopens it for native editing. The writer embeds one buffer and validates the exported file through the same decoder used in the game. PNG images can use buffer views or embedded data URIs on import. The game registry retains the original JSON when publishing from the imported file. Import accepts multiple embedded buffers, rebases each view from its original buffer and enforces the game size budget. Custom per-buffer metadata blocks a merge when it cannot be retained. Local binary and PNG sidecars may use relative URIs inside the source directory. Publication rechecks each reviewed dependency, archives the exact JSON and all referenced files together in a source ZIP and records the archive digest in the import registry. The package can reopen from another directory. Network URIs and paths outside the source directory are refused. GLB copies retain opaque trailing chunks that cannot be represented in JSON.
+
+### Painting the base-color texture
+
+Select a bound face in the Material Editor, choose Pencil and a color, then drag on its UV canvas. Release previews one stroke. Apply edit commits it to native history. Shift-drag removes pencil marks and exposes the original texture. Escape cancels an active drag. The stroke covers texels whose centers lie inside the selected triangle. Other faces sharing those texels show the same change.
+
+BTOP8 stores one sparse base-color overlay and the original PNG. Existing unpainted documents retain their earlier format. The OBJ bundle carries the native overlay and a composited texture view. GLB and the game receive the composited texture. Source-backed GLB edits retain the original material and bind a painted derivative. The current pencil supports one-texel opaque strokes and a 2048-tile budget across the native material table. Layer stacks, additional channels and unsaved paint autosave remain open.
+
+### Recovering unsaved paint
+
+After a paint edit is committed, the editor writes a native recovery document in the background under `~/.beckenburg/editor/paint-recovery`. The status line gives the last saved revision and shows write failures. Undo, redo and later model edits in the same session update that draft. A pending pencil preview only becomes recoverable after Apply.
+
+Use **File → Open paint recovery…** in the Material Editor or Model Editor. Select the native draft, or its pending journal after an interrupted write. The editor opens a separate writable BTOP copy. Manual saves, publication and closing the window leave the recovery document available. A session keeps one current draft and one prior distinct backup. Drafts from separate sessions have unique filenames and remain in the recovery directory.
+Model undo and redo share an 8 MiB budget for changed paint-tile payloads and retain at most 60 transactions. Adding or removing a tile charges 1024 bytes. Replacing one charges both tile versions. Oldest complete undo entries are evicted first. The budget measures tile payloads; native document size and total JVM memory have separate limits.
+Use the Material Editor Paint layer tab to preview blend and opacity on a painted base-color overlay. Normal, Multiply, Add and Screen operate on stored RGB channels with source-over alpha. Apply commits one undo step. At zero opacity the original PNG is displayed and the sparse paint remains editable. BTOP9 and OBJ material bundle version 3 store nondefault settings. Files with default settings retain their existing format.
+The Paint layers tab lists base-color layers with the topmost first. Add creates a layer above the selected row. Review and apply the change, then paint on the new layer. Up and Down change composition order. Remove, rename, opacity and blend use the same native preview and undo path. A material supports up to 16 layers with stable IDs and a shared sparse-tile budget. BTOP10 and painted OBJ bundle version 4 retain an ordered stack. GLB publication uses its composited base-color texture. Earlier single-overlay files remain readable and editable.
+Tile U and V select the UV tile displayed on the source image. Face tile moves to the tile containing the UV centroid of the selected triangle. The UV outline, picker, pencil preview and native stroke use the same repeat or mirrored-repeat mapping, including negative tile coordinates and the stored image origin. Clamped axes stay on tile zero. All repetitions share the same source pixels.
+For a bound face the Material Editor reports area-equivalent texels per model unit and the ratio of greatest to least texture stretch. Choose a checker cell size in the runtime Preview control to inspect the native geometry with a measured texel grid. Switching back to Material restores the actual colors. UV transform → Fix selected face stretch previews uniform texel scale while retaining signed UV area and centroid. Apply commits one undoable face edit. Neighboring UVs stay fixed, so the correction can introduce a seam.
+With Connected UV island selected, Balance island stretch previews a single area-preserving affine correction across the half-edge island. Traversal stops at a seam or material boundary. The correction reduces the surface-area-weighted directional distortion around the island centroid. All shared UVs stay coincident and each triangle retains its signed UV area, including mirrored faces. An island with no common directional stretch needs a local correction instead.
+Relax island interior keeps UV seam and boundary coordinates fixed. It joins corner variables only across connected non-seam twins, then reduces the surface Dirichlet energy with bounded cotangent-weighted iterations. Each accepted step preserves triangle winding. The preview refuses collapsed UVs, inconsistent winding, boundary-only islands and changes too small to improve the result. Apply commits one native transaction; undo restores the original corners.
+In the Material Editor Pack tab, select a bound face and preview the layout for that material. The packer traverses the native UV islands, orders their bounding boxes deterministically, and places them in tile zero with the requested border and inter-island gutter measured in texture pixels. All islands retain orientation and share one scale. Keep current texel density permits translation only and refuses layouts that do not fit. Packing changes where faces sample the existing texture. It does not repaint the texture or repair overlaps already inside an island.
+
+### Holding UVs in place
+
+In the Material Editor’s Pack tab, select a face and choose corner A, B, C or Entire island. Pin and Unpin preview a reversible native edit. Cyan dots identify pinned corners. A corner pin follows the shared UV vertex up to a seam or material boundary. During relaxation the pinned UV stays fixed. During packing any pin holds its whole island in place. Free islands use the remaining space. Packing refuses pinned layouts that violate the atlas border or gutter.
+
+Native BTOP version 11 retains pins on save and reopen. Game meshes consume the authored UVs. Pin flags belong to the native authoring document.
+
+### Marking UV seams
+
+In the Material Editor's **Seams** tab, select a bound face and choose edge A–B, B–C or C–A. **Mark seam** previews a cut on both sides of a paired edge. Apply records one native history entry. Pink lines show authored marks. The original UV coordinates remain in place until an operation moves them.
+
+Connected-island transforms, packing, relaxation and vertex pinning stop at these cuts. **Clear mark** removes the authored cut. Differing UV coordinates and material boundaries continue to separate islands. BTOP version 12 stores the marks in the authoring document. The game consumes the exported per-corner UV coordinates.
+
+### Conformal unwrapping
+
+Select a bound face in **Seams** and choose **Unwrap island (LSCM)**. Existing UV discontinuities, material boundaries and authored cuts define the chart. A closed surface needs cuts that open the selected island into a disk. Apply writes the reviewed coordinates in one undo step. The Pack tab can then place the resulting islands in the atlas.
+
+The solver fits triangle angles in texture pixels, including on rectangular textures. It holds user pins at their exact UVs and supplies boundary anchors when fewer than two vertices are pinned. It preserves the chart's existing handedness when its signed UV area is nonzero. The preview reports the root-mean-square difference between the 3D corner angles and the UV corner angles in degrees. Collapsed source triangles have undefined initial angular error.
+
+The editor refuses degenerate geometry, conflicting pins, nonconvergence, folded output or a self-intersecting boundary. If fitting would make the two sides of an existing UV discontinuity coincide, mark that edge to preserve the cut and preview again. The solve and boundary checks use bounded work. Refusal leaves the document untouched. [Least Squares Conformal Maps, Lévy et al.](https://www.cs.jhu.edu/~misha/Fall09/Levy02.pdf)
+### Painting from the model
+
+In the separate Material Editor, switch **Texture / UV** to **Model projection**. Click a visible surface to select its native face. With a bound paint layer selected, enable **Pencil** and drag across the model. Shift-drag erases that layer. Escape cancels a drag. Release previews the stroke, and Apply commits it as one undo step.
+
+The game renderer records the face that contributed each visible pixel and the source texel sampled there. This uses its normal clipping, depth, texture wrapping, image origin and alpha tests. A stroke can cross UV seams on the active material. Hidden faces, covered faces and other material bindings receive no projected samples. Mesh or view changes invalidate the captured gesture. The texture thumbnail shows the same native UVs as the 2D editor.
+
+**Padding** extends a projected stroke into nearby empty texture space by up to 16 source texels. Its default of zero paints exactly the sampled texels. Faces using the same material reserve their UV footprints even when hidden. A gutter texel receives ink only when a stroke sample is closer than every competing occupied texel. The material's wrap settings apply at image edges. Review and undo cover the stroke and its padding together.
+
+Choose **Mip 1** through **Mip 4** under **Preview** to inspect how the model looks when neighboring texture pixels are averaged. Each level halves the dimensions down to one texel. Colors are averaged in linear light, accounting for transparency on masked and blended materials. You can rotate and pick the model in this view. Return to **Material** to paint individual texels. The preview level is an explicit diagnostic and does not change the exported texture or select a gameplay level of detail.

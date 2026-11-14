@@ -62,9 +62,11 @@
           "id": "M1-02",
           "name": "Opt-in authenticated loopback GET protocol and shutdown lifecycle",
           "scope": [
-            "src/main/java/org/beckenburg/DeveloperLevelEditor.java"
+            "src/main/java/org/beckenburg/DeveloperLevelEditor.java",
+            "src/main/java/org/beckenburg/editor/EditorObservationBridge.java"
           ],
-          "status": "planned",
+          "status": "tested",
+          "implementationEvidence": "aa4b8956, Windows native acceptance run 42468686735. The real Verify Scene menu issued per-session credentials. Missing and incorrect bearer tokens, browser-origin requests and POST were refused. Replacing the scene or closing the editor stopped the listener.",
           "dependsOn": [
             "M1-01"
           ],
@@ -96,9 +98,9 @@
           "id": "M1-04",
           "name": "Windows running editor observation end-to-end and evidence record",
           "scope": [
-            "src/test/java/org/beckenburg/DeveloperEditorLaunchTest.java"
+            "src/test/java/org/beckenburg/EditorAgentGuiTest.java"
           ],
-          "status": "in_progress",
+          "status": "tested",
           "dependsOn": [
             "M1-01",
             "M1-02",
@@ -109,7 +111,7 @@
             "Denied anonymous and mutation request tests",
             "Saved test logs and commit SHA"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "At aa4b8956, Windows native acceptance run 42468686735 verified a manual unsaved X inspector edit, stale revision refusal, exact HTTP node readback, native change metadata, structured diagnostic access and renderer capture. The editor-agent-evidence workflow artifact includes local-observation-house.png."
         }
       ]
     },
@@ -133,7 +135,7 @@
             "Stale revision rejected and no scene change",
             "Partial batch failure restores exact prior snapshot"
           ],
-          "implementationEvidence": "Native stale/batch/cancellation rollback tests, shared human undo/redo, source disk guard and failed-restore regression; no generic scripting or remote writes are admitted."
+          "implementationEvidence": "Native stale/batch/cancellation rollback tests, shared human undo/redo, source disk guard and failed-restore regression. The authorized MCP adapter issues typed writes through the same service."
         },
         {
           "id": "M2-02",
@@ -151,7 +153,7 @@
             "Duplicate idempotency request makes no second object",
             "Undo/redo and save/reload preserve scene"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "At ab650b4b the installed Castle client inspected the upper lodging, repaired a spawn wall and placed a native palette prop in one transaction. The chair and its collider survived save/reopen, and one human undo removed both. The v1 session sequence additionally covers duplicate requests. Other command families, including lamps and doors, still require native acceptance."
         }
       ]
     },
@@ -174,15 +176,17 @@
             "Failures are structured, revisioned and truthful",
             "Real engine-generated evidence; no source artwork substitute"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "Revision-bound verify-position is available from the human Verify Scene menu, the trusted CLI and the authenticated observation bridge. Live node coordinates, commit membership and an independent native disk comparison are checked separately. Real GUI and process tests cover exact match, mismatched coordinates, unsaved changes, fresh reopen and corrupt disk. Broader component/reference and collision audit evidence remains open."
         },
         {
           "id": "M3-02",
           "name": "Isolated playtest plus exact restoration of unsaved editor state",
           "scope": [
-            "src/main/java/org/beckenburg/DeveloperLevelEditor.java"
+            "src/main/java/org/beckenburg/DeveloperLevelEditor.java",
+            "src/main/java/org/beckenburg/EditorPlaytest.java"
           ],
-          "status": "planned",
+          "status": "tested",
+          "implementationEvidence": "EditorAgentGuiTest drives the human Playtest button for an unsaved Castle spawn and mission prop. The actual Castle hub and House spectral gameplay advance while a separate LAN host retains its connected peer. At 14a6b7ff MCP returned gameplay PNGs from both hosts and preserved the editor revision, position proof and disk state. Installed acceptance run 42491180436 passed.",
           "dependsOn": [
             "M3-01"
           ],
@@ -239,7 +243,7 @@
           "scope": [
             "src/test/java/org/beckenburg/editor/EditorCorePortabilityTest.java"
           ],
-          "status": "in_progress",
+          "status": "tested",
           "dependsOn": [
             "M4-01"
           ],
@@ -248,7 +252,7 @@
             "Same protocol and error semantics",
             "Save/reload deterministic"
           ],
-          "implementationEvidence": "See implementationCheckpoints and docs/development/EDITOR_AGENT_SERVICE.md; narrower local evidence does not satisfy every milestone acceptance item."
+          "implementationEvidence": "The independent Java 17 project compiles against the kit JAR alone. EditorCorePortabilityTest exercises the same headless protocol, stale refusal, save/reload, owner-thread loopback and SDK MCP adapter. Its renderer-less host advertises no capture tool. The unrelated project's own integer document and undo history are authoritative."
         }
       ]
     },
@@ -259,8 +263,9 @@
         {
           "id": "M5-01",
           "name": "MCP tools/resources adapter mapping directly to service capabilities",
-          "scope": [],
-          "status": "planned",
+          "scope": ["tools/editor_mcp.py", "src/main/java/org/beckenburg/editor/EditorObservationBridge.java"],
+          "status": "tested",
+          "implementationEvidence": "An official SDK client discovered typed tools and the live summary resource over stdio in three human-issued session scopes. The Castle fixture verified transactional editing, stale refusal, undo/redo, explicit save, collision audit and native PNG. House verified unsaved human edits and edit-only access. The native bridge limits targets to the active scene and its own document path.",
           "dependsOn": [
             "M4-01",
             "M3-02"
@@ -275,7 +280,8 @@
           "id": "M5-02",
           "name": "Real installed editor agent repair demonstration",
           "scope": [],
-          "status": "planned",
+          "status": "tested",
+          "implementationEvidence": "At 77d67a51 Windows CI run 42473083566 ran the production Windows installer on a disposable runner. The installed Beckenburg.exe --editor loaded the installed app JAR, and the SDK client used the installed tools/editor_mcp.py. It removed a deliberately misplaced Castle wall, verified the native change and cleared the spawn collision. Human Undo restored the wall. The artifact records the source SHA, executable/JAR/adapter paths, audit and real renderer PNG.",
           "dependsOn": [
             "M5-01"
           ],
@@ -294,8 +300,13 @@
         {
           "id": "M6-01",
           "name": "Second-game/module adapters after main editor acceptance",
-          "scope": [],
-          "status": "planned",
+          "scope": [
+            "src/main/java/org/beckenburg/MaterialEditorAgent.java",
+            "src/main/java/org/beckenburg/HeadlessMaterialEditor.java",
+            "src/test/java/org/beckenburg/editor/EditorCorePortabilityTest.java"
+          ],
+          "status": "tested",
+          "implementationEvidence": "Installed run 42490462726 verified the separate Material Editor module and stdio host against the same native BTOP and renderer. Standalone run 42492465409 exercised an unrelated Java 17 project through its own adapter. This covers module adoption and independent adapter reuse within this repository.",
           "dependsOn": [
             "M5-02",
             "M4-02"
@@ -321,15 +332,18 @@
     "TIMEOUT",
     "SAVE_FAILED",
     "RENDER_UNAVAILABLE",
-    "INTERNAL"
+    "INTERNAL",
+    "SEQUENCE_CONFLICT",
+    "INVALID_STATE",
+    "IO_ERROR"
   ],
-  "nextTask": "A2 verify Java17 focused workflow and Windows installed UI; A3 shared-vertex height delta transaction; A4 runtime mesh and collision",
+  "nextTask": "Continue M2-02 native command coverage and M3-03 basement diagnostics alongside the dependency-ordered G2/G3 material and modeling work.",
   "evidence": {
-    "sourceVerified": false,
-    "installedWindowsVerified": false,
-    "mcpConnected": false,
-    "agentEditedRealScene": false,
-    "notes": "T1 stitched-world and A1 adaptive topology focused Java17 workflow pass. A2 UI source committed and acceptance pending; A3-A6 and T3-T9 no runtime proof."
+    "sourceVerified": true,
+    "installedWindowsVerified": true,
+    "mcpConnected": true,
+    "agentEditedRealScene": true,
+    "notes": "These flags cover the verified agent service on Castle, House and native mesh documents. Installed run 42492463902, source ab650b4b, includes the upper-floor repair, gameplay capture, disk readback and mesh host. Terrain and later domain gates retain their own acceptance criteria."
   },
   "executionOrder": "Human terrain/loading-zone/stitched-world modules (T0-T8) first; then existing agentic milestones M0-M6. Agent adapters must reuse tested module operations.",
   "terrainWorldPlan": "docs/development/TERRAIN_WORLD_SYSTEM_PLAN.md",
@@ -798,12 +812,24 @@
         "Exact current-source CI not yet terminal",
         "Authenticated MCP, full G0-G12 and physical installed/hardware gates remain separate"
       ]
+    },
+    {
+      "sourceSha": "dcd23da27dcd8c8b71ba77203f011b6f17c8250e",
+      "scope": "Installed Castle furnishing and collision, human and agent gameplay, mesh stdio parity, idempotent actions and bounded audit events",
+      "nativeHostCi": {"run": 42494433267, "status": "completed", "conclusion": "success"},
+      "standaloneCi": {"run": 42494433465, "status": "completed", "conclusion": "success"},
+      "evidence": "development/quality/evidence/agent-upper-furnishing-2026-11-08",
+      "limitations": [
+        "The actor's playtest starts at the native player spawn. Upper-floor before/after PNGs come from the editor camera.",
+        "Eleven light-wall advisories remain in the Castle audit.",
+        "Receipts and action history are scoped to a live session. Subsequent processes must inspect the native document."
+      ]
     }
   ],
   "nextGoalWork": [
-    "Verify new exact-source310 native/standalone/full results for disk/snapshot/schema/bootstrap/history contracts",
-    "Continue G2 human parametric primitives and actual selection/gizmos on the same indexed project; then reversible edge/face modeling and material/normal interchange",
-    "Continue dependency-ordered G3-G12 without fake scene data or premature gate completion; original PDF bytes and installed hardware acceptance remain separate"
+    "Extend validated native commands and structured diagnostics only after their human editor and gameplay paths are verified.",
+    "Continue open G2/G3 modeling and material requirements, including native channel support and larger-texture authoring.",
+    "Track G4 terrain, G5/G6 sound, G7 animation, G8/G9 schema and plugin work, G10 isolation, G11 diagnostics and G12 hardware acceptance against their own gates."
   ],
   "ownerPriority": {
     "date": "2026-11-01",

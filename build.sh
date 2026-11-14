@@ -9,7 +9,7 @@ javac --release 17 -encoding UTF-8 -d build/classes src/main/java/hbnet/*.java w
 java -Djava.awt.headless=true -cp build/classes org.beckenburg.UiAssetBake . build/classes/org/beckenburg build/Beckenburg.ico
 mkdir -p build/classes/META-INF
 cp water-module/src/main/resources/META-INF/*.txt build/classes/META-INF/
-for family in water water-imports sounds mission-board; do
+for family in water water-imports sounds mission-board campaign; do
   if [ -d "assets/runtime/$family" ]; then
     mkdir -p "build/classes/org/beckenburg/$family"
     for water_file in assets/runtime/"$family"/*; do
@@ -26,6 +26,7 @@ test -s assets/runtime/character-directions.zip
 cp assets/runtime/character-directions.zip build/classes/org/beckenburg/character-directions.zip
 test -s assets/runtime/hunter-animation.zip
 cp assets/runtime/hunter-animation.zip build/classes/org/beckenburg/hunter-animation.zip
+cp assets/runtime/hunter-reactions.zip build/classes/org/beckenburg/hunter-reactions.zip
 cp assets/runtime/castle-resident-animation.zip build/classes/org/beckenburg/castle-resident-animation.zip
 test -s assets/runtime/twins-directions.zip
 cp assets/runtime/twins-directions.zip build/classes/org/beckenburg/twins-directions.zip
@@ -160,6 +161,9 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.Ho
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.HorrorAudioRoutingTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CastleHubIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignBoardPanelTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CountyCampaignMapPanelTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CountyCampaignMapNavigationTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CastleCountyBoardTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CastleContainedMenuTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignMenuWorkflowTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.CampaignCoopLobbyTest
@@ -257,6 +261,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanGhostIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.MouseLookTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanWorldControlsTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LocalInvestigationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.EquipmentSelectionTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SiteSelectionTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.InvestigationSitesTest

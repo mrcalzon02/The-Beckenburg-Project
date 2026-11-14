@@ -66,8 +66,22 @@ public final class EditorChangeIntegrationTest {
             var project=new CastleEditorProject(CastleLevelEdits.current());var castleEvents=new ArrayList<EditorChange>();
             var castle=new EditorAgentService<>(new CastleEditorAgent(project,new CastleHubMap(),new SceneRenderer(),()->{}),new EditorHistory<>(project,60),castleEvents::add,()->{});
             castle.transact(CastleLevelEdits.current().revision(),"set-spawn",Map.of("x","13.5","z","19","yaw","1.25"));
-            check(castleEvents.get(0).details().fullScene(),"Unimplemented granular hosts conservatively invalidate all dependencies");
-            System.out.println("PASS native editor changes: commit-only events, batch/rollback/cancel, stable IDs, owner/revision fingerprints, rotated collider bounds, human delete/undo/redo/reopen and conservative Castle fallback");
+            var spawn=castleEvents.get(0).details();
+            check(!spawn.fullScene() && spawn.nodes().size()==1 && spawn.nodes().get(0).id().equals("start"),
+                "Castle spawn reports one stable hierarchy node");
+            castle.transact(project.scene().revision(),"put-surface",Map.of("id","delta_floor","kind","FLOOR",
+                "x0","10","z0","10","x1","11","z1","11","base","0","height",".25","material","1"));
+            var added=castleEvents.get(1).details();
+            check(added.fullScene() && added.nodes().size()==1 && added.nodes().get(0).kind()==EditorChange.Kind.ADDED &&
+                added.nodes().get(0).id().equals(project.node("delta_floor").id()),"Surface delta resolves to the native hierarchy");
+            castle.undo(project.scene().revision());
+            var removed=castleEvents.get(2).details().nodes().get(0);
+            check(removed.kind()==EditorChange.Kind.REMOVED && removed.beforeFingerprint().equals(added.nodes().get(0).fingerprint()),
+                "Surface undo reports removal of the exact committed content");
+            castle.edit(()->project.scene().setNavBlocked(10,10,!project.scene().navBlocked(10,10)));
+            var nav=castleEvents.get(3).details();
+            check(nav.fullScene() && nav.nodes().isEmpty(),"Navigation-only change requires full invalidation");
+            System.out.println("PASS native editor changes: mission deltas, Castle spawn/surface fingerprints and conservative world invalidation");
         }finally{
             System.setProperty("user.home",oldHome);
             try(var paths=Files.walk(home)){for(var p:paths.sorted(Comparator.reverseOrder()).toList())Files.deleteIfExists(p);}

@@ -61,6 +61,17 @@ public final class SceneRenderer {
     // asynchronous GPU readback. Normal gameplay continues using the GPU.
     private boolean photographicSoftwareRaster;
     void photographicSoftwareRaster(){photographicSoftwareRaster=true;}
+    /** Only the exact capture call uses the synchronous in-game software rasterizer.
+     * Restore GPU availability even if rendering throws, so the human editor and
+     * normal game keep their own GPU frame pipeline. Never return stale readback.
+     */
+    void renderExactFrame(Runnable rendering){
+        Objects.requireNonNull(rendering);
+        boolean previouslyPhotographic=photographicSoftwareRaster;
+        photographicSoftwareRaster=true;
+        try{rendering.run();}
+        finally{photographicSoftwareRaster=previouslyPhotographic;}
+    }
     private boolean gpuAvailable(){return !photographicSoftwareRaster&&GpuWorldRenderer.active()!=null;}
     private int renderWidth=W,renderHeight=H;
     private double nativeFocal=153; // fixed vertical lens; widescreen adds peripheral geometry
@@ -121,6 +132,8 @@ public final class SceneRenderer {
     public double x=20.5,z=27.5,yaw=-Math.PI/2,pitch=-.09;
     /** Actual current eye elevation in world space; supports real stair ascent. */
     public double eyeHeight=1.62;
+    /** Physical support for solo evidence when the camera eases between postures. */
+    public double playerFeetElevation=Double.NaN;
     public boolean lamp=true;
     public double lampReach=7.5,lampIntensity=.72;
     public double lampWidth=.44;
@@ -253,6 +266,8 @@ public final class SceneRenderer {
         // not the world frame or HUD cached at a different pose/tick.
         x+=Math.sin(yaw)*.12;z+=Math.cos(yaw)*.12;
         eyeHeight=source.eyeHeight-.04;
+        playerFeetElevation=source.playerFeetElevation;
+        setHunterReactions(source.downedHunters,source.hunterPain);
         lamp=source.lamp;lampReach=source.lampReach;
         lampIntensity=source.lampIntensity;lampWidth=source.lampWidth;
         flameLamp=source.flameLamp;
@@ -1665,7 +1680,29 @@ public final class SceneRenderer {
                 &&p.y()+p.height()>=r.y()+r.height()-.05&&p.x0()<=r.x0()&&p.x1()>=r.x1()&&p.z0()<=r.z0()&&p.z1()>=r.z1()).findFirst().orElse(null);
             if(parent!=null){
                 boolean perimeter=alongX?(nearPlane(plane,parent.z0())||nearPlane(plane,parent.z1())):(nearPlane(plane,parent.x0())||nearPlane(plane,parent.x1()));
-                if(!perimeter)levelRail(out,alongX?from:plane,r.y(),alongX?plane:from,alongX?to:plane,r.y(),alongX?plane:to);
+                if(!perimeter){
+                    // A loft edge is a railing, except across the *real* stair
+                    // aperture. A continuous handrail here seals the staircase.
+                    var cuts=new java.util.TreeSet<Double>();
+                    cuts.add(from);cuts.add(to);
+                    for(var hole:level.voids())if(Math.abs(hole.y()-r.y())<.05
+                            &&(alongX?(plane>hole.z0()&&plane<hole.z1())
+                                :(plane>hole.x0()&&plane<hole.x1()))){
+                        double low=alongX?hole.x0():hole.z0(),high=alongX?hole.x1():hole.z1();
+                        if(low>from+.001&&low<to-.001)cuts.add(low);
+                        if(high>from+.001&&high<to-.001)cuts.add(high);
+                    }
+                    Double start=null;
+                    for(double end:cuts){
+                        if(start!=null&&end-start>.03){
+                            double middle=(start+end)/2;
+                            if(!level.floorVoid(alongX?middle:plane,r.y(),alongX?plane:middle))
+                                levelRail(out,alongX?start:plane,r.y(),alongX?plane:start,
+                                    alongX?end:plane,r.y(),alongX?plane:end);
+                        }
+                        start=end;
+                    }
+                }
                 return;
             }
         }
@@ -2609,8 +2646,12 @@ public final class SceneRenderer {
             boolean moving=p.door()&&map.doorMoving(p.id());
             int pose=moving?Math.max(0,Math.min(16,(int)Math.round(opening*16))):0;
             if(moving)opening=pose/16.0;
+            double doorHeight=p.door()?MissionStructuralWall.doorLeafHeight(map.level(),p):2.28;
             Object key=moving?new DoorPoseGeometryKey(p,pose):
                 new PortalGeometryKey(p,map.doorOpen(p.id()),map.windowOpen(p.id()));
+            // Changes to the wall lintel can change door mesh height without
+            // changing the portal position. Include that height in its cache key.
+            if(doorHeight!=2.28)key=List.of(key,doorHeight);
             List<Face> geometry=authoredFixtureGeometry.get(key);
             if(geometry==null){
                 List<Face> part=new ArrayList<>();
@@ -2619,8 +2660,8 @@ public final class SceneRenderer {
                     double hx=p.x()+(p.alongX()?p.width()/2:0),hz=p.z()+(p.alongX()?0:p.width()/2);
                     double leaf=p.width()>1.5?p.width()/2:p.width();
                     double swing=opening*Math.PI/2;
-                    imported(part,"door_1_loose",hx,p.y(),hz,leaf,2.28/2.1,1,angle+swing);
-                    if(p.width()>1.5)imported(part,"door_1_loose",p.x()-(p.alongX()?p.width()/2:0),p.y(),p.z()-(p.alongX()?0:p.width()/2),leaf,2.28/2.1,1,angle+Math.PI-swing);
+                    imported(part,"door_1_loose",hx,p.y(),hz,leaf,doorHeight/2.1,1,angle+swing);
+                    if(p.width()>1.5)imported(part,"door_1_loose",p.x()-(p.alongX()?p.width()/2:0),p.y(),p.z()-(p.alongX()?0:p.width()/2),leaf,doorHeight/2.1,1,angle+Math.PI-swing);
                     if(p.kind().equals("gate"))for(double t=-p.width()/2;t<=p.width()/2;t+=.15)
                         box(part,p.x()+(p.alongX()?t:0)-.015,p.y(),p.z()+(p.alongX()?0:t)-.015,.03,2.3,.03,0x77797a);
                 }else if(p.kind().equals("window")){
@@ -2638,10 +2679,71 @@ public final class SceneRenderer {
             else appendRetainedWorld(out,geometry,key,map);
         }
         for(var s:map.level().sockets()){
-            if(!objectInView(s.x(),s.z(),4,20))continue;
+            // Native structural partitions are authored world geometry, not
+            // small near-camera interactive fittings; retain them at long view.
+            if(!objectInView(s.x(),s.z(),4,
+                (s.type().equals(MissionStructuralWall.SOCKET_TYPE)||
+                    s.type().equals(MissionArchitecturalRoom.ROOF_TYPE))?64:20))continue;
             var key=new SocketGeometryKey(s,environmentPowerOn);
             var geometry=authoredFixtureGeometry.computeIfAbsent(key,k->{
             List<Face> part=new ArrayList<>();
+            if(s.type().equals(MissionStructuralWall.SOCKET_TYPE)){
+                // These boxes match MissionStructuralWall.bodies() exactly,
+                // including the empty lower doorway and the solid upper lintel.
+                String[] shape=s.style().split(":",-1);
+                if(shape.length!=4&&shape.length!=7&&shape.length!=8)
+                    throw new IllegalArgumentException("Invalid native structural wall packet");
+                double length=Double.parseDouble(shape[0]),thickness=Double.parseDouble(shape[1]),
+                    height=Double.parseDouble(shape[2]);
+                int material=Integer.parseInt(shape[3]);
+                if(length<.75||length>4.0||thickness<.12||thickness>.5||
+                    height<1.8||height>4.5||!MissionStructuralWall.MATERIALS.contains(material))
+                    throw new IllegalArgumentException("Unsupported native structural wall geometry");
+                var local=new ArrayList<Face>();
+                if(shape.length==4){
+                    texturedBox(local,-length/2,0,-thickness/2,length,height,thickness,material);
+                }else{
+                    double offset=Double.parseDouble(shape[4]),
+                        width=Double.parseDouble(shape[5]),clearHeight=Double.parseDouble(shape[6]);
+                    // Refuse malformed wall packets before emitting any
+                    // visual-only cut or divergent body geometry.
+                    new MissionStructuralWall(s.id().substring(MissionStructuralWall.NODE_PREFIX.length()),
+                        s.room(),0,0,length,0,s.y(),height,thickness,material,
+                        offset,width,clearHeight,
+                        shape.length==8?Integer.parseInt(shape[7]):-1);
+                    double leftEnd=offset-width/2,rightStart=offset+width/2;
+                    texturedBox(local,-length/2,0,-thickness/2,leftEnd+length/2,
+                        height,thickness,material);
+                    texturedBox(local,rightStart,0,-thickness/2,length/2-rightStart,
+                        height,thickness,material);
+                    texturedBox(local,leftEnd,clearHeight,-thickness/2,width,
+                        height-clearHeight,thickness,material);
+                }
+                for(Face face:local)
+                    part.add(new Face(mountPoint(face.a,s),mountPoint(face.b,s),
+                        mountPoint(face.c,s),face.color,face.material,
+                        face.au,face.av,face.bu,face.bv,face.cu,face.cv));
+            }
+            if(s.type().equals(MissionArchitecturalRoom.ROOF_TYPE)){
+                // Native child-room ceiling: the actual same six closed faces
+                // and dimensions consumed by its game collision collider.
+                String[] roof=s.style().split(":",-1);
+                if(roof.length!=5)
+                    throw new IllegalArgumentException("Invalid authored child-room ceiling");
+                double width=Double.parseDouble(roof[0]),depth=Double.parseDouble(roof[1]),
+                    thickness=Double.parseDouble(roof[2]),floor=Double.parseDouble(roof[4]);
+                int material=Integer.parseInt(roof[3]);
+                if(width<2||width>3.8||depth<2||depth>3.8||
+                    Math.abs(thickness-MissionArchitecturalRoom.ROOF_DEPTH)>1e-8||
+                    !Double.isFinite(floor)||!MissionStructuralWall.MATERIALS.contains(material))
+                    throw new IllegalArgumentException("Unsupported physical child-room ceiling");
+                var roofFaces=new ArrayList<Face>();
+                texturedBox(roofFaces,-width/2,0,-depth/2,width,thickness,depth,material);
+                for(Face f:roofFaces)
+                    part.add(new Face(mountPoint(f.a,s),mountPoint(f.b,s),
+                        mountPoint(f.c,s),f.color,f.material,
+                        f.au,f.av,f.bu,f.bv,f.cu,f.cv));
+            }
             if(s.type().equals("device")&&s.style().equals("LIGHT_SWITCH"))imported(part,"light_switch_1",s.x(),s.y(),s.z(),1,s.yaw());
             if(s.type().equals("switch"))imported(part,"light_switch_1",s.x(),s.y(),s.z(),1,-s.yaw());
             if(s.type().equals("light")){
@@ -2817,6 +2919,18 @@ public final class SceneRenderer {
     }
     /** First-person network rendering with low-poly teammate models and host-managed doors. */
     private final HunterSpriteAnimation.Tracker hunterAnimation=new HunterSpriteAnimation.Tracker();
+    private java.util.Set<Integer> downedHunters=java.util.Set.of();
+    private java.util.Map<Integer,Double> hunterPain=java.util.Map.of();
+    public void setHunterReactions(java.util.Set<Integer> downed,java.util.Map<Integer,Double> pain){
+        if(downed.stream().anyMatch(i->i<0||i>=6)||pain.entrySet().stream().anyMatch(e->e.getKey()<0||e.getKey()>=6||!Double.isFinite(e.getValue())))
+            throw new IllegalArgumentException("Invalid hunter reactions");
+        downedHunters=java.util.Set.copyOf(downed);hunterPain=java.util.Map.copyOf(pain);
+    }
+    boolean hunterPainVisible(int slot,double clock){
+        double hit=hunterPain.getOrDefault(slot,Double.NEGATIVE_INFINITY);
+        return !downedHunters.contains(slot)&&clock>=hit&&clock-hit<HunterReactionSprites.PAIN_SECONDS;
+    }
+
     private HouseMap hunterAnimationMap;
     HunterSpriteAnimation.Pose hunterPose(int slot){return hunterAnimation.current(slot);}
     void forgetHunter(int slot){hunterAnimation.forget(slot);}
@@ -2834,7 +2948,7 @@ public final class SceneRenderer {
     /** Screen position above a visible investigator. No ghost or text type is accepted. */
     public record Nameplate(int x,int y){ }
     public Nameplate teammateNameplate(HouseMap map,RemoteBody teammate){
-        if(map==null||teammate==null)return null;
+        if(map==null||teammate==null||downedHunters.contains(teammate.slot()))return null;
         double distance=Math.hypot(teammate.x()-x,teammate.z()-z);
         if(distance<1.35||distance>14.0)return null;
         // Closed doors and solid walls suppress labels even before the raster check.
@@ -3565,7 +3679,8 @@ public final class SceneRenderer {
         soloPlacedSalt=session.placedSalt();
         setHauntings(session.hauntings());
         uvLamp=session.uvPowered();uvTier=EquipmentTiers.Tier.I;uvTick=session.ticks();
-        uvMarks=session.uvVisible(x,eyeHeight-HunterPosture.eye(session.crouched()),z,yaw);
+        uvMarks=session.uvVisible(x,Double.isFinite(playerFeetElevation)?playerFeetElevation:
+            eyeHeight-HunterPosture.eye(session.crouched()),z,yaw);
         render(map,room,visible,
             session.wardPrepared()?session.anchorRoom():-1,-1,clock,allies,figure,session.counterMarks());
     }
@@ -3970,7 +4085,6 @@ public final class SceneRenderer {
             EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,companion.x(),companion.z(),
                 companion.y()-(eyeHeight-1.62),.42,145,renderWidth,renderHeight,focal);
 
-
             if(companion.orb()){
                 renderSpiritOrb(companion.x(),companion.z(),companion.y()+.98,clock,companion.greenTint());
             }else{
@@ -3997,11 +4111,17 @@ public final class SceneRenderer {
                 0,"observer",1.75,1.04,map.groundHeight(map.centerX(hunterRoom)-1.25,map.centerZ(hunterRoom)+2,hunterRoom)-(eyeHeight-1.62),255,lamp,renderWidth,renderHeight,focal);
         }
         for(RemoteBody person:others){
+            if(downedHunters.contains(person.slot())){
+                double ground=map.groundHeight(person.x(),person.z(),map.roomAt(person.x(),person.y(),person.z()));
+                HunterReactionSprites.drawBody(pixels,depths,x,z,yaw,pitch,person,
+                    GroundedSpriteFeet.relativeElevation(ground,eyeHeight),lamp,renderWidth,renderHeight,focal);
+                continue;
+            }
             var pose=hunterAnimation.sample(person,clock);
             double distance=Math.hypot(person.x()-x,person.z()-z);
             if(distance>14||distance<1.35)continue;
             DirectionalSprites.drawHunter(pixels,depths,x,z,yaw,pitch,person,pose,
-                person.y()-(eyeHeight-1.62),lamp,renderWidth,renderHeight,focal);
+                person.y()-(eyeHeight-1.62),lamp,renderWidth,renderHeight,focal,hunterPainVisible(person.slot(),clock));
         }
     }
     /** Render the actual v1 glTF meshes with perspective UVs and alpha. The
@@ -4151,11 +4271,13 @@ public final class SceneRenderer {
                 }else texel=material>=GlbProps.TEXTURE_BASE
                     ?GlbProps.sample(material,uu,vv)
                     :material>=LevelMaterials.BASE?LevelMaterials.sample(material,uu,vv):MaterialAtlas.sample(material,uu,vv);
+                if(reviewFrame!=null)reviewFrame.record(k,reviewFace,GlbProps.reviewTexel(material,uu,vv));
                 int tr=(texel>>16)&255,tg=(texel>>8)&255,tb=texel&255;
                 color=((tr*((tint>>16)&255)/255)<<16) |
                     ((tg*((tint>>8)&255)/255)<<8) |
                      (tb*(tint&255)/255);
             }
+            if(reviewFrame!=null && material<0)reviewFrame.record(k,reviewFace,-1);
             // A partial BLEND pixel overlays the already depth-tested world
             // but must not occlude opaque ground or distant trees. MASK
             // pixels above glTF cutoff remain fully depth-writing geometry.
@@ -4198,13 +4320,26 @@ public final class SceneRenderer {
     }
 
     /** Material window uses the production import, clip, depth and textured triangle pipeline. */
+    private MaterialReviewFrame reviewFrame;
+    private long reviewFace;
     void drawNativeMaterialReview(GlbProps.Model model,double rotation){
+        drawNativeMaterialReview(model,rotation,List.of(),null);
+    }
+    void drawNativeMaterialReview(GlbProps.Model model,double rotation,List<Long> ids,MaterialReviewFrame frame){
         for(int yy=0;yy<renderHeight;yy++)for(int xx=0;xx<renderWidth;xx++)pixels[yy*renderWidth+xx]=((xx/16+yy/16)&1)==0?0x41474f:0x343a42;
         Arrays.fill(depths,Double.POSITIVE_INFINITY);environmentLight=1;weatherLightScale=1;fogDensity=0;
         x=0;z=-3.3;eyeHeight=1.1;yaw=0;pitch=0;lamp=false;
         var bounds=devAssetBounds(model);double scale=2/Math.max(.0001,Math.max(bounds[3],Math.max(bounds[4],bounds[5])));double cx=bounds[0]*scale,cz=bounds[2]*scale;
         var faces=new ArrayList<Face>();imported(faces,"native_material_review",model,-cx*Math.cos(rotation)+cz*Math.sin(rotation),.1-bounds[1]*scale,-cx*Math.sin(rotation)-cz*Math.cos(rotation),scale,scale,scale,rotation);
-        for(var f:faces){if(!faceInFrustum(f))continue;var clipped=clip(new Vertex(camera(f.a),f.au,f.av),new Vertex(camera(f.b),f.bu,f.bv),new Vertex(camera(f.c),f.cu,f.cv));for(int k=1;k+1<clipped.size();k++)triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),f.color,f.material,1);}
+        reviewFrame=frame;
+        try{
+            for(int i=0;i<faces.size();i++){
+                var f=faces.get(i);if(!faceInFrustum(f))continue;
+                if(frame!=null)reviewFace=ids.get(i);
+                var clipped=clip(new Vertex(camera(f.a),f.au,f.av),new Vertex(camera(f.b),f.bu,f.bv),new Vertex(camera(f.c),f.cu,f.cv));
+                for(int k=1;k+1<clipped.size();k++)triangle(clipped.get(0),clipped.get(k),clipped.get(k+1),f.color,f.material,1);
+            }
+        }finally{reviewFrame=null;}
     }
     /**
      * Separate DEV ASSET ROOM scene, deliberately not a HouseMap.Site or player

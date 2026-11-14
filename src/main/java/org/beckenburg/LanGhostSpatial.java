@@ -11,6 +11,31 @@ public final class LanGhostSpatial {
     }
     private final HouseMap map;
     private int room,heading=180,lastStepTick=-1,slowedUntil=-1;
+    // Authoritative movement gate: actual displacement, not WASD presses.
+    // The bounded tolerance/settling variation is fixed per movement epoch.
+    public static final int LISTEN_SETTLE_TICKS=4,LISTEN_SETTLE_VARIATION_TICKS=1;
+    public static final double MOVEMENT_GATE_METRES=.055,MOVEMENT_GATE_VARIATION_METRES=.020;
+    private int lastMovedTick=-100000,settleTicks=LISTEN_SETTLE_TICKS;
+    private double movementAnchorX,movementAnchorZ,movementGateMetres=MOVEMENT_GATE_METRES;
+    public boolean listening(int currentTick){
+        return currentTick>=0&&currentTick-lastMovedTick>=settleTicks;
+    }
+    int listeningSettleTicks(){return settleTicks;}
+    double movementGateMetres(){return movementGateMetres;}
+    static boolean significantMotion(double stepMetres,double fromAnchorMetres,double threshold){
+        return stepMetres>threshold||fromAnchorMetres>threshold;
+    }
+    void markTravel(int tick){
+        if(tick<0)throw new IllegalArgumentException("Invalid ghost movement tick");
+        lastMovedTick=tick;
+        settleTicks=LISTEN_SETTLE_TICKS+
+            Math.floorMod(tick+room*7,2*LISTEN_SETTLE_VARIATION_TICKS+1)
+            -LISTEN_SETTLE_VARIATION_TICKS;
+        movementGateMetres=MOVEMENT_GATE_METRES+
+            (Math.floorMod(tick*17+room*13,5)-2)*
+                (MOVEMENT_GATE_VARIATION_METRES/2.0);
+        movementAnchorX=x;movementAnchorZ=z;
+    }
     private double ghostSpeed=1,speciesSpeed=1;
     private int burstCapacity=30,burstStamina=30,lastBurstTick=-1000;
     public void configureSpeed(int percent){
@@ -48,6 +73,7 @@ public final class LanGhostSpatial {
     public LanGhostSpatial(HouseMap map,int startingRoom){
         this.map=Objects.requireNonNull(map);
         syncRoom(startingRoom);
+        movementAnchorX=x;movementAnchorZ=z;
     }
     public Pose pose(){return new Pose(room,x,y,z,heading);}
     /**
@@ -95,6 +121,11 @@ public final class LanGhostSpatial {
         if(SafeAreaBarrier.blocks(map,new LevelDefinition.Vec(x,y,z),destination))
             throw new IllegalArgumentException("anti-ghost safe-area barrier");
         x=destination.x();y=destination.y();z=destination.z();
+        // Blocked steps cannot mute hearing; the anchor catches cumulative
+        // sub-threshold drift rather than letting slow movement evade the gate.
+        if(significantMotion(distance,
+                Math.hypot(x-movementAnchorX,z-movementAnchorZ),movementGateMetres))
+            markTravel(tick);
         if(burst){burstStamina--;lastBurstTick=tick;}
         return true;
     }

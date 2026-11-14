@@ -50,19 +50,57 @@ public final class CastleEditorProject implements EditorProject<CastleLevelEdits
     }
     public List<Node> hierarchy(){
         ArrayList<Node> nodes=new ArrayList<>();
-        for(var surface:castle.surfaces())nodes.add(new Node(surface.id(),
-            surface.kind().name(),surface.kind()+" • "+surface.id(),
-            surface.cx(),surface.base(),surface.cz()));
-        for(var prop:castle.props())nodes.add(new Node(prop.id(),"PROP",
-            prop.id()+" • "+prop.mesh(),prop.x(),prop.y(),prop.z()));
-        for(var lamp:castle.lamps())nodes.add(new Node(lamp.id(),"LAMP",
-            lamp.id()+" • "+lamp.on(),lamp.x(),lamp.y(),lamp.z()));
-        for(var station:CastleHubMap.Station.values()){
-            double[] point=castle.station(station);
-            nodes.add(new Node(station.name(),"STATION","Station • "+station.name(),point[0],0,point[1]));
-        }
-        double[] spawn=castle.spawn();
-        nodes.add(new Node("start","SPAWN","Player spawn",spawn[0],0,spawn[1]));
+        for(var surface:castle.surfaces()) nodes.add(row(surface));
+        for(var prop:castle.props()) nodes.add(row(prop));
+        for(var lamp:castle.lamps()) nodes.add(row(lamp));
+        for(var station:CastleHubMap.Station.values()) nodes.add(row(station));
+        nodes.add(spawnRow());
         return List.copyOf(nodes);
+    }
+    public Node node(String id) {
+        var surface=castle.surfaceById(id);
+        if(surface!=null) return row(surface);
+        var prop=castle.propById(id);
+        if(prop!=null) return row(prop);
+        var lamp=castle.lampById(id);
+        if(lamp!=null) return row(lamp);
+        for(var station:CastleHubMap.Station.values()) if(station.name().equals(id)) return row(station);
+        if("start".equals(id)) return spawnRow();
+        throw new IllegalArgumentException("Unknown native hierarchy node");
+    }
+    public HierarchyPage hierarchyPage(int offset,int limit) {
+        if (offset<0 || limit<1 || limit>64) throw new IllegalArgumentException("Expected offset >= 0 and limit 1 to 64");
+        synchronized (castle) {
+            var slice=castle.objectSlice(offset,limit);
+            var stations=CastleHubMap.Station.values();
+            int total=slice.objectCount()+stations.length+1;
+            int end=HierarchyPage.end(total,offset,limit);
+            var rows=new ArrayList<Node>(end-offset);
+            for (var s:slice.surfaces()) rows.add(row(s));
+            for (var p:slice.props()) rows.add(row(p));
+            for (var l:slice.lamps()) rows.add(row(l));
+            for (int i=Math.max(offset,slice.objectCount());i<end;i++) {
+                int station=i-slice.objectCount();
+                rows.add(station<stations.length ? row(stations[station]) : spawnRow());
+            }
+            return new HierarchyPage(total,offset,rows);
+        }
+    }
+    private static Node row(CastleLevelEdits.Surface s) {
+        return new Node(s.id(),s.kind().name(),s.kind()+" • "+s.id(),s.cx(),s.base(),s.cz());
+    }
+    private static Node row(CastleLevelEdits.Prop p) {
+        return new Node(p.id(),"PROP",p.id()+" • "+p.mesh(),p.x(),p.y(),p.z());
+    }
+    private static Node row(CastleLevelEdits.Lamp l) {
+        return new Node(l.id(),"LAMP",l.id()+" • "+l.on(),l.x(),l.y(),l.z());
+    }
+    private Node row(CastleHubMap.Station station) {
+        double[] point=castle.station(station);
+        return new Node(station.name(),"STATION","Station • "+station.name(),point[0],0,point[1]);
+    }
+    private Node spawnRow() {
+        double[] spawn=castle.spawn();
+        return new Node("start","SPAWN","Player spawn",spawn[0],0,spawn[1]);
     }
 }

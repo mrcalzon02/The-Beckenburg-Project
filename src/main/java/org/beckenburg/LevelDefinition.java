@@ -24,7 +24,7 @@ public record LevelDefinition(String id, String revision, String title,
         // The handshake follows actual authored data, so two binaries with
         // different stair/prop/socket coordinates cannot silently share a map.
         try{
-            String data="wall-shell-v2"+id+rooms+portals+stairs+voids+props+sockets+colliders+dock+ambience+guardSegments(stairs,voids)+water.revision()+sounds.revision();
+            String data="wall-shell-v2"+id+rooms+portals+stairs+voids+props+sockets+colliders+dock+ambience+guardSegments(stairs,voids,rooms)+water.revision()+sounds.revision();
             var inherited=new java.util.ArrayList<String>();
             for(Room r:rooms)for(Portal p:portals)if(inheritsWallPortal(r,p,rooms))inherited.add(r.id()+":"+p.id());
             if(!inherited.isEmpty())data+="contained-upper-openings-v1"+inherited;
@@ -98,24 +98,79 @@ public record LevelDefinition(String id, String revision, String title,
         return false;
     }
     public Socket socket(String type,int room){return sockets.stream().filter(s->s.type().equals(type)&&s.room()==room).findFirst().orElse(null);}
-    public boolean floorVoid(double x,double y,double z){return voids.stream().anyMatch(v->Math.abs(v.y()-y)<.05&&v.contains(x,z));}
-    public List<Guard> guards(){return guardSegments(stairs,voids);}
-    private static List<Guard> guardSegments(List<Stair> stairs,List<Void> voids){
+    /** A hot query for slab collision and architectural lighting. Preserve the
+     * authoritative strict aperture edges and +/- 5cm floor tolerance without
+     * allocating a Stream/lambda on every ray or movement sample. */
+    public boolean floorVoid(double x,double y,double z){
+        for(Void v:voids)if(Math.abs(v.y()-y)<.05&&v.contains(x,z))return true;
+        return false;
+    }
+    public List<Guard> guards(){return guardSegments(stairs,voids,rooms);}
+    /** A horizontal guard exists only where an upper-floor slab actually supports
+     * the side of an opening. The low stair approach is not an elevated deck. */
+    private static boolean deckAt(List<Room> rooms,List<Void> voids,double y,double x,double z){
+        boolean floor=false;
+        for(Room r:rooms)if(!r.outside()&&Math.abs(r.y()-y)<.05
+                &&x>r.x0()+.01&&x<r.x1()-.01&&z>r.z0()+.01&&z<r.z1()-.01){
+            floor=true;break;
+        }
+        if(!floor)return false;
+        for(Void hole:voids)if(Math.abs(hole.y()-y)<.05&&hole.contains(x,z))return false;
+        return true;
+    }
+    /** Clip shaft-side rails at real room and aperture boundaries instead of
+     * leaving three-metre-high floating bars above the lower stair flight. */
+    private static void deckGuard(List<Guard> result,Void v,List<Room> rooms,List<Void> voids,
+            boolean alongZ,double edge,double deckOffset){
+        double start=alongZ?v.z0():v.x0(),end=alongZ?v.z1():v.x1();
+        var cuts=new java.util.TreeSet<Double>();
+        cuts.add(start);cuts.add(end);
+        double probe=edge+deckOffset;
+        for(Room r:rooms)if(!r.outside()&&Math.abs(r.y()-v.y())<.05
+                &&(alongZ?(probe>r.x0()+.01&&probe<r.x1()-.01)
+                    :(probe>r.z0()+.01&&probe<r.z1()-.01))){
+            double a=alongZ?r.z0():r.x0(),b=alongZ?r.z1():r.x1();
+            if(a>start+.001&&a<end-.001)cuts.add(a);
+            if(b>start+.001&&b<end-.001)cuts.add(b);
+        }
+        for(Void other:voids)if(Math.abs(other.y()-v.y())<.05
+                &&(alongZ?(probe>other.x0()&&probe<other.x1())
+                    :(probe>other.z0()&&probe<other.z1()))){
+            double a=alongZ?other.z0():other.x0(),b=alongZ?other.z1():other.x1();
+            if(a>start+.001&&a<end-.001)cuts.add(a);
+            if(b>start+.001&&b<end-.001)cuts.add(b);
+        }
+        Double previous=null;
+        for(double bound:cuts){
+            if(previous!=null&&bound-previous>.03){
+                double mid=(previous+bound)/2;
+                if(deckAt(rooms,voids,v.y(),alongZ?probe:mid,alongZ?mid:probe))
+                    result.add(alongZ?new Guard(edge,previous,edge,bound,v.y())
+                        :new Guard(previous,edge,bound,edge,v.y()));
+            }
+            previous=bound;
+        }
+    }
+    private static List<Guard> guardSegments(List<Stair> stairs,List<Void> voids,List<Room> rooms){
         java.util.ArrayList<Guard> result=new java.util.ArrayList<>();
         for(Void v:voids){
             Stair stair=stairs.stream().filter(s->Math.abs(s.y1()-v.y())<.02
                 &&s.contains((v.x0()+v.x1())/2,(v.z0()+v.z1())/2,-.2)).findFirst().orElse(null);
             if(stair==null)continue;
             if(Math.abs(stair.z1()-stair.z0())>Math.abs(stair.x1()-stair.x0())){
-                result.add(new Guard(v.x0(),v.z0(),v.x0(),v.z1(),v.y()));
-                result.add(new Guard(v.x1(),v.z0(),v.x1(),v.z1(),v.y()));
+                deckGuard(result,v,rooms,voids,true,v.x0(),-.08);
+                deckGuard(result,v,rooms,voids,true,v.x1(),.08);
                 double end=stair.z1()>stair.z0()?v.z0():v.z1();
-                result.add(new Guard(v.x0(),end,v.x1(),end,v.y()));
+                double beyond=end+(stair.z1()>stair.z0()?-.08:.08);
+                if(deckAt(rooms,voids,v.y(),(v.x0()+v.x1())/2,beyond))
+                    result.add(new Guard(v.x0(),end,v.x1(),end,v.y()));
             }else{
-                result.add(new Guard(v.x0(),v.z0(),v.x1(),v.z0(),v.y()));
-                result.add(new Guard(v.x0(),v.z1(),v.x1(),v.z1(),v.y()));
+                deckGuard(result,v,rooms,voids,false,v.z0(),-.08);
+                deckGuard(result,v,rooms,voids,false,v.z1(),.08);
                 double end=stair.x1()>stair.x0()?v.x0():v.x1();
-                result.add(new Guard(end,v.z0(),end,v.z1(),v.y()));
+                double beyond=end+(stair.x1()>stair.x0()?-.08:.08);
+                if(deckAt(rooms,voids,v.y(),beyond,(v.z0()+v.z1())/2))
+                    result.add(new Guard(end,v.z0(),end,v.z1(),v.y()));
             }
         }
         return List.copyOf(result);

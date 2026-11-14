@@ -46,7 +46,7 @@ Private LAN hosts can set an optional plaintext room password and lock new joins
 
 ## Microphone voice — local LAN developer build
 
-**3D hunter controls:** Choose the microphone from **F7** (system default or any compatible device). Hold **F3** to speak locally or **F4** to transmit on the hunter radio; release to stop. **F7** opens a compact mute/voice-playback-volume control. Losing keyboard focus or opening text input stops transmission. Ghost seats only receive nearby physical speech; they cannot transmit on the investigators' radio. A hunter's outgoing radio voice is also audible to a ghost physically close to the speaker, but the ghost cannot eavesdrop remotely on radio recipients.
+**3D hunter controls:** Choose the microphone from **K → Voice settings** (system default or any compatible device). Hold **V** to speak locally or **C** to transmit on the hunter radio; release to stop. **K → Voice settings** opens a compact mute/voice-playback-volume control. Losing keyboard focus or opening text input stops transmission. Ghost seats only receive nearby physical speech; they cannot transmit on the investigators' radio. A hunter's outgoing radio voice is also audible to a ghost physically close to the speaker, but the ghost cannot eavesdrop remotely on radio recipients.
 
 **Implementation:** JavaSound performs real default-device microphone capture and speaker playback. 20 ms **G.711 mu-law** (8 kHz mono, 64 kbit/s) frames use a bounded, separate UDP socket, on the same numeric port as TCP. The host issues 128-bit ephemeral per-seat voice tokens only after authorized world-view entry; it checks UDP source IP, pinned endpoint and replay sequences before routing. Proximity depends on host-owned coordinates, audible doors, and distance; the ghost receives a randomized per-session pseudonymous stream ID rather than hunter identity/position metadata, keeping up to six simultaneous voices separate. A small capped receive queue mixes multiple speaking investigators and drops stale frames. Speech creates only throttled ghost hearing cues.
 
@@ -58,7 +58,7 @@ Private LAN hosts can set an optional plaintext room password and lock new joins
 
 ## LAN communications: local and radio text (working implementation slice)
 
-Press **Enter** in the first-person hunter view to type a **local** message; **F2** to type a **radio** message. Press Enter inside the chat box to send, or Escape to cancel. A compact temporary chat overlay shows messages with the validated investigator nickname and a channel indicator. Typing releases mouse capture and cancels held movement keys.
+Press **Enter** in the first-person hunter view to type a **local** message; press **Tab inside the text box** to switch to **radio**. Press Enter inside the chat box to send, or Escape to cancel. A compact temporary chat overlay shows messages with the validated investigator nickname and a channel indicator. Typing releases mouse capture and cancels held movement keys.
 
 Messages use the existing seat-bound LAN gameplay socket (not cryptographically authenticated) and are bounded to 80 safe printable ASCII characters (the current version-1 protocol is ASCII). The host enforces a 0.6-second rate limit, command replay protection, active-living-hunter status, and recipients. **Local** chat is delivered by real proximity and acoustic room connectivity: open passages carry voices farther than isolated rooms, and van conversation does not magically reach the whole building. **Radio** chat is delivered only to investigator clients, with bounded private history replay for a newly opened hunter viewport. Text and nickname packets are **never** sent to the ghost client.
 
@@ -112,7 +112,7 @@ Solo investigations use the same Z/G/H counter action and model with the Spirit 
 
 In the **solo** investigator launcher, choose the **House** location and one of three live scenarios: Normal weather, Power outage, or Heavy ground fog. These modify the real-time scene lighting and fog. Power-outage cases start dark; in the utility room, press **E** at the visible breaker to turn the building power on or off. The other eight listed location families remain **not playable** until individual geometry and traversal are implemented; the game does not load a renamed house in their place. LAN sessions continue to use their existing host-controlled house and three evidence tools; this new four-slot equipment rack is currently solo-only.
 
-**Solo loadout controls:** **1–4** select one of four carried items, **R** operates the selected item, and **E** beside the van equipment rack opens a four-slot exchange panel. Every carried item must be distinct. The rack also refills camera film (6) and salt (3). EMF, thermometer and spirit box are the current solo instrument choices; each valid scan generates a logbook reading, not an automatically confirmed piece of evidence. UV scans for recent ghost traces; salt marks an interior room for later spectral passage; the camera requires a manifested apparition in front of the lens, within range and not hidden by a closed door. The first successful apparition photograph adds limited case payout on successful cleansing or retreat, not repeatable reward farming. Equipment, breaker and weather variants are connected to the real game session and software 3D scene, not a separate viewer.
+**Solo loadout controls:** **1–4** select one of four carried items, **F** operates the selected item, and **E** beside the van equipment rack opens a four-slot exchange panel. Every carried item must be distinct. The rack also refills camera film (6) and salt (3). EMF, thermometer and spirit box are the current solo instrument choices; each valid scan generates a logbook reading, not an automatically confirmed piece of evidence. UV scans for recent ghost traces; salt marks an interior room for later spectral passage; the camera requires a manifested apparition in front of the lens, within range and not hidden by a closed door. The first successful apparition photograph adds limited case payout on successful cleansing or retreat, not repeatable reward farming. Equipment, breaker and weather variants are connected to the real game session and software 3D scene, not a separate viewer.
 
 For developer validation, `build.sh` and `build.cmd` compile the new cases `EquipmentSelectionTest`, `SoloEquipmentUseTest`, `SiteSelectionTest`, `CameraAimTest`, and `EquipmentSightTest`, and both package the directional sprite resource into the game JAR. Passing those tests and a GUI walk-through on the target machine remain release gates; an accepted source commit alone is not evidence of a Windows game run.
 
@@ -175,7 +175,7 @@ On Linux/macOS with a JDK: `sh build.sh`, `sh build.sh run`. The launcher and Ja
 
 After the host starts a ready match, each player can select **Enter 3D World** in the LAN lobby. Hunter seats open the 3D hunter panel; the ghost seat opens the spectral 3D panel. That opens a separate textured first-person window with **WASD** movement, **click once to capture mouse-look** (no held button) or use arrow keys, **E** to open or close nearby doors, and **Esc** to return to the lobby. The original room-number controls remain as a **legacy room-simulation** mode, but are rejected once that player enters 3D mode. The host, not the client, advances bodies by a bounded movement impulse per simulation tick and checks collisions against the same physical `HouseMap` used by the renderer. It also owns door states, distributes teammate avatars to hunters, and displays host-declared manifestations; private hunter transforms and the team journal are not sent to the ghost seat.
 
-To run the actual 3D LAN demo: on one machine choose LAN Host, then connect two other hunters by host LAN IP; optionally join a human ghost from a fourth client. All connected players choose Ready and Hunter 1 clicks Start Match, then hunter players click **Enter 3D House**. In the 3D viewport, press **1/2/3** for EMF/thermometer/spirit box, **R** to scan, **C** to ward, **B** to start cleansing and **X** to extract; each command is validated by the host. The legacy lobby still provides those controls; do **not** mistake this for a finished seamless 3v1 first-person experience. LAN operates on TCP port 27717 by default and may need Windows Firewall permission. The game still requires a local Java runtime.
+To run the actual 3D LAN demo: on one machine choose LAN Host, then connect two other hunters by host LAN IP; optionally join a human ghost from a fourth client. All connected players choose Ready and Hunter 1 clicks Start Match, then hunter players click **Enter 3D House**. In the 3D viewport, press **1/2/3** for EMF/thermometer/spirit box, **F** to scan and **K** for labeled wards, rituals, supplies, and voice settings; each command is validated by the host. The legacy lobby still provides those controls; do **not** mistake this for a finished seamless 3v1 first-person experience. LAN operates on TCP port 27717 by default and may need Windows Firewall permission. The game still requires a local Java runtime.
 
 Test with `sh build.sh` / `build.cmd` (includes `LanWorldTest`, `LanWorldIntegrationTest`, `LanWorldRenderTest`); under a Linux graphical display run `java -cp build/classes:build/test org.beckenburg.LanWorldGuiTest <optional_screenshot_path>`. This suite has passed locally on OpenJDK targeting Java 17 and Linux Xvfb; multi-PC Windows acceptance and real network latency testing remain outstanding.
 
@@ -183,7 +183,7 @@ Test with `sh build.sh` / `build.cmd` (includes `LanWorldTest`, `LanWorldIntegra
 
 - **Launcher:** title screen, Cleric/Observer/Demonologist selection, controls manual, session start and exit. Pausing exposes return/retreat safely.
 - **Fifteen-zone starter house:** twelve named interior rooms (bathroom, master bedroom, nursery, living room, main hall, kitchen, library, dining room, study, storage cellar, foyer and utility room) plus rear garden, front porch and standard van staging. A single **grayboxed building**, not nine separate finished level categories. Rooms have real low-poly floor/wall/ceiling geometry and distinct simple props. Doors can be opened and closed, with authoritative collision in the local map model.
-- **First-person 3D:** 320×200 internal RGB+depth triangle renderer, pixel-upscaled nearest-neighbor, simple fog and ordered pixel lighting. WASD movement, Shift sprint, click-to-capture mouse-look or arrows, room collision, flashlight.
+- **First-person 3D:** 320×200 internal RGB+depth triangle renderer, pixel-upscaled nearest-neighbor, simple fog and ordered pixel lighting. WASD movement, Space sprint, click-to-capture mouse-look or arrows, room collision, flashlight.
 - **Equipment:** EMF, Thermometer and Spirit Box emit different simulated signals linked to the ghost anchor or movement. Strong readings are journaled as confirmed evidence. The Observer and Demonologist get small profession-appropriate field advantages, and the Cleric receives an additional ward and reduced incoming damage.
 - **Spirit ghost command foundation:** local AI chooses actions from a filtered GhostObservation and issues GhostCommand entries through the *same validator* human control will use. Adjacent-room drift, whisper, kinetic disturbance, timed manifestation and incremental strike have shared energy, cooldowns, sequence replay protection and opening-hunt safety. The shared local rules core now also feeds the experimental LAN room simulation below. Full remotely synchronized 3D movement, equipment and rites are not implemented.
 - **Case closure:** record three instrument clues, place a ward at the real anchor, complete a simple cleansing action and return to the shared van staging extraction point. Early retreat pays only for collected evidence. Health defeat fails the case.
@@ -203,18 +203,20 @@ Detailed technical handoff: [Texture Implementation 001](TEXTURE_IMPLEMENTATION_
 
 | Input | Action |
 |---|---|
-| WASD / Shift | Move / sprint |
-| Click view once, then move mouse / arrows | First-person look without holding a button |
-| F / E | Flashlight / interact with door |
-| 1, 2, 3 | Select EMF / thermometer / spirit box |
-| R | Scan and record instrument result |
-| C | Place ward (near anchor it prepares the rite) |
-| B | Cleanse (three clues and ward at correct anchor needed) |
-| M / J | Floor map / evidence journal |
-| X | Extract at entry marker |
-| Hold Q, aim mouse/arrow direction, release Q | Contextual eight-option callout with local map ping |
-| E in van | Interact with nearest briefing, equipment, relay, or extraction station |
-| Escape | Pause / return-to-castle options |
+| WASD / Space / Shift | Move / run / toggle crouch (Ctrl alias) |
+| Mouse / arrows | Look; click to capture mouse |
+| E / Q / 1–4 | Interact / cycle gear / select slot |
+| F / LMB / RMB | Use or raise camera / use or shutter / power |
+| T / G / R | Flashlight / placement preview / drop carried gear or prop |
+| LMB / mouse wheel while holding a prop | Throw / rotate |
+| Tab / J / M | Evidence journal / casefile / van map |
+| C / V | Hold radio / local microphone |
+| Enter, then Tab inside chat | Text chat, switch local/radio channel |
+| K | Named equipment, medicine, rituals, book, identification and voice actions |
+| H / Escape | Help / pause and return to Castle |
+
+Solo free play and solo campaign launch a private loopback host and use `LanWorldPanel`, the same hunter viewport, `FieldEquipment`, placement, interactions and authoritative rules as co-op. The old independent `GamePanel` play loop has been removed. Saved Castle gear and tiers feed the shared solo equipment rack; campaign hosts retain chapter settlement and hired-team logic. Ordinary gameplay requires no function keys. F11 remains an optional fullscreen alias alongside Alt+Enter; developer/editor shortcuts remain separate.
+
 
 ## Validation and limits
 

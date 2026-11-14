@@ -41,6 +41,11 @@ if exist assets\runtime\mission-board (
   if not exist build\classes\org\beckenburg\mission-board mkdir build\classes\org\beckenburg\mission-board
   copy /Y assets\runtime\mission-board\*.png build\classes\org\beckenburg\mission-board\ >nul || exit /b 1
 )
+if not exist assets\runtime\campaign\beckenburg-county.jpg (echo ERROR: approved county map missing & exit /b 1)
+if not exist assets\runtime\campaign\locations.tsv (echo ERROR: county node registry missing & exit /b 1)
+if not exist build\classes\org\beckenburg\campaign mkdir build\classes\org\beckenburg\campaign
+copy /Y assets\runtime\campaign\beckenburg-county.jpg build\classes\org\beckenburg\campaign\ >nul || exit /b 1
+copy /Y assets\runtime\campaign\locations.tsv build\classes\org\beckenburg\campaign\ >nul || exit /b 1
 if exist assets\runtime\water-imports (
   if not exist build\classes\org\beckenburg\water-imports mkdir build\classes\org\beckenburg\water-imports
   copy /Y assets\runtime\water-imports\*.png build\classes\org\beckenburg\water-imports\ >nul
@@ -52,6 +57,7 @@ if not exist assets\runtime\character-directions.zip (echo ERROR: required appro
 copy /Y assets\runtime\character-directions.zip build\classes\org\beckenburg\character-directions.zip >nul || exit /b 1
 if not exist assets\runtime\hunter-animation.zip (echo ERROR: hunter animation sprites missing & exit /b 1)
 copy /Y assets\runtime\hunter-animation.zip build\classes\org\beckenburg\hunter-animation.zip >nul || exit /b 1
+copy /Y assets\runtime\hunter-reactions.zip build\classes\org\beckenburg\hunter-reactions.zip >nul || exit /b 1
 copy /Y assets\runtime\castle-resident-animation.zip build\classes\org\beckenburg\castle-resident-animation.zip >nul || exit /b 1
 if not exist assets\runtime\twins-directions.zip (echo ERROR: independent Twins PNGs missing & exit /b 1)
 copy /Y assets\runtime\twins-directions.zip build\classes\org\beckenburg\twins-directions.zip >nul || exit /b 1

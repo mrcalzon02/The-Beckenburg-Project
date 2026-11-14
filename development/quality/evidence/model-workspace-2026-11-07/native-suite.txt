@@ -1,0 +1,47 @@
+PASS native support parity: accepted host moves survive next tick, stair overlap preserves lower support, round trip and real penetration recovery
+2026-11-08T06:12:03.315931600Z [main] RENDER SLOW stage=idle faces=137829 visible_faces=81157 culled_faces=56672 target=320x200 build_ms=1506 lighting_raster_ms=564
+PASS native mission/Castle service: stale rejection, shared undo, batch rollback, save/game load/reopen, renderer capture, owner thread and CLI
+PASS native editor changes: commit-only events, batch/rollback/cancel, stable IDs, owner/revision fingerprints, rotated collider bounds, human delete/undo/redo/reopen and conservative Castle fallback
+PASS native disk revisions: competing mission/Castle saves, active singleton and game readback, preserve unsaved edits, observe/undo/save, deletion/recovery and pinned USER ownership
+PASS Castle snapshot contract: owned collections/arrays, immutable accessors, structural equality/hash and exact native restore/save/reopen and isolated default-profile ownership
+PASS native schema compatibility: unknown component properties, custom labels/layers and contradictory yaw refused without loss; legacy yaw retained; all six future Castle layout versions protected
+PASS G1 native identity: legacy BSCN, deletion, shared undo/redo, stable-ID edit, deterministic save/reopen, unsupported transform rejection and USER ownership
+PASS native mission recovery: distinct backup, corrupt-file rejection, explicit restore, shared undo, real game load and foreign-scene isolation
+PASS Castle native recovery: deterministic saves, distinct backups, full codec roundtrip, same singleton recovery, shared undo, invalid backup refusal and legacy migrations
+PASS OBJ > generated GLB > game decode > registry > authored prop > reload
+PASS wall/floor/roof editing, paint, undo, migration, game collision and shadows
+PASS rebuilt real fittings, switch-off, shadow occlusion, existing-scene migration and grounded props
+2026-11-08T06:12:32.159161900Z [AWT-EventQueue-0] RENDER SLOW stage=idle faces=88211 visible_faces=23305 culled_faces=64906 target=560x350 build_ms=1787 lighting_raster_ms=391
+PASS real Windows editor: mission/Castle service and recovery, human undo/redo, save/reopen, actual recovery menu, runtime parity, Castle/House PNGs and stale/closed scene rejection
+PASS actual human OBJ source identities: six native vertices, independent coincident edit, exact source/native archives and every real runtime GLB corner
+PASS real human primitives, native roundtrip, triangle selection, vertex/edge/face axis drag/grid/undo/redo, Escape cancellation, stale revision refusal, UI PNG and every runtime GLB corner
+PASS actual human mesh authoring: stable vertex move/undo/redo, native save/reopen/fresh chooser load, topology review/UI PNG, runtime GLB publish, exact editable/original source archives and changed-source rejection
+PASS actual human visible/X-ray boxes and lassos, canceled/stale asynchronous selection, immutable native state, multi-vertex axis drag, one-step undo/redo and every real game-decoder corner
+PASS real human extrude/inset: native preview/cancel/parameter and stale guards, exact apply, one-step history, save/reopen, source/native archives and every actual runtime corner
+PASS actual native publication revision: stale review refuses all writes, explicit human re-review refreshes live state, coherent native/runtime publication
+PASS actual human native weld/repair/cleanup/OBJ chooser: real selection/preview/apply, stable IDs/UVs, undo/redo/native persistence and every runtime corner
+PASS actual human snapped rotation and centroid scale: real selection/buttons, preview/cancel/apply/history, native archive and every runtime corner
+PASS actual topological mesh workspace: contextual tools, menus/shortcuts, viewport allocation, diagnostics/focus restoration, small-window layouts and unchanged native authority
+2026-11-08T06:13:07.590593Z [main] RENDER SLOW stage=idle faces=224510 visible_faces=216410 culled_faces=8100 target=320x200 build_ms=1695 lighting_raster_ms=495
+PASS actual human authored normals: source/corner seams, overlay, snapped rotation/inverse scale, preview/history/native archive, every GLB corner and production renderer/subdivision
+Full inspection / one node UTF-8 response bytes: House (42296, 191), Castle (103481, 154)
+PASS headless public protocol: mission/Castle JSON edit/save/recovery, renderer capture, native parity, process reopen, corrupt-start bootstrap recovery and stale rejection
+PASS real human PNG materials: face picking, captured preview/cancel/apply, exact shared undo/redo/save/fresh open/publication, runtime face bindings/origin/RGBA/tint/wrap and production screenshot
+PASS human native UV editing: independent material window, real OBJ/MTL source, face/island preview/cancel/apply/parameter guards, shared history/native save/archive, every actual runtime UV/color and OBJ bundle
+PASS human source-backed GLB: actual matrix/ancestor mesh, independent instance vertex/UV controls, shared history/native v4, exact no-edit/source metadata and original PNG, real GLB export/publication/archive/game UVs and screenshots
+PASS actual runtime original matrix/ancestor pivot and external GLB upper-left PNG
+PASS human perspective: real camera orbit/pan/zoom/fit, visible picking/box, exact snapped axis drag, native history/save/fresh reopen, actual runtime publication and screenshot
+PASS human surface-normal transforms: native face anchor, snapped normal rotation/preview/cancel/apply, oblique perspective gizmo move, shared history/save/fresh reopen, exact UV/normals/game publication and actual screenshots
+PASS human local frames: real world rotation/local scaling, preview/cancel/apply, local-unit perspective gizmo, geometry/frame shared history, native v5 reopen, OBJ/GLB copies, actual game publication and screenshots
+PASS native edge/corner bevel: closed actual cut/cap, stable original IDs/attributes, atomic history, refusal guards, native/OBJ/GLB and original source-backed runtime geometry
+PASS actual human bevel: visible native edge/corner picking, separate tool card, preview/cancel/parameter/apply, shared undo/redo/save/reopen and every real game corner/source archive
+PASS actual vertex slide: native edge pick, surface/outline refusal, preview/cancel/apply, one-step history, exact native reopen and every game corner
+PASS native interior quad loop/ring, whole-loop slide and boundary selection: exact grid transform/undo, directed hole rim, separate parts, native reopen and actual game corners
+PASS native wireframe pixels and projection counts: hover 0, local center 6/24, resized/UV 0, new camera 24; maximum sampled edit 1/36000
+PASS authored OBJ quads, split-triangle distinction, BTOP6/OBJ bundle/GLB, seam UV edit, selective topology invalidation and native undo
+PASS authored quad edge traversal and whole-loop slide: regular interior and closed loops, opposite-edge rings, triangle/diagonal refusals and native revision stability
+PASS vertex snap: exact anchor/relative precision, degenerate/flip/stale refusal, original source GLB and native frame ownership
+PASS native vertex snap: visible anchor/target guide, distinct IDs, shape/frame translation, guards, one-step history, reopen and actual game vertices
+PASS native workspace: version6/7, exact geometry/view save, fresh open, stale-writer protection, recovery, invalid ID/flag/future refusal
+PASS actual native model workspace: camera/tool/settings/loop/focus save, fresh-window and Reopen restoration, geometry/revision isolation and published archive
+PASS native editor service, real human model/material UV editors, recovery and headless protocol

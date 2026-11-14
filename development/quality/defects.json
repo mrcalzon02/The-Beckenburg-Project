@@ -1,7 +1,128 @@
 {
   "version": 1,
-  "updated": "2026-11-08",
+  "updated": "2026-11-12",
   "issues": [
+    {
+      "id": "DEV-355",
+      "title": "GPU solo smoke falsely fails after retirement of GamePanel and obsolete startup counters",
+      "status": "fixed-scoped; exact-source Windows GPU/native and 3-site Mesa GPU-UI cycle passed; hardware performance acceptance pending",
+      "affected": "gpu-client GpuUiSmoke (Castle -> solo -> shared-LAN hunter -> van retreat -> Castle), all default smoke sites",
+      "symptom": "In exact-source GPU run 43179085546 the standalone OpenGL geometry/lighting/resident-VBO checks and eleven-map residency review succeeded, but the UI stage reported 'solo.deploy was invoked but no live GamePanel appeared' and produced only a CSV header, with no persisted failure screenshot.",
+      "cause": "The acceptance harness still searched for a retired '$GamePanel' nested class. Current solo returns a real LanWorldPanel. Subsequent reflective reads referenced retired scene, initialFrameReady, prewarmGpu* and session fields, and its VK_X/glass-pane exit flow was no longer the physical host-authoritative van-door action.",
+      "action": "GpuUiSmoke now discovers LanWorldPanel and actual map/renderer/opening/frameCount; gates on first real cinematic preview and GPU readback; verifies physical hunter movement, authenticated VANDOOR/RESULT|RETREATED, and the registered return-to-Castle handler; emits case-stage and native failure capture if a case cannot start. Keep actual multi-site Mesa and installed Windows checks; do not weaken GPU or multiplayer functional gates.",
+      "evidence": "Confirmed exact-source GPU acceptance https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43258886439 all three jobs SUCCESS: compile-gpu-java17, windows-build (actual packaged native software-recovery executable), and opengl-mesa-smoke (real OpenGL, world residency, UI). Native 3-site GPU artifact https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43258886439/artifacts/13962993117: HOUSE 5889ms 11 frames, FARMHOUSE 9845ms 8 frames, SCHOOL 3255ms 7 frames; each moved 0.31m, GPU readback=true, host RESULT RETREATED, returned to Castle. Exact source 2f83b2fadfc9834781efd189f3751618afd4f5ae. This repairs the old false-negative smoke. Hardware FPS and other individual location checks remain open.",
+      "older_maps": "The shared GPU UI smoke cycles House, Farmhouse and School. Verify each actual launch, movement, extraction and return individually; Castle and the other map types have separate native residency checks. Windows hardware FPS and headphones remain outside Mesa acceptance."
+    },
+    {
+      "id": "DEV-354",
+      "title": "Blackpine editor snapshot disagreed with live stairwell landing aperture",
+      "status": "source/snapshot synchronized; editor save/reopen and installed visual verification pending",
+      "affected": "Blackpine mill loft serialized development definition and live mission geometry",
+      "symptom": "The checked-in Blackpine source snapshot ended its upper stair aperture at Z31.4 while the current runtime aperture ends at Z31.6; the serialized scene also retained five obsolete loft fence sockets and colliders.",
+      "cause": "The development export was not refreshed after the runtime last-riser collision fix and continued to carry out-of-date loft rail decorations.",
+      "action": "Align the recorded upper opening at Z31.6 and remove only the five duplicated room-11 fence entries and colliders. Verify editor load/save parity before accepting the archive as a current construction source.",
+      "evidence": "Source snapshot vs runtime mismatch confirmed at b55948a0 and corrected in 5216f206. Exact-source Blackpine step in CI 43179085398 completed SUCCESS, with artifact 13926116342. Export/import/save-reopen acceptance not established by stair test.",
+      "older_maps": "Audit editor exports against live runtime stairs on each older map; correcting Blackpine does not certify the other saved maps."
+    },
+    {
+      "id": "DEV-353",
+      "title": "Overlapping unsupported loft railing sets obstruct Blackpine stair access",
+      "status": "focused exact-source native rail/route regression and Windows release passed; installed user-eye and hardware acceptance pending",
+      "affected": "Blackpine sawmill flight and upper inspection loft; shared loft-wall rendering and opening-guard generation",
+      "symptom": "Five manual field-fence rails, automatic perimeter rails and automatic stair-void guard rails overlapped. Void guards extended three metres beyond the upper deck over the lower flight, and an uninterrupted loft-edge rail crossed the actual stairwell entry.",
+      "cause": "Rail construction did not share one deck-and-aperture geometry contract: authored enclosure colliders duplicated renderer rails, side guards were not clipped to physical slabs, and loft edge generation failed to split at stair openings.",
+      "action": "Delete five redundant loft fences and matching colliders; clip raised opening rails to supported upper floor, split the southern loft edge around the opening, and leave the physical stair handrails and deck intact. Reinspect actual rendering and both traversal lanes.",
+      "evidence": "Remote main source commit 5216f206b8f7677b90fedd213ca748186f66a7be. Full-round 43179085398 passed its packaged TCP, ghost-hearing, BlackpineGrayboxTest, BlackpineStairVisualTest and native screenshot upload steps. Original native screenshot artifact 13926116342 is downloadable at https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43179085398/artifacts/13926116342. Exact-source installer 43179085274 completed SUCCESS and released beckenburg-v0.1.320, targeting 5216f206. Full advisory manifest and physical/installed visual walkdown remain separate.",
+      "older_maps": "Shared guard clipping and loft-edge renderer require separate checks on House, Farmhouse, Church and other upper-level sites. Do not infer old maps are fixed from Blackpine."
+    },
+    {
+      "id": "DEV-270",
+      "title": "Spectral practice camera ignored the current room elevation",
+      "status": "fixed-scoped; real House cellar playtest verified",
+      "affected": "Ghost practice gameplay and mission playtests in rooms above or below ground",
+      "symptom": "In House Cellar Storage, the ghost HUD identified the basement but the renderer viewed it from ground-floor eye height.",
+      "cause": "The practice camera copied room spawn X and Z while leaving the renderer eye height at its default 1.62 metres.",
+      "action": "Set the camera from the authored spawn in all three axes on each sync, including after drifting rooms.",
+      "evidence": "The Windows editor test failed its room-height assertion before the fix. The corrected real renderer passed at -1.38 metres in Cellar Storage, whose authored floor is -3 metres. The desktop suite captures house-playtest.png.",
+      "older_maps": "The shared practice panel uses the current room spawn on every map. Direct basement evidence covers House."
+    },
+    {
+      "id": "DEV-269",
+      "title": "Mission editor retained Castle assets after switching scenes",
+      "status": "fixed-scoped; real Castle and House palette parity verified",
+      "affected": "Level Editor scene selection and post-import palette refresh",
+      "symptom": "After opening House the Assets tab still offered Castle materials and the Castle water module.",
+      "cause": "The palette was created with the Castle project and refreshed against that project after imports regardless of the active level.",
+      "action": "Reload from the active project on scene open and import. Serve paged assets through the same project adapter.",
+      "evidence": "EditorAgentGuiTest failed at aa4b8956 on the Castle-only Materials category in House. The corrected test compares every visible Castle and House row with the native catalog and verifies HTTP asset readback.",
+      "older_maps": "All mission sites share this selection path. Desktop parity was verified directly for House and Castle."
+    },
+    {
+      "id": "DEV-268",
+      "title": "Committed Markdown development logs contain non-UTF8 Windows punctuation bytes",
+      "status": "fixed-scoped; UTF-8 ledger decode verified",
+      "affected": "development/quality/DEFECT_LEDGER.md and development/RECOVERY_PLAN_2026-10-25.md",
+      "symptom": "Reading committed Markdown development logs as UTF-8 fails on standalone Windows-1252 dash bytes.",
+      "cause": "A prior documentation writer emitted legacy punctuation outside the UTF-8 encoding used by quality tools.",
+      "action": "Normalize invalid legacy bytes to their equivalent Unicode punctuation while preserving all valid Unicode and every issue entry. Keep registry and generated ledger writes explicitly UTF-8.",
+      "evidence": "Baseline 62c6a66f contains invalid UTF-8 byte 0x97 in both Markdown files; scoped normalization now decodes as UTF-8. The JSON registry was already valid UTF-8.",
+      "older_maps": "Documentation encoding repair does not certify map fitness or close existing issues."
+    },
+    {
+      "id": "DEV-267",
+      "title": "Hunters stay upright after damage and incapacitation",
+      "status": "fixed-scoped; reaction assets, real TCP and native OpenGL review pass; installed acceptance pending",
+      "affected": "Cleric, Observer and Demonologist world sprites, all six hunter seats and hunter camera lenses",
+      "symptom": "No pain pose is selected for real damage and a downed teammate retains their last standing/walking cutout.",
+      "cause": "Only locomotion poses exist; the host stops publishing dead bodies, and the hunter-down view accepts only three seat IDs.",
+      "action": "Add four directional pain cutouts and one overhead body texture per class. Broadcast timed pain only after actual host health loss, retain downed BODY/posture snapshots to hunters, render bodies as horizontal floor cards, and share state with video/photo views. Make duplicate down snapshots idempotent; preserve ghost privacy and reset on site/departure.",
+      "evidence": "development/quality/evidence/hunter-reactions-2026-11-07/; fifteen validated transparent sprites, real TCP damage/down/privacy checks, seven focused regressions and six real native RTX 5070 pain/body captures. Initial Demonologist backdrop rejected and repaired as a separate alpha-v2 source.",
+      "older_maps": "Shared hunter rendering applies across maps. Review captures cover the actual House; floor cards use local horizontal support and are not ragdolls or a sloped-terrain corpse mesh."
+    },
+    {
+      "id": "DEV-266",
+      "title": "Default player lacks jumping and portable airborne crouch capability",
+      "status": "fixed-scoped; focused physics/TCP acceptance; installed acceptance pending",
+      "affected": "Shared solo/co-op investigation controller and portable editor-kit default player motion",
+      "symptom": "The player can only move along continuous support; crouch lowers the body and cannot produce a tucked running jump.",
+      "cause": "No independent airborne collision/gravity state or jump intent exists in the shared player package.",
+      "action": "Add portable default jump controller, airborne capsule clearance and raised solid support; wire host clock, client intent and Space controls; reuse crouch art at raised feet and auto-stand after landing when headroom permits.",
+      "evidence": "development/quality/evidence/player-jump-2026-11-07/; PlayerJumpTest and PlayerJumpNetworkTest plus focused movement/crouch regressions.",
+      "older_maps": "Audit stair openings, ledges, low ceilings and prop tops individually on older maps. Castle and downstream runtimes require their own jump adapter adoption; installed GPU acceptance remains open."
+    },
+    {
+      "id": "DEV-265",
+      "title": "Routine controls require function keys and solo uses a different equipment/runtime path",
+      "status": "fixed-scoped; Java compilation and focused real localhost acceptance; installed acceptance pending",
+      "affected": "Castle movement, solo free play, solo campaign, LAN hunter and ghost controls",
+      "symptom": "Voice, books, props and equipment require F keys; solo uses a separate six-item GamePanel with different interactions and no shared gear drops.",
+      "cause": "Duplicated solo and multiplayer view/controller implementations and scattered input prompts.",
+      "action": "Remove GamePanel; launch private local LanHost/LanClient with LanWorldPanel for solo and campaign. Share the conventional keyboard layout and field-action menu, preserve host validation, expand physical drops to carried device types, and update live prompts and docs.",
+      "evidence": "development/quality/evidence/controls-audit-2026-11-06/; LocalInvestigationTest and focused network/control/equipment/campaign regressions. Exact scoped source and installed limitations recorded there.",
+      "older_maps": "Shared controls apply to all selected runtime sites; this does not certify unaudited map geometry or installed release behavior."
+    },
+    {
+      "id": "DEV-264",
+      "title": "Rear van departure button cannot be used from front desk",
+      "status": "fixed-scoped; Java 17 compilation, exact mesh and TCP extraction checks pass; installed acceptance pending",
+      "affected": "Shared expedition van; House, Farmhouse, School and Hollow Creek targeting; solo and LAN departure",
+      "symptom": "Rear wall control loses its prompt when standing at the front desk; legacy solo button toggles cargo doors without ending the mission.",
+      "cause": "Two metre world targeting cap and 2.05 model-unit broad phase truncate the scaled button ray; legacy solo handler only toggles the shutter.",
+      "action": "Allow exact visible button hits across the interior at cargo-deck height, preserve normal interaction reach, and settle legacy solo extraction after collision-safe closure. Retain the concurrent shared-host solo refactor.",
+      "evidence": "development/quality/evidence/van-departure-2026-11-06/: isolated and working-source compilation; VanCargoDoorTest, LanVanExtractionIntegrationTest, VanModuleIntegrationTest, VanHumanScaleTest. TCP test walks to front desk, sends aimed INTERACT, checks closed shutter and one RETREATED result.",
+      "older_maps": "Shared van module covers all placements; physical installed gameplay remains unverified. Four-site targeting and three-site circulation checked; no broader map audit claimed."
+    },
+    {
+      "id": "DEV-263",
+      "title": "Crouch and stand snap the local camera between eye heights",
+      "status": "fixed-scoped; camera math and actual TCP posture tests pass; installed acceptance pending",
+      "affected": "Castle, solo investigation and LAN hunter camera",
+      "symptom": "Pressing Ctrl abruptly jumps the eye by 0.70m; LAN only renders on the 110ms gameplay timer.",
+      "cause": "Viewport eye height is assigned directly from the binary physical posture.",
+      "action": "Add a shared critically damped camera transition, retain independent physical feet for collision/evidence and moving support, and animate LAN camera-only frames at 33ms without extra STEP/actions. Ignore Ctrl key-repeat in Castle and solo; retain host posture authority and reset on site changes.",
+      "evidence": "development/quality/evidence/crouch-smoothing-2026-11-04/: CrouchCameraTest, expanded real TCP CrouchNetworkTest, low-ceiling/sprint/feet checks, hunter animation gameplay, Castle interaction and sprite floor regressions.",
+      "older_maps": "Shared player camera paths cover investigation sites and Castle; physical posture dimensions and movement rules remain unchanged."
+    },
     {
       "id": "DEV-276",
       "title": "Closing Beckenburg leaves hidden GPU worker and Java process alive",
@@ -31,7 +152,7 @@
       "affected": "Castle relic source-only astrolabe model and all proposed vault/museum display banks using the shared GLB",
       "symptom": "Native relic decoder refused the astrolabe as below-floor bounds; source ring extended down to -0.15 m and ornaments below ground.",
       "cause": "The bronze vertical disc was centered at y=.31 with .46 m radial extent; its decorative ring rotated ticks with Y-axis yaw despite the dial occupying XY face plane. It also lacked a supporting upright.",
-      "action": "Raise dial assembly .16 m, rotate its ticks and needle in face-plane roll, add a bronze load-bearing support and keep the wood base at y\u00e2\u2030\u02c6.005 m. Preserve source-only/never-runtime-approved status and require exact regenerated GLB/grounded source checks.",
+      "action": "Raise dial assembly .16 m, rotate its ticks and needle in face-plane roll, add a bronze load-bearing support and keep the wood base at y\u2248.005 m. Preserve source-only/never-runtime-approved status and require exact regenerated GLB/grounded source checks.",
       "evidence": "Real DEV Room 42128827427 error 'Off-ground/reversed model bounds level_blockout_relic_bronze_astrolabe'; source commit aa33e7b4, generator and geometry regression run 42129321468 PASS, native follow-up pending. Native full run 42130219315 PASS; independent fast gallery 42131185143 PASS after fixes.",
       "older_maps": "Audit other relic mounts and display plinths independently when fitting them into Castle/Church/Mortuary; source-only ground contact is not actual scene fit."
     },
@@ -188,6 +309,28 @@
       "symptom": "Standing Elsbeth boots end at a straight cutoff and look buried.",
       "cause": "The original cutout bounds truncate boots; midpoint projection and linear screen-depth interpolation further clip feet when pitched.",
       "action": "Rebuild all five standing turnarounds with complete boots and transparent sole margins, preserving concept masters; use exact endpoint projection and ray/card depth. SpriteFloorContactTest rejects the old projection with 49 missing opaque pixels and passes corrected rendering."
+    },
+    {
+      "id": "DEV-254",
+      "title": "Safe areas lack a shared animated energy boundary matching ghost exclusion",
+      "status": "fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending",
+      "affected": "Shared van at investigation sites, entire Castle HQ, and settled active protective wards",
+      "symptom": "The investigation van has no recognizable sanctuary haze; the old optional arena cue uses rectangular motes rather than a circular fading dome.",
+      "cause": "Protection and visualization use separate room/rectangle rules; normal investigations do not enable the prior arena-only presentation.",
+      "action": "Add a shared circular van dome and whole-Castle sanctuary, animated blue cloud/wisp material with continuous wall-to-crown fading, settled-ward reuse, swept host exclusion, protected spawning/combat, Twins handling and public ghost-view snapshots.",
+      "evidence": "development/levels/previews/safe-area-barrier/: actual runtime frames and two 12-frame animations. SafeAreaBarrierTest, SafeAreaHazeTest, LanSafeAreaBarrierTest, existing ghost/counter/Twins/van checks and complete TCP round pass. Actual RTX 5070 OpenGL frames pass. Logs: development/quality/evidence/safe-area-barrier-2026-11-03/.",
+      "older_maps": "All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched."
+    },
+    {
+      "id": "DEV-255",
+      "title": "Ward ground seals remain at world Y zero and appear before landing",
+      "status": "fixed-scoped; focused CPU/TCP and actual OpenGL evidence; installer acceptance pending",
+      "affected": "Shared van at investigation sites, entire Castle HQ, and settled active protective wards",
+      "symptom": "A thrown or upstairs ward can show its seal at ground-floor height rather than at its actual settled support.",
+      "cause": "The renderer hardcodes Y .038 and does not distinguish a landed ward from a flying projectile when drawing ground bars.",
+      "action": "Resolve the settled support once for both seal and haze; keep airborne projectiles visible without advertising sanctuary; place upstairs seals at the authoritative floor height.",
+      "evidence": "development/levels/previews/safe-area-barrier/: actual runtime frames and two 12-frame animations. SafeAreaBarrierTest, SafeAreaHazeTest, LanSafeAreaBarrierTest, existing ghost/counter/Twins/van checks and complete TCP round pass. Actual RTX 5070 OpenGL frames pass. Logs: development/quality/evidence/safe-area-barrier-2026-11-03/.",
+      "older_maps": "All built-in/custom-map ghost spawns tested. Visual captures cover the dispatched House and Castle; older-map terrain/lighting and installed full-game acceptance remain individual obligations. House rebuild remains a separate graybox and is not claimed dispatched."
     },
     {
       "id": "DEV-234",
@@ -359,10 +502,10 @@
       "title": "Added slab blocks final stair approach",
       "status": "fixed-scoped",
       "affected": "Blackpine mill stair; introduced during DEV-001 fix",
-      "symptom": "BlackpineGrayboxTest failed at ascent step 113 immediately after adding slab collision.",
-      "cause": "The swept capsule overlaps the final riser before its feet reach landing height.",
-      "action": "Allow only an authored stair-to-slab landing contact within 200mm of the top and at the actual ramp elevation; other slab edges remain opaque/solid.",
-      "evidence": "BlackpineGrayboxTest failed before transition correction and passes afterward; swept route test still reaches all 15 zones over 292910 positions.",
+      "symptom": "Exact-source full manifest at 7951f049 failed at stair ascent step 110 (376 passed, 1 failed), despite prior partial stair fixes.",
+      "cause": "Authored loft floor void ended at Z31.30; at step 110 the capsule centre reaches Z31.10 and its 0.22m radius enters solid slab while feet remain 0.25m beneath the deck and beyond the permitted terminal contact band.",
+      "action": "Extend the real visual and physical loft aperture to Z31.60 (10cm beyond ramp end), retain intact deck beyond it, and preserve narrow stair-owned collision exception and railing. Add direct step-110 and bidirectional proof plus native renderer captures.",
+      "evidence": "Exact-source main c2810734 full-round run 43148970756 PASS: 378/378 advisory regressions, zero skipped/failures, real 120-step bidirectional ascent/descent, solid off-stair floor, renderer proof, packaged TCP and installed Windows native executable. Repeat native screenshots in run 43157419417 targeted PASS; independently retrieved and visually reviewed PNG artifact 13916144218 (stair approach, railings, loft opening, overhead landing; scene is very dark). v0.1.319 tag points exactly to 6ce17c0c and includes the geometry correction; installer run 43157419403 SUCCESS. Physical two-Windows-PC player navigation/headphone review remains open; this is a scoped correction only.",
       "older_maps": "Every structural-depth retrofit must recheck both stair directions and landing transitions."
     },
     {
@@ -878,7 +1021,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00c3\u201a\u00c2\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -1206,7 +1349,7 @@
       "title": "Reshaped bank left old crest dressing unsupported",
       "status": "fixed-native-rigid-crest-refit",
       "affected": "Camp Hollow Creek bank/crest refinement",
-      "symptom": "Actual original log bearings sit53\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u20ac\u015363mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
+      "symptom": "Actual original log bearings sit53\u00e2\u20ac\u201c63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
       "cause": "Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.",
       "action": "Rigidly refit all28 complete logs and their branches using actual end-bearing vertices, and translate24 complete rooted shrub assemblies. Independent source-coordinate checks show no stretching/disconnected branches; actual both-end bearings now sit40mm into soil.",
       "evidence": "quality/evidence/DEV-084-actual-crest-bearing-before-after.json; verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json",
@@ -1348,7 +1491,7 @@
       "id": "DEV-097",
       "title": "Native exterior zones treated as indoor by numeric room ID",
       "status": "fixed-scoped",
-      "affected": "Hollow Creek outdoor zones 0\u00e2\u20ac\u201c11",
+      "affected": "Hollow Creek outdoor zones 0\u201311",
       "symptom": "Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.",
       "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
       "action": "Use actual Room.outside/native roof queries; source shelter geometry remains authoritative.",
@@ -1451,7 +1594,7 @@
       "symptom": "A review-camera probe found traversable native creek floor at (49,23), feet about -2.64m, below the -1.95m water surface.",
       "cause": "The edge blockers constrain crossings, but terrain support alone still allowed a direct underwater spawn query.",
       "action": "Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.",
-      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47\u00e2\u20ac\u201c55k water pixels per frame instead of3\u00e2\u20ac\u201c6k.",
+      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47\u201355k water pixels per frame instead of3\u20136k.",
       "older_maps": "Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map."
     },
     {
@@ -1649,7 +1792,7 @@
       "symptom": "Van metal textures show banding",
       "cause": "Generated IRON tile darkened every eighth X pixel by17levels; repeated UVs stamp grooves across broad painted panels.",
       "action": "Replace forced directional grooves with periodic 2D weathering, restrained grain and sparse pits. Preserve all15other tiles, atlas layout, UVs, source geometry, lighting and exposure. Roof/interpolation and native model metal families remain separate audits.",
-      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652\u00e2\u2020\u20190.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
+      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652\u21920.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
       "older_maps": "Procedural IRON users receive this tile correction; original GLB textures, roof shading bands, all-map in-room visual acceptance and hardware frame timing remain unaccepted."
     },
     {
@@ -1844,7 +1987,7 @@
       "title": "Rebuilt Castle bypassed retained GPU geometry",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "Castle headquarters",
-      "symptom": "Rebuilt Castle measured 35\u00e2\u20ac\u201c73 ms median frames versus 18 ms before the rebuild, allocating 63\u00e2\u20ac\u201c201 MiB per frame at 640x400 on RTX5070.",
+      "symptom": "Rebuilt Castle measured 35\u201373 ms median frames versus 18 ms before the rebuild, allocating 63\u2013201 MiB per frame at 640x400 on RTX5070.",
       "cause": "Castle calls drawGpuFaces with no investigation map, excluding it from the map-gated residency path; 220671 source triangles were reprocessed each frame.",
       "action": "Retain authored Castle topology, state-keyed fixture/door assemblies, conservative spatial chunks and explicitly revisioned GPU buffers.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -1855,7 +1998,7 @@
       "title": "PSX framebuffer quantization repeated costly floating-point rounding",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "All rendered maps and Castle",
-      "symptom": "JFR identified PSX finishFrame as a major CPU cost, 6\u00e2\u20ac\u201c13 ms per frame in the baseline.",
+      "symptom": "JFR identified PSX finishFrame as a major CPU cost, 6\u201313 ms per frame in the baseline.",
       "cause": "Six floating-point rounding operations per pixel repeated an invariant 256-channel/16-phase transform.",
       "action": "Use precomputed channel lookup tables with exhaustive numerical and full-image pixel parity.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -1877,7 +2020,7 @@
       "title": "Cosmetic light flicker invalidated retained shadow work",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "Castle and shared stationary fixture lighting",
-      "symptom": "First residency candidate produced 300\u00e2\u20ac\u201c400 ms flicker stalls; retaining geometry alone was insufficient.",
+      "symptom": "First residency candidate produced 300\u2013400 ms flicker stalls; retaining geometry alone was insufficient.",
       "cause": "Brightness revisions repeated tessellation, ray visibility and source attenuation; bounded global shadow caches thrashed.",
       "action": "Separate immutable receiver attenuation/occlusion probes from live brightness factors; retain regional revisions and invalidate on actual occluder changes.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -1991,7 +2134,7 @@
       "cause": "Lighting tessellation depended on camera distance even for retained static resources; movement across bands rebuilt vertices/probes.",
       "action": "Prepare fixed full close-range lighting topology for resident interior chunks; preserve exterior/native rules, original normals and UVs, and dynamic reference paths.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. Translation identity/revision contract passes. Staged 33-pose CPU p95 improved about 268ms to 40ms; completed-frame cold/waypoint p95 remains 76ms.",
-      "older_maps": "Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A\u00e2\u20ac\u201cG acceptance are finished."
+      "older_maps": "Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A\u2013G acceptance are finished."
     },
     {
       "id": "DEV-161",
@@ -2067,7 +2210,7 @@
       "symptom": "Owner flags suspected misaligned exterior textures and severe graphical defects across imported and 3D-authored asset families; supplied list has 26 distinct numeric asset IDs and an additional screenshot.",
       "cause": "Imported source glTF atlas V-orientation mismatches, six authored bedroll seam UV mistakes, clipped Hunter hair/boots from board segmentation, blue Twin side-head matte defect, and detached source alpha strips in Possessive/Twins packaged ghost atlases. Corrected with original source artwork/materials only.",
       "action": "Targeted corrective work complete for all 26 original flags. Original textures/meshes preserved except approved six bedroll UV restorations; source-aligned imported 3D V sampling, actor alpha segmentation and indexed ghost strip removals shipped. Continue independent review of map placement/collision, detailed texture aesthetic quality, character motions and the other 85 non-targeted diagnostic review flags. Do not treat completion of these specific repairs as acceptance of unrelated defects; visual checks remain non-release-blocking.",
-      "evidence": "Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180\u00c2\u00b0, only 642 pixels changed each at 90/270\u00c2\u00b0 inside x274-282 y206-321 around removed strand; both figures intact.",
+      "evidence": "Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180\u00b0, only 642 pixels changed each at 90/270\u00b0 inside x274-282 y206-321 around removed strand; both figures intact.",
       "older_maps": "Audit any level using these assets after mapping; House, Castle, Farmhouse, School and every shared fixture use require independent placement/orientation and material captures. Visual defects are diagnostic and not release blockers."
     },
     {
@@ -3699,6 +3842,50 @@
       "older_maps": "No source/live-screen runtime failure inferred from the rejected test fixture."
     },
     {
+      "id": "DEV-345",
+      "title": "House CLI recovery reads corrupt primary architecture before restoring valid backup",
+      "status": "SCOPED CORRECTION PASS; actual failing CLI script and expanded backup matrix pass locally; corrected-source native CI pending",
+      "affected": "PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption",
+      "symptom": "Windows native migration/GUI checks pass, but corrupt-start CLI recovery fails because LevelPlans.buildSource selects architecture by decoding the corrupt primary before the previous document is restored.",
+      "cause": "New source selection preceded existing primary-corruption recovery.",
+      "action": "Use a fixed legacy parse fallback for House bootstrap and select/validate architectural authority from the backup being restored. Preserve previous identity/future metadata checks and validate required rebuilt attachments before replacement. Added actual versionless/rebuilt byte-exact bootstrap plus foreign/future/detached-service refusal tests. Rerun the exact previously failing CLI script.",
+      "evidence": "development/levels/rebuild/verification/house-native-recovery-2026-11-07/; native-42424140546-failed.log; LevelAuthoringRecoveryTest; actual verify_editor_agent_cli.py PASS",
+      "older_maps": "Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps."
+    },
+    {
+      "id": "DEV-350",
+      "title": "Live-clock gait acceptance skips stride under cold render delays",
+      "status": "SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending",
+      "affected": "LanHunterAnimationGameplayTest and parent recovery acceptance",
+      "symptom": "Full42426485514 reports364/1/0/365; cleric renders IDLE/WALK_A but no WALK_B.",
+      "cause": "Host advances during seconds-long renderer/capture work; tracker intentionally resets gait after missing a second of observations.",
+      "action": "Quiesce scheduler, invoke every actual host tick and await normal network body/posture batches. Retain all original three-role movement/idle/Ctrl/reset/departure assertions and deliberately delay capture1.1seconds. Added stale-gap/reset/A-B recovery unit controls.",
+      "evidence": "development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; full-42426485514.log; hunter-gait-recovery-gameplay.log; hunter-gait-recovery-unit.log",
+      "older_maps": "No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged."
+    },
+    {
+      "id": "DEV-351",
+      "title": "Gait fixture mistakes invalid zero-vector STEP for a stop command",
+      "status": "SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending",
+      "affected": "LanHunterAnimationGameplayTest and parent recovery acceptance",
+      "symptom": "Controlled-clock fixture waits forever for a posture update after STEP(0,0).",
+      "cause": "Motion vectors must be nonzero; the old live-clock test accidentally relied on unrelated periodic snapshots after rejection.",
+      "action": "Stop sending movement, advance real ticks and await an actual stationary world snapshot; do not relax motion validation.",
+      "evidence": "development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-zero-step-fixture.log; hunter-gait-recovery-gameplay.log",
+      "older_maps": "No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged."
+    },
+    {
+      "id": "DEV-352",
+      "title": "Controlled gait fixture reads STATE before completed body snapshot",
+      "status": "SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending",
+      "affected": "LanHunterAnimationGameplayTest and parent recovery acceptance",
+      "symptom": "First controlled-clock stationary retry still renders an older moving body.",
+      "cause": "Host periodic STATE precedes its world body/posture batch.",
+      "action": "Wait through the actual final hunter posture row of that tick before rendering. No forged body or panel clock.",
+      "evidence": "development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-state-before-body-fixture.log; hunter-gait-recovery-gameplay.log",
+      "older_maps": "No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged."
+    },
+    {
       "id": "DEV-344",
       "title": "House authored train encounter has no runtime implementation",
       "status": "CORE/SOLO/REAL4TCP PASS LOCALLY; remote encounter and subjective audio/whole-location acceptance pending",
@@ -3708,17 +3895,6 @@
       "action": "Add an original once-per-round supported wooden-train turn while room is empty and investigators lack full-object sight. Reuse real loose-state replication and source support, add original ambient audio, protect possession/death/disconnect/timeout and evidence negatives. Protocol3 is a separate explicit compatibility checkpoint.",
       "evidence": "HouseEncounterTest; HouseEncounterSessionTest; HouseEncounterNetworkTest; actual before/after captures and original windup WAV; house-encounter-2026-11-07 proof directory",
       "older_maps": "Each location needs its own authored encounter, predicates, host/privacy/evidence/reset and actual visual/audio review."
-    },
-    {
-      "id": "DEV-345",
-      "title": "House CLI recovery reads corrupt primary architecture before restoring valid backup",
-      "status": "CORRECTED SOURCE NATIVE CI PASS 42426323930 at c93d141d; full365 run42426485514 still observed in progress",
-      "affected": "PR82 native42424140546; explicit editor-agent --recover bootstrap after primary corruption",
-      "symptom": "Windows native migration/GUI checks pass, but corrupt-start CLI recovery fails because LevelPlans.buildSource selects architecture by decoding the corrupt primary before the previous document is restored.",
-      "cause": "New source selection preceded existing primary-corruption recovery.",
-      "action": "Use a fixed legacy parse fallback for House bootstrap and select/validate architectural authority from the backup being restored. Preserve previous identity/future metadata checks and validate required rebuilt attachments before replacement. Added actual versionless/rebuilt byte-exact bootstrap plus foreign/future/detached-service refusal tests. Rerun the exact previously failing CLI script.",
-      "evidence": "development/levels/rebuild/verification/house-native-recovery-2026-11-07/; native-42424140546-failed.log; LevelAuthoringRecoveryTest; actual verify_editor_agent_cli.py PASS; corrected native-42426323930.log actual complete native/CLI PASS",
-      "older_maps": "Audit pre-recovery source/version selection independently for every other native adapter. This correction does not accept unaudited maps."
     },
     {
       "id": "DEV-346",
@@ -3765,40 +3941,7 @@
       "older_maps": "No older-map runtime defect or acceptance inferred from this fixture correction."
     },
     {
-      "id": "DEV-350",
-      "title": "Live-clock gait acceptance skips stride under cold render delays",
-      "status": "SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending",
-      "affected": "LanHunterAnimationGameplayTest and parent recovery acceptance",
-      "symptom": "Full42426485514 reports364/1/0/365; cleric renders IDLE/WALK_A but no WALK_B.",
-      "cause": "Host advances during seconds-long renderer/capture work; tracker intentionally resets gait after missing a second of observations.",
-      "action": "Quiesce scheduler, invoke every actual host tick and await normal network body/posture batches. Retain all original three-role movement/idle/Ctrl/reset/departure assertions and deliberately delay capture1.1seconds. Added stale-gap/reset/A-B recovery unit controls.",
-      "evidence": "development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; full-42426485514.log; hunter-gait-recovery-gameplay.log; hunter-gait-recovery-unit.log",
-      "older_maps": "No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged."
-    },
-    {
-      "id": "DEV-351",
-      "title": "Gait fixture mistakes invalid zero-vector STEP for a stop command",
-      "status": "SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending",
-      "affected": "LanHunterAnimationGameplayTest and parent recovery acceptance",
-      "symptom": "Controlled-clock fixture waits forever for a posture update after STEP(0,0).",
-      "cause": "Motion vectors must be nonzero; the old live-clock test accidentally relied on unrelated periodic snapshots after rejection.",
-      "action": "Stop sending movement, advance real ticks and await an actual stationary world snapshot; do not relax motion validation.",
-      "evidence": "development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-zero-step-fixture.log; hunter-gait-recovery-gameplay.log",
-      "older_maps": "No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged."
-    },
-    {
-      "id": "DEV-352",
-      "title": "Controlled gait fixture reads STATE before completed body snapshot",
-      "status": "SCOPED FIXTURE CORRECTION PASS LOCALLY; new remote full365 pending",
-      "affected": "LanHunterAnimationGameplayTest and parent recovery acceptance",
-      "symptom": "First controlled-clock stationary retry still renders an older moving body.",
-      "cause": "Host periodic STATE precedes its world body/posture batch.",
-      "action": "Wait through the actual final hunter posture row of that tick before rendering. No forged body or panel clock.",
-      "evidence": "development/levels/rebuild/verification/hunter-gait-recovery-2026-11-07/; hunter-gait-rejected-state-before-body-fixture.log; hunter-gait-recovery-gameplay.log",
-      "older_maps": "No production gait, other-map art, GPU gait or physical FPS acceptance inferred. Existing stale-observation reset remains unchanged."
-    },
-    {
-      "id": "DEV-353",
+      "id": "DEV-356",
       "title": "Fresh House promotion exposes editor fixtures that mutate the first attached assembly",
       "status": "SCOPED FIXTURE CORRECTION PASS; seven focused checks and actual256MB GUI/CLI PASS; remote candidate acceptance pending",
       "affected": "Fresh-default candidate authoring identity/recovery/session/service and native CLI/GUI fixtures",
@@ -3809,7 +3952,7 @@
       "older_maps": "No older-map authoring, whole-location or hardware acceptance inferred; audit explicit architecture/attachment fixtures individually."
     },
     {
-      "id": "DEV-354",
+      "id": "DEV-357",
       "title": "Remaining native rough shells omit enclosed ceilings and reserve only top-end stair holes",
       "status": "SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open",
       "affected": "Remaining25structural candidates and shared rough/native export workflow",
@@ -3820,7 +3963,7 @@
       "older_maps": "Castle/House/Blackpine/Hollow Creek are retained and individually unaudited for this new batch; never infer runtime or older-map fixes from native structure checks."
     },
     {
-      "id": "DEV-355",
+      "id": "DEV-358",
       "title": "Planning text and diagram stand-ins enter structural GLB exports",
       "status": "SCOPED NATIVE BATCH CHECKPOINT; actual runtime/location acceptance remains open",
       "affected": "Remaining25structural candidates and shared rough/native export workflow",

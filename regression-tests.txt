@@ -25,6 +25,9 @@ CastleLightingPlacementRepairTest
 CastleSwitchMountTest
 CastleHomeInteractionTest
 CampaignBoardPanelTest
+CountyCampaignMapPanelTest
+CountyCampaignMapNavigationTest
+CastleCountyBoardTest
 MissionBoardIntegrationTest
 CampaignCareerTest
 CampaignProgressionAndStoreTest
@@ -89,6 +92,9 @@ LanGhostIdentityTest
 LanRiteNetworkTest
 LanGhostPursuitTest
 LanGhostHearingTest
+GhostHearingFadeTest
+GhostSoundActivityTest
+GhostSoundRipplesTest
 LanGhostHearingIntegrationTest
 LanGhostTakeoverIntegrationTest
 LanCaseDepartureTest
@@ -277,6 +283,7 @@ CrouchAndOutdoorHidingTest
 CrouchNetworkTest
 
 BlackpineGrayboxTest
+BlackpineStairVisualTest
 MergedMaterialMetadataTest
 BlackpineLightingTest
 BlackpineDeckDepthTest
@@ -365,9 +372,16 @@ WallLampMountPlateTest
 CastleMuseumConstructionTest
 CastleTesterBedTest
 CastleFireplaceTest
+
 CastleResidentAnimationTest
 EntityFootShadowTest
 SpriteFloorContactTest
+CrouchCameraTest
+LocalInvestigationTest
+PlayerJumpTest
+PlayerJumpNetworkTest
+HunterReactionSpritesTest
+HunterReactionsNetworkTest
 GroundedSpriteFeetTest
 CastleTapestryTest
 CastleHeritageSurfacesTest

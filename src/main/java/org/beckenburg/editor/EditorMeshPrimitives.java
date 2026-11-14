@@ -18,7 +18,7 @@ public final class EditorMeshPrimitives {
     private EditorMeshPrimitives(){}
     private static EditorMeshPipeline.Vertex v(double x,double y,double z,double u,double v){return new EditorMeshPipeline.Vertex(x==0?0:x,y==0?0:y,z==0?0:z,u,v);}
     private static void tri(List<EditorMeshPipeline.Triangle> out,String part,EditorMeshPipeline.Vertex a,EditorMeshPipeline.Vertex b,EditorMeshPipeline.Vertex c){out.add(new EditorMeshPipeline.Triangle(part,a,b,c));}
-    private static void quad(List<EditorMeshPipeline.Triangle> out,String part,EditorMeshPipeline.Vertex a,EditorMeshPipeline.Vertex b,EditorMeshPipeline.Vertex c,EditorMeshPipeline.Vertex d){tri(out,part,a,b,c);tri(out,part,a,c,d);}
+    private static void quad(List<EditorMeshPipeline.Triangle> out,List<EditorMeshQuad> quads,String part,EditorMeshPipeline.Vertex a,EditorMeshPipeline.Vertex b,EditorMeshPipeline.Vertex c,EditorMeshPipeline.Vertex d){quads.add(new EditorMeshQuad(out.size(),out.size()+1));tri(out,part,a,b,c);tri(out,part,a,c,d);}
     private static double angle(int i,int count){return (i%count)*2*Math.PI/count;}
     private static EditorMeshPipeline.Vertex ring(Parameters p,int i,int j,boolean sphere){
         double a=angle(i,p.segments()),t=(double)j/p.rings();
@@ -32,6 +32,7 @@ public final class EditorMeshPrimitives {
     }
     public static EditorMeshPipeline.Mesh preview(Parameters p){
         Objects.requireNonNull(p);String part=p.kind().name().toLowerCase(Locale.ROOT);var out=new ArrayList<EditorMeshPipeline.Triangle>();
+        var quads=new ArrayList<EditorMeshQuad>();
         int n=p.rings(),s=p.segments();
         switch(p.kind()){
             case BOX,PLANE->{
@@ -43,15 +44,15 @@ public final class EditorMeshPrimitives {
                     for(int k=0;k<4;k++){double[] xyz=new double[3];xyz[f[0]]=p.kind()==Kind.PLANE?0:f[1]*sizes[f[0]]*.5;
                         double u=(double)steps[k][0]/n,w=(double)steps[k][1]/n;xyz[f[2]]=(u-.5)*sizes[f[2]];xyz[f[3]]=(w-.5)*sizes[f[3]];
                         corners[k]=v(xyz[0],xyz[1],xyz[2],u,w);}
-                    quad(out,part,corners[0],corners[1],corners[2],corners[3]);
+                    quad(out,quads,part,corners[0],corners[1],corners[2],corners[3]);
                 }
             }
             case CYLINDER,SPHERE->{
                 boolean sphere=p.kind()==Kind.SPHERE;
                 for(int j=0;j<n;j++)for(int i=0;i<s;i++){
                     var a=ring(p,i,j,sphere);var b=ring(p,i+1,j,sphere);var c=ring(p,i+1,j+1,sphere);var d=ring(p,i,j+1,sphere);
-                    if(sphere){if(j>0)tri(out,part,a,b,c);if(j<n-1)tri(out,part,a,c,d);}
-                    else quad(out,part,a,d,c,b);
+                    if(sphere){if(j>0 && j<n-1)quad(out,quads,part,a,b,c,d);else if(j>0)tri(out,part,a,b,c);else tri(out,part,a,c,d);}
+                    else quad(out,quads,part,a,d,c,b);
                 }
                 if(!sphere)for(int i=0;i<s;i++)for(int j:new int[]{0,n}){
                     var a=ring(p,i,j,false);var b=ring(p,i+1,j,false);var center=v(0,(j==0?-.5:.5)*p.height(),0,.5,.5);
@@ -59,8 +60,15 @@ public final class EditorMeshPrimitives {
                     if(j==0)tri(out,part,center,a,b);else tri(out,part,center,b,a);
                 }
             }
-            case TORUS->{for(int j=0;j<n;j++)for(int i=0;i<s;i++)quad(out,part,torus(p,i,j),torus(p,i,j+1),torus(p,i+1,j+1),torus(p,i+1,j));}
+            case TORUS->{for(int j=0;j<n;j++)for(int i=0;i<s;i++)quad(out,quads,part,torus(p,i,j),torus(p,i,j+1),torus(p,i+1,j+1),torus(p,i+1,j));}
         }
-        return new EditorMeshPipeline.Mesh(part,out,0);
+        if (quads.isEmpty()) return new EditorMeshPipeline.Mesh(part,out,0);
+        var positions=new HashMap<EditorMeshTopology.Vertex,Long>();
+        var ids=new ArrayList<Long>(out.size()*3);
+        for(var triangle:out)for(var v:List.of(triangle.a(),triangle.b(),triangle.c())) {
+            var position=new EditorMeshTopology.Vertex(part,v.x(),v.y(),v.z());
+            ids.add(positions.computeIfAbsent(position,k->(long)positions.size()));
+        }
+        return new EditorMeshPipeline.Mesh(part,out,0,ids,List.of(),null,List.of(),Map.of(),quads);
     }
 }

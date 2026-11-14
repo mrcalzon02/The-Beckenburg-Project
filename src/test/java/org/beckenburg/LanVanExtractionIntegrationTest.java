@@ -108,6 +108,32 @@ public final class LanVanExtractionIntegrationTest {
             }
         }
     }
+    private static void deskDeparture()throws Exception {
+        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(1));
+                var leader=new Wire(host.port(),"DeskHunter")){
+            leader.client.ready();leader.client.start();leader.expect("INFO|mission started");
+            leader.client.view3D();leader.expect("ACCEPT|VIEW3D");
+            var mapField=LanHost.class.getDeclaredField("map");mapField.setAccessible(true);
+            var worldField=LanHost.class.getDeclaredField("world");worldField.setAccessible(true);
+            var map=(HouseMap)mapField.get(host);var world=(LanWorld)worldField.get(host);
+            double yaw=map.van().placement().yaw();
+            // Walk from the real spawn into the front desk aisle over TCP.
+            for(int n=0;n<7;n++){
+                Thread.sleep(120);
+                leader.client.step((int)Math.round(-100*Math.sin(yaw)),(int)Math.round(100*Math.cos(yaw)));
+                leader.expect("ACCEPT|STEP");
+            }
+            var body=world.body(0);
+            check(map.van().local(body.x(),body.z()).z()>.9,"hunter reached front desk");
+            var observer=VanCargoDoorTest.aimButton(map,body.x(),body.y(),body.z());
+            var target=InteractionFocus.pick(map,observer,List.of());
+            leader.client.interact(target,observer.yaw(),observer.pitch());
+            leader.expect("ACCEPT|INTERACT|Close doors and end mission");
+            leader.expect("RESULT|RETREATED");
+            check(map.van().cargoDoorClosed()&&!host.running(),"desk interaction closes doors and settles mission");
+            check(leader.count("RESULT|RETREATED")==1,"desk departure settles once");
+        }
+    }
 
     /**
      * Four real TCP seats: H2 and H3 remain outside while H1 seals the van and
@@ -195,6 +221,7 @@ public final class LanVanExtractionIntegrationTest {
     }
 
     public static void main(String[] args)throws Exception {
+        deskDeparture();
         for(boolean roomMode:new boolean[]{false,true}){
             run(1,false,false,roomMode);
             run(3,false,false,roomMode);

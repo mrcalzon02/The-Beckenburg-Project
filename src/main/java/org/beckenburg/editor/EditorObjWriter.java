@@ -26,6 +26,15 @@ public final class EditorObjWriter {
         var writer=new BufferedWriter(new OutputStreamWriter(output,StandardCharsets.UTF_8));
         writer.write("# Beckenburg native topology copy: Y up, X/Z horizontal; UVs unmodified\n");
         if(library!=null)writer.write("mtllib "+library+"\n");
+        var plainQuads = new HashSet<Integer>();
+        if (!state.quads().isEmpty()) {
+            var ordered = EditorMeshQuad.ordinals(state.quads(),state.faces().stream().map(EditorTopologyProject.Face::id).toList());
+            for (var pair : ordered) {
+                int first = Math.toIntExact(pair.first()), second = Math.toIntExact(pair.second());
+                if (second == first+1 && representableQuad(state.faces().get(first),state.faces().get(second),points)) plainQuads.add(first);
+                else writer.write("# beck_authored_quad_v1 "+first+" "+second+"\n");
+            }
+        }
         for(var entry:new TreeMap<>(state.frames()).entrySet()){writer.write("# beck_native_frame_v1 "+entry.getKey());for(double value:entry.getValue().values())writer.write(" "+Double.toString(value));writer.write("\n");}
         for(var v:state.vertices())writer.write("v "+v.x()+" "+v.y()+" "+v.z()+"\n");
         for(var f:state.faces())for(var c:List.of(f.a(),f.b(),f.c()))writer.write("vt "+c.u()+" "+c.v()+"\n");
@@ -36,11 +45,26 @@ public final class EditorObjWriter {
             }
         }
         String part=null,material=null;int face=0;
-        for(var f:state.faces()){
+        while(face<state.faces().size()){
+            var f=state.faces().get(face);
             if(!f.part().equals(part)){part=f.part();writer.write("o "+part+"\n");}
             if(library!=null&&!f.material().equals(material)){material=f.material();String alias=aliases.get(material);if(alias==null)throw new IOException("Missing material export alias");writer.write("usemtl "+alias+"\n");}
-            writer.write("f");int corner=0;for(var c:List.of(f.a(),f.b(),f.c())){writer.write(" "+ids.get(c.vertex())+"/"+(face*3+corner+1)+"/"+(face*3+corner+1));corner++;}writer.write("\n");face++;
+            writer.write("f");int corner=0;for(var c:List.of(f.a(),f.b(),f.c())){writer.write(" "+ids.get(c.vertex())+"/"+(face*3+corner+1)+"/"+(face*3+corner+1));corner++;}
+            if(plainQuads.contains(face)){
+                int index=face*3+6;
+                writer.write(" "+ids.get(state.faces().get(face+1).c().vertex())+"/"+index+"/"+index);
+                face++;
+            }
+            writer.write("\n");face++;
         }writer.flush();
+    }
+    private static boolean representableQuad(EditorTopologyProject.Face a, EditorTopologyProject.Face b,
+                                              Map<Long,EditorTopologyProject.Vertex> points)throws IOException {
+        if (!a.material().equals(b.material()) || !a.a().equals(b.a()) || !a.c().equals(b.b())) return false;
+        if (a.a().normal()!=null && a.c().normal()!=null) return true;
+        var first = new EditorMeshPipeline.Triangle(a.part(),vertex(a.a(),points),vertex(a.b(),points),vertex(a.c(),points));
+        var second = new EditorMeshPipeline.Triangle(b.part(),vertex(b.a(),points),vertex(b.b(),points),vertex(b.c(),points));
+        return faceNormal(first).equals(faceNormal(second));
     }
     private static EditorMeshPipeline.Normal faceNormal(EditorMeshPipeline.Triangle t)throws IOException{try{return EditorMeshNormals.face(t);}catch(IllegalArgumentException invalid){throw new IOException("OBJ export needs finite nondegenerate face normals",invalid);}}
     private static EditorMeshPipeline.Vertex vertex(EditorTopologyProject.Corner c,Map<Long,EditorTopologyProject.Vertex> points){var p=points.get(c.vertex());return new EditorMeshPipeline.Vertex(p.x(),p.y(),p.z(),c.u(),c.v(),c.normal());}
@@ -50,6 +74,7 @@ public final class EditorObjWriter {
     }
     static void validate(EditorTopologyProject.State state,EditorMeshPipeline.Mesh parsed)throws IOException{
         var ids=indices(state);
+        if(!parsed.quads().equals(EditorMeshQuad.ordinals(state.quads(),state.faces().stream().map(EditorTopologyProject.Face::id).toList())))throw new IOException("OBJ readback lost authored quad boundaries");
         if(!parsed.frames().equals(state.frames()))throw new IOException("OBJ readback local frames differ");
         if(!parsed.materials().equals(state.materials()))throw new IOException("OBJ readback material definitions differ");
         if(parsed.triangles().size()!=state.faces().size())throw new IOException("OBJ readback face count differs");

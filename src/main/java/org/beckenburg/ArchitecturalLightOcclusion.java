@@ -31,8 +31,24 @@ public final class ArchitecturalLightOcclusion {
         return value;
     }
     public static boolean architecturalClear(HouseMap map,double ax,double ay,double az,double bx,double by,double bz){
+        // Conservative segment/room broadphase. Every possible deck hit lies
+        // within the room's XZ rectangle; every wall hit lies within its
+        // WALL_HALF_THICKNESS-expanded bounds and vertical room extent.
+        // If a segment cannot overlap that volume, none of the original
+        // ordered narrow-phase tests can reject it. Never approximate a
+        // doorway, stair void, light leak or visibility result here.
+        double minX=Math.min(ax,bx),maxX=Math.max(ax,bx);
+        double minY=Math.min(ay,by),maxY=Math.max(ay,by);
+        double minZ=Math.min(az,bz),maxZ=Math.max(az,bz);
         for(var r:map.level().rooms())if(!r.outside()){
-            for(double deck:new double[]{r.y(),r.y()+r.height()-.04}){
+            if(maxX<r.x0()-HALF-1e-7||minX>r.x1()+HALF+1e-7
+                    ||maxZ<r.z0()-HALF-1e-7||minZ>r.z1()+HALF+1e-7
+                    ||maxY<r.y()-1e-7||minY>r.y()+r.height()+1e-7)continue;
+            // This is the cold shadow-ray hot path: millions of rays can
+            // visit every room. Iterate the same two planes without creating
+            // a new double[2] for each room on each ray.
+            for(int deckIndex=0;deckIndex<2;deckIndex++){
+                double deck=deckIndex==0?r.y():r.y()+r.height()-.04;
                 double t=at(ay,by,deck);
                 if(hit(t)){
                     double x=ax+(bx-ax)*t,z=az+(bz-az)*t;
@@ -40,9 +56,14 @@ public final class ArchitecturalLightOcclusion {
                     if(x>=r.x0()-1e-7&&x<=r.x1()+1e-7&&z>=r.z0()-1e-7&&z<=r.z1()+1e-7&&!map.level().floorVoid(x,voidY,z))return false;
                 }
             }
-            for(boolean alongX:new boolean[]{true,false}){
+            // Preserve the exact axis / low-high / inner-outer order of the
+            // old loops, but allocate no temporary boolean[] or double[].
+            for(int axis=0;axis<2;axis++){
+                boolean alongX=axis==0;
                 double low=alongX?r.z0():r.x0(),high=alongX?r.z1():r.x1();
-                for(double centre:new double[]{low,high})for(double side:new double[]{-HALF,HALF}){
+                for(int edge=0;edge<2;edge++)for(int sideIndex=0;sideIndex<2;sideIndex++){
+                    double centre=edge==0?low:high;
+                    double side=sideIndex==0?-HALF:HALF;
                     double t=at(alongX?az:ax,alongX?bz:bx,centre+side);
                     if(!hit(t))continue;
                     double y=ay+(by-ay)*t,tangent=alongX?ax+(bx-ax)*t:az+(bz-az)*t;
@@ -55,7 +76,7 @@ public final class ArchitecturalLightOcclusion {
         return true;
     }
     private static boolean aperture(HouseMap map,int room,boolean alongX,double plane,double tangent,double y){
-        for(var p:map.level().portals())if((p.a()==room||p.b()==room)&&p.alongX()==alongX&&!p.kind().equals("stair")&&Math.abs((alongX?p.z():p.x())-plane)<.01){
+        for(var p:map.lightPortals(room))if(p.alongX()==alongX&&!p.kind().equals("stair")&&Math.abs((alongX?p.z():p.x())-plane)<.01){
             if(Math.abs(tangent-(alongX?p.x():p.z()))>=p.width()/2-.001)continue;
             if(p.kind().equals("window")){if(y>p.y()+1.0&&y<p.y()+2.35)return true;}
             else if((!p.door()||map.doorOpen(p.id()))&&y>=p.y()-.10&&y<=p.y()+2.45)return true;

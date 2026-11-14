@@ -125,10 +125,13 @@ public final class EditorDocumentStore {
      * controls backup eligibility; it is deliberately separate from this guard.
      */
     public static void saveIfUnchanged(Path destination,Writer writer,Validator format,Validator prepared,String expectedSha256)throws IOException{
+        saveIfUnchanged(destination,writer,format,prepared,expectedSha256,NO_OBSERVER);
+    }
+    static void saveIfUnchanged(Path destination,Writer writer,Validator format,Validator prepared,String expectedSha256,Observer observer)throws IOException{
         Path target=normalize(destination);Objects.requireNonNull(writer);Objects.requireNonNull(format);Objects.requireNonNull(prepared);
         if(expectedSha256!=null&&!expectedSha256.matches("[0-9a-f]{64}"))throw new IllegalArgumentException("Invalid document fingerprint");
         Files.createDirectories(target.getParent());
-        locked(target,()->{recoverLocked(target,format);cleanupStaging(target);saveLocked(target,writer,format,prepared,NO_OBSERVER,expectedSha256,true);return null;});
+        locked(target,()->{recoverLocked(target,format);cleanupStaging(target);saveLocked(target,writer,format,prepared,observer,expectedSha256,true);return null;});
     }
     private static void saveLocked(Path target,Writer writer,Validator format,Validator prepared,Observer observer)throws IOException{
         saveLocked(target,writer,format,prepared,observer,null,false);

@@ -41,6 +41,10 @@ for path in sorted(set(paths)):
     elif '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
     elif '/structure-batch/' in path:kind='Native structural blocking review; runtime integration pending'
     elif '/rebuild/structures/' in path:kind='Native planning-scene preview' if p.name=='preview.png' else 'Reimported native structure export review'
+    elif '/synthetic-controls/' in path:kind='Synthetic GPU depth control'
+    elif '/runtime-gpu/' in path:kind='Runtime GPU capture'
+    elif '/hunter-reactions-' in path and '/raster/' in path:kind='Synthetic floor control'
+
     elif '/hunter-gait-recovery-software/' in path:kind='Runtime software hunter gait diagnostic'
     elif '/house-fresh-default/' in path:kind='Runtime fresh default House editor and CLI verification'
     elif '/hiding-energy/' in path:kind='Runtime hiding-location energy material'
