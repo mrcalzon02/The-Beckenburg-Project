@@ -6618,6 +6618,20 @@ Evidence and verification: development/levels/rebuild/orthogonal-stair-pass/veri
 
 Older-map obligation: Institutional selected stairs are axis aligned; remaining diagonal outdoor slopes, spiral towers, whole roster terrain/room connectivity and runtime acceptance remain individually open.
 
+### DEV-467 — Stair guard ends obstruct turning landings unless construction reserves the approach
+
+**Status:** INTERMEDIATE COLLISIONS CORRECTED; GUARD RETURNS AND LANDING PERIMETERS OPEN · **Affected:** Wharf WLD06, Research WLD08, Railway WLD12 five rebuilt flights
+
+First fitted guards crossed approach/turn sweeps; short setback still invalidated nine previously valid strict lane samples.
+
+Cause / uncertainty: Full-flight rail bays and side stringers occupied sideways entry/exit clearance at the flight ends.
+
+Fix / next action: Use fitted existing guardrail profiles and seated side stringers on central flight sections, with1.6mend approach reserves. All7vertical routes and29flatlinks remain passing both ways; exact13791pose comparison has0newinvalid. End sections and landing perimeters still need widened landings/returned guard construction; not a completed safety enclosure.
+
+Evidence and verification: development/levels/rebuild/stair-guard-pass/verification/unchanged-lanes.json; native movement reports and captures/stair-guard-batch
+
+Older-map obligation: Audit each older flight/landing for full-width turning clearance; passing individual flights never proves the end-to-end route.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

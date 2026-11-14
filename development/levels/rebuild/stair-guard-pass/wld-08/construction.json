@@ -1,0 +1,407 @@
+{
+  "id": "WLD-08",
+  "status": "FITTED_LIBRARY_GUARDS_AND_STRINGERS_NATIVE_CANDIDATE_RUNTIME_OPEN",
+  "source_glb": "development/levels/rebuild/orthogonal-stair-pass/wld-08/aligned-stairs.glb",
+  "source_glb_sha256": "459c0b73b7b3e4b12fafa37932190080d50c129402e48d60a3c92efbf9b8f649",
+  "source_physics": "development/levels/rebuild/orthogonal-stair-pass/wld-08/aligned-stairs.hcs2",
+  "source_physics_sha256": "9641c68169e382ac9f69de4dce6629de6ec558b086395a51aa227d51c4ea4f0f",
+  "before_layout": "development/levels/rebuild/orthogonal-stair-pass/wld-08/authored-layout.json",
+  "before_layout_sha256": "f52b795b0661867f4f4de7efb526a62605a5c8f1377920a276444f3969348738",
+  "layout": "development/levels/rebuild/orthogonal-stair-pass/wld-08/authored-layout.json",
+  "layout_sha256": "f52b795b0661867f4f4de7efb526a62605a5c8f1377920a276444f3969348738",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {
+      "0": 0
+    },
+    "L18": {
+      "2": 0
+    },
+    "L19": {},
+    "L20": {
+      "0": 0
+    }
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {
+      "0": 0
+    },
+    "L18": {
+      "2": 0
+    },
+    "L19": {},
+    "L20": {
+      "0": 0
+    }
+  },
+  "before_stair_components": [
+    "170:L20 flight0 step1",
+    "171:L20 flight0 step2",
+    "172:L20 flight0 step3",
+    "173:L20 flight0 step4",
+    "174:L20 flight0 step5",
+    "175:L20 flight0 step6",
+    "176:L20 flight0 step7",
+    "177:L20 flight0 step8",
+    "178:L20 flight0 step9",
+    "179:L20 flight0 step10",
+    "180:L20 flight0 step11",
+    "181:L20 flight0 step12",
+    "182:L20 flight0 step13",
+    "183:L20 flight0 step14",
+    "Orthogonal stair WLD-08 L17 step0",
+    "Orthogonal stair WLD-08 L17 step1",
+    "Orthogonal stair WLD-08 L17 step2",
+    "Orthogonal stair WLD-08 L17 step3",
+    "Orthogonal stair WLD-08 L17 step4",
+    "Orthogonal stair WLD-08 L17 step5",
+    "Orthogonal stair WLD-08 L17 step6",
+    "Orthogonal stair WLD-08 L17 step7",
+    "Orthogonal stair WLD-08 L17 step8",
+    "Orthogonal stair WLD-08 L17 step9",
+    "Orthogonal stair WLD-08 L17 step10",
+    "Orthogonal stair WLD-08 L17 step11",
+    "Orthogonal stair WLD-08 L17 step12",
+    "Orthogonal stair WLD-08 L17 step13",
+    "Orthogonal stair WLD-08 L17 step14",
+    "Orthogonal stair WLD-08 L17 step15",
+    "Orthogonal stair WLD-08 L18 step0",
+    "Orthogonal stair WLD-08 L18 step1",
+    "Orthogonal stair WLD-08 L18 step2",
+    "Orthogonal stair WLD-08 L18 step3",
+    "Orthogonal stair WLD-08 L18 step4",
+    "Orthogonal stair WLD-08 L18 step5",
+    "Orthogonal stair WLD-08 L18 step6",
+    "Orthogonal stair WLD-08 L18 step7",
+    "Orthogonal stair WLD-08 L18 step8",
+    "Orthogonal stair WLD-08 L18 step9",
+    "Orthogonal stair WLD-08 L18 step10",
+    "Orthogonal stair WLD-08 L18 step11",
+    "Orthogonal stair WLD-08 L18 step12",
+    "Orthogonal stair WLD-08 L18 step13",
+    "Orthogonal stair WLD-08 L18 step14",
+    "Orthogonal stair WLD-08 L18 step15"
+  ],
+  "stair_components": [
+    "170:L20 flight0 step1",
+    "171:L20 flight0 step2",
+    "172:L20 flight0 step3",
+    "173:L20 flight0 step4",
+    "174:L20 flight0 step5",
+    "175:L20 flight0 step6",
+    "176:L20 flight0 step7",
+    "177:L20 flight0 step8",
+    "178:L20 flight0 step9",
+    "179:L20 flight0 step10",
+    "180:L20 flight0 step11",
+    "181:L20 flight0 step12",
+    "182:L20 flight0 step13",
+    "183:L20 flight0 step14",
+    "Orthogonal stair WLD-08 L17 step0",
+    "Orthogonal stair WLD-08 L17 step1",
+    "Orthogonal stair WLD-08 L17 step2",
+    "Orthogonal stair WLD-08 L17 step3",
+    "Orthogonal stair WLD-08 L17 step4",
+    "Orthogonal stair WLD-08 L17 step5",
+    "Orthogonal stair WLD-08 L17 step6",
+    "Orthogonal stair WLD-08 L17 step7",
+    "Orthogonal stair WLD-08 L17 step8",
+    "Orthogonal stair WLD-08 L17 step9",
+    "Orthogonal stair WLD-08 L17 step10",
+    "Orthogonal stair WLD-08 L17 step11",
+    "Orthogonal stair WLD-08 L17 step12",
+    "Orthogonal stair WLD-08 L17 step13",
+    "Orthogonal stair WLD-08 L17 step14",
+    "Orthogonal stair WLD-08 L17 step15",
+    "Orthogonal stair WLD-08 L18 step0",
+    "Orthogonal stair WLD-08 L18 step1",
+    "Orthogonal stair WLD-08 L18 step2",
+    "Orthogonal stair WLD-08 L18 step3",
+    "Orthogonal stair WLD-08 L18 step4",
+    "Orthogonal stair WLD-08 L18 step5",
+    "Orthogonal stair WLD-08 L18 step6",
+    "Orthogonal stair WLD-08 L18 step7",
+    "Orthogonal stair WLD-08 L18 step8",
+    "Orthogonal stair WLD-08 L18 step9",
+    "Orthogonal stair WLD-08 L18 step10",
+    "Orthogonal stair WLD-08 L18 step11",
+    "Orthogonal stair WLD-08 L18 step12",
+    "Orthogonal stair WLD-08 L18 step13",
+    "Orthogonal stair WLD-08 L18 step14",
+    "Orthogonal stair WLD-08 L18 step15"
+  ],
+  "removed_source_meshes": [
+    "L17 flight0 step1",
+    "L17 flight0 step2",
+    "L17 flight0 step3",
+    "L17 flight0 step4",
+    "L17 flight0 step5",
+    "L17 flight0 step6",
+    "L17 flight0 step7",
+    "L17 flight0 step8",
+    "L17 flight0 step9",
+    "L17 flight0 step10",
+    "L17 flight0 step11",
+    "L17 flight0 step12",
+    "L17 flight0 step13",
+    "L17 flight0 step14",
+    "L18 flight0 step1",
+    "L18 flight0 step2",
+    "L18 flight0 step3",
+    "L18 flight0 step4",
+    "L18 flight0 step5",
+    "L18 flight0 step6",
+    "L18 flight0 step7",
+    "L18 flight0 step8",
+    "L18 flight0 step9",
+    "L18 flight0 step10",
+    "L18 flight0 step11",
+    "L18 flight0 step12",
+    "L18 flight0 step13",
+    "L18 flight0 step14",
+    "Floor tunnel",
+    "Restored floor lab 0 region0",
+    "Restored floor lab 0 region1",
+    "Restored floor dorm 3 region0",
+    "Restored floor dorm 3 region1",
+    "Flat route shell Opened stair shell Wall tunnel W",
+    "Flat route shell Opened stair shell Wall tunnel E"
+  ],
+  "removed_native_parts": [
+    "141:L17 flight0 step1",
+    "142:L17 flight0 step2",
+    "143:L17 flight0 step3",
+    "144:L17 flight0 step4",
+    "145:L17 flight0 step5",
+    "146:L17 flight0 step6",
+    "147:L17 flight0 step7",
+    "148:L17 flight0 step8",
+    "149:L17 flight0 step9",
+    "150:L17 flight0 step10",
+    "151:L17 flight0 step11",
+    "152:L17 flight0 step12",
+    "153:L17 flight0 step13",
+    "154:L17 flight0 step14",
+    "155:L18 flight0 step1",
+    "156:L18 flight0 step2",
+    "157:L18 flight0 step3",
+    "158:L18 flight0 step4",
+    "159:L18 flight0 step5",
+    "160:L18 flight0 step6",
+    "161:L18 flight0 step7",
+    "162:L18 flight0 step8",
+    "163:L18 flight0 step9",
+    "164:L18 flight0 step10",
+    "165:L18 flight0 step11",
+    "166:L18 flight0 step12",
+    "167:L18 flight0 step13",
+    "168:L18 flight0 step14",
+    "79:Floor tunnel",
+    "Restored floor lab 0 region0",
+    "Restored floor lab 0 region1",
+    "Restored floor dorm 3 region0",
+    "Restored floor dorm 3 region1",
+    "Flat route shell Opened stair shell Wall tunnel W",
+    "Flat route shell Opened stair shell Wall tunnel E"
+  ],
+  "new_parts": 46,
+  "new_triangles": 876,
+  "restored_shaft_parts": [
+    "Restored bay WLD-08 lab floor region0",
+    "Restored bay WLD-08 dorm floor region0",
+    "Restored bay WLD-08 tunnel ceiling-cap patch0 region0",
+    "Restored bay WLD-08 tunnel ceiling-cap patch1 region0",
+    "Restored bay WLD-08 tunnel ceiling-cap patch2 region0",
+    "Restored bay WLD-08 tunnel ceiling-cap patch3 region0",
+    "Restored bay WLD-08 tunnel ceiling-cap patch4 region0"
+  ],
+  "shell_changes": [
+    {
+      "source_mesh": "Floor tunnel",
+      "new_mesh": "Bayed shell Floor tunnel",
+      "removed_volume_m3": 0.3686146823370251
+    },
+    {
+      "source_mesh": "Restored floor lab 0 region0",
+      "new_mesh": "Bayed shell Restored floor lab 0 region0",
+      "removed_volume_m3": 0.00903456354896251
+    },
+    {
+      "source_mesh": "Restored floor lab 0 region1",
+      "new_mesh": "Bayed shell Restored floor lab 0 region1",
+      "removed_volume_m3": 1.032427836023431
+    },
+    {
+      "source_mesh": "Restored floor dorm 3 region0",
+      "new_mesh": "Bayed shell Restored floor dorm 3 region0",
+      "removed_volume_m3": 1.0324279556602503
+    },
+    {
+      "source_mesh": "Restored floor dorm 3 region1",
+      "new_mesh": "Bayed shell Restored floor dorm 3 region1",
+      "removed_volume_m3": 0.009034585613440616
+    },
+    {
+      "source_mesh": "Flat route shell Opened stair shell Wall tunnel W",
+      "new_mesh": "Bayed shell Flat route shell Opened stair shell Wall tunnel W",
+      "removed_volume_m3": 0.5656003276115058
+    },
+    {
+      "source_mesh": "Flat route shell Opened stair shell Wall tunnel E",
+      "new_mesh": "Bayed shell Flat route shell Opened stair shell Wall tunnel E",
+      "removed_volume_m3": 0.5656003276115071
+    }
+  ],
+  "design": {
+    "points": {
+      "L17": [
+        [
+          11,
+          0,
+          35
+        ],
+        [
+          22,
+          -2.5,
+          35
+        ],
+        [
+          22,
+          -2.5,
+          31
+        ],
+        [
+          32,
+          -2.5,
+          31
+        ]
+      ],
+      "L18": [
+        [
+          32,
+          -2.5,
+          31
+        ],
+        [
+          42,
+          -2.5,
+          31
+        ],
+        [
+          42,
+          -2.5,
+          35
+        ],
+        [
+          53,
+          0,
+          35
+        ]
+      ]
+    },
+    "build": [
+      "L17",
+      "L18"
+    ],
+    "shared": {},
+    "reason": "Research station: align lab/dorm flights with building axes and join the tunnel through level end landings; remove skewed stair columns below the court.",
+    "preserve_upper_hubs": false
+  },
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 2130556,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      79,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      270,
+      271,
+      273,
+      274,
+      321,
+      322
+    ]
+  },
+  "glb_sha256": "c19d16ce8226b90ac480fca95765d3a1003c1149127aa408bbe2870895c0292a",
+  "physics_sha256": "0fe10b08d0381f861b30ce20c746788085298b1ce81afc38cb855f29259a009e",
+  "generator_sha256": "e834a77051dac69dba57dbd96ca23ee2198a81df81f2f9977f44ea405d798fea",
+  "remaining": "Terrain interfaces, landing perimeter guards/returns, frame/anchor detailing and runtime integration remain open. No terrain-hole change or map unlock.",
+  "guard_flights": [
+    {
+      "link": "L17",
+      "segment": 0,
+      "width": 1.5,
+      "bay_count_per_side": 4,
+      "source_asset": "development/levels/primitive-props-v1/models/level_blockout_guardrail.glb",
+      "source_sha256": "d5a1e9152bdccb6a9c548542aa206b51fd0cdbd646cd3c23ab7e92f4357b327d",
+      "method": "Source rail profile/UV/material copied; shear follows authored flight grade, uprights remain vertical; tread-edge stringers seat post bases. Original library master unchanged."
+    },
+    {
+      "link": "L18",
+      "segment": 2,
+      "width": 1.5,
+      "bay_count_per_side": 4,
+      "source_asset": "development/levels/primitive-props-v1/models/level_blockout_guardrail.glb",
+      "source_sha256": "d5a1e9152bdccb6a9c548542aa206b51fd0cdbd646cd3c23ab7e92f4357b327d",
+      "method": "Source rail profile/UV/material copied; shear follows authored flight grade, uprights remain vertical; tread-edge stringers seat post bases. Original library master unchanged."
+    }
+  ],
+  "new_guard_parts": 20
+}

@@ -1,4 +1,4 @@
-# Full map rebuild — execution continuity
+# Full map rebuild â€” execution continuity
 
 Goal activated 31 October 2026, America/Anchorage: execute the complete staged rebuild across 28 base locations and the mortuary annex. The goal is active; no map is declared rebuilt by this checkpoint.
 
@@ -52,7 +52,7 @@ See `house/terrain-verification.md`. DEV-174 is fixed for this isolated pilot an
 Next: finish the measured rough-plan batch and detailed House facilities/structure/parcel pilot, then propagate its proven construction method. Every basement/cavity must receive its own saved editor opening and physical/optical/render evidence. Remaining mission/LAN/hardware/recovery and all later refinement gates are unchanged.
 
 
-## Dispatch/campaign recovery and publication authorization — 1 November
+## Dispatch/campaign recovery and publication authorization â€” 1 November
 
 The owner explicitly approved full rebuild publication: source changes, generated map/model files, Blender scenes, captures, design data and verification evidence on `map/first-principles-rebuild-plan` in `mrcalzon02/The-Beckenburg-Project`. This resolves the earlier combined-upload approval barrier. Publish accumulated checkpoints through the normal expected-head path and verify remote readback; do not keep treating evidence-only scope as the current authorization.
 
@@ -61,7 +61,7 @@ Reproduced and corrected DEV-175: stale selection/campaign checks assumed only t
 Remote main remains `fba22b2a`; previous installer success and older full-round/advisory failures are unchanged at this read. Issue #6 remains open. Next publish/dispatch exact-source audit/full-round/GPU checks, inspect their actual steps and logs, and continue the measured rough-plan batch.
 
 
-## Publication verified and School measured rough — 1 November
+## Publication verified and School measured rough â€” 1 November
 
 Full publication approval was executed normally: remote rebuild branch readback is `ddcef3bea3923fa8f2245b161095de1aeab82547`, containing the all-map function programs, House native/physics pilot, saved editor terrain opening, captures/evidence and repaired catalog/campaign regressions. Exact-source workflows were dispatched: room audit `41320065087`, full multiplayer `41320069837`, GPU `41320075324`. Windows GPU build/checks pass. Advisory audit-step labels alone are insufficient: the full regression transcript exposes a terrain-byte integrity failure in the House pilot. Mesa core smoke passes, but the following world-residency review exits 1; inspect actual artifact/logs before repair. Full round/advisory and complete capture runs were still live at this checkpoint. These statuses are not complete acceptance.
 
@@ -74,7 +74,7 @@ The GPU artifact for `ddcef3be` confirms core smoke success and world-residency 
 The full multiplayer run's mandatory steps pass, but the advisory manifest is **240 passed / 12 failed / 45 unexecuted of 297**, not complete acceptance. Failures: GhostVoicePackRoutingTest, LevelOpeningFlyoverTest, HandheldSpiritBoxEvidenceTest, LanGhostHearingTest, LanSpatialEvidenceIntegrationTest, LanSoundTest, LanSoundHudTest, LanTelegraphedHudTest, DirectionalSpritesIntegrationTest, RoomAcousticPresetsTest, HouseRebuildPhysicsTest and HidingBudgetTest. DEV-177 reproduces the House failure as Git autocrlf rewriting source/OBJ fingerprints. New -text attributes preserve exact saved terrain bytes; Git-filter proof covers Windows/Unix/input configurations without weakening inspection. The USER fixture repairs the separate flyover/residency precondition. Both fixes still require exact-new-source CI. Continue the same live room audit handle; do not infer failure/termination from a polling interval.
 
 
-## Unification checkpoint — 3 November 2026
+## Unification checkpoint â€” 3 November 2026
 
 Owner direction: unify, merge and publish before resuming the map rebuild. Preserved all newer native-editor, van-fit and playable-hunter commits. Pending hover/prepared-picking work is saved in `f672140b`. Online main was merged at `e76d7817`, retaining both recovery histories and the stronger physical-extraction/durable-receipt campaign test. The first actual desktop run exposed a redacted-log expectation; online main independently supplied the privacy-safe notice correction in `ca31e54e`. Reconciled that newer main into `b503c67d`; no host extraction policy was weakened.
 
@@ -83,7 +83,7 @@ Complete Java 17 package and fresh root-test compilation pass. Actual packaged T
 Prior map-source `d4294b4c` runs 41322252644 (GPU), 41322260127 (full multiplayer) and 41322265955 (room audit) are terminal SUCCESS. Raw logs prove the saved editor terrain-hole and persisted USER fixes. That older full run still has advisory 260 passed / 12 failed / 25 unexecuted of 297, and Church swept traversal still fails; later editor recovery records have their own newer results. Do not transfer old counters or map acceptance to the unified source. Next: verify unified remote/main publication and exact-source checks, then resume the complete roster rough batch, starting with actual Prison cell/gallery/service construction decisions. Full map goal remains active.
 
 
-## Unification published, roster roughing resumed — 3 November
+## Unification published, roster roughing resumed â€” 3 November
 
 PR #58 merged successfully. Remote main and rebuild branch were independently read back at `127bead2e3a519f2c985701d5a37fcd86d8fc2ee`; local main and the active rebuild checkout were fast-forwarded to that same commit. This completes the owner's unify/merge/publish-first instruction. Main's exact-source full multiplayer 41672923465, installer 41672923313, GPU 41672923389, native editor 41672923352 and map audit 41672923322 are live at last poll. Gallery index 41672923226 passes; Pages 41672915772 is queued. Preserve these handles and inspect actual terminal results rather than launching duplicates.
 
@@ -97,7 +97,7 @@ Merged-source follow-up: installer 41672923313 and native editor 41672923352 are
 The new Prison rough and labeled PNG are being checkpointed on the rebuild branch after unification. They remain subsequent S02 work rather than a new runtime release; their gallery deployment follows the next accepted batch integration. Full map scope and all unaccepted stage gates remain intact.
 
 
-## Editor-agent use verified — 3 November
+## Editor-agent use verified â€” 3 November
 
 Owner asked that Editor Agent Services be useful to the map rebuild. Inspected the actual mission host over `EditorAgentCli` in a dedicated project home. Church inspection exposes INSPECT/TRANSACT/UNDO/REDO/SAVE/REOPEN/RECOVER_PREVIOUS/CAPTURE/TEST, but its only mutation operation is `move-prop`; its only test is `mission-runtime-parity`. Executed that test against the native session: all 32 current Church props and their colliders match the actual runtime. Captured and visually inspected the real `SceneRenderer.drawPractice` output through the service, retained in `captures/editor-service/`. No prop was moved merely to demonstrate an API.
 
@@ -106,7 +106,7 @@ This service is useful immediately for fit-out edits, native parity, journals/re
 Merged main 127bead2 GPU41672923389, full41672923465 and room audit41672923322 are now terminal SUCCESS. Raw full transcript executes all315 tests: 312 pass and three fail (GhostSpriteAtlasIntegrationTest, TwinBodyVisualTest, LanWorldControlsTest). Raw GPU proves all11 map types including persisted USER. Actual map audit still reports Church traversal failure. Local reproduction reaches -3..+3 but cannot enter rooms8/9/10 (nine room/socket goals,159429 states). LanWorldControlsTest locally reproduces obsolete ACCEPT|EXTRACT expectation after entering VIEW3D. Next: use the service for supported native inspection/evidence while fixing actual Church upper-opening authority and the stale physical-extraction control test; preserve art golden tests until their source changes are inspected. Then continue the entire roster rough batch. Full map goal remains active.
 
 
-## Native editor service now checks physical routes — 3 November
+## Native editor service now checks physical routes â€” 3 November
 
 Implemented mission-open-routes on the actual LevelEditorAgent used by the editor and CLI. It shares the runtime swept-capsule flood with AuthoredLevelReachabilityTest, clones door state without touching live state, and preserves persisted editor terrain surfaces. This is an open-door goal check, not hunt/interaction/complete-map acceptance. Supported mission mutations remain move-prop; architecture and terrain punching are not falsely presented as agent transactions.
 
@@ -165,7 +165,7 @@ Church revised S02:33 spaces,29 accessible,4 sealed crypt vaults. Preserve chara
 Owner directs finishing Castle completely before resuming other locations. Revised source keeps actual HQ core,9 stations,5 residents, parked van,39 accessible spaces and protected training; no live HQ haunting or round-time testing. Actual implementation now permits signed west-annex and negative cellar native authoring, preserves all old cell IDs, refreshes runtime ground support after live edits/history, and exposes bounded surface edits through the real Castle Editor Agent. Tests pass old/new native geometry, history/recovery, stations, doors and actual service. Actual annex/body/optical/terrain/lower-stair/roof/room/detail construction is not complete. Next: construct full native Castle, saved editor terrain holes and correct lower/upper physics, then furnish/refine and verify the entire working hub before returning to other maps.
 
 
-## Castle native training annex — 3 November
+## Castle native training annex â€” 3 November
 
 Actual native surfaces generated from the Castle rough authority now build four ground rooms, shared cut doorways, buried foundations, timber beams, supported ceilings/lamps and a pitched roof. The Castle facade has a real 1.4m connection while preserving its adjacent casement. Runtime and human editor consume the same native defaults.
 
@@ -174,7 +174,7 @@ The packaged CastleTrainingAnnexTest reaches all four rooms through 81,366 physi
 The first render exposed a tree in the corridor (DEV-235). The rejected image is retained and labeled; the corrected capture is actual runtime structural construction. No furnishing, training-exercise binding, cellar, upper lodging, whole-hub visual acceptance or full Castle completion is claimed. Next: build saved editor terrain punching and real cellar circulation, then complete upper construction and fit-out before resuming other locations. No round-time testing.
 
 
-## Castle saved editor terrain — 3 November
+## Castle saved editor terrain â€” 3 November
 
 Actual editor StitchedHeightmapWorld and AdaptiveTerrainTopology now persist120 punched leaves over the entire planned cellar footprint X28.5..43/Z17.5..34. TerrainFootprintCutout performs the edits; source heights remain unchanged. A second authoring run adds zero splits/cuts and produces the same SHA256 9f3d717b1ef7d5f532dcb5a66a84b02d348bbe4852bae17b351b7de993598882.
 
@@ -188,7 +188,7 @@ Next: construct actual cellar walls/floors and architectural deck void, continuo
 Published Castle terrain checkpoint0c888742 and lock-file cleanupb5e15c25; exact remote branch heads verified. Source-bound rough/baseline/gallery fingerprints refreshed after native terrain changes. Native41726765803, GPU41726772731 and full41726781593 dispatched once atb5e15c25, initially queued; preserve handles, inspect actual results and full raw transcript before any acceptance claim. Exact saved Castle/House terrain bytes pass all three Git EOL modes. Next actual construction: floor opening, continuous lower flight/landings/guards and elevation-aware support/props/interactions, then full Castle upper/refinement. Terrain hole alone is not cellar traversal.
 
 
-## Castle native cellar construction — 3 November
+## Castle native cellar construction â€” 3 November
 
 Native defaults now construct four cellar rooms atY-3, their actual wall/lintel/portal boundaries, an18-riser stone flight, lower/upper landings, masonry cheeks and protected ground opening. tools/build_castle_cellar.py derives room/wall/flight coordinates from the revised Castle rough. Six native lamps include four supported ceiling fittings and two fitted stair-wall sconces; the lower wall switch controls the cellar independently of the store above.
 
@@ -208,7 +208,7 @@ Published native cellar checkpoint91e8f47b, remote SHA and actual stair PNG byte
 Next construction: remaining ground domestic/service rooms, followed by upper roof/bearing/lodging and six beds. Before adding the ground X37 store/repair/infirmary partitions, deliberately relocate the still-live east warehouse rack bank out of the future repair/infirmary rooms into coherent stock space; retain all15 source-sized fixtures, every family/tier and every usable browsing aisle. Do not simply partition through functioning stock. Inspect existing wardrobe/lounge and kitchen/common furniture before new walls. Native source generation, real fixtures/clearances and actual room/route/circuit ownership must follow the same coordinates. Protected training bindings, fit-out/detail, permanent context seals and full hub acceptance remain. No round-time testing.
 
 
-## Castle native ground programme — 3 November
+## Castle native ground programme â€” 3 November
 
 The real native default now has16 coherent core ground rooms:15 open rooms and one permanently sealed pantry. tools/build_castle_ground.py derives33 new internal wall/lintel/portal records and child-room volumes from the approved Castle rough. This separates WC/washing, wardrobe lounge, practice/common/kitchen/wash-up, network/operations, and stock/repair/infirmary functions. Existing stations/residents, source-size furnishings and the previous exterior openings are retained. Native privacy doors serve the WC/washing rooms; the sealed pantry has solid infill and no player-openable portal.
 
@@ -234,7 +234,7 @@ Published ground checkpoint50829e61: exact branch SHA and actual Editor Agent ki
 Next actual work: raise/refit the west upper bearing walls and roof; author the upper hall, three twin lodging rooms with six beds, private wash/WC, permanently sealed linen/eave context, actual library connection and northwest rampart infill. The annex roof remains lower; retain west casements, original stations/residents, ground pantry seal, all15 stock racks and the usable cellar stair/terrain void. Then finish services/training/plant/relic fit-out and detailed weathering/story before full hub acceptance. Full29-packet rebuild remains in scope; Castle is not complete. No round-time testing.
 
 
-## Final retained furnishings and keeper placement — 6 November
+## Final retained furnishings and keeper placement â€” 6 November
 
 Seventeen actual native fittings now complete the vault conservation store, household dining/kitchen storage, resident travelling chests and archive keeper display/barrier. The common table retains its existing ID with source-size seating arrangement. Original assets/pivots are preserved. The original keeper study stays unapproved; its new continuous limestone variant is1080tri, one watertight component, with original built-in generated512px stone/face/codex artwork. Actual lifted15cm export fails; fresh packed source decodes. Source and native views were inspected, including corrected front directions. DEV-284..289 preserve sculpture, UV, direction, diagnostic-domain and switch-approach corrections.
 
@@ -244,7 +244,7 @@ Final40 focused tests pass;342-entry preflight executes no bodies. Actual whole-
 
 Main753e637b contains merged workbench PR66. Its exact source41d150e full42331228401 truly reports340/0; native42331234630 and GPU42331240114 pass. Pages42333032712 succeeded; deployed HTML/index and five actual clean/worn/native/plant PNGs read back byte-identical. Main installer42333034211 succeeded; full42333033980 completed; its actual raw transcript reports340/0 at merged753e637b. New finishing source still requires its own CI.
 
-## Unattended-work checkpoint — 7 November
+## Unattended-work checkpoint â€” 7 November
 
 All six registered worktrees inspected. Four ancillary worktrees clean. Original checkout59dirty files preserved in recovery8bc1e48c4296a0b3aa947c3422cdda526746b8ed using a separate Git index; original files/index/active branch untouched. Sanctuaryfd8c1984, older van-fitbd971988, recovery snapshot and Castle stash58b2801c are pushed with exact remote-ref readback. Refreshed remote audit finds no pre-existing unique local branch or detached-performance commits. Preservation does not imply all historical branches merged or accepted.
 
@@ -252,13 +252,13 @@ Sanctuary source reconciles the real dome and host ghost barriers while preservi
 
 Prior envelope601e4955 full42354659280 actual345/0, native42354769654 andGPU42354771676 pass. PR74 expected-head mergedc675ed0f5afebb78da814478db892f83c8efa054. New reconciled source needs separate full/native/GPU and merged Pages acceptance. Evidence: verification/sanctuary-reconcile-2026-11-07. Continue House services and full29packet rebuild. No round-duration tests.
 
-## House electrical controls and furnished native checkpoint — 7 November
+## House electrical controls and furnished native checkpoint â€” 7 November
 
 Sanctuary/House source59737f73 PR75 full42356711361 is confirmed live; gallery42356711355 passed. Preserve that job. New services source corrects terrain-format gates and generator base-plinth optical overreach (DEV-309/310). Existing source and breaker state drive actual light loss4.8to0.187. Real4TCP case verifies physical source/stop/restart, ordinary breaker trip/reset, view-resync, ghost and distant-control rejection.50831-position whole-House audit remains passing. Ghost-specific breaker event gate DEV-311 stays open; no unsupported ghost mechanics invented.
 
 Six packaged construction/van/cache/lighting/TCP/full-round bodies pass. New native source reopens105409triangles/UVs,184packed images,29props and all15spawns/socket coordinates. Functions sampler99materials/11461357texels and frozen envelope66materials/8962879texels pass exactly. All7original household views inspected; new source/panel and lighting views inspected, plus native parcel. Live House dispatch remains original. No round-duration tests. Next visible service distribution, bedding/detail/hiding/story and promotion/mission/network/hardware gates; full29packet rebuild remains active. Evidence: verification/house-services-2026-11-07.
 
-## House finish layer and requested cover-energy material — 7 November
+## House finish layer and requested cover-energy material â€” 7 November
 
 PR75 source59737f73 actual full42356711361 reports348/0; native42357647358/GPU42357649582 pass. Expected-head merged2bbc771f26fa22605a6e666947f0f812f5777173. ServicesPR76 old06f0ebb5 actual full42357637604 reports347/1,despite green wrapper,due a250ms test sleep versus3actual host ticks. Test-only52188e75 publishes actual-clock4tick wait and corrected real4peerTCP result; full42360138343 confirmed live. Native42357643698/GPU42357645688 pass at06with unchanged product inputs. Do not merge failed old suite or cancel confirmed live replacement.
 
@@ -267,7 +267,7 @@ New isolated House fit-out:2original bed dressings,3shared-budget real cupboards
 Ten focused packaged checks pass after targeted corrections. Exact108material/11972271texel fit-out parity plus frozen envelope/functions parity pass. Native112145triangles/UVs,193packed images,29props and15spawns/sockets reopen unchanged; actual source/cover/bedroom views inspected. Native geometry overviews omit analytic energy shader. Evidence: verification/house-fitout-2026-11-07 and house/fitout-construction.md. Remaining House ghost-specific trip gateDEV-311,story/loose objects/encounters,final appearance,promotion/migration and complete location/client/network/hardware gates stay open. No round-duration tests. Full29packet scope and subsequent remaining unfinished maps stay active; checkpoint and synchronize regularly.
 
 
-## Paused WIP checkpoint — 7 November 2026
+## Paused WIP checkpoint â€” 7 November 2026
 
 Owner requested sync and commit only; resume tomorrow. Current branch: map/house-story-power. Parent accepted hiding-energy checkpoint d7d6ccde merged into main059ca123; fetched main889d7b7e. Parent exact full42360807488 reports349/0/0, native42360810938 and GPU42360814636 pass. Pages42364121655 succeeded and actual hiding-energy PNG bytes match deployment.
 
@@ -276,7 +276,7 @@ Current source includes supported House records/eight loose belongings, ghost el
 The native blend/ZIP/definition/belongings/native-verification and native overview remain PRE-visible-feed revision first-principles-story-v1-6a53a71747de0b20. Earlier four runtime story views are pre-feed; latest attempted capture refreshed them, but no final cable views exist. Preserve them as labeled intermediate evidence. Resume by repairing the camera API call, compiling tests, reviewing actual outlet/perimeter/inlet views, regenerating native/export artifacts, then running final focused/full350/native/GPU checks. Complete radiators/plumbing DEV-320, encounters, final appearance, saved/native promotion and full House acceptance afterward. All29 packets and remaining unfinished maps stay in scope. No round-duration tests or new hardware acceptance.
 
 
-## Resumed House source checkpoint — 7 November 2026
+## Resumed House source checkpoint â€” 7 November 2026
 
 Resumed owner-authorized full rebuild. Main889d7b7e contains parent merge059ca123. Its full42363868962 wrapper is SUCCESS but actual raw manifest is347passed/2failed/0skipped/349. Failures are copy-on-write sublist race in LanHunterAnimationGameplayTest and90second accumulated HouseRebuildPhysicsTest timeout. Renderer42363868966 and installer42363868998 passed independently; neither accepts the failed full suite.
 
@@ -287,7 +287,7 @@ The paused camera API failure is repaired using the actual House optical method,
 Focused final per-entry timing results are recorded in scoped-results.json. Exact-source full359/native/GPU and merged Pages remain pending. House live dispatch remains legacy. Next: publish/read back this checkpoint, obtain exact-source CI, finish radiators/water distribution DEV-320 and location encounters, then final appearance/promotion/migration and complete House acceptance. All29 packets and subsequent unfinished maps remain active; no round-duration tests or new physical FPS claim.
 
 
-## House heating/water construction checkpoint — 7 November 2026
+## House heating/water construction checkpoint â€” 7 November 2026
 
 Parent source75f1571b PR78 is published and16source/native/export/index/PNG files read back exactly. Native42386318384 andGPU42386325291 PASS; full42386300461 remains confirmed live. Preserve the live source; ongoing service work uses separate map/house-heating-water.
 
@@ -298,7 +298,7 @@ Current native revision first-principles-heating-v1-1d5d95258b105737 reopens1295
 The service assembly compile mismatch and rejected visual routing are recorded DEV-324/325; DEV-320 now has implemented source and scoped evidence. Exact-source360/full/native/GPU and merged Pages remain pending. Final valve/vent details, full light/material/wear review, authored House encounter, native saved editing/migration, live promotion and full location/client/network/mission/hardware acceptance remain. Continue all29packets and subsequent unfinished maps; do not infer accepted maps or physical FPS from packaging. No round-duration tests.
 
 
-## Complete House room diagnostic — 7 November2026
+## Complete House room diagnostic â€” 7 November2026
 
 Underlying runtime source a2c88012/PR79 remains protected: full42388613635 is confirmed active; native42388620846/GPU42388625541 SUCCESS. Published22source/native/export/contact/asset/index/PNG files read back exactly. Separate map/house-room-review adds no runtime change.
 
@@ -307,7 +307,7 @@ Actual SiteRoomCompassAudit captured all60directions across15zones with0missing 
 DEV-326 records the actual remaining vestibule coat/boot storage, kitchen cold-food storage and bare garden/patio function gaps. DEV-327 records corrected House-specific supplementary camera coverage. No gross new structural failure was confirmed by this limited visual pass, which does not accept hidden joins, complete wear, encounters, saved editing, live promotion or full location gameplay. Parent PR78 merged d7b60acf after359/0; superseded Pages42388509735 was cancelled by the later main252eecf0 capture update. Replacement42388873044 SUCCESS; actual deployed HTML/index and all3visible-feed PNG bytes match reviewed source. Continue function-specific furnishing and House acceptance, then all29packets and remaining unfinished maps.
 
 
-## House daily-function fill and original low-triangle asset checkpoint — 7 November2026
+## House daily-function fill and original low-triangle asset checkpoint â€” 7 November2026
 
 PR79 sourcea2c88012 full42388613635 completed actual360/0/0/360; native42388620846/GPU42388625541 SUCCESS. Expected-head merge98f0faf0b1a0df3173914f145b94b27b2fd6c808 confirmed. Current main1c86ab3d gallery is published; verify service-image readback separately. Accepted main was reconciled with preserved QA83images and all concurrentNPC captures by regenerating the union gallery.
 
@@ -320,7 +320,7 @@ Finish actual House encounter, matched door/circuit/light and final wear review,
 Final source-component review revises DEV-329: the188triangle hanger-only coat still had its original12mm pocket gap. Preserve that GLB/side view and supersede approval. Final200triangle derivative adds a closed12triangle cloth gusset; independent decoded box/source-ray test passes. Final native131793triangles,230packed images,45props reverified; actual furnished runtime/TCP checks and140material/13733203texel exact sampling pass. Prior five variant inputs are unchanged. Current361remote acceptance remains pending.
 
 
-## Owner pause checkpoint — 7 November 2026
+## Owner pause checkpoint â€” 7 November 2026
 
 Owner requested sync and commit only; resume tomorrow. No implementation changes were made on map/house-integration. Starting HEAD is 3a44a6634149bc8e22e1470c348854725896e687; fetched main 1c86ab3d131b3d6fdf10e5a7e633d0d22a0e8323 is already an ancestor. The working tree was clean before this checkpoint.
 
@@ -329,7 +329,7 @@ PR80 map/house-room-review remains frozen at 3a44a6634149bc8e22e1470c34885472589
 Next session: inspect those same PR80 runs and the raw361-entry summary, reconcile and merge only after required acceptance, then resume House saved-map compatibility/live promotion, authored encounter and final visual/functional acceptance. No integration code has been written yet. All29 packets and subsequent unfinished maps remain in scope. No round-duration tests or new physical hardware acceptance. This documentation-only checkpoint runs no build, render or new gallery generation because it changes no source or captures.
 
 
-## Saved House template and authored collision checkpoint — 7 November 2026
+## Saved House template and authored collision checkpoint â€” 7 November 2026
 
 PR80 head3a44a663 passed actual361/0/0/361 in full42395009707; Editor42395017153 andGPU42395022669 passed. Expected-head mergee1b49eb780a3061ef47ea67dfd9747d7ff378497 is reconciled into this branch. New main full42418636058 and installer42418635872 were observed live; do not infer their final results. Parent Pages42418635199 passed; actual deployed gallery/image readback is recorded separately.
 
@@ -342,7 +342,7 @@ Evidence: verification/house-template-compatibility-2026-11-07/. Next: explicit 
 Owner immediately rejects fridge between kitchen doors (DEV-334). Compatibility/source-physics checks remain valid, but the diagnostic image is retained as rejected layout. Relocate before any further appearance/promotion acceptance.
 
 
-## Owner fridge relocation checkpoint — 7 November 2026
+## Owner fridge relocation checkpoint â€” 7 November 2026
 
 DEV-334 replaces rejected fridge placement between the kitchen garden/dining doors. Actual source centreX14.9/Z14.1925/yawPI now uses dedicated south-wall storage facing north, with6cm rear ventilation. Both doorway centres are more than2m away. The source counter, cellar opening/stairs and other44props remain unchanged. Original180triangle model/atlas retained.
 
@@ -353,7 +353,7 @@ Source definition/supports/exportZIP/native/asset-use and captures regenerated f
 Owner-directed fridge relocation implementation2eb8a9ead32eef7ef9ff73c4af9e6f7f8eb04ae8; native/export/captures and current stage evidence bind this source. Compatibility checkpoint40485a83 was pushed and remotely verified. Current362 acceptance next.
 
 
-## House native migration / editor-memory recovery WIP — 7 November 2026
+## House native migration / editor-memory recovery WIP â€” 7 November 2026
 
 Parent PR81 exact sourcec1fe6f53 full42420139114 actual362/0/0/362, native42420157493/GPU42420161347 SUCCESS; expected-head merge1fe0e2490a93c5f148f9f16c686ff7794aa7617e confirmed. Its17source/native/export/capture/index files were read back exactly. Main parente1b49eb7 full42418636058 actual361/0/0/361 and installer42418635872 pass independently.
 
@@ -364,7 +364,7 @@ Memory recovery is NOT ACCEPTED yet.512MB human GUI passed; configured256MB expo
 Next: complete memory recovery tests; reconcile merged PR81/main and verify new deployed images; publish verified source and run exact364/full/native/GPU. Then House default promotion, actual authored encounter, final matched door/circuit/material/lighting and whole-location acceptance, followed by all29packets and later unfinished maps. No round-duration tests or physical FPS acceptance.
 
 
-## Verified House native migration and editor-memory checkpoint — 7 November 2026
+## Verified House native migration and editor-memory checkpoint â€” 7 November 2026
 
 WIP5b857de8 and reconciled2bf304ac are recoverable on remote map/house-migration. Memory recovery now passes locally: real256MB Windows editor rebuild/humanUndoRedo/save/reopen/current-map/capture has no background exceptions, and fatal asynchronous errors are enforced. Actual Castle/House/Castle retirement preserves every return pixel and exact prepared destination identity. Release inactive CPU source/identity sets, old Castle topology before replacement, and old resident payloads. Original PNGs now share immutable decoded storage by content/treatment while retaining distinct materials/samplers/factors/alpha; no rescaling/artwork change or heap increase. Same retired diagnostic has90.47MB vs56.70MB byte arrays; this is not FPS or total process-memory acceptance.
 
@@ -377,14 +377,14 @@ Next: publish/read back this final verified source, run exact365/full/native/GPU
 Verified migration/memory implementation60a239ddf6cd183cd4676cef241ae70a88d5107e; stage/source hashes bind actual365manifest and local256MB/TCP/material evidence. Publish and obtain exact-source full/native/GPU; new captures require merged Pages readback.
 
 
-## House encounter WIP / native recovery priority — 7 November2026
+## House encounter WIP / native recovery priority â€” 7 November2026
 
 Protocol checkpoint698163b1 explicitly separates LAN3 authored cue compatibility from runtime integration. Core House train controller is now wired into actual solo/host paths; source test passes empty-room/full-object doorway/deck occlusion, one-shot/stale/reset, possession/death/disconnect/timeout and independent model-foot support, unchanged routes/cover. Two actual before/after renders were inspected and an original windup WAV generated. Real solo/TCP/photo/old-version/audio/GPU acceptance remains pending; no encounter completion or fresh default promotion.
 
 Protected PR82 sourcea613df30 GPU42424143713 PASS; full42424140271 remains observed live. Native42424140546 FAILS at CLI corrupt-primary bootstrap, despite actual256MB GUI and prior native checks passing: recoverSavedDocument loads the corrupt primary through source selection before restoring previous data (DEV-345). Preserve that raw failure. Next action is isolated native recovery correction and actual CLI regression before promoting either checkpoint. All29packets/later maps remain active; no round-duration or physical FPS claims.
 
 
-## Isolated native House bootstrap recovery correction — 7 November2026
+## Isolated native House bootstrap recovery correction â€” 7 November2026
 
 PR82 native42424140546 fails its actual corrupt-start CLI check: House source selection attempts to parse the corrupt primary before restoring valid previous data. All earlier native/256MB GUI checks and GPU42424143713 passed; full42424140271 remains observed live. Keep that source frozen while correcting independently.
 
@@ -396,7 +396,7 @@ Isolated corrupt-primary recovery implementationf3e215fc6c7c9c39464edd405645835a
 
 Reconciled isolated recovery sourcec93d141d into encounter work; parent PR82 remains on the same corrected source under its own acceptance runs.
 
-## Furnished House matched lighting checkpoint — 7 November 2026
+## Furnished House matched lighting checkpoint â€” 7 November 2026
 
 Previous goal turn made concrete progress: verified and published encounter integration checkpoint4afae307, preserving corrected native recovery and owner fridge placement. Resume verified parent full365 run42426485514 is live; no restart or inferred acceptance. Main1fe0e249 still current at fetch; recorded raw362/0/0/362, native/editor and installer remain scoped parent evidence. PR84 now reviews encounter4afae307, with full42427846432, native42427846331 and GPU42427852522 live/queued; PR82 remains protectedc93d141d pending its actual365summary. Preserve concurrent PR83 hunter work.
 
@@ -404,9 +404,9 @@ New branch map/house-final-review preserves those frozen sources. Actual256MB Sc
 
 Next: parent365 raw result/PR82 merge and gallery deployment; exact encounter full/native/GPU; latest furnished compass and targeted source/receiver joins; fresh default promotion and complete client/mission/location acceptance. Continue all29packets and later unfinished maps. No round-duration testing.
 
-## Recovery priority: actual parent365 failure — 7 November 2026
+## Recovery priority: actual parent365 failure â€” 7 November 2026
 
-Run42426485514 at c93d141d1d9fa0e9fa1bef55485d182553f70ff0 is terminal. Despite a green advisory workflow wrapper, its raw summary is364passed/1failed/0skipped/365manifest. Reject full acceptance and hold PR82 merge. LanHunterAnimationGameplayTest misses WALK_B when cold software rendering/capture crosses the actual stale-observation reset interval. Production gait is unchanged. DEV350–352 record the timing error plus invalid zero-vector stop and premature STATE-before-body fixture assumptions.
+Run42426485514 at c93d141d1d9fa0e9fa1bef55485d182553f70ff0 is terminal. Despite a green advisory workflow wrapper, its raw summary is364passed/1failed/0skipped/365manifest. Reject full acceptance and hold PR82 merge. LanHunterAnimationGameplayTest misses WALK_B when cold software rendering/capture crosses the actual stale-observation reset interval. Production gait is unchanged. DEV350â€“352 record the timing error plus invalid zero-vector stop and premature STATE-before-body fixture assumptions.
 
 Isolated fix/hunter-gait-clock starts at exactc93d141d. Actual scheduled clock quiesces, every real host tick advances contiguously, TCP STEP/Ctrl and normal snapshots still drive all three live panels/renderers. Deliberate1.1second capture delays retain both stride frames; actual stationary snapshot, crouch/stand, scene reset and departure pass at256MB. Explicit stale-gap/A-B unit controls pass. Every original assertion remains. Failed fixture logs and raw parent summary preserved;12actual software pose captures published as diagnostics, two representative frames inspected. Source/render/assets/protocol are unchanged. New full365 still required.
 
@@ -414,7 +414,7 @@ PR84 encounter4afae307 native42427846331/GPU42427852522 SUCCESS; full368run42427
 
 Next: publish isolated correction and obtain new actual365summary before PR82 closeout; reconcile encounter only after its existing run terminates; then furnished review/default candidate and complete House/client/GPU/location gates, all29packets and remaining maps. No round-duration or physical FPS claims.
 
-## Fresh-default candidate reconciled verification — 7 November 2026
+## Fresh-default candidate reconciled verification â€” 7 November 2026
 
 Candidate8994d699 is reconciled with isolated gait recovery21d20b29 without losing encounter, lighting or independent defect histories. Source now selects the furnished House only for missing native documents and pins newly created custom Houses to its generation. Existing versionless built-in/custom documents retain original coordinates and bytes. Protected assemblies and actual source pivots remain enforced.
 
@@ -424,13 +424,13 @@ Parent corrected full365run42429527482 at21d20b29 is still live. Earlier c93d141
 
 Next: exact candidate full369/native/GPU; parent365 raw result and expected-head merge/Pages; reconcile completed encounter run. Finish current House compass/join, client/mission and hardware acceptance, then all29packets and later unfinished maps. No round-duration tests or full rebuild completion claim.
 
-## Roster-wide structural milestone — 7 November2026
+## Roster-wide structural milestone â€” 7 November2026
 
 Owner resumed breadth-by-stage work and explicitly included wall/floor depth, roof skylight blocking and functional structural legibility. This supersedes continued single-map refinement as the roster bottleneck. Mature Castle/House/Blackpine/Hollow Creek sources remain preserved for individual audits.
 
 Implementation `c34e4f9f133e220f98348850e961ff268ab84fb7` builds25actual editable native structural candidates, covering every other packet including the cemetery/mortuary annex. All29decisions are explicit. Native exports independently reimport; original scenes/input hashes are unchanged. Actual aggregate checks:131219triangles,6932closed solids,2077measured160mm floor/deck parts,739cap rays,1538stair treads and192fixed boundary checks. All7sheets containing both export views for all25packets were inspected. No runtime/native playable unlock, final roof-form, light-leak, terrain or hardware acceptance is inferred. Eight distinct elevation links across six sites still need authored redesign; exact source links and basements are in structures/verification.json and per-site structure-batch.md.
 
-Failures preserved: old open-context Academy export, actual Prison exterior-service L107 boundary failure and rejected log; corrected full shared mouth now passes. Circular top-cap/core logic and annotated geometry export were corrected; editable labels remain in native sources but no text/placeholder van enters structural GLBs. Pillow installed only under ignored workspace build for sheet generation. DEV354–358 and generated ledger record scoped findings.57curated native review PNGs plus75source previews/exports and the generated gallery/index are committed. Gallery generation/check passes7757original PNGs; new model deployment still awaits accepted parent merge and actual page/image readback.
+Failures preserved: old open-context Academy export, actual Prison exterior-service L107 boundary failure and rejected log; corrected full shared mouth now passes. Circular top-cap/core logic and annotated geometry export were corrected; editable labels remain in native sources but no text/placeholder van enters structural GLBs. Pillow installed only under ignored workspace build for sheet generation. DEV354â€“358 and generated ledger record scoped findings.57curated native review PNGs plus75source previews/exports and the generated gallery/index are committed. Gallery generation/check passes7757original PNGs; new model deployment still awaits accepted parent merge and actual page/image readback.
 
 Recovery: corrected source21d20b29 full42429527482 raw365/0/0/365 verified. PR82 expected-head merged to mainfad6c7a92b3025f62159f5ac7d53618a569adfe8 and reconciled into this branch. Its production tree matches c93d141d native42426323930; relevant renderer/assets remain previously verified. Main full42431982917 and Pages42431982068 were queued at observation. House candidate5c3daf92 full42430309980/native42430312740/GPU42430317334 are queued; keep these exact handles. Encounter4afae307 full42427846432 raw368/0/0/368 and native/GPU PASS independently. Preserve concurrent PR83 hunter work; do not force-push or restart valid live handles.
 
@@ -443,7 +443,7 @@ Next breadth batch: native/runtime coordinate/collision/ownership bridge, resolv
 
 All29packets have an explicit decision in roster.json. Eleven source-only candidates add visible closed end supports. Battery and other overhanging high landings retain the original walkway; descending flights move inward with full-width flat lead-ins and updated authored-layout.json coordinates. Native stair component identities are explicit. Original geometry, UVs, resources, pivots and collision remain exact except the individually named replaced stair treads. Saved terrain and its holes remain unchanged.
 
-All25native candidates compared:110409flat samples,99937baseline-valid standing poses,94879qualified sweeps,47recovered poses, zero new blocks/sweep failures.221vertical segments improve186→196 passing both ways;84full links improve49→56; no previous passing direction regresses. Both cemetery14segmentloops remain pass both ways. Independent exact resource/mesh/native/closed solid/nondegenerate and editable packed-source checks pass across11new candidates. Rejected narrowing and stale-rotation evidence remains labeled and excluded from usable asset counts.
+All25native candidates compared:110409flat samples,99937baseline-valid standing poses,94879qualified sweeps,47recovered poses, zero new blocks/sweep failures.221vertical segments improve186â†’196 passing both ways;84full links improve49â†’56; no previous passing direction regresses. Both cemetery14segmentloops remain pass both ways. Independent exact resource/mesh/native/closed solid/nondegenerate and editable packed-source checks pass across11new candidates. Rejected narrowing and stale-rotation evidence remains labeled and excluded from usable asset counts.
 
 Native overview/isolated/closeup captures are construction evidence only. Closeup sheets show actual battery lead-ins and other repairs; several terrain/roof/wall views remain occluded. Construction3/5, finish1/5. No full visual acceptance or runtime unlock.
 
@@ -453,7 +453,7 @@ Previous goal turn verified unchanged published atmosphere; no new construction 
 
 Stair end/corner implementation source 39126b2804dd7bc7e42b1c1841b4a77754d937b4. Eleven editable candidates/200closed parts/2620triangles,144owned old steps intentionally replaced. All final checks and47recovered flat poses pass as documented. Gallery8270PNGs, asset pointer1783files/1629distinct hashes includes11newmapexports and1rejectedstudy; no individual props invented. Full rebuild remains active; exact remote publication and gallery deployment readback follow.
 
-Complete GitHub tree readback at040edca3 verifies all128distinct source/binding blobs against exact local Git objects. Remote source39126b28confirmed. Gallery page200/unchanged, new stair closeup image404: deployment still pending accepted integration. DEV417–419record rejected narrowing, stale rotation and initial native/export mismatch corrections; DEV420keeps occluded review cameras open. All29packet/follow-on goals remain active; next real structural work is25failed flights/28links, then runtime/native ownership integration.
+Complete GitHub tree readback at040edca3 verifies all128distinct source/binding blobs against exact local Git objects. Remote source39126b28confirmed. Gallery page200/unchanged, new stair closeup image404: deployment still pending accepted integration. DEV417â€“419record rejected narrowing, stale rotation and initial native/export mismatch corrections; DEV420keeps occluded review cameras open. All29packet/follow-on goals remain active; next real structural work is25failed flights/28links, then runtime/native ownership integration.
 
 
 ## 2026-11-08 / roster physical stair shell aperture batch
@@ -462,7 +462,7 @@ Complete GitHub tree readback at040edca3 verifies all128distinct source/binding 
 
 All29packets have explicit decisions in roster.json. Eight source candidates replace29named walls/floor-cap parts with29closed shells/1024triangles, using actual continuous stair and landing body volumes. Original unrelated mesh/UV/image resources, poses, native records, fixed context seals, props, saved editor terrain/earth holes and40space envelope remain unchanged. Wall thresholds allow the actual step footprint; slab supports are retained wherever they do not conflict with necessary shaft headroom. No render-only or collision-only cut.
 
-All25candidate native comparison:110409flat samples,99984baseline-valid poses,94970qualified sweeps,3recovered poses; zero new blocks/sweep failures.221flight segments improve196→208passing both directions;84full links56→68. Zero previously passing stair/chain direction regresses, including both cemetery14segmentloops. Independent retained resources/meshes/native, closed nondegenerate outward solids,5049standing-body shaft samples and all8editable packed sources pass.
+All25candidate native comparison:110409flat samples,99984baseline-valid poses,94970qualified sweeps,3recovered poses; zero new blocks/sweep failures.221flight segments improve196â†’208passing both directions;84full links56â†’68. Zero previously passing stair/chain direction regresses, including both cemetery14segmentloops. Independent retained resources/meshes/native, closed nondegenerate outward solids,5049standing-body shaft samples and all8editable packed sources pass.
 
 Nine sheets/54native construction frames viewed; original two-site pilot captures retained separately as a superseded study. Construction3/5, finish1/5. Thick apertures are visible, but terrain/crossed-stair and several camera/roof obstructions remain; DEV420visual framing obligation extended. No full visual or map acceptance.
 
@@ -483,7 +483,7 @@ Complete GitHub tree readback at9e6093bb verifies all155source/binding blobs aga
 
 All29packets have explicit decisions in roster.json. Three actual editable sources revised: WLD05west ore shaft and shared lower return; WLD09central main east stair with lower service bypass/landing/hub, removing duplicate converging columns; WLD12separated west-edge descent and return lead-in. Original endpoints preserved, authoritative routes updated, existing terminal platforms retained. Only individually listed owned stairs/shells change; unrelated models/resources/UVs/pivots/native records, fixed context seals and saved terrain/holes remain exact. Vacated shafts are physically refilled outside the new clearance envelopes. Toe landing is a separate real closed160mmfloor part, not a phantom collision ignore or altered movement tolerance.
 
-102newclosed parts/1808triangles replace159owned parts. Independent export/resource/mesh/native/closed nondegenerate outward solid and all3editable packed-source checks pass. All25candidate native comparison:110409flat samples,99987baseline-valid standing poses,94972qualified sweeps;292recovered poses, zero new blocks/sweepfailures.221flight segments208→214passing both directions,84complete links68→73; no previous passing flight/chain directions regress, including both cemetery14segmentloops. Rejected first bay tables and exact kernel foot/contact diagnoses retained.
+102newclosed parts/1808triangles replace159owned parts. Independent export/resource/mesh/native/closed nondegenerate outward solid and all3editable packed-source checks pass. All25candidate native comparison:110409flat samples,99987baseline-valid standing poses,94972qualified sweeps;292recovered poses, zero new blocks/sweepfailures.221flight segments208â†’214passing both directions,84complete links68â†’73; no previous passing flight/chain directions regress, including both cemetery14segmentloops. Rejected first bay tables and exact kernel foot/contact diagnoses retained.
 
 Nineteen final native construction frames/four sheets viewed. Cutaways/shaft plans explicitly hide walls/terrain and higher floors; context cameras remain partly occluded. Construction3/5, finish1/5; no full architectural/visual approval or runtime unlock.
 
@@ -504,7 +504,7 @@ All29packets have explicit decisions in roster.json. Three real saved editor wor
 
 One real closed160mmruin threshold replaces an accidental soil footing;5closed footing extensions restore7newly exposed support samples to the actual soil. Original model pivots/UVs/resources/native records preserved; only terrain replaced and declared structural additions appended. Independent actual saved-world/source/export/native/editable/footing checks pass; zero new exposed footing samples in all3audited sources. Rejected raising-grade and upper-only excavation worlds/composites/probes retained with explicit labels.
 
-All25candidate native comparison:110409flat samples,100279baseline-valid poses,95282qualified sweeps,852recovered poses; zero new standing or sweep regressions.221flight segments214→218passing both ways;84complete links73→78. No prior passing flight/chain direction regresses, including both cemetery14segmentloops. Exact remaining3flight segments/6complete links in verification/remaining-links.json. This covers authored vertical links and sampled flat lanes, not all arbitrary player movement or mission operability.
+All25candidate native comparison:110409flat samples,100279baseline-valid poses,95282qualified sweeps,852recovered poses; zero new standing or sweep regressions.221flight segments214â†’218passing both ways;84complete links73â†’78. No prior passing flight/chain direction regresses, including both cemetery14segmentloops. Exact remaining3flight segments/6complete links in verification/remaining-links.json. This covers authored vertical links and sampled flat lanes, not all arbitrary player movement or mission operability.
 
 Native paired150Wviews, whole-site context, actual saved topology diagnostics and isolated soil-bearing inspections reviewed. Coarse serrated banks and incomplete retaining/cave/guard/edge/weathering remain; construction3/5finish1/5, visual landscape acceptance OPEN. No canonical van arrival review or runtime unlock claimed. Native pictures do not run the gameplay fog/fixtures/hardware path. Existing heavy shared gameplay atmosphere remains separately verified.
 
@@ -641,3 +641,10 @@ Reviewed current institutional stairs: Academy, Asylum, College, Prison and Scho
 Inspected three native cutaways. Seven selected flights/vertical routes pass both ways before/after.29complete flat links pass both ways with zero previously passing direction regressions. Current lanes13791/1863invalid versus prior13689/1836invalid are different coordinates, not a recovery-count claim. Native/source export triangles agree. Initial hub obstructions were corrected; source resources outside declared replaced meshes remain preserved. A numerical planar-union failure uses individually closed source polygons in this batch; empty exported nodes/name collisions are excluded or uniquely named.
 
 Remaining: validate structural purpose beyond axis alignment, lower-route terrain interfaces, guards/framing, flat connectivity, floor/room joins and actual runtime services/rooms/acoustics/portals/spawns/physics integration. No new saved terrain-hole entrances authored, no unlock, local UI or timed-round tests. Academy off-landform and WLD16terrain ownership remain open. Entire roster/follow-on work remains unfinished. Gallery/native images are construction evidence, not runtime acceptance.
+
+
+## 2026-11-13 / fitted stair guard and stringer construction
+
+Resume93967b50; fetch confirms current main2bd41066already merged. Current branch preserves mature sources, van/fog/power/hiding contracts and all29decisions. This physical batch fits existing level_blockout_guardrail profiles/UV/materials to five Wharf/Research/Railway flights, preserving source masters, and builds seated side stringers overlapping the tread edges. No terrain change or basement-hole claim. Active candidate roster: stair-guard-pass/roster.json.
+
+Actual GLB/native/editable geometry additions inspected in three final cutaways. Closed positive-volume additions and exact render/native triangle agreement pass. All7vertical routes/7flights and29complete flatlinks pass both ways; exact13791unchanged-coordinate lanes have0newinvalid,1863stillinvalid. Intermediate end guards blocked turns; final1.6mapproach reserves remove those regressions. This is partial central-flight guarding: unguarded end sections, landing perimeter rails, returns, widened approaches and anchor/frame finishing remain open, alongside terrain interfaces and runtime integration. Do not claim whole-site safety or gameplay acceptance. Gallery build/check and scoped publication follow. No local editor UI, timed round tests, unlock or held-parent/main merge. Other26packets retain prior source decisions; full roster/follow-on production rebuild remains unfinished.

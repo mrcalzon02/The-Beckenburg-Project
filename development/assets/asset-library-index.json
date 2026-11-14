@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1948,
-  "unique_local_file_hashes": 1777,
+  "local_files": 1951,
+  "unique_local_file_hashes": 1780,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 28,
+    "additional_custom_model_sources": 31,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 99,
     "native_map_exports": 250
@@ -28441,6 +28441,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "8628719c0b461e64f89f25e018ed3fc260ce372e250380d26e3ea34e59441a74",
       "bytes": 1718868
+    },
+    {
+      "id": "guarded-stairs",
+      "label": "guarded-stairs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/stair-guard-pass/wld-06/guarded-stairs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "b0669bdf11270e82de7dd16de03343cd160781be25c4aed3ebe9ccf1b6c72f3e",
+      "bytes": 1775252
+    },
+    {
+      "id": "guarded-stairs",
+      "label": "guarded-stairs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/stair-guard-pass/wld-08/guarded-stairs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "c19d16ce8226b90ac480fca95765d3a1003c1149127aa408bbe2870895c0292a",
+      "bytes": 2607048
+    },
+    {
+      "id": "guarded-stairs",
+      "label": "guarded-stairs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/stair-guard-pass/wld-12/guarded-stairs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "8fed9f1d5ad79e3366c9c30087147bc6746363e966da739a78d56c0e0caa404c",
+      "bytes": 3266344
     },
     {
       "id": "battery-narrowed-turn-supported-stairs",

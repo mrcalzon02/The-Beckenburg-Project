@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10859,
+  "count": 10865,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -102344,6 +102344,66 @@
       "height": 750,
       "bytes": 475472,
       "sha256": "1c78adbc1b4ebd58d58d1a17c1f2fd8b1217aa5171b3dc777452ca91db0a96fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-guard-batch/wld-06-context.png",
+      "url": "development/levels/rebuild/captures/stair-guard-batch/wld-06-context.png",
+      "title": "Wld 06 context",
+      "kind": "Native fitted library stair guards/stringers; cutaway context hidden, incomplete ends, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1185642,
+      "sha256": "7cd1192370239e1ef11dc56b70a07b5cc0d738e6d2978aa8e11030f2eb9fd116"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-guard-batch/wld-06-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-guard-batch/wld-06-cutaway.png",
+      "title": "Wld 06 cutaway",
+      "kind": "Native fitted library stair guards/stringers; cutaway context hidden, incomplete ends, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 580365,
+      "sha256": "27f08637a1547c04020fbb15c38579e76f565f91d16458bd87af2cd02ad6cc6e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-guard-batch/wld-08-context.png",
+      "url": "development/levels/rebuild/captures/stair-guard-batch/wld-08-context.png",
+      "title": "Wld 08 context",
+      "kind": "Native fitted library stair guards/stringers; cutaway context hidden, incomplete ends, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1137992,
+      "sha256": "8d8be54767b76530874a67503c220f4e5ba9e66fc5c8666d655fa281152a2e11"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-guard-batch/wld-08-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-guard-batch/wld-08-cutaway.png",
+      "title": "Wld 08 cutaway",
+      "kind": "Native fitted library stair guards/stringers; cutaway context hidden, incomplete ends, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 549528,
+      "sha256": "082ce241c7bcd60e2f1ff7eb222bd166b88b4fd44c196410de6c204328b85c41"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-guard-batch/wld-12-context.png",
+      "url": "development/levels/rebuild/captures/stair-guard-batch/wld-12-context.png",
+      "title": "Wld 12 context",
+      "kind": "Native fitted library stair guards/stringers; cutaway context hidden, incomplete ends, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1141743,
+      "sha256": "a98fa303f3354e3130251dda76685e3fff104133fcae6b5f589a76678ecda377"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-guard-batch/wld-12-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-guard-batch/wld-12-cutaway.png",
+      "title": "Wld 12 cutaway",
+      "kind": "Native fitted library stair guards/stringers; cutaway context hidden, incomplete ends, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 643075,
+      "sha256": "9fbb20739ed1ca684020a6a3b25efb9c3bb4592c88f13f4cd335ee1ae64c2752"
     },
     {
       "path": "development/levels/rebuild/captures/stair-landing-fit-batch/closeup-sheet-1.png",
