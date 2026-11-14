@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10965,
+  "count": 10969,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -96514,6 +96514,46 @@
       "height": 1100,
       "bytes": 1496128,
       "sha256": "c6ed58888f35aa1668a1efbe4f05fe4d7dd1d9f6b71aac3a3e8222a1abfe611b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-contained-stair-batch/hall-cutaway.png",
+      "url": "development/levels/rebuild/captures/dam-contained-stair-batch/hall-cutaway.png",
+      "title": "Hall cutaway",
+      "kind": "Native contained Dam stair construction; roof cutaway, walls/floors and upper well partitions hidden in load-path sections only; emergency/spillway and runtime gates open",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1619093,
+      "sha256": "939fa8b92a2a48fbff7b70999f976d5ec0f4410f24e2631fb3351b26b5f2ae3e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-contained-stair-batch/hall-load-path.png",
+      "url": "development/levels/rebuild/captures/dam-contained-stair-batch/hall-load-path.png",
+      "title": "Hall load path",
+      "kind": "Native contained Dam stair construction; roof cutaway, walls/floors and upper well partitions hidden in load-path sections only; emergency/spillway and runtime gates open",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1571228,
+      "sha256": "7aa01b8317700a741f4c5017b7d176d06ebfd5f1b253a30577a6ea9a00940131"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-contained-stair-batch/west-cutaway.png",
+      "url": "development/levels/rebuild/captures/dam-contained-stair-batch/west-cutaway.png",
+      "title": "West cutaway",
+      "kind": "Native contained Dam stair construction; roof cutaway, walls/floors and upper well partitions hidden in load-path sections only; emergency/spillway and runtime gates open",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1858906,
+      "sha256": "d1a9b2f0646a568f4c57cb6785bf6378533c068226d55ced5668caf9c7f180ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-contained-stair-batch/whole-site.png",
+      "url": "development/levels/rebuild/captures/dam-contained-stair-batch/whole-site.png",
+      "title": "Whole site",
+      "kind": "Native contained Dam stair construction; roof cutaway, walls/floors and upper well partitions hidden in load-path sections only; emergency/spillway and runtime gates open",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1524586,
+      "sha256": "5cc40b6d8b223ccf9b4e8b1ac330f721fc60ae0c75c5f2b6f0d97957ac74de0e"
     },
     {
       "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-01.png",

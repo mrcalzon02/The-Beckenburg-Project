@@ -1,0 +1,34 @@
+{
+  "source": {
+    "id": "WLD-09",
+    "construction": "development/levels/rebuild/stair-interface-construction-pass/wld-09/construction.json",
+    "layout": "development/levels/rebuild/stair-interface-construction-pass/wld-09/authored-layout.json",
+    "glb": "development/levels/rebuild/stair-interface-construction-pass/wld-09/joined-stairs.glb",
+    "native": "development/levels/rebuild/stair-interface-construction-pass/wld-09/joined-stairs.hcs2",
+    "blend": "development/levels/rebuild/stair-interface-construction-pass/wld-09/joined-stairs.blend",
+    "glb_sha256": "670eca5b240a758c083b3061c34cf413ce3a0bb48a1c01bb363e39e99d121eb3",
+    "native_sha256": "cffb44ad8ea7af2199350eea2ea985004ceb77c970be27eaea00979912979a67"
+  },
+  "source_world": "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-09/terrain-world",
+  "world": "development/levels/rebuild/dam-contained-stair-pass/worlds/wld-09/terrain-world",
+  "source_world_files_sha256": {
+    "adaptive-topology.bin": "a958a7fccc99b4a14d9e6a7db1a6f2fc1f008c9e46d93f6e5352f4be62c34b6a",
+    "authored-cuts.tsv": "54837b189a3bf7c3766c12d6ee9363f525591bbbf6541bdab2389b6b176a3afc",
+    "authored-path-grading.sha256": "2704d2a567c0f5967f8f5b69b4a3df007da7bf1b8d178a9ba39032d0307aa8a5",
+    "earthworks-verification.json": "27fc36d255c9ae25f001f63f44201c4fd6df4834c07cdcb273c008f063642748",
+    "source-provenance.json": "67b3e36be583bb7d584b4baafeacbb1def65324847a3e092cadaf1aa93c037fb",
+    "terrain-physics.hcs2": "9b5d232144122c72677ffd41fd6e3d9daf717ed48b51917398a0e2e53f3029f0",
+    "tile_0_0.png": "c4ec321fdebf26510af395260a2c58e832af175a032d033c21632c10cefe6aca",
+    "verification.json": "27fc36d255c9ae25f001f63f44201c4fd6df4834c07cdcb273c008f063642748",
+    "world.properties": "1f2175faefa9d0256d347d1550a5069c42be240db5bf3447af7789898badb8be",
+    "scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scene-package/.scene.bin.editor.previous": "d183cdbb366605c879db611770846b887cf279a2b3a80aa29ba959719064f5c9",
+    "scene-package/scene.bin": "d3e14ced82ce92abe7b94f8ae9cd95f2f8fd98800bfea7d8bb3ef89cd7ce6566",
+    "terrain-layers/tile_0_0.bin": "e2bcc083ca8eac4c99492d51dd5919cdca93574f893e30ba7247e08d9e9b7a58",
+    "scene-package/meshes/site-0-0.obj": "46b024d44b3dd04f3c9bfc7fdbf7c36ce5e63e6cf604205c97dd98fe1c6c8623",
+    "scene-package/meshes/site-0-1.obj": "f073717a5a72015ef4de6d8ed3c72f1f6ce467fcf54628389504dbbd1bb9493f",
+    "scene-package/meshes/site-1-0.obj": "e87ccc73ef0e79ec2933171ffcdaaeadd64bbf13f14dcadcbf2a0072237d2d61",
+    "scene-package/meshes/site-1-1.obj": "95cefc5cab502a1757a62f36a2d8373de49e28e63c397255d46c78be51acfdcd"
+  },
+  "architectural_intent": "Contained east stair hall; remove diagonal room-crossing main/emergency flights. Emergency replacement remains an explicit blocker."
+}

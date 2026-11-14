@@ -7374,6 +7374,34 @@ Evidence and verification: stair-interface-construction-pass/verification/stairs
 
 Older-map obligation: Carry forward actual split-flight identities without skipping any old flight or treating all historical declarations as new.
 
+### DEV-521 — Dam main stair flights crossed an occupied hall and sloped wall cuts
+
+**Status:** PRIMARY_EAST_AND_WEST_GEOMETRY_REBUILT_RUNTIME_OPEN · **Affected:** WLD-09 L07 L09 L11 and corresponding wall/floor/roof apertures
+
+Passing native routes still drove sloping flights across the turbine room and cut walls; detached guards survived removal of their parent flights.
+
+Cause / uncertainty: Earlier construction followed route segments and omitted untagged guard/landing dependants.
+
+Fix / next action: Construct two bounded stair halls with two straight 17-riser flights, real middle landings, floor wells, full-depth slabs, continuous waists, low-head infill, supported bearings and enclosed roofs. Replace wall cuts with floor-level indexed doors. Remove original detached flight/landing rails and piers; replace upper railing rings with supported well partitions. Restore turbine roof and workshop/return slabs.
+
+Evidence and verification: dam-contained-stair-pass/verification; captures/dam-contained-stair-batch
+
+Older-map obligation: Audit every earlier stair against room boundaries and physical floors/doors/roof independently; native movement alone does not establish structural sanity.
+
+### DEV-522 — Dam emergency and lower spillway routes remain unbuilt after invalid geometry removal
+
+**Status:** OPEN_BLOCKS_DAM_ACCEPTANCE · **Affected:** WLD-09 L18 emergency and L12 workshop-to-spillway branch
+
+Both emergency flights and complete routes L12/L18 fail the unchanged native movement gate. The spillway endpoint lacks support and the path loses support beyond the workshop.
+
+Cause / uncertainty: Invalid old diagonal/emergency masses and their route-shaped supports were removed instead of retained for a passing score.
+
+Fix / next action: Keep active guides and exact failed comparisons visible. Next construct a coherent lower maintenance/spillway gallery and a contained emergency stair with saved terrain interfaces, normal doors, floors and roof. No unlock or runtime acceptance.
+
+Evidence and verification: dam-contained-stair-pass/verification/stairs/stair-movement.json; complete-route-sweeps.tsv
+
+Older-map obligation: Do not suppress regressions, seal/delete active routes or reuse diagonal ramp solids to manufacture passage.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

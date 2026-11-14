@@ -5787,6 +5787,28 @@
       "action": "Derive existing identities from exact before-layout points/mapping. Only genuinely new declarations require exact after coordinates and mandatory passing movement; still reject dropped old routes and unexpected new identities. Actual three-site20flight/18route replay and a no-change Dam follow-up control pass.",
       "evidence": "stair-interface-construction-pass/verification/stairs/stair-movement.json; stair-interface-followup-control.log",
       "older_maps": "Carry forward actual split-flight identities without skipping any old flight or treating all historical declarations as new."
+    },
+    {
+      "id": "DEV-521",
+      "title": "Dam main stair flights crossed an occupied hall and sloped wall cuts",
+      "status": "PRIMARY_EAST_AND_WEST_GEOMETRY_REBUILT_RUNTIME_OPEN",
+      "affected": "WLD-09 L07 L09 L11 and corresponding wall/floor/roof apertures",
+      "symptom": "Passing native routes still drove sloping flights across the turbine room and cut walls; detached guards survived removal of their parent flights.",
+      "cause": "Earlier construction followed route segments and omitted untagged guard/landing dependants.",
+      "action": "Construct two bounded stair halls with two straight 17-riser flights, real middle landings, floor wells, full-depth slabs, continuous waists, low-head infill, supported bearings and enclosed roofs. Replace wall cuts with floor-level indexed doors. Remove original detached flight/landing rails and piers; replace upper railing rings with supported well partitions. Restore turbine roof and workshop/return slabs.",
+      "evidence": "dam-contained-stair-pass/verification; captures/dam-contained-stair-batch",
+      "older_maps": "Audit every earlier stair against room boundaries and physical floors/doors/roof independently; native movement alone does not establish structural sanity."
+    },
+    {
+      "id": "DEV-522",
+      "title": "Dam emergency and lower spillway routes remain unbuilt after invalid geometry removal",
+      "status": "OPEN_BLOCKS_DAM_ACCEPTANCE",
+      "affected": "WLD-09 L18 emergency and L12 workshop-to-spillway branch",
+      "symptom": "Both emergency flights and complete routes L12/L18 fail the unchanged native movement gate. The spillway endpoint lacks support and the path loses support beyond the workshop.",
+      "cause": "Invalid old diagonal/emergency masses and their route-shaped supports were removed instead of retained for a passing score.",
+      "action": "Keep active guides and exact failed comparisons visible. Next construct a coherent lower maintenance/spillway gallery and a contained emergency stair with saved terrain interfaces, normal doors, floors and roof. No unlock or runtime acceptance.",
+      "evidence": "dam-contained-stair-pass/verification/stairs/stair-movement.json; complete-route-sweeps.tsv",
+      "older_maps": "Do not suppress regressions, seal/delete active routes or reuse diagonal ramp solids to manufacture passage."
     }
   ],
   "audit_categories": [

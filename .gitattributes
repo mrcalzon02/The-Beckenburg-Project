@@ -240,3 +240,8 @@ development/levels/rebuild/stair-interface-construction-pass/**/*.log -diff
 tools/build_stair_interfaces.py text eol=lf
 tools/review_stair_interfaces.py text eol=lf
 tools/audit_roster_stairs.py text eol=lf
+
+# Exact contained Dam stair construction and saved terrain.
+development/levels/rebuild/dam-contained-stair-pass/** -text whitespace=cr-at-eol
+tools/build_dam_contained_stair.py -text whitespace=cr-at-eol
+tools/review_dam_contained_stair.py -text whitespace=cr-at-eol
