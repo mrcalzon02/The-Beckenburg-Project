@@ -7094,6 +7094,62 @@ Evidence and verification: tools/build_three_stair_cells.py portal IDs; tools/au
 
 Older-map obligation: Keep all renderer/collision/room/portal/acoustic/service identities distinct and consistently bound during actual gameplay integration. No runtime binding acceptance is inferred from source ID checks.
 
+### DEV-501 — Flared Research, Railway and western Cinder flights lacked independent architectural wells
+
+**Status:** SIX FLIGHTS REBUILT; OTHER CINDER FLIGHTS AND RUNTIME OPEN · **Affected:** Research L17/L18/L20; Railway L16/L17; Cinder route-08
+
+Old widened tread geometry and copied hole outlines left unsupported wings and incoherent floor/terrain joins.
+
+Cause / uncertainty: Study geometry had been used as construction authority.
+
+Fix / next action: Build straight1.8m gross-width closed tread flights, continuous bases, full landings, deep floors, independent rectangular openings, retaining walls and fitted indexed rails. Construct Research room/tunnel floors and roof joins, Railway trestle/lower decks and a west maintenance platform, and Cinder enclosed lower connector with full-depth1.8x2.3m service frame. Actual saved editor punches reopen and reproduce exported/native terrain exactly; source heights/layers and all previous cut rows retained. All6exported selected flights independently measure1.8m wide; all11flights and10complete stair routes pass both directions. Other Cinder stairs remain unrepaired.
+
+Evidence and verification: development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch
+
+Older-map obligation: All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates.
+
+### DEV-502 — Early stair rim guards and approach anchors crossed actual landing entries
+
+**Status:** SELECTED LANDINGS AND GUARD RETURNS CORRECTED · **Affected:** Research room anchors; Railway upper/lower landings; Cinder lower escape connector
+
+Initial guards obstructed stair entries and anchors sat over stair noses rather than full floors.
+
+Cause / uncertainty: Rims were extended past architectural wall/entry datums; approaches turned before clearing toes.
+
+Fix / next action: Place anchors on full landings, stop/split rim rails at actual walls, add supported rim end returns and move lower approach turns beyond tread toes. Cinder side connector has real north/south walls, enclosed roof and clear turn through lower landing. Research array approach now enters dorm normal to its actual north door. No kernel, width or step tolerance changed.
+
+Evidence and verification: development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch
+
+Older-map obligation: All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates.
+
+### DEV-503 — Railway west stair landing required actual excavation and soil-bearing structure
+
+**Status:** SUPPORTED PLATFORM BUILT; REMAINING SITE GROUNDS OPEN · **Affected:** Railway west maintenance platform and retaining edges
+
+Proposed piles at old cutout corners had no terrain receiver; native soil rose above the proposed platform edge.
+
+Cause / uncertainty: Assuming foundation support from visual plan extents ignored original saved terrain voids and uphill levels.
+
+Fix / next action: Reject unsupported corner piles. Build full platform10..16 by36..44.5, deep retaining walls/steel bearings, two southern piers into native soil, uphill concrete parapets and exposed-edge indexed guards. Save platform excavation and stair rim punches on the actual0.125m editor topology grid, retaining all original cuts. Final native stair routes pass both ways. Wider grounds/landscape/drainage and van arrival remain unaccepted.
+
+Evidence and verification: development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch
+
+Older-map obligation: All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates.
+
+### DEV-504 — Removing solid route-study supports exposes unfinished Railway and Cinder ground approaches
+
+**Status:** OPEN BLOCKER; ORDINARY-ROUTE REGRESSION CHECK FAILS · **Affected:** Railway L01/L02/L05/L08/L10/L15/L18; Cinder route-02/04/05
+
+Ten previously passing ordinary links now fail in20directions after old artificial route support strips are removed.
+
+Cause / uncertainty: False narrow study solids had supplied missing ground beneath approaches; their removal reveals absent geographic construction and remaining door/ground interfaces.
+
+Fix / next action: Keep study strips removed and preserve failing check honestly. Research17/17ordinary links pass; Railway2/16 and Cinder7/14 pass, total26/47 versus35before. Broad samples retain3748invalid of13335. Next bounded grounds/entrance batch must build actual connected terrain and normal entrances. Do not restore ribbons, suppress regressions, unlock maps or claim runtime acceptance.
+
+Evidence and verification: development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch
+
+Older-map obligation: All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

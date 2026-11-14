@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10926,
+  "count": 10929,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -96424,6 +96424,36 @@
       "height": 1100,
       "bytes": 1507085,
       "sha256": "11b34b1bb6066a42c1cff372790f1590f7eee95ad92f53fbb7e6bb24a825ac4d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/constant-flight-construction-batch/wld-08.png",
+      "url": "development/levels/rebuild/captures/constant-flight-construction-batch/wld-08.png",
+      "title": "Wld 08",
+      "kind": "Native constant-width stair cells, supported landings, rectangular wells and saved terrain punches; pitched roofs hidden, Research tunnel roof retained for support context, other amber Cinder flights unfinished, ordinary-ground and runtime gates open",
+      "width": 1500,
+      "height": 1100,
+      "bytes": 2045831,
+      "sha256": "5e23d36d98f4ff9e9a8227917af1cf2ae839d680252ef6e6c10d34dbdea346df"
+    },
+    {
+      "path": "development/levels/rebuild/captures/constant-flight-construction-batch/wld-12.png",
+      "url": "development/levels/rebuild/captures/constant-flight-construction-batch/wld-12.png",
+      "title": "Wld 12",
+      "kind": "Native constant-width stair cells, supported landings, rectangular wells and saved terrain punches; pitched roofs hidden, Research tunnel roof retained for support context, other amber Cinder flights unfinished, ordinary-ground and runtime gates open",
+      "width": 1500,
+      "height": 1100,
+      "bytes": 2042516,
+      "sha256": "c1460e0b38226d91b812f1ee1bc8543e61ac3210aba30885537fb63f61d0d711"
+    },
+    {
+      "path": "development/levels/rebuild/captures/constant-flight-construction-batch/wld-18.png",
+      "url": "development/levels/rebuild/captures/constant-flight-construction-batch/wld-18.png",
+      "title": "Wld 18",
+      "kind": "Native constant-width stair cells, supported landings, rectangular wells and saved terrain punches; pitched roofs hidden, Research tunnel roof retained for support context, other amber Cinder flights unfinished, ordinary-ground and runtime gates open",
+      "width": 1500,
+      "height": 1100,
+      "bytes": 1853193,
+      "sha256": "5560991a69fbc9e99fe6d97bd3c7f3ba5c605cb2ce2985cd43f178741aed92b7"
     },
     {
       "path": "development/levels/rebuild/captures/courts-and-docks-batch/wld-06.png",

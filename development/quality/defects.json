@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-12",
+  "updated": "2026-11-14",
   "issues": [
     {
       "id": "DEV-355",
@@ -5567,6 +5567,50 @@
       "action": "Include the architectural opening datum in each new portal identity. Verify per-site doorway IDs are unique before generating native aperture profiles. All123profiles now sweep both ways successfully. Keep existing published portal identifiers unchanged. Native flat-route comparison now preserves every prior active link, rejects removals/regressions, and separately requires newly built source links to pass; this supports real new School lobby connection without assuming identical link sets.",
       "evidence": "tools/build_three_stair_cells.py portal IDs; tools/audit_current_flat_routes.py added-link gate; stair-cell-construction-pass/verification/door-aperture-verification.json and current-flat-movement.json",
       "older_maps": "Keep all renderer/collision/room/portal/acoustic/service identities distinct and consistently bound during actual gameplay integration. No runtime binding acceptance is inferred from source ID checks."
+    },
+    {
+      "id": "DEV-501",
+      "title": "Flared Research, Railway and western Cinder flights lacked independent architectural wells",
+      "status": "SIX FLIGHTS REBUILT; OTHER CINDER FLIGHTS AND RUNTIME OPEN",
+      "affected": "Research L17/L18/L20; Railway L16/L17; Cinder route-08",
+      "symptom": "Old widened tread geometry and copied hole outlines left unsupported wings and incoherent floor/terrain joins.",
+      "cause": "Study geometry had been used as construction authority.",
+      "action": "Build straight1.8m gross-width closed tread flights, continuous bases, full landings, deep floors, independent rectangular openings, retaining walls and fitted indexed rails. Construct Research room/tunnel floors and roof joins, Railway trestle/lower decks and a west maintenance platform, and Cinder enclosed lower connector with full-depth1.8x2.3m service frame. Actual saved editor punches reopen and reproduce exported/native terrain exactly; source heights/layers and all previous cut rows retained. All6exported selected flights independently measure1.8m wide; all11flights and10complete stair routes pass both directions. Other Cinder stairs remain unrepaired.",
+      "evidence": "development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch",
+      "older_maps": "All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates."
+    },
+    {
+      "id": "DEV-502",
+      "title": "Early stair rim guards and approach anchors crossed actual landing entries",
+      "status": "SELECTED LANDINGS AND GUARD RETURNS CORRECTED",
+      "affected": "Research room anchors; Railway upper/lower landings; Cinder lower escape connector",
+      "symptom": "Initial guards obstructed stair entries and anchors sat over stair noses rather than full floors.",
+      "cause": "Rims were extended past architectural wall/entry datums; approaches turned before clearing toes.",
+      "action": "Place anchors on full landings, stop/split rim rails at actual walls, add supported rim end returns and move lower approach turns beyond tread toes. Cinder side connector has real north/south walls, enclosed roof and clear turn through lower landing. Research array approach now enters dorm normal to its actual north door. No kernel, width or step tolerance changed.",
+      "evidence": "development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch",
+      "older_maps": "All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates."
+    },
+    {
+      "id": "DEV-503",
+      "title": "Railway west stair landing required actual excavation and soil-bearing structure",
+      "status": "SUPPORTED PLATFORM BUILT; REMAINING SITE GROUNDS OPEN",
+      "affected": "Railway west maintenance platform and retaining edges",
+      "symptom": "Proposed piles at old cutout corners had no terrain receiver; native soil rose above the proposed platform edge.",
+      "cause": "Assuming foundation support from visual plan extents ignored original saved terrain voids and uphill levels.",
+      "action": "Reject unsupported corner piles. Build full platform10..16 by36..44.5, deep retaining walls/steel bearings, two southern piers into native soil, uphill concrete parapets and exposed-edge indexed guards. Save platform excavation and stair rim punches on the actual0.125m editor topology grid, retaining all original cuts. Final native stair routes pass both ways. Wider grounds/landscape/drainage and van arrival remain unaccepted.",
+      "evidence": "development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch",
+      "older_maps": "All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates."
+    },
+    {
+      "id": "DEV-504",
+      "title": "Removing solid route-study supports exposes unfinished Railway and Cinder ground approaches",
+      "status": "OPEN BLOCKER; ORDINARY-ROUTE REGRESSION CHECK FAILS",
+      "affected": "Railway L01/L02/L05/L08/L10/L15/L18; Cinder route-02/04/05",
+      "symptom": "Ten previously passing ordinary links now fail in20directions after old artificial route support strips are removed.",
+      "cause": "False narrow study solids had supplied missing ground beneath approaches; their removal reveals absent geographic construction and remaining door/ground interfaces.",
+      "action": "Keep study strips removed and preserve failing check honestly. Research17/17ordinary links pass; Railway2/16 and Cinder7/14 pass, total26/47 versus35before. Broad samples retain3748invalid of13335. Next bounded grounds/entrance batch must build actual connected terrain and normal entrances. Do not restore ribbons, suppress regressions, unlock maps or claim runtime acceptance.",
+      "evidence": "development/levels/rebuild/constant-flight-construction-pass/roster.json; per-site construction.json and constant-cells.blend/glb/hcs2; verification/; captures/constant-flight-construction-batch",
+      "older_maps": "All29packets retained in roster; mature Castle/House/Blackpine/Hollow Creek preserved. Audit other unfinished stairs/doors/terrain individually; native checks do not satisfy gameplay integration gates."
     }
   ],
   "audit_categories": [

@@ -217,3 +217,7 @@ development/levels/rebuild/stair-cell-construction-pass/** -text whitespace=cr-a
 tools/build_three_stair_cells.py -text whitespace=cr-at-eol
 tools/java/RebuildResearchTunnelPunch.java -text whitespace=cr-at-eol
 tools/audit_current_flat_routes.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/constant-flight-construction-pass/** -text whitespace=cr-at-eol
+tools/build_constant_flight_cells.py -text whitespace=cr-at-eol
+tools/java/RebuildStairCellPunches.java -text whitespace=cr-at-eol

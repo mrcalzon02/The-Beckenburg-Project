@@ -1,0 +1,155 @@
+{
+  "sites": [
+    {
+      "id": "WLD-08",
+      "source": {
+        "id": "WLD-08",
+        "construction": "development/levels/rebuild/stair-cell-construction-pass/wld-08/construction.json",
+        "layout": "development/levels/rebuild/stair-cell-construction-pass/wld-08/authored-layout.json",
+        "glb": "development/levels/rebuild/stair-cell-construction-pass/wld-08/constructed-cells.glb",
+        "native": "development/levels/rebuild/stair-cell-construction-pass/wld-08/constructed-cells.hcs2",
+        "blend": "development/levels/rebuild/stair-cell-construction-pass/wld-08/constructed-cells.blend",
+        "glb_sha256": "bc4380b801486e5a8c75bb23e26c760f00380c40984c6a33358edba82c85a509",
+        "native_sha256": "b5b18bd32a92746f72137370fdc1df740587e49f653b635dad87fd1a43147171"
+      },
+      "source_world": "development/levels/rebuild/stair-cell-construction-pass/worlds/wld-08/terrain-world",
+      "world": "development/levels/rebuild/constant-flight-construction-pass/worlds/wld-08/terrain-world",
+      "cuts": [
+        [
+          11,
+          34,
+          22.3,
+          36
+        ],
+        [
+          41.7,
+          34,
+          53,
+          36
+        ],
+        [
+          9.9,
+          17,
+          12.1,
+          22.3
+        ]
+      ],
+      "source_world_files_sha256": {
+        "adaptive-topology.bin": "bd109d05ae6c1414e690c9c44ec31923dcfa728cc291d519e6476ed54d0b8723",
+        "authored-cuts.tsv": "286a8e6358facb0b702ebda4ba37a6f2a71781d64f3c3f43471751ebec0560c5",
+        "authored-path-grading.sha256": "419fee60981dd503fefc38d58efe7ad29dd7281296b09a78898cb9f56d0caa62",
+        "earthworks-verification.json": "3c935c8b40c8fe7ef36399616428c8bc0d3cae924571b4df5281a8aa765948a0",
+        "source-provenance.json": "07638e06bf865c3e6a916d92b041f7b86d226308b2c2ee16e04522b636f1791c",
+        "terrain-physics.hcs2": "247566c8e6f8c74437a498eae66845c48937bf97a660593bbeb54912a1d12775",
+        "tile_0_0.png": "52520d8fc7a747f2e846e536faad13fb232175b73087ecb15ab23facdbf6ae21",
+        "tunnel-punch-verification.json": "c315bd7dbb00d868383e3e134b35b56304d3d1d315b141827f3a6617a24fceb4",
+        "verification.json": "3c935c8b40c8fe7ef36399616428c8bc0d3cae924571b4df5281a8aa765948a0",
+        "world.properties": "061685389ee0cafd56f51b8af8571f0f84d49ab32d7806ba8c2c3df0a6639c64",
+        "previous-authoring/source-provenance.json": "952460910bd0f5e3a7eb0c17734389ab57fb77c21cd7bb205d9c7d4b5b158ae5",
+        "previous-authoring/verification.json": "8777c8266eb7529abcb096d6addaedb2cb7bea325ccc95c270efc1817f216cc5",
+        "scene-package/.scene.bin.editor.previous": "c314f8d19ce3d36bbba92345e70af2f0c4d7b0b90550cd888e49eee9e23f22c3",
+        "scene-package/scene.bin": "44ab07f2f9f124bfe74f92bfb678c2645a1d3ef6b41e74d0dc3ffff283c1b388",
+        "scene-package/meshes/site-0-0.obj": "6132a17b685946652bd84b5cc4f6623b65b160754330368681d8e68c51b9ceb8",
+        "scene-package/meshes/site-0-1.obj": "581f2dd19e3091443ebf13fb19550a2b6a6b3cac5bc24ce1414d440fdfe81812",
+        "scene-package/meshes/site-1-0.obj": "e22f81de673add20dd8eec23e4aa909fa414eb6656323bfb1d7736dd7d50a431",
+        "scene-package/meshes/site-1-1.obj": "d8d0c28efa93230b3a1a22432744f3bc96978abb04a8df18fdb5c8e1f1bac45c",
+        "terrain-layers/tile_0_0.bin": "29261f43e56c1c4a8ac102179d30f0ea7dd6ecc77110856f4e1c934d39f3420e"
+      }
+    },
+    {
+      "id": "WLD-12",
+      "source": {
+        "id": "WLD-12",
+        "construction": "development/levels/rebuild/stair-end-pass/wld-12/construction.json",
+        "layout": "development/levels/rebuild/orthogonal-stair-pass/wld-12/authored-layout.json",
+        "glb": "development/levels/rebuild/stair-end-pass/wld-12/finished-ends.glb",
+        "native": "development/levels/rebuild/stair-end-pass/wld-12/finished-ends.hcs2",
+        "blend": "development/levels/rebuild/stair-end-pass/wld-12/finished-ends.blend",
+        "glb_sha256": "2bf04776f2d9e620b2bad5aeb6cc57b55266d83e97e65b2fa4e33bfba202d025",
+        "native_sha256": "47b56fbc85061ad253238f08f6af3c4e8bb8f5932f171533bf03a4939a7e740a"
+      },
+      "source_world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world",
+      "world": "development/levels/rebuild/constant-flight-construction-pass/worlds/wld-12/terrain-world",
+      "cuts": [
+        [
+          26.75,
+          27.75,
+          29.25,
+          32.5
+        ],
+        [
+          12.75,
+          36.75,
+          31.25,
+          39.25
+        ],
+        [
+          10,
+          36,
+          16,
+          44.5
+        ]
+      ],
+      "source_world_files_sha256": {
+        "adaptive-topology.bin": "9dc0268d4f305252f5ef08e952814650eaf7e2e781ac0cf33aef1a02068f6431",
+        "authored-cuts.tsv": "47b4e89866a0bbf2771bb7250fe680d392802465df0ccf038217ac641fc59756",
+        "authored-path-grading.sha256": "794d815cc7cae67f2b92b8b7fc5c95866d90ad5277da5dc55fb547bc8c297858",
+        "source-provenance.json": "2225e50573bb084a77d72e5c6695c01e1771c4fdc86f4c55322893e304f3dc5b",
+        "terrain-physics.hcs2": "14db9b98c1091f14fe5da2819febb65c7cae88e2617c8acf8e3144c1c864531d",
+        "tile_0_0.png": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+        "verification.json": "18c8f8298331342ebb7adb4d64bece728cb0ef94b3542073b7c16188c8f11698",
+        "world.properties": "ce1bdef52e93322565338582604f0aa81a8f072fb3f4909e4f1f192af98a9a2f",
+        "scene-package/.scene.bin.editor.previous": "1f0d2fb6550bc78ae64825f4b6f4ba54cfc4ff84e6b3fa160e565eadefd80a33",
+        "scene-package/scene.bin": "b63571a049fdb57808b86353a90bc3e041f4a2b342afbb6df9cf679d4a7708ff",
+        "scene-package/meshes/site-0-0.obj": "9c2be7a828c8c744f4a922fd50806bae2a0e1dfc31f3faf9e7bc1b0ef796b082",
+        "scene-package/meshes/site-0-1.obj": "2b1c53cc4e063582392a58753a2a370502dd6f8b26cd73fb49f0259f624c0111",
+        "scene-package/meshes/site-1-0.obj": "8ad897fb847a95a7ced43c1eab83dbea5929fd922d0334b58d435e41dff11a6c",
+        "scene-package/meshes/site-1-1.obj": "e0d454904e070d5f667f671f9a77e03b8004bc08f2380e676fef8006c207c3fc",
+        "terrain-layers/tile_0_0.bin": "f64f8e8caa97aafd2da7090459029f880b2df7ad3dce8de638fe7e2c54a17339"
+      }
+    },
+    {
+      "id": "WLD-18",
+      "source": {
+        "id": "WLD-18",
+        "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-18/construction.json",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-18/authored-layout.json",
+        "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.glb",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.hcs2",
+        "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-18/access-routes.blend",
+        "glb_sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e",
+        "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c"
+      },
+      "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-18/terrain-world",
+      "world": "development/levels/rebuild/constant-flight-construction-pass/worlds/wld-18/terrain-world",
+      "cuts": [
+        [
+          4.75,
+          33.75,
+          7.25,
+          48.25
+        ],
+        [
+          6,
+          32.75,
+          8,
+          35.25
+        ]
+      ],
+      "source_world_files_sha256": {
+        "adaptive-topology.bin": "42091eb72753f63b9b099c8561728ce5bbd7f5e0322b597844bb438451c76ff6",
+        "authored-cuts.tsv": "aeabfb702bc562f197b6c4afe916439003da53fd0e99143ce2b4c2b58e9fe560",
+        "authored-path-grading.sha256": "08d441fbe9e35e4aca099298ab89e74e9ef7b952c7460f39b72f8f9899737960",
+        "source-provenance.json": "e394c2f2b818bc3715ed63a67fb6a08496f00730655e2366cbea3c57f8607cb0",
+        "terrain-physics.hcs2": "24c3e34adaaeea26b29e1f0a0335117f9781be1ed8085823fc8ee7b9c655125a",
+        "tile_0_0.png": "48b7b36ce1cf7a7403614d210855977420dae5e273cd1b50ac25aa285f3c183d",
+        "verification.json": "9e1dbca015b1daa9a70467c790c0b380b812b1f110eecefd3e633c08756f3988",
+        "world.properties": "484945a0e995f5d9c50434269cede7fb3cf3532f5941d23826c58650a234579a",
+        "scene-package/.scene.bin.editor.previous": "e6d4bff9d90598c656083fc91b0fcd38432990c2697c7fa27aa7dcecd07cad57",
+        "scene-package/scene.bin": "70fdb9abfa530d0fce478afcb6ea9d5bb073dcb96c533957cce2fd7431f7aad3",
+        "scene-package/meshes/site.obj": "7354431c4e9a3993a1b3bfec47a24ecb22ac9634f2ff3821f356d0257700bd5f",
+        "terrain-layers/tile_0_0.bin": "91827544b914ac971ffdc33ec3113c42a7196709898e22b55011aa7a625e13f8"
+      }
+    }
+  ]
+}

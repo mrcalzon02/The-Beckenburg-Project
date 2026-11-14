@@ -17,7 +17,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/stair-cell-construction-batch/' in path:
+    if '/constant-flight-construction-batch/' in path:
+        kind='Native constant-width stair cells, supported landings, rectangular wells and saved terrain punches; pitched roofs hidden, Research tunnel roof retained for support context, other amber Cinder flights unfinished, ordinary-ground and runtime gates open'
+    elif '/stair-cell-construction-batch/' in path:
         kind='Native enclosed Research tunnel elbow; ceiling/upper layers hidden, old flared flights unfinished, no runtime acceptance' if 'wld-08' in p.name else 'Native service stair cutaway; east wall and upper layers hidden only for inspection, no runtime acceptance' if 'lower-cell-section' in p.name else 'Native constant stair flights, complete landings and rectangular floor openings; roofs hidden, no runtime acceptance'
     elif '/institution-earthworks-batch/' in path:kind='Native actual saved institution arrival and grounds sculpt with supported forecourt aprons; roofs hidden, rough materials, landscape/guard/runtime acceptance open'
     elif '/institution-courts-batch/' in path:kind='Native constructed institution courts and normal exterior doorways; roofs hidden, unfinished grade/edge protection and runtime gates open'

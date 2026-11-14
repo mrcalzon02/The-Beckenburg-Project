@@ -1,0 +1,26 @@
+[
+  {
+    "site": "WLD-08",
+    "constant_exported_tread_width": 1.8,
+    "actual_treads": {
+      "L17": 14,
+      "L18": 14,
+      "L20": 14
+    }
+  },
+  {
+    "site": "WLD-12",
+    "constant_exported_tread_width": 1.8,
+    "actual_treads": {
+      "L16": 17,
+      "L17": 18
+    }
+  },
+  {
+    "site": "WLD-18",
+    "constant_exported_tread_width": 1.8,
+    "actual_treads": {
+      "route-08": 24
+    }
+  }
+]

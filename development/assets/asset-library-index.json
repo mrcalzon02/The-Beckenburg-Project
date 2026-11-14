@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2000,
-  "unique_local_file_hashes": 1829,
+  "local_files": 2003,
+  "unique_local_file_hashes": 1832,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 78,
+    "additional_custom_model_sources": 81,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -26533,6 +26533,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "f4aad1c2bee268c27c9adf27ff0a9203f7bd92faadc7b85cb9573738f4ac919c",
       "bytes": 3172360
+    },
+    {
+      "id": "constant-cells",
+      "label": "constant-cells",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/constant-flight-construction-pass/wld-08/constant-cells.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "066fb11bffcb760d97817fea85f1a22191f6b9e983b5dea910d2d1135128951b",
+      "bytes": 5649128
+    },
+    {
+      "id": "constant-cells",
+      "label": "constant-cells",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/constant-flight-construction-pass/wld-12/constant-cells.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "b56720f8730c695a2c96c0de344a46c8041ca4469977d100e38503fbd1de3ac2",
+      "bytes": 5082820
+    },
+    {
+      "id": "constant-cells",
+      "label": "constant-cells",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/constant-flight-construction-pass/wld-18/constant-cells.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "378350aebcbaae3c43f7241aceb1d2079dc2a51c9299d073ebdfbae1184e11fd",
+      "bytes": 3954004
     },
     {
       "id": "courts-and-docks",
