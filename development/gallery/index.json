@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10898,
+  "count": 10901,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -96424,6 +96424,36 @@
       "height": 1100,
       "bytes": 1507085,
       "sha256": "11b34b1bb6066a42c1cff372790f1590f7eee95ad92f53fbb7e6bb24a825ac4d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/courts-and-docks-batch/wld-06.png",
+      "url": "development/levels/rebuild/captures/courts-and-docks-batch/wld-06.png",
+      "title": "Wld 06",
+      "kind": "Native area-built courtyards and piled dock construction; roofs hidden for review, terrain/finish/runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1469373,
+      "sha256": "b52cd79c02645e4d300ee6faeb76fe47257046c10b62d42715716190edafdc08"
+    },
+    {
+      "path": "development/levels/rebuild/captures/courts-and-docks-batch/wld-08.png",
+      "url": "development/levels/rebuild/captures/courts-and-docks-batch/wld-08.png",
+      "title": "Wld 08",
+      "kind": "Native area-built courtyards and piled dock construction; roofs hidden for review, terrain/finish/runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1457061,
+      "sha256": "b280a79987df46355fc721edc72553aafc7ab02dc6f45c85672dd508761ad7a6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/courts-and-docks-batch/wld-13.png",
+      "url": "development/levels/rebuild/captures/courts-and-docks-batch/wld-13.png",
+      "title": "Wld 13",
+      "kind": "Native area-built courtyards and piled dock construction; roofs hidden for review, terrain/finish/runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1496128,
+      "sha256": "c6ed58888f35aa1668a1efbe4f05fe4d7dd1d9f6b71aac3a3e8222a1abfe611b"
     },
     {
       "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-01.png",

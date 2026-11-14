@@ -186,3 +186,7 @@ tools/build_circulation_construction.py -text whitespace=cr-at-eol
 # Exact-byte architectural correction sources, including failed movement findings.
 development/levels/rebuild/study-solid-removal-pass/** -text whitespace=cr-at-eol
 tools/remove_study_solids.py -text whitespace=cr-at-eol
+
+# Area-built courts and docks retain exact geometry/physics receipts.
+development/levels/rebuild/courts-and-docks-pass/** -text whitespace=cr-at-eol
+tools/build_site_courts_and_docks.py -text whitespace=cr-at-eol

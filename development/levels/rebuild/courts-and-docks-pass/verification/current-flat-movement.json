@@ -1,0 +1,165 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 7
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 5076,
+        "valid_standing": 4836,
+        "invalid_standing": 240,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 222,
+          "NO_FOOT_SUPPORT_0.0_0.22": 5,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 5,
+          "FOOT_HEIGHT_SPREAD": 4,
+          "PHYSICAL_COMPONENT": 4
+        },
+        "physical_components": [
+          [
+            "WLD-06 east pier shaft rim 2.001",
+            3
+          ],
+          [
+            "WLD-06 east pier shaft rim 1.001",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 7
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 12
+      },
+      "current_lanes": {
+        "samples": 5268,
+        "valid_standing": 4631,
+        "invalid_standing": 637,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 606,
+          "NO_FOOT_SUPPORT_0.0_0.22": 8,
+          "FOOT_HEIGHT_SPREAD": 12,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 5,
+          "NO_FOOT_SUPPORT_0.22_0.0": 2,
+          "PHYSICAL_COMPONENT": 3,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 1
+        },
+        "physical_components": [
+          [
+            "171:L20 flight0 step2",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 11
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 15
+      },
+      "current_lanes": {
+        "samples": 5181,
+        "valid_standing": 4725,
+        "invalid_standing": 456,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 441,
+          "NO_FOOT_SUPPORT_0.0_0.22": 3,
+          "FOOT_HEIGHT_SPREAD": 12
+        },
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-06": {
+      "before": {
+        "contract": "development/levels/rebuild/study-solid-removal-pass/wld-06/construction.json",
+        "contract_sha256": "99f43e8c045984aacf6f989cda792e0f4236c36b05e294c3d82ad24414291f65",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-06/authored-layout.json",
+        "layout_sha256": "922344d8621457b13a9b753064de4ce035b3b58b5047e51063db2f287c7e6907",
+        "native": "development/levels/rebuild/study-solid-removal-pass/wld-06/architecture-without-guides.hcs2",
+        "native_sha256": "f50a4f8a045c3c130553431073ac083b917436c0b8f9d490cc71b63cb49e57ae"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/courts-and-docks-pass/wld-06/construction.json",
+        "contract_sha256": "6bfe36790e78a25a22a06dd3676f8b71b8871b4fa4b8021955aa5ca49166124b",
+        "layout": "development/levels/rebuild/courts-and-docks-pass/wld-06/authored-layout.json",
+        "layout_sha256": "622a9e678dd4c2629fd5eed1f9d29fa399c50cb4dcef3218941875f75993af6b",
+        "native": "development/levels/rebuild/courts-and-docks-pass/wld-06/courts-and-docks.hcs2",
+        "native_sha256": "0bbee6b1ccf813e9b72ce14f948055a0ae940cb565138ccbaea5197c260d8e97"
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/study-solid-removal-pass/wld-08/construction.json",
+        "contract_sha256": "c832ee22dfbcd78d32b9f26bdd53acbb81c87a2b08de85c19864a813aa0d5e50",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "36d2e5e00a0eaad2ddaed75c55f88d678f5c299ea43d46afb42b3232efb2b534",
+        "native": "development/levels/rebuild/study-solid-removal-pass/wld-08/architecture-without-guides.hcs2",
+        "native_sha256": "cb965d6d18efbd70102fd955562ebd699919b7b1efcc18b02de4e75fa0040903"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/courts-and-docks-pass/wld-08/construction.json",
+        "contract_sha256": "69456219c9f0df54b21b5669828065aa3e905b10d48367682f0e3db2e07d9d17",
+        "layout": "development/levels/rebuild/courts-and-docks-pass/wld-08/authored-layout.json",
+        "layout_sha256": "a59da680fa7d75b52d00bff3ed3a8a05b931accbb5d894c0b1e6303932234d56",
+        "native": "development/levels/rebuild/courts-and-docks-pass/wld-08/courts-and-docks.hcs2",
+        "native_sha256": "93523955a11c4fafe82b90c60040e8cc07ae78a5c04ad1c23296fc95323253f9"
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "contract": "development/levels/rebuild/study-solid-removal-pass/wld-13/construction.json",
+        "contract_sha256": "88216a4aa430d0ca3222ef18bf073040215ba507a9e123b41346348cd35bfa0a",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-13/authored-layout.json",
+        "layout_sha256": "75322df84869e38bdf90ca2cbd87b6ccd9f384003060d11b34ad372468e4f771",
+        "native": "development/levels/rebuild/study-solid-removal-pass/wld-13/architecture-without-guides.hcs2",
+        "native_sha256": "fd567796fa4b4cdfefc9ec137ddaa258532042bf426cfad0e427d718ff97f0e2"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/courts-and-docks-pass/wld-13/construction.json",
+        "contract_sha256": "2eea38d3ccc5bad55012d182ff1d7da67a7224903999ead3c96f88d7b89f033c",
+        "layout": "development/levels/rebuild/courts-and-docks-pass/wld-13/authored-layout.json",
+        "layout_sha256": "3fffc39d5a3fe0336571ae509c14d31428d8372e85ea6379421ac26febe3818c",
+        "native": "development/levels/rebuild/courts-and-docks-pass/wld-13/courts-and-docks.hcs2",
+        "native_sha256": "802c6b51ba9c51a9654be569c7ec13228e751f5b97782b149fba821c26f23df1"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/study-solid-removal-pass/roster.json": "7fa34484e56fcfa52845bf09ccf55a964ea65e458098986420233e2dac8d5d2f"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/courts-and-docks-pass/verification/current-flat-failure-contacts.tsv": "a1f309c4ab651000c90203c701f78d306dfd773eae7b78f8cd9e6770f6bf4b6d",
+    "development/levels/rebuild/courts-and-docks-pass/verification/current-flat-failure-input.tsv": "f311b2b634af704832cc007904c17a957927050ccc21f1a7a73defd1be3c1193",
+    "development/levels/rebuild/courts-and-docks-pass/verification/current-flat-lane-input.tsv": "303df004977f4abede2b6cd53429f8482bc3a642088d59d624f938adc1f8b119",
+    "development/levels/rebuild/courts-and-docks-pass/verification/current-flat-lane-names.tsv": "5adf88502dbf199bd7149c9284abcb4a7a037c262a8c8332c20108f6c6051993",
+    "development/levels/rebuild/courts-and-docks-pass/verification/current-flat-lanes.tsv": "f0f46d608dfc75ddb614d3a9bfd487b28fbb015be9ba668062269e135a105230",
+    "development/levels/rebuild/courts-and-docks-pass/verification/current-flat-links.tsv": "7775e4355c9da048b29d51c3992b053668ad7fcf4cb53f6d3bc51910eac04fdf",
+    "development/levels/rebuild/courts-and-docks-pass/verification/current-flat-names.tsv": "5adf88502dbf199bd7149c9284abcb4a7a037c262a8c8332c20108f6c6051993",
+    "development/levels/rebuild/courts-and-docks-pass/verification/current-flat-paths.tsv": "5942b078d54639107c07b3bc5020bbd6958ca7c17520df222ab31b621f90eb38"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

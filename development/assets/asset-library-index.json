@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1978,
-  "unique_local_file_hashes": 1807,
+  "local_files": 1981,
+  "unique_local_file_hashes": 1810,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 56,
+    "additional_custom_model_sources": 59,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -26533,6 +26533,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "f4aad1c2bee268c27c9adf27ff0a9203f7bd92faadc7b85cb9573738f4ac919c",
       "bytes": 3172360
+    },
+    {
+      "id": "courts-and-docks",
+      "label": "courts-and-docks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/courts-and-docks-pass/wld-06/courts-and-docks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "bd5788fcca05aaffc9e14b2db744d52cc3389bd27ee1e58e2d10fc3c79ba6a5e",
+      "bytes": 3032800
+    },
+    {
+      "id": "courts-and-docks",
+      "label": "courts-and-docks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/courts-and-docks-pass/wld-08/courts-and-docks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "28d524bf61d7bf3e6699032c9a705fc4ce7bf95f1d446768ebf6dae3da498b6c",
+      "bytes": 3292236
+    },
+    {
+      "id": "courts-and-docks",
+      "label": "courts-and-docks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/courts-and-docks-pass/wld-13/courts-and-docks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "7188c304814f64d530f24a8da978b82729ba83662e2a147f7bf0b8af6daf1f7c",
+      "bytes": 3413476
     },
     {
       "id": "deck-terrain",

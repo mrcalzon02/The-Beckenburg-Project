@@ -6842,6 +6842,34 @@ Evidence and verification: Owner Cannery screenshot; development/levels/rebuild/
 
 Older-map obligation: Audit every remaining active candidate for physical study ribbons, coplanar landings and earlier route-driven wall/floor/roof cuts. Native checks do not validate architecture. Deliberately authored slabs/bridges also require sensible building/terrain review. Full production rebuild and runtime integration remain open; no unlock or held integration merge.
 
+### DEV-483 — Dock and courtyard surfaces were incomplete around removed physical route guides
+
+**Status:** SELECTED ARCHITECTURAL AREAS CONSTRUCTED; FULL REMEDIATION OPEN · **Affected:** Wharf quay/jetty/crossdock and east stair head; Research compound courtyard/forecourt; Cannery loading dock/service yard
+
+Removing physical study strips exposed missing actual deck surfaces and unsupported ground-level outdoor circulation. Earlier narrow authoring surfaces also overlapped subsequent area slabs.
+
+Cause / uncertainty: Prior deck fragments had been built around study meshes instead of authoring the complete architectural deck/yard footprints.
+
+Fix / next action: Replace Wharf dock floor fragments with complete0.20m decks, actual stair-only voids, native-soil driven piles and a continuous orthogonal steel bearing grid. Enlarge east pier-head landing around the actual well. Build Research retaining/fill foundations and0.20m courtyard/forecourt/apron pavement, with guards on exposed retaining edges. Construct Cannery piled loading deck and chamfered service yard. Clip old Wharf porch/perimeter surfaces to terminate at real room/dock boundaries and cap perimeter guards at their jetty joins; remove obsolete rails within the joined deck. No route ribbon is restored. All6flights/6complete vertical routes pass both ways,40complete flatlinks pass with zero direction regressions from the ribbon-free source. Strict samples retain1333invalid of15525.
+
+Evidence and verification: development/levels/rebuild/courts-and-docks-pass/roster.json; per-site area_construction with source-soil receivers, real pile bottoms and framing coordinates; verification/current-flat-movement.json and stairs; native courts-and-docks-batch captures
+
+Older-map obligation: Arrival terrain is unfinished at all3sites; Research array/shelter and Cannery forest approaches remain unbuilt. Wharf outer guard continuity/underside/joins, courtyard drainage/finish and structure load/span detailing remain open. Other22active candidates still need guide-solid removal and architectural repair; preserve4mature authorities. No runtime acceptance, landscape/desquareify acceptance or availability promotion.
+
+### DEV-484 — Research courtyard connections crossed actual descending stair openings
+
+**Status:** SEPARATE COURT DOORWAYS CONSTRUCTED; RUNTIME OPEN · **Affected:** WLD-08 lab east face and dormitory west face; first Cannery wash approach and Wharf coplanar overlap corrected during same batch
+
+Court links used the same faces/positions as descending stairs, so a ground-level straight approach crossed the real lower-flight opening. First Cannery yard reuse also led an old wash approach outside the chosen chamfered yard.
+
+Cause / uncertainty: Earlier paths were treated as clearance commands rather than following actual doorway, floor and shaft arrangements.
+
+Fix / next action: Close the obsolete z35 ground-level court wall openings and build normal2.4m-wide/2.45m-high doorways atz41, preserving the below-grade stair geometry. Lab circulation approaches its upper stair from the west; dormitory approaches from the east. Actual courtyard construction precedes guide adjustment. Refit Cannery wash approach through the authored yard. Final strict center/side samples on the new Research entrances pass and all stair chains remain passing. Production native controls show the two former above-shaft wall crossings now block; three formerly open surface controls block on real new area floors.
+
+Evidence and verification: tools/build_site_courts_and_docks.py; courts-and-docks-pass/verification/new-surfaces-and-closed-stair-crossings-results.tsv; current-flat and stair checks; final native cutaways
+
+Older-map obligation: Review every courtyard-to-stair interface across full roster. Lower Research tunnel diagonal, arrival/array ground, fixture/door interaction bindings and real rendering/collision/room/portal/acoustic/spawn/service integration remain open.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
