@@ -9,6 +9,7 @@ from append_static_glb import append,read
 from review_roster_macroterrain import records,sha
 from export_roster_collision import face_keys,native_faces
 BASE=ROOT/'development/levels/rebuild';OUT=BASE/'roof-construction-pass'
+HIP_WINGS=set();LONG_AXIS_RIDGES=False;FACADE_CLOSURES=False
 # x/z footprint, ceiling top, ridge rise. Separate wings retain their own heights.
 WINGS={
 'FARMHOUSE':[('house',12,10,26,28,6,2.2),('barn-stalls',31,9,43,16,3,1.3),('barn-loft',31,16,43,24,6,2.0),('workshop',27,26,39,33,3,1.4)],
@@ -22,19 +23,50 @@ def mesh(name,vs,fs,mat):
    v=m.vertices[m.loops[i].vertex_index].co;uv.data[i].uv=(v.x,v.y+v.z)
  return o
 FACES=[(0,3,2,1),(4,5,6,7),(0,1,5,4),(1,2,6,5),(2,3,7,6),(3,0,4,7)]
-def slab(name,corners,depth,mat):return mesh(name,[(x,y-depth,z) for x,y,z in corners]+corners,FACES,mat)
+def slab(name,corners,depth,mat):
+ faces=FACES if len(corners)==4 else [(2,1,0),(3,4,5),(0,1,4,3),(1,2,5,4),(2,0,3,5)]
+ return mesh(name,[(x,y-depth,z) for x,y,z in corners]+corners,faces,mat)
+
+def facade_closures(site,name,bounds,top,data,material):
+ a,b,c,d=bounds;built=[];proof=[]
+ for axis,fixed,lo,hi,inward in [(0,a,b,d,1),(0,c,b,d,-1),(1,b,a,c,1),(1,d,a,c,-1)]:
+  stops=sorted({lo,hi}|{v for z in data['zones'] if z['kind'] not in ['outside','staging'] for v in [z['bounds'][1-axis],z['bounds'][3-axis]] if lo<v<hi})
+  for start,end in zip(stops,stops[1:]):
+   mid=(start+end)/2;x=fixed+inward*.04 if axis==0 else mid;zz=mid if axis==0 else fixed+inward*.04
+   owners=[z for z in data['zones'] if z['kind'] not in ['outside','staging'] and z['y']>=0 and z['bounds'][0]-.0001<=x<=z['bounds'][2]+.0001 and z['bounds'][1]-.0001<=zz<=z['bounds'][3]+.0001]
+   assert owners,(site,name,axis,fixed,start,end,'roof has no occupied support footprint')
+   receiver=max(z['y']+z['height'] for z in owners)
+   if receiver>=top-.01:continue
+   x0,x1=(min(fixed,fixed+inward*.24),max(fixed,fixed+inward*.24)) if axis==0 else (start,end);z0,z1=(start,end) if axis==0 else (min(fixed,fixed+inward*.24),max(fixed,fixed+inward*.24))
+   obj=slab(name+' supported upper facade '+str(len(built)),[(x0,top+.05,z0),(x1,top+.05,z0),(x1,top+.05,z1),(x0,top+.05,z1)],top+.05-(receiver-.08),material);obj['role']='roof-bearing facade closure';built.append(obj);proof.append(dict(name=obj.name,bottom_y=receiver-.08,top_y=top+.05,receiver_zones=[z['id'] for z in owners if abs(z['y']+z['height']-receiver)<.001]))
+ return built,proof
 def build(s):
  site=s['id'];folder=OUT/site.lower();folder.mkdir(parents=True,exist_ok=True);source=ROOT/s['glb'];oldnative=ROOT/s['native'];assert sha(source)==s['glb_sha256'] and sha(oldnative)==s['native_sha256'];data=json.loads((ROOT/s['layout']).read_text());meta=json.loads((ROOT/s['construction']).read_text());bpy.ops.wm.read_factory_settings(use_empty=True);bpy.ops.import_scene.gltf(filepath=str(source));oldobjects=list(bpy.context.scene.objects)
  mat=bpy.data.materials.new(site+' slate roof blocking');mat.diffuse_color=(.16,.19,.21,1);mat.use_nodes=True;mat.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=mat.diffuse_color;mat.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.86
  built=[];proof=[]
  for name,a,b,c,d,top,rise in WINGS[site]:
   mid=(a+c)/2;eave=top+.24;ridge=eave+rise
-  built+=[slab(name+' roof west',[(a,eave,b),(mid,ridge,b),(mid,ridge,d),(a,eave,d)],.22,mat),slab(name+' roof east',[(mid,ridge,b),(c,eave,b),(c,eave,d),(mid,ridge,d)],.22,mat)]
-  # Solid gables close the entire triangular void, including the ceiling join.
-  for z0,z1,label in [(b,b+.24,'north'),(d-.24,d,'south')]:
-   vs=[(a,top-.12,z0),(c,top-.12,z0),(c,eave-.20,z0),(mid,ridge-.20,z0),(a,eave-.20,z0)];vs+= [(x,y,z1) for x,y,z in vs];fs=[(4,3,2,1,0),(5,6,7,8,9)]+[(i,(i+1)%5,(i+1)%5+5,i+5) for i in range(5)];built.append(mesh(name+' gable '+label,vs,fs,mat))
-  for x0,x1,label in [(a,a+.2,'west'),(c-.2,c,'east')]:built.append(slab(name+' eave closure '+label,[(x0,eave,b),(x1,eave,b),(x1,eave,d),(x0,eave,d)],eave-top+.12,mat))
-  proof.append(dict(wing=name,bounds=[a,b,c,d],ceiling=top,ridge=ridge,roof_depth=.22,gable_depth=.24))
+  hip=(site,name) in HIP_WINGS;ridge_x=LONG_AXIS_RIDGES and c-a>d-b;midz=(b+d)/2
+  if hip:
+   corners=[(a,eave,b),(c,eave,b),(c,eave,d),(a,eave,d)];peak=(mid,ridge,midz)
+   for i in range(4):built.append(slab(name+' hip face '+str(i),[corners[i],corners[(i+1)%4],peak],.22,mat))
+   for x0,x1,label in [(a,a+.2,'west'),(c-.2,c,'east')]:built.append(slab(name+' fascia '+label,[(x0,eave,b),(x1,eave,b),(x1,eave,d),(x0,eave,d)],eave-top+.12,mat))
+   for z0,z1,label in [(b,b+.2,'north'),(d-.2,d,'south')]:built.append(slab(name+' fascia '+label,[(a,eave,z0),(c,eave,z0),(c,eave,z1),(a,eave,z1)],eave-top+.12,mat))
+  elif ridge_x:
+   built+=[slab(name+' roof north',[(a,eave,b),(c,eave,b),(c,ridge,midz),(a,ridge,midz)],.22,mat),slab(name+' roof south',[(a,ridge,midz),(c,ridge,midz),(c,eave,d),(a,eave,d)],.22,mat)]
+   for x0,x1,label in [(a,a+.24,'west'),(c-.24,c,'east')]:
+    vs=[(x0,top-.12,b),(x0,top-.12,d),(x0,eave-.20,d),(x0,ridge-.20,midz),(x0,eave-.20,b)];vs+=[(x1,y,z) for x,y,z in vs];fs=[(4,3,2,1,0),(5,6,7,8,9)]+[(i,(i+1)%5,(i+1)%5+5,i+5) for i in range(5)];built.append(mesh(name+' gable '+label,vs,fs,mat))
+   for z0,z1,label in [(b,b+.2,'north'),(d-.2,d,'south')]:built.append(slab(name+' eave closure '+label,[(a,eave,z0),(c,eave,z0),(c,eave,z1),(a,eave,z1)],eave-top+.12,mat))
+  else:
+   built+=[slab(name+' roof west',[(a,eave,b),(mid,ridge,b),(mid,ridge,d),(a,eave,d)],.22,mat),slab(name+' roof east',[(mid,ridge,b),(c,eave,b),(c,eave,d),(mid,ridge,d)],.22,mat)]
+   for z0,z1,label in [(b,b+.24,'north'),(d-.24,d,'south')]:
+    vs=[(a,top-.12,z0),(c,top-.12,z0),(c,eave-.20,z0),(mid,ridge-.20,z0),(a,eave-.20,z0)];vs+= [(x,y,z1) for x,y,z in vs];fs=[(4,3,2,1,0),(5,6,7,8,9)]+[(i,(i+1)%5,(i+1)%5+5,i+5) for i in range(5)];built.append(mesh(name+' gable '+label,vs,fs,mat))
+   for x0,x1,label in [(a,a+.2,'west'),(c-.2,c,'east')]:built.append(slab(name+' eave closure '+label,[(x0,eave,b),(x1,eave,b),(x1,eave,d),(x0,eave,d)],eave-top+.12,mat))
+  closures=[]
+  if FACADE_CLOSURES:
+   wallmat=next(o.data.materials[0] for o in oldobjects if o.get('role')=='rough shell wall' and o.data.materials)
+   extra,closures=facade_closures(site,name,[a,b,c,d],top,data,wallmat);built.extend(extra)
+  proof.append(dict(wing=name,bounds=[a,b,c,d],ceiling=top,ridge=ridge,roof_depth=.22,gable_depth=.24,roof_shape='hip' if hip else 'gable',ridge_axis='x' if ridge_x else 'z',facade_closures=closures))
  # Every roof addition stays above the occupied ceiling plane of overlapping rooms.
  for o in built:
   for v in o.data.vertices:

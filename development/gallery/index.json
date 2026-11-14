@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10883,
+  "count": 10886,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -101456,6 +101456,16 @@
       "sha256": "2eb7f1c4a822ab358d80e545b5733fd0faea01e26fe9f83f60c6641d47ff9201"
     },
     {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/church.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/church.png",
+      "title": "Church",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 745161,
+      "sha256": "6f2ad52fe2496d55f73003d2e56c7903017a71ae515039bd7cbc4ad9fd48002e"
+    },
+    {
       "path": "development/levels/rebuild/captures/roof-construction-batch/college.png",
       "url": "development/levels/rebuild/captures/roof-construction-batch/college.png",
       "title": "College",
@@ -101486,6 +101496,16 @@
       "sha256": "6cda8331904ec6bd6eca6c0ae19573a0a83b42f5b5b6964ef1bfbdf73af7fe87"
     },
     {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/prison.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/prison.png",
+      "title": "Prison",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 820135,
+      "sha256": "59f18894c93129057af4aeaea1add830ef20aae608d5b009655dc7254dca1655"
+    },
+    {
       "path": "development/levels/rebuild/captures/roof-construction-batch/rejected-missing-north-cloister/academy.png",
       "url": "development/levels/rebuild/captures/roof-construction-batch/rejected-missing-north-cloister/academy.png",
       "title": "Academy",
@@ -101504,6 +101524,16 @@
       "height": 900,
       "bytes": 975229,
       "sha256": "0feff6cf826ede30d2f57342b0eb15af075be63e8f7b0e63ff649eaf999b9b01"
+    },
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/wld-10.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/wld-10.png",
+      "title": "Wld 10",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 830255,
+      "sha256": "d65a6fe24ec8746310333d9f705ae89b98b9db37ab67d87c5f8caed0e18158e4"
     },
     {
       "path": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-01.png",

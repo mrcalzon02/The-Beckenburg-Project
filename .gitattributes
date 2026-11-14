@@ -165,3 +165,9 @@ tools/java/RebuildRoofOpticalProbe.java -text
 development/levels/rebuild/institution-roof-pass/** whitespace=cr-at-eol
 tools/build_institution_roof_batch.py whitespace=cr-at-eol
 tools/java/RebuildRoofOpticalProbe.java whitespace=cr-at-eol
+
+# Secure/sacred roofs bind exact scene and native optical evidence bytes.
+development/levels/rebuild/secure-sacred-roof-pass/** -text whitespace=cr-at-eol
+tools/build_roster_enclosed_roofs.py text eol=lf
+tools/build_secure_sacred_roof_batch.py text eol=lf
+tools/java/RebuildFacadeOpticalProbe.java text eol=lf
