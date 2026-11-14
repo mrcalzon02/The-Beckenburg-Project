@@ -1,0 +1,15 @@
+{
+  "status": "LOSSLESS_RAW_VERIFICATION_ARCHIVES_NOT_NEW_TEST_ACCEPTANCE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/retaining-shoulder-pass/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/retaining-shoulder-pass/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 6211310,
+      "original_sha256": "c62b70c8416df7cbb88885c5b42244fac5d6a3c8df8d27364456a93e8bd34ec7",
+      "archive_bytes": 125926,
+      "archive_sha256": "065489cee9d5fcbebedc93cdacb2bf5618f8757dc3b27c50efe9a5c6926cd311",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    }
+  ],
+  "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."
+}

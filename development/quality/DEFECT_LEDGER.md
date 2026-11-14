@@ -6660,6 +6660,34 @@ Evidence and verification: tools/build_stair_end_batch.py; source-bound construc
 
 Older-map obligation: Do not relax native-loader validity checks or claim Blender closure proves exported native correctness. Other scenes remain individually unaudited.
 
+### DEV-470 — Rough saved circulation cuts lack retaining construction at Mine Dam and Cannery
+
+**Status:** ROOTED SHOULDER CANDIDATES CONSTRUCTED; FULL TERRAIN AND RUNTIME ACCEPTANCE OPEN · **Affected:** WLD-05 Dead Mans Claim; WLD-09 Blackwater Dam; WLD-13 Greywater Cannery
+
+Earlier lower-only soil cuts established rough playable bed levels but left raw exposed grade shoulders without construction or edge treatment.
+
+Cause / uncertainty: Saved terrain excavation preceded retaining, drainage and terrain-to-structure finishing.
+
+Fix / next action: Construct closed 0.32m thick retaining runs outside route and room reservations, with horizontal footing bases sampled over actual terrain footprints. 750 reopened-export root probes retain at least0.39999m soil embedding. Source terrain/topology, models and existing native records remain unchanged. All12flights/11vertical routes,29flat links pass both ways;13,329unchanged strict positions have zero newly invalid samples.
+
+Evidence and verification: development/levels/rebuild/retaining-shoulder-pass/roster.json; individual construction root_checks and native/export bindings; verification/unchanged-lanes.json; terrain-interface closeups
+
+Older-map obligation: Coping, weeps/drainage, returns, terrain art and full landscape/runtime gates remain open. Academy off-landform paths and WLD16terrain ownership are not fixed by these walls.
+
+### DEV-471 — Cinder retaining stub attempt passes movement but lacks coherent bank construction
+
+**Status:** REJECTED; PRIOR CINDER SOURCE RETAINED · **Affected:** WLD-18 Cinder-6 two isolated retaining blocks
+
+A placement rule produced two individually rooted wall stubs rather than a coherent treatment of the cut bank.
+
+Cause / uncertainty: Local physical feasibility and movement checks do not establish an appropriate architectural arrangement.
+
+Fix / next action: Preserve the actual rejected model/native/editable files and native review images under rejected/cinder-6-stubs. Do not adopt that source. Redesign its bank as a whole before adding retention. Academy and Monastery also retain their sources because no justified wall fit was found.
+
+Evidence and verification: development/levels/rebuild/retaining-shoulder-pass/rejected/cinder-6-stubs; captures/retaining-shoulder-batch/rejected-cinder-6-stubs; explicit all29roster decisions
+
+Older-map obligation: Review every generated structural assembly visually; passing native probes cannot accept site design or runtime gameplay.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

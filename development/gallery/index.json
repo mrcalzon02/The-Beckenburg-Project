@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10871,
+  "count": 10879,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -101354,6 +101354,86 @@
       "height": 850,
       "bytes": 615570,
       "sha256": "6523bdeab73a69081481e6146f9a302f47123100e8a41793a9d72676a4b38aa0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/retaining-shoulder-batch/rejected-cinder-6-stubs/wld-18-isolated-construction.png",
+      "url": "development/levels/rebuild/captures/retaining-shoulder-batch/rejected-cinder-6-stubs/wld-18-isolated-construction.png",
+      "title": "Wld 18 isolated construction",
+      "kind": "Rejected native Cinder retaining-stub study; prior source retained",
+      "width": 1100,
+      "height": 850,
+      "bytes": 474808,
+      "sha256": "b28ae18e4e19bdb705b43b2a1792deeb3c8f4dad122c7d5388cf1a75a7a74d1a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/retaining-shoulder-batch/rejected-cinder-6-stubs/wld-18-terrain-interface.png",
+      "url": "development/levels/rebuild/captures/retaining-shoulder-batch/rejected-cinder-6-stubs/wld-18-terrain-interface.png",
+      "title": "Wld 18 terrain interface",
+      "kind": "Rejected native Cinder retaining-stub study; prior source retained",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1026196,
+      "sha256": "1c90d2533d12f70531d52d9371d340d6df76f85d0d235d6e89573551e6ce5866"
+    },
+    {
+      "path": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-05-isolated-construction.png",
+      "url": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-05-isolated-construction.png",
+      "title": "Wld 05 isolated construction",
+      "kind": "Native retaining-shoulder construction; isolated views hide terrain/context, no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 494394,
+      "sha256": "8c3facc18e77561898bf0e5e48a38066899322bed4b5b747ceb5dbec0d8e0d60"
+    },
+    {
+      "path": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-05-terrain-interface.png",
+      "url": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-05-terrain-interface.png",
+      "title": "Wld 05 terrain interface",
+      "kind": "Native retaining-shoulder construction; isolated views hide terrain/context, no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1018048,
+      "sha256": "bb8f526862b7333ee80075d89a3cb831a8afdba668504a3a3633dd8713640e0e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-09-isolated-construction.png",
+      "url": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-09-isolated-construction.png",
+      "title": "Wld 09 isolated construction",
+      "kind": "Native retaining-shoulder construction; isolated views hide terrain/context, no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 495851,
+      "sha256": "08485e3987e05787f9a208b4c556cb4cd33e3e8c466465ef8473e387df253c94"
+    },
+    {
+      "path": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-09-terrain-interface.png",
+      "url": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-09-terrain-interface.png",
+      "title": "Wld 09 terrain interface",
+      "kind": "Native retaining-shoulder construction; isolated views hide terrain/context, no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 996508,
+      "sha256": "7f65b7d384a85a297feaf6a143896d88225b3d2dad754c86999d8dcb3695f4f0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-13-isolated-construction.png",
+      "url": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-13-isolated-construction.png",
+      "title": "Wld 13 isolated construction",
+      "kind": "Native retaining-shoulder construction; isolated views hide terrain/context, no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 505739,
+      "sha256": "2bff6c1f2996c9e6f949500a3e420006dcdbe030d94848a03371cc458aab3b6c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-13-terrain-interface.png",
+      "url": "development/levels/rebuild/captures/retaining-shoulder-batch/wld-13-terrain-interface.png",
+      "title": "Wld 13 terrain interface",
+      "kind": "Native retaining-shoulder construction; isolated views hide terrain/context, no runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1049185,
+      "sha256": "484c48723e8b48c1b709ff8f287903e3e8660d879bb9f024a4c5ef8c4a93064e"
     },
     {
       "path": "development/levels/rebuild/captures/roof-construction-batch/farmhouse.png",

@@ -5226,6 +5226,28 @@
       "action": "Reconstruct affected procedural floor/cap solids from their actual upward source triangles minus measured openings; remove below0.1mm boundary residuals and use a10micron coordinate grid on generated geometry only. Keep unaffected source binary resources and every retained native record unchanged. Final actual native loader, exact export/native triangle checks and movement replays pass.",
       "evidence": "tools/build_stair_end_batch.py; source-bound construction contracts and native probes in stair-end-pass/verification",
       "older_maps": "Do not relax native-loader validity checks or claim Blender closure proves exported native correctness. Other scenes remain individually unaudited."
+    },
+    {
+      "id": "DEV-470",
+      "title": "Rough saved circulation cuts lack retaining construction at Mine Dam and Cannery",
+      "status": "ROOTED SHOULDER CANDIDATES CONSTRUCTED; FULL TERRAIN AND RUNTIME ACCEPTANCE OPEN",
+      "affected": "WLD-05 Dead Mans Claim; WLD-09 Blackwater Dam; WLD-13 Greywater Cannery",
+      "symptom": "Earlier lower-only soil cuts established rough playable bed levels but left raw exposed grade shoulders without construction or edge treatment.",
+      "cause": "Saved terrain excavation preceded retaining, drainage and terrain-to-structure finishing.",
+      "action": "Construct closed 0.32m thick retaining runs outside route and room reservations, with horizontal footing bases sampled over actual terrain footprints. 750 reopened-export root probes retain at least0.39999m soil embedding. Source terrain/topology, models and existing native records remain unchanged. All12flights/11vertical routes,29flat links pass both ways;13,329unchanged strict positions have zero newly invalid samples.",
+      "evidence": "development/levels/rebuild/retaining-shoulder-pass/roster.json; individual construction root_checks and native/export bindings; verification/unchanged-lanes.json; terrain-interface closeups",
+      "older_maps": "Coping, weeps/drainage, returns, terrain art and full landscape/runtime gates remain open. Academy off-landform paths and WLD16terrain ownership are not fixed by these walls."
+    },
+    {
+      "id": "DEV-471",
+      "title": "Cinder retaining stub attempt passes movement but lacks coherent bank construction",
+      "status": "REJECTED; PRIOR CINDER SOURCE RETAINED",
+      "affected": "WLD-18 Cinder-6 two isolated retaining blocks",
+      "symptom": "A placement rule produced two individually rooted wall stubs rather than a coherent treatment of the cut bank.",
+      "cause": "Local physical feasibility and movement checks do not establish an appropriate architectural arrangement.",
+      "action": "Preserve the actual rejected model/native/editable files and native review images under rejected/cinder-6-stubs. Do not adopt that source. Redesign its bank as a whole before adding retention. Academy and Monastery also retain their sources because no justified wall fit was found.",
+      "evidence": "development/levels/rebuild/retaining-shoulder-pass/rejected/cinder-6-stubs; captures/retaining-shoulder-batch/rejected-cinder-6-stubs; explicit all29roster decisions",
+      "older_maps": "Review every generated structural assembly visually; passing native probes cannot accept site design or runtime gameplay."
     }
   ],
   "audit_categories": [

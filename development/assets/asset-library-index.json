@@ -1,17 +1,17 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1954,
-  "unique_local_file_hashes": 1783,
+  "local_files": 1958,
+  "unique_local_file_hashes": 1787,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 34,
+    "additional_custom_model_sources": 37,
     "review_assemblies": 173,
-    "reference_and_rejected_studies": 99,
+    "reference_and_rejected_studies": 100,
     "native_map_exports": 250
   },
   "archive_index": {
@@ -28261,6 +28261,54 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "da33479302c5f67b54a7ca5aff9e49f8c37ed6791eeadd4c00cb2a91800ebab1",
       "bytes": 1225432
+    },
+    {
+      "id": "retained-cuts",
+      "label": "retained-cuts",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/retaining-shoulder-pass/rejected/cinder-6-stubs/retained-cuts.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "c7c70aceb730a485b3076d7f3bf0e38014d4096b14858a6ab1905efca3a660fb",
+      "bytes": 2754240
+    },
+    {
+      "id": "retained-cuts",
+      "label": "retained-cuts",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/retaining-shoulder-pass/wld-05/retained-cuts.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "189a4277319e46bbff7f9fc3950831459d54bf087f0ae038c196aa8391e46fbc",
+      "bytes": 2930468
+    },
+    {
+      "id": "retained-cuts",
+      "label": "retained-cuts",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/retaining-shoulder-pass/wld-09/retained-cuts.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "59aea7180fe85bc25629c645a2a304ef23d14fb4b2901705c88e8732de73c4e4",
+      "bytes": 4297628
+    },
+    {
+      "id": "retained-cuts",
+      "label": "retained-cuts",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/retaining-shoulder-pass/wld-13/retained-cuts.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "eab9e6a92333cb0b6474a5597ff7459c0212b1db3b8ed70355641345156e7b7d",
+      "bytes": 2822020
     },
     {
       "id": "enclosed-roofs",
