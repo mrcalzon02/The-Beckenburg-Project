@@ -1,0 +1,902 @@
+[
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-z-50-27.5",
+    "lane": "center",
+    "start": [
+      27.5,
+      0,
+      49.26
+    ],
+    "end": [
+      27.5,
+      0,
+      50.74
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-z-50-27.5",
+    "lane": "left",
+    "start": [
+      28.14,
+      0,
+      49.26
+    ],
+    "end": [
+      28.14,
+      0,
+      50.74
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-z-50-27.5",
+    "lane": "right",
+    "start": [
+      26.86,
+      0,
+      49.26
+    ],
+    "end": [
+      26.86,
+      0,
+      50.74
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-z-58-30",
+    "lane": "center",
+    "start": [
+      30,
+      0,
+      57.25999999999999
+    ],
+    "end": [
+      30,
+      0,
+      58.5
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-z-58-30",
+    "lane": "left",
+    "start": [
+      30.64,
+      0,
+      57.25999999999999
+    ],
+    "end": [
+      30.64,
+      0,
+      58.5
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-z-58-30",
+    "lane": "right",
+    "start": [
+      29.36,
+      0,
+      57.25999999999999
+    ],
+    "end": [
+      29.36,
+      0,
+      58.5
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-x-35-52",
+    "lane": "center",
+    "start": [
+      34.26,
+      0,
+      52
+    ],
+    "end": [
+      35.74,
+      0,
+      52
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-x-35-52",
+    "lane": "left",
+    "start": [
+      34.26,
+      0,
+      52.265
+    ],
+    "end": [
+      35.74,
+      0,
+      52.265
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-x-35-52",
+    "lane": "right",
+    "start": [
+      34.26,
+      0,
+      51.735
+    ],
+    "end": [
+      35.74,
+      0,
+      51.735
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-z-54-39.5",
+    "lane": "center",
+    "start": [
+      39.5,
+      0,
+      53.26
+    ],
+    "end": [
+      39.5,
+      0,
+      54.74
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-z-54-39.5",
+    "lane": "left",
+    "start": [
+      39.765,
+      0,
+      53.26
+    ],
+    "end": [
+      39.765,
+      0,
+      54.74
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-z-54-39.5",
+    "lane": "right",
+    "start": [
+      39.235,
+      0,
+      53.26
+    ],
+    "end": [
+      39.235,
+      0,
+      54.74
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-court-day-N",
+    "lane": "center",
+    "start": [
+      18,
+      0,
+      39.50000000000001
+    ],
+    "end": [
+      18,
+      0,
+      40.74
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-court-day-N",
+    "lane": "left",
+    "start": [
+      18.64,
+      0,
+      39.50000000000001
+    ],
+    "end": [
+      18.64,
+      0,
+      40.74
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-court-day-N",
+    "lane": "right",
+    "start": [
+      17.36,
+      0,
+      39.50000000000001
+    ],
+    "end": [
+      17.36,
+      0,
+      40.74
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-court-ground-south-a-S",
+    "lane": "center",
+    "start": [
+      13,
+      0,
+      28.26
+    ],
+    "end": [
+      13,
+      0,
+      29.500000000000004
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-court-ground-south-a-S",
+    "lane": "left",
+    "start": [
+      13.265,
+      0,
+      28.26
+    ],
+    "end": [
+      13.265,
+      0,
+      29.500000000000004
+    ]
+  },
+  {
+    "site": "ASYLUM",
+    "portal": "ASYLUM-court-ground-south-a-S",
+    "lane": "right",
+    "start": [
+      12.735,
+      0,
+      28.26
+    ],
+    "end": [
+      12.735,
+      0,
+      29.500000000000004
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-z-62-14",
+    "lane": "center",
+    "start": [
+      14,
+      0,
+      61.26
+    ],
+    "end": [
+      14,
+      0,
+      62.74
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-z-62-14",
+    "lane": "left",
+    "start": [
+      14.64,
+      0,
+      61.26
+    ],
+    "end": [
+      14.64,
+      0,
+      62.74
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-z-62-14",
+    "lane": "right",
+    "start": [
+      13.36,
+      0,
+      61.26
+    ],
+    "end": [
+      13.36,
+      0,
+      62.74
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-z-68-14",
+    "lane": "center",
+    "start": [
+      14,
+      0,
+      67.25999999999999
+    ],
+    "end": [
+      14,
+      0,
+      68.5
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-z-68-14",
+    "lane": "left",
+    "start": [
+      14.64,
+      0,
+      67.25999999999999
+    ],
+    "end": [
+      14.64,
+      0,
+      68.5
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-z-68-14",
+    "lane": "right",
+    "start": [
+      13.36,
+      0,
+      67.25999999999999
+    ],
+    "end": [
+      13.36,
+      0,
+      68.5
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-x-18-65",
+    "lane": "center",
+    "start": [
+      17.26,
+      0,
+      65
+    ],
+    "end": [
+      18.74,
+      0,
+      65
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-x-18-65",
+    "lane": "left",
+    "start": [
+      17.26,
+      0,
+      65.265
+    ],
+    "end": [
+      18.74,
+      0,
+      65.265
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-x-18-65",
+    "lane": "right",
+    "start": [
+      17.26,
+      0,
+      64.735
+    ],
+    "end": [
+      18.74,
+      0,
+      64.735
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-z-58-14",
+    "lane": "center",
+    "start": [
+      14,
+      0,
+      57.26
+    ],
+    "end": [
+      14,
+      0,
+      58.74
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-z-58-14",
+    "lane": "left",
+    "start": [
+      14.64,
+      0,
+      57.26
+    ],
+    "end": [
+      14.64,
+      0,
+      58.74
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-z-58-14",
+    "lane": "right",
+    "start": [
+      13.36,
+      0,
+      57.26
+    ],
+    "end": [
+      13.36,
+      0,
+      58.74
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-court-sally-N",
+    "lane": "center",
+    "start": [
+      34,
+      0,
+      57.50000000000001
+    ],
+    "end": [
+      34,
+      0,
+      58.74
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-court-sally-N",
+    "lane": "left",
+    "start": [
+      34.94,
+      0,
+      57.50000000000001
+    ],
+    "end": [
+      34.94,
+      0,
+      58.74
+    ]
+  },
+  {
+    "site": "PRISON",
+    "portal": "PRISON-court-sally-N",
+    "lane": "right",
+    "start": [
+      33.06,
+      0,
+      57.50000000000001
+    ],
+    "end": [
+      33.06,
+      0,
+      58.74
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-z-30-21.5",
+    "lane": "center",
+    "start": [
+      21.5,
+      0,
+      29.26
+    ],
+    "end": [
+      21.5,
+      0,
+      30.74
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-z-30-21.5",
+    "lane": "left",
+    "start": [
+      22.14,
+      0,
+      29.26
+    ],
+    "end": [
+      22.14,
+      0,
+      30.74
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-z-30-21.5",
+    "lane": "right",
+    "start": [
+      20.86,
+      0,
+      29.26
+    ],
+    "end": [
+      20.86,
+      0,
+      30.74
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-z-36-22.5",
+    "lane": "center",
+    "start": [
+      22.5,
+      0,
+      35.25999999999999
+    ],
+    "end": [
+      22.5,
+      0,
+      36.5
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-z-36-22.5",
+    "lane": "left",
+    "start": [
+      23.14,
+      0,
+      35.25999999999999
+    ],
+    "end": [
+      23.14,
+      0,
+      36.5
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-z-36-22.5",
+    "lane": "right",
+    "start": [
+      21.86,
+      0,
+      35.25999999999999
+    ],
+    "end": [
+      21.86,
+      0,
+      36.5
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-x-25-31.5",
+    "lane": "center",
+    "start": [
+      24.26,
+      0,
+      31.5
+    ],
+    "end": [
+      25.74,
+      0,
+      31.5
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-x-25-31.5",
+    "lane": "left",
+    "start": [
+      24.26,
+      0,
+      31.765
+    ],
+    "end": [
+      25.74,
+      0,
+      31.765
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-x-25-31.5",
+    "lane": "right",
+    "start": [
+      24.26,
+      0,
+      31.235
+    ],
+    "end": [
+      25.74,
+      0,
+      31.235
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-x-25-34.5",
+    "lane": "center",
+    "start": [
+      24.26,
+      0,
+      34.5
+    ],
+    "end": [
+      25.74,
+      0,
+      34.5
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-x-25-34.5",
+    "lane": "left",
+    "start": [
+      24.26,
+      0,
+      34.765
+    ],
+    "end": [
+      25.74,
+      0,
+      34.765
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-x-25-34.5",
+    "lane": "right",
+    "start": [
+      24.26,
+      0,
+      34.235
+    ],
+    "end": [
+      25.74,
+      0,
+      34.235
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-z-33-28.75",
+    "lane": "center",
+    "start": [
+      28.75,
+      0,
+      32.26
+    ],
+    "end": [
+      28.75,
+      0,
+      33.74
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-z-33-28.75",
+    "lane": "left",
+    "start": [
+      29.015,
+      0,
+      32.26
+    ],
+    "end": [
+      29.015,
+      0,
+      33.74
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-z-33-28.75",
+    "lane": "right",
+    "start": [
+      28.485,
+      0,
+      32.26
+    ],
+    "end": [
+      28.485,
+      0,
+      33.74
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-science-W",
+    "lane": "center",
+    "start": [
+      9.500000000000002,
+      0,
+      16
+    ],
+    "end": [
+      10.74,
+      0,
+      16
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-science-W",
+    "lane": "left",
+    "start": [
+      9.500000000000002,
+      0,
+      16.265
+    ],
+    "end": [
+      10.74,
+      0,
+      16.265
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-science-W",
+    "lane": "right",
+    "start": [
+      9.500000000000002,
+      0,
+      15.735
+    ],
+    "end": [
+      10.74,
+      0,
+      15.735
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-class-a-W",
+    "lane": "center",
+    "start": [
+      9.500000000000002,
+      0,
+      28
+    ],
+    "end": [
+      10.74,
+      0,
+      28
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-class-a-W",
+    "lane": "left",
+    "start": [
+      9.500000000000002,
+      0,
+      28.265
+    ],
+    "end": [
+      10.74,
+      0,
+      28.265
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-class-a-W",
+    "lane": "right",
+    "start": [
+      9.500000000000002,
+      0,
+      27.735
+    ],
+    "end": [
+      10.74,
+      0,
+      27.735
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-gym-N",
+    "lane": "center",
+    "start": [
+      44,
+      0,
+      7.500000000000001
+    ],
+    "end": [
+      44,
+      0,
+      8.74
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-gym-N",
+    "lane": "left",
+    "start": [
+      44.64,
+      0,
+      7.500000000000001
+    ],
+    "end": [
+      44.64,
+      0,
+      8.74
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-gym-N",
+    "lane": "right",
+    "start": [
+      43.36,
+      0,
+      7.500000000000001
+    ],
+    "end": [
+      43.36,
+      0,
+      8.74
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-receiving-E",
+    "lane": "center",
+    "start": [
+      45.26,
+      0,
+      32
+    ],
+    "end": [
+      46.49999999999999,
+      0,
+      32
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-receiving-E",
+    "lane": "left",
+    "start": [
+      45.26,
+      0,
+      32.64
+    ],
+    "end": [
+      46.49999999999999,
+      0,
+      32.64
+    ]
+  },
+  {
+    "site": "SCHOOL",
+    "portal": "SCHOOL-court-receiving-E",
+    "lane": "right",
+    "start": [
+      45.26,
+      0,
+      31.36
+    ],
+    "end": [
+      46.49999999999999,
+      0,
+      31.36
+    ]
+  }
+]

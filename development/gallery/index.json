@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10915,
+  "count": 10918,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -100674,6 +100674,36 @@
       "height": 200,
       "bytes": 30873,
       "sha256": "2258d97e973ac9e7b3d0aa6fe02ea2bcaf0f6d95c4cb1b588cbb4451f8c11103"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-courts-batch/asylum.png",
+      "url": "development/levels/rebuild/captures/institution-courts-batch/asylum.png",
+      "title": "Asylum",
+      "kind": "Native constructed institution courts and normal exterior doorways; roofs hidden, unfinished grade/edge protection and runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1427093,
+      "sha256": "7edba392d81f81a0202de268947079e7b50cbd5fbf9786da087c27ee5e50c535"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-courts-batch/prison.png",
+      "url": "development/levels/rebuild/captures/institution-courts-batch/prison.png",
+      "title": "Prison",
+      "kind": "Native constructed institution courts and normal exterior doorways; roofs hidden, unfinished grade/edge protection and runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1550831,
+      "sha256": "40ef3ffb0aaed28249f0edb3f6b4b6cdf995ab5df4db9f9c8c20261da7a7d540"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-courts-batch/school.png",
+      "url": "development/levels/rebuild/captures/institution-courts-batch/school.png",
+      "title": "School",
+      "kind": "Native constructed institution courts and normal exterior doorways; roofs hidden, unfinished grade/edge protection and runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1683514,
+      "sha256": "01c353d58fbfb84c1308b1d9c899ec227b33ca6aed22728c9a639b377f4a8a57"
     },
     {
       "path": "development/levels/rebuild/captures/institution-doorway-batch/asylum-entry-close.png",

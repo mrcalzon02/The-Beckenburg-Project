@@ -1,0 +1,1766 @@
+{
+  "id": "PRISON",
+  "status": "INSTITUTIONAL_COURTS_CONSTRUCTED_RUNTIME_AND_REMAINING_GEOMETRY_OPEN",
+  "source_contract": "development/levels/rebuild/institution-doorway-pass/prison/construction.json",
+  "source_contract_sha256": "f74b9b9fa9897a64dd53b04c375ffac95253f7029980b84b09a5a3e1a9661737",
+  "source_glb": "development/levels/rebuild/institution-doorway-pass/prison/clean-doorways.glb",
+  "source_glb_sha256": "fdffea48fd8716bcd281f45df069b12a06313fa2cb4cd62cb4e9ec29a8617dd4",
+  "source_physics": "development/levels/rebuild/institution-doorway-pass/prison/clean-doorways.hcs2",
+  "source_physics_sha256": "5b647d3208892c23cb1dd59f10c7cb4c449c3d8ef70e8e4aa59d7f9138d77e9e",
+  "before_layout": "development/levels/rebuild/institution-doorway-pass/prison/authored-layout.json",
+  "before_layout_sha256": "a60cd7850699de55f9de63e7cee0d973e3fc95f29a854ff8610828bb017870b3",
+  "layout": "development/levels/rebuild/institution-courts-pass/prison/authored-layout.json",
+  "layout_sha256": "c54d12e29122ac34fe87f5293a1ec2fde97b31484176f0900bd9b89a52f17d25",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "630:L047 flight0 step1",
+    "631:L047 flight0 step2",
+    "632:L047 flight0 step3",
+    "633:L047 flight0 step4",
+    "634:L047 flight0 step5",
+    "635:L047 flight0 step6",
+    "636:L047 flight0 step7",
+    "637:L047 flight0 step8",
+    "638:L047 flight0 step9",
+    "639:L047 flight0 step10",
+    "640:L047 flight0 step11",
+    "641:L047 flight0 step12",
+    "642:L047 flight0 step13",
+    "643:L047 flight0 step14",
+    "644:L047 flight0 step15",
+    "645:L047 flight0 step16",
+    "646:L047 flight0 step17",
+    "647:L047 flight0 step18",
+    "648:L047 flight0 step19",
+    "659:L063 flight0 step1",
+    "660:L063 flight0 step2",
+    "661:L063 flight0 step3",
+    "662:L063 flight0 step4",
+    "663:L063 flight0 step5",
+    "664:L063 flight0 step6",
+    "665:L063 flight0 step7",
+    "666:L063 flight0 step8",
+    "667:L063 flight0 step9",
+    "668:L063 flight0 step10",
+    "669:L063 flight0 step11",
+    "670:L063 flight0 step12",
+    "671:L063 flight0 step13",
+    "672:L063 flight0 step14",
+    "673:L063 flight0 step15",
+    "674:L063 flight0 step16",
+    "675:L063 flight0 step17",
+    "676:L063 flight0 step18",
+    "677:L063 flight0 step19",
+    "722:L112 flight0 step1",
+    "723:L112 flight0 step2",
+    "724:L112 flight0 step3",
+    "725:L112 flight0 step4",
+    "726:L112 flight0 step5",
+    "727:L112 flight0 step6",
+    "728:L112 flight0 step7",
+    "729:L112 flight0 step8",
+    "730:L112 flight0 step9",
+    "731:L112 flight0 step10",
+    "732:L112 flight0 step11",
+    "733:L112 flight0 step12",
+    "734:L112 flight0 step13",
+    "735:L112 flight0 step14",
+    "736:L112 flight0 step15",
+    "737:L112 flight0 step16",
+    "738:L112 flight0 step17"
+  ],
+  "stair_components": [
+    "630:L047 flight0 step1",
+    "631:L047 flight0 step2",
+    "632:L047 flight0 step3",
+    "633:L047 flight0 step4",
+    "634:L047 flight0 step5",
+    "635:L047 flight0 step6",
+    "636:L047 flight0 step7",
+    "637:L047 flight0 step8",
+    "638:L047 flight0 step9",
+    "639:L047 flight0 step10",
+    "640:L047 flight0 step11",
+    "641:L047 flight0 step12",
+    "642:L047 flight0 step13",
+    "643:L047 flight0 step14",
+    "644:L047 flight0 step15",
+    "645:L047 flight0 step16",
+    "646:L047 flight0 step17",
+    "647:L047 flight0 step18",
+    "648:L047 flight0 step19",
+    "659:L063 flight0 step1",
+    "660:L063 flight0 step2",
+    "661:L063 flight0 step3",
+    "662:L063 flight0 step4",
+    "663:L063 flight0 step5",
+    "664:L063 flight0 step6",
+    "665:L063 flight0 step7",
+    "666:L063 flight0 step8",
+    "667:L063 flight0 step9",
+    "668:L063 flight0 step10",
+    "669:L063 flight0 step11",
+    "670:L063 flight0 step12",
+    "671:L063 flight0 step13",
+    "672:L063 flight0 step14",
+    "673:L063 flight0 step15",
+    "674:L063 flight0 step16",
+    "675:L063 flight0 step17",
+    "676:L063 flight0 step18",
+    "677:L063 flight0 step19",
+    "722:L112 flight0 step1",
+    "723:L112 flight0 step2",
+    "724:L112 flight0 step3",
+    "725:L112 flight0 step4",
+    "726:L112 flight0 step5",
+    "727:L112 flight0 step6",
+    "728:L112 flight0 step7",
+    "729:L112 flight0 step8",
+    "730:L112 flight0 step9",
+    "731:L112 flight0 step10",
+    "732:L112 flight0 step11",
+    "733:L112 flight0 step12",
+    "734:L112 flight0 step13",
+    "735:L112 flight0 step14",
+    "736:L112 flight0 step15",
+    "737:L112 flight0 step16",
+    "738:L112 flight0 step17"
+  ],
+  "glb_sha256": "945f951a64e62a1d88035f0799dc8ec87bd8aef592fa7fb31057ad8b1edf3846",
+  "physics_sha256": "77bb50fb99699ff1a06cd836ab9b8d88ca8c525425e935b7e937e41680621b05",
+  "arrival_bearing": {
+    "link": "L111",
+    "anchor": [
+      34.0,
+      0,
+      85.0
+    ],
+    "route_width": 1.2,
+    "extension_metres": 0.35,
+    "contact_owner": "L111 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        33.4,
+        85.35
+      ],
+      [
+        33.4,
+        85.0
+      ],
+      [
+        34.6,
+        85.0
+      ],
+      [
+        34.6,
+        85.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          33.4,
+          85.35
+        ],
+        [
+          33.4,
+          85.0
+        ],
+        [
+          34.6,
+          85.0
+        ],
+        [
+          34.6,
+          85.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing PRISON 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": 134,
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "717aedba4d7785accc1476e146575e2ec47bd40abcb0a62695a6898090977ea0",
+  "access_route_changes": [
+    {
+      "site": "PRISON",
+      "link": "L045",
+      "rooms": [
+        "a-stair",
+        "a-front-link"
+      ],
+      "before": [
+        [
+          18.0,
+          0,
+          52.0
+        ],
+        [
+          18.0,
+          0,
+          55
+        ],
+        [
+          16,
+          0,
+          55
+        ],
+        [
+          13.0,
+          0,
+          55
+        ]
+      ],
+      "after": [
+        [
+          18.0,
+          0.0,
+          54.5
+        ],
+        [
+          17.0,
+          0.0,
+          55.0
+        ],
+        [
+          16.0,
+          0.0,
+          55.0
+        ],
+        [
+          13.0,
+          0.0,
+          55.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        16,
+        0,
+        55
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L046",
+      "rooms": [
+        "a-upper-stair",
+        "a-upper-gallery"
+      ],
+      "before": [
+        [
+          18.0,
+          3.4,
+          52.0
+        ],
+        [
+          18.0,
+          3.4,
+          56
+        ],
+        [
+          16,
+          3.4,
+          56
+        ],
+        [
+          15.0,
+          3.4,
+          56
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "after": [
+        [
+          18.0,
+          3.4,
+          54.0
+        ],
+        [
+          17.0,
+          3.4,
+          55.5
+        ],
+        [
+          16.5,
+          3.4,
+          56.0
+        ],
+        [
+          16.0,
+          3.4,
+          56.0
+        ],
+        [
+          15.5,
+          3.4,
+          56.0
+        ],
+        [
+          15.0,
+          3.4,
+          55.5
+        ],
+        [
+          15.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        16,
+        3.4,
+        56
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L061",
+      "rooms": [
+        "b-stair",
+        "b-front-link"
+      ],
+      "before": [
+        [
+          50.0,
+          0,
+          52.0
+        ],
+        [
+          50.0,
+          0,
+          55
+        ],
+        [
+          52,
+          0,
+          55
+        ],
+        [
+          55.0,
+          0,
+          55
+        ]
+      ],
+      "after": [
+        [
+          50.0,
+          0.0,
+          54.5
+        ],
+        [
+          51.0,
+          0.0,
+          55.0
+        ],
+        [
+          52.0,
+          0.0,
+          55.0
+        ],
+        [
+          55.0,
+          0.0,
+          55.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        52,
+        0,
+        55
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L062",
+      "rooms": [
+        "b-upper-stair",
+        "b-upper-gallery"
+      ],
+      "before": [
+        [
+          50.0,
+          3.4,
+          52.0
+        ],
+        [
+          50.0,
+          3.4,
+          56
+        ],
+        [
+          52,
+          3.4,
+          56
+        ],
+        [
+          53.0,
+          3.4,
+          56
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "after": [
+        [
+          50.0,
+          3.4,
+          54.0
+        ],
+        [
+          51.5,
+          3.4,
+          56.0
+        ],
+        [
+          52.0,
+          3.4,
+          56.0
+        ],
+        [
+          52.5,
+          3.4,
+          56.0
+        ],
+        [
+          53.0,
+          3.4,
+          55.5
+        ],
+        [
+          53.0,
+          3.4,
+          41.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": [
+        52,
+        3.4,
+        56
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    },
+    {
+      "site": "PRISON",
+      "link": "L105",
+      "rooms": [
+        "lower-stair",
+        "plant"
+      ],
+      "before": [
+        [
+          30.0,
+          -3,
+          28.0
+        ],
+        [
+          30.0,
+          -3,
+          31
+        ],
+        [
+          32,
+          -3,
+          31
+        ],
+        [
+          39.0,
+          -3,
+          31
+        ],
+        [
+          39.0,
+          -3,
+          28.0
+        ]
+      ],
+      "after": [
+        [
+          30.0,
+          -3.0,
+          29.5
+        ],
+        [
+          31.0,
+          -3.0,
+          31.0
+        ],
+        [
+          32.0,
+          -3.0,
+          31.0
+        ],
+        [
+          37.5,
+          -3.0,
+          30.0
+        ],
+        [
+          39.0,
+          -3.0,
+          28.0
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        32,
+        -3,
+        31
+      ],
+      "source": {
+        "id": "PRISON",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/prison/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/prison/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/prison/supported-arrival.blend",
+        "native_sha256": "d97f2969b1daabadad2f6e2a78a99217cdd2a416f5d04e8db472255e1baa6a0a",
+        "glb_sha256": "8ecfc940b64294eeaf58f697abc665105274a20f1a229efee025c764c5825665"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "roof_generator_sha256": "df3d626b33285cd350a451cd113571b615df645d7e59618a1f67711b424b9c58",
+  "roof_wings": [
+    {
+      "wing": "west-cellhouse",
+      "bounds": [
+        10,
+        22,
+        22,
+        58
+      ],
+      "ceiling": 6.8,
+      "ridge": 9.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": [
+        {
+          "name": "west-cellhouse supported upper facade 0",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-rear-link"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 1",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-rear-link"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 2",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-01"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 3",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-01"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 4",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-02"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 5",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-02"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 6",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-03"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 7",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-03"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 8",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-04"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 9",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-05"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 10",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-06"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 11",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-06"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 12",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-07"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 13",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-07"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 14",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-cell-08"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 15",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-front-link"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 16",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-showers"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 17",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-showers"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 18",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-showers"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 19",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-showers"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 20",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-showers"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 21",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-front-aisle"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 22",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-front-aisle"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 23",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-front-aisle"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 24",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-rear-link"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 25",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-rear-link"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 26",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-change"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 27",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-change"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 28",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-showers"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 29",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-showers"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 30",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-front-link"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 31",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-gallery"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 32",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-stair"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 33",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-stair"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 34",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-upper-stair"
+          ]
+        },
+        {
+          "name": "west-cellhouse supported upper facade 35",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "a-front-aisle"
+          ]
+        }
+      ]
+    },
+    {
+      "wing": "east-cellhouse",
+      "bounds": [
+        46,
+        22,
+        58,
+        58
+      ],
+      "ceiling": 6.8,
+      "ridge": 9.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": [
+        {
+          "name": "east-cellhouse supported upper facade 0",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-showers"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 1",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-showers"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 2",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-showers"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 3",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-showers"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 4",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-showers"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 5",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-front-aisle"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 6",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-front-aisle"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 7",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-front-aisle"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 8",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-rear-link"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 9",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-rear-link"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 10",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-01"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 11",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-01"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 12",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-02"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 13",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-02"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 14",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-03"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 15",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-03"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 16",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-04"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 17",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-05"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 18",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-06"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 19",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-06"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 20",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-07"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 21",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-07"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 22",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-cell-08"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 23",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-front-link"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 24",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-showers"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 25",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-showers"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 26",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-showers"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 27",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-change"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 28",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-change"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 29",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-rear-link"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 30",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-rear-link"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 31",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-front-aisle"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 32",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-front-aisle"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 33",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-stair"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 34",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-stair"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 35",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-stair"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 36",
+          "bottom_y": 6.32,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-upper-gallery"
+          ]
+        },
+        {
+          "name": "east-cellhouse supported upper facade 37",
+          "bottom_y": 2.92,
+          "top_y": 6.85,
+          "receiver_zones": [
+            "b-front-link"
+          ]
+        }
+      ]
+    },
+    {
+      "wing": "north-cross",
+      "bounds": [
+        10,
+        16,
+        58,
+        22
+      ],
+      "ceiling": 3,
+      "ridge": 4.34,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "food-and-medical",
+      "bounds": [
+        10,
+        4,
+        46,
+        16
+      ],
+      "ceiling": 3,
+      "ridge": 5.640000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "isolation",
+      "bounds": [
+        58,
+        16,
+        70,
+        34
+      ],
+      "ceiling": 3,
+      "ridge": 5.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "chapel",
+      "bounds": [
+        58,
+        34,
+        70,
+        52
+      ],
+      "ceiling": 4,
+      "ridge": 6.74,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "intake-and-visitors",
+      "bounds": [
+        0,
+        58,
+        26,
+        68
+      ],
+      "ceiling": 3,
+      "ridge": 5.04,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "sally-port",
+      "bounds": [
+        26,
+        58,
+        42,
+        68
+      ],
+      "ceiling": 4,
+      "ridge": 6.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "guard-and-staff",
+      "bounds": [
+        42,
+        58,
+        58,
+        68
+      ],
+      "ceiling": 3,
+      "ridge": 5.04,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "plant-stair",
+      "bounds": [
+        28,
+        22,
+        32,
+        34
+      ],
+      "ceiling": 3,
+      "ridge": 4.04,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    }
+  ],
+  "roof_coverage_rays": 2644,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/institution-courts-batch/prison.png",
+      "sha256": "40ef3ffb0aaed28249f0edb3f6b4b6cdf995ab5df4db9f9c8c20261da7a7d540",
+      "type": "Native exported court construction, roof cutaway, not gameplay"
+    }
+  ],
+  "aboveground_indoor_roof_probes": 801,
+  "wing_plan_builder": "tools/build_secure_sacred_roof_batch.py",
+  "wing_plan_sha256": "6f791db6028130471f88e4bfaa06743bb7d8142ff8af8a297bcecd24dec2706b",
+  "remaining": "Roof-step flashing/drainage, structural join review, complete terrain/room connectivity and actual runtime integration remain open. Roofs do not add accessible search spaces or satisfy availability gates.",
+  "roof_generator_source": "tools/build_roster_enclosed_roofs.py",
+  "entrance_landing": {
+    "bounds": [
+      10,
+      68,
+      18,
+      71
+    ],
+    "top_y": 0,
+    "foundation_bottom_y": -0.8847747802734375,
+    "soil_receivers": [
+      {
+        "x": 10.1,
+        "z": 70.9,
+        "soil_y": -0.5347747802734375
+      },
+      {
+        "x": 17.9,
+        "z": 70.9,
+        "soil_y": -0.41558074951171875
+      },
+      {
+        "x": 14.0,
+        "z": 70.9,
+        "soil_y": -0.42363739013671875
+      },
+      {
+        "x": 14.0,
+        "z": 70.01,
+        "soil_y": -0.42624473571777344
+      }
+    ]
+  },
+  "study_solid_removal": [
+    "Arrival end bearing PRISON 0",
+    "L046 support 0",
+    "L046 support 1",
+    "L062 support 1",
+    "L065 support 0",
+    "L066 support 0",
+    "L080 support 1",
+    "L083 support 0",
+    "L083 support 1",
+    "L084 support 0",
+    "L084 support 1",
+    "L085 support 1",
+    "L111 support 0",
+    "L111 support 1"
+  ],
+  "doorways": [
+    {
+      "id": "PRISON-z-62-14",
+      "axis": "z",
+      "boundary": 62,
+      "along": 14,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        61.76,
+        62.24
+      ],
+      "rooms": [
+        "reception",
+        "intake"
+      ],
+      "side": "N",
+      "frame_depth": 0.480000000000004,
+      "frame_center": [
+        14,
+        0,
+        62.0
+      ],
+      "boundary_center": [
+        14,
+        0,
+        62
+      ]
+    },
+    {
+      "id": "PRISON-z-68-14",
+      "axis": "z",
+      "boundary": 68,
+      "along": 14,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        67.76,
+        68
+      ],
+      "rooms": [
+        "reception"
+      ],
+      "side": "S",
+      "frame_depth": 0.23999999999999488,
+      "frame_center": [
+        14,
+        0,
+        67.88
+      ],
+      "boundary_center": [
+        14,
+        0,
+        68
+      ]
+    },
+    {
+      "id": "PRISON-x-18-65",
+      "axis": "x",
+      "boundary": 18,
+      "along": 65,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        17.76,
+        18.24
+      ],
+      "rooms": [
+        "reception",
+        "records"
+      ],
+      "side": "E",
+      "frame_depth": 0.4799999999999969,
+      "frame_center": [
+        18.0,
+        0,
+        65
+      ],
+      "boundary_center": [
+        18,
+        0,
+        65
+      ]
+    },
+    {
+      "id": "PRISON-z-58-14",
+      "axis": "z",
+      "boundary": 58,
+      "along": 14,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        57.76,
+        58.24
+      ],
+      "rooms": [
+        "intake",
+        "a-front-link"
+      ],
+      "side": "N",
+      "frame_depth": 0.480000000000004,
+      "frame_center": [
+        14,
+        0,
+        58.0
+      ],
+      "boundary_center": [
+        14,
+        0,
+        58
+      ]
+    },
+    {
+      "id": "PRISON-court-sally-N",
+      "axis": "z",
+      "boundary": 58,
+      "along": 34,
+      "door_type": "loading",
+      "clear_width": 2.4,
+      "clear_height": 2.6,
+      "sill_y": 0,
+      "frame_span": [
+        58,
+        58.24
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "sally"
+      ],
+      "side": "N",
+      "frame_center": [
+        34,
+        0,
+        58.120000000000005
+      ],
+      "boundary_center": [
+        34,
+        0,
+        58
+      ]
+    }
+  ],
+  "door_types": {
+    "pedestrian": {
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0
+    },
+    "service": {
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0
+    },
+    "loading": {
+      "clear_width": 2.4,
+      "clear_height": 2.6,
+      "sill_y": 0
+    }
+  },
+  "doorway_builder": "tools/build_institution_doorways.py",
+  "doorway_builder_sha256": "413350004259ad30868c6b1ccfa796b017c29400ef4eefd88452185b025968a6",
+  "doorframe_source": "development/levels/primitive-props-v1/models/level_blockout_doorway.glb",
+  "doorframe_source_sha256": "89f5c94c9d7b8f8ac0285c606bb322e9a71b04df715a75498af4cf53830ee7d2",
+  "doorframe_parts": "Original catalog left jamb, right jamb and header; source master/UVs/materials preserved. Threshold/hardware studies retained in library, not placed as a blocked/raised opening.",
+  "rooms_rebuilt": [
+    "reception",
+    "intake",
+    "records"
+  ],
+  "corridor_faces": {
+    "a-front-link": [
+      "S"
+    ]
+  },
+  "sealed_context_policy": "Existing SEALED_CONTEXT walls/access metadata retained; no new context-room openings",
+  "removed_fragmented_walls": [
+    "Arrival end bearing PRISON 0",
+    "Flat route shell Wall a-front-link S",
+    "Flat route shell Wall a-front-link S.001",
+    "Flat route shell Wall intake N.001",
+    "Flat route shell Wall reception E",
+    "Flat route shell Wall reception E.001",
+    "Flat route shell Wall reception N",
+    "Flat route shell Wall reception N.001",
+    "Flat route shell Wall reception S",
+    "Flat route shell Wall reception S.001",
+    "Header a-front-link S",
+    "Header reception E",
+    "Header reception N",
+    "Header reception S",
+    "L046 support 0",
+    "L046 support 1",
+    "L062 support 1",
+    "L065 support 0",
+    "L066 support 0",
+    "L080 support 1",
+    "L083 support 0",
+    "L083 support 1",
+    "L084 support 0",
+    "L084 support 1",
+    "L085 support 1",
+    "L111 support 0",
+    "L111 support 1",
+    "Wall intake E",
+    "Wall intake W",
+    "Wall reception W",
+    "Wall records E",
+    "Wall records S"
+  ],
+  "court_construction": [
+    {
+      "area": "secure exercise yard",
+      "architectural_footprint": [
+        [
+          22,
+          22
+        ],
+        [
+          46,
+          22
+        ],
+        [
+          46,
+          58
+        ],
+        [
+          22,
+          58
+        ]
+      ],
+      "constructed_polygons": [
+        [
+          [
+            46.0,
+            42.0
+          ],
+          [
+            46,
+            58
+          ],
+          [
+            32.0,
+            58.0
+          ],
+          [
+            32.0,
+            42.0
+          ]
+        ],
+        [
+          [
+            32.0,
+            42.0
+          ],
+          [
+            32.0,
+            58.0
+          ],
+          [
+            22,
+            58
+          ],
+          [
+            22.0,
+            42.0
+          ]
+        ],
+        [
+          [
+            28.0,
+            42.0
+          ],
+          [
+            22.0,
+            42.0
+          ],
+          [
+            22.0,
+            34.0
+          ],
+          [
+            28.0,
+            34.0
+          ]
+        ],
+        [
+          [
+            22,
+            22
+          ],
+          [
+            28.0,
+            22.0
+          ],
+          [
+            28.0,
+            34.0
+          ],
+          [
+            22.0,
+            34.0
+          ]
+        ]
+      ],
+      "surface_y": 0,
+      "pavement_depth": 0.2,
+      "foundation_bottom_y": -0.9017654418945312,
+      "soil_range": [
+        -0.5517654418945312,
+        -0.40039634704589844
+      ],
+      "soil_samples": 504,
+      "saved_hole_samples": 0,
+      "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+    }
+  ],
+  "exterior_doorways": [
+    {
+      "id": "PRISON-court-sally-N",
+      "axis": "z",
+      "boundary": 58,
+      "along": 34,
+      "door_type": "loading",
+      "clear_width": 2.4,
+      "clear_height": 2.6,
+      "sill_y": 0,
+      "frame_span": [
+        58,
+        58.24
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "sally"
+      ],
+      "side": "N",
+      "frame_center": [
+        34,
+        0,
+        58.120000000000005
+      ],
+      "boundary_center": [
+        34,
+        0,
+        58
+      ]
+    }
+  ],
+  "removed_exterior_walls": [
+    "Flat route shell Wall sally N",
+    "Flat route shell Wall sally N.001",
+    "Header sally N"
+  ],
+  "court_builder": "tools/build_institution_courts.py",
+  "court_builder_sha256": "39dcbe89e243628821af1a27ad290711a198f6ba1a325f9cc7729b912d899a9a",
+  "doorframe_helper_sha256": "c66b31639ee87f27f1dec6a1142eb07a3fec3c2d8102ebc2235e22172fbb001c"
+}

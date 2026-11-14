@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1991,
-  "unique_local_file_hashes": 1820,
+  "local_files": 1994,
+  "unique_local_file_hashes": 1823,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 69,
+    "additional_custom_model_sources": 72,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -28381,6 +28381,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "6257ebe910743590fb079a06ebb4eac3d63247e201ad409c9e5b4302a9abdfcd",
       "bytes": 2869792
+    },
+    {
+      "id": "constructed-courts",
+      "label": "constructed-courts",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/institution-courts-pass/asylum/constructed-courts.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "9afbf7cfce26b6397541d273bb4e17862d543028033ab1d9db8430737ead5dc8",
+      "bytes": 2538640
+    },
+    {
+      "id": "constructed-courts",
+      "label": "constructed-courts",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/institution-courts-pass/prison/constructed-courts.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "945f951a64e62a1d88035f0799dc8ec87bd8aef592fa7fb31057ad8b1edf3846",
+      "bytes": 2918080
+    },
+    {
+      "id": "constructed-courts",
+      "label": "constructed-courts",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/institution-courts-pass/school/constructed-courts.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "e151781db819ed13b1110f936b7cf1cec62b6b95019478d9e45d92e9eac10fa0",
+      "bytes": 2241092
     },
     {
       "id": "clean-doorways",
