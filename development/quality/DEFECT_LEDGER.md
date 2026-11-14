@@ -6632,6 +6632,34 @@ Evidence and verification: development/levels/rebuild/stair-guard-pass/verificat
 
 Older-map obligation: Audit each older flight/landing for full-width turning clearance; passing individual flights never proves the end-to-end route.
 
+### DEV-468 — Wharf pier approach crossed descending-stair headroom and raised undercroft roof
+
+**Status:** PHYSICAL CANDIDATE REBUILT; RUNTIME AND WHOLE-MAP GATES OPEN · **Affected:** WLD-06 L07/L16/L17; related widened approaches at WLD-08 and WLD-12
+
+Opening and widening the actual stairs exposed a pier path over the descending flight and an undercroft cap above surface level. Full end guards and end stringers also intercepted turning paths.
+
+Cause / uncertainty: Earlier path-oriented construction retained contradictory upper walking and lower headroom volumes, with insufficient straight landing depth before a turn.
+
+Fix / next action: Build a supported 2.4m-wide quay bypass with undercroft-floor bearings; re-seat undercroft cap by0.8m and shorten its wall tops; source undercroft height becomes2.2m. Add1.2m straight lower turning approaches, flared tread wings and matched physical openings across five flights in three maps. End guards/perimeter returns remain open rather than being accepted as safe. Final7vertical routes/31flatlinks pass both ways; zero complete-link regressions and zero new invalid positions among common XYZ lane samples.
+
+Evidence and verification: development/levels/rebuild/stair-end-pass/roster.json; verification/stairs, current-flat-movement.json and unchanged-lanes.json; six native views in captures/stair-end-batch
+
+Older-map obligation: Review other map upper/lower paths as physical volume relationships. Native passing paths do not prove arbitrary room connectivity, light separation, edge guarding or runtime integration.
+
+### DEV-469 — Repeated flared-shaft cuts produced degenerate float32 native plate triangles
+
+**Status:** CORRECTED IN CURRENT GENERATED CANDIDATES · **Affected:** Wharf procedural deck plates; Research cut-plate attempt
+
+Boolean outputs could appear closed in Blender but produce collinear or coincident native float32 triangle vertices; the unchanged production native loader rejected them.
+
+Cause / uncertainty: Repeated coplanar cuts and sub-millimetre residual polygons exceeded reliable export precision.
+
+Fix / next action: Reconstruct affected procedural floor/cap solids from their actual upward source triangles minus measured openings; remove below0.1mm boundary residuals and use a10micron coordinate grid on generated geometry only. Keep unaffected source binary resources and every retained native record unchanged. Final actual native loader, exact export/native triangle checks and movement replays pass.
+
+Evidence and verification: tools/build_stair_end_batch.py; source-bound construction contracts and native probes in stair-end-pass/verification
+
+Older-map obligation: Do not relax native-loader validity checks or claim Blender closure proves exported native correctness. Other scenes remain individually unaudited.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

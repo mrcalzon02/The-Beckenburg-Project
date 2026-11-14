@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10865,
+  "count": 10871,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -102344,6 +102344,66 @@
       "height": 750,
       "bytes": 475472,
       "sha256": "1c78adbc1b4ebd58d58d1a17c1f2fd8b1217aa5171b3dc777452ca91db0a96fc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-end-batch/wld-06-context.png",
+      "url": "development/levels/rebuild/captures/stair-end-batch/wld-06-context.png",
+      "title": "Wld 06 context",
+      "kind": "Native widened stair and quay/undercroft construction; cutaway context hidden, incomplete guard returns, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1209045,
+      "sha256": "60da70c03c5857ab63df548583656ad5cf97f67a5318d0a13cf9a38d764c15bc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-end-batch/wld-06-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-end-batch/wld-06-cutaway.png",
+      "title": "Wld 06 cutaway",
+      "kind": "Native widened stair and quay/undercroft construction; cutaway context hidden, incomplete guard returns, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 577325,
+      "sha256": "aa505b79a50733f6b98349cc4bb66d112d8c5509599a753d61879b1400ecf4d1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-end-batch/wld-08-context.png",
+      "url": "development/levels/rebuild/captures/stair-end-batch/wld-08-context.png",
+      "title": "Wld 08 context",
+      "kind": "Native widened stair and quay/undercroft construction; cutaway context hidden, incomplete guard returns, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1138150,
+      "sha256": "2216c458d62db35b322bcf9206ca84d6cc35473516fd69a58d99d432bc10214a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-end-batch/wld-08-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-end-batch/wld-08-cutaway.png",
+      "title": "Wld 08 cutaway",
+      "kind": "Native widened stair and quay/undercroft construction; cutaway context hidden, incomplete guard returns, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 556419,
+      "sha256": "dab44f2de86cc85b5a62baa9056d932e6d9846e7b3cf8564eff17aa855e095a5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-end-batch/wld-12-context.png",
+      "url": "development/levels/rebuild/captures/stair-end-batch/wld-12-context.png",
+      "title": "Wld 12 context",
+      "kind": "Native widened stair and quay/undercroft construction; cutaway context hidden, incomplete guard returns, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 1146547,
+      "sha256": "db407cc3ea707dba6616014b9405e4e6e220cb0eedbcfbc29130dc92de4a2287"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-end-batch/wld-12-cutaway.png",
+      "url": "development/levels/rebuild/captures/stair-end-batch/wld-12-cutaway.png",
+      "title": "Wld 12 cutaway",
+      "kind": "Native widened stair and quay/undercroft construction; cutaway context hidden, incomplete guard returns, not runtime acceptance",
+      "width": 1100,
+      "height": 850,
+      "bytes": 654938,
+      "sha256": "014234debe54692530d3a16d5030345ad453d1cf5601d87e0055d0531112e018"
     },
     {
       "path": "development/levels/rebuild/captures/stair-guard-batch/wld-06-context.png",

@@ -17,7 +17,8 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/stair-guard-batch/' in path:kind='Native fitted library stair guards/stringers; cutaway context hidden, incomplete ends, not runtime acceptance'
+    if '/stair-end-batch/' in path:kind='Native widened stair and quay/undercroft construction; cutaway context hidden, incomplete guard returns, not runtime acceptance'
+    elif '/stair-guard-batch/' in path:kind='Native fitted library stair guards/stringers; cutaway context hidden, incomplete ends, not runtime acceptance'
     elif '/orthogonal-stair-batch/' in path:kind='Native physical stair construction cutaway; context hidden, no runtime acceptance' if 'cutaway' in path else 'Native physical stair construction context; no runtime acceptance'
     elif '/atmosphere-all-levels/' in path:kind='Runtime shared fog and skybox comparison' if 'sheet' in p.name else 'Runtime OpenGL atmosphere capture' if '/opengl/' in path else 'Runtime software atmosphere capture'
     elif '/roof-construction-batch/' in path:kind='Native exported enclosed roof construction; rough source, no gameplay integration acceptance'

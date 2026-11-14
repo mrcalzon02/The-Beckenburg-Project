@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1951,
-  "unique_local_file_hashes": 1780,
+  "local_files": 1954,
+  "unique_local_file_hashes": 1783,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 31,
+    "additional_custom_model_sources": 34,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 99,
     "native_map_exports": 250
@@ -28441,6 +28441,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "8628719c0b461e64f89f25e018ed3fc260ce372e250380d26e3ea34e59441a74",
       "bytes": 1718868
+    },
+    {
+      "id": "finished-ends",
+      "label": "finished-ends",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/stair-end-pass/wld-06/finished-ends.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "0ae4fdb1cd880afbe4c4bd3b6fdec2251550421088e86b8b731709a5c167c35c",
+      "bytes": 2077884
+    },
+    {
+      "id": "finished-ends",
+      "label": "finished-ends",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/stair-end-pass/wld-08/finished-ends.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "5dc6a8ef5e6b601d456a41537fa960fbcfad61c2b5b52af10ac1bcb1285bc75d",
+      "bytes": 2888140
+    },
+    {
+      "id": "finished-ends",
+      "label": "finished-ends",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/stair-end-pass/wld-12/finished-ends.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "2bf04776f2d9e620b2bad5aeb6cc57b55266d83e97e65b2fa4e33bfba202d025",
+      "bytes": 3411744
     },
     {
       "id": "guarded-stairs",
