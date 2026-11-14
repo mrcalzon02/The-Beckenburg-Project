@@ -6688,6 +6688,34 @@ Evidence and verification: development/levels/rebuild/retaining-shoulder-pass/re
 
 Older-map obligation: Review every generated structural assembly visually; passing native probes cannot accept site design or runtime gameplay.
 
+### DEV-472 — Institutional roof construction initially omitted Academy north cloister
+
+**Status:** CORRECTED IN CURRENT ROOF CANDIDATES; FINISH AND RUNTIME GATES OPEN · **Affected:** Academy roof wing selection; Asylum and College complete aboveground footprint scope checked independently
+
+The first selected-wing program enclosed its declared wings but missed the low north cloister between taller Academy ranges.
+
+Cause / uncertainty: Checking only the chosen roof rectangles could not discover an omitted room footprint.
+
+Fix / next action: Add the actual north-cloister pitched roof with closed gables/eaves. Independently ray-check all aboveground indoor/context room footprints; retain below-ground ceiling/ground enclosure as a distinct obligation. Current kernel optical probes begin above the exposed old caps:423Academy,396Asylum and513College rays were open before and all are blocked after. Preserve the superseded Academy GLB/native/editable scene, original contract and PNG with corrected archive path provenance.
+
+Evidence and verification: development/levels/rebuild/institution-roof-pass/rejected/missing-north-cloister-roof; current construction contracts and verification/roof-optical-results.tsv
+
+Older-map obligation: Recheck per-room roof coverage independently of selected wing lists. Native optical closure is not full lighting, seam, camera or gameplay acceptance.
+
+### DEV-473 — Institutional new roof steps retain unfinished drainage flashing and runtime integration
+
+**Status:** OPEN · **Affected:** Academy residential/cloister tiers; Asylum ward/pavilion steps; College library/bridges/residence roof joins
+
+Closed roof forms are present but material refinement, drainage/flashings, detailed load framing and standing-height seam review remain unfinished. These sources are not loaded by normal gameplay dispatch.
+
+Cause / uncertainty: This batch establishes architectural roof mass and opaque native geometry; source-to-game ownership/render/room/service adapters remain incomplete.
+
+Fix / next action: Finish measured roof-to-wall steps, valleys, coping and drainage; review actual lighting and room volumes and integrate the exact sources without changing map availability until gates pass.
+
+Evidence and verification: development/levels/rebuild/institution-roof-pass/roster.json; current roof overviews and native route/optical verification
+
+Older-map obligation: Preserve Castle/House/Blackpine/Hollow Creek authorities; audit other roster roofs and all current candidate runtime bindings separately.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

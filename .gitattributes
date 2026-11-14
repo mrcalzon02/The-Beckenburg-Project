@@ -154,3 +154,9 @@ tools/java/RoomSocketConnectivityProbe.java text eol=lf
 development/levels/rebuild/access-route-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
 development/levels/rebuild/room-access-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
 development/levels/rebuild/circulation-layout-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
+
+# Institutional roof contracts and native optical evidence preserve exact bytes.
+development/levels/rebuild/institution-roof-pass/** -text
+development/levels/rebuild/institution-roof-pass/**/*.tsv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tools/build_institution_roof_batch.py -text
+tools/java/RebuildRoofOpticalProbe.java -text

@@ -1,17 +1,17 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1958,
-  "unique_local_file_hashes": 1787,
+  "local_files": 1962,
+  "unique_local_file_hashes": 1791,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 37,
+    "additional_custom_model_sources": 40,
     "review_assemblies": 173,
-    "reference_and_rejected_studies": 100,
+    "reference_and_rejected_studies": 101,
     "native_map_exports": 250
   },
   "archive_index": {
@@ -28189,6 +28189,54 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "a19b539b5712add8136ce780993b8322e3b38143590c364d6aa0ed4008802f95",
       "bytes": 1531932
+    },
+    {
+      "id": "enclosed-roofs",
+      "label": "enclosed-roofs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/institution-roof-pass/academy/enclosed-roofs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "cbbd329e4563971a5de96bf07eb1ce9915582070740bfcd9561a9fcdee3aff6a",
+      "bytes": 3496816
+    },
+    {
+      "id": "enclosed-roofs",
+      "label": "enclosed-roofs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/institution-roof-pass/asylum/enclosed-roofs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "e3342fd1b09c599287fecd7c22b96c666aed6260e7d60ec0ee034c74bbe4d0f6",
+      "bytes": 2456676
+    },
+    {
+      "id": "enclosed-roofs",
+      "label": "enclosed-roofs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/institution-roof-pass/college/enclosed-roofs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "7cda08dddb8e8cb93dff53adbc1437b5ed879c8ad462c437907eafdc4aed6f79",
+      "bytes": 2715604
+    },
+    {
+      "id": "enclosed-roofs",
+      "label": "enclosed-roofs",
+      "maps": [],
+      "category": "reference_and_rejected_studies",
+      "path": "development/levels/rebuild/institution-roof-pass/rejected/missing-north-cloister-roof/enclosed-roofs.glb",
+      "collection": "reference_and_rejected_studies",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "69ad57aebb8606eb5508d94a099c3699e35b84b6e704e9ea89f15b57516a3a55",
+      "bytes": 3487516
     },
     {
       "id": "aligned-stairs",

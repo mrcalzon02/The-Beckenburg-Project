@@ -1,0 +1,17 @@
+{
+  "status": "NATIVE_OPTICAL_CLOSURE_NOT_RUNTIME_ACCEPTANCE",
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RebuildRoofOpticalProbe.java": "f67e9f9253c50423a261cb841263fe58725daeb52fb1868eab360e0b4335c13f",
+    "tools/build_institution_roof_batch.py": "ebd4777a0129cee7fdd4c7ba11331fc1d254263f0d4ca88b286c1f65aab53c9e",
+    "development/levels/rebuild/institution-roof-pass/verification/source-snapshots/tools/build_roster_enclosed_roofs.py": "cfa4e55508d2acd5e8cda538b04a8ea91dbfefa8c3f19527de936da46290eb51"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/institution-roof-pass/verification/roof-optical-input.tsv": "14b04d2409e1afb757251fe05f1c10a664cbb9e24e6db232971ca64e34b86ffa",
+    "development/levels/rebuild/institution-roof-pass/verification/roof-optical-results.tsv": "36223665b6fc34a459c7e013c74d77ee11a665f50502a22ac1efca0fdaf58017"
+  },
+  "probe_scope": "423 Academy,396 Asylum,513 College rays start0.03m above the highest authored exposed room cap at that XY and end40m higher. Each before ray was clear; each after ray is blocked. Native kernel unchanged; no game renderer or whole-map lighting acceptance.",
+  "exact_checkout_source_snapshots": {
+    "development/levels/rebuild/institution-roof-pass/verification/source-snapshots/tools/build_roster_enclosed_roofs.py": "tools/build_roster_enclosed_roofs.py"
+  }
+}

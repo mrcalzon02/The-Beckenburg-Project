@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10879,
+  "count": 10883,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -101436,6 +101436,36 @@
       "sha256": "484c48723e8b48c1b709ff8f287903e3e8660d879bb9f024a4c5ef8c4a93064e"
     },
     {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/academy.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/academy.png",
+      "title": "Academy",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 781712,
+      "sha256": "af85f5287e8977ced6af29b16adcc3e4a285dbb23dd5210f9654e8a395a77f17"
+    },
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/asylum.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/asylum.png",
+      "title": "Asylum",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 778414,
+      "sha256": "2eb7f1c4a822ab358d80e545b5733fd0faea01e26fe9f83f60c6641d47ff9201"
+    },
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/college.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/college.png",
+      "title": "College",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 764173,
+      "sha256": "bb1565ffd0722be2efbc18055e3ebb6e30724b79dea03a961fb9f837c482761f"
+    },
+    {
       "path": "development/levels/rebuild/captures/roof-construction-batch/farmhouse.png",
       "url": "development/levels/rebuild/captures/roof-construction-batch/farmhouse.png",
       "title": "Farmhouse",
@@ -101454,6 +101484,16 @@
       "height": 900,
       "bytes": 759779,
       "sha256": "6cda8331904ec6bd6eca6c0ae19573a0a83b42f5b5b6964ef1bfbdf73af7fe87"
+    },
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/rejected-missing-north-cloister/academy.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/rejected-missing-north-cloister/academy.png",
+      "title": "Academy",
+      "kind": "Rejected roof wing-selection study; superseded source, not runtime",
+      "width": 1200,
+      "height": 900,
+      "bytes": 781829,
+      "sha256": "77d4e7002d42ead7aa8136c2306366ca8f7d55d42827e3f06513af6277927bc1"
     },
     {
       "path": "development/levels/rebuild/captures/roof-construction-batch/school.png",
