@@ -229,3 +229,6 @@ development/levels/rebuild/service-portal-construction-pass/** -text whitespace=
 tools/build_service_portals.py -text whitespace=cr-at-eol
 tools/build_cinder_galleries.py -text whitespace=cr-at-eol
 tools/audit_roster_stairs.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/terrain-ownership-construction-pass/** -text whitespace=cr-at-eol
+tools/compose_terrain_ownership.py -text whitespace=cr-at-eol

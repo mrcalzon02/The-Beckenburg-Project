@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10937,
+  "count": 10941,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -105854,6 +105854,46 @@
       "height": 900,
       "bytes": 634306,
       "sha256": "51e61ace0fa2f720317593130edbcd04b6ee4b04d812b140be164a1577c5ef13"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-ownership-construction-batch/academy.png",
+      "url": "development/levels/rebuild/captures/terrain-ownership-construction-batch/academy.png",
+      "title": "Academy",
+      "kind": "Native actual saved Motel Academy Dam terrain and full floors/arrival structures; roofs hidden, landscape and older stair/runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1453187,
+      "sha256": "77534e6b3a13bbfb6579a57359cbab819afae073f86c777908c653f0be9d0af0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-ownership-construction-batch/wld-09-bearing-section.png",
+      "url": "development/levels/rebuild/captures/terrain-ownership-construction-batch/wld-09-bearing-section.png",
+      "title": "Wld 09 bearing section",
+      "kind": "Native Dam bearing section; deck above -0.8m, ceiling caps and terrain hidden only for load-path inspection; older amber flights unfinished, no runtime acceptance",
+      "width": 1400,
+      "height": 1000,
+      "bytes": 1326424,
+      "sha256": "88cf1bcbc3fad7b25324be24bee0be46989e0d3bf9ddc87edda277659db043bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-ownership-construction-batch/wld-09.png",
+      "url": "development/levels/rebuild/captures/terrain-ownership-construction-batch/wld-09.png",
+      "title": "Wld 09",
+      "kind": "Native actual saved Motel Academy Dam terrain and full floors/arrival structures; roofs hidden, landscape and older stair/runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1513194,
+      "sha256": "6c1bbebac846169fc78595e8a2c0a9618e870b3c521049055b38638f0420acd6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-ownership-construction-batch/wld-16.png",
+      "url": "development/levels/rebuild/captures/terrain-ownership-construction-batch/wld-16.png",
+      "title": "Wld 16",
+      "kind": "Native actual saved Motel Academy Dam terrain and full floors/arrival structures; roofs hidden, landscape and older stair/runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1617947,
+      "sha256": "b95f542d6a8c316e795d68f18dc7f025ae1da0e90cd16a8180d9a0c1499a3555"
     },
     {
       "path": "development/levels/rebuild/captures/wharf-stair-cells-batch/wharf-stair-cells.png",

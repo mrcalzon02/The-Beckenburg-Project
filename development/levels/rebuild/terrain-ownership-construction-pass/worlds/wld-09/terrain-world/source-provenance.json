@@ -1,0 +1,65 @@
+{
+  "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "a958a7fccc99b4a14d9e6a7db1a6f2fc1f008c9e46d93f6e5352f4be62c34b6a",
+    "authored-cuts.tsv": "54837b189a3bf7c3766c12d6ee9363f525591bbbf6541bdab2389b6b176a3afc",
+    "authored-path-grading.sha256": "6010dc64f636c1a7598111644313e5e4e646e73e8c4f57ca85e12bcb1b995a5b",
+    "source-provenance.json": "6977130d12ddf82df6c47db671635e8cde7577caf92def4175db74e20741ed82",
+    "terrain-physics.hcs2": "e19eb609700390e23d1c5b2b34fd3102be64df9050c4679362fe5c066348acec",
+    "tile_0_0.png": "c4ec321fdebf26510af395260a2c58e832af175a032d033c21632c10cefe6aca",
+    "verification.json": "b0f9fadc3ba8c7492409c9b2e594d8f39f5ac508271bfef726d988ab2dcc2c17",
+    "world.properties": "1f2175faefa9d0256d347d1550a5069c42be240db5bf3447af7789898badb8be",
+    "scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scene-package/.scene.bin.editor.previous": "e9a331efbf01b61066217222db22603759ad92c0a3271060da789b496dcd343c",
+    "scene-package/scene.bin": "6c17e1cb103d0987ba810224fb59f8bbd65e004b9ee1d72e40c96f175a72118e",
+    "terrain-layers/tile_0_0.bin": "80e8a376b1bdb391b4889463d9fa018454124a1e907dcc1adbb6a4122fea00a1",
+    "scene-package/meshes/site-0-0.obj": "2556562ebd6f6a81df1664143452ba7e2295dd7c081b7c53af2318023350527b",
+    "scene-package/meshes/site-0-1.obj": "d9911d6c15f528b2b56c0c8b420b11a7f69504a4ea1685f526598ba9c45f3bc4",
+    "scene-package/meshes/site-1-0.obj": "e87ccc73ef0e79ec2933171ffcdaaeadd64bbf13f14dcadcbf2a0072237d2d61",
+    "scene-package/meshes/site-1-1.obj": "95cefc5cab502a1757a62f36a2d8373de49e28e63c397255d46c78be51acfdcd"
+  },
+  "earthworks_features": [
+    {
+      "name": "Dam access road and crest arrival apron",
+      "material": "GRAVEL",
+      "feather": 5,
+      "profile": "arrival",
+      "polygon": [
+        [
+          24,
+          59
+        ],
+        [
+          28,
+          54
+        ],
+        [
+          46,
+          54
+        ],
+        [
+          51,
+          61
+        ],
+        [
+          49,
+          83
+        ],
+        [
+          44,
+          91
+        ],
+        [
+          27,
+          91
+        ],
+        [
+          23,
+          81
+        ]
+      ]
+    }
+  ],
+  "source_height_and_punched_topology_preserved": true,
+  "authoring": "Actual TerrainLayerStack geographic sculpt, not route support"
+}

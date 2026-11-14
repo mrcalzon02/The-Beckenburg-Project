@@ -1,0 +1,331 @@
+{
+  "sites": [
+    {
+      "id": "WLD-16",
+      "source": {
+        "id": "WLD-16",
+        "construction": "development/levels/rebuild/service-portal-construction-pass/wld-16/construction.json",
+        "layout": "development/levels/rebuild/service-portal-construction-pass/wld-16/authored-layout.json",
+        "glb": "development/levels/rebuild/service-portal-construction-pass/wld-16/clean-doorways.glb",
+        "native": "development/levels/rebuild/service-portal-construction-pass/wld-16/clean-doorways.hcs2",
+        "blend": "development/levels/rebuild/service-portal-construction-pass/wld-16/clean-doorways.blend",
+        "glb_sha256": "fde1e97bd5adb5a1ca0dcdd9582b4a9f7ebc043232ce74a600bf2f2778498b20",
+        "native_sha256": "17860ff253d1757d3b51d684d99070dd1f1f1f692fb81f3463c7421c7b7ed7c6"
+      },
+      "source_world": "development/levels/rebuild/terrain-ownership-construction-pass/original-worlds/wld-16/terrain-world",
+      "world": "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-16/terrain-world",
+      "program": "development/levels/rebuild/terrain-ownership-construction-pass/program/wld-16",
+      "source_files_sha256": {
+        "adaptive-topology.bin": "773522c1865582b1cab2348c4e408651c13e99f33fe73d27bc5aa49ef33195d4",
+        "authored-cuts.tsv": "c5239d925269830f01d305384cf614511c9d53cf3a5c44aa6250ad1747f0c14d",
+        "source-provenance.json": "9d483aaad4204292b6cbc3fc127d0c3bad59483d3f5480647cd69a1c1eee330d",
+        "terrain-physics.hcs2": "c60e8005690f6978fbb4d827bb8fee38f93cc7c386a007679e91189a80ea859c",
+        "tile_0_0.png": "6a2078cc44d13f5c61a1894c743dfdad83a5e747172d2fb58ffeff27399b3496",
+        "verification.json": "ec1ad24725b6077ef01f5be3fe66211a06d059e88c8b6ca5dd4ada722530ed08",
+        "world.properties": "f7ed25b987fd594c7f19f771f5c7116c386725bc4c8f5d8cc0fd0e31f057e545",
+        "scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scene-package/scene.bin": "1f910e5c92dabdd814a566ecd68e24d440ce3d698df44347fb0b606606a02cbd",
+        "scene-package/meshes/site.obj": "a7418ec9634c9f10b84155c7f1cd25af7a1c4e80c65e7d956f9081318b4bb5c3"
+      },
+      "features": [
+        {
+          "name": "Motel court arcades and arrival clearing",
+          "material": "GRAVEL",
+          "feather": 4,
+          "profile": "arrival",
+          "polygon": [
+            [
+              4,
+              16
+            ],
+            [
+              12,
+              14
+            ],
+            [
+              39,
+              14
+            ],
+            [
+              48,
+              17
+            ],
+            [
+              57,
+              25
+            ],
+            [
+              58,
+              52
+            ],
+            [
+              48,
+              59
+            ],
+            [
+              37,
+              61
+            ],
+            [
+              36,
+              76
+            ],
+            [
+              16,
+              76
+            ],
+            [
+              12,
+              59
+            ],
+            [
+              3,
+              52
+            ]
+          ]
+        },
+        {
+          "name": "Motel north service court",
+          "material": "GRAVEL",
+          "feather": 4,
+          "profile": "arrival",
+          "polygon": [
+            [
+              10,
+              13
+            ],
+            [
+              43,
+              13
+            ],
+            [
+              54,
+              16
+            ],
+            [
+              57,
+              23
+            ],
+            [
+              48,
+              26
+            ],
+            [
+              12,
+              23
+            ]
+          ]
+        }
+      ],
+      "original_terrain_mesh": "Authored roadside terrain",
+      "seed_input": "development/levels/rebuild/terrain-ownership-construction-pass/original-landform-source/wld-16"
+    },
+    {
+      "id": "ACADEMY",
+      "source": {
+        "id": "ACADEMY",
+        "construction": "development/levels/rebuild/institution-roof-pass/academy/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+        "glb": "development/levels/rebuild/institution-roof-pass/academy/enclosed-roofs.glb",
+        "native": "development/levels/rebuild/institution-roof-pass/academy/enclosed-roofs.hcs2",
+        "blend": "development/levels/rebuild/institution-roof-pass/academy/enclosed-roofs.blend",
+        "glb_sha256": "cbbd329e4563971a5de96bf07eb1ce9915582070740bfcd9561a9fcdee3aff6a",
+        "native_sha256": "d7014c708dfd91a70e6a1e378c0ed2046b8766554d1df179dff523fe48bdc86c"
+      },
+      "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world",
+      "world": "development/levels/rebuild/terrain-ownership-construction-pass/worlds/academy/terrain-world",
+      "program": "development/levels/rebuild/terrain-ownership-construction-pass/program/academy",
+      "source_files_sha256": {
+        "adaptive-topology.bin": "0ce8b023109a00280be8d85407e37447ab484844cdfd7d72bac6490116f1b3bc",
+        "authored-cuts.tsv": "70890708e26f1172286e0c3be15cfe08e85bda3718aceb3946c7963fd3cf493b",
+        "authored-path-grading.sha256": "8102ea0be6d08a202ea230ea9a5393cb86cee2e16c19372ca210aa7733f7f2e0",
+        "source-provenance.json": "de7f333715d3f11bfd656306016fbb9eca4fa61f8b7137d9d7d3fc3f476e9506",
+        "terrain-physics.hcs2": "4fe9ab026da67efe124dec35b95a2a4a468a32687d1dcc9518586bb8efc3a7d9",
+        "tile_0_0.png": "53d0c844bc6619c7600d65d662b18e9512cac5a175b5794e10a2923e9862841f",
+        "verification.json": "ab1ca3e965cfdfa404e10aea18d69eb2b13764260b250797ce62468f7fd89ab8",
+        "world.properties": "da9399f6bfa565e7d2e2b313b6cc52dbdd6ec141e1c07d29aeeaa576e85601de",
+        "scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scene-package/.scene.bin.editor.previous": "b1ed403cbd97640d7a48c6bd197703b9a823dd457bae0413cc924988c1c796c2",
+        "scene-package/scene.bin": "eac9e7f1cd8a4b7b8471c956199f987c9434fa8074bc0bfe0c91d97cf6ad6fd5",
+        "terrain-layers/tile_0_0.bin": "cd65e28f21a74e9f4583a1c3b147a555163f2fb118c3fb9c2e984ed01a38fd1c",
+        "scene-package/meshes/site.obj": "f134f688d51bd2fc6cc8b65e01d861222af4c5022f843a0f8e9c24bfc83d209b"
+      },
+      "features": [
+        {
+          "name": "Academy south arrival and visitor grounds",
+          "material": "GRAVEL",
+          "feather": 4,
+          "profile": "arrival",
+          "polygon": [
+            [
+              1,
+              54
+            ],
+            [
+              8,
+              51
+            ],
+            [
+              57,
+              51
+            ],
+            [
+              65,
+              57
+            ],
+            [
+              64,
+              77
+            ],
+            [
+              55,
+              83
+            ],
+            [
+              24,
+              84
+            ],
+            [
+              2,
+              73
+            ]
+          ]
+        },
+        {
+          "name": "Academy east service perimeter",
+          "material": "GRAVEL",
+          "feather": 4,
+          "profile": "arrival",
+          "polygon": [
+            [
+              57,
+              4
+            ],
+            [
+              65,
+              9
+            ],
+            [
+              65,
+              54
+            ],
+            [
+              58,
+              58
+            ],
+            [
+              57,
+              48
+            ]
+          ]
+        },
+        {
+          "name": "Academy central quadrangle",
+          "material": "GRAVEL",
+          "feather": 3,
+          "profile": "arrival",
+          "polygon": [
+            [
+              21,
+              22
+            ],
+            [
+              42,
+              22
+            ],
+            [
+              43,
+              40
+            ],
+            [
+              40,
+              43
+            ],
+            [
+              23,
+              43
+            ]
+          ]
+        }
+      ],
+      "original_terrain_mesh": "Saved editor circulation terrain ACADEMY"
+    },
+    {
+      "id": "WLD-09",
+      "source": {
+        "id": "WLD-09",
+        "construction": "development/levels/rebuild/retaining-shoulder-pass/wld-09/construction.json",
+        "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-09/authored-layout.json",
+        "glb": "development/levels/rebuild/retaining-shoulder-pass/wld-09/retained-cuts.glb",
+        "native": "development/levels/rebuild/retaining-shoulder-pass/wld-09/retained-cuts.hcs2",
+        "blend": "development/levels/rebuild/retaining-shoulder-pass/wld-09/retained-cuts.blend",
+        "glb_sha256": "59aea7180fe85bc25629c645a2a304ef23d14fb4b2901705c88e8732de73c4e4",
+        "native_sha256": "70c75d9a07e90a0784b231b963a31411c1f4d2e7ea66d9c1a1a298055ad94721"
+      },
+      "source_world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-09/terrain-world",
+      "world": "development/levels/rebuild/terrain-ownership-construction-pass/worlds/wld-09/terrain-world",
+      "program": "development/levels/rebuild/terrain-ownership-construction-pass/program/wld-09",
+      "source_files_sha256": {
+        "adaptive-topology.bin": "a958a7fccc99b4a14d9e6a7db1a6f2fc1f008c9e46d93f6e5352f4be62c34b6a",
+        "authored-cuts.tsv": "54837b189a3bf7c3766c12d6ee9363f525591bbbf6541bdab2389b6b176a3afc",
+        "authored-path-grading.sha256": "6010dc64f636c1a7598111644313e5e4e646e73e8c4f57ca85e12bcb1b995a5b",
+        "source-provenance.json": "6977130d12ddf82df6c47db671635e8cde7577caf92def4175db74e20741ed82",
+        "terrain-physics.hcs2": "e19eb609700390e23d1c5b2b34fd3102be64df9050c4679362fe5c066348acec",
+        "tile_0_0.png": "c4ec321fdebf26510af395260a2c58e832af175a032d033c21632c10cefe6aca",
+        "verification.json": "b0f9fadc3ba8c7492409c9b2e594d8f39f5ac508271bfef726d988ab2dcc2c17",
+        "world.properties": "1f2175faefa9d0256d347d1550a5069c42be240db5bf3447af7789898badb8be",
+        "scene-package/.scene.bin.editor.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "scene-package/.scene.bin.editor.previous": "e9a331efbf01b61066217222db22603759ad92c0a3271060da789b496dcd343c",
+        "scene-package/scene.bin": "6c17e1cb103d0987ba810224fb59f8bbd65e004b9ee1d72e40c96f175a72118e",
+        "terrain-layers/tile_0_0.bin": "80e8a376b1bdb391b4889463d9fa018454124a1e907dcc1adbb6a4122fea00a1",
+        "scene-package/meshes/site-0-0.obj": "2556562ebd6f6a81df1664143452ba7e2295dd7c081b7c53af2318023350527b",
+        "scene-package/meshes/site-0-1.obj": "d9911d6c15f528b2b56c0c8b420b11a7f69504a4ea1685f526598ba9c45f3bc4",
+        "scene-package/meshes/site-1-0.obj": "e87ccc73ef0e79ec2933171ffcdaaeadd64bbf13f14dcadcbf2a0072237d2d61",
+        "scene-package/meshes/site-1-1.obj": "95cefc5cab502a1757a62f36a2d8373de49e28e63c397255d46c78be51acfdcd"
+      },
+      "features": [
+        {
+          "name": "Dam access road and crest arrival apron",
+          "material": "GRAVEL",
+          "feather": 5,
+          "profile": "arrival",
+          "polygon": [
+            [
+              24,
+              59
+            ],
+            [
+              28,
+              54
+            ],
+            [
+              46,
+              54
+            ],
+            [
+              51,
+              61
+            ],
+            [
+              49,
+              83
+            ],
+            [
+              44,
+              91
+            ],
+            [
+              27,
+              91
+            ],
+            [
+              23,
+              81
+            ]
+          ]
+        }
+      ],
+      "original_terrain_mesh": "Saved editor circulation terrain WLD-09"
+    }
+  ]
+}

@@ -7236,17 +7236,73 @@ Older-map obligation: All29packets retained. Mature Castle/House/Blackpine/Hollo
 
 ### DEV-511 — Removing Motel solid guide strips exposes original terrain collisions and unsupported approaches
 
-**Status:** OPEN BLOCKER; ORDINARY ROUTE REGRESSION CHECK FAILS · **Affected:** WLD-16 original terrain owner, court/walks and arrival/door approaches
+**Status:** SAVED TERRAIN OWNER AND FLOORS REBUILT; ALL22LINKS/42DOOR PROFILES PASS; FINAL GATES OPEN · **Affected:** WLD-16 original terrain owner, court/walks and arrival/door approaches
 
 Motel ordinary passes drop16to3of22;26direction regressions affect13links after false support strips are removed.33of42door profiles fail on original terrain or missing ground support.
 
 Cause / uncertainty: Original coarse landform intersects the walks and entrances; old guide strips concealed the missing geographic construction.
 
-Fix / next action: Keep strips removed and preserve the original terrain component and its native records byte-for-byte. Do not restore false supports, loosen tests, unlock the Motel or treat new doorway walls as map acceptance. Next physical batch must resolve original terrain ownership and construct actual motel geographic court/arcade/arrival interfaces, alongside Academy off-landform work and another unfinished site. Current three-site ordinary result is33/52versus42before: Railway16/16, Cinder14/14, Motel3/22. Broad samples retain2947invalid of12867. Stairs/gallery circuits and source-preservation checks pass independently.
+Fix / next action: Keep strips removed and preserve the original terrain component and its native records byte-for-byte. Do not restore false supports, loosen tests, unlock the Motel or treat new doorway walls as map acceptance. Next physical batch must resolve original terrain ownership and construct actual motel geographic court/arcade/arrival interfaces, alongside Academy off-landform work and another unfinished site. Current three-site ordinary result is33/52versus42before: Railway16/16, Cinder14/14, Motel3/22. Broad samples retain2947invalid of12867. Stairs/gallery circuits and source-preservation checks pass independently. Terrain-ownership construction now samples the exact original terrain master into a real saved editor world, transfers render/native ownership once, and grades geographic court/arcade/arrival/service areas through saved layers. Reconstruct full room/arcade floors and a flush north service apron. Original coarse collider is absent from current export/native; source master is preserved. All22ordinary links and42door profiles pass without restoring study strips. Landscape/desquareify, canonical van arrival inspection and real runtime integration remain open.
 
 Evidence and verification: development/levels/rebuild/service-portal-construction-pass/roster.json; per-site clean-doorways.blend/glb/hcs2 and construction.json; verification/; captures/service-portal-construction-batch including upper/lower native sections
 
 Older-map obligation: All29packets retained. Mature Castle/House/Blackpine/Hollow Creek and functional/van/fog/power/hiding/network contracts preserved. Audit remaining maps individually; source-native checks do not establish gameplay acceptance.
+
+### DEV-512 — Motel original coarse landform obstructed the real court and arcades
+
+**Status:** SAVED OWNER TRANSFER AND GEOGRAPHIC/FLOOR CONSTRUCTION VERIFIED · **Affected:** Eight Pines Motor Lodge original terrain, courtyard, guest arcades, room floors and service court
+
+Original closed coarse terrain collided with doors/walks; removed guide strips had concealed missing geographic support.
+
+Cause / uncertainty: No persisted editor terrain owned the original Motel surface; fragmented thin floor patches and broad landform collided.
+
+Fix / next action: Sample original master into saved R16 terrain, publish actual editor topology with12foundation cuts, then author broad geographic grades/shoulders through saved layers. Retain source master and immutable seed world. Explicitly match the original GLB/native terrain part before removing it; one new saved-world owner supplies rendering/native terrain. Rebuild12room floors at0.30m and3arcade floors at0.22m, preserving staging and all library placement. A north arcade2cm height mismatch required a full-width flush service apron; grade the actual north court rather than restoring study support. All22ordinary links and42door profiles now pass, compared with3and9profiles before. New/source terrain triangles and saved source/cut/room contracts match. Materials/landscape/drainage/van/runtime acceptance remain open.
+
+Evidence and verification: development/levels/rebuild/terrain-ownership-construction-pass/roster.json; earthworks-program.json; worlds/original-worlds and per-site saved-earthworks.blend/glb/hcs2/construction.json; verification/; captures/terrain-ownership-construction-batch
+
+Older-map obligation: All29packets retained. Mature authorities/assets and source room/staging/capacity/ritual/power/hiding/network/van/fog/sky contracts preserved. Audit other unfinished maps and actual gameplay integration individually.
+
+### DEV-513 — Academy visitor guides left the landform and crossed teaching rooms
+
+**Status:** FORECOURT AND NORMAL RECEPTION ENTRANCE BUILT; TWO OTHER CONNECTIONS OPEN · **Affected:** Academy arrival, reception south door and quadrangle approach
+
+The arrival guide travelled outside actual landform and then across laboratory rooms to the quad.
+
+Cause / uncertainty: Old guidance was followed as a geographic/architectural shortcut rather than entering through reception and the cloister.
+
+Fix / next action: Grade actual arrival/visitor grounds, service perimeter and quadrangle while preserving protected interiors and all901saved holes. Construct thick reception south piers/lintel, indexed1.8x2.3m service frame and full-width soil-bearing visitor landing. Entry now follows reception, existing south cloister and actual quad doorway; reverse room access follows those same surfaces. Three actual door profiles pass; three previously clear native landing rays now block. Ordinary links37/39versus34before, no regressions. Preserve38OPEN_SEARCH/23SEALED_CONTEXT source spaces; no new unlock or runtime seal acceptance. L42east-stair exit and L43upper-main approach remain open.
+
+Evidence and verification: development/levels/rebuild/terrain-ownership-construction-pass/roster.json; earthworks-program.json; worlds/original-worlds and per-site saved-earthworks.blend/glb/hcs2/construction.json; verification/; captures/terrain-ownership-construction-batch
+
+Older-map obligation: All29packets retained. Mature authorities/assets and source room/staging/capacity/ritual/power/hiding/network/van/fog/sky contracts preserved. Audit other unfinished maps and actual gameplay integration individually.
+
+### DEV-514 — Dam arrival crossed the workshop excavation without a coherent upper structure
+
+**Status:** SUPPORTED CREST AND BRIDGE FORECOURT BUILT; OLD STAIR CELLS UNFINISHED · **Affected:** Dam crest/arrival decks above the existing workshop
+
+Arrival and crest support was missing despite a lower occupied room beneath; raw ground could not fill that room.
+
+Cause / uncertainty: The earlier approach had relied on partial study pieces and mismatched terrain instead of a real load path.
+
+Fix / next action: Grade geographic arrival ground and preserve lower excavation neighbourhood/all1727saved holes. Build0.60m closed full crest deck and broad bridge forecourt, wall-bearing piers and transverse girders above the retained lower-room roof. Four independent native-export wall cap receivers confirm original wall top-3m meets new pier bottom-3.1m. Fit supported perimeter guards/returns with arrival and east-stair openings; correct reflected guard normals before export. Actual approach passes across the constructed bridge without filling the room below. All10affected flights/9complete stair routes across this batch retain both-way passes. Dam ordinary links9/12versus7before. Older amber Dam flights/roof cuts and L06/L10/L17 remain architectural blockers; no runtime acceptance.
+
+Evidence and verification: development/levels/rebuild/terrain-ownership-construction-pass/roster.json; earthworks-program.json; worlds/original-worlds and per-site saved-earthworks.blend/glb/hcs2/construction.json; verification/; captures/terrain-ownership-construction-batch
+
+Older-map obligation: All29packets retained. Mature authorities/assets and source room/staging/capacity/ritual/power/hiding/network/van/fog/sky contracts preserved. Audit other unfinished maps and actual gameplay integration individually.
+
+### DEV-515 — Five Academy and Dam source connections remain physically incomplete
+
+**Status:** OPEN INDIVIDUAL CONSTRUCTION BLOCKERS · **Affected:** Academy L42east stair to grounds, L43upper-west to main stair; Dam L06west stair to crest, L10east stair to crest, L17lower return to gallery
+
+Five ordinary links still fail continuous native sweeps after this terrain/floor batch.
+
+Cause / uncertainty: Old stair-head/upper/deep connections and legacy flight arrangements have not received their individual architectural rebuilds.
+
+Fix / next action: Keep these failures visible in the full29roster. Current affected ordinary result68/73versus44before, zero regressions; broad samples336invalid of15987. All45door profiles,10flights/9complete stair routes, closed-solid/export/source preservation and saved-hole controls pass. Next bounded structural batch should reconstruct these actual stair/landing/room interfaces alongside another unfinished site. Do not infer runtime/map acceptance from candidate checks or copy source route shapes into solids.
+
+Evidence and verification: development/levels/rebuild/terrain-ownership-construction-pass/roster.json; earthworks-program.json; worlds/original-worlds and per-site saved-earthworks.blend/glb/hcs2/construction.json; verification/; captures/terrain-ownership-construction-batch
+
+Older-map obligation: All29packets retained. Mature authorities/assets and source room/staging/capacity/ritual/power/hiding/network/van/fog/sky contracts preserved. Audit other unfinished maps and actual gameplay integration individually.
 
 ## Required audit categories
 

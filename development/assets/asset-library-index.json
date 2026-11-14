@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2009,
-  "unique_local_file_hashes": 1838,
+  "local_files": 2012,
+  "unique_local_file_hashes": 1841,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 87,
+    "additional_custom_model_sources": 90,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -30409,6 +30409,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "c3805de98cd57925b572caa6479d2860f79ef5016c63dcf37385a0199038b388",
       "bytes": 1358908
+    },
+    {
+      "id": "saved-earthworks",
+      "label": "saved-earthworks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/terrain-ownership-construction-pass/academy/saved-earthworks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "c93e3273c67a986078a144a1bc1f9aa1ddecb3a12d4e29251aac3e7ef2ce8a43",
+      "bytes": 4080740
+    },
+    {
+      "id": "saved-earthworks",
+      "label": "saved-earthworks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/terrain-ownership-construction-pass/wld-09/saved-earthworks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "643c8030b1fb310d1763ce74ce46e7c0a452d7c2d7e70f47a7809f3b9e335e42",
+      "bytes": 5728628
+    },
+    {
+      "id": "saved-earthworks",
+      "label": "saved-earthworks",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/terrain-ownership-construction-pass/wld-16/saved-earthworks.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "4300f3cb4612f32e5b82da5a5d9eb1c2a29858cc011adb78ad0919d00dd3a29f",
+      "bytes": 1291068
     },
     {
       "id": "rectangular-stair-cells",

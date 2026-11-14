@@ -17,7 +17,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/service-portal-construction-batch/' in path:
+    if '/terrain-ownership-construction-batch/' in path:
+        kind='Native Dam bearing section; deck above -0.8m, ceiling caps and terrain hidden only for load-path inspection; older amber flights unfinished, no runtime acceptance' if 'bearing-section' in p.name else 'Native actual saved Motel Academy Dam terrain and full floors/arrival structures; roofs hidden, landscape and older stair/runtime gates open'
+    elif '/service-portal-construction-batch/' in path:
         kind='Native Cinder gallery section; geometry above cut plane and terrain hidden only for inspection, other amber stairs unfinished, no runtime acceptance' if 'gallery-section' in p.name else 'Native reconstructed service doorways and Cinder galleries/U stair; roofs hidden, Motel original terrain and ordinary-route blockers remain open, no runtime acceptance'
     elif '/arrival-grounds-construction-batch/' in path:
         kind='Native actual saved Research Railway Cinder arrival/workground earthworks with founded trestle approaches; pitched roofs hidden, unfinished Cinder underground connections and doorway/landscape/runtime gates open'

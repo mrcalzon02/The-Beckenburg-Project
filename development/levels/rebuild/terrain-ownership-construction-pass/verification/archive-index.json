@@ -1,0 +1,15 @@
+{
+  "status": "LOSSLESS_RAW_VERIFICATION_ARCHIVES_NOT_NEW_TEST_ACCEPTANCE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/terrain-ownership-construction-pass/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/terrain-ownership-construction-pass/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 7919536,
+      "original_sha256": "fb29c79cb0826f449061f164930d8e4301f48881c033545af58d706f28956678",
+      "archive_bytes": 125930,
+      "archive_sha256": "d36a6c29bb846ef532e234279d28ec8f1a2268a6913abd820cd87f34cc39bdae",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    }
+  ],
+  "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."
+}
