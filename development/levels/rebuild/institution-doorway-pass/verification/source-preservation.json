@@ -1,0 +1,168 @@
+{
+  "method": "Byte-for-byte retained native records and exact unchanged semantic layout fields; no runtime acceptance",
+  "sites": [
+    {
+      "site": "school",
+      "preserved_native_parts": 428,
+      "explicitly_removed_parts": 41,
+      "unchanged_layout_contracts": [
+        "zones including SEALED_CONTEXT and elevations",
+        "capacity",
+        "staging/canonical van reservation",
+        "terrain_cutouts"
+      ],
+      "study_solids_removed": 15,
+      "rooms_rebuilt": [
+        "foyer",
+        "interview",
+        "visitor-wc",
+        "office"
+      ],
+      "corridor_faces": {
+        "corridor": [
+          "S"
+        ]
+      },
+      "entrance_landing": {
+        "bounds": [
+          20,
+          36,
+          25,
+          39
+        ],
+        "top_y": 0,
+        "foundation_bottom_y": -0.7568412780761719,
+        "soil_receivers": [
+          {
+            "x": 20.1,
+            "z": 38.9,
+            "soil_y": -0.4068412780761719
+          },
+          {
+            "x": 24.9,
+            "z": 38.9,
+            "soil_y": -0.39746665954589844
+          },
+          {
+            "x": 22.5,
+            "z": 38.9,
+            "soil_y": -0.40215301513671875
+          },
+          {
+            "x": 22.5,
+            "z": 38.01,
+            "soil_y": -0.40476226806640625
+          }
+        ]
+      }
+    },
+    {
+      "site": "prison",
+      "preserved_native_parts": 1004,
+      "explicitly_removed_parts": 32,
+      "unchanged_layout_contracts": [
+        "zones including SEALED_CONTEXT and elevations",
+        "capacity",
+        "staging/canonical van reservation",
+        "terrain_cutouts"
+      ],
+      "study_solids_removed": 14,
+      "rooms_rebuilt": [
+        "reception",
+        "intake",
+        "records"
+      ],
+      "corridor_faces": {
+        "a-front-link": [
+          "S"
+        ]
+      },
+      "entrance_landing": {
+        "bounds": [
+          10,
+          68,
+          18,
+          71
+        ],
+        "top_y": 0,
+        "foundation_bottom_y": -0.8847747802734375,
+        "soil_receivers": [
+          {
+            "x": 10.1,
+            "z": 70.9,
+            "soil_y": -0.5347747802734375
+          },
+          {
+            "x": 17.9,
+            "z": 70.9,
+            "soil_y": -0.41558074951171875
+          },
+          {
+            "x": 14.0,
+            "z": 70.9,
+            "soil_y": -0.42363739013671875
+          },
+          {
+            "x": 14.0,
+            "z": 70.01,
+            "soil_y": -0.42624473571777344
+          }
+        ]
+      }
+    },
+    {
+      "site": "asylum",
+      "preserved_native_parts": 774,
+      "explicitly_removed_parts": 38,
+      "unchanged_layout_contracts": [
+        "zones including SEALED_CONTEXT and elevations",
+        "capacity",
+        "staging/canonical van reservation",
+        "terrain_cutouts"
+      ],
+      "study_solids_removed": 17,
+      "rooms_rebuilt": [
+        "admission",
+        "interview",
+        "records"
+      ],
+      "corridor_faces": {
+        "spine": [
+          "S"
+        ]
+      },
+      "entrance_landing": {
+        "bounds": [
+          26,
+          58,
+          35,
+          61
+        ],
+        "top_y": 0,
+        "foundation_bottom_y": -1.0191989898681642,
+        "soil_receivers": [
+          {
+            "x": 26.1,
+            "z": 60.9,
+            "soil_y": -0.6691989898681641
+          },
+          {
+            "x": 34.9,
+            "z": 60.9,
+            "soil_y": -0.32129478454589844
+          },
+          {
+            "x": 30.5,
+            "z": 60.9,
+            "soil_y": -0.336334228515625
+          },
+          {
+            "x": 30.5,
+            "z": 60.01,
+            "soil_y": -0.34128570556640625
+          }
+        ]
+      }
+    }
+  ]
+}

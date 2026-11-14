@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10909,
+  "count": 10915,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -100674,6 +100674,66 @@
       "height": 200,
       "bytes": 30873,
       "sha256": "2258d97e973ac9e7b3d0aa6fe02ea2bcaf0f6d95c4cb1b588cbb4451f8c11103"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-doorway-batch/asylum-entry-close.png",
+      "url": "development/levels/rebuild/captures/institution-doorway-batch/asylum-entry-close.png",
+      "title": "Asylum entry close",
+      "kind": "Native institutional entrance walls, indexed frames and soil-bearing landings; study solids removed, roofs hidden, outdoor movement defects and runtime gates open",
+      "width": 1100,
+      "height": 1000,
+      "bytes": 1129001,
+      "sha256": "b3acecf897dee18dbdb42e1cd687ac531f8d31e5e9ac66c4fe6bd1107f5bd8e0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-doorway-batch/asylum.png",
+      "url": "development/levels/rebuild/captures/institution-doorway-batch/asylum.png",
+      "title": "Asylum",
+      "kind": "Native institutional entrance walls, indexed frames and soil-bearing landings; study solids removed, roofs hidden, outdoor movement defects and runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1428673,
+      "sha256": "c598a09b6659a01beb345c76892b6b30b81f48ac1973a87970bce5c1efdb6e17"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-doorway-batch/prison-entry-close.png",
+      "url": "development/levels/rebuild/captures/institution-doorway-batch/prison-entry-close.png",
+      "title": "Prison entry close",
+      "kind": "Native institutional entrance walls, indexed frames and soil-bearing landings; study solids removed, roofs hidden, outdoor movement defects and runtime gates open",
+      "width": 1100,
+      "height": 1000,
+      "bytes": 1139233,
+      "sha256": "be63a3ceaaeb5064b5fc35f71f12655fec163fec821d17a8b0ad96921b487929"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-doorway-batch/prison.png",
+      "url": "development/levels/rebuild/captures/institution-doorway-batch/prison.png",
+      "title": "Prison",
+      "kind": "Native institutional entrance walls, indexed frames and soil-bearing landings; study solids removed, roofs hidden, outdoor movement defects and runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1559195,
+      "sha256": "3a91ac572c7c7b7acbd2c170593b1d3ac6b78142ed31c213c28078f9a6305a51"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-doorway-batch/school-entry-close.png",
+      "url": "development/levels/rebuild/captures/institution-doorway-batch/school-entry-close.png",
+      "title": "School entry close",
+      "kind": "Native institutional entrance walls, indexed frames and soil-bearing landings; study solids removed, roofs hidden, outdoor movement defects and runtime gates open",
+      "width": 1100,
+      "height": 1000,
+      "bytes": 1138433,
+      "sha256": "da3e7686bf82bfe684afe893d5e34bb3984cb9a8347190a8d69e9162a56c328a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/institution-doorway-batch/school.png",
+      "url": "development/levels/rebuild/captures/institution-doorway-batch/school.png",
+      "title": "School",
+      "kind": "Native institutional entrance walls, indexed frames and soil-bearing landings; study solids removed, roofs hidden, outdoor movement defects and runtime gates open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1682587,
+      "sha256": "247a4a4cabefc6b45029795476845926404d9aed81a451954beea6f23654de96"
     },
     {
       "path": "development/levels/rebuild/captures/landing-batch/college-actual-export-contact.png",

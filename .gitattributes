@@ -202,3 +202,6 @@ tools/rebuild_wharf_stair_cells.py -text whitespace=cr-at-eol
 
 development/levels/rebuild/doorway-construction-pass/** -text whitespace=cr-at-eol
 tools/build_architectural_doorways.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/institution-doorway-pass/** -text whitespace=cr-at-eol
+tools/build_institution_doorways.py -text whitespace=cr-at-eol

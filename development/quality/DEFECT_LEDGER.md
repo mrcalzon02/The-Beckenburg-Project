@@ -6926,6 +6926,34 @@ Evidence and verification: development/levels/rebuild/doorway-construction-pass/
 
 Older-map obligation: 22active packets pending individual doorway construction;4mature authorities preserved and not inferred audited. Selected basements/upper floors and Research lower tunnel remain unfinished. Raw broad guidance footprints retain515invalid of15648poses, including lane shoulders wider than actual door apertures; do not widen doors to pass those samples. Research/WLD-12 flared stairs still require architectural reconstruction. Door leaves, interactions, room/portal/acoustic/service binding and real-game integration are open. No unlock, runtime or whole-map acceptance.
 
+### DEV-489 — Institution entrance blocks retained irregular circulation-cut walls and incomplete door frames
+
+**Status:** THREE ENTRANCE BLOCKS CONSTRUCTED; OTHER ROOMS AND RUNTIME OPEN · **Affected:** School foyer/interview/visitor WC/office and corridor south face; Asylum admission/interview/records and spine south face; Prison reception/intake/records and front-link south face
+
+Oversized/irregular study-cut wall openings, separate arbitrary headers and missing full-depth door assemblies survived outside the first waterfront doorway batch.
+
+Cause / uncertainty: Rough traversal allowances had replaced an architectural doorway schedule; original headers lacked zone extras and needed explicit wall/side identity matching.
+
+Fix / next action: Reconstruct10ground rooms plus3adjoining corridor faces around explicit1.05x2.10m pedestrian and1.80x2.30m service doors, thick closed masonry and complete jamb/head instances from the existing indexed standard doorway. Frames span both wall halves at shared openings. Remove original headers by actual wall/side identity through repair prefixes. Build full-width3m-deep entrance landings on solid plinths embedded below sampled original terrain at their outside bearing. Retain adjacent sealed-context walls and all access metadata. Normal approach guides follow the constructed room doorways.39actual-aperture center/side profiles pass continuous movement both directions,13exported frame dimensions/datums pass independent reimport, and three native optical controls show the old excessive opening heads now blocked at2.4m. All7flights and7complete stair routes remain passing. Final native overviews/standing entry views inspected.
+
+Evidence and verification: development/levels/rebuild/institution-doorway-pass/roster.json; per-site clean-doorways.blend/glb/hcs2, authored-layout.json and construction.json; verification/door-aperture-verification.json, exported-frame-dimensions.json, closed-oversized-openings-results.tsv, source-preservation.json and stairs; captures/institution-doorway-batch
+
+Older-map obligation: These are entrance blocks only: remaining institution rooms and upper/basement doors are unfinished. Roster retains3previous ground-room batches,3partial institution entrance blocks,19pending active packets and4mature authorities. Source world/native terrain, original floor/roof/stair/prop records except explicitly removed studies, zones/capacity/staging/punches and SEALED_CONTEXT remain unchanged. No whole-map or runtime acceptance, interactive door binding, availability promotion or held-parent merge.
+
+### DEV-490 — Removing institution study solids exposes missing court and service-ground construction
+
+**Status:** MISTAKEN SOLIDS REMOVED; THREE ADDITIONAL LINKS FAIL AND REMEDIATION OPEN · **Affected:** Asylum L26 day room to court, Prison L080 sally port to yard, School L40 receiving to grounds; broader arrivals/outdoor routes on all3sites
+
+Before removal, physical blue study strips ran through actual entrance floors and beyond thresholds. Several ordinary links relied on those strips rather than proper ground/yard construction.
+
+Cause / uncertainty: The earlier studies became hard support geometry. School outdoor grounds also uses a broad envelope whose historical common route endpoint lies among actual building rooms, so its diagonal needs architectural reassessment rather than another hard ribbon.
+
+Fix / next action: Remove all active rough-route-support, rooted-circulation-bed and arrival-end-bearing study solids from the three current site exports and native collision. Keep real stairs/floors and author complete entrance landings instead of reconnecting lines. Source-preservation check retains all native records outside explicit wall/header/study removals byte-for-byte. Final complete-flat regression check correctly FAILS:96of121active ordinary links pass both ways versus99before;6direction regressions on3links. Strict broad samples retain4076invalid of22458poses. Keep the unweakened failing check and exact failure contacts. Do not restore strips or widen doors to hide missing areas.
+
+Evidence and verification: institution-doorway-pass/verification/current-flat-movement.json complete_link_regressions and source_bindings; current-flat-links.tsv and failure contacts; source-preservation.json; native entry images now show actual landing surfaces without blue strips
+
+Older-map obligation: Construct real court/yard and service-ground interfaces, reassess School grounds endpoint outside the building and its normal entrances/exits, then rerun the affected checks. Previously failing arrival/perimeter and School upper links remain open; removing guides does not establish terrain/desquareify, floor/stair or runtime acceptance. Other active maps still need individual study-solid removal and architecture-first rebuilding.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
