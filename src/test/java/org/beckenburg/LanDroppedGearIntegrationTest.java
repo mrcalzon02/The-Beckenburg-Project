@@ -83,6 +83,74 @@ public final class LanDroppedGearIntegrationTest {
             int again=a.mark();a.client.dropHeldEquipment();
             check(a.await(again,"GEARDROP|ITEM|1|").contains("|EMF_READER|"),
                 "redrop preserves original identity");
+            // Four distinct physical slots must conserve their original device identities.
+            // The prior EMF redrop is a real in-world item, so collect it first.
+            int reset=a.mark();a.client.pickupDroppedEquipment(1);
+            check(a.await(reset,"ACCEPT|GEARPICK|1").equals("ACCEPT|GEARPICK|1"),
+                "restore original EMF before full-belt conservation test");
+            String[] initial={"EMF_READER","THERMOMETER","SPIRIT_BOX","UV_LIGHT"};
+            long[] ids=new long[FieldEquipment.SLOTS];
+            Set<Long> unique=new HashSet<>();
+            LanDroppedGear items=(LanDroppedGear)LooseClutterNetworkTest.field(host,"droppedGear");
+            for(int slot=0;slot<FieldEquipment.SLOTS;slot++){
+                int select=a.mark();a.client.selectGearSlot(slot);
+                a.await(select,"GEARSTATE|");
+                synchronized(mutex){check(kits[0].at(slot).equals(initial[slot]),
+                    "original tool occupies expected slot "+slot);}
+                int before=a.mark();a.client.dropHeldEquipment();
+                var itemAtSlot=LanDroppedGear.Drop.decode(
+                    LanProtocol.parts(a.await(before,"GEARDROP|ITEM|")));
+                ids[slot]=itemAtSlot.id();
+                check(itemAtSlot.owner()==0&&itemAtSlot.sourceSlot()==slot
+                    &&itemAtSlot.tool().equals(initial[slot])&&unique.add(itemAtSlot.id()),
+                    "each physical slot drops a different original host-owned identity");
+                a.await(before,"GEARSTATE|");
+                synchronized(mutex){check(kits[0].at(slot).equals(FieldEquipment.EMPTY),
+                    "successful drop leaves only its source slot vacant");}
+            }
+            synchronized(mutex){
+                check(items.snapshot().size()==FieldEquipment.SLOTS,
+                    "four real in-world items exist exactly once");
+                for(int slot=0;slot<FieldEquipment.SLOTS;slot++)
+                    check(kits[0].at(slot).equals(FieldEquipment.EMPTY),
+                        "all four physical slots are vacant after distinct drops");
+            }
+            int empty=a.mark();a.client.dropHeldEquipment();
+            check(a.await(empty,"REJECT|").contains("no carried instrument"),
+                "dropping an already empty slot must be rejected");
+            synchronized(mutex){check(items.snapshot().size()==FieldEquipment.SLOTS,
+                "rejected empty-slot drop may not clone or remove a world item");}
+            synchronized(mutex){AuthoredTestSupport.place(map,world,0,map.spawn(5));}
+            int outOfReach=a.mark();a.client.pickupDroppedEquipment(ids[3]);
+            check(a.await(outOfReach,"REJECT|").contains("physical reach"),
+                "interrupted far-away pickup must fail without item transfer");
+            synchronized(mutex){
+                check(items.snapshot().size()==FieldEquipment.SLOTS,
+                    "failed remote pickup keeps all four world identities intact");
+                for(int slot=0;slot<FieldEquipment.SLOTS;slot++)
+                    check(kits[0].at(slot).equals(FieldEquipment.EMPTY),
+                        "failed remote pickup cannot occupy a belt slot");
+                AuthoredTestSupport.place(map,world,0,map.spawn(4));
+            }
+            for(int slot=FieldEquipment.SLOTS-1;slot>=0;slot--){
+                int before=a.mark();a.client.pickupDroppedEquipment(ids[slot]);
+                check(a.await(before,"ACCEPT|GEARPICK|"+ids[slot])
+                    .equals("ACCEPT|GEARPICK|"+ids[slot]),
+                    "recover each unique world item by original identity");
+                a.await(before,"GEARSTATE|");
+                synchronized(mutex){check(kits[0].at(slot).equals(initial[slot]),
+                    "reverse-order recovery restores original physical slot "+slot);}
+            }
+            synchronized(mutex){
+                check(items.snapshot().isEmpty(),"all world items consumed exactly once");
+                for(int slot=0;slot<FieldEquipment.SLOTS;slot++)
+                    check(kits[0].at(slot).equals(initial[slot]),
+                        "four-slot recovery conserves source identities and positions");
+            }
+            int replay=a.mark();a.client.pickupDroppedEquipment(ids[0]);
+            check(a.await(replay,"REJECT|").contains("not found"),
+                "consumed world identity cannot be picked up twice");
+            System.out.println("PASS: TCP four-slot unique identity, empty-slot rejection, remote rollback and reverse-order retrieval");
             System.out.println("PASS: TCP EMF drop, empty slot, E pickup, ownership, reach, rollback and duplicate rejection");
         }
     }
