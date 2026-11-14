@@ -232,3 +232,11 @@ tools/audit_roster_stairs.py -text whitespace=cr-at-eol
 
 development/levels/rebuild/terrain-ownership-construction-pass/** -text whitespace=cr-at-eol
 tools/compose_terrain_ownership.py -text whitespace=cr-at-eol
+
+# Exact physical stair interface sources and measured native probes.
+development/levels/rebuild/stair-interface-construction-pass/** -text
+development/levels/rebuild/stair-interface-construction-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol
+development/levels/rebuild/stair-interface-construction-pass/**/*.log -diff
+tools/build_stair_interfaces.py text eol=lf
+tools/review_stair_interfaces.py text eol=lf
+tools/audit_roster_stairs.py text eol=lf

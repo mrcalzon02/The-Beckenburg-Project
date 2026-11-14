@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "date": "2026-11-08",
+  "date": "2026-11-14",
   "timezone": "America/Anchorage",
   "status": "EXECUTION_IN_PROGRESS",
   "source_baseline": "ad9bb45c20c3754931637bdfa50968a35defeaf9",
@@ -6701,5 +6701,36 @@
     "implementation_sha": "a9d04b445c11179ec8a3d52c15ce7e6547857b2a",
     "publication_readback": "development/levels/rebuild/access-route-pass/verification/publication-readback.json",
     "gallery_deployment": "PENDING_ACCEPTED_INTEGRATION; new-sheet404, old-main-gallery200"
+  },
+  "stair_interface_checkpoint": {
+    "status": "PHYSICAL_CONSTRUCTION_SCOPED_NATIVE_PASS_RUNTIME_OPEN",
+    "roster": "development/levels/rebuild/stair-interface-construction-pass/roster.json",
+    "baseline_sha": "76244aabf726352f5d55fe6bd03587a53f154672",
+    "counts": {
+      "sites": {
+        "ACADEMY": {
+          "before": 37,
+          "after": 39,
+          "total": 39
+        },
+        "WLD-04": {
+          "before": 2,
+          "after": 2,
+          "total": 7
+        },
+        "WLD-09": {
+          "before": 9,
+          "after": 12,
+          "total": 12
+        }
+      },
+      "flights": 20,
+      "complete_stair_routes": 18,
+      "full_foot_samples": 14982,
+      "invalid_full_foot_samples": 247,
+      "new_closed_parts": 237,
+      "new_triangles": 6996
+    },
+    "next_action": "Build remaining Lookout ground/platform interfaces alongside the next unfinished sites; integrate source geometry and functional native ownership into shared gameplay before runtime acceptance."
   }
 }

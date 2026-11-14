@@ -15,7 +15,7 @@ def main():
     build=ROOT/'build/roster-stair-probe';build.mkdir(parents=True,exist_ok=True)
     sites=json.loads((ROOT/'development/levels/rebuild/furnishings/room-programs.json').read_text(encoding='utf-8'))['sites']
     chain_path=ROOT/'development/levels/rebuild/movement-chains.json';declared=json.loads(chain_path.read_text())['sites']
-    rows=[];paths=[];names=[];bindings={};chain_bindings=[];variant_keys=['before_bearing','after_bearing'] if comparing else ['structure','furnished']
+    rows=[];paths=[];names=[];bindings={};chain_bindings=[];declared_new_flights=set();variant_keys=['before_bearing','after_bearing'] if comparing else ['structure','furnished']
     if args.sites:sites=[s for s in sites if s in args.sites]
     for site in sites:
         base=ROOT/f'development/levels/rebuild/structures/{site.lower()}'
@@ -96,6 +96,9 @@ def main():
                 out=before;bearing=json.loads((before/'construction.json').read_text());bearing=dict(bearing,source_glb_sha256=bearing['glb_sha256'],source_physics_sha256=bearing['physics_sha256'],before_layout=bearing['layout'],before_segment_map=bearing.get('source_segment_map',{}),before_stair_components=bearing['stair_components']);variants=[('before_bearing',before,'open-circulation.glb','open-circulation.hcs2'),('after_bearing',before,'open-circulation.glb','open-circulation.hcs2')]
         if args.source_manifest:
             old,new,bearing,desired=candidate_select(args,site);out=new[0];variants=[('before_bearing',*old),('after_bearing',*new)]
+            for added in bearing.get('interface_added_flights',[]):
+                revised=json.loads((ROOT/bearing['layout']).read_text());link=next(l for l in revised['links'] if l['id']==added['link']);index=added['layout_segment'];assert link['points'][index:index+2]==added['points'];assert abs(added['points'][0][1]-added['points'][1][1])>.01
+                assert str(bearing.get('source_segment_map',{}).get(added['link'],{}).get(str(index),index))==str(added['segment']);declared_new_flights.add((site,added['link'],str(added['segment'])))
         for variant,folder,mesh,physics in variants:
             active_layout_path=layout_path
             mapping={}
@@ -183,7 +186,8 @@ def main():
             before={tuple(r[k] for k in identity):r for r in items if r['variant']=='before_bearing'};after={tuple(r[k] for k in identity):r for r in items if r['variant']=='after_bearing'}
             assert before.keys()<=after.keys(),'Dropped a previously audited flight or complete route'
             added=after.keys()-before.keys()
-            assert all(identity==['site','link'] and after[key]['link'].startswith('CHAIN/') for key in added),'Unexpected new flight/route identity'
+            assert all(identity==['site','link'] and after[key]['link'].startswith('CHAIN/') or identity==['site','link','segment'] and key in declared_new_flights for key in added),'Unexpected new flight/route identity'
+            if identity==['site','link','segment']:assert declared_new_flights<=added,'Declared added flight missing or not genuinely new'
             old_failures=[dict(identity=key,field=field,before=before[key][field],after=after[key][field]) for key in before for field in fields if before[key][field]=='PASS' and after[key][field]!='PASS']
             new_failures=[dict(identity=key,field=field,before='NEW_CHAIN_REQUIRED_PASS',after=after[key][field]) for key in added for field in fields if after[key][field]!='PASS']
             return old_failures+new_failures

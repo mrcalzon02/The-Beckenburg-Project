@@ -7304,6 +7304,62 @@ Evidence and verification: development/levels/rebuild/terrain-ownership-construc
 
 Older-map obligation: All29packets retained. Mature authorities/assets and source room/staging/capacity/ritual/power/hiding/network/van/fog/sky contracts preserved. Audit other unfinished maps and actual gameplay integration individually.
 
+### DEV-516 — Landing slab edge clips the final ascending treads
+
+**Status:** FIXED_SCOPED_NATIVE · **Affected:** Academy L66/L67; Dam L07 construction pilot
+
+A slab starting over the last tread body clips the ascending capsule. Upper landing holes now extend to the true flight end. Dam receives an actual level stair-head landing and a separate split flight/mid-landing on floor-founded piers. All20flights and18complete stair routes pass without changing kernel thresholds.
+
+Cause / uncertainty: Physical source geometry and independently replayed capsule/footprint interfaces; earlier primitive or construction-pilot assumptions were incomplete.
+
+Fix / next action: Preserve retained models and prior native records; use the actual constructed cells/interfaces and keep remaining older work explicit.
+
+Evidence and verification: development/levels/rebuild/stair-interface-construction-pass/verification/checkpoint.json; source-and-structure-preservation.json; native movement reports and retained pilot logs.
+
+Older-map obligation: Retain full riser/landing/overhead/body checks when changing floors at any older stair.
+
+### DEV-517 — Dam platform footing proposal has no saved-soil receiver
+
+**Status:** REJECTED_AND_REPLACED_WITH_ACTUAL_BEARING · **Affected:** Dam east approach at67.3,47.2
+
+Four-corner terrain queries reject a proposed pier over a saved void. Actual west return girder now embeds in the existing crest slab; other three piers root into measured native soil. Two new mid-stair piers bear on four-corner-confirmed turbine floor receivers.
+
+Cause / uncertainty: Physical source geometry and independently replayed capsule/footprint interfaces; earlier primitive or construction-pilot assumptions were incomplete.
+
+Fix / next action: Preserve retained models and prior native records; use the actual constructed cells/interfaces and keep remaining older work explicit.
+
+Evidence and verification: development/levels/rebuild/stair-interface-construction-pass/verification/checkpoint.json; source-and-structure-preservation.json; native movement reports and retained pilot logs.
+
+Older-map obligation: Individually prove every soil or built-surface receiver; do not infer foundation support from a bounding box.
+
+### DEV-518 — New landing guards and supports intrude into circulation clearance
+
+**Status:** FIXED_SCOPED_NATIVE · **Affected:** Academy landing rims; Dam east platform and L13/L18 margins
+
+Construction review required aperture/platform guards. First fitting placed12side-foot samples against a guard and3against a pier; the south guard now mounts on a supported crest return and the pier clears the lower stair. Dam lower flight also stops clear of the shared turbine approach. All five repaired flat links now have zero centre/side-foot failures; all previously passing complete directions retained.
+
+Cause / uncertainty: Physical source geometry and independently replayed capsule/footprint interfaces; earlier primitive or construction-pilot assumptions were incomplete.
+
+Fix / next action: Preserve retained models and prior native records; use the actual constructed cells/interfaces and keep remaining older work explicit.
+
+Evidence and verification: development/levels/rebuild/stair-interface-construction-pass/verification/checkpoint.json; source-and-structure-preservation.json; native movement reports and retained pilot logs.
+
+Older-map obligation: Recheck full width and adjoining lower routes after guards, piers and stair undersides change; centre-only movement is insufficient.
+
+### DEV-519 — Lookout retains exposed older platforms and oversized lower stair masses
+
+**Status:** OPEN_RETAINED_OLDER_CONSTRUCTION · **Affected:** WLD-04 older L13, turn/cab exterior platforms and five ground links
+
+Current native views show an older exposed blue exterior platform, incomplete landing perimeter guards and the retained filled lower L13stair. This batch replaces only the two upper return flights and mounts their guards. Existing2/7ordinary links remain; five ground links and wider terrain/foundation/platform reconstruction remain open.
+
+Cause / uncertainty: Physical source geometry and independently replayed capsule/footprint interfaces; earlier primitive or construction-pilot assumptions were incomplete.
+
+Fix / next action: Preserve retained models and prior native records; use the actual constructed cells/interfaces and keep remaining older work explicit.
+
+Evidence and verification: development/levels/rebuild/stair-interface-construction-pass/verification/checkpoint.json; source-and-structure-preservation.json; native movement reports and retained pilot logs.
+
+Older-map obligation: Audit older lookout decks, actual wall/platform receivers, guards and geographic approaches before accepting the site.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

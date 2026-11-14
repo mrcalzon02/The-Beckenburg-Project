@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2012,
-  "unique_local_file_hashes": 1841,
+  "local_files": 2015,
+  "unique_local_file_hashes": 1844,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 90,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 250
+    "native_map_exports": 253
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -29125,6 +29125,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "8fed9f1d5ad79e3366c9c30087147bc6746363e966da739a78d56c0e0caa404c",
       "bytes": 3266344
+    },
+    {
+      "id": "joined-stairs",
+      "label": "joined-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-interface-construction-pass/academy/joined-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f819ce31cf09bf04e3d3302b0003af1a55ab2827ebde9ab63483a8557d387ad6",
+      "bytes": 4314848
+    },
+    {
+      "id": "joined-stairs",
+      "label": "joined-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-interface-construction-pass/wld-04/joined-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "8566c3b2530230ad5395640e41d64e6a27f42eee5964d20abf0328c7b16af181",
+      "bytes": 3310432
+    },
+    {
+      "id": "joined-stairs",
+      "label": "joined-stairs",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/stair-interface-construction-pass/wld-09/joined-stairs.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "670eca5b240a758c083b3061c34cf413ce3a0bb48a1c01bb363e39e99d121eb3",
+      "bytes": 6080952
     },
     {
       "id": "battery-narrowed-turn-supported-stairs",
