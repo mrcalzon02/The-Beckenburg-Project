@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1985,
-  "unique_local_file_hashes": 1814,
+  "local_files": 1988,
+  "unique_local_file_hashes": 1817,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 63,
+    "additional_custom_model_sources": 66,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -26629,6 +26629,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "921f6a57d8c681bd14f9f59deb8ebe9b7891a17e4f0f1d96302b674d1aaab365",
       "bytes": 591624
+    },
+    {
+      "id": "clean-doorways",
+      "label": "clean-doorways",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/doorway-construction-pass/wld-06/clean-doorways.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "65b40fb3878ca5e2dae76d6aa487265d069646a04d8612bb0071eb8b33287caf",
+      "bytes": 4347200
+    },
+    {
+      "id": "clean-doorways",
+      "label": "clean-doorways",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/doorway-construction-pass/wld-08/clean-doorways.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "12f917ebc2335be221211f51cf9a6c01a6741510c73844f803f07a8aede28074",
+      "bytes": 4311568
+    },
+    {
+      "id": "clean-doorways",
+      "label": "clean-doorways",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/doorway-construction-pass/wld-13/clean-doorways.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "463733b53a9931317ed6da27e7ca96178e2f5ef54461ae68cafe6ef6fe27c783",
+      "bytes": 4660908
     },
     {
       "id": "rebuilt-entrances",

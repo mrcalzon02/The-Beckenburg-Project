@@ -1,0 +1,388 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 5199,
+        "valid_standing": 5143,
+        "invalid_standing": 56,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 56
+        },
+        "physical_components": [
+          [
+            "WLD-06 clean fish N pier0",
+            13
+          ],
+          [
+            "WLD-06 clean fish N end",
+            13
+          ],
+          [
+            "WLD-06-x-44-17 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-06 clean cottage-a S end",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-a S pier0",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-b S end",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-b S pier0",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-a E end",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-a E pier0",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-b W pier0",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-b W end",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 16
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 5268,
+        "valid_standing": 5171,
+        "invalid_standing": 97,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 75,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 5,
+          "NO_CENTRE_SUPPORT": 12,
+          "NO_FOOT_SUPPORT_0.22_0.0": 2,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 1,
+          "NO_FOOT_SUPPORT_0.0_0.22": 2
+        },
+        "physical_components": [
+          [
+            "WLD-08-z-56-11 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-08-x-44-16 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-08 clean lab E pier0",
+            3
+          ],
+          [
+            "WLD-08 clean lab E end",
+            3
+          ],
+          [
+            "WLD-08 clean dorm W end",
+            3
+          ],
+          [
+            "WLD-08 clean dorm W pier0",
+            3
+          ],
+          [
+            "WLD-08 clean dorm S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean dorm S end",
+            3
+          ],
+          [
+            "WLD-08 clean mess S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean mess S end",
+            3
+          ],
+          [
+            "WLD-08 clean radio S end",
+            3
+          ],
+          [
+            "WLD-08 clean radio S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean radio E end",
+            3
+          ],
+          [
+            "WLD-08 clean radio E pier0",
+            3
+          ],
+          [
+            "WLD-08 clean records S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean records S end",
+            3
+          ],
+          [
+            "171:L20 flight0 step2",
+            3
+          ],
+          [
+            "WLD-08 clean generator E pier0",
+            2
+          ],
+          [
+            "WLD-08 clean generator E end",
+            2
+          ],
+          [
+            "WLD-08 clean dorm N pier0",
+            2
+          ],
+          [
+            "WLD-08 clean dorm N end",
+            2
+          ],
+          [
+            "WLD-08 clean shelter W end",
+            2
+          ],
+          [
+            "WLD-08 clean shelter W pier0",
+            2
+          ],
+          [
+            "WLD-08 clean mess N pier0",
+            1
+          ],
+          [
+            "WLD-08 clean mess N end",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "current_lanes": {
+        "samples": 5181,
+        "valid_standing": 4819,
+        "invalid_standing": 362,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 62,
+          "NO_CENTRE_SUPPORT": 300
+        },
+        "physical_components": [
+          [
+            "WLD-13-z-56-16 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-13-z-44-56 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-13 clean processing N pier1",
+            3
+          ],
+          [
+            "WLD-13 clean processing N pier0",
+            3
+          ],
+          [
+            "WLD-13 clean office E end",
+            3
+          ],
+          [
+            "WLD-13 clean office E pier0",
+            3
+          ],
+          [
+            "WLD-13 clean office N pier0",
+            3
+          ],
+          [
+            "WLD-13 clean office N end",
+            3
+          ],
+          [
+            "WLD-13 clean wash W pier0",
+            3
+          ],
+          [
+            "WLD-13 clean wash W end",
+            3
+          ],
+          [
+            "WLD-13 clean bunk N end",
+            3
+          ],
+          [
+            "WLD-13 clean bunk N pier0",
+            3
+          ],
+          [
+            "WLD-13 clean bunk W pier0",
+            3
+          ],
+          [
+            "WLD-13 clean bunk W end",
+            3
+          ],
+          [
+            "WLD-13 clean mess W end",
+            3
+          ],
+          [
+            "WLD-13 clean mess W pier0",
+            3
+          ],
+          [
+            "WLD-13 clean office S end",
+            1
+          ],
+          [
+            "WLD-13 clean office S pier0",
+            1
+          ],
+          [
+            "WLD-13 clean stores W end",
+            1
+          ],
+          [
+            "WLD-13 clean stores W pier0",
+            1
+          ],
+          [
+            "WLD-13 clean bunk E pier0",
+            1
+          ],
+          [
+            "WLD-13 clean bunk E end",
+            1
+          ],
+          [
+            "WLD-13 clean mess S end",
+            1
+          ],
+          [
+            "WLD-13 clean mess S pier0",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-06": {
+      "before": {
+        "contract": "development/levels/rebuild/wharf-stair-cells-pass/wld-06/construction.json",
+        "contract_sha256": "4e694531c35bbda9952e2853d451d45c2596e46c7fbc75f80ec35e14fb7981f2",
+        "layout": "development/levels/rebuild/wharf-stair-cells-pass/wld-06/authored-layout.json",
+        "layout_sha256": "4991a5bfa84fe096e1f986aba305102e9152190c9f2bf48ce3f46daa0187f655",
+        "native": "development/levels/rebuild/wharf-stair-cells-pass/wld-06/rectangular-stair-cells.hcs2",
+        "native_sha256": "102fa9d66b7a64347ab7cfce79ad23e5c8031ed02a1c880a0aae8fd7b5312366"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/doorway-construction-pass/wld-06/construction.json",
+        "contract_sha256": "e54e8925c0269b65aa19f13a52cf35a72a6136c107fed4c8ac70456ed827b00a",
+        "layout": "development/levels/rebuild/doorway-construction-pass/wld-06/authored-layout.json",
+        "layout_sha256": "405ef62f0601f00ce912d1fb04dbe8864a7689164cf77afdbf715d16049b8825",
+        "native": "development/levels/rebuild/doorway-construction-pass/wld-06/clean-doorways.hcs2",
+        "native_sha256": "f252b1ccd7f9a043aa5bf58dce841ec31557f3a6f9546d0f6f7a259f4b70d252"
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/site-earthworks-pass/wld-08/construction.json",
+        "contract_sha256": "a01c9f3000fe5ffb33939ce4f959fee4c98be0d05303255f49bc45e9294ea216",
+        "layout": "development/levels/rebuild/site-earthworks-pass/wld-08/authored-layout.json",
+        "layout_sha256": "78bfc6ca794322415a478c5ae96d8c1e8ddc78100fd7fbba780a5ebd969af07e",
+        "native": "development/levels/rebuild/site-earthworks-pass/wld-08/saved-earthworks.hcs2",
+        "native_sha256": "73c0e00e7694db453aacbbe1cb88664b60cec4ada6fdbc3532c0b7cc27e960ff"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/doorway-construction-pass/wld-08/construction.json",
+        "contract_sha256": "5ea14d61401839d43b74cb8325ba949535a80fac37149d14cba27760872fecc3",
+        "layout": "development/levels/rebuild/doorway-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "4987d88e2cf660c4c6c1911e314e8fa31680da6693b07401781006ee23eaac3d",
+        "native": "development/levels/rebuild/doorway-construction-pass/wld-08/clean-doorways.hcs2",
+        "native_sha256": "7ce5211ce2d7d0d559b8acaaeae7e7ddd2dc33a2d8a6fad4561e9e4ff17a7ca8"
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "contract": "development/levels/rebuild/site-earthworks-pass/wld-13/construction.json",
+        "contract_sha256": "f0e3b845da5949d38a861ca1573333ebd46cbd7db70e6ca48a291ddc45cbc48e",
+        "layout": "development/levels/rebuild/site-earthworks-pass/wld-13/authored-layout.json",
+        "layout_sha256": "7d9f54c3753700ea50882e842319685df2a2cdbcc6e1106db8ef9f1a5203887c",
+        "native": "development/levels/rebuild/site-earthworks-pass/wld-13/saved-earthworks.hcs2",
+        "native_sha256": "c1a3a3a656be8a52e4d7090745b46d01d04a49c22bcd03ef1fed8170fd089c11"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/doorway-construction-pass/wld-13/construction.json",
+        "contract_sha256": "6515417b6eee4706bade6e43c4164c90ec813768475f97a0924dc82a0abf8732",
+        "layout": "development/levels/rebuild/doorway-construction-pass/wld-13/authored-layout.json",
+        "layout_sha256": "aef6aad97d542c76af3fc9f37298beae76963c5cc85a0638cafefd3008be4770",
+        "native": "development/levels/rebuild/doorway-construction-pass/wld-13/clean-doorways.hcs2",
+        "native_sha256": "2dc43269dc372584820c005a88d7a0abeb6de50398c7b3c4c7ce830b56bbced2"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/wharf-stair-cells-pass/roster.json": "ecb75b26999ca03992ef8f335544cbecf6ff29ff33578cee0680f4bfbec25f89"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/doorway-construction-pass/verification/current-flat-failure-contacts.tsv": "8a17263ad2c75ef3916e94a68c203fe307eb18938fa91901d09bdb5151bdcfa8",
+    "development/levels/rebuild/doorway-construction-pass/verification/current-flat-failure-input.tsv": "ca7710ef96439f54f696600ff9c358885fac2869fa0fdd4560f0b28020282775",
+    "development/levels/rebuild/doorway-construction-pass/verification/current-flat-lane-input.tsv": "4a3599ee225d0742f9b707cd2ce7e27d6cc85fd4b2d0b4ba6e4e7ea0dddd3de2",
+    "development/levels/rebuild/doorway-construction-pass/verification/current-flat-lane-names.tsv": "66fe51b12579e749f180f8adc418d5154c289a10fdf9ca5c50c98f887c84aa59",
+    "development/levels/rebuild/doorway-construction-pass/verification/current-flat-lanes.tsv": "838953100c94250abe7389f0c7ab7e065543d0341135e416067182ae84f76de9",
+    "development/levels/rebuild/doorway-construction-pass/verification/current-flat-links.tsv": "894e60a4ffe1ae2cb1766dca70d548293ed4a5e559b290944203825e87c6059b",
+    "development/levels/rebuild/doorway-construction-pass/verification/current-flat-names.tsv": "66fe51b12579e749f180f8adc418d5154c289a10fdf9ca5c50c98f887c84aa59",
+    "development/levels/rebuild/doorway-construction-pass/verification/current-flat-paths.tsv": "157d2f20641d584e6e92bdcea50da6c1f92112291f9b63a975f329a320fc3845"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

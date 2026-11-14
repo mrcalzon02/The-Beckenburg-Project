@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10905,
+  "count": 10909,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -96584,6 +96584,46 @@
       "height": 900,
       "bytes": 792661,
       "sha256": "4c2625a1df1a6932aa85eb381caa56080532a289e18f336958297e69f2d58c41"
+    },
+    {
+      "path": "development/levels/rebuild/captures/doorway-construction-batch/research-shared-door-close.png",
+      "url": "development/levels/rebuild/captures/doorway-construction-batch/research-shared-door-close.png",
+      "title": "Research shared door close",
+      "kind": "Native architectural doorway construction; indexed full-depth jambs and heads, roofs hidden for inspection, runtime acceptance open",
+      "width": 1000,
+      "height": 900,
+      "bytes": 908869,
+      "sha256": "45e0f3d4b6660b960c2efefe57f894940ae57f6a68ce23ddea9fadfa9616c376"
+    },
+    {
+      "path": "development/levels/rebuild/captures/doorway-construction-batch/wld-06.png",
+      "url": "development/levels/rebuild/captures/doorway-construction-batch/wld-06.png",
+      "title": "Wld 06",
+      "kind": "Native architectural doorway construction; indexed full-depth jambs and heads, roofs hidden for inspection, runtime acceptance open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1482927,
+      "sha256": "683d3b99e69890176bd2bb72a148419b9a6e58628281ddee8c289c334717e91c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/doorway-construction-batch/wld-08.png",
+      "url": "development/levels/rebuild/captures/doorway-construction-batch/wld-08.png",
+      "title": "Wld 08",
+      "kind": "Native architectural doorway construction; indexed full-depth jambs and heads, roofs hidden for inspection, runtime acceptance open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1488198,
+      "sha256": "66f338b5b1f08550689d355e494908be8afcf1fca5769816520fbc85343ea74d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/doorway-construction-batch/wld-13.png",
+      "url": "development/levels/rebuild/captures/doorway-construction-batch/wld-13.png",
+      "title": "Wld 13",
+      "kind": "Native architectural doorway construction; indexed full-depth jambs and heads, roofs hidden for inspection, runtime acceptance open",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1520162,
+      "sha256": "ca7c2022540448789f5750c20c667d4b7bff2bf18d415b8f1207306586d44f5c"
     },
     {
       "path": "development/levels/rebuild/captures/editor-service/church-nave-before.png",

@@ -199,3 +199,6 @@ tools/java/RebuildSiteEarthworks.java -text whitespace=cr-at-eol
 # Rectangular Wharf stair-cell correction retains exact authored mesh receipts.
 development/levels/rebuild/wharf-stair-cells-pass/** -text whitespace=cr-at-eol
 tools/rebuild_wharf_stair_cells.py -text whitespace=cr-at-eol
+
+development/levels/rebuild/doorway-construction-pass/** -text whitespace=cr-at-eol
+tools/build_architectural_doorways.py -text whitespace=cr-at-eol

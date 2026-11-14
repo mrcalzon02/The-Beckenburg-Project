@@ -152,7 +152,7 @@
       "affected": "Castle relic source-only astrolabe model and all proposed vault/museum display banks using the shared GLB",
       "symptom": "Native relic decoder refused the astrolabe as below-floor bounds; source ring extended down to -0.15 m and ornaments below ground.",
       "cause": "The bronze vertical disc was centered at y=.31 with .46 m radial extent; its decorative ring rotated ticks with Y-axis yaw despite the dial occupying XY face plane. It also lacked a supporting upright.",
-      "action": "Raise dial assembly .16 m, rotate its ticks and needle in face-plane roll, add a bronze load-bearing support and keep the wood base at y\u2248.005 m. Preserve source-only/never-runtime-approved status and require exact regenerated GLB/grounded source checks.",
+      "action": "Raise dial assembly .16 m, rotate its ticks and needle in face-plane roll, add a bronze load-bearing support and keep the wood base at y≈.005 m. Preserve source-only/never-runtime-approved status and require exact regenerated GLB/grounded source checks.",
       "evidence": "Real DEV Room 42128827427 error 'Off-ground/reversed model bounds level_blockout_relic_bronze_astrolabe'; source commit aa33e7b4, generator and geometry regression run 42129321468 PASS, native follow-up pending. Native full run 42130219315 PASS; independent fast gallery 42131185143 PASS after fixes.",
       "older_maps": "Audit other relic mounts and display plinths independently when fitting them into Castle/Church/Mortuary; source-only ground contact is not actual scene fit."
     },
@@ -1021,7 +1021,7 @@
       "affected": "Hollow Creek fireplace, picnic-table fixings and cold fire ring",
       "symptom": "Detailed review found split firewood below rather than resting on fireplace grate, new tabletop bolt heads away from bearing rails, and a small ash/log contact gap.",
       "cause": "Overall model silhouette and bounding boxes did not establish support by the intended subcomponent.",
-      "action": "Place split wood on actual grate bars, align table fixings to measured rails at X\u00c3\u201a\u00c2\u00b1.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
+      "action": "Place split wood on actual grate bars, align table fixings to measured rails at XÃ‚Â±.5, lower charred timber onto actual ash. Preserve clean sources. Actual ray checks pass for three grate/log contacts, four tabletop/bearing fixings and three ash/log contacts.",
       "evidence": "development/levels/previews/defects/DEV-054-before-firewood-grate-support.png; verification/hollow-creek-refined.json; hollow-creek-refinement-parts.json",
       "older_maps": "Audit actual support parts on every older source/placement; this refined-only correction does not establish unaudited other-map acceptance."
     },
@@ -1349,7 +1349,7 @@
       "title": "Reshaped bank left old crest dressing unsupported",
       "status": "fixed-native-rigid-crest-refit",
       "affected": "Camp Hollow Creek bank/crest refinement",
-      "symptom": "Actual original log bearings sit53\u00e2\u20ac\u201c63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
+      "symptom": "Actual original log bearings sit53â€“63mm into the original soil, but unrefitted original bearings reach655mm above the new bank. A first metadata-based contact check had reported about0.20m.",
       "cause": "Changing terrain without refitting supported log and rooted scrub assemblies invalidated their old contacts. Metadata and axis/cap rays alone were insufficient support evidence.",
       "action": "Rigidly refit all28 complete logs and their branches using actual end-bearing vertices, and translate24 complete rooted shrub assemblies. Independent source-coordinate checks show no stretching/disconnected branches; actual both-end bearings now sit40mm into soil.",
       "evidence": "quality/evidence/DEV-084-actual-crest-bearing-before-after.json; verification/hollow-creek-berm.json; hollow-creek/grounded-berm.json",
@@ -1491,7 +1491,7 @@
       "id": "DEV-097",
       "title": "Native exterior zones treated as indoor by numeric room ID",
       "status": "fixed-scoped",
-      "affected": "Hollow Creek outdoor zones 0\u201311",
+      "affected": "Hollow Creek outdoor zones 0–11",
       "symptom": "Outdoor investigation ownership reused indoor numeric IDs and received indoor ambient/shelter assumptions.",
       "cause": "Recorded during native-runtime/water review; see reproducible source and capture evidence.",
       "action": "Use actual Room.outside/native roof queries; source shelter geometry remains authoritative.",
@@ -1594,7 +1594,7 @@
       "symptom": "A review-camera probe found traversable native creek floor at (49,23), feet about -2.64m, below the -1.95m water surface.",
       "cause": "The edge blockers constrain crossings, but terrain support alone still allowed a direct underwater spawn query.",
       "action": "Reject below-water native support when the actual water body is wet; retain canonical van and dry-hull rules. Move river review cameras to supported dry bank positions.",
-      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47\u201355k water pixels per frame instead of3\u20136k.",
+      "evidence": "HollowCreekRuntimeTest directly rejects the submerged query while all969 existing route supports and939 sweeps still pass. River cameras now expose47–55k water pixels per frame instead of3–6k.",
       "older_maps": "Audit both edge-crossing barriers and direct submerged spawn/support eligibility for every water map."
     },
     {
@@ -1792,7 +1792,7 @@
       "symptom": "Van metal textures show banding",
       "cause": "Generated IRON tile darkened every eighth X pixel by17levels; repeated UVs stamp grooves across broad painted panels.",
       "action": "Replace forced directional grooves with periodic 2D weathering, restrained grain and sparse pits. Preserve all15other tiles, atlas layout, UVs, source geometry, lighting and exposure. Roof/interpolation and native model metal families remain separate audits.",
-      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652\u21920.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
+      "evidence": "MetalMaterialRefinementTest: groove phase contrast16.652→0.057. Twelve matched actual GPU van images; renderer/fixture/van bytecode identical before/after. metal-refinement-2026-10-27.json.",
       "older_maps": "Procedural IRON users receive this tile correction; original GLB textures, roof shading bands, all-map in-room visual acceptance and hardware frame timing remain unaccepted."
     },
     {
@@ -1987,7 +1987,7 @@
       "title": "Rebuilt Castle bypassed retained GPU geometry",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "Castle headquarters",
-      "symptom": "Rebuilt Castle measured 35\u201373 ms median frames versus 18 ms before the rebuild, allocating 63\u2013201 MiB per frame at 640x400 on RTX5070.",
+      "symptom": "Rebuilt Castle measured 35–73 ms median frames versus 18 ms before the rebuild, allocating 63–201 MiB per frame at 640x400 on RTX5070.",
       "cause": "Castle calls drawGpuFaces with no investigation map, excluding it from the map-gated residency path; 220671 source triangles were reprocessed each frame.",
       "action": "Retain authored Castle topology, state-keyed fixture/door assemblies, conservative spatial chunks and explicitly revisioned GPU buffers.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -1998,7 +1998,7 @@
       "title": "PSX framebuffer quantization repeated costly floating-point rounding",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "All rendered maps and Castle",
-      "symptom": "JFR identified PSX finishFrame as a major CPU cost, 6\u201313 ms per frame in the baseline.",
+      "symptom": "JFR identified PSX finishFrame as a major CPU cost, 6–13 ms per frame in the baseline.",
       "cause": "Six floating-point rounding operations per pixel repeated an invariant 256-channel/16-phase transform.",
       "action": "Use precomputed channel lookup tables with exhaustive numerical and full-image pixel parity.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -2020,7 +2020,7 @@
       "title": "Cosmetic light flicker invalidated retained shadow work",
       "status": "fixed-scoped-rtx-and-ci-verified",
       "affected": "Castle and shared stationary fixture lighting",
-      "symptom": "First residency candidate produced 300\u2013400 ms flicker stalls; retaining geometry alone was insufficient.",
+      "symptom": "First residency candidate produced 300–400 ms flicker stalls; retaining geometry alone was insufficient.",
       "cause": "Brightness revisions repeated tessellation, ray visibility and source attenuation; bounded global shadow caches thrashed.",
       "action": "Separate immutable receiver attenuation/occlusion probes from live brightness factors; retain regional revisions and invalidate on actual occluder changes.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open.",
@@ -2134,7 +2134,7 @@
       "cause": "Lighting tessellation depended on camera distance even for retained static resources; movement across bands rebuilt vertices/probes.",
       "action": "Prepare fixed full close-range lighting topology for resident interior chunks; preserve exterior/native rules, original normals and UVs, and dynamic reference paths.",
       "evidence": "Corrected runtime source 06b76cce: renderer CI 40844278212 and full acceptance 40844284430 (277/277, zero skipped) passed. Actual RTX 5070 and native app-image all-ten-map GPU controls pass. Three matched 640x400 trials per view and supplementary 1280x800 raw timing/capture evidence: development/performance/hardware/2026-10-28-castle-regression/. Cold/new-view hitches and installed full-loop acceptance remain open. Translation identity/revision contract passes. Staged 33-pose CPU p95 improved about 268ms to 40ms; completed-frame cold/waypoint p95 remains 76ms.",
-      "older_maps": "Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A\u2013G acceptance are finished."
+      "older_maps": "Warm representative paths require repeated final timing and actual installed navigation. No claim that first visits or complete A–G acceptance are finished."
     },
     {
       "id": "DEV-161",
@@ -2210,7 +2210,7 @@
       "symptom": "Owner flags suspected misaligned exterior textures and severe graphical defects across imported and 3D-authored asset families; supplied list has 26 distinct numeric asset IDs and an additional screenshot.",
       "cause": "Imported source glTF atlas V-orientation mismatches, six authored bedroll seam UV mistakes, clipped Hunter hair/boots from board segmentation, blue Twin side-head matte defect, and detached source alpha strips in Possessive/Twins packaged ghost atlases. Corrected with original source artwork/materials only.",
       "action": "Targeted corrective work complete for all 26 original flags. Original textures/meshes preserved except approved six bedroll UV restorations; source-aligned imported 3D V sampling, actor alpha segmentation and indexed ghost strip removals shipped. Continue independent review of map placement/collision, detailed texture aesthetic quality, character motions and the other 85 non-targeted diagnostic review flags. Do not treat completion of these specific repairs as acceptance of unrelated defects; visual checks remain non-release-blocking.",
-      "evidence": "Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180\u00b0, only 642 pixels changed each at 90/270\u00b0 inside x274-282 y206-321 around removed strand; both figures intact.",
+      "evidence": "Original UV and art review JSON: development/assets/texture-revision-review-2026-11-01.json. 25 earlier assets accepted in actual four-angle run 41405326985 (artifact 13122898542), source atlases/GLBs audited with zero UV warnings and direct source-V vs legacy-V screenshots. Final Twins ghost source fix in runtime archive commit 828659674770cdc00a6c0b07be9f4b7521588b88; original 181 other ghost sprites byte-identical and 15666 stray alpha pixels cleared. Latest Windows developer-room run 41408571829 (artifact 13125290269) PASS actual game build + TwinsAtlasRuntimeTest (all 8 facing sheets/256 cells) + PossessiveAtlasRuntimeTest + original scene screenshots. Pixel-identical Twins at 0/180°, only 642 pixels changed each at 90/270° inside x274-282 y206-321 around removed strand; both figures intact.",
       "older_maps": "Audit any level using these assets after mapping; House, Castle, Farmhouse, School and every shared fixture use require independent placement/orientation and material captures. Visual defects are diagnostic and not release blockers."
     },
     {
@@ -4024,7 +4024,7 @@
       "affected": "Shared structural generator; reproduced WLD-03, WLD-04, WLD-05 and WLD-10; all other packets require individual audits",
       "symptom": "Six-site headless native query found 45 obstructed tread-centre spine rays despite earlier floor-hole construction.",
       "cause": "Separate level connector strips were exported across the voids already reserved in floor slabs. Monastery L21 also crossed under the north catacomb stair.",
-      "action": "Apply shared stair apertures to horizontal connector supports; move monastery west stair into its own shaft with source-authored level approach. All506 actual tread centres now have support and clear 0.3\u00e2\u20ac\u201c1.8m spine rays. Retain rejected probe rows and GLB hashes. Full capsule traversal is not established.",
+      "action": "Apply shared stair apertures to horizontal connector supports; move monastery west stair into its own shaft with source-authored level approach. All506 actual tread centres now have support and clear 0.3â€“1.8m spine rays. Retain rejected probe rows and GLB hashes. Full capsule traversal is not established.",
       "evidence": "development/levels/rebuild/verification/roster-routes-2026-11-07/; six revised rough-layout.json; structures/<site>/physics-contract.json and structure-physics.hcs2; tools/audit_roster_routes.py",
       "older_maps": "Audit every older map independently for physical stair run, landings, headroom, deck openings, body/edge clearance and supported arrivals. No inherited acceptance."
     },
@@ -4574,7 +4574,7 @@
       "affected": "Native terrain/structure construction candidates WLD03/04/09/14/17 and shared offline authoring/import/audit pipeline",
       "symptom": "Excavation exposed4new blocked poses and2failed sweeps where the lookout ruin floor had been removed by an unrelated diagonal flight bounding box.",
       "cause": "Shared structural_pass.deck_holes reserves each entire axis-aligned flight rectangle instead of its actual shaft footprint.",
-      "action": "Restore the ruin gap only outside exact diagonal flight polygons and source walking tops with12closed0.16m plates. Final all25comparison has zero new blocks and no passing stairs/links/chains regress. Preserve rejected raw probes. Next broad batch must correct exact floor/cap shaft reservations across all25candidates and individually audit older mature maps. Subsequent floor/cap pass audits25current candidates and adds296closed parts/9816triangles restoring580.964m\u00b2 across6sites, retaining old source geometry. Joined exact polygons preserve all baseline passing stairs/links/chains/loops and recover248flat poses. The legacy broad-bounds helper remains for frozen producers; its migration and mature-source audits are not claimed complete.",
+      "action": "Restore the ruin gap only outside exact diagonal flight polygons and source walking tops with12closed0.16m plates. Final all25comparison has zero new blocks and no passing stairs/links/chains regress. Preserve rejected raw probes. Next broad batch must correct exact floor/cap shaft reservations across all25candidates and individually audit older mature maps. Subsequent floor/cap pass audits25current candidates and adds296closed parts/9816triangles restoring580.964m² across6sites, retaining old source geometry. Joined exact polygons preserve all baseline passing stairs/links/chains/loops and recover248flat poses. The legacy broad-bounds helper remains for frozen producers; its migration and mature-source audits are not claimed complete.",
       "evidence": "development/levels/rebuild/terrain-occupancy-pass/; development/levels/rebuild/captures/room-terrain-batch/; tools/append_static_glb.py; tools/check_room_terrain.py",
       "older_maps": "All29packets retained; other20candidate geometry unchanged and four mature maps retain individual retrofit obligations. No runtime unlock or complete map acceptance; preserve40space envelope, canonical van, power/hiding/story, original props/UVs/pivots and real basement punches."
     },
@@ -4616,7 +4616,7 @@
       "title": "Convex clipping creates excessive structural fragments around circular floors",
       "status": "REJECTED FIRST STUDY; compact planar restoration verified",
       "affected": "Source-only structural floor/cap construction across25remaining candidates, with six actual repair sites and four mature sources retained",
-      "symptom": "The initial lighthouse floor restoration emitted9905parts/116128triangles for22.55m\u00b2 before joined-turn correction.",
+      "symptom": "The initial lighthouse floor restoration emitted9905parts/116128triangles for22.55m² before joined-turn correction.",
       "cause": "Subtracting disjoint triangles still split polygons along infinite edge lines; independent prisms retained every fragment.",
       "action": "Reject disjoint cutter intersections before splitting, union constrained planar patches, dissolve only coplanar seams and extrude edge-connected regions. Final whole6site batch296parts/9816triangles includes joined spiral headroom. Triangle/part counts are geometry evidence, not sustained FPS acceptance.",
       "evidence": "development/levels/rebuild/floor-closure-pass/verification/; tools/build_roster_floor_closures.py; tools/planar_structure.py; structural_pass.deck_openings",
@@ -4651,7 +4651,7 @@
       "affected": "Battery WLD-17 routes11/12 and analogous high landing corners WLD-09/WLD-18",
       "symptom": "Original high landing blocks standing headroom on descending treads. Rejected narrow-platform pilot passed stair centres but regressed six side-lane standing samples and sweeps.",
       "cause": "Treating the stair centre independently of the full-width adjoining flat walkway.",
-      "action": "Retain original full landing and all flat route coordinates; inset the descending flight beyond the overhang, add a visible closed bridge and revise the shared authored route points. Never change support/body tolerances or remove blockers to manufacture passes. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186\u2192196passing both ways,84full links49\u219256; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass. Bay revision also retains existing terminal platform meshes and shallow upper tread standing surfaces when full tread columns move, preserving the adjoining full-width flat approaches.",
+      "action": "Retain original full landing and all flat route coordinates; inset the descending flight beyond the overhang, add a visible closed bridge and revise the shared authored route points. Never change support/body tolerances or remove blockers to manufacture passes. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186→196passing both ways,84full links49→56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass. Bay revision also retains existing terminal platform meshes and shallow upper tread standing surfaces when full tread columns move, preserving the adjoining full-width flat approaches.",
       "evidence": "development/levels/rebuild/stair-landing-pass/rejected/battery-narrowed-turn-*; final verification and native captures under stair-landing-pass/",
       "older_maps": "Individually audit all29packets and older maps for stair/landing joins, guards, full-width circulation, depth and surface support; source candidate passes are not runtime integration."
     },
@@ -4662,7 +4662,7 @@
       "affected": "Stair landing construction candidate WLD-17 route12; rebuilt high corners across WLD-09/WLD-18 also regenerated",
       "symptom": "First full-width candidate retained all standing poses but introduced one side-lane sweep failure and lost support at the route12 stair-to-bridge transition.",
       "cause": "Blender matrix_world had not updated after rotating newly created tread boxes; planar subtraction used an unrotated top footprint. Splitting coplanar triangles and float slivers made the missing wedge harder to diagnose.",
-      "action": "Update the dependency graph before reading final world top coordinates; subtract a complete convex top only when its area equals the actual triangle union. Snap authored cutters to10micrometres, bake only new transforms and triangulate before exact export/native comparison. Preserve rejected native results; do not modify production tolerances. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186\u2192196passing both ways,84full links49\u219256; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass.",
+      "action": "Update the dependency graph before reading final world top coordinates; subtract a complete convex top only when its area equals the actual triangle union. Snap authored cutters to10micrometres, bake only new transforms and triangulate before exact export/native comparison. Preserve rejected native results; do not modify production tolerances. Final all25 native checks:110409flat samples,99937baseline valid,94879qualified sweeps,47recovered standing poses; zero new blocks/sweepfailures.221flight segments186→196passing both ways,84full links49→56; zero passing-direction regressions. Both battery links pass, original walkway full width retained. Independent exported/native solids and all11editable packed sources pass.",
       "evidence": "development/levels/rebuild/stair-landing-pass/rejected/stale-rotation-*; tools/build_stair_landings.py; tools/check_stair_landings.py",
       "older_maps": "Audit actual rotated object footprints after transform/geometry changes; preserve original props, UVs, pivots and saved terrain holes. All25candidate movement and source checks required; complete runtime/network/hardware acceptance remains open."
     },
@@ -4695,7 +4695,7 @@
       "affected": "WLD03/04/05/06/08/09/13/18source stair corridors",
       "symptom": "Production native sweeps stop at room/undercroft/lab/dorm/gallery walls and internal floor/cap cells along authored vertical routes.",
       "cause": "Original structural shell openings did not follow the full authored stair body volume, despite stair/route coordinates being present.",
-      "action": "Replace29individually named shell parts with closed physical apertures; retain all unrelated meshes/resources/UVs/pivots/native records and fixed context.5049independent body samples and actual native sweep comparisons pass:221flights196\u2192208and84links56\u219268bothways, zero previous passing-direction regression.13flights/16links remain failing; no runtime or whole-map completion inferred.",
+      "action": "Replace29individually named shell parts with closed physical apertures; retain all unrelated meshes/resources/UVs/pivots/native records and fixed context.5049independent body samples and actual native sweep comparisons pass:221flights196→208and84links56→68bothways, zero previous passing-direction regression.13flights/16links remain failing; no runtime or whole-map completion inferred.",
       "evidence": "development/levels/rebuild/stair-opening-pass/; tools/build_stair_openings.py; tools/check_stair_openings.py; tools/audit_macroterrain_fit.py; verification/failure-contacts.tsv; captures/stair-opening-batch/",
       "older_maps": "Audit all29packets and older sources individually for real render/body/optical openings,160mmdeck depth, wall thickness, supports and roof/light isolation; keep native runtime integration/power/hiding/story/hardware gates open."
     },
@@ -4739,7 +4739,7 @@
       "affected": "WLD05ore-west/lower/vent, WLD09east/turbine/spillway/return, WLD12trestle/lower/return",
       "symptom": "Multiple flights share a high anchor but their full solid columns overlap. Lower mine room centre lies inside a previous stair, and railway return crosses the descending column. First bay draft moved a mine flight into upper haul supportL10 and regressed a passing route.",
       "cause": "Rough links became separate full-height solid flights instead of a coherent shared stair hall or separated bays; moving one centreline did not account for all upper routes.",
-      "action": "Mine: move shaft to west bay and share its actual flight with the lower return, retaining original link endpoints and rebuilding vacated floor shafts. Powerhouse: reuse existing main stair and add coherent lower bypass/landing; remove duplicate columns. Railway: separate descent and return with straight lead-ins. Preserve terminal pads and exact native component identities. Final25candidate checks:221flight segments208\u2192214and84links68\u219273bothways,292recovered flat poses, zero previous passing-direction or flat regressions.7flights/11links remain, including mineL17and actual saved-terrain work.",
+      "action": "Mine: move shaft to west bay and share its actual flight with the lower return, retaining original link endpoints and rebuilding vacated floor shafts. Powerhouse: reuse existing main stair and add coherent lower bypass/landing; remove duplicate columns. Railway: separate descent and return with straight lead-ins. Preserve terminal pads and exact native component identities. Final25candidate checks:221flight segments208→214and84links68→73bothways,292recovered flat poses, zero previous passing-direction or flat regressions.7flights/11links remain, including mineL17and actual saved-terrain work.",
       "evidence": "development/levels/rebuild/stair-bay-pass/; tools/build_stair_bays.py; verification/; rejected/first-bay-*; verification/remaining-links.json; source design and authored-layout.json",
       "older_maps": "Individually audit room/spawn anchors, upper paths, shared stair bays, full footprints and physical earth openings across29packets. Source candidates do not establish runtime ownership, global walkability, guard/framing or hardware acceptance."
     },
@@ -5424,6 +5424,17 @@
       "action": "Remove both old flights, tapered treads/stringers, fragmented end landings and obsolete roof/wall fragments. Build constant2.4m gross tread flights inside2.6m clear rectangular cells,14regular risers over2.5m, supported upper landings, shared continuous cellar floor,0.25m retaining walls and0.30m roof/coping structure. Main cellar walls terminate at roof underside; clear lower height2.2m. Grade guards sit on real walls/coping and flight handrails on continuous stringers. Rectangular roof penetrations follow the stair cells, independent of tread outlines. East upper handrail extension is0.6m, preserving the actual landing bypass. Both flights/complete vertical routes and all16Wharf flatlinks pass both ways;5157strict foot samples have zero invalid poses. Inspect exported close view before accepting any further work.",
       "evidence": "development/levels/rebuild/wharf-stair-cells-pass/roster.json; wld-06/rectangular-stair-cells.blend/glb/hcs2; verification/stairs and current-flat-movement.json; captures/wharf-stair-cells-batch/wharf-stair-cells.png",
       "older_maps": "Other active maps need the same architecture-first stair/shaft audit; Research lower tunnel still fails. Owner explicitly requires cleanup of all irregular doorway cuts throughout the roster with consistent door-type dimensions, real jambs/lintels and full wall depth. Preserve mature authorities. Whole-map load/soil/finish/runtime and availability gates remain open."
+    },
+    {
+      "id": "DEV-488",
+      "title": "Irregular room openings lacked coherent door types and full-depth frames",
+      "status": "THREE-SITE GROUND-ROOM DOORWAYS CONSTRUCTED; FULL ROSTER AND RUNTIME OPEN",
+      "affected": "WLD-06 Wharf5ground rooms; WLD-08 Research8ground rooms; WLD-13 Cannery8ground rooms",
+      "symptom": "Oversized or irregular rough wall cuts and arbitrary headers did not describe usable architectural doorways.",
+      "cause": "Earlier wall cuts followed rough circulation allowances without explicit door schedules and common sill/head datums.",
+      "action": "Rebuild selected room perimeter walls as0.24m closed solids with nonoverlapping corners and explicit pedestrian1.05x2.10m, service1.80x2.30m and loading2.40x2.60m clear openings. Place38unique instances using existing indexed level_blockout_doorway jamb/head geometry, original UVs/materials and unchanged source master. Flush thresholds; one frame spans both0.24m wall halves at shared boundaries. Build architecture before adjusting Wharf boathouse/net entrance guides. Independent GLB reimport verifies frame sill/head/width/depth; native body sweeps pass114actual-aperture profiles both ways. All50previously passing ordinary links and6complete stair routes remain passing; zero direction regressions. Three native optical controls close formerly oversized gaps. No door dimensions or physics constants changed to accommodate broad guidance lane samples.",
+      "evidence": "development/levels/rebuild/doorway-construction-pass/roster.json; per-site construction.json/authored-layout.json and clean-doorways.blend/glb/hcs2; verification/door-aperture-verification.json, exported-frame-dimensions.json, closed-oversized-openings-results.tsv, current-flat-movement.json and stairs; captures/doorway-construction-batch including standing shared-door close view",
+      "older_maps": "22active packets pending individual doorway construction;4mature authorities preserved and not inferred audited. Selected basements/upper floors and Research lower tunnel remain unfinished. Raw broad guidance footprints retain515invalid of15648poses, including lane shoulders wider than actual door apertures; do not widen doors to pass those samples. Research/WLD-12 flared stairs still require architectural reconstruction. Door leaves, interactions, room/portal/acoustic/service binding and real-game integration are open. No unlock, runtime or whole-map acceptance."
     }
   ],
   "audit_categories": [

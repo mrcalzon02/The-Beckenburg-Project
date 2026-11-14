@@ -6912,6 +6912,20 @@ Evidence and verification: development/levels/rebuild/wharf-stair-cells-pass/ros
 
 Older-map obligation: Other active maps need the same architecture-first stair/shaft audit; Research lower tunnel still fails. Owner explicitly requires cleanup of all irregular doorway cuts throughout the roster with consistent door-type dimensions, real jambs/lintels and full wall depth. Preserve mature authorities. Whole-map load/soil/finish/runtime and availability gates remain open.
 
+### DEV-488 — Irregular room openings lacked coherent door types and full-depth frames
+
+**Status:** THREE-SITE GROUND-ROOM DOORWAYS CONSTRUCTED; FULL ROSTER AND RUNTIME OPEN · **Affected:** WLD-06 Wharf5ground rooms; WLD-08 Research8ground rooms; WLD-13 Cannery8ground rooms
+
+Oversized or irregular rough wall cuts and arbitrary headers did not describe usable architectural doorways.
+
+Cause / uncertainty: Earlier wall cuts followed rough circulation allowances without explicit door schedules and common sill/head datums.
+
+Fix / next action: Rebuild selected room perimeter walls as0.24m closed solids with nonoverlapping corners and explicit pedestrian1.05x2.10m, service1.80x2.30m and loading2.40x2.60m clear openings. Place38unique instances using existing indexed level_blockout_doorway jamb/head geometry, original UVs/materials and unchanged source master. Flush thresholds; one frame spans both0.24m wall halves at shared boundaries. Build architecture before adjusting Wharf boathouse/net entrance guides. Independent GLB reimport verifies frame sill/head/width/depth; native body sweeps pass114actual-aperture profiles both ways. All50previously passing ordinary links and6complete stair routes remain passing; zero direction regressions. Three native optical controls close formerly oversized gaps. No door dimensions or physics constants changed to accommodate broad guidance lane samples.
+
+Evidence and verification: development/levels/rebuild/doorway-construction-pass/roster.json; per-site construction.json/authored-layout.json and clean-doorways.blend/glb/hcs2; verification/door-aperture-verification.json, exported-frame-dimensions.json, closed-oversized-openings-results.tsv, current-flat-movement.json and stairs; captures/doorway-construction-batch including standing shared-door close view
+
+Older-map obligation: 22active packets pending individual doorway construction;4mature authorities preserved and not inferred audited. Selected basements/upper floors and Research lower tunnel remain unfinished. Raw broad guidance footprints retain515invalid of15648poses, including lane shoulders wider than actual door apertures; do not widen doors to pass those samples. Research/WLD-12 flared stairs still require architectural reconstruction. Door leaves, interactions, room/portal/acoustic/service binding and real-game integration are open. No unlock, runtime or whole-map acceptance.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
