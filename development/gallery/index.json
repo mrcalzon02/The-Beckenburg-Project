@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10892,
+  "count": 10895,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -96394,6 +96394,36 @@
       "height": 600,
       "bytes": 1031813,
       "sha256": "032e7003e0aa392de680abafd2340fd5a3dc668665a8cfd9a110f91224c2ccd4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/circulation-construction-batch/wld-06.png",
+      "url": "development/levels/rebuild/captures/circulation-construction-batch/wld-06.png",
+      "title": "Wld 06",
+      "kind": "Native exported piled perimeter walk, aligned service aisle or housed mezzanine stair; upper roof context hidden, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1495662,
+      "sha256": "2ed17ffc4dd65de3969ff8bd2ede3fb49080688288b5cedd32c4f0a7cb3d38a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/circulation-construction-batch/wld-08.png",
+      "url": "development/levels/rebuild/captures/circulation-construction-batch/wld-08.png",
+      "title": "Wld 08",
+      "kind": "Native exported piled perimeter walk, aligned service aisle or housed mezzanine stair; upper roof context hidden, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1472127,
+      "sha256": "0a74b1100675c032737bf1af9539baea11d7137d05967175f7b9a57d30f26e74"
+    },
+    {
+      "path": "development/levels/rebuild/captures/circulation-construction-batch/wld-13.png",
+      "url": "development/levels/rebuild/captures/circulation-construction-batch/wld-13.png",
+      "title": "Wld 13",
+      "kind": "Native exported piled perimeter walk, aligned service aisle or housed mezzanine stair; upper roof context hidden, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1507085,
+      "sha256": "11b34b1bb6066a42c1cff372790f1590f7eee95ad92f53fbb7e6bb24a825ac4d"
     },
     {
       "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-01.png",

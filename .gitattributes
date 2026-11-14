@@ -178,3 +178,7 @@ development/levels/rebuild/entrance-construction-pass/** -text whitespace=cr-at-
 development/levels/rebuild/stair-end-pass/wld-06/authored-layout.json -text whitespace=cr-at-eol
 tools/build_harbor_research_roof_batch.py -text whitespace=cr-at-eol
 tools/build_deliberate_entrances.py -text whitespace=cr-at-eol
+
+# Physical circulation reconstruction binds exact scene/native receipts.
+development/levels/rebuild/circulation-construction-pass/** -text whitespace=cr-at-eol
+tools/build_circulation_construction.py -text whitespace=cr-at-eol

@@ -1,0 +1,1546 @@
+{
+  "id": "WLD-08",
+  "status": "PHYSICAL_CIRCULATION_RECONSTRUCTION_RUNTIME_OPEN",
+  "source_glb": "development/levels/rebuild/entrance-construction-pass/wld-08/rebuilt-entrances.glb",
+  "source_glb_sha256": "4ab039c4e2e294cf69d4094fbab0c5bb2f2f0d901f2d6cab85311b114fe9b1c3",
+  "source_physics": "development/levels/rebuild/entrance-construction-pass/wld-08/rebuilt-entrances.hcs2",
+  "source_physics_sha256": "8a7fd3773f7a377eb0bd54c3aca642a8ed4f2e1753b1ef77492539520b161616",
+  "before_layout": "development/levels/rebuild/entrance-construction-pass/wld-08/authored-layout.json",
+  "before_layout_sha256": "72ca5b1748fbc4f12167f375ba145097aed7a68cb9417e84d9f3ee8ec01c1568",
+  "layout": "development/levels/rebuild/circulation-construction-pass/wld-08/authored-layout.json",
+  "layout_sha256": "36d2e5e00a0eaad2ddaed75c55f88d678f5c299ea43d46afb42b3232efb2b534",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {
+      "0": 0
+    },
+    "L18": {
+      "2": 0
+    },
+    "L19": {},
+    "L20": {
+      "0": 0
+    }
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {},
+    "L17": {
+      "0": 0
+    },
+    "L18": {
+      "2": 0
+    },
+    "L19": {},
+    "L20": {
+      "0": 0
+    }
+  },
+  "before_stair_components": [
+    "170:L20 flight0 step1",
+    "171:L20 flight0 step2",
+    "172:L20 flight0 step3",
+    "173:L20 flight0 step4",
+    "174:L20 flight0 step5",
+    "175:L20 flight0 step6",
+    "176:L20 flight0 step7",
+    "177:L20 flight0 step8",
+    "178:L20 flight0 step9",
+    "179:L20 flight0 step10",
+    "180:L20 flight0 step11",
+    "181:L20 flight0 step12",
+    "182:L20 flight0 step13",
+    "183:L20 flight0 step14",
+    "Orthogonal stair WLD-08 L17 step0",
+    "Orthogonal stair WLD-08 L17 step1",
+    "Orthogonal stair WLD-08 L17 step2",
+    "Orthogonal stair WLD-08 L17 step3",
+    "Orthogonal stair WLD-08 L17 step4",
+    "Orthogonal stair WLD-08 L17 step5",
+    "Orthogonal stair WLD-08 L17 step6",
+    "Orthogonal stair WLD-08 L17 step7",
+    "Orthogonal stair WLD-08 L17 step8",
+    "Orthogonal stair WLD-08 L17 step9",
+    "Orthogonal stair WLD-08 L17 step10",
+    "Orthogonal stair WLD-08 L17 step11",
+    "Orthogonal stair WLD-08 L17 step12",
+    "Orthogonal stair WLD-08 L17 step13",
+    "Orthogonal stair WLD-08 L17 step14",
+    "Orthogonal stair WLD-08 L17 step15",
+    "Orthogonal stair WLD-08 L18 step0",
+    "Orthogonal stair WLD-08 L18 step1",
+    "Orthogonal stair WLD-08 L18 step2",
+    "Orthogonal stair WLD-08 L18 step3",
+    "Orthogonal stair WLD-08 L18 step4",
+    "Orthogonal stair WLD-08 L18 step5",
+    "Orthogonal stair WLD-08 L18 step6",
+    "Orthogonal stair WLD-08 L18 step7",
+    "Orthogonal stair WLD-08 L18 step8",
+    "Orthogonal stair WLD-08 L18 step9",
+    "Orthogonal stair WLD-08 L18 step10",
+    "Orthogonal stair WLD-08 L18 step11",
+    "Orthogonal stair WLD-08 L18 step12",
+    "Orthogonal stair WLD-08 L18 step13",
+    "Orthogonal stair WLD-08 L18 step14",
+    "Orthogonal stair WLD-08 L18 step15",
+    "Flared tread WLD-08 L17 -1 0 region0",
+    "Flared tread WLD-08 L17 -1 1 region0",
+    "Flared tread WLD-08 L17 -1 2 region0",
+    "Flared tread WLD-08 L17 -1 3 region0",
+    "Flared tread WLD-08 L17 -1 4 region0",
+    "Flared tread WLD-08 L17 -1 5 region0",
+    "Flared tread WLD-08 L17 -1 6 region0",
+    "Flared tread WLD-08 L17 -1 7 region0",
+    "Flared tread WLD-08 L17 -1 8 region0",
+    "Flared tread WLD-08 L17 -1 9 region0",
+    "Flared tread WLD-08 L17 -1 10 region0",
+    "Flared tread WLD-08 L17 -1 11 region0",
+    "Flared tread WLD-08 L17 -1 12 region0",
+    "Flared tread WLD-08 L17 -1 13 region0",
+    "Flared tread WLD-08 L17 -1 14 region0",
+    "Flared tread WLD-08 L17 -1 15 region0",
+    "Flared tread WLD-08 L17 1 16 region0",
+    "Flared tread WLD-08 L17 1 17 region0",
+    "Flared tread WLD-08 L17 1 18 region0",
+    "Flared tread WLD-08 L17 1 19 region0",
+    "Flared tread WLD-08 L17 1 20 region0",
+    "Flared tread WLD-08 L17 1 21 region0",
+    "Flared tread WLD-08 L17 1 22 region0",
+    "Flared tread WLD-08 L17 1 23 region0",
+    "Flared tread WLD-08 L17 1 24 region0",
+    "Flared tread WLD-08 L17 1 25 region0",
+    "Flared tread WLD-08 L17 1 26 region0",
+    "Flared tread WLD-08 L17 1 27 region0",
+    "Flared tread WLD-08 L17 1 28 region0",
+    "Flared tread WLD-08 L17 1 29 region0",
+    "Flared tread WLD-08 L17 1 30 region0",
+    "Flared tread WLD-08 L17 1 31 region0",
+    "Flared tread WLD-08 L18 -1 32 region0",
+    "Flared tread WLD-08 L18 -1 33 region0",
+    "Flared tread WLD-08 L18 -1 34 region0",
+    "Flared tread WLD-08 L18 -1 35 region0",
+    "Flared tread WLD-08 L18 -1 36 region0",
+    "Flared tread WLD-08 L18 -1 37 region0",
+    "Flared tread WLD-08 L18 -1 38 region0",
+    "Flared tread WLD-08 L18 -1 39 region0",
+    "Flared tread WLD-08 L18 -1 40 region0",
+    "Flared tread WLD-08 L18 -1 41 region0",
+    "Flared tread WLD-08 L18 -1 42 region0",
+    "Flared tread WLD-08 L18 -1 43 region0",
+    "Flared tread WLD-08 L18 -1 44 region0",
+    "Flared tread WLD-08 L18 -1 45 region0",
+    "Flared tread WLD-08 L18 -1 46 region0",
+    "Flared tread WLD-08 L18 -1 47 region0",
+    "Flared tread WLD-08 L18 1 48 region0",
+    "Flared tread WLD-08 L18 1 49 region0",
+    "Flared tread WLD-08 L18 1 50 region0",
+    "Flared tread WLD-08 L18 1 51 region0",
+    "Flared tread WLD-08 L18 1 52 region0",
+    "Flared tread WLD-08 L18 1 53 region0",
+    "Flared tread WLD-08 L18 1 54 region0",
+    "Flared tread WLD-08 L18 1 55 region0",
+    "Flared tread WLD-08 L18 1 56 region0",
+    "Flared tread WLD-08 L18 1 57 region0",
+    "Flared tread WLD-08 L18 1 58 region0",
+    "Flared tread WLD-08 L18 1 59 region0",
+    "Flared tread WLD-08 L18 1 60 region0",
+    "Flared tread WLD-08 L18 1 61 region0",
+    "Flared tread WLD-08 L18 1 62 region0",
+    "Flared tread WLD-08 L18 1 63 region0"
+  ],
+  "stair_components": [
+    "170:L20 flight0 step1",
+    "171:L20 flight0 step2",
+    "172:L20 flight0 step3",
+    "173:L20 flight0 step4",
+    "174:L20 flight0 step5",
+    "175:L20 flight0 step6",
+    "176:L20 flight0 step7",
+    "177:L20 flight0 step8",
+    "178:L20 flight0 step9",
+    "179:L20 flight0 step10",
+    "180:L20 flight0 step11",
+    "181:L20 flight0 step12",
+    "182:L20 flight0 step13",
+    "183:L20 flight0 step14",
+    "Orthogonal stair WLD-08 L17 step0",
+    "Orthogonal stair WLD-08 L17 step1",
+    "Orthogonal stair WLD-08 L17 step2",
+    "Orthogonal stair WLD-08 L17 step3",
+    "Orthogonal stair WLD-08 L17 step4",
+    "Orthogonal stair WLD-08 L17 step5",
+    "Orthogonal stair WLD-08 L17 step6",
+    "Orthogonal stair WLD-08 L17 step7",
+    "Orthogonal stair WLD-08 L17 step8",
+    "Orthogonal stair WLD-08 L17 step9",
+    "Orthogonal stair WLD-08 L17 step10",
+    "Orthogonal stair WLD-08 L17 step11",
+    "Orthogonal stair WLD-08 L17 step12",
+    "Orthogonal stair WLD-08 L17 step13",
+    "Orthogonal stair WLD-08 L17 step14",
+    "Orthogonal stair WLD-08 L17 step15",
+    "Orthogonal stair WLD-08 L18 step0",
+    "Orthogonal stair WLD-08 L18 step1",
+    "Orthogonal stair WLD-08 L18 step2",
+    "Orthogonal stair WLD-08 L18 step3",
+    "Orthogonal stair WLD-08 L18 step4",
+    "Orthogonal stair WLD-08 L18 step5",
+    "Orthogonal stair WLD-08 L18 step6",
+    "Orthogonal stair WLD-08 L18 step7",
+    "Orthogonal stair WLD-08 L18 step8",
+    "Orthogonal stair WLD-08 L18 step9",
+    "Orthogonal stair WLD-08 L18 step10",
+    "Orthogonal stair WLD-08 L18 step11",
+    "Orthogonal stair WLD-08 L18 step12",
+    "Orthogonal stair WLD-08 L18 step13",
+    "Orthogonal stair WLD-08 L18 step14",
+    "Orthogonal stair WLD-08 L18 step15",
+    "Flared tread WLD-08 L17 -1 0 region0",
+    "Flared tread WLD-08 L17 -1 1 region0",
+    "Flared tread WLD-08 L17 -1 2 region0",
+    "Flared tread WLD-08 L17 -1 3 region0",
+    "Flared tread WLD-08 L17 -1 4 region0",
+    "Flared tread WLD-08 L17 -1 5 region0",
+    "Flared tread WLD-08 L17 -1 6 region0",
+    "Flared tread WLD-08 L17 -1 7 region0",
+    "Flared tread WLD-08 L17 -1 8 region0",
+    "Flared tread WLD-08 L17 -1 9 region0",
+    "Flared tread WLD-08 L17 -1 10 region0",
+    "Flared tread WLD-08 L17 -1 11 region0",
+    "Flared tread WLD-08 L17 -1 12 region0",
+    "Flared tread WLD-08 L17 -1 13 region0",
+    "Flared tread WLD-08 L17 -1 14 region0",
+    "Flared tread WLD-08 L17 -1 15 region0",
+    "Flared tread WLD-08 L17 1 16 region0",
+    "Flared tread WLD-08 L17 1 17 region0",
+    "Flared tread WLD-08 L17 1 18 region0",
+    "Flared tread WLD-08 L17 1 19 region0",
+    "Flared tread WLD-08 L17 1 20 region0",
+    "Flared tread WLD-08 L17 1 21 region0",
+    "Flared tread WLD-08 L17 1 22 region0",
+    "Flared tread WLD-08 L17 1 23 region0",
+    "Flared tread WLD-08 L17 1 24 region0",
+    "Flared tread WLD-08 L17 1 25 region0",
+    "Flared tread WLD-08 L17 1 26 region0",
+    "Flared tread WLD-08 L17 1 27 region0",
+    "Flared tread WLD-08 L17 1 28 region0",
+    "Flared tread WLD-08 L17 1 29 region0",
+    "Flared tread WLD-08 L17 1 30 region0",
+    "Flared tread WLD-08 L17 1 31 region0",
+    "Flared tread WLD-08 L18 -1 32 region0",
+    "Flared tread WLD-08 L18 -1 33 region0",
+    "Flared tread WLD-08 L18 -1 34 region0",
+    "Flared tread WLD-08 L18 -1 35 region0",
+    "Flared tread WLD-08 L18 -1 36 region0",
+    "Flared tread WLD-08 L18 -1 37 region0",
+    "Flared tread WLD-08 L18 -1 38 region0",
+    "Flared tread WLD-08 L18 -1 39 region0",
+    "Flared tread WLD-08 L18 -1 40 region0",
+    "Flared tread WLD-08 L18 -1 41 region0",
+    "Flared tread WLD-08 L18 -1 42 region0",
+    "Flared tread WLD-08 L18 -1 43 region0",
+    "Flared tread WLD-08 L18 -1 44 region0",
+    "Flared tread WLD-08 L18 -1 45 region0",
+    "Flared tread WLD-08 L18 -1 46 region0",
+    "Flared tread WLD-08 L18 -1 47 region0",
+    "Flared tread WLD-08 L18 1 48 region0",
+    "Flared tread WLD-08 L18 1 49 region0",
+    "Flared tread WLD-08 L18 1 50 region0",
+    "Flared tread WLD-08 L18 1 51 region0",
+    "Flared tread WLD-08 L18 1 52 region0",
+    "Flared tread WLD-08 L18 1 53 region0",
+    "Flared tread WLD-08 L18 1 54 region0",
+    "Flared tread WLD-08 L18 1 55 region0",
+    "Flared tread WLD-08 L18 1 56 region0",
+    "Flared tread WLD-08 L18 1 57 region0",
+    "Flared tread WLD-08 L18 1 58 region0",
+    "Flared tread WLD-08 L18 1 59 region0",
+    "Flared tread WLD-08 L18 1 60 region0",
+    "Flared tread WLD-08 L18 1 61 region0",
+    "Flared tread WLD-08 L18 1 62 region0",
+    "Flared tread WLD-08 L18 1 63 region0"
+  ],
+  "removed_source_meshes": [
+    "L17 flight0 step1",
+    "L17 flight0 step2",
+    "L17 flight0 step3",
+    "L17 flight0 step4",
+    "L17 flight0 step5",
+    "L17 flight0 step6",
+    "L17 flight0 step7",
+    "L17 flight0 step8",
+    "L17 flight0 step9",
+    "L17 flight0 step10",
+    "L17 flight0 step11",
+    "L17 flight0 step12",
+    "L17 flight0 step13",
+    "L17 flight0 step14",
+    "L18 flight0 step1",
+    "L18 flight0 step2",
+    "L18 flight0 step3",
+    "L18 flight0 step4",
+    "L18 flight0 step5",
+    "L18 flight0 step6",
+    "L18 flight0 step7",
+    "L18 flight0 step8",
+    "L18 flight0 step9",
+    "L18 flight0 step10",
+    "L18 flight0 step11",
+    "L18 flight0 step12",
+    "L18 flight0 step13",
+    "L18 flight0 step14",
+    "Floor tunnel",
+    "Restored floor lab 0 region0",
+    "Restored floor lab 0 region1",
+    "Restored floor dorm 3 region0",
+    "Restored floor dorm 3 region1",
+    "Flat route shell Opened stair shell Wall tunnel W",
+    "Flat route shell Opened stair shell Wall tunnel E"
+  ],
+  "removed_native_parts": [
+    "Supported guard WLD-08 L17 0 -1 0",
+    "Supported guard WLD-08 L17 0 -1 1",
+    "Supported guard WLD-08 L17 0 -1 2",
+    "Supported guard WLD-08 L17 0 -1 3",
+    "Side stringer WLD-08 L17 -1",
+    "Supported guard WLD-08 L17 0 1 0",
+    "Supported guard WLD-08 L17 0 1 1",
+    "Supported guard WLD-08 L17 0 1 2",
+    "Supported guard WLD-08 L17 0 1 3",
+    "Side stringer WLD-08 L17 1",
+    "Supported guard WLD-08 L18 2 -1 0",
+    "Supported guard WLD-08 L18 2 -1 1",
+    "Supported guard WLD-08 L18 2 -1 2",
+    "Supported guard WLD-08 L18 2 -1 3",
+    "Side stringer WLD-08 L18 -1",
+    "Supported guard WLD-08 L18 2 1 0",
+    "Supported guard WLD-08 L18 2 1 1",
+    "Supported guard WLD-08 L18 2 1 2",
+    "Supported guard WLD-08 L18 2 1 3",
+    "Side stringer WLD-08 L18 1",
+    "4:Floor lab.004",
+    "17:Floor dorm.001",
+    "Restored floor lab 0 region2",
+    "Restored floor dorm 3 region2",
+    "Bayed shell Restored floor lab 0 region1",
+    "Bayed shell Restored floor dorm 3 region0",
+    "Restored bay WLD-08 lab floor region0",
+    "Restored bay WLD-08 dorm floor region0"
+  ],
+  "new_parts": 36,
+  "new_triangles": 876,
+  "restored_shaft_parts": [
+    "Restored bay WLD-08 lab floor region0",
+    "Restored bay WLD-08 dorm floor region0",
+    "Restored bay WLD-08 tunnel ceiling-cap patch0 region0",
+    "Restored bay WLD-08 tunnel ceiling-cap patch1 region0",
+    "Restored bay WLD-08 tunnel ceiling-cap patch2 region0",
+    "Restored bay WLD-08 tunnel ceiling-cap patch3 region0",
+    "Restored bay WLD-08 tunnel ceiling-cap patch4 region0"
+  ],
+  "shell_changes": [
+    {
+      "source_mesh": "Floor tunnel",
+      "new_mesh": "Bayed shell Floor tunnel",
+      "removed_volume_m3": 0.3686146823370251
+    },
+    {
+      "source_mesh": "Restored floor lab 0 region0",
+      "new_mesh": "Bayed shell Restored floor lab 0 region0",
+      "removed_volume_m3": 0.00903456354896251
+    },
+    {
+      "source_mesh": "Restored floor lab 0 region1",
+      "new_mesh": "Bayed shell Restored floor lab 0 region1",
+      "removed_volume_m3": 1.032427836023431
+    },
+    {
+      "source_mesh": "Restored floor dorm 3 region0",
+      "new_mesh": "Bayed shell Restored floor dorm 3 region0",
+      "removed_volume_m3": 1.0324279556602503
+    },
+    {
+      "source_mesh": "Restored floor dorm 3 region1",
+      "new_mesh": "Bayed shell Restored floor dorm 3 region1",
+      "removed_volume_m3": 0.009034585613440616
+    },
+    {
+      "source_mesh": "Flat route shell Opened stair shell Wall tunnel W",
+      "new_mesh": "Bayed shell Flat route shell Opened stair shell Wall tunnel W",
+      "removed_volume_m3": 0.5656003276115058
+    },
+    {
+      "source_mesh": "Flat route shell Opened stair shell Wall tunnel E",
+      "new_mesh": "Bayed shell Flat route shell Opened stair shell Wall tunnel E",
+      "removed_volume_m3": 0.5656003276115071
+    }
+  ],
+  "design": {
+    "points": {
+      "L17": [
+        [
+          11,
+          0,
+          35
+        ],
+        [
+          22,
+          -2.5,
+          35
+        ],
+        [
+          22,
+          -2.5,
+          31
+        ],
+        [
+          32,
+          -2.5,
+          31
+        ]
+      ],
+      "L18": [
+        [
+          32,
+          -2.5,
+          31
+        ],
+        [
+          42,
+          -2.5,
+          31
+        ],
+        [
+          42,
+          -2.5,
+          35
+        ],
+        [
+          53,
+          0,
+          35
+        ]
+      ]
+    },
+    "build": [
+      "L17",
+      "L18"
+    ],
+    "shared": {},
+    "reason": "Research station: align lab/dorm flights with building axes and join the tunnel through level end landings; remove skewed stair columns below the court.",
+    "preserve_upper_hubs": false
+  },
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 2130556,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      79,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      157,
+      158,
+      159,
+      160,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      270,
+      271,
+      273,
+      274,
+      321,
+      322
+    ]
+  },
+  "glb_sha256": "68b9d597e396995fca0b8dad051fa01b58c50d6a0e872fbddee728f69a69e7e2",
+  "physics_sha256": "7c99926a5fa16a2dfe8770a601570fc396af5e2945e66ebb920fa50e19c00dd1",
+  "generator_sha256": "e834a77051dac69dba57dbd96ca23ee2198a81df81f2f9977f44ea405d798fea",
+  "remaining": "Roof-step flashing/drainage, structural join review, complete terrain/room connectivity and actual runtime integration remain open. Roofs do not add accessible search spaces or satisfy availability gates.",
+  "guard_flights": [
+    {
+      "link": "L17",
+      "segment": 0,
+      "width": 1.5,
+      "bay_count_per_side": 6,
+      "source_asset": "development/levels/primitive-props-v1/models/level_blockout_guardrail.glb",
+      "source_sha256": "d5a1e9152bdccb6a9c548542aa206b51fd0cdbd646cd3c23ab7e92f4357b327d",
+      "method": "Source rail profile/UV/material copied; shear follows authored flight grade, uprights remain vertical; tread-edge stringers seat post bases. Original library master unchanged."
+    },
+    {
+      "link": "L18",
+      "segment": 2,
+      "width": 1.5,
+      "bay_count_per_side": 6,
+      "source_asset": "development/levels/primitive-props-v1/models/level_blockout_guardrail.glb",
+      "source_sha256": "d5a1e9152bdccb6a9c548542aa206b51fd0cdbd646cd3c23ab7e92f4357b327d",
+      "method": "Source rail profile/UV/material copied; shear follows authored flight grade, uprights remain vertical; tread-edge stringers seat post bases. Original library master unchanged."
+    }
+  ],
+  "new_guard_parts": 138,
+  "flared_wing_parts": 64,
+  "end_builder_sha256": "475667f39ca83a77fd0c8136f1b5b42ec64c9f9e7baf60c94da0df2c2a30c3b7",
+  "source_contract": "development/levels/rebuild/entrance-construction-pass/wld-08/construction.json",
+  "blend_sha256": "04acfa4723e41b53582bd9da1607063e0b964a263775d65842cab5e2f8370ea6",
+  "roof_generator_sha256": "df3d626b33285cd350a451cd113571b615df645d7e59618a1f67711b424b9c58",
+  "geometry_unchanged": false,
+  "roof_wings": [
+    {
+      "wing": "generator-building",
+      "bounds": [
+        2,
+        8,
+        20,
+        26
+      ],
+      "ceiling": 3,
+      "ridge": 6.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "laboratory",
+      "bounds": [
+        2,
+        26,
+        20,
+        44
+      ],
+      "ceiling": 3,
+      "ridge": 6.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "stores",
+      "bounds": [
+        2,
+        44,
+        20,
+        56
+      ],
+      "ceiling": 3,
+      "ridge": 5.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "radio-records",
+      "bounds": [
+        20,
+        12,
+        44,
+        26
+      ],
+      "ceiling": 3,
+      "ridge": 5.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "dormitory-and-mess",
+      "bounds": [
+        44,
+        26,
+        62,
+        56
+      ],
+      "ceiling": 3,
+      "ridge": 6.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "remote-shelter",
+      "bounds": [
+        62,
+        8,
+        70,
+        20
+      ],
+      "ceiling": 3,
+      "ridge": 4.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    }
+  ],
+  "roof_coverage_rays": 1836,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/circulation-construction-batch/wld-08.png",
+      "sha256": "0a74b1100675c032737bf1af9539baea11d7137d05967175f7b9a57d30f26e74",
+      "type": "native exported circulation cutaway, upper roof context hidden, not gameplay"
+    }
+  ],
+  "aboveground_indoor_roof_probes": 72,
+  "wing_plan_builder": "tools/build_harbor_research_roof_batch.py",
+  "wing_plan_sha256": "bb6d9e381bf7ae078d694de63b7585c6863fa2c4b2a5e99dceb0080186f14b56",
+  "entrance_builder": "tools/build_deliberate_entrances.py",
+  "entrance_builder_sha256": "036df9604d0d3cd198105bb025a07ed7ee09b37286d31a596842423c4285d70e",
+  "entrances": [
+    {
+      "zone": "mess",
+      "side": "N",
+      "center": 53,
+      "width": 2.2,
+      "height": 2.45,
+      "wall_depth": 0.24
+    },
+    {
+      "zone": "mess",
+      "side": "S",
+      "center": 53,
+      "width": 2.6,
+      "height": 2.45,
+      "wall_depth": 0.24
+    },
+    {
+      "zone": "store",
+      "side": "N",
+      "center": 11,
+      "width": 2.2,
+      "height": 2.45,
+      "wall_depth": 0.24
+    },
+    {
+      "zone": "store",
+      "side": "S",
+      "center": 11,
+      "width": 2.6,
+      "height": 2.45,
+      "wall_depth": 0.24
+    }
+  ],
+  "removed_parts": [
+    "Flat route shell Opened stair shell Wall lab E",
+    "Flat route shell Wall generator E",
+    "Flat route shell Wall lab E.001",
+    "Flat route shell Wall lab N",
+    "Flat route shell Wall lab N.001",
+    "Flat route shell Wall lab S",
+    "Flat route shell Wall lab S.001",
+    "Wall generator N",
+    "Wall generator W",
+    "Wall lab W",
+    "level_blockout_research_sample_station.001"
+  ],
+  "rooted_beds": [
+    {
+      "threshold": [
+        11.0,
+        56.0
+      ],
+      "bearing": "Existing room floor overlap and retained foundation",
+      "owners": [
+        "store"
+      ]
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 1",
+      "ground_y": [
+        -0.3587799072265625,
+        -0.36565399169921875,
+        -0.36844635009765625,
+        -0.361572265625
+      ],
+      "probe_points": [
+        [
+          10.78,
+          57.446670000000005
+        ],
+        [
+          11.22,
+          57.446670000000005
+        ],
+        [
+          11.22,
+          57.88667
+        ],
+        [
+          10.78,
+          57.88667
+        ]
+      ],
+      "bottom_y": -0.5684463500976562,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 2",
+      "ground_y": [
+        -0.3663673400878906,
+        -0.37242889404296875,
+        -0.3745307922363281,
+        -0.3687286376953125
+      ],
+      "probe_points": [
+        [
+          10.78,
+          59.11333
+        ],
+        [
+          11.22,
+          59.11333
+        ],
+        [
+          11.22,
+          59.553329999999995
+        ],
+        [
+          10.78,
+          59.553329999999995
+        ]
+      ],
+      "bottom_y": -0.5745307922363281,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 3",
+      "ground_y": [
+        -0.3726539611816406,
+        -0.37845420837402344,
+        -0.3793144226074219,
+        -0.3745880126953125
+      ],
+      "probe_points": [
+        [
+          10.78,
+          60.78
+        ],
+        [
+          11.22,
+          60.78
+        ],
+        [
+          11.22,
+          61.22
+        ],
+        [
+          10.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5793144226074218,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 4",
+      "ground_y": [
+        -0.3931102752685547,
+        -0.39641571044921875,
+        -0.3967628479003906,
+        -0.3939704895019531
+      ],
+      "probe_points": [
+        [
+          12.68909,
+          60.78
+        ],
+        [
+          13.129090000000001,
+          60.78
+        ],
+        [
+          13.129090000000001,
+          61.22
+        ],
+        [
+          12.68909,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5967628479003906,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 5",
+      "ground_y": [
+        -0.4049701690673828,
+        -0.4063873291015625,
+        -0.4064750671386719,
+        -0.4051856994628906
+      ],
+      "probe_points": [
+        [
+          14.59818,
+          60.78
+        ],
+        [
+          15.03818,
+          60.78
+        ],
+        [
+          15.03818,
+          61.22
+        ],
+        [
+          14.59818,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.6064750671386718,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 6",
+      "ground_y": [
+        -0.4101696014404297,
+        -0.4106788635253906,
+        -0.4105968475341797,
+        -0.4101676940917969
+      ],
+      "probe_points": [
+        [
+          16.507270000000002,
+          60.78
+        ],
+        [
+          16.94727,
+          60.78
+        ],
+        [
+          16.94727,
+          61.22
+        ],
+        [
+          16.507270000000002,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.6106788635253906,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 7",
+      "ground_y": [
+        -0.41344451904296875,
+        -0.4144706726074219,
+        -0.4145164489746094,
+        -0.4132270812988281
+      ],
+      "probe_points": [
+        [
+          18.41636,
+          60.78
+        ],
+        [
+          18.85636,
+          60.78
+        ],
+        [
+          18.85636,
+          61.22
+        ],
+        [
+          18.41636,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.6145164489746093,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 8",
+      "ground_y": [
+        -0.4633331298828125,
+        -0.5301532745361328,
+        -0.5314426422119141,
+        -0.46462440490722656
+      ],
+      "probe_points": [
+        [
+          20.32545,
+          60.78
+        ],
+        [
+          20.765449999999998,
+          60.78
+        ],
+        [
+          20.765449999999998,
+          61.22
+        ],
+        [
+          20.32545,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.731442642211914,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 9",
+      "ground_y": [
+        -0.5890998840332031,
+        -0.6765422821044922,
+        -0.740997314453125,
+        -0.6535568237304688
+      ],
+      "probe_points": [
+        [
+          22.234550000000002,
+          60.78
+        ],
+        [
+          22.67455,
+          60.78
+        ],
+        [
+          22.67455,
+          61.22
+        ],
+        [
+          22.234550000000002,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.940997314453125,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 10",
+      "ground_y": [
+        -0.9033012390136719,
+        -0.9078159332275391,
+        -0.9860210418701172,
+        -0.98150634765625
+      ],
+      "probe_points": [
+        [
+          24.14364,
+          60.78
+        ],
+        [
+          24.58364,
+          60.78
+        ],
+        [
+          24.58364,
+          61.22
+        ],
+        [
+          24.14364,
+          61.22
+        ]
+      ],
+      "bottom_y": -1.1860210418701171,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 11",
+      "ground_y": [
+        -1.1640033721923828,
+        -1.0729084014892578,
+        -1.0600166320800781,
+        -1.1511116027832031
+      ],
+      "probe_points": [
+        [
+          26.05273,
+          60.78
+        ],
+        [
+          26.492729999999998,
+          60.78
+        ],
+        [
+          26.492729999999998,
+          61.22
+        ],
+        [
+          26.05273,
+          61.22
+        ]
+      ],
+      "bottom_y": -1.3640033721923828,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 12",
+      "ground_y": [
+        -0.8126144409179688,
+        -0.7392196655273438,
+        -0.7100028991699219,
+        -0.7833938598632812
+      ],
+      "probe_points": [
+        [
+          27.96182,
+          60.78
+        ],
+        [
+          28.401819999999997,
+          60.78
+        ],
+        [
+          28.401819999999997,
+          61.22
+        ],
+        [
+          27.96182,
+          61.22
+        ]
+      ],
+      "bottom_y": -1.0126144409179687,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 13",
+      "ground_y": [
+        -0.427490234375,
+        -0.3974456787109375,
+        -0.3952980041503906,
+        -0.4253425598144531
+      ],
+      "probe_points": [
+        [
+          29.870910000000002,
+          60.78
+        ],
+        [
+          30.31091,
+          60.78
+        ],
+        [
+          30.31091,
+          61.22
+        ],
+        [
+          29.870910000000002,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.627490234375,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 14",
+      "ground_y": [
+        -0.3906707763671875,
+        -0.3889503479003906,
+        -0.3885231018066406,
+        -0.3902397155761719
+      ],
+      "probe_points": [
+        [
+          31.78,
+          60.78
+        ],
+        [
+          32.22,
+          60.78
+        ],
+        [
+          32.22,
+          61.22
+        ],
+        [
+          31.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5906707763671875,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 15",
+      "ground_y": [
+        -0.38785552978515625,
+        -0.3869972229003906,
+        -0.3865680694580078,
+        -0.38742828369140625
+      ],
+      "probe_points": [
+        [
+          31.78,
+          62.78
+        ],
+        [
+          32.22,
+          62.78
+        ],
+        [
+          32.22,
+          63.22
+        ],
+        [
+          31.78,
+          63.22
+        ]
+      ],
+      "bottom_y": -0.5878555297851562,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 16",
+      "ground_y": [
+        -0.3860816955566406,
+        -0.3852214813232422,
+        -0.3847923278808594,
+        -0.3856525421142578
+      ],
+      "probe_points": [
+        [
+          33.68909,
+          60.78
+        ],
+        [
+          34.12909,
+          60.78
+        ],
+        [
+          34.12909,
+          61.22
+        ],
+        [
+          33.68909,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5860816955566406,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 17",
+      "ground_y": [
+        -0.3823509216308594,
+        -0.38149261474609375,
+        -0.38106346130371094,
+        -0.38192176818847656
+      ],
+      "probe_points": [
+        [
+          35.59818,
+          60.78
+        ],
+        [
+          36.03818,
+          60.78
+        ],
+        [
+          36.03818,
+          61.22
+        ],
+        [
+          35.59818,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5823509216308593,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 18",
+      "ground_y": [
+        -0.37862396240234375,
+        -0.3777656555175781,
+        -0.3773345947265625,
+        -0.3781929016113281
+      ],
+      "probe_points": [
+        [
+          37.50727,
+          60.78
+        ],
+        [
+          37.947269999999996,
+          60.78
+        ],
+        [
+          37.947269999999996,
+          61.22
+        ],
+        [
+          37.50727,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5786239624023437,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 19",
+      "ground_y": [
+        -0.3742027282714844,
+        -0.37313079833984375,
+        -0.3726997375488281,
+        -0.3737754821777344
+      ],
+      "probe_points": [
+        [
+          39.416360000000005,
+          60.78
+        ],
+        [
+          39.85636,
+          60.78
+        ],
+        [
+          39.85636,
+          61.22
+        ],
+        [
+          39.416360000000005,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5742027282714843,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 20",
+      "ground_y": [
+        -0.3701915740966797,
+        -0.36933135986328125,
+        -0.3689002990722656,
+        -0.3697624206542969
+      ],
+      "probe_points": [
+        [
+          41.325450000000004,
+          60.78
+        ],
+        [
+          41.76545,
+          60.78
+        ],
+        [
+          41.76545,
+          61.22
+        ],
+        [
+          41.325450000000004,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5701915740966796,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 21",
+      "ground_y": [
+        -0.36646270751953125,
+        -0.3656005859375,
+        -0.3651714324951172,
+        -0.36603355407714844
+      ],
+      "probe_points": [
+        [
+          43.23455,
+          60.78
+        ],
+        [
+          43.674549999999996,
+          60.78
+        ],
+        [
+          43.674549999999996,
+          61.22
+        ],
+        [
+          43.23455,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5664627075195312,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 22",
+      "ground_y": [
+        -0.36273193359375,
+        -0.3618736267089844,
+        -0.36144447326660156,
+        -0.3623027801513672
+      ],
+      "probe_points": [
+        [
+          45.14364,
+          60.78
+        ],
+        [
+          45.583639999999995,
+          60.78
+        ],
+        [
+          45.583639999999995,
+          61.22
+        ],
+        [
+          45.14364,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.56273193359375,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 23",
+      "ground_y": [
+        -0.3590049743652344,
+        -0.35814666748046875,
+        -0.3577156066894531,
+        -0.35857391357421875
+      ],
+      "probe_points": [
+        [
+          47.052730000000004,
+          60.78
+        ],
+        [
+          47.49273,
+          60.78
+        ],
+        [
+          47.49273,
+          61.22
+        ],
+        [
+          47.052730000000004,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5590049743652343,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 24",
+      "ground_y": [
+        -0.35480690002441406,
+        -0.3537311553955078,
+        -0.3533039093017578,
+        -0.35437774658203125
+      ],
+      "probe_points": [
+        [
+          48.96182,
+          60.78
+        ],
+        [
+          49.40182,
+          60.78
+        ],
+        [
+          49.40182,
+          61.22
+        ],
+        [
+          48.96182,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.554806900024414,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 25",
+      "ground_y": [
+        -0.3505706787109375,
+        -0.3497123718261719,
+        -0.34928131103515625,
+        -0.3501415252685547
+      ],
+      "probe_points": [
+        [
+          50.87091,
+          60.78
+        ],
+        [
+          51.31091,
+          60.78
+        ],
+        [
+          51.31091,
+          61.22
+        ],
+        [
+          50.87091,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5505706787109375,
+      "top_y": -0.22
+    },
+    {
+      "threshold": [
+        53.0,
+        56.0
+      ],
+      "bearing": "Existing room floor overlap and retained foundation",
+      "owners": [
+        "mess"
+      ]
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 27",
+      "ground_y": [
+        -0.34847068786621094,
+        -0.3473949432373047,
+        -0.3471794128417969,
+        -0.3482532501220703
+      ],
+      "probe_points": [
+        [
+          52.78,
+          57.446670000000005
+        ],
+        [
+          53.22,
+          57.446670000000005
+        ],
+        [
+          53.22,
+          57.88667
+        ],
+        [
+          52.78,
+          57.88667
+        ]
+      ],
+      "bottom_y": -0.5484706878662109,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 28",
+      "ground_y": [
+        -0.34765625,
+        -0.34658241271972656,
+        -0.34636688232421875,
+        -0.3474407196044922
+      ],
+      "probe_points": [
+        [
+          52.78,
+          59.11333
+        ],
+        [
+          53.22,
+          59.11333
+        ],
+        [
+          53.22,
+          59.553329999999995
+        ],
+        [
+          52.78,
+          59.553329999999995
+        ]
+      ],
+      "bottom_y": -0.54765625,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-08 approach bearing 29",
+      "ground_y": [
+        -0.3464622497558594,
+        -0.3453865051269531,
+        -0.3449573516845703,
+        -0.34603118896484375
+      ],
+      "probe_points": [
+        [
+          52.78,
+          60.78
+        ],
+        [
+          53.22,
+          60.78
+        ],
+        [
+          53.22,
+          61.22
+        ],
+        [
+          52.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5464622497558593,
+      "top_y": -0.22
+    }
+  ],
+  "deferred_beds": [],
+  "changed_routes": [
+    "L05",
+    "L08"
+  ],
+  "circulation_builder": "tools/build_circulation_construction.py",
+  "circulation_builder_sha256": "55486ade0ec5720b4beaf4456124a54d96c924a0e0c8f6d142056703979bf021",
+  "intermediate_stair_source": null,
+  "construction_proof": [
+    {
+      "asset": "level_blockout_research_sample_station",
+      "translation_world_x": -2,
+      "translation_world_z": 0.24,
+      "reason": "Retain the actual indexed asset on the existing lab floor; clear the doorway/aisle at x7",
+      "bottom_y": 0
+    }
+  ],
+  "changed_flat_routes": [
+    "L13"
+  ]
+}

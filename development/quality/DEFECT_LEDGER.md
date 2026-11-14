@@ -6786,6 +6786,48 @@ Evidence and verification: development/levels/rebuild/entrance-construction-pass
 
 Older-map obligation: All29packets need individual architectural review. Next: Wharf L07 fish-house wall conflict, Research L13 generator-to-lab and L19 lower tunnel, Cannery L09 gallery stair conflict. Academy off-landform and WLD-16 exact terrain ownership remain unresolved. No runtime acceptance or map unlock.
 
+### DEV-479 — Flat routing crosses Wharf fish house and Cannery transverse gallery stair
+
+**Status:** SELECTED PHYSICAL CIRCULATION RECONSTRUCTED; OTHER ROUTES OPEN · **Affected:** WLD-06 Wharf perimeter and west stair; WLD-08 Research generator/lab aisle; WLD-13 Cannery gallery stair
+
+Wharf west-pier path entered fish-house masonry; generator/lab link squiggled around a central stair; Cannery office approach crossed a transverse flight.
+
+Cause / uncertainty: Earlier path research accepted local collision solutions without coherent deck, doorway and stair arrangements.
+
+Fix / next action: Build a thick piled Wharf perimeter boardwalk around the existing stair, with steel spines/crossheads/girders rooted in exact native terrain and indexed guardrails around the actual joined perimeter. Boathouse and west stair return connect on this deck with1.5m clear routes. Rebuild Research generator/lab perimeter walls around aligned x7 doorway/aisle. Rehouse Cannery flight longitudinally within the mezzanine, provide a normal two-metre lower landing, restore old floor shaft and cut only the new real shaft. Fit library guards to flight, shaft returns and mezzanine edge. All5changed flat links and6complete vertical routes pass both ways; all strict sampled lanes on those changed links pass. Other routes retain993invalid of15267sampled poses.
+
+Evidence and verification: development/levels/rebuild/circulation-construction-pass/roster.json; per-site constructed-circulation.blend/glb/hcs2; verification/stairs and current-flat-movement.json; native circulation-construction-batch cutaways
+
+Older-map obligation: Preserve mature map authorities and all29packet roster. Research lower tunnel L19 remains an architecturally unaudited diagonal even though its native sweep now passes. Wharf east return/pier thresholds, Research courtyard excavation guards and full runtime binding remain open. Academy off-landform and WLD-16 terrain ownership remain explicit.
+
+### DEV-480 — Initial guard runs crossed walk turns and initial landing capped descending treads
+
+**Status:** CORRECTED IN FINAL THREE-SITE CONSTRUCTION · **Affected:** WLD-06 Wharf perimeter and west stair; WLD-08 Research generator/lab aisle; WLD-13 Cannery gallery stair
+
+First Cannery lower stair approach ran sideways through a guard. Segment-based Wharf guards crossed their own right-angle turns; a square terminal pad overhung the first descending west-stair treads. Fragmented old-floor subtraction also created a nonmanifold attempt.
+
+Cause / uncertainty: Terminal and perimeter construction were inferred independently from connected physical walking surfaces.
+
+Fix / next action: Approach Cannery flight along its axis with a real2m lower landing. Derive Wharf guards from joined deck outer boundaries with deliberate connection gaps. Stop the new landing and its bearing exactly at the descending stair lip. Deduct the boathouse floor as a coherent footprint instead of tiny overlapping triangles. Six flights and complete routes now pass continuously both ways with zero prior passing direction regressions. Three production native optical controls through the vacated gallery shaft are clear before and blocked after.
+
+Evidence and verification: development/levels/rebuild/circulation-construction-pass/roster.json; per-site constructed-circulation.blend/glb/hcs2; verification/stairs and current-flat-movement.json; native circulation-construction-batch cutaways
+
+Older-map obligation: Preserve mature map authorities and all29packet roster. Research lower tunnel L19 remains an architecturally unaudited diagonal even though its native sweep now passes. Wharf east return/pier thresholds, Research courtyard excavation guards and full runtime binding remain open. Academy off-landform and WLD-16 terrain ownership remain explicit.
+
+### DEV-481 — Imported parent axis reversed a reused Research bench translation
+
+**Status:** CORRECTED WITH VERIFIED WORLD TRANSFORM AND ACTUAL FLOOR RECEIVERS · **Affected:** WLD-06 Wharf perimeter and west stair; WLD-08 Research generator/lab aisle; WLD-13 Cannery gallery stair
+
+Initial local-x move shifted the indexed sample station east, compromising the new aisle. Its inherited placement also intersected the rebuilt north wall by0.08m.
+
+Cause / uncertainty: Imported parent transforms were not accounted for when changing local position; prior prop bounds used the old wall arrangement.
+
+Fix / next action: Apply explicit world translation x-2m and game-z+0.24m, preserving original asset mesh, UVs, pivot and materials. Exported bounds now x3.24..5.52 and z26.40..27.35, clear of the x7/1.5m aisle and north masonry endingz26.24. All four bottom corners and center ray-hit actual lab floor at0. Final aisle center and side-lane samples pass.
+
+Evidence and verification: development/levels/rebuild/circulation-construction-pass/roster.json; per-site constructed-circulation.blend/glb/hcs2; verification/stairs and current-flat-movement.json; native circulation-construction-batch cutaways; verification/reused-station-support.json
+
+Older-map obligation: Preserve mature map authorities and all29packet roster. Research lower tunnel L19 remains an architecturally unaudited diagonal even though its native sweep now passes. Wharf east return/pier thresholds, Research courtyard excavation guards and full runtime binding remain open. Academy off-landform and WLD-16 terrain ownership remain explicit.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

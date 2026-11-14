@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1971,
-  "unique_local_file_hashes": 1800,
+  "local_files": 1975,
+  "unique_local_file_hashes": 1804,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 49,
+    "additional_custom_model_sources": 53,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -26485,6 +26485,54 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "7bd52a27880d366df6d70eaf3653fb5aee8cea6dcd241bddcf2f870fef6ddb0c",
       "bytes": 1795716
+    },
+    {
+      "id": "gallery-stair",
+      "label": "gallery-stair",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/circulation-construction-pass/stair-source/wld-13/gallery-stair.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "13475541b21ad80db95ff2db5c90ec6c2a7ad833f411818619ac139eccfb3af4",
+      "bytes": 3001800
+    },
+    {
+      "id": "constructed-circulation",
+      "label": "constructed-circulation",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/circulation-construction-pass/wld-06/constructed-circulation.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "55d556df4aa11d1e766eb8d6bbde3e5227789ebddd181918961771da56a4f817",
+      "bytes": 2505724
+    },
+    {
+      "id": "constructed-circulation",
+      "label": "constructed-circulation",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/circulation-construction-pass/wld-08/constructed-circulation.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "68b9d597e396995fca0b8dad051fa01b58c50d6a0e872fbddee728f69a69e7e2",
+      "bytes": 3103244
+    },
+    {
+      "id": "constructed-circulation",
+      "label": "constructed-circulation",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/circulation-construction-pass/wld-13/constructed-circulation.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f4aad1c2bee268c27c9adf27ff0a9203f7bd92faadc7b85cb9573738f4ac919c",
+      "bytes": 3172360
     },
     {
       "id": "deck-terrain",

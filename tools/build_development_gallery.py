@@ -17,7 +17,8 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/entrance-construction-batch/' in path:kind='Native exported entrance/courtyard construction cutaway; pitched roofs hidden for inspection, unresolved other routes, no runtime acceptance'
+    if '/circulation-construction-batch/' in path:kind='Native exported piled perimeter walk, aligned service aisle or housed mezzanine stair; upper roof context hidden, no runtime acceptance'
+    elif '/entrance-construction-batch/' in path:kind='Native exported entrance/courtyard construction cutaway; pitched roofs hidden for inspection, unresolved other routes, no runtime acceptance'
     elif '/retaining-shoulder-batch/' in path:kind='Rejected native Cinder retaining-stub study; prior source retained' if '/rejected-' in path else 'Native retaining-shoulder construction; isolated views hide terrain/context, no runtime acceptance'
     elif '/stair-end-batch/' in path:kind='Native widened stair and quay/undercroft construction; cutaway context hidden, incomplete guard returns, not runtime acceptance'
     elif '/stair-guard-batch/' in path:kind='Native fitted library stair guards/stringers; cutaway context hidden, incomplete ends, not runtime acceptance'
