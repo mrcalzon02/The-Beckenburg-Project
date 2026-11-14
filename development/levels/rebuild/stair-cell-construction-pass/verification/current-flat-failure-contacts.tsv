@@ -1,0 +1,192 @@
+site	link	segment	direction	x	y	z	reason	component
+PRISON	L034:1/left	0	pose	14.592090069535178	0.0	52.01694893524568	PHYSICAL_COMPONENT	Flat route shell Wall a-lower-gallery S
+PRISON	L034:1/left	1	pose	14.458756736201844	0.0	52.216948935245675	PHYSICAL_COMPONENT	Flat route shell Wall a-lower-gallery S
+PRISON	L050:1/right	2	pose	53.40790993046482	0.0	52.01694893524568	PHYSICAL_COMPONENT	Flat route shell Wall b-lower-gallery S.001
+PRISON	L050:1/right	3	pose	53.54124326379815	0.0	52.216948935245675	PHYSICAL_COMPONENT	Flat route shell Wall b-lower-gallery S.001
+PRISON	L068:0/left	4	pose	17.75	0.0	65.33	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:0/left	5	pose	18.0	0.0	65.33	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:0/right	6	pose	17.75	0.0	64.67	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:0/right	7	pose	18.0	0.0	64.67	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:1/left	8	pose	18.0	0.0	65.33	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:1/left	9	pose	18.25	0.0	65.33	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:1/right	10	pose	18.0	0.0	64.67	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L068:1/right	11	pose	18.25	0.0	64.67	PHYSICAL_COMPONENT	PRISON-x-18-65 indexed jambs and head
+PRISON	L085:3/left	12	pose	30.33	0.0	22.25	PHYSICAL_COMPONENT	PRISON-cell-plant-stair-N-30 indexed frame
+PRISON	L085:3/left	13	pose	30.33	0.0	22.0	PHYSICAL_COMPONENT	PRISON-cell-plant-stair-N-30 indexed frame
+PRISON	L085:3/right	14	pose	29.67	0.0	22.25	PHYSICAL_COMPONENT	PRISON-cell-plant-stair-N-30 indexed frame
+PRISON	L085:3/right	15	pose	29.67	0.0	22.0	PHYSICAL_COMPONENT	PRISON-cell-plant-stair-N-30 indexed frame
+PRISON	L103:0/right	16	pose	31.741243263798154	0.0	12.016948935245674	PHYSICAL_COMPONENT	Flat route shell Wall medical-link E
+PRISON	L103:0/right	17	pose	31.87457659713149	0.0	12.216948935245675	PHYSICAL_COMPONENT	Flat route shell Wall medical-link E
+PRISON	L103:0/right	18	pose	32.00790993046482	0.0	12.416948935245674	PHYSICAL_COMPONENT	Flat route shell Wall medical-link E
+SCHOOL	L01:2/left	19	pose	24.75	0.0	31.83	PHYSICAL_COMPONENT	SCHOOL-x-25-31.5 indexed jambs and head
+SCHOOL	L01:2/left	20	pose	25.0	0.0	31.83	PHYSICAL_COMPONENT	SCHOOL-x-25-31.5 indexed jambs and head
+SCHOOL	L01:2/left	21	pose	25.25	0.0	31.83	PHYSICAL_COMPONENT	SCHOOL-x-25-31.5 indexed jambs and head
+SCHOOL	L01:2/right	22	pose	24.75	0.0	31.17	PHYSICAL_COMPONENT	SCHOOL-x-25-31.5 indexed jambs and head
+SCHOOL	L01:2/right	23	pose	25.0	0.0	31.17	PHYSICAL_COMPONENT	SCHOOL-x-25-31.5 indexed jambs and head
+SCHOOL	L01:2/right	24	pose	25.25	0.0	31.17	PHYSICAL_COMPONENT	SCHOOL-x-25-31.5 indexed jambs and head
+SCHOOL	L02:1/left	25	pose	24.75	0.0	34.83	PHYSICAL_COMPONENT	SCHOOL-x-25-34.5 indexed jambs and head
+SCHOOL	L02:1/left	26	pose	25.0	0.0	34.83	PHYSICAL_COMPONENT	SCHOOL-x-25-34.5 indexed jambs and head
+SCHOOL	L02:1/left	27	pose	25.25	0.0	34.83	PHYSICAL_COMPONENT	SCHOOL-x-25-34.5 indexed jambs and head
+SCHOOL	L02:1/right	28	pose	24.75	0.0	34.17	PHYSICAL_COMPONENT	SCHOOL-x-25-34.5 indexed jambs and head
+SCHOOL	L02:1/right	29	pose	25.0	0.0	34.17	PHYSICAL_COMPONENT	SCHOOL-x-25-34.5 indexed jambs and head
+SCHOOL	L02:1/right	30	pose	25.25	0.0	34.17	PHYSICAL_COMPONENT	SCHOOL-x-25-34.5 indexed jambs and head
+SCHOOL	L03:1/left	31	pose	28.42	0.0	32.75	PHYSICAL_COMPONENT	SCHOOL-z-33-28.75 indexed jambs and head
+SCHOOL	L03:1/left	32	pose	28.42	0.0	33.0	PHYSICAL_COMPONENT	SCHOOL-z-33-28.75 indexed jambs and head
+SCHOOL	L03:1/left	33	pose	28.42	0.0	33.25	PHYSICAL_COMPONENT	SCHOOL-z-33-28.75 indexed jambs and head
+SCHOOL	L03:1/right	34	pose	29.08	0.0	32.75	PHYSICAL_COMPONENT	SCHOOL-z-33-28.75 indexed jambs and head
+SCHOOL	L03:1/right	35	pose	29.08	0.0	33.0	PHYSICAL_COMPONENT	SCHOOL-z-33-28.75 indexed jambs and head
+SCHOOL	L03:1/right	36	pose	29.08	0.0	33.25	PHYSICAL_COMPONENT	SCHOOL-z-33-28.75 indexed jambs and head
+SCHOOL	L08:1/left	37	pose	28.93	0.0	20.166666666666664	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-N-28.6 indexed frame
+SCHOOL	L08:1/left	38	pose	28.93	0.0	19.925	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-N-28.6 indexed frame
+SCHOOL	L08:1/left	39	pose	28.93	0.0	19.683333333333334	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-N-28.6 indexed frame
+SCHOOL	L08:1/right	40	pose	28.270000000000003	0.0	20.166666666666664	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-N-28.6 indexed frame
+SCHOOL	L08:1/right	41	pose	28.270000000000003	0.0	19.925	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-N-28.6 indexed frame
+SCHOOL	L08:1/right	42	pose	28.270000000000003	0.0	19.683333333333334	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-N-28.6 indexed frame
+SCHOOL	L09:0/left	43	pose	23.0	0.0	21.33	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-W-21 indexed frame
+SCHOOL	L09:0/right	44	pose	23.0	0.0	20.67	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-W-21 indexed frame
+SCHOOL	L09:1/left	45	pose	23.0	0.0	21.33	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-W-21 indexed frame
+SCHOOL	L09:1/left	46	pose	23.25	0.0	21.33	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-W-21 indexed frame
+SCHOOL	L09:1/right	47	pose	23.0	0.0	20.67	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-W-21 indexed frame
+SCHOOL	L09:1/right	48	pose	23.25	0.0	20.67	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-W-21 indexed frame
+SCHOOL	L14:0/left	49	pose	29.909342027793866	0.0	26.317302902721472	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-26 indexed frame
+SCHOOL	L14:0/right	50	pose	29.623991305539466	0.0	25.549363763945195	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-26 indexed frame
+SCHOOL	L14:0/right	51	pose	29.8573246388728	0.0	25.61603043061186	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-26 indexed frame
+SCHOOL	L14:0/right	52	pose	30.090657972206134	0.0	25.682697097278528	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-26 indexed frame
+SCHOOL	L14:1/left	53	pose	29.9405678056867	0.0	26.407258281269822	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-26 indexed frame
+SCHOOL	L14:1/left	54	pose	30.114480849164963	0.0	26.581171324748084	PHYSICAL_COMPONENT	SCHOOL cell main-stair E end region0
+SCHOOL	L19:1/left	55	pose	29.75	0.0	21.33	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-21 indexed frame
+SCHOOL	L19:1/left	56	pose	30.0	0.0	21.33	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-21 indexed frame
+SCHOOL	L19:1/right	57	pose	29.75	0.0	20.67	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-21 indexed frame
+SCHOOL	L19:1/right	58	pose	30.0	0.0	20.67	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-21 indexed frame
+SCHOOL	L19:2/left	59	pose	30.0	0.0	21.33	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-21 indexed frame
+SCHOOL	L19:2/right	60	pose	30.0	0.0	20.67	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-E-21 indexed frame
+SCHOOL	L27:1/left	61	pose	23.0	3.5999999046325684	29.33	PHYSICAL_COMPONENT	SCHOOL-cell-upper-stair-W-29 indexed frame
+SCHOOL	L27:1/left	62	pose	23.25	3.5999999046325684	29.33	PHYSICAL_COMPONENT	SCHOOL-cell-upper-stair-W-29 indexed frame
+SCHOOL	L27:1/right	63	pose	23.0	3.5999999046325684	28.67	PHYSICAL_COMPONENT	SCHOOL-cell-upper-stair-W-29 indexed frame
+SCHOOL	L27:1/right	64	pose	23.25	3.5999999046325684	28.67	PHYSICAL_COMPONENT	SCHOOL-cell-upper-stair-W-29 indexed frame
+SCHOOL	L33:1/left	65	pose	27.35	-3.0	12.67	PHYSICAL_COMPONENT	SCHOOL-cell-lower-stair-W-13 indexed frame
+SCHOOL	L33:1/left	66	pose	27.1	-3.0	12.67	PHYSICAL_COMPONENT	SCHOOL-cell-lower-stair-W-13 indexed frame
+SCHOOL	L33:1/right	67	pose	28.6	-3.0	13.33	PHYSICAL_COMPONENT	SCHOOL cell guard L44 flight 28.57 0
+SCHOOL	L33:1/right	68	pose	27.6	-3.0	13.33	PHYSICAL_COMPONENT	SCHOOL cell guard L44 flight 27.509999999999998 0
+SCHOOL	L33:1/right	69	pose	27.35	-3.0	13.33	PHYSICAL_COMPONENT	SCHOOL-cell-lower-stair-W-13 indexed frame
+SCHOOL	L33:1/right	70	pose	27.1	-3.0	13.33	PHYSICAL_COMPONENT	SCHOOL-cell-lower-stair-W-13 indexed frame
+SCHOOL	L36:1/right	71	pose	28.87	0.0	18.208	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	72	pose	28.87	0.0	17.96	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	73	pose	28.87	0.0	17.712	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	74	pose	28.87	0.0	17.464	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	75	pose	28.87	0.0	17.216	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	76	pose	28.87	0.0	16.968	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	77	pose	28.87	0.0	16.72	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	78	pose	28.87	0.0	16.472	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	79	pose	28.87	0.0	16.224	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	80	pose	28.87	0.0	15.975999999999999	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	81	pose	28.87	0.0	15.728	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	82	pose	28.87	0.0	15.48	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	83	pose	28.87	0.0	15.232	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	84	pose	28.87	0.0	14.984	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	85	pose	28.87	0.0	14.736	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	86	pose	28.87	0.0	14.488	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	87	pose	28.87	0.0	14.24	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	88	pose	28.87	0.0	13.992	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	89	pose	28.87	0.0	13.744	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	90	pose	28.87	0.0	13.495999999999999	NO_FOOT_SUPPORT_-0.22_0.0	-
+SCHOOL	L36:1/right	91	pose	28.87	0.0	13.248000000000001	PHYSICAL_COMPONENT	SCHOOL cell guard service bypass rim 0
+SCHOOL	L36:3/left	92	pose	29.43	0.0	12.25	PHYSICAL_COMPONENT	SCHOOL-cell-service-stair-N-29.1 indexed frame
+SCHOOL	L36:3/left	93	pose	29.43	0.0	12.0	PHYSICAL_COMPONENT	SCHOOL-cell-service-stair-N-29.1 indexed frame
+SCHOOL	L36:3/right	94	pose	28.770000000000003	0.0	13.0	PHYSICAL_COMPONENT	SCHOOL cell guard service north shaft return 0
+SCHOOL	L36:3/right	95	pose	28.770000000000003	0.0	12.25	PHYSICAL_COMPONENT	SCHOOL-cell-service-stair-N-29.1 indexed frame
+SCHOOL	L36:3/right	96	pose	28.770000000000003	0.0	12.0	PHYSICAL_COMPONENT	SCHOOL-cell-service-stair-N-29.1 indexed frame
+SCHOOL	L37:2/left	97	pose	10.25	0.0	15.67	PHYSICAL_COMPONENT	SCHOOL-court-science-W indexed exterior jambs and head
+SCHOOL	L37:2/left	98	pose	10.0	0.0	15.67	PHYSICAL_COMPONENT	SCHOOL-court-science-W indexed exterior jambs and head
+SCHOOL	L37:2/right	99	pose	10.25	0.0	16.33	PHYSICAL_COMPONENT	SCHOOL-court-science-W indexed exterior jambs and head
+SCHOOL	L37:2/right	100	pose	10.0	0.0	16.33	PHYSICAL_COMPONENT	SCHOOL-court-science-W indexed exterior jambs and head
+SCHOOL	L38:2/left	101	pose	10.25	0.0	27.67	PHYSICAL_COMPONENT	SCHOOL-court-class-a-W indexed exterior jambs and head
+SCHOOL	L38:2/left	102	pose	10.0	0.0	27.67	PHYSICAL_COMPONENT	SCHOOL-court-class-a-W indexed exterior jambs and head
+SCHOOL	L38:2/right	103	pose	10.25	0.0	28.33	PHYSICAL_COMPONENT	SCHOOL-court-class-a-W indexed exterior jambs and head
+SCHOOL	L38:2/right	104	pose	10.0	0.0	28.33	PHYSICAL_COMPONENT	SCHOOL-court-class-a-W indexed exterior jambs and head
+SCHOOL	L44:0/left	105	pose	28.6	-3.0	12.27	PHYSICAL_COMPONENT	SCHOOL cell lower-stair N end region0
+SCHOOL	L44:0/left	106	pose	28.413333333333334	-3.0	12.27	PHYSICAL_COMPONENT	SCHOOL cell lower-stair N end region0
+SCHOOL	L44:0/left	107	pose	28.226666666666667	-3.0	12.27	PHYSICAL_COMPONENT	SCHOOL cell lower-stair N end region0
+SCHOOL	L44:0/left	108	pose	28.04	-3.0	12.27	PHYSICAL_COMPONENT	SCHOOL cell lower-stair N end region0
+SCHOOL	L44:1/left	109	pose	27.56	-3.0	13.5	PHYSICAL_COMPONENT	SCHOOL cell lower-stair W end region0
+SCHOOL	L44:1/right	110	pose	28.52	-3.0	13.5	PHYSICAL_COMPONENT	SCHOOL cell guard L44 flight 28.57 0
+SCHOOL	L44:3/left	111	pose	27.56	0.0	18.3	PHYSICAL_COMPONENT	SCHOOL cell service-stair W end region0
+SCHOOL	L44:3/left	112	pose	27.56	0.0	18.525	PHYSICAL_COMPONENT	SCHOOL cell service-stair W end region0
+SCHOOL	L44:3/left	113	pose	27.56	0.0	18.75	PHYSICAL_COMPONENT	SCHOOL cell service-stair W end region0
+SCHOOL	L44:3/left	114	pose	27.56	0.0	18.975	PHYSICAL_COMPONENT	SCHOOL cell service-stair W end region0
+SCHOOL	L44:3/left	115	pose	27.56	0.0	19.2	PHYSICAL_COMPONENT	SCHOOL cell service-stair W end region0
+SCHOOL	L44:3/right	116	pose	28.52	0.0	18.3	PHYSICAL_COMPONENT	SCHOOL cell guard L44 flight 28.57 2
+SCHOOL	L44:4/left	117	pose	28.04	0.0	19.68	PHYSICAL_COMPONENT	SCHOOL cell service-stair S pier0 region0
+SCHOOL	L44:4/left	118	pose	28.226666666666667	0.0	19.68	PHYSICAL_COMPONENT	SCHOOL-cell-main-stair-N-28.6 indexed frame
+WLD-08	L03:0/left	119	pose	20.0	0.0	40.27	PHYSICAL_COMPONENT	WLD-08 clean lab E pier0
+WLD-08	L03:0/right	120	pose	20.0	0.0	41.73	PHYSICAL_COMPONENT	WLD-08 clean lab E end
+WLD-08	L03:1/left	121	pose	20.0	0.0	40.27	PHYSICAL_COMPONENT	WLD-08 clean lab E pier0
+WLD-08	L03:1/left	122	pose	19.75	0.0	40.27	PHYSICAL_COMPONENT	WLD-08 clean lab E pier0
+WLD-08	L03:1/right	123	pose	20.0	0.0	41.73	PHYSICAL_COMPONENT	WLD-08 clean lab E end
+WLD-08	L03:1/right	124	pose	19.75	0.0	41.73	PHYSICAL_COMPONENT	WLD-08 clean lab E end
+WLD-08	L05:0/left	125	pose	10.27	0.0	55.75	PHYSICAL_COMPONENT	WLD-08-z-56-11 indexed jambs and head
+WLD-08	L05:0/left	126	pose	10.27	0.0	56.0	PHYSICAL_COMPONENT	WLD-08-z-56-11 indexed jambs and head
+WLD-08	L05:0/right	127	pose	11.73	0.0	55.75	PHYSICAL_COMPONENT	WLD-08-z-56-11 indexed jambs and head
+WLD-08	L05:0/right	128	pose	11.73	0.0	56.0	PHYSICAL_COMPONENT	WLD-08-z-56-11 indexed jambs and head
+WLD-08	L05:1/left	129	pose	10.27	0.0	56.0	PHYSICAL_COMPONENT	WLD-08-z-56-11 indexed jambs and head
+WLD-08	L05:1/right	130	pose	11.73	0.0	56.0	PHYSICAL_COMPONENT	WLD-08-z-56-11 indexed jambs and head
+WLD-08	L06:0/left	131	pose	44.0	0.0	41.73	PHYSICAL_COMPONENT	WLD-08 clean dorm W end
+WLD-08	L06:0/right	132	pose	44.0	0.0	40.27	PHYSICAL_COMPONENT	WLD-08 clean dorm W pier0
+WLD-08	L06:1/left	133	pose	44.0	0.0	41.73	PHYSICAL_COMPONENT	WLD-08 clean dorm W end
+WLD-08	L06:1/left	134	pose	44.25	0.0	41.73	PHYSICAL_COMPONENT	WLD-08 clean dorm W end
+WLD-08	L06:1/right	135	pose	44.0	0.0	40.27	PHYSICAL_COMPONENT	WLD-08 clean dorm W pier0
+WLD-08	L06:1/right	136	pose	44.25	0.0	40.27	PHYSICAL_COMPONENT	WLD-08 clean dorm W pier0
+WLD-08	L07:0/left	137	pose	52.52	0.0	43.75	PHYSICAL_COMPONENT	WLD-08 clean dorm S pier0
+WLD-08	L07:0/left	138	pose	52.52	0.0	44.0	PHYSICAL_COMPONENT	WLD-08 clean dorm S pier0
+WLD-08	L07:0/right	139	pose	53.48	0.0	43.75	PHYSICAL_COMPONENT	WLD-08 clean dorm S end
+WLD-08	L07:0/right	140	pose	53.48	0.0	44.0	PHYSICAL_COMPONENT	WLD-08 clean dorm S end
+WLD-08	L07:1/left	141	pose	52.52	0.0	44.0	PHYSICAL_COMPONENT	WLD-08 clean dorm S pier0
+WLD-08	L07:1/left	142	pose	52.52	0.0	44.25	PHYSICAL_COMPONENT	WLD-08 clean mess N pier0
+WLD-08	L07:1/right	143	pose	53.48	0.0	44.0	PHYSICAL_COMPONENT	WLD-08 clean dorm S end
+WLD-08	L07:1/right	144	pose	53.48	0.0	44.25	PHYSICAL_COMPONENT	WLD-08 clean mess N end
+WLD-08	L08:0/left	145	pose	52.27	0.0	55.75	PHYSICAL_COMPONENT	WLD-08 clean mess S pier0
+WLD-08	L08:0/left	146	pose	52.27	0.0	56.0	PHYSICAL_COMPONENT	WLD-08 clean mess S pier0
+WLD-08	L08:0/right	147	pose	53.73	0.0	55.75	PHYSICAL_COMPONENT	WLD-08 clean mess S end
+WLD-08	L08:0/right	148	pose	53.73	0.0	56.0	PHYSICAL_COMPONENT	WLD-08 clean mess S end
+WLD-08	L08:1/left	149	pose	52.27	0.0	56.0	PHYSICAL_COMPONENT	WLD-08 clean mess S pier0
+WLD-08	L08:1/right	150	pose	53.73	0.0	56.0	PHYSICAL_COMPONENT	WLD-08 clean mess S end
+WLD-08	L09:1/left	151	pose	26.73	0.0	26.0	PHYSICAL_COMPONENT	WLD-08 clean radio S end
+WLD-08	L09:1/right	152	pose	25.27	0.0	26.0	PHYSICAL_COMPONENT	WLD-08 clean radio S pier0
+WLD-08	L09:2/left	153	pose	26.73	0.0	26.0	PHYSICAL_COMPONENT	WLD-08 clean radio S end
+WLD-08	L09:2/left	154	pose	26.73	0.0	25.75	PHYSICAL_COMPONENT	WLD-08 clean radio S end
+WLD-08	L09:2/right	155	pose	25.27	0.0	26.0	PHYSICAL_COMPONENT	WLD-08 clean radio S pier0
+WLD-08	L09:2/right	156	pose	25.27	0.0	25.75	PHYSICAL_COMPONENT	WLD-08 clean radio S pier0
+WLD-08	L10:0/left	157	pose	31.75	0.0	19.48	PHYSICAL_COMPONENT	WLD-08 clean radio E end
+WLD-08	L10:0/left	158	pose	32.0	0.0	19.48	PHYSICAL_COMPONENT	WLD-08 clean radio E end
+WLD-08	L10:0/right	159	pose	31.75	0.0	18.52	PHYSICAL_COMPONENT	WLD-08 clean radio E pier0
+WLD-08	L10:0/right	160	pose	32.0	0.0	18.52	PHYSICAL_COMPONENT	WLD-08 clean radio E pier0
+WLD-08	L10:1/left	161	pose	32.0	0.0	19.48	PHYSICAL_COMPONENT	WLD-08 clean radio E end
+WLD-08	L10:1/left	162	pose	32.25	0.0	19.48	PHYSICAL_COMPONENT	WLD-08 clean records W end
+WLD-08	L10:1/right	163	pose	32.0	0.0	18.52	PHYSICAL_COMPONENT	WLD-08 clean radio E pier0
+WLD-08	L10:1/right	164	pose	32.25	0.0	18.52	PHYSICAL_COMPONENT	WLD-08 clean records W pier0
+WLD-08	L11:0/left	165	pose	37.27	0.0	25.75	PHYSICAL_COMPONENT	WLD-08 clean records S pier0
+WLD-08	L11:0/left	166	pose	37.27	0.0	26.0	PHYSICAL_COMPONENT	WLD-08 clean records S pier0
+WLD-08	L11:0/right	167	pose	38.73	0.0	25.75	PHYSICAL_COMPONENT	WLD-08 clean records S end
+WLD-08	L11:0/right	168	pose	38.73	0.0	26.0	PHYSICAL_COMPONENT	WLD-08 clean records S end
+WLD-08	L11:1/left	169	pose	37.27	0.0	26.0	PHYSICAL_COMPONENT	WLD-08 clean records S pier0
+WLD-08	L11:1/right	170	pose	38.73	0.0	26.0	PHYSICAL_COMPONENT	WLD-08 clean records S end
+WLD-08	L12:0/left	171	pose	20.25	0.0	18.52	PHYSICAL_COMPONENT	WLD-08 clean radio W pier0
+WLD-08	L12:0/left	172	pose	20.0	0.0	18.52	PHYSICAL_COMPONENT	WLD-08 clean generator E pier0
+WLD-08	L12:0/left	173	pose	19.75	0.0	18.52	PHYSICAL_COMPONENT	WLD-08 clean generator E pier0
+WLD-08	L12:0/right	174	pose	20.25	0.0	19.48	PHYSICAL_COMPONENT	WLD-08 clean radio W end
+WLD-08	L12:0/right	175	pose	20.0	0.0	19.48	PHYSICAL_COMPONENT	WLD-08 clean generator E end
+WLD-08	L12:0/right	176	pose	19.75	0.0	19.48	PHYSICAL_COMPONENT	WLD-08 clean generator E end
+WLD-08	L14:1/left	177	pose	43.75	0.0	16.73	PHYSICAL_COMPONENT	WLD-08-x-44-16 indexed jambs and head
+WLD-08	L14:1/left	178	pose	44.0	7.000000135093387E-9	16.73	PHYSICAL_COMPONENT	WLD-08-x-44-16 indexed jambs and head
+WLD-08	L14:1/right	179	pose	43.75	0.0	15.27	PHYSICAL_COMPONENT	WLD-08-x-44-16 indexed jambs and head
+WLD-08	L14:1/right	180	pose	44.0	7.000000135093387E-9	15.27	PHYSICAL_COMPONENT	WLD-08-x-44-16 indexed jambs and head
+WLD-08	L14:2/left	181	pose	44.0	7.000000135093387E-9	16.73	PHYSICAL_COMPONENT	WLD-08-x-44-16 indexed jambs and head
+WLD-08	L14:2/right	182	pose	44.0	7.000000135093387E-9	15.27	PHYSICAL_COMPONENT	WLD-08-x-44-16 indexed jambs and head
+WLD-08	L15:0/left	183	pose	52.27	0.0	26.0	PHYSICAL_COMPONENT	WLD-08 clean dorm N pier0
+WLD-08	L15:0/left	184	pose	52.27	0.0	26.25	PHYSICAL_COMPONENT	WLD-08 clean dorm N pier0
+WLD-08	L15:0/right	185	pose	53.73	4.975000147400242E-9	26.0	PHYSICAL_COMPONENT	WLD-08 clean dorm N end
+WLD-08	L15:0/right	186	pose	53.73	0.0	26.25	PHYSICAL_COMPONENT	WLD-08 clean dorm N end
+WLD-08	L16:2/left	187	pose	62.0	0.0	14.73	PHYSICAL_COMPONENT	WLD-08 clean shelter W end
+WLD-08	L16:2/left	188	pose	62.25	0.0	14.73	PHYSICAL_COMPONENT	WLD-08 clean shelter W end
+WLD-08	L16:2/right	189	pose	62.0	0.0	13.27	PHYSICAL_COMPONENT	WLD-08 clean shelter W pier0
+WLD-08	L16:2/right	190	pose	62.25	0.0	13.27	PHYSICAL_COMPONENT	WLD-08 clean shelter W pier0

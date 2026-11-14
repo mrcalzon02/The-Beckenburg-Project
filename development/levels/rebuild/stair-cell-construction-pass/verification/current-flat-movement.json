@@ -1,0 +1,358 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "PRISON": {
+      "before": {
+        "flat_links": 36,
+        "pass_both_directions": 34
+      },
+      "after": {
+        "flat_links": 36,
+        "pass_both_directions": 36
+      },
+      "current_lanes": {
+        "samples": 7533,
+        "valid_standing": 7514,
+        "invalid_standing": 19,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 19
+        },
+        "physical_components": [
+          [
+            "PRISON-x-18-65 indexed jambs and head",
+            8
+          ],
+          [
+            "PRISON-cell-plant-stair-N-30 indexed frame",
+            4
+          ],
+          [
+            "Flat route shell Wall medical-link E",
+            3
+          ],
+          [
+            "Flat route shell Wall a-lower-gallery S",
+            2
+          ],
+          [
+            "Flat route shell Wall b-lower-gallery S.001",
+            2
+          ]
+        ]
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "flat_links": 42,
+        "pass_both_directions": 39
+      },
+      "after": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "current_lanes": {
+        "samples": 8469,
+        "valid_standing": 8369,
+        "invalid_standing": 100,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 80,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 20
+        },
+        "physical_components": [
+          [
+            "SCHOOL-cell-main-stair-N-28.6 indexed frame",
+            7
+          ],
+          [
+            "SCHOOL-x-25-31.5 indexed jambs and head",
+            6
+          ],
+          [
+            "SCHOOL-x-25-34.5 indexed jambs and head",
+            6
+          ],
+          [
+            "SCHOOL-z-33-28.75 indexed jambs and head",
+            6
+          ],
+          [
+            "SCHOOL-cell-main-stair-W-21 indexed frame",
+            6
+          ],
+          [
+            "SCHOOL-cell-main-stair-E-21 indexed frame",
+            6
+          ],
+          [
+            "SCHOOL-cell-main-stair-E-26 indexed frame",
+            5
+          ],
+          [
+            "SCHOOL cell service-stair W end region0",
+            5
+          ],
+          [
+            "SCHOOL-cell-upper-stair-W-29 indexed frame",
+            4
+          ],
+          [
+            "SCHOOL-cell-lower-stair-W-13 indexed frame",
+            4
+          ],
+          [
+            "SCHOOL-cell-service-stair-N-29.1 indexed frame",
+            4
+          ],
+          [
+            "SCHOOL-court-science-W indexed exterior jambs and head",
+            4
+          ],
+          [
+            "SCHOOL-court-class-a-W indexed exterior jambs and head",
+            4
+          ],
+          [
+            "SCHOOL cell lower-stair N end region0",
+            4
+          ],
+          [
+            "SCHOOL cell guard L44 flight 28.57 0",
+            2
+          ],
+          [
+            "SCHOOL cell main-stair E end region0",
+            1
+          ],
+          [
+            "SCHOOL cell guard L44 flight 27.509999999999998 0",
+            1
+          ],
+          [
+            "SCHOOL cell guard service bypass rim 0",
+            1
+          ],
+          [
+            "SCHOOL cell guard service north shaft return 0",
+            1
+          ],
+          [
+            "SCHOOL cell lower-stair W end region0",
+            1
+          ],
+          [
+            "SCHOOL cell guard L44 flight 28.57 2",
+            1
+          ],
+          [
+            "SCHOOL cell service-stair S pier0 region0",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 16
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "current_lanes": {
+        "samples": 5361,
+        "valid_standing": 5289,
+        "invalid_standing": 72,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 72
+        },
+        "physical_components": [
+          [
+            "WLD-08-z-56-11 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-08-x-44-16 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-08 clean lab E pier0",
+            3
+          ],
+          [
+            "WLD-08 clean lab E end",
+            3
+          ],
+          [
+            "WLD-08 clean dorm W end",
+            3
+          ],
+          [
+            "WLD-08 clean dorm W pier0",
+            3
+          ],
+          [
+            "WLD-08 clean dorm S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean dorm S end",
+            3
+          ],
+          [
+            "WLD-08 clean mess S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean mess S end",
+            3
+          ],
+          [
+            "WLD-08 clean radio S end",
+            3
+          ],
+          [
+            "WLD-08 clean radio S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean radio E end",
+            3
+          ],
+          [
+            "WLD-08 clean radio E pier0",
+            3
+          ],
+          [
+            "WLD-08 clean records S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean records S end",
+            3
+          ],
+          [
+            "WLD-08 clean generator E pier0",
+            2
+          ],
+          [
+            "WLD-08 clean generator E end",
+            2
+          ],
+          [
+            "WLD-08 clean dorm N pier0",
+            2
+          ],
+          [
+            "WLD-08 clean dorm N end",
+            2
+          ],
+          [
+            "WLD-08 clean shelter W end",
+            2
+          ],
+          [
+            "WLD-08 clean shelter W pier0",
+            2
+          ],
+          [
+            "WLD-08 clean mess N pier0",
+            1
+          ],
+          [
+            "WLD-08 clean mess N end",
+            1
+          ],
+          [
+            "WLD-08 clean records W end",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "PRISON": {
+      "before": {
+        "contract": "development/levels/rebuild/institution-earthworks-pass/prison/construction.json",
+        "contract_sha256": "cbf4ae6ba113a8a464a7f288072ad30be1f90c9d3a91f82efe3e5ad2e7bf89fd",
+        "layout": "development/levels/rebuild/institution-earthworks-pass/prison/authored-layout.json",
+        "layout_sha256": "d92b991b9f33af21f5a585f367861cba3089e94deb7bb124123b095758766b55",
+        "native": "development/levels/rebuild/institution-earthworks-pass/prison/saved-earthworks.hcs2",
+        "native_sha256": "a4bbba55f07231eea3f4c90c96d0f8a66680d6367a773fb5828e0074a39a81af"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/stair-cell-construction-pass/prison/construction.json",
+        "contract_sha256": "81b5164a3a5e93272852b20d0308ae2616614d281f283c77b525fca6b1a4f99e",
+        "layout": "development/levels/rebuild/stair-cell-construction-pass/prison/authored-layout.json",
+        "layout_sha256": "276b327e6e015f0383e5b2f0c4a9307b830f72a37d244a8e328e0d4d6c9b5972",
+        "native": "development/levels/rebuild/stair-cell-construction-pass/prison/constructed-cells.hcs2",
+        "native_sha256": "6791f0e6cd2e8fe12fb58fa1210ed5f075b034a1cbc9b378c9358b9278c7077d"
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "contract": "development/levels/rebuild/institution-earthworks-pass/school/construction.json",
+        "contract_sha256": "45804cc2b4b90efdccd4e2582590ea201ef89a58d46ecffdc83f1818433544f4",
+        "layout": "development/levels/rebuild/institution-earthworks-pass/school/authored-layout.json",
+        "layout_sha256": "c224be02132c681344ffbdd4c141d9b8d87e5f395c23188b5384d7d41ef5d9b1",
+        "native": "development/levels/rebuild/institution-earthworks-pass/school/saved-earthworks.hcs2",
+        "native_sha256": "00b584d4b7aa27401f6fcdef7fc5c1e7a2bed112d219cdfc5d206e33ce96c26c"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/stair-cell-construction-pass/school/construction.json",
+        "contract_sha256": "1b7efc3a04e29fa7964afa640a26c0c918e2eba1808b772fac3c9fc570b22cc1",
+        "layout": "development/levels/rebuild/stair-cell-construction-pass/school/authored-layout.json",
+        "layout_sha256": "82eff95555fe23a5e4dde13d7aabc28ceadc5f714e19167e4665ef6e474f84d4",
+        "native": "development/levels/rebuild/stair-cell-construction-pass/school/constructed-cells.hcs2",
+        "native_sha256": "cc4fbc9e4b65ac12eab3b58adf9b14f5c9cbbab713efcf2b5ebb1b61b478e5aa"
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/doorway-construction-pass/wld-08/construction.json",
+        "contract_sha256": "5ea14d61401839d43b74cb8325ba949535a80fac37149d14cba27760872fecc3",
+        "layout": "development/levels/rebuild/doorway-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "4987d88e2cf660c4c6c1911e314e8fa31680da6693b07401781006ee23eaac3d",
+        "native": "development/levels/rebuild/doorway-construction-pass/wld-08/clean-doorways.hcs2",
+        "native_sha256": "7ce5211ce2d7d0d559b8acaaeae7e7ddd2dc33a2d8a6fad4561e9e4ff17a7ca8"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/stair-cell-construction-pass/wld-08/construction.json",
+        "contract_sha256": "8f33bbdb5f1215c5200de041bcdce99e139c66ba020271b527edc8673e7247c9",
+        "layout": "development/levels/rebuild/stair-cell-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "679f1e4b20459492f2fefd822666e4e7bdc5aa9fe6a5fb2fafedd944ea0c1a72",
+        "native": "development/levels/rebuild/stair-cell-construction-pass/wld-08/constructed-cells.hcs2",
+        "native_sha256": "b5b18bd32a92746f72137370fdc1df740587e49f653b635dad87fd1a43147171"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [
+    {
+      "site": "SCHOOL",
+      "link": "L45"
+    }
+  ],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "2544d2a6bd5fb459800ff8cbf3badc779e5b42b6ac1bafd6d6b3312ac67bf43a",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/institution-earthworks-pass/roster.json": "712d60bc0854d28b06428fef18f61e0d4924d24c6bea6710cd221ccdd8c067b0"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/stair-cell-construction-pass/verification/current-flat-failure-contacts.tsv": "f438dc3f849ace679a8508f301ed852c2f71cc3cc8930f1454e9a5c88f8a8441",
+    "development/levels/rebuild/stair-cell-construction-pass/verification/current-flat-failure-input.tsv": "2e7abbb55209a349bdc1fd6e62c51e7ff2f62de30c64a49b3dbc429a25b7172f",
+    "development/levels/rebuild/stair-cell-construction-pass/verification/current-flat-lane-input.tsv": "01f86342afb53437621f84dd08773f0ba3aa5a0259b8b239477d2ff66c9e623b",
+    "development/levels/rebuild/stair-cell-construction-pass/verification/current-flat-lane-names.tsv": "1641e5ab4fc2ea57b78f84bfd75775763ff42340d3691d32680f35a548ec0711",
+    "development/levels/rebuild/stair-cell-construction-pass/verification/current-flat-lanes.tsv": "da49a1ba34e745702b4bce601820538a7b6da361acc99dc00f562853b4775543",
+    "development/levels/rebuild/stair-cell-construction-pass/verification/current-flat-links.tsv": "1e676d197c21acaee8a6570a3cf301628d19fafa266ae8c5987054e9bd35950b",
+    "development/levels/rebuild/stair-cell-construction-pass/verification/current-flat-names.tsv": "a8d7b9c5a4fffe3bfcedc690aa66d01a444421ff7d8d1fbb6033a6b78470307b",
+    "development/levels/rebuild/stair-cell-construction-pass/verification/current-flat-paths.tsv": "9302187960f3fcc684dd779d640590f10c86164c63d3cde7853496bc50f5d479"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

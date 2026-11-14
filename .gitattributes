@@ -212,3 +212,8 @@ tools/build_institution_courts.py -text whitespace=cr-at-eol
 development/levels/rebuild/institution-earthworks-pass/** -text whitespace=cr-at-eol
 tools/compose_institution_earthworks.py -text whitespace=cr-at-eol
 tools/java/RebuildInstitutionEarthworks.java -text whitespace=cr-at-eol
+
+development/levels/rebuild/stair-cell-construction-pass/** -text whitespace=cr-at-eol
+tools/build_three_stair_cells.py -text whitespace=cr-at-eol
+tools/java/RebuildResearchTunnelPunch.java -text whitespace=cr-at-eol
+tools/audit_current_flat_routes.py -text whitespace=cr-at-eol

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10921,
+  "count": 10926,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -102534,6 +102534,56 @@
       "height": 750,
       "bytes": 506667,
       "sha256": "d32033dd2ecccd0b87b3d2e7c31e3651af961b7ea0773e70c9d373ed3cbb5491"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-cell-construction-batch/prison.png",
+      "url": "development/levels/rebuild/captures/stair-cell-construction-batch/prison.png",
+      "title": "Prison",
+      "kind": "Native constant stair flights, complete landings and rectangular floor openings; roofs hidden, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1913595,
+      "sha256": "00a01037a9c80cd7b304d74a9410f7b82a6880f8f19302964c64996f290247f0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-cell-construction-batch/school-lower-cell-section.png",
+      "url": "development/levels/rebuild/captures/stair-cell-construction-batch/school-lower-cell-section.png",
+      "title": "School lower cell section",
+      "kind": "Native service stair cutaway; east wall and upper layers hidden only for inspection, no runtime acceptance",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1153571,
+      "sha256": "6cdc3d20720c339c84b7b35792952cf5dd9a44754daf3fa312f87903f31b2c5a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-cell-construction-batch/school.png",
+      "url": "development/levels/rebuild/captures/stair-cell-construction-batch/school.png",
+      "title": "School",
+      "kind": "Native constant stair flights, complete landings and rectangular floor openings; roofs hidden, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1959923,
+      "sha256": "180a3a40a6320fa5bc50f469c725674fd70f81229ccc02079c8c0b018a153769"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-cell-construction-batch/wld-08-lower-cell-section.png",
+      "url": "development/levels/rebuild/captures/stair-cell-construction-batch/wld-08-lower-cell-section.png",
+      "title": "Wld 08 lower cell section",
+      "kind": "Native enclosed Research tunnel elbow; ceiling/upper layers hidden, old flared flights unfinished, no runtime acceptance",
+      "width": 1200,
+      "height": 1000,
+      "bytes": 1177404,
+      "sha256": "b5fef1a416f5fc57e69d6010fb07d376a03185e34d6dcab780fff12b002e2e85"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-cell-construction-batch/wld-08.png",
+      "url": "development/levels/rebuild/captures/stair-cell-construction-batch/wld-08.png",
+      "title": "Wld 08",
+      "kind": "Native enclosed Research tunnel elbow; ceiling/upper layers hidden, old flared flights unfinished, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1794723,
+      "sha256": "71dce14071e0fc61b0b70673dd6ffab44e8059945a70e58fb7785270639d7bb7"
     },
     {
       "path": "development/levels/rebuild/captures/stair-connection-batch/connection-sheet-1.png",

@@ -7004,7 +7004,7 @@ Van staging/entry guide chains and several court edges stood above existing grou
 
 Cause / uncertainty: Outdoor ground did not meet actual building/court datums and route endpoints did not consistently follow retained landform.
 
-Fix / next action: Verify current source terrain against exact saved original worlds. Author non-destructive TerrainLayerStack sculpt/material layers for broad geographic arrival and grounds clearings with feathered shoulders. Reopen all worlds and republish their scene meshes/native physics. Preserve source R16, adaptive topology and authored cut rows byte-for-byte; every stored hole control remains clear. Independently verify protected room interiors and vertices beyond feature influence unchanged. Retain every old nonterrain native record exactly and add only two closed positive full-width public-entry apron solids at Asylum and Prison to meet their existing landing fronts. Final actual arrivals pass all3sites;116of121ordinary links versus103before, zero regressions, all7complete stair routes and60actual door-aperture profiles pass. Final native exported terrain/assembly triangles agree;3native overviews inspected.
+Fix / next action: Verify current source terrain against exact saved original worlds. Author non-destructive TerrainLayerStack sculpt/material layers for broad geographic arrival and grounds clearings with feathered shoulders. Reopen all worlds and republish their scene meshes/native physics. Preserve source R16, adaptive topology and authored cut rows byte-for-byte; every stored hole control remains clear. Independently verify protected room interiors and vertices beyond feature influence unchanged. Retain every old nonterrain native record exactly and add only two closed positive full-width public-entry apron solids at Asylum and Prison to meet their existing landing fronts. Final actual arrivals pass all3sites;116of121ordinary links versus103before, zero regressions, all7complete stair routes and60actual door-aperture profiles pass. Final native exported terrain/assembly triangles agree;3native overviews inspected. Subsequent stair-cell-construction-pass reconstructs the School main/service and Prison plant cells and Research elbow. The five retained School/Prison approach failures are now passing through actual landings/bypasses; all96ordinary links across those3changed sites, including new School lobby link, pass. This does not promote other architecture or runtime.
 
 Evidence and verification: development/levels/rebuild/institution-earthworks-pass/roster.json; earthworks-program.json, program/*, worlds/*/terrain-world persistent source/layers/native meshes; per-site saved-earthworks.blend/glb/hcs2 and authored-layout/construction; verification/spatial-and-source-preservation.json, current-flat-movement.json, stairs, door-aperture-verification.json and closed-forecourt-aprons.json; captures/institution-earthworks-batch
 
@@ -7037,6 +7037,62 @@ Fix / next action: After actual geographic earthwork construction, move Asylum g
 Evidence and verification: institution-earthworks-pass per-site authored-layout.json/authoritative_saved_terrain and current-flat-movement.json; source-preservation receipt; new saved clearing geometry
 
 Older-map obligation: Guide corrections support actual constructed ground and do not count as this batch by themselves. Source guides do not establish rendering/room/portal/acoustic/spawn/service integration. Review Academy off-landform routes and all other envelope-based outdoor centers individually; do not silently omit difficult packets.
+
+### DEV-497 — Stair-room route anchors and access doors pointed into actual floor openings
+
+**Status:** THREE FLIGHTS AND THEIR STAIR CELLS RECONSTRUCTED; FULL FITNESS/RUNTIME OPEN · **Affected:** School main upper stair and basement service stair; Prison plant access stair; Research lower tunnel connection
+
+School and Prison ordinary approach chains used room centers inside the stair voids or approached flights at the wrong level. Research tunnel branches only touched at a diagonal corner.
+
+Cause / uncertainty: Envelope centers and rough traversal cuts replaced explicit stair landings, supported bypasses, architectural openings and room connections.
+
+Fix / next action: Rebuild School main20-riser3.6m flight at constant1.8m gross width, upper rectangular opening and0.30m continuous decks; School service17-riser3m flight at constant1.2m gross width with separate supported east bypass and real lower/upper landings. Rebuild Prison plant17-riser3m flight at constant1.8m gross width with east bypass, full upper landing, lower access and wall/door arrangements. Close old mid-flight access; existing yard approach now reaches west upper-landing doorway. Use existing indexed guard/doorway geometry on actual support surfaces; frames span rebuilt plus retained shared wall thickness. Add actual School stair-head/lobby door and source linkL45. Build an enclosed Research tunnel elbow with real floor,0.24m walls and roof underside thickening beneath retained radio-room floor. Original saved terrain already covers its underground footprint with punched leaves; saved-world reopen/control proof retained, no new terrain construction claimed.
+
+Evidence and verification: development/levels/rebuild/stair-cell-construction-pass/roster.json; per-site constructed-cells.blend/glb/hcs2 and authored-layout/construction; verification/current-flat-movement.json, stairs, door-aperture-verification.json, source-preservation.json; captures/stair-cell-construction-batch
+
+Older-map obligation: All96ordinary source links now pass both directions across School43,Prison36,Research17, including1new physical lobby link;8complete stair routes and123door-aperture profiles pass. Broad lanes retain191invalid of21363poses. This is native authoring evidence only. Research existing flared flights remain rejected architecture, and all other maps need individual stair/opening/guard review. Remaining doors, fixture fit, terrain finish, load/structure review and actual room/portal/acoustic/spawn/service/runtime integration remain open.
+
+### DEV-498 — Obsolete diagonal Research tunnel cuts remained beside the new elbow room
+
+**Status:** BOTH STRAY WALL CUTS CLOSED; INTENDED DOOR/STair OPENINGS RETAINED · **Affected:** Research tunnel-n south wall and main tunnel west wall near their old corner connection
+
+Owner identified random wall holes beside the small corner room in the second lower-level review image. The new elbow doorways had been built while old diagonal study cuts remained in adjoining faces.
+
+Cause / uncertainty: Replacing the two new doorway faces did not also close the obsolete faces previously cut by the diagonal route.
+
+Fix / next action: Rebuild tunnel-n south face as a continuous thick wall. Rebuild the main tunnel west return from its north corner to the actual separate west stair-cell opening, retaining only that measured33.8..36stair passage. Do not add a window or leave the old study slit. Final8native horizontal optical controls:6previously clear,0clear after. Intended elbow doors and every complete route/stair remain passing. Updated lower-level cutaway inspected after correction.
+
+Evidence and verification: stair-cell-construction-pass/verification/obsolete-corner-holes-input.tsv and obsolete-corner-holes-results.tsv; final wld-08-lower-cell-section.png; tools/build_three_stair_cells.py
+
+Older-map obligation: Whenever an entrance/route is moved, explicitly close all superseded wall cuts on both adjoining rooms. Audit remaining older flat-route-cut walls individually; this fixes the identified Research corner, not every hole across the roster. Actual runtime lighting/optics remain separate.
+
+### DEV-499 — Research tunnel service frames exceeded the actual new ceiling headroom
+
+**Status:** STANDARD LOW-SERVICE DOOR TYPE AND POSITIVE HEADER DATUMS CONSTRUCTED · **Affected:** New Research tunnel-elbow shared doorways
+
+Initial2.30m service heads exceeded the new2.20m clear ceiling and produced an inverted masonry-header interval in the review image.
+
+Cause / uncertainty: An above-ground service door type was reused without checking the underground section and frame outer head.
+
+Fix / next action: Author consistent1.80x2.00m low-service openings under the2.20m ceiling, full-depth indexed frames and solid headers. Require high>low for every wall/header interval before geometry creation; do not rely on volume-normal repair to conceal an inverted datum. New source doorway-types metadata includes the explicit dimensions. Re-exported solids closed/positive and native/exported triangles agree; all actual aperture sweeps pass. Complete roof retained in authored files while cutaway images intentionally hide it.
+
+Evidence and verification: tools/build_three_stair_cells.py low-service type and wall/header guard; stair-cell-construction-pass/wld-08/authored-layout.json; final aperture checks and lower-room cutaway
+
+Older-map obligation: Check frame outer head, real ceiling underside, jamb thickness and sill for every underground doorway. Passing movement alone does not establish coherent sections or optical closure.
+
+### DEV-500 — Multiple stair-cell doors on one wall initially shared a portal identifier
+
+**Status:** UNIQUE DATUM-BASED PORTAL IDS VERIFIED · **Affected:** School main stair east wall two new doorways; all newly authored cell portals
+
+Actual aperture sweep input rejected a discontinuous manifest because two distinct doorways shared one portal ID.
+
+Cause / uncertainty: The initial identifier included room/face but omitted the distinct along-wall datum.
+
+Fix / next action: Include the architectural opening datum in each new portal identity. Verify per-site doorway IDs are unique before generating native aperture profiles. All123profiles now sweep both ways successfully. Keep existing published portal identifiers unchanged. Native flat-route comparison now preserves every prior active link, rejects removals/regressions, and separately requires newly built source links to pass; this supports real new School lobby connection without assuming identical link sets.
+
+Evidence and verification: tools/build_three_stair_cells.py portal IDs; tools/audit_current_flat_routes.py added-link gate; stair-cell-construction-pass/verification/door-aperture-verification.json and current-flat-movement.json
+
+Older-map obligation: Keep all renderer/collision/room/portal/acoustic/service identities distinct and consistently bound during actual gameplay integration. No runtime binding acceptance is inferred from source ID checks.
 
 ## Required audit categories
 

@@ -1,0 +1,32 @@
+{
+  "scope": "All native records outside explicit reconstructed floors/walls/steps/guards/footings preserved byte-for-byte; saved terrain and original rooms/contracts retained",
+  "sites": [
+    {
+      "site": "school",
+      "retained_native_records": 401,
+      "explicit_removed_records": 80,
+      "staging_and_capacity_unchanged": true,
+      "original_rooms_unchanged": true,
+      "new_architectural_room": null,
+      "source_terrain_unchanged": true
+    },
+    {
+      "site": "prison",
+      "retained_native_records": 998,
+      "explicit_removed_records": 42,
+      "staging_and_capacity_unchanged": true,
+      "original_rooms_unchanged": true,
+      "new_architectural_room": null,
+      "source_terrain_unchanged": true
+    },
+    {
+      "site": "wld-08",
+      "retained_native_records": 482,
+      "explicit_removed_records": 8,
+      "staging_and_capacity_unchanged": true,
+      "original_rooms_unchanged": true,
+      "new_architectural_room": "tunnel-elbow",
+      "source_terrain_unchanged": true
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1997,
-  "unique_local_file_hashes": 1826,
+  "local_files": 2000,
+  "unique_local_file_hashes": 1829,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 75,
+    "additional_custom_model_sources": 78,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -28801,6 +28801,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "492ce0fae4f521c6260eb98bf6119c77edc1ca2d20ac00535787ff0166abcd11",
       "bytes": 1751160
+    },
+    {
+      "id": "constructed-cells",
+      "label": "constructed-cells",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/stair-cell-construction-pass/prison/constructed-cells.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1f8ae458d2f7f9de28a42b11c87298547d4da9665e1a58efa23b2a25334b18cf",
+      "bytes": 3912012
+    },
+    {
+      "id": "constructed-cells",
+      "label": "constructed-cells",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/stair-cell-construction-pass/school/constructed-cells.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f0b52afe4fcd6a8ecc0c56de83c155e7f30cb92b71a70528abbcd17727f65dcb",
+      "bytes": 3329172
+    },
+    {
+      "id": "constructed-cells",
+      "label": "constructed-cells",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/stair-cell-construction-pass/wld-08/constructed-cells.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "bc4380b801486e5a8c75bb23e26c760f00380c40984c6a33358edba82c85a509",
+      "bytes": 4348080
     },
     {
       "id": "connected-stairs",
