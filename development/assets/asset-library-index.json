@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 1965,
-  "unique_local_file_hashes": 1794,
+  "local_files": 1971,
+  "unique_local_file_hashes": 1800,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 43,
+    "additional_custom_model_sources": 49,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 250
@@ -26547,6 +26547,42 @@
       "bytes": 591624
     },
     {
+      "id": "rebuilt-entrances",
+      "label": "rebuilt-entrances",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/entrance-construction-pass/wld-06/rebuilt-entrances.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "eee37d403c7a23486e4755d67c20609a2131764dc34e1a50a2261d7f1943d77d",
+      "bytes": 2214584
+    },
+    {
+      "id": "rebuilt-entrances",
+      "label": "rebuilt-entrances",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/entrance-construction-pass/wld-08/rebuilt-entrances.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "4ab039c4e2e294cf69d4094fbab0c5bb2f2f0d901f2d6cab85311b114fe9b1c3",
+      "bytes": 3051840
+    },
+    {
+      "id": "rebuilt-entrances",
+      "label": "rebuilt-entrances",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/entrance-construction-pass/wld-13/rebuilt-entrances.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "6656f438f5437d6dd3372dbb470ee98c1a234308b83f904a16f8a916f08b9733",
+      "bytes": 2956220
+    },
+    {
       "id": "open-circulation",
       "label": "open-circulation",
       "maps": [],
@@ -28189,6 +28225,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "a19b539b5712add8136ce780993b8322e3b38143590c364d6aa0ed4008802f95",
       "bytes": 1531932
+    },
+    {
+      "id": "enclosed-roofs",
+      "label": "enclosed-roofs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/harbor-research-roof-pass/wld-06/enclosed-roofs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1bfe925136bef4a03d1cd1753df297d07889d8baaa7cf8104bfd1f306d01667e",
+      "bytes": 2125376
+    },
+    {
+      "id": "enclosed-roofs",
+      "label": "enclosed-roofs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/harbor-research-roof-pass/wld-08/enclosed-roofs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1ebae02e53a97aeb1c34f7c45ec1943e7c14f259626826c166a230cc16809918",
+      "bytes": 2945056
+    },
+    {
+      "id": "enclosed-roofs",
+      "label": "enclosed-roofs",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/harbor-research-roof-pass/wld-13/enclosed-roofs.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "6257ebe910743590fb079a06ebb4eac3d63247e201ad409c9e5b4302a9abdfcd",
+      "bytes": 2869792
     },
     {
       "id": "enclosed-roofs",

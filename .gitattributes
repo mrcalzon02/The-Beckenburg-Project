@@ -171,3 +171,10 @@ development/levels/rebuild/secure-sacred-roof-pass/** -text whitespace=cr-at-eol
 tools/build_roster_enclosed_roofs.py text eol=lf
 tools/build_secure_sacred_roof_batch.py text eol=lf
 tools/java/RebuildFacadeOpticalProbe.java text eol=lf
+
+# Exact-byte entrance reconstruction sources and their intermediate roof inputs.
+development/levels/rebuild/harbor-research-roof-pass/** -text whitespace=cr-at-eol
+development/levels/rebuild/entrance-construction-pass/** -text whitespace=cr-at-eol
+development/levels/rebuild/stair-end-pass/wld-06/authored-layout.json -text whitespace=cr-at-eol
+tools/build_harbor_research_roof_batch.py -text whitespace=cr-at-eol
+tools/build_deliberate_entrances.py -text whitespace=cr-at-eol

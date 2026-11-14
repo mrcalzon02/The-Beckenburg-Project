@@ -1,0 +1,1654 @@
+{
+  "id": "WLD-06",
+  "status": "DELIBERATE_ENTRANCE_CONSTRUCTION_RUNTIME_OPEN",
+  "source_glb": "development/levels/rebuild/harbor-research-roof-pass/wld-06/enclosed-roofs.glb",
+  "source_glb_sha256": "1bfe925136bef4a03d1cd1753df297d07889d8baaa7cf8104bfd1f306d01667e",
+  "source_physics": "development/levels/rebuild/harbor-research-roof-pass/wld-06/enclosed-roofs.hcs2",
+  "source_physics_sha256": "eea39ee1d56ae68f0cb839e559848f21d6edb5a01026411a275550aa943a0d98",
+  "before_layout": "development/levels/rebuild/stair-end-pass/wld-06/authored-layout.json",
+  "before_layout_sha256": "47f85ecfe5f400fadb6d92c9e1668b32c8bf5f8b27cf53e23adbc703ce8bc93f",
+  "layout": "development/levels/rebuild/entrance-construction-pass/wld-06/authored-layout.json",
+  "layout_sha256": "8bab030ea4df565bd85e1578c07d461a590b177aa74c063f7cf9d2291ecebffe",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "0": 0
+    },
+    "L17": {
+      "3": 0
+    },
+    "L18": {}
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "0": 0
+    },
+    "L17": {
+      "3": 0
+    },
+    "L18": {}
+  },
+  "before_stair_components": [
+    "Authored stair end WLD-06 L16 0 high region0",
+    "Authored stair end WLD-06 L16 0 high region1",
+    "Authored stair end WLD-06 L16 0 high region2",
+    "Authored stair end WLD-06 L16 0 high region3",
+    "Authored stair end WLD-06 L17 0 high region0",
+    "Authored stair end WLD-06 L17 0 high region1",
+    "Orthogonal stair WLD-06 L16 step0",
+    "Orthogonal stair WLD-06 L16 step1",
+    "Orthogonal stair WLD-06 L16 step2",
+    "Orthogonal stair WLD-06 L16 step3",
+    "Orthogonal stair WLD-06 L16 step4",
+    "Orthogonal stair WLD-06 L16 step5",
+    "Orthogonal stair WLD-06 L16 step6",
+    "Orthogonal stair WLD-06 L16 step7",
+    "Orthogonal stair WLD-06 L16 step8",
+    "Orthogonal stair WLD-06 L16 step9",
+    "Orthogonal stair WLD-06 L16 step10",
+    "Orthogonal stair WLD-06 L16 step11",
+    "Orthogonal stair WLD-06 L16 step12",
+    "Orthogonal stair WLD-06 L16 step13",
+    "Orthogonal stair WLD-06 L16 step14",
+    "Orthogonal stair WLD-06 L16 step15",
+    "Orthogonal stair WLD-06 L17 step0",
+    "Orthogonal stair WLD-06 L17 step1",
+    "Orthogonal stair WLD-06 L17 step2",
+    "Orthogonal stair WLD-06 L17 step3",
+    "Orthogonal stair WLD-06 L17 step4",
+    "Orthogonal stair WLD-06 L17 step5",
+    "Orthogonal stair WLD-06 L17 step6",
+    "Orthogonal stair WLD-06 L17 step7",
+    "Orthogonal stair WLD-06 L17 step8",
+    "Orthogonal stair WLD-06 L17 step9",
+    "Orthogonal stair WLD-06 L17 step10",
+    "Orthogonal stair WLD-06 L17 step11",
+    "Orthogonal stair WLD-06 L17 step12",
+    "Orthogonal stair WLD-06 L17 step13",
+    "Orthogonal stair WLD-06 L17 step14",
+    "Orthogonal stair WLD-06 L17 step15",
+    "Bay landing WLD-06 L16 1 region0",
+    "Bay landing WLD-06 L16 1 region1",
+    "Bay landing WLD-06 L16 1 region2",
+    "Bay landing WLD-06 L16 1 region3",
+    "Bay landing WLD-06 L17 3 region0",
+    "Bay landing WLD-06 L17 3 region1",
+    "Flared tread WLD-06 L16 -1 0 region0",
+    "Flared tread WLD-06 L16 -1 1 region0",
+    "Flared tread WLD-06 L16 -1 2 region0",
+    "Flared tread WLD-06 L16 -1 3 region0",
+    "Flared tread WLD-06 L16 -1 4 region0",
+    "Flared tread WLD-06 L16 -1 5 region0",
+    "Flared tread WLD-06 L16 -1 6 region0",
+    "Flared tread WLD-06 L16 -1 7 region0",
+    "Flared tread WLD-06 L16 -1 8 region0",
+    "Flared tread WLD-06 L16 -1 9 region0",
+    "Flared tread WLD-06 L16 -1 10 region0",
+    "Flared tread WLD-06 L16 -1 11 region0",
+    "Flared tread WLD-06 L16 -1 12 region0",
+    "Flared tread WLD-06 L16 -1 13 region0",
+    "Flared tread WLD-06 L16 -1 14 region0",
+    "Flared tread WLD-06 L16 -1 15 region0",
+    "Flared tread WLD-06 L16 1 16 region0",
+    "Flared tread WLD-06 L16 1 17 region0",
+    "Flared tread WLD-06 L16 1 18 region0",
+    "Flared tread WLD-06 L16 1 19 region0",
+    "Flared tread WLD-06 L16 1 20 region0",
+    "Flared tread WLD-06 L16 1 21 region0",
+    "Flared tread WLD-06 L16 1 22 region0",
+    "Flared tread WLD-06 L16 1 23 region0",
+    "Flared tread WLD-06 L16 1 24 region0",
+    "Flared tread WLD-06 L16 1 25 region0",
+    "Flared tread WLD-06 L16 1 26 region0",
+    "Flared tread WLD-06 L16 1 27 region0",
+    "Flared tread WLD-06 L16 1 28 region0",
+    "Flared tread WLD-06 L16 1 29 region0",
+    "Flared tread WLD-06 L16 1 30 region0",
+    "Flared tread WLD-06 L16 1 31 region0",
+    "Flared tread WLD-06 L17 -1 32 region0",
+    "Flared tread WLD-06 L17 -1 33 region0",
+    "Flared tread WLD-06 L17 -1 34 region0",
+    "Flared tread WLD-06 L17 -1 35 region0",
+    "Flared tread WLD-06 L17 -1 36 region0",
+    "Flared tread WLD-06 L17 -1 37 region0",
+    "Flared tread WLD-06 L17 -1 38 region0",
+    "Flared tread WLD-06 L17 -1 39 region0",
+    "Flared tread WLD-06 L17 -1 40 region0",
+    "Flared tread WLD-06 L17 -1 41 region0",
+    "Flared tread WLD-06 L17 -1 42 region0",
+    "Flared tread WLD-06 L17 -1 43 region0",
+    "Flared tread WLD-06 L17 -1 44 region0",
+    "Flared tread WLD-06 L17 -1 45 region0",
+    "Flared tread WLD-06 L17 -1 46 region0",
+    "Flared tread WLD-06 L17 -1 47 region0",
+    "Flared tread WLD-06 L17 1 48 region0",
+    "Flared tread WLD-06 L17 1 49 region0",
+    "Flared tread WLD-06 L17 1 50 region0",
+    "Flared tread WLD-06 L17 1 51 region0",
+    "Flared tread WLD-06 L17 1 52 region0",
+    "Flared tread WLD-06 L17 1 53 region0",
+    "Flared tread WLD-06 L17 1 54 region0",
+    "Flared tread WLD-06 L17 1 55 region0",
+    "Flared tread WLD-06 L17 1 56 region0",
+    "Flared tread WLD-06 L17 1 57 region0",
+    "Flared tread WLD-06 L17 1 58 region0",
+    "Flared tread WLD-06 L17 1 59 region0",
+    "Flared tread WLD-06 L17 1 60 region0",
+    "Flared tread WLD-06 L17 1 61 region0",
+    "Flared tread WLD-06 L17 1 62 region0",
+    "Flared tread WLD-06 L17 1 63 region0"
+  ],
+  "stair_components": [
+    "Authored stair end WLD-06 L16 0 high region0",
+    "Authored stair end WLD-06 L16 0 high region1",
+    "Authored stair end WLD-06 L16 0 high region2",
+    "Authored stair end WLD-06 L16 0 high region3",
+    "Authored stair end WLD-06 L17 0 high region0",
+    "Authored stair end WLD-06 L17 0 high region1",
+    "Orthogonal stair WLD-06 L16 step0",
+    "Orthogonal stair WLD-06 L16 step1",
+    "Orthogonal stair WLD-06 L16 step2",
+    "Orthogonal stair WLD-06 L16 step3",
+    "Orthogonal stair WLD-06 L16 step4",
+    "Orthogonal stair WLD-06 L16 step5",
+    "Orthogonal stair WLD-06 L16 step6",
+    "Orthogonal stair WLD-06 L16 step7",
+    "Orthogonal stair WLD-06 L16 step8",
+    "Orthogonal stair WLD-06 L16 step9",
+    "Orthogonal stair WLD-06 L16 step10",
+    "Orthogonal stair WLD-06 L16 step11",
+    "Orthogonal stair WLD-06 L16 step12",
+    "Orthogonal stair WLD-06 L16 step13",
+    "Orthogonal stair WLD-06 L16 step14",
+    "Orthogonal stair WLD-06 L16 step15",
+    "Orthogonal stair WLD-06 L17 step0",
+    "Orthogonal stair WLD-06 L17 step1",
+    "Orthogonal stair WLD-06 L17 step2",
+    "Orthogonal stair WLD-06 L17 step3",
+    "Orthogonal stair WLD-06 L17 step4",
+    "Orthogonal stair WLD-06 L17 step5",
+    "Orthogonal stair WLD-06 L17 step6",
+    "Orthogonal stair WLD-06 L17 step7",
+    "Orthogonal stair WLD-06 L17 step8",
+    "Orthogonal stair WLD-06 L17 step9",
+    "Orthogonal stair WLD-06 L17 step10",
+    "Orthogonal stair WLD-06 L17 step11",
+    "Orthogonal stair WLD-06 L17 step12",
+    "Orthogonal stair WLD-06 L17 step13",
+    "Orthogonal stair WLD-06 L17 step14",
+    "Orthogonal stair WLD-06 L17 step15",
+    "Bay landing WLD-06 L16 1 region0",
+    "Bay landing WLD-06 L16 1 region1",
+    "Bay landing WLD-06 L16 1 region2",
+    "Bay landing WLD-06 L16 1 region3",
+    "Bay landing WLD-06 L17 3 region0",
+    "Bay landing WLD-06 L17 3 region1",
+    "Flared tread WLD-06 L16 -1 0 region0",
+    "Flared tread WLD-06 L16 -1 1 region0",
+    "Flared tread WLD-06 L16 -1 2 region0",
+    "Flared tread WLD-06 L16 -1 3 region0",
+    "Flared tread WLD-06 L16 -1 4 region0",
+    "Flared tread WLD-06 L16 -1 5 region0",
+    "Flared tread WLD-06 L16 -1 6 region0",
+    "Flared tread WLD-06 L16 -1 7 region0",
+    "Flared tread WLD-06 L16 -1 8 region0",
+    "Flared tread WLD-06 L16 -1 9 region0",
+    "Flared tread WLD-06 L16 -1 10 region0",
+    "Flared tread WLD-06 L16 -1 11 region0",
+    "Flared tread WLD-06 L16 -1 12 region0",
+    "Flared tread WLD-06 L16 -1 13 region0",
+    "Flared tread WLD-06 L16 -1 14 region0",
+    "Flared tread WLD-06 L16 -1 15 region0",
+    "Flared tread WLD-06 L16 1 16 region0",
+    "Flared tread WLD-06 L16 1 17 region0",
+    "Flared tread WLD-06 L16 1 18 region0",
+    "Flared tread WLD-06 L16 1 19 region0",
+    "Flared tread WLD-06 L16 1 20 region0",
+    "Flared tread WLD-06 L16 1 21 region0",
+    "Flared tread WLD-06 L16 1 22 region0",
+    "Flared tread WLD-06 L16 1 23 region0",
+    "Flared tread WLD-06 L16 1 24 region0",
+    "Flared tread WLD-06 L16 1 25 region0",
+    "Flared tread WLD-06 L16 1 26 region0",
+    "Flared tread WLD-06 L16 1 27 region0",
+    "Flared tread WLD-06 L16 1 28 region0",
+    "Flared tread WLD-06 L16 1 29 region0",
+    "Flared tread WLD-06 L16 1 30 region0",
+    "Flared tread WLD-06 L16 1 31 region0",
+    "Flared tread WLD-06 L17 -1 32 region0",
+    "Flared tread WLD-06 L17 -1 33 region0",
+    "Flared tread WLD-06 L17 -1 34 region0",
+    "Flared tread WLD-06 L17 -1 35 region0",
+    "Flared tread WLD-06 L17 -1 36 region0",
+    "Flared tread WLD-06 L17 -1 37 region0",
+    "Flared tread WLD-06 L17 -1 38 region0",
+    "Flared tread WLD-06 L17 -1 39 region0",
+    "Flared tread WLD-06 L17 -1 40 region0",
+    "Flared tread WLD-06 L17 -1 41 region0",
+    "Flared tread WLD-06 L17 -1 42 region0",
+    "Flared tread WLD-06 L17 -1 43 region0",
+    "Flared tread WLD-06 L17 -1 44 region0",
+    "Flared tread WLD-06 L17 -1 45 region0",
+    "Flared tread WLD-06 L17 -1 46 region0",
+    "Flared tread WLD-06 L17 -1 47 region0",
+    "Flared tread WLD-06 L17 1 48 region0",
+    "Flared tread WLD-06 L17 1 49 region0",
+    "Flared tread WLD-06 L17 1 50 region0",
+    "Flared tread WLD-06 L17 1 51 region0",
+    "Flared tread WLD-06 L17 1 52 region0",
+    "Flared tread WLD-06 L17 1 53 region0",
+    "Flared tread WLD-06 L17 1 54 region0",
+    "Flared tread WLD-06 L17 1 55 region0",
+    "Flared tread WLD-06 L17 1 56 region0",
+    "Flared tread WLD-06 L17 1 57 region0",
+    "Flared tread WLD-06 L17 1 58 region0",
+    "Flared tread WLD-06 L17 1 59 region0",
+    "Flared tread WLD-06 L17 1 60 region0",
+    "Flared tread WLD-06 L17 1 61 region0",
+    "Flared tread WLD-06 L17 1 62 region0",
+    "Flared tread WLD-06 L17 1 63 region0"
+  ],
+  "removed_source_meshes": [
+    "L16 flight0 step1",
+    "L16 flight0 step2",
+    "L16 flight0 step3",
+    "L16 flight0 step4",
+    "L16 flight0 step5",
+    "L16 flight0 step6",
+    "L16 flight0 step7",
+    "L16 flight0 step8",
+    "L16 flight0 step9",
+    "L16 flight0 step10",
+    "L16 flight0 step11",
+    "L16 flight0 step12",
+    "L16 flight0 step13",
+    "L16 flight0 step14",
+    "L17 flight0 step1",
+    "L17 flight0 step2",
+    "L17 flight0 step3",
+    "L17 flight0 step4",
+    "L17 flight0 step5",
+    "L17 flight0 step6",
+    "L17 flight0 step7",
+    "L17 flight0 step8",
+    "L17 flight0 step9",
+    "L17 flight0 step10",
+    "L17 flight0 step11",
+    "L17 flight0 step12",
+    "L17 flight0 step13",
+    "L17 flight0 step14",
+    "Floor undercroft",
+    "Opened stair shell Wall undercroft W",
+    "Opened stair shell Wall undercroft E"
+  ],
+  "removed_native_parts": [
+    "Supported guard WLD-06 L16 0 -1 0",
+    "Supported guard WLD-06 L16 0 -1 1",
+    "Supported guard WLD-06 L16 0 -1 2",
+    "Side stringer WLD-06 L16 -1",
+    "Supported guard WLD-06 L16 0 1 0",
+    "Supported guard WLD-06 L16 0 1 1",
+    "Supported guard WLD-06 L16 0 1 2",
+    "Side stringer WLD-06 L16 1",
+    "Supported guard WLD-06 L17 2 -1 0",
+    "Supported guard WLD-06 L17 2 -1 1",
+    "Supported guard WLD-06 L17 2 -1 2",
+    "Side stringer WLD-06 L17 -1",
+    "Supported guard WLD-06 L17 2 1 0",
+    "Supported guard WLD-06 L17 2 1 1",
+    "Supported guard WLD-06 L17 2 1 2",
+    "Side stringer WLD-06 L17 1",
+    "47:Ceiling cap undercroft",
+    "48:Ceiling cap undercroft.001",
+    "49:Ceiling cap undercroft.002",
+    "50:Ceiling cap undercroft.003",
+    "51:Ceiling cap undercroft.004",
+    "52:Ceiling cap undercroft.005",
+    "53:Wall undercroft N",
+    "54:Wall undercroft S",
+    "Restored ceiling-cap undercroft 0 region0",
+    "Restored ceiling-cap undercroft 0 region1",
+    "Restored ceiling-cap undercroft 0 region2",
+    "Bayed shell Opened stair shell Wall undercroft W",
+    "Bayed shell Opened stair shell Wall undercroft E",
+    "Restored bay WLD-06 undercroft ceiling-cap region0",
+    "Restored bay WLD-06 undercroft ceiling-cap region1",
+    "Floor exterior deck pier-w 109",
+    "Floor exterior deck pier-w 110",
+    "Floor exterior deck pier-w 111",
+    "Floor exterior deck pier-e 124",
+    "Floor exterior deck pier-e 126",
+    "Restored bay WLD-06 pier-w floor region0",
+    "Restored bay WLD-06 pier-e floor region0"
+  ],
+  "new_parts": 30,
+  "new_triangles": 832,
+  "restored_shaft_parts": [
+    "Restored bay WLD-06 undercroft ceiling-cap region0",
+    "Restored bay WLD-06 undercroft ceiling-cap region1",
+    "Restored bay WLD-06 pier-w floor region0",
+    "Restored bay WLD-06 pier-e floor region0"
+  ],
+  "shell_changes": [
+    {
+      "source_mesh": "Floor undercroft",
+      "new_mesh": "Bayed shell Floor undercroft",
+      "removed_volume_m3": 0.3551234485565473
+    },
+    {
+      "source_mesh": "Opened stair shell Wall undercroft W",
+      "new_mesh": "Bayed shell Opened stair shell Wall undercroft W",
+      "removed_volume_m3": 0.5978479210084675
+    },
+    {
+      "source_mesh": "Opened stair shell Wall undercroft E",
+      "new_mesh": "Bayed shell Opened stair shell Wall undercroft E",
+      "removed_volume_m3": 0.5978479270870354
+    }
+  ],
+  "design": {
+    "points": {
+      "L16": [
+        [
+          18,
+          0,
+          33
+        ],
+        [
+          26,
+          -2.5,
+          33
+        ],
+        [
+          26,
+          -2.5,
+          30
+        ],
+        [
+          32,
+          -2.5,
+          30
+        ]
+      ],
+      "L17": [
+        [
+          32,
+          -2.5,
+          30
+        ],
+        [
+          38,
+          -2.5,
+          30
+        ],
+        [
+          38,
+          -2.5,
+          33
+        ],
+        [
+          46,
+          0,
+          33
+        ]
+      ]
+    },
+    "build": [
+      "L16",
+      "L17"
+    ],
+    "shared": {},
+    "reason": "Wharf: opposed straight access flights follow west/east stair bays; level turns enter undercroft instead of diagonal columns crossing the quay.",
+    "preserve_upper_hubs": false
+  },
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1288352,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      46,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      392,
+      393
+    ]
+  },
+  "glb_sha256": "eee37d403c7a23486e4755d67c20609a2131764dc34e1a50a2261d7f1943d77d",
+  "physics_sha256": "9e247a8979cf01773ff7f7dba8db483dcb527b2c1530981fccea6188a3885006",
+  "generator_sha256": "e834a77051dac69dba57dbd96ca23ee2198a81df81f2f9977f44ea405d798fea",
+  "remaining": "Roof-step flashing/drainage, structural join review, complete terrain/room connectivity and actual runtime integration remain open. Roofs do not add accessible search spaces or satisfy availability gates.",
+  "guard_flights": [
+    {
+      "link": "L16",
+      "segment": 0,
+      "width": 2,
+      "bay_count_per_side": 4,
+      "source_asset": "development/levels/primitive-props-v1/models/level_blockout_guardrail.glb",
+      "source_sha256": "d5a1e9152bdccb6a9c548542aa206b51fd0cdbd646cd3c23ab7e92f4357b327d",
+      "method": "Source rail profile/UV/material copied; shear follows authored flight grade, uprights remain vertical; tread-edge stringers seat post bases. Original library master unchanged."
+    },
+    {
+      "link": "L17",
+      "segment": 2,
+      "width": 2,
+      "bay_count_per_side": 4,
+      "source_asset": "development/levels/primitive-props-v1/models/level_blockout_guardrail.glb",
+      "source_sha256": "d5a1e9152bdccb6a9c548542aa206b51fd0cdbd646cd3c23ab7e92f4357b327d",
+      "method": "Source rail profile/UV/material copied; shear follows authored flight grade, uprights remain vertical; tread-edge stringers seat post bases. Original library master unchanged."
+    }
+  ],
+  "new_guard_parts": 162,
+  "flared_wing_parts": 64,
+  "end_builder_sha256": "475667f39ca83a77fd0c8136f1b5b42ec64c9f9e7baf60c94da0df2c2a30c3b7",
+  "source_contract": "development/levels/rebuild/harbor-research-roof-pass/wld-06/construction.json",
+  "blend_sha256": "cb23d5aec033b3dac89937c98e4f5c7f88d2a3dd8c7fe22d24d5e0a8e0b9256e",
+  "roof_generator_sha256": "df3d626b33285cd350a451cd113571b615df645d7e59618a1f67711b424b9c58",
+  "geometry_unchanged": false,
+  "roof_wings": [
+    {
+      "wing": "west-cottage",
+      "bounds": [
+        4,
+        42,
+        20,
+        54
+      ],
+      "ceiling": 3,
+      "ridge": 5.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "east-cottage",
+      "bounds": [
+        44,
+        42,
+        60,
+        54
+      ],
+      "ceiling": 3,
+      "ridge": 5.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "boathouse",
+      "bounds": [
+        4,
+        10,
+        20,
+        28
+      ],
+      "ceiling": 3,
+      "ridge": 6.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "net-store",
+      "bounds": [
+        44,
+        10,
+        56,
+        24
+      ],
+      "ceiling": 3,
+      "ridge": 5.640000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "fish-house",
+      "bounds": [
+        24,
+        10,
+        40,
+        24
+      ],
+      "ceiling": 3,
+      "ridge": 5.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    }
+  ],
+  "roof_coverage_rays": 1064,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/entrance-construction-batch/wld-06.png",
+      "sha256": "53bb2da3b9e1a135ee0ade9d472c553a075c020718892654230d028e9d349e95",
+      "type": "native exported entrance cutaway, roofs hidden for inspection, not gameplay"
+    }
+  ],
+  "aboveground_indoor_roof_probes": 45,
+  "wing_plan_builder": "tools/build_harbor_research_roof_batch.py",
+  "wing_plan_sha256": "bb6d9e381bf7ae078d694de63b7585c6863fa2c4b2a5e99dceb0080186f14b56",
+  "entrance_builder": "tools/build_deliberate_entrances.py",
+  "entrance_builder_sha256": "036df9604d0d3cd198105bb025a07ed7ee09b37286d31a596842423c4285d70e",
+  "entrances": [
+    {
+      "zone": "cottage-a",
+      "side": "S",
+      "center": 12,
+      "width": 2.6,
+      "height": 2.45,
+      "wall_depth": 0.24
+    },
+    {
+      "zone": "cottage-a",
+      "side": "E",
+      "center": 48,
+      "width": 2.6,
+      "height": 2.45,
+      "wall_depth": 0.24
+    },
+    {
+      "zone": "cottage-b",
+      "side": "S",
+      "center": 52,
+      "width": 2.6,
+      "height": 2.45,
+      "wall_depth": 0.24
+    },
+    {
+      "zone": "cottage-b",
+      "side": "W",
+      "center": 48,
+      "width": 2.6,
+      "height": 2.45,
+      "wall_depth": 0.24
+    }
+  ],
+  "removed_parts": [
+    "Flat route shell Wall cottage-a E",
+    "Flat route shell Wall cottage-a E.001",
+    "Flat route shell Wall cottage-a E.002",
+    "Flat route shell Wall cottage-a S",
+    "Flat route shell Wall cottage-b S",
+    "Flat route shell Wall cottage-b W",
+    "Flat route shell Wall cottage-b W.001",
+    "Flat route shell Wall cottage-b W.002",
+    "L02 support 0",
+    "L03 support 0",
+    "L05 support 1",
+    "L06 support 1",
+    "Wall cottage-a N",
+    "Wall cottage-a W",
+    "Wall cottage-b E",
+    "Wall cottage-b N"
+  ],
+  "rooted_beds": [
+    {
+      "threshold": [
+        12.0,
+        54.0
+      ],
+      "bearing": "Existing room floor overlap and retained foundation",
+      "owners": [
+        "cottage-a"
+      ]
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 1",
+      "ground_y": [
+        -0.39468955993652344,
+        -0.3585948944091797,
+        -0.3506450653076172,
+        -0.3700389862060547
+      ],
+      "probe_points": [
+        [
+          11.78,
+          55.53
+        ],
+        [
+          12.22,
+          55.53
+        ],
+        [
+          12.22,
+          55.97
+        ],
+        [
+          11.78,
+          55.97
+        ]
+      ],
+      "bottom_y": -0.5946895599365234,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 2",
+      "ground_y": [
+        -0.36686134338378906,
+        -0.35010528564453125,
+        -0.35010337829589844,
+        -0.36686134338378906
+      ],
+      "probe_points": [
+        [
+          11.78,
+          57.28
+        ],
+        [
+          12.22,
+          57.28
+        ],
+        [
+          12.22,
+          57.72
+        ],
+        [
+          11.78,
+          57.72
+        ]
+      ],
+      "bottom_y": -0.566861343383789,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 3",
+      "ground_y": [
+        -0.352142333984375,
+        -0.35010337829589844,
+        -0.35010337829589844,
+        -0.352142333984375
+      ],
+      "probe_points": [
+        [
+          11.78,
+          59.03
+        ],
+        [
+          12.22,
+          59.03
+        ],
+        [
+          12.22,
+          59.47
+        ],
+        [
+          11.78,
+          59.47
+        ]
+      ],
+      "bottom_y": -0.552142333984375,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 4",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.35010337829589844,
+        -0.35010337829589844,
+        -0.35010337829589844
+      ],
+      "probe_points": [
+        [
+          11.78,
+          60.78
+        ],
+        [
+          12.22,
+          60.78
+        ],
+        [
+          12.22,
+          61.22
+        ],
+        [
+          11.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 5",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.35010337829589844,
+        -0.35010337829589844,
+        -0.35010337829589844
+      ],
+      "probe_points": [
+        [
+          13.78,
+          60.78
+        ],
+        [
+          14.22,
+          60.78
+        ],
+        [
+          14.22,
+          61.22
+        ],
+        [
+          13.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 6",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.35010337829589844
+      ],
+      "probe_points": [
+        [
+          15.78,
+          60.78
+        ],
+        [
+          16.22,
+          60.78
+        ],
+        [
+          16.22,
+          61.22
+        ],
+        [
+          15.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 7",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          17.78,
+          60.78
+        ],
+        [
+          18.22,
+          60.78
+        ],
+        [
+          18.22,
+          61.22
+        ],
+        [
+          17.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "threshold": [
+        20.0,
+        48.0
+      ],
+      "bearing": "Existing room floor overlap and retained foundation",
+      "owners": [
+        "cottage-a"
+      ]
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 9",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          19.78,
+          60.78
+        ],
+        [
+          20.22,
+          60.78
+        ],
+        [
+          20.22,
+          61.22
+        ],
+        [
+          19.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 10",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1070575714111328,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          21.78,
+          47.78
+        ],
+        [
+          22.22,
+          47.78
+        ],
+        [
+          22.22,
+          48.22
+        ],
+        [
+          21.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 11",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          21.78,
+          60.78
+        ],
+        [
+          22.22,
+          60.78
+        ],
+        [
+          22.22,
+          61.22
+        ],
+        [
+          21.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 12",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1070575714111328,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          23.78,
+          47.78
+        ],
+        [
+          24.22,
+          47.78
+        ],
+        [
+          24.22,
+          48.22
+        ],
+        [
+          23.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 13",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          23.78,
+          60.78
+        ],
+        [
+          24.22,
+          60.78
+        ],
+        [
+          24.22,
+          61.22
+        ],
+        [
+          23.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 14",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1070575714111328,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          25.78,
+          47.78
+        ],
+        [
+          26.22,
+          47.78
+        ],
+        [
+          26.22,
+          48.22
+        ],
+        [
+          25.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 15",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          25.78,
+          60.78
+        ],
+        [
+          26.22,
+          60.78
+        ],
+        [
+          26.22,
+          61.22
+        ],
+        [
+          25.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 16",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1070575714111328,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          27.78,
+          47.78
+        ],
+        [
+          28.22,
+          47.78
+        ],
+        [
+          28.22,
+          48.22
+        ],
+        [
+          27.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 17",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          27.78,
+          60.78
+        ],
+        [
+          28.22,
+          60.78
+        ],
+        [
+          28.22,
+          61.22
+        ],
+        [
+          27.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 18",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1070575714111328,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          29.78,
+          47.78
+        ],
+        [
+          30.22,
+          47.78
+        ],
+        [
+          30.22,
+          48.22
+        ],
+        [
+          29.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 19",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3499946594238281,
+        -0.3499946594238281,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          29.78,
+          60.78
+        ],
+        [
+          30.22,
+          60.78
+        ],
+        [
+          30.22,
+          61.22
+        ],
+        [
+          29.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 20",
+      "ground_y": [
+        -1.7218704223632812,
+        -1.7218704223632812,
+        -1.6258354187011719,
+        -1.6258354187011719
+      ],
+      "probe_points": [
+        [
+          31.78,
+          44.78
+        ],
+        [
+          32.22,
+          44.78
+        ],
+        [
+          32.22,
+          45.22
+        ],
+        [
+          31.78,
+          45.22
+        ]
+      ],
+      "bottom_y": -1.9218704223632812,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 21",
+      "ground_y": [
+        -1.4007644653320312,
+        -1.400655746459961,
+        -1.3145027160644531,
+        -1.3146095275878906
+      ],
+      "probe_points": [
+        [
+          31.78,
+          46.28
+        ],
+        [
+          32.22,
+          46.28
+        ],
+        [
+          32.22,
+          46.72
+        ],
+        [
+          31.78,
+          46.72
+        ]
+      ],
+      "bottom_y": -1.6007644653320312,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 22",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1069488525390625,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          31.78,
+          47.78
+        ],
+        [
+          32.22,
+          47.78
+        ],
+        [
+          32.22,
+          48.22
+        ],
+        [
+          31.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 23",
+      "ground_y": [
+        -0.34923553466796875,
+        -0.34902000427246094,
+        -0.3490180969238281,
+        -0.34923362731933594
+      ],
+      "probe_points": [
+        [
+          31.78,
+          60.78
+        ],
+        [
+          32.22,
+          60.78
+        ],
+        [
+          32.22,
+          61.22
+        ],
+        [
+          31.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5492355346679687,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 24",
+      "ground_y": [
+        -1.1061878204345703,
+        -1.1061878204345703,
+        -1.0270156860351562,
+        -1.027231216430664
+      ],
+      "probe_points": [
+        [
+          33.78,
+          47.78
+        ],
+        [
+          34.22,
+          47.78
+        ],
+        [
+          34.22,
+          48.22
+        ],
+        [
+          33.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3061878204345703,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 25",
+      "ground_y": [
+        -0.34825897216796875,
+        -0.3478279113769531,
+        -0.3478279113769531,
+        -0.34825897216796875
+      ],
+      "probe_points": [
+        [
+          33.78,
+          60.78
+        ],
+        [
+          34.22,
+          60.78
+        ],
+        [
+          34.22,
+          61.22
+        ],
+        [
+          33.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5482589721679687,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 26",
+      "ground_y": [
+        -1.1061878204345703,
+        -1.1060810089111328,
+        -1.0268020629882812,
+        -1.0270156860351562
+      ],
+      "probe_points": [
+        [
+          35.78,
+          47.78
+        ],
+        [
+          36.22,
+          47.78
+        ],
+        [
+          36.22,
+          48.22
+        ],
+        [
+          35.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3061878204345703,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 27",
+      "ground_y": [
+        -0.34554290771484375,
+        -0.3444671630859375,
+        -0.3444690704345703,
+        -0.34554290771484375
+      ],
+      "probe_points": [
+        [
+          35.78,
+          60.78
+        ],
+        [
+          36.22,
+          60.78
+        ],
+        [
+          36.22,
+          61.22
+        ],
+        [
+          35.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5455429077148437,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 28",
+      "ground_y": [
+        -1.1053199768066406,
+        -1.1049976348876953,
+        -1.0256118774414062,
+        -1.026041030883789
+      ],
+      "probe_points": [
+        [
+          37.78,
+          47.78
+        ],
+        [
+          38.22,
+          47.78
+        ],
+        [
+          38.22,
+          48.22
+        ],
+        [
+          37.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3053199768066406,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 29",
+      "ground_y": [
+        -0.3396263122558594,
+        -0.3375835418701172,
+        -0.3373680114746094,
+        -0.33940887451171875
+      ],
+      "probe_points": [
+        [
+          37.78,
+          60.78
+        ],
+        [
+          38.22,
+          60.78
+        ],
+        [
+          38.22,
+          61.22
+        ],
+        [
+          37.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5396263122558593,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 30",
+      "ground_y": [
+        -1.1034736633300781,
+        -1.1030445098876953,
+        -1.0233345031738281,
+        -1.024087905883789
+      ],
+      "probe_points": [
+        [
+          39.78,
+          47.78
+        ],
+        [
+          40.22,
+          47.78
+        ],
+        [
+          40.22,
+          48.22
+        ],
+        [
+          39.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.303473663330078,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 31",
+      "ground_y": [
+        -0.3281707763671875,
+        -0.32430267333984375,
+        -0.3238716125488281,
+        -0.3277397155761719
+      ],
+      "probe_points": [
+        [
+          39.78,
+          60.78
+        ],
+        [
+          40.22,
+          60.78
+        ],
+        [
+          40.22,
+          61.22
+        ],
+        [
+          39.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5281707763671875,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 32",
+      "ground_y": [
+        -1.100759506225586,
+        -1.0998992919921875,
+        -1.0198688507080078,
+        -1.0210494995117188
+      ],
+      "probe_points": [
+        [
+          41.78,
+          47.78
+        ],
+        [
+          42.22,
+          47.78
+        ],
+        [
+          42.22,
+          48.22
+        ],
+        [
+          41.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.300759506225586,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 33",
+      "ground_y": [
+        -0.30797386169433594,
+        -0.301849365234375,
+        -0.30055999755859375,
+        -0.3066825866699219
+      ],
+      "probe_points": [
+        [
+          41.78,
+          60.78
+        ],
+        [
+          42.22,
+          60.78
+        ],
+        [
+          42.22,
+          61.22
+        ],
+        [
+          41.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5079738616943359,
+      "top_y": -0.22
+    },
+    {
+      "threshold": [
+        44.0,
+        48.0
+      ],
+      "bearing": "Existing room floor overlap and retained foundation",
+      "owners": [
+        "cottage-b"
+      ]
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 35",
+      "ground_y": [
+        -0.2751312255859375,
+        -0.26567840576171875,
+        -0.2637443542480469,
+        -0.2731971740722656
+      ],
+      "probe_points": [
+        [
+          43.78,
+          60.78
+        ],
+        [
+          44.22,
+          60.78
+        ],
+        [
+          44.22,
+          61.22
+        ],
+        [
+          43.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.4751312255859375,
+      "top_y": -0.22
+    },
+    {
+      "threshold": [
+        52.0,
+        54.0
+      ],
+      "bearing": "Existing room floor overlap and retained foundation",
+      "owners": [
+        "cottage-b"
+      ]
+    }
+  ],
+  "deferred_beds": [],
+  "changed_routes": [
+    "L02",
+    "L03",
+    "L05",
+    "L06"
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10886,
+  "count": 10892,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -96536,6 +96536,36 @@
       "sha256": "c1cd9bb200f25f4070c6f8996a50778da9d0dd33b805bdb45d87becdab549769"
     },
     {
+      "path": "development/levels/rebuild/captures/entrance-construction-batch/wld-06.png",
+      "url": "development/levels/rebuild/captures/entrance-construction-batch/wld-06.png",
+      "title": "Wld 06",
+      "kind": "Native exported entrance/courtyard construction cutaway; pitched roofs hidden for inspection, unresolved other routes, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1480433,
+      "sha256": "53bb2da3b9e1a135ee0ade9d472c553a075c020718892654230d028e9d349e95"
+    },
+    {
+      "path": "development/levels/rebuild/captures/entrance-construction-batch/wld-08.png",
+      "url": "development/levels/rebuild/captures/entrance-construction-batch/wld-08.png",
+      "title": "Wld 08",
+      "kind": "Native exported entrance/courtyard construction cutaway; pitched roofs hidden for inspection, unresolved other routes, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1447967,
+      "sha256": "5b56b8ecb23227548d9c67708994e4af30bbaebb9d8083efabbe1fcab5cca489"
+    },
+    {
+      "path": "development/levels/rebuild/captures/entrance-construction-batch/wld-13.png",
+      "url": "development/levels/rebuild/captures/entrance-construction-batch/wld-13.png",
+      "title": "Wld 13",
+      "kind": "Native exported entrance/courtyard construction cutaway; pitched roofs hidden for inspection, unresolved other routes, no runtime acceptance",
+      "width": 1400,
+      "height": 1100,
+      "bytes": 1491816,
+      "sha256": "73de62b06a23491dad4daf3681ea619a5860f1b95e6bef773a5333c309c9a4ba"
+    },
+    {
       "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-after.png",
       "url": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-after.png",
       "title": "Academy threshold after",
@@ -101526,6 +101556,26 @@
       "sha256": "0feff6cf826ede30d2f57342b0eb15af075be63e8f7b0e63ff649eaf999b9b01"
     },
     {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/wld-06.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/wld-06.png",
+      "title": "Wld 06",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 800760,
+      "sha256": "4cec0f35b41cb6a0cf92ea7618cf922c9266fe0a3269086228d74e4933c261c2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/wld-08.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/wld-08.png",
+      "title": "Wld 08",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 799545,
+      "sha256": "86dd6fd8b685eee7a459816e2960b4a387976a74fe5dd1e80c9066adb8178ee3"
+    },
+    {
       "path": "development/levels/rebuild/captures/roof-construction-batch/wld-10.png",
       "url": "development/levels/rebuild/captures/roof-construction-batch/wld-10.png",
       "title": "Wld 10",
@@ -101534,6 +101584,16 @@
       "height": 900,
       "bytes": 830255,
       "sha256": "d65a6fe24ec8746310333d9f705ae89b98b9db37ab67d87c5f8caed0e18158e4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/wld-13.png",
+      "url": "development/levels/rebuild/captures/roof-construction-batch/wld-13.png",
+      "title": "Wld 13",
+      "kind": "Native exported enclosed roof construction; rough source, no gameplay integration acceptance",
+      "width": 1200,
+      "height": 900,
+      "bytes": 794443,
+      "sha256": "1af75126fcdb12344d0ee07f24585b9dcfad35fc4a1d3a4b3c71913f2adc5a59"
     },
     {
       "path": "development/levels/rebuild/captures/room-terrain-batch/paired-room-sheet-01.png",

@@ -20,13 +20,13 @@ mount hints and source stages. The 24-model furniture inspection is a sample.
 | Runtime model library | 581 |
 | Hollow Creek native map components | 384 |
 | Source-library masters | 120 |
-| Additional custom model sources | 43 |
+| Additional custom model sources | 49 |
 | Review/contact assemblies | 173 |
 | Reference/rejected studies | 101 |
 | Native map exports | 250 |
-| **Total local GLB files** | **1,965** |
+| **Total local GLB files** | **1,971** |
 
-1,794 distinct file hashes. Copies and review assemblies are indexed
+1,800 distinct file hashes. Copies and review assemblies are indexed
 without counting them as unique usable props. Source stage and intended use
 remain attached to every entry.
 
