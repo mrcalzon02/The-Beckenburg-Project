@@ -1,0 +1,242 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-04": {
+      "before": {
+        "flat_links": 7,
+        "pass_both_directions": 2
+      },
+      "after": {
+        "flat_links": 7,
+        "pass_both_directions": 2
+      },
+      "current_lanes": {
+        "samples": 1902,
+        "valid_standing": 1574,
+        "invalid_standing": 328,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 26,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 15,
+          "NO_CENTRE_SUPPORT": 252,
+          "NO_FOOT_SUPPORT_0.22_0.0": 13,
+          "NO_FOOT_SUPPORT_0.0_0.22": 7,
+          "FOOT_HEIGHT_SPREAD": 3,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 12
+        },
+        "physical_components": [
+          [
+            "Authored stair end WLD-04 L04 0 high region0",
+            4
+          ],
+          [
+            "WLD-04 restart landing exposed end 10.5 rail 0",
+            4
+          ],
+          [
+            "WLD-04-restart-cab south indexed frame",
+            4
+          ],
+          [
+            "WLD-04 restart landing exposed end 10.5 rail 1",
+            3
+          ],
+          [
+            "121:L10 flight0 step1",
+            2
+          ],
+          [
+            "WLD-04-restart-cab east indexed frame",
+            2
+          ],
+          [
+            "WLD-04 restart cab east pier 0 0 region0",
+            2
+          ],
+          [
+            "WLD-04 restart L13 flight 60 rail 0",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 57 rail 0",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 57 rail 1",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 79 rail 0",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 79 rail 1",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 6456,
+        "valid_standing": 5922,
+        "invalid_standing": 534,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 132,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 27,
+          "NO_FOOT_SUPPORT_0.22_0.0": 33,
+          "NO_CENTRE_SUPPORT": 342
+        },
+        "physical_components": [
+          [
+            "349:level_blockout_hydro_turbine.001",
+            22
+          ],
+          [
+            "DAM-HALL-x-64-35--6 indexed frame",
+            18
+          ],
+          [
+            "WLD-09 middle landing column 68.22 34.25 region0",
+            18
+          ],
+          [
+            "WLD-09 middle landing column 65.78 35.75 region0",
+            9
+          ],
+          [
+            "WLD-09 middle landing column 68.22 35.75 region0",
+            9
+          ],
+          [
+            "WLD-09 middle landing column 65.78 34.25 region0",
+            9
+          ],
+          [
+            "WLD-09 rim column 68.22 31.5 region0",
+            9
+          ],
+          [
+            "WLD-09-restart-shared turbine workshop north indexed frame",
+            8
+          ],
+          [
+            "WLD-09 restart shared turbine workshop north pier 0 0 region0",
+            8
+          ],
+          [
+            "DAM-HALL-z-48-68-0 indexed frame",
+            4
+          ],
+          [
+            "WLD-09 contained lower flight 66.17 guard 0",
+            3
+          ],
+          [
+            "WLD-09 contained lower flight 67.83 guard 0",
+            3
+          ],
+          [
+            "WLD-09 contained upper flight 66.17 guard 4",
+            3
+          ],
+          [
+            "WLD-09 contained upper flight 67.83 guard 4",
+            3
+          ],
+          [
+            "WLD-09 restart workshop east end pier region0",
+            3
+          ],
+          [
+            "WLD-09 hall E pier0 region0",
+            3
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-04": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-interface-construction-pass/wld-04/construction.json",
+        "contract_sha256": "2ae93c4fa892bf453eb2e26d519cde6057df2c2990e82cbcc7ba8807f63ae303",
+        "layout": "development/levels/rebuild/stair-interface-construction-pass/wld-04/authored-layout.json",
+        "layout_sha256": "50c8e710135b36abda5022e6e13fc5ac8b14f72e8ebba79f28a507ba258b5b96",
+        "native": "development/levels/rebuild/stair-interface-construction-pass/wld-04/joined-stairs.hcs2",
+        "native_sha256": "bceea053dbb4c618c7c83a0dc4886a674cfcd00bd304836b3686338497e58207"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/architectural-restart-pass/wld-04/construction.json",
+        "contract_sha256": "9533cad199a1cbe7a3d3d64d4756a5f390706f4c191f48070224323f31a448ce",
+        "layout": "development/levels/rebuild/architectural-restart-pass/wld-04/authored-layout.json",
+        "layout_sha256": "2a8aba794a4f2c43103fb6958149f27caaf682bc0d49125b693cd91d180f6847",
+        "native": "development/levels/rebuild/architectural-restart-pass/wld-04/reconstructed.hcs2",
+        "native_sha256": "784d56c55fb32f894cd07e35b73d0c92fb7a83040e336b959db62d661a40532a"
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "contract": "development/levels/rebuild/dam-contained-stair-pass/wld-09/construction.json",
+        "contract_sha256": "dd0cc09142848efaa9a644874f4b4a6c15cf39eb8c5ba5d463e29f512332f92c",
+        "layout": "development/levels/rebuild/dam-contained-stair-pass/wld-09/authored-layout.json",
+        "layout_sha256": "ed50e02889d4c5af4afa03b83aa484ac466723d6ef47d00bea9863228cd100c1",
+        "native": "development/levels/rebuild/dam-contained-stair-pass/wld-09/contained-hall.hcs2",
+        "native_sha256": "55fcff00baae6c3f933f911163f815f23b65a41e587f19f1ba2d0373a8231b49"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/architectural-restart-pass/wld-09/construction.json",
+        "contract_sha256": "cbc0a462d62bfc09cf68ad5b7e64c4f77fbd5d9b94237372a521971be4513f55",
+        "layout": "development/levels/rebuild/architectural-restart-pass/wld-09/authored-layout.json",
+        "layout_sha256": "98c1ac82174fec59c9fd682f04f6b59e3d911ffd640b483d80cb4dee7b6324e7",
+        "native": "development/levels/rebuild/architectural-restart-pass/wld-09/reconstructed.hcs2",
+        "native_sha256": "13f539d589dd329d5938373fbbb8ec3e3dbedcca0fd09f88569cdcc72e6bb4fd"
+      }
+    }
+  },
+  "complete_link_regressions": [
+    {
+      "site": "WLD-04",
+      "link": "L12",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-04",
+      "link": "L12",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_1_AT_34_OF_41"
+    }
+  ],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "2544d2a6bd5fb459800ff8cbf3badc779e5b42b6ac1bafd6d6b3312ac67bf43a",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/dam-contained-stair-pass/roster.json": "b215e44ec957f779ce0dde186c37d34571eacb5f4760bb0b7f000b2c1559e8ec"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/architectural-restart-pass/verification/flat/current-flat-failure-contacts.tsv": "e53d1dbf098a62d2d9ee274b7b08d468ed5f6ad92faf1882459a95d6e14402f4",
+    "development/levels/rebuild/architectural-restart-pass/verification/flat/current-flat-failure-input.tsv": "bacb700d54a2da7bee2ead12c992c661d3a2dc1818b3a03cb29f85f33782f7ce",
+    "development/levels/rebuild/architectural-restart-pass/verification/flat/current-flat-lane-input.tsv": "b856a6a8a23d4a98c10303b348ec76d67543d0e088d74037217f6e4d5ff8f1e6",
+    "development/levels/rebuild/architectural-restart-pass/verification/flat/current-flat-lane-names.tsv": "e2f3be3380093bc2d9d99270ac6f68420ab7cb78a68cc3202dfe2291c3befddc",
+    "development/levels/rebuild/architectural-restart-pass/verification/flat/current-flat-lanes.tsv": "a4e522dfbbbb9c06eab717cc909a76fa23e3e4d494d9471441c8eda2d75e678a",
+    "development/levels/rebuild/architectural-restart-pass/verification/flat/current-flat-links.tsv": "05261ea5177d48ce8329e86444135278af08b9398985c551bbd0991a65daf74f",
+    "development/levels/rebuild/architectural-restart-pass/verification/flat/current-flat-names.tsv": "b14fdde43dedb2b2e2e935532ed827ca26e5422e93f0e36ddeb51fd5918dc44f",
+    "development/levels/rebuild/architectural-restart-pass/verification/flat/current-flat-paths.tsv": "217deede9be53b0cf72f95f92347d9c62c015d0fdbe83cdc7ebc066846be117c"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

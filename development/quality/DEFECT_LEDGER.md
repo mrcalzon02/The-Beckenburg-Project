@@ -7348,15 +7348,15 @@ Older-map obligation: Recheck full width and adjoining lower routes after guards
 
 ### DEV-519 — Lookout retains exposed older platforms and oversized lower stair masses
 
-**Status:** OPEN_RETAINED_OLDER_CONSTRUCTION · **Affected:** WLD-04 older L13, turn/cab exterior platforms and five ground links
+**Status:** TOWER_ASSEMBLY_RECONSTRUCTED_NATIVE_GROUND_AND_RUNTIME_OPEN · **Affected:** WLD-04 older L13, turn/cab exterior platforms and five ground links
 
 Current native views show an older exposed blue exterior platform, incomplete landing perimeter guards and the retained filled lower L13stair. This batch replaces only the two upper return flights and mounts their guards. Existing2/7ordinary links remain; five ground links and wider terrain/foundation/platform reconstruction remain open.
 
 Cause / uncertainty: Physical source geometry and independently replayed capsule/footprint interfaces; earlier primitive or construction-pilot assumptions were incomplete.
 
-Fix / next action: Preserve retained models and prior native records; use the actual constructed cells/interfaces and keep remaining older work explicit.
+Fix / next action: Replace the tower with one grounded braced frame, four regular switchback flights and supported landings/decks; full cab floor and normal floor-level doors. Retain older clearing/trail defects explicitly; no map acceptance.
 
-Evidence and verification: development/levels/rebuild/stair-interface-construction-pass/verification/checkpoint.json; source-and-structure-preservation.json; native movement reports and retained pilot logs.
+Evidence and verification: architectural-restart-pass/checkpoint.json; captures/architectural-restart-batch
 
 Older-map obligation: Audit older lookout decks, actual wall/platform receivers, guards and geographic approaches before accepting the site.
 
@@ -7401,6 +7401,48 @@ Fix / next action: Keep active guides and exact failed comparisons visible. Next
 Evidence and verification: dam-contained-stair-pass/verification/stairs/stair-movement.json; complete-route-sweeps.tsv
 
 Older-map obligation: Do not suppress regressions, seal/delete active routes or reuse diagonal ramp solids to manufacture passage.
+
+### DEV-523 — Lookout clearing route strips concealed broken stair-end and ground joins
+
+**Status:** OPEN_BLOCKS_LOOKOUT_GROUND_ACCEPTANCE · **Affected:** WLD-04 L12 and older L04/L11 clearing landing fragments
+
+After obsolete L05/L07/L12 study strips were quarantined, L12 loses two previously passing directions. Existing stair-end fragments are above the saved ground and collide with the new actual-ground approach. Tower entry, four-flight climb, top gallery and cab/deck pass both ways; this does not close the geographic approach.
+
+Cause / uncertainty: Earlier route-derived pads and landing fragments concealed incompatible saved terrain and walking datums.
+
+Fix / next action: Next reserve a complete clearing/trail arrival and stair bay together, replace old landing fragments and reconstruct the saved geographic join. Do not restore route ribbons, flatten around a guidance line, weaken collision or suppress failed controls.
+
+Evidence and verification: architectural-restart-pass/verification/flat/current-flat-movement.json; current-flat-failure-contacts.tsv; checkpoint.json
+
+Older-map obligation: Audit all earlier route pads, terrain joins and vertical approaches independently before acceptance.
+
+### DEV-524 — Dam workshop retained diagonal ceiling wounds and duplicate shared-wall halves
+
+**Status:** SCOPED_GEOMETRY_RECONSTRUCTED_RUNTIME_OPEN · **Affected:** WLD-09 workshop roof, turbine/workshop shared wall and normal doorway
+
+Actual latest source had multiple fractured ceiling polygons and two overlapping rough faces at the same common wall. Replaced by a full 0.30m roof and one 0.24m thick common wall with an indexed doorway at the -6m floor; reauthored approaches use that door. Existing source props and all unaffected map records remain exact.
+
+Cause / uncertainty: Old stair cuts and duplicate room shells survived successive passing movement iterations.
+
+Fix / next action: Inspect full workshop enclosure and normal standing-height doorway, preserve remaining Dam emergency/spillway failures and full runtime integration gates.
+
+Evidence and verification: architectural-restart-pass/wld-09/export-verification.json; captures/architectural-restart-batch/wld-09-workshop-standing.png; workshop-section.png
+
+Older-map obligation: Audit original ceiling cuts and duplicate shared walls at every remaining site.
+
+### DEV-525 — New rotated tower frame export initially disagreed with native triangles
+
+**Status:** FIXED_SCOPED_EXPORT_NATIVE_PARITY · **Affected:** Architectural restart tower stringers and frame members
+
+Independent exported reimport rejected the first rotated stringer triangles. Applying world transforms to the newly generated frame members before export resolved exact GLB/native face comparison; all180 new solids are closed/positive and agree.
+
+Cause / uncertainty: Unbaked object transforms produced float representation differences between native serialization and glTF transform reconstruction.
+
+Fix / next action: Bake transforms only on newly generated frame members; preserve original library nodes, pivots, UVs and buffers unchanged. Final independent export check passes.
+
+Evidence and verification: architectural-restart-pass/wld-04/export-verification.json; tools/build_architectural_restart.py; tools/review_architectural_restart.py
+
+Older-map obligation: Verify native/exported actual transformed coordinates rather than assuming matching bounds imply identical surfaces.
 
 ## Required audit categories
 

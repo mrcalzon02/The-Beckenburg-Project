@@ -17,7 +17,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/dam-contained-stair-batch/' in path:
+    if '/architectural-restart-batch/' in path:
+        kind='Rejected native generated architecture before replacement; source history retained' if 'rejected-before' in p.name else 'Native reconstructed tower/frame or Dam workshop; ordinary standing-height source views, section hides terrain/overhead layers only; unresolved ground/emergency/runtime gates, no playable acceptance'
+    elif '/dam-contained-stair-batch/' in path:
         kind='Native contained Dam stair construction; roof cutaway, walls/floors and upper well partitions hidden in load-path sections only; emergency/spillway and runtime gates open'
     elif '/terrain-ownership-construction-batch/' in path:
         kind='Native Dam bearing section; deck above -0.8m, ceiling caps and terrain hidden only for load-path inspection; older amber flights unfinished, no runtime acceptance' if 'bearing-section' in p.name else 'Native actual saved Motel Academy Dam terrain and full floors/arrival structures; roofs hidden, landscape and older stair/runtime gates open'

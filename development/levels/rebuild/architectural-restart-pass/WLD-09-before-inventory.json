@@ -1,0 +1,6344 @@
+[
+  {
+    "name": "Floor control",
+    "role": "floor",
+    "zone": "control",
+    "link": null,
+    "bounds": [
+      8.0,
+      34.0,
+      26.0,
+      48.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap control",
+    "role": "ceiling-cap",
+    "zone": "control",
+    "link": null,
+    "bounds": [
+      8.0,
+      34.0,
+      26.0,
+      48.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Header control N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      16.25,
+      33.91999816894531,
+      17.75,
+      34.08000183105469,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Header control S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      16.0,
+      47.91999816894531,
+      18.0,
+      48.08000183105469,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall control W",
+    "role": "rough shell wall",
+    "zone": "control",
+    "link": null,
+    "bounds": [
+      7.920000076293945,
+      34.0,
+      8.079999923706055,
+      48.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall control E",
+    "role": "rough shell wall",
+    "zone": "control",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      34.0,
+      26.079999923706055,
+      48.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor office",
+    "role": "floor",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      8.0,
+      22.0,
+      26.0,
+      34.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap office",
+    "role": "ceiling-cap",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      8.0,
+      22.0,
+      26.0,
+      34.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall office N",
+    "role": "rough shell wall",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      8.0,
+      21.920000076293945,
+      26.0,
+      22.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall office W",
+    "role": "rough shell wall",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      7.920000076293945,
+      22.0,
+      8.079999923706055,
+      34.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Header west-stair S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.0,
+      47.91999816894531,
+      32.0,
+      48.08000183105469,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor turbine",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      36.0,
+      22.0,
+      55.099998474121094,
+      23.5,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.001",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      36.0,
+      23.5,
+      55.099998474121094,
+      30.5,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.002",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      36.0,
+      30.5,
+      55.099998474121094,
+      41.849998474121094,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.003",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      36.0,
+      41.849998474121094,
+      55.099998474121094,
+      44.150001525878906,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.004",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      36.0,
+      44.150001525878906,
+      55.099998474121094,
+      48.0,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.005",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      55.099998474121094,
+      22.0,
+      56.900001525878906,
+      23.5,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.006",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      55.099998474121094,
+      30.5,
+      56.900001525878906,
+      41.849998474121094,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.007",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      55.099998474121094,
+      41.849998474121094,
+      56.900001525878906,
+      44.150001525878906,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.008",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      55.099998474121094,
+      44.150001525878906,
+      56.900001525878906,
+      48.0,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.009",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      56.900001525878906,
+      22.0,
+      58.0,
+      23.5,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.010",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      56.900001525878906,
+      23.5,
+      58.0,
+      30.5,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.011",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      56.900001525878906,
+      30.5,
+      58.0,
+      41.849998474121094,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.012",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      56.900001525878906,
+      41.849998474121094,
+      58.0,
+      44.150001525878906,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.013",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      56.900001525878906,
+      44.150001525878906,
+      58.0,
+      48.0,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.014",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      58.0,
+      22.0,
+      64.0,
+      23.5,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.015",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      58.0,
+      23.5,
+      64.0,
+      30.5,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.016",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      58.0,
+      30.5,
+      64.0,
+      41.849998474121094,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor turbine.017",
+    "role": "floor",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      58.0,
+      44.150001525878906,
+      64.0,
+      48.0,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Header turbine N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      44.25,
+      21.920000076293945,
+      45.75,
+      22.079999923706055,
+      -3.5500001907348633,
+      2.0
+    ]
+  },
+  {
+    "name": "Header turbine S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      44.25,
+      47.91999816894531,
+      45.75,
+      48.08000183105469,
+      -3.5500001907348633,
+      2.0
+    ]
+  },
+  {
+    "name": "Ceiling cap workshop",
+    "role": "ceiling-cap",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      36.0,
+      48.0,
+      44.28160095214844,
+      55.89800262451172,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Ceiling cap workshop.001",
+    "role": "ceiling-cap",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      36.0,
+      55.89800262451172,
+      44.28160095214844,
+      62.0,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Ceiling cap workshop.002",
+    "role": "ceiling-cap",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      44.28160095214844,
+      55.89800262451172,
+      54.0,
+      62.0,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Header workshop N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      44.25,
+      47.91999816894531,
+      45.75,
+      48.08000183105469,
+      -3.5500001907348633,
+      -3.0
+    ]
+  },
+  {
+    "name": "Wall workshop S",
+    "role": "rough shell wall",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      36.0,
+      61.91999816894531,
+      54.0,
+      62.08000183105469,
+      -6.0,
+      -3.0
+    ]
+  },
+  {
+    "name": "Wall workshop W",
+    "role": "rough shell wall",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      35.91999816894531,
+      48.0,
+      36.08000183105469,
+      62.0,
+      -6.0,
+      -3.0
+    ]
+  },
+  {
+    "name": "Floor gallery",
+    "role": "floor",
+    "zone": "gallery",
+    "link": null,
+    "bounds": [
+      36.0,
+      22.0,
+      64.0,
+      32.0,
+      -10.15999984741211,
+      -10.0
+    ]
+  },
+  {
+    "name": "Wall gallery N",
+    "role": "rough shell wall",
+    "zone": "gallery",
+    "link": null,
+    "bounds": [
+      36.0,
+      21.920000076293945,
+      64.0,
+      22.079999923706055,
+      -10.0,
+      -6.0
+    ]
+  },
+  {
+    "name": "Header gallery S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      42.25,
+      31.920000076293945,
+      43.75,
+      32.08000183105469,
+      -7.550000190734863,
+      -6.0
+    ]
+  },
+  {
+    "name": "Header gallery S.002",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      56.25,
+      31.920000076293945,
+      57.75,
+      32.08000183105469,
+      -7.550000190734863,
+      -6.0
+    ]
+  },
+  {
+    "name": "Wall gallery W",
+    "role": "rough shell wall",
+    "zone": "gallery",
+    "link": null,
+    "bounds": [
+      35.91999816894531,
+      22.0,
+      36.08000183105469,
+      32.0,
+      -10.0,
+      -6.0
+    ]
+  },
+  {
+    "name": "Wall gallery E",
+    "role": "rough shell wall",
+    "zone": "gallery",
+    "link": null,
+    "bounds": [
+      63.91999816894531,
+      22.0,
+      64.08000183105469,
+      32.0,
+      -10.0,
+      -6.0
+    ]
+  },
+  {
+    "name": "Floor valve",
+    "role": "floor",
+    "zone": "valve",
+    "link": null,
+    "bounds": [
+      36.0,
+      32.0,
+      50.0,
+      48.0,
+      -10.15999984741211,
+      -10.0
+    ]
+  },
+  {
+    "name": "Ceiling cap valve",
+    "role": "ceiling-cap",
+    "zone": "valve",
+    "link": null,
+    "bounds": [
+      36.0,
+      32.0,
+      50.0,
+      48.0,
+      -7.159999847412109,
+      -7.0
+    ]
+  },
+  {
+    "name": "Header valve N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      42.25,
+      31.920000076293945,
+      43.75,
+      32.08000183105469,
+      -7.550000190734863,
+      -7.0
+    ]
+  },
+  {
+    "name": "Wall valve S",
+    "role": "rough shell wall",
+    "zone": "valve",
+    "link": null,
+    "bounds": [
+      36.0,
+      47.91999816894531,
+      50.0,
+      48.08000183105469,
+      -10.0,
+      -7.0
+    ]
+  },
+  {
+    "name": "Wall valve W",
+    "role": "rough shell wall",
+    "zone": "valve",
+    "link": null,
+    "bounds": [
+      35.91999816894531,
+      32.0,
+      36.08000183105469,
+      48.0,
+      -10.0,
+      -7.0
+    ]
+  },
+  {
+    "name": "Header valve E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      49.91999816894531,
+      39.25,
+      50.08000183105469,
+      40.75,
+      -7.550000190734863,
+      -7.0
+    ]
+  },
+  {
+    "name": "Header return N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      56.25,
+      31.920000076293945,
+      57.75,
+      32.08000183105469,
+      -7.550000190734863,
+      -7.0
+    ]
+  },
+  {
+    "name": "Wall return S",
+    "role": "rough shell wall",
+    "zone": "return",
+    "link": null,
+    "bounds": [
+      50.0,
+      47.91999816894531,
+      64.0,
+      48.08000183105469,
+      -10.0,
+      -7.0
+    ]
+  },
+  {
+    "name": "Floor plant",
+    "role": "floor",
+    "zone": "plant",
+    "link": null,
+    "bounds": [
+      36.0,
+      8.0,
+      54.0,
+      22.0,
+      -6.159999847412109,
+      -6.0
+    ]
+  },
+  {
+    "name": "Ceiling cap plant",
+    "role": "ceiling-cap",
+    "zone": "plant",
+    "link": null,
+    "bounds": [
+      36.0,
+      8.0,
+      54.0,
+      22.0,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Wall plant N",
+    "role": "rough shell wall",
+    "zone": "plant",
+    "link": null,
+    "bounds": [
+      36.0,
+      7.920000076293945,
+      54.0,
+      8.079999923706055,
+      -6.0,
+      -3.0
+    ]
+  },
+  {
+    "name": "Header plant S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      44.25,
+      21.920000076293945,
+      45.75,
+      22.079999923706055,
+      -3.5500001907348633,
+      -3.0
+    ]
+  },
+  {
+    "name": "Wall plant W",
+    "role": "rough shell wall",
+    "zone": "plant",
+    "link": null,
+    "bounds": [
+      35.91999816894531,
+      8.0,
+      36.08000183105469,
+      22.0,
+      -6.0,
+      -3.0
+    ]
+  },
+  {
+    "name": "Wall plant E",
+    "role": "rough shell wall",
+    "zone": "plant",
+    "link": null,
+    "bounds": [
+      53.91999816894531,
+      8.0,
+      54.08000183105469,
+      22.0,
+      -6.0,
+      -3.0
+    ]
+  },
+  {
+    "name": "level_blockout_hydro_turbine.001",
+    "role": "placed source-library furnishing",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      52.79999923706055,
+      37.95000076293945,
+      55.20000076293945,
+      40.04999923706055,
+      -6.0,
+      -4.380000114440918
+    ]
+  },
+  {
+    "name": "level_blockout_console.001",
+    "role": "placed source-library furnishing",
+    "zone": "control",
+    "link": null,
+    "bounds": [
+      11.375999450683594,
+      34.15999984741211,
+      12.97599983215332,
+      34.90999984741211,
+      0.0,
+      1.534999966621399
+    ]
+  },
+  {
+    "name": "level_blockout_dam_valve_manifold.001",
+    "role": "placed source-library furnishing",
+    "zone": "valve",
+    "link": null,
+    "bounds": [
+      38.39200210571289,
+      32.15999984741211,
+      40.9119987487793,
+      32.8599967956543,
+      -10.0,
+      -8.109999656677246
+    ]
+  },
+  {
+    "name": "level_blockout_workbench.001",
+    "role": "placed source-library furnishing",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      39.34600067138672,
+      48.15999984741211,
+      41.09600067138672,
+      48.939998626708984,
+      -6.0,
+      -5.090000152587891
+    ]
+  },
+  {
+    "name": "level_blockout_archive_cabinet.001",
+    "role": "placed source-library furnishing",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      11.480000495910645,
+      22.15999984741211,
+      12.5600004196167,
+      22.687000274658203,
+      0.0,
+      2.0
+    ]
+  },
+  {
+    "name": "Bearing skirt 0000",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      8.0,
+      47.900001525878906,
+      10.0,
+      48.349998474121094,
+      -2.579892635345459,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0001",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      47.900001525878906,
+      12.0,
+      48.349998474121094,
+      -2.579892635345459,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0002",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      12.0,
+      47.900001525878906,
+      14.0,
+      48.349998474121094,
+      -2.579892635345459,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0003",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      14.0,
+      47.900001525878906,
+      16.0,
+      48.349998474121094,
+      -2.579892635345459,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0004",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      16.0,
+      47.900001525878906,
+      18.0,
+      48.349998474121094,
+      -2.579892635345459,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0005",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      47.900001525878906,
+      20.0,
+      48.349998474121094,
+      -2.579892635345459,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0006",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      20.0,
+      47.900001525878906,
+      22.0,
+      48.349998474121094,
+      -2.579892635345459,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0007",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      22.0,
+      47.900001525878906,
+      24.0,
+      48.349998474121094,
+      -2.579892635345459,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0008",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      24.0,
+      47.900001525878906,
+      26.0,
+      48.349998474121094,
+      -2.609189510345459,
+      -0.15999998152256012
+    ]
+  },
+  {
+    "name": "Bearing skirt 0009",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      7.650000095367432,
+      46.0,
+      8.100000381469727,
+      48.0,
+      -3.348580837249756,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0010",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      47.900001525878906,
+      28.0,
+      48.349998474121094,
+      -2.8269667625427246,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0011",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      28.0,
+      47.900001525878906,
+      30.0,
+      48.349998474121094,
+      -3.2050719261169434,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Restored ceiling-cap workshop 2 region0",
+    "role": "ceiling-cap",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      44.28160095214844,
+      48.0,
+      51.90910339355469,
+      54.10200119018555,
+      -3.1600000858306885,
+      -3.0
+    ]
+  },
+  {
+    "name": "Restored ceiling-cap workshop 2 region1",
+    "role": "ceiling-cap",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      44.28160095214844,
+      54.10200119018555,
+      45.7183952331543,
+      55.89800262451172,
+      -3.1600000858306885,
+      -3.0
+    ]
+  },
+  {
+    "name": "Restored ceiling-cap workshop 2 region2",
+    "role": "ceiling-cap",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      45.7183952331543,
+      49.27272033691406,
+      54.0,
+      55.89800262451172,
+      -3.1600000858306885,
+      -3.0
+    ]
+  },
+  {
+    "name": "Opened stair shell Wall turbine S.001",
+    "role": "rough shell wall",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      45.75,
+      47.91999816894531,
+      64.0,
+      48.08000183105469,
+      -6.0,
+      2.0
+    ]
+  },
+  {
+    "name": "Opened stair shell Wall workshop N.001",
+    "role": "rough shell wall",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      45.75,
+      47.91999816894531,
+      54.0,
+      48.08000183105469,
+      -6.0,
+      -3.0
+    ]
+  },
+  {
+    "name": "Bayed shell Opened stair shell Wall workshop E",
+    "role": "rough shell wall",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      53.91999816894531,
+      48.0,
+      54.08000183105469,
+      62.0,
+      -6.0,
+      -3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall control N",
+    "role": "rough shell wall",
+    "zone": "control",
+    "link": null,
+    "bounds": [
+      8.0,
+      33.91999816894531,
+      16.25,
+      34.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall control N.001",
+    "role": "rough shell wall",
+    "zone": "control",
+    "link": null,
+    "bounds": [
+      17.75,
+      33.91999816894531,
+      26.0,
+      34.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall control S",
+    "role": "rough shell wall",
+    "zone": "control",
+    "link": null,
+    "bounds": [
+      8.0,
+      47.91999816894531,
+      16.0,
+      48.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall control S.001",
+    "role": "rough shell wall",
+    "zone": "control",
+    "link": null,
+    "bounds": [
+      18.0,
+      47.91999816894531,
+      26.0,
+      48.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall turbine N",
+    "role": "rough shell wall",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      36.0,
+      21.920000076293945,
+      44.25,
+      22.079999923706055,
+      -6.0,
+      2.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall turbine N.001",
+    "role": "rough shell wall",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      45.75,
+      21.920000076293945,
+      64.0,
+      22.079999923706055,
+      -6.0,
+      2.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall gallery S",
+    "role": "rough shell wall",
+    "zone": "gallery",
+    "link": null,
+    "bounds": [
+      36.0,
+      31.920000076293945,
+      42.25,
+      32.08000183105469,
+      -10.0,
+      -6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall gallery S.001",
+    "role": "rough shell wall",
+    "zone": "gallery",
+    "link": null,
+    "bounds": [
+      43.75,
+      31.920000076293945,
+      56.25,
+      32.08000183105469,
+      -10.0,
+      -6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall gallery S.002",
+    "role": "rough shell wall",
+    "zone": "gallery",
+    "link": null,
+    "bounds": [
+      57.75,
+      31.920000076293945,
+      64.0,
+      32.08000183105469,
+      -10.0,
+      -6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall valve N",
+    "role": "rough shell wall",
+    "zone": "valve",
+    "link": null,
+    "bounds": [
+      36.0,
+      31.920000076293945,
+      42.25,
+      32.08000183105469,
+      -10.0,
+      -7.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall valve N.001",
+    "role": "rough shell wall",
+    "zone": "valve",
+    "link": null,
+    "bounds": [
+      43.75,
+      31.920000076293945,
+      50.0,
+      32.08000183105469,
+      -10.0,
+      -7.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall valve E",
+    "role": "rough shell wall",
+    "zone": "valve",
+    "link": null,
+    "bounds": [
+      49.91999816894531,
+      32.0,
+      50.08000183105469,
+      39.25,
+      -10.0,
+      -7.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall valve E.001",
+    "role": "rough shell wall",
+    "zone": "valve",
+    "link": null,
+    "bounds": [
+      49.91999816894531,
+      40.75,
+      50.08000183105469,
+      48.0,
+      -10.0,
+      -7.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall return N",
+    "role": "rough shell wall",
+    "zone": "return",
+    "link": null,
+    "bounds": [
+      50.0,
+      31.920000076293945,
+      56.25,
+      32.08000183105469,
+      -10.0,
+      -7.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall return N.001",
+    "role": "rough shell wall",
+    "zone": "return",
+    "link": null,
+    "bounds": [
+      57.75,
+      31.920000076293945,
+      64.0,
+      32.08000183105469,
+      -10.0,
+      -7.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall plant S",
+    "role": "rough shell wall",
+    "zone": "plant",
+    "link": null,
+    "bounds": [
+      36.0,
+      21.920000076293945,
+      44.25,
+      22.079999923706055,
+      -6.0,
+      -3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall plant S.001",
+    "role": "rough shell wall",
+    "zone": "plant",
+    "link": null,
+    "bounds": [
+      45.75,
+      21.920000076293945,
+      54.0,
+      22.079999923706055,
+      -6.0,
+      -3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Bayed shell Wall turbine S",
+    "role": "rough shell wall",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      36.0,
+      47.91999816894531,
+      44.25,
+      48.08000183105469,
+      -6.0,
+      2.0
+    ]
+  },
+  {
+    "name": "Flat route shell Bayed shell Wall workshop N",
+    "role": "rough shell wall",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      36.0,
+      47.91999816894531,
+      44.25,
+      48.08000183105469,
+      -6.0,
+      -3.0
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L01 0 -1 0",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L01",
+    "bounds": [
+      33.13999938964844,
+      80.0,
+      33.459999084472656,
+      82.0,
+      -0.3038467466831207,
+      0.6878100633621216
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L01 0 -1 1",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L01",
+    "bounds": [
+      33.13999938964844,
+      78.0,
+      33.459999084472656,
+      80.0,
+      -0.337881475687027,
+      0.6878100633621216
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L01 0 -1 2",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L01",
+    "bounds": [
+      33.13999938964844,
+      76.0,
+      33.459999084472656,
+      78.0,
+      -0.4080947935581207,
+      0.5995723009109497
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L01 1 -1 0",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L01",
+    "bounds": [
+      33.13999938964844,
+      74.25,
+      33.459999084472656,
+      76.0,
+      -0.4080909788608551,
+      0.5995723009109497
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L01 1 -1 1",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L01",
+    "bounds": [
+      33.13999938964844,
+      72.5,
+      33.459999084472656,
+      74.25,
+      -0.337881475687027,
+      0.6878100633621216
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L01 1 -1 2",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L01",
+    "bounds": [
+      33.13999938964844,
+      70.75,
+      33.459999084472656,
+      72.5,
+      -0.387594610452652,
+      0.6878100633621216
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L01 1 -1 3",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L01",
+    "bounds": [
+      33.13999938964844,
+      69.0,
+      33.459999084472656,
+      70.75,
+      -0.387594610452652,
+      0.5125705003738403
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L02 0 -1 0",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L02",
+    "bounds": [
+      33.216026306152344,
+      66.45606231689453,
+      33.97196578979492,
+      68.41824340820312,
+      -0.5751556158065796,
+      0.5989848375320435
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L02 0 -1 1",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L02",
+    "bounds": [
+      33.66047286987305,
+      64.56716918945312,
+      34.41640853881836,
+      66.52935028076172,
+      -0.5961517095565796,
+      0.5989848375320435
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L03 0 -1 4",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      30.41666603088379,
+      54.540000915527344,
+      32.33333206176758,
+      54.86000061035156,
+      -1.0527786016464233,
+      0.3134547472000122
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L03 0 -1 5",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      28.5,
+      54.540000915527344,
+      30.41666603088379,
+      54.86000061035156,
+      -0.5840591192245483,
+      0.6976443529129028
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L03 0 -1 6",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      26.58333396911621,
+      54.540000915527344,
+      28.5,
+      54.86000061035156,
+      -0.20028916001319885,
+      0.9462329149246216
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L03 0 -1 7",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      24.66666603088379,
+      54.540000915527344,
+      26.58333396911621,
+      54.86000061035156,
+      0.048696137964725494,
+      1.029358983039856
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L03 0 -1 8",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      22.75,
+      54.540000915527344,
+      24.66666603088379,
+      54.86000061035156,
+      0.13148650527000427,
+      1.039448857307434
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L03 0 -1 9",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      20.83333396911621,
+      54.540000915527344,
+      22.75,
+      54.86000061035156,
+      0.14151152968406677,
+      1.039448857307434
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L03 0 -1 10",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      18.91666603088379,
+      54.540000915527344,
+      20.83333396911621,
+      54.86000061035156,
+      0.14150771498680115,
+      1.039448857307434
+    ]
+  },
+  {
+    "name": "Retaining shoulder WLD-09 L03 0 -1 11",
+    "role": "terrain-rooted retaining shoulder",
+    "zone": null,
+    "link": "L03",
+    "bounds": [
+      17.0,
+      54.540000915527344,
+      18.91666603088379,
+      54.86000061035156,
+      0.14151152968406677,
+      1.039448857307434
+    ]
+  },
+  {
+    "name": "WLD-09 complete bridge arrival forecourt region0",
+    "role": "constructed bridge arrival forecourt",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      28.0,
+      56.0,
+      54.0,
+      66.0,
+      -0.6000000238418579,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 arrival bearing on workshop side wall 35.76 region0",
+    "role": "arrival load-bearing pier on original lower wall",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      35.7599983215332,
+      56.0,
+      36.2400016784668,
+      62.0,
+      -3.0999999046325684,
+      -0.6000000238418579
+    ]
+  },
+  {
+    "name": "WLD-09 arrival bearing on workshop side wall 53.76 region0",
+    "role": "arrival load-bearing pier on original lower wall",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      53.7599983215332,
+      56.0,
+      54.2400016784668,
+      62.0,
+      -3.0999999046325684,
+      -0.6000000238418579
+    ]
+  },
+  {
+    "name": "WLD-09 transverse arrival girder 57.85 region0",
+    "role": "arrival structural girder",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      35.7599983215332,
+      57.849998474121094,
+      54.2400016784668,
+      58.150001525878906,
+      -1.7999999523162842,
+      -0.6000000238418579
+    ]
+  },
+  {
+    "name": "WLD-09 transverse arrival girder 61.85 region0",
+    "role": "arrival structural girder",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      35.7599983215332,
+      61.849998474121094,
+      54.2400016784668,
+      62.150001525878906,
+      -1.7999999523162842,
+      -0.6000000238418579
+    ]
+  },
+  {
+    "name": "WLD-09 complete structural crest deck region0",
+    "role": "constructed dam crest deck",
+    "zone": "crest",
+    "link": null,
+    "bounds": [
+      8.0,
+      48.0,
+      72.0,
+      56.0,
+      -0.6000000238418579,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 crest bearing on workshop side wall 35.76 region0",
+    "role": "crest load-bearing pier on original lower wall",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      35.7599983215332,
+      49.75,
+      36.2400016784668,
+      55.0,
+      -3.0999999046325684,
+      -0.6000000238418579
+    ]
+  },
+  {
+    "name": "WLD-09 crest bearing on workshop side wall 53.76 region0",
+    "role": "crest load-bearing pier on original lower wall",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      53.7599983215332,
+      49.75,
+      54.2400016784668,
+      55.0,
+      -3.0999999046325684,
+      -0.6000000238418579
+    ]
+  },
+  {
+    "name": "WLD-09 transverse crest girder 49.85 region0",
+    "role": "crest structural girder",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      35.7599983215332,
+      49.849998474121094,
+      54.2400016784668,
+      50.150001525878906,
+      -1.7999999523162842,
+      -0.6000000238418579
+    ]
+  },
+  {
+    "name": "WLD-09 transverse crest girder 53.85 region0",
+    "role": "crest structural girder",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      35.7599983215332,
+      53.849998474121094,
+      54.2400016784668,
+      54.150001525878906,
+      -1.7999999523162842,
+      -0.6000000238418579
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard arrival west void edge 0",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      28.100000381469727,
+      55.86000061035156,
+      28.18000030517578,
+      57.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard arrival west void edge 1",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      28.100000381469727,
+      57.86000061035156,
+      28.18000030517578,
+      59.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard arrival west void edge 2",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      28.100000381469727,
+      59.86000061035156,
+      28.18000030517578,
+      61.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard arrival west void edge 3",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      28.100000381469727,
+      61.86000061035156,
+      28.18000030517578,
+      63.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard arrival west void edge 4",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      28.100000381469727,
+      63.86000061035156,
+      28.18000030517578,
+      65.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south west void edge 0",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      8.140000343322754,
+      55.81999969482422,
+      10.140000343322754,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south west void edge 1",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.140000343322754,
+      55.81999969482422,
+      12.140000343322754,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south west void edge 2",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      12.140000343322754,
+      55.81999969482422,
+      14.140000343322754,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south west void edge 3",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      14.140000343322754,
+      55.81999969482422,
+      16.139999389648438,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south west void edge 4",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      16.139999389648438,
+      55.81999969482422,
+      18.139999389648438,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south west void edge 5",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.139999389648438,
+      55.81999969482422,
+      20.139999389648438,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south west void edge 6",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      20.139999389648438,
+      55.81999969482422,
+      22.139999389648438,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south west void edge 7",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      22.139999389648438,
+      55.81999969482422,
+      24.139999389648438,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south west void edge 8",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      24.139999389648438,
+      55.81999969482422,
+      26.139999389648438,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south west void edge 9",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.139999389648438,
+      55.81999969482422,
+      28.139999389648438,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest west return 0",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      8.100000381469727,
+      48.13999938964844,
+      8.180000305175781,
+      50.06999969482422,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest west return 1",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      8.100000381469727,
+      50.06999969482422,
+      8.180000305175781,
+      52.0,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest west return 2",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      8.100000381469727,
+      52.0,
+      8.180000305175781,
+      53.93000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest west return 3",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      8.100000381469727,
+      53.93000030517578,
+      8.180000305175781,
+      55.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south east void edge 0",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      53.86000061035156,
+      55.81999969482422,
+      55.86000061035156,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south east void edge 1",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      55.86000061035156,
+      55.81999969482422,
+      57.86000061035156,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south east void edge 2",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      57.86000061035156,
+      55.81999969482422,
+      59.86000061035156,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south east void edge 3",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      59.86000061035156,
+      55.81999969482422,
+      61.86000061035156,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south east void edge 4",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      61.86000061035156,
+      55.81999969482422,
+      63.86000061035156,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south east void edge 5",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      63.86000061035156,
+      55.81999969482422,
+      65.86000061035156,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south east void edge 6",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.86000061035156,
+      55.81999969482422,
+      67.86000061035156,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south east void edge 7",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.86000061035156,
+      55.81999969482422,
+      69.86000061035156,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest south east void edge 8",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      69.86000061035156,
+      55.81999969482422,
+      71.86000061035156,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest east return 0",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      71.81999969482422,
+      48.13999938964844,
+      71.9000015258789,
+      50.06999969482422,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest east return 1",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      71.81999969482422,
+      50.06999969482422,
+      71.9000015258789,
+      52.0,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest east return 2",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      71.81999969482422,
+      52.0,
+      71.9000015258789,
+      53.93000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard crest east return 3",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      71.81999969482422,
+      53.93000030517578,
+      71.9000015258789,
+      55.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard arrival east void edge 0",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      53.81999969482422,
+      55.86000061035156,
+      53.900001525878906,
+      57.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard arrival east void edge 1",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      53.81999969482422,
+      57.86000061035156,
+      53.900001525878906,
+      59.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard arrival east void edge 2",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      53.81999969482422,
+      59.86000061035156,
+      53.900001525878906,
+      61.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard arrival east void edge 3",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      53.81999969482422,
+      61.86000061035156,
+      53.900001525878906,
+      63.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard arrival east void edge 4",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      53.81999969482422,
+      63.86000061035156,
+      53.900001525878906,
+      65.86000061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 0",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      36.0,
+      48.099998474121094,
+      37.92499923706055,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 1",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      37.92499923706055,
+      48.099998474121094,
+      39.849998474121094,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 2",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      39.849998474121094,
+      48.099998474121094,
+      41.775001525878906,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 3",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      41.775001525878906,
+      48.099998474121094,
+      43.70000076293945,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 4",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      43.70000076293945,
+      48.099998474121094,
+      45.625,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 5",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      45.625,
+      48.099998474121094,
+      47.54999923706055,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 6",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      47.54999923706055,
+      48.099998474121094,
+      49.474998474121094,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 7",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      49.474998474121094,
+      48.099998474121094,
+      51.400001525878906,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 8",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      51.400001525878906,
+      48.099998474121094,
+      53.32500076293945,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 9",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      53.32500076293945,
+      48.099998474121094,
+      55.25,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 10",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      55.25,
+      48.099998474121094,
+      57.17499923706055,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 11",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      57.17499923706055,
+      48.099998474121094,
+      59.099998474121094,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 12",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      59.099998474121094,
+      48.099998474121094,
+      61.025001525878906,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 13",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      61.025001525878906,
+      48.099998474121094,
+      62.95000076293945,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 14",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      62.95000076293945,
+      48.099998474121094,
+      64.875,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north west void edge 15",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      64.875,
+      48.099998474121094,
+      66.80000305175781,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north east void return 0",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      69.19999694824219,
+      48.099998474121094,
+      70.52999877929688,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard north east void return 1",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      70.52999877929688,
+      48.099998474121094,
+      71.86000061035156,
+      48.18000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard south west return 0",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      36.0,
+      55.81999969482422,
+      37.29999923706055,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard south west return 1",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      37.29999923706055,
+      55.81999969482422,
+      38.599998474121094,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard south east return 0",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      41.400001525878906,
+      55.81999969482422,
+      43.20000076293945,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard south east return 1",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      43.20000076293945,
+      55.81999969482422,
+      45.0,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard south east return 2",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      45.0,
+      55.81999969482422,
+      46.79999923706055,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard south east return 3",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      46.79999923706055,
+      55.81999969482422,
+      48.599998474121094,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard south east return 4",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      48.599998474121094,
+      55.81999969482422,
+      50.400001525878906,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard south east return 5",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      50.400001525878906,
+      55.81999969482422,
+      52.20000076293945,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 supported crest guard south east return 6",
+    "role": "indexed supported crest edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      52.20000076293945,
+      55.81999969482422,
+      54.0,
+      55.900001525878906,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight continuous stair waist",
+    "role": "continuous load-bearing stair waist",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      23.5,
+      56.900001525878906,
+      30.5,
+      -10.399999618530273,
+      -6.199999809265137
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      23.5,
+      56.900001525878906,
+      23.80434799194336,
+      -10.199999809265137,
+      -9.82608699798584
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      23.80434799194336,
+      56.900001525878906,
+      24.10869598388672,
+      -10.026086807250977,
+      -9.65217399597168
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      24.10869598388672,
+      56.900001525878906,
+      24.413043975830078,
+      -9.852173805236816,
+      -9.47826099395752
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      24.413043975830078,
+      56.900001525878906,
+      24.717391967773438,
+      -9.678260803222656,
+      -9.30434799194336
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      24.717391967773438,
+      56.900001525878906,
+      25.021739959716797,
+      -9.504347801208496,
+      -9.1304349899292
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      25.021739959716797,
+      56.900001525878906,
+      25.326086044311523,
+      -9.330434799194336,
+      -8.956521987915039
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      25.326086044311523,
+      56.900001525878906,
+      25.630434036254883,
+      -9.156521797180176,
+      -8.782608985900879
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      25.630434036254883,
+      56.900001525878906,
+      25.934782028198242,
+      -8.982608795166016,
+      -8.608695983886719
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      25.934782028198242,
+      56.900001525878906,
+      26.2391300201416,
+      -8.808695793151855,
+      -8.434782981872559
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      26.2391300201416,
+      56.900001525878906,
+      26.54347801208496,
+      -8.634782791137695,
+      -8.260869979858398
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      26.54347801208496,
+      56.900001525878906,
+      26.84782600402832,
+      -8.460869789123535,
+      -8.086956977844238
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      26.84782600402832,
+      56.900001525878906,
+      27.15217399597168,
+      -8.286956787109375,
+      -7.91304349899292
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      27.15217399597168,
+      56.900001525878906,
+      27.45652198791504,
+      -8.113043785095215,
+      -7.73913049697876
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      27.45652198791504,
+      56.900001525878906,
+      27.7608699798584,
+      -7.9391303062438965,
+      -7.5652174949646
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      27.7608699798584,
+      56.900001525878906,
+      28.065217971801758,
+      -7.765217304229736,
+      -7.3913044929504395
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      28.065217971801758,
+      56.900001525878906,
+      28.369565963745117,
+      -7.591304302215576,
+      -7.217391490936279
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      28.369565963745117,
+      56.900001525878906,
+      28.673913955688477,
+      -7.417391300201416,
+      -7.043478488922119
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread18",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      28.673913955688477,
+      56.900001525878906,
+      28.978260040283203,
+      -7.243478298187256,
+      -6.869565010070801
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread19",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      28.978260040283203,
+      56.900001525878906,
+      29.282608032226562,
+      -7.069565296173096,
+      -6.695652008056641
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread20",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      29.282608032226562,
+      56.900001525878906,
+      29.586956024169922,
+      -6.8956522941589355,
+      -6.5217390060424805
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread21",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      29.586956024169922,
+      56.900001525878906,
+      29.89130401611328,
+      -6.721739292144775,
+      -6.34782600402832
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread22",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      29.89130401611328,
+      56.900001525878906,
+      30.19565200805664,
+      -6.547826290130615,
+      -6.17391300201416
+    ]
+  },
+  {
+    "name": "WLD-09 L14 open-under service flight tread23",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L14",
+    "bounds": [
+      55.099998474121094,
+      30.19565200805664,
+      56.900001525878906,
+      30.5,
+      -6.373912811279297,
+      -6.0
+    ]
+  },
+  {
+    "name": "WLD-09 east platform soil-founded pier 72.5 38 region0",
+    "role": "native-soil founded landing pier",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      72.3499984741211,
+      37.849998474121094,
+      72.6500015258789,
+      38.150001525878906,
+      -8.063302993774414,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 east platform soil-founded pier 72.5 41.6 region0",
+    "role": "native-soil founded landing pier",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      72.3499984741211,
+      41.45000076293945,
+      72.6500015258789,
+      41.75,
+      -8.087667465209961,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 east platform soil-founded pier 72.5 46.5 region0",
+    "role": "native-soil founded landing pier",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      72.3499984741211,
+      46.349998474121094,
+      72.6500015258789,
+      46.650001525878906,
+      -7.588830471038818,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 east longitudinal platform girder region0",
+    "role": "landing structural girder",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      72.3499984741211,
+      36.25,
+      72.6500015258789,
+      47.5,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 east north transverse platform girder region0",
+    "role": "landing structural girder",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      69.19999694824219,
+      37.849998474121094,
+      72.6500015258789,
+      38.150001525878906,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 west return girder bearing into existing crest slab region0",
+    "role": "girder bearing into retained crest slab",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.1500015258789,
+      46.0,
+      67.44999694824219,
+      48.400001525878906,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 east south transverse platform girder region0",
+    "role": "landing structural girder",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.80000305175781,
+      47.04999923706055,
+      72.6500015258789,
+      47.349998474121094,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 mounted stair guard 91",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      56.86000061035156,
+      23.5,
+      56.939998626708984,
+      25.25,
+      -9.992500305175781,
+      -7.949999809265137
+    ]
+  },
+  {
+    "name": "WLD-09 mounted stair guard 92",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      56.86000061035156,
+      25.25,
+      56.939998626708984,
+      27.0,
+      -8.992500305175781,
+      -6.949999809265137
+    ]
+  },
+  {
+    "name": "WLD-09 mounted stair guard 93",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      56.86000061035156,
+      27.0,
+      56.939998626708984,
+      28.75,
+      -7.992499828338623,
+      -5.949999809265137
+    ]
+  },
+  {
+    "name": "WLD-09 mounted stair guard 94",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      56.86000061035156,
+      28.75,
+      56.939998626708984,
+      30.5,
+      -6.992499828338623,
+      -4.949999809265137
+    ]
+  },
+  {
+    "name": "WLD-09 mounted stair guard 95",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      55.060001373291016,
+      23.5,
+      55.13999938964844,
+      25.25,
+      -9.992500305175781,
+      -7.949999809265137
+    ]
+  },
+  {
+    "name": "WLD-09 mounted stair guard 96",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      55.060001373291016,
+      25.25,
+      55.13999938964844,
+      27.0,
+      -8.992500305175781,
+      -6.949999809265137
+    ]
+  },
+  {
+    "name": "WLD-09 mounted stair guard 97",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      55.060001373291016,
+      27.0,
+      55.13999938964844,
+      28.75,
+      -7.992499828338623,
+      -5.949999809265137
+    ]
+  },
+  {
+    "name": "WLD-09 mounted stair guard 98",
+    "role": "mounted indexed stair edge guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      55.060001373291016,
+      28.75,
+      55.13999938964844,
+      30.5,
+      -6.992499828338623,
+      -4.949999809265137
+    ]
+  },
+  {
+    "name": "WLD-09 east hall lower full floor region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "east-lower-stair",
+    "link": null,
+    "bounds": [
+      64.0,
+      22.0,
+      70.5,
+      48.0,
+      -6.300000190734863,
+      -6.0
+    ]
+  },
+  {
+    "name": "WLD-09 east hall upper floor and rectangular well region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "east-stair",
+    "link": null,
+    "bounds": [
+      64.0,
+      22.0,
+      70.5,
+      48.0,
+      -0.30000001192092896,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 east hall enclosed roof region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "east-stair",
+    "link": null,
+    "bounds": [
+      64.0,
+      22.0,
+      70.5,
+      48.0,
+      2.700000047683716,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 turbine enclosed roof region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "turbine",
+    "link": null,
+    "bounds": [
+      36.0,
+      22.0,
+      64.0,
+      48.0,
+      1.7000000476837158,
+      2.0
+    ]
+  },
+  {
+    "name": "WLD-09 retained external service catwalk region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "east-service-catwalk",
+    "link": null,
+    "bounds": [
+      70.5,
+      33.75,
+      73.19999694824219,
+      48.20000076293945,
+      -0.30000001192092896,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 restored workshop full floor region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "workshop",
+    "link": null,
+    "bounds": [
+      36.0,
+      48.0,
+      54.0,
+      62.0,
+      -6.300000190734863,
+      -6.0
+    ]
+  },
+  {
+    "name": "WLD-09 restored return full floor region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "return",
+    "link": null,
+    "bounds": [
+      50.0,
+      32.0,
+      64.0,
+      48.0,
+      -10.300000190734863,
+      -10.0
+    ]
+  },
+  {
+    "name": "WLD-09 closed old return escape roof region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "return",
+    "link": null,
+    "bounds": [
+      50.0,
+      32.0,
+      64.0,
+      48.0,
+      -7.300000190734863,
+      -7.0
+    ]
+  },
+  {
+    "name": "WLD-09 west hall lower full floor region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "west-lower-stair",
+    "link": null,
+    "bounds": [
+      26.0,
+      22.0,
+      36.0,
+      48.0,
+      -6.300000190734863,
+      -6.0
+    ]
+  },
+  {
+    "name": "WLD-09 west hall upper floor and rectangular well region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "west-stair",
+    "link": null,
+    "bounds": [
+      26.0,
+      22.0,
+      36.0,
+      48.0,
+      -0.30000001192092896,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 west hall enclosed roof region0",
+    "role": "contained stair hall floor or roof",
+    "zone": "west-stair",
+    "link": null,
+    "bounds": [
+      26.0,
+      22.0,
+      36.0,
+      48.0,
+      2.700000047683716,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall N end region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      64.0,
+      22.0,
+      70.5,
+      22.239999771118164,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall S pier0 region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      64.0,
+      47.7599983215332,
+      66.88400268554688,
+      48.0,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall S sill0 region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      66.88400268554688,
+      47.7599983215332,
+      69.11599731445312,
+      48.0,
+      -6.0,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall S header0 region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      66.88400268554688,
+      47.7599983215332,
+      69.11599731445312,
+      48.0,
+      2.462352991104126,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall S end region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      69.11599731445312,
+      47.7599983215332,
+      70.5,
+      48.0,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall W pier0 region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      64.0,
+      22.0,
+      64.23999786376953,
+      33.88399887084961,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall W header0 region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      64.0,
+      33.88399887084961,
+      64.23999786376953,
+      36.11600112915039,
+      -3.537647008895874,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall W end region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      64.0,
+      36.11600112915039,
+      64.23999786376953,
+      48.0,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall E pier0 region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      70.26000213623047,
+      22.0,
+      70.5,
+      46.3489990234375,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall E sill0 region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      70.26000213623047,
+      46.3489990234375,
+      70.5,
+      47.6510009765625,
+      -6.0,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall E header0 region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      70.26000213623047,
+      46.3489990234375,
+      70.5,
+      47.6510009765625,
+      2.2482352256774902,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 hall E end region0",
+    "role": "contained complete stair wall",
+    "zone": "hall",
+    "link": null,
+    "bounds": [
+      70.26000213623047,
+      47.6510009765625,
+      70.5,
+      48.0,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 turbine-east E pier0 region0",
+    "role": "contained complete stair wall",
+    "zone": "turbine-east",
+    "link": null,
+    "bounds": [
+      63.7599983215332,
+      22.0,
+      64.0,
+      33.88399887084961,
+      -6.0,
+      2.0
+    ]
+  },
+  {
+    "name": "WLD-09 turbine-east E header0 region0",
+    "role": "contained complete stair wall",
+    "zone": "turbine-east",
+    "link": null,
+    "bounds": [
+      63.7599983215332,
+      33.88399887084961,
+      64.0,
+      36.11600112915039,
+      -3.537647008895874,
+      2.0
+    ]
+  },
+  {
+    "name": "WLD-09 turbine-east E end region0",
+    "role": "contained complete stair wall",
+    "zone": "turbine-east",
+    "link": null,
+    "bounds": [
+      63.7599983215332,
+      36.11600112915039,
+      64.0,
+      48.0,
+      -6.0,
+      2.0
+    ]
+  },
+  {
+    "name": "WLD-09 return-east E end region0",
+    "role": "contained complete stair wall",
+    "zone": "return-east",
+    "link": null,
+    "bounds": [
+      63.7599983215332,
+      32.0,
+      64.0,
+      48.0,
+      -10.0,
+      -7.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall N end region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      26.0,
+      22.0,
+      36.0,
+      22.239999771118164,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall S pier0 region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      26.0,
+      47.7599983215332,
+      29.760000228881836,
+      48.0,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall S sill0 region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      29.760000228881836,
+      47.7599983215332,
+      32.2400016784668,
+      48.0,
+      -6.0,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall S header0 region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      29.760000228881836,
+      47.7599983215332,
+      32.2400016784668,
+      48.0,
+      2.462352991104126,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall S end region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      32.2400016784668,
+      47.7599983215332,
+      36.0,
+      48.0,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall W pier0 region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      26.0,
+      22.0,
+      26.239999771118164,
+      27.06999969482422,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall W sill0 region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      26.0,
+      27.06999969482422,
+      26.239999771118164,
+      28.93000030517578,
+      -6.0,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall W header0 region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      26.0,
+      27.06999969482422,
+      26.239999771118164,
+      28.93000030517578,
+      2.462352991104126,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall W end region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      26.0,
+      28.93000030517578,
+      26.239999771118164,
+      48.0,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall E pier0 region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      35.7599983215332,
+      22.0,
+      36.0,
+      33.88399887084961,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall E header0 region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      35.7599983215332,
+      33.88399887084961,
+      36.0,
+      36.11600112915039,
+      -3.537647008895874,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 west-hall E end region0",
+    "role": "contained complete stair wall",
+    "zone": "west-hall",
+    "link": null,
+    "bounds": [
+      35.7599983215332,
+      36.11600112915039,
+      36.0,
+      48.0,
+      -6.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 turbine-west W pier0 region0",
+    "role": "contained complete stair wall",
+    "zone": "turbine-west",
+    "link": null,
+    "bounds": [
+      36.0,
+      22.0,
+      36.2400016784668,
+      33.88399887084961,
+      -6.0,
+      2.0
+    ]
+  },
+  {
+    "name": "WLD-09 turbine-west W header0 region0",
+    "role": "contained complete stair wall",
+    "zone": "turbine-west",
+    "link": null,
+    "bounds": [
+      36.0,
+      33.88399887084961,
+      36.2400016784668,
+      36.11600112915039,
+      -3.537647008895874,
+      2.0
+    ]
+  },
+  {
+    "name": "WLD-09 turbine-west W end region0",
+    "role": "contained complete stair wall",
+    "zone": "turbine-west",
+    "link": null,
+    "bounds": [
+      36.0,
+      36.11600112915039,
+      36.2400016784668,
+      48.0,
+      -6.0,
+      2.0
+    ]
+  },
+  {
+    "name": "WLD-09 office-east E pier0 region0",
+    "role": "contained complete stair wall",
+    "zone": "office-east",
+    "link": null,
+    "bounds": [
+      25.760000228881836,
+      22.0,
+      26.0,
+      27.06999969482422,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 office-east E header0 region0",
+    "role": "contained complete stair wall",
+    "zone": "office-east",
+    "link": null,
+    "bounds": [
+      25.760000228881836,
+      27.06999969482422,
+      26.0,
+      28.93000030517578,
+      2.462352991104126,
+      3.0
+    ]
+  },
+  {
+    "name": "WLD-09 office-east E end region0",
+    "role": "contained complete stair wall",
+    "zone": "office-east",
+    "link": null,
+    "bounds": [
+      25.760000228881836,
+      28.93000030517578,
+      26.0,
+      34.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "DAM-HALL-z-48-68-0 indexed frame",
+    "role": "indexed contained hall doorway",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.88400268554688,
+      47.746665954589844,
+      69.11599731445312,
+      48.01333236694336,
+      0.0,
+      2.462352991104126
+    ]
+  },
+  {
+    "name": "DAM-HALL-x-64-35--6 indexed frame",
+    "role": "indexed contained hall doorway",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      63.733333587646484,
+      33.88399887084961,
+      64.26667022705078,
+      36.11600112915039,
+      -6.0,
+      -3.537647008895874
+    ]
+  },
+  {
+    "name": "DAM-HALL-x-70.5-47-0 indexed frame",
+    "role": "indexed contained hall doorway",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      70.24666595458984,
+      46.3489990234375,
+      70.51333618164062,
+      47.6510009765625,
+      0.0,
+      2.2482354640960693
+    ]
+  },
+  {
+    "name": "DAM-HALL-z-48-31-0 indexed frame",
+    "role": "indexed contained hall doorway",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.760000228881836,
+      47.746665954589844,
+      32.2400016784668,
+      48.01333236694336,
+      0.0,
+      2.462352991104126
+    ]
+  },
+  {
+    "name": "DAM-HALL-x-26-28-0 indexed frame",
+    "role": "indexed contained hall doorway",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.733333587646484,
+      27.06999969482422,
+      26.266666412353516,
+      28.93000030517578,
+      0.0,
+      2.462352991104126
+    ]
+  },
+  {
+    "name": "DAM-HALL-x-36-35--6 indexed frame",
+    "role": "indexed contained hall doorway",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      35.733333587646484,
+      33.88399887084961,
+      36.266666412353516,
+      36.11600112915039,
+      -6.0,
+      -3.537647008895874
+    ]
+  },
+  {
+    "name": "WLD-09 east hall flight0 inclined waist",
+    "role": "continuous contained stair waist",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.0999984741211,
+      25.0,
+      67.9000015258789,
+      34.099998474121094,
+      -6.400000095367432,
+      -3.200000047683716
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 0",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      25.0,
+      67.9000015258789,
+      25.535293579101562,
+      -6.199999809265137,
+      -5.823529243469238
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      25.535293579101562,
+      67.9000015258789,
+      26.070589065551758,
+      -6.023529529571533,
+      -5.647058963775635
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      26.070589065551758,
+      67.9000015258789,
+      26.60588264465332,
+      -5.8470587730407715,
+      -5.470588207244873
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      26.60588264465332,
+      67.9000015258789,
+      27.141176223754883,
+      -5.67058801651001,
+      -5.294117450714111
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      27.141176223754883,
+      67.9000015258789,
+      27.676469802856445,
+      -5.494117736816406,
+      -5.117647171020508
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      27.676469802856445,
+      67.9000015258789,
+      28.21176528930664,
+      -5.3176469802856445,
+      -4.941176414489746
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      28.21176528930664,
+      67.9000015258789,
+      28.747058868408203,
+      -5.141176700592041,
+      -4.764705657958984
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      28.747058868408203,
+      67.9000015258789,
+      29.282352447509766,
+      -4.964705944061279,
+      -4.588235378265381
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      29.282352447509766,
+      67.9000015258789,
+      29.81764793395996,
+      -4.788235187530518,
+      -4.411764621734619
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      29.81764793395996,
+      67.9000015258789,
+      30.352941513061523,
+      -4.611764907836914,
+      -4.235294342041016
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      30.352941513061523,
+      67.9000015258789,
+      30.888235092163086,
+      -4.435294151306152,
+      -4.058823585510254
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      30.888235092163086,
+      67.9000015258789,
+      31.42352867126465,
+      -4.258823394775391,
+      -3.882352828979492
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      31.42352867126465,
+      67.9000015258789,
+      31.958824157714844,
+      -4.082353115081787,
+      -3.7058823108673096
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      31.958824157714844,
+      67.9000015258789,
+      32.494117736816406,
+      -3.9058823585510254,
+      -3.529411792755127
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      32.494117736816406,
+      67.9000015258789,
+      33.02941131591797,
+      -3.7294118404388428,
+      -3.3529412746429443
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      33.02941131591797,
+      67.9000015258789,
+      33.56470489501953,
+      -3.552941083908081,
+      -3.1764705181121826
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      33.56470489501953,
+      67.9000015258789,
+      34.099998474121094,
+      -3.3764705657958984,
+      -3.0
+    ]
+  },
+  {
+    "name": "WLD-09 east hall flight1 inclined waist",
+    "role": "continuous contained stair waist",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.0999984741211,
+      35.900001525878906,
+      67.9000015258789,
+      45.0,
+      -3.4000000953674316,
+      -0.20000000298023224
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      35.900001525878906,
+      67.9000015258789,
+      36.43529510498047,
+      -3.200000047683716,
+      -2.8235294818878174
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 18",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      36.43529510498047,
+      67.9000015258789,
+      36.97058868408203,
+      -3.023529529571533,
+      -2.6470587253570557
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 19",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      36.97058868408203,
+      67.9000015258789,
+      37.505882263183594,
+      -2.8470587730407715,
+      -2.470588207244873
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 20",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      37.505882263183594,
+      67.9000015258789,
+      38.041175842285156,
+      -2.670588254928589,
+      -2.2941176891326904
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 21",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      38.041175842285156,
+      67.9000015258789,
+      38.57646942138672,
+      -2.4941177368164062,
+      -2.117647171020508
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 22",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      38.57646942138672,
+      67.9000015258789,
+      39.11176300048828,
+      -2.3176469802856445,
+      -1.941176414489746
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 23",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      39.11176300048828,
+      67.9000015258789,
+      39.64706039428711,
+      -2.141176462173462,
+      -1.7647058963775635
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 24",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      39.64706039428711,
+      67.9000015258789,
+      40.18235397338867,
+      -1.9647058248519897,
+      -1.5882352590560913
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 25",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      40.18235397338867,
+      67.9000015258789,
+      40.717647552490234,
+      -1.7882353067398071,
+      -1.4117647409439087
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 26",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      40.717647552490234,
+      67.9000015258789,
+      41.2529411315918,
+      -1.611764669418335,
+      -1.2352941036224365
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 27",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      41.2529411315918,
+      67.9000015258789,
+      41.78823471069336,
+      -1.4352941513061523,
+      -1.058823585510254
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 28",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      41.78823471069336,
+      67.9000015258789,
+      42.32352828979492,
+      -1.2588235139846802,
+      -0.8823529481887817
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 29",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      42.32352828979492,
+      67.9000015258789,
+      42.858821868896484,
+      -1.0823529958724976,
+      -0.7058823704719543
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 30",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      42.858821868896484,
+      67.9000015258789,
+      43.39411926269531,
+      -0.9058823585510254,
+      -0.529411792755127
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 31",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      43.39411926269531,
+      67.9000015258789,
+      43.929412841796875,
+      -0.729411780834198,
+      -0.3529411852359772
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 32",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      43.929412841796875,
+      67.9000015258789,
+      44.46470642089844,
+      -0.5529412031173706,
+      -0.1764705926179886
+    ]
+  },
+  {
+    "name": "WLD-09 contained main tread 33",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L09",
+    "bounds": [
+      66.0999984741211,
+      44.46470642089844,
+      67.9000015258789,
+      45.0,
+      -0.3764705955982208,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 closed low-head under-stair plinth",
+    "role": "closed low-head under-stair infill",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.0999984741211,
+      25.0,
+      67.9000015258789,
+      32.75,
+      -6.5,
+      -3.845054864883423
+    ]
+  },
+  {
+    "name": "WLD-09 east hall real intermediate landing region0",
+    "role": "contained stair hall floor or roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.0999984741211,
+      34.099998474121094,
+      67.9000015258789,
+      35.900001525878906,
+      -3.299999952316284,
+      -3.0
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing side bearing 65.78 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.66000366210938,
+      34.099998474121094,
+      65.9000015258789,
+      35.900001525878906,
+      -3.5999999046325684,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing column 65.78 34.25 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.66000366210938,
+      34.130001068115234,
+      65.9000015258789,
+      34.369998931884766,
+      -6.300000190734863,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing column 65.78 35.75 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.66000366210938,
+      35.630001068115234,
+      65.9000015258789,
+      35.869998931884766,
+      -6.300000190734863,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing side bearing 68.22 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      68.0999984741211,
+      34.099998474121094,
+      68.33999633789062,
+      35.900001525878906,
+      -3.5999999046325684,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing column 68.22 34.25 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      68.0999984741211,
+      34.130001068115234,
+      68.33999633789062,
+      34.369998931884766,
+      -6.300000190734863,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing column 68.22 35.75 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      68.0999984741211,
+      35.630001068115234,
+      68.33999633789062,
+      35.869998931884766,
+      -6.300000190734863,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing transverse bearing region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.77999877929688,
+      34.849998474121094,
+      68.22000122070312,
+      35.150001525878906,
+      -3.5999999046325684,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 upper floor rim girder 65.78 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.66000366210938,
+      22.0,
+      65.9000015258789,
+      48.0,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 rim column 65.78 31.5 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.66000366210938,
+      31.350000381469727,
+      65.9000015258789,
+      31.649999618530273,
+      -6.300000190734863,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 rim column 65.78 38.5 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.66000366210938,
+      38.349998474121094,
+      65.9000015258789,
+      38.650001525878906,
+      -6.300000190734863,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 upper floor rim girder 68.22 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      68.0999984741211,
+      22.0,
+      68.33999633789062,
+      48.0,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 rim column 68.22 31.5 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      68.0999984741211,
+      31.350000381469727,
+      68.33999633789062,
+      31.649999618530273,
+      -6.300000190734863,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 rim column 68.22 38.5 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      68.0999984741211,
+      38.349998474121094,
+      68.33999633789062,
+      38.650001525878906,
+      -6.300000190734863,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 waist bearing 31.5 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.77999877929688,
+      31.350000381469727,
+      68.22000122070312,
+      31.649999618530273,
+      -4.557142734527588,
+      -4.257143020629883
+    ]
+  },
+  {
+    "name": "WLD-09 waist bearing 38.5 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.77999877929688,
+      38.349998474121094,
+      68.22000122070312,
+      38.650001525878906,
+      -2.8428571224212646,
+      -2.5428571701049805
+    ]
+  },
+  {
+    "name": "WLD-09 catwalk cantilever 34 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      70.26000213623047,
+      33.849998474121094,
+      73.19999694824219,
+      34.150001525878906,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 catwalk cantilever 36 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      70.26000213623047,
+      35.849998474121094,
+      73.19999694824219,
+      36.150001525878906,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 catwalk cantilever 44 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      70.26000213623047,
+      43.849998474121094,
+      73.19999694824219,
+      44.150001525878906,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 catwalk cantilever 47 region0",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      70.26000213623047,
+      46.849998474121094,
+      73.19999694824219,
+      47.150001525878906,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 66.17 guard 0",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      25.0,
+      66.20999908447266,
+      26.81999969482422,
+      -5.995500087738037,
+      -4.349999904632568
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 66.17 guard 1",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      26.81999969482422,
+      66.20999908447266,
+      28.639999389648438,
+      -5.395500183105469,
+      -3.75
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 66.17 guard 2",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      28.639999389648438,
+      66.20999908447266,
+      30.459999084472656,
+      -4.795499801635742,
+      -3.1500000953674316
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 66.17 guard 3",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      30.459999084472656,
+      66.20999908447266,
+      32.279998779296875,
+      -4.195499897003174,
+      -2.549999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 66.17 guard 4",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      32.279998779296875,
+      66.20999908447266,
+      34.099998474121094,
+      -3.5954999923706055,
+      -1.9500000476837158
+    ]
+  },
+  {
+    "name": "WLD-09 contained middle landing 66.17 guard 0",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      34.099998474121094,
+      66.20999908447266,
+      35.900001525878906,
+      -3.0,
+      -1.9500000476837158
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 66.17 guard 0",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      35.900001525878906,
+      66.20999908447266,
+      37.720001220703125,
+      -2.995500087738037,
+      -1.350000023841858
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 66.17 guard 1",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      37.720001220703125,
+      66.20999908447266,
+      39.540000915527344,
+      -2.3954999446868896,
+      -0.7500000596046448
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 66.17 guard 2",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      39.540000915527344,
+      66.20999908447266,
+      41.36000061035156,
+      -1.7955000400543213,
+      -0.15000005066394806
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 66.17 guard 3",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      41.36000061035156,
+      66.20999908447266,
+      43.18000030517578,
+      -1.1955000162124634,
+      0.44999995827674866
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 66.17 guard 4",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      66.12999725341797,
+      43.18000030517578,
+      66.20999908447266,
+      45.0,
+      -0.5954999923706055,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 67.83 guard 0",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      25.0,
+      67.87000274658203,
+      26.81999969482422,
+      -5.995500087738037,
+      -4.349999904632568
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 67.83 guard 1",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      26.81999969482422,
+      67.87000274658203,
+      28.639999389648438,
+      -5.395500183105469,
+      -3.75
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 67.83 guard 2",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      28.639999389648438,
+      67.87000274658203,
+      30.459999084472656,
+      -4.795499801635742,
+      -3.1500000953674316
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 67.83 guard 3",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      30.459999084472656,
+      67.87000274658203,
+      32.279998779296875,
+      -4.195499897003174,
+      -2.549999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 67.83 guard 4",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      32.279998779296875,
+      67.87000274658203,
+      34.099998474121094,
+      -3.5954999923706055,
+      -1.9500000476837158
+    ]
+  },
+  {
+    "name": "WLD-09 contained middle landing 67.83 guard 0",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      34.099998474121094,
+      67.87000274658203,
+      35.900001525878906,
+      -3.0,
+      -1.9500000476837158
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 67.83 guard 0",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      35.900001525878906,
+      67.87000274658203,
+      37.720001220703125,
+      -2.995500087738037,
+      -1.350000023841858
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 67.83 guard 1",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      37.720001220703125,
+      67.87000274658203,
+      39.540000915527344,
+      -2.3954999446868896,
+      -0.7500000596046448
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 67.83 guard 2",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      39.540000915527344,
+      67.87000274658203,
+      41.36000061035156,
+      -1.7955000400543213,
+      -0.15000005066394806
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 67.83 guard 3",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      41.36000061035156,
+      67.87000274658203,
+      43.18000030517578,
+      -1.1955000162124634,
+      0.44999995827674866
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 67.83 guard 4",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      67.79000091552734,
+      43.18000030517578,
+      67.87000274658203,
+      45.0,
+      -0.5954999923706055,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 east well enclosed side 65.7 region0",
+    "role": "supported upper stairwell partition",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.69999694824219,
+      24.799999237060547,
+      65.9000015258789,
+      45.0,
+      0.0,
+      2.700000047683716
+    ]
+  },
+  {
+    "name": "WLD-09 east well enclosed side 68.1 region0",
+    "role": "supported upper stairwell partition",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      68.0999984741211,
+      24.799999237060547,
+      68.30000305175781,
+      45.0,
+      0.0,
+      2.700000047683716
+    ]
+  },
+  {
+    "name": "WLD-09 east well closed north end region0",
+    "role": "supported upper stairwell partition",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      65.69999694824219,
+      24.799999237060547,
+      68.30000305175781,
+      25.0,
+      0.0,
+      2.700000047683716
+    ]
+  },
+  {
+    "name": "WLD-09 west hall flight0 inclined waist west",
+    "role": "continuous contained stair waist",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.099998474121094,
+      25.0,
+      31.900001525878906,
+      34.099998474121094,
+      -6.400000095367432,
+      -3.200000047683716
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 0 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      25.0,
+      31.900001525878906,
+      25.535293579101562,
+      -6.199999809265137,
+      -5.823529243469238
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 1 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      25.535293579101562,
+      31.900001525878906,
+      26.070589065551758,
+      -6.023529529571533,
+      -5.647058963775635
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 2 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      26.070589065551758,
+      31.900001525878906,
+      26.60588264465332,
+      -5.8470587730407715,
+      -5.470588207244873
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 3 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      26.60588264465332,
+      31.900001525878906,
+      27.141176223754883,
+      -5.67058801651001,
+      -5.294117450714111
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 4 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      27.141176223754883,
+      31.900001525878906,
+      27.676469802856445,
+      -5.494117736816406,
+      -5.117647171020508
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 5 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      27.676469802856445,
+      31.900001525878906,
+      28.21176528930664,
+      -5.3176469802856445,
+      -4.941176414489746
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 6 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      28.21176528930664,
+      31.900001525878906,
+      28.747058868408203,
+      -5.141176700592041,
+      -4.764705657958984
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 7 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      28.747058868408203,
+      31.900001525878906,
+      29.282352447509766,
+      -4.964705944061279,
+      -4.588235378265381
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 8 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      29.282352447509766,
+      31.900001525878906,
+      29.81764793395996,
+      -4.788235187530518,
+      -4.411764621734619
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 9 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      29.81764793395996,
+      31.900001525878906,
+      30.352941513061523,
+      -4.611764907836914,
+      -4.235294342041016
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 10 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      30.352941513061523,
+      31.900001525878906,
+      30.888235092163086,
+      -4.435294151306152,
+      -4.058823585510254
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 11 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      30.888235092163086,
+      31.900001525878906,
+      31.42352867126465,
+      -4.258823394775391,
+      -3.882352828979492
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 12 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      31.42352867126465,
+      31.900001525878906,
+      31.958824157714844,
+      -4.082353115081787,
+      -3.7058823108673096
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 13 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      31.958824157714844,
+      31.900001525878906,
+      32.494117736816406,
+      -3.9058823585510254,
+      -3.529411792755127
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 14 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      32.494117736816406,
+      31.900001525878906,
+      33.02941131591797,
+      -3.7294118404388428,
+      -3.3529412746429443
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 15 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      33.02941131591797,
+      31.900001525878906,
+      33.56470489501953,
+      -3.552941083908081,
+      -3.1764705181121826
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 16 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      33.56470489501953,
+      31.900001525878906,
+      34.099998474121094,
+      -3.3764705657958984,
+      -3.0
+    ]
+  },
+  {
+    "name": "WLD-09 west hall flight1 inclined waist west",
+    "role": "continuous contained stair waist",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.099998474121094,
+      35.900001525878906,
+      31.900001525878906,
+      45.0,
+      -3.4000000953674316,
+      -0.20000000298023224
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 17 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      35.900001525878906,
+      31.900001525878906,
+      36.43529510498047,
+      -3.200000047683716,
+      -2.8235294818878174
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 18 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      36.43529510498047,
+      31.900001525878906,
+      36.97058868408203,
+      -3.023529529571533,
+      -2.6470587253570557
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 19 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      36.97058868408203,
+      31.900001525878906,
+      37.505882263183594,
+      -2.8470587730407715,
+      -2.470588207244873
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 20 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      37.505882263183594,
+      31.900001525878906,
+      38.041175842285156,
+      -2.670588254928589,
+      -2.2941176891326904
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 21 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      38.041175842285156,
+      31.900001525878906,
+      38.57646942138672,
+      -2.4941177368164062,
+      -2.117647171020508
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 22 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      38.57646942138672,
+      31.900001525878906,
+      39.11176300048828,
+      -2.3176469802856445,
+      -1.941176414489746
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 23 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      39.11176300048828,
+      31.900001525878906,
+      39.64706039428711,
+      -2.141176462173462,
+      -1.7647058963775635
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 24 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      39.64706039428711,
+      31.900001525878906,
+      40.18235397338867,
+      -1.9647058248519897,
+      -1.5882352590560913
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 25 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      40.18235397338867,
+      31.900001525878906,
+      40.717647552490234,
+      -1.7882353067398071,
+      -1.4117647409439087
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 26 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      40.717647552490234,
+      31.900001525878906,
+      41.2529411315918,
+      -1.611764669418335,
+      -1.2352941036224365
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 27 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      41.2529411315918,
+      31.900001525878906,
+      41.78823471069336,
+      -1.4352941513061523,
+      -1.058823585510254
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 28 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      41.78823471069336,
+      31.900001525878906,
+      42.32352828979492,
+      -1.2588235139846802,
+      -0.8823529481887817
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 29 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      42.32352828979492,
+      31.900001525878906,
+      42.858821868896484,
+      -1.0823529958724976,
+      -0.7058823704719543
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 30 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      42.858821868896484,
+      31.900001525878906,
+      43.39411926269531,
+      -0.9058823585510254,
+      -0.529411792755127
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 31 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      43.39411926269531,
+      31.900001525878906,
+      43.929412841796875,
+      -0.729411780834198,
+      -0.3529411852359772
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 32 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      43.929412841796875,
+      31.900001525878906,
+      44.46470642089844,
+      -0.5529412031173706,
+      -0.1764705926179886
+    ]
+  },
+  {
+    "name": "WLD-09 west contained main tread 33 west",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L07",
+    "bounds": [
+      30.099998474121094,
+      44.46470642089844,
+      31.900001525878906,
+      45.0,
+      -0.3764705955982208,
+      0.0
+    ]
+  },
+  {
+    "name": "WLD-09 closed low-head under-stair plinth west",
+    "role": "closed low-head under-stair infill",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.099998474121094,
+      25.0,
+      31.900001525878906,
+      32.75,
+      -6.5,
+      -3.845054864883423
+    ]
+  },
+  {
+    "name": "WLD-09 west hall real intermediate landing region0 west",
+    "role": "contained stair hall floor or roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.099998474121094,
+      34.099998474121094,
+      31.900001525878906,
+      35.900001525878906,
+      -3.299999952316284,
+      -3.0
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing side bearing 65.78 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.660003662109375,
+      34.099998474121094,
+      29.900001525878906,
+      35.900001525878906,
+      -3.5999999046325684,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing column 65.78 34.25 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.660003662109375,
+      34.130001068115234,
+      29.900001525878906,
+      34.369998931884766,
+      -6.300000190734863,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing column 65.78 35.75 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.660003662109375,
+      35.630001068115234,
+      29.900001525878906,
+      35.869998931884766,
+      -6.300000190734863,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing side bearing 68.22 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      32.099998474121094,
+      34.099998474121094,
+      32.339996337890625,
+      35.900001525878906,
+      -3.5999999046325684,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing column 68.22 34.25 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      32.099998474121094,
+      34.130001068115234,
+      32.339996337890625,
+      34.369998931884766,
+      -6.300000190734863,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing column 68.22 35.75 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      32.099998474121094,
+      35.630001068115234,
+      32.339996337890625,
+      35.869998931884766,
+      -6.300000190734863,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 middle landing transverse bearing region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.779998779296875,
+      34.849998474121094,
+      32.220001220703125,
+      35.150001525878906,
+      -3.5999999046325684,
+      -3.299999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 upper floor rim girder 65.78 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.660003662109375,
+      22.0,
+      29.900001525878906,
+      48.0,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 rim column 65.78 31.5 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.660003662109375,
+      31.350000381469727,
+      29.900001525878906,
+      31.649999618530273,
+      -6.300000190734863,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 rim column 65.78 38.5 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.660003662109375,
+      38.349998474121094,
+      29.900001525878906,
+      38.650001525878906,
+      -6.300000190734863,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 upper floor rim girder 68.22 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      32.099998474121094,
+      22.0,
+      32.339996337890625,
+      48.0,
+      -0.699999988079071,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 rim column 68.22 31.5 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      32.099998474121094,
+      31.350000381469727,
+      32.339996337890625,
+      31.649999618530273,
+      -6.300000190734863,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 rim column 68.22 38.5 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      32.099998474121094,
+      38.349998474121094,
+      32.339996337890625,
+      38.650001525878906,
+      -6.300000190734863,
+      -0.30000001192092896
+    ]
+  },
+  {
+    "name": "WLD-09 waist bearing 31.5 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.779998779296875,
+      31.350000381469727,
+      32.220001220703125,
+      31.649999618530273,
+      -4.557142734527588,
+      -4.257143020629883
+    ]
+  },
+  {
+    "name": "WLD-09 waist bearing 38.5 region0 west",
+    "role": "contained stair structural bearing",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.779998779296875,
+      38.349998474121094,
+      32.220001220703125,
+      38.650001525878906,
+      -2.8428571224212646,
+      -2.5428571701049805
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 66.17 guard 0 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      25.0,
+      30.209999084472656,
+      26.81999969482422,
+      -5.995500087738037,
+      -4.349999904632568
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 66.17 guard 1 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      26.81999969482422,
+      30.209999084472656,
+      28.639999389648438,
+      -5.395500183105469,
+      -3.75
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 66.17 guard 2 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      28.639999389648438,
+      30.209999084472656,
+      30.459999084472656,
+      -4.795499801635742,
+      -3.1500000953674316
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 66.17 guard 3 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      30.459999084472656,
+      30.209999084472656,
+      32.279998779296875,
+      -4.195499897003174,
+      -2.549999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 66.17 guard 4 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      32.279998779296875,
+      30.209999084472656,
+      34.099998474121094,
+      -3.5954999923706055,
+      -1.9500000476837158
+    ]
+  },
+  {
+    "name": "WLD-09 contained middle landing 66.17 guard 0 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      34.099998474121094,
+      30.209999084472656,
+      35.900001525878906,
+      -3.0,
+      -1.9500000476837158
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 66.17 guard 0 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      35.900001525878906,
+      30.209999084472656,
+      37.720001220703125,
+      -2.995500087738037,
+      -1.350000023841858
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 66.17 guard 1 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      37.720001220703125,
+      30.209999084472656,
+      39.540000915527344,
+      -2.3954999446868896,
+      -0.7500000596046448
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 66.17 guard 2 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      39.540000915527344,
+      30.209999084472656,
+      41.36000061035156,
+      -1.7955000400543213,
+      -0.15000005066394806
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 66.17 guard 3 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      41.36000061035156,
+      30.209999084472656,
+      43.18000030517578,
+      -1.1955000162124634,
+      0.44999995827674866
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 66.17 guard 4 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.12999725341797,
+      43.18000030517578,
+      30.209999084472656,
+      45.0,
+      -0.5954999923706055,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 67.83 guard 0 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      25.0,
+      31.87000274658203,
+      26.81999969482422,
+      -5.995500087738037,
+      -4.349999904632568
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 67.83 guard 1 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      26.81999969482422,
+      31.87000274658203,
+      28.639999389648438,
+      -5.395500183105469,
+      -3.75
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 67.83 guard 2 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      28.639999389648438,
+      31.87000274658203,
+      30.459999084472656,
+      -4.795499801635742,
+      -3.1500000953674316
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 67.83 guard 3 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      30.459999084472656,
+      31.87000274658203,
+      32.279998779296875,
+      -4.195499897003174,
+      -2.549999952316284
+    ]
+  },
+  {
+    "name": "WLD-09 contained lower flight 67.83 guard 4 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      32.279998779296875,
+      31.87000274658203,
+      34.099998474121094,
+      -3.5954999923706055,
+      -1.9500000476837158
+    ]
+  },
+  {
+    "name": "WLD-09 contained middle landing 67.83 guard 0 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      34.099998474121094,
+      31.87000274658203,
+      35.900001525878906,
+      -3.0,
+      -1.9500000476837158
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 67.83 guard 0 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      35.900001525878906,
+      31.87000274658203,
+      37.720001220703125,
+      -2.995500087738037,
+      -1.350000023841858
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 67.83 guard 1 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      37.720001220703125,
+      31.87000274658203,
+      39.540000915527344,
+      -2.3954999446868896,
+      -0.7500000596046448
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 67.83 guard 2 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      39.540000915527344,
+      31.87000274658203,
+      41.36000061035156,
+      -1.7955000400543213,
+      -0.15000005066394806
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 67.83 guard 3 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      41.36000061035156,
+      31.87000274658203,
+      43.18000030517578,
+      -1.1955000162124634,
+      0.44999995827674866
+    ]
+  },
+  {
+    "name": "WLD-09 contained upper flight 67.83 guard 4 west",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.790000915527344,
+      43.18000030517578,
+      31.87000274658203,
+      45.0,
+      -0.5954999923706055,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 west well enclosed side 65.7 region0 west",
+    "role": "supported upper stairwell partition",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.699996948242188,
+      24.799999237060547,
+      29.900001525878906,
+      45.0,
+      0.0,
+      2.700000047683716
+    ]
+  },
+  {
+    "name": "WLD-09 west well enclosed side 68.1 region0 west",
+    "role": "supported upper stairwell partition",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      32.099998474121094,
+      24.799999237060547,
+      32.30000305175781,
+      45.0,
+      0.0,
+      2.700000047683716
+    ]
+  },
+  {
+    "name": "WLD-09 west well closed north end region0 west",
+    "role": "supported upper stairwell partition",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.699996948242188,
+      24.799999237060547,
+      32.30000305175781,
+      25.0,
+      0.0,
+      2.700000047683716
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk outside guard 0",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      73.0199966430664,
+      33.88999938964844,
+      73.0999984741211,
+      35.661251068115234,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk outside guard 1",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      73.0199966430664,
+      35.661251068115234,
+      73.0999984741211,
+      37.432498931884766,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk outside guard 2",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      73.0199966430664,
+      37.432498931884766,
+      73.0999984741211,
+      39.20375061035156,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk outside guard 3",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      73.0199966430664,
+      39.20375061035156,
+      73.0999984741211,
+      40.974998474121094,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk outside guard 4",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      73.0199966430664,
+      40.974998474121094,
+      73.0999984741211,
+      42.74625015258789,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk outside guard 5",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      73.0199966430664,
+      42.74625015258789,
+      73.0999984741211,
+      44.51750183105469,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk outside guard 6",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      73.0199966430664,
+      44.51750183105469,
+      73.0999984741211,
+      46.28874969482422,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk outside guard 7",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      73.0199966430664,
+      46.28874969482422,
+      73.0999984741211,
+      48.060001373291016,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk north guard 0",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      70.63999938964844,
+      33.849998474121094,
+      71.8499984741211,
+      33.93000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk north guard 1",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      71.8499984741211,
+      33.849998474121094,
+      73.05999755859375,
+      33.93000030517578,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk south guard 0",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      70.63999938964844,
+      48.02000045776367,
+      71.8499984741211,
+      48.099998474121094,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 contained catwalk south guard 1",
+    "role": "indexed supported contained hall guard",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      71.8499984741211,
+      48.02000045776367,
+      73.05999755859375,
+      48.099998474121094,
+      0.0,
+      1.0499999523162842
+    ]
+  },
+  {
+    "name": "WLD-09 saved contained hall terrain",
+    "role": "saved editor terrain / contained stair hall",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      0.0,
+      -2.0,
+      85.0,
+      96.0,
+      -7.798947334289551,
+      2.600137233734131
+    ]
+  }
+]
