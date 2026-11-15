@@ -7444,6 +7444,76 @@ Evidence and verification: architectural-restart-pass/wld-04/export-verification
 
 Older-map obligation: Verify native/exported actual transformed coordinates rather than assuming matching bounds imply identical surfaces.
 
+### DEV-526 — Household and parish generated stair assemblies lacked coherent slab and wall ownership
+
+**Status:** TEN_STAIR_ASSEMBLIES_RECONSTRUCTED_NATIVE_VISUAL_RUNTIME_OPEN · **Affected:** FARMHOUSE L34/L35/L36; MANSION L58/L59/L60/L61; CHURCH L33/L34/L35
+
+Generated filled stair masses, mismatched receiving floor cuts, duplicate slabs and old wall pieces survived earlier route checks. Current construction replaces all ten complete flights within declared room bays, restores full-depth room floors/ceilings around independent rectangular wells, attaches waists and wall-bearing girders, and mounts indexed guards.
+
+Cause / uncertainty: Earlier construction treated route points and repeated patches as authority rather than the complete building elevations, footprints and stair bays.
+
+Fix / next action: Retain original source history and canonical models. Use the new exact architectural schedules and real level doors; keep every other map/source unaccepted until its own architectural inspection and shared runtime integration.
+
+Evidence and verification: household-sacred-bay-pass/checkpoint.json; export-verification.json; per-map quarantine.json; captures/household-sacred-bay-batch
+
+Older-map obligation: Audit all remaining stairs, actual floor/ceiling wells, doorway approaches and load paths visually, even if their centerline checks pass.
+
+### DEV-527 — Flat guidance entered a Farmhouse wall and crossed a Mansion cellar flight
+
+**Status:** FIXED_SCOPED_GUIDES_FOLLOW_REAL_ARCHITECTURE · **Affected:** FARMHOUSE L22 outdoor grounds-to-barn link; MANSION L54 cellar approach
+
+The old grounds link began inside the Farmhouse stair hall and left through the side of its rising flight. The cellar guide crossed diagonally into the new actual stair body. Initial final-geometry sweeps detected both; the exterior link now starts on the supported outdoor side, with its obsolete wall-crossing spur removed, and the cellar guide follows the real level aisle to its door.
+
+Cause / uncertainty: Old route labels/endpoints did not respect their actual architectural ownership or stair clearance.
+
+Fix / next action: Preserve both route identities and search-room contracts. Correct geometry causes and room ownership first; never punch a shortcut through the wall or replace the staircase to satisfy an old line. Final full routes pass both ways with no ordinary-link regressions.
+
+Evidence and verification: household-sacred-bay-pass/verification/flat/current-flat-links.tsv; authored-layout.json for Farmhouse/Mansion; checkpoint.json
+
+Older-map obligation: Check whether every outdoor route anchor is actually outdoors and every room approach stays clear of stair sides/undersides.
+
+### DEV-528 — Old wall caps and redundant pads showed through walking floors
+
+**Status:** FIXED_SCOPED_NATIVE_VISUAL_JOIN · **Affected:** Selected Farmhouse loft/main bays, Mansion gallery/service bays and Church stair/upper approach floors
+
+Standing-height review still showed coplanar stripes after native movement passed. Ten exact exported-mesh controls identified lower-storey wall/header tops at the upper walking face. 178 wall caps are now seated0.12m inside the floor slabs, retaining embed in both the new0.30m and old0.16m neighbour slabs. 8 fully floor-owned study solids were removed; Farmhouse hayloft has a complete supported floor. All ten after-controls have exactly one walking surface owner.
+
+Cause / uncertainty: Lower room wall heights were set to the walking Y above, while copied route pads and floor fragments overlapped the same top plane.
+
+Fix / next action: Use actual slab underside and embed depths for wall bearings. Retain unsupported/exterior candidates as explicit unaccepted work rather than inventing coverage from zone rectangles. Final standing loft/gallery images no longer show the identified seams.
+
+Evidence and verification: household-sacred-bay-pass/floor-overlap-before.json; floor-overlap-diagnostic.json; checkpoint.json; final loft-door-standing and grand-head-standing PNGs
+
+Older-map obligation: Audit wall/ceiling/floor joins at ordinary eye height across earlier maps. Passing body movement cannot expose coplanar optical defects.
+
+### DEV-529 — Clipping an old Church wall remnant produced a degenerate native triangle
+
+**Status:** FIXED_FINAL_NATIVE_LOAD_AND_EXPORT_PARITY · **Affected:** CHURCH retained wall fragments outside deliberate face replacement intervals
+
+The first exact old-wall clipping produced a collinear remnant triangle. Both the independent native triangle reader and actual AuthoredSitePhysics rejected it before publication.
+
+Cause / uncertainty: Old triangulation retained collinear vertices after the rectangular structural face interval was removed.
+
+Fix / next action: Dissolve collinear remnant edges, triangulate and reject open/inverted/degenerate geometry. Final independent exported GLB/native checks and current production physics loading pass. No collider tolerance or checker requirement changed.
+
+Evidence and verification: tools/build_household_sacred_bays.py; tools/review_household_sacred_bays.py; household-sacred-bay-pass/export-verification.json; native movement reports
+
+Older-map obligation: Retain exact native/export surface checks after wall/slab replacement; manifold bounds alone do not prove valid triangles.
+
+### DEV-530 — Household and parish whole-map acceptance remains open beyond the rebuilt bays
+
+**Status:** OPEN_REQUIRES_FURTHER_PHYSICAL_ROSTER_PASSES · **Affected:** FARMHOUSE, MANSION, CHURCH remaining geographic interfaces, door faces, props and shared runtime ownership
+
+The three maps retain 19 failing ordinary links outside this bounded stair reconstruction, and2402invalid broad shoulder/standing samples including older geometry and samples outside actual apertures. The final selected ten flights and ten complete stair routes pass both ways;87of106ordinary links pass, with no previously passing direction regressions. This is not whole-map or playable acceptance.
+
+Cause / uncertainty: Earlier map construction, real terrain approaches, source seals/props and runtime spatial integration have not all been reconstructed and reviewed together.
+
+Fix / next action: Continue actual map geometry passes across the remaining roster, then close renderer/collision/navigation/rooms/portals/acoustics/spawns/services, geographic/van and prop gates. Preserve canonical van, shared fog/sky, remote power/host breaker, hiding budgets and the held parent arrangement.
+
+Evidence and verification: household-sacred-bay-pass/checkpoint.json; verification/flat/current-flat-movement.json and failed contacts; existing roster authorities and defect records
+
+Older-map obligation: No other map receives acceptance from this batch. Revisit the Dam spillway/emergency, Lookout ground joins and all other unreviewed older assemblies individually.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

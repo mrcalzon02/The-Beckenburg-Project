@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10976,
+  "count": 10997,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -100844,6 +100844,216 @@
       "height": 200,
       "bytes": 30873,
       "sha256": "2258d97e973ac9e7b3d0aa6fe02ea2bcaf0f6d95c4cb1b588cbb4451f8c11103"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/church-belfry-cutaway.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/church-belfry-cutaway.png",
+      "title": "Church belfry cutaway",
+      "kind": "Native architectural bay cutaway; terrain, overhead layers and selected faces hidden only for load-path inspection; unfinished map/runtime gates",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1545903,
+      "sha256": "6237ffb4bd9c16020f80262c0b87fd897c707ec84cd3e09184fe86612051d4e7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/church-belfry-head-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/church-belfry-head-standing.png",
+      "title": "Church belfry head standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1662453,
+      "sha256": "df5d2b79e7db4eff29c9b3cf313b60e86846a98fc9cf003a1110b9a5b817a0ca"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/church-choir-cutaway.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/church-choir-cutaway.png",
+      "title": "Church choir cutaway",
+      "kind": "Native architectural bay cutaway; terrain, overhead layers and selected faces hidden only for load-path inspection; unfinished map/runtime gates",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1792944,
+      "sha256": "b769bc206a9fb6036440b2958a7e148798737418520752de135322f5c9c12023"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/church-choir-door-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/church-choir-door-standing.png",
+      "title": "Church choir door standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1545683,
+      "sha256": "a1a235d990ee1b5bf64084c161576eea4debf829f239b3ec41430a94144a5a46"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/church-choir-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/church-choir-standing.png",
+      "title": "Church choir standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1742699,
+      "sha256": "3f0179a32e8c64b9dd13f2003c57c19ec4339e39693419b61c5dbb3c35b8675e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/church-crypt-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/church-crypt-standing.png",
+      "title": "Church crypt standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1736146,
+      "sha256": "108e4c66f6246eb02b45324f5772be55ddac06c4774442fe6f6a6bc7a0d1f3f3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/church-rejected-before.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/church-rejected-before.png",
+      "title": "Church rejected before",
+      "kind": "Rejected native generated architecture before replacement; roofs hidden for inspection, original source retained",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1750619,
+      "sha256": "1c73af25db0a29d94f890c7aeffae18a3e9f1dee0f448c50bae9e9083de6c34c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-barn-cutaway.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-barn-cutaway.png",
+      "title": "Farmhouse barn cutaway",
+      "kind": "Native architectural bay cutaway; terrain, overhead layers and selected faces hidden only for load-path inspection; unfinished map/runtime gates",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1544214,
+      "sha256": "302f8c88c78808e8f70e67e8c2f248d1969effa69efbda50f82aa9741e841062"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-cellar-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-cellar-standing.png",
+      "title": "Farmhouse cellar standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1740616,
+      "sha256": "a5663a512265abf264e301fa4aa21f94fb5acbe988d26d4964177491250e2e55"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-house-cutaway.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-house-cutaway.png",
+      "title": "Farmhouse house cutaway",
+      "kind": "Native architectural bay cutaway; terrain, overhead layers and selected faces hidden only for load-path inspection; unfinished map/runtime gates",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1815711,
+      "sha256": "170e2f210b6ff0febb7087d4868b99527577c9f902ac54d1e4a88a94b42ce7ef"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-house-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-house-standing.png",
+      "title": "Farmhouse house standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1760248,
+      "sha256": "d9300b9bc77fcae6d31a8f1e4def2acee60abc589576b752959005f0f5374615"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-loft-door-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-loft-door-standing.png",
+      "title": "Farmhouse loft door standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1481727,
+      "sha256": "ab49c0b32d9036f77e53adb4b396a0ed5b215e40c413caf35d460e1d43517595"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-rejected-before.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-rejected-before.png",
+      "title": "Farmhouse rejected before",
+      "kind": "Rejected native generated architecture before replacement; roofs hidden for inspection, original source retained",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1267600,
+      "sha256": "45470a2b6831edbb3fb14cb5cc360b6dd2485188bd76895e74ef6b33a555b4ea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-upper-door-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/farmhouse-upper-door-standing.png",
+      "title": "Farmhouse upper door standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1505161,
+      "sha256": "307cc650ca38d254b4a7d6481548a4904c49c84d61c76f99cc89b98173bcc541"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-grand-cutaway.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-grand-cutaway.png",
+      "title": "Mansion grand cutaway",
+      "kind": "Native architectural bay cutaway; terrain, overhead layers and selected faces hidden only for load-path inspection; unfinished map/runtime gates",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1758989,
+      "sha256": "4841022a1d2d73b9cefdb7e1cb5a9083f96b39dea29bac537ba53bfb4f3a5492"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-grand-head-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-grand-head-standing.png",
+      "title": "Mansion grand head standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1443665,
+      "sha256": "c756d1c7402d0b991a1c3f294e5496159015fc3627a512bb12bce8f42a8a172c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-grand-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-grand-standing.png",
+      "title": "Mansion grand standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1760909,
+      "sha256": "3e9378d5af3fcd63f518848ccf602dd3a8915aabf169302124a3259db6674974"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-rejected-before.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-rejected-before.png",
+      "title": "Mansion rejected before",
+      "kind": "Rejected native generated architecture before replacement; roofs hidden for inspection, original source retained",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1524875,
+      "sha256": "e7e4c86dd94a15f71c42653ce4ec6d53b19bb043804c82dad58b483e09709aae"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-service-cutaway.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-service-cutaway.png",
+      "title": "Mansion service cutaway",
+      "kind": "Native architectural bay cutaway; terrain, overhead layers and selected faces hidden only for load-path inspection; unfinished map/runtime gates",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1526277,
+      "sha256": "afa95736f4c1fe6aa54e6f8be6fe5b4bf52d4de6083f2652731c68a91e5dfa2d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-service-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-service-standing.png",
+      "title": "Mansion service standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1750719,
+      "sha256": "045fac76c10e811c0e20b576d0339d82fc1459653f23274c055764f92c011c5c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-upper-service-door-standing.png",
+      "url": "development/levels/rebuild/captures/household-sacred-bay-batch/mansion-upper-service-door-standing.png",
+      "title": "Mansion upper service door standing",
+      "kind": "Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1502490,
+      "sha256": "ec1e552837a09ebf0e03ef426a7e78a59a0ef9ea7cf6e249c86f9593b6955d61"
     },
     {
       "path": "development/levels/rebuild/captures/institution-courts-batch/asylum.png",

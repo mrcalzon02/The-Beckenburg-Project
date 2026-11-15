@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2018,
-  "unique_local_file_hashes": 1847,
+  "local_files": 2021,
+  "unique_local_file_hashes": 1850,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 93,
+    "additional_custom_model_sources": 96,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 253
@@ -28489,6 +28489,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "6257ebe910743590fb079a06ebb4eac3d63247e201ad409c9e5b4302a9abdfcd",
       "bytes": 2869792
+    },
+    {
+      "id": "authored-bays",
+      "label": "authored-bays",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/household-sacred-bay-pass/church/authored-bays.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1c4da9a5d134fb1316286253fb61bd719f754a5766906dcfbe7d2d32d023bcfa",
+      "bytes": 1661448
+    },
+    {
+      "id": "authored-bays",
+      "label": "authored-bays",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/authored-bays.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "b637b12b0e330696ef84aeb7e0607917f62e0195c33116b6a95e2f11df2aa90d",
+      "bytes": 2355240
+    },
+    {
+      "id": "authored-bays",
+      "label": "authored-bays",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/household-sacred-bay-pass/mansion/authored-bays.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "482d043aecfe03c1bf1fdeb010bf95d1bfa6818bf3f770d8660e9d0064b6cec0",
+      "bytes": 2690500
     },
     {
       "id": "constructed-courts",

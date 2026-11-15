@@ -1,0 +1,203 @@
+{
+  "status": "CANDIDATE_STAIR_MOVEMENT_AUDIT_NOT_MAP_ACCEPTANCE",
+  "bindings": {
+    "CHURCH": {
+      "layout": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05",
+      "variants": {
+        "before_bearing": {
+          "contract": "413588eae6253e18653af97d3392c235f1d2c64d869678379ffa87ec95610ec4",
+          "physics": "cd59f34898b1a431da79a35abb6943d1133b3654860b526defba0cf0bcc014bf",
+          "glb": "84ee88f60592122265f88493ea1398331f1199dfc5133285320d2af346ecf9c1",
+          "layout": "a59c9747db58f7b573ac966b176e4b62b23440b4697fb7050bf27f146841d430"
+        },
+        "after_bearing": {
+          "contract": "413588eae6253e18653af97d3392c235f1d2c64d869678379ffa87ec95610ec4",
+          "physics": "b09df6f48933680654c099c624f27e4dd7d1c5de4ad342b55973a1a717af3f39",
+          "glb": "1c4da9a5d134fb1316286253fb61bd719f754a5766906dcfbe7d2d32d023bcfa",
+          "layout": "204aba4ece95387fbb06798b81882762c5fc2932c664f204d85d480bbb31111a"
+        }
+      }
+    },
+    "FARMHOUSE": {
+      "layout": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727",
+      "variants": {
+        "before_bearing": {
+          "contract": "186b7e460fda3998a76d8641fadbf3efbdd12a0f5f49df35b3cee870b8eb5509",
+          "physics": "901a74a9065d8eb3f7cc4f0004869f1210aab213ebfcae114b308d46c78041f9",
+          "glb": "2fbfec9b1ac463b2caba3d8dd38548eb7374783134490a5f1403762db758929e",
+          "layout": "c70b77cb435c9d129646cfb18902eb854d4525b7886b33a62a803ff2aaeaf35e"
+        },
+        "after_bearing": {
+          "contract": "186b7e460fda3998a76d8641fadbf3efbdd12a0f5f49df35b3cee870b8eb5509",
+          "physics": "fcfe5fc44ab2764dabd544596567363c312bebbacfe83010a247a56fb5bbd707",
+          "glb": "b637b12b0e330696ef84aeb7e0607917f62e0195c33116b6a95e2f11df2aa90d",
+          "layout": "076a7ffe8b34923c9c17eec7921e79888f238f11a54b41ca30299007cdb8fa4d"
+        }
+      }
+    },
+    "MANSION": {
+      "layout": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d",
+      "variants": {
+        "before_bearing": {
+          "contract": "554e541132fac3475ddd22360ecf6d46c822e4c23ad460059d007fee05912911",
+          "physics": "853da0dafd5668449f886bbdbbbfc2cf218aa8355e00f8ab84aad1eb69be6d8a",
+          "glb": "802cd08d8cdc6436021514f12191b770961a26b6bc0222e1811dc8bf270dd8c3",
+          "layout": "75e016d3e318419dee89e3a2a98d63ad1eca32aa32af458ad8b958499eb75790"
+        },
+        "after_bearing": {
+          "contract": "554e541132fac3475ddd22360ecf6d46c822e4c23ad460059d007fee05912911",
+          "physics": "bc2c380fb6ea20d9254833d74b3b24f1c8309f26668bb34da2fe2e17450cd494",
+          "glb": "482d043aecfe03c1bf1fdeb010bf95d1bfa6818bf3f770d8660e9d0064b6cec0",
+          "layout": "d0138056739b9275f771bbafa46a872881849f1c52e2969b37251a2df0d3fb3b"
+        }
+      }
+    }
+  },
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_roster_stairs.py": "b04282344fc8dd78526de5741a1c47b4a9377734e29e0c6adb2c92883a9f6ea7",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/architectural-restart-pass/roster.json": "aedb5a72db62a9f4021a2f4f4b57357f7930928f7d8f63b9b3bd9f603e89c77a",
+    "development/levels/rebuild/movement-chains.json": "36f6e9e7a913163fb457beee851a412b7584cff2be6ee55dbcd640ae662a6d4b"
+  },
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "sites": {
+    "before_bearing": {
+      "CHURCH": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "FARMHOUSE": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "MANSION": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      }
+    },
+    "after_bearing": {
+      "CHURCH": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "FARMHOUSE": {
+        "flights": 3,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 3,
+        "authored_down": 3
+      },
+      "MANSION": {
+        "flights": 4,
+        "legacy_up": 0,
+        "legacy_down": 0,
+        "authored_up": 4,
+        "authored_down": 4
+      }
+    }
+  },
+  "limitation": "Explicit stair sets are not yet connected to playable level ownership or replication. Failed complete flights remain blockers; centre support is not complete movement acceptance.",
+  "complete_routes": {
+    "before_bearing": {
+      "routes": 10,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 10,
+      "authored_reverse": 10
+    },
+    "after_bearing": {
+      "routes": 10,
+      "legacy_forward": 0,
+      "legacy_reverse": 0,
+      "authored_forward": 10,
+      "authored_reverse": 10
+    }
+  },
+  "bearing_regressions": {
+    "flights": [],
+    "complete_paths": []
+  },
+  "authored_routes": [],
+  "cross_link_chains": {
+    "bindings": [
+      {
+        "site": "FARMHOUSE",
+        "variant": "after_bearing",
+        "id": "CHAIN/L35/L34",
+        "links": [
+          "L35",
+          "L34"
+        ]
+      },
+      {
+        "site": "MANSION",
+        "variant": "before_bearing",
+        "id": "CHAIN/L59/L60/L61",
+        "links": [
+          "L59",
+          "L60",
+          "L61"
+        ]
+      },
+      {
+        "site": "MANSION",
+        "variant": "after_bearing",
+        "id": "CHAIN/L59/L60/L61",
+        "links": [
+          "L59",
+          "L60",
+          "L61"
+        ]
+      }
+    ],
+    "results": [
+      {
+        "site": "FARMHOUSE",
+        "variant": "after_bearing",
+        "link": "CHAIN/L35/L34",
+        "segments": "12",
+        "legacy_forward": "BLOCKED_SEGMENT_2_AT_6_OF_8",
+        "legacy_reverse": "BLOCKED_SEGMENT_1_AT_1_OF_48",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "MANSION",
+        "variant": "before_bearing",
+        "link": "CHAIN/L59/L60/L61",
+        "segments": "7",
+        "legacy_forward": "START_BLOCKED",
+        "legacy_reverse": "BLOCKED_SEGMENT_0_AT_1_OF_60",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      },
+      {
+        "site": "MANSION",
+        "variant": "after_bearing",
+        "link": "CHAIN/L59/L60/L61",
+        "segments": "21",
+        "legacy_forward": "BLOCKED_SEGMENT_2_AT_13_OF_15",
+        "legacy_reverse": "BLOCKED_SEGMENT_3_AT_1_OF_60",
+        "authored_forward": "PASS",
+        "authored_reverse": "PASS"
+      }
+    ],
+    "scope": "Maximal unique exact source-endpoint chains; ascending normalization, no invented inter-room segment. Other links retain separate complete-path checks."
+  },
+  "chain_scope": "Every active vertically changing link, with all intermediate flat landing segments and forward/reverse continuous position; no reinitialization at each segment. This does not cover the separate flat-only route network."
+}
