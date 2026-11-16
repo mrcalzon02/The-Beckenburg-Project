@@ -40,9 +40,8 @@ public final class EditorMaterialWorkspace extends JPanel {
     }
     private static final Visibility ALL=new Visibility(null,java.util.Set.of());
     private Visibility visibility=ALL;
-    private boolean refreshRows;
     private final Runnable visibilityChanged;
-    public int visibleFaces() { return faces.size(); }
+    public int visibleFaces() { return faces.getSize(); }
     public Visibility visibility() { return visibility; }
     public interface PencilAction { void preview(long face,List<Integer> texels,int color); }
     private PencilAction pencilAction;
@@ -66,7 +65,7 @@ public final class EditorMaterialWorkspace extends JPanel {
     }
     private int strokeColor;
     private final LongConsumer selection;
-    private final DefaultListModel<EditorTopologyProject.Face> faces=new DefaultListModel<>();
+    private final FaceRows faces=new FaceRows();
     private final JList<EditorTopologyProject.Face> faceList=new JList<>(faces);
     private boolean updating;
     private final JLabel status=new JLabel("Open a native model to inspect its material UVs");
@@ -79,7 +78,19 @@ public final class EditorMaterialWorkspace extends JPanel {
     }
     public EditorMaterialWorkspace(JComponent settings,JComponent runtime,JComponent commands,LongConsumer selection,Runnable visibilityChanged){
         super(new BorderLayout(8,8));this.selection=selection;this.visibilityChanged=visibilityChanged;setBorder(BorderFactory.createEmptyBorder(8,8,8,8));
-        faceList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);faceList.setCellRenderer(new DefaultListCellRenderer(){public Component getListCellRendererComponent(JList<?> list,Object value,int index,boolean selected,boolean focus){var label=(JLabel)super.getListCellRendererComponent(list,value,index,selected,focus);if(value instanceof EditorTopologyProject.Face f)label.setText("Face "+f.id()+" / "+f.part());return label;}});
+        faceList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        faceList.setCellRenderer(new DefaultListCellRenderer(){
+            @Override public Component getListCellRendererComponent(JList<?> list,Object value,int index,boolean selected,boolean focus) {
+                Object label=value instanceof EditorTopologyProject.Face face ? faceLabel(face) : value;
+                return super.getListCellRendererComponent(list,label,index,selected,focus);
+            }
+        });
+        faceList.addPropertyChangeListener(e -> {
+            if ("font".equals(e.getPropertyName()) || "UI".equals(e.getPropertyName())) {
+                faceList.setPrototypeCellValue(null);
+                fitFaceRows();
+            }
+        });
         faceList.addListSelectionListener(e->{if(!updating&&!e.getValueIsAdjusting()&&faceList.getSelectedValue()!=null)selection.accept(faceList.getSelectedValue().id());});
         var left=new JPanel(new BorderLayout(4,4));left.add(new JLabel("NATIVE FACE ASSIGNMENTS"),BorderLayout.NORTH);left.add(new JScrollPane(faceList),BorderLayout.CENTER);left.setPreferredSize(new Dimension(165,480));
         var visibilityControls=new JPanel(new GridLayout(0,1));
@@ -207,9 +218,98 @@ public final class EditorMaterialWorkspace extends JPanel {
             public void actionPerformed(ActionEvent event){if(control.isEnabled())control.doClick();}
         });
     }
+    private static String faceLabel(EditorTopologyProject.Face face) {
+        return "Face " + face.id() + " / " + face.part();
+    }
+
+    /** All rows are one line. Give Swing the widest visible label so its layout never renders
+     * the entire face list to measure a single UV change. */
+    private void fitFaceRows() {
+        var metrics=faceList.getFontMetrics(faceList.getFont());
+        EditorTopologyProject.Face widest=null;
+        int width=-1;
+        for (int row=0; row<faces.getSize(); row++) {
+            var face=faces.getElementAt(row);
+            int next=metrics.stringWidth(faceLabel(face));
+            if (next>width) { width=next; widest=face; }
+        }
+        faceList.setPrototypeCellValue(widest);
+    }
+
+    private final class FaceRows extends AbstractListModel<EditorTopologyProject.Face> {
+        private List<EditorTopologyProject.Face> source=List.of();
+        private Visibility filter=ALL;
+        private int[] visibleOrdinals;
+        private java.util.Map<Long,Integer> rowsById;
+
+        @Override public int getSize() { return visibleOrdinals==null ? source.size() : visibleOrdinals.length; }
+        @Override public EditorTopologyProject.Face getElementAt(int row) {
+            return source.get(visibleOrdinals==null ? row : visibleOrdinals[row]);
+        }
+        private int rowForOrdinal(int ordinal) {
+            return visibleOrdinals==null ? ordinal : java.util.Arrays.binarySearch(visibleOrdinals,ordinal);
+        }
+
+        private int rowOf(long id) {
+            int selected=faceList.getSelectedIndex();
+            if (selected>=0 && selected<getSize() && getElementAt(selected).id()==id) return selected;
+            if (id>=0 && id<source.size() && source.get((int)id).id()==id) return rowForOrdinal((int)id);
+            if (rowsById==null) {
+                rowsById=new java.util.HashMap<>();
+                for (int row=0;row<getSize();row++) rowsById.put(getElementAt(row).id(),row);
+            }
+            return rowsById.getOrDefault(id,-1);
+        }
+
+        private void update(List<EditorTopologyProject.Face> next, Visibility visibility) {
+            if (visibility.equals(filter)) {
+                if (source==next) return;
+                if (next.size()==source.size() && updateSameOrder(next)) return;
+            }
+            int oldSize=getSize();
+            var prototype=faceList.getPrototypeCellValue();
+            boolean widestStillVisible=next==source && !filter.filtered() && prototype!=null && visibility.includes(prototype.id());
+            source=next;
+            filter=visibility;
+            rowsById=null;
+            visibleOrdinals=null;
+            if (filter.filtered()) {
+                int[] ordinals=new int[filter.isolated()!=null ? 1 : source.size()];
+                int count=0;
+                for (int i=0;i<source.size();i++) {
+                    if (filter.includes(source.get(i).id())) ordinals[count++]=i;
+                }
+                visibleOrdinals=count==ordinals.length ? ordinals : java.util.Arrays.copyOf(ordinals,count);
+            }
+            if (!widestStillVisible) fitFaceRows();
+            int common=Math.min(oldSize,getSize());
+            if (oldSize>common) fireIntervalRemoved(this,common,oldSize-1);
+            if (getSize()>common) fireIntervalAdded(this,common,getSize()-1);
+            if (common>0) fireContentsChanged(this,0,common-1);
+        }
+
+        /** The state supplies immutable faces. Stable row IDs preserve filtering and sparse-ID lookup. */
+        private boolean updateSameOrder(List<EditorTopologyProject.Face> next) {
+            int first=-1, last=-1;
+            boolean labelChanged=false;
+            for (int i=0;i<next.size();i++) {
+                var old=source.get(i);
+                var face=next.get(i);
+                if (old==face) continue;
+                if (old.id()!=face.id()) return false;
+                if (!filter.includes(face.id())) continue;
+                if (first<0) first=i;
+                last=i;
+                if (!old.part().equals(face.part())) labelChanged=true;
+            }
+            source=next;
+            if (labelChanged) fitFaceRows();
+            if (first>=0) fireContentsChanged(this,rowForOrdinal(first),rowForOrdinal(last));
+            return true;
+        }
+    }
     private void filter(Visibility next) {
         visibility=next;
-        refreshRows=true;
         observe(state,selectedFace,material,false);
         visibilityChanged.run();
     }
@@ -224,9 +324,19 @@ public final class EditorMaterialWorkspace extends JPanel {
             !state.sourceFingerprint().equals(value.sourceFingerprint())){
             visibility=ALL;tileU.setValue(0);tileV.setValue(0);
         }
-        if(state!=value || refreshRows){state=value;refreshRows=false;updating=true;faces.clear();if(value!=null)for(var f:value.faces())if(visibility.includes(f.id()))faces.addElement(f);updating=false;}
-        selectedFace=face!=null && visibility.includes(face) ? face : null;
-        updating=true;faceList.clearSelection();for(int i=0;i<faces.size();i++)if(selectedFace!=null&&faces.get(i).id()==selectedFace)faceList.setSelectedIndex(i);updating=false;
+        state=value;
+        updating=true;
+        try {
+            faces.update(value==null ? List.of() : value.faces(),visibility);
+            int row=face==null || !visibility.includes(face) ? -1 : faces.rowOf(face);
+            selectedFace=row<0 ? null : face;
+            if (row!=faceList.getSelectedIndex()) {
+                if (row<0) faceList.clearSelection();
+                else faceList.setSelectedIndex(row);
+            }
+        } finally {
+            updating=false;
+        }
         isolate.setEnabled(!pending && selectedFace!=null);hide.setEnabled(isolate.isEnabled());showAll.setEnabled(!pending && visibility.filtered());
         boolean bound=selectedFace!=null && displayed!=null && faceList.getSelectedValue()!=null &&
             faceList.getSelectedValue().material().equals(displayed.key());
@@ -268,14 +378,14 @@ public final class EditorMaterialWorkspace extends JPanel {
                 }
             }finally{overlay.dispose();}
         }
-        if(state==null)return;for(int row=0;row<faces.size();row++){var face=faces.get(row);
+        if(state==null)return;for(int row=0;row<faces.getSize();row++){var face=faces.getElementAt(row);
             if(!displays(face))continue;
             boolean chosen=selectedFace!=null&&face.id()==selectedFace;g.setColor(chosen?new Color(255,219,80):new Color(220,235,248,140));g.setStroke(new BasicStroke(chosen?3:1));var corners=List.of(face.a(),face.b(),face.c());for(int i=0;i<3;i++){var a=corners.get(i);var b=corners.get((i+1)%3);g.drawLine(x(a.u(),r),y(a.v(),r),x(b.u(),r),y(b.v(),r));}
         }
         if(pinsVisible||seamsVisible){
             g.clipRect((int)r[0],(int)r[1],(int)Math.ceil(r[2])+1,(int)Math.ceil(r[3])+1);
-            for(int row=0;row<faces.size();row++){
-                var f=faces.get(row);if(!displays(f))continue;
+            for(int row=0;row<faces.getSize();row++){
+                var f=faces.getElementAt(row);if(!displays(f))continue;
                 int index=0;
                 var corners=List.of(f.a(),f.b(),f.c());for(var c:corners){
                     int px=x(c.u(),r),py=y(c.v(),r);
@@ -313,6 +423,6 @@ public final class EditorMaterialWorkspace extends JPanel {
         double x=(point.x-r[0])/r[2],y=(point.y-r[1])/r[3];
         if(x<0 || x>1 || y<0 || y>1)return;
         double u=tile.nativeU(x,material),v=tile.nativeV(y,material);
-        for(int i=faces.size()-1;i>=0;i--){var f=faces.get(i);if(material==null?!f.material().isEmpty():!f.material().equals(material.key()))continue;if(EditorUvTile.contains(f,u,v)){selection.accept(f.id());return;}}
+        for(int i=faces.getSize()-1;i>=0;i--){var f=faces.getElementAt(i);if(material==null?!f.material().isEmpty():!f.material().equals(material.key()))continue;if(EditorUvTile.contains(f,u,v)){selection.accept(f.id());return;}}
     }
 }
