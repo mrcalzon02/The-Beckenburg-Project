@@ -1,0 +1,54 @@
+before-dense
+PASS exact UV and seam checks on every edit; full mesh and topology parity after final commit
+java=17.0.21+9 maxHeap=268435456 triangles=120000 vertices=60501 warmups=4 samples=8
+preview-create,review-geometry,apply-observe,total,isolated-topology (thread-allocated bytes)
+[1922128, 7688688, 80, 9610896, 5760400]
+[1922128, 7688688, 80, 9610896, 5760400]
+[1922096, 7688656, 80, 9610832, 5760400]
+[1922064, 7688656, 80, 9610800, 5760400]
+[1922064, 7688656, 80, 9610800, 5760400]
+[1922064, 7688656, 80, 9610800, 5760400]
+[1922064, 7688656, 80, 9610800, 5760400]
+[1922064, 7688656, 80, 9610800, 5760400]
+mean [1922084, 7688664, 80, 9610828, 5760400]
+before-sparse
+PASS exact UV and seam checks on every edit; full mesh and topology parity after final commit
+java=17.0.21+9 maxHeap=268435456 triangles=120000 vertices=60501 warmups=4 samples=8
+sparse descending vertex IDs from 2^40, step 17; face IDs from 2^43, step 19
+preview-create,review-geometry,apply-observe,total,isolated-topology (thread-allocated bytes)
+[15381592, 7688656, 80, 23070328, 5760400]
+[15381592, 7688656, 80, 23070328, 5760400]
+[15381592, 7688656, 80, 23070328, 5760400]
+[15381592, 7688656, 80, 23070328, 5760400]
+[15381592, 7688656, 80, 23070328, 5760400]
+[15381592, 7688656, 80, 23070328, 5760400]
+[15381592, 7688656, 80, 23070328, 5760400]
+[15381592, 7688656, 80, 23070328, 5760400]
+mean [15381592, 7688656, 80, 23070328, 5760400]
+after-dense
+PASS exact UV and seam checks on every edit; full mesh and topology parity after final commit
+java=17.0.21+9 maxHeap=268435456 triangles=120000 vertices=60501 warmups=4 samples=8
+preview-create,review-geometry,apply-observe,total,isolated-topology (thread-allocated bytes)
+[1922064, 1936360, 80, 3858504, 8072]
+[1922064, 1936360, 80, 3858504, 8072]
+[1922064, 1936360, 80, 3858504, 8072]
+[1922064, 1936360, 80, 3858504, 8072]
+[1922064, 1936328, 80, 3858472, 8072]
+[1922064, 1936328, 80, 3858472, 8072]
+[1922064, 1936328, 80, 3858472, 8072]
+[1922064, 1936328, 80, 3858472, 8072]
+mean [1922064, 1936344, 80, 3858488, 8072]
+after-sparse
+PASS exact UV and seam checks on every edit; full mesh and topology parity after final commit
+java=17.0.21+9 maxHeap=268435456 triangles=120000 vertices=60501 warmups=4 samples=8
+sparse descending vertex IDs from 2^40, step 17; face IDs from 2^43, step 19
+preview-create,review-geometry,apply-observe,total,isolated-topology (thread-allocated bytes)
+[15381592, 1936360, 80, 17318032, 8072]
+[15381592, 1936328, 80, 17318000, 8072]
+[15381592, 1936328, 80, 17318000, 8072]
+[15381592, 1936328, 80, 17318000, 8072]
+[15381592, 1936328, 80, 17318000, 8072]
+[15381592, 1936328, 80, 17318000, 8072]
+[15381592, 1936328, 80, 17318000, 8072]
+[15381592, 1936328, 80, 17318000, 8072]
+mean [15381592, 1936332, 80, 17318004, 8072]

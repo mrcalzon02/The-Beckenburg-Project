@@ -10,19 +10,33 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-360 — Material Editor rebuilds every face row for a one-face UV preview
+
+**Status:** Reproduced on Java 17 at 8173f2ed · **Affected:** EditorMaterialWorkspace face list during preview, cancel and visibility changes
+
+On a 120,000-triangle native grid with a single UV face changed, one preview sent 120,000 row additions and a removal to Swing. Warm previews allocated approximately 651 MB on the event-dispatch thread.
+
+Cause / uncertainty: The view clears its DefaultListModel and inserts each visible face separately for every new native snapshot. Swing then recomputes row dimensions across the full list.
+
+Fix / next action: Update the list from immutable native faces, limit model events to affected rows and verify selected identity, filters, structure changes and history on the same fixture.
+
+Evidence and verification: development/quality/evidence/editor-regional-seams-2026-11-16/material-rows-before.txt (Material Editor observe() on Java 17 at 8173f2ed)
+
+Older-map obligation: This affects the Material Editor UI for large native meshes. Existing documents and published assets need no migration.
+
 ### DEV-359 — Newly exported glTF BLEND materials include a mask-only alpha cutoff
 
-**Status:** Open interchange warning, identified on v0.1.330 · **Affected:** New material definitions in EditorMaterialGlbWriter and EditorGlbDocumentWriter
+**Status:** Fixed and verified in both native writers · **Affected:** New material definitions in EditorMaterialGlbWriter and EditorGlbDocumentWriter
 
 The Khronos validator reports MATERIAL_ALPHA_CUTOFF_INVALID_MODE at /materials/0/alphaCutoff. The 8-bit and 16-bit normalized UV fixtures and the float control each reproduce the warning. All nine source/export files had zero validator errors.
 
 Cause / uncertainty: The writers serialize alphaCutoff for every new material. glTF applies that property only when alphaMode is MASK.
 
-Fix / next action: Emit the cutoff only for newly generated MASK definitions. Preserve original source-backed material JSON and verify OPAQUE, BLEND and MASK output, including a non-default MASK threshold.
+Fix / next action: Both native exporters share the material encoder. MASK writes its authored threshold. OPAQUE and BLEND retain a nondefault inactive threshold in editor extras. The original third-party material definition survives native edits and re-export.
 
-Evidence and verification: development/quality/evidence/editor-reviewed-mesh-2026-11-16/gltf-validation.json
+Evidence and verification: development/quality/evidence/editor-regional-seams-2026-11-16/validator-results.tsv (21 matched files per revision, 0 errors in both, 17 warnings before and 0 after), EditorGlbAuthoringTest and the original warning captures in development/quality/evidence/editor-reviewed-mesh-2026-11-16/gltf-validation.json
 
-Older-map obligation: Check representative existing native materials on re-export. Published source assets retain their original bytes.
+Older-map obligation: Re-export checked on native and source-backed material fixtures. This change does not rewrite existing published assets.
 
 ### DEV-358 — Full-round acceptance can inspect hunter payout before its delivery
 

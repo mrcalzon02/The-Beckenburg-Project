@@ -3,15 +3,26 @@
   "updated": "2026-11-16",
   "issues": [
     {
+      "id": "DEV-360",
+      "title": "Material Editor rebuilds every face row for a one-face UV preview",
+      "status": "Reproduced on Java 17 at 8173f2ed",
+      "affected": "EditorMaterialWorkspace face list during preview, cancel and visibility changes",
+      "symptom": "On a 120,000-triangle native grid with a single UV face changed, one preview sent 120,000 row additions and a removal to Swing. Warm previews allocated approximately 651 MB on the event-dispatch thread.",
+      "cause": "The view clears its DefaultListModel and inserts each visible face separately for every new native snapshot. Swing then recomputes row dimensions across the full list.",
+      "action": "Update the list from immutable native faces, limit model events to affected rows and verify selected identity, filters, structure changes and history on the same fixture.",
+      "evidence": "development/quality/evidence/editor-regional-seams-2026-11-16/material-rows-before.txt (Material Editor observe() on Java 17 at 8173f2ed)",
+      "older_maps": "This affects the Material Editor UI for large native meshes. Existing documents and published assets need no migration."
+    },
+    {
       "id": "DEV-359",
       "title": "Newly exported glTF BLEND materials include a mask-only alpha cutoff",
-      "status": "Open interchange warning, identified on v0.1.330",
+      "status": "Fixed and verified in both native writers",
       "affected": "New material definitions in EditorMaterialGlbWriter and EditorGlbDocumentWriter",
       "symptom": "The Khronos validator reports MATERIAL_ALPHA_CUTOFF_INVALID_MODE at /materials/0/alphaCutoff. The 8-bit and 16-bit normalized UV fixtures and the float control each reproduce the warning. All nine source/export files had zero validator errors.",
       "cause": "The writers serialize alphaCutoff for every new material. glTF applies that property only when alphaMode is MASK.",
-      "action": "Emit the cutoff only for newly generated MASK definitions. Preserve original source-backed material JSON and verify OPAQUE, BLEND and MASK output, including a non-default MASK threshold.",
-      "evidence": "development/quality/evidence/editor-reviewed-mesh-2026-11-16/gltf-validation.json",
-      "older_maps": "Check representative existing native materials on re-export. Published source assets retain their original bytes."
+      "action": "Both native exporters share the material encoder. MASK writes its authored threshold. OPAQUE and BLEND retain a nondefault inactive threshold in editor extras. The original third-party material definition survives native edits and re-export.",
+      "evidence": "development/quality/evidence/editor-regional-seams-2026-11-16/validator-results.tsv (21 matched files per revision, 0 errors in both, 17 warnings before and 0 after), EditorGlbAuthoringTest and the original warning captures in development/quality/evidence/editor-reviewed-mesh-2026-11-16/gltf-validation.json",
+      "older_maps": "Re-export checked on native and source-backed material fixtures. This change does not rewrite existing published assets."
     },
     {
       "id": "DEV-358",
