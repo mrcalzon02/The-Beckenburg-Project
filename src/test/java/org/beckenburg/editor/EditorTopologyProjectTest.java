@@ -2,11 +2,47 @@ package org.beckenburg.editor;
 
 import java.nio.file.*;
 import java.util.*;
+import org.beckenburg.editor.EditorTopologyProject.*;
 
 public final class EditorTopologyProjectTest {
     private static void check(boolean ok,String why){if(!ok)throw new AssertionError(why);}
     private static EditorMeshPipeline.Vertex v(double x,double y){return new EditorMeshPipeline.Vertex(x,y,0,x,y);}
+    private static Face face(long id, long a, long b, long c) {
+        return new Face(id, "part", new Corner(a,0,0), new Corner(b,1,0), new Corner(c,0,1));
+    }
+    private static State state(List<Vertex> vertices, List<Face> faces) {
+        return new State("bindings", "0".repeat(64), "bindings", 0, vertices, faces);
+    }
+    private static void reject(List<Vertex> vertices, List<Face> faces, String reason) {
+        try { state(vertices, faces); }
+        catch (IllegalArgumentException expected) {
+            check(reason.equals(expected.getMessage()), "Unexpected native validation error: " + expected.getMessage());
+            return;
+        }
+        throw new AssertionError("Native state accepted invalid input: " + reason);
+    }
+    private static void checkBindings() {
+        var zero = new Vertex(0, "part", 0,0,0);
+        var one = new Vertex(1, "part", 1,0,0);
+        var two = new Vertex(2, "part", 0,1,0);
+        var dense = List.of(zero, one, two);
+        var triangle = face(0, 0,1,2);
+        state(dense, List.of(triangle));
+
+        long wide = 1L << 32;
+        var sparse = List.of(two, new Vertex(wide, "part", 1,0,0), zero);
+        var reorderedFaces = List.of(face(Long.MAX_VALUE, wide,2,0), face(0, 2,wide,0));
+        var valid = state(sparse, reorderedFaces);
+        check(valid.vertices().equals(sparse) && valid.faces().equals(reorderedFaces), "Native ID order changed");
+        reject(dense, List.of(face(0, 0,1,wide)), "Foreign/missing face vertex");
+        reject(sparse, List.of(triangle), "Foreign/missing face vertex");
+        reject(List.of(zero, new Vertex(1, "other", 1,0,0), two), List.of(triangle), "Foreign/missing face vertex");
+        reject(List.of(zero, one, zero), List.of(), "Duplicate vertex ID");
+        reject(dense, List.of(triangle, triangle), "Duplicate face ID");
+        reject(dense, List.of(triangle.withMaterial("missing")), "Unresolved native face material");
+    }
     public static void main(String[] args)throws Exception{
+        checkBindings();
         Path home=Files.createTempDirectory("native-topology-project-");
         try{
             var source=new EditorMeshPipeline.Mesh("source.obj",List.of(

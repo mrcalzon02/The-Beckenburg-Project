@@ -51,13 +51,36 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
                 throw new IllegalArgumentException("Invalid topology state");
             if(glbSource!=null){if(!glbSource.fingerprint().equals(sourceFingerprint))throw new IllegalArgumentException("Foreign GLB source provenance");try{for(var original:glbSource.nativeMaterials())if(!materials.contains(original))throw new IllegalArgumentException("Original GLB material provenance must be retained");}catch(IOException invalid){throw new IllegalArgumentException("Invalid GLB source materials",invalid);}}
             quads=EditorMeshQuad.validate(quads,faces);
-            var ids=new HashMap<Long,Vertex>();for(var vertex:vertices)if(ids.putIfAbsent(vertex.id(),vertex)!=null)throw new IllegalArgumentException("Duplicate vertex ID");
-            var faceIds=new HashSet<Long>();for(var face:faces){
-                if(!faceIds.add(face.id()))throw new IllegalArgumentException("Duplicate face ID");if(!face.material().isEmpty()&&!materialKeys.contains(face.material()))throw new IllegalArgumentException("Unresolved native face material");
-                for(var corner:List.of(face.a(),face.b(),face.c())){
-                    var vertex=ids.get(corner.vertex());if(vertex==null||!vertex.part().equals(face.part()))throw new IllegalArgumentException("Foreign/missing face vertex");
-                }
+            // A zero-based ID sequence is already unique and is its own lookup table.
+            Map<Long,Vertex> vertexIds = null;
+            if (!ordinalIds(vertices, Vertex::id)) {
+                vertexIds = indexVertices(vertices);
+                if (vertexIds.size() != vertices.size()) throw new IllegalArgumentException("Duplicate vertex ID");
             }
+            Set<Long> faceIds = ordinalIds(faces, Face::id) ? null : new HashSet<>();
+            for (var face : faces) {
+                if (faceIds != null && !faceIds.add(face.id())) throw new IllegalArgumentException("Duplicate face ID");
+                if (!face.material().isEmpty() && !materialKeys.contains(face.material()))
+                    throw new IllegalArgumentException("Unresolved native face material");
+                validateBinding(face.a(), face.part(), vertices, vertexIds);
+                validateBinding(face.b(), face.part(), vertices, vertexIds);
+                validateBinding(face.c(), face.part(), vertices, vertexIds);
+            }
+        }
+
+        private static <T> boolean ordinalIds(List<T> values, java.util.function.ToLongFunction<T> id) {
+            for (int i = 0; i < values.size(); i++) {
+                if (id.applyAsLong(values.get(i)) != i) return false;
+            }
+            return true;
+        }
+
+        private static void validateBinding(Corner corner, String part, List<Vertex> vertices, Map<Long,Vertex> vertexIds) {
+            long id = corner.vertex();
+            Vertex vertex;
+            if (vertexIds == null) vertex = id < vertices.size() ? vertices.get((int)id) : null;
+            else vertex = vertexIds.get(id);
+            if (vertex == null || !vertex.part().equals(part)) throw new IllegalArgumentException("Foreign/missing face vertex");
         }
     }
     private final Path path;
@@ -130,6 +153,19 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             if (derivedTopology==null) derivedTopology=EditorTopologyProject.topology(state,mesh());
             return derivedTopology;
         }
+        private void reuseGeometry(Observation previous,int[] attributeFaces) {
+            if (previous==null || previous.owner!=owner || previous.derivedMesh==null) return;
+            if (state==previous.state) {
+                derivedMesh=previous.derivedMesh;
+                derivedTopology=previous.derivedTopology;
+                return;
+            }
+            var update=updateMesh(previous.derivedMesh,previous.state,state,attributeFaces);
+            derivedMesh=update.mesh();
+            if (previous.derivedTopology!=null && update.changedFaces()!=null)
+                derivedTopology=previous.derivedTopology.update(previous.derivedMesh,derivedMesh,
+                    previous.state.vertices(),state.vertices(),update.changedFaces());
+        }
         /** Ordered native vertices on the manifold boundary containing the picked edge. */
         public List<Vertex> boundaryLoop(long first, long second) {
             var graph = topology();
@@ -163,18 +199,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     /** Reuse unchanged immutable render triangles when advancing the human viewport. */
     public synchronized Observation observe(Observation previous) {
         var next=observe();
-        if (previous!=null && previous.owner==this && previous.derivedMesh!=null) {
-            if (state==previous.state) {
-                next.derivedMesh=previous.derivedMesh;
-                next.derivedTopology=previous.derivedTopology;
-            } else {
-                var update=updateMesh(previous.derivedMesh,previous.state,state);
-                next.derivedMesh=update.mesh();
-                if (previous.derivedTopology!=null && update.changedFaces()!=null)
-                    next.derivedTopology=previous.derivedTopology.update(previous.derivedMesh,next.derivedMesh,
-                        previous.state.vertices(),state.vertices(),update.changedFaces());
-            }
-        }
+        next.reuseGeometry(previous,null);
         return next;
     }
     public synchronized boolean isCurrent(Observation observation){return observation!=null&&observation.owner==this&&observation.state==state&&observation.revision==revision;}
@@ -251,15 +276,19 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     }
     private static Map<Long,Vertex> indexVertices(List<Vertex> values){var map=new HashMap<Long,Vertex>();for(var v:values)map.put(v.id(),v);return map;}
     private record MeshUpdate(EditorMeshPipeline.Mesh mesh,BitSet changedFaces) {}
-    private static MeshUpdate updateMesh(EditorMeshPipeline.Mesh old,State before,State state) {
+    private static MeshUpdate updateMesh(EditorMeshPipeline.Mesh old,State before,State state,int[] attributeFaces) {
         if (old.triangles().size()!=state.faces().size()) return new MeshUpdate(mesh(state),null);
         // Attribute-only edits retain the exact native vertex list. Reuse render positions
         // without allocating a whole-model vertex map for a material or UV change.
         var vertices=before.vertices()==state.vertices() ? null : indexVertices(state.vertices());
-        var changedFaces=new BitSet(state.faces().size());
-        var triangles=new ArrayList<EditorMeshPipeline.Triangle>(state.faces().size());
-        for (int i=0;i<state.faces().size();i++) {
+        var changedFaces=new BitSet();
+        ArrayList<EditorMeshPipeline.Triangle> triangles=null;
+        // Only internal attribute previews supply ordinals, relative to their exact base observation.
+        int candidates=attributeFaces==null ? state.faces().size() : attributeFaces.length;
+        for (int candidate=0;candidate<candidates;candidate++) {
+            int i=attributeFaces==null ? candidate : attributeFaces[candidate];
             var face=state.faces().get(i);
+            if (vertices==null && face==before.faces().get(i)) continue;
             var prior=old.triangles().get(i);
             if (face.id()!=old.faceIds().get(i) || !face.part().equals(prior.part()) ||
                 face.a().vertex()!=old.cornerVertexIds().get(3*i) || face.b().vertex()!=old.cornerVertexIds().get(3*i+1) ||
@@ -269,16 +298,27 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             var c=updatedCorner(face.c(),prior.c(),vertices);
             var next=a==prior.a() && b==prior.b() && c==prior.c() && face.material().equals(prior.material())
                 ? prior : new EditorMeshPipeline.Triangle(face.part(),a,b,c,face.material());
-            triangles.add(next);
-            if (next!=prior) changedFaces.set(i);
+            if (next!=prior) {
+                if (triangles==null) triangles=new ArrayList<>(old.triangles());
+                triangles.set(i,next);
+                changedFaces.set(i);
+            }
         }
-        var visibleFrames=new TreeMap<String,EditorMeshFrame>();
-        if (!state.frames().isEmpty()) for (var face:state.faces()) {
-            var frame=state.frames().get(face.part());
-            if (frame!=null) visibleFrames.put(face.part(),frame);
+        var visibleFrames=old.frames();
+        if (!before.frames().equals(state.frames())) {
+            visibleFrames=new TreeMap<>();
+            for (var face:state.faces()) {
+                var frame=state.frames().get(face.part());
+                if (frame!=null) visibleFrames.put(face.part(),frame);
+            }
         }
-        return new MeshUpdate(new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes(),old.cornerVertexIds(),
-            state.materials(),state.glbSource(),old.faceIds(),visibleFrames,state.quads()),changedFaces);
+        if (triangles==null && old.name().equals(state.name()) && old.sourceBytes()==state.sourceBytes()
+                && old.materials().equals(state.materials()) && old.glbSource()==state.glbSource()
+                && visibleFrames==old.frames() && old.quads().equals(state.quads()))
+            return new MeshUpdate(old,changedFaces);
+        return new MeshUpdate(new EditorMeshPipeline.Mesh(state.name(),triangles==null ? old.triangles() : triangles,
+            state.sourceBytes(),old.cornerVertexIds(),state.materials(),state.glbSource(),old.faceIds(),visibleFrames,
+            state.quads()),changedFaces);
     }
     private static EditorMeshPipeline.Vertex updatedCorner(Corner c,EditorMeshPipeline.Vertex prior,Map<Long,Vertex> vertices) {
         if (vertices==null) {
@@ -314,8 +354,24 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         private final State before,after;
         private final long revision;
         private final String description;
+        private final int[] attributeFaces;
         private boolean canceled;
-        private EditPreview(EditorTopologyProject owner,State before,State after,long revision,String description){this.owner=owner;this.before=before;this.after=after;this.revision=revision;this.description=description;}
+        private EditPreview(EditorTopologyProject owner,State before,State after,long revision,String description){
+            this(owner,before,after,revision,description,null);
+        }
+        private EditPreview(EditorTopologyProject owner,State before,State after,long revision,String description,int[] attributeFaces){
+            this.owner=owner;this.before=before;this.after=after;this.revision=revision;
+            this.description=description;this.attributeFaces=attributeFaces;
+        }
+        /** Derive the displayed candidate from the same immutable revision as the human viewport.
+         * The candidate becomes current only when its state and revision match the live project. */
+        public Observation review(Observation base) {
+            if (base==null || base.owner!=owner || base.state!=before || base.revision!=revision)
+                throw new IllegalArgumentException("Model preview and viewport refer to different revisions");
+            var candidate=new Observation(owner,after,revision+1);
+            candidate.reuseGeometry(base,attributeFaces);
+            return candidate;
+        }
         public State snapshot(){return after;}
         public EditorMeshPipeline.Mesh mesh(){return EditorTopologyProject.mesh(after);}
         public EditorMeshTopology topology(){return EditorTopologyProject.topology(after);}
@@ -544,11 +600,12 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         var materials=new ArrayList<>(state.materials());var existing=materials.stream().filter(m->m.key().equals(material.key())).findFirst();
         if(existing.isPresent()&&!existing.get().equals(material))throw new IllegalArgumentException("Material identity collision");
         if(existing.isEmpty())materials.add(material);
-        var faces=new ArrayList<Face>();boolean found=false;for(var face:state.faces())if(face.id()==faceId){found=true;faces.add(face.withMaterial(material.key()));}else faces.add(face);
-        if(!found)throw new IllegalArgumentException("Unknown native face");
+        int index=uvFaces(state,faceId,null)[0];
+        var faces=new ArrayList<>(state.faces());
+        faces.set(index,faces.get(index).withMaterial(material.key()));
         var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,materials,state.glbSource(),state.frames(),state.quads());
         if(after.equals(state))throw new IllegalArgumentException("Face already uses this material");
-        return new EditPreview(this,state,after,revision,"BIND MATERIAL / face "+faceId+" / "+material.name());
+        return new EditPreview(this,state,after,revision,"BIND MATERIAL / face "+faceId+" / "+material.name(),new int[]{index});
     }
     public enum UvTransform { MOVE, ROTATE, SCALE }
     public synchronized EditPreview previewFixFaceStretch(long faceId){
@@ -559,7 +616,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
             faces.set(i,EditorUvDensity.correct(face,triangle(face,indexVertices(state.vertices())),material.width(),material.height()));
             var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,state.materials(),
                 state.glbSource(),state.frames(),state.quads());
-            return new EditPreview(this,state,after,revision,"FIX UV STRETCH / face "+faceId);
+            return new EditPreview(this,state,after,revision,"FIX UV STRETCH / face "+faceId,new int[]{i});
         }
         throw new IllegalArgumentException("Unknown native face");
     }
@@ -819,7 +876,7 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         }
         var after=new State(id,sourceFingerprint,state.name(),state.sourceBytes(),state.vertices(),faces,state.materials(),state.glbSource(),state.frames(),state.quads());
         if(after.equals(state))throw new IllegalArgumentException("UV transform changes no native corner");
-        return new EditPreview(this,state,after,revision,"UV "+operation+" / "+selected.length+" faces / "+(origin?"UV origin":"UV bounds center"));
+        return new EditPreview(this,state,after,revision,"UV "+operation+" / "+selected.length+" faces / "+(origin?"UV origin":"UV bounds center"),selected);
     }
     public synchronized void translateLocalVertices(Collection<Long> ids,int axis,double amount){
         if(ids==null||ids.isEmpty()||axis<0||axis>2||!Double.isFinite(amount)||amount==0)throw new IllegalArgumentException("Invalid local translation");var selected=new HashSet<>(ids);var old=vertices(state);var next=new HashMap<>(old);for(long id:selected)if(!old.containsKey(id))throw new IllegalArgumentException("Unknown vertex ID");var directions=new HashMap<String,EditorMeshPipeline.Normal>();

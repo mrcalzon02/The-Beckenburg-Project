@@ -146,6 +146,46 @@ public final class EditorMeshUpdateTest {
             actual.uvSeams()!=expected.uvSeams() || actual.boundaryEdges()!=expected.boundaryEdges() ||
             actual.islands()!=expected.islands()) throw new AssertionError("Incremental/full native derivation mismatch");
     }
+    private static void checkPreviewHandoff() {
+        var doc=EditorTopologyProject.fromMesh(new EditorMeshPipeline.Mesh("review",List.of(),0),
+            "0".repeat(64),Path.of("review.btop"));
+        var seed=doc.snapshot();
+        var points=List.of(new Vertex(2,"grid",0,0,0),new Vertex(8,"grid",1,0,0),
+            new Vertex(4,"grid",0,1,0),new Vertex(3,"grid",1,1,0));
+        var first=face(80,2,8,4);
+        var second=new Face(17,"grid",new Corner(8,1,0),new Corner(3,1,1),new Corner(4,0,1));
+        doc.restore(new State(seed.sceneId(),seed.sourceFingerprint(),"review",0,points,List.of(first,second)));
+        var base=doc.observe();
+        var mesh=base.mesh();
+        var graph=base.topology();
+        var history=doc.createHistory(8);
+        var edit=doc.previewUvTransform(17,false,UvTransform.MOVE,.25,.5,false);
+        var preview=edit.review(base);
+        if (doc.isCurrent(preview) || preview.mesh().triangles().get(0)!=mesh.triangles().get(0)
+                || preview.mesh().triangles().get(1)==mesh.triangles().get(1)
+                || preview.topology().uvSeams()!=1 || graph.uvSeams()!=0)
+            throw new AssertionError("Local UV review must preserve the live mesh and update the paired seam");
+        history.execute(()->doc.applyPreview(edit));
+        if (!doc.isCurrent(preview) || doc.observe(preview).mesh()!=preview.mesh())
+            throw new AssertionError("Committed viewport must reuse the displayed candidate");
+        assertFullParity(doc,preview);
+        history.undo();
+        if (doc.isCurrent(preview) || doc.isCurrent(base)) throw new AssertionError("Undo must invalidate both revisions");
+        var stale=doc.previewUvTransform(80,true,UvTransform.MOVE,1,0,false);
+        try {
+            stale.review(base);
+            throw new AssertionError("An old revision with the same state cannot authorize a preview");
+        } catch (IllegalArgumentException expected) { }
+        var islandBase=doc.observe(preview);
+        var island=stale.review(islandBase);
+        if (island.mesh().triangles().get(0)==mesh.triangles().get(0)
+                || island.mesh().triangles().get(1)==mesh.triangles().get(1) || island.topology().uvSeams()!=0)
+            throw new AssertionError("Both faces in the welded UV island must move together");
+        doc.cancelPreview(stale);
+        history.redo();
+        if (doc.isCurrent(island) || doc.isCurrent(preview)) throw new AssertionError("Redo must respect revision identity");
+        assertFullParity(doc,doc.observe(islandBase));
+    }
     private static void checkPickingRefit() {
         var vertices=new ArrayList<Vertex>();
         var faces=new ArrayList<Face>();
@@ -192,6 +232,7 @@ public final class EditorMeshUpdateTest {
     }
     public static void main(String[] args) {
         checkConnectivityChange();
+        checkPreviewHandoff();
         checkSeamUpdate();
         checkPickingRefit();
         checkMixedUpdates();

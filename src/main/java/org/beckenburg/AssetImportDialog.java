@@ -65,7 +65,7 @@ public final class AssetImportDialog {
             p.setColor(new Color(20,24,29));p.fillRect(0,0,getWidth(),getHeight());
             if(source!=null)draw(p,source.triangles(),0,workingViewportWidth(),topologyProject==null?"SOURCE":"WORKING MESH");
             else workingWireframe.clear();
-            if(modelingMesh!=null)draw(p,modelingMesh.triangles(),getWidth()/2,getWidth()-getWidth()/2,"MODEL EDIT PREVIEW");
+            if(modelingObservation!=null)draw(p,modelingObservation.mesh().triangles(),getWidth()/2,getWidth()-getWidth()/2,"MODEL EDIT PREVIEW");
             else if(primitivePreview!=null)draw(p,primitivePreview.triangles(),getWidth()/2,getWidth()-getWidth()/2,"PRIMITIVE PREVIEW");
             else if(result!=null&&comparisonVisible())draw(p,result.optimized().triangles(),workingViewportWidth(),getWidth()-workingViewportWidth(),"PREVIEW");
             else previewWireframe.clear();
@@ -140,7 +140,7 @@ public final class AssetImportDialog {
     private final JButton previewFaceEdit=new JButton("PREVIEW FACE EDIT"),applyFaceEdit=new JButton("APPLY MODEL EDIT"),cancelFaceEdit=new JButton("CANCEL MODEL EDIT");
     private EditorTopologyProject.EditPreview modelingPreview;
     private boolean materialEditPreview;
-    private EditorMeshPipeline.Mesh modelingMesh;
+    private EditorTopologyProject.Observation modelingObservation;
     private List<EditorMeshPipeline.Triangle> modelingBounds;
     private int modelingGeneration;
     private boolean modelingPreparing;
@@ -849,7 +849,7 @@ public final class AssetImportDialog {
             "Preview uniform texel scale on this face while preserving its UV area and center");
         if(bound && visibility.includes(face) && (modelingPreview!=null ||
             workingObservation!=null && workingObservation.snapshot()==state)){
-            var nativeMesh=modelingPreview!=null?modelingMesh:workingObservation.mesh();
+            var nativeMesh=modelingPreview!=null?modelingObservation.mesh():workingObservation.mesh();
             var density=EditorUvDensity.measure(nativeMesh.triangles().get(faceIndex),material.width(),material.height());
             fixUvStretch.setEnabled(layerEditable && density.filter(d->d.texelsPerUnit()>0 && (island || d.stretch()>1+1e-10)).isPresent());
             uvDensity.setText(density.map(d->d.texelsPerUnit()==0?"Collapsed UV triangle":
@@ -866,7 +866,7 @@ public final class AssetImportDialog {
         if(materialRendering||state==materialRenderState&&rotation==materialRenderedRotation&&mode==renderedMode&&visibility.equals(materialRenderedVisibility)&&width==reviewWidth&&height==reviewHeight)return;
         reviewWidth=width;reviewHeight=height;
         materialRenderState=state;materialRenderedRotation=rotation;materialRenderedVisibility=visibility;renderedMode=mode;materialRendering=true;projectedFrame=null;projectedStroke=null;materialRuntime.setIcon(null);materialRuntime.setText("Rendering captured native state...");
-        var captured=state;var mesh=modelingPreview!=null?modelingMesh:
+        var captured=state;var mesh=modelingPreview!=null?modelingObservation.mesh():
             workingObservation!=null && workingObservation.snapshot()==state ? workingObservation.mesh() : topologyProject.mesh();
         var mipCache=reviewMips;
         new SwingWorker<MaterialReviewFrame,Void>(){
@@ -954,10 +954,10 @@ public final class AssetImportDialog {
             &&(topologyProject==null||topologyProject.isCurrent(workingObservation))&&!result.optimized().triangles().isEmpty()
             &&(!gltfModel(source.name())||result.level()==0));
     }
-    private boolean comparisonVisible(){return compareView.isSelected()||modelingMesh!=null||primitivePreview!=null||(result!=null&&result.level()>0);}
+    private boolean comparisonVisible(){return compareView.isSelected()||modelingObservation!=null||primitivePreview!=null||(result!=null&&result.level()>0);}
     int workingViewportWidth(){return comparisonVisible()?preview.getWidth()/2:preview.getWidth();}
-    private void clearModelingPreview(){if(restoringWorkspace)return;stopSnap();snapGuide=null;if(modelingPreview!=null&&topologyProject!=null)topologyProject.cancelPreview(modelingPreview);modelingGeneration++;modelingPreparing=false;modelingPreview=null;modelingMesh=null;modelingBounds=null;refreshMeshControls();preview.repaint();}
-    private record ModelingReview(EditorTopologyProject.EditPreview edit,EditorMeshPipeline.Mesh mesh,List<EditorMeshPipeline.Triangle> bounds){}
+    private void clearModelingPreview(){if(restoringWorkspace)return;stopSnap();snapGuide=null;if(modelingPreview!=null&&topologyProject!=null)topologyProject.cancelPreview(modelingPreview);modelingGeneration++;modelingPreparing=false;modelingPreview=null;modelingObservation=null;modelingBounds=null;refreshMeshControls();preview.repaint();}
+    private record ModelingReview(EditorTopologyProject.EditPreview edit,EditorTopologyProject.Observation observation,List<EditorMeshPipeline.Triangle> bounds){}
     private void previewModelingEdit(){
         if(busy||topologyProject==null||selectedHit==null||selectionMode.getSelectedIndex()!=2)return;
         long face=selectedHit.faceId();var operation=(EditorTopologyProject.FaceEdit)faceOperation.getSelectedItem();double amount=((Number)faceAmount.getValue()).doubleValue();
@@ -985,19 +985,25 @@ public final class AssetImportDialog {
         if(busy||topologyProject==null)return;
         if(!topologyProject.isCurrent(workingObservation)){workingObservation=topologyProject.observe(workingObservation);source=workingObservation.mesh();}
         cancelAxisDrag();cancelBoxSelection();clearPrimitivePreview();clearModelingPreview();
-        var project=topologyProject;var state=workingObservation.snapshot();long nativeRevision=workingObservation.revision();int request=modelingGeneration;var working=source;
+        var project=topologyProject;var base=workingObservation;var state=base.snapshot();long nativeRevision=base.revision();int request=modelingGeneration;var working=base.mesh();
         busy=true;modelingPreparing=true;choose.setEnabled(false);refreshMeshControls();details.append("\nPreparing native model edit...");
         new SwingWorker<ModelingReview,Void>(){
             protected ModelingReview doInBackground(){
-                var edit=editOperation.apply(project);var mesh=edit.mesh();var bounds=new ArrayList<>(working.triangles());bounds.addAll(mesh.triangles());
-                return new ModelingReview(edit,mesh,List.copyOf(bounds));
+                var edit=editOperation.apply(project);
+                var candidate=edit.review(base);
+                var mesh=candidate.mesh();
+                if (state.vertices()==candidate.snapshot().vertices() && working.cornerVertexIds()==mesh.cornerVertexIds())
+                    return new ModelingReview(edit,candidate,working.triangles());
+                var bounds=new ArrayList<>(working.triangles());
+                bounds.addAll(mesh.triangles());
+                return new ModelingReview(edit,candidate,List.copyOf(bounds));
             }
             protected void done(){
                 busy=false;modelingPreparing=false;choose.setEnabled(true);
                 try{
                     if(request!=modelingGeneration)throw new java.util.concurrent.CancellationException();var review=get();
                     if(project!=topologyProject||project.revision()!=nativeRevision||project.snapshot()!=state)throw new IOException("Mesh changed during modeling preview");
-                    modelingPreview=review.edit();materialEditPreview=keepMaterialFace;modelingMesh=review.mesh();modelingBounds=review.bounds();selectionLabel.setText(review.edit().description());selectionLabel.setToolTipText(review.edit().description());details.append("\nNATIVE PREVIEW: "+review.edit().description()+". Apply to commit.");
+                    modelingPreview=review.edit();materialEditPreview=keepMaterialFace;modelingObservation=review.observation();modelingBounds=review.bounds();selectionLabel.setText(review.edit().description());selectionLabel.setToolTipText(review.edit().description());details.append("\nNATIVE PREVIEW: "+review.edit().description()+". Apply to commit.");
                 }catch(java.util.concurrent.CancellationException canceled){details.append("\nModel preview canceled.");}
                 catch(Exception failure){String message="MODEL EDIT REFUSED: "+rootMessage(failure);details.append("\n"+message);selectionLabel.setText(message);selectionLabel.setToolTipText(message);
                     if(keepMaterialFace && materialWorkspace!=null)materialWorkspace.previewIssue("Preview refused · "+rootMessage(failure));}
@@ -1053,10 +1059,11 @@ public final class AssetImportDialog {
         catch(RuntimeException failure){details.append("\nEDIT REFUSED: "+rootMessage(failure));refreshMeshControls();return false;}
     }
     private void meshChanged(){
+        var candidate=modelingObservation;
         clearModelingPreview();
         boolean previouslyPainted=workingObservation!=null && workingObservation.snapshot().materials().stream()
             .anyMatch(EditorMeshMaterial::hasLayerEdits);
-        var selected=selectedVertices;workingObservation=topologyProject.observe(workingObservation);source=workingObservation.mesh();selectVertex();
+        var selected=selectedVertices;workingObservation=topologyProject.isCurrent(candidate)?candidate:topologyProject.observe(workingObservation);source=workingObservation.mesh();selectVertex();
         if(!selected.isEmpty()){var ids=new java.util.HashSet<Long>();for(var v:topologyProject.snapshot().vertices())if(selected.contains(v.id()))ids.add(v.id());selectedVertices=java.util.Set.copyOf(ids);}
         refreshMeshControls();
         checkpointPaint(previouslyPainted);

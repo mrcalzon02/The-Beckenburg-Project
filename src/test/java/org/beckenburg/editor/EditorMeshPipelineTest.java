@@ -4,10 +4,46 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /** Standalone import, reduction, source-preservation and export smoke proof. */
 public final class EditorMeshPipelineTest {
     private static void check(boolean b,String why){if(!b)throw new AssertionError(why);}
+    private static void checkInvalidIds(Runnable construct) {
+        try { construct.run(); }
+        catch (IllegalArgumentException expected) { return; }
+        throw new AssertionError("Invalid native mesh IDs were accepted");
+    }
+    private static void checkMeshBindings(EditorMeshPipeline.Triangle face) {
+        var triangles = List.of(face);
+        var corners = new ArrayList<>(List.of(8L, 9L, 8L));
+        var faces = new ArrayList<>(List.of(5L));
+        var original = new EditorMeshPipeline.Mesh("bindings", triangles, 0, corners, List.of(), null, faces);
+        corners.set(0, -1L);
+        faces.clear();
+        check(original.cornerVertexIds().equals(List.of(8L, 9L, 8L)) && original.faceIds().equals(List.of(5L)),
+            "A caller changed an already validated mesh");
+        try {
+            original.cornerVertexIds().set(0, -1L);
+            throw new AssertionError("A mesh exposed mutable native bindings");
+        } catch (UnsupportedOperationException expected) {
+            // Independent revisions may safely reuse these bindings.
+        }
+        var revised = new EditorMeshPipeline.Mesh("revised", triangles, 0, original.cornerVertexIds(),
+            List.of(), null, original.faceIds());
+        check(revised.cornerVertexIds() == original.cornerVertexIds() && revised.faceIds() == original.faceIds(),
+            "A mesh revision recopied unchanged native bindings");
+
+        checkInvalidIds(() -> new EditorMeshPipeline.Mesh("negative corner", triangles, 0, corners));
+        checkInvalidIds(() -> new EditorMeshPipeline.Mesh("negative face", triangles, 0, List.of(), List.of(), null, List.of(-1L)));
+        checkInvalidIds(() -> new EditorMeshPipeline.Mesh("wrong count", List.of(face, face), 0, revised.cornerVertexIds()));
+        checkInvalidIds(() -> new EditorMeshPipeline.Mesh("wrong face count", List.of(face, face), 0, List.of(),
+            List.of(), null, revised.faceIds()));
+        checkInvalidIds(() -> new EditorMeshPipeline.Mesh("corners used as faces", Collections.nCopies(3, face), 0,
+            List.of(), List.of(), null, revised.cornerVertexIds()));
+    }
     public static void main(String[] args)throws Exception{
         Path root=Files.createTempDirectory("editor-mesh-lab-");
         try{
@@ -46,6 +82,7 @@ public final class EditorMeshPipelineTest {
             var exact=EditorMeshPipeline.regress(model,0);
             check(exact.parts().stream().allMatch(p->p.before()==p.after()),"Level zero no loss");
             var face=model.triangles().get(0);
+            checkMeshBindings(face);
             var repeated=new EditorMeshPipeline.Mesh("two-sided-face",
                 java.util.List.of(face,face),10);
             check(EditorMeshPipeline.regress(repeated,0).optimized().triangles().size()==2,

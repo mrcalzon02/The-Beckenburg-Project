@@ -6,6 +6,7 @@ import java.nio.ByteOrder;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,6 +14,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.RandomAccess;
 import java.util.Set;
 import java.util.TreeMap;
 
@@ -40,6 +42,35 @@ public final class EditorMeshPipeline {
                 throw new IllegalArgumentException("Invalid triangle");
         }
     }
+    /** Immutable native bindings can be shared across mesh revisions once their IDs are checked. */
+    private static final class ValidatedIds extends AbstractList<Long> implements RandomAccess {
+        private final List<Long> values;
+        private final boolean unique;
+
+        private ValidatedIds(List<Long> values, boolean unique) {
+            this.values = values;
+            this.unique = unique;
+        }
+
+        private static List<Long> copy(List<Long> input, int expectedCount, boolean requireUnique) {
+            if (input == null || !input.isEmpty() && input.size() != expectedCount)
+                throw new IllegalArgumentException(requireUnique ? "Invalid native face IDs" : "Source topology corner count mismatch");
+            if (input.isEmpty()) return List.of();
+            if (input instanceof ValidatedIds ids && (!requireUnique || ids.unique)) return ids;
+
+            var values = List.copyOf(input);
+            if (values.size() != expectedCount || requireUnique && new HashSet<>(values).size() != values.size())
+                throw new IllegalArgumentException(requireUnique ? "Invalid native face IDs" : "Source topology corner count mismatch");
+            for (long id : values) {
+                if (id < 0) throw new IllegalArgumentException(requireUnique ? "Invalid native face IDs" : "Invalid source position ID");
+            }
+            return new ValidatedIds(values, requireUnique);
+        }
+
+        @Override public Long get(int index) { return values.get(index); }
+        @Override public int size() { return values.size(); }
+    }
+
     /** Optional per-corner source position identities. Empty means the source supplied no indices. */
     public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds,Map<String,EditorMeshFrame> frames,List<EditorMeshQuad> quads) {
         public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds,Map<String,EditorMeshFrame> frames){this(name,triangles,sourceBytes,cornerVertexIds,materials,glbSource,faceIds,frames,List.of());}
@@ -51,9 +82,8 @@ public final class EditorMeshPipeline {
             if(name==null||name.isBlank()||triangles==null
                 ||triangles.size()>MAX_TRIANGLES||sourceBytes<0)throw new IllegalArgumentException("Invalid mesh");
             frames=frames.isEmpty()?Map.of():EditorMeshFrame.validate(frames,triangles.stream().map(Triangle::part).toList());triangles=List.copyOf(triangles);materials=List.copyOf(materials);EditorMeshMaterial.validateTable(materials);var known=new HashSet<String>();for(var m:materials)known.add(m.key());for(var t:triangles)if(!t.material().isEmpty()&&!known.contains(t.material()))throw new IllegalArgumentException("Unresolved face material");
-            if(cornerVertexIds==null||!cornerVertexIds.isEmpty()&&cornerVertexIds.size()!=triangles.size()*3)
-                throw new IllegalArgumentException("Source topology corner count mismatch");
-            cornerVertexIds=List.copyOf(cornerVertexIds);faceIds=List.copyOf(faceIds);if(!faceIds.isEmpty()&&(faceIds.size()!=triangles.size()||new HashSet<>(faceIds).size()!=faceIds.size()||faceIds.stream().anyMatch(id->id<0)))throw new IllegalArgumentException("Invalid native face IDs");
+            cornerVertexIds=ValidatedIds.copy(cornerVertexIds,triangles.size()*3,false);
+            faceIds=ValidatedIds.copy(faceIds,triangles.size(),true);
             quads=EditorMeshQuad.ordered(quads);
             if(!quads.isEmpty()){
                 if(quads.size()>triangles.size()/2 || cornerVertexIds.isEmpty())throw new IllegalArgumentException("Quad needs native corner bindings");
@@ -64,7 +94,6 @@ public final class EditorMeshPipeline {
                     if(!triangles.get(a/3).part().equals(triangles.get(b/3).part())||!cornerVertexIds.get(a).equals(cornerVertexIds.get(b))||!cornerVertexIds.get(a+2).equals(cornerVertexIds.get(b+1))||new HashSet<>(List.of(cornerVertexIds.get(a),cornerVertexIds.get(a+1),cornerVertexIds.get(a+2),cornerVertexIds.get(b+2))).size()!=4)throw new IllegalArgumentException("Invalid quad topology");
                 }
             }
-            for(long id:cornerVertexIds)if(id<0)throw new IllegalArgumentException("Invalid source position ID");
         }
     }
     public record PartStats(String name,int before,int after,int verticesBefore,int verticesAfter,

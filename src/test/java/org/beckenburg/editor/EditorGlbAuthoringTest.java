@@ -23,7 +23,82 @@ public final class EditorGlbAuthoringTest {
         var primitive=EditorGlbReader.obj(EditorGlbReader.arr(EditorGlbReader.obj(EditorGlbReader.arr(root.get("meshes")).get(0)).get("primitives")).get(0));primitive.put("extras",7);
         return EditorGlbDocumentWriter.container(root,source.binary());
     }
-    public static byte[] externalFixture()throws Exception{var source=EditorGlbReader.read(fixture());var root=EditorGlbReader.obj(EditorGlbJson.read(EditorGlbJson.write(source.root())));EditorGlbReader.obj(root.get("asset")).put("generator","External artist exporter");EditorGlbReader.obj(EditorGlbReader.obj(EditorGlbReader.arr(root.get("materials")).get(0)).get("extras")).remove("beckenburgUvOrigin");return EditorGlbDocumentWriter.container(root,source.binary());}
+    /** Both the human import/publication test and the game test use the packed 16-bit source. */
+    public static byte[] externalFixture()throws Exception { return packedUvFixture(2); }
+
+    private static Map<String,Object> uvAccessor(Map<String,Object> root) {
+        var mesh=EditorGlbReader.obj(EditorGlbReader.arr(root.get("meshes")).get(0));
+        var primitive=EditorGlbReader.obj(EditorGlbReader.arr(mesh.get("primitives")).get(0));
+        int index=((Number)EditorGlbReader.obj(primitive.get("attributes")).get("TEXCOORD_0")).intValue();
+        return EditorGlbReader.obj(EditorGlbReader.arr(root.get("accessors")).get(index));
+    }
+
+    private static int[][] uvSamples(int maximum) {
+        return new int[][] {{0,0},{maximum,maximum/4},{1,maximum},{maximum-1,maximum/2+1}};
+    }
+
+    private static byte[] packedUvFixture(int width)throws Exception {
+        var source=EditorGlbReader.read(fixture());
+        var root=EditorGlbReader.obj(EditorGlbJson.read(EditorGlbJson.write(source.root())));
+        EditorGlbReader.obj(root.get("asset")).put("generator","External artist exporter");
+        var material=EditorGlbReader.obj(EditorGlbReader.arr(root.get("materials")).get(0));
+        EditorGlbReader.obj(material.get("extras")).remove("beckenburgUvOrigin");
+        var accessor=uvAccessor(root);
+        var views=EditorGlbReader.arr(root.get("bufferViews"));
+        int count=((Number)accessor.get("count")).intValue(), maximum=width==1 ? 255 : 65535;
+        int start=source.binary().length, stride=8;
+        var binary=ByteBuffer.allocate(start+stride*count).order(ByteOrder.LITTLE_ENDIAN);
+        binary.put(source.binary());
+        var samples=uvSamples(maximum);
+        for (int vertex=0;vertex<count;vertex++) {
+            binary.position(start+stride*vertex+4);
+            for (int value:samples[vertex%samples.length]) {
+                if (width==1) binary.put((byte)value);
+                else binary.putShort((short)value);
+            }
+        }
+        accessor.put("bufferView",views.size());
+        accessor.put("byteOffset",4);
+        accessor.put("componentType",width==1 ? 5121 : 5123);
+        accessor.put("normalized",true);
+        views.add(map("buffer",0,"byteOffset",start,"byteLength",stride*count,"byteStride",stride));
+        EditorGlbReader.obj(EditorGlbReader.arr(root.get("buffers")).get(0)).put("byteLength",binary.capacity());
+        return EditorGlbDocumentWriter.container(root,binary.array());
+    }
+
+    private static void packedUvRoundTrip(Path directory,int width)throws Exception {
+        byte[] original=packedUvFixture(width);
+        var decoded=EditorGlbReader.read(original);
+        int maximum=width==1 ? 255 : 65535;
+        var primitive=decoded.primitives().get(0);
+        var samples=uvSamples(maximum);
+        for (int i=0;i<primitive.local().size();i++) {
+            var vertex=primitive.local().get(i);
+            var raw=samples[i%samples.length];
+            near(vertex.u(),(double)raw[0]/maximum);
+            near(vertex.v(),(double)raw[1]/maximum);
+        }
+        var project=EditorTopologyProject.fromGlb("packed.glb",original,directory.resolve("packed"+width+".btop"));
+        check(Arrays.equals(original,EditorGlbWriter.encode(project.mesh())),"Untouched packed source preserved");
+        project.applyPreview(project.previewUvTransform(0,false,EditorTopologyProject.UvTransform.MOVE,.25,0,false));
+        project.save();
+        var reopened=EditorTopologyProject.open(project.documentPath());
+        check(reopened.snapshot().equals(project.snapshot()),"Native save/reopen preserves packed source and edited UVs");
+        Path file=directory.resolve("packed"+width+".gltf");
+        reopened.exportGlb(reopened.observe(),file,null);
+        byte[] exported=EditorGltfFile.toGlb(Files.readAllBytes(file));
+        EditorGlbWriter.validate(reopened.mesh(),exported);
+        sourcePreserved(decoded,EditorGlbReader.read(exported));
+
+        var root=EditorGlbReader.obj(EditorGlbJson.read(EditorGlbJson.write(decoded.root())));
+        var accessor=uvAccessor(root);
+        var view=EditorGlbReader.obj(EditorGlbReader.arr(root.get("bufferViews")).get(((Number)accessor.get("bufferView")).intValue()));
+        accessor.remove("normalized");
+        refuse(()->EditorGlbReader.read(EditorGlbDocumentWriter.container(root,decoded.binary())));
+        accessor.put("normalized",true);
+        view.put("byteLength",4+8*(primitive.local().size()-1)+2*width-1);
+        refuse(()->EditorGlbReader.read(EditorGlbDocumentWriter.container(root,decoded.binary())));
+    }
     private static void sourcePreserved(EditorGlbReader.Document before,EditorGlbReader.Document after){
         check(before.root().get("extras").equals(after.root().get("extras")),"Arbitrary source metadata retains exact decimal/integer values");check(before.root().get("scenes").equals(after.root().get("scenes")),"Original scene roots preserved");
         var original=EditorGlbReader.arr(before.root().get("nodes"));var changed=EditorGlbReader.arr(after.root().get("nodes"));check(original.size()==changed.size(),"Native vertex edits do not invent/flatten source nodes");
@@ -45,6 +120,8 @@ public final class EditorGlbAuthoringTest {
     }
     public static void main(String[] args)throws Exception{
         Path root=Files.createTempDirectory("native-glb-authoring-");try{
+            packedUvRoundTrip(root,1);
+            packedUvRoundTrip(root,2);
             byte[] original=fixture();guards(original,root);var decoded=EditorGlbReader.read(original);var mesh=decoded.mesh("assembly.glb");check(mesh.triangles().size()==4&&mesh.cornerVertexIds().stream().distinct().count()==8,"Actual shared decoder retains two instances and source vertex connectivity");var point=decoded.primitives().get(0).world().get(0);near(point.x(),3);near(point.z(),1);near(decoded.primitives().get(0).world().get(1).z(),-1);near(point.normal().x(),1);
             byte[] copy=decoded.original();copy[0]=0;check(Arrays.equals(decoded.original(),original),"Source bytes are immutable");try{decoded.root().put("scene",7);throw new AssertionError("Mutable source metadata");}catch(UnsupportedOperationException expected){}double[] transform=decoded.world(1);transform[3]=999;near(decoded.world(1)[3],3);
             var p=EditorTopologyProject.fromGlb("assembly.glb",original,root.resolve("assembly.btop"));var initial=p.snapshot();check(p.snapshot().vertices().size()==8&&Arrays.equals(EditorGlbWriter.encode(p.mesh()),original),"No-edit GLB roundtrip retains exact original bytes and native topology");EditorGlbWriter.validate(p.mesh(),original);p.save();check(ByteBuffer.wrap(Files.readAllBytes(p.documentPath())).getInt(4)==4&&EditorTopologyProject.open(p.documentPath()).snapshot().equals(initial),"Actual native v4 fresh reopen retains source-backed authoring state");
@@ -56,7 +133,7 @@ public final class EditorGlbAuthoringTest {
             var appended=EditorTopologyProject.fromGlb("assembly.glb",original,root.resolve("appended.btop"));appended.appendPrimitive(new EditorMeshPrimitives.Parameters(EditorMeshPrimitives.Kind.BOX,1,1,1,12,4));byte[] withPrimitive=EditorGlbWriter.encode(appended.mesh());EditorGlbWriter.validate(appended.mesh(),withPrimitive);check(EditorGlbReader.arr(EditorGlbReader.read(withPrimitive).root().get("nodes")).size()==4,"Appending a native primitive retains original hierarchy and adds one independent root");
             byte[] future=Files.readAllBytes(p.documentPath());ByteBuffer.wrap(future).putInt(4,8);refuse(()->EditorTopologyProject.decode(future));
             if(args.length>0){Path out=Path.of(args[0]);Files.createDirectories(out);Files.write(out.resolve("original.glb"),original);Files.write(out.resolve("edited.glb"),surface);Files.copy(p.documentPath(),out.resolve("edited.btop"),StandardCopyOption.REPLACE_EXISTING);}
-            System.out.println("PASS source-backed GLB: shared matrix/ancestor decoder, exact source bytes/metadata/PNG, native v4/history, independent instance edits, original hierarchy/pivots/materials, UV/modeling and real export/reimport validation");
+            System.out.println("PASS source-backed GLB: normalized byte/short UV interchange, shared matrix/ancestor decoder, exact source bytes/metadata/PNG, native v4/history, independent instance edits, original hierarchy/pivots/materials, UV/modeling and real export/reimport validation");
         }finally{try(var paths=Files.walk(root)){for(var path:paths.sorted(Comparator.reverseOrder()).toList())Files.deleteIfExists(path);}}
     }
     /** Real glTF data-URI, split-buffer and external-sidecar fixtures for G2 GUI acceptance. */

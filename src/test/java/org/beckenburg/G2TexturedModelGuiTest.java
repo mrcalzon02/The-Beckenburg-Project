@@ -35,8 +35,12 @@ public final class G2TexturedModelGuiTest {
         await(() -> reviewed(ui));
         edt(() -> {
             var candidate = (EditorTopologyProject.EditPreview)field(ui,"modelingPreview");
+            var displayed=(EditorTopologyProject.Observation)field(ui,"modelingObservation");
+            check(!project.isCurrent(displayed),"Preview must leave the working revision intact");
             button(ui,"applyFaceEdit");
             check(project.snapshot()==candidate.snapshot(),"Apply must install the reviewed candidate");
+            check(field(ui,"workingObservation")==displayed && field(ui,"source")==displayed.mesh(),
+                "Apply must use the geometry displayed in the Model Editor");
         });
         await(() -> ready(ui));
     }

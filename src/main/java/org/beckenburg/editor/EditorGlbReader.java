@@ -80,11 +80,19 @@ public final class EditorGlbReader {
             var node=obj(nodes.get(ni));if(!node.containsKey("mesh")||world[ni]==null)continue;var list=arr(obj(meshes.get(integer(node.get("mesh")))).get("primitives"));
             for(int pi=0;pi<list.size();pi++){
                 var primitive=obj(list.get(pi));if(get(primitive,"mode",4)!=4||!primitive.containsKey("indices"))throw new IOException("Only indexed GL triangles supported");var attrs=obj(primitive.get("attributes"));int position=integer(attrs.get("POSITION"));var pos=obj(accessors.get(position));var uv=obj(accessors.get(integer(attrs.get("TEXCOORD_0"))));var indices=obj(accessors.get(integer(primitive.get("indices"))));int count=get(pos,"count",-1),ic=get(indices,"count",-1);
-                if(count<3||count>50000||get(uv,"count",-1)!=count||ic<3||ic>150000||ic%3!=0||(faces+=ic/3)>50000||(declaredVertices+=count)>500000)throw new IOException("Triangle buffer budget");if(get(pos,"componentType",-1)!=5126||get(uv,"componentType",-1)!=5126||!"VEC3".equals(pos.get("type"))||!"VEC2".equals(uv.get("type")))throw new IOException("Unsupported vertex layout");int material=get(primitive,"material",-1);if(material<0||material>=materials.size())throw new IOException("Invalid material binding");Map<String,Object> normal=null;
-                if(attrs.containsKey("NORMAL")){normal=obj(accessors.get(integer(attrs.get("NORMAL"))));if(get(normal,"count",-1)!=count||get(normal,"componentType",-1)!=5126||!"VEC3".equals(normal.get("type")))throw new IOException("Invalid vertex normal");}
+                if(count<3||count>50000||get(uv,"count",-1)!=count||ic<3||ic>150000||ic%3!=0||(faces+=ic/3)>50000||(declaredVertices+=count)>500000)throw new IOException("Triangle buffer budget");
+                var positions = VertexAttribute.open(b,binaryStart,binaryLength,views,pos,count,false);
+                var texCoords = VertexAttribute.open(b,binaryStart,binaryLength,views,uv,count,true);
+                int material=get(primitive,"material",-1);if(material<0||material>=materials.size())throw new IOException("Invalid material binding");
+                var normals = attrs.containsKey("NORMAL")
+                    ? VertexAttribute.open(b,binaryStart,binaryLength,views,obj(accessors.get(integer(attrs.get("NORMAL")))),count,false)
+                    : null;
                 var local=new ArrayList<Vertex>();var transformed=new ArrayList<Vertex>();double[] matrix=world[ni];
                 for(int i=0;i<count;i++){
-                    double x=component(b,binaryStart,binaryLength,views,pos,i,0,3),y=component(b,binaryStart,binaryLength,views,pos,i,1,3),z=component(b,binaryStart,binaryLength,views,pos,i,2,3),u=component(b,binaryStart,binaryLength,views,uv,i,0,2),v=component(b,binaryStart,binaryLength,views,uv,i,1,2);Normal n=normal==null?null:new Normal(component(b,binaryStart,binaryLength,views,normal,i,0,3),component(b,binaryStart,binaryLength,views,normal,i,1,3),component(b,binaryStart,binaryLength,views,normal,i,2,3));local.add(new Vertex(x,y,z,u,v,n));
+                    double x=positions.value(i,0), y=positions.value(i,1), z=positions.value(i,2);
+                    double u=texCoords.value(i,0), v=texCoords.value(i,1);
+                    Normal n=normals==null ? null : new Normal(normals.value(i,0),normals.value(i,1),normals.value(i,2));
+                    local.add(new Vertex(x,y,z,u,v,n));
                     double rx=matrix[0]*x+matrix[1]*y+matrix[2]*z+matrix[3],ry=matrix[4]*x+matrix[5]*y+matrix[6]*z+matrix[7],rz=matrix[8]*x+matrix[9]*y+matrix[10]*z+matrix[11];Normal transformedNormal=null;
                     if(n!=null){double a=matrix[0],bb=matrix[1],c=matrix[2],d=matrix[4],e=matrix[5],f=matrix[6],g=matrix[8],h=matrix[9],j=matrix[10],det=a*(e*j-f*h)-bb*(d*j-f*g)+c*(d*h-e*g);if(Math.abs(det)<1e-12)throw new IOException("Singular normal transform");double nx=((e*j-f*h)*n.x()+(f*g-d*j)*n.y()+(d*h-e*g)*n.z())/det,ny=((c*h-bb*j)*n.x()+(a*j-c*g)*n.y()+(bb*g-a*h)*n.z())/det,nz=((bb*f-c*e)*n.x()+(c*d-a*f)*n.y()+(a*e-bb*d)*n.z())/det;double length=Math.sqrt(nx*nx+ny*ny+nz*nz);if(!Double.isFinite(length)||length<1e-8)throw new IOException("Invalid normal length");transformedNormal=new Normal(nx/length,ny/length,nz/length);}
                     transformed.add(new Vertex(rx,ry,rz,u,v,transformedNormal));
@@ -170,16 +178,42 @@ public final class EditorGlbReader {
         return component==5125?b.getInt(p):component==5123?Short.toUnsignedInt(b.getShort(p)):
             Byte.toUnsignedInt(b.get(p));
     }
-    private static double component(ByteBuffer b,int start,int bytes,List<Object> views,
-                        Map<String,Object> accessor,int n,int c,int dims)throws IOException{
-        if(accessor.containsKey("sparse"))throw new IOException("Sparse vertices");
-        Map<String,Object> view=obj(views.get(integer(accessor.get("bufferView"))));
-        int stride=get(view,"byteStride",dims*4);
-        if(get(view,"buffer",0)!=0||stride<dims*4||stride%4!=0||get(view,"byteOffset",0)<0||get(accessor,"byteOffset",0)<0||Boolean.TRUE.equals(accessor.get("normalized")))throw new IOException("Invalid float vertex view/stride/offset");
-        long addr=(long)get(view,"byteOffset",0)+get(accessor,"byteOffset",0)+(long)n*stride+c*4;
-        if(addr<0||addr+4>bytes||addr+4>(long)get(view,"byteOffset",0)+get(view,"byteLength",0))
-            throw new IOException("Vertex bounds");
-        return b.getFloat(start+(int)addr);
+    /** Resolve and check the complete accessor once, before reading its vertex components. */
+    private record VertexAttribute(ByteBuffer buffer,int offset,int stride,int componentBytes) {
+        static VertexAttribute open(ByteBuffer buffer,int start,int length,List<Object> views,
+                                    Map<String,Object> accessor,int count,boolean textureCoordinates)throws IOException {
+            int type=get(accessor,"componentType",-1);
+            boolean vectorType=(textureCoordinates ? "VEC2" : "VEC3").equals(accessor.get("type"));
+            if (!vectorType || get(accessor,"count",-1)!=count || accessor.containsKey("sparse"))
+                throw new IOException("Unsupported vertex accessor shape");
+            int componentBytes;
+            if (type==5126 && Boolean.FALSE.equals(accessor.getOrDefault("normalized",false))) {
+                componentBytes=Float.BYTES;
+            } else if (textureCoordinates && (type==5121 || type==5123) && Boolean.TRUE.equals(accessor.get("normalized"))) {
+                componentBytes=type==5121 ? Byte.BYTES : Short.BYTES;
+            } else {
+                throw new IOException("Unsupported vertex component type or normalization");
+            }
+            var view=obj(views.get(integer(accessor.get("bufferView"))));
+            int viewOffset=get(view,"byteOffset",0), attributeOffset=get(accessor,"byteOffset",0);
+            int elementBytes=(textureCoordinates ? 2 : 3)*componentBytes;
+            int stride=get(view,"byteStride",elementBytes);
+            long first=(long)viewOffset+attributeOffset;
+            long end=first+(long)(count-1)*stride+elementBytes;
+            if (get(view,"buffer",0)!=0 || viewOffset<0 || attributeOffset<0 || stride<elementBytes || stride%4!=0
+                    || (componentBytes<Float.BYTES && (attributeOffset%4!=0 || first%componentBytes!=0)))
+                throw new IOException("Invalid vertex view/stride/offset");
+            if (end>length || end>(long)viewOffset+get(view,"byteLength",0))
+                throw new IOException("Vertex bounds");
+            return new VertexAttribute(buffer,start+(int)first,stride,componentBytes);
+        }
+        double value(int vertex,int component) {
+            int address=offset+vertex*stride+component*componentBytes;
+            return switch (componentBytes) {
+                case Byte.BYTES -> Byte.toUnsignedInt(buffer.get(address))/255.0;
+                case Short.BYTES -> Short.toUnsignedInt(buffer.getShort(address))/65535.0;
+                default -> buffer.getFloat(address);
+            };
+        }
     }
-
 }
