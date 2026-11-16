@@ -31,6 +31,7 @@ public final class GpuDesktop {
   config.setOpenGLEmulation(Lwjgl3ApplicationConfiguration.GLEmulation.GL30,3,3);
   config.setWindowedMode(640,400);
   config.setInitialVisible(false);
+  config.setWindowPosition(0,0);
   config.setResizable(false);
   config.useVsync(false);
   // Swing owns frame pacing. A second 60 Hz throttle here delayed fresh
