@@ -2822,5 +2822,17 @@
       ],
       "type": "Rejected earlier native source assembly, original source retained"
     }
-  ]
+  ],
+  "publication": {
+    "construction_commit": "a5958d39929f6febee2d2f5f6891ed78b304b159",
+    "branch": "map/roster-structure-batch",
+    "independent_remote_matches": true,
+    "held_pr": 86,
+    "is_draft": true,
+    "base": "map/house-default",
+    "gallery_index": "PASS11024PNGS",
+    "deployed_gallery_page_http": 200,
+    "new_capture_http": 404,
+    "status": "SOURCE_PUBLISHED_LIVE_GALLERY_DEPLOYMENT_PENDING_HELD_INTEGRATION"
+  }
 }
