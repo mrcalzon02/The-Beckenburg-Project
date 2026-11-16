@@ -118,8 +118,55 @@ public final class EditorGlbAuthoringTest {
         byte[] tail=ByteBuffer.allocate(12).order(ByteOrder.LITTLE_ENDIAN).putInt(4).putInt(0x12345678).putInt(42).array();byte[] opaque=EditorGlbDocumentWriter.container(document.root(),document.binary(),tail);var retained=EditorTopologyProject.fromGlb("opaque.glb",opaque,root.resolve("opaque.btop"));var v=retained.snapshot().vertices().get(0);retained.moveVertex(v.id(),v.x()+.125,v.y(),v.z());check(Arrays.equals(tail,EditorGlbReader.read(EditorGlbWriter.encode(retained.mesh())).trailing()),"Unrecognized optional binary chunks retain exact bytes after editing");
         check(EditorGlbReader.read(externalFixture()).materials().get(0).defaultOrigin().equals("TOP_LEFT"),"External GLB defaults to original image-space UVs");
     }
+    private static void verifyCutoff(byte[] bytes,int index,EditorMeshMaterial expected)throws IOException {
+        var doc=EditorGlbReader.read(bytes);
+        var definition=EditorGlbReader.obj(EditorGlbReader.arr(doc.root().get("materials")).get(index));
+        check(expected.alpha().name().equals(definition.get("alphaMode")),"Material alpha mode preserved");
+        check(definition.containsKey("alphaCutoff")==(expected.alpha()==EditorMeshMaterial.Alpha.MASK),
+            "Only MASK materials may emit glTF alphaCutoff");
+        if (expected.alpha()==EditorMeshMaterial.Alpha.MASK)
+            near(((Number)definition.get("alphaCutoff")).doubleValue(),expected.cutoff());
+        near(doc.nativeMaterials().get(index).cutoff(),expected.cutoff());
+    }
+
+    private static void alphaCutoffs(Path root)throws Exception {
+        byte[] source=fixture();
+        var original=EditorGlbReader.read(source);
+        for (var mode:EditorMeshMaterial.Alpha.values()) {
+            var material=new EditorMeshMaterial("test-alpha","Alpha case",EditorMeshMaterialTest.png(),
+                new EditorMeshMaterial.Color(1,1,1,1),10497,10497,mode,.375,EditorMeshMaterial.Origin.TOP_LEFT,Map.of());
+            var triangle=original.mesh("panel").triangles().get(0);
+            var mesh=new EditorMeshPipeline.Mesh("alpha",List.of(new EditorMeshPipeline.Triangle("panel",
+                triangle.a(),triangle.b(),triangle.c(),material.key())),0,List.of(0L,1L,2L),List.of(material));
+            byte[] fresh=EditorGlbWriter.encode(mesh);
+            EditorGlbWriter.validate(mesh,fresh);
+            verifyCutoff(fresh,0,material);
+
+            var project=EditorTopologyProject.fromGlb("original.glb",source,root.resolve("material-"+mode+".btop"));
+            project.applyPreview(project.previewBindMaterial(0,material));
+            byte[] edited=EditorGlbWriter.encode(project.mesh());
+            EditorGlbWriter.validate(project.mesh(),edited);
+            sourcePreserved(original,EditorGlbReader.read(edited));
+            verifyCutoff(edited,original.materials().size(),material);
+        }
+
+        // Existing third-party definitions are immutable, including a nonstandard inactive cutoff.
+        var tree=EditorGlbReader.obj(EditorGlbJson.read(EditorGlbJson.write(original.root())));
+        var legacy=EditorGlbReader.obj(EditorGlbReader.arr(tree.get("materials")).get(0));
+        legacy.put("alphaCutoff",.8125);
+        byte[] foreign=EditorGlbDocumentWriter.container(tree,original.binary());
+        var project=EditorTopologyProject.fromGlb("legacy.glb",foreign,root.resolve("legacy.btop"));
+        check(Arrays.equals(foreign,EditorGlbWriter.encode(project.mesh())),"No-edit export preserves exact legacy bytes");
+        project.applyPreview(project.previewUvTransform(0,false,EditorTopologyProject.UvTransform.MOVE,.25,0,false));
+        var after=EditorGlbReader.read(EditorGlbWriter.encode(project.mesh()));
+        check(after.root().get("materials").equals(EditorGlbReader.read(foreign).root().get("materials")),
+            "Editing geometry preserves the foreign material definition, including its inactive cutoff");
+        near(after.nativeMaterials().get(0).cutoff(),.8125);
+    }
+
     public static void main(String[] args)throws Exception{
         Path root=Files.createTempDirectory("native-glb-authoring-");try{
+            alphaCutoffs(root);
             packedUvRoundTrip(root,1);
             packedUvRoundTrip(root,2);
             byte[] original=fixture();guards(original,root);var decoded=EditorGlbReader.read(original);var mesh=decoded.mesh("assembly.glb");check(mesh.triangles().size()==4&&mesh.cornerVertexIds().stream().distinct().count()==8,"Actual shared decoder retains two instances and source vertex connectivity");var point=decoded.primitives().get(0).world().get(0);near(point.x(),3);near(point.z(),1);near(decoded.primitives().get(0).world().get(1).z(),-1);near(point.normal().x(),1);
@@ -133,7 +180,7 @@ public final class EditorGlbAuthoringTest {
             var appended=EditorTopologyProject.fromGlb("assembly.glb",original,root.resolve("appended.btop"));appended.appendPrimitive(new EditorMeshPrimitives.Parameters(EditorMeshPrimitives.Kind.BOX,1,1,1,12,4));byte[] withPrimitive=EditorGlbWriter.encode(appended.mesh());EditorGlbWriter.validate(appended.mesh(),withPrimitive);check(EditorGlbReader.arr(EditorGlbReader.read(withPrimitive).root().get("nodes")).size()==4,"Appending a native primitive retains original hierarchy and adds one independent root");
             byte[] future=Files.readAllBytes(p.documentPath());ByteBuffer.wrap(future).putInt(4,8);refuse(()->EditorTopologyProject.decode(future));
             if(args.length>0){Path out=Path.of(args[0]);Files.createDirectories(out);Files.write(out.resolve("original.glb"),original);Files.write(out.resolve("edited.glb"),surface);Files.copy(p.documentPath(),out.resolve("edited.btop"),StandardCopyOption.REPLACE_EXISTING);}
-            System.out.println("PASS source-backed GLB: normalized byte/short UV interchange, shared matrix/ancestor decoder, exact source bytes/metadata/PNG, native v4/history, independent instance edits, original hierarchy/pivots/materials, UV/modeling and real export/reimport validation");
+            System.out.println("PASS source-backed GLB: all alpha modes/native cutoffs, normalized byte/short UV interchange, shared matrix/ancestor decoder, exact source bytes/metadata/PNG, native v4/history, independent instance edits, original hierarchy/pivots/materials, UV/modeling and real export/reimport validation");
         }finally{try(var paths=Files.walk(root)){for(var path:paths.sorted(Comparator.reverseOrder()).toList())Files.deleteIfExists(path);}}
     }
     /** Real glTF data-URI, split-buffer and external-sidecar fixtures for G2 GUI acceptance. */

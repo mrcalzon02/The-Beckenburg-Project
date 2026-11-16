@@ -213,6 +213,7 @@ public final class AssetImportDialog {
     private final JComboBox<String> pinScope=new JComboBox<>(new String[]{"Corner A","Corner B","Corner C","Entire island"});
     private final JButton pinUvs=new JButton("Pin"),unpinUvs=new JButton("Unpin");
     private final JComboBox<String> seamEdge=new JComboBox<>(new String[]{"A–B","B–C","C–A"});
+    private final MaterialReviewSeamInspector seamInspector=new MaterialReviewSeamInspector();
     private final JButton markSeam=new JButton("Mark seam"),clearSeam=new JButton("Clear mark");
     private final JButton unwrapIsland=new JButton("Unwrap island (LSCM)");
     private final JSpinner packPadding=new JSpinner(new SpinnerNumberModel(1,0,1024,1));
@@ -566,7 +567,7 @@ public final class AssetImportDialog {
         if(materialDialog==null){
             materialDialog=new JDialog(dialog,"Material Editor - Texture & UV",false);materialDialog.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
             materialDialog.addComponentListener(new ComponentAdapter(){
-                @Override public void componentHidden(ComponentEvent event){stopMaterialObservation();reviewMips=new MaterialReviewMip.Cache();}
+                @Override public void componentHidden(ComponentEvent event){seamInspector.inspect(null,-1);stopMaterialObservation();reviewMips=new MaterialReviewMip.Cache();}
             });
             materialDialog.addWindowListener(new WindowAdapter(){
                 public void windowClosing(WindowEvent e){hideMaterialWindow();}
@@ -618,7 +619,7 @@ public final class AssetImportDialog {
             materialTools.addTab("Pack",EditorTopologyWorkspace.column(new JLabel("SELECTED MATERIAL ISLANDS"),
                 EditorTopologyWorkspace.form("Gutter (texels)",packPadding),keepPackDensity,packMaterialUvs,
                 EditorTopologyWorkspace.form("Pin selection",pinScope),pinUvs,unpinUvs));
-            materialTools.addTab("Seams",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Face edge",seamEdge),seamButtons,unwrapIsland));
+            materialTools.addTab("Seams",EditorTopologyWorkspace.column(EditorTopologyWorkspace.form("Face edge",seamEdge),seamInspector,seamButtons,unwrapIsland));
             unwrapIsland.setToolTipText("Unfold this chart in texture pixels, holding its pinned UVs in place.");
             unwrapIsland.addActionListener(e->{if(selectedHit!=null){long id=selectedHit.faceId();beginMaterialPreview(p->p.previewUnwrap(id));}});
             pinScope.setToolTipText("Packing holds any island with a pinned UV in place.");
@@ -627,7 +628,14 @@ public final class AssetImportDialog {
             materialTools.addChangeListener(e->{if(materialWorkspace!=null){
                 String tab=materialTools.getTitleAt(materialTools.getSelectedIndex());
                 materialWorkspace.showUvGuides(tab.equals("Pack"),tab.equals("Seams"));
+                seamInspector.setActive(tab.equals("Seams"));
             }});
+            seamEdge.setToolTipText("Cyan dashes show the selected edge. Pink lines are authored seam marks.");
+            seamEdge.addActionListener(e->{
+                int corner=seamEdge.getSelectedIndex();
+                materialWorkspace.selectGuideEdge(corner);
+                seamInspector.selectCorner(corner);
+            });
             packMaterialUvs.setToolTipText("Place all islands of the selected material in tile zero. The source image stays fixed.");
             packMaterialUvs.addActionListener(e->{
                 if(selectedHit==null)return;
@@ -810,6 +818,9 @@ public final class AssetImportDialog {
         boolean bound=material!=null;
         if(material==null&&materialList.getSelectedItem() instanceof EditorMeshMaterial m)material=m;
         materialWorkspace.observe(state,face,material,modelingPreview==null?null:modelingPreview.description());
+        var observed=modelingPreview!=null ? modelingObservation : workingObservation;
+        seamInspector.inspect(observed!=null && observed.snapshot()==state && faceIndex>=0 &&
+            materialWorkspace.visibility().includes(face) ? observed : null,faceIndex);
         materialRuntime.repaint();
         if(material!=shownPaintMaterial){
             var prior=paintLayer.getSelectedValue();

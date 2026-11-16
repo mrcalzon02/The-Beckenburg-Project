@@ -14,6 +14,21 @@ final class EditorMaterialGlbWriter {
     private record Run(String part,String material,int start,int count){}
     private static Map<String,Object> obj(Object... pairs){var out=new LinkedHashMap<String,Object>();for(int i=0;i<pairs.length;i+=2)out.put((String)pairs[i],pairs[i+1]);return out;}
     private static int pad4(int value){return (value+3)&~3;}
+    static final String INACTIVE_ALPHA_CUTOFF = "beckenburgInactiveAlphaCutoff";
+
+    static Map<String,Object> materialDefinition(EditorMeshMaterial material,int texture) {
+        var color=material.color();
+        var pbr=obj("baseColorTexture",obj("index",texture),"baseColorFactor",List.of(color.r(),color.g(),color.b(),color.a()),
+            "metallicFactor",0,"roughnessFactor",1);
+        var extras=obj("beckenburgMaterialKey",material.key(),"beckenburgUvOrigin",material.origin().name(),
+            "beckenburgSourceProperties",material.sourceProperties());
+        var definition=obj("name",material.name(),"pbrMetallicRoughness",pbr,"alphaMode",material.alpha().name());
+        if (material.alpha()==EditorMeshMaterial.Alpha.MASK) definition.put("alphaCutoff",material.cutoff());
+        else if (material.cutoff()!=.5) extras.put(INACTIVE_ALPHA_CUTOFF,material.cutoff());
+        definition.put("extras",extras);
+        return definition;
+    }
+
     static byte[] encode(Mesh mesh)throws IOException{
         if(mesh.triangles().isEmpty()||mesh.triangles().size()>16000)throw new IOException("Material export needs1..16000 triangles under existing runtime limits");
         var definitions=new ArrayList<>(mesh.materials());if(mesh.triangles().stream().anyMatch(t->t.material().isEmpty()))definitions.add(EditorMeshMaterial.fallback());
@@ -52,8 +67,8 @@ final class EditorMaterialGlbWriter {
         for(var material:definitions){
             byte[] png=material.png();String hash=EditorMeshPipeline.sourceFingerprint(png);Integer image=imageIndices.get(hash);
             if(image==null){if(images.size()>=64)throw new IOException("Actual runtime image count exceeded");align(binary);int offset=binary.size();binary.write(png);int view=views.size();views.add(obj("buffer",0,"byteOffset",offset,"byteLength",png.length));image=images.size();images.add(obj("bufferView",view,"mimeType","image/png"));imageIndices.put(hash,image);}
-            int sampler=samplers.size();samplers.add(obj("wrapS",material.wrapS(),"wrapT",material.wrapT(),"magFilter",9728,"minFilter",9728));int texture=textures.size();textures.add(obj("source",image,"sampler",sampler));var color=material.color();
-            materials.add(obj("name",material.name(),"pbrMetallicRoughness",obj("baseColorTexture",obj("index",texture),"baseColorFactor",List.of(color.r(),color.g(),color.b(),color.a()),"metallicFactor",0,"roughnessFactor",1),"alphaMode",material.alpha().name(),"alphaCutoff",material.cutoff(),"extras",obj("beckenburgMaterialKey",material.key(),"beckenburgUvOrigin",material.origin().name(),"beckenburgSourceProperties",material.sourceProperties())));
+            int sampler=samplers.size();samplers.add(obj("wrapS",material.wrapS(),"wrapT",material.wrapT(),"magFilter",9728,"minFilter",9728));int texture=textures.size();textures.add(obj("source",image,"sampler",sampler));
+            materials.add(materialDefinition(material,texture));
         }
         align(binary);var root=obj("asset",obj("version","2.0","generator","Beckenburg Native Material Compiler"),"scene",0,"scenes",List.of(obj("nodes",List.of(0))),"nodes",List.of(obj("name",mesh.name(),"mesh",0)),"meshes",List.of(obj("name",mesh.name(),"primitives",primitives)),"buffers",List.of(obj("byteLength",binary.size())),"bufferViews",views,"accessors",accessors,"images",images,"textures",textures,"samplers",samplers,"materials",materials);
         if(!mesh.frames().isEmpty()){

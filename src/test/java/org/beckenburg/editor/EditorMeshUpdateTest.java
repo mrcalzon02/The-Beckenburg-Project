@@ -81,6 +81,68 @@ public final class EditorMeshUpdateTest {
         doc.restore(original);
         if (!doc.observe(collapsed).topology().manifold()) throw new AssertionError("Repair retained stale diagnostics");
     }
+    /** Change both faces in each selected pair, so the seam is encountered from both directions. */
+    private static State pairedSeams(State base, int first, int stride) {
+        var faces = new ArrayList<>(base.faces());
+        int pairs = faces.size() / 2;
+        for (int i = first; i < pairs; i += stride) {
+            var a = faces.get(i);
+            var b = faces.get(pairs + i);
+            faces.set(i, a.withCorners(a.a(), new Corner(a.b().vertex(), .25, 0), a.c()));
+            faces.set(pairs + i, b.withCorners(new Corner(b.a().vertex(), .5, 0), b.b(), b.c()));
+        }
+        return new State(base.sceneId(), base.sourceFingerprint(), base.name(), base.sourceBytes(), base.vertices(), faces);
+    }
+    private static void checkDistantTwins() {
+        int pairs = 347;
+        var doc = EditorTopologyProject.fromMesh(new EditorMeshPipeline.Mesh("distant", List.of(), 0),
+            "0".repeat(64), Path.of("distant.btop"));
+        var seed = doc.snapshot();
+        var vertices = new ArrayList<Vertex>();
+        var firstFaces = new ArrayList<Face>();
+        var secondFaces = new ArrayList<Face>();
+        for (int i = 0; i < pairs; i++) {
+            int v = vertices.size(), x = 2 * i;
+            vertices.add(new Vertex(v, "grid", x, 0, 0));
+            vertices.add(new Vertex(v + 1, "grid", x + 1, 0, 0));
+            vertices.add(new Vertex(v + 2, "grid", x, 1, 0));
+            vertices.add(new Vertex(v + 3, "grid", x + 1, 1, 0));
+            firstFaces.add(face(i, v, v + 1, v + 2));
+            secondFaces.add(new Face(pairs + i, "grid", new Corner(v + 1, 1, 0),
+                new Corner(v + 3, 1, 1), new Corner(v + 2, 0, 1)));
+        }
+        firstFaces.addAll(secondFaces);
+        var initial = new State(seed.sceneId(), seed.sourceFingerprint(), "distant", 0, vertices, firstFaces);
+        doc.restore(initial);
+        var base = doc.observe();
+        var edges = base.topology().edges();
+        for (int i = 0; i < pairs; i++) {
+            if (edges.get(3 * i + 1).twin() != 3 * (pairs + i) + 2)
+                throw new AssertionError("Expected distant paired half-edges at square " + i);
+        }
+        doc.restore(pairedSeams(initial, 0, 1));
+        var dense = doc.observe(base);
+        doc.restore(pairedSeams(initial, 0, 2));
+        var evens = doc.observe(dense);
+        doc.restore(pairedSeams(initial, 1, 2));
+        var odds = doc.observe(dense);
+        doc.restore(pairedSeams(initial, pairs - 1, pairs));
+        var single = doc.observe(base);
+        if (base.topology().uvSeams() != 0 || dense.topology().uvSeams() != pairs ||
+                evens.topology().uvSeams() != (pairs + 1) / 2 || odds.topology().uvSeams() != pairs / 2 ||
+                single.topology().uvSeams() != 1 || single.topology().edges().get(1) != edges.get(1))
+            throw new AssertionError("A divergent edit changed seam totals or counted both twins");
+        try {
+            odds.topology().edges().set(1, edges.get(0));
+            throw new AssertionError("A published half-edge was writable");
+        } catch (UnsupportedOperationException expected) { }
+        // Recheck every retained observation against a fresh, independent full rebuild after both branches exist.
+        for (var observation : List.of(base, dense, evens, odds, single)) {
+            doc.restore(observation.snapshot());
+            assertFullParity(doc, observation);
+        }
+        System.out.println("PASS 347 distant twin pairs: dense, alternating and single-pair edits preserve five native snapshots");
+    }
     /** Compare incremental observations with independent full native derivations across
      * interleaved attribute, geometry, connectivity and shared-history changes. */
     private static void checkMixedUpdates() {
@@ -234,6 +296,7 @@ public final class EditorMeshUpdateTest {
         checkConnectivityChange();
         checkPreviewHandoff();
         checkSeamUpdate();
+        checkDistantTwins();
         checkPickingRefit();
         checkMixedUpdates();
         var project=EditorTopologyProject.fromMesh(new EditorMeshPipeline.Mesh("grid",List.of(),0),

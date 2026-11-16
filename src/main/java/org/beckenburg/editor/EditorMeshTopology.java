@@ -18,19 +18,66 @@ public final class EditorMeshTopology {
     }
     public record HalfEdge(int origin,int destination,int face,int next,int previous,int twin,
                            boolean boundary,boolean uvSeam) {}
+    /** Immutable edge storage. Every revision indexes its own directory directly;
+     * unchanged pages stay shared even after many successive edits. */
+    private static final class HalfEdges extends AbstractList<HalfEdge> implements RandomAccess {
+        private static final int PAGE_SHIFT = 8;
+        private static final int PAGE_SIZE = 1 << PAGE_SHIFT;
+        private static final int PAGE_MASK = PAGE_SIZE - 1;
+        private final HalfEdge[][] pages;
+        private final int size;
+        private final List<HalfEdge> view = Collections.unmodifiableList(this);
+
+        private HalfEdges(int[] origin, int[] twin, boolean[] boundary, boolean[] seam) {
+            size = origin.length;
+            pages = new HalfEdge[(size + PAGE_MASK) >>> PAGE_SHIFT][];
+            for (int page = 0; page < pages.length; page++) {
+                int start = page << PAGE_SHIFT;
+                var entries = new HalfEdge[Math.min(PAGE_SIZE, size - start)];
+                for (int i = 0; i < entries.length; i++) {
+                    int e = start + i;
+                    int nextEdge = next(e);
+                    entries[i] = new HalfEdge(origin[e], origin[nextEdge], e / 3, nextEdge,
+                        e / 3 * 3 + (e % 3 + 2) % 3, twin[e], boundary[e], seam[e]);
+                }
+                pages[page] = entries;
+            }
+        }
+
+        private HalfEdges(int size, HalfEdge[][] updatedPages) {
+            this.size = size;
+            this.pages = updatedPages;
+        }
+
+        private static HalfEdge read(HalfEdge[][] pages, int i) {
+            return pages[i >>> PAGE_SHIFT][i & PAGE_MASK];
+        }
+        @Override public HalfEdge get(int i) {
+            return read(pages, Objects.checkIndex(i, size));
+        }
+        @Override public int size() { return size; }
+
+        /** updatedPages is private to one in-progress update and is published only after both twins are set. */
+        private void updateSeam(HalfEdge[][] updatedPages, int i, boolean seam) {
+            int page = i >>> PAGE_SHIFT;
+            if (updatedPages[page] == pages[page]) updatedPages[page] = pages[page].clone();
+            int slot = i & PAGE_MASK;
+            updatedPages[page][slot] = withSeam(updatedPages[page][slot], seam);
+        }
+    }
     public record Face(String part,int edge,int island) {}
     private final List<Vertex> vertices;
-    private final List<HalfEdge> edges;
+    private final HalfEdges edges;
     private final List<Face> faces;
     private final List<Issue> issues;
     private final int issueCount,islands,boundaryEdges,uvSeams;
-    private EditorMeshTopology(List<Vertex> vertices,List<HalfEdge> edges,List<Face> faces,
+    private EditorMeshTopology(List<Vertex> vertices,HalfEdges edges,List<Face> faces,
                                List<Issue> issues,int issueCount,int islands,int boundaries,int seams){
-        this.vertices=List.copyOf(vertices);this.edges=List.copyOf(edges);this.faces=List.copyOf(faces);
+        this.vertices=List.copyOf(vertices);this.edges=edges;this.faces=List.copyOf(faces);
         this.issues=List.copyOf(issues);this.issueCount=issueCount;this.islands=islands;boundaryEdges=boundaries;uvSeams=seams;
     }
     public List<Vertex> vertices(){return vertices;}
-    public List<HalfEdge> edges(){return edges;}
+    public List<HalfEdge> edges(){return edges.view;}
     public List<Face> faces(){return faces;}
     public List<Issue> issues(){return issues;}
     public int issueCount(){return issueCount;}
@@ -66,7 +113,7 @@ public final class EditorMeshTopology {
             if (moved==null) moved=new ArrayList<>(vertices);
             moved.set(i,new Vertex(v.part(),v.x(),v.y(),v.z()));
         }
-        ArrayList<HalfEdge> updated=null;
+        HalfEdge[][] updated=null;
         int seams=uvSeams;
         for (int i=changedFaces.nextSetBit(0);i>=0;i=changedFaces.nextSetBit(i+1)) {
             var a=before.triangles().get(i);
@@ -75,20 +122,20 @@ public final class EditorMeshTopology {
             if (!a.part().equals(b.part()) || (moved!=null && degenerate(b))) return null;
             if (sameUv(a.a(),b.a()) && sameUv(a.b(),b.b()) && sameUv(a.c(),b.c())) continue;
             for (int e=i*3;e<i*3+3;e++) {
-                var edge=updated==null ? edges.get(e) : updated.get(e);
+                var edge=updated==null ? edges.get(e) : HalfEdges.read(updated,e);
                 int twin=edge.twin();
                 if (twin<0) continue;
                 boolean seam=!sameUv(corner(after,e),corner(after,next(twin))) ||
                     !sameUv(corner(after,next(e)),corner(after,twin));
                 if (seam==edge.uvSeam()) continue;
-                if (updated==null) updated=new ArrayList<>(edges);
-                updated.set(e,withSeam(edge,seam));
-                updated.set(twin,withSeam(edges.get(twin),seam));
+                if (updated==null) updated=edges.pages.clone();
+                edges.updateSeam(updated,e,seam);
+                edges.updateSeam(updated,twin,seam);
                 seams+=seam ? 1 : -1;
             }
         }
         if (updated==null && moved==null) return this;
-        return new EditorMeshTopology(moved==null ? vertices : moved,updated==null ? edges : updated,
+        return new EditorMeshTopology(moved==null ? vertices : moved,updated==null ? edges : new HalfEdges(edges.size(),updated),
             faces,issues,issueCount,islands,boundaryEdges,seams);
     }
     private static boolean degenerate(EditorMeshPipeline.Triangle t) {
@@ -182,13 +229,13 @@ public final class EditorMeshTopology {
             if(vertexFan[v]<0)vertexFan[v]=fan;
             else if(vertexFan[v]!=fan&&!reported[v]){reported[v]=true;findings.add(Code.NON_MANIFOLD_VERTEX,v,"Vertex has disconnected face fans");}
         }
-        var islandIds=new LinkedHashMap<Integer,Integer>();var faces=new ArrayList<Face>(count);var edges=new ArrayList<HalfEdge>(total);
+        var islandIds=new LinkedHashMap<Integer,Integer>();var faces=new ArrayList<Face>(count);
         for(int i=0;i<count;i++){
             int root=faceGroups.root(i);Integer island=islandIds.get(root);
             if(island==null){island=islandIds.size();islandIds.put(root,island);}
             faces.add(new Face(mesh.triangles().get(i).part(),i*3,island));
         }
-        for(int e=0;e<total;e++)edges.add(new HalfEdge(origin[e],origin[next(e)],e/3,next(e),e/3*3+(e%3+2)%3,twin[e],boundary[e],seam[e]));
+        var edges=new HalfEdges(origin,twin,boundary,seam);
         return new EditorMeshTopology(vertices,edges,faces,findings.issues,findings.count,islandIds.size(),boundaries,seams);
     }
     public String summary(){return "Topology: "+vertices.size()+" vertices / "+edges.size()+" half-edges / "+islands

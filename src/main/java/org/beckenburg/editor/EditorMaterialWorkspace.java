@@ -24,6 +24,12 @@ public final class EditorMaterialWorkspace extends JPanel {
     private BufferedImage texture;
     private Long selectedFace;
     private boolean pinsVisible,seamsVisible;
+    private int guideEdge;
+    public void selectGuideEdge(int corner) {
+        if (guideEdge==corner) return;
+        guideEdge=corner;
+        if (seamsVisible) canvas.repaint();
+    }
     public void showPins(boolean visible){showUvGuides(visible,false);}
     public void showUvGuides(boolean pins,boolean seams){pinsVisible=pins;seamsVisible=seams;canvas.repaint();}
     private final JButton isolate=new JButton("Isolate"), hide=new JButton("Hide"), showAll=new JButton("Show all");
@@ -239,6 +245,9 @@ public final class EditorMaterialWorkspace extends JPanel {
     private double[] imageRect(){double size=Math.max(20,Math.min(canvas.getWidth()-40,canvas.getHeight()-40))*zoom;double w=texture==null?size:size*texture.getWidth()/Math.max(texture.getWidth(),texture.getHeight()),h=texture==null?size:size*texture.getHeight()/Math.max(texture.getWidth(),texture.getHeight());return new double[]{(canvas.getWidth()-w)/2+panX,(canvas.getHeight()-h)/2+panY,w,h};}
     private int x(double u,double[] r){return (int)Math.rint(r[0]+tile.imageU(u,material)*r[2]);}
     private int y(double v,double[] r){return (int)Math.rint(r[1]+tile.imageV(v,material)*r[3]);}
+    private boolean displays(EditorTopologyProject.Face face){
+        return material==null ? face.material().isEmpty() : face.material().equals(material.key());
+    }
     private void paintTexture(Graphics2D original){var g=(Graphics2D)original.create();try{
         double[] r=imageRect();int left=(int)r[0],top=(int)r[1],w=(int)r[2],h=(int)r[3];g.clipRect(left,top,w+1,h+1);
         for(int yy=top;yy<top+h;yy+=16)for(int xx=left;xx<left+w;xx+=16){g.setColor(((xx-left)/16+(yy-top)/16)%2==0?new Color(82,86,91):new Color(56,60,65));g.fillRect(xx,yy,16,16);}
@@ -260,13 +269,13 @@ public final class EditorMaterialWorkspace extends JPanel {
             }finally{overlay.dispose();}
         }
         if(state==null)return;for(int row=0;row<faces.size();row++){var face=faces.get(row);
-            if(material==null?!face.material().isEmpty():!face.material().equals(material.key()))continue;
+            if(!displays(face))continue;
             boolean chosen=selectedFace!=null&&face.id()==selectedFace;g.setColor(chosen?new Color(255,219,80):new Color(220,235,248,140));g.setStroke(new BasicStroke(chosen?3:1));var corners=List.of(face.a(),face.b(),face.c());for(int i=0;i<3;i++){var a=corners.get(i);var b=corners.get((i+1)%3);g.drawLine(x(a.u(),r),y(a.v(),r),x(b.u(),r),y(b.v(),r));}
         }
-        if((pinsVisible||seamsVisible) && material!=null){
+        if(pinsVisible||seamsVisible){
             g.clipRect((int)r[0],(int)r[1],(int)Math.ceil(r[2])+1,(int)Math.ceil(r[3])+1);
             for(int row=0;row<faces.size();row++){
-                var f=faces.get(row);if(!f.material().equals(material.key()))continue;
+                var f=faces.get(row);if(!displays(f))continue;
                 int index=0;
                 var corners=List.of(f.a(),f.b(),f.c());for(var c:corners){
                     int px=x(c.u(),r),py=y(c.v(),r);
@@ -278,9 +287,17 @@ public final class EditorMaterialWorkspace extends JPanel {
                     index++;
                 }
             }
-            if(selected!=null && selected.material().equals(material.key())){
+            if(selected!=null && displays(selected)){
+                var corners=List.of(selected.a(),selected.b(),selected.c());
+                if (seamsVisible && guideEdge>=0 && guideEdge<3) {
+                    var start=corners.get(guideEdge);
+                    var end=corners.get((guideEdge+1)%3);
+                    g.setColor(Color.CYAN);
+                    g.setStroke(new BasicStroke(2,BasicStroke.CAP_BUTT,BasicStroke.JOIN_ROUND,1,new float[]{6,4},0));
+                    g.drawLine(x(start.u(),r),y(start.v(),r),x(end.u(),r),y(end.v(),r));
+                }
                 int index=0;
-                for(var c:List.of(selected.a(),selected.b(),selected.c())){
+                for(var c:corners){
                     int px=x(c.u(),r),py=y(c.v(),r);
                     if(px>=Math.floor(r[0]) && px<=Math.ceil(r[0]+r[2]) && py>=Math.floor(r[1]) && py<=Math.ceil(r[1]+r[3])){
                         int tx=(int)Math.max(r[0],Math.min(px+4,r[0]+r[2]-12));

@@ -742,6 +742,12 @@ public final class G2TexturedModelGuiTest {
         System.out.println("PASS G2 textured box: two workspaces, 8 vertices, 6 quads, 12 triangles, "
             +"36 runtime corners with transformed hard normals and UVs, undo/redo, OBJ bundle/GLB/glTF/native reopen");
     }
+    private void expectSeam(String text)throws Exception{
+        var inspector=(JLabel)field(ui,"seamInspector");
+        await(()->inspector.getText()!=null && inspector.getText().contains(text));
+        edt(()->check(inspector.isShowing() && inspector.getHeight()>=inspector.getPreferredSize().height,
+            "Selected edge status is clipped"));
+    }
     private void verifyRelaxedFan()throws Exception{
         var obj=EditorMeshMaterialTest.UvFixture.source(Path.of(System.getProperty("user.home"),"fan"));
         byte[] originalObj=Files.readAllBytes(obj);
@@ -806,8 +812,13 @@ public final class G2TexturedModelGuiTest {
         check(project.snapshot().equals(packed),"Undo pin history exactly");
         edt(()->button(ui,"undoMesh"));await(()->ready(ui));check(project.snapshot().equals(original),"Undo material packing exactly");
         edt(()->{var tabs=(JTabbedPane)field(ui,"materialTools");tabs.setSelectedIndex(tabs.indexOfTab("Seams"));});
+        edt(()->select("seamEdge",0));expectSeam("Mesh boundary · Unmarked");
         for(int edge:new int[]{1,2}){
-            edt(()->{select("seamEdge",edge);button(ui,"markSeam");});applyReview();
+            edt(()->select("seamEdge",edge));expectSeam("UVs match · Unmarked");
+            long neighbor=original.faces().get(edge==1?1:3).id();
+            expectSeam("Across edge · Face "+neighbor+"<");
+            edt(()->button(ui,"markSeam"));await(()->reviewed(ui));expectSeam("UVs match · Marked");
+            applyReview();expectSeam("UVs match · Marked");
         }
         var cut=project.snapshot();
         check(cut.faces().get(0).seamMask()==6,"Actual Material Editor cuts both selected edges");
@@ -822,10 +833,25 @@ public final class G2TexturedModelGuiTest {
         var seamGame=GlbProps.model(published.get());
         for(int i=0;i<5;i++){var t=seamGame.triangles().get(i);var f=moved.faces().get(i);
             near(t.a().u(),f.a().u());near(t.a().v(),f.a().v());near(t.b().u(),f.b().u());near(t.b().v(),f.b().v());near(t.c().u(),f.c().u());near(t.c().v(),f.c().v());}
-        edt(()->{var tabs=(JTabbedPane)field(ui,"materialTools");tabs.setSelectedIndex(tabs.indexOfTab("Seams"));button(ui,"clearSeam");});applyReview();
+        edt(()->{var tabs=(JTabbedPane)field(ui,"materialTools");tabs.setSelectedIndex(tabs.indexOfTab("Seams"));});
+        expectSeam("UV split · Marked");
+        edt(()->button(ui,"clearSeam"));await(()->reviewed(ui));expectSeam("UV split · Unmarked");
+        edt(()->button(ui,"cancelFaceEdit"));await(()->ready(ui));expectSeam("UV split · Marked");
+        edt(()->button(ui,"clearSeam"));applyReview();expectSeam("UV split · Unmarked");
+        edt(()->{
+            var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");
+            var canvas=(JPanel)field(workspace,"canvas");
+            var image=new BufferedImage(canvas.getWidth(),canvas.getHeight(),BufferedImage.TYPE_INT_RGB);
+            var graphics=image.createGraphics();
+            try{canvas.printAll(graphics);}finally{graphics.dispose();}
+            check(Arrays.stream(image.getRGB(0,0,image.getWidth(),image.getHeight(),null,0,image.getWidth()))
+                .anyMatch(rgb->rgb==java.awt.Color.CYAN.getRGB()),"Selected edge guide is missing from the UV canvas");
+            captureMaterial("uv-seam-inspector.png");
+        });
         check(!project.snapshot().faces().get(0).marked(2),"Material Editor cleared selected seam");
         for(int step=0;step<4;step++){edt(()->button(ui,"undoMesh"));await(()->ready(ui));}
-        check(project.snapshot().equals(original),"Undo human seam edits exactly");
+        check(project.snapshot().equals(original),"Undo human seam edits exactly");expectSeam("UVs match · Unmarked");
+        System.out.println("PASS selected edge inspection: boundary, matching and split UVs, authored marks, neighboring face, preview, cancel and undo");
         edt(()->button(ui,"unwrapIsland"));await(()->reviewed(ui));check(project.snapshot().equals(original),"LSCM preview changed live state");
         reviewPixels();
         edt(()->{var workspace=(EditorMaterialWorkspace)field(ui,"materialWorkspace");

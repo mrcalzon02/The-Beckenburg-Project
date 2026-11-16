@@ -71,7 +71,15 @@ public final class EditorGlbReader {
             var material=obj(sourceMaterials.get(i));var pbr=obj(material.get("pbrMetallicRoughness"));var base=pbr.get("baseColorTexture");if(base==null)throw new IOException("Material has no original texture");var texture=obj(textures.get(integer(obj(base).get("index"))));int sampler=get(texture,"sampler",-1);if(sampler< -1||sampler>=samplers.size())throw new IOException("Invalid glTF sampler");var sampling=sampler<0?Map.<String,Object>of():obj(samplers.get(sampler));int wrapS=get(sampling,"wrapS",10497),wrapT=get(sampling,"wrapT",10497);if(!wrap(wrapS)||!wrap(wrapT))throw new IOException("Unsupported glTF wrap");
             var image=obj(images.get(integer(texture.get("source"))));if(!"image/png".equals(image.get("mimeType"))||!image.containsKey("bufferView"))throw new IOException("Unsupported embedded image");var view=obj(views.get(integer(image.get("bufferView"))));int offset=get(view,"byteOffset",0),length=get(view,"byteLength",-1);if(get(view,"buffer",0)!=0||length<33||offset<0||(long)offset+length>binaryLength)throw new IOException("Image buffer bounds");
             byte[] png=Arrays.copyOfRange(bytes,binaryStart+offset,binaryStart+offset+length);int w=ByteBuffer.wrap(png).getInt(16),h=ByteBuffer.wrap(png).getInt(20);if(w<2||h<2||w>2048||h>2048||(decodedPixels+=(long)w*h)>67_108_864)throw new IOException("Invalid/oversized embedded PNG");var picture=ImageIO.read(new ByteArrayInputStream(png));if(picture==null||picture.getWidth()!=w||picture.getHeight()!=h)throw new IOException("Invalid PNG");
-            String alpha=String.valueOf(material.getOrDefault("alphaMode","OPAQUE"));if(!Set.of("OPAQUE","MASK","BLEND").contains(alpha))throw new IOException("Unsupported glTF alpha mode");double cutoff=material.containsKey("alphaCutoff")?num(material.get("alphaCutoff")):.5;if(!Double.isFinite(cutoff)||cutoff<0||cutoff>1)throw new IOException("Invalid alpha cutoff");String origin=null;
+            String alpha=String.valueOf(material.getOrDefault("alphaMode","OPAQUE"));if(!Set.of("OPAQUE","MASK","BLEND").contains(alpha))throw new IOException("Unsupported glTF alpha mode");
+            double cutoff=.5;
+            if (material.containsKey("alphaCutoff")) cutoff=num(material.get("alphaCutoff"));
+            else if (!alpha.equals("MASK") && material.get("extras") instanceof Map<?,?> extras
+                    && extras.get(EditorMaterialGlbWriter.INACTIVE_ALPHA_CUTOFF) instanceof Number saved) {
+                cutoff=saved.doubleValue();
+            }
+            if (!Double.isFinite(cutoff) || cutoff<0 || cutoff>1) throw new IOException("Invalid alpha cutoff");
+            String origin=null;
             if(material.get("extras") instanceof Map<?,?> extra&&extra.get("beckenburgUvOrigin")!=null){origin=String.valueOf(extra.get("beckenburgUvOrigin"));if(!Set.of("TOP_LEFT","BOTTOM_LEFT").contains(origin))throw new IOException("Unknown authored material UV origin");}
             materials.add(new Material(i,String.valueOf(material.getOrDefault("name","")),png,vec(pbr.get("baseColorFactor"),1,1,1,1),wrapS,wrapT,alpha,cutoff,origin,"Beckenburg EditorAssetPipeline".equals(obj(root.get("asset")).get("generator"))?"BOTTOM_LEFT":"TOP_LEFT"));
         }
