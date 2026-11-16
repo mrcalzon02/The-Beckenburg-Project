@@ -119,12 +119,29 @@ public final class SafeAreaHaze {
             }
             for(int row=y0;row<=y1;row++){
                 double v=(height*.5-row-.5)/focal,dy=v*cp+sp,forward=cp-v*sp;
+                // A moving camera (and every secondary shell) uses the original direct
+                // raster loop. Keep range array checks out of its pixel path.
+                if(ranges==null){
+                    for(int col=x0;col<=x1;col++){
+                        double u=(col+.5-width*.5)/focal,dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
+                        int at=row*width+col;
+                        double sceneDepth=depths[at];
+                        if(insideDome&&sceneDepth>=0&&Double.isFinite(sceneDepth)
+                                &&insideDome(ox+dx*sceneDepth,capY+dy*sceneDepth,
+                                    oz+dz*sceneDepth,invRadius,invCap))continue;
+                        double hit=shell.hit(ox,oy,oz,dx,dy,dz);
+                        if(hit<.035||hit>=sceneDepth-.008)continue;
+                        pixels[at]=shade(pixels[at],a,x+dx*hit,eye+dy*hit-a.y(),z+dz*hit,clock);
+                        changed++;
+                    }
+                    continue;
+                }
                 for(int col=x0;col<=x1;col++){
                     int at=row*width+col,ray=(row-y0)*span+col-x0;
                     double sceneDepth=depths[at];
                     // Positive ranges are analytic hits (infinity is a miss). A negative
                     // range proves the ray remained inside up to that previous scene depth.
-                    double hit=ranges==null?0:ranges[ray];
+                    double hit=ranges[ray];
                     if(hit>0&&hit>=sceneDepth-.008)continue;
                     if(hit<0&&sceneDepth>=0&&sceneDepth<=-hit)continue;
                     double u=(col+.5-width*.5)/focal,dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
@@ -135,24 +152,28 @@ public final class SafeAreaHaze {
                         if(insideDome&&sceneDepth>=0&&Double.isFinite(sceneDepth)
                                 &&insideDome(ox+dx*sceneDepth,capY+dy*sceneDepth,
                                     oz+dz*sceneDepth,invRadius,invCap)){
-                            if(ranges!=null)ranges[ray]=-sceneDepth;
+                            ranges[ray]=-sceneDepth;
                             continue;
                         }
                         hit=shell.hit(ox,oy,oz,dx,dy,dz);
-                        if(ranges!=null)ranges[ray]=hit;
+                        ranges[ray]=hit;
                         if(hit<.035||hit>=sceneDepth-.008)continue;
                     }
-                    double wx=x+dx*hit,wy=eye+dy*hit-a.y(),wz=z+dz*hit;
-                    double alpha=opacity(a,wx,wy,wz,clock);
-                    int blue=0xa9dfff;int old=pixels[at];double keep=1-alpha;
-                    int r=(int)(((old>>16)&255)*keep+((blue>>16)&255)*alpha);
-                    int g=(int)(((old>>8)&255)*keep+((blue>>8)&255)*alpha);
-                    int b=(int)((old&255)*keep+(blue&255)*alpha);
-                    pixels[at]=(r<<16)|(g<<8)|b;changed++;
+                    pixels[at]=shade(pixels[at],a,x+dx*hit,eye+dy*hit-a.y(),z+dz*hit,clock);
+                    changed++;
                 }
             }
         }return changed;
     }
+
+    private static int shade(int old,SafeAreaBarrier.Volume area,double x,double y,double z,double clock){
+        double alpha=opacity(area,x,y,z,clock),keep=1-alpha;
+        int r=(int)(((old>>16)&255)*keep+0xa9*alpha);
+        int g=(int)(((old>>8)&255)*keep+0xdf*alpha);
+        int b=(int)((old&255)*keep+0xff*alpha);
+        return (r<<16)|(g<<8)|b;
+    }
+
     private static boolean insideDome(double x,double capY,double z,double invRadius,double invCap){
         double nx=x*invRadius,nz=z*invRadius,ny=Math.max(0,capY)*invCap;
         // Leave the boundary, including round-off at grazing intersections, to the ray test.
