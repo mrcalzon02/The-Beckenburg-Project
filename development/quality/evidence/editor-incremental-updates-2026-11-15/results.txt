@@ -1,0 +1,16 @@
+openjdk version "21.0.13" 2026-10-20 LTS
+OpenJDK Runtime Environment Temurin-21.0.13+9 (build 21.0.13+9-LTS)
+OpenJDK 64-Bit Server VM Temurin-21.0.13+9 (build 21.0.13+9-LTS, mixed mode, sharing)
+PASS mixed incremental/full native parity: 96 edits, shared undo/redo, normals and paired UV seams
+PASS 120000-face picking index: one vertex reprojected, old and refitted bounds verified
+PASS 120000 native triangles: moving one grid corner replaces two triangles and two corners
+PASS editable native topology: stable indexed vertices/faces, no implicit welding, UV/part preservation, degenerate refusal, shared undo, deterministic save/fresh open/recovery, ownership/version controls and bounded output
+PASS half-edge topology: twins/cycles, oriented closed/open manifolds, UV seams, part ownership, disconnected fans, degeneracy, edge errors and bounded deterministic diagnostics
+PASS native materials: exact PNG, face bindings/IDs/UV/normals, cancel/history, deterministic v3 fresh reopen, real OBJ/MTL dependencies/options guards, GLB and lossless-export refusal
+PASS authored corner normals: native IDs/UV seams, v1/v2/future guards, exact history/save/OBJ, transform inverse-transpose, partial deformation, cap/sides and STL/reduction preservation
+PASS source-backed GLB: shared matrix/ancestor decoder, exact source bytes/metadata/PNG, native v4/history, independent instance edits, original hierarchy/pivots/materials, UV/modeling and real export/reimport validation
+PASS native UV face/island moves, bounds/origin rotation and signed scale: seams/material boundaries/source IDs, exact previews/history/save/OBJ bundle, unchanged geometry/raw normals and stale/no-op guards
+PASS authored quad edge traversal and whole-loop slide: regular interior and closed loops, opposite-edge rings, triangle/diagonal refusals and native revision stability
+PASS maximum topology budget: 120000 faces / 360000 vertices and half-edges in bounded heap
+120000-face UV update: mean thread allocation=6344400 bytes; 12 measured iterations after 4 warmups
+120000-face UV update: mean thread allocation=39317720 bytes; 12 measured iterations after 4 warmups

@@ -164,10 +164,16 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
     public synchronized Observation observe(Observation previous) {
         var next=observe();
         if (previous!=null && previous.owner==this && previous.derivedMesh!=null) {
-            next.derivedMesh=state==previous.state ? previous.derivedMesh : updateMesh(previous.derivedMesh,state);
-            if (previous.derivedTopology!=null)
-                next.derivedTopology=previous.derivedTopology.update(previous.derivedMesh,next.derivedMesh,
-                    previous.state.vertices(),state.vertices());
+            if (state==previous.state) {
+                next.derivedMesh=previous.derivedMesh;
+                next.derivedTopology=previous.derivedTopology;
+            } else {
+                var update=updateMesh(previous.derivedMesh,previous.state,state);
+                next.derivedMesh=update.mesh();
+                if (previous.derivedTopology!=null && update.changedFaces()!=null)
+                    next.derivedTopology=previous.derivedTopology.update(previous.derivedMesh,next.derivedMesh,
+                        previous.state.vertices(),state.vertices(),update.changedFaces());
+            }
         }
         return next;
     }
@@ -244,31 +250,42 @@ public final class EditorTopologyProject implements EditorProject<EditorTopology
         return new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes(),ids,state.materials(),state.glbSource(),state.faces().stream().map(Face::id).toList(),visibleFrames,state.quads());
     }
     private static Map<Long,Vertex> indexVertices(List<Vertex> values){var map=new HashMap<Long,Vertex>();for(var v:values)map.put(v.id(),v);return map;}
-    private static EditorMeshPipeline.Mesh updateMesh(EditorMeshPipeline.Mesh old,State state) {
-        if (old.triangles().size()!=state.faces().size()) return mesh(state);
-        var vertices=indexVertices(state.vertices());
+    private record MeshUpdate(EditorMeshPipeline.Mesh mesh,BitSet changedFaces) {}
+    private static MeshUpdate updateMesh(EditorMeshPipeline.Mesh old,State before,State state) {
+        if (old.triangles().size()!=state.faces().size()) return new MeshUpdate(mesh(state),null);
+        // Attribute-only edits retain the exact native vertex list. Reuse render positions
+        // without allocating a whole-model vertex map for a material or UV change.
+        var vertices=before.vertices()==state.vertices() ? null : indexVertices(state.vertices());
+        var changedFaces=new BitSet(state.faces().size());
         var triangles=new ArrayList<EditorMeshPipeline.Triangle>(state.faces().size());
         for (int i=0;i<state.faces().size();i++) {
             var face=state.faces().get(i);
             var prior=old.triangles().get(i);
             if (face.id()!=old.faceIds().get(i) || !face.part().equals(prior.part()) ||
                 face.a().vertex()!=old.cornerVertexIds().get(3*i) || face.b().vertex()!=old.cornerVertexIds().get(3*i+1) ||
-                face.c().vertex()!=old.cornerVertexIds().get(3*i+2)) return mesh(state);
+                face.c().vertex()!=old.cornerVertexIds().get(3*i+2)) return new MeshUpdate(mesh(state),null);
             var a=updatedCorner(face.a(),prior.a(),vertices);
             var b=updatedCorner(face.b(),prior.b(),vertices);
             var c=updatedCorner(face.c(),prior.c(),vertices);
-            triangles.add(a==prior.a() && b==prior.b() && c==prior.c() && face.material().equals(prior.material())
-                ? prior : new EditorMeshPipeline.Triangle(face.part(),a,b,c,face.material()));
+            var next=a==prior.a() && b==prior.b() && c==prior.c() && face.material().equals(prior.material())
+                ? prior : new EditorMeshPipeline.Triangle(face.part(),a,b,c,face.material());
+            triangles.add(next);
+            if (next!=prior) changedFaces.set(i);
         }
         var visibleFrames=new TreeMap<String,EditorMeshFrame>();
         if (!state.frames().isEmpty()) for (var face:state.faces()) {
             var frame=state.frames().get(face.part());
             if (frame!=null) visibleFrames.put(face.part(),frame);
         }
-        return new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes(),old.cornerVertexIds(),
-            state.materials(),state.glbSource(),old.faceIds(),visibleFrames,state.quads());
+        return new MeshUpdate(new EditorMeshPipeline.Mesh(state.name(),triangles,state.sourceBytes(),old.cornerVertexIds(),
+            state.materials(),state.glbSource(),old.faceIds(),visibleFrames,state.quads()),changedFaces);
     }
     private static EditorMeshPipeline.Vertex updatedCorner(Corner c,EditorMeshPipeline.Vertex prior,Map<Long,Vertex> vertices) {
+        if (vertices==null) {
+            if (Double.compare(c.u(),prior.u())==0 && Double.compare(c.v(),prior.v())==0 && Objects.equals(c.normal(),prior.normal()))
+                return prior;
+            return new EditorMeshPipeline.Vertex(prior.x(),prior.y(),prior.z(),c.u(),c.v(),c.normal());
+        }
         var v=vertices.get(c.vertex());
         if (Double.compare(v.x(),prior.x())==0 && Double.compare(v.y(),prior.y())==0 && Double.compare(v.z(),prior.z())==0 &&
             Double.compare(c.u(),prior.u())==0 && Double.compare(c.v(),prior.v())==0 && Objects.equals(c.normal(),prior.normal()))

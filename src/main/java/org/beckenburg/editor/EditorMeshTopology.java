@@ -55,7 +55,7 @@ public final class EditorMeshTopology {
     private static boolean sameUv(EditorMeshPipeline.Vertex a,EditorMeshPipeline.Vertex b){return a.u()==b.u()&&a.v()==b.v();}
     /** Retain connectivity only while native indexed identity and geometric diagnostics still agree. */
     EditorMeshTopology update(EditorMeshPipeline.Mesh before,EditorMeshPipeline.Mesh after,
-            List<EditorTopologyProject.Vertex> oldVertices,List<EditorTopologyProject.Vertex> nextVertices) {
+            List<EditorTopologyProject.Vertex> oldVertices,List<EditorTopologyProject.Vertex> nextVertices,BitSet changedFaces) {
         if (oldVertices.size()!=nextVertices.size() || !before.cornerVertexIds().equals(after.cornerVertexIds())) return null;
         ArrayList<Vertex> moved=null;
         if (oldVertices!=nextVertices) for (int i=0;i<oldVertices.size();i++) {
@@ -68,7 +68,7 @@ public final class EditorMeshTopology {
         }
         ArrayList<HalfEdge> updated=null;
         int seams=uvSeams;
-        for (int i=0;i<faces.size();i++) {
+        for (int i=changedFaces.nextSetBit(0);i>=0;i=changedFaces.nextSetBit(i+1)) {
             var a=before.triangles().get(i);
             var b=after.triangles().get(i);
             if (a==b) continue;

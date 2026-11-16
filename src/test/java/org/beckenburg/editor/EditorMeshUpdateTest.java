@@ -81,6 +81,71 @@ public final class EditorMeshUpdateTest {
         doc.restore(original);
         if (!doc.observe(collapsed).topology().manifold()) throw new AssertionError("Repair retained stale diagnostics");
     }
+    /** Compare incremental observations with independent full native derivations across
+     * interleaved attribute, geometry, connectivity and shared-history changes. */
+    private static void checkMixedUpdates() {
+        var doc=EditorTopologyProject.fromMesh(new EditorMeshPipeline.Mesh("mixed",List.of(),0),
+            "0".repeat(64),Path.of("mixed.btop"));
+        var empty=doc.snapshot();
+        var points=List.of(new Vertex(0,"grid",0,0,0),new Vertex(1,"grid",1,0,0),
+            new Vertex(2,"grid",0,1,0),new Vertex(3,"grid",1,1,0));
+        var first=face(0,0,1,2);
+        var second=new Face(1,"grid",new Corner(1,1,0),new Corner(3,1,1),new Corner(2,0,1));
+        doc.restore(new State(empty.sceneId(),empty.sourceFingerprint(),"mixed",0,points,List.of(first,second)));
+        var history=new EditorHistory<>(doc,60);
+        var observed=doc.observe();
+        var random=new Random(7891);
+        for (int step=0;step<96;step++) {
+            var priorMesh=observed.mesh();
+            var priorGraph=observed.topology();
+            var priorTriangles=new ArrayList<>(priorMesh.triangles());
+            var current=doc.observe(observed);
+            if (current.mesh()!=priorMesh || current.topology()!=priorGraph)
+                throw new AssertionError("Unchanged observations must retain both derived caches");
+            var before=doc.snapshot();
+            var vertices=new ArrayList<>(before.vertices());
+            var faces=new ArrayList<>(before.faces());
+            if (step%4==0) {
+                var v=vertices.get(3);
+                vertices.set(3,new Vertex(v.id(),v.part(),v.x(),v.y(),random.nextDouble()));
+            } else if (step%4==1) {
+                // Change both sides of a shared edge in one native revision.
+                for (int i=0;i<faces.size();i++) {
+                    var f=faces.get(i);
+                    faces.set(i,f.withCorners(new Corner(f.a().vertex(),random.nextDouble(),0),f.b(),f.c()));
+                }
+            } else if (step%4==2) {
+                var f=faces.get(0);
+                faces.set(0,f.withCorners(new Corner(f.a().vertex(),f.a().u(),f.a().v(),
+                    new EditorMeshPipeline.Normal(0,0,2)),f.b(),f.c()));
+            } else {
+                // Same face count with different indexed connectivity must use a full rebuild.
+                var f=faces.get(0);
+                faces.set(0,f.c().vertex()==2 ? face(0,0,1,3) : face(0,0,1,2));
+            }
+            var next=new State(before.sceneId(),before.sourceFingerprint(),before.name(),0,step%4==0 ? vertices : before.vertices(),faces);
+            history.execute(()->doc.restore(next));
+            observed=doc.observe(observed);
+            assertFullParity(doc,observed);
+            if (step%7==0) {
+                if (!history.undo()) throw new AssertionError("Missing native undo");
+                observed=doc.observe(observed);assertFullParity(doc,observed);
+                if (!history.redo()) throw new AssertionError("Missing native redo");
+                observed=doc.observe(observed);assertFullParity(doc,observed);
+            }
+            if (!priorMesh.triangles().equals(priorTriangles))
+                throw new AssertionError("An old immutable mesh changed during an update");
+        }
+        System.out.println("PASS mixed incremental/full native parity: 96 edits, shared undo/redo, normals and paired UV seams");
+    }
+    private static void assertFullParity(EditorTopologyProject doc,Observation observed) {
+        var expected=doc.topology();var actual=observed.topology();
+        if (!observed.mesh().equals(doc.mesh()) || !actual.vertices().equals(expected.vertices()) ||
+            !actual.edges().equals(expected.edges()) || !actual.faces().equals(expected.faces()) ||
+            !actual.issues().equals(expected.issues()) || actual.issueCount()!=expected.issueCount() ||
+            actual.uvSeams()!=expected.uvSeams() || actual.boundaryEdges()!=expected.boundaryEdges() ||
+            actual.islands()!=expected.islands()) throw new AssertionError("Incremental/full native derivation mismatch");
+    }
     private static void checkPickingRefit() {
         var vertices=new ArrayList<Vertex>();
         var faces=new ArrayList<Face>();
@@ -129,6 +194,7 @@ public final class EditorMeshUpdateTest {
         checkConnectivityChange();
         checkSeamUpdate();
         checkPickingRefit();
+        checkMixedUpdates();
         var project=EditorTopologyProject.fromMesh(new EditorMeshPipeline.Mesh("grid",List.of(),0),
             "0".repeat(64),Path.of("grid.btop"));
         var empty=project.snapshot();
