@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-361 — Healthy joining hunter can lose its connection before entering the 3D view
+
+**Status:** Fixed on main and reproduced against the old capacity · **Affected:** House multiplayer start and van extraction with three real peers
+
+H2 could receive only a disconnect notification while the host was preparing its initial world view.
+
+Cause / uncertainty: A normal join, ready, start and 3D transition can enqueue 357–360 ordered messages before a delayed peer writer drains its queue. The previous bound was 256.
+
+Fix / next action: The per-peer FIFO now holds 512 frames and keeps its nonblocking producer and hard overflow limit. The van test replays its actual event burst against the production bound.
+
+Evidence and verification: docs/performance/2026-11-16-house-frame-times/README.md and benchmark-data.zip, network/extraction/
+
+Older-map obligation: The queue is shared by all maps. The exercised bootstrap and retreat used House.
+
 ### DEV-360 — Material Editor rebuilds every face row for a one-face UV preview
 
 **Status:** Reproduced on Java 17 at 8173f2ed · **Affected:** EditorMaterialWorkspace face list during preview, cancel and visibility changes

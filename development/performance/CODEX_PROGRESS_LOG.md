@@ -1,5 +1,10 @@
 # Codex A–G execution checkpoint log
 
+## 2026-11-16 — House frame times and multiplayer join stalls
+
+Production source [7225b34](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/7225b34abd7da5213623e6e7ed4f79ed1657a0f4) follows [d00dfc5](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/d00dfc575f2f800674ef3d6e9cd160e150bccd38). The [benchmark report and raw data](../../docs/performance/2026-11-16-house-frame-times/README.md) cover single-player, TCP hunter and human ghost frame delivery, matched texture preparation, sanctuary shading, socket CPU and House door lighting. Final-source software colors and raw depths matched all 72 reference frames. The exact-source [Windows build](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43977243730) passed packaged solo, multiplayer and installed startup, then received an HTTP 403 during release publication. The build artifact is retained. Next engine work is to narrow lighting and visibility invalidation on real door transitions, including the two-receiver door-edge counterexample in the report.
+
+
 ## 2026-11-12 — Floor-aperture query hot path and reversible-door edge parity
 
 - **Code [a3c0047a](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/a3c0047a9819dcb094dd307ff14ee12a25fa9436)** replaces `LevelDefinition.floorVoid`'s allocation-capable `Stream.anyMatch` with a direct for-each scan. Exact evaluation order, strict X/Z edges, original `Math.abs(v.y()-y)<.05` elevation tolerance and short-circuit semantics are preserved. This query is shared by floor/roof collision, stair apertures and architectural light rays; no geometry/door/ghost/network data changed.

@@ -961,3 +961,7 @@ Next: publish isolated correction and obtain new actual365summary before PR82 cl
 ## 2026-11-16 — House hunter and ghost frame cadence
 
 Baseline `f3374fe4c4ded54cc87e52d79fbdf102ab09997d`. Independent scheduled draws and unchanged host command intervals exercised with actual solo, TCP hunters and a human ghost. The full TCP evidence, identification, ward, rite and payout path passed after its observer waited for the payout that follows RESULT. Focused flashlight, shadow, texture revision, Blackpine stair and ghost hearing checks passed on the integrated Java 17 checkout. [Measured scope and remaining bottleneck](../docs/performance/2026-11-16-engine/README.md)
+
+## 2026-11-16 — House texture, sanctuary, lighting and LAN checkpoint
+
+Source [7225b34](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/7225b34abd7da5213623e6e7ed4f79ed1657a0f4) passed the real three-seat TCP settlement, solo startup and native Windows installer checks. [Windows build and publication status](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43977243730). The preceding [renderer acceptance run](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43977070266) passed Castle return on House, Farmhouse and School. DEV-361 records the delayed join-writer disconnect. See the [frame-time report](../docs/performance/2026-11-16-house-frame-times/README.md) for controlled component measurements, physical-run status, raw timing and the door-edge lighting reproduction. REC-04 remains open pending sustained target frame delivery.
