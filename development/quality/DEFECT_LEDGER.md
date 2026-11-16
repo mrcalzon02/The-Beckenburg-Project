@@ -7514,6 +7514,76 @@ Evidence and verification: household-sacred-bay-pass/checkpoint.json; verificati
 
 Older-map obligation: No other map receives acceptance from this batch. Revisit the Dam spillway/emergency, Lookout ground joins and all other unreviewed older assemblies individually.
 
+### DEV-531 — Dam emergency guide had no real stair and crossed unrelated rooms
+
+**Status:** COMPACT_RETURN_BAY_CONSTRUCTED_SPILLWAY_RUNTIME_OPEN · **Affected:** WLD-09 L18 lower return-to-turbine service access
+
+The old emergency guide described two phantom flights through room boundaries after their defective geometry was removed. Existing L12 still crosses a closed workshop wall and unpunched soil.
+
+Cause / uncertainty: Movement endpoints were treated as construction instructions, leaving imaginary route connections without architectural bays.
+
+Fix / next action: Construct one1.8m U stair in the deliberate lower return bay at-10/-8/-6m, supported landing, deliberate rectangular openings in whole replacement slabs; continue through actual existing turbine/east-hall door and main stair. L18 now passes. Leave L12 explicitly unbuilt until its entrance/retaining/saved-hole design exists.
+
+Evidence and verification: service-ground-bay-pass/wld-09: construction.json,quarantine.json,export-verification.json,visual-review.json,architecture-plan.svg,architecture-section.svg,circulation-flow.svg; joint verification/stairs
+
+Older-map obligation: Audit all routes for actual doors and constructed vertical bays. Never preserve a phantom connection or excavate along its guide.
+
+### DEV-532 — Lookout route strips, diagonal stair masses and obsolete floor wounds
+
+**Status:** GEOGRAPHIC_TERRACES_DOORS_AND_SUPPORTED_BAYS_RECONSTRUCTED_NATIVE_RUNTIME_OPEN · **Affected:** WLD-04 outdoor L03/L04/L06/L09/L10/L11, hut/ruin/store floors and doorstep access
+
+Long rotated filled stair wedges, tiny landing shards and route support strips pretended to be physical circulation. Hut/store floors retained obsolete diagonal holes. Store stair guide passed a full wall instead of a normal door.
+
+Cause / uncertainty: Old guidance extrusions and incremental cuts overruled the site and complete building floors.
+
+Fix / next action: Remove all Lookout route-study strip solids and six old outdoor flight assemblies. Construct four fixed hillside bays with actual soil-founded abutments, continuous waists/stringers and mounted guards. Alternate routes share actual stairs. Rebuild whole hut/ruin/store floors and entire store south face with a normal indexed door/level porch. Saved editor geographic terraces retain original image/topology/1169holes.
+
+Evidence and verification: service-ground-bay-pass/wld-04: construction.json,quarantine.json,export-verification.json,architecture.svg,captures.json; program/wld-04/design.json; worlds/wld-04/terrain-world/earthworks-verification.json
+
+Older-map obligation: Remove route geometry from physical construction authority. Inspect whole floors/room doors/real terrain receivers across every older location.
+
+### DEV-533 — Lookout pilot exposed landing soil contacts and guidance turning across guards
+
+**Status:** FIXED_ACTUAL_GROUND_DOOR_LANDING_AND_PHYSICS_BINDINGS · **Affected:** WLD-04 actual terrace stair receiving landings and hut/store approaches
+
+First pilot retained cut ground floors and missed real terrace receivers; later terrain matching at exact tread incline put slope triangles into the body capsule. L09 guide turned through the side guard at the flight foot. Buried entrance footings were initially included among walking stair components.
+
+Cause / uncertainty: Terrain facets, whole receiving slabs, doorway faces and the actual stair/landing collision contract were not yet aligned as one assembly.
+
+Fix / next action: Replace full floors, restore continuous broad terrain benches below the flights, construct receiving abutments, bind only actual treads/landings/porches, exclude buried footings, and turn on the level lower landing clear of guards. New actual doorstep stairs turn old flat links L05/L07 vertical; exact flight declarations and mandatory full routes preserve their ordinary-link coverage. Kernel tolerances unchanged.
+
+Evidence and verification: tools/build_lookout_terraces.py; tools/prepare_lookout_terraces.py; tools/audit_roster_stairs.py; tools/audit_current_flat_routes.py; final joint verification; wld-04/verification/flat retained diagnostics
+
+Older-map obligation: Do not regain a route score by adding strips or weakening collision. Match actual terrain and doors, classify only genuine stair/landing parts and preserve every baseline link.
+
+### DEV-534 — College stair slabs and teaching cellar doorway lacked architectural ownership
+
+**Status:** THREE_CONNECTIONS_REBUILT_NATIVE_VISUAL_RUNTIME_OPEN · **Affected:** COLLEGE library L81 and teaching/cellar L80/L84, adjoining level approaches
+
+Old full-height stair masses, fragmented receiving floors and overlapping pads survived; cellar doorway opened toward the side of a flight. Bypass shoulders touched a rim guard after center traversal passed.
+
+Cause / uncertainty: Room floor elevations, complete stair openings and doors were not coordinated before generation.
+
+Fix / next action: Rebuild two coherent bays at-3/0/3.6/7.2m, three constant-width flights with complete0.30mplates/closed waists/thick walls/level indexed doors and wall-bearing girders. Move cellar west doorway to the level south landing and center guidance in the actual bypass. Preserve original models/UV/pivots/source bytes and saved terrain.
+
+Evidence and verification: service-ground-bay-pass/college/checkpoint.json; construction.json; quarantine.json; architectural-plan-section-flow.svg; pilot and final standing/cutaway captures; verification
+
+Older-map obligation: Audit old doors at stair sides, complete floor ownership and shoulder clearances even when center routes pass.
+
+### DEV-535 — Scoped native map reconstruction is not complete shared gameplay acceptance
+
+**Status:** OPEN_REQUIRES_ROSTER_AND_SHARED_RUNTIME_INTEGRATION · **Affected:** All29site packets; this batch Lookout/Dam/College
+
+Final batch33/33active flight identities and21/22complete vertical links pass both ways.52/59ordinary links pass with zero regressions. Dam L12 and seven old College ordinary links remain; broad standing samples retain existing older shoulder/terrain/prop issues. Shared gameplay spatial ownership is not accepted.
+
+Cause / uncertainty: The full roster, source-to-runtime rendering/collision/navigation/room/portal/acoustic/spawn/service agreement and final arrival/landscape checks remain unfinished.
+
+Fix / next action: Continue bounded architecture passes across the roster. First design the Dam spillway entrance and retaining/saved-hole structure, audit old College approaches and remaining site assemblies, then integrate the same authored coordinates across gameplay systems. Keep canonical van/fog/sky/power/host-breaker/hiding/network contracts and held parent arrangement.
+
+Evidence and verification: service-ground-bay-pass/checkpoint.json; roster.json; verification/stairs and flat; per-site evidence; recovery snapshots
+
+Older-map obligation: No untouched map receives approval from this batch. Native exports and checks alone do not authorize unlock or whole-map completion.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

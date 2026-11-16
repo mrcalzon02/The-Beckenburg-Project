@@ -17,7 +17,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/household-sacred-bay-batch/' in path:
+    if '/service-ground-bay-batch/' in path or '/service-ground-bay-pass/' in path:
+        kind='Native earlier pilot/before architecture; source retained, not final acceptance' if 'before' in p.name or 'pilot' in p.name else 'Native architectural structural cutaway; hidden layers recorded, not runtime or whole-map acceptance' if 'cutaway' in p.name or 'section' in p.name else 'Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance'
+    elif '/household-sacred-bay-batch/' in path:
         kind='Rejected native generated architecture before replacement; roofs hidden for inspection, original source retained' if 'rejected-before' in p.name else 'Native architectural bay cutaway; terrain, overhead layers and selected faces hidden only for load-path inspection; unfinished map/runtime gates' if 'cutaway' in p.name else 'Native ordinary standing-height reconstructed stair/landing/door inspection; no objects hidden, not runtime or whole-map acceptance'
     elif '/architectural-restart-batch/' in path:
         kind='Rejected native generated architecture before replacement; source history retained' if 'rejected-before' in p.name else 'Native reconstructed tower/frame or Dam workshop; ordinary standing-height source views, section hides terrain/overhead layers only; unresolved ground/emergency/runtime gates, no playable acceptance'

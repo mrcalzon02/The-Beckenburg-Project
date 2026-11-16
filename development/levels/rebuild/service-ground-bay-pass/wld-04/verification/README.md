@@ -1,0 +1,1 @@
+Historical intermediate Lookout diagnostics. The final authority is ../../verification/stairs/stair-movement.json and ../../verification/flat/current-flat-movement.json, which include the final landed collision bindings and saved-world provenance. Earlier files retain rejected construction contacts; they are not current acceptance evidence.

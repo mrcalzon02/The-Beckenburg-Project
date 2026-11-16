@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2021,
-  "unique_local_file_hashes": 1850,
+  "local_files": 2025,
+  "unique_local_file_hashes": 1854,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 96,
+    "additional_custom_model_sources": 100,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 253
@@ -28873,6 +28873,54 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "ba20299a6d3a738a1b36d0e2a9292db5d10291393fd8e9602adb72d87696ae22",
       "bytes": 2788352
+    },
+    {
+      "id": "authored-bays",
+      "label": "authored-bays",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/service-ground-bay-pass/college/authored-bays.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "7f5e8feeb59c9c31789f7c7bc0bbd75ddb60e40fbd867ea60ab1cb3d5e320db5",
+      "bytes": 3175508
+    },
+    {
+      "id": "authored-bays",
+      "label": "authored-bays",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/service-ground-bay-pass/college/pilot/authored-bays.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1835b58eff810ead367f60bb34bc8e4a95c8aa646c1f7be46d11ab0a1d00cd54",
+      "bytes": 2880176
+    },
+    {
+      "id": "authored-service-bay",
+      "label": "authored-service-bay",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/service-ground-bay-pass/wld-04/authored-service-bay.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd",
+      "bytes": 4946228
+    },
+    {
+      "id": "authored-service-bay",
+      "label": "authored-service-bay",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/service-ground-bay-pass/wld-09/authored-service-bay.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "9ca45264727b42c43c206538de28dbeb1f69e714434fd76a146a984cbd23321c",
+      "bytes": 7936300
     },
     {
       "id": "clean-doorways",

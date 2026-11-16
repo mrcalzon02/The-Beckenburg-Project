@@ -1,0 +1,2038 @@
+{
+  "id": "WLD-04",
+  "status": "GEOGRAPHIC_TERRACES_AND_SUPPORTED_STAIR_BAYS_NATIVE_REVIEW_OPEN",
+  "source_contract": "development/levels/rebuild/access-route-pass/assemblies/wld-04/construction.json",
+  "source_contract_sha256": "5630d447f18a6f2b133035bdbeb5bf86696a59e7f5fa15c814a2a338001e9433",
+  "source_glb": "development/levels/rebuild/architectural-restart-pass/wld-04/reconstructed.glb",
+  "source_glb_sha256": "c0e111a2ee08c4c8f8edc2a0e084c142e6819ecf2f5734b64272abc560d920d2",
+  "source_physics": "development/levels/rebuild/architectural-restart-pass/wld-04/reconstructed.hcs2",
+  "source_physics_sha256": "784d56c55fb32f894cd07e35b73d0c92fb7a83040e336b959db62d661a40532a",
+  "before_layout": "development/levels/rebuild/architectural-restart-pass/wld-04/authored-layout.json",
+  "before_layout_sha256": "2a8aba794a4f2c43103fb6958149f27caaf682bc0d49125b693cd91d180f6847",
+  "layout": "development/levels/rebuild/service-ground-bay-pass/wld-04/authored-layout.json",
+  "layout_sha256": "c0a5bc0ec108e76fd1756f311ffba10455af0b68c93cdb77c27938043c6f23e9",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {
+      "0": 0
+    },
+    "L04": {
+      "0": 0
+    },
+    "L05": {},
+    "L06": {
+      "2": 0
+    },
+    "L07": {},
+    "L08": {},
+    "L09": {
+      "0": 0
+    },
+    "L10": {
+      "0": 0
+    },
+    "L11": {
+      "0": 0
+    },
+    "L12": {},
+    "L13": {
+      "0": 2,
+      "3": 0,
+      "7": 1
+    },
+    "L14": {
+      "2": 2
+    },
+    "L15": {},
+    "L14B": {
+      "1": 2
+    }
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {
+      "2": 0
+    },
+    "L04": {
+      "0": 0
+    },
+    "L05": {
+      "3": 0
+    },
+    "L06": {
+      "1": 1,
+      "7": 0
+    },
+    "L07": {
+      "1": 0
+    },
+    "L08": {},
+    "L09": {
+      "1": 0
+    },
+    "L10": {
+      "1": 0
+    },
+    "L11": {
+      "3": 0,
+      "7": 1
+    },
+    "L12": {},
+    "L13": {
+      "0": 2,
+      "3": 0,
+      "7": 1
+    },
+    "L14": {
+      "2": 2
+    },
+    "L15": {},
+    "L14B": {
+      "1": 2
+    }
+  },
+  "before_stair_components": [
+    "47:L03 flight0 step1",
+    "48:L03 flight0 step2",
+    "49:L03 flight0 step3",
+    "50:L03 flight0 step4",
+    "51:L03 flight0 step5",
+    "52:L03 flight0 step6",
+    "53:L03 flight0 step7",
+    "54:L03 flight0 step8",
+    "55:L03 flight0 step9",
+    "56:L03 flight0 step10",
+    "57:L03 flight0 step11",
+    "58:L03 flight0 step12",
+    "59:L03 flight0 step13",
+    "60:L03 flight0 step14",
+    "61:L03 flight0 step15",
+    "62:L03 flight0 step16",
+    "63:L03 flight0 step17",
+    "104:L09 flight0 step1",
+    "105:L09 flight0 step2",
+    "106:L09 flight0 step3",
+    "107:L09 flight0 step4",
+    "108:L09 flight0 step5",
+    "109:L09 flight0 step6",
+    "110:L09 flight0 step7",
+    "111:L09 flight0 step8",
+    "112:L09 flight0 step9",
+    "113:L09 flight0 step10",
+    "114:L09 flight0 step11",
+    "115:L09 flight0 step12",
+    "116:L09 flight0 step13",
+    "117:L09 flight0 step14",
+    "118:L09 flight0 step15",
+    "119:L09 flight0 step16",
+    "120:L09 flight0 step17",
+    "121:L10 flight0 step1",
+    "122:L10 flight0 step2",
+    "123:L10 flight0 step3",
+    "124:L10 flight0 step4",
+    "125:L10 flight0 step5",
+    "126:L10 flight0 step6",
+    "127:L10 flight0 step7",
+    "128:L10 flight0 step8",
+    "129:L10 flight0 step9",
+    "130:L10 flight0 step10",
+    "131:L10 flight0 step11",
+    "132:L10 flight0 step12",
+    "133:L10 flight0 step13",
+    "134:L10 flight0 step14",
+    "135:L10 flight0 step15",
+    "136:L10 flight0 step16",
+    "137:L10 flight0 step17",
+    "Authored stair end WLD-04 L03 0 low region0",
+    "Authored stair end WLD-04 L03 0 high region0",
+    "Authored stair end WLD-04 L04 0 low region0",
+    "Authored stair end WLD-04 L04 0 low region1",
+    "Authored stair end WLD-04 L04 0 high region0",
+    "Authored stair end WLD-04 L04 0 high region1",
+    "Authored stair end WLD-04 L06 0 low region0",
+    "Authored stair end WLD-04 L09 0 low region0",
+    "Authored stair end WLD-04 L10 0 high region0",
+    "Authored stair end WLD-04 L10 0 high region1",
+    "Authored stair end WLD-04 L11 0 low region0",
+    "Authored stair end WLD-04 L11 0 low region1",
+    "Authored stair end WLD-04 L11 0 high region0",
+    "Authored stair end WLD-04 L11 0 high region1",
+    "Bayed stair WLD-04 L04 step0",
+    "Bayed stair WLD-04 L04 step1",
+    "Bayed stair WLD-04 L04 step2",
+    "Bayed stair WLD-04 L04 step3",
+    "Bayed stair WLD-04 L04 step4",
+    "Bayed stair WLD-04 L04 step5",
+    "Bayed stair WLD-04 L04 step6",
+    "Bayed stair WLD-04 L04 step7",
+    "Bayed stair WLD-04 L04 step8",
+    "Bayed stair WLD-04 L04 step9",
+    "Bayed stair WLD-04 L04 step10",
+    "Bayed stair WLD-04 L04 step11",
+    "Bayed stair WLD-04 L04 step12",
+    "Bayed stair WLD-04 L04 step13",
+    "Bayed stair WLD-04 L04 step14",
+    "Bayed stair WLD-04 L04 step15",
+    "Bayed stair WLD-04 L04 step16",
+    "Bayed stair WLD-04 L04 step17",
+    "Bayed stair WLD-04 L11 step0",
+    "Bayed stair WLD-04 L11 step1",
+    "Bayed stair WLD-04 L11 step2",
+    "Bayed stair WLD-04 L11 step3",
+    "Bayed stair WLD-04 L11 step4",
+    "Bayed stair WLD-04 L11 step5",
+    "Bayed stair WLD-04 L11 step6",
+    "Bayed stair WLD-04 L11 step7",
+    "Bayed stair WLD-04 L11 step8",
+    "Bayed stair WLD-04 L11 step9",
+    "Bayed stair WLD-04 L11 step10",
+    "Bayed stair WLD-04 L11 step11",
+    "Bayed stair WLD-04 L11 step12",
+    "Bayed stair WLD-04 L11 step13",
+    "Bayed stair WLD-04 L11 step14",
+    "Bayed stair WLD-04 L11 step15",
+    "Bayed stair WLD-04 L11 step16",
+    "Bayed stair WLD-04 L11 step17",
+    "Bayed stair WLD-04 L06 step0",
+    "Bayed stair WLD-04 L06 step1",
+    "Bayed stair WLD-04 L06 step2",
+    "Bayed stair WLD-04 L06 step3",
+    "Bayed stair WLD-04 L06 step4",
+    "Bayed stair WLD-04 L06 step5",
+    "Bayed stair WLD-04 L06 step6",
+    "Bayed stair WLD-04 L06 step7",
+    "Bayed stair WLD-04 L06 step8",
+    "Bayed stair WLD-04 L06 step9",
+    "Bayed stair WLD-04 L06 step10",
+    "Bayed stair WLD-04 L06 step11",
+    "Bayed stair WLD-04 L06 step12",
+    "Bayed stair WLD-04 L06 step13",
+    "Bayed stair WLD-04 L06 step14",
+    "Bayed stair WLD-04 L06 step15",
+    "Bayed stair WLD-04 L06 step16",
+    "Bayed stair WLD-04 L06 step17",
+    "Bayed stair WLD-04 L06 step18",
+    "Bay landing WLD-04 L04 4 region0",
+    "Bay landing WLD-04 L06 3 region0",
+    "Bay landing WLD-04 L11 1 region0",
+    "Bay landing WLD-04 L11 1 region1",
+    "Bay landing WLD-04 L11 4 region0",
+    "Bay landing WLD-04 L11 4 region1",
+    "WLD-04 restart L13 tread 0",
+    "WLD-04 restart L13 tread 1",
+    "WLD-04 restart L13 tread 2",
+    "WLD-04 restart L13 tread 3",
+    "WLD-04 restart L13 tread 4",
+    "WLD-04 restart L13 tread 5",
+    "WLD-04 restart L13 tread 6",
+    "WLD-04 restart L13 tread 7",
+    "WLD-04 restart L13 tread 8",
+    "WLD-04 restart L13 tread 9",
+    "WLD-04 restart L13 tread 10",
+    "WLD-04 restart L13 tread 11",
+    "WLD-04 restart L13 tread 12",
+    "WLD-04 restart L13 tread 13",
+    "WLD-04 restart L13 tread 14",
+    "WLD-04 restart L13 tread 15",
+    "WLD-04 restart L13 tread 16",
+    "WLD-04 restart L13 tread 17",
+    "WLD-04 restart L13 tread 18",
+    "WLD-04 restart L13 tread 19",
+    "WLD-04 restart L13 tread 20",
+    "WLD-04 restart L13 tread 21",
+    "WLD-04 restart L13 tread 22",
+    "WLD-04 restart L13 tread 23",
+    "WLD-04 restart L13 tread 24",
+    "WLD-04 restart L13 tread 25",
+    "WLD-04 restart L13 tread 26",
+    "WLD-04 restart L13 tread 27",
+    "WLD-04 restart L14 tread 28",
+    "WLD-04 restart L14 tread 29",
+    "WLD-04 restart L14 tread 30",
+    "WLD-04 restart L14 tread 31",
+    "WLD-04 restart L14 tread 32",
+    "WLD-04 restart L14 tread 33",
+    "WLD-04 restart L14 tread 34",
+    "WLD-04 restart L14 tread 35",
+    "WLD-04 restart L14 tread 36",
+    "WLD-04 restart L14 tread 37",
+    "WLD-04 restart L14 tread 38",
+    "WLD-04 restart L14 tread 39",
+    "WLD-04 restart L14 tread 40",
+    "WLD-04 restart L14B tread 41",
+    "WLD-04 restart L14B tread 42",
+    "WLD-04 restart L14B tread 43",
+    "WLD-04 restart L14B tread 44",
+    "WLD-04 restart L14B tread 45",
+    "WLD-04 restart L14B tread 46",
+    "WLD-04 restart L14B tread 47",
+    "WLD-04 restart L14B tread 48",
+    "WLD-04 restart L14B tread 49",
+    "WLD-04 restart L14B tread 50",
+    "WLD-04 restart L14B tread 51",
+    "WLD-04 restart L14B tread 52",
+    "WLD-04 restart L14B tread 53"
+  ],
+  "stair_components": [
+    "WLD-04 restart L13 tread 0",
+    "WLD-04 restart L13 tread 1",
+    "WLD-04 restart L13 tread 2",
+    "WLD-04 restart L13 tread 3",
+    "WLD-04 restart L13 tread 4",
+    "WLD-04 restart L13 tread 5",
+    "WLD-04 restart L13 tread 6",
+    "WLD-04 restart L13 tread 7",
+    "WLD-04 restart L13 tread 8",
+    "WLD-04 restart L13 tread 9",
+    "WLD-04 restart L13 tread 10",
+    "WLD-04 restart L13 tread 11",
+    "WLD-04 restart L13 tread 12",
+    "WLD-04 restart L13 tread 13",
+    "WLD-04 restart L13 tread 14",
+    "WLD-04 restart L13 tread 15",
+    "WLD-04 restart L13 tread 16",
+    "WLD-04 restart L13 tread 17",
+    "WLD-04 restart L13 tread 18",
+    "WLD-04 restart L13 tread 19",
+    "WLD-04 restart L13 tread 20",
+    "WLD-04 restart L13 tread 21",
+    "WLD-04 restart L13 tread 22",
+    "WLD-04 restart L13 tread 23",
+    "WLD-04 restart L13 tread 24",
+    "WLD-04 restart L13 tread 25",
+    "WLD-04 restart L13 tread 26",
+    "WLD-04 restart L13 tread 27",
+    "WLD-04 restart L14 tread 28",
+    "WLD-04 restart L14 tread 29",
+    "WLD-04 restart L14 tread 30",
+    "WLD-04 restart L14 tread 31",
+    "WLD-04 restart L14 tread 32",
+    "WLD-04 restart L14 tread 33",
+    "WLD-04 restart L14 tread 34",
+    "WLD-04 restart L14 tread 35",
+    "WLD-04 restart L14 tread 36",
+    "WLD-04 restart L14 tread 37",
+    "WLD-04 restart L14 tread 38",
+    "WLD-04 restart L14 tread 39",
+    "WLD-04 restart L14 tread 40",
+    "WLD-04 restart L14B tread 41",
+    "WLD-04 restart L14B tread 42",
+    "WLD-04 restart L14B tread 43",
+    "WLD-04 restart L14B tread 44",
+    "WLD-04 restart L14B tread 45",
+    "WLD-04 restart L14B tread 46",
+    "WLD-04 restart L14B tread 47",
+    "WLD-04 restart L14B tread 48",
+    "WLD-04 restart L14B tread 49",
+    "WLD-04 restart L14B tread 50",
+    "WLD-04 restart L14B tread 51",
+    "WLD-04 restart L14B tread 52",
+    "WLD-04 restart L14B tread 53",
+    "Lookout terrace L03 lower abutment region0",
+    "Lookout terrace L03 upper landing region0",
+    "Lookout terrace L03 tread 0",
+    "Lookout terrace L03 tread 1",
+    "Lookout terrace L03 tread 2",
+    "Lookout terrace L03 tread 3",
+    "Lookout terrace L03 tread 4",
+    "Lookout terrace L03 tread 5",
+    "Lookout terrace L03 tread 6",
+    "Lookout terrace L03 tread 7",
+    "Lookout terrace L03 tread 8",
+    "Lookout terrace L03 tread 9",
+    "Lookout terrace L03 tread 10",
+    "Lookout terrace L03 tread 11",
+    "Lookout terrace L03 tread 12",
+    "Lookout terrace L03 tread 13",
+    "Lookout terrace L03 tread 14",
+    "Lookout terrace L03 tread 15",
+    "Lookout terrace L03 tread 16",
+    "Lookout terrace L04 lower abutment region0",
+    "Lookout terrace L04 upper landing region0",
+    "Lookout terrace L04 tread 0",
+    "Lookout terrace L04 tread 1",
+    "Lookout terrace L04 tread 2",
+    "Lookout terrace L04 tread 3",
+    "Lookout terrace L04 tread 4",
+    "Lookout terrace L04 tread 5",
+    "Lookout terrace L04 tread 6",
+    "Lookout terrace L04 tread 7",
+    "Lookout terrace L04 tread 8",
+    "Lookout terrace L04 tread 9",
+    "Lookout terrace L04 tread 10",
+    "Lookout terrace L04 tread 11",
+    "Lookout terrace L04 tread 12",
+    "Lookout terrace L04 tread 13",
+    "Lookout terrace L04 tread 14",
+    "Lookout terrace L09 lower abutment region0",
+    "Lookout terrace L09 upper landing region0",
+    "Lookout terrace L09 tread 0",
+    "Lookout terrace L09 tread 1",
+    "Lookout terrace L09 tread 2",
+    "Lookout terrace L09 tread 3",
+    "Lookout terrace L09 tread 4",
+    "Lookout terrace L09 tread 5",
+    "Lookout terrace L09 tread 6",
+    "Lookout terrace L09 tread 7",
+    "Lookout terrace L09 tread 8",
+    "Lookout terrace L09 tread 9",
+    "Lookout terrace L09 tread 10",
+    "Lookout terrace L09 tread 11",
+    "Lookout terrace L09 tread 12",
+    "Lookout terrace L09 tread 13",
+    "Lookout terrace L09 tread 14",
+    "Lookout terrace L09 tread 15",
+    "Lookout terrace L09 tread 16",
+    "Lookout terrace L10 lower abutment region0",
+    "Lookout terrace L10 upper landing region0",
+    "Lookout terrace L10 tread 0",
+    "Lookout terrace L10 tread 1",
+    "Lookout terrace L10 tread 2",
+    "Lookout terrace L10 tread 3",
+    "Lookout terrace L10 tread 4",
+    "Lookout terrace L10 tread 5",
+    "Lookout terrace L10 tread 6",
+    "Lookout terrace L10 tread 7",
+    "Lookout terrace L10 tread 8",
+    "Lookout terrace L10 tread 9",
+    "Lookout terrace L10 tread 10",
+    "Lookout terrace L10 tread 11",
+    "Lookout terrace L10 tread 12",
+    "Lookout terrace L10 tread 13",
+    "Lookout terrace L10 tread 14",
+    "Lookout terrace L10 tread 15",
+    "Lookout terrace L10 tread 16",
+    "Lookout terrace hut east level porch region0",
+    "Lookout terrace hut south level porch region0",
+    "Lookout terrace ruin west level porch region0",
+    "Lookout terrace store south level porch region0",
+    "Lookout terrace HUT-SOUTH tread 0",
+    "Lookout terrace HUT-SOUTH tread 1",
+    "Lookout terrace HUT-EAST tread 0",
+    "Lookout terrace HUT-EAST tread 1",
+    "Lookout terrace RUIN-WEST tread 0",
+    "Lookout terrace RUIN-WEST tread 1"
+  ],
+  "glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd",
+  "physics_sha256": "837b74ce8ae499eab2feae7e7b03f90f588e9d3eab8d2ff95e82186071e8c097",
+  "arrival_bearing": {
+    "link": "L01",
+    "anchor": [
+      28.0,
+      0,
+      78.0
+    ],
+    "route_width": 2,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        27.0,
+        78.35
+      ],
+      [
+        27.0,
+        78.0
+      ],
+      [
+        29.0,
+        78.0
+      ],
+      [
+        29.0,
+        78.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          27.0,
+          78.35
+        ],
+        [
+          27.0,
+          78.0
+        ],
+        [
+          29.0,
+          78.0
+        ],
+        [
+          29.0,
+          78.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing WLD-04 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": 36,
+  "new_triangles": 12,
+  "removed_source_meshes": [
+    "Arrival end bearing WLD-04 0",
+    "Authored stair end WLD-04 L03 0 high region0",
+    "Authored stair end WLD-04 L03 0 low region0",
+    "Authored stair end WLD-04 L04 0 high region0",
+    "Authored stair end WLD-04 L04 0 high region1",
+    "Authored stair end WLD-04 L04 0 low region0",
+    "Authored stair end WLD-04 L04 0 low region1",
+    "Authored stair end WLD-04 L06 0 low region0",
+    "Authored stair end WLD-04 L09 0 low region0",
+    "Authored stair end WLD-04 L10 0 high region0",
+    "Authored stair end WLD-04 L10 0 high region1",
+    "Authored stair end WLD-04 L11 0 high region0",
+    "Authored stair end WLD-04 L11 0 high region1",
+    "Authored stair end WLD-04 L11 0 low region0",
+    "Authored stair end WLD-04 L11 0 low region1",
+    "Bay landing WLD-04 L04 4 region0",
+    "Bay landing WLD-04 L06 3 region0",
+    "Bay landing WLD-04 L11 1 region0",
+    "Bay landing WLD-04 L11 1 region1",
+    "Bay landing WLD-04 L11 4 region0",
+    "Bay landing WLD-04 L11 4 region1",
+    "Bayed stair WLD-04 L04 step0",
+    "Bayed stair WLD-04 L04 step1",
+    "Bayed stair WLD-04 L04 step10",
+    "Bayed stair WLD-04 L04 step11",
+    "Bayed stair WLD-04 L04 step12",
+    "Bayed stair WLD-04 L04 step13",
+    "Bayed stair WLD-04 L04 step14",
+    "Bayed stair WLD-04 L04 step15",
+    "Bayed stair WLD-04 L04 step16",
+    "Bayed stair WLD-04 L04 step17",
+    "Bayed stair WLD-04 L04 step2",
+    "Bayed stair WLD-04 L04 step3",
+    "Bayed stair WLD-04 L04 step4",
+    "Bayed stair WLD-04 L04 step5",
+    "Bayed stair WLD-04 L04 step6",
+    "Bayed stair WLD-04 L04 step7",
+    "Bayed stair WLD-04 L04 step8",
+    "Bayed stair WLD-04 L04 step9",
+    "Bayed stair WLD-04 L06 step0",
+    "Bayed stair WLD-04 L06 step1",
+    "Bayed stair WLD-04 L06 step10",
+    "Bayed stair WLD-04 L06 step11",
+    "Bayed stair WLD-04 L06 step12",
+    "Bayed stair WLD-04 L06 step13",
+    "Bayed stair WLD-04 L06 step14",
+    "Bayed stair WLD-04 L06 step15",
+    "Bayed stair WLD-04 L06 step16",
+    "Bayed stair WLD-04 L06 step17",
+    "Bayed stair WLD-04 L06 step18",
+    "Bayed stair WLD-04 L06 step2",
+    "Bayed stair WLD-04 L06 step3",
+    "Bayed stair WLD-04 L06 step4",
+    "Bayed stair WLD-04 L06 step5",
+    "Bayed stair WLD-04 L06 step6",
+    "Bayed stair WLD-04 L06 step7",
+    "Bayed stair WLD-04 L06 step8",
+    "Bayed stair WLD-04 L06 step9",
+    "Bayed stair WLD-04 L11 step0",
+    "Bayed stair WLD-04 L11 step1",
+    "Bayed stair WLD-04 L11 step10",
+    "Bayed stair WLD-04 L11 step11",
+    "Bayed stair WLD-04 L11 step12",
+    "Bayed stair WLD-04 L11 step13",
+    "Bayed stair WLD-04 L11 step14",
+    "Bayed stair WLD-04 L11 step15",
+    "Bayed stair WLD-04 L11 step16",
+    "Bayed stair WLD-04 L11 step17",
+    "Bayed stair WLD-04 L11 step2",
+    "Bayed stair WLD-04 L11 step3",
+    "Bayed stair WLD-04 L11 step4",
+    "Bayed stair WLD-04 L11 step5",
+    "Bayed stair WLD-04 L11 step6",
+    "Bayed stair WLD-04 L11 step7",
+    "Bayed stair WLD-04 L11 step8",
+    "Bayed stair WLD-04 L11 step9",
+    "Floor hut",
+    "Floor hut.001",
+    "Floor hut.002",
+    "Floor ruin",
+    "Floor ruin.001",
+    "Floor ruin.002",
+    "Floor store",
+    "Floor store.001",
+    "Floor store.002",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L03 flight0 step1",
+    "L03 flight0 step10",
+    "L03 flight0 step11",
+    "L03 flight0 step12",
+    "L03 flight0 step13",
+    "L03 flight0 step14",
+    "L03 flight0 step15",
+    "L03 flight0 step16",
+    "L03 flight0 step17",
+    "L03 flight0 step2",
+    "L03 flight0 step3",
+    "L03 flight0 step4",
+    "L03 flight0 step5",
+    "L03 flight0 step6",
+    "L03 flight0 step7",
+    "L03 flight0 step8",
+    "L03 flight0 step9",
+    "L09 flight0 step1",
+    "L09 flight0 step10",
+    "L09 flight0 step11",
+    "L09 flight0 step12",
+    "L09 flight0 step13",
+    "L09 flight0 step14",
+    "L09 flight0 step15",
+    "L09 flight0 step16",
+    "L09 flight0 step17",
+    "L09 flight0 step2",
+    "L09 flight0 step3",
+    "L09 flight0 step4",
+    "L09 flight0 step5",
+    "L09 flight0 step6",
+    "L09 flight0 step7",
+    "L09 flight0 step8",
+    "L09 flight0 step9",
+    "L10 flight0 step1",
+    "L10 flight0 step10",
+    "L10 flight0 step11",
+    "L10 flight0 step12",
+    "L10 flight0 step13",
+    "L10 flight0 step14",
+    "L10 flight0 step15",
+    "L10 flight0 step16",
+    "L10 flight0 step17",
+    "L10 flight0 step2",
+    "L10 flight0 step3",
+    "L10 flight0 step4",
+    "L10 flight0 step5",
+    "L10 flight0 step6",
+    "L10 flight0 step7",
+    "L10 flight0 step8",
+    "L10 flight0 step9",
+    "Opened stair shell Wall store S",
+    "Restored bay WLD-04 hut floor region0",
+    "Restored floor hut 0 region0",
+    "Restored floor hut 0 region1",
+    "Restored floor hut 0 region2",
+    "Restored floor store 3 region0",
+    "Restored floor store 3 region1",
+    "Restored floor store 3 region2",
+    "Restored ruin floor 0",
+    "Restored ruin floor 1",
+    "Restored ruin floor 10",
+    "Restored ruin floor 11",
+    "Restored ruin floor 2",
+    "Restored ruin floor 3",
+    "Restored ruin floor 4",
+    "Restored ruin floor 5",
+    "Restored ruin floor 6",
+    "Restored ruin floor 7",
+    "Restored ruin floor 8",
+    "Restored ruin floor 9",
+    "Saved editor stair bench terrain WLD-04"
+  ],
+  "removed_native_parts": [
+    "182:L14 flight0 step1",
+    "183:L14 flight0 step2",
+    "184:L14 flight0 step3",
+    "185:L14 flight0 step4",
+    "186:L14 flight0 step5",
+    "187:L14 flight0 step6",
+    "188:L14 flight0 step7",
+    "189:L14 flight0 step8",
+    "190:L14 flight0 step9",
+    "191:L14 flight0 step10",
+    "192:L14 flight0 step11",
+    "193:L14 flight0 step12",
+    "194:L14 flight0 step13",
+    "197:L14B flight0 step1",
+    "198:L14B flight0 step2",
+    "199:L14B flight0 step3",
+    "200:L14B flight0 step4",
+    "201:L14B flight0 step5",
+    "202:L14B flight0 step6",
+    "203:L14B flight0 step7",
+    "204:L14B flight0 step8",
+    "205:L14B flight0 step9",
+    "206:L14B flight0 step10",
+    "207:L14B flight0 step11",
+    "208:L14B flight0 step12",
+    "209:L14B flight0 step13"
+  ],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "a5e9d2ca8307c714da29358414dd30baf15be982f2f5a8165d6eceaa69515b2b",
+  "access_route_changes": [
+    {
+      "site": "WLD-04",
+      "link": "L12",
+      "rooms": [
+        "clearing",
+        "foot"
+      ],
+      "before": [
+        [
+          30.0,
+          6,
+          22.0
+        ],
+        [
+          30.0,
+          6,
+          14.0
+        ],
+        [
+          30.0,
+          6,
+          8.0
+        ]
+      ],
+      "after": [
+        [
+          30.0,
+          6.0,
+          21.5
+        ],
+        [
+          30.0,
+          6.0,
+          9.0
+        ]
+      ],
+      "width": 2,
+      "threshold": null,
+      "source": {
+        "id": "WLD-04",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-04/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-04/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-04/supported-arrival.blend",
+        "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0",
+        "glb_sha256": "04bb6cba8e8f472dc6affaac3cf0e8c35b7b80d12971f7b248dcf8e126fe4ab4"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "new_interface_parts": [
+    "Lookout terrace hut complete ground floor closes obsolete stair cuts region0",
+    "Lookout terrace ruin complete ground floor closes obsolete stair cuts region0",
+    "Lookout terrace store complete ground floor closes obsolete stair cuts region0",
+    "Lookout terrace store south door west pier region0",
+    "Lookout terrace store south door east pier region0",
+    "Lookout terrace store south door lintel region0",
+    "Lookout terrace store south normal indexed door",
+    "Lookout terrace L03 lower abutment region0",
+    "Lookout terrace L03 upper landing region0",
+    "Lookout terrace L03 tread 0",
+    "Lookout terrace L03 tread 1",
+    "Lookout terrace L03 tread 2",
+    "Lookout terrace L03 tread 3",
+    "Lookout terrace L03 tread 4",
+    "Lookout terrace L03 tread 5",
+    "Lookout terrace L03 tread 6",
+    "Lookout terrace L03 tread 7",
+    "Lookout terrace L03 tread 8",
+    "Lookout terrace L03 tread 9",
+    "Lookout terrace L03 tread 10",
+    "Lookout terrace L03 tread 11",
+    "Lookout terrace L03 tread 12",
+    "Lookout terrace L03 tread 13",
+    "Lookout terrace L03 tread 14",
+    "Lookout terrace L03 tread 15",
+    "Lookout terrace L03 tread 16",
+    "Lookout terrace L03 founded stringer -1.0",
+    "Lookout terrace L03 flight -1.0 guard 0",
+    "Lookout terrace L03 flight -1.0 guard 1",
+    "Lookout terrace L03 flight -1.0 guard 2",
+    "Lookout terrace L03 founded stringer 1.0",
+    "Lookout terrace L03 flight 1.0 guard 0",
+    "Lookout terrace L03 flight 1.0 guard 1",
+    "Lookout terrace L03 flight 1.0 guard 2",
+    "Lookout terrace L03 receiving side -1.18 guard 0",
+    "Lookout terrace L03 receiving side 1.18 guard 0",
+    "Lookout terrace L04 lower abutment region0",
+    "Lookout terrace L04 upper landing region0",
+    "Lookout terrace L04 tread 0",
+    "Lookout terrace L04 tread 1",
+    "Lookout terrace L04 tread 2",
+    "Lookout terrace L04 tread 3",
+    "Lookout terrace L04 tread 4",
+    "Lookout terrace L04 tread 5",
+    "Lookout terrace L04 tread 6",
+    "Lookout terrace L04 tread 7",
+    "Lookout terrace L04 tread 8",
+    "Lookout terrace L04 tread 9",
+    "Lookout terrace L04 tread 10",
+    "Lookout terrace L04 tread 11",
+    "Lookout terrace L04 tread 12",
+    "Lookout terrace L04 tread 13",
+    "Lookout terrace L04 tread 14",
+    "Lookout terrace L04 founded stringer -1.0",
+    "Lookout terrace L04 flight -1.0 guard 0",
+    "Lookout terrace L04 flight -1.0 guard 1",
+    "Lookout terrace L04 flight -1.0 guard 2",
+    "Lookout terrace L04 founded stringer 1.0",
+    "Lookout terrace L04 flight 1.0 guard 0",
+    "Lookout terrace L04 flight 1.0 guard 1",
+    "Lookout terrace L04 flight 1.0 guard 2",
+    "Lookout terrace L04 receiving side -1.18 guard 0",
+    "Lookout terrace L04 receiving side 1.18 guard 0",
+    "Lookout terrace L09 lower abutment region0",
+    "Lookout terrace L09 upper landing region0",
+    "Lookout terrace L09 tread 0",
+    "Lookout terrace L09 tread 1",
+    "Lookout terrace L09 tread 2",
+    "Lookout terrace L09 tread 3",
+    "Lookout terrace L09 tread 4",
+    "Lookout terrace L09 tread 5",
+    "Lookout terrace L09 tread 6",
+    "Lookout terrace L09 tread 7",
+    "Lookout terrace L09 tread 8",
+    "Lookout terrace L09 tread 9",
+    "Lookout terrace L09 tread 10",
+    "Lookout terrace L09 tread 11",
+    "Lookout terrace L09 tread 12",
+    "Lookout terrace L09 tread 13",
+    "Lookout terrace L09 tread 14",
+    "Lookout terrace L09 tread 15",
+    "Lookout terrace L09 tread 16",
+    "Lookout terrace L09 founded stringer -1.0",
+    "Lookout terrace L09 flight -1.0 guard 0",
+    "Lookout terrace L09 flight -1.0 guard 1",
+    "Lookout terrace L09 flight -1.0 guard 2",
+    "Lookout terrace L09 founded stringer 1.0",
+    "Lookout terrace L09 flight 1.0 guard 0",
+    "Lookout terrace L09 flight 1.0 guard 1",
+    "Lookout terrace L09 flight 1.0 guard 2",
+    "Lookout terrace L09 receiving side -1.18 guard 0",
+    "Lookout terrace L09 receiving side 1.18 guard 0",
+    "Lookout terrace L10 lower abutment region0",
+    "Lookout terrace L10 upper landing region0",
+    "Lookout terrace L10 tread 0",
+    "Lookout terrace L10 tread 1",
+    "Lookout terrace L10 tread 2",
+    "Lookout terrace L10 tread 3",
+    "Lookout terrace L10 tread 4",
+    "Lookout terrace L10 tread 5",
+    "Lookout terrace L10 tread 6",
+    "Lookout terrace L10 tread 7",
+    "Lookout terrace L10 tread 8",
+    "Lookout terrace L10 tread 9",
+    "Lookout terrace L10 tread 10",
+    "Lookout terrace L10 tread 11",
+    "Lookout terrace L10 tread 12",
+    "Lookout terrace L10 tread 13",
+    "Lookout terrace L10 tread 14",
+    "Lookout terrace L10 tread 15",
+    "Lookout terrace L10 tread 16",
+    "Lookout terrace L10 founded stringer -1.0",
+    "Lookout terrace L10 flight -1.0 guard 0",
+    "Lookout terrace L10 flight -1.0 guard 1",
+    "Lookout terrace L10 flight -1.0 guard 2",
+    "Lookout terrace L10 founded stringer 1.0",
+    "Lookout terrace L10 flight 1.0 guard 0",
+    "Lookout terrace L10 flight 1.0 guard 1",
+    "Lookout terrace L10 flight 1.0 guard 2",
+    "Lookout terrace L10 receiving side -1.18 guard 0",
+    "Lookout terrace L10 receiving side 1.18 guard 0",
+    "Lookout terrace hut east level porch region0",
+    "Lookout terrace hut south level porch region0",
+    "Lookout terrace ruin west level porch region0",
+    "Lookout terrace store south level porch region0",
+    "Lookout terrace HUT-SOUTH tread 0",
+    "Lookout terrace HUT-SOUTH tread 1",
+    "Lookout terrace HUT-SOUTH founded stringer -1.2",
+    "Lookout terrace HUT-SOUTH flight -1.2 guard 0",
+    "Lookout terrace HUT-SOUTH founded stringer 1.2",
+    "Lookout terrace HUT-SOUTH flight 1.2 guard 0",
+    "Lookout terrace HUT-EAST tread 0",
+    "Lookout terrace HUT-EAST tread 1",
+    "Lookout terrace HUT-EAST grounded receiving bed region0",
+    "Lookout terrace RUIN-WEST tread 0",
+    "Lookout terrace RUIN-WEST tread 1",
+    "Lookout terrace RUIN-WEST grounded receiving bed region0"
+  ],
+  "stair_interfaces": [
+    {
+      "link": "L14",
+      "name": "WLD-04 L14 lookout upper first flight continuous stair waist",
+      "low": [
+        30.8,
+        10.5,
+        4.2
+      ],
+      "high": [
+        30.8,
+        12.75,
+        8.1
+      ],
+      "gross_width": 1.8,
+      "risers": 13,
+      "riser": 0.17307692307692307,
+      "tread": 0.29999999999999993,
+      "waist_depth": 0.2
+    },
+    {
+      "link": "L14B",
+      "name": "WLD-04 L14B lookout upper second flight continuous stair waist",
+      "low": [
+        28.2,
+        12.75,
+        8.1
+      ],
+      "high": [
+        28.2,
+        15,
+        4.2
+      ],
+      "gross_width": 1.8,
+      "risers": 13,
+      "riser": 0.17307692307692307,
+      "tread": 0.29999999999999993,
+      "waist_depth": 0.2
+    }
+  ],
+  "interface_added_flights": [
+    {
+      "link": "L13",
+      "segment": 2,
+      "layout_segment": 0,
+      "points": [
+        [
+          30.8,
+          5.650079727172852,
+          16.8
+        ],
+        [
+          30.8,
+          6,
+          16
+        ]
+      ]
+    },
+    {
+      "link": "L13",
+      "segment": 1,
+      "layout_segment": 7,
+      "points": [
+        [
+          28.2,
+          8.25,
+          10
+        ],
+        [
+          28.2,
+          10.5,
+          13.9
+        ]
+      ]
+    },
+    {
+      "link": "L05",
+      "segment": 0,
+      "layout_segment": 3,
+      "points": [
+        [
+          22.6,
+          5.65,
+          20
+        ],
+        [
+          21.8,
+          6,
+          20
+        ]
+      ]
+    },
+    {
+      "link": "L06",
+      "segment": 1,
+      "layout_segment": 1,
+      "points": [
+        [
+          21.8,
+          6,
+          20
+        ],
+        [
+          22.6,
+          5.65,
+          20
+        ]
+      ]
+    },
+    {
+      "link": "L07",
+      "segment": 0,
+      "layout_segment": 1,
+      "points": [
+        [
+          37.4,
+          5.65,
+          22
+        ],
+        [
+          38.2,
+          6,
+          22
+        ]
+      ]
+    },
+    {
+      "link": "L11",
+      "segment": 1,
+      "layout_segment": 7,
+      "points": [
+        [
+          38.2,
+          6,
+          22
+        ],
+        [
+          37.4,
+          5.65,
+          22
+        ]
+      ]
+    }
+  ],
+  "interface_builder": "development/levels/rebuild/stair-interface-construction-pass/verification/generators/build_stair_interfaces-executed.py",
+  "interface_builder_sha256": "d123e00406bda8aaff3d160eaf9f88ad034b97b9a9db6aadc46cf291a6865088",
+  "interface_library": {
+    "path": "development/levels/primitive-props-v1/models/level_blockout_guardrail.glb",
+    "sha256": "d5a1e9152bdccb6a9c548542aa206b51fd0cdbd646cd3c23ab7e92f4357b327d"
+  },
+  "interface_metadata_note": "Inherited geometry_unchanged flag corrected after construction; actual executed generator retained byte-for-byte. No native, GLB, blend or layout bytes changed.",
+  "doorways": [
+    {
+      "id": "WLD-04-restart-cab south",
+      "axis": "z",
+      "boundary": 7.9,
+      "along": 25.5,
+      "sill_y": 15,
+      "clear_width": 1.25,
+      "clear_height": 2.1,
+      "frame_span": [
+        7.800000000000001,
+        8.0
+      ],
+      "frame_depth": 0.2
+    },
+    {
+      "id": "WLD-04-restart-cab east",
+      "axis": "x",
+      "boundary": 29.9,
+      "along": 5,
+      "sill_y": 15,
+      "clear_width": 1.25,
+      "clear_height": 2.1,
+      "frame_span": [
+        29.799999999999997,
+        30.0
+      ],
+      "frame_depth": 0.2
+    }
+  ],
+  "architectural_plan": {
+    "ground_datums": [
+      0,
+      3,
+      5.65
+    ],
+    "building_floors": 6,
+    "tower_base": 6,
+    "flights": [
+      {
+        "link": "L03",
+        "low": [
+          20,
+          0,
+          58
+        ],
+        "high": [
+          20,
+          3,
+          53.2
+        ],
+        "width": 2,
+        "risers": 17
+      },
+      {
+        "link": "L04",
+        "low": [
+          28,
+          3,
+          36
+        ],
+        "high": [
+          28,
+          5.65,
+          31.2
+        ],
+        "width": 2,
+        "risers": 15
+      },
+      {
+        "link": "L09",
+        "low": [
+          45,
+          3,
+          46.3
+        ],
+        "high": [
+          45,
+          6,
+          41.5
+        ],
+        "width": 2,
+        "risers": 17
+      },
+      {
+        "link": "L10",
+        "low": [
+          43,
+          0,
+          58
+        ],
+        "high": [
+          43,
+          3,
+          53.2
+        ],
+        "width": 2,
+        "risers": 17
+      },
+      {
+        "link": "HUT-SOUTH",
+        "low": [
+          12,
+          5.65,
+          28.6
+        ],
+        "high": [
+          12,
+          6,
+          27.8
+        ],
+        "width": 2.4,
+        "risers": 2
+      },
+      {
+        "link": "HUT-EAST",
+        "low": [
+          22.6,
+          5.65,
+          20
+        ],
+        "high": [
+          21.8,
+          6,
+          20
+        ],
+        "width": 2,
+        "risers": 2
+      },
+      {
+        "link": "RUIN-WEST",
+        "low": [
+          37.4,
+          5.65,
+          22
+        ],
+        "high": [
+          38.2,
+          6,
+          22
+        ],
+        "width": 2,
+        "risers": 2
+      }
+    ],
+    "alternate_routes_share_stairs": {
+      "L06": "L04",
+      "L11": "L09"
+    },
+    "terrain_program": "program/wld-04/design.json"
+  },
+  "foundation_receivers": [
+    {
+      "name": "L03 lower abutment",
+      "soil": [
+        {
+          "x": 18.75,
+          "z": 58,
+          "soil_y": -0.09999847412109375
+        },
+        {
+          "x": 18.75,
+          "z": 58.75,
+          "soil_y": -0.0625
+        },
+        {
+          "x": 18.75,
+          "z": 59.5,
+          "soil_y": -0.02500152587890625
+        },
+        {
+          "x": 20.0,
+          "z": 58,
+          "soil_y": -0.09999847412109375
+        },
+        {
+          "x": 20.0,
+          "z": 58.75,
+          "soil_y": -0.0625
+        },
+        {
+          "x": 20.0,
+          "z": 59.5,
+          "soil_y": -0.02500152587890625
+        },
+        {
+          "x": 21.25,
+          "z": 58,
+          "soil_y": -0.09999847412109375
+        },
+        {
+          "x": 21.25,
+          "z": 58.75,
+          "soil_y": -0.0625
+        },
+        {
+          "x": 21.25,
+          "z": 59.5,
+          "soil_y": -0.02500152587890625
+        }
+      ],
+      "footing_bottom": -0.39999847412109374,
+      "top": 0,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "L03 upper landing",
+      "soil": [
+        {
+          "x": 18.75,
+          "z": 51.7,
+          "soil_y": 3.0
+        },
+        {
+          "x": 18.75,
+          "z": 52.45,
+          "soil_y": 2.8649978637695312
+        },
+        {
+          "x": 18.75,
+          "z": 53.2,
+          "soil_y": 2.6399993896484375
+        },
+        {
+          "x": 20.0,
+          "z": 51.7,
+          "soil_y": 3.0
+        },
+        {
+          "x": 20.0,
+          "z": 52.45,
+          "soil_y": 2.8649978637695312
+        },
+        {
+          "x": 20.0,
+          "z": 53.2,
+          "soil_y": 2.6399993896484375
+        },
+        {
+          "x": 21.25,
+          "z": 51.7,
+          "soil_y": 3.0
+        },
+        {
+          "x": 21.25,
+          "z": 52.45,
+          "soil_y": 2.8649978637695312
+        },
+        {
+          "x": 21.25,
+          "z": 53.2,
+          "soil_y": 2.6399993896484375
+        }
+      ],
+      "footing_bottom": 2.3399993896484377,
+      "top": 3,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "L04 lower abutment",
+      "soil": [
+        {
+          "x": 26.75,
+          "z": 36,
+          "soil_y": 2.6500015258789062
+        },
+        {
+          "x": 26.75,
+          "z": 36.75,
+          "soil_y": 2.78125
+        },
+        {
+          "x": 26.75,
+          "z": 37.5,
+          "soil_y": 2.9124984741210938
+        },
+        {
+          "x": 28.0,
+          "z": 36,
+          "soil_y": 2.6500015258789062
+        },
+        {
+          "x": 28.0,
+          "z": 36.75,
+          "soil_y": 2.78125
+        },
+        {
+          "x": 28.0,
+          "z": 37.5,
+          "soil_y": 2.9124984741210938
+        },
+        {
+          "x": 29.25,
+          "z": 36,
+          "soil_y": 2.6500015258789062
+        },
+        {
+          "x": 29.25,
+          "z": 36.75,
+          "soil_y": 2.78125
+        },
+        {
+          "x": 29.25,
+          "z": 37.5,
+          "soil_y": 2.9124984741210938
+        }
+      ],
+      "footing_bottom": 2.3500015258789064,
+      "top": 3,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "L04 upper landing",
+      "soil": [
+        {
+          "x": 26.75,
+          "z": 29.7,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 26.75,
+          "z": 30.45,
+          "soil_y": 5.471874237060547
+        },
+        {
+          "x": 26.75,
+          "z": 31.2,
+          "soil_y": 5.174999237060547
+        },
+        {
+          "x": 28.0,
+          "z": 29.7,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 28.0,
+          "z": 30.45,
+          "soil_y": 5.4718780517578125
+        },
+        {
+          "x": 28.0,
+          "z": 31.2,
+          "soil_y": 5.1750030517578125
+        },
+        {
+          "x": 29.25,
+          "z": 29.7,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 29.25,
+          "z": 30.45,
+          "soil_y": 5.4718780517578125
+        },
+        {
+          "x": 29.25,
+          "z": 31.2,
+          "soil_y": 5.174999237060547
+        }
+      ],
+      "footing_bottom": 4.874999237060547,
+      "top": 5.65,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "L09 lower abutment",
+      "soil": [
+        {
+          "x": 43.75,
+          "z": 46.3,
+          "soil_y": 3.0
+        },
+        {
+          "x": 43.75,
+          "z": 47.05,
+          "soil_y": 3.0
+        },
+        {
+          "x": 43.75,
+          "z": 47.8,
+          "soil_y": 3.0
+        },
+        {
+          "x": 45.0,
+          "z": 46.3,
+          "soil_y": 3.0
+        },
+        {
+          "x": 45.0,
+          "z": 47.05,
+          "soil_y": 3.0
+        },
+        {
+          "x": 45.0,
+          "z": 47.8,
+          "soil_y": 3.0
+        },
+        {
+          "x": 46.25,
+          "z": 46.3,
+          "soil_y": 3.0
+        },
+        {
+          "x": 46.25,
+          "z": 47.05,
+          "soil_y": 3.0
+        },
+        {
+          "x": 46.25,
+          "z": 47.8,
+          "soil_y": 3.0
+        }
+      ],
+      "footing_bottom": 2.7,
+      "top": 3,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "L09 upper landing",
+      "soil": [
+        {
+          "x": 43.75,
+          "z": 40.0,
+          "soil_y": 3.390308380126953
+        },
+        {
+          "x": 43.75,
+          "z": 40.75,
+          "soil_y": 3.2395362854003906
+        },
+        {
+          "x": 43.75,
+          "z": 41.5,
+          "soil_y": 3.0887680053710938
+        },
+        {
+          "x": 45.0,
+          "z": 40.0,
+          "soil_y": 3.4326744079589844
+        },
+        {
+          "x": 45.0,
+          "z": 40.75,
+          "soil_y": 3.258941650390625
+        },
+        {
+          "x": 45.0,
+          "z": 41.5,
+          "soil_y": 3.100513458251953
+        },
+        {
+          "x": 46.25,
+          "z": 40.0,
+          "soil_y": 3.470867156982422
+        },
+        {
+          "x": 46.25,
+          "z": 40.75,
+          "soil_y": 3.2895584106445312
+        },
+        {
+          "x": 46.25,
+          "z": 41.5,
+          "soil_y": 3.1158218383789062
+        }
+      ],
+      "footing_bottom": 2.788768005371094,
+      "top": 6,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "L10 lower abutment",
+      "soil": [
+        {
+          "x": 41.75,
+          "z": 58,
+          "soil_y": -0.09999847412109375
+        },
+        {
+          "x": 41.75,
+          "z": 58.75,
+          "soil_y": -0.0625
+        },
+        {
+          "x": 41.75,
+          "z": 59.5,
+          "soil_y": -0.02500152587890625
+        },
+        {
+          "x": 43.0,
+          "z": 58,
+          "soil_y": -0.09999847412109375
+        },
+        {
+          "x": 43.0,
+          "z": 58.75,
+          "soil_y": -0.0625
+        },
+        {
+          "x": 43.0,
+          "z": 59.5,
+          "soil_y": -0.02500152587890625
+        },
+        {
+          "x": 44.25,
+          "z": 58,
+          "soil_y": -0.09999847412109375
+        },
+        {
+          "x": 44.25,
+          "z": 58.75,
+          "soil_y": -0.0625
+        },
+        {
+          "x": 44.25,
+          "z": 59.5,
+          "soil_y": -0.02500152587890625
+        }
+      ],
+      "footing_bottom": -0.39999847412109374,
+      "top": 0,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "L10 upper landing",
+      "soil": [
+        {
+          "x": 41.75,
+          "z": 51.7,
+          "soil_y": 3.0
+        },
+        {
+          "x": 41.75,
+          "z": 52.45,
+          "soil_y": 2.8649978637695312
+        },
+        {
+          "x": 41.75,
+          "z": 53.2,
+          "soil_y": 2.6399993896484375
+        },
+        {
+          "x": 43.0,
+          "z": 51.7,
+          "soil_y": 3.0
+        },
+        {
+          "x": 43.0,
+          "z": 52.45,
+          "soil_y": 2.8649978637695312
+        },
+        {
+          "x": 43.0,
+          "z": 53.2,
+          "soil_y": 2.6399993896484375
+        },
+        {
+          "x": 44.25,
+          "z": 51.7,
+          "soil_y": 3.0
+        },
+        {
+          "x": 44.25,
+          "z": 52.45,
+          "soil_y": 2.865001678466797
+        },
+        {
+          "x": 44.25,
+          "z": 53.2,
+          "soil_y": 2.6399993896484375
+        }
+      ],
+      "footing_bottom": 2.3399993896484377,
+      "top": 3,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "hut east level porch",
+      "soil": [
+        {
+          "x": 20,
+          "z": 18.8,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 20,
+          "z": 20.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 20,
+          "z": 21.2,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 20.9,
+          "z": 18.8,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 20.9,
+          "z": 20.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 20.9,
+          "z": 21.2,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 21.8,
+          "z": 18.8,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 21.8,
+          "z": 20.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 21.8,
+          "z": 21.2,
+          "soil_y": 5.650001525878906
+        }
+      ],
+      "footing_bottom": 5.350001525878906,
+      "top": 6,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "hut south level porch",
+      "soil": [
+        {
+          "x": 10.8,
+          "z": 26,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 10.8,
+          "z": 26.9,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 10.8,
+          "z": 27.8,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 12.0,
+          "z": 26,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 12.0,
+          "z": 26.9,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 12.0,
+          "z": 27.8,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 13.2,
+          "z": 26,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 13.2,
+          "z": 26.9,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 13.2,
+          "z": 27.8,
+          "soil_y": 5.650001525878906
+        }
+      ],
+      "footing_bottom": 5.350001525878906,
+      "top": 6,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "ruin west level porch",
+      "soil": [
+        {
+          "x": 38.2,
+          "z": 21,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 38.2,
+          "z": 22.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 38.2,
+          "z": 23,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 38.85,
+          "z": 21,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 38.85,
+          "z": 22.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 38.85,
+          "z": 23,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 39.5,
+          "z": 21,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 39.5,
+          "z": 22.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 39.5,
+          "z": 23,
+          "soil_y": 5.650001525878906
+        }
+      ],
+      "footing_bottom": 5.350001525878906,
+      "top": 6,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "store south level porch",
+      "soil": [
+        {
+          "x": 43.75,
+          "z": 40,
+          "soil_y": 3.390308380126953
+        },
+        {
+          "x": 43.75,
+          "z": 40.75,
+          "soil_y": 3.2395362854003906
+        },
+        {
+          "x": 43.75,
+          "z": 41.5,
+          "soil_y": 3.0887680053710938
+        },
+        {
+          "x": 45.0,
+          "z": 40,
+          "soil_y": 3.4326744079589844
+        },
+        {
+          "x": 45.0,
+          "z": 40.75,
+          "soil_y": 3.258941650390625
+        },
+        {
+          "x": 45.0,
+          "z": 41.5,
+          "soil_y": 3.100513458251953
+        },
+        {
+          "x": 46.25,
+          "z": 40,
+          "soil_y": 3.470867156982422
+        },
+        {
+          "x": 46.25,
+          "z": 40.75,
+          "soil_y": 3.2895584106445312
+        },
+        {
+          "x": 46.25,
+          "z": 41.5,
+          "soil_y": 3.1158218383789062
+        }
+      ],
+      "footing_bottom": 2.788768005371094,
+      "top": 6,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "HUT-EAST grounded receiving bed",
+      "soil": [
+        {
+          "x": 21.8,
+          "z": 19,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 21.8,
+          "z": 20.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 21.8,
+          "z": 21,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 22.200000000000003,
+          "z": 19,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 22.200000000000003,
+          "z": 20.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 22.200000000000003,
+          "z": 21,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 22.6,
+          "z": 19,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 22.6,
+          "z": 20.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 22.6,
+          "z": 21,
+          "soil_y": 5.650001525878906
+        }
+      ],
+      "footing_bottom": 5.350001525878906,
+      "top": 5.45,
+      "existing_wall_connection_at": []
+    },
+    {
+      "name": "RUIN-WEST grounded receiving bed",
+      "soil": [
+        {
+          "x": 37.4,
+          "z": 21,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 37.4,
+          "z": 22.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 37.4,
+          "z": 23,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 37.8,
+          "z": 21,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 37.8,
+          "z": 22.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 37.8,
+          "z": 23,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 38.2,
+          "z": 21,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 38.2,
+          "z": 22.0,
+          "soil_y": 5.650001525878906
+        },
+        {
+          "x": 38.2,
+          "z": 23,
+          "soil_y": 5.650001525878906
+        }
+      ],
+      "footing_bottom": 5.350001525878906,
+      "top": 5.45,
+      "existing_wall_connection_at": []
+    }
+  ],
+  "flights": [
+    {
+      "link": "L03",
+      "low": [
+        20,
+        0,
+        58
+      ],
+      "high": [
+        20,
+        3,
+        53.2
+      ],
+      "width": 2,
+      "risers": 17
+    },
+    {
+      "link": "L04",
+      "low": [
+        28,
+        3,
+        36
+      ],
+      "high": [
+        28,
+        5.65,
+        31.2
+      ],
+      "width": 2,
+      "risers": 15
+    },
+    {
+      "link": "L09",
+      "low": [
+        45,
+        3,
+        46.3
+      ],
+      "high": [
+        45,
+        6,
+        41.5
+      ],
+      "width": 2,
+      "risers": 17
+    },
+    {
+      "link": "L10",
+      "low": [
+        43,
+        0,
+        58
+      ],
+      "high": [
+        43,
+        3,
+        53.2
+      ],
+      "width": 2,
+      "risers": 17
+    },
+    {
+      "link": "HUT-SOUTH",
+      "low": [
+        12,
+        5.65,
+        28.6
+      ],
+      "high": [
+        12,
+        6,
+        27.8
+      ],
+      "width": 2.4,
+      "risers": 2
+    },
+    {
+      "link": "HUT-EAST",
+      "low": [
+        22.6,
+        5.65,
+        20
+      ],
+      "high": [
+        21.8,
+        6,
+        20
+      ],
+      "width": 2,
+      "risers": 2
+    },
+    {
+      "link": "RUIN-WEST",
+      "low": [
+        37.4,
+        5.65,
+        22
+      ],
+      "high": [
+        38.2,
+        6,
+        22
+      ],
+      "width": 2,
+      "risers": 2
+    }
+  ],
+  "builder": "tools/build_lookout_terraces.py",
+  "builder_sha256": "dafc6f506db4a8fdf88893fbcdfe7196a39c6ba4785becc4ff739ef96ae4c7f5",
+  "terrain_mesh": "Saved editor geographic Lookout terraces",
+  "saved_world": "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/adaptive-topology.bin": "647b51bf25ac6074fc6e671f8a15fe85e889b6109db5916287e6d3838bba039d",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/authored-cuts.tsv": "bee8204ce47cc7815d08d0f6fea8c1d6e1a550c5dcdd53c3587d3cdef9d4d613",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/authored-path-grading.sha256": "57fd26b17afee1ffc25ebfe4f79931551fc4d1232540417273a1c267377e94b9",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/earthworks-verification.json": "f9397fe82d9efdeaf7604d10b451a4a339bd37996a26e41504c7f9e4253e93c2",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/source-provenance.json": "de2d9ec020d5c4d1017ce8fbaefec01fa8f49cdddb1e516412bec58654b9c0a4",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/terrain-physics.hcs2": "1610a12c32585550a50eea8d19144a7d4debf0c2ad3b53e1cf0c54a44a4a3d63",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/tile_0_0.png": "c34bc04fc96dfdf7ed70d5d9790e326aff76b3cc1674822a0bfd901689628fc9",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/verification.json": "f9397fe82d9efdeaf7604d10b451a4a339bd37996a26e41504c7f9e4253e93c2",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/world.properties": "8d2b0285398cd7bc3280911568f6f5ded0acb411941121991bc4e6c2b065c380",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/scene-package/.scene.bin.editor.previous": "910dcaace2e08d3ea9e4a3820fd0ba8d92d89a1513c49283898c5e19142683da",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/scene-package/scene.bin": "7c87daeb23ec14209d235f4ddcd8794e366df73b8f6fd10983bbb9269780d18d",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/scene-package/meshes/site.obj": "6d11e7493c5f885fecd97fda7c5663268ec17cda5cf853c1a43c637601365ca6",
+    "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world/terrain-layers/tile_0_0.bin": "10c2ffcce1acb99234d826f6fcff2b8b7600858f815e139c1f65c2a957ae23db"
+  },
+  "source_terrain": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world",
+  "retained_native_records": 224
+}

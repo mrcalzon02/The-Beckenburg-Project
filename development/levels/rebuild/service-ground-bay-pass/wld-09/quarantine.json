@@ -1,0 +1,305 @@
+{
+  "source": {
+    "id": "WLD-09",
+    "construction": "development/levels/rebuild/architectural-restart-pass/wld-09/construction.json",
+    "layout": "development/levels/rebuild/architectural-restart-pass/wld-09/authored-layout.json",
+    "glb": "development/levels/rebuild/architectural-restart-pass/wld-09/reconstructed.glb",
+    "native": "development/levels/rebuild/architectural-restart-pass/wld-09/reconstructed.hcs2",
+    "blend": "development/levels/rebuild/architectural-restart-pass/wld-09/reconstructed.blend",
+    "glb_sha256": "934e6bdf4efe73a720bd800600fe05680a1b0a6130a121d3d0ae555dae257bdf",
+    "native_sha256": "13f539d589dd329d5938373fbbb8ec3e3dbedcca0fd09f88569cdcc72e6bb4fd"
+  },
+  "reason": "Complete turbine floor/return roof replaced by coordinated designed stair wells; old imaginary emergency guide retained here only",
+  "meshes": [
+    {
+      "name": "Floor turbine",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        36.0,
+        22.0,
+        55.099998474121094,
+        23.5,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.001",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        36.0,
+        23.5,
+        55.099998474121094,
+        30.5,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.002",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        36.0,
+        30.5,
+        55.099998474121094,
+        41.849998474121094,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.003",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        36.0,
+        41.849998474121094,
+        55.099998474121094,
+        44.150001525878906,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.004",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        36.0,
+        44.150001525878906,
+        55.099998474121094,
+        48.0,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.005",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        55.099998474121094,
+        22.0,
+        56.900001525878906,
+        23.5,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.006",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        55.099998474121094,
+        30.5,
+        56.900001525878906,
+        41.849998474121094,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.007",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        55.099998474121094,
+        41.849998474121094,
+        56.900001525878906,
+        44.150001525878906,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.008",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        55.099998474121094,
+        44.150001525878906,
+        56.900001525878906,
+        48.0,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.009",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        56.900001525878906,
+        22.0,
+        58.0,
+        23.5,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.010",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        56.900001525878906,
+        23.5,
+        58.0,
+        30.5,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.011",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        56.900001525878906,
+        30.5,
+        58.0,
+        41.849998474121094,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.012",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        56.900001525878906,
+        41.849998474121094,
+        58.0,
+        44.150001525878906,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.013",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        56.900001525878906,
+        44.150001525878906,
+        58.0,
+        48.0,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.014",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        58.0,
+        22.0,
+        64.0,
+        23.5,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.015",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        58.0,
+        23.5,
+        64.0,
+        30.5,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.016",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        58.0,
+        30.5,
+        64.0,
+        41.849998474121094,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "Floor turbine.017",
+      "role": "floor",
+      "zone": "turbine",
+      "bounds": [
+        58.0,
+        44.150001525878906,
+        64.0,
+        48.0,
+        -6.159999847412109,
+        -6.0
+      ]
+    },
+    {
+      "name": "WLD-09 closed old return escape roof region0",
+      "role": "contained stair hall floor or roof",
+      "zone": "return",
+      "bounds": [
+        50.0,
+        32.0,
+        64.0,
+        48.0,
+        -7.300000190734863,
+        -7.0
+      ]
+    }
+  ],
+  "old_emergency_guide": {
+    "id": "L18",
+    "a": "return",
+    "b": "east-stair",
+    "kind": "stairs",
+    "width": 2,
+    "points": [
+      [
+        58,
+        -10,
+        43
+      ],
+      [
+        70,
+        -5,
+        43
+      ],
+      [
+        74,
+        -5,
+        43
+      ],
+      [
+        74,
+        0,
+        28.05
+      ],
+      [
+        74,
+        0,
+        27
+      ],
+      [
+        70,
+        0,
+        27
+      ]
+    ],
+    "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+    "rise_m": 10,
+    "construction": "Authored separated flight/landing coordinates. Verify actual exported support, head/body clearance, approaches, guards and continuous runtime sweeps; no acceptance from centre lines.",
+    "construction_status": "INVALID_ROOM_CROSSING_GEOMETRY_REMOVED_ESCAPE_REPLACEMENT_OPEN"
+  }
+}

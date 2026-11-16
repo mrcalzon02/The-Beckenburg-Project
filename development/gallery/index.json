@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 10997,
+  "count": 11024,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -102506,6 +102506,246 @@
       "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
     },
     {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-cellar-foot-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-cellar-foot-standing.png",
+      "title": "College cellar foot standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1653999,
+      "sha256": "f876b020ef738cb361cb78c230bba6e8902ba35d8b7eac5164c478f20d465e54"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-library-before.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-library-before.png",
+      "title": "College library before",
+      "kind": "Native earlier pilot/before architecture; source retained, not final acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1644592,
+      "sha256": "f00d6c0d7b5ea6380c18e16359b11ce3d93d5314203ba2af4443ac7df0db2e61"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-library-cutaway.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-library-cutaway.png",
+      "title": "College library cutaway",
+      "kind": "Native architectural structural cutaway; hidden layers recorded, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1551536,
+      "sha256": "7a2d45670dfc072a0dc36740b30b79a410fabd6c788d89817feb675b8d937003"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-library-foot-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-library-foot-standing.png",
+      "title": "College library foot standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1726612,
+      "sha256": "70da8fe4c9b3f76bf60f45421ece486e4e4b72e105d462d857c3d0d427afc85e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-library-head-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-library-head-standing.png",
+      "title": "College library head standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1415456,
+      "sha256": "0f8cc4a2e75158954d70ebccd0c02c3d732c1d55aa5038bcd5bcc334c99aa2dc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-pilot-library-cutaway.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-pilot-library-cutaway.png",
+      "title": "College pilot library cutaway",
+      "kind": "Native earlier pilot/before architecture; source retained, not final acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1551870,
+      "sha256": "934ce973c998c4209e10c8e0a615fd42ce8be3c324248e821a97a775d0f45f6b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-pilot-library-foot-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-pilot-library-foot-standing.png",
+      "title": "College pilot library foot standing",
+      "kind": "Native earlier pilot/before architecture; source retained, not final acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1726612,
+      "sha256": "b999cb1ad4d933e6df6dbb4c6996622b0651e16762b49ba3beec81c431240571"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-pilot-library-head-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-pilot-library-head-standing.png",
+      "title": "College pilot library head standing",
+      "kind": "Native earlier pilot/before architecture; source retained, not final acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1415456,
+      "sha256": "d3cbd13dfd1c4fff12aa3ea146b02067bf74921774850322806b03ef1deb922a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-plan-section-flow.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-plan-section-flow.png",
+      "title": "College plan section flow",
+      "kind": "Native architectural structural cutaway; hidden layers recorded, not runtime or whole-map acceptance",
+      "width": 1000,
+      "height": 940,
+      "bytes": 54430,
+      "sha256": "5437a0e7a2f0be55d40bee64cebfb372a425ff61aece446b614e94bc93011127"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-teaching-before.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-teaching-before.png",
+      "title": "College teaching before",
+      "kind": "Native earlier pilot/before architecture; source retained, not final acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1658135,
+      "sha256": "3dab9a411a64197c73e426d03a043c22a620fc7dc6c490cc865b09085b3d2c14"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-teaching-cellar-cutaway.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-teaching-cellar-cutaway.png",
+      "title": "College teaching cellar cutaway",
+      "kind": "Native architectural structural cutaway; hidden layers recorded, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1445970,
+      "sha256": "fda720a8e1b45f726d644c2b95d35c7e33241819e04a8d13b644bec802f29641"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-teaching-cutaway.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-teaching-cutaway.png",
+      "title": "College teaching cutaway",
+      "kind": "Native architectural structural cutaway; hidden layers recorded, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1773601,
+      "sha256": "86ae7674ad495154a5e21cdd6c8a59d8922541f4dc59cfb447d8a3ead6eabbe1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-teaching-foot-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-teaching-foot-standing.png",
+      "title": "College teaching foot standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1730370,
+      "sha256": "7b5cb103909bfcda219460379eb76483af9e338fe4439af6434d60eee9578693"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-teaching-head-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/college-teaching-head-standing.png",
+      "title": "College teaching head standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1455549,
+      "sha256": "d1077be01cbb388c7a658057de922566b491607ce00d4ea370066fab0761f572"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-clearing-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-clearing-standing.png",
+      "title": "Wld 04 clearing standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1397898,
+      "sha256": "8fb473a37dacb4033f6992aafde04d2eef86bc19d982f77b484338bf5810a373"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-east-stair-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-east-stair-standing.png",
+      "title": "Wld 04 east stair standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1692912,
+      "sha256": "71f2dd1bb8dabf44cf67c729e14038b35bc17856d23a08327e1faa889ddf929e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-lower-stair-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-lower-stair-standing.png",
+      "title": "Wld 04 lower stair standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1457568,
+      "sha256": "1a2164f589d4fd1ffb4486d9f4956d9f522b470a4ba5109cebf8c2d33d5ae215"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-plan-section-flow.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-plan-section-flow.png",
+      "title": "Wld 04 plan section flow",
+      "kind": "Native architectural structural cutaway; hidden layers recorded, not runtime or whole-map acceptance",
+      "width": 1440,
+      "height": 1150,
+      "bytes": 156031,
+      "sha256": "1e5a757c46342a7a0fa484367e37fdb8da0b72ccbf9ce1f5fdef991e07940d8b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-rejected-before.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-rejected-before.png",
+      "title": "Wld 04 rejected before",
+      "kind": "Native earlier pilot/before architecture; source retained, not final acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1467417,
+      "sha256": "9f3b3a8b50c77a874a218fc30a6f56aa707bce11523fe8be3902021cd1ff1b57"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-ruin-porch-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-ruin-porch-standing.png",
+      "title": "Wld 04 ruin porch standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1368688,
+      "sha256": "d1c9b0acda0cd539710465720ffe087fec7fc0fe3468b11c856f5499657f5365"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-upper-structure.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-upper-structure.png",
+      "title": "Wld 04 upper structure",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1732386,
+      "sha256": "47e3c40c74127e7f1d2617366e870da687e5f1a47692e8bd94d74b1527760956"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-west-stair-standing.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-west-stair-standing.png",
+      "title": "Wld 04 west stair standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1612084,
+      "sha256": "554d08a5b753216de190e48902d6a1ab24e08af507dba1a6f126ce914223e99c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-whole-site.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/wld-04-whole-site.png",
+      "title": "Wld 04 whole site",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1247528,
+      "sha256": "87642b50256d419bbf28c63a19b3c020fc6370205944b67ed61fc150de2b9642"
+    },
+    {
+      "path": "development/levels/rebuild/captures/service-ground-bay-batch/wld-09-rejected-before.png",
+      "url": "development/levels/rebuild/captures/service-ground-bay-batch/wld-09-rejected-before.png",
+      "title": "Wld 09 rejected before",
+      "kind": "Native earlier pilot/before architecture; source retained, not final acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1303966,
+      "sha256": "0dbaafdc8d6ee07d94732a892f1f19e0fa17c69dc9c5ef23e4b3c4b3af964117"
+    },
+    {
       "path": "development/levels/rebuild/captures/service-portal-construction-batch/wld-12.png",
       "url": "development/levels/rebuild/captures/service-portal-construction-batch/wld-12.png",
       "title": "Wld 12",
@@ -106674,6 +106914,36 @@
       "height": 1000,
       "bytes": 61389,
       "sha256": "e5b0b1c52592b54ebc51ac3e556f092797eed6b7b1b1ae4a04e992f461ba773f"
+    },
+    {
+      "path": "development/levels/rebuild/service-ground-bay-pass/wld-09/captures/bay-structural-section.png",
+      "url": "development/levels/rebuild/service-ground-bay-pass/wld-09/captures/bay-structural-section.png",
+      "title": "Bay structural section",
+      "kind": "Native architectural structural cutaway; hidden layers recorded, not runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1861449,
+      "sha256": "a257891b26c69ed0b89c89831523126339b4d8bf9449bc10fe9995ac53431007"
+    },
+    {
+      "path": "development/levels/rebuild/service-ground-bay-pass/wld-09/captures/lower-standing.png",
+      "url": "development/levels/rebuild/service-ground-bay-pass/wld-09/captures/lower-standing.png",
+      "title": "Lower standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1649075,
+      "sha256": "97ffadceeeec4de42ed2274bca2d7e46ad3dd1d7c4a181b22e6e3dd8af76a81f"
+    },
+    {
+      "path": "development/levels/rebuild/service-ground-bay-pass/wld-09/captures/upper-standing.png",
+      "url": "development/levels/rebuild/service-ground-bay-pass/wld-09/captures/upper-standing.png",
+      "title": "Upper standing",
+      "kind": "Native exported architecture and ordinary standing-height door/stair inspection; no runtime or whole-map acceptance",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1581123,
+      "sha256": "afa8c743cad348572269123ad648479dbd6269053dae48be31cfa74b267d6a2d"
     },
     {
       "path": "development/levels/rebuild/structures/academy/preview.png",
