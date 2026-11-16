@@ -78,7 +78,9 @@ The Windows shipping job installed the executable, started the game and reached 
 
 The release JAR matched the published SHA-256 `1203032a36901d62017014cc48419032b3aae933e02863ebd38a327685734148`. Its 423 file entries, including all 419 compiled classes, were byte-identical to those in the standalone runner’s JAR. The archive timestamps differed. The row, native mesh update and glTF authoring regressions passed independently against the released JAR with a 256 MiB heap.
 
-The Windows native/installed-editor and full multiplayer jobs also run on the same implementation. [Native and installed editor](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43978423378) · [Multiplayer and broad regression](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43978423376)
+The Windows native and installed-editor job passed. The installed executable edited, saved and reopened a model, captured its rendered view and verified the published data in the game. The saved seam-inspection image was identical across both Windows revisions. Its SHA-256 is `b72e7715ae50e055e5ca6c189ff06dce1a2f4af9b1e57297a2f50a369dc1a660`. [Windows screenshot](windows-uv-seam-inspector.png) · [Native acceptance](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43978423378) · [Windows artifact](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43978423378/artifacts/14281499243)
+
+The packaged Windows multiplayer job passed on the release revision. Its raw manifest summary was `REGRESSION SUMMARY passed=379 failed=0 skipped=0 manifest=379`. The job also launched the packaged desktop game and Windows executable. [Full multiplayer and broad regression](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43978423376)
 
 ## Reproduce
 
