@@ -7,10 +7,44 @@ import java.util.List;
  * Lower wall reaches head height and joins a soft elliptical dome over the roof. */
 public final class SafeAreaHaze {
     private SafeAreaHaze(){}
+    /** A renderer owns one range image for its first (van or Castle) sanctuary. Only the
+     * optical intersection is persistent. Animation, scene depth and compositing stay live. */
+    static final class RayCache {
+        private record View(int width,int height,double focal,double x,double eye,double z,
+                            double yaw,double pitch,SafeAreaBarrier.Volume area) {}
+        private View last;
+        private boolean ready;
+        private double[] ranges;
+
+        private double[] repeat(View view,int pixels){
+            if(!view.equals(last)){
+                last=view;
+                ready=false;
+                return null;
+            }
+            if(!ready){
+                if(ranges==null)ranges=new double[pixels];
+                else if(ranges.length<pixels){
+                    // A dome grows on screen as a hunter approaches it. Avoid allocating
+                    // a slightly larger array at each stop, capped at this render target.
+                    int capacity=Math.min(view.width()*view.height(),Math.max(pixels,ranges.length*2));
+                    ranges=new double[capacity];
+                }else java.util.Arrays.fill(ranges,0,pixels,0);
+                ready=true;
+            }
+            return ranges;
+        }
+    }
+
     public static int draw(int[] pixels,double[] depths,int width,int height,double focal,
             double x,double eye,double z,double yaw,double pitch,double clock,List<SafeAreaBarrier.Volume> areas){
+        return draw(pixels,depths,width,height,focal,x,eye,z,yaw,pitch,clock,areas,null);
+    }
+
+    static int draw(int[] pixels,double[] depths,int width,int height,double focal,
+            double x,double eye,double z,double yaw,double pitch,double clock,List<SafeAreaBarrier.Volume> areas,RayCache cache){
         return drawShells(pixels,depths,width,height,focal,x,eye,z,yaw,pitch,clock,
-            areas.stream().map(a->(Shell)new Dome(a)).toList());
+            areas.stream().map(a->(Shell)new Dome(a)).toList(),cache);
     }
     /** Usable authored cover reuses the sanctuary material at its authored cover location. */
     public static int drawHiding(int[] pixels,double[] depths,int width,int height,double focal,
@@ -30,7 +64,7 @@ public final class SafeAreaHaze {
                 shells.add(new Dome(new SafeAreaBarrier.Volume(socket.x(),socket.y(),socket.z(),radius,shoulder,coverHeight)));
             }
         }
-        return drawShells(pixels,depths,width,height,focal,x,eye,z,yaw,pitch,clock,shells);
+        return drawShells(pixels,depths,width,height,focal,x,eye,z,yaw,pitch,clock,shells,null);
     }
     private interface Shell {
         SafeAreaBarrier.Volume material();
@@ -53,7 +87,7 @@ public final class SafeAreaHaze {
         }
     }
     private static int drawShells(int[] pixels,double[] depths,int width,int height,double focal,
-            double x,double eye,double z,double yaw,double pitch,double clock,List<? extends Shell> shells){
+            double x,double eye,double z,double yaw,double pitch,double clock,List<? extends Shell> shells,RayCache cache){
         if(!Double.isFinite(clock))throw new IllegalArgumentException("finite barrier animation clock required");
         int changed=0;double cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
         for(var shell:shells){var a=shell.material();
@@ -76,20 +110,38 @@ public final class SafeAreaHaze {
             if(maxZ<=.035)continue;
             int x0=minZ<=.035?0:Math.max(0,(int)Math.floor(minX)-1),x1=minZ<=.035?width-1:Math.min(width-1,(int)Math.ceil(maxX)+1);
             int y0=minZ<=.035?0:Math.max(0,(int)Math.floor(minY)-1),y1=minZ<=.035?height-1:Math.min(height-1,(int)Math.ceil(maxY)+1);
+            if(x1<x0||y1<y0)continue;
+            int span=x1-x0+1;
+            double[] ranges=null;
+            if(cache!=null&&shell==shells.get(0)){
+                var view=new RayCache.View(width,height,focal,x,eye,z,yaw,pitch,a);
+                ranges=cache.repeat(view,span*(y1-y0+1));
+            }
             for(int row=y0;row<=y1;row++){
                 double v=(height*.5-row-.5)/focal,dy=v*cp+sp,forward=cp-v*sp;
                 for(int col=x0;col<=x1;col++){
-                    double u=(col+.5-width*.5)/focal,dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
-                    int at=row*width+col;
+                    int at=row*width+col,ray=(row-y0)*span+col-x0;
                     double sceneDepth=depths[at];
+                    // Positive ranges are analytic hits (infinity is a miss). A negative
+                    // range proves the ray remained inside up to that previous scene depth.
+                    double hit=ranges==null?0:ranges[ray];
+                    if(hit>0&&hit>=sceneDepth-.008)continue;
+                    if(hit<0&&sceneDepth>=0&&sceneDepth<=-hit)continue;
+                    double u=(col+.5-width*.5)/focal,dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
                     // The cylinder extended downwards and its upper ellipsoid form one
                     // convex interior. A segment with both ends strictly inside cannot
                     // cross a visible wall or cap. The open bottom adds no surface.
-                    if(insideDome&&sceneDepth>=0&&Double.isFinite(sceneDepth)
-                            &&insideDome(ox+dx*sceneDepth,capY+dy*sceneDepth,
-                                oz+dz*sceneDepth,invRadius,invCap))continue;
-                    double hit=shell.hit(ox,oy,oz,dx,dy,dz);
-                    if(hit<.035||hit>=sceneDepth-.008)continue;
+                    if(hit<=0){
+                        if(insideDome&&sceneDepth>=0&&Double.isFinite(sceneDepth)
+                                &&insideDome(ox+dx*sceneDepth,capY+dy*sceneDepth,
+                                    oz+dz*sceneDepth,invRadius,invCap)){
+                            if(ranges!=null)ranges[ray]=-sceneDepth;
+                            continue;
+                        }
+                        hit=shell.hit(ox,oy,oz,dx,dy,dz);
+                        if(ranges!=null)ranges[ray]=hit;
+                        if(hit<.035||hit>=sceneDepth-.008)continue;
+                    }
                     double wx=x+dx*hit,wy=eye+dy*hit-a.y(),wz=z+dz*hit;
                     double alpha=opacity(a,wx,wy,wz,clock);
                     int blue=0xa9dfff;int old=pixels[at];double keep=1-alpha;

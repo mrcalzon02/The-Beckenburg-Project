@@ -30,10 +30,12 @@ public final class SoftwareLightingFrameReview {
         var thread = ManagementFactory.getPlatformMXBean(com.sun.management.ThreadMXBean.class);
         if (!thread.isThreadAllocatedMemorySupported()) throw new IllegalStateException("Thread allocation counter unavailable");
         thread.setThreadAllocatedMemoryEnabled(true);
+        boolean cpuTiming=thread.isCurrentThreadCpuTimeSupported();
+        if(cpuTiming)thread.setThreadCpuTimeEnabled(true);
         var data = ByteBuffer.allocate(view.pixels().length * (Integer.BYTES + Long.BYTES));
         var sha = MessageDigest.getInstance("SHA-256");
         try (var csv = Files.newBufferedWriter(output.resolve("frames.csv"))) {
-            csv.write("phase,frame,elapsed_ns,geometry_ns,allocated_bytes,shadow_rays,lit_samples,rgb_depth_sha256\n");
+            csv.write("phase,frame,elapsed_ns,geometry_ns,allocated_bytes,shadow_rays,lit_samples,rgb_depth_sha256,render_cpu_ns\n");
             for (int i = -24; i < 72; i++) {
                 int phase = Math.max(i, 0) / 12;
                 if (i == 12 || i == 60) {
@@ -51,9 +53,11 @@ public final class SoftwareLightingFrameReview {
                 view.uvLamp = phase == 5;
                 double clock = (i + 24) / 30d;
                 long bytes = thread.getCurrentThreadAllocatedBytes();
+                long cpuStart = cpuTiming ? thread.getCurrentThreadCpuTime() : 0;
                 long start = System.nanoTime();
                 view.drawPractice(map, List.of(), clock);
                 long elapsed = System.nanoTime() - start;
+                long cpuElapsed = cpuTiming ? thread.getCurrentThreadCpuTime() - cpuStart : -1;
                 bytes = thread.getCurrentThreadAllocatedBytes() - bytes;
                 if (i < 0) continue;
                 var d = view.frameDiagnostics();
@@ -69,8 +73,8 @@ public final class SoftwareLightingFrameReview {
                         depths.write(data.array(), depthOffset, data.position() - depthOffset);
                     }
                 }
-                csv.write(String.format(Locale.ROOT, "%d,%d,%d,%d,%d,%d,%d,%s%n", phase, i, elapsed,
-                    d.geometryNs(), bytes, d.lighting().shadowRays(), d.lighting().samples(), digest));
+                csv.write(String.format(Locale.ROOT, "%d,%d,%d,%d,%d,%d,%d,%s,%d%n", phase, i, elapsed,
+                    d.geometryNs(), bytes, d.lighting().shadowRays(), d.lighting().samples(), digest, cpuElapsed));
             }
         }
     }

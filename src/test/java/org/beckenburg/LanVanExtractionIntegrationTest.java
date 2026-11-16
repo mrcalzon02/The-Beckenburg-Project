@@ -34,6 +34,19 @@ public final class LanVanExtractionIntegrationTest {
     private static void check(boolean value,String message){
         if(!value)throw new AssertionError(message);
     }
+    private static void verifyBootstrapBacklog(Wire hunter) {
+        // Replay the actual ordered host burst with an unscheduled writer. Socket
+        // delivery already proved the path above; this isolates its scheduling edge.
+        var pending = new LanOutboundQueue(new java.io.StringWriter(), () -> {});
+        int frames = 0;
+        for (String event : List.copyOf(hunter.seen)) {
+            if (!event.contains("|")) continue; // Local voice device notifications.
+            check(pending.offer(event), "H2 startup/retreat burst overflowed at frame " + (frames + 1));
+            frames++;
+            if (event.equals("RESULT|RETREATED")) return;
+        }
+        throw new AssertionError("Missing terminal H2 burst frame");
+    }
     private static void run(int hunters,boolean outside,boolean departed,boolean roomMode)throws Exception {
         try(LanHost host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,
                 CustomContract.standard(hunters))){
@@ -97,6 +110,7 @@ public final class LanVanExtractionIntegrationTest {
                     check(peer.count("RESULT|RETREATED")==1,
                         "exactly one result per connected hunter");
                 }
+                if (roomMode && hunters == 3 && !outside) verifyBootstrapBacklog(peers.get(1));
                 if(roomMode)leader.client.extract();else leader.client.vanDoor();
                 leader.expect("REJECT|");
                 Thread.sleep(150);

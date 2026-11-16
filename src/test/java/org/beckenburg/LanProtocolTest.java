@@ -24,6 +24,23 @@ public final class LanProtocolTest {
         check(LanProtocol.read(new StringReader("READY\n")).equals("READY"),"reader");
         try{LanProtocol.read(new StringReader("READY"));throw new AssertionError("truncated frame accepted");}
         catch(IOException expected){}
+        // The production reader must preserve packet boundaries across buffered reads.
+        String payload = "x".repeat(LanProtocol.MAX_FRAME);
+        String stream = (payload + "\n").repeat(5) + "\nREADY\n";
+        try (Reader input = LanProtocol.reader(new ByteArrayInputStream(
+                stream.getBytes(java.nio.charset.StandardCharsets.US_ASCII)))) {
+            for (int i = 0; i < 5; i++) check(payload.equals(LanProtocol.read(input)), "maximum-size frame");
+            check("".equals(LanProtocol.read(input)), "empty frame");
+            check("READY".equals(LanProtocol.read(input)), "short final frame");
+            check(LanProtocol.read(input) == null, "clean EOF");
+        }
+        for (byte[] invalid : new byte[][] { { -1, 10 }, { 13, 10 }, { 65 },
+                ("x".repeat(LanProtocol.MAX_FRAME + 1) + "\n").getBytes(java.nio.charset.StandardCharsets.US_ASCII) }) {
+            try (Reader input = LanProtocol.reader(new ByteArrayInputStream(invalid))) {
+                try { LanProtocol.read(input); throw new AssertionError("Invalid wire frame accepted"); }
+                catch (IOException expected) {}
+            }
+        }
         System.out.println("PASS: bounded LAN line protocol, input validation, error and EOF handling");
     }
 }

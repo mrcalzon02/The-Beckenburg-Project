@@ -196,13 +196,14 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   // Static glTF colors and alpha share the source image, UVs and material factors.
   // Dynamic monitors can supply their RGB separately from the registered alpha.
   boolean staticImported=imported&&GlbProps.dynamicTextureRevision(material)<0;
+  var sampler=staticImported?GlbProps.staticSampler(material):null;
   for(int y=0;y<height;y++)for(int x=0;x<width;x++){
    // Pixmap row zero is uploaded at GL v=0. The CPU sampler already owns
    // each material family's V convention: do not invert that convention twice.
    double u=(x+.5)/width,v=(y+.5)/height;
    int rgba;
    if(staticImported){
-    rgba=Integer.rotateLeft(GlbProps.sampleRgba(material,u,v),8);
+    rgba=Integer.rotateLeft(sampler!=null?sampler.argb(u,v):GlbProps.sampleRgba(material,u,v),8);
    }else{
     int rgb=material<0?0xffffff:sample(material,u,v);
     int alpha=imported?GlbProps.sampleAlpha(material,u,v):255;

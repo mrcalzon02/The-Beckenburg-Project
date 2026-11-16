@@ -17,7 +17,9 @@ import java.util.concurrent.atomic.AtomicBoolean;
  * JOIN/WELCOME is completed before this writer is started.
  */
 final class LanOutboundQueue {
-    static final int DEFAULT_CAPACITY=256;
+    // Joining, starting and entering the 3D view can queue more than 256 ordered
+    // frames before this peer's writer first runs (including both inventory snapshots).
+    static final int DEFAULT_CAPACITY=512;
     private final ArrayBlockingQueue<String> pending;
     private final Writer output;
     private final Runnable disconnect;

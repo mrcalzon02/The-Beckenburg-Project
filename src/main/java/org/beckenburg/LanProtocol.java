@@ -45,7 +45,9 @@ public final class LanProtocol {
         }
     }
     private static String throwTruncation() throws IOException {throw new IOException("truncated frame");}
-    public static Reader reader(InputStream stream){return new InputStreamReader(stream,StandardCharsets.US_ASCII);}
+    public static Reader reader(InputStream stream) {
+        return new BufferedReader(new InputStreamReader(stream, StandardCharsets.US_ASCII), 2048);
+    }
     public static Writer writer(OutputStream stream){return new OutputStreamWriter(stream,StandardCharsets.US_ASCII);}
     public static void write(Writer out,String frame)throws IOException {
         parts(frame);

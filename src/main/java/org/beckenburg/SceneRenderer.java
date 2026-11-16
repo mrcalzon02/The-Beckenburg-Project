@@ -3575,7 +3575,7 @@ public final class SceneRenderer {
 
         renderWeatherMeshes();
         safeAreaPixels=SafeAreaHaze.draw(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,
-            List.of(SafeAreaBarrier.castle()));
+            List.of(SafeAreaBarrier.castle()),sanctuaryRays);
         long psxStart=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         long psxDone=System.nanoTime();
@@ -3704,13 +3704,14 @@ public final class SceneRenderer {
             && match.result() == SpiritualWar.Result.ACTIVE);
     }
     public boolean spiritualWarVanSanctuaryVisible(){return spiritualWarVanSanctuary;}
+    private final SafeAreaHaze.RayCache sanctuaryRays=new SafeAreaHaze.RayCache();
     private int safeAreaPixels;
     int safeAreaPixels(){return safeAreaPixels;}
     private void renderSafeAreas(HouseMap map,List<WorldMark> markers,double clock){
         var areas=new java.util.LinkedHashSet<SafeAreaBarrier.Volume>();
         if(!spiritualWarSanctuaryConfigured||spiritualWarVanSanctuary)areas.add(SafeAreaBarrier.van(map.van()));
         areas.addAll(map.temporarySafeAreas());areas.addAll(SafeAreaBarrier.visibleWards(map,markers));
-        safeAreaPixels=SafeAreaHaze.draw(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,List.copyOf(areas));
+        safeAreaPixels=SafeAreaHaze.draw(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,List.copyOf(areas),sanctuaryRays);
         safeAreaPixels+=SafeAreaHaze.drawHiding(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,map);
     }
     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
@@ -4242,10 +4243,10 @@ public final class SceneRenderer {
         if(Math.abs(denom)<1e-8)return;
         // Decode material transparency once per face, not for every pixel.
         // Ordinary opaque meshes retain their original fast depth-tested path.
-        boolean gltfBlend=material>=GlbProps.TEXTURE_BASE
-            &&GlbProps.gltfBlended(material);
-        double gltfCutoff=material>=GlbProps.TEXTURE_BASE
-            ?GlbProps.gltfMaskCutoff(material):-1.0;
+        boolean imported=material>=GlbProps.TEXTURE_BASE;
+        var sampler=imported?GlbProps.staticSampler(material):null;
+        boolean gltfBlend=sampler!=null?sampler.blended:imported&&GlbProps.gltfBlended(material);
+        double gltfCutoff=sampler!=null?sampler.maskCutoff:imported?GlbProps.gltfMaskCutoff(material):-1;
         int lowX=Math.max(0,(int)Math.floor(Math.min(x0,Math.min(x1,x2))));
         int highX=Math.min(renderWidth-1,(int)Math.ceil(Math.max(x0,Math.max(x1,x2))));
         int lowY=Math.max(0,(int)Math.floor(Math.min(y0,Math.min(y1,y2))));
@@ -4270,12 +4271,13 @@ public final class SceneRenderer {
                 if(gltfBlend||gltfCutoff>=0){
                     // Preserve source glTF BLEND/MASK rather than painting
                     // original transparent tree crowns as black quads.
-                    int rgba=GlbProps.sampleRgba(material,uu,vv);
+                    int rgba=sampler!=null?sampler.argb(uu,vv):GlbProps.sampleRgba(material,uu,vv);
                     sampledAlpha=rgba>>>24;
                     if(gltfBlend&&sampledAlpha<=1)continue;
                     if(gltfCutoff>=0&&sampledAlpha<gltfCutoff*255)continue;
                     texel=rgba&0xffffff;
-                }else texel=material>=GlbProps.TEXTURE_BASE
+                }else if(sampler!=null)texel=sampler.argb(uu,vv)&0xffffff;
+                else texel=material>=GlbProps.TEXTURE_BASE
                     ?GlbProps.sample(material,uu,vv)
                     :material>=LevelMaterials.BASE?LevelMaterials.sample(material,uu,vv):MaterialAtlas.sample(material,uu,vv);
                 if(reviewFrame!=null)reviewFrame.record(k,reviewFace,GlbProps.reviewTexel(material,uu,vv));

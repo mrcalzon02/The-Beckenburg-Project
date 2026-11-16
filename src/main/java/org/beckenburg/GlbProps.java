@@ -84,7 +84,12 @@ public final class GlbProps {
         if(image!=null)return image;
         image=ImageIO.read(new ByteArrayInputStream(png));if(image==null)throw new IOException("Unsupported source material image");
         if(readableCover)image=readableBookCover(image);
-        sourcePictures.put(key,new java.lang.ref.WeakReference<>(image));return image;
+        // Convert through the source color model once. All materials sharing this PNG
+        // then sample the same straight-alpha sRGB pixels, including transparent RGB.
+        var packed=new BufferedImage(image.getWidth(),image.getHeight(),BufferedImage.TYPE_INT_ARGB);
+        int[] pixels=((java.awt.image.DataBufferInt)packed.getRaster().getDataBuffer()).getData();
+        image.getRGB(0,0,image.getWidth(),image.getHeight(),pixels,0,image.getWidth());
+        sourcePictures.put(key,new java.lang.ref.WeakReference<>(packed));return packed;
     }
     // glTF 2.0 origin is upper-left. Apply it to vehicles and new authored
     // surface atlases; legacy art keeps its previously reviewed mapping.
@@ -247,7 +252,7 @@ public final class GlbProps {
     public static synchronized int surfaceMaterial(String name,BufferedImage image){
         Integer cached=surfaceMaterials.get(name);if(cached!=null)return cached;
         if(image==null||image.getWidth()>2048||image.getHeight()>2048)throw new IllegalArgumentException("terrain diffuse budget");
-        int id=TEXTURE_BASE+textures.size();textures.add(image);vehicleUvMaterials.add(false);samplerWrapS.add(10497);samplerWrapT.add(10497);materialNames.add(name);diffuseFactors.add(new double[]{1,1,1,1});surfaceMaterials.put(name,id);return id;
+        int id=TEXTURE_BASE+textures.size();textures.add(image);staticSamplers.add(null);vehicleUvMaterials.add(false);samplerWrapS.add(10497);samplerWrapT.add(10497);materialNames.add(name);diffuseFactors.add(new double[]{1,1,1,1});surfaceMaterials.put(name,id);return id;
     }
     /** Sixteen bounded texel variants per leaf material. Source UVs and shared source pixels remain intact. */
     public static synchronized int foliageMaterial(int original,long seed){
@@ -261,7 +266,7 @@ public final class GlbProps {
             int r=(int)(((rgb>>16)&255)*(brightness+warmth)*speckle),g=(int)(((rgb>>8)&255)*brightness*speckle),b=(int)((rgb&255)*(brightness-warmth)*speckle);
             copy.setRGB(x,y,(rgb&0xff000000)|(Math.min(255,r)<<16)|(Math.min(255,g)<<8)|Math.min(255,b));
         }
-        int id=TEXTURE_BASE+textures.size();textures.add(copy);vehicleUvMaterials.add(vehicleUvMaterials.get(original-TEXTURE_BASE));samplerWrapS.add(samplerWrapS.get(original-TEXTURE_BASE));samplerWrapT.add(samplerWrapT.get(original-TEXTURE_BASE));materialNames.add(materialName(original)+" foliage texel variant "+variant);
+        int id=TEXTURE_BASE+textures.size();textures.add(copy);staticSamplers.add(null);vehicleUvMaterials.add(vehicleUvMaterials.get(original-TEXTURE_BASE));samplerWrapS.add(samplerWrapS.get(original-TEXTURE_BASE));samplerWrapT.add(samplerWrapT.get(original-TEXTURE_BASE));materialNames.add(materialName(original)+" foliage texel variant "+variant);
         // Every source-preserving foliage tint inherits the original GLB alpha
         // mode as well as its actual alpha pixels. A derived tree must not
         // become a black opaque rectangle merely because its tint differs.
@@ -272,7 +277,7 @@ public final class GlbProps {
     }
     private static final Map<String,Integer> televisionMaterials=new HashMap<>();
     private static final Map<Integer,Integer> televisionPhases=new HashMap<>();
-    public static synchronized int televisionMaterial(double x,double y,double z){String key=x+":"+y+":"+z;return televisionMaterials.computeIfAbsent(key,k->{int id=TEXTURE_BASE+textures.size();textures.add(new BufferedImage(128,64,BufferedImage.TYPE_INT_RGB));vehicleUvMaterials.add(false);samplerWrapS.add(10497);samplerWrapT.add(10497);diffuseFactors.add(new double[]{1,1,1,1});materialNames.add("Television static surface");return id;});}
+    public static synchronized int televisionMaterial(double x,double y,double z){String key=x+":"+y+":"+z;return televisionMaterials.computeIfAbsent(key,k->{int id=TEXTURE_BASE+textures.size();textures.add(new BufferedImage(128,64,BufferedImage.TYPE_INT_RGB));staticSamplers.add(null);vehicleUvMaterials.add(false);samplerWrapS.add(10497);samplerWrapT.add(10497);diffuseFactors.add(new double[]{1,1,1,1});materialNames.add("Television static surface");return id;});}
     public static synchronized void updateTelevision(int material,boolean active,int tick){int phase=active?tick:-1;if(televisionPhases.getOrDefault(material,-2)==phase)return;televisionPhases.put(material,phase);var im=textures.get(material-TEXTURE_BASE);
         for(int y=0;y<64;y++)for(int x=0;x<128;x++){int hash=(x*73856093)^(y*19349663)^(tick*83492791);hash^=hash>>>13;int grey=active?80+Math.floorMod(hash,151):8;if(active&&(y+tick)%11==0)grey/=2;im.setRGB(x,y,(grey<<16)|(grey<<8)|grey);}
     }
@@ -359,6 +364,56 @@ public final class GlbProps {
      * islands cannot survive an unconditional 128px nearest downsample. */
     public static synchronized int textureWidth(int material){int i=material-TEXTURE_BASE;return i>=0&&i<textures.size()?textures.get(i).getWidth():128;}
     public static synchronized int textureHeight(int material){int i=material-TEXTURE_BASE;return i>=0&&i<textures.size()?textures.get(i).getHeight():128;}
+    /** Immutable imported material. Shared pixels belong to the decoded PNG. */
+    public static final class StaticSampler {
+        private final BufferedImage image;
+        private final int[] pixels;
+        private final int width,height,wrapS,wrapT;
+        private final boolean topLeft;
+        private final int[] tint;
+        final boolean blended;
+        final double maskCutoff;
+
+        private StaticSampler(BufferedImage image,boolean topLeft,int wrapS,int wrapT,double[] factor,
+                boolean blended,double maskCutoff) {
+            this.blended=blended;
+            this.maskCutoff=maskCutoff;
+            this.image=image;
+            pixels=((java.awt.image.DataBufferInt)image.getRaster().getDataBuffer()).getData();
+            width=image.getWidth();
+            height=image.getHeight();
+            this.topLeft=topLeft;
+            this.wrapS=wrapS;
+            this.wrapT=wrapT;
+            if(factor[0]==1 && factor[1]==1 && factor[2]==1 && factor[3]==1) {
+                tint=null;
+            } else {
+                tint=new int[4*256];
+                for(int channel=0;channel<4;channel++) {
+                    int shift=channel==3?24:16-8*channel;
+                    for(int i=0;i<256;i++)
+                        tint[channel*256+i]=Math.max(0,Math.min(255,(int)Math.round(i*factor[channel])))<<shift;
+                }
+            }
+        }
+        public int argb(double u,double v) {
+            if(!Double.isFinite(u)||!Double.isFinite(v))throw new IllegalArgumentException("Invalid imported UV");
+            int pixel=pixels[imageRow(v,height,topLeft,wrapT)*width+imageColumn(u,width,wrapS)];
+            if(tint==null)return pixel;
+            return tint[(pixel>>>16)&255] | tint[256+((pixel>>>8)&255)]
+                | tint[512+(pixel&255)] | tint[768+(pixel>>>24)];
+        }
+    }
+    private static final List<StaticSampler> staticSamplers=new ArrayList<>();
+    /** Bind once per triangle or upload. Live screens and editor image substitutions
+     * must go through the current registered image on every draw. */
+    public static synchronized StaticSampler staticSampler(int material) {
+        if(material==vanCrtMaterial)return null;
+        int index=material-TEXTURE_BASE;
+        if(index<0||index>=staticSamplers.size())return null;
+        StaticSampler sampler=staticSamplers.get(index);
+        return sampler!=null && sampler.image==textures.get(index)?sampler:null;
+    }
     /** Model triangle list is immutable and cannot mutate runtime source geometry. */
     public static synchronized int sample(int material,double u,double v){
         if(material==VAN_MAP_MATERIAL){
@@ -456,7 +511,7 @@ public final class GlbProps {
     private static void renderReview(byte[] bytes,SceneRenderer renderer,double rotation,
             List<Long> faceIds,java.util.function.LongPredicate visibleFace,int checkerSize,int mip,MaterialReviewFrame frame,MaterialReviewMip.Cache cache)throws IOException{
         if(checkerSize<0 || checkerSize>2048)throw new IOException("Invalid checker size");
-        List<List<?>> tables=List.of(textures,vehicleUvMaterials,samplerWrapS,samplerWrapT,materialNames,diffuseFactors);int[] lengths=tables.stream().mapToInt(List::size).toArray();int first=TEXTURE_BASE+textures.size();
+        List<List<?>> tables=List.of(textures,staticSamplers,vehicleUvMaterials,samplerWrapS,samplerWrapT,materialNames,diffuseFactors);int[] lengths=tables.stream().mapToInt(List::size).toArray();int first=TEXTURE_BASE+textures.size();
         try{
             var model=decode(bytes,null);
             if(checkerSize>0)for(int i=lengths[0];i<textures.size();i++){
@@ -513,6 +568,9 @@ public final class GlbProps {
             boolean external=resourceName==null||ImportedAssetLibrary.approved(resourceName);
             vehicleUvMaterials.add(external?material.defaultOrigin().equals("TOP_LEFT"):(resourceName!=null&&(resourceName.startsWith("ggbot_car")||resourceName.startsWith("level_hc_native_")||LevelAssets.AUTHORED_SURFACES.contains(resourceName)||LevelAssets.TAILORED_FABRIC.contains(resourceName)||LevelAssets.FITTED_TENTS.contains(resourceName)||LevelAssets.SITE_ART.contains(resourceName)||LevelAssets.GROUNDED_BERMS.contains(resourceName)||LevelAssets.GREEN_GROUND.contains(resourceName)||LevelAssets.NATIVE_SITE_TERRAIN.contains(resourceName)||fluorescentGltfUv(resourceName)||reviewedSourceGltfUv(resourceName)||diagnosticBookUvOrigin(resourceName)||diagnosticRemainingUvOrigin(resourceName)) && !diagnosticLegacyUvOrigin(resourceName)));
             if(material.explicitOrigin()!=null)vehicleUvMaterials.set(vehicleUvMaterials.size()-1,material.explicitOrigin().equals("TOP_LEFT"));
+            staticSamplers.add(new StaticSampler(picture,vehicleUvMaterials.get(textures.size()-1),
+                material.wrapS(),material.wrapT(),material.color(),material.alpha().equals("BLEND"),
+                material.alpha().equals("MASK")?material.cutoff():-1));
             materialNames.add(material.name());diffuseFactors.add(material.color());if("monitoring_screen_mp_1".equals(resourceName)&&"crt_screen_mp_2".equals(material.name()))vanCrtMaterial=materialIds[i];
         }
         var result=new ArrayList<Triangle>();for(var face:source.faces()){var primitive=face.primitive();int i=face.triangle()*3;
