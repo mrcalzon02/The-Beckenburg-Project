@@ -3,6 +3,17 @@
   "updated": "2026-11-16",
   "issues": [
     {
+      "id": "DEV-362",
+      "title": "Full UV canvas repaint remains slow on a 120,000-face editable mesh",
+      "status": "Open, reproduced in a showing Swing window on Java 17",
+      "affected": "Material Editor texture/UV canvas with the complete 300 by 200 quad grid visible as 120,000 native triangles",
+      "symptom": "The selected face row now refreshes in milliseconds. The displayed workspace took a median 231.7 ms to update and repaint after one changed face. A separate UV-only repaint took 191.7 ms on the same Xorg virtual display.",
+      "cause": "The UV canvas traverses the visible face list and submits the outlines on every full repaint. The display benchmark measures the remaining cost after the row-model fix.",
+      "action": "Profile the UV canvas, then reduce the cost of repainting unchanged outlines. Retain parity for overlaps, sparse IDs, visibility filters, selection, seam guides, tile changes, pan and zoom.",
+      "evidence": "development/quality/evidence/editor-regional-seams-2026-11-16/material-window-results.tsv (20 published-revision samples), MaterialWindowProfile.java and run.sh window",
+      "older_maps": "Profile large native meshes in the editor. This UI observation has no effect on saved geometry or game simulation."
+    },
+    {
       "id": "DEV-361",
       "title": "Healthy joining hunter can lose its connection before entering the 3D view",
       "status": "Fixed on main and reproduced against the old capacity",
@@ -16,12 +27,12 @@
     {
       "id": "DEV-360",
       "title": "Material Editor rebuilds every face row for a one-face UV preview",
-      "status": "Reproduced on Java 17 at 8173f2ed",
+      "status": "Fixed at 494a257c and checked on the native EDT",
       "affected": "EditorMaterialWorkspace face list during preview, cancel and visibility changes",
       "symptom": "On a 120,000-triangle native grid with a single UV face changed, one preview sent 120,000 row additions and a removal to Swing. Warm previews allocated approximately 651 MB on the event-dispatch thread.",
       "cause": "The view clears its DefaultListModel and inserts each visible face separately for every new native snapshot. Swing then recomputes row dimensions across the full list.",
-      "action": "Update the list from immutable native faces, limit model events to affected rows and verify selected identity, filters, structure changes and history on the same fixture.",
-      "evidence": "development/quality/evidence/editor-regional-seams-2026-11-16/material-rows-before.txt (Material Editor observe() on Java 17 at 8173f2ed)",
+      "action": "The list now reads immutable native faces directly and reports the changed row on a one-face preview. It preserves stable selection through sparse IDs, filtering, reordering and document replacement. Exact desktop and portable regressions verified cancel, undo, callbacks and font sizing.",
+      "evidence": "development/quality/evidence/editor-regional-seams-2026-11-16/material-rows-results.tsv (six warmed matched samples at 8173f2ed and 494a257c), EditorMaterialRowsTest and G2TexturedModelGuiTest",
       "older_maps": "This affects the Material Editor UI for large native meshes. Existing documents and published assets need no migration."
     },
     {

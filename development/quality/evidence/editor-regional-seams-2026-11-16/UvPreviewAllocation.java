@@ -27,7 +27,7 @@ public final class UvPreviewAllocation {
         return new Corner(vertexId(vertex, sparse), vertex % (COLUMNS + 1), vertex / (COLUMNS + 1));
     }
 
-    private static EditorTopologyProject grid(boolean sparse) {
+    static EditorTopologyProject grid(boolean sparse) {
         var project = EditorTopologyProject.fromMesh(new EditorMeshPipeline.Mesh("grid", List.of(), 0),
                 "0".repeat(64), Path.of("profile.btop"));
         var vertices = new ArrayList<Vertex>();
