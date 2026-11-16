@@ -3848,9 +3848,17 @@ public final class SceneRenderer {
             &&Math.max(edge2(f.a,f.b),Math.max(edge2(f.b,f.c),edge2(f.c,f.a)))>2.6){
             for(var child:subdivideLitFace(f))drawLitFace(child,room,depth+1);return;
         }
-        List<Vertex> pts=clip(normalLight(litVertex(f.a,f.au,f.av,f.material,room),f.a,room,f.na),normalLight(litVertex(f.b,f.bu,f.bv,f.material,room),f.b,room,f.nb),normalLight(litVertex(f.c,f.cu,f.cv,f.material,room),f.c,room,f.nc));var weather=weatherCoating(f,room);
+        Vertex a=normalLight(litVertex(f.a,f.au,f.av,f.material,room,false,ca0),f.a,room,f.na);
+        Vertex b=normalLight(litVertex(f.b,f.bu,f.bv,f.material,room,false,cb0),f.b,room,f.nb);
+        Vertex c=normalLight(litVertex(f.c,f.cu,f.cv,f.material,room,false,cc0),f.c,room,f.nc);
+        var weather=weatherCoating(f,room);
         double wet=weather==null?0:weather.wet();
         double snow=weather==null?0:Math.min(1,weather.snowMetres()/.06);
+        if(ca0.z>=NEAR&&cb0.z>=NEAR&&cc0.z>=NEAR){
+            triangle(a,b,c,f.color,f.material,1,wet,snow);
+            return;
+        }
+        var pts=clip(a,b,c);
         for(int i=1;i<pts.size()-1;i++)
             triangle(pts.get(0),pts.get(i),pts.get(i+1),f.color,f.material,1,wet,snow);
     }
@@ -3907,6 +3915,11 @@ public final class SceneRenderer {
     }
     private Vertex litVertex(Point p,double u,double v,int material,int room,
                              boolean gpuWorldSpace){
+        return litVertex(p,u,v,material,room,gpuWorldSpace,
+            gpuWorldSpace&&!uvLamp?null:camera(p));
+    }
+    private Vertex litVertex(Point p,double u,double v,int material,int room,
+                             boolean gpuWorldSpace,Point viewPoint){
         // Sample on the visible side of opaque surfaces. Sampling exactly
         // on a zero-thickness wall/ceiling made a lamp on the OTHER side
         // illuminate this face because the wall hit occurred at the ray end.
@@ -3920,7 +3933,8 @@ public final class SceneRenderer {
         double r=Math.max(rgb.r(),glow.r()),g=Math.max(rgb.g(),glow.g()),b=Math.max(rgb.b(),glow.b());
         if(material==OPTICAL_SIGNAL){r=1.2;g=1.2;b=1.2;}
         if(uvLamp){
-            var at=camera(p);double strength=at.z>NEAR?HandheldLighting.sample(HandheldLighting.uv(uvTier),at.z,Math.hypot(at.x,at.y)/at.z):0;
+            double strength=viewPoint.z>NEAR?HandheldLighting.sample(HandheldLighting.uv(uvTier),
+                viewPoint.z,Math.hypot(viewPoint.x,viewPoint.y)/viewPoint.z):0;
             if(strength>0&&lightingMap.clearLineOfSight(x,eyeHeight,z,litX,litY,litZ)){
                 r+=strength*.42;g+=strength*.055;b+=strength*2.4;
                 if(material==UV_RESIDUE){r=Math.max(r,.65);g=Math.max(g,1.5);b=Math.max(b,.85);}
@@ -3932,7 +3946,7 @@ public final class SceneRenderer {
         }
         // World-space shader owns camera transforms. Avoid the otherwise
         // discarded CPU world-to-view conversion on every GPU vertex.
-        return new Vertex(gpuWorldSpace?p:camera(p),u,v,r,g,b);
+        return new Vertex(gpuWorldSpace?p:viewPoint,u,v,r,g,b);
     }
     private record DotsReceivers(List<Face> faces,DotsRayField.Mesh mesh){}
     private final java.util.Map<Integer,DotsReceivers> dotsReceivers=new java.util.HashMap<>();
@@ -4287,9 +4301,12 @@ public final class SceneRenderer {
             // Flashlight is a bounded near-field additive beam; turning room lights off
             // genuinely darkens distant geometry instead of only tinting a HUD icon.
             // Flashlight illuminates a forward-facing cone; flames instead spill locally.
-            double aim=Math.hypot((px+.5-renderWidth*.5)/focal,
-                                  (py+.5-renderHeight*.5)/focal);
-            double beam=lampBeam(d,aim);
+            double beam=0;
+            if(lamp&&d<lampReach){
+                double aim=flameLamp?0:Math.hypot((px+.5-renderWidth*.5)/focal,
+                    (py+.5-renderHeight*.5)/focal);
+                beam=lampBeam(d,aim);
+            }
             double light=(.075+.98*roomLevel+beam)*environmentLight*weatherLightScale*Math.max(.22,1-d/26.0);
             double lr=light,lg=light,lb=light;
             if(va.r>=0){lr=((u*va.r/a.z+v*vb.r/b.z+w*vc.r/c.z)/inv+beam)*environmentLight*weatherLightScale;lg=((u*va.g/a.z+v*vb.g/b.z+w*vc.g/c.z)/inv+beam)*environmentLight*weatherLightScale;lb=((u*va.b/a.z+v*vb.b/b.z+w*vc.b/c.z)/inv+beam)*environmentLight*weatherLightScale;}

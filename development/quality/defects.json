@@ -1,7 +1,40 @@
 {
   "version": 1,
-  "updated": "2026-11-12",
+  "updated": "2026-11-16",
   "issues": [
+    {
+      "id": "DEV-358",
+      "title": "Full-round acceptance can inspect hunter payout before its delivery",
+      "status": "Corrected observer; actual TCP round passed",
+      "affected": "BeckenburgFullRoundE2ETest",
+      "symptom": "All three peers receive ABSOLVED yet the test can report a missing hunter settlement.",
+      "cause": "The host sends RESULT before PAYOUT. The test sampled receiver buffers immediately after the results.",
+      "action": "Await and decode both hunters’ payout packets under the existing deadline and verify the winning result.",
+      "evidence": "BeckenburgFullRoundE2ETest and docs/performance/2026-11-16-engine/README.md",
+      "older_maps": "This corrects the transport test observer."
+    },
+    {
+      "id": "DEV-357",
+      "title": "House van misses the steady-state frame budget on software renderers",
+      "status": "Profiled; Windows hardware acceptance open",
+      "affected": "House van in solo and TCP cases, includes CPU raster fallback",
+      "symptom": "Freshly composited House frames exceed 33.3 ms even after texture and vertex work is reused.",
+      "cause": "Warm Mesa client profiles locate the sanctuary fog shell on the event thread. Software fallback profiles instead put most samples in lit triangle rendering.",
+      "action": "Measure both paths independently with depth and image parity, and repeat on the reference Windows GPU.",
+      "evidence": "docs/performance/2026-11-16-engine/README.md",
+      "older_maps": "Scope is the House van and doorway plus separate Castle diagnostics."
+    },
+    {
+      "id": "DEV-356",
+      "title": "Hunter and human ghost world draws limited by the network command timer",
+      "status": "Runtime change tested on Linux CPU and Mesa; Windows hardware timing pending",
+      "affected": "LocalInvestigation and LAN hunter and ghost viewports",
+      "symptom": "With ample rendering headroom, camera turns can still update only about nine times per second.",
+      "cause": "Normal world draws shared the 110 ms input timer. Only crouch easing requested intermediate hunter draws.",
+      "action": "Schedule visible draws independently at 33 ms while retaining authoritative actions and input cadence.",
+      "evidence": "docs/performance/2026-11-16-engine/README.md; LanViewportPerformanceReview and GhostViewportProfile",
+      "older_maps": "House profiled. The remaining maps and installed Windows hardware still need timing."
+    },
     {
       "id": "DEV-355",
       "title": "GPU solo smoke falsely fails after retirement of GamePanel and obsolete startup counters",

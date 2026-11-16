@@ -200,10 +200,13 @@ public final class BeckenburgFullRoundE2ETest {
             guest.await("RESULT|ABSOLVED",guestStart,deadline);
             ghost.await("RESULT|ABSOLVED",0,deadline);
             check(!host.running(),"round ended on authoritative host");
-            check(owner.matching("SETTLEMENT|")>0 || owner.matching("REWARD|")>0 ||
-                owner.matching("PAYOUT|")>0,
-                "host must deliver final settlement to hunter");
-            stage("Host, second hunter and ghost all received ABSOLVED round result and payout");
+            // Each connection has its own writer. RESULT can reach every seat before
+            // the hunters' following payout packets have reached their TCP readers.
+            var ownerPayout=ContractRewards.Settlement.decode(owner.await("PAYOUT|",ritual,deadline));
+            var guestPayout=ContractRewards.Settlement.decode(guest.await("PAYOUT|",guestStart,deadline));
+            check(ownerPayout.outcome()==LanCase.Outcome.ABSOLVED&&ownerPayout.victory()
+                &&ownerPayout.equals(guestPayout),"both hunters must receive the winning settlement");
+            stage("All three seats received ABSOLVED; both hunters received the winning settlement");
             int closed=owner.position();owner.client.scan(LanCase.Tool.EMF);
             owner.await("REJECT|",closed,deadline);
             stage("Post-round commands rejected; match cannot continue after result");

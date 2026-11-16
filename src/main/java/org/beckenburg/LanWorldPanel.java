@@ -31,9 +31,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private LanChat.Channel heldVoice;
     private int chatVisibleUntil;
     private final javax.swing.Timer timer;
-    private final javax.swing.Timer postureTimer;
+    private final javax.swing.Timer renderTimer;
     private final CrouchCamera crouchCamera=new CrouchCamera();
-    private long lastPostureFrame=System.nanoTime();
+    private long lastVisualFrame=System.nanoTime();
     private final Set<Integer> keys=new HashSet<>();
     private String feedback="Awaiting host world snapshot";
     private int lastTurn=-1,tick,visibleGhost=-1,health=100,sanity=100,evidence;
@@ -208,13 +208,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }
         });
         addFocusListener(mouseLook);addFocusListener(this);
-        timer=new javax.swing.Timer(110,e->frame());timer.start();
-        // Render camera easing between network ticks without sending extra STEP/actions.
-        postureTimer=new javax.swing.Timer(33,e->{
-            long now=System.nanoTime();double dt=Math.min(.05,Math.max(0,(now-lastPostureFrame)/1e9));lastPostureFrame=now;
-            if(!isShowing()||opening!=null||!caseResult.isEmpty()||crouchCamera.settled(crouched))return;
-            advanceCrouchCamera(dt);renderWorld();repaint();
-        });postureTimer.start();
+        // The host consumes movement and equipment at the original input cadence.
+        timer=new javax.swing.Timer(110,e->updateHunter());
+        renderTimer=new javax.swing.Timer(33,e->drawVisibleWorld());
+        timer.start();
     }
     @Override public void doLayout(){
         super.doLayout();
@@ -263,7 +260,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     public void close(){
         if(opening!=null){opening.close();opening=null;}
         clearPlacementSelection();
-        toolGrip.reset();releaseVoice();timer.stop();postureTimer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
+        toolGrip.reset();releaseVoice();timer.stop();renderTimer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
         VanLiveScreens.suspendCamera();
         capturedCameraImage=null;
         pendingPhoto=null;
@@ -330,7 +327,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 map=new HouseMap(HouseMap.Site.valueOf(p.get(1)));lights.setSourceRunning(true);
                 map.configureHiding(renderer.hidingDensity);
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
-                crouched=false;crouchCamera.reset(false);lastPostureFrame=System.nanoTime();
+                crouched=false;crouchCamera.reset(false);lastVisualFrame=System.nanoTime();
                 renderer.eyeHeight=map.floorY(HouseMap.EXTRACTION_ROOM)+crouchCamera.eye();
                 rackSnapshot.reset();
                 buildingAudio.setMap(map);audio.clearFixtures();
@@ -1136,11 +1133,23 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         renderer.drawNetwork(map,new ArrayList<>(peers.values()),apparition,tick*.1,List.copyOf(counterMarks));
         frameCount++;
     }
-    private void frame(){
+    private void drawVisibleWorld(){
+        if(!isShowing()||opening!=null||!caseResult.isEmpty()){
+            renderTimer.stop();
+            return;
+        }
+        long now=System.nanoTime();
+        double dt=Math.min(.05,Math.max(0,(now-lastVisualFrame)/1e9));
+        lastVisualFrame=now;
+        if(!crouchCamera.settled(crouched))advanceCrouchCamera(dt);
+        renderWorld();
+        perfHud.sample(System.nanoTime()-now,renderer,map,peers.size(),"LAN HUNTER");
+        repaint();
+    }
+    private void updateHunter(){
         toolGrip.advance();
         if(toolGrip.held()&&!toolPlacement&&ToolBeltHud.repeatable(equippedGear[activeGearSlot])
                 &&tick-lastRepeatTick>=repeatInterval())useMouseTool();
-        long diagnosticsStart=System.nanoTime();
         if(opening!=null){
             if(opening.complete()||!caseResult.isEmpty()){
                 opening.close();opening=null;
@@ -1208,7 +1217,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }
             int heading=Math.floorMod((int)Math.round(Math.toDegrees(renderer.yaw)),360);
             if(heading!=lastTurn){client.turn(heading);lastTurn=heading;}
-        }catch(IOException e){feedback="LAN disconnected: "+e.getMessage();close();}
+        }catch(IOException e){feedback="LAN disconnected: "+e.getMessage();close();return;}
         GraphicsOptions.current().configure(renderer,getWidth(),getHeight(),true);
         renderer.roomLightTick=tick;
         renderer.uvLamp=uvLightOn;
@@ -1252,7 +1261,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
         renderer.rackToolTiers=java.util.Map.of();
         renderer.rackInventory=rackSnapshot.stock();
-        renderWorld();
+        // Start only after this panel has prepared the actual world and HUD state.
+        if(isShowing()&&!renderTimer.isRunning())renderTimer.start();
         // A camera carried in hand shows its own live, pose-correct rear LCD.
         // Only sample when a visible investigator has the device equipped;
         // bound the extra synchronous lens render to 2.5 samples per second.
@@ -1351,8 +1361,6 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 capturedCameraOwner=camera.owner();
             }
         }
-        perfHud.sample(System.nanoTime()-diagnosticsStart,renderer,map,peers.size(),"LAN HUNTER");
-        repaint();
     }
     @Override protected void paintComponent(Graphics original){
         super.paintComponent(original);Graphics2D g=(Graphics2D)original.create();

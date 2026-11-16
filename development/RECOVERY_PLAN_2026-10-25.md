@@ -953,3 +953,7 @@ Isolated fix/hunter-gait-clock starts at exactc93d141d. Actual scheduled clock q
 PR84 encounter4afae307 native42427846331/GPU42427852522 SUCCESS; full368run42427846432 remains live. Keep exact handle. House lighting review02f83c85 and fresh default candidate8994d699 are remotely verified separate branches; no acceptance or merge claim. Current remote main1fe0e249 retains fridge fix and raw362/0/0/362 acceptance. User overlay audit confirms committed ghost/chill/frost procedural effects are ancestors of remote main; three actual effect/folio/choreography checks pass. Ambient-temperature-driven continuous overlay was not found.
 
 Next: publish isolated correction and obtain new actual365summary before PR82 closeout; reconcile encounter only after its existing run terminates; then furnished review/default candidate and complete House/client/GPU/location gates, all29packets and remaining maps. No round-duration or physical FPS claims.
+
+## 2026-11-16 — House hunter and ghost frame cadence
+
+Baseline `f3374fe4c4ded54cc87e52d79fbdf102ab09997d`. Independent scheduled draws and unchanged host command intervals exercised with actual solo, TCP hunters and a human ghost. The full TCP evidence, identification, ward, rite and payout path passed after its observer waited for the payout that follows RESULT. Focused flashlight, shadow, texture revision, Blackpine stair and ghost hearing checks passed on the integrated Java 17 checkout. [Measured scope and remaining bottleneck](../docs/performance/2026-11-16-engine/README.md)

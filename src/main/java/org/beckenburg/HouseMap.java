@@ -13,6 +13,7 @@ public final class HouseMap {
     public List<SafeAreaBarrier.Volume> temporarySafeAreas(){return temporarySafeAreas;}
     public void setTemporarySafeAreas(List<SafeAreaBarrier.Volume> areas){temporarySafeAreas=List.copyOf(areas);}
     private final LevelDefinition level;
+    private final boolean hasDeckSlabs;
     private final SiteTerrain terrain;
     private final AuthoredSitePhysics nativeSite;
     private final List<List<Portal>> wallPortals;
@@ -87,6 +88,8 @@ public final class HouseMap {
     }
     HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface){
         this.site=Objects.requireNonNull(site);level=Objects.requireNonNull(definition);guards=level.guards();
+        // Socket membership is immutable for this map. Most levels have no structural slabs.
+        hasDeckSlabs=level.sockets().stream().anyMatch(socket->socket.type().equals("deck_slab"));
         wallPortals=level.rooms().stream().map(r->level.wallPortals(r.id())).toList();
         var ownerPortals=new ArrayList<List<Portal>>(level.rooms().size());
         for(int i=0;i<level.rooms().size();i++)ownerPortals.add(new ArrayList<>());
@@ -479,8 +482,12 @@ public final class HouseMap {
             for(Room r:level.rooms())if(r.contains(x,y,z)){inside=true;break;}
             for(Portal p:level.portals())if(!p.kind().equals("stair")&&y>=p.y()&&y<p.y()+2.4&&inPortal(p,x,z,0)){inside=true;if(p.door()&&!doorOpen(p.id())&&p.id()!=selectedPortal)return false;}
             if(!inside||wallBlocked(x,y,z,.015,true,selectedPortal)
-                ||DeckSlabs.blocksRay(level,x,y,z))return false;
-            for(Room r:level.rooms())if((Math.abs(y-surface(r,x,z))<.06||terrain!=null&&r.outside()&&r.id()!=14&&y<terrain.height(x,z))&&x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()&&!level.floorVoid(x,r.y(),z))return false;
+                ||(hasDeckSlabs&&DeckSlabs.blocksRay(level,x,y,z)))return false;
+            for(Room r:level.rooms()){
+                if(x<r.x0()||x>r.x1()||z<r.z0()||z>r.z1())continue;
+                if((Math.abs(y-surface(r,x,z))<.06||terrain!=null&&r.outside()&&r.id()!=14&&y<terrain.height(x,z))
+                    &&!level.floorVoid(x,r.y(),z))return false;
+            }
             for(Collider p:level.colliders())if(y>p.y()&&y<p.y()+p.height()&&boxHit(x,y-1,z,0,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw()))return false;
             for(Collider p:closetColliders)if(y>p.y()&&y<p.y()+p.height()&&boxHit(x,y-1,z,0,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw()))return false;
         }

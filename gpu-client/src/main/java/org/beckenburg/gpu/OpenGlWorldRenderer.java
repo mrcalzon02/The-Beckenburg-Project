@@ -188,18 +188,30 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   return id>=GlbProps.TEXTURE_BASE?GlbProps.sample(id,u,v):
    id>=LevelMaterials.BASE?LevelMaterials.sample(id,u,v):MaterialAtlas.sample(id,u,v);
  }
- private Pixmap pixelsFor(int material){
+ Pixmap pixelsFor(int material){
   int width=GlbProps.textureWidth(material),height=GlbProps.textureHeight(material);
   Pixmap bitmap=new Pixmap(width,height,Pixmap.Format.RGBA8888);
+  var pixels=bitmap.getPixels().order(ByteOrder.BIG_ENDIAN).asIntBuffer();
+  boolean imported=material>=GlbProps.TEXTURE_BASE&&material!=GlbProps.VAN_MAP_MATERIAL;
+  // Static glTF colors and alpha share the source image, UVs and material factors.
+  // Dynamic monitors can supply their RGB separately from the registered alpha.
+  boolean staticImported=imported&&GlbProps.dynamicTextureRevision(material)<0;
   for(int y=0;y<height;y++)for(int x=0;x<width;x++){
    // Pixmap row zero is uploaded at GL v=0. The CPU sampler already owns
    // each material family's V convention: do not invert that convention twice.
    double u=(x+.5)/width,v=(y+.5)/height;
-   int rgb=material<0?0xffffff:sample(material,u,v);
-   int alpha=material>=GlbProps.TEXTURE_BASE
-     &&material!=GlbProps.VAN_MAP_MATERIAL?
-     GlbProps.sampleAlpha(material,u,v):255;
-   bitmap.drawPixel(x,y,((rgb&0xffffff)<<8)|alpha);
+   int rgba;
+   if(staticImported){
+    rgba=Integer.rotateLeft(GlbProps.sampleRgba(material,u,v),8);
+   }else{
+    int rgb=material<0?0xffffff:sample(material,u,v);
+    int alpha=imported?GlbProps.sampleAlpha(material,u,v):255;
+    rgba=(rgb<<8)|alpha;
+   }
+   // Opaque source-over replaces the destination exactly. Preserve Pixmap's
+   // own blending (including transparent RGB handling) for partial coverage.
+   if((rgba&255)==255)pixels.put(y*width+x,rgba);
+   else bitmap.drawPixel(x,y,rgba);
   }
   return bitmap;
  }

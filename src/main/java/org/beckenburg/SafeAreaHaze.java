@@ -59,6 +59,9 @@ public final class SafeAreaHaze {
         for(var shell:shells){var a=shell.material();
             if(Math.hypot(x-a.x(),z-a.z())>70+a.radius())continue;
             double ox=x-a.x(),oz=z-a.z();
+            double oy=eye-a.y(),cap=a.height()-a.shoulder();
+            double invRadius=1/a.radius(),invCap=1/cap,capY=oy-a.shoulder();
+            boolean insideDome=shell instanceof Dome&&insideDome(ox,capY,oz,invRadius,invCap);
             // Perspective bounds keep distant/small wards from shading the whole screen.
             double minX=width,minY=height,maxX=0,maxY=0,minZ=Double.POSITIVE_INFINITY,maxZ=-Double.POSITIVE_INFINITY;
             for(int corner=0;corner<8;corner++){
@@ -77,9 +80,16 @@ public final class SafeAreaHaze {
                 double v=(height*.5-row-.5)/focal,dy=v*cp+sp,forward=cp-v*sp;
                 for(int col=x0;col<=x1;col++){
                     double u=(col+.5-width*.5)/focal,dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
-                    double hit=shell.hit(ox,eye-a.y(),oz,dx,dy,dz);
                     int at=row*width+col;
-                    if(hit<.035||hit>=depths[at]-.008)continue;
+                    double sceneDepth=depths[at];
+                    // The cylinder extended downwards and its upper ellipsoid form one
+                    // convex interior. A segment with both ends strictly inside cannot
+                    // cross a visible wall or cap. The open bottom adds no surface.
+                    if(insideDome&&sceneDepth>=0&&Double.isFinite(sceneDepth)
+                            &&insideDome(ox+dx*sceneDepth,capY+dy*sceneDepth,
+                                oz+dz*sceneDepth,invRadius,invCap))continue;
+                    double hit=shell.hit(ox,oy,oz,dx,dy,dz);
+                    if(hit<.035||hit>=sceneDepth-.008)continue;
                     double wx=x+dx*hit,wy=eye+dy*hit-a.y(),wz=z+dz*hit;
                     double alpha=opacity(a,wx,wy,wz,clock);
                     int blue=0xa9dfff;int old=pixels[at];double keep=1-alpha;
@@ -90,6 +100,11 @@ public final class SafeAreaHaze {
                 }
             }
         }return changed;
+    }
+    private static boolean insideDome(double x,double capY,double z,double invRadius,double invCap){
+        double nx=x*invRadius,nz=z*invRadius,ny=Math.max(0,capY)*invCap;
+        // Leave the boundary, including round-off at grazing intersections, to the ray test.
+        return nx*nx+nz*nz+ny*ny<1-1e-8;
     }
     /** Continuous ethereal material, including across the wall/dome join.
      * The fade begins below head height and reaches almost clear at the crown. */

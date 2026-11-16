@@ -10,6 +10,48 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-358 — Full-round acceptance can inspect hunter payout before its delivery
+
+**Status:** Corrected observer; actual TCP round passed · **Affected:** BeckenburgFullRoundE2ETest
+
+All three peers receive ABSOLVED yet the test can report a missing hunter settlement.
+
+Cause / uncertainty: The host sends RESULT before PAYOUT. The test sampled receiver buffers immediately after the results.
+
+Fix / next action: Await and decode both hunters’ payout packets under the existing deadline and verify the winning result.
+
+Evidence and verification: BeckenburgFullRoundE2ETest and docs/performance/2026-11-16-engine/README.md
+
+Older-map obligation: This corrects the transport test observer.
+
+### DEV-357 — House van misses the steady-state frame budget on software renderers
+
+**Status:** Profiled; Windows hardware acceptance open · **Affected:** House van in solo and TCP cases, includes CPU raster fallback
+
+Freshly composited House frames exceed 33.3 ms even after texture and vertex work is reused.
+
+Cause / uncertainty: Warm Mesa client profiles locate the sanctuary fog shell on the event thread. Software fallback profiles instead put most samples in lit triangle rendering.
+
+Fix / next action: Measure both paths independently with depth and image parity, and repeat on the reference Windows GPU.
+
+Evidence and verification: docs/performance/2026-11-16-engine/README.md
+
+Older-map obligation: Scope is the House van and doorway plus separate Castle diagnostics.
+
+### DEV-356 — Hunter and human ghost world draws limited by the network command timer
+
+**Status:** Runtime change tested on Linux CPU and Mesa; Windows hardware timing pending · **Affected:** LocalInvestigation and LAN hunter and ghost viewports
+
+With ample rendering headroom, camera turns can still update only about nine times per second.
+
+Cause / uncertainty: Normal world draws shared the 110 ms input timer. Only crouch easing requested intermediate hunter draws.
+
+Fix / next action: Schedule visible draws independently at 33 ms while retaining authoritative actions and input cadence.
+
+Evidence and verification: docs/performance/2026-11-16-engine/README.md; LanViewportPerformanceReview and GhostViewportProfile
+
+Older-map obligation: House profiled. The remaining maps and installed Windows hardware still need timing.
+
 ### DEV-355 — GPU solo smoke falsely fails after retirement of GamePanel and obsolete startup counters
 
 **Status:** fixed-scoped; exact-source Windows GPU/native and 3-site Mesa GPU-UI cycle passed; hardware performance acceptance pending · **Affected:** gpu-client GpuUiSmoke (Castle -> solo -> shared-LAN hunter -> van retreat -> Castle), all default smoke sites

@@ -1,0 +1,7 @@
+# House engine benchmark, November 16, 2026
+
+The reference was main at `f3374fe4c4ded54cc87e52d79fbdf102ab09997d`. The first performance checkpoint incorporates the concurrent editor work through `19161b70157f4f72e865c74cce507776526fa3ff`. Trials used Java 17 on Linux with Mesa llvmpipe or the game’s software rasterizer. The project’s Windows hardware target is steady-state p95 at or below 33.3 ms.
+
+At the original settings the hunter and human ghost normally scheduled a world draw every 110 ms. Both now schedule visual frames every 33 ms. Host movement and tool commands keep their existing cadence. Player translations still follow host snapshots. The software renderer reuses camera-space vertices for lighting, keeps the existing clipper for near-plane crossings, and skips flashlight angle calculations when there is no beam at the pixel. The map avoids redundant floor and deck queries during actual sight tests. The texture samplers preserve authored resolution and material finishes.
+
+Preparing the first House view’s 317 OpenGL texture images used 1,036 ms of CPU time before and 416 ms after in six counterbalanced pairs. All 37,366,564 RGBA bytes matched. The figure excludes GPU transfer and draw time. The full House investigation still exceeds its target on this software OpenGL device. The largest measured warm multiplayer cost was rendering the translucent safe-area boundary in the van.

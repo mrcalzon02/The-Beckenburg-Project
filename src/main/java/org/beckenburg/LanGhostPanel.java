@@ -19,6 +19,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     private final MouseLook mouseLook;
     private final Set<Integer> keys=new HashSet<>();
     private final javax.swing.Timer timer;
+    private final javax.swing.Timer renderTimer;
     private final LanAudio audio=new LanAudio();
     private final LevelSoundscape buildingAudio=new LevelSoundscape(map);
     private final AtmosphereAudio atmosphere=new AtmosphereAudio(AtmosphereAudio.Scene.FIELD);
@@ -56,9 +57,12 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         addKeyListener(this);addMouseListener(mouseLook);addMouseMotionListener(mouseLook);
         addFocusListener(this);addFocusListener(mouseLook);
         audio.setHearingGain(0);
-        timer=new javax.swing.Timer(110,e->frame());timer.start();
+        // Keep host-bound input and the hearing envelope at their established cadence.
+        timer=new javax.swing.Timer(110,e->frame());
+        renderTimer=new javax.swing.Timer(33,e->drawVisibleWorld());
+        timer.start();
     }
-    public void close(){timer.stop();keys.clear();soundRipples.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();}
+    public void close(){timer.stop();renderTimer.stop();keys.clear();soundRipples.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();}
     /** Accept only frames addressed to ghost; never interpret BODY/TEAMMAP/PROGRESS. */
     public void onEvent(String packet){
         if(!SwingUtilities.isEventDispatchThread())throw new IllegalStateException("ghost UI update must be on EDT");
@@ -225,8 +229,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         repaint();
     }
     private void frame(){
-        long diagnosticStart=System.nanoTime();
-        double hearingGain=hearingFade.advance(hearingEnabled(),diagnosticStart);
+        double hearingGain=hearingFade.advance(hearingEnabled(),System.nanoTime());
         audio.setHearingGain(hearingGain);
         LanVoiceClientAudio voice=client.voice();
         if(voice!=null)voice.setSpectralHearingGain(hearingGain);
@@ -248,12 +251,21 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             }
             int heading=Math.floorMod((int)Math.round(Math.toDegrees(camera.yaw)),360);
             if(room>=0&&lastTurn!=heading){client.ghostTurn(heading);lastTurn=heading;}
-        }catch(IOException ex){feedback="Disconnected: "+ex.getMessage();close();}
+        }catch(IOException ex){feedback="Disconnected: "+ex.getMessage();close();return;}
+        if (isShowing() && room >= 0 && !renderTimer.isRunning()) renderTimer.start();
+    }
+
+    private void drawVisibleWorld() {
+        if (!isShowing() || finished || room < 0) {
+            renderTimer.stop();
+            return;
+        }
+        long start = System.nanoTime();
         // The ghost player sees her actual AI sibling in the world, including
         // when the sibling independently patrols another accessible room.
         camera.setAdditionalGhostBodies(companion==null?List.of():List.of(companion));
-        if(room>=0)camera.drawNetwork(map,List.of(),-1,tick*.1);
-        perfHud.sample(System.nanoTime()-diagnosticStart,camera,map,companion==null?0:1,"LAN GHOST");
+        camera.drawNetwork(map,List.of(),-1,tick*.1);
+        perfHud.sample(System.nanoTime()-start,camera,map,companion==null?0:1,"LAN GHOST");
         repaint();
     }
     private List<Integer> exits(){return room<0?List.of():map.ghostExits(room);}
