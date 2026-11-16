@@ -1,0 +1,134 @@
+{
+  "validator": "2.0.0-dev.3.10",
+  "files": [
+    {
+      "file": "float-control-edited.glb",
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 7,
+      "numHints": 8,
+      "diagnosticCodes": [
+        "BUFFER_VIEW_TARGET_MISSING",
+        "MATERIAL_ALPHA_CUTOFF_INVALID_MODE",
+        "NON_OBJECT_EXTRAS",
+        "UNSUPPORTED_EXTENSION",
+        "UNUSED_OBJECT"
+      ]
+    },
+    {
+      "file": "float-control-edited.gltf",
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 7,
+      "numHints": 8,
+      "diagnosticCodes": [
+        "BUFFER_VIEW_TARGET_MISSING",
+        "MATERIAL_ALPHA_CUTOFF_INVALID_MODE",
+        "NON_OBJECT_EXTRAS",
+        "UNSUPPORTED_EXTENSION",
+        "UNUSED_OBJECT"
+      ]
+    },
+    {
+      "file": "float-control-source.glb",
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 2,
+      "numHints": 4,
+      "diagnosticCodes": [
+        "BUFFER_VIEW_TARGET_MISSING",
+        "MATERIAL_ALPHA_CUTOFF_INVALID_MODE",
+        "NON_OBJECT_EXTRAS",
+        "UNUSED_OBJECT"
+      ]
+    },
+    {
+      "file": "packed16-edited.glb",
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 8,
+      "numHints": 8,
+      "diagnosticCodes": [
+        "BUFFER_VIEW_TARGET_MISSING",
+        "MATERIAL_ALPHA_CUTOFF_INVALID_MODE",
+        "NON_OBJECT_EXTRAS",
+        "UNSUPPORTED_EXTENSION",
+        "UNUSED_OBJECT"
+      ]
+    },
+    {
+      "file": "packed16-edited.gltf",
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 8,
+      "numHints": 8,
+      "diagnosticCodes": [
+        "BUFFER_VIEW_TARGET_MISSING",
+        "MATERIAL_ALPHA_CUTOFF_INVALID_MODE",
+        "NON_OBJECT_EXTRAS",
+        "UNSUPPORTED_EXTENSION",
+        "UNUSED_OBJECT"
+      ]
+    },
+    {
+      "file": "packed16-source.glb",
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 3,
+      "numHints": 4,
+      "diagnosticCodes": [
+        "BUFFER_VIEW_TARGET_MISSING",
+        "MATERIAL_ALPHA_CUTOFF_INVALID_MODE",
+        "NON_OBJECT_EXTRAS",
+        "UNUSED_OBJECT"
+      ]
+    },
+    {
+      "file": "packed8-edited.glb",
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 8,
+      "numHints": 8,
+      "diagnosticCodes": [
+        "BUFFER_VIEW_TARGET_MISSING",
+        "MATERIAL_ALPHA_CUTOFF_INVALID_MODE",
+        "NON_OBJECT_EXTRAS",
+        "UNSUPPORTED_EXTENSION",
+        "UNUSED_OBJECT"
+      ]
+    },
+    {
+      "file": "packed8-edited.gltf",
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 8,
+      "numHints": 8,
+      "diagnosticCodes": [
+        "BUFFER_VIEW_TARGET_MISSING",
+        "MATERIAL_ALPHA_CUTOFF_INVALID_MODE",
+        "NON_OBJECT_EXTRAS",
+        "UNSUPPORTED_EXTENSION",
+        "UNUSED_OBJECT"
+      ]
+    },
+    {
+      "file": "packed8-source.glb",
+      "numErrors": 0,
+      "numWarnings": 1,
+      "numInfos": 3,
+      "numHints": 4,
+      "diagnosticCodes": [
+        "BUFFER_VIEW_TARGET_MISSING",
+        "MATERIAL_ALPHA_CUTOFF_INVALID_MODE",
+        "NON_OBJECT_EXTRAS",
+        "UNUSED_OBJECT"
+      ]
+    }
+  ],
+  "sharedWarning": {
+    "code": "MATERIAL_ALPHA_CUTOFF_INVALID_MODE",
+    "message": "Alpha cutoff is supported only for 'MASK' alpha mode.",
+    "severity": 1,
+    "pointer": "/materials/0/alphaCutoff"
+  }
+}

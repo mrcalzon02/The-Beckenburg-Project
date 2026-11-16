@@ -1,0 +1,12 @@
+PASS exact UV and seam checks on every edit; full mesh and topology parity after final commit
+java=17.0.21+9 maxHeap=268435456 triangles=120000 vertices=60501 warmups=4 samples=8
+preview-create,review-geometry,apply-observe,total (thread-allocated bytes)
+[1922128, 7688688, 80, 9610896]
+[1922096, 7688688, 80, 9610864]
+[1922096, 7688688, 80, 9610864]
+[1922064, 7688656, 80, 9610800]
+[1922064, 7688656, 80, 9610800]
+[1922064, 7688656, 80, 9610800]
+[1922064, 7688656, 80, 9610800]
+[1922064, 7688656, 80, 9610800]
+mean [1922080, 7688668, 80, 9610828]

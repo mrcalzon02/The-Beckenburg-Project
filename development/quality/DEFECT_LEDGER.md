@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-359 — Newly exported glTF BLEND materials include a mask-only alpha cutoff
+
+**Status:** Open interchange warning, identified on v0.1.330 · **Affected:** New material definitions in EditorMaterialGlbWriter and EditorGlbDocumentWriter
+
+The Khronos validator reports MATERIAL_ALPHA_CUTOFF_INVALID_MODE at /materials/0/alphaCutoff. The 8-bit and 16-bit normalized UV fixtures and the float control each reproduce the warning. All nine source/export files had zero validator errors.
+
+Cause / uncertainty: The writers serialize alphaCutoff for every new material. glTF applies that property only when alphaMode is MASK.
+
+Fix / next action: Emit the cutoff only for newly generated MASK definitions. Preserve original source-backed material JSON and verify OPAQUE, BLEND and MASK output, including a non-default MASK threshold.
+
+Evidence and verification: development/quality/evidence/editor-reviewed-mesh-2026-11-16/gltf-validation.json
+
+Older-map obligation: Check representative existing native materials on re-export. Published source assets retain their original bytes.
+
 ### DEV-358 — Full-round acceptance can inspect hunter payout before its delivery
 
 **Status:** Corrected observer; actual TCP round passed · **Affected:** BeckenburgFullRoundE2ETest

@@ -3,6 +3,17 @@
   "updated": "2026-11-16",
   "issues": [
     {
+      "id": "DEV-359",
+      "title": "Newly exported glTF BLEND materials include a mask-only alpha cutoff",
+      "status": "Open interchange warning, identified on v0.1.330",
+      "affected": "New material definitions in EditorMaterialGlbWriter and EditorGlbDocumentWriter",
+      "symptom": "The Khronos validator reports MATERIAL_ALPHA_CUTOFF_INVALID_MODE at /materials/0/alphaCutoff. The 8-bit and 16-bit normalized UV fixtures and the float control each reproduce the warning. All nine source/export files had zero validator errors.",
+      "cause": "The writers serialize alphaCutoff for every new material. glTF applies that property only when alphaMode is MASK.",
+      "action": "Emit the cutoff only for newly generated MASK definitions. Preserve original source-backed material JSON and verify OPAQUE, BLEND and MASK output, including a non-default MASK threshold.",
+      "evidence": "development/quality/evidence/editor-reviewed-mesh-2026-11-16/gltf-validation.json",
+      "older_maps": "Check representative existing native materials on re-export. Published source assets retain their original bytes."
+    },
+    {
       "id": "DEV-358",
       "title": "Full-round acceptance can inspect hunter payout before its delivery",
       "status": "Corrected observer; actual TCP round passed",

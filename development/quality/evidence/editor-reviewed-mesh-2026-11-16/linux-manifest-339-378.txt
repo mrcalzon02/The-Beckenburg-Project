@@ -1,0 +1,303 @@
+Source fb260c38177489f9ff075dd5013de3d6253a5e17 | Linux x86_64, Temurin 17.0.21+9 | exact-source continuation of manifest entries 339–378
+A separate detached checkout compiled the release tree using bash build.sh --capture-only, packaged the actual game assets into build/classes and compiled every test entrypoint with the build.sh javac invocation.
+Note: src/main/java/org/beckenburg/LanLobbyPanel.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Baked 200 approved model-render UI icons, Castle splash and native desktop icon
+PASS: authored 126 textured PSX GLBs, 792280 bytes (42 equipment categories x 3 physical tiers)
+Prepared 15 CC0 medieval castle meshes
+CASTLE_CAPTURE_RUNTIME_READY: compiled real game sources with runtime assets
+Note: src/test/java/org/beckenburg/PsxHorrorUiTest.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+PASS regression manifest preflight: 378 unique short names and available entrypoints; no tests executed
+Each class ran in its own headless JVM with -ea, isolated user.home, build/classes:build/test, a 180-second timeout for PreparedLightBatchParityTest and 90 seconds otherwise, two cases concurrently.
+339/378 PreparedLightBatchParityTest PASS exit=0 elapsed=86.412s
+340/378 EditorAgentServiceTest PASS exit=0 elapsed=9.479s
+341/378 LevelAuthoringIdentityTest PASS exit=0 elapsed=3.168s
+342/378 HouseTemplateCompatibilityTest PASS exit=0 elapsed=4.17s
+343/378 HouseRebuildUpgradeTest PASS exit=0 elapsed=68.001s
+344/378 EditorSceneRetentionTest PASS exit=0 elapsed=11.79s
+345/378 SourceImageSharingTest PASS exit=0 elapsed=1.615s
+346/378 LevelAuthoringRecoveryTest PASS exit=0 elapsed=8.426s
+347/378 CastleWorldTerrainTest PASS exit=0 elapsed=2.371s
+348/378 CastleCellarConstructionTest PASS exit=0 elapsed=5.306s
+349/378 CastleGroundConstructionTest PASS exit=0 elapsed=6.528s
+350/378 BeckenburgRegressionManifestTest PASS exit=0 elapsed=1.13s
+351/378 CastleUpperConstructionTest PASS exit=0 elapsed=5.037s
+352/378 WallLampSourceUvTest PASS exit=0 elapsed=0.371s
+353/378 WallLampMountPlateTest PASS exit=0 elapsed=1.494s
+354/378 CastleMuseumConstructionTest PASS exit=0 elapsed=2.315s
+355/378 CastleTesterBedTest PASS exit=0 elapsed=2.371s
+356/378 CastleFireplaceTest PASS exit=0 elapsed=2.393s
+357/378 CastleResidentAnimationTest PASS exit=0 elapsed=2.703s
+358/378 EntityFootShadowTest PASS exit=0 elapsed=0.781s
+359/378 SpriteFloorContactTest PASS exit=0 elapsed=1.094s
+360/378 CrouchCameraTest PASS exit=0 elapsed=0.067s
+361/378 LocalInvestigationTest PASS exit=0 elapsed=3.31s
+362/378 PlayerJumpTest PASS exit=0 elapsed=1.412s
+363/378 PlayerJumpNetworkTest PASS exit=0 elapsed=2.65s
+364/378 HunterReactionSpritesTest PASS exit=0 elapsed=1.997s
+365/378 HunterReactionsNetworkTest PASS exit=0 elapsed=3.071s
+366/378 GroundedSpriteFeetTest PASS exit=0 elapsed=0.165s
+367/378 CastleTapestryTest PASS exit=0 elapsed=3.84s
+368/378 CastleHeritageSurfacesTest PASS exit=0 elapsed=2.465s
+369/378 CastleHeraldicDisplayTest PASS exit=0 elapsed=1.644s
+370/378 CastlePlantFitTest PASS exit=0 elapsed=2.0s
+371/378 WorkbenchMaterialTest PASS exit=0 elapsed=2.254s
+372/378 CastleTrainingLessonTest PASS exit=0 elapsed=21.126s
+373/378 CastleFinishPlacementTest PASS exit=0 elapsed=4.173s
+374/378 CastleRebuildUpgradeTest PASS exit=0 elapsed=13.629s
+375/378 CastleStoryTest PASS exit=0 elapsed=23.199s
+376/378 CastleLooseClutterTest PASS exit=0 elapsed=11.904s
+377/378 HidingAreaHazeTest PASS exit=0 elapsed=3.653s
+378/378 GhostElectricalTest PASS exit=0 elapsed=5.244s
+40/40 passed, 0 failed, 0 timed out, 0 unexecuted.
+
+--- PreparedLightBatchParityTest ---
+Nov 16, 2026 1:46:55 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PARITY BEGIN site=CASTLE
+PARITY END site=CASTLE elapsed_ms=45027
+PARITY BEGIN site=HOUSE
+2026-11-16T22:47:43.186327289Z [main] RENDER SLOW stage=idle faces=87193 visible_faces=22805 culled_faces=64388 target=320x200 build_ms=1344 lighting_raster_ms=1276
+PARITY END site=HOUSE elapsed_ms=4188
+PARITY BEGIN site=FARMHOUSE
+2026-11-16T22:47:47.197667431Z [main] RENDER SLOW stage=idle faces=85890 visible_faces=43378 culled_faces=42512 target=320x200 build_ms=305 lighting_raster_ms=2185
+PARITY END site=FARMHOUSE elapsed_ms=3974
+PARITY BEGIN site=SCHOOL
+2026-11-16T22:47:50.742072061Z [main] RENDER SLOW stage=idle faces=204024 visible_faces=63909 culled_faces=140115 target=320x200 build_ms=263 lighting_raster_ms=1839
+PARITY END site=SCHOOL elapsed_ms=4089
+PARITY BEGIN site=MANSION
+2026-11-16T22:47:54.651613597Z [main] RENDER SLOW stage=idle faces=85900 visible_faces=26743 culled_faces=59157 target=320x200 build_ms=26 lighting_raster_ms=2029
+PARITY END site=MANSION elapsed_ms=4132
+PARITY BEGIN site=PRISON
+2026-11-16T22:47:58.059874797Z [main] RENDER SLOW stage=idle faces=153462 visible_faces=33984 culled_faces=119478 target=320x200 build_ms=49 lighting_raster_ms=1278
+PARITY END site=PRISON elapsed_ms=2960
+PARITY BEGIN site=ASYLUM
+2026-11-16T22:48:01.066195827Z [main] RENDER SLOW stage=idle faces=156808 visible_faces=36550 culled_faces=120258 target=320x200 build_ms=48 lighting_raster_ms=1328
+PARITY END site=ASYLUM elapsed_ms=3191
+PARITY BEGIN site=ACADEMY
+2026-11-16T22:48:04.698391291Z [main] RENDER SLOW stage=idle faces=155658 visible_faces=33547 culled_faces=122111 target=320x200 build_ms=39 lighting_raster_ms=1781
+PARITY END site=ACADEMY elapsed_ms=3711
+PARITY BEGIN site=COLLEGE
+2026-11-16T22:48:08.354269493Z [main] RENDER SLOW stage=idle faces=160180 visible_faces=38683 culled_faces=121497 target=320x200 build_ms=44 lighting_raster_ms=1710
+PARITY END site=COLLEGE elapsed_ms=3736
+PARITY BEGIN site=CHURCH
+2026-11-16T22:48:12.004418176Z [main] RENDER SLOW stage=idle faces=148138 visible_faces=31886 culled_faces=116252 target=320x200 build_ms=48 lighting_raster_ms=1627
+PARITY END site=CHURCH elapsed_ms=3458
+PARITY BEGIN site=HOLLOW_CREEK
+2026-11-16T22:48:16.829992877Z [main] RENDER SLOW stage=idle faces=229971 visible_faces=154958 culled_faces=75013 target=320x200 build_ms=2396 lighting_raster_ms=319
+PARITY END site=HOLLOW_CREEK elapsed_ms=4144
+PARITY BEGIN site=USER
+2026-11-16T22:48:19.200970894Z [main] RENDER SLOW stage=idle faces=70215 visible_faces=19731 culled_faces=50484 target=320x200 build_ms=63 lighting_raster_ms=542
+PARITY END site=USER elapsed_ms=1331
+PASS complete dependency/sparse/dense vertex-batch parity across Castle and all map types, real flicker/blackout/doors, scene changes and immutable published arrays (recording backend)
+Nov 16, 2026 1:48:20 PM java.util.prefs.FileSystemPreferences checkLockFile0ErrorCode
+WARNING: Could not lock User prefs.  Unix error code 2.
+Nov 16, 2026 1:48:20 PM java.util.prefs.FileSystemPreferences syncWorld
+WARNING: Couldn't flush user prefs: java.util.prefs.BackingStoreException: Couldn't get file lock.
+
+--- EditorAgentServiceTest ---
+Nov 16, 2026 1:46:55 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+2026-11-16T22:47:01.152794789Z [main] RENDER SLOW stage=idle faces=137829 visible_faces=81157 culled_faces=56672 target=320x200 build_ms=2428 lighting_raster_ms=2271
+PASS native mission/Castle service: stale rejection, shared undo, batch rollback, save/game load/reopen, renderer capture, owner thread and CLI
+Nov 16, 2026 1:47:04 PM java.util.prefs.FileSystemPreferences checkLockFile0ErrorCode
+WARNING: Could not lock User prefs.  Unix error code 2.
+Nov 16, 2026 1:47:04 PM java.util.prefs.FileSystemPreferences syncWorld
+WARNING: Couldn't flush user prefs: java.util.prefs.BackingStoreException: Couldn't get file lock.
+
+--- LevelAuthoringIdentityTest ---
+Nov 16, 2026 1:47:05 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS G1 native identity: legacy BSCN, deletion, shared undo/redo, stable-ID edit, deterministic save/reopen, unsupported transform rejection and USER ownership
+Nov 16, 2026 1:47:07 PM java.util.prefs.FileSystemPreferences checkLockFile0ErrorCode
+WARNING: Could not lock User prefs.  Unix error code 2.
+Nov 16, 2026 1:47:07 PM java.util.prefs.FileSystemPreferences syncWorld
+WARNING: Couldn't flush user prefs: java.util.prefs.BackingStoreException: Couldn't get file lock.
+
+--- HouseTemplateCompatibilityTest ---
+Nov 16, 2026 1:47:09 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS pinned House architectural generations: native legacy edits/identity/bytes, actual rebuilt USER geometry/sockets/colliders/network revision, isolated saves and unknown-version rejection
+Nov 16, 2026 1:47:11 PM java.util.prefs.FileSystemPreferences checkLockFile0ErrorCode
+WARNING: Could not lock User prefs.  Unix error code 2.
+Nov 16, 2026 1:47:11 PM java.util.prefs.FileSystemPreferences syncWorld
+WARNING: Couldn't flush user prefs: java.util.prefs.BackingStoreException: Couldn't get file lock.
+
+--- HouseRebuildUpgradeTest ---
+Nov 16, 2026 1:47:12 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS actual supported source/panel aim; connected light energy 4.800000000000001 -> 0.187;4TCP peers source/breaker independence,view-resync,ghost/distance rejection. Ghost-specific trip-event audit remains open.
+PASS 52species/controller accepted electrical arcs; ordinary source/breaker independence,non-electrical/off/stale/rejected negatives;4TCP ghost trip,view-resync and physical reset
+PASS House native three-way upgrade, actual saved default dispatch, source/ID undo-redo, exact original backup, personal cellar support, authored deltas, conflict rollback and future-version rejection
+Nov 16, 2026 1:48:19 PM java.util.prefs.FileSystemPreferences checkLockFile0ErrorCode
+WARNING: Could not lock User prefs.  Unix error code 2.
+Nov 16, 2026 1:48:19 PM java.util.prefs.FileSystemPreferences syncWorld
+WARNING: Couldn't flush user prefs: java.util.prefs.BackingStoreException: Couldn't get file lock.
+
+--- EditorSceneRetentionTest ---
+Nov 16, 2026 1:48:19 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+2026-11-16T22:48:29.110568489Z [main] RENDER SLOW stage=idle faces=91914 visible_faces=46648 culled_faces=45266 target=320x200 build_ms=1888 lighting_raster_ms=2717
+2026-11-16T22:48:31.117764145Z [main] RENDER SLOW stage=idle faces=91914 visible_faces=46648 culled_faces=45266 target=320x200 build_ms=73 lighting_raster_ms=1580
+PASS actual Castle/House scene retirement, destination preload reuse, rebuilt return and exact runtime pixel parity
+
+--- SourceImageSharingTest ---
+PASS shared immutable source PNGs, distinct material IDs/tint/wrap/alpha modes, exact full atlas RGBA/resolution and independent live surfaces
+
+--- LevelAuthoringRecoveryTest ---
+Nov 16, 2026 1:48:24 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS native mission recovery: distinct backup, corrupt-file rejection, explicit restore, shared undo, game load, foreign isolation and corrupt-primary legacy/rebuilt CLI bootstrap
+Nov 16, 2026 1:48:31 PM java.util.prefs.FileSystemPreferences checkLockFile0ErrorCode
+WARNING: Could not lock User prefs.  Unix error code 2.
+Nov 16, 2026 1:48:31 PM java.util.prefs.FileSystemPreferences syncWorld
+WARNING: Couldn't flush user prefs: java.util.prefs.BackingStoreException: Couldn't get file lock.
+
+--- CastleWorldTerrainTest ---
+Nov 16, 2026 1:48:32 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS Castle persisted editor hole:120 cut leaves, 746 shared render/body/optical/support faces; whole-footprint passage and actual filled-world negatives. Architectural stair/void is covered separately by CastleCellarConstructionTest.
+
+--- CastleCellarConstructionTest ---
+Nov 16, 2026 1:48:35 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS Castle cellar construction: 99914 physical positions from native spawn reach all4 cellar and4 annex rooms; continuous18-riser flight, true deck/world openings, body/head/optical guards, filled-world negatives, separated furniture/circuits and exact native reopen.
+
+--- CastleGroundConstructionTest ---
+Nov 16, 2026 1:48:38 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS Castle ground construction: 107237 actual native-spawn states; all15 open core rooms and4 cellar rooms, permanent pantry seal,15 retained stock racks/usable aisles,14 fitted source fixtures, room lighting/switches, independent vertical door IDs, native save/reopen and actual editor service inspection/terrain diagnostics/capture.
+
+--- BeckenburgRegressionManifestTest ---
+PASS actual regression runner preflight: 378 names/entrypoints; malformed qualified tail, duplicate and missing test refuse before any test launch; source manifest unchanged.
+
+--- CastleUpperConstructionTest ---
+Nov 16, 2026 1:48:42 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS Castle upper construction: 107237 actual native-spawn states, open upper rooms, sealed context, six source-sized beds/27 fixtures, supported lights, controls, actual casements, independent storey door and native persistence
+
+--- WallLampSourceUvTest ---
+PASS wall-light on/off source atlas: 64 actual triangle centroids, 64 distinguish inverted V; original meshes/images unchanged
+
+--- WallLampMountPlateTest ---
+PASS 27 actual wall-light brackets: original textured metal faces/UV region, masonry contact, scaled dimensions and source-triangle contact
+
+--- CastleMuseumConstructionTest ---
+Nov 16, 2026 1:48:44 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS Castle museum native armour1036/caption86/barrier264 triangles, source-size floor/contact placement, fitted mesh clearance, preserved furnishings/keeper/routes, native save/reopen and actual editor inspect/capture
+
+--- CastleTesterBedTest ---
+Nov 16, 2026 1:48:43 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS 828-triangle tester bed, four alpha-cutout sprite sides, actual depth holes=19915, cloth=14741, six native supported source-size lodgings, collision/aisles and exact save/reopen
+
+--- CastleFireplaceTest ---
+ROUTE [5.5, 22.0] before=true with=true
+ROUTE [5.5, 24.5] before=false with=false
+ROUTE [1.0, 25.0] before=true with=true
+ROUTE [5.5, 25.0] before=false with=false
+PASS native26-face/56-triangle fireplace, real hearth/wall bearing, backed cold firebox, preserved circulation, collision and exact save/reopen
+
+--- CastleResidentAnimationTest ---
+MATTHIS_ROOK [IDLE, WALK_A, WALK_B, CROUCH]
+ELSBETH_VALE [IDLE, WALK_A, WALK_B, CROUCH]
+ROWAN_PIKE [IDLE, WALK_A, WALK_B, CROUCH]
+TOMAS_GREAVES [IDLE, WALK_A, WALK_B, CROUCH]
+MIRELLE_ASH [IDLE, WALK_A, WALK_B, CROUCH]
+PASS five resident routines, collision, player pause, reset, 160 directional poses and depth raster
+
+--- EntityFootShadowTest ---
+PASS circular foot shadows: floor projection, pitch, resolution, opacity, depth preservation, wall and sky rejection
+
+--- SpriteFloorContactTest ---
+PASS complete human shoe raster against real floor depth across standing/crouched camera heights and pitch
+
+--- CrouchCameraTest ---
+PASS crouch/stand easing: gradual motion, frame-rate independence, reversal continuity, bounds and reset
+
+--- LocalInvestigationTest ---
+Nov 16, 2026 1:48:48 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+2026-11-16T22:48:49.558496034Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-16T22:48:49.641005377Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-16T22:48:49.642122470Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-16T22:48:49.673987710Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=false requests=0 failures=0 first_frame_ms=-1 outcome=no-frame-but-bounded
+2026-11-16T22:48:49.674769641Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-16T22:48:49.691797749Z [AWT-EventQueue-0] OPENING GPU FIRST FRAME REQUEST site=HOUSE width=0 height=0
+2026-11-16T22:48:49.694306962Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=true requests=1 failures=0 first_frame_ms=-1 outcome=cancelled-while-preparing
+PASS: free play and campaign solo run the co-op host, viewport, equipment, flashlight, journal and posture
+
+--- PlayerJumpTest ---
+PASS player jump tuck, gravity, momentum, wall/ceiling collision, landing, posture and reset
+
+--- PlayerJumpNetworkTest ---
+Nov 16, 2026 1:48:51 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS real TCP jump, remote tucked pose, autonomous gravity/landing and ghost rejection
+
+--- HunterReactionSpritesTest ---
+Nov 16, 2026 1:48:52 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS three hunters: directional pain, floor-plane bodies at four headings, shadow/depth occlusion, no floating, reaction expiry and down override
+
+--- HunterReactionsNetworkTest ---
+Nov 16, 2026 1:48:53 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+2026-11-16T22:48:54.308849278Z [AWT-EventQueue-0] OPENING WORLD3D HOUSE hardware_available=false preview=async-software-world output=0x0 first_frame_state=not-yet-ready
+2026-11-16T22:48:54.315256805Z [AWT-EventQueue-0] OPENING GPU FIRST FRAME REQUEST site=HOUSE width=0 height=0
+2026-11-16T22:48:54.332309646Z [AWT-EventQueue-0] OPENING WORLD3D CLOSE site=HOUSE first_frame_ready=false worker_busy=true requests=1 failures=0 first_frame_ms=-1 outcome=cancelled-while-preparing
+PASS real TCP applied damage -> timed pain -> fallen body, persistent dead BODY snapshots, six-seat support, lens parity and ghost privacy
+
+--- GroundedSpriteFeetTest ---
+PASS human sprite alpha shoe anchor and rendered-floor depth lock
+
+--- CastleTapestryTest ---
+PASS160-triangle mounted tapestry, original512x768 weave/UV sampling, actual wall-plate bearing, room/fixture clearance, keeper access, native save/reopen and editor captures
+
+--- CastleHeritageSurfacesTest ---
+PASS original frame92/rug18 geometry normals UVs indices and alpha preserved, new art, actual wall/floor support, walkable rug, native save/reopen and editor capture
+
+--- CastleHeraldicDisplayTest ---
+PASS316-triangle heraldic exhibit,512px atlas/orientation, actual west wall bearing, retained furniture/keeper/approach, native save/reopen and editor inspect/captures
+
+--- CastlePlantFitTest ---
+PASS native source-size plant boiler/distribution,84tri exact source-terminal wall/flue connections, real floor/wall/ceiling bearing, maintenance routes, no upper phantom collision, native save/reopen and editor captures
+
+--- WorkbenchMaterialTest ---
+PASS shared688tri clean/worn workbenches, original bounds/IDs and Castle poses,512px generated component atlas/orientation, actual editor captures and native save/reopen
+
+--- CastleTrainingLessonTest ---
+Nov 16, 2026 1:49:04 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+Beckenburg effects audio temporarily unavailable: No line matching interface SourceDataLine supporting format PCM_SIGNED 16000.0 Hz, 16 bit, stereo, 4 bytes/frame, little-endian is supported.
+PASS3 protected native rite lessons, source-size supported desks/inlays, real aim/move/delete/floor negatives, signed spawn save/reopen, actual contained UI/reset/return, zero case/campaign/inventory actions and editor captures
+
+--- CastleFinishPlacementTest ---
+PASS17 native finishing fixtures: source scale, whole-footprint support, actual room bounds, nonoverlap, vault/kitchen/dining/gallery/bed circulation, low-count keeper, save/reopen and actual editor captures
+
+--- CastleRebuildUpgradeTest ---
+Nov 16, 2026 1:49:11 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS actual original/pre-furnishing automatic rebuilds + exact backups; custom props/deletions/lights/geometry/paint/navigation/stations/spawn; shared native transaction/undo/redo/explicit save; conflict rollback; current deletion retention; authored-v1 and future-version preservation
+
+--- CastleStoryTest ---
+Nov 16, 2026 1:49:21 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS six actual exhibit records: accessible native mesh aim, nearer-object and actual masonry occlusion, deletion, contained action/UI/return, orientation protection and zero profile/case/scene writes
+
+--- CastleLooseClutterTest ---
+Nov 16, 2026 1:49:23 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS6 authored native loose bodies: exact mesh support, all reachable pickup views, stable rest, deleted parent, local ownership, +X throw, safe gravity/collision, actual cellar aperture and zero native scene writes
+PASS contained actions with orientation protection and no campaign/profile actions
+Retained source loose-object triangles=1508; stationary poses reuse6 meshes; one pickup rebuilds1
+
+--- HidingAreaHazeTest ---
+PASS same animated sanctuary haze on available cupboard/outdoor refuges,inside/outside/occluded views,unchanged depth,101difficulty settings and zero-cover ghost exclusion
+
+--- GhostElectricalTest ---
+Nov 16, 2026 1:49:39 PM java.util.prefs.FileSystemPreferences$1 run
+INFO: Created user preferences directory.
+PASS 52species/controller accepted electrical arcs; ordinary source/breaker independence,non-electrical/off/stale/rejected negatives;4TCP ghost trip,view-resync and physical reset
