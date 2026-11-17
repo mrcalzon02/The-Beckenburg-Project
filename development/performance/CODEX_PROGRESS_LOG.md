@@ -1,5 +1,10 @@
 # Codex A–G execution checkpoint log
 
+
+## 2026-11-16 — Core30 release benchmark and continuation
+
+Released source [13fcd0a, v0.1.336](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.336) passed packaged solo and full multiplayer acceptance. The [Core30 report](../../docs/performance/2026-11-16-house-frame-times/README.md) records four matched pairs on each renderer. For the first optimization series on native GTX 1660 SUPER, idle House p95 fell from about 70 to 36 ms in both solo and three-seat TCP. All four candidate solo walks recorded two early frame gaps over 100 ms. [Resume from the benchmark handoff](../../docs/performance/2026-11-16-house-frame-times/HANDOFF.md) for the exact pending Windows comparison, the movement trace and the tested cache-admission prototype. The sustained 33.3 ms target remains open.
+
 ## 2026-11-16 — House frame times and multiplayer join stalls
 
 Production source [7225b34](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/7225b34abd7da5213623e6e7ed4f79ed1657a0f4) follows [d00dfc5](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/d00dfc575f2f800674ef3d6e9cd160e150bccd38). The [benchmark report and raw data](../../docs/performance/2026-11-16-house-frame-times/README.md) cover single-player, TCP hunter and human ghost frame delivery, matched texture preparation, sanctuary shading, socket CPU and House door lighting. Final-source software colors and raw depths matched all 72 reference frames. The exact-source [Windows build](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/43977243730) passed packaged solo, multiplayer and installed startup, then received an HTTP 403 during release publication. The build artifact is retained. Next engine work is to narrow lighting and visibility invalidation on real door transitions, including the two-receiver door-edge counterexample in the report.

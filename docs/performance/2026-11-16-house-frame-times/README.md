@@ -4,6 +4,8 @@ The production comparison uses baseline `7e7764b208e82785ded237e2953473b2661e064
 
 [Engine probes, raw data and gameplay checks](benchmark-data.zip) · [Physical Windows OpenGL frame CSVs](windows-opengl.zip) · [Physical Windows software frame CSVs](windows-software.zip). Each archive includes a SHA-256 manifest.
 
+[Continue from the benchmark handoff](HANDOFF.md) · [Movement and sanctuary reproduction probes](movement-probes.zip)
+
 ## Direct measurements
 
 | Workload | Baseline | Candidate | Measured scope |
@@ -92,7 +94,11 @@ The retry succeeded in all 16 timing cases at 640×360 on the physical NVIDIA Op
 | TCP hunter, idle | 70.3 → 35.6 ms | 4/4 | 70.3 → 35.8 ms | 36.7 ms | 0 / 2372 |
 | TCP hunter, walking | 75.6 → 78.6 ms | 1/4 | 76.5 → 83.5 ms | 373.6 ms | 10 / 255 |
 
-Solo idle gaps over 50 ms fell from 1,176/1,178 to 2/2,368. The three-seat hunter fell from 1,179/1,181 to 0/2,372. Moving results were worse on this build. Solo walking went from no intervals exceeding 100 ms to eight across four trials. Every candidate solo trial had two early long frames, with approximately 87–95 ms in post-geometry work, under 2.1 ms in geometry and zero shadow rays. The TCP walking p99 was 370.6 ms before and 373.6 ms after. The hardware CSVs capture composited application delivery, CPU stages and movement. They exclude monitor scan-out and independent-PC latency. Archivally verified worker-output SHA-256 `e2aa33303c0dadc7eafefbc8cc3fc6ff0041a5a53ed6a3e6263c75ed0dc94ed6`.
+Solo idle gaps over 50 ms fell from 1,176/1,178 to 2/2,368. The three-seat hunter fell from 1,179/1,181 to 0/2,372. Moving results were worse on this build. Solo walking went from no intervals exceeding 100 ms to eight across four trials. Every candidate solo trial had two early long frames, with approximately 87–95 ms in post-geometry work, under 2.1 ms in geometry and zero shadow rays. The TCP walking p99 was 370.6 ms before and 373.6 ms after. The hardware CSVs capture composited application delivery, CPU stages and movement. They exclude monitor scan-out and independent-PC latency. Original worker ZIP SHA-256 `e2aa33303c0dadc7eafefbc8cc3fc6ff0041a5a53ed6a3e6263c75ed0dc94ed6`.
+
+### Unshipped movement experiment
+
+A real instrumented solo House run on Mesa traced a 157.3 ms render-thread CPU spike to the first sanctuary cache fill at a repeated camera pose. A scratch prototype waits for six identical poses before filling. Across two fresh-process comparisons, the route’s walking p95 went from 146.5 to 108.0 ms and from 125.7 to 104.8 ms. Every measured color and depth hash matched in 800 deterministic replay frames. Short synthetic holds showed mixed CPU results, and retaining the direct path for five frames cost some reuse. The normal route leaves the dome before stopping. A sustained stop **inside** the sanctuary and a matched native GTX 1660 SUPER trial remain unverified. The prototype is excluded from v0.1.336. [Source patch, probes and raw local timings](movement-probes.zip)
 
 ## Reproduction
 
