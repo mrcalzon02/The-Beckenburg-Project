@@ -1,0 +1,90 @@
+2026-11-17T16:57:34.5432438Z PASS JAR audio: 19 WAVs, six scores, 13 sound zones, 11 weather bundles
+2026-11-17T16:57:38.0818921Z PASS authoritative Castle lamp emissive placement, LOS and power receiver regression
+2026-11-17T16:58:02.6267916Z PASS native MCP schema: singleton ORIGINAL, multi-value enum, finite types, exact fields and invalid-command rejection
+2026-11-17T16:58:12.0255029Z PASS mission agent doorway: native wall aperture, runtime revision, real rendered change, schema refusal, transaction rollback, save/reopen, independent game load and shared history
+2026-11-17T16:58:45.6663131Z PASS native mission wall and portal: corner joins, physical cut/lintel, operable rendered leaf, real collision open/close, network snapshot, stable saved door ID, undo/redo and independent game load
+2026-11-17T16:58:52.9967111Z PASS real School child room: 4 thick walls, real door/ceiling, same-zone acoustic isolation, OBB-safe furnishing, illuminated native captures, network sync, BSCN game load and undo/redo
+2026-11-17T16:59:31.9660794Z PASS native mission upper-floor slab: depth/soffit renderer, body and optical parity, route safety, stable IDs, typed command, rollback, BSCN save/reopen, independent game load, undo/redo
+2026-11-17T17:00:28.8260054Z PASS native mission School terminal landing and deep upper deck: physical aperture, guarded join, full route preservation, renderer, independent saved game, rollback, undo/redo
+2026-11-17T17:00:34.3429434Z PASS native support parity: accepted host moves survive next tick, stair overlap preserves lower support, round trip and real penetration recovery
+2026-11-17T17:00:41.6246891Z PASS native mission/Castle service: stale rejection, shared undo, batch rollback, save/game load/reopen, renderer capture, owner thread and CLI
+2026-11-17T17:01:09.1898372Z PASS mission agent prop parity: real placement, mesh bounds, transform, duplicate, overlaps, protected services, rollback, native render, game load, save/reopen and shared undo
+2026-11-17T17:01:16.8289938Z PASS mission agent doorway: native wall aperture, runtime revision, real rendered change, schema refusal, transaction rollback, save/reopen, independent game load and shared history
+2026-11-17T17:01:49.4564710Z PASS native mission wall and portal: corner joins, physical cut/lintel, operable rendered leaf, real collision open/close, network snapshot, stable saved door ID, undo/redo and independent game load
+2026-11-17T17:01:55.2853874Z PASS real School child room: 4 thick walls, real door/ceiling, same-zone acoustic isolation, OBB-safe furnishing, illuminated native captures, network sync, BSCN game load and undo/redo
+2026-11-17T17:02:30.1466465Z PASS native mission upper-floor slab: depth/soffit renderer, body and optical parity, route safety, stable IDs, typed command, rollback, BSCN save/reopen, independent game load, undo/redo
+2026-11-17T17:03:23.6232588Z PASS native mission School terminal landing and deep upper deck: physical aperture, guarded join, full route preservation, renderer, independent saved game, rollback, undo/redo
+2026-11-17T17:03:27.0160175Z PASS native editor changes: mission deltas, Castle spawn/surface fingerprints and conservative world invalidation
+2026-11-17T17:03:32.4793383Z PASS native disk revisions: competing mission/Castle saves, active singleton and game readback, preserve unsaved edits, observe/undo/save, deletion/recovery and pinned USER ownership
+2026-11-17T17:03:38.2200481Z PASS Castle snapshot contract: owned collections/arrays, immutable accessors, structural equality/hash and exact native restore/save/reopen and isolated default-profile ownership
+2026-11-17T17:03:42.9238378Z PASS native schema compatibility: unknown component properties, custom labels/layers and contradictory yaw refused without loss; legacy yaw retained; all six future Castle layout versions protected
+2026-11-17T17:03:45.1093900Z PASS G1 native identity: legacy BSCN, deletion, shared undo/redo, stable-ID edit, deterministic save/reopen, unsupported transform rejection and USER ownership
+2026-11-17T17:03:48.8158309Z PASS pinned House architectural generations: native legacy edits/identity/bytes, actual rebuilt USER geometry/sockets/colliders/network revision, isolated saves and unknown-version rejection
+2026-11-17T17:04:16.3231614Z PASS actual supported source/panel aim; connected light energy 4.800000000000001 -> 0.187;4TCP peers source/breaker independence,view-resync,ghost/distance rejection. Ghost-specific trip-event audit remains open.
+2026-11-17T17:04:17.2177734Z PASS 52species/controller accepted electrical arcs; ordinary source/breaker independence,non-electrical/off/stale/rejected negatives;4TCP ghost trip,view-resync and physical reset
+2026-11-17T17:04:58.5614531Z PASS House native three-way upgrade, actual saved default dispatch, source/ID undo-redo, exact original backup, personal cellar support, authored deltas, conflict rollback and future-version rejection
+2026-11-17T17:05:00.7933771Z PASS shared immutable source PNGs, distinct material IDs/tint/wrap/alpha modes, exact full atlas RGBA/resolution and independent live surfaces
+2026-11-17T17:05:12.8825467Z PASS native mission recovery: distinct backup, corrupt-file rejection, explicit restore, shared undo, game load, foreign isolation and corrupt-primary legacy/rebuilt CLI bootstrap
+2026-11-17T17:05:17.8528891Z PASS Castle native recovery: deterministic saves, distinct backups, full codec roundtrip, same singleton recovery, shared undo, invalid backup refusal and legacy migrations
+2026-11-17T17:05:20.6358317Z PASS OBJ > generated GLB > game decode > registry > authored prop > reload
+2026-11-17T17:05:23.2866685Z PASS wall/floor/roof editing, paint, undo, migration, game collision and shadows
+2026-11-17T17:05:26.9955975Z PASS rebuilt real fittings, switch-off, shadow occlusion, existing-scene migration and grounded props
+2026-11-17T17:06:04.5997863Z PASS castle MCP playtest: live gameplay PNG, revision, position and disk state retained
+2026-11-17T17:06:04.5999125Z PASS MCP save beckenburg/castle: authenticated typed discovery, live readback, resource, diagnostic and PNG
+2026-11-17T17:06:44.6430803Z PASS MCP observe beckenburg/house: authenticated typed discovery, live readback, resource, diagnostic and PNG
+2026-11-17T17:06:52.5182002Z PASS house MCP playtest: live gameplay PNG, revision, position and disk state retained
+2026-11-17T17:06:52.5183005Z PASS MCP edit beckenburg/house: authenticated typed discovery, live readback, resource, diagnostic and PNG
+2026-11-17T17:06:52.9181284Z PASS real Windows editor: isolated Castle and House gameplay, exact unsaved-state return, unaffected connected LAN host, native history, authenticated observation and renderer capture
+2026-11-17T17:07:12.6779989Z PASS Castle spectral station, local gameplay and ESC return
+2026-11-17T17:07:19.4230841Z PASS actual human OBJ source identities: six native vertices, independent coincident edit, exact source/native archives and every real runtime GLB corner
+2026-11-17T17:07:19.4232436Z PASS real human primitives, native roundtrip, triangle selection, vertex/edge/face axis drag/grid/undo/redo, Escape cancellation, stale revision refusal, UI PNG and every runtime GLB corner
+2026-11-17T17:07:19.4235050Z PASS actual human mesh authoring: stable vertex move/undo/redo, native save/reopen/fresh chooser load, topology review/UI PNG, runtime GLB publish, exact editable/original source archives and changed-source rejection
+2026-11-17T17:07:23.4810075Z PASS actual human visible/X-ray boxes and lassos, canceled/stale asynchronous selection, immutable native state, multi-vertex axis drag, one-step undo/redo and every real game-decoder corner
+2026-11-17T17:07:28.2378821Z PASS real human extrude/inset: native preview/cancel/parameter and stale guards, exact apply, one-step history, save/reopen, source/native archives and every actual runtime corner
+2026-11-17T17:07:31.0810684Z PASS actual native publication revision: stale review refuses all writes, explicit human re-review refreshes live state, coherent native/runtime publication
+2026-11-17T17:07:36.8808305Z PASS actual human native weld/repair/cleanup/OBJ chooser: real selection/preview/apply, stable IDs/UVs, undo/redo/native persistence and every runtime corner
+2026-11-17T17:07:40.8616999Z PASS actual human snapped rotation and centroid scale: real selection/buttons, preview/cancel/apply/history, native archive and every runtime corner
+2026-11-17T17:07:44.1246678Z PASS actual topological mesh workspace: contextual tools, menus/shortcuts, viewport allocation, diagnostics/focus restoration, small-window layouts and unchanged native authority
+2026-11-17T17:07:52.4425842Z PASS actual human authored normals: source/corner seams, overlay, snapped rotation/inverse scale, preview/history/native archive, every GLB corner and production renderer/subdivision
+2026-11-17T17:09:07.6925929Z PASS headless public protocol: mission/Castle JSON edit/save/recovery, renderer capture, native parity, process reopen, corrupt-start bootstrap recovery and stale rejection
+2026-11-17T17:09:10.5117437Z PASS real human PNG materials: face picking, captured preview/cancel/apply, exact shared undo/redo/save/fresh open/publication, runtime face bindings/origin/RGBA/tint/wrap and production screenshot
+2026-11-17T17:09:35.2575804Z PASS selected edge inspection: boundary, matching and split UVs, authored marks, neighboring face, preview, cancel and undo
+2026-11-17T17:09:36.1662345Z PASS local mip regeneration: 14 filtered pixels after center edit versus 170 for full chain
+2026-11-17T17:09:40.0871564Z PASS Material Editor MCP: native vertex, visible face binding and exact displayed runtime PNG
+2026-11-17T17:09:42.3937994Z PASS MCP material opacity: rejected batch restored the layer; edit, undo and redo read back
+2026-11-17T17:09:42.3939102Z PASS Material Editor MCP: native vertex, visible face binding and exact displayed runtime PNG
+2026-11-17T17:09:44.5564286Z PASS native MESH stdio: exact desktop PNG, validated edit/undo/redo, concurrent save refusal, workspace and fresh reopen
+2026-11-17T17:09:45.3748138Z PASS G2 textured box: two workspaces, 8 vertices, 6 quads, 12 triangles, 36 runtime corners with transformed hard normals and UVs, undo/redo, OBJ bundle/GLB/glTF/native reopen
+2026-11-17T17:09:49.9461567Z PASS human native UV editing: independent material window, real OBJ/MTL source, face/island preview/cancel/apply/parameter guards, shared history/native save/archive, every actual runtime UV/color and OBJ bundle
+2026-11-17T17:10:05.0871768Z PASS actual Castle/House scene retirement, destination preload reuse, rebuilt return and exact runtime pixel parity
+2026-11-17T17:10:07.7727691Z PASS human source-backed GLB: actual matrix/ancestor mesh, independent instance vertex/UV controls, shared history/native v4, exact no-edit/source metadata and original PNG, real GLB export/publication/archive/game UVs and screenshots
+2026-11-17T17:10:09.7212076Z PASS actual runtime original matrix/ancestor pivot and external GLB upper-left PNG
+2026-11-17T17:10:11.8330685Z PASS human perspective: real camera orbit/pan/zoom/fit, visible picking/box, exact snapped axis drag, native history/save/fresh reopen, actual runtime publication and screenshot
+2026-11-17T17:10:15.8150822Z PASS human surface-normal transforms: native face anchor, snapped normal rotation/preview/cancel/apply, oblique perspective gizmo move, shared history/save/fresh reopen, exact UV/normals/game publication and actual screenshots
+2026-11-17T17:10:20.2852240Z PASS human local frames: real world rotation/local scaling, preview/cancel/apply, local-unit perspective gizmo, geometry/frame shared history, native v5 reopen, OBJ/GLB copies, actual game publication and screenshots
+2026-11-17T17:10:23.5703897Z PASS native edge/corner bevel: closed actual cut/cap, stable original IDs/attributes, atomic history, refusal guards, native/OBJ/GLB and original source-backed runtime geometry
+2026-11-17T17:10:27.3260177Z PASS actual human bevel: visible native edge/corner picking, separate tool card, preview/cancel/parameter/apply, shared undo/redo/save/reopen and every real game corner/source archive
+2026-11-17T17:10:31.1055708Z PASS actual vertex slide: native edge pick, surface/outline refusal, preview/cancel/apply, one-step history, exact native reopen and every game corner
+2026-11-17T17:10:37.4752772Z PASS native interior quad loop/ring, whole-loop slide and boundary selection: exact grid transform/undo, directed hole rim, separate parts, native reopen and actual game corners
+2026-11-17T17:10:40.4266971Z PASS native wireframe pixels and projection counts: hover 0, local center 6/24, resized/UV 0, new camera 24; maximum sampled edit 1/36000
+2026-11-17T17:10:40.9587217Z PASS authored OBJ quads, split-triangle distinction, BTOP6/OBJ bundle/GLB, seam UV edit, selective topology invalidation and native undo
+2026-11-17T17:10:42.6725657Z PASS authored quad edge traversal and whole-loop slide: regular interior and closed loops, opposite-edge rings, triangle/diagonal refusals and native revision stability
+2026-11-17T17:10:43.0769094Z PASS 347 distant twin pairs: dense, alternating and single-pair edits preserve five native snapshots
+2026-11-17T17:10:43.1312000Z PASS mixed incremental/full native parity: 96 edits, shared undo/redo, normals and paired UV seams
+2026-11-17T17:10:43.6892042Z PASS 120000-face picking index: one vertex reprojected, old and refitted bounds verified
+2026-11-17T17:10:44.3627837Z PASS 120000 native triangles: moving one grid corner replaces two triangles and two corners
+2026-11-17T17:10:45.3776410Z PASS vertex snap: exact anchor/relative precision, degenerate/flip/stale refusal, original source GLB and native frame ownership
+2026-11-17T17:10:47.7568541Z PASS native vertex snap: visible anchor/target guide, distinct IDs, shape/frame translation, guards, one-step history, reopen and actual game vertices
+2026-11-17T17:10:50.9914095Z PASS native paint autosave: two real JVM halts, journal replay, separate writable copy, unchanged manual file, coalesced undo and competing-write refusal
+2026-11-17T17:10:53.5521861Z PASS 120000-face UV relaxation, packing and LSCM unwrap
+2026-11-17T17:10:53.6405274Z PASS native UV relaxation and conformal unfold: pinned fold in rectangular texels, mirrored chart, cut tetrahedron and native reopen
+2026-11-17T17:10:54.5339730Z PASS base-color pencil: 61 sparse versions at 2048 tiles, bounded decode, GLB source retained, shared texture derivative, native roundtrip and erase
+2026-11-17T17:10:56.5342014Z PASS 2048-square RGBA review: 8 dirty mip texels versus 1392640 for full regeneration; exact levels, bounded eviction and alpha rebind
+2026-11-17T17:10:56.9611424Z PASS native workspace: version6/7, exact geometry/view save, fresh open, stale-writer protection, recovery, invalid ID/flag/future refusal
+2026-11-17T17:10:59.6972606Z PASS actual native model workspace: camera/tool/settings/loop/focus save, fresh-window and Reopen restoration, geometry/revision isolation and published archive
+2026-11-17T17:11:11.8354658Z PASS actual original/pre-furnishing automatic rebuilds + exact backups; custom props/deletions/lights/geometry/paint/navigation/stations/spawn; shared native transaction/undo/redo/explicit save; conflict rollback; current deletion retention; authored-v1 and future-version preservation
+2026-11-17T17:11:11.8896210Z PASS native editor service, real human model/material UV editors, recovery and headless protocol
+2026-11-17T17:11:34.6829278Z PASS six actual exhibit records: accessible native mesh aim, nearer-object and actual masonry occlusion, deletion, actual E-key/UI/return, orientation protection and zero profile/case/scene writes
+2026-11-17T17:11:56.7099860Z PASS6 authored native loose bodies: exact mesh support, all reachable pickup views, stable rest, deleted parent, local ownership, +X throw, safe gravity/collision, actual cellar aperture and zero native scene writes
+2026-11-17T17:11:56.7105772Z PASS real native F5 / ] / F12 input with orientation protection and no campaign/profile actions
+2026-11-17T17:14:47.3552845Z PASS Castle repair and native material layer edit, save/reopen, renderer capture and game readback

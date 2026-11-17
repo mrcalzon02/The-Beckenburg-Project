@@ -1005,3 +1005,6 @@ Physical follow-up44125683659 completed successfully; verified raw archiveSHA256
 
 
 Release readback: v0.1.351 is published from `cc6551a0ccd35e3a5f048cbb16736cf4fcb01556`; installer44131170964 SUCCESS with actual installed Castle startup, packaged solo and complete TCP evidence/rite/settlement. EXE761,358,651bytes / SHA256 `1337e8584f1b003c95073137b47db4840f27344fac97861534a33f29c4e2cc95`. Full391/native editor runs44131171455/44131171098 remain independently active at this snapshot. Evidence commit211726228d698d36bc878dd23547641940afb5fc is remotely verified and changes no runtime source. Unchanged UV paint is optimized; changed-face redraw and first375ms in-sanctuary post-geometry stalls remain open.
+
+
+Source-exact native Windows editor44131171098 is now SUCCESS: actual human model/material UV, save/reopen, runtime UV/color/pixel parity and installed MCP repair passed. Original evidence artifact14351811786 is10,558,493bytes; selected real PASS receipts are committed with the benchmark. Broad391-test full44131171455 remains active independently. No remaining hitch or changed-face redraw defect is closed by these acceptance results.

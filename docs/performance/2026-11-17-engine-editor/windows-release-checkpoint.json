@@ -12,6 +12,8 @@
   "full_regression_run": 44131171455,
   "full_regression_status_at_checkpoint": "in_progress",
   "editor_acceptance_run": 44131171098,
-  "editor_acceptance_status_at_checkpoint": "in_progress",
-  "limits": "Installer and complete TCP gates passed; broad regression/native editor runs remain independently tracked. Headless editor measurements are not Windows display timings."
+  "editor_acceptance_status_at_checkpoint": "success",
+  "limits": "Installer, complete TCP and actual native Windows editor gates passed. Broad391-test regression audit remains independently active. Headless repaint timings are not Windows display timings.",
+  "editor_evidence_artifact_id": 14351811786,
+  "editor_evidence_artifact_bytes": 10558493
 }
