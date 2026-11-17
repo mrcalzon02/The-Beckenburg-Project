@@ -223,7 +223,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         addFocusListener(mouseLook);addFocusListener(this);
         // The host consumes movement and equipment at the original input cadence.
         timer=new javax.swing.Timer(110,e->updateHunter());
-        renderTimer=new javax.swing.Timer(30,e->drawVisibleWorld());
+        renderTimer=new javax.swing.Timer(20,e->drawVisibleWorld());
+        renderTimer.setRepeats(false);
         timer.start();
     }
     @Override public void doLayout(){
@@ -1161,6 +1162,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         renderWorld();
         perfHud.sample(System.nanoTime()-now,renderer,map,peers.size(),"LAN HUNTER");
         repaint();
+        // Schedule one EDT callback from this frame's start. Overrunning a frame
+        // should not also cost the unused part of a second timer period.
+        long remainingNs=renderTimer.getDelay()*1_000_000L-(System.nanoTime()-now);
+        int delayMs=(int)Math.max(1L,(remainingNs+999_999L)/1_000_000L);
+        renderTimer.setInitialDelay(delayMs);
+        renderTimer.restart();
     }
     private void updateHunter(){
         toolGrip.advance();

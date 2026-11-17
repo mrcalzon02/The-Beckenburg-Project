@@ -175,3 +175,7 @@ Profiled the shared production hunter viewport through solo LocalInvestigation a
 ## 2026-11-16 — Core30 House sanctuary and door trials
 
 The six-frame admission experiment on the GTX removed the repeated >100 ms walks, with all 24 stops verified inside the barrier. The follow-up four-lane shader with a 30 ms visual timer improved p95 over the intact .335 JAR in all 24 matched role/phase comparisons. The tested Java source hashes are in the downloaded raw archive from [run 43993545950](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/43993545950). [Per-phase results and raw data](../../docs/performance/2026-11-16-house-frame-times/windows-shading.md). CPU shadow changes remain experimental. The RGB-only door upload preserved the frame but worsened p95 in three of four physical pairs.
+
+## 2026-11-16 — House viewport deadlines on Core30
+
+With a 20 ms visual deadline and 110 ms input timer, the physical four-pair study met 33.3 ms pooled p95 in all six solo and three-seat phases. Two individual walks missed the target and one solo first step took 106.424 ms. DEV-364 retains these exceptions. The 30 ms repeating build at eaa32a3 passed 379/379 Windows regressions and installed Castle startup. [Hardware frames, CPU and network dispatch](../../docs/performance/2026-11-16-house-frame-times/windows-pacing.md) · [Exact-source Windows suite](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44002540897)

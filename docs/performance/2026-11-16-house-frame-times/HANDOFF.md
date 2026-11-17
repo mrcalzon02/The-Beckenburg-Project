@@ -4,7 +4,7 @@ Start on the current public main branch of `mrcalzon02/The-Beckenburg-Project`. 
 
 ## Results since the checkpoint
 
-The completed [Core30 cold hunter comparison](core30-windows-software.md), [physical one-step stop](windows-stop.md), [four-lane shading benchmark](windows-shading.md) and [physical door upload comparison](door-2/physical-door.md) include the raw frame data. The historical steps below identify the original tests and reproduction protocol.
+The completed [Core30 cold hunter comparison](core30-windows-software.md), [physical one-step stop](windows-stop.md), [four-lane shading benchmark](windows-shading.md), [physical render pacing and CPU comparison](windows-pacing.md) and [physical door upload comparison](door-2/physical-door.md) include the raw frame data. The historical steps below identify the original tests and reproduction protocol.
 
 ## Original checkpoint
 

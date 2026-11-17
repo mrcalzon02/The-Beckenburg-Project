@@ -10,6 +10,8 @@ The four-lane sanctuary shader has been measured on the GTX 1660 SUPER. Solo and
 
 The v0.1.338 Windows installer ships the measured four-lane shader and 30 ms visual timer from `eaa32a32438b2106d6733636b2bb7ce5e2ecb67a`. Packaged solo, three-seat full-round and installed Castle startup checks passed. Installer SHA-256 is `a9327a7fa4d7ef9dfc4e43ae48a6f47d1387dad40a16c752e5aa45a2ca94a17e`. [Release](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.338) · [Exact-source Windows installer checks](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44002540893) · [First outward crossing, local stage trace](sanctuary-stop/van-exit-profile.md)
 
+The 20 ms deadline measured 23.81 / 32.40 / 23.60 ms pooled p95 for solo idle, walking and stopping. Three-seat p95 was 23.88 / 32.67 / 25.86 ms. Two individual walking trials missed 33.3 ms. [GTX pacing, CPU, route and network evidence](windows-pacing.md)
+
 ## Direct measurements
 
 | Workload | Baseline | Candidate | Measured scope |

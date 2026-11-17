@@ -971,3 +971,7 @@ Source [7225b34](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/722
 ## 2026-11-16 — Core30 walking and stop recovery
 
 Starting from `c41bc66c9e09d0118012de748761b57a99bc5f53`, Windows software run 43985468339 verified the cold peer fix in all four TCP pairs. GTX runs 43992154305 and 43993545950 reproduced the stop inside the van, verified exact poses and measured the parallel sanctuary shader with the production solo and three-seat view. The shader and visual timer match the worker's normalized source checksums. The remaining 33.3 ms budget miss is tracked in DEV-364. [Physical evidence and full-round results](../docs/performance/2026-11-16-house-frame-times/windows-shading.md).
+
+## 2026-11-16 — House viewport deadlines on Core30
+
+With a 20 ms visual deadline and 110 ms input timer, the physical four-pair study met 33.3 ms pooled p95 in all six solo and three-seat phases. Two individual walks missed the target and one solo first step took 106.424 ms. DEV-364 retains these exceptions. The 30 ms repeating build at eaa32a3 passed 379/379 Windows regressions and installed Castle startup. [Hardware frames, CPU and network dispatch](../docs/performance/2026-11-16-house-frame-times/windows-pacing.md) · [Exact-source Windows suite](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44002540897)
