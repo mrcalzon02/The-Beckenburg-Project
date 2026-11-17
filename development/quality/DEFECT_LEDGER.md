@@ -10,6 +10,62 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-368 — Campaign auto-extraction test pressed the shutter while a hired investigator crossed the doorway
+
+**Status:** Corrected. The packaged Windows multiplayer and embedded desktop campaign checks passed on 82b234b4. · **Affected:** Shared extraction shutter and the embedded desktop campaign test with two autonomous hires
+
+The packaged campaign GUI returned van doorway occupied to the first cargo-button press. The desktop acceptance test then timed out waiting for the original press to succeed.
+
+Cause / uncertainty: Autonomous hires can be on the ramp when the owner decides to retreat. The old obstruction check evaluated standing traversability across the entire site and the documented operating point overlapped the closing door.
+
+Fix / next action: Validate overlap with the shutter itself at the actual hunter posture, move the operating point outside the panel and let the desktop test press the physical control again after an occupied response.
+
+Evidence and verification: Windows installer run 44008762227, VanHumanScaleTest on House/Farmhouse/School, and LanVanExtractionIntegrationTest with solo, departed and outside hunters. Replacement Windows run 44010028477.
+
+Older-map obligation: All vans share the same local shutter bounds. Representative three-site geometry and normal LAN extraction were tested.
+
+### DEV-367 — Round duration varies with crew, evidence access and ghost feeding conditions
+
+**Status:** Pacing adjusted and measured on House. Human round-duration distribution remains open · **Affected:** Shared ghost economy, physical attacks, evidence persistence and typed rites
+
+An autonomous Spirit round resolved in 77 game seconds under the previous timings. Twins wiped two teams in about ten minutes and a camped Hantu could remain at zero energy for minutes.
+
+Cause / uncertainty: Major actions recharged early in the case, typed rites resolved within seconds, and an isolation feeder could exhaust its last movement energy in an occupied room. Tier I UV expired before many return trips.
+
+Fix / next action: Pace feeding, repeated attacks and signature opportunity by elapsed game time, allow an exhausted isolation feeder to leave, retain field deposits for minutes and lengthen defended rituals. Use the replayable cohort to track actual endings and observational cutoffs.
+
+Evidence and verification: development/quality/evidence/investigation-ai-2026-11-16/README.md, GhostPacingTest, TieredUvAndFirelightTest, LanRiteNetworkTest
+
+Older-map obligation: Live timing samples cover House. Establish per-site and human team distributions before treating 20–30 minutes as a roster-wide average.
+
+### DEV-366 — Starting instruments could be bypassed when guessing species or invoking legacy equipment actions
+
+**Status:** Corrected in the shared campaign and LAN paths · **Affected:** Hunter identification, evidence generation and van equipment choices
+
+The host immediately confirmed or rejected a species guess. The legacy book and UV commands could read or deploy specialist equipment from outside the carried loadout. Video-camera orbs had no observable powered feed event.
+
+Cause / uncertainty: Private species truth reached the submission response, alternate commands lacked held-tool checks and the camera feed emitted silhouettes alone.
+
+Fix / next action: Record a shared hypothesis and resolve its accuracy through a defended rite. Validate held equipment, produce finite camera observations from the camera pose and evaluate team tests against public evidence and owned gear.
+
+Evidence and verification: InvestigationDiagnosticsTest, LanGhostIdentityTest, LanSpatialEvidenceIntegrationTest, LanCameraOnlyGhostIntegrationTest and the instrument coverage CSV in investigation-ai-2026-11-16
+
+Older-map obligation: Case rules are shared. Actual camera visibility, deposits and walking travel time depend on authored geometry.
+
+### DEV-365 — Hired investigators did not independently search, retool or complete the physical investigation
+
+**Status:** Corrected on the shared controller and exercised on House · **Affected:** Campaign hires, seven-client development match, home-room investigation and typed team radio
+
+Hires followed with a thermometer. Six developer hunter seats could leave the van volume without entering the building. A team at a ritual X/Z coordinate could still be on the wrong floor.
+
+Cause / uncertainty: Separate controllers modeled different abilities. The navigation targets missed the ramp and the rite floor, while hunters lacked shared evidence and owned-kit decisions.
+
+Fix / next action: Drive normal campaign and developer hunter clients from the same public observations. Follow collision-checked routes, coordinate directed surveys and grounded tests, exchange gear at the rack, and approach the rite at the correct height.
+
+Evidence and verification: CampaignHunterInvestigatorTest, CampaignHunterRackScenario and CampaignAiInvestigationScenario. See development/quality/evidence/investigation-ai-2026-11-16/README.md.
+
+Older-map obligation: House exercises cover the entrance, van rack and the approach to the circle. Audit longer routes, stairs and each ritual site on other maps independently.
+
 ### DEV-364 — House sanctuary crossings and stops exceed the GTX frame budget
 
 **Status:** Physical GTX pooled p95 met in all six phases, 22 of 24 individual trials at target · **Affected:** House van departure and a one-step stop inside the sanctuary, solo and the three-seat hunter viewport

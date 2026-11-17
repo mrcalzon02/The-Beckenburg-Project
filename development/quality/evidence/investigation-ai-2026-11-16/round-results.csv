@@ -1,0 +1,15 @@
+configuration,seed,species,site,anchor,minutes,outcome,first_interior_tick,first_reading_tick,anchor_ward_tick,hypothesis_tick,rite_tick,ghost_returns,hp_damage,mid_case_exchanges
+initial-ghost,1001,TWINS,HOUSE,9,9.18,LOST,137,141,-1,-1,-1,20,300,
+revised-ghost-same-hunters,1001,TWINS,HOUSE,9,22.02,LOST,121,124,2307,-1,-1,13,300,
+shipped,1001,TWINS,HOUSE,9,18.45,LOST,241,247,-1,-1,-1,40,300,29
+initial-ghost,1002,HANTU,HOUSE,1,40.0,ACTIVE,157,161,-1,-1,-1,15,10,
+revised-ghost-same-hunters,1002,HANTU,HOUSE,1,21.69,CLEANSED,137,141,1114,11887,12266,59,156,
+shipped,1002,HANTU,HOUSE,1,24.3,CLEANSED,240,246,2356,13301,13832,61,177,39
+initial-ghost,1003,TWINS,HOUSE,9,10.53,LOST,144,144,-1,3772,-1,13,300,
+revised-ghost-same-hunters,1003,TWINS,HOUSE,9,21.0,LOST,122,122,-1,3657,-1,50,300,
+shipped,1003,TWINS,HOUSE,9,18.18,LOST,172,176,-1,-1,-1,41,300,37
+shipped,94,SPIRIT,HOUSE,4,11.18,ABSOLVED,193,193,401,5326,5651,23,42,21
+shipped-starter,94,SPIRIT,HOUSE,4,24.72,LOST,217,218,457,-1,-1,6,300,0
+intermediate-starter,126,MIMIC,HOUSE,0,35.0,ACTIVE,452,454,679,-1,-1,51,11,
+intermediate-starter,94,SPIRIT,HOUSE,4,26.08,ABSOLVED,481,484,1124,14501,14598,20,70,
+intermediate-stocked-selected-room,244,POLTERGEIST,HOUSE,4,7.75,BANISHED,185,190,382,3737,3747,4,63,
