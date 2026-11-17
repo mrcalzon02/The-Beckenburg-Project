@@ -93,5 +93,33 @@
     "development/levels/rebuild/captures/monastery-cloister-batch/tower-section.png": "9d38d9af5b6845b9bf9c34205a3f403e09bc9801a76ba6c228b11447d688de5b",
     "tools/build_monastery.py": "6d1bc7222d8bf97e34dc554424a93e96374df791a13fd3da68c23c6c9526363b",
     "tools/prepare_monastery.py": "4a86025573c205c520534e6a7e449b5260fd29b0b9809df0e634d44f9ef97905"
+  },
+  "publication": {
+    "construction_commit": "61ebdf8aa48bd9c1492f0d3f4c40d34890b21c6e",
+    "branch": "map/roster-structure-batch",
+    "remote_readback": "61ebdf8aa48bd9c1492f0d3f4c40d34890b21c6e",
+    "draft_pr": 86,
+    "held_base": "map/house-default",
+    "exact_committed_files": 58,
+    "local_gallery_images": 11080,
+    "gallery_run": 44200351037,
+    "gallery_ci": "success",
+    "public_gallery_http": 200,
+    "new_overview_http": 404
+  },
+  "same_source_roster_sweep": {
+    "scope": "25 active native source packets",
+    "ordinary_pass": 536,
+    "ordinary_total": 567,
+    "flights_pass": 236,
+    "complete_vertical_links_pass": 86,
+    "standing_samples": 137850,
+    "invalid_standing": 4312,
+    "visible_rebuild_targets": [
+      "WLD-14",
+      "WLD-15",
+      "WLD-03",
+      "WLD-11"
+    ]
   }
 }

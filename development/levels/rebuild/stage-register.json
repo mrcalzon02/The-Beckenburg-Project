@@ -4336,7 +4336,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "fdb8cfd98902d4d79042e77b829193bd1bd153ff",
+          "source_sha": "61ebdf8aa48bd9c1492f0d3f4c40d34890b21c6e",
           "evidence": [
             "development/levels/rebuild/wld-10/rough-layout.json",
             "development/levels/rebuild/monastery-cloister-pass/checkpoint.json"
@@ -4348,7 +4348,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "fdb8cfd98902d4d79042e77b829193bd1bd153ff",
+          "source_sha": "61ebdf8aa48bd9c1492f0d3f4c40d34890b21c6e",
           "evidence": [
             "development/levels/rebuild/structures/wld-10/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4406,7 +4406,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "fdb8cfd98902d4d79042e77b829193bd1bd153ff",
+          "source_sha": "61ebdf8aa48bd9c1492f0d3f4c40d34890b21c6e",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -4452,7 +4452,7 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "fdb8cfd98902d4d79042e77b829193bd1bd153ff",
+          "source_sha": "61ebdf8aa48bd9c1492f0d3f4c40d34890b21c6e",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-10/placements.json",
             "development/levels/rebuild/furnishings/verification.json",

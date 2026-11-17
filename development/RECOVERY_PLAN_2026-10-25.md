@@ -1782,3 +1782,7 @@ The native structural and standing exports and measured plan are linked from dev
 
 
 The Mine gallery validation run 44197147540 finished successfully at 02b98c9cf06bc701865920949436d36c10bb0acd. Main remains 10fe52cb1feba1267efcf4edce67a5ca1bd3823e. Earlier full multiplayer 44153590389 and installer 44153590626 succeeded at 96bb6cfd7554ff60a2c699144abcfad1688d7d3f, and GPU renderer 44016080200 at a85a47eee203b7fb4d29abcf2a19568262fa5eb6. Those runs cover their recorded revisions. PR 86 remains draft against the held map/house-default parent.
+
+Monastery construction 61ebdf8aa48bd9c1492f0d3f4c40d34890b21c6e was verified on the authorized branch and in draft PR 86. All 58 committed source and evidence hashes match, and the 11,080-image local gallery and hosted run 44200351037 passed. The public gallery returned HTTP 200 and the new overview returned HTTP 404. Public deployment remains pending.
+
+A same-source sweep across the 25 active native packets passed 536 of 567 ordinary links, all 236 declared flights and all 86 complete vertical routes. 4,312 of 137,850 standing lane samples remain invalid. Structural review of the active exports found physical guide strips, disconnected exterior transitions or exposed stair structures at Morrow Point, Saint Elara, Red Mesa, and Mourning Marsh. Morrow Point and Saint Elara have eight open ordinary links between them. Their keeper-house and dock entrances come next, beginning with founded surfaces and measured doorway and stair interfaces. Household and church blockers remain in the queue.
