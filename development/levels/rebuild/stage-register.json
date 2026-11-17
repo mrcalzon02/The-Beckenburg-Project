@@ -3261,7 +3261,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "09e27b8f3941f76ec5a9ca658f72935b951e0df6",
+          "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
             "development/levels/rebuild/wld-05/rough-layout.json",
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
@@ -3274,7 +3274,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "09e27b8f3941f76ec5a9ca658f72935b951e0df6",
+          "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
             "development/levels/rebuild/structures/wld-05/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3332,7 +3332,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "09e27b8f3941f76ec5a9ca658f72935b951e0df6",
+          "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3364,7 +3364,7 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "09e27b8f3941f76ec5a9ca658f72935b951e0df6",
+          "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
