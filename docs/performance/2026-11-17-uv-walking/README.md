@@ -33,3 +33,15 @@ Reproduce using the same freshly compiled `EditorUvPaintProfile --changes OUTPUT
 [Core30 trial 44151619792](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/44151619792) pairs the clean production renderer with a timing-only overlay on one packaged game. Both use the same driver, disabled columns, solo route, loopback three-seat route and one-step hold. The clocks split characters, distance haze, weather, sanctuary, hiding-place rendering, PSX, graphics effects and haunting overlays. EDT time excludes parallel worker CPU. JVM collection counts and compiler activity are process-wide observations. The worker also verifies optical correctness and full TCP settlement.
 
 This source checkpoint starts the physical study. The raw completed trial determines which pass to change next.
+
+## Windows runner time recovered
+
+Three consecutive evidence commits triggered a complete new installer because the workflow ignored the recovery plan but still considered its companion performance progress log and offline scripts release inputs. These jobs also offered three updater downloads to users despite identical gameplay/editor runtime sources.
+
+| Evidence commit | Release | Successful installer job | Occupied seconds | EXE bytes |
+|---|---|---:|---:|---:|
+| 2117262 | 0.1.352 | [44133686620](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44133686620) | 522 | 761,378,464 |
+| d6036a4 | 0.1.353 | [44134665394](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44134665394) | 665 | 761,364,645 |
+| c06ccdc | 0.1.354 | [44136008869](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44136008869) | 531 | 761,373,435 |
+
+The three jobs occupied 1,718 seconds and published 2,284,116,544 bytes of Windows executables. A path-filter replay of all 10, 6 and 6 changed files respectively now skips those three releases. The 18-path editor implementation still ships. Mixed changes to game source, the GPU renderer, runtime assets, installer, editor-kit build and main build script each still ship alongside receipts. Manual dispatch remains available. This figure measures the observed three-job opportunity, not a monthly projection.

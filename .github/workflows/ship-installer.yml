@@ -20,6 +20,9 @@ on:
       - 'RELEASES.md'
       - 'IMPLEMENTATION_SLICE.md'
       - 'docs/**'
+      # Performance receipts and offline analyzers are outside the shipped game/editor.
+      - 'development/performance/CODEX_PROGRESS_LOG.md'
+      - 'tools/performance/**'
       - 'development/RECOVERY_PLAN_2026-10-25.md'
       - 'development/quality/defects.json'
       - 'development/quality/DEFECT_LEDGER.md'
