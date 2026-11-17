@@ -1,0 +1,104 @@
+--- a/SceneRenderer.java
++++ b/SceneRenderer.java
+@@ -12,6 +12,23 @@
+ 
+ /** True perspective-triangle software rasterizer, depth tested at a period-appropriate 320x200. */
+ public final class SceneRenderer {
++    // Diagnostic overlay only. The packaged game and the clean trial use no clocks.
++    private final java.lang.management.ThreadMXBean probeThread=java.lang.management.ManagementFactory.getThreadMXBean();
++    private final java.lang.management.CompilationMXBean probeCompiler=java.lang.management.ManagementFactory.getCompilationMXBean();
++    private final java.util.List<java.lang.management.GarbageCollectorMXBean> probeCollectors=
++        java.lang.management.ManagementFactory.getGarbageCollectorMXBeans();
++    final long[] stageTimes=new long[22];
++    private void probeStage(int stage){
++        stageTimes[stage*2]=System.nanoTime();
++        stageTimes[stage*2+1]=probeThread.getCurrentThreadCpuTime();
++    }
++    private void probeVm(int slot){
++        long count=0;
++        for(var collector:probeCollectors)count+=collector.getCollectionCount();
++        stageTimes[slot]=count;
++        stageTimes[slot+1]=probeCompiler.getTotalCompilationTime();
++    }
++
+     public static final int W=320,H=200;
+     private static final double NEAR=.065;
+     private final boolean worldResidentEnabled=!Boolean.getBoolean("beckenburg.world.resident.disabled");
+@@ -3719,6 +3736,7 @@
+         if(!spiritualWarSanctuaryConfigured||spiritualWarVanSanctuary)areas.add(SafeAreaBarrier.van(map.van()));
+         areas.addAll(map.temporarySafeAreas());areas.addAll(SafeAreaBarrier.visibleWards(map,markers));
+         safeAreaPixels=SafeAreaHaze.draw(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,List.copyOf(areas),sanctuaryRays);
++        probeStage(4);
+         safeAreaPixels+=SafeAreaHaze.drawHiding(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,map);
+     }
+     private void render(HouseMap map,int ghostRoom,boolean visibleGhost,int wardRoom,int hunterRoom,
+@@ -3757,19 +3775,29 @@
+             BeckenburgDeveloperTrace.renderSlow(
+                 geometry.size()+residentOmittedFaces,visibleFaces,renderWidth,renderHeight,
+                 geometryReady-geometryStart,geometryRendered-geometryReady);
++        probeVm(18);
++        probeStage(0);
+         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
++        probeStage(1);
+         if(map.nativeSite())DistanceDetail.apply(pixels,depths,renderWidth,renderHeight,hazeBackground);
++        probeStage(2);
+         renderWeatherMeshes();
++        probeStage(3);
+         renderSafeAreas(map,markers,clock);
++        probeStage(5);
+         long psxStart=System.nanoTime();
+         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
++        probeStage(6);
+         long psxDone=System.nanoTime();
+         applyGraphicsEffects(clock);
++        probeStage(7);
+         long effectsDone=System.nanoTime();
+         int localRoom=map.roomAt(x,eyeHeight-.85,z);
+         GhostHauntingFolio.paint(pixels,renderWidth,renderHeight,hauntings,
+             localRoom,(int)Math.floor(clock*10));
++        probeStage(8);
+         long finished=System.nanoTime();
++        probeVm(20);
+         lastFrameDiagnostics=new FrameDiagnostics(finished-frameBegin,
+             geometryReady-geometryStart,geometryRendered-geometryReady,
+             finished-geometryRendered,geometry.size()+residentOmittedFaces,visibleFaces,
+--- a/LanViewportPerformanceReview.java
++++ b/LanViewportPerformanceReview.java
+@@ -23,7 +23,7 @@
+  */
+ public final class LanViewportPerformanceReview extends RepaintManager {
+     private record Frame(String phase, long time, long compositedFrame, SceneRenderer.FrameDiagnostics cost,
+-                         double x, double eye, double z, double yaw, double pitch, boolean inside) {}
++                         double x, double eye, double z, double yaw, double pitch, boolean inside,long[] stages) {}
+     private java.lang.reflect.Field lastReadback;
+     private record State(String phase, int tick, long received, long delivered) {}
+     private final List<Frame> frames = new ArrayList<>();
+@@ -100,7 +100,7 @@
+         if (sanctuary == null) sanctuary = SafeAreaBarrier.van(panel.worldMap().van());
+         boolean inside = sanctuary.contains(scene.x, scene.eyeHeight, scene.z);
+         frames.add(new Frame(phase, now, composited, cost, scene.x, scene.eyeHeight, scene.z,
+-            scene.yaw, scene.pitch, inside));
++            scene.yaw, scene.pitch, inside,scene.stageTimes.clone()));
+         if (phase.equals("moving") && !inside) leftSanctuary = true;
+         if (phase.equals("returning") && inside && Math.hypot(scene.x - startX, scene.z - startZ) < 1.1) {
+             key(opposite(moveKey), false);
+@@ -213,6 +213,19 @@
+ 
+     private void write(Path output, long movingNs, int peers, boolean solo) throws Exception {
+         Files.createDirectories(output);
++        try(var timing=Files.newBufferedWriter(output.resolve("stages.csv"))){
++            timing.write("phase,time_ns");
++            for(String stage:List.of("sprites","distance","weather","sanctuary","hiding","psx","graphics","folio"))
++                timing.write(","+stage+"_wall_ns,"+stage+"_edt_cpu_ns");
++            timing.write(",gc_count_delta,compiler_ms_delta\n");
++            for(var frame:frames){
++                long[] times=frame.stages();
++                timing.write(frame.phase()+","+frame.time());
++                for(int i=0;i<8;i++)
++                    timing.write(","+(times[2*i+2]-times[2*i])+","+(times[2*i+3]-times[2*i+1]));
++                timing.write(","+(times[20]-times[18])+","+(times[21]-times[19])+"\n");
++            }
++        }
+         try (var out = Files.newBufferedWriter(output.resolve("frames.csv"))) {
+             out.write("phase,time_ns,render_ns,build_ns,geometry_ns,effects_ns,width,height,faces,shadow_rays,composited_gl_frame_id,x,eye,z,yaw,pitch,inside_sanctuary\n");
+             for (var frame : frames) {

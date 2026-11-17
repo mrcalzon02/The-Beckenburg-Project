@@ -45,3 +45,39 @@ Three consecutive evidence commits triggered a complete new installer because th
 | c06ccdc | 0.1.354 | [44136008869](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44136008869) | 531 | 761,373,435 |
 
 The three jobs occupied 1,718 seconds and published 2,284,116,544 bytes of Windows executables. A path-filter replay of all 10, 6 and 6 changed files respectively now skips those three releases. The 18-path editor implementation still ships. Mixed changes to game source, the GPU renderer, runtime assets, installer, editor-kit build and main build script each still ship alongside receipts. Manual dispatch remains available. This figure measures the observed three-job opportunity, not a monthly projection.
+
+## Visible Windows editor and released build
+
+The native [Windows editor run](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44153591003) used the existing showing-window harness, the project's actual one-face UV transform and cancel, a 526 × 539 canvas and 28 visible list rows. Four fresh JVMs ran baseline, candidate, candidate, baseline, ten samples per JVM. The baseline painter ran against the same compiled editor. Each sample includes observation, frame validation, complete visible workspace paint and Toolkit sync.
+
+| Windows full-workspace update | Samples | p50 ms | p95 ms | p99 / max ms | Over 33.3 ms | Over 50 ms |
+|---|---:|---:|---:|---:|---:|---:|
+| Released prior painter | 20 | 907.660 | 930.756 | 930.968 | 20 | 20 |
+| Local redraw | 20 | 15.938 | 21.896 | 22.268 | 0 | 0 |
+
+[Raw Windows samples](windows-window.tsv). Native source-model UV manipulation, apply/cancel, shared history, save/reopen, runtime UV/color parity and installed MCP repair passed. CI artifact 14361461649 contains the native editor evidence. These numbers cover a single visible changed face and a real window on this configuration. Scaling fallbacks, larger multi-face edits and other display configurations still have their own costs.
+
+[Release v0.1.355](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.355) points to source `96bb6cfd7554ff60a2c699144abcfad1688d7d3f`. The [installer](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44153590626) passed packaged three-seat settlement, real embedded solo/two bots, installed Castle launch and external updater. Windows EXE SHA-256 `978757097b8663d4f0ed960ce197e20fbe4ff9dcb3c85fc8a5836f1804dcfb46`. The [focused Castle workflow](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44153590607) passed the empty-room Shade and physical-victim checks.
+
+## Physical post-geometry attribution
+
+Run 44151619792 completed all 16 matched GTX trials, both three-seat settlements and optical controls. The clean/probe arms use one game JAR at c06ccdc with identical gameplay renderer source to release v0.1.355. The probe overlays only diagnostic clocks. The 20,582 advancing frame intervals include one rendered 960 × 540 viewport with two loopback peers in multiplayer. A CPU-side consumed frame interval includes callback scheduling and readback. Hardware scanout is outside this measurement.
+
+| Clean game mode / phase | Intervals | p50 ms | p95 ms | p99 ms | Worst ms | Over 50 ms | Over 100 ms |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| solo / idle | 3679 | 21.560 | 23.796 | 26.572 | 48.149 | 0 | 0 |
+| solo / moving | 533 | 21.465 | 31.752 | 62.997 | 70.690 | 11 | 0 |
+| solo / stopping | 929 | 21.369 | 23.726 | 30.147 | 30.910 | 0 | 0 |
+| tcp / idle | 3683 | 21.513 | 23.639 | 26.396 | 45.454 | 0 | 0 |
+| tcp / moving | 536 | 21.478 | 31.371 | 57.675 | 66.839 | 10 | 0 |
+| tcp / stopping | 929 | 21.382 | 23.792 | 29.282 | 30.968 | 0 | 0 |
+
+All 35 clean and probed gaps above 50 ms ended inside the sanctuary in the first 0.269 seconds after the first moving callback. No fresh shadow rays were generated in any of those gaps. The 14 instrumented gaps each spanned one callback. Sanctuary rendering alone took 42.535–61.136 ms and accounted for 96.8–97.8% of post-geometry time. Its median on these gaps was 55.87 ms solo and 51.51 ms TCP. PSX processing was about 1.3 ms. The hiding-place pass never exceeded 0.136 ms in the instrumented gaps. Two gaps overlapped an increment in JVM collection count and eleven overlapped an increase in total compiler time. These process-wide counters cannot identify the method compiled, a safepoint duration or a causal GC/JIT pause. EDT CPU accounting on Windows is coarse and excludes parallel helper threads.
+
+Each of the 16 one-step stops finished inside, and sixth stable-frame render costs were 7.889–15.870 ms. The historical 127 ms interval remains an open tail risk. [Original worker archive](gtx-stage-raw.zip) · [Per-trial and per-hitch results](gtx-stage-results.json) · [Exact instrumentation diff](effect-stages.patch). Reproduce with `python tools/performance/effect_stage_report.py gtx-stage-raw.zip results.json`. Archive SHA-256 `901b8bcb9a97128ddda64c52c52a119d59df029e7df713c991104adaa76ffcd3`.
+
+## A shader change rejected before using more physical runner time
+
+A candidate skipped the upper ellipsoid test for downward rays below the sanctuary shoulder or rays proved to exit its cylindrical wall. It matched 2.4 million seeded analytic hit distances bit for bit, and every image hash, depth hash and shaded-pixel count matched in both moving-camera pairs. Shader-only p95 worsened in both pairs on the shared Linux worker. The first went from 19.98 to 47.16 ms, the second from 37.77 to 39.73 ms. The baseline p50s were 14.64 and 14.95 ms, versus 32.42 and 16.03 ms with the change. The release retains the original analytic path. [Four raw CSVs and unshipped patch](surface-replay.zip).
+
+The next hardware experiment is [44157367610](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/44157367610). The game package and test driver are identical between arms. One arm runs twelve disposable shader draws before play to exercise changing camera poses, held poses, animation and depth. The experiment separately records priming cost, elapsed time from Java main to the first observed in-view callback, input acceptance, frame tails and the one-step hold.

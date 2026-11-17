@@ -25,12 +25,14 @@ def stage_rows(archive, trial, frames):
         if row["phase"] not in ("idle", "moving", "stopping"):
             continue
         costs = {s: (int(row[s + "_wall_ns"]), int(row[s + "_edt_cpu_ns"])) for s in STAGES}
-        if any(min(pair) < 0 for pair in costs.values()):
+        if any(min(pair) < 0 for pair in costs.values()) or any(int(row[key]) < 0 for key in ("gc_count_delta", "compiler_ms_delta")):
             raise ValueError("Invalid stage clock")
         wall = sum(pair[0] for pair in costs.values())
         if not 0 < wall <= int(frame["effects_ns"]):
             raise ValueError("Stage times do not fit the production effects timer")
         by_phase[row["phase"]].append((int(row["time_ns"]), row, costs))
+    if not any(sum(cpu for _, cpu in costs.values()) > 0 for phase in by_phase.values() for _, _, costs in phase):
+        raise ValueError("No advancing render-thread CPU clock in " + trial)
     return by_phase
 
 

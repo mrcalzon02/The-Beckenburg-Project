@@ -55,6 +55,7 @@ def analyze(path, experiment="haze-columns"):
             raise ValueError(message)
     pooled = defaultdict(list)
     trial_summaries, all_intervals, stops, cpus = [], [], [], []
+    startup = []
     with ZipFile(path) as archive:
         def read(name):
             return archive.read(name).decode("utf-8-sig")
@@ -65,7 +66,7 @@ def analyze(path, experiment="haze-columns"):
         require(provenance["route"] == manifest["experiment"] == experiment, "Wrong route")
         require(provenance["backend"] == "gpu" and provenance["runner"] == "OLD-CORE30-homebrew", "Wrong hardware controller")
         require(provenance["revisions"]["candidate"] == manifest["candidate_sha"], "Candidate SHA mismatch")
-        if experiment == "haze-columns":
+        if experiment in ("haze-columns", "haze-warmup"):
             require(manifest["runtime"] == "same unmodified candidate GPU JAR for both arms", "Not a same-package comparison")
         elif experiment == "effect-stages":
             require(manifest["runtime"] == "one candidate GPU JAR, test-only overlay in probe arm"
@@ -76,6 +77,9 @@ def analyze(path, experiment="haze-columns"):
         else:
             raise ValueError("Unsupported experiment")
         require(manifest["test_driver_lf_sha256"] == "264e0bfae9cb77664a57751d88e01300e216cf77c3da93d00445f9c3b224041e", "Wrong route driver")
+        if experiment == "haze-warmup":
+            require(manifest["priming_driver_lf_sha256"] == "7cd59187c0fb1c71230fe1a896e709b3fda8759e1ad03aac4a50e5317a17137a"
+                    and manifest["draws"] == 12, "Unexpected warmup protocol")
         jar_sha = read("candidate-jar.sha256").strip()
         require(len(jar_sha) == 64 and all(c in "0123456789abcdef" for c in jar_sha), "Invalid package digest")
         expected = {f"pair-{pair}-{mode}-{arm}" for pair in range(1, 5)
@@ -97,6 +101,20 @@ def analyze(path, experiment="haze-columns"):
             require(details["rendered_hunters"] == "1" and float(details["max_travel_metres"]) > .1, "No rendered movement")
             prop = "-Dbeckenburg.experimental.hazeColumns=" + str(experiment == "haze-columns" and arm == "candidate").lower()
             require(prop in read(trial + "/run.log"), "Wrong feature flag")
+            if experiment == "haze-warmup":
+                primed = arm == "candidate"
+                require("-Dbeckenburg.profile.primeHaze=" + str(primed).lower() in read(trial + "/run.log"),
+                        "Warmup flag mismatch")
+                samples = rows(trial + "/priming.csv")
+                require(len(samples) == 1, "Missing startup boundary")
+                row = samples[0]
+                draws, changed = int(row["draws"]), int(row["changed_pixels"])
+                prime_ns, first_ns = int(row["prime_ns"]), int(row["main_to_first_view_callback_ns"])
+                require(row["enabled"] == str(primed).lower() and draws == (12 if primed else 0)
+                        and (changed > 0 if primed else changed == 0) and 0 <= prime_ns < first_ns,
+                        "Invalid priming receipt")
+                startup.append({**labels, "draws": draws, "changed_pixels": changed,
+                                "prime_ms": prime_ns / 1e6, "main_to_first_view_callback_ms": first_ns / 1e6})
             frames = rows(trial + "/frames.csv")
             require(any(r["phase"] == "moving" and r["inside_sanctuary"] == "false" for r in frames), "Never left sanctuary")
             if mode == "tcp":
@@ -137,7 +155,9 @@ def analyze(path, experiment="haze-columns"):
                 require(wall > 0 and used >= 0 and used == int(row["process_cpu_ns"]), "Invalid process CPU boundary")
                 cpus.append({**labels, "phase": row["phase"], "wall_ns": wall, "process_cpu_ns": used,
                              "core_equivalents": used / wall})
-    return {"release_gate": False, "archive_sha256": hashlib.sha256(Path(path).read_bytes()).hexdigest(),
+    if startup and len({s["changed_pixels"] for s in startup if s["arm"] == "candidate"}) != 1:
+        raise ValueError("Warmup workload changed between trials")
+    return {**({"startup": startup} if startup else {}), "release_gate": False, "archive_sha256": hashlib.sha256(Path(path).read_bytes()).hexdigest(),
             "provenance": provenance, "manifest": manifest, "candidate_jar_sha256": jar_sha,
             "pooled": [{"mode": mode, "arm": arm, "phase": phase, **summarize(values)}
                        for (mode, arm, phase), values in sorted(pooled.items())],
@@ -150,8 +170,9 @@ def main():
     parser.add_argument("archive")
     parser.add_argument("output")
     parser.add_argument("--summary-only", action="store_true", help="keep summaries and >50ms hitches; original CSVs remain in the input archive")
+    parser.add_argument("--experiment", choices=("haze-columns", "haze-warmup"), default="haze-columns")
     args = parser.parse_args()
-    report = analyze(args.archive)
+    report = analyze(args.archive, args.experiment)
     if args.summary_only:
         values = report.pop("intervals")
         report["distinct_frame_intervals"] = len(values)

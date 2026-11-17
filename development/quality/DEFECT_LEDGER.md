@@ -12,7 +12,7 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ### DEV-385 — Focused Castle test rejected the Ancient Shade's empty-room manifestation
 
-Windows run 44131170811 stopped on an accepted MANIFEST in the no-body scenario. Empty rooms are the authored witness condition for Shades. The revised check retains the universal STRIKE prohibition, proves a Shade can manifest in the silent control, and requires zero harm and fear for either empty-room action. Both the ghost-domain parity test and physical-victim pursuit check pass locally. This correction changes test expectations only.
+Windows run 44131170811 stopped on an accepted MANIFEST in the no-body scenario. Empty rooms are the authored witness condition for Shades. The revised check retains the universal STRIKE prohibition, proves a Shade can manifest in the silent control, and requires zero harm and fear for either empty-room action. Both the ghost-domain parity test and physical-victim pursuit check pass locally. Focused Windows job 44153590607 passed these checks.
 
 ### DEV-384 — A correctly identified Spirit could strand the investigator on the porch on the way to Absolution
 
@@ -310,6 +310,8 @@ Older-map obligation: The sanctuary shader is shared. The physical proof covers 
 
 Fresh GTX44125683659: columns stays default-off after solo >50ms gaps rise7→15 and two individual solo p95 misses. Both fresh arms avoid >100ms, so the historical127ms issue stays open. All43 >50ms gaps occur inside within0.375s of walking, with zero fresh shadow rays and <=2.669ms geometry; post-geometry44–63ms dominates. All16 stops and sixth-frame holds pass. Next: per-effect render CPU/JIT/GC attribution. Original archive and per-trial data: docs/performance/2026-11-17-engine-editor/.
 
+Physical 44151619792 attributes 96.8–97.8% of post-geometry time to sanctuary rendering in all 14 probed >50 ms gaps. Clean controls still hitch eleven times solo and ten TCP. See docs/performance/2026-11-17-uv-walking/gtx-stage-results.json.
+
 ### DEV-363 — Prepared GPU lighting can reverse which side of House door 2 receives light
 
 **Status:** Open, reproduced on the released renderer and the receiver-reuse experiment · **Affected:** House door 2, room 1, stationary source 0 and two receivers 23 mm apart
@@ -339,6 +341,8 @@ Evidence and verification: development/quality/evidence/editor-regional-seams-20
 Older-map obligation: Profile large native meshes in the editor. This UI observation has no effect on saved geometry or game simulation.
 
 Local one-face preview, undo and selection now repair only the affected canvas regions. The 120,000-face headless measurements include observation and paint, with 192 matched hashes and 144 differential image pairs. Windows and broad edits remain separate. See docs/performance/2026-11-17-uv-walking/README.md.
+
+Showing-window Windows editor run 44153591003 now verifies the one-face improvement at p50/p95 15.938/21.896 ms versus 907.660/930.756 ms. Multi-face and display fallback work remains open.
 
 ### DEV-361 — Healthy joining hunter can lose its connection before entering the 3D view
 
