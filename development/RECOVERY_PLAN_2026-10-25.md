@@ -977,3 +977,7 @@ Starting from `c41bc66c9e09d0118012de748761b57a99bc5f53`, Windows software run 4
 ## 2026-11-16 — House viewport deadlines on Core30
 
 With a 20 ms visual deadline and 110 ms input timer, the physical four-pair study met 33.3 ms pooled p95 in all six solo and three-seat phases. Two individual walks missed the target and one solo first step took 106.424 ms. DEV-364 retains these exceptions. The 30 ms repeating build at eaa32a3 passed 379/379 Windows regressions and installed Castle startup. [Hardware frames, CPU and network dispatch](../docs/performance/2026-11-16-house-frame-times/windows-pacing.md) · [Exact-source Windows suite](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44002540897)
+
+## 2026-11-16 — First outward crossing on the GTX 1660 SUPER
+
+A viewport-wide ray-direction bound skips the sanctuary only when every positive ray leads away from its bounding box. All eight paired GTX crossings dropped from 49.67–86.84 to 16.26–18.00 ms. The matched control and candidate used the released v0.1.339 game and 20 ms timer. All six candidate pooled p95 values met 33.3 ms and 22/24 individual trial phases did. The one 127.349 ms three-seat gap was the first step inside the van. DEV-364 tracks that distinct-frame hitch. The concurrent v0.1.340 game retained the timer and shader behavior and passed its installer smoke tests. [Raw timing, CPU, trajectories, TCP and audits](../docs/performance/2026-11-16-house-frame-times/windows-exit.md) · [v0.1.340](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.340)

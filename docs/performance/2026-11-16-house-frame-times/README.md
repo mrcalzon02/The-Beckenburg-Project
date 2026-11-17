@@ -16,6 +16,8 @@ The v0.1.339 Windows installer ships the four-lane renderer with the measured 20
 
 The physical House door 2 CPU candidate reduced toggle medians but doubled intermediate swing p95 in all eight paired trials. [GTX door CPU evidence](door-2/physical-door-cpu.md)
 
+The outward sanctuary check reduced the first exterior frame gap from 49.67–86.84 ms to 16.26–18.00 ms in all eight physical pairs. Final pooled walking p95 reached 31.59 ms solo and 31.00 ms in three-seat TCP. Two individual walks missed 33.3 ms and a three-seat cold step inside the van took 127.35 ms. [Final GTX per-phase and per-pair results](windows-exit.md)
+
 ## Direct measurements
 
 | Workload | Baseline | Candidate | Measured scope |

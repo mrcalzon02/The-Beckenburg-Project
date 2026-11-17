@@ -62,6 +62,24 @@ public final class SafeAreaHazeDepthReview {
             throw new AssertionError("Haze color/count/depth mismatch at "+eye+" pixel="+Arrays.mismatch(expected,actual));
     }
 
+    private static void nearPlaneDepartures() {
+        var cache=new SafeAreaHaze.RayCache();
+        int seed=9000;
+        double grazingYaw=Math.atan2(43,83*.5);
+        for(int side=0;side<4;side++){
+            double outward=side*Math.PI/2;
+            // Step across each face, then turn a corner ray just into or out of the hull.
+            for(double offset:new double[]{-.01,0,.024}){
+                double radius=DOME.radius()+offset;
+                double x=DOME.x()+radius*Math.sin(outward),z=DOME.z()+radius*Math.cos(outward);
+                for(double turn:new double[]{0,grazingYaw-1e-6,grazingYaw+1e-6,-grazingYaw,Math.PI}){
+                    parity(new Eye(x,DOME.y()+1.62,z,outward+turn,0),seed++,cache);
+                    parity(new Eye(x,DOME.y()+1.62,z,outward+turn,-.08),seed++,cache);
+                }
+            }
+        }
+    }
+
     private static void projectionChanges() {
         var cache=new SafeAreaHaze.RayCache();
         var other=new SafeAreaBarrier.Volume(3,-.7,4,3,1.2,3.2);
@@ -148,8 +166,9 @@ public final class SafeAreaHazeDepthReview {
             var eye=new Eye(x,y,z,rng.nextDouble()*2*Math.PI,rng.nextDouble()*2-1);
             for(int frame=0;frame<4;frame++)parity(eye,i*4+frame,cache);
         }
+        nearPlaneDepartures();
         projectionChanges();
-        System.out.println("PASS 1626800 exact RGB/depth samples with pose changes and live occluders and changed counts against unculled analytic dome");
+        System.out.println("PASS 2114840 exact RGB/depth samples with pose changes and live occluders and changed counts against unculled analytic dome");
         if(args.length>0)benchmark(Path.of(args[0]),args.length>1&&args[1].equals("moving"));
     }
 }

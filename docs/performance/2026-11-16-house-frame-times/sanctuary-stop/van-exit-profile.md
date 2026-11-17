@@ -13,7 +13,7 @@ On the local Mesa route, the projected sanctuary box straddled the near plane. T
 
 The second guarded process timed out later on the return route. Its crossing stage was recorded and its full-phase statistics are unavailable. At the same crossing position in warmed, standalone alternated calls, the two fresh JVMs gave median times of 3.595 to 0.042 ms and 3.903 to 0.052 ms. Each JVM also verified exact output colors, unmodified raw depths and shaded-pixel counts over 2,400 randomized camera views and 300 repeated exit/re-entry frames with moving occluders. This separates the intrinsic raster cost from its larger cold cost in the panel.
 
-The archive contains the guard and instrumentation patches, captured logs and CSVs, exact-view replay, geometric proof and reproduction instructions. The guard is an experiment outside the v0.1.338 executable. Archive SHA-256 is `d5ef21077247226332bebaf3a65f0f1d84cbd5469e83f84dd1c3c46ff8be9ed3`. [Raw trace and reproduction files](van-exit-profile.zip)
+The archive contains the guard and instrumentation patches, captured logs and CSVs, exact-view replay, geometric proof and reproduction instructions. This local experiment preceded [the physical GTX comparison and promotion](../windows-exit.md). Archive SHA-256 is `d5ef21077247226332bebaf3a65f0f1d84cbd5469e83f84dd1c3c46ff8be9ed3`. [Raw trace and reproduction files](van-exit-profile.zip)
 
 ## Earlier steps inside the van
 

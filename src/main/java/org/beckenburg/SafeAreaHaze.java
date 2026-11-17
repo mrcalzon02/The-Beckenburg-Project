@@ -117,6 +117,14 @@ public final class SafeAreaHaze {
                     minX=Math.min(minX,px);maxX=Math.max(maxX,px);minY=Math.min(minY,py);maxY=Math.max(maxY,py);}
             }
             if(maxZ<=.035)continue;
+            // A near-plane-straddling box normally covers the whole screen. If the
+            // eye is outside a side and all screen rays point away from that side,
+            // no positive ray can reach the box or the enclosed haze.
+            if(minZ<=.035){
+                double u=width*.5/focal,v=height*.5/focal,radius=a.radius()+1e-8;
+                if(Math.abs(ox)>radius && Math.signum(ox)*cp*sy>Math.abs(cy)*u+Math.abs(sp*sy)*v+1e-10)continue;
+                if(Math.abs(oz)>radius && Math.signum(oz)*cp*cy>Math.abs(sy)*u+Math.abs(sp*cy)*v+1e-10)continue;
+            }
             int x0=minZ<=.035?0:Math.max(0,(int)Math.floor(minX)-1),x1=minZ<=.035?width-1:Math.min(width-1,(int)Math.ceil(maxX)+1);
             int y0=minZ<=.035?0:Math.max(0,(int)Math.floor(minY)-1),y1=minZ<=.035?height-1:Math.min(height-1,(int)Math.ceil(maxY)+1);
             if(x1<x0||y1<y0)continue;

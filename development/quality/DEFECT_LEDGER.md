@@ -10,6 +10,34 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-370 — Full regression watchdog ends a valid four-seat banishment before settlement
+
+**Status:** Rite-specific process budget corrected · **Affected:** LanRiteNetworkTest in BeckenburgRegressionSuite
+
+The Windows watchdog terminated the four-socket banishment check at 90 seconds before it could observe final settlement.
+
+Cause / uncertainty: A guarded banishment requires 900 normal host ticks, or 90 seconds of rite time alone. Lobby, evidence, travel and the final broadcasts need additional time.
+
+Fix / next action: Allow the real-time rite check to finish within its own bounded process budget. Preserve the original host clock, four peers, ritual duration and assertions.
+
+Evidence and verification: Windows run 44010028592 and timed unmodified LAN rite checks in docs/performance/2026-11-16-house-frame-times/gameplay-timing-checks.zip.
+
+Older-map obligation: The timing budget is specific to this four-seat fixture.
+
+### DEV-369 — Tier I UV expiry check uses the prior trace duration
+
+**Status:** Fixture corrected at the authored lifetime boundary · **Affected:** HunterCountersTest and the Windows regression manifest
+
+The Windows suite reported “old UV expires” at age 97 ticks while the default Tier I mark was still live.
+
+Cause / uncertainty: The campaign evidence update made the default lifetime 1,800 host ticks. The older check expected expiry using the previous duration.
+
+Fix / next action: Check visibility on the last of the 1,800 ticks and require expiry on the following tick. The live evidence and tier logic retain their authored behavior.
+
+Evidence and verification: Windows run 44010028592 plus the original failure, boundary fixtures and live TCP UV checks in docs/performance/2026-11-16-house-frame-times/gameplay-timing-checks.zip.
+
+Older-map obligation: UV sampling uses the same tier lifetimes at all sites. The TCP witness exercised House.
+
 ### DEV-368 — Campaign auto-extraction test pressed the shutter while a hired investigator crossed the doorway
 
 **Status:** Corrected. The packaged Windows multiplayer and embedded desktop campaign checks passed on 82b234b4. · **Affected:** Shared extraction shutter and the embedded desktop campaign test with two autonomous hires
@@ -68,15 +96,15 @@ Older-map obligation: House exercises cover the entrance, van rack and the appro
 
 ### DEV-364 — House sanctuary crossings and stops exceed the GTX frame budget
 
-**Status:** Physical GTX pooled p95 met in all six phases, 22 of 24 individual trials at target · **Affected:** House van departure and a one-step stop inside the sanctuary, solo and the three-seat hunter viewport
+**Status:** GTX first outward crossing resolved in 8/8 pairs. All six pooled p95s on target, cold inside steps remain · **Affected:** House van departure and a one-step stop inside the sanctuary, solo and the three-seat hunter viewport
 
 The released cache produced two early solo walking hitches. Delaying cache admission removed the measured intervals over 100 ms, but stationary frames inside the dome still arrived roughly 68 ms apart.
 
 Cause / uncertainty: Optical shading on repeated and changing sanctuary views runs on the rendering thread. Reaching the next periodic Swing draw adds to some completed-frame gaps. The four-pair Windows tests separate cache admission, serial opacity reuse, parallel scanlines and the visual timer.
 
-Fix / next action: A 20 ms render deadline passed all six pooled p95s and improved 24/24 paired p95 observations relative to repeating 30 ms. Individual walks still reached 34.050 and 33.747 ms p95. One cold step inside the van spanned 106.424 ms between distinct GL frames. Investigate the first two in-dome steps and first outward crossing.
+Fix / next action: The 20 ms render deadline and an exact offscreen sanctuary check reduced all eight first outward crossings below 18.01 ms. Pooled walking p95 is 31.59 ms solo and 31.00 ms with three seats. Two individual walks still missed 33.3 ms. One cold inside step spanned 127.349 ms over two renderer callbacks, including 105.239 ms post-geometry. The first two in-dome steps remain open.
 
-Evidence and verification: docs/performance/2026-11-16-house-frame-times/windows-pacing.md, windows-shading.md and windows-stop.md with original worker ZIPs, per-frame CSVs, per-phase CPU, exact depth controls and full-round receipts
+Evidence and verification: docs/performance/2026-11-16-house-frame-times/windows-exit.md, windows-pacing.md, windows-shading.md and windows-stop.md with original worker ZIPs, per-frame CSVs, per-phase CPU, exact depth controls and full-round receipts
 
 Older-map obligation: The sanctuary shader is shared. The physical proof covers House and one rendered viewport on Core30. Other maps and independent-PC presentation need their own evidence.
 

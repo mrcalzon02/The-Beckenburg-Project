@@ -183,3 +183,7 @@ With a 20 ms visual deadline and 110 ms input timer, the physical four-pair stud
 ## 2026-11-16 — House door 2 CPU comparison
 
 Core30 run 44003061335 confirmed identical color, raw depth and transfer counts on all 144 frames spanning 17 fixed leaf poses at each camera. Source-aware CPU lighting halved median toggle time but moved work into the swing. Its intermediate p95 worsened in eight of eight pairs and it retained all 12 interactions over 100 ms across both camera conditions. The CPU and RGB-only prototypes remain experimental. [Physical door evidence](../../docs/performance/2026-11-16-house-frame-times/door-2/physical-door-cpu.md).
+
+## 2026-11-16 — First outward crossing on the GTX 1660 SUPER
+
+A viewport-wide ray-direction bound skips the sanctuary only when every positive ray leads away from its bounding box. All eight paired GTX crossings dropped from 49.67–86.84 to 16.26–18.00 ms. The matched control and candidate used the released v0.1.339 game and 20 ms timer. All six candidate pooled p95 values met 33.3 ms and 22/24 individual trial phases did. The one 127.349 ms three-seat gap was the first step inside the van. DEV-364 tracks that distinct-frame hitch. The concurrent v0.1.340 game retained the timer and shader behavior and passed its installer smoke tests. [Raw timing, CPU, trajectories, TCP and audits](../../docs/performance/2026-11-16-house-frame-times/windows-exit.md) · [v0.1.340](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.340)

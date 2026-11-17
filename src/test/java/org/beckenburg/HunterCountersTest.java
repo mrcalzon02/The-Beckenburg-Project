@@ -20,14 +20,17 @@ public final class HunterCountersTest {
   ok(throwables.charges(0,HunterCounters.Kind.WARD)==1,"ward ammunition tracked");
   try{throwables.launch(0,HunterCounters.Kind.CROSS,hunter,map,21);throw new AssertionError("cooldown ignored");}
   catch(IllegalArgumentException expected){}
-  traps.leaveUv(4,14);ok(traps.recentUv(4,15),"fresh UV trace");
+  int born=14;
+  traps.leaveUv(4,born);ok(traps.recentUv(4,born+1),"fresh UV trace");
   for(int seat=0;seat<6;seat++){
    HunterCounters six=new HunterCounters();
    six.launch(seat,HunterCounters.Kind.SALT,hunter,map,12);
    ok(six.charges(seat,HunterCounters.Kind.SALT)==2,"every hunter owns independent salt stock");
    six.replenish(seat);ok(six.charges(seat,HunterCounters.Kind.SALT)==3,"every hunter can resupply");
   }
-  ok(!traps.recentUv(4,111),"old UV expires");
+  int lastVisible=born+3*60*10; // Default Tier I lasts three minutes at 10 host ticks per second.
+  ok(traps.recentUv(4,lastVisible),"default UV remains visible on the final Tier I tick");
+  ok(!traps.recentUv(4,lastVisible+1),"default UV expires on the following tick");
   System.out.println("PASS: finite throws, ward persistence, salt grounding and cooldown enforcement");
  }
 }
