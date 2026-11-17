@@ -46,6 +46,7 @@ final class HunterFieldNavigation {
         Vec pos=new Vec(self.x(),self.y(),self.z());
         if(room==goalRoom&&Math.abs(self.y()-gy)<.45&&Math.hypot(self.x()-gx,self.z()-gz)<=tolerance)return Input.simple(Action.WAIT);
         Vec goal=new Vec(gx,gy,gz);
+        boolean approachingStair=false;
         double reach=room==goalRoom?tolerance:.62;
         // The van's physical ramp extends well beyond the room boundary. Leave it
         // along its centre line before turning across the apron towards the house.
@@ -56,11 +57,13 @@ final class HunterFieldNavigation {
             goal=new Vec(end.x(),van.placement().y(),end.z());
         }else if(room!=goalRoom){
             Portal crossing=null;
+            // Equal-hop routes can start at opposite ends of an outdoor approach.
+            double nearest=Double.POSITIVE_INFINITY;
             for(var p:map.level().portalsFrom(room)){
                 int next=room==p.a()?p.b():p.a();
-                if(!p.kind().equals("window")&&distances[next][goalRoom]==distances[room][goalRoom]-1){
-                    crossing=p;break;
-                }
+                if(p.kind().equals("window")||distances[next][goalRoom]!=distances[room][goalRoom]-1)continue;
+                double distance=Math.hypot(pos.x()-p.x(),pos.z()-p.z());
+                if(distance<nearest){nearest=distance;crossing=p;}
             }
             if(crossing==null)return Input.simple(Action.WAIT);
             int next=crossing.a()==room?crossing.b():crossing.a();
@@ -78,10 +81,14 @@ final class HunterFieldNavigation {
                 for(var stair:map.level().stairs())if(stair.a()==room&&stair.b()==next||stair.b()==room&&stair.a()==next){
                     var bottom=new Vec(stair.x0(),stair.y0(),stair.z0());
                     var top=new Vec(stair.x1(),stair.y1(),stair.z1());
+                    approachingStair=true;
                     var entry=room==stair.a()?bottom:top;
                     var exit=room==stair.a()?top:bottom;
-                    goal=stair.contains(pos.x(),pos.z(),.15)&&Math.abs(pos.y()-stair.yAt(pos.x(),pos.z()))<.28
-                        ||separation(pos,entry)<.45?exit:entry;
+                    // The lower floor extends under this flight. Feet close to its entry
+                    // in plan can still be underneath the ramp and must approach its foot.
+                    boolean onSurface=Math.abs(pos.y()-stair.yAt(pos.x(),pos.z()))<.01;
+                    boolean atEntry=separation(pos,entry)<.45;
+                    goal=onSurface&&(stair.contains(pos.x(),pos.z(),.15)||atEntry)?exit:entry;
                     break;
                 }
             }else if(next==HouseMap.EXTRACTION_ROOM){
@@ -111,7 +118,7 @@ final class HunterFieldNavigation {
             // Direct sweeps are cheap on an open floor; use a planned detour when
             // even one of the host's diagonal clearance tests rejects a step.
             if(stationary<2&&separation(pos,goal)>.08){
-                var step=walk(pos,goal);
+                var step=walk(pos,goal,!approachingStair);
                 if(step!=null)return step;
             }
             search=new Search(pos,goal,reach);stationary=0;
@@ -140,13 +147,19 @@ final class HunterFieldNavigation {
         }
         return null;
     }
-    private Input walk(Vec pos,Vec goal){
+    private Input walk(Vec pos,Vec goal){return walk(pos,goal,false);}
+    private Input walk(Vec pos,Vec goal,boolean direct){
         double dx=goal.x()-pos.x(),dz=goal.z()-pos.z(),length=Math.hypot(dx,dz);
         if(length<.001)return null;
         int x=(int)Math.round(dx/length*100),z=(int)Math.round(dz/length*100);
         double scale=.31/Math.hypot(x,z);
         Vec after=clear(pos,pos.x()+x*scale,pos.z()+z*scale);
         if(after==null||separation(after,goal)>=separation(pos,goal))return null;
+        // A straight line to the next doorway can double back down the flight.
+        // Ask the local search for a walkable landing route before taking that step.
+        if(direct&&Math.abs(after.y()-goal.y())>Math.abs(pos.y()-goal.y())+.03)
+            for(var stair:map.level().stairs())
+                if(stair.contains(after.x(),after.z(),.15)&&Math.abs(after.y()-stair.yAt(after.x(),after.z()))<.01)return null;
         return Input.walk(x,z);
     }
     private Vec clear(Vec pos,double x,double z){

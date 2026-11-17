@@ -40,7 +40,7 @@ public final class LanWitnessOccupancyIntegrationTest {
             }else if(kind.equals("SHUTTERGHOST")){
                 shutter=frame;
             }else if(kind.equals("ACCEPT")||kind.equals("REJECT")||kind.equals("CAMERA")
-                    ||kind.equals("LOBBY")||kind.equals("INFO")){
+                    ||kind.equals("LOBBY")||kind.equals("INFO")||kind.equals("OWNREADY")){
                 commands.add(frame);
             }
         }
@@ -111,8 +111,8 @@ public final class LanWitnessOccupancyIntegrationTest {
             .filter(h->h.connected()&&h.body().room()==ROOM).count();
     }
 
-    private record Capture(int count,int tick,String frame,List<SceneRenderer.RemoteBody> bodies){
-        void write(SceneRenderer r,Path folder,GhostIdentity.Type species,HouseMap map,LevelDefinition.Vec lens)throws Exception{
+    private record Capture(String name,int tick,String frame,List<SceneRenderer.RemoteBody> bodies){
+        void write(SceneRenderer r,Path folder,HouseMap map,LevelDefinition.Vec lens)throws Exception{
             r.x=lens.x();r.z=lens.z();r.eyeHeight=lens.y()+1.62;r.yaw=0;r.pitch=-.035;
             r.lamp=false;
             r.setFieldOfView(EquipmentOptics.forTier(EquipmentTiers.Tier.I).videoFieldOfView());
@@ -123,7 +123,7 @@ public final class LanWitnessOccupancyIntegrationTest {
                 LanGhostAnimation.Phase.LURK,Integer.parseInt(p.get(7)),0,false,p.get(8).equals("GREEN"),p.get(9));
             r.drawNetwork(map,bodies,body,tick*.1);
             Files.createDirectories(folder);
-            var file=folder.resolve(species.name().toLowerCase(java.util.Locale.ROOT)+"-"+count+".png");
+            var file=folder.resolve(name+".png");
             javax.imageio.ImageIO.write(r.image(),"png",file.toFile());
         }
     }
@@ -149,33 +149,64 @@ public final class LanWitnessOccupancyIntegrationTest {
         return cast;
     }
 
-    private static void attentionControl(Player van,Player camera,Player partner,Player ghost,GhostDomain domain,Object lock)throws Exception{
-        van.findings.clear();
-        int cast=manifest(camera,ghost,domain,lock,false);
-        int first=(cast/10+1)*10;
-        // An eyes frame on a later tick is a wire-order barrier for the earlier monitor refresh.
-        van.sample(EYES,first+5,0,false);camera.sample(EYES,first+5,0,false);
-        require(!van.optics.get(FEED).containsKey(first)&&!camera.optics.get(LENS).containsKey(first),
-            "The unwatched receiver or stowed viewfinder received an optical sample");
-        van.watch(2);
-        van.sample(FEED+"|2",first+10,0,false);
-        van.sample(EYES,first+15,0,false);
-        require(!van.optics.get(FEED).containsKey(first+10),"Viewing camera 3 also disclosed camera 1");
-        require(van.findings.isEmpty(),"An unattended camera reported or recorded the ghost: "+van.findings);
-        van.watch(0);
-        van.sample(FEED,first+20,0,true);
-        require(van.findings.isEmpty(),"Simply seeing video wrote a finding: "+van.findings);
-        van.client.note(GhostFieldGuide.Clue.REMOTE_EMPTY,FieldJournal.Status.SEEN);
-        van.await("ACCEPT|NOTE|REMOTE_EMPTY");
-        require(van.findings.stream().anyMatch(f->f.startsWith("NOTE|REMOTE_EMPTY|SEEN|0|")),
-            "The human operator's manual notebook mark did not reach the team");
-        partner.client.journal();partner.await("ACCEPT|JOURNAL");
-        require(partner.findings.stream().anyMatch(f->f.startsWith("NOTE|REMOTE_EMPTY|SEEN|0|")),
-            "The human operator's mark was not shared with a field investigator");
-        require(!van.findings.contains("TASK|DONE|PHOTO_EVENT"),
-            "Manually marking van video credited a still-photo objective");
-        camera.client.watchHeldLens();camera.await("ACCEPT|WATCH|LENS");
-        System.out.println("PASS two powered cameras: unattended and wrong feed silent, active observer saw figure and manually marked journal");
+    private static void attentionControl(Player van,Player camera,Player partner,Player ghost,GhostDomain domain,Object lock,List<Capture> captures)throws Exception{
+        var view=LanWorldGuiTest.onEdt(()->new LanWorldPanel(van.client));
+        try{
+            van.findings.clear();
+            int cast=manifest(camera,ghost,domain,lock,false);
+            int first=(cast/10+1)*10;
+            // An eyes frame on a later tick is a wire-order barrier for the earlier monitor refresh.
+            van.sample(EYES,first+5,0,false);camera.sample(EYES,first+5,0,false);
+            require(!van.optics.get(FEED).containsKey(first)&&!camera.optics.get(LENS).containsKey(first),
+                "The unwatched receiver or stowed viewfinder received an optical sample");
+            van.watch(2);
+            van.sample(FEED+"|2",first+10,0,false);
+            van.sample(EYES,first+15,0,false);
+            require(!van.optics.get(FEED).containsKey(first+10),"Viewing camera 3 also disclosed camera 1");
+            require(van.findings.isEmpty(),"An unattended camera reported or recorded the ghost: "+van.findings);
+            camera.client.watchHeldLens();camera.await("ACCEPT|WATCH|LENS");
+            LanWorldGuiTest.onEdt(()->{view.updateCameraAttention(0);return null;});
+            String selection=van.await("ACCEPT|WATCH|CAMERA|0");
+            LanWorldGuiTest.onEdt(()->{view.onEvent(selection);return null;});
+            van.sample(FEED,first+20,0,true);camera.sample(LENS,first+20,0,true);
+            camera.watch(-1);
+            String observed=van.optics.get(FEED).get(first+20);
+            require(van.findings.isEmpty(),"Simply seeing video wrote a finding: "+van.findings);
+            van.client.note(GhostFieldGuide.Clue.REMOTE_EMPTY,FieldJournal.Status.SEEN);
+            van.await("ACCEPT|NOTE|REMOTE_EMPTY");
+            require(van.findings.stream().anyMatch(f->f.startsWith("NOTE|REMOTE_EMPTY|SEEN|0|")),
+                "The human operator's manual notebook mark did not reach the team");
+            partner.client.journal();partner.await("ACCEPT|JOURNAL");
+            require(partner.findings.stream().anyMatch(f->f.startsWith("NOTE|REMOTE_EMPTY|SEEN|0|")),
+                "The human operator's mark was not shared with a field investigator");
+            require(!van.findings.contains("TASK|DONE|PHOTO_EVENT"),
+                "Manually marking van video credited a still-photo objective");
+            int findingsBeforeClose=van.findings.size();
+            LanWorldGuiTest.onEdt(()->{
+                view.onEvent(observed);
+                var bodies=(java.util.Map<?,?>)LooseClutterNetworkTest.field(view,"cameraGhostBodies");
+                require(!bodies.isEmpty(),"The watched frame never reached the panel");
+                view.close(); // Return to the lobby while this TCP client stays connected.
+                view.onEvent(observed); // A last frame can still be queued on the UI thread.
+                require(bodies.isEmpty(),"Returning to the lobby retained an apparition");
+                return null;
+            });
+            van.await("ACCEPT|WATCH|NONE");
+            int afterExpiry=first+60;
+            van.sample(EYES,afterExpiry,0,false);camera.sample(EYES,afterExpiry,0,false);
+            require(camera.optics.get(LENS).subMap(first+30,true,afterExpiry,true).isEmpty(),
+                "A lowered field viewfinder received imagery");
+            require(van.optics.get(FEED).subMap(first+30,true,afterExpiry,true).isEmpty(),
+                "The lobby received images from a closed investigation view");
+            require(van.findings.size()==findingsBeforeClose,"Closing a monitor created a finding or alert");
+            van.watch(0);camera.client.watchHeldLens();camera.await("ACCEPT|WATCH|LENS");
+            van.sample(FEED,afterExpiry+10,0,false);camera.sample(LENS,afterExpiry+10,0,false);
+            require(van.findings.size()==findingsBeforeClose,"Reopening the camera replayed a finding or alert");
+            captures.add(new Capture("watch-before-close",first+20,observed,List.of()));
+            captures.add(new Capture("watch-after-reopen",afterExpiry+10,van.optics.get(FEED).get(afterExpiry+10),List.of()));
+            System.out.println("PASS closing the investigation mid-manifestation unsubscribed the surviving client; reopened monitor and field viewfinder were clear");
+            System.out.println("PASS two powered cameras: unattended and wrong feed silent, active observer saw figure and manually marked journal");
+        }finally{LanWorldGuiTest.onEdt(()->{view.close();return null;});}
     }
 
     private static void checkPrintReport(LanHost host,Object lock,Player operator,Player photographer)throws Exception{
@@ -259,15 +290,15 @@ public final class LanWitnessOccupancyIntegrationTest {
             camera.sample(EYES,idleTick,qualifying,false);
             camera.expose(qualifying,false);
 
+            var captures=new java.util.ArrayList<Capture>();
             if(species==GhostIdentity.Type.SHADE){
                 van.watch(-1);camera.watch(-1);
-                attentionControl(van,camera,partner,ghost,domain,lock);
+                attentionControl(van,camera,partner,ghost,domain,lock,captures);
             }
             int cast=manifest(camera,ghost,domain,lock,qualifying>0);
             if(qualifying>0)cross(camera,-1);
             if(qualifying==2)cross(partner,-1);
             int first=(cast/10+1)*10;
-            var captures=new java.util.ArrayList<Capture>();
             int[] counts={0,1,2,1,0};
             for(int i=0;i<counts.length;i++){
                 if(i==1)cross(camera,1);
@@ -296,22 +327,98 @@ public final class LanWitnessOccupancyIntegrationTest {
                         var b=snapshot.hunters().get(seat).body();
                         bodies.add(new SceneRenderer.RemoteBody(b.x(),b.y(),b.z(),seat,b.heading()));
                     }
-                    captures.add(new Capture(count,tick,van.optics.get(FEED).get(tick),bodies));
+                    captures.add(new Capture(species.name().toLowerCase(java.util.Locale.ROOT)+"-"+count,tick,van.optics.get(FEED).get(tick),bodies));
                 }
                 synchronized(lock){require(domain.manifested(),"Timed out between samples for "+species);}
             }
             require(!camera.optics.containsKey(FEED)&&!partner.optics.containsKey(FEED)
                 &&ghost.optics.isEmpty(),"Remote optics reached an unauthorized seat");
             if(species==GhostIdentity.Type.SHADE)checkPrintReport(host,lock,van,camera);
-            if(!captures.isEmpty()){
+            if(folder!=null&&!captures.isEmpty()){
                 var renderer=new SceneRenderer();
-                for(var capture:captures)capture.write(renderer,folder,species,map,mount);
+                for(var capture:captures)capture.write(renderer,folder,map,mount);
             }
             System.out.println("PASS "+species+" video feed, doorway photo lens, direct sight and idle control; "
                 +"0 -> 1 -> 2 -> 1 -> 0 investigators during one manifestation at tick "+cast);
         }
     }
+    private record Mount(LevelDefinition.Vec position,int heading){}
+    private static Mount facingAnchor(HouseMap map,int anchor){
+        var target=SafeAreaBarrier.ghostSpawn(map,anchor);
+        for(double radius:new double[]{3,2,1.5})for(int heading=0;heading<360;heading+=15){
+            double yaw=Math.toRadians(heading);
+            double x=target.x()-radius*Math.sin(yaw),z=target.z()-radius*Math.cos(yaw);
+            double y=map.groundHeight(x,z,anchor);
+            if(map.roomAt(x,y,z)==anchor&&map.traversable(x,y,z)
+                    &&map.clearLineOfSight(x,y+1.62,z,target.x(),target.y()+1.2,target.z()))
+                return new Mount(new LevelDefinition.Vec(x,y,z),heading);
+        }
+        throw new AssertionError("No accessible camera view in "+map.site()+" "+map.roomName(anchor));
+    }
+
+    /** Only positions the investigator for equipment setup. All ghost movement and actions are autonomous. */
+    private static void watchAutonomousShade(HouseMap.Site site)throws Exception{
+        long seed=2;
+        try(var host=LanHost.investigation("127.0.0.1",0,GhostIdentity.Type.SHADE,
+                CustomContract.standard(1),false,site,null,seed,10);
+            var operator=new Player(host,false,"Van operator",true)){
+            operator.client.ready();operator.await("OWNREADY|YES");
+            operator.client.start();operator.await("INFO|mission started");
+            operator.client.view3D();operator.await("ACCEPT|VIEW3D");
+            var map=(HouseMap)LooseClutterNetworkTest.field(host,"map");
+            var world=(LanWorld)LooseClutterNetworkTest.field(host,"world");
+            var lock=LooseClutterNetworkTest.field(host,"mutex");
+            int anchor=LanHost.chooseAnchor(map,seed);
+            var rack=map.van().location(VanStaging.Station.EQUIPMENT);
+            place(lock,map,world,0,new LevelDefinition.Vec(rack.x(),VanStaging.FLOOR_Y,rack.z()));
+            operator.client.equipAt(0,"VIDEO_CAMERA");operator.await("ACCEPT|GEAREQUIP|0|VIDEO_CAMERA");
+
+            var mount=facingAnchor(map,anchor);
+            place(lock,map,world,0,mount.position());
+            operator.client.turn(mount.heading());operator.client.useHeldEquipment();
+            operator.await("ACCEPT|GEARUSE|VIDEO_CAMERA");
+            var relay=map.van().location(VanStaging.Station.RELAY);
+            place(lock,map,world,0,new LevelDefinition.Vec(relay.x(),VanStaging.FLOOR_Y,relay.z()));
+            operator.client.turn(new HunterCameraAttention(map).screenHeading(world.body(0)));
+            operator.watch(0);
+            operator.findings.removeIf(frame->frame.equals("CASEFILE|RESET"));
+
+            var rooms=new java.util.TreeSet<Integer>();
+            var feed=operator.optics.computeIfAbsent(FEED,key->new ConcurrentSkipListMap<>());
+            String firstImage=null;
+            int previous=-1,returns=0;
+            long deadline=System.nanoTime()+TimeUnit.SECONDS.toNanos(50);
+            while(System.nanoTime()<deadline){
+                var state=host.devAdminSnapshot();
+                require(state.running()&&state.ghost().hostAiFallback()&&!state.ghost().clientConnected(),
+                    "Expected an active case with an autonomous ghost");
+                int room=state.ghost().body().room();
+                rooms.add(room);
+                if(previous>=0&&previous!=anchor&&room==anchor)returns++;
+                previous=room;
+                if(firstImage==null)for(String frame:feed.values()){
+                    if(frame.startsWith("CAMGHOST|0|a|VISIBLE|")){
+                        var parts=LanProtocol.parts(frame);
+                        if(Integer.parseInt(parts.get(11))==anchor){firstImage=frame;break;}
+                    }
+                }
+                if((firstImage!=null&&returns>0)||state.tick()>=2400)break;
+                Thread.sleep(15);
+            }
+            require(firstImage!=null&&returns>0,site+" did not produce both an autonomous return and a visible figure");
+            var frame=LanProtocol.parts(firstImage);
+            require(frame.get(12).equals("0"),"Investigator entered the subject room during the watch");
+            require(operator.findings.isEmpty(),"The camera filed a sighting without an investigator report");
+            System.out.printf("PASS %s / %s: autonomous Shade, first visible tick %s, living occupants %s, rooms traversed %s, observed home returns %d, automatic findings %d%n",
+                site,map.roomName(anchor),frame.get(10),frame.get(12),rooms,returns,operator.findings.size());
+        }
+    }
+
     public static void main(String[] args)throws Exception{
+        if(args.length==1&&args[0].equals("--autonomous")){
+            for(var site:AuthoredTestSupport.SITES)watchAutonomousShade(site);
+            return;
+        }
         Path output=args.length==0?null:Path.of(args[0]);
         var species=List.of(GhostIdentity.Type.SHADE,GhostIdentity.Type.BANSHEE,GhostIdentity.Type.POLTERGEIST);
         if(args.length>1){

@@ -113,8 +113,35 @@ public final class CampaignHunterInvestigatorTest {
         ai.accept("THREAT|EVADED|0");ai.accept("COUNTERAMMO|0|2|3");ai.accept("THREAT|START|8|1");
         require(ai.decide(111,initial,null).action()==CampaignGuestBot.Action.WAIT,"Hold and finite stock respected");
     }
-    public static void main(String[] args){
-        var map=new HouseMap();windup(map);
+    private static void abandonedRoomLead(HouseMap map)throws ReflectiveOperationException{
+        var ai=new CampaignHunterInvestigator(map,1);ai.assignSeat(0);
+        var goal=CampaignHunterInvestigator.class.getDeclaredField("searchRoom");goal.setAccessible(true);
+        ai.accept("PROGRESS|100|0|0|0|0|0|ACTIVE");
+        reading(ai,10,4,"EMF_READER","EMF 8/10");reading(ai,120,4,"EMF_READER","EMF 8/10");
+        var hall=body(map,4);var foyer=body(map,0);
+        for(int tick=125;tick<=700;tick++)ai.decide(tick,hall,null);
+        int next=goal.getInt(ai);
+        require(next>=0&&next!=4,"The completed hall survey chose a new patrol room");
+        ai.decide(701,foyer,null);
+        require(goal.getInt(ai)==next,"Old readings reversed an unswept-room patrol without a fresh local observation");
+        ai.accept(new LanEvidenceJournal.Entry(702,1,4,"EMF_READER",LanEvidenceJournal.Finding.OBSERVED,"EMF 8/10").frame());
+        ai.decide(703,foyer,null);
+        require(goal.getInt(ai)==4,"A new positive after the survey must recall the investigator");
+        ai.accept("CHAT|RADIO|1|704|Defensive ward only in "+map.roomName(4)+".");
+        require(ai.suspectedRoom()!=4&&goal.getInt(ai)!=4,"A disproved home room must retire its active pursuit");
+        ai.accept("CHAT|RADIO|1|705|H1 search 4");
+        var expected=new HunterFieldNavigation(map).to(720,foyer,4,map.centerX(4),map.centerZ(4),1);
+        require(expected.action()==CampaignGuestBot.Action.WALK||expected.action()==CampaignGuestBot.Action.DOOR,
+            "A route must exist for the directed-room control");
+        boolean followed=false;
+        for(int tick=706;tick<=725;tick++){
+            var movement=ai.decide(tick,foyer,null);
+            if(movement.action()==expected.action()&&movement.dx()==expected.dx()&&movement.dz()==expected.dz()){followed=true;break;}
+        }
+        require(followed,"A player can still order a search of a room excluded as the home");
+    }
+    public static void main(String[] args)throws ReflectiveOperationException{
+        var map=new HouseMap();windup(map);abandonedRoomLead(map);
         var ai=new CampaignHunterInvestigator(map,1);ai.assignSeat(1);
         var home=body(map,0);
         reading(ai,1,2,"THERMOMETER","Air -5.5?C / 22.1?F");

@@ -20,6 +20,7 @@ on:
       - 'src/main/java/org/beckenburg/HunterFieldNavigation.java'
       - 'src/main/java/org/beckenburg/HunterWitnessExperiment.java'
       - 'src/test/java/org/beckenburg/CampaignWitnessWatchScenario.java'
+      - 'src/test/java/org/beckenburg/CampaignDirectedCameraScenario.java'
       - 'src/test/java/org/beckenburg/LanWitnessOccupancyIntegrationTest.java'
       - 'src/main/java/org/beckenburg/InvestigationDiagnostics.java'
       - 'src/main/java/org/beckenburg/GhostPacing.java'
@@ -85,8 +86,12 @@ jobs:
         run: |
           & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.LanWitnessOccupancyIntegrationTest
           if ($LASTEXITCODE -ne 0) { throw "Live manifestation conditions failed ($LASTEXITCODE)" }
+          & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.LanWitnessOccupancyIntegrationTest --autonomous
+          if ($LASTEXITCODE -ne 0) { throw "Autonomous empty-room manifestation failed ($LASTEXITCODE)" }
           & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.CampaignWitnessWatchScenario
           if ($LASTEXITCODE -ne 0) { throw "Campaign witness watch failed ($LASTEXITCODE)" }
+          & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.CampaignDirectedCameraScenario
+          if ($LASTEXITCODE -ne 0) { throw "Directed hire camera watch failed ($LASTEXITCODE)" }
 
       - name: Measure complete autonomous campaign clocks
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.measure_pacing }}

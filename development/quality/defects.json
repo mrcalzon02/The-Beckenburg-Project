@@ -3,6 +3,94 @@
   "updated": "2026-11-16",
   "issues": [
     {
+      "id": "DEV-380",
+      "title": "Equal-length room routes sent the dining-room investigator into an exterior dead end",
+      "status": "Baseline socket stalled; corrected socket reached the Dining nook and returned to the van relay",
+      "affected": "House route selection when multiple doorways are equally close in room count",
+      "symptom": "Starting at the van, the hunter chose the route through the exterior and stayed outside for all 1,500 observed ticks.",
+      "cause": "When routes were tied by number of rooms the portal listing order could favor a distant entrance.",
+      "action": "Choose a physically closer portal among equally short room routes and check an actual outbound and return journey.",
+      "evidence": "Dining socket reproduction and real route in development/quality/evidence/camera-attention-verification-2026-11-16/",
+      "older_maps": "The tie-break applies across maps. House is the location of the controlled comparison."
+    },
+    {
+      "id": "DEV-379",
+      "title": "A completed investigation sweep could turn back toward an old or disqualified room",
+      "status": "Reproduced with the production investigator using the public instrument and radio messages",
+      "affected": "Autonomous investigator room search after positive instrument readings or a teammate’s defensive ward",
+      "symptom": "At tick 700 the hire selected a fresh room after finishing a survey. Without new evidence it turned back at tick 701. A defensive-ward report at 703 removed the old hypothesis but left the navigation target pointing at that room.",
+      "cause": "Older positive counts could repeatedly force a new route toward a surveyed room. Clearing a room hypothesis did not clear an existing route derived from it.",
+      "action": "Distinguish new local evidence after a survey from evidence already investigated. Clear an automatic route when its supporting room is disqualified while preserving confirmed objectives and direct player orders.",
+      "evidence": "Lead replay and fresh-evidence controls in development/quality/evidence/camera-attention-verification-2026-11-16/",
+      "older_maps": "The search decision is shared. Physical traversal and the observed campaign behavior were tested on House."
+    },
+    {
+      "id": "DEV-378",
+      "title": "Stair approach and departure could trap investigators on the House flights",
+      "status": "Original upper-stair and cellar-return failures reproduced; corrected sockets traversed both flights in both directions",
+      "affected": "Investigator paths from the van to rooms reached through the House upper stair",
+      "symptom": "A hunter repeatedly walked underneath the upper flight on the Master bedroom route. An independent socket got to the cellar but then failed to return to the van in 1,500 ticks.",
+      "cause": "Plan-view proximity could advance a waypoint while the hunter was beneath the ramp. On departure a direct shortcut could also drive the hunter back onto the flight instead of around the landing.",
+      "action": "Require the hunter’s feet to be on the sloped surface to cross it. When a direct approach to another doorway heads back up or down a flight, request a local walkable path.",
+      "evidence": "Van-to-Master, return-to-relay, cellar and foyer controls in development/quality/evidence/camera-attention-verification-2026-11-16/",
+      "older_maps": "The navigator is shared. The controlled stair reproduction uses the House."
+    },
+    {
+      "id": "DEV-377",
+      "title": "An ordinary hired video-camera assignment waited for a retired casefile message",
+      "status": "Ordinary paid deployment, physical travel, channel selection and blank video exercised through the real hire and host",
+      "affected": "Hired investigator using a video camera as an ordinary requested diagnostic tool",
+      "symptom": "The investigator could place their camera without starting the return-to-monitor phase of that assignment. The explicit team formation command had its own separate watch path.",
+      "cause": "The watch depended on a VIDEO_CAMERA casefile row. After replacing that trigger with the equipment receipt, the travel time could still consume the observation budget before the investigator reached the monitor.",
+      "action": "Start a new assignment on the owner’s accepted deployment or an explicit order to use their existing camera. Allow travel to the relay, then count watched time only after the operator faces the screen and selects the correct feed.",
+      "evidence": "Hunter equipment receipt tests and development/quality/evidence/camera-attention-verification-2026-11-16/",
+      "older_maps": "The receipt and subscription rules are shared. Physical movement to the monitor and the actual observation still depend on the site and feed."
+    },
+    {
+      "id": "DEV-376",
+      "title": "An empty video camera battery prevented physical pickup",
+      "status": "Exercised through the shared field equipment and rack service rules",
+      "affected": "Human and hired investigators carrying a deployed video camera",
+      "symptom": "Even the owner standing beside a deployed camera could receive a battery error when trying to pick it up after it ran dry.",
+      "cause": "The equipment-use check treated collecting an already deployed camera as another powered use of the device.",
+      "action": "Permit physical retrieval of a flat deployed camera. Keep the original ownership, proximity and powered-deployment checks. Recharge at the van.",
+      "evidence": "Camera retrieval and service controls in development/quality/evidence/camera-attention-verification-2026-11-16/",
+      "older_maps": "Retrieval is shared across sites. The controlled physical pickup and long campaign observations use House."
+    },
+    {
+      "id": "DEV-375",
+      "title": "A hired investigator repeatedly requested van service while their camera was still in the field",
+      "status": "Reproduced in a stocked House campaign; tested against the corrected service order",
+      "affected": "Independent hired investigations, staffed camera watches and four-slot van rack service",
+      "symptom": "In a Banshee case the investigator returned to the rack and repeatedly asked for a refill while their camera stayed deployed; the case reached its 35-minute observation limit.",
+      "cause": "The investigator prioritized equipment service over collecting the camera. A rejected refill left that request active at the rack.",
+      "action": "Route the owner to their deployed camera, wait for the host to confirm its retrieval, and then proceed to the van for service. Verify the player can take the serviced device back into the field.",
+      "evidence": "Campaign seed 1061 and the independent equipment and service checks in development/quality/evidence/camera-attention-verification-2026-11-16/",
+      "older_maps": "Field and rack paths depend on authored navigation. House provided the long-round reproduction."
+    },
+    {
+      "id": "DEV-373",
+      "title": "Returning to the Castle lobby left a closed camera panel subscribed",
+      "status": "Corrected; the live socket and the reopened panel are exercised by regression",
+      "affected": "Hunter returning from the 3D world to the Castle lobby with the session still connected",
+      "symptom": "The host continued delivering images for the previous selected camera after the panel had closed and its observer was in the lobby.",
+      "cause": "Closing the panel stopped the timer that normally releases camera attention, without first cancelling the existing subscription.",
+      "action": "Release the subscription and drop camera state when the world view closes or the round ends. Exercise a real lobby exit while a manifestation is visible, then re-enter after it expires.",
+      "evidence": "LanWitnessOccupancyIntegrationTest and development/quality/evidence/camera-attention-verification-2026-11-16/",
+      "older_maps": "Applies to the shared hunter view lifecycle. The before/after socket reproduction uses the House."
+    },
+    {
+      "id": "DEV-374",
+      "title": "Queued camera light patterns could reach the field view after the operator stopped watching",
+      "status": "Corrected; see the receiver-switch and projected-light checks",
+      "affected": "Van feed, investigator field viewport, D.O.T.S. projector and laser-grid contact rendering",
+      "symptom": "Tagged patterns in flight during a feed change could update the field renderer after the receiver closed. Its transient state was also copied between the field and van camera renderers.",
+      "cause": "The receiver checked which camera was selected without checking active attention, and both views shared their transient contact state.",
+      "action": "Validate the watched camera owner when delivering projected-light samples, retain local and remote contacts in their respective renderers, and clear transient receiver state on a view change.",
+      "evidence": "LanProjectedLightWatchTest, LanWitnessOccupancyIntegrationTest and development/quality/evidence/camera-attention-verification-2026-11-16/",
+      "older_maps": "The receiver is common to all sites. Physical projector and grid sources were exercised in the House."
+    },
+    {
       "id": "DEV-372",
       "title": "Unattended cameras could disclose optical evidence or award sighting credit",
       "status": "Corrected for explicit observation, active camera selection and manual reporting",

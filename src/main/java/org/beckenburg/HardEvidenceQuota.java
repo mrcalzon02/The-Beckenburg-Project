@@ -24,7 +24,7 @@ public final class HardEvidenceQuota {
     /**
      * One distinct, guaranteed three-evidence combination per ghost. These
      * combinations are the Medium contract's three actual hard-positive
-     * producers. Every combination is unique across the full roster of 23 species and now includes
+     * producers. Every combination is unique across the full roster and includes
      * physically observable results from the additional authored instruments;
      * D.O.T.S. remains reserved for Wraith, Shade and Specter.
      */

@@ -23,7 +23,7 @@ public final class HunterWitnessExperimentTest {
     private static void setupAndRetest(HouseMap map){
         var reports=new ArrayList<String>();
         var equipment=new HunterDiagnosticEquipment();
-        equipment.frame("GEAROWNED|VIDEO_CAMERA:I",1);
+        equipment.frame("GEAROWNED|VIDEO_CAMERA:I",1,1);
         var test=plan(map,equipment);
         var here=body(map,0,0);
         var van=monitor(map);
@@ -36,7 +36,7 @@ public final class HunterWitnessExperimentTest {
         var rack=map.van().location(VanStaging.Station.EQUIPMENT);
         var swap=test.act(50,1,new LanWorld.Body(rack.x(),map.van().floorY(),rack.z(),0,HouseMap.EXTRACTION_ROOM),reports::add);
         check(swap.action()==Action.EQUIP&&swap.equipment().equals("VIDEO_CAMERA"),"Fetch the owned instrument at the van rack");
-        equipment.frame("GEARSTATE|0|0|EMF_READER:I|NONE:NONE|NONE:NONE|VIDEO_CAMERA:I",1);
+        equipment.frame("GEARSTATE|0|0|EMF_READER:I|NONE:NONE|NONE:NONE|VIDEO_CAMERA:I",1,51);
         check(test.act(61,1,here,reports::add).action()==Action.SAMPLE,"Held video camera physically placed");
         test.frame(new LanVideoCameras.Camera(1,0,here.x(),here.y(),here.z(),0,EquipmentTiers.Tier.I).frame());
         test.frame("CAMERA|POWER|1|1");
@@ -70,7 +70,7 @@ public final class HunterWitnessExperimentTest {
     private static void groupStaffing(HouseMap map){
         var reports=new ArrayList<String>();
         var gear=new HunterDiagnosticEquipment();
-        gear.frame("GEARSTATE|0|2|EMF_READER:I|NONE:NONE|VIDEO_CAMERA:I|NONE:NONE",1);
+        gear.frame("GEARSTATE|0|2|EMF_READER:I|NONE:NONE|VIDEO_CAMERA:I|NONE:NONE",1,1);
         var test=plan(map,gear);
         var here=body(map,0,0);var van=monitor(map);
         test.frame("TEAMMAP|14|14|0|-1|-1|-1");
@@ -149,6 +149,44 @@ public final class HunterWitnessExperimentTest {
         note=ai.decide(raised+2,here,null);
         check(note.action()==Action.NOTE&&note.equipment().equals("PHOTO_SOLO"),"A personally exposed print records its actual medium and headcount");
     }
+    private static void cameraService(HouseMap map){
+        var equipment=new HunterDiagnosticEquipment();var nav=new HunterFieldNavigation(map);
+        int seat=1;
+        var field=body(map,0,0);var station=map.van().location(VanStaging.Station.EQUIPMENT);
+        var rack=new LanWorld.Body(station.x(),map.van().floorY(),station.z(),0,HouseMap.EXTRACTION_ROOM);
+        var camera=new LanVideoCameras.Camera(seat,0,field.x(),field.y(),field.z(),0,EquipmentTiers.Tier.I);
+        equipment.frame("GEAROWNED|UV_LIGHT:I|VIDEO_CAMERA:I",seat,10);
+        equipment.frame("GEARSTATE|0|3|EMF_READER:I|THERMOMETER:I|SPIRIT_BOX:I|PHOTO_CAMERA:I",seat,10);
+        equipment.orderTest("video camera",10,false);
+        equipment.frame(camera.frame(),seat,10);
+        check(!equipment.visitingCamera(11),"A replayed placement never starts a watch");
+        equipment.observed(new LanEvidenceJournal.Entry(12,seat,0,"VIDEO_CAMERA",LanEvidenceJournal.Finding.OBSERVED,
+            "Video camera recording / live feed available in van"),seat);
+        check(!equipment.visitingCamera(12),"A casefile replay never starts a watch");
+        equipment.frame("ACCEPT|GEARUSE|VIDEO_CAMERA|Video camera recording / live feed available in van",seat,14);
+        check(equipment.visitingCamera(690),"Field travel can exceed the observation interval");
+        equipment.attendedCamera(700);
+        check(equipment.visitingCamera(1349)&&!equipment.visitingCamera(1350),"Observation time starts on actual monitor attendance");
+        equipment.orderTest("video camera",1360,true);
+        check(equipment.visitingCamera(1361),"An explicit order can revisit the owner's live feed");
+        equipment.frame("CAMERA|POWER|1|0",seat,1362);
+        check(!equipment.visitingCamera(1363),"A drained camera cancels the visit");
+        equipment.orderTest("uv light",1400,false);
+        equipment.frame("CAMERA|POWER|1|0",seat,1425);
+        var refetch=equipment.fetch(1430,rack,map,nav,camera);
+        check(refetch.action()==Action.EQUIP&&refetch.equipment().equals("VIDEO_CAMERA"),"Temporarily recover the absent camera slot");
+        equipment.frame("GEARSTATE|0|3|EMF_READER:I|THERMOMETER:I|SPIRIT_BOX:I|VIDEO_CAMERA:I",seat,1432);
+        check(equipment.fetch(1433,rack,map,nav,camera).action()!=Action.SERVICE,"A deployed camera cannot be serviced from the van");
+        check(equipment.fetch(1445,field,map,nav,camera).action()==Action.SAMPLE,"Retrieve in physical reach");
+        check(equipment.fetch(1600,field,map,nav,camera).action()==Action.WAIT,"Await authoritative CLEAR instead of toggling the device again");
+        equipment.frame("CAMERA|CLEAR|1",seat,1602);
+        check(!equipment.sampleable("VIDEO_CAMERA",true),"Do not redeploy while the recharge is pending");
+        check(equipment.fetch(1710,rack,map,nav,null).action()==Action.SERVICE,"Service after the physical pickup");
+        check(equipment.fetch(1900,rack,map,nav,null).action()==Action.WAIT,"Do not repeat the refill while awaiting acknowledgment");
+        equipment.frame("ACCEPT|GEARREFILL|FILM, COLLECTION KITS AND BATTERIES RESTORED",seat,1902);
+        var resumed=equipment.fetch(1904,rack,map,nav,null);
+        check(resumed.action()==Action.EQUIP&&resumed.equipment().equals("UV_LIGHT"),"Continue the original requested instrument after service");
+    }
     private static void monitorPatterns(HouseMap map){
         var ai=new CampaignHunterInvestigator(map,1);ai.assignSeat(1);
         var room=body(map,0,0);var van=monitor(map);
@@ -189,7 +227,7 @@ public final class HunterWitnessExperimentTest {
     }
     public static void main(String[] args){
         var map=new HouseMap();
-        setupAndRetest(map);groupStaffing(map);positiveReceipts(map);monitorPatterns(map);
+        setupAndRetest(map);groupStaffing(map);positiveReceipts(map);cameraService(map);monitorPatterns(map);
         System.out.println("PASS staffed witness tests, positive journal receipts, occupied-room interruption and inconclusive blank video");
     }
 }

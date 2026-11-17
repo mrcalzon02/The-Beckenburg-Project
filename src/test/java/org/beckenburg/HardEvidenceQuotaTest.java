@@ -86,6 +86,6 @@ public final class HardEvidenceQuotaTest {
         ok(casefile.correctlyIdentified(),"host compares private archetype only for settlement/rite");
         ok(CustomContract.standard(3).evidenceLevel()==HardEvidenceQuota.Level.EASY,
             "older clients retain all-compatible evidence by default");
-        System.out.println("PASS 23 ghosts Easy>=4 Medium=3 DeathWish=1, weather integrity and hypothesis");
+        System.out.println("PASS "+seenSignatures.size()+" ghosts Easy>=4 Medium=3 DeathWish=1, weather integrity and hypothesis");
     }
 }

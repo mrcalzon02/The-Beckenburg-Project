@@ -58,6 +58,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final Map<Integer,VanSiteMapScreen.Reading> sensorReadings=new HashMap<>();
     private final Map<Integer,FieldSensorDetection.Pulse> sensorAlerts=new HashMap<>();
     private int selectedCameraOwner=-1,cameraAttention=-1;
+    private final ArrayDeque<Integer> pendingWatchReplies=new ArrayDeque<>();
+    private boolean watchAccepted;
     private int lastVanPoll=-100000,lastMapTextureTick=-100000,lastCameraRenderTick=-100000;
     private int capturedCameraOwner=-1;
     private java.awt.image.BufferedImage capturedCameraImage;
@@ -277,6 +279,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
     }
     public void close(){
+        releaseCameraAttention();
         if(opening!=null){opening.close();opening=null;}
         clearPlacementSelection();
         toolGrip.reset();releaseVoice();timer.stop();renderTimer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
@@ -340,11 +343,30 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(!SwingUtilities.isEventDispatchThread())throw new IllegalStateException("network view must update on EDT");
         try{
             List<String> p=LanProtocol.parts(frame);
+            if(p.size()>=3&&p.get(0).equals("ACCEPT")&&p.get(1).equals("WATCH")){
+                int acknowledged=switch(p.get(2)){
+                    case "NONE" -> -1;
+                    case "LENS" -> -2;
+                    case "CAMERA" -> LanProtocol.integer(p.get(3),0,5);
+                    default -> throw new IllegalArgumentException("invalid watch acknowledgment");
+                };
+                // TCP delivers old feed frames before the reply to the new selection.
+                if(Objects.equals(pendingWatchReplies.peekFirst(),acknowledged)){
+                    pendingWatchReplies.removeFirst();
+                    watchAccepted=pendingWatchReplies.isEmpty()&&cameraAttention==acknowledged;
+                }
+                return;
+            }
+            if((frame.equals("REJECT|camera offline")||frame.equals("REJECT|camera view unavailable")
+                    ||frame.equals("REJECT|hunter camera view unavailable"))&&!pendingWatchReplies.isEmpty()){
+                pendingWatchReplies.removeFirst();
+                watchAccepted=false;
+            }
             boolean remoteDots=p.size()==8&&p.get(0).equals("DOTS")&&p.get(1).equals("ILLUMINATE");
             boolean remoteLaser=p.size()==9&&p.get(0).equals("LASER")&&p.get(1).equals("HIT");
             if(remoteDots||remoteLaser){
                 var feed=selectedVanCamera();
-                if(feed==null||feed.owner()!=LanProtocol.integer(p.get(p.size()-1),0,5))return;
+                if(feed==null||!watchingCamera(feed.owner())||feed.owner()!=LanProtocol.integer(p.get(p.size()-1),0,5))return;
                 p=p.subList(0,p.size()-1);
             }
             if(p.size()==3&&p.get(0).equals("SITE")){
@@ -721,11 +743,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 renderer.activeRite=null;renderer.strikeUntilTick=-1;
                 atmosphere.setRitual(false);atmosphere.setHunt(false);
                 caseResult=frame.substring(7);feedback="CASE CLOSED: "+caseResult;
+                releaseCameraAttention();
                 clearPlacementSelection();
                 keys.clear();
             }else if(p.size()==6&&p.get(0).equals("CAMORB")){
                 int owner=LanProtocol.integer(p.get(1),0,5);
-                if(owner!=cameraAttention)return;
+                if(!watchingCamera(owner))return;
                 var center=new LevelDefinition.Vec(LanProtocol.integer(p.get(2),0,map.width()*1000)/1000d,
                     LanProtocol.integer(p.get(3),-50000,50000)/1000d,LanProtocol.integer(p.get(4),0,map.height()*1000)/1000d);
                 int sample=LanProtocol.integer(p.get(5),0,99999999);
@@ -742,7 +765,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     LanProtocol.integer(p.get(11),0,HouseMap.ROOM_COUNT-1);
                     LanProtocol.integer(p.get(12),0,VanTelemetry.HUNTERS);
                 }
-                if(mounted&&owner!=cameraAttention||!mounted&&!shutter&&cameraAttention!=-2
+                if(mounted&&!watchingCamera(owner)||!mounted&&!shutter&&!watchingCamera(-2)
                         ||shutter&&pendingPhoto==null)return;
                 int at=LanProtocol.integer(p.get(p.size()==5?4:10),0,99999999);
                 String key=p.get(0)+":"+owner+":"+member;
@@ -841,9 +864,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     int eventTick=LanProtocol.integer(p.get(3),0,99999999);
                     double x=LanProtocol.integer(p.get(4),0,map.width()*1000)/1000.0;
                     double z=LanProtocol.integer(p.get(5),0,map.height()*1000)/1000.0;
-                    renderer.dotsPassRoom=room;
-                    renderer.dotsPassX=x;renderer.dotsPassZ=z;renderer.dotsPassY=p.size()==7?LanProtocol.integer(p.get(6),-50000,50000)/1000.0:map.groundHeight(x,z,room);
-                    renderer.dotsPassUntil=eventTick+3; // optical persistence only
+                    var observedThrough=remoteDots||!client.supportsWitnessOptics()&&cameraAttention>=0?videoRenderer:renderer;
+                    observedThrough.dotsPassRoom=room;
+                    observedThrough.dotsPassX=x;observedThrough.dotsPassZ=z;observedThrough.dotsPassY=p.size()==7?LanProtocol.integer(p.get(6),-50000,50000)/1000.0:map.groundHeight(x,z,room);
+                    observedThrough.dotsPassUntil=eventTick+3; // optical persistence only
                 }else throw new IllegalArgumentException("invalid D.O.T.S. state");
             }else if(p.get(0).equals("SENSOR")){
                 if(p.size()==2&&p.get(1).equals("RESET")){
@@ -971,7 +995,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 renderer.laserPowered.put(LanProtocol.integer(p.get(2),0,5),LanProtocol.integer(p.get(3),0,1)==1);
             }else if(p.size()==8&&p.get(0).equals("LASER")&&p.get(1).equals("HIT")){
                 var contact=new StructuredLightVolume.Contact(LanProtocol.integer(p.get(2),1,999999999),LanProtocol.integer(p.get(3),0,11),Double.parseDouble(p.get(4)),Double.parseDouble(p.get(5)),Double.parseDouble(p.get(6)),LanProtocol.integer(p.get(7),0,99999999));
-                renderer.laserContacts.put(contact.station(),contact);
+                var observedThrough=remoteLaser||!client.supportsWitnessOptics()&&cameraAttention>=0?videoRenderer:renderer;
+                observedThrough.laserContacts.put(contact.station(),contact);
             }else if(p.size()==2&&p.get(0).equals("UVTRACE")&&p.get(1).equals("RESET")){
                 uvSurfaceMarks.clear();
             }else if((p.size()==7||p.size()==8)&&p.get(0).equals("UVTRACE")){
@@ -1153,14 +1178,27 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         var station=display?selectedVanCamera():null;
         return station==null?-1:station.owner();
     }
-    private void updateCameraAttention(int requested)throws IOException{
+    private boolean watchingCamera(int selected){
+        return cameraAttention==selected&&(!client.supportsWitnessOptics()||watchAccepted);
+    }
+
+    void updateCameraAttention(int requested)throws IOException{
         if(cameraAttention==requested)return;
-        if(requested==-2)client.watchHeldLens();else client.watchCamera(requested);
-        cameraAttention=requested;
+        cameraAttention=-1;watchAccepted=false;
         lensBodies.clear();cameraGhostBodies.clear();cameraOrbs.clear();
         liveCameraView=null;lastCameraPreviewTick=-100000;
         capturedCameraOwner=-1;capturedCameraImage=null;lastCameraRenderTick=-100000;
+        videoRenderer.dotsPassRoom=-1;videoRenderer.dotsPassUntil=-1;
+        videoRenderer.laserContacts.clear();
         if(vanDisplay)VanLiveScreens.suspendCamera();
+        if(requested==-1&&!caseResult.isEmpty())return;
+        if(requested==-2)client.watchHeldLens();else client.watchCamera(requested);
+        if(client.supportsWitnessOptics())pendingWatchReplies.addLast(requested);
+        cameraAttention=requested;
+    }
+    private void releaseCameraAttention(){
+        try{updateCameraAttention(-1);}
+        catch(IOException closed){ /* A disconnected view has already dropped its local images. */ }
     }
 
     private void cycleVanCamera(){
@@ -1390,7 +1428,6 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             videoRenderer.dotsPositions.putAll(renderer.dotsPositions);
             videoRenderer.dotsPowered.clear();videoRenderer.dotsPowered.putAll(renderer.dotsPowered);
             videoRenderer.laserPowered.clear();videoRenderer.laserPowered.putAll(renderer.laserPowered);
-            videoRenderer.laserContacts.clear();videoRenderer.laserContacts.putAll(renderer.laserContacts);
             videoRenderer.tripods.clear();
             videoRenderer.tripods.putAll(renderer.tripods);
             videoRenderer.portablePositions.clear();
@@ -1404,11 +1441,6 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             videoRenderer.writingBookStyle=renderer.writingBookStyle;
             videoRenderer.sensorPositions.clear();
             videoRenderer.sensorPositions.putAll(renderer.sensorPositions);
-            videoRenderer.dotsPassRoom=renderer.dotsPassRoom;
-            videoRenderer.dotsPassX=renderer.dotsPassX;
-            videoRenderer.dotsPassZ=renderer.dotsPassZ;
-            videoRenderer.dotsPassY=renderer.dotsPassY;
-            videoRenderer.dotsPassUntil=renderer.dotsPassUntil;
             videoRenderer.incense.clear();
             videoRenderer.incense.addAll(renderer.incense);
             videoRenderer.activeRite=renderer.activeRite;
@@ -2128,7 +2160,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     }
     @Override public void keyTyped(KeyEvent e){}
     @Override public void focusGained(FocusEvent e){}
-    @Override public void focusLost(FocusEvent e){interactionHeld=false;ledgerTabHeld=false;toolGrip.release();toolPlacement=false;
+    @Override public void focusLost(FocusEvent e){releaseCameraAttention();interactionHeld=false;ledgerTabHeld=false;toolGrip.release();toolPlacement=false;
         keys.clear();releaseVoice();mouseLook.release();
     }
 }

@@ -1289,12 +1289,10 @@ public final class LanHost implements AutoCloseable {
                     int rotation=p.size()==3?LanProtocol.integer(p.get(2),0,359):0;
                     if(rotation!=0&&!ToolBeltHud.placeable(id))
                         throw new IllegalArgumentException("rotation requires a placeable tool");
-                    // Retrieving a physically deployed DOTS projector is not
-                    // taking an evidence sample. A drained projector must never
-                    // become permanently stranded in the level.
-                    boolean retrievingDots=id.equals("DOTS_PROJECTOR")
-                        &&dots.at(peer.slot)!=null;
-                    if(!retrievingDots&&!gear.ready(id,tick))
+                    // Picking up a deployed instrument requires reach, even when its battery is flat.
+                    boolean retrieving=id.equals("DOTS_PROJECTOR")&&dots.at(peer.slot)!=null
+                        ||id.equals("VIDEO_CAMERA")&&cameras.at(peer.slot)!=null;
+                    if(!retrieving&&!gear.ready(id,tick))
                         throw new IllegalArgumentException(
                             gear.batterySecondsLeft(id)==0?
                                 "battery empty - recharge at van":"instrument refreshing");
@@ -1654,7 +1652,7 @@ public final class LanHost implements AutoCloseable {
                         }
                         default -> throw new IllegalArgumentException("device has no working backend");
                     }
-                    if(!retrievingDots)gear.sampled(id,tick);
+                    if(!retrieving)gear.sampled(id,tick);
                     if(gear.batterySecondsLeft(id)>=0)
                         reply(peer,"GEARPOWER|"+id+"|"+gear.batterySecondsLeft(id)+
                             "|"+(gear.powered(id)?1:0));

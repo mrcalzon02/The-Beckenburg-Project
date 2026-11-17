@@ -136,6 +136,7 @@ final class HunterWitnessExperiment {
         for(int s=0;s<rooms.length;s++)if(!down[s]&&rooms[s]==room)result++;
         return result;
     }
+    LanVideoCameras.Camera camera(int owner){return cameras[owner];}
     int cameraRoom(int owner){return cameras[owner]==null||!powered[owner]?-1:cameras[owner].room();}
     boolean watching(int owner,LanWorld.Body b){return active()&&selectedFeed==owner&&powered[owner]&&attention.remote(owner,b);}
     boolean observing(FigureView view,int subject,int occupants){
@@ -233,15 +234,13 @@ final class HunterWitnessExperiment {
         int slot=gear.slot("VIDEO_CAMERA");
         if(slot<0||gear.needsService()){
             if(slot<0)gear.requestCamera(tick);
-            Input fetch=gear.fetch(tick,self,map,nav);
+            Input fetch=gear.fetch(tick,self,map,nav,cameras[seat]);
             if(fetch!=null)return fetch;
         }
         if(slot<0)return Input.simple(Action.WAIT);
         var old=cameras[seat];
-        if(old!=null&&(self.room()!=old.room()||Math.hypot(self.x()-old.x(),self.z()-old.z())>1.45
-                ||Math.abs(self.y()-old.y())>.75))
-            return nav.to(tick,self,old.room(),old.x(),old.y(),old.z(),.8);
-        if(old==null&&self.room()!=room)return nav.to(tick,self,room,map.centerX(room),map.centerZ(room),1);
+        if(old!=null)return gear.retrieveCamera(tick,self,nav,old,slot);
+        if(self.room()!=room)return nav.to(tick,self,room,map.centerX(room),map.centerZ(room),1);
         if(tick-lastUse<18)return Input.simple(Action.WAIT);
         lastUse=tick;
         int heading=Math.floorMod((int)Math.round(Math.toDegrees(Math.atan2(map.centerX(room)-self.x(),

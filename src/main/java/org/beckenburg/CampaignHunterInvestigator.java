@@ -96,8 +96,10 @@ final class CampaignHunterInvestigator {
     }
     /** Only frames already delivered to this investigator enter its notebook. */
     synchronized void accept(String frame){
-        equipment.frame(frame,seat);
+        equipment.frame(frame,seat,lastDecision);
         witnessTest.frame(frame);
+        if(frame.equals("ACCEPT|WATCH|CAMERA|"+seat)&&!witnessTest.active()&&attention.remote(seat,viewpoint))
+            equipment.attendedCamera(lastDecision);
         if(frame.startsWith("GEARSTATE|")&&!ToolBeltHud.cameraView(equipment.held())&&attention.lens())attention.stop();
         if(frame.startsWith("BODY|"+seat+"|")){
             var p=LanProtocol.parts(frame);
@@ -188,6 +190,7 @@ final class CampaignHunterInvestigator {
         }else if(frame.startsWith("ACCEPT|WARD|")&&wardRoom>=0){
             wardPrepared=frame.contains("ANCHOR WARD PREPARED");
             if(wardPrepared)confirmedRoom=wardRoom;
+            else dismissHomeRoom(wardRoom);
             String report=wardPrepared?"Anchor ward set in ":"Defensive ward only in ";
             announce(report+map.roomName(wardRoom)+".");
             wardRoom=-1;
@@ -200,7 +203,7 @@ final class CampaignHunterInvestigator {
     }
     private boolean watches(int owner){
         return attention.remote(owner,viewpoint)&&(witnessTest.watching(owner,viewpoint)
-            ||owner==seat&&!witnessTest.active()&&equipment.watchingCamera(lastDecision));
+            ||owner==seat&&!witnessTest.active()&&equipment.visitingCamera(lastDecision));
     }
     private boolean inView(double x,double z){
         if(viewpoint==null)return false;
@@ -308,11 +311,19 @@ final class CampaignHunterInvestigator {
         }
         return hasMeasured?candidate:null;
     }
+    private void dismissHomeRoom(int room){
+        if(confirmedRoom==room)return;
+        triedWard[room]=true;
+        if(searchRoom==room){
+            searchRoom=-1;trackedGoal=-1;
+            if(order==Order.SEARCH)navigation.reset();
+        }
+    }
     private void order(LanChat.Entry line){
-        witnessTest.radio(line,seat,order==Order.SEARCH&&identified==null&&!ritualActive,this::announce);
+        witnessTest.radio(line,seat,order==Order.SEARCH&&identified==null&&!ritualActive&&!equipment.visitingCamera(line.tick()),this::announce);
         if(line.seat()==seat)return;
         for(int room=0;room<rooms;room++){
-            if(line.message().equals("Defensive ward only in "+map.roomName(room)+"."))triedWard[room]=true;
+            if(line.message().equals("Defensive ward only in "+map.roomName(room)+"."))dismissHomeRoom(room);
             if(wardPrepared&&line.message().equals("Anchor ward set in "+map.roomName(room)+"."))confirmedRoom=room;
         }
         String words=line.message().strip().toLowerCase(Locale.ROOT);
@@ -327,7 +338,7 @@ final class CampaignHunterInvestigator {
         }
         if(request.startsWith("test ")){
             leader=line.seat();order=Order.SEARCH;radio.clear();leaveWatch(line.tick());nextWitnessReview=line.tick()+900;
-            announce(equipment.orderTest(request.substring(5),line.tick()));return;
+            announce(equipment.orderTest(request.substring(5),line.tick(),witnessTest.cameraRoom(seat)>=0));return;
         }
         if(request.equals("follow"))order=Order.FOLLOW;
         else if(request.equals("hold"))order=Order.HOLD;
@@ -349,7 +360,7 @@ final class CampaignHunterInvestigator {
         });
     }
     private void leaveWatch(int tick){
-        attention.stop();shutterOpportunity=-1000;
+        attention.stop();equipment.endCameraWatch();shutterOpportunity=-1000;
         if(witnessTest.active()){announce(witnessTest.withdrawal());witnessTest.stop(tick);}
     }
     private void announce(String text){
@@ -412,7 +423,7 @@ final class CampaignHunterInvestigator {
             if(identified!=null||ritualActive)leaveWatch(tick);
             else return witnessTest.act(tick,seat,self,this::announce);
         }
-        if(order==Order.SEARCH&&identified==null&&!ritualActive&&source>=0&&tick>=nextWitnessReview&&tick-lastRadio>=12){
+        if(order==Order.SEARCH&&identified==null&&!ritualActive&&!equipment.visitingCamera(tick)&&source>=0&&tick>=nextWitnessReview&&tick-lastRadio>=12){
             nextWitnessReview=tick+90;
             if(deduction()==null){
                 String proposal=witnessTest.propose(tick,seat,source,candidates);
@@ -447,6 +458,14 @@ final class CampaignHunterInvestigator {
             announce("Sweep complete in "+map.roomName(orderedRoom)+". Resuming search.");
             order=Order.SEARCH;lastSurvey[here]=tick;searchRoom=-1;
         }
+        if(identified==null&&!ritualActive&&equipment.visitingCamera(tick)){
+            if(atCameraRelay)return attention.screen(tick,seat,self);
+            equipment.cameraTravel(tick,self);
+            if(equipment.visitingCamera(tick)){
+                var van=map.van();var display=van.location(VanStaging.Station.RELAY);
+                return navigation.to(tick,self,HouseMap.EXTRACTION_ROOM,display.x(),van.floorY(),display.z(),.11);
+            }
+        }
         GhostIdentity.Type candidate=deduction();
         if(identified==null&&candidate!=null&&candidate!=attempted&&tick-lastGuess>=35){
             attempted=candidate;lastGuess=tick;
@@ -457,8 +476,7 @@ final class CampaignHunterInvestigator {
             String request=equipment.request(tick,seat,candidates,detected,evidenceLevel,
                 source>=0||!detected.isEmpty()||signature!=null||observationCount>=15);
             if(request!=null)announce(request);
-            if(equipment.watchingCamera(tick)&&atCameraRelay)return attention.screen(tick,seat,self);
-            Input fetch=equipment.fetch(tick,self,map,navigation);
+            Input fetch=equipment.fetch(tick,self,map,navigation,witnessTest.camera(seat));
             if(fetch!=null)return fetch;
         }
         if(wardCharges>0&&!wardPrepared&&source>=0&&here==source&&wardRoom<0&&readyToWard(source)){
@@ -478,8 +496,12 @@ final class CampaignHunterInvestigator {
             }
             return navigation.to(tick,self,site.room(),site.x(),site.y(),site.z(),1.85);
         }
-        if(source>=0&&!wardPrepared&&(readyToWard(source)||tick-lastSurvey[source]>=280))
-            searchRoom=source;
+        if(source>=0&&!wardPrepared){
+            // A completed sweep keeps its place in the patrol until a new local sign arrives.
+            int latestSign=lastActivity[source];
+            if(relativeThermal(source))latestSign=Math.max(latestSign,thermalTick[source]);
+            if(latestSign>lastSurvey[source]&&(readyToWard(source)||tick-lastSurvey[source]>=280))searchRoom=source;
+        }
         if(searchRoom==here&&tick-arrived>=SURVEY_TICKS){
             if(tick-lastSweepReport>=250&&ownSampleTick[here]>=arrived){
                 lastSweepReport=tick;announce("Finished sampling "+map.roomName(here)+".");

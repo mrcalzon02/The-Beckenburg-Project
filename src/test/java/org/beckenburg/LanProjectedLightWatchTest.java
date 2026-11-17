@@ -26,18 +26,18 @@ public final class LanProjectedLightWatchTest {
 
         void receive(String frame){
             if(frame.startsWith(DOTS)||frame.startsWith(LASER)||frame.startsWith("SENSOR|READ|")
-                    ||frame.startsWith("CAMGHOST|"))visual.add(frame);
+                    ||frame.startsWith("CAMGHOST|")||frame.startsWith("CAMERA|"))visual.add(frame);
             if(frame.startsWith("ACCEPT|")||frame.startsWith("REJECT|")||frame.startsWith("LOBBY|")
                     ||frame.startsWith("INFO|mission started"))commands.add(frame);
         }
 
-        void await(String prefix)throws Exception{
+        String await(String prefix)throws Exception{
             long end=System.nanoTime()+TimeUnit.SECONDS.toNanos(5);
             while(System.nanoTime()<end){
                 var frame=commands.poll(50,TimeUnit.MILLISECONDS);
                 if(frame==null)continue;
                 check(!frame.startsWith("REJECT|"),client.seat()+" rejected "+prefix+" with "+frame);
-                if(frame.startsWith(prefix))return;
+                if(frame.startsWith(prefix))return frame;
             }
             throw new AssertionError(client.seat()+" missing "+prefix);
         }
@@ -96,6 +96,36 @@ public final class LanProjectedLightWatchTest {
         }
 
         @Override public void close(){client.close();}
+    }
+
+    private static void checkPanel(Player operator,String dots,String laser)throws Exception{
+        var placement=operator.observation(0,"CAMERA|PLACE|0|");
+        var power=operator.observation(0,"CAMERA|POWER|0|1");
+        LanWorldGuiTest.onEdt(()->{
+            var panel=new LanWorldPanel(operator.client);
+            try{
+                panel.onEvent(placement);
+                panel.onEvent(power);
+                panel.updateCameraAttention(0);
+                panel.onEvent(operator.await("ACCEPT|WATCH|CAMERA|0"));
+                panel.onEvent(dots);panel.onEvent(laser);
+                var direct=(SceneRenderer)LooseClutterNetworkTest.field(panel,"renderer");
+                var monitor=(SceneRenderer)LooseClutterNetworkTest.field(panel,"videoRenderer");
+                check(monitor.dotsPassRoom==4&&!monitor.laserContacts.isEmpty(),"Monitor lost the selected feed's light patterns");
+                check(direct.dotsPassRoom<0&&direct.laserContacts.isEmpty(),"Remote light patterns leaked to direct vision");
+                panel.focusLost(new java.awt.event.FocusEvent(panel,java.awt.event.FocusEvent.FOCUS_LOST));
+                panel.onEvent(dots);panel.onEvent(laser);
+                check(monitor.dotsPassRoom<0&&monitor.laserContacts.isEmpty(),"Delayed patterns repopulated a closed feed");
+                panel.updateCameraAttention(0);  // Reopen before either pending server reply reaches the UI.
+                panel.onEvent(dots);panel.onEvent(laser);
+                panel.onEvent(operator.await("ACCEPT|WATCH|NONE"));
+                panel.onEvent(dots);panel.onEvent(laser);
+                check(monitor.dotsPassRoom<0&&monitor.laserContacts.isEmpty(),"Previous watch replayed while renewing its feed");
+                panel.onEvent(operator.await("ACCEPT|WATCH|CAMERA|0"));
+            }finally{panel.close();}
+            return null;
+        });
+        operator.await("ACCEPT|WATCH|NONE");
     }
 
     public static void main(String[] args)throws Exception{
@@ -166,7 +196,9 @@ public final class LanProjectedLightWatchTest {
             laser.noPatterns(otherStart);
 
             van.watch(0);
-            van.patterns(van.visual.size(),true);
+            remoteStart=van.visual.size();
+            van.patterns(remoteStart,true);
+            String remoteDots=van.observation(remoteStart,DOTS),remoteLaser=van.observation(remoteStart,LASER);
 
             van.watch(-1);
             dots.client.turn(180);
@@ -178,6 +210,7 @@ public final class LanProjectedLightWatchTest {
             van.noPatterns(remoteStart);
             dots.noPatterns(localStart);
             ghost.noPatterns(0);
+            checkPanel(van,remoteDots,remoteLaser);
             System.out.println("PASS real Wraith, powered D.O.T.S. and laser, facing field viewers, selected van feed,"
                 +" turned-away and idle controls, and camera-alone sensor negative");
         }
