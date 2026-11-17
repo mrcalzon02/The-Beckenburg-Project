@@ -4,6 +4,8 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.PriorityQueue;
 import org.beckenburg.CampaignGuestBot.Action;
 import org.beckenburg.CampaignGuestBot.Input;
@@ -13,6 +15,7 @@ import org.beckenburg.LevelDefinition.Vec;
 /** Routes over authored thresholds, then around furniture using the same swept capsule as STEP. */
 final class HunterFieldNavigation {
     private final HouseMap map;
+    private final Set<Integer> blockedPortals=new HashSet<>();
     private final int[][] distances=new int[HouseMap.ROOM_COUNT][HouseMap.ROOM_COUNT];
     private final double[][] routeLength=new double[HouseMap.ROOM_COUNT][HouseMap.ROOM_COUNT];
     private final ArrayDeque<Vec> waypoints=new ArrayDeque<>();
@@ -22,13 +25,16 @@ final class HunterFieldNavigation {
     private Search search;
     HunterFieldNavigation(HouseMap map){
         this.map=map;
+        for(var portal:map.level().portals()){
+            if(portal.kind().equals("window")||!hasExteriorCrossing(portal))blockedPortals.add(portal.id());
+        }
         for(int from=0;from<distances.length;from++){
             int[] d=distances[from];Arrays.fill(d,-1);d[from]=0;
             var pending=new ArrayDeque<Integer>();pending.add(from);
             while(!pending.isEmpty()){
                 int room=pending.remove();
                 for(var p:map.level().portalsFrom(room)){
-                    if(p.kind().equals("window"))continue;
+                    if(blockedPortals.contains(p.id()))continue;
                     int n=p.a()==room?p.b():p.a();
                     if(d[n]>=0)continue;
                     d[n]=d[room]+1;pending.add(n);
@@ -41,7 +47,7 @@ final class HunterFieldNavigation {
             Arrays.fill(routeLength[a],Double.POSITIVE_INFINITY);
             routeLength[a][a]=0;
             for(var p:map.level().portalsFrom(a)){
-                if(p.kind().equals("window"))continue;
+                if(blockedPortals.contains(p.id()))continue;
                 int b=p.a()==a?p.b():p.a();
                 double length=distanceToCenter(a,p)+distanceToCenter(b,p);
                 routeLength[a][b]=Math.min(routeLength[a][b],length);
@@ -51,6 +57,22 @@ final class HunterFieldNavigation {
             for(int a=0;a<routeLength.length;a++)
                 for(int b=0;b<routeLength.length;b++)
                     routeLength[a][b]=Math.min(routeLength[a][b],routeLength[a][via]+routeLength[via][b]);
+    }
+    private boolean hasExteriorCrossing(Portal p){
+        if(!p.kind().equals("open")||!map.outside(p.a())||!map.outside(p.b())
+                ||p.a()==HouseMap.EXTRACTION_ROOM||p.b()==HouseMap.EXTRACTION_ROOM)return true;
+        // A room boundary can meet a building along one side of an exterior opening.
+        // Check across the aperture with the same swept body used by ordinary movement.
+        double halfLane=Math.max(0,p.width()*.5-.25);
+        int samples=Math.max(1,(int)Math.ceil(halfLane/.3));
+        double nx=p.alongX()?0:.45,nz=p.alongX()?.45:0;
+        for(int i=-samples;i<=samples;i++){
+            double offset=halfLane*i/samples;
+            double x=p.x()+(p.alongX()?offset:0),z=p.z()+(p.alongX()?0:offset);
+            var from=new Vec(x-nx,p.y(),z-nz);
+            if(map.traversable(from.x(),from.y(),from.z())&&map.resolveMove(from,x+nx,z+nz)!=null)return true;
+        }
+        return false;
     }
     private double distanceToCenter(int room,Portal p){
         return Math.hypot(Math.hypot(map.centerX(room)-p.x(),map.centerZ(room)-p.z()),map.floorY(room)-p.y());
@@ -83,7 +105,7 @@ final class HunterFieldNavigation {
             boolean vanRoute=goalRoom==HouseMap.EXTRACTION_ROOM||distances[room][HouseMap.EXTRACTION_ROOM]==1;
             for(var p:map.level().portalsFrom(room)){
                 int next=room==p.a()?p.b():p.a();
-                if(p.kind().equals("window"))continue;
+                if(blockedPortals.contains(p.id()))continue;
                 double distance=Math.hypot(pos.x()-p.x(),pos.z()-p.z());
                 if(vanRoute){
                     if(routeLength[next][goalRoom]>=routeLength[room][goalRoom])continue;
@@ -95,14 +117,12 @@ final class HunterFieldNavigation {
             int next=crossing.a()==room?crossing.b():crossing.a();
             double distance=Math.hypot(pos.x()-crossing.x(),pos.z()-crossing.z());
             if(crossing.door()&&!map.doorOpen(crossing.id())){
-                if(distance<1.50&&Math.abs(pos.y()-crossing.y())<.65){
+                if(distance<1.50&&crossing.equals(map.nearestDoor(pos.x(),pos.y(),pos.z()))){
                     if(tick-lastDoor<6)return Input.simple(Action.WAIT);
                     lastDoor=tick;
                     reset();return Input.simple(Action.DOOR);
                 }
-                double dx=map.centerX(room)-crossing.x(),dz=map.centerZ(room)-crossing.z();
-                goal=new Vec(crossing.x()+(crossing.alongX()?0:Math.signum(dx)*.9),
-                    crossing.y(),crossing.z()+(crossing.alongX()?Math.signum(dz)*.9:0));
+                goal=sideOfPortal(crossing,room,.9);
             }else if(crossing.kind().equals("stair")){
                 for(var stair:map.level().stairs())if(stair.a()==room&&stair.b()==next||stair.b()==room&&stair.a()==next){
                     var bottom=new Vec(stair.x0(),stair.y0(),stair.z0());
@@ -121,9 +141,7 @@ final class HunterFieldNavigation {
                 var center=van.world(0,VanStaging.FRONT+.7);
                 goal=new Vec(center.x(),van.floorY(),center.z());
             }else{
-                double nx=crossing.alongX()?0:Math.signum(map.centerX(next)-crossing.x());
-                double nz=crossing.alongX()?Math.signum(map.centerZ(next)-crossing.z()):0;
-                goal=new Vec(crossing.x()+nx*.75,crossing.y(),crossing.z()+nz*.75);
+                goal=sideOfPortal(crossing,next,.75);
             }
         }else if(Math.abs(pos.y()-goal.y())>=.45){
             // A hunter can be over the circle in plan view, part-way up
@@ -163,6 +181,18 @@ final class HunterFieldNavigation {
             waypoints.clear();stationary=0;
         }
         return Input.simple(Action.WAIT);
+    }
+    private Vec sideOfPortal(Portal portal,int room,double offset){
+        double sign=Math.signum(portal.alongX()?map.centerZ(room)-portal.z():map.centerX(room)-portal.x());
+        if(sign==0)sign=1;
+        double dx=portal.alongX()?0:sign*offset,dz=portal.alongX()?sign*offset:0;
+        var side=new Vec(portal.x()+dx,portal.y(),portal.z()+dz);
+        // An exterior room can wrap around a building, with its center on the
+        // indoor side of the threshold. Check the actual room at both positions.
+        if(map.roomAt(side.x(),side.y(),side.z())!=room
+                &&map.roomAt(portal.x()-dx,portal.y(),portal.z()-dz)==room)
+            return new Vec(portal.x()-dx,portal.y(),portal.z()-dz);
+        return side;
     }
     /** Try short, collision-checked escape steps away from an observed attacker. */
     Input evade(LanWorld.Body self,double bearing){

@@ -1,5 +1,7 @@
 package org.beckenburg;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
@@ -7,12 +9,17 @@ import java.util.concurrent.TimeUnit;
 public final class LanHunterStairNavigationTest {
     private static final int RELAY=HouseMap.EXTRACTION_ROOM;
     private static final class Route {
-        final HouseMap map=new HouseMap(HouseMap.Site.HOUSE);
-        final HunterFieldNavigation navigation=new HunterFieldNavigation(map);
+        final HouseMap map;
+        final HunterFieldNavigation navigation;
         final LinkedBlockingQueue<String> frames=new LinkedBlockingQueue<>();
+        final ArrayList<Integer> openedDoors=new ArrayList<>();
         LanWorld.Body body;
         int tick,doors,lastDecision=-5;
 
+        Route(HouseMap.Site site){
+            map=new HouseMap(site);
+            navigation=new HunterFieldNavigation(map);
+        }
         void receive(String line){
             if(line.startsWith("BODY|0|")||line.startsWith("STATE|")||line.startsWith("DOORS|")
                     ||line.startsWith("LOBBY|")||line.startsWith("INFO|mission started")
@@ -28,7 +35,14 @@ public final class LanHunterStairNavigationTest {
                     body=new LanWorld.Body(x,y,z,Integer.parseInt(p.get(5)),map.roomAt(x,y,z));
                 }
                 case "STATE"->tick=Integer.parseInt(p.get(1));
-                case "DOORS"->map.applyDoorSnapshot(p.get(1));
+                case "DOORS"->{
+                    String snapshot=p.get(1);
+                    if(!snapshot.isEmpty())for(String token:snapshot.split(",")){
+                        int id=Integer.parseInt(token);
+                        if(!map.doorOpen(id))openedDoors.add(id);
+                    }
+                    map.applyDoorSnapshot(snapshot);
+                }
                 case "ACCEPT"->doors++;
             }
             return line;
@@ -63,10 +77,13 @@ public final class LanHunterStairNavigationTest {
         }
     }
     static void roundTrip(int room,String expected)throws Exception{
-        var route=new Route();
+        roundTrip(HouseMap.Site.HOUSE,room,expected);
+    }
+    static void roundTrip(HouseMap.Site site,int room,String expected,int... requiredDoors)throws Exception{
+        var route=new Route(site);
         if(!route.map.roomName(room).equals(expected))throw new AssertionError("Wrong physical room "+room);
         try(var host=LanHost.investigation("127.0.0.1",0,GhostIdentity.Type.BANSHEE,
-                    CustomContract.standard(1),false,HouseMap.Site.HOUSE,null,1061,5);
+                    CustomContract.standard(1),false,site,null,1061,5);
             var hunter=new LanClient("127.0.0.1",host.port(),false,"Route observer","",host.localOwnerCredential(),route::receive);
             var ghost=new LanClient("127.0.0.1",host.port(),true,"Idle ghost",line->{})){
             hunter.ready();ghost.ready();route.waitFor("LOBBY|1|HUMAN|2|WAITING");hunter.start();
@@ -75,6 +92,11 @@ public final class LanHunterStairNavigationTest {
             route.travel(hunter,room,1500);
             if(route.doors==0)throw new AssertionError("Reached "+expected+" without operating its closed doors");
             route.travel(hunter,RELAY,1500);
+            if(requiredDoors.length>0){
+                var expectedOrder=Arrays.stream(requiredDoors).boxed().toList();
+                if(!route.openedDoors.equals(expectedOrder))throw new AssertionError("Expected doors "+expectedOrder+" but host opened "+route.openedDoors);
+                System.out.println(site+" "+expected+" host door opening order "+route.openedDoors);
+            }
         }
     }
     private static void approachFromBelow(){

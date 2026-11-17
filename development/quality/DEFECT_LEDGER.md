@@ -10,6 +10,48 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-384 — A correctly identified Spirit could strand the investigator on the porch on the way to Absolution
+
+**Status:** Reproduced against the published route controller; see the targeted original and corrected checks · **Affected:** House outdoor ritual location. Other room surveys exercise separate routes.
+
+From van spawn the investigator headed for the Memorial Lectern, walked 37 steps into the front approach, and remained outside for six game minutes without initiating the required rite. From the main hall the same controller reached the lectern and the host accepted Absolution.
+
+Cause / uncertainty: The route graph accepted a nominal outdoor crossing from the porch to the back yard even though collision geometry blocked that opening. The target was the authentic Memorial Lectern in the back yard.
+
+Fix / next action: Exclude a physically impassable outdoor connection from the route graph, then verify the ordinary investigator can walk to the lectern and issue a host-accepted Absolution from both the van and the main hall.
+
+Evidence and verification: development/quality/evidence/camera-attention-verification-2026-11-16/
+
+Older-map obligation: House outdoor ritual location. Other room surveys exercise separate routes.
+
+### DEV-383 — The hired hunter could repeatedly operate the wrong Farmhouse kitchen door
+
+**Status:** Reproduced against the published route controller; see the targeted original and corrected checks · **Affected:** Physical Farmhouse kitchen and dining entrance, plus shared navigation controls.
+
+Five Farmhouse return paths reached the same pair of doors. The host selected the already-open door next to the closed one and the hire repeatedly tried the same action.
+
+Cause / uncertainty: The investigator considered reach to its intended handle while the host selected the nearest handle. At the recorded pose door 5 was 0.929 m away and the intended door 4 was 1.420 m away.
+
+Fix / next action: Move to a valid approach from which the host resolves the intended door before interacting.
+
+Evidence and verification: development/quality/evidence/camera-attention-verification-2026-11-16/
+
+Older-map obligation: Physical Farmhouse kitchen and dining entrance, plus shared navigation controls.
+
+### DEV-382 — The Farmhouse mudroom door approach could target the far side of its own closed door
+
+**Status:** Reproduced against the published route controller; see the targeted original and corrected checks · **Affected:** Farmhouse orchard and mudroom; all three sites share the navigator.
+
+Seven outward relay assignments stopped outside the same mudroom door. On a return trip the hunter could open the door but then aim back into the mudroom.
+
+Cause / uncertainty: Using the room center to infer a portal side gave incorrect results for a surrounding exterior area.
+
+Fix / next action: Resolve approach and departure points against the actual room on each side of the door.
+
+Evidence and verification: development/quality/evidence/camera-attention-verification-2026-11-16/
+
+Older-map obligation: Farmhouse orchard and mudroom; all three sites share the navigator.
+
 ### DEV-381 — The shortest room count sent a Family kitchen assignment around the outside of the House
 
 **Status:** Compared on the van–kitchen socket circuit and 72 direct route legs across House, Farmhouse and School · **Affected:** Van-to-room and return-to-van routes for investigator searches, tool exchanges and camera service
@@ -208,7 +250,7 @@ Older-map obligation: All vans share the same local shutter bounds. Representati
 
 ### DEV-367 — Round duration varies with crew, evidence access and ghost feeding conditions
 
-**Status:** Pacing adjusted and measured on House. Human round-duration distribution remains open · **Affected:** Shared ghost economy, physical attacks, evidence persistence and typed rites
+**Status:** House campaigns still include a sub-five-minute win and an unsolved investigation at the 35-minute cutoff. The 20–30-minute target and human distribution remain open. · **Affected:** Shared ghost economy, physical attacks, evidence persistence and typed rites
 
 An autonomous Spirit round resolved in 77 game seconds under the previous timings. Twins wiped two teams in about ten minutes and a camped Hantu could remain at zero energy for minutes.
 
@@ -216,7 +258,7 @@ Cause / uncertainty: Major actions recharged early in the case, typed rites reso
 
 Fix / next action: Pace feeding, repeated attacks and signature opportunity by elapsed game time, allow an exhausted isolation feeder to leave, retain field deposits for minutes and lengthen defended rituals. Use the replayable cohort to track actual endings and observational cutoffs.
 
-Evidence and verification: development/quality/evidence/investigation-ai-2026-11-16/README.md, GhostPacingTest, TieredUvAndFirelightTest, LanRiteNetworkTest
+Evidence and verification: development/quality/evidence/investigation-ai-2026-11-16/README.md, GhostPacingTest, TieredUvAndFirelightTest, LanRiteNetworkTest, development/quality/evidence/camera-attention-verification-2026-11-16/README.md
 
 Older-map obligation: Live timing samples cover House. Establish per-site and human team distributions before treating 20–30 minutes as a roster-wide average.
 

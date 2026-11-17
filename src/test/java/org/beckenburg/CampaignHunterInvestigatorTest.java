@@ -140,8 +140,41 @@ public final class CampaignHunterInvestigatorTest {
         }
         require(followed,"A player can still order a search of a room excluded as the home");
     }
+    private static void memorialLectern(int origin){
+        var map=new HouseMap();var world=new LanWorld(map);
+        if(origin!=HouseMap.EXTRACTION_ROOM)world.setRoom(0,origin);
+        var mission=new LanCase(4,map);mission.configure(GhostIdentity.Type.SPIRIT,true);
+        require(mission.ward(0,4).accepted()&&mission.identify(0,GhostIdentity.Type.SPIRIT,100).accepted(),
+            "Set up the real ward and Spirit hypothesis");
+        var investigator=new CampaignHunterInvestigator(map,1);investigator.assignSeat(0);
+        investigator.accept("IDENTIFIED|SPIRIT|ABSOLUTION");
+        investigator.accept("PROGRESS|100|0|1|0|1|0|ACTIVE");
+        var site=RitualSites.site(map,GhostIdentity.Rite.ABSOLUTION);
+        int doors=0;
+        for(int tick=5;tick<=1500;tick+=5){
+            var body=world.body(0);
+            var action=investigator.decide(tick,body,null);
+            switch(action.action()){
+                case WALK -> {
+                    if(action.heading()>=0)world.turn(0,action.heading());
+                    world.move(0,action.dx(),action.dz(),tick);
+                }
+                case DOOR -> {if(world.door(0,tick))doors++;}
+                case RITE -> {
+                    require(doors>0&&site.near(body)&&action.rite()==GhostIdentity.Rite.ABSOLUTION,
+                        "Approach the physical Memorial Lectern and select its correct rite");
+                    require(mission.performRite(0,action.rite(),body.room(),site.near(body)).accepted(),
+                        "The host must accept the rite at the actual arrival pose");
+                    System.out.println("PASS "+map.roomName(origin)+" to Memorial Lectern: Absolution accepted at tick "+tick);
+                    return;
+                }
+                default -> { }
+            }
+        }
+        throw new AssertionError("No Absolution from "+map.roomName(origin)+"; stopped at "+world.body(0));
+    }
     public static void main(String[] args)throws ReflectiveOperationException{
-        var map=new HouseMap();windup(map);abandonedRoomLead(map);
+        var map=new HouseMap();windup(map);abandonedRoomLead(map);memorialLectern(HouseMap.EXTRACTION_ROOM);memorialLectern(4);
         var ai=new CampaignHunterInvestigator(map,1);ai.assignSeat(1);
         var home=body(map,0);
         reading(ai,1,2,"THERMOMETER","Air -5.5?C / 22.1?F");
