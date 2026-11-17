@@ -1,0 +1,118 @@
+{
+  "status": "COLLEGE_NATIVE_CAMPUS_GROUNDS_RUNTIME_OPEN",
+  "site": "COLLEGE",
+  "baseline": "392aa8153481ee13de9c169ce812a6c404f6bb2e",
+  "source": {
+    "id": "COLLEGE",
+    "construction": "development/levels/rebuild/college-ground-pass/college/construction.json",
+    "layout": "development/levels/rebuild/college-ground-pass/college/authored-layout.json",
+    "glb": "development/levels/rebuild/college-ground-pass/college/campus-grounds.glb",
+    "native": "development/levels/rebuild/college-ground-pass/college/campus-grounds.hcs2",
+    "blend": "development/levels/rebuild/college-ground-pass/college/campus-grounds.blend",
+    "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+    "native_sha256": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768"
+  },
+  "prior_source": "development/levels/rebuild/service-ground-bay-pass/college/authored-bays.glb",
+  "terrain": {
+    "site": "COLLEGE",
+    "changed_vertices": 636,
+    "raised_vertices": 628,
+    "lowered_vertices": 8,
+    "max_change_m": 1.023941398,
+    "source_height_sha256": "1b15b4a56df41d361dd85213f6feee0ac1752aa9d780fe6e119f17a26b656097",
+    "saved_topology_sha256": "fcfa3f31f18641d1abca7e90a2615eed0afa74ed9ca513a33dccf8029b54b4c7",
+    "saved_cuts_sha256": "ddd3fda4e59876ed473231e01d870bd412b5326f34d40f81f98ee6d8caa4ed16",
+    "hole_controls": 1603,
+    "disk_reopen_verified": true,
+    "physics_sha256": "7dbe1dbc67fb455b51a19848ada2fcfd459dae1378f0a17e0d94f1302b1158e5",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "export": {
+    "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+    "native_sha256": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768",
+    "retained_native_records": 930,
+    "added_parts": 18,
+    "terrain_matches_saved_editor_mesh": true,
+    "clear_door_profile_rays": 36,
+    "level_sill_control_rays": 48,
+    "crown_soffit_control_rays": 12,
+    "review_van_triangle_count": 2689,
+    "review_van_source_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+    "captures": [
+      {
+        "path": "development/levels/rebuild/captures/college-ground-batch/campus-overview.png",
+        "sha256": "91375b61491575994ebeb1bdd27fe7072a173598dcc5ab93cf57457e8148f385",
+        "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-ground-batch/canonical-arrival.png",
+        "sha256": "a496b0a4f10867a5746af7a911a64b2c54973e26c7be4c402f426ed52b4b95f6",
+        "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-ground-batch/teaching-entrance.png",
+        "sha256": "e7cd198c6c76ed084bc82d0eb4548dbe3b69d22917fadcc1d052d0a53f9725d0",
+        "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-ground-batch/cafe-entrance.png",
+        "sha256": "69828d89f240fcedd44c9a54f3b7d0b2e4ca2db3b8d4fd3571718127100c4b7d",
+        "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-ground-batch/library-court.png",
+        "sha256": "c9c28839727f96cf110dda508cac61b3668a5ca103e0f0eafade1de4e624fa24",
+        "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-ground-batch/cross-tunnel-crown.png",
+        "sha256": "12e790b751e69813a5a02d03615dddd2d4742d0e5203a16a51cca200b273e3a2",
+        "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+        "hidden": []
+      }
+    ]
+  },
+  "before_capture": {
+    "path": "development/levels/rebuild/captures/college-ground-batch/campus-before.png",
+    "sha256": "9e1072cfc6999e774522068b23f0ac196d6742da14f9abb38de1790996eef398",
+    "source_glb_sha256": "7f5e8feeb59c9c31789f7c7bc0bbd75ddb60e40fbd867ea60ab1cb3d5e320db5"
+  },
+  "flat": {
+    "before": {
+      "flat_links": 39,
+      "pass_both_directions": 32
+    },
+    "after": {
+      "flat_links": 39,
+      "pass_both_directions": 39
+    },
+    "current_lanes": {
+      "samples": 10071,
+      "valid_standing": 10071,
+      "invalid_standing": 0,
+      "reasons": {},
+      "physical_components": []
+    }
+  },
+  "vertical": {
+    "routes": 5,
+    "legacy_forward": 0,
+    "legacy_reverse": 0,
+    "authored_forward": 5,
+    "authored_reverse": 5
+  },
+  "flight_count": 5,
+  "accessible_spaces": 40,
+  "other_roster_packets_unchanged": 28,
+  "diagram_sha256": "bb36d622d892da20751f3e41c35e67d38dde2cf147b8d800b721033dbf1bc18b",
+  "visual_findings": [
+    "Replace overlapping provisional paving with single saved ground surface at four sills.",
+    "Retain later work for drainage, outer boundaries and building detailing."
+  ],
+  "runtime_accepted": false
+}

@@ -261,3 +261,8 @@ tools/audit_current_flat_routes.py -text whitespace=cr-at-eol
 # Spillway gallery source and native verification bind exact file bytes.
 development/levels/rebuild/dam-spillway-gallery-pass/** -text whitespace=cr-at-eol
 tools/build_dam_spillway_gallery.py -text whitespace=cr-at-eol
+
+# Preserve the College saved editor world and native construction receipts.
+development/levels/rebuild/college-ground-pass/** -text whitespace=cr-at-eol
+tools/build_college_grounds.py -text whitespace=cr-at-eol
+tools/prepare_college_grounds.py -text whitespace=cr-at-eol

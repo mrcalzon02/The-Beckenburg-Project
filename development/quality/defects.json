@@ -5974,6 +5974,28 @@
       "action": "Design the complete exposed channel and retaining transition against existing measured terrain and foundation owners. Recheck external bounds, guard posts, render views and lower-room terrain controls.",
       "evidence": "development/levels/rebuild/captures/dam-spillway-gallery-batch/spillway-exterior.png",
       "older_maps": "Look beyond passing traversal centerlines. Check original terrace cuts, visible exposed edges and retaining/bedrock continuity from exterior views."
+    },
+    {
+      "id": "DEV-538",
+      "title": "College circulation studies crossed buildings and unsupported ground",
+      "status": "NATIVE_SAVED_GROUNDS_AND_REAL_ENTRANCES_VERIFIED_RUNTIME_OPEN",
+      "affected": "COLLEGE L01/L02/L03/L17/L24/L44/L45",
+      "symptom": "Seven native links failed. Blue study strips occupied the forecourt and intersected walls, and the outside north stair opening met a flight.",
+      "cause": "The old ground sat below the floor and schematic adjacency was treated as physical circulation.",
+      "action": "Grade the actual geographic ground, replace the entire cross-tunnel crown, build four full doorway faces and retire all study solids. Use the accessible café and existing north crossing to reach the stair.",
+      "evidence": "development/levels/rebuild/college-ground-pass/checkpoint.json and verification/flat/current-flat-links.tsv",
+      "older_maps": "Use both export review and full continuous sweeps when replacing route strips on the remaining roster."
+    },
+    {
+      "id": "DEV-539",
+      "title": "College pavement and terrain tried to own the same entrance surface",
+      "status": "CORRECTED_SINGLE_CONTINUOUS_SAVED_SURFACE_AT_SILLS",
+      "affected": "COLLEGE green, cross-tunnel and four exterior entrances",
+      "symptom": "Early graded ground left a low lip at the tunnel crown. Later flush pilot slabs flickered over the same height-field surface.",
+      "cause": "The crest of a terrain mesh and separate pavement met at inconsistent levels or occupied identical heights.",
+      "action": "Set shared ground and structural crown elevation together. Remove duplicate pilot slabs and grade the actual rear approach to the sill. Verify the reopened world, exact sill and soffit rays, standing renders and production movement probes.",
+      "evidence": "development/levels/rebuild/captures/college-ground-batch/teaching-entrance.png and development/levels/rebuild/college-ground-pass/college/export-verification.json",
+      "older_maps": "Inspect flush ground at eye height after native route checks. Check for substep gaps, duplicate surfaces and underground support."
     }
   ],
   "audit_categories": [

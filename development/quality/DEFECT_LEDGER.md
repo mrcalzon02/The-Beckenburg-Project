@@ -7612,6 +7612,34 @@ Evidence and verification: development/levels/rebuild/captures/dam-spillway-gall
 
 Older-map obligation: Look beyond passing traversal centerlines. Check original terrace cuts, visible exposed edges and retaining/bedrock continuity from exterior views.
 
+### DEV-538 — College circulation studies crossed buildings and unsupported ground
+
+**Status:** NATIVE_SAVED_GROUNDS_AND_REAL_ENTRANCES_VERIFIED_RUNTIME_OPEN · **Affected:** COLLEGE L01/L02/L03/L17/L24/L44/L45
+
+Seven native links failed. Blue study strips occupied the forecourt and intersected walls, and the outside north stair opening met a flight.
+
+Cause / uncertainty: The old ground sat below the floor and schematic adjacency was treated as physical circulation.
+
+Fix / next action: Grade the actual geographic ground, replace the entire cross-tunnel crown, build four full doorway faces and retire all study solids. Use the accessible café and existing north crossing to reach the stair.
+
+Evidence and verification: development/levels/rebuild/college-ground-pass/checkpoint.json and verification/flat/current-flat-links.tsv
+
+Older-map obligation: Use both export review and full continuous sweeps when replacing route strips on the remaining roster.
+
+### DEV-539 — College pavement and terrain tried to own the same entrance surface
+
+**Status:** CORRECTED_SINGLE_CONTINUOUS_SAVED_SURFACE_AT_SILLS · **Affected:** COLLEGE green, cross-tunnel and four exterior entrances
+
+Early graded ground left a low lip at the tunnel crown. Later flush pilot slabs flickered over the same height-field surface.
+
+Cause / uncertainty: The crest of a terrain mesh and separate pavement met at inconsistent levels or occupied identical heights.
+
+Fix / next action: Set shared ground and structural crown elevation together. Remove duplicate pilot slabs and grade the actual rear approach to the sill. Verify the reopened world, exact sill and soffit rays, standing renders and production movement probes.
+
+Evidence and verification: development/levels/rebuild/captures/college-ground-batch/teaching-entrance.png and development/levels/rebuild/college-ground-pass/college/export-verification.json
+
+Older-map obligation: Inspect flush ground at eye height after native route checks. Check for substep gaps, duplicate surfaces and underground support.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

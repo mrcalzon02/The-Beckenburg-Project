@@ -1135,7 +1135,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "392aa8153481ee13de9c169ce812a6c404f6bb2e",
           "evidence": [
             "development/levels/rebuild/structures/college/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1164,7 +1164,8 @@
             "development/levels/rebuild/floor-closure-pass/college/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/college-ground-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -1185,13 +1186,15 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-538",
+            "DEV-539"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Inspect boundary, drainage, roof and facade joins and integrate the same spatial sources with the actual game."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "392aa8153481ee13de9c169ce812a6c404f6bb2e",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -1204,7 +1207,8 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/college-ground-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -1214,16 +1218,23 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-538",
+            "DEV-539"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Inspect boundary, drainage, roof and facade joins and integrate the same spatial sources with the actual game."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "392aa8153481ee13de9c169ce812a6c404f6bb2e",
+          "evidence": [
+            "development/levels/rebuild/college-ground-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-538",
+            "DEV-539"
+          ],
+          "next_action": "Inspect boundary, drainage, roof and facade joins and integrate the same spatial sources with the actual game."
         },
         "S06": {
           "status": "NOT_AUDITED",
