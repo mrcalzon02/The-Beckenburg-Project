@@ -266,3 +266,6 @@ tools/build_dam_spillway_gallery.py -text whitespace=cr-at-eol
 development/levels/rebuild/college-ground-pass/** -text whitespace=cr-at-eol
 tools/build_college_grounds.py -text whitespace=cr-at-eol
 tools/prepare_college_grounds.py -text whitespace=cr-at-eol
+development/levels/rebuild/cemetery-grounds-pass/** -text whitespace=cr-at-eol
+tools/build_cemetery_grounds.py -text whitespace=cr-at-eol
+tools/prepare_cemetery_grounds.py -text whitespace=cr-at-eol

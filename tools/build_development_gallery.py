@@ -17,7 +17,11 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/college-ground-batch/' in path:
+    if '/cemetery-grounds-batch/' in path:
+        if 'cutaway' in p.name:kind='Native crypt section with inspection layers hidden'
+        elif p.stem=='before':kind='Native before reconstruction with physical study strips'
+        else:kind='Native Cemetery and Vale Mortuary terrain, entrances and structure'
+    elif '/college-ground-batch/' in path:
         kind='Native campus before ground reconstruction' if 'before' in p.name else 'Native College terrain and building review with the shared van at arrival'
     elif '/dam-spillway-gallery-batch/' in path:
         kind='Native structural cutaway; terrain and overhead layers hidden' if 'cutaway' in p.name else 'Native before construction; terrain and overhead layers hidden' if 'before' in p.name else 'Native exported Dam gallery and crest inspection'

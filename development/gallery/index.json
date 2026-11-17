@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11048,
+  "count": 11060,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -96474,6 +96474,126 @@
       "height": 625,
       "bytes": 466582,
       "sha256": "6089ccd649e45980f3fc72b6326a0ccca5a91bb2fd142cf21ca9308a665fd256"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/before.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/before.png",
+      "title": "Before",
+      "kind": "Native before reconstruction with physical study strips",
+      "width": 1140,
+      "height": 820,
+      "bytes": 890400,
+      "sha256": "7e408c09bcb5ecbb57a4a409eb4f18968163dd88dd2da1a62598e18781cf094d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/overview.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/overview.png",
+      "title": "Overview",
+      "kind": "Native Cemetery and Vale Mortuary terrain, entrances and structure",
+      "width": 1240,
+      "height": 900,
+      "bytes": 1056226,
+      "sha256": "68300908f1e714af7910abc556af0162ccf821c983499b5930ea3f5792456230"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/public-entry.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/public-entry.png",
+      "title": "Public entry",
+      "kind": "Native Cemetery and Vale Mortuary terrain, entrances and structure",
+      "width": 1240,
+      "height": 900,
+      "bytes": 961697,
+      "sha256": "f5aabb573a5cb5bdd211e01564604e903daa481d8a6a2d1ecbbff524af1c87b5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/receiving-door.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/receiving-door.png",
+      "title": "Receiving door",
+      "kind": "Native Cemetery and Vale Mortuary terrain, entrances and structure",
+      "width": 1240,
+      "height": 900,
+      "bytes": 870044,
+      "sha256": "55db7bd5ea9afaa310d9ce50a961dd1aed301faa8f667e86326b3b9f405b4391"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/staff-transfer.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07-mortuary/staff-transfer.png",
+      "title": "Staff transfer",
+      "kind": "Native Cemetery and Vale Mortuary terrain, entrances and structure",
+      "width": 1240,
+      "height": 900,
+      "bytes": 1130961,
+      "sha256": "2732d0144651b6a1b17d5153e8047829c7603ecece014ebb11c9eea89b94479f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/arrival.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/arrival.png",
+      "title": "Arrival",
+      "kind": "Native Cemetery and Vale Mortuary terrain, entrances and structure",
+      "width": 1240,
+      "height": 900,
+      "bytes": 782150,
+      "sha256": "94c34b298917494932efb8e64ab91d59b1880d44cbe46b160a8a3545b4bc65e9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/before.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/before.png",
+      "title": "Before",
+      "kind": "Native before reconstruction with physical study strips",
+      "width": 1140,
+      "height": 820,
+      "bytes": 789295,
+      "sha256": "cd3c18013fe416c5e701a7c07f65ee295d31554c8b52124f06f6a3b79d97008b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/chapel.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/chapel.png",
+      "title": "Chapel",
+      "kind": "Native Cemetery and Vale Mortuary terrain, entrances and structure",
+      "width": 1240,
+      "height": 900,
+      "bytes": 1085763,
+      "sha256": "96e04a845e7c74223d03d6144b326f37accf9e99db80b21616cc6a60c8e3691b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/overview.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/overview.png",
+      "title": "Overview",
+      "kind": "Native Cemetery and Vale Mortuary terrain, entrances and structure",
+      "width": 1240,
+      "height": 900,
+      "bytes": 881926,
+      "sha256": "9b555950a1aafc9bcdcfe78a66faf4904fbdc8ed62afb3675cbb1eb44c0b38b9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/vault.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/vault.png",
+      "title": "Vault",
+      "kind": "Native Cemetery and Vale Mortuary terrain, entrances and structure",
+      "width": 1240,
+      "height": 900,
+      "bytes": 1104021,
+      "sha256": "23640020113dd6e068b53e2c6b40744d48f0a30c2948331c9d74c2cbdd2da14c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/west-crypt-cutaway.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/west-crypt-cutaway.png",
+      "title": "West crypt cutaway",
+      "kind": "Native crypt section with inspection layers hidden",
+      "width": 1240,
+      "height": 900,
+      "bytes": 846350,
+      "sha256": "33f60171a5c0fb3428adc46a593971fbfee079236683027a2050a62d22a91ac9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/west-crypt-entry.png",
+      "url": "development/levels/rebuild/captures/cemetery-grounds-batch/wld-07/west-crypt-entry.png",
+      "title": "West crypt entry",
+      "kind": "Native Cemetery and Vale Mortuary terrain, entrances and structure",
+      "width": 1240,
+      "height": 900,
+      "bytes": 1055580,
+      "sha256": "55ce9ecb638afe2cb8e2c8578c77870791e3af5b5addeb7b60ada6273694b6b9"
     },
     {
       "path": "development/levels/rebuild/captures/church-upper-openings/door-7-8.png",

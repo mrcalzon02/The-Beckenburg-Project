@@ -3678,15 +3678,20 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "status": "IN_PROGRESS",
+          "source_sha": "a423e0b797aabe941ba7586040cb8c01b2373c78",
+          "evidence": [
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-543",
+            "DEV-544"
+          ],
+          "next_action": "Check enclosure at the whole perimeter and derive room owners and searchable subspaces from the authored geometry."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "a423e0b797aabe941ba7586040cb8c01b2373c78",
           "evidence": [
             "development/levels/rebuild/structures/wld-07/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3714,7 +3719,8 @@
             "development/levels/rebuild/floor-closure-pass/wld-07/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -3739,13 +3745,15 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-543",
+            "DEV-544"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Keep exact swept routes and verify over, under and around containment, door leaves and ghost boundaries."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "a423e0b797aabe941ba7586040cb8c01b2373c78",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3758,21 +3766,29 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-543",
+            "DEV-544"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Finish site perimeter, slope and drainage transitions with graves and fixtures rooted to the saved terrain."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "a423e0b797aabe941ba7586040cb8c01b2373c78",
+          "evidence": [
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-543",
+            "DEV-544"
+          ],
+          "next_action": "Finish cottage and annex envelope, roof joins, hardware and final attic/ceiling treatment."
         },
         "S06": {
           "status": "NOT_AUDITED",
@@ -6181,15 +6197,21 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "status": "IN_PROGRESS",
+          "source_sha": "a423e0b797aabe941ba7586040cb8c01b2373c78",
+          "evidence": [
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-543",
+            "DEV-544",
+            "DEV-545"
+          ],
+          "next_action": "Check enclosure at the whole perimeter and derive room owners and searchable subspaces from the authored geometry."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "a423e0b797aabe941ba7586040cb8c01b2373c78",
           "evidence": [
             "development/levels/rebuild/structures/wld-07-mortuary/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -6217,7 +6239,8 @@
             "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -6242,13 +6265,16 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-543",
+            "DEV-544",
+            "DEV-545"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Keep exact swept routes and verify over, under and around containment, door leaves and ghost boundaries."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "a423e0b797aabe941ba7586040cb8c01b2373c78",
           "evidence": [
             "development/levels/rebuild/wld-07-mortuary/terrain-world/verification.json",
             "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
@@ -6263,23 +6289,33 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-363",
             "DEV-366",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-543",
+            "DEV-544",
+            "DEV-545"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Finish site perimeter, slope and drainage transitions with graves and fixtures rooted to the saved terrain."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "a423e0b797aabe941ba7586040cb8c01b2373c78",
+          "evidence": [
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-543",
+            "DEV-544",
+            "DEV-545"
+          ],
+          "next_action": "Finish cottage and annex envelope, roof joins, hardware and final attic/ceiling treatment."
         },
         "S06": {
           "status": "NOT_AUDITED",

@@ -7682,6 +7682,48 @@ Evidence and verification: development/levels/rebuild/college-ground-pass/runtim
 
 Older-map obligation: Use precise baseline and current resources whenever a candidate change is gated by a shared smoke test.
 
+### DEV-543 — Cemetery layouts contained physical study strips and duplicate vault landings
+
+**Status:** CORRECTED_IN_AUTHORED_NATIVE_EXPORTS · **Affected:** WLD-07 and WLD-07-MORTUARY shared grounds and vault
+
+Previous ordinary routes passed because blue study strips bridged grades. Two lower landing strips lay on the same plane as the vault floor and visibly flickered in cutaway.
+
+Cause / uncertainty: Design guidance was rendered and collided as ground. Separate long landing pieces also repeated an existing structural floor.
+
+Fix / next action: Remove 46 exterior study strips and four inherited vault landing strips. Grade complete geographic fields in both saved editor worlds and retain the actual continuous lower floor.
+
+Evidence and verification: development/levels/rebuild/cemetery-grounds-pass/checkpoint.json
+
+Older-map obligation: Review prior passing routes in whole-site views and sections for guide meshes and overlapping slabs.
+
+### DEV-544 — Segmented cemetery stair landings left movement gaps at floor joints
+
+**Status:** CORRECTED_WITH_CONTINUOUS_GUARDED_LANDING_DECKS · **Affected:** WLD-07 and WLD-07-MORTUARY west and east crypt pavilions
+
+After removing the old support strips, a sweep at Z 16.9 lost contact between the eight inherited floor quadrants. The cutaway also showed an exposed return edge above the lower flight.
+
+Cause / uncertainty: Adjacent floor fragments had independent floating-point edges and no guard across the return.
+
+Fix / next action: Replace each landing floor with a single depth-bearing deck around the measured well, with two cheeks and a return guard and existing tread elevations. Recheck both full burial loops.
+
+Evidence and verification: development/levels/rebuild/cemetery-grounds-pass/checkpoint.json
+
+Older-map obligation: Test real floor seams after any physical guidance removal, and inspect occupied edges above the bottom of each stair.
+
+### DEV-545 — Vale Mortuary routes exposed private staff and receiving rooms
+
+**Status:** NATIVE_CIRCULATION_REBUILT_HARDWARE_AND_GAMEPLAY_OPEN · **Affected:** WLD-07-MORTUARY viewing, staff transfer, cold storage and receiving
+
+The original public loop cut from viewing directly into preparation and from reception directly into receiving. A retained cabinet occupied the proposed staff threshold in the first corrected fit.
+
+Cause / uncertainty: Public and service adjacency followed a drawing without building a private transfer vestibule or checking actual fit-out.
+
+Fix / next action: Close both old openings, build a public hall door and separate vehicle receiving door, and link the bay, office and cold store through a dedicated staff vestibule. Translate the original cabinet onto the office floor.
+
+Evidence and verification: development/levels/rebuild/cemetery-grounds-pass/checkpoint.json
+
+Older-map obligation: Check public-to-staff optical negatives and actual supported prop clearance when changing a staff circulation plan.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
