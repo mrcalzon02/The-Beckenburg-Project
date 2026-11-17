@@ -62,6 +62,24 @@ public final class SafeAreaHazeDepthReview {
             throw new AssertionError("Haze color/count/depth mismatch at "+eye+" pixel="+Arrays.mismatch(expected,actual));
     }
 
+    /** Projection-buffer A/B must reproduce the original division bit-for-bit. */
+    private static void horizontalProjectionParity() {
+        var cache=new SafeAreaHaze.RayCache();
+        long checked=0;
+        for(int width:new int[]{1,2,3,83,640,960,1280,1920})
+            for(double focal:new double[]{.25,1,43,480,800,1920}) {
+                double[] columns=cache.horizontal(width,focal);
+                for(int row=0;row<540;row++)
+                    for(int col=0;col<width;col++) {
+                        double reference=(col+.5-width*.5)/focal;
+                        if(Double.doubleToLongBits(reference)!=Double.doubleToLongBits(columns[col]))
+                            throw new AssertionError("Horizontal projection mismatch "+width+" "+focal+" "+col);
+                        checked++;
+                    }
+            }
+        System.out.println("PASS "+checked+" exact horizontal projection samples including resized lenses");
+    }
+
     private static void nearPlaneDepartures() {
         var cache=new SafeAreaHaze.RayCache();
         int seed=9000;
@@ -166,6 +184,7 @@ public final class SafeAreaHazeDepthReview {
             var eye=new Eye(x,y,z,rng.nextDouble()*2*Math.PI,rng.nextDouble()*2-1);
             for(int frame=0;frame<4;frame++)parity(eye,i*4+frame,cache);
         }
+        horizontalProjectionParity();
         nearPlaneDepartures();
         projectionChanges();
         System.out.println("PASS 2114840 exact RGB/depth samples with pose changes and live occluders and changed counts against unculled analytic dome");
