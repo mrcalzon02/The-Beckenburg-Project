@@ -45,7 +45,7 @@ public final class VanStaging {
     public void setCargoDoorClosed(boolean closed){cargoDoorClosed=closed;}
     /** Exact physical button location beside the van's cargo entrance. */
     public Position doorButton(){return world(-INTERIOR_HALF_WIDTH+.04,FRONT+.14);}
-    public Position doorOperatingPoint(){return world(-.23,FRONT+.16);}
+    public Position doorOperatingPoint(){return world(-.23,FRONT+.40);}
     public Position spawn(int seat){
         if(seat<0||seat>=6)throw new IllegalArgumentException("hunter seat");
         return world(seat%2==0?-.25:.25,-1.10+(seat/2)*.75);
@@ -94,10 +94,17 @@ public final class VanStaging {
         return overlaps(p.x(),p.z(),radius,-w,-INTERIOR_HALF_WIDTH,f,r) ||
             overlaps(p.x(),p.z(),radius,INTERIOR_HALF_WIDTH,w,f,r) ||
             overlaps(p.x(),p.z(),radius,-w,w,r-t,r) ||
-            (cargoDoorClosed&&overlaps(p.x(),p.z(),radius,-w,w,f,f+t)) ||
+            (cargoDoorClosed&&overlapsCargoPanel(p,radius)) ||
             // Fully modeled driver's cab is not a walk-through prop either.
             overlaps(p.x(),p.z(),radius,-HALF_WIDTH,HALF_WIDTH,r,r+CAB_LENGTH) ||
             VanInteriorLayout.collides(p.x(),p.z(),radius);
+    }
+    private static boolean overlapsCargoPanel(Position local,double radius){
+        return overlaps(local.x(),local.z(),radius,-HALF_WIDTH,HALF_WIDTH,FRONT,FRONT+WALL_THICKNESS);
+    }
+    boolean occupiesCargoDoor(LanWorld.Body body,double bodyHeight){
+        return body.y()<placement.y()+ROOF_Y&&body.y()+bodyHeight>floorY()
+            &&overlapsCargoPanel(local(body.x(),body.z()),.22);
     }
     private static boolean overlaps(double x,double z,double radius,
             double minX,double maxX,double minZ,double maxZ) {

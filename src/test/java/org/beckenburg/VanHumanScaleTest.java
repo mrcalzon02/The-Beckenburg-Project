@@ -83,6 +83,11 @@ public final class VanHumanScaleTest {
             }
             var button=van.doorOperatingPoint();check(map.traversable(button.x(),VanStaging.FLOOR_Y,button.z())&&van.nearDoorButton(button.x(),button.z()),"mounted door control lacks clear operating point");
             van.setCargoDoorClosed(true);var p=van.world(0,VanStaging.FRONT+.12);
+            check(map.traversable(button.x(),van.floorY(),button.z()),"operator must clear the closed shutter");
+            var crossing=new LanWorld.Body(p.x(),van.floorY(),p.z(),0,14);
+            check(van.occupiesCargoDoor(crossing,HunterPosture.CROUCH_HEIGHT),"crouching hunter across shutter blocks it");
+            check(!van.occupiesCargoDoor(new LanWorld.Body(p.x(),van.placement().y()+VanStaging.ROOF_Y+.1,p.z(),0,14),
+                HunterPosture.STANDING_HEIGHT),"body above shutter cannot obstruct it");
             check(!map.traversable(p.x(),VanStaging.FLOOR_Y,p.z()),"closed rear leaves must seal actual threshold");
             System.out.println("PASS "+site+": six distinct deck pads, all station routes, outdoor ramp descent/return and cargo seal");
         }

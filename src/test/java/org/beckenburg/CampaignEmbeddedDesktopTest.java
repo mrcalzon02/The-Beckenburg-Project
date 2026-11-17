@@ -80,8 +80,17 @@ public final class CampaignEmbeddedDesktopTest {
                 throw new AssertionError("Rejected extraction changed host campaign state");
             // Exercise the same host-validated cargo control used by real 3D gameplay.
             edt(()->{hunter[0].vanDoor();return null;});
-            untilNoticed(()->uiNotices.contains("ACCEPT VANDOOR CLOSED"),
-                "Physical van door accepted through the GUI",uiNotices);
+            // A hire can be crossing the shutter during the first press.
+            long[] retryAfter={0};
+            untilNoticed(()->{
+                if(uiNotices.contains("ACCEPT VANDOOR CLOSED"))return true;
+                if(owner[0].running()&&uiNotices.contains("REJECT van doorway occupied")
+                        &&System.nanoTime()>=retryAfter[0]){
+                    hunter[0].vanDoor();
+                    retryAfter[0]=System.nanoTime()+500_000_000L;
+                }
+                return false;
+            },"Physical van door accepted after the threshold clears",uiNotices);
             until(()->{var state=LanLobbyPanel.class.getDeclaredField("missionRunning");
                 state.setAccessible(true);return !state.getBoolean(lobby[0]);
             },"GUI receives host retreat result and leaves running state");

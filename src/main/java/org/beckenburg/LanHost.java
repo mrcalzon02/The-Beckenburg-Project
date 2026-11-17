@@ -2234,13 +2234,11 @@ public final class LanHost implements AutoCloseable {
     private void closeVanDoorsAndFinish(Peer peer){
         if(!aboardForRetreat(peer.slot))throw new IllegalArgumentException("operate the exit from inside the van");
         if(map.van().cargoDoorClosed())throw new IllegalArgumentException("van doors already sealed");
-        map.van().setCargoDoorClosed(true);
         for(int i=0;i<HUNTERS;i++)
-            if((seats[i]!=null||reserved[i]!=null)
-                    &&!map.traversable(world.body(i).x(),world.body(i).y(),world.body(i).z())){
-                map.van().setCargoDoorClosed(false);
+            if((seats[i]!=null||reserved[i]!=null)&&map.van().occupiesCargoDoor(
+                    world.body(i),HunterPosture.height(world.crouched(i))))
                 throw new IllegalArgumentException("van doorway occupied");
-            }
+        map.van().setCargoDoorClosed(true);
         boolean[] aboard=new boolean[HUNTERS];
         for(int i=0;i<HUNTERS;i++)
             aboard[i]=aboardForRetreat(i);
