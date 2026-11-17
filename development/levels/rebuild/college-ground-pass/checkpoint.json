@@ -114,5 +114,19 @@
     "Replace overlapping provisional paving with single saved ground surface at four sills.",
     "Retain later work for drainage, outer boundaries and building detailing."
   ],
-  "runtime_accepted": false
+  "runtime_accepted": false,
+  "publication": {
+    "construction_commit": "d98f9826290788eb33d4ebf045b5bf122fea46bb",
+    "branch": "map/roster-structure-batch",
+    "pr": 86,
+    "pr_base": "map/house-default",
+    "pr_draft": true,
+    "committed_bytes_verified": true,
+    "gallery_run": 44187124791,
+    "gallery_run_status": "completed",
+    "gallery_run_conclusion": "success",
+    "gallery_page_http": 200,
+    "new_capture_http": 404,
+    "deployed_capture_verified": false
+  }
 }

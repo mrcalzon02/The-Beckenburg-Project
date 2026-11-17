@@ -1135,7 +1135,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "392aa8153481ee13de9c169ce812a6c404f6bb2e",
+          "source_sha": "d98f9826290788eb33d4ebf045b5bf122fea46bb",
           "evidence": [
             "development/levels/rebuild/structures/college/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1194,7 +1194,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "392aa8153481ee13de9c169ce812a6c404f6bb2e",
+          "source_sha": "d98f9826290788eb33d4ebf045b5bf122fea46bb",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -1226,7 +1226,7 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "392aa8153481ee13de9c169ce812a6c404f6bb2e",
+          "source_sha": "d98f9826290788eb33d4ebf045b5bf122fea46bb",
           "evidence": [
             "development/levels/rebuild/college-ground-pass/checkpoint.json"
           ],
