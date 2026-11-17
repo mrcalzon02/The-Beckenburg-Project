@@ -12,6 +12,10 @@ The v0.1.338 Windows installer ships the measured four-lane shader and 30 ms vis
 
 The 20 ms deadline measured 23.81 / 32.40 / 23.60 ms pooled p95 for solo idle, walking and stopping. Three-seat p95 was 23.88 / 32.67 / 25.86 ms. Two individual walking trials missed 33.3 ms. [GTX pacing, CPU, route and network evidence](windows-pacing.md)
 
+The v0.1.339 Windows installer ships the four-lane renderer with the measured 20 ms render deadline from `b4c36c0b34e79187a37c52f12f77c4d39e472fbc`. The installer build passed packaged solo, complete multiplayer settlement and installed Castle startup. Installer SHA-256 is `025cb1437d2b0194727922912db1907b737201a3e7f6d56c30d1599a851a3341`. [Windows release](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.339) · [Exact-source installer checks](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44007713465)
+
+The physical House door 2 CPU candidate reduced toggle medians but doubled intermediate swing p95 in all eight paired trials. [GTX door CPU evidence](door-2/physical-door-cpu.md)
+
 ## Direct measurements
 
 | Workload | Baseline | Candidate | Measured scope |

@@ -179,3 +179,7 @@ The six-frame admission experiment on the GTX removed the repeated >100 ms walks
 ## 2026-11-16 — House viewport deadlines on Core30
 
 With a 20 ms visual deadline and 110 ms input timer, the physical four-pair study met 33.3 ms pooled p95 in all six solo and three-seat phases. Two individual walks missed the target and one solo first step took 106.424 ms. DEV-364 retains these exceptions. The 30 ms repeating build at eaa32a3 passed 379/379 Windows regressions and installed Castle startup. [Hardware frames, CPU and network dispatch](../../docs/performance/2026-11-16-house-frame-times/windows-pacing.md) · [Exact-source Windows suite](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44002540897)
+
+## 2026-11-16 — House door 2 CPU comparison
+
+Core30 run 44003061335 confirmed identical color, raw depth and transfer counts on all 144 frames spanning 17 fixed leaf poses at each camera. Source-aware CPU lighting halved median toggle time but moved work into the swing. Its intermediate p95 worsened in eight of eight pairs and it retained all 12 interactions over 100 ms across both camera conditions. The CPU and RGB-only prototypes remain experimental. [Physical door evidence](../../docs/performance/2026-11-16-house-frame-times/door-2/physical-door-cpu.md).

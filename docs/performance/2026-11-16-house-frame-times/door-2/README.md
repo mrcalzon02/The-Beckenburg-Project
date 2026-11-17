@@ -6,6 +6,8 @@ The upload candidate stores XYZ and UV ahead of the contiguous RGB region of eac
 
 The physical GTX comparison subsequently confirmed identical frames and a 251,160-byte saving on all 96 paired toggles. End-to-end p95 worsened in three pairs and pooled p99 increased. [Physical report, frame CSVs and SHA-256 checks](physical-door.md)
 
+A separate CPU cache reduced median first-changed-frame time to 35–36 ms at both camera positions. Intermediate swing p95 rose from roughly 25 to 46 ms in all eight paired trials. Every original interaction over 100 ms remained. Both implementations retain their experimental status. [Physical CPU timing, color and raw-depth comparisons](physical-door-cpu.md)
+
 ## Timing
 
 House door 2, settled alternating poses and fixed camera. Each arm ran twice in a fresh Java 17 process, 58 frames per run, with 24 timed toggle frames. Order was baseline, receiver-only, RGB-only, both, both, RGB-only, receiver-only, baseline. Each used a 420 MiB Java heap cap, two visible JVM processors, Serial GC, two Mesa worker threads and the same CPU affinity on shared Linux. llvmpipe 25.0.7 rendered the frames. Results below pool each arm's 48 toggles and use nearest-rank percentiles. A shared host killed two attempts during other workloads. The completed retries used fresh processes and are the only observations in the table. Partial CSVs are preserved in the archive.
