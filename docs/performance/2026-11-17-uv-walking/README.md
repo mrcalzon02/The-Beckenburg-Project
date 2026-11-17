@@ -32,7 +32,7 @@ Reproduce using the same freshly compiled `EditorUvPaintProfile --changes OUTPUT
 
 [Core30 trial 44151619792](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/44151619792) pairs the clean production renderer with a timing-only overlay on one packaged game. Both use the same driver, disabled columns, solo route, loopback three-seat route and one-step hold. The clocks split characters, distance haze, weather, sanctuary, hiding-place rendering, PSX, graphics effects and haunting overlays. EDT time excludes parallel worker CPU. JVM collection counts and compiler activity are process-wide observations. The worker also verifies optical correctness and full TCP settlement.
 
-This source checkpoint starts the physical study. The raw completed trial determines which pass to change next.
+The completed stage timings and isolated shader experiments appear below.
 
 ## Windows runner time recovered
 
@@ -80,4 +80,35 @@ Each of the 16 one-step stops finished inside, and sixth stable-frame render cos
 
 A candidate skipped the upper ellipsoid test for downward rays below the sanctuary shoulder or rays proved to exit its cylindrical wall. It matched 2.4 million seeded analytic hit distances bit for bit, and every image hash, depth hash and shaded-pixel count matched in both moving-camera pairs. Shader-only p95 worsened in both pairs on the shared Linux worker. The first went from 19.98 to 47.16 ms, the second from 37.77 to 39.73 ms. The baseline p50s were 14.64 and 14.95 ms, versus 32.42 and 16.03 ms with the change. The release retains the original analytic path. [Four raw CSVs and unshipped patch](surface-replay.zip).
 
-The next hardware experiment is [44157367610](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/44157367610). The game package and test driver are identical between arms. One arm runs twelve disposable shader draws before play to exercise changing camera poses, held poses, animation and depth. The experiment separately records priming cost, elapsed time from Java main to the first observed in-view callback, input acceptance, frame tails and the one-step hold.
+The separate startup experiment is [44157367610](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/44157367610). The game package and test driver are identical between arms. One arm runs twelve disposable shader draws before play to exercise changing camera poses, held poses, animation and depth. The experiment separately records priming cost, elapsed time from Java main to the first observed in-view callback, input acceptance, frame tails and the one-step hold.
+
+## First two walking poses and final Windows checks
+
+The complete release-source Windows audit [44153590389](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44153590389) finished with `passed=391 failed=0 skipped=0 manifest=391`. Its own log includes all 144 retained/direct image comparisons. The receipt-only commit 93eb590 triggered the gallery and Pages workflows. The shipping workflow was absent from its GitHub run list.
+
+Across the earlier clean/probed stage study, every one of the 35 long intervals ended at either the first or second distinct movement pose. Thirteen clean and eleven instrumented hitches ended with a changed pose; eight clean and three instrumented hitches ended with a repeated pose. A changing camera can therefore also leave expensive work on the following callback.
+
+The existing `InvestigationScenePrewarm.prepare` is exercised by test programs. On this source revision the production `LanWorldPanel` instead constructs a `LevelOpeningCinematic` with its own asynchronous preview renderer. A normal-player-path test must measure which work actually finishes before control is handed to the hunter.
+
+## Shader arithmetic experiment
+
+On the local House replay, replacing a general cubic power with two multiplications improved both paired p95s, but changed 24 blended output colors in three million seeded samples. The candidate sent to hardware instead falls back to the original expression whenever a color channel is close to an integer rounding boundary. It matched all three million adversarial color comparisons and every replay image, depth hash and shaded-pixel count. Its local shader-only p95 comparisons were 56.72 to 20.00 ms and 19.21 to 18.65 ms. Shared-host baseline variance is large. [Raw paired data, differential checks and both patches](cubic-replays.zip).
+
+The independent [GTX shader A/B](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/44160326303) compares the guarded expression to the packaged shader, using the same default camera behavior in both arms. The startup study uses the untouched packaged shader in both arms. The two experiments isolate different changes.
+
+## Pre-game shader warming on the GTX 1660 SUPER
+
+The Windows runner completed all 16 routes, in-sanctuary stops, optical checks and both full three-seat settlements using the release game JAR. The table covers the walking phase across four counterbalanced pairs per mode. The full dataset contains 20,608 consumed-frame intervals across idle, walking and stopping. Times are milliseconds. Counts refer to distinct advancing frames.
+
+| Walking mode | Preparation | Frames | p50 | p95 | p99 | Worst | >33.3 | >50 | >100 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Solo | Default | 539 | 21.355 | 31.328 | 64.969 | 129.624 | 13 | 8 | 1 |
+| Solo | Twelve shader draws | 525 | 21.516 | 31.829 | 44.697 | 288.286 | 18 | 4 | 1 |
+| Three-seat | Default | 538 | 21.351 | 31.390 | 63.321 | 73.449 | 15 | 8 | 0 |
+| Three-seat | Twelve shader draws | 551 | 21.482 | 30.984 | 34.844 | 62.607 | 12 | 1 | 0 |
+
+Each multiplayer pair had fewer gaps over 50 ms with priming. One primed solo walk missed the 33.3 ms p95 budget at 35.500 ms. The 288.286 ms solo gap included 274.152 ms rendering a single changed pose inside the sanctuary, 271.208 ms after geometry, 1.813 ms in geometry and zero fresh shadow rays. The following callback at that same pose also hitched. The unprimed 129.624 ms interval spanned two callbacks with 108.840 ms post-geometry. The warmup experiment measured total post-geometry time in these outliers. The separate stage trial identifies the sanctuary pass in its own 14 instrumented hitches. Attribution of the 271 ms outlier to a particular shader or JVM event remains open.
+
+Median priming took 298.387 ms solo and 304.787 ms in multiplayer. Median time from Java main to first observed in-view callback increased from 3,413.892 to 3,686.473 ms solo and from 3,998.998 to 4,171.248 ms in multiplayer. Four runs per arm establish a direction worth testing, while the extreme solo tail and additional startup work keep this candidate experimental.
+
+[GTX warmup archive](gtx-priming-raw.zip) · [Per-trial results and long frames](gtx-priming-results.json) · [Worker-only warmup source](haze-warmup.zip). Archive SHA-256 `26adce701c0d0ae465138b7a69849e09d9453e8b9e3bf94781752e3d20d92534`. Reproduce with `python tools/performance/haze_columns_report.py gtx-priming-raw.zip results.json --experiment haze-warmup --summary-only`.

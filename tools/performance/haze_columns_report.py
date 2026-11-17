@@ -68,6 +68,10 @@ def analyze(path, experiment="haze-columns"):
         require(provenance["revisions"]["candidate"] == manifest["candidate_sha"], "Candidate SHA mismatch")
         if experiment in ("haze-columns", "haze-warmup"):
             require(manifest["runtime"] == "same unmodified candidate GPU JAR for both arms", "Not a same-package comparison")
+        elif experiment == "guarded-cubic":
+            require(manifest["runtime"] == "one candidate GPU JAR with a shader overlay in candidate only"
+                    and manifest["shader_overlay_lf_sha256"] == "b2cca0dba7c71efb88b84868ea61dfcb6cdd0e608eb327300476581d98b2fde8",
+                    "Unexpected shader overlay")
         elif experiment == "effect-stages":
             require(manifest["runtime"] == "one candidate GPU JAR, test-only overlay in probe arm"
                     and manifest["instrumented_lf_sha256"] == {
@@ -170,7 +174,7 @@ def main():
     parser.add_argument("archive")
     parser.add_argument("output")
     parser.add_argument("--summary-only", action="store_true", help="keep summaries and >50ms hitches; original CSVs remain in the input archive")
-    parser.add_argument("--experiment", choices=("haze-columns", "haze-warmup"), default="haze-columns")
+    parser.add_argument("--experiment", choices=("haze-columns", "haze-warmup", "guarded-cubic"), default="haze-columns")
     args = parser.parse_args()
     report = analyze(args.archive, args.experiment)
     if args.summary_only:
