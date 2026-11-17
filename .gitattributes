@@ -257,3 +257,7 @@ tools/review_lookout_terraces.py -text whitespace=cr-at-eol
 tools/java/RebuildTieredEarthworks.java -text whitespace=cr-at-eol
 tools/audit_roster_stairs.py -text whitespace=cr-at-eol
 tools/audit_current_flat_routes.py -text whitespace=cr-at-eol
+
+# Spillway gallery source and native verification bind exact file bytes.
+development/levels/rebuild/dam-spillway-gallery-pass/** -text whitespace=cr-at-eol
+tools/build_dam_spillway_gallery.py -text whitespace=cr-at-eol

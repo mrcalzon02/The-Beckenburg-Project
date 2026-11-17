@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11024,
+  "count": 11029,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -96624,6 +96624,56 @@
       "height": 1050,
       "bytes": 1524586,
       "sha256": "5cc40b6d8b223ccf9b4e8b1ac330f721fc60ae0c75c5f2b6f0d97957ac74de0e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-spillway-gallery-batch/crest-and-gallery-cutaway.png",
+      "url": "development/levels/rebuild/captures/dam-spillway-gallery-batch/crest-and-gallery-cutaway.png",
+      "title": "Crest and gallery cutaway",
+      "kind": "Native structural cutaway; terrain and overhead layers hidden",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1555611,
+      "sha256": "a41d77a524e1890907fb4c93048c0cbdebb168fc99610940092890e79d66f5ec"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-spillway-gallery-batch/inspection-before.png",
+      "url": "development/levels/rebuild/captures/dam-spillway-gallery-batch/inspection-before.png",
+      "title": "Inspection before",
+      "kind": "Native before construction; terrain and overhead layers hidden",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1195764,
+      "sha256": "2cd00b9da4c2bbfcf9b00074e538b2a77534fa757d08e0b631c95be55a86878e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-spillway-gallery-batch/lower-door-standing.png",
+      "url": "development/levels/rebuild/captures/dam-spillway-gallery-batch/lower-door-standing.png",
+      "title": "Lower door standing",
+      "kind": "Native exported Dam gallery and crest inspection",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1479270,
+      "sha256": "c55c7f7c1a722a80db4578483d637061806f10ecf69ec0ff813e6f5b1c5d039e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-spillway-gallery-batch/screen-standing.png",
+      "url": "development/levels/rebuild/captures/dam-spillway-gallery-batch/screen-standing.png",
+      "title": "Screen standing",
+      "kind": "Native exported Dam gallery and crest inspection",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1547790,
+      "sha256": "eb429088b8268294ad318386ef956ac1424964154ab448375cac8eb26b321bbc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-spillway-gallery-batch/spillway-exterior.png",
+      "url": "development/levels/rebuild/captures/dam-spillway-gallery-batch/spillway-exterior.png",
+      "title": "Spillway exterior",
+      "kind": "Native exported Dam gallery and crest inspection",
+      "width": 1400,
+      "height": 1050,
+      "bytes": 1657823,
+      "sha256": "f36105523344bd64d996ba6a5dadbee47ae83215222e71f1e914e23b3dcd8642"
     },
     {
       "path": "development/levels/rebuild/captures/deck-fit-batch/deck-sheet-01.png",

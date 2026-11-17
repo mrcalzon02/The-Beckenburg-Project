@@ -1,15 +1,15 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2025,
-  "unique_local_file_hashes": 1854,
+  "local_files": 2026,
+  "unique_local_file_hashes": 1855,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
     "existing_runtime_library": 581,
     "runtime_native_map_parts": 384,
     "source_library_masters": 120,
-    "additional_custom_model_sources": 100,
+    "additional_custom_model_sources": 101,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
     "native_map_exports": 253
@@ -26677,6 +26677,18 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "63f2c5e473a5e1bb7cb113b2b18f2a784e2f8fc830c9ab4b2d1601ce719799ea",
       "bytes": 7741452
+    },
+    {
+      "id": "spillway-gallery",
+      "label": "spillway-gallery",
+      "maps": [],
+      "category": "additional_custom_model_sources",
+      "path": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/spillway-gallery.glb",
+      "collection": "additional_custom_model_sources",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "a5ccd3bf7585b304eb8513eb52be3b866509d0b3e68996d6ca1cf34a62b6526b",
+      "bytes": 7982124
     },
     {
       "id": "deck-terrain",

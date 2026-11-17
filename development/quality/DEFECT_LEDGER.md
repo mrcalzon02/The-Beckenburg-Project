@@ -7584,6 +7584,34 @@ Evidence and verification: service-ground-bay-pass/checkpoint.json; roster.json;
 
 Older-map obligation: No untouched map receives approval from this batch. Native exports and checks alone do not authorize unlock or whole-map completion.
 
+### DEV-536 — Dam spillway guide detoured through the workshop into unbuilt ground
+
+**Status:** NATIVE_GALLERY_AND_CONTINUOUS_L12_CORRECTED_RUNTIME_OPEN · **Affected:** WLD-09 east hall and spillway observation
+
+The old center line passed through a closed workshop wall and buried ground towards an unsupported destination. L12 failed both ways.
+
+Cause / uncertainty: The inherited access route was treated as a hallway reservation despite the adjacent existing east hall.
+
+Fix / next action: Use a complete founded room under the crest, with its own level east-hall door and fixed protective observation screen. Route through the existing stair. The early unsized room test detected a residual southeast terrain overlap and the full retaining wall now contains it.
+
+Evidence and verification: development/levels/rebuild/dam-spillway-gallery-pass/checkpoint.json and verification/stairs/complete-route-sweeps.tsv
+
+Older-map obligation: Validate actual doorway adjacency and terrain coverage before retaining any cross-building route.
+
+### DEV-537 — Older Dam terrain cuts remain exposed outside the east catwalk
+
+**Status:** REVISE_EXTERNAL_CIVIL_TERRAIN_WATER_JOIN · **Affected:** WLD-09 east catwalk ground and adjacent hydraulic edge
+
+Unhidden exterior inspection shows long black openings in existing terrain beside the catwalk and the lower foundation below the soil edge.
+
+Cause / uncertainty: Existing excavation and terrain meshes do not yet include the final channel, ground closure and retaining surfaces.
+
+Fix / next action: Design the complete exposed channel and retaining transition against existing measured terrain and foundation owners. Recheck external bounds, guard posts, render views and lower-room terrain controls.
+
+Evidence and verification: development/levels/rebuild/captures/dam-spillway-gallery-batch/spillway-exterior.png
+
+Older-map obligation: Look beyond passing traversal centerlines. Check original terrace cuts, visible exposed edges and retaining/bedrock continuity from exterior views.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
