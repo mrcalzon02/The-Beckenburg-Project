@@ -22,6 +22,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final java.util.Map<Integer,Boolean> videoPowered=new HashMap<>();
     private final java.util.Map<String,Integer> batterySeconds=new HashMap<>();
     private final Map<Integer,SceneRenderer.RemoteBody> peers=new HashMap<>();
+    // Accessed only by onEvent on the Swing event thread. Both sprite atlases
+    // are immutable class resources shared by every view in this process.
+    private static boolean peerSpritesRequested;
+
     private final Map<Integer,String> hunterVisuals=new HashMap<>();
     private CharacterVisuals.Hunter myClass=CharacterVisuals.Hunter.OBSERVER;
     private final Map<Integer,String> hunterNames=new HashMap<>();
@@ -126,6 +130,15 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final FieldJournal fieldNotes=new FieldJournal();
     private int journalPage,guideCursor,guideGhostIndex;
     private GhostIdentity.Type selectedGuess=GhostIdentity.Type.SPIRIT;
+
+    private static void preparePeerSprites() {
+        if(peerSpritesRequested)return;
+        peerSpritesRequested=true;
+        var worker=new Thread(()->HunterSpriteAnimation.frame("observer",0,HunterSpriteAnimation.Pose.IDLE),
+                "beckenburg-peer-sprites");
+        worker.setDaemon(true);
+        worker.start();
+    }
 
     public LanWorldPanel(LanClient client){
         this.client=Objects.requireNonNull(client);
@@ -423,8 +436,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 int heading=LanProtocol.integer(p.get(5),0,359);
                 tick=LanProtocol.integer(p.get(6),0,99999999);
                 if(who==seat){renderer.x=x;renderer.z=z;renderer.eyeHeight=y+eyeOffset();feedback="HOST SYNC ACTIVE — movement and doors server controlled";}
-                else peers.put(who,new SceneRenderer.RemoteBody(x,y,z,who,heading,
-                    hunterVisuals.getOrDefault(who,"observer"),hunterPostures.getOrDefault(who,false)));
+                else {
+                    if(peers.isEmpty())preparePeerSprites();
+                    peers.put(who,new SceneRenderer.RemoteBody(x,y,z,who,heading,
+                        hunterVisuals.getOrDefault(who,"observer"),hunterPostures.getOrDefault(who,false)));
+                }
             }else if(p.size()==3&&p.get(0).equals("PEER")&&p.get(1).equals("LEFT")){
                 int gone=LanProtocol.integer(p.get(2),0,5);
                 downedHunters.remove(gone);hunterPain.remove(gone);applyHunterReactions();
