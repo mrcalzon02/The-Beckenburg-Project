@@ -1,0 +1,139 @@
+--- a/src/main/java/org/beckenburg/SafeAreaHaze.java
++++ b/src/main/java/org/beckenburg/SafeAreaHaze.java
+@@ -7,33 +7,39 @@
+  * Lower wall reaches head height and joins a soft elliptical dome over the roof. */
+ public final class SafeAreaHaze {
+     private SafeAreaHaze(){}
+-    /** A renderer owns one range image for its first (van or Castle) sanctuary. Only the
+-     * optical intersection is persistent. Animation, scene depth and compositing stay live. */
++    /** A renderer owns the range and opacity of its first sanctuary. Range is tied to
++     * the exact projection, while opacity also depends on the current animation clock. */
+     static final class RayCache {
+         private record View(int width,int height,double focal,double x,double eye,double z,
+                             double yaw,double pitch,SafeAreaBarrier.Volume area) {}
+         private View last;
+-        private boolean ready;
++        private double lastClock;
+         private double[] ranges;
+-
+-        private double[] repeat(View view,int pixels){
+-            if(!view.equals(last)){
+-                last=view;
+-                ready=false;
+-                return null;
+-            }
+-            if(!ready){
+-                if(ranges==null)ranges=new double[pixels];
+-                else if(ranges.length<pixels){
+-                    // A dome grows on screen as a hunter approaches it. Avoid allocating
+-                    // a slightly larger array at each stop, capped at this render target.
+-                    int capacity=Math.min(view.width()*view.height(),Math.max(pixels,ranges.length*2));
+-                    ranges=new double[capacity];
+-                }else java.util.Arrays.fill(ranges,0,pixels,0);
+-                ready=true;
+-            }
+-            return ranges;
+-        }
++        private double[] alphas;
++        private boolean sameView;
++        private boolean sameClock;
++        private boolean previousRepeated;
++        private boolean recorded;
++
++        private boolean begin(View view, double clock, int pixels) {
++            boolean repeats=view.equals(last);
++            sameView=repeats && recorded;
++            sameClock=sameView && Double.doubleToLongBits(clock)==Double.doubleToLongBits(lastClock);
++            // A continuously changing camera uses the direct raster. A held view
++            // also primes the first frame at the next step's new position.
++            recorded=repeats || previousRepeated;
++            previousRepeated=repeats;
++            last=view;
++            lastClock=clock;
++            if(!recorded)return false;
++            if(ranges==null || ranges.length<pixels){
++                int capacity=ranges==null?pixels:Math.min(view.width()*view.height(),Math.max(pixels,ranges.length*2));
++                ranges=new double[capacity];
++                alphas=new double[capacity];
++            }
++            return true;
++        }
++
+     }
+ 
+     public static int draw(int[] pixels,double[] depths,int width,int height,double focal,
+@@ -112,15 +118,20 @@
+             int y0=minZ<=.035?0:Math.max(0,(int)Math.floor(minY)-1),y1=minZ<=.035?height-1:Math.min(height-1,(int)Math.ceil(maxY)+1);
+             if(x1<x0||y1<y0)continue;
+             int span=x1-x0+1;
+-            double[] ranges=null;
++            double[] ranges=null,alphas=null;
++            boolean sameView=false,sameClock=false;
+             if(cache!=null&&shell==shells.get(0)){
+                 var view=new RayCache.View(width,height,focal,x,eye,z,yaw,pitch,a);
+-                ranges=cache.repeat(view,span*(y1-y0+1));
++                if(cache.begin(view,clock,span*(y1-y0+1))){
++                    ranges=cache.ranges;
++                    alphas=cache.alphas;
++                    sameView=cache.sameView;
++                    sameClock=cache.sameClock;
++                }
+             }
+             for(int row=y0;row<=y1;row++){
+                 double v=(height*.5-row-.5)/focal,dy=v*cp+sp,forward=cp-v*sp;
+-                // A moving camera (and every secondary shell) uses the original direct
+-                // raster loop. Keep range array checks out of its pixel path.
++                // Changing poses, secondary shells and callers without a cache use the direct loop.
+                 if(ranges==null){
+                     for(int col=x0;col<=x1;col++){
+                         double u=(col+.5-width*.5)/focal,dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
+@@ -141,13 +152,19 @@
+                     double sceneDepth=depths[at];
+                     // Positive ranges are analytic hits (infinity is a miss). A negative
+                     // range proves the ray remained inside up to that previous scene depth.
+-                    double hit=ranges[ray];
+-                    if(hit>0&&hit>=sceneDepth-.008)continue;
+-                    if(hit<0&&sceneDepth>=0&&sceneDepth<=-hit)continue;
++                    // Zero means this clock has no opacity yet (the ray may have been
++                    // hidden on an earlier draw). Every draw still tests the live depth.
++                    if(!sameClock)alphas[ray]=0;
++                    double hit=sameView?ranges[ray]:0;
++                    if(hit>0 && hit>=sceneDepth-.008)continue;
++                    if(hit<0 && sceneDepth>=0 && sceneDepth<=-hit)continue;
++                    double alpha=alphas[ray];
++                    if(sameClock && alpha>0){
++                        pixels[at]=blend(pixels[at],alpha);
++                        changed++;
++                        continue;
++                    }
+                     double u=(col+.5-width*.5)/focal,dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
+-                    // The cylinder extended downwards and its upper ellipsoid form one
+-                    // convex interior. A segment with both ends strictly inside cannot
+-                    // cross a visible wall or cap. The open bottom adds no surface.
+                     if(hit<=0){
+                         if(insideDome&&sceneDepth>=0&&Double.isFinite(sceneDepth)
+                                 &&insideDome(ox+dx*sceneDepth,capY+dy*sceneDepth,
+@@ -159,7 +176,9 @@
+                         ranges[ray]=hit;
+                         if(hit<.035||hit>=sceneDepth-.008)continue;
+                     }
+-                    pixels[at]=shade(pixels[at],a,x+dx*hit,eye+dy*hit-a.y(),z+dz*hit,clock);
++                    alpha=opacity(a,x+dx*hit,eye+dy*hit-a.y(),z+dz*hit,clock);
++                    alphas[ray]=alpha;
++                    pixels[at]=blend(pixels[at],alpha);
+                     changed++;
+                 }
+             }
+@@ -167,7 +186,11 @@
+     }
+ 
+     private static int shade(int old,SafeAreaBarrier.Volume area,double x,double y,double z,double clock){
+-        double alpha=opacity(area,x,y,z,clock),keep=1-alpha;
++        return blend(old,opacity(area,x,y,z,clock));
++    }
++
++    private static int blend(int old,double alpha){
++        double keep=1-alpha;
+         int r=(int)(((old>>16)&255)*keep+0xa9*alpha);
+         int g=(int)(((old>>8)&255)*keep+0xdf*alpha);
+         int b=(int)((old&255)*keep+0xff*alpha);
