@@ -3,6 +3,17 @@
   "updated": "2026-11-16",
   "issues": [
     {
+      "id": "DEV-381",
+      "title": "The shortest room count sent a Family kitchen assignment around the outside of the House",
+      "status": "Compared on the van–kitchen socket circuit and 72 direct route legs across House, Farmhouse and School",
+      "affected": "Van-to-room and return-to-van routes for investigator searches, tool exchanges and camera service",
+      "symptom": "The House kitchen was accessible from other rooms, but the van-to-kitchen and kitchen-to-van checks stopped outside for six game minutes. The same outbound route failed over a real socket.",
+      "cause": "Counting room transitions favored a physically longer exterior journey even when a short walk through the front door and Living room reached the same destination.",
+      "action": "Weigh physical distances through the authored doorways when choosing the route from the van approach or back to the van. Keep room-hop ranking for the ordinary investigator search.",
+      "evidence": "House kitchen socket comparison and 72 directed route outcomes in development/quality/evidence/camera-attention-verification-2026-11-16/",
+      "older_maps": "Farmhouse and School were swept alongside House. The earlier unrestricted weighting was rejected because it broke a previously reachable Farmhouse route."
+    },
+    {
       "id": "DEV-380",
       "title": "Equal-length room routes sent the dining-room investigator into an exterior dead end",
       "status": "Baseline socket stalled; corrected socket reached the Dining nook and returned to the van relay",

@@ -1,8 +1,9 @@
 package org.beckenburg;
 
-/** Equally short dining-room routes must allow the hunter to use the nearby front entrance. */
+/** Hunters can reach both ground-floor rooms from the relay using reachable house entrances. */
 public final class LanHunterDiningNavigationTest {
     public static void main(String[] args)throws Exception{
         LanHunterStairNavigationTest.roundTrip(3,"Dining nook");
+        LanHunterStairNavigationTest.roundTrip(2,"Family kitchen");
     }
 }

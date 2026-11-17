@@ -14,6 +14,7 @@ import org.beckenburg.LevelDefinition.Vec;
 final class HunterFieldNavigation {
     private final HouseMap map;
     private final int[][] distances=new int[HouseMap.ROOM_COUNT][HouseMap.ROOM_COUNT];
+    private final double[][] routeLength=new double[HouseMap.ROOM_COUNT][HouseMap.ROOM_COUNT];
     private final ArrayDeque<Vec> waypoints=new ArrayDeque<>();
     private int lastDoor=-100,failedUntil;
     private Vec target,previous;
@@ -34,6 +35,25 @@ final class HunterFieldNavigation {
                 }
             }
         }
+        // Estimate walking distance through each doorway. Two large exterior zones
+        // can take longer to cross than several adjacent rooms inside the house.
+        for(int a=0;a<routeLength.length;a++){
+            Arrays.fill(routeLength[a],Double.POSITIVE_INFINITY);
+            routeLength[a][a]=0;
+            for(var p:map.level().portalsFrom(a)){
+                if(p.kind().equals("window"))continue;
+                int b=p.a()==a?p.b():p.a();
+                double length=distanceToCenter(a,p)+distanceToCenter(b,p);
+                routeLength[a][b]=Math.min(routeLength[a][b],length);
+            }
+        }
+        for(int via=0;via<routeLength.length;via++)
+            for(int a=0;a<routeLength.length;a++)
+                for(int b=0;b<routeLength.length;b++)
+                    routeLength[a][b]=Math.min(routeLength[a][b],routeLength[a][via]+routeLength[via][b]);
+    }
+    private double distanceToCenter(int room,Portal p){
+        return Math.hypot(Math.hypot(map.centerX(room)-p.x(),map.centerZ(room)-p.z()),map.floorY(room)-p.y());
     }
     int[] distances(int from){return distances[from];}
     void reset(){target=null;previous=null;search=null;waypoints.clear();stationary=0;failedUntil=0;}
@@ -57,12 +77,18 @@ final class HunterFieldNavigation {
             goal=new Vec(end.x(),van.placement().y(),end.z());
         }else if(room!=goalRoom){
             Portal crossing=null;
-            // Equal-hop routes can start at opposite ends of an outdoor approach.
+            // Choose an entrance by travel distance from the van apron, and on the
+            // way back to the van. Inside, retain the nearest equal-hop doorway.
             double nearest=Double.POSITIVE_INFINITY;
+            boolean vanRoute=goalRoom==HouseMap.EXTRACTION_ROOM||distances[room][HouseMap.EXTRACTION_ROOM]==1;
             for(var p:map.level().portalsFrom(room)){
                 int next=room==p.a()?p.b():p.a();
-                if(p.kind().equals("window")||distances[next][goalRoom]!=distances[room][goalRoom]-1)continue;
+                if(p.kind().equals("window"))continue;
                 double distance=Math.hypot(pos.x()-p.x(),pos.z()-p.z());
+                if(vanRoute){
+                    if(routeLength[next][goalRoom]>=routeLength[room][goalRoom])continue;
+                    distance+=distanceToCenter(next,p)+routeLength[next][goalRoom];
+                }else if(distances[next][goalRoom]!=distances[room][goalRoom]-1)continue;
                 if(distance<nearest){nearest=distance;crossing=p;}
             }
             if(crossing==null)return Input.simple(Action.WAIT);

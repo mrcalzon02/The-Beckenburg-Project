@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-381 — The shortest room count sent a Family kitchen assignment around the outside of the House
+
+**Status:** Compared on the van–kitchen socket circuit and 72 direct route legs across House, Farmhouse and School · **Affected:** Van-to-room and return-to-van routes for investigator searches, tool exchanges and camera service
+
+The House kitchen was accessible from other rooms, but the van-to-kitchen and kitchen-to-van checks stopped outside for six game minutes. The same outbound route failed over a real socket.
+
+Cause / uncertainty: Counting room transitions favored a physically longer exterior journey even when a short walk through the front door and Living room reached the same destination.
+
+Fix / next action: Weigh physical distances through the authored doorways when choosing the route from the van approach or back to the van. Keep room-hop ranking for the ordinary investigator search.
+
+Evidence and verification: House kitchen socket comparison and 72 directed route outcomes in development/quality/evidence/camera-attention-verification-2026-11-16/
+
+Older-map obligation: Farmhouse and School were swept alongside House. The earlier unrestricted weighting was rejected because it broke a previously reachable Farmhouse route.
+
 ### DEV-380 — Equal-length room routes sent the dining-room investigator into an exterior dead end
 
 **Status:** Baseline socket stalled; corrected socket reached the Dining nook and returned to the van relay · **Affected:** House route selection when multiple doorways are equally close in room count
