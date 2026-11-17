@@ -5996,6 +5996,39 @@
       "action": "Set shared ground and structural crown elevation together. Remove duplicate pilot slabs and grade the actual rear approach to the sill. Verify the reopened world, exact sill and soffit rays, standing renders and production movement probes.",
       "evidence": "development/levels/rebuild/captures/college-ground-batch/teaching-entrance.png and development/levels/rebuild/college-ground-pass/college/export-verification.json",
       "older_maps": "Inspect flush ground at eye height after native route checks. Check for substep gaps, duplicate surfaces and underground support."
+    },
+    {
+      "id": "DEV-540",
+      "title": "College scene exceeds the prop importer and native runtime was fixed to Hollow Creek",
+      "status": "CORRECTED_IN_HASH_VERIFIED_RUNTIME_CANDIDATE",
+      "affected": "College native export and shared renderer/collision loader",
+      "symptom": "The inspected scene has 1,277 nodes and is 4,096,788 bytes. A per-object reader accepts at most 128 nodes and 4,000,000 bytes. Several solid blockout materials carry a colour factor without a texture or UVs. The existing native map branch read only Hollow Creek.",
+      "cause": "The renderer treated one hard-coded site as its only native architecture, while split asset imports enforce intentionally smaller per-prop budgets.",
+      "action": "Bind the exact collision and active GLB with a separate bounded level reader mode. Use existing game movement, optics and rendering, the exported volume map and canonical van. Verify the source in actual software and OpenGL frames.",
+      "evidence": "development/levels/rebuild/college-ground-pass/runtime-review/checkpoint.json",
+      "older_maps": "Check authored world transforms, textures, declared capacity and link each exact collision export before onboarding another map."
+    },
+    {
+      "id": "DEV-541",
+      "title": "College entries and tunnel lack installed service lighting and final stair detailing",
+      "status": "OPEN",
+      "affected": "College service spine and entrances",
+      "symptom": "The cross-tunnel and three Wings remain rough in actual standing render. Current entrance and stair inspection depends on the player flashlight; stair guard details remain incomplete.",
+      "cause": "The candidate imports reviewed structure before electrical distribution, supported lighting, physical controls and detail fit-out.",
+      "action": "Design geographic exterior arrival light and a service-panel spine with floor-by-floor circuits. Install supported fixtures and remaining guards on actual surfaces. Check more than one circuit state and host ownership in the exact candidate.",
+      "evidence": "development/levels/rebuild/college-ground-pass/runtime-review/checkpoint.json",
+      "older_maps": "Check actual fixture support, normal lights, power-loss lighting and exposed stair/deck edges during the next services pass."
+    },
+    {
+      "id": "DEV-542",
+      "title": "Local legacy architecture and visual regressions reproduced against the rebuild baseline",
+      "status": "OPEN_BASELINE_REPRODUCED",
+      "affected": "House opening 14, legacy perimeter and retained alarm indicators",
+      "symptom": "ArchitecturalPlansTest, AuthoredLevelPhysicsTest, LevelEnclosureTest and DynamicGeometryRetentionTest fail in the local worktree. The affected files from the unchanged baseline produce the same assertions against the same local resources.",
+      "cause": "Further inspection is needed to distinguish old authored geometry and fixture problems from test assumptions or local resource packaging.",
+      "action": "Reproduce with a complete exact held-parent package and inspect the affected opening, perimeter and live alarm geometry. Preserve unrelated branch work.",
+      "evidence": "development/levels/rebuild/college-ground-pass/runtime-review/checkpoint.json",
+      "older_maps": "Use precise baseline and current resources whenever a candidate change is gated by a shared smoke test."
     }
   ],
   "audit_categories": [

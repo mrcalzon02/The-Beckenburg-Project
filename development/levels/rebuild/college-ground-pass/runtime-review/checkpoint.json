@@ -1,0 +1,179 @@
+{
+  "status": "AUTHORED_CANDIDATE_RENDER_AND_SELECTED_GAMEPLAY_VERIFIED",
+  "geometry_revision": "d98f9826290788eb33d4ebf045b5bf122fea46bb",
+  "development_baseline": "f2fab349c919b5a3486eaa630c261c2e6b5d24ef",
+  "previous_public_source": "LevelPlans.buildSource(COLLEGE)",
+  "candidate_registered_for_public_selection": false,
+  "source": {
+    "src/main/java/org/beckenburg/NativeInvestigationScene.java": "4b551323d684afeec1a3e2c0c5745f08c60e3a9f06ea047dea24001a23829446",
+    "src/main/java/org/beckenburg/GlbProps.java": "e804da1bfc95eba7fab198d9646b89581cc9416e9fbb096c61d586633f5d5982",
+    "src/main/java/org/beckenburg/HouseMap.java": "3a0b495810dac8a9285ae276f0ae2bf8301c4fc5642089f5bd3090a37aa879ae",
+    "src/main/java/org/beckenburg/SceneRenderer.java": "f43a59020b73fcef8f14064045c51b83fdcb9e255d6534aa40643d4fe35250f5",
+    "src/main/java/org/beckenburg/editor/EditorGlbReader.java": "0b9f4c39a834fcc6f104bc325a613668d9e28350750ff32227585ca904b28b0c",
+    "src/test/java/org/beckenburg/CollegeNativeRuntimeReview.java": "363f654e271450fe27f28d4c15a4714def452ac2efc45ef6b7f4d7f8fd81b1b5",
+    "tools/prepare_college_runtime_review.py": "cdec612c47df0a27e916efc0b0f7c390619aa1b561f3da780cc26415799329f2"
+  },
+  "checked_geometry": {
+    "glb": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+    "hcs2": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768",
+    "layout": "d2cb5341768ebdd586f75a3981745ece9a78a09433f7214636957eaed2f642ad",
+    "runtime_scene": "1a460fc6f24a031438a29b633f4c5914c8216e8ba7d10fca9cc2c56044b2ea59"
+  },
+  "move_and_ownership": {
+    "routine": "HouseMap.resolveMove",
+    "ordinary_links": 39,
+    "vertical_links": 5,
+    "passing_directions": 88,
+    "acoustic_graph_edges": 15,
+    "level_wall_apertures_verified": 10,
+    "accessible_spaces": 40,
+    "gameplay_spawn_owners": 15,
+    "ritual_reservations": 3,
+    "ghost_graph_rooms": 14,
+    "ghost_graph_directed_edges": 30,
+    "context_samples": 1283,
+    "context_seams": 56,
+    "body_open": 0,
+    "optical_open": 0,
+    "cargo_ramp": "open in both directions; shutter closed blocks movement",
+    "negative_controls": [
+      "Adjacent solid wall blocks body, sight and object rays.",
+      "Host rejects acoustic listener in incorrect storey.",
+      "Van excluded from ghost hearing."
+    ]
+  },
+  "visuals": {
+    "camera": "1.62 m standing, normal Tier III flashlight",
+    "hardware": "NVIDIA GeForce RTX 5070, OpenGL 3.3.0 NVIDIA 616.64",
+    "views": [
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/arrival.png",
+        "sha256": "58a7c512b605e4fcdb7a081d5752c39fa46fe5ed9a5ce247a3c6cda9cd4f44ef",
+        "backend": "software",
+        "owner": 13,
+        "visible_faces": 3702,
+        "depth_rejected": 1276
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/teaching-entry.png",
+        "sha256": "80b0dbffbfd56821bc2ccbc5c42f4b4fc49fc7b9d2fbed54a7df9f3a65ec87b0",
+        "backend": "software",
+        "owner": 12,
+        "visible_faces": 14430,
+        "depth_rejected": 10326
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/cafe-entry.png",
+        "sha256": "1ac9655c2f7d39d1c502d8491520abcf3fd4c30de96c2d54b2918bceaacf8b31",
+        "backend": "software",
+        "owner": 12,
+        "visible_faces": 5000,
+        "depth_rejected": 2400
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/library-issue.png",
+        "sha256": "672bc41f258d0426902cc2d4f32a7440a2fc35a5f2454148ef49933eebec2de2",
+        "backend": "software",
+        "owner": 12,
+        "visible_faces": 3860,
+        "depth_rejected": 1656
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/north-stair.png",
+        "sha256": "b53feb1afeb790e5fbd38ac662708b038b8bb01f26dea56da0788b2a89eb6ccb",
+        "backend": "software",
+        "owner": 0,
+        "visible_faces": 6865,
+        "depth_rejected": 4380
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/cross-tunnel.png",
+        "sha256": "766a9a2823e9c42d1f9ad467a2f5d112c8134a5c26e40acf142d5d3b44d7807c",
+        "backend": "software",
+        "owner": 11,
+        "visible_faces": 6371,
+        "depth_rejected": 3330
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/arrival.png",
+        "sha256": "9998b1b73074c09a9436d1be367655439ca4859f1bf71567d43be0db8bc767d3",
+        "backend": "OpenGL",
+        "owner": 13,
+        "visible_faces": 4065,
+        "depth_rejected": 0
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/teaching-entry.png",
+        "sha256": "6b5d12598cc5c3dc944e9cec91e07e89f8e27b81f6025450d5004721ef997886",
+        "backend": "OpenGL",
+        "owner": 12,
+        "visible_faces": 17249,
+        "depth_rejected": 0
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/cafe-entry.png",
+        "sha256": "9c7871ce010d9aaa7087929fa572075996205cf8ffe50f1797fd0c11b28f496e",
+        "backend": "OpenGL",
+        "owner": 12,
+        "visible_faces": 7374,
+        "depth_rejected": 0
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/library-issue.png",
+        "sha256": "b3fa779dab71ae74d522f0a47a3b3fa4276c49dd27f06459fb87b285fa48143b",
+        "backend": "OpenGL",
+        "owner": 12,
+        "visible_faces": 7275,
+        "depth_rejected": 0
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/north-stair.png",
+        "sha256": "d5ab0e8d8672c8de9b9cdfd42146c1460810b43482e06e87b082ab3dbbc5e109",
+        "backend": "OpenGL",
+        "owner": 0,
+        "visible_faces": 8527,
+        "depth_rejected": 0
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/cross-tunnel.png",
+        "sha256": "67e0683fed89f6ecb157e733617a98a0cac863d6030cb07adf2c96258c60bf7a",
+        "backend": "OpenGL",
+        "owner": 11,
+        "visible_faces": 9023,
+        "depth_rejected": 0
+      }
+    ]
+  },
+  "regression": {
+    "pass": [
+      "AuthoredSitePhysicsTest",
+      "AuthoredStairPhysicsTest",
+      "HollowCreekRuntimeTest",
+      "HollowCreekPowerTest",
+      "HidingBudgetTest",
+      "EditorGlbAuthoringTest",
+      "EditorMeshMaterialTest"
+    ],
+    "matched_baseline_failures": {
+      "ArchitecturalPlansTest": "open door traversal 14",
+      "AuthoredLevelPhysicsTest": "HOUSE open door blocked 14",
+      "LevelEnclosureTest": "incomplete visible perimeter",
+      "DynamicGeometryRetentionTest": "Alarm animation and indicators must change with tick"
+    },
+    "control": "The four changed existing Java files at f2fab349 were recompiled and loaded first against the identical other classes and local resource classpath.",
+    "prior_main_observation": {
+      "head": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+      "multiplayer": 44153590389,
+      "renderer": 44016080200,
+      "installer": 44153590626
+    }
+  },
+  "open": [
+    "Production candidate packaging and startup",
+    "Map-specific doors with interactive leaves, object and ghost sealing around untested outside or vertical interfaces",
+    "Electrical supplies and distribution, supported lights and service fixtures",
+    "Actual host/guest progression and encounter/evidence replay",
+    "Furnishing and visual finish, drainage, long-view boundaries, real-world performance"
+  ],
+  "runtime_accepted": false
+}

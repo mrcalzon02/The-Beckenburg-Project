@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11036,
+  "count": 11048,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -96594,6 +96594,126 @@
       "height": 1050,
       "bytes": 1420899,
       "sha256": "e7cd198c6c76ed084bc82d0eb4548dbe3b69d22917fadcc1d052d0a53f9725d0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/arrival.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/arrival.png",
+      "title": "Arrival",
+      "kind": "Runtime GPU capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 111248,
+      "sha256": "9998b1b73074c09a9436d1be367655439ca4859f1bf71567d43be0db8bc767d3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/cafe-entry.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/cafe-entry.png",
+      "title": "Cafe entry",
+      "kind": "Runtime GPU capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 58283,
+      "sha256": "9c7871ce010d9aaa7087929fa572075996205cf8ffe50f1797fd0c11b28f496e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/cross-tunnel.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/cross-tunnel.png",
+      "title": "Cross tunnel",
+      "kind": "Runtime GPU capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 50640,
+      "sha256": "67e0683fed89f6ecb157e733617a98a0cac863d6030cb07adf2c96258c60bf7a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/library-issue.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/library-issue.png",
+      "title": "Library issue",
+      "kind": "Runtime GPU capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 61357,
+      "sha256": "b3fa779dab71ae74d522f0a47a3b3fa4276c49dd27f06459fb87b285fa48143b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/north-stair.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/north-stair.png",
+      "title": "North stair",
+      "kind": "Runtime GPU capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 57594,
+      "sha256": "d5ab0e8d8672c8de9b9cdfd42146c1460810b43482e06e87b082ab3dbbc5e109"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/teaching-entry.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/teaching-entry.png",
+      "title": "Teaching entry",
+      "kind": "Runtime GPU capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 62633,
+      "sha256": "6b5d12598cc5c3dc944e9cec91e07e89f8e27b81f6025450d5004721ef997886"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/arrival.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime/arrival.png",
+      "title": "Arrival",
+      "kind": "Runtime capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 109147,
+      "sha256": "58a7c512b605e4fcdb7a081d5752c39fa46fe5ed9a5ce247a3c6cda9cd4f44ef"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/cafe-entry.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime/cafe-entry.png",
+      "title": "Cafe entry",
+      "kind": "Runtime capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 58088,
+      "sha256": "1ac9655c2f7d39d1c502d8491520abcf3fd4c30de96c2d54b2918bceaacf8b31"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/cross-tunnel.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime/cross-tunnel.png",
+      "title": "Cross tunnel",
+      "kind": "Runtime capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 52486,
+      "sha256": "766a9a2823e9c42d1f9ad467a2f5d112c8134a5c26e40acf142d5d3b44d7807c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/library-issue.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime/library-issue.png",
+      "title": "Library issue",
+      "kind": "Runtime capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 60516,
+      "sha256": "672bc41f258d0426902cc2d4f32a7440a2fc35a5f2454148ef49933eebec2de2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/north-stair.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime/north-stair.png",
+      "title": "North stair",
+      "kind": "Runtime capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 58338,
+      "sha256": "b53feb1afeb790e5fbd38ac662708b038b8bb01f26dea56da0788b2a89eb6ccb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime/teaching-entry.png",
+      "url": "development/levels/rebuild/captures/college-runtime-candidate/runtime/teaching-entry.png",
+      "title": "Teaching entry",
+      "kind": "Runtime capture",
+      "width": 720,
+      "height": 450,
+      "bytes": 63159,
+      "sha256": "80b0dbffbfd56821bc2ccbc5c42f4b4fc49fc7b9d2fbed54a7df9f3a65ec87b0"
     },
     {
       "path": "development/levels/rebuild/captures/constant-flight-construction-batch/wld-08.png",

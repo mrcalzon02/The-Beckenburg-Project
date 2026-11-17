@@ -2783,7 +2783,23 @@ public final class SceneRenderer {
     private void generatorControls(List<Face> out,HouseMap map){
         for(var socket:map.level().sockets())if(socket.type().equals("generator")){List<Face> control=new ArrayList<>();imported(control,"button_12",socket.x(),socket.y(),socket.z(),.30,socket.yaw());own(out,control,socket.room());}
     }
+    private List<Face> nativeInvestigationFaces=List.of();
     private void nativeArchitecture(List<Face> out,HouseMap map){
+        if(map.nativeInvestigation()!=null){
+            if(nativeInvestigationFaces.isEmpty()){
+                var faces=new ArrayList<Face>();
+                for(var triangle:map.nativeInvestigation().model().triangles()){
+                    var a=triangle.a();var b=triangle.b();var c=triangle.c();
+                    int room=map.nativeOwner((a.x()+b.x()+c.x())/3,(a.y()+b.y()+c.y())/3,(a.z()+b.z()+c.z())/3);
+                    faces.add(new Face(new Point(a.x(),a.y(),a.z()),new Point(b.x(),b.y(),b.z()),new Point(c.x(),c.y(),c.z()),
+                        0xffffff,triangle.material(),a.u(),a.v(),b.u(),b.v(),c.u(),c.v(),room,normal(a),normal(b),normal(c)));
+                }
+                nativeInvestigationFaces=List.copyOf(faces);
+            }
+            appendRetainedWorld(out,nativeInvestigationFaces,map.nativeInvestigation(),map);
+            generatorControls(out,map);
+            return;
+        }
         nativeWaterBed(out,map);
         generatorControls(out,map);
         for(var instance:HollowCreekScene.instances()){
@@ -2800,6 +2816,9 @@ public final class SceneRenderer {
             else for(var face:faces)if(exportFullLevel||faceInFrustum(face))out.add(face);
         }
     }
+    private static Point normal(GlbProps.Vertex vertex){
+        return vertex.nx()==0&&vertex.ny()==0&&vertex.nz()==0?null:new Point(vertex.nx(),vertex.ny(),vertex.nz());
+    }
     private record WaterView(dev.mrcalzon.water.WaterModule.Camera camera,double clock,boolean lamp,double reach,double intensity,double width,boolean flame,dev.mrcalzon.water.WaterModule module){}
     private WaterView waterView(double clock){return new WaterView(new dev.mrcalzon.water.WaterModule.Camera(x,eyeHeight,z,yaw,pitch,focal,renderWidth,renderHeight),clock,lamp,lampReach,lampIntensity,lampWidth,flameLamp,activeWater);}
     private final java.util.Map<Long,WaterView> waterViews=new java.util.LinkedHashMap<>(){protected boolean removeEldestEntry(java.util.Map.Entry<Long,WaterView> e){return size()>32;}};
@@ -2814,7 +2833,7 @@ public final class SceneRenderer {
         var view=gpu?consumedWaterView:waterView(clock);
         if(view==null||view.module()==null||view.module().bodies().isEmpty())return;
         waterStatistics=view.module().composite(view.camera(),pixels,depths,view.clock(),(rgb,wx,wy,wz)->{
-            double qx=Math.rint(wx*2)/2,qz=Math.rint(wz*2)/2;var light=fixtureLighting.sample(map==null?(waterCastle!=null&&waterCastle.outside(qx,qz)?13:0):map.nativeSite()?HollowCreekLevel.owner(qx,qz):map.roomAt(qx,wy,qz),qx,wy+.03,qz);var c=view.camera();double dx=wx-c.x(),dy=wy-c.y(),dz=wz-c.z(),forward=dx*Math.sin(c.yaw())+dz*Math.cos(c.yaw()),pz=dy*Math.sin(c.pitch())+forward*Math.cos(c.pitch()),px=-dx*Math.cos(c.yaw())+dz*Math.sin(c.yaw()),py=dy*Math.cos(c.pitch())-forward*Math.sin(c.pitch());double beam=view.lamp()&&pz>NEAR?view.intensity()*Math.max(0,1-pz/view.reach())*(view.flame()?1:Math.max(0,1-Math.hypot(px,py)/pz/view.width())):0;
+            double qx=Math.rint(wx*2)/2,qz=Math.rint(wz*2)/2;var light=fixtureLighting.sample(map==null?(waterCastle!=null&&waterCastle.outside(qx,qz)?13:0):map.nativeSite()?map.nativeOwner(qx,wy,qz):map.roomAt(qx,wy,qz),qx,wy+.03,qz);var c=view.camera();double dx=wx-c.x(),dy=wy-c.y(),dz=wz-c.z(),forward=dx*Math.sin(c.yaw())+dz*Math.cos(c.yaw()),pz=dy*Math.sin(c.pitch())+forward*Math.cos(c.pitch()),px=-dx*Math.cos(c.yaw())+dz*Math.sin(c.yaw()),py=dy*Math.cos(c.pitch())-forward*Math.sin(c.pitch());double beam=view.lamp()&&pz>NEAR?view.intensity()*Math.max(0,1-pz/view.reach())*(view.flame()?1:Math.max(0,1-Math.hypot(px,py)/pz/view.width())):0;
             int result=0;double[] energy={light.r(),light.g(),light.b()};int i=0;
             for(int shift:new int[]{16,8,0})result|=(int)Math.min(255,((rgb>>shift)&255)*(energy[i++]+beam)*environmentLight*weatherLightScale)<<shift;return LevelAtmosphere.shadeSquared(result,dx*dx+dy*dy+dz*dz);
         });
@@ -3204,6 +3223,7 @@ public final class SceneRenderer {
         residentScenery.clear();
         for(var auxiliary:auxiliaryWorld.values())for(var chunk:auxiliary.chunks())releaseWorldChunk(chunk);
         auxiliaryWorld.clear();authoredFixtureGeometry.clear();nativeCache.clear();
+        nativeInvestigationFaces=List.of();
         dynamicGeometry.clear();dynamicGeometryTriangles=0;dynamicGeometryMap=null;
         stableGpuFaces.clear();shellGpuFaces.clear();residentSceneryFaces.clear();visibleResidentScenery.clear();
         for(var chunk:castleStaticChunks)releaseWorldChunk(chunk);

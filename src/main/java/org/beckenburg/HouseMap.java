@@ -15,6 +15,8 @@ public final class HouseMap {
     private final LevelDefinition level;
     private final SiteTerrain terrain;
     private final AuthoredSitePhysics nativeSite;
+    private final NativeInvestigationScene nativeInvestigation;
+    NativeInvestigationScene nativeInvestigation(){return nativeInvestigation;}
     private final List<List<Portal>> wallPortals;
     /** Immutable owner-only portal index for repeated cold architectural
      * shadow rays. Unlike wallPortals, this must not inherit child-room
@@ -86,6 +88,9 @@ public final class HouseMap {
         this(site,definition,WorldTerrainSurface.of(definition));
     }
     HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface){
+        this(site,definition,worldSurface,null);
+    }
+    HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface,NativeInvestigationScene nativeInvestigation){
         this.site=Objects.requireNonNull(site);level=Objects.requireNonNull(definition);guards=level.guards();
         wallPortals=level.rooms().stream().map(r->level.wallPortals(r.id())).toList();
         var ownerPortals=new ArrayList<List<Portal>>(level.rooms().size());
@@ -102,7 +107,8 @@ public final class HouseMap {
         envelope=HouseRebuildEnvelope.geometry(level);
         services=HouseServiceNetwork.geometry(level);
         terrain=SiteTerrain.of(level);
-        nativeSite=HollowCreekLevel.is(level)?HollowCreekLevel.physics():null;
+        this.nativeInvestigation=nativeInvestigation;
+        nativeSite=nativeInvestigation!=null?nativeInvestigation.physics():HollowCreekLevel.is(level)?HollowCreekLevel.physics():null;
         Dock d=level.dock();van=new VanStaging(new VanStaging.Placement(d.x(),d.y(),d.z(),d.yaw()));
         // Fixture anchors must be fixed before door state or difficulty can change.
         // Author access against every potential cupboard, then restore the default.
@@ -134,6 +140,10 @@ public final class HouseMap {
      * retain their parent's fifteen-zone network and ghost-evidence owner. */
     public String architecturalRoomAt(double x,double y,double z){
         if(!finite(x,y,z))return null;
+        if(nativeInvestigation!=null){
+            var space=nativeInvestigation.spaceAt(x,y,z);
+            return space==null||space.outside()?null:space.id();
+        }
         for(var socket:level.sockets())if(socket.type().equals(MissionArchitecturalRoom.ROOF_TYPE)
             &&socket.id().startsWith(MissionArchitecturalRoom.ROOF_STEM)){
             String[] shape=socket.style().split(":",-1);
@@ -160,6 +170,8 @@ public final class HouseMap {
         String from=architecturalRoomAt(sourceX,sourceY,sourceZ);
         String to=architecturalRoomAt(listenerX,listenerY,listenerZ);
         if(Objects.equals(from,to))return 0;
+        if(nativeInvestigation!=null)return clearLineOfSight(
+            sourceX,sourceY+1.1,sourceZ,listenerX,listenerY+1.1,listenerZ)?1:3;
         return (from==null?0:architecturalThresholdLoss(from))
             +(to==null?0:architecturalThresholdLoss(to));
     }
@@ -188,7 +200,7 @@ public final class HouseMap {
     }
     public int roomAt(double x,double y,double z){
         if(!finite(x,y,z))return -1;
-        if(nativeSite!=null){var local=van.local(x,z);if(Math.abs(local.x())<VanStaging.INTERIOR_HALF_WIDTH&&local.z()>=VanStaging.FRONT&&local.z()<VanStaging.REAR&&y>=van.floorY()-.22&&y<van.placement().y()+VanStaging.ROOF_Y)return 14;var support=nativeSite.support(x,z,y,4);return support==null?-1:HollowCreekLevel.owner(x,z);}
+        if(nativeSite!=null){var local=van.local(x,z);if(Math.abs(local.x())<VanStaging.INTERIOR_HALF_WIDTH&&local.z()>=VanStaging.FRONT&&local.z()<VanStaging.REAR&&y>=van.floorY()-.22&&y<van.placement().y()+VanStaging.ROOF_Y)return 14;var support=nativeSite.support(x,z,y,4);return support==null?-1:nativeOwner(x,y,z);}
         for(Stair s:level.stairs())if(s.contains(x,z,0)&&Math.abs(y-s.yAt(x,z))<.25)
             return s.t(x,z)<.5?s.a():s.b();
         Room owner=null;
@@ -200,10 +212,13 @@ public final class HouseMap {
     /** Legacy ground-plane adapter; authoritative callers must supply feet Y. */
     public int roomAt(double x,double z){
         var cargo=van.local(x,z);if(Math.abs(cargo.x())<VanStaging.INTERIOR_HALF_WIDTH&&cargo.z()>=VanStaging.FRONT&&cargo.z()<VanStaging.REAR)return 14;
-        if(nativeSite!=null){var support=nativeSite.support(x,z,0,4);return support==null?-1:HollowCreekLevel.owner(x,z);}
+        if(nativeSite!=null){var support=nativeSite.support(x,z,0,4);return support==null?-1:nativeOwner(x,support.y(),z);}
         if(terrain!=null||editorTerrainWalking){int graded=roomAt(x,groundHeight(x,z,12),z);if(graded>=0)return graded;}
         int room=roomAt(x,0,z);if(room>=0)return room;
         for(Room r:level.rooms())if(r.contains(x,r.y(),z))return r.id();return -1;
+    }
+    int nativeOwner(double x,double y,double z){
+        return nativeInvestigation==null?HollowCreekLevel.owner(x,z):nativeInvestigation.ownerAt(x,y,z);
     }
     private static void checkRoom(int room){if(room<0||room>=15)throw new IllegalArgumentException("invalid room");}
     private static boolean finite(double... values){for(double v:values)if(!Double.isFinite(v))return false;return true;}

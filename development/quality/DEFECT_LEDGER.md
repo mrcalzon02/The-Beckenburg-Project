@@ -7640,6 +7640,48 @@ Evidence and verification: development/levels/rebuild/captures/college-ground-ba
 
 Older-map obligation: Inspect flush ground at eye height after native route checks. Check for substep gaps, duplicate surfaces and underground support.
 
+### DEV-540 — College scene exceeds the prop importer and native runtime was fixed to Hollow Creek
+
+**Status:** CORRECTED_IN_HASH_VERIFIED_RUNTIME_CANDIDATE · **Affected:** College native export and shared renderer/collision loader
+
+The inspected scene has 1,277 nodes and is 4,096,788 bytes. A per-object reader accepts at most 128 nodes and 4,000,000 bytes. Several solid blockout materials carry a colour factor without a texture or UVs. The existing native map branch read only Hollow Creek.
+
+Cause / uncertainty: The renderer treated one hard-coded site as its only native architecture, while split asset imports enforce intentionally smaller per-prop budgets.
+
+Fix / next action: Bind the exact collision and active GLB with a separate bounded level reader mode. Use existing game movement, optics and rendering, the exported volume map and canonical van. Verify the source in actual software and OpenGL frames.
+
+Evidence and verification: development/levels/rebuild/college-ground-pass/runtime-review/checkpoint.json
+
+Older-map obligation: Check authored world transforms, textures, declared capacity and link each exact collision export before onboarding another map.
+
+### DEV-541 — College entries and tunnel lack installed service lighting and final stair detailing
+
+**Status:** OPEN · **Affected:** College service spine and entrances
+
+The cross-tunnel and three Wings remain rough in actual standing render. Current entrance and stair inspection depends on the player flashlight; stair guard details remain incomplete.
+
+Cause / uncertainty: The candidate imports reviewed structure before electrical distribution, supported lighting, physical controls and detail fit-out.
+
+Fix / next action: Design geographic exterior arrival light and a service-panel spine with floor-by-floor circuits. Install supported fixtures and remaining guards on actual surfaces. Check more than one circuit state and host ownership in the exact candidate.
+
+Evidence and verification: development/levels/rebuild/college-ground-pass/runtime-review/checkpoint.json
+
+Older-map obligation: Check actual fixture support, normal lights, power-loss lighting and exposed stair/deck edges during the next services pass.
+
+### DEV-542 — Local legacy architecture and visual regressions reproduced against the rebuild baseline
+
+**Status:** OPEN_BASELINE_REPRODUCED · **Affected:** House opening 14, legacy perimeter and retained alarm indicators
+
+ArchitecturalPlansTest, AuthoredLevelPhysicsTest, LevelEnclosureTest and DynamicGeometryRetentionTest fail in the local worktree. The affected files from the unchanged baseline produce the same assertions against the same local resources.
+
+Cause / uncertainty: Further inspection is needed to distinguish old authored geometry and fixture problems from test assumptions or local resource packaging.
+
+Fix / next action: Reproduce with a complete exact held-parent package and inspect the affected opening, perimeter and live alarm geometry. Preserve unrelated branch work.
+
+Evidence and verification: development/levels/rebuild/college-ground-pass/runtime-review/checkpoint.json
+
+Older-map obligation: Use precise baseline and current resources whenever a candidate change is gated by a shared smoke test.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

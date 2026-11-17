@@ -505,7 +505,13 @@ public final class GlbProps {
         return decode(bytes,resourceName);
     }
     private static synchronized Model decode(byte[] bytes,String resourceName)throws IOException{
-        var source=org.beckenburg.editor.EditorGlbReader.read(bytes);int[] materialIds=new int[source.materials().size()];
+        return decode(org.beckenburg.editor.EditorGlbReader.read(bytes),resourceName);
+    }
+    static synchronized Model decodeLevel(byte[] bytes)throws IOException{
+        return decode(org.beckenburg.editor.EditorGlbReader.readLevel(bytes),null);
+    }
+    private static Model decode(org.beckenburg.editor.EditorGlbReader.Document source,String resourceName)throws IOException{
+        int[] materialIds=new int[source.materials().size()];
         for(var material:source.materials()){
             int i=material.index();var picture=sourcePicture(material.png(),bookCoverMaterial(resourceName));
             materialIds[i]=TEXTURE_BASE+textures.size();if(material.alpha().equals("BLEND"))gltfBlendMaterials.add(materialIds[i]);else if(material.alpha().equals("MASK"))gltfMaskCutoffs.put(materialIds[i],material.cutoff());
