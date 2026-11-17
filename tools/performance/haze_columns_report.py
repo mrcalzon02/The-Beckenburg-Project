@@ -140,8 +140,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("archive")
     parser.add_argument("output")
+    parser.add_argument("--summary-only", action="store_true", help="keep summaries and >50ms hitches; original CSVs remain in the input archive")
     args = parser.parse_args()
     report = analyze(args.archive)
+    if args.summary_only:
+        values = report.pop("intervals")
+        report["distinct_frame_intervals"] = len(values)
+        report["hitches_over_50_ms"] = [row for row in values if row["frame_ms"] > 50]
     Path(args.output).write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     for row in report["pooled"]:
         print(row)

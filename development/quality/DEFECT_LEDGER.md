@@ -304,6 +304,8 @@ Evidence and verification: docs/performance/2026-11-16-house-frame-times/windows
 
 Older-map obligation: The sanctuary shader is shared. The physical proof covers House and one rendered viewport on Core30. Other maps and independent-PC presentation need their own evidence.
 
+Fresh GTX44125683659: columns stays default-off after solo >50ms gaps rise7→15 and two individual solo p95 misses. Both fresh arms avoid >100ms, so the historical127ms issue stays open. All43 >50ms gaps occur inside within0.375s of walking, with zero fresh shadow rays and <=2.669ms geometry; post-geometry44–63ms dominates. All16 stops and sixth-frame holds pass. Next: per-effect render CPU/JIT/GC attribution. Original archive and per-trial data: docs/performance/2026-11-17-engine-editor/.
+
 ### DEV-363 — Prepared GPU lighting can reverse which side of House door 2 receives light
 
 **Status:** Open, reproduced on the released renderer and the receiver-reuse experiment · **Affected:** House door 2, room 1, stationary source 0 and two receivers 23 mm apart

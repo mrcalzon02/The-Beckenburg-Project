@@ -1,6 +1,6 @@
 # Engine and editor performance checkpoint — 17 November 2026
 
-Starting main: `2dbb8b3a85ff6dbcac9a4dc9d1ba8fdce9dd8154`. The historical `c41bc66` checkpoint has already been integrated and superseded by the measured sanctuary work. This iteration changes the Material Editor painter; the projection-column engine experiment remains opt-in pending its physical comparison.
+Starting main: `2dbb8b3a85ff6dbcac9a4dc9d1ba8fdce9dd8154`. The historical `c41bc66` checkpoint has already been integrated and superseded by the measured sanctuary work. This iteration changes the Material Editor painter; the projection-column engine experiment remains opt-in after its physical comparison failed to establish an overall win.
 
 ## Material Editor: retain an unchanged completed canvas
 
@@ -36,9 +36,36 @@ Compile/run `src/test/java/org/beckenburg/editor/EditorUvPaintProfile.java` agai
 
 [Core30 run 44125683659](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/44125683659) compares the optional horizontal-projection buffer using the same intact GPU JAR at `2dbb8b3`, with only `beckenburg.experimental.hazeColumns=false/true` changed. `2e7c31a` is the ancestry reference, not a second runtime arm. The private worker implementation is `446dbb8e3ad7463e4395da1bba46db778e5a44c1` and its isolated request is `fe8407e756f5d6a78954b55306b3c4cf9ba2a59c`.
 
-It runs four counterbalanced pairs of solo and one rendered hunter with two TCP peers on the physical GTX 1660 SUPER. Every trial walks out, returns, takes one small step inside and holds for five seconds; both feature arms run independent optical parity controls and full TCP settlements. Raw consumed-frame IDs, all callbacks, live poses, per-phase process CPU, TCP dispatch and package/source hashes are retained. The six-frame stopped-pose check remains part of the audit. The optical controls also pass locally with both flag values. The fresh hardware outcome will be recorded here after the job terminates; no speedup or hitch removal is inferred from its running status.
+It runs four counterbalanced pairs of solo and one rendered hunter with two TCP peers on the physical GTX 1660 SUPER. Every trial walks out, returns, takes one small step inside and holds for five seconds; both feature arms run independent optical parity controls and full TCP settlements. Raw consumed-frame IDs, all callbacks, live poses, per-phase process CPU, TCP dispatch and package/source hashes are retained. The six-frame stopped-pose check remains part of the audit. The optical controls also pass locally with both flag values. The job completed successfully. Its original archive was recovered from the checksummed job log: 649,909 bytes, SHA-256 `4a999de5fecbe2e7e29f5e63ecf1e0bc63ce986c8189ee93557f3548d650e7c0`. [Original Windows frames and receipts](gtx-columns-raw.zip) · [Audited pooled/per-trial timings, CPU and holds](gtx-columns-results.json) · [All >50 ms gaps with pose, geometry and shadow attribution](gtx-columns-hitches.csv).
 
 `tools/performance/haze_columns_report.py` validates the original archive and recomputes p50/p95/p99, >33.3/>50/>100 ms counts, every individual trial, repeated-readback callback work, CPU and inside-stop poses. Frame gaps are between distinct consumed IDs within a phase. A repeated-ID draw contributes work to the following distinct completion; it is not a new displayed frame. These remain offscreen viewport measurements, not monitor scanout or cross-PC latency.
+
+## Physical result: retain the current default shader
+
+GTX 1660 SUPER / driver 32.0.16.1088, i7-10700, Windows 10 Home 19045, Java 17.0.21, 960×540. All four paired solo and three-seat routes completed with original source and package hashes. Both optical controls and both complete TCP settlements passed. The auditor checked 20,578 distinct consumed-frame intervals, the entire 16-trial matrix, real peer/step observations, phase CPU boundaries and all 16 inside holds.
+
+| Mode / phase | Current p50 / p95 / p99 ms | Columns p50 / p95 / p99 ms | >50 ms current → columns | >100 ms, both arms |
+|---|---:|---:|---:|---:|
+| Solo / idle | 21.559 / 24.053 / 26.895 | 21.522 / 23.687 / 26.862 | 0 → 0 | 0 |
+| Solo / moving | 21.427 / 32.098 / 64.805 | 21.375 / 31.952 / 63.008 | 7 → 15 | 0 |
+| Solo / stopping | 21.324 / 24.115 / 29.819 | 21.272 / 23.865 / 29.646 | 0 → 0 | 0 |
+| Three-seat / idle | 21.499 / 23.673 / 26.630 | 21.509 / 23.874 / 26.145 | 0 → 0 | 0 |
+| Three-seat / moving | 21.327 / 32.574 / 66.245 | 21.411 / 31.493 / 64.659 | 12 → 9 | 0 |
+| Three-seat / stopping | 21.531 / 23.738 / 29.644 | 21.281 / 23.709 / 29.413 | 0 → 0 | 0 |
+
+All six pooled p95s meet 33.3 ms in both arms. Individual trials expose the tradeoff: the optional columns path misses solo walking at 34.455 and 35.013 ms p95, while all four current solo walks pass. Columns passes all four TCP walks, versus two current TCP misses at 33.710 and 33.305 ms. Solo >50ms gaps increase 7→15 and moving process CPU averages 1.105→1.186 core equivalents; TCP CPU is 1.188→1.164. These data do not support enabling the experiment globally. The flag stays default-off.
+
+No >100ms interval occurred in either arm of this fresh sample. This does **not** close the historical 127.3485 ms defect: the control also avoided it. Every inside stop is a 0.31 m step followed by an identical-pose hold of at least three seconds. The sixth stable-pose draw is 7.821–9.687 ms in all 16 trials, so the tested work did not simply move to the sixth held frame.
+
+**The remaining walking stalls are now tightly localized.** All 43 >50ms gaps occur inside the sanctuary within the first 0.375 seconds of walking. They generate zero fresh shadow rays. Geometry submission accounts for at most 2.669 ms per gap; post-geometry work is 44–63 ms. This supports targeting the first moving-pose postprocessing path next, rather than changing door lighting or reducing texture detail. It is not a hardware GPU timer-query attribution.
+
+Recompute every summary and pose assertion from the original archive:
+
+```sh
+python tools/performance/haze_columns_report.py gtx-columns-raw.zip gtx-columns-results.json --summary-only
+```
+
+The next measured step is per-effect render-thread CPU/JIT/GC attribution over those first 375 ms, with an unchanged control and the same inside-stop protocol. The first redraw after a native UV edit is the separate editor target. DEV-364 and DEV-362 remain open.
 
 ## Historical raw-frame verification
 
