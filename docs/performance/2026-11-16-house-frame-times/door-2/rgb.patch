@@ -1,0 +1,240 @@
+--- a/gpu-client/src/main/java/org/beckenburg/gpu/OpenGlWorldRenderer.java
++++ b/gpu-client/src/main/java/org/beckenburg/gpu/OpenGlWorldRenderer.java
+@@ -131,8 +131,12 @@
+  private final Map<MeshKey,Mesh> meshes=new HashMap<>();
+  private final Map<MeshKey,Integer> capacity=new HashMap<>();
+  private final Map<MeshKey,float[]> uploadedVertices=new HashMap<>();
+- private final Map<MeshKey,Long> uploadedRevisions=new HashMap<>();
+- private final Map<MeshKey,Integer> uploadedCounts=new HashMap<>();
++ private final Map<MeshKey,ResidentVertexBuffer> residentMeshes=new HashMap<>();
++ private FloatBuffer residentStaging;
++ private void releaseResidentMeshes(){
++  for(var resident:residentMeshes.values())resident.dispose();
++  residentMeshes.clear();
++ }
+  private long uploadedSceneId=-1;
+  /** Observed on GL worker after an actual completed frame, including copied bytes. */
+  public record UploadStats(long sceneId,long frameId,int uploadedBatches,
+@@ -243,8 +247,6 @@
+   if(existing!=null&&capacity.get(key)>=vertices)return existing;
+   if(existing!=null)existing.dispose();
+   uploadedVertices.remove(key);
+-  uploadedRevisions.remove(key);
+-  uploadedCounts.remove(key);
+   int size=1;while(size<vertices)size*=2;
+   Mesh created=new Mesh(false,size,0,
+    new VertexAttribute(VertexAttributes.Usage.Position,3,"a_position"),
+@@ -261,7 +263,7 @@
+    uploadedSceneId=frame.sceneId();
+    for(Mesh resident:meshes.values())resident.dispose();
+    meshes.clear();capacity.clear();uploadedVertices.clear();
+-   uploadedRevisions.clear();uploadedCounts.clear();
++   releaseResidentMeshes();
+   }
+   long frameUploadBytes=0,frameReusedBytes=0;
+   frameTextureUploads=0;frameTextureBytes=0;
+@@ -298,43 +300,38 @@
+    int vertexCount=surface.vertexCount();
+    if(vertexCount==0)continue;
+    MeshKey key=new MeshKey(surface.material(),surface.resourceId());
+-   boolean resident=surface.resourceId()>0;
+-   boolean drawOnly=resident&&surface.vertices().length==0;
+-   Mesh draw=drawOnly?meshes.get(key):mesh(key,vertexCount);
+    long bytes=(long)vertexCount*8*Float.BYTES;
+-   boolean sameRevision=resident
+-       &&Objects.equals(uploadedRevisions.get(key),surface.revision())
+-       &&Objects.equals(uploadedCounts.get(key),vertexCount);
+-   if(drawOnly){
+-    if(draw==null||!sameRevision)
+-     throw new IllegalStateException("Unknown/stale resident GPU mesh "+
+-         surface.resourceId()+" revision="+surface.revision()+
+-         " scene="+frame.sceneId());
+-    frameReusedBytes+=bytes;frameReusedBatches++;
+-   }else if(resident&&sameRevision){
+-    // Caller owns an immutable resource revision: no Arrays.equals walk or GL
+-    // upload when this exact mesh/revision has already been prepared.
+-    frameReusedBytes+=bytes;frameReusedBatches++;
++   texture(surface.material()).bind(0);
++   if(surface.resourceId()>0){
++    var resident=residentMeshes.get(key);
++    if(resident!=null&&resident.contains(surface.revision(),vertexCount)){
++     frameReusedBytes+=bytes;frameReusedBatches++;
++    }else{
++     float[] incoming=surface.vertices();
++     if(incoming.length==0)throw new IllegalStateException("Unknown/stale resident GPU mesh "+
++         surface.resourceId()+" revision="+surface.revision()+" scene="+frame.sceneId());
++     if(resident==null){
++      resident=new ResidentVertexBuffer(shader);
++      residentMeshes.put(key,resident);
++     }
++     if(residentStaging==null||residentStaging.capacity()<incoming.length)
++      residentStaging=BufferUtils.newFloatBuffer(incoming.length);
++     frameUploadBytes+=resident.upload(incoming,surface.revision(),residentStaging);
++     frameUploadedBatches++;
++    }
++    resident.render(vertexCount);
+    }else{
++    Mesh draw=mesh(key,vertexCount);
+     float[] incoming=surface.vertices();
+-    float[] retained=resident?null:uploadedVertices.get(key);
+-    if(!resident&&retained!=null&&Arrays.equals(retained,incoming)){
++    if(Arrays.equals(uploadedVertices.get(key),incoming)){
+      frameReusedBytes+=bytes;frameReusedBatches++;
+     }else{
+      draw.setVertices(incoming);
+-     if(resident){
+-      uploadedRevisions.put(key,surface.revision());
+-      uploadedCounts.put(key,vertexCount);
+-     }else{
+-      // Dynamic legacy batches must retain exact content equality:
+-      // flashlight uniforms are independent, authored lighting is not.
+-      uploadedVertices.put(key,Arrays.copyOf(incoming,incoming.length));
+-     }
++     uploadedVertices.put(key,Arrays.copyOf(incoming,incoming.length));
+      frameUploadBytes+=bytes;frameUploadedBatches++;
+     }
++    draw.render(shader,GL20.GL_TRIANGLES,0,vertexCount);
+    }
+-   texture(surface.material()).bind(0);
+-   draw.render(shader,GL20.GL_TRIANGLES,0,vertexCount);
+   }
+   // glReadPixels itself synchronizes the requested framebuffer transfers.
+   // glFinish beforehand stalls the entire graphics queue for no benefit.
+@@ -366,7 +363,7 @@
+   if(firstFrameForScene){
+    // Grounded Stage 3 measurement, emitted only after the real GL worker has
+    // processed a new scene. CPU submission counters are NOT GPU uploads.
+-   // These are actual Mesh.setVertices/texture uploads, but GL wall time
++   // These are actual vertex buffer/texture uploads, but GL wall time
+    // (including synchronous readback) is not a GPU timer-query result.
+    BeckenburgDiagnostics.record("GPU SCENE FIRST FRAME scene="+frame.sceneId()
+       +" frame="+frame.frameId()
+@@ -405,7 +402,7 @@
+  }
+  @Override public void dispose(){
+   closed=true;ready=false;
+-  uploadedVertices.clear();uploadedRevisions.clear();uploadedCounts.clear();
++  uploadedVertices.clear();releaseResidentMeshes();residentStaging=null;
+   for(Mesh mesh:meshes.values())mesh.dispose();
+   for(Texture texture:textures.values())texture.dispose();
+   textureRevisions.clear();
+--- /dev/null
++++ b/gpu-client/src/main/java/org/beckenburg/gpu/ResidentVertexBuffer.java
+@@ -0,0 +1,83 @@
++package org.beckenburg.gpu;
++
++import com.badlogic.gdx.Gdx;
++import com.badlogic.gdx.graphics.GL20;
++import com.badlogic.gdx.graphics.glutils.ShaderProgram;
++import java.nio.FloatBuffer;
++
++/** Positions/UVs and vertex lighting occupy adjacent regions of the same
++ * buffer. A lighting revision can replace the RGB region in one driver call. */
++final class ResidentVertexBuffer {
++    private final int[] vao = new int[1];
++    private final int buffer;
++    private final int position, uv, lighting;
++    private float[] geometry;
++    private long revision;
++
++    ResidentVertexBuffer(ShaderProgram shader) {
++        Gdx.gl30.glGenVertexArrays(1, vao, 0);
++        buffer = Gdx.gl.glGenBuffer();
++        position = shader.getAttributeLocation("a_position");
++        uv = shader.getAttributeLocation("a_texCoord0");
++        lighting = shader.getAttributeLocation("a_lighting");
++    }
++
++    boolean contains(long wantedRevision, int count) {
++        return revision == wantedRevision && geometry != null && geometry.length / 5 == count;
++    }
++
++    private boolean sameGeometry(float[] vertices) {
++        for (int src = 0, dst = 0; src < vertices.length; src += 8, dst += 5) {
++            for (int i = 0; i < 5; i++) {
++                if (Float.floatToRawIntBits(vertices[src+i]) != Float.floatToRawIntBits(geometry[dst+i])) return false;
++            }
++        }
++        return true;
++    }
++
++    /** Keep a snapshot of the geometry actually sent to GL. A skipped revision
++     * or a caller recycling its source array cannot invalidate the comparison. */
++    int upload(float[] vertices, long newRevision, FloatBuffer staging) {
++        int count = vertices.length / 8;
++        int geometryBytes = count * 5 * Float.BYTES;
++        boolean resized = geometry == null || geometry.length != count * 5;
++        boolean geometryChanged = resized || !sameGeometry(vertices);
++        staging.clear();
++        if (geometryChanged) {
++            if (resized) geometry = new float[count * 5];
++            for (int src = 0, dst = 0; src < vertices.length; src += 8, dst += 5)
++                System.arraycopy(vertices, src, geometry, dst, 5);
++            staging.put(geometry);
++        }
++        for (int i = 5; i < vertices.length; i += 8) staging.put(vertices, i, 3);
++        staging.flip();
++        int size = staging.remaining() * Float.BYTES;
++        Gdx.gl30.glBindVertexArray(vao[0]);
++        Gdx.gl.glBindBuffer(GL20.GL_ARRAY_BUFFER, buffer);
++        if (resized) {
++            Gdx.gl.glBufferData(GL20.GL_ARRAY_BUFFER, size, staging, GL20.GL_DYNAMIC_DRAW);
++            Gdx.gl.glEnableVertexAttribArray(position);
++            Gdx.gl.glVertexAttribPointer(position, 3, GL20.GL_FLOAT, false, 5 * Float.BYTES, 0);
++            Gdx.gl.glEnableVertexAttribArray(uv);
++            Gdx.gl.glVertexAttribPointer(uv, 2, GL20.GL_FLOAT, false, 5 * Float.BYTES, 3 * Float.BYTES);
++            Gdx.gl.glEnableVertexAttribArray(lighting);
++            Gdx.gl.glVertexAttribPointer(lighting, 3, GL20.GL_FLOAT, false, 3 * Float.BYTES, geometryBytes);
++        } else {
++            Gdx.gl.glBufferSubData(GL20.GL_ARRAY_BUFFER, geometryChanged ? 0 : geometryBytes, size, staging);
++        }
++        Gdx.gl.glBindBuffer(GL20.GL_ARRAY_BUFFER, 0);
++        revision = newRevision;
++        return size;
++    }
++
++    void render(int count) {
++        Gdx.gl30.glBindVertexArray(vao[0]);
++        Gdx.gl.glDrawArrays(GL20.GL_TRIANGLES, 0, count);
++        Gdx.gl30.glBindVertexArray(0);
++    }
++
++    void dispose() {
++        Gdx.gl.glDeleteBuffer(buffer);
++        Gdx.gl30.glDeleteVertexArrays(1, vao, 0);
++    }
++}
+--- a/gpu-client/src/main/java/org/beckenburg/gpu/GpuDesktop.java
++++ b/gpu-client/src/main/java/org/beckenburg/gpu/GpuDesktop.java
+@@ -476,9 +476,30 @@
+   int altered=0;
+   for(int i=0;i<changed.argb().length;i++)
+    if(changed.argb()[i]!=repeated.argb()[i])altered++;
+-  if(refreshed.uploadedBytes()!=dimmed.length*Float.BYTES||altered<250)
++  if(refreshed.uploadedBytes()!=3L*3*Float.BYTES||altered<250
++      ||!java.util.Arrays.equals(changed.depth(),repeated.depth()))
+    throw new AssertionError("Resident mesh revision did not update actual visible lighting");
+ 
++  // A same-size geometry revision needs fresh positions, even if RGB stays fixed.
++  float[] moved=dimmed; // A caller can recycle the array and advance its revision.
++  moved[0]+=.7f;
++  long movedId=GpuWorldRenderer.nextId();
++  ENGINE.submit(new GpuWorldRenderer.Frame(scene,movedId,640,360,275.4f,0,0,
++      List.of(new GpuWorldRenderer.Surface(-1,moved,meshId,3)),true,0,0,0,0,0));
++  var reshaped=directGpu(scene,movedId,"same-size resident geometry change");
++  if(ENGINE.uploadStats().uploadedBytes()!=moved.length*Float.BYTES
++      ||java.util.Arrays.equals(reshaped.argb(),changed.argb()))
++   throw new AssertionError("Resident mesh position revision lost");
++  float[] doubled=java.util.Arrays.copyOf(moved,moved.length*2);
++  System.arraycopy(moved,0,doubled,moved.length,moved.length);
++  long resizedId=GpuWorldRenderer.nextId();
++  ENGINE.submit(new GpuWorldRenderer.Frame(scene,resizedId,640,360,275.4f,0,0,
++      List.of(new GpuWorldRenderer.Surface(-1,doubled,meshId,4)),true,0,0,0,0,0));
++  var resized=directGpu(scene,resizedId,"resized resident mesh");
++  if(ENGINE.uploadStats().uploadedBytes()!=doubled.length*Float.BYTES
++      ||!java.util.Arrays.equals(reshaped.argb(),resized.argb())
++      ||!java.util.Arrays.equals(reshaped.depth(),resized.depth()))
++   throw new AssertionError("Resized resident mesh changed framebuffer content");
+   long newScene=GpuWorldRenderer.nextId(),id4=GpuWorldRenderer.nextId();
+   ENGINE.submit(new GpuWorldRenderer.Frame(newScene,id4,640,360,275.4f,0,0,
+       List.of(new GpuWorldRenderer.Surface(-1,vertices,meshId,1)),
