@@ -3261,16 +3261,20 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "09e27b8f3941f76ec5a9ca658f72935b951e0df6",
           "evidence": [
-            "development/levels/rebuild/wld-05/rough-layout.json"
+            "development/levels/rebuild/wld-05/rough-layout.json",
+            "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
-          "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "defects": [
+            "DEV-546",
+            "DEV-547"
+          ],
+          "next_action": "Measure the full playable and sealed context envelope, then derive the stable gameplay owner mapping."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "09e27b8f3941f76ec5a9ca658f72935b951e0df6",
           "evidence": [
             "development/levels/rebuild/structures/wld-05/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3298,7 +3302,8 @@
             "development/levels/rebuild/floor-closure-pass/wld-05/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -3319,13 +3324,15 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-546",
+            "DEV-547"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Check over, under and around the final mine perimeter, closed openings and interior route occupancy in game."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "09e27b8f3941f76ec5a9ca658f72935b951e0df6",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3338,7 +3345,8 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -3348,16 +3356,23 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-546",
+            "DEV-547"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Finish explicit drainage slopes, edge retention and uninterrupted grade around the four surface building wings."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "09e27b8f3941f76ec5a9ca658f72935b951e0df6",
+          "evidence": [
+            "development/levels/rebuild/mine-yard-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-546",
+            "DEV-547"
+          ],
+          "next_action": "Complete rail attachments, door leaves, roof edges and mechanical service clearances in the covered shafts."
         },
         "S06": {
           "status": "NOT_AUDITED",

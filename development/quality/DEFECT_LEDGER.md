@@ -7724,6 +7724,34 @@ Evidence and verification: development/levels/rebuild/cemetery-grounds-pass/chec
 
 Older-map obligation: Check public-to-staff optical negatives and actual supported prop clearance when changing a staff circulation plan.
 
+### DEV-546 — Mine study strips bridged damaged terrain and exposed stair openings
+
+**Status:** CORRECTED_IN_NATIVE_YARD_AND_STAIR_CANDIDATE · **Affected:** WLD-05 van roadhead, wash-house approach and both shaft mouths
+
+Five ordinary links failed and 184 standing positions were invalid. Visible guide fragments and old landing pads continued to support parts of the scene. Both long stairs opened to the sky through terrain and floor gaps.
+
+Cause / uncertainty: Source guide meshes and narrow cut beds had physical surfaces. The older stair guides traversed terrain before reserving complete shaft chambers.
+
+Fix / next action: Grade site-wide courts in the editor, remove the guide fragments, and enclose two independent orthogonal stair runs with founded walls and a headhouse. Replace whole changed floors with exact supporting plate geometry.
+
+Evidence and verification: development/levels/rebuild/mine-yard-pass/checkpoint.json
+
+Older-map obligation: Review standing and cutaway native exports together to find inherited route supports and overlapping fragments.
+
+### DEV-547 — Pilot Mine shaft wall crossed the real lower haul aisle
+
+**Status:** CORRECTED_WITH_CLEAR_LOWER_AISLE_AND_ROOF_BEARING_RETURNS · **Affected:** WLD-05 haul cross-aisle and travel from stores
+
+The first rebuilt shell blocked L10 and L13 where full-depth walls reached across the existing cross-aisle. The stores guide also aimed across the new vent chamber.
+
+Cause / uncertainty: The first trial used a constant wall depth across both the shaft and adjacent circulation, and the stores guide did not account for the revised vent shaft geometry.
+
+Fix / next action: Stop the founded shaft walls beyond the lower walking plane and bridge the cross-aisle at its original roof level. Guide stores access through the real crew house doors. Verify both continuous closed loops.
+
+Evidence and verification: development/levels/rebuild/mine-yard-pass/checkpoint.json
+
+Older-map obligation: Inspect cross-aisles beneath shaft foundations in section and verify the actual entire loop after rebuilding a stair wall.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

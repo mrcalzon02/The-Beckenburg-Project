@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2029,
-  "unique_local_file_hashes": 1858,
+  "local_files": 2030,
+  "unique_local_file_hashes": 1859,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 255
+    "native_map_exports": 256
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -28729,6 +28729,18 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "69ad57aebb8606eb5508d94a099c3699e35b84b6e704e9ea89f15b57516a3a55",
       "bytes": 3487516
+    },
+    {
+      "id": "mine-yard",
+      "label": "mine-yard",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+      "bytes": 4135952
     },
     {
       "id": "aligned-stairs",

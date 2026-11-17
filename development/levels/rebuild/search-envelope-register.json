@@ -131,10 +131,10 @@
       "id": "WLD-05",
       "folder": "wld-05",
       "maximum": 40,
-      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
-      "accessible": null,
+      "status": "NAMED_NATIVE_SPACES_COUNTED_CONTAINMENT_AND_RUNTIME_OPEN",
+      "accessible": 17,
       "sealed": null,
-      "evidence": null
+      "evidence": "development/levels/rebuild/mine-yard-pass/checkpoint.json"
     },
     {
       "id": "WLD-06",

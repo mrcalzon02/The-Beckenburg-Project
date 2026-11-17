@@ -1,0 +1,71 @@
+{
+  "glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+  "native_sha256": "892154e00cb1f7186e283a13a82e47d00febbddc0101f3f9060be4654919d94c",
+  "retained_native_records": 145,
+  "added_closed_parts": 126,
+  "terrain_matches_editor": true,
+  "door_clearance_controls": 72,
+  "door_sill_controls": 96,
+  "tread_controls": 68,
+  "standing_headroom_controls": 68,
+  "roadhead_controls": 15,
+  "van_triangle_count": 2689,
+  "van_source_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/mine-yard-batch/overview.png",
+      "sha256": "ca016173c1adb8d13e13fa4797321dfedb617e19762cd83337470d3414df060d",
+      "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/mine-yard-batch/canonical-arrival.png",
+      "sha256": "6d4eeb87a0e8310926374baf9fb662cd3d00936a17ca98e4689315721c1e40ac",
+      "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/mine-yard-batch/yard-and-headhouse.png",
+      "sha256": "59c4d07af81813e52d11b1009fbf57a380b63739c04ddd3ed5f1bb5c5ebb46c9",
+      "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/mine-yard-batch/headhouse-south.png",
+      "sha256": "9391f8f876d4533e3c6996fe365cd5e2d238bb174142227db1084ae742ab8873",
+      "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/mine-yard-batch/haul-stair.png",
+      "sha256": "5cfa066b6dfc18369015ce3902dc9e92f6f71d2ecfa18f8bb24a7cd2f2a7a5a6",
+      "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/mine-yard-batch/ventilation-stair.png",
+      "sha256": "84c8253dda4572a2e87039f42d540692a54dacf52e04636ec0dacd89bb7be4be",
+      "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/mine-yard-batch/shaft-section.png",
+      "sha256": "ca9f31160b5b8fe44fb671beb301f0143ca354643c80543b626db709fed3372e",
+      "source_glb_sha256": "60b0e785d1607d051642ba2cc90cffb913c8f8298f017554f2cbde74b89ffc06",
+      "hidden": [
+        "Wall haul S",
+        "Header haul E",
+        "Ceiling cap ore-east",
+        "Flat route shell Wall haul E",
+        "Flat route shell Wall haul E.001",
+        "Mine haul cover with rectangular shaft mouth region0",
+        "Mine headhouse east elevation solid region0",
+        "Mine headhouse roof region0",
+        "Mine haul east retaining wall region0",
+        "Mine haul east return over the crossing region0",
+        "Mine haul stair weather roof region0",
+        "WLD-05 saved ground"
+      ]
+    }
+  ]
+}
