@@ -226,10 +226,17 @@ In a campaign case, press **Shift+Enter** to open team radio text. Address a hir
 | `H2 hold` | H2 stops in place. |
 | `team follow` | Hires follow the investigator who sent the message. |
 | `H3 search Foyer` | H3 sweeps the named room, then resumes searching. Use the room name shown for the current site. |
+| `team watch empty Foyer` | Set up a video camera and clear the foyer so the operator can watch it from the van. |
+| `team watch solo Foyer` | Leave exactly one living hunter in the foyer. |
+| `team watch group Foyer` | Bring at least two living hunters into the foyer. |
 | `team search` | Hires resume their independent room sweeps. |
 | `H2 test resonance tuner` | H2 takes the owned tuner from the van rack if necessary, then uses it in the field. |
 
 A fresh campaign belt contains an EMF reader, thermometer, spirit box and photo camera. Each investigator carries four items. Buy specialist tools at the Castle depot, split them between hires or change instruments at the van rack. Hires share their findings, ask for discriminating tests and can report that the necessary tool is missing. A submitted species is the team's working hypothesis. Completing the defended rite resolves it.
+
+A camera supplies a live picture. In the van, look at the camera screen, or press **M** and use **C** to select the feed you want to watch. In the field, raise the handheld camera with **F**. A sighting does not set a journal checkbox or sound an alarm. If you see a figure, open the journal’s observations page and mark the matching sighting with **Space**. A hired operator can report what they personally see on the channel they are watching. A shutter press saves a print, including a blank one. Review the image and mark your photo observation to submit it for end-of-case credit.
+
+Room headcount includes every living investigator physically in the ghost’s room, including hired hunters. A hunter watching from the van or aiming a camera through an open doorway from the next room is outside that count. Shade and Ancient Shade can appear on camera only in an empty room. Banshee and Ancient Banshee need exactly one hunter, and Poltergeist and Ancient Poltergeist need two or more. Specter and Ancient Specter can appear on camera at any headcount. A manifestation, a clear view and the correct equipment still matter. An empty frame is inconclusive. Record the medium and headcount when you actually see a figure.
 
 A powered UV lamp detects physical traces for **3, 4 or 5 minutes** at tiers I, II and III. Aim it at the surface where the ghost passed. Ectoplasm swabs can collect a deposit for **3 minutes**, and contact plates can detect a surface imprint for **4 minutes**. Returning to the original spot with the right instrument works after the ghost has moved on. Your casefile keeps the reading after the physical trace fades.
 

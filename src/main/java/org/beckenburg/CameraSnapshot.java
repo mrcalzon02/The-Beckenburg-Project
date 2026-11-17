@@ -41,16 +41,31 @@ public final class CameraSnapshot {
             List<SceneRenderer.WorldMark> marks,EquipmentTiers.Tier tier){
         camera.photographicSoftwareRaster();
         camera.copyPhotographicWorld(hunter,tier);
+        camera.setAdditionalGhostBodies(List.of());
         camera.drawNetwork(map,hunters,apparition,clock,marks);
     }
     public static BufferedImage previewNetwork(SceneRenderer camera,SceneRenderer hunter,
             HouseMap map,List<SceneRenderer.RemoteBody> hunters,
             SceneRenderer.Apparition apparition,double clock,
             List<SceneRenderer.WorldMark> marks,EquipmentTiers.Tier tier){
-        Objects.requireNonNull(camera);Objects.requireNonNull(map);
-        Objects.requireNonNull(hunters);Objects.requireNonNull(marks);
-        renderNetwork(camera,hunter,map,hunters,apparition,clock,marks,tier);
+        return previewNetwork(camera,hunter,map,hunters,apparition,null,clock,marks,tier);
+    }
+    public static BufferedImage previewNetwork(SceneRenderer camera,SceneRenderer hunter,
+            HouseMap map,List<SceneRenderer.RemoteBody> hunters,SceneRenderer.Apparition primary,
+            SceneRenderer.Apparition secondary,double clock,List<SceneRenderer.WorldMark> marks,
+            EquipmentTiers.Tier tier){
+        camera.photographicSoftwareRaster();
+        camera.copyPhotographicWorld(hunter,tier);
+        camera.setAdditionalGhostBodies(secondary==null?List.of():List.of(secondary));
+        camera.drawNetwork(map,hunters,primary,clock,marks);
         return preview(camera);
+    }
+
+    /** Develop host-confirmed bodies against the world pixels, depth and lens pose frozen at shutter press. */
+    static BufferedImage developNetwork(SceneRenderer camera,HouseMap map,SceneRenderer.Apparition primary,
+            SceneRenderer.Apparition secondary,double clock,EquipmentTiers.Tier tier){
+        camera.developPhotographicFigures(map,primary,secondary,clock);
+        return finished(camera,tier);
     }
 
     /** Solo uses the same world renderer and actual current session models. */
@@ -67,7 +82,9 @@ public final class CameraSnapshot {
             List<SceneRenderer.RemoteBody> allies,EquipmentTiers.Tier tier){
         camera.photographicSoftwareRaster();
         camera.copyPhotographicWorld(hunter,tier);
-        camera.draw(map,session,clock,allies);
+        double feet=Double.isFinite(hunter.playerFeetElevation)?hunter.playerFeetElevation:
+            hunter.eyeHeight-HunterPosture.eye(session.crouched());
+        camera.drawInvestigation(map,session,clock,allies,true,map.roomAt(hunter.x,feet,hunter.z));
     }
     public static BufferedImage previewSolo(SceneRenderer camera,SceneRenderer hunter,
             HouseMap map,InvestigationSession session,double clock,

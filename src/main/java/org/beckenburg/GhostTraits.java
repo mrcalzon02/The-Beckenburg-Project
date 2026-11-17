@@ -8,6 +8,30 @@ public final class GhostTraits {
     public enum Locomotion { WALK, FLOAT }
     public enum Passage { DOORS, WALLS }
     public enum Sight { VISIBLE, CAMERA_ONLY, ORBS }
+    /** Living investigators in the room occupied by this individual apparition. */
+    public enum Witnesses {
+        ANY, EMPTY, SOLO, GROUP;
+        public boolean allows(int occupants){
+            if(occupants<0)throw new IllegalArgumentException("negative room occupancy");
+            return switch(this){
+                case ANY -> true;
+                case EMPTY -> occupants==0;
+                case SOLO -> occupants==1;
+                case GROUP -> occupants>=2;
+            };
+        }
+    }
+    public static Witnesses witnesses(GhostIdentity.Type type){
+        return switch(Objects.requireNonNull(type).baseType()){
+            case SHADE -> Witnesses.EMPTY;
+            case BANSHEE -> Witnesses.SOLO;
+            case POLTERGEIST -> Witnesses.GROUP;
+            default -> Witnesses.ANY;
+        };
+    }
+    public static boolean figureAllowed(GhostIdentity.Type type,boolean camera,int occupants){
+        return witnesses(type).allows(occupants)&&(camera||of(type).sight()!=Sight.CAMERA_ONLY);
+    }
     public enum Charge { AMBIENT, ISOLATION, PRESENCE }
     public record Profile(Locomotion locomotion, Passage passage, Sight sight, Charge charge,
                           int chargePeriod, int fearPercent, int harmPercent,

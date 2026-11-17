@@ -150,6 +150,8 @@ TwinCompanionAiTest
 TwinCompanionSharedActionTest
 LanCameraSightTest
 LanCameraOnlyGhostIntegrationTest
+LanWitnessOccupancyIntegrationTest
+HunterWitnessExperimentTest
 LanTwinPlayerCompanionTest
 LanApparitionRenderTest
 LanApparitionIntegrationTest

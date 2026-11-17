@@ -18,6 +18,9 @@ on:
       - 'src/main/java/org/beckenburg/Campaign*'
       - 'src/main/java/org/beckenburg/HunterDiagnosticEquipment.java'
       - 'src/main/java/org/beckenburg/HunterFieldNavigation.java'
+      - 'src/main/java/org/beckenburg/HunterWitnessExperiment.java'
+      - 'src/test/java/org/beckenburg/CampaignWitnessWatchScenario.java'
+      - 'src/test/java/org/beckenburg/LanWitnessOccupancyIntegrationTest.java'
       - 'src/main/java/org/beckenburg/InvestigationDiagnostics.java'
       - 'src/main/java/org/beckenburg/GhostPacing.java'
       - 'src/test/java/org/beckenburg/CampaignAiInvestigationScenario.java'
@@ -76,6 +79,14 @@ jobs:
         run: |
           & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.CampaignHunterRackScenario
           if ($LASTEXITCODE -ne 0) { throw "Campaign equipment exchange failed ($LASTEXITCODE)" }
+
+      - name: Verify hired investigators coordinate room occupancy and camera observation
+        shell: pwsh
+        run: |
+          & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.LanWitnessOccupancyIntegrationTest
+          if ($LASTEXITCODE -ne 0) { throw "Live manifestation conditions failed ($LASTEXITCODE)" }
+          & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.CampaignWitnessWatchScenario
+          if ($LASTEXITCODE -ne 0) { throw "Campaign witness watch failed ($LASTEXITCODE)" }
 
       - name: Measure complete autonomous campaign clocks
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.measure_pacing }}

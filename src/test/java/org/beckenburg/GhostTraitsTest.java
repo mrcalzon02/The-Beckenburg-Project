@@ -5,6 +5,17 @@ public final class GhostTraitsTest {
     public static void main(String[] args){
         for(GhostIdentity.Type t:GhostIdentity.Type.values()){
             GhostTraits.Profile p=GhostTraits.of(t);
+            for(int count=0;count<=6;count++){
+                boolean allowed=switch(t.baseType()){
+                    case SHADE -> count==0;
+                    case BANSHEE -> count==1;
+                    case POLTERGEIST -> count>=2;
+                    default -> true;
+                };
+                ok(GhostTraits.figureAllowed(t,true,count)==allowed,"camera / "+t+" / "+count);
+                boolean eye=allowed&&p.sight()!=GhostTraits.Sight.CAMERA_ONLY;
+                ok(GhostTraits.figureAllowed(t,false,count)==eye,"eye / "+t+" / "+count);
+            }
             ok(p.chargePeriod()>0,"charge period: "+t);
             ok(GhostTraits.harm(t,8)>=0,"safe harm: "+t);
         }

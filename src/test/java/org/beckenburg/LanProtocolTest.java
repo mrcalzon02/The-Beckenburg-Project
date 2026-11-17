@@ -16,6 +16,7 @@ public final class LanProtocolTest {
         String visibleCamera="CAMGHOST|0|a|VISIBLE|21000|0|19200|180|BASE|shade|86";
         check(LanProtocol.parts(visibleCamera).size()==11,
             "A real visible camera Ghost frame must be valid on the host and receiver");
+        check(LanProtocol.parts(visibleCamera+"|4|0").size()==13,"witnessed camera projection");
         rejects(()->LanProtocol.parts(visibleCamera+"|EXTRA"));
         rejects(()->LanProtocol.cleanName("|JOIN|"));
         StringBuilder oversized=new StringBuilder("ABC");oversized.append("a".repeat(550));

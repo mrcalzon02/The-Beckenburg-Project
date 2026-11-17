@@ -62,7 +62,7 @@ public final class InvestigationSession {
     public record PlacedSalt(int room,double x,double y,double z,double headingRadians){}
     private PlacedSalt placedSalt;
     public PlacedSalt placedSalt(){return placedSalt;}
-    private boolean apparitionPhotographed;
+    private boolean printAvailable,lastPrintHadFigure,photoFigureReported,photoClaimQualified;
     private final EnumSet<Instrument> measuredTools = EnumSet.noneOf(Instrument.class);
     private final java.util.Map<Instrument,String> lastReadings=new java.util.EnumMap<>(Instrument.class);
     public String deviceReading(String kind){try{return lastReadings.get(Instrument.valueOf(kind));}catch(IllegalArgumentException ignored){return null;}}
@@ -248,12 +248,27 @@ public final class InvestigationSession {
     }
     public int wards() { return wards; }
     public int payout() { return payouts; }
-    public boolean apparitionPhotographed(){return apparitionPhotographed;}
+    public boolean apparitionPhotographed(){return photoFigureReported;}
+    /** Investigator enters a note after reviewing the developed image. */
+    public boolean notePhotoFigure(){
+        if(!printAvailable||outcome!=Outcome.ACTIVE)return false;
+        photoFigureReported=true;
+        photoClaimQualified|=lastPrintHadFigure;
+        log("Notebook / visible figure reported in photograph.");
+        return true;
+    }
     /** Legacy HUD/API count: different instruments used, NOT verified ghost evidence. */
     public int evidenceCount() { return measuredTools.size(); }
     public boolean hasEvidence(Instrument instrument) { return measuredTools.contains(instrument); }
     public boolean wardPrepared() { return prepared; }
     public boolean ghostManifesting() { return haunted; }
+    boolean figureAllowed(int subjectRoom,int viewerRoom,boolean camera,List<SceneRenderer.RemoteBody> allies){
+        if(outcome!=Outcome.ACTIVE||!haunted||!camera&&viewerRoom!=subjectRoom)return false;
+        int occupants=viewerRoom==subjectRoom?1:0;
+        for(var ally:allies)
+            if(map.roomAt(ally.x(),ally.y(),ally.z())==subjectRoom)occupants++;
+        return GhostTraits.figureAllowed(ghost.type(),camera,occupants);
+    }
     /** Cosmetic-only temporary authorization; never an evidence confirmation. */
     public boolean ghostSignatureVisible() {
         return haunted && ticks<=signatureAppearanceUntil;
@@ -429,15 +444,24 @@ public final class InvestigationSession {
             case PHOTO_CAMERA->{
                 if(!loadout.consume(item)){log("Camera empty. Reload at the van equipment rack.");yield false;}
                 int room=map.roomAt(x,y,z);
-                boolean visible=haunted&&room==ghost.room()
-                    &&CameraAim.onTarget(x,z,yaw,map.centerX(ghost.room()),map.centerZ(ghost.room()))
-                    &&map.clearLineOfSight(x,y+1.62,z,map.centerX(ghost.room()),
-                        standingY(map.centerX(ghost.room()),map.centerZ(ghost.room()))+1.2,map.centerZ(ghost.room()));
-                if(visible&&!apparitionPhotographed){
-                    apparitionPhotographed=true;
-                    log("APPARITION PHOTOGRAPHED. The developed image will count in your case payout.");
-                }else log(visible?"Apparition photographed again.":"No apparition visible in the photograph.");
-                yield visible;
+                int target=ghost.room();
+                var pose=new LanGhostSpatial.Pose(target,map.centerX(target),
+                    map.groundHeight(map.centerX(target),map.centerZ(target),target),map.centerZ(target),0);
+                var lens=new LanVideoCameras.Camera(0,room,x,y,z,
+                    Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360),EquipmentTiers.Tier.II);
+                boolean visible=figureAllowed(target,room,true,List.of())
+                    &&LanCameraSight.seesHeld(map,lens,pose,true,ghost.type(),"a",ghostSignatureVisible(),
+                        crouched,clutterPitch,true);
+                if(!visible&&ghost.type().baseType()==GhostIdentity.Type.TWINS){
+                    var second=TwinGhostPair.position(map,pose,ticks).get(1).pose();
+                    visible=figureAllowed(second.room(),room,true,List.of())
+                        &&LanCameraSight.seesHeld(map,lens,second,true,ghost.type(),"b",ghostSignatureVisible(),
+                            crouched,clutterPitch,true);
+                }
+                printAvailable=true;
+                lastPrintHadFigure=visible;
+                log("Exposure captured / "+loadout.usesLeft(item)+" frames remaining.");
+                yield true;
             }
             case SALT->{
                 int room=map.roomAt(x,y,z);
@@ -570,7 +594,7 @@ public final class InvestigationSession {
     private void finish(Outcome result) {
         if(rewarded)return;
         outcome=result;rewarded=true;
-        int base=switch(result){case CLEANSED->220 + measuredTools.size()*40 + health/2 + (apparitionPhotographed?45:0);case RETREATED->measuredTools.size()*30 + (apparitionPhotographed?25:0);case LOST->0;case ACTIVE->0;};
+        int base=switch(result){case CLEANSED->220 + measuredTools.size()*40 + health/2 + (photoClaimQualified?45:0);case RETREATED->measuredTools.size()*30 + (photoClaimQualified?25:0);case LOST->0;case ACTIVE->0;};
         payouts=CampaignPartyRules.hostCredits(base,partySize);
     }
 }

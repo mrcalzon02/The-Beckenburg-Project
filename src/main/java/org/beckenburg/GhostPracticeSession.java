@@ -87,7 +87,7 @@ public final class GhostPracticeSession {
     }
     /** Authority evaluates real geometry, not a magical shared ghost-position feed. */
     private boolean hunterSeesApparition(){
-        if(!ghost.manifested()||hunter.room()!=ghost.room())return false;
+        if(!ghost.manifested()||hunter.room()!=ghost.room()||!GhostTraits.figureAllowed(ghost.type(),false,1))return false;
         var eye=hunter.position();
         double gx=map.centerX(ghost.room()),gz=map.centerZ(ghost.room());
         double dx=gx-eye.x(),dz=gz-eye.z(),distance=Math.hypot(dx,dz);

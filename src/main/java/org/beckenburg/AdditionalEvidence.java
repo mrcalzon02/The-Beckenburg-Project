@@ -102,12 +102,12 @@ public final class AdditionalEvidence {
     }
 
     /**
-     * sourceDistance and sameRoom are checked from host-owned physics before
-     * arrival; never receive a proposed ghost coordinate from a peer.
+     * The host checks source range and the instrument's sampling conditions.
+     * For the prism this requires a visible figure in the lens, which can look through a doorway.
      */
     public static Sample measure(String id,GhostIdentity.Type species,
             HardEvidenceQuota quota, int tick,int lastEventTick,int eventStrength,
-            GhostDomain.Action lastAction,boolean sameRoom,double sourceDistance,
+            GhostDomain.Action lastAction,boolean sourceReachable,double sourceDistance,
             EquipmentTiers.Stage stage){
         EquipmentRegistry.Evidence kind=phenomenon(id);
         if(kind==null)throw new IllegalArgumentException("not a paranormal detector: "+id);
@@ -119,7 +119,7 @@ public final class AdditionalEvidence {
         int eventAge=tick-lastEventTick;
         // A sensor can have battery, range and time to respond without the
         // ghost ever authoring a positive signature.
-        boolean physical=sameRoom&&eventAge>=0&&eventAge<=lifetime(kind)
+        boolean physical=sourceReachable&&eventAge>=0&&eventAge<=lifetime(kind)
             &&sourceDistance<=stage.reachCm()/100.0&&eventStrength>0
             &&event(kind,lastAction);
         boolean speciesSupports=GhostEvidenceMatrix.forGhost(species).future().contains(kind);

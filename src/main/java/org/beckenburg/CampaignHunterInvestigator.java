@@ -32,6 +32,11 @@ final class CampaignHunterInvestigator {
     private final boolean[] triedWard=new boolean[rooms];
     private final Map<String,int[]> latestReadings=new HashMap<>();
     private final HunterDiagnosticEquipment equipment=new HunterDiagnosticEquipment();
+    private final HunterWitnessExperiment witnessTest;
+    private final HunterCameraAttention attention;
+    private final ArrayDeque<GhostFieldGuide.Clue> sightNotes=new ArrayDeque<>();
+    private LanWorld.Body viewpoint;
+    private int nextWitnessReview,shutterOpportunity=-1000,lastPhoto=-1000;
     private final String[] belt=equipment.belt;
     private List<GhostIdentity.Type> candidates=List.of(GhostIdentity.Type.values());
     private final EnumSet<HardEvidenceQuota.Family> detected=EnumSet.noneOf(HardEvidenceQuota.Family.class);
@@ -52,6 +57,7 @@ final class CampaignHunterInvestigator {
     private boolean thrownForThreat,atCameraRelay;
     CampaignHunterInvestigator(HouseMap map,int hireNumber){
         this.map=map;this.hireNumber=hireNumber;this.navigation=new HunterFieldNavigation(map);
+        attention=new HunterCameraAttention(map);witnessTest=new HunterWitnessExperiment(map,equipment,navigation,attention);
         Arrays.fill(lastSurvey,-10000);Arrays.fill(lastSignal,-10000);Arrays.fill(lastHaunt,-10000);
         Arrays.fill(lastActivity,-10000);Arrays.fill(lastExtreme,-10000);Arrays.fill(eventTick,-10000);
         Arrays.fill(air,Double.NaN);Arrays.fill(ownSampleTick,-1);Arrays.fill(thermalTick,-10000);
@@ -91,6 +97,18 @@ final class CampaignHunterInvestigator {
     /** Only frames already delivered to this investigator enter its notebook. */
     synchronized void accept(String frame){
         equipment.frame(frame,seat);
+        witnessTest.frame(frame);
+        if(frame.startsWith("GEARSTATE|")&&!ToolBeltHud.cameraView(equipment.held())&&attention.lens())attention.stop();
+        if(frame.startsWith("BODY|"+seat+"|")){
+            var p=LanProtocol.parts(frame);
+            double x=Integer.parseInt(p.get(2))/1000d,y=Integer.parseInt(p.get(3))/1000d,z=Integer.parseInt(p.get(4))/1000d;
+            viewpoint=new LanWorld.Body(x,y,z,Integer.parseInt(p.get(5)),map.roomAt(x,y,z));
+            atCameraRelay=viewpoint.room()==HouseMap.EXTRACTION_ROOM&&map.van().stationAt(x,z)==VanStaging.Station.RELAY;
+            witnessTest.positioned(seat,viewpoint.room(),atCameraRelay);
+        }
+        if(frame.startsWith("CAMGHOST|")||frame.startsWith("LENSGHOST|")||frame.startsWith("SHUTTERGHOST|")
+                ||frame.startsWith("TWIN|")||frame.startsWith("APPARITION|VISIBLE|"))
+            sighting(frame);
         if(frame.startsWith("APPARITION|VISIBLE|")){
             var p=LanProtocol.parts(frame);
             apparitionX=Integer.parseInt(p.get(2))/1000d;double y=Integer.parseInt(p.get(3))/1000d;
@@ -105,9 +123,10 @@ final class CampaignHunterInvestigator {
         }else if(frame.startsWith("COUNTERAMMO|")){
             crossCharges=Integer.parseInt(LanProtocol.parts(frame).get(1));
         }
-        if(frame.startsWith("CAMORB|")&&atCameraRelay&&equipment.watchingCamera(lastDecision)){
+        if(frame.startsWith("CAMORB|")&&atCameraRelay){
             var parts=LanProtocol.parts(frame);
-            if(Integer.parseInt(parts.get(1))==seat&&detected.add(HardEvidenceQuota.Family.ORBS)){
+            int owner=Integer.parseInt(parts.get(1));
+            if(watches(owner)&&detected.add(HardEvidenceQuota.Family.ORBS)){
                 hasMeasured=true;deductionDirty=true;announce("Orb on my live van camera.");
             }
         }
@@ -115,7 +134,7 @@ final class CampaignHunterInvestigator {
             var parts=LanProtocol.parts(frame);boolean dots=parts.get(0).equals("DOTS");
             int room=Integer.parseInt(parts.get(dots?2:3)),tick=Integer.parseInt(parts.get(dots?3:7));
             HardEvidenceQuota.Family family=dots?HardEvidenceQuota.Family.DOTS:HardEvidenceQuota.Family.LASER;
-            if(room<rooms&&detected.add(family)){
+            if(room<rooms&&sawPattern(parts,dots,room)&&detected.add(family)){
                 hasMeasured=true;deductionDirty=true;encounter(room,tick);signals[room]++;
                 announce(map.roomName(room)+(dots?": D.O.T.S. passage.":": laser grid disrupted."));
             }
@@ -124,6 +143,11 @@ final class CampaignHunterInvestigator {
             measure(LanEvidenceJournal.Entry.decode(frame));
         }else if(frame.startsWith("HAUNT|")){
             var occurrence=GhostHauntingFolio.decode(frame);int room=occurrence.room();
+            if(viewpoint!=null&&viewpoint.room()!=room){
+                boolean watchingRoom=false;
+                for(int owner=0;owner<6;owner++)if(witnessTest.cameraRoom(owner)==room&&watches(owner)){watchingRoom=true;break;}
+                if(!watchingRoom)return;
+            }
             if(room<rooms){
                 int observed=occurrence.startTick();
                 if(lastHauntingRoom>=0&&lastHauntingRoom!=room&&observed-lastActivity[room]<100)episodes[room]++;
@@ -173,6 +197,57 @@ final class CampaignHunterInvestigator {
             var line=LanChat.Entry.decode(frame);
             if(line.seat()!=seat)equipment.claimed(line,seat);order(line);
         }
+    }
+    private boolean watches(int owner){
+        return attention.remote(owner,viewpoint)&&(witnessTest.watching(owner,viewpoint)
+            ||owner==seat&&!witnessTest.active()&&equipment.watchingCamera(lastDecision));
+    }
+    private boolean inView(double x,double z){
+        if(viewpoint==null)return false;
+        double dx=x-viewpoint.x(),dz=z-viewpoint.z(),yaw=Math.toRadians(viewpoint.heading());
+        return dx*Math.sin(yaw)+dz*Math.cos(yaw)>=Math.hypot(dx,dz)*Math.cos(Math.toRadians(45));
+    }
+    private boolean sawPattern(List<String> p,boolean dots,int room){
+        int directFields=dots?7:8;
+        if(p.size()==directFields+1)return watches(Integer.parseInt(p.get(directFields)));
+        if(p.size()!=directFields||attention.lookingAtDevice()||viewpoint==null||viewpoint.room()!=room)return false;
+        double x=Double.parseDouble(p.get(4)),y=Double.parseDouble(p.get(dots?6:5)),z=Double.parseDouble(p.get(dots?5:6));
+        if(dots){x/=1000.0;y/=1000.0;z/=1000.0;}
+        return inView(x,z)&&map.clearLineOfSight(viewpoint.x(),viewpoint.y()+1.3,viewpoint.z(),x,y+.12,z);
+    }
+    private void sighting(String frame){
+        var p=LanProtocol.parts(frame);
+        boolean remote=p.get(0).equals("CAMGHOST"),twin=p.get(0).equals("TWIN");
+        boolean lens=p.get(0).equals("LENSGHOST"),shutter=p.get(0).equals("SHUTTERGHOST");
+        boolean optical=remote||lens||shutter;
+        int coords=optical?4:twin?3:2,meta=optical?11:twin?9:6;
+        if(p.size()!=meta+2||!p.get(coords-1).equals("VISIBLE"))return;
+        int room=Integer.parseInt(p.get(meta)),occupants=Integer.parseInt(p.get(meta+1));
+        int tick=Integer.parseInt(p.get(optical?10:twin?7:5));
+        if(remote){
+            int owner=Integer.parseInt(p.get(1));
+            if(!watches(owner))return;
+        }else if(optical){
+            if(Integer.parseInt(p.get(1))!=seat||!attention.lens())return;
+            if(shutter&&(lastPhoto<0||tick<lastPhoto||tick-lastPhoto>15))return;
+            if(lens&&"PHOTO_CAMERA".equals(equipment.held())){
+                if(teamNotes.status(GhostFieldGuide.figureClue(GhostFieldGuide.FigureView.PHOTO,occupants))!=FieldJournal.Status.SEEN)
+                    shutterOpportunity=tick;
+                return;
+            }
+            if(lens&&!"VIDEO_CAMERA".equals(equipment.held()))return;
+        }else{
+            if(attention.lookingAtDevice()||viewpoint==null||viewpoint.room()!=room||occupants<1)return;
+            if(!inView(Integer.parseInt(p.get(coords))/1000d,Integer.parseInt(p.get(coords+2))/1000d))return;
+        }
+        var view=shutter?GhostFieldGuide.FigureView.PHOTO:optical?GhostFieldGuide.FigureView.VIDEO:GhostFieldGuide.FigureView.DIRECT;
+        var clue=GhostFieldGuide.figureClue(view,occupants);
+        if(teamNotes.status(clue)!=FieldJournal.Status.SEEN){
+            teamNotes.set(clue,FieldJournal.Status.SEEN,seat,tick);sightNotes.add(clue);
+            hasMeasured=true;deductionDirty=true;
+            announce((shutter?"Photographed a figure":optical?"Video figure":"Saw a figure")+" in "+map.roomName(room)+" with "+occupants+" inside.");
+        }
+        if(witnessTest.observing(remote?GhostFieldGuide.FigureView.VIDEO:GhostFieldGuide.FigureView.DIRECT,room,occupants))witnessTest.finish(tick,this::announce);
     }
     private void measure(LanEvidenceJournal.Entry e){
         int room=e.room();if(room>=rooms)return;
@@ -234,6 +309,7 @@ final class CampaignHunterInvestigator {
         return hasMeasured?candidate:null;
     }
     private void order(LanChat.Entry line){
+        witnessTest.radio(line,seat,order==Order.SEARCH&&identified==null&&!ritualActive,this::announce);
         if(line.seat()==seat)return;
         for(int room=0;room<rooms;room++){
             if(line.message().equals("Defensive ward only in "+map.roomName(room)+"."))triedWard[room]=true;
@@ -243,8 +319,14 @@ final class CampaignHunterInvestigator {
         String prefix=words.startsWith("team ")?"team ":"h"+(seat+1)+" ";
         if(!words.startsWith(prefix))return;
         String request=words.substring(prefix.length());
+        if(request.startsWith("watch ")){
+            radio.clear();
+            if(witnessTest.command(request.substring(6),line.tick(),seat,this::announce)){order=Order.SEARCH;leader=line.seat();}
+            else announce("Use watch empty, solo or group followed by an indoor room name or ID.");
+            return;
+        }
         if(request.startsWith("test ")){
-            leader=line.seat();order=Order.SEARCH;radio.clear();
+            leader=line.seat();order=Order.SEARCH;radio.clear();leaveWatch(line.tick());nextWitnessReview=line.tick()+900;
             announce(equipment.orderTest(request.substring(5),line.tick()));return;
         }
         if(request.equals("follow"))order=Order.FOLLOW;
@@ -258,7 +340,7 @@ final class CampaignHunterInvestigator {
             if(found<0){announce("Unknown search room: "+location);return;}
             orderedRoom=found;order=Order.ROOM;
         }else return;
-        leader=line.seat();navigation.reset();radio.clear();
+        leader=line.seat();navigation.reset();radio.clear();leaveWatch(line.tick());
         announce(switch(order){
             case FOLLOW -> "Following H"+(leader+1)+".";
             case HOLD -> "Holding position.";
@@ -266,15 +348,23 @@ final class CampaignHunterInvestigator {
             case SEARCH -> "Resuming room sweep.";
         });
     }
+    private void leaveWatch(int tick){
+        attention.stop();shutterOpportunity=-1000;
+        if(witnessTest.active()){announce(witnessTest.withdrawal());witnessTest.stop(tick);}
+    }
     private void announce(String text){
         String clean=text.replace("°"," deg ").replaceAll("[^ -~]","").replace('|','/').strip();
         if(clean.isEmpty())return;
         clean=clean.substring(0,Math.min(LanChat.MAX_CHARS,clean.length()));
-        if(radio.size()<4&&!radio.contains(clean))radio.addLast(clean);
+        if(radio.contains(clean))return;
+        if(clean.startsWith("Joining watch ")||clean.startsWith("Leaving watch ")||clean.startsWith("Finished watch ")){
+            if(radio.size()>=4)radio.removeLast();
+            radio.addFirst(clean);
+        }else if(radio.size()<4)radio.addLast(clean);
     }
     synchronized Input decide(int tick,LanWorld.Body self,LanWorld.Body orderLeader){
         Input action=chooseAction(tick,self,orderLeader);
-        return action.action()==Action.WALK?action.facingFrom(self.heading()):action;
+        return attention.apply(action.action()==Action.WALK?action.facingFrom(self.heading()):action);
     }
     private Input defend(int tick,LanWorld.Body self){
         if(threatTarget<0||tick>impactTick)return null;
@@ -303,16 +393,31 @@ final class CampaignHunterInvestigator {
     }
     private Input chooseAction(int tick,LanWorld.Body self,LanWorld.Body orderLeader){
         if(self==null||self.room()<0||lastDecision==tick)return Input.simple(Action.WAIT);
-        lastDecision=tick;
+        lastDecision=tick;viewpoint=self;
         int here=self.room();
         atCameraRelay=here==HouseMap.EXTRACTION_ROOM&&map.van().stationAt(self.x(),self.z())==VanStaging.Station.RELAY;
         if(here!=lastRoom){lastRoom=here;arrived=tick;}
         Input defense=defend(tick,self);
         if(defense!=null)return defense;
+        if(tick-shutterOpportunity>=0&&tick-shutterOpportunity<=3&&tick-lastPhoto>=40&&attention.lens()&&"PHOTO_CAMERA".equals(equipment.held())){
+            lastPhoto=tick;shutterOpportunity=-1000;return Input.simple(Action.SHUTTER);
+        }
+        if(!sightNotes.isEmpty())return Input.note(sightNotes.removeFirst());
         if(!radio.isEmpty()&&tick-lastRadio>=12){lastRadio=tick;return Input.radio(radio.removeFirst());}
         int source=suspectedRoom();
         if(source>=0&&source!=lastReportedRoom){
             lastReportedRoom=source;announce("Possible home room: "+map.roomName(source)+". Checking the readings.");
+        }
+        if(witnessTest.active()){
+            if(identified!=null||ritualActive)leaveWatch(tick);
+            else return witnessTest.act(tick,seat,self,this::announce);
+        }
+        if(order==Order.SEARCH&&identified==null&&!ritualActive&&source>=0&&tick>=nextWitnessReview&&tick-lastRadio>=12){
+            nextWitnessReview=tick+90;
+            if(deduction()==null){
+                String proposal=witnessTest.propose(tick,seat,source,candidates);
+                if(proposal!=null){lastRadio=tick;return Input.radio(proposal);}
+            }
         }
         if(here<rooms&&!ritualActive&&tick-lastSample>=9&&eventInstrument[here]!=null
                 &&eventTick[here]>lastAnsweredEvent&&tick-eventTick[here]<=15){
@@ -352,6 +457,7 @@ final class CampaignHunterInvestigator {
             String request=equipment.request(tick,seat,candidates,detected,evidenceLevel,
                 source>=0||!detected.isEmpty()||signature!=null||observationCount>=15);
             if(request!=null)announce(request);
+            if(equipment.watchingCamera(tick)&&atCameraRelay)return attention.screen(tick,seat,self);
             Input fetch=equipment.fetch(tick,self,map,navigation);
             if(fetch!=null)return fetch;
         }

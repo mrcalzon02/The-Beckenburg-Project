@@ -3643,10 +3643,14 @@ public final class SceneRenderer {
     }
     public void draw(HouseMap map,InvestigationSession session,double clock,
             List<RemoteBody> allies){
+        double feet=Double.isFinite(playerFeetElevation)?playerFeetElevation:eyeHeight-HunterPosture.eye(session.crouched());
+        drawInvestigation(map,session,clock,allies,false,map.roomAt(x,feet,z));
+    }
+    void drawInvestigation(HouseMap map,InvestigationSession session,double clock,List<RemoteBody> allies,
+            boolean camera,int viewerRoom){
         Objects.requireNonNull(allies);
-        boolean visible=session.outcome()==InvestigationSession.Outcome.ACTIVE
-                &&session.ghostManifesting();
         int room=session.ghostRoom();
+        boolean visible=session.figureAllowed(room,viewerRoom,camera,allies);
         GhostIdentity.Type type=session.ghostVisualType();
         boolean twins=type.baseType()==GhostIdentity.Type.TWINS;
         boolean signatureReveal=session.ghostSignatureVisible();
@@ -3655,16 +3659,18 @@ public final class SceneRenderer {
                 signatureReveal?LanGhostAnimation.Phase.SIGNATURE:LanGhostAnimation.Phase.LURK,
                 0,0,false,signatureReveal&&type.ancient(),
                 twins?(type.ancient()?"ancient_twins_a":"twins_a"):CharacterVisuals.ghost(type)):null;
-        if(visible&&twins){
+        setAdditionalGhostBodies(List.of());
+        if(session.ghostManifesting()&&twins){
             var primary=new LanGhostSpatial.Pose(room,map.centerX(room),
                 map.groundHeight(map.centerX(room),map.centerZ(room),room),map.centerZ(room),0);
             var secondary=TwinGhostPair.position(map,primary,(int)Math.floor(clock*10)).get(1).pose();
-            setAdditionalGhostBodies(List.of(new Apparition(
+            if(session.figureAllowed(secondary.room(),viewerRoom,camera,allies))
+                setAdditionalGhostBodies(List.of(new Apparition(
                 secondary.x(),secondary.y(),secondary.z(),
                 signatureReveal?LanGhostAnimation.Phase.SIGNATURE:LanGhostAnimation.Phase.LURK,
                 secondary.heading(),0,false,signatureReveal&&type.ancient(),
                 type.ancient()?"ancient_twins_b":"twins_b")));
-        }else setAdditionalGhostBodies(List.of());
+        }
         // Solo shares the same event visualization contract as the LAN client.
         soloPlacedSalt=session.placedSalt();
         setHauntings(session.hauntings());
@@ -4046,17 +4052,12 @@ public final class SceneRenderer {
             weatherFx.renderOverlay(precipitation,renderWidth,renderHeight);
         }finally{precipitation.dispose();}
     }
-    /** Billboards share the world Z-buffer, so room walls correctly hide hunter and ghost bodies.
-     * Visibility, headings and phase remain projected from the host's simulation.
-     */
-    private void renderCharacterSprites(HouseMap map,int ghostRoom,boolean visibleGhost,
-            int hunterRoom,double clock,List<RemoteBody> others,Apparition apparition){
-        if(hunterAnimationMap!=map){hunterAnimation.reset();hunterAnimationMap=map;}
-        double playerFloor=map.groundHeight(x,z,map.roomAt(x,eyeHeight-1,z));
-        if(eyeHeight-playerFloor>=.9&&eyeHeight-playerFloor<=1.8)
-            EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,x,z,playerFloor-(eyeHeight-1.62),
-                .38,145,renderWidth,renderHeight,focal);
-
+    void developPhotographicFigures(HouseMap map,Apparition primary,Apparition secondary,double clock){
+        if(!photographicSoftwareRaster)throw new IllegalStateException("camera lens frame required");
+        setAdditionalGhostBodies(secondary==null?List.of():List.of(secondary));
+        renderGhostSprites(map,-1,primary!=null,clock,primary);
+    }
+    private void renderGhostSprites(HouseMap map,int ghostRoom,boolean visibleGhost,double clock,Apparition apparition){
         var soloGhost=visibleGhost&&apparition==null?SafeAreaBarrier.ghostSpawn(map,ghostRoom):null;
         if(visibleGhost&&(apparition!=null||soloGhost!=null)){
             double gx=apparition==null?soloGhost.x():apparition.x();
@@ -4115,6 +4116,19 @@ public final class SceneRenderer {
                 if(CharacterVisuals.isTwinActor(companion.appearance()))
                     renderPairedTether(apparition,companion,clock);
         }
+    }
+    /** Billboards share the world Z-buffer, so room walls correctly hide hunter and ghost bodies.
+     * Visibility, headings and phase remain projected from the host's simulation.
+     */
+    private void renderCharacterSprites(HouseMap map,int ghostRoom,boolean visibleGhost,
+            int hunterRoom,double clock,List<RemoteBody> others,Apparition apparition){
+        if(hunterAnimationMap!=map){hunterAnimation.reset();hunterAnimationMap=map;}
+        double playerFloor=map.groundHeight(x,z,map.roomAt(x,eyeHeight-1,z));
+        if(eyeHeight-playerFloor>=.9&&eyeHeight-playerFloor<=1.8)
+            EntityFootShadow.draw(pixels,depths,x,z,yaw,pitch,x,z,playerFloor-(eyeHeight-1.62),
+                .38,145,renderWidth,renderHeight,focal);
+
+        renderGhostSprites(map,ghostRoom,visibleGhost,clock,apparition);
         if(hunterRoom>=0){
             DirectionalSprites.draw(pixels,depths,x,z,yaw,pitch,
                 map.centerX(hunterRoom)-1.25,map.centerZ(hunterRoom)+2.0,

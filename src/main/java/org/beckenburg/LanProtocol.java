@@ -7,15 +7,16 @@ import java.util.List;
 
 /** Bounded version-2 XYZ LAN frames, intentionally not Java object deserialization. */
 public final class LanProtocol {
-    public static final int VERSION=2, DEFAULT_PORT=27717, MAX_FRAME=512, MAX_FIELDS=11;
+    public static final int VERSION=2, DEFAULT_PORT=27717, MAX_FRAME=512, MAX_FIELDS=13;
     private LanProtocol() { }
     public static List<String> parts(String frame) {
         if (frame==null || frame.length()>MAX_FRAME || frame.indexOf('\r')>=0 || frame.indexOf('\n')>=0)
             throw new IllegalArgumentException("invalid frame");
         String[] raw=frame.split("\\|",-1);
-        // A manifested CAMGHOST frame contains exactly eleven fields.
-        // Keep the bound, but allow that existing authoritative packet.
-        if(raw.length>MAX_FIELDS)throw new IllegalArgumentException("too many fields");
+        // Extended optical frames include the witnessed room and its live occupancy.
+        if(raw.length>11&&(raw.length!=MAX_FIELDS
+                ||!(raw[0].equals("CAMGHOST")||raw[0].equals("LENSGHOST")||raw[0].equals("SHUTTERGHOST"))))
+            throw new IllegalArgumentException("too many fields");
         List<String> out=new ArrayList<>(raw.length);
         for(String v:raw) { if(v.length()>96)throw new IllegalArgumentException("field too large"); out.add(v); }
         return List.copyOf(out);

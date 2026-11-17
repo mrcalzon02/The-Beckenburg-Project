@@ -28,7 +28,7 @@ public final class GhostArchive {
         Objects.requireNonNull(type);
         var signature=HardEvidenceQuota.signature(type);
         GhostTraits.Profile p=GhostTraits.of(type);
-        return new Entry(type,description(type),List.copyOf(signature),
+        return new Entry(type,GhostFieldGuide.figureReference(type)+" "+description(type),List.copyOf(signature),
             GhostFieldGuide.hint(type)+" "+GhostBehavior.profile(type).tell(),
             (p.grounded()?"Grounded":"Floating")+", "+(p.canPhase()?"passes solid walls":"uses doors")+
                 ", "+(p.leavesUv()?"can leave UV traces":"not normally UV-traceable"),
@@ -44,7 +44,7 @@ public final class GhostArchive {
             case YOKAI -> "An elusive voice-chaser. It lures investigators with familiar sounds but still must use real passages between rooms.";
             case BANSHEE -> "A dreadful wailing entity which may repeatedly stalk an isolated victim. Distinguish the pattern from incidental room acoustics.";
             case WRAITH -> "A wall-phasing spectral hunter. Its movement can bypass ordinary doors, changing where a ritual perimeter is safe.";
-            case SHADE -> "A hidden watcher strongest when no one observes it. A remote camera can reveal movement invisible to a crowded room.";
+            case SHADE -> "A hidden watcher that lingers in the dark. Set a camera facing its activity, clear the room and watch from the van.";
             case SPECTER -> "A lingering apparition that moves through solid boundaries. Its extended manifestations can make an apparently empty room unsafe.";
             case SPIRIT -> "A comparatively familiar haunting of voices, footsteps and opened doors. Ordinary appearances can still conceal significant danger.";
             case HANTU -> "A cold-associated floating entity constrained by doorways. Cold air alone is not sufficient to establish its identity.";

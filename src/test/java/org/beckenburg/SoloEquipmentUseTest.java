@@ -9,7 +9,12 @@ public final class SoloEquipmentUseTest {
         EquipmentLoadout kit=new EquipmentLoadout();
         double x=map.centerX(14),z=map.centerZ(14);
         kit.select(3);
-        ok(!mission.useEquipment(kit,x,z),"outside van photo cannot register a sighting");
+        ok(!mission.notePhotoFigure(),"an unexposed camera has no print to review");
+        ok(mission.useEquipment(kit,x,z),"ordinary van photo saves an exposure");
+        ok(!mission.apparitionPhotographed()&&mission.message().startsWith("Exposure captured"),
+            "camera saves pixels without reporting a finding");
+        ok(mission.notePhotoFigure()&&mission.apparitionPhotographed(),
+            "only manual photo review enters a claim, including an investigator's mistaken claim");
         ok(kit.usesLeft(EquipmentLoadout.Item.PHOTO_CAMERA)==5,"a camera exposure is consumed");
         kit.replaceAtRack(new EquipmentLoadout.Item[]{EquipmentLoadout.Item.EMF,
             EquipmentLoadout.Item.THERMOMETER,EquipmentLoadout.Item.SPIRIT_BOX,

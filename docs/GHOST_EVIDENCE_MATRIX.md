@@ -38,6 +38,20 @@ D.O.T.S. is **partially implemented in LAN source**: the owner-supplied `vape_mp
 
 **UV/visual:** UV clues only come from genuine ghost traversal or relevant interactions. Sight and orbs are taken from the existing ghost traits; camera-only forms must not become ordinary naked-eye figures. A physical ghost movement or manifestation must drive projectors and camera footage rather than drawing a fake clue on the HUD.
 
+### Manifestation conditions
+
+| Lineage, including its Ancient form | Living hunters in the figure’s room | Visible through |
+| --- | --- | --- |
+| Shade | 0 | Photo camera or video |
+| Banshee | Exactly 1 | Direct sight, photo camera or video |
+| Poltergeist | 2 or more | Direct sight, photo camera or video |
+| Specter | Any count | Photo camera or video |
+
+The remaining lineages have no headcount requirement. A hunter across the threshold can photograph a figure through a clear doorway. A remote video operator stays outside the count. Hires and human hunters both count, including the photographer when standing in the subject room. The spectral prism requires an eligible figure in the lens and an available shadow evidence family. Orbs and D.O.T.S. retain their separate producers.
+
+Only the feed currently being watched can supply a live sighting. Unattended cameras produce no radio callout, event clip or journal note. Human investigators enter what they saw. Hired observers can radio their own observations while assigned to the screen. Match observations to the instant the figure appears. A room can go quiet because the ghost roamed, the camera faced the wrong way or the manifestation ended. Only a positive sighting can exclude an incompatible witness condition.
+
+
 **Voice/behavior:** the existing spirit-box code can respond in a ghost's current room for all 13 species, so the general spirit-box checkbox currently cannot eliminate a type. Future reply styles and sound tools may introduce further meaningful differences **only after** actual producers and detectors exist. Behavior tells, favored actions, walls versus doors, isolated attacks, and sound reactions are complementary sources of deduction, not invisible instrument subtype passwords.
 
 ## Matching producer and ghost-player cadence

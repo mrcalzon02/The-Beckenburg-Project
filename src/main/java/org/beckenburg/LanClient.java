@@ -15,6 +15,8 @@ public final class LanClient implements AutoCloseable {
     private final String seat;
     private volatile boolean closed;
     private volatile boolean leaving;
+    private volatile boolean witnessOptics;
+    public boolean supportsWitnessOptics(){return witnessOptics;}
     private volatile LanVoiceClientAudio voice;
     private volatile long sequence;
     private final String connectAddress;
@@ -176,6 +178,18 @@ public final class LanClient implements AutoCloseable {
         send("VISUAL|"+look.name());
     }
     public synchronized void turn(int degrees)throws IOException {send("TURN|"+degrees+"|"+(++sequence));}
+    public synchronized void turn(int degrees,int pitchMrad)throws IOException {
+        if(witnessOptics)send("TURN|"+degrees+"|"+pitchMrad+"|"+(++sequence));
+        else turn(degrees);
+    }
+    /** Select the single receiver feed being viewed; -1 lowers the display. */
+    public synchronized void watchCamera(int owner)throws IOException {
+        if(owner< -1||owner>=VanTelemetry.HUNTERS)throw new IllegalArgumentException("invalid camera owner");
+        if(witnessOptics)send(owner<0?"WATCH|NONE":"WATCH|CAMERA|"+owner);
+    }
+    public synchronized void watchHeldLens()throws IOException {
+        if(witnessOptics)send("WATCH|LENS");
+    }
     public synchronized void window()throws IOException {send("WINDOW|"+(++sequence));}
     public synchronized void door()throws IOException {send("DOOR|"+(++sequence));}
     synchronized void openDoor()throws IOException {send("OPENDOOR|"+(++sequence));}
@@ -276,6 +290,12 @@ public final class LanClient implements AutoCloseable {
                 if(line==null)break; // Clean remote EOF still ends the connection.
                 if(leaving)continue; // Drain pending host bytes until its acknowledged TCP EOF.
                 LanProtocol.parts(line);
+                if(line.equals("OPTICS|WITNESSES")){
+                    synchronized(this){
+                        if(!leaving){send("OPTICS|ENABLE");witnessOptics=true;}
+                    }
+                    continue;
+                }
                 if(line.startsWith("PING|")){
                     var fields=LanProtocol.parts(line);
                     if(fields.size()!=2)throw new IOException("invalid host heartbeat");

@@ -23,16 +23,49 @@ public final class LanApparitionIntegrationTest {
         }
         @Override public void close(){client.close();}
     }
+    /** Original v2 packet reader never opts in to witness metadata. */
+    static final class OriginalPeer implements AutoCloseable {
+        final java.net.Socket socket;
+        final java.io.Reader in;
+        final java.io.Writer out;
+        long sequence;
+        OriginalPeer(int port)throws Exception{
+            socket=new java.net.Socket("127.0.0.1",port);
+            socket.setSoTimeout(13000);
+            in=LanProtocol.reader(socket.getInputStream());
+            out=LanProtocol.writer(socket.getOutputStream());
+            send("JOIN|2|HUNTER|Legacy");
+            expect("WELCOME|");
+        }
+        void send(String line)throws Exception{LanProtocol.write(out,line);}
+        String expect(String prefix)throws Exception{
+            long limit=System.nanoTime()+TimeUnit.SECONDS.toNanos(13);
+            while(System.nanoTime()<limit){
+                String line=LanProtocol.read(in);
+                if(line==null)throw new AssertionError("original peer lost connection");
+                ok(line.split("\\|",-1).length<=11,"original peer received extended optics: "+line);
+                if(line.startsWith("PING|"))send("PONG|"+line.substring(5));
+                if(line.startsWith(prefix))return line;
+            }
+            throw new AssertionError("original peer timed out waiting for "+prefix);
+        }
+        @Override public void close()throws java.io.IOException{socket.close();}
+    }
     private static void ok(boolean yes,String reason){if(!yes)throw new AssertionError(reason);}
     public static void main(String[] args)throws Exception{
         try(LanHost host=new LanHost("127.0.0.1",0);
             Peer a=new Peer(host.port(),false,"Cleric");
             Peer b=new Peer(host.port(),false,"Observer");
-            Peer c=new Peer(host.port(),false,"Demonologist");
+            OriginalPeer c=new OriginalPeer(host.port());
             Peer g=new Peer(host.port(),true,"Spirit")){
-            a.client.ready();b.client.ready();c.client.ready();g.client.ready();
+            a.client.ready();b.client.ready();c.send("READY");g.client.ready();
             a.expect("LOBBY|3|HUMAN|4|WAITING");a.client.start();a.expect("INFO|mission started");
-            for(int room:new int[]{11,8,5,4})LanTestRoomTravel.move(a.client,a::expect,room);
+            for(int room:new int[]{11,8,5,4})LanTestRoomTravel.move(a.client,prefix->{
+                String ack=a.expect(prefix);
+                int target=Integer.parseInt(ack.split("\\|")[2]);
+                c.send("MOVE|"+target+"|"+(++c.sequence));c.expect("ACCEPT|MOVE|"+target);
+            },room);
+            c.send("VIEW3D");c.expect("ACCEPT|VIEW3D");
             a.client.view3D();a.expect("ACCEPT|VIEW3D");a.expect("APPARITION|HIDDEN");
             b.client.view3D();b.expect("ACCEPT|VIEW3D");b.expect("APPARITION|HIDDEN");
             g.client.viewGhost3D();g.expect("ACCEPT|GVIEW3D");g.expect("GPOSE|");
@@ -47,11 +80,14 @@ public final class LanApparitionIntegrationTest {
             ok(host.running(),"valid human ghost manifestation accepted");
             String seen=a.expect("APPARITION|VISIBLE|");
             String[] coordinates=seen.split("\\|");
-            ok(coordinates.length==6
+            ok(coordinates.length==8
+                &&LanProtocol.integer(coordinates[7],1,6)==2
                 &&Math.abs(LanProtocol.integer(coordinates[2],-100000,100000))<=100000
                 &&Math.abs(LanProtocol.integer(coordinates[3],-100000,100000))<=100000
                 &&Math.abs(LanProtocol.integer(coordinates[4],-100000,100000))<=100000,
                 "visible hunter receives bounded XYZ coordinates and tick");
+            ok(c.expect("APPARITION|VISIBLE|").split("\\|").length==6,
+                "original v2 viewer receives its original visible position packet");
             String hidden=b.expect("APPARITION|HIDDEN|");
             ok(!hidden.contains("VISIBLE"),"distant investigator has no ghost coordinates");
             g.expect("STATE|"); // no APPARITION frame may ever be sent to ghost

@@ -173,12 +173,16 @@ public final class LanGhostPursuit {
             }
             if(seen.tick()<restUntil&&!locallyHeard)return null;
         }
-        if(signatureDue&&locallyHeard&&seen.hearsHunter()&&legal.contains(GhostDomain.Action.SIGNATURE))
+        boolean unattended=GhostTraits.witnesses(archetype)==GhostTraits.Witnesses.EMPTY;
+        if(signatureDue&&(unattended||locallyHeard&&seen.hearsHunter())&&legal.contains(GhostDomain.Action.SIGNATURE))
             action=GhostDomain.Action.SIGNATURE;
         else if(locallyHeard && seen.hearsHunter() && hasSpatialVictim && legal.contains(GhostDomain.Action.STRIKE))
             action=GhostDomain.Action.STRIKE;
         else if(locallyHeard && seen.hearsHunter() && (!saving||hasSpatialVictim&&!signatureDue)
                 && legal.contains(GhostDomain.Action.MANIFEST))
+            action=GhostDomain.Action.MANIFEST;
+        else if(unattended&&!saving&&seen.room()==seen.anchorRoom()
+                &&legal.contains(GhostDomain.Action.MANIFEST))
             action=GhostDomain.Action.MANIFEST;
         else if(legal.contains(GhostDomain.Action.DRIFT) && memory(seen.tick())!=null
                 && memory.room()!=seen.room()) {

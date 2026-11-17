@@ -147,7 +147,6 @@ public final class LanHost implements AutoCloseable {
     private final UvEvidenceMarks uvEvidence=new UvEvidenceMarks();
     private LanCameraSight.Orb cameraOrb;
     private final AdditionalEvidence.Deposits surfaceDeposits=new AdditionalEvidence.Deposits();
-    private final int[] lastOpticalSeen={-10000,-10000,-10000,-10000,-10000,-10000};
     private final CustomContract contract;
     private final MissionWeather weather;
     private final ContractRewards rewards;
@@ -157,6 +156,10 @@ public final class LanHost implements AutoCloseable {
     private final LanDroppedGear droppedGear=new LanDroppedGear();
     private final FieldSoundRecorder[] recorders=new FieldSoundRecorder[HUNTERS];
     private final int[] lastRecordingPlayback={-10000,-10000,-10000,-10000,-10000,-10000};
+    private record OpticalContact(LanGhostSpatial.Pose pose,int tick){}
+    private final OpticalContact[] lastLocalPattern=new OpticalContact[HUNTERS];
+    private final Map<Integer,java.util.EnumSet<GhostFieldGuide.Clue>> capturedPhotoClues=new HashMap<>();
+    private final java.util.EnumSet<GhostFieldGuide.Clue> reportedPrints=java.util.EnumSet.noneOf(GhostFieldGuide.Clue.class);
     private final int[] lastHunterSound={-10000,-10000,-10000,-10000,-10000,-10000};
     private volatile boolean closed;
     private boolean running,everStarted;
@@ -542,6 +545,7 @@ public final class LanHost implements AutoCloseable {
                     // Never consume a seat until its new credentials are sent.
                     LanProtocol.write(out,"WELCOME|"+seatName(slot)+"|"+LanProtocol.VERSION+"|"+peer.resumeToken+"|"+seatSequenceHighWater(peer));
                     peer.outbound.start(workers);
+                    if(slot!=GHOST_SEAT)reply(peer,"OPTICS|WITNESSES");
                     reserved[slot]=null;seats[slot]=peer;
                     if(campaignProfile!=null){
                         reply(peer,"MODE|CAMPAIGN");
@@ -595,6 +599,7 @@ public final class LanHost implements AutoCloseable {
                         java.util.concurrent.ThreadLocalRandom.current());
                     LanProtocol.write(out,"WELCOME|"+seatName(slot)+"|"+LanProtocol.VERSION+"|"+peer.resumeToken+"|"+seatSequenceHighWater(peer));
                     peer.outbound.start(workers);
+                    if(slot!=GHOST_SEAT)reply(peer,"OPTICS|WITNESSES");
                     if(campaignProfile!=null){
                         reply(peer,"MODE|CAMPAIGN");
                         reply(peer,CastleRelations.hostView(campaignProfile).frame());
@@ -698,6 +703,23 @@ public final class LanHost implements AutoCloseable {
         try{p=LanProtocol.parts(frame);}catch(IllegalArgumentException ex){reply(peer,"REJECT|invalid frame");return;}
         try{
             switch(p.get(0)){
+                case "OPTICS" -> {
+                    if(peer.slot==GHOST_SEAT||!p.equals(List.of("OPTICS","ENABLE")))
+                        throw new IllegalArgumentException("invalid optics capability");
+                    peer.witnessOptics=true;
+                }
+                case "WATCH" -> {
+                    if(!peer.witnessOptics||!running||!peer.worldMode||peer.slot==GHOST_SEAT)
+                        throw new IllegalArgumentException("hunter camera view unavailable");
+                    if(p.equals(List.of("WATCH","NONE")))peer.cameraWatch=-1;
+                    else if(p.equals(List.of("WATCH","LENS"))&&heldCamera(peer)!=null)peer.cameraWatch=-2;
+                    else if(p.size()==3&&p.get(1).equals("CAMERA")&&insideVan(peer.slot)&&mission.alive(peer.slot)){
+                        int owner=LanProtocol.integer(p.get(2),0,HUNTERS-1);
+                        if(!poweredCamera(owner))throw new IllegalArgumentException("camera offline");
+                        peer.cameraWatch=owner;
+                    }else throw new IllegalArgumentException("camera view unavailable");
+                    reply(peer,"ACCEPT|"+String.join("|",p));
+                }
                 case "LEAVE" -> {
                     if(p.size()!=1)throw new IllegalArgumentException("invalid departure");
                     peer.intentionalLeave=true;
@@ -892,10 +914,12 @@ public final class LanHost implements AutoCloseable {
                     reply(peer,"ACCEPT|STEP");broadcastWorld();broadcastState();
                 }
                 case "TURN" -> {
-                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=3)throw new IllegalArgumentException("3D heading unavailable");
+                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||(p.size()!=3&&p.size()!=4))throw new IllegalArgumentException("3D heading unavailable");
                     int heading=LanProtocol.integer(p.get(1),0,359);
-                    acceptHunterSequence(peer,LanProtocol.sequence(p.get(2)));
-                    world.turn(peer.slot,heading);broadcastWorld();
+                    double pitch=p.size()==4?LanProtocol.integer(p.get(2),-1400,1400)/1000.0:peer.lensPitch;
+                    acceptHunterSequence(peer,LanProtocol.sequence(p.get(p.size()-1)));
+                    peer.lensPitch=pitch;
+                    if(world.body(peer.slot).heading()!=heading){world.turn(peer.slot,heading);broadcastWorld();}
                 }
                 case "INTERACT" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=6)
@@ -1391,14 +1415,23 @@ public final class LanHost implements AutoCloseable {
                         }
                         case "PHOTO_CAMERA" -> {
                             int remaining=gear.expend(id);
-                            var photographer=world.body(peer.slot);
-                            boolean optical=tick-lastOpticalSeen[peer.slot]<=3
-                                &&CameraAim.onTarget(photographer.x(),photographer.z(),Math.toRadians(photographer.heading()),ghostPose.pose().x(),ghostPose.pose().z());
-                            if((ghost.manifested()&&room==ghost.room())||optical)
-                                taskDone(ContractRewards.Task.PHOTO_EVENT);
+                            var lens=heldCamera(peer);
+                            var print=capturedPhotoClues.computeIfAbsent(peer.slot,
+                                key->java.util.EnumSet.noneOf(GhostFieldGuide.Clue.class));
+                            if(lens!=null){
+                                var primary=ghostPose.pose();
+                                boolean signature=animation.signatureVisible(tick);
+                                if(exposeFigure(peer,lens,"a",primary,signature))
+                                    print.add(GhostFieldGuide.figureClue(GhostFieldGuide.FigureView.PHOTO,livingHuntersIn(primary.room())));
+                                if(twinCompanion!=null&&exposeFigure(peer,lens,"b",twinCompanion.pose(),signature))
+                                    print.add(GhostFieldGuide.figureClue(GhostFieldGuide.FigureView.PHOTO,livingHuntersIn(twinCompanion.pose().room())));
+                            }
+                            var contact=lastLocalPattern[peer.slot];
+                            boolean pattern=lens!=null&&contact!=null&&tick-contact.tick()<=3
+                                &&LanCameraSight.seesHeld(map,lens,contact.pose(),true,ghostType,"a",false,
+                                    world.crouched(peer.slot),peer.lensPitch,true);
+                            if(!print.isEmpty()||pattern)print.add(GhostFieldGuide.Clue.PHOTO_SHAPE);
                             reading="Exposure captured / "+remaining+" frames remaining";
-                            // The client keeps its shutter-time lens render until this acceptance; never takes an acknowledgement-time screenshot.
-                            // No image-recognition or ghost-presence check exists.
                         }
                         case "IGNITER" -> {
                             int remaining=gear.expend(id);
@@ -1437,11 +1470,26 @@ public final class LanHost implements AutoCloseable {
                             boolean collector=id.equals("ECTOPLASM_SAMPLER")||id.equals("OBJECT_IMPRINT_SCANNER");
                             if(collector&&gear.remaining(id)<1)
                                 throw new IllegalArgumentException("collection kit empty");
+                            boolean sourceInView=sourceRoom==lastEvidenceEventRoom;
+                            if(id.equals("SPECTRAL_PRISM")){
+                                var lens=new LanVideoCameras.Camera(peer.slot,room,body.x(),body.y(),body.z(),
+                                    body.heading(),gear.owned(id));
+                                var primary=ghostPose.pose();
+                                var companion=twinCompanion==null?null:twinCompanion.pose();
+                                boolean signature=animation.signatureVisible(tick);
+                                boolean first=primary.room()==lastEvidenceEventRoom&&cameraFigure(peer,lens,primary,
+                                    "a",livingHuntersIn(primary.room()),signature,false);
+                                boolean second=companion!=null&&companion.room()==lastEvidenceEventRoom
+                                    &&cameraFigure(peer,lens,companion,"b",livingHuntersIn(companion.room()),signature,false);
+                                sourceInView=first||second;
+                                range=first?Math.hypot(body.x()-primary.x(),body.z()-primary.z()):Double.MAX_VALUE;
+                                if(second)range=Math.min(range,Math.hypot(body.x()-companion.x(),body.z()-companion.z()));
+                            }
                             AdditionalEvidence.Sample sample=collector
                                 ?surfaceDeposits.collect(id,ghostType,mission.hardEvidenceQuota(),tick,body,stage)
                                 :AdditionalEvidence.measure(id,ghostType,mission.hardEvidenceQuota(),tick,
                                     lastEvidenceEventTick,lastEvidenceEventPower,lastEvidenceEventAction,
-                                    sourceRoom==lastEvidenceEventRoom,range,stage);
+                                    sourceInView,range,stage);
                             reading=sample.reading();
                             // Only a successful physical collection spends a charge.
                             if(sample.detected()&&collector)gear.expend(id);
@@ -1610,8 +1658,9 @@ public final class LanHost implements AutoCloseable {
                     if(gear.batterySecondsLeft(id)>=0)
                         reply(peer,"GEARPOWER|"+id+"|"+gear.batterySecondsLeft(id)+
                             "|"+(gear.powered(id)?1:0));
-                    notifyHunters(casefile.recordDevice(tick,peer.slot,room,id,
-                        LanEvidenceJournal.Finding.OBSERVED,reading));
+                    if(!id.equals("VIDEO_CAMERA")&&!id.equals("PHOTO_CAMERA"))
+                        notifyHunters(casefile.recordDevice(tick,peer.slot,room,id,
+                            LanEvidenceJournal.Finding.OBSERVED,reading));
                     reply(peer,"ACCEPT|GEARUSE|"+id+"|"+reading);
                     LanSound.Cue deviceCue=switch(id){
                         case "PHOTO_CAMERA"->LanSound.Cue.CAMERA;
@@ -1874,7 +1923,11 @@ public final class LanHost implements AutoCloseable {
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(3)));
                     ensureActiveHunter(peer);
                     FieldJournal.Note note=fieldNotes.set(clue,status,peer.slot,tick);
-                    notifyHunters(note.frame()); // observed mark only; never confirms an instrument result
+                    // A player may mark any observation. The response is identical for a hit or a mistaken claim.
+                    var print=capturedPhotoClues.get(peer.slot);
+                    if(status!=FieldJournal.Status.SEEN)reportedPrints.remove(clue);
+                    else if(print!=null&&print.contains(clue))reportedPrints.add(clue);
+                    notifyHunters(note.frame());
                     reply(peer,"ACCEPT|NOTE|"+clue);
                 }
                 case "IDENTIFY" -> {
@@ -2440,14 +2493,7 @@ public final class LanHost implements AutoCloseable {
                     ||DotsRayField.ghostHits(map,light.placement(),ghostPose.pose(),tick).isEmpty())continue;
                 Peer hunter=seats[i];
                 if(hunter==null||!hunter.worldMode)continue;
-                LanWorld.Body body=world.body(i);
-                boolean visible=map.clearLineOfSight(body.x(),body.y()+1.3,body.z(),
-                    light.x(),light.placement().y()+1.0,light.z());
-                if(!visible)for(LanVideoCameras.Camera camera:cameras.all())
-                    if(equipment[camera.owner()].powered("VIDEO_CAMERA")
-                            &&map.clearLineOfSight(camera.x(),camera.y()+1.3,camera.z(),
-                                light.x(),light.placement().y()+1.0,light.z())){visible=true;break;}
-                if(visible){reply(hunter,light.frame());lastOpticalSeen[i]=tick;}
+                sendPattern(hunter,ghostPose.pose(),light.frame());
             }
     }
     private void illuminateLasers(){
@@ -2456,11 +2502,22 @@ public final class LanHost implements AutoCloseable {
             var pose=ghostPose.pose();
             var contact=laserContact(station);if(contact==null)continue;
             for(int i=0;i<HUNTERS;i++)if(seats[i]!=null&&seats[i].worldMode){
-                var body=world.body(i);
-                boolean visible=map.clearLineOfSight(body.x(),body.y()+1.62,body.z(),pose.x(),pose.y()+1,pose.z());
-                if(!visible)for(var camera:cameras.all())if(equipment[camera.owner()].powered("VIDEO_CAMERA")&&map.clearLineOfSight(camera.x(),camera.y()+1.3,camera.z(),pose.x(),pose.y()+1,pose.z())){visible=true;break;}
-                if(visible){reply(seats[i],contact.frame());lastOpticalSeen[i]=tick;}
+                sendPattern(seats[i],pose,contact.frame());
             }
+        }
+    }
+    private void sendPattern(Peer hunter,LanGhostSpatial.Pose pose,String frame){
+        if(!mission.alive(hunter.slot))return;
+        var feed=watchedCamera(hunter);
+        if(feed!=null){
+            if(LanCameraSight.seesPattern(map,feed,pose))
+                reply(hunter,hunter.witnessOptics?frame+"|"+feed.owner():frame);
+            return;
+        }
+        var body=world.body(hunter.slot);
+        if(LanCameraSight.seesPatternInField(map,hunter.slot,body,world.crouched(hunter.slot),hunter.lensPitch,pose)){
+            reply(hunter,frame);
+            lastLocalPattern[hunter.slot]=new OpticalContact(pose,tick);
         }
     }
     private StructuredLightVolume.Contact laserContact(VanSensorStations.Station station){
@@ -2544,9 +2601,8 @@ public final class LanHost implements AutoCloseable {
             Peer hunter=seats[i];
             if(hunter==null||!hunter.worldMode)continue;
             boolean local=hunterRooms[i]==haunt.room();
-            boolean watching=insideVan(i)&&cameras.all().stream().anyMatch(camera->
-                camera.room()==haunt.room()&&equipment[camera.owner()].powered("VIDEO_CAMERA")
-                &&equipment[camera.owner()].batterySecondsLeft("VIDEO_CAMERA")>0);
+            var feed=watchedCamera(hunter);
+            boolean watching=feed!=null&&feed.room()==haunt.room();
             if(local||watching)reply(hunter,haunt.frame());
         }
         if(result.action()==GhostDomain.Action.MANIFEST)animation.manifested(tick);
@@ -2809,6 +2865,8 @@ public final class LanHost implements AutoCloseable {
                 ||mission.outcome()==LanCase.Outcome.BANISHED
                 ||mission.outcome()==LanCase.Outcome.ABSOLVED;
         boolean correct=mission.correctlyIdentified()||!mission.identificationRequired()&&won;
+        // A reported print may earn settlement credit. Nothing at the shutter or in the casebook grades it live.
+        if(!reportedPrints.isEmpty())rewards.mark(ContractRewards.Task.PHOTO_EVENT);
         ContractRewards.Settlement payout=rewards.settle(mission.outcome(),correct,
             contract.evidenceLevel(),weather.state().challenge());
         if(campaignProfile!=null){
@@ -2869,9 +2927,7 @@ public final class LanHost implements AutoCloseable {
                 onFrenzyTransition();
             }
             if(frenzy.active()&&tick%10==0)notifyAllPeers(frenzyFrame());
-            int occupants=0;
-            for(int i=0;i<HUNTERS;i++)if((seats[i]!=null||reserved[i]!=null)&&mission.alive(i)
-                    &&hunterRooms[i]==ghost.room())occupants++;
+            int occupants=livingHuntersIn(ghost.room());
             // Occupancy can fuel spectral energy, but does not grant supernatural
             // target knowledge. Quiet/hiding hunters cannot be inferred from a
             // legal-action menu merely because they share the ghost's room.
@@ -3104,70 +3160,126 @@ public final class LanHost implements AutoCloseable {
             }
         }
     }
-    /** Every 3D investigator receives only their own host-validated line-of-sight projection.
-     * An explicit HIDDEN packet also clears stale manifestations after a move or expiry.
-     * This is never sent to the ghost seat or used for ghost AI decisions.
-     */
+    private int livingHuntersIn(int room){
+        int count=0;
+        for(int i=0;i<HUNTERS;i++)
+            if((seats[i]!=null||reserved[i]!=null)&&mission.alive(i)&&world.body(i).room()==room)count++;
+        return count;
+    }
+
+    private LanVideoCameras.Camera heldCamera(Peer hunter){
+        int seat=hunter.slot;
+        String tool=equipment[seat].active();
+        if(!mission.alive(seat)||map.clutter().held(seat)>=0||!ToolBeltHud.cameraView(tool))return null;
+        if(tool.equals("VIDEO_CAMERA")&&(cameras.at(seat)!=null
+                ||equipment[seat].batterySecondsLeft(tool)<=0))return null;
+        var body=world.body(seat);
+        if(body.room()<0||body.room()>=HouseMap.ROOM_COUNT)return null;
+        return new LanVideoCameras.Camera(seat,body.room(),body.x(),body.y(),body.z(),
+            body.heading(),equipment[seat].owned(tool));
+    }
+
+    /** Send room/count only when that individual body was actually observed. */
+    private String observed(Peer viewer,String frame,LanGhostSpatial.Pose pose,int occupants,boolean seen){
+        return seen&&viewer.witnessOptics?frame+"|"+pose.room()+"|"+occupants:frame;
+    }
+
+    private boolean cameraFigure(Peer holder,LanVideoCameras.Camera camera,LanGhostSpatial.Pose pose,
+            String member,int occupants,boolean signature,boolean print){
+        if(!ghost.manifested()||!GhostTraits.figureAllowed(ghostType,true,occupants))return false;
+        if(holder!=null)
+            return LanCameraSight.seesHeld(map,camera,pose,true,ghostType,member,signature,
+                world.crouched(holder.slot),holder.lensPitch,print);
+        return LanCameraSight.sees(map,camera,pose,true,ghostType,member,signature);
+    }
+
+    private void projectCamera(Peer viewer,boolean held,LanVideoCameras.Camera camera,boolean powered,
+            String member,LanGhostSpatial.Pose pose,int occupants,boolean signature){
+        boolean seen=powered&&cameraFigure(held?viewer:null,camera,pose,member,occupants,signature,false);
+        if(member.equals("b")){
+            int feed=held?HUNTERS:camera.owner();
+            boolean known=viewer.twinOnCamera[feed];
+            viewer.twinOnCamera[feed]=seen;
+            if(!seen&&!known)return;
+        }
+        String frame=LanCameraSight.frame(held?"LENSGHOST":"CAMGHOST",camera,member,pose,seen,ghostType,tick,signature);
+        reply(viewer,observed(viewer,frame,pose,occupants,seen));
+    }
+
+    private boolean exposeFigure(Peer hunter,LanVideoCameras.Camera lens,String member,
+            LanGhostSpatial.Pose pose,boolean signature){
+        if(hunter.witnessOptics&&!watchingHeldLens(hunter))return false;
+        int count=livingHuntersIn(pose.room());
+        if(!cameraFigure(hunter,lens,pose,member,count,signature,true))return false;
+        String frame=LanCameraSight.frame("SHUTTERGHOST",lens,member,pose,true,ghostType,tick,signature);
+        if(hunter.witnessOptics)reply(hunter,observed(hunter,frame,pose,count,true));
+        return true;
+    }
+
+    private boolean poweredCamera(int owner){
+        return cameras.at(owner)!=null&&equipment[owner].powered("VIDEO_CAMERA")
+            &&equipment[owner].batterySecondsLeft("VIDEO_CAMERA")>0;
+    }
+    private boolean watchingHeldLens(Peer viewer){
+        return viewer.witnessOptics&&viewer.cameraWatch==-2&&heldCamera(viewer)!=null;
+    }
+    private LanVideoCameras.Camera watchedCamera(Peer viewer){
+        if(viewer==null||viewer.slot>=HUNTERS||!viewer.worldMode||!mission.alive(viewer.slot)
+                ||!insideVan(viewer.slot))return null;
+        if(viewer.witnessOptics)
+            return viewer.cameraWatch>=0&&poweredCamera(viewer.cameraWatch)?cameras.at(viewer.cameraWatch):null;
+        // Original v2 clients have no watch command. Project only the default feed
+        // while their physical character faces the camera wall screen.
+        var b=world.body(viewer.slot);
+        if(!LanCameraSight.screenInView(map,b.x(),b.y()+HunterPosture.eye(world.crouched(viewer.slot)),
+                b.z(),Math.toRadians(b.heading()),viewer.lensPitch))return null;
+        for(var camera:cameras.all())if(poweredCamera(camera.owner()))return camera;
+        return null;
+    }
+
     private void broadcastApparitions(){
-        LanGhostSpatial.Pose pose=ghostPose.pose();
-        boolean signatureReveal=ghost.manifested()&&animation.signatureVisible(tick);
+        var primary=ghostPose.pose();
+        var secondary=twinCompanion==null?null:twinCompanion.pose();
+        int count=livingHuntersIn(primary.room());
+        int secondCount=secondary==null?0:livingHuntersIn(secondary.room());
+        boolean signature=ghost.manifested()&&animation.signatureVisible(tick);
         for(int i=0;i<HUNTERS;i++){
             Peer hunter=seats[i];
-            if(hunter!=null && hunter.worldMode) {
-                GhostTraits.Sight form=GhostTraits.of(ghostType).sight();
-                // Orb samples and apparition bodies are distinct simulation events:
-                // a suppressed ORBS evidence family must not hide an otherwise visible
-                // Yokai, Hantu or Twin silhouette.
-                String sight=LanApparition.frame(map,world.body(i),true,pose,
-                    ghost.manifested()&&form!=GhostTraits.Sight.CAMERA_ONLY,tick);
-                if(sight.startsWith("APPARITION|VISIBLE|")) {
-                    // Ordinary sight is generic. The real sprite is a temporary signature event.
-                    reply(hunter,signatureReveal
-                        ?"FORM|FIGURE|"+(ghostType.ancient()?"GREEN":"BASE")+"|"+ghostType.name()
-                        :"FORM|FIGURE");
+            if(hunter==null||!hunter.worldMode)continue;
+            boolean alive=mission.alive(i);
+            String sight=LanApparition.frame(map,world.body(i),true,primary,
+                alive&&ghost.manifested()&&GhostTraits.figureAllowed(ghostType,false,count),tick);
+            boolean visible=sight.startsWith("APPARITION|VISIBLE|");
+            if(visible)
+                reply(hunter,signature?"FORM|FIGURE|"+(ghostType.ancient()?"GREEN":"BASE")+"|"+ghostType.name()
+                    :"FORM|FIGURE");
+            reply(hunter,observed(hunter,sight,primary,count,visible));
+            if(visible)reply(hunter,animation.project(true,pendingStrike!=null,primary.heading(),tick).frame());
+            if(secondary!=null){
+                boolean secondVisible=LanApparition.frame(map,world.body(i),true,secondary,
+                    alive&&ghost.manifested()&&GhostTraits.figureAllowed(ghostType,false,secondCount),tick)
+                    .startsWith("APPARITION|VISIBLE|");
+                var echo=new TwinGhostPair.Member("b",secondary);
+                if(secondVisible||hunter.twinInSight)
+                    reply(hunter,observed(hunter,TwinGhostPair.wire(echo,tick,secondVisible,
+                        signature&&ghostType.ancient()),secondary,secondCount,secondVisible));
+                hunter.twinInSight=secondVisible;
+            }
+
+            var held=watchingHeldLens(hunter)?heldCamera(hunter):null;
+            if(held!=null){
+                projectCamera(hunter,true,held,true,"a",primary,count,signature);
+                if(secondary!=null)projectCamera(hunter,true,held,true,"b",secondary,secondCount,signature);
+            }
+            if(tick%VanDisplayCadence.CAMERA_SIGHT_TICKS!=0)continue;
+            var camera=watchedCamera(hunter);
+            if(camera!=null){
+                if(cameraOrb!=null){
+                    String orb=cameraOrb.sample(map,camera,true,tick);
+                    if(orb!=null)reply(hunter,orb);
                 }
-                reply(hunter,sight);
-                if(sight.startsWith("APPARITION|VISIBLE|")) {
-                    LanGhostAnimation.Motion motion=animation.project(true,pendingStrike!=null,pose.heading(),tick);
-                    reply(hunter,motion.frame()); // No private coordinates, only already-disclosed sight.
-                }
-                if(ghostType.baseType()==GhostIdentity.Type.TWINS) {
-                    // Companion B has its own bounded world pose and per-Hunter
-                    // occlusion; an unseen twin has no leaked world coordinates.
-                    var echo=new TwinGhostPair.Member("b",twinCompanion.pose());
-                    String twinSight=LanApparition.frame(map,world.body(i),true,echo.pose(),
-                            ghost.manifested(),tick);
-                    boolean twinVisible=twinSight.startsWith("APPARITION|VISIBLE|");
-                    reply(hunter,TwinGhostPair.wire(echo,tick,twinVisible,
-                        signatureReveal&&ghostType.ancient()));
-                }
-                // No camera capture, frustum/LOS work or camera-ghost packets
-                // unless THIS hunter can physically watch the VAN receiver.
-                // Field cameras and ordinary field evidence remain unaffected.
-                if(insideVan(i)&&tick%VanDisplayCadence.CAMERA_SIGHT_TICKS==0)
-                for(LanVideoCameras.Camera camera:cameras.all()){
-                    boolean powered=equipment[camera.owner()].powered("VIDEO_CAMERA")
-                        &&equipment[camera.owner()].batterySecondsLeft("VIDEO_CAMERA")>0;
-                    // This feed is physically accessible at the van receiver,
-                    // not an omniscient radio broadcast to field investigators.
-                    if(cameraOrb!=null){
-                        String orb=cameraOrb.sample(map,camera,powered,tick);
-                        if(orb!=null)reply(hunter,orb);
-                    }
-                    boolean seen=powered
-                        &&LanCameraSight.sees(map,camera,pose,ghost.manifested(),ghostType,"a",
-                            signatureReveal);
-                    reply(hunter,LanCameraSight.frame(camera,"a",pose,seen,ghostType,tick,
-                        signatureReveal));
-                    if(ghostType.baseType()==GhostIdentity.Type.TWINS){
-                        var echo=new TwinGhostPair.Member("b",twinCompanion.pose());
-                        boolean second=powered
-                            &&LanCameraSight.sees(map,camera,echo.pose(),ghost.manifested(),ghostType,"b",
-                                signatureReveal);
-                        reply(hunter,LanCameraSight.frame(camera,"b",echo.pose(),
-                            second,ghostType,tick,signatureReveal));
-                    }
-                }
+                projectCamera(hunter,false,camera,true,"a",primary,count,signature);
+                if(secondary!=null)projectCamera(hunter,false,camera,true,"b",secondary,secondCount,signature);
             }
         }
     }
@@ -3322,7 +3434,11 @@ public final class LanHost implements AutoCloseable {
             Peer peer=seats[i];if(peer==null)continue;
             boolean isGhost=i==GHOST_SEAT;
             int myRoom=isGhost?o.room():hunterRooms[i];
-            int visible=isGhost?-1:(o.manifested()&&myRoom==o.room()?o.room():-1);
+            boolean visibleToEye=!isGhost&&mission.alive(i)&&o.manifested()&&myRoom==o.room()
+                &&GhostTraits.figureAllowed(ghostType,false,livingHuntersIn(o.room()))
+                &&(!peer.worldMode||LanApparition.frame(map,world.body(i),true,ghostPose.pose(),true,tick)
+                    .startsWith("APPARITION|VISIBLE|"));
+            int visible=visibleToEye?o.room():-1;
             reply(peer,"STATE|"+tick+"|"+myRoom+"|"+visible+"|"+(isGhost?o.energy():-1)+"|"+(isGhost?o.legalActions().toString().replace(" ",""):("role:"+peer.slot))+"|"+(isGhost&&ghostPose.listening(tick)&&tick-lastGhostSoundTick<12?1:0));
         }
     }
@@ -3368,6 +3484,10 @@ public final class LanHost implements AutoCloseable {
         long unconfirmedResumeDeadlineNanos; // no unlimited grace via failed reconnect loop
         boolean ready,worldMode,ghostWorldMode,intentionalLeave;
 
+        boolean twinInSight,witnessOptics;
+        final boolean[] twinOnCamera=new boolean[HUNTERS+1];
+        int cameraWatch=-1;
+        double lensPitch;
         long lastGhostPoseSequence=-1,lastGhostActionSequence=-1;
         long pingSentNanos;
         int expectedPongTick=-1,lastPongTick;

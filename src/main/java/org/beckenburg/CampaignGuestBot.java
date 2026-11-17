@@ -8,9 +8,13 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 /** Socket seat with the same inventory, movement, radio and case commands as a human. */
 final class CampaignGuestBot implements AutoCloseable {
-    enum Action { WAIT, WALK, DOOR, SAMPLE, EQUIP, SERVICE, RADIO, IDENTIFY, WARD, CROSS, RITE }
+    enum Action { WAIT, WALK, TURN, DOOR, SELECT, WATCH, SHUTTER, SAMPLE, EQUIP, SERVICE, RADIO, NOTE, IDENTIFY, WARD, CROSS, RITE }
     record Input(Action action,int dx,int dz,int slot,String radio,
-                 GhostIdentity.Type identifiedType,GhostIdentity.Rite rite,int heading,String equipment) {
+                 GhostIdentity.Type identifiedType,GhostIdentity.Rite rite,int heading,String equipment,boolean releaseView) {
+        Input(Action action,int dx,int dz,int slot,String radio,GhostIdentity.Type type,GhostIdentity.Rite rite,int heading,String equipment){
+            this(action,dx,dz,slot,radio,type,rite,heading,equipment,false);
+        }
+        Input releasingView(){return new Input(action,dx,dz,slot,radio,identifiedType,rite,heading,equipment,true);}
         Input(Action action,int dx,int dz,int slot,String radio,GhostIdentity.Type type,GhostIdentity.Rite rite){
             this(action,dx,dz,slot,radio,type,rite,-1,null);
         }
@@ -21,20 +25,31 @@ final class CampaignGuestBot implements AutoCloseable {
         }
         static Input simple(Action action){return new Input(action,0,0,-1,null,null,null);}
         static Input walk(int dx,int dz){return new Input(Action.WALK,dx,dz,-1,null,null,null);}
+        static Input turn(int heading){return new Input(Action.TURN,0,0,-1,null,null,null,heading,null);}
         static Input cross(int heading){return new Input(Action.CROSS,0,0,-1,null,null,null,heading,null);}
         static Input equip(int slot,String equipment){return new Input(Action.EQUIP,0,0,slot,null,null,null,-1,equipment);}
+        static Input watch(int target){return new Input(Action.WATCH,0,0,target,null,null,null);}
+        static Input select(int slot){return new Input(Action.SELECT,0,0,slot,null,null,null);}
         static Input sample(int slot){return new Input(Action.SAMPLE,0,0,slot,null,null,null);}
+        static Input sampleFacing(int slot,int heading){return new Input(Action.SAMPLE,0,0,slot,null,null,null,heading,null);}
+        static Input note(GhostFieldGuide.Clue clue){return new Input(Action.NOTE,0,0,-1,null,null,null,-1,clue.name());}
         static Input radio(String words){return new Input(Action.RADIO,0,0,-1,words,null,null);}
         static Input identify(GhostIdentity.Type type){return new Input(Action.IDENTIFY,0,0,-1,null,type,null);}
         static Input rite(GhostIdentity.Rite rite){return new Input(Action.RITE,0,0,-1,null,null,rite);}
         void send(LanClient client)throws IOException{
+            if(releaseView)client.watchCamera(-1);
             switch(action){
                 case WAIT -> { }
                 case WALK -> {if(heading>=0)client.turn(heading);client.step(dx,dz);}
+                case TURN -> client.turn(heading);
                 case DOOR -> client.openDoor();
                 case EQUIP -> client.equipAt(slot,equipment);
                 case SERVICE -> client.serviceEquipment();
-                case SAMPLE -> {client.selectGearSlot(slot);client.useHeldEquipment();}
+                case WATCH -> {if(slot==HunterCameraAttention.LENS)client.watchHeldLens();else client.watchCamera(slot);}
+                case SHUTTER -> client.useHeldEquipment();
+                case SELECT -> client.selectGearSlot(slot);
+                case SAMPLE -> {if(heading>=0)client.turn(heading);client.selectGearSlot(slot);client.useHeldEquipment();}
+                case NOTE -> client.note(GhostFieldGuide.Clue.valueOf(equipment),FieldJournal.Status.SEEN);
                 case RADIO -> client.say(LanChat.Channel.RADIO,radio);
                 case IDENTIFY -> client.identify(identifiedType);
                 case WARD -> client.ward();

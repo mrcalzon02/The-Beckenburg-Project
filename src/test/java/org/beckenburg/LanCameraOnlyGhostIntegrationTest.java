@@ -4,7 +4,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-/** Real TCP: a deployed camera displays Shade/Specter at the van, not to the naked eye. */
+/** Real TCP: a deployed camera displays Specter at the van, not to the naked eye. */
 public final class LanCameraOnlyGhostIntegrationTest {
     private static void check(boolean ok,String why){if(!ok)throw new AssertionError(why);}
     private static final class Peer implements AutoCloseable {
@@ -38,7 +38,7 @@ public final class LanCameraOnlyGhostIntegrationTest {
     }
     public static void main(String[] args)throws Exception{
         for(var species:new GhostIdentity.Type[]{
-                GhostIdentity.Type.YOKAI,GhostIdentity.Type.SHADE,GhostIdentity.Type.SPECTER}){
+                GhostIdentity.Type.YOKAI,GhostIdentity.Type.SPECTER}){
             try(var host=new LanHost("127.0.0.1",0,species,CustomContract.standard(2));
                 var van=new Peer(host.port(),false,"Camera operator");
                 var field=new Peer(host.port(),false,"Field observer");
@@ -93,6 +93,9 @@ public final class LanCameraOnlyGhostIntegrationTest {
                 check(map.roomAt(vanPosition.x(),vanPosition.y(),vanPosition.z())
                     ==HouseMap.EXTRACTION_ROOM,
                     "Van receiver must be physically inside the extraction room");
+                var relay=map.van().location(VanStaging.Station.RELAY);
+                synchronized(mutex){AuthoredTestSupport.place(map,world,0,new LevelDefinition.Vec(relay.x(),VanStaging.FLOOR_Y,relay.z()));}
+                van.client.watchCamera(0);van.await("ACCEPT|WATCH|CAMERA|0",8);
                 // Follow the current authored level graph; 14 -> 11 is NOT
                 // a legal immediate move in the house layout.
                 for(int room:AuthoredLevelNetworkTest.path(map,HouseMap.EXTRACTION_ROOM,4)){

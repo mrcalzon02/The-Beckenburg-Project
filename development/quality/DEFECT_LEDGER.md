@@ -10,6 +10,34 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-372 — Unattended cameras could disclose optical evidence or award sighting credit
+
+**Status:** Corrected for explicit observation, active camera selection and manual reporting · **Affected:** Deployed video, held camera, van screens, D.O.T.S., laser grids, hired watchers and the photo objective
+
+The host sent optical events from powered cameras to people who could not see the display. A shutter press could announce a completed photo objective and both camera setup and ordinary exposures appeared in the evidence log.
+
+Cause / uncertainty: Receiver updates used the presence of a camera and a room or van check. A successful shutter was graded before the player interpreted the image.
+
+Fix / next action: Require a watched feed or raised lens, clear stale imagery on attention changes, route pattern effects to the proper observer, and evaluate a deliberately reported photograph only in the final payout.
+
+Evidence and verification: LanWitnessOccupancyIntegrationTest, HunterWitnessExperimentTest, CampaignWitnessWatchScenario and the real feed captures in manifestation-witnesses-2026-11-16.
+
+Older-map obligation: Shared socket and casebook rules apply across locations. Rendering and physical sightlines in the controlled acceptance case use House.
+
+### DEV-371 — An occupied room could expose a figure that requires different witnesses
+
+**Status:** Corrected in the shared optics and investigator rules. See the focused runtime evidence. · **Affected:** House campaign, solo and multiplayer figure observation, handheld photography, spectral prism and deployed video
+
+A hunter in the room could watch Shade on a powered camera. A held still used the unaided framebuffer. Hires lacked a way to clear a room or stage a controlled headcount.
+
+Cause / uncertainty: The camera and instrument paths checked different physical conditions, and the casebook had no distinct positive observations for all three room populations.
+
+Fix / next action: Evaluate each manifested body using its own room and living population, project qualified silhouettes through the observer’s optics, and coordinate hired field witnesses and a van receiver over team radio.
+
+Evidence and verification: LanWitnessOccupancyIntegrationTest, FieldJournalTest, CampaignWitnessWatchScenario and development/quality/evidence/manifestation-witnesses-2026-11-16/
+
+Older-map obligation: The roster rules are shared. Doorway sightlines and the hired observer’s path to a working camera depend on each site. The controlled field scenarios exercise House.
+
 ### DEV-370 — Full regression watchdog ends a valid four-seat banishment before settlement
 
 **Status:** Rite-specific process budget corrected · **Affected:** LanRiteNetworkTest in BeckenburgRegressionSuite

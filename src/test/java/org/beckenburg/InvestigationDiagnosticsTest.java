@@ -81,8 +81,10 @@ public final class InvestigationDiagnosticsTest {
             "single-family difficulty must not validate incompatible notes");
         var photographs=new FieldJournal();
         photographs.set(GhostFieldGuide.Clue.REMOTE_EMPTY,FieldJournal.Status.SEEN,0,10);
-        check(InvestigationDiagnostics.candidates(photographs,Set.of(),Level.EASY,null).size()==26,
-            "a surveillance silhouette alone does not prove a camera-only ghost");
+        var emptyVideo=InvestigationDiagnostics.candidates(photographs,Set.of(),Level.EASY,null);
+        check(emptyVideo.contains(Type.SHADE)&&emptyVideo.contains(Type.SPECTER)&&emptyVideo.contains(Type.SPIRIT)
+            &&!emptyVideo.contains(Type.BANSHEE)&&!emptyVideo.contains(Type.POLTERGEIST),
+            "empty-room footage is compatible with unrestricted figures and excludes occupied-only figures");
         photographs.set(GhostFieldGuide.Clue.PHOTO_SHAPE,FieldJournal.Status.SEEN,0,11);
         check(InvestigationDiagnostics.candidates(photographs,Set.of(),Level.EASY,null).contains(Type.YOKAI),
             "an orb producer can also manifest visibly on a handheld photo");
@@ -107,8 +109,7 @@ public final class InvestigationDiagnosticsTest {
                     if(all.candidates.size()==1)rackUnique++;
                     String next=InvestigationDiagnostics.recommend(base.candidates,base.families,level,rack);
                     // A person can independently see a figure in an actual photo. The shutter receipt alone proves nothing.
-                    if(GhostTraits.of(type).sight()!=GhostTraits.Sight.CAMERA_ONLY)
-                        campaign.notes.set(GhostFieldGuide.Clue.PHOTO_SHAPE,FieldJournal.Status.SEEN,0,2);
+                    campaign.notes.set(GhostFieldGuide.Clue.PHOTO_SHAPE,FieldJournal.Status.SEEN,0,2);
                     int withPhoto=InvestigationDiagnostics.candidates(campaign.notes,campaign.families,level,null).size();
                     String campaignNext=InvestigationDiagnostics.recommend(campaign.candidates,campaign.families,level,rack);
                     csv.add(String.join(",",level.name(),type.name(),names(enabled),names(campaign.families),

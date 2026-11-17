@@ -19,7 +19,13 @@ final class HunterDiagnosticEquipment {
     private String needed,requested,claim;
     private int nextReview,lastSwap=-1000,lastServiced=-1000,cameraWatchUntil=-1,fetchSince=-1;
     private boolean service;
+    private int activeSlot;
+    String held(){return belt[activeSlot];}
     private int lastUnresolvedCount=-1;
+    boolean ownsCamera(){return owned.contains("VIDEO_CAMERA")||slot("VIDEO_CAMERA")>=0;}
+    boolean needsService(){return service;}
+    void requestCamera(int tick){if(!"VIDEO_CAMERA".equals(needed))orderTest("video camera",tick);}
+    void endCameraWatch(){cameraWatchUntil=-1;}
     int slot(String tool){return Arrays.asList(belt).indexOf(tool);}
     void frame(String frame,int seat){
         if(frame.startsWith("GEAROWNED|")){
@@ -27,13 +33,15 @@ final class HunterDiagnosticEquipment {
             for(int i=1;i<p.size();i++)owned.add(p.get(i).split(":",2)[0]);
         }else if(frame.startsWith("GEARSTATE|")){
             var p=LanProtocol.parts(frame);
+            activeSlot=Integer.parseInt(p.get(2));
             for(int i=0;i<belt.length;i++)belt[i]=p.get(3+i).split(":",2)[0];
             if(needed!=null&&slot(needed)>=0){needed=null;fetchSince=-1;}
-        }else if(frame.startsWith("REJECT|collection kit empty")||frame.startsWith("REJECT|battery empty")){
+        }else if(frame.startsWith("REJECT|collection kit empty")||frame.startsWith("REJECT|battery empty")||frame.startsWith("REJECT|camera battery empty")){
             service=true;
         }else if(frame.startsWith("ACCEPT|GEARREFILL"))service=false;
         else if(frame.startsWith("DOTS|PLACE|"+seat+"|"))deployed.add("DOTS_PROJECTOR");
         else if(frame.equals("DOTS|CLEAR|"+seat))deployed.remove("DOTS_PROJECTOR");
+        else if(frame.equals("CAMERA|RESET"))deployed.remove("VIDEO_CAMERA");
         else if(frame.startsWith("CAMERA|PLACE|"+seat+"|"))deployed.add("VIDEO_CAMERA");
         else if(frame.equals("CAMERA|CLEAR|"+seat))deployed.remove("VIDEO_CAMERA");
         else if(frame.startsWith("SENSOR|PLACE|")){

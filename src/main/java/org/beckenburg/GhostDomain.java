@@ -172,14 +172,19 @@ public final class GhostDomain {
         if(a==Action.DRIFT)return tick>=slowedUntil && exits(room).contains(target);
         if (target != room) return false;
         return switch (a) {
-            case MANIFEST -> tick >= 80 && hearsHunter && !manifested();
+            case MANIFEST -> tick >= 80 && (hearsHunter||unattendedManifestation()) && !manifested();
             case STRIKE -> tick > 160 && hearsHunter && manifested()
                 &&(!GhostTraits.of(archetype).huntsSolitary()||occupants==1);
-            case SIGNATURE -> tick>130 && hearsHunter &&(!GhostTraits.of(archetype).huntsSolitary()||occupants==1);
+            case SIGNATURE -> tick>130 && (unattendedManifestation()
+                    ||hearsHunter&&(!GhostTraits.of(archetype).huntsSolitary()||occupants==1));
             case WHISPER, DISTURB -> true;
             case DRIFT -> throw new AssertionError();
         };
     }
+    private boolean unattendedManifestation(){
+        return occupants==0&&GhostTraits.witnesses(archetype)==GhostTraits.Witnesses.EMPTY;
+    }
+
     /** Only the host calls this; clients cannot provide their own observations. */
     public Observation observe() {
         List<Action> allowed = new ArrayList<>();
@@ -277,9 +282,9 @@ public final class GhostDomain {
             int target = observation.room();
             List<Action> legal = observation.legalActions();
             if (observation.hearsHunter() && legal.contains(Action.STRIKE)) a = Action.STRIKE;
-            else if(observation.hearsHunter()&&observation.tick()%197==0
+            else if(observation.tick()%197==0
                     &&legal.contains(Action.SIGNATURE))a=Action.SIGNATURE;
-            else if (observation.hearsHunter() && legal.contains(Action.MANIFEST)) a = Action.MANIFEST;
+            else if (legal.contains(Action.MANIFEST)) a = Action.MANIFEST;
             else if (observation.tick() % 29 == 0 && legal.contains(Action.WHISPER)) a = Action.WHISPER;
             else if (observation.tick() % 41 == 0 && legal.contains(Action.DISTURB)) a = Action.DISTURB;
             else if (observation.tick() % 35 == 0 && !observation.hearsHunter()

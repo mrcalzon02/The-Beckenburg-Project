@@ -74,6 +74,7 @@ public final class ToolBeltHud {
             String id=normal(slots[active]);
             String actions=placing?"LMB PLACE  WHEEL ROTATE  G CANCEL":
                 stillCamera(id)?(held?"F LOWER  LMB SHUTTER  E INTERACT":"F RAISE CAMERA  E INTERACT"):
+                id.equals("VIDEO_CAMERA")?(held?"F LOWER  G PLACE  E INTERACT":"F RAISE VIEWFINDER  G PLACE"):
                 "LMB USE"+(switchable(id)?"  RMB POWER":"")+
                 (placeable(id)?"  G PLACE":"")+"  R DROP"+"  E INTERACT";
             int barW=Math.min(width-24,Math.max(310,total+22));

@@ -14,6 +14,19 @@ public final class GhostDomainTest {
     }
     public static void main(String[] args) {
         HouseMap map=new HouseMap();
+        var shade=new GhostDomain(map,4,GhostIdentity.Type.SHADE);
+        for(int tick=1;tick<=400;tick++)shade.advance(tick,-1,0);
+        ok(shade.observe().legalActions().contains(GhostDomain.Action.MANIFEST),
+            "an empty-room camera can catch an unaided Shade manifestation");
+        ok(shade.observe().legalActions().contains(GhostDomain.Action.SIGNATURE),
+            "an unattended Shade can spend real energy for its signature");
+        shade.advance(401,-1,2);
+        ok(!shade.observe().legalActions().contains(GhostDomain.Action.MANIFEST)
+            &&!shade.observe().legalActions().contains(GhostDomain.Action.SIGNATURE),
+            "an occupied quiet room does not grant the Shade a heard target");
+        shade.advance(402,4,2);
+        ok(!shade.observe().legalActions().contains(GhostDomain.Action.SIGNATURE),
+            "occupied-room signature still requires solitary prey");
         GhostDomain a=new GhostDomain(map,4), b=new GhostDomain(map,4);
         ok(a.observe().legalActions().contains(GhostDomain.Action.DRIFT),"initial exits available");
         ok(!submit(a,b,GhostDomain.Action.STRIKE,4,1).applied(),"first-contact strike blocked");

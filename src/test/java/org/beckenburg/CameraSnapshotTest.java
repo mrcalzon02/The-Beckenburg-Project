@@ -35,6 +35,12 @@ public final class CameraSnapshotTest {
             &&Math.abs(lens.z-(hunter.z+.12))<1e-6,
             "camera lens must be in front of eye, not a stale player-view buffer");
         hunter.yaw=Math.PI;
+        var admitted=new SceneRenderer.Apparition(48.5,map.floorY(0),33.5,
+            LanGhostAnimation.Phase.LURK,0,0,false,false,GhostManifestationVisual.UNREVEALED);
+        BufferedImage witnessed=CameraSnapshot.developNetwork(lens,map,admitted,null,1.0,EquipmentTiers.Tier.II);
+        int changed=differing(ahead,witnessed);
+        check(changed>20&&changed<ahead.getWidth()*ahead.getHeight()/2,
+            "the host-confirmed figure develops onto the captured room despite a later turn");
         BufferedImage behind=CameraSnapshot.network(lens,hunter,map,List.of(),
             null,1.1,List.of(),EquipmentTiers.Tier.II);
         check(differing(ahead,behind)>150,

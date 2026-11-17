@@ -12,7 +12,7 @@ public final class ContractRewards {
         THERMAL_SAMPLE("Document a temperature reading"),
         SPIRIT_SAMPLE("Test the spirit-box response"),
         WARD_SITE("Place a protective ward"),
-        PHOTO_EVENT("Photograph a supernatural manifestation"),
+        PHOTO_EVENT("Photograph a manifestation and report it in the journal"),
         SURVIVE_FRENZY("Survive a Ghost Frenzy"),
         WRITING_EVENT("Inspect genuine ghost writing");
         public final String label;

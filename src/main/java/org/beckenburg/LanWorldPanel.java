@@ -40,7 +40,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private long lastVisualFrame=System.nanoTime();
     private final Set<Integer> keys=new HashSet<>();
     private String feedback="Awaiting host world snapshot";
-    private int lastTurn=-1,tick,visibleGhost=-1,health=100,sanity=100,evidence;
+    private int lastTurn=-1,lastPitch=Integer.MIN_VALUE,tick,visibleGhost=-1,health=100,sanity=100,evidence;
     private int crosses=2,throwWards=2,saltPouches=3;
     private int partySize=3,partyDifficulty=3,fieldCredits=400;
     private int sprintRemaining=40,sprintMax=40;
@@ -57,7 +57,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final Map<Integer,VanSensorStations.Station> sensorNodes=new HashMap<>();
     private final Map<Integer,VanSiteMapScreen.Reading> sensorReadings=new HashMap<>();
     private final Map<Integer,FieldSensorDetection.Pulse> sensorAlerts=new HashMap<>();
-    private int selectedCameraOwner=-1;
+    private int selectedCameraOwner=-1,cameraAttention=-1;
     private int lastVanPoll=-100000,lastMapTextureTick=-100000,lastCameraRenderTick=-100000;
     private int capturedCameraOwner=-1;
     private java.awt.image.BufferedImage capturedCameraImage;
@@ -68,6 +68,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final Map<Integer,Map<String,SceneRenderer.Apparition>> cameraGhostBodies=new HashMap<>();
     private record CameraOrb(LevelDefinition.Vec center,int tick){}
     private final Map<Integer,CameraOrb> cameraOrbs=new HashMap<>();
+    private final Map<String,SceneRenderer.Apparition> lensBodies=new HashMap<>();
+    private final Map<String,SceneRenderer.Apparition> shutterBodies=new HashMap<>();
+    private double shutterClock;
     private final Map<String,Integer> cameraGhostTicks=new HashMap<>();
     private boolean orbForm,greenGhostForm;
     private String ghostAppearance=GhostManifestationVisual.UNREVEALED;
@@ -337,6 +340,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(!SwingUtilities.isEventDispatchThread())throw new IllegalStateException("network view must update on EDT");
         try{
             List<String> p=LanProtocol.parts(frame);
+            boolean remoteDots=p.size()==8&&p.get(0).equals("DOTS")&&p.get(1).equals("ILLUMINATE");
+            boolean remoteLaser=p.size()==9&&p.get(0).equals("LASER")&&p.get(1).equals("HIT");
+            if(remoteDots||remoteLaser){
+                var feed=selectedVanCamera();
+                if(feed==null||feed.owner()!=LanProtocol.integer(p.get(p.size()-1),0,5))return;
+                p=p.subList(0,p.size()-1);
+            }
             if(p.size()==3&&p.get(0).equals("SITE")){
                 clearPlacementSelection();
                 downedHunters.clear();hunterPain.clear();applyHunterReactions();
@@ -349,7 +359,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 buildingAudio.setMap(map);audio.clearFixtures();
                 peers.clear();videoCameras.clear();renderer.videoCameras.clear();renderer.dotsPositions.clear();renderer.droppedGear.clear();apparition=null;
                 pairedGhostBodies.clear();pairedGhostTicks.clear();
-                cameraOrbs.clear();cameraGhostBodies.clear();cameraGhostTicks.clear();hauntings.clear();
+                cameraOrbs.clear();cameraGhostBodies.clear();cameraGhostTicks.clear();lensBodies.clear();shutterBodies.clear();hauntings.clear();
                 ghostAppearance=GhostManifestationVisual.UNREVEALED;
                 renderer.setAdditionalGhostBodies(List.of());
                 videoRenderer.setAdditionalGhostBodies(List.of());
@@ -469,7 +479,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }else if(p.get(0).equals("TWIN")){
                 // A paired-body packet is per-Hunter LOS-filtered by the host;
                 // it never creates an additional GhostDomain or evidence clue.
-                if(p.size()!=4&&p.size()!=9)throw new IllegalArgumentException("Bad Twin pose packet");
+                if(p.size()!=4&&p.size()!=9&&p.size()!=11)throw new IllegalArgumentException("Bad Twin pose packet");
                 String member=p.get(1);
                 if(!member.equals("b"))throw new IllegalArgumentException("Unknown paired actor");
                 int eventTick=LanProtocol.integer(p.get(p.size()==4?3:7),0,99999999);
@@ -504,7 +514,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     ghostAppearance=GhostManifestationVisual.UNREVEALED;
                     orbForm=false;
                     greenGhostForm=false;
-                }else if(p.size()==6 && p.get(1).equals("VISIBLE")){
+                }else if((p.size()==6||p.size()==8) && p.get(1).equals("VISIBLE")){
                     double gx=LanProtocol.integer(p.get(2),0,map.width()*1000)/1000.0;
                     double gy=LanProtocol.integer(p.get(3),-50000,50000)/1000.0;
                     double gz=LanProtocol.integer(p.get(4),0,map.height()*1000)/1000.0;
@@ -715,24 +725,34 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 keys.clear();
             }else if(p.size()==6&&p.get(0).equals("CAMORB")){
                 int owner=LanProtocol.integer(p.get(1),0,5);
+                if(owner!=cameraAttention)return;
                 var center=new LevelDefinition.Vec(LanProtocol.integer(p.get(2),0,map.width()*1000)/1000d,
                     LanProtocol.integer(p.get(3),-50000,50000)/1000d,LanProtocol.integer(p.get(4),0,map.height()*1000)/1000d);
                 int sample=LanProtocol.integer(p.get(5),0,99999999);
                 var previous=cameraOrbs.get(owner);
                 if(previous==null||sample>=previous.tick())cameraOrbs.put(owner,new CameraOrb(center,sample));
-            }else if(p.get(0).equals("CAMGHOST")){
-                if(p.size()!=5&&p.size()!=11)throw new IllegalArgumentException("bad camera manifestation");
+            }else if(p.get(0).equals("CAMGHOST")||p.get(0).equals("LENSGHOST")||p.get(0).equals("SHUTTERGHOST")){
+                boolean mounted=p.get(0).equals("CAMGHOST"),shutter=p.get(0).equals("SHUTTERGHOST");
+                if(p.size()!=5&&p.size()!=11&&p.size()!=13)throw new IllegalArgumentException("bad camera manifestation");
                 int owner=LanProtocol.integer(p.get(1),0,5);
                 String member=p.get(2);
                 if(!member.equals("a")&&!member.equals("b"))throw new IllegalArgumentException("bad apparition member");
-                int at=LanProtocol.integer(p.get(p.size()-1),0,99999999);
-                String key=owner+":"+member;
+                if(!mounted&&owner!=seat)throw new IllegalArgumentException("wrong handheld camera");
+                if(p.size()==13){
+                    LanProtocol.integer(p.get(11),0,HouseMap.ROOM_COUNT-1);
+                    LanProtocol.integer(p.get(12),0,VanTelemetry.HUNTERS);
+                }
+                if(mounted&&owner!=cameraAttention||!mounted&&!shutter&&cameraAttention!=-2
+                        ||shutter&&pendingPhoto==null)return;
+                int at=LanProtocol.integer(p.get(p.size()==5?4:10),0,99999999);
+                String key=p.get(0)+":"+owner+":"+member;
+                Map<String,SceneRenderer.Apparition> candidates=mounted
+                    ?cameraGhostBodies.computeIfAbsent(owner,id->new HashMap<>()):shutter?shutterBodies:lensBodies;
                 if(at>=cameraGhostTicks.getOrDefault(key,-1)){
                     cameraGhostTicks.put(key,at);
                     if(p.size()==5){
                         if(!p.get(3).equals("HIDDEN"))throw new IllegalArgumentException("bad camera hidden");
-                        Map<String,SceneRenderer.Apparition> candidates=cameraGhostBodies.get(owner);
-                        if(candidates!=null)candidates.remove(member);
+                        candidates.remove(member);
                     }else{
                         if(!p.get(3).equals("VISIBLE"))throw new IllegalArgumentException("bad camera visible");
                         double px=LanProtocol.integer(p.get(4),0,map.width()*1000)/1000.0;
@@ -755,7 +775,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                             }else if(imageId.startsWith("ancient_")!=green)
                                 throw new IllegalArgumentException("inconsistent Twin tint");
                         }else if(green)throw new IllegalArgumentException("generic apparition tinted");
-                        cameraGhostBodies.computeIfAbsent(owner,id->new HashMap<>()).put(member,
+                        candidates.put(member,
                             new SceneRenderer.Apparition(px,py,pz,
                                 signature?LanGhostAnimation.Phase.SIGNATURE:LanGhostAnimation.Phase.LURK,
                                 heading,0,false,green,imageId));
@@ -989,7 +1009,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                             "PHOTO_CAMERA",EquipmentTiers.Tier.I);
                         if(pendingPhoto==null)
                             throw new IllegalStateException("no shutter-time camera lens frame");
-                        lastPhoto=pendingPhoto;
+                        lastPhoto=shutterBodies.isEmpty()?pendingPhoto:CameraSnapshot.developNetwork(
+                            photoRenderer,map,shutterBodies.get("a"),shutterBodies.get("b"),shutterClock,photoTier);
                         lastPhotoPath=HunterPhotography.save(lastPhoto,
                             HunterPhotography.defaultFolder(),seat,++photoExposure);
                         lastPhotoUntil=tick+35;
@@ -1121,6 +1142,27 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         return available.stream().filter(c->c.owner()==selectedCameraOwner)
             .findFirst().orElse(available.get(0));
     }
+    private int desiredCameraAttention(){
+        if(!isShowing()||!isFocusOwner()||health<=0||casefileOpen||helpVisible||chatInput.isVisible()
+                ||opening!=null||!caseResult.isEmpty())return -1;
+        String held=equippedGear[activeGearSlot];
+        if(interfaceOpen.isEmpty()&&toolGrip.held()&&!toolPlacement&&map.clutter().held(seat)<0
+                &&ToolBeltHud.cameraView(held)&&(!held.equals("VIDEO_CAMERA")||!videoCameras.containsKey(seat)))return -2;
+        boolean display=vanDisplay&&(interfaceOpen.equals("MAP")||interfaceOpen.isEmpty()
+            &&LanCameraSight.screenInView(map,renderer.x,renderer.eyeHeight,renderer.z,renderer.yaw,renderer.pitch));
+        var station=display?selectedVanCamera():null;
+        return station==null?-1:station.owner();
+    }
+    private void updateCameraAttention(int requested)throws IOException{
+        if(cameraAttention==requested)return;
+        if(requested==-2)client.watchHeldLens();else client.watchCamera(requested);
+        cameraAttention=requested;
+        lensBodies.clear();cameraGhostBodies.clear();cameraOrbs.clear();
+        liveCameraView=null;lastCameraPreviewTick=-100000;
+        capturedCameraOwner=-1;capturedCameraImage=null;lastCameraRenderTick=-100000;
+        if(vanDisplay)VanLiveScreens.suspendCamera();
+    }
+
     private void cycleVanCamera(){
         var available=videoCameras.values().stream()
             .filter(c->videoPowered.getOrDefault(c.owner(),false))
@@ -1248,7 +1290,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 }
             }
             int heading=Math.floorMod((int)Math.round(Math.toDegrees(renderer.yaw)),360);
-            if(heading!=lastTurn){client.turn(heading);lastTurn=heading;}
+            updateCameraAttention(desiredCameraAttention());
+            int pitch=(int)Math.round(renderer.pitch*1000);
+            if(heading!=lastTurn||pitch!=lastPitch){
+                client.turn(heading,pitch);lastTurn=heading;lastPitch=pitch;
+            }
         }catch(IOException e){feedback="LAN disconnected: "+e.getMessage();close();return;}
         GraphicsOptions.current().configure(renderer,getWidth(),getHeight(),true);
         renderer.roomLightTick=tick;
@@ -1299,19 +1345,20 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         // Only sample when a visible investigator has the device equipped;
         // bound the extra synchronous lens render to 2.5 samples per second.
         String cameraGear=equippedGear[activeGearSlot];
-        if(ToolBeltHud.cameraView(cameraGear)&&map.clutter().held(seat)<0&&isShowing()
+        if(pendingPhoto==null&&cameraAttention==-2&&isShowing()
                 &&tick-lastCameraPreviewTick>=4){
             lastCameraPreviewTick=tick;
             try{
                 liveCameraView=CameraSnapshot.previewNetwork(photoRenderer,renderer,map,
-                    new ArrayList<>(peers.values()),apparition,tick*.1,
+                    new ArrayList<>(peers.values()),client.supportsWitnessOptics()?lensBodies.get("a"):apparition,
+                    client.supportsWitnessOptics()?lensBodies.get("b"):pairedGhostBodies.get("b"),tick*.1,
                     List.copyOf(counterMarks),
                     equipmentTier.getOrDefault(cameraGear,EquipmentTiers.Tier.I));
             }catch(RuntimeException error){
                 liveCameraView=null;
                 feedback="CAMERA LIVE VIEW FAILED: "+error.getMessage();
             }
-        }else if(!ToolBeltHud.cameraView(cameraGear)){
+        }else if(cameraAttention!=-2){
             liveCameraView=null;
             lastCameraPreviewTick=-100000;
         }
@@ -1319,7 +1366,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         // position. No canned image, inferred spectral object or proof overlay.
         // The existing host-approved live camera renderer is reused, not
         // duplicated by the wall screen. One capture per two seconds maximum.
-        LanVideoCameras.Camera camera=vanDisplay?selectedVanCamera():null;
+        LanVideoCameras.Camera camera=vanDisplay&&cameraAttention>=0?selectedVanCamera():null;
         if(camera!=null&&capturedCameraOwner!=-1
                 &&capturedCameraOwner!=camera.owner()){
             capturedCameraOwner=-1;
@@ -1408,7 +1455,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }
             GraphicsOptions.current().draw(g,
                 nightVision?NightVisionFilter.apply(renderer.image()):renderer.image(),getWidth(),h);
-            if(vanDisplay&&capturedCameraImage!=null&&!videoCameras.isEmpty()
+            if(vanDisplay&&cameraAttention>=0&&capturedCameraImage!=null&&!videoCameras.isEmpty()
                     &&!casefileOpen&&videoCameras.values().stream().anyMatch(c->
                         videoPowered.getOrDefault(c.owner(),false))
                     &&selectedVanCamera()!=null
@@ -1934,9 +1981,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }
             case GameControls.LIGHT -> sendAction("flashlight",client::toggleFlashlight);
             case GameControls.USE -> {
-                if(ToolBeltHud.stillCamera(equippedGear[activeGearSlot])){
+                if(ToolBeltHud.cameraView(equippedGear[activeGearSlot])){
                     if(toolGrip.held())toolGrip.release();else toolGrip.hold();
-                    feedback=toolGrip.held()?"CAMERA RAISED / LMB SHUTTER":"CAMERA LOWERED";
+                    feedback=!toolGrip.held()?"CAMERA LOWERED":ToolBeltHud.stillCamera(equippedGear[activeGearSlot])
+                        ?"CAMERA RAISED / LMB SHUTTER":"VIDEO VIEWFINDER RAISED / G TO PLACE";
                 }else{
                     heldUseUntilTick=tick+4;
                     sendAction("use device",()->client.useHeldEquipment());
@@ -2021,10 +2069,15 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             // to an earlier host acknowledgement.
             if(pendingPhoto!=null){feedback="AWAITING CAMERA SHUTTER ACCEPTANCE";return;}
             try{
+                updateCameraAttention(-2);
+                shutterBodies.clear();
+                shutterClock=tick*.1;
                 pendingPhoto=CameraSnapshot.network(photoRenderer,renderer,map,
-                    new ArrayList<>(peers.values()),apparition,tick*.1,
+                    new ArrayList<>(peers.values()),client.supportsWitnessOptics()?null:apparition,shutterClock,
                     List.copyOf(counterMarks),
                     equipmentTier.getOrDefault("PHOTO_CAMERA",EquipmentTiers.Tier.I));
+                client.turn(Math.floorMod((int)Math.round(Math.toDegrees(renderer.yaw)),360),
+                    (int)Math.round(renderer.pitch*1000));
                 client.useHeldEquipment();
                 feedback="Awaiting host photograph acceptance";
             }catch(IOException|RuntimeException error){

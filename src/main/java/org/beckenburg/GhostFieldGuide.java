@@ -10,6 +10,7 @@ import java.util.Objects;
 public final class GhostFieldGuide {
     private GhostFieldGuide(){}
     public enum Category { EMF, TEMPERATURE, SPIRIT_BOX, WRITING, PHYSICAL, CAMERA, BEHAVIOR }
+    public enum FigureView { DIRECT, PHOTO, VIDEO }
     public enum Clue {
         EMF_OVER_SIX(Category.EMF,"Ghost high EMF / 8–10",true),
         EMF_LOW_MID(Category.EMF,"Low/mid EMF / 2–7",false),
@@ -42,7 +43,14 @@ public final class GhostFieldGuide {
         DOOR_TO_TRAVEL(Category.PHYSICAL,"Movement / uses door to change room",true),
         UV_RESIDUE(Category.PHYSICAL,"UV / trace on passage",true),
         PHOTO_SHAPE(Category.CAMERA,"Photo / visible figure",true),
-        REMOTE_EMPTY(Category.CAMERA,"Remote video / empty-room figure",false),
+        REMOTE_EMPTY(Category.CAMERA,"Video figure / empty room",true),
+        REMOTE_SOLO(Category.CAMERA,"Video figure / one hunter",true),
+        REMOTE_GROUP(Category.CAMERA,"Video figure / 2+ hunters",true),
+        PHOTO_EMPTY(Category.CAMERA,"Photo figure / empty room",true),
+        PHOTO_SOLO(Category.CAMERA,"Photo figure / one hunter",true),
+        PHOTO_GROUP(Category.CAMERA,"Photo figure / 2+ hunters",true),
+        EYE_SOLO(Category.PHYSICAL,"Sighted figure / one hunter",true),
+        EYE_GROUP(Category.PHYSICAL,"Sighted figure / 2+ hunters",true),
         SPIRIT_ORBS(Category.CAMERA,"Video / spirit orbs",true),
         SOLO_ATTACK(Category.BEHAVIOR,"Pattern / attacked isolated hunter",false),
         SAME_TARGET(Category.BEHAVIOR,"Pattern / repeatedly targeted one hunter",false),
@@ -77,7 +85,7 @@ public final class GhostFieldGuide {
         HINTS.put(GhostIdentity.Type.BANSHEE,"Audible wails, possible repeated attention to one hunter; verify over multiple events.");
         HINTS.put(GhostIdentity.Type.WRAITH,"A floating wall-phaser; a witnessed solid-wall crossing is a strong clue.");
         HINTS.put(GhostIdentity.Type.SHADE,"Lingers in dark rooms; check unattended camera footage.");
-        HINTS.put(GhostIdentity.Type.SPECTER,"Long-lived apparition and solid-wall travel; remote camera may see it alone.");
+        HINTS.put(GhostIdentity.Type.SPECTER,"Watch its long-lived figure on camera. It can travel through solid walls.");
         HINTS.put(GhostIdentity.Type.SPIRIT,"Ordinary footfall, direct replies and subdued whispers.");
         HINTS.put(GhostIdentity.Type.HANTU,"Cold drafts and floating movement, but door-bound.");
         HINTS.put(GhostIdentity.Type.DEVIL,"Persuasive voices and high threat; health damage may dominate.");
@@ -93,6 +101,27 @@ public final class GhostFieldGuide {
         if(HINTS.size()!=GhostIdentity.Type.values().length)throw new AssertionError("missing ghost guide entry");
     }
     public static String hint(GhostIdentity.Type type){return HINTS.get(Objects.requireNonNull(type));}
+    static Clue figureClue(FigureView view,int occupants){
+        if(occupants<0||occupants>6)throw new IllegalArgumentException("Invalid hunter count");
+        return switch(view){
+            case VIDEO -> occupants==0?Clue.REMOTE_EMPTY:occupants==1?Clue.REMOTE_SOLO:Clue.REMOTE_GROUP;
+            case PHOTO -> occupants==0?Clue.PHOTO_EMPTY:occupants==1?Clue.PHOTO_SOLO:Clue.PHOTO_GROUP;
+            case DIRECT -> {
+                if(occupants==0)throw new IllegalArgumentException("A field observer counts as a hunter in the room");
+                yield occupants==1?Clue.EYE_SOLO:Clue.EYE_GROUP;
+            }
+        };
+    }
+    static String figureReference(GhostIdentity.Type type){
+        boolean optical=GhostTraits.of(type).sight()==GhostTraits.Sight.CAMERA_ONLY;
+        String subject=optical?"Camera-only figure":"Figure";
+        return switch(GhostTraits.witnesses(type)){
+            case EMPTY -> subject+" when the room is empty.";
+            case SOLO -> subject+" with exactly one living hunter in the room.";
+            case GROUP -> subject+" with two or more living hunters in the room.";
+            case ANY -> subject+" at any room headcount.";
+        };
+    }
     public static String reference(GhostIdentity.Type type){
         Objects.requireNonNull(type);
         GhostTraits.Profile p=GhostTraits.of(type);
@@ -113,8 +142,8 @@ public final class GhostFieldGuide {
             +(p.locomotion()==GhostTraits.Locomotion.FLOAT?"FLOATING":"WALKING")
             +" / "+(p.canPhase()?"WALL PHASING":"DOOR TRAVEL")
             +" / SALT "+(p.grounded()?"REACTIVE":"IMMUNE")+"\n"
-            +"UV "+yes(p.leavesUv())+" | PHOTO "+yes(p.sight()!=GhostTraits.Sight.CAMERA_ONLY)
-            +" | EMPTY VIDEO "+yes(p.sight()==GhostTraits.Sight.CAMERA_ONLY)+" | ORBS "+yes(p.sight()==GhostTraits.Sight.ORBS)+"\n"
+            +"UV "+yes(p.leavesUv())+" | ORBS "+yes(p.sight()==GhostTraits.Sight.ORBS)+"\n"
+            +figureReference(type)+"\n"
             +"ACTIVITY: "+GhostBehavior.profile(type).favored()+"; "+hint(type);
     }
     private static String yes(boolean value){return value?"YES":"NO";}
@@ -137,9 +166,12 @@ public final class GhostFieldGuide {
             case PHASE_WALL->p.canPhase();
             case DOOR_TO_TRAVEL->!p.canPhase();
             case UV_RESIDUE->p.leavesUv();
-            // Orb-capable species can still produce ordinary visible silhouettes on the handheld camera.
-            case PHOTO_SHAPE->p.sight()!=GhostTraits.Sight.CAMERA_ONLY;
-            case REMOTE_EMPTY->p.sight()==GhostTraits.Sight.CAMERA_ONLY;
+            case PHOTO_SHAPE->true; // A photograph without a witnessed room count is compatible with any lineage.
+            case REMOTE_EMPTY,PHOTO_EMPTY->GhostTraits.figureAllowed(type,true,0);
+            case REMOTE_SOLO,PHOTO_SOLO->GhostTraits.figureAllowed(type,true,1);
+            case REMOTE_GROUP,PHOTO_GROUP->GhostTraits.figureAllowed(type,true,2);
+            case EYE_SOLO->GhostTraits.figureAllowed(type,false,1);
+            case EYE_GROUP->GhostTraits.figureAllowed(type,false,2);
             case SPIRIT_ORBS->p.sight()==GhostTraits.Sight.ORBS;
             case SOLO_ATTACK->p.huntsSolitary();
             case SAME_TARGET->type.baseType()==GhostIdentity.Type.BANSHEE
