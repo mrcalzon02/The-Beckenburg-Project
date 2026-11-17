@@ -85,7 +85,7 @@ The four-pair Windows software follow-up finished. In all four cold TCP walks, p
 The first physical GPU attempt reached hidden-window creation and failed when GLFW tried to center it on a missing primary monitor in Windows service Session 0. Each side completed a full TCP round. Four native launches ended before the first measured frame. The v0.1.335 launcher explicitly positions the hidden window. The subsequent A/B used `7e7764b` with the same one-line positioning change on its launch classpath and the unmodified `dc7e497` release candidate. [First run](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/43978027320) · [Matched GPU retry](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/43982264387)
 
 
-The retry succeeded in all 16 timing cases at 640×360 on the physical NVIDIA OpenGL 3.3 context. Both complete multiplayer rounds passed. Every frame interval below spans distinct OpenGL frame IDs consumed by the panel. The Windows 10 driver reported NVIDIA 610.88.
+The retry succeeded in all 16 timing cases on the physical NVIDIA OpenGL 3.3 context. The Swing panel measured 640×360. All 10,029 recorded renderer frames used an internal 960×540 framebuffer. Both complete multiplayer rounds passed. Every frame interval below spans distinct OpenGL frame IDs consumed by the panel. The Windows 10 driver reported NVIDIA 610.88.
 
 | House run | Median trial p95, before → after | Trials with lower p95 | Pooled p95, before → after | Candidate pooled p99 | Candidate gaps over 100 ms |
 |---|---:|---:|---:|---:|---:|
@@ -98,7 +98,7 @@ Solo idle gaps over 50 ms fell from 1,176/1,178 to 2/2,368. The three-seat hunte
 
 ### Unshipped movement experiment
 
-A real instrumented solo House run on Mesa traced a 157.3 ms render-thread CPU spike to the first sanctuary cache fill at a repeated camera pose. A scratch prototype waits for six identical poses before filling. Across two fresh-process comparisons, the route’s walking p95 went from 146.5 to 108.0 ms and from 125.7 to 104.8 ms. Every measured color and depth hash matched in 800 deterministic replay frames. Short synthetic holds showed mixed CPU results, and retaining the direct path for five frames cost some reuse. The normal route leaves the dome before stopping. A sustained stop **inside** the sanctuary and a matched native GTX 1660 SUPER trial remain unverified. The prototype is excluded from v0.1.336. [Source patch, probes and raw local timings](movement-probes.zip)
+A real instrumented solo House run on Mesa traced a 157.3 ms render-thread CPU spike to the first sanctuary cache fill at a repeated camera pose. A scratch prototype waits for six identical poses before filling. Across two fresh-process comparisons, the route’s walking p95 went from 146.5 to 108.0 ms and from 125.7 to 104.8 ms. Every measured color and depth hash matched in 800 deterministic replay frames. Short synthetic holds showed mixed CPU results, and retaining the direct path for five frames cost some reuse. The normal route leaves the dome before stopping. The subsequent physical test repeated the exit and added a single step and a sustained stop **inside** the sanctuary. Both cache experiments removed all observed walking intervals over 100 ms. Stopping p95 remained near 70 ms. [Four-pair GTX results, code provenance and raw frame CSVs](windows-stop.md). The prototype is excluded from v0.1.336. [Source patch, probes and raw local timings](movement-probes.zip)
 
 ## Reproduction
 
