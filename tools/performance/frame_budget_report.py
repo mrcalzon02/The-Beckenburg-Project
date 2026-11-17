@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-"""Non-gating frame-time report for already de-duplicated frame interval CSVs.
+"""Diagnostic (never release-gating) frame-time summaries for distinct-frame intervals.
 
-Input must contain frame_ms (or --column NAME); optional mode, phase, trial.
-Rows must represent intervals between distinct displayed frame IDs, not render
-callbacks or repeated readbacks. This script never declares a release failure.
-
-Example:
-  python3 tools/performance/frame_budget_report.py frames.csv
-  python3 tools/performance/frame_budget_report.py frames.csv --column gap_ms --json report.json
+Input CSV: frame_ms by default (or --column); optional mode, phase, trial.
+Use one row per interval between DISTINCT consumed GL frame IDs. Repeated
+readbacks and phase-transition intervals must be excluded by the collector.
+Pooling is weighted by intervals, so also inspect --per-trial results.
 """
 import argparse
 import csv
@@ -18,8 +15,11 @@ from pathlib import Path
 
 
 def percentile(values, pct):
-    """Nearest-rank percentile, matching the physical House reports."""
-    return sorted(values)[max(0, math.ceil(len(values) * pct / 100) - 1)]
+    """Nearest-rank percentile used by the House physical benchmarks."""
+    if not values:
+        raise ValueError("cannot calculate percentile of an empty sample")
+    ordered = sorted(values)
+    return ordered[max(0, math.ceil(len(ordered) * pct / 100) - 1)]
 
 
 def summarize(values):
@@ -35,13 +35,15 @@ def summarize(values):
     }
 
 
-def analyze(paths, column):
+def analyze(paths, column="frame_ms", per_trial=False):
     groups = defaultdict(list)
     for path in paths:
         with Path(path).open(newline="", encoding="utf-8-sig") as stream:
             reader = csv.DictReader(stream)
             if not reader.fieldnames or column not in reader.fieldnames:
                 raise ValueError(f"{path}: missing required column {column!r}")
+            if per_trial and "trial" not in reader.fieldnames:
+                raise ValueError(f"{path}: --per-trial requires a trial column")
             for line, row in enumerate(reader, start=2):
                 raw = row.get(column, "")
                 try:
@@ -50,36 +52,44 @@ def analyze(paths, column):
                     raise ValueError(f"{path}:{line}: invalid interval {raw!r}") from None
                 if not math.isfinite(value) or value <= 0:
                     raise ValueError(f"{path}:{line}: interval must be finite and positive")
-                labels = tuple((row.get(name) or "unspecified").strip() for name in ("mode", "phase"))
-                groups[labels].append(value)
+                labels = [(row.get(name) or "unspecified").strip() or "unspecified"
+                          for name in ("mode", "phase")]
+                if per_trial:
+                    trial = (row.get("trial") or "").strip()
+                    if not trial:
+                        raise ValueError(f"{path}:{line}: blank trial ID")
+                    # Do not merge repeated trial IDs from independent files.
+                    labels += [str(Path(path)), trial]
+                groups[tuple(labels)].append(value)
     if not groups:
         raise ValueError("no frame intervals found")
-    return [
-        {"mode": mode, "phase": phase, **summarize(values)}
-        for (mode, phase), values in sorted(groups.items())
-    ]
+    keys = ("mode", "phase", "source", "trial") if per_trial else ("mode", "phase")
+    return [{**dict(zip(keys, labels)), **summarize(values)}
+            for labels, values in sorted(groups.items())]
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("csv", nargs="+", help="CSV files of distinct-frame intervals")
-    parser.add_argument("--column", default="frame_ms", help="interval column (default: frame_ms)")
-    parser.add_argument("--json", dest="json_path", help="optional JSON report output path")
+    parser.add_argument("csv", nargs="+", help="CSV files with distinct-frame intervals")
+    parser.add_argument("--column", default="frame_ms", help="interval column")
+    parser.add_argument("--per-trial", action="store_true",
+                        help="report each trial separately to expose pooled-percentile masking")
+    parser.add_argument("--json", dest="json_path", help="optional JSON report path")
     args = parser.parse_args()
     try:
-        rows = analyze(args.csv, args.column)
+        rows = analyze(args.csv, args.column, args.per_trial)
     except (OSError, ValueError, csv.Error) as exc:
         parser.error(str(exc))
-    print("MODE | PHASE | N | p50 ms | p95 ms | p99 ms | MAX ms | >33.3 | >50 | >100")
+    print("MODE | PHASE | TRIAL | N | p50 ms | p95 ms | p99 ms | MAX ms | >33.3 | >50 | >100")
     for r in rows:
-        print(f"{r['mode']} | {r['phase']} | {r['intervals']} | "
+        print(f"{r['mode']} | {r['phase']} | {r.get('trial', 'pooled')} | {r['intervals']} | "
               f"{r['p50_ms']:.3f} | {r['p95_ms']:.3f} | {r['p99_ms']:.3f} | "
               f"{r['max_ms']:.3f} | {r['over_33_3_ms']} | {r['over_50_ms']} | {r['over_100_ms']}")
     if args.json_path:
         Path(args.json_path).write_text(
-            json.dumps({"schema": 1, "unit": "ms", "percentile": "nearest-rank",
-                        "release_gate": False, "groups": rows}, indent=2) + "\n",
-            encoding="utf-8")
+            json.dumps({"schema": 2, "unit": "ms", "percentile": "nearest-rank",
+                        "release_gate": False, "per_trial": args.per_trial, "groups": rows},
+                       indent=2) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
