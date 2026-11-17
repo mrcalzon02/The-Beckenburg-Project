@@ -20,7 +20,8 @@ import javax.swing.SwingUtilities;
  * Optional diagnostic: run in its own JVM with isolated VerificationPreferencesFactory.
  */
 public final class LanViewportPerformanceReview extends RepaintManager {
-    private record Frame(String phase, long time, long compositedFrame, SceneRenderer.FrameDiagnostics cost) {}
+    private record Frame(String phase, long time, long compositedFrame, SceneRenderer.FrameDiagnostics cost,
+                         double x, double eye, double z, double yaw, double pitch, boolean inside) {}
     private java.lang.reflect.Field lastReadback;
     private record State(String phase, int tick, long received, long delivered) {}
     private final List<Frame> frames = new ArrayList<>();
@@ -37,6 +38,10 @@ public final class LanViewportPerformanceReview extends RepaintManager {
     private boolean inView, finished;
     private double startX, startZ, maxTravel;
     private int moveKey;
+    private boolean leftSanctuary;
+    private final CountDownLatch returned = new CountDownLatch(1);
+    private double beforeStepX, beforeStepZ;
+    private SafeAreaBarrier.Volume sanctuary;
 
     @Override public void addDirtyRegion(JComponent component, int x, int y, int w, int h) {
         super.addDirtyRegion(component, x, y, w, h);
@@ -52,7 +57,16 @@ public final class LanViewportPerformanceReview extends RepaintManager {
                 if (result != null) composited = result.frameId();
             } catch (IllegalAccessException e) { throw new AssertionError(e); }
         }
-        frames.add(new Frame(phase, now, composited, cost));
+        if (sanctuary == null) sanctuary = SafeAreaBarrier.van(panel.worldMap().van());
+        boolean inside = sanctuary.contains(scene.x, scene.eyeHeight, scene.z);
+        frames.add(new Frame(phase, now, composited, cost, scene.x, scene.eyeHeight, scene.z,
+            scene.yaw, scene.pitch, inside));
+        if (phase.equals("moving") && !inside) leftSanctuary = true;
+        if (phase.equals("returning") && inside && Math.hypot(scene.x - startX, scene.z - startZ) < 1.1) {
+            key(opposite(moveKey), false);
+            phase = "settling";
+            returned.countDown();
+        }
         if (phase.equals("moving"))
             maxTravel = Math.max(maxTravel, Math.hypot(scene.x - startX, scene.z - startZ));
         warmed.countDown();
@@ -101,6 +115,58 @@ public final class LanViewportPerformanceReview extends RepaintManager {
         throw new AssertionError("No walkable cardinal direction from the authored van spawn");
     }
 
+    private static int opposite(int key) {
+        return switch (key) {
+            case KeyEvent.VK_W -> KeyEvent.VK_S;
+            case KeyEvent.VK_S -> KeyEvent.VK_W;
+            case KeyEvent.VK_A -> KeyEvent.VK_D;
+            case KeyEvent.VK_D -> KeyEvent.VK_A;
+            default -> throw new IllegalArgumentException("Expected walking key");
+        };
+    }
+
+    private void measureStop(LanClient client) throws Exception {
+        if (!leftSanctuary) throw new AssertionError("Walking never left the sanctuary");
+        SwingUtilities.invokeAndWait(() -> { phase = "returning"; key(opposite(moveKey), true); });
+        await(returned, "walk back inside the van sanctuary");
+        Thread.sleep(900);
+        // The panel sends this same host-authoritative command on a held-key tick.
+        // Send exactly one, even if several render callbacks precede its acknowledgement.
+        int[] step = new int[2];
+        SwingUtilities.invokeAndWait(() -> {
+            if (!sanctuary.contains(scene.x, scene.eyeHeight, scene.z))
+                throw new AssertionError("One-step test must start inside");
+            beforeStepX = scene.x;
+            beforeStepZ = scene.z;
+            double offset = switch (moveKey) {
+                case KeyEvent.VK_W -> 0;
+                case KeyEvent.VK_S -> Math.PI;
+                case KeyEvent.VK_A -> Math.PI / 2;
+                case KeyEvent.VK_D -> -Math.PI / 2;
+                default -> throw new IllegalArgumentException("Expected walking key");
+            };
+            step[0] = (int)Math.round(100 * Math.sin(scene.yaw + offset));
+            step[1] = (int)Math.round(100 * Math.cos(scene.yaw + offset));
+            phase = "stopping";
+        });
+        client.step(step[0], step[1], false);
+        Thread.sleep(5000);
+    }
+
+    private void verifyStop() {
+        var stopped = frames.stream().filter(f -> f.phase().equals("stopping")).toList();
+        if (stopped.isEmpty() || stopped.stream().anyMatch(f -> !f.inside()))
+            throw new AssertionError("Stop left the sanctuary or produced no frames");
+        Frame last = stopped.get(stopped.size() - 1);
+        double travel = Math.hypot(last.x() - beforeStepX, last.z() - beforeStepZ);
+        var atRest = stopped.stream().dropWhile(f -> f.x() != last.x() || f.z() != last.z()).toList();
+        boolean stable = atRest.stream().allMatch(f -> f.x() == last.x() && f.z() == last.z()
+            && f.eye() == last.eye() && f.yaw() == last.yaw() && f.pitch() == last.pitch());
+        if (travel < .1 || travel > .5 || !stable || atRest.size() < 12
+                || last.time() - atRest.get(0).time() < TimeUnit.SECONDS.toNanos(3))
+            throw new AssertionError("Failed one-step stable hold: distance=" + travel + " frames=" + atRest.size());
+    }
+
     private static void await(CountDownLatch latch, String description) throws Exception {
         if (!latch.await(60, TimeUnit.SECONDS)) throw new AssertionError("Timed out awaiting " + description);
     }
@@ -108,12 +174,13 @@ public final class LanViewportPerformanceReview extends RepaintManager {
     private void write(Path output, long movingNs, int peers, boolean solo) throws Exception {
         Files.createDirectories(output);
         try (var out = Files.newBufferedWriter(output.resolve("frames.csv"))) {
-            out.write("phase,time_ns,render_ns,build_ns,geometry_ns,effects_ns,width,height,faces,shadow_rays,composited_gl_frame_id\n");
+            out.write("phase,time_ns,render_ns,build_ns,geometry_ns,effects_ns,width,height,faces,shadow_rays,composited_gl_frame_id,x,eye,z,yaw,pitch,inside_sanctuary\n");
             for (var frame : frames) {
                 var d = frame.cost();
-                out.write(String.format(Locale.ROOT, "%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d%n",
+                out.write(String.format(Locale.ROOT, "%s,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%s,%s,%s,%s,%s,%b%n",
                     frame.phase(), frame.time(), d.totalNs(), d.sceneBuildNs(), d.geometryNs(), d.effectsNs(),
-                    d.width(), d.height(), d.faces(), d.lighting().shadowRays(), frame.compositedFrame()));
+                    d.width(), d.height(), d.faces(), d.lighting().shadowRays(), frame.compositedFrame(),
+                    frame.x(), frame.eye(), frame.z(), frame.yaw(), frame.pitch(), frame.inside()));
             }
         }
         if (!solo) try (var out = Files.newBufferedWriter(output.resolve("state.csv"))) {
@@ -157,7 +224,7 @@ public final class LanViewportPerformanceReview extends RepaintManager {
         });
     }
 
-    private void measure(Path output, boolean solo) throws Exception {
+    private void measure(Path output, boolean solo, LanClient client) throws Exception {
         await(warmed, "ten scheduled world renders");
         Thread.sleep(4000);
         SwingUtilities.invokeAndWait(() -> phase = "idle");
@@ -173,9 +240,12 @@ public final class LanViewportPerformanceReview extends RepaintManager {
         SwingUtilities.invokeAndWait(() -> { key(moveKey, false); phase = "cooldown"; });
         long duration = System.nanoTime() - begin;
         Thread.sleep(500);
+        boolean stop = Boolean.getBoolean("beckenburg.profile.sanctuaryStop");
+        if (stop) measureStop(client);
         int[] peers = new int[1];
         SwingUtilities.invokeAndWait(() -> { finished = true; peers[0] = panel.visiblePeers(); });
         write(output, duration, peers[0], solo);
+        if (stop) verifyStop();
     }
 
     private void solo(Path output) throws Exception {
@@ -190,7 +260,7 @@ public final class LanViewportPerformanceReview extends RepaintManager {
                     key(KeyEvent.VK_SPACE, true);
                     key(KeyEvent.VK_SPACE, false);
                 });
-                measure(output, true);
+                measure(output, true, game.client());
                 if (!game.running()) throw new AssertionError("Solo case exited before measurement finished");
             } finally { unmount(); }
         }
@@ -211,7 +281,7 @@ public final class LanViewportPerformanceReview extends RepaintManager {
                 await(started, "host round start");
                 owner.view3D();
                 await(entered, "House 3D site");
-                measure(output, false);
+                measure(output, false, owner);
             } finally {
                 unmount();
             }
