@@ -72,7 +72,53 @@ public final class EditorMaterialWorkspace extends JPanel {
     private String previewIssue;
     public void previewIssue(String message){previewIssue=message;if(message!=null)status.setText(message);}
     private double zoom=1,panX,panY;private Point panStart;
-    private final JPanel canvas=new JPanel(){protected void paintComponent(Graphics graphics){super.paintComponent(graphics);paintTexture((Graphics2D)graphics);}};
+    private record PaintView(int width,int height,Long selected,Long row,Visibility visibility,EditorUvTile tile,
+        double zoom,double panX,double panY,boolean pins,boolean seams,int guide,Font font,Color background,RenderingHints hints) {}
+    private BufferedImage paintedUv;
+    private EditorTopologyProject.State paintedState;
+    private EditorMeshMaterial paintedMaterial;
+    private PaintView paintedView;
+    private static final boolean RETAIN_UV_PAINT=!"false".equalsIgnoreCase(System.getProperty("beckenburg.editor.uvPaintCache"));
+    private final JPanel canvas=new JPanel(){protected void paintComponent(Graphics graphics){super.paintComponent(graphics);paintCanvas((Graphics2D)graphics);}};
+    private void paintCanvas(Graphics2D graphics){
+        var transform=graphics.getTransform();
+        Object textHint=graphics.getRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING);
+        boolean lcdText=textHint==RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB || textHint==RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HBGR
+            || textHint==RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_VRGB || textHint==RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_VBGR;
+        int width=canvas.getWidth(),height=canvas.getHeight();
+        // Retain exactly one opaque, unscaled canvas. Other transforms keep Java2D's
+        // original rasterization, including fractional/HiDPI and print rendering.
+        boolean retain=RETAIN_UV_PAINT && state!=null && stroke==null && !lcdText && width>0 && height>0
+            && !(graphics instanceof java.awt.print.PrinterGraphics)
+            && (long)width*height<=4_194_304 && canvas.getBackground().getAlpha()==255
+            && graphics.getComposite().equals(AlphaComposite.SrcOver)
+            && transform.getScaleX()==1 && transform.getScaleY()==1
+            && transform.getShearX()==0 && transform.getShearY()==0
+            && transform.getTranslateX()==Math.rint(transform.getTranslateX())
+            && transform.getTranslateY()==Math.rint(transform.getTranslateY());
+        if(!retain){
+            // An unsupported-size/transform view must not retain a large previous image.
+            paintedUv=null;paintedState=null;paintedMaterial=null;paintedView=null;
+            paintTexture(graphics);return;
+        }
+        var row=faceList.getSelectedValue();
+        var view=new PaintView(width,height,selectedFace,row==null?null:row.id(),visibility,tile,
+            zoom,panX,panY,pinsVisible,seamsVisible,guideEdge,graphics.getFont(),canvas.getBackground(),graphics.getRenderingHints());
+        if(paintedUv==null || paintedState!=state || paintedMaterial!=material || !view.equals(paintedView)){
+            // Invalidate before drawing; an interrupted/failed paint never publishes stale pixels.
+            paintedState=null;paintedMaterial=null;paintedView=null;
+            if(paintedUv==null || paintedUv.getWidth()!=width || paintedUv.getHeight()!=height)
+                paintedUv=new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
+            var buffer=paintedUv.createGraphics();
+            try{
+                buffer.setRenderingHints(view.hints());buffer.setFont(view.font());
+                buffer.setColor(view.background());buffer.fillRect(0,0,width,height);
+                paintTexture(buffer);
+            }finally{buffer.dispose();}
+            paintedState=state;paintedMaterial=material;paintedView=view;
+        }
+        graphics.drawImage(paintedUv,0,0,null);
+    }
     public EditorMaterialWorkspace(JComponent settings,JComponent runtime,JComponent commands,LongConsumer selection){
         this(settings,runtime,commands,selection,()->{});
     }
@@ -318,6 +364,10 @@ public final class EditorMaterialWorkspace extends JPanel {
     }
     public void observe(EditorTopologyProject.State value,Long face,EditorMeshMaterial displayed,String preview){
         boolean pending=preview!=null;
+        if(state!=value || material!=displayed){
+            paintedState=null;paintedMaterial=null;paintedView=null;
+            if(value==null)paintedUv=null;
+        }
         if(state!=value || !java.util.Objects.equals(selectedFace,face) || pending)previewIssue=null;
         if(state!=value || !java.util.Objects.equals(selectedFace,face) || pending){stroke=null;lastPixel=null;}
         if(state==null || value==null || !state.sceneId().equals(value.sceneId()) ||
@@ -358,6 +408,11 @@ public final class EditorMaterialWorkspace extends JPanel {
     private boolean displays(EditorTopologyProject.Face face){
         return material==null ? face.material().isEmpty() : face.material().equals(material.key());
     }
+    private static final Color UV_EDGE=new Color(220,235,248,140),UV_SELECTED=new Color(255,219,80),UV_SEAM=new Color(255,96,135);
+    private static final BasicStroke UV_THIN=new BasicStroke(1),UV_THICK=new BasicStroke(3);
+    private static EditorTopologyProject.Corner corner(EditorTopologyProject.Face face,int index){
+        return switch(index){case 0->face.a();case 1->face.b();default->face.c();};
+    }
     private void paintTexture(Graphics2D original){var g=(Graphics2D)original.create();try{
         double[] r=imageRect();int left=(int)r[0],top=(int)r[1],w=(int)r[2],h=(int)r[3];g.clipRect(left,top,w+1,h+1);
         for(int yy=top;yy<top+h;yy+=16)for(int xx=left;xx<left+w;xx+=16){g.setColor(((xx-left)/16+(yy-top)/16)%2==0?new Color(82,86,91):new Color(56,60,65));g.fillRect(xx,yy,16,16);}
@@ -380,21 +435,21 @@ public final class EditorMaterialWorkspace extends JPanel {
         }
         if(state==null)return;for(int row=0;row<faces.getSize();row++){var face=faces.getElementAt(row);
             if(!displays(face))continue;
-            boolean chosen=selectedFace!=null&&face.id()==selectedFace;g.setColor(chosen?new Color(255,219,80):new Color(220,235,248,140));g.setStroke(new BasicStroke(chosen?3:1));var corners=List.of(face.a(),face.b(),face.c());for(int i=0;i<3;i++){var a=corners.get(i);var b=corners.get((i+1)%3);g.drawLine(x(a.u(),r),y(a.v(),r),x(b.u(),r),y(b.v(),r));}
+            boolean chosen=selectedFace!=null&&face.id()==selectedFace;g.setColor(chosen?UV_SELECTED:UV_EDGE);g.setStroke(chosen?UV_THICK:UV_THIN);
+            int ax=x(face.a().u(),r),ay=y(face.a().v(),r),bx=x(face.b().u(),r),by=y(face.b().v(),r),cx=x(face.c().u(),r),cy=y(face.c().v(),r);
+            g.drawLine(ax,ay,bx,by);g.drawLine(bx,by,cx,cy);g.drawLine(cx,cy,ax,ay);
         }
         if(pinsVisible||seamsVisible){
             g.clipRect((int)r[0],(int)r[1],(int)Math.ceil(r[2])+1,(int)Math.ceil(r[3])+1);
             for(int row=0;row<faces.getSize();row++){
                 var f=faces.getElementAt(row);if(!displays(f))continue;
-                int index=0;
-                var corners=List.of(f.a(),f.b(),f.c());for(var c:corners){
+                for(int index=0;index<3;index++){var c=corner(f,index);
                     int px=x(c.u(),r),py=y(c.v(),r);
                     if(seamsVisible && f.marked(index)){
-                        var end=corners.get((index+1)%3);g.setColor(new Color(255,96,135));g.setStroke(new BasicStroke(3));
+                        var end=corner(f,(index+1)%3);g.setColor(UV_SEAM);g.setStroke(UV_THICK);
                         g.drawLine(px,py,x(end.u(),r),y(end.v(),r));
                     }
                     if(pinsVisible && c.pinned()){g.setColor(Color.BLACK);g.fillOval(px-5,py-5,10,10);g.setColor(Color.CYAN);g.fillOval(px-3,py-3,6,6);}
-                    index++;
                 }
             }
             if(selected!=null && displays(selected)){

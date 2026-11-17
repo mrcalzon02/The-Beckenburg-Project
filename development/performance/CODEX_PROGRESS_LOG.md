@@ -187,3 +187,12 @@ Core30 run 44003061335 confirmed identical color, raw depth and transfer counts 
 ## 2026-11-16 — First outward crossing on the GTX 1660 SUPER
 
 A viewport-wide ray-direction bound skips the sanctuary only when every positive ray leads away from its bounding box. All eight paired GTX crossings dropped from 49.67–86.84 to 16.26–18.00 ms. The matched control and candidate used the released v0.1.339 game and 20 ms timer. All six candidate pooled p95 values met 33.3 ms and 22/24 individual trial phases did. The one 127.349 ms three-seat gap was the first step inside the van. DEV-364 tracks that distinct-frame hitch. The concurrent v0.1.340 game retained the timer and shader behavior and passed its installer smoke tests. [Raw timing, CPU, trajectories, TCP and audits](../../docs/performance/2026-11-16-house-frame-times/windows-exit.md) · [v0.1.340](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.340)
+
+
+## 2026-11-17 — unchanged Material Editor canvas and current GTX experiment
+
+Reconciled main `2dbb8b3a85ff6dbcac9a4dc9d1ba8fdce9dd8154` and the current recovery/A–G/hardware handoff. The v0.1.336 cold-peer result and remaining 127.3485 ms distinct-frame inside-step hitch were independently recomputed from retained raw CSVs. The prior installer44124111288 succeeded. Full44124137497 completed without cancellation at exact main2dbb8b3; its raw Windows summary is390passed/0failed/0skipped/390manifest.
+
+A bounded unchanged-canvas cache removes repeated 120,000-face UV redraws. Two counterbalanced Java 17 JVM pairs show unchanged p95 1.132–1.963 ms versus 123.520–2836.539 ms, with all112 full-image hashes identical. Forty-eight direct/retained transition controls pass at256MiB, as do existing rows, pencil, UV transform/relax and all-main Java17 compilation. Selection-invalidated frames remain slow and mixed; DEV-362 stays open. This is headless Java2D evidence, not Windows display acceptance.
+
+Physical GTX run44125683659 compares the same intact `2dbb8b3` GPU JAR with the optional haze-columns flag false/true: four pairs per solo/three-seat mode, outward walk, one inside step and a five-second hold, parity and full TCP settlement per arm. Its result is pending at this implementation checkpoint; the engine flag stays default-off. Source/class hashes, raw editor CSV/captures, per-trial summaries, limits and exact next actions: [engine/editor checkpoint](../../docs/performance/2026-11-17-engine-editor/README.md). No A–G completion, hardware speedup or new accepted release is claimed.

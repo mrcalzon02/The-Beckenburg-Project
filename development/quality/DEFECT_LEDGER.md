@@ -320,13 +320,13 @@ Older-map obligation: The prepared lighting path is shared by other maps. Their 
 
 ### DEV-362 — Full UV canvas repaint remains slow on a 120,000-face editable mesh
 
-**Status:** Open, reproduced in a showing Swing window on Java 17 · **Affected:** Material Editor texture/UV canvas with the complete 300 by 200 quad grid visible as 120,000 native triangles
+**Status:** Open; unchanged unscaled repaints optimized locally, changed-face redraw and Windows acceptance remain open · **Affected:** Material Editor texture/UV canvas with the complete 300 by 200 quad grid visible as 120,000 native triangles
 
 The selected face row now refreshes in milliseconds. The displayed workspace took a median 231.7 ms to update and repaint after one changed face. A separate UV-only repaint took 191.7 ms on the same Xorg virtual display.
 
 Cause / uncertainty: The UV canvas traverses the visible face list and submits the outlines on every full repaint. The display benchmark measures the remaining cost after the row-model fix.
 
-Fix / next action: Profile the UV canvas, then reduce the cost of repainting unchanged outlines. Retain parity for overlaps, sparse IDs, visibility filters, selection, seam guides, tile changes, pan and zoom.
+Fix / next action: A bounded completed-canvas cache reduces local unchanged repaint p95 to 1.132–1.963 ms from 123.520–2836.539 ms. All 112 paired image hashes and 48 direct/retained transition controls match. Retire old native references and retain direct scaled/LCD/print/live-pencil fallbacks. Selection-invalidated frames remain expensive with mixed timings; do not pool them with cache hits. Next: localized changed-face redraw and showing-window Windows verification. See docs/performance/2026-11-17-engine-editor/README.md and its raw CSV archive.
 
 Evidence and verification: development/quality/evidence/editor-regional-seams-2026-11-16/material-window-results.tsv (20 published-revision samples), MaterialWindowProfile.java and run.sh window
 

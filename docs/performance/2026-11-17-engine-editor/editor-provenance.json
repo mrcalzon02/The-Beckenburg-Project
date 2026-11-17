@@ -1,0 +1,67 @@
+{
+  "baseline_commit": "2dbb8b3a85ff6dbcac9a4dc9d1ba8fdce9dd8154",
+  "benchmark": "actual Swing Material Editor canvas.paint on EDT, headless ARGB target",
+  "dimensions": [
+    520,
+    500
+  ],
+  "native_triangles": 120000,
+  "warmups_per_case": 6,
+  "samples_per_case_per_JVM": 12,
+  "jvm_trials_per_arm": 2,
+  "heap": "-Xmx1g",
+  "cpu": "Intel Xeon Platinum 8573C shared Linux executor",
+  "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "java": "openjdk version \"17.0.21\" 2026-10-20\nOpenJDK Runtime Environment Temurin-17.0.21+9 (build 17.0.21+9)\nOpenJDK 64-Bit Server VM Temurin-17.0.21+9 (build 17.0.21+9, mixed mode, sharing)\n",
+  "source_sha256": {
+    "src/main/java/org/beckenburg/editor/EditorMaterialWorkspace.java": "5e9dd10d85383583fe61e3aefb460efb80a4d1db5ce945df802ee8bc7bbd64c1",
+    "src/test/java/org/beckenburg/editor/EditorUvPaintProfile.java": "d7172ce10cf908788272289925f08fcbb907849459ee21d448f03013527e4993",
+    "src/test/java/org/beckenburg/EditorUvPaintCacheTest.java": "c4ccefcc515d7a1dc1bd68c272c58e83c7abab17b2e8a2cb3a46bf294b06e29b"
+  },
+  "baseline_class_sha256": {
+    "org/beckenburg/editor/EditorMaterialWorkspace$1.class": "cb7a286bf92595c6733bc4a7794b021b5fbc666ebf600811089e46e10d8d0438",
+    "org/beckenburg/editor/EditorMaterialWorkspace$2.class": "8ec712539d1aad17e7aefd4d3ede9ce88be178b93f4a67ac6766e5013f2c91d7",
+    "org/beckenburg/editor/EditorMaterialWorkspace$3.class": "d801578b338536e3ca4b8f039a0d3fbeb525bf29707cca818f557f4612504363",
+    "org/beckenburg/editor/EditorMaterialWorkspace$4.class": "e0feec1e1b69adccb4c08cf948d67ab7ad75044ca9604c67828905fcb86230dc",
+    "org/beckenburg/editor/EditorMaterialWorkspace$5.class": "fddc30dc0d4f2c14b72869046805884f0803bc98037657e7716c3f16f0c17898",
+    "org/beckenburg/editor/EditorMaterialWorkspace$6.class": "b82f9688cb263b56285d123d92700fbc8227f44d9ca418548f767d8856dba1f9",
+    "org/beckenburg/editor/EditorMaterialWorkspace$FaceRows.class": "b20915b0f572cd7bab6ba075a21c934e97195586f6807c3c799fc7190cf9ed86",
+    "org/beckenburg/editor/EditorMaterialWorkspace$PencilAction.class": "6df8a12a56417f06270fccb3798951d26c29efa74141c17438e47e6e991a4e34",
+    "org/beckenburg/editor/EditorMaterialWorkspace$Properties.class": "88cb47e0fd8e97bd09756c5cfcc36b4e05ce79675d2901a2d0cde47f022e892d",
+    "org/beckenburg/editor/EditorMaterialWorkspace$Visibility.class": "e6cbc11be89b844173ef90d7c09f359eb2dae984cacd54d9638360b28e5cc523",
+    "org/beckenburg/editor/EditorMaterialWorkspace.class": "f29cbdec42334d6b0728466c937ee95a6e536cf4bf077424910b1d4300b6f081"
+  },
+  "candidate_class_sha256": {
+    "org/beckenburg/editor/EditorMaterialWorkspace$1.class": "3df0f29874048a58835c3de82fc7668d79e51b18a9ca2698e291c7eb0544b533",
+    "org/beckenburg/editor/EditorMaterialWorkspace$2.class": "cc48b0b20b6d7c083474331305d332c9fd6db7a20e5fc459d07f4311493cee5c",
+    "org/beckenburg/editor/EditorMaterialWorkspace$3.class": "7679fff0ad0c741dbc5e331f9161d9743f41a4040f839543fa88bad915f277d0",
+    "org/beckenburg/editor/EditorMaterialWorkspace$4.class": "3ed717cb306cff75135c2b432d1f25b70d7a820e3aa5877980379140393ad65e",
+    "org/beckenburg/editor/EditorMaterialWorkspace$5.class": "3e153d4487501619ec9e0126b8a61683c3c4a28ec5f59b914d83669e60be1b35",
+    "org/beckenburg/editor/EditorMaterialWorkspace$6.class": "ea2fa9209aa6e5c5cc2bf3104429eed68ef5a45660af3146badce8c5b9ad2ede",
+    "org/beckenburg/editor/EditorMaterialWorkspace$FaceRows.class": "ca72b0b674307f813a6a490672d574d74017a5cf0981d01e7aec587731335e07",
+    "org/beckenburg/editor/EditorMaterialWorkspace$PaintView.class": "34a643609a8a13ccc8a738d5b505d6dba947d7c2770b072b16591a85538bcfed",
+    "org/beckenburg/editor/EditorMaterialWorkspace$PencilAction.class": "6df8a12a56417f06270fccb3798951d26c29efa74141c17438e47e6e991a4e34",
+    "org/beckenburg/editor/EditorMaterialWorkspace$Properties.class": "88cb47e0fd8e97bd09756c5cfcc36b4e05ce79675d2901a2d0cde47f022e892d",
+    "org/beckenburg/editor/EditorMaterialWorkspace$Visibility.class": "e6cbc11be89b844173ef90d7c09f359eb2dae984cacd54d9638360b28e5cc523",
+    "org/beckenburg/editor/EditorMaterialWorkspace.class": "ce19bb45b6ac9cce6d01427e31e16a227ab8e7750173b97fd59807bd2b758283"
+  },
+  "counterbalanced_order": [
+    "baseline original-2",
+    "candidate exact-1",
+    "candidate exact-2",
+    "baseline original-3"
+  ],
+  "pairing": {
+    "1": [
+      "original-2",
+      "exact-1"
+    ],
+    "2": [
+      "original-3",
+      "exact-2"
+    ]
+  },
+  "cache_limit_pixels": 4194304,
+  "cache_miss_limit": "No claim that changed-face redraw latency is fixed; invalidation timings reported separately.",
+  "hardware_scope": "These are headless Java2D timings, not target Windows presentation."
+}
