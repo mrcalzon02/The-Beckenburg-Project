@@ -2,6 +2,27 @@
 
 Start on the current public main branch of `mrcalzon02/The-Beckenburg-Project`. The playable benchmark is [v0.1.336](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.336), commit `13fcd0a4d3002e1084f0ab585865c6d8c1d18691`. Its installed Windows executable passed Castle startup, solo play, and a complete multiplayer investigation. The untouched starting code for the optimization series is `7e7764b208e82785ded237e2953473b2661e064b`. The first physical benchmark and raw traces were committed at `1ef0782382d3cfe2a5199a67cf41b0243f12e1b3`. [Benchmark report](README.md) · [OpenGL frame data](windows-opengl.zip) · [Software frame data](windows-software.zip) · [Engine and gameplay evidence](benchmark-data.zip) · [Unshipped movement probes](movement-probes.zip)
 
+## Measured Windows release v0.1.342
+
+[v0.1.342 Windows installer](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.342) was built from [7b33b944df847e1eeb9ced77c43aba8dca5aab33](https://github.com/mrcalzon02/The-Beckenburg-Project/commit/7b33b944df847e1eeb9ced77c43aba8dca5aab33). Its release asset is 761,282,049 bytes with SHA-256 `6dd182adf18a212c7b3768ff16202ab210a708ff1fb75b943f7aa94eb9a0ab9b`. Packaged solo play, a complete multiplayer case and installed Castle startup passed. [Exact-source Windows installer checks](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44013628166) · [Passing receipts for all 384 release regression tests](release-342-checks.md)
+
+The Core30 software follow-up established that v0.1.336 removed the cold stall previously attributed to the first visible remote hunter. In four fresh TCP comparisons maximum moving post-geometry time fell from 318.9–327.5 ms to 27.8–28.9 ms. The solo control stayed at 26–28 ms. The GPU six-frame experiment then reproduced walking outside and returning for a 0.31 m step followed by a five-second hold inside. No over-100 ms hitch moved to the sixth frame. The selected production build uses exact opacity reuse, up to four scanline workers, a 20 ms viewport deadline and the proven out-of-view sanctuary check.
+
+| Physical GTX 1660 SUPER | Intervals | p50 ms | p95 ms | p99 ms | Over 100 ms | Trials within 33.3 ms p95 |
+|---|---:|---:|---:|---:|---:|---:|
+| Solo idle | 3,674 | 21.585 | 23.965 | 26.561 | 0 | 4/4 |
+| Solo walking | 540 | 21.374 | 31.592 | 55.554 | 0 | 3/4 |
+| Solo stopped inside | 933 | 21.276 | 23.258 | 29.613 | 0 | 4/4 |
+| Three-seat idle | 3,685 | 21.489 | 23.818 | 26.380 | 0 | 4/4 |
+| Three-seat walking | 537 | 21.473 | 31.002 | 53.395 | 1 | 3/4 |
+| Three-seat stopped inside | 929 | 21.404 | 23.330 | 29.876 | 0 | 4/4 |
+
+All six pooled distributions reached the target. The fourth matched walk reached 33.457 ms p95 solo and 33.707 ms with three seats. The one 127.349 ms three-seat interval occurred on the first inside step, with two draws sharing 105.239 ms of post-geometry work. The initial outward crossing finished within 16.26–18.00 ms in all eight candidate trials. A five-second hold at the final inside pose reached at most 22.63 ms on the sixth frame. These timings measure distinct OpenGL frames consumed by a single viewport at 960×540 on Core30, with the two other seats using loopback TCP.
+
+Neither House door 2 experiment entered production. The RGB-only layout saved 62.5% of the measured 18-buffer transfer but worsened p95 in three of four pairs. Source-aware CPU relighting roughly halved toggle median time but increased intermediate-swing p95 in all eight pairs. Its two 144-frame deterministic controls matched full ARGB, raw depth, transfer bytes and batch counts. Exact receiver shadows remain a separate recorded visual issue.
+
+[Final raw GTX frames](windows-exit.zip) · [Per-pair data and scripts](windows-exit-analysis.zip) · [Recovered Core30 software frames](core30-followup.zip) · [Six-frame and stopped-pose evidence](windows-stop.md) · [Deadline and CPU comparisons](windows-pacing.md) · [Door RGB and CPU results](door-2/README.md)
+
 ## Results since the checkpoint
 
 The [final physical van-exit comparison](windows-exit.md) includes the selected renderer, its original Windows raw evidence and the remaining first inside step. The completed [Core30 cold hunter comparison](core30-windows-software.md), [physical one-step stop](windows-stop.md), [four-lane shading benchmark](windows-shading.md), [physical render pacing and CPU comparison](windows-pacing.md) and [physical door upload comparison](door-2/physical-door.md) and [physical door CPU and swing comparison](door-2/physical-door-cpu.md) include the raw frame data. The historical steps below identify the original tests and reproduction protocol.
