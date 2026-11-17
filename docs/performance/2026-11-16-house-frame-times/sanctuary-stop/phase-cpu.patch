@@ -1,0 +1,102 @@
+--- a/src/test/java/org/beckenburg/LanViewportPerformanceReview.java
++++ b/src/test/java/org/beckenburg/LanViewportPerformanceReview.java
+@@ -1,9 +1,11 @@
+ package org.beckenburg;
+ 
+ import java.awt.event.KeyEvent;
++import java.lang.management.ManagementFactory;
+ import java.nio.file.Files;
+ import java.nio.file.Path;
+ import java.util.ArrayList;
++import java.util.LinkedHashMap;
+ import java.util.List;
+ import java.util.Locale;
+ import java.util.concurrent.CountDownLatch;
+@@ -32,6 +34,44 @@
+     private final CountDownLatch warmed = new CountDownLatch(10);
+     private final AtomicInteger acceptedSteps = new AtomicInteger();
+     private volatile String phase = "warmup";
++    private record CpuBoundary(long wallNs, long processCpuNs) {}
++    private final boolean profileCpu = Boolean.getBoolean("beckenburg.profile.phaseCpu");
++    private final com.sun.management.OperatingSystemMXBean cpuBean = profileCpu
++        && ManagementFactory.getOperatingSystemMXBean() instanceof com.sun.management.OperatingSystemMXBean os ? os : null;
++    private final LinkedHashMap<String, CpuBoundary> cpuBoundaries = new LinkedHashMap<>();
++
++    private void enterMeasuredPhase(String next) {
++        if (profileCpu) {
++            long cpu = cpuBean == null ? -1 : cpuBean.getProcessCpuTime();
++            cpuBoundaries.put(next, new CpuBoundary(System.nanoTime(), cpu));
++        }
++        phase = next;
++    }
++
++    private void writeCpuPhases(Path output) throws java.io.IOException {
++        if (!profileCpu) return;
++        try (var out = Files.newBufferedWriter(output.resolve("phase-cpu.csv"))) {
++            out.write("phase,start_wall_ns,end_wall_ns,start_process_cpu_ns,end_process_cpu_ns,wall_ns,process_cpu_ns,core_equivalents\n");
++            for (String name : List.of("idle", "moving", "stopping")) {
++                var start = cpuBoundaries.get(name);
++                if (start == null) continue;
++                var end = cpuBoundaries.get(switch (name) {
++                    case "idle" -> "moving";
++                    case "moving" -> "cooldown";
++                    default -> "finished";
++                });
++                long wall = end.wallNs() - start.wallNs();
++                String totals = ",";
++                if (start.processCpuNs() >= 0 && end.processCpuNs() >= start.processCpuNs() && wall > 0) {
++                    long cpu = end.processCpuNs() - start.processCpuNs();
++                    totals = String.format(Locale.ROOT, "%d,%.6f", cpu, (double)cpu / wall);
++                }
++                out.write(String.format(Locale.ROOT, "%s,%d,%d,%d,%d,%d,%s%n", name,
++                    start.wallNs(), end.wallNs(), start.processCpuNs(), end.processCpuNs(), wall, totals));
++            }
++        }
++    }
++
+     private LanWorldPanel panel;
+     private SceneRenderer scene;
+     private SceneRenderer.FrameDiagnostics previous;
+@@ -147,7 +187,7 @@
+             };
+             step[0] = (int)Math.round(100 * Math.sin(scene.yaw + offset));
+             step[1] = (int)Math.round(100 * Math.cos(scene.yaw + offset));
+-            phase = "stopping";
++            enterMeasuredPhase("stopping");
+         });
+         client.step(step[0], step[1], false);
+         Thread.sleep(5000);
+@@ -227,24 +267,29 @@
+     private void measure(Path output, boolean solo, LanClient client) throws Exception {
+         await(warmed, "ten scheduled world renders");
+         Thread.sleep(4000);
+-        SwingUtilities.invokeAndWait(() -> phase = "idle");
++        SwingUtilities.invokeAndWait(() -> enterMeasuredPhase("idle"));
+         Thread.sleep(TimeUnit.SECONDS.toMillis(Integer.getInteger("beckenburg.profile.idleSeconds", 8)));
+         SwingUtilities.invokeAndWait(() -> {
+             moveKey = walkKey();
+             startX = scene.x; startZ = scene.z;
+-            phase = "moving";
++            enterMeasuredPhase("moving");
+             key(moveKey, true);
+         });
+         long begin = System.nanoTime();
+         Thread.sleep(3000);
+-        SwingUtilities.invokeAndWait(() -> { key(moveKey, false); phase = "cooldown"; });
++        SwingUtilities.invokeAndWait(() -> { key(moveKey, false); enterMeasuredPhase("cooldown"); });
+         long duration = System.nanoTime() - begin;
+         Thread.sleep(500);
+         boolean stop = Boolean.getBoolean("beckenburg.profile.sanctuaryStop");
+         if (stop) measureStop(client);
+         int[] peers = new int[1];
+-        SwingUtilities.invokeAndWait(() -> { finished = true; peers[0] = panel.visiblePeers(); });
++        SwingUtilities.invokeAndWait(() -> {
++            finished = true;
++            if (profileCpu) enterMeasuredPhase("finished");
++            peers[0] = panel.visiblePeers();
++        });
+         write(output, duration, peers[0], solo);
++        writeCpuPhases(output);
+         if (stop) verifyStop();
+     }
+ 
