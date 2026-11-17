@@ -6,6 +6,8 @@ The production comparison uses baseline `7e7764b208e82785ded237e2953473b2661e064
 
 [Continue from the benchmark handoff](HANDOFF.md) · [Movement and sanctuary reproduction probes](movement-probes.zip)
 
+The four-lane sanctuary shader has been measured on the GTX 1660 SUPER. Solo and three-seat walking p95 reached 44.17 and 43.16 ms, with zero gaps over 100 ms across idle, walking and the sustained stop. [Physical shading comparison and raw data](windows-shading.md) · [Six-frame stop experiment](windows-stop.md) · [House door 2 physical upload results](door-2/physical-door.md)
+
 ## Direct measurements
 
 | Workload | Baseline | Candidate | Measured scope |

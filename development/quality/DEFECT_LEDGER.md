@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-364 — House sanctuary crossings and stops exceed the GTX frame budget
+
+**Status:** Improved on the physical GTX 1660 SUPER, 33.3 ms p95 target still open · **Affected:** House van departure and a one-step stop inside the sanctuary, solo and the three-seat hunter viewport
+
+The released cache produced two early solo walking hitches. Delaying cache admission removed the measured intervals over 100 ms, but stationary frames inside the dome still arrived roughly 68 ms apart.
+
+Cause / uncertainty: Optical shading on repeated and changing sanctuary views runs on the rendering thread. Reaching the next periodic Swing draw adds to some completed-frame gaps. The four-pair Windows tests separate cache admission, serial opacity reuse, parallel scanlines and the visual timer.
+
+Fix / next action: The four-lane shader with a 30 ms visual timer removed all measured gaps over 100 ms in six distributions. Walking p95 reached 44.17 ms solo and 43.16 ms over TCP. Measure scheduling and the remaining sanctuary-boundary frame work against the released control.
+
+Evidence and verification: docs/performance/2026-11-16-house-frame-times/windows-stop.md and windows-shading.md with original worker ZIPs, per-frame CSVs, exact depth controls and full-round receipts
+
+Older-map obligation: The sanctuary shader is shared. The physical proof covers House and one rendered viewport on Core30. Other maps and independent-PC presentation need their own evidence.
+
 ### DEV-363 — Prepared GPU lighting can reverse which side of House door 2 receives light
 
 **Status:** Open, reproduced on the released renderer and the receiver-reuse experiment · **Affected:** House door 2, room 1, stationary source 0 and two receivers 23 mm apart

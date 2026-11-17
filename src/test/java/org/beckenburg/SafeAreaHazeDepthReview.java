@@ -66,12 +66,16 @@ public final class SafeAreaHazeDepthReview {
         var cache=new SafeAreaHaze.RayCache();
         var other=new SafeAreaBarrier.Volume(3,-.7,4,3,1.2,3.2);
         // Repeated poses warm the cache, then change only one projection or volume input.
-        for(int step=0;step<32;step++){
-            int phase=step/4;
+        for(int step=0;step<64;step++){
+            int phase=step/8;
             int width=phase>=1?81:83,height=phase>=2?51:49;
             double focal=phase>=3?54:43;
             double yaw=phase>=4?.11:0,pitch=phase>=5?-.1:0;
             var areas=phase==6?List.of(other,DOME):List.of(DOME,other);
+            // Also exercise a primary dome large enough to shade in parallel.
+            if(phase>=5){width=400;height=260;}
+            // The server clock can hold while a character exposes or occludes a ray.
+            double clock=(step/4)*.2;
             int count=width*height;
             int[] expected=new int[count],actual=new int[count];
             var rng=new Random(7001+step);
@@ -81,8 +85,8 @@ public final class SafeAreaHazeDepthReview {
                 depth[n]=n%3==0?Double.POSITIVE_INFINITY:rng.nextDouble()*9;
             }
             double[] originalDepth=depth.clone();
-            int direct=SafeAreaHaze.draw(expected,depth,width,height,focal,2,1,3,yaw,pitch,step*.2,areas);
-            int reused=SafeAreaHaze.draw(actual,depth,width,height,focal,2,1,3,yaw,pitch,step*.2,areas,cache);
+            int direct=SafeAreaHaze.draw(expected,depth,width,height,focal,2,1,3,yaw,pitch,clock,areas);
+            int reused=SafeAreaHaze.draw(actual,depth,width,height,focal,2,1,3,yaw,pitch,clock,areas,cache);
             if(direct!=reused||!Arrays.equals(expected,actual)||!Arrays.equals(originalDepth,depth))
                 throw new AssertionError("Changed lens, target or sanctuary order at step "+step);
         }

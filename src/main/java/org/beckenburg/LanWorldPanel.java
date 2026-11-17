@@ -223,7 +223,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         addFocusListener(mouseLook);addFocusListener(this);
         // The host consumes movement and equipment at the original input cadence.
         timer=new javax.swing.Timer(110,e->updateHunter());
-        renderTimer=new javax.swing.Timer(33,e->drawVisibleWorld());
+        renderTimer=new javax.swing.Timer(30,e->drawVisibleWorld());
         timer.start();
     }
     @Override public void doLayout(){

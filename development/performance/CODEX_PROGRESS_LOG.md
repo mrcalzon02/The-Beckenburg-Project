@@ -171,3 +171,7 @@ Final source99baa799 acceptance readback: GPU40927250498 and full40927255222 bot
 ## 2026-11-16 — live House performance checkpoint
 
 Profiled the shared production hunter viewport through solo LocalInvestigation and a three-seat TCP case, and the human ghost in a separate four-seat case. Baseline `f3374fe4c4ded54cc87e52d79fbdf102ab09997d`. Actual fresh GL framebuffer IDs, CPU raster frames and packet arrival times are measured separately. Six matched texture preparation trials reproduced exact GPU input parity across 317 materials, cutting median preparation CPU from 1,036 to 416 ms. The van's analytic sanctuary boundary dominates warm software-OpenGL client CPU samples. Reference Windows hardware acceptance remains open. [Benchmark evidence](../../docs/performance/2026-11-16-engine/README.md)
+
+## 2026-11-16 — Core30 House sanctuary and door trials
+
+The six-frame admission experiment on the GTX removed the repeated >100 ms walks, with all 24 stops verified inside the barrier. The follow-up four-lane shader with a 30 ms visual timer improved p95 over the intact .335 JAR in all 24 matched role/phase comparisons. The tested Java source hashes are in the downloaded raw archive from [run 43993545950](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/43993545950). [Per-phase results and raw data](../../docs/performance/2026-11-16-house-frame-times/windows-shading.md). CPU shadow changes remain experimental. The RGB-only door upload preserved the frame but worsened p95 in three of four physical pairs.
