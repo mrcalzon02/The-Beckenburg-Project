@@ -14,3 +14,10 @@ The comparison uses a deployed video camera looking at the same point. Rows are 
 - `FieldJournalTest` checks all 26 identities, all three observation media and counts from zero to six wherever physical observation is possible. `HunterWitnessExperimentTest` checks explicit attention, channel choice, sighting decisions and the effect of losing a view.
 
 The network scenario tests observation timing in one controlled House position. It provides no estimate of average human round length or of sightlines on another site.
+
+
+## Windows delivery
+
+The [v0.1.343 Windows x64 installer](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.343) ships gameplay revision a85a47eee203b7fb4d29abcf2a19568262fa5eb6. The [installer run](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44016080220) passed the packaged multiplayer case, desktop gameplay and installed EXE opening the Castle. The published installer is 761,364,603 bytes, SHA-256 `8d6e93b139571c954d916cfc73d734733d69a7825bfd56d472fb3357d2ad901f`.
+
+The [staffed camera workflow](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44016080226) passed its real campaign, van-rack retrieval, room occupancy and selected-camera observations on Windows. The separate [full manifest run](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44016535575) uses test revision e4b833d18827160688e4926b2dddda0cc1b3be1b, including the maintained Wraith projected-light test.
