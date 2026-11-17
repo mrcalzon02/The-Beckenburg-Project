@@ -54,6 +54,7 @@ RecordedWeatherTest
 HardEvidenceQuotaTest
 AncientGhostVariantsTest
 AdditionalEvidenceTest
+InvestigationDiagnosticsTest
 ContractRewardsTest
 EmfSilenceTest
 GhostWritingTest
@@ -91,6 +92,7 @@ GhostBehaviorTest
 LanGhostIdentityTest
 LanRiteNetworkTest
 LanGhostPursuitTest
+LanGhostHomeAndThreatTest
 LanGhostHearingTest
 GhostHearingFadeTest
 GhostSoundActivityTest
@@ -118,6 +120,7 @@ LanNetworkDiagnosticsTest
 LanRitualDefenseTest
 LanRitualDefenseIntegrationTest
 LanGhostHearingHudTest
+LanGhostAbilityBarTest
 LanGhostAnimationTest
 GhostHauntingFolioTest
 GhostHauntingChoreographyTest
@@ -203,6 +206,7 @@ GhostTraitsTest
 HunterCountersTest
 GhostDomainTest
 GhostFrenzyTest
+GhostPacingTest
 GhostActionCadenceTest
 LanGhostHidingBoundaryTest
 MaterialAtlasTest
@@ -328,6 +332,7 @@ AllMapArchitecturalJoinTest
 CastleRebuildTest
 CampaignMenuWorkflowTest
 CampaignCoopLobbyTest
+CampaignHunterInvestigatorTest
 EquipmentTierIconTest
 CastleContainedMenuTest
 CastleInventoryWorkstationTest

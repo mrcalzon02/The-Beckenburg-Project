@@ -29,7 +29,7 @@ final class DevMatchOutcomeReport {
             rejected+=bot.rejected();attacks+=bot.attacks();
             frenzies+=bot.frenzyStarts();effectiveAttacks+=bot.effectiveAttacks();
             scans+=bot.goodScans();identificationAttempts+=bot.identifications();
-            identifiedAccepts+=bot.correctResponses();ritualsAttempted+=bot.rituals();
+            identifiedAccepts+=bot.acceptedHypotheses();ritualsAttempted+=bot.rituals();
             ritesStarted+=bot.ritesStarted();
         }
         int actualDamage=0,hostAttributedDeaths=0;
@@ -65,7 +65,7 @@ final class DevMatchOutcomeReport {
         summary.append("Gameplay sockets: ").append(state.connectedPlayers())
             .append("/7; admin seat: 0\n");
         summary.append("Ghost true species: ").append(state.trueGhostType()).append("\n");
-        summary.append("Hunter identification: ").append(state.hunterIdentification())
+        summary.append("Team hypothesis: ").append(state.hunterIdentification())
             .append("; correct: ").append(correct)
             .append("; attempts: ").append(identificationAttempts)
             .append("; accepted: ").append(identifiedAccepts).append("\n");

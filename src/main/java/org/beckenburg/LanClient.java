@@ -178,6 +178,7 @@ public final class LanClient implements AutoCloseable {
     public synchronized void turn(int degrees)throws IOException {send("TURN|"+degrees+"|"+(++sequence));}
     public synchronized void window()throws IOException {send("WINDOW|"+(++sequence));}
     public synchronized void door()throws IOException {send("DOOR|"+(++sequence));}
+    synchronized void openDoor()throws IOException {send("OPENDOOR|"+(++sequence));}
     public synchronized void vanDoor()throws IOException {send("VANDOOR|"+(++sequence));}
     public synchronized void toggleFlashlight()throws IOException {send("TORCH|"+(++sequence));}
     public synchronized void light()throws IOException {send("LIGHT|"+(++sequence));}

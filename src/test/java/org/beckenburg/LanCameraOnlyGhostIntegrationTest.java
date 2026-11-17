@@ -12,8 +12,10 @@ public final class LanCameraOnlyGhostIntegrationTest {
         final java.util.concurrent.ConcurrentLinkedDeque<String> cameraFrames=
             new java.util.concurrent.ConcurrentLinkedDeque<>();
         final LanClient client;
+        volatile boolean sawOrb;
         Peer(int port,boolean ghost,String name)throws Exception{
             client=new LanClient("127.0.0.1",port,ghost,name,packet->{
+                if(packet.startsWith("CAMORB|"))sawOrb=true;
                 if(packet.startsWith("CAMGHOST|")||packet.startsWith("CAMERA|")){
                     cameraFrames.offer(packet);
                     while(cameraFrames.size()>20)cameraFrames.poll();
@@ -36,7 +38,7 @@ public final class LanCameraOnlyGhostIntegrationTest {
     }
     public static void main(String[] args)throws Exception{
         for(var species:new GhostIdentity.Type[]{
-                GhostIdentity.Type.SHADE,GhostIdentity.Type.SPECTER}){
+                GhostIdentity.Type.YOKAI,GhostIdentity.Type.SHADE,GhostIdentity.Type.SPECTER}){
             try(var host=new LanHost("127.0.0.1",0,species,CustomContract.standard(2));
                 var van=new Peer(host.port(),false,"Camera operator");
                 var field=new Peer(host.port(),false,"Field observer");
@@ -64,6 +66,8 @@ public final class LanCameraOnlyGhostIntegrationTest {
                     double px=target.x()+offset[0],pz=target.z()+offset[1];
                     int aim=Math.floorMod((int)Math.round(Math.toDegrees(
                         Math.atan2(target.x()-px,target.z()-pz))),360);
+                    var lens=new LanVideoCameras.Camera(0,4,px,target.y(),pz,aim,EquipmentTiers.Tier.I);
+                    if(species==GhostIdentity.Type.YOKAI&&new LanCameraSight.Orb(ghostBody,0).sample(map,lens,true,0)==null)continue;
                     if(map.roomAt(px,target.y(),pz)==4&&map.traversable(px,target.y(),pz)
                         &&LanCameraSight.sees(map,new LanVideoCameras.Camera(
                             0,4,px,target.y(),pz,aim,EquipmentTiers.Tier.I),
@@ -97,6 +101,26 @@ public final class LanCameraOnlyGhostIntegrationTest {
                 }
                 field.client.view3D();field.await("ACCEPT|VIEW3D",8);
                 ghost.client.viewGhost3D();ghost.await("ACCEPT|GVIEW3D",8);
+                if(species==GhostIdentity.Type.YOKAI){
+                    ghost.client.ghost(GhostDomain.Action.WHISPER,4);
+                    ghost.await("ACCEPT|GHOST|WHISPER",8);
+                    String sample=van.await("CAMORB|0|",8);
+                    var values=LanProtocol.parts(sample);
+                    check(values.size()==6&&!sample.contains("YOKAI"),"optical event must carry only the sampled point");
+                    check(!field.sawOrb&&!ghost.sawOrb,"field seat or ghost leaked a van camera sample");
+                    if(args.length>0){
+                        var captured=new SceneRenderer();
+                        captured.x=station.x();captured.z=station.z();captured.eyeHeight=station.y()+1.62;
+                        captured.yaw=Math.toRadians(heading);captured.pitch=-.035;
+                        captured.setFieldOfView(EquipmentOptics.forTier(EquipmentTiers.Tier.I).videoFieldOfView());
+                        captured.cameraOrb=new LevelDefinition.Vec(Integer.parseInt(values.get(2))/1000d,
+                            Integer.parseInt(values.get(3))/1000d,Integer.parseInt(values.get(4))/1000d);
+                        captured.drawNetwork(map,java.util.List.of(),-1,Integer.parseInt(values.get(5))*.1);
+                        javax.imageio.ImageIO.write(captured.image(),"png",java.nio.file.Path.of(args[0]).toFile());
+                    }
+                    System.out.println("PASS live Yokai orb camera sample at the van, offsite and ghost redaction");
+                    continue;
+                }
                 int tick=0;
                 while(tick<82){
                     String[] state=ghost.await("STATE|",8).split("\\|");

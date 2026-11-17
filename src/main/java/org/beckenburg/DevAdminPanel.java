@@ -243,10 +243,15 @@ public final class DevAdminPanel implements AutoCloseable {
             s.append("   ").append(intents.getOrDefault(h.seat(),"no AI input yet")).append("\n");
         }
         var ghost=last.ghost();
-        s.append("GHOST ").append(ghost.clientConnected()?"[LIVE]":"[OFF]")
+        s.append("GHOST ").append(ghost.hostAiFallback()?"[HOST AI]":"[CLIENT]")
             .append(" energy ").append(ghost.energy())
             .append(" R").append(ghost.body().room()).append("\n");
-        s.append("   ").append(intents.getOrDefault("GHOST","no AI input yet")).append("\n\n");
+        if(ghost.hostAiFallback()){
+            var used=ghost.abilities().slots().stream().filter(GhostAbilityBar.Entry::used)
+                .map(e->e.slot().label()).toList();
+            if(!used.isEmpty())s.append("   Recent cast: ").append(String.join(", ",used)).append('\n');
+            s.append('\n');
+        }else s.append("   ").append(intents.getOrDefault("GHOST","no AI input yet")).append("\n\n");
         s.append("EVIDENCE COMPARISON / ADMIN TRUTH\n");
         s.append("Real species: ").append(last.trueGhostType()).append("\n");
         s.append("Hunter identification: ").append(last.hunterIdentification()).append("\n");
@@ -316,6 +321,7 @@ public final class DevAdminPanel implements AutoCloseable {
                 g.setFont(new Font(Font.MONOSPACED,Font.BOLD,13));
                 g.drawString("DEV ADMIN / NOCLIP + THROUGH-WALL DEBUG",19,27);
                 g.drawString("X x-ray | M overhead | F follow | 0 free",19,42);
+                if(last!=null&&focus==6)GhostAbilityBar.draw(g,getWidth(),getHeight()-8,last.ghost().abilities());
             }finally{g.dispose();}
         }
     }

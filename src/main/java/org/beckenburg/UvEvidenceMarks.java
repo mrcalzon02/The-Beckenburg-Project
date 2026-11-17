@@ -8,22 +8,51 @@ public final class UvEvidenceMarks {
         public String frame(){return "UVTRACE|"+id+"|"+room+"|"+x+"|"+y+"|"+z+"|"+born+"|"+normal;}
         public static Mark decode(List<String> p){if((p.size()!=7&&p.size()!=8)||!p.get(0).equals("UVTRACE"))throw new IllegalArgumentException("UV trace frame");return new Mark(Integer.parseInt(p.get(1)),Integer.parseInt(p.get(2)),Double.parseDouble(p.get(3)),Double.parseDouble(p.get(4)),Double.parseDouble(p.get(5)),Integer.parseInt(p.get(6)),p.size()==8?Integer.parseInt(p.get(7)):2);}
     }
-    private final ArrayList<Mark> marks=new ArrayList<>();private int nextId;
+    private static final int SAMPLE_INTERVAL=10; // One supported footprint per second of travel.
+    static final int MAX_VISIBLE=96;
+    private final ArrayDeque<Mark> marks=new ArrayDeque<>();
+    private int nextId;
+    private Mark lastFootfall;
+
+    static int lifetime(EquipmentTiers.Tier tier){
+        return (3+tier.ordinal())*600; // 10 Hz host, three / four / five minutes.
+    }
+    static boolean detectable(Mark mark,EquipmentTiers.Tier tier,int tick){
+        return tick>=mark.born()&&tick-mark.born()<=lifetime(tier);
+    }
     public void leave(HouseMap map,LanGhostSpatial.Pose ghost,int tick){
-        if(ghost.room()<0||ghost.room()>=14)return;
+        while(!marks.isEmpty()&&tick-marks.getFirst().born()>lifetime(EquipmentTiers.Tier.III))
+            marks.removeFirst();
+        if(ghost.room()<0||ghost.room()>=HouseMap.EXTRACTION_ROOM)return;
+        if(lastFootfall!=null){
+            if(tick-lastFootfall.born()<SAMPLE_INTERVAL)return;
+            if(lastFootfall.room()==ghost.room()
+                    &&Math.hypot(lastFootfall.x()-ghost.x(),lastFootfall.z()-ghost.z())<.45)return;
+        }
         double floor=map.groundHeight(ghost.x(),ghost.z(),ghost.room());
         if(Math.abs(floor-ghost.y())>.4||!map.traversable(ghost.x(),floor,ghost.z()))return;
-        if(!marks.isEmpty()){var last=marks.get(marks.size()-1);if(last.room()==ghost.room()&&Math.hypot(last.x()-ghost.x(),last.z()-ghost.z())<.45)return;}
-        marks.add(new Mark(nextId++,ghost.room(),ghost.x(),floor+.012,ghost.z(),tick));
-        marks.removeIf(m->tick-m.born()>240);while(marks.size()>96)marks.remove(0);
+        // Retracing a floor contact refreshes that physical spot instead of stacking identical decals.
+        marks.removeIf(mark->mark.room()==ghost.room()&&Math.abs(mark.y()-(floor+.012))<.1
+            &&Math.hypot(mark.x()-ghost.x(),mark.z()-ghost.z())<.30);
+        lastFootfall=new Mark(nextId++,ghost.room(),ghost.x(),floor+.012,ghost.z(),tick);
+        // The cadence and oldest detectable age bound storage at 301 footprints for the whole site.
+        marks.addLast(lastFootfall);
     }
     public List<Mark> visible(HouseMap map,LanWorld.Body viewer,EquipmentTiers.Tier tier,int tick,boolean powered){
-        if(!powered)return List.of();double range=HandheldLighting.uv(tier).reach();
-        int age=90+tier.ordinal()*35;double heading=Math.toRadians(viewer.heading());
-        return marks.stream().filter(m->{double dx=m.x()-viewer.x(),dz=m.z()-viewer.z(),distance=Math.hypot(dx,dz);
-            return tick>=m.born()&&tick-m.born()<=age&&Math.abs(m.y()-viewer.y())<.5
-                &&Math.sqrt(distance*distance+1.6*1.6)<range
-                &&(distance<.1||(dx*Math.sin(heading)+dz*Math.cos(heading))/distance>.60)
-                &&map.clearLineOfSight(viewer.x(),viewer.y()+1.62,viewer.z(),m.x(),m.y()+.06,m.z());}).toList();
+        if(!powered)return List.of();
+        double range=HandheldLighting.uv(tier).reach(),heading=Math.toRadians(viewer.heading());
+        double forwardX=Math.sin(heading),forwardZ=Math.cos(heading);
+        List<Mark> visible=new ArrayList<>();
+        for(var it=marks.descendingIterator();it.hasNext()&&visible.size()<MAX_VISIBLE;){
+            var mark=it.next();
+            if(mark.born()>tick)continue;
+            if(!detectable(mark,tier,tick))break;
+            double dx=mark.x()-viewer.x(),dz=mark.z()-viewer.z(),distance=Math.hypot(dx,dz);
+            if(Math.abs(mark.y()-viewer.y())<.5&&distance*distance+1.6*1.6<range*range
+                    &&(distance<.1||(dx*forwardX+dz*forwardZ)/distance>.60)
+                    &&map.clearLineOfSight(viewer.x(),viewer.y()+1.62,viewer.z(),mark.x(),mark.y()+.06,mark.z()))
+                visible.add(mark);
+        }
+        return List.copyOf(visible);
     }
 }

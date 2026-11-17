@@ -87,6 +87,7 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
             case KeyEvent.VK_2 -> invoke(GhostDomain.Action.DISTURB);
             case KeyEvent.VK_3 -> invoke(GhostDomain.Action.MANIFEST);
             case KeyEvent.VK_4 -> invoke(GhostDomain.Action.STRIKE);
+            case KeyEvent.VK_5 -> invoke(GhostDomain.Action.SIGNATURE);
             case KeyEvent.VK_LEFT -> renderer.yaw+=.12;
             case KeyEvent.VK_RIGHT -> renderer.yaw-=.12;
             case KeyEvent.VK_UP -> renderer.pitch=Math.min(1.05,renderer.pitch+.08);
@@ -143,13 +144,12 @@ public final class GhostPracticePanel extends JPanel implements KeyListener,Focu
             g.setColor(new Color(225,211,236));
             List<Integer> paths=obs.exits();
             String target=paths.isEmpty()?"NONE":map.roomName(paths.get(Math.floorMod(choice,paths.size())));
-            g.drawString("Z / Q SELECT ROOM    SPACE DRIFT → "+target,14,stageH+24);
-            g.drawString("1 WHISPER  2 DISTURB  3 MANIFEST  4 STRIKE  ESC "+exitLabel,14,stageH+46);
-            g.setColor(new Color(152,206,180));
-            g.drawString("READY: "+obs.legalActions()+"   HITS: "+practice.strikes()+"/2",14,stageH+68);
-            g.setColor(practice.outcome()==GhostPracticeSession.Outcome.ACTIVE?new Color(212,176,228):new Color(147,235,171));
+            g.drawString("Z / Q  Select exit    Space  Drift to "+target+"    Esc  "+exitLabel+
+                "    Hits "+practice.strikes()+"/2",14,stageH+19);
+            g.setColor(new Color(197,176,212));
             String status=practice.status();
-            g.drawString(status.substring(0,Math.min(105,status.length())),14,stageH+94);
+            g.drawString(status.substring(0,Math.min(105,status.length())),14,stageH+39);
+            GhostAbilityBar.draw(g,getWidth(),getHeight()-8,practice.abilities());
         }finally{g.dispose();}
     }
 }

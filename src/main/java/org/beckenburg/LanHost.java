@@ -26,6 +26,7 @@ public final class LanHost implements AutoCloseable {
     private final java.util.List<CampaignGuestBot> campaignBots=new ArrayList<>();
     private ContractRewards.Settlement pendingCampaignSettlement;
     private final ServerSocket listener;
+    private final int tickPeriodMillis;
     private final hbnet.Hbnet.Server secureTransport;
     private final boolean consoleAuthorityOnly;
     private final Semaphore transportSlots=new Semaphore(16);
@@ -62,48 +63,15 @@ public final class LanHost implements AutoCloseable {
         // No socket handshakes while holding the simulation lock.
         try{
             for(int n=0;n<count;n++){
-                final int[] seat={-1};
-                CampaignGuestBot bot=new CampaignGuestBot(port(),"Hired Hunter "+(n+1),lobbyPassword,()->campaignBotInput(seat[0]));
-                seat[0]=bot.seat();
-                synchronized(mutex){if(closed){bot.close();throw new IOException("Lobby closed while preparing team");}seats[seat[0]].ready=true;campaignBots.add(bot);broadcastLobby();}
+                CampaignGuestBot bot=new CampaignGuestBot(port(),"Hired Hunter "+(n+1),
+                    lobbyPassword,map.site(),n+1,tickPeriodMillis);
+                try{bot.issueSpecialistTool(campaignProfile,n+1);}
+                catch(IOException|RuntimeException failure){bot.close();throw failure;}
+                int seat=bot.seat();
+                synchronized(mutex){if(closed){bot.close();throw new IOException("Lobby closed while preparing team");}seats[seat].ready=true;campaignBots.add(bot);broadcastLobby();}
             }
         }catch(IOException|RuntimeException failure){
             for(var bot:campaignBots)bot.close();campaignBots.clear();throw failure;
-        }
-    }
-    private CampaignGuestBot.Input campaignBotInput(int seat){
-        synchronized(mutex){
-            if(!running||seat<0||!mission.alive(seat))return new CampaignGuestBot.Input(false,tick,0,0,false,false);
-            var body=world.body(seat);var leader=world.body(0);
-            int here=body.room(),target=leader.room();
-            double gx=leader.x(),gz=leader.z();boolean door=false;
-            if(here!=target&&here>=0&&target>=0){
-                int[] parent=new int[HouseMap.ROOM_COUNT];Arrays.fill(parent,-1);
-                ArrayDeque<Integer> queue=new ArrayDeque<>();queue.add(here);parent[here]=here;
-                while(!queue.isEmpty()&&parent[target]<0){int at=queue.remove();
-                    for(int next:map.adjacentRooms(at))if(parent[next]<0){parent[next]=at;queue.add(next);}}
-                if(parent[target]<0)return new CampaignGuestBot.Input(true,tick,0,0,false,false);
-                int next=target;while(parent[next]!=here)next=parent[next];
-                for(var portal:map.level().portalsFrom(here))if(!portal.kind().equals("window")&&portal.joins(here,next)){
-                    double distance=Math.hypot(body.x()-portal.x(),body.z()-portal.z());
-                    door=portal.door()&&!map.doorOpen(portal.id())&&distance<1.1;
-                    double beyond=distance<1.3?.85:0;
-                    if(portal.joins(HouseMap.EXTRACTION_ROOM,13)){
-                        var goal=map.van().world(0,VanStaging.FRONT+(next==HouseMap.EXTRACTION_ROOM?beyond:-beyond));gx=goal.x();gz=goal.z();
-                    }else if(portal.alongX()){gx=portal.x();gz=portal.z()+Math.signum(map.centerZ(next)-portal.z())*beyond;}
-                    else{gx=portal.x()+Math.signum(map.centerX(next)-portal.x())*beyond;gz=portal.z();}break;
-                }
-            }
-            double distance=Math.hypot(gx-body.x(),gz-body.z());
-            if(here==target&&distance<1.8)return new CampaignGuestBot.Input(true,tick,0,0,door,here<HouseMap.EXTRACTION_ROOM);
-            double heading=Math.atan2(gx-body.x(),gz-body.z());
-            for(double adjust:new double[]{0,.4,-.4,.85,-.85,1.25,-1.25}){
-                double angle=heading+adjust,x=Math.sin(angle),z=Math.cos(angle);
-                var at=new LevelDefinition.Vec(body.x(),body.y(),body.z());
-                if(map.resolveMove(at,body.x()+x*.21,body.z()+z*.21)!=null)
-                    return new CampaignGuestBot.Input(true,tick,(int)Math.round(x*100),(int)Math.round(z*100),door,here<HouseMap.EXTRACTION_ROOM);
-            }
-            return new CampaignGuestBot.Input(true,tick,0,0,door,here<HouseMap.EXTRACTION_ROOM);
         }
     }
     /** Failed disk saves remain retryable from the owning lobby until saved. */
@@ -177,6 +145,8 @@ public final class LanHost implements AutoCloseable {
     private final ArrayDeque<HauntTrack> hauntTracks=new ArrayDeque<>();
     private final HunterCounters counters=new HunterCounters();
     private final UvEvidenceMarks uvEvidence=new UvEvidenceMarks();
+    private LanCameraSight.Orb cameraOrb;
+    private final AdditionalEvidence.Deposits surfaceDeposits=new AdditionalEvidence.Deposits();
     private final int[] lastOpticalSeen={-10000,-10000,-10000,-10000,-10000,-10000};
     private final CustomContract contract;
     private final MissionWeather weather;
@@ -255,29 +225,67 @@ public final class LanHost implements AutoCloseable {
     }
     public static LanHost dedicated(String ip,int port,GhostIdentity.Type type,CustomContract config,
             HouseMap.Site site,hbnet.Hbnet.Server transport)throws IOException{
-        return new LanHost(ip,port,type,true,config,false,false,site,Objects.requireNonNull(transport),true);
+        var map=new HouseMap(site);
+        long seed=ThreadLocalRandom.current().nextLong();
+        int anchor=chooseAnchor(map,seed);
+        return new LanHost(ip,port,type,true,config,false,false,site,
+            Objects.requireNonNull(transport),true,map,anchor,100,seed);
+    }
+    /** The normal lobby and local launchers use the saved campaign seed on retries. */
+    static LanHost investigation(String ip,int port,GhostIdentity.Type type,CustomContract config,
+            boolean hostAsGhost,HouseMap.Site site,hbnet.Hbnet.Server transport,long seed)throws IOException{
+        return investigation(ip,port,type,config,hostAsGhost,site,transport,seed,100);
+    }
+    /** In-process diagnostics can advance the same simulation ticks at a shorter wall interval. */
+    static LanHost investigation(String ip,int port,GhostIdentity.Type type,CustomContract config,
+            boolean hostAsGhost,HouseMap.Site site,hbnet.Hbnet.Server transport,long seed,int tickMillis)throws IOException{
+        if(tickMillis<5||tickMillis>100)throw new IllegalArgumentException("tick interval out of range");
+        var map=new HouseMap(site);
+        return new LanHost(ip,port,type,true,config,hostAsGhost,true,site,transport,false,map,
+            chooseAnchor(map,seed),tickMillis,seed);
+    }
+    static int chooseAnchor(HouseMap map,long seed){
+        var candidates=new ArrayList<Integer>();
+        for(int room=0;room<map.interiorRoomCount();room++){
+            var spawn=SafeAreaBarrier.ghostSpawn(map,room);
+            if(spawn!=null&&map.roomAt(spawn.x(),spawn.y(),spawn.z())==room
+                    &&map.traversable(spawn.x(),spawn.y(),spawn.z())&&!map.ghostExits(room).isEmpty())
+                candidates.add(room);
+        }
+        if(candidates.isEmpty())throw new IllegalArgumentException("no playable haunting anchor");
+        return candidates.get(new Random(seed).nextInt(candidates.size()));
     }
     private LanHost(String ip,int port,GhostIdentity.Type type,boolean identityMode,
             CustomContract config,boolean hostAsGhost,boolean secureLocalOwner,
             HouseMap.Site site,hbnet.Hbnet.Server transport,boolean consoleOnly)throws IOException {
         this(ip,port,type,identityMode,config,hostAsGhost,secureLocalOwner,site,transport,consoleOnly,
-            new HouseMap(Objects.requireNonNull(site)));
+            new HouseMap(Objects.requireNonNull(site)),4);
     }
     /** Host an immutable authored construction source through the ordinary case validator.
      * Package scope keeps editor/test previews out of the public lobby selection. */
     LanHost(String ip,int port,GhostIdentity.Type type,CustomContract config,HouseMap authored)throws IOException{
-        this(ip,port,type,true,config,false,false,authored.site(),null,false,authored);
+        this(ip,port,type,config,authored,4);
+    }
+    LanHost(String ip,int port,GhostIdentity.Type type,CustomContract config,
+            HouseMap authored,int anchor)throws IOException{
+        this(ip,port,type,true,config,false,false,authored.site(),null,false,authored,anchor);
     }
     private LanHost(String ip,int port,GhostIdentity.Type type,boolean identityMode,
             CustomContract config,boolean hostAsGhost,boolean secureLocalOwner,
-            HouseMap.Site site,hbnet.Hbnet.Server transport,boolean consoleOnly,HouseMap authored)throws IOException {
+            HouseMap.Site site,hbnet.Hbnet.Server transport,boolean consoleOnly,HouseMap authored,int anchor)throws IOException {
+        this(ip,port,type,identityMode,config,hostAsGhost,secureLocalOwner,site,transport,consoleOnly,authored,anchor,100,20261016L);
+    }
+    private LanHost(String ip,int port,GhostIdentity.Type type,boolean identityMode,
+            CustomContract config,boolean hostAsGhost,boolean secureLocalOwner,
+            HouseMap.Site site,hbnet.Hbnet.Server transport,boolean consoleOnly,HouseMap authored,int anchor,int tickMillis,long aiSeed)throws IOException {
+        tickPeriodMillis=tickMillis;
         consoleAuthorityOnly=consoleOnly;
         secureTransport=transport;
         if(port<0||port>65535)throw new IllegalArgumentException("invalid port");
         map=Objects.requireNonNull(authored);
         if(map.site()!=site)throw new IllegalArgumentException("Authored site mismatch");
         world=new LanWorld(map);
-        ghostPose=new LanGhostSpatial(map,4);
+        ghostPose=new LanGhostSpatial(map,anchor);
         if(!map.valid()||!RitualSites.valid(map))
             throw new IllegalArgumentException("unplayable authored investigation site");
         ghostType=Objects.requireNonNull(type);
@@ -303,10 +311,10 @@ public final class LanHost implements AutoCloseable {
         ghostPose.configureBurst(ghostType,contract.ghostSprintSeconds());
         twinCompanion=ghostType.baseType()==GhostIdentity.Type.TWINS
             ?new TwinCompanionAi(map,ghostPose.pose(),0x7477696e73L+ghostType.ordinal()):null;
-        ghost=new GhostDomain(map,4,type);
+        ghost=new GhostDomain(map,anchor,type);
         frenzy=new GhostFrenzy(type);
         actionCadence=new GhostActionCadence(type);
-        mission=new LanCase(4,map);
+        mission=new LanCase(anchor,map);
         mission.configureHunters(contract.hunters());
         mission.configurePartyThreat(contract.partyDifficulty());
         mission.setStartingSanity(contract.startingSanity());
@@ -332,7 +340,7 @@ public final class LanHost implements AutoCloseable {
         mission.configureEvidenceClimate(season,weather.state().weather(),
             climateClock.getHour(),true,GhostEvidenceProfile.thermal(ghostType));
         mission.updateEvidenceWeather(weather.state().weather(),weather.state().intensity());
-        ai=new LanGhostPursuit(map,20261016L,type,aiDiagnostics);
+        ai=new LanGhostPursuit(map,aiSeed,type,aiDiagnostics);
         ai.configureFrequency(contract.eventFrequency());
         bindAddress=Objects.requireNonNull(ip);
         listener=transport==null?new ServerSocket():transport.listen(ip,port);
@@ -343,7 +351,11 @@ public final class LanHost implements AutoCloseable {
         try{voice=transport==null?new LanVoiceRelay(listener.getInetAddress(),0,this::routeVoice):null;}
         catch(SocketException failure){listener.close();throw failure;}
         workers.execute(this::acceptLoop);
-        clock.scheduleAtFixedRate(this::tickSafely,100,100,TimeUnit.MILLISECONDS);
+        if(tickPeriodMillis==100)
+            clock.scheduleAtFixedRate(this::tickSafely,100,100,TimeUnit.MILLISECONDS);
+        else
+            // An overloaded diagnostic must slow down in wall time, not burst network frames.
+            clock.scheduleWithFixedDelay(this::tickSafely,tickPeriodMillis,tickPeriodMillis,TimeUnit.MILLISECONDS);
     }
     /** Returned only to the in-process launcher, never in a lobby broadcast. */
     public String localOwnerCredential(){
@@ -363,6 +375,23 @@ public final class LanHost implements AutoCloseable {
     public String aiDiagnosticsCsv(){
         return org.beckenburg.editor.ai.NpcAiTelemetryReport.csv(aiDiagnostics.snapshot());
     }
+    /** Host-local readback. No protocol frame carries these counters. */
+    public record GhostBudget(int energy,int gained,int spent,int ordinarySpent,int frenzySpent,
+            int repelled,int homeGained,int frenzyStarts,int claws,int dreads,
+            Map<GhostDomain.Action,Integer> actions){}
+    record RackExchange(int tick,int seat,int slot,String tool){}
+    private final ArrayDeque<RackExchange> rackEvents=new ArrayDeque<>();
+    List<RackExchange> devRackExchanges(){
+        synchronized(mutex){return List.copyOf(rackEvents);}
+    }
+    public GhostBudget devGhostBudget(){
+        synchronized(mutex){
+            int spent=ghost.ordinarySpent()+ghost.frenzySpent()+ghost.repelled();
+            return new GhostBudget(ghost.energy(),ghost.gained(),spent,ghost.ordinarySpent(),
+                ghost.frenzySpent(),ghost.repelled(),ghost.homeGained(),frenzy.attempts(),
+                frenzy.claws(),frenzy.dreads(),ghost.actionCounts());
+        }
+    }
     /**
      * Local developer inspector only: never sent in broadcastWorld(), included in
      * seats[], or exposed to bot controllers. All fields refer to one host tick.
@@ -379,7 +408,8 @@ public final class LanHost implements AutoCloseable {
             Peer spectral=seats[GHOST_SEAT];
             return new DevAdminSnapshot(tick,running,hunters,
                 new DevAdminSnapshot.Ghost(spectral!=null,spectral!=null&&spectral.ready,
-                    spectral==null,ghostPose.pose(),ghost.energy(),ghost.manifested()),
+                    spectral==null,ghostPose.pose(),ghost.energy(),ghost.manifested(),
+                    GhostAbilityBar.inspect(ghost,frenzy)),
                 ghostType,mission.identified(),mission.outcome(),map.doorSnapshot(),map.windowSnapshot(),casefile.snapshot(),List.copyOf(devCombatEvents));
         }
     }
@@ -775,6 +805,8 @@ public final class LanHost implements AutoCloseable {
                     reply(peer,supplies[peer.slot].frame());
                     sendEquipmentState(peer);
                     reply(peer,"PARTY|"+partyMembers()+"|"+partyMembers());
+                    if(mission.identified()!=null)
+                        reply(peer,"IDENTIFIED|"+mission.identified()+"|"+mission.identified().rite());
                     if(mission.ritualProgress()>=0&&mission.activeRite()!=null)
                         reply(peer,"RITUAL|STARTED|"+mission.activeRite());
                     reply(peer,frenzyFrame());
@@ -1001,10 +1033,17 @@ public final class LanHost implements AutoCloseable {
                     map.clutter().action(p.get(1),LanProtocol.integer(p.get(2),1,500),observer,tick);
                     reply(peer,"ACCEPT|OBJECT");broadcastClutter();
                 }
-                case "DOOR" -> {
+                case "DOOR","OPENDOOR" -> {
                     if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=2)throw new IllegalArgumentException("door command unavailable");
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(1)));
                     ensureActiveHunter(peer);
+                    if(p.get(0).equals("OPENDOOR")){
+                        var body=world.body(peer.slot);
+                        var nearest=map.nearestDoor(body.x(),body.y(),body.z());
+                        if(nearest!=null&&map.doorOpen(nearest.id())){
+                            reply(peer,"ACCEPT|DOOR");break;
+                        }
+                    }
                     if(!world.door(peer.slot,tick))throw new IllegalArgumentException("no reachable door");
                     recordSound(peer.slot,LanGhostPursuit.Sound.DOOR);
                     reply(peer,"ACCEPT|DOOR");broadcastWorld();
@@ -1083,7 +1122,7 @@ public final class LanHost implements AutoCloseable {
                         throw new IllegalArgumentException("retrieve dropped equipment before rack service");
                     if(recorders[peer.slot].recording())stopRecording(peer.slot);
                     equipment[peer.slot].rechargeAtVan();
-                    reply(peer,"ACCEPT|GEARREFILL|FILM AND BATTERIES RESTORED");
+                    reply(peer,"ACCEPT|GEARREFILL|FILM, COLLECTION KITS AND BATTERIES RESTORED");
                     actorCue(peer.slot,LanSound.Cue.DEVICE_ON);
                     sendEquipmentState(peer);
                 }
@@ -1124,6 +1163,10 @@ public final class LanHost implements AutoCloseable {
                     if(droppedGear.heldInWorld(peer.slot,id))
                         throw new IllegalArgumentException("instrument is dropped in the world, not on the rack");
                     equipment[peer.slot].equip(slot,id);
+                    if(running){
+                        if(rackEvents.size()>=256)rackEvents.removeFirst();
+                        rackEvents.addLast(new RackExchange(tick,peer.slot,slot,id));
+                    }
                     reply(peer,"ACCEPT|GEAREQUIP|"+slot+"|"+id);
                     actorCue(peer.slot,LanSound.Cue.PICKUP);
                     sendEquipmentState(peer);
@@ -1306,7 +1349,6 @@ public final class LanHost implements AutoCloseable {
                         case "UV_LIGHT" -> {
                             boolean enabled=gear.toggle(id);
                             notifyHunters("GEARFX|"+peer.slot+"|UV_LIGHT|"+(enabled?1:0));
-                            int persistence=90+gear.owned(id).ordinal()*35;
                             reading=enabled&&!uvEvidence.visible(map,world.body(peer.slot),gear.owned(id),tick,true).isEmpty()
                                 ?"UV light / genuine surface trace":"UV light / no visible trace";
                         }
@@ -1392,20 +1434,17 @@ public final class LanHost implements AutoCloseable {
                             int sourceRoom=stationary?station.room():room;
                             double range=Math.hypot(originX-ghostPose.pose().x(),
                                 originZ-ghostPose.pose().z());
-                            if((id.equals("ECTOPLASM_SAMPLER")
-                                    ||id.equals("OBJECT_IMPRINT_SCANNER"))
-                                    &&gear.remaining(id)<1)
+                            boolean collector=id.equals("ECTOPLASM_SAMPLER")||id.equals("OBJECT_IMPRINT_SCANNER");
+                            if(collector&&gear.remaining(id)<1)
                                 throw new IllegalArgumentException("collection kit empty");
-                            AdditionalEvidence.Sample sample=AdditionalEvidence.measure(id,ghostType,
-                                mission.hardEvidenceQuota(),tick,lastEvidenceEventTick,
-                                lastEvidenceEventPower,lastEvidenceEventAction,
-                                sourceRoom==lastEvidenceEventRoom,range,stage);
+                            AdditionalEvidence.Sample sample=collector
+                                ?surfaceDeposits.collect(id,ghostType,mission.hardEvidenceQuota(),tick,body,stage)
+                                :AdditionalEvidence.measure(id,ghostType,mission.hardEvidenceQuota(),tick,
+                                    lastEvidenceEventTick,lastEvidenceEventPower,lastEvidenceEventAction,
+                                    sourceRoom==lastEvidenceEventRoom,range,stage);
                             reading=sample.reading();
-                            // Swabs/plates consume a charge when a physical trace
-                            // was actually collected; the UI never certifies its meaning.
-                            if(sample.detected()&&(id.equals("ECTOPLASM_SAMPLER")
-                                    ||id.equals("OBJECT_IMPRINT_SCANNER")))
-                                gear.expend(id);
+                            // Only a successful physical collection spends a charge.
+                            if(sample.detected()&&collector)gear.expend(id);
                         }
                         case "EMF_ARRAY","THERMAL_BEACON","MOTION_SENSOR","SOUND_SENSOR","LASER_GRID" -> {
                             LanWorld.Body body=world.body(peer.slot);
@@ -1644,6 +1683,8 @@ public final class LanHost implements AutoCloseable {
                         throw new IllegalArgumentException("physical hunter required");
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(1)));
                     ensureActiveHunter(peer);
+                    if(!equipment[peer.slot].active().equals("GHOST_WRITING_BOOK"))
+                        throw new IllegalArgumentException("hold the writing book to deploy it");
                     int room=world.body(peer.slot).room();
                     if(room<0||room>=HouseMap.INDOOR_ROOMS||writingBook.placed())
                         throw new IllegalArgumentException("book unavailable or already deployed");
@@ -1690,8 +1731,11 @@ public final class LanHost implements AutoCloseable {
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(1)));
                     ensureActiveHunter(peer);
                     int room=world.body(peer.slot).room();
+                    FieldEquipment kit=equipment[peer.slot];
+                    if(!kit.active().equals("UV_LIGHT")||!kit.powered("UV_LIGHT"))
+                        throw new IllegalArgumentException("hold a powered UV lamp to inspect a surface");
                     boolean trace=mission.allowsEvidence(HardEvidenceQuota.Family.UV)
-                        &&counters.recentUv(room,tick);
+                        &&!uvEvidence.visible(map,world.body(peer.slot),kit.owned("UV_LIGHT"),tick,true).isEmpty();
                     reply(peer,"ACCEPT|UVSCAN|"+(trace?"FRESH SURFACE TRACE":"NO RECENT TRACE"));
                     String uvNote=casefile.recordDevice(tick,peer.slot,room,"UV_LAMP",
                         LanEvidenceJournal.Finding.OBSERVED,
@@ -1703,6 +1747,14 @@ public final class LanHost implements AutoCloseable {
                     if(!running||peer.slot==GHOST_SEAT||p.size()!=3)throw new IllegalArgumentException("hunter action unavailable");
                     LanCase.Tool tool=LanCase.Tool.valueOf(p.get(1));
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(2)));
+                    String instrument=switch(tool){
+                        case EMF->"EMF_READER";
+                        case THERMOMETER->"THERMOMETER";
+                        case SPIRIT_BOX->"SPIRIT_BOX";
+                    };
+                    FieldEquipment kit=equipment[peer.slot];
+                    if(!kit.carries(instrument)||kit.batterySecondsLeft(instrument)==0)
+                        throw new IllegalArgumentException("a charged instrument on your belt is required");
                     int eventAge=tick-lastEvidenceEventTick;
                     int eventPower=eventAge>=0&&eventAge<=40
                         ?Math.max(0,lastEvidenceEventPower-eventAge/7):0;
@@ -1941,8 +1993,8 @@ public final class LanHost implements AutoCloseable {
                 case "GDEVICE" -> {
                     if(!running||peer.slot!=GHOST_SEAT||!peer.ghostWorldMode||p.size()!=3)throw new IllegalArgumentException("spectral device use unavailable");
                     long seq=LanProtocol.sequence(p.get(2));if(seq<=peer.lastGhostActionSequence)throw new IllegalArgumentException("stale spectral device request");peer.lastGhostActionSequence=seq;
-                    int id=LanProtocol.integer(p.get(1),1,100);var f=map.fixtures().state(id);var pose=ghostPose.pose();
-                    if(f.room()!=ghost.room()||Math.hypot(f.x()-pose.x(),f.z()-pose.z())>8||!map.clearLineOfSight(pose.x(),pose.y()+1.3,pose.z(),f.x(),f.y()+.1,f.z())||frenzy.phase()!=GhostFrenzy.Phase.CALM)throw new IllegalArgumentException("fixture outside spectral reach");
+                    int id=LanProtocol.integer(p.get(1),1,100);
+                    if(!reachableGhostFixture(map.fixtures().state(id)))throw new IllegalArgumentException("fixture outside spectral reach");
                     var result=ghost.dispatch(new GhostDomain.Command(GhostDomain.Action.DISTURB,ghost.room(),++hostGhostActionSequence,GhostDomain.Source.HUMAN));
                     if(!result.applied())throw new IllegalArgumentException(result.reason());
                     actionCadence.completed(tick,result);resolveGhostAction(result,id);reply(peer,"ACCEPT|GDEVICE");broadcastState();broadcastFixtures();
@@ -2143,11 +2195,9 @@ public final class LanHost implements AutoCloseable {
             hunterRooms[seat],new LevelDefinition.Vec(body.x(),body.y(),body.z()),
             type,weather.state(),profile);}
         finally{aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HEARING,acousticStart);}
-        // Only a human ghost player loses hearing while moving. AI ghosts
-        // and autonomous Twins keep their existing physical hearing behavior.
-        Peer humanGhost=seats[GHOST_SEAT];
-        if(humanGhost!=null&&humanGhost.ghostWorldMode&&!ghostPose.listening(tick))
-            heard=false;
+        // Both controllers must stop and listen. The independent Twin heard
+        // the event above from its own pose.
+        if(!ghostPose.listening(tick))heard=false;
         if(heard){
             lastGhostSoundTick=tick;
             lastGhostSoundRoom=hunterRooms[seat];
@@ -2423,6 +2473,37 @@ public final class LanHost implements AutoCloseable {
         var contact=new StructuredLightVolume.Contact(station.id(),pose.room(),pose.x(),pose.y(),pose.z(),tick);
         return StructuredLightVolume.beams(map,station).stream().anyMatch(b->StructuredLightVolume.intersection(b,contact)!=null)?contact:null;
     }
+    private boolean reachableGhostFixture(HauntedFixtures.State fixture){
+        var pose=ghostPose.pose();
+        return frenzy.phase()==GhostFrenzy.Phase.CALM&&fixture.room()==pose.room()
+            &&Math.hypot(fixture.x()-pose.x(),fixture.z()-pose.z())<=8
+            &&map.clearLineOfSight(pose.x(),pose.y()+1.3,pose.z(),
+                fixture.x(),fixture.y()+.1,fixture.z());
+    }
+    private int aiFixture(){
+        for(var fixture:map.fixtures().states())
+            if(!fixture.active()&&reachableGhostFixture(fixture))return fixture.id();
+        return -1;
+    }
+    /** The attachment pulls an overdue ghost home one ordinary paid DRIFT at a time. */
+    private void returnGhostHome(){
+        int next=ghost.homewardStep();
+        if(next<0)return;
+        int from=ghost.room();
+        var result=ghost.dispatch(new GhostDomain.Command(GhostDomain.Action.DRIFT,next,
+            ++hostGhostActionSequence,GhostDomain.Source.AI));
+        if(!result.applied())return;
+        ghostPose.syncRoom(next);
+        onGhostTravel(from,next);
+        resolveGhostAction(result);
+        broadcastApparitions();
+        Peer player=seats[GHOST_SEAT];
+        if(player!=null&&player.ghostWorldMode){
+            reply(player,"FIELD|THE ATTACHMENT DRAWS YOU HOME");
+            reply(player,ghostPose.frame(tick));
+            sendGhostPrompt();
+        }
+    }
     /** AI and human origins both enter this exact damage/telegraph pipeline. */
     private void resolveGhostAction(GhostDomain.Resolution result){
         resolveGhostAction(result,-1);
@@ -2433,6 +2514,7 @@ public final class LanHost implements AutoCloseable {
     private void resolveGhostAction(GhostDomain.Resolution result,int requestedDevice,
                                     LanGhostSpatial.Pose soundOrigin){
         if(!result.applied())return;
+        if(result.action()==GhostDomain.Action.SIGNATURE)ai.resetSignature(tick);
         map.fixtures().witness(result,tick,requestedDevice);
         map.clutter().haunt(ghostType,result,clutterObservers(),tick);
         int eventPower=switch(result.action()){
@@ -2445,6 +2527,10 @@ public final class LanHost implements AutoCloseable {
             lastVocalEventRoom=result.room();
         }
         if(eventPower>0){
+            var origin=soundOrigin==null?ghostPose.pose():soundOrigin;
+            surfaceDeposits.record(tick,result,origin,eventPower);
+            if(GhostTraits.of(ghostType).sight()==GhostTraits.Sight.ORBS&&mission.allowsEvidence(HardEvidenceQuota.Family.ORBS))
+                cameraOrb=new LanCameraSight.Orb(origin,tick);
             if(mission.allowsEvidence(HardEvidenceQuota.Family.WRITING)&&writingBook.witness(20261018L,tick,result,ghostType))
                 notifyHunters(writingBook.writingFrame());
             lastEvidenceEventTick=tick;
@@ -2529,6 +2615,7 @@ public final class LanHost implements AutoCloseable {
     private void sendGhostPrompt(){
         Peer player=seats[GHOST_SEAT];
         if(player!=null&&running&&player.ghostWorldMode){
+            reply(player,GhostAbilityBar.inspect(ghost,frenzy).packet());
             if(frenzy.phase()!=GhostFrenzy.Phase.CALM)
                 reply(player,"GPROMPT|"+tick+"|"+actionCadence.dueTick()+"|"+ghost.room());
             else reply(player,actionCadence.prompt(ghost.observe()));
@@ -2542,8 +2629,9 @@ public final class LanHost implements AutoCloseable {
     private void enforceGhostDeadline(){
         if(frenzy.phase()!=GhostFrenzy.Phase.CALM||!actionCadence.due(tick))return;
         GhostDomain.Observation state=ghost.observe();
-        GhostDomain.Action action=actionCadence.fallback(state,
-            LanSpatialCombat.any(strikeVictims()));
+        boolean due=ai.signatureAvailable(tick);
+        boolean save=seats[GHOST_SEAT]==null&&due&&ghost.energy()<ghost.cost(GhostDomain.Action.SIGNATURE);
+        GhostDomain.Action action=actionCadence.fallback(state,LanSpatialCombat.any(strikeVictims()),due,save);
         if(action==null)return;
         int before=ghost.room();
         GhostDomain.Resolution result=ghost.dispatch(new GhostDomain.Command(
@@ -2632,6 +2720,8 @@ public final class LanHost implements AutoCloseable {
             if((seats[i]==null&&reserved[i]==null)||!mission.alive(i)||world.hidden(i)
                     ||hunterRooms[i]!=pos.room())continue;
             LanWorld.Body body=world.body(i);
+            if(SafeAreaBarrier.protectedAt(map,body.x(),body.y(),body.z())
+                    ||counters.wardsAt(body.x(),body.y(),body.z(),tick))continue;
             double d=Math.hypot(body.x()-pos.x(),body.z()-pos.z());
             if(d<best&&d<12&&map.clearLineOfSight(pos.x(),pos.y()+1.3,pos.z(),body.x(),body.y()+1.3,body.z())){
                 best=d;closest=i;
@@ -2806,7 +2896,10 @@ public final class LanHost implements AutoCloseable {
                     notifyHunters("LIGHTFX|"+ghost.room()+"|DANGEROUS|"+tick+"|"+(tick+22));
                 }
             }
-            if(frenzy.phase()==GhostFrenzy.Phase.CALM && frenzy.consider(
+            if(frenzy.phase()==GhostFrenzy.Phase.CALM
+                    &&(seats[GHOST_SEAT]!=null||!ai.signatureAvailable(tick)
+                        ||GhostTraits.of(ghostType).huntsSolitary()&&occupants>1)
+                    &&frenzy.consider(
                     tick,ghost,anyHunterInSite(),averageSanity()))onFrenzyTransition();
             if(tick%12==0)monitor.sample(tick,ghost.energy());
             // Cumulative room psychology is deliberately slower than active ghost attacks.
@@ -2851,6 +2944,7 @@ public final class LanHost implements AutoCloseable {
                 notifyHunters("FIELD|CROSS REPELLED THE ENTITY");
                 broadcastApparitions();
             }
+            if(!frenzy.active())returnGhostHome();
             if(seats[GHOST_SEAT]==null){
                 long perceptionStart=aiDiagnostics.begin();
                 GhostDomain.Observation seen=ghost.observe();
@@ -2858,7 +2952,12 @@ public final class LanHost implements AutoCloseable {
                 LanGhostPursuit.Impulse impulse=frenzy.raging()?frenzyChaseImpulse():null;
                 if(impulse==null){
                     long approachStart=aiDiagnostics.begin();
-                    try{impulse=ai.approach(seen,ghostPose.pose());}
+                    try{
+                        var pose=ghostPose.pose();
+                        impulse=ai.approach(seen,pose);
+                        if(impulse==null&&ai.memory(tick)==null&&ai.search(tick)==null)
+                            impulse=ai.patrol(seen,pose);
+                    }
                     finally{aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.APPROACH,approachStart);}
                 }
                 if(impulse!=null){try{
@@ -2888,7 +2987,8 @@ public final class LanHost implements AutoCloseable {
                         ghostPose.syncRoom(ghost.room());
                         onGhostTravel(from,ghost.room());
                         actionCadence.completed(tick,result);
-                        resolveGhostAction(result);broadcastApparitions();
+                        int fixture=result.action()==GhostDomain.Action.DISTURB?aiFixture():-1;
+                        resolveGhostAction(result,fixture);broadcastApparitions();
                     }
                 }
             }}
@@ -2930,7 +3030,7 @@ public final class LanHost implements AutoCloseable {
                     reply(seats[i],new LanSound.CueEvent(LanSound.Cue.RITUAL_END,0,85,tick).frame());
             if(ritual==LanCase.RitualAdvance.PAUSED
                     ||ritual==LanCase.RitualAdvance.RESUMED
-                    ||ritual==LanCase.RitualAdvance.BROKEN){
+                    ||ritual==LanCase.RitualAdvance.BROKEN||ritual==LanCase.RitualAdvance.DISPROVED){
                 notifyHunters("RITUAL|"+ritual);
                 broadcastProgress();
             }
@@ -3052,6 +3152,10 @@ public final class LanHost implements AutoCloseable {
                         &&equipment[camera.owner()].batterySecondsLeft("VIDEO_CAMERA")>0;
                     // This feed is physically accessible at the van receiver,
                     // not an omniscient radio broadcast to field investigators.
+                    if(cameraOrb!=null){
+                        String orb=cameraOrb.sample(map,camera,powered,tick);
+                        if(orb!=null)reply(hunter,orb);
+                    }
                     boolean seen=powered
                         &&LanCameraSight.sees(map,camera,pose,ghost.manifested(),ghostType,"a",
                             signatureReveal);

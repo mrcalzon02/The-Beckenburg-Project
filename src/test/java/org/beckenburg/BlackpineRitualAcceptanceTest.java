@@ -19,7 +19,7 @@ public final class BlackpineRitualAcceptanceTest {
             mission.applyGhostEffect(site.room(),defended,new GhostDomain.Resolution(true,"validated disturbance",GhostDomain.Action.DISTURB,site.room(),40,1,0,true));
             check(mission.ritualProgress()==3,"ghost can delay defended Blackpine rite");
             check(mission.advance(empty)==LanCase.RitualAdvance.PAUSED,"unattended rite pauses");
-            for(int i=0;i<19;i++)mission.advance(empty);
+            for(int i=0;i<79;i++)mission.advance(empty);
             check(mission.ritualProgress()==-1&&mission.outcome()==LanCase.Outcome.ACTIVE,"abandoned rite breaks without a win");
             check(mission.performRite(0,rite,site.room(),true).accepted(),"explicit restart");
             for(int i=0;i<mission.requiredRitualTicks();i++)mission.advance(defended);

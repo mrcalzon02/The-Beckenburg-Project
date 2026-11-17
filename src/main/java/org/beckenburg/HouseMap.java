@@ -266,9 +266,15 @@ public final class HouseMap {
         Portal p=nearestWindow(x,y,z);if(p==null)return false;
         if(!openWindows.add(p.id()))openWindows.remove(p.id());return true;
     }
-    public boolean toggleNearestDoor(double x,double y,double z){
+    Portal nearestDoor(double x,double y,double z){
         Portal best=null;double distance=1.65;
-        for(Portal p:level.portals())if(p.door()&&Math.abs(p.y()-y)<.65){double d=Math.hypot(x-p.x(),z-p.z());if(d<distance){best=p;distance=d;}}
+        for(Portal p:level.portals())if(p.door()&&Math.abs(p.y()-y)<.65){
+            double d=Math.hypot(x-p.x(),z-p.z());if(d<distance){best=p;distance=d;}
+        }
+        return best;
+    }
+    public boolean toggleNearestDoor(double x,double y,double z){
+        Portal best=nearestDoor(x,y,z);
         if(best==null)return false;toggleDoor(best.id());return true;
     }
     public boolean toggleNearestDoor(double x,double z){int r=roomAt(x,z);return r>=0&&toggleNearestDoor(x,floorY(r),z);}

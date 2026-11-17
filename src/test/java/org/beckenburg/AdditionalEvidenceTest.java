@@ -14,7 +14,33 @@ public final class AdditionalEvidenceTest {
         if(!yes)throw new AssertionError(reason);
     }
     private record Probe(String id,GhostIdentity.Type type,GhostDomain.Action cause){}
+    private static void depositedSamples(){
+        var species=GhostIdentity.Type.POSSESSIVE;
+        var quota=new HardEvidenceQuota(species,HardEvidenceQuota.Level.EASY,314159);
+        var residue=new AdditionalEvidence.Deposits();
+        var lab=new LanGhostSpatial.Pose(4,12,0,8,0);
+        var kitchen=new LanGhostSpatial.Pose(5,20,3,14,0);
+        var atLab=new LanWorld.Body(12,0,8.3,0,4);
+        var acrossLab=new LanWorld.Body(17,0,8,0,4);
+        var upstairs=new LanWorld.Body(12,3,8,0,5);
+        residue.record(100,new GhostDomain.Resolution(true,"accepted",GhostDomain.Action.DISTURB,4,80,0,0,false),lab,8);
+        residue.record(115,new GhostDomain.Resolution(true,"accepted",GhostDomain.Action.WHISPER,5,74,0,0,false),kitchen,3);
+        for(String id:new String[]{"ECTOPLASM_SAMPLER","OBJECT_IMPRINT_SCANNER"}){
+            var stage=EquipmentTiers.stage(id,EquipmentTiers.Tier.I);
+            int lifetime=AdditionalEvidence.lifetime(AdditionalEvidence.phenomenon(id));
+            var late=residue.collect(id,species,quota,100+lifetime,atLab,stage);
+            ok(late.detected(),"real deposit remains at the original site after a later sound in another room");
+            ok(!residue.collect(id,species,quota,100+lifetime,acrossLab,stage).detected(),"must reach the actual deposit");
+            ok(!residue.collect(id,species,quota,100+lifetime,upstairs,stage).detected(),"no samples from a different floor");
+            ok(!residue.collect(id,species,quota,101+lifetime,atLab,stage).detected(),"expired deposit reads clean");
+        }
+        var tuner=EquipmentTiers.stage("RESONANCE_TUNER",EquipmentTiers.Tier.I);
+        var demon=GhostIdentity.Type.DEMON;
+        ok(!AdditionalEvidence.measure("RESONANCE_TUNER",demon,new HardEvidenceQuota(demon,HardEvidenceQuota.Level.EASY,5),
+                167,100,9,GhostDomain.Action.WHISPER,true,.2,tuner).detected(),"a live sound cannot be collected minutes later");
+    }
     public static void main(String[] args){
+        depositedSamples();
         Probe[] seven={
             new Probe("ECTOPLASM_SAMPLER",GhostIdentity.Type.POSSESSIVE,GhostDomain.Action.DISTURB),
             new Probe("RESONANCE_TUNER",GhostIdentity.Type.DEMON,GhostDomain.Action.WHISPER),

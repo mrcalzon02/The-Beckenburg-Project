@@ -49,12 +49,17 @@ public final class GhostAiScenarioRunner {
             telemetry.end(NpcAiTelemetry.Metric.PERCEPTION,started);
             started=telemetry.begin();
             GhostDomain.Command choice;
-            try{choice=pursuit.decide(state,false);}
+            try{
+                int home=ghost.homewardStep();
+                choice=home<0?pursuit.decide(state,false)
+                    :new GhostDomain.Command(GhostDomain.Action.DRIFT,home,sequence+1,GhostDomain.Source.AI);
+            }
             finally{telemetry.end(NpcAiTelemetry.Metric.DECISION,started);}
             GhostDomain.Action action=choice==null?null:choice.action();
             int destination=choice==null?state.room():choice.targetRoom();
             if(action==null&&cadence.due(tick)){
-                action=cadence.fallback(state,false);
+                action=cadence.fallback(state,false,pursuit.signatureAvailable(tick),
+                    pursuit.signatureAvailable(tick)&&ghost.energy()<ghost.cost(GhostDomain.Action.SIGNATURE));
                 destination=state.room();
             }
             if(action==null)continue;
@@ -70,6 +75,7 @@ public final class GhostAiScenarioRunner {
             if(appliedEvent.applied()){
                 applied++;
                 if(action==GhostDomain.Action.DRIFT)drift++;
+                if(action==GhostDomain.Action.SIGNATURE)pursuit.resetSignature(tick);
                 cadence.completed(tick,appliedEvent);
             }else rejected++;
             record(recent,new Event(tick,action.name(),appliedEvent.applied(),appliedEvent.reason()));

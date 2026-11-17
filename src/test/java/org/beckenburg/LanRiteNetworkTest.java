@@ -11,7 +11,7 @@ public final class LanRiteNetworkTest {
    client=new LanClient("127.0.0.1",port,ghost,label,events::offer);
   }
   String until(String prefix)throws Exception{
-   long end=System.nanoTime()+TimeUnit.SECONDS.toNanos(11);
+   long end=System.nanoTime()+TimeUnit.SECONDS.toNanos(prefix.startsWith("RESULT|")?130:11);
    while(System.nanoTime()<end){
     String e=events.poll(100,TimeUnit.MILLISECONDS);
     if(e==null)continue;
@@ -49,7 +49,7 @@ public final class LanRiteNetworkTest {
    }
    ok(host.running(),"case still active after evidence");
    a.client.identify(GhostIdentity.Type.WRAITH);
-   a.until("ACCEPT|IDENTIFY|ENTITY IDENTIFIED WRAITH");
+   a.until("ACCEPT|IDENTIFY|ENTITY HYPOTHESIS RECORDED WRAITH");
    b.until("IDENTIFIED|WRAITH|BANISHMENT");
    a.client.ward();a.until("ACCEPT|WARD|ANCHOR WARD PREPARED");
    // The installation is part of the authored site, not a fixed legacy room 9.

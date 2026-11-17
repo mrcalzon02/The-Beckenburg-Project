@@ -17,7 +17,7 @@ import java.util.function.Predicate;
  * The same host rules execute identification, rite and final settlement.
  */
 public final class BeckenburgFullRoundE2ETest {
-    private static final long SESSION_TIMEOUT=TimeUnit.SECONDS.toNanos(55);
+    private static final long SESSION_TIMEOUT=TimeUnit.SECONDS.toNanos(165);
     private static final Path REPORT=Path.of("build","e2e","lan-full-round.txt");
     private static final List<String> STEPS=new ArrayList<>();
     private BeckenburgFullRoundE2ETest(){}
@@ -177,7 +177,7 @@ public final class BeckenburgFullRoundE2ETest {
             owner.client.identify(type);
             owner.await("ACCEPT|IDENTIFY|",guess,deadline);
             guest.await("IDENTIFIED|SPIRIT|ABSOLUTION",news,deadline);
-            stage("Human submitted SPIRIT hypothesis; host confirmed identification to team");
+            stage("Human submitted SPIRIT hypothesis; team received the shared hypothesis");
 
             // The ritual can only begin after the real anchor ward.
             int riteRoom=RitualSites.site(map,type.rite()).room();

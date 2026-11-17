@@ -35,7 +35,7 @@ public record DevAdminSnapshot(
     }
 
     public record Ghost(boolean clientConnected, boolean ready, boolean hostAiFallback,
-                        LanGhostSpatial.Pose body, int energy, boolean manifested) {
+                        LanGhostSpatial.Pose body, int energy, boolean manifested, GhostAbilityBar.Snapshot abilities) {
         public Ghost {
             Objects.requireNonNull(body);
         }

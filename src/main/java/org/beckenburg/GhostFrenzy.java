@@ -36,9 +36,9 @@ public final class GhostFrenzy {
             return attack==Attack.CLAW?clawCooldown:dreadCooldown;
         }
     }
-    /** Species-specific dynamics, balanced alongside GhostTraits' recharge rates.
-     * Demon: ~3.8 seconds worth of ambient recharge, but a 15-second recovery.
-     * Shade/Specter: cannot apply physical damage in Frenzy, only DREAD.
+    /** Species supply the entry price, warning, rage and post-hunt vulnerability.
+     * GhostPacing sets the separate wait before the next major hunt. Shades and
+     * Specters apply DREAD during frenzy rather than physical damage.
      */
     public static Profile profile(GhostIdentity.Type type){
         return switch(Objects.requireNonNull(type).baseType()){
@@ -66,9 +66,12 @@ public final class GhostFrenzy {
     private Phase phase=Phase.CALM;
     private Cause cause=Cause.ACCUMULATION;
     private int endTick=-1,agitation,attempts,contacts,lastGlobalAttack=-10000;
-    private int lastClaw=-10000,lastDread=-10000;
+    private int lastClaw=-10000,lastDread=-10000,lastStart=-10000;
     private final int[] lastVictim={-10000,-10000,-10000,-10000,-10000,-10000};
     private boolean provoked;
+    private int nextStartTick,claws,dreads;
+    int claws(){return claws;}
+    int dreads(){return dreads;}
     public GhostFrenzy(GhostIdentity.Type type){
         this.type=Objects.requireNonNull(type);
         traits=profile(type);
@@ -85,14 +88,14 @@ public final class GhostFrenzy {
     public boolean sealed(){return active();}
     public int remaining(int tick){return phase==Phase.CALM?0:Math.max(0,endTick-tick);}
     public boolean canStart(int tick,GhostDomain ghost,boolean hunterInSite){
-        return tick>=traits.earliestTick()&&hunterInSite&&phase==Phase.CALM
+        return startCooldown(tick)==0&&hunterInSite&&phase==Phase.CALM
             &&ghost!=null&&!ghost.suppressed()&&ghost.energy()>=traits.energyCost();
     }
     public boolean begin(int tick,GhostDomain ghost,boolean hunterInSite,Cause source){
         Objects.requireNonNull(source);
         if(!canStart(tick,ghost,hunterInSite)
                 ||!ghost.spendFrenzyEnergy(traits.energyCost()))return false;
-        cause=source;phase=Phase.WARNING;endTick=tick+traits.warningTicks();
+        lastStart=tick;cause=source;phase=Phase.WARNING;endTick=tick+traits.warningTicks();
         agitation=0;provoked=false;attempts++;
         return true;
     }
@@ -107,7 +110,7 @@ public final class GhostFrenzy {
         if(averageSanity<0||averageSanity>100)throw new IllegalArgumentException("average sanity");
         if(phase!=Phase.CALM||tick%25!=type.ordinal()%25)return false;
         if(!canStart(tick,ghost,hunterInSite))return false;
-        if(!provoked&&averageSanity>traits.sanityThreshold())return false;
+        if(!provoked&&averageSanity>GhostPacing.naturalSanityThreshold(traits.sanityThreshold(),tick))return false;
         return begin(tick,ghost,hunterInSite,
             provoked?Cause.PROVOCATION:Cause.ACCUMULATION);
     }
@@ -117,31 +120,44 @@ public final class GhostFrenzy {
         if(tick%20==0&&agitation>0)agitation--;
         if(phase==Phase.CALM||tick<endTick)return false;
         if(phase==Phase.WARNING){phase=Phase.RAGING;endTick=tick+traits.ragingTicks();}
-        else if(phase==Phase.RAGING){phase=Phase.RECOVERY;endTick=tick+traits.recoveryTicks();}
+        else if(phase==Phase.RAGING)recover(tick);
         else {phase=Phase.CALM;endTick=-1;}
         return true;
     }
     /** Crosses interrupt the threat and guarantee a recovery window. */
     public boolean repel(int tick){
         if(!active())return false;
-        phase=Phase.RECOVERY;endTick=tick+traits.recoveryTicks();
+        recover(tick);
         return true;
+    }
+    private void recover(int tick){
+        phase=Phase.RECOVERY;
+        endTick=tick+traits.recoveryTicks();
+        nextStartTick=tick+GhostPacing.frenzyRest(traits.recoveryTicks(),tick);
+    }
+    int startCooldown(int tick){return Math.max(0,Math.max(traits.earliestTick(),nextStartTick)-tick);}
+    int lastStart(){return lastStart;}
+    int lastUsed(Attack attack){return attack==Attack.CLAW?lastClaw:lastDread;}
+    int cooldownRemaining(Attack attack,int tick){
+        int duration=traits.cooldown(attack);
+        if(attack==Attack.CLAW)duration=GhostPacing.clawCooldown(duration,lastClaw);
+        return Math.max(0,Math.max(lastGlobalAttack+10,lastUsed(attack)+duration)-tick);
     }
     public boolean available(Attack attack,int tick,GhostDomain ghost){
         Objects.requireNonNull(attack);
         if(!raging()||!traits.permits(attack)||ghost==null||ghost.suppressed()
                 ||ghost.energy()<traits.cost(attack))return false;
-        return tick-lastGlobalAttack>=10
-            &&tick-(attack==Attack.CLAW?lastClaw:lastDread)>=traits.cooldown(attack);
+        return cooldownRemaining(attack,tick)==0;
     }
     /** One real target at a time. Costs and cooldowns are shared by AI and human ghosts. */
     public GhostDomain.Resolution attack(Attack attack,int tick,int seat,int room,GhostDomain ghost){
-        if(seat<0||seat>=lastVictim.length||room<0||room>=HouseMap.INDOOR_ROOMS)
+        if(seat<0||seat>=lastVictim.length||room<0||room>=HouseMap.EXTRACTION_ROOM)
             throw new IllegalArgumentException("invalid frenzy target");
         if(!available(attack,tick,ghost)||tick-lastVictim[seat]<18
                 ||!ghost.spendFrenzyEnergy(traits.cost(attack)))return null;
         lastVictim[seat]=tick;lastGlobalAttack=tick;contacts++;
-        if(attack==Attack.CLAW)lastClaw=tick;else lastDread=tick;
+        if(attack==Attack.CLAW){lastClaw=tick;claws++;}
+        else{lastDread=tick;dreads++;}
         return new GhostDomain.Resolution(true,"frenzy "+attack,
             attack==Attack.CLAW?GhostDomain.Action.STRIKE:GhostDomain.Action.WHISPER,
             room,ghost.energy(),

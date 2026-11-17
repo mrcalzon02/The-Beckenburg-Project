@@ -85,13 +85,13 @@ public final class HunterCounters {
         if(room>=0&&room<HouseMap.EXTRACTION_ROOM&&tick>=0)lastUvTick[room]=tick;
     }
     public boolean recentUv(int room,int tick){
-        return recentUv(room,tick,90);
+        return recentUv(room,tick,UvEvidenceMarks.lifetime(EquipmentTiers.Tier.I));
     }
     /** Higher output UV lamps can still illuminate a genuinely ghost-authored,
      * fading trace. A stronger beam NEVER manufactures a trace.
      */
     public boolean recentUv(int room,int tick,int detectorPersistenceTicks){
-        if(detectorPersistenceTicks<1||detectorPersistenceTicks>240)
+        if(detectorPersistenceTicks<1||detectorPersistenceTicks>UvEvidenceMarks.lifetime(EquipmentTiers.Tier.III))
             throw new IllegalArgumentException("invalid UV beam persistence");
         return room>=0&&room<HouseMap.EXTRACTION_ROOM&&tick>=0
             &&tick>=lastUvTick[room]

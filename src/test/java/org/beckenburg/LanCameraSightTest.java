@@ -40,6 +40,14 @@ public final class LanCameraSightTest {
             origin.z(),towards,EquipmentTiers.Tier.I);
         check(!LanCameraSight.sees(map,tooHigh,ghost,true,GhostIdentity.Type.SHADE,"a"),
             "Offscreen ghost must not become visible just because its floor XZ is within FOV");
+        // A small suspended orb has to clear the lens in its own right. The silhouette fixture
+        // above is intentionally at arm's length, where its feet can be below the image.
+        var lensAtOrbHeight=new LanVideoCameras.Camera(0,4,origin.x(),origin.y()-.47,origin.z(),towards,EquipmentTiers.Tier.I);
+        var orb=new LanCameraSight.Orb(ghost,21);
+        check(orb.sample(map,lensAtOrbHeight,true,21)!=null&&orb.sample(map,camera,true,61)==null,
+            "camera samples live optical events with a finite lifetime");
+        check(orb.sample(map,camera,false,22)==null&&orb.sample(map,away,true,22)==null
+            &&orb.sample(map,tooHigh,true,22)==null,"powered, facing and vertical frustum all gate optical samples");
         String visible=LanCameraSight.frame(camera,"a",ghost,true,
             GhostIdentity.Type.SHADE,21);
         String hidden=LanCameraSight.frame(camera,"a",ghost,false,

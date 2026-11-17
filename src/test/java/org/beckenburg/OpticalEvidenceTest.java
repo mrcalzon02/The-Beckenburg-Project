@@ -31,7 +31,30 @@ public final class OpticalEvidenceTest {
         check(traces.visible(map,body,EquipmentTiers.Tier.I,11,true).size()==1,"real supported ghost passage leaves a visible trace");
         check(traces.visible(map,body,EquipmentTiers.Tier.I,11,false).isEmpty(),"unpowered UV reveals nothing");
         check(traces.visible(map,new LanWorld.Body(body.x(),floor,body.z(),180,0),EquipmentTiers.Tier.I,11,true).isEmpty(),"wrong-facing UV cannot reveal behind the hunter");
-        check(traces.visible(map,body,EquipmentTiers.Tier.I,111,true).isEmpty()&&traces.visible(map,body,EquipmentTiers.Tier.II,111,true).size()==1,"tier sensitivity extends genuine residue, not false positives");
+        // Leave the site of the original print. Sustained travel in other rooms must not evict it.
+        for(int i=1;i<=120;i++){
+            int room=1+i%2;
+            var feet=map.spawn(room);
+            traces.leave(map,new LanGhostSpatial.Pose(room,feet.x(),feet.y(),feet.z(),0),10+i*12);
+        }
+        var remote=map.spawn(1);
+        var onLastPrint=new LanWorld.Body(remote.x(),remote.y(),remote.z(),0,1);
+        check(traces.visible(map,onLastPrint,EquipmentTiers.Tier.I,1450,true).stream().anyMatch(m->m.id()>=120),
+            "test route authored over a hundred real footprints at supported positions");
+        for(var tier:EquipmentTiers.Tier.values()){
+            int cutoff=10+UvEvidenceMarks.lifetime(tier);
+            check(traces.visible(map,body,tier,cutoff,true).stream().anyMatch(mark->mark.id()==0),
+                "earlier genuine print survives an active sweep until the tier cutoff");
+            check(traces.visible(map,body,tier,cutoff+1,true).stream().noneMatch(mark->mark.id()==0),
+                "print expires after the tier cutoff");
+            check(traces.visible(map,body,tier,cutoff,false).isEmpty(),"power required at late return");
+        }
+        var stationary=new UvEvidenceMarks();
+        var originalPose=new LanGhostSpatial.Pose(0,48.5,floor,34,0);
+        stationary.leave(map,originalPose,10);
+        stationary.leave(map,originalPose,4000);
+        check(stationary.visible(map,body,EquipmentTiers.Tier.III,4000,true).isEmpty(),
+            "waiting on an expired footprint must not refresh it");
         var contact=new StructuredLightVolume.Contact(1,0,0,0,2,10);
         var beam=new StructuredLightVolume.Beam(new Vec(0,1,0),new Vec(0,1,4));
         var interval=StructuredLightVolume.intersection(beam,contact);check(interval!=null&&interval[0]>.4&&interval[1]<.6,"intersection is confined to capsule");

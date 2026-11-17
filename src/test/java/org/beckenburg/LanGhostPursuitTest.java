@@ -107,6 +107,16 @@ public final class LanGhostPursuitTest {
         var contact=blade.decide(strikeReady,true);
         ok(contact!=null&&contact.action()==GhostDomain.Action.STRIKE,
             "host-confirmed physical contact still permits a legitimate strike");
+        var instrument=new LanGhostPursuit(map,52);
+        int opportunity=1;
+        while(!instrument.signatureAvailable(opportunity))opportunity++;
+        var signatureReady=new GhostDomain.Observation(opportunity,4,4,100,false,true,
+            map.ghostExits(4),java.util.List.of(GhostDomain.Action.SIGNATURE));
+        ok(instrument.decide(signatureReady,false)==null,"no signature without a perceived cue");
+        instrument.heard(4,4,map.centerX(4),map.centerZ(4),LanGhostPursuit.Sound.EQUIPMENT,opportunity);
+        var signature=instrument.decide(signatureReady,false);
+        ok(signature!=null&&signature.action()==GhostDomain.Action.SIGNATURE,
+            "a local instrument can provoke a legal species signature away from melee reach");
         System.out.println("PASS: bounded hearing and movement, species STRIKE preference cannot bypass physical-victim gate");
     }
 }

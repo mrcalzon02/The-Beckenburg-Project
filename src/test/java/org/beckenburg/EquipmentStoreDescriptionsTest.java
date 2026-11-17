@@ -67,7 +67,7 @@ public final class EquipmentStoreDescriptionsTest {
                 "readout matches the actual 3D lighting beam");
         }
         ok(EquipmentStoreDescriptions.describe("UV_LIGHT",EquipmentTiers.Tier.III)
-            .effect().contains("160 host ticks"),
+            .effect().contains("5 minutes"),
             "Tier III UV spec reflects genuine source trace lifetime, not fake reading");
         ok(EquipmentStoreDescriptions.describe("GHOST_WRITING_BOOK",EquipmentTiers.Tier.III)
             .specificationLine().contains("One actual deployed book"),

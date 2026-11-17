@@ -33,12 +33,29 @@ public final class GhostDomain {
 
     private static final int[] COST = { 2, 6, 8, 18, 30, 55 };
     private static final int[] COOLDOWN = { 35, 22, 30, 78, 90, 180 };
+    static final int MAX_AWAY_TICKS=180,HOME_DWELL_TICKS=80;
+    private int departedTick=-1,stayHomeUntil,routeTick=-1,routeFrom=-1,routeStep=-1;
     private final int anchorRoom;
     private final HouseMap map;
     private final GhostIdentity.Type archetype;
     private final int[] lastActionTick = new int[Action.values().length];
     private int room, tick, energy = 100, manifestUntil, occupants;
     private int energyRecovery=100,energyRemainder;
+    private int gained,homeGained,ordinarySpent,frenzySpent,repelled;
+    private final int[] uses=new int[Action.values().length];
+    int gained(){return gained;}
+    int homeGained(){return homeGained;}
+    int ordinarySpent(){return ordinarySpent;}
+    int frenzySpent(){return frenzySpent;}
+    int repelled(){return repelled;}
+    java.util.Map<Action,Integer> actionCounts(){
+        var result=new java.util.EnumMap<Action,Integer>(Action.class);
+        for(var action:Action.values())result.put(action,uses[action.ordinal()]);
+        return java.util.Map.copyOf(result);
+    }
+    private void pay(Action action,int amount){
+        energy-=amount;ordinarySpent+=amount;uses[action.ordinal()]++;
+    }
     public void configureRecovery(int rate){
         if(rate<50||rate>200)throw new IllegalArgumentException("invalid energy recovery");
         energyRecovery=rate;
@@ -63,7 +80,7 @@ public final class GhostDomain {
     /** Host-only major action: reserves accumulated energy without reusing STRIKE. */
     public boolean spendFrenzyEnergy(int amount){
         if(amount<1||amount>100||tick<1||tick<suppressedUntil||energy<amount)return false;
-        energy-=amount;
+        energy-=amount;frenzySpent+=amount;
         return true;
     }
     public boolean suppressed(){return tick<suppressedUntil;}
@@ -83,7 +100,8 @@ public final class GhostDomain {
     }
     public void repel(int duration){
         suppress(duration);reveal(Math.min(duration,18));
-        energy=Math.max(0,energy-12);
+        int lost=Math.min(12,energy);
+        energy-=lost;repelled+=lost;
     }
 
     /** Called exactly once each 100ms simulation step, independent of renderer FPS. */
@@ -96,17 +114,60 @@ public final class GhostDomain {
         if(occupants<0||occupants>6)throw new IllegalArgumentException("invalid occupancy");
         tick=nextTick;this.occupants=occupants;
         hearsHunter = hunterRoom >= 0 && hunterRoom == room;
-        energyRemainder+=GhostTraits.gained(archetype,tick,occupants)*energyRecovery;
-        energy=Math.min(100,energy+energyRemainder/100);
-        energyRemainder%=100;
+        energyRemainder+=GhostTraits.gained(archetype,tick,occupants)*energyRecovery
+            *GhostPacing.rechargePercent(tick);
+        int admitted=Math.min(100-energy,energyRemainder/10000);
+        energy+=admitted;gained+=admitted;
+        energyRemainder%=10000;
+        // Every species can muster a single drift fare even if investigators
+        // camp its home or completely leave its feeding range. This minimum
+        // buys travel only and cannot fund an offensive power.
+        int driftCost=cost(Action.DRIFT);
+        if(energy<driftCost&&tick%10==0){
+            energy++;gained++;
+            if(returnDue())homeGained++;
+        }
+    }
+    private boolean returnDue(){
+        return departedTick>=0&&tick-departedTick>=MAX_AWAY_TICKS;
+    }
+    private int nextHomeExit(){
+        if(routeTick!=tick||routeFrom!=room){
+            var route=GhostAiNavigationAudit.path(map,room,anchorRoom);
+            routeStep=route.size()>1?route.get(1):-1;
+            routeTick=tick;routeFrom=room;
+        }
+        return routeStep;
+    }
+    /** A temporarily warded destination, low energy or salt delays travel;
+     * the ordinary dispatcher revalidates the exact exit before committing. */
+    int homewardStep(){
+        if(!returnDue()||tick<slowedUntil||!ready(Action.DRIFT))return -1;
+        return nextHomeExit();
     }
     private List<Integer> exits(int current) {
+        if(tick<stayHomeUntil)return List.of();
+        if(returnDue()&&ready(Action.DRIFT)){
+            int next=nextHomeExit();
+            return next>=0&&map.ghostExits(current).contains(next)?List.of(next):List.of();
+        }
         return map.ghostExits(current);
     }
+    private boolean ready(Action action){
+        return energy>=cost(action)&&cooldownRemaining(action)==0;
+    }
+    static int cost(GhostIdentity.Type type,Action action){return GhostBehavior.cost(type,action,COST[action.ordinal()]);}
+    int cost(Action action){
+        return cost(archetype,action)+(action==Action.SIGNATURE?GhostPacing.signaturePremium(tick):0);
+    }
+    int lastUsed(Action action){return lastActionTick[action.ordinal()];}
+    int cooldownRemaining(Action action){
+        int duration=GhostBehavior.cooldown(archetype,action,COOLDOWN[action.ordinal()]);
+        if(action==Action.STRIKE)duration=GhostPacing.strikeCooldown(duration,lastUsed(action));
+        return Math.max(0,lastUsed(action)+duration-tick);
+    }
     private boolean valid(Action a, int target) {
-        if (energy < GhostBehavior.cost(archetype,a,COST[a.ordinal()])
-                || tick - lastActionTick[a.ordinal()] < GhostBehavior.cooldown(archetype,a,COOLDOWN[a.ordinal()]))
-            return false;
+        if(!ready(a))return false;
         if(a!=Action.DRIFT && tick<suppressedUntil)return false;
         if(a==Action.DRIFT)return tick>=slowedUntil && exits(room).contains(target);
         if (target != room) return false;
@@ -139,11 +200,18 @@ public final class GhostDomain {
         if (!valid(command.action(), command.targetRoom()))
             return rejected(command, "insufficient energy, cooldown or invalid target/state");
         Action a = command.action();
-        energy -= GhostBehavior.cost(archetype,a,COST[a.ordinal()]);
+        pay(a,cost(a));
         lastActionTick[a.ordinal()] = tick;
         int fear = 0, harm = 0;
         switch (a) {
-            case DRIFT -> room = command.targetRoom();
+            case DRIFT -> {
+                if(room==anchorRoom)departedTick=tick;
+                room=command.targetRoom();
+                if(room==anchorRoom){
+                    departedTick=-1;
+                    stayHomeUntil=tick+HOME_DWELL_TICKS;
+                }
+            }
             case WHISPER -> fear = hearsHunter ? 2 : 0;
             // Object injuries are resolved by actual armed poltergeist projectile contacts.
             case DISTURB -> fear = hearsHunter ? 3 : 0;
@@ -183,12 +251,11 @@ public final class GhostDomain {
                 ||command.sequence()<0||command.sequence()<=lastCompanionSequence)
             return rejected(command,"not a valid independent Twin minor action");
         lastCompanionSequence=command.sequence();
-        int cost=GhostBehavior.cost(archetype,action,COST[action.ordinal()]);
-        int cooldown=GhostBehavior.cooldown(archetype,action,COOLDOWN[action.ordinal()]);
+        int cost=cost(action);
         if(tick<1||tick<suppressedUntil||energy<cost
-                ||tick-lastActionTick[action.ordinal()]<cooldown)
+                ||cooldownRemaining(action)>0)
             return rejected(command,"shared energy, suppression or cooldown prevents companion action");
-        energy-=cost;
+        pay(action,cost);
         lastActionTick[action.ordinal()]=tick;
         int fear=hearsCompanion?(action==Action.WHISPER?2:3):0;
         fear=GhostTraits.fear(archetype,GhostBehavior.fear(archetype,action,fear));

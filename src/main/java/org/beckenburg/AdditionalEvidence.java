@@ -58,6 +58,49 @@ public final class AdditionalEvidence {
             default ->false;
         };
     }
+    static int lifetime(EquipmentRegistry.Evidence kind){
+        return switch(kind){
+            case ECTOPLASM->1800;
+            case OBJECT_IMPRINT->2400;
+            default->65; // Live acoustic, optical and other sensor events, in 100 ms ticks.
+        };
+    }
+
+    /** Collectable residue belongs to the physical source of an accepted event, including the other Twin. */
+    static final class Deposits {
+        private record Deposit(int tick,LanGhostSpatial.Pose origin,GhostDomain.Action action,int power){}
+        private final java.util.ArrayDeque<Deposit> active=new java.util.ArrayDeque<>();
+
+        private void expire(int tick){
+            while(!active.isEmpty()&&tick-active.getFirst().tick()>lifetime(EquipmentRegistry.Evidence.OBJECT_IMPRINT))
+                active.removeFirst();
+        }
+        void record(int tick,GhostDomain.Resolution result,LanGhostSpatial.Pose origin,int power){
+            expire(tick);
+            if(!result.applied()||result.room()!=origin.room()||power<=0)return;
+            if(event(EquipmentRegistry.Evidence.ECTOPLASM,result.action())
+                    ||event(EquipmentRegistry.Evidence.OBJECT_IMPRINT,result.action()))
+                active.addLast(new Deposit(tick,origin,result.action(),power));
+        }
+        Sample collect(String id,GhostIdentity.Type species,HardEvidenceQuota quota,int tick,
+                LanWorld.Body collector,EquipmentTiers.Stage stage){
+            var kind=phenomenon(id);
+            if(kind!=EquipmentRegistry.Evidence.ECTOPLASM&&kind!=EquipmentRegistry.Evidence.OBJECT_IMPRINT)
+                throw new IllegalArgumentException("surface sampler required");
+            expire(tick);
+            for(var it=active.descendingIterator();it.hasNext();){
+                var deposit=it.next();
+                if(tick-deposit.tick()>lifetime(kind))break;
+                var origin=deposit.origin();
+                if(origin.room()!=collector.room()||!event(kind,deposit.action()))continue;
+                double distance=Math.hypot(Math.hypot(collector.x()-origin.x(),collector.z()-origin.z()),collector.y()-origin.y());
+                if(distance>stage.reachCm()/100.0)continue;
+                return measure(id,species,quota,tick,deposit.tick(),deposit.power(),deposit.action(),true,distance,stage);
+            }
+            return measure(id,species,quota,tick,tick,0,GhostDomain.Action.DRIFT,false,0,stage);
+        }
+    }
+
     /**
      * sourceDistance and sameRoom are checked from host-owned physics before
      * arrival; never receive a proposed ghost coordinate from a peer.
@@ -76,7 +119,7 @@ public final class AdditionalEvidence {
         int eventAge=tick-lastEventTick;
         // A sensor can have battery, range and time to respond without the
         // ghost ever authoring a positive signature.
-        boolean physical=sameRoom&&eventAge>=0&&eventAge<=65
+        boolean physical=sameRoom&&eventAge>=0&&eventAge<=lifetime(kind)
             &&sourceDistance<=stage.reachCm()/100.0&&eventStrength>0
             &&event(kind,lastAction);
         boolean speciesSupports=GhostEvidenceMatrix.forGhost(species).future().contains(kind);

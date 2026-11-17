@@ -68,7 +68,17 @@ public final class LanChatIntegrationTest {
             b.client.say(LanChat.Channel.LOCAL,"flood");
             ok(b.await("REJECT|").contains("chat cooling down"),"rate limiting");
             Thread.sleep(780);
-            b.client.say(LanChat.Channel.RADIO,"Fred, bring the salt.");
+            javax.swing.SwingUtilities.invokeAndWait(()->{
+                var view=new LanWorldPanel(b.client);
+                try{
+                    view.keyPressed(new java.awt.event.KeyEvent(view,java.awt.event.KeyEvent.KEY_PRESSED,
+                        0,java.awt.event.InputEvent.SHIFT_DOWN_MASK,java.awt.event.KeyEvent.VK_ENTER,'\n'));
+                    var field=java.util.Arrays.stream(view.getComponents())
+                        .filter(component->component instanceof javax.swing.JTextField&&component.isVisible())
+                        .map(component->(javax.swing.JTextField)component).findFirst().orElseThrow();
+                    field.setText("Fred, bring the salt.");field.postActionEvent();
+                }finally{view.close();}
+            });
             ok(a.await("CHAT|RADIO|1|").endsWith("|Fred, bring the salt."),
                 "radio reaches distant hunter");
             b.await("ACCEPT|SAY|RADIO");

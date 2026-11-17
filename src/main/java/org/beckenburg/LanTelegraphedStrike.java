@@ -11,7 +11,7 @@ public final class LanTelegraphedStrike {
     private LanTelegraphedStrike() { }
     public record Pending(int targetSeat, int room, int impactTick, GhostDomain.Resolution effect) {
         public Pending {
-            if(targetSeat<0||targetSeat>=6||room<0||room>=HouseMap.INDOOR_ROOMS||impactTick<0)
+            if(targetSeat<0||targetSeat>=6||room<0||room>=HouseMap.EXTRACTION_ROOM||impactTick<0)
                 throw new IllegalArgumentException("invalid windup target");
             if(!Objects.requireNonNull(effect).applied()||effect.action()!=GhostDomain.Action.STRIKE||effect.room()!=room)
                 throw new IllegalArgumentException("windup requires accepted strike");

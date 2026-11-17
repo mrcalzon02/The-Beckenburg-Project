@@ -26,6 +26,13 @@ public final class TieredMediaAndPowerTest {
         kit.rechargeAtVan();
         ok(kit.remaining("PHOTO_CAMERA")==1,"van replaces one Polaroid sheet");
 
+        for(String tool:new String[]{"OBJECT_IMPRINT_SCANNER","ECTOPLASM_SAMPLER"}){
+            kit.equip(3,tool);
+            while(kit.remaining(tool)>0)kit.expend(tool);
+            kit.rechargeAtVan();
+            ok(kit.remaining(tool)==kit.stage(tool).capacity(),"van restocks "+tool);
+        }
+        kit.equip(3,"PHOTO_CAMERA");
         kit.upgrade("PHOTO_CAMERA",EquipmentTiers.Tier.II);
         ok(kit.remaining("PHOTO_CAMERA")==6,"Tier II gets six genuine exposures");
         for(int i=0;i<6;i++)kit.expend("PHOTO_CAMERA");

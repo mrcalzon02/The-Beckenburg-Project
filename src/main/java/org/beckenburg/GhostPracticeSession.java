@@ -33,6 +33,7 @@ public final class GhostPracticeSession {
     public int strikes(){return strikes;}
     public Outcome outcome(){return outcome;}
     public String status(){return status;}
+    GhostAbilityBar.Snapshot abilities(){return GhostAbilityBar.inspect(ghost,null);}
     public GhostDomain.Observation observation(){return ghost.observe();}
     /** The simulated hunter's exact location is deliberately concealed unless the ghost senses them. */
     public int visibleHunterRoom(){return ghost.observe().hearsHunter()?hunter.room():-1;}
@@ -105,6 +106,8 @@ public final class GhostPracticeSession {
         tick++;
         hunter.advance(tick);
         ghost.advance(tick,hunter.room());
+        int home=ghost.homewardStep();
+        if(home>=0)act(GhostDomain.Action.DRIFT,home,GhostDomain.Source.AI);
         EquipmentLoadout.Item tool=hunter.toolDue(tick);
         if(tool!=null)hunter.observed(tick,tool,environmentalReading(tool));
         if(tick>=321&&hunterSeesApparition())hunter.spottedManifestation(tick);
@@ -123,9 +126,12 @@ public final class GhostPracticeSession {
         collectAudibleSpeech();
     }
     public GhostDomain.Resolution act(GhostDomain.Action action,int targetRoom){
+        return act(action,targetRoom,GhostDomain.Source.HUMAN);
+    }
+    private GhostDomain.Resolution act(GhostDomain.Action action,int targetRoom,GhostDomain.Source source){
         if(action==null)throw new IllegalArgumentException("action");
         if(outcome!=Outcome.ACTIVE)return null;
-        GhostDomain.Command input=new GhostDomain.Command(action,targetRoom,++sequence,GhostDomain.Source.HUMAN);
+        GhostDomain.Command input=new GhostDomain.Command(action,targetRoom,++sequence,source);
         GhostDomain.Resolution result=ghost.dispatch(input);
         lastResolution=result;
         if(!result.applied()){

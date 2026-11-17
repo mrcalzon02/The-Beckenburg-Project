@@ -16,14 +16,15 @@ public final class LanCase {
     private static final int RITUAL_TICKS = 45, ABANDON_GRACE_TICKS = 20;
     private int riteTicks(){
         int normal=!identificationRequired?RITUAL_TICKS:switch(selectedRite==null?archetype.rite():selectedRite){
-            case BANISHMENT->55;
-            case CLEANSING->45;
-            case ABSOLUTION->60;
+            case BANISHMENT->900;
+            case CLEANSING->750;
+            case ABSOLUTION->1050;
         };
-        return normal*(archetype.elder()?4:archetype.ancient()?2:1);
+        var subject=identified!=null?identified:archetype;
+        return normal*(subject.elder()?4:subject.ancient()?2:1);
     }
     public int requiredRitualTicks(){return riteTicks();}
-    public enum RitualAdvance { NONE, PAUSED, RESUMED, BROKEN, CLEANSED }
+    public enum RitualAdvance { NONE, PAUSED, RESUMED, BROKEN, DISPROVED, CLEANSED }
     private final int anchor;
     private final HouseMap missionMap;
     private final EnumSet<Tool> evidence=EnumSet.noneOf(Tool.class), tested=EnumSet.noneOf(Tool.class);
@@ -155,22 +156,13 @@ public final class LanCase {
         java.util.Objects.requireNonNull(guess);
         if(outcome!=Outcome.ACTIVE||!alive(seat))return new Report(false,"identification unavailable");
         if(!identificationRequired)return new Report(false,"identity dossier not enabled");
-        if(identified!=null&&hardEvidence.level()!=HardEvidenceQuota.Level.DEATH_WISH)
-            return new Report(false,"entity already identified");
+        if(ritualProgress>=0)return new Report(false,"finish or abandon the active rite first");
         if(tick<0||tick-lastGuessTick<30)return new Report(false,"allow the entity to settle before another deduction");
         lastGuessTick=tick;
-        // Death Wish records an unverified hypothesis rather than offering
-        // an oracle for testing all thirteen ghosts via rejected guesses.
-        if(hardEvidence.level()==HardEvidenceQuota.Level.DEATH_WISH){
-            identified=guess;
-            return new Report(true,"ENTITY HYPOTHESIS RECORDED "+guess);
-        }
-        if(guess!=archetype){
-            stress[seat]=Math.min(100,stress[seat]+15);
-            return new Report(false,"evidence contradicts that entity; investigator fear increases");
-        }
+        // Choosing a name is a team decision. The response must never answer a
+        // sequence of speculative guesses with privileged correct/incorrect feedback.
         identified=guess;
-        return new Report(true,"ENTITY IDENTIFIED "+guess);
+        return new Report(true,"ENTITY HYPOTHESIS RECORDED "+guess);
     }
     public int health(int seat){hunter(seat);return health[seat];}
     /** Single host-owned predicate for participation, pursuit and strike eligibility. */
@@ -358,12 +350,9 @@ public final class LanCase {
     public Report performRite(int seat,GhostIdentity.Rite rite,int room,boolean nearSite){
         hunter(seat);java.util.Objects.requireNonNull(rite);
         if(outcome!=Outcome.ACTIVE||!alive(seat))return new Report(false,"cannot perform rite");
-        if(identificationRequired&&identified!=archetype)
-            return new Report(false,hardEvidence.level()==HardEvidenceQuota.Level.DEATH_WISH
-                ?"ritual cannot proceed with an uncertain hypothesis"
-                :"identify the ghost before choosing its rite");
         if(identificationRequired){
-            if(rite!=archetype.rite())return new Report(false,"incorrect rite for this ghost");
+            if(identified==null)return new Report(false,"choose a team hypothesis before starting the rite");
+            if(rite!=identified.rite())return new Report(false,"incorrect rite for the team's hypothesis");
             var site=RitualSites.site(missionMap,rite);
             if(room!=site.room()||!nearSite)return new Report(false,"go to the correct ritual installation");
         }else if(rite!=GhostIdentity.Rite.CLEANSING||room!=anchor)
@@ -439,7 +428,7 @@ public final class LanCase {
         for(int seat=0;seat<hunterRooms.length;seat++)
             if(active[seat]&&health[seat]>0&&hunterRooms[seat]==ritualRoom)guarded=true;
         if(!guarded){
-            if(++unguardedTicks>=ABANDON_GRACE_TICKS){
+            if(++unguardedTicks>=(identificationRequired?80:ABANDON_GRACE_TICKS)){
                 ritualProgress=-1;
                 unguardedTicks=0;
                 return RitualAdvance.BROKEN;
@@ -449,6 +438,10 @@ public final class LanCase {
         boolean resumed=unguardedTicks>0;
         unguardedTicks=0;
         if(++ritualProgress>=riteTicks()){
+            if(identificationRequired&&identified!=archetype){
+                ritualProgress=-1;selectedRite=null;ritualRoom=-1;identified=null;
+                return RitualAdvance.DISPROVED;
+            }
             outcome=(!identificationRequired||selectedRite==GhostIdentity.Rite.CLEANSING)
                     ?Outcome.CLEANSED:selectedRite==GhostIdentity.Rite.BANISHMENT
                     ?Outcome.BANISHED:Outcome.ABSOLVED;

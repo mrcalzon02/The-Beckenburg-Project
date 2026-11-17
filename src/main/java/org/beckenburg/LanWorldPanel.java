@@ -66,6 +66,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final Map<String,SceneRenderer.Apparition> pairedGhostBodies=new HashMap<>();
     private final Map<String,Integer> pairedGhostTicks=new HashMap<>();
     private final Map<Integer,Map<String,SceneRenderer.Apparition>> cameraGhostBodies=new HashMap<>();
+    private record CameraOrb(LevelDefinition.Vec center,int tick){}
+    private final Map<Integer,CameraOrb> cameraOrbs=new HashMap<>();
     private final Map<String,Integer> cameraGhostTicks=new HashMap<>();
     private boolean orbForm,greenGhostForm;
     private String ghostAppearance=GhostManifestationVisual.UNREVEALED;
@@ -347,7 +349,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 buildingAudio.setMap(map);audio.clearFixtures();
                 peers.clear();videoCameras.clear();renderer.videoCameras.clear();renderer.dotsPositions.clear();renderer.droppedGear.clear();apparition=null;
                 pairedGhostBodies.clear();pairedGhostTicks.clear();
-                cameraGhostBodies.clear();cameraGhostTicks.clear();hauntings.clear();
+                cameraOrbs.clear();cameraGhostBodies.clear();cameraGhostTicks.clear();hauntings.clear();
                 ghostAppearance=GhostManifestationVisual.UNREVEALED;
                 renderer.setAdditionalGhostBodies(List.of());
                 videoRenderer.setAdditionalGhostBodies(List.of());
@@ -554,7 +556,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     keys.clear();feedback="INCAPACITATED - YOU CAN OBSERVE BUT NOT ACT";
                 }else feedback="INVESTIGATOR "+(down+1)+" IS DOWN";
             }else if(p.get(0).equals("IDENTIFIED")&&p.size()==3){
-                feedback="TEAM IDENTIFIED "+p.get(1)+" - REQUIRED "+p.get(2);
+                feedback="TEAM HYPOTHESIS: "+p.get(1)+" / "+p.get(2);
             }else if(p.get(0).equals("SITES")&&p.size()==4){
                 feedback="Ritual sites: Banish="+map.roomName(LanProtocol.integer(p.get(1),0,14))+" / Cleanse="+map.roomName(LanProtocol.integer(p.get(2),0,14))+" / Absolve="+map.roomName(LanProtocol.integer(p.get(3),0,14));
             }else if(p.get(0).equals("COUNTER")){
@@ -686,9 +688,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }else if(p.size()==3&&p.get(0).equals("RITUAL")&&p.get(1).equals("STARTED")){
                 renderer.activeRite=GhostIdentity.Rite.valueOf(p.get(2));
                 ritualMusic=true;atmosphere.setRitual(true);feedback="RITUAL COMMENCED";
-            }else if(p.size()==2&&p.get(0).equals("RITUAL")&&p.get(1).equals("BROKEN")){
+            }else if(p.size()==2&&p.get(0).equals("RITUAL")&&(p.get(1).equals("BROKEN")||p.get(1).equals("DISPROVED"))){
                 renderer.activeRite=null;
-                ritualMusic=false;atmosphere.setRitual(false);feedback="RITUAL INTERRUPTED";
+                ritualMusic=false;atmosphere.setRitual(false);feedback=p.get(1).equals("DISPROVED")?"RITE FAILED - REASSESS THE TEAM HYPOTHESIS":"RITUAL INTERRUPTED";
             }else if(p.size()==4&&p.get(0).equals("FRENZY")){
                 GhostFrenzy.Phase phase=GhostFrenzy.Phase.valueOf(p.get(1));
                 frenzyTicks=LanProtocol.integer(p.get(2),0,10000);
@@ -711,6 +713,13 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 caseResult=frame.substring(7);feedback="CASE CLOSED: "+caseResult;
                 clearPlacementSelection();
                 keys.clear();
+            }else if(p.size()==6&&p.get(0).equals("CAMORB")){
+                int owner=LanProtocol.integer(p.get(1),0,5);
+                var center=new LevelDefinition.Vec(LanProtocol.integer(p.get(2),0,map.width()*1000)/1000d,
+                    LanProtocol.integer(p.get(3),-50000,50000)/1000d,LanProtocol.integer(p.get(4),0,map.height()*1000)/1000d);
+                int sample=LanProtocol.integer(p.get(5),0,99999999);
+                var previous=cameraOrbs.get(owner);
+                if(previous==null||sample>=previous.tick())cameraOrbs.put(owner,new CameraOrb(center,sample));
             }else if(p.get(0).equals("CAMGHOST")){
                 if(p.size()!=5&&p.size()!=11)throw new IllegalArgumentException("bad camera manifestation");
                 int owner=LanProtocol.integer(p.get(1),0,5);
@@ -763,17 +772,17 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 if(p.size()==2&&p.get(1).equals("RESET")){
                     videoCameras.clear();
                     videoPowered.clear();
-                    cameraGhostBodies.clear();cameraGhostTicks.clear();
+                    cameraOrbs.clear();cameraGhostBodies.clear();cameraGhostTicks.clear();
                     renderer.videoCameras.clear();
                 }else if(p.size()==3&&p.get(1).equals("CLEAR")){
                     int owner=LanProtocol.integer(p.get(2),0,5);
                     videoCameras.remove(owner);renderer.videoCameras.remove(owner);
-                    videoPowered.remove(owner);cameraGhostBodies.remove(owner);
+                    videoPowered.remove(owner);cameraOrbs.remove(owner);cameraGhostBodies.remove(owner);
                 }else if(p.size()==4&&p.get(1).equals("POWER")){
                     int owner=LanProtocol.integer(p.get(2),0,5);
                     boolean enabled=LanProtocol.integer(p.get(3),0,1)==1;
                     videoPowered.put(owner,enabled);
-                    if(!enabled)cameraGhostBodies.remove(owner);
+                    if(!enabled){cameraGhostBodies.remove(owner);cameraOrbs.remove(owner);}
                 }else if(p.size()==9&&p.get(1).equals("PLACE")){
                     int owner=LanProtocol.integer(p.get(2),0,5);
                     int room=LanProtocol.integer(p.get(3),0,HouseMap.ROOM_COUNT-1);
@@ -946,7 +955,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }else if(p.size()==2&&p.get(0).equals("UVTRACE")&&p.get(1).equals("RESET")){
                 uvSurfaceMarks.clear();
             }else if((p.size()==7||p.size()==8)&&p.get(0).equals("UVTRACE")){
-                if(uvSurfaceMarks.size()<96)uvSurfaceMarks.add(UvEvidenceMarks.Mark.decode(p));
+                if(uvSurfaceMarks.size()<UvEvidenceMarks.MAX_VISIBLE)uvSurfaceMarks.add(UvEvidenceMarks.Mark.decode(p));
             }else if(p.size()==4&&p.get(0).equals("GEARFX")){
                 int owner=LanProtocol.integer(p.get(1),0,5);
                 if(owner==seat){
@@ -1205,7 +1214,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }else if(!vanDisplay&&previouslyInVan){
             capturedCameraOwner=-1;
             capturedCameraImage=null;
-            cameraGhostBodies.clear();
+            cameraOrbs.clear();cameraGhostBodies.clear();
             cameraGhostTicks.clear();
             VanLiveScreens.suspendCamera();
         }
@@ -1363,6 +1372,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 cameraGhostBodies.getOrDefault(camera.owner(),Map.of());
             SceneRenderer.Apparition seenThroughCamera=cameraBodies.get("a");
             SceneRenderer.Apparition secondThroughCamera=cameraBodies.get("b");
+            var orb=cameraOrbs.get(camera.owner());
+            videoRenderer.cameraOrb=orb!=null&&tick-orb.tick()<=VanDisplayCadence.CAMERA_SIGHT_TICKS?orb.center():null;
             videoRenderer.setHauntings(new ArrayList<>(hauntings));
             videoRenderer.setAdditionalGhostBodies(secondThroughCamera==null
                 ?List.of():List.of(secondThroughCamera));
@@ -1582,7 +1593,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         g.setColor(new Color(203,214,218));
         g.drawString(chatInput.isVisible()?
             ("CHAT / "+chatChannel+"  / ENTER SEND  ESC CANCEL"):
-            "TEAM COMMS / TEXT OR /WAVE /POINT /SHRUG /LAUGH",x+9,y-5);
+            "ENTER  LOCAL TEXT    SHIFT+ENTER  RADIO TEXT",x+9,y-5);
         for(LanChat.Entry line:chatHistory){
             if(index++<start)continue;
             String author=line.seat()==seat?"YOU":
@@ -1876,7 +1887,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(e.getKeyCode()==KeyEvent.VK_C){
             beginVoice(LanChat.Channel.RADIO);return;
         }
-        if(e.getKeyCode()==KeyEvent.VK_ENTER){releaseVoice();openChat(LanChat.Channel.LOCAL);return;}
+        if(e.getKeyCode()==KeyEvent.VK_ENTER){
+            releaseVoice();openChat(e.isShiftDown()?LanChat.Channel.RADIO:LanChat.Channel.LOCAL);return;
+        }
         if(toolPlacement&&e.getKeyCode()==KeyEvent.VK_ESCAPE){
             toolPlacement=false;toolGrip.release();repaint();return;
         }

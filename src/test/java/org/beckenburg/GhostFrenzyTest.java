@@ -8,6 +8,26 @@ public final class GhostFrenzyTest {
         for(int t=1;t<=ticks;t++)ghost.advance(t,-1,0);
         return ghost;
     }
+    private static void checkRestAndYard(){
+        var domain=charged(GhostIdentity.Type.DEMON,400);
+        var frenzy=new GhostFrenzy(GhostIdentity.Type.DEMON);
+        ok(frenzy.begin(400,domain,true,GhostFrenzy.Cause.GHOST_PLAYER),"ready frenzy");
+        int raging=400+frenzy.traits().warningTicks();
+        frenzy.advance(raging);
+        ok(frenzy.attack(GhostFrenzy.Attack.CLAW,raging,5,13,domain)!=null,"outside hunter reachable");
+        ok(frenzy.attack(GhostFrenzy.Attack.DREAD,raging+20,0,12,domain)!=null,"yard dread reachable");
+        ok(frenzy.claws()==1&&frenzy.dreads()==1,"successful contacts only");
+        int end=raging+21;
+        frenzy.repel(end);
+        int wait=frenzy.startCooldown(end);
+        ok(wait>frenzy.traits().recoveryTicks(),"major ability must rest after ordinary activities resume");
+        frenzy.advance(end+frenzy.traits().recoveryTicks());
+        ok(frenzy.phase()==GhostFrenzy.Phase.CALM&&frenzy.startCooldown(end+wait-1)==1,
+            "clock separates normal haunting from next frenzy");
+        ok(frenzy.startCooldown(end+wait)==0,"exact recovery boundary");
+        domain.repel(5);
+        ok(domain.energy()==100-domain.frenzySpent()-domain.repelled(),"entry, both hits and ward drain accounted");
+    }
     public static void main(String[] args){
         for(GhostIdentity.Type type:GhostIdentity.Type.values()){
             GhostFrenzy.Profile p=GhostFrenzy.profile(type);
@@ -56,6 +76,7 @@ public final class GhostFrenzyTest {
         ok(rage.advance(166+demon.recoveryTicks())
             &&rage.phase()==GhostFrenzy.Phase.CALM,
             "frenzy eventually resets");
+        checkRestAndYard();
         GhostDomain shadow=charged(GhostIdentity.Type.SHADE,350);
         GhostFrenzy spectral=new GhostFrenzy(GhostIdentity.Type.SHADE);
         ok(spectral.begin(350,shadow,true,GhostFrenzy.Cause.PROVOCATION),

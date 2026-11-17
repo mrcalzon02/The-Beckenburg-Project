@@ -45,7 +45,7 @@ public final class GhostActionCadence {
     }
     /** Countdown does not stall on client rendering, and cannot be reset by movement. */
     public boolean due(int tick){return tick>=dueTick;}
-    /** Small public selection list; never exposes private hunter coordinates. */
+    /** Ranked legal haunting events; never exposes private hunter coordinates. */
     public List<GhostDomain.Action> choices(GhostDomain.Observation state){
         Objects.requireNonNull(state);
         List<GhostDomain.Action> result=new ArrayList<>();
@@ -55,7 +55,7 @@ public final class GhostActionCadence {
         for(var action:List.of(GhostDomain.Action.DISTURB,GhostDomain.Action.WHISPER,
                 GhostDomain.Action.MANIFEST,GhostDomain.Action.SIGNATURE,
                 GhostDomain.Action.STRIKE))
-            if(legal.contains(action)&&!result.contains(action)&&result.size()<3)
+            if(legal.contains(action)&&!result.contains(action))
                 result.add(action);
         return List.copyOf(result);
     }
@@ -65,17 +65,28 @@ public final class GhostActionCadence {
      * If warded/empty of energy, wait for an actual legal event on later host ticks.
      */
     public GhostDomain.Action fallback(GhostDomain.Observation state,boolean hasStrikeVictim){
+        return fallback(state,hasStrikeVictim,true,false);
+    }
+    public GhostDomain.Action fallback(GhostDomain.Observation state,boolean hasStrikeVictim,
+            boolean signatureDue,boolean conserve){
         Objects.requireNonNull(state);
         List<GhostDomain.Action> eligible=new ArrayList<>();
-        for(var action:choices(state))
+        for(var action:choices(state)){
+            if(action==GhostDomain.Action.SIGNATURE&&!signatureDue)continue;
             if(action!=GhostDomain.Action.STRIKE||hasStrikeVictim)eligible.add(action);
+        }
+        if(conserve&&!eligible.isEmpty()){
+            int cheapest=eligible.stream().mapToInt(a->GhostDomain.cost(species,a)).min().orElseThrow();
+            eligible.removeIf(a->GhostDomain.cost(species,a)>cheapest);
+        }
         return eligible.isEmpty()?null:eligible.get(random.nextInt(eligible.size()));
     }
     public String prompt(GhostDomain.Observation state){
         Objects.requireNonNull(state);
         StringBuilder out=new StringBuilder("GPROMPT|").append(state.tick())
             .append('|').append(dueTick).append('|').append(state.room());
-        for(var action:choices(state))out.append('|').append(action);
+        // Older version-2 clients parse at most three deadline suggestions.
+        for(var action:choices(state).stream().limit(3).toList())out.append('|').append(action);
         return out.toString();
     }
 }

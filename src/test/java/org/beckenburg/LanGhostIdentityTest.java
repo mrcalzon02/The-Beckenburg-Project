@@ -28,7 +28,7 @@ public final class LanGhostIdentityTest {
    ok(mission.evidenceCount()==0&&mission.testedCount()==0,"measurements never automatically award evidence");
    ok(!mission.cleanse(0,4).accepted(),"identify first "+type);
    var wrong=type==GhostIdentity.Type.SPIRIT?GhostIdentity.Type.WRAITH:GhostIdentity.Type.SPIRIT;
-   ok(!mission.identify(0,wrong,1).accepted(),"wrong guess");
+   ok(mission.identify(0,wrong,1).message().equals("ENTITY HYPOTHESIS RECORDED "+wrong),"unverified team hypothesis");
    ok(!mission.identify(0,type,2).accepted(),"no guessing spam");
    ok(mission.identify(1,type,31).accepted(),"correct deduction");
    ok(mission.ward(0,4).accepted(),"anchor ward");
@@ -39,8 +39,8 @@ public final class LanGhostIdentityTest {
    ok(!mission.performRite(0,type.rite(),site.room(),false).accepted(),"outside circle denied");
    ok(mission.performRite(0,type.rite(),site.room(),true).accepted(),"right rite at correct site");
    int[] guard={site.room(),14,14};
-   int required=(type.rite()==GhostIdentity.Rite.BANISHMENT?55:
-       type.rite()==GhostIdentity.Rite.ABSOLUTION?60:45)*(type.elder()?4:type.ancient()?2:1);
+   int required=(type.rite()==GhostIdentity.Rite.BANISHMENT?900:
+       type.rite()==GhostIdentity.Rite.ABSOLUTION?1050:750)*(type.elder()?4:type.ancient()?2:1);
    ok(mission.requiredRitualTicks()==required,"Ancient rituals take exactly twice as long "+type);
    for(int i=0;i<required-1;i++)mission.advance(guard);
    ok(mission.outcome()==LanCase.Outcome.ACTIVE,"cannot auto-complete early");
@@ -50,6 +50,16 @@ public final class LanGhostIdentityTest {
    ok(mission.outcome()==terminal,"distinct ritual outcome "+type);
   }
   ok(rites.size()==3,"all three ritual categories used");
+  var blind=new LanCase(4);blind.configure(GhostIdentity.Type.SPIRIT,true);
+  var mistaken=GhostIdentity.Type.ANCIENT_YOKAI;
+  var circle=RitualSites.site(map,mistaken.rite());
+  blind.identify(0,mistaken,1);
+  ok(blind.ward(0,4).accepted(),"real anchor ward");
+  ok(blind.performRite(0,mistaken.rite(),circle.room(),true).accepted(),"the start does not certify the hypothesis");
+  ok(!blind.identify(1,GhostIdentity.Type.SPIRIT,33).accepted(),"team cannot swap guesses during defense");
+  for(int i=1;i<blind.requiredRitualTicks();i++)blind.advance(new int[]{circle.room(),14,14});
+  ok(blind.advance(new int[]{circle.room(),14,14})==LanCase.RitualAdvance.DISPROVED,"wrong defended rite fails");
+  ok(blind.outcome()==LanCase.Outcome.ACTIVE&&blind.identified()==null&&blind.wardPrepared(),"team can resume fieldwork with its ward");
   var legacy=new LanCase(4);
   for(var tool:LanCase.Tool.values())legacy.scan(0,tool,4,0);
   ok(legacy.ward(0,4).accepted()&&legacy.cleanse(0,4).accepted(),"legacy compatibility");

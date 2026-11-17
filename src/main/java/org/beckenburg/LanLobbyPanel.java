@@ -37,7 +37,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
     private final JComboBox<GhostDomain.Action> action=new JComboBox<>(GhostDomain.Action.values());
     private final JComboBox<LanCase.Tool> instrument=new JComboBox<>(LanCase.Tool.values());
     private final JComboBox<GhostIdentity.Type> hypothesis=new JComboBox<>(GhostIdentity.Type.values());
-    private final JButton identify=new JButton("Identify"),banish=new JButton("Banish"),absolve=new JButton("Absolve");
+    private final JButton identify=new JButton("Submit hypothesis"),banish=new JButton("Banish"),absolve=new JButton("Absolve");
     private final JButton scan=new JButton("Scan"),ward=new JButton("Ward"),cleanse=new JButton("Ritual"),extract=new JButton("Extract");
     private final JLabel caseStatus=new JLabel("Case: not started"),teamStatus=new JLabel("Team: awaiting session");
     private LanHost hosted;
@@ -541,7 +541,10 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                 if(localHost){
                     var types=GhostIdentity.Type.values();
                     var chosen=campaignLaunch==null?types[java.util.concurrent.ThreadLocalRandom.current().nextInt(types.length)]:campaignLaunch.chapter().ghost();
-                    newHost=encrypted?new LanHost("0.0.0.0",portNumber,chosen,request,ghost,requestedSite,tlsHost):new LanHost(campaignLaunch!=null&&!campaignLaunch.coop()?"127.0.0.1":"0.0.0.0",portNumber,chosen,request,ghost,true,requestedSite);
+                    long seed=campaignLaunch==null?java.util.concurrent.ThreadLocalRandom.current().nextLong()
+                        :CampaignStory.missionSeed(campaignLaunch.profile().storySeed(),campaignLaunch.chapter().ordinal());
+                    String bind=!encrypted&&campaignLaunch!=null&&!campaignLaunch.coop()?"127.0.0.1":"0.0.0.0";
+                    newHost=LanHost.investigation(bind,portNumber,chosen,request,ghost,requestedSite,tlsHost,seed);
                     if(campaignLaunch!=null)newHost.configureCampaign(campaignLaunch.profile(),campaignLaunch.chapter());
                     if(!encrypted)newHost.setLobbyPassword(requestedPassword);portNumber=newHost.port();
                 }
@@ -719,6 +722,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         }
         if(worldView!=null)worldView.onEvent(event);
         if(ghostView!=null)ghostView.onEvent(event);
+        if(event.startsWith("GABILITIES|"))return;
         if(event.startsWith("REJECT|")||event.startsWith("ERROR|")||event.startsWith("ACCEPT|"))equipmentPage.notice(event);
         if(event.startsWith("REJECT|")&&pendingStart){
             pendingStart=false;startCommandSent=false;waitingReadyAck=false;

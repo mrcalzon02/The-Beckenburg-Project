@@ -209,12 +209,45 @@ Detailed technical handoff: [Texture Implementation 001](TEXTURE_IMPLEMENTATION_
 | LMB / mouse wheel while holding a prop | Throw / rotate |
 | Tab / J / M | Evidence journal / casefile / van map |
 | C / V | Hold radio / local microphone |
-| Enter, then Tab inside chat | Text chat, switch local/radio channel |
+| Enter / Shift+Enter | Open local text / team radio text. Enter sends the message. |
 | K | Named equipment, medicine, rituals, book, identification and voice actions |
 | H / Escape | Help / pause and return to Castle |
 
 Solo free play and solo campaign launch a private loopback host and use `LanWorldPanel`, the same hunter viewport, `FieldEquipment`, placement, interactions and authoritative rules as co-op. The old independent `GamePanel` play loop has been removed. Saved Castle gear and tiers feed the shared solo equipment rack; campaign hosts retain chapter settlement and hired-team logic. Ordinary gameplay requires no function keys. F11 remains an optional fullscreen alias alongside Alt+Enter; developer/editor shortcuts remain separate.
 
+
+
+### Directing hired investigators
+
+In a campaign case, press **Shift+Enter** to open team radio text. Address a hire by seat or use `team` for everyone. Press **Enter** to send. Hires acknowledge orders over the radio and report instrument readings as they work.
+
+| Radio message | Response |
+| --- | --- |
+| `H2 hold` | H2 stops in place. |
+| `team follow` | Hires follow the investigator who sent the message. |
+| `H3 search Foyer` | H3 sweeps the named room, then resumes searching. Use the room name shown for the current site. |
+| `team search` | Hires resume their independent room sweeps. |
+| `H2 test resonance tuner` | H2 takes the owned tuner from the van rack if necessary, then uses it in the field. |
+
+A fresh campaign belt contains an EMF reader, thermometer, spirit box and photo camera. Each investigator carries four items. Buy specialist tools at the Castle depot, split them between hires or change instruments at the van rack. Hires share their findings, ask for discriminating tests and can report that the necessary tool is missing. A submitted species is the team's working hypothesis. Completing the defended rite resolves it.
+
+A powered UV lamp detects physical traces for **3, 4 or 5 minutes** at tiers I, II and III. Aim it at the surface where the ghost passed. Ectoplasm swabs can collect a deposit for **3 minutes**, and contact plates can detect a surface imprint for **4 minutes**. Returning to the original spot with the right instrument works after the ghost has moved on. Your casefile keeps the reading after the physical trace fades.
+
+### Spectral ability bar
+
+In a 3D LAN ghost seat, **1–5** always activate **Whisper, Disturb, Manifest, Strike, Signature**, in that order. **6** requests Frenzy. During its raging phase, **7** uses Claw for species that have it and **8** uses Dread. Each tile shows its energy cost and readiness or cooldown. A gold border marks a recent cast. **Z / Q** selects an adjacent exit, **Space** drifts there and **E** haunts an aimed fixture. In the developer match inspector, press **7** or type `follow ghost` to watch the AI’s ability bar.
+
+### Running the campaign AI scenario
+
+After compiling the game and test classes, run `CampaignAiInvestigationScenario <storySeed> <seconds>` from the repository root. This example runs a two-minute case on Linux or macOS.
+
+```sh
+java -cp build/classes:build/test org.beckenburg.CampaignAiInvestigationScenario 21 120
+```
+
+On Windows use `-cp "build/classes;build/test"`. The scenario starts a loopback campaign case with a van operator, two hired investigators and the host’s AI ghost. It records radio orders, instrument observations, room entries, ghost activity and the final case state in `build/campaign-ai/<seed>/events.txt` and `summary.txt`. A run can end with the investigation still active.
+
+Use `--pace 94 2100 10` for three autonomous hunters with eleven purchased Tier I specialist instruments, or `--starter 94 2100 10` for the same case with a fresh campaign loadout. The last two arguments set the game-second observation limit and the wall-clock milliseconds per host tick. Ten ticks always represent one game second. The normal production interval is 100 ms. Results under `build/campaign-ai-pace/<seed>/` and `build/campaign-ai-starter/<seed>/` include the outcome, milestones, actual rack exchanges, radio transcript and ghost energy ledger. `CampaignHunterRackScenario` tests a directed mid-case instrument change. `InvestigationDiagnosticsTest` compares instrument coverage across the complete roster.
 
 ## Validation and limits
 
@@ -240,10 +273,10 @@ practice objective; it does not award campaign currency or XP.
 
 | Ghost input | Action |
 | --- | --- |
-| `[`, `]` | Select adjacent spectral destination |
+| `Z`, `Q` | Select adjacent spectral destination |
 | Space / Enter | Phase into selected adjacent room, subject to legal action rules |
 | `1`, `2` | Whisper / environmental disturbance |
-| `3`, `4` | Manifest / strike, subject to warning and cooldown rules |
+| `3`, `4`, `5` | Manifest / strike / signature, subject to their action requirements |
 | Click view once, then move mouse / arrows | Orient spectral viewpoint |
 | Escape | Return to main menu and the original hunter mode |
 

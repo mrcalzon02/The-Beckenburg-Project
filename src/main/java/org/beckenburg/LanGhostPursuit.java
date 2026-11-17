@@ -23,11 +23,17 @@ public final class LanGhostPursuit {
     private final HouseMap map;
     private final GhostIdentity.Type archetype;
     private final Random random;
+    private final java.util.SplittableRandom signatureRolls;
+    private int signatureClock;
+    private double signatureWait;
     private final org.beckenburg.editor.ai.NpcAiTelemetry diagnostics;
     private Echo memory;
     private int memoryStrength=-1;
     private Search search;
     private long sequence;
+    private final int[] visitedAt=new int[HouseMap.ROOM_COUNT];
+    private int patrolRoom=-1,nextPatrolTick,walkUntil,restUntil;
+    private double patrolX,patrolZ;
     private int eventFrequency=100;
     public void configureFrequency(int percent){
         if(percent<50||percent>200)throw new IllegalArgumentException("invalid event rate");
@@ -45,6 +51,9 @@ public final class LanGhostPursuit {
         this.archetype=Objects.requireNonNull(type);
         this.diagnostics=Objects.requireNonNull(diagnostics);
         random=new Random(seed);
+        signatureRolls=new java.util.SplittableRandom(seed^0x5349474e41545552L);
+        resetSignature(0);
+        java.util.Arrays.fill(visitedAt,-1);
     }
     /** World-authorized events only. Coarse 2m cells intentionally discard exact positions. */
     public void heard(int ghostRoom, int sourceRoom, double x, double z, Sound kind, int tick) {
@@ -124,19 +133,52 @@ public final class LanGhostPursuit {
     public Search search(int tick) { memory(tick);return search; }
     public void forget(){memory=null;memoryStrength=-1;search=null;}
 
+    // An exponentially distributed opportunity can occur early. It is held
+    // until actually spent, so an empty room cannot consume the species tell.
+    boolean signatureAvailable(int tick){
+        // A long possession by a human controller can skip AI decisions. Account
+        // for the elapsed early minutes at their own rates on controller handover.
+        while(signatureClock<tick){
+            int through=tick;
+            if(signatureClock<GhostPacing.FULL_PRESSURE_TICK)
+                through=Math.min(tick,(signatureClock/GhostPacing.TICKS_PER_MINUTE+1)*GhostPacing.TICKS_PER_MINUTE);
+            signatureWait-=(through-signatureClock)*(eventFrequency/100.0)/GhostPacing.signatureMeanTicks(through);
+            signatureClock=through;
+        }
+        return signatureWait<=0;
+    }
+    void resetSignature(int tick){
+        signatureWait=-Math.log1p(-signatureRolls.nextDouble());
+        signatureClock=tick;
+    }
     /** Choose room actions from legal host observations and a finite memory of audible events. */
     public GhostDomain.Command decide(GhostDomain.Observation seen, boolean hasSpatialVictim) {
         Objects.requireNonNull(seen);
         List<GhostDomain.Action> legal=seen.legalActions();
         GhostDomain.Action action=null;
         int target=seen.room();
+        visitedAt[seen.room()]=seen.tick();
         boolean locallyHeard=memory(seen.tick())!=null && memory.room()==seen.room();
-        if(locallyHeard && seen.hearsHunter() && seen.tick()%211==0
-                &&legal.contains(GhostDomain.Action.SIGNATURE))
+        boolean signatureDue=signatureAvailable(seen.tick());
+        int reserve=signatureDue?GhostDomain.cost(archetype,GhostDomain.Action.SIGNATURE)
+            +GhostPacing.signaturePremium(seen.tick()):GhostFrenzy.profile(archetype).energyCost();
+        boolean saving=seen.energy()<reserve;
+        // Isolation feeders cannot recharge beside a pursuing team. Leave a
+        // recently audible room on a paid exit and pause before chasing again.
+        if(saving&&GhostTraits.of(archetype).charge()==GhostTraits.Charge.ISOLATION){
+            if(locallyHeard&&legal.contains(GhostDomain.Action.DRIFT)&&!seen.exits().isEmpty()){
+                int retreat=leastVisited(seen.exits());
+                restUntil=seen.tick()+220;
+                return new GhostDomain.Command(GhostDomain.Action.DRIFT,retreat,++sequence,GhostDomain.Source.AI);
+            }
+            if(seen.tick()<restUntil&&!locallyHeard)return null;
+        }
+        if(signatureDue&&locallyHeard&&seen.hearsHunter()&&legal.contains(GhostDomain.Action.SIGNATURE))
             action=GhostDomain.Action.SIGNATURE;
         else if(locallyHeard && seen.hearsHunter() && hasSpatialVictim && legal.contains(GhostDomain.Action.STRIKE))
             action=GhostDomain.Action.STRIKE;
-        else if(locallyHeard && seen.hearsHunter() && legal.contains(GhostDomain.Action.MANIFEST))
+        else if(locallyHeard && seen.hearsHunter() && (!saving||hasSpatialVictim&&!signatureDue)
+                && legal.contains(GhostDomain.Action.MANIFEST))
             action=GhostDomain.Action.MANIFEST;
         else if(legal.contains(GhostDomain.Action.DRIFT) && memory(seen.tick())!=null
                 && memory.room()!=seen.room()) {
@@ -157,25 +199,35 @@ public final class LanGhostPursuit {
         // A species-specific attack preference is NOT a target acquisition.
         // Its STRIKE choice must pass the same host-owned spatial-victim gate
         // as the ordinary pursuit route. Hearing alone never grants contact.
-        if(action==null && bias.favored()!=GhostDomain.Action.DRIFT
-                && (bias.favored()!=GhostDomain.Action.STRIKE||hasSpatialVictim)
-                && seen.tick()%Math.max(6,bias.aiPeriod()*100/eventFrequency)==0
+        if(action==null && !saving && bias.favored()!=GhostDomain.Action.DRIFT
+                && (bias.favored()!=GhostDomain.Action.STRIKE||hasSpatialVictim&&locallyHeard)
+                && seen.tick()%GhostPacing.minorPeriod(bias.aiPeriod(),seen.tick(),eventFrequency)==0
                 && legal.contains(bias.favored()))
             action=bias.favored();
-        if(action==null && seen.tick()%29==0 && legal.contains(GhostDomain.Action.WHISPER))
+        if(action==null && !saving && seen.tick()%GhostPacing.minorPeriod(29,seen.tick(),eventFrequency)==0 && legal.contains(GhostDomain.Action.WHISPER))
             action=GhostDomain.Action.WHISPER;
-        if(action==null && seen.tick()%41==0 && legal.contains(GhostDomain.Action.DISTURB))
+        if(action==null && !saving && seen.tick()%GhostPacing.minorPeriod(41,seen.tick(),eventFrequency)==0 && legal.contains(GhostDomain.Action.DISTURB))
             action=GhostDomain.Action.DISTURB;
         // With no sound, patrol occasionally rather than knowing where the team is.
-        if(action==null && seen.tick()%(bias.favored()==GhostDomain.Action.DRIFT?bias.aiPeriod():35)==0
+        if(action==null && seen.tick()%((bias.favored()==GhostDomain.Action.DRIFT?bias.aiPeriod():35)*(saving?3:1))==0
                 && legal.contains(GhostDomain.Action.DRIFT)
                 && !seen.exits().isEmpty() && memory(seen.tick())==null && search(seen.tick())==null){
             action=GhostDomain.Action.DRIFT;
-            target=seen.exits().get(random.nextInt(seen.exits().size()));
+            // Cover unexplored rooms before repeating the same two-door loop.
+            target=leastVisited(seen.exits());
         }
         // Future preference routes must never bypass this invariant, either.
         if(action==GhostDomain.Action.STRIKE&&!hasSpatialVictim)return null;
         return action==null?null:new GhostDomain.Command(action,target,++sequence,GhostDomain.Source.AI);
+    }
+    private int leastVisited(List<Integer> exits){
+        int oldest=Integer.MAX_VALUE,ties=0,target=exits.get(0);
+        for(int exit:exits){
+            int last=visitedAt[exit];
+            if(last<oldest){oldest=last;target=exit;ties=1;}
+            else if(last==oldest&&random.nextInt(++ties)==0)target=exit;
+        }
+        return target;
     }
     /** Move toward an old approximate sound in the current room; the host applies this using
      * LanGhostSpatial.step, which enforces exactly the same walls and speed as a human ghost.
@@ -198,6 +250,30 @@ public final class LanGhostPursuit {
         // A direction, not a teleport or arbitrary speed.
         return new Impulse((int)Math.round(Math.max(-100,Math.min(100,dx*100))),
                 (int)Math.round(Math.max(-100,Math.min(100,dz*100))));
+    }
+    /** Quiet patrol alternates short physical walks and stationary listening windows.
+     * Only the authored room, collision and safe-area volumes inform a waypoint. */
+    public Impulse patrol(GhostDomain.Observation seen,LanGhostSpatial.Pose pose){
+        if(seen.room()!=pose.room())return null;
+        if(patrolRoom!=pose.room()||seen.tick()>=nextPatrolTick){
+            patrolRoom=pose.room();
+            walkUntil=seen.tick()+8;
+            nextPatrolTick=walkUntil+12+random.nextInt(8);
+            patrolX=pose.x();patrolZ=pose.z();
+            double bearing=random.nextDouble()*2*Math.PI;
+            for(int attempt=0;attempt<8;attempt++,bearing+=Math.PI/4){
+                double x=pose.x()+2*Math.cos(bearing),z=pose.z()+2*Math.sin(bearing);
+                var to=map.resolveMove(new LevelDefinition.Vec(pose.x(),pose.y(),pose.z()),x,z);
+                if(to==null||Math.hypot(to.x()-x,to.z()-z)>.3
+                        ||map.roomAt(to.x(),to.y(),to.z())!=pose.room()
+                        ||LanGhostSpatial.hidingPocketAt(map,pose.room(),to.x(),to.y(),to.z())
+                        ||SafeAreaBarrier.protectedAt(map,to.x(),to.y(),to.z()))continue;
+                patrolX=to.x();patrolZ=to.z();break;
+            }
+        }
+        double dx=patrolX-pose.x(),dz=patrolZ-pose.z(),distance=Math.hypot(dx,dz);
+        if(seen.tick()>=walkUntil||distance<.4)return null;
+        return new Impulse((int)Math.round(100*dx/distance),(int)Math.round(100*dz/distance));
     }
     private int route(int from,int to){
         long started=diagnostics.begin();

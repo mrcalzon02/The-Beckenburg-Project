@@ -80,6 +80,7 @@ public final class FieldEquipment {
         current=slot;
     }
     public String active(){return slots[current];}
+    boolean carries(String id){return Arrays.asList(slots).contains(id);}
     /** Host-only handoff: the dropped device cannot remain in the belt. */
     void dropActive(String id){
         if(!functional(id)||!id.equals(active()))
@@ -191,7 +192,8 @@ public final class FieldEquipment {
         for(String id:BATTERY_TOOLS){
             if(owned(id)!=null)batteryTicks.put(id,stage(id).batterySeconds()*10);
         }
-        remaining.put("PHOTO_CAMERA",stage("PHOTO_CAMERA").capacity());
+        for(String id:java.util.List.of("PHOTO_CAMERA","ECTOPLASM_SAMPLER","OBJECT_IMPRINT_SCANNER"))
+            if(owned(id)!=null)remaining.put(id,stage(id).capacity());
     }
     /** Real shutter/supply charge; never evaluated against the ghost identity. */
     public int expend(String id){

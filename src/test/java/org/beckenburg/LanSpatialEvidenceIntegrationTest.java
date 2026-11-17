@@ -55,6 +55,10 @@ public final class LanSpatialEvidenceIntegrationTest {
             HouseMap geometry=new HouseMap();geometry.configureHiding(CustomContract.standard(3).hidingSpots());
             ok(hunter.await("SITE|").equals("SITE|HOUSE|"+geometry.level().revision()),"Fixture must match actual host scene revision");
             hunter.lastBody=hunter.await("BODY|0|");
+            hunter.client.placeBook();
+            ok(hunter.await("REJECT|").contains("hold the writing book"),"a book on the rack cannot be deployed indoors");
+            hunter.client.scanUv();
+            ok(hunter.await("REJECT|").contains("powered UV"),"a stowed UV lamp cannot scan a room");
             // The human ghost must actually disturb the room to create >6 EMF.
             ghost.client.ghost(GhostDomain.Action.DISTURB,4);
             ghost.await("ACCEPT|GHOST|DISTURB|");

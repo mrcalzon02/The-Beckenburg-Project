@@ -38,6 +38,10 @@ public final class GhostActionCadenceTest {
         var state=new GhostDomain.Observation(180,4,4,100,true,true,List.of(5),
                 List.of(GhostDomain.Action.DRIFT,GhostDomain.Action.STRIKE,
                         GhostDomain.Action.DISTURB,GhostDomain.Action.WHISPER));
+        var all=new GhostDomain.Observation(220,4,4,100,true,true,List.of(5),
+                List.of(GhostDomain.Action.values()));
+        check(selection.choices(all).size()==5,"deadline selection must consider all legal haunt abilities");
+        check(LanProtocol.parts(selection.prompt(all)).size()<=7,"keep legacy deadline hint wire compatible");
         int disturb=0,whisper=0,strike=0;
         for(int i=0;i<600;i++){
             var noVictim=selection.fallback(state,false);

@@ -12,7 +12,7 @@ public final class GhostFieldGuide {
     public enum Category { EMF, TEMPERATURE, SPIRIT_BOX, WRITING, PHYSICAL, CAMERA, BEHAVIOR }
     public enum Clue {
         EMF_OVER_SIX(Category.EMF,"Ghost high EMF / 8–10",true),
-        EMF_LOW_MID(Category.EMF,"Ghost low/mid EMF / 2–7",true),
+        EMF_LOW_MID(Category.EMF,"Low/mid EMF / 2–7",false),
         EMF_NORMAL(Category.EMF,"Ordinary EMF / 2–7",false),
         EMF_SUPPRESSION(Category.EMF,"EMF zero / suppressed field",true),
         WRITING_CHILD(Category.WRITING,"Childlike drawings",true),
@@ -42,7 +42,7 @@ public final class GhostFieldGuide {
         DOOR_TO_TRAVEL(Category.PHYSICAL,"Movement / uses door to change room",true),
         UV_RESIDUE(Category.PHYSICAL,"UV / trace on passage",true),
         PHOTO_SHAPE(Category.CAMERA,"Photo / visible figure",true),
-        REMOTE_EMPTY(Category.CAMERA,"Remote video / empty-room figure",true),
+        REMOTE_EMPTY(Category.CAMERA,"Remote video / empty-room figure",false),
         SPIRIT_ORBS(Category.CAMERA,"Video / spirit orbs",true),
         SOLO_ATTACK(Category.BEHAVIOR,"Pattern / attacked isolated hunter",false),
         SAME_TARGET(Category.BEHAVIOR,"Pattern / repeatedly targeted one hunter",false),
@@ -113,7 +113,7 @@ public final class GhostFieldGuide {
             +(p.locomotion()==GhostTraits.Locomotion.FLOAT?"FLOATING":"WALKING")
             +" / "+(p.canPhase()?"WALL PHASING":"DOOR TRAVEL")
             +" / SALT "+(p.grounded()?"REACTIVE":"IMMUNE")+"\n"
-            +"UV "+yes(p.leavesUv())+" | PHOTO "+yes(p.sight()==GhostTraits.Sight.VISIBLE)
+            +"UV "+yes(p.leavesUv())+" | PHOTO "+yes(p.sight()!=GhostTraits.Sight.CAMERA_ONLY)
             +" | EMPTY VIDEO "+yes(p.sight()==GhostTraits.Sight.CAMERA_ONLY)+" | ORBS "+yes(p.sight()==GhostTraits.Sight.ORBS)+"\n"
             +"ACTIVITY: "+GhostBehavior.profile(type).favored()+"; "+hint(type);
     }
@@ -137,7 +137,8 @@ public final class GhostFieldGuide {
             case PHASE_WALL->p.canPhase();
             case DOOR_TO_TRAVEL->!p.canPhase();
             case UV_RESIDUE->p.leavesUv();
-            case PHOTO_SHAPE->p.sight()==GhostTraits.Sight.VISIBLE;
+            // Orb-capable species can still produce ordinary visible silhouettes on the handheld camera.
+            case PHOTO_SHAPE->p.sight()!=GhostTraits.Sight.CAMERA_ONLY;
             case REMOTE_EMPTY->p.sight()==GhostTraits.Sight.CAMERA_ONLY;
             case SPIRIT_ORBS->p.sight()==GhostTraits.Sight.ORBS;
             case SOLO_ATTACK->p.huntsSolitary();

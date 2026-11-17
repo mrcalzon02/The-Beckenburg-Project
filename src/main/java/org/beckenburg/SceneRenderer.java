@@ -145,6 +145,7 @@ public final class SceneRenderer {
     public boolean flameLamp;
     /** Cosmetic effects follow received authority, never determine paranormal evidence. */
     public GhostIdentity.Rite activeRite;
+    LevelDefinition.Vec cameraOrb;
     private List<Apparition> additionalGhostBodies=List.of();
     private List<GhostHauntingFolio.Occurrence> hauntings=List.of();
     public void setHauntings(List<GhostHauntingFolio.Occurrence> events){
@@ -3989,7 +3990,7 @@ public final class SceneRenderer {
         if(!uvLamp)return;
         if(UV_RESIDUE<0)UV_RESIDUE=GlbProps.surfaceMaterial("UV residue outer-face splat",UvSurfaceDecal.texture());
         for(var m:uvMarks){
-            if(uvTick<m.born()||uvTick-m.born()>90+uvTier.ordinal()*35)continue;
+            if(!UvEvidenceMarks.detectable(m,uvTier,uvTick))continue;
             var at=camera(new Point(m.x(),m.y(),m.z()));
             if(at.z<=NEAR||HandheldLighting.sample(HandheldLighting.uv(uvTier),at.z,Math.hypot(at.x,at.y)/at.z)<=.015
                 ||!map.clearLineOfSight(x,eyeHeight,z,m.x(),m.y()+.06,m.z()))continue;
@@ -4087,6 +4088,7 @@ public final class SceneRenderer {
                     Math.floorMod((int)Math.floor(clock*10),4));
             }
         }
+        if(cameraOrb!=null)renderSpiritOrb(cameraOrb.x(),cameraOrb.z(),cameraOrb.y(),clock,false);
         // Separate Twin member B is positioned and disclosed by the host.
         // It does not create a second GhostDomain or a second damage source.
         for(Apparition companion:additionalGhostBodies){

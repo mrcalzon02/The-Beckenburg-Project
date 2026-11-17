@@ -41,6 +41,19 @@ public final class LanCameraSight {
             CharacterVisuals.shape(identity).height());
     }
 
+    /** A short-lived optical event stays where the haunting occurred, even if the ghost walks away. */
+    record Orb(LanGhostSpatial.Pose source,int born){
+        String sample(HouseMap map,LanVideoCameras.Camera camera,boolean powered,int tick){
+            int age=tick-born;
+            if(!powered||age<0||age>=40)return null;
+            var center=new LanGhostSpatial.Pose(source.room(),source.x(),
+                source.y()+1.15+.12*Math.sin(age*.19),source.z(),0);
+            if(!seesBody(map,camera,center,true,0))return null;
+            return "CAMORB|"+camera.owner()+"|"+Math.round(center.x()*1000)+"|"+Math.round(center.y()*1000)+
+                "|"+Math.round(center.z()*1000)+"|"+tick;
+        }
+    }
+
     private static boolean seesBody(HouseMap map,LanVideoCameras.Camera camera,
                                    LanGhostSpatial.Pose apparition,boolean manifested,
                                    double bodyHeight) {

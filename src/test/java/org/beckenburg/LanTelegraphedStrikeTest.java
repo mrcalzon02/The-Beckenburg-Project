@@ -28,6 +28,10 @@ public final class LanTelegraphedStrikeTest {
         catch(IllegalArgumentException expected){}
         // Closing an intervening doorway blocks impact even when endpoints remain in range.
         ok(LanSpatialCombat.lineOfSight(map,ghost.pose().x(),ghost.pose().z(),world.body(0).x(),world.body(0).z()),"same room clear sight");
+        for(int r=HouseMap.INDOOR_ROOMS;r<HouseMap.EXTRACTION_ROOM;r++){
+            var outside=new GhostDomain.Resolution(true,"accepted",GhostDomain.Action.STRIKE,r,65,6,12,true);
+            ok(LanTelegraphedStrike.begin(170,5,outside).room()==r,"yard windup on sixth hunter seat");
+        }
         System.out.println("PASS: eight-tick host wind-up, locked target, movement evasion and disconnect/room validation");
     }
 }

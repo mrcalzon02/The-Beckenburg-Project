@@ -28,7 +28,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     private int burstRemaining=30,burstMax=30;
     private boolean bursting;
     private boolean audible,finished;
-    private String legal="[]",feedback="Awaiting private spectral pose";
+    private GhostAbilityBar.Snapshot abilities;
+    private boolean hostLoadout;
+    private String feedback="Awaiting private spectral pose";
     private int actionDueTick=-1;
     private GhostFrenzy.Phase frenzyPhase=GhostFrenzy.Phase.CALM;
     private int frenzyTicks;
@@ -74,6 +76,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
                 buildingAudio.setMap(map);audio.clearFixtures();
                 feedback="SPECTRAL TERRITORY: "+map.site();
+                abilities=null;hostLoadout=false;
                 companion=null;camera.setAdditionalGhostBodies(List.of());
                 soundRipples.clear();hearing=null;lastHearingTick=-1;
                 listening=false;lastListeningTick=-1;hearingFade.reset();
@@ -104,7 +107,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 tick=LanProtocol.integer(p.get(6),0,99999999);
                 if(map.roomAt(x,y,z)!=next)throw new IllegalArgumentException("inconsistent spectral coordinates");
                 room=next;camera.x=x;camera.z=z;camera.eyeHeight=y+1.62;
-                feedback="HOST SPECTRAL POSE SYNCHRONIZED";
+                if(feedback.equals("Awaiting private spectral pose"))feedback="Host connected";
             }else if(p.size()==3&&p.get(0).equals("GLISTEN")){
                 boolean hostListening=LanProtocol.integer(p.get(1),0,1)==1;
                 int sample=LanProtocol.integer(p.get(2),0,99999999);
@@ -141,7 +144,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             }else if(p.size()==7&&p.get(0).equals("STATE")){
                 int reportedRoom=LanProtocol.integer(p.get(2),0,HouseMap.EXTRACTION_ROOM-1);
                 energy=LanProtocol.integer(p.get(4),0,100);
-                legal=p.get(5);
+
+                if(revealedType!=null&&!hostLoadout)
+                    abilities=GhostAbilityBar.legacy(tick,revealedType,p.get(5),frenzyPhase);
                 audible=p.get(6).equals("1");
                 // The host's ROOM state always wins if a GPOSE packet is delayed.
                 if(room!=-1&&reportedRoom!=room)feedback="Room transition pending host pose";
@@ -175,6 +180,11 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                     currentWeather=current;
                     atmosphere.setWeather(current);
                     camera.setWeather(current);
+                }
+            }else if(p.get(0).equals("GABILITIES")){
+                var latest=GhostAbilityBar.decode(p);
+                if(!hostLoadout||latest.tick()>=abilities.tick()){
+                    abilities=latest;hostLoadout=true;
                 }
             }else if(p.size()==4&&p.get(0).equals("FRENZY")){
                 frenzyPhase=GhostFrenzy.Phase.valueOf(p.get(1));
@@ -223,8 +233,11 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                     case DRIFT->LanSound.Cue.GHOST_DRIFT;
                 };
                 audio.play(new LanSound.CueEvent(result,0,65,tick));
-                feedback=packet;
-            }else if(packet.startsWith("ACCEPT|")||packet.startsWith("REJECT|"))feedback=packet;
+                feedback="Used "+applied.name().toLowerCase(Locale.ROOT);
+            }else if(p.get(0).equals("REJECT")&&p.size()>=2)feedback=p.get(1);
+            else if(packet.startsWith("ACCEPT|FATTACK|")&&p.size()>=3)feedback="Used "+p.get(2).toLowerCase(Locale.ROOT);
+            else if(packet.equals("ACCEPT|FRENZY"))feedback="Frenzy started";
+            else if(packet.equals("ACCEPT|GDEVICE"))feedback="Haunted fixture";
         }catch(IllegalArgumentException ex){feedback="Invalid spectral snapshot rejected";}
         repaint();
     }
@@ -269,10 +282,6 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         repaint();
     }
     private List<Integer> exits(){return room<0?List.of():map.ghostExits(room);}
-    private void chosen(int index){
-        if(index>=0&&index<offered.size())ability(offered.get(index));
-        else feedback="NO LEGAL ACTION IN THAT SLOT";
-    }
     private void ability(GhostDomain.Action action){
         if(finished||room<0)return;
         List<Integer> exits=exits();
@@ -295,7 +304,12 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     public String ghostSpecies(){return ghostSpecies;}
     public String feedback(){return feedback;}
     public int actionDeadline(){return actionDueTick;}
-    public List<GhostDomain.Action> offeredActions(){return offered;}
+    public List<GhostDomain.Action> offeredActions(){
+        if(abilities==null)return offered;
+        return abilities.slots().stream().filter(GhostAbilityBar.Entry::available)
+            .filter(entry->entry.slot().key()<=GhostAbilityBar.Slot.SIGNATURE.key())
+            .map(entry->GhostDomain.Action.valueOf(entry.slot().name())).toList();
+    }
     public String automaticAction(){return lastAutomaticAction;}
     public boolean isCaptured(){return mouseLook.captured();}
     /** These are HUNTER cues, not supernatural ghost vocalizations.
@@ -328,9 +342,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             case KeyEvent.VK_Z -> choice--;
             case KeyEvent.VK_Q -> choice++;
             case KeyEvent.VK_SPACE,KeyEvent.VK_ENTER -> ability(GhostDomain.Action.DRIFT);
-            case KeyEvent.VK_1 -> chosen(0);
-            case KeyEvent.VK_2 -> chosen(1);
-            case KeyEvent.VK_3 -> chosen(2);
+            case KeyEvent.VK_1 -> ability(GhostDomain.Action.WHISPER);
+            case KeyEvent.VK_2 -> ability(GhostDomain.Action.DISTURB);
+            case KeyEvent.VK_3 -> ability(GhostDomain.Action.MANIFEST);
             case KeyEvent.VK_4 -> ability(GhostDomain.Action.STRIKE);
             case KeyEvent.VK_5 -> ability(GhostDomain.Action.SIGNATURE);
             case KeyEvent.VK_6 -> {
@@ -388,35 +402,20 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 g.setColor(new Color(199,170,239));g.drawString("HEARD: "+heard,22,105);
             }
             List<Integer> exits=exits();
-            int width=Math.min(w-24,620),panelY=h-117;
-            g.setColor(new Color(23,14,32,225));g.fillRoundRect(12,panelY,width,105,8,8);
-            g.setColor(new Color(235,206,244));g.drawString("SPECTRAL ACTIONS / E ACTIVATE AIMED FIXTURE",24,panelY+22);
-            g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
-            StringBuilder actions=new StringBuilder();
-            for(int i=0;i<offered.size();i++)actions.append(i+1).append(": ").append(offered.get(i)).append("   ");
-            if(offered.isEmpty())actions.append("RECHARGING");
-            String abilities=actions.toString();
-            if(abilities.length()>66)abilities=abilities.substring(0,63)+"...";
-            g.drawString(abilities,24,panelY+42);
-            g.drawString("Z / Q EXIT: "+(exits.isEmpty()?"NONE":map.roomName(exits.get(Math.floorMod(choice,exits.size()))))+
-                "   SPACE DRIFT",24,panelY+62);
-            int remaining=actionDueTick<0?-1:Math.max(0,(actionDueTick-tick+9)/10);
-            g.setColor(remaining>=0&&remaining<=3?new Color(255,174,166):new Color(194,207,217));
-            GhostFrenzy.Profile costs=revealedType==null?null:GhostFrenzy.profile(revealedType);
-            String abilityCosts=costs==null?"6 FRENZY / 7 CLAW / 8 DREAD"
-                :"6 FRENZY "+costs.energyCost()+"E / 7 CLAW "+
-                    (costs.permits(GhostFrenzy.Attack.CLAW)?costs.clawCost()+"E":"N/A")+
-                    " / 8 DREAD "+costs.dreadCost()+"E";
-            g.drawString("NEXT EVENT "+(remaining<0?"WAITING":remaining+"s")+" / "+abilityCosts,
-                24,panelY+82);
-            if(frenzyPhase!=GhostFrenzy.Phase.CALM){
-                g.setColor(new Color(255,166,156));
-                g.drawString("FRENZY "+frenzyPhase+" / "+(frenzyTicks/10)+"s",24,panelY-12);
-            }
-            if(!feedback.isBlank()){
-                String note=feedback.length()>76?feedback.substring(0,73)+"...":feedback;
-                g.setColor(new Color(190,235,206));g.drawString(note,24,panelY-10);
-            }
+            String target=exits.isEmpty()?"None":map.roomName(exits.get(Math.floorMod(choice,exits.size())));
+            int remaining=Math.max(0,(actionDueTick-tick+9)/10);
+            g.setFont(new Font(Font.SANS_SERIF,Font.BOLD,12));
+            g.setColor(new Color(22,17,30,223));g.fillRoundRect(8,h-113,w-16,43,7,7);
+            g.setColor(new Color(237,223,246));
+            String countdown=actionDueTick<0?"":"    Next event "+remaining+"s";
+            g.drawString("Space  Drift to "+target+"   ·   Z / Q  Cycle exit   ·   E  Haunt fixture"+countdown,16,h-96);
+            g.setColor(new Color(204,192,215));
+            String note=frenzyPhase==GhostFrenzy.Phase.CALM?feedback:
+                "Frenzy "+frenzyPhase+"   "+(frenzyTicks+9)/10+"s    "+feedback;
+            FontMetrics metrics=g.getFontMetrics();
+            while(note.length()>1&&metrics.stringWidth(note)>w-32)note=note.substring(0,note.length()-1);
+            g.drawString(note,16,h-79);
+            GhostAbilityBar.draw(g,w,h-9,abilities);
             perfHud.draw(g,getWidth(),getHeight());
         }finally{g.dispose();}
     }

@@ -54,7 +54,7 @@ public final class EquipmentStoreDescriptions {
                 "s clips; "+stage.capacity()+" stored clips; "+
                 (tier==EquipmentTiers.Tier.I?"mono":"stereo")+" playback and WAV export";
             case "UV_LIGHT"->"Brighter UV pickup of genuine fading traces, up to "+
-                new int[]{90,125,160}[at]+" host ticks after they were left";
+                UvEvidenceMarks.lifetime(tier)/600+" minutes after they were left";
             case "DOTS_PROJECTOR"->"Physical projected grid, coverage radius "+
                 String.format(java.util.Locale.ROOT,"%.2f",stage.reachCm()/100.0)+
                 "m; passage only on real ghost action";
@@ -77,7 +77,7 @@ public final class EquipmentStoreDescriptions {
                 stage.batterySeconds()+" seconds of visible smoke";
             case "ECTOPLASM_SAMPLER","OBJECT_IMPRINT_SCANNER" ->
                 stage.capacity()+" collection charges; "+stage.reachCm()/100.0+
-                "m sample reach; read a surface trace or a clear swab";
+                "m sample reach, "+AdditionalEvidence.lifetime(AdditionalEvidence.phenomenon(id))/600+" minute trace lifetime";
             case "RESONANCE_TUNER","BAROMETRIC_PROBE","SEISMIC_RECORDER",
                     "SPECTRAL_PRISM","LASER_GRID","SPECTRAL_FREQUENCY_ANALYZER" ->
                 "Local sensor, "+stage.reachCm()/100.0+
@@ -121,7 +121,7 @@ public final class EquipmentStoreDescriptions {
                     stage.batterySeconds()+"s; recharge at the van";
             }
             case "UV_LIGHT" -> specs="Genuine trace visibility "+
-                new int[]{90,125,160}[tier.ordinal()]+" ticks; sample battery "+
+                UvEvidenceMarks.lifetime(tier)/600+" minutes; sample battery "+
                 stage.batterySeconds()+"s";
             case "DOTS_PROJECTOR" -> specs=String.format(java.util.Locale.ROOT,
                 "Actual grid coverage %.2fm; real ghost passages only",

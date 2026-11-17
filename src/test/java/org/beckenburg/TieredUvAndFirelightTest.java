@@ -8,16 +8,17 @@ public final class TieredUvAndFirelightTest {
     public static void main(String[] args){
         HunterCounters marks=new HunterCounters();
         int room=4;
-        ok(!marks.recentUv(room,100,160),
-            "even Tier III UV cannot invent a ghost mark before one exists");
-        marks.leaveUv(room,10);
-        ok(marks.recentUv(room,100,90),"Tier I sees a 90-tick genuine trace");
-        ok(!marks.recentUv(room,111,90),"Tier I trace detection fades naturally");
-        ok(marks.recentUv(room,111,125),
-            "Tier II higher power recovers a genuinely authored older mark");
-        ok(!marks.recentUv(room,150,125),"Tier II trace eventually fades");
-        ok(marks.recentUv(room,150,160),"Tier III detects the oldest genuine trace");
-        ok(!marks.recentUv(room,171,160),"no permanent or false-positive UV");
+        int born=10;
+        for(var tier:EquipmentTiers.Tier.values()){
+            int lifetime=UvEvidenceMarks.lifetime(tier);
+            ok(!marks.recentUv(room,100,lifetime),"empty room cannot provide a UV observation");
+        }
+        marks.leaveUv(room,born);
+        for(var tier:EquipmentTiers.Tier.values()){
+            int lifetime=UvEvidenceMarks.lifetime(tier);
+            ok(marks.recentUv(room,born+lifetime,lifetime),"real passage still detectable at tier cutoff");
+            ok(!marks.recentUv(room,born+lifetime+1,lifetime),"real passage expires after tier cutoff");
+        }
 
         var gear=new FieldEquipment();
         gear.equip(3,"FIRELIGHT");gear.selectSlot(3);

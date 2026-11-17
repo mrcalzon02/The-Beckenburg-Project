@@ -30,7 +30,9 @@ final class LocalInvestigation implements AutoCloseable {
         var contract=new CustomContract(1+hires,100,150,100,100,100,100,100,
             CustomContract.Sprint.LIMITED,70,true,true,mode,weather,intensity);
         var type=chapter==null?CampaignStory.rollFreePlay(System.nanoTime()):chapter.ghost();
-        host=new LanHost("127.0.0.1",0,type,contract,false,true,SiteCatalog.mapFor(location));
+        long seed=campaign?CampaignStory.missionSeed(profile.storySeed(),chapter.ordinal())
+            :java.util.concurrent.ThreadLocalRandom.current().nextLong();
+        host=LanHost.investigation("127.0.0.1",0,type,contract,false,SiteCatalog.mapFor(location),null,seed);
         LanClient joining=null;
         try{
             if(campaign)host.configureCampaign(profile,chapter);else host.configureFreePlay(profile);

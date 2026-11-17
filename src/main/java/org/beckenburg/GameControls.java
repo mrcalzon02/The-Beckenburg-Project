@@ -15,7 +15,7 @@ public final class GameControls {
         "LMB use or shutter / RMB power / T light / G place",
         "R drop / LMB throw held prop / wheel turn held prop",
         "TAB journal / J casefile / M map / H help / ESC pause",
-        "C radio voice / V local voice / ENTER text, TAB channel",
+        "C radio voice / V local voice / ENTER local text / SHIFT+ENTER radio text",
         "K field actions, supplies, rituals and voice options"
     };
     public static String help(){return String.join("\n",HINTS)+

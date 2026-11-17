@@ -27,7 +27,18 @@ public final class GhostPracticeTest {
         for(int tick=163;tick<=245;tick++){a.tick();b.tick();}
         ok(a.act(GhostDomain.Action.MANIFEST,a.ghostRoom()).applied(),"manifest after cooldown");
         for(int tick=246;tick<=252;tick++){a.tick();b.tick();}
-        ok(a.act(GhostDomain.Action.STRIKE,a.ghostRoom()).applied(),"second strike after cooldown");
+        ok(!a.act(GhostDomain.Action.STRIKE,a.ghostRoom()).applied(),"physical strike is still rebuilding");
+        var patrol=new java.util.Random(92L);
+        for(int tick=253;tick<=2400&&a.outcome()==GhostPracticeSession.Outcome.ACTIVE;tick++){
+            a.tick();
+            var seen=a.observation();
+            if(seen.legalActions().contains(GhostDomain.Action.STRIKE))
+                a.act(GhostDomain.Action.STRIKE,seen.room());
+            else if(seen.hearsHunter()&&seen.legalActions().contains(GhostDomain.Action.MANIFEST))
+                a.act(GhostDomain.Action.MANIFEST,seen.room());
+            else if(!seen.hearsHunter()&&tick%40==0&&seen.legalActions().contains(GhostDomain.Action.DRIFT))
+                a.act(GhostDomain.Action.DRIFT,seen.exits().get(patrol.nextInt(seen.exits().size())));
+        }
         ok(a.strikes()==2 && a.outcome()==GhostPracticeSession.Outcome.TWO_STRIKES,"training completion");
         int stopped=a.tickCount();a.tick();
         ok(a.tickCount()==stopped && a.act(GhostDomain.Action.WHISPER,a.ghostRoom())==null,"finished match immutable");
