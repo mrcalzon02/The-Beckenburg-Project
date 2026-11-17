@@ -70,6 +70,45 @@ public final class EditorUvPaintCacheTest {
             comparisons++;
         }
     }
+    private static State withFaces(State base,List<Face> faces){
+        return new State(base.sceneId(),base.sourceFingerprint(),base.name(),0,base.vertices(),faces,base.materials());
+    }
+    private static Face shifted(Face f,double delta){
+        var a=f.a();
+        return new Face(f.id(),f.part(),new Corner(a.vertex(),a.u()+delta,a.v()-.06,a.normal(),!a.pinned()),
+            f.b(),f.c(),f.material(),f.seamMask()^7);
+    }
+    private static void localChanges(EditorMeshMaterial material)throws Exception{
+        var seed=state(material);var rng=new Random(397);
+        var triangles=new ArrayList<Face>();
+        for(int i=0;i<160;i++){
+            var f=seed.faces().get(i%12);double u=rng.nextDouble()*1.5-.25,v=rng.nextDouble()*1.5-.25;
+            double width=i%7==0?.83:.023,height=i%5==0?.78:.031;
+            triangles.add(new Face(17L*i+1,f.part(),new Corner(f.a().vertex(),u,v,null,i%4==0),
+                new Corner(f.b().vertex(),u+width,v+.024),new Corner(f.c().vertex(),u+.009,v+height),
+                material.key(),i%8));
+        }
+        var base=withFaces(seed,triangles);var view=new EditorMaterialWorkspace(new JPanel(),new JPanel(),new JPanel(),id->{});
+        var canvas=(JPanel)field("canvas").get(view);canvas.setSize(389,277);
+        canvas.setFont(new Font(Font.SERIF,Font.BOLD|Font.ITALIC,27));
+        view.showUvGuides(true,true);view.selectGuideEdge(1);
+        for(boolean aa:new boolean[]{false,true}){
+            smooth=aa;
+            for(int i:new int[]{6,22,31,68,17,140,33,75}){
+                Long selected=triangles.get(i).id();
+                view.observe(base,selected,material,false);parity(view,"local selection "+i,1,0,false);
+                var next=new ArrayList<>(triangles);next.set(i,shifted(next.get(i),.11));
+                var edit=withFaces(base,next);view.observe(edit,selected,material,true);
+                parity(view,"local corner, pin and seam "+i,1,0,false);
+                view.observe(base,selected,material,false);
+                // Coalesced observations must never treat an unpainted revision as the source.
+                next.set(3,shifted(next.get(3),-.27));
+                view.observe(withFaces(base,next),selected,material,true);
+                parity(view,"coalesced and multiple faces "+i,1,0,false);
+            }
+        }
+        smooth=false;
+    }
     private static void run()throws Exception {
         var material=material(0xff_a05020,EditorMeshMaterial.Origin.BOTTOM_LEFT);var base=state(material);
         var view=new EditorMaterialWorkspace(new JPanel(),new JPanel(),new JPanel(),id->{});
@@ -104,6 +143,7 @@ public final class EditorUvPaintCacheTest {
         parity(view,"fractional fallback",1,.5,false);parity(view,"restored unscaled",1,0,false);
         canvas.setSize(2049,2048);parity(view,"oversize fallback",1,0,false);check(field("paintedUv").get(view)==null,"Oversize image retained");
         view.observe(null,null,null,false);check(field("paintedUv").get(view)==null&&field("paintedState").get(view)==null,"Closed document retained native state/image");
+        localChanges(material);
         System.out.println("PASS "+comparisons+" retained/direct whole-image pairs: sparse faces, overlaps, guides, filters, preview/cancel, texture, pencil, pan/zoom, tile, resize, clips, HiDPI fallback and close");
     }
     public static void main(String[] args)throws Exception {SwingUtilities.invokeAndWait(()->{try{run();}catch(Exception e){throw new RuntimeException(e);}});}

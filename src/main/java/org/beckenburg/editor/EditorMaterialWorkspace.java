@@ -72,12 +72,15 @@ public final class EditorMaterialWorkspace extends JPanel {
     private String previewIssue;
     public void previewIssue(String message){previewIssue=message;if(message!=null)status.setText(message);}
     private double zoom=1,panX,panY;private Point panStart;
-    private record PaintView(int width,int height,Long selected,Long row,Visibility visibility,EditorUvTile tile,
+    private record PaintView(int width,int height,Visibility visibility,EditorUvTile tile,
         double zoom,double panX,double panY,boolean pins,boolean seams,int guide,Font font,Color background,RenderingHints hints) {}
     private BufferedImage paintedUv;
     private EditorTopologyProject.State paintedState;
     private EditorMeshMaterial paintedMaterial;
     private PaintView paintedView;
+    private Long paintedFace,paintedRow;
+    private record FaceEdit(EditorTopologyProject.Face before,EditorTopologyProject.Face after) {}
+    private FaceEdit pendingPaintEdit;
     private static final boolean RETAIN_UV_PAINT=!"false".equalsIgnoreCase(System.getProperty("beckenburg.editor.uvPaintCache"));
     private final JPanel canvas=new JPanel(){protected void paintComponent(Graphics graphics){super.paintComponent(graphics);paintCanvas((Graphics2D)graphics);}};
     private void paintCanvas(Graphics2D graphics){
@@ -98,24 +101,38 @@ public final class EditorMaterialWorkspace extends JPanel {
             && transform.getTranslateY()==Math.rint(transform.getTranslateY());
         if(!retain){
             // An unsupported-size/transform view must not retain a large previous image.
-            paintedUv=null;paintedState=null;paintedMaterial=null;paintedView=null;
+            paintedUv=null;paintedState=null;paintedMaterial=null;paintedView=null;pendingPaintEdit=null;
             paintTexture(graphics);return;
         }
         var row=faceList.getSelectedValue();
-        var view=new PaintView(width,height,selectedFace,row==null?null:row.id(),visibility,tile,
-            zoom,panX,panY,pinsVisible,seamsVisible,guideEdge,graphics.getFont(),canvas.getBackground(),graphics.getRenderingHints());
-        if(paintedUv==null || paintedState!=state || paintedMaterial!=material || !view.equals(paintedView)){
-            // Invalidate before drawing; an interrupted/failed paint never publishes stale pixels.
+        Long rowId=row==null?null:row.id();
+        var view=new PaintView(width,height,visibility,tile,zoom,panX,panY,pinsVisible,seamsVisible,
+            guideEdge,graphics.getFont(),canvas.getBackground(),graphics.getRenderingHints());
+        boolean sameCanvas=paintedUv!=null && (paintedState==state || pendingPaintEdit!=null) && paintedMaterial==material && view.equals(paintedView);
+        boolean sameSelection=java.util.Objects.equals(paintedFace,selectedFace) && java.util.Objects.equals(paintedRow,rowId);
+        if(!sameCanvas || !sameSelection || pendingPaintEdit!=null){
+            // A changed selection affects two outlines and their corner labels. Replay all
+            // intersecting faces in their original order, including translucent overlaps.
+            boolean local=sameCanvas && java.util.Objects.equals(paintedFace,paintedRow)
+                && java.util.Objects.equals(selectedFace,rowId) && (pendingPaintEdit==null || sameSelection);
+            var edit=pendingPaintEdit;pendingPaintEdit=null;
             paintedState=null;paintedMaterial=null;paintedView=null;
             if(paintedUv==null || paintedUv.getWidth()!=width || paintedUv.getHeight()!=height)
                 paintedUv=new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
             var buffer=paintedUv.createGraphics();
             try{
                 buffer.setRenderingHints(view.hints());buffer.setFont(view.font());
-                buffer.setColor(view.background());buffer.fillRect(0,0,width,height);
-                paintTexture(buffer);
+                if(local){
+                    var oldArea=edit==null?selectionBounds(paintedFace,buffer):faceBounds(edit.before(),buffer);
+                    var newArea=edit==null?selectionBounds(selectedFace,buffer):faceBounds(edit.after(),buffer);
+                    if(oldArea.intersects(newArea))repaintArea(buffer,oldArea.union(newArea));
+                    else{repaintArea(buffer,oldArea);repaintArea(buffer,newArea);}
+                }else{
+                    buffer.setColor(view.background());buffer.fillRect(0,0,width,height);
+                    paintTexture(buffer);
+                }
             }finally{buffer.dispose();}
-            paintedState=state;paintedMaterial=material;paintedView=view;
+            paintedState=state;paintedMaterial=material;paintedView=view;paintedFace=selectedFace;paintedRow=rowId;
         }
         graphics.drawImage(paintedUv,0,0,null);
     }
@@ -307,10 +324,10 @@ public final class EditorMaterialWorkspace extends JPanel {
             return rowsById.getOrDefault(id,-1);
         }
 
-        private void update(List<EditorTopologyProject.Face> next, Visibility visibility) {
+        private void update(List<EditorTopologyProject.Face> next, Visibility visibility, boolean trackEdit) {
             if (visibility.equals(filter)) {
                 if (source==next) return;
-                if (next.size()==source.size() && updateSameOrder(next)) return;
+                if (next.size()==source.size() && updateSameOrder(next,trackEdit)) return;
             }
             int oldSize=getSize();
             var prototype=faceList.getPrototypeCellValue();
@@ -335,7 +352,7 @@ public final class EditorMaterialWorkspace extends JPanel {
         }
 
         /** The state supplies immutable faces. Stable row IDs preserve filtering and sparse-ID lookup. */
-        private boolean updateSameOrder(List<EditorTopologyProject.Face> next) {
+        private boolean updateSameOrder(List<EditorTopologyProject.Face> next,boolean trackEdit) {
             int first=-1, last=-1;
             boolean labelChanged=false;
             for (int i=0;i<next.size();i++) {
@@ -348,6 +365,7 @@ public final class EditorMaterialWorkspace extends JPanel {
                 last=i;
                 if (!old.part().equals(face.part())) labelChanged=true;
             }
+            if(trackEdit && first>=0 && first==last)pendingPaintEdit=new FaceEdit(source.get(first),next.get(first));
             source=next;
             if (labelChanged) fitFaceRows();
             if (first>=0) fireContentsChanged(this,rowForOrdinal(first),rowForOrdinal(last));
@@ -364,8 +382,12 @@ public final class EditorMaterialWorkspace extends JPanel {
     }
     public void observe(EditorTopologyProject.State value,Long face,EditorMeshMaterial displayed,String preview){
         boolean pending=preview!=null;
+        boolean trackEdit=value!=null && state!=null && state!=value && paintedState==state
+            && material==displayed && paintedMaterial==displayed && paintedView!=null
+            && state.sceneId().equals(value.sceneId()) && state.sourceFingerprint().equals(value.sourceFingerprint());
         if(state!=value || material!=displayed){
-            paintedState=null;paintedMaterial=null;paintedView=null;
+            paintedState=null;pendingPaintEdit=null;
+            if(!trackEdit){paintedMaterial=null;paintedView=null;}
             if(value==null)paintedUv=null;
         }
         if(state!=value || !java.util.Objects.equals(selectedFace,face) || pending)previewIssue=null;
@@ -377,7 +399,7 @@ public final class EditorMaterialWorkspace extends JPanel {
         state=value;
         updating=true;
         try {
-            faces.update(value==null ? List.of() : value.faces(),visibility);
+            faces.update(value==null ? List.of() : value.faces(),visibility,trackEdit);
             int row=face==null || !visibility.includes(face) ? -1 : faces.rowOf(face);
             selectedFace=row<0 ? null : face;
             if (row!=faceList.getSelectedIndex()) {
@@ -413,7 +435,50 @@ public final class EditorMaterialWorkspace extends JPanel {
     private static EditorTopologyProject.Corner corner(EditorTopologyProject.Face face,int index){
         return switch(index){case 0->face.a();case 1->face.b();default->face.c();};
     }
-    private void paintTexture(Graphics2D original){var g=(Graphics2D)original.create();try{
+    private Rectangle selectionBounds(Long id,Graphics2D g){
+        Rectangle canvasBounds=new Rectangle(0,0,canvas.getWidth(),canvas.getHeight());
+        if(id==null)return new Rectangle();
+        int row=faces.rowOf(id);
+        if(row<0)return canvasBounds;
+        return faceBounds(faces.getElementAt(row),g);
+    }
+    private Rectangle faceBounds(EditorTopologyProject.Face face,Graphics2D g){
+        Rectangle canvasBounds=new Rectangle(0,0,canvas.getWidth(),canvas.getHeight());
+        if(!displays(face))return new Rectangle();
+        double[] r=imageRect();
+        Rectangle bounds=null;
+        for(int i=0;i<3;i++){
+            var c=corner(face,i);
+            int px=x(c.u(),r),py=y(c.v(),r);
+            // Leave extreme projections to the original painter and avoid rectangle overflow.
+            if(Math.abs((long)px)>100_000_000 || Math.abs((long)py)>100_000_000)return canvasBounds;
+            var point=new Rectangle(px-7,py-7,15,15);
+            if(bounds==null)bounds=point;else bounds.add(point);
+            if((pinsVisible||seamsVisible) && hasCornerLabel(px,py,r)){
+                int tx=labelX(px,r),ty=labelY(py,r);
+                bounds.add(new Rectangle(tx,ty,12,15));
+                var label=new java.awt.font.TextLayout(String.valueOf((char)('A'+i)),g.getFont(),g.getFontRenderContext());
+                var ink=label.getPixelBounds(g.getFontRenderContext(),tx+1,ty+12);
+                ink.grow(2,2);bounds.add(ink);
+            }
+        }
+        return bounds.intersection(canvasBounds);
+    }
+    private void repaintArea(Graphics2D buffer,Rectangle area){
+        if(area.isEmpty())return;
+        var g=(Graphics2D)buffer.create();
+        try{
+            g.clip(area);g.setColor(canvas.getBackground());g.fill(area);
+            paintTexture(g,area);
+        }finally{g.dispose();}
+    }
+    private static boolean hasCornerLabel(int px,int py,double[] r){
+        return px>=Math.floor(r[0]) && px<=Math.ceil(r[0]+r[2]) && py>=Math.floor(r[1]) && py<=Math.ceil(r[1]+r[3]);
+    }
+    private static int labelX(int px,double[] r){return (int)Math.max(r[0],Math.min(px+4,r[0]+r[2]-12));}
+    private static int labelY(int py,double[] r){return (int)Math.max(r[1],Math.min(py-14,r[1]+r[3]-15));}
+    private void paintTexture(Graphics2D original){paintTexture(original,null);}
+    private void paintTexture(Graphics2D original,Rectangle damage){var g=(Graphics2D)original.create();try{
         double[] r=imageRect();int left=(int)r[0],top=(int)r[1],w=(int)r[2],h=(int)r[3];g.clipRect(left,top,w+1,h+1);
         for(int yy=top;yy<top+h;yy+=16)for(int xx=left;xx<left+w;xx+=16){g.setColor(((xx-left)/16+(yy-top)/16)%2==0?new Color(82,86,91):new Color(56,60,65));g.fillRect(xx,yy,16,16);}
         g.setRenderingHint(RenderingHints.KEY_INTERPOLATION,RenderingHints.VALUE_INTERPOLATION_NEAREST_NEIGHBOR);if(texture!=null)g.drawImage(texture,left,top,w,h,null);
@@ -435,8 +500,11 @@ public final class EditorMaterialWorkspace extends JPanel {
         }
         if(state==null)return;for(int row=0;row<faces.getSize();row++){var face=faces.getElementAt(row);
             if(!displays(face))continue;
-            boolean chosen=selectedFace!=null&&face.id()==selectedFace;g.setColor(chosen?UV_SELECTED:UV_EDGE);g.setStroke(chosen?UV_THICK:UV_THIN);
+            boolean chosen=selectedFace!=null&&face.id()==selectedFace;
             int ax=x(face.a().u(),r),ay=y(face.a().v(),r),bx=x(face.b().u(),r),by=y(face.b().v(),r),cx=x(face.c().u(),r),cy=y(face.c().v(),r);
+            if(damage!=null && (Math.max(ax,Math.max(bx,cx))<damage.x-4 || Math.min(ax,Math.min(bx,cx))>damage.x+damage.width+4
+                    || Math.max(ay,Math.max(by,cy))<damage.y-4 || Math.min(ay,Math.min(by,cy))>damage.y+damage.height+4))continue;
+            g.setColor(chosen?UV_SELECTED:UV_EDGE);g.setStroke(chosen?UV_THICK:UV_THIN);
             g.drawLine(ax,ay,bx,by);g.drawLine(bx,by,cx,cy);g.drawLine(cx,cy,ax,ay);
         }
         if(pinsVisible||seamsVisible){
@@ -444,12 +512,14 @@ public final class EditorMaterialWorkspace extends JPanel {
             for(int row=0;row<faces.getSize();row++){
                 var f=faces.getElementAt(row);if(!displays(f))continue;
                 for(int index=0;index<3;index++){var c=corner(f,index);
+                    boolean seam=seamsVisible && f.marked(index),pin=pinsVisible && c.pinned();
+                    if(!seam && !pin)continue;
                     int px=x(c.u(),r),py=y(c.v(),r);
-                    if(seamsVisible && f.marked(index)){
+                    if(seam){
                         var end=corner(f,(index+1)%3);g.setColor(UV_SEAM);g.setStroke(UV_THICK);
                         g.drawLine(px,py,x(end.u(),r),y(end.v(),r));
                     }
-                    if(pinsVisible && c.pinned()){g.setColor(Color.BLACK);g.fillOval(px-5,py-5,10,10);g.setColor(Color.CYAN);g.fillOval(px-3,py-3,6,6);}
+                    if(pin){g.setColor(Color.BLACK);g.fillOval(px-5,py-5,10,10);g.setColor(Color.CYAN);g.fillOval(px-3,py-3,6,6);}
                 }
             }
             if(selected!=null && displays(selected)){
@@ -464,9 +534,9 @@ public final class EditorMaterialWorkspace extends JPanel {
                 int index=0;
                 for(var c:corners){
                     int px=x(c.u(),r),py=y(c.v(),r);
-                    if(px>=Math.floor(r[0]) && px<=Math.ceil(r[0]+r[2]) && py>=Math.floor(r[1]) && py<=Math.ceil(r[1]+r[3])){
-                        int tx=(int)Math.max(r[0],Math.min(px+4,r[0]+r[2]-12));
-                        int ty=(int)Math.max(r[1],Math.min(py-14,r[1]+r[3]-15));
+                    if(hasCornerLabel(px,py,r)){
+                        int tx=labelX(px,r);
+                        int ty=labelY(py,r);
                         g.setColor(Color.BLACK);g.fillRect(tx,ty,12,15);g.setColor(Color.WHITE);g.drawString(String.valueOf((char)('A'+index)),tx+1,ty+12);
                     }
                     index++;

@@ -91,8 +91,49 @@ public final class EditorUvPaintProfile {
             }
         }
     }
+    private static void changedFrames(Path output)throws Exception {
+        Files.createDirectories(output);
+        var clock=(ThreadMXBean)ManagementFactory.getThreadMXBean();
+        clock.setThreadAllocatedMemoryEnabled(true);clock.setThreadCpuTimeEnabled(true);
+        try(var out=Files.newBufferedWriter(output.resolve("changes.csv"))){
+            out.write("case,operation,sample,wall_ns,cpu_ns,allocated_bytes,argb_sha256\n");
+            for(boolean tiled:new boolean[]{false,true}){
+                var base=grid(tiled);
+                int id=tiled?0:60300;
+                var faces=new ArrayList<>(base.faces());
+                var f=faces.get(id);var a=f.a();
+                faces.set(id,new Face(f.id(),f.part(),new Corner(a.vertex(),a.u()+.011,a.v()-.007,a.normal(),!a.pinned()),
+                    f.b(),f.c(),f.material(),f.seamMask()^1));
+                var edited=new State(base.sceneId(),base.sourceFingerprint(),base.name(),0,base.vertices(),faces);
+                var view=new EditorMaterialWorkspace(new JPanel(),new JPanel(),new JPanel(),unused->{});
+                var field=EditorMaterialWorkspace.class.getDeclaredField("canvas");field.setAccessible(true);
+                var canvas=(JPanel)field.get(view);canvas.setSize(520,500);
+                for(boolean guides:new boolean[]{false,true}){
+                    view.showUvGuides(guides,guides);
+                    String name=(tiled?"tiled":"atlas")+(guides?"-guides":"-edges");
+                    var image=new BufferedImage(520,500,BufferedImage.TYPE_INT_ARGB);
+                    var graphics=image.createGraphics();
+                    try{
+                        view.observe(base,(long)id,null,false);canvas.paint(graphics);
+                        // Every four operations return to exactly the initial document and face.
+                        String[] operations={"select","reselect","edit","undo"};
+                        for(int cycle=-1;cycle<6;cycle++)for(int step=0;step<operations.length;step++){
+                            long allocated=clock.getCurrentThreadAllocatedBytes(),cpu=clock.getCurrentThreadCpuTime(),start=System.nanoTime();
+                            view.observe(step==2?edited:base,(long)(step==0?id+1:id),null,step==2);
+                            canvas.paint(graphics);
+                            long elapsed=System.nanoTime()-start;cpu=clock.getCurrentThreadCpuTime()-cpu;
+                            allocated=clock.getCurrentThreadAllocatedBytes()-allocated;
+                            if(cycle>=0)out.write(String.format(Locale.ROOT,"%s,%s,%d,%d,%d,%d,%s%n",
+                                name,operations[step],cycle,elapsed,cpu,allocated,hash(image)));
+                        }
+                    }finally{graphics.dispose();}
+                }
+            }
+        }
+    }
     public static void main(String[] args)throws Exception {
-        if(args.length!=1)throw new IllegalArgumentException("Expected output directory");
-        SwingUtilities.invokeAndWait(()->{try{run(Path.of(args[0]));}catch(Exception e){throw new RuntimeException(e);}});
+        boolean changes=args.length==2 && args[0].equals("--changes");
+        if(!changes && args.length!=1)throw new IllegalArgumentException("Expected [--changes] output-directory");
+        SwingUtilities.invokeAndWait(()->{try{if(changes)changedFrames(Path.of(args[1]));else run(Path.of(args[0]));}catch(Exception e){throw new RuntimeException(e);}});
     }
 }

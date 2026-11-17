@@ -1008,3 +1008,8 @@ Release readback: v0.1.351 is published from `cc6551a0ccd35e3a5f048cbb16736cf4fc
 
 
 Source-exact native Windows editor44131171098 is now SUCCESS: actual human model/material UV, save/reopen, runtime UV/color/pixel parity and installed MCP repair passed. Original evidence artifact14351811786 is10,558,493bytes; selected real PASS receipts are committed with the benchmark. Broad391-test full44131171455 remains active independently. No remaining hitch or changed-face redraw defect is closed by these acceptance results.
+
+
+## 2026-11-17 — local UV edits and walking-frame attribution
+
+Reconciled main c06ccdcc1d14b3c285f44a7b1a5694722e1f94dd. Released v0.1.351 full Windows run 44131171455 passed 391/391 with zero skipped. Localized Material Editor selection and one-visible-face edits passed 192 paired benchmark image hashes and 144 whole-image regression comparisons. Normalized atlas edit/undo p50 fell from 1.61–1.89 seconds to 16.53–18.73 ms. Three-seat/solo Core30 run 44151619792 is measuring eight post-geometry stages with a clean control. The focused Castle check 44131170811 had treated a legal empty-room Shade manifestation as a strike risk. The revised zero-harm and physical-victim tests pass locally. Next collect the native Windows window timings and GTX per-stage receipts. docs/performance/2026-11-17-uv-walking/README.md

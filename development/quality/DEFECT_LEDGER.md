@@ -10,6 +10,10 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-385 — Focused Castle test rejected the Ancient Shade's empty-room manifestation
+
+Windows run 44131170811 stopped on an accepted MANIFEST in the no-body scenario. Empty rooms are the authored witness condition for Shades. The revised check retains the universal STRIKE prohibition, proves a Shade can manifest in the silent control, and requires zero harm and fear for either empty-room action. Both the ghost-domain parity test and physical-victim pursuit check pass locally. This correction changes test expectations only.
+
 ### DEV-384 — A correctly identified Spirit could strand the investigator on the porch on the way to Absolution
 
 **Status:** Reproduced against the published route controller; see the targeted original and corrected checks · **Affected:** House outdoor ritual location. Other room surveys exercise separate routes.
@@ -333,6 +337,8 @@ Fix / next action: A bounded completed-canvas cache reduces local unchanged repa
 Evidence and verification: development/quality/evidence/editor-regional-seams-2026-11-16/material-window-results.tsv (20 published-revision samples), MaterialWindowProfile.java and run.sh window
 
 Older-map obligation: Profile large native meshes in the editor. This UI observation has no effect on saved geometry or game simulation.
+
+Local one-face preview, undo and selection now repair only the affected canvas regions. The 120,000-face headless measurements include observation and paint, with 192 matched hashes and 144 differential image pairs. Windows and broad edits remain separate. See docs/performance/2026-11-17-uv-walking/README.md.
 
 ### DEV-361 — Healthy joining hunter can lose its connection before entering the 3D view
 

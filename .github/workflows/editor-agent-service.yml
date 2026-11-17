@@ -80,6 +80,13 @@ jobs:
       - name: Build actual host and resources
         shell: cmd
         run: call build.cmd package
+      - name: Time one-face UV previews and undo in a showing Windows editor
+        if: ${{ github.event_name == 'push' && contains(github.event.head_commit.message, '[uv-window-profile]') }}
+        continue-on-error: true
+        shell: pwsh
+        env:
+          BASELINE: ${{ github.event.before }}
+        run: ./tools/performance/windows_uv_window.ps1 -Baseline $env:BASELINE
       - name: Diagnose native Castle lamp emitter and roof occlusion
         shell: cmd
         run: |

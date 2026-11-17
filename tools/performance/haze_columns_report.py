@@ -49,7 +49,7 @@ def intervals(rows):
         previous, pending = row, []
 
 
-def analyze(path):
+def analyze(path, experiment="haze-columns"):
     def require(ok, message):
         if not ok:
             raise ValueError(message)
@@ -62,10 +62,19 @@ def analyze(path):
             return list(csv.DictReader(io.StringIO(read(name))))
         provenance = json.loads(read("provenance.json"))
         manifest = json.loads(read("compiled-overlays.json"))
-        require(provenance["route"] == manifest["experiment"] == "haze-columns", "Wrong route")
+        require(provenance["route"] == manifest["experiment"] == experiment, "Wrong route")
         require(provenance["backend"] == "gpu" and provenance["runner"] == "OLD-CORE30-homebrew", "Wrong hardware controller")
         require(provenance["revisions"]["candidate"] == manifest["candidate_sha"], "Candidate SHA mismatch")
-        require(manifest["runtime"] == "same unmodified candidate GPU JAR for both arms", "Not a same-package comparison")
+        if experiment == "haze-columns":
+            require(manifest["runtime"] == "same unmodified candidate GPU JAR for both arms", "Not a same-package comparison")
+        elif experiment == "effect-stages":
+            require(manifest["runtime"] == "one candidate GPU JAR, test-only overlay in probe arm"
+                    and manifest["instrumented_lf_sha256"] == {
+                        "SceneRenderer.java": "4ae516db70fbe49dfbf8c37b1c7b9151f1b07d40237b7efe4953760236b81a3f",
+                        "LanViewportPerformanceReview.java": "3a022e06d6c4a236ac87fe6c4ae443e2630abbb78e2e12382d0c7694baf7322e"},
+                    "Unexpected stage diagnostic overlay")
+        else:
+            raise ValueError("Unsupported experiment")
         require(manifest["test_driver_lf_sha256"] == "264e0bfae9cb77664a57751d88e01300e216cf77c3da93d00445f9c3b224041e", "Wrong route driver")
         jar_sha = read("candidate-jar.sha256").strip()
         require(len(jar_sha) == 64 and all(c in "0123456789abcdef" for c in jar_sha), "Invalid package digest")
@@ -86,7 +95,7 @@ def analyze(path):
             details = dict(line.split("=", 1) for line in read(trial + "/summary.txt").splitlines())
             require("NVIDIA" in details["renderer"] and "1660 SUPER" in details["renderer"], "Not the physical GTX")
             require(details["rendered_hunters"] == "1" and float(details["max_travel_metres"]) > .1, "No rendered movement")
-            prop = "-Dbeckenburg.experimental.hazeColumns=" + str(arm == "candidate").lower()
+            prop = "-Dbeckenburg.experimental.hazeColumns=" + str(experiment == "haze-columns" and arm == "candidate").lower()
             require(prop in read(trial + "/run.log"), "Wrong feature flag")
             frames = rows(trial + "/frames.csv")
             require(any(r["phase"] == "moving" and r["inside_sanctuary"] == "false" for r in frames), "Never left sanctuary")
