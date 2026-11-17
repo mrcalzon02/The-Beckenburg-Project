@@ -981,3 +981,10 @@ With a 20 ms visual deadline and 110 ms input timer, the physical four-pair stud
 ## 2026-11-16 — First outward crossing on the GTX 1660 SUPER
 
 A viewport-wide ray-direction bound skips the sanctuary only when every positive ray leads away from its bounding box. All eight paired GTX crossings dropped from 49.67–86.84 to 16.26–18.00 ms. The matched control and candidate used the released v0.1.339 game and 20 ms timer. All six candidate pooled p95 values met 33.3 ms and 22/24 individual trial phases did. The one 127.349 ms three-seat gap was the first step inside the van. DEV-364 tracks that distinct-frame hitch. The concurrent v0.1.340 game retained the timer and shader behavior and passed its installer smoke tests. [Raw timing, CPU, trajectories, TCP and audits](../docs/performance/2026-11-16-house-frame-times/windows-exit.md) · [v0.1.340](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.340)
+
+
+## Investigator attention and room population — 16 November 2026
+
+Gameplay revision a85a47eee203b7fb4d29abcf2a19568262fa5eb6 is on main. A human checks off what they see. A hired watcher explicitly attends a particular feed and physically faces the screen. Unwatched channels, a lowered lens and blank images provide no sighting, cue or photo objective. A photographer's explicit claim can be considered privately at settlement. Shade, Banshee and Poltergeist test different living populations in the individual figure's room. Specter retains its unrestricted camera-only behavior.
+
+House loopback checks passed for all three headcount transitions, wrong channel, no observer, manual journal and shutter provenance, three hired observers staging empty/solo/group/empty, and direct/selected-camera D.O.T.S. and laser visibility. The three-by-three comparison and test transcripts are in development/quality/evidence/manifestation-witnesses-2026-11-16/. Windows installer run 44016080220 and seven-client run 44016080226 track the gameplay commit. Check their terminal status and the full multiplayer run for the expanded regression manifest. Broader human pacing and site-specific sightline audits remain open.
