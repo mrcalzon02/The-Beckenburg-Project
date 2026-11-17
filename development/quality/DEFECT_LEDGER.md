@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-363 — Prepared GPU lighting can reverse which side of House door 2 receives light
+
+**Status:** Open, reproduced on the released renderer and the receiver-reuse experiment · **Affected:** House door 2, room 1, stationary source 0 and two receivers 23 mm apart
+
+On opening and reopening the door, the second receiver can inherit the first receiver’s visibility. Inserting the shaded point first gives the lit point red 0.9905047 instead of 1.0767660. Reversing insertion lights the shaded point.
+
+Cause / uncertainty: The retained diffuse shadow lookup rounds two world positions with different visibility into the same key. Distinct exact prepared-vertex probes still consult that lookup.
+
+Fix / next action: Keep receiver changes experimental. An exact diffuse-shadow key fixes both insertion orders and all four door states. It changes 10.96% of the pixels across the 58-frame route and needs wider validation.
+
+Evidence and verification: docs/performance/2026-11-16-house-frame-times/door-2/README.md, DoorReceiverReview.java, pixel-differences.csv and raw color/depth comparisons
+
+Older-map obligation: The prepared lighting path is shared by other maps. Their near-aperture visibility and existing rendered colors need independent comparison.
+
 ### DEV-362 — Full UV canvas repaint remains slow on a 120,000-face editable mesh
 
 **Status:** Open, reproduced in a showing Swing window on Java 17 · **Affected:** Material Editor texture/UV canvas with the complete 300 by 200 quad grid visible as 120,000 native triangles

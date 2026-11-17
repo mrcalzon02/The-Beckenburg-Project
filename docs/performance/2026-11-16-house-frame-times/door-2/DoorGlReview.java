@@ -65,6 +65,13 @@ public class DoorGlReview {
                 var depth=ByteBuffer.allocate(r.depth().length*4);
                 for(int p:r.argb()){color.putInt(p);if((p>>>24)!=0)visible++;}
                 for(float z:r.depth())depth.putInt(Float.floatToRawIntBits(z));
+                if(Boolean.getBoolean("beckenburg.door.capturePixels")){
+                    var capture=output.toAbsolutePath().getParent().resolve("pixels");
+                    Files.createDirectories(capture);
+                    try(var out=new java.util.zip.GZIPOutputStream(Files.newOutputStream(capture.resolve("frame-"+i+".argb.gz")))){
+                        out.write(color.array());
+                    }
+                }
                 if(visible<1000)throw new AssertionError("Blank frame");
                 csv.write(String.format(Locale.ROOT,"%d,%s,%b,%b,%b,%d,%d,%d,%d,%d,%d,%s,%s%n",i,phase,
                     map.doorOpen(door.id()),map.doorOpen(doorB.id()),map.windowOpen(window.id()),stats.uploadedBytes(),stats.uploadedBatches(),
