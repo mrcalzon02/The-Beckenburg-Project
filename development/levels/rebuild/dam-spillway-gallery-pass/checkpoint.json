@@ -313,5 +313,19 @@
     "multiplayer": 44153590389,
     "gpu": 44016080200,
     "installer": 44153590626
+  },
+  "publication": {
+    "construction_commit": "66fe3286e13cb569b61797ee43a10e952ba4e5ff",
+    "branch": "map/roster-structure-batch",
+    "pr": 86,
+    "pr_base": "map/house-default",
+    "pr_draft": true,
+    "committed_bytes_verified": true,
+    "gallery_run": 44183961989,
+    "gallery_run_status": "completed",
+    "gallery_run_conclusion": "success",
+    "gallery_page_http": 200,
+    "new_capture_http": 404,
+    "deployed_capture_verified": false
   }
 }
