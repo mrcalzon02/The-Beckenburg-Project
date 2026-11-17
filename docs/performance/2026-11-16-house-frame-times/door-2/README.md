@@ -4,6 +4,8 @@ The RGB upload candidate reduced the bytes sent for the 18 revised resident reso
 
 The upload candidate stores XYZ and UV ahead of the contiguous RGB region of each positive-ID resident VBO. It keeps an owned CPU snapshot of the geometry (20 bytes per resident vertex). It compares all five geometry fields against the last real upload on a changed revision, including when the caller recycles the same source array. A matching revision or draw-only descriptor needs no retransmission. Dynamic batches retain the existing interleaved Mesh path.
 
+The physical GTX comparison subsequently confirmed identical frames and a 251,160-byte saving on all 96 paired toggles. End-to-end p95 worsened in three pairs and pooled p99 increased. [Physical report, frame CSVs and SHA-256 checks](physical-door.md)
+
 ## Timing
 
 House door 2, settled alternating poses and fixed camera. Each arm ran twice in a fresh Java 17 process, 58 frames per run, with 24 timed toggle frames. Order was baseline, receiver-only, RGB-only, both, both, RGB-only, receiver-only, baseline. Each used a 420 MiB Java heap cap, two visible JVM processors, Serial GC, two Mesa worker threads and the same CPU affinity on shared Linux. llvmpipe 25.0.7 rendered the frames. Results below pool each arm's 48 toggles and use nearest-rank percentiles. A shared host killed two attempts during other workloads. The completed retries used fresh processes and are the only observations in the table. Partial CSVs are preserved in the archive.

@@ -31,6 +31,8 @@ The intervals run between panel completions consuming distinct nonnegative GL fr
 | Three-seat TCP | Staged rows | walking | 292 | 33.832 | 72.67 | 75.696 | 56 | 0 | 75.989 |
 | Three-seat TCP | Staged rows | stopping | 292 | 67.425 | 70.375 | 74.346 | 292 | 0 | 75.296 |
 
+The solo six-frame arm delivered 64 measured walking intervals ending inside the sanctuary and 228 ending outside. The median post-geometry times on those ending frames were 54.75 ms and 1.32 ms. Each phase excludes its first completion from interval measurements.
+
 ## One step and stop inside
 
 All 24 walks crossed the sanctuary boundary. The final step was 0.310 m and every recorded stopping frame was inside. The final unchanged camera was held 4.912–4.955 s. Its sixth render is the live pose that `SceneRenderer.renderSafeAreas` passes to `SafeAreaHaze.draw`. The GL image may have been submitted on an earlier frame. Post-geometry time includes the sanctuary and other scene effects.
@@ -47,3 +49,5 @@ All 24 walks crossed the sanctuary boundary. The final step was 0.310 m and ever
 Across the eight six-frame trials, median post-geometry time at rest on pose frames four through eight was 59.4, 59.2, 56.5, 45.1 and 44.9 ms. Their largest distinct-frame gap in that window was 70.803 ms. Each cache variant removed every observed walking gap over 100 ms in both modes. The sustained stop still ran at roughly 68 ms per frame, and none of the 18 pooled p95 measurements reached 33.3 ms.
 
 The supplemental `pose-events.csv` records the first twelve held renders, plus all walking and stopping gaps above 100 ms. It includes phase-transition intervals explicitly labeled by their starting phase. `over-100.csv` counts only same-phase intervals. `route-audit.csv` verifies every walk crossed the dome and every TCP investigation received player states and approved steps. The baseline and staged arms separately completed the full three-seat round, including shared evidence, correct rite and both hunters’ settlement. The six-frame arm completed the instrumented walk and stop in both modes. [Raw Windows evidence](windows-stop.zip) · [Per-trial, per-pose and checksum data](windows-stop-analysis.zip) · [Download checksums](windows-stop-SHA256SUMS)
+
+All four candidates (six-frame admission, staged row admission, serial opacity reuse and four-lane shading) passed a complete three-seat investigation using freshly compiled Java 17 production classes in separate local checks. Each matched the released direct shader on 6,889,880 randomized RGB/depth samples. [Raw optical comparisons and gameplay checks](sanctuary-stop/local-gameplay-optics.zip) · [Frame scheduling replay](timer-replay.md)
