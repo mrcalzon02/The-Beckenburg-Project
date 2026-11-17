@@ -175,5 +175,20 @@
     "Actual host/guest progression and encounter/evidence replay",
     "Furnishing and visual finish, drainage, long-view boundaries, real-world performance"
   ],
-  "runtime_accepted": false
+  "runtime_accepted": false,
+  "publication": {
+    "implementation_commit": "7628e04be62bd2f6645828e4d03162a26a7fb09e",
+    "branch": "map/roster-structure-batch",
+    "pr": 86,
+    "draft": true,
+    "base": "map/house-default",
+    "remote_readback_verified": true,
+    "committed_source_and_capture_hashes_verified": true,
+    "local_index_checked_pngs": 11048,
+    "gallery_validation_run": 44190572291,
+    "gallery_validation_status_at_readback": "in_progress",
+    "gallery_validation_conclusion_at_readback": null,
+    "gallery_page_http": 200,
+    "new_capture_http": 404
+  }
 }
