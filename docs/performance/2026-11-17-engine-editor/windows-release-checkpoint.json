@@ -1,0 +1,17 @@
+{
+  "release": "beckenburg-v0.1.351",
+  "source_sha": "cc6551a0ccd35e3a5f048cbb16736cf4fcb01556",
+  "installer_run": 44131170964,
+  "installer_status": "success",
+  "installed_castle_smoke": "pass",
+  "packaged_solo_entry": "pass",
+  "packaged_full_tcp_settlement": "pass",
+  "exe_bytes": 761358651,
+  "exe_sha256": "1337e8584f1b003c95073137b47db4840f27344fac97861534a33f29c4e2cc95",
+  "published_at_utc": "2026-11-17T17:05:49Z",
+  "full_regression_run": 44131171455,
+  "full_regression_status_at_checkpoint": "in_progress",
+  "editor_acceptance_run": 44131171098,
+  "editor_acceptance_status_at_checkpoint": "in_progress",
+  "limits": "Installer and complete TCP gates passed; broad regression/native editor runs remain independently tracked. Headless editor measurements are not Windows display timings."
+}

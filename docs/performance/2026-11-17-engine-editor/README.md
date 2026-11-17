@@ -76,3 +76,9 @@ The retained [GTX exit archive](../2026-11-16-house-frame-times/windows-exit.zip
 The renderer A–G program, all-map acceptance, sustained installed gameplay, cold edit latency and hardware presentation remain open. This checkpoint does not claim engine/editor performance completion.
 
 Parent exact-main Windows acceptance [44124137497](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44124137497) completed with raw `passed=390 failed=0 skipped=0 manifest=390`. Installer [44124111288](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44124111288) also completed successfully. Those establish the reconciled parent, not acceptance of the new painter.
+
+## Published source acceptance
+
+[v0.1.351](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.351) is published from unchanged-canvas source `cc6551a0ccd35e3a5f048cbb16736cf4fcb01556`. Its [Windows installer run44131170964](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44131170964) passed actual full TCP settlement, packaged desktop and solo startup, embedded solo campaign and independently installed executable Castle readiness. The executable is761,358,651bytes, SHA-256 `1337e8584f1b003c95073137b47db4840f27344fac97861534a33f29c4e2cc95`. [Observed source receipts](checks/source-windows-installer.log) · [Release/check status snapshot](windows-release-checkpoint.json).
+
+The source-exact expanded full run44131171455 and native editor run44131171098 are still active at this evidence checkpoint. Their broad acceptance is not inferred from the installer. Source0.1.351 contains the editor cache; the columns experiment remains default-off. The raw GTX run times parent2dbb8b3, whose engine shader and panel hashes match this release exactly. The later main evidence commits change documentation/analysis only, preserving the running source checks.
