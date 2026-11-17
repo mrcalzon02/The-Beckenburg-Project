@@ -1,0 +1,84 @@
+{
+  "glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+  "native_sha256": "0c7acf61448a2bea8af7a03ee18af666c58e26a0b1d189b4f9ab40e3fbd0ed8e",
+  "retained_native_records": 283,
+  "added_closed_parts": 127,
+  "terrain_matches_editor": true,
+  "doorway_aperture_controls": 153,
+  "door_sill_standing_controls": 204,
+  "new_stair_tread_and_headroom_controls": 34,
+  "non_corridor_standing_controls": 40,
+  "van_triangle_count": 2689,
+  "van_source_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/overview.png",
+      "sha256": "2d8e34c4ee3a41c2312348bba514599acd2cad4494574c5ad4fecc3322a5c97c",
+      "source_glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/roadhead-and-gate.png",
+      "sha256": "c4ef61167bac7577ad2f9441c8bcb5ae7db296dc87c7fe2b2b432500b2322a99",
+      "source_glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/herb-court.png",
+      "sha256": "9262d75e983829264aeceb8bcd5eb14e8025d6bcda60fdfec59133eabe10f908",
+      "source_glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/tower-receiving-court.png",
+      "sha256": "4f8365938119446696adb5c3c7a9a05a87b8db7fbd2918a570d1fcb5ff4c4165",
+      "source_glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/bell-lower-flight.png",
+      "sha256": "17202547647c238b2c3149d823074171577551d63f8187640ba23b77f6c67454",
+      "source_glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/bell-upper-flight.png",
+      "sha256": "e496c4deeca2c4e200368f3cf3bc523bf8c86e67c73c5b19fb2fdcdd885c13ab",
+      "source_glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/catacomb-approach.png",
+      "sha256": "1554a129df780de34d5b07069d1792ba1dfcaa5aba681ab9b09a2217fe83c778",
+      "source_glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/tower-section.png",
+      "sha256": "9d38d9af5b6845b9bf9c34205a3f403e09bc9801a76ba6c228b11447d688de5b",
+      "source_glb_sha256": "ffa3657fd71e78a23bcdcd2ad4642cd8893f12846ec2ab4852885d023785d9e1",
+      "hidden": [
+        "Wall tower-base N",
+        "Ceiling cap bell",
+        "Wall bell N",
+        "Wall bell E",
+        "bell-tower hip face 0",
+        "bell-tower hip face 1",
+        "bell-tower hip face 2",
+        "bell-tower hip face 3",
+        "bell-tower fascia west",
+        "bell-tower fascia east",
+        "bell-tower fascia north",
+        "bell-tower fascia south",
+        "Monastery tower service elevation tower service door preceding pier region0",
+        "Monastery tower service elevation tower service door bearing lintel region0",
+        "Monastery tower service door fitted frame",
+        "Monastery tower service elevation end pier region0",
+        "Monastery bell floor around upper stair well region0",
+        "Monastery bell stair east string wall",
+        "Monastery bell upper well east guard region0",
+        "WLD-10 saved ground"
+      ]
+    }
+  ]
+}

@@ -272,3 +272,6 @@ tools/prepare_cemetery_grounds.py -text whitespace=cr-at-eol
 development/levels/rebuild/mine-yard-pass/** -text whitespace=cr-at-eol
 tools/build_mine_yard.py -text whitespace=cr-at-eol
 tools/prepare_mine_yard.py -text whitespace=cr-at-eol
+development/levels/rebuild/monastery-cloister-pass/** -text whitespace=cr-at-eol
+tools/build_monastery.py -text whitespace=cr-at-eol
+tools/prepare_monastery.py -text whitespace=cr-at-eol

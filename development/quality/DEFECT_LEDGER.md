@@ -7752,6 +7752,48 @@ Evidence and verification: development/levels/rebuild/mine-yard-pass/checkpoint.
 
 Older-map obligation: Inspect cross-aisles beneath shaft foundations in section and verify the actual entire loop after rebuilding a stair wall.
 
+### DEV-548 — Monastery study strips carried exterior movement and the bell stair lacked a landing
+
+**Status:** CORRECTED_IN_NATIVE_CLOISTER_AND_TOWER_CANDIDATE · **Affected:** WLD-10 public roadhead, herb court, receiving court, and bell chamber approach
+
+Visible access meshes stood in for whole ground surfaces. The tower used one 34-riser straight flight across its full height.
+
+Cause / uncertainty: The source mesh retained physical study supports and assigned the floor well to the earlier unbroken stair guide.
+
+Fix / next action: Grade complete court areas, replace shared door walls, and reserve two founded flights, a full landing, and one rectangular upper well.
+
+Evidence and verification: development/levels/rebuild/monastery-cloister-pass/checkpoint.json
+
+Older-map obligation: Inspect rendered foundations and entire stair bays even where existing route sweeps pass.
+
+### DEV-549 — Monastery pilot foot contacts at four exterior sills
+
+**Status:** CORRECTED_WITH_FLUSH_SILLS_AND_MEASURED_CLEAR_GUIDES · **Affected:** WLD-10 north and south herb court doors, tower service door, and refectory receiving door
+
+Eight directional path sweeps stopped at the four thresholds on a 13 mm terrain-to-floor mismatch.
+
+Cause / uncertainty: The tiny lower exterior grade put the capsule against an exposed slab or crypt-wall edge. Inherited guide widths also overlapped new guarding.
+
+Fix / next action: Bring the grade flush at the architectural crossings. Measure the real clear aisles and rerun complete movement and standing checks.
+
+Evidence and verification: development/levels/rebuild/monastery-cloister-pass/checkpoint.json
+
+Older-map obligation: Test full-body movement across thin soil and slab discontinuities alongside standing and visual checks.
+
+### DEV-550 — Monastery working spaces and gameplay ownership remain open
+
+**Status:** OPEN_FUNCTION_FIT_AND_RUNTIME_ACCEPTANCE · **Affected:** WLD-10 working rooms, service circuits, roof junctions and live map ownership
+
+Rooms, stairs and sills have reviewed native geometry. Working room capacity, service and roof finishes, native room/portal ownership and live multiplayer lack site-level evidence.
+
+Cause / uncertainty: The scoped source pass reviewed whole-site circulation and construction around the original site program.
+
+Fix / next action: Fit the gatehouse, dorm, refectory and wash/vestry program, measure the search envelope, and exercise the shared runtime and multiplayer with the verified geometry.
+
+Evidence and verification: development/levels/rebuild/monastery-cloister-pass/checkpoint.json
+
+Older-map obligation: Record architectural evidence separately from live room, service and multiplayer checks.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

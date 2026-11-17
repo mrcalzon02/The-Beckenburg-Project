@@ -1,0 +1,11 @@
+# Monastery of Ashen Bells cloister and tower
+
+The existing wings enclose a 30 × 28 m herb court. The roadhead turns into a broad gate forecourt and the east receiving court leads from the bell tower to the refectory door. Three geographic areas are sculpted in the saved editor world. The roadhead keeps the canonical van at (32, 0, 80) and its rear cargo ramp at Z 76.372 m. Four founded raised beds occupy the garden quadrants. The refectory and its service entrance are separate from the public gate and dormitory landing.
+
+The ground plan contains seventeen measured doorway openings in continuous bearing faces. The bell tower retains its 10 × 14 m footprint. Two 1.80 m clear flights carry 17 risers each between 0, +3 and +6 m. Each run is 5.27 m. Both flights bear on the ground slab, turn on a 1.95 m deep solid landing and meet the bell deck through a single 2.08 × 5.35 m rectangular well. The original bell enclosure and roof remain in the measured export.
+
+The north cloister slab is one continuous deck with two guarded rectangular wells above the −3 m burial passage. Stone wall linings support the deck at both stair cells. A separate framed threshold leads from the lower passage into the memorial chamber. Existing terrain cut cells, the height image and adaptive topology were preserved. Fifteen physical study strips, an arrival bearing strip and duplicate north-cloister landing strips were removed. Diagram routes follow the retained floors, built sills and measured landings.
+
+The reviewed native export contains 127 new closed architectural parts and 283 exact retained collision records. The review passed 153 aperture rays, 204 sill and standing checks, 34 tread and headroom checks and forty other standing controls. All 18 ordinary links, four flights, three complete vertical links and four circulation loops passed in both directions. All 5,283 standing samples passed.
+
+See the [measured plan and circulation](monastery-plan-and-flow.svg), [export verification](export-verification.json) and [checkpoint](../checkpoint.json). Finish working doors, stair handrails, water and drainage, roof intersections, room-by-room task fit, furnishings and service circuits. The room-level search ceiling and live renderer, navigation, room ownership, portals, acoustics, spawning and multiplayer still require their own evidence.

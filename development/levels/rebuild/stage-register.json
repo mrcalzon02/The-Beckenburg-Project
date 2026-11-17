@@ -4336,16 +4336,19 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "fdb8cfd98902d4d79042e77b829193bd1bd153ff",
           "evidence": [
-            "development/levels/rebuild/wld-10/rough-layout.json"
+            "development/levels/rebuild/wld-10/rough-layout.json",
+            "development/levels/rebuild/monastery-cloister-pass/checkpoint.json"
           ],
-          "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "defects": [
+            "DEV-550"
+          ],
+          "next_action": "Review the measured cloister plan against gatehouse, dormitory, refectory and vestry task sizes. Measure the room-level search envelope and permanent context seals."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "fdb8cfd98902d4d79042e77b829193bd1bd153ff",
           "evidence": [
             "development/levels/rebuild/structures/wld-10/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4373,7 +4376,8 @@
             "development/levels/rebuild/floor-closure-pass/wld-10/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/monastery-cloister-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -4394,13 +4398,15 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-548",
+            "DEV-549"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Use the verified courts, sills, fitted frames, crypt decks and bell stair as the current native structure. Check handrail details, roof joins and all shared runtime ownership."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "fdb8cfd98902d4d79042e77b829193bd1bd153ff",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -4413,7 +4419,8 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/monastery-cloister-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -4423,9 +4430,11 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-548",
+            "DEV-549"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Keep the exact saved court grades and terrain cut cells. Finish drainage and grade transitions, verify boundary containment and the canonical van in the shared runtime."
         },
         "S05": {
           "status": "NOT_AUDITED",
@@ -4443,7 +4452,7 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "fdb8cfd98902d4d79042e77b829193bd1bd153ff",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-10/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
@@ -4451,13 +4460,15 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/README.md",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/preservation.json",
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-revision-routes/route-regressions.json",
-            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
+            "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json",
+            "development/levels/rebuild/monastery-cloister-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-370",
-            "DEV-371"
+            "DEV-371",
+            "DEV-550"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "Review retained furnishings against working-room dimensions and finish service fixtures and circuits in the revised building. Verify prop support, planned coverage and host interactions."
         },
         "S08": {
           "status": "NOT_AUDITED",

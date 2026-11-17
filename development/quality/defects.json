@@ -6084,6 +6084,39 @@
       "action": "Stop the founded shaft walls beyond the lower walking plane and bridge the cross-aisle at its original roof level. Guide stores access through the real crew house doors. Verify both continuous closed loops.",
       "evidence": "development/levels/rebuild/mine-yard-pass/checkpoint.json",
       "older_maps": "Inspect cross-aisles beneath shaft foundations in section and verify the actual entire loop after rebuilding a stair wall."
+    },
+    {
+      "id": "DEV-548",
+      "title": "Monastery study strips carried exterior movement and the bell stair lacked a landing",
+      "status": "CORRECTED_IN_NATIVE_CLOISTER_AND_TOWER_CANDIDATE",
+      "affected": "WLD-10 public roadhead, herb court, receiving court, and bell chamber approach",
+      "symptom": "Visible access meshes stood in for whole ground surfaces. The tower used one 34-riser straight flight across its full height.",
+      "cause": "The source mesh retained physical study supports and assigned the floor well to the earlier unbroken stair guide.",
+      "action": "Grade complete court areas, replace shared door walls, and reserve two founded flights, a full landing, and one rectangular upper well.",
+      "evidence": "development/levels/rebuild/monastery-cloister-pass/checkpoint.json",
+      "older_maps": "Inspect rendered foundations and entire stair bays even where existing route sweeps pass."
+    },
+    {
+      "id": "DEV-549",
+      "title": "Monastery pilot foot contacts at four exterior sills",
+      "status": "CORRECTED_WITH_FLUSH_SILLS_AND_MEASURED_CLEAR_GUIDES",
+      "affected": "WLD-10 north and south herb court doors, tower service door, and refectory receiving door",
+      "symptom": "Eight directional path sweeps stopped at the four thresholds on a 13 mm terrain-to-floor mismatch.",
+      "cause": "The tiny lower exterior grade put the capsule against an exposed slab or crypt-wall edge. Inherited guide widths also overlapped new guarding.",
+      "action": "Bring the grade flush at the architectural crossings. Measure the real clear aisles and rerun complete movement and standing checks.",
+      "evidence": "development/levels/rebuild/monastery-cloister-pass/checkpoint.json",
+      "older_maps": "Test full-body movement across thin soil and slab discontinuities alongside standing and visual checks."
+    },
+    {
+      "id": "DEV-550",
+      "title": "Monastery working spaces and gameplay ownership remain open",
+      "status": "OPEN_FUNCTION_FIT_AND_RUNTIME_ACCEPTANCE",
+      "affected": "WLD-10 working rooms, service circuits, roof junctions and live map ownership",
+      "symptom": "Rooms, stairs and sills have reviewed native geometry. Working room capacity, service and roof finishes, native room/portal ownership and live multiplayer lack site-level evidence.",
+      "cause": "The scoped source pass reviewed whole-site circulation and construction around the original site program.",
+      "action": "Fit the gatehouse, dorm, refectory and wash/vestry program, measure the search envelope, and exercise the shared runtime and multiplayer with the verified geometry.",
+      "evidence": "development/levels/rebuild/monastery-cloister-pass/checkpoint.json",
+      "older_maps": "Record architectural evidence separately from live room, service and multiplayer checks."
     }
   ],
   "audit_categories": [

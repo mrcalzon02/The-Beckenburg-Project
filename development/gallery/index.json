@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11070,
+  "count": 11080,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -102384,6 +102384,106 @@
       "height": 920,
       "bytes": 964763,
       "sha256": "59c4d07af81813e52d11b1009fbf57a380b63739c04ddd3ed5f1bb5c5ebb46c9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/bell-lower-flight.png",
+      "url": "development/levels/rebuild/captures/monastery-cloister-batch/bell-lower-flight.png",
+      "title": "Bell lower flight",
+      "kind": "Native Monastery courts, doorway and stair inspection",
+      "width": 1280,
+      "height": 920,
+      "bytes": 1220455,
+      "sha256": "17202547647c238b2c3149d823074171577551d63f8187640ba23b77f6c67454"
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/bell-stair-before.png",
+      "url": "development/levels/rebuild/captures/monastery-cloister-batch/bell-stair-before.png",
+      "title": "Bell stair before",
+      "kind": "Native Monastery before the cloister and bell tower rebuild",
+      "width": 1250,
+      "height": 910,
+      "bytes": 1113436,
+      "sha256": "be4f7d0586ff7f7730289d8b49e5ab97bc0e9c26424b25eef03fd8b38385fea6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/bell-upper-flight.png",
+      "url": "development/levels/rebuild/captures/monastery-cloister-batch/bell-upper-flight.png",
+      "title": "Bell upper flight",
+      "kind": "Native Monastery courts, doorway and stair inspection",
+      "width": 1280,
+      "height": 920,
+      "bytes": 1237383,
+      "sha256": "e496c4deeca2c4e200368f3cf3bc523bf8c86e67c73c5b19fb2fdcdd885c13ab"
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/catacomb-approach.png",
+      "url": "development/levels/rebuild/captures/monastery-cloister-batch/catacomb-approach.png",
+      "title": "Catacomb approach",
+      "kind": "Native Monastery courts, doorway and stair inspection",
+      "width": 1280,
+      "height": 920,
+      "bytes": 1205867,
+      "sha256": "1554a129df780de34d5b07069d1792ba1dfcaa5aba681ab9b09a2217fe83c778"
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/herb-court.png",
+      "url": "development/levels/rebuild/captures/monastery-cloister-batch/herb-court.png",
+      "title": "Herb court",
+      "kind": "Native Monastery courts, doorway and stair inspection",
+      "width": 1280,
+      "height": 920,
+      "bytes": 860764,
+      "sha256": "9262d75e983829264aeceb8bcd5eb14e8025d6bcda60fdfec59133eabe10f908"
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/overview-before.png",
+      "url": "development/levels/rebuild/captures/monastery-cloister-batch/overview-before.png",
+      "title": "Overview before",
+      "kind": "Native Monastery before the cloister and bell tower rebuild",
+      "width": 1250,
+      "height": 910,
+      "bytes": 944370,
+      "sha256": "c0633e9474da5d6e95b373c923c1043f27c4057b17b545c8a6004098873ebcea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/overview.png",
+      "url": "development/levels/rebuild/captures/monastery-cloister-batch/overview.png",
+      "title": "Overview",
+      "kind": "Native Monastery courts, doorway and stair inspection",
+      "width": 1280,
+      "height": 920,
+      "bytes": 1062993,
+      "sha256": "2d8e34c4ee3a41c2312348bba514599acd2cad4494574c5ad4fecc3322a5c97c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/roadhead-and-gate.png",
+      "url": "development/levels/rebuild/captures/monastery-cloister-batch/roadhead-and-gate.png",
+      "title": "Roadhead and gate",
+      "kind": "Native Monastery courts, doorway and stair inspection",
+      "width": 1280,
+      "height": 920,
+      "bytes": 893290,
+      "sha256": "c4ef61167bac7577ad2f9441c8bcb5ae7db296dc87c7fe2b2b432500b2322a99"
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/tower-receiving-court.png",
+      "url": "development/levels/rebuild/captures/monastery-cloister-batch/tower-receiving-court.png",
+      "title": "Tower receiving court",
+      "kind": "Native Monastery courts, doorway and stair inspection",
+      "width": 1280,
+      "height": 920,
+      "bytes": 1149184,
+      "sha256": "4f8365938119446696adb5c3c7a9a05a87b8db7fbd2918a570d1fcb5ff4c4165"
+    },
+    {
+      "path": "development/levels/rebuild/captures/monastery-cloister-batch/tower-section.png",
+      "url": "development/levels/rebuild/captures/monastery-cloister-batch/tower-section.png",
+      "title": "Tower section",
+      "kind": "Native bell stair section with inspection layers hidden",
+      "width": 1280,
+      "height": 920,
+      "bytes": 1240929,
+      "sha256": "9d38d9af5b6845b9bf9c34205a3f403e09bc9801a76ba6c228b11447d688de5b"
     },
     {
       "path": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-06-context.png",
