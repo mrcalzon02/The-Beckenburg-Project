@@ -10,6 +10,7 @@ import java.util.stream.IntStream;
  * Lower wall reaches head height and joins a soft elliptical dome over the roof. */
 public final class SafeAreaHaze {
     private SafeAreaHaze(){}
+    private static final boolean EXPERIMENTAL_COLUMNS=Boolean.getBoolean("beckenburg.experimental.hazeColumns");
     /** A renderer owns the range and opacity of its first sanctuary. Range is tied to
      * the exact projection, while opacity also depends on the current animation clock. */
     static final class RayCache {
@@ -19,6 +20,19 @@ public final class SafeAreaHaze {
         private double lastClock;
         private double[] ranges;
         private double[] alphas;
+        private double[] horizontal;
+        private int horizontalWidth=-1;
+        private double horizontalFocal=Double.NaN;
+        /** Exact horizontal camera coordinates; safe across rows and scene-depth updates. */
+        double[] horizontal(int width,double focal){
+            if(horizontal==null||horizontalWidth!=width||Double.doubleToLongBits(horizontalFocal)!=Double.doubleToLongBits(focal)){
+                horizontal=new double[width];
+                for(int col=0;col<width;col++)horizontal[col]=(col+.5-width*.5)/focal;
+                horizontalWidth=width;
+                horizontalFocal=focal;
+            }
+            return horizontal;
+        }
         private boolean sameView;
         private boolean sameClock;
         private boolean previousRepeated;
@@ -99,6 +113,9 @@ public final class SafeAreaHaze {
             double x,double eye,double z,double yaw,double pitch,double clock,List<? extends Shell> shells,RayCache cache){
         if(!Double.isFinite(clock))throw new IllegalArgumentException("finite barrier animation clock required");
         int changed=0;double cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+        // Opt-in A/B only: the same horizontal division is otherwise repeated for each row.
+        // Never cache depth, opacity, or final color; those remain live every frame.
+        double[] horizontal=EXPERIMENTAL_COLUMNS&&cache!=null?cache.horizontal(width,focal):null;
         for(var shell:shells){var a=shell.material();
             if(Math.hypot(x-a.x(),z-a.z())>70+a.radius())continue;
             double ox=x-a.x(),oz=z-a.z();
@@ -146,7 +163,7 @@ public final class SafeAreaHaze {
                     // Changing poses, secondary shells and callers without a cache use the direct loop.
                     if(ranges==null){
                         for(int col=x0;col<=x1;col++){
-                            double u=(col+.5-width*.5)/focal,dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
+                            double u=horizontal==null?(col+.5-width*.5)/focal:horizontal[col],dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
                             int at=row*width+col;
                             double sceneDepth=depths[at];
                             if(insideDome&&sceneDepth>=0&&Double.isFinite(sceneDepth)
@@ -176,7 +193,7 @@ public final class SafeAreaHaze {
                             shaded++;
                             continue;
                         }
-                        double u=(col+.5-width*.5)/focal,dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
+                        double u=horizontal==null?(col+.5-width*.5)/focal:horizontal[col],dx=-u*cy+forward*sy,dz=u*sy+forward*cy;
                         if(hit<=0){
                             if(insideDome&&sceneDepth>=0&&Double.isFinite(sceneDepth)
                                     &&insideDome(ox+dx*sceneDepth,capY+dy*sceneDepth,
