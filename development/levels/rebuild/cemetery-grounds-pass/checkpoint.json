@@ -297,5 +297,20 @@
     "conclusion": "success",
     "revision": "7628e04be62bd2f6645828e4d03162a26a7fb09e"
   },
-  "runtime_accepted": false
+  "runtime_accepted": false,
+  "publication": {
+    "construction_commit": "02b1440cd09c8af23ae963b190dfff5444753b3a",
+    "branch": "map/roster-structure-batch",
+    "pr": 86,
+    "pr_base": "map/house-default",
+    "pr_draft": true,
+    "hashed_commit_blobs_verified": true,
+    "gallery_validation_run": 44194126849,
+    "gallery_validation_status_at_readback": "in_progress",
+    "gallery_validation_conclusion_at_readback": null,
+    "local_gallery_png_count": 11060,
+    "gallery_page_http": 200,
+    "receiving_door_http": 404,
+    "receiving_door_deployment_verified": false
+  }
 }
