@@ -10,6 +10,10 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-386 — Normal case opening has no call to the documented gameplay-renderer prewarm helper
+
+Player path audited on v0.1.355; loading notes corrected; performance integration open. LevelOpeningCinematic uses its own asynchronous software renderer. InvestigationScenePrewarm.prepare is referenced by LevelOpeningCinematicVisualTest and StaticScenePrebakeTest. Correct the staging notes. Measure any future preparation at actual player handoff with skip/cancel, startup and frame-tail evidence before enabling it. [First-scene GL receipts](../../docs/performance/2026-11-17-uv-walking/first-frame-uploads.csv).
+
 ### DEV-385 — Focused Castle test rejected the Ancient Shade's empty-room manifestation
 
 Windows run 44131170811 stopped on an accepted MANIFEST in the no-body scenario. Empty rooms are the authored witness condition for Shades. The revised check retains the universal STRIKE prohibition, proves a Shade can manifest in the silent control, and requires zero harm and fear for either empty-room action. Both the ghost-domain parity test and physical-victim pursuit check pass locally. Focused Windows job 44153590607 passed these checks.
@@ -311,6 +315,8 @@ Older-map obligation: The sanctuary shader is shared. The physical proof covers 
 Fresh GTX44125683659: columns stays default-off after solo >50ms gaps rise7→15 and two individual solo p95 misses. Both fresh arms avoid >100ms, so the historical127ms issue stays open. All43 >50ms gaps occur inside within0.375s of walking, with zero fresh shadow rays and <=2.669ms geometry; post-geometry44–63ms dominates. All16 stops and sixth-frame holds pass. Next: per-effect render CPU/JIT/GC attribution. Original archive and per-trial data: docs/performance/2026-11-17-engine-editor/.
 
 Physical 44151619792 attributes 96.8–97.8% of post-geometry time to sanctuary rendering in all 14 probed >50 ms gaps. Clean controls still hitch eleven times solo and ten TCP. See docs/performance/2026-11-17-uv-walking/gtx-stage-results.json.
+
+Pre-game warming in run 44157367610 left a 288.286 ms solo interval with 271.208 ms post-geometry. Guarded arithmetic in 44160326303 improved all eight walking p95 comparisons, but three-seat p99 rose to 67.006 ms and moving process CPU increased. Both remain experimental. Next capture per-lane CPU, join wait and JVM pauses on the same clock.
 
 ### DEV-363 — Prepared GPU lighting can reverse which side of House door 2 receives light
 

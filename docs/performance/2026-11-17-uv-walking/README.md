@@ -1,9 +1,17 @@
 # House walking hitches and single-face Material Editor latency
 
-## Finished work and priority
+## Release and benchmark decision
+
+[Windows v0.1.355](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.355) ships the one-face Material Editor redraw. Full-workspace preview/cancel p95 fell from 930.756 to 21.896 ms on 120,000 faces. The exact release source passed all 391 manifest tests, the installed updater, native editor, embedded solo and three-seat settlement.
+
+Three paired GTX studies collected 61,834 advancing frame intervals across 48 House trials. The CPU sanctuary shader accounts for almost all post-geometry time in the instrumented walking hitches. Pre-game warming helped multiplayer but left a 288.286 ms solo interval. The guarded cubic reduced walking p95 in all eight comparisons, while three-seat p99 rose from 63.925 to 67.006 ms and mean moving process CPU rose from 1.139 to 1.193 core equivalents. Both changes remain experimental. First-frame texture receipts precede walking in every trial.
+
+The next measurement is the first two distinct inside-sanctuary poses at normal player control handoff. Record wall and thread CPU around each of the four scanline lanes, join wait, JVM safepoints and collections on the same clock. Keep one clean control per pair. This distinguishes time computing pixels from time waiting for a worker during the rare >100 ms intervals. After that, remeasure fractional display scaling and multi-face UV edits in a real editor window. The exact geometry and optical controls remain in the benchmark.
+
+## Starting point and earlier work
 
 * [v0.1.351](https://github.com/mrcalzon02/The-Beckenburg-Project/releases/tag/beckenburg-v0.1.351) shipped the retained unchanged editor paint. Its [full Windows run](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44131171455) recorded 391 passed, zero failed and zero skipped. Its [standalone editor](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44131171027), [native editor](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44131171098) and [installed game and TCP settlement](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44131170964) passed.
-* First priority in play is the first steps inside the House sanctuary. On the last physical GTX run all 43 intervals above 50 ms occurred in the first 375 ms of walking. Fresh shadow rays were zero. The horizontal projection buffer increased solo hitch frequency. It stays disabled. [Raw data and original experiment](../2026-11-17-engine-editor/README.md).
+* First priority in play is the first steps inside the House sanctuary. On the preceding physical GTX run all 43 intervals above 50 ms occurred in the first 375 ms of walking. Fresh shadow rays were zero. The horizontal projection buffer increased solo hitch frequency. It stays disabled. [Raw data and original experiment](../2026-11-17-engine-editor/README.md).
 * First priority in the editor was the next full redraw on a local edit. On 120,000 faces the old painter spent seconds redoing unchanged translucent outlines. This revision repairs the prior and new projected areas and replays intersecting faces in document order. A changed view, changed texture, ambiguous selection, multiple visible face edits or coalesced state replacements can use the original full redraw. Closing releases the retained scene and canvas.
 * A separate [focused Castle workflow](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44131170811) stopped at an assertion forbidding the Ancient Shade from appearing alone. The game explicitly allows that species to manifest in an empty room. The corrected test checks a silent control, zero harm and fear for empty-room actions, and the physical-victim requirement for STRIKE across every tested species.
 
@@ -112,3 +120,49 @@ Each multiplayer pair had fewer gaps over 50 ms with priming. One primed solo wa
 Median priming took 298.387 ms solo and 304.787 ms in multiplayer. Median time from Java main to first observed in-view callback increased from 3,413.892 to 3,686.473 ms solo and from 3,998.998 to 4,171.248 ms in multiplayer. Four runs per arm establish a direction worth testing, while the extreme solo tail and additional startup work keep this candidate experimental.
 
 [GTX warmup archive](gtx-priming-raw.zip) · [Per-trial results and long frames](gtx-priming-results.json) · [Worker-only warmup source](haze-warmup.zip). Archive SHA-256 `26adce701c0d0ae465138b7a69849e09d9453e8b9e3bf94781752e3d20d92534`. Reproduce with `python tools/performance/haze_columns_report.py gtx-priming-raw.zip results.json --experiment haze-warmup --summary-only`.
+
+## Where the warmed CPU shader spends time
+
+Two fresh Linux Java 17 processes replayed eight moving House views on the released shader. Each process warmed 40 draws before sampling the next 120 with Java Flight Recorder, requesting a 2 ms sample period and enabling debug information for optimized code between safepoints. Each draw matched the existing replay's image hash, depth hash and shaded-pixel count. The samples cover the main thread and three common-pool workers.
+
+| Innermost sanctuary method in sampled stack | Replay 1 | Replay 2 |
+|---|---:|---:|
+| Pixel scan / projection loop | 462 | 420 |
+| Animated opacity | 444 | 423 |
+| Analytic surface intersection | 327 | 298 |
+| Depth-inside-dome test | 211 | 180 |
+| Final RGB blend | 9 | 3 |
+| All shader samples | 1,453 | 1,324 |
+
+Opacity represented 30.6–31.9% of samples containing the shader. Surface intersection plus the depth-inside test represented 36.1–37.0%. Both are candidates for focused profiling. Samples from this steady moving-camera replay cannot identify a wall-clock pause on the Windows runner. [Original JFR recordings, exact recorder patch, raw hashes and sample classifier](haze-cpu-profiles.zip). Reproduce the counts by exporting each JFR using `jfr print --json --events jdk.ExecutionSample,jdk.NativeMethodSample,jdk.GCPhasePause replay.jfr` and running `samples.py` on the JSON. The recording uses `-XX:ActiveProcessorCount=8 -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -Xmx1g`.
+
+## First-frame texture and geometry uploads
+
+The first GL scene receipt precedes the first captured walking frame in all 48 trials. Each row below summarizes 24 fresh processes on the GTX 1660 SUPER. The GL worker clock includes the complete first-scene operation. The receipt has no separate texture-transfer clock.
+
+| House viewport | Textures | Texture bytes | Vertex buffer bytes | Median first-scene GL worker ms | First-scene frame IDs | First walking frame IDs |
+|---|---:|---:|---:|---:|---:|---:|
+| Solo | 58 | 7,439,612 | 4,319,232 | 291.926 | 174–175 | 1290–1307 |
+| Three-seat | 181 | 15,546,236 | 8,203,392 | 360.030 | 295–295 | 1413–1429 |
+
+These House startup measurements give texture-residency work its own comparison point. The walking probe recorded zero new shadow rays in its 35 long frames and measured the CPU sanctuary pass in the 14 instrumented intervals. The older door-toggle study independently found that saving 251,160 upload bytes per toggle still increased frame p99 from 210.70 to 292.89 ms. Keep door interaction and startup in separate measurements. [Per-trial GL receipts](first-frame-uploads.csv) · [Physical door study](../2026-11-16-house-frame-times/door-2/physical-door.md).
+
+## Guarded cubic on the physical GTX 1660 SUPER
+
+The shader-only substitution ran against the released game with default preparation in both arms. All 16 walks and one-step holds passed alongside the optical controls and both three-seat settlements. The worker retained 20,644 advancing frame intervals across idle, moving and stopping. Each walking distribution below pools four trials. Times are milliseconds.
+
+| Walking mode | Shader | Frames | p50 | p95 | p99 | Worst | >33.3 | >50 | >100 |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Solo | Released | 537 | 21.448 | 31.410 | 63.280 | 72.151 | 18 | 9 | 0 |
+| Solo | Guarded cubic | 539 | 21.373 | 28.778 | 57.237 | 70.307 | 15 | 8 | 0 |
+| Three-seat | Released | 532 | 21.390 | 32.763 | 63.925 | 76.465 | 23 | 13 | 0 |
+| Three-seat | Guarded cubic | 532 | 21.465 | 28.346 | 67.006 | 70.786 | 18 | 11 | 0 |
+
+| Moving trial | Paired p95, released → guarded (ms) | Paired frames >50 ms, released → guarded | Mean process CPU, released → guarded (core equivalents) |
+|---|---|---|---:|
+| Solo | 31.08 → 28.05, 31.52 → 28.90, 31.95 → 29.39, 33.51 → 29.00 | 1 → 2, 2 → 1, 2 → 3, 4 → 2 | 1.102 → 1.078 |
+| Three-seat | 32.98 → 27.90, 34.89 → 30.07, 32.01 → 28.13, 32.27 → 28.35 | 4 → 2, 3 → 5, 3 → 2, 3 → 2 | 1.139 → 1.193 |
+
+Sixth stable-frame render times were 8.143–19.848 ms across all 16 trials.
+
+[Raw frame CSVs and functional receipts](gtx-guarded-raw.zip) · [Per-trial results](gtx-guarded-results.json) · [Private runner 44160326303](https://github.com/mrcalzon02/Dens-Mortis/actions/runs/44160326303). Archive SHA-256 `1d8c358bd4c267d0366b415af6d5a71072c42615a27ad073db058ad6a80a7c5c`. Reproduce with `python tools/performance/haze_columns_report.py gtx-guarded-raw.zip results.json --experiment guarded-cubic --summary-only`.

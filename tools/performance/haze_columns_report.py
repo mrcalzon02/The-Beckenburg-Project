@@ -105,6 +105,11 @@ def analyze(path, experiment="haze-columns"):
             require(details["rendered_hunters"] == "1" and float(details["max_travel_metres"]) > .1, "No rendered movement")
             prop = "-Dbeckenburg.experimental.hazeColumns=" + str(experiment == "haze-columns" and arm == "candidate").lower()
             require(prop in read(trial + "/run.log"), "Wrong feature flag")
+            if experiment == "guarded-cubic":
+                invocation = read(trial + "/run.log").splitlines()[0]
+                overlay = invocation.split(" -cp ", 1)[1].split(";", 1)[0].replace("\\", "/").rsplit("/", 1)[-1]
+                require(overlay == ("guarded-cubic" if arm == "candidate" else "columns-driver"),
+                        "Mismatched shader on the actual trial classpath")
             if experiment == "haze-warmup":
                 primed = arm == "candidate"
                 require("-Dbeckenburg.profile.primeHaze=" + str(primed).lower() in read(trial + "/run.log"),
