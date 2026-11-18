@@ -2823,7 +2823,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "50e1c1ebb9eeeb7bbf239882e472186eaa4d4ff6",
+          "source_sha": "271805fdcdbe9cfa08bce5d88cdc7993d48952c8",
           "evidence": [
             "development/levels/rebuild/wld-03/rough-layout.json",
             "development/levels/rebuild/canyon-marsh-pass/checkpoint.json"
@@ -2835,7 +2835,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "50e1c1ebb9eeeb7bbf239882e472186eaa4d4ff6",
+          "source_sha": "271805fdcdbe9cfa08bce5d88cdc7993d48952c8",
           "evidence": [
             "development/levels/rebuild/structures/wld-03/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2901,7 +2901,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "50e1c1ebb9eeeb7bbf239882e472186eaa4d4ff6",
+          "source_sha": "271805fdcdbe9cfa08bce5d88cdc7993d48952c8",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -2955,7 +2955,7 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "50e1c1ebb9eeeb7bbf239882e472186eaa4d4ff6",
+          "source_sha": "271805fdcdbe9cfa08bce5d88cdc7993d48952c8",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-03/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
@@ -4568,7 +4568,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "50e1c1ebb9eeeb7bbf239882e472186eaa4d4ff6",
+          "source_sha": "271805fdcdbe9cfa08bce5d88cdc7993d48952c8",
           "evidence": [
             "development/levels/rebuild/structures/wld-11/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4631,7 +4631,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "50e1c1ebb9eeeb7bbf239882e472186eaa4d4ff6",
+          "source_sha": "271805fdcdbe9cfa08bce5d88cdc7993d48952c8",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -4684,7 +4684,7 @@
         },
         "S07": {
           "status": "IN_PROGRESS",
-          "source_sha": "50e1c1ebb9eeeb7bbf239882e472186eaa4d4ff6",
+          "source_sha": "271805fdcdbe9cfa08bce5d88cdc7993d48952c8",
           "evidence": [
             "development/levels/rebuild/furnishings/wld-11/placements.json",
             "development/levels/rebuild/furnishings/verification.json",

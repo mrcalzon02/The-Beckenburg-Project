@@ -137,5 +137,35 @@
     "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-warehouse-sill.png": "93a7d05007f1789f0672aae6687899975aacc4300adad5fa3364592c10ad3fbf",
     "tools/build_canyon_marsh.py": "bcc8cc4052a54c4d924edb5408ad5d76ad9f295aeab150d7c31a9dd064dc7c59",
     "tools/prepare_canyon_marsh.py": "4e8959d1ea8b9eda65e364551e0068cd15cc0cdd087cbd0d3b930812237279be"
+  },
+  "publication": {
+    "construction_commit": "271805fdcdbe9cfa08bce5d88cdc7993d48952c8",
+    "branch": "map/roster-structure-batch",
+    "verified_ref": "271805fdcdbe9cfa08bce5d88cdc7993d48952c8",
+    "draft_pr": 86,
+    "held_base": "map/house-default",
+    "exact_committed_files": 90,
+    "local_gallery_images": 11110,
+    "gallery_run": 44207908695,
+    "gallery_ci": "success",
+    "public_gallery_http": 200,
+    "new_image_http": {
+      "WLD-03": 404,
+      "WLD-11": 404
+    }
+  },
+  "same_source_roster_sweep": {
+    "active_native_packets": 25,
+    "ordinary_pass": 548,
+    "ordinary_total": 567,
+    "flights_pass": 238,
+    "complete_vertical_routes_pass": 86,
+    "standing_samples": 140202,
+    "invalid_standing": 3856,
+    "ordinary_failures": {
+      "MANSION": 7,
+      "FARMHOUSE": 7,
+      "CHURCH": 5
+    }
   }
 }
