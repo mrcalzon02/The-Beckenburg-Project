@@ -112,5 +112,19 @@
     "development/levels/rebuild/captures/coast-entrances-batch/wld-15-stern-boarding.png": "9f87f97d518ef09ffdd85e1ad61b94726538d730b2a3c17d675d0473287cdfae",
     "tools/build_coast_entrances.py": "6ddaea207501fc48cd9ca49e14ac8845dc6680336404023799ba16fb2b9e3e13",
     "tools/prepare_coast_entrances.py": "168f31aab2914fd9467f6b212f4ae6ee57e2df81bc42579835fc6de223e3177e"
+  },
+  "publication": {
+    "construction_commit": "14b843618bd0a04d6001e2258117ade9cf6f0937",
+    "branch": "map/roster-structure-batch",
+    "remote_readback": "14b843618bd0a04d6001e2258117ade9cf6f0937",
+    "draft_pr": 86,
+    "held_base": "map/house-default",
+    "exact_committed_files": 68,
+    "local_gallery_images": 11095,
+    "gallery_run": 44204322886,
+    "gallery_ci": "success",
+    "public_gallery_http": 200,
+    "morrow_new_image_http": 404,
+    "saint_elara_new_image_http": 404
   }
 }
