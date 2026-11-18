@@ -839,9 +839,13 @@ public final class LevelAuthoringSession implements EditorProject<LevelAuthoring
             floorDepths,stairExtensions),loaded.fingerprint());
     }
     static LevelDefinition apply(HouseMap.Site site,LevelDefinition source){
+        return apply(site,source,()->source);
+    }
+    static LevelDefinition apply(HouseMap.Site site,LevelDefinition source,
+                                 java.util.function.Supplier<LevelDefinition> unedited){
         try{
             RuntimeSceneDocument.recoverPending(path(site));
-            if(!Files.exists(path(site)))return source;
+            if(!Files.exists(path(site)))return unedited.get();
             var state=loadState(path(site),sceneId(site),source);
             var authority=site==HouseMap.Site.HOUSE?HouseSourceVersions.source(state.architecture()):source;
             return compose(authority,state.props(),state.doorWidths(),state.walls(),

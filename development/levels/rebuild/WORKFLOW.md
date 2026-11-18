@@ -1235,3 +1235,11 @@ Main is 10fe52cb1feba1267efcf4edce67a5ca1bd3823e and the held parent is 5c3daf92
 ## Briar House upper window host replay
 
 The [House window checkpoint](verification/house-window-network-2026-11-18/checkpoint.json) closes DEV-592. From the current House upper landing, the old westward walk ended outside window reach at X 14.25, Y 2.80, Z 17.10 m. The normal host walk south reaches X 15.80, Y 2.80, Z 18.96 m and the actual fitted leaf 23. Two runs on the same packaged game verify real open and closed broadcasts to the requesting user and a second client. Farmhouse window and School multiplayer regressions also pass. This closes the measured window gate for the current staged source. Complete location acceptance remains open.
+
+## College packaged draft play
+
+The [dispatch checkpoint](college-dispatch-pass/checkpoint.json) binds the exact [measured native source](college-services-pass/checkpoint.json) to ordinary College selection in both Windows Java packages. Enable the held revision with `-Dbeckenburg.review.collegeNative=true` for the host and its peers. A saved College scene still loads against its original editable source. The lobby, hunter and ghost views resolve the advertised revision before using the map.
+
+Four real peers agreed on the revision. The hunter walked nine ordinary host steps from the van deck onto the signed-off ground. A deliberately false guide through the teaching facade left the runtime hashes unchanged and the wall blocked movement and sight. The College door, stair, context and electrical replays passed again. Standing software and hidden RTX 5070 frames captured the fitted teaching entrance and lecture radiator from the same loaded source.
+
+College remains in production under the held draft. Functional furnishing, usable hiding and evidence placements, worn finishes and whole-case acceptance remain open. The existing furnishing regression also fails on the previous held runtime in an isolated profile and is recorded in the checkpoint. The measured [29-packet source roster](college-services-pass/roster.json) still applies.

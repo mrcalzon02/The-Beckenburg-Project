@@ -40,7 +40,10 @@ public final class LevelPlans {
             &&Math.abs(a.height()-b.height())<1e-8&&Math.abs(a.yaw()-b.yaw())<1e-8;
     }
     public static LevelDefinition build(HouseMap.Site site) {
-        return LevelAuthoringSession.apply(site,buildSource(site));
+        var source=buildSource(site);
+        if(site==HouseMap.Site.COLLEGE&&CollegeNativeLevel.reviewEnabled())
+            return LevelAuthoringSession.apply(site,source,CollegeNativeLevel::definition);
+        return LevelAuthoringSession.apply(site,source);
     }
     /** Unmodified shipped authoring source; shared by editor and gameplay. */
     static LevelDefinition buildSource(HouseMap.Site site) {

@@ -325,11 +325,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         try{
             List<String> p=LanProtocol.parts(frame);
             if(p.size()==3&&p.get(0).equals("SITE")){
+                var incoming=HouseMap.forNetworkRevision(HouseMap.Site.valueOf(p.get(1)),p.get(2));
                 clearPlacementSelection();
                 downedHunters.clear();hunterPain.clear();applyHunterReactions();
-                map=new HouseMap(HouseMap.Site.valueOf(p.get(1)));lights.setSourceRunning(true);
+                map=incoming;lights.setSourceRunning(true);
                 map.configureHiding(renderer.hidingDensity);
-                if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
                 crouched=false;crouchCamera.reset(false);lastPostureFrame=System.nanoTime();
                 renderer.eyeHeight=map.floorY(HouseMap.EXTRACTION_ROOM)+crouchCamera.eye();
                 rackSnapshot.reset();

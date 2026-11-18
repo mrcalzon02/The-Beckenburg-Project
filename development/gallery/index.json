@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11279,
+  "count": 11283,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -97114,6 +97114,46 @@
       "height": 700,
       "bytes": 169901,
       "sha256": "bcff6f3f971a7624e4f8f708509b7c142d46100898a6849b41bf5ae96d26ff66"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-dispatch-batch/college-opengl-dispatch-lecture-heating.png",
+      "url": "development/levels/rebuild/captures/college-dispatch-batch/college-opengl-dispatch-lecture-heating.png",
+      "title": "College opengl dispatch lecture heating",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 173285,
+      "sha256": "0dab5766a33ee09be7e43fb4c04d97a75f406f0801c31680e1bd0689ca2fdcd5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-dispatch-batch/college-opengl-dispatch-teaching-entrance.png",
+      "url": "development/levels/rebuild/captures/college-dispatch-batch/college-opengl-dispatch-teaching-entrance.png",
+      "title": "College opengl dispatch teaching entrance",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 333455,
+      "sha256": "aafab58803216512b29f0a878e39f17ad1aad1993e3425d35b6c7456fc5b81d2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-dispatch-batch/college-software-dispatch-lecture-heating.png",
+      "url": "development/levels/rebuild/captures/college-dispatch-batch/college-software-dispatch-lecture-heating.png",
+      "title": "College software dispatch lecture heating",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 206614,
+      "sha256": "01cb81ceef74d4ddefcd614a77b45ecf42404baad916d41e6d47ac84f1ec8552"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-dispatch-batch/college-software-dispatch-teaching-entrance.png",
+      "url": "development/levels/rebuild/captures/college-dispatch-batch/college-software-dispatch-teaching-entrance.png",
+      "title": "College software dispatch teaching entrance",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 378345,
+      "sha256": "29d5774aeb14c5839c09ce294116eac838bc659a5c8021e5a42da2177ab1df96"
     },
     {
       "path": "development/levels/rebuild/captures/college-doors-batch/college-door-plan.png",

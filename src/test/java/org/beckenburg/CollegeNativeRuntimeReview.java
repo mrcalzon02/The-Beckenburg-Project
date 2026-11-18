@@ -4,16 +4,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import javax.imageio.ImageIO;
 import org.beckenburg.LevelDefinition.*;
 
 public final class CollegeNativeRuntimeReview {
     record Route(String id, List<Vec> points){}
-    private record Aperture(String id, String a, String b, Portal portal){}
-    record Campus(HouseMap map, List<Aperture> apertures, List<Route> routes, List<Vec> arrival){}
+    record Campus(HouseMap map, List<CollegeNativeLevel.Aperture> apertures, List<Route> routes, List<Vec> arrival){}
     private static final Path PACKET=Path.of("development/levels/rebuild/college-ground-pass/college");
 
     private static double n(String[] row,int at){return Double.parseDouble(row[at]);}
@@ -25,91 +22,26 @@ public final class CollegeNativeRuntimeReview {
     }
 
     static Campus load(Path manifest, Path glb, Path hcs2)throws IOException{
-        var rows=Files.readAllLines(manifest).stream().map(line->line.split("\t",-1)).toList();
-        var spaces=new ArrayList<NativeInvestigationScene.Space>();
-        var stairs=new HashSet<String>();
-        var byId=new HashMap<String,NativeInvestigationScene.Space>();
-        for(var row:rows){
-            if(row[0].equals("SPACE")){
-                var space=new NativeInvestigationScene.Space(row[1],Integer.parseInt(row[2]),n(row,3),n(row,4),n(row,5),n(row,6),
-                    n(row,7),n(row,8),row[9].equals("1"),row[10].equals("1"));
-                spaces.add(space);
-                byId.put(space.id(),space);
-            }else if(row[0].equals("TREAD"))stairs.add(row[1]);
+        CollegeNativeLevel.Source source;
+        try(var input=Files.newInputStream(manifest);
+            var model=Files.newInputStream(glb);
+            var collision=Files.newInputStream(hcs2)){
+            source=CollegeNativeLevel.read(input,model,collision);
         }
-        var source=rows.get(0);
-        check(source[0].equals("SOURCE"),"Missing source packet");
-        var dockRow=rows.get(1);
-        check(dockRow[0].equals("DOCK"),"Missing canonical dock");
-        var dock=new Dock(n(dockRow,1),n(dockRow,2),n(dockRow,3),n(dockRow,4));
-        var van=new VanStaging(new VanStaging.Placement(dock.x(),dock.y(),dock.z(),dock.yaw()));
-        var sill=van.world(0,VanStaging.FRONT);
-        var rooms=new ArrayList<Room>();
-        var portals=new ArrayList<Portal>();
-        var apertures=new ArrayList<Aperture>();
-        var frames=new ArrayList<NativeInvestigationDoor.Spec>();
         var routes=new ArrayList<Route>();
         var arrival=new ArrayList<Vec>();
-        var sockets=new ArrayList<Socket>();
-        for(var row:rows)if(row[0].equals("PORTAL"))addAperture(row,byId,portals,apertures,frames);
-        portals.add(new Portal(portals.size(),13,14,sill.x(),van.floorY(),sill.z(),VanStaging.RAMP_HALF_WIDTH*2,
-            false,"trail",1));
-        for(var row:rows)if(row[0].equals("LOCAL_DOOR"))addAperture(row,byId,portals,apertures,frames);
-        NativeInvestigationScene nativeScene;
-        try(var model=Files.newInputStream(glb);
-            var collision=Files.newInputStream(hcs2)){
-            nativeScene=NativeInvestigationScene.read(model,source[1],collision,source[2],stairs,spaces,frames);
-        }
-        for(var row:rows)switch(row[0]){
-            case "ANCHOR" -> {
-                var space=byId.get(row[3]);
-                var p=point(row,4);
-                var hit=nativeScene.physics().support(p.x(),p.z(),p.y(),.08);
-                check(hit!=null,"Unsupported spawn reservation "+row[3]);
-                rooms.add(new Room(Integer.parseInt(row[1]),row[2],space.x0(),space.z0(),space.x1(),space.z1(),
-                    hit.y(),space.height(),space.outside()?"native-outdoor":"native-indoor","hard",
-                    new Vec(p.x(),hit.y(),p.z())));
-            }
-            case "SOCKET" -> sockets.add(new Socket(row[1],row[2],Integer.parseInt(row[3]),
-                n(row,4),n(row,5),n(row,6),n(row,7),row[8]));
-            case "RITUAL" -> {
-                var p=point(row,3);
-                var hit=nativeScene.physics().support(p.x(),p.z(),p.y(),.20);
-                check(hit!=null,"Unsupported ritual reservation "+row[1]);
-                sockets.add(new Socket("campus-ritual-"+row[1],"ritual",Integer.parseInt(row[2]),
-                    p.x(),hit.y(),p.z(),0,row[1]));
-            }
-            case "ARRIVAL" -> {
+        for(var line:Files.readAllLines(manifest)){
+            var row=line.split("\t",-1);
+            if(row[0].equals("ARRIVAL")){
                 for(int start=1;start<row.length;start+=3)arrival.add(point(row,start));
-            }
-            case "ROUTE" -> {
+            }else if(row[0].equals("ROUTE")){
                 var points=new ArrayList<Vec>();
                 for(int start=3;start<row.length;start+=3)points.add(point(row,start));
                 routes.add(new Route(row[1],List.copyOf(points)));
             }
-            default -> {}
         }
-        rooms.add(new Room(14,"Expedition van",dock.x()-4,dock.z()-1,dock.x()+4,dock.z()+1,
-            van.floorY(),VanStaging.INTERIOR_HEIGHT,"van","metal",new Vec(dock.x(),van.floorY(),dock.z())));
-        sockets.add(new Socket("college-scene-hash","native_scene",13,dock.x(),dock.y(),dock.z(),0,nativeScene.revision()));
-        var level=new LevelDefinition("college","authored-campus-candidate","Beckenburg College",
-            rooms,portals,List.of(),List.of(),List.of(),sockets,List.of(),dock,"college");
-        return new Campus(new HouseMap(HouseMap.Site.COLLEGE,level,null,nativeScene),apertures,routes,List.copyOf(arrival));
-    }
-
-    private static void addAperture(String[] row, HashMap<String,NativeInvestigationScene.Space> spaces,
-                                    List<Portal> portals, List<Aperture> apertures, List<NativeInvestigationDoor.Spec> frames){
-        var a=spaces.get(row[2]);
-        var b=spaces.get(row[3]);
-        var p=point(row,4);
-        boolean fitted=row[9].equals("door");
-        check(a.accessible()&&b.accessible()&&(fitted||a.owner()!=b.owner()),"Invalid aperture endpoints "+row[1]);
-        var portal=new Portal(portals.size(),a.owner(),b.owner(),p.x(),p.y(),p.z(),n(row,7),
-            row[8].equals("z"),row[9],1);
-        portals.add(portal);
-        apertures.add(new Aperture(row[1],a.id(),b.id(),portal));
-        if(fitted)frames.add(new NativeInvestigationDoor.Spec(row[1],a.id(),b.id(),portal,n(row,10),
-            n(row,11),n(row,12),Integer.parseInt(row[13]),Integer.parseInt(row[14]),Integer.parseInt(row[15]),row[16]));
+        var map=new HouseMap(HouseMap.Site.COLLEGE,source.definition(),null,source.scene());
+        return new Campus(map,source.apertures(),List.copyOf(routes),List.copyOf(arrival));
     }
 
     private static Vec walk(HouseMap map,Vec from,Vec to){
@@ -187,7 +119,6 @@ public final class CollegeNativeRuntimeReview {
 
     static void audit(Campus campus){
         var map=campus.map();
-        check(!new HouseMap(HouseMap.Site.COLLEGE).nativeSite(),"Candidate replaced public College");
         check(map.nativeSite()&&map.valid(),"Candidate graph or spawn poses");
         check(map.nativeInvestigation().spaces().stream().filter(NativeInvestigationScene.Space::accessible).count()==40,"Search budget");
         check(RitualSites.valid(map),"Ritual reservations");

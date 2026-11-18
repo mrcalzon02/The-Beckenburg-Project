@@ -88,7 +88,12 @@ public final class HouseMap {
         this(site,definition,WorldTerrainSurface.of(definition));
     }
     HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface){
-        this(site,definition,worldSurface,null);
+        this(site,definition,worldSurface,CollegeNativeLevel.sceneFor(site,definition));
+    }
+    static HouseMap forNetworkRevision(Site site,String revision){
+        var map=new HouseMap(site);
+        if(!map.level().revision().equals(revision))throw new IllegalArgumentException("incompatible level revision");
+        return map;
     }
     HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface,NativeInvestigationScene nativeInvestigation){
         this.site=Objects.requireNonNull(site);level=Objects.requireNonNull(definition);guards=level.guards();
