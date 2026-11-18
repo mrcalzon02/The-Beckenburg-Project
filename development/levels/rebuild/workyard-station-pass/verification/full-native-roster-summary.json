@@ -1,0 +1,1300 @@
+{
+  "status": "25_NATIVE_PACKETS_MEASURED_RUNTIME_ACCEPTANCE_OPEN",
+  "ordinary": 567,
+  "stair_flights": 238,
+  "vertical_links": 86,
+  "standing": 140307,
+  "standing_contacts": 1056,
+  "sites": {
+    "ACADEMY": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 39
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 39
+      },
+      "current_lanes": {
+        "samples": 8733,
+        "valid_standing": 8725,
+        "invalid_standing": 8,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 8
+        },
+        "physical_components": [
+          [
+            "ACADEMY L66 single flight tread1",
+            2
+          ],
+          [
+            "297:Wall student-wc S.001",
+            2
+          ],
+          [
+            "Flat route shell Wall upper-north N.001",
+            2
+          ],
+          [
+            "ACADEMY mounted stair guard 50",
+            1
+          ],
+          [
+            "ACADEMY mounted stair guard 53",
+            1
+          ]
+        ]
+      }
+    },
+    "ASYLUM": {
+      "before": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "after": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "current_lanes": {
+        "samples": 10848,
+        "valid_standing": 10812,
+        "invalid_standing": 36,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 36
+        },
+        "physical_components": [
+          [
+            "ASYLUM-x-35-52 indexed jambs and head",
+            6
+          ],
+          [
+            "ASYLUM-z-54-39.5 indexed jambs and head",
+            6
+          ],
+          [
+            "ASYLUM-court-ground-south-a-S indexed exterior jambs and head",
+            6
+          ],
+          [
+            "Flat route shell Wall clinical-soiled N.001",
+            5
+          ],
+          [
+            "Flat route shell Wall upper-wc E.001",
+            3
+          ],
+          [
+            "248:Wall hydro-change W.001",
+            2
+          ],
+          [
+            "250:Wall hydro-change E.001",
+            2
+          ],
+          [
+            "Flat route shell Wall hydro-bath W.001",
+            2
+          ],
+          [
+            "Flat route shell Wall quiet-lobby N.001",
+            2
+          ],
+          [
+            "Flat route shell Wall treatment N",
+            1
+          ],
+          [
+            "Flat route shell Wall treatment E.001",
+            1
+          ]
+        ]
+      }
+    },
+    "CHURCH": {
+      "before": {
+        "flat_links": 28,
+        "pass_both_directions": 28
+      },
+      "after": {
+        "flat_links": 28,
+        "pass_both_directions": 28
+      },
+      "current_lanes": {
+        "samples": 3822,
+        "valid_standing": 3779,
+        "invalid_standing": 43,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 43
+        },
+        "physical_components": [
+          [
+            "62:Wall conversation-entry W.001",
+            6
+          ],
+          [
+            "CHURCH bay indexed door 3",
+            5
+          ],
+          [
+            "119:Wall vestry E.001",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 1",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 0",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 4",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 5",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 6",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 2",
+            4
+          ],
+          [
+            "8:Wall nave W",
+            2
+          ],
+          [
+            "88:Wall chancel E.001",
+            1
+          ],
+          [
+            "CHURCH bay L35 floor rim 30.490000000000002 guard 1",
+            1
+          ]
+        ]
+      }
+    },
+    "COLLEGE": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 39
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 39
+      },
+      "current_lanes": {
+        "samples": 10071,
+        "valid_standing": 10071,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "FARMHOUSE": {
+      "before": {
+        "flat_links": 33,
+        "pass_both_directions": 33
+      },
+      "after": {
+        "flat_links": 33,
+        "pass_both_directions": 33
+      },
+      "current_lanes": {
+        "samples": 5418,
+        "valid_standing": 5339,
+        "invalid_standing": 79,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 31,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 48
+        },
+        "physical_components": [
+          [
+            "FARMHOUSE bay indexed door 2",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 3",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 1",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 4",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 0",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 6",
+            4
+          ],
+          [
+            "FARMHOUSE bay L35 floor rim 22.509999999999998 guard 2",
+            3
+          ],
+          [
+            "FARMHOUSE bay L35 floor rim 22.509999999999998 guard 0",
+            2
+          ],
+          [
+            "FARMHOUSE bay wall ('x', 39, 16, 24, 0, 3) pier0 region0",
+            2
+          ]
+        ]
+      }
+    },
+    "MANSION": {
+      "before": {
+        "flat_links": 45,
+        "pass_both_directions": 45
+      },
+      "after": {
+        "flat_links": 45,
+        "pass_both_directions": 45
+      },
+      "current_lanes": {
+        "samples": 8403,
+        "valid_standing": 8258,
+        "invalid_standing": 145,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 57,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 2,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 57,
+          "NO_FOOT_SUPPORT_0.22_0.0": 29
+        },
+        "physical_components": [
+          [
+            "MANSION bay L58 continuous waist",
+            13
+          ],
+          [
+            "255:Wall staff-corridor N.001",
+            6
+          ],
+          [
+            "MANSION bay indexed door 4",
+            5
+          ],
+          [
+            "MANSION bay indexed door 1",
+            4
+          ],
+          [
+            "MANSION bay indexed door 5",
+            4
+          ],
+          [
+            "MANSION bay indexed door 6",
+            4
+          ],
+          [
+            "MANSION bay indexed door 2",
+            4
+          ],
+          [
+            "MANSION bay L59 floor rim 42.510000000000005 guard 2",
+            3
+          ],
+          [
+            "Flat route shell Wall staff-corridor S",
+            3
+          ],
+          [
+            "MANSION bay L60 floor rim 43.489999999999995 guard 2",
+            3
+          ],
+          [
+            "MANSION bay L59 floor rim 42.510000000000005 guard 0",
+            2
+          ],
+          [
+            "MANSION seated wall cap 16",
+            1
+          ],
+          [
+            "MANSION seated wall cap 24",
+            1
+          ],
+          [
+            "MANSION bay L58 floor rim 22.740000000000002 guard 3",
+            1
+          ],
+          [
+            "MANSION bay L61 floor rim 42.510000000000005 guard 3",
+            1
+          ],
+          [
+            "MANSION bay L58 tread 2",
+            1
+          ],
+          [
+            "MANSION bay L58 flight side -1 guard 0",
+            1
+          ]
+        ]
+      }
+    },
+    "PRISON": {
+      "before": {
+        "flat_links": 36,
+        "pass_both_directions": 36
+      },
+      "after": {
+        "flat_links": 36,
+        "pass_both_directions": 36
+      },
+      "current_lanes": {
+        "samples": 7533,
+        "valid_standing": 7514,
+        "invalid_standing": 19,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 19
+        },
+        "physical_components": [
+          [
+            "PRISON-x-18-65 indexed jambs and head",
+            8
+          ],
+          [
+            "PRISON-cell-plant-stair-N-30 indexed frame",
+            4
+          ],
+          [
+            "Flat route shell Wall medical-link E",
+            3
+          ],
+          [
+            "Flat route shell Wall a-lower-gallery S",
+            2
+          ],
+          [
+            "Flat route shell Wall b-lower-gallery S.001",
+            2
+          ]
+        ]
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "after": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "current_lanes": {
+        "samples": 8469,
+        "valid_standing": 8369,
+        "invalid_standing": 100,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 80,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 20
+        },
+        "physical_components": [
+          [
+            "SCHOOL-cell-main-stair-N-28.6 indexed frame",
+            7
+          ],
+          [
+            "SCHOOL-x-25-31.5 indexed jambs and head",
+            6
+          ],
+          [
+            "SCHOOL-x-25-34.5 indexed jambs and head",
+            6
+          ],
+          [
+            "SCHOOL-z-33-28.75 indexed jambs and head",
+            6
+          ],
+          [
+            "SCHOOL-cell-main-stair-W-21 indexed frame",
+            6
+          ],
+          [
+            "SCHOOL-cell-main-stair-E-21 indexed frame",
+            6
+          ],
+          [
+            "SCHOOL-cell-main-stair-E-26 indexed frame",
+            5
+          ],
+          [
+            "SCHOOL cell service-stair W end region0",
+            5
+          ],
+          [
+            "SCHOOL-cell-upper-stair-W-29 indexed frame",
+            4
+          ],
+          [
+            "SCHOOL-cell-lower-stair-W-13 indexed frame",
+            4
+          ],
+          [
+            "SCHOOL-cell-service-stair-N-29.1 indexed frame",
+            4
+          ],
+          [
+            "SCHOOL-court-science-W indexed exterior jambs and head",
+            4
+          ],
+          [
+            "SCHOOL-court-class-a-W indexed exterior jambs and head",
+            4
+          ],
+          [
+            "SCHOOL cell lower-stair N end region0",
+            4
+          ],
+          [
+            "SCHOOL cell guard L44 flight 28.57 0",
+            2
+          ],
+          [
+            "SCHOOL cell main-stair E end region0",
+            1
+          ],
+          [
+            "SCHOOL cell guard L44 flight 27.509999999999998 0",
+            1
+          ],
+          [
+            "SCHOOL cell guard service bypass rim 0",
+            1
+          ],
+          [
+            "SCHOOL cell guard service north shaft return 0",
+            1
+          ],
+          [
+            "SCHOOL cell lower-stair W end region0",
+            1
+          ],
+          [
+            "SCHOOL cell guard L44 flight 28.57 2",
+            1
+          ],
+          [
+            "SCHOOL cell service-stair S pier0 region0",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-03": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 4605,
+        "valid_standing": 4605,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-04": {
+      "before": {
+        "flat_links": 5,
+        "pass_both_directions": 5
+      },
+      "after": {
+        "flat_links": 5,
+        "pass_both_directions": 5
+      },
+      "current_lanes": {
+        "samples": 3459,
+        "valid_standing": 3294,
+        "invalid_standing": 165,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 89,
+          "NO_FOOT_SUPPORT_0.22_0.0": 6,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 11,
+          "PHYSICAL_COMPONENT": 40,
+          "FOOT_HEIGHT_SPREAD": 3,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 12,
+          "NO_FOOT_SUPPORT_0.0_0.22": 4
+        },
+        "physical_components": [
+          [
+            "Lookout terrace store south normal indexed door",
+            12
+          ],
+          [
+            "WLD-04 restart landing exposed end 10.5 rail 0",
+            4
+          ],
+          [
+            "WLD-04-restart-cab south indexed frame",
+            4
+          ],
+          [
+            "Flat route shell Wall ruin S.001",
+            3
+          ],
+          [
+            "Flat route shell Wall ruin S",
+            3
+          ],
+          [
+            "WLD-04 restart landing exposed end 10.5 rail 1",
+            3
+          ],
+          [
+            "Lookout terrace L09 flight -1.0 guard 0",
+            2
+          ],
+          [
+            "WLD-04-restart-cab east indexed frame",
+            2
+          ],
+          [
+            "WLD-04 restart cab east pier 0 0 region0",
+            2
+          ],
+          [
+            "WLD-04 restart L13 flight 60 rail 0",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 57 rail 0",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 57 rail 1",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 79 rail 0",
+            1
+          ],
+          [
+            "WLD-04 restart L13 flight 79 rail 1",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-05": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 4938,
+        "valid_standing": 4938,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 5199,
+        "valid_standing": 5143,
+        "invalid_standing": 56,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 56
+        },
+        "physical_components": [
+          [
+            "WLD-06 clean fish N pier0",
+            13
+          ],
+          [
+            "WLD-06 clean fish N end",
+            13
+          ],
+          [
+            "WLD-06-x-44-17 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-06 clean cottage-a S end",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-a S pier0",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-b S end",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-b S pier0",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-a E end",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-a E pier0",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-b W pier0",
+            3
+          ],
+          [
+            "WLD-06 clean cottage-b W end",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-07": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 3795,
+        "valid_standing": 3795,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "current_lanes": {
+        "samples": 5370,
+        "valid_standing": 5289,
+        "invalid_standing": 81,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 77,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 4
+        },
+        "physical_components": [
+          [
+            "WLD-08-z-56-11 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-08-x-44-16 indexed jambs and head",
+            6
+          ],
+          [
+            "WLD-08 constant-cell guard generator rim 12.225 0",
+            4
+          ],
+          [
+            "WLD-08 clean lab E pier0",
+            3
+          ],
+          [
+            "WLD-08 clean lab E end",
+            3
+          ],
+          [
+            "WLD-08 clean dorm W end",
+            3
+          ],
+          [
+            "WLD-08 clean dorm W pier0",
+            3
+          ],
+          [
+            "WLD-08 clean dorm S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean dorm S end",
+            3
+          ],
+          [
+            "WLD-08 clean mess S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean mess S end",
+            3
+          ],
+          [
+            "WLD-08 clean radio S end",
+            3
+          ],
+          [
+            "WLD-08 clean radio S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean radio E end",
+            3
+          ],
+          [
+            "WLD-08 clean radio E pier0",
+            3
+          ],
+          [
+            "WLD-08 clean records S pier0",
+            3
+          ],
+          [
+            "WLD-08 clean records S end",
+            3
+          ],
+          [
+            "WLD-08 clean generator E pier0",
+            2
+          ],
+          [
+            "WLD-08 clean generator E end",
+            2
+          ],
+          [
+            "WLD-08 clean dorm N pier0",
+            2
+          ],
+          [
+            "WLD-08 clean dorm N end",
+            2
+          ],
+          [
+            "WLD-08 clean shelter W end",
+            2
+          ],
+          [
+            "WLD-08 clean shelter W pier0",
+            2
+          ],
+          [
+            "WLD-08-z-44-53 indexed jambs and head",
+            1
+          ],
+          [
+            "WLD-08 clean mess N pier0",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 6120,
+        "valid_standing": 5889,
+        "invalid_standing": 231,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 137,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 41,
+          "NO_FOOT_SUPPORT_0.22_0.0": 41,
+          "NO_FOOT_SUPPORT_0.0_0.22": 10,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 2
+        },
+        "physical_components": [
+          [
+            "WLD-09 middle landing column 68.22 34.25 region0",
+            21
+          ],
+          [
+            "DAM-HALL-x-64-35--6 indexed frame",
+            18
+          ],
+          [
+            "WLD-09 middle landing column 68.22 35.75 region0",
+            12
+          ],
+          [
+            "WLD-09 rim column 68.22 31.5 region0",
+            12
+          ],
+          [
+            "349:level_blockout_hydro_turbine.001",
+            11
+          ],
+          [
+            "WLD-09 middle landing column 65.78 35.75 region0",
+            9
+          ],
+          [
+            "WLD-09 middle landing column 65.78 34.25 region0",
+            9
+          ],
+          [
+            "DAM-SPILLWAY-LOWER-68 indexed frame",
+            6
+          ],
+          [
+            "WLD-09-restart-shared turbine workshop north indexed frame",
+            4
+          ],
+          [
+            "WLD-09 restart shared turbine workshop north pier 0 0 region0",
+            4
+          ],
+          [
+            "WLD-09 contained lower flight 66.17 guard 0",
+            4
+          ],
+          [
+            "WLD-09 contained lower flight 67.83 guard 0",
+            4
+          ],
+          [
+            "WLD-09 contained upper flight 66.17 guard 4",
+            4
+          ],
+          [
+            "WLD-09 contained upper flight 67.83 guard 4",
+            4
+          ],
+          [
+            "DAM-HALL-z-48-68-0 indexed frame",
+            4
+          ],
+          [
+            "WLD-09 rim column 68.22 38.5 region0",
+            3
+          ],
+          [
+            "WLD-09 service bay lower flight 61.13 guard 1",
+            2
+          ],
+          [
+            "WLD-09 service bay upper flight 61.67 guard 0",
+            2
+          ],
+          [
+            "WLD-09 service bay west stair cheek region0",
+            1
+          ],
+          [
+            "WLD-09 service bay lower flight 61.13 guard 0",
+            1
+          ],
+          [
+            "WLD-09 service bay upper flight 63.33 guard 1",
+            1
+          ],
+          [
+            "WLD-09 service bay upper flight 61.67 guard 1",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-10": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "current_lanes": {
+        "samples": 5283,
+        "valid_standing": 5283,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-11": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 4056,
+        "valid_standing": 4056,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 5289,
+        "valid_standing": 5289,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "current_lanes": {
+        "samples": 5139,
+        "valid_standing": 5139,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-14": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "current_lanes": {
+        "samples": 2880,
+        "valid_standing": 2880,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-15": {
+      "before": {
+        "flat_links": 15,
+        "pass_both_directions": 15
+      },
+      "after": {
+        "flat_links": 15,
+        "pass_both_directions": 15
+      },
+      "current_lanes": {
+        "samples": 3843,
+        "valid_standing": 3843,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-16": {
+      "before": {
+        "flat_links": 22,
+        "pass_both_directions": 22
+      },
+      "after": {
+        "flat_links": 22,
+        "pass_both_directions": 22
+      },
+      "current_lanes": {
+        "samples": 3480,
+        "valid_standing": 3434,
+        "invalid_standing": 46,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 46
+        },
+        "physical_components": [
+          [
+            "WLD-16 clean office S end",
+            2
+          ],
+          [
+            "WLD-16 clean office S pier0",
+            2
+          ],
+          [
+            "WLD-16 clean office N end",
+            2
+          ],
+          [
+            "WLD-16 clean office N pier0",
+            2
+          ],
+          [
+            "WLD-16 clean office W pier0",
+            2
+          ],
+          [
+            "WLD-16 clean office W end",
+            2
+          ],
+          [
+            "WLD-16 clean room1 E pier0",
+            2
+          ],
+          [
+            "WLD-16 clean room1 E end",
+            2
+          ],
+          [
+            "WLD-16 clean room2 E pier0",
+            2
+          ],
+          [
+            "WLD-16 clean room2 E end",
+            2
+          ],
+          [
+            "WLD-16 clean room3 E pier0",
+            2
+          ],
+          [
+            "WLD-16 clean room3 E end",
+            2
+          ],
+          [
+            "WLD-16 clean room4 E pier0",
+            2
+          ],
+          [
+            "WLD-16 clean room4 E end",
+            2
+          ],
+          [
+            "WLD-16 clean room5 W end",
+            2
+          ],
+          [
+            "WLD-16 clean room5 W pier0",
+            2
+          ],
+          [
+            "WLD-16 clean room6 W end",
+            2
+          ],
+          [
+            "WLD-16 clean room6 W pier0",
+            2
+          ],
+          [
+            "WLD-16 clean room7 W end",
+            2
+          ],
+          [
+            "WLD-16 clean room7 W pier0",
+            2
+          ],
+          [
+            "WLD-16 clean room8 W end",
+            2
+          ],
+          [
+            "WLD-16 clean room8 W pier0",
+            2
+          ],
+          [
+            "WLD-16 clean manager E pier0",
+            1
+          ],
+          [
+            "WLD-16 clean manager E end",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-17": {
+      "before": {
+        "flat_links": 12,
+        "pass_both_directions": 12
+      },
+      "after": {
+        "flat_links": 12,
+        "pass_both_directions": 12
+      },
+      "current_lanes": {
+        "samples": 2871,
+        "valid_standing": 2857,
+        "invalid_standing": 14,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+          "PHYSICAL_COMPONENT": 11
+        },
+        "physical_components": [
+          [
+            "Rebuilt stair WLD-17 route-11 flight0 part1",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-17 route-12 flight0 part1",
+            4
+          ],
+          [
+            "163:route-10 flight0 step2",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 3978,
+        "valid_standing": 3945,
+        "invalid_standing": 33,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 30,
+          "NO_CENTRE_SUPPORT": 2,
+          "NO_FOOT_SUPPORT_0.22_0.0": 1
+        },
+        "physical_components": [
+          [
+            "WLD-18 clean east W pier0",
+            5
+          ],
+          [
+            "WLD-18 covered escape connector wall 32.56 region0",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-18 route-07 flight0 part1",
+            4
+          ],
+          [
+            "WLD-18 clean exhibit W pier0",
+            3
+          ],
+          [
+            "WLD-18 clean servicehouse S end",
+            2
+          ],
+          [
+            "WLD-18 clean servicehouse S pier0",
+            2
+          ],
+          [
+            "WLD-18 clean servicehouse W end",
+            2
+          ],
+          [
+            "WLD-18 clean servicehouse W pier0",
+            2
+          ],
+          [
+            "Cinder escape full-depth service frame",
+            1
+          ],
+          [
+            "WLD-18 constant-cell guard route-08 flight -0.83 0",
+            1
+          ],
+          [
+            "WLD-18 clean exit E end",
+            1
+          ],
+          [
+            "WLD-18 clean exit E pier0",
+            1
+          ],
+          [
+            "WLD-18-x-42-28-y-4 indexed jambs and head",
+            1
+          ],
+          [
+            "WLD-18-x-42-28-y-8 indexed jambs and head",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "before": {
+        "flat_links": 24,
+        "pass_both_directions": 24
+      },
+      "after": {
+        "flat_links": 24,
+        "pass_both_directions": 24
+      },
+      "current_lanes": {
+        "samples": 6705,
+        "valid_standing": 6705,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "native_sha256": {
+    "ACADEMY": "954a3d3d5f74394f4c3fb8077371ac3537e73e0d5f5118370943c157daca99ea",
+    "ASYLUM": "ee36e88718b20d74d9baa0fc62b132684ab9ce45e6087fc74cebdbf7d9a93fb9",
+    "CHURCH": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82",
+    "COLLEGE": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768",
+    "FARMHOUSE": "042f0ab01cd546fe561173102255e0d53b5cf505f8b8d630686d5986a3bc3810",
+    "MANSION": "096bb68ec37f982eb49e764e38e43f4ce2995c890f9aefe42d7dde20c517fd46",
+    "PRISON": "6791f0e6cd2e8fe12fb58fa1210ed5f075b034a1cbc9b378c9358b9278c7077d",
+    "SCHOOL": "cc4fbc9e4b65ac12eab3b58adf9b14f5c9cbbab713efcf2b5ebb1b61b478e5aa",
+    "WLD-03": "a489b1480fc43b74f530a01c7d5839a87c6b1d779a0afbd7cbb747bb73b166e1",
+    "WLD-04": "837b74ce8ae499eab2feae7e7b03f90f588e9d3eab8d2ff95e82186071e8c097",
+    "WLD-05": "892154e00cb1f7186e283a13a82e47d00febbddc0101f3f9060be4654919d94c",
+    "WLD-06": "f252b1ccd7f9a043aa5bf58dce841ec31557f3a6f9546d0f6f7a259f4b70d252",
+    "WLD-07": "bb378e3de593724d7a45163b151041e7287cd57fe90077dcda1d3e5701c2c6f4",
+    "WLD-08": "cb13ae092e0eaf67650a48817dbd84ebe0240a38a0127e2f273e61f9fd1ae66c",
+    "WLD-09": "acb40c7c046e1f3512286db59a867c619889532733982f7dae6c8309881f7daf",
+    "WLD-10": "0c7acf61448a2bea8af7a03ee18af666c58e26a0b1d189b4f9ab40e3fbd0ed8e",
+    "WLD-11": "2867a8e7895a6a70c3ec2bc09491bb3034a4805854592e18fbded49cad99d8ca",
+    "WLD-12": "4cd10a7f7086c0e769103fc504ae164b7ebc5fa19b766d700dfbf117e59dc424",
+    "WLD-13": "c0f2810f1bd0d1b7f8f055c3c659c3184bf0d4971f19f49410839faa49e9f11f",
+    "WLD-14": "546bff4601ddf038e4efa0463f359cf4bd4b6e3f1fe99417a972563e2c6e41f0",
+    "WLD-15": "1383ce663a5678bb3eafca6e61730d9c3ac8b3d1f250f14fec29e804486cff8e",
+    "WLD-16": "fbe5f3d984b059456fa7dbc368c8c4001ea3679f6fc872d20a100913c9455eb9",
+    "WLD-17": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+    "WLD-18": "4196a2394355763752a3ef1d62425e3d4579c895469b931e61da6da50ed20f5b",
+    "WLD-07-MORTUARY": "3a27ce278fe7acc0a44a9bdb16cf6bb9c0c0f8f061999ef4f7f3ca97e5a3c695"
+  },
+  "reproduction": "Run tools/audit_current_flat_routes.py and tools/audit_roster_stairs.py with source manifest estate-parish-pass/roster.json, candidate root workyard-station-pass and candidate stem workyard-station."
+}

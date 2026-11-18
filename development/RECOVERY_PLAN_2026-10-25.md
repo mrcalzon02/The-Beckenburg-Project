@@ -1839,3 +1839,14 @@ The batch retired 33 physical study strips and fitted 14 genuine exterior doors.
 Construction 0121fcc4e38e7a2af57806a9c0e712ea7288e4a7 is verified at the remote head of draft PR 86 against the held map/house-default parent. The 112 indexed evidence blobs, asset index and 11,125-image gallery passed the exact source checks. Hosted gallery run 44211721554 succeeded. The public gallery page returned HTTP 200 and the three new overview images returned HTTP 404. Public image deployment remains pending.
 
 The full sweep of 25 native packets passed all 567 ordinary links, 238 stair flights and 86 complete vertical routes. It records 1,721 standing contacts in 140,469 samples. Surveyed concentrations are Greywater Cannery’s west woodland court, Gallows Pass Railway’s station forecourt and siding approach, and Blackwater Hydroelectric Dam’s shared east stair bay. Their measured findings are in development/levels/rebuild/estate-parish-pass/checkpoint.json. The four mature packets retain separate evidence. Runtime, containment, finish and room fitness are still open.
+
+
+## 2026-11-17 / Greywater Cannery and Gallows Pass Railway
+
+Baseline e43f3116a41cfeacb3a8a739a881463351f4bc7d. The active 29-packet source is workyard-station-pass/roster.json. The two native map packages changed.
+
+Two full stone forecourts meet the bunkhouse and workers’ mess at their finished floor datum. The saved woodland soil supports the full workers’ court. A founded continuous retaining wall replaces ten old shoulder segments. The existing west door identities carry fitted 1.42 m openings.
+
+The canonical van ramp meets a broad railway roadhead, signal-hut platform and ballast supply court. The signal hut has a fitted 1.52 m south doorway. Below the trestle, a complete lower landing closes against south and east retaining walls and joins the existing service floor at −3.0 m. Both guarded flights retain their built 1.50 m clear width.
+
+All 34 ordinary links, three flights, three complete vertical routes and seven joined walks passed both ways. All 10,428 strict standing samples passed across both sites, resolving 665 earlier contacts. The full native roster passes all 567 ordinary links, 238 flights and 86 complete vertical routes. It still records 1,056 standing contacts in 140,307 samples. DEV-562 through DEV-565 cover the completed yard and landing fixes and remaining full-map gates. Exact sources, plans, renders and verification are indexed in development/levels/rebuild/workyard-station-pass/checkpoint.json.

@@ -287,3 +287,9 @@ development/levels/rebuild/estate-parish-pass/** -text whitespace=cr-at-eol
 tools/build_estate_parish.py -text whitespace=cr-at-eol
 tools/prepare_estate_parish.py -text whitespace=cr-at-eol
 tools/verify_estate_parish.py -text whitespace=cr-at-eol
+
+
+development/levels/rebuild/workyard-station-pass/** -text whitespace=cr-at-eol
+tools/build_workyard_station.py -text whitespace=cr-at-eol
+tools/prepare_workyard_station.py -text whitespace=cr-at-eol
+tools/verify_workyard_station.py -text whitespace=cr-at-eol

@@ -1,0 +1,38 @@
+{
+  "glb_sha256": "75ec6294ea3f3e282cf8647454761119a8f1d6def54cb22137078eeba627c662",
+  "native_sha256": "c0f2810f1bd0d1b7f8f055c3c659c3184bf0d4971f19f49410839faa49e9f11f",
+  "retained_native_records": 406,
+  "new_closed_parts": 11,
+  "aperture_rays": 18,
+  "sill_controls": 12,
+  "independent_standing": 6,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-13-overview.png",
+      "sha256": "583b640d50f3e25cd4c5b7b8091f308eace6a99f68992cb0285d75633aac38ed",
+      "source_glb_sha256": "75ec6294ea3f3e282cf8647454761119a8f1d6def54cb22137078eeba627c662"
+    },
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-13-forecourts.png",
+      "sha256": "49fba256ea17ae9d05923d41eb0cd65b6c760a3705b96d40eee1e7997536c568",
+      "source_glb_sha256": "75ec6294ea3f3e282cf8647454761119a8f1d6def54cb22137078eeba627c662"
+    },
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-13-bunkhouse-door.png",
+      "sha256": "07e373fdc890fea1cb392ba468cf87e2f66d80a31f9bf27b55d41d495d2b81b3",
+      "source_glb_sha256": "75ec6294ea3f3e282cf8647454761119a8f1d6def54cb22137078eeba627c662"
+    },
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-13-mess-door.png",
+      "sha256": "f8c4fd3ba415b0862e3a78e0f5d9bfe9283cc00df22a2b150ff73280154e23cf",
+      "source_glb_sha256": "75ec6294ea3f3e282cf8647454761119a8f1d6def54cb22137078eeba627c662"
+    },
+    {
+      "path": "development/levels/rebuild/captures/workyard-station-batch/wld-13-forecourts-before.png",
+      "sha256": "ec7a5e350b1c2627ceb58f55a14f22ab1f571e513dbf5286b8ce8649bf7f0468",
+      "source_glb_sha256": "463733b53a9931317ed6da27e7ca96178e2f5ef54461ae68cafe6ef6fe27c783"
+    }
+  ]
+}

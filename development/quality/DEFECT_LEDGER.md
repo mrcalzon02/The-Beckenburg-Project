@@ -7948,6 +7948,62 @@ Evidence and verification: development/levels/rebuild/estate-parish-pass/checkpo
 
 Older-map obligation: Keep strict full-footprint evidence alongside continuous route results.
 
+### DEV-562 — Greywater woodland court sagged away from its workers’ doors
+
+**Status:** CORRECTED_WITH_AUTHORED_WORKYARD · **Affected:** WLD-13 bunkhouse and mess exterior access
+
+The west guide called for level footing on woodland terrain below the occupied rooms and overstated the door widths.
+
+Cause / uncertainty: The old schematic circulation crossed separate approaches and addressed fragmented retaining shoulders.
+
+Fix / next action: Grade the full court, found the two sills, build one continuous retaining wall and fit the actual room doors.
+
+Evidence and verification: development/levels/rebuild/workyard-station-pass/checkpoint.json
+
+Older-map obligation: Measure each full threshold and corresponding exterior grade.
+
+### DEV-563 — Gallows Pass roadhead guides crossed the two sunken shoulders
+
+**Status:** CORRECTED_IN_STATION_FORECOURT · **Affected:** WLD-12 van approach, signal hut and siding
+
+The older dogleg across Z 82 crossed ground about 0.24 m below the room datum west of the van and about 0.33 m below toward the siding.
+
+Cause / uncertainty: Schematic yard links were retained after the signal hut foundation and station embankments were saved.
+
+Fix / next action: Grade the whole station forecourt and supply yard, build a complete signal-hut platform and use the existing siding crest.
+
+Evidence and verification: development/levels/rebuild/workyard-station-pass/checkpoint.json
+
+Older-map obligation: Use whole workyard surfaces and verify joined walks from the actual ramp.
+
+### DEV-564 — Trestle soil intruded into the west stair’s lower landing
+
+**Status:** CORRECTED_WITH_FOUNDED_RETAINING_BAY · **Affected:** WLD-12 underground trestle approach and lower west landing
+
+Body sweeps passed the centre of the turn. Strict standing found terrain along its southern edge and guard contacts where the guide overstated the stair width.
+
+Cause / uncertainty: The older stair excavation ended at the flight and omitted part of the receiving landing below the deck.
+
+Fix / next action: Excavate the whole bounded landing footprint into the existing lower floor, install its retaining faces and derive the turns from the complete bay.
+
+Evidence and verification: development/levels/rebuild/workyard-station-pass/checkpoint.json
+
+Older-map obligation: Measure full landing footprints as well as upward and downward flight travel.
+
+### DEV-565 — Native workyard and station fit precedes full gameplay acceptance
+
+**Status:** OPEN_FULL_MAP_AND_RUNTIME_FIT · **Affected:** Greywater Cannery and Gallows Pass Railway whole-map gates
+
+All strict scoped standing and complete native routes pass. Full boundaries, room occupancy, services and shared gameplay evidence are incomplete.
+
+Cause / uncertainty: The workyard and landing checkpoint covers native structure, movement, clearance and source preservation.
+
+Fix / next action: Complete whole-map boundary, room and service inspections, then verify renderer, physics, navigation, acoustics and network ownership together.
+
+Evidence and verification: development/levels/rebuild/workyard-station-pass/checkpoint.json
+
+Older-map obligation: Keep native geometry evidence tied to its exact source and advance each stage on its own evidence.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

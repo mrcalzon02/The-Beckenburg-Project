@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2038,
-  "unique_local_file_hashes": 1867,
+  "local_files": 2040,
+  "unique_local_file_hashes": 1869,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 264
+    "native_map_exports": 266
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -30769,6 +30769,30 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "5f639e0debfa00d5843521a6effb7981d0bf5f1c939f48c66fc148b8b7f9d808",
       "bytes": 4264496
+    },
+    {
+      "id": "workyard-station",
+      "label": "workyard-station",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/workyard-station-pass/wld-12/workyard-station.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1eb029aeffa1324ea0db5f50cf14c380e6f3af281ef5bbf116947e8f0c0c7da6",
+      "bytes": 7815572
+    },
+    {
+      "id": "workyard-station",
+      "label": "workyard-station",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/workyard-station-pass/wld-13/workyard-station.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "75ec6294ea3f3e282cf8647454761119a8f1d6def54cb22137078eeba627c662",
+      "bytes": 5755784
     },
     {
       "id": "human-authored-quads",

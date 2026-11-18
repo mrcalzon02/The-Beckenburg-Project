@@ -17,7 +17,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/estate-parish-batch/' in path:
+    if '/workyard-station-batch/' in path:
+        kind='Native cannery or railway before the workyard and landing rebuild' if 'before' in p.name else 'Native cannery and railway grounds, doors and lower landing'
+    elif '/estate-parish-batch/' in path:
         kind='Native estate, farm and parish before entrance reconstruction' if 'before' in p.name else 'Native estate, farm and parish courts and doorway inspection'
     elif '/canyon-marsh-batch/' in path:
         if 'before' in p.name:kind='Native canyon and marsh maps before structural reconstruction'

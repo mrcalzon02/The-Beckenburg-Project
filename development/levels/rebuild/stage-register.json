@@ -4821,16 +4821,21 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "19e297a3a597389300db04c011b606245e50a377",
+          "source_sha": "e43f3116a41cfeacb3a8a739a881463351f4bc7d",
           "evidence": [
-            "development/levels/rebuild/wld-12/rough-layout.json"
+            "development/levels/rebuild/wld-12/rough-layout.json",
+            "development/levels/rebuild/workyard-station-pass/checkpoint.json"
           ],
-          "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "defects": [
+            "DEV-563",
+            "DEV-564",
+            "DEV-565"
+          ],
+          "next_action": "Verify the site room programs and count every actual searchable space in the accepted room layout."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "e43f3116a41cfeacb3a8a739a881463351f4bc7d",
           "evidence": [
             "development/levels/rebuild/structures/wld-12/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4858,7 +4863,8 @@
             "development/levels/rebuild/floor-closure-pass/wld-12/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/workyard-station-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -4879,13 +4885,16 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-563",
+            "DEV-564",
+            "DEV-565"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Use the verified workyards, door assemblies and complete landing. Check placed objects and actual runtime support."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "e43f3116a41cfeacb3a8a739a881463351f4bc7d",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -4898,7 +4907,8 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/workyard-station-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -4908,16 +4918,25 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-563",
+            "DEV-564",
+            "DEV-565"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Complete drainage and edge containment beyond the scoped workyards and confirm the canonical roadheads in gameplay."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "e43f3116a41cfeacb3a8a739a881463351f4bc7d",
+          "evidence": [
+            "development/levels/rebuild/workyard-station-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-563",
+            "DEV-564",
+            "DEV-565"
+          ],
+          "next_action": "Complete the full roof, wall, trestle and interior optical and load-path checks."
         },
         "S06": {
           "status": "NOT_AUDITED",
@@ -5023,15 +5042,20 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "status": "IN_PROGRESS",
+          "source_sha": "e43f3116a41cfeacb3a8a739a881463351f4bc7d",
+          "evidence": [
+            "development/levels/rebuild/workyard-station-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-562",
+            "DEV-565"
+          ],
+          "next_action": "Verify the site room programs and count every actual searchable space in the accepted room layout."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "e43f3116a41cfeacb3a8a739a881463351f4bc7d",
           "evidence": [
             "development/levels/rebuild/structures/wld-13/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -5059,7 +5083,8 @@
             "development/levels/rebuild/floor-closure-pass/wld-13/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/workyard-station-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -5078,13 +5103,15 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-562",
+            "DEV-565"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Use the verified workyards, door assemblies and complete landing. Check placed objects and actual runtime support."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "e43f3116a41cfeacb3a8a739a881463351f4bc7d",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -5097,7 +5124,8 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/workyard-station-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -5107,16 +5135,23 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-562",
+            "DEV-565"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Complete drainage and edge containment beyond the scoped workyards and confirm the canonical roadheads in gameplay."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "e43f3116a41cfeacb3a8a739a881463351f4bc7d",
+          "evidence": [
+            "development/levels/rebuild/workyard-station-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-562",
+            "DEV-565"
+          ],
+          "next_action": "Complete the full roof, wall, trestle and interior optical and load-path checks."
         },
         "S06": {
           "status": "NOT_AUDITED",

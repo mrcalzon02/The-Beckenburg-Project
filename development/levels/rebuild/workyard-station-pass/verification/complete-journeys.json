@@ -1,0 +1,126 @@
+{
+  "scope": "Joined native walks from the real van ramp and through actual doors and workyards.",
+  "source_files_sha256": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/verify_workyard_station.py": "db17011a62da0549e9a1bae8accc9c8c4a1d790c0029aa89cf7f5a0569d5c813"
+  },
+  "evidence_sha256": {
+    "complete-journey-input.tsv": "425cbe00e542d0dbe05df41c65f40d1fb28729c32d4f706d34d8b3e222d366b2",
+    "complete-journey-sweeps.tsv": "0b046f4f8c881f14d286e4d9b8f9613b0052cec121acb89b6c1464887d89cff8"
+  },
+  "journeys": [
+    {
+      "site": "WLD-13",
+      "variant": "after",
+      "link": "J01",
+      "segments": "6",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van ramp to main processing",
+      "links": [
+        1,
+        2
+      ]
+    },
+    {
+      "site": "WLD-13",
+      "variant": "after",
+      "link": "J02",
+      "segments": "10",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van ramp to the bunkhouse via wash",
+      "links": [
+        1,
+        3,
+        14
+      ]
+    },
+    {
+      "site": "WLD-13",
+      "variant": "after",
+      "link": "J03",
+      "segments": "8",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Bunkhouse, woodland court and mess loop",
+      "links": [
+        17,
+        18,
+        -15
+      ]
+    },
+    {
+      "site": "WLD-13",
+      "variant": "after",
+      "link": "J04",
+      "segments": "16",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Mess to processing via the woodland court",
+      "links": [
+        -18,
+        -17,
+        -14,
+        -3,
+        2
+      ]
+    },
+    {
+      "site": "WLD-12",
+      "variant": "after",
+      "link": "J01",
+      "segments": "10",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van ramp to railway cutting via the signal hut",
+      "links": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "site": "WLD-12",
+      "variant": "after",
+      "link": "J02",
+      "segments": "10",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Signal hut to the siding through the forecourt",
+      "links": [
+        -2,
+        4
+      ]
+    },
+    {
+      "site": "WLD-12",
+      "variant": "after",
+      "link": "J03",
+      "segments": "9",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "name": "Van ramp to siding store",
+      "links": [
+        1,
+        4,
+        15
+      ]
+    }
+  ]
+}
