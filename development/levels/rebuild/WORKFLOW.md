@@ -1097,3 +1097,12 @@ All 34 ordinary links, three flights, three complete vertical routes and seven j
 Construction f8b553adf686a053ede24f95fa04750664e94e14 and all 95 bound source blobs are verified in the held draft PR 86. The exact hosted gallery run 44215000879 passed. The public gallery page returned HTTP 200. The two new overview captures returned HTTP 404, pending publication through the held integration branch.
 
 The next fit work starts at Blackwater Hydroelectric Dam. The current native sweep records 231 standing contacts. A 3,223-pose survey now locates the clear lower aisle past the landing and rim columns, the real turbine door and the −3 m and −8 m landing widths. The measured information is in development/levels/rebuild/workyard-station-pass/checkpoint.json.
+
+
+## 2026-11-17 / Blackwater Hydroelectric Dam east stair
+
+Baseline 88a55740a1ab7fc6efd829837b87bf9d78372423. The active 29-packet source is dam-east-hall-pass/roster.json.
+
+The lower east hall now has wall-seated middle-landing transfer girders and separate well rim joists. A plinth supports the low flight and the upper flight bears at both walls. Ten closed replacement parts remove the lower lane’s obstructing bearing arrangement. The real fitted doors still connect the turbine hall, workshop, crest and protected spillway gallery. The −8 m return uses its full guarded landing.
+
+All 6,087 strict standing samples pass, clearing 231 previous contacts. All 13 ordinary links, 13 flights, six complete vertical links and five joined journeys passed in both directions. Independent reimports verified 36 aperture rays, 24 sills, 36 checks of 2.30 m lower headroom and 18 landing poses. The full native sweep passes all 567 ordinary links, 238 flights and 86 vertical links across 25 packets. It records 825 standing contacts in 140,274 samples. The measured section, exact models and views are indexed in development/levels/rebuild/dam-east-hall-pass/checkpoint.json. DEV-566 and DEV-567 cover the resolved fit and remaining acceptance work.

@@ -4159,16 +4159,19 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "451300b05e9f6b8ddbe033d7ce6e87c54c166eb3",
+          "source_sha": "88a55740a1ab7fc6efd829837b87bf9d78372423",
           "evidence": [
-            "development/levels/rebuild/wld-09/rough-layout.json"
+            "development/levels/rebuild/wld-09/rough-layout.json",
+            "development/levels/rebuild/dam-east-hall-pass/checkpoint.json"
           ],
-          "defects": [],
-          "next_action": "Continue physical terrain/editor punch integration, guarded and structurally supported flights/landings, full capsule sweeps and roster source-library placement. Point support/headroom results do not unlock a map."
+          "defects": [
+            "DEV-567"
+          ],
+          "next_action": "Verify the actual searchable room count, enclosure and connected opening semantics."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "66fe3286e13cb569b61797ee43a10e952ba4e5ff",
+          "source_sha": "88a55740a1ab7fc6efd829837b87bf9d78372423",
           "evidence": [
             "development/levels/rebuild/structures/wld-09/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4201,7 +4204,8 @@
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
             "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
-            "development/levels/rebuild/dam-spillway-gallery-pass/checkpoint.json"
+            "development/levels/rebuild/dam-spillway-gallery-pass/checkpoint.json",
+            "development/levels/rebuild/dam-east-hall-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -4228,9 +4232,11 @@
             "DEV-415",
             "DEV-416",
             "DEV-536",
-            "DEV-537"
+            "DEV-537",
+            "DEV-566",
+            "DEV-567"
           ],
-          "next_action": "Review exposed terrain/civil edges and remaining shoulder contacts, then integrate the same geometry, ownership, portal and service coordinates in the actual game."
+          "next_action": "Use the verified solid service hall and guarded stair. Bind the authored terrain, doors, collision and navigation into shared gameplay."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -4271,15 +4277,17 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "66fe3286e13cb569b61797ee43a10e952ba4e5ff",
+          "source_sha": "88a55740a1ab7fc6efd829837b87bf9d78372423",
           "evidence": [
-            "development/levels/rebuild/dam-spillway-gallery-pass/checkpoint.json"
+            "development/levels/rebuild/dam-spillway-gallery-pass/checkpoint.json",
+            "development/levels/rebuild/dam-east-hall-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-536",
-            "DEV-537"
+            "DEV-537",
+            "DEV-567"
           ],
-          "next_action": "Review exposed terrain/civil edges and remaining shoulder contacts, then integrate the same geometry, ownership, portal and service coordinates in the actual game."
+          "next_action": "Complete the wider Dam structural, optical and fixture fit inspection around the verified hall and spillway."
         },
         "S06": {
           "status": "NOT_AUDITED",

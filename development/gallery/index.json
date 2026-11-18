@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11137,
+  "count": 11145,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -97234,6 +97234,86 @@
       "height": 1050,
       "bytes": 1524586,
       "sha256": "5cc40b6d8b223ccf9b4e8b1ac330f721fc60ae0c75c5f2b6f0d97957ac74de0e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/east-service-aisle-before.png",
+      "url": "development/levels/rebuild/captures/dam-east-hall-batch/east-service-aisle-before.png",
+      "title": "East service aisle before",
+      "kind": "Native Dam east hall before the bearing rebuild",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1090950,
+      "sha256": "bca4ba095b258cc540c83fb86c299caa104ca4c8f240d375af454a7eb5a4f54b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/east-service-aisle.png",
+      "url": "development/levels/rebuild/captures/dam-east-hall-batch/east-service-aisle.png",
+      "title": "East service aisle",
+      "kind": "Native Dam east hall girder, aisle and landing inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1097232,
+      "sha256": "1430e0f8cc51eb633d090525beb0a1ed9a4ce4201f0d65a42e407a45755a3666"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/main-landing.png",
+      "url": "development/levels/rebuild/captures/dam-east-hall-batch/main-landing.png",
+      "title": "Main landing",
+      "kind": "Native Dam east hall girder, aisle and landing inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1134735,
+      "sha256": "021501a34ad094421bd416c84311f62fa7779175efb5d9c9b3a06a7d66044584"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/overview.png",
+      "url": "development/levels/rebuild/captures/dam-east-hall-batch/overview.png",
+      "title": "Overview",
+      "kind": "Native Dam east hall girder, aisle and landing inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 901901,
+      "sha256": "c273e1c5cdd617e8551ea11496d7489c22582a7c8f615718a350220dee54dc41"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/return-landing.png",
+      "url": "development/levels/rebuild/captures/dam-east-hall-batch/return-landing.png",
+      "title": "Return landing",
+      "kind": "Native Dam east hall girder, aisle and landing inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1201266,
+      "sha256": "55bff2aae5977c7f073eb174110275c624f2dca213a1b38ceb2a7543a02ba714"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/spillway-door.png",
+      "url": "development/levels/rebuild/captures/dam-east-hall-batch/spillway-door.png",
+      "title": "Spillway door",
+      "kind": "Native Dam east hall girder, aisle and landing inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1016210,
+      "sha256": "b14578875b31aaa8fc85c6b1ee82ee461ec4183b0df3b19a8302e312271edced"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/turbine-to-east-hall-before.png",
+      "url": "development/levels/rebuild/captures/dam-east-hall-batch/turbine-to-east-hall-before.png",
+      "title": "Turbine to east hall before",
+      "kind": "Native Dam east hall before the bearing rebuild",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1077896,
+      "sha256": "c64bad098f473b59703ff4117326f9850326a05718f875dc54ebb1f0e00abf2e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/dam-east-hall-batch/turbine-to-east-hall.png",
+      "url": "development/levels/rebuild/captures/dam-east-hall-batch/turbine-to-east-hall.png",
+      "title": "Turbine to east hall",
+      "kind": "Native Dam east hall girder, aisle and landing inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1054565,
+      "sha256": "fdb0002c4d90311686fcd0c1a4937fd75af5bfee2d528e0f452a638595d8eb5c"
     },
     {
       "path": "development/levels/rebuild/captures/dam-spillway-gallery-batch/crest-and-gallery-cutaway.png",

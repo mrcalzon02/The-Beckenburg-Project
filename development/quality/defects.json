@@ -6282,6 +6282,28 @@
       "action": "Complete whole-map boundary, room and service inspections, then verify renderer, physics, navigation, acoustics and network ownership together.",
       "evidence": "development/levels/rebuild/workyard-station-pass/checkpoint.json",
       "older_maps": "Keep native geometry evidence tied to its exact source and advance each stage on its own evidence."
+    },
+    {
+      "id": "DEV-566",
+      "title": "Dam landing point bearings narrowed the lower service passage",
+      "status": "CORRECTED_WITH_WALL_SEATED_BEARINGS",
+      "affected": "WLD-09 turbine hall, east stair, lower spillway bypass and maintenance return",
+      "symptom": "The shared \u22126 m route passed narrowly down the centre. Standing probes contacted the point columns, doorway trim and turn guards.",
+      "cause": "The earlier landing and well supports stood beside and across the lower service passage. Guidance also claimed width beyond the physical flights.",
+      "action": "Transfer the landing and rim loads to the actual hall walls, use the full lower floor through the fitted doors and place guides within the built widths.",
+      "evidence": "development/levels/rebuild/dam-east-hall-pass/checkpoint.json",
+      "older_maps": "Review bearing placement, floor datums, headroom and full aperture clearances together."
+    },
+    {
+      "id": "DEV-567",
+      "title": "Dam whole-site services and shared runtime acceptance remain open",
+      "status": "OPEN_WHOLE_MAP_AND_RUNTIME_FIT",
+      "affected": "WLD-09 whole map, gameplay systems and multiplayer",
+      "symptom": "All strict native standing samples and complete routes for this version pass. Full room, fixture, edge containment and runtime checks remain open.",
+      "cause": "This checkpoint covers the physical east hall and its connections in native contexts.",
+      "action": "Check whole-site enclosure and occupancy. Bind authored rooms, spawns, power, navigation, portals and acoustics to the actual renderer and collision in shared contexts.",
+      "evidence": "development/levels/rebuild/dam-east-hall-pass/checkpoint.json",
+      "older_maps": "Tie each gate to its exact scene and verify shared ownership independently of source pose samples."
     }
   ],
   "audit_categories": [

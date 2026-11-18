@@ -8004,6 +8004,34 @@ Evidence and verification: development/levels/rebuild/workyard-station-pass/chec
 
 Older-map obligation: Keep native geometry evidence tied to its exact source and advance each stage on its own evidence.
 
+### DEV-566 — Dam landing point bearings narrowed the lower service passage
+
+**Status:** CORRECTED_WITH_WALL_SEATED_BEARINGS · **Affected:** WLD-09 turbine hall, east stair, lower spillway bypass and maintenance return
+
+The shared −6 m route passed narrowly down the centre. Standing probes contacted the point columns, doorway trim and turn guards.
+
+Cause / uncertainty: The earlier landing and well supports stood beside and across the lower service passage. Guidance also claimed width beyond the physical flights.
+
+Fix / next action: Transfer the landing and rim loads to the actual hall walls, use the full lower floor through the fitted doors and place guides within the built widths.
+
+Evidence and verification: development/levels/rebuild/dam-east-hall-pass/checkpoint.json
+
+Older-map obligation: Review bearing placement, floor datums, headroom and full aperture clearances together.
+
+### DEV-567 — Dam whole-site services and shared runtime acceptance remain open
+
+**Status:** OPEN_WHOLE_MAP_AND_RUNTIME_FIT · **Affected:** WLD-09 whole map, gameplay systems and multiplayer
+
+All strict native standing samples and complete routes for this version pass. Full room, fixture, edge containment and runtime checks remain open.
+
+Cause / uncertainty: This checkpoint covers the physical east hall and its connections in native contexts.
+
+Fix / next action: Check whole-site enclosure and occupancy. Bind authored rooms, spawns, power, navigation, portals and acoustics to the actual renderer and collision in shared contexts.
+
+Evidence and verification: development/levels/rebuild/dam-east-hall-pass/checkpoint.json
+
+Older-map obligation: Tie each gate to its exact scene and verify shared ownership independently of source pose samples.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
