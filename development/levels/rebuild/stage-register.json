@@ -905,7 +905,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+          "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/church/rough-layout.json",
@@ -928,7 +928,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+          "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
           "evidence": [
             "development/levels/rebuild/structures/church/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2527,7 +2527,7 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+          "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
           "evidence": [
             "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json",
             "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
@@ -2541,7 +2541,7 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+          "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
           "evidence": [
             "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json",
             "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
@@ -3579,7 +3579,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+          "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
           "evidence": [
             "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
           ],
@@ -3590,7 +3590,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+          "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -5793,7 +5793,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+          "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
           "evidence": [
             "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
           ],
@@ -5804,7 +5804,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+          "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
           "evidence": [
             "development/levels/rebuild/structures/wld-16/implementation.json",
             "development/levels/rebuild/structures/verification.json",

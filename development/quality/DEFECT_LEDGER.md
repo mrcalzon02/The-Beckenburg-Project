@@ -8230,13 +8230,13 @@ Older-map obligation: Require perpendicular sill approaches and check the full s
 
 ### DEV-582 — Legacy House door 14 fails an open traversal assertion
 
-**Status:** OPEN_EXISTING_HOUSE_THRESHOLD_DIAGNOSTIC · **Affected:** HOUSE legacy portal 14
+**Status:** ISOLATED_FLUSH_PORCH_TRIAL_PASSES_REVIEW_OPEN · **Affected:** HOUSE legacy portal 14
 
 ArchitecturalPlansTest fails from X19.8, Z19.9 to X19.8, Z21.1 with legacy portal 14 open.
 
-Cause / uncertainty: The same failure appears when compiling the pre-foyer-change HouseMap, SceneRenderer and native physics sources. Its physical cause is still under inspection.
+Cause / uncertainty: The whole stone porch deck starts at Z20.5 and its top was 0.04 m above the doorway sill. The approach capsule struck the physical deck edge before the old support query moved the feet to the raised deck.
 
-Fix / next action: Inspect the actual threshold footprint, support and framing at X19.8, Z20.5 before changing geometry or the test.
+Fix / next action: Keep the full stone slab and match its top and post bases to the measured sill. The isolated candidate passes ArchitecturalPlansTest. Compare the complete porch, foundations and other House paths in the authoritative packet before promotion.
 
 Evidence and verification: development/levels/rebuild/native-foyer-door-pass/checkpoint.json
 

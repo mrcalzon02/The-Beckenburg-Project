@@ -179,5 +179,69 @@
   "retained_engine_dependencies_normalized_git_blobs": {
     "src/main/java/org/beckenburg/GlbProps.java": "e804da1bfc95eba7fab198d9646b89581cc9416e9fbb096c61d586633f5d5982",
     "src/main/java/org/beckenburg/LanAcoustics.java": "32cbb9829c1a2c8af4ff4c5d5796d7f905434aa326febde9cbaa1fc490971eb2"
+  },
+  "publication": {
+    "construction_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
+    "verified_remote_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
+    "verified_git_tree": "1d005d0c75fdcc1f1cd266c02c77f074e0f602a0",
+    "remote_ref": "refs/heads/map/roster-structure-batch",
+    "draft_pull_request": 86,
+    "base_ref": "map/house-default",
+    "base_sha": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "main_sha": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "verified_source_blobs": 56,
+    "gallery_images": 11183,
+    "hosted_gallery_run": 44232917755,
+    "hosted_gallery_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
+    "hosted_gallery_conclusion": "success",
+    "public_html_status": 200,
+    "public_captures": {
+      "school-foyer-closed.png": 404,
+      "wharf-supported-crossdock.png": 404
+    },
+    "status": "VERIFIED_BRANCH_AND_DRAFT_PUBLIC_DEPLOYMENT_PENDING"
+  },
+  "next_physical_surveys": {
+    "ASYLUM": {
+      "native_sha256": "ee36e88718b20d74d9baa0fc62b132684ab9ce45e6087fc74cebdbf7d9a93fb9",
+      "standing_samples": 6656,
+      "contacts_in_roster": 36,
+      "finding": "The admission/interview frame has 1.05 m clear width at X35, Z52, and the interview/records frame has 1.05 m at X39.5, Z54. Both are smaller than the limiting guides. The upper WC and clinical pavilion contacts need approach alignment.",
+      "local_evidence": {
+        "build/post-native-foyer-door/next-sites/asylum/survey.json": "b172628950e13f3a8f3b354785c8f98336135623c4942e874eebf18f8d5c9d5f",
+        "build/post-native-foyer-door/next-sites/asylum/standing-fit.tsv": "6dc6176f8a3937f780ccefd427b46567ffc80c9ab5d053a159f4ffdad8409077"
+      }
+    },
+    "WLD-18": {
+      "native_sha256": "4196a2394355763752a3ef1d62425e3d4579c895469b931e61da6da50ed20f5b",
+      "standing_samples": 5200,
+      "contacts_in_roster": 33,
+      "finding": "The fitted west escape frame spans X7.7333–8.2667 at Z34 and is 1.80 m clear. The west connector wall bounds north to Z32.56–32.80. The y=-4 surveyed floor around X7.45 loses support or body clearance on some off-center turns. Its complete landing needs review before drawing the correction.",
+      "local_evidence": {
+        "build/post-native-foyer-door/next-sites/wld-18/survey.json": "407ce77cb0b8b59ed2e2badd8eba443e87c934b7a4a30b5ab63b44665c37589b",
+        "build/post-native-foyer-door/next-sites/wld-18/standing-fit.tsv": "6fc233c8a7a79ee9372d2e7b53cc80ae5db59dcaeae6ff3dc4bfdc79871c1d75"
+      }
+    },
+    "PRISON": {
+      "native_sha256": "6791f0e6cd2e8fe12fb58fa1210ed5f075b034a1cbc9b378c9358b9278c7077d",
+      "standing_samples": 1200,
+      "contacts_in_roster": 19,
+      "finding": "The reception/records frame at X18, Z65 and the north plant stair frame at X30, Z22 both have an actual 1.05 m opening. These account for 12 of the 19 standing contacts.",
+      "local_evidence": {
+        "build/post-native-foyer-door/next-sites/prison/survey.json": "5e9e4565ffbe1dac042322a01de1a82232dde4cb3613d570cb0f65eaf617332c",
+        "build/post-native-foyer-door/next-sites/prison/standing-fit.tsv": "cc111754e35fd22bb5355936425b8878e76f8ab1c959682acc40d2dee005676a"
+      }
+    }
+  },
+  "next_house_threshold_trial": {
+    "defect": "DEV-582",
+    "cause": "The whole stone porch deck starts at Z20.5 and its top was 0.04 m above the doorway sill. The approach capsule struck the physical deck edge before the old support query moved the feet to the raised deck.",
+    "design": "Seat the full porch walking top and both porch post bases at the actual 0 m sill datum.",
+    "isolated_architectural_plans_test": "PASS",
+    "local_proof": {
+      "build/native-foyer-door/house-portal14.tsv": "d5b58e2343998268ea719cf3ca984796a4b770be43d6f81df19d30ab364af6b7",
+      "build/native-foyer-door/house-portal14-flush-trial.tsv": "41176e3d3495c722b9ca88733dc9741360604ea65e0fb17783f0efa69c3a3c6c",
+      "build/native-foyer-door/porch-trial/org/beckenburg/HouseRebuildEnvelope.java": "714fd01b33f343274b8d600d1915a5f2536becdca699af9be487f4a9dcec848c"
+    }
   }
 }

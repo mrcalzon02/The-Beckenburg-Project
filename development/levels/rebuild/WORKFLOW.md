@@ -1168,3 +1168,10 @@ The 1.80 m School foyer frame now binds the real canonical pair of 0.90 m leaves
 Three measured native layouts use the full Wharf crossdeck and installed cottage and net store frames, the existing 1.05 m Eight Pines doors, and the west landing around the Parish crypt well. The Wharf and Eight Pines arrivals start at the actual rear ramp toes. The native source assemblies for those routes are byte-identical to the prior exports. All 12,540 strict samples and six joined journeys pass across the three sites, clearing their 145 prior contacts.
 
 The complete native candidate sweep passes 567 ordinary links, 238 flights and 86 vertical links. Its standing contacts fell from 255 to 110 across 140,379 poses. Five scoped existing runtime checks pass. ArchitecturalPlansTest reports the same legacy House portal 14 open-traversal failure on the baseline and candidate at X19.8, Z20.5. DEV-575 and DEV-578 through DEV-582 bind the measured evidence to development/levels/rebuild/native-foyer-door-pass/checkpoint.json.
+
+
+Construction 1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa and 56 exact committed evidence files match draft PR 86. Two retained engine dependencies also match their normalized Git blobs. Exact hosted gallery run 44232917755 passed. The public gallery returned HTTP 200 and the two new sampled captures returned HTTP 404 pending integration through the held parent.
+
+The legacy House portal 14 probe ties its failure to the stone porch deck's 40 mm step starting at the threshold. When the full porch slab and post bases meet the actual 0 m sill datum in a local trial, ArchitecturalPlansTest passes. DEV-582 and the current checkpoint bind the baseline and isolated repair. The current published House source retains the prior assembly pending full assembly review.
+
+The next Asylum, Cinder-6 and Penitentiary surveys bind 6,656, 5,200 and 1,200 standing samples to their exact frames and physical floors. The staged School's shared aperture evidence is available for broader native door and gameplay qualification.
