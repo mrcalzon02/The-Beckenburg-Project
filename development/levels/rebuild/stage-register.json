@@ -7013,5 +7013,22 @@
       "new_triangles": 6996
     },
     "next_action": "Build remaining Lookout ground/platform interfaces alongside the next unfinished sites; integrate source geometry and functional native ownership into shared gameplay before runtime acceptance."
+  },
+  "flush_porch_and_thresholds_checkpoint": {
+    "status": "HOUSE_PORCH_RUNTIME_AND_FOUR_NATIVE_GUIDES_VERIFIED_ACCEPTANCE_OPEN",
+    "roster": "development/levels/rebuild/flush-porch-and-threshold-pass/roster.json",
+    "baseline": "85aeeb69347397852111599b1aafe084a70e514c",
+    "checkpoint": "development/levels/rebuild/flush-porch-and-threshold-pass/checkpoint.json",
+    "house_envelope_revision": "first-principles-functional-furnishings-v1-1fd2c4bdb33768b8",
+    "native_roster": {
+      "samples": 140550,
+      "standing_contacts_before": 110,
+      "standing_contacts_after": 14,
+      "ordinary_links_both_directions": 567,
+      "flights_both_directions": 238,
+      "vertical_routes_both_directions": 86,
+      "joined_journeys": 4
+    },
+    "next_action": "Fit the four Seacliff Battery receiving floors and retain all original vertical connections. Continue through normal gameplay and complete location acceptance."
   }
 }

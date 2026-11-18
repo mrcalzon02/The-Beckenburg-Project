@@ -1,7 +1,7 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2050,
+  "local_files": 2054,
   "unique_local_file_hashes": 1873,
   "collections": {
     "existing_map_specific_roughs": 298,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 276
+    "native_map_exports": 280
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -28299,6 +28299,54 @@
       "bytes": 1559716
     },
     {
+      "id": "surveyed-thresholds",
+      "label": "surveyed-thresholds",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/surveyed-thresholds.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "f819ce31cf09bf04e3d3302b0003af1a55ab2827ebde9ab63483a8557d387ad6",
+      "bytes": 4314848
+    },
+    {
+      "id": "surveyed-thresholds",
+      "label": "surveyed-thresholds",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/surveyed-thresholds.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "31ae823c4e6bed2b9dc34d0eaf9bae8d5b47ab0590c319fefb611fe113b020ba",
+      "bytes": 3276700
+    },
+    {
+      "id": "surveyed-thresholds",
+      "label": "surveyed-thresholds",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/surveyed-thresholds.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "1f8ae458d2f7f9de28a42b11c87298547d4da9665e1a58efa23b2a25334b18cf",
+      "bytes": 3912012
+    },
+    {
+      "id": "surveyed-thresholds",
+      "label": "surveyed-thresholds",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/surveyed-thresholds.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "2a7d37a51dc9c3d14ffb6e73bf0a8a2e209c61bb5591a207145e89c59f27b993",
+      "bytes": 6352016
+    },
+    {
       "id": "furnished",
       "label": "furnished",
       "maps": [],
@@ -32417,6 +32465,34 @@
       "paths": [
         "development/levels/rebuild/floor-closure-pass/wld-18/closed-floors.glb",
         "development/levels/rebuild/terrain-fit-pass/wld-18/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "f819ce31cf09bf04e3d3302b0003af1a55ab2827ebde9ab63483a8557d387ad6",
+      "paths": [
+        "development/levels/rebuild/flush-porch-and-threshold-pass/academy/surveyed-thresholds.glb",
+        "development/levels/rebuild/stair-interface-construction-pass/academy/joined-stairs.glb"
+      ]
+    },
+    {
+      "sha256": "31ae823c4e6bed2b9dc34d0eaf9bae8d5b47ab0590c319fefb611fe113b020ba",
+      "paths": [
+        "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/surveyed-thresholds.glb",
+        "development/levels/rebuild/institution-earthworks-pass/asylum/saved-earthworks.glb"
+      ]
+    },
+    {
+      "sha256": "1f8ae458d2f7f9de28a42b11c87298547d4da9665e1a58efa23b2a25334b18cf",
+      "paths": [
+        "development/levels/rebuild/flush-porch-and-threshold-pass/prison/surveyed-thresholds.glb",
+        "development/levels/rebuild/stair-cell-construction-pass/prison/constructed-cells.glb"
+      ]
+    },
+    {
+      "sha256": "2a7d37a51dc9c3d14ffb6e73bf0a8a2e209c61bb5591a207145e89c59f27b993",
+      "paths": [
+        "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/surveyed-thresholds.glb",
+        "development/levels/rebuild/service-portal-construction-pass/wld-18/clean-doorways.glb"
       ]
     },
     {

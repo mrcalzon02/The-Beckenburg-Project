@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11183,
+  "count": 11192,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -100374,6 +100374,96 @@
       "height": 900,
       "bytes": 721944,
       "sha256": "925522cbb25910536138080843feb54f01078170b294c915a7aecb9b9289be81"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/academy-standing.png",
+      "url": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/academy-standing.png",
+      "title": "Academy standing",
+      "kind": "Saved doorway and stair landing",
+      "width": 1190,
+      "height": 810,
+      "bytes": 1068271,
+      "sha256": "ebf594e91c2abb96b124a51d884b8033ee6b29816bb0f3a9b5f6414c6331231e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/asylum-standing.png",
+      "url": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/asylum-standing.png",
+      "title": "Asylum standing",
+      "kind": "Saved doorway and stair landing",
+      "width": 1190,
+      "height": 810,
+      "bytes": 948107,
+      "sha256": "d239527b17b6024a298daff4cef8a93517adcd4c2359658fd9822e7ddf962860"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-canonical-van-runtime.png",
+      "url": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-canonical-van-runtime.png",
+      "title": "House canonical van runtime",
+      "kind": "House game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 247767,
+      "sha256": "7134c44d28f1914c70df325899f081a23e0f6c7837e13310ac3d9c8d5ec3edb7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-covered-entrance-runtime.png",
+      "url": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-covered-entrance-runtime.png",
+      "title": "House covered entrance runtime",
+      "kind": "House game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 427679,
+      "sha256": "8779290c142094cea3c712871c26b64ca9cf208bae74bd2bff94be6d43666b39"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-front-architecture-runtime.png",
+      "url": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-front-architecture-runtime.png",
+      "title": "House front architecture runtime",
+      "kind": "House game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 407559,
+      "sha256": "98106e114e229eb73b885fa271ba10dc8c150921eb66abb936bd7e3480cafcb4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-porch-after-standing.png",
+      "url": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-porch-after-standing.png",
+      "title": "House porch after standing",
+      "kind": "House porch at standing height",
+      "width": 1040,
+      "height": 700,
+      "bytes": 1135881,
+      "sha256": "4e0cbe60fa9737d830bb2c4d12ff269a14b1decfdbb3d27aeaf23b6765eab89a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-porch-before-standing.png",
+      "url": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-porch-before-standing.png",
+      "title": "House porch before standing",
+      "kind": "House porch at standing height",
+      "width": 1040,
+      "height": 700,
+      "bytes": 1109426,
+      "sha256": "d92ff1cc286af300d77e59193f96f72dc7fa6ecb70b4e64ae748c22c3a706838"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/prison-standing.png",
+      "url": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/prison-standing.png",
+      "title": "Prison standing",
+      "kind": "Saved doorway and stair landing",
+      "width": 1190,
+      "height": 810,
+      "bytes": 997053,
+      "sha256": "e8c2036220fdf7d67b35fbcb95d1606fb618293f3effbe039965edb0460acada"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/wld-18-standing.png",
+      "url": "development/levels/rebuild/captures/flush-porch-and-threshold-batch/wld-18-standing.png",
+      "title": "Wld 18 standing",
+      "kind": "Saved doorway and stair landing",
+      "width": 1190,
+      "height": 810,
+      "bytes": 989097,
+      "sha256": "992da3eb2b940bd72e9d6aecf3c0a4f63c77d737f57761fb16647849126cc0e4"
     },
     {
       "path": "development/levels/rebuild/captures/furnishing-batch/academy-export-overview.png",

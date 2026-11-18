@@ -1932,3 +1932,12 @@ Construction 1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa and 56 exact committed evi
 The legacy House portal 14 probe ties its failure to the stone porch deck's 40 mm step starting at the threshold. When the full porch slab and post bases meet the actual 0 m sill datum in a local trial, ArchitecturalPlansTest passes. DEV-582 and the current checkpoint bind the baseline and isolated repair. The current published House source retains the prior assembly pending full assembly review.
 
 The next Asylum, Cinder-6 and Penitentiary surveys bind 6,656, 5,200 and 1,200 standing samples to their exact frames and physical floors. The staged School's shared aperture evidence is available for broader native door and gameplay qualification.
+
+
+## 17 November 2026 — House porch and surveyed threshold checkpoint
+
+The active 29-packet source is [flush-porch-and-threshold-pass/roster.json](levels/rebuild/flush-porch-and-threshold-pass/roster.json). The [checkpoint](levels/rebuild/flush-porch-and-threshold-pass/checkpoint.json) binds the native files and verification to baseline 85aeeb69347397852111599b1aafe084a70e514c. It carries forward the staged School door schedule.
+
+Briar House's full entrance slab and post feet now share the actual sill datum. The full-width graded stone apron meets the saved yard formation. The standing and crouched yard-to-foyer sweeps pass in both directions, and the full van audit reaches all 15 zones and required interactions. The native furnished scene was rebuilt and reopened. DEV-582 records the scoped correction. The inherited terrain assumption and enclosure assertions reproduce on the baseline and corrected House.
+
+Measured guidance now follows the existing doors and landings in the Academy, Asylum, Penitentiary and Cinder-6. The source geometry and collision bytes are identical to their previous active packets. Four joined site journeys pass in both directions. The complete roster retains 567 ordinary links, 238 flights and 86 vertical routes passing in both directions. Of 140,550 standing positions, 14 remain invalid, all at four Seacliff Battery landings. DEV-583 records the surveyed bounds and next physical work. Environment art, native gameplay integration and the location acceptance gates remain open.

@@ -1,0 +1,13 @@
+{
+  "level": "briar-rebuild",
+  "revision": "first-principles-functional-furnishings-v1-1fd2c4bdb33768b8",
+  "triangles": 131805,
+  "packed_images": 230,
+  "props": 45,
+  "spawns": 15,
+  "native_sha256": "4d67eb753828ef3c1506a1978fbf79e56bd885353b4cd69d19839899f297d7c0",
+  "definition_sha256": "894a3f5827759a9c26003819c786d71bcb9ef71543bdd6002ee102da3d400f3c",
+  "geometry_sha256": "63e3f2a26841391621bfc26eeeb7e043a1a69fb2edc3086cee2705ac7841205e",
+  "result": "PASS every source vertex/UV; packed images; original sockets; native file unchanged",
+  "acceptance": "construction candidate only; terrain/boundary and complete map gates open"
+}

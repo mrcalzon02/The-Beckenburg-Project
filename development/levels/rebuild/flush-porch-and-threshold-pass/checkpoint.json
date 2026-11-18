@@ -1,0 +1,194 @@
+{
+  "status": "HOUSE_PORCH_RUNTIME_AND_FOUR_NATIVE_GUIDES_VERIFIED_ACCEPTANCE_OPEN",
+  "baseline": "85aeeb69347397852111599b1aafe084a70e514c",
+  "roster": "development/levels/rebuild/flush-porch-and-threshold-pass/roster.json",
+  "house": {
+    "portal": {
+      "id": 14,
+      "center_m": [
+        19.8,
+        0,
+        20.5
+      ],
+      "clear_width_m": 1.1
+    },
+    "lowered_full_porch_mm": 40,
+    "stone_depth_m": 0.16,
+    "porch_width_m": 3,
+    "apron_run_m": 0.6,
+    "apron_fall_m": 0.019,
+    "terrain_generation": {
+      "asset": "assets/runtime/sites/briar-porch-world.hcs2",
+      "sha256": "7351ae8359228b30568f2648ef89252eb924131c3e9197e9bf911a8a77f3f3b3",
+      "triangles": 6072,
+      "preserved_cutouts": 112,
+      "base_tile_sha256": "36797f6b0ca87d9a9af3954de968b4c88aeaef017e12430f40b0774b5cc49943",
+      "adaptive_topology_sha256": "8a916e8057e03a14ae4389d34ff0b8ca7decabb6415d8762b4ec51e93efeaf88",
+      "independent_rebuild": "PASS"
+    },
+    "envelope_digest": "51fdb95302ed65b4e8e55b1e7e313cbdfbdf60005b1cd4ee1fd8abfe56335914",
+    "furnished_revision": "first-principles-functional-furnishings-v1-1fd2c4bdb33768b8",
+    "render_export_triangles": 131805,
+    "native_packed_images": 230,
+    "closed_components": 162,
+    "visible_envelope_triangles": 1676,
+    "physical_envelope_triangles": 1960,
+    "whole_house_from_van": {
+      "zones": 15,
+      "envelope_positions": 53642,
+      "furnished_positions": 50517,
+      "required_interaction_approaches": "PASS"
+    },
+    "foyer_standing_and_crouched_both_directions_at_three_offsets": "PASS",
+    "closed_door": "BLOCKED",
+    "reopened_native_exact_triangles_and_uvs": "PASS",
+    "end_to_end_scope": "Full House location acceptance and the held release remain open."
+  },
+  "active_source_updates": [
+    {
+      "id": "ACADEMY",
+      "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/construction.json",
+      "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/authored-layout.json",
+      "glb": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/surveyed-thresholds.glb",
+      "native": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/surveyed-thresholds.hcs2",
+      "blend": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/surveyed-thresholds.blend",
+      "glb_sha256": "f819ce31cf09bf04e3d3302b0003af1a55ab2827ebde9ab63483a8557d387ad6",
+      "native_sha256": "954a3d3d5f74394f4c3fb8077371ac3537e73e0d5f5118370943c157daca99ea"
+    },
+    {
+      "id": "ASYLUM",
+      "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/construction.json",
+      "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/authored-layout.json",
+      "glb": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/surveyed-thresholds.glb",
+      "native": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/surveyed-thresholds.hcs2",
+      "blend": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/surveyed-thresholds.blend",
+      "glb_sha256": "31ae823c4e6bed2b9dc34d0eaf9bae8d5b47ab0590c319fefb611fe113b020ba",
+      "native_sha256": "ee36e88718b20d74d9baa0fc62b132684ab9ce45e6087fc74cebdbf7d9a93fb9"
+    },
+    {
+      "id": "PRISON",
+      "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/construction.json",
+      "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/authored-layout.json",
+      "glb": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/surveyed-thresholds.glb",
+      "native": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/surveyed-thresholds.hcs2",
+      "blend": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/surveyed-thresholds.blend",
+      "glb_sha256": "1f8ae458d2f7f9de28a42b11c87298547d4da9665e1a58efa23b2a25334b18cf",
+      "native_sha256": "6791f0e6cd2e8fe12fb58fa1210ed5f075b034a1cbc9b378c9358b9278c7077d"
+    },
+    {
+      "id": "WLD-18",
+      "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/construction.json",
+      "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/authored-layout.json",
+      "glb": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/surveyed-thresholds.glb",
+      "native": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/surveyed-thresholds.hcs2",
+      "blend": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/surveyed-thresholds.blend",
+      "glb_sha256": "2a7d37a51dc9c3d14ffb6e73bf0a8a2e209c61bb5591a207145e89c59f27b993",
+      "native_sha256": "4196a2394355763752a3ef1d62425e3d4579c895469b931e61da6da50ed20f5b"
+    }
+  ],
+  "native_scope": {
+    "ACADEMY": {
+      "previous_contacts": 8,
+      "current_contacts": 0,
+      "samples": 8781,
+      "ordinary": 39
+    },
+    "ASYLUM": {
+      "previous_contacts": 36,
+      "current_contacts": 0,
+      "samples": 10929,
+      "ordinary": 43
+    },
+    "PRISON": {
+      "previous_contacts": 19,
+      "current_contacts": 0,
+      "samples": 7563,
+      "ordinary": 36
+    },
+    "WLD-18": {
+      "previous_contacts": 33,
+      "current_contacts": 0,
+      "samples": 3990,
+      "ordinary": 14
+    },
+    "WLD-17": {
+      "previous_contacts": 14,
+      "current_contacts": 14,
+      "samples": 2871,
+      "ordinary": 12
+    }
+  },
+  "native_roster": {
+    "samples": 140550,
+    "standing_contacts_before": 110,
+    "standing_contacts_after": 14,
+    "ordinary_links_both_directions": 567,
+    "flights_both_directions": 238,
+    "vertical_routes_both_directions": 86,
+    "joined_journeys": 4
+  },
+  "remaining": {
+    "WLD-17": "Resolve the four physical landing and receiving-floor contacts as a measured stair assembly batch.",
+    "native_site_acceptance": "Integrate remaining native packets into normal gameplay and verify exact room, door, service, spawn, optical/acoustic and host/guest behavior.",
+    "house": "Existing default terrain and enclosure test assumptions fail before and after the repair. Full site gates remain open.",
+    "release": "Draft PR 86 onto held map/house-default."
+  },
+  "verification": {
+    "flight-sweeps.tsv": "31123281d40541cd95b68c7303acdf7f37c05f361501eead50f8187a2f24c39b",
+    "full-native-stairs-report.json": "bc43d5254d42a03b6d40eb51377d2edb77893bc177f421f5c484d33156c2454e",
+    "full-native-standing-report.json": "193011636a13d064f1e899a7033e57f0bb2bc26fb3ce698ed9fa306df6b4b187",
+    "house-runtime.json": "3b8fe695d4a7df2d1025b48b5ea7415cebc7ef53a3c11ac7e46c63a03a62f135",
+    "joined-journeys.json": "e2b6a1012345154d2bf2626bd9e91c94cfa418f89d0c9e0f248cffdc4ee1853d",
+    "journey-input.tsv": "dc723221233ff14a51f75a03e143a60d30295039a32e583df4337730b4360661",
+    "journey-results.tsv": "5251b93231692fd96286841357aaeb7b224d184491fa230bffb42bb5f008b391",
+    "ordinary-link-sweeps.tsv": "edff99b09c76ab8a6e9b76a14d09f00527f3e90abab0872315676de7d3ecb45b",
+    "remaining-standing-contacts.tsv": "7a1106248a592a6af83e2f742400edc0e8922475dd49a892ad2e146362be398e",
+    "vertical-link-sweeps.tsv": "eef6df3666cda78c8df2c974672084662cda78346cd600aefb9e4e028ae8657b"
+  },
+  "visuals": {
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/academy-standing.png": "ebf594e91c2abb96b124a51d884b8033ee6b29816bb0f3a9b5f6414c6331231e",
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/asylum-standing.png": "d239527b17b6024a298daff4cef8a93517adcd4c2359658fd9822e7ddf962860",
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-canonical-van-runtime.png": "7134c44d28f1914c70df325899f081a23e0f6c7837e13310ac3d9c8d5ec3edb7",
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-covered-entrance-runtime.png": "8779290c142094cea3c712871c26b64ca9cf208bae74bd2bff94be6d43666b39",
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-front-architecture-runtime.png": "98106e114e229eb73b885fa271ba10dc8c150921eb66abb936bd7e3480cafcb4",
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-porch-after-standing.png": "4e0cbe60fa9737d830bb2c4d12ff269a14b1decfdbb3d27aeaf23b6765eab89a",
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/house-porch-before-standing.png": "d92ff1cc286af300d77e59193f96f72dc7fa6ecb70b4e64ae748c22c3a706838",
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/prison-standing.png": "e8c2036220fdf7d67b35fbcb95d1606fb618293f3effbe039965edb0460acada",
+    "development/levels/rebuild/captures/flush-porch-and-threshold-batch/wld-18-standing.png": "992da3eb2b940bd72e9d6aecf3c0a4f63c77d737f57761fb16647849126cc0e4"
+  },
+  "project_bytes_sha256": {
+    "assets/runtime/sites/briar-porch-world.hcs2": "7351ae8359228b30568f2648ef89252eb924131c3e9197e9bf911a8a77f3f3b3",
+    "assets/runtime/sites/briar-porch-world.sha256": "e0251f608d79a0e4555ced58286f5ce33487c83cc04cb9121132339d173f86dc",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/academy/construction.json": "d6b8065d92f6caf61b6f4c546ff0f81706f9535460a5945aac2d241fd30c9ef0",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/academy/export-review.json": "546de9af0837f7cbfe395c4c36ae007aa3f130941d3282834a332ef09413ce03",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/academy/measured-plan.svg": "75bb9e264efb73a05664192ee79d33d251c6b43aa1dd4a04f66ec3b35fbb670a",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/construction.json": "e90cef18e06d3ee7877c7c648a30a73c259030e93d5cf63fdb373fba7eeb52ed",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/export-review.json": "dc046dd62222d4b45a3bdb716e6f2a3f5a372575056d12f1170cbc8400f3f929",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/measured-plan.svg": "949bd3d73356ee0ae56800b5eeba637a41bb06d1812e08a98270c78e56c92310",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/circulation.md": "757a253e335c80ab3733254ae729181672be76a88551139adbe6f55b2f095e5e",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/briar-rebuild-furnishings-flush-porch.blend": "4d67eb753828ef3c1506a1978fbf79e56bd885353b4cd69d19839899f297d7c0",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/construction.md": "caa39002e8d7be0f8e19394c59a55c4482d14707b4b7cefe31b409717434ef79",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/landscape-world/adaptive-topology.bin": "8a916e8057e03a14ae4389d34ff0b8ca7decabb6415d8762b4ec51e93efeaf88",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/landscape-world/scene-package/.gitignore": "03ba2e587707915f7e5add556291ecc79fbdee7d224d41a9021d4cb4b9f36f6e",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/landscape-world/scene-package/meshes/world.obj": "67a39016356e74fd2aa5d22c351b1c8eb8cc2592f6762ffa45fa72ef2218964d",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/landscape-world/scene-package/scene.bin": "f426f7455119809de2bee33b4a3ceb35447375d2d411404465c924b06a05a772",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/landscape-world/terrain-layers/tile_0_0.bin": "2a22b4aa6922f0b94c1a8bf887dea66530595675f0712f6e022276fa5e411f31",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/landscape-world/tile_0_0.png": "36797f6b0ca87d9a9af3954de968b4c88aeaef017e12430f40b0774b5cc49943",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/landscape-world/world.properties": "df6b917f860d2d3066292377230d0d3d389c324192b068b8b78e30e59b850703",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/native-verification.json": "7dbc532e24f6d86504d3defd5b1d8a4244524f68c8a35a09435b9106fd6da416",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/porch-plan-section.svg": "5fc61296ee66ef0d9f350c8a5370f6f7f7d6f9d7bf476f1281d9a2c3dc7e54d4",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/house/standing-review.json": "1e5addf65dd1993e9fa1ed7f96506e4eb2ac42bd04669408ae48c75de1935de9",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/prison/construction.json": "dff52e20e95c9def9115def9813fbc7a15704c9d67d71a80fb523a543be95231",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/prison/export-review.json": "3377d95f2a025ec3ae06026dfa63e730b290ffe67cca93c5dd56733fc5a2ac6b",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/prison/measured-plan.svg": "11adc52f471637ec729d715b94f0343aea7f3e0ee11b65acb1b0551d6cfd7a96",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/roster.json": "7db92c4256843cffee735eec2de73d982efe9f89e6baba6c57901503400efac4",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/construction.json": "765b94a1a7cd43f6daff48666e48622a71ab0e4a4c92a5b5c0ec201e1e078d39",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/export-review.json": "21f5270e2bc09dd7ba351f3c21f517e699f0de55d7f5fbacd7c733bede0c63db",
+    "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/measured-plan.svg": "8698efbb3fd723b77a0d0b35889384ef1139f7281cfa12867bc2cfa4fff238b8",
+    "tools/build_surveyed_thresholds.py": "bad515c6777c5238add68847c241244fbd0ad2d265a7522b8dd87b7bc2a55ab8",
+    "tools/java/HousePorchFormation.java": "1c295282cd3cde03209d78a800884375bb1c1cee36c5387e0cbf1a52bb8f3dd6",
+    "tools/review_house_porch.py": "8d0d7ea71b253c0100bc202842382cd6be1a74e122dd34d6d5b7bc799f06f2f1",
+    "tools/review_surveyed_thresholds.py": "d8d0893211a5f6118241a4d5fe1d22732d437b375b89d909add7909f1f020179",
+    "tools/verify_surveyed_thresholds.py": "21a43cb6bf1ec3117178b7e1ddd41731c3332007ec2fd19aa553ecb6596aac70"
+  }
+}

@@ -8230,17 +8230,29 @@ Older-map obligation: Require perpendicular sill approaches and check the full s
 
 ### DEV-582 — Legacy House door 14 fails an open traversal assertion
 
-**Status:** ISOLATED_FLUSH_PORCH_TRIAL_PASSES_REVIEW_OPEN · **Affected:** HOUSE legacy portal 14
+**Status:** CORRECTED_IN_ACTIVE_HOUSE_SOURCE · **Affected:** HOUSE portal 14 and front garden landing
 
 ArchitecturalPlansTest fails from X19.8, Z19.9 to X19.8, Z21.1 with legacy portal 14 open.
 
 Cause / uncertainty: The whole stone porch deck starts at Z20.5 and its top was 0.04 m above the doorway sill. The approach capsule struck the physical deck edge before the old support query moved the feet to the raised deck.
 
-Fix / next action: Keep the full stone slab and match its top and post bases to the measured sill. The isolated candidate passes ArchitecturalPlansTest. Compare the complete porch, foundations and other House paths in the authoritative packet before promotion.
+Fix / next action: The full stone slab and post bases meet the measured sill. The solid front apron joins the saved garden grade. ArchitecturalPlansTest passes. The ordinary approach sweeps pass standing and crouched in both directions from the yard, and all 15 zones and required socket approaches remain reachable from the van.
 
-Evidence and verification: development/levels/rebuild/native-foyer-door-pass/checkpoint.json
+Evidence and verification: development/levels/rebuild/native-foyer-door-pass/checkpoint.json and development/levels/rebuild/flush-porch-and-threshold-pass/checkpoint.json
 
 Older-map obligation: Use before-and-after sweeps from both faces of each working doorway.
+
+### DEV-583 — Seacliff Battery has 14 remaining standing contacts at four stair approaches
+
+**Status:** PHYSICAL_LANDING_REVIEW_OPEN · **Affected:** WLD-17 routes 03, 10, 11 and 12
+
+Route 03 loses a full footprint near the south-side deck edge at the Y2 receiving connection. Route 10 has missing north-side foot support at Z22 and overlaps the low treads on the east of the Y4 turn. The paired Y0 turns on routes 11 and 12 overlap the stair bodies west of X20 and X56 between Z16 and 16.75.
+
+Fix / next action: Fit the receiving floors, guard terminations and footing to the actual flight axes and adjacent floors. Preserve the four source flights and use the assembled landing surfaces to draw their approach guides.
+
+Evidence and verification: development/levels/rebuild/flush-porch-and-threshold-pass/verification/remaining-standing-contacts.tsv
+
+Older-map obligation: Check the full-width standing envelope where stairs meet a right-angle turn, including the side footprints and the first and last treads.
 
 ## Required audit categories
 

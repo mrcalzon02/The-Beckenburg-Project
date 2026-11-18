@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580" role="img">
+<title>Briar House porch plan and entrance section</title>
+<style>
+text{font-family:"Segoe UI", sans-serif;fill:#233c48;font-size:15px}
+.title{font-size:31px;font-weight:700} .head{font-size:19px;font-weight:600} .fine{font-size:13px}
+.wall{fill:none;stroke:#344956;stroke-width:7}
+.outline{stroke:#526574;stroke-width:1.7}
+.guide{stroke:#a44c26;stroke-width:3;stroke-dasharray:7 5;fill:none}
+.note{stroke:#687a77;stroke-width:1.1;fill:none}
+</style>
+<rect width="900" height="580" fill="#faf9f3"/>
+<text x="37" y="50" class="title">Briar House porch</text>
+<text x="39" y="79">Portal 14 links the front garden to the entrance vestibule</text>
+<text x="39" y="129" class="head">Plan</text>
+<text x="450" y="129" class="head">Section through door center</text>
+<text x="450" y="151" class="fine">Vertical scale exaggerated around the walking surface</text>
+<rect x="71" y="152" width="252" height="119" fill="#e8e1d1" class="outline"/>
+<rect x="92" y="271" width="210" height="133" fill="#bacbd0" class="outline"/>
+<rect x="92" y="404" width="210" height="42" fill="#d2dcdd" class="outline"/>
+<rect x="93" y="378" width="16.8" height="16.8" fill="#8c7c65" class="outline"/>
+<rect x="284.2" y="378" width="16.8" height="16.8" fill="#8c7c65" class="outline"/>
+<path class="wall" d="M71 271 H158.5 M235.5 271 H323"/>
+<path d="M158.5 271 H235.5" stroke="#087267" stroke-width="5"/>
+<path class="guide" d="M197 486 V197"/>
+<text x="101" y="184">Vestibule floor</text>
+<text x="107" y="327">Covered stone landing</text>
+<text x="118" y="350" class="fine">3.00 × 1.90 m</text>
+<text x="105" y="429" class="fine">Stone apron</text>
+<text x="215" y="485">Front garden</text>
+<path class="note" d="M239 265 L269 233 H342"/>
+<text x="268" y="227" class="fine">1.10 m doorway</text>
+<path d="M470 337 H548 V391 H470 Z" fill="#cec1a7" class="outline"/>
+<path d="M548 337 H757 V391 H548 Z" fill="#bacbd0" class="outline"/>
+<path d="M757 337 L823 343.4 V397.4 L757 391 Z" fill="#d2dcdd" class="outline"/>
+<path d="M548 346 L757 344.4 L823 343.4 L865 342.5 L865 450 H548 Z" fill="#cfd0ae" fill-opacity=".46"/>
+<path class="note" d="M548 346 L757 344.4 L823 343.4 L865 342.5"/>
+<path d="M548 219 v113" stroke="#087267" stroke-width="3" stroke-dasharray="2 5"/>
+<text x="463" y="208">Doorway plane</text>
+<text x="471" y="322" class="fine">Y 0.000 m</text>
+<text x="600" y="322" class="fine">Level porch slab</text>
+<path class="note" d="M790 340 L782 296 H688"/>
+<text x="688" y="288" class="fine">0.60 m apron · 3.17%</text>
+<path class="note" d="M823 345 L808 429 H720"/>
+<text x="666" y="449" class="fine">Apron toe and soil at Y −0.019 m</text>
+<text x="550" y="419" class="fine">160 mm solid stone</text>
+<text x="549" y="469" class="fine">Z20.50</text>
+<text x="735" y="469" class="fine">Z22.40</text>
+<text x="809" y="469" class="fine">Z23.00</text>
+<path d="M40 512 H860" stroke="#d8dcd4"/>
+<path class="guide" d="M42 540 H79"/><text x="91" y="545" class="fine">Circulation guide</text>
+<path d="M275 540 H310" stroke="#087267" stroke-width="4"/><text x="323" y="545" class="fine">Existing door opening</text>
+<rect x="524" y="531" width="18" height="14" fill="#bacbd0" class="outline"/><text x="553" y="545" class="fine">Supporting stone</text>
+</svg>

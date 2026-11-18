@@ -1,0 +1,58 @@
+{
+  "status": "SCOPED_RUNTIME_AND_SAVED_SCENE_VERIFIED",
+  "baseline": "85aeeb69347397852111599b1aafe084a70e514c",
+  "passed": [
+    "HouseRebuildEnvelopeTest",
+    "ArchitecturalPlansTest",
+    "HouseRebuildServicesTest",
+    "HouseRebuildFitoutTest",
+    "HouseRebuildUpgradeTest",
+    "HouseRebuildFurnishingsTest"
+  ],
+  "preexisting_failure_reproduced": {
+    "HouseRebuildPhysicsTest": "Legacy map unexpectedly opted into pilot terrain",
+    "LevelEnclosureTest": "incomplete visible perimeter"
+  },
+  "house": {
+    "portal": {
+      "id": 14,
+      "center_m": [
+        19.8,
+        0,
+        20.5
+      ],
+      "clear_width_m": 1.1
+    },
+    "lowered_full_porch_mm": 40,
+    "stone_depth_m": 0.16,
+    "porch_width_m": 3,
+    "apron_run_m": 0.6,
+    "apron_fall_m": 0.019,
+    "terrain_generation": {
+      "asset": "assets/runtime/sites/briar-porch-world.hcs2",
+      "sha256": "7351ae8359228b30568f2648ef89252eb924131c3e9197e9bf911a8a77f3f3b3",
+      "triangles": 6072,
+      "preserved_cutouts": 112,
+      "base_tile_sha256": "36797f6b0ca87d9a9af3954de968b4c88aeaef017e12430f40b0774b5cc49943",
+      "adaptive_topology_sha256": "8a916e8057e03a14ae4389d34ff0b8ca7decabb6415d8762b4ec51e93efeaf88",
+      "independent_rebuild": "PASS"
+    },
+    "envelope_digest": "51fdb95302ed65b4e8e55b1e7e313cbdfbdf60005b1cd4ee1fd8abfe56335914",
+    "furnished_revision": "first-principles-functional-furnishings-v1-1fd2c4bdb33768b8",
+    "render_export_triangles": 131805,
+    "native_packed_images": 230,
+    "closed_components": 162,
+    "visible_envelope_triangles": 1676,
+    "physical_envelope_triangles": 1960,
+    "whole_house_from_van": {
+      "zones": 15,
+      "envelope_positions": 53642,
+      "furnished_positions": 50517,
+      "required_interaction_approaches": "PASS"
+    },
+    "foyer_standing_and_crouched_both_directions_at_three_offsets": "PASS",
+    "closed_door": "BLOCKED",
+    "reopened_native_exact_triangles_and_uvs": "PASS",
+    "end_to_end_scope": "Full House location acceptance and the held release remain open."
+  }
+}
