@@ -1,0 +1,348 @@
+{
+  "status": "MEASURED_NATIVE_TRIAL_ACTIVE_SOURCE_AWAITS_LANDING_WORK",
+  "source": {
+    "id": "WLD-17",
+    "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-17/construction.json",
+    "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-17/authored-layout.json",
+    "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.glb",
+    "native": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.hcs2",
+    "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.blend",
+    "glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+    "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c"
+  },
+  "source_layout_sha256": "bf10438c0785f251426e68048a315a9bf3c8fb68c8a4e6d8e21f663c6e9f8639",
+  "trial_turns": {
+    "route-11": {
+      "before": [
+        [
+          12,
+          4,
+          22
+        ],
+        [
+          12,
+          4,
+          16
+        ],
+        [
+          12.8,
+          4,
+          16.0
+        ],
+        [
+          20,
+          0,
+          16
+        ],
+        [
+          20,
+          0,
+          22
+        ]
+      ],
+      "after": [
+        [
+          12,
+          4,
+          22
+        ],
+        [
+          12,
+          4,
+          16
+        ],
+        [
+          12.8,
+          4,
+          16.0
+        ],
+        [
+          20,
+          0,
+          16
+        ],
+        [
+          20.95,
+          0,
+          16
+        ],
+        [
+          20.95,
+          0,
+          18
+        ],
+        [
+          20,
+          0,
+          19
+        ],
+        [
+          20,
+          0,
+          22
+        ]
+      ]
+    },
+    "route-12": {
+      "before": [
+        [
+          48,
+          4,
+          22
+        ],
+        [
+          48,
+          4,
+          16
+        ],
+        [
+          48.8,
+          4,
+          16.0
+        ],
+        [
+          56,
+          0,
+          16
+        ],
+        [
+          56,
+          0,
+          22
+        ]
+      ],
+      "after": [
+        [
+          48,
+          4,
+          22
+        ],
+        [
+          48,
+          4,
+          16
+        ],
+        [
+          48.8,
+          4,
+          16.0
+        ],
+        [
+          56,
+          0,
+          16
+        ],
+        [
+          56.95,
+          0,
+          16
+        ],
+        [
+          56.95,
+          0,
+          18
+        ],
+        [
+          56,
+          0,
+          19
+        ],
+        [
+          56,
+          0,
+          22
+        ]
+      ]
+    }
+  },
+  "standing_contacts_on_active_source": 14,
+  "standing_contacts_in_trial": 6,
+  "trial_sampled_positions": 2925,
+  "ordinary_links_both_directions": 12,
+  "flights_both_directions": 5,
+  "vertical_links_both_directions": 5,
+  "joined_vertical_journeys": [
+    "CHAIN/route-02/route-03"
+  ],
+  "native_geometry_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+  "remaining_trial_contacts": [
+    {
+      "site": "WLD-17",
+      "link": "route-03:0/right",
+      "segment": "0",
+      "direction": "pose",
+      "x": "39.883582899982564",
+      "y": "2.0",
+      "z": "55.53433159993024",
+      "reason": "NO_FOOT_SUPPORT_0.0_-0.22",
+      "component": "-"
+    },
+    {
+      "site": "WLD-17",
+      "link": "route-10:0/left",
+      "segment": "1",
+      "direction": "pose",
+      "x": "30.48",
+      "y": "4.0",
+      "z": "22.75",
+      "reason": "PHYSICAL_COMPONENT",
+      "component": "163:route-10 flight0 step2"
+    },
+    {
+      "site": "WLD-17",
+      "link": "route-10:0/left",
+      "segment": "2",
+      "direction": "pose",
+      "x": "30.48",
+      "y": "4.0",
+      "z": "22.5",
+      "reason": "PHYSICAL_COMPONENT",
+      "component": "163:route-10 flight0 step2"
+    },
+    {
+      "site": "WLD-17",
+      "link": "route-10:0/left",
+      "segment": "3",
+      "direction": "pose",
+      "x": "30.48",
+      "y": "4.0",
+      "z": "22.25",
+      "reason": "PHYSICAL_COMPONENT",
+      "component": "163:route-10 flight0 step2"
+    },
+    {
+      "site": "WLD-17",
+      "link": "route-10:0/left",
+      "segment": "4",
+      "direction": "pose",
+      "x": "30.48",
+      "y": "4.0",
+      "z": "22.0",
+      "reason": "NO_FOOT_SUPPORT_0.0_-0.22",
+      "component": "-"
+    },
+    {
+      "site": "WLD-17",
+      "link": "route-10:0/right",
+      "segment": "5",
+      "direction": "pose",
+      "x": "29.52",
+      "y": "4.0",
+      "z": "22.0",
+      "reason": "NO_FOOT_SUPPORT_0.0_-0.22",
+      "component": "-"
+    }
+  ],
+  "surveyed_parts": [
+    {
+      "name": "Floor gallery",
+      "bounds": [
+        24.0,
+        26.0,
+        44.0,
+        34.0
+      ],
+      "levels": [
+        3.84,
+        4.0
+      ],
+      "role": "floor",
+      "zone": "gallery"
+    },
+    {
+      "name": "route-03 landing0",
+      "bounds": [
+        31.8181,
+        55.2724,
+        40.1819,
+        58.7276
+      ],
+      "levels": [
+        1.84,
+        2.0
+      ],
+      "role": "structural-stair-landing",
+      "zone": ""
+    },
+    {
+      "name": "route-03 flight0 step1",
+      "bounds": [
+        39.25,
+        55.3333,
+        40.75,
+        56.0
+      ],
+      "levels": [
+        1.84,
+        2.1667
+      ],
+      "role": "structural-stair-step",
+      "zone": ""
+    },
+    {
+      "name": "route-10 landing0",
+      "bounds": [
+        29.25,
+        22.0,
+        30.75,
+        30.0
+      ],
+      "levels": [
+        3.84,
+        4.0
+      ],
+      "role": "structural-stair-landing",
+      "zone": ""
+    },
+    {
+      "name": "route-10 flight0 step1",
+      "bounds": [
+        30.0,
+        21.25,
+        30.4706,
+        22.75
+      ],
+      "levels": [
+        3.84,
+        4.1765
+      ],
+      "role": "structural-stair-step",
+      "zone": ""
+    },
+    {
+      "name": "route-10 flight0 step2",
+      "bounds": [
+        30.4706,
+        21.25,
+        30.9412,
+        22.75
+      ],
+      "levels": [
+        3.84,
+        4.3529
+      ],
+      "role": "structural-stair-step",
+      "zone": ""
+    },
+    {
+      "name": "Bay landing WLD-17 route-03 1 region0",
+      "bounds": [
+        39.8923,
+        56.0,
+        40.75,
+        56.8
+      ],
+      "levels": [
+        1.84,
+        2.0
+      ],
+      "role": "structural-stair-landing",
+      "zone": ""
+    }
+  ],
+  "next_work": [
+    "Fit the route 03 Y2 receiving landing at the diagonal walk and northbound stair. The old side lane sampled into the first tread before the turn.",
+    "Fit the route 10 Y4 receiving area between the gallery floor and eastbound stair. Existing support stops at Z22 on the west side. The east side of the old turn crosses the second tread.",
+    "Carry forward the two tested Y0 turns across the barracks and plant floors when the complete Battery packet passes."
+  ]
+}
