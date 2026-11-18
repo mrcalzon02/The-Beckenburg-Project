@@ -184,5 +184,35 @@
     "tools/build_workyard_station.py": "dad82499cf253972a9d6e15ebda046cc40f623492c98fa87e8fb622d134b73a6",
     "tools/prepare_workyard_station.py": "d8d9785b0e5814dc753a48164713accb007cb72cd2ab47f602a8aa9a09c450d5",
     "tools/verify_workyard_station.py": "db17011a62da0549e9a1bae8accc9c8c4a1d790c0029aa89cf7f5a0569d5c813"
+  },
+  "publication": {
+    "construction_sha": "f8b553adf686a053ede24f95fa04750664e94e14",
+    "verified_remote_sha": "f8b553adf686a053ede24f95fa04750664e94e14",
+    "remote_ref": "refs/heads/map/roster-structure-batch",
+    "draft_pull_request": 86,
+    "base_ref": "map/house-default",
+    "base_sha": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "main_sha": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "verified_source_blobs": 95,
+    "gallery_images": 11137,
+    "hosted_gallery_run": 44215000879,
+    "hosted_gallery_sha": "f8b553adf686a053ede24f95fa04750664e94e14",
+    "hosted_gallery_conclusion": "success",
+    "public_html_status": 200,
+    "public_captures": {
+      "wld-12-overview.png": 404,
+      "wld-13-overview.png": 404
+    },
+    "status": "VERIFIED_BRANCH_AND_DRAFT_PUBLIC_DEPLOYMENT_PENDING"
+  },
+  "next_measured_fit": {
+    "site": "WLD-09",
+    "title": "Blackwater Hydroelectric Dam",
+    "standing_contacts": 231,
+    "native_sha256": "acb40c7c046e1f3512286db59a867c619889532733982f7dae6c8309881f7daf",
+    "coordinate_samples": 3223,
+    "lower_hall_evidence": "The 1.80 m clear turbine door is at X64 Z35 Y\u22126. Middle landing and rim columns pinch the east bypass at X68.10\u201368.34. Full standing clears on the east side at X68.75\u201370.00 at the sampled column stations.",
+    "intermediate_evidence": "At Y\u22123 the current middle landing clears full standing from X66.50 to X67.50 at the sampled Z34.5\u201335.5. The lower return at Y\u22128 has a continuous clear transverse centre at Z40.5\u201341.25 across X59.75\u201363.00.",
+    "next_action": "Align corridor approaches with the physical turbine and spillway doors. Inspect the stair bearing spans and resolve the shared lower bypass and landing clearance as one architectural assembly."
   }
 }
