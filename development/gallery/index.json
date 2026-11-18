@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11246,
+  "count": 11263,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -81222,8 +81222,8 @@
       "kind": "Development review",
       "width": 1200,
       "height": 1800,
-      "bytes": 366902,
-      "sha256": "37d8b9e4240226505de62a70264d153233c02f6881f09fedd09563c954f3e2a1"
+      "bytes": 340161,
+      "sha256": "bb3c226fe1b58f4be03cb771417767dd40db558059172bd664a1a2f6fb951240"
     },
     {
       "path": "development/levels/previews/van-castle-repair/castle-door-closed.png",
@@ -96944,6 +96944,176 @@
       "height": 900,
       "bytes": 878072,
       "sha256": "9f87f97d518ef09ffdd85e1ad61b94726538d730b2a3c17d675d0473287cdfae"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-native-gate-piers.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-native-gate-piers.png",
+      "title": "College native gate piers",
+      "kind": "College native grounds and gate inspection",
+      "width": 1280,
+      "height": 910,
+      "bytes": 1413414,
+      "sha256": "a3bb38c126c94f9e33c2d99f9651676d2e626dda5db41192f9238e509be26bbe"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-native-parcel.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-native-parcel.png",
+      "title": "College native parcel",
+      "kind": "College native grounds and gate inspection",
+      "width": 1280,
+      "height": 910,
+      "bytes": 1412198,
+      "sha256": "bffe68ec165afd9ad9ebb606ebde7c7a22bf4f6c4a21fe0f4be0bf4f0ab57fdc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-native-tower-cutaway.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-native-tower-cutaway.png",
+      "title": "College native tower cutaway",
+      "kind": "College native stair tower cutaway with overhead and near wall surfaces hidden",
+      "width": 1280,
+      "height": 910,
+      "bytes": 1501847,
+      "sha256": "87ce6fcc789cdd6df70634c448a14c9e1cde6e8b002bc1a42f3955b4757a8365"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-arrival-van.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-opengl-arrival-van.png",
+      "title": "College opengl arrival van",
+      "kind": "College OpenGL standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 192934,
+      "sha256": "f5dbbbe9e27d15e2fa011d63dd2211e3d68262a6fbaa17df876d2776e713427e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-east-fence-return.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-opengl-east-fence-return.png",
+      "title": "College opengl east fence return",
+      "kind": "College OpenGL standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 102220,
+      "sha256": "3c21b944f69a94d61e9793907d684238deee1f4d26ecbf9ba080ba1d174465a2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-north-tower-guard.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-opengl-north-tower-guard.png",
+      "title": "College opengl north tower guard",
+      "kind": "College OpenGL standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 254245,
+      "sha256": "eb0f7ceb0e0865ae46344b6c6c9ed0ddc1ddb5f63aea2bf67a7cf124571f58d0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-seminar-bearing.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-opengl-seminar-bearing.png",
+      "title": "College opengl seminar bearing",
+      "kind": "College OpenGL standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 239332,
+      "sha256": "30a9d2113b0d7c5c2f339e8ef47130c996caa3871bbc73f1bbf937d4be7ca813"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-seminar-before.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-opengl-seminar-before.png",
+      "title": "College opengl seminar before",
+      "kind": "College OpenGL standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 239696,
+      "sha256": "beb9cc791ba27c74b1794d752443c706c726f9e14fec763418844aa52b5a6c9a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-service-cellar-guard.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-opengl-service-cellar-guard.png",
+      "title": "College opengl service cellar guard",
+      "kind": "College OpenGL standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 267802,
+      "sha256": "028220149e7438b972d39f550f1d788ff21547e7d4497956fc0481e98dcf8428"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-opengl-service-gate.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-opengl-service-gate.png",
+      "title": "College opengl service gate",
+      "kind": "College OpenGL standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 165121,
+      "sha256": "f5b2a2499b5b2706a09433c04827d41865903a3c6241061c40bc4848a8bf3469"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-arrival-van.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-software-arrival-van.png",
+      "title": "College software arrival van",
+      "kind": "College software standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 183997,
+      "sha256": "1807b8709a8b5e06a82d822cc4471fae629f8673fc625896f5446b3e6b4d3cf7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-east-fence-return.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-software-east-fence-return.png",
+      "title": "College software east fence return",
+      "kind": "College software standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 103747,
+      "sha256": "21890cc2a28e76c57ebaae1cd4f7bd912e4d7da73176034afe99083e1c83806a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-north-tower-guard.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-software-north-tower-guard.png",
+      "title": "College software north tower guard",
+      "kind": "College software standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 273279,
+      "sha256": "2b1f1be4ded8bc702e84565ac0c0ef9191236e43a9f74c13f99af7f0a2a1f897"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-seminar-bearing.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-software-seminar-bearing.png",
+      "title": "College software seminar bearing",
+      "kind": "College software standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 264625,
+      "sha256": "e945b61f70bcf29bd6e3a9f9843a30ecb65fadb100affc42cdf94018e6caeca0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-seminar-before.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-software-seminar-before.png",
+      "title": "College software seminar before",
+      "kind": "College software standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 265233,
+      "sha256": "e1bcb8b796b32ec02bd6ed489756c190fdc1791e846588107ca4f5b7d5a2d318"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-service-cellar-guard.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-software-service-cellar-guard.png",
+      "title": "College software service cellar guard",
+      "kind": "College software standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 320553,
+      "sha256": "d69747ddf0a8945c9b49d177995f0200108e0e09434c4fe6d9eae7a7964a0822"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-containment-batch/college-software-service-gate.png",
+      "url": "development/levels/rebuild/captures/college-containment-batch/college-software-service-gate.png",
+      "title": "College software service gate",
+      "kind": "College software standing containment review",
+      "width": 1120,
+      "height": 700,
+      "bytes": 169901,
+      "sha256": "bcff6f3f971a7624e4f8f708509b7c142d46100898a6849b41bf5ae96d26ff66"
     },
     {
       "path": "development/levels/rebuild/captures/college-doors-batch/college-door-plan.png",

@@ -84,7 +84,7 @@ public final class CollegeNativeDoorsTest {
         return LanAcoustics.physicalCostAt(map,map.roomAt(a.x(),a.y(),a.z()),a,map.roomAt(b.x(),b.y(),b.z()),b);
     }
 
-    private static void audit(CollegeNativeRuntimeReview.Campus campus) {
+    static void audit(CollegeNativeRuntimeReview.Campus campus) {
         var map=campus.map();
         var doors=map.nativeInvestigation().doors();
         check(doors.size()==18,"Fitted leaf count");
@@ -201,7 +201,7 @@ public final class CollegeNativeDoorsTest {
         throw new AssertionError("No supported aim on the actual leaf "+spec.frameId()+" open="+open);
     }
 
-    private static void peers(HouseMap map, HouseMap replica) throws Exception {
+    static void peers(HouseMap map, HouseMap replica) throws Exception {
         map.applyDoorSnapshot("");
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
             var owner=new AuthoredLevelNetworkTest.Peer(host.port(),false,"Surveyor");

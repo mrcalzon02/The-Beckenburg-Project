@@ -1,0 +1,1944 @@
+{
+  "id": "COLLEGE",
+  "status": "COLLEGE_SITE_CONTAINMENT_VERIFIED_FULL_ACCEPTANCE_OPEN",
+  "source_contract": "development/levels/rebuild/college-doors-pass/college/construction.json",
+  "source_contract_sha256": "7f88e38668aea4288c3d515abec121392fd971fc3c04b7ae7b499104d837cac3",
+  "source_glb": "development/levels/rebuild/college-doors-pass/college/college-doors.glb",
+  "source_glb_sha256": "99829f281a2f5a90cffc70fed416badb9a74990c3da05a4c68e8ac41d048b08d",
+  "source_physics": "development/levels/rebuild/college-doors-pass/college/college-doors.hcs2",
+  "source_physics_sha256": "54d8d16f5b49ee1f00931f115e932ab507721b4c0356abc8f56782c1b9051014",
+  "before_layout": "development/levels/rebuild/college-doors-pass/college/authored-layout.json",
+  "before_layout_sha256": "6c811cd13b46969eda7709663b5ed9029455f556341c1fc7eed21ae01b4e7b89",
+  "layout": "development/levels/rebuild/college-containment-pass/college/authored-layout.json",
+  "layout_sha256": "0f2eb3e944c2c49ea242fbaadaec773b50444cfaca8f97a2a1724341f4ab0a2d",
+  "before_segment_map": {
+    "L81": {
+      "3": 0
+    },
+    "L84": {
+      "3": 0
+    },
+    "L80": {
+      "3": 0
+    }
+  },
+  "source_segment_map": {
+    "L81": {
+      "3": 0
+    },
+    "L84": {
+      "3": 0
+    },
+    "L80": {
+      "3": 0
+    }
+  },
+  "before_stair_components": [
+    "629:L82 flight0 step1",
+    "630:L82 flight0 step2",
+    "631:L82 flight0 step3",
+    "632:L82 flight0 step4",
+    "633:L82 flight0 step5",
+    "634:L82 flight0 step6",
+    "635:L82 flight0 step7",
+    "636:L82 flight0 step8",
+    "637:L82 flight0 step9",
+    "638:L82 flight0 step10",
+    "639:L82 flight0 step11",
+    "640:L82 flight0 step12",
+    "641:L82 flight0 step13",
+    "642:L82 flight0 step14",
+    "643:L82 flight0 step15",
+    "644:L82 flight0 step16",
+    "645:L82 flight0 step17",
+    "646:L82 flight0 step18",
+    "647:L82 flight0 step19",
+    "648:L82 flight0 step20",
+    "668:L85 flight0 step1",
+    "669:L85 flight0 step2",
+    "670:L85 flight0 step3",
+    "671:L85 flight0 step4",
+    "672:L85 flight0 step5",
+    "673:L85 flight0 step6",
+    "674:L85 flight0 step7",
+    "675:L85 flight0 step8",
+    "676:L85 flight0 step9",
+    "677:L85 flight0 step10",
+    "678:L85 flight0 step11",
+    "679:L85 flight0 step12",
+    "680:L85 flight0 step13",
+    "681:L85 flight0 step14",
+    "682:L85 flight0 step15",
+    "683:L85 flight0 step16",
+    "684:L85 flight0 step17",
+    "COLLEGE bay L81 tread 1",
+    "COLLEGE bay L81 tread 2",
+    "COLLEGE bay L81 tread 3",
+    "COLLEGE bay L81 tread 4",
+    "COLLEGE bay L81 tread 5",
+    "COLLEGE bay L81 tread 6",
+    "COLLEGE bay L81 tread 7",
+    "COLLEGE bay L81 tread 8",
+    "COLLEGE bay L81 tread 9",
+    "COLLEGE bay L81 tread 10",
+    "COLLEGE bay L81 tread 11",
+    "COLLEGE bay L81 tread 12",
+    "COLLEGE bay L81 tread 13",
+    "COLLEGE bay L81 tread 14",
+    "COLLEGE bay L81 tread 15",
+    "COLLEGE bay L81 tread 16",
+    "COLLEGE bay L81 tread 17",
+    "COLLEGE bay L81 tread 18",
+    "COLLEGE bay L81 tread 19",
+    "COLLEGE bay L81 tread 20",
+    "COLLEGE bay L80 tread 1",
+    "COLLEGE bay L80 tread 2",
+    "COLLEGE bay L80 tread 3",
+    "COLLEGE bay L80 tread 4",
+    "COLLEGE bay L80 tread 5",
+    "COLLEGE bay L80 tread 6",
+    "COLLEGE bay L80 tread 7",
+    "COLLEGE bay L80 tread 8",
+    "COLLEGE bay L80 tread 9",
+    "COLLEGE bay L80 tread 10",
+    "COLLEGE bay L80 tread 11",
+    "COLLEGE bay L80 tread 12",
+    "COLLEGE bay L80 tread 13",
+    "COLLEGE bay L80 tread 14",
+    "COLLEGE bay L80 tread 15",
+    "COLLEGE bay L80 tread 16",
+    "COLLEGE bay L80 tread 17",
+    "COLLEGE bay L80 tread 18",
+    "COLLEGE bay L80 tread 19",
+    "COLLEGE bay L80 tread 20",
+    "COLLEGE bay L84 tread 1",
+    "COLLEGE bay L84 tread 2",
+    "COLLEGE bay L84 tread 3",
+    "COLLEGE bay L84 tread 4",
+    "COLLEGE bay L84 tread 5",
+    "COLLEGE bay L84 tread 6",
+    "COLLEGE bay L84 tread 7",
+    "COLLEGE bay L84 tread 8",
+    "COLLEGE bay L84 tread 9",
+    "COLLEGE bay L84 tread 10",
+    "COLLEGE bay L84 tread 11",
+    "COLLEGE bay L84 tread 12",
+    "COLLEGE bay L84 tread 13",
+    "COLLEGE bay L84 tread 14",
+    "COLLEGE bay L84 tread 15",
+    "COLLEGE bay L84 tread 16",
+    "COLLEGE bay L84 tread 17"
+  ],
+  "stair_components": [
+    "629:L82 flight0 step1",
+    "630:L82 flight0 step2",
+    "631:L82 flight0 step3",
+    "632:L82 flight0 step4",
+    "633:L82 flight0 step5",
+    "634:L82 flight0 step6",
+    "635:L82 flight0 step7",
+    "636:L82 flight0 step8",
+    "637:L82 flight0 step9",
+    "638:L82 flight0 step10",
+    "639:L82 flight0 step11",
+    "640:L82 flight0 step12",
+    "641:L82 flight0 step13",
+    "642:L82 flight0 step14",
+    "643:L82 flight0 step15",
+    "644:L82 flight0 step16",
+    "645:L82 flight0 step17",
+    "646:L82 flight0 step18",
+    "647:L82 flight0 step19",
+    "648:L82 flight0 step20",
+    "668:L85 flight0 step1",
+    "669:L85 flight0 step2",
+    "670:L85 flight0 step3",
+    "671:L85 flight0 step4",
+    "672:L85 flight0 step5",
+    "673:L85 flight0 step6",
+    "674:L85 flight0 step7",
+    "675:L85 flight0 step8",
+    "676:L85 flight0 step9",
+    "677:L85 flight0 step10",
+    "678:L85 flight0 step11",
+    "679:L85 flight0 step12",
+    "680:L85 flight0 step13",
+    "681:L85 flight0 step14",
+    "682:L85 flight0 step15",
+    "683:L85 flight0 step16",
+    "684:L85 flight0 step17",
+    "COLLEGE bay L81 tread 1",
+    "COLLEGE bay L81 tread 2",
+    "COLLEGE bay L81 tread 3",
+    "COLLEGE bay L81 tread 4",
+    "COLLEGE bay L81 tread 5",
+    "COLLEGE bay L81 tread 6",
+    "COLLEGE bay L81 tread 7",
+    "COLLEGE bay L81 tread 8",
+    "COLLEGE bay L81 tread 9",
+    "COLLEGE bay L81 tread 10",
+    "COLLEGE bay L81 tread 11",
+    "COLLEGE bay L81 tread 12",
+    "COLLEGE bay L81 tread 13",
+    "COLLEGE bay L81 tread 14",
+    "COLLEGE bay L81 tread 15",
+    "COLLEGE bay L81 tread 16",
+    "COLLEGE bay L81 tread 17",
+    "COLLEGE bay L81 tread 18",
+    "COLLEGE bay L81 tread 19",
+    "COLLEGE bay L81 tread 20",
+    "COLLEGE bay L80 tread 1",
+    "COLLEGE bay L80 tread 2",
+    "COLLEGE bay L80 tread 3",
+    "COLLEGE bay L80 tread 4",
+    "COLLEGE bay L80 tread 5",
+    "COLLEGE bay L80 tread 6",
+    "COLLEGE bay L80 tread 7",
+    "COLLEGE bay L80 tread 8",
+    "COLLEGE bay L80 tread 9",
+    "COLLEGE bay L80 tread 10",
+    "COLLEGE bay L80 tread 11",
+    "COLLEGE bay L80 tread 12",
+    "COLLEGE bay L80 tread 13",
+    "COLLEGE bay L80 tread 14",
+    "COLLEGE bay L80 tread 15",
+    "COLLEGE bay L80 tread 16",
+    "COLLEGE bay L80 tread 17",
+    "COLLEGE bay L80 tread 18",
+    "COLLEGE bay L80 tread 19",
+    "COLLEGE bay L80 tread 20",
+    "COLLEGE bay L84 tread 1",
+    "COLLEGE bay L84 tread 2",
+    "COLLEGE bay L84 tread 3",
+    "COLLEGE bay L84 tread 4",
+    "COLLEGE bay L84 tread 5",
+    "COLLEGE bay L84 tread 6",
+    "COLLEGE bay L84 tread 7",
+    "COLLEGE bay L84 tread 8",
+    "COLLEGE bay L84 tread 9",
+    "COLLEGE bay L84 tread 10",
+    "COLLEGE bay L84 tread 11",
+    "COLLEGE bay L84 tread 12",
+    "COLLEGE bay L84 tread 13",
+    "COLLEGE bay L84 tread 14",
+    "COLLEGE bay L84 tread 15",
+    "COLLEGE bay L84 tread 16",
+    "COLLEGE bay L84 tread 17"
+  ],
+  "glb_sha256": "92de55770a64288b2cf7a69933c3e5e58d4b583d8bd6e520650ae680dc1d66ac",
+  "physics_sha256": "51cebea2ecacad01239870c254bd22d8491236d3ecb4739445cdf4a0023080f5",
+  "arrival_bearing": {
+    "link": "L01",
+    "anchor": [
+      32.0,
+      0,
+      96.5
+    ],
+    "route_width": 1.4,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        31.3,
+        96.85
+      ],
+      [
+        31.3,
+        96.5
+      ],
+      [
+        32.7,
+        96.5
+      ],
+      [
+        32.7,
+        96.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          31.3,
+          96.85
+        ],
+        [
+          31.3,
+          96.5
+        ],
+        [
+          32.7,
+          96.5
+        ],
+        [
+          32.7,
+          96.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing COLLEGE 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": 84,
+  "new_triangles": 12,
+  "removed_source_meshes": [
+    "Arrival end bearing COLLEGE 0",
+    "COLLEGE bay retained outside L03 support 0 region0",
+    "Ceiling cap cross-tunnel",
+    "Flat route shell Wall issue S",
+    "Flat route shell Wall issue S.001",
+    "Flat route shell Wall north-stair E",
+    "Flat route shell Wall north-stair E.001",
+    "Flat route shell Wall rear-hall S",
+    "Flat route shell Wall rear-hall S.001",
+    "Flat route shell Wall teaching-lobby S",
+    "Flat route shell Wall teaching-lobby S.001",
+    "Header issue S",
+    "Header north-stair E",
+    "Header rear-hall S",
+    "Header teaching-lobby S",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L02 support 1",
+    "L17 support 0",
+    "L24 support 0",
+    "L44 support 1",
+    "L45 support 1",
+    "L55 support 0",
+    "L70 support 0",
+    "L86 support 0",
+    "Saved editor macroterrain COLLEGE",
+    "Wall cafe W"
+  ],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "3b46c9046e32404a3d4c2545f4f8d721cb2539a38ca4e223296dbf2309f2b26f",
+  "access_route_changes": [
+    {
+      "site": "COLLEGE",
+      "link": "L19",
+      "rooms": [
+        "issue",
+        "library-stair"
+      ],
+      "before": [
+        [
+          31.0,
+          0,
+          18.0
+        ],
+        [
+          31,
+          0,
+          16
+        ],
+        [
+          31.0,
+          0,
+          10.0
+        ]
+      ],
+      "after": [
+        [
+          31.0,
+          0.0,
+          18.0
+        ],
+        [
+          31.0,
+          0.0,
+          16.0
+        ],
+        [
+          30.5,
+          0.0,
+          12.5
+        ],
+        [
+          30.0,
+          0.0,
+          12.5
+        ],
+        [
+          29.5,
+          0.0,
+          12.0
+        ],
+        [
+          29.5,
+          0.0,
+          10.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        31,
+        0,
+        16
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L34",
+      "rooms": [
+        "north-cross",
+        "north-stair"
+      ],
+      "before": [
+        [
+          58.0,
+          0,
+          40.0
+        ],
+        [
+          58.0,
+          0,
+          40.5
+        ],
+        [
+          62,
+          0,
+          40.5
+        ],
+        [
+          65.0,
+          0,
+          40.5
+        ],
+        [
+          65.0,
+          0,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          58.0,
+          0.0,
+          40.0
+        ],
+        [
+          62.0,
+          0.0,
+          40.5
+        ],
+        [
+          62.5,
+          0.0,
+          40.5
+        ],
+        [
+          63.0,
+          0.0,
+          39.5
+        ],
+        [
+          63.5,
+          0.0,
+          36.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        62,
+        0,
+        40.5
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L43",
+      "rooms": [
+        "rear-hall",
+        "res-cellar-stair"
+      ],
+      "before": [
+        [
+          52.0,
+          0,
+          74.0
+        ],
+        [
+          52.0,
+          0,
+          75
+        ],
+        [
+          50,
+          0,
+          75
+        ],
+        [
+          46.0,
+          0,
+          75
+        ],
+        [
+          46.0,
+          0,
+          72.0
+        ]
+      ],
+      "after": [
+        [
+          52.0,
+          0.0,
+          74.0
+        ],
+        [
+          50.0,
+          0.0,
+          75.0
+        ],
+        [
+          47.0,
+          0.0,
+          74.0
+        ],
+        [
+          46.0,
+          0.0,
+          73.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        50,
+        0,
+        75
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L51",
+      "rooms": [
+        "upper-library-stair",
+        "upper-library-landing"
+      ],
+      "before": [
+        [
+          31.0,
+          3.6,
+          10.0
+        ],
+        [
+          31,
+          3.6,
+          16
+        ],
+        [
+          31.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "after": [
+        [
+          31.0,
+          3.6,
+          12.0
+        ],
+        [
+          31.0,
+          3.6,
+          16.0
+        ],
+        [
+          31.0,
+          3.6,
+          18.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        31,
+        3.6,
+        16
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L63",
+      "rooms": [
+        "upper-north-cross",
+        "upper-north-stair"
+      ],
+      "before": [
+        [
+          58.0,
+          3.6,
+          40.0
+        ],
+        [
+          58.0,
+          3.6,
+          40.5
+        ],
+        [
+          62,
+          3.6,
+          40.5
+        ],
+        [
+          65.0,
+          3.6,
+          40.5
+        ],
+        [
+          65.0,
+          3.6,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          58.0,
+          3.6,
+          40.0
+        ],
+        [
+          62.0,
+          3.6,
+          40.5
+        ],
+        [
+          62.5,
+          3.6,
+          40.5
+        ],
+        [
+          63.0,
+          3.6,
+          39.5
+        ],
+        [
+          63.0,
+          3.6,
+          36.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        62,
+        3.6,
+        40.5
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L71",
+      "rooms": [
+        "east-tunnel",
+        "east-cellar-stair"
+      ],
+      "before": [
+        [
+          44.0,
+          -3,
+          54.0
+        ],
+        [
+          44,
+          -3,
+          66
+        ],
+        [
+          44,
+          -3,
+          72.0
+        ],
+        [
+          46.0,
+          -3,
+          72.0
+        ]
+      ],
+      "after": [
+        [
+          44.0,
+          -3.0,
+          54.0
+        ],
+        [
+          44.0,
+          -3.0,
+          66.0
+        ],
+        [
+          44.5,
+          -3.0,
+          72.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        44,
+        -3,
+        66
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    },
+    {
+      "site": "COLLEGE",
+      "link": "L87",
+      "rooms": [
+        "teaching-library-link",
+        "upper-library-stair"
+      ],
+      "before": [
+        [
+          26.0,
+          3.6,
+          14.0
+        ],
+        [
+          28,
+          3.6,
+          14
+        ],
+        [
+          31.0,
+          3.6,
+          14
+        ],
+        [
+          31.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "after": [
+        [
+          26.0,
+          3.6,
+          14.0
+        ],
+        [
+          28.0,
+          3.6,
+          14.0
+        ],
+        [
+          28.5,
+          3.6,
+          14.0
+        ],
+        [
+          29.0,
+          3.6,
+          13.0
+        ],
+        [
+          29.0,
+          3.6,
+          10.0
+        ]
+      ],
+      "width": 1.4,
+      "threshold": [
+        28,
+        3.6,
+        14
+      ],
+      "source": {
+        "id": "COLLEGE",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/college/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/college/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/college/supported-arrival.blend",
+        "native_sha256": "1ed742d731762d5c15945f18e43af26ab2683e39eb4dc89f48281d6ce0a1792a",
+        "glb_sha256": "32b5c00561fc6966562825e441519c3cbbd9e6abb39c841c9f13613ab7009cce"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Founded closed parcel, supported district apron, matched service gravel, five protected well rims and two corrected basement wall seats.",
+  "roof_generator_sha256": "cfa4e55508d2acd5e8cda538b04a8ea91dbfefa8c3f19527de936da46290eb51",
+  "roof_wings": [
+    {
+      "wing": "teaching-and-lecture",
+      "bounds": [
+        6,
+        10,
+        24,
+        54
+      ],
+      "ceiling": 7.2,
+      "ridge": 10.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "teaching-stair",
+      "bounds": [
+        24,
+        34,
+        30,
+        46
+      ],
+      "ceiling": 7.2,
+      "ridge": 8.540000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "tutorial",
+      "bounds": [
+        24,
+        46,
+        36,
+        54
+      ],
+      "ceiling": 7.2,
+      "ridge": 9.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "teaching-lobby-admin",
+      "bounds": [
+        20,
+        54,
+        36,
+        62
+      ],
+      "ceiling": 3.6,
+      "ridge": 5.04,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "library",
+      "bounds": [
+        28,
+        4,
+        54,
+        20
+      ],
+      "ceiling": 7.2,
+      "ridge": 10.440000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "teaching-library-bridge",
+      "bounds": [
+        24,
+        12,
+        28,
+        16
+      ],
+      "ceiling": 7.2,
+      "ridge": 8.14,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "residential-bridge",
+      "bounds": [
+        50,
+        20,
+        54,
+        34
+      ],
+      "ceiling": 7.2,
+      "ridge": 8.14,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "west-residence",
+      "bounds": [
+        42,
+        26,
+        50,
+        66
+      ],
+      "ceiling": 7.2,
+      "ridge": 8.940000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "residence-spine",
+      "bounds": [
+        50,
+        34,
+        54,
+        70
+      ],
+      "ceiling": 7.2,
+      "ridge": 8.14,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "east-residence-and-service",
+      "bounds": [
+        54,
+        22,
+        62,
+        70
+      ],
+      "ceiling": 7.2,
+      "ridge": 8.940000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "north-stair",
+      "bounds": [
+        62,
+        30,
+        68,
+        42
+      ],
+      "ceiling": 7.2,
+      "ridge": 8.540000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "south-stair",
+      "bounds": [
+        62,
+        58,
+        68,
+        70
+      ],
+      "ceiling": 7.2,
+      "ridge": 8.540000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "residence-cellar-entry",
+      "bounds": [
+        42,
+        66,
+        50,
+        78
+      ],
+      "ceiling": 3.6,
+      "ridge": 5.04,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "rear-service-hall",
+      "bounds": [
+        50,
+        70,
+        54,
+        78
+      ],
+      "ceiling": 3.6,
+      "ridge": 4.4399999999999995,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    }
+  ],
+  "roof_coverage_rays": 2696,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/college.png",
+      "sha256": "bb1565ffd0722be2efbc18055e3ebb6e30724b79dea03a961fb9f837c482761f",
+      "type": "native exported roof construction overview, not gameplay"
+    }
+  ],
+  "aboveground_indoor_roof_probes": 639,
+  "wing_plan_builder": "tools/build_institution_roof_batch.py",
+  "wing_plan_sha256": "ebd4777a0129cee7fdd4c7ba11331fc1d254263f0d4ca88b286c1f65aab53c9e",
+  "remaining": "Whole-site horizon and finish, plumbing/HVAC, outstanding furnishing and narrative, full case acceptance and normal public dispatch.",
+  "roof_generator_source": "development/levels/rebuild/institution-roof-pass/verification/source-snapshots/tools/build_roster_enclosed_roofs.py",
+  "interface_added_flights": [],
+  "new_interface_parts": [
+    "COLLEGE cross-tunnel reinforced crown region0",
+    "COLLEGE teaching-lobby left pier region0",
+    "COLLEGE teaching-lobby right pier region0",
+    "COLLEGE teaching-lobby lintel region0",
+    "COLLEGE-COURT-teaching-lobby indexed frame",
+    "COLLEGE issue left pier region0",
+    "COLLEGE issue right pier region0",
+    "COLLEGE issue lintel region0",
+    "COLLEGE-COURT-issue indexed frame",
+    "COLLEGE cafe left pier region0",
+    "COLLEGE cafe right pier region0",
+    "COLLEGE cafe lintel region0",
+    "COLLEGE-COURT-cafe indexed frame",
+    "COLLEGE rear-hall left pier region0",
+    "COLLEGE rear-hall right pier region0",
+    "COLLEGE rear-hall lintel region0",
+    "COLLEGE-COURT-rear-hall indexed frame",
+    "COLLEGE north stair east enclosure region0"
+  ],
+  "architectural_plan": {
+    "flights": [
+      [
+        "L81",
+        [
+          28,
+          4,
+          34,
+          16
+        ],
+        31,
+        6,
+        11.76,
+        0,
+        3.6,
+        1.5,
+        20
+      ],
+      [
+        "L80",
+        [
+          24,
+          34,
+          30,
+          46
+        ],
+        28.5,
+        36.6,
+        42.36,
+        0,
+        3.6,
+        1.5,
+        20
+      ],
+      [
+        "L84",
+        [
+          24,
+          34,
+          30,
+          46
+        ],
+        25.2,
+        42,
+        37.35,
+        -3,
+        0,
+        1.4,
+        17
+      ]
+    ],
+    "floors": [
+      [
+        [
+          28,
+          4,
+          34,
+          16
+        ],
+        0,
+        []
+      ],
+      [
+        [
+          28,
+          4,
+          34,
+          16
+        ],
+        3.6,
+        [
+          [
+            30.05,
+            5.75,
+            31.95,
+            11.76
+          ]
+        ]
+      ],
+      [
+        [
+          28,
+          4,
+          34,
+          16
+        ],
+        7.2,
+        []
+      ],
+      [
+        [
+          24,
+          34,
+          30,
+          46
+        ],
+        -3,
+        []
+      ],
+      [
+        [
+          24,
+          34,
+          30,
+          46
+        ],
+        0,
+        [
+          [
+            24.3,
+            37.35,
+            26.1,
+            42.25
+          ]
+        ]
+      ],
+      [
+        [
+          24,
+          34,
+          30,
+          46
+        ],
+        3.6,
+        [
+          [
+            27.55,
+            36.35,
+            29.45,
+            42.36
+          ]
+        ]
+      ],
+      [
+        [
+          24,
+          34,
+          30,
+          46
+        ],
+        7.2,
+        []
+      ]
+    ],
+    "rooms": [
+      [
+        [
+          28,
+          4,
+          34,
+          16
+        ],
+        0,
+        3.6,
+        {
+          "S": [
+            [
+              31,
+              1.4
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          28,
+          4,
+          34,
+          16
+        ],
+        3.6,
+        7.2,
+        {
+          "S": [
+            [
+              31,
+              1.4
+            ]
+          ],
+          "W": [
+            [
+              14,
+              1.4
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          24,
+          34,
+          30,
+          46
+        ],
+        -3,
+        0,
+        {
+          "W": [
+            [
+              44,
+              1.4
+            ]
+          ],
+          "E": [
+            [
+              40,
+              1.4
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          24,
+          34,
+          30,
+          46
+        ],
+        0,
+        3.6,
+        {
+          "W": [
+            [
+              44,
+              1.4
+            ]
+          ]
+        }
+      ],
+      [
+        [
+          24,
+          34,
+          30,
+          46
+        ],
+        3.6,
+        7.2,
+        {
+          "W": [
+            [
+              44,
+              1.4
+            ]
+          ]
+        }
+      ]
+    ]
+  },
+  "doorways": [
+    {
+      "id": "COLLEGE bay indexed door 0",
+      "axis": "z",
+      "boundary": 16,
+      "along": 31,
+      "sill_y": 0,
+      "clear_width": 1.4,
+      "clear_height": 2.1,
+      "frame_span": [
+        15.88,
+        16.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "COLLEGE bay indexed door 1",
+      "axis": "z",
+      "boundary": 16,
+      "along": 31,
+      "sill_y": 3.6,
+      "clear_width": 1.4,
+      "clear_height": 2.1,
+      "frame_span": [
+        15.88,
+        16.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "COLLEGE bay indexed door 2",
+      "axis": "x",
+      "boundary": 28,
+      "along": 14,
+      "sill_y": 3.6,
+      "clear_width": 1.4,
+      "clear_height": 2.1,
+      "frame_span": [
+        27.88,
+        28.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "COLLEGE bay indexed door 3",
+      "axis": "x",
+      "boundary": 24,
+      "along": 44,
+      "sill_y": -3,
+      "clear_width": 1.4,
+      "clear_height": 2.1,
+      "frame_span": [
+        23.88,
+        24.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "COLLEGE bay indexed door 4",
+      "axis": "x",
+      "boundary": 30,
+      "along": 40,
+      "sill_y": -3,
+      "clear_width": 1.4,
+      "clear_height": 2.1,
+      "frame_span": [
+        29.88,
+        30.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "COLLEGE bay indexed door 5",
+      "axis": "x",
+      "boundary": 24,
+      "along": 44,
+      "sill_y": 0,
+      "clear_width": 1.4,
+      "clear_height": 2.1,
+      "frame_span": [
+        23.88,
+        24.12
+      ],
+      "frame_depth": 0.24
+    },
+    {
+      "id": "COLLEGE bay indexed door 6",
+      "axis": "x",
+      "boundary": 24,
+      "along": 44,
+      "sill_y": 3.6,
+      "clear_width": 1.4,
+      "clear_height": 2.1,
+      "frame_span": [
+        23.88,
+        24.12
+      ],
+      "frame_depth": 0.24
+    }
+  ],
+  "bay_builder": "tools/build_college_service_bays.py",
+  "bay_builder_sha256": "05ee08210440e7e47efe6a98b9e0ab58043c4f30702c3bf6e764fa6c8aaa5878",
+  "retained_native_records": 781,
+  "source_terrain": "Exact original saved editor owner and holes retained; no excavations",
+  "removed_coplanar_route_solids": [],
+  "wall_caps_seated_under_floors": [
+    {
+      "original": "COLLEGE bay wall ('z', 4, 28, 34, 0, 3.6) end region0",
+      "result": "COLLEGE bay wall ('z', 4, 28, 34, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 16, 28, 34, 0, 3.6) pier0 region0",
+      "result": "COLLEGE bay wall ('z', 16, 28, 34, 0, 3.6) pier0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 16, 28, 34, 0, 3.6) lintel0 region0",
+      "result": "COLLEGE bay wall ('z', 16, 28, 34, 0, 3.6) lintel0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 16, 28, 34, 0, 3.6) end region0",
+      "result": "COLLEGE bay wall ('z', 16, 28, 34, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 28, 4, 16, 0, 3.6) end region0",
+      "result": "COLLEGE bay wall ('x', 28, 4, 16, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 34, 4, 16, 0, 3.6) end region0",
+      "result": "COLLEGE bay wall ('x', 34, 4, 16, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 4, 28, 34, 3.6, 7.2) end region0",
+      "result": "COLLEGE bay wall ('z', 4, 28, 34, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 16, 28, 34, 3.6, 7.2) pier0 region0",
+      "result": "COLLEGE bay wall ('z', 16, 28, 34, 3.6, 7.2) pier0 region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 16, 28, 34, 3.6, 7.2) lintel0 region0",
+      "result": "COLLEGE bay wall ('z', 16, 28, 34, 3.6, 7.2) lintel0 region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 16, 28, 34, 3.6, 7.2) end region0",
+      "result": "COLLEGE bay wall ('z', 16, 28, 34, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 28, 4, 16, 3.6, 7.2) pier0 region0",
+      "result": "COLLEGE bay wall ('x', 28, 4, 16, 3.6, 7.2) pier0 region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 28, 4, 16, 3.6, 7.2) lintel0 region0",
+      "result": "COLLEGE bay wall ('x', 28, 4, 16, 3.6, 7.2) lintel0 region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 28, 4, 16, 3.6, 7.2) end region0",
+      "result": "COLLEGE bay wall ('x', 28, 4, 16, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 34, 4, 16, 3.6, 7.2) end region0",
+      "result": "COLLEGE bay wall ('x', 34, 4, 16, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 34, 24, 30, -3, 0) end region0",
+      "result": "COLLEGE bay wall ('z', 34, 24, 30, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 46, 24, 30, -3, 0) end region0",
+      "result": "COLLEGE bay wall ('z', 46, 24, 30, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 24, 34, 46, -3, 0) pier0 region0",
+      "result": "COLLEGE bay wall ('x', 24, 34, 46, -3, 0) pier0 region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 24, 34, 46, -3, 0) lintel0 region0",
+      "result": "COLLEGE bay wall ('x', 24, 34, 46, -3, 0) lintel0 region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 24, 34, 46, -3, 0) end region0",
+      "result": "COLLEGE bay wall ('x', 24, 34, 46, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 30, 34, 46, -3, 0) pier0 region0",
+      "result": "COLLEGE bay wall ('x', 30, 34, 46, -3, 0) pier0 region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 30, 34, 46, -3, 0) lintel0 region0",
+      "result": "COLLEGE bay wall ('x', 30, 34, 46, -3, 0) lintel0 region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 30, 34, 46, -3, 0) end region0",
+      "result": "COLLEGE bay wall ('x', 30, 34, 46, -3, 0) end region0",
+      "old_top": 0.0,
+      "new_top": -0.12
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 34, 24, 30, 0, 3.6) end region0",
+      "result": "COLLEGE bay wall ('z', 34, 24, 30, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 46, 24, 30, 0, 3.6) end region0",
+      "result": "COLLEGE bay wall ('z', 46, 24, 30, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 24, 34, 46, 0, 3.6) pier0 region0",
+      "result": "COLLEGE bay wall ('x', 24, 34, 46, 0, 3.6) pier0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 24, 34, 46, 0, 3.6) lintel0 region0",
+      "result": "COLLEGE bay wall ('x', 24, 34, 46, 0, 3.6) lintel0 region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 24, 34, 46, 0, 3.6) end region0",
+      "result": "COLLEGE bay wall ('x', 24, 34, 46, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 30, 34, 46, 0, 3.6) end region0",
+      "result": "COLLEGE bay wall ('x', 30, 34, 46, 0, 3.6) end region0",
+      "old_top": 3.5999999046325684,
+      "new_top": 3.4799999046325683
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 34, 24, 30, 3.6, 7.2) end region0",
+      "result": "COLLEGE bay wall ('z', 34, 24, 30, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('z', 46, 24, 30, 3.6, 7.2) end region0",
+      "result": "COLLEGE bay wall ('z', 46, 24, 30, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 24, 34, 46, 3.6, 7.2) pier0 region0",
+      "result": "COLLEGE bay wall ('x', 24, 34, 46, 3.6, 7.2) pier0 region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 24, 34, 46, 3.6, 7.2) lintel0 region0",
+      "result": "COLLEGE bay wall ('x', 24, 34, 46, 3.6, 7.2) lintel0 region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 24, 34, 46, 3.6, 7.2) end region0",
+      "result": "COLLEGE bay wall ('x', 24, 34, 46, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    },
+    {
+      "original": "COLLEGE bay wall ('x', 30, 34, 46, 3.6, 7.2) end region0",
+      "result": "COLLEGE bay wall ('x', 30, 34, 46, 3.6, 7.2) end region0",
+      "old_top": 7.199999809265137,
+      "new_top": 7.079999809265137
+    }
+  ],
+  "saved_world": "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/adaptive-topology.bin": "fcfa3f31f18641d1abca7e90a2615eed0afa74ed9ca513a33dccf8029b54b4c7",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/authored-cuts.tsv": "ddd3fda4e59876ed473231e01d870bd412b5326f34d40f81f98ee6d8caa4ed16",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/earthworks-verification.json": "d675517459410e3892b29a2b5bd6e4d9a5b92e42e3aea331d356dde6d2468570",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/source-provenance.json": "bb6ac9dc1f895f7222a55cbcac4ebe572d80e06f2a0c47e455bc9f6db02c1fc8",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/terrain-physics.hcs2": "7dbe1dbc67fb455b51a19848ada2fcfd459dae1378f0a17e0d94f1302b1158e5",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/tile_0_0.png": "1b15b4a56df41d361dd85213f6feee0ac1752aa9d780fe6e119f17a26b656097",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/verification.json": "d675517459410e3892b29a2b5bd6e4d9a5b92e42e3aea331d356dde6d2468570",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/world.properties": "1f2175faefa9d0256d347d1550a5069c42be240db5bf3447af7789898badb8be",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/scene-package/.scene.bin.editor.previous": "a04a67217f3e629b8a5587cb09e34f3ab132a7062c7b66887687baaba53fa3cb",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/scene-package/scene.bin": "569c3cf0bceec8564aaef7fc4f457cde640d4973d2b9c553ec90bbe54e791cb3",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/scene-package/meshes/site.obj": "c07bffdf8c7fa06c1ef3865defbb652694a2c3e7a63bdd791a961e3ca5280b92",
+    "development/levels/rebuild/college-ground-pass/worlds/college/terrain-world/terrain-layers/tile_0_0.bin": "38f1304c4b956c6049e1c811d64e194f3023df35eb8d305cd274a71b9b80642c"
+  },
+  "new_portals": [
+    {
+      "id": "COLLEGE-COURT-teaching-lobby",
+      "axis": "z",
+      "boundary": 62,
+      "along": 24,
+      "sill_y": 0,
+      "clear_width": 1.6,
+      "clear_height": 2.3,
+      "frame_span": [
+        61.88,
+        62.12
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "teaching-lobby",
+        "green"
+      ]
+    },
+    {
+      "id": "COLLEGE-COURT-issue",
+      "axis": "z",
+      "boundary": 20,
+      "along": 31,
+      "sill_y": 0,
+      "clear_width": 1.5,
+      "clear_height": 2.3,
+      "frame_span": [
+        19.88,
+        20.12
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "issue",
+        "green"
+      ]
+    },
+    {
+      "id": "COLLEGE-COURT-cafe",
+      "axis": "x",
+      "boundary": 42,
+      "along": 58,
+      "sill_y": 0,
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "frame_span": [
+        41.88,
+        42.12
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "cafe",
+        "green"
+      ]
+    },
+    {
+      "id": "COLLEGE-COURT-rear-hall",
+      "axis": "z",
+      "boundary": 78,
+      "along": 52,
+      "sill_y": 0,
+      "clear_width": 1.5,
+      "clear_height": 2.3,
+      "frame_span": [
+        77.88,
+        78.12
+      ],
+      "frame_depth": 0.24,
+      "rooms": [
+        "rear-hall",
+        "entry"
+      ]
+    }
+  ],
+  "terrain_mesh": "College saved campus earthworks",
+  "ground_landings": [
+    {
+      "name": "Teaching forecourt landing",
+      "bounds": [
+        20,
+        62,
+        28,
+        64
+      ],
+      "saved_ground_controls": [
+        [
+          21.44,
+          62.36,
+          0.0
+        ],
+        [
+          21.44,
+          63.0,
+          0.0
+        ],
+        [
+          21.44,
+          63.64,
+          0.0
+        ],
+        [
+          24.0,
+          62.36,
+          0.0
+        ],
+        [
+          24.0,
+          63.0,
+          0.0
+        ],
+        [
+          24.0,
+          63.64,
+          0.0
+        ],
+        [
+          26.56,
+          62.36,
+          0.0
+        ],
+        [
+          26.56,
+          63.0,
+          0.0
+        ],
+        [
+          26.56,
+          63.64,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Library issue landing",
+      "bounds": [
+        28,
+        20,
+        34,
+        22
+      ],
+      "saved_ground_controls": [
+        [
+          29.08,
+          20.36,
+          0.0
+        ],
+        [
+          29.08,
+          21.0,
+          0.0
+        ],
+        [
+          29.08,
+          21.64,
+          0.0
+        ],
+        [
+          31.0,
+          20.36,
+          0.0
+        ],
+        [
+          31.0,
+          21.0,
+          0.0
+        ],
+        [
+          31.0,
+          21.64,
+          0.0
+        ],
+        [
+          32.92,
+          20.36,
+          0.0
+        ],
+        [
+          32.92,
+          21.0,
+          0.0
+        ],
+        [
+          32.92,
+          21.64,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Cafe courtyard landing",
+      "bounds": [
+        40,
+        54,
+        42,
+        62
+      ],
+      "saved_ground_controls": [
+        [
+          40.36,
+          55.44,
+          0.0
+        ],
+        [
+          40.36,
+          58.0,
+          0.0
+        ],
+        [
+          40.36,
+          60.56,
+          0.0
+        ],
+        [
+          41.0,
+          55.44,
+          0.0
+        ],
+        [
+          41.0,
+          58.0,
+          0.0
+        ],
+        [
+          41.0,
+          60.56,
+          0.0
+        ],
+        [
+          41.64,
+          55.44,
+          0.0
+        ],
+        [
+          41.64,
+          58.0,
+          0.0
+        ],
+        [
+          41.64,
+          60.56,
+          0.0
+        ]
+      ]
+    },
+    {
+      "name": "Residence rear landing",
+      "bounds": [
+        50,
+        78,
+        54,
+        80
+      ],
+      "saved_ground_controls": [
+        [
+          50.72,
+          78.36,
+          0.0
+        ],
+        [
+          50.72,
+          79.0,
+          0.0
+        ],
+        [
+          50.72,
+          79.64,
+          0.0
+        ],
+        [
+          52.0,
+          78.36,
+          0.0
+        ],
+        [
+          52.0,
+          79.0,
+          0.0
+        ],
+        [
+          52.0,
+          79.64,
+          0.0
+        ],
+        [
+          53.28,
+          78.36,
+          0.0
+        ],
+        [
+          53.28,
+          79.0,
+          0.0
+        ],
+        [
+          53.28,
+          79.64,
+          0.0
+        ]
+      ]
+    }
+  ],
+  "terrain_receipt": {
+    "site": "COLLEGE",
+    "changed_vertices": 636,
+    "raised_vertices": 628,
+    "lowered_vertices": 8,
+    "max_change_m": 1.023941398,
+    "source_height_sha256": "1b15b4a56df41d361dd85213f6feee0ac1752aa9d780fe6e119f17a26b656097",
+    "saved_topology_sha256": "fcfa3f31f18641d1abca7e90a2615eed0afa74ed9ca513a33dccf8029b54b4c7",
+    "saved_cuts_sha256": "ddd3fda4e59876ed473231e01d870bd412b5326f34d40f81f98ee6d8caa4ed16",
+    "hole_controls": 1603,
+    "disk_reopen_verified": true,
+    "physics_sha256": "7dbe1dbc67fb455b51a19848ada2fcfd459dae1378f0a17e0d94f1302b1158e5",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "builder": "tools/build_college_containment.py",
+  "builder_sha256": "1b04c6b1b54c3caf50f99f7ac0e823f49e7228d220a3ac7f30d3677df2a46ef3",
+  "previous_construction": "development/levels/rebuild/college-doors-pass/college/construction.json",
+  "electrical": "development/levels/rebuild/college-electrical-pass/college/electrical.json",
+  "electrical_new_parts": 145,
+  "electrical_new_triangles": 19892,
+  "previous_builder_sha256": "b29e1bf6b4a694dc14bf926b0f9b7d404eacb9601cbe89a12085482abfb7b9e9",
+  "electrical_scope": "Additive services built on the retained campus architecture. Static utilities and fixture approaches do not change the search envelope.",
+  "door_schedule": "development/levels/rebuild/college-doors-pass/college/doors.json",
+  "door_schedule_sha256": "ce07bede735ffbd9c59050dcd2a23debe8a875cbeb771613e196523f1fe73ae8",
+  "containment_schedule": "development/levels/rebuild/college-containment-pass/college/containment.json",
+  "containment_schedule_sha256": "895fb093a805c87f3aa276f92a3c04ba81f3408aceba1b8132df6ad0ec617bd4"
+}

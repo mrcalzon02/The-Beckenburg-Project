@@ -7105,5 +7105,23 @@
       "roster_packets": 29
     },
     "next_action": "Survey College perimeter containment, floor joins and guards from the real terrain and decks."
+  },
+  "college_containment_checkpoint": {
+    "status": "COLLEGE_SITE_CONTAINMENT_VERIFIED_FULL_ACCEPTANCE_OPEN",
+    "baseline": "8351fed458ed9dd35fd4d7b0cca00c939b0952a4",
+    "roster": "development/levels/rebuild/college-containment-pass/roster.json",
+    "checkpoint": "development/levels/rebuild/college-containment-pass/checkpoint.json",
+    "native_revision": "95f8eed2ee6cfcd3c636798df0904b61504a4374aabfb6352bab70926639de4f",
+    "collision_sha256": "51cebea2ecacad01239870c254bd22d8491236d3ecb4739445cdf4a0023080f5",
+    "counts": {
+      "perimeter_bays": 124,
+      "protected_wells": 5,
+      "saved_apron_seam_edges": 1083,
+      "normal_jump_replays": 5,
+      "supported_perimeter_sweeps": 7158,
+      "native_site_packets": 25,
+      "total_roster_packets": 29
+    },
+    "next_action": "Detail and verify the College maintenance plumbing and hydronic distribution against the installed service bays and temperature contracts."
   }
 }

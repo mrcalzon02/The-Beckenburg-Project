@@ -1215,3 +1215,11 @@ Fit College door leaves to the actual public and service frames, complete guards
 The [active roster](college-doors-pass/roster.json) registers the fitted College packet alongside 24 earlier native site packets. Five continuous wall runs establish seven rebuilt frames. Eleven more door sets fit existing exterior, stair and bridge frames. The [three-storey plan](college-doors-pass/college-door-plan.svg) shows walks on the built floors and stairs through surveyed doorways.
 
 The [verification](college-doors-pass/checkpoint.json) covers 18 fitted doors, 36 replicated host actions, 88 route directions in both postures, two continuous van journeys and the prior electrical controls. The next College pass surveys the exterior boundary, open fall edges, guards and the existing seminar floor seam before the remaining services and whole-case checks.
+
+## College measured parcel and stair containment
+
+The [active roster](college-containment-pass/roster.json) registers the College terrain and containment packet with 24 other verified native sources. Its [measured plan](college-containment-pass/college-containment-plan.svg) links the actual terrain, the founded gate, the five protected stairwells and the original van arrival.
+
+The [checkpoint](college-containment-pass/checkpoint.json) records 124 fence bays, 1,083 exact exterior terrain joins, guards at five wells, 7,158 supported perimeter sweeps and five full jump replays. A host ghost stops at the new south return. Two basement masonry heads meet the actual slab underside and remove the seminar floor seam. The 88 prior route directions, 18 fitted doors and 68 connected loads pass again in the candidate. Directional scenery, plumbing, HVAC, finished spaces, whole-case dispatch and public selection remain open.
+
+Main is 10fe52cb1feba1267efcf4edce67a5ca1bd3823e. The held draft base is 5c3daf923a7359554dc075c9e99be139bbcb1441. Historical full multiplayer, installer and GPU runs 44153590389, 44153590626 and 44016080200 cover their earlier revisions. The next College stage surveys and installs the actual maintenance water and hydronic distribution.

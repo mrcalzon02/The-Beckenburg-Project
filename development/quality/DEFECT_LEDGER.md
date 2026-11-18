@@ -8426,17 +8426,59 @@ Older-map obligation: Approve both swing and landing together at occupied standi
 
 ### DEV-596 — Visible line across existing College seminar floor field
 
-**Status:** OPEN_STANDING_CAPTURE · **Affected:** College seminar interior beyond door L06
+**Status:** CORRECTED_WITH_MEASURED_SLAB_BEARING · **Affected:** College seminar interior beyond door L06
 
 A thin light line appears past the open seminar door in the software standing capture.
 
-Cause / uncertainty: The existing floor and partition join needs direct geometric and renderer comparison.
+Cause / uncertainty: The west plant and maintenance wall heads reached the finished ground floor plane and overlapped the slab face at X 12 m.
 
-Fix / next action: Probe both sides of the line and compare the existing surface contacts and coplanar overlaps before reconstructing any join.
+Fix / next action: Seat both masonry heads at the −0.16 m slab underside. Verify their full contact and compare the same game camera in the software and hardware renderers.
 
-Evidence and verification: development/levels/rebuild/college-doors-pass/checkpoint.json
+Evidence and verification: development/levels/rebuild/college-containment-pass/checkpoint.json
 
 Older-map obligation: Study captured floor lines with geometry readback to distinguish gaps from overlapping surfaces.
+
+### DEV-597 — College open terrain ended without a founded campus edge
+
+**Status:** CORRECTED_ON_STAGED_NATIVE_CAMPUS · **Affected:** College east and south parcel, closed gate and outside apron
+
+Supported approaches reached within 26 cm of the original bare terrain edge. The original scene leaves all 3,726 sampled parcel body poses clear.
+
+Cause / uncertainty: The saved terrain and access zones existed before the site boundary. The old edge sketch also used a different, broader site footprint.
+
+Fix / next action: Survey the retained grade and fit the closed perimeter, returns, apron and gate runway to it. Verify body, optics, native joins, canonical arrival and a normal host ghost against an exact prior control.
+
+Evidence and verification: development/levels/rebuild/college-containment-pass/checkpoint.json
+
+Older-map obligation: Compare site boundary reservations against true source ground, and test both supported approaches and direct collision.
+
+### DEV-598 — College well guards missed two open wells and full-height jumps
+
+**Status:** CORRECTED_AT_FIVE_MEASURED_WELLS · **Affected:** College L80, L81, L82, L84 and L85 stairwells
+
+Two wells lacked rim guards. The three prior guarded wells allowed full-jump-apex capsule probes at most sampled stations.
+
+Cause / uncertainty: The original guard crest reflected walk containment. Gameplay jump height includes the initial 0.73 m tuck and ballistic rise.
+
+Fix / next action: Seat flight rails on the two unguarded stair bays and fit higher guards at all five receiving rims. Verify 1,720 direct body probes and five normal jumps that return to the current deck.
+
+Evidence and verification: development/levels/rebuild/college-containment-pass/checkpoint.json
+
+Older-map obligation: Test the complete physical jump around a well with the actual shared player motion and preserve the receiving edge.
+
+### DEV-599 — First College apron review showed a broken service road finish
+
+**Status:** CORRECTED_WITH_GRADE_PRESERVING_SERVICE_THROAT · **Affected:** College outer gate and district road approach
+
+The first coarse triangle material classification left grass between the service gate and a serrated gravel strip.
+
+Cause / uncertainty: Road finish selection ignored the saved-to-new ground boundary and had no constraint edges in the district triangulation.
+
+Fix / next action: Match the existing compacted gravel across the gate and constrain the new road edges in the real terrain mesh. Verify all 8,601 original soil triangles retain their exact source record.
+
+Evidence and verification: development/levels/rebuild/college-containment-pass/checkpoint.json
+
+Older-map obligation: Verify road and court finishes connect through a real gate without adding a duplicate walking surface.
 
 ## Required audit categories
 

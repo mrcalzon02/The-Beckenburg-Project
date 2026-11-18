@@ -19,6 +19,15 @@ for path in sorted(set(paths)):
     kind='Development review'
     if '/college-electrical-batch/' in path:
         kind='College circuit and fixture plan' if 'layout' in p.name else 'College OpenGL lighting and blackout' if 'opengl' in p.name else 'College software standing electrical review'
+    elif '/college-containment-batch/' in path:
+        if 'cutaway' in p.name:
+            kind='College native stair tower cutaway with overhead and near wall surfaces hidden'
+        elif 'native' in p.name:
+            kind='College native grounds and gate inspection'
+        elif 'opengl' in p.name:
+            kind='College OpenGL standing containment review'
+        else:
+            kind='College software standing containment review'
     elif '/college-doors-batch/' in path:
         if 'plan' in p.name:
             kind='College surveyed door and circulation plan'
