@@ -7,13 +7,22 @@ from urllib.parse import quote
 ROOT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser();parser.add_argument('--check',action='store_true');parser.add_argument('--tracked-only',action='store_true',help='Index the staged checkpoint without unrelated untracked captures');args=parser.parse_args()
 paths=subprocess.check_output(['git','ls-files','--cached',* ([] if args.tracked_only else ['--others','--exclude-standard']),'-z','development'],cwd=ROOT).decode('utf-8').split('\0')
+unstaged=set()
+if args.tracked_only:
+    changed=subprocess.check_output(['git','diff','--name-only','-z','--','development'],cwd=ROOT)
+    unstaged=set(changed.decode('utf-8').split('\0'))
 items=[]
 for path in sorted(set(paths)):
     if not path.lower().endswith('.png'):continue
     if not any(t in path for t in ['/previews/','/captures/','/screenshots/','/blockouts/','/rebuild/structures/']):continue
     p=ROOT/path
-    if not p.exists():continue
-    data=p.read_bytes()
+    if path in unstaged:
+        # Staged publication must hash the image actually included in the
+        # commit, even if a package build rewrites the working copy.
+        data=subprocess.check_output(['git','cat-file','blob',':'+path],cwd=ROOT)
+    else:
+        if not p.exists():continue
+        data=p.read_bytes()
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'

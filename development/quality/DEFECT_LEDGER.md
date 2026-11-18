@@ -8480,6 +8480,20 @@ Evidence and verification: development/levels/rebuild/college-containment-pass/c
 
 Older-map obligation: Verify road and court finishes connect through a real gate without adding a duplicate walking surface.
 
+### DEV-600 — Staged gallery indexed an unrelated build-generated preview
+
+**Status:** CORRECTED_WITH_INDEX_BLOB_READBACK · **Affected:** College draft gallery and shared staged gallery generator
+
+The first hosted College gallery check rejected the index. Its held-device image row matched a changed working preview, while the Git tree still held the prior 366,902-byte file.
+
+Cause / uncertainty: Tracked-only source selection used the Git index, then every image was read unconditionally from the working tree.
+
+Fix / next action: When a selected tracked path has unstaged edits, hash the staged Git blob. Verify the old preview and new College PNGs against a deliberately changed tracked working copy.
+
+Evidence and verification: development/levels/rebuild/college-containment-pass/verification/gallery-source-test.txt
+
+Older-map obligation: Verify exact staged image hashes when running a package build in the same worktree.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -6656,6 +6656,17 @@
       "action": "Match the existing compacted gravel across the gate and constrain the new road edges in the real terrain mesh. Verify all 8,601 original soil triangles retain their exact source record.",
       "evidence": "development/levels/rebuild/college-containment-pass/checkpoint.json",
       "older_maps": "Verify road and court finishes connect through a real gate without adding a duplicate walking surface."
+    },
+    {
+      "id": "DEV-600",
+      "title": "Staged gallery indexed an unrelated build-generated preview",
+      "status": "CORRECTED_WITH_INDEX_BLOB_READBACK",
+      "affected": "College draft gallery and shared staged gallery generator",
+      "symptom": "The first hosted College gallery check rejected the index. Its held-device image row matched a changed working preview, while the Git tree still held the prior 366,902-byte file.",
+      "cause": "Tracked-only source selection used the Git index, then every image was read unconditionally from the working tree.",
+      "action": "When a selected tracked path has unstaged edits, hash the staged Git blob. Verify the old preview and new College PNGs against a deliberately changed tracked working copy.",
+      "evidence": "development/levels/rebuild/college-containment-pass/verification/gallery-source-test.txt",
+      "older_maps": "Verify exact staged image hashes when running a package build in the same worktree."
     }
   ],
   "audit_categories": [
