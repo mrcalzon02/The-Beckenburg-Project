@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2033,
-  "unique_local_file_hashes": 1862,
+  "local_files": 2035,
+  "unique_local_file_hashes": 1864,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 259
+    "native_map_exports": 261
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -26545,6 +26545,30 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "922966ebb7143f8502420e3921f1236b15c5f45e68cbd062891fe00338f89538",
       "bytes": 4953092
+    },
+    {
+      "id": "canyon-marsh",
+      "label": "canyon-marsh",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/canyon-marsh-pass/wld-03/canyon-marsh.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "70037ba78b1dabe0736149888386f4762cb2cf6ca1aa18262ed123cb1270f6bb",
+      "bytes": 4713388
+    },
+    {
+      "id": "canyon-marsh",
+      "label": "canyon-marsh",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/canyon-marsh-pass/wld-11/canyon-marsh.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "861e87e2362f8d97c1f4abf79e733b711918cc045d271b3989cd0f727be81252",
+      "bytes": 3385816
     },
     {
       "id": "authored-grounds",

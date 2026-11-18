@@ -278,3 +278,6 @@ tools/prepare_monastery.py -text whitespace=cr-at-eol
 development/levels/rebuild/coast-entrances-pass/** -text whitespace=cr-at-eol
 tools/build_coast_entrances.py -text whitespace=cr-at-eol
 tools/prepare_coast_entrances.py -text whitespace=cr-at-eol
+development/levels/rebuild/canyon-marsh-pass/** -text whitespace=cr-at-eol
+tools/build_canyon_marsh.py -text whitespace=cr-at-eol
+tools/prepare_canyon_marsh.py -text whitespace=cr-at-eol

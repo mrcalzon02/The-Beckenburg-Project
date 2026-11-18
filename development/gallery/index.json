@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11095,
+  "count": 11110,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -94194,6 +94194,156 @@
       "height": 900,
       "bytes": 902504,
       "sha256": "984d0f414d12dcd0d222db146af8a9b1a40213d44508dc2d097dad705c8e7083"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-before.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-before.png",
+      "title": "Wld 03 before",
+      "kind": "Native canyon and marsh maps before structural reconstruction",
+      "width": 980,
+      "height": 760,
+      "bytes": 653428,
+      "sha256": "525cd4569390687ec31199d713cac20fc3ed6e64031d1223341755c09deb1773"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-lower-cave-sill.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-lower-cave-sill.png",
+      "title": "Wld 03 lower cave sill",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 1096740,
+      "sha256": "1df5f9d91ab04a3d137f460b6bacf9b47e853f89d9d6f75f7cfcac7b5ff4eeff"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-overview.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-overview.png",
+      "title": "Wld 03 overview",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 1043559,
+      "sha256": "5d0e8b3dd080538ab3a3889f8f12baa1605e3cdf737965b9353cab6c7d1c05ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-roadhead.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-roadhead.png",
+      "title": "Wld 03 roadhead",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 885925,
+      "sha256": "abb84f18c9b817e976f17a87a04337402ead60db88efa69f82fcf9303ead0acb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-shelter-stair.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-shelter-stair.png",
+      "title": "Wld 03 shelter stair",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 919356,
+      "sha256": "099cf9a6d7d3db0c74192ebc4110b59177b9c7745e1467fb94eeb3d159790e1f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-terrace-section.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-terrace-section.png",
+      "title": "Wld 03 terrace section",
+      "kind": "Native canyon terrace and marsh foundation inspection",
+      "width": 1250,
+      "height": 890,
+      "bytes": 1318830,
+      "sha256": "6ef5b916ddd574a9e08bd89e391f788b1c5f5c08f16bfbce30bce6836e2648d7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-upper-stair.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-upper-stair.png",
+      "title": "Wld 03 upper stair",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 846243,
+      "sha256": "75095b5b33f456fc8f9288ba1409839fa711823b63bd533dc810a48a9bdc269a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-upper-terrace.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-upper-terrace.png",
+      "title": "Wld 03 upper terrace",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 782079,
+      "sha256": "20b108484d2f88c3dc596835ca5abaa23ef6c2e5932908c57f3e36ad7315715e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-before.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-before.png",
+      "title": "Wld 11 before",
+      "kind": "Native canyon and marsh maps before structural reconstruction",
+      "width": 980,
+      "height": 760,
+      "bytes": 549783,
+      "sha256": "b5fb115dccf4a50bec8112c1c935766408d7012fcf3014095bb35ed23815c842"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-levee-arrival.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-levee-arrival.png",
+      "title": "Wld 11 levee arrival",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 791112,
+      "sha256": "fd3a0b921134603c1434ff3b235b3475b35864a80c81da52a0c80ee70494d538"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-main-boardwalk.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-main-boardwalk.png",
+      "title": "Wld 11 main boardwalk",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 906221,
+      "sha256": "bb9e2a0ddc5322c515ef60863250f5898625e8afaadbdd12e18e1738f57fd570"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-overview.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-overview.png",
+      "title": "Wld 11 overview",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 919002,
+      "sha256": "861caca3411047d18c524e1db9b428900bebded2cefa0a1f0fac2d90d0246d20"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-piles-section.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-piles-section.png",
+      "title": "Wld 11 piles section",
+      "kind": "Native canyon terrace and marsh foundation inspection",
+      "width": 1250,
+      "height": 890,
+      "bytes": 1451423,
+      "sha256": "d5750136781f85e618cd0407d02bcbde9e42795d29e400638bdc9b9ee3a6f4e8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-settlement-stair.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-settlement-stair.png",
+      "title": "Wld 11 settlement stair",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 809858,
+      "sha256": "5541806fdc95bfbb6a24871b405b10b4a6466d0d06d47be805ba981018140650"
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-warehouse-sill.png",
+      "url": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-warehouse-sill.png",
+      "title": "Wld 11 warehouse sill",
+      "kind": "Native Red Mesa and Mourning Marsh construction review",
+      "width": 1250,
+      "height": 890,
+      "bytes": 1084348,
+      "sha256": "93a7d05007f1789f0672aae6687899975aacc4300adad5fa3364592c10ad3fbf"
     },
     {
       "path": "development/levels/rebuild/captures/castle-closeout/castle/archive/east.png",

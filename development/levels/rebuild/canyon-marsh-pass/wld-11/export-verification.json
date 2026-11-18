@@ -1,0 +1,51 @@
+{
+  "glb_sha256": "861e87e2362f8d97c1f4abf79e733b711918cc045d271b3989cd0f727be81252",
+  "native_sha256": "2867a8e7895a6a70c3ec2bc09491bb3034a4805854592e18fbded49cad99d8ca",
+  "retained_native_records": 77,
+  "new_closed_parts": 278,
+  "aperture_rays": 63,
+  "sill_controls": 42,
+  "independent_standing": 7,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-overview.png",
+      "sha256": "861caca3411047d18c524e1db9b428900bebded2cefa0a1f0fac2d90d0246d20",
+      "source_glb_sha256": "861e87e2362f8d97c1f4abf79e733b711918cc045d271b3989cd0f727be81252",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-levee-arrival.png",
+      "sha256": "fd3a0b921134603c1434ff3b235b3475b35864a80c81da52a0c80ee70494d538",
+      "source_glb_sha256": "861e87e2362f8d97c1f4abf79e733b711918cc045d271b3989cd0f727be81252",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-settlement-stair.png",
+      "sha256": "5541806fdc95bfbb6a24871b405b10b4a6466d0d06d47be805ba981018140650",
+      "source_glb_sha256": "861e87e2362f8d97c1f4abf79e733b711918cc045d271b3989cd0f727be81252",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-main-boardwalk.png",
+      "sha256": "bb9e2a0ddc5322c515ef60863250f5898625e8afaadbdd12e18e1738f57fd570",
+      "source_glb_sha256": "861e87e2362f8d97c1f4abf79e733b711918cc045d271b3989cd0f727be81252",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-warehouse-sill.png",
+      "sha256": "93a7d05007f1789f0672aae6687899975aacc4300adad5fa3364592c10ad3fbf",
+      "source_glb_sha256": "861e87e2362f8d97c1f4abf79e733b711918cc045d271b3989cd0f727be81252",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-11-piles-section.png",
+      "sha256": "d5750136781f85e618cd0407d02bcbde9e42795d29e400638bdc9b9ee3a6f4e8",
+      "source_glb_sha256": "861e87e2362f8d97c1f4abf79e733b711918cc045d271b3989cd0f727be81252",
+      "hidden": [
+        "Mourning Marsh floodwater review surface"
+      ]
+    }
+  ]
+}

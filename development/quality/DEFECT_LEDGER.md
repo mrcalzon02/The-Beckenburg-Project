@@ -7850,6 +7850,62 @@ Evidence and verification: development/levels/rebuild/coast-entrances-pass/check
 
 Older-map obligation: Keep per-site capacity, structural, service and multiplayer acceptance explicit.
 
+### DEV-555 — Red Mesa expedition stairs pierced the shelter roof and bypassed the natural ledges
+
+**Status:** CORRECTED_IN_NATIVE_CANYON_ARCHITECTURE · **Affected:** WLD-03 shelter, intermediate ledge and upper terrace
+
+The original lower flight rose inside the shelter, cutting through the roof, while the higher diagonal assembly lacked a level terrace connection.
+
+Cause / uncertainty: Older route traces drove openings and support across the entire hillside before the floor and stair elevations were designed.
+
+Fix / next action: Close the shelter roof. Use a real north door, two aligned exterior stair bays and area-shaped saved shelves.
+
+Evidence and verification: development/levels/rebuild/canyon-marsh-pass/checkpoint.json
+
+Older-map obligation: Inspect roofs and grade changes together with the direct body sweep.
+
+### DEV-556 — Red Mesa lower cave court had no footing beneath the retained records alcove
+
+**Status:** CORRECTED_WITH_FOUNDED_CAVE_COURT · **Affected:** WLD-03 lower cave south door and intermediate return
+
+The first new cave sill ended where the ground fell to about +2.5 m. The intended ledge and door stood at +4 m.
+
+Cause / uncertainty: The upper records room’s saved foundation made a gap along the lower-level contact.
+
+Fix / next action: Fit a complete founded forecourt under the existing alcove, support it with piers and join it to the west shelf.
+
+Evidence and verification: development/levels/rebuild/canyon-marsh-pass/checkpoint.json
+
+Older-map obligation: Plot overlapping floors and terrain cuts together before accepting a lower path.
+
+### DEV-557 — Mourning Marsh strip floors and a diagonal first riser obstructed dry entry
+
+**Status:** CORRECTED_IN_NATIVE_PILED_SETTLEMENT · **Affected:** WLD-11 dry arrival, transfer stair and south deck
+
+The van approach met the first diagonal step and the main route lost footing at the fragment joins.
+
+Cause / uncertainty: The earlier decks were clipped around the guides and the ground beneath the roadhead lay below its intended elevation.
+
+Fix / next action: Build a dry landform, one aligned stair and a continuous guarded deck on founded piles. Fit every door to its full level sill.
+
+Evidence and verification: development/levels/rebuild/canyon-marsh-pass/checkpoint.json
+
+Older-map obligation: Keep an actual supported bridge between dry land and every over-water boardwalk.
+
+### DEV-558 — Canyon and Marsh finish and live map ownership remain open
+
+**Status:** OPEN_SITE_FINISH_AND_RUNTIME_OWNERSHIP · **Affected:** WLD-03 and WLD-11 physical boundaries and shared runtime
+
+The native ground and structures have verified movement. Full cliff and water boundaries, room-level capacity, placed services and live multiplayer remain unverified.
+
+Cause / uncertainty: The paired source pass resolved site grades, architecture and physical study strip removal.
+
+Fix / next action: Fit working functions and circuit locations, survey barriers and integrate the finished geometry with the shared runtime. Verify each documented acceptance gate.
+
+Evidence and verification: development/levels/rebuild/canyon-marsh-pass/checkpoint.json
+
+Older-map obligation: Keep the room-level search envelope and full gameplay acceptance independent of native route success.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
