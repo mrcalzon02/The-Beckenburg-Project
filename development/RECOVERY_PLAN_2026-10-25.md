@@ -1960,3 +1960,11 @@ The active [29-location roster](levels/rebuild/house-parcel-boundary-pass/roster
 College is next for physically placed maintenance equipment, the grounded generator and distribution network, real door approaches and normal host and peer verification. The held parent and draft review still gate public release.
 
 At this checkpoint, main is 10fe52cb1feba1267efcf4edce67a5ca1bd3823e. The checked prior multiplayer run 44153590389 and installer run 44153590626 succeeded on 96bb6cfd7554ff60a2c699144abcfad1688d7d3f. GPU renderer run 44016080200 succeeded on a85a47eee203b7fb4d29abcf2a19568262fa5eb6. These runs precede the House parcel candidate.
+
+## College emergency electrical installation
+
+The active [29-packet roster](levels/rebuild/college-electrical-pass/roster.json) advances baseline f46c49108a189c4e34eb791cb6374d6becd559b9. College gains a founded exterior generator, a wall- and floor-mounted service board, 21 conduit runs and 68 measured fixtures. The [three-storey plan](levels/rebuild/college-electrical-pass/electrical-layout.svg) records the controls, physical bearings and combined circuits. The native export preserves every prior collision component and keeps the existing 40 searchable spaces.
+
+The [game verification](levels/rebuild/college-electrical-pass/checkpoint.json) covers both postures for all 88 route directions, 1,283 physically sealed context samples, actual control aim and four TCP peers. The normal host trips the independent breaker after an authorized ghost disturbance. A reconnect retains the blackout, generator restart preserves the tripped state, and the physical breaker restores supply. Same-camera software and hardware frames verify actual lighting changes.
+
+Fit College door leaves to the actual public and service frames, complete guards and whole-site containment, then replay ordinary arrival and the case with all services. The parent and public dispatch remain held. Main is 10fe52cb1feba1267efcf4edce67a5ca1bd3823e. Historical multiplayer and installer runs 44153590389 and 44153590626 passed at 96bb6cfd7554ff60a2c699144abcfad1688d7d3f, and renderer run 44016080200 passed at a85a47eee203b7fb4d29abcf2a19568262fa5eb6.

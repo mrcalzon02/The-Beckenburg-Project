@@ -13,14 +13,18 @@ import org.beckenburg.LevelDefinition.*;
 public final class CollegeNativeRuntimeReview {
     private record Route(String id, List<Vec> points){}
     private record Aperture(String id, String a, String b, Portal portal){}
-    private record Campus(HouseMap map, List<Aperture> apertures, List<Route> routes){}
+    record Campus(HouseMap map, List<Aperture> apertures, List<Route> routes){}
     private static final Path PACKET=Path.of("development/levels/rebuild/college-ground-pass/college");
 
     private static double n(String[] row,int at){return Double.parseDouble(row[at]);}
     private static Vec point(String[] row,int at){return new Vec(n(row,at),n(row,at+1),n(row,at+2));}
     private static void check(boolean valid,String reason){if(!valid)throw new AssertionError(reason);}
 
-    private static Campus load(Path manifest)throws IOException{
+    static Campus load(Path manifest)throws IOException{
+        return load(manifest, PACKET.resolve("campus-grounds.glb"), PACKET.resolve("campus-grounds.hcs2"));
+    }
+
+    static Campus load(Path manifest, Path glb, Path hcs2)throws IOException{
         var rows=Files.readAllLines(manifest).stream().map(line->line.split("\t",-1)).toList();
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var stairs=new HashSet<String>();
@@ -36,8 +40,8 @@ public final class CollegeNativeRuntimeReview {
         var source=rows.get(0);
         check(source[0].equals("SOURCE"),"Missing source packet");
         NativeInvestigationScene nativeScene;
-        try(var model=Files.newInputStream(PACKET.resolve("campus-grounds.glb"));
-            var collision=Files.newInputStream(PACKET.resolve("campus-grounds.hcs2"))){
+        try(var model=Files.newInputStream(glb);
+            var collision=Files.newInputStream(hcs2)){
             nativeScene=NativeInvestigationScene.read(model,source[1],collision,source[2],stairs,spaces);
         }
         var dockRow=rows.get(1);
@@ -58,6 +62,8 @@ public final class CollegeNativeRuntimeReview {
                     hit.y(),space.height(),space.outside()?"native-outdoor":"native-indoor","hard",
                     new Vec(p.x(),hit.y(),p.z())));
             }
+            case "SOCKET" -> sockets.add(new Socket(row[1],row[2],Integer.parseInt(row[3]),
+                n(row,4),n(row,5),n(row,6),n(row,7),row[8]));
             case "RITUAL" -> {
                 var p=point(row,3);
                 var hit=nativeScene.physics().support(p.x(),p.z(),p.y(),.20);
@@ -93,25 +99,30 @@ public final class CollegeNativeRuntimeReview {
     }
 
     private static Vec walk(HouseMap map,Vec from,Vec to){
+        return walk(map,from,to,HunterPosture.STANDING_HEIGHT);
+    }
+
+    private static Vec walk(HouseMap map,Vec from,Vec to,double height){
         int steps=Math.max(1,(int)Math.ceil(Math.hypot(to.x()-from.x(),to.z()-from.z())/.34));
         Vec feet=from;
         for(int i=1;i<=steps;i++){
             double t=i/(double)steps;
-            feet=map.resolveMove(feet,from.x()+(to.x()-from.x())*t,from.z()+(to.z()-from.z())*t);
+            feet=map.resolveMove(feet,from.x()+(to.x()-from.x())*t,from.z()+(to.z()-from.z())*t,height);
             if(feet==null)return null;
         }
         return feet;
     }
 
-    private static void reached(HouseMap map,List<Vec> points,String label){
+
+    private static void reached(HouseMap map,List<Vec> points,String label,double height){
         var feet=points.get(0);
         var support=map.nativeInvestigation().physics().support(feet.x(),feet.z(),feet.y(),.08);
         check(support!=null,"Missing route start "+label);
         feet=new Vec(feet.x(),support.y(),feet.z());
-        check(map.traversable(feet.x(),feet.y(),feet.z()),"Blocked route start "+label);
+        check(map.traversable(feet.x(),feet.y(),feet.z(),height),"Blocked route start "+label);
         for(int i=1;i<points.size();i++){
             var to=points.get(i);
-            var arrival=walk(map,feet,to);
+            var arrival=walk(map,feet,to,height);
             check(arrival!=null,"Blocked "+label+" at leg "+i+" "+feet+" to "+to);
             check(Math.abs(arrival.y()-to.y())<.22,"Incorrect storey "+label+" "+arrival+" vs "+to);
             feet=arrival;
@@ -160,7 +171,7 @@ public final class CollegeNativeRuntimeReview {
         check(samples>1000&&bodyLeaks==0&&opticalLeaks==0,"Same-level context seal regression");
     }
 
-    private static void audit(Campus campus){
+    static void audit(Campus campus){
         var map=campus.map();
         check(!new HouseMap(HouseMap.Site.COLLEGE).nativeSite(),"Candidate replaced public College");
         check(map.nativeSite()&&map.valid(),"Candidate graph or spawn poses");
@@ -212,19 +223,24 @@ public final class CollegeNativeRuntimeReview {
         van.setCargoDoorClosed(false);
         check(LanAcoustics.edgeCost(map,13,14)==Integer.MAX_VALUE,"Van ghost hearing isolation");
         auditContext(map);
+        replayRoutes(campus,HunterPosture.STANDING_HEIGHT);
+        System.out.printf("PASS spaces=40 owners=15 runtime_route_directions=%d aperture_pairs=%d rituals=3 collision_sha=%s scene_sha=%s%n",
+            2*campus.routes().size(),campus.apertures().size(),map.nativeInvestigation().physics().sha256(),map.nativeInvestigation().revision());
+    }
+
+    static void replayRoutes(Campus campus,double height){
+        var map=campus.map();
         var failures=new ArrayList<String>();
         for(var route:campus.routes()){
             var reversed=new ArrayList<>(route.points());
             java.util.Collections.reverse(reversed);
-            try{reached(map,route.points(),route.id()+" forward");}
+            try{reached(map,route.points(),route.id()+" forward",height);}
             catch(AssertionError failure){failures.add(failure.getMessage());}
-            try{reached(map,reversed,route.id()+" reverse");}
+            try{reached(map,reversed,route.id()+" reverse",height);}
             catch(AssertionError failure){failures.add(failure.getMessage());}
         }
         failures.forEach(System.out::println);
         check(failures.isEmpty(),"Native gameplay route failures "+failures.size()+"/"+2*campus.routes().size());
-        System.out.printf("PASS spaces=40 owners=15 runtime_route_directions=%d aperture_pairs=%d rituals=3 collision_sha=%s scene_sha=%s%n",
-            2*campus.routes().size(),campus.apertures().size(),map.nativeInvestigation().physics().sha256(),map.nativeInvestigation().revision());
     }
 
     private static void capture(HouseMap map,Path out)throws IOException{

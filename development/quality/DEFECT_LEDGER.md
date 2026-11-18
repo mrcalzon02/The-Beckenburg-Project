@@ -7656,15 +7656,15 @@ Older-map obligation: Check authored world transforms, textures, declared capaci
 
 ### DEV-541 — College entries and tunnel lack installed service lighting and final stair detailing
 
-**Status:** OPEN · **Affected:** College service spine and entrances
+**Status:** ELECTRICAL_VERIFIED_GUARDS_AND_REMAINING_SERVICES_OPEN · **Affected:** College service spine and entrances
 
 The cross-tunnel and three Wings remain rough in actual standing render. Current entrance and stair inspection depends on the player flashlight; stair guard details remain incomplete.
 
 Cause / uncertainty: The candidate imports reviewed structure before electrical distribution, supported lighting, physical controls and detail fit-out.
 
-Fix / next action: Design geographic exterior arrival light and a service-panel spine with floor-by-floor circuits. Install supported fixtures and remaining guards on actual surfaces. Check more than one circuit state and host ownership in the exact candidate.
+Fix / next action: Install the electrical system and verify floor-level switch access, actual powered and blackout frames, ghost trip and peer reconnect. Complete remaining exterior entrance lighting, guards and building services.
 
-Evidence and verification: development/levels/rebuild/college-ground-pass/runtime-review/checkpoint.json
+Evidence and verification: development/levels/rebuild/college-electrical-pass/checkpoint.json
 
 Older-map obligation: Check actual fixture support, normal lights, power-loss lighting and exposed stair/deck edges during the next services pass.
 
@@ -8325,6 +8325,62 @@ Fix / next action: Run the original overlapping-support case against its matchin
 Evidence and verification: development/levels/rebuild/house-parcel-boundary-pass/checkpoint.json
 
 Older-map obligation: Bind source-specific coordinates to the matching architectural version.
+
+### DEV-589 — Native floor hints could select an upper deck
+
+**Status:** CORRECTED_WITH_NEAR_DATUM_PRIORITY · **Affected:** College and shared native nominal-height queries
+
+Eleven of twelve floor-hinted switch approaches selected a surface on the floor above their switches.
+
+Cause / uncertainty: The native broad four-metre search returns the highest surface inside the entire band.
+
+Fix / next action: Query close to the selected room datum first. Preserve the fallback where the room datum has no physical surface. Verify all twelve College approaches, Hollow Creek and existing level controls.
+
+Evidence and verification: development/levels/rebuild/college-electrical-pass/checkpoint.json
+
+Older-map obligation: Use real storey elevations for runtime inspections at overlapping plans.
+
+### DEV-590 — Large native faces missed light between their corners
+
+**Status:** CORRECTED_WITH_LOCAL_SHARED_LIGHT_PROBES · **Affected:** Native investigation software and retained hardware surfaces
+
+The fixture field returned the expected power changes while the maintenance and tunnel room frames stayed visibly dark.
+
+Cause / uncertainty: Both native paths disabled large-face lighting subdivisions, including a separate retained OpenGL chunk gate.
+
+Fix / next action: Probe bounded subfaces near actual connected fixtures on both rendering paths. Compare powered and blackout pixels in the same real cameras.
+
+Evidence and verification: development/levels/rebuild/college-electrical-pass/checkpoint.json
+
+Older-map obligation: Check actual frame changes in large native rooms, corridors and façades after power and light placement.
+
+### DEV-591 — Candidate stair ceiling lights intersected actual stair geometry
+
+**Status:** CORRECTED_WITH_MEASURED_WALL_MOUNTS · **Affected:** College library, north and east cellar stair bays and lecture room
+
+The north tower ceiling fitting crossed an upper tread at a mounting edge. Other nominal ceilings were high above the occupied floor.
+
+Cause / uncertainty: Applying the same overhead layout to a flight or double-height volume did not establish a continuous mounting face.
+
+Fix / next action: Use masonry-mounted fixtures for the fitted stair flights and tall lecture room. Verify all mounting edges and re-run real traversal with standing and crouched bodies.
+
+Evidence and verification: development/levels/rebuild/college-electrical-pass/checkpoint.json
+
+Older-map obligation: Measure all fixture edges against complete surfaces and verify flight and rail clearances.
+
+### DEV-592 — House network regression misses legacy window acknowledgement
+
+**Status:** OPEN_EXACT_BASELINE_REPRODUCED · **Affected:** House AuthoredLevelNetworkTest upper-storey window action
+
+The packaged candidate and exact prior renderer, map, lighting and test sources fail waiting for ACCEPT|WINDOW.
+
+Cause / uncertainty: The recorded fixed House steps and nearest-window command require a measured aperture and host-body audit.
+
+Fix / next action: Use the ordinary host XYZ walk up to the actual fitted window, verify window handle reach, then confirm state and peer replay.
+
+Evidence and verification: development/levels/rebuild/college-electrical-pass/checkpoint.json
+
+Older-map obligation: Test network window commands from the measured actual approach on the matching House source.
 
 ## Required audit categories
 

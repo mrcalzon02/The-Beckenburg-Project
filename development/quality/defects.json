@@ -6011,12 +6011,12 @@
     {
       "id": "DEV-541",
       "title": "College entries and tunnel lack installed service lighting and final stair detailing",
-      "status": "OPEN",
+      "status": "ELECTRICAL_VERIFIED_GUARDS_AND_REMAINING_SERVICES_OPEN",
       "affected": "College service spine and entrances",
       "symptom": "The cross-tunnel and three Wings remain rough in actual standing render. Current entrance and stair inspection depends on the player flashlight; stair guard details remain incomplete.",
       "cause": "The candidate imports reviewed structure before electrical distribution, supported lighting, physical controls and detail fit-out.",
-      "action": "Design geographic exterior arrival light and a service-panel spine with floor-by-floor circuits. Install supported fixtures and remaining guards on actual surfaces. Check more than one circuit state and host ownership in the exact candidate.",
-      "evidence": "development/levels/rebuild/college-ground-pass/runtime-review/checkpoint.json",
+      "action": "Install the electrical system and verify floor-level switch access, actual powered and blackout frames, ghost trip and peer reconnect. Complete remaining exterior entrance lighting, guards and building services.",
+      "evidence": "development/levels/rebuild/college-electrical-pass/checkpoint.json",
       "older_maps": "Check actual fixture support, normal lights, power-loss lighting and exposed stair/deck edges during the next services pass."
     },
     {
@@ -6535,6 +6535,50 @@
       "action": "Run the original overlapping-support case against its matching original source. Keep the active House movement round trip, penetration recovery and live roster spawn checks.",
       "evidence": "development/levels/rebuild/house-parcel-boundary-pass/checkpoint.json",
       "older_maps": "Bind source-specific coordinates to the matching architectural version."
+    },
+    {
+      "id": "DEV-589",
+      "title": "Native floor hints could select an upper deck",
+      "status": "CORRECTED_WITH_NEAR_DATUM_PRIORITY",
+      "affected": "College and shared native nominal-height queries",
+      "symptom": "Eleven of twelve floor-hinted switch approaches selected a surface on the floor above their switches.",
+      "cause": "The native broad four-metre search returns the highest surface inside the entire band.",
+      "action": "Query close to the selected room datum first. Preserve the fallback where the room datum has no physical surface. Verify all twelve College approaches, Hollow Creek and existing level controls.",
+      "evidence": "development/levels/rebuild/college-electrical-pass/checkpoint.json",
+      "older_maps": "Use real storey elevations for runtime inspections at overlapping plans."
+    },
+    {
+      "id": "DEV-590",
+      "title": "Large native faces missed light between their corners",
+      "status": "CORRECTED_WITH_LOCAL_SHARED_LIGHT_PROBES",
+      "affected": "Native investigation software and retained hardware surfaces",
+      "symptom": "The fixture field returned the expected power changes while the maintenance and tunnel room frames stayed visibly dark.",
+      "cause": "Both native paths disabled large-face lighting subdivisions, including a separate retained OpenGL chunk gate.",
+      "action": "Probe bounded subfaces near actual connected fixtures on both rendering paths. Compare powered and blackout pixels in the same real cameras.",
+      "evidence": "development/levels/rebuild/college-electrical-pass/checkpoint.json",
+      "older_maps": "Check actual frame changes in large native rooms, corridors and façades after power and light placement."
+    },
+    {
+      "id": "DEV-591",
+      "title": "Candidate stair ceiling lights intersected actual stair geometry",
+      "status": "CORRECTED_WITH_MEASURED_WALL_MOUNTS",
+      "affected": "College library, north and east cellar stair bays and lecture room",
+      "symptom": "The north tower ceiling fitting crossed an upper tread at a mounting edge. Other nominal ceilings were high above the occupied floor.",
+      "cause": "Applying the same overhead layout to a flight or double-height volume did not establish a continuous mounting face.",
+      "action": "Use masonry-mounted fixtures for the fitted stair flights and tall lecture room. Verify all mounting edges and re-run real traversal with standing and crouched bodies.",
+      "evidence": "development/levels/rebuild/college-electrical-pass/checkpoint.json",
+      "older_maps": "Measure all fixture edges against complete surfaces and verify flight and rail clearances."
+    },
+    {
+      "id": "DEV-592",
+      "title": "House network regression misses legacy window acknowledgement",
+      "status": "OPEN_EXACT_BASELINE_REPRODUCED",
+      "affected": "House AuthoredLevelNetworkTest upper-storey window action",
+      "symptom": "The packaged candidate and exact prior renderer, map, lighting and test sources fail waiting for ACCEPT|WINDOW.",
+      "cause": "The recorded fixed House steps and nearest-window command require a measured aperture and host-body audit.",
+      "action": "Use the ordinary host XYZ walk up to the actual fitted window, verify window handle reach, then confirm state and peer replay.",
+      "evidence": "development/levels/rebuild/college-electrical-pass/checkpoint.json",
+      "older_maps": "Test network window commands from the measured actual approach on the matching House source."
     }
   ],
   "audit_categories": [

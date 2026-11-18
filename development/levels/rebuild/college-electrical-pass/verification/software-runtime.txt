@@ -1,0 +1,9 @@
+GHOST_GRAPH rooms=14 directed_edges=30
+CONTEXT seams=56 samples=1283 body_open=0 optical_open=0
+PASS spaces=40 owners=15 runtime_route_directions=88 aperture_pairs=15 rituals=3 collision_sha=6f518e5042973f3a8289b1e00080cc628991ddd564ddb967cf9b988382a199cd scene_sha=3f4e14c71a713d3eda79a81bad32077dac4bc1cfd2ab75b5b7b2cc6522e82999
+PASS all 88 native route directions crouched
+PASS 68 hardwired loads, all twelve room switch effects and independent van battery; minimum energy drop 2.6452, max blackout sample 0.9000
+PASS four real TCP peers: exact College revision, supported move, room switching, source stop/start, authorized ghost trip, blackout view and reconnect resync, physical reset and rejected distant/ghost control
+2026-11-18T06:16:56.573467800Z [main] RENDER SLOW stage=idle faces=44941 visible_faces=19633 culled_faces=25308 target=960x600 build_ms=38 lighting_raster_ms=594
+PIXELS maintenance-board software supplied over blackout=433383
+PIXELS cross-tunnel software supplied over blackout=410882

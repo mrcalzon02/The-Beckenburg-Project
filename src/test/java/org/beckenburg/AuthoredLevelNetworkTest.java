@@ -6,6 +6,7 @@ public final class AuthoredLevelNetworkTest {
  static class Peer implements AutoCloseable {
   final BlockingQueue<String> inbox=new LinkedBlockingQueue<>();final LanClient client;
   Peer(int port,boolean ghost,String name)throws Exception{client=new LanClient("127.0.0.1",port,ghost,name,inbox::offer);}
+  Peer(int port,LanClient.ResumeTicket ticket)throws Exception{client=new LanClient("127.0.0.1",port,ticket,inbox::offer);}
   String await(String prefix)throws Exception{long end=System.nanoTime()+TimeUnit.SECONDS.toNanos(5);while(System.nanoTime()<end){String f=inbox.poll(50,TimeUnit.MILLISECONDS);if(f!=null){if(client.seat().equals("GHOST"))assertPublic(f);if(f.startsWith(prefix))return f;}}throw new AssertionError("missing "+prefix);}
   public void close(){client.close();}
  }

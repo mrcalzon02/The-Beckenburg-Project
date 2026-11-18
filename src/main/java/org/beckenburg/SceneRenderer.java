@@ -2332,13 +2332,9 @@ public final class SceneRenderer {
      * falloff without the old CPU per-pixel triangle scan. */
     private void appendGpuFace(Face face,int room,int depth,
             java.util.Map<Integer,GpuFloats> batches){
-        if(room>=0&&room<12&&(lightingMap==null||!lightingMap.nativeSite())
-            &&depth<(preparingStableGpuFace?preparingStableGpuLod:
-                lightingSubdivisionLimit(Math.max(0,
-                    Math.min(camera(face.a).z,
-                        Math.min(camera(face.b).z,camera(face.c).z)))))
-            &&Math.max(edge2(face.a,face.b),
-                Math.max(edge2(face.b,face.c),edge2(face.c,face.a)))>2.6){
+        if(depth<(preparingStableGpuFace?preparingStableGpuLod:
+            lightingSubdivisionLimit(Math.max(0,Math.min(camera(face.a).z,Math.min(camera(face.b).z,camera(face.c).z)))))
+            &&needsFixtureProbes(face,room)){
             Point ab=mid(face.a,face.b),bc=mid(face.b,face.c),ca=mid(face.c,face.a);
             Point nab=midNormal(face.na,face.nb),nbc=midNormal(face.nb,face.nc),nca=midNormal(face.nc,face.na);
             double abu=(face.au+face.bu)/2,abv=(face.av+face.bv)/2;
@@ -3357,7 +3353,9 @@ public final class SceneRenderer {
         var b=chunk.bounds;
         // Full near-field lighting detail is prepared once per source chunk;
         // GPU residency makes per-camera lighting tessellation unnecessary.
-        int lod=(lightingMap==null||!lightingMap.nativeSite())&&chunk.indoor?3:0;
+        boolean nativeLighting=lightingMap!=null&&lightingMap.nativeInvestigation()!=null
+            &&fixtureLighting.nativeLoadNear(b.minX,b.minY,b.minZ,b.maxX,b.maxY,b.maxZ);
+        int lod=nativeLighting||(lightingMap==null||!lightingMap.nativeSite())&&chunk.indoor?3:0;
         long version=chunk.lightVersion;
         long localOccluder=chunk.occluderVersion;
         // This check is O(1) for an unchanged frame. Spatial revision
@@ -3835,6 +3833,18 @@ public final class SceneRenderer {
         if(nearDepth>3)return 2;
         return 3;
     }
+    private boolean needsFixtureProbes(Face face,int room){
+        if(Math.max(edge2(face.a,face.b),Math.max(edge2(face.b,face.c),edge2(face.c,face.a)))<=2.6)
+            return false;
+        if(lightingMap==null||!lightingMap.nativeSite())return room>=0&&room<HouseMap.INDOOR_ROOMS;
+        if(lightingMap.nativeInvestigation()==null)return false;
+        // Use the same subdivisions in a blackout. Only the light changes.
+        // Limit probes to surfaces inside a real lamp's reach.
+        var a=face.a;var b=face.b;var c=face.c;
+        return fixtureLighting.nativeLoadNear(
+            Math.min(a.x,Math.min(b.x,c.x)),Math.min(a.y,Math.min(b.y,c.y)),Math.min(a.z,Math.min(b.z,c.z)),
+            Math.max(a.x,Math.max(b.x,c.x)),Math.max(a.y,Math.max(b.y,c.y)),Math.max(a.z,Math.max(b.z,c.z)));
+    }
     private static Point mid(Point a,Point b){return new Point((a.x+b.x)/2,(a.y+b.y)/2,(a.z+b.z)/2);}
     private static Point midNormal(Point a,Point b){
         if(a==null||b==null)return null;
@@ -3893,10 +3903,8 @@ public final class SceneRenderer {
             return;
         }
 
-        if(room>=0&&room<12&&(lightingMap==null||!lightingMap.nativeSite())
-            &&depth<lightingSubdivisionLimit(Math.max(0,
-                Math.min(ca0.z,Math.min(cb0.z,cc0.z))))
-            &&Math.max(edge2(f.a,f.b),Math.max(edge2(f.b,f.c),edge2(f.c,f.a)))>2.6){
+        if(depth<lightingSubdivisionLimit(Math.max(0,Math.min(ca0.z,Math.min(cb0.z,cc0.z))))
+            &&needsFixtureProbes(f,room)){
             for(var child:subdivideLitFace(f))drawLitFace(child,room,depth+1);return;
         }
         List<Vertex> pts=clip(normalLight(litVertex(f.a,f.au,f.av,f.material,room),f.a,room,f.na),normalLight(litVertex(f.b,f.bu,f.bv,f.material,room),f.b,room,f.nb),normalLight(litVertex(f.c,f.cu,f.cv,f.material,room),f.c,room,f.nc));var weather=weatherCoating(f,room);

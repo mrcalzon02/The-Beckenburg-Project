@@ -7066,5 +7066,23 @@
       "exact_readables": 3
     },
     "next_action": "Fit College service equipment and distribution to the actual maintenance rooms and grounded exterior. Verify stable owners, real door and circuit behavior, and normal host dispatch."
+  },
+  "college_electrical_checkpoint": {
+    "status": "COLLEGE_ELECTRICAL_STAGED_GAMEPLAY_PASS_SITE_ACCEPTANCE_OPEN",
+    "baseline": "f46c49108a189c4e34eb791cb6374d6becd559b9",
+    "roster": "development/levels/rebuild/college-electrical-pass/roster.json",
+    "checkpoint": "development/levels/rebuild/college-electrical-pass/checkpoint.json",
+    "native_revision": "3f4e14c71a713d3eda79a81bad32077dac4bc1cfd2ab75b5b7b2cc6522e82999",
+    "counts": {
+      "native_loaded_lights": 68,
+      "switches": 12,
+      "ordinary_or_vertical_directions": 88,
+      "postures": 2,
+      "sealed_context_samples": 1283,
+      "real_loopback_peers": 4,
+      "staged_native_site_packets": 25,
+      "roster_packets": 29
+    },
+    "next_action": "Fit College door leaves to the actual public and service frames, complete guards and whole-site containment, then replay ordinary arrival and the case with all services."
   }
 }
