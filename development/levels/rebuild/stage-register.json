@@ -4159,7 +4159,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "88a55740a1ab7fc6efd829837b87bf9d78372423",
+          "source_sha": "df22868dc2878308c56712a0305b9be57e50811a",
           "evidence": [
             "development/levels/rebuild/wld-09/rough-layout.json",
             "development/levels/rebuild/dam-east-hall-pass/checkpoint.json"
@@ -4171,7 +4171,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "88a55740a1ab7fc6efd829837b87bf9d78372423",
+          "source_sha": "df22868dc2878308c56712a0305b9be57e50811a",
           "evidence": [
             "development/levels/rebuild/structures/wld-09/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4277,7 +4277,7 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "88a55740a1ab7fc6efd829837b87bf9d78372423",
+          "source_sha": "df22868dc2878308c56712a0305b9be57e50811a",
           "evidence": [
             "development/levels/rebuild/dam-spillway-gallery-pass/checkpoint.json",
             "development/levels/rebuild/dam-east-hall-pass/checkpoint.json"

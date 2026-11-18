@@ -8032,6 +8032,20 @@ Evidence and verification: development/levels/rebuild/dam-east-hall-pass/checkpo
 
 Older-map obligation: Tie each gate to its exact scene and verify shared ownership independently of source pose samples.
 
+### DEV-568 — Lookout lower stair toe needs its own complete receiving surface
+
+**Status:** ROADHEAD_PREVIEW_VERIFIED_LOWER_LANDING_OPEN · **Affected:** WLD-04 lower switchback court and L03 stair arrival
+
+The first isolated grading trial overlapped the lower stair toe and blocked L03 in both directions at the ground-to-stair transition.
+
+Cause / uncertainty: The lower court grade extended into the surveyed toe of the first full stair and changed its approach profile.
+
+Fix / next action: Pull the roadhead grade back to its geographic court boundary. Preserve the full flight and reconstruct the toe, sill and approach as one supported landing.
+
+Evidence and verification: development/levels/rebuild/dam-east-hall-pass/checkpoint.json
+
+Older-map obligation: Repeat bidirectional full stair chains after editing external grades near independently authored landings.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

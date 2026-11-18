@@ -73,5 +73,43 @@
     "development/levels/rebuild/dam-east-hall-pass/wld-09/quarantine.json": "926320388b134729ee197ca47103f950a5e54dbcd222fe5270e3cbd416db7a3a",
     "tools/build_dam_east_hall.py": "ea731ffae0518d21013e68132298d065721cc43626f9c44d22728914ce82f437",
     "tools/verify_dam_east_hall.py": "5cd9070d39e6ec1f1b8c557e44898e7f6823ef38a16a58955244cb61cb8fa54d"
+  },
+  "publication": {
+    "construction_sha": "df22868dc2878308c56712a0305b9be57e50811a",
+    "verified_remote_sha": "df22868dc2878308c56712a0305b9be57e50811a",
+    "remote_ref": "refs/heads/map/roster-structure-batch",
+    "draft_pull_request": 86,
+    "base_ref": "map/house-default",
+    "base_sha": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "main_sha": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "verified_source_blobs": 37,
+    "gallery_images": 11145,
+    "hosted_gallery_run": 44217791847,
+    "hosted_gallery_sha": "df22868dc2878308c56712a0305b9be57e50811a",
+    "hosted_gallery_conclusion": "success",
+    "public_html_status": 200,
+    "public_captures": {
+      "overview.png": 404,
+      "east-service-aisle.png": 404
+    },
+    "status": "VERIFIED_BRANCH_AND_DRAFT_PUBLIC_DEPLOYMENT_PENDING"
+  },
+  "next_measured_fit": {
+    "id": "WLD-04",
+    "name": "Widow\u2019s Peak Fire Lookout",
+    "status": "ISOLATED_ROADHEAD_PREVIEW_MOVEMENT_REGRESSION_FREE",
+    "prior_standing_contacts": 165,
+    "preview_standing_contacts": 105,
+    "preview_scope": "Full roadhead and lower court. All 361 existing nonterrain collision records are preserved. The navigation guide starts at the real van ramp.",
+    "preview_terrain_source": "development/levels/rebuild/service-ground-bay-pass/worlds/wld-04/terrain-world",
+    "preview_source_native_sha256": "837b74ce8ae499eab2feae7e7b03f90f588e9d3eab8d2ff95e82186071e8c097",
+    "preview_terrain_sha256": "c3a3ed40a82b9813c0dc1997d0db04cf286ddb90525edcb9bdbb95e6dfebe047",
+    "preserved_cut_controls": 1169,
+    "preview_grade_program": [
+      "Van roadhead and turning ground\tGRAVEL\t4.1\tplane:0:0:0\t16.8\t69.4\t20.0\t66.5\t31.6\t64.8\t36.4\t65.9\t39.2\t71.7\t38.3\t80\t34.4\t84.6\t20.2\t84.8\t17.5\t81.1\t15.7\t74.7",
+      "Full lower switchback court\tGRAVEL\t1.35\tplane:0:0:0\t11.9\t60.4\t17.1\t60.2\t22.8\t60.1\t29\t60.25\t35.7\t60.6\t35.1\t65.8\t29.4\t67.8\t20.2\t67.4\t14.4\t64.9\t10.9\t62.8"
+    ],
+    "rejected_observation": "A larger lower court grade touched the existing L03 lower stair toe. That preview blocked L03 in both directions. The widened roadhead and geographically bounded replacement grade preserve all eleven vertical routes and their fifteen flights.",
+    "pending": "Finish the lower stair receiving surface, the ruin threshold, the tower and return landings and the narrow tower cab openings. Preserve actual structure and use its surveyed floor and guard dimensions."
   }
 }

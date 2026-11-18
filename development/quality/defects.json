@@ -6304,6 +6304,17 @@
       "action": "Check whole-site enclosure and occupancy. Bind authored rooms, spawns, power, navigation, portals and acoustics to the actual renderer and collision in shared contexts.",
       "evidence": "development/levels/rebuild/dam-east-hall-pass/checkpoint.json",
       "older_maps": "Tie each gate to its exact scene and verify shared ownership independently of source pose samples."
+    },
+    {
+      "id": "DEV-568",
+      "title": "Lookout lower stair toe needs its own complete receiving surface",
+      "status": "ROADHEAD_PREVIEW_VERIFIED_LOWER_LANDING_OPEN",
+      "affected": "WLD-04 lower switchback court and L03 stair arrival",
+      "symptom": "The first isolated grading trial overlapped the lower stair toe and blocked L03 in both directions at the ground-to-stair transition.",
+      "cause": "The lower court grade extended into the surveyed toe of the first full stair and changed its approach profile.",
+      "action": "Pull the roadhead grade back to its geographic court boundary. Preserve the full flight and reconstruct the toe, sill and approach as one supported landing.",
+      "evidence": "development/levels/rebuild/dam-east-hall-pass/checkpoint.json",
+      "older_maps": "Repeat bidirectional full stair chains after editing external grades near independently authored landings."
     }
   ],
   "audit_categories": [
