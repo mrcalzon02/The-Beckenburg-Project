@@ -7794,6 +7794,62 @@ Evidence and verification: development/levels/rebuild/monastery-cloister-pass/ch
 
 Older-map obligation: Record architectural evidence separately from live room, service and multiplayer checks.
 
+### DEV-551 — Lightstation upper approach guides occupied stair openings and the tower lacked a visible load path
+
+**Status:** CORRECTED_AT_COAST_ENTRANCE_CHECKPOINT · **Affected:** WLD-14 keeper landings, oil-house yard and lighthouse approach
+
+Five ordinary links failed. The inspected tower treads appeared suspended and the upper guides started inside the wells.
+
+Cause / uncertainty: The former circulation strips and wall fragments did not describe complete floors, thresholds or stair support.
+
+Fix / next action: Rebuild whole upper decks around their openings, fit actual doors, grade the grounds and found two continuous helical girders on a central column.
+
+Evidence and verification: development/levels/rebuild/coast-entrances-pass/checkpoint.json
+
+Older-map obligation: Review the section and standing view together for all retained exposed flights.
+
+### DEV-552 — Saint Elara boarding strips interrupted the working deck and missed supported landings
+
+**Status:** CORRECTED_AT_COAST_ENTRANCE_CHECKPOINT · **Affected:** WLD-15 fixed quay, ship weather deck and port stair receivers
+
+The stern and starboard approaches lost support. Landing strips and several doorways reached the side of a live stair flight.
+
+Cause / uncertainty: The former support strips traced guidance rather than the full hull shape, pier shore contact or actual level stair ends.
+
+Fix / next action: Fit the hull crown, separate gangway and piled pier and rebuild full receivers and doorway bulkheads at each real stair end.
+
+Evidence and verification: development/levels/rebuild/coast-entrances-pass/checkpoint.json
+
+Older-map obligation: Check maritime bow and stern against actual hull cross-sections before deck authoring.
+
+### DEV-553 — Vessel pilot landing plate crossed the existing top treads
+
+**Status:** CORRECTED_WITH_DECKS_BUTTED_AT_TREADS · **Affected:** WLD-15 crew upper landing and other vessel upper interfaces
+
+The first widened crew landing blocked the last treads even though ordinary centre routes passed.
+
+Cause / uncertainty: A rectangular upper slab continued 1.17 m beyond the top end and into the approach on the flight.
+
+Fix / next action: End the plate at the real top edge and place its doorway entirely on level floor. Rerun all eleven vertical paths and standing samples.
+
+Evidence and verification: development/levels/rebuild/coast-entrances-pass/checkpoint.json
+
+Older-map obligation: Inspect full forward and reverse travel after changing any stair-end or slab depth.
+
+### DEV-554 — Coastal room fit, watertight work and live acceptance remain open
+
+**Status:** OPEN_FINISH_AND_LIVE_OWNERSHIP · **Affected:** WLD-14 and WLD-15 remaining construction and gameplay suites
+
+Native access is checked. Working-room capacity, whole-site boundaries, complete guards, final enclosure, water, services and runtime behavior still need evidence.
+
+Cause / uncertainty: The current checkpoint covers entrance architecture, deck transfers and ordinary traversability.
+
+Fix / next action: Finish the physical site and working functions, verify actual engine render and shared position ownership, and run the documented acceptance suites.
+
+Evidence and verification: development/levels/rebuild/coast-entrances-pass/checkpoint.json
+
+Older-map obligation: Keep per-site capacity, structural, service and multiplayer acceptance explicit.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

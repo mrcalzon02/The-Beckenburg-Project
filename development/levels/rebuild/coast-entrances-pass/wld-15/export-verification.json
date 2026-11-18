@@ -1,0 +1,46 @@
+{
+  "glb_sha256": "38b359da3b9ce4e68cf2d097c54514959cc9924c9ed251c93f5ebc4d4d9dbfa5",
+  "native_sha256": "1383ce663a5678bb3eafca6e61730d9c3ac8b3d1f250f14fec29e804486cff8e",
+  "added_closed_parts": 269,
+  "retained_native_records": 138,
+  "aperture_rays": 63,
+  "sill_controls": 42,
+  "other_standing": 11,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/coast-entrances-batch/wld-15-overview.png",
+      "sha256": "023961287564eff67e0078c3ef3d1a787c02893d2af87a4bbcaa45bd249560e7",
+      "hidden": [],
+      "source_glb_sha256": "38b359da3b9ce4e68cf2d097c54514959cc9924c9ed251c93f5ebc4d4d9dbfa5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/coast-entrances-batch/wld-15-stern-boarding.png",
+      "sha256": "9f87f97d518ef09ffdd85e1ad61b94726538d730b2a3c17d675d0473287cdfae",
+      "hidden": [],
+      "source_glb_sha256": "38b359da3b9ce4e68cf2d097c54514959cc9924c9ed251c93f5ebc4d4d9dbfa5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/coast-entrances-batch/wld-15-port-service-pier.png",
+      "sha256": "de11a8217b54555881dcf66447aa4c5da8adffb752f93193acbcedba074bd69c",
+      "hidden": [],
+      "source_glb_sha256": "38b359da3b9ce4e68cf2d097c54514959cc9924c9ed251c93f5ebc4d4d9dbfa5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/coast-entrances-batch/wld-15-starboard-foredeck.png",
+      "sha256": "ac32996e0a2868ca0d11c4ab7572b3356f4d715d6153e6d402618d70494f23b7",
+      "hidden": [],
+      "source_glb_sha256": "38b359da3b9ce4e68cf2d097c54514959cc9924c9ed251c93f5ebc4d4d9dbfa5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/coast-entrances-batch/wld-15-gangway-bearing-section.png",
+      "sha256": "6ab14507508ff29aafa0ad1c8a4a9f5791644ff3b61f09abce565cb7f748401e",
+      "hidden": [
+        "WATER PLACEHOLDER / layers and transparency pending",
+        "Pointed retired vessel hull / empty interior"
+      ],
+      "source_glb_sha256": "38b359da3b9ce4e68cf2d097c54514959cc9924c9ed251c93f5ebc4d4d9dbfa5"
+    }
+  ]
+}

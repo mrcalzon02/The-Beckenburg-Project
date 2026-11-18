@@ -1035,3 +1035,15 @@ The native structural and standing exports and measured plan are linked from dev
 Monastery construction 61ebdf8aa48bd9c1492f0d3f4c40d34890b21c6e was verified on the authorized branch and in draft PR 86. All 58 committed source and evidence hashes match, and the 11,080-image local gallery and hosted run 44200351037 passed. The public gallery returned HTTP 200 and the new overview returned HTTP 404. Public deployment remains pending.
 
 A same-source sweep across the 25 active native packets passed 536 of 567 ordinary links, all 236 declared flights and all 86 complete vertical routes. 4,312 of 137,850 standing lane samples remain invalid. Structural review of the active exports found physical guide strips, disconnected exterior transitions or exposed stair structures at Morrow Point, Saint Elara, Red Mesa, and Mourning Marsh. Morrow Point and Saint Elara have eight open ordinary links between them. Their keeper-house and dock entrances come next, beginning with founded surfaces and measured doorway and stair interfaces. Household and church blockers remain in the queue.
+
+## 2026-11-17 / Morrow Point Lightstation and MV Saint Elara entrances
+
+Baseline ea56d46559e3e5435935dd3517a76535c6222a5f. The active 29-packet source authority is coast-entrances-pass/roster.json. Only WLD-14 and WLD-15 changed.
+
+The Lightstation uses the saved geographic roadhead, keeper forecourt and oil-house court. The keeper porch roof bears on stone piers and the façade. Both upper stairwells have single floor plates, guarded aisles and doors on level floor. A masonry bearing joins the covered passage to the real circular tower sill. The tower uses two continuous helical girders, twenty radial arms and one founded center column below the retained steps. The original 817 terrain cut controls reopened, with the source height image and adaptive topology intact.
+
+Saint Elara uses the existing level shore shelf, a founded quay head, a fixed 8 m stern gangway and a separate timber service pier on six paired pile bents. The new continuous weather deck fits the actual hull crown. Five bracket-supported stair landings replaced narrow study remnants. Three upper doorways moved away from the flight sides to the complete landings. Two lower bulkhead doors and the galley/mess bulkhead also use fitted frames.
+
+Both sources retire sixteen physical study strips and the Lightstation’s narrow arrival bearing. All 32 ordinary links, 146 flight checks, 11 complete vertical links and six approach/circuit walks passed in both directions. All 6,723 standing samples passed. Export reimports matched the final native structure and retained source records. Standing and structural views and both dimensioned plan/flow charts are bound in development/levels/rebuild/coast-entrances-pass/checkpoint.json.
+
+DEV-551 through DEV-554 cover the inherited support defects, the first landings that overlapped the highest treads, and outstanding watertight/lighting/room and runtime gates. The 40-space fit, doors and continuous handrails, coastal containment, drainage and live shared-service and multiplayer gates remain open.

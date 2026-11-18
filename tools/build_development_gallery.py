@@ -17,7 +17,11 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/monastery-cloister-batch/' in path:
+    if '/coast-entrances-batch/' in path:
+        if 'before' in p.name:kind='Native coast map before reconstruction'
+        elif 'section' in p.name:kind='Native fixed gangway bearing section with water hidden'
+        else:kind='Native Lightstation and Saint Elara construction review'
+    elif '/monastery-cloister-batch/' in path:
         if 'before' in p.name:kind='Native Monastery before the cloister and bell tower rebuild'
         elif p.stem=='tower-section':kind='Native bell stair section with inspection layers hidden'
         else:kind='Native Monastery courts, doorway and stair inspection'

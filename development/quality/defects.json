@@ -6117,6 +6117,50 @@
       "action": "Fit the gatehouse, dorm, refectory and wash/vestry program, measure the search envelope, and exercise the shared runtime and multiplayer with the verified geometry.",
       "evidence": "development/levels/rebuild/monastery-cloister-pass/checkpoint.json",
       "older_maps": "Record architectural evidence separately from live room, service and multiplayer checks."
+    },
+    {
+      "id": "DEV-551",
+      "title": "Lightstation upper approach guides occupied stair openings and the tower lacked a visible load path",
+      "status": "CORRECTED_AT_COAST_ENTRANCE_CHECKPOINT",
+      "affected": "WLD-14 keeper landings, oil-house yard and lighthouse approach",
+      "symptom": "Five ordinary links failed. The inspected tower treads appeared suspended and the upper guides started inside the wells.",
+      "cause": "The former circulation strips and wall fragments did not describe complete floors, thresholds or stair support.",
+      "action": "Rebuild whole upper decks around their openings, fit actual doors, grade the grounds and found two continuous helical girders on a central column.",
+      "evidence": "development/levels/rebuild/coast-entrances-pass/checkpoint.json",
+      "older_maps": "Review the section and standing view together for all retained exposed flights."
+    },
+    {
+      "id": "DEV-552",
+      "title": "Saint Elara boarding strips interrupted the working deck and missed supported landings",
+      "status": "CORRECTED_AT_COAST_ENTRANCE_CHECKPOINT",
+      "affected": "WLD-15 fixed quay, ship weather deck and port stair receivers",
+      "symptom": "The stern and starboard approaches lost support. Landing strips and several doorways reached the side of a live stair flight.",
+      "cause": "The former support strips traced guidance rather than the full hull shape, pier shore contact or actual level stair ends.",
+      "action": "Fit the hull crown, separate gangway and piled pier and rebuild full receivers and doorway bulkheads at each real stair end.",
+      "evidence": "development/levels/rebuild/coast-entrances-pass/checkpoint.json",
+      "older_maps": "Check maritime bow and stern against actual hull cross-sections before deck authoring."
+    },
+    {
+      "id": "DEV-553",
+      "title": "Vessel pilot landing plate crossed the existing top treads",
+      "status": "CORRECTED_WITH_DECKS_BUTTED_AT_TREADS",
+      "affected": "WLD-15 crew upper landing and other vessel upper interfaces",
+      "symptom": "The first widened crew landing blocked the last treads even though ordinary centre routes passed.",
+      "cause": "A rectangular upper slab continued 1.17 m beyond the top end and into the approach on the flight.",
+      "action": "End the plate at the real top edge and place its doorway entirely on level floor. Rerun all eleven vertical paths and standing samples.",
+      "evidence": "development/levels/rebuild/coast-entrances-pass/checkpoint.json",
+      "older_maps": "Inspect full forward and reverse travel after changing any stair-end or slab depth."
+    },
+    {
+      "id": "DEV-554",
+      "title": "Coastal room fit, watertight work and live acceptance remain open",
+      "status": "OPEN_FINISH_AND_LIVE_OWNERSHIP",
+      "affected": "WLD-14 and WLD-15 remaining construction and gameplay suites",
+      "symptom": "Native access is checked. Working-room capacity, whole-site boundaries, complete guards, final enclosure, water, services and runtime behavior still need evidence.",
+      "cause": "The current checkpoint covers entrance architecture, deck transfers and ordinary traversability.",
+      "action": "Finish the physical site and working functions, verify actual engine render and shared position ownership, and run the documented acceptance suites.",
+      "evidence": "development/levels/rebuild/coast-entrances-pass/checkpoint.json",
+      "older_maps": "Keep per-site capacity, structural, service and multiplayer acceptance explicit."
     }
   ],
   "audit_categories": [

@@ -275,3 +275,6 @@ tools/prepare_mine_yard.py -text whitespace=cr-at-eol
 development/levels/rebuild/monastery-cloister-pass/** -text whitespace=cr-at-eol
 tools/build_monastery.py -text whitespace=cr-at-eol
 tools/prepare_monastery.py -text whitespace=cr-at-eol
+development/levels/rebuild/coast-entrances-pass/** -text whitespace=cr-at-eol
+tools/build_coast_entrances.py -text whitespace=cr-at-eol
+tools/prepare_coast_entrances.py -text whitespace=cr-at-eol
