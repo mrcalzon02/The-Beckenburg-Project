@@ -93,5 +93,43 @@
     "tools/build_lookout_landings.py": "dbbf9dc4c7ef098493736790008f8353a09948c721736a217abd0db75d29d201",
     "tools/prepare_lookout_landings.py": "2dc07dca30cfa4517f2d48151f9073039580082e1a8a05e0bd5c7cc301d0ad1b",
     "tools/verify_lookout_landings.py": "7de2156da54693b7d3684d7d8b4bd253c5d13d5e1e9e537ce3c50ca3e80e45a1"
+  },
+  "publication": {
+    "construction_sha": "9dfc9555433c64774e3c8414bd3c9b40dc3fcb1d",
+    "verified_remote_sha": "9dfc9555433c64774e3c8414bd3c9b40dc3fcb1d",
+    "remote_ref": "refs/heads/map/roster-structure-batch",
+    "draft_pull_request": 86,
+    "base_ref": "map/house-default",
+    "base_sha": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "main_sha": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "verified_source_blobs": 57,
+    "gallery_images": 11155,
+    "hosted_gallery_run": 44221494086,
+    "hosted_gallery_sha": "9dfc9555433c64774e3c8414bd3c9b40dc3fcb1d",
+    "hosted_gallery_conclusion": "success",
+    "public_html_status": 200,
+    "public_captures": {
+      "overview.png": 404,
+      "ruin-porch.png": 404
+    },
+    "status": "VERIFIED_BRANCH_AND_DRAFT_PUBLIC_DEPLOYMENT_PENDING"
+  },
+  "next_measured_fit": {
+    "MANSION": {
+      "name": "Blackthorn Manor",
+      "remaining_standing_contacts": 145,
+      "survey_poses": 3736,
+      "native_sha256": "096bb68ec37f982eb49e764e38e43f4ce2995c890f9aefe42d7dde20c517fd46",
+      "finding": "The service bay\u2019s full-body band at Z 8 lies at X 43.00\u201343.50 on the ground floor and X 42.50\u201343.00 upstairs. The attic has its clear east landing at X 43.00 and above. The south doors at all three floors measure 1.05 m at X 41.50, Z 14.00.",
+      "work_evidence": "Exact door, rail and bearing bounds and stance grids are under build/post-lookout-landings/next-architecture/mansion."
+    },
+    "SCHOOL": {
+      "name": "Ravenshade School",
+      "remaining_standing_contacts": 100,
+      "survey_poses": 1005,
+      "native_sha256": "cc4fbc9e4b65ac12eab3b58adf9b14f5c9cbbab713efcf2b5ebb1b61b478e5aa",
+      "finding": "The north bypass has full standing concentrated around X 29.25\u201329.50 in the cut between Z 13.50 and 16.00. Its actual north sill is at Z 12.00, X 29.10, with 1.05 m fitted width. The lower flight entrance and upper arrival share a structurally distinct landing.",
+      "work_evidence": "Exact wall, rail and frame bounds and stance grids are under build/post-lookout-landings/next-architecture/school."
+    }
   }
 }

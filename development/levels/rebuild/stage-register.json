@@ -3092,7 +3092,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "30dcf87ab5893de95a92fd20e1713e9c81c506a1",
+          "source_sha": "9dfc9555433c64774e3c8414bd3c9b40dc3fcb1d",
           "evidence": [
             "development/levels/rebuild/wld-04/rough-layout.json",
             "development/levels/rebuild/lookout-landing-pass/checkpoint.json"
@@ -3104,7 +3104,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "30dcf87ab5893de95a92fd20e1713e9c81c506a1",
+          "source_sha": "9dfc9555433c64774e3c8414bd3c9b40dc3fcb1d",
           "evidence": [
             "development/levels/rebuild/structures/wld-04/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3172,7 +3172,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "30dcf87ab5893de95a92fd20e1713e9c81c506a1",
+          "source_sha": "9dfc9555433c64774e3c8414bd3c9b40dc3fcb1d",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -3211,7 +3211,7 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "30dcf87ab5893de95a92fd20e1713e9c81c506a1",
+          "source_sha": "9dfc9555433c64774e3c8414bd3c9b40dc3fcb1d",
           "evidence": [
             "development/levels/rebuild/lookout-landing-pass/checkpoint.json"
           ],
