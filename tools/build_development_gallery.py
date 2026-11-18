@@ -17,7 +17,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/measured-arrival-and-approach-batch/' in path:
+    if '/native-foyer-door-batch/' in path:
+        kind='Staged School runtime door state' if p.name.startswith('school-') else 'Native fitted crossdock and doorway review'
+    elif '/measured-arrival-and-approach-batch/' in path:
         kind='Native farm and station threshold review or School staged arrival geometry'
     elif '/interior-stair-landing-batch/' in path:
         kind='Native Manor and School before stair landing repairs' if 'before' in p.name else 'Native Manor and School service doors, guarded aisles and stair approaches'

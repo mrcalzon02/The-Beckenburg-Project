@@ -1,7 +1,7 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2047,
+  "local_files": 2050,
   "unique_local_file_hashes": 1873,
   "collections": {
     "existing_map_specific_roughs": 298,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 273
+    "native_map_exports": 276
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -28923,6 +28923,42 @@
       "bytes": 4017852
     },
     {
+      "id": "fitted-approaches",
+      "label": "fitted-approaches",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/native-foyer-door-pass/church/fitted-approaches.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f",
+      "bytes": 1989496
+    },
+    {
+      "id": "fitted-approaches",
+      "label": "fitted-approaches",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "65b40fb3878ca5e2dae76d6aa487265d069646a04d8612bb0071eb8b33287caf",
+      "bytes": 4347200
+    },
+    {
+      "id": "fitted-approaches",
+      "label": "fitted-approaches",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/native-foyer-door-pass/wld-16/fitted-approaches.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "4300f3cb4612f32e5b82da5a5d9eb1c2a29858cc011adb78ad0919d00dd3a29f",
+      "bytes": 1291068
+    },
+    {
       "id": "aligned-stairs",
       "label": "aligned-stairs",
       "maps": [],
@@ -32234,6 +32270,20 @@
       ]
     },
     {
+      "sha256": "65b40fb3878ca5e2dae76d6aa487265d069646a04d8612bb0071eb8b33287caf",
+      "paths": [
+        "development/levels/rebuild/doorway-construction-pass/wld-06/clean-doorways.glb",
+        "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.glb"
+      ]
+    },
+    {
+      "sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f",
+      "paths": [
+        "development/levels/rebuild/estate-parish-pass/church/estate-parish.glb",
+        "development/levels/rebuild/native-foyer-door-pass/church/fitted-approaches.glb"
+      ]
+    },
+    {
       "sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041",
       "paths": [
         "development/levels/rebuild/estate-parish-pass/farmhouse/estate-parish.glb",
@@ -32374,6 +32424,13 @@
       "paths": [
         "development/levels/rebuild/interior-stair-landing-pass/school/interior-stair-landings.glb",
         "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.glb"
+      ]
+    },
+    {
+      "sha256": "4300f3cb4612f32e5b82da5a5d9eb1c2a29858cc011adb78ad0919d00dd3a29f",
+      "paths": [
+        "development/levels/rebuild/native-foyer-door-pass/wld-16/fitted-approaches.glb",
+        "development/levels/rebuild/terrain-ownership-construction-pass/wld-16/saved-earthworks.glb"
       ]
     },
     {

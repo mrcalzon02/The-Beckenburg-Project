@@ -905,7 +905,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "0121fcc4e38e7a2af57806a9c0e712ea7288e4a7",
+          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/church/rough-layout.json",
@@ -917,16 +917,18 @@
             "development/levels/rebuild/church/search-envelope.json",
             "development/levels/rebuild/church/search-layout.json",
             "development/levels/rebuild/previews/church-revised-rough-plan.png",
-            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json",
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
           ],
           "defects": [
-            "DEV-561"
+            "DEV-561",
+            "DEV-581"
           ],
-          "next_action": "Check the preserved room program against working capacity, furnishings and the 40-space accessible search limit."
+          "next_action": "Carry forward fitted approaches and finish full boundaries, actual arrival and shared gameplay acceptance."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "0121fcc4e38e7a2af57806a9c0e712ea7288e4a7",
+          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
           "evidence": [
             "development/levels/rebuild/structures/church/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -955,7 +957,8 @@
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
             "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
-            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json",
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -977,9 +980,10 @@
             "DEV-416",
             "DEV-559",
             "DEV-560",
-            "DEV-561"
+            "DEV-561",
+            "DEV-581"
           ],
-          "next_action": "Resolve the measured older fitting and standing contacts before in-game room, door and live traversal acceptance."
+          "next_action": "Carry forward fitted approaches and finish full boundaries, actual arrival and shared gameplay acceptance."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -2523,27 +2527,30 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
+          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
           "evidence": [
-            "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json"
+            "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json",
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-573",
-            "DEV-574"
+            "DEV-574",
+            "DEV-578"
           ],
-          "next_action": "Finish joined enclosure, stairs and slab inspection. Verify structural continuity and full supported travel from the canonical ramp to the actual foyer threshold."
+          "next_action": "Carry forward the measured and tested entry leaves. Verify remaining building doors, real map registration, services and host/guest transport."
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
+          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
           "evidence": [
-            "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json"
+            "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json",
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-574",
             "DEV-578"
           ],
-          "next_action": "Carry forward the staged cargo-hatch, ramp, foyer ownership and 40 reachable volumes. Bind movable building doors, services, acoustics, shared renderer and network state."
+          "next_action": "Carry forward the measured and tested entry leaves. Verify remaining building doors, real map registration, services and host/guest transport."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -3571,15 +3578,19 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "status": "IN_PROGRESS",
+          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+          "evidence": [
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-579"
+          ],
+          "next_action": "Carry forward fitted approaches and finish full boundaries, actual arrival and shared gameplay acceptance."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3611,7 +3622,8 @@
             "development/levels/rebuild/floor-closure-pass/wld-06/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -3634,9 +3646,10 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-579"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Carry forward fitted approaches and finish full boundaries, actual arrival and shared gameplay acceptance."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -5779,15 +5792,19 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "status": "IN_PROGRESS",
+          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+          "evidence": [
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-580"
+          ],
+          "next_action": "Carry forward fitted approaches and finish full boundaries, actual arrival and shared gameplay acceptance."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
           "evidence": [
             "development/levels/rebuild/structures/wld-16/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -5819,7 +5836,8 @@
             "development/levels/rebuild/floor-closure-pass/wld-16/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -5842,9 +5860,10 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-580"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Carry forward fitted approaches and finish full boundaries, actual arrival and shared gameplay acceptance."
         },
         "S04": {
           "status": "IN_PROGRESS",

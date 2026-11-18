@@ -1,0 +1,127 @@
+{
+  "journeys": [
+    {
+      "site": "CHURCH",
+      "variant": "after",
+      "link": "J01",
+      "segments": "20",
+      "legacy_forward": "BLOCKED_SEGMENT_10_AT_1_OF_48",
+      "legacy_reverse": "BLOCKED_SEGMENT_8_AT_7_OF_9",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "journey": "Chapel to the crypt memorial",
+      "links": [
+        "L16",
+        "-L35",
+        "L24",
+        "L25"
+      ]
+    },
+    {
+      "site": "CHURCH",
+      "variant": "after",
+      "link": "J02",
+      "segments": "15",
+      "legacy_forward": "BLOCKED_SEGMENT_2_AT_7_OF_9",
+      "legacy_reverse": "BLOCKED_SEGMENT_11_AT_1_OF_48",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "journey": "Rear nave through the choir to the music archive",
+      "links": [
+        "L33",
+        "L19",
+        "L21",
+        "L22"
+      ]
+    },
+    {
+      "site": "WLD-06",
+      "variant": "after",
+      "link": "J01",
+      "segments": "16",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "journey": "Van ramp to the net store across the crossdock",
+      "links": [
+        "L01",
+        "L04",
+        "L07",
+        "L08",
+        "L09",
+        "L12"
+      ]
+    },
+    {
+      "site": "WLD-06",
+      "variant": "after",
+      "link": "J02",
+      "segments": "16",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "journey": "West cottage and quay to the fish works",
+      "links": [
+        "L02",
+        "L05",
+        "L07",
+        "L08",
+        "L13"
+      ]
+    },
+    {
+      "site": "WLD-16",
+      "variant": "after",
+      "link": "J01",
+      "segments": "5",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "journey": "Van ramp through the office to the manager's room",
+      "links": [
+        "route-01",
+        "route-02",
+        "route-05"
+      ]
+    },
+    {
+      "site": "WLD-16",
+      "variant": "after",
+      "link": "J02",
+      "segments": "8",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS",
+      "journey": "Van ramp through the office to the west guest rooms",
+      "links": [
+        "route-01",
+        "route-02",
+        "route-04",
+        "route-17"
+      ]
+    }
+  ],
+  "source_hashes": {
+    "tools/verify_fitted_approaches.py": "afd4df5a44434a8ed92ed48d1ee9ce47cd546b5578a1b0954ca9f63ffb2fba7f",
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "5c13704ab659a7518088419616b23c2ffce34dbd72f3a707b0da3671418be453",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "development/levels/rebuild/native-foyer-door-pass/verification/joined-input.tsv": "6f06168202d14f9349ae40f2099374ef8e39dde86528f9d7d911ad5efa6c10fa",
+    "development/levels/rebuild/native-foyer-door-pass/verification/joined-sweeps.tsv": "fc5dabdb6f870cd74bebb7408397540624f49bd95182fd6eb57051aaaedba584"
+  },
+  "westwalk_join": [
+    [
+      14.5,
+      0,
+      34
+    ],
+    [
+      14.5,
+      0,
+      32.5
+    ]
+  ]
+}

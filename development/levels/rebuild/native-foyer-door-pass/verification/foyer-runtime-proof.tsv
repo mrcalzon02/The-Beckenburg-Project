@@ -1,0 +1,16 @@
+check	result
+native_frame	SCHOOL-z-36-22.5
+portal_id	400
+scene_revision	03a748c4b8a5c67966b0dd97e270e7e14420e8c5e12dee3f538c254df52bf41f
+leaf_triangles_per_pose	1424
+open_and_closed_host_guest	PASS
+ingress_egress_stand_crouch	PASS
+closed_eye_and_object_rays	PASS
+open_swing_leaf_body_and_ray	PASS
+selected_leaf_interaction	PASS
+existing_jamb_occlusion	PASS
+paired_foyer_acoustics_open	3
+paired_foyer_acoustics_closed	7
+van_to_foyer_and_return	PASS
+reclosed_return	BLOCKED
+changed_foyer_pixels	110500

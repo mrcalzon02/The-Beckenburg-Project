@@ -2797,6 +2797,20 @@ public final class SceneRenderer {
                 nativeInvestigationFaces=List.copyOf(faces);
             }
             appendRetainedWorld(out,nativeInvestigationFaces,map.nativeInvestigation(),map);
+            for(var door:map.nativeInvestigation().doors()){
+                var portal=door.spec().portal();
+                if(!objectInView(portal.x(),portal.z(),Math.max(2,portal.width()),24))continue;
+                boolean open=map.doorOpen(portal.id());
+                var key=new NativeDoorGeometryKey(map.nativeInvestigation().revision(),portal.id(),open);
+                var geometry=authoredFixtureGeometry.computeIfAbsent(key,k->{
+                    var part=new ArrayList<Face>();
+                    imported(part,NativeInvestigationDoor.ASSET,door.pose(open).model(),0,0,0,1,1,1,0);
+                    var owned=new ArrayList<Face>();
+                    own(owned,part,portal.a());
+                    return List.copyOf(owned);
+                });
+                appendRetainedWorld(out,geometry,key,map);
+            }
             generatorControls(out,map);
             return;
         }
@@ -3191,6 +3205,7 @@ public final class SceneRenderer {
     private record PortalGeometryKey(LevelDefinition.Portal portal,boolean door,boolean window){}
     /** Cache a bounded set of authored door poses, not a GLB import each frame. */
     private record DoorPoseGeometryKey(LevelDefinition.Portal portal,int step){}
+    private record NativeDoorGeometryKey(String sceneRevision,int portal,boolean open){}
     private record SocketGeometryKey(LevelDefinition.Socket socket,boolean powered){}
     private final List<ResidentWorldChunk> visibleResidentScenery=new ArrayList<>();
     private final java.util.Set<Face> residentSceneryFaces=java.util.Collections.newSetFromMap(new java.util.IdentityHashMap<>());

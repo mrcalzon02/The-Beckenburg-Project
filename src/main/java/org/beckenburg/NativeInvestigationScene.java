@@ -12,7 +12,7 @@ import java.util.Set;
 
 /** Binds an inspected investigation export to its measured collision and room volumes. */
 record NativeInvestigationScene(AuthoredSitePhysics physics, GlbProps.Model model,
-                                List<Space> spaces, String revision) {
+                                List<Space> spaces, List<NativeInvestigationDoor> doors, String revision) {
     record Space(String id, int owner, double x0, double z0, double x1, double z1,
                  double floor, double height, boolean outside, boolean accessible) {
         Space {
@@ -36,6 +36,7 @@ record NativeInvestigationScene(AuthoredSitePhysics physics, GlbProps.Model mode
 
     NativeInvestigationScene {
         spaces=List.copyOf(spaces);
+        doors=List.copyOf(doors);
         var ids=new HashSet<String>();
         for(var space:spaces)if(!ids.add(space.id()))
             throw new IllegalArgumentException("Duplicate native room "+space.id());
@@ -43,13 +44,44 @@ record NativeInvestigationScene(AuthoredSitePhysics physics, GlbProps.Model mode
 
     static NativeInvestigationScene read(InputStream glb,String glbSha,InputStream collision,String collisionSha,
                                          Set<String> stairs,List<Space> spaces)throws IOException{
+        return read(glb,glbSha,collision,collisionSha,stairs,spaces,List.of());
+    }
+
+    static NativeInvestigationScene read(InputStream glb,String glbSha,InputStream collision,String collisionSha,
+                                         Set<String> stairs,List<Space> spaces,
+                                         List<NativeInvestigationDoor.Spec> frames)throws IOException{
         var bytes=glb.readNBytes(16_000_001);
         if(bytes.length>16_000_000||!digest(bytes).equals(glbSha))
             throw new IOException("Native level GLB source hash mismatch or size exceeded");
         var physics=AuthoredSitePhysics.read(collision,collisionSha,List.of(),stairs);
         String manifest=glbSha+"|"+collisionSha+"|"+stairs.stream().sorted().toList()+"|"+spaces;
+        List<NativeInvestigationDoor> doors=new java.util.ArrayList<>();
+        if(!frames.isEmpty()){
+            var byId=new java.util.HashMap<String,Space>();
+            for(var space:spaces)byId.put(space.id(),space);
+            var portalIds=new HashSet<Integer>();
+            var frameIds=new HashSet<String>();
+            String assetSha;
+            try(var asset=GlbProps.class.getResourceAsStream("/org/beckenburg/models/"+NativeInvestigationDoor.ASSET+".glb")){
+                if(asset==null)throw new IOException("Missing packaged native door leaf");
+                var sourceBytes=asset.readNBytes(4_000_001);
+                if(sourceBytes.length>4_000_000)throw new IOException("Native door leaf source exceeds budget");
+                assetSha=digest(sourceBytes);
+            }
+            var source=GlbProps.model(NativeInvestigationDoor.ASSET);
+            for(var frame:frames.stream().sorted(java.util.Comparator.comparingInt(f->f.portal().id())).toList()){
+                var p=frame.portal();
+                var a=byId.get(frame.roomA());
+                var b=byId.get(frame.roomB());
+                if(!assetSha.equals(frame.leafSourceSha256())||a==null||b==null||!a.accessible()||!b.accessible()||a.owner()!=p.a()||b.owner()!=p.b()
+                        ||!portalIds.add(p.id())||!frameIds.add(frame.frameId()))
+                    throw new IOException("Invalid native door source or ownership for "+frame.frameId());
+                doors.add(NativeInvestigationDoor.fit(frame,source));
+            }
+            manifest+="|native-hinges-v1|"+doors.stream().map(NativeInvestigationDoor::spec).toList();
+        }
         String revision=digest(manifest.getBytes(StandardCharsets.UTF_8));
-        return new NativeInvestigationScene(physics,GlbProps.decodeLevel(bytes),spaces,revision);
+        return new NativeInvestigationScene(physics,GlbProps.decodeLevel(bytes),spaces,doors,revision);
     }
 
     private static String digest(byte[] bytes){

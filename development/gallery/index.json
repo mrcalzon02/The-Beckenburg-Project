@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11178,
+  "count": 11183,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -103344,6 +103344,56 @@
       "height": 920,
       "bytes": 1240929,
       "sha256": "9d38d9af5b6845b9bf9c34205a3f403e09bc9801a76ba6c228b11447d688de5b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/native-foyer-door-batch/eight-pines-office-to-manager.png",
+      "url": "development/levels/rebuild/captures/native-foyer-door-batch/eight-pines-office-to-manager.png",
+      "title": "Eight pines office to manager",
+      "kind": "Native fitted crossdock and doorway review",
+      "width": 1190,
+      "height": 810,
+      "bytes": 948614,
+      "sha256": "1c29d4cdb1086016c1cf31d8d8a128023e702104b44eb06d23830009a5193c4e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/native-foyer-door-batch/parish-crypt-entry-threshold.png",
+      "url": "development/levels/rebuild/captures/native-foyer-door-batch/parish-crypt-entry-threshold.png",
+      "title": "Parish crypt entry threshold",
+      "kind": "Native fitted crossdock and doorway review",
+      "width": 1190,
+      "height": 810,
+      "bytes": 956871,
+      "sha256": "5e7b48716069cefc0faef6c71e55111406cf046d97b2857a6dd6a3dabbc089f8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/native-foyer-door-batch/school-foyer-closed.png",
+      "url": "development/levels/rebuild/captures/native-foyer-door-batch/school-foyer-closed.png",
+      "title": "School foyer closed",
+      "kind": "Staged School runtime door state",
+      "width": 780,
+      "height": 520,
+      "bytes": 155384,
+      "sha256": "4e2c068d390903841cb42542244db8fc1574bf3c2f2771dc481808439fc60b2c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/native-foyer-door-batch/school-foyer-open.png",
+      "url": "development/levels/rebuild/captures/native-foyer-door-batch/school-foyer-open.png",
+      "title": "School foyer open",
+      "kind": "Staged School runtime door state",
+      "width": 780,
+      "height": 520,
+      "bytes": 112443,
+      "sha256": "f8930849fe8d9d44ab47da37860a70091b24f06bb0396ce1894af33e2d81ca8a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/native-foyer-door-batch/wharf-supported-crossdock.png",
+      "url": "development/levels/rebuild/captures/native-foyer-door-batch/wharf-supported-crossdock.png",
+      "title": "Wharf supported crossdock",
+      "kind": "Native fitted crossdock and doorway review",
+      "width": 1190,
+      "height": 810,
+      "bytes": 1139378,
+      "sha256": "d2d821656e7d828a461e56dd0be52b23ca826aae580555a55d7da8b1c161951a"
     },
     {
       "path": "development/levels/rebuild/captures/orthogonal-stair-batch/wld-06-context.png",

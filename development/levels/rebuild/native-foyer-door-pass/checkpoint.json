@@ -1,0 +1,183 @@
+{
+  "status": "STAGED_SCHOOL_FITTED_FOYER_AND_NATIVE_APPROACHES_RUNTIME_OPEN",
+  "baseline": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+  "roster": "development/levels/rebuild/native-foyer-door-pass/roster.json",
+  "geometry_updates": [
+    {
+      "id": "CHURCH",
+      "construction": "development/levels/rebuild/native-foyer-door-pass/church/construction.json",
+      "layout": "development/levels/rebuild/native-foyer-door-pass/church/authored-layout.json",
+      "glb": "development/levels/rebuild/native-foyer-door-pass/church/fitted-approaches.glb",
+      "native": "development/levels/rebuild/native-foyer-door-pass/church/fitted-approaches.hcs2",
+      "blend": "development/levels/rebuild/native-foyer-door-pass/church/fitted-approaches.blend",
+      "glb_sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f",
+      "native_sha256": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82"
+    },
+    {
+      "id": "WLD-06",
+      "construction": "development/levels/rebuild/native-foyer-door-pass/wld-06/construction.json",
+      "layout": "development/levels/rebuild/native-foyer-door-pass/wld-06/authored-layout.json",
+      "glb": "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.glb",
+      "native": "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.hcs2",
+      "blend": "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.blend",
+      "glb_sha256": "65b40fb3878ca5e2dae76d6aa487265d069646a04d8612bb0071eb8b33287caf",
+      "native_sha256": "f252b1ccd7f9a043aa5bf58dce841ec31557f3a6f9546d0f6f7a259f4b70d252"
+    },
+    {
+      "id": "WLD-16",
+      "construction": "development/levels/rebuild/native-foyer-door-pass/wld-16/construction.json",
+      "layout": "development/levels/rebuild/native-foyer-door-pass/wld-16/authored-layout.json",
+      "glb": "development/levels/rebuild/native-foyer-door-pass/wld-16/fitted-approaches.glb",
+      "native": "development/levels/rebuild/native-foyer-door-pass/wld-16/fitted-approaches.hcs2",
+      "blend": "development/levels/rebuild/native-foyer-door-pass/wld-16/fitted-approaches.blend",
+      "glb_sha256": "4300f3cb4612f32e5b82da5a5d9eb1c2a29858cc011adb78ad0919d00dd3a29f",
+      "native_sha256": "fbe5f3d984b059456fa7dbc368c8c4001ea3679f6fc872d20a100913c9455eb9"
+    }
+  ],
+  "staged_school": {
+    "native_frame": "SCHOOL-z-36-22.5",
+    "portal_id": "400",
+    "scene_revision": "03a748c4b8a5c67966b0dd97e270e7e14420e8c5e12dee3f538c254df52bf41f",
+    "leaf_triangles_per_pose": "1424",
+    "open_and_closed_host_guest": "PASS",
+    "ingress_egress_stand_crouch": "PASS",
+    "closed_eye_and_object_rays": "PASS",
+    "open_swing_leaf_body_and_ray": "PASS",
+    "selected_leaf_interaction": "PASS",
+    "existing_jamb_occlusion": "PASS",
+    "paired_foyer_acoustics_open": "3",
+    "paired_foyer_acoustics_closed": "7",
+    "van_to_foyer_and_return": "PASS",
+    "reclosed_return": "BLOCKED",
+    "changed_foyer_pixels": "110500"
+  },
+  "native_scope": {
+    "CHURCH": {
+      "previous_contacts": 43,
+      "standing": 3906,
+      "contacts": 0,
+      "ordinary": 28,
+      "joined": 2
+    },
+    "WLD-06": {
+      "previous_contacts": 56,
+      "standing": 5196,
+      "contacts": 0,
+      "ordinary": 16,
+      "joined": 2
+    },
+    "WLD-16": {
+      "previous_contacts": 46,
+      "standing": 3438,
+      "contacts": 0,
+      "ordinary": 22,
+      "joined": 2
+    }
+  },
+  "native_roster": {
+    "contacts": 110,
+    "previous_contacts": 255,
+    "samples": 140379,
+    "ordinary": 567,
+    "flights": 238,
+    "vertical": 86
+  },
+  "regression_scope": {
+    "passed": [
+      "DoorSwingTest",
+      "LanWorldTest",
+      "AuthoredLevelStateTest",
+      "LanWorldRenderTest",
+      "AuthoredSitePhysicsTest"
+    ],
+    "retained_staged_school_reachable_spaces": 40,
+    "legacy_baseline_and_candidate_failure": {
+      "class": "ArchitecturalPlansTest",
+      "baseline": "255123d43aa0263bf7a5b7ab473c4d76c6abe3f5",
+      "site": "HOUSE",
+      "message": "open door traversal 14",
+      "portal_center": [
+        19.8,
+        0,
+        20.5
+      ],
+      "from": [
+        19.8,
+        0,
+        19.9
+      ],
+      "to": [
+        19.8,
+        0,
+        21.1
+      ]
+    }
+  },
+  "open_gates": [
+    "Load the staged School scene through the released map registration and verify real LAN transport.",
+    "Fit other native movable doors, navigation and service bindings, boundaries and complete accessible search.",
+    "Close the remaining 110 native standing contacts and the independent legacy House threshold failure."
+  ],
+  "project_bytes_sha256": {
+    "development/levels/rebuild/captures/native-foyer-door-batch/eight-pines-office-to-manager.png": "1c29d4cdb1086016c1cf31d8d8a128023e702104b44eb06d23830009a5193c4e",
+    "development/levels/rebuild/captures/native-foyer-door-batch/parish-crypt-entry-threshold.png": "5e7b48716069cefc0faef6c71e55111406cf046d97b2857a6dd6a3dabbc089f8",
+    "development/levels/rebuild/captures/native-foyer-door-batch/school-foyer-closed.png": "4e2c068d390903841cb42542244db8fc1574bf3c2f2771dc481808439fc60b2c",
+    "development/levels/rebuild/captures/native-foyer-door-batch/school-foyer-open.png": "f8930849fe8d9d44ab47da37860a70091b24f06bb0396ce1894af33e2d81ca8a",
+    "development/levels/rebuild/captures/native-foyer-door-batch/wharf-supported-crossdock.png": "d2d821656e7d828a461e56dd0be52b23ca826aae580555a55d7da8b1c161951a",
+    "development/levels/rebuild/native-foyer-door-pass/church/authored-layout.json": "5fc8bd682d042ca70b84d449a4dcc2b997cdbd14ec1d07306cb4543df64577b9",
+    "development/levels/rebuild/native-foyer-door-pass/church/construction.json": "493db34007c225e700d571d59de3120618011bbbc62d232e36988667ba5ceeee",
+    "development/levels/rebuild/native-foyer-door-pass/church/construction.md": "0159c21edae40cab68409f72989d591d785a2da7c2f8da94258031c6441b5fd9",
+    "development/levels/rebuild/native-foyer-door-pass/church/export-review.json": "d2e210a4d4091ce1eb57e49adf21a48c2c83b9fb16cf026e22e20dbda472205d",
+    "development/levels/rebuild/native-foyer-door-pass/church/fitted-approaches.blend": "78e6b17cd5569879d8e23fa382103eb46ededba313fcd97cf7b332d64bf4dca6",
+    "development/levels/rebuild/native-foyer-door-pass/church/fitted-approaches.glb": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f",
+    "development/levels/rebuild/native-foyer-door-pass/church/fitted-approaches.hcs2": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82",
+    "development/levels/rebuild/native-foyer-door-pass/church/measured-plan.svg": "787d18ebee3573939779283773d38a1691df16040d6ffa9a302e579078164697",
+    "development/levels/rebuild/native-foyer-door-pass/roster.json": "029b4119a4ff4829658d9644cabb262ba8cb88bbaabf8959af175922a2ed7237",
+    "development/levels/rebuild/native-foyer-door-pass/school/construction.md": "76e9e4711e30f377de76e102dbe99ef863e901a5690ffa09309040bc5f3237b8",
+    "development/levels/rebuild/native-foyer-door-pass/school/door-schedule.json": "d4ad10b5ab17ca125cb0ab4c3b8a6b36c449da943dba39dcc0dfdf6e93a18be6",
+    "development/levels/rebuild/native-foyer-door-pass/verification/flight-sweeps.tsv": "31123281d40541cd95b68c7303acdf7f37c05f361501eead50f8187a2f24c39b",
+    "development/levels/rebuild/native-foyer-door-pass/verification/foyer-runtime-proof.tsv": "ac629779a15225a502bab1d9526b81ffc997fc8cd9a143521379262c6b4b5a65",
+    "development/levels/rebuild/native-foyer-door-pass/verification/frame-input.tsv": "26f410e129edf474de4a544919dbd3d34a7a64baba00ee258b942b9b00362a0d",
+    "development/levels/rebuild/native-foyer-door-pass/verification/full-native-stairs-report.json": "d43d6814753ef1d8245e135303173e4c3f09e0e8a347bba17b9537010f2ebd34",
+    "development/levels/rebuild/native-foyer-door-pass/verification/full-native-standing-report.json": "28306ab9bc8e3178585dd54b7e727a5166fb8261907819bb7ca9830b69f4338f",
+    "development/levels/rebuild/native-foyer-door-pass/verification/joined-input.tsv": "6f06168202d14f9349ae40f2099374ef8e39dde86528f9d7d911ad5efa6c10fa",
+    "development/levels/rebuild/native-foyer-door-pass/verification/joined-review.json": "bc64faa1e5cf3f34ce7f8d4ef94719efd5f9dfb205b629b5dc5204262c30e381",
+    "development/levels/rebuild/native-foyer-door-pass/verification/joined-sweeps.tsv": "fc5dabdb6f870cd74bebb7408397540624f49bd95182fd6eb57051aaaedba584",
+    "development/levels/rebuild/native-foyer-door-pass/verification/ordinary-link-sweeps.tsv": "16c715a96dda8c37fc5862f1f0854769052b7bacbcab9bc4c4afecd9e9843c00",
+    "development/levels/rebuild/native-foyer-door-pass/verification/remaining-standing-contacts.tsv": "624ee679288067f40e76ec1010f2694d96bf6fa8e2857795aa0f3d61d829ebb4",
+    "development/levels/rebuild/native-foyer-door-pass/verification/retained-arrival-proof.tsv": "ceb88aa1b0664330ef6a7c45068b62eee56fb64225dc7fee9395db41c2127de8",
+    "development/levels/rebuild/native-foyer-door-pass/verification/runtime-regressions.json": "35b5a61e9a43fe7742a417f338f66e74c5b3b0fd43671fec975dfb773a711482",
+    "development/levels/rebuild/native-foyer-door-pass/verification/school-foyer-runtime.json": "16be2897f6792a08f4bb491a707666fac8275f68d1ddd0b69497488ef0a2330f",
+    "development/levels/rebuild/native-foyer-door-pass/verification/vertical-link-sweeps.tsv": "9e06b8e40a3dfd7b1ce801d888c93bec3d332241e71f5103e51b920d2ee013d7",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/authored-layout.json": "7b9030890de464421b6c957cd888a157d20b87936868523808b4b08a8ae2d719",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/construction.json": "fabf8c3be55742667bc9aefa2723af17d1aad36b089eafbe03da93492919a0ce",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/construction.md": "07189b66b986cf150fc7359eadf386c7e0a1d51199f895788ba404bc1d6357c5",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/export-review.json": "de5a20a1f0b71c753978833eed4cc83f6b2bf3e804c3aec19c5d87a156932ef9",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.blend": "bfcd62d5b236edf2ea13970f56633ad2d09e8605ec0019da119fad5b10fe8363",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.glb": "65b40fb3878ca5e2dae76d6aa487265d069646a04d8612bb0071eb8b33287caf",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.hcs2": "f252b1ccd7f9a043aa5bf58dce841ec31557f3a6f9546d0f6f7a259f4b70d252",
+    "development/levels/rebuild/native-foyer-door-pass/wld-06/measured-plan.svg": "d406187daab04d38743aeab89b18664c586f8f91c2e8689a55ea7b7e509b81e0",
+    "development/levels/rebuild/native-foyer-door-pass/wld-16/authored-layout.json": "1ffaa1194008dce75a7ff457f53168c0e7f72d0a0c3658e625c6eb881ad40f8e",
+    "development/levels/rebuild/native-foyer-door-pass/wld-16/construction.json": "c2af78b01356e276c262ec258dbff6a7f71089600e7d3792e3aa3ba2c2605b3d",
+    "development/levels/rebuild/native-foyer-door-pass/wld-16/construction.md": "b60a1fca8a8aad5f2d4d84ccebc20ea9fc3d1f12145846038f9caea85d03f0f7",
+    "development/levels/rebuild/native-foyer-door-pass/wld-16/export-review.json": "7073bb2deef69b3677b3488725a43aa3158fdf2c8016c106bd17e3df274b5637",
+    "development/levels/rebuild/native-foyer-door-pass/wld-16/fitted-approaches.blend": "ee27a70bf67d64b2e080cd23ee56ef249af22e1488b9150c3592263d5faa49df",
+    "development/levels/rebuild/native-foyer-door-pass/wld-16/fitted-approaches.glb": "4300f3cb4612f32e5b82da5a5d9eb1c2a29858cc011adb78ad0919d00dd3a29f",
+    "development/levels/rebuild/native-foyer-door-pass/wld-16/fitted-approaches.hcs2": "fbe5f3d984b059456fa7dbc368c8c4001ea3679f6fc872d20a100913c9455eb9",
+    "development/levels/rebuild/native-foyer-door-pass/wld-16/measured-plan.svg": "eb9b90ddcd17b820cac1f844c5a2d9fd81936e91fbe169bd0ab73a76398da7d0",
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "5c13704ab659a7518088419616b23c2ffce34dbd72f3a707b0da3671418be453",
+    "src/main/java/org/beckenburg/HouseMap.java": "dbc0b3435600d4970ad5658f70b36b72531a0a169bac5b84eaf8dad048361878",
+    "src/main/java/org/beckenburg/NativeInvestigationDoor.java": "7556d2bfe4a2fd6b200ce672f1dfdcdfed254e5bb639a311388462fc5f0604cc",
+    "src/main/java/org/beckenburg/NativeInvestigationScene.java": "f95fb35c2be0170e96b53e48f746a8e73d54fe0efa2e4a5016b1ab8534c5fb80",
+    "src/main/java/org/beckenburg/SceneRenderer.java": "26cce8419b99a13d62a6046a5ede725e2773998e8ef3a0974bbc286a13c11d0e",
+    "tools/build_fitted_approaches.py": "bc9f59f96b296607411221657fd2c2524df966ab442167c7c19c18db4eeb9c00",
+    "tools/java/NativeSchoolDoorReview.java": "e1d6855adfded0834cad615c45274eafc3e28f19fdc7a1becccf54c4b6fc0358",
+    "tools/review_fitted_approaches.py": "b98e36a7c699ee1b7b792844c1000496c370abe2293fc747bfaa5d4c12d68272",
+    "tools/verify_fitted_approaches.py": "afd4df5a44434a8ed92ed48d1ee9ce47cd546b5578a1b0954ca9f63ffb2fba7f",
+    "tools/verify_native_foyer.py": "f335638a5d7f1d961f23de2812ca7744b8b7da9dab453c0cd8088145ce250587"
+  },
+  "retained_engine_dependencies_normalized_git_blobs": {
+    "src/main/java/org/beckenburg/GlbProps.java": "e804da1bfc95eba7fab198d9646b89581cc9416e9fbb096c61d586633f5d5982",
+    "src/main/java/org/beckenburg/LanAcoustics.java": "32cbb9829c1a2c8af4ff4c5d5796d7f905434aa326febde9cbaa1fc490971eb2"
+  }
+}

@@ -1157,3 +1157,14 @@ Construction 4fdcac56e6b2867a4c9698578a7575beb468a03d and all 50 bound files mat
 The staged School foyer closure control reproduces DEV-578. The actual 1.80 m fitted aperture remains walkable and clear to sight after the door snapshot closes it. The next shared runtime pass must use that physical frame for the same state across movement, optics, display, acoustics and network. It is separate from the passing van cargo-hatch control.
 
 Physical surveys for the next Wharf, Eight Pines and Parish packets bind 2,200, 5,626 and 6,016 standing poses to their exact exported floors, frames and guards. Their subassembly measurements are attached to measured-arrival-and-approach-pass/checkpoint.json.
+
+
+## 2026-11-17 / Staged native School foyer and measured Wharf, Eight Pines and Parish approaches
+
+Baseline 255123d43aa0263bf7a5b7ab473c4d76c6abe3f5. The active 29-packet source is native-foyer-door-pass/roster.json.
+
+The 1.80 m School foyer frame now binds the real canonical pair of 0.90 m leaves and preserves its measured sill and jamb datums. Exact transformed source triangles feed the staged retained renderer, body and object collision, and optical rays. A shared portal links actual foyer owner 0 and forecourt owner 13. The host and guest snapshots agree in both states. With the door closed, walking and sight stop at the fitted frame. The open center passes standing and crouched travel in both directions, and both open leaves still obstruct their own swing positions. The acoustic propagation cost changes from 3 open to 7 closed. Canonical arrival and return pass, and closing the door again blocks the return. Paired headless production renders show the states. Released location registration, actual LAN transport, other building doors, boundaries and services remain open.
+
+Three measured native layouts use the full Wharf crossdeck and installed cottage and net store frames, the existing 1.05 m Eight Pines doors, and the west landing around the Parish crypt well. The Wharf and Eight Pines arrivals start at the actual rear ramp toes. The native source assemblies for those routes are byte-identical to the prior exports. All 12,540 strict samples and six joined journeys pass across the three sites, clearing their 145 prior contacts.
+
+The complete native candidate sweep passes 567 ordinary links, 238 flights and 86 vertical links. Its standing contacts fell from 255 to 110 across 140,379 poses. Five scoped existing runtime checks pass. ArchitecturalPlansTest reports the same legacy House portal 14 open-traversal failure on the baseline and candidate at X19.8, Z20.5. DEV-575 and DEV-578 through DEV-582 bind the measured evidence to development/levels/rebuild/native-foyer-door-pass/checkpoint.json.

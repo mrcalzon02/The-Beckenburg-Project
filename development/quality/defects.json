@@ -6387,10 +6387,10 @@
       "title": "Standing contacts remain in other native roster packets",
       "status": "OPEN_REMAINING_NATIVE_AND_SHARED_GAMEPLAY_FIT",
       "affected": "Active 25-packet native roster",
-      "symptom": "After the School, Hollowmere and Northwatch fits, native movement still passes 567 ordinary links, 238 flights and 86 vertical links. The current strict footprint sweep records 255 standing contacts.",
+      "symptom": "The current native sweep passes 567 ordinary links, 238 flights and 86 vertical links. Its strict footprint measurements record 110 remaining contacts.",
       "cause": "The active failures include discrete door approach and full platform geometry issues across the remaining sites.",
-      "action": "Inspect the physical yards, devices, thresholds, floors and stairs. Start with the fishing works, roadside court and parish approach contacts, while advancing the native investigation integration.",
-      "evidence": "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json; development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json",
+      "action": "Review the remaining Asylum and Cinder Mine approaches and the other measured sites. Complete shared runtime ownership and door/service evidence independently of native center-path results.",
+      "evidence": "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json; development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json; development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
       "older_maps": "Track strict standing, whole-link movement and shared runtime as separate evidence gates."
     },
     {
@@ -6418,13 +6418,57 @@
     {
       "id": "DEV-578",
       "title": "Native School scene needs shared movable building-door authority",
-      "status": "OPEN_NATIVE_DYNAMIC_DOORS_AND_SHARED_SYSTEMS",
+      "status": "CORRECTED_STAGED_FITTED_FOYER_RUNTIME_OPEN",
       "affected": "SCHOOL staged native loader and shared investigation kernel",
       "symptom": "The staged scene supports the canonical van and foyer arrival and all 40 authored spaces. Native movement and line-of-sight take early returns using static geometry and the van state.",
       "cause": "Physical building apertures have authored frames. The native movement and optical branches still need the shared movable building-door contract.",
-      "action": "Bind actual fitted apertures to stable runtime door IDs and drive rendering, collision, navigation, acoustics and network state through those bindings.",
-      "evidence": "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json",
+      "action": "Use the measured foyer frame and the shared canonical pair of leaves for rendering, movement, object travel, sight and acoustics. The staged snapshots and both render states pass. Carry this through actual School registration and LAN transport, then bind the remaining native doors.",
+      "evidence": "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json; development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
       "older_maps": "Test each promoted native doorway open and shut through actual host and guest movement and sight paths."
+    },
+    {
+      "id": "DEV-579",
+      "title": "Wharf crossdock guides clipped fish works corners",
+      "status": "CORRECTED_WITH_MEASURED_CROSSDOCK_AND_FRAMES",
+      "affected": "WLD-06 pier turns, cottages, net store and roadhead",
+      "symptom": "56 standing failures at the fish works piers and fitted door frames. The old arrival started in the van centre.",
+      "cause": "Diagonal guidance cut through the wall approach and nominal widths exceeded the fitted frames.",
+      "action": "Turn on the supported north deck at Z8, cross the existing doorways at their fitted widths, and start at the canonical ramp toe.",
+      "evidence": "development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
+      "older_maps": "Check the complete path footprint around corner piers and use the actual door width as the limiting clearance."
+    },
+    {
+      "id": "DEV-580",
+      "title": "Eight Pines nominal guides exceeded installed doorway widths",
+      "status": "CORRECTED_WITH_MEASURED_MOTEL_THRESHOLDS",
+      "affected": "WLD-16 office, manager and guest room frames",
+      "symptom": "46 standing failures near door jambs. The staged marker was also shifted from the actual rear ramp.",
+      "cause": "Nominal 1.5 m guides reached fitted 1.05 m pedestrian doors.",
+      "action": "Use the actual office and guest door widths, start at the actual ramp toe, and test the continuous westwalk approach.",
+      "evidence": "development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
+      "older_maps": "Verify each installed frame and adjoining covered walk from the actual pad and entry."
+    },
+    {
+      "id": "DEV-581",
+      "title": "Parish diagrams clipped jambs and the crypt well guard",
+      "status": "CORRECTED_WITH_MEASURED_PARISH_APPROACHES",
+      "affected": "CHURCH chapel, vestry, confession rooms, choir and crypt",
+      "symptom": "43 standing failures at oblique jamb approaches, fitted frames and the crypt well rim.",
+      "cause": "The previous guides turned inside the frame and near the west well guard.",
+      "action": "Pass the actual threshold before turning, use the supported west crypt landing, and follow the installed choir and archive apertures.",
+      "evidence": "development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
+      "older_maps": "Require perpendicular sill approaches and check the full standing body on both sides of guarded stairs."
+    },
+    {
+      "id": "DEV-582",
+      "title": "Legacy House door 14 fails an open traversal assertion",
+      "status": "OPEN_EXISTING_HOUSE_THRESHOLD_DIAGNOSTIC",
+      "affected": "HOUSE legacy portal 14",
+      "symptom": "ArchitecturalPlansTest fails from X19.8, Z19.9 to X19.8, Z21.1 with legacy portal 14 open.",
+      "cause": "The same failure appears when compiling the pre-foyer-change HouseMap, SceneRenderer and native physics sources. Its physical cause is still under inspection.",
+      "action": "Inspect the actual threshold footprint, support and framing at X19.8, Z20.5 before changing geometry or the test.",
+      "evidence": "development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
+      "older_maps": "Use before-and-after sweeps from both faces of each working doorway."
     }
   ],
   "audit_categories": [

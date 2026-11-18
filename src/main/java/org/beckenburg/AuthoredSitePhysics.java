@@ -56,6 +56,34 @@ public final class AuthoredSitePhysics {
         }
         var result=new HashMap<Long,int[]>();for(var e:lists.entrySet())result.put(e.getKey(),e.getValue().stream().mapToInt(Integer::intValue).toArray());bins=Map.copyOf(result);
     }
+    /** Use the exact fitted leaf triangles as non-supporting physical and optical surfaces. */
+    static AuthoredSitePhysics doorObstacles(String partName,GlbProps.Model model)throws IOException{
+        var faces=model.triangles();
+        int total=faces.size();
+        if(total<1||total>MAX_TRIANGLES)throw new IOException("Invalid native door face count");
+        var coords=new float[total*9];
+        var allFlags=new byte[total];
+        Arrays.fill(allFlags,(byte)(OPTICAL|BODY));
+        double[] bounds={Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,
+                         Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY,Double.NEGATIVE_INFINITY};
+        int at=0;
+        for(var face:faces){
+            for(var vertex:List.of(face.a(),face.b(),face.c())){
+                for(double v:new double[]{vertex.x(),vertex.y(),vertex.z()}){
+                    if(!Double.isFinite(v)||Math.abs(v)>=256)throw new IOException("Out-of-domain native door vertex");
+                    int axis=at%3;
+                    coords[at++]=(float)v;
+                    bounds[axis]=Math.min(bounds[axis],v);
+                    bounds[axis+3]=Math.max(bounds[axis+3],v);
+                }
+            }
+        }
+        // The imported panel and handle surfaces may be separate or overlap.
+        // Their exact triangles act as obstacles without a false shared winding.
+        var parts=new Part[]{new Part(partName,false,0,total,bounds)};
+        return new AuthoredSitePhysics(coords,allFlags,new int[total],parts,List.of(),"",Set.of());
+    }
+
     public static AuthoredSitePhysics read(InputStream source,String expectedSha,List<Collider> blockers)throws IOException{
         return read(source,expectedSha,blockers,Set.of());
     }
