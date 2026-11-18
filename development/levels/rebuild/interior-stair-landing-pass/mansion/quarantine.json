@@ -1,0 +1,716 @@
+{
+  "source": {
+    "id": "MANSION",
+    "construction": "development/levels/rebuild/estate-parish-pass/mansion/construction.json",
+    "layout": "development/levels/rebuild/estate-parish-pass/mansion/authored-layout.json",
+    "glb": "development/levels/rebuild/estate-parish-pass/mansion/estate-parish.glb",
+    "native": "development/levels/rebuild/estate-parish-pass/mansion/estate-parish.hcs2",
+    "blend": "development/levels/rebuild/estate-parish-pass/mansion/estate-parish.blend",
+    "glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d",
+    "native_sha256": "096bb68ec37f982eb49e764e38e43f4ce2995c890f9aefe42d7dde20c517fd46"
+  },
+  "retired_structural_parts": [
+    "MANSION bay indexed door 2",
+    "MANSION bay indexed door 4",
+    "MANSION bay indexed door 5",
+    "MANSION bay indexed door 6",
+    "MANSION bay wall ('z', 14, 40, 46, -3, 0) end region0",
+    "MANSION bay wall ('z', 14, 40, 46, -3, 0) lintel0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, -3, 0) pier0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) end region0",
+    "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) lintel0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 0, 3.6) pier0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) end region0",
+    "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) lintel0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 3.6, 7.2) pier0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) end region0",
+    "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) lintel0 region0",
+    "MANSION bay wall ('z', 14, 40, 46, 7.2, 10.2) pier0 region0"
+  ],
+  "superseded_guides": [
+    {
+      "id": "L05",
+      "a": "foyer",
+      "b": "hall",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.0,
+          0,
+          47.0
+        ],
+        [
+          22,
+          0,
+          44
+        ],
+        [
+          24.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        44
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L08",
+      "a": "grand-stair",
+      "b": "library",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          22.5,
+          0.0,
+          30.0
+        ],
+        [
+          20.0,
+          0.0,
+          30.0
+        ],
+        [
+          14.0,
+          0.0,
+          30.0
+        ]
+      ],
+      "threshold": [
+        20,
+        0,
+        30
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L11",
+      "a": "hall",
+      "b": "morning",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          0,
+          40.0
+        ],
+        [
+          28,
+          0,
+          43
+        ],
+        [
+          34.0,
+          0,
+          46.0
+        ]
+      ],
+      "threshold": [
+        28,
+        0,
+        43
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L23",
+      "a": "service",
+      "b": "service-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.5,
+          0.0,
+          22.0
+        ],
+        [
+          41.5,
+          0.0,
+          14.0
+        ],
+        [
+          42.0,
+          0.0,
+          11.0
+        ],
+        [
+          43.0,
+          0.0,
+          11.0
+        ],
+        [
+          43.0,
+          0.0,
+          8.0
+        ]
+      ],
+      "threshold": [
+        41.5,
+        0,
+        14
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L28",
+      "a": "service-stair",
+      "b": "garden",
+      "kind": "level",
+      "width": 1.0,
+      "points": [
+        [
+          43,
+          0,
+          8
+        ],
+        [
+          43,
+          0,
+          2
+        ],
+        [
+          43,
+          0,
+          1.02
+        ],
+        [
+          47.4,
+          0,
+          1.02
+        ],
+        [
+          47.7,
+          0,
+          4.4
+        ],
+        [
+          47.7,
+          0,
+          17.35
+        ],
+        [
+          53.6,
+          0,
+          18.7
+        ],
+        [
+          55.15,
+          0,
+          19.05
+        ],
+        [
+          55.15,
+          0,
+          27.85
+        ]
+      ],
+      "threshold": [
+        43,
+        0,
+        2
+      ],
+      "access": "household",
+      "note": "Guidance across the built site. Locations and clear widths come from the physical assemblies.",
+      "player_access": "OPEN_ROUTE",
+      "opening": "doorway",
+      "portal": "service-stair n exterior doorway"
+    },
+    {
+      "id": "L36",
+      "a": "gallery",
+      "b": "guest-a-entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          24.0,
+          3.6,
+          37.0
+        ],
+        [
+          21.5,
+          3.6,
+          29.5
+        ],
+        [
+          21.5,
+          3.6,
+          28.5
+        ],
+        [
+          20.0,
+          3.6,
+          28.5
+        ],
+        [
+          18.0,
+          3.6,
+          28.5
+        ]
+      ],
+      "threshold": [
+        20,
+        3.6,
+        28.5
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L44",
+      "a": "linen",
+      "b": "staff-corridor",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          37.0,
+          3.6,
+          26.0
+        ],
+        [
+          37,
+          3.6,
+          24
+        ],
+        [
+          34.0,
+          3.6,
+          22.0
+        ]
+      ],
+      "threshold": [
+        37,
+        3.6,
+        24
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L46",
+      "a": "staff-corridor",
+      "b": "staff-a",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          3.6,
+          22.0
+        ],
+        [
+          31,
+          3.6,
+          20
+        ],
+        [
+          31.0,
+          3.6,
+          17.0
+        ]
+      ],
+      "threshold": [
+        31,
+        3.6,
+        20
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L47",
+      "a": "staff-corridor",
+      "b": "staff-b",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          34.0,
+          3.6,
+          22.0
+        ],
+        [
+          37,
+          3.6,
+          20
+        ],
+        [
+          37.0,
+          3.6,
+          17.0
+        ]
+      ],
+      "threshold": [
+        37,
+        3.6,
+        20
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L50",
+      "a": "upper-service",
+      "b": "upper-service-stair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          41.5,
+          3.6,
+          22.0
+        ],
+        [
+          41.5,
+          3.6,
+          14.0
+        ],
+        [
+          41.5,
+          3.6,
+          12.0
+        ],
+        [
+          43.0,
+          3.6,
+          11.5
+        ],
+        [
+          43.0,
+          3.6,
+          8.0
+        ]
+      ],
+      "threshold": [
+        41.5,
+        3.6,
+        14
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L51",
+      "a": "attic-stair",
+      "b": "attic-passage",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          43.0,
+          7.2,
+          8.0
+        ],
+        [
+          43.0,
+          7.2,
+          12.5
+        ],
+        [
+          41.5,
+          7.2,
+          12.5
+        ],
+        [
+          41.5,
+          7.2,
+          14.0
+        ],
+        [
+          41.5,
+          7.2,
+          21.0
+        ]
+      ],
+      "threshold": [
+        41.5,
+        7.2,
+        14
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L54",
+      "a": "cellar-stair",
+      "b": "cellar-pass",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          43,
+          -3,
+          8
+        ],
+        [
+          43,
+          -3,
+          12.5
+        ],
+        [
+          41.5,
+          -3,
+          12.5
+        ],
+        [
+          41.5,
+          -3,
+          14
+        ],
+        [
+          41.5,
+          -3,
+          21
+        ]
+      ],
+      "threshold": [
+        41.5,
+        -3,
+        14
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L58",
+      "a": "grand-stair",
+      "b": "gallery",
+      "kind": "stairs",
+      "width": 1.8,
+      "points": [
+        [
+          22.5,
+          0,
+          30
+        ],
+        [
+          22.5,
+          0,
+          25
+        ],
+        [
+          24,
+          0,
+          25
+        ],
+        [
+          24,
+          0,
+          26
+        ],
+        [
+          24,
+          3.6,
+          31.76
+        ],
+        [
+          24,
+          3.6,
+          37
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Separate flights stacked with full-run deck voids, real structure depth and continuous guards; landings remain clear.",
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L59",
+      "a": "cellar-stair",
+      "b": "service-stair",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          43,
+          -3,
+          8
+        ],
+        [
+          43,
+          -3,
+          11.8
+        ],
+        [
+          41.5,
+          -3,
+          11.8
+        ],
+        [
+          41.5,
+          -3,
+          10.4
+        ],
+        [
+          41.5,
+          0,
+          5.75
+        ],
+        [
+          41.5,
+          0,
+          4.2
+        ],
+        [
+          43,
+          0,
+          4.2
+        ],
+        [
+          43,
+          0,
+          8
+        ]
+      ],
+      "rise_m": 3,
+      "run_m": 4.65,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 17,
+      "construction": "Straight approach landing before the sideways turn; preserve clear width and remove upper landing overhang above incoming treads. Native complete path/guards/runtime integration remain required.",
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L60",
+      "a": "service-stair",
+      "b": "upper-service-stair",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          43,
+          0,
+          8
+        ],
+        [
+          43,
+          0,
+          4.2
+        ],
+        [
+          44.5,
+          0,
+          4.2
+        ],
+        [
+          44.5,
+          0,
+          5
+        ],
+        [
+          44.5,
+          3.6,
+          10.25
+        ],
+        [
+          44.5,
+          3.6,
+          11.5
+        ],
+        [
+          43,
+          3.6,
+          11.5
+        ],
+        [
+          43,
+          3.6,
+          8
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.25,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Straight approach landing before the sideways turn; preserve clear width and remove upper landing overhang above incoming treads. Native complete path/guards/runtime integration remain required.",
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
+    },
+    {
+      "id": "L61",
+      "a": "upper-service-stair",
+      "b": "attic-stair",
+      "kind": "stairs",
+      "width": 1.3,
+      "points": [
+        [
+          43,
+          3.6,
+          8
+        ],
+        [
+          43,
+          3.6,
+          11.9
+        ],
+        [
+          41.5,
+          3.6,
+          11.9
+        ],
+        [
+          41.5,
+          3.6,
+          11
+        ],
+        [
+          41.5,
+          7.2,
+          5
+        ],
+        [
+          41.5,
+          7.2,
+          3.8
+        ],
+        [
+          43,
+          7.2,
+          3.8
+        ],
+        [
+          43,
+          7.2,
+          8
+        ]
+      ],
+      "rise_m": 3.6,
+      "run_m": 5.760000000000001,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5,
+      "risers": 20,
+      "construction": "Authored separated flight/landing coordinates. Verify actual exported support, head/body clearance, approaches, guards and continuous runtime sweeps; no acceptance from centre lines.",
+      "note": "Measured reservation only; physical capsule/headroom and underside tests remain required.",
+      "player_access": "OPEN_ROUTE"
+    }
+  ]
+}

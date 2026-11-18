@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2042,
-  "unique_local_file_hashes": 1871,
+  "local_files": 2044,
+  "unique_local_file_hashes": 1873,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 268
+    "native_map_exports": 270
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -28825,6 +28825,30 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "69ad57aebb8606eb5508d94a099c3699e35b84b6e704e9ea89f15b57516a3a55",
       "bytes": 3487516
+    },
+    {
+      "id": "interior-stair-landings",
+      "label": "interior-stair-landings",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "38637985f51a5b79639a62d67c990e259992bfefa0b20a2c0dc8a30bd9034093",
+      "bytes": 3339876
+    },
+    {
+      "id": "interior-stair-landings",
+      "label": "interior-stair-landings",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/interior-stair-landing-pass/school/interior-stair-landings.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1",
+      "bytes": 3353792
     },
     {
       "id": "lookout-landings",

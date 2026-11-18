@@ -1880,3 +1880,14 @@ All 3,441 strict standing samples pass, clearing 165 prior contacts. All five or
 Construction 9dfc9555433c64774e3c8414bd3c9b40dc3fcb1d and all 57 bound source blobs are verified at draft PR 86. Hosted gallery run 44221494086 passed. The public gallery page returned HTTP 200 and both new sampled captures returned HTTP 404, pending movement through the held integration branch.
 
 Further full-footprint surveys locate the next Mansion service landings and School stair bypass. Their current packets record 145 and 100 standing contacts. The two surveys use 3,736 and 1,005 full-body poses, respectively, and bind actual sill, rail, landing and floor dimensions. Their evidence is attached to development/levels/rebuild/lookout-landing-pass/checkpoint.json. Shared gameplay ownership requirements remain open.
+
+
+## 2026-11-17 / Blackthorn Manor and Ravenshade School interior stair landings
+
+Baseline 6a6ee1ab89b73f539054c95ce9f452bced29c701. The active 29-packet source is interior-stair-landing-pass/roster.json.
+
+Four 1.35 m Manor service frames sit in complete piers and lintels at the original south thresholds and floor datums. Guidance joins the built central transfers and routes around the great-stair waist and upper well. The School has a full 300 mm ground slab around the surveyed lower stair opening, with re-seated guards and a 1.02 m clear route to its retained service door. The dining approach now clears the physical jambs before turning past the cafeteria table.
+
+The two packets pass all 17,070 strict standing poses, 88 ordinary links, six flights, six vertical links and eight joined journeys. An additional contiguous sweep covers the Manor's complete cellar-to-attic stair chain. Independent exports match the new renderer and collision meshes and preserve the retained terrain records. The full native roster passes 567 ordinary links, 238 flights and 86 vertical links. It records 415 contacts across 140,454 strict standing samples, down from 660. The build, plans, flow charts, capture pairs, contact list and verification are bound in development/levels/rebuild/interior-stair-landing-pass/checkpoint.json.
+
+DEV-572 through DEV-575 record the fixes, the canonical School arrival and remaining roster work. Northwatch Research Station and Hollowmere Farm are the next architectural inspections at 81 and 79 standing contacts. Complete accessible search capacity, actual room and portal ownership, services and shared gameplay acceptance remain open.

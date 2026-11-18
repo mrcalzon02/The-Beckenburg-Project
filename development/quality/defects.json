@@ -6348,6 +6348,50 @@
       "action": "Complete site enclosure and power and fixture fit. Bind the authored world to the actual investigation ownership and verify shared play.",
       "evidence": "development/levels/rebuild/lookout-landing-pass/checkpoint.json",
       "older_maps": "Preserve the native evidence and require real gameplay receipts before promotion."
+    },
+    {
+      "id": "DEV-572",
+      "title": "Manor service and great stair approaches crossed guarded or obstructed space",
+      "status": "CORRECTED_WITH_FITTED_SERVICE_FRAMES_AND_LANDING_GUIDANCE",
+      "affected": "MANSION great stair, service stair stack, hall and staff thresholds",
+      "symptom": "145 strict standing failures clustered beside guards, well rims and jambs. The great-stair guides approached through the waist or around the top well corner.",
+      "cause": "The service walls had 1.05 m pedestrian frames. The route offsets and turns overlooked the real transfer widths and landing boundaries.",
+      "action": "Rebuild the four south service frames at 1.35 m clear and use the measured transfer aisles and the existing great stair landings. All 8,565 strict native standing poses and both directions of every active route pass.",
+      "evidence": "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json",
+      "older_maps": "Review clear widths and perpendicular approaches at both faces of each installed frame."
+    },
+    {
+      "id": "DEV-573",
+      "title": "School service stair bypass narrowed beside the guarded well",
+      "status": "CORRECTED_WITH_FULL_SLAB_AND_SEATED_GUARDS",
+      "affected": "SCHOOL lower stair, service aisle and dining approach",
+      "symptom": "100 strict standing failures included support loss beside the well and body contacts at frames and furniture.",
+      "cause": "The ground aperture extended past the lower flight envelope and the guide offsets entered the guard, jambs and dining furnishings.",
+      "action": "Rebuild the full 300 mm ground diaphragm and seat the rim guard on the narrowed well. Measure guidance at each real frame and turn around the cafeteria table. All 8,505 strict standing poses pass.",
+      "evidence": "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json",
+      "older_maps": "Verify the full slab and rim, actual stair clearance and furniture after each corridor fit."
+    },
+    {
+      "id": "DEV-574",
+      "title": "School vehicle staging and shared gameplay acceptance remain open",
+      "status": "OPEN_CANONICAL_ARRIVAL_AND_SHARED_RUNTIME",
+      "affected": "SCHOOL native staging and investigation authority",
+      "symptom": "L42 begins near the marked van centre at X28, Z51.5. The canonical rear ramp cargo point is X24.372, Z51. The verified forecourt-to-plant walk begins at the forecourt.",
+      "cause": "The existing generic stage guide and cantilever predate a floor-and-door design tied to the actual van and forecourt.",
+      "action": "Author and verify a supported continuous arrival at the existing canonical van and real foyer door. Complete the shared gameplay and service integration gates.",
+      "evidence": "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json",
+      "older_maps": "Join the exact canon rear ramp to the actual building door, and test it with real collision and ownership."
+    },
+    {
+      "id": "DEV-575",
+      "title": "Standing contacts remain in other native roster packets",
+      "status": "OPEN_REMAINING_NATIVE_AND_SHARED_GAMEPLAY_FIT",
+      "affected": "Active 25-packet native roster",
+      "symptom": "The revised native roster passes 567 ordinary links, 238 flights and 86 vertical links. Its strict footprint probe still records 415 contacts.",
+      "cause": "The active failures include discrete door approach and full platform geometry issues across the remaining sites.",
+      "action": "Inspect the actual yards, thresholds, floors and stair cells. Start with the relay generator cell and the farmhouse stair spine while carrying forward the passing work.",
+      "evidence": "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json",
+      "older_maps": "Track strict standing, whole-link movement and shared runtime as separate evidence gates."
     }
   ],
   "audit_categories": [

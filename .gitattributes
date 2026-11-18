@@ -304,3 +304,6 @@ development/levels/rebuild/lookout-landing-pass/** -text whitespace=cr-at-eol
 tools/build_lookout_landings.py -text whitespace=cr-at-eol
 tools/prepare_lookout_landings.py -text whitespace=cr-at-eol
 tools/verify_lookout_landings.py -text whitespace=cr-at-eol
+development/levels/rebuild/interior-stair-landing-pass/** -text whitespace=cr-at-eol
+tools/build_interior_stair_landings.py -text whitespace=cr-at-eol
+tools/verify_interior_stair_landings.py -text whitespace=cr-at-eol

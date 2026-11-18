@@ -8088,6 +8088,62 @@ Evidence and verification: development/levels/rebuild/lookout-landing-pass/check
 
 Older-map obligation: Preserve the native evidence and require real gameplay receipts before promotion.
 
+### DEV-572 — Manor service and great stair approaches crossed guarded or obstructed space
+
+**Status:** CORRECTED_WITH_FITTED_SERVICE_FRAMES_AND_LANDING_GUIDANCE · **Affected:** MANSION great stair, service stair stack, hall and staff thresholds
+
+145 strict standing failures clustered beside guards, well rims and jambs. The great-stair guides approached through the waist or around the top well corner.
+
+Cause / uncertainty: The service walls had 1.05 m pedestrian frames. The route offsets and turns overlooked the real transfer widths and landing boundaries.
+
+Fix / next action: Rebuild the four south service frames at 1.35 m clear and use the measured transfer aisles and the existing great stair landings. All 8,565 strict native standing poses and both directions of every active route pass.
+
+Evidence and verification: development/levels/rebuild/interior-stair-landing-pass/checkpoint.json
+
+Older-map obligation: Review clear widths and perpendicular approaches at both faces of each installed frame.
+
+### DEV-573 — School service stair bypass narrowed beside the guarded well
+
+**Status:** CORRECTED_WITH_FULL_SLAB_AND_SEATED_GUARDS · **Affected:** SCHOOL lower stair, service aisle and dining approach
+
+100 strict standing failures included support loss beside the well and body contacts at frames and furniture.
+
+Cause / uncertainty: The ground aperture extended past the lower flight envelope and the guide offsets entered the guard, jambs and dining furnishings.
+
+Fix / next action: Rebuild the full 300 mm ground diaphragm and seat the rim guard on the narrowed well. Measure guidance at each real frame and turn around the cafeteria table. All 8,505 strict standing poses pass.
+
+Evidence and verification: development/levels/rebuild/interior-stair-landing-pass/checkpoint.json
+
+Older-map obligation: Verify the full slab and rim, actual stair clearance and furniture after each corridor fit.
+
+### DEV-574 — School vehicle staging and shared gameplay acceptance remain open
+
+**Status:** OPEN_CANONICAL_ARRIVAL_AND_SHARED_RUNTIME · **Affected:** SCHOOL native staging and investigation authority
+
+L42 begins near the marked van centre at X28, Z51.5. The canonical rear ramp cargo point is X24.372, Z51. The verified forecourt-to-plant walk begins at the forecourt.
+
+Cause / uncertainty: The existing generic stage guide and cantilever predate a floor-and-door design tied to the actual van and forecourt.
+
+Fix / next action: Author and verify a supported continuous arrival at the existing canonical van and real foyer door. Complete the shared gameplay and service integration gates.
+
+Evidence and verification: development/levels/rebuild/interior-stair-landing-pass/checkpoint.json
+
+Older-map obligation: Join the exact canon rear ramp to the actual building door, and test it with real collision and ownership.
+
+### DEV-575 — Standing contacts remain in other native roster packets
+
+**Status:** OPEN_REMAINING_NATIVE_AND_SHARED_GAMEPLAY_FIT · **Affected:** Active 25-packet native roster
+
+The revised native roster passes 567 ordinary links, 238 flights and 86 vertical links. Its strict footprint probe still records 415 contacts.
+
+Cause / uncertainty: The active failures include discrete door approach and full platform geometry issues across the remaining sites.
+
+Fix / next action: Inspect the actual yards, thresholds, floors and stair cells. Start with the relay generator cell and the farmhouse stair spine while carrying forward the passing work.
+
+Evidence and verification: development/levels/rebuild/interior-stair-landing-pass/checkpoint.json
+
+Older-map obligation: Track strict standing, whole-link movement and shared runtime as separate evidence gates.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
