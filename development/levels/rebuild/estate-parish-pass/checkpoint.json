@@ -233,5 +233,51 @@
     "tools/prepare_estate_parish.py": "509bd23596e236f411a7d7c827ae529b1195b95136c00a57df9f256ab2b3855e",
     "tools/verify_estate_parish.py": "e4018eb4cb450457c099bfe3526ce1444f7e88b250a0f4dd52ff7d793420db2e"
   },
-  "whole_native_roster": "development/levels/rebuild/estate-parish-pass/verification/full-native-roster-summary.json"
+  "whole_native_roster": "development/levels/rebuild/estate-parish-pass/verification/full-native-roster-summary.json",
+  "publication": {
+    "construction_sha": "0121fcc4e38e7a2af57806a9c0e712ea7288e4a7",
+    "remote": "refs/heads/map/roster-structure-batch",
+    "verified_remote_sha": "0121fcc4e38e7a2af57806a9c0e712ea7288e4a7",
+    "draft_pull_request": 86,
+    "base_ref": "map/house-default",
+    "base_sha": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "main_sha": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "committed_evidence_hashes_matched": 112,
+    "review_gallery_images": 11125,
+    "hosted_gallery_run": 44211721554,
+    "hosted_gallery_sha": "0121fcc4e38e7a2af57806a9c0e712ea7288e4a7",
+    "hosted_gallery_conclusion": "success",
+    "public_gallery_html_status": 200,
+    "public_pages_capture_status": {
+      "mansion-overview.png": 404,
+      "farmhouse-overview.png": 404,
+      "church-overview.png": 404
+    },
+    "status": "VERIFIED_BRANCH_AND_DRAFT_PUBLIC_DEPLOYMENT_PENDING"
+  },
+  "verified_follow_up": {
+    "WLD-13": {
+      "title": "Greywater Cannery",
+      "standing_contacts": 362,
+      "soil_gap_links": {
+        "L17": 147,
+        "L18": 153
+      },
+      "finding": "The west woodland survey finds continuous ground at 0.053\u20130.091 m below the room threshold datum from X -12, Z 35\u201353. Fit the full woodland yard grade to the actual bunk and mess doors. The two indexed door frames stand at X -8, Z 53 and 35."
+    },
+    "WLD-12": {
+      "title": "Gallows Pass Railway",
+      "standing_contacts": 303,
+      "soil_gap_links": {
+        "L02": 88,
+        "L04": 142
+      },
+      "finding": "The old roadhead dogleg stays at Z 82 where the west court falls about 0.24 m and the east shoulder falls about 0.33 m. The station south door is at X 20, Z 76. Grade the full station forecourt and connect the siding from the existing level crest."
+    },
+    "WLD-09": {
+      "title": "Blackwater Hydroelectric Dam",
+      "standing_contacts": 231,
+      "finding": "Repeated return and spillway approaches meet the same east stair bay, guards, middle landing column and fitted portal. Check the shared full bay widths and landing geometry before revising any guide."
+    }
+  }
 }
