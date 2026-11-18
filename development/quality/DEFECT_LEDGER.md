@@ -8118,15 +8118,15 @@ Older-map obligation: Verify the full slab and rim, actual stair clearance and f
 
 ### DEV-574 — School vehicle staging and shared gameplay acceptance remain open
 
-**Status:** OPEN_CANONICAL_ARRIVAL_AND_SHARED_RUNTIME · **Affected:** SCHOOL native staging and investigation authority
+**Status:** STAGED_CANONICAL_ARRIVAL_VERIFIED_RUNTIME_OPEN · **Affected:** SCHOOL native staging and investigation authority
 
 L42 begins near the marked van centre at X28, Z51.5. The canonical rear ramp cargo point is X24.372, Z51. The verified forecourt-to-plant walk begins at the forecourt.
 
 Cause / uncertainty: The existing generic stage guide and cantilever predate a floor-and-door design tied to the actual van and forecourt.
 
-Fix / next action: Author and verify a supported continuous arrival at the existing canonical van and real foyer door. Complete the shared gameplay and service integration gates.
+Fix / next action: Carry forward the verified canonical cargo deck, ramp-to-foyer approach and reached School spaces. Bind the staged packet to the shared investigation runtime and verify dynamic building doors, navigation, optical/acoustic parity and services.
 
-Evidence and verification: development/levels/rebuild/interior-stair-landing-pass/checkpoint.json
+Evidence and verification: development/levels/rebuild/interior-stair-landing-pass/checkpoint.json; development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json
 
 Older-map obligation: Join the exact canon rear ramp to the actual building door, and test it with real collision and ownership.
 
@@ -8134,15 +8134,57 @@ Older-map obligation: Join the exact canon rear ramp to the actual building door
 
 **Status:** OPEN_REMAINING_NATIVE_AND_SHARED_GAMEPLAY_FIT · **Affected:** Active 25-packet native roster
 
-The revised native roster passes 567 ordinary links, 238 flights and 86 vertical links. Its strict footprint probe still records 415 contacts.
+After the School, Hollowmere and Northwatch fits, native movement still passes 567 ordinary links, 238 flights and 86 vertical links. The current strict footprint sweep records 255 standing contacts.
 
 Cause / uncertainty: The active failures include discrete door approach and full platform geometry issues across the remaining sites.
 
-Fix / next action: Inspect the actual yards, thresholds, floors and stair cells. Start with the relay generator cell and the farmhouse stair spine while carrying forward the passing work.
+Fix / next action: Inspect the physical yards, devices, thresholds, floors and stairs. Start with the fishing works, roadside court and parish approach contacts, while advancing the native investigation integration.
 
-Evidence and verification: development/levels/rebuild/interior-stair-landing-pass/checkpoint.json
+Evidence and verification: development/levels/rebuild/interior-stair-landing-pass/checkpoint.json; development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json
 
 Older-map obligation: Track strict standing, whole-link movement and shared runtime as separate evidence gates.
+
+### DEV-576 — Hollowmere stair guides crossed the well and loft guard
+
+**Status:** CORRECTED_WITH_MEASURED_DOOR_AND_LANDING_GUIDANCE · **Affected:** FARMHOUSE main stair spine and barn loft
+
+79 native full-body standing failures at the west well rim, installed timber frames and loft guard.
+
+Cause / uncertainty: The route width and turn locations came from prior drawn paths rather than the guards, walkable landings and fitted frames.
+
+Fix / next action: Use the 1.16 m ground transfer and 1.09 m loft wall-to-guard gap. Verify every native link and three complete joined journeys.
+
+Evidence and verification: development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json
+
+Older-map obligation: Record the actual inset faces controlling each aisle and test full-body support across it.
+
+### DEV-577 — Northwatch arrival and service guides overlooked the installed geometry
+
+**Status:** CORRECTED_WITH_MEASURED_ROADHEAD_AND_SERVICE_GUIDANCE · **Affected:** WLD-08 canonical ramp toe, generator well, and room and service doors
+
+81 native standing failures affected body and support clearance. The arrival guide also began at the marked van centre.
+
+Cause / uncertainty: Nominal route widths exceeded the installed frames and the generator line crossed the well guard.
+
+Fix / next action: Start at the canonical ramp toe and follow the supported roadhead. Turn on the full floor north of the generator well and approach fitted doors squarely.
+
+Evidence and verification: development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json
+
+Older-map obligation: Tie the actual rear toe to a supported site entry and verify guard and frame clearance before certifying route widths.
+
+### DEV-578 — Native School scene needs shared movable building-door authority
+
+**Status:** OPEN_NATIVE_DYNAMIC_DOORS_AND_SHARED_SYSTEMS · **Affected:** SCHOOL staged native loader and shared investigation kernel
+
+The staged scene supports the canonical van and foyer arrival and all 40 authored spaces. Native movement and line-of-sight take early returns using static geometry and the van state.
+
+Cause / uncertainty: Physical building apertures have authored frames. The native movement and optical branches still need the shared movable building-door contract.
+
+Fix / next action: Bind actual fitted apertures to stable runtime door IDs and drive rendering, collision, navigation, acoustics and network state through those bindings.
+
+Evidence and verification: development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json
+
+Older-map obligation: Test each promoted native doorway open and shut through actual host and guest movement and sight paths.
 
 ## Required audit categories
 

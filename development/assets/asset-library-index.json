@@ -1,7 +1,7 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2044,
+  "local_files": 2047,
   "unique_local_file_hashes": 1873,
   "collections": {
     "existing_map_specific_roughs": 298,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 270
+    "native_map_exports": 273
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -28863,6 +28863,42 @@
       "bytes": 5843896
     },
     {
+      "id": "measured-architecture",
+      "label": "measured-architecture",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041",
+      "bytes": 2806648
+    },
+    {
+      "id": "measured-architecture",
+      "label": "measured-architecture",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1",
+      "bytes": 3353792
+    },
+    {
+      "id": "measured-architecture",
+      "label": "measured-architecture",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "83e2e1360d443da6932d76b576f2a85cb22bf6817bbdbd3f9351fd2d6e81f7b1",
+      "bytes": 6516552
+    },
+    {
       "id": "mine-yard",
       "label": "mine-yard",
       "maps": [],
@@ -32170,6 +32206,13 @@
       ]
     },
     {
+      "sha256": "83e2e1360d443da6932d76b576f2a85cb22bf6817bbdbd3f9351fd2d6e81f7b1",
+      "paths": [
+        "development/levels/rebuild/arrival-grounds-construction-pass/wld-08/saved-earthworks.glb",
+        "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.glb"
+      ]
+    },
+    {
       "sha256": "dee9d5acce1a8c391cca55aa2cbc21d54dbcc82862ee43b863bff5fb124bbb82",
       "paths": [
         "development/levels/rebuild/deck-fit-pass/wld-11/deck-terrain.glb",
@@ -32188,6 +32231,13 @@
       "paths": [
         "development/levels/rebuild/deck-fit-pass/wld-16/deck-terrain.glb",
         "development/levels/rebuild/floor-closure-pass/wld-16/closed-floors.glb"
+      ]
+    },
+    {
+      "sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041",
+      "paths": [
+        "development/levels/rebuild/estate-parish-pass/farmhouse/estate-parish.glb",
+        "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.glb"
       ]
     },
     {
@@ -32317,6 +32367,13 @@
       "paths": [
         "development/levels/rebuild/floor-closure-pass/wld-18/closed-floors.glb",
         "development/levels/rebuild/terrain-fit-pass/wld-18/supported-terrain.glb"
+      ]
+    },
+    {
+      "sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1",
+      "paths": [
+        "development/levels/rebuild/interior-stair-landing-pass/school/interior-stair-landings.glb",
+        "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.glb"
       ]
     },
     {

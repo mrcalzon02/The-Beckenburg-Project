@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11169,
+  "count": 11178,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -103054,6 +103054,96 @@
       "height": 900,
       "bytes": 703263,
       "sha256": "8aee32108482f1a6fe4f0d71e472544b7b41f8bbd431892afadc404bdc9aa469"
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/farmhouse-barn-loft-threshold.png",
+      "url": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/farmhouse-barn-loft-threshold.png",
+      "title": "Farmhouse barn loft threshold",
+      "kind": "Native farm and station threshold review or School staged arrival geometry",
+      "width": 1190,
+      "height": 810,
+      "bytes": 1010437,
+      "sha256": "1e28b92e8bba69983523ba75178f440c187b1b95aa240fb6a4d80b3544eb8612"
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/farmhouse-ground-stair-transfer.png",
+      "url": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/farmhouse-ground-stair-transfer.png",
+      "title": "Farmhouse ground stair transfer",
+      "kind": "Native farm and station threshold review or School staged arrival geometry",
+      "width": 1190,
+      "height": 810,
+      "bytes": 1070084,
+      "sha256": "74b5c303813af56b59bf54570ccf2527af065c89cb53b11647a40e05b6825540"
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-canonical-roadhead.png",
+      "url": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-canonical-roadhead.png",
+      "title": "Northwatch canonical roadhead",
+      "kind": "Native farm and station threshold review or School staged arrival geometry",
+      "width": 1190,
+      "height": 810,
+      "bytes": 1173024,
+      "sha256": "acc7930b0b13aa3c0c72dc69ca60ca45c13005f3bdd6c88fe52ad0a33305dd77"
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-generator-well-turn.png",
+      "url": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-generator-well-turn.png",
+      "title": "Northwatch generator well turn",
+      "kind": "Native farm and station threshold review or School staged arrival geometry",
+      "width": 1190,
+      "height": 810,
+      "bytes": 1071809,
+      "sha256": "b88ca1673c9dbf425df3508c25c9241ece78a7b2f442aa32a1c2266412bb5db1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-radio-generator-threshold.png",
+      "url": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-radio-generator-threshold.png",
+      "title": "Northwatch radio generator threshold",
+      "kind": "Native farm and station threshold review or School staged arrival geometry",
+      "width": 1190,
+      "height": 810,
+      "bytes": 945625,
+      "sha256": "abb95186a58681b1084c88ce71063b534f2dfdb470174b0638514a533d459115"
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-cargo-ramp-receiver.png",
+      "url": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-cargo-ramp-receiver.png",
+      "title": "School cargo ramp receiver",
+      "kind": "Native farm and station threshold review or School staged arrival geometry",
+      "width": 1190,
+      "height": 810,
+      "bytes": 916388,
+      "sha256": "09a3eba553897396f85e07f6523b3906b5c3a060bbb258ac74ac0742fa5731a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-foyer-threshold.png",
+      "url": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-foyer-threshold.png",
+      "title": "School foyer threshold",
+      "kind": "Native farm and station threshold review or School staged arrival geometry",
+      "width": 1190,
+      "height": 810,
+      "bytes": 964995,
+      "sha256": "b8e799b9570a0b9f3c9951ce6b8e33ab5091a8f11b1be444f4a8359c9f58cc5c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-ramp-to-the-foyer.png",
+      "url": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-ramp-to-the-foyer.png",
+      "title": "School ramp to the foyer",
+      "kind": "Native farm and station threshold review or School staged arrival geometry",
+      "width": 1190,
+      "height": 810,
+      "bytes": 939874,
+      "sha256": "f1c35d561efaa638c653aa897a8b3ea90b4f1f39b5f3298d83665b9615f4b3ea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-van-and-forecourt.png",
+      "url": "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-van-and-forecourt.png",
+      "title": "School van and forecourt",
+      "kind": "Native farm and station threshold review or School staged arrival geometry",
+      "width": 1190,
+      "height": 810,
+      "bytes": 1207730,
+      "sha256": "7e5f5f86e2e6afdbca1ab19df610032a0b4a818da16e90d70f048449a7aab3af"
     },
     {
       "path": "development/levels/rebuild/captures/mine-yard-batch/canonical-arrival.png",

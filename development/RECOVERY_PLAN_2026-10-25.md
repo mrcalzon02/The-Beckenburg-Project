@@ -1896,3 +1896,14 @@ DEV-572 through DEV-575 record the fixes, the canonical School arrival and remai
 Verified at draft PR 86 on construction 442ee3a827d30a57c00016ac0bd23624ff11ba23. The remote tree matches the committed local tree and all 53 bound project files. Exact hosted gallery run 44225796039 passed. The public gallery returns HTTP 200. The sampled new Manor and School images return HTTP 404 pending integration through the held parent.
 
 The next measured architecture trial at Hollowmere Farm and Northwatch Research Station passes 10,833 strict standing poses, fifty ordinary links and six flights and vertical links against byte-identical saved renderer and collision models. The field survey and trial are local evidence for the next packet revision. The published roster still records the 79 and 81 contacts at these sites until the revised guidance is reviewed and promoted.
+
+
+## 2026-11-17 / Hollowmere, Northwatch and Ravenshade measured approaches
+
+Baseline f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a. The active 29-packet source is measured-arrival-and-approach-pass/roster.json.
+
+Hollowmere's circulation follows the measured 1.16 m ground transfer, the 1.09 m barn loft wall-to-guard aisle and the existing fitted frames. Northwatch's radio corridor now crosses the generator-room door and turns north of the guarded well on the full slab. Its exterior arrival begins at the actual canonical ramp toe. Their prior 79 and 81 standing contacts are cleared.
+
+Ravenshade now joins the real cargo ramp at X24.372, Y0, Z51 to the saved gravel, continuous forecourt and actual south foyer threshold. The exact School GLB and collision source load through the staged production engine. The replay passes standing and crouched round trips, six seat-to-hatch approaches, the closed cargo-hatch control and continuous movement to all 40 authored spaces with their surveyed ownership. Site boundary and extra reachable space inspection, building doors, services, optical and acoustic parity, shared in-game renderer and multiplayer acceptance remain open.
+
+All three packets pass 19,179 strict standing samples and nine joined native journeys. The 25-packet native sweep passes 567 ordinary links, 238 flights and 86 vertical links. Standing contacts fell from 415 to 255 across 140,340 samples. The original physical scene bytes, exact plans and gallery captures are bound in development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json. DEV-574 through DEV-578 track the remaining and corrected scopes.

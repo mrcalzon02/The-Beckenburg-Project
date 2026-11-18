@@ -1369,7 +1369,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "0121fcc4e38e7a2af57806a9c0e712ea7288e4a7",
+          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/farmhouse/rough-layout.json",
@@ -1381,16 +1381,18 @@
             "development/levels/rebuild/previews/farmhouse-revised-rough-plan.png",
             "development/levels/rebuild/farmhouse/search-envelope.json",
             "development/levels/rebuild/farmhouse/search-layout.json",
-            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json",
+            "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json"
           ],
           "defects": [
-            "DEV-561"
+            "DEV-561",
+            "DEV-576"
           ],
-          "next_action": "Check the preserved room program against working capacity, furnishings and the 40-space accessible search limit."
+          "next_action": "Continue the full search and route plan audit with the measured thresholds and exact van arrival."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "0121fcc4e38e7a2af57806a9c0e712ea7288e4a7",
+          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
           "evidence": [
             "development/levels/rebuild/structures/farmhouse/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1419,7 +1421,8 @@
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
             "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
-            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json",
+            "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -1441,9 +1444,10 @@
             "DEV-416",
             "DEV-559",
             "DEV-560",
-            "DEV-561"
+            "DEV-561",
+            "DEV-576"
           ],
-          "next_action": "Resolve the measured older fitting and standing contacts before in-game room, door and live traversal acceptance."
+          "next_action": "Carry forward the measured approach and scoped passing native walks. Complete actual runtime geometry, boundaries and full site traversal checks."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -2411,7 +2415,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
+          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/school/rough-layout.json",
@@ -2422,17 +2426,18 @@
             "development/levels/rebuild/previews/school-revised-rough-plan.png",
             "development/levels/rebuild/school/search-envelope.json",
             "development/levels/rebuild/school/search-layout.json",
-            "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json"
+            "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json",
+            "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-573",
             "DEV-574"
           ],
-          "next_action": "Resolve the secondary upper exit, privacy and fixture/equipment storage. Confirm permanent context seals and the 40-space accessible search cap from actual reachable rooms."
+          "next_action": "Continue the full search and route plan audit with the measured thresholds and exact van arrival."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
+          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
           "evidence": [
             "development/levels/rebuild/structures/school/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2461,7 +2466,8 @@
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
             "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
-            "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json"
+            "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json",
+            "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -2484,7 +2490,7 @@
             "DEV-573",
             "DEV-574"
           ],
-          "next_action": "Carry forward the verified frames, whole stair landings and circulation. Complete the full site architecture and shared renderer/collision/navigation parity."
+          "next_action": "Carry forward the measured approach and scoped passing native walks. Complete actual runtime geometry, boundaries and full site traversal checks."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -2528,11 +2534,16 @@
           "next_action": "Finish joined enclosure, stairs and slab inspection. Verify structural continuity and full supported travel from the canonical ramp to the actual foyer threshold."
         },
         "S06": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
+          "evidence": [
+            "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-574",
+            "DEV-578"
+          ],
+          "next_action": "Carry forward the staged cargo-hatch, ramp, foyer ownership and 40 reachable volumes. Bind movable building doors, services, acoustics, shared renderer and network state."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -3991,15 +4002,19 @@
           "next_action": "Complete child-room/service/security/privacy/capacity program and primary-reference inspection; review inherited dimensions in the subsequent rough pass."
         },
         "S02": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "status": "IN_PROGRESS",
+          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
+          "evidence": [
+            "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-577"
+          ],
+          "next_action": "Continue the full search and route plan audit with the measured thresholds and exact van arrival."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
           "evidence": [
             "development/levels/rebuild/structures/wld-08/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -4027,7 +4042,8 @@
             "development/levels/rebuild/floor-closure-pass/wld-08/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -4046,9 +4062,10 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-577"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Carry forward the measured approach and scoped passing native walks. Complete actual runtime geometry, boundaries and full site traversal checks."
         },
         "S04": {
           "status": "IN_PROGRESS",

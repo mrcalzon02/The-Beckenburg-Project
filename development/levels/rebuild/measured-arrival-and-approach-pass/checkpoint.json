@@ -1,0 +1,158 @@
+{
+  "status": "MEASURED_PHYSICAL_APPROACHES_STAGED_SCHOOL_RUNTIME_OPEN",
+  "baseline": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
+  "roster": "development/levels/rebuild/measured-arrival-and-approach-pass/roster.json",
+  "other_packets_preserved": 26,
+  "updated_packets": [
+    {
+      "id": "FARMHOUSE",
+      "construction": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/construction.json",
+      "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/authored-layout.json",
+      "glb": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.glb",
+      "native": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.hcs2",
+      "blend": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.blend",
+      "glb_sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041",
+      "native_sha256": "042f0ab01cd546fe561173102255e0d53b5cf505f8b8d630686d5986a3bc3810"
+    },
+    {
+      "id": "SCHOOL",
+      "construction": "development/levels/rebuild/measured-arrival-and-approach-pass/school/construction.json",
+      "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/school/authored-layout.json",
+      "glb": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.glb",
+      "native": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.hcs2",
+      "blend": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.blend",
+      "glb_sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1",
+      "native_sha256": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865"
+    },
+    {
+      "id": "WLD-08",
+      "construction": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/construction.json",
+      "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/authored-layout.json",
+      "glb": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.glb",
+      "native": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.hcs2",
+      "blend": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.blend",
+      "glb_sha256": "83e2e1360d443da6932d76b576f2a85cb22bf6817bbdbd3f9351fd2d6e81f7b1",
+      "native_sha256": "cb13ae092e0eaf67650a48817dbd84ebe0240a38a0127e2f273e61f9fd1ae66c"
+    }
+  ],
+  "geometry_identical_to_previous_sources": true,
+  "native_scope": {
+    "FARMHOUSE": {
+      "standing": 5448,
+      "contacts": 0,
+      "previous_contacts": 79,
+      "ordinary_links": 33,
+      "flights": 3,
+      "joined_journeys": 3,
+      "aperture_controls": {
+        "aperture_rays": 36,
+        "standing_sills": 24,
+        "solid_jamb_rays": 8
+      }
+    },
+    "SCHOOL": {
+      "standing": 8376,
+      "contacts": 0,
+      "previous_contacts": 0,
+      "ordinary_links": 43,
+      "flights": 2,
+      "joined_journeys": 3,
+      "aperture_controls": {
+        "aperture_rays": 9,
+        "standing_sills": 6,
+        "solid_jamb_rays": 2
+      }
+    },
+    "WLD-08": {
+      "standing": 5355,
+      "contacts": 0,
+      "previous_contacts": 81,
+      "ordinary_links": 17,
+      "flights": 3,
+      "joined_journeys": 3,
+      "aperture_controls": {
+        "aperture_rays": 27,
+        "standing_sills": 18,
+        "solid_jamb_rays": 6
+      }
+    }
+  },
+  "staged_school_arrival": {
+    "measure": "result",
+    "decoded_render_triangles": "18889",
+    "scene_revision": "e84cd70e8e28a9d91007eb823ac8831177b665805a9307d89228657b4547e69e",
+    "staged_owner_sequence": "14,13,0",
+    "native_ground_receivers": "5",
+    "open_cargo_standing_roundtrip": "PASS",
+    "open_cargo_crouching_roundtrip": "PASS",
+    "spawn_to_hatch_approaches": "6",
+    "closed_cargo_hatch": "BLOCKED_AT_HATCH",
+    "open_hatch_after_close": "PASS",
+    "reachable_authored_spaces": "40"
+  },
+  "roster_results": {
+    "ordinary_links": 567,
+    "flights": 238,
+    "vertical_links": 86,
+    "standing": 140340,
+    "contacts": 255,
+    "previous_contacts": 415
+  },
+  "remaining": [
+    "Full site envelope and accessible-space audit beyond the 40 reached authored School spaces.",
+    "Native movable building doors, optical/acoustic and navigation parity, services, renderer and multiplayer acceptance.",
+    "The 255 remaining contact samples elsewhere in the native roster, including WLD-06, WLD-16 and CHURCH."
+  ],
+  "project_bytes_sha256": {
+    "development/levels/rebuild/captures/measured-arrival-and-approach-batch/farmhouse-barn-loft-threshold.png": "1e28b92e8bba69983523ba75178f440c187b1b95aa240fb6a4d80b3544eb8612",
+    "development/levels/rebuild/captures/measured-arrival-and-approach-batch/farmhouse-ground-stair-transfer.png": "74b5c303813af56b59bf54570ccf2527af065c89cb53b11647a40e05b6825540",
+    "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-canonical-roadhead.png": "acc7930b0b13aa3c0c72dc69ca60ca45c13005f3bdd6c88fe52ad0a33305dd77",
+    "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-generator-well-turn.png": "b88ca1673c9dbf425df3508c25c9241ece78a7b2f442aa32a1c2266412bb5db1",
+    "development/levels/rebuild/captures/measured-arrival-and-approach-batch/northwatch-radio-generator-threshold.png": "abb95186a58681b1084c88ce71063b534f2dfdb470174b0638514a533d459115",
+    "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-cargo-ramp-receiver.png": "09a3eba553897396f85e07f6523b3906b5c3a060bbb258ac74ac0742fa5731a0",
+    "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-foyer-threshold.png": "b8e799b9570a0b9f3c9951ce6b8e33ab5091a8f11b1be444f4a8359c9f58cc5c",
+    "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-ramp-to-the-foyer.png": "f1c35d561efaa638c653aa897a8b3ea90b4f1f39b5f3298d83665b9615f4b3ea",
+    "development/levels/rebuild/captures/measured-arrival-and-approach-batch/school-van-and-forecourt.png": "7e5f5f86e2e6afdbca1ab19df610032a0b4a818da16e90d70f048449a7aab3af",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/authored-layout.json": "9d49fbd2fe2012705a6f7f57094076273548d5604fae3ccf469e738593aac192",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/construction.json": "d0284dd7aea702850cc0c306c2dd9ecd9b91b117a63499425a4b29a8007ae52e",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/construction.md": "87c7dc5bb9d0503e91c144c1d84c24e80957321cf9338ece4ed3e97ea62c36c8",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/export-review.json": "cebdf4fd475bf2c3997000067011226b08dcd1834d6f79c7593316bd79a6e5c2",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.blend": "5f2aa9b8fa9e292b0a3ded7cbac39e4062b01c9aceebd085b95a17c74834a817",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.glb": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.hcs2": "042f0ab01cd546fe561173102255e0d53b5cf505f8b8d630686d5986a3bc3810",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-plan.svg": "64cb39c2d66a5b75b175dbb9e107c0cc879468574add26e44f1b027db0d77210",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/roster.json": "9109ed8d5359260521bf746a3d6442054aff580685b4342ef7f7a76616ed14e9",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/school/authored-layout.json": "870e4232b1357508a48e3c9b466a3a1def070af4d7eeb64d3d8644448c5f3b09",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/school/construction.json": "7d734c0d7c08d675cab45c85142089aa954c66ac96a9ed85d5cbcc42adcde0fb",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/school/construction.md": "66437864a8e21f99ce35aae8c1cbab80a2b5d876c735c23f4377c1fb4f3f3da4",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/school/export-review.json": "5151b888a51342667999be901422dd9075b47408acc2f460ad3188452e81ba22",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.blend": "8bb708eb67e0d1ce4b8563973330dea1800a4a6bcbe77c8de466596987f92189",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.glb": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.hcs2": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-plan.svg": "a0a1ec65cc57921a738c0ae873ee8a792485c0c50f9868880b7b380b7fd1834e",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/complete-journey-input.tsv": "dd6057455bd78c74da40ce00fc87b60c111554da6f83f97ee4f5748c8fcc83c3",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/complete-journey-sweeps.tsv": "7b72a5637cc3b2f80ed4891c56e5fc9a24fc70f29d75f50526202d73fdeb33b9",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/flight-sweeps.tsv": "31123281d40541cd95b68c7303acdf7f37c05f361501eead50f8187a2f24c39b",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/full-native-stairs-report.json": "b379b9113e29fbb610f1ca11a761af7b8faf79c1aaef6ec38c9bf592015811a0",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/full-native-standing-report.json": "266af288d0b2e8c2a9acb34a461ef632b56566d13290b5f0f7aabed77c07fc9d",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/journeys-and-ramp-runtime.json": "b6f67b83a0b68d20985304d1a448ca96b99fdeaecafc76947473d0f85c12bb26",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/ordinary-link-sweeps.tsv": "37fcd624bd60183ed6f93bb25888b72ea23fbc614d154f9331b322807cb6e1b0",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/ramp-runtime-input.tsv": "bc21cae564697b0cd4b5f8492737d55965a4bdad978a19791b4b8889517a5b4b",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/ramp-runtime-proof.tsv": "ceb88aa1b0664330ef6a7c45068b62eee56fb64225dc7fee9395db41c2127de8",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/remaining-standing-contacts.tsv": "421fe58eb6a46fa299fa1cd145ede8792fa6e05d0d8293c9c41691df1f23d006",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/verification/vertical-link-sweeps.tsv": "843d0f5163dc059347aa314e56e56f9aa5251966005960f7a3e4285ec551b6ac",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/authored-layout.json": "afa6c3c3aadc5f47d34d6790dc80f6c96686bc690c587280aa58a8ed48a0f53d",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/construction.json": "2137ff6a7022dc358700bae0c542713e530e6f511e44a03cd0afd7d5f71836b0",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/construction.md": "097b3716166cd7f3a80340f72842969dd6a06314a73da008cccfd7445c4eb250",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/export-review.json": "ee53e00791e7082603c9319ce4b55a9f7b95a0157bb39848cc5fd1394e77fc0e",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.blend": "ec27ed5b19e00192b599c6448420c9c23479c6bbf4896d5300fd0fa5f8dc8022",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.glb": "83e2e1360d443da6932d76b576f2a85cb22bf6817bbdbd3f9351fd2d6e81f7b1",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.hcs2": "cb13ae092e0eaf67650a48817dbd84ebe0240a38a0127e2f273e61f9fd1ae66c",
+    "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-plan.svg": "27c79024289dcfc9d6c015b5d41698974bc16e0570cceb48bf1a03b1fd4679da",
+    "tools/build_measured_approaches.py": "9049608c569917166258f897c33e7cc0475480d29b49163ffcac593ef646c6a2",
+    "tools/draw_measured_approaches.py": "7d6bf37d5fbad744b02a799315a477eaa2d831fb7fdac9ef912d75818746314e",
+    "tools/java/NativeSchoolArrivalProbe.java": "4cbaae7305ac8e53ad8ae2e519750ca7ee5882921cfbb56e99dcfe7dfbcf9f4f",
+    "tools/render_measured_approaches.py": "bc313f4cd62ce7fd377dc30464d5969a3fa8ac88bc54cd1db909989e9aae0836",
+    "tools/verify_measured_approaches.py": "581e14f90d17fb36f3b28fe9c6c08ea927f86d71dbb16c578668960deeebbcb9"
+  }
+}
