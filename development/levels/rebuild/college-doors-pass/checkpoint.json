@@ -59,7 +59,24 @@
   "rendering": {
     "software": "verification/software-runtime.txt",
     "opengl": "verification/opengl-runtime.txt",
-    "actual_hardware": "NVIDIA RTX 5070, OpenGL 3.3.0 driver 616.64"
+    "actual_hardware": "NVIDIA RTX 5070, OpenGL 3.3.0 driver 616.64",
+    "pixel_difference": {
+      "definition": "Same-camera open and closed pixels whose RGB sum differs by at least 15",
+      "matches": [
+        "FRAMES software COLLEGE-COURT-teaching-lobby changed_pixels=462308",
+        "FRAMES software L06 changed_pixels=384249",
+        "FRAMES software L14 changed_pixels=377655",
+        "FRAMES software L52 changed_pixels=395951",
+        "FRAMES software L67 changed_pixels=404021",
+        "FRAMES software COLLEGE-bay-indexed-door-4 changed_pixels=420897",
+        "FRAMES opengl COLLEGE-COURT-teaching-lobby changed_pixels=429103",
+        "FRAMES opengl L06 changed_pixels=382490",
+        "FRAMES opengl L14 changed_pixels=379376",
+        "FRAMES opengl L52 changed_pixels=397250",
+        "FRAMES opengl L67 changed_pixels=402527",
+        "FRAMES opengl COLLEGE-bay-indexed-door-4 changed_pixels=407059"
+      ]
+    }
   },
   "verified_roster": {
     "staged_native_packets": 25,
@@ -316,5 +333,6 @@
       "GroundRecoverySupportParityTest": "PASS",
       "LanWorldRenderTest": "PASS"
     }
-  }
+  },
+  "publication_readback": "verification/publication-readback.json"
 }
