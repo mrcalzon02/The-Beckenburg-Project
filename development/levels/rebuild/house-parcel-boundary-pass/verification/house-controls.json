@@ -1,0 +1,112 @@
+{
+  "level_revision": "first-principles-functional-furnishings-v1-c788f7e17276da3e",
+  "scope": "Active Briar House saved-grade primary enclosure, actual player movement, visibility, object rays, and fence render parity",
+  "panel_count": 66,
+  "parcel_runs": 14,
+  "joined_seams": 66,
+  "positions_sampled_per_panel": 33,
+  "shared_renderer_physics_triangles": 28512,
+  "supported_movement_sweeps": 396,
+  "player_crossings": 0,
+  "physical_capsule_contacts": 17424,
+  "sight_rays_through_timber": 0,
+  "sight_rays_through_real_gaps": 3709,
+  "timber_sight_stops": 6697,
+  "filtered_small_and_large_object_gaps": 65,
+  "object_stops": 2068,
+  "maximum_ground_to_panel_base_m": -0.0243,
+  "minimum_post_above_source_base_m": 1.9017,
+  "road_approaches_passed": [
+    "HOUSE",
+    "FARMHOUSE",
+    "SCHOOL"
+  ],
+  "exact_ray_readables": {
+    "HOUSE": 3,
+    "FARMHOUSE": 10,
+    "SCHOOL": 11
+  },
+  "whole_scene_ray_comparison": {
+    "samples": 13068,
+    "prior_disagreements_with_isolated_fence": 4222,
+    "candidate_disagreements_with_isolated_fence": 600,
+    "scope": "Full world queries include terrain, nearby supports, buildings and other objects. Isolated fence mesh is verified independently against final renderer triangles and gameplay seam controls."
+  },
+  "standing_views": [
+    {
+      "path": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-carriageway-south-return.png",
+      "sha256": "40d233f81ecb97774402a8dc5072ec115d51bcda39c2a1a5e99bbdae9ff79259"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-rear-service-return.png",
+      "sha256": "ebbd1f4e9ae1bb29140ae5098c6fbe54b1e9e65ea9afdde2b1f7a81c5decb4c8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-van-and-south-boundary.png",
+      "sha256": "a1b8daf5b3d089adfcdab2cee15f1cfc7666b3b076b2c4c0be0884fcc4c70e5d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-west-bend.png",
+      "sha256": "b73cca7c266c4cd820b28abdc716c715c9f145173c0c3be0658e4487c275c6ae"
+    }
+  ],
+  "plan_capture": {
+    "path": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-parcel-plan.png",
+    "sha256": "c82654cd62e58e19c43c399559ed4f87f9b0efd657588afb1732240f1587c844"
+  },
+  "guide_replay": {
+    "door_14": {
+      "points_xz": [
+        [
+          18.372,
+          32
+        ],
+        [
+          17,
+          32
+        ],
+        [
+          17,
+          28
+        ],
+        [
+          19.8,
+          24
+        ],
+        [
+          19.8,
+          20.5
+        ],
+        [
+          19.8,
+          19.8
+        ]
+      ],
+      "moves_each_direction_per_posture": 183
+    },
+    "door_15": {
+      "points_xz": [
+        [
+          16.5,
+          7
+        ],
+        [
+          16.5,
+          10
+        ],
+        [
+          16.5,
+          10.7
+        ]
+      ],
+      "moves_each_direction_per_posture": 47
+    },
+    "open_forward_and_return_movement_samples": 920,
+    "closed_leaves_stop_exterior_approaches": 4,
+    "postures": [
+      "standing",
+      "crouching"
+    ],
+    "replay": "HouseParcelBoundaryTest.verifyDoorGuides"
+  }
+}

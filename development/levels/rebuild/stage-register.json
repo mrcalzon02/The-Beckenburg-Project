@@ -7047,5 +7047,24 @@
       "bidirectional_vertical_routes": 86
     },
     "next_action": "Audit stable room ownership and door schedules. Verify full gameplay dispatch, services and perimeter contracts. Review authored House boundary segments."
+  },
+  "house_parcel_boundary_checkpoint": {
+    "status": "HOUSE_PARCEL_GAMEPLAY_VERIFIED_ROSTER_ACCEPTANCE_OPEN",
+    "roster": "development/levels/rebuild/house-parcel-boundary-pass/roster.json",
+    "baseline": "88a6a109d26a0c9d77b3533462362b6effb79823",
+    "checkpoint": "development/levels/rebuild/house-parcel-boundary-pass/checkpoint.json",
+    "house_revision": "first-principles-functional-furnishings-v1-c788f7e17276da3e",
+    "native_sources_verified_at_prior_bytes": 25,
+    "house_results": {
+      "panels": 66,
+      "joins": 66,
+      "supports_per_panel": 33,
+      "sweeps": 396,
+      "crossings": 0,
+      "shared_triangles": 28512,
+      "real_sight_gaps": 3709,
+      "exact_readables": 3
+    },
+    "next_action": "Fit College service equipment and distribution to the actual maintenance rooms and grounded exterior. Verify stable owners, real door and circuit behavior, and normal host dispatch."
   }
 }

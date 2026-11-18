@@ -62,7 +62,7 @@ record NativeInvestigationDoor(Spec spec, Pose closedPose, Pose openPose) {
             }
         }
         var model = new GlbProps.Model(List.copyOf(faces));
-        return new Pose(model,AuthoredSitePhysics.doorObstacles(spec.frameId(),model));
+        return new Pose(model,AuthoredSitePhysics.meshObstacles(spec.frameId(),model));
     }
 
     private static GlbProps.Vertex vertex(GlbProps.Vertex v, double x, double y, double z,

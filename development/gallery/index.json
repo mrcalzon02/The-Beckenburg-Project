@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11205,
+  "count": 11210,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -101824,6 +101824,56 @@
       "height": 200,
       "bytes": 30873,
       "sha256": "2258d97e973ac9e7b3d0aa6fe02ea2bcaf0f6d95c4cb1b588cbb4451f8c11103"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-carriageway-south-return.png",
+      "url": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-carriageway-south-return.png",
+      "title": "House carriageway south return",
+      "kind": "House timber boundary at standing height",
+      "width": 1120,
+      "height": 700,
+      "bytes": 361752,
+      "sha256": "40d233f81ecb97774402a8dc5072ec115d51bcda39c2a1a5e99bbdae9ff79259"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-parcel-plan.png",
+      "url": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-parcel-plan.png",
+      "title": "House parcel plan",
+      "kind": "House surveyed parcel and doorway plan",
+      "width": 864,
+      "height": 866,
+      "bytes": 53260,
+      "sha256": "c82654cd62e58e19c43c399559ed4f87f9b0efd657588afb1732240f1587c844"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-rear-service-return.png",
+      "url": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-rear-service-return.png",
+      "title": "House rear service return",
+      "kind": "House timber boundary at standing height",
+      "width": 1120,
+      "height": 700,
+      "bytes": 397765,
+      "sha256": "ebbd1f4e9ae1bb29140ae5098c6fbe54b1e9e65ea9afdde2b1f7a81c5decb4c8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-van-and-south-boundary.png",
+      "url": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-van-and-south-boundary.png",
+      "title": "House van and south boundary",
+      "kind": "House timber boundary at standing height",
+      "width": 1120,
+      "height": 700,
+      "bytes": 336116,
+      "sha256": "a1b8daf5b3d089adfcdab2cee15f1cfc7666b3b076b2c4c0be0884fcc4c70e5d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-west-bend.png",
+      "url": "development/levels/rebuild/captures/house-parcel-boundary-batch/house-west-bend.png",
+      "title": "House west bend",
+      "kind": "House timber boundary at standing height",
+      "width": 1120,
+      "height": 700,
+      "bytes": 357292,
+      "sha256": "b73cca7c266c4cd820b28abdc716c715c9f145173c0c3be0658e4487c275c6ae"
     },
     {
       "path": "development/levels/rebuild/captures/household-sacred-bay-batch/church-belfry-cutaway.png",

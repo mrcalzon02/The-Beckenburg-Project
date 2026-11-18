@@ -1195,3 +1195,9 @@ The staged game mover reaches the director deck from the canonical van through e
 All 140,646 standing poses pass across the 25 native source packets. All 567 ordinary links, 238 stair flights and 86 vertical links pass in both directions. HouseRebuildPhysicsTest passes with explicit original and rebuilt source selection. Briar House still requires a physical perimeter audit of the 66 authored segments. The old enclosure test expects eight outline edges.
 
 Recovery readback records main 10fe52cb1feba1267efcf4edce67a5ca1bd3823e. The latest verified full multiplayer, installer and renderer runs on their own sources are 44153590389, 44153590626 and 44016080200. The construction pass stays on the held draft.
+
+## Briar House parcel boundary
+
+The active [29-location roster](house-parcel-boundary-pass/roster.json) carries forward all 25 staged native construction sources at their recorded bytes. The [measured House parcel and entrance plan](house-parcel-boundary-pass/parcel-plan.svg) connects the van approach to the real front door on saved grade and depicts both exterior doors. The 66 canonical timber panels now share 28,512 placed triangles across rendering and physical queries. All 396 supported player approaches stopped at the panels, and the runtime sight and item checks resolved actual gaps. The [checkpoint](house-parcel-boundary-pass/checkpoint.json) records the evidence and remaining acceptance work.
+
+College is next for physically placed maintenance equipment, the grounded generator and distribution network, real door approaches and normal host and peer verification. The held parent and draft review still gate public release.

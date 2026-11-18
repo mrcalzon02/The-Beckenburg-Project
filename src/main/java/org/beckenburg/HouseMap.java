@@ -22,7 +22,7 @@ public final class HouseMap {
      * shadow rays. Unlike wallPortals, this must not inherit child-room
      * apertures: the shadow algorithm historically checks direct owners only. */
     private final List<List<Portal>> lightPortals;
-    private final AuthoredSitePhysics worldSurface;
+    private final AuthoredSitePhysics worldSurface,parcelBoundary;
     private final boolean editorTerrainWalking;
     private final HouseRebuildEnvelope.Geometry envelope,services;
     HouseRebuildEnvelope.Geometry services(){return services;}
@@ -105,6 +105,8 @@ public final class HouseMap {
         this.worldSurface=worldSurface;
         editorTerrainWalking=worldSurface!=null&&WorldTerrainSurface.walking(level);
         envelope=HouseRebuildEnvelope.geometry(level);
+        var authoredBoundary=HouseParcelBoundary.geometry(level);
+        parcelBoundary=authoredBoundary==null?null:authoredBoundary.physics();
         services=HouseServiceNetwork.geometry(level);
         terrain=SiteTerrain.of(level);
         if(nativeInvestigation!=null)for(var door:nativeInvestigation.doors())
@@ -398,6 +400,7 @@ public final class HouseMap {
         if(worldSurface!=null&&worldSurface.bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(envelope!=null&&envelope.physics().bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(services!=null&&services.physics().bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
+        if(parcelBoundary!=null&&parcelBoundary.bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(nativeSite!=null){
             if(nativeDoorBodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
             Double sy=van.supportHeight(x,z);boolean blocked=van.collides(x,z,radius)&&y+bodyHeight>van.placement().y()&&y<van.placement().y()+VanStaging.ROOF_Y;
@@ -480,12 +483,16 @@ public final class HouseMap {
     /** Small-body sweep, including its radius, ceiling and furnishing contact. */
     public boolean clearObjectPath(double ax,double ay,double az,double bx,double by,double bz,double radius,double half){
         if(!finite(ax,ay,az,bx,by,bz,radius,half)||radius<0||radius>.3||half<0||half>.4)return false;
-        if(worldSurface!=null)for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})
-            if(!worldSurface.clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;
-        if(envelope!=null)for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})
-            if(!envelope.physics().clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;
-        if(services!=null)for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})
-            if(!services.physics().clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;
+        if(worldSurface!=null||envelope!=null||services!=null||parcelBoundary!=null){
+            for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}}){
+                var from=new Vec(ax+d[0],ay+d[1],az+d[2]);
+                var to=new Vec(bx+d[0],by+d[1],bz+d[2]);
+                if(worldSurface!=null&&!worldSurface.clearSight(from,to)
+                    ||envelope!=null&&!envelope.physics().clearSight(from,to)
+                    ||services!=null&&!services.physics().clearSight(from,to)
+                    ||parcelBoundary!=null&&!parcelBoundary.clearSight(from,to))return false;
+            }
+        }
         if(nativeSite!=null){
             for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}}){
                 var from=new Vec(ax+d[0],ay+d[1],az+d[2]);
@@ -519,6 +526,7 @@ public final class HouseMap {
         if(worldSurface!=null&&!worldSurface.clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
         if(envelope!=null&&!envelope.physics().clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
         if(services!=null&&!services.physics().clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
+        if(parcelBoundary!=null&&!parcelBoundary.clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
         if(nativeSite!=null){
             var from=new Vec(ax,ay,az);
             var to=new Vec(bx,by,bz);
@@ -532,13 +540,20 @@ public final class HouseMap {
             boolean inside=false;
             for(Room r:level.rooms())if(r.contains(x,y,z)){inside=true;break;}
             for(Portal p:level.portals())if(!p.kind().equals("stair")&&y>=p.y()&&y<p.y()+2.4&&inPortal(p,x,z,0)){inside=true;if(p.door()&&!doorOpen(p.id())&&p.id()!=selectedPortal)return false;}
-            if(!inside||wallBlocked(x,y,z,.015,true,selectedPortal)
+            // The House room outline indexes gameplay. Its authored exterior
+            // remains visible through actual fence gaps above the saved ground.
+            if((!inside&&!parcelExteriorSight(x,y,z))||wallBlocked(x,y,z,.015,true,selectedPortal)
                 ||DeckSlabs.blocksRay(level,x,y,z))return false;
             for(Room r:level.rooms())if((Math.abs(y-surface(r,x,z))<.06||terrain!=null&&r.outside()&&r.id()!=14&&y<terrain.height(x,z))&&x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()&&!level.floorVoid(x,r.y(),z))return false;
             for(Collider p:level.colliders())if(y>p.y()&&y<p.y()+p.height()&&boxHit(x,y-1,z,0,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw()))return false;
             for(Collider p:closetColliders)if(y>p.y()&&y<p.y()+p.height()&&boxHit(x,y-1,z,0,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw()))return false;
         }
         return true;
+    }
+    private boolean parcelExteriorSight(double x,double y,double z){
+        if(parcelBoundary==null||worldSurface==null)return false;
+        var ground=worldSurface.support(x,z,level.dock().y(),2);
+        return ground!=null&&y>ground.y()+.06;
     }
     public boolean clearLineOfSight(double ax,double az,double bx,double bz){int a=roomAt(ax,az),b=roomAt(bx,bz);return a>=0&&b>=0&&clearLineOfSight(ax,floorY(a)+1.3,az,bx,floorY(b)+1.3,bz);}
     /** Legacy map-overlay sampling; production rendering reads level surfaces directly. */

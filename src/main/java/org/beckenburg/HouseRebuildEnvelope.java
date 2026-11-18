@@ -28,6 +28,7 @@ public final class HouseRebuildEnvelope {
             ?new Socket(socket.id(),socket.type(),socket.room(),socket.x(),socket.y(),socket.z(),socket.yaw(),PORCH_WORLD)
             :socket);
         var colliders=new ArrayList<>(base.colliders());
+        HouseParcelBoundary.bind(sockets,colliders);
         var oldArrival=arrival(base,List.of());colliders.removeAll(arrivalSolids(oldArrival));sockets.removeIf(s->s.type().equals("parcel_fence"));
         var context=new Socket("house-approach-reservation","arrival-context",13,0,0,0,0,"house-side-setback-v1:12.0");sockets.add(context);
         var newArrival=arrival(base,List.of(context));colliders.addAll(arrivalSolids(newArrival));

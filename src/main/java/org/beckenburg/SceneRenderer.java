@@ -1114,7 +1114,11 @@ public final class SceneRenderer {
         }else{
         texturedQuad(faces,new Point(x0,-.65,z0),new Point(x1,-.65,z0),new Point(x1,-.65,z1),new Point(x0,-.65,z1),ground,0,0,(x1-x0)*.3,0,(x1-x0)*.3,(z1-z0)*.3,0,(z1-z0)*.3,0x9a9e89);
         }
+        var primaryBoundary=HouseParcelBoundary.geometry(level);
+        if(primaryBoundary!=null)
+            imported(faces,HouseParcelBoundary.MODEL,primaryBoundary.model(),0,0,0,1,1,1,0);
         for(var socket:level.sockets()){
+            if(primaryBoundary!=null&&HouseParcelBoundary.primaryPanel(socket))continue;
             if((socket.type().equals("enclosure")||socket.type().equals("parcel_fence"))){
                 String[] parts=socket.style().split(":");double length=Double.parseDouble(parts[1]);int count=(int)Math.ceil(length/2);double width=length/count,angle=-socket.yaw();
                 for(int i=0;i<count;i++){

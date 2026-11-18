@@ -332,3 +332,5 @@ tools/prepare_seacliff_battery.py -text whitespace=cr-at-eol
 tools/review_seacliff_battery.py -text whitespace=cr-at-eol
 tools/verify_seacliff_battery.py -text whitespace=cr-at-eol
 tools/java/NativeSeacliffReceivingProbe.java -text whitespace=cr-at-eol
+
+development/levels/rebuild/house-parcel-boundary-pass/** -text whitespace=cr-at-eol

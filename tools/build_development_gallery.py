@@ -17,7 +17,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/seacliff-receiving-batch/' in path:
+    if '/house-parcel-boundary-batch/' in path:
+        kind='House surveyed parcel and doorway plan' if 'parcel-plan' in p.name else 'House timber boundary at standing height'
+    elif '/seacliff-receiving-batch/' in path:
         kind='Battery protected staircase cutaway' if 'section' in p.name else 'Battery game renderer' if 'runtime' in p.name else 'Battery native construction review'
     elif '/flush-porch-and-threshold-batch/' in path:
         kind='House porch at standing height' if p.name.startswith('house-porch-') else 'House game renderer' if p.name.startswith('house-') else 'Saved doorway and stair landing'

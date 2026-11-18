@@ -51,7 +51,9 @@ public final class HouseRebuildEnvelopeTest {
             if(hi>lo)check(Math.abs((p.alongX()?p.x():p.z())-(q.alongX()?q.x():q.z()))>=(p.width()+q.width())/2+.12,"Overlapping opening/frame reservations "+p.id()+"/"+q.id());
         }
         check(level.props().equals(base.props())&&level.dock().equals(base.dock()),"Furniture/van moved");
-        check(level.colliders().size()==base.colliders().size()&&level.colliders().containsAll(base.colliders().subList(0,5)),"Fixture solids changed");
+        long oldFenceBoxes=base.sockets().stream().filter(HouseParcelBoundary::primaryPanel).count();
+        check(level.colliders().size()==base.colliders().size()-oldFenceBoxes
+            &&level.colliders().containsAll(base.colliders().subList(0,5)),"Unexpected fixture or parcel colliders");
         check(base.sockets().stream().filter(s->!s.type().equals("parcel_fence")&&!s.type().equals("world-terrain"))
             .allMatch(level.sockets()::contains),"Source service/garden sockets changed");
         var oldTerrain=base.sockets().stream().filter(s->s.type().equals("world-terrain")).findFirst().orElseThrow();

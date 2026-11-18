@@ -6506,13 +6506,35 @@
     {
       "id": "DEV-586",
       "title": "Briar House enclosure audit assumes one barrier per outline edge",
-      "status": "PHYSICAL_66_SEGMENT_REVIEW_OPEN",
+      "status": "CORRECTED_WITH_AUTHORED_RENDER_AND_COLLISION_PERIMETER",
       "affected": "HOUSE active perimeter geometry and LevelEnclosureTest",
       "symptom": "The existing check derives eight gross room-outline edges and finds 66 authored enclosure sockets. Farmhouse and School counts match their controls.",
       "cause": "The active House uses a segmented terrain perimeter. Counting coarse outline edges cannot determine whether the real segments and returns contain players.",
-      "action": "Sweep the actual barrier coordinates, closures and slope interfaces before revising the test. The perimeter gate remains open.",
-      "evidence": "development/levels/rebuild/seacliff-receiving-pass/verification/house-controls.json",
+      "action": "Verify all 66 measured panels and joins on the saved grade. Run 396 supported standing and crouched approaches, plus road, sight and item tests. All fence and arrival controls pass.",
+      "evidence": "development/levels/rebuild/house-parcel-boundary-pass/verification/house-controls.json",
       "older_maps": "Audit supported ground, physical continuity and actual sight/body blocking around authored enclosures."
+    },
+    {
+      "id": "DEV-587",
+      "title": "Briar House opaque fence boxes cover visible gaps",
+      "status": "CORRECTED_WITH_SHARED_PLACED_TIMBER_TRIANGLES",
+      "affected": "HOUSE active primary timber fence",
+      "symptom": "The canonical pickets showed open slots while the active map blocked sight and items across the full panel height.",
+      "cause": "The renderer placed the canonical picket model independently of continuous rectangular gameplay colliders.",
+      "action": "Place and fingerprint the original timber mesh once. Render and query the same triangles for body contact, sight and items. Verify that existing grade reaches each base, bodies stop and true gaps can admit sight or small items.",
+      "evidence": "development/levels/rebuild/house-parcel-boundary-pass/verification/house-controls.json",
+      "older_maps": "Check actual visual openings and body containment against the same physical assembly."
+    },
+    {
+      "id": "DEV-588",
+      "title": "Ground recovery control used an original stair coordinate on rebuilt House",
+      "status": "CORRECTED_WITH_EXPLICIT_ORIGINAL_STAIR_REPRODUCER",
+      "affected": "GroundRecoverySupportParityTest",
+      "symptom": "The nominal stair support assertion failed on the prior commit and the parcel candidate.",
+      "cause": "Fresh House dispatch changed to the rebuilt floor plan, while the overlapping-support coordinate belonged to the original stair.",
+      "action": "Run the original overlapping-support case against its matching original source. Keep the active House movement round trip, penetration recovery and live roster spawn checks.",
+      "evidence": "development/levels/rebuild/house-parcel-boundary-pass/checkpoint.json",
+      "older_maps": "Bind source-specific coordinates to the matching architectural version."
     }
   ],
   "audit_categories": [
