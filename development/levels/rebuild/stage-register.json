@@ -1967,7 +1967,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "6a6ee1ab89b73f539054c95ce9f452bced29c701",
+          "source_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/mansion/rough-layout.json",
@@ -1992,7 +1992,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "6a6ee1ab89b73f539054c95ce9f452bced29c701",
+          "source_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
           "evidence": [
             "development/levels/rebuild/structures/mansion/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2085,7 +2085,7 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "6a6ee1ab89b73f539054c95ce9f452bced29c701",
+          "source_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
           "evidence": [
             "development/levels/rebuild/estate-parish-pass/checkpoint.json",
             "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json"
@@ -2411,7 +2411,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "6a6ee1ab89b73f539054c95ce9f452bced29c701",
+          "source_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/school/rough-layout.json",
@@ -2432,7 +2432,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "6a6ee1ab89b73f539054c95ce9f452bced29c701",
+          "source_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
           "evidence": [
             "development/levels/rebuild/structures/school/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2517,7 +2517,7 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "6a6ee1ab89b73f539054c95ce9f452bced29c701",
+          "source_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
           "evidence": [
             "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json"
           ],

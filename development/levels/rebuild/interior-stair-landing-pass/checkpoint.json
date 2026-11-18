@@ -111,5 +111,62 @@
     "development/levels/rebuild/interior-stair-landing-pass/verification/stairs/stair-movement.json": "890401c05cb2011db7f29f4a61e1e3cc9365fe365b50277924ed9b156af292b9",
     "tools/build_interior_stair_landings.py": "cd6939ecae1f6b09a1ead1d7cc4ab814797b7ba7bfb8ee3a5e39457cc97ece78",
     "tools/verify_interior_stair_landings.py": "6af726a943ba19fb38bb5f40f207d32c3a24914af9b8046ae5fb35f7d8f01fcb"
+  },
+  "publication": {
+    "construction_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
+    "verified_remote_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
+    "verified_git_tree": "056ab1aeb7da5cdfa22cb6d1b60ea9352909993b",
+    "remote_ref": "refs/heads/map/roster-structure-batch",
+    "draft_pull_request": 86,
+    "base_ref": "map/house-default",
+    "base_sha": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "main_sha": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "verified_source_blobs": 53,
+    "gallery_images": 11169,
+    "hosted_gallery_run": 44225796039,
+    "hosted_gallery_sha": "442ee3a827d30a57c00016ac0bd23624ff11ba23",
+    "hosted_gallery_conclusion": "success",
+    "public_html_status": 200,
+    "public_captures": {
+      "mansion-ground-service-door.png": 404,
+      "school-east-stair-aisle.png": 404
+    },
+    "status": "VERIFIED_BRANCH_AND_DRAFT_PUBLIC_DEPLOYMENT_PENDING"
+  },
+  "next_measured_fit": {
+    "status": "VERIFIED_LOCAL_GUIDANCE_TRIAL_NOT_ACTIVE",
+    "native_design_scope": "Retained measured slabs, openings, guards, flights, timber and masonry. Trial guides terminate at actual thresholds and pass inside their aperture widths.",
+    "trial_scripts": [
+      "build/post-interior-landings/next-sites/survey_next.py",
+      "build/post-interior-landings/next-sites/survey_guidance_trial.py"
+    ],
+    "trial_evidence": {
+      "build/post-interior-landings/next-sites/trial-flat-verified/current-flat-movement.json": "8a7c92601efc5fe7389f6826bb8da1ae6200977984341a3404066f7a798587a0",
+      "build/post-interior-landings/next-sites/trial-stairs-verified/stair-movement.json": "f41cbbf76e66421d249aa234185cd96e380160b57f2632e3ec5138ce5ed25c80"
+    },
+    "sites": {
+      "FARMHOUSE": {
+        "remaining_contacts_on_active_roster": 79,
+        "surveyed_poses": 3360,
+        "strict_trial_poses": 5448,
+        "strict_trial_contacts": 0,
+        "passing_trial_ordinary_links": 33,
+        "passing_trial_flights": 3,
+        "native_sha256": "042f0ab01cd546fe561173102255e0d53b5cf505f8b8d630686d5986a3bc3810",
+        "findings": "The guarded ground aisle between X22.55 and X23.71 clears at X23.13 on the native survey. The loft approach between the X39.12 inner wall and X40.21 guard is 1.09 m clear. The 1.05 m pass follows the existing door at Z17.50 before turning north.",
+        "survey": "build/post-interior-landings/next-sites/farmhouse"
+      },
+      "WLD-08": {
+        "remaining_contacts_on_active_roster": 81,
+        "surveyed_poses": 4608,
+        "strict_trial_poses": 5385,
+        "strict_trial_contacts": 0,
+        "passing_trial_ordinary_links": 17,
+        "passing_trial_flights": 3,
+        "native_sha256": "cb13ae092e0eaf67650a48817dbd84ebe0240a38a0127e2f273e61f9fd1ae66c",
+        "findings": "Guide the east approach around the generator rim at X12.225 and turn west in the full north landing at Z16.05. The radio-to-generator guide crosses the actual X20, Z19 sill. Fit the other guidance to their measured installed doors.",
+        "survey": "build/post-interior-landings/next-sites/wld-08"
+      }
+    }
   }
 }
