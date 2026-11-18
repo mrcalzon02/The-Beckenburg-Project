@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2058,
-  "unique_local_file_hashes": 1877,
+  "local_files": 2059,
+  "unique_local_file_hashes": 1878,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 284
+    "native_map_exports": 285
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -26713,6 +26713,18 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
       "bytes": 4096788
+    },
+    {
+      "id": "college-services",
+      "label": "college-services",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/college-services-pass/college/college-services.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "75894ba104362afd296af116945d58b23099cf5c17a0994e531ba7ce93e8e5f8",
+      "bytes": 11775544
     },
     {
       "id": "constant-cells",

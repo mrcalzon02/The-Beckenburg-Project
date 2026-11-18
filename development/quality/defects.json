@@ -6667,6 +6667,50 @@
       "action": "When a selected tracked path has unstaged edits, hash the staged Git blob. Verify the old preview and new College PNGs against a deliberately changed tracked working copy.",
       "evidence": "development/levels/rebuild/college-containment-pass/verification/gallery-source-test.txt",
       "older_maps": "Verify exact staged image hashes when running a package build in the same worktree."
+    },
+    {
+      "id": "DEV-601",
+      "title": "Canonical utility mesh copies carried degenerate native triangles",
+      "status": "CORRECTED_IN_PLACED_COLLEGE_COPIES",
+      "affected": "College boiler, laundry washers and kitchen counters",
+      "symptom": "The first physical utility packet failed the game parser on a degenerate triangle.",
+      "cause": "Three indexed fixture meshes contained zero-area source faces.",
+      "action": "Remove only the zero-area faces from placed copies. Verify source master hashes and match the editable, exported and collision geometry.",
+      "evidence": "development/levels/rebuild/college-services-pass/checkpoint.json",
+      "older_maps": "Run the native geometry loader and inspect placed-copy degenerates before promoting other utility packets."
+    },
+    {
+      "id": "DEV-602",
+      "title": "First College café radiator blocked the courtyard threshold",
+      "status": "CORRECTED_WITH_WALL_PLACEMENT_OFF_THE_THRESHOLD",
+      "affected": "College café western entrance",
+      "symptom": "The first fitted unit obstructed the nominal receiving-floor capsule inside the actual public door.",
+      "cause": "A radiator on the west wall was placed on the exterior entrance bearing.",
+      "action": "Fit the radiator farther down the same wall. Recheck the receiving floor in multiple lanes and both postures and replay all prior routes.",
+      "evidence": "development/levels/rebuild/college-services-pass/checkpoint.json",
+      "older_maps": "Check fixture footprints and both door swings against the measured bearing before accepting a placement."
+    },
+    {
+      "id": "DEV-603",
+      "title": "First College lab and kitchen fittings faced their back panels toward the working aisle",
+      "status": "CORRECTED_AND_VERIFIED_AT_STANDING_HEIGHT",
+      "affected": "College laboratory cupboard and union kitchen range",
+      "symptom": "Initial renderer captures showed the backside of both source fixtures at their operating positions.",
+      "cause": "Their indexed front orientation differs from the sink and boiler assets.",
+      "action": "Orient the true workfaces toward the occupied aisle. Refit the real extract above each and replay the exact camera in both game renderers.",
+      "evidence": "development/levels/rebuild/college-services-pass/checkpoint.json",
+      "older_maps": "Use source pivot and measured workface orientation separately for every appliance."
+    },
+    {
+      "id": "DEV-604",
+      "title": "College plant and wet rooms lacked physical service installations",
+      "status": "CORRECTED_FOR_STAGED_NATIVE_UTILITY_SCOPE",
+      "affected": "College plant, teaching rooms, library and residence wet services",
+      "symptom": "The ground and basement structures existed with empty plant and wet-room reservations.",
+      "cause": "Fixture, mechanical carrier, roof and street placements remained unbuilt.",
+      "action": "Install the supported plant, pipes, controlled staff closure, heating fixtures and four ventilation runs. Verify preserved context, access and electrical gameplay.",
+      "evidence": "development/levels/rebuild/college-services-pass/checkpoint.json",
+      "older_maps": "Treat existing utility room labels as reservations until the fitted equipment, trunk and receiving interfaces are measured."
     }
   ],
   "audit_categories": [

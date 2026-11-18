@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11263,
+  "count": 11279,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -97664,6 +97664,166 @@
       "height": 450,
       "bytes": 63159,
       "sha256": "80b0dbffbfd56821bc2ccbc5c42f4b4fc49fc7b9d2fbed54a7df9f3a65ec87b0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-native-plant-and-maintenance-cutaway.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-native-plant-and-maintenance-cutaway.png",
+      "title": "College native plant and maintenance cutaway",
+      "kind": "College native plant cutaway with upper structure and selected walls hidden",
+      "width": 1280,
+      "height": 910,
+      "bytes": 1362053,
+      "sha256": "a890abe0c050f656a7598f52ee5353f7e183ab6ec94c8644f71b484be119420d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-native-roof-terminations.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-native-roof-terminations.png",
+      "title": "College native roof terminations",
+      "kind": "College native roof and installed duct inspection",
+      "width": 1280,
+      "height": 910,
+      "bytes": 1425810,
+      "sha256": "78e6392ea06163c1f3f2c319a710d3e0ae3e363b43e51b18447727a3ba3876cf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-lab-fume-extract.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-opengl-lab-fume-extract.png",
+      "title": "College opengl lab fume extract",
+      "kind": "College standing service review in the OpenGL game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 188491,
+      "sha256": "75cc76ce8c6344e056dc30a1b1659c2514d8d35b9d4126f548652f9f7a89275d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-lecture-heating.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-opengl-lecture-heating.png",
+      "title": "College opengl lecture heating",
+      "kind": "College standing service review in the OpenGL game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 173285,
+      "sha256": "0dab5766a33ee09be7e43fb4c04d97a75f406f0801c31680e1bd0689ca2fdcd5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-maintenance-staff-approach.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-opengl-maintenance-staff-approach.png",
+      "title": "College opengl maintenance staff approach",
+      "kind": "College standing service review in the OpenGL game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 257263,
+      "sha256": "0718d789cec0a82ab51d05edeaf1fa7851827db17d7bd5557742437d594e1afb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-kitchen-extract.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-kitchen-extract.png",
+      "title": "College opengl sealed kitchen extract",
+      "kind": "College sealed room inspection in the OpenGL game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 191031,
+      "sha256": "62931493d74c92f9ce0b1846974f525fd17d82bb2d15949fb0dac8c7902dd83b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-plant-boiler.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-plant-boiler.png",
+      "title": "College opengl sealed plant boiler",
+      "kind": "College sealed room inspection in the OpenGL game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 168818,
+      "sha256": "8ebb7d6fc3cfa3f133556b55e6309a24b387230aa7e636a8fbc02993e0d18ff4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-plant-manifold.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-plant-manifold.png",
+      "title": "College opengl sealed plant manifold",
+      "kind": "College sealed room inspection in the OpenGL game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 153649,
+      "sha256": "2f7f30168c8a4fe18435bfc042ca4801f522a0ebfc73df2a182e08b29456aa6e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-residence-showers.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-residence-showers.png",
+      "title": "College opengl sealed residence showers",
+      "kind": "College sealed room inspection in the OpenGL game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 259906,
+      "sha256": "d4a066fe225459c01ce60cf8a738227bbd2841c56108649b114c81a5b7bb6861"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-software-lab-fume-extract.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-software-lab-fume-extract.png",
+      "title": "College software lab fume extract",
+      "kind": "College standing service review in the software game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 198562,
+      "sha256": "086055f5796860c1330fdb29a61051fb3a5cd75bbdbec796f430c2f67118f5d8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-software-lecture-heating.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-software-lecture-heating.png",
+      "title": "College software lecture heating",
+      "kind": "College standing service review in the software game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 206614,
+      "sha256": "01cb81ceef74d4ddefcd614a77b45ecf42404baad916d41e6d47ac84f1ec8552"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-software-maintenance-staff-approach.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-software-maintenance-staff-approach.png",
+      "title": "College software maintenance staff approach",
+      "kind": "College standing service review in the software game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 259019,
+      "sha256": "1168514e4aaf906101dabd6f524ab1a7f38fa2497347c032bfef18ae46d7d00f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-kitchen-extract.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-kitchen-extract.png",
+      "title": "College software sealed kitchen extract",
+      "kind": "College sealed room inspection in the software game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 202262,
+      "sha256": "0c0fb3406ffa4216d30378e2d402126b609d9365f20779381dcf9c4e1b1a8830"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-plant-boiler.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-plant-boiler.png",
+      "title": "College software sealed plant boiler",
+      "kind": "College sealed room inspection in the software game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 169261,
+      "sha256": "0d512c3831e52722964fbfc38fc3be18d6d7df8193dff45d4fc5a730dd493a2b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-plant-manifold.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-plant-manifold.png",
+      "title": "College software sealed plant manifold",
+      "kind": "College sealed room inspection in the software game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 154086,
+      "sha256": "60bac309700a4b6cd691e554dddd281c6226874311350c65db040627209b7077"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-residence-showers.png",
+      "url": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-residence-showers.png",
+      "title": "College software sealed residence showers",
+      "kind": "College sealed room inspection in the software game renderer",
+      "width": 1120,
+      "height": 700,
+      "bytes": 259811,
+      "sha256": "39caac7cb551ace203fc138e4716e772271d8f095ee7c8155ca14b4d2ecce2b5"
     },
     {
       "path": "development/levels/rebuild/captures/constant-flight-construction-batch/wld-08.png",

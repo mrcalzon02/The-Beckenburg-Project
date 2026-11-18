@@ -28,6 +28,15 @@ for path in sorted(set(paths)):
     kind='Development review'
     if '/college-electrical-batch/' in path:
         kind='College circuit and fixture plan' if 'layout' in p.name else 'College OpenGL lighting and blackout' if 'opengl' in p.name else 'College software standing electrical review'
+    elif '/college-services-batch/' in path:
+        if 'cutaway' in p.name:
+            kind='College native plant cutaway with upper structure and selected walls hidden'
+        elif 'native' in p.name:
+            kind='College native roof and installed duct inspection'
+        elif 'sealed-' in p.name:
+            kind='College sealed room inspection in the '+('OpenGL' if 'opengl' in p.name else 'software')+' game renderer'
+        else:
+            kind='College standing service review in the '+('OpenGL' if 'opengl' in p.name else 'software')+' game renderer'
     elif '/college-containment-batch/' in path:
         if 'cutaway' in p.name:
             kind='College native stair tower cutaway with overhead and near wall surfaces hidden'

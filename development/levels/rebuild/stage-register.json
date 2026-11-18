@@ -7123,5 +7123,24 @@
       "total_roster_packets": 29
     },
     "next_action": "Detail and verify the College maintenance plumbing and hydronic distribution against the installed service bays and temperature contracts."
+  },
+  "college_services_checkpoint": {
+    "status": "COLLEGE_FITTED_UTILITIES_VERIFIED_FULL_ACCEPTANCE_OPEN",
+    "baseline": "57858965f58ee05830e774aff7d86c64c8419e6f",
+    "checkpoint": "development/levels/rebuild/college-services-pass/checkpoint.json",
+    "roster": "development/levels/rebuild/college-services-pass/roster.json",
+    "native_revision": "e80366f411643069531a4dd087473012eb07081f599404919c44f8a762383907",
+    "collision_sha256": "396bdae97a3eb9a7c0f8d3575e0107c537efef032e3c30a477d8a1dced8c6afa",
+    "counts": {
+      "physical_fixtures": 30,
+      "terminals": 76,
+      "pipe_runs": 78,
+      "separate_ventilation_runs": 4,
+      "staff_gate_sets": 1,
+      "old_context_stations_rechecked": 1283,
+      "retained_native_sites": 24,
+      "total_roster_packets": 29
+    },
+    "next_action": "Resolve the known House real window aperture and host acknowledgement, then continue College functional fit-out and ordinary dispatch."
   }
 }

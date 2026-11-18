@@ -222,7 +222,7 @@ public final class CollegeContainmentTest {
             guarded.pose().z(),old.pose().z());
     }
 
-    private static void frame(HouseMap map,Path folder,String name,Vec eye,double tx,double tz,double pitch)throws Exception {
+    static void frame(HouseMap map,Path folder,String name,Vec eye,double tx,double tz,double pitch)throws Exception {
         require(map.traversable(eye.x(),eye.y(),eye.z()),"Unsupported standing view "+name+" "+eye);
         var renderer=new SceneRenderer();
         renderer.setRenderSize(1120,700);
@@ -280,31 +280,39 @@ public final class CollegeContainmentTest {
         }
     }
 
-    public static void main(String[] args)throws Exception {
-        Path packet=Path.of(args[0]);
-        var baseline=CollegeNativeRuntimeReview.load(BASE.resolve("verification/runtime.tsv"),
-            BASE.resolve("college/college-doors.glb"),BASE.resolve("college/college-doors.hcs2"));
-        var manifest=Path.of(args[1]);
-        var glb=packet.resolve("college-containment.glb");
-        var hcs=packet.resolve("college-containment.hcs2");
-        var candidate=CollegeNativeRuntimeReview.load(manifest,glb,hcs);
-        var schedule=read(Path.of(args[2]));
-        perimeter(baseline.map(),candidate.map(),schedule.panels);
-        vertical(baseline.map(),candidate.map(),schedule.rims);
+    static void verifyGeometry(HouseMap baseline,HouseMap candidate,Path dimensions)throws Exception {
+        var schedule=read(dimensions);
+        perimeter(baseline,candidate,schedule.panels);
+        vertical(baseline,candidate,schedule.rims);
         int jumps=0;
         for(var rim:schedule.rims){
             // The west cellar's retained hallway masonry screens its west
             // side. The open deck approach is on the east side of that well.
             if(!rim.side.equals(rim.stair.equals("L84")?"east rim":"west rim"))continue;
-            jumpAtGuard(candidate.map(),rim);
+            jumpAtGuard(candidate,rim);
             jumps++;
         }
         System.out.println("JUMP host motion replays above deck="+jumps);
-        verifyGhost(baseline.map(),candidate.map());
+        verifyGhost(baseline,candidate);
+    }
+
+    static HouseMap openBeforeContainment() throws Exception {
+        return CollegeNativeRuntimeReview.load(BASE.resolve("verification/runtime.tsv"),
+            BASE.resolve("college/college-doors.glb"),BASE.resolve("college/college-doors.hcs2")).map();
+    }
+
+    public static void main(String[] args)throws Exception {
+        Path packet=Path.of(args[0]);
+        var baseline=openBeforeContainment();
+        var manifest=Path.of(args[1]);
+        var glb=packet.resolve("college-containment.glb");
+        var hcs=packet.resolve("college-containment.hcs2");
+        var candidate=CollegeNativeRuntimeReview.load(manifest,glb,hcs);
+        verifyGeometry(baseline,candidate.map(),Path.of(args[2]));
         CollegeNativeDoorsTest.audit(candidate);
         if(args.length>3&&args[3].equals("--geometry-only"))return;
         CollegeNativeDoorsTest.peers(candidate.map(),CollegeNativeRuntimeReview.load(manifest,glb,hcs).map());
         CollegeNativeElectricalTest.verifyControlsAndPower(candidate.map());
-        if(args.length>3)captures(baseline.map(),candidate.map(),Path.of(args[3]),List.of(args).contains("--gpu"));
+        if(args.length>3)captures(baseline,candidate.map(),Path.of(args[3]),List.of(args).contains("--gpu"));
     }
 }

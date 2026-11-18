@@ -1982,3 +1982,11 @@ The [active roster](levels/rebuild/college-containment-pass/roster.json) registe
 The [checkpoint](levels/rebuild/college-containment-pass/checkpoint.json) records 124 fence bays, 1,083 exact exterior terrain joins, guards at five wells, 7,158 supported perimeter sweeps and five full jump replays. A host ghost stops at the new south return. Two basement masonry heads meet the actual slab underside and remove the seminar floor seam. The 88 prior route directions, 18 fitted doors and 68 connected loads pass again in the candidate. Directional scenery, plumbing, HVAC, finished spaces, whole-case dispatch and public selection remain open.
 
 Main is 10fe52cb1feba1267efcf4edce67a5ca1bd3823e. The held draft base is 5c3daf923a7359554dc075c9e99be139bbcb1441. Historical full multiplayer, installer and GPU runs 44153590389, 44153590626 and 44016080200 cover their earlier revisions. The next College stage surveys and installs the actual maintenance water and hydronic distribution.
+
+## College fitted mechanical and sanitary services
+
+The [active roster](levels/rebuild/college-services-pass/roster.json) registers the College service packet with the other 24 native sites. Its [service plan](levels/rebuild/college-services-pass/college-services-plan.svg) locates the plant equipment, closed staff door, radiators, wet rooms and ventilation at the actual datums. The separate street stop and foul inspection chamber sit on measured grade beyond the gate.
+
+The [checkpoint](levels/rebuild/college-services-pass/checkpoint.json) verifies 30 supported fixture sets, 76 source connections, 78 service runs and four roof duct terminations. All 88 original route directions, both complete van journeys, the five jump tests, the 18 operable doors and 68 electrical fixtures pass again. The native source keeps the 40 searchable spaces and fifteen owners. Ten prior context test points occupied by new fixtures were rechecked from nearby supported stances.
+
+Main is 10fe52cb1feba1267efcf4edce67a5ca1bd3823e and the held parent is 5c3daf923a7359554dc075c9e99be139bbcb1441. The historical multiplayer, package and GPU checks remain bound to runs 44153590389, 44153590626 and 44016080200. Next work includes House DEV-592, College functional fit-out and normal College case dispatch.

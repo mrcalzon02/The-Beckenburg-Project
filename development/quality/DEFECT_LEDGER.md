@@ -8494,6 +8494,62 @@ Evidence and verification: development/levels/rebuild/college-containment-pass/v
 
 Older-map obligation: Verify exact staged image hashes when running a package build in the same worktree.
 
+### DEV-601 — Canonical utility mesh copies carried degenerate native triangles
+
+**Status:** CORRECTED_IN_PLACED_COLLEGE_COPIES · **Affected:** College boiler, laundry washers and kitchen counters
+
+The first physical utility packet failed the game parser on a degenerate triangle.
+
+Cause / uncertainty: Three indexed fixture meshes contained zero-area source faces.
+
+Fix / next action: Remove only the zero-area faces from placed copies. Verify source master hashes and match the editable, exported and collision geometry.
+
+Evidence and verification: development/levels/rebuild/college-services-pass/checkpoint.json
+
+Older-map obligation: Run the native geometry loader and inspect placed-copy degenerates before promoting other utility packets.
+
+### DEV-602 — First College café radiator blocked the courtyard threshold
+
+**Status:** CORRECTED_WITH_WALL_PLACEMENT_OFF_THE_THRESHOLD · **Affected:** College café western entrance
+
+The first fitted unit obstructed the nominal receiving-floor capsule inside the actual public door.
+
+Cause / uncertainty: A radiator on the west wall was placed on the exterior entrance bearing.
+
+Fix / next action: Fit the radiator farther down the same wall. Recheck the receiving floor in multiple lanes and both postures and replay all prior routes.
+
+Evidence and verification: development/levels/rebuild/college-services-pass/checkpoint.json
+
+Older-map obligation: Check fixture footprints and both door swings against the measured bearing before accepting a placement.
+
+### DEV-603 — First College lab and kitchen fittings faced their back panels toward the working aisle
+
+**Status:** CORRECTED_AND_VERIFIED_AT_STANDING_HEIGHT · **Affected:** College laboratory cupboard and union kitchen range
+
+Initial renderer captures showed the backside of both source fixtures at their operating positions.
+
+Cause / uncertainty: Their indexed front orientation differs from the sink and boiler assets.
+
+Fix / next action: Orient the true workfaces toward the occupied aisle. Refit the real extract above each and replay the exact camera in both game renderers.
+
+Evidence and verification: development/levels/rebuild/college-services-pass/checkpoint.json
+
+Older-map obligation: Use source pivot and measured workface orientation separately for every appliance.
+
+### DEV-604 — College plant and wet rooms lacked physical service installations
+
+**Status:** CORRECTED_FOR_STAGED_NATIVE_UTILITY_SCOPE · **Affected:** College plant, teaching rooms, library and residence wet services
+
+The ground and basement structures existed with empty plant and wet-room reservations.
+
+Cause / uncertainty: Fixture, mechanical carrier, roof and street placements remained unbuilt.
+
+Fix / next action: Install the supported plant, pipes, controlled staff closure, heating fixtures and four ventilation runs. Verify preserved context, access and electrical gameplay.
+
+Evidence and verification: development/levels/rebuild/college-services-pass/checkpoint.json
+
+Older-map obligation: Treat existing utility room labels as reservations until the fitted equipment, trunk and receiving interfaces are measured.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
