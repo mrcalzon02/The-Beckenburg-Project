@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 PACKET = Path("development/levels/rebuild/college-ground-pass/college")
+ELECTRICAL = Path("development/levels/rebuild/college-electrical-pass/college")
 # Standing points in the middle of the named architectural compartments.
 ANCHORS = [
     ("teaching-hall", 22, 32), ("admin", 32, 50), ("seminar", 13, 29),
@@ -34,16 +35,17 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
     parser.add_argument("--electrical", type=Path, help="Native College installation directory")
+    parser.add_argument("--doors", type=Path, help="College fitted frame and wall directory")
     args = parser.parse_args()
     path = args.output
+    if args.doors and not args.electrical:
+        args.electrical = ELECTRICAL
     layout_file = PACKET / "authored-layout.json"
     layout = json.loads(layout_file.read_bytes())
     construction = json.loads((PACKET / "construction.json").read_bytes())
     assert digest(layout_file) == construction["layout_sha256"]
     assert digest(PACKET / "campus-grounds.glb") == construction["glb_sha256"]
     assert digest(PACKET / "campus-grounds.hcs2") == construction["physics_sha256"]
-    zones = {space["id"]: space for space in layout["zones"]}
-    links = {link["id"]: link for link in layout["links"] if link["player_access"] == "OPEN_ROUTE"}
     rows = []
 
     def row(*columns):
@@ -59,6 +61,37 @@ def main():
         render_sha = digest(args.electrical / "college-electrical.glb")
         physics_sha = digest(args.electrical / "college-electrical.hcs2")
         assert render_sha == electrical["glb_sha256"] and physics_sha == electrical["physics_sha256"]
+    door_specs = {}
+    if args.doors:
+        fitted = json.loads((args.doors / "doors.json").read_bytes())
+        assert fitted["previous_glb_sha256"] == render_sha
+        assert fitted["previous_physics_sha256"] == physics_sha
+        assert fitted["previous_layout_sha256"] == construction["layout_sha256"]
+        new_layout = args.doors / "authored-layout.json"
+        assert digest(new_layout) == fitted["layout_sha256"]
+        layout = json.loads(new_layout.read_bytes())
+        render_sha = digest(args.doors / "college-doors.glb")
+        physics_sha = digest(args.doors / "college-doors.hcs2")
+        assert render_sha == fitted["glb_sha256"] and physics_sha == fitted["physics_sha256"]
+        door_specs = {item["id"]: item for item in fitted["static_door_schedule"]}
+        leaf_sha = digest(Path("assets/runtime/models/door_1_loose.glb"))
+        assert leaf_sha == fitted["source_leaf_sha256"]
+
+    def aperture(key, a, b, x, y, z, width, axis, kind):
+        spec = door_specs.pop(key, None)
+        if spec is None:
+            row("PORTAL", key, a, b, x, y, z, width, axis, kind)
+        else:
+            boundary, along = (z, x) if axis == "z" else (x, z)
+            assert [a, b] == spec["rooms"] and axis == spec["axis"]
+            assert all(abs(actual - spec[field]) < .0001 for actual, field in (
+                (boundary, "boundary"), (along, "along"), (y, "sill_y"), (width, "clear_width")))
+            row("PORTAL", key, a, b, x, y, z, width, axis, "door",
+                *spec["frame_span"], spec["clear_height"], spec["leaves"], spec["hinge_side"],
+                spec["swing_direction"], leaf_sha)
+
+    zones = {space["id"]: space for space in layout["zones"]}
+    links = {link["id"]: link for link in layout["links"] if link["player_access"] == "OPEN_ROUTE"}
     row("SOURCE", render_sha, physics_sha)
     staging = layout["staging"]
     row("DOCK", *staging["point"], staging["yaw"])
@@ -77,15 +110,24 @@ def main():
         row("TREAD", name)
     for door in construction["new_portals"]:
         x, z = (door["along"], door["boundary"]) if door["axis"] == "z" else (door["boundary"], door["along"])
-        row("PORTAL", door["id"], *door["rooms"], x, door["sill_y"], z, door["clear_width"], door["axis"], "opening")
+        aperture(door["id"], *door["rooms"], x, door["sill_y"], z, door["clear_width"], door["axis"], "opening")
     for opening in OPENINGS:
-        row("PORTAL", *opening, "opening")
+        aperture(*opening, "opening")
     row("PORTAL", "L02", "entry", "green", 38, 0, 78, 1.4, "z", "trail")
     for key in STAIR_LINKS:
         link = links[key]
         row("PORTAL", key, link["a"], link["b"], *link["points"][0], link["width"], "z", "stair")
+    # Additional local doors come after the existing van portal when loaded.
+    # Child spaces may retain the same network and investigation owner.
+    for key, spec in door_specs.items():
+        x, z = (spec["along"], spec["boundary"]) if spec["axis"] == "z" else (spec["boundary"], spec["along"])
+        row("LOCAL_DOOR", key, *spec["rooms"], x, spec["sill_y"], z, spec["clear_width"], spec["axis"], "door",
+            *spec["frame_span"], spec["clear_height"], spec["leaves"], spec["hinge_side"],
+            spec["swing_direction"], leaf_sha)
     for key, link in links.items():
         row("ROUTE", key, link["kind"], *(value for point in link["points"] for value in point))
+    if args.doors:
+        row("ARRIVAL", *(value for point in staging["cargo_route"] for value in point))
     if electrical:
         for socket in electrical["sockets"]:
             row("SOCKET", socket["id"], socket["type"], socket["room"],

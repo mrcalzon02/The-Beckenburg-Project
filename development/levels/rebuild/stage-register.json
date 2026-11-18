@@ -7084,5 +7084,26 @@
       "roster_packets": 29
     },
     "next_action": "Fit College door leaves to the actual public and service frames, complete guards and whole-site containment, then replay ordinary arrival and the case with all services."
+  },
+  "college_doors_checkpoint": {
+    "status": "COLLEGE_NATIVE_DOORS_AND_ELECTRICAL_VERIFIED_SITE_ACCEPTANCE_OPEN",
+    "baseline": "a7558a1f6be591f4b15c8edb0f7f5349620716b0",
+    "roster": "development/levels/rebuild/college-doors-pass/roster.json",
+    "checkpoint": "development/levels/rebuild/college-doors-pass/checkpoint.json",
+    "collision_sha256": "54d8d16f5b49ee1f00931f115e932ab507721b4c0356abc8f56782c1b9051014",
+    "native_revision": "1386962ea9c07d9c23408a0ca64da8a374b0f8fc8c489f9d436aa225d3b87379",
+    "counts": {
+      "built_wall_runs": 5,
+      "installed_door_sets": 18,
+      "same_owner_door_sets": 7,
+      "host_door_actions": 36,
+      "real_runtime_route_directions": 88,
+      "joined_route_round_trips": 2,
+      "postures": 2,
+      "retained_native_components": 1061,
+      "staged_native_site_packets": 25,
+      "roster_packets": 29
+    },
+    "next_action": "Survey College perimeter containment, floor joins and guards from the real terrain and decks."
   }
 }

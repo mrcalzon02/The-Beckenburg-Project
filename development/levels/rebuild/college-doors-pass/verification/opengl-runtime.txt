@@ -1,0 +1,54 @@
+FITTED COLLEGE-COURT-teaching-lobby id=0 owners=0/12 acoustic=7->3
+FITTED COLLEGE-COURT-issue id=1 owners=6/12 acoustic=7->3
+FITTED COLLEGE-COURT-cafe id=2 owners=4/12 acoustic=7->3
+FITTED COLLEGE-COURT-rear-hall id=3 owners=0/13 acoustic=6->3
+FITTED L05 id=4 owners=0/5 acoustic=6->2
+FITTED L06 id=5 owners=0/2 acoustic=6->2
+FITTED L07 id=6 owners=0/3 acoustic=6->2
+FITTED L14 id=7 owners=0/1 acoustic=6->2
+FITTED L52 id=8 owners=8/7 acoustic=6->2
+FITTED L86 id=9 owners=10/7 acoustic=6->2
+FITTED L67 id=16 owners=11/11 acoustic=3->1
+FITTED COLLEGE bay indexed door 0 id=17 owners=6/6 acoustic=3->1
+FITTED COLLEGE bay indexed door 1 id=18 owners=8/8 acoustic=3->1
+FITTED COLLEGE bay indexed door 2 id=19 owners=7/8 acoustic=4->2
+FITTED COLLEGE bay indexed door 3 id=20 owners=11/11 acoustic=3->1
+FITTED COLLEGE bay indexed door 4 id=21 owners=11/11 acoustic=3->1
+FITTED COLLEGE bay indexed door 5 id=22 owners=0/0 acoustic=3->1
+FITTED COLLEGE bay indexed door 6 id=23 owners=10/10 acoustic=3->1
+GHOST_GRAPH rooms=14 directed_edges=30
+CONTEXT seams=56 samples=1283 body_open=0 optical_open=0
+PASS spaces=40 owners=15 runtime_route_directions=88 aperture_pairs=23 rituals=3 collision_sha=54d8d16f5b49ee1f00931f115e932ab507721b4c0356abc8f56782c1b9051014 scene_sha=1386962ea9c07d9c23408a0ca64da8a374b0f8fc8c489f9d436aa225d3b87379
+PASS continuous van-to-maintenance and van-to-upper-residence journeys in both postures and directions
+PASS 18 fitted doors, 7 local doors, 432 mover sweeps, 324 sight, 324 small-object and 216 jamb rays; 88 route directions in both postures
+REPLICATED COLLEGE-COURT-teaching-lobby
+REPLICATED COLLEGE-COURT-issue
+REPLICATED COLLEGE-COURT-cafe
+REPLICATED COLLEGE-COURT-rear-hall
+REPLICATED L05
+REPLICATED L06
+REPLICATED L07
+REPLICATED L14
+REPLICATED L52
+REPLICATED L86
+REPLICATED L67
+REPLICATED COLLEGE bay indexed door 0
+REPLICATED COLLEGE bay indexed door 1
+REPLICATED COLLEGE bay indexed door 2
+REPLICATED COLLEGE bay indexed door 3
+REPLICATED COLLEGE bay indexed door 4
+REPLICATED COLLEGE bay indexed door 5
+REPLICATED COLLEGE bay indexed door 6
+PASS 36 real host door actions broadcast to a second native scene
+PASS 68 hardwired loads, all twelve room switch effects and independent van battery; minimum energy drop 2.6452, max blackout sample 0.9000
+PASS four real TCP peers: exact College revision, supported move, room switching, source stop/start, authorized ghost trip, blackout view and reconnect resync, physical reset and rejected distant/ghost control
+Beckenburg GPU initialized: OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+2026-11-18T06:58:07.058917400Z [main] ACTIVE_RENDERER GPU OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64 / scene triangles OpenGL, UI Swing
+2026-11-18T06:58:08.532161500Z [main] RENDER SLOW stage=idle faces=50567 visible_faces=41867 culled_faces=8700 target=1000x625 build_ms=80 lighting_raster_ms=1368
+2026-11-18T06:58:08.670673700Z [beckenburg-opengl] GPU SCENE FIRST FRAME scene=2 frame=1006 surface_batches=1005 vbo_uploaded_batches=1005 vbo_uploaded_bytes=21082944 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=68 texture_uploaded_bytes=1742880 gl_worker_ms=136.9831 readback_ms=11.8979 measurement=gl_worker_not_gpu_timestamp
+2026-11-18T06:58:09.330310600Z [beckenburg-opengl] GPU SCENE FIRST FRAME scene=1016 frame=1316 surface_batches=300 vbo_uploaded_batches=300 vbo_uploaded_bytes=5521344 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=1 texture_uploaded_bytes=65536 gl_worker_ms=19.6746 readback_ms=2.3308 measurement=gl_worker_not_gpu_timestamp
+2026-11-18T06:58:10.090877700Z [beckenburg-opengl] GPU SCENE FIRST FRAME scene=1324 frame=1795 surface_batches=470 vbo_uploaded_batches=470 vbo_uploaded_bytes=12314784 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=1 texture_uploaded_bytes=16 gl_worker_ms=27.3966 readback_ms=6.3544 measurement=gl_worker_not_gpu_timestamp
+2026-11-18T06:58:10.860362700Z [main] RENDER SLOW stage=idle faces=47057 visible_faces=19839 culled_faces=27218 target=1000x625 build_ms=18 lighting_raster_ms=641
+2026-11-18T06:58:10.888269600Z [beckenburg-opengl] GPU SCENE FIRST FRAME scene=1803 frame=2367 surface_batches=563 vbo_uploaded_batches=563 vbo_uploaded_bytes=13085280 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=0 texture_uploaded_bytes=0 gl_worker_ms=24.3422 readback_ms=6.1436 measurement=gl_worker_not_gpu_timestamp
+2026-11-18T06:58:11.373917800Z [beckenburg-opengl] GPU SCENE FIRST FRAME scene=2375 frame=2660 surface_batches=285 vbo_uploaded_batches=285 vbo_uploaded_bytes=5175840 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=0 texture_uploaded_bytes=0 gl_worker_ms=12.6866 readback_ms=2.773 measurement=gl_worker_not_gpu_timestamp
+2026-11-18T06:58:12.341637100Z [beckenburg-opengl] GPU SCENE FIRST FRAME scene=2667 frame=3242 surface_batches=574 vbo_uploaded_batches=574 vbo_uploaded_bytes=15095616 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=0 texture_uploaded_bytes=0 gl_worker_ms=23.2068 readback_ms=2.3842 measurement=gl_worker_not_gpu_timestamp

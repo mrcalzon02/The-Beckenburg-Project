@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2056,
-  "unique_local_file_hashes": 1875,
+  "local_files": 2057,
+  "unique_local_file_hashes": 1876,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 282
+    "native_map_exports": 283
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -26665,6 +26665,18 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "38b359da3b9ce4e68cf2d097c54514959cc9924c9ed251c93f5ebc4d4d9dbfa5",
       "bytes": 1171812
+    },
+    {
+      "id": "college-doors",
+      "label": "college-doors",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/college-doors-pass/college/college-doors.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "99829f281a2f5a90cffc70fed416badb9a74990c3da05a4c68e8ac41d048b08d",
+      "bytes": 4913084
     },
     {
       "id": "college-electrical",

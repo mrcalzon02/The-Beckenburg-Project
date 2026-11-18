@@ -1,0 +1,181 @@
+{
+  "previous_native_parts": 1094,
+  "retained_native_parts": 1061,
+  "discarded_old_wall_records": 33,
+  "new_native_parts": 35,
+  "new_native_triangles": 790,
+  "prior_glb_binary_bytes": 3716008,
+  "editable": {
+    "triangles": 790,
+    "comparison_in_metres": 0.0001,
+    "packed_images": 30
+  },
+  "reimported_glb": {
+    "triangles": 790,
+    "comparison_in_metres": 0.0001
+  },
+  "frame_datums": {
+    "L07": {
+      "sill": 0.0,
+      "clear_height": 2.22,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "L06": {
+      "sill": 0.0,
+      "clear_height": 2.22,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "L05": {
+      "sill": 0.0,
+      "clear_height": 2.22,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "L14": {
+      "sill": 0.0,
+      "clear_height": 2.22,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "L52": {
+      "sill": 3.6,
+      "clear_height": 2.22,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "L86": {
+      "sill": 3.6,
+      "clear_height": 2.22,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "L67": {
+      "sill": -3.0,
+      "clear_height": 2.22,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "COLLEGE-COURT-teaching-lobby": {
+      "sill": 0.0,
+      "clear_height": 2.3,
+      "clear_width_samples": [
+        1.6,
+        1.6,
+        1.6
+      ]
+    },
+    "COLLEGE-COURT-issue": {
+      "sill": 0.0,
+      "clear_height": 2.3,
+      "clear_width_samples": [
+        1.5,
+        1.5,
+        1.5
+      ]
+    },
+    "COLLEGE-COURT-cafe": {
+      "sill": 0.0,
+      "clear_height": 2.3,
+      "clear_width_samples": [
+        1.8,
+        1.8,
+        1.8
+      ]
+    },
+    "COLLEGE-COURT-rear-hall": {
+      "sill": 0.0,
+      "clear_height": 2.3,
+      "clear_width_samples": [
+        1.5,
+        1.5,
+        1.5
+      ]
+    },
+    "COLLEGE bay indexed door 0": {
+      "sill": 0.0,
+      "clear_height": 2.1,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "COLLEGE bay indexed door 1": {
+      "sill": 3.6,
+      "clear_height": 2.1,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "COLLEGE bay indexed door 2": {
+      "sill": 3.6,
+      "clear_height": 2.1,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "COLLEGE bay indexed door 3": {
+      "sill": -3.0,
+      "clear_height": 2.1,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "COLLEGE bay indexed door 4": {
+      "sill": -3.0,
+      "clear_height": 2.1,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "COLLEGE bay indexed door 5": {
+      "sill": 0.0,
+      "clear_height": 2.1,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    },
+    "COLLEGE bay indexed door 6": {
+      "sill": 3.6,
+      "clear_height": 2.1,
+      "clear_width_samples": [
+        1.4,
+        1.4,
+        1.4
+      ]
+    }
+  }
+}

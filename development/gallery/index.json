@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11221,
+  "count": 11246,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -96944,6 +96944,256 @@
       "height": 900,
       "bytes": 878072,
       "sha256": "9f87f97d518ef09ffdd85e1ad61b94726538d730b2a3c17d675d0473287cdfae"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-door-plan.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-door-plan.png",
+      "title": "College door plan",
+      "kind": "College surveyed door and circulation plan",
+      "width": 1140,
+      "height": 880,
+      "bytes": 56194,
+      "sha256": "bd89ec8458a518be9fd3d63b2430d9b980fff59ac82c5bc256f0814f4afc930c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-college-bay-indexed-door-4-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-college-bay-indexed-door-4-closed.png",
+      "title": "College opengl college bay indexed door 4 closed",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 289992,
+      "sha256": "b6071ce3bfcb9b6d8de25f8f5ea297d3dbc50158eb7106622d2dc5acb6ec2c7e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-college-bay-indexed-door-4-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-college-bay-indexed-door-4-open.png",
+      "title": "College opengl college bay indexed door 4 open",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 197315,
+      "sha256": "c56925799a2a649a39f1395556a85fb782d025a7095add9447b4256c730d7707"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-college-court-teaching-lobby-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-college-court-teaching-lobby-closed.png",
+      "title": "College opengl college court teaching lobby closed",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 389250,
+      "sha256": "cd94a3d47edf002af299ef75e6e944da2b564007eb35c8323fb1c5cead78640c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-college-court-teaching-lobby-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-college-court-teaching-lobby-open.png",
+      "title": "College opengl college court teaching lobby open",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 266263,
+      "sha256": "a25f010e83d1dd1c2764e89f16a227283cdccbc5e401b92cc0ffd98e88b7ff24"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l06-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l06-closed.png",
+      "title": "College opengl l06 closed",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 257653,
+      "sha256": "56e3e5f1cd226387796245719b0b4fd26573067a22d51dc6c6f198df1248ad8b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l06-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l06-open.png",
+      "title": "College opengl l06 open",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 203028,
+      "sha256": "5bd4869bdd1e3df90366e8f3adcc1a1a768adbc72a6e1f5ac6e3d551bf499a3a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l14-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l14-closed.png",
+      "title": "College opengl l14 closed",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 257682,
+      "sha256": "4318266e623a60be0e7ac223823844fa1e7f3d85e515637b97f336a6f9d5c5bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l14-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l14-open.png",
+      "title": "College opengl l14 open",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 258643,
+      "sha256": "42615b73960b459edfb41583f7ba5c79e8ac043651754518215891512ca70f62"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l52-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l52-closed.png",
+      "title": "College opengl l52 closed",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 279137,
+      "sha256": "1cabb860d9c25271dfdaecb1732a81f3e9189fc704e439a954ee8d6c1c8871d8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l52-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l52-open.png",
+      "title": "College opengl l52 open",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 256960,
+      "sha256": "01e8848ddf87f839c72979a8603178649880b8b733c7662d9e6d14a41623177f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l67-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l67-closed.png",
+      "title": "College opengl l67 closed",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 265928,
+      "sha256": "90415d5a1f9d41db9f0e7ff2e0eb26c6a4f2b55e20bd69c176ee06b5b590f56a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l67-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-opengl-l67-open.png",
+      "title": "College opengl l67 open",
+      "kind": "College fitted doors in the OpenGL game renderer",
+      "width": 1000,
+      "height": 625,
+      "bytes": 221053,
+      "sha256": "d897ff8c3379158d9f66d33ff64284d447c967dbfcd8f7772c4da37abe995c28"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-college-bay-indexed-door-4-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-college-bay-indexed-door-4-closed.png",
+      "title": "College software college bay indexed door 4 closed",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 288950,
+      "sha256": "719864c1bcd3dc4e2b473d34d07bba0cdb383d2b4159b72894ba9769479b9d57"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-college-bay-indexed-door-4-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-college-bay-indexed-door-4-open.png",
+      "title": "College software college bay indexed door 4 open",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 205811,
+      "sha256": "759e30533d12aa73a1c08e27786c47f6f37e70317202c6ce60997f4d0f5f1e8d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-college-court-teaching-lobby-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-college-court-teaching-lobby-closed.png",
+      "title": "College software college court teaching lobby closed",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 463946,
+      "sha256": "89b4ae9b01cf9fc177dd44b0fb58defa950eb2b747abdc25a21fb135ad43ad37"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-college-court-teaching-lobby-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-college-court-teaching-lobby-open.png",
+      "title": "College software college court teaching lobby open",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 290253,
+      "sha256": "c79c3c43d35708b1ed6fe9e042dc4d35f80b9ed380f41809510888fc2400ebc4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-l06-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-l06-closed.png",
+      "title": "College software l06 closed",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 250016,
+      "sha256": "4a0927bbff2e49149b8b99d9eb91381aa16e7c607429689ce6d22cab39b2387e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-l06-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-l06-open.png",
+      "title": "College software l06 open",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 224743,
+      "sha256": "7baef94e20fe59d317555d037ee7e8be91a6393b1b6fbaf6b31a002ce0df92bb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-l14-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-l14-closed.png",
+      "title": "College software l14 closed",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 267903,
+      "sha256": "ee042c2a8f78f9f91f667eb37170d5d701758df05c689d8e44de3bbd1d3c4a40"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-l14-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-l14-open.png",
+      "title": "College software l14 open",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 265771,
+      "sha256": "bbc63082824ed3efd13dc03c54d97341c7f8a30022eadb966a9486c62b201f51"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-l52-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-l52-closed.png",
+      "title": "College software l52 closed",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 281427,
+      "sha256": "5b7ef6083e73243d4d3591383d992968eb81c3ae35449342a6b6552e08e505d0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-l52-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-l52-open.png",
+      "title": "College software l52 open",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 274421,
+      "sha256": "760e41d8d0fefdf5cba82b15dc3ddd08da7da371bc05ec2b30d97327b1a76fbf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-l67-closed.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-l67-closed.png",
+      "title": "College software l67 closed",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 264444,
+      "sha256": "b26cebdd07f18dbc51e474f924fb7667f0f0017b4e3d623a56e366686e27834a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-doors-batch/college-software-l67-open.png",
+      "url": "development/levels/rebuild/captures/college-doors-batch/college-software-l67-open.png",
+      "title": "College software l67 open",
+      "kind": "College fitted doors at standing height",
+      "width": 1000,
+      "height": 625,
+      "bytes": 235295,
+      "sha256": "3543e646d96006ecf513706f66db94bd1bf4c13b79f203bd3d686362cf4580e3"
     },
     {
       "path": "development/levels/rebuild/captures/college-electrical-batch/college-electrical-layout.png",

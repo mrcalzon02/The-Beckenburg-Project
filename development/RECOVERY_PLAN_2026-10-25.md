@@ -1968,3 +1968,9 @@ The active [29-packet roster](levels/rebuild/college-electrical-pass/roster.json
 The [game verification](levels/rebuild/college-electrical-pass/checkpoint.json) covers both postures for all 88 route directions, 1,283 physically sealed context samples, actual control aim and four TCP peers. The normal host trips the independent breaker after an authorized ghost disturbance. A reconnect retains the blackout, generator restart preserves the tripped state, and the physical breaker restores supply. Same-camera software and hardware frames verify actual lighting changes.
 
 Fit College door leaves to the actual public and service frames, complete guards and whole-site containment, then replay ordinary arrival and the case with all services. The parent and public dispatch remain held. Main is 10fe52cb1feba1267efcf4edce67a5ca1bd3823e. Historical multiplayer and installer runs 44153590389 and 44153590626 passed at 96bb6cfd7554ff60a2c699144abcfad1688d7d3f, and renderer run 44016080200 passed at a85a47eee203b7fb4d29abcf2a19568262fa5eb6.
+
+## College operable doors and circulation checkpoint
+
+The [active roster](levels/rebuild/college-doors-pass/roster.json) registers the fitted College packet alongside 24 earlier native site packets. Five continuous wall runs establish seven rebuilt frames. Eleven more door sets fit existing exterior, stair and bridge frames. The [three-storey plan](levels/rebuild/college-doors-pass/college-door-plan.svg) shows walks on the built floors and stairs through surveyed doorways.
+
+The [verification](levels/rebuild/college-doors-pass/checkpoint.json) covers 18 fitted doors, 36 replicated host actions, 88 route directions in both postures, two continuous van journeys and the prior electrical controls. The next College pass surveys the exterior boundary, open fall edges, guards and the existing seminar floor seam before the remaining services and whole-case checks.

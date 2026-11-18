@@ -232,13 +232,7 @@ public final class CollegeNativeElectricalTest {
         return (rgb>>>16 & 255) + (rgb>>>8 & 255) + (rgb & 255);
     }
 
-    public static void main(String[] args) throws Exception {
-        Path stage = Path.of(args[0]);
-        var campus = CollegeNativeRuntimeReview.load(Path.of(args[1]),stage.resolve("college-electrical.glb"),stage.resolve("college-electrical.hcs2"));
-        var map = campus.map();
-        CollegeNativeRuntimeReview.audit(campus);
-        CollegeNativeRuntimeReview.replayRoutes(campus,HunterPosture.CROUCH_HEIGHT);
-        System.out.println("PASS all 88 native route directions crouched");
+    static void verifyControlsAndPower(HouseMap map) throws Exception {
         var roomSwitches = switches(map);
         var starter = new Vec(27.465,.565,29.993);
         var primary = new Vec(15.80,-2.10,33.529);
@@ -251,6 +245,16 @@ public final class CollegeNativeElectricalTest {
         check(RoomLighting.breakerAimed(map,panel.x(),panel.y(),panel.z(),0),"The ordinary breaker action must reach the real cabinet face");
         checkLight(map);
         host(map,supply,main,roomSwitches.get(4));
+    }
+
+    public static void main(String[] args) throws Exception {
+        Path stage = Path.of(args[0]);
+        var campus = CollegeNativeRuntimeReview.load(Path.of(args[1]),stage.resolve("college-electrical.glb"),stage.resolve("college-electrical.hcs2"));
+        var map = campus.map();
+        CollegeNativeRuntimeReview.audit(campus);
+        CollegeNativeRuntimeReview.replayRoutes(campus,HunterPosture.CROUCH_HEIGHT);
+        System.out.println("PASS all 88 native route directions crouched");
+        verifyControlsAndPower(map);
         if (args.length > 2) {
             java.lang.reflect.Method stop = null;
             if (List.of(args).contains("--gpu")) {

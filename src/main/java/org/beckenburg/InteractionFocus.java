@@ -71,7 +71,21 @@ public final class InteractionFocus {
             if(socket.type().equals("generator"))candidate(targets,Kind.GENERATOR,socket.id(),"Start / stop diesel generator",hit("button_12",r,socket.x(),socket.y(),socket.z(),socket.yaw(),.30));
             if(socket.type().equals("hide")&&LevelClosets.available(map.level(),socket.room(),map.hidingDensity()))blocker=Math.min(blocker,hit("level_hiding_cupboard_worn",r,socket.x(),socket.y(),socket.z(),socket.yaw(),1));
         }
+        var nativeScene=map.nativeInvestigation();
         for(var p:map.level().portals())if(p.door()){
+            NativeInvestigationDoor fitted=null;
+            if(nativeScene!=null)for(var door:nativeScene.doors()){
+                if(door.spec().portal().id()==p.id()){fitted=door;break;}
+            }
+            if(fitted!=null){
+                if(Math.hypot(r[0]-p.x(),r[2]-p.z())>5)continue;
+                boolean open=map.doorOpen(p.id());
+                double distance=Double.POSITIVE_INFINITY;
+                for(var face:fitted.pose(open).model().triangles())
+                    distance=Math.min(distance,triangle(r,face.a(),face.b(),face.c()));
+                candidate(targets,Kind.DOOR,Integer.toString(p.id()),open?"Close door":"Open door",distance);
+                continue;
+            }
             double angle=p.alongX()?0:Math.PI/2,hx=p.x()+(p.alongX()?p.width()/2:0),hz=p.z()+(p.alongX()?0:p.width()/2),leaf=p.width()>1.5?p.width()/2:p.width();
             // Interaction ray follows the visible moving door, not its final pose.
             double swing=map.doorOpenFraction(p.id())*Math.PI/2;

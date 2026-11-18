@@ -8382,6 +8382,62 @@ Evidence and verification: development/levels/rebuild/college-electrical-pass/ch
 
 Older-map obligation: Test network window commands from the measured actual approach on the matching House source.
 
+### DEV-593 — Irregular College partition jambs and overlapping wall pieces
+
+**Status:** CORRECTED_WITH_FIVE_CONTINUOUS_WALL_RUNS · **Affected:** College west teaching, meeting, upper library, upper teaching link and basement maintenance
+
+Seminar and meeting openings had irregular measured clear spans and rough overlapping headers.
+
+Cause / uncertainty: The source partitions combined portions from both rooms and individual opening cuts.
+
+Fix / next action: Build continuous partitions with piers, squared heads and retained floor datums. Verify the surveyed frames on three floors.
+
+Evidence and verification: development/levels/rebuild/college-doors-pass/checkpoint.json
+
+Older-map obligation: Use adjacent room geometry to establish one partition and verify both jambs at several heights.
+
+### DEV-594 — Generic native interaction ray missed fitted door leaves
+
+**Status:** CORRECTED_AND_HOST_REPLICATED · **Affected:** Fitted native College door aim and shared native investigation interaction
+
+Some visible parts of paired exterior leaves missed the old approximate interaction target.
+
+Cause / uncertainty: The approximation used an aperture-centered proxy instead of measuring the posed leaf.
+
+Fix / next action: Intersect the actual posed leaf triangles, preserve regular range and occlusion rules, and verify 36 host actions on a peer.
+
+Evidence and verification: development/levels/rebuild/college-doors-pass/checkpoint.json
+
+Older-map obligation: Aim and movement at fitted doors must follow the same moving object.
+
+### DEV-595 — Library stair door swing crowded the landing turn
+
+**Status:** CORRECTED_WITH_EAST_JAMB_HINGE · **Affected:** College lower library stair entrance
+
+The first fitted leaf intercepted the signed walk from the existing west landing.
+
+Cause / uncertainty: A west hinge set the leaf's open end across the turn into the stair.
+
+Fix / next action: Hang the fitted leaf on the east jamb and verify the ordinary walk through into the stair in both postures and directions.
+
+Evidence and verification: development/levels/rebuild/college-doors-pass/checkpoint.json
+
+Older-map obligation: Approve both swing and landing together at occupied standing height.
+
+### DEV-596 — Visible line across existing College seminar floor field
+
+**Status:** OPEN_STANDING_CAPTURE · **Affected:** College seminar interior beyond door L06
+
+A thin light line appears past the open seminar door in the software standing capture.
+
+Cause / uncertainty: The existing floor and partition join needs direct geometric and renderer comparison.
+
+Fix / next action: Probe both sides of the line and compare the existing surface contacts and coplanar overlaps before reconstructing any join.
+
+Evidence and verification: development/levels/rebuild/college-doors-pass/checkpoint.json
+
+Older-map obligation: Study captured floor lines with geometry readback to distinguish gaps from overlapping surfaces.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
