@@ -298,3 +298,9 @@ tools/verify_workyard_station.py -text whitespace=cr-at-eol
 development/levels/rebuild/dam-east-hall-pass/** -text whitespace=cr-at-eol
 tools/build_dam_east_hall.py -text whitespace=cr-at-eol
 tools/verify_dam_east_hall.py -text whitespace=cr-at-eol
+
+
+development/levels/rebuild/lookout-landing-pass/** -text whitespace=cr-at-eol
+tools/build_lookout_landings.py -text whitespace=cr-at-eol
+tools/prepare_lookout_landings.py -text whitespace=cr-at-eol
+tools/verify_lookout_landings.py -text whitespace=cr-at-eol

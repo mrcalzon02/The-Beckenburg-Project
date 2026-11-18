@@ -8034,17 +8034,59 @@ Older-map obligation: Tie each gate to its exact scene and verify shared ownersh
 
 ### DEV-568 — Lookout lower stair toe needs its own complete receiving surface
 
-**Status:** ROADHEAD_PREVIEW_VERIFIED_LOWER_LANDING_OPEN · **Affected:** WLD-04 lower switchback court and L03 stair arrival
+**Status:** CORRECTED_WITH_FOUNDED_STAIR_RECEIVING_COURT · **Affected:** WLD-04 lower switchback court and L03 stair arrival
 
 The first isolated grading trial overlapped the lower stair toe and blocked L03 in both directions at the ground-to-stair transition.
 
 Cause / uncertainty: The lower court grade extended into the surveyed toe of the first full stair and changed its approach profile.
 
-Fix / next action: Pull the roadhead grade back to its geographic court boundary. Preserve the full flight and reconstruct the toe, sill and approach as one supported landing.
+Fix / next action: Reproduce the geographic roadhead outside the existing toe. Seat a complete lower landing and the +3 m boulder landing beneath their actual stairs.
 
-Evidence and verification: development/levels/rebuild/dam-east-hall-pass/checkpoint.json
+Evidence and verification: development/levels/rebuild/lookout-landing-pass/checkpoint.json
 
 Older-map obligation: Repeat bidirectional full stair chains after editing external grades near independently authored landings.
+
+### DEV-569 — Lookout ruin porch stopped short of the existing doorway
+
+**Status:** CORRECTED_WITH_FOUNDED_PORCH_AND_PORTALS · **Affected:** WLD-04 ruin west threshold, ruin-store wall and contour return
+
+The ruin’s +6 m west porch ended at X 39.50. The actual west wall and occupied floor start at X 40.00.
+
+Cause / uncertainty: The previous threshold joined a full stair to an incomplete landing and an unframed opening.
+
+Fix / next action: Build the complete porch and seat it at the physical doorway. Fit the retained ruin-to-store opening with a proper frame.
+
+Evidence and verification: development/levels/rebuild/lookout-landing-pass/checkpoint.json
+
+Older-map obligation: Audit the full width of a sill and every gap between external landing and occupied floor.
+
+### DEV-570 — Lookout upper buildings exposed gaps under their exterior plates
+
+**Status:** CORRECTED_WITH_CONTINUOUS_EXTERIOR_FOUNDATIONS · **Affected:** WLD-04 hut, ruin and store perimeter support
+
+Standing-height review exposed a seam below the ruin floor and a much deeper gap below the store where terrain descends.
+
+Cause / uncertainty: The exterior floor and wall assembly stopped above the existing slope.
+
+Fix / next action: Seat exterior foundations at the measured soil elevations and join them to the existing building floors.
+
+Evidence and verification: development/levels/rebuild/lookout-landing-pass/checkpoint.json
+
+Older-map obligation: Render from walking height and sweep foundation joints on the exterior of every raised building.
+
+### DEV-571 — Lookout complete shared gameplay acceptance remains open
+
+**Status:** OPEN_FULL_SITE_FIT_AND_RUNTIME · **Affected:** WLD-04 occupancy, site fit, finishes, service and shared gameplay
+
+The native routes, stairs, turns and doorway fits pass. Whole-site room, boundary, service and gameplay checks are incomplete.
+
+Cause / uncertainty: The scope of this checkpoint is physical structure, architecture and native movement.
+
+Fix / next action: Complete site enclosure and power and fixture fit. Bind the authored world to the actual investigation ownership and verify shared play.
+
+Evidence and verification: development/levels/rebuild/lookout-landing-pass/checkpoint.json
+
+Older-map obligation: Preserve the native evidence and require real gameplay receipts before promotion.
 
 ## Required audit categories
 

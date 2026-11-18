@@ -1110,3 +1110,12 @@ All 6,087 strict standing samples pass, clearing 231 previous contacts. All 13 o
 Construction df22868dc2878308c56712a0305b9be57e50811a and all 37 bound source blobs are verified at the remote head of draft PR 86. The exact hosted gallery run 44217791847 succeeded. The public page returned HTTP 200 and the two sampled captures returned HTTP 404, pending deployment through the held integration branch.
 
 Widow’s Peak Fire Lookout has a measured next construction source. The isolated editor roadhead and lower court preview clears the sixty arrival standing contacts. It retains all 361 existing nonterrain collision records and preserves the eleven complete vertical routes and fifteen flights. There are 105 standing contacts in the preview, including the lower stair receiving surface and the ruin and tower approaches. The broad grade trial that touched the stair toe was rejected. The exact coordinates and verifications are recorded in development/levels/rebuild/dam-east-hall-pass/checkpoint.json and the current workspace’s build/lookout-fit-preview.
+
+
+## 2026-11-17 / Widow’s Peak Fire Lookout
+
+Baseline 30dcf87ab5893de95a92fd20e1713e9c81c506a1. The active 29-packet source is lookout-landing-pass/roster.json.
+
+The geographic roadhead and switchback court reproduce the measured native preview terrain. Full founded landings at 0 and +3 m seat the existing flights. The +6 m ruin porch reaches the actual fitted west threshold. A fitted shared opening joins the ranger rooms. Eleven continuous exterior foundation parts meet the surveyed hillside beneath the hut, ruin and store.
+
+All 3,441 strict standing samples pass, clearing 165 prior contacts. All five ordinary links, fifteen flights, eleven complete vertical links and five joined journeys pass. The native reimport verifies 45 aperture rays, 30 sills, 13 landing and arrival controls, 66 soil receivers and twelve foundation closure rays. The 25-packet native sweep passes 567 ordinary links, 238 flights and 86 vertical links. It records 660 standing contacts in 140,256 samples. DEV-568 through DEV-571 are linked to the exact source and fit evidence at development/levels/rebuild/lookout-landing-pass/checkpoint.json.

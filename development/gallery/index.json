@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11145,
+  "count": 11155,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -102214,6 +102214,106 @@
       "height": 900,
       "bytes": 593115,
       "sha256": "3419a1736d40806b50ba01c8734b042039c6b81070102e2916a3031dda33f9a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/boulder-saddle-before.png",
+      "url": "development/levels/rebuild/captures/lookout-landing-batch/boulder-saddle-before.png",
+      "title": "Boulder saddle before",
+      "kind": "Native Lookout before the receiving landing and foundation rebuild",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1180335,
+      "sha256": "56ef9f400bbbb225e7cf83c9a175548856f6f213798d81717208dc344831d76c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/boulder-saddle.png",
+      "url": "development/levels/rebuild/captures/lookout-landing-batch/boulder-saddle.png",
+      "title": "Boulder saddle",
+      "kind": "Native Lookout grounds, landings, foundations and tower inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1183336,
+      "sha256": "a0d441d88b6dc259570e1c9276cda5516c731f1b67c728da99a965bbb0c99f8a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/cab-east-door.png",
+      "url": "development/levels/rebuild/captures/lookout-landing-batch/cab-east-door.png",
+      "title": "Cab east door",
+      "kind": "Native Lookout grounds, landings, foundations and tower inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 998569,
+      "sha256": "5586ae6d24986220a401a02947bb0150829270c6bd614ef5ff7ce4854b2a8444"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/lower-court-before.png",
+      "url": "development/levels/rebuild/captures/lookout-landing-batch/lower-court-before.png",
+      "title": "Lower court before",
+      "kind": "Native Lookout before the receiving landing and foundation rebuild",
+      "width": 1200,
+      "height": 850,
+      "bytes": 849530,
+      "sha256": "6cd474b8bbbd88518060f64d21c7430ffebe48e5e285e5a14deebd85f0859fe9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/lower-court.png",
+      "url": "development/levels/rebuild/captures/lookout-landing-batch/lower-court.png",
+      "title": "Lower court",
+      "kind": "Native Lookout grounds, landings, foundations and tower inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 843368,
+      "sha256": "371f36b3451bb44c6088923818a68983bae6979ea25bb0720b44b0435a308d83"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/overview.png",
+      "url": "development/levels/rebuild/captures/lookout-landing-batch/overview.png",
+      "title": "Overview",
+      "kind": "Native Lookout grounds, landings, foundations and tower inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 772928,
+      "sha256": "09f72c4082a8cfec193af0b985abd4a8e0ecdc8ccd8e7be52415c610c40deae7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/roadhead.png",
+      "url": "development/levels/rebuild/captures/lookout-landing-batch/roadhead.png",
+      "title": "Roadhead",
+      "kind": "Native Lookout grounds, landings, foundations and tower inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1029580,
+      "sha256": "1a88ea10490c6f93ca72c8913891cbe3e274c8fd7d21e4de77f07bbf55aa7165"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/ruin-porch-before.png",
+      "url": "development/levels/rebuild/captures/lookout-landing-batch/ruin-porch-before.png",
+      "title": "Ruin porch before",
+      "kind": "Native Lookout before the receiving landing and foundation rebuild",
+      "width": 1200,
+      "height": 850,
+      "bytes": 866585,
+      "sha256": "12c3baedcf40d761253894ad4b6318dd0d62cf51ad76fe5674ee9582239bc536"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/ruin-porch.png",
+      "url": "development/levels/rebuild/captures/lookout-landing-batch/ruin-porch.png",
+      "title": "Ruin porch",
+      "kind": "Native Lookout grounds, landings, foundations and tower inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 869571,
+      "sha256": "42fd281c386e245fa13279833d4cd9b8e0d9bf602b95a3cf442867412c1fc949"
+    },
+    {
+      "path": "development/levels/rebuild/captures/lookout-landing-batch/tower-midturn.png",
+      "url": "development/levels/rebuild/captures/lookout-landing-batch/tower-midturn.png",
+      "title": "Tower midturn",
+      "kind": "Native Lookout grounds, landings, foundations and tower inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 935983,
+      "sha256": "8317d778fc1eba87963fcee73bdd072c93d57a9c68be4455e4972e7ec331562f"
     },
     {
       "path": "development/levels/rebuild/captures/macroterrain-batch/academy-saved-terrain.png",
