@@ -1,0 +1,22 @@
+{
+  "status": "SCOPED_PHYSICAL_PERIMETER_SCOUT_RETAIN_FULL_GATE",
+  "scope": "Ground, capsule and sight checks at the authored segment endpoints and quarter points. Interior sweeps start 0.70 m inside each segment where the mover has a valid supported pose.",
+  "saved_terrain": "assets/runtime/sites/briar-porch-world.hcs2",
+  "terrain_sha256": "7351ae8359228b30568f2648ef89252eb924131c3e9197e9bf911a8a77f3f3b3",
+  "measurements": {
+    "inner_valid": 384,
+    "moving_swipes": 384,
+    "crossed": 0,
+    "air_body_blocked": 594,
+    "air_checked": 594,
+    "panels": 66,
+    "matched": 66,
+    "ground_samples": 330,
+    "max_gap": 0.0,
+    "max_buried": 0.0583,
+    "min_height": 1.9017,
+    "clear_rays": 0,
+    "tested_rays": 990
+  },
+  "remaining": "Twelve candidate interior poses lacked a clear start. Review actual joined corners, skipped approaches, rendered boundaries and the full road and readable-object controls before changing LevelEnclosureTest."
+}
