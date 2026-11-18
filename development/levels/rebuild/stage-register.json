@@ -1369,7 +1369,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
+          "source_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/farmhouse/rough-layout.json",
@@ -1392,7 +1392,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
+          "source_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
           "evidence": [
             "development/levels/rebuild/structures/farmhouse/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2415,7 +2415,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
+          "source_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/school/rough-layout.json",
@@ -2437,7 +2437,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
+          "source_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
           "evidence": [
             "development/levels/rebuild/structures/school/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -2535,7 +2535,7 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
+          "source_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
           "evidence": [
             "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json"
           ],
@@ -4003,7 +4003,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
+          "source_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
           "evidence": [
             "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json"
           ],
@@ -4014,7 +4014,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "f06f6eaf1ee2ee7b0e795c6265f1ffde0a6fd12a",
+          "source_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
           "evidence": [
             "development/levels/rebuild/structures/wld-08/implementation.json",
             "development/levels/rebuild/structures/verification.json",

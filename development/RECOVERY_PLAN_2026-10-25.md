@@ -1907,3 +1907,10 @@ Hollowmere's circulation follows the measured 1.16 m ground transfer, the 1.09 m
 Ravenshade now joins the real cargo ramp at X24.372, Y0, Z51 to the saved gravel, continuous forecourt and actual south foyer threshold. The exact School GLB and collision source load through the staged production engine. The replay passes standing and crouched round trips, six seat-to-hatch approaches, the closed cargo-hatch control and continuous movement to all 40 authored spaces with their surveyed ownership. Site boundary and extra reachable space inspection, building doors, services, optical and acoustic parity, shared in-game renderer and multiplayer acceptance remain open.
 
 All three packets pass 19,179 strict standing samples and nine joined native journeys. The 25-packet native sweep passes 567 ordinary links, 238 flights and 86 vertical links. Standing contacts fell from 415 to 255 across 140,340 samples. The original physical scene bytes, exact plans and gallery captures are bound in development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json. DEV-574 through DEV-578 track the remaining and corrected scopes.
+
+
+Construction 4fdcac56e6b2867a4c9698578a7575beb468a03d and all 50 bound files match the remote draft PR 86 tree. Exact hosted gallery run 44229150782 passed. The public gallery returned HTTP 200 and the two new sampled captures returned HTTP 404 pending movement through the held parent.
+
+The staged School foyer closure control reproduces DEV-578. The actual 1.80 m fitted aperture remains walkable and clear to sight after the door snapshot closes it. The next shared runtime pass must use that physical frame for the same state across movement, optics, display, acoustics and network. It is separate from the passing van cargo-hatch control.
+
+Physical surveys for the next Wharf, Eight Pines and Parish packets bind 2,200, 5,626 and 6,016 standing poses to their exact exported floors, frames and guards. Their subassembly measurements are attached to measured-arrival-and-approach-pass/checkpoint.json.

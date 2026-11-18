@@ -154,5 +154,96 @@
     "tools/java/NativeSchoolArrivalProbe.java": "4cbaae7305ac8e53ad8ae2e519750ca7ee5882921cfbb56e99dcfe7dfbcf9f4f",
     "tools/render_measured_approaches.py": "bc313f4cd62ce7fd377dc30464d5969a3fa8ac88bc54cd1db909989e9aae0836",
     "tools/verify_measured_approaches.py": "581e14f90d17fb36f3b28fe9c6c08ea927f86d71dbb16c578668960deeebbcb9"
+  },
+  "publication": {
+    "construction_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
+    "verified_remote_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
+    "verified_git_tree": "2c9aea9c7f0f3d1e20ab45c5ab30072bfd60c7d9",
+    "remote_ref": "refs/heads/map/roster-structure-batch",
+    "draft_pull_request": 86,
+    "base_ref": "map/house-default",
+    "base_sha": "5c3daf923a7359554dc075c9e99be139bbcb1441",
+    "main_sha": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "verified_source_blobs": 50,
+    "gallery_images": 11178,
+    "hosted_gallery_run": 44229150782,
+    "hosted_gallery_sha": "4fdcac56e6b2867a4c9698578a7575beb468a03d",
+    "hosted_gallery_conclusion": "success",
+    "public_html_status": 200,
+    "public_captures": {
+      "school-cargo-ramp-receiver.png": 404,
+      "northwatch-generator-well-turn.png": 404
+    },
+    "status": "VERIFIED_BRANCH_AND_DRAFT_PUBLIC_DEPLOYMENT_PENDING"
+  },
+  "next_runtime_control": {
+    "defect": "DEV-578",
+    "site": "SCHOOL",
+    "frame": "SCHOOL-z-36-22.5",
+    "frame_anchor": [
+      22.5,
+      0,
+      36
+    ],
+    "actual_clear_width_m": 1.8,
+    "outside_sample": [
+      22.5,
+      0,
+      36.65
+    ],
+    "inside_sample": [
+      22.5,
+      0,
+      35.35
+    ],
+    "output": [
+      {
+        "foyer_snapshot": "open",
+        "walk": "true",
+        "sight": "true"
+      },
+      {
+        "foyer_snapshot": "closed",
+        "walk": "true",
+        "sight": "true"
+      }
+    ],
+    "local_reproduction": {
+      "build/school-arrival-study/foyer-door-baseline.tsv": "4d35f79c3be0759ef146e9de34693c2317f6eaf263803ee3b5e2c98a1964fe70",
+      "build/school-arrival-study/NativeSchoolFoyerDoorBaseline.java": "61725929eade19bd914336333cbc770b217b7872d518f1323b8ff540f9a71bc6"
+    },
+    "finding": "The production door snapshot changed its state value. Walk and optical queries through the staged native foyer aperture still passed while closed."
+  },
+  "next_physical_surveys": {
+    "WLD-06": {
+      "native_sha256": "f252b1ccd7f9a043aa5bf58dce841ec31557f3a6f9546d0f6f7a259f4b70d252",
+      "survey_poses": 2200,
+      "roster_contacts": 56,
+      "finding": "The crossdock bears valid full-body poses at Z8.125 across the sampled X22.125–41.875 range, north of the fish building wall at Z10. Use the full exterior deck around both corners.",
+      "local_surveys": {
+        "build/post-measured-approaches/next-sites/wld-06/survey.json": "9c688e4a61c3b61d8937e3b26a4e90220e91206e6ae1cc03c43d27010d603ff9",
+        "build/post-measured-approaches/next-sites/wld-06/standing-fit.tsv": "21dc057a6b4f8873013190c6c4572772427436fb9110a09833a6abd4aad7a6bb"
+      }
+    },
+    "WLD-16": {
+      "native_sha256": "fbe5f3d984b059456fa7dbc368c8c4001ea3679f6fc872d20a100913c9455eb9",
+      "survey_poses": 5626,
+      "roster_contacts": 46,
+      "finding": "The actual 1.05 m office-to-manager door is at X13, Z45. The sampled sill shoulders and both office end thresholds support the standing body. Match guide widths and approach directions to the fitted frames.",
+      "local_surveys": {
+        "build/post-measured-approaches/next-sites/wld-16/survey.json": "77a0152a576fceda2bd16085fd98bdba7998cc3c2b2d8cbb569c02a5f270436f",
+        "build/post-measured-approaches/next-sites/wld-16/standing-fit.tsv": "c45fe6b4a9d7e882c0756dd5e5a3ee328f096eda7c38a217b496db533bf554b0"
+      }
+    },
+    "CHURCH": {
+      "native_sha256": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82",
+      "survey_poses": 6016,
+      "roster_contacts": 43,
+      "finding": "The actual chapel-to-crypt entry door is at X28.5, Z26. Its 1.05 m width and the west crypt rim at X30.45–30.53 delimit the approach. The interior of the well has no ground-floor standing support.",
+      "local_surveys": {
+        "build/post-measured-approaches/next-sites/church/survey.json": "78e9760efd558152184a6e5220173b55d0e6b4c6d38e68d3582433004e3c81fe",
+        "build/post-measured-approaches/next-sites/church/standing-fit.tsv": "11eeed644ebe9e899cbebb70b574ee9978454ae3cee87caaff62c401c8894d0c"
+      }
+    }
   }
 }
