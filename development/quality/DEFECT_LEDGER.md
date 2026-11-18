@@ -8370,15 +8370,15 @@ Older-map obligation: Measure all fixture edges against complete surfaces and ve
 
 ### DEV-592 — House network regression misses legacy window acknowledgement
 
-**Status:** OPEN_EXACT_BASELINE_REPRODUCED · **Affected:** House AuthoredLevelNetworkTest upper-storey window action
+**Status:** CORRECTED_WITH_SUPPORTED_WINDOW_APPROACH_AND_REAL_PEERS · **Affected:** House AuthoredLevelNetworkTest upper-storey window action
 
 The packaged candidate and exact prior renderer, map, lighting and test sources fail waiting for ACCEPT|WINDOW.
 
-Cause / uncertainty: The recorded fixed House steps and nearest-window command require a measured aperture and host-body audit.
+Cause / uncertainty: The previous five westward steps stop outside the reachable area of either fitted upper window in the current built-in House.
 
-Fix / next action: Use the ordinary host XYZ walk up to the actual fitted window, verify window handle reach, then confirm state and peer replay.
+Fix / next action: Walk the existing floor south to the fitted window, aim at the visible leaf, and verify open and closed snapshots on the real host and an independent peer.
 
-Evidence and verification: development/levels/rebuild/college-electrical-pass/checkpoint.json
+Evidence and verification: development/levels/rebuild/verification/house-window-network-2026-11-18/checkpoint.json
 
 Older-map obligation: Test network window commands from the measured actual approach on the matching House source.
 

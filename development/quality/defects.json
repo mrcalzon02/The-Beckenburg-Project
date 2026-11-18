@@ -6572,12 +6572,12 @@
     {
       "id": "DEV-592",
       "title": "House network regression misses legacy window acknowledgement",
-      "status": "OPEN_EXACT_BASELINE_REPRODUCED",
+      "status": "CORRECTED_WITH_SUPPORTED_WINDOW_APPROACH_AND_REAL_PEERS",
       "affected": "House AuthoredLevelNetworkTest upper-storey window action",
       "symptom": "The packaged candidate and exact prior renderer, map, lighting and test sources fail waiting for ACCEPT|WINDOW.",
-      "cause": "The recorded fixed House steps and nearest-window command require a measured aperture and host-body audit.",
-      "action": "Use the ordinary host XYZ walk up to the actual fitted window, verify window handle reach, then confirm state and peer replay.",
-      "evidence": "development/levels/rebuild/college-electrical-pass/checkpoint.json",
+      "cause": "The previous five westward steps stop outside the reachable area of either fitted upper window in the current built-in House.",
+      "action": "Walk the existing floor south to the fitted window, aim at the visible leaf, and verify open and closed snapshots on the real host and an independent peer.",
+      "evidence": "development/levels/rebuild/verification/house-window-network-2026-11-18/checkpoint.json",
       "older_maps": "Test network window commands from the measured actual approach on the matching House source."
     },
     {

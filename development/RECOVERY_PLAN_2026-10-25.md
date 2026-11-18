@@ -1990,3 +1990,7 @@ The [active roster](levels/rebuild/college-services-pass/roster.json) registers 
 The [checkpoint](levels/rebuild/college-services-pass/checkpoint.json) verifies 30 supported fixture sets, 76 source connections, 78 service runs and four roof duct terminations. All 88 original route directions, both complete van journeys, the five jump tests, the 18 operable doors and 68 electrical fixtures pass again. The native source keeps the 40 searchable spaces and fifteen owners. Ten prior context test points occupied by new fixtures were rechecked from nearby supported stances.
 
 Main is 10fe52cb1feba1267efcf4edce67a5ca1bd3823e and the held parent is 5c3daf923a7359554dc075c9e99be139bbcb1441. The historical multiplayer, package and GPU checks remain bound to runs 44153590389, 44153590626 and 44016080200. Next work includes House DEV-592, College functional fit-out and normal College case dispatch.
+
+## Briar House upper window host replay
+
+The [House window checkpoint](levels/rebuild/verification/house-window-network-2026-11-18/checkpoint.json) closes DEV-592. From the current House upper landing, the old westward walk ended outside window reach at X 14.25, Y 2.80, Z 17.10 m. The normal host walk south reaches X 15.80, Y 2.80, Z 18.96 m and the actual fitted leaf 23. Two runs on the same packaged game verify real open and closed broadcasts to the requesting user and a second client. Farmhouse window and School multiplayer regressions also pass. This closes the measured window gate for the current staged source. Complete location acceptance remains open.
