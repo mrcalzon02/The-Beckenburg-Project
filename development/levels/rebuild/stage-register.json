@@ -7030,5 +7030,22 @@
       "joined_journeys": 4
     },
     "next_action": "Fit the four Seacliff Battery receiving floors and retain all original vertical connections. Continue through normal gameplay and complete location acceptance."
+  },
+  "seacliff_receiving_checkpoint": {
+    "status": "BATTERY_FOUNDED_STAIRS_AND_STAGED_GAMEPLAY_CHECKPOINT_ACCEPTANCE_OPEN",
+    "roster": "development/levels/rebuild/seacliff-receiving-pass/roster.json",
+    "baseline": "10190b09081850629ff703b8ca5db0b214cdab44",
+    "checkpoint": "development/levels/rebuild/seacliff-receiving-pass/checkpoint.json",
+    "native_roster": {
+      "staged_native_packets": 25,
+      "roster_packets": 29,
+      "strict_standing_samples": 140646,
+      "standing_failures": 0,
+      "previous_standing_failures": 14,
+      "bidirectional_ordinary_links": 567,
+      "bidirectional_stair_flights": 238,
+      "bidirectional_vertical_routes": 86
+    },
+    "next_action": "Audit stable room ownership and door schedules. Verify full gameplay dispatch, services and perimeter contracts. Review authored House boundary segments."
   }
 }

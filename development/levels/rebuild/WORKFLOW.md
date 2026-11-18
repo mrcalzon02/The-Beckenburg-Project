@@ -1184,3 +1184,14 @@ The active 29-packet source is [flush-porch-and-threshold-pass/roster.json](flus
 Briar House's full entrance slab and post feet now share the actual sill datum. The full-width graded stone apron meets the saved yard formation. The standing and crouched yard-to-foyer sweeps pass in both directions, and the full van audit reaches all 15 zones and required interactions. The native furnished scene was rebuilt and reopened. DEV-582 records the scoped correction. The inherited terrain assumption and enclosure assertions reproduce on the baseline and corrected House.
 
 Measured guidance now follows the existing doors and landings in the Academy, Asylum, Penitentiary and Cinder-6. The source geometry and collision bytes are identical to their previous active packets. Four joined site journeys pass in both directions. The complete roster retains 567 ordinary links, 238 flights and 86 vertical routes passing in both directions. Of 140,550 standing positions, 14 remain invalid, all at four Seacliff Battery landings. DEV-583 records the surveyed bounds and next physical work. Environment art, native gameplay integration and the location acceptance gates remain open.
+
+
+## 17 November 2026 — Seacliff Battery founded arrival and director stair
+
+The active [29-packet roster](seacliff-receiving-pass/roster.json) and [verified checkpoint](seacliff-receiving-pass/checkpoint.json) advance baseline 10190b09081850629ff703b8ca5db0b214cdab44. Seacliff has founded concrete exterior flights, a full intermediate terrace, saved forecourt and courtyard grades, and a framed receiving bay with a guarded director well and actual wall bearings. The reopened world retains its original terrain tile and topology and passes 737 saved opening checks.
+
+The staged game mover reaches the director deck from the canonical van through either wing, standing and crouched, and passes both return routes. The fitted frame shares paired leaves across body collision, small object collision, sight, acoustics, the renderer and staged host and guest snapshots. Its route owners, 14 room anchors and all three original ritual positions pass. Full location, transport and service integration remain open.
+
+All 140,646 standing poses pass across the 25 native source packets. All 567 ordinary links, 238 stair flights and 86 vertical links pass in both directions. HouseRebuildPhysicsTest passes with explicit original and rebuilt source selection. Briar House still requires a physical perimeter audit of the 66 authored segments. The old enclosure test expects eight outline edges.
+
+Recovery readback records main 10fe52cb1feba1267efcf4edce67a5ca1bd3823e. The latest verified full multiplayer, installer and renderer runs on their own sources are 44153590389, 44153590626 and 44016080200. The construction pass stays on the held draft.

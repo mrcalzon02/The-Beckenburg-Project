@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11192,
+  "count": 11205,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -104064,6 +104064,136 @@
       "height": 900,
       "bytes": 705867,
       "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-lower-after.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-lower-after.png",
+      "title": "Battery director lower after",
+      "kind": "Battery native construction review",
+      "width": 1150,
+      "height": 790,
+      "bytes": 981578,
+      "sha256": "67b936bcac8c19a8fd34429db5b016f33683ff52ddfde1ec3ae8c021e8b2bae9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-lower-before.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-lower-before.png",
+      "title": "Battery director lower before",
+      "kind": "Battery native construction review",
+      "width": 1150,
+      "height": 790,
+      "bytes": 951046,
+      "sha256": "310a3c0afa3d0cf4073c8bc968f972fa5ec0f7d1a27212d63999d49bf4c6fcf8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-section-after.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-section-after.png",
+      "title": "Battery director section after",
+      "kind": "Battery protected staircase cutaway",
+      "width": 1150,
+      "height": 790,
+      "bytes": 1143093,
+      "sha256": "2aa2d326ef121b005e1bf6ceefbbf9ec3d03224405cbfbdab39d3cd120764850"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-stair-runtime.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-stair-runtime.png",
+      "title": "Battery director stair runtime",
+      "kind": "Battery game renderer",
+      "width": 840,
+      "height": 560,
+      "bytes": 100077,
+      "sha256": "6602211152c0890898828ff3842986384e04958710bc884ee9838a15a92f0010"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-upper-after.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-upper-after.png",
+      "title": "Battery director upper after",
+      "kind": "Battery native construction review",
+      "width": 1150,
+      "height": 790,
+      "bytes": 1032288,
+      "sha256": "7655389678d4a9213d5fbd317e61dab71b5005d54ea75d3d6d827a548004fcba"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-exterior-courts-after.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-exterior-courts-after.png",
+      "title": "Battery exterior courts after",
+      "kind": "Battery native construction review",
+      "width": 1150,
+      "height": 790,
+      "bytes": 1157259,
+      "sha256": "9527bec474df061b6c5aec85544219b25be351ca80c27ac26022c751aa1de0d4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-exterior-courts-before.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-exterior-courts-before.png",
+      "title": "Battery exterior courts before",
+      "kind": "Battery native construction review",
+      "width": 1150,
+      "height": 790,
+      "bytes": 1144966,
+      "sha256": "3537f53c6fb57340b4a626042ed974f1f24b10d6a55b41e13046e758081891c4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-gallery-closed-runtime.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-gallery-closed-runtime.png",
+      "title": "Battery gallery closed runtime",
+      "kind": "Battery game renderer",
+      "width": 840,
+      "height": 560,
+      "bytes": 166892,
+      "sha256": "c99672b11f8ae959748cadb13536e4b8f97f5fc5c1d1f0cd0cfa16a71fae61bc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-gallery-open-runtime.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-gallery-open-runtime.png",
+      "title": "Battery gallery open runtime",
+      "kind": "Battery game renderer",
+      "width": 840,
+      "height": 560,
+      "bytes": 125068,
+      "sha256": "eff0a4cb68ad5cf957988fd5fd2ef4f7b7bba9ceb6d4d0473176fcc48a15bc7a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-intermediate-court-after.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-intermediate-court-after.png",
+      "title": "Battery intermediate court after",
+      "kind": "Battery native construction review",
+      "width": 1150,
+      "height": 790,
+      "bytes": 707828,
+      "sha256": "56a61b7f9ea0c5494c40ec7e8e5e1a5325e98f05dcb81e2ebf085cefa114ee6c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-ramp-to-battery-after.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-ramp-to-battery-after.png",
+      "title": "Battery ramp to battery after",
+      "kind": "Battery native construction review",
+      "width": 1150,
+      "height": 790,
+      "bytes": 697308,
+      "sha256": "b856d65d60ce240253be9484e6f964bbbb8572de9458e844cfb76e9049590967"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-site-after.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-site-after.png",
+      "title": "Battery site after",
+      "kind": "Battery native construction review",
+      "width": 1150,
+      "height": 790,
+      "bytes": 681704,
+      "sha256": "dcbfea9e52abcba04ecba732f0b80dbe7376c1bbb4258d18415ee45e1ca6655f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-site-before.png",
+      "url": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-site-before.png",
+      "title": "Battery site before",
+      "kind": "Battery native construction review",
+      "width": 1150,
+      "height": 790,
+      "bytes": 677404,
+      "sha256": "39a965e75452003d95d28340807fbd3baf8aec5dd4c85c9fe035bb991041dfa6"
     },
     {
       "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-cellar-foot-standing.png",

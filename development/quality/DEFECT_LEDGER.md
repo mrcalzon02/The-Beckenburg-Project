@@ -8242,17 +8242,61 @@ Evidence and verification: development/levels/rebuild/native-foyer-door-pass/che
 
 Older-map obligation: Use before-and-after sweeps from both faces of each working doorway.
 
-### DEV-583 — Seacliff Battery has 14 remaining standing contacts at four stair approaches
+### DEV-583 — Seacliff Battery has standing contacts at four stair approaches
 
-**Status:** PHYSICAL_LANDING_REVIEW_OPEN · **Affected:** WLD-17 routes 03, 10, 11 and 12
+**Status:** CORRECTED_WITH_FOUNDED_LANDINGS_AND_SHARED_MOVEMENT · **Affected:** WLD-17 routes 03, 10, 11 and 12
 
-Route 03 loses a full footprint near the south-side deck edge at the Y2 receiving connection. Route 10 has missing north-side foot support at Z22 and overlaps the low treads on the east of the Y4 turn. The paired Y0 turns on routes 11 and 12 overlap the stair bodies west of X20 and X56 between Z16 and 16.75.
+Four approach turns had 14 strict standing contacts on the prior active source.
 
-Fix / next action: Fit the receiving floors, guard terminations and footing to the actual flight axes and adjacent floors. Preserve the four source flights and use the assembled landing surfaces to draw their approach guides.
+Cause / uncertainty: The exterior landing lacked a full receiving edge, the director turn crossed treads and an unsupported corner, and the two lower guides turned inside the tread bodies.
 
-Evidence and verification: development/levels/rebuild/flush-porch-and-threshold-pass/verification/remaining-standing-contacts.tsv
+Fix / next action: Build full receiving floors at Y2 and Y4 and align the paired lower turns with the existing barracks and plant floors. All staged native standing samples pass.
 
-Older-map obligation: Check the full-width standing envelope where stairs meet a right-angle turn, including the side footprints and the first and last treads.
+Evidence and verification: development/levels/rebuild/seacliff-receiving-pass/checkpoint.json
+
+Older-map obligation: Sample the full standing envelope on both sides of right-angle stair approaches.
+
+### DEV-584 — Seacliff arrivals used exposed route strips and soil-covered treads
+
+**Status:** CORRECTED_IN_ACTIVE_NATIVE_SOURCE · **Affected:** WLD-17 van, upper courtyard and exterior stairs
+
+The standing and overview source views showed a narrow diagonal terrace, physical yard strips and ground masking some lower treads.
+
+Cause / uncertainty: The earlier approach used route-shaped solids where the site needed complete graded yards, formed edges and founded estate stairs.
+
+Fix / next action: Grade both yards in the saved world, cast both stair assemblies on continuous foundations and connect them through the intermediate concrete court.
+
+Evidence and verification: development/levels/rebuild/seacliff-receiving-pass/wld-17/visual-review.json
+
+Older-map obligation: Confirm visible and physical bearing from the actual cargo ramp to the site entrance.
+
+### DEV-585 — House terrain regression used active dispatch for its original-source control
+
+**Status:** CORRECTED_WITH_EXPLICIT_ORIGINAL_AND_REBUILT_SOURCES · **Affected:** HOUSE version-specific terrain regression
+
+HouseRebuildPhysicsTest stopped at the terrain assertion on both the previous and corrected porch.
+
+Cause / uncertainty: Fresh default dispatch now selects the rebuild. The original assertion still used default dispatch as its legacy control.
+
+Fix / next action: Select the original source explicitly, then separately verify the rebuilt source loads its exact terrain and preserves the cellar opening. HouseRebuildPhysicsTest passes.
+
+Evidence and verification: development/levels/rebuild/seacliff-receiving-pass/verification/house-controls.json
+
+Older-map obligation: Exercise explicit original and active selections for source-version regressions.
+
+### DEV-586 — Briar House enclosure audit assumes one barrier per outline edge
+
+**Status:** PHYSICAL_66_SEGMENT_REVIEW_OPEN · **Affected:** HOUSE active perimeter geometry and LevelEnclosureTest
+
+The existing check derives eight gross room-outline edges and finds 66 authored enclosure sockets. Farmhouse and School counts match their controls.
+
+Cause / uncertainty: The active House uses a segmented terrain perimeter. Counting coarse outline edges cannot determine whether the real segments and returns contain players.
+
+Fix / next action: Sweep the actual barrier coordinates, closures and slope interfaces before revising the test. The perimeter gate remains open.
+
+Evidence and verification: development/levels/rebuild/seacliff-receiving-pass/verification/house-controls.json
+
+Older-map obligation: Audit supported ground, physical continuity and actual sight/body blocking around authored enclosures.
 
 ## Required audit categories
 

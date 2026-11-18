@@ -325,3 +325,10 @@ tools/review_surveyed_thresholds.py -text whitespace=cr-at-eol
 tools/verify_surveyed_thresholds.py -text whitespace=cr-at-eol
 tools/review_house_porch.py -text whitespace=cr-at-eol
 tools/java/HousePorchFormation.java -text whitespace=cr-at-eol
+
+development/levels/rebuild/seacliff-receiving-pass/** -text whitespace=cr-at-eol
+tools/build_seacliff_battery.py -text whitespace=cr-at-eol
+tools/prepare_seacliff_battery.py -text whitespace=cr-at-eol
+tools/review_seacliff_battery.py -text whitespace=cr-at-eol
+tools/verify_seacliff_battery.py -text whitespace=cr-at-eol
+tools/java/NativeSeacliffReceivingProbe.java -text whitespace=cr-at-eol

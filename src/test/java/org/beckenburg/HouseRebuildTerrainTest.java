@@ -69,7 +69,17 @@ public final class HouseRebuildTerrainTest {
             require(!(cx>12+1e-6&&cx<21.6-1e-6&&cz>10+1e-6&&cz<20.5-1e-6),"Rendered world triangle caps basement");
         }
         require(rendered==punched.triangleCount(),"Rendered world faces differ from physical editor faces: "+rendered);
-        require(new HouseMap(HouseMap.Site.HOUSE).worldSurface()==null,"Legacy map unexpectedly opted into pilot terrain");
+        var original=HouseSourceVersions.source(UserLevelLibrary.HOUSE_ORIGINAL);
+        require(new HouseMap(HouseMap.Site.HOUSE,original).worldSurface()==null,
+            "Explicit original House source unexpectedly loaded rebuild terrain");
+        var rebuilt=HouseSourceVersions.source(UserLevelLibrary.HOUSE_REBUILD);
+        var activeWorld=new HouseMap(HouseMap.Site.HOUSE,rebuilt).worldSurface();
+        var terrainBinding=rebuilt.sockets().stream().filter(socket->socket.type().equals("world-terrain"))
+            .findFirst().orElseThrow();
+        require(activeWorld!=null&&terrainBinding.style().endsWith("#"+activeWorld.sha256()),
+            "Rebuilt House must load its exact saved terrain binding");
+        require(activeWorld.support(13.1,12.5,0,4)==null&&activeWorld.clearSight(a,b),
+            "Rebuilt House terrain caps the preserved cellar opening");
         System.out.println("PASS persisted editor holes: source unchanged, rollback/idempotence, "+rendered
             +" shared render/collision faces, basement player/object/sight passage and filled-ground negatives");
         // Keep the bounded control for diagnosis under the system temporary directory.
