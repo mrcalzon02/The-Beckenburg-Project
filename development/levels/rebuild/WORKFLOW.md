@@ -1243,3 +1243,11 @@ The [dispatch checkpoint](college-dispatch-pass/checkpoint.json) binds the exact
 Four real peers agreed on the revision. The hunter walked nine ordinary host steps from the van deck onto the signed-off ground. A deliberately false guide through the teaching facade left the runtime hashes unchanged and the wall blocked movement and sight. The College door, stair, context and electrical replays passed again. Standing software and hidden RTX 5070 frames captured the fitted teaching entrance and lecture radiator from the same loaded source.
 
 College remains in production under the held draft. Functional furnishing, usable hiding and evidence placements, worn finishes and whole-case acceptance remain open. The existing furnishing regression also fails on the previous held runtime in an isolated profile and is recorded in the checkpoint. The measured [29-packet source roster](college-services-pass/roster.json) still applies.
+
+## College upper residence fit-out
+
+The [measured upper-storey plan](college-residence-pass/college-residence-plan.svg) shows eight twin rooms arranged around the existing residential corridor. The +3.60 m slab supports sixteen beds, sixteen study stations and sixteen wardrobes. The rebuilt corridor partitions carry two operable privacy doors and six fixed opaque closures. The east cross passage and the service mounts retain their physical clearances. The [29-packet roster](college-residence-pass/roster.json) binds this export and carries forward the preceding source decisions for the other 28 packets.
+
+The [checkpoint](college-residence-pass/checkpoint.json) records 48 furniture approaches in both postures, six sealed-room controls, the existing 88 route directions, 40 replicated door actions and live switches and source recovery. The held College package uses this exact export. An ordinary host movement replay stops at the closed west bedroom leaf, uses the physical handle and reaches the interior through the open doorway.
+
+Teaching, library, café and the remaining working rooms need their own fitted furniture and clearance reviews. Final surface treatment, physical hiding, evidence anchors and whole-case acceptance remain open.

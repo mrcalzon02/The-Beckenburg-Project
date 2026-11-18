@@ -15,7 +15,31 @@ def read(path):
     return document,binary
 
 
-def append(source,addition,target,remove_mesh_names=()):
+def image_identity(document, binary, index):
+    image = document["images"][index]
+    view = document["bufferViews"][image["bufferView"]]
+    start = view.get("byteOffset", 0)
+    properties = {k: v for k, v in image.items() if k not in ("name", "bufferView")}
+    return json.dumps(properties, sort_keys=True), binary[start:start+view["byteLength"]]
+
+
+def share_duplicate_images(document, binary):
+    # Several earlier authoring passes embedded another copy of the exact same
+    # PNG. Keep the image payload, material, UV and sampler for every face.
+    images, index, remap = [], {}, []
+    for old, image in enumerate(document["images"]):
+        identity = image_identity(document, binary, old)
+        if identity not in index:
+            index[identity] = len(images)
+            images.append(image)
+        remap.append(index[identity])
+    for texture in document["textures"]:
+        assert "source" in texture and not texture.get("extensions"), "Unsupported secondary image binding"
+        texture["source"] = remap[texture["source"]]
+    document["images"] = images
+
+
+def append(source,addition,target,remove_mesh_names=(),reuse_embedded_images=False):
     old,oldbin=read(source);new,newbin=read(addition);result=copy.deepcopy(old)
     assert not any(new.get(k) for k in ['animations','skins','cameras']),'Only generated static mesh additions'
     offsets={k:len(old.get(k,[])) for k in ['bufferViews','accessors','samplers','images','textures','materials','meshes','nodes']}
@@ -69,10 +93,19 @@ def append(source,addition,target,remove_mesh_names=()):
     for key in ['extensionsUsed','extensionsRequired']:
         if key in old or key in new:result[key]=sorted(set(old.get(key,[]))|set(new.get(key,[])))
     binary=oldbin+newbin;result['buffers']=[dict(byteLength=len(binary))]
+    if reuse_embedded_images:
+        share_duplicate_images(result, binary)
     encoded=json.dumps(result,separators=(',',':'),ensure_ascii=False).encode();encoded+=b' '*((-len(encoded))%4);binary+=b'\0'*((-len(binary))%4)
     raw=struct.pack('<III',0x46546c67,2,12+8+len(encoded)+8+len(binary))+struct.pack('<II',len(encoded),0x4e4f534a)+encoded+struct.pack('<II',len(binary),0x004e4942)+binary
     Path(target).write_bytes(raw)
     check,checkbin=read(target);assert checkbin[:len(oldbin)]==oldbin
-    for k in ['meshes','accessors','bufferViews','images','textures','materials']:
+    resources = ['meshes','accessors','bufferViews','materials']
+    if reuse_embedded_images:
+        for earlier, current in zip(old['textures'], check['textures']):
+            assert {k:v for k,v in earlier.items() if k!='source'} == {k:v for k,v in current.items() if k!='source'}
+            assert image_identity(old,oldbin,earlier['source']) == image_identity(check,checkbin,current['source'])
+    else:
+        resources += ['images','textures']
+    for k in resources:
         assert check.get(k,[])[:len(old.get(k,[]))]==old.get(k,[]),(k,'source resource mutated')
     return dict(original_binary_bytes_preserved=len(oldbin),original_static_resources_preserved=True,replaced_scene_nodes=sorted(removed))

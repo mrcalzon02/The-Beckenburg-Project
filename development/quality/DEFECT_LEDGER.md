@@ -8550,6 +8550,48 @@ Evidence and verification: development/levels/rebuild/college-services-pass/chec
 
 Older-map obligation: Treat existing utility room labels as reservations until the fitted equipment, trunk and receiving interfaces are measured.
 
+### DEV-605 — College residence corridor duplicated wall faces and had bare bedroom openings
+
+**Status:** CORRECTED_WITH_REBUILT_PARTITIONS_AND_REAL_RESIDENCE_DOORS · **Affected:** College upper residence
+
+The surveyed hall sides had overlapping stone partitions and the two searchable bedrooms lacked operable leaves. Six context bedrooms had no visible normal-use entrance.
+
+Cause / uncertainty: The source still carried independent room and hall wall fragments from the rough layout.
+
+Fix / next action: Build the complete selected wall runs on the supported 3.60 m slab. Keep the cross passage and switch face seated. Fit two working leaves and six fixed opaque assemblies.
+
+Evidence and verification: development/levels/rebuild/college-residence-pass/checkpoint.json
+
+Older-map obligation: Survey related corridor and room faces for duplicated shells and unformed thresholds before adding furniture.
+
+### DEV-606 — Repeated identical embedded images exhausted the College level image limit
+
+**Status:** CORRECTED_WITH_BYTE_IDENTICAL_EMBEDDED_IMAGE_BINDINGS · **Affected:** College residence GLB and static scene append utility
+
+The first furnished export carried 73 image entries and the existing reader refused it at its 64-entry limit.
+
+Cause / uncertainty: Earlier exports and new canonical assets carried copies of identical image payloads.
+
+Fix / next action: Share only images with identical bytes and relevant properties. Preserve the material and sampler bindings, and verify every retained texture resolves to the same original image.
+
+Evidence and verification: development/levels/rebuild/college-residence-pass/checkpoint.json
+
+Older-map obligation: Audit image content identity before changing runtime limits for any large staged native map.
+
+### DEV-607 — Initial east residence wardrobe intersected the kitchen extract riser
+
+**Status:** CORRECTED_WITH_MEASURED_RISER_CLEARANCE · **Affected:** College east residence room 3
+
+The first wardrobe position cut into the retained vertical extract. The reopened model reported 305 intersecting triangle pairs.
+
+Cause / uncertainty: The standard bedroom furniture spacing did not account for the riser in this room.
+
+Fix / next action: Move the storage to the next usable wall station. Verify no retained-geometry contact and repeat the approach and the sealed threshold sweep.
+
+Evidence and verification: development/levels/rebuild/college-residence-pass/checkpoint.json
+
+Older-map obligation: Include HVAC, plumbing and electrical geometry in retained-mesh contact audits for furniture templates.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -50,8 +50,8 @@ final class CollegeNativeLevel {
 
         private static Source load() {
             try (var manifest = resource("college-runtime.tsv");
-                 var model = resource("college-services.glb");
-                 var collision = resource("college-services.hcs2")) {
+                 var model = resource("college-native.glb");
+                 var collision = resource("college-native.hcs2")) {
                 return read(manifest, model, collision);
             } catch (IOException failure) {
                 throw new IllegalStateException("Cannot load the packaged College reconstruction", failure);

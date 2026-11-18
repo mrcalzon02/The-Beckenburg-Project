@@ -28,8 +28,8 @@ public final class CollegeNativeDispatchTest {
 
     private static void verifyGuidesHaveNoAuthority(HouseMap map) throws Exception {
         try (var metadata = CollegeNativeDispatchTest.class.getResourceAsStream(RESOURCES + "college-runtime.tsv");
-             var model = CollegeNativeDispatchTest.class.getResourceAsStream(RESOURCES + "college-services.glb");
-             var collision = CollegeNativeDispatchTest.class.getResourceAsStream(RESOURCES + "college-services.hcs2")) {
+             var model = CollegeNativeDispatchTest.class.getResourceAsStream(RESOURCES + "college-native.glb");
+             var collision = CollegeNativeDispatchTest.class.getResourceAsStream(RESOURCES + "college-native.hcs2")) {
             check(metadata != null && model != null && collision != null, "Missing exact College package contents");
             var text = new String(metadata.readAllBytes(), StandardCharsets.UTF_8);
             var stripped = text.lines().filter(line -> !line.startsWith("ARRIVAL\t") && !line.startsWith("ROUTE\t")).toList();
@@ -80,8 +80,15 @@ public final class CollegeNativeDispatchTest {
             var first = body(owner.await("BODY|0|"));
             check(local.roomAt(first.x(), first.y(), first.z()) == HouseMap.EXTRACTION_ROOM,
                 "Ordinary hunter did not spawn on the canonical van deck " + first);
+            // The normal room-level entry point establishes the corridor spawn.
+            // All motion and the door interaction after VIEW3D use physical host inputs.
+            for (int room : AuthoredLevelNetworkTest.path(local, HouseMap.EXTRACTION_ROOM, 9)) {
+                guest.client.move(room);
+                guest.awaitExact("ACCEPT|MOVE|" + room);
+            }
             guest.client.view3D();
             guest.await("ACCEPT|VIEW3D");
+            var corridorSpawn = body(guest.await("BODY|1|"));
             ghost.client.viewGhost3D();
             ghost.await("ACCEPT|GVIEW3D");
             ghost.awaitExact("SITE|COLLEGE|" + local.level().revision());
@@ -89,10 +96,7 @@ public final class CollegeNativeDispatchTest {
 
             var last = first;
             for (int i = 0; i < 9; i++) {
-                Thread.sleep(125);
-                owner.client.step(-100, 0);
-                owner.await("ACCEPT|STEP");
-                last = body(owner.await("BODY|0|"));
+                last = step(owner, 0, -100, 0);
                 check(local.traversable(last.x(), last.y(), last.z()), "Peer rejected the ordinary host's step " + last);
                 check(Math.abs(last.x() - (first.x() - .31 * (i + 1))) < .003,
                     "Host step did not follow the backed van axis " + last);
@@ -108,7 +112,44 @@ public final class CollegeNativeDispatchTest {
             check(guestSawDestination, "Guest never received the ordinary host's supported forecourt pose");
             System.out.printf("PASS ordinary College TCP dispatch to four peers, supported cargo ramp from %s to %s%n",
                 first, last);
+            verifyBedroom(local, guest, corridorSpawn);
         }
+    }
+
+    private static Vec step(AuthoredLevelNetworkTest.Peer peer, int seat, int dx, int dz) throws Exception {
+        Thread.sleep(125);
+        peer.client.step(dx, dz);
+        peer.await("ACCEPT|STEP");
+        return body(peer.await("BODY|" + seat + "|"));
+    }
+
+    private static void verifyBedroom(HouseMap map, AuthoredLevelNetworkTest.Peer guest, Vec spawn) throws Exception {
+        check(Math.abs(spawn.y()-3.6)<.002 && Math.abs(spawn.x()-52)<.002 && Math.abs(spawn.z()-44)<.002,
+            "Missing ordinary supported residence corridor spawn " + spawn);
+        var at = spawn;
+        for (int i = 0; i < 22; i++) at = step(guest, 1, 0, -100);
+        for (int i = 0; i < 5; i++) at = step(guest, 1, -100, 0);
+        var portal = map.nativeInvestigation().doors().stream().filter(d -> d.spec().frameId().equals("res-west-1-door"))
+            .findFirst().orElseThrow().spec().portal();
+        check(Math.abs(at.z()-portal.z()) < .25 && at.x()>portal.x() && at.x()<portal.x()+.5,
+            "Ordinary walk missed the fitted west bedroom jamb " + at);
+
+        Thread.sleep(125);
+        guest.client.step(-100, 0);
+        check(guest.await("REJECT|").contains("blocked by world collision"), "A closed bedroom door did not stop the host walker");
+        double yaw = -Math.PI/2;
+        var observer = new LooseClutter.Observer(1, at.x(), at.y(), at.z(), yaw, 0, true);
+        var focus = InteractionFocus.pick(map, observer, List.of());
+        check(focus != null && focus.kind() == InteractionFocus.Kind.DOOR
+            && focus.id().equals(Integer.toString(portal.id())), "Ordinary corridor aim missed the bedroom leaf");
+        guest.client.turn(270);
+        guest.client.interact(focus, yaw, 0);
+        guest.await("ACCEPT|INTERACT|Open door");
+        guest.awaitExact("DOORS|" + portal.id());
+        for (int i = 0; i < 5; i++) at = step(guest, 1, -100, 0);
+        check("res-west-1".equals(map.architecturalRoomAt(at.x(),at.y()+1.2,at.z())),
+            "Normal host world did not enter the bedroom through its open door " + at);
+        System.out.println("PASS ordinary host closed-leaf stop, aimed interaction and west twin room arrival " + at);
     }
 
     private static void capture(HouseMap map, Path output, boolean gpu) throws Exception {
@@ -148,7 +189,7 @@ public final class CollegeNativeDispatchTest {
             System.setProperty(CollegeNativeLevel.REVIEW_PROPERTY, "true");
             var candidate = new HouseMap(SITE);
             check(candidate.nativeSite() && candidate.valid() && RitualSites.valid(candidate), "Candidate has invalid gameplay bindings");
-            check(candidate.nativeInvestigation().doors().size() == 18
+            check(candidate.nativeInvestigation().doors().size() == 20
                 && candidate.nativeInvestigation().spaces().stream().filter(NativeInvestigationScene.Space::accessible).count() == 40,
                 "Packaged door count or searchable envelope differs from the reviewed packet");
             rejectRevision(stock.level().revision());

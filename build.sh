@@ -88,9 +88,9 @@ while IFS= read -r site || [ -n "$site" ]; do
     cp "assets/runtime/sites/$site" "build/classes/org/beckenburg/sites/$site"
 done < assets/runtime/site-geometry.txt
 # Package the verified College review source with the normal game resources.
-college_packet=development/levels/rebuild/college-services-pass
+college_packet=development/levels/rebuild/college-residence-pass
 for extension in glb hcs2; do
-    cp "$college_packet/college/college-services.$extension" build/classes/org/beckenburg/sites/
+    cp "$college_packet/college/college-residence.$extension" "build/classes/org/beckenburg/sites/college-native.$extension"
 done
 cp "$college_packet/verification/runtime.tsv" build/classes/org/beckenburg/sites/college-runtime.tsv
 # Licensed in-game subset, not the upstream paid PSX asset archive.

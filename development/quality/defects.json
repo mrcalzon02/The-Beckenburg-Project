@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-17",
+  "updated": "2026-11-18",
   "issues": [
     {
       "id": "DEV-355",
@@ -6711,6 +6711,39 @@
       "action": "Install the supported plant, pipes, controlled staff closure, heating fixtures and four ventilation runs. Verify preserved context, access and electrical gameplay.",
       "evidence": "development/levels/rebuild/college-services-pass/checkpoint.json",
       "older_maps": "Treat existing utility room labels as reservations until the fitted equipment, trunk and receiving interfaces are measured."
+    },
+    {
+      "id": "DEV-605",
+      "title": "College residence corridor duplicated wall faces and had bare bedroom openings",
+      "status": "CORRECTED_WITH_REBUILT_PARTITIONS_AND_REAL_RESIDENCE_DOORS",
+      "affected": "College upper residence",
+      "symptom": "The surveyed hall sides had overlapping stone partitions and the two searchable bedrooms lacked operable leaves. Six context bedrooms had no visible normal-use entrance.",
+      "cause": "The source still carried independent room and hall wall fragments from the rough layout.",
+      "action": "Build the complete selected wall runs on the supported 3.60 m slab. Keep the cross passage and switch face seated. Fit two working leaves and six fixed opaque assemblies.",
+      "evidence": "development/levels/rebuild/college-residence-pass/checkpoint.json",
+      "older_maps": "Survey related corridor and room faces for duplicated shells and unformed thresholds before adding furniture."
+    },
+    {
+      "id": "DEV-606",
+      "title": "Repeated identical embedded images exhausted the College level image limit",
+      "status": "CORRECTED_WITH_BYTE_IDENTICAL_EMBEDDED_IMAGE_BINDINGS",
+      "affected": "College residence GLB and static scene append utility",
+      "symptom": "The first furnished export carried 73 image entries and the existing reader refused it at its 64-entry limit.",
+      "cause": "Earlier exports and new canonical assets carried copies of identical image payloads.",
+      "action": "Share only images with identical bytes and relevant properties. Preserve the material and sampler bindings, and verify every retained texture resolves to the same original image.",
+      "evidence": "development/levels/rebuild/college-residence-pass/checkpoint.json",
+      "older_maps": "Audit image content identity before changing runtime limits for any large staged native map."
+    },
+    {
+      "id": "DEV-607",
+      "title": "Initial east residence wardrobe intersected the kitchen extract riser",
+      "status": "CORRECTED_WITH_MEASURED_RISER_CLEARANCE",
+      "affected": "College east residence room 3",
+      "symptom": "The first wardrobe position cut into the retained vertical extract. The reopened model reported 305 intersecting triangle pairs.",
+      "cause": "The standard bedroom furniture spacing did not account for the riser in this room.",
+      "action": "Move the storage to the next usable wall station. Verify no retained-geometry contact and repeat the approach and the sealed threshold sweep.",
+      "evidence": "development/levels/rebuild/college-residence-pass/checkpoint.json",
+      "older_maps": "Include HVAC, plumbing and electrical geometry in retained-mesh contact audits for furniture templates."
     }
   ],
   "audit_categories": [

@@ -1994,3 +1994,9 @@ Main is 10fe52cb1feba1267efcf4edce67a5ca1bd3823e and the held parent is 5c3daf92
 ## Briar House upper window host replay
 
 The [House window checkpoint](levels/rebuild/verification/house-window-network-2026-11-18/checkpoint.json) closes DEV-592. From the current House upper landing, the old westward walk ended outside window reach at X 14.25, Y 2.80, Z 17.10 m. The normal host walk south reaches X 15.80, Y 2.80, Z 18.96 m and the actual fitted leaf 23. Two runs on the same packaged game verify real open and closed broadcasts to the requesting user and a second client. Farmhouse window and School multiplayer regressions also pass. This closes the measured window gate for the current staged source. Complete location acceptance remains open.
+
+## College residence draft fit-out
+
+The [upper residence checkpoint](levels/rebuild/college-residence-pass/checkpoint.json) advances draft PR 86 with fitted twin rooms, working privacy doors and physical fixed context assemblies. The native package keeps the review property used at the previous dispatch checkpoint. The software and hidden OpenGL runs reload the exact staged source. Ordinary TCP movement enters the furnished west bedroom after the canonical leaf is opened. Complete College acceptance and release remain open.
+
+Main remains at 10fe52cb1feba1267efcf4edce67a5ca1bd3823e with the draft parent at 5c3daf923a7359554dc075c9e99be139bbcb1441. The historical full multiplayer, installer and renderer runs remain 44153590389, 44153590626 and 44016080200. The next fit-out work is the teaching block, library and café, followed by the individual physical interactions and finish gates.

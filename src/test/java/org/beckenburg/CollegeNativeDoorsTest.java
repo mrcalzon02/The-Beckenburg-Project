@@ -85,9 +85,13 @@ public final class CollegeNativeDoorsTest {
     }
 
     static void audit(CollegeNativeRuntimeReview.Campus campus) {
+        audit(campus, 18);
+    }
+
+    static void audit(CollegeNativeRuntimeReview.Campus campus, int expectedDoors) {
         var map=campus.map();
         var doors=map.nativeInvestigation().doors();
-        check(doors.size()==18,"Fitted leaf count");
+        check(doors.size()==expectedDoors,"Fitted leaf count");
         check(map.level().portals().get(15).joins(13,14),"Van portal ID was changed by local doors");
         int local=0;
         for(var door:doors) {
@@ -114,8 +118,9 @@ public final class CollegeNativeDoorsTest {
         CollegeNativeRuntimeReview.audit(campus);
         CollegeNativeRuntimeReview.replayRoutes(campus,HunterPosture.CROUCH_HEIGHT);
         joinedArrivals(campus);
-        System.out.printf("PASS %d fitted doors, %d local doors, 432 mover sweeps, 324 sight, 324 small-object and 216 jamb rays; 88 route directions in both postures%n",
-            doors.size(),local);
+        int count=doors.size();
+        System.out.printf("PASS %d fitted doors, %d local doors, %d mover sweeps, %d sight, %d small-object and %d jamb rays; %d route directions in both postures%n",
+            count,local,count*24,count*18,count*18,count*12,campus.routes().size()*2);
     }
 
     private static void append(List<Vec> route, List<Vec> segment) {
@@ -232,7 +237,7 @@ public final class CollegeNativeDoorsTest {
                 System.out.println("REPLICATED "+fitted.spec().frameId());
             }
         }
-        System.out.println("PASS 36 real host door actions broadcast to a second native scene");
+        System.out.printf("PASS %d real host door actions broadcast to a second native scene%n", map.nativeInvestigation().doors().size()*2);
     }
 
     private static void capture(HouseMap map, Path output) throws Exception {

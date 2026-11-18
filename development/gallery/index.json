@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11283,
+  "count": 11296,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -97584,6 +97584,136 @@
       "height": 1050,
       "bytes": 1420899,
       "sha256": "e7cd198c6c76ed084bc82d0eb4548dbe3b69d22917fadcc1d052d0a53f9725d0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-native-residence-cutaway.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-native-residence-cutaway.png",
+      "title": "College native residence cutaway",
+      "kind": "Runtime capture",
+      "width": 1050,
+      "height": 1360,
+      "bytes": 1392639,
+      "sha256": "58afd7171f0fd1896594399881e84569c86b20fea11115036b2c26f5572ab75a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-east-twin.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-east-twin.png",
+      "title": "College opengl residence east twin",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 305177,
+      "sha256": "ce41db06ec183c00746d3347477d09809143b3b48a186b20ee17592fa163503a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-fixed-context-leaves.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-fixed-context-leaves.png",
+      "title": "College opengl residence fixed context leaves",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 343446,
+      "sha256": "6cacec0f7574352b8c30adb610e7c6ac9636639c9653625eb10b8a7d201aa60b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-leaf-closed.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-leaf-closed.png",
+      "title": "College opengl residence west leaf closed",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 264904,
+      "sha256": "fd43f91cd7107fc04000cae976fc8333a65d9e93f6dad01510e90394fb312057"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-leaf-open.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-leaf-open.png",
+      "title": "College opengl residence west leaf open",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 219001,
+      "sha256": "c2b52e3a859464e51b61568101c9fdc1c8b7dedee5f924b6590b02b1e574541d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-study.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-study.png",
+      "title": "College opengl residence west study",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 327464,
+      "sha256": "8fee86f3f7557dd7791683a3c0dd21dd74922a02a02337f6eb8a47cc9d02c2a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-twin.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-opengl-residence-west-twin.png",
+      "title": "College opengl residence west twin",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 329711,
+      "sha256": "7a3dbc8fb7decb4299fb3843e58c9f9a527d8fea13f4c220a9ac6a6e65463181"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-east-twin.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-east-twin.png",
+      "title": "College software residence east twin",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 341858,
+      "sha256": "f36a49a936f2abdfc8a2a3a4efa5a623cba71bc34fd67dbd5483b91e519cb748"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-fixed-context-leaves.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-fixed-context-leaves.png",
+      "title": "College software residence fixed context leaves",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 355569,
+      "sha256": "b0d8096a04bbb50705120f68193da905a975a51881ff334d4f1039ff30f98903"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-leaf-closed.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-leaf-closed.png",
+      "title": "College software residence west leaf closed",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 259032,
+      "sha256": "e6aa894ae7cf9fbebdf7de32a2fce1bc0e950b082491d7a8a5d2cc004c0276bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-leaf-open.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-leaf-open.png",
+      "title": "College software residence west leaf open",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 217144,
+      "sha256": "c609dba56fbc46f621e86422ff1e02e8c840db1a10d627897c3dfa91c02812f7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-study.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-study.png",
+      "title": "College software residence west study",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 332991,
+      "sha256": "8687de44c9ac5ab23da3ecd2c1de2203345f43bf3d8065b920890640e8d28847"
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-twin.png",
+      "url": "development/levels/rebuild/captures/college-residence-batch/college-software-residence-west-twin.png",
+      "title": "College software residence west twin",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 337587,
+      "sha256": "98c957edab522f27f3384ffdcd65bf424f2a706d04fc69d155201081d10fb66c"
     },
     {
       "path": "development/levels/rebuild/captures/college-runtime-candidate/runtime-gpu/arrival.png",
