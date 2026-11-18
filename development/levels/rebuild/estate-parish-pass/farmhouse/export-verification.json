@@ -1,0 +1,33 @@
+{
+  "glb_sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041",
+  "native_sha256": "042f0ab01cd546fe561173102255e0d53b5cf505f8b8d630686d5986a3bc3810",
+  "retained_native_records": 449,
+  "new_closed_parts": 28,
+  "aperture_rays": 54,
+  "sill_controls": 36,
+  "independent_standing": 6,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-overview.png",
+      "sha256": "1c8a34c11b7969185b12a9e0329d07f5014dc10bb7dfa7463a96ad9d45885db1",
+      "source_glb_sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-forecourt.png",
+      "sha256": "6f276c18e91fa4144c0689504f7e5e3d55d0ff5ca9675add7af4e487262c2653",
+      "source_glb_sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-working-court.png",
+      "sha256": "f3c6baa961b562dfc651e5049cbac62cc0d7b9641b739ff5a37464aaf3606242",
+      "source_glb_sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-barn-ports.png",
+      "sha256": "f83b642b97a9e2cc9aa8bd637d9ff1ff21e23648b32215aefa1cd8e5862ac18a",
+      "source_glb_sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041"
+    }
+  ]
+}

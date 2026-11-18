@@ -905,7 +905,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": null,
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/church/rough-layout.json",
@@ -916,14 +916,17 @@
             "development/levels/rebuild/church/rough-render-verification.json",
             "development/levels/rebuild/church/search-envelope.json",
             "development/levels/rebuild/church/search-layout.json",
-            "development/levels/rebuild/previews/church-revised-rough-plan.png"
+            "development/levels/rebuild/previews/church-revised-rough-plan.png",
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
           ],
-          "defects": [],
-          "next_action": "Construct actual nave/partial choir, parish/vestry/music support, guarded tower and separate crypt stair from this authority after the roster rough batch. Preserve29-space connected search, permanent vault seals, native source scale and full saved editor terrain punching; no round-time testing."
+          "defects": [
+            "DEV-561"
+          ],
+          "next_action": "Check the preserved room program against working capacity, furnishings and the 40-space accessible search limit."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
           "evidence": [
             "development/levels/rebuild/structures/church/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -951,7 +954,8 @@
             "development/levels/rebuild/floor-closure-pass/church/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -970,13 +974,16 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-559",
+            "DEV-560",
+            "DEV-561"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Resolve the measured older fitting and standing contacts before in-game room, door and live traversal acceptance."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -989,7 +996,8 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -999,16 +1007,21 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-561"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Verify drainage, exterior edge containment and each roadhead in shared gameplay with the canonical van."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
+          "evidence": [
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-561"
+          ],
+          "next_action": "Inspect joined roof, wall, foundation and floor assemblies through the full optical and functional check."
         },
         "S06": {
           "status": "NOT_AUDITED",
@@ -1356,7 +1369,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "472c42142b09d2db84bd03f5bc23d3adec8b8c3c",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/farmhouse/rough-layout.json",
@@ -1367,14 +1380,17 @@
             "development/levels/rebuild/farmhouse/rough-render-verification.json",
             "development/levels/rebuild/previews/farmhouse-revised-rough-plan.png",
             "development/levels/rebuild/farmhouse/search-envelope.json",
-            "development/levels/rebuild/farmhouse/search-layout.json"
+            "development/levels/rebuild/farmhouse/search-layout.json",
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
           ],
-          "defects": [],
-          "next_action": "Complete references/fixture/support review in full roster rough batch; then build physical household/barn/laundry geometry, separate stairs and persisted editor cellar holes. Dispatched Farmhouse remains unchanged and unaccepted. Enforce the owner maximum40 accessible spaces, permanent context seals."
+          "defects": [
+            "DEV-561"
+          ],
+          "next_action": "Check the preserved room program against working capacity, furnishings and the 40-space accessible search limit."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
           "evidence": [
             "development/levels/rebuild/structures/farmhouse/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1402,7 +1418,8 @@
             "development/levels/rebuild/floor-closure-pass/farmhouse/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -1421,13 +1438,16 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-559",
+            "DEV-560",
+            "DEV-561"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Resolve the measured older fitting and standing contacts before in-game room, door and live traversal acceptance."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -1440,7 +1460,8 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -1450,16 +1471,21 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-561"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Verify drainage, exterior edge containment and each roadhead in shared gameplay with the canonical van."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
+          "evidence": [
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-561"
+          ],
+          "next_action": "Inspect joined roof, wall, foundation and floor assemblies through the full optical and functional check."
         },
         "S06": {
           "status": "NOT_AUDITED",
@@ -1941,7 +1967,7 @@
         },
         "S02": {
           "status": "IN_PROGRESS",
-          "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
           "evidence": [
             "tools/build_map_rebuild_roughs.py",
             "development/levels/rebuild/mansion/rough-layout.json",
@@ -1954,14 +1980,17 @@
             "development/levels/rebuild/mansion/search-envelope.json",
             "development/levels/rebuild/mansion/search-layout.json",
             "development/levels/rebuild/verification/roster-landings-2026-11-07/preservation.json",
-            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json"
+            "development/levels/rebuild/verification/roster-landings-2026-11-07/stair-movement.json",
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
           ],
-          "defects": [],
-          "next_action": "Continue physical terrain/editor punch integration, guarded and structurally supported flights/landings, full capsule sweeps and roster source-library placement. Point support/headroom results do not unlock a map."
+          "defects": [
+            "DEV-561"
+          ],
+          "next_action": "Check the preserved room program against working capacity, furnishings and the 40-space accessible search limit."
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "60088739088bdfab11f0b15d6bafe07606acc44a",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
           "evidence": [
             "development/levels/rebuild/structures/mansion/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -1990,7 +2019,8 @@
             "development/levels/rebuild/floor-closure-pass/mansion/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -2011,13 +2041,16 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-559",
+            "DEV-560",
+            "DEV-561"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Resolve the measured older fitting and standing contacts before in-game room, door and live traversal acceptance."
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "621c365a3a741f2f02f7d195ad019f7d3cfe2189",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -2030,7 +2063,8 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -2040,16 +2074,21 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-561"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Verify drainage, exterior edge containment and each roadhead in shared gameplay with the canonical van."
         },
         "S05": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "58b3d3cb30d2873930f394ea690d8186df158b48",
+          "evidence": [
+            "development/levels/rebuild/estate-parish-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-561"
+          ],
+          "next_action": "Inspect joined roof, wall, foundation and floor assemblies through the full optical and functional check."
         },
         "S06": {
           "status": "NOT_AUDITED",
@@ -6504,7 +6543,7 @@
     "baseline_clear_metres": 6,
     "baseline_opaque_metres": 24,
     "full_map_acceptance": false,
-    "mechanism": "Shared6ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Â ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã¢â‚¬Â¦Ãƒâ€šÃ‚Â¡ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™Ãƒâ€ Ã¢â‚¬â„¢ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã†â€™Ãƒâ€šÃ‚Â¢ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã‚Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â¬ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã‚Â¦ÃƒÆ’Ã‚Â¢ÃƒÂ¢Ã¢â‚¬Å¡Ã‚Â¬Ãƒâ€¦Ã¢â‚¬Å“24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
+    "mechanism": "Shared6\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u00a0\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u201e\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c2\u00a0\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u00a2\u00e2\u20ac\u017e\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u00a0\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u201e\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c2\u00a6\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a1\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u2026\u00c2\u00a1\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u00a0\u00c3\u00a2\u00e2\u201a\u00ac\u00e2\u201e\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00e2\u20ac\u00a6\u00c3\u201a\u00c2\u00a1\u00c3\u0192\u00c6\u2019\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u0192\u00e2\u20ac\u0161\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00c6\u2019\u00c3\u2020\u00e2\u20ac\u2122\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u20ac\u0161\u00c2\u00ac\u00c3\u201a\u00c2\u00a6\u00c3\u0192\u00c6\u2019\u00c3\u201a\u00c2\u00a2\u00c3\u0192\u00c2\u00a2\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u00a1\u00c3\u201a\u00c2\u00ac\u00c3\u0192\u00e2\u20ac\u00a6\u00c3\u00a2\u00e2\u201a\u00ac\u00c5\u201c24m radial policy before alpha blending at actual surface depth; weather sky horizon; no depth writes",
     "focused_checks": 10,
     "actual_runtime_frames": 52
   },

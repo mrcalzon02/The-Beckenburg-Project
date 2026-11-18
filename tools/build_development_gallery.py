@@ -17,7 +17,9 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/canyon-marsh-batch/' in path:
+    if '/estate-parish-batch/' in path:
+        kind='Native estate, farm and parish before entrance reconstruction' if 'before' in p.name else 'Native estate, farm and parish courts and doorway inspection'
+    elif '/canyon-marsh-batch/' in path:
         if 'before' in p.name:kind='Native canyon and marsh maps before structural reconstruction'
         elif 'section' in p.name:kind='Native canyon terrace and marsh foundation inspection'
         else:kind='Native Red Mesa and Mourning Marsh construction review'

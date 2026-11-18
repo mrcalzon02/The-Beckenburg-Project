@@ -1065,3 +1065,16 @@ The pair retired 33 physical study strips. All 26 ordinary links, six flights, f
 Canyon and Marsh construction 271805fdcdbe9cfa08bce5d88cdc7993d48952c8 was verified in the remote map branch and draft PR 86 against map/house-default. All 90 reviewed file hashes match the commit. The asset index, 11,110-image gallery and hosted run 44207908695 passed. The public page returned HTTP 200 and both new map captures returned HTTP 404. Public image deployment remains pending.
 
 The same-source sweep across 25 native packets passed 548 of 567 ordinary links, all 238 flights and all 86 complete vertical routes. 3,856 of 140,202 standing samples remain invalid. The nineteen ordinary barriers are now concentrated in Mansion, Farmhouse and Church. Their current exported overviews show remaining physical guide strips around actual gates, front entries, yard thresholds and service approaches. The exact Mansion and Church saved terrain comes from terrain-overall-pass. Farmhouse uses flat-terrain-pass. Start the next batch from those authored surfaces, the original van poses and full door and yard architecture. The aggregate checks are native candidate evidence. Room fit, search limits, runtime and multiplayer remain open.
+
+
+## 2026-11-17 / Blackthorn Manor, Hollowmere Farm and St. Brigid Parish
+
+Baseline 58b3d3cb30d2873930f394ea690d8186df158b48. The active 29-packet source is estate-parish-pass/roster.json. Three native map packages changed.
+
+The level carriage forecourt links the canonical van to the foyer. The library opens onto the west lawn. The ground-level service stair retains its north door and reaches the receiving court across its own full landing. The east retaining terrace carries the ballroom doorway and turns around the building’s south corner.
+
+The gravel workyard gives separate approaches to the mudroom, workshop and laundry. The repair shop’s south loading doorway clears the existing workbench. The kitchen preparation room connects through its north door to the west paddock. Separate working courts connect the barn’s north and south ports.
+
+The front porch closes the footing joint at the vestibule. The full vestry court turns around the north-east building corner. The east churchyard meets the chapel’s framed door and runs around the exterior of the crypt enclosure.
+
+The batch retired 33 physical study strips and fitted 14 genuine exterior doors. All 106 ordinary links, 10 flights, 10 complete vertical links and 11 joined entrance walks passed both ways. The 6,486 strict standing samples on rebuilt guides passed. The full scoped sweep recorded 267 older-guide standing contacts in 17,643 samples. The prior closure programs, source assets and canonical van poses were preserved. DEV-559 through DEV-561 record the resolved defects and remaining interior, boundary and shared-runtime work. Plans, native renders, source hashes and full diagnostics are indexed in development/levels/rebuild/estate-parish-pass/checkpoint.json.

@@ -281,3 +281,9 @@ tools/prepare_coast_entrances.py -text whitespace=cr-at-eol
 development/levels/rebuild/canyon-marsh-pass/** -text whitespace=cr-at-eol
 tools/build_canyon_marsh.py -text whitespace=cr-at-eol
 tools/prepare_canyon_marsh.py -text whitespace=cr-at-eol
+
+
+development/levels/rebuild/estate-parish-pass/** -text whitespace=cr-at-eol
+tools/build_estate_parish.py -text whitespace=cr-at-eol
+tools/prepare_estate_parish.py -text whitespace=cr-at-eol
+tools/verify_estate_parish.py -text whitespace=cr-at-eol

@@ -1,0 +1,300 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "CHURCH": {
+      "before": {
+        "flat_links": 28,
+        "pass_both_directions": 23
+      },
+      "after": {
+        "flat_links": 28,
+        "pass_both_directions": 28
+      },
+      "current_lanes": {
+        "samples": 3822,
+        "valid_standing": 3779,
+        "invalid_standing": 43,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 43
+        },
+        "physical_components": [
+          [
+            "62:Wall conversation-entry W.001",
+            6
+          ],
+          [
+            "CHURCH bay indexed door 3",
+            5
+          ],
+          [
+            "119:Wall vestry E.001",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 1",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 0",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 4",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 5",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 6",
+            4
+          ],
+          [
+            "CHURCH bay indexed door 2",
+            4
+          ],
+          [
+            "8:Wall nave W",
+            2
+          ],
+          [
+            "88:Wall chancel E.001",
+            1
+          ],
+          [
+            "CHURCH bay L35 floor rim 30.490000000000002 guard 1",
+            1
+          ]
+        ]
+      }
+    },
+    "FARMHOUSE": {
+      "before": {
+        "flat_links": 33,
+        "pass_both_directions": 26
+      },
+      "after": {
+        "flat_links": 33,
+        "pass_both_directions": 33
+      },
+      "current_lanes": {
+        "samples": 5418,
+        "valid_standing": 5339,
+        "invalid_standing": 79,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 31,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 48
+        },
+        "physical_components": [
+          [
+            "FARMHOUSE bay indexed door 2",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 3",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 1",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 4",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 0",
+            4
+          ],
+          [
+            "FARMHOUSE bay indexed door 6",
+            4
+          ],
+          [
+            "FARMHOUSE bay L35 floor rim 22.509999999999998 guard 2",
+            3
+          ],
+          [
+            "FARMHOUSE bay L35 floor rim 22.509999999999998 guard 0",
+            2
+          ],
+          [
+            "FARMHOUSE bay wall ('x', 39, 16, 24, 0, 3) pier0 region0",
+            2
+          ]
+        ]
+      }
+    },
+    "MANSION": {
+      "before": {
+        "flat_links": 45,
+        "pass_both_directions": 38
+      },
+      "after": {
+        "flat_links": 45,
+        "pass_both_directions": 45
+      },
+      "current_lanes": {
+        "samples": 8403,
+        "valid_standing": 8258,
+        "invalid_standing": 145,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 57,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 2,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 57,
+          "NO_FOOT_SUPPORT_0.22_0.0": 29
+        },
+        "physical_components": [
+          [
+            "MANSION bay L58 continuous waist",
+            13
+          ],
+          [
+            "255:Wall staff-corridor N.001",
+            6
+          ],
+          [
+            "MANSION bay indexed door 4",
+            5
+          ],
+          [
+            "MANSION bay indexed door 1",
+            4
+          ],
+          [
+            "MANSION bay indexed door 5",
+            4
+          ],
+          [
+            "MANSION bay indexed door 6",
+            4
+          ],
+          [
+            "MANSION bay indexed door 2",
+            4
+          ],
+          [
+            "MANSION bay L59 floor rim 42.510000000000005 guard 2",
+            3
+          ],
+          [
+            "Flat route shell Wall staff-corridor S",
+            3
+          ],
+          [
+            "MANSION bay L60 floor rim 43.489999999999995 guard 2",
+            3
+          ],
+          [
+            "MANSION bay L59 floor rim 42.510000000000005 guard 0",
+            2
+          ],
+          [
+            "MANSION seated wall cap 16",
+            1
+          ],
+          [
+            "MANSION seated wall cap 24",
+            1
+          ],
+          [
+            "MANSION bay L58 floor rim 22.740000000000002 guard 3",
+            1
+          ],
+          [
+            "MANSION bay L61 floor rim 42.510000000000005 guard 3",
+            1
+          ],
+          [
+            "MANSION bay L58 tread 2",
+            1
+          ],
+          [
+            "MANSION bay L58 flight side -1 guard 0",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "CHURCH": {
+      "before": {
+        "contract": "development/levels/rebuild/household-sacred-bay-pass/church/construction.json",
+        "contract_sha256": "413588eae6253e18653af97d3392c235f1d2c64d869678379ffa87ec95610ec4",
+        "layout": "development/levels/rebuild/household-sacred-bay-pass/church/authored-layout.json",
+        "layout_sha256": "204aba4ece95387fbb06798b81882762c5fc2932c664f204d85d480bbb31111a",
+        "native": "development/levels/rebuild/household-sacred-bay-pass/church/authored-bays.hcs2",
+        "native_sha256": "b09df6f48933680654c099c624f27e4dd7d1c5de4ad342b55973a1a717af3f39"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/estate-parish-pass/church/construction.json",
+        "contract_sha256": "1f4e95a2b56d03ac7f0cbf2c8012ea65d8add57437f943cb5753c3e5c0cb478a",
+        "layout": "development/levels/rebuild/estate-parish-pass/church/authored-layout.json",
+        "layout_sha256": "46b87324ba917112d462f38761409a9494c1c28090ee54c0b4b4add79d1ada17",
+        "native": "development/levels/rebuild/estate-parish-pass/church/estate-parish.hcs2",
+        "native_sha256": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82"
+      }
+    },
+    "FARMHOUSE": {
+      "before": {
+        "contract": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/construction.json",
+        "contract_sha256": "186b7e460fda3998a76d8641fadbf3efbdd12a0f5f49df35b3cee870b8eb5509",
+        "layout": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/authored-layout.json",
+        "layout_sha256": "076a7ffe8b34923c9c17eec7921e79888f238f11a54b41ca30299007cdb8fa4d",
+        "native": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/authored-bays.hcs2",
+        "native_sha256": "fcfe5fc44ab2764dabd544596567363c312bebbacfe83010a247a56fb5bbd707"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/estate-parish-pass/farmhouse/construction.json",
+        "contract_sha256": "32e05a485a8d2dc3743d0a7a759b8bb36c4d5a51bc23ddb6f29d9b5a9e03bcb8",
+        "layout": "development/levels/rebuild/estate-parish-pass/farmhouse/authored-layout.json",
+        "layout_sha256": "aa205748abadb5a2064305feca54429175ce79d423108bb6538a5537e56dd990",
+        "native": "development/levels/rebuild/estate-parish-pass/farmhouse/estate-parish.hcs2",
+        "native_sha256": "042f0ab01cd546fe561173102255e0d53b5cf505f8b8d630686d5986a3bc3810"
+      }
+    },
+    "MANSION": {
+      "before": {
+        "contract": "development/levels/rebuild/household-sacred-bay-pass/mansion/construction.json",
+        "contract_sha256": "554e541132fac3475ddd22360ecf6d46c822e4c23ad460059d007fee05912911",
+        "layout": "development/levels/rebuild/household-sacred-bay-pass/mansion/authored-layout.json",
+        "layout_sha256": "d0138056739b9275f771bbafa46a872881849f1c52e2969b37251a2df0d3fb3b",
+        "native": "development/levels/rebuild/household-sacred-bay-pass/mansion/authored-bays.hcs2",
+        "native_sha256": "bc2c380fb6ea20d9254833d74b3b24f1c8309f26668bb34da2fe2e17450cd494"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/estate-parish-pass/mansion/construction.json",
+        "contract_sha256": "c2383bb099db18445ad6782e80e2a0282903b9f85b5ca4f845ed7066fda1abf7",
+        "layout": "development/levels/rebuild/estate-parish-pass/mansion/authored-layout.json",
+        "layout_sha256": "efacc9cb27837f27ff9316c1b10b28f0ca381ae3dfef7492778b1b656901cbf8",
+        "native": "development/levels/rebuild/estate-parish-pass/mansion/estate-parish.hcs2",
+        "native_sha256": "096bb68ec37f982eb49e764e38e43f4ce2995c890f9aefe42d7dde20c517fd46"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/canyon-marsh-pass/roster.json": "ee62b886ce107e76099fdfc907e988c8ab31effae3ecdbda6b173b3498b1f9b9"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/estate-parish-pass/verification/flat/current-flat-failure-contacts.tsv": "f630322cbccfad5aac5f6709b590a2d12a63ecd991fdb1ba60c430c654d9ffb3",
+    "development/levels/rebuild/estate-parish-pass/verification/flat/current-flat-failure-input.tsv": "f5b4ddc02f729e537af07ddae77a61300facb2e0fc5aeed2a47554018eb07107",
+    "development/levels/rebuild/estate-parish-pass/verification/flat/current-flat-lane-input.tsv": "6972271d1ea87e24a4a32ccc634a7013f48744d52d0a6686357054245467a53d",
+    "development/levels/rebuild/estate-parish-pass/verification/flat/current-flat-lane-names.tsv": "cbf00fe7201f48e35b5761a9f1b9010b5e4ca29f9862f9d1738d38482cfd627c",
+    "development/levels/rebuild/estate-parish-pass/verification/flat/current-flat-lanes.tsv": "50e41d938387ca4fffebc4df9b92dd2a2336b9092164137c5833b4a6b91b87aa",
+    "development/levels/rebuild/estate-parish-pass/verification/flat/current-flat-links.tsv": "f530972a4e3aecb1a7562d994f733955baf3fa9a88e0a66e4fe18215e8c1db66",
+    "development/levels/rebuild/estate-parish-pass/verification/flat/current-flat-names.tsv": "cbf00fe7201f48e35b5761a9f1b9010b5e4ca29f9862f9d1738d38482cfd627c",
+    "development/levels/rebuild/estate-parish-pass/verification/flat/current-flat-paths.tsv": "6ea401639f6e9b2e8bea1a83edbfddbb22f9a549ab34da0ad6ecbca53d716439"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

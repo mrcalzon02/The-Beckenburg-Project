@@ -7906,6 +7906,48 @@ Evidence and verification: development/levels/rebuild/canyon-marsh-pass/checkpoi
 
 Older-map obligation: Keep the room-level search envelope and full gameplay acceptance independent of native route success.
 
+### DEV-559 — Estate, farm and parish guides left the built route at exterior doors
+
+**Status:** CORRECTED_IN_NATIVE_FOUNDED_ENTRANCES · **Affected:** MANSION, FARMHOUSE and CHURCH external circulation
+
+Nineteen ordinary links were blocked. Some crossed inside wall faces or aimed for outdoor anchors located inside rooms.
+
+Cause / uncertainty: Legacy supports and waypoints were laid over the room and grade surveys.
+
+Fix / next action: Build complete courts and fitted exterior doorways, remove the study strips and derive guides from the real approaches.
+
+Evidence and verification: development/levels/rebuild/estate-parish-pass/checkpoint.json
+
+Older-map obligation: Test the entire walk through both sides of each exterior door.
+
+### DEV-560 — Finishing height introduced a collision seam at flush exterior sills
+
+**Status:** CORRECTED_WITH_FLUSH_SURFACES · **Affected:** Estate, farm and parish terrace-to-floor transitions
+
+The raised paving trial reduced complete flat links from 106 to 93 and blocked ten joined walks.
+
+Cause / uncertainty: A small upstand introduced an edge that the exact movement sweep registered while approaching the sill.
+
+Fix / next action: Restore the flush surface and match the finish on coincident saved terrain faces. Rerun all exact-source collision and standing checks.
+
+Evidence and verification: development/levels/rebuild/estate-parish-pass/checkpoint.json
+
+Older-map obligation: Repeat continuous sweeps after changing floor finish heights.
+
+### DEV-561 — Older interior standing contacts and full map acceptance remain open
+
+**Status:** OPEN_INTERIOR_FIT_AND_RUNTIME · **Affected:** Estate, farm and parish retained interiors, services and shared gameplay
+
+The three candidates still report 267 standing contacts on retained guides after all complete route sweeps pass.
+
+Cause / uncertainty: Retained interiors include narrow doorway trim, stair guards and furniture margins outside the rebuilt exterior interfaces.
+
+Fix / next action: Use the exact footprints to review the older room doors and stair approaches. Complete the structural enclosure, capacity, services and shared-runtime gates.
+
+Evidence and verification: development/levels/rebuild/estate-parish-pass/checkpoint.json
+
+Older-map obligation: Keep strict full-footprint evidence alongside continuous route results.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

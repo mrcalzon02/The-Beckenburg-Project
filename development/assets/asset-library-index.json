@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2035,
-  "unique_local_file_hashes": 1864,
+  "local_files": 2038,
+  "unique_local_file_hashes": 1867,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 261
+    "native_map_exports": 264
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -26905,6 +26905,42 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "6656f438f5437d6dd3372dbb470ee98c1a234308b83f904a16f8a916f08b9733",
       "bytes": 2956220
+    },
+    {
+      "id": "estate-parish",
+      "label": "estate-parish",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/estate-parish-pass/church/estate-parish.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "e8dcdfdba4b791fd99d870eb4293d68e5efb917efa166916290618152dead98f",
+      "bytes": 1989496
+    },
+    {
+      "id": "estate-parish",
+      "label": "estate-parish",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/estate-parish-pass/farmhouse/estate-parish.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "4cd23ffb690349b9f6c24915b52f5fec8cd79894a3e371ab14c8e6ee18ddf041",
+      "bytes": 2806648
+    },
+    {
+      "id": "estate-parish",
+      "label": "estate-parish",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/estate-parish-pass/mansion/estate-parish.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d",
+      "bytes": 3299816
     },
     {
       "id": "open-circulation",

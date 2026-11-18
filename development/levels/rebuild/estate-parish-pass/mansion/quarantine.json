@@ -1,0 +1,287 @@
+{
+  "source": {
+    "id": "MANSION",
+    "construction": "development/levels/rebuild/household-sacred-bay-pass/mansion/construction.json",
+    "layout": "development/levels/rebuild/household-sacred-bay-pass/mansion/authored-layout.json",
+    "glb": "development/levels/rebuild/household-sacred-bay-pass/mansion/authored-bays.glb",
+    "native": "development/levels/rebuild/household-sacred-bay-pass/mansion/authored-bays.hcs2",
+    "blend": "development/levels/rebuild/household-sacred-bay-pass/mansion/authored-bays.blend",
+    "glb_sha256": "482d043aecfe03c1bf1fdeb010bf95d1bfa6818bf3f770d8660e9d0064b6cec0",
+    "native_sha256": "bc2c380fb6ea20d9254833d74b3b24f1c8309f26668bb34da2fe2e17450cd494"
+  },
+  "retired": [
+    "Arrival end bearing MANSION 0",
+    "Flat route shell Wall ballroom E",
+    "Flat route shell Wall ballroom E.001",
+    "Flat route shell Wall library W",
+    "Flat route shell Wall library W.001",
+    "Flat route shell Wall receiving N",
+    "Flat route shell Wall receiving N.001",
+    "Header ballroom E",
+    "Header library W",
+    "Header receiving N",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L26 support 1",
+    "L30 support 1",
+    "L31 support 0",
+    "L31 support 1",
+    "MANSION bay indexed door 3",
+    "MANSION bay retained outside L28 support 1 region0",
+    "MANSION bay retained outside L28 support 1 region1",
+    "MANSION bay retained outside L29 support 1 region0",
+    "MANSION bay wall ('z', 2, 40, 46, 0, 3.6) end region0",
+    "MANSION bay wall ('z', 2, 40, 46, 0, 3.6) lintel0 region0",
+    "MANSION bay wall ('z', 2, 40, 46, 0, 3.6) pier0 region0",
+    "MANSION seated wall cap 17",
+    "MANSION seated wall cap 18",
+    "Saved editor macroterrain MANSION"
+  ],
+  "superseded_guides": {
+    "L01": {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          28.0,
+          0,
+          71.5
+        ],
+        [
+          28,
+          0,
+          65
+        ],
+        [
+          28,
+          0,
+          57.5
+        ],
+        [
+          30.0,
+          0,
+          57.5
+        ]
+      ],
+      "threshold": [
+        28,
+        0,
+        65
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L02": {
+      "id": "L02",
+      "a": "entry",
+      "b": "foyer",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          57.5
+        ],
+        [
+          22,
+          0,
+          57.5
+        ],
+        [
+          22,
+          0,
+          50
+        ],
+        [
+          22,
+          0,
+          47.0
+        ]
+      ],
+      "threshold": [
+        22,
+        0,
+        50
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L26": {
+      "id": "L26",
+      "a": "receiving",
+      "b": "garden",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          46.0,
+          0,
+          23.0
+        ],
+        [
+          46,
+          0,
+          20
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        46,
+        0,
+        20
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L28": {
+      "id": "L28",
+      "a": "service-stair",
+      "b": "garden",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          43.0,
+          0,
+          8.0
+        ],
+        [
+          43,
+          0,
+          2
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        43,
+        0,
+        2
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L29": {
+      "id": "L29",
+      "a": "library",
+      "b": "garden",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          14.0,
+          0,
+          30.0
+        ],
+        [
+          8,
+          0,
+          30
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        8,
+        0,
+        30
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L30": {
+      "id": "L30",
+      "a": "ballroom",
+      "b": "garden",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          47.0,
+          0,
+          40.0
+        ],
+        [
+          54,
+          0,
+          40
+        ],
+        [
+          30.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        54,
+        0,
+        40
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L31": {
+      "id": "L31",
+      "a": "garden",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          30.0,
+          0,
+          25.0
+        ],
+        [
+          55,
+          0,
+          25.0
+        ],
+        [
+          55,
+          0,
+          50
+        ],
+        [
+          55,
+          0,
+          57.5
+        ],
+        [
+          30.0,
+          0,
+          57.5
+        ]
+      ],
+      "threshold": [
+        55,
+        0,
+        50
+      ],
+      "access": "household",
+      "note": "Proposed physical threshold; diagram lines do not establish navigation.",
+      "player_access": "OPEN_ROUTE"
+    }
+  }
+}

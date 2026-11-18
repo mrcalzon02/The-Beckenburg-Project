@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11110,
+  "count": 11125,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -97494,6 +97494,156 @@
       "height": 1100,
       "bytes": 1491816,
       "sha256": "73de62b06a23491dad4daf3681ea619a5860f1b95e6bef773a5333c309c9a4ba"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/church-before.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/church-before.png",
+      "title": "Church before",
+      "kind": "Native estate, farm and parish before entrance reconstruction",
+      "width": 980,
+      "height": 760,
+      "bytes": 544962,
+      "sha256": "071d81ae1c01970f92a4ab46ed73e2cb526e426c6630cb86aced9f8271e9612a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/church-chapel-terrace.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/church-chapel-terrace.png",
+      "title": "Church chapel terrace",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1090441,
+      "sha256": "cc1ab2ee4a1305a8cb2c52513c77f5407482c27ca9ca2a07e0f01b743efaf991"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/church-forecourt.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/church-forecourt.png",
+      "title": "Church forecourt",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 943594,
+      "sha256": "7a7bceb2f56b0414adcf24d908fd20f1310cd2a4c2a694e46d6ad5b900dedb31"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/church-overview.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/church-overview.png",
+      "title": "Church overview",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 671308,
+      "sha256": "8a0cbf5bfe99151bf874202921565ace3a14e543c46926be49c77a7f01062f17"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/church-vestry-court.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/church-vestry-court.png",
+      "title": "Church vestry court",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1030565,
+      "sha256": "318cece2682c763570a6cc1f37e4c630e49c3a04232d83d9114298d9192afb40"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-barn-ports.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-barn-ports.png",
+      "title": "Farmhouse barn ports",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1200706,
+      "sha256": "f83b642b97a9e2cc9aa8bd637d9ff1ff21e23648b32215aefa1cd8e5862ac18a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-before.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-before.png",
+      "title": "Farmhouse before",
+      "kind": "Native estate, farm and parish before entrance reconstruction",
+      "width": 980,
+      "height": 760,
+      "bytes": 603204,
+      "sha256": "d0bd4231491d43ca21fd8ef97d6c77185ea255259922c84e01974e812c7497a5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-forecourt.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-forecourt.png",
+      "title": "Farmhouse forecourt",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 943090,
+      "sha256": "6f276c18e91fa4144c0689504f7e5e3d55d0ff5ca9675add7af4e487262c2653"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-overview.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-overview.png",
+      "title": "Farmhouse overview",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 740376,
+      "sha256": "1c8a34c11b7969185b12a9e0329d07f5014dc10bb7dfa7463a96ad9d45885db1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-working-court.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/farmhouse-working-court.png",
+      "title": "Farmhouse working court",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1277318,
+      "sha256": "f3c6baa961b562dfc651e5049cbac62cc0d7b9641b739ff5a37464aaf3606242"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/mansion-ballroom-terrace.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/mansion-ballroom-terrace.png",
+      "title": "Mansion ballroom terrace",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1065020,
+      "sha256": "40343aac809f3b66f120c8d7179eac684cc41de01d30cf021c7a95e5bbaa96d0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/mansion-before.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/mansion-before.png",
+      "title": "Mansion before",
+      "kind": "Native estate, farm and parish before entrance reconstruction",
+      "width": 980,
+      "height": 760,
+      "bytes": 567299,
+      "sha256": "85ea5b0153f3fe50cb029024414c3a562a3493414f56a058e13670fb5aa46a79"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/mansion-forecourt.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/mansion-forecourt.png",
+      "title": "Mansion forecourt",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 996803,
+      "sha256": "9f5938abcf376e42810018549cb4bca724d0c18f32d072bbfa2c83e42edcbdff"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/mansion-overview.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/mansion-overview.png",
+      "title": "Mansion overview",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 686033,
+      "sha256": "31d46d35751c8a6b64ef2ea98506def4759f358f1709a702139f22e494c380f9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/estate-parish-batch/mansion-service-court.png",
+      "url": "development/levels/rebuild/captures/estate-parish-batch/mansion-service-court.png",
+      "title": "Mansion service court",
+      "kind": "Native estate, farm and parish courts and doorway inspection",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1145749,
+      "sha256": "a9017c67a63c5f42bd12ce4997b4f7f91f49755e00cd2c8a38aeb690d8716470"
     },
     {
       "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-after.png",
