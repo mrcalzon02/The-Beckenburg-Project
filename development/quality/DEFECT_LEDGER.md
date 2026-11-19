@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-387 — Van's wall information monitors display chunky, unreadable lettering
+
+**Status:** Source correction published at 96c4b535; Windows GPU Java 17 compile passed; physical readability acceptance still open · **Affected:** Five physical VAN LCD panels (camera, activity, sound/motion, sanity, contract) and the live tactical map; solo and multiplayer viewers
+
+At 2048x713, user-observed van screens render fragments of headings, statuses and objective text too coarsely to read from the aisle; information screens no longer serve their intended purpose.
+
+Cause / uncertainty: The five live faces use 320x180 bitmaps with 11–13px secondary glyphs; GL defaults to nearest and inherited PSX affine texture warp and vertex snapping. The live map sentinel reports 128x128 instead of its authored 768x512 source dimensions; alternate global post-effects remain a possible residual factor.
+
+Fix / next action: Publish 480x270 antialiased face rendering with larger text and width-aware clipping; give world information surfaces stable perspective coordinates and linear/clamped sampling, and upload/reallocate the map at actual dimensions. Run the dedicated van face, map revision, software fallback, camera privacy and GPU tests; capture normal-standing and close-up physical van views at supported detail modes before closing.
+
+Evidence and verification: User-provided 2048x713 van capture, 2026-11-18; source https://github.com/mrcalzon02/The-Beckenburg-Project/commit/96c4b535c64d2a26a2ee406ca3b7ba6c179a883c ; Windows renderer https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44436638667 has passed compile-gpu-java17, but its complete run and physical visual acceptance remain pending; development/quality/evidence/van-monitor-legibility-2026-11-18/README.md
+
+Older-map obligation: The same van monitoring fixtures ship across investigation sites. Audit readable telemetry at House, Farmhouse and School and ensure no sensor privacy/camera-evidence leakage; older physical viewing distances remain unaudited.
+
 ### DEV-386 — Normal case opening has no call to the documented gameplay-renderer prewarm helper
 
 Player path audited on v0.1.355; loading notes corrected; performance integration open. LevelOpeningCinematic uses its own asynchronous software renderer. InvestigationScenePrewarm.prepare is referenced by LevelOpeningCinematicVisualTest and StaticScenePrebakeTest. Correct the staging notes. Measure any future preparation at actual player handoff with skip/cancel, startup and frame-tail evidence before enabling it. [First-scene GL receipts](../../docs/performance/2026-11-17-uv-walking/first-frame-uploads.csv).
