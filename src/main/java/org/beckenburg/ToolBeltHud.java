@@ -2,6 +2,7 @@ package org.beckenburg;
 
 import java.awt.*;
 import java.util.Locale;
+import java.util.Map;
 import javax.swing.ImageIcon;
 
 /** Shared solo/LAN four-slot tool belt. Readings come only from game/host state. */
@@ -36,6 +37,14 @@ public final class ToolBeltHud {
         };
     }
     private static String normal(String name){return name==null?"":name.toUpperCase(Locale.ROOT);}
+    /** The selected item uses its own authored model render, not a family contact sheet. */
+    static ImageIcon itemIcon(String id,Map<String,EquipmentTiers.Tier> ownedTiers,int pixels){
+        String tool=normal(id);
+        if(tool.isEmpty()||FieldEquipment.EMPTY.equals(tool))return null;
+        EquipmentTiers.Tier tier=ownedTiers==null?null:ownedTiers.get(tool);
+        return ItemIconAtlas.getTier(tool.toLowerCase(Locale.ROOT),
+            tier==null?EquipmentTiers.Tier.I:tier,pixels);
+    }
     static int focusedReadingX(int width,double raised){
         double amount=Math.max(0,Math.min(1,raised));
         return (int)Math.round((width-138)*(1-amount)+width*.50*amount);
@@ -59,12 +68,19 @@ public final class ToolBeltHud {
     }
     public static void draw(Graphics2D original,int width,int height,String[] slots,
             int active,String reading,boolean held,boolean powered,boolean placing,int rotation){
-        draw(original,width,height,slots,active,reading,held,powered,placing,rotation,held?1:0);
+        draw(original,width,height,slots,active,reading,held,powered,placing,rotation,held?1:0,Map.of());
     }
     /** The focused reading travels with the tool's actual raised pose. */
     public static void draw(Graphics2D original,int width,int height,String[] slots,
             int active,String reading,boolean held,boolean powered,boolean placing,int rotation,
             double raised){
+        draw(original,width,height,slots,active,reading,held,powered,placing,rotation,
+            raised,Map.of());
+    }
+    /** Render each carried item at its host-confirmed tier, matching the held device. */
+    public static void draw(Graphics2D original,int width,int height,String[] slots,
+            int active,String reading,boolean held,boolean powered,boolean placing,int rotation,
+            double raised,Map<String,EquipmentTiers.Tier> ownedTiers){
         if(original==null||slots==null||slots.length!=4||active<0||active>=4
                 ||width<310||height<220)return;
         Graphics2D g=(Graphics2D)original.create();
@@ -93,8 +109,7 @@ public final class ToolBeltHud {
                 g.setStroke(new BasicStroke(i==active?3f:1f));
                 g.drawRoundRect(sx+1,y+1,cell-2,cell-2,7,7);
                 String tool=normal(slots[i]);
-                ImageIcon icon=tool.equals(FieldEquipment.EMPTY)?null:
-                    ItemIconAtlas.get(tool.toLowerCase(Locale.ROOT),Math.max(24,cell-18));
+                ImageIcon icon=itemIcon(tool,ownedTiers,Math.max(24,cell-18));
                 if(icon!=null)icon.paintIcon(null,g,sx+(cell-icon.getIconWidth())/2,y+6);
                 else{
                     String text=tool.replace('_',' ');
@@ -126,7 +141,7 @@ public final class ToolBeltHud {
             }
             if(placing){
                 int cx=width/2,cy=height/2;
-                ImageIcon preview=ItemIconAtlas.get(id.toLowerCase(Locale.ROOT),64);
+                ImageIcon preview=itemIcon(id,ownedTiers,64);
                 Composite old=g.getComposite();
                 g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER,.45f));
                 if(preview!=null)preview.paintIcon(null,g,cx-32,cy-32);

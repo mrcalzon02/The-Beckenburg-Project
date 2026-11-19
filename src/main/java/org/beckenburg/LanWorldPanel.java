@@ -1569,7 +1569,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 held.equals("FIRELIGHT")?firelightOn:
                 held.equals("HEAD_GEAR")?nightVision:false;
             ToolBeltHud.draw(g,width,h,belt,activeGearSlot,deviceReading.get(held),
-                toolGrip.held(),power,toolPlacement,placementRotation,toolGrip.amount());
+                toolGrip.held(),power,toolPlacement,placementRotation,toolGrip.amount(),equipmentTier);
             if(helpVisible){
                 int hw=Math.min(width-36,510),hx=(width-hw)/2,hy=Math.max(90,(h-210)/2);
                 g.setColor(new Color(13,19,27,245));g.fillRoundRect(hx,hy,hw,210,10,10);
