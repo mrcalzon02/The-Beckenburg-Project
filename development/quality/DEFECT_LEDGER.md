@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-389 — Castle gate exit accepts unsupported or blocked native apron poses
+
+**Status:** Source gate guard and native-block negative regression committed; exact-source CI and installed Windows crossing/retreat inspection pending · **Affected:** Castle Beckenburg headquarters main portcullis, editable ground-level exit apron and Castle-only exit countdown
+
+The gate-exit trigger checked a 2D rectangle and open door but not foot support or player/body collision. A manually edited, blocked or unsupported pose inside the box could start the exit countdown.
+
+Cause / uncertainty: CastleGateExit.inExitThreshold was disconnected from CastleHubMap.traversable and allowed any elevation below 1.8m, including below the ground.
+
+Fix / next action: Require finite ground-level coordinates within 0.15m and current native traversability. Extend CastleHomeInteractionTest with real native nav-block/restore, cellar and raised pose, nonfinite, closed-gate and ordinary route controls. Verify installed crossing, retreat cancellation, and the editor-saved obstruction on Windows before closing.
+
+Evidence and verification: Source review at main af7d662e1efc0bc7857619c7e0b907f07b111181; CastleGateExit.java, CastleHomeInteractionTest.java and development/levels/rebuild/castle/acceptance.md. Runtime test/physical gate not yet executed on this commit.
+
+Older-map obligation: Castle headquarters only. The mission van's authoritative extraction and left-behind-player behavior (issue #48) are unchanged and require their own acceptance; no other map is certified.
+
 ### DEV-388 — Handheld camera rear LCD displays front atlas and overlays its controls
 
 **Status:** Source implementation committed after scoped face audit; exact-source CI and installed Windows visual inspection remain open · **Affected:** First-person photo and video camera models, all three equipment tiers; physical rear LCDs

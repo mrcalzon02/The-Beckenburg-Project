@@ -14,7 +14,21 @@ public final class CastleHomeInteractionTest {
         check(CastleGateExit.COUNTDOWN_SECONDS>=3,"Gate exit must be cancellable");
         check(!CastleGateExit.inExitThreshold(map,15.5,0,35.2),"Closed gate cannot exit");
         check(map.toggleDoor(CastleGateExit.GATE_ID),"Open actual portcullis");
+        check(map.traversable(15.5,35.2,0),"Open gate apron must have real body clearance and support");
         check(CastleGateExit.inExitThreshold(map,15.5,0,35.2),"Walking beyond gate can exit");
+        check(!CastleGateExit.inExitThreshold(map,15.5,-3,35.2),"Cellar-height body cannot initiate courtyard exit");
+        check(!CastleGateExit.inExitThreshold(map,15.5,.4,35.2),"Unsupported raised body cannot initiate courtyard exit");
+        check(!CastleGateExit.inExitThreshold(map,15.5,Double.NaN,35.2),"Nonfinite height cannot initiate exit");
+        check(!CastleGateExit.inExitThreshold(map,15.5,0,Double.POSITIVE_INFINITY),"Nonfinite position cannot initiate exit");
+        // A saved native editor change can block the apron independently of gate state.
+        var nativeScene=CastleLevelEdits.current();
+        var beforeApron=nativeScene.snapshot();
+        try{
+            nativeScene.setNavBlocked(15,35,true);
+            check(!map.traversable(15.5,35.2,0),"Native obstacle control failed to block real body");
+            check(!CastleGateExit.inExitThreshold(map,15.5,0,35.2),"Blocked native apron must cancel exit");
+        }finally{nativeScene.restore(beforeApron);}
+        check(CastleGateExit.inExitThreshold(map,15.5,0,35.2),"Restored accessible gate must permit exit");
         check(!CastleGateExit.inExitThreshold(map,15.5,0,33.4),"Courtyard is not exit trigger");
         check(!CastleGateExit.inExitThreshold(map,20.0,0,35.2),"Outside gate width is not exit trigger");
         check(!CastleGateExit.inExitThreshold(map,15.5,3.4,35.2),"Upper gallery cannot exit");
@@ -54,6 +68,6 @@ public final class CastleHomeInteractionTest {
             finally{if(castle!=null)castle.close();}
         });
         if(failed[0]!=null)throw new AssertionError(failed[0]);
-        System.out.println("PASS Castle pause and options overlays, open-gate exit threshold and cancellation");
+        System.out.println("PASS Castle pause/options, physically supported open-gate exit, blocked/invalid pose negatives and cancellation");
     }
 }
