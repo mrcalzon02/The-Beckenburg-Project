@@ -83,6 +83,13 @@ public final class HouseRebuildEnvelope {
         // Keep the original deck top, posts, doorway, wall and finite capsule.
         b.walkableBevel("porch-approach-bevel",px0,px1,pz,pz+.65,
             p[7],0.0,.12,LevelMaterials.STONE);
+        // The front threshold is also a raised 4cm drop back onto the house
+        // floor. Without its own continuous surface, the same capsule catches
+        // the back lip just INSIDE the opened doorway at z=20.54. Give the
+        // inner vestibule a real, 65cm mirror transition rather than omitting
+        // the porch's collision or pretending the whole foyer is raised.
+        b.walkableBevel("porch-interior-threshold",px0,px1,z1-.65,z1,
+            0.0,p[7],.12,LevelMaterials.STONE);
         for(double x:new double[]{px0+.13,px1-.13}){
             b.box("porch-post-"+x,x-.075,p[7],pz-.25,x+.075,p[6]-.06,pz-.10,LevelMaterials.WOOD,-1,false);
             b.box("porch-post-foot-"+x,x-.12,p[7],pz-.295,x+.12,p[7]+.16,pz-.055,LevelMaterials.STONE,-1,false);
@@ -132,14 +139,15 @@ public final class HouseRebuildEnvelope {
             quad(v(x0,y0,z0),v(x1,y0,z0),v(x1,y0,z1),v(x0,y0,z1),mat,hidden!=5);
             parts.add(new Part(name,triangles,support));
         }
-        /** A low, continuous support transition from level terrain to a raised
-         * deck. Both the visible triangles and authoritative foot/capsule
-         * collision come from this SAME source geometry. Normal-up triangles
-         * are walkable support; side and underside triangles remain solids. */
+        /** A low, continuous physical transition from terrain to deck or
+         * deck to indoor floor. Visible triangles and authoritative foot/capsule
+         * collision share this SAME source geometry, never a traversal bypass.
+         * Upward-wound top triangles provide walking support in either slope
+         * direction; sides and underside remain solid. */
         void walkableBevel(String name,double x0,double x1,double zNear,double zFar,
                            double nearY,double farY,double thickness,int mat){
-            if(!(x1>x0&&zFar>zNear&&nearY>farY&&thickness>0
-                    &&(nearY-farY)/(zFar-zNear)<AuthoredSitePhysics.MAX_GRADE))
+            if(!(x1>x0&&zFar>zNear&&thickness>0
+                    &&Math.abs(nearY-farY)/(zFar-zNear)<AuthoredSitePhysics.MAX_GRADE))
                 throw new IllegalArgumentException("Invalid walkable bevel");
             triangles=new ArrayList<>();
             // The top face is wound upward for HCS2 SUPPORT identification.

@@ -52,8 +52,10 @@ public final class DevMatchNavigationTest {
         check(adjusted!=null,"The rebuilt porch must support the formerly stalled hunter");
         var stalled=new LevelDefinition.Vec(historic.x(),adjusted,historic.z());
         check(map.envelope()!=null&&map.envelope().parts().stream()
-                .anyMatch(part->part.name().equals("porch-approach-bevel")&&part.support()),
-            "A real authored support surface must bridge the porch, not a collision exemption");
+                .anyMatch(part->part.name().equals("porch-approach-bevel")&&part.support())
+                &&map.envelope().parts().stream()
+                    .anyMatch(part->part.name().equals("porch-interior-threshold")&&part.support()),
+            "Both physical 4cm porch edges require real authored support, not collision exemptions");
         var entry=map.level().portalsFrom(13).stream()
             .filter(p->p.door()&&p.joins(13,0)).findFirst().orElseThrow();
         var command=new HunterFieldNavigation(map).to(150,
