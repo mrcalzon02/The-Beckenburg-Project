@@ -91,7 +91,7 @@ public final class CampaignDirectedCameraScenario {
                 // Stage only the starting position. H2 must choose, place and attend its own equipment.
                 synchronized(lock){AuthoredTestSupport.place(map,world,1,map.spawn(BEDROOM));}
                 staged=true;
-                leader.say(LanChat.Channel.RADIO,"H2 search Master bedroom");
+                leader.say(LanChat.Channel.RADIO,"H2 search "+map.roomName(BEDROOM));
             }
             if(ordered<0&&tick>=(upstairs?24:8)&&(!upstairs||body.room()==BEDROOM)){
                 leader.say(LanChat.Channel.RADIO,"H2 test video camera");ordered=tick;

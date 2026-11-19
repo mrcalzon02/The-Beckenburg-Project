@@ -4,7 +4,7 @@ import java.nio.file.Files;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-/** A human in the van asks three hired campaign hunters to stage each Foyer camera experiment. */
+/** A van operator directs three real hired hunters through each authored entry-room camera experiment. */
 public final class CampaignWitnessWatchScenario {
     private static void require(boolean condition,String why){if(!condition)throw new AssertionError(why);}
 
@@ -43,7 +43,8 @@ public final class CampaignWitnessWatchScenario {
             throw new AssertionError("Missing "+prefix);
         }
         void watch(LanHost host,HouseMap map,LanClient leader,String mode,int people)throws Exception{
-            leader.say(LanChat.Channel.RADIO,"team watch "+mode+" Foyer");
+            String entryRoom=map.roomName(0);
+            leader.say(LanChat.Channel.RADIO,"team watch "+mode+" "+entryRoom);
             var traffic=new java.util.ArrayDeque<String>();
             long end=System.nanoTime()+TimeUnit.SECONDS.toNanos(50);
             while(System.nanoTime()<end){
@@ -52,7 +53,7 @@ public final class CampaignWitnessWatchScenario {
                 var entry=LanChat.Entry.decode(frame);
                 traffic.addLast(entry.message());
                 if(traffic.size()>12)traffic.removeFirst();
-                if(!entry.message().equals("Watching Foyer "+mode+" on van video."))continue;
+                if(!entry.message().equals("Watching "+entryRoom+" "+mode+" on van video."))continue;
                 var state=host.devAdminSnapshot();
                 int observer=entry.seat();
                 require(observer>0,"Human sent the AI observer report");
@@ -69,9 +70,9 @@ public final class CampaignWitnessWatchScenario {
                     "Physical positions contradict the watch report: "+state.hunters());
                 boolean live=false;
                 for(int seat=1;seat<cameraRooms.length;seat++)if(cameraRooms[seat]==0&&powered[seat])live=true;
-                require(live,"Readiness report without a hired player's deployed, powered Foyer camera");
+                require(live,"Readiness report without a hired player's deployed, powered "+entryRoom+" camera");
                 System.out.println("PASS "+mode+": H"+(observer+1)+" at van relay, "+people
-                    +" investigators in Foyer, powered hired camera, tick "+state.tick());
+                    +" investigators in "+entryRoom+", powered hired camera, tick "+state.tick());
                 return;
             }
             throw new AssertionError(mode+" watch missing, recent radio "+traffic+", bodies "+host.devAdminSnapshot().hunters());
@@ -93,7 +94,11 @@ public final class CampaignWitnessWatchScenario {
                     SiteCatalog.mapFor(chapter.map()),null,58,15)){
                 host.configureCampaign(profile,chapter);
                 var map=(HouseMap)LooseClutterNetworkTest.field(host,"map");
-                require(map.roomName(0).equals("Foyer"),"Scenario needs the authored Foyer");
+                require(!map.outside(0)&&map.level().portalsFrom(0).stream()
+                        .anyMatch(portal->portal.joins(0,13)&&portal.door()),
+                    "Camera experiment needs a real authored indoor entrance room with a physical front door");
+                require(map.roomAt(map.spawn(0).x(),map.spawn(0).y(),map.spawn(0).z())==0,
+                    "Watch target must correspond to a real walkable interior room");
                 try(var leader=new LanClient("127.0.0.1",host.port(),false,"Incident leader","",
                         host.localOwnerCredential(),log::receive)){
                     leader.ready();log.await("OWNREADY|YES");host.prepareCampaignBots(3);
