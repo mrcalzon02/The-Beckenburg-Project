@@ -33,7 +33,9 @@ public final class LanGhostPursuitTest {
         spatial.syncRoom(ghost.room());
         LanGhostPursuit.Impulse toward=brain.approach(ghost.observe(),spatial.pose());
         ok(toward!=null&&(toward.dx()!=0||toward.dz()!=0)
-                &&Math.abs(toward.dx())<=100&&Math.abs(toward.dz())<=100,"local approach uses bounded impulse");
+                &&Math.abs(toward.dx())<=100&&Math.abs(toward.dz())<=100,
+                "local approach uses bounded impulse from "+spatial.pose()+
+                " to acoustic cell "+brain.memory(ghost.tickCount()));
         ok(spatial.step(toward.dx(),toward.dz(),1),"AI uses exact human ghost move validator");
         ok(spatial.pose().room()==5&&map.roomAt(spatial.pose().x(),spatial.pose().y(),spatial.pose().z())==5,
                 "AI cannot step across a room wall");

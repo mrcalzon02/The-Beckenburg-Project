@@ -233,6 +233,46 @@ public final class LanGhostPursuit {
         }
         return target;
     }
+    /** A nearby acoustic cell prompts a brief four-point room-local search.
+     * We never infer a hunter body: these offsets derive only from the already
+     * quantized 2m sound-cell center. Verify the FIRST physical step through
+     * the same map collision, room, safe-area and hiding-pocket gates as a
+     * human ghost before returning an ordinary bounded movement impulse. */
+    private Impulse investigateCell(LanGhostSpatial.Pose pose,Echo echo,int tick){
+        double[] offsetX={1.05,0,-1.05,0};
+        double[] offsetZ={0,1.05,0,-1.05};
+        var from=new LevelDefinition.Vec(pose.x(),pose.y(),pose.z());
+        int phase=Math.floorMod(tick/6,4);
+        for(int k=0;k<4;k++){
+            int direction=(phase+k)%4;
+            double dx=echo.approximateX()+offsetX[direction]-pose.x();
+            double dz=echo.approximateZ()+offsetZ[direction]-pose.z();
+            double length=Math.hypot(dx,dz);
+            if(length<.35)continue; // Already inspected this small pocket.
+            double targetX=pose.x()+.31*dx/length;
+            double targetZ=pose.z()+.31*dz/length;
+            var next=map.resolveMove(from,targetX,targetZ);
+            if(next==null||map.roomAt(next.x(),next.y(),next.z())!=pose.room()
+                    ||Math.hypot(next.x()-pose.x(),next.z()-pose.z())<.08
+                    ||SafeAreaBarrier.blocks(map,from,next))continue;
+            int samples=Math.max(1,(int)Math.ceil(
+                Math.hypot(next.x()-pose.x(),next.z()-pose.z())/.10));
+            boolean hidden=false;
+            for(int i=1;i<=samples;i++){
+                double fraction=i/(double)samples;
+                if(LanGhostSpatial.hidingPocketAt(map,pose.room(),
+                        pose.x()+(next.x()-pose.x())*fraction,
+                        pose.y()+(next.y()-pose.y())*fraction,
+                        pose.z()+(next.z()-pose.z())*fraction)){
+                    hidden=true;break;
+                }
+            }
+            if(hidden)continue;
+            return new Impulse((int)Math.round(100*dx/length),
+                (int)Math.round(100*dz/length));
+        }
+        return null;
+    }
     /** Move toward an old approximate sound in the current room; the host applies this using
      * LanGhostSpatial.step, which enforces exactly the same walls and speed as a human ghost.
      */
@@ -240,8 +280,14 @@ public final class LanGhostPursuit {
         if(seen==null||pose==null||seen.room()!=pose.room())return null;
         Echo e=memory(seen.tick());
         double tx,tz;
-        if(e!=null && e.room()==pose.room()) {tx=e.approximateX();tz=e.approximateZ();}
-        else {
+        if(e!=null && e.room()==pose.room()) {
+            tx=e.approximateX();tz=e.approximateZ();
+            // On reaching the noisy two-metre cell, inspect local accessible
+            // positions rather than freezing at a mathematically exact center.
+            // This cannot disclose the real hunter: no body positions enter.
+            if(Math.hypot(tx-pose.x(),tz-pose.z())<1.25)
+                return investigateCell(pose,e,seen.tick());
+        }else {
             Search sweep=search(seen.tick());
             if(sweep==null||sweep.room()!=pose.room())return null;
             int phase=((seen.tick()-sweep.startedTick())/6)%4;
