@@ -451,14 +451,14 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             int identityWidth=Math.min(w-24,480);
             g.setColor(new Color(22,13,31,219));g.fillRoundRect(12,10,identityWidth,65,9,9);
             g.setColor(new Color(232,208,247));
-            g.drawString("SPECTRAL / "+ghostSpecies+" / "+behaviorName,23,30);
-            g.drawString(map.roomName(room)+"  |  ENERGY "+energy+"/100",23,50);
+            g.drawString(HudTextFit.ellipsize(g.getFontMetrics(),\n                "SPECTRAL / "+ghostSpecies+" / "+behaviorName,Math.max(0,identityWidth-22)),23,30);
+            g.drawString(HudTextFit.ellipsize(g.getFontMetrics(),\n                map.roomName(room)+"  |  ENERGY "+energy+"/100",Math.max(0,identityWidth-22)),23,50);
             g.setColor(audible&&hearingFade.gain()>.15?new Color(238,166,151):new Color(192,167,210));
             String listenStatus=!hearingEnabled()
                 ?(hearingFade.gain()>.02?"HEARING FADING":"MOVE TO MUTE / HOLD STILL TO LISTEN")
                 :hearingFade.gain()<.98?"ATTUNING / "+(int)Math.round(hearingFade.gain()*100)+"%"
                 :audible?"SOUND DETECTED":"LISTENING / QUIET";
-            g.drawString(listenStatus,23,66);
+            g.drawString(HudTextFit.ellipsize(g.getFontMetrics(),\n                listenStatus,Math.max(0,identityWidth-22)),23,66);
             g.setColor(new Color(233,210,248));g.drawString("+",w/2,h/2);
             SprintHud.draw(g,12,h-163,Math.min(255,w-24),
                 "GHOST BURST / SHIFT",burstRemaining,burstMax,bursting);
@@ -482,13 +482,11 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             g.setColor(new Color(22,17,30,223));g.fillRoundRect(8,h-113,w-16,43,7,7);
             g.setColor(new Color(237,223,246));
             String countdown=actionDueTick<0?"":"    Next event "+remaining+"s";
-            g.drawString("Space  Drift to "+target+"   ·   Z / Q  Cycle exit   ·   E  Haunt fixture"+countdown,16,h-96);
+            g.drawString(HudTextFit.ellipsize(g.getFontMetrics(),\n                "Space  Drift to "+target+"   ·   Z / Q  Cycle exit   ·   E  Haunt fixture"+countdown,\n                Math.max(0,w-32)),16,h-96);
             g.setColor(new Color(204,192,215));
             String note=frenzyPhase==GhostFrenzy.Phase.CALM?feedback:
                 "Frenzy "+frenzyPhase+"   "+(frenzyTicks+9)/10+"s    "+feedback;
-            FontMetrics metrics=g.getFontMetrics();
-            while(note.length()>1&&metrics.stringWidth(note)>w-32)note=note.substring(0,note.length()-1);
-            g.drawString(note,16,h-79);
+            g.drawString(HudTextFit.ellipsize(g.getFontMetrics(),note,Math.max(0,w-32)),16,h-79);
             GhostAbilityBar.draw(g,w,h-9,abilities);
             perfHud.draw(g,getWidth(),getHeight());
         }finally{g.dispose();}
