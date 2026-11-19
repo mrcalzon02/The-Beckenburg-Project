@@ -80,12 +80,33 @@ public final class CampaignDirectedCameraScenario {
         var brain=(CampaignHunterInvestigator)LooseClutterNetworkTest.field(hire,"brain");
         var attention=(HunterCameraAttention)LooseClutterNetworkTest.field(brain,"attention");
         int ordered=-1,observing=-1,quietSince=-1,held=-1,reordered=-1;
+        // A real upstairs camera can expose a return-stair or van-rack route
+        // fault that would otherwise be reduced to an opaque 85-second timeout.
+        // Retain only the latest 30 genuine host-authorized body checkpoints.
+        var route=new java.util.ArrayDeque<String>();
+        int lastRouteTick=-1000;
         boolean staged=false;
         long end=System.nanoTime()+TimeUnit.SECONDS.toNanos(85);
         while(System.nanoTime()<end){
             var state=host.devAdminSnapshot();
             int tick=state.tick();
             var body=state.hunters().get(1).body();
+            if(tick-lastRouteTick>=45){
+                lastRouteTick=tick;
+                var local=host.devCampaignBotDiagnostics().stream()
+                    .filter(d->d.seat().equals("H2")).findFirst().orElse(null);
+                route.addLast(String.format(java.util.Locale.ROOT,
+                    "tick=%d room=%d x=%.3f y=%.3f z=%.3f heading=%d "+
+                    "last_action=%s command_tick=%d rejects=%d faults=%d "+
+                    "camera_room=%d powered=%s observed=%d",
+                    tick,body.room(),body.x(),body.y(),body.z(),body.heading(),
+                    local==null?"NONE":local.action(),
+                    local==null?-1:local.actionTick(),
+                    local==null?-1:local.rejections(),
+                    local==null?-1:local.updateFailures(),
+                    traffic.room,traffic.powered,observing));
+                if(route.size()>30)route.removeFirst();
+            }
             check(state.running()&&state.hunters().get(1).alive(),"Campaign ended before the assignment finished");
             if(upstairs&&!staged&&tick>=8){
                 // Stage only the starting position. H2 must choose, place and attend its own equipment.
@@ -126,8 +147,12 @@ public final class CampaignDirectedCameraScenario {
             if(tick>=4800)break;
             Thread.sleep(12);
         }
+        System.err.println("DIRECTED CAMERA RETURN PATH: "+String.join(" | ",route));
         throw new AssertionError("Video assignment timed out: ordered="+ordered+", installed="+traffic.placed
-            +", room="+traffic.room+", observed="+observing+", held="+held+", reordered="+reordered);
+            +", room="+traffic.room+", observed="+observing+", held="+held+", reordered="+reordered
+            +", final="+host.devAdminSnapshot().hunters().get(1).body()
+            +", hire="+host.devCampaignBotDiagnostics()
+            +", route_checkpoints="+route.size());
     }
 
     public static void main(String[] args)throws Exception{
