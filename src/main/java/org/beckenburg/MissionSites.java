@@ -47,6 +47,10 @@ public final class MissionSites {
         // Labeling a lobby must work before a user project has been selected.
         if("USER".equals(id))return "User authored level";
         if("SEACLIFF".equals(id))return SeacliffNativeLevel.TITLE;
-        return byId(id.equals("HOLLOW_CREEK")?"WLD-02":id).title();
+        return byId(switch(id){
+            case "BLACKPINE" -> "WLD-01";
+            case "HOLLOW_CREEK" -> "WLD-02";
+            default -> id;
+        }).title();
     }
 }

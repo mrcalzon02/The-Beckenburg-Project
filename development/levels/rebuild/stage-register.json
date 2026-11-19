@@ -7156,5 +7156,19 @@
       "roster_packets": 29
     },
     "next_action": "Audit remaining Battery services and evidence. Advance Blackpine from verified mill circulation to installed power and ordinary review dispatch."
+  },
+  "blackpine_dispatch_checkpoint": {
+    "status": "BLACKPINE_PACKAGED_SOLO_AND_LAN_SERVICE_REVIEW_COMPLETE_CASE_OPEN",
+    "baseline": "497d94c1dacf7b4e4a406528cb462d9dc91a5016",
+    "roster": "development/levels/rebuild/blackpine-dispatch-pass/roster.json",
+    "checkpoint": "development/levels/rebuild/blackpine-dispatch-pass/checkpoint.json",
+    "level_revision": "blackpine-graded-terrain-v1-525b8d237f87fc0c",
+    "counts": {
+      "connected_room_circuits": 12,
+      "electrical_loads": 28,
+      "network_peers": 4,
+      "roster_packets": 29
+    },
+    "next_action": "Survey the remaining Ravenshade internal door frames and stair thresholds from the exact native scene; keep the accessible envelope at 40."
   }
 }

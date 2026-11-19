@@ -8682,6 +8682,26 @@ Bind the kitchen, landing, bathroom, plant and store to their actual acoustic us
 
 Audit composite room names against their actual use when a rebuild introduces a distinct source identity. [DEV-614 evidence](../levels/rebuild/seacliff-dispatch-pass/checkpoint.json)
 
+### DEV-615 Blackpine repair shed generator had no working starter
+
+**Status** CORRECTED_FOR_PACKAGED_REVIEW · **Affected** Blackpine level power and repair shed
+
+The founded existing skid appeared as scenery. The ordinary source state could not be controlled. The dressing pass reserved the real generator and used a whole-case proxy collider without a starter socket.
+
+Fit the starter to an actual casing triangle, keep source-part collision, use the mounted board and test 28 loads and a real ghost trip and reset.
+
+Check that an installed remote generator can be aimed at and operated from a supported stance. [DEV-615 evidence](../levels/rebuild/blackpine-dispatch-pass/checkpoint.json)
+
+### DEV-616 Blackpine saved height edits did not independently identify the multiplayer terrain
+
+**Status** CORRECTED_AT_NORMAL_NETWORK_SELECTION · **Affected** Blackpine independently edited heightfields
+
+An isolated saved corner edit could change support heights without affecting any spawn, placement or room revision field. The old map handshake only included the derived room and prop coordinates.
+
+Bind the saved height delta digest into the normal level revision and reject disagreement. Verify with a real saved terrain edit outside the arrival.
+
+When authoring adds independent support geometry, include its actual data in the host and client revision. [DEV-616 evidence](../levels/rebuild/blackpine-dispatch-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

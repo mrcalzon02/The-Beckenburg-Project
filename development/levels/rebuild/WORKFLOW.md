@@ -1284,3 +1284,12 @@ The [dispatch checkpoint](seacliff-dispatch-pass/checkpoint.json) binds ordinary
 The ordinary solo case starts on the packaged scene. Four TCP peers agree on the revision. A walker leaves the cargo deck onto the forecourt. Another stops at the closed records door, opens it through the normal aim and interaction, and walks to the supported cupboard and hides. The ghost trips the breaker. A reconnect preserves the open door, the tripped breaker and the independent running source. All 17 surveyed guides were replayed in both directions and postures on the updated scene. Three founded cupboards pass real collision, entry and difficulty checks.
 
 The active [29-location roster](seacliff-dispatch-pass/roster.json) carries exact scene files and the remaining site decisions. Seacliff review remains held. The remaining circuits, site containment, evidence, finish and complete case checks stay open. Blackpine is the next mature site to audit for a founded generator and ordinary review entry. Ravenshade still needs its surveyed door schedule extended beyond the one fitted foyer.
+
+
+## 2026-11-19 / Blackpine powered shed and packaged review
+
+The [repair shed plan](blackpine-dispatch-pass/repair-shed-plan.svg) records the floor datum, west and south doorways, founded skid, wall panel, and tested control stance. The existing generator gained an operable starter on its actual casing. Its bounding-box approximation was replaced with source-part collision, and the reused feeder sits on the panel wall. The [fixture schedule](blackpine-dispatch-pass/verification/installed-circuits.tsv) lists all 28 loads and 12 room circuits.
+
+The [dispatch checkpoint](blackpine-dispatch-pass/checkpoint.json) covers ordinary solo and live four-peer LAN with `-Dbeckenburg.review.blackpine=true`. The host walker left the raised van, stopped at the closed shed leaf, opened it and crossed onto the real yard grade and back. The ordinary generator and panel interactions work from one supported stance. A ghost trip and seat recovery retain the blackout and independent source. Restarting the source leaves the breaker tripped until the hunter uses the mounted panel. A saved height edit also changes the terrain revision and rejects a mismatched peer.
+
+The active [29-location roster](blackpine-dispatch-pass/roster.json) records the new Blackpine decision. Its public campaign selection and full acceptance remain held. The next architecture gate is Ravenshade's interior door and stair schedule beyond the existing south foyer.

@@ -72,7 +72,7 @@ public final class BlackpineStoryDressing {
             for(var story:ROOMS){
                 var r=base.room(story.room());double fy=r.y();
                 // Utility runs are surface mounted on the real north wall, away from door openings.
-                wall("electric_branch",r.id(),r.x1()-1.3,r.z0()+.085,0);
+                if(r.id()!=8)wall("electric_branch",r.id(),r.x1()-1.3,r.z0()+.085,0);
                 wall("wall_damage",r.id(),r.x0()+.095,r.z1()-1.35,-Math.PI/2);
                 wall("damp_wall",r.id(),r.x1()-1.45,r.z1()-.095,Math.PI);
                 item("floor_wear",r.id(),r.x0()+1.4,fy+.004,r.z1()-1.4,.23,"floor-surface");
@@ -90,7 +90,22 @@ public final class BlackpineStoryDressing {
             solid("woodstove",7,34.9,10.75,0,.48,.515,.84);
             solid("oil_waterheater",5,6.8,37.0,0,.60,.49,1.36);
             solid("wash_trough",5,9,36.5,0,.86,.30,1.14);
-            solid("generator",8,45.1,47.8,0,.79,.45,1.16);
+            // The repair shed retains its existing generator skid. The switch fits the
+            // casing, and its west-wall feeder meets the existing distribution panel.
+            item("generator",8,45.1,base.floorY(8),47.8,0,"floor");
+            var generator=props.get(props.size()-1);
+            colliders.addAll(HouseRebuildFunctions.generatorBodies(generator));
+            sockets.add(HouseRebuildFunctions.generatorStarter("blackpine-generator-starter","BPK-MAIN",generator,
+                generator.x()+.25,generator.y()+.7));
+            var breaker=base.socket("breaker",8);
+            wall("electric_branch",8,breaker.x(),breaker.z(),-Math.PI/2);
+            sockets.add(new Socket("blackpine-shed-distribution","electrical-plan",8,breaker.x(),breaker.y(),breaker.z(),
+                breaker.yaw(),"BPK-MAIN"));
+            for(int room=0;room<HouseMap.INDOOR_ROOMS;room++){
+                var plate=base.socket("switch",room);
+                sockets.add(new Socket("blackpine-room-circuit-"+room,"electrical-plan",room,
+                    plate.x(),plate.y(),plate.z(),plate.yaw(),"BPK-"+(room+1)));
+            }
             // A cold solid-fuel range supplies the kitchen; the same reusable stove has a real roof flue.
             solid("woodstove",3,21.05,34.8,0,.48,.515,.84);
             props.add(new Prop("dinner_table_1",2,19.7,0,37.7,1,0,.85,.55,.86,"floor"));

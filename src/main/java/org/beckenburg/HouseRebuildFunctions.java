@@ -71,18 +71,24 @@ public final class HouseRebuildFunctions {
         }
         static int root(ArrayList<Integer> roots,int id){int next=id;while(roots.get(next)!=next)next=roots.get(next);while(roots.get(id)!=id){int old=roots.get(id);roots.set(id,next);id=old;}return next;}
         void generatorControl(Placement parent){
-            var p=parent.prop();double x=parent.solid().x()+.25,y=parent.solid().y()+.7,z=Double.NEGATIVE_INFINITY;
-            for(var t:GlbProps.model(p.mesh()).triangles()){
-                var a=t.a();var b=t.b();var c=t.c();double den=(b.y()-c.y())*(a.x()-c.x())+(c.x()-b.x())*(a.y()-c.y());if(Math.abs(den)<1e-12)continue;
-                double lx=x-p.x(),ly=y-p.y(),u=((b.y()-c.y())*(lx-c.x())+(c.x()-b.x())*(ly-c.y()))/den,v=((c.y()-a.y())*(lx-c.x())+(a.x()-c.x())*(ly-c.y()))/den;
-                if(u>=0&&v>=0&&u+v<=1)z=Math.max(z,p.z()+a.z()*u+b.z()*v+c.z()*(1-u-v));
-            }
-            if(!Double.isFinite(z))throw new IllegalArgumentException("Generator control has no actual supporting face");
-            var button=SceneRenderer.castleBounds("button_12");
-            sockets.add(new Socket("briar-generator-starter","generator",p.room(),x-button[0]*.30,y-(button[1]+button[4]/2)*.30,z-(button[2]-button[5]/2)*.30,0,"BHR-MAIN-01"));
+            var p=parent.prop();
+            sockets.add(generatorStarter("briar-generator-starter","BHR-MAIN-01",p,
+                parent.solid().x()+.25,parent.solid().y()+.7));
             sockets.add(new Socket("briar-source-plan","electrical-plan",p.room(),p.x(),p.y(),p.z(),0,"BHR-MAIN-01;existing-main-breaker-room10;room-switches0-11;source-independent-of-breaker"));
         }
         Assembly finish(){return new Assembly(new LevelDefinition(base.id(),"first-principles-house-functions-v1",base.title().replace("dwelling construction","functional construction"),rooms,base.portals(),base.stairs(),base.voids(),props,sockets,solids,base.dock(),base.ambience(),base.water(),base.sounds()),placements);}
+    }
+    /** Seat the starter on the actual front face of the canonical, unrotated skid. */
+    static Socket generatorStarter(String id,String circuit,Prop p,double x,double y){
+        double z=Double.NEGATIVE_INFINITY;
+        for(var t:GlbProps.model(p.mesh()).triangles()){
+            var a=t.a();var b=t.b();var c=t.c();double den=(b.y()-c.y())*(a.x()-c.x())+(c.x()-b.x())*(a.y()-c.y());if(Math.abs(den)<1e-12)continue;
+            double lx=x-p.x(),ly=y-p.y(),u=((b.y()-c.y())*(lx-c.x())+(c.x()-b.x())*(ly-c.y()))/den,v=((c.y()-a.y())*(lx-c.x())+(a.x()-c.x())*(ly-c.y()))/den;
+            if(u>=0&&v>=0&&u+v<=1)z=Math.max(z,p.z()+a.z()*u+b.z()*v+c.z()*(1-u-v));
+        }
+        if(!Double.isFinite(z))throw new IllegalArgumentException("Generator control has no actual supporting face");
+        var button=SceneRenderer.castleBounds("button_12");
+        return new Socket(id,"generator",p.room(),x-button[0]*.30,y-(button[1]+button[4]/2)*.30,z-(button[2]-button[5]/2)*.30,0,circuit);
     }
     static List<Collider> generatorBodies(Prop p){
             var triangles=GlbProps.model(p.mesh()).triangles();

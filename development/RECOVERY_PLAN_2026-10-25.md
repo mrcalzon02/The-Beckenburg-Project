@@ -2023,3 +2023,8 @@ The [upper checkpoint](levels/rebuild/seacliff-upper-partitions-pass/checkpoint.
 The [dispatch checkpoint](levels/rebuild/seacliff-dispatch-pass/checkpoint.json) verifies the Windows game package with ordinary solo and four-peer LAN selection, a live fitted door operation, three physical cupboards, and a ghost breaker trip with a reconnect. Software and hidden RTX 5070 OpenGL captures show the exact packaged source. The existing case availability, saved authoring identity, acoustic, hiding, safe-area, flyover, Hollow Creek and College checks pass.
 
 Main was inspected at cdf802b18731a4648edfb6d0c94aea3ed96e5325. Full multiplayer 44496299092 and Windows installer 44496299087 passed at that revision. GPU renderer acceptance 44496299169 failed. The held map parent remained 5c3daf923a7359554dc075c9e99be139bbcb1441. Next work includes Blackpine independent power and review selection and the remaining Battery service and case gates.
+
+
+## Blackpine powered shed and normal map selection
+
+The [Blackpine checkpoint](levels/rebuild/blackpine-dispatch-pass/checkpoint.json) advances a second map to packaged solo and four-peer LAN review. It covers the fitted repair shed door, retained terrain, named load circuits, mounted controls and normal ghost and reconnect authority. Seacliff, Hollow Creek and College dispatch passed again on this package. Main remains cdf802b18731a4648edfb6d0c94aea3ed96e5325, with passing multiplayer 44496299092 and installer 44496299087. GPU renderer acceptance 44496299169 failed. The exact Seacliff draft gallery check 44500974788 succeeded at 497d94c1dacf7b4e4a406528cb462d9dc91a5016. The next draft scope is Ravenshade interior thresholds.

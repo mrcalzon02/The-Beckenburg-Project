@@ -6821,6 +6821,28 @@
       "action": "Bind the kitchen, landing, bathroom, plant and store to their actual acoustic uses. Rerun the all-site acoustic check.",
       "older_maps": "Audit composite room names against their actual use when a rebuild introduces a distinct source identity.",
       "evidence": "development/levels/rebuild/seacliff-dispatch-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-615",
+      "title": "Blackpine repair shed generator had no working starter",
+      "status": "CORRECTED_FOR_PACKAGED_REVIEW",
+      "affected": "Blackpine level power and repair shed",
+      "symptom": "The founded existing skid appeared as scenery. The ordinary source state could not be controlled.",
+      "cause": "The dressing pass reserved the real generator and used a whole-case proxy collider without a starter socket.",
+      "action": "Fit the starter to an actual casing triangle, keep source-part collision, use the mounted board and test 28 loads and a real ghost trip and reset.",
+      "older_maps": "Check that an installed remote generator can be aimed at and operated from a supported stance.",
+      "evidence": "development/levels/rebuild/blackpine-dispatch-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-616",
+      "title": "Blackpine saved height edits did not independently identify the multiplayer terrain",
+      "status": "CORRECTED_AT_NORMAL_NETWORK_SELECTION",
+      "affected": "Blackpine independently edited heightfields",
+      "symptom": "An isolated saved corner edit could change support heights without affecting any spawn, placement or room revision field.",
+      "cause": "The old map handshake only included the derived room and prop coordinates.",
+      "action": "Bind the saved height delta digest into the normal level revision and reject disagreement. Verify with a real saved terrain edit outside the arrival.",
+      "older_maps": "When authoring adds independent support geometry, include its actual data in the host and client revision.",
+      "evidence": "development/levels/rebuild/blackpine-dispatch-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

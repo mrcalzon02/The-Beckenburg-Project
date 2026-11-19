@@ -17,7 +17,7 @@ public final class SeacliffDispatchTest {
         if (!condition) throw new AssertionError(failure);
     }
 
-    private static HouseMap select() {
+    private static HouseMap select() throws Exception {
         var location = SiteCatalog.Location.SEACLIFF;
         System.clearProperty(SeacliffNativeLevel.REVIEW_PROPERTY);
         check(!SiteCatalog.playable(SITE) && !List.of(SiteCatalog.soloLocations()).contains(location),
@@ -38,6 +38,7 @@ public final class SeacliffDispatchTest {
         var anchor = map.spawn(solo.anchorRoom());
         check(map.roomAt(anchor.x(), anchor.y(), anchor.z()) == solo.anchorRoom()
             && map.traversable(anchor.x(), anchor.y(), anchor.z()), "Solo case anchor is unsupported");
+        AuthoredTestSupport.checkSoloLauncher(location, map);
         System.out.println("PASS packaged review selection and native solo case " + map.level().revision());
         try {
             HouseMap.forNetworkRevision(SITE, "unavailable-battery-revision");

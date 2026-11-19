@@ -1,0 +1,6 @@
+PASS packaged Blackpine review selection and solo case blackpine-graded-terrain-v1-525b8d237f87fc0c
+PASS saved Blackpine terrain mismatch is rejected at network selection
+PASS all 28 placed electrical fixtures respond to loss of source
+PASS four Blackpine peers and physical van departure Vec[x=34.4, y=0.5, z=72.25] -> Vec[x=31.61, y=0.0, z=72.25]
+PASS TCP fitted shed door, graded yard crossing and re-entry
+PASS TCP starter, ghost trip, seat recovery, restart isolation and physical breaker reset from Vec[x=45.45, y=0.552, z=49.07]

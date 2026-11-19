@@ -7,7 +7,6 @@ public final class HidingBudgetTest {
   try(var user=AuthoredTestSupport.userFixture()){
   var maps=new ArrayList<HouseMap>();
   for(var site:HouseMap.Site.values())maps.add(user.map(site));
-  maps.add(new HouseMap(HouseMap.Site.HOUSE,BlackpineLevel.build()));
   for(var physical:maps){
    var level=physical.level();
    check(HidingBudget.candidates(level).size()==HidingBudget.MAXIMUM,"Insufficient authored candidates "+level.id());

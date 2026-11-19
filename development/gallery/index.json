@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11315,
+  "count": 11317,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -94194,6 +94194,26 @@
       "height": 900,
       "bytes": 902504,
       "sha256": "984d0f414d12dcd0d222db146af8a9b1a40213d44508dc2d097dad705c8e7083"
+    },
+    {
+      "path": "development/levels/rebuild/captures/blackpine-dispatch-batch/blackpine-opengl-repair-shed-generator.png",
+      "url": "development/levels/rebuild/captures/blackpine-dispatch-batch/blackpine-opengl-repair-shed-generator.png",
+      "title": "Blackpine opengl repair shed generator",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 880665,
+      "sha256": "8734a77707f97aa6d49169a18de2c2e4e82c426cb596ca0f259db7caa0a9eb9f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/blackpine-dispatch-batch/blackpine-repair-shed-generator.png",
+      "url": "development/levels/rebuild/captures/blackpine-dispatch-batch/blackpine-repair-shed-generator.png",
+      "title": "Blackpine repair shed generator",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 993983,
+      "sha256": "0d25c9103bf0688879c78146074a6c87c39eb356918295933efebf5a1b2964b0"
     },
     {
       "path": "development/levels/rebuild/captures/canyon-marsh-batch/wld-03-before.png",
