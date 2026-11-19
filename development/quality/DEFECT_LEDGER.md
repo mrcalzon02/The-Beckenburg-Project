@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-388 — Handheld camera rear LCD displays front atlas and overlays its controls
+
+**Status:** Source implementation committed after scoped face audit; exact-source CI and installed Windows visual inspection remain open · **Affected:** First-person photo and video camera models, all three equipment tiers; physical rear LCDs
+
+The held camera shows a mass of front-of-camera textures on the back and a dark feed rectangle painted over rear buttons instead of staying inside the display.
+
+Cause / uncertainty: HeldInstrumentMesh paints a bounding-box rectangle over source triangles rather than using the LCD faces. The photo GLBs give the real LCD faces a full front atlas, while higher-tier video LCD faces are physically recessed behind the housing.
+
+Fix / next action: Sample the live lens only on authored LCD faces, replace photo LCD's atlas with a matte screen material, keep entry-level video bezel, relocate higher-tier fold-out monitor quads to the rear and add six-variant screen-pixel/occlusion regression. Accept only after physical Windows captured views and CI.
+
+Evidence and verification: User rear-camera screenshot 2026-11-18; six checked-in camera GLBs and first-person model rasterizer; CameraViewfinderTest geometry and image check
+
+Older-map obligation: No claims about individual map cameras or world-site render acceptance; the shared item models require review in each old location.
+
 ### DEV-387 — Van's wall information monitors display chunky, unreadable lettering
 
 **Status:** Source correction published at 96c4b535; Windows GPU Java 17 compile passed; physical readability acceptance still open · **Affected:** Five physical VAN LCD panels (camera, activity, sound/motion, sanity, contract) and the live tactical map; solo and multiplayer viewers

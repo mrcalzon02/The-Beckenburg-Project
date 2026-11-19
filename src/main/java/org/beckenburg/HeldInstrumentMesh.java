@@ -66,6 +66,39 @@ public final class HeldInstrumentMesh {
     private static boolean cameraModel(String name){
         return name.contains("photo_camera")||name.contains("video_camera");
     }
+    /** The LCD is authored geometry, not a rectangle sized from the whole camera.
+     * Photo LCDs have a two-triangle UV island; upgraded camcorders have a
+     * monitor material; the basic camcorder has a rear rubber inset. */
+    static int cameraScreenSurface(String name,GlbProps.Triangle tri,double rearZ){
+        if(name.contains("photo_camera")){
+            if(Math.abs(tri.a().z()-rearZ)>.0003||Math.abs(tri.b().z()-rearZ)>.0003
+                    ||Math.abs(tri.c().z()-rearZ)>.0003)return 0;
+            double minU=Math.min(tri.a().u(),Math.min(tri.b().u(),tri.c().u()));
+            double maxU=Math.max(tri.a().u(),Math.max(tri.b().u(),tri.c().u()));
+            double minV=Math.min(tri.a().v(),Math.min(tri.b().v(),tri.c().v()));
+            double maxV=Math.max(tri.a().v(),Math.max(tri.b().v(),tri.c().v()));
+            return minU<.01&&maxU>.99&&minV>.10&&minV<.15&&maxV>.85&&maxV<.90?1:0;
+        }
+        if(!name.contains("video_camera"))return 0;
+        String material=GlbProps.materialName(tri.material());
+        if("Display camcorder monitor".equals(material))return 2;
+        if(!name.equals("blender_video_camera_1")||!material.equals("Rebuild rubber grip")
+                ||Math.abs(tri.a().z()-rearZ)>.0003||Math.abs(tri.b().z()-rearZ)>.0003
+                ||Math.abs(tri.c().z()-rearZ)>.0003)return 0;
+        double minU=Math.min(tri.a().u(),Math.min(tri.b().u(),tri.c().u()));
+        double maxU=Math.max(tri.a().u(),Math.max(tri.b().u(),tri.c().u()));
+        double minV=Math.min(tri.a().v(),Math.min(tri.b().v(),tri.c().v()));
+        double maxV=Math.max(tri.a().v(),Math.max(tri.b().v(),tri.c().v()));
+        return maxU-minU>.90&&maxV-minV>.80?3:0;
+    }
+    private static int cameraPixel(BufferedImage view,double u,double v){
+        if(view==null)return 0x09191b;
+        int x=Math.max(0,Math.min(view.getWidth()-1,
+            (int)(Math.max(0,Math.min(1,u))*view.getWidth())));
+        int y=Math.max(0,Math.min(view.getHeight()-1,
+            (int)(Math.max(0,Math.min(1,v))*view.getHeight())));
+        return view.getRGB(x,y)&0xffffff;
+    }
     private static boolean digital(int material){String n=GlbProps.materialName(material).toLowerCase(Locale.ROOT);return n.equals("pixel screen")||n.equals("screen")||n.startsWith("display ")||n.contains("temperature lcd");}
     private static BufferedImage display(String name,String status){
         var out=new BufferedImage(144,112,BufferedImage.TYPE_INT_RGB);var g=out.createGraphics();
@@ -90,23 +123,12 @@ public final class HeldInstrumentMesh {
         double[] low={Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY,Double.POSITIVE_INFINITY},high={-Double.MAX_VALUE,-Double.MAX_VALUE,-Double.MAX_VALUE};
         for(var t:triangles)for(var source:List.of(t.a(),t.b(),t.c())){var p=pose(name,source);double[] v={p.x(),p.y(),p.z()};for(int n=0;n<3;n++){low[n]=Math.min(low[n],v[n]);high[n]=Math.max(high[n],v[n]);}}
         double span=Math.max(.04,Math.max(high[0]-low[0],Math.max(high[1]-low[1],high[2]-low[2]))),scale=192/span,cx=(low[0]+high[0])/2,cy=(low[1]+high[1])/2,cz=(low[2]+high[2])/2;
-        // Authored camera rear faces are on source -Z (posed toward the operator).
-        // The camera LCD occupies the central rear panel, not the entire textured atlas.
-        // Tier housings keep their original geometry and local dimensions.
+        // Screen selection follows the exact source triangle geometry and UVs.
         double cameraLowZ=Double.POSITIVE_INFINITY;
-        for(var tri:triangles)for(var p:List.of(tri.a(),tri.b(),tri.c()))cameraLowZ=Math.min(cameraLowZ,p.z());
-        double backTolerance=name.contains("video_camera")?.004:Math.max(.003,(high[2]-low[2])*.055);
-        double screenLeft=-cx-(high[0]-low[0])*.32,screenRight=-cx+(high[0]-low[0])*.32;
-        double screenBottom=cy-(high[1]-low[1])*.30,screenTop=cy+(high[1]-low[1])*.30;
-        // The video chassis is much longer than its flat rear LCD: keep the
-        // live feed on the back surface, not across its entire camcorder body.
-        if(name.contains("video_camera")){
-            screenLeft=-cx-(high[0]-low[0])*.19;
-            screenRight=-cx+(high[0]-low[0])*.19;
-            screenBottom=cy-(high[1]-low[1])*.23;
-            screenTop=cy+(high[1]-low[1])*.23;
-        }
+        if(cameraModel(name))for(var tri:triangles)for(var p:List.of(tri.a(),tri.b(),tri.c()))
+            cameraLowZ=Math.min(cameraLowZ,p.z());
         for(var t:triangles){
+            int screenSurface=cameraScreenSurface(name,t,cameraLowZ);
             var original=new GlbProps.Vertex[]{t.a(),t.b(),t.c()};double[] sx=new double[3],sy=new double[3],depth=new double[3];
             for(int i=0;i<3;i++){var p=pose(name,original[i]);double x=p.x()-cx,y=p.y()-cy,z=p.z()-cz;
                 sx[i]=W*.5+(x*.94-z*.30)*scale;sy[i]=H*.51-(y*.98-z*.18+x*.04)*scale;depth[i]=z*.92+y*.18+x*.30;
@@ -147,24 +169,18 @@ public final class HeldInstrumentMesh {
                     double x=a*t.a().x()+b*t.b().x()+c*t.c().x(),y=a*t.a().y()+b*t.b().y()+c*t.c().y(),zz=a*t.a().z()+b*t.b().z()+c*t.c().z();
                     if(Math.abs(x)<=half&&y>=bottom&&y<=top&&zz>=(.035+.006*level)/2+.004){int lx=(int)((x+half)/(2*half)*143),ly=(int)((top-y)/(top-bottom)*111);rgb=lcd.getRGB(Math.max(0,Math.min(143,lx)),Math.max(0,Math.min(111,ly)));}
                 }
-                // Replace the *rasterized camera rear plane* with the actual
-                // live lens frame. Pixel selection uses source-space geometry
-                // and the existing z-buffer: other mesh surfaces remain in front.
-                if(cameraModel(name)&&originalZ<=cameraLowZ+backTolerance){
-                    double faceX=-originalX; // camera is turned toward the player
-                    if(faceX>=screenLeft&&faceX<=screenRight
-                            &&originalY>=screenBottom&&originalY<=screenTop){
-                        if(cameraView==null)rgb=0x09191b; // unpowered LCD, never atlas garbage
-                        else{
-                            double lensU=(faceX-screenLeft)/(screenRight-screenLeft);
-                            double lensV=(screenTop-originalY)/(screenTop-screenBottom);
-                            int ix=Math.min(cameraView.getWidth()-1,Math.max(0,
-                                (int)(lensU*cameraView.getWidth())));
-                            int iy=Math.min(cameraView.getHeight()-1,Math.max(0,
-                                (int)(lensV*cameraView.getHeight())));
-                            rgb=cameraView.getRGB(ix,iy)&0xffffff;
-                        }
-                    }
+                // Actual LCDs get live pixels; the housing and buttons keep
+                // their original glTF materials and the same depth test.
+                if(screenSurface==1){
+                    // Rear photo LCD source UV island, V .1229..8771.
+                    rgb=cameraPixel(cameraView,u,(v-.1229)/.7542);
+                }else if(screenSurface==2){
+                    // The flipped-out monitor mirrors its U axis in the held pose.
+                    rgb=cameraPixel(cameraView,(.975-u)/.95,(v-.025)/.95);
+                }else if(screenSurface==3){
+                    // Basic camcorder LCD sits inside the rear rubber bezel.
+                    if(originalX>=-.017&&originalX<=.017&&originalY>=.016&&originalY<=.042)
+                        rgb=cameraPixel(cameraView,(.017-originalX)/.034,(.042-originalY)/.026);
                 }
                 pixels[index]=0xff000000|rgb;zBuffer[index]=z;
             }

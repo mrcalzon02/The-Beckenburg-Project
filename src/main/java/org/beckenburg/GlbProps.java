@@ -580,6 +580,22 @@ public final class GlbProps {
         var result=new ArrayList<Triangle>();for(var face:source.faces()){var primitive=face.primitive();int i=face.triangle()*3;
             var a=primitive.world().get(primitive.indices().get(i));var b=primitive.world().get(primitive.indices().get(i+1));var c=primitive.world().get(primitive.indices().get(i+2));result.add(new Triangle(runtimeCorner(a),runtimeCorner(b),runtimeCorner(c),materialIds[primitive.material()]));
         }
+        // The photo GLBs reuse the front-of-camera atlas on their rear LCD
+        // polygons. Give only those two real faces an unpowered glass surface,
+        // preserving the casing, buttons, UV layout and all other materials.
+        if(resourceName!=null&&resourceName.contains("photo_camera")){
+            double rear=Double.POSITIVE_INFINITY;
+            for(var tri:result)for(var p:List.of(tri.a(),tri.b(),tri.c()))
+                rear=Math.min(rear,p.z());
+            var dark=new BufferedImage(2,2,BufferedImage.TYPE_INT_RGB);
+            for(int yy=0;yy<2;yy++)for(int xx=0;xx<2;xx++)dark.setRGB(xx,yy,0x09191b);
+            int screen=surfaceMaterial("Photo camera rear LCD",dark);
+            for(int i=0;i<result.size();i++){
+                var face=result.get(i);
+                if(HeldInstrumentMesh.cameraScreenSurface(resourceName,face,rear)==1)
+                    result.set(i,new Triangle(face.a(),face.b(),face.c(),screen));
+            }
+        }
         return new Model(List.copyOf(result));
     }
     private static Vertex runtimeCorner(org.beckenburg.editor.EditorMeshPipeline.Vertex v){var n=v.normal();return new Vertex(v.x(),v.y(),v.z(),v.u(),v.v(),n==null?0:n.x(),n==null?0:n.y(),n==null?0:n.z());}
