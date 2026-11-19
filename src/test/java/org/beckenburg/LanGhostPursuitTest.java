@@ -3,6 +3,33 @@ package org.beckenburg;
 /** AI choices only use event-based acoustic memory and the same legal commands as the human ghost. */
 public final class LanGhostPursuitTest {
     static void ok(boolean v,String m){if(!v)throw new AssertionError(m);}
+    /** Choose an actually connected and audible authored room, not an old
+     * hard-coded coordinate whose new doors may physically block the sound. */
+    static int audibleRitualTarget(HouseMap map,int from){
+        int[] hops=new int[HouseMap.EXTRACTION_ROOM];
+        java.util.Arrays.fill(hops,-1);
+        var queue=new java.util.ArrayDeque<Integer>();
+        queue.add(from);hops[from]=0;
+        while(!queue.isEmpty()){
+            int current=queue.removeFirst();
+            for(int next:map.ghostExits(current)){
+                if(next<0||next>=HouseMap.EXTRACTION_ROOM||hops[next]>=0)continue;
+                hops[next]=hops[current]+1;
+                queue.addLast(next);
+            }
+        }
+        int budget=GhostSoundProfile.acousticBudget(LanGhostPursuit.Sound.RITUAL,
+            GhostSoundProfile.forSound(LanGhostPursuit.Sound.RITUAL));
+        int best=-1,depth=-1;
+        for(int room=0;room<HouseMap.EXTRACTION_ROOM;room++){
+            if(room==from||hops[room]<1||LanAcoustics.cost(map,from,room)>budget)continue;
+            var origin=map.spawn(room);
+            double floor=map.groundHeight(origin.x(),origin.z(),room);
+            if(map.roomAt(origin.x(),floor,origin.z())!=room)continue;
+            if(hops[room]>depth){depth=hops[room];best=room;}
+        }
+        return best;
+    }
     public static void main(String[] args) {
         HouseMap map=new HouseMap();
         LanGhostPursuit brain=new LanGhostPursuit(map,42);
@@ -76,9 +103,29 @@ public final class LanGhostPursuitTest {
                 map.ghostExits(5),java.util.List.of(GhostDomain.Action.DRIFT, GhostDomain.Action.WHISPER)),false);
         ok(missing==null,"no sound and no patrol tick does not infer hidden hunters");
         // Loud ritual cues travel farther, and route selection uses graph edges only.
+        int ritualRoom=audibleRitualTarget(map,4);
+        ok(ritualRoom>=0,"authored House must have at least one legally reachable, audible ritual source");
+        int cost=LanAcoustics.cost(map,4,ritualRoom);
+        ok(cost<=GhostSoundProfile.acousticBudget(LanGhostPursuit.Sound.RITUAL,
+                GhostSoundProfile.forSound(LanGhostPursuit.Sound.RITUAL)),
+                "selected acoustic path must fit the original ritual sound budget");
         LanGhostPursuit ritual=new LanGhostPursuit(map,123);
-        ritual.heard(4,10,map.centerX(10),map.centerZ(10),LanGhostPursuit.Sound.RITUAL,20);
-        ok(ritual.memory(20)!=null,"nearby ritual attracts ghost through multiple rooms");
+        ritual.heard(4,ritualRoom,map.centerX(ritualRoom),map.centerZ(ritualRoom),
+            LanGhostPursuit.Sound.RITUAL,20);
+        ok(ritual.memory(20)!=null&&ritual.memory(20).room()==ritualRoom,
+                "genuinely audible ritual drives limited legal-room pursuit (room="+ritualRoom+
+                " loss="+cost+")");
+        // The old fixed distant room is not a positive control if its real
+        // door/architecture loss exceeds the ritual's eight-unit budget.
+        if(LanAcoustics.cost(map,4,10)>GhostSoundProfile.acousticBudget(
+                LanGhostPursuit.Sound.RITUAL,
+                GhostSoundProfile.forSound(LanGhostPursuit.Sound.RITUAL))){
+            var distant=new LanGhostPursuit(map,123);
+            distant.heard(4,10,map.centerX(10),map.centerZ(10),
+                LanGhostPursuit.Sound.RITUAL,20);
+            ok(distant.memory(20)==null,
+                "strong rituals must not leak through acoustically impossible routes");
+        }
         GhostDomain.Command first=ritual.decide(new GhostDomain.Observation(20,4,4,100,false,false,
                 map.ghostExits(4),java.util.List.of(GhostDomain.Action.DRIFT)),false);
         ok(first!=null&&map.ghostExits(4).contains(first.targetRoom()),"path uses only legal exits");
