@@ -2398,6 +2398,10 @@ public final class SceneRenderer {
         FixtureLighting.FrameStats lighting,long depthRejectedFaces) {}
     private volatile FrameDiagnostics lastFrameDiagnostics;
     public FrameDiagnostics frameDiagnostics(){return lastFrameDiagnostics;}
+    // Exact GPU framebuffer selected for this composited frame, not the
+    // submitted or merely latest driver frame. Zero means no GL result.
+    private long consumedGpuFrameId;
+    public long consumedGpuFrameId(){return consumedGpuFrameId;}
     private long depthRejectedFaces;
     private int lastGpuFrustumFaces;
     private long lastGpuSubmittedTriangles;
@@ -2449,9 +2453,9 @@ public final class SceneRenderer {
                 lastSubmittedGpuFrame,timeoutNs,cancelled);
     }
     private boolean drawGpuFaces(List<Face> faces,HouseMap map){
-        if(photographicSoftwareRaster)return false;
+        if(photographicSoftwareRaster){consumedGpuFrameId=0;return false;}
         GpuWorldRenderer backend=GpuWorldRenderer.active();
-        if(backend==null)return false;
+        if(backend==null){consumedGpuFrameId=0;return false;}
         if(!backend.ready())throw new IllegalStateException(
             "OpenGL renderer stopped before the game frame");
         var batches=new java.util.LinkedHashMap<Integer,GpuFloats>();
@@ -2515,6 +2519,7 @@ public final class SceneRenderer {
         else if(GpuWorldRenderer.belongsTo(lastUsableGpuFrame,gpuSceneId,renderWidth,renderHeight))
             available=lastUsableGpuFrame;
         lastGpuReadbackAvailable=GpuWorldRenderer.belongsTo(available,gpuSceneId,renderWidth,renderHeight);
+        consumedGpuFrameId=lastGpuReadbackAvailable?available.frameId():0;
         lastGpuReadbackFresh=lastGpuReadbackAvailable&&available.frameId()==submitted;
         presentedGpuFrame=gpuCompositeForReadback(gpuCompositeFrames,available,
             gpuSceneId,renderWidth,renderHeight);
@@ -3253,6 +3258,7 @@ public final class SceneRenderer {
         }
         residentSceneOwner=owner;residentSceneRevision=revision;
         gpuSceneId=GpuWorldRenderer.nextId();pinnedGpuFrame=null;
+        consumedGpuFrameId=0;
         lastUsableGpuFrame=null;presentedGpuFrame=null;gpuCompositeFrames.clear();
     }
     private void releaseWorldChunk(ResidentWorldChunk chunk){

@@ -19,6 +19,7 @@ import java.util.Locale;
 public final class DebugPerformanceHud {
     private static volatile boolean enabled=Boolean.getBoolean("beckenburg.debug.overlay");
     private final double[] history=new double[120];
+    private final PresentedFrameCadence presentedCadence=new PresentedFrameCadence();
     private int count,next;
     private long lastFrameAt,lastLog;
     private long loopNs;
@@ -49,6 +50,7 @@ public final class DebugPerformanceHud {
         lastFrameAt=now;
         loopNs=Math.max(0,entireFrameNs);
         metrics=scene.frameDiagnostics();
+        presentedCadence.record(now,metrics!=null&&metrics.gpu(),scene.consumedGpuFrameId());
         view=viewport;
         actors=actorCount;
         x=scene.x;y=scene.eyeHeight;z=scene.z;yaw=scene.yaw;
@@ -86,13 +88,14 @@ public final class DebugPerformanceHud {
         return Math.min(maxHeight,(int)Math.round(ms*maxHeight/100.0));
     }
     public void draw(Graphics2D g,int canvasWidth,int canvasHeight){
-        if(!enabled||count==0||canvasWidth<340||canvasHeight<350)return;
-        int w=Math.min(476,canvasWidth-16),h=331,left=canvasWidth-w-8,top=8;
+        if(!enabled||count==0||canvasWidth<340||canvasHeight<372)return;
+        int w=Math.min(476,canvasWidth-16),h=354,left=canvasWidth-w-8,top=8;
         double[] sorted=Arrays.copyOf(history,count);Arrays.sort(sorted);
         double p50=sorted[(count-1)/2],p95=sorted[(int)Math.ceil(count*.95)-1],
             p99=sorted[(int)Math.ceil(count*.99)-1];
         double last=history[(next+history.length-1)%history.length];
         var m=metrics;
+        var presented=presentedCadence.snapshot();
         Graphics2D out=(Graphics2D)g.create();
         try{
             out.setColor(new Color(4,9,16,234));out.fillRoundRect(left,top,w,h,10,10);
@@ -101,8 +104,13 @@ public final class DebugPerformanceHud {
             int yLine=top+16;
             text(out,left+10,yLine,"ENGINE DIAGNOSTICS   CTRL+SHIFT+F7    "+view,0x92ecce);yLine+=17;
             text(out,left+10,yLine,String.format(Locale.ROOT,
-                "FPS %.1f    FRAME %.1fms    P50 %.1f  P95 %.1f  P99 %.1f",
+                "LOOP FPS %.1f  FRAME %.1fms  P50 %.1f P95 %.1f P99 %.1f",
                 last>0?1000/last:0,last,p50,p95,p99),last>100?0xff8888:0xf0e0c6);yLine+=17;
+            text(out,left+10,yLine,String.format(Locale.ROOT,
+                "%s FPS %.1f P95 %.1fms DUP %d  >33/%d >50/%d >100/%d",
+                m!=null&&m.gpu()?"GPU NEW":"CPU NEW",presented.fps(),
+                presented.p95(),presented.duplicates(),presented.over33(),
+                presented.over50(),presented.over100()),0x9ed8ef);yLine+=17;
             text(out,left+10,yLine,String.format(Locale.ROOT,
                 "EYE %.1f,%.1f,%.1f    YAW %.0fdeg    ROOM %d  NPC/PEERS %d",
                 x,y,z,Math.toDegrees(yaw),room,actors),0xe1e8e2);yLine+=17;
@@ -145,7 +153,7 @@ public final class DebugPerformanceHud {
                 "HEAP %dMB / %dMB  JVM MAX %dMB",
                 (rt.totalMemory()-rt.freeMemory())>>20,
                 rt.totalMemory()>>20,rt.maxMemory()>>20),0xbbcdd2);
-            int graphTop=top+236,graphHeight=71;
+            int graphTop=top+253,graphHeight=71;
             out.setColor(new Color(28,44,53));out.fillRect(left+10,graphTop,w-20,graphHeight);
             out.setColor(new Color(68,98,110));
             for(int t:new int[]{16,33,50,100}){
@@ -161,7 +169,7 @@ public final class DebugPerformanceHud {
                     ms>100?94:ms>33?196:225,ms>100?106:ms>33?97:172));
                 out.fillRect(bx,graphTop+graphHeight-bh,bw,bh);
             }
-            text(out,left+12,top+321,"120 FRAME HISTORY  /  16 33 50 100ms GRID",0xb9cbd0);
+            text(out,left+12,top+344,"120 LOOP FRAMES / 16 33 50 100ms GRID",0xb9cbd0);
         }finally{out.dispose();}
     }
     private static void text(Graphics2D g,int x,int y,String s,int rgb){
