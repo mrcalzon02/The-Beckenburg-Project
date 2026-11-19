@@ -121,6 +121,14 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  private FloatBuffer depthFloats;
  private final Map<Integer,Texture> textures=new HashMap<>();
  private final Map<Integer,Long> textureRevisions=new HashMap<>();
+ // Retain driver-side texture-unit 0 state only while consecutive batches
+ // use the same immutable non-GLB material. All imported/dynamic displays
+ // still take the original bind/update path; an opt-out supports driver A/B.
+ private final boolean staticBindReuse=!Boolean.getBoolean("beckenburg.gpu.staticBindReuse.disabled");
+ public record TextureBindStats(long frameId,int binds,int avoidedBinds){}
+ private volatile TextureBindStats textureBindStats;
+ public TextureBindStats textureBindStats(){return textureBindStats;}
+ private int frameTextureBinds,frameAvoidedBinds;
  // Conservative A/B only: real runtime mip chains for immutable architectural
  // diffuse textures, never readouts, decals, imported glTF alpha or live CRTs.
  private final boolean staticWorldMipmaps=Boolean.getBoolean(RuntimeTextureMipPolicy.OPT_IN_PROPERTY);
@@ -297,6 +305,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   long frameUploadBytes=0,frameReusedBytes=0;
   frameTextureUploads=0;frameTextureBytes=0;
   frameMipChains=0;frameMipExtraBytesEstimate=0;
+  frameTextureBinds=0;frameAvoidedBinds=0;
   int frameUploadedBatches=0,frameReusedBatches=0;
   resizeTarget(frame.width(),frame.height());
   target.begin();
@@ -326,7 +335,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   shader.setUniformf("u_lampIntensity",frame.lampIntensity());
   shader.setUniformf("u_lampReach",frame.lampReach());
   shader.setUniformf("u_lampWidth",frame.lampWidth());
-  int lastDisplayMode=-1;
+  int lastDisplayMode=-1,lastBoundMaterial=Integer.MIN_VALUE;
   for(Surface surface:frame.surfaces()){
    int vertexCount=surface.vertexCount();
    if(vertexCount==0)continue;
@@ -374,7 +383,16 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
      frameUploadBytes+=bytes;frameUploadedBatches++;
     }
    }
-   texture(surface.material()).bind(0);
+   int material=surface.material();
+   if(staticBindReuse&&material<GlbProps.TEXTURE_BASE&&material==lastBoundMaterial){
+    // Vertex buffer uploads and shader uniforms do not change texture unit 0.
+    // Avoid a redundant driver bind; never skip imported or live materials.
+    frameAvoidedBinds++;
+   }else{
+    texture(material).bind(0);
+    frameTextureBinds++;
+   }
+   lastBoundMaterial=material;
    draw.render(shader,GL20.GL_TRIANGLES,0,vertexCount);
   }
   // glReadPixels itself synchronizes the requested framebuffer transfers.
@@ -400,6 +418,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
       frameUploadedBatches,frameReusedBatches,
       frameUploadBytes,frameReusedBytes);
   textureStats=new TextureStats(frame.frameId(),frameTextureUploads,frameTextureBytes);
+  textureBindStats=new TextureBindStats(frame.frameId(),frameTextureBinds,frameAvoidedBinds);
   mipStats=new MipStats(frame.frameId(),frameMipChains,frameMipExtraBytesEstimate);
   long finished=System.nanoTime();
   frameTiming=new FrameTiming(frame.sceneId(),frame.frameId(),
@@ -419,6 +438,8 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
       +" vbo_reused_bytes="+frameReusedBytes
       +" textures_uploaded="+frameTextureUploads
       +" texture_uploaded_bytes="+frameTextureBytes
+      +" texture_binds="+frameTextureBinds
+      +" texture_bind_reuse="+frameAvoidedBinds
       +" static_world_mip_opt_in="+staticWorldMipmaps
       +" mip_chain_builds="+frameMipChains
       +" mip_extra_rgba_bytes_estimate="+frameMipExtraBytesEstimate
