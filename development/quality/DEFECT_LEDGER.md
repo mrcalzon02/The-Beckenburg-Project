@@ -8606,15 +8606,15 @@ Evidence and verification: development/levels/rebuild/seacliff-power-pass/checkp
 
 Older-map obligation: Audit source-to-board takeoffs and interstorey bearings as well as circuit state. Recheck other site loads and host ghost authority separately.
 
-### DEV-609 — Battery service route marked the last tread as the lower slab
+### DEV-609 — Battery stair guides assigned flat datums at five riser planes
 
-**Status:** GUIDANCE_DATUM_CORRECTED_AND_MOVEMENT_REPLAYED · **Affected:** WLD-17 route-12 plant stair
+**Status:** GUIDANCE_DATUM_CORRECTED_AND_MOVEMENT_REPLAYED · **Affected:** WLD-17 routes 02, 03, 10, 11 and 12
 
 Shared movement landed at Y 0.173913 m at the former X 56.0 m mark, where the guide claimed Y 0.
 
 Cause / uncertainty: The guide switched elevations at the last riser plane.
 
-Fix / next action: Move the lower-floor inspection point to the measured slab at X 56.32 m. Verify both directions in both postures using retained stair geometry.
+Fix / next action: Measure receiving slabs and first treads at all five seams. The lower service-floor inspection point is now X 56.32 m. All 17 guides replay in both directions and both postures on retained geometry.
 
 Evidence and verification: development/levels/rebuild/seacliff-power-pass/checkpoint.json
 

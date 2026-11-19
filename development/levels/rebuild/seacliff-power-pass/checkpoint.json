@@ -9,13 +9,13 @@
   "scene_files": [
     {
       "path": "development/levels/rebuild/seacliff-power-pass/wld-17/authored-layout.json",
-      "bytes": 54760,
-      "sha256": "89f326b4a4784a2d66651850d5686a27bfea21b64f48453ae2d2f2e74e0f3ced"
+      "bytes": 55053,
+      "sha256": "98df1d4664c7406344a6c98e13ca9e60e4d46dd569779d6b2b9b7212ba0d69cc"
     },
     {
       "path": "development/levels/rebuild/seacliff-power-pass/wld-17/construction.json",
       "bytes": 29009,
-      "sha256": "ef22864161325c496e517d348fa8377988a63a681d3e4dd5e4b8b59282ec93d2"
+      "sha256": "0064e5a4bbee1914d05c655f3db64fec6fdb5cec2615f62dea0c421416f2face"
     },
     {
       "path": "development/levels/rebuild/seacliff-power-pass/wld-17/power.json",
@@ -45,24 +45,29 @@
   },
   "verification": [
     {
+      "path": "development/levels/rebuild/seacliff-power-pass/verification/guide-receiving-before.txt",
+      "bytes": 1520,
+      "sha256": "63f621c9b7a92d206e2fff399246de87e908e101a483b62f046ba6e1af442b18"
+    },
+    {
       "path": "development/levels/rebuild/seacliff-power-pass/verification/native-readback.json",
       "bytes": 406,
       "sha256": "be258c4a1fff04701f01f4486e108651d8bb80219b665dd4a0f8415eb782e5e3"
     },
     {
       "path": "development/levels/rebuild/seacliff-power-pass/verification/opengl-log.txt",
-      "bytes": 586,
-      "sha256": "bf894d4e207a13a65305f714a02d0058486dde5bf199dad4e08c2d3cecec8380"
+      "bytes": 748,
+      "sha256": "c0899ee9b68b2b10c6177c37ff7a838de66613eabd3d598e545eaac4a33178d2"
     },
     {
       "path": "development/levels/rebuild/seacliff-power-pass/verification/opengl-result.tsv",
-      "bytes": 1118,
-      "sha256": "2f3054cb917b15648ec898c9498d6affe0ea235ed429d9f1830dbb5005e34786"
+      "bytes": 1167,
+      "sha256": "f3e22583363d96241a745019cbc0b7f8ac819c66bf617e2d9424a24d8c5ab1c3"
     },
     {
       "path": "development/levels/rebuild/seacliff-power-pass/verification/runtime.tsv",
-      "bytes": 7922,
-      "sha256": "9356002a0c7abe87c8e3d92ca7016f83f9c0dbd3103b4d41be3737e5858a329c"
+      "bytes": 9392,
+      "sha256": "9901ab0b91a5bebef2a2e43749ca70ef05895e764dfb65ccc415cf35c22076de"
     },
     {
       "path": "development/levels/rebuild/seacliff-power-pass/verification/software-log.txt",
@@ -71,8 +76,8 @@
     },
     {
       "path": "development/levels/rebuild/seacliff-power-pass/verification/software-result.tsv",
-      "bytes": 1118,
-      "sha256": "6ce5fb6ff544455219ed9bfbb5c3cc5c85a98089966215e815b459d6712d6f39"
+      "bytes": 1167,
+      "sha256": "5eb156b6024be74348fa38a95336b05553a16863dc07a5d1d16e0cdd2e055871"
     }
   ],
   "captures": [
@@ -122,5 +127,11 @@
   "acceptance_remaining": [
     "Complete lower and upper mission ownership, physical connections, evidence and hiding.",
     "Package normal solo and LAN selection, host ghost disturbance trip and reconnect, remaining site loads, and full case."
-  ]
+  ],
+  "physical_guide_checks": {
+    "guides": 17,
+    "directions": 2,
+    "postures": 2,
+    "total": 68
+  }
 }

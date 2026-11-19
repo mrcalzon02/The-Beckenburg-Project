@@ -6758,12 +6758,12 @@
     },
     {
       "id": "DEV-609",
-      "title": "Battery service route marked the last tread as the lower slab",
+      "title": "Battery stair guides assigned flat datums at five riser planes",
       "status": "GUIDANCE_DATUM_CORRECTED_AND_MOVEMENT_REPLAYED",
-      "affected": "WLD-17 route-12 plant stair",
+      "affected": "WLD-17 routes 02, 03, 10, 11 and 12",
       "symptom": "Shared movement landed at Y 0.173913 m at the former X 56.0 m mark, where the guide claimed Y 0.",
       "cause": "The guide switched elevations at the last riser plane.",
-      "action": "Move the lower-floor inspection point to the measured slab at X 56.32 m. Verify both directions in both postures using retained stair geometry.",
+      "action": "Measure receiving slabs and first treads at all five seams. The lower service-floor inspection point is now X 56.32 m. All 17 guides replay in both directions and both postures on retained geometry.",
       "older_maps": "Measure either side of the actual end riser when publishing a level guide.",
       "evidence": "development/levels/rebuild/seacliff-power-pass/checkpoint.json"
     }

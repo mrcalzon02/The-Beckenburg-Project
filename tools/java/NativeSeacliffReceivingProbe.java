@@ -199,6 +199,7 @@ public final class NativeSeacliffReceivingProbe {
         var stairs=new HashSet<String>();
         var sockets=new ArrayList<Socket>();
         var routes=new LinkedHashMap<String,List<Vec>>();
+        var guides=new LinkedHashMap<String,List<Vec>>();
         for(var row:rows.subList(3,rows.size()))switch(row[0]){
             case "SPACE" -> {
                 var space=new NativeInvestigationScene.Space(row[1],Integer.parseInt(row[2]),d(row,3),d(row,4),d(row,5),
@@ -214,6 +215,7 @@ public final class NativeSeacliffReceivingProbe {
             case "SOCKET" -> sockets.add(new Socket(row[1],row[2],Integer.parseInt(row[3]),
                 d(row,4),d(row,5),d(row,6),d(row,7),row[8]));
             case "POINT" -> routes.computeIfAbsent(row[1],key->new ArrayList<>()).add(point(row,2));
+            case "LINK" -> guides.computeIfAbsent(row[1],key->new ArrayList<>()).add(point(row,2));
             default -> throw new IllegalArgumentException(row[0]);
         };
         NativeInvestigationScene scene;
@@ -291,6 +293,14 @@ public final class NativeSeacliffReceivingProbe {
             var destination=inbound.get(inbound.size()-1);
             check(host.roomAt(destination.x(),destination.y(),destination.z())==2,"Upper director room ownership");
         }
+        for(var entry:guides.entrySet()){
+            var reverse=new ArrayList<>(entry.getValue());
+            Collections.reverse(reverse);
+            for(double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+                cross(host,entry.getValue(),height,entry.getKey()+" guide forward");
+                cross(host,reverse,height,entry.getKey()+" guide return");
+            }
+        }
         var interior=new Vec(30.14,4,22.24);
         capture(renderer,host,directory.resolve("battery-director-stair-runtime.png"),interior,1.57,.22);
         van.setCargoDoorClosed(true);
@@ -317,6 +327,7 @@ public final class NativeSeacliffReceivingProbe {
             "acoustic_open_cost\t"+open,
             "acoustic_closed_cost\t"+closed,
             "changed_renderer_pixels\t"+differences));
+        if(!guides.isEmpty())report.add("surveyed_guides_both_directions_and_postures\t"+guides.size());
         if(host.level().socket("generator",9)!=null)report.addAll(power(host,renderer,directory));
         Files.write(Path.of(args[2]),report);
     }
