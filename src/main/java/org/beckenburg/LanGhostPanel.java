@@ -20,6 +20,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     private final Set<Integer> keys=new HashSet<>();
     private final javax.swing.Timer timer;
     private final javax.swing.Timer renderTimer;
+    private final LanVisualMotion visualMotion=new LanVisualMotion();
+    private long lastVisualFrame=System.nanoTime();
+    private LanVisualMotion.Pose lastRenderedPose;
     private final LanAudio audio=new LanAudio();
     private final LevelSoundscape buildingAudio=new LevelSoundscape(map);
     private final AtmosphereAudio atmosphere=new AtmosphereAudio(AtmosphereAudio.Scene.FIELD);
@@ -82,6 +85,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 listening=false;lastListeningTick=-1;hearingFade.reset();
                 audio.setHearingGain(0);
                 safeAreas=new SafeAreaBarrier.Receiver();
+                visualMotion.reset();lastRenderedPose=null;lastVisualFrame=System.nanoTime();
             }else if(p.get(0).equals("SAFEBEGIN")||p.get(0).equals("SAFEAREA")||p.get(0).equals("SAFEEND")){
                 safeAreas.accept(map,p);
             }else if(p.size()==5&&p.get(0).equals("DEVICE_SOUND")){
@@ -106,7 +110,10 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 LanProtocol.integer(p.get(5),0,359);
                 tick=LanProtocol.integer(p.get(6),0,99999999);
                 if(map.roomAt(x,y,z)!=next)throw new IllegalArgumentException("inconsistent spectral coordinates");
-                room=next;camera.x=x;camera.z=z;camera.eyeHeight=y+1.62;
+                if(next!=room)visualMotion.reset(); // DRIFT/teleport is an immediate room transition
+                room=next;
+                visualMotion.accept(new LanVisualMotion.Pose(x,y,z),System.nanoTime());
+                camera.x=x;camera.z=z;camera.eyeHeight=y+1.62;
                 if(feedback.equals("Awaiting private spectral pose"))feedback="Host connected";
             }else if(p.size()==3&&p.get(0).equals("GLISTEN")){
                 boolean hostListening=LanProtocol.integer(p.get(1),0,1)==1;
@@ -274,10 +281,38 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             return;
         }
         long start = System.nanoTime();
+        double dt=Math.max(0,Math.min(.05,(start-lastVisualFrame)/1e9));
+        lastVisualFrame=start;
+        int forward=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
+        int strafe=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
+        double dx=Math.sin(camera.yaw)*forward-Math.cos(camera.yaw)*strafe;
+        double dz=Math.cos(camera.yaw)*forward+Math.sin(camera.yaw)*strafe;
+        LanVisualMotion.Pose pose=visualMotion.sample(start,dt,dx,dz,(from,targetX,targetZ)->{
+            var startPos=new LevelDefinition.Vec(from.x(),from.y(),from.z());
+            var resolved=map.resolveMove(startPos,targetX,targetZ);
+            if(resolved==null||map.roomAt(resolved.x(),resolved.y(),resolved.z())!=room
+                    ||SafeAreaBarrier.blocks(map,startPos,resolved))return null;
+            // Mirror the spectral hiding-pocket exclusion along the full path.
+            int samples=Math.max(1,(int)Math.ceil(Math.hypot(
+                resolved.x()-from.x(),resolved.z()-from.z())/.10));
+            for(int i=1;i<=samples;i++){
+                double fraction=i/(double)samples;
+                if(LanGhostSpatial.hidingPocketAt(map,room,
+                        from.x()+(resolved.x()-from.x())*fraction,
+                        from.y()+(resolved.y()-from.y())*fraction,
+                        from.z()+(resolved.z()-from.z())*fraction))return null;
+            }
+            return new LanVisualMotion.Pose(resolved.x(),resolved.y(),resolved.z());
+        });
+        lastRenderedPose=pose;
         // The ghost player sees her actual AI sibling in the world, including
         // when the sibling independently patrols another accessible room.
         camera.setAdditionalGhostBodies(companion==null?List.of():List.of(companion));
-        camera.drawNetwork(map,List.of(),-1,tick*.1);
+        double hostX=camera.x,hostZ=camera.z,hostEye=camera.eyeHeight;
+        try{
+            if(pose!=null){camera.x=pose.x();camera.z=pose.z();camera.eyeHeight=pose.y()+1.62;}
+            camera.drawNetwork(map,List.of(),-1,tick*.1);
+        }finally{camera.x=hostX;camera.z=hostZ;camera.eyeHeight=hostEye;}
         perfHud.sample(System.nanoTime()-start,camera,map,companion==null?0:1,"LAN GHOST");
         repaint();
     }
@@ -377,8 +412,17 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             // Source-anchored acoustic rings are drawn AFTER the opaque 3D
             // scene to reveal sound through real walls without giving any
             // continuous live hunter-body feed.
-            if(hearingFade.gain()>.001)
-                soundRipples.draw(g,camera,w,h,System.nanoTime(),hearingFade.gain());
+            if(hearingFade.gain()>.001){
+                // Align the host-gated acoustic rings with this rendered visual pose.
+                double hostX=camera.x,hostZ=camera.z,hostEye=camera.eyeHeight;
+                try{
+                    if(lastRenderedPose!=null){
+                        camera.x=lastRenderedPose.x();camera.z=lastRenderedPose.z();
+                        camera.eyeHeight=lastRenderedPose.y()+1.62;
+                    }
+                    soundRipples.draw(g,camera,w,h,System.nanoTime(),hearingFade.gain());
+                }finally{camera.x=hostX;camera.z=hostZ;camera.eyeHeight=hostEye;}
+            }
             g.setFont(new Font(Font.MONOSPACED,Font.BOLD,13));
             int identityWidth=Math.min(w-24,480);
             g.setColor(new Color(22,13,31,219));g.fillRoundRect(12,10,identityWidth,65,9,9);

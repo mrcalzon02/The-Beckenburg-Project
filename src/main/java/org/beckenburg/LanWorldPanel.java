@@ -38,6 +38,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final javax.swing.Timer renderTimer;
     private final CrouchCamera crouchCamera=new CrouchCamera();
     private long lastVisualFrame=System.nanoTime();
+    private final LanVisualMotion visualMotion=new LanVisualMotion();
     private final Set<Integer> keys=new HashSet<>();
     private String feedback="Awaiting host world snapshot";
     private int lastTurn=-1,lastPitch=Integer.MIN_VALUE,tick,visibleGhost=-1,health=100,sanity=100,evidence;
@@ -375,7 +376,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 map=new HouseMap(HouseMap.Site.valueOf(p.get(1)));lights.setSourceRunning(true);
                 map.configureHiding(renderer.hidingDensity);
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
-                crouched=false;crouchCamera.reset(false);lastVisualFrame=System.nanoTime();
+                crouched=false;crouchCamera.reset(false);lastVisualFrame=System.nanoTime();visualMotion.reset();
                 renderer.eyeHeight=map.floorY(HouseMap.EXTRACTION_ROOM)+crouchCamera.eye();
                 rackSnapshot.reset();
                 buildingAudio.setMap(map);audio.clearFixtures();
@@ -470,7 +471,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 double z=LanProtocol.integer(p.get(4),0,map.height()*1000)/1000.0;
                 int heading=LanProtocol.integer(p.get(5),0,359);
                 tick=LanProtocol.integer(p.get(6),0,99999999);
-                if(who==seat){renderer.x=x;renderer.z=z;renderer.eyeHeight=y+eyeOffset();feedback="HOST SYNC ACTIVE — movement and doors server controlled";}
+                if(who==seat){
+                    visualMotion.accept(new LanVisualMotion.Pose(x,y,z),System.nanoTime());
+                    renderer.x=x;renderer.z=z;renderer.eyeHeight=y+eyeOffset();
+                    feedback="HOST SYNC ACTIVE — movement and doors server controlled";
+                }
                 else {
                     if(peers.isEmpty())preparePeerSprites();
                     peers.put(who,new SceneRenderer.RemoteBody(x,y,z,who,heading,
@@ -1248,7 +1253,34 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         double dt=Math.min(.05,Math.max(0,(now-lastVisualFrame)/1e9));
         lastVisualFrame=now;
         if(!crouchCamera.settled(crouched))advanceCrouchCamera(dt);
-        renderWorld();
+        // The host continues to own the physical body and interactions at 10 Hz.
+        // Only the drawn camera is predicted between accepted BODY packets; restore
+        // the host pose immediately so targeting, room logic and sound remain authoritative.
+        int forward=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
+        int strafe=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
+        double dx=0,dz=0;
+        if(health>0&&!chatInput.isVisible()&&(forward!=0||strafe!=0)){
+            dx=Math.sin(renderer.yaw)*forward-Math.cos(renderer.yaw)*strafe;
+            dz=Math.cos(renderer.yaw)*forward+Math.sin(renderer.yaw)*strafe;
+        }
+        LanVisualMotion.Pose pose=visualMotion.sample(now,dt,dx,dz,(from,targetX,targetZ)->{
+            var start=new LevelDefinition.Vec(from.x(),from.y(),from.z());
+            double height=HunterPosture.height(crouched);
+            var resolved=map.resolveMove(start,targetX,targetZ,height);
+            // Mirror the host's independent-axis corner gate for diagonals.
+            if(resolved==null||map.resolveMove(start,targetX,from.z(),height)==null
+                    ||map.resolveMove(start,from.x(),targetZ,height)==null)return null;
+            return new LanVisualMotion.Pose(resolved.x(),resolved.y(),resolved.z());
+        });
+        double hostX=renderer.x,hostZ=renderer.z,hostEye=renderer.eyeHeight;
+        try{
+            if(pose!=null){
+                renderer.x=pose.x();renderer.z=pose.z();renderer.eyeHeight=pose.y()+eyeOffset();
+            }
+            renderWorld();
+        }finally{
+            renderer.x=hostX;renderer.z=hostZ;renderer.eyeHeight=hostEye;
+        }
         perfHud.sample(System.nanoTime()-now,renderer,map,peers.size(),"LAN HUNTER");
         repaint();
         // Schedule one EDT callback from this frame's start. Overrunning a frame
