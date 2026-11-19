@@ -1,0 +1,10 @@
+{
+  "samples": 13653,
+  "new_invalid_positions": [],
+  "baselines": {
+    "WLD-06": "stair-end-pass",
+    "WLD-08": "stair-end-pass",
+    "WLD-13": "retaining-shoulder-pass"
+  },
+  "scope": "Exact before-native SHA and unchanged site/link/lane/XYZ. Not map acceptance."
+}

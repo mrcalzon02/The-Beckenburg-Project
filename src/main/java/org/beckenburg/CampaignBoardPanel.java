@@ -28,6 +28,7 @@ public final class CampaignBoardPanel extends JPanel {
     private final JLabel status=new JLabel();
     private final JTextArea dossier=new JTextArea();
     private final MissionBoardPanel sitePictures=new MissionBoardPanel();
+    private final CountyCampaignMapPanel countyMap;
     private final JButton deploy=button("START ROUND");
     private final JButton recruit=button("HIRE FIELD ASSISTANT  /  £"+ProfileStore.ASSISTANT_HIRE_COST);
     private final JCheckBox bringAssistant=new JCheckBox("Include booked hunters");
@@ -83,7 +84,13 @@ public final class CampaignBoardPanel extends JPanel {
         split.setResizeWeight(.52);split.setBorder(null);
         depot=new CampaignStorePanel(profile,this::refreshLedger);
         caseArchive=new CampaignArchivePanel(profile);
-        pages.add(split,"contracts");pages.add(depot,"depot");pages.add(caseArchive,"archive");
+        countyMap=new CountyCampaignMapPanel(profile::chapterUnlocked);
+        countyMap.onSelection(site->{
+            for(int i=0;i<entries.size();i++)if(entries.get(i).name().equals(site.title())){
+                contracts.setSelectedIndex(i);return;
+            }
+        });
+        pages.add(split,"contracts");pages.add(countyMap,"county");pages.add(depot,"depot");pages.add(caseArchive,"archive");
         pages.add(sitePictures,"sites");
         sitePictures.onSelection(site->{
             int index=-1;
@@ -106,6 +113,7 @@ public final class CampaignBoardPanel extends JPanel {
         hires.setValue(profile.missionHires());
         hires.setName("campaign.hires");mode.setName("campaign.mode");
         JButton contractsTab=button("CONTRACTS");
+        JButton countyTab=button("COUNTY MAP"); countyTab.setName("campaign.view.county");
         JButton shopTab=button("SUPPLY DEPOT");
         JButton archiveTab=button("CASE ARCHIVE");
         JButton picturesTab=button("SITE PICTURES");
@@ -131,12 +139,13 @@ public final class CampaignBoardPanel extends JPanel {
         pages.add(team,"team");
         JButton teamTab=button("TEAM / SOLO & CO-OP");teamTab.setName("campaign.view.team");
         teamTab.addActionListener(e->((CardLayout)pages.getLayout()).show(pages,"team"));
-        JPanel navigation=new JPanel(new GridLayout(2,3,6,6));navigation.setOpaque(false);
-        for(JButton b:new JButton[]{contractsTab,teamTab,shopTab,archiveTab,picturesTab,tutorial})navigation.add(b);
+        JPanel navigation=new JPanel(new GridLayout(2,4,6,6));navigation.setOpaque(false);
+        for(JButton b:new JButton[]{contractsTab,countyTab,teamTab,shopTab,archiveTab,picturesTab,tutorial})navigation.add(b);
         header.add(navigation,BorderLayout.CENTER);
         JButton menu=button("MAIN MENU");menu.setName("campaign.back");menu.addActionListener(e->actions.menu());
         controls.add(back);controls.add(menu);controls.add(deploy);
         contractsTab.addActionListener(event->((CardLayout)pages.getLayout()).show(pages,"contracts"));
+        countyTab.addActionListener(event->((CardLayout)pages.getLayout()).show(pages,"county"));
         picturesTab.addActionListener(event->((CardLayout)pages.getLayout()).show(pages,"sites"));
         shopTab.addActionListener(event->{
             depot.refresh();((CardLayout)pages.getLayout()).show(pages,"depot");
@@ -179,6 +188,11 @@ public final class CampaignBoardPanel extends JPanel {
         roster.setText("1 HOST + UP TO "+profile.missionHires()+" HIRES / GUESTS REPLACE HIRES / SIX TOTAL");
         updateSelection();
     }
+    /** In-world Castle map board enters the county atlas directly, not a menu list. */
+    public void showCountyMap(){
+        countyMap.refreshState();
+        ((CardLayout)pages.getLayout()).show(pages,"county");
+    }
     private void updateSelection(){
         Entry entry=contracts.getSelectedValue();
         int stage=contracts.getSelectedIndex();
@@ -188,6 +202,7 @@ public final class CampaignBoardPanel extends JPanel {
         deploy.setEnabled(ready);
         if(entry==null){dossier.setText("");status.setText("SELECT A CHAPTER");return;}
         String pictureId=MissionSites.campaign().get(stage).id();
+        countyMap.select(pictureId);
         if(!sitePictures.selected().id().equals(pictureId))sitePictures.select(pictureId);
         String progress=entry.map()==null?"": "\n\nVISITS   "+profile.visits(entry.map())+
             "   /   CLEARED   "+profile.clears(entry.map());

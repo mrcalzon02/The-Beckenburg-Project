@@ -1,0 +1,652 @@
+{
+  "observed_utc": "2026-11-08T09:16:14.296319+00:00",
+  "source_checkpoint": "2e8459870892efc2900182206b204183fbd5cdf9",
+  "remote_head_verified": "9e6093bb5edff7dc06ed1d0e2e184514815fd477",
+  "remote_tree_sha": "fb44616cda7f77286d7a0acd1e806014e0d2671a",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for union of physical stair shell aperture source and checkpoint binding paths",
+  "checkpoints": [
+    {
+      "commit": "2e8459870892efc2900182206b204183fbd5cdf9",
+      "changed_files": 155
+    },
+    {
+      "commit": "9e6093bb5edff7dc06ed1d0e2e184514815fd477",
+      "changed_files": 4
+    }
+  ],
+  "verified_file_count": 155,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "a8181632c2944545646eb48e008784ef5ece80a3"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "3cfa8d25d521768230bd2e47da18481f11ba587e"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "9ccff1be30686e339f79af1f0b6c21fdb050403f"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "10cdde8a9f20cdf552b1a59c860d39d16bc7b37b"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "26c5ddddd0d258109138f4c6b72839f244d728bb"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "5c5e38b2f9a6e3b6ad02db570327f6716ee0131f"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "cb977728f0899a26b1f6ecf6b4fe424f182393b3"
+    },
+    {
+      "path": "development/levels/rebuild/WORKFLOW.md",
+      "sha": "d75063369786f23d1808443aa1a7141391b1f6b1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/aperture-sheet-1.png",
+      "sha": "1aac2c594407b4b5dc1acbee9a25f5c8796edb19"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/aperture-sheet-2.png",
+      "sha": "51cef64599e029c6ee5c8b58a13a9f7edfbea1c8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/aperture-sheet-3.png",
+      "sha": "19ef5b3103f7637577fb93e6513ab378f2d5b059"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/aperture-sheet-4.png",
+      "sha": "683f51afbc4044d829fb4deb18d251fb72f13eaf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/aperture-sheet-5.png",
+      "sha": "1cef836d1bfa721d9df33a09acfa1103bc4dce2f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/aperture-sheet-6.png",
+      "sha": "9450e3c36d2b7696ba19f7305b5cb12fe5a848e5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/aperture-sheet-7.png",
+      "sha": "5f7b6517173cc1e598d9cfcb58a3fe978b5daeee"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/aperture-sheet-8.png",
+      "sha": "4bec01981df49499b9ef28021ff99d5ac84c7636"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/aperture-sheet-9.png",
+      "sha": "199268baa4a7754bbda763affc67206d5945608f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/pilot-sheet-1.png",
+      "sha": "2b0750f7a51320d7aba9e9b0528760f974955b5a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/pilot-sheet-2.png",
+      "sha": "3bff5111972422e1a85ce56b018d96b444027a5f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/pilot-sheet-3.png",
+      "sha": "c9c209091ac64fbcab17044f5b0dc90f95dadcfb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-06-0-L16--1.png",
+      "sha": "1cea5175d8c694c13f141df36646f62370c7c432"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-06-0-L16-1.png",
+      "sha": "393a5ecb3ee8ef620972de5cd87a394b0f74129a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-06-1-L17--1.png",
+      "sha": "2c07b7b4918a20d6a750455fc07a7418b78b2544"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-06-1-L17-1.png",
+      "sha": "7628abcce7325340fa442e9506713eb224bcdb29"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-08-0-L17--1.png",
+      "sha": "3cb0633a2bc258dc797ea0df0aacd353170f9c66"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-08-0-L17-1.png",
+      "sha": "bf845d36f3b13e43c403926d4b0eba105380a03e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-08-1-L18--1.png",
+      "sha": "ef6887ac9ff0786a862d5d77f400419cf57f8771"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-08-1-L18-1.png",
+      "sha": "aea2b545f251ee659c2bcc83c488fae9a998cc6a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-08-2-L17--1.png",
+      "sha": "a83e6e2af4f6b8b735b269fb17d075fb3e296855"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-08-2-L17-1.png",
+      "sha": "eb7ded11475892d834a3c31a4b0c05406688b77b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-08-3-L18--1.png",
+      "sha": "6e339aa1ec78b001373c591fcd8e205eabf9692f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-08-3-L18-1.png",
+      "sha": "ee4f159f9a60d3c1f3eff334c33ba0013b98e978"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-08-4-L20--1.png",
+      "sha": "266c43f33066c6fa8f856cb365d033944d868424"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/pilot-before-threshold-correction/wld-08-4-L20-1.png",
+      "sha": "c4c52dfca20775ca57d00ee0f02df70cb50f0e10"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-03-0-L04--1.png",
+      "sha": "3c0b67c1409dc24a85d14aef9653c10c3cfac91e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-03-0-L04-1.png",
+      "sha": "70e436fc57dce2962f1dfc662c378388b2064499"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-04-0-L09--1.png",
+      "sha": "a93552e48c95f61205f4fec0ebd34c95b2be0a61"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-04-0-L09-1.png",
+      "sha": "c638fd54d20602835cf36a7e8adf5e005f84a7a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-05-0-L17--1.png",
+      "sha": "b17d5205c81c9549836e1a1619a5b8b30e8d8ce3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-05-0-L17-1.png",
+      "sha": "50d28d79fc2623c7406b084e0c45949e4a3a387b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-06-0-L16--1.png",
+      "sha": "c2e87d43dee577b312944d53b04d703d857c9a11"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-06-0-L16-1.png",
+      "sha": "0cf4eb9df0c707be0378b1fb387fcb47337ca5f9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-06-1-L17--1.png",
+      "sha": "b22091bb14bac8f0f4b7f053168d04bc43a9a25a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-06-1-L17-1.png",
+      "sha": "be67f2159462ce5a549272a11a9345f8f04a32b7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-0-L17--1.png",
+      "sha": "d6b59f6635352cc028c818b70559100b541eb65b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-0-L17-1.png",
+      "sha": "c91d4672abb1394ef6c9df5bd1ddc715ab79b5d8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-1-L18--1.png",
+      "sha": "b625ba23cedd52112190e35d224289c023453697"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-1-L18-1.png",
+      "sha": "3fdfdbc319d9755e3416385ebf36c142dc4be5d2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-2-L17--1.png",
+      "sha": "ff912374bb05cc51bfcbc1483a8be7c9bffe0235"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-2-L17-1.png",
+      "sha": "f3109866c15ad4b834efe9458603aad8172f65c8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-3-L18--1.png",
+      "sha": "5e9dadd20b46f01d59eed514a11071eb7cc39dc7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-3-L18-1.png",
+      "sha": "28be516846e673ef8077deeeffff09697abe311d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-4-L20--1.png",
+      "sha": "767a77b37c70dea6e6fbba31f17cb657454e5232"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-08-4-L20-1.png",
+      "sha": "cc118772ac1326a1fa3bb9e981656655940525a4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-0-L07--1.png",
+      "sha": "67a69124550a92ea594f82d5e906e17e4656dfa3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-0-L07-1.png",
+      "sha": "929e07640fe803c2fcf6e1c869201071fcf5d4ea"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-1-L09--1.png",
+      "sha": "802ccddc225fe5f7892a558d00e1ecdf645d8efe"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-1-L09-1.png",
+      "sha": "946753eeee3dd429790806c96bbc6011e31c0428"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-2-L07--1.png",
+      "sha": "e5d29c7430f275085b6f3b7127d288ee1390835a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-2-L07-1.png",
+      "sha": "e56d71e56053427c48bfd9762c4bd95a12dead91"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-3-L09--1.png",
+      "sha": "faad7e219e1c16ca64ab0da4b9f94a3bcec8b877"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-3-L09-1.png",
+      "sha": "0295ac508c25570dc9f1bfe2927463b46a886ff0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-3-L11--1.png",
+      "sha": "97385f8831ef2947d61a29d145f9b3091ddc08dc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-3-L11-1.png",
+      "sha": "f4a2d90c2ae51e22becf4c757eca871d58c92e79"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-3-L18--1.png",
+      "sha": "d98ad70935d6c667573f94dcb4a6c7d565ff3dcc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-3-L18-1.png",
+      "sha": "cd85a6b752ca306deb469ac52d0ee1f42a57db22"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-4-L09--1.png",
+      "sha": "03f78700bf9f46b8a71a1195a6633e284e68a818"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-4-L09-1.png",
+      "sha": "abae3a0f8a91c5df1312e24356807365f822832c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-5-L09--1.png",
+      "sha": "fb32d7e035c098257f35016ee768f12536f3c7ed"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-5-L09-1.png",
+      "sha": "102493113e92ed0b47f275c8a1201b255895c20a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-6-L18--1.png",
+      "sha": "63399103cc794395e40e0b88b4a98719d43e4b06"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-09-6-L18-1.png",
+      "sha": "8720c084753ea50f49643090280a2fcfa39c7359"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-13-0-L19--1.png",
+      "sha": "b1b2445b7de6bc4a4b94c49e881941199c4d0688"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-13-0-L19-1.png",
+      "sha": "4274bc821a433f706a9a2cd429ac57efdb9faf60"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-0-route-07--1.png",
+      "sha": "d99ed386a581fc4f470f9443db1fa541e7bcf73a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-0-route-07-1.png",
+      "sha": "4b791bdc4aa20b03102229ea22c31340ec7c5a8a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-1-route-07--1.png",
+      "sha": "4121d86c6ce3cf654fccaa6d2b01a1046302c541"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-1-route-07-1.png",
+      "sha": "30f13afefe4d86d61eb1af168b9c3b20a85d40a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-10-route-08--1.png",
+      "sha": "d5310b0431af1fc419ecee226ce657b912c3efce"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-10-route-08-1.png",
+      "sha": "b7e76c05d9a6796be8bb1fc563d345a2e1006627"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-2-route-08--1.png",
+      "sha": "b747fc18676a787a2e26f51e9b29549e6a621ac0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-2-route-08-1.png",
+      "sha": "024dafd1fe1c72691bfe4b47823a11a408952f29"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-3-route-07--1.png",
+      "sha": "02a93d6c8fecb5dbc659ef6353f4ad0d9b8f543f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-3-route-07-1.png",
+      "sha": "88daaedda771eeeaab96b5a955c850538ce94b22"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-4-route-08--1.png",
+      "sha": "2858ee16ffe13ab455daebc7c382665adcf481b7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-4-route-08-1.png",
+      "sha": "728edf88b96e032bc57a5eb3adce209a92970fda"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-5-route-08--1.png",
+      "sha": "c791489d23c64611acf5d1b3144abeb5913b3628"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-18-5-route-08-1.png",
+      "sha": "75a34a2161fa53a7728abbe82a4ba4cf6a618a22"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "8395891fcaeb86fc0004915dbde516ee685e7f0a"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/NEXT.md",
+      "sha": "8a0e595cdf8c7e68859b0e78c589a29f9e6018b8"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/rejected/mine-walkway-conflict-construction.json",
+      "sha": "ebc9c8bf04af39ec439a4ec03a6f924fbc51db73"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/rejected/mine-walkway-conflict-opened-stairs.glb",
+      "sha": "cc95bfcd5ca3aff2578adbef29cff67c3691aed5"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/rejected/mine-walkway-conflict-opened-stairs.hcs2",
+      "sha": "c1949f73774a2d7ff6bba43659858e8908559702"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/rejected/uncoupled-shaft-failure-contacts.tsv",
+      "sha": "10b1bd7b94c8dedb09402c8665c276ba91e9fc21"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/rejected/uncoupled-shaft-native-route-fit.json",
+      "sha": "ffa0fde610b1fc6a143e81d1dc55d09b8dfc6d2d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/rejected/uncoupled-shaft-native-route-probes.tsv",
+      "sha": "0fb14fe1270f1c7a67a13e75f105bc10f8920d37"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/rejected/uncoupled-shaft-stair-movement.json",
+      "sha": "eae84457dca280071c509e50f9ea87ef7f5144b2"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/roster.json",
+      "sha": "78d4acef0c3d03c009dd2810658d71a06b87e045"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/verification/complete-route-sweeps.tsv",
+      "sha": "e1b67e4426101f964d4a421decde40027b16d7c4"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/verification/failure-contacts.tsv",
+      "sha": "1919e2b0919584a134e8524f43821348b9d79a13"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/verification/flight-sweeps.tsv",
+      "sha": "32aaf07a72a2ec605b73143199b73b04067d8c9c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/verification/independent-sources.json",
+      "sha": "4847b7dc0612ab6cb57961aec8e192f4a1b58c31"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/verification/native-route-fit.json",
+      "sha": "519cf35b1079644abb31f0d1ec7217c7c9acbf46"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/verification/native-route-probes.tsv",
+      "sha": "b76ba779ae6c7dbe8611b26c0237b1d20b8db82d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/verification/stair-movement.json",
+      "sha": "f6fb5169fa152fcb78e5af017c6d45a02346d02e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/verification/visual-review.json",
+      "sha": "d6890ddb4cd9a97bac190070ee04f35a1a032b00"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-03/captures.json",
+      "sha": "bdfdb50db723d2f089c290e1dc3b24766f0d7e25"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-03/construction.json",
+      "sha": "ae2f67c6bc31d0fb48c3cd5254fd0a63d2936dd3"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-03/opened-stairs.blend",
+      "sha": "52552c6ea014dde1612b8301cf4506dac5283083"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-03/opened-stairs.glb",
+      "sha": "f75610629a5b3116452f6f6a4b8ddab27231f642"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-03/opened-stairs.hcs2",
+      "sha": "b6b8415d07164f960bb78fce676357b5279d78d1"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-04/captures.json",
+      "sha": "e35420b47712182209d0eb713c15cfb6401c2c3f"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-04/construction.json",
+      "sha": "c9b58e82bfc65e037519d76e806458a66d97aae5"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-04/opened-stairs.blend",
+      "sha": "d777327f4c7bd20d75b20aafb6b6a757aa1a8d0e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-04/opened-stairs.glb",
+      "sha": "2e2b03443c0fff6aae9f61f7fc7f96944c15628d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-04/opened-stairs.hcs2",
+      "sha": "3040a7def8768f42e48fa5913fb9ea4005ac083f"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-05/captures.json",
+      "sha": "968d2e710a0a70f958c929e0cb515631a7215050"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-05/construction.json",
+      "sha": "438b9ecb1d3de9b01fe867a8b56744b61974ccec"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-05/opened-stairs.blend",
+      "sha": "c1f8cbf423468319b72dd4a13eff0c06e87482be"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-05/opened-stairs.glb",
+      "sha": "a8d3d5b817af0a75f7a5f036bbecde5828fb9204"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-05/opened-stairs.hcs2",
+      "sha": "4c6ecf419b1464add2142db9d84e25e73257157a"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-06/captures.json",
+      "sha": "78be350aebf326f9cd0825a2ad94678771f44173"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-06/construction.json",
+      "sha": "38520cf71a3d8428b6cda096493dc373d79f3e9b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-06/opened-stairs.blend",
+      "sha": "d877978464a1698c9a6747fb658e18fadddbaa5a"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-06/opened-stairs.glb",
+      "sha": "ba87e747df611a39a081b5ee43cf1622f7439ccb"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-06/opened-stairs.hcs2",
+      "sha": "6b1aed7d6d9e5adf86e5305e7e8365a6bbea4f2f"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-08/captures.json",
+      "sha": "74fd04321dbcd88be93dd6681c02db7d691328ee"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-08/construction.json",
+      "sha": "0f23860a378555d48fbe2a6069f0a842a9c35893"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-08/opened-stairs.blend",
+      "sha": "965a7e136e21df2b3ca6afc2e9f378126e27d8d3"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-08/opened-stairs.glb",
+      "sha": "2d96c8c6143d862852c491b7bf4b05919cc51f1c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-08/opened-stairs.hcs2",
+      "sha": "798925faf36d09beb7214d72d9ee2ec48ef08139"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-09/captures.json",
+      "sha": "d96af62be03157014a2e0dbc3337aab831980fdb"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-09/construction.json",
+      "sha": "eed0fca49266ff3a6aaea69f4c9182ea87bbe78d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-09/opened-stairs.blend",
+      "sha": "9beb5c5a6956c9c9052de04fbb8dfa64d41db1c0"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-09/opened-stairs.glb",
+      "sha": "f319b7f0f61246829a383d0505edcd5bf4d757ad"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-09/opened-stairs.hcs2",
+      "sha": "45f54098c943d30f15fee7eeaa00fafacbbe656d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-13/captures.json",
+      "sha": "71e9416d776cf7471195722401fe1c7327b947ba"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-13/construction.json",
+      "sha": "585454f7f0444e6bd379731f16a9f564ec8816ac"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-13/opened-stairs.blend",
+      "sha": "690eedc3577bde91ffebb34367bb71aae626baf7"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-13/opened-stairs.glb",
+      "sha": "9ad4db53bd946eab152459556f6642ff1746ab7f"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-13/opened-stairs.hcs2",
+      "sha": "b4ce973a4e4a93be9106dee4f9b6f0e7465bfacf"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-18/captures.json",
+      "sha": "c51b480070406a85c9ccb05c78f56b66da440cd3"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-18/construction.json",
+      "sha": "22ed49914f606d51c55cc1a675254ecb74c6619c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-18/opened-stairs.blend",
+      "sha": "90636a7725daa1f570dd55be8689ba0232f2d05f"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-18/opened-stairs.glb",
+      "sha": "36e223994d9bda68be2b5e39e81d1176c0499673"
+    },
+    {
+      "path": "development/levels/rebuild/stair-opening-pass/wld-18/opened-stairs.hcs2",
+      "sha": "f10e7165820cfdc5a869696c04a45efeab77459a"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "50a5ddc37fbd0bdcff719049692187220a3ae590"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "879970a79ca107cc757397b17d738b3a1044b85c"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "2a5943950af8464c3ef86131af8536a2ceda0e93"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "f03e0d917fe62b36837250c1af7a25b7a04e5cc1"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "db028127eaeecb4163d65573ac709cf097b265e0"
+    },
+    {
+      "path": "tools/build_stair_openings.py",
+      "sha": "a0525dd3860989fcbe1cafa573bf6517aad70984"
+    },
+    {
+      "path": "tools/check_stair_openings.py",
+      "sha": "5c93acb04fcffc7e370f2c4ae753bbca9758ee84"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "783c1230b1a66ce32090324feb0369e4e0b1561e"
+    },
+    {
+      "path": "tools/render_stair_openings.py",
+      "sha": "24890022149ef65af6d389c31ba7467e947b43e6"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/stair-opening-batch/aperture-sheet-2.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}

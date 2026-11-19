@@ -1,0 +1,1121 @@
+{
+  "checks": [
+    {
+      "site": "ACADEMY",
+      "sealed_links": 26,
+      "checks": [
+        {
+          "link": "L05",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L15",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L19",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L20",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L21",
+          "boundary_rays": 3,
+          "all_blocked": true
+        },
+        {
+          "link": "L22",
+          "boundary_rays": 3,
+          "all_blocked": true
+        },
+        {
+          "link": "L23",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L24",
+          "boundary_rays": 3,
+          "all_blocked": true
+        },
+        {
+          "link": "L25",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L29",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L30",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L31",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L32",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L33",
+          "boundary_rays": 3,
+          "all_blocked": true
+        },
+        {
+          "link": "L34",
+          "boundary_rays": 3,
+          "all_blocked": true
+        },
+        {
+          "link": "L39",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L50",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L51",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L52",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L53",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L54",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L55",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L56",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L57",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L63",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L65",
+          "boundary_rays": 4,
+          "all_blocked": true
+        }
+      ],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "ASYLUM",
+      "sealed_links": 33,
+      "checks": [
+        {
+          "link": "L02",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L04",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L06",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L08",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L11",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L13",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L14",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L15",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L17",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L21",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L30",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L31",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L36",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L38",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L45",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L46",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L47",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L48",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L49",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L50",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L51",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L52",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L57",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L58",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L59",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L60",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L61",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L66",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L67",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L68",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L69",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L70",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L75",
+          "boundary_rays": 3,
+          "all_blocked": true
+        }
+      ],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "CHURCH",
+      "sealed_links": 4,
+      "checks": [
+        {
+          "link": "L26",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L27",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L28",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L29",
+          "boundary_rays": 4,
+          "all_blocked": true
+        }
+      ],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "COLLEGE",
+      "sealed_links": 44,
+      "checks": [
+        {
+          "link": "L09",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L10",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L12",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L13",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L16",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L18",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L20",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L21",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L22",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L23",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L25",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L26",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L27",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L29",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L30",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L31",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L32",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L35",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L36",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L37",
+          "boundary_rays": 3,
+          "all_blocked": true
+        },
+        {
+          "link": "L38",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L39",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L40",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L41",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L46",
+          "boundary_rays": 3,
+          "all_blocked": true
+        },
+        {
+          "link": "L48",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L49",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L50",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L53",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L54",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L58",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L59",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L60",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L61",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L64",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L65",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L66",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L73",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L74",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L75",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L77",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L78",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L79",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L83",
+          "boundary_rays": 1,
+          "all_blocked": true
+        }
+      ],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "FARMHOUSE",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "MANSION",
+      "sealed_links": 12,
+      "checks": [
+        {
+          "link": "L03",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L04",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L19",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L20",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L25",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L27",
+          "boundary_rays": 3,
+          "all_blocked": true
+        },
+        {
+          "link": "L35",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L38",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L39",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L40",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L41",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L45",
+          "boundary_rays": 4,
+          "all_blocked": true
+        }
+      ],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "PRISON",
+      "sealed_links": 73,
+      "checks": [
+        {
+          "link": "L002",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L003",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L004",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L005",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L006",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L007",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L008",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L010",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L011",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L012",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L013",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L014",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L015",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L016",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L018",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L019",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L020",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L021",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L022",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L023",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L024",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L026",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L027",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L028",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L029",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L030",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L031",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L032",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L035",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L036",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L037",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L038",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L039",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L040",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L041",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L043",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L044",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L048",
+          "boundary_rays": 1,
+          "all_blocked": true
+        },
+        {
+          "link": "L051",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L052",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L053",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L054",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L055",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L056",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L057",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L059",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L060",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L064",
+          "boundary_rays": 1,
+          "all_blocked": true
+        },
+        {
+          "link": "L069",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L070",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L071",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L072",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L075",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L076",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L079",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L081",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L082",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L086",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L087",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L090",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L092",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L093",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L096",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L097",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L098",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L099",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L101",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L102",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L106",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L107",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L108",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L109",
+          "boundary_rays": 4,
+          "all_blocked": true
+        },
+        {
+          "link": "L110",
+          "boundary_rays": 4,
+          "all_blocked": true
+        }
+      ],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "SCHOOL",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-03",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-04",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-05",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-06",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-07",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-07-MORTUARY",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-08",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-09",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-10",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-11",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-12",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-13",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-14",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-15",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-16",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-17",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    },
+    {
+      "site": "WLD-18",
+      "sealed_links": 0,
+      "checks": [],
+      "scope": "Fresh actual exported boundary-centre rays and unchanged sealed link definitions; full width/body/around/under/ghost/object/runtime search-envelope acceptance remains separate"
+    }
+  ],
+  "checker_sha256": "62f1e2ac2299b81b5f54ec0569fa746e5eb19b0419c4b5839edad3742bcc6517"
+}

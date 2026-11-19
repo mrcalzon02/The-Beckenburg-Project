@@ -1,0 +1,5756 @@
+[
+  {
+    "name": "Floor nave",
+    "role": "floor",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      18.0,
+      12.0,
+      26.0,
+      26.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap nave",
+    "role": "ceiling-cap",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      18.0,
+      12.0,
+      26.0,
+      26.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall nave N",
+    "role": "rough shell wall",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      18.0,
+      11.920000076293945,
+      21.0,
+      12.079999923706055,
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall nave N.001",
+    "role": "rough shell wall",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      23.0,
+      11.920000076293945,
+      26.0,
+      12.079999923706055,
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Header nave N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      21.0,
+      11.920000076293945,
+      23.0,
+      12.079999923706055,
+      2.4499998092651367,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall nave S",
+    "role": "rough shell wall",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      18.0,
+      25.920000076293945,
+      18.200000762939453,
+      26.079999923706055,
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Header nave S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.200000762939453,
+      25.920000076293945,
+      25.799999237060547,
+      26.079999923706055,
+      2.4499998092651367,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall nave W",
+    "role": "rough shell wall",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      12.000000953674316,
+      18.079999923706055,
+      21.400001525878906,
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall nave W.001",
+    "role": "rough shell wall",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      22.599998474121094,
+      18.079999923706055,
+      26.0,
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Header nave W",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      21.399999618530273,
+      18.079999923706055,
+      22.600000381469727,
+      2.4499998092651367,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall nave E",
+    "role": "rough shell wall",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      12.0,
+      26.079999923706055,
+      19.399999618530273,
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall nave E.001",
+    "role": "rough shell wall",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      20.599998474121094,
+      26.079999923706055,
+      26.0,
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Header nave E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      19.399999618530273,
+      26.079999923706055,
+      20.600000381469727,
+      2.4499998092651367,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor rear-nave",
+    "role": "floor",
+    "zone": "rear-nave",
+    "link": null,
+    "bounds": [
+      18.0,
+      26.0,
+      26.0,
+      34.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall rear-nave N",
+    "role": "rough shell wall",
+    "zone": "rear-nave",
+    "link": null,
+    "bounds": [
+      18.0,
+      25.920000076293945,
+      18.200000762939453,
+      26.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Header rear-nave N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.200000762939453,
+      25.920000076293945,
+      25.799999237060547,
+      26.079999923706055,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Header rear-nave S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      21.399999618530273,
+      33.91999816894531,
+      22.600000381469727,
+      34.08000183105469,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Header rear-nave W",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      31.399999618530273,
+      18.079999923706055,
+      32.599998474121094,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall rear-nave E",
+    "role": "rough shell wall",
+    "zone": "rear-nave",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      26.0,
+      26.079999923706055,
+      34.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor vestibule",
+    "role": "floor",
+    "zone": "vestibule",
+    "link": null,
+    "bounds": [
+      18.0,
+      34.0,
+      26.0,
+      39.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap vestibule",
+    "role": "ceiling-cap",
+    "zone": "vestibule",
+    "link": null,
+    "bounds": [
+      18.0,
+      34.0,
+      26.0,
+      39.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Header vestibule S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      21.399999618530273,
+      38.91999816894531,
+      22.600000381469727,
+      39.08000183105469,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestibule W",
+    "role": "rough shell wall",
+    "zone": "vestibule",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      34.0,
+      18.079999923706055,
+      39.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestibule E",
+    "role": "rough shell wall",
+    "zone": "vestibule",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      34.0,
+      26.079999923706055,
+      39.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor parish-lobby",
+    "role": "floor",
+    "zone": "parish-lobby",
+    "link": null,
+    "bounds": [
+      13.0,
+      30.0,
+      18.0,
+      34.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Header parish-lobby N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      13.399999618530273,
+      29.920000076293945,
+      14.600000381469727,
+      30.079999923706055,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Header parish-lobby N.002",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      15.899999618530273,
+      29.920000076293945,
+      17.100000381469727,
+      30.079999923706055,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall parish-lobby S",
+    "role": "rough shell wall",
+    "zone": "parish-lobby",
+    "link": null,
+    "bounds": [
+      13.0,
+      33.91999816894531,
+      18.0,
+      34.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Header parish-lobby W",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      12.920000076293945,
+      31.399999618530273,
+      13.079999923706055,
+      32.599998474121094,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor office",
+    "role": "floor",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      10.0,
+      26.0,
+      15.0,
+      30.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall office N",
+    "role": "rough shell wall",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      10.0,
+      25.920000076293945,
+      15.0,
+      26.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall office W",
+    "role": "rough shell wall",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      9.920000076293945,
+      26.0,
+      10.079999923706055,
+      30.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall office E",
+    "role": "rough shell wall",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      14.920000076293945,
+      26.0,
+      15.079999923706055,
+      30.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor records",
+    "role": "floor",
+    "zone": "records",
+    "link": null,
+    "bounds": [
+      15.0,
+      26.0,
+      18.0,
+      30.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall records N",
+    "role": "rough shell wall",
+    "zone": "records",
+    "link": null,
+    "bounds": [
+      15.0,
+      25.920000076293945,
+      18.0,
+      26.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall records E",
+    "role": "rough shell wall",
+    "zone": "records",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      26.0,
+      18.079999923706055,
+      30.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor parish-wc",
+    "role": "floor",
+    "zone": "parish-wc",
+    "link": null,
+    "bounds": [
+      10.0,
+      30.0,
+      13.0,
+      34.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall parish-wc N",
+    "role": "rough shell wall",
+    "zone": "parish-wc",
+    "link": null,
+    "bounds": [
+      10.0,
+      29.920000076293945,
+      13.0,
+      30.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall parish-wc S",
+    "role": "rough shell wall",
+    "zone": "parish-wc",
+    "link": null,
+    "bounds": [
+      10.0,
+      33.91999816894531,
+      13.0,
+      34.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall parish-wc W",
+    "role": "rough shell wall",
+    "zone": "parish-wc",
+    "link": null,
+    "bounds": [
+      9.920000076293945,
+      30.0,
+      10.079999923706055,
+      34.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor conversation-entry",
+    "role": "floor",
+    "zone": "conversation-entry",
+    "link": null,
+    "bounds": [
+      14.0,
+      18.0,
+      18.0,
+      26.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap conversation-entry",
+    "role": "ceiling-cap",
+    "zone": "conversation-entry",
+    "link": null,
+    "bounds": [
+      14.0,
+      18.0,
+      18.0,
+      26.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall conversation-entry N",
+    "role": "rough shell wall",
+    "zone": "conversation-entry",
+    "link": null,
+    "bounds": [
+      14.0,
+      17.920000076293945,
+      18.0,
+      18.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall conversation-entry S",
+    "role": "rough shell wall",
+    "zone": "conversation-entry",
+    "link": null,
+    "bounds": [
+      14.0,
+      25.920000076293945,
+      18.0,
+      26.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall conversation-entry W",
+    "role": "rough shell wall",
+    "zone": "conversation-entry",
+    "link": null,
+    "bounds": [
+      13.920000076293945,
+      18.0,
+      14.079999923706055,
+      19.400001525878906,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall conversation-entry W.001",
+    "role": "rough shell wall",
+    "zone": "conversation-entry",
+    "link": null,
+    "bounds": [
+      13.920000076293945,
+      20.600000381469727,
+      14.079999923706055,
+      23.399999618530273,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall conversation-entry W.002",
+    "role": "rough shell wall",
+    "zone": "conversation-entry",
+    "link": null,
+    "bounds": [
+      13.920000076293945,
+      24.599998474121094,
+      14.079999923706055,
+      26.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Header conversation-entry W",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      13.920000076293945,
+      19.399999618530273,
+      14.079999923706055,
+      20.600000381469727,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Header conversation-entry W.002",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      13.920000076293945,
+      23.399999618530273,
+      14.079999923706055,
+      24.600000381469727,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall conversation-entry E",
+    "role": "rough shell wall",
+    "zone": "conversation-entry",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      18.0,
+      18.079999923706055,
+      21.400001525878906,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall conversation-entry E.001",
+    "role": "rough shell wall",
+    "zone": "conversation-entry",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      22.599998474121094,
+      18.079999923706055,
+      26.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Header conversation-entry E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      21.399999618530273,
+      18.079999923706055,
+      22.600000381469727,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor confessional",
+    "role": "floor",
+    "zone": "confessional",
+    "link": null,
+    "bounds": [
+      10.0,
+      18.0,
+      14.0,
+      22.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap confessional",
+    "role": "ceiling-cap",
+    "zone": "confessional",
+    "link": null,
+    "bounds": [
+      10.0,
+      18.0,
+      14.0,
+      22.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall confessional N",
+    "role": "rough shell wall",
+    "zone": "confessional",
+    "link": null,
+    "bounds": [
+      10.0,
+      17.920000076293945,
+      14.0,
+      18.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall confessional S",
+    "role": "rough shell wall",
+    "zone": "confessional",
+    "link": null,
+    "bounds": [
+      10.0,
+      21.920000076293945,
+      14.0,
+      22.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall confessional W",
+    "role": "rough shell wall",
+    "zone": "confessional",
+    "link": null,
+    "bounds": [
+      9.920000076293945,
+      18.0,
+      10.079999923706055,
+      22.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall confessional E.001",
+    "role": "rough shell wall",
+    "zone": "confessional",
+    "link": null,
+    "bounds": [
+      13.920000076293945,
+      20.599998474121094,
+      14.079999923706055,
+      22.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor consultation",
+    "role": "floor",
+    "zone": "consultation",
+    "link": null,
+    "bounds": [
+      10.0,
+      22.0,
+      14.0,
+      26.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap consultation",
+    "role": "ceiling-cap",
+    "zone": "consultation",
+    "link": null,
+    "bounds": [
+      10.0,
+      22.0,
+      14.0,
+      26.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall consultation S",
+    "role": "rough shell wall",
+    "zone": "consultation",
+    "link": null,
+    "bounds": [
+      10.0,
+      25.920000076293945,
+      14.0,
+      26.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall consultation W",
+    "role": "rough shell wall",
+    "zone": "consultation",
+    "link": null,
+    "bounds": [
+      9.920000076293945,
+      22.0,
+      10.079999923706055,
+      26.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall consultation E",
+    "role": "rough shell wall",
+    "zone": "consultation",
+    "link": null,
+    "bounds": [
+      13.920000076293945,
+      22.0,
+      14.079999923706055,
+      23.400001525878906,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor chancel",
+    "role": "floor",
+    "zone": "chancel",
+    "link": null,
+    "bounds": [
+      18.0,
+      6.0,
+      26.0,
+      12.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap chancel",
+    "role": "ceiling-cap",
+    "zone": "chancel",
+    "link": null,
+    "bounds": [
+      18.0,
+      6.0,
+      26.0,
+      12.0,
+      4.840000152587891,
+      5.0
+    ]
+  },
+  {
+    "name": "Wall chancel N",
+    "role": "rough shell wall",
+    "zone": "chancel",
+    "link": null,
+    "bounds": [
+      18.0,
+      5.920000076293945,
+      26.0,
+      6.079999923706055,
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "name": "Wall chancel S",
+    "role": "rough shell wall",
+    "zone": "chancel",
+    "link": null,
+    "bounds": [
+      18.0,
+      11.920000076293945,
+      21.0,
+      12.079999923706055,
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "name": "Wall chancel S.001",
+    "role": "rough shell wall",
+    "zone": "chancel",
+    "link": null,
+    "bounds": [
+      23.0,
+      11.920000076293945,
+      26.0,
+      12.079999923706055,
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "name": "Header chancel S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      21.0,
+      11.920000076293945,
+      23.0,
+      12.079999923706055,
+      2.4499998092651367,
+      5.0
+    ]
+  },
+  {
+    "name": "Wall chancel W",
+    "role": "rough shell wall",
+    "zone": "chancel",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      6.0,
+      18.079999923706055,
+      12.0,
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "name": "Wall chancel E",
+    "role": "rough shell wall",
+    "zone": "chancel",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      6.0,
+      26.079999923706055,
+      8.399999618530273,
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "name": "Wall chancel E.001",
+    "role": "rough shell wall",
+    "zone": "chancel",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      9.600000381469727,
+      26.079999923706055,
+      12.0,
+      0.0,
+      5.0
+    ]
+  },
+  {
+    "name": "Header chancel E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      8.399999618530273,
+      26.079999923706055,
+      9.600000381469727,
+      2.4499998092651367,
+      5.0
+    ]
+  },
+  {
+    "name": "Floor chapel",
+    "role": "floor",
+    "zone": "chapel",
+    "link": null,
+    "bounds": [
+      26.0,
+      14.0,
+      34.0,
+      26.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap chapel",
+    "role": "ceiling-cap",
+    "zone": "chapel",
+    "link": null,
+    "bounds": [
+      26.0,
+      14.0,
+      34.0,
+      26.0,
+      3.8400001525878906,
+      4.0
+    ]
+  },
+  {
+    "name": "Wall chapel N",
+    "role": "rough shell wall",
+    "zone": "chapel",
+    "link": null,
+    "bounds": [
+      26.0,
+      13.920000076293945,
+      27.900001525878906,
+      14.079999923706055,
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "name": "Wall chapel N.001",
+    "role": "rough shell wall",
+    "zone": "chapel",
+    "link": null,
+    "bounds": [
+      29.099998474121094,
+      13.920000076293945,
+      34.0,
+      14.079999923706055,
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "name": "Header chapel N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.899999618530273,
+      13.920000076293945,
+      29.100000381469727,
+      14.079999923706055,
+      2.4499998092651367,
+      4.0
+    ]
+  },
+  {
+    "name": "Wall chapel S",
+    "role": "rough shell wall",
+    "zone": "chapel",
+    "link": null,
+    "bounds": [
+      26.0,
+      25.920000076293945,
+      27.900001525878906,
+      26.079999923706055,
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "name": "Wall chapel S.001",
+    "role": "rough shell wall",
+    "zone": "chapel",
+    "link": null,
+    "bounds": [
+      29.099998474121094,
+      25.920000076293945,
+      34.0,
+      26.079999923706055,
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "name": "Header chapel S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.899999618530273,
+      25.920000076293945,
+      29.100000381469727,
+      26.079999923706055,
+      2.4499998092651367,
+      4.0
+    ]
+  },
+  {
+    "name": "Wall chapel W",
+    "role": "rough shell wall",
+    "zone": "chapel",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      14.0,
+      26.079999923706055,
+      19.066665649414062,
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "name": "Wall chapel W.001",
+    "role": "rough shell wall",
+    "zone": "chapel",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      20.599998474121094,
+      26.079999923706055,
+      26.0,
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "name": "Header chapel W",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      19.399999618530273,
+      26.079999923706055,
+      20.600000381469727,
+      2.4499998092651367,
+      4.0
+    ]
+  },
+  {
+    "name": "Header chapel W.002",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      19.066665649414062,
+      26.079999923706055,
+      20.266666412353516,
+      2.4499998092651367,
+      4.0
+    ]
+  },
+  {
+    "name": "Wall chapel E",
+    "role": "rough shell wall",
+    "zone": "chapel",
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      14.000000953674316,
+      34.08000183105469,
+      19.400001525878906,
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "name": "Wall chapel E.001",
+    "role": "rough shell wall",
+    "zone": "chapel",
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      20.599998474121094,
+      34.08000183105469,
+      26.0,
+      0.0,
+      4.0
+    ]
+  },
+  {
+    "name": "Header chapel E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      19.399999618530273,
+      34.08000183105469,
+      20.600000381469727,
+      2.4499998092651367,
+      4.0
+    ]
+  },
+  {
+    "name": "Floor vestry",
+    "role": "floor",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      26.0,
+      6.0,
+      31.0,
+      14.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap vestry",
+    "role": "ceiling-cap",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      26.0,
+      6.0,
+      31.0,
+      14.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry N",
+    "role": "rough shell wall",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      26.0,
+      5.920000076293945,
+      27.900001525878906,
+      6.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry N.001",
+    "role": "rough shell wall",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      29.099998474121094,
+      5.920000076293945,
+      31.0,
+      6.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Header vestry N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.899999618530273,
+      5.920000076293945,
+      29.100000381469727,
+      6.079999923706055,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry S",
+    "role": "rough shell wall",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      26.0,
+      13.920000076293945,
+      27.900001525878906,
+      14.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry S.001",
+    "role": "rough shell wall",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      29.099998474121094,
+      13.920000076293945,
+      31.0,
+      14.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Header vestry S",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.899999618530273,
+      13.920000076293945,
+      29.100000381469727,
+      14.079999923706055,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry W",
+    "role": "rough shell wall",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      6.0,
+      26.079999923706055,
+      8.399999618530273,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry W.001",
+    "role": "rough shell wall",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      9.600000381469727,
+      26.079999923706055,
+      10.592308044433594,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry W.002",
+    "role": "rough shell wall",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      11.792306900024414,
+      26.079999923706055,
+      14.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Header vestry W",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      8.399999618530273,
+      26.079999923706055,
+      9.600000381469727,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Header vestry W.002",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      10.592307090759277,
+      26.079999923706055,
+      11.79230785369873,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry E",
+    "role": "rough shell wall",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      30.920000076293945,
+      6.0,
+      31.079999923706055,
+      7.399999618530273,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry E.001",
+    "role": "rough shell wall",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      30.920000076293945,
+      8.600000381469727,
+      31.079999923706055,
+      11.399999618530273,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry E.002",
+    "role": "rough shell wall",
+    "zone": "vestry",
+    "link": null,
+    "bounds": [
+      30.920000076293945,
+      12.600000381469727,
+      31.079999923706055,
+      14.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Header vestry E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.920000076293945,
+      7.400000095367432,
+      31.079999923706055,
+      8.600000381469727,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Header vestry E.002",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.920000076293945,
+      11.399999618530273,
+      31.079999923706055,
+      12.600000381469727,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor vestry-wash",
+    "role": "floor",
+    "zone": "vestry-wash",
+    "link": null,
+    "bounds": [
+      31.0,
+      6.0,
+      34.0,
+      10.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap vestry-wash",
+    "role": "ceiling-cap",
+    "zone": "vestry-wash",
+    "link": null,
+    "bounds": [
+      31.0,
+      6.0,
+      34.0,
+      10.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry-wash N",
+    "role": "rough shell wall",
+    "zone": "vestry-wash",
+    "link": null,
+    "bounds": [
+      31.0,
+      5.920000076293945,
+      34.0,
+      6.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry-wash S",
+    "role": "rough shell wall",
+    "zone": "vestry-wash",
+    "link": null,
+    "bounds": [
+      31.0,
+      9.920000076293945,
+      34.0,
+      10.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry-wash W.001",
+    "role": "rough shell wall",
+    "zone": "vestry-wash",
+    "link": null,
+    "bounds": [
+      30.920000076293945,
+      8.600000381469727,
+      31.079999923706055,
+      10.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestry-wash E",
+    "role": "rough shell wall",
+    "zone": "vestry-wash",
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      6.0,
+      34.08000183105469,
+      10.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor vestments",
+    "role": "floor",
+    "zone": "vestments",
+    "link": null,
+    "bounds": [
+      31.0,
+      10.0,
+      34.0,
+      14.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap vestments",
+    "role": "ceiling-cap",
+    "zone": "vestments",
+    "link": null,
+    "bounds": [
+      31.0,
+      10.0,
+      34.0,
+      14.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestments S",
+    "role": "rough shell wall",
+    "zone": "vestments",
+    "link": null,
+    "bounds": [
+      31.0,
+      13.920000076293945,
+      34.0,
+      14.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestments W",
+    "role": "rough shell wall",
+    "zone": "vestments",
+    "link": null,
+    "bounds": [
+      30.920000076293945,
+      10.0,
+      31.079999923706055,
+      11.399999618530273,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall vestments E",
+    "role": "rough shell wall",
+    "zone": "vestments",
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      10.0,
+      34.08000183105469,
+      14.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor crypt-entry",
+    "role": "floor",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      26.0,
+      26.0,
+      30.700000762939453,
+      27.599998474121094,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor crypt-entry.001",
+    "role": "floor",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      26.0,
+      27.600000381469727,
+      30.700000762939453,
+      32.400001525878906,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor crypt-entry.002",
+    "role": "floor",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      26.0,
+      32.400001525878906,
+      30.700000762939453,
+      34.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor crypt-entry.003",
+    "role": "floor",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      30.700000762939453,
+      26.0,
+      32.29999923706055,
+      27.599998474121094,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor crypt-entry.004",
+    "role": "floor",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      30.700000762939453,
+      32.400001525878906,
+      32.29999923706055,
+      34.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor crypt-entry.005",
+    "role": "floor",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      32.30000305175781,
+      26.0,
+      34.0,
+      27.599998474121094,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor crypt-entry.006",
+    "role": "floor",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      32.30000305175781,
+      27.600000381469727,
+      34.0,
+      32.400001525878906,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor crypt-entry.007",
+    "role": "floor",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      32.30000305175781,
+      32.400001525878906,
+      34.0,
+      34.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall crypt-entry N",
+    "role": "rough shell wall",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      26.0,
+      25.920000076293945,
+      27.900001525878906,
+      26.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall crypt-entry N.001",
+    "role": "rough shell wall",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      29.099998474121094,
+      25.920000076293945,
+      34.0,
+      26.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Header crypt-entry N",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.899999618530273,
+      25.920000076293945,
+      29.100000381469727,
+      26.079999923706055,
+      2.4499998092651367,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall crypt-entry S",
+    "role": "rough shell wall",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      26.0,
+      33.91999816894531,
+      34.0,
+      34.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall crypt-entry E",
+    "role": "rough shell wall",
+    "zone": "crypt-entry",
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      26.0,
+      34.08000183105469,
+      34.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor choir-stair",
+    "role": "floor",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      18.0,
+      26.0,
+      18.700000762939453,
+      27.599998474121094,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor choir-stair.001",
+    "role": "floor",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      18.0,
+      27.600000381469727,
+      18.700000762939453,
+      32.400001525878906,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor choir-stair.002",
+    "role": "floor",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      18.0,
+      32.400001525878906,
+      18.700000762939453,
+      34.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor choir-stair.003",
+    "role": "floor",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      18.700000762939453,
+      26.0,
+      20.299999237060547,
+      27.599998474121094,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor choir-stair.004",
+    "role": "floor",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      18.700000762939453,
+      32.400001525878906,
+      20.299999237060547,
+      34.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor choir-stair.005",
+    "role": "floor",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      20.299999237060547,
+      26.0,
+      21.0,
+      27.599998474121094,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor choir-stair.006",
+    "role": "floor",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      20.299999237060547,
+      27.600000381469727,
+      21.0,
+      32.400001525878906,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Floor choir-stair.007",
+    "role": "floor",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      20.299999237060547,
+      32.400001525878906,
+      21.0,
+      34.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Ceiling cap choir-stair",
+    "role": "ceiling-cap",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      18.0,
+      26.0,
+      21.0,
+      34.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall choir-stair N",
+    "role": "rough shell wall",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      18.0,
+      25.920000076293945,
+      21.0,
+      26.079999923706055,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall choir-stair S",
+    "role": "rough shell wall",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      18.0,
+      33.91999816894531,
+      21.0,
+      34.08000183105469,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Header choir-stair W",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      32.6400032043457,
+      18.079999923706055,
+      33.84000015258789,
+      5.449999809265137,
+      6.0
+    ]
+  },
+  {
+    "name": "Header choir-stair E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      20.920000076293945,
+      32.400001525878906,
+      21.079999923706055,
+      33.599998474121094,
+      5.449999809265137,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor choir",
+    "role": "floor",
+    "zone": "choir",
+    "link": null,
+    "bounds": [
+      21.0,
+      26.0,
+      26.0,
+      34.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Ceiling cap choir",
+    "role": "ceiling-cap",
+    "zone": "choir",
+    "link": null,
+    "bounds": [
+      21.0,
+      26.0,
+      26.0,
+      34.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall choir N",
+    "role": "rough shell wall",
+    "zone": "choir",
+    "link": null,
+    "bounds": [
+      21.0,
+      25.920000076293945,
+      26.0,
+      26.079999923706055,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall choir S",
+    "role": "rough shell wall",
+    "zone": "choir",
+    "link": null,
+    "bounds": [
+      21.0,
+      33.91999816894531,
+      26.0,
+      34.08000183105469,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall choir E.001",
+    "role": "rough shell wall",
+    "zone": "choir",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      33.30000305175781,
+      26.079999923706055,
+      34.0,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Header choir E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      32.10000228881836,
+      26.079999923706055,
+      33.29999923706055,
+      5.449999809265137,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor tower-stair",
+    "role": "floor",
+    "zone": "tower-stair",
+    "link": null,
+    "bounds": [
+      10.0,
+      26.0,
+      18.0,
+      34.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Wall tower-stair N",
+    "role": "rough shell wall",
+    "zone": "tower-stair",
+    "link": null,
+    "bounds": [
+      10.0,
+      25.920000076293945,
+      18.0,
+      26.079999923706055,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall tower-stair S",
+    "role": "rough shell wall",
+    "zone": "tower-stair",
+    "link": null,
+    "bounds": [
+      10.0,
+      33.91999816894531,
+      18.0,
+      34.08000183105469,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall tower-stair W",
+    "role": "rough shell wall",
+    "zone": "tower-stair",
+    "link": null,
+    "bounds": [
+      9.920000076293945,
+      26.0,
+      10.079999923706055,
+      34.0,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor music-entry",
+    "role": "floor",
+    "zone": "music-entry",
+    "link": null,
+    "bounds": [
+      26.0,
+      26.0,
+      29.0,
+      34.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Ceiling cap music-entry",
+    "role": "ceiling-cap",
+    "zone": "music-entry",
+    "link": null,
+    "bounds": [
+      26.0,
+      26.0,
+      29.0,
+      34.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall music-entry N",
+    "role": "rough shell wall",
+    "zone": "music-entry",
+    "link": null,
+    "bounds": [
+      26.0,
+      25.920000076293945,
+      29.0,
+      26.079999923706055,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall music-entry S",
+    "role": "rough shell wall",
+    "zone": "music-entry",
+    "link": null,
+    "bounds": [
+      26.0,
+      33.91999816894531,
+      29.0,
+      34.08000183105469,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Header music-entry E",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      28.920000076293945,
+      27.399999618530273,
+      29.079999923706055,
+      28.600000381469727,
+      5.449999809265137,
+      6.0
+    ]
+  },
+  {
+    "name": "Header music-entry E.002",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      28.920000076293945,
+      31.399999618530273,
+      29.079999923706055,
+      32.599998474121094,
+      5.449999809265137,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor music-archive",
+    "role": "floor",
+    "zone": "music-archive",
+    "link": null,
+    "bounds": [
+      29.0,
+      26.0,
+      34.0,
+      30.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Ceiling cap music-archive",
+    "role": "ceiling-cap",
+    "zone": "music-archive",
+    "link": null,
+    "bounds": [
+      29.0,
+      26.0,
+      34.0,
+      30.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall music-archive N",
+    "role": "rough shell wall",
+    "zone": "music-archive",
+    "link": null,
+    "bounds": [
+      29.0,
+      25.920000076293945,
+      34.0,
+      26.079999923706055,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall music-archive S",
+    "role": "rough shell wall",
+    "zone": "music-archive",
+    "link": null,
+    "bounds": [
+      29.0,
+      29.920000076293945,
+      34.0,
+      30.079999923706055,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall music-archive E",
+    "role": "rough shell wall",
+    "zone": "music-archive",
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      26.0,
+      34.08000183105469,
+      30.0,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor organ-service",
+    "role": "floor",
+    "zone": "organ-service",
+    "link": null,
+    "bounds": [
+      29.0,
+      30.0,
+      34.0,
+      34.0,
+      2.8400001525878906,
+      3.0
+    ]
+  },
+  {
+    "name": "Ceiling cap organ-service",
+    "role": "ceiling-cap",
+    "zone": "organ-service",
+    "link": null,
+    "bounds": [
+      29.0,
+      30.0,
+      34.0,
+      34.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall organ-service S",
+    "role": "rough shell wall",
+    "zone": "organ-service",
+    "link": null,
+    "bounds": [
+      29.0,
+      33.91999816894531,
+      34.0,
+      34.08000183105469,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Wall organ-service E",
+    "role": "rough shell wall",
+    "zone": "organ-service",
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      30.0,
+      34.08000183105469,
+      34.0,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor belfry",
+    "role": "floor",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      10.0,
+      26.0,
+      15.700000762939453,
+      27.599998474121094,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor belfry.001",
+    "role": "floor",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      10.0,
+      27.600000381469727,
+      15.700000762939453,
+      32.400001525878906,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor belfry.002",
+    "role": "floor",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      10.0,
+      32.400001525878906,
+      15.700000762939453,
+      34.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor belfry.003",
+    "role": "floor",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      15.699999809265137,
+      26.0,
+      17.299999237060547,
+      27.599998474121094,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor belfry.004",
+    "role": "floor",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      15.699999809265137,
+      32.400001525878906,
+      17.299999237060547,
+      34.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor belfry.005",
+    "role": "floor",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      17.299999237060547,
+      26.0,
+      18.0,
+      27.599998474121094,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor belfry.006",
+    "role": "floor",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      17.299999237060547,
+      27.600000381469727,
+      18.0,
+      32.400001525878906,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Floor belfry.007",
+    "role": "floor",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      17.299999237060547,
+      32.400001525878906,
+      18.0,
+      34.0,
+      5.840000152587891,
+      6.0
+    ]
+  },
+  {
+    "name": "Ceiling cap belfry",
+    "role": "ceiling-cap",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      10.0,
+      26.0,
+      18.0,
+      34.0,
+      8.84000015258789,
+      9.0
+    ]
+  },
+  {
+    "name": "Wall belfry N",
+    "role": "rough shell wall",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      10.0,
+      25.920000076293945,
+      18.0,
+      26.079999923706055,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Wall belfry S",
+    "role": "rough shell wall",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      10.0,
+      33.91999816894531,
+      18.0,
+      34.08000183105469,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Wall belfry W",
+    "role": "rough shell wall",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      9.920000076293945,
+      26.0,
+      10.079999923706055,
+      34.0,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Wall belfry E",
+    "role": "rough shell wall",
+    "zone": "belfry",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      26.0,
+      18.079999923706055,
+      34.0,
+      6.0,
+      9.0
+    ]
+  },
+  {
+    "name": "Floor crypt-stair",
+    "role": "floor",
+    "zone": "crypt-stair",
+    "link": null,
+    "bounds": [
+      26.0,
+      26.0,
+      34.0,
+      34.0,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Wall crypt-stair N",
+    "role": "rough shell wall",
+    "zone": "crypt-stair",
+    "link": null,
+    "bounds": [
+      26.0,
+      25.920000076293945,
+      34.0,
+      26.079999923706055,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall crypt-stair S",
+    "role": "rough shell wall",
+    "zone": "crypt-stair",
+    "link": null,
+    "bounds": [
+      26.0,
+      33.91999816894531,
+      34.0,
+      34.08000183105469,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Header crypt-stair W",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      29.399999618530273,
+      26.079999923706055,
+      30.600000381469727,
+      -0.550000011920929,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall crypt-stair E",
+    "role": "rough shell wall",
+    "zone": "crypt-stair",
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      26.0,
+      34.08000183105469,
+      34.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor crypt-aisle",
+    "role": "floor",
+    "zone": "crypt-aisle",
+    "link": null,
+    "bounds": [
+      22.0,
+      12.0,
+      26.0,
+      34.0,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Wall crypt-aisle N",
+    "role": "rough shell wall",
+    "zone": "crypt-aisle",
+    "link": null,
+    "bounds": [
+      22.0,
+      11.920000076293945,
+      26.0,
+      12.079999923706055,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall crypt-aisle S",
+    "role": "rough shell wall",
+    "zone": "crypt-aisle",
+    "link": null,
+    "bounds": [
+      22.0,
+      33.91999816894531,
+      26.0,
+      34.08000183105469,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Header crypt-aisle W",
+    "role": "rough opening header",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      21.920000076293945,
+      29.399999618530273,
+      22.079999923706055,
+      30.600000381469727,
+      -0.550000011920929,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor crypt-memorial",
+    "role": "floor",
+    "zone": "crypt-memorial",
+    "link": null,
+    "bounds": [
+      10.0,
+      26.0,
+      22.0,
+      34.0,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Wall crypt-memorial N",
+    "role": "rough shell wall",
+    "zone": "crypt-memorial",
+    "link": null,
+    "bounds": [
+      10.0,
+      25.920000076293945,
+      22.0,
+      26.079999923706055,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall crypt-memorial S",
+    "role": "rough shell wall",
+    "zone": "crypt-memorial",
+    "link": null,
+    "bounds": [
+      10.0,
+      33.91999816894531,
+      22.0,
+      34.08000183105469,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall crypt-memorial W",
+    "role": "rough shell wall",
+    "zone": "crypt-memorial",
+    "link": null,
+    "bounds": [
+      9.920000076293945,
+      26.0,
+      10.079999923706055,
+      34.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor vault-west-a",
+    "role": "floor",
+    "zone": "vault-west-a",
+    "link": null,
+    "bounds": [
+      10.0,
+      12.0,
+      16.0,
+      26.0,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Ceiling cap vault-west-a",
+    "role": "ceiling-cap",
+    "zone": "vault-west-a",
+    "link": null,
+    "bounds": [
+      10.0,
+      12.0,
+      14.0,
+      18.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap vault-west-a.001",
+    "role": "ceiling-cap",
+    "zone": "vault-west-a",
+    "link": null,
+    "bounds": [
+      14.0,
+      12.0,
+      16.0,
+      18.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-west-a N",
+    "role": "rough shell wall",
+    "zone": "vault-west-a",
+    "link": null,
+    "bounds": [
+      10.0,
+      11.920000076293945,
+      16.0,
+      12.079999923706055,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-west-a S",
+    "role": "rough shell wall",
+    "zone": "vault-west-a",
+    "link": null,
+    "bounds": [
+      10.0,
+      25.920000076293945,
+      16.0,
+      26.079999923706055,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-west-a W",
+    "role": "rough shell wall",
+    "zone": "vault-west-a",
+    "link": null,
+    "bounds": [
+      9.920000076293945,
+      12.0,
+      10.079999923706055,
+      26.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-west-a E",
+    "role": "rough shell wall",
+    "zone": "vault-west-a",
+    "link": null,
+    "bounds": [
+      15.920000076293945,
+      12.0,
+      16.079999923706055,
+      26.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor vault-west-b",
+    "role": "floor",
+    "zone": "vault-west-b",
+    "link": null,
+    "bounds": [
+      16.0,
+      12.0,
+      22.0,
+      26.0,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Ceiling cap vault-west-b",
+    "role": "ceiling-cap",
+    "zone": "vault-west-b",
+    "link": null,
+    "bounds": [
+      16.0,
+      12.0,
+      18.0,
+      18.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-west-b N",
+    "role": "rough shell wall",
+    "zone": "vault-west-b",
+    "link": null,
+    "bounds": [
+      16.0,
+      11.920000076293945,
+      22.0,
+      12.079999923706055,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-west-b S",
+    "role": "rough shell wall",
+    "zone": "vault-west-b",
+    "link": null,
+    "bounds": [
+      16.0,
+      25.920000076293945,
+      22.0,
+      26.079999923706055,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-west-b E",
+    "role": "rough shell wall",
+    "zone": "vault-west-b",
+    "link": null,
+    "bounds": [
+      21.920000076293945,
+      12.0,
+      22.079999923706055,
+      26.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor vault-east",
+    "role": "floor",
+    "zone": "vault-east",
+    "link": null,
+    "bounds": [
+      26.0,
+      12.0,
+      34.0,
+      26.0,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Wall vault-east N",
+    "role": "rough shell wall",
+    "zone": "vault-east",
+    "link": null,
+    "bounds": [
+      26.0,
+      11.920000076293945,
+      34.0,
+      12.079999923706055,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-east W",
+    "role": "rough shell wall",
+    "zone": "vault-east",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      12.0,
+      26.079999923706055,
+      26.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-east E",
+    "role": "rough shell wall",
+    "zone": "vault-east",
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      12.0,
+      34.08000183105469,
+      26.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Floor vault-north",
+    "role": "floor",
+    "zone": "vault-north",
+    "link": null,
+    "bounds": [
+      10.0,
+      6.0,
+      34.0,
+      12.0,
+      -3.1599998474121094,
+      -3.0
+    ]
+  },
+  {
+    "name": "Ceiling cap vault-north",
+    "role": "ceiling-cap",
+    "zone": "vault-north",
+    "link": null,
+    "bounds": [
+      10.0,
+      6.0,
+      18.0,
+      10.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Ceiling cap vault-north.001",
+    "role": "ceiling-cap",
+    "zone": "vault-north",
+    "link": null,
+    "bounds": [
+      10.0,
+      10.0,
+      18.0,
+      12.0,
+      -0.1599999964237213,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-north N",
+    "role": "rough shell wall",
+    "zone": "vault-north",
+    "link": null,
+    "bounds": [
+      10.0,
+      5.920000076293945,
+      34.0,
+      6.079999923706055,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-north S",
+    "role": "rough shell wall",
+    "zone": "vault-north",
+    "link": null,
+    "bounds": [
+      10.0,
+      11.920000076293945,
+      34.0,
+      12.079999923706055,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-north W",
+    "role": "rough shell wall",
+    "zone": "vault-north",
+    "link": null,
+    "bounds": [
+      9.920000076293945,
+      6.0,
+      10.079999923706055,
+      12.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Wall vault-north E",
+    "role": "rough shell wall",
+    "zone": "vault-north",
+    "link": null,
+    "bounds": [
+      33.91999816894531,
+      6.0,
+      34.08000183105469,
+      12.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "L01 support 0",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      21.399999618530273,
+      45.0,
+      22.600000381469727,
+      51.5,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L01 support 1",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      21.405405044555664,
+      44.91965103149414,
+      23.094594955444336,
+      48.78034973144531,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L02 support 0",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      21.400794982910156,
+      38.969112396240234,
+      23.099205017089844,
+      48.73088836669922,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L16 support 1",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.938201904296875,
+      25.789325714111328,
+      30.561798095703125,
+      30.210674285888672,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L17 support 1",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      21.975021362304688,
+      18.90052032470703,
+      34.02497863769531,
+      20.59947967529297,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L18 support 1",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      21.45939826965332,
+      5.739710807800293,
+      29.04060173034668,
+      19.760290145874023,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L30 support 0",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      5.536156177520752,
+      19.119409561157227,
+      22.463844299316406,
+      39.38058853149414,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L30 support 1",
+    "role": "rough route support; stair/ramp engineering unverified",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      5.695924758911133,
+      38.482757568359375,
+      22.804075241088867,
+      49.21723937988281,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "L33 flight0 step1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      27.600000381469727,
+      20.149999618530273,
+      27.882352828979492,
+      -0.1599999964237213,
+      0.1764705777168274
+    ]
+  },
+  {
+    "name": "L33 flight0 step2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      27.882352828979492,
+      20.149999618530273,
+      28.164705276489258,
+      -0.1599999964237213,
+      0.3529411852359772
+    ]
+  },
+  {
+    "name": "L33 flight0 step3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      28.164705276489258,
+      20.149999618530273,
+      28.447057723999023,
+      -0.1599999964237213,
+      0.529411792755127
+    ]
+  },
+  {
+    "name": "L33 flight0 step4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      28.447059631347656,
+      20.149999618530273,
+      28.729412078857422,
+      -0.1599999964237213,
+      0.7058823108673096
+    ]
+  },
+  {
+    "name": "L33 flight0 step5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      28.729412078857422,
+      20.149999618530273,
+      29.011764526367188,
+      -0.1599999964237213,
+      0.8823529481887817
+    ]
+  },
+  {
+    "name": "L33 flight0 step6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      29.011764526367188,
+      20.149999618530273,
+      29.294116973876953,
+      -0.1600000262260437,
+      1.058823585510254
+    ]
+  },
+  {
+    "name": "L33 flight0 step7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      29.294116973876953,
+      20.149999618530273,
+      29.57646942138672,
+      -0.15999996662139893,
+      1.2352941036224365
+    ]
+  },
+  {
+    "name": "L33 flight0 step8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      29.57647132873535,
+      20.149999618530273,
+      29.858823776245117,
+      -0.1600000262260437,
+      1.4117646217346191
+    ]
+  },
+  {
+    "name": "L33 flight0 step9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      29.858823776245117,
+      20.149999618530273,
+      30.141176223754883,
+      -0.1600000262260437,
+      1.5882353782653809
+    ]
+  },
+  {
+    "name": "L33 flight0 step10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      30.141176223754883,
+      20.149999618530273,
+      30.42352867126465,
+      -0.15999996662139893,
+      1.7647058963775635
+    ]
+  },
+  {
+    "name": "L33 flight0 step11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      30.42353057861328,
+      20.149999618530273,
+      30.705883026123047,
+      -0.1600000262260437,
+      1.941176414489746
+    ]
+  },
+  {
+    "name": "L33 flight0 step12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      30.705883026123047,
+      20.149999618530273,
+      30.988235473632812,
+      -0.15999996662139893,
+      2.117647171020508
+    ]
+  },
+  {
+    "name": "L33 flight0 step13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      30.988235473632812,
+      20.149999618530273,
+      31.270587921142578,
+      -0.15999996662139893,
+      2.2941174507141113
+    ]
+  },
+  {
+    "name": "L33 flight0 step14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      31.270587921142578,
+      20.149999618530273,
+      31.552940368652344,
+      -0.16000008583068848,
+      2.470588207244873
+    ]
+  },
+  {
+    "name": "L33 flight0 step15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      31.552942276000977,
+      20.149999618530273,
+      31.835294723510742,
+      -0.15999996662139893,
+      2.6470589637756348
+    ]
+  },
+  {
+    "name": "L33 flight0 step16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      31.835294723510742,
+      20.149999618530273,
+      32.11764907836914,
+      -0.15999996662139893,
+      2.8235292434692383
+    ]
+  },
+  {
+    "name": "L33 flight0 step17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L33",
+    "bounds": [
+      18.850000381469727,
+      32.117645263671875,
+      20.149999618530273,
+      32.400001525878906,
+      -0.16000008583068848,
+      3.0
+    ]
+  },
+  {
+    "name": "L34 flight0 step1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      27.600000381469727,
+      17.149999618530273,
+      27.882352828979492,
+      2.8399999141693115,
+      3.1764705181121826
+    ]
+  },
+  {
+    "name": "L34 flight0 step2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      27.882352828979492,
+      17.149999618530273,
+      28.164705276489258,
+      2.8399999141693115,
+      3.3529412746429443
+    ]
+  },
+  {
+    "name": "L34 flight0 step3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      28.164705276489258,
+      17.149999618530273,
+      28.447057723999023,
+      2.8400001525878906,
+      3.529411792755127
+    ]
+  },
+  {
+    "name": "L34 flight0 step4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      28.447059631347656,
+      17.149999618530273,
+      28.729412078857422,
+      2.8399999141693115,
+      3.7058823108673096
+    ]
+  },
+  {
+    "name": "L34 flight0 step5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      28.729412078857422,
+      17.149999618530273,
+      29.011764526367188,
+      2.8400001525878906,
+      3.882352828979492
+    ]
+  },
+  {
+    "name": "L34 flight0 step6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      29.011764526367188,
+      17.149999618530273,
+      29.294116973876953,
+      2.8400001525878906,
+      4.058823585510254
+    ]
+  },
+  {
+    "name": "L34 flight0 step7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      29.294116973876953,
+      17.149999618530273,
+      29.57646942138672,
+      2.8399999141693115,
+      4.235293865203857
+    ]
+  },
+  {
+    "name": "L34 flight0 step8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      29.57647132873535,
+      17.149999618530273,
+      29.858823776245117,
+      2.8400001525878906,
+      4.411764621734619
+    ]
+  },
+  {
+    "name": "L34 flight0 step9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      29.858823776245117,
+      17.149999618530273,
+      30.141176223754883,
+      2.8400001525878906,
+      4.588235378265381
+    ]
+  },
+  {
+    "name": "L34 flight0 step10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      30.141176223754883,
+      17.149999618530273,
+      30.42352867126465,
+      2.8399999141693115,
+      4.764705657958984
+    ]
+  },
+  {
+    "name": "L34 flight0 step11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      30.42353057861328,
+      17.149999618530273,
+      30.705883026123047,
+      2.8400001525878906,
+      4.941176414489746
+    ]
+  },
+  {
+    "name": "L34 flight0 step12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      30.705883026123047,
+      17.149999618530273,
+      30.988235473632812,
+      2.8399999141693115,
+      5.117647171020508
+    ]
+  },
+  {
+    "name": "L34 flight0 step13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      30.988235473632812,
+      17.149999618530273,
+      31.270587921142578,
+      2.8400001525878906,
+      5.2941179275512695
+    ]
+  },
+  {
+    "name": "L34 flight0 step14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      31.270587921142578,
+      17.149999618530273,
+      31.552940368652344,
+      2.8399996757507324,
+      5.470588207244873
+    ]
+  },
+  {
+    "name": "L34 flight0 step15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      31.552942276000977,
+      17.149999618530273,
+      31.835294723510742,
+      2.8399999141693115,
+      5.647058486938477
+    ]
+  },
+  {
+    "name": "L34 flight0 step16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      31.835294723510742,
+      17.149999618530273,
+      32.11764907836914,
+      2.8400001525878906,
+      5.823529243469238
+    ]
+  },
+  {
+    "name": "L34 flight0 step17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L34",
+    "bounds": [
+      15.850000381469727,
+      32.117645263671875,
+      17.149999618530273,
+      32.400001525878906,
+      2.8400001525878906,
+      6.0
+    ]
+  },
+  {
+    "name": "L35 flight0 step1",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      27.600000381469727,
+      32.150001525878906,
+      27.882352828979492,
+      -3.1600000858306885,
+      -2.8235294818878174
+    ]
+  },
+  {
+    "name": "L35 flight0 step2",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      27.882352828979492,
+      32.150001525878906,
+      28.164705276489258,
+      -3.1600000858306885,
+      -2.6470587253570557
+    ]
+  },
+  {
+    "name": "L35 flight0 step3",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      28.164705276489258,
+      32.150001525878906,
+      28.447057723999023,
+      -3.1599998474121094,
+      -2.470588207244873
+    ]
+  },
+  {
+    "name": "L35 flight0 step4",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      28.447059631347656,
+      32.150001525878906,
+      28.729412078857422,
+      -3.1600000858306885,
+      -2.2941176891326904
+    ]
+  },
+  {
+    "name": "L35 flight0 step5",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      28.729412078857422,
+      32.150001525878906,
+      29.011764526367188,
+      -3.1599998474121094,
+      -2.117647171020508
+    ]
+  },
+  {
+    "name": "L35 flight0 step6",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      29.011764526367188,
+      32.150001525878906,
+      29.294116973876953,
+      -3.1599998474121094,
+      -1.941176414489746
+    ]
+  },
+  {
+    "name": "L35 flight0 step7",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      29.294116973876953,
+      32.150001525878906,
+      29.57646942138672,
+      -3.1600000858306885,
+      -1.7647058963775635
+    ]
+  },
+  {
+    "name": "L35 flight0 step8",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      29.57647132873535,
+      32.150001525878906,
+      29.858823776245117,
+      -3.1599998474121094,
+      -1.5882352590560913
+    ]
+  },
+  {
+    "name": "L35 flight0 step9",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      29.858823776245117,
+      32.150001525878906,
+      30.141176223754883,
+      -3.1599998474121094,
+      -1.4117646217346191
+    ]
+  },
+  {
+    "name": "L35 flight0 step10",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      30.141176223754883,
+      32.150001525878906,
+      30.42352867126465,
+      -3.1600000858306885,
+      -1.2352941036224365
+    ]
+  },
+  {
+    "name": "L35 flight0 step11",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      30.42353057861328,
+      32.150001525878906,
+      30.705883026123047,
+      -3.1599998474121094,
+      -1.0588234663009644
+    ]
+  },
+  {
+    "name": "L35 flight0 step12",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      30.705883026123047,
+      32.150001525878906,
+      30.988235473632812,
+      -3.1600000858306885,
+      -0.8823530673980713
+    ]
+  },
+  {
+    "name": "L35 flight0 step13",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      30.988235473632812,
+      32.150001525878906,
+      31.270587921142578,
+      -3.1599998474121094,
+      -0.7058824300765991
+    ]
+  },
+  {
+    "name": "L35 flight0 step14",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      31.270587921142578,
+      32.150001525878906,
+      31.552940368652344,
+      -3.1600000858306885,
+      -0.529411792755127
+    ]
+  },
+  {
+    "name": "L35 flight0 step15",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      31.552942276000977,
+      32.150001525878906,
+      31.835294723510742,
+      -3.1599998474121094,
+      -0.3529411554336548
+    ]
+  },
+  {
+    "name": "L35 flight0 step16",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      31.835294723510742,
+      32.150001525878906,
+      32.11764907836914,
+      -3.1599998474121094,
+      -0.17647063732147217
+    ]
+  },
+  {
+    "name": "L35 flight0 step17",
+    "role": "structural-stair-step",
+    "zone": null,
+    "link": "L35",
+    "bounds": [
+      30.850000381469727,
+      32.117645263671875,
+      32.150001525878906,
+      32.400001525878906,
+      -3.1600000858306885,
+      0.0
+    ]
+  },
+  {
+    "name": "level_blockout_pew.001",
+    "role": "placed source-library furnishing",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      19.053998947143555,
+      12.15999984741211,
+      20.77400016784668,
+      12.730000495910645,
+      0.0,
+      1.3049999475479126
+    ]
+  },
+  {
+    "name": "level_blockout_stone_altar.001",
+    "role": "placed source-library furnishing",
+    "zone": "chancel",
+    "link": null,
+    "bounds": [
+      19.23200035095215,
+      6.159999847412109,
+      21.552000045776367,
+      7.340000152587891,
+      0.0,
+      1.7699999809265137
+    ]
+  },
+  {
+    "name": "level_blockout_organ_pipe_console.001",
+    "role": "placed source-library furnishing",
+    "zone": "choir",
+    "link": null,
+    "bounds": [
+      21.662078857421875,
+      26.160001754760742,
+      23.831680297851562,
+      27.32160186767578,
+      3.0,
+      5.779200077056885
+    ]
+  },
+  {
+    "name": "level_blockout_confessional_screen.001",
+    "role": "placed source-library furnishing",
+    "zone": "confessional",
+    "link": null,
+    "bounds": [
+      10.15999984741211,
+      18.531681060791016,
+      11.540000915527344,
+      20.353282928466797,
+      0.0,
+      2.4149999618530273
+    ]
+  },
+  {
+    "name": "level_blockout_archive_cabinet.001",
+    "role": "placed source-library furnishing",
+    "zone": "records",
+    "link": null,
+    "bounds": [
+      17.313003540039062,
+      26.67999839782715,
+      17.840003967285156,
+      27.760000228881836,
+      0.0,
+      2.0
+    ]
+  },
+  {
+    "name": "Saved editor macroterrain CHURCH",
+    "role": "saved editor terrain / macroform candidate",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      3.0,
+      -3.0,
+      39.0,
+      60.0,
+      -0.8462043404579163,
+      0.22998398542404175
+    ]
+  },
+  {
+    "name": "Bearing skirt 0000",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      9.649999618530273,
+      26.0,
+      10.100000381469727,
+      28.0,
+      -0.5667740106582642,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0001",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      9.649999618530273,
+      28.0,
+      10.100000381469727,
+      30.0,
+      -0.6108185052871704,
+      -0.15999998152256012
+    ]
+  },
+  {
+    "name": "Bearing skirt 0002",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      33.900001525878906,
+      11.5,
+      34.349998474121094,
+      -0.6881386041641235,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0003",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      11.5,
+      33.900001525878906,
+      13.0,
+      34.349998474121094,
+      -0.6975380182266235,
+      -0.15999996662139893
+    ]
+  },
+  {
+    "name": "Bearing skirt 0004",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      9.649999618530273,
+      30.0,
+      10.100000381469727,
+      32.0,
+      -0.6467071771621704,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0005",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      9.649999618530273,
+      32.0,
+      10.100000381469727,
+      34.0,
+      -0.6724907159805298,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0006",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      13.0,
+      33.900001525878906,
+      14.0,
+      34.349998474121094,
+      -0.7038856744766235,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0007",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      14.0,
+      33.900001525878906,
+      15.0,
+      34.349998474121094,
+      -0.7079139947891235,
+      -0.1600000113248825
+    ]
+  },
+  {
+    "name": "Bearing skirt 0008",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      15.0,
+      33.900001525878906,
+      16.5,
+      34.349998474121094,
+      -0.7132583856582642,
+      -0.1600000113248825
+    ]
+  },
+  {
+    "name": "Bearing skirt 0009",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      5.650000095367432,
+      20.0,
+      6.099999904632568,
+      -0.7856308221817017,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0010",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      20.0,
+      5.650000095367432,
+      22.0,
+      6.099999904632568,
+      -0.7942444086074829,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0011",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      22.0,
+      5.650000095367432,
+      24.0,
+      6.099999904632568,
+      -0.7958580255508423,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0012",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      24.0,
+      5.650000095367432,
+      26.0,
+      6.099999904632568,
+      -0.7958580255508423,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0013",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      38.900001525878906,
+      20.0,
+      39.349998474121094,
+      -0.7072311639785767,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0014",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      20.0,
+      38.900001525878906,
+      22.0,
+      39.349998474121094,
+      -0.7046180963516235,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0015",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      22.0,
+      38.900001525878906,
+      24.0,
+      39.349998474121094,
+      -0.7010284662246704,
+      -0.15999998152256012
+    ]
+  },
+  {
+    "name": "Bearing skirt 0016",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      24.0,
+      38.900001525878906,
+      26.0,
+      39.349998474121094,
+      -0.6980987787246704,
+      -0.15999998152256012
+    ]
+  },
+  {
+    "name": "Bearing skirt 0017",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      17.649999618530273,
+      35.66666793823242,
+      18.100000381469727,
+      37.33333206176758,
+      -0.7136017084121704,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0018",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      17.649999618530273,
+      37.33333206176758,
+      18.100000381469727,
+      39.0,
+      -0.7110000848770142,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0019",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.899999618530273,
+      35.66666793823242,
+      26.350000381469727,
+      37.33333206176758,
+      -0.7043014764785767,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0020",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.899999618530273,
+      37.33333206176758,
+      26.350000381469727,
+      39.0,
+      -0.6994186639785767,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0021",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      5.650000095367432,
+      27.66666603088379,
+      6.099999904632568,
+      -0.7939010858535767,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0022",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.66666603088379,
+      5.650000095367432,
+      29.33333396911621,
+      6.099999904632568,
+      -0.7914634943008423,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0023",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.33333396911621,
+      5.650000095367432,
+      31.0,
+      6.099999904632568,
+      -0.7883697748184204,
+      -0.1600000113248825
+    ]
+  },
+  {
+    "name": "Bearing skirt 0024",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      33.900001525878906,
+      27.66666603088379,
+      34.349998474121094,
+      -0.7088409662246704,
+      -0.1600000113248825
+    ]
+  },
+  {
+    "name": "Bearing skirt 0025",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      27.66666603088379,
+      33.900001525878906,
+      29.33333396911621,
+      34.349998474121094,
+      -0.7055870294570923,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0026",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      29.33333396911621,
+      33.900001525878906,
+      31.0,
+      34.349998474121094,
+      -0.7023330926895142,
+      -0.1600000113248825
+    ]
+  },
+  {
+    "name": "Bearing skirt 0027",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.0,
+      5.650000095367432,
+      32.5,
+      6.099999904632568,
+      -0.7851158380508423,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0028",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      32.5,
+      5.650000095367432,
+      34.0,
+      6.099999904632568,
+      -0.7821861505508423,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0029",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      6.0,
+      34.349998474121094,
+      8.0,
+      -0.8014732599258423,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0030",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      8.0,
+      34.349998474121094,
+      10.0,
+      -0.7990318536758423,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0031",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      10.0,
+      34.349998474121094,
+      12.0,
+      -0.7959533929824829,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0032",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      12.0,
+      34.349998474121094,
+      14.0,
+      -0.7938553094863892,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0033",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      14.0,
+      34.349998474121094,
+      16.0,
+      -0.7915855646133423,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0034",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      16.0,
+      34.349998474121094,
+      18.0,
+      -0.7894874811172485,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0035",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      18.0,
+      34.349998474121094,
+      20.0,
+      -0.7873893976211548,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0036",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      20.0,
+      34.349998474121094,
+      22.0,
+      -0.7851158380508423,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0037",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      22.0,
+      34.349998474121094,
+      24.0,
+      -0.7828460931777954,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0038",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      24.0,
+      34.349998474121094,
+      26.0,
+      -0.7819610834121704,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0039",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      26.0,
+      34.349998474121094,
+      28.0,
+      -0.7968078851699829,
+      -0.15999998152256012
+    ]
+  },
+  {
+    "name": "Bearing skirt 0040",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      28.0,
+      34.349998474121094,
+      30.0,
+      -0.819440484046936,
+      -0.1600000113248825
+    ]
+  },
+  {
+    "name": "Bearing skirt 0041",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      31.0,
+      33.900001525878906,
+      32.5,
+      34.349998474121094,
+      -0.7377487421035767,
+      -0.1599999964237213
+    ]
+  },
+  {
+    "name": "Bearing skirt 0042",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      32.5,
+      33.900001525878906,
+      34.0,
+      34.349998474121094,
+      -0.8329674005508423,
+      -0.1600000113248825
+    ]
+  },
+  {
+    "name": "Bearing skirt 0043",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      30.0,
+      34.349998474121094,
+      32.0,
+      -0.8482528924942017,
+      -0.1600000113248825
+    ]
+  },
+  {
+    "name": "Bearing skirt 0044",
+    "role": "terrain-bearing foundation construction",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.900001525878906,
+      32.0,
+      34.349998474121094,
+      34.0,
+      -0.8801361322402954,
+      -0.1600000113248825
+    ]
+  },
+  {
+    "name": "Flat route shell Wall nave S.001",
+    "role": "rough shell wall",
+    "zone": "nave",
+    "link": null,
+    "bounds": [
+      25.799999237060547,
+      25.920000076293945,
+      26.0,
+      26.079999923706055,
+      0.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall rear-nave N.001",
+    "role": "rough shell wall",
+    "zone": "rear-nave",
+    "link": null,
+    "bounds": [
+      25.799999237060547,
+      25.920000076293945,
+      26.0,
+      26.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall rear-nave S",
+    "role": "rough shell wall",
+    "zone": "rear-nave",
+    "link": null,
+    "bounds": [
+      18.0,
+      33.91999816894531,
+      21.400001525878906,
+      34.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall rear-nave S.001",
+    "role": "rough shell wall",
+    "zone": "rear-nave",
+    "link": null,
+    "bounds": [
+      22.599998474121094,
+      33.91999816894531,
+      26.0,
+      34.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall rear-nave W",
+    "role": "rough shell wall",
+    "zone": "rear-nave",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      26.0,
+      18.079999923706055,
+      31.400001525878906,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall rear-nave W.001",
+    "role": "rough shell wall",
+    "zone": "rear-nave",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      32.599998474121094,
+      18.079999923706055,
+      34.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall vestibule S",
+    "role": "rough shell wall",
+    "zone": "vestibule",
+    "link": null,
+    "bounds": [
+      18.0,
+      38.91999816894531,
+      21.400001525878906,
+      39.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall vestibule S.001",
+    "role": "rough shell wall",
+    "zone": "vestibule",
+    "link": null,
+    "bounds": [
+      22.599998474121094,
+      38.91999816894531,
+      26.0,
+      39.08000183105469,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall parish-lobby N",
+    "role": "rough shell wall",
+    "zone": "parish-lobby",
+    "link": null,
+    "bounds": [
+      13.0,
+      29.920000076293945,
+      13.399999618530273,
+      30.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall parish-lobby N.001",
+    "role": "rough shell wall",
+    "zone": "parish-lobby",
+    "link": null,
+    "bounds": [
+      14.600000381469727,
+      29.920000076293945,
+      15.899999618530273,
+      30.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall parish-lobby N.002",
+    "role": "rough shell wall",
+    "zone": "parish-lobby",
+    "link": null,
+    "bounds": [
+      17.099998474121094,
+      29.920000076293945,
+      18.0,
+      30.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall parish-lobby W",
+    "role": "rough shell wall",
+    "zone": "parish-lobby",
+    "link": null,
+    "bounds": [
+      12.920000076293945,
+      30.0,
+      13.079999923706055,
+      31.400001525878906,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall parish-lobby W.001",
+    "role": "rough shell wall",
+    "zone": "parish-lobby",
+    "link": null,
+    "bounds": [
+      12.920000076293945,
+      32.599998474121094,
+      13.079999923706055,
+      34.0,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall parish-lobby E",
+    "role": "rough shell wall",
+    "zone": "parish-lobby",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      30.0,
+      18.079999923706055,
+      31.400001525878906,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall office S",
+    "role": "rough shell wall",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      10.0,
+      29.920000076293945,
+      13.399999618530273,
+      30.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall office S.001",
+    "role": "rough shell wall",
+    "zone": "office",
+    "link": null,
+    "bounds": [
+      14.600000381469727,
+      29.920000076293945,
+      15.0,
+      30.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall records S",
+    "role": "rough shell wall",
+    "zone": "records",
+    "link": null,
+    "bounds": [
+      15.0,
+      29.920000076293945,
+      15.899999618530273,
+      30.079999923706055,
+      0.0,
+      3.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall choir-stair W",
+    "role": "rough shell wall",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      26.0,
+      18.079999923706055,
+      32.63999938964844,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall choir-stair W.001",
+    "role": "rough shell wall",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      17.920000076293945,
+      33.839996337890625,
+      18.079999923706055,
+      34.0,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall choir-stair E",
+    "role": "rough shell wall",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      20.920000076293945,
+      26.0,
+      21.079999923706055,
+      32.400001525878906,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall choir-stair E.001",
+    "role": "rough shell wall",
+    "zone": "choir-stair",
+    "link": null,
+    "bounds": [
+      20.920000076293945,
+      33.599998474121094,
+      21.079999923706055,
+      34.0,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall choir E",
+    "role": "rough shell wall",
+    "zone": "choir",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      26.0,
+      26.079999923706055,
+      32.099998474121094,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall music-entry E",
+    "role": "rough shell wall",
+    "zone": "music-entry",
+    "link": null,
+    "bounds": [
+      28.920000076293945,
+      26.0,
+      29.079999923706055,
+      27.400001525878906,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall music-entry E.001",
+    "role": "rough shell wall",
+    "zone": "music-entry",
+    "link": null,
+    "bounds": [
+      28.920000076293945,
+      28.600000381469727,
+      29.079999923706055,
+      31.399999618530273,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall music-entry E.002",
+    "role": "rough shell wall",
+    "zone": "music-entry",
+    "link": null,
+    "bounds": [
+      28.920000076293945,
+      32.599998474121094,
+      29.079999923706055,
+      34.0,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall music-archive W.001",
+    "role": "rough shell wall",
+    "zone": "music-archive",
+    "link": null,
+    "bounds": [
+      28.920000076293945,
+      28.599998474121094,
+      29.079999923706055,
+      30.0,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall organ-service W",
+    "role": "rough shell wall",
+    "zone": "organ-service",
+    "link": null,
+    "bounds": [
+      28.920000076293945,
+      30.0,
+      29.079999923706055,
+      31.400001525878906,
+      3.0,
+      6.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall crypt-stair W",
+    "role": "rough shell wall",
+    "zone": "crypt-stair",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      26.0,
+      26.079999923706055,
+      29.400001525878906,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall crypt-stair W.001",
+    "role": "rough shell wall",
+    "zone": "crypt-stair",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      30.599998474121094,
+      26.079999923706055,
+      34.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall crypt-aisle W",
+    "role": "rough shell wall",
+    "zone": "crypt-aisle",
+    "link": null,
+    "bounds": [
+      21.920000076293945,
+      12.000000953674316,
+      22.079999923706055,
+      29.400001525878906,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall crypt-aisle W.001",
+    "role": "rough shell wall",
+    "zone": "crypt-aisle",
+    "link": null,
+    "bounds": [
+      21.920000076293945,
+      30.599998474121094,
+      22.079999923706055,
+      34.0,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall crypt-aisle E",
+    "role": "rough shell wall",
+    "zone": "crypt-aisle",
+    "link": null,
+    "bounds": [
+      25.920000076293945,
+      12.000000953674316,
+      26.079999923706055,
+      29.400001525878906,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Flat route shell Wall crypt-memorial E",
+    "role": "rough shell wall",
+    "zone": "crypt-memorial",
+    "link": null,
+    "bounds": [
+      21.920000076293945,
+      26.0,
+      22.079999923706055,
+      29.400001525878906,
+      -3.0,
+      0.0
+    ]
+  },
+  {
+    "name": "Arrival end bearing CHURCH 0",
+    "role": "structural-arrival-end-bearing",
+    "zone": null,
+    "link": "L01",
+    "bounds": [
+      21.399999618530273,
+      51.5,
+      22.600000381469727,
+      51.849998474121094,
+      -0.11999999731779099,
+      0.0
+    ]
+  },
+  {
+    "name": "nave-and-choir roof west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      12.0,
+      22.0,
+      34.0,
+      6.019999980926514,
+      9.239999771118164
+    ]
+  },
+  {
+    "name": "nave-and-choir roof east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      22.0,
+      12.0,
+      26.0,
+      34.0,
+      6.019999980926514,
+      9.239999771118164
+    ]
+  },
+  {
+    "name": "nave-and-choir gable north",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      12.0,
+      26.0,
+      12.239999771118164,
+      5.880000114440918,
+      9.039999961853027
+    ]
+  },
+  {
+    "name": "nave-and-choir gable south",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      33.7599983215332,
+      26.0,
+      34.0,
+      5.880000114440918,
+      9.039999961853027
+    ]
+  },
+  {
+    "name": "nave-and-choir eave closure west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      12.0,
+      18.200000762939453,
+      34.0,
+      5.880000114440918,
+      6.239999771118164
+    ]
+  },
+  {
+    "name": "nave-and-choir eave closure east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.799999237060547,
+      12.0,
+      26.0,
+      34.0,
+      5.880000114440918,
+      6.239999771118164
+    ]
+  },
+  {
+    "name": "vestibule roof north",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      34.0,
+      26.0,
+      36.5,
+      3.0199999809265137,
+      4.739999771118164
+    ]
+  },
+  {
+    "name": "vestibule roof south",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      36.5,
+      26.0,
+      39.0,
+      3.0199999809265137,
+      4.739999771118164
+    ]
+  },
+  {
+    "name": "vestibule gable west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      34.0,
+      18.239999771118164,
+      39.0,
+      2.880000114440918,
+      4.539999961853027
+    ]
+  },
+  {
+    "name": "vestibule gable east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.760000228881836,
+      34.0,
+      26.0,
+      39.0,
+      2.880000114440918,
+      4.539999961853027
+    ]
+  },
+  {
+    "name": "vestibule eave closure north",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      34.0,
+      26.0,
+      34.20000076293945,
+      2.880000114440918,
+      3.240000009536743
+    ]
+  },
+  {
+    "name": "vestibule eave closure south",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      38.79999923706055,
+      26.0,
+      39.0,
+      2.880000114440918,
+      3.240000009536743
+    ]
+  },
+  {
+    "name": "chancel roof north",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      6.0,
+      26.0,
+      9.0,
+      5.019999980926514,
+      7.440000057220459
+    ]
+  },
+  {
+    "name": "chancel roof south",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      9.0,
+      26.0,
+      12.0,
+      5.019999980926514,
+      7.440000057220459
+    ]
+  },
+  {
+    "name": "chancel gable west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      6.0,
+      18.239999771118164,
+      12.0,
+      4.880000114440918,
+      7.239999771118164
+    ]
+  },
+  {
+    "name": "chancel gable east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      25.760000228881836,
+      6.0,
+      26.0,
+      12.0,
+      4.880000114440918,
+      7.239999771118164
+    ]
+  },
+  {
+    "name": "chancel eave closure north",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      6.0,
+      26.0,
+      6.199999809265137,
+      4.880000114440918,
+      5.239999771118164
+    ]
+  },
+  {
+    "name": "chancel eave closure south",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      18.0,
+      11.800000190734863,
+      26.0,
+      12.0,
+      4.880000114440918,
+      5.239999771118164
+    ]
+  },
+  {
+    "name": "side-chapel roof west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      14.0,
+      30.0,
+      26.0,
+      4.019999980926514,
+      6.440000057220459
+    ]
+  },
+  {
+    "name": "side-chapel roof east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.0,
+      14.0,
+      34.0,
+      26.0,
+      4.019999980926514,
+      6.440000057220459
+    ]
+  },
+  {
+    "name": "side-chapel gable north",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      14.0,
+      34.0,
+      14.239999771118164,
+      3.880000114440918,
+      6.239999771118164
+    ]
+  },
+  {
+    "name": "side-chapel gable south",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      25.760000228881836,
+      34.0,
+      26.0,
+      3.880000114440918,
+      6.239999771118164
+    ]
+  },
+  {
+    "name": "side-chapel eave closure west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      14.0,
+      26.200000762939453,
+      26.0,
+      3.880000114440918,
+      4.239999771118164
+    ]
+  },
+  {
+    "name": "side-chapel eave closure east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.79999923706055,
+      14.0,
+      34.0,
+      26.0,
+      3.880000114440918,
+      4.239999771118164
+    ]
+  },
+  {
+    "name": "vestry roof west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      6.0,
+      30.0,
+      14.0,
+      3.0199999809265137,
+      5.039999961853027
+    ]
+  },
+  {
+    "name": "vestry roof east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.0,
+      6.0,
+      34.0,
+      14.0,
+      3.0199999809265137,
+      5.039999961853027
+    ]
+  },
+  {
+    "name": "vestry gable north",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      6.0,
+      34.0,
+      6.239999771118164,
+      2.880000114440918,
+      4.840000152587891
+    ]
+  },
+  {
+    "name": "vestry gable south",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      13.760000228881836,
+      34.0,
+      14.0,
+      2.880000114440918,
+      4.840000152587891
+    ]
+  },
+  {
+    "name": "vestry eave closure west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      6.0,
+      26.200000762939453,
+      14.0,
+      2.880000114440918,
+      3.240000009536743
+    ]
+  },
+  {
+    "name": "vestry eave closure east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.79999923706055,
+      6.0,
+      34.0,
+      14.0,
+      2.880000114440918,
+      3.240000009536743
+    ]
+  },
+  {
+    "name": "music-and-crypt-entry roof west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      26.0,
+      30.0,
+      34.0,
+      6.019999980926514,
+      8.039999961853027
+    ]
+  },
+  {
+    "name": "music-and-crypt-entry roof east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      30.0,
+      26.0,
+      34.0,
+      34.0,
+      6.019999980926514,
+      8.039999961853027
+    ]
+  },
+  {
+    "name": "music-and-crypt-entry gable north",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      26.0,
+      34.0,
+      26.239999771118164,
+      5.880000114440918,
+      7.840000152587891
+    ]
+  },
+  {
+    "name": "music-and-crypt-entry gable south",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      33.7599983215332,
+      34.0,
+      34.0,
+      5.880000114440918,
+      7.840000152587891
+    ]
+  },
+  {
+    "name": "music-and-crypt-entry eave closure west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      26.0,
+      26.0,
+      26.200000762939453,
+      34.0,
+      5.880000114440918,
+      6.239999771118164
+    ]
+  },
+  {
+    "name": "music-and-crypt-entry eave closure east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      33.79999923706055,
+      26.0,
+      34.0,
+      34.0,
+      5.880000114440918,
+      6.239999771118164
+    ]
+  },
+  {
+    "name": "belfry hip face 0",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      26.0,
+      18.0,
+      30.0,
+      9.020000457763672,
+      12.739999771118164
+    ]
+  },
+  {
+    "name": "belfry hip face 1",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      14.0,
+      26.0,
+      18.0,
+      34.0,
+      9.020000457763672,
+      12.739999771118164
+    ]
+  },
+  {
+    "name": "belfry hip face 2",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      30.0,
+      18.0,
+      34.0,
+      9.020000457763672,
+      12.739999771118164
+    ]
+  },
+  {
+    "name": "belfry hip face 3",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      26.0,
+      14.0,
+      34.0,
+      9.020000457763672,
+      12.739999771118164
+    ]
+  },
+  {
+    "name": "belfry fascia west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      26.0,
+      10.199999809265137,
+      34.0,
+      8.880000114440918,
+      9.239999771118164
+    ]
+  },
+  {
+    "name": "belfry fascia east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      17.799999237060547,
+      26.0,
+      18.0,
+      34.0,
+      8.880000114440918,
+      9.239999771118164
+    ]
+  },
+  {
+    "name": "belfry fascia north",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      26.0,
+      18.0,
+      26.200000762939453,
+      8.880000114440918,
+      9.239999771118164
+    ]
+  },
+  {
+    "name": "belfry fascia south",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      33.79999923706055,
+      18.0,
+      34.0,
+      8.880000114440918,
+      9.239999771118164
+    ]
+  },
+  {
+    "name": "confessional-and-consultation roof west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      18.0,
+      14.0,
+      26.0,
+      3.0199999809265137,
+      5.039999961853027
+    ]
+  },
+  {
+    "name": "confessional-and-consultation roof east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      14.0,
+      18.0,
+      18.0,
+      26.0,
+      3.0199999809265137,
+      5.039999961853027
+    ]
+  },
+  {
+    "name": "confessional-and-consultation gable north",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      18.0,
+      18.0,
+      18.239999771118164,
+      2.880000114440918,
+      4.840000152587891
+    ]
+  },
+  {
+    "name": "confessional-and-consultation gable south",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      25.760000228881836,
+      18.0,
+      26.0,
+      2.880000114440918,
+      4.840000152587891
+    ]
+  },
+  {
+    "name": "confessional-and-consultation eave closure west",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      10.0,
+      18.0,
+      10.199999809265137,
+      26.0,
+      2.880000114440918,
+      3.240000009536743
+    ]
+  },
+  {
+    "name": "confessional-and-consultation eave closure east",
+    "role": "enclosed pitched roof",
+    "zone": null,
+    "link": null,
+    "bounds": [
+      17.799999237060547,
+      18.0,
+      18.0,
+      26.0,
+      2.880000114440918,
+      3.240000009536743
+    ]
+  }
+]

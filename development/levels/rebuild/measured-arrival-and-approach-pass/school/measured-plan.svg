@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 496" role="img">
+<title>Ravenshade School — revised function-first rough measured approach plan</title>
+<style>
+text{fill:#253847;font:16px "Segoe UI",sans-serif} .title{font-size:26px;font-weight:700} .small{font-size:13px}
+.floor{fill:#dae7ed;stroke:#426073;stroke-width:1.7} .well{fill:#f2e5d9;stroke:#8a6243;stroke-width:1.6}
+.flight{fill:#dac7a7;stroke:#896641;stroke-width:1.6} .vehicle{fill:#a5aead;stroke:#425758;stroke-width:1.5}
+.gravel{fill:#e3e5d9;stroke:#7c8572;stroke-width:1.5}
+.door,.guide,.guard{fill:none} .door{stroke:#0b786a;stroke-width:4.5}
+.guide{stroke:#b34f20;stroke-width:2.5;stroke-dasharray:5 4} .guard{stroke:#405466;stroke-width:4}
+</style>
+<rect width="840" height="496" fill="#f9faf8"/>
+<text x="36" y="36" class="title">Ravenshade School — revised function-first rough</text><text x="36" y="70" class="">Canonical van, existing forecourt and foyer sill · north up</text><polygon class="gravel" points="98.00,185.00 208.00,165.00 338.00,185.00 568.00,165.00 638.00,225.00 628.00,355.00 538.00,415.00 178.00,415.00 78.00,335.00"/><rect x="108.000" y="165.000" width="500.000" height="60.000" class="floor"/><rect x="258.000" y="165.000" width="50.000" height="30.000" class="flight"/><rect x="258.000" y="105.000" width="50.000" height="60.000" class="floor"/><rect x="316.720" y="304.705" width="65.240" height="20.590" class="vehicle"/><rect x="301.720" y="308.400" width="15.000" height="13.200" class="vehicle"/><polyline points="301.720,315.000 295.500,315.000 283.000,285.000 283.000,210.000 283.000,165.000 283.000,135.000" class="guide"/><polyline points="274.000,165.000 292.000,165.000" class="door"/><text x="354" y="127" class="small">Foyer sill · 1.80 m clear</text><text x="352" y="201" class="small">Paved forecourt</text><text x="432" y="339" class="small">Canonical van and rear ramp</text><text x="125" y="365" class="small">Saved gravel yard</text><polyline points="45.000,467.000 75.000,467.000" class="guide"/><text x="84" y="472" class="small">Nonphysical circulation guide</text><polyline points="295.000,467.000 328.000,467.000" class="door"/><text x="338" y="472" class="small">Measured doorway</text><rect x="490.000" y="458.000" width="15.000" height="13.000" class="floor"/><text x="515" y="471" class="small">Floor or paving</text><rect x="641.000" y="458.000" width="15.000" height="13.000" class="well"/><text x="666" y="471" class="small">Stair well</text>
+</svg>

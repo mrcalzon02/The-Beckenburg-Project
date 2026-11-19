@@ -1,0 +1,586 @@
+{
+  "id": "SCHOOL",
+  "status": "ARCHITECTURAL_DOORWAYS_REBUILT_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/roof-construction-pass/school/construction.json",
+  "source_contract_sha256": "b049585fc5a93d5231e0bb15bb3b505eeb181a2dd87a4b0b2738209c75120ebc",
+  "source_glb": "development/levels/rebuild/roof-construction-pass/school/enclosed-roofs.glb",
+  "source_glb_sha256": "97cd14efb251c2666c4ab66d9ce82fb74d99858e75a9d78fef89c26a8563e9b3",
+  "source_physics": "development/levels/rebuild/roof-construction-pass/school/enclosed-roofs.hcs2",
+  "source_physics_sha256": "35532dc7ce334d0d6752dc93143896e4f4bac97e66cf4f8a1693c3504b063211",
+  "before_layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+  "before_layout_sha256": "e659b75d67ce08bbbcd9a68efc66bceb69b487fcce241d2527e03ddd46739e11",
+  "layout": "development/levels/rebuild/institution-doorway-pass/school/authored-layout.json",
+  "layout_sha256": "78f207e426a234a84b7af83d7e7f5ce6acaaea2ac6d5102df884b0ecbf5ac189",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "382:L43 flight0 step1",
+    "383:L43 flight0 step2",
+    "384:L43 flight0 step3",
+    "385:L43 flight0 step4",
+    "386:L43 flight0 step5",
+    "387:L43 flight0 step6",
+    "388:L43 flight0 step7",
+    "389:L43 flight0 step8",
+    "390:L43 flight0 step9",
+    "391:L43 flight0 step10",
+    "392:L43 flight0 step11",
+    "393:L43 flight0 step12",
+    "394:L43 flight0 step13",
+    "395:L43 flight0 step14",
+    "396:L43 flight0 step15",
+    "397:L43 flight0 step16",
+    "398:L43 flight0 step17",
+    "399:L43 flight0 step18",
+    "400:L43 flight0 step19",
+    "401:L43 flight0 step20",
+    "402:L44 flight0 step1",
+    "403:L44 flight0 step2",
+    "404:L44 flight0 step3",
+    "405:L44 flight0 step4",
+    "406:L44 flight0 step5",
+    "407:L44 flight0 step6",
+    "408:L44 flight0 step7",
+    "409:L44 flight0 step8",
+    "410:L44 flight0 step9",
+    "411:L44 flight0 step10",
+    "412:L44 flight0 step11",
+    "413:L44 flight0 step12",
+    "414:L44 flight0 step13",
+    "415:L44 flight0 step14",
+    "416:L44 flight0 step15",
+    "417:L44 flight0 step16",
+    "418:L44 flight0 step17"
+  ],
+  "stair_components": [
+    "382:L43 flight0 step1",
+    "383:L43 flight0 step2",
+    "384:L43 flight0 step3",
+    "385:L43 flight0 step4",
+    "386:L43 flight0 step5",
+    "387:L43 flight0 step6",
+    "388:L43 flight0 step7",
+    "389:L43 flight0 step8",
+    "390:L43 flight0 step9",
+    "391:L43 flight0 step10",
+    "392:L43 flight0 step11",
+    "393:L43 flight0 step12",
+    "394:L43 flight0 step13",
+    "395:L43 flight0 step14",
+    "396:L43 flight0 step15",
+    "397:L43 flight0 step16",
+    "398:L43 flight0 step17",
+    "399:L43 flight0 step18",
+    "400:L43 flight0 step19",
+    "401:L43 flight0 step20",
+    "402:L44 flight0 step1",
+    "403:L44 flight0 step2",
+    "404:L44 flight0 step3",
+    "405:L44 flight0 step4",
+    "406:L44 flight0 step5",
+    "407:L44 flight0 step6",
+    "408:L44 flight0 step7",
+    "409:L44 flight0 step8",
+    "410:L44 flight0 step9",
+    "411:L44 flight0 step10",
+    "412:L44 flight0 step11",
+    "413:L44 flight0 step12",
+    "414:L44 flight0 step13",
+    "415:L44 flight0 step14",
+    "416:L44 flight0 step15",
+    "417:L44 flight0 step16",
+    "418:L44 flight0 step17"
+  ],
+  "glb_sha256": "9b29533c49399a4c87ddbb4b7faf30e0a8eb6abaf9d8075fb6e4aa214151f653",
+  "physics_sha256": "e24fa37ec0292082628b1039890644c90cdd8602db7bc007f7c556248adbffd7",
+  "arrival_bearing": {
+    "link": "L42",
+    "anchor": [
+      28.0,
+      0,
+      51.5
+    ],
+    "route_width": 1.2,
+    "extension_metres": 0.35,
+    "contact_owner": "L42 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        27.4,
+        51.85
+      ],
+      [
+        27.4,
+        51.5
+      ],
+      [
+        28.6,
+        51.5
+      ],
+      [
+        28.6,
+        51.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          27.4,
+          51.85
+        ],
+        [
+          27.4,
+          51.5
+        ],
+        [
+          28.6,
+          51.5
+        ],
+        [
+          28.6,
+          51.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing SCHOOL 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": 30,
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "932e547f4ea2befc4598726c1d39437dd9382631d06665a9866abe6b439b15f2",
+  "access_route_changes": [
+    {
+      "site": "SCHOOL",
+      "link": "L08",
+      "rooms": [
+        "main-stair",
+        "service-stair"
+      ],
+      "before": [
+        [
+          26.5,
+          0,
+          25.0
+        ],
+        [
+          28.5,
+          0,
+          25.0
+        ],
+        [
+          28.5,
+          0,
+          20
+        ],
+        [
+          28.5,
+          0,
+          16.0
+        ],
+        [
+          28.6,
+          0,
+          16.0
+        ]
+      ],
+      "after": [
+        [
+          26.5,
+          0.0,
+          25.0
+        ],
+        [
+          28.5,
+          0.0,
+          20.0
+        ],
+        [
+          28.5,
+          0.0,
+          18.5
+        ]
+      ],
+      "width": 1.2,
+      "threshold": [
+        28.5,
+        0,
+        20
+      ],
+      "source": {
+        "id": "SCHOOL",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/school/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/school/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/school/supported-arrival.blend",
+        "native_sha256": "2cbdbebb0f876c6a5221e0dead0a7c92d68c8f33ba6a729552e0e2b3ee5692f5",
+        "glb_sha256": "d711e5effcaa0d46935d7478965b84e26741cbd456668ccc0fef7d144a71ca81"
+      }
+    }
+  ],
+  "geometry_unchanged": false,
+  "scope": "Existing exact exported mesh, native collision, editable scene, terrain holes, UVs, pivots and all non-link source fields retained. Doorways, widths and staging retained. Room access endpoints may move inside their own room. Independent complete routes and room connection checks remain separate; no runtime unlock.",
+  "roof_wings": [
+    {
+      "wing": "teaching",
+      "bounds": [
+        10,
+        12,
+        30,
+        36
+      ],
+      "ceiling": 7.2,
+      "ridge": 9.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "assembly",
+      "bounds": [
+        30,
+        24,
+        42,
+        36
+      ],
+      "ceiling": 8.1,
+      "ridge": 10.14,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "gym",
+      "bounds": [
+        38,
+        8,
+        50,
+        24
+      ],
+      "ceiling": 7.2,
+      "ridge": 9.440000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "health",
+      "bounds": [
+        30,
+        12,
+        38,
+        24
+      ],
+      "ceiling": 3.6,
+      "ridge": 5.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    },
+    {
+      "wing": "receiving",
+      "bounds": [
+        42,
+        28,
+        46,
+        36
+      ],
+      "ceiling": 3.6,
+      "ridge": 4.54,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24
+    }
+  ],
+  "roof_coverage_rays": 944,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/institution-doorway-batch/school.png",
+      "sha256": "247a4a4cabefc6b45029795476845926404d9aed81a451954beea6f23654de96",
+      "type": "native exported doorway construction with roof cutaway, not gameplay"
+    }
+  ],
+  "roof_generator_sha256": "cfa4e55508d2acd5e8cda538b04a8ea91dbfefa8c3f19527de936da46290eb51",
+  "remaining": "Runtime map adapter/rooms/portals/acoustics/spawns/services and native scene rendering are not integrated. Detailed roof step flashing, drainage, gutters, standing-height join/optical review and terrain/foundation defects remain open. Existing candidate availability unchanged.",
+  "entrance_landing": {
+    "bounds": [
+      20,
+      36,
+      25,
+      39
+    ],
+    "top_y": 0,
+    "foundation_bottom_y": -0.7568412780761719,
+    "soil_receivers": [
+      {
+        "x": 20.1,
+        "z": 38.9,
+        "soil_y": -0.4068412780761719
+      },
+      {
+        "x": 24.9,
+        "z": 38.9,
+        "soil_y": -0.39746665954589844
+      },
+      {
+        "x": 22.5,
+        "z": 38.9,
+        "soil_y": -0.40215301513671875
+      },
+      {
+        "x": 22.5,
+        "z": 38.01,
+        "soil_y": -0.40476226806640625
+      }
+    ]
+  },
+  "study_solid_removal": [
+    "Arrival end bearing SCHOOL 0",
+    "L27 support 1",
+    "L35 support 1",
+    "L36 support 0",
+    "L36 support 1",
+    "L37 support 0",
+    "L37 support 1",
+    "L38 support 0",
+    "L38 support 1",
+    "L39 support 1",
+    "L40 support 1",
+    "L41 support 0",
+    "L41 support 1",
+    "L42 support 0",
+    "L42 support 1"
+  ],
+  "doorways": [
+    {
+      "id": "SCHOOL-z-30-21.5",
+      "axis": "z",
+      "boundary": 30,
+      "along": 21.5,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        29.76,
+        30.24
+      ],
+      "rooms": [
+        "foyer",
+        "corridor"
+      ],
+      "side": "N",
+      "frame_depth": 0.4799999999999969,
+      "frame_center": [
+        21.5,
+        0,
+        30.0
+      ],
+      "boundary_center": [
+        21.5,
+        0,
+        30
+      ]
+    },
+    {
+      "id": "SCHOOL-z-36-22.5",
+      "axis": "z",
+      "boundary": 36,
+      "along": 22.5,
+      "door_type": "service",
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0,
+      "frame_span": [
+        35.76,
+        36
+      ],
+      "rooms": [
+        "foyer"
+      ],
+      "side": "S",
+      "frame_depth": 0.240000000000002,
+      "frame_center": [
+        22.5,
+        0,
+        35.879999999999995
+      ],
+      "boundary_center": [
+        22.5,
+        0,
+        36
+      ]
+    },
+    {
+      "id": "SCHOOL-x-25-31.5",
+      "axis": "x",
+      "boundary": 25,
+      "along": 31.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        24.76,
+        25.24
+      ],
+      "rooms": [
+        "foyer",
+        "interview"
+      ],
+      "side": "E",
+      "frame_depth": 0.4799999999999969,
+      "frame_center": [
+        25.0,
+        0,
+        31.5
+      ],
+      "boundary_center": [
+        25,
+        0,
+        31.5
+      ]
+    },
+    {
+      "id": "SCHOOL-x-25-34.5",
+      "axis": "x",
+      "boundary": 25,
+      "along": 34.5,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        24.76,
+        25.24
+      ],
+      "rooms": [
+        "foyer",
+        "visitor-wc"
+      ],
+      "side": "E",
+      "frame_depth": 0.4799999999999969,
+      "frame_center": [
+        25.0,
+        0,
+        34.5
+      ],
+      "boundary_center": [
+        25,
+        0,
+        34.5
+      ]
+    },
+    {
+      "id": "SCHOOL-z-33-28.75",
+      "axis": "z",
+      "boundary": 33,
+      "along": 28.75,
+      "door_type": "pedestrian",
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0,
+      "frame_span": [
+        32.76,
+        33.24
+      ],
+      "rooms": [
+        "interview",
+        "office"
+      ],
+      "side": "S",
+      "frame_depth": 0.480000000000004,
+      "frame_center": [
+        28.75,
+        0,
+        33.0
+      ],
+      "boundary_center": [
+        28.75,
+        0,
+        33
+      ]
+    }
+  ],
+  "door_types": {
+    "pedestrian": {
+      "clear_width": 1.05,
+      "clear_height": 2.1,
+      "sill_y": 0
+    },
+    "service": {
+      "clear_width": 1.8,
+      "clear_height": 2.3,
+      "sill_y": 0
+    },
+    "loading": {
+      "clear_width": 2.4,
+      "clear_height": 2.6,
+      "sill_y": 0
+    }
+  },
+  "doorway_builder": "tools/build_institution_doorways.py",
+  "doorway_builder_sha256": "413350004259ad30868c6b1ccfa796b017c29400ef4eefd88452185b025968a6",
+  "doorframe_source": "development/levels/primitive-props-v1/models/level_blockout_doorway.glb",
+  "doorframe_source_sha256": "89f5c94c9d7b8f8ac0285c606bb322e9a71b04df715a75498af4cf53830ee7d2",
+  "doorframe_parts": "Original catalog left jamb, right jamb and header; source master/UVs/materials preserved. Threshold/hardware studies retained in library, not placed as a blocked/raised opening.",
+  "rooms_rebuilt": [
+    "foyer",
+    "interview",
+    "visitor-wc",
+    "office"
+  ],
+  "corridor_faces": {
+    "corridor": [
+      "S"
+    ]
+  },
+  "sealed_context_policy": "Existing SEALED_CONTEXT walls/access metadata retained; no new context-room openings",
+  "removed_fragmented_walls": [
+    "Arrival end bearing SCHOOL 0",
+    "Flat route shell Wall corridor S.001",
+    "Flat route shell Wall foyer E",
+    "Flat route shell Wall foyer E.001",
+    "Flat route shell Wall foyer E.002",
+    "Flat route shell Wall foyer N",
+    "Flat route shell Wall foyer N.001",
+    "Flat route shell Wall foyer S",
+    "Flat route shell Wall foyer S.001",
+    "Flat route shell Wall interview S",
+    "Flat route shell Wall interview S.001",
+    "Flat route shell Wall interview W.001",
+    "Flat route shell Wall office N",
+    "Flat route shell Wall visitor-wc W",
+    "Header foyer E",
+    "Header foyer E.002",
+    "Header foyer N",
+    "Header foyer S",
+    "Header interview S",
+    "L27 support 1",
+    "L35 support 1",
+    "L36 support 0",
+    "L36 support 1",
+    "L37 support 0",
+    "L37 support 1",
+    "L38 support 0",
+    "L38 support 1",
+    "L39 support 1",
+    "L40 support 1",
+    "L41 support 0",
+    "L41 support 1",
+    "L42 support 0",
+    "L42 support 1",
+    "Wall foyer W",
+    "Wall interview E",
+    "Wall interview N",
+    "Wall office E",
+    "Wall office S",
+    "Wall visitor-wc E",
+    "Wall visitor-wc N",
+    "Wall visitor-wc S"
+  ]
+}

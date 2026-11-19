@@ -1,0 +1,1876 @@
+{
+  "status": "AUTHORED_MACROFORM_CANDIDATES_NOT_ACCEPTED",
+  "coordinate_system": "source X/Z metres, Y up",
+  "design_basis": "Existing approved site briefs and current construction reservations; explicit authored landforms, not surveyed terrain. No old route or room-pad height snapping.",
+  "sites": {
+    "ACADEMY": {
+      "base_y": -0.32,
+      "boundary": [
+        [
+          3,
+          4
+        ],
+        [
+          20,
+          -2
+        ],
+        [
+          49,
+          -2
+        ],
+        [
+          61,
+          17
+        ],
+        [
+          61,
+          57
+        ],
+        [
+          47,
+          64
+        ],
+        [
+          44,
+          85
+        ],
+        [
+          20,
+          85
+        ],
+        [
+          18,
+          65
+        ],
+        [
+          3,
+          55
+        ]
+      ],
+      "layers": [
+        {
+          "type": "plane",
+          "dx": 0.003,
+          "dz": 0.002,
+          "origin": [
+            32,
+            50
+          ]
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              4,
+              8
+            ],
+            [
+              3,
+              37
+            ],
+            [
+              9,
+              57
+            ],
+            [
+              18,
+              68
+            ]
+          ],
+          "half_width": 3,
+          "depth": 0.45
+        },
+        {
+          "type": "hill",
+          "center": [
+            57,
+            57
+          ],
+          "radii": [
+            10,
+            15
+          ],
+          "height": 0.65
+        }
+      ],
+      "drainage": "West perimeter swale drains south of the cloister; courtyard falls gently toward its south outlet.",
+      "construction_response": "Keep one cloister foundation datum; replace raised reservation pads with a continuous lawn and a real perimeter drain. Review east service court against the shoulder."
+    },
+    "ASYLUM": {
+      "base_y": -0.36,
+      "boundary": [
+        [
+          6,
+          0
+        ],
+        [
+          23,
+          -2
+        ],
+        [
+          38,
+          5
+        ],
+        [
+          43,
+          -4
+        ],
+        [
+          58,
+          -4
+        ],
+        [
+          64,
+          22
+        ],
+        [
+          65,
+          47
+        ],
+        [
+          53,
+          61
+        ],
+        [
+          45,
+          70
+        ],
+        [
+          44,
+          87
+        ],
+        [
+          20,
+          87
+        ],
+        [
+          18,
+          67
+        ],
+        [
+          5,
+          54
+        ],
+        [
+          3,
+          33
+        ]
+      ],
+      "layers": [
+        {
+          "type": "plane",
+          "dx": 0.002,
+          "dz": 0.003,
+          "origin": [
+            32,
+            50
+          ]
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              31,
+              0
+            ],
+            [
+              34,
+              13
+            ],
+            [
+              33,
+              34
+            ],
+            [
+              27,
+              61
+            ],
+            [
+              18,
+              70
+            ]
+          ],
+          "half_width": 3,
+          "depth": 0.42
+        },
+        {
+          "type": "hill",
+          "center": [
+            4,
+            35
+          ],
+          "radii": [
+            9,
+            24
+          ],
+          "height": 0.6
+        }
+      ],
+      "drainage": "Shallow central drainage saddle between pavilion groups, discharging beside the arrival neck.",
+      "construction_response": "Retain staggered pavilion datums. Inspect service spine drainage and move isolated outbuildings rather than spreading a site-wide raised slab."
+    },
+    "CHURCH": {
+      "base_y": -0.3,
+      "boundary": [
+        [
+          7,
+          3
+        ],
+        [
+          18,
+          -3
+        ],
+        [
+          32,
+          0
+        ],
+        [
+          39,
+          12
+        ],
+        [
+          39,
+          33
+        ],
+        [
+          34,
+          41
+        ],
+        [
+          34,
+          60
+        ],
+        [
+          10,
+          60
+        ],
+        [
+          10,
+          42
+        ],
+        [
+          3,
+          31
+        ],
+        [
+          3,
+          17
+        ]
+      ],
+      "layers": [
+        {
+          "type": "plane",
+          "dx": 0.002,
+          "dz": 0.003,
+          "origin": [
+            32,
+            50
+          ]
+        },
+        {
+          "type": "hill",
+          "center": [
+            5,
+            14
+          ],
+          "radii": [
+            12,
+            20
+          ],
+          "height": 0.7
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              38,
+              4
+            ],
+            [
+              37,
+              25
+            ],
+            [
+              35,
+              42
+            ]
+          ],
+          "half_width": 3,
+          "depth": 0.45
+        }
+      ],
+      "drainage": "East graveyard swale runs past the crypt wing and away from the ceremonial approach.",
+      "construction_response": "Nave and parish wings share a shallow masonry plinth; crypt entrances require retained light wells, not sunken orange room pads."
+    },
+    "COLLEGE": {
+      "base_y": -0.4,
+      "boundary": [
+        [
+          2,
+          7
+        ],
+        [
+          26,
+          -2
+        ],
+        [
+          56,
+          -2
+        ],
+        [
+          61,
+          18
+        ],
+        [
+          72,
+          27
+        ],
+        [
+          73,
+          73
+        ],
+        [
+          58,
+          84
+        ],
+        [
+          44,
+          92
+        ],
+        [
+          43,
+          107
+        ],
+        [
+          20,
+          107
+        ],
+        [
+          17,
+          91
+        ],
+        [
+          5,
+          75
+        ],
+        [
+          0,
+          51
+        ]
+      ],
+      "layers": [
+        {
+          "type": "plane",
+          "dx": 0.002,
+          "dz": 0.002,
+          "origin": [
+            32,
+            50
+          ]
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              39,
+              0
+            ],
+            [
+              39,
+              24
+            ],
+            [
+              36,
+              49
+            ],
+            [
+              37,
+              74
+            ],
+            [
+              47,
+              91
+            ]
+          ],
+          "half_width": 4,
+          "depth": 0.6
+        },
+        {
+          "type": "hill",
+          "center": [
+            69,
+            86
+          ],
+          "radii": [
+            15,
+            15
+          ],
+          "height": 1.0
+        }
+      ],
+      "drainage": "One shallow landscaped drainage corridor separates the teaching and residence groups, bending toward the east arrival verge.",
+      "construction_response": "Keep distinct three-building footprints and bridge supports. Evaluate bridge and service-tunnel levels against this shared valley; no whole-campus rectangular lawn plate."
+    },
+    "FARMHOUSE": {
+      "base_y": -0.38,
+      "boundary": [
+        [
+          8,
+          7
+        ],
+        [
+          25,
+          5
+        ],
+        [
+          30,
+          5
+        ],
+        [
+          46,
+          7
+        ],
+        [
+          49,
+          24
+        ],
+        [
+          44,
+          36
+        ],
+        [
+          38,
+          40
+        ],
+        [
+          37,
+          53
+        ],
+        [
+          15,
+          53
+        ],
+        [
+          14,
+          39
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          17
+        ]
+      ],
+      "layers": [
+        {
+          "type": "plane",
+          "dx": 0.004,
+          "dz": 0.006,
+          "origin": [
+            32,
+            50
+          ]
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              29,
+              2
+            ],
+            [
+              28,
+              18
+            ],
+            [
+              26,
+              31
+            ],
+            [
+              12,
+              39
+            ]
+          ],
+          "half_width": 3,
+          "depth": 0.55
+        },
+        {
+          "type": "hill",
+          "center": [
+            46,
+            4
+          ],
+          "radii": [
+            15,
+            16
+          ],
+          "height": 1.3
+        }
+      ],
+      "drainage": "Workyard falls toward the west field ditch; the domestic approach stays on the south shoulder.",
+      "construction_response": "Separate barn and farmhouse foundation runs; yard remains graded earth. Add supported barn apron only at delivery doors, retain room/model IDs."
+    },
+    "MANSION": {
+      "base_y": -0.36,
+      "boundary": [
+        [
+          20,
+          -3
+        ],
+        [
+          48,
+          -3
+        ],
+        [
+          57,
+          16
+        ],
+        [
+          58,
+          51
+        ],
+        [
+          47,
+          58
+        ],
+        [
+          40,
+          66
+        ],
+        [
+          40,
+          82
+        ],
+        [
+          16,
+          82
+        ],
+        [
+          15,
+          63
+        ],
+        [
+          3,
+          50
+        ],
+        [
+          3,
+          23
+        ]
+      ],
+      "layers": [
+        {
+          "type": "plane",
+          "dx": 0.003,
+          "dz": 0.001,
+          "origin": [
+            32,
+            50
+          ]
+        },
+        {
+          "type": "hill",
+          "center": [
+            3,
+            9
+          ],
+          "radii": [
+            20,
+            18
+          ],
+          "height": 1.4
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              57,
+              3
+            ],
+            [
+              56,
+              29
+            ],
+            [
+              54,
+              52
+            ],
+            [
+              43,
+              63
+            ]
+          ],
+          "half_width": 4,
+          "depth": 0.65
+        }
+      ],
+      "drainage": "Estate service water leaves along the east edge; public approach stays on the broad south terrace.",
+      "construction_response": "Masonry foundations support the household wings. Service yard should fit the eastern shoulder; review its stair bay before refining cellar path strips."
+    },
+    "PRISON": {
+      "base_y": -0.45,
+      "boundary": [
+        [
+          -6,
+          7
+        ],
+        [
+          8,
+          -6
+        ],
+        [
+          61,
+          -6
+        ],
+        [
+          80,
+          12
+        ],
+        [
+          81,
+          58
+        ],
+        [
+          66,
+          75
+        ],
+        [
+          48,
+          79
+        ],
+        [
+          47,
+          97
+        ],
+        [
+          20,
+          97
+        ],
+        [
+          18,
+          78
+        ],
+        [
+          -6,
+          66
+        ]
+      ],
+      "layers": [
+        {
+          "type": "plane",
+          "dx": 0.002,
+          "dz": 0.003,
+          "origin": [
+            32,
+            50
+          ]
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              -3,
+              2
+            ],
+            [
+              -2,
+              35
+            ],
+            [
+              0,
+              65
+            ],
+            [
+              15,
+              79
+            ]
+          ],
+          "half_width": 3,
+          "depth": 0.65
+        },
+        {
+          "type": "hill",
+          "center": [
+            75,
+            79
+          ],
+          "radii": [
+            14,
+            18
+          ],
+          "height": 1.4
+        }
+      ],
+      "drainage": "Security compound drainage runs inside the west perimeter and out beside the service approach.",
+      "construction_response": "Wall panels need continuous concrete foundations, including the known unsupported perimeter pieces. Shape compound corners and arrival sally port around real construction, not the grounds rectangle."
+    },
+    "SCHOOL": {
+      "base_y": -0.35,
+      "boundary": [
+        [
+          3,
+          3
+        ],
+        [
+          22,
+          -3
+        ],
+        [
+          50,
+          -3
+        ],
+        [
+          64,
+          13
+        ],
+        [
+          66,
+          48
+        ],
+        [
+          57,
+          62
+        ],
+        [
+          45,
+          69
+        ],
+        [
+          44,
+          88
+        ],
+        [
+          18,
+          88
+        ],
+        [
+          17,
+          68
+        ],
+        [
+          2,
+          57
+        ],
+        [
+          -1,
+          30
+        ]
+      ],
+      "layers": [
+        {
+          "type": "plane",
+          "dx": 0.002,
+          "dz": 0.003,
+          "origin": [
+            32,
+            50
+          ]
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              2,
+              9
+            ],
+            [
+              4,
+              34
+            ],
+            [
+              7,
+              57
+            ],
+            [
+              17,
+              69
+            ]
+          ],
+          "half_width": 3,
+          "depth": 0.5
+        },
+        {
+          "type": "hill",
+          "center": [
+            62,
+            60
+          ],
+          "radii": [
+            15,
+            16
+          ],
+          "height": 0.7
+        }
+      ],
+      "drainage": "West playing-ground swale carries roof/yard drainage clear of the pupil arrival route.",
+      "construction_response": "Continuous teaching-block datum with distinct gym/service foundations. Recheck actual school bounds and entrance apron before promotion."
+    },
+    "WLD-03": {
+      "base_y": -0.35,
+      "boundary": [
+        [
+          19,
+          96
+        ],
+        [
+          16,
+          77
+        ],
+        [
+          -3,
+          61
+        ],
+        [
+          -3,
+          21
+        ],
+        [
+          12,
+          -3
+        ],
+        [
+          66,
+          -3
+        ],
+        [
+          88,
+          3
+        ],
+        [
+          88,
+          39
+        ],
+        [
+          69,
+          51
+        ],
+        [
+          62,
+          69
+        ],
+        [
+          47,
+          78
+        ],
+        [
+          46,
+          96
+        ]
+      ],
+      "layers": [
+        {
+          "type": "terrace",
+          "axis": "z",
+          "from": 29,
+          "to": 51,
+          "height": 8
+        },
+        {
+          "type": "hill",
+          "center": [
+            4,
+            19
+          ],
+          "radii": [
+            17,
+            42
+          ],
+          "height": 2.0
+        },
+        {
+          "type": "hill",
+          "center": [
+            82,
+            10
+          ],
+          "radii": [
+            22,
+            27
+          ],
+          "height": 2.8
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              30
+            ],
+            [
+              9,
+              54
+            ],
+            [
+              19,
+              70
+            ]
+          ],
+          "half_width": 5,
+          "depth": 1.2
+        }
+      ],
+      "drainage": "Mesa terraces shed runoff through the western gully; upper occupied rock shelf is eight metres over the wash.",
+      "construction_response": "Rock mass and cave roof/sidewalls must be authored as volumes. Reposition crossing cave/terrace routes to the shelf rather than grading down every historical orange strip. This heightfield is the exterior skin only."
+    },
+    "WLD-04": {
+      "base_y": -0.35,
+      "boundary": [
+        [
+          17,
+          91
+        ],
+        [
+          14,
+          72
+        ],
+        [
+          4,
+          59
+        ],
+        [
+          0,
+          35
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          19,
+          -6
+        ],
+        [
+          40,
+          -6
+        ],
+        [
+          58,
+          9
+        ],
+        [
+          59,
+          32
+        ],
+        [
+          55,
+          60
+        ],
+        [
+          43,
+          74
+        ],
+        [
+          41,
+          91
+        ]
+      ],
+      "layers": [
+        {
+          "type": "terrace",
+          "axis": "z",
+          "from": 27,
+          "to": 62,
+          "height": 6
+        },
+        {
+          "type": "hill",
+          "center": [
+            52,
+            12
+          ],
+          "radii": [
+            16,
+            21
+          ],
+          "height": 1.5
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              4,
+              0
+            ],
+            [
+              4,
+              27
+            ],
+            [
+              8,
+              48
+            ],
+            [
+              14,
+              70
+            ]
+          ],
+          "half_width": 4,
+          "depth": 0.8
+        }
+      ],
+      "drainage": "Lookout stands on a six-metre ridge bench; the west gully drains down past the lower trail.",
+      "construction_response": "Retain real tower footings at the ridge bench. Rework the three-metre switchback terrace and hut entry after whole-site sections; tower decks remain elevated structures."
+    },
+    "WLD-05": {
+      "base_y": -0.38,
+      "boundary": [
+        [
+          17,
+          95
+        ],
+        [
+          14,
+          75
+        ],
+        [
+          -6,
+          61
+        ],
+        [
+          -6,
+          16
+        ],
+        [
+          7,
+          0
+        ],
+        [
+          44,
+          0
+        ],
+        [
+          64,
+          10
+        ],
+        [
+          62,
+          46
+        ],
+        [
+          57,
+          63
+        ],
+        [
+          43,
+          76
+        ],
+        [
+          41,
+          95
+        ]
+      ],
+      "layers": [
+        {
+          "type": "terrace",
+          "axis": "z",
+          "from": 25,
+          "to": 57,
+          "height": 5
+        },
+        {
+          "type": "hill",
+          "center": [
+            3,
+            14
+          ],
+          "radii": [
+            22,
+            29
+          ],
+          "height": 3
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              55,
+              5
+            ],
+            [
+              55,
+              27
+            ],
+            [
+              54,
+              47
+            ],
+            [
+              45,
+              65
+            ]
+          ],
+          "half_width": 4,
+          "depth": 0.9
+        }
+      ],
+      "drainage": "Rock rises behind the adit; surface water drains east of the mine entrance and workyard.",
+      "construction_response": "Adit portal requires a rock face and buried tunnel roof. The minus-six/minus-ten workings stay underground, not giant open pits punched through all surface ground."
+    },
+    "WLD-06": {
+      "base_y": -0.35,
+      "boundary": [
+        [
+          20,
+          87
+        ],
+        [
+          18,
+          68
+        ],
+        [
+          -3,
+          55
+        ],
+        [
+          -3,
+          24
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          24,
+          -3
+        ],
+        [
+          44,
+          -3
+        ],
+        [
+          61,
+          6
+        ],
+        [
+          67,
+          27
+        ],
+        [
+          65,
+          54
+        ],
+        [
+          47,
+          67
+        ],
+        [
+          44,
+          87
+        ]
+      ],
+      "layers": [
+        {
+          "type": "terrace",
+          "axis": "z",
+          "from": 29,
+          "to": 55,
+          "height": -4
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              4,
+              68
+            ],
+            [
+              6,
+              58
+            ],
+            [
+              12,
+              46
+            ],
+            [
+              15,
+              31
+            ]
+          ],
+          "half_width": 4,
+          "depth": 0.6
+        },
+        {
+          "type": "hill",
+          "center": [
+            57,
+            65
+          ],
+          "radii": [
+            14,
+            17
+          ],
+          "height": 0.5
+        }
+      ],
+      "drainage": "Harbour bed drops north of the shore; west shore drain meets the inlet below the cottages.",
+      "construction_response": "Piers/fish house/boathouse need piles and deck skirts over the basin, not filled square ground pads. Verify actual undercroft and stair walls against waterline before promotion."
+    },
+    "WLD-08": {
+      "base_y": -0.4,
+      "boundary": [
+        [
+          19,
+          90
+        ],
+        [
+          16,
+          70
+        ],
+        [
+          -6,
+          56
+        ],
+        [
+          -6,
+          19
+        ],
+        [
+          0,
+          -7
+        ],
+        [
+          22,
+          -8
+        ],
+        [
+          38,
+          -4
+        ],
+        [
+          66,
+          -5
+        ],
+        [
+          76,
+          9
+        ],
+        [
+          77,
+          24
+        ],
+        [
+          66,
+          40
+        ],
+        [
+          66,
+          58
+        ],
+        [
+          47,
+          70
+        ],
+        [
+          44,
+          90
+        ]
+      ],
+      "layers": [
+        {
+          "type": "plane",
+          "dx": 0.002,
+          "dz": 0.001,
+          "origin": [
+            32,
+            50
+          ]
+        },
+        {
+          "type": "hill",
+          "center": [
+            -4,
+            22
+          ],
+          "radii": [
+            15,
+            43
+          ],
+          "height": 2
+        },
+        {
+          "type": "hill",
+          "center": [
+            73,
+            17
+          ],
+          "radii": [
+            18,
+            28
+          ],
+          "height": 2.2
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              34,
+              -6
+            ],
+            [
+              33,
+              19
+            ],
+            [
+              30,
+              38
+            ],
+            [
+              26,
+              61
+            ],
+            [
+              16,
+              72
+            ]
+          ],
+          "half_width": 4,
+          "depth": 0.8
+        }
+      ],
+      "drainage": "Wind-scoured central trough runs between the station wings; snow/rock berms build beyond the outer service elevations.",
+      "construction_response": "Keep station on short supported plinths; service tunnel remains a buried structure. Move shelter or antenna service route if berms obstruct their real clearances."
+    },
+    "WLD-09": {
+      "base_y": -0.4,
+      "boundary": [
+        [
+          24,
+          96
+        ],
+        [
+          22,
+          78
+        ],
+        [
+          2,
+          61
+        ],
+        [
+          0,
+          26
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          27,
+          -2
+        ],
+        [
+          56,
+          2
+        ],
+        [
+          82,
+          15
+        ],
+        [
+          85,
+          47
+        ],
+        [
+          78,
+          64
+        ],
+        [
+          49,
+          77
+        ],
+        [
+          48,
+          96
+        ]
+      ],
+      "layers": [
+        {
+          "type": "terrace",
+          "axis": "x",
+          "from": 25,
+          "to": 42,
+          "height": 3
+        },
+        {
+          "type": "terrace",
+          "axis": "z",
+          "from": 43,
+          "to": 62,
+          "height": -6
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              72,
+              4
+            ],
+            [
+              74,
+              28
+            ],
+            [
+              72,
+              51
+            ],
+            [
+              64,
+              65
+            ]
+          ],
+          "half_width": 7,
+          "depth": 1.4
+        }
+      ],
+      "drainage": "Dam crest divides the high west abutment from the six-metre lower tailrace; spill discharge follows the east rock channel.",
+      "construction_response": "Construct an actual dam/retaining section and turbine foundations. Current ground-level crest may require blockout re-alignment; do not flatten the whole valley to keep it unchanged."
+    },
+    "WLD-10": {
+      "base_y": -0.38,
+      "boundary": [
+        [
+          20,
+          94
+        ],
+        [
+          17,
+          73
+        ],
+        [
+          -16,
+          52
+        ],
+        [
+          -16,
+          18
+        ],
+        [
+          -5,
+          -5
+        ],
+        [
+          46,
+          -6
+        ],
+        [
+          67,
+          3
+        ],
+        [
+          76,
+          27
+        ],
+        [
+          74,
+          53
+        ],
+        [
+          50,
+          68
+        ],
+        [
+          45,
+          94
+        ]
+      ],
+      "layers": [
+        {
+          "type": "plane",
+          "dx": 0.003,
+          "dz": 0.001,
+          "origin": [
+            32,
+            50
+          ]
+        },
+        {
+          "type": "hill",
+          "center": [
+            -13,
+            12
+          ],
+          "radii": [
+            25,
+            40
+          ],
+          "height": 2.8
+        },
+        {
+          "type": "hill",
+          "center": [
+            72,
+            10
+          ],
+          "radii": [
+            19,
+            30
+          ],
+          "height": 1.8
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              70,
+              4
+            ],
+            [
+              69,
+              29
+            ],
+            [
+              69,
+              49
+            ],
+            [
+              51,
+              66
+            ]
+          ],
+          "half_width": 4,
+          "depth": 0.75
+        }
+      ],
+      "drainage": "Monastery occupies a broad cut bench with higher rock to the northwest; water exits east of the cloister.",
+      "construction_response": "Retain cloister identity and garden, construct bearing terrace and downhill retaining faces. Review the detached dormitory edge against the natural bench rather than a wide square pad."
+    },
+    "WLD-11": {
+      "base_y": -1.25,
+      "boundary": [
+        [
+          20,
+          96
+        ],
+        [
+          16,
+          76
+        ],
+        [
+          5,
+          63
+        ],
+        [
+          4,
+          34
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          23,
+          -14
+        ],
+        [
+          45,
+          -14
+        ],
+        [
+          67,
+          9
+        ],
+        [
+          74,
+          33
+        ],
+        [
+          73,
+          63
+        ],
+        [
+          47,
+          76
+        ],
+        [
+          44,
+          96
+        ]
+      ],
+      "layers": [
+        {
+          "type": "terrace",
+          "axis": "z",
+          "from": 63,
+          "to": 78,
+          "height": -0.95
+        },
+        {
+          "type": "hill",
+          "center": [
+            12,
+            61
+          ],
+          "radii": [
+            12,
+            14
+          ],
+          "height": 0.4
+        },
+        {
+          "type": "hill",
+          "center": [
+            69,
+            19
+          ],
+          "radii": [
+            10,
+            20
+          ],
+          "height": 0.4
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              44,
+              -9
+            ],
+            [
+              44,
+              20
+            ],
+            [
+              42,
+              43
+            ],
+            [
+              51,
+              63
+            ]
+          ],
+          "half_width": 5,
+          "depth": 0.7
+        }
+      ],
+      "drainage": "Reed basin and main tidal channel sit below the stilt settlement; south roadhead rises gently above the water meadow.",
+      "construction_response": "Raised houses and boardwalks remain 1.2m structures with actual piles. No dry land pad per building; engineer supported arrival-to-boardwalk rise and a real water/bank boundary."
+    },
+    "WLD-12": {
+      "base_y": -0.4,
+      "boundary": [
+        [
+          23,
+          108
+        ],
+        [
+          20,
+          86
+        ],
+        [
+          -2,
+          72
+        ],
+        [
+          -3,
+          33
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          20,
+          -16
+        ],
+        [
+          45,
+          -16
+        ],
+        [
+          57,
+          0
+        ],
+        [
+          70,
+          15
+        ],
+        [
+          72,
+          42
+        ],
+        [
+          69,
+          76
+        ],
+        [
+          49,
+          87
+        ],
+        [
+          48,
+          108
+        ]
+      ],
+      "layers": [
+        {
+          "type": "hill",
+          "center": [
+            4,
+            30
+          ],
+          "radii": [
+            19,
+            48
+          ],
+          "height": 4.5
+        },
+        {
+          "type": "hill",
+          "center": [
+            68,
+            16
+          ],
+          "radii": [
+            22,
+            40
+          ],
+          "height": 4
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              -2,
+              31
+            ],
+            [
+              17,
+              30
+            ],
+            [
+              35,
+              32
+            ],
+            [
+              56,
+              37
+            ],
+            [
+              72,
+              42
+            ]
+          ],
+          "half_width": 9,
+          "depth": 3.8
+        },
+        {
+          "type": "terrace",
+          "axis": "z",
+          "from": 3,
+          "to": 22,
+          "height": 3.5
+        }
+      ],
+      "drainage": "Rock cutting crosses a ravine at the trestle; drainage follows that ravine rather than the track centreline.",
+      "construction_response": "Track bed requires explicit supported embankment and bridge. Tunnel needs a solid hillside roof; lower ravine route must meet the banks. Reposition trestle approaches if their current angles fight this section."
+    },
+    "WLD-13": {
+      "base_y": -0.38,
+      "boundary": [
+        [
+          20,
+          96
+        ],
+        [
+          17,
+          75
+        ],
+        [
+          -23,
+          65
+        ],
+        [
+          -24,
+          34
+        ],
+        [
+          -14,
+          14
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          22,
+          -8
+        ],
+        [
+          49,
+          -8
+        ],
+        [
+          69,
+          10
+        ],
+        [
+          73,
+          37
+        ],
+        [
+          68,
+          64
+        ],
+        [
+          47,
+          75
+        ],
+        [
+          44,
+          96
+        ]
+      ],
+      "layers": [
+        {
+          "type": "terrace",
+          "axis": "z",
+          "from": 10,
+          "to": 29,
+          "height": -4.2
+        },
+        {
+          "type": "hill",
+          "center": [
+            -20,
+            47
+          ],
+          "radii": [
+            16,
+            31
+          ],
+          "height": 2.5
+        },
+        {
+          "type": "channel",
+          "points": [
+            [
+              68,
+              77
+            ],
+            [
+              66,
+              54
+            ],
+            [
+              64,
+              27
+            ],
+            [
+              57,
+              10
+            ]
+          ],
+          "half_width": 4,
+          "depth": 0.7
+        }
+      ],
+      "drainage": "Cannery shore drops to the north dock; forest shoulder and service ditch drain toward that inlet.",
+      "construction_response": "Industrial foundations follow the shore terrace. Dock/pile construction spans real water; bunk/mess block may need moving off the west rock shoulder. No continuous rectangular processing-yard stamp."
+    }
+  }
+}

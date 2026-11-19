@@ -41,7 +41,8 @@ public final class EditorMeshPipeline {
         }
     }
     /** Optional per-corner source position identities. Empty means the source supplied no indices. */
-    public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds,Map<String,EditorMeshFrame> frames) {
+    public record Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds,Map<String,EditorMeshFrame> frames,List<EditorMeshQuad> quads) {
+        public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds,Map<String,EditorMeshFrame> frames){this(name,triangles,sourceBytes,cornerVertexIds,materials,glbSource,faceIds,frames,List.of());}
         public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials,EditorGlbReader.Document glbSource,List<Long> faceIds){this(name,triangles,sourceBytes,cornerVertexIds,materials,glbSource,faceIds,Map.of());}
         public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds,List<EditorMeshMaterial> materials){this(name,triangles,sourceBytes,cornerVertexIds,materials,null,List.of());}
         public Mesh(String name,List<Triangle> triangles,long sourceBytes,List<Long> cornerVertexIds){this(name,triangles,sourceBytes,cornerVertexIds,List.of());}
@@ -53,6 +54,16 @@ public final class EditorMeshPipeline {
             if(cornerVertexIds==null||!cornerVertexIds.isEmpty()&&cornerVertexIds.size()!=triangles.size()*3)
                 throw new IllegalArgumentException("Source topology corner count mismatch");
             cornerVertexIds=List.copyOf(cornerVertexIds);faceIds=List.copyOf(faceIds);if(!faceIds.isEmpty()&&(faceIds.size()!=triangles.size()||new HashSet<>(faceIds).size()!=faceIds.size()||faceIds.stream().anyMatch(id->id<0)))throw new IllegalArgumentException("Invalid native face IDs");
+            quads=EditorMeshQuad.ordered(quads);
+            if(!quads.isEmpty()){
+                if(quads.size()>triangles.size()/2 || cornerVertexIds.isEmpty())throw new IllegalArgumentException("Quad needs native corner bindings");
+                var used=new HashSet<Long>();
+                for(var pair:EditorMeshQuad.ordinals(quads,faceIds)){
+                    if(pair.first()>=triangles.size()||pair.second()>=triangles.size()||!used.add(pair.first())||!used.add(pair.second()))throw new IllegalArgumentException("Invalid quad face references");
+                    int a=(int)pair.first()*3,b=(int)pair.second()*3;
+                    if(!triangles.get(a/3).part().equals(triangles.get(b/3).part())||!cornerVertexIds.get(a).equals(cornerVertexIds.get(b))||!cornerVertexIds.get(a+2).equals(cornerVertexIds.get(b+1))||new HashSet<>(List.of(cornerVertexIds.get(a),cornerVertexIds.get(a+1),cornerVertexIds.get(a+2),cornerVertexIds.get(b+2))).size()!=4)throw new IllegalArgumentException("Invalid quad topology");
+                }
+            }
             for(long id:cornerVertexIds)if(id<0)throw new IllegalArgumentException("Invalid source position ID");
         }
     }
@@ -97,12 +108,17 @@ public final class EditorMeshPipeline {
     static Mesh obj(String name,String raw,long size,List<EditorMeshMaterial> materials,Map<String,String> aliases)throws IOException{
         List<double[]> xyz=new ArrayList<>(),uv=new ArrayList<>();List<Normal> normals=new ArrayList<>();
         List<Triangle> triangles=new ArrayList<>();
-        List<Long> sourceIds=new ArrayList<>();var frames=new TreeMap<String,EditorMeshFrame>();
+        List<Long> sourceIds=new ArrayList<>();var quads=new ArrayList<EditorMeshQuad>();var frames=new TreeMap<String,EditorMeshFrame>();
         String part="Object",material="";
         int lineNumber=0;
         try(var input=new java.io.BufferedReader(new java.io.StringReader(raw))){
             for(String line;(line=input.readLine())!=null;){
                 lineNumber++;String text=line.strip();
+                if(text.startsWith("# beck_authored_quad")){
+                    var fields=text.split("\\s+");
+                    if(fields.length!=4||!fields[1].equals("beck_authored_quad_v1")||quads.size()>=MAX_TRIANGLES/2)throw new IOException("Invalid native OBJ quad metadata");
+                    quads.add(new EditorMeshQuad(Long.parseLong(fields[2]),Long.parseLong(fields[3])));continue;
+                }
                 if(text.startsWith("# beck_native_frame")){String[] fields=text.split("\\s+");if(fields.length!=15||!fields[1].equals("beck_native_frame_v1"))throw new IOException("Unsupported native OBJ frame metadata");if(frames.size()>=MAX_TRIANGLES*3)throw new IOException("OBJ frame count budget exceeded");double[] matrix=new double[12];for(int i=0;i<12;i++)matrix[i]=Double.parseDouble(fields[i+3]);if(frames.putIfAbsent(fields[2],EditorMeshFrame.fromValues(matrix))!=null)throw new IOException("Duplicate native OBJ frame");continue;}
                 int comment=text.indexOf('#');if(comment>=0)text=text.substring(0,comment).strip();
                 if(text.isEmpty()||text.startsWith("#"))continue;
@@ -123,12 +139,14 @@ public final class EditorMeshPipeline {
                     case "f" -> {
                         if(tokens.length<4||tokens.length>257)throw new IOException("Invalid OBJ face degree");
                         ObjCorner first=faceVertex(tokens[1],xyz,uv,normals),previous=faceVertex(tokens[2],xyz,uv,normals);
+                        int firstFace=triangles.size();
                         for(int k=3;k<tokens.length;k++){
                             ObjCorner next=faceVertex(tokens[k],xyz,uv,normals);
                             triangles.add(new Triangle(part,first.vertex(),previous.vertex(),next.vertex(),material));
                             sourceIds.add((long)first.index());sourceIds.add((long)previous.index());sourceIds.add((long)next.index());previous=next;
                             if(triangles.size()>MAX_TRIANGLES)throw new IOException("OBJ triangle budget exceeded");
                         }
+                        if(tokens.length==5 && new HashSet<>(sourceIds.subList(firstFace*3,sourceIds.size())).size()==4)quads.add(new EditorMeshQuad(firstFace,firstFace+1));
                     }
                 }
             }
@@ -136,7 +154,7 @@ public final class EditorMeshPipeline {
             throw new IOException("Invalid OBJ at line "+lineNumber,err);
         }
         if(triangles.isEmpty())throw new IOException("OBJ has no faces");
-        try{return new Mesh(name,triangles,size,sourceIds,materials,null,List.of(),frames);}catch(IllegalArgumentException invalid){throw new IOException("Invalid OBJ native frames",invalid);}
+        try{return new Mesh(name,triangles,size,sourceIds,materials,null,List.of(),frames,quads);}catch(IllegalArgumentException invalid){throw new IOException("Invalid OBJ native frames",invalid);}
     }
     private static int positionIndex(String raw,int count)throws IOException{
         int value=Integer.parseInt(raw);

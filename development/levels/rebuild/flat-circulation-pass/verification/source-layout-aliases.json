@@ -1,0 +1,36 @@
+{
+  "status": "EXACT_FROZEN_INHERITED_LAYOUT_BYTES_NO_GEOMETRY_CHANGE",
+  "files": {
+    "development/levels/layouts/wld-06/layout.json": {
+      "frozen_path": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-06-inherited-layout.json",
+      "working_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304",
+      "repository_sha256": "5ee21a207c629461877b4ca43de917ce86e31ce29575c9c9797d64361ac89df0",
+      "newline_only_difference": true
+    },
+    "development/levels/layouts/wld-08/layout.json": {
+      "frozen_path": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-08-inherited-layout.json",
+      "working_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b",
+      "repository_sha256": "8cbdad0f1866805586968b70ef351635f1c7c59a60bd91afee44039a41d7906e",
+      "newline_only_difference": true
+    },
+    "development/levels/layouts/wld-11/layout.json": {
+      "frozen_path": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-11-inherited-layout.json",
+      "working_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf",
+      "repository_sha256": "d8d1d4e3b19c5967216aeb4f814c0e296248944828af0ee933ac73dcbf916603",
+      "newline_only_difference": true
+    },
+    "development/levels/layouts/wld-13/layout.json": {
+      "frozen_path": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-13-inherited-layout.json",
+      "working_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732",
+      "repository_sha256": "4f8c6735842e48ab39b3b79ed13c172f0df2c61b0847019f05d1de595368b78a",
+      "newline_only_difference": true
+    },
+    "development/levels/layouts/wld-17/layout.json": {
+      "frozen_path": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-17-inherited-layout.json",
+      "working_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+      "repository_sha256": "c8b7ee372a00703088e125ff980d81b8ceadece4f4aa99c5b78254d1d580675d",
+      "newline_only_difference": true
+    }
+  },
+  "scope": "Five inherited JSON inputs had newline-only checkout differences. Exact bytes consumed by verification are frozen without altering original layouts; normal JSON values and all coordinates are identical."
+}

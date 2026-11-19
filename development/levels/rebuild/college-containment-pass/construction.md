@@ -1,0 +1,13 @@
+# College perimeter, stair guards and ground slab bearings
+
+The [measured plan](college-containment-plan.svg) follows the saved campus terrain around the teaching and residence wings and the narrower south forecourt. The 35 perimeter runs contain 124 masonry and ironwork bays. Each base seats below surveyed grade. The two closed service leaves brace against founded piers eight metres apart on centre, beyond the van parking and ramp. A gravel throat joins the existing forecourt and continues along the new district terrain, with the same soil triangles serving rendering and collision.
+
+The [construction schedule](college/containment.json) records 12,180 grade samples, the panel bases and crests, and the five actual stair openings. The North residence stair and East service cellar now have new tread-seated flight rails. The two sides and closed end of each of the five wells carry a 1.58 m rim guard. That crest covers the physical jump, including the initial tuck, and the true receiving edge stays open for the stair head. The five tested jumps stop at the rim and land back on the deck.
+
+The plant and maintenance wall heads now end at the −0.16 m underside of the ground slab. The 0.00 m seminar and adjacent teaching surfaces continue across the former visible seam. The before and after camera pairs show the same opening, lens and exposure in both game renderers.
+
+The [reopen and source readback](verification/structural-readback.json) confirms 39,333 addition triangles in the editable scene, the GLB and native collision. It retains 1,067 original collision records and all 8,601 saved-campus terrain triangles. The outside apron stitches to 1,083 saved rim edges, and the two original cut loops retain their 220 edges. Sixty-four forecourt triangles use the existing compacted gravel finish through the gate. Their geometry is unchanged.
+
+The [packaged software replay](verification/software-runtime.txt) and [hardware replay](verification/opengl-runtime.txt) cover 7,158 supported parcel sweeps, 496 panel join samples, 100 under-gate capsule checks, and all five well rims. They verify 189 eye rays through the genuine ironwork gaps. At the south return, the host ghost's ordinary move stops at Z 101.05 m while the prior scene accepts another step to 101.36 m. The previous 88 route directions, the two complete van journeys, the 18 operating door sets and electrical authority across four TCP peers all pass again.
+
+The [checkpoint](checkpoint.json) indexes the standing views and native parcel, gate and stair inspections. The tower cutaway hides the near walls and overhead finishes for inspection. Full directional scenery and weather review, the College water and HVAC installation, fit-out, case and public dispatch remain open.

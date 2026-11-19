@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900"><defs><pattern id="void" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#e9f5fa"/><path d="M0 10L10 0" stroke="#c3dde9"/></pattern><marker id="arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7" fill="#147fa2"/></marker></defs><style>text{font-family:Arial,sans-serif;fill:#233746}.title{font-size:31px;font-weight:bold}.sub{font-size:17px;fill:#526570}.label{font-size:17px}.small{font-size:14px}.note{font-size:15px;fill:#526570}.head{font-size:22px;font-weight:bold}.wall{stroke:#334b57;stroke-width:4;fill:none}.route{stroke:#147fa2;stroke-width:4;fill:none;marker-end:url(#arrow)}.dim{stroke:#68818c;stroke-width:1;fill:none}</style><rect width="1440" height="900" fill="#f4f6f3"/><text class="title" x="36" y="49">Dam: service and escape circulation</text><text class="sub" x="36" y="79">Flow describes built architecture. An unresolved connection remains visibly unresolved.</text>
+<rect x="70" y="150" width="360" height="90" rx="10" fill="#e4efee" stroke="#4e7581" stroke-width="2"/>
+<text x="90" y="182" class="head">Lower return room</text>
+<text x="90" y="210" class="sub">Y −10  • existing lower room</text>
+<rect x="70" y="300" width="360" height="90" rx="10" fill="#e4efee" stroke="#4e7581" stroke-width="2"/>
+<text x="90" y="332" class="head">New reserved U stair</text>
+<text x="90" y="360" class="sub">−10 → −8 → −6  • two flights</text>
+<rect x="70" y="450" width="360" height="90" rx="10" fill="#e4efee" stroke="#4e7581" stroke-width="2"/>
+<text x="90" y="482" class="head">Turbine floor arrival</text>
+<text x="90" y="510" class="sub">Y −6  • level landing and aisle</text>
+<rect x="560" y="450" width="360" height="90" rx="10" fill="#e4efee" stroke="#4e7581" stroke-width="2"/>
+<text x="580" y="482" class="head">Existing east lower door</text>
+<text x="580" y="510" class="sub">Y −6  • normal wall doorway</text>
+<rect x="560" y="300" width="360" height="90" rx="10" fill="#e4efee" stroke="#4e7581" stroke-width="2"/>
+<text x="580" y="332" class="head">Existing east main stair</text>
+<text x="580" y="360" class="sub">−6 → −3 → 0  • two flights</text>
+<rect x="560" y="150" width="360" height="90" rx="10" fill="#e4efee" stroke="#4e7581" stroke-width="2"/>
+<text x="580" y="182" class="head">East hall / dam crest</text>
+<text x="580" y="210" class="sub">Y 0  • existing level exit</text>
+<path d="M250 240L250 300" class="route"/>
+<path d="M250 390L250 450" class="route"/>
+<path d="M430 495L560 495" class="route"/>
+<path d="M740 450L740 390" class="route"/>
+<path d="M740 300L740 240" class="route"/>
+<text x="70" y="596" class="head">L18 follows this continuous service connection in both directions.</text>
+<text x="70" y="629" class="note">The old diagonal emergency route through unrelated rooms is quarantined.</text>
+<rect x="1020" y="150" width="350" height="130" rx="10" fill="#f9e4df" stroke="#4e7581" stroke-width="2"/>
+<text x="1040" y="182" class="head">L12 spillway — OPEN</text>
+<text x="1040" y="210" class="sub">Unpunched saved soil blocks</text>
+<text x="1040" y="240" class="sub">the proposed lower corridor.</text>
+<path d="M920 195L1020 195" class="route" stroke-dasharray="8 6"/>
+<text x="70" y="705" class="head">Preserved functional contracts</text>
+<text x="70" y="744" class="label">Room roster and search budget • canonical van • shared fog / sky • power and host breaker • hiding budget</text>
+<text x="70" y="785" class="label">Native results: 13/13 flights, 5/6 complete vertical links, 13/13 ordinary links. Zero passing-direction regressions.</text>
+<text x="70" y="824" class="note">493 broader flat sample failures and shared gameplay integration remain open. This is a scoped construction checkpoint.</text>
+<text x="36" y="872" class="note">Native construction drawings • dimensions in metres • exported model 9ca45264727b42c4 • runtime acceptance OPEN</text>
+</svg>

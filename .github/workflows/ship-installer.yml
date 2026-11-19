@@ -2,6 +2,37 @@ name: Ship Beckenburg Windows Installer
 on:
   push:
     branches: [main]
+    # Installer binaries must not be reissued for recovery notes, galleries,
+    # screenshots or website-only revisions. A mixed code+docs push still runs.
+    paths-ignore:
+      - 'AGENTS.md'
+      # No gameplay binary changed for a test-only, workflow-only or
+      # diagnostics-only checkpoint. Explicit workflow_dispatch remains usable.
+      # Release workflow itself was exercised and published successfully
+      # on 6ce17c0c / v0.1.319. Stop repeat installer builds for later
+      # workflow-only housekeeping; manual workflow_dispatch is preserved.
+      - '.github/workflows/ship-installer.yml'
+      - '.github/workflows/beckenburg-full-round-e2e.yml'
+      - '.github/workflows/development-gallery.yml'
+      - 'regression-tests.txt'
+      - 'src/test/**'
+      - 'README.md'
+      - 'RELEASES.md'
+      - 'IMPLEMENTATION_SLICE.md'
+      - 'docs/**'
+      - 'development/RECOVERY_PLAN_2026-10-25.md'
+      - 'development/quality/defects.json'
+      - 'development/quality/DEFECT_LEDGER.md'
+      - 'development/gallery/**'
+      - 'development/levels/previews/**'
+      - 'development/quality/evidence/**'
+      - 'beckenburg-development-gallery.html'
+      - 'beckenburg-asset-libraries.html'
+      - 'index.html'
+      - 'beckenburg.html'
+      - 'styles.css'
+      - 'workspace-landing.css'
+      - '.nojekyll'
   workflow_dispatch:
 
 permissions:
@@ -234,7 +265,7 @@ jobs:
           }
           $lines | Set-Content -Encoding ascii dist/installer/SHA256SUMS.txt
 
-      - name: Establish exact immutable tested SHA as lightweight release tag
+      - name: Verify immutable tested source and reserved release tags
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
@@ -242,29 +273,28 @@ jobs:
           $ErrorActionPreference='Stop'
           $commit=(& git rev-parse HEAD).Trim()
           if($LASTEXITCODE -ne 0 -or $commit -ne $env:GITHUB_SHA){
-            throw 'Refusing to tag a commit different from the tested source'
+            throw 'Refusing to publish any commit different from the tested source'
           }
-          # The checkout is intentionally shallow. Pushing a new tag with
-          # "git push" can upload >2 GiB of missing Git history and fail on
-          # GitHub's pack limit. Create only the tiny ref via GitHub REST.
-          # Existing tags are immutable, never retargeted or force-pushed.
+          # GitHub Actions app credentials may lack access to POST /git/refs
+          # even when ordinary release creation works. A release can create
+          # its missing lightweight tag atomically via --target COMMIT.
+          # Verify all existing exact refs first; never retag or force-push.
           $ref="refs/tags/$env:BECKENBURG_TAG"
-          $endpoint="repos/$env:GITHUB_REPOSITORY/git/ref/tags/$env:BECKENBURG_TAG"
-          $remote=& gh api $endpoint --jq '.object.sha' 2>$null
-          $found=($LASTEXITCODE -eq 0)
-          if(-not $found){
-            & gh api --method POST "repos/$env:GITHUB_REPOSITORY/git/refs" -f "ref=$ref" -f "sha=$commit" --jq '.object.sha'
-            if($LASTEXITCODE -ne 0){
-              throw "GitHub reference creation failed for $ref; do not fall back to pushing a multi-gigabyte Git pack"
+          $listed=& gh api "repos/$env:GITHUB_REPOSITORY/git/matching-refs/tags/$env:BECKENBURG_TAG"
+          if($LASTEXITCODE -ne 0){
+            throw "Unable to inspect immutable release tags for $ref"
+          }
+          $matches=@(($listed | ConvertFrom-Json) | Where-Object { $_.ref -eq $ref })
+          if($matches.Count -gt 1){throw "Ambiguous release tag reference $ref"}
+          if($matches.Count -eq 1){
+            $remote=([string]$matches[0].object.sha).Trim()
+            if($remote -ne $commit){
+              throw "Refusing to retag existing release: $ref points to $remote, not tested commit $commit"
             }
-          } elseif(([string]$remote).Trim() -ne $commit){
-            throw "Refusing to retag existing release: $ref points to $remote, not tested commit $commit"
+            Write-Host "VERIFIED existing immutable release tag $ref / $commit"
+          }else{
+            Write-Host "Release tag is absent; create atomically via gh release create --target $commit"
           }
-          $verified=& gh api $endpoint --jq '.object.sha'
-          if($LASTEXITCODE -ne 0 -or ([string]$verified).Trim() -ne $commit){
-            throw "GitHub release tag readback does not match tested commit: $verified"
-          }
-          Write-Host "VERIFIED immutable GitHub API tag $ref / $commit"
 
       - name: Publish packaged installer on GitHub Releases
         shell: pwsh
@@ -295,7 +325,10 @@ jobs:
             if($releaseFound){
               & gh release upload $env:BECKENBURG_TAG @assets --clobber
             }else{
-              & gh release create $env:BECKENBURG_TAG @assets --verify-tag --title "Beckenburg $env:BECKENBURG_RELEASE_VERSION" --notes $notes
+              # Exact source already checked. If no tag exists, release
+              # creation atomically establishes it at this immutable SHA.
+              # Never fall back to a shallow-checkout git push or retag.
+              & gh release create $env:BECKENBURG_TAG @assets --target $checkedOut --title "Beckenburg $env:BECKENBURG_RELEASE_VERSION" --notes $notes
             }
             if($LASTEXITCODE -eq 0){$uploaded=$true;break}
             Write-Warning "Release attempt $attempt failed; GitHub API may be unavailable or this token may lack permission"
@@ -303,6 +336,12 @@ jobs:
           }
           if(-not $uploaded) {
             throw 'GitHub release publication failed after retries; preserve installer artifact for recovery'
+          }
+          # A successful API response is not proof of the intended source.
+          # Read back the real tag on the remote BEFORE claiming publication.
+          $tagSha=& gh api "repos/$env:GITHUB_REPOSITORY/git/ref/tags/$env:BECKENBURG_TAG" --jq '.object.sha'
+          if($LASTEXITCODE -ne 0 -or ([string]$tagSha).Trim() -ne $checkedOut){
+            throw "Published release tag does not point to the exactly tested source: $tagSha"
           }
           $published=& gh release view $env:BECKENBURG_TAG --json tagName,isDraft,assets | ConvertFrom-Json
           if($LASTEXITCODE -ne 0 -or $published.isDraft -or $published.tagName -ne $env:BECKENBURG_TAG) {

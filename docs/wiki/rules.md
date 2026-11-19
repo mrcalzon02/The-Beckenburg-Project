@@ -39,21 +39,23 @@ A party of 1–6 hunters receives an automatic **+1 through +6 party difficulty*
 
 See [custom difficulty matrix](../CUSTOM_DIFFICULTY_MATRIX.md), [host contract](../../../software/beckenburg/src/main/java/org/beckenburg/CustomContract.java) and [LAN lobby](../../../software/beckenburg/src/main/java/org/beckenburg/LanLobbyWindow.java).
 
-## Present LAN hunter controls
+## Shared solo and co-op hunter controls
+
+Solo and co-op use the same host, equipment, physics, placement and hunter viewport.
 
 | Key | Action |
 | --- | --- |
-| WASD / mouse / arrows | Move / look; click to capture pointer |
-| E | Interact with door, lights or nearby breaker |
-| 1, 2, 3 then R | EMF, thermometer, spirit box; take a reading |
-| TAB / J | Open investigator evidence/ghost guide / raw measurement journal |
-| I then P | Cycle ghost guess / submit identification |
-| C / B / N / V | Ward / cleansing / banishment / absolution |
-| Z / G / H / U | Deploy cross / thrown ward / salt / scan UV |
-| F8 / F9 / F10 | Place / inspect / recover writing book (host source slice) |
-| L / X | Hide / extract at van staging |
-| K / T / Y | Shop at van equipment station / consume health / consume sanity medicine |
-| F3 / F4 / F7 | Voice / radio voice / voice settings |
-| Enter / F2 | Local text chat / radio text chat |
+| WASD / Space / Shift | Move / run / crouch toggle (Ctrl alias) |
+| E / Q / 1–4 | Interact / cycle held item / select slot |
+| F / LMB / RMB | Use or raise camera / use or shutter / toggle tool power |
+| T / G / R | Flashlight / place / drop |
+| LMB / wheel while holding clutter | Throw / rotate |
+| Tab / J / M | Evidence journal / casefile / van map |
+| C / V | Hold radio / local voice |
+| Enter; Tab inside text box | Type; switch text channel |
+| K | Equipment, book place/read/retrieve, rituals, countermeasures, medicine, identification, voice settings |
+| H / Esc | Help / pause |
 
-The human-ghost panel uses WASD and mouse-look, **1–3** for offered haunting actions, **4** for strike, **5** for signature, **[ / ]** to choose a neighboring room and **SPACE** to drift. See [LanWorldPanel](../../../software/beckenburg/src/main/java/org/beckenburg/LanWorldPanel.java), [LanGhostPanel](../../../software/beckenburg/src/main/java/org/beckenburg/LanGhostPanel.java), [GhostDomain](../../../software/beckenburg/src/main/java/org/beckenburg/GhostDomain.java), [GhostActionCadence](../../../software/beckenburg/src/main/java/org/beckenburg/GhostActionCadence.java) and [LanCase](../../../software/beckenburg/src/main/java/org/beckenburg/LanCase.java).
+World drops require a supported indoor floor, remain owner-bound, preserve device tier and resources, and cannot duplicate an already deployed device. Reclaim deployed equipment before dropping it. Purchases and rack exchanges retain host range/ownership checks.
+
+The human-ghost panel uses WASD and mouse-look, **1–3** for offered haunting actions, **4** for strike, **5** for signature, **Z / Q** to choose a neighboring room and **SPACE** to drift. See [LanWorldPanel](../../../software/beckenburg/src/main/java/org/beckenburg/LanWorldPanel.java), [LanGhostPanel](../../../software/beckenburg/src/main/java/org/beckenburg/LanGhostPanel.java), [GhostDomain](../../../software/beckenburg/src/main/java/org/beckenburg/GhostDomain.java), [GhostActionCadence](../../../software/beckenburg/src/main/java/org/beckenburg/GhostActionCadence.java) and [LanCase](../../../software/beckenburg/src/main/java/org/beckenburg/LanCase.java).

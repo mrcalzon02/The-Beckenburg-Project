@@ -18,6 +18,30 @@ The owner directs completing Castle's full revision as the central hub and prima
 
 ## 1. Outcome and governing decisions
 
+Owner urgent atmosphere amendment, 7 November2026: every level must use heavy distance fog and a skybox beyond visible geometry. Implement this through the shared Castle/investigation renderer across software and OpenGL, preserving close detail and depth/collision authority. Source-only packets inherit the same runtime policy on integration; fog does not replace terrain shaping, real physical edges or their acceptance gates. Actual implementation/evidence: `rebuild/verification/atmosphere-all-levels/`.
+
+Owner terrain-priority amendment, 7 November 2026: settle each remaining site's
+overall terrain layers, landform and elevations before further isolated path or
+orange connector repairs. Review the whole site: slopes, terraces, drainage,
+retaining edges and foundation heights. Reshuffle building groups, room blocks or
+stair bays where needed to fit a coherent landform; preserve stable IDs, reusable
+models, the40-space envelope and shared authored coordinates. Checkpoint current
+work first, then execute this as a roster-wide terrain pass. Existing rough path
+coordinates are review inputs, not an instruction to force terrain around them.
+
+Owner amendment, 7 November 2026: resume breadth by stage across the remaining
+roster. The House construction pilot has established the representative method;
+remaining House closeout runs continue independently. Do not hold all other maps
+behind further single-map refinement. Sweep blocking and traversal, then actual
+structural depth/openings/roof enclosure, then the shared asset library and
+supported model placement, then successive detail passes. Preserve mature Castle,
+House, Blackpine and Hollow Creek work while individually auditing their gates.
+Every roster pass records a concrete decision for all 29 packets; unchanged,
+blocked or unverified locations are not silently counted as finished. Floors need
+depth and undersides, walls need thickness, stair decks need real openings, and
+closed roofs must block skylight. Native structure blocking is an intermediate
+artifact, not permission to unlock a site before actual runtime integration.
+
 Every location must make sense as a place before it is dressed as a horror level. Its terrain, construction, circulation, services, daily activities and subsequent damage must explain its appearance. A prison needs actual cells and control layers; a school needs a coherent teaching day, washrooms and specialist spaces; a home needs ordinary household relationships. A room name and an asset count establish neither architecture nor identity.
 
 Rebuild the spatial design from its purpose. Preserve the valuable asset collection, clean masters, distinctive successful assemblies, approved concepts, lore, gameplay contracts and historical evidence. Each existing component receives an evidence-based retain/refit/replace decision. No map receives automatic acceptance because it is newer, and no useful asset is discarded merely because its original placement was poor.
@@ -232,3 +256,6 @@ The first visible success is a complete set of credible, measured places with pr
 ## Planning checkpoint validation
 
 Local checks passed for exact roster equality with the existing edge/sky catalog, 29 unique matching site packages, twelve stages per packet (348 decisions), existing prior-source paths, relative links in both new documents, strict UTF-8 decoding and `git diff --check`. All execution stages remain `NOT_AUDITED` with no claimed evidence or accepted revision. No runtime code or geometry changed, so no game compile, new render/gallery capture or gameplay test was run for this documentation-only delivery. Current recovery workflow observations are recorded separately in the recovery checkpoint log.
+
+
+Owner amendment13November2026: retain the House ordering—predictable real-world structure and supported landings/openings first, then traversability validation. Reject clearance-driven tread flares and matching arbitrary ceiling cuts. Clean all doorway openings across the full roster to consistent sill/head datums and appropriate door-type widths, with real jambs/lintels and wall thickness; navigation studies guide construction and never become physical ribbons or swept-cut architecture.

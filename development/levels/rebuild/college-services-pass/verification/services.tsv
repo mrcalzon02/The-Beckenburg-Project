@@ -1,0 +1,34 @@
+FIXTURE	west-plant-boiler	-3	16.3	12.925	17.4	13.975
+FIXTURE	west-plant-manifold	-3	12.775	19.635	13.675	21.365
+FIXTURE	maintenance-basin	-3	12.31	29.52	12.81	30.18
+FIXTURE	lab-wash-basin	0	18.12	16.25	18.78	16.75
+FIXTURE	public-basin	0	26.37	53.29	27.03	53.79
+FIXTURE	public-wc	0	24.6788	52.85548	25.2412	53.75224
+FIXTURE	cleaner-basin	0	26.17	46.28	26.83	46.78
+FIXTURE	laundry-left	0	44.285	34.187	44.915	34.9905
+FIXTURE	laundry-right	0	45.835	34.187	46.465	34.9905
+FIXTURE	staff-cleaner-basin	0	56.07	30.25	56.73	30.75
+FIXTURE	staff-basin	0	60.62	33.29	61.28	33.79
+FIXTURE	staff-wc	0	58.9688	32.85548	59.5312	33.75224
+FIXTURE	kitchen-sink	0	56.26	50.345	58.66	51.042
+FIXTURE	washup-sink	0	56.24	64.978	58.64	65.675
+FIXTURE	residence-basin	3.6	56.67	22.27	57.33	22.77
+FIXTURE	residence-wc	3.6	54.8688	22.20776	55.4312	23.10452
+FIXTURE	residence-shower-west	3.6	58.57	22.2705	59.5315	23.1775
+FIXTURE	residence-shower-east	3.6	60.42	22.2705	61.3815	23.1775
+FIXTURE	seminar-radiator	0	8.48	24.195	9.65944	24.45
+FIXTURE	lecture-front-radiator	0	6.34	39.48	6.595	40.65944
+FIXTURE	lecture-rear-radiator	0	6.34	48.48	6.595	49.65944
+FIXTURE	lobby-radiator	0	20.84056	61.52	22.02	61.775
+FIXTURE	upper-seminar-radiator	3.6	9.58	24.265	10.75944	24.52
+FIXTURE	library-reading-radiator	0	44.44056	19.5	45.62	19.755
+FIXTURE	library-stack-radiator	3.6	39.58	4.265	40.75944	4.52
+FIXTURE	cafe-radiator	0	42.35	61.58	42.605	62.75944
+FIXTURE	residence-hall-radiator	3.6	53.435	47.14056	53.69	48.32
+FIXTURE	dormitory-radiator	3.6	42.33	35.88	42.585	37.05944
+FIXTURE	lab-extract-cabinet	0	11.86	10.18	13.74	11.12
+FIXTURE	union-kitchen-range	0	59.67	50.38	60.63	51.13
+VENT	lab dedicated extract	9.25	10.65	8.388889	8.388889	8.513333	8.513333
+VENT	kitchen independent extract	61.3	50.75	7.7775	7.7775	7.6275	7.6275
+VENT	east shower extract	61.22	23.4	7.8075	7.8075	7.6575	7.6575
+VENT	plant room air shaft	19.1	11.35	9.026667	9.026667	8.902222	8.902222

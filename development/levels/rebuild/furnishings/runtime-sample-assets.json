@@ -1,0 +1,630 @@
+{
+  "scope": "Existing source GLBs; transformed bounds in Blender X/-Z/Y frame",
+  "assets": [
+    {
+      "asset": "level_student_desk",
+      "path": "assets/runtime/models/level_student_desk.glb",
+      "sha256": "5bfe0085ab7c72f3f1a8d1c277454853e3beb0bd6ec7517225c9758817ff60e1",
+      "blender_min": [
+        -0.550000011920929,
+        -0.32499998807907104,
+        0.0
+      ],
+      "blender_max": [
+        0.550000011920929,
+        0.32499998807907104,
+        0.7400000095367432
+      ],
+      "size_m": [
+        1.100000023841858,
+        0.6499999761581421,
+        0.7400000095367432
+      ],
+      "triangles": 388,
+      "meshes": 1,
+      "materials": 3,
+      "uv_meshes": 1,
+      "images": 3,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "chair_mp_5",
+      "path": "assets/runtime/models/chair_mp_5.glb",
+      "sha256": "21e96aeb9e78f2bebce82944595e5bd5f5e19c055232ae2f8c23c9c0480398c6",
+      "blender_min": [
+        -0.2573786675930023,
+        -0.24505557119846344,
+        7.823108383320232e-09
+      ],
+      "blender_max": [
+        0.25716692209243774,
+        0.2803512215614319,
+        1.0082637071609497
+      ],
+      "size_m": [
+        0.5145455896854401,
+        0.5254067927598953,
+        1.0082636993378413
+      ],
+      "triangles": 576,
+      "meshes": 1,
+      "materials": 1,
+      "uv_meshes": 1,
+      "images": 1,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "table_large_2",
+      "path": "assets/runtime/models/table_large_2.glb",
+      "sha256": "4752307917e8b5e6532aff42c779ddb99c967527f9bb7ff111d5be60dd23b279",
+      "blender_min": [
+        -0.849998414516449,
+        -0.44999799132347107,
+        1.8531864043325186e-08
+      ],
+      "blender_max": [
+        0.850002646446228,
+        0.4500020444393158,
+        0.9600000381469727
+      ],
+      "size_m": [
+        1.700001060962677,
+        0.9000000357627869,
+        0.9600000196151086
+      ],
+      "triangles": 92,
+      "meshes": 1,
+      "materials": 1,
+      "uv_meshes": 1,
+      "images": 1,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "dinner_table_1",
+      "path": "assets/runtime/models/dinner_table_1.glb",
+      "sha256": "482303ac80e40371c9ffe2462a9fad6e946f66c7aebc8417b6b2c2c73400086a",
+      "blender_min": [
+        -0.849998414516449,
+        -0.5500003099441528,
+        1.8531864043325186e-08
+      ],
+      "blender_max": [
+        0.850002646446228,
+        0.5499997735023499,
+        0.8600000143051147
+      ],
+      "size_m": [
+        1.700001060962677,
+        1.1000000834465027,
+        0.8599999957732507
+      ],
+      "triangles": 92,
+      "meshes": 1,
+      "materials": 1,
+      "uv_meshes": 1,
+      "images": 1,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "sofa_1",
+      "path": "assets/runtime/models/sofa_1.glb",
+      "sha256": "153b629a26d0d104424781ff4d260932bb70b5821cc9dd6d6a4806d2594c11d3",
+      "blender_min": [
+        -1.299999713897705,
+        -1.000000238418579,
+        -3.4436307139174005e-09
+      ],
+      "blender_max": [
+        1.2999998331069946,
+        0.004842380993068218,
+        1.1595666408538818
+      ],
+      "size_m": [
+        2.5999995470046997,
+        1.0048426194116473,
+        1.1595666442975125
+      ],
+      "triangles": 648,
+      "meshes": 1,
+      "materials": 2,
+      "uv_meshes": 1,
+      "images": 2,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "armchair_1",
+      "path": "assets/runtime/models/armchair_1.glb",
+      "sha256": "a9c0fcc00ddaca7089c3b547ede695a665f98c16c193674af9fe95b66c659597",
+      "blender_min": [
+        -0.7474523782730103,
+        -0.990038275718689,
+        3.801252645985187e-09
+      ],
+      "blender_max": [
+        0.7474523782730103,
+        1.3508993106370326e-06,
+        1.0665233135223389
+      ],
+      "size_m": [
+        1.4949047565460205,
+        0.9900396266179996,
+        1.0665233097210862
+      ],
+      "triangles": 592,
+      "meshes": 1,
+      "materials": 2,
+      "uv_meshes": 1,
+      "images": 2,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "bed_5",
+      "path": "assets/runtime/models/bed_5.glb",
+      "sha256": "402cd296a440fd6b6e0320acba190c1f6773f1fc3c4622c2a524725d1278652c",
+      "blender_min": [
+        -1.370335340499878,
+        -0.7403361201286316,
+        2.7700842508693313e-08
+      ],
+      "blender_max": [
+        1.3703371286392212,
+        0.750335693359375,
+        0.9621344208717346
+      ],
+      "size_m": [
+        2.740672469139099,
+        1.4906718134880066,
+        0.9621343931708921
+      ],
+      "triangles": 696,
+      "meshes": 1,
+      "materials": 2,
+      "uv_meshes": 1,
+      "images": 2,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "bed_1",
+      "path": "assets/runtime/models/bed_1.glb",
+      "sha256": "918234304315bcebc61bc94627919381f1f630d9a2b89472befebf1e557f9333",
+      "blender_min": [
+        -1.3500012159347534,
+        -0.6999998688697815,
+        1.8626415965172782e-09
+      ],
+      "blender_max": [
+        1.3500012159347534,
+        0.6999995708465576,
+        1.2699998617172241
+      ],
+      "size_m": [
+        2.700002431869507,
+        1.3999994397163391,
+        1.2699998598545825
+      ],
+      "triangles": 744,
+      "meshes": 1,
+      "materials": 2,
+      "uv_meshes": 1,
+      "images": 2,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_trace_camp_bed",
+      "path": "assets/runtime/models/level_trace_camp_bed.glb",
+      "sha256": "f75c0f437d5abb3e3d9891475a440a92fb04690df078e3d437e7be68301d6f2e",
+      "blender_min": [
+        -0.4625000059604645,
+        -1.0225000381469727,
+        0.0
+      ],
+      "blender_max": [
+        0.46250003576278687,
+        1.0225000381469727,
+        0.8199999928474426
+      ],
+      "size_m": [
+        0.9250000417232513,
+        2.0450000762939453,
+        0.8199999928474426
+      ],
+      "triangles": 228,
+      "meshes": 1,
+      "materials": 4,
+      "uv_meshes": 1,
+      "images": 4,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "shelf_mp_4",
+      "path": "assets/runtime/models/shelf_mp_4.glb",
+      "sha256": "9d172dfd390f7d1c6360875fe475860041580fe920b27101f384fbf0fe9c8b6c",
+      "blender_min": [
+        -0.6100039482116699,
+        -0.11000057309865952,
+        -5.042526751708465e-08
+      ],
+      "blender_max": [
+        0.6099989414215088,
+        0.10999951511621475,
+        2.190000295639038
+      ],
+      "size_m": [
+        1.2200028896331787,
+        0.22000008821487427,
+        2.1900003460643056
+      ],
+      "triangles": 64,
+      "meshes": 1,
+      "materials": 1,
+      "uv_meshes": 1,
+      "images": 1,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_lived_shelf",
+      "path": "assets/runtime/models/level_lived_shelf.glb",
+      "sha256": "991908b343bd5ebcbb0b32e6af8e84fd2c644f8672b376ee64f46b30065ca8ff",
+      "blender_min": [
+        -0.6674999594688416,
+        -0.22499999403953552,
+        0.0
+      ],
+      "blender_max": [
+        0.6675000190734863,
+        0.22499999403953552,
+        1.8624999523162842
+      ],
+      "size_m": [
+        1.3349999785423279,
+        0.44999998807907104,
+        1.8624999523162842
+      ],
+      "triangles": 3680,
+      "meshes": 1,
+      "materials": 6,
+      "uv_meshes": 1,
+      "images": 6,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_lockers",
+      "path": "assets/runtime/models/level_lockers.glb",
+      "sha256": "ac2bc291264a2be64cfbcbfe0a53c0771243eb08ef3918197501554e956d9df7",
+      "blender_min": [
+        -1.2130000591278076,
+        -0.32899999618530273,
+        0.0
+      ],
+      "blender_max": [
+        1.2130000591278076,
+        0.23999999463558197,
+        1.8675000667572021
+      ],
+      "size_m": [
+        2.4260001182556152,
+        0.5689999908208847,
+        1.8675000667572021
+      ],
+      "triangles": 3376,
+      "meshes": 1,
+      "materials": 3,
+      "uv_meshes": 1,
+      "images": 3,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "wooden_crate_1",
+      "path": "assets/runtime/models/wooden_crate_1.glb",
+      "sha256": "29532c345664c083f7db82e8410b9115111ac6a16a55b0b239381fac17bc9b9c",
+      "blender_min": [
+        -0.36000004410743713,
+        -0.25200018286705017,
+        -1.902546920007353e-08
+      ],
+      "blender_max": [
+        0.3600001037120819,
+        0.25199997425079346,
+        0.3600001037120819
+      ],
+      "size_m": [
+        0.720000147819519,
+        0.5040001571178436,
+        0.3600001227375511
+      ],
+      "triangles": 184,
+      "meshes": 1,
+      "materials": 1,
+      "uv_meshes": 1,
+      "images": 1,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_work_repair_bench",
+      "path": "assets/runtime/models/level_work_repair_bench.glb",
+      "sha256": "b922265b6fc70ed1060b1e92eb29818595e10254d063b28e3ceb647c73a2f3ee",
+      "blender_min": [
+        -1.225000023841858,
+        -0.6019999980926514,
+        0.0
+      ],
+      "blender_max": [
+        1.2250001430511475,
+        0.39500001072883606,
+        1.6449999809265137
+      ],
+      "size_m": [
+        2.4500001668930054,
+        0.9970000088214874,
+        1.6449999809265137
+      ],
+      "triangles": 839,
+      "meshes": 1,
+      "materials": 6,
+      "uv_meshes": 1,
+      "images": 6,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_workbench",
+      "path": "assets/runtime/models/level_workbench.glb",
+      "sha256": "d3fba3eae841e297c03570d92c357e83fee29e63efd2619c2541a525415b36ec",
+      "blender_min": [
+        -0.8999999761581421,
+        -0.36500000953674316,
+        0.0
+      ],
+      "blender_max": [
+        0.8999999761581421,
+        0.3400000035762787,
+        1.2200000286102295
+      ],
+      "size_m": [
+        1.7999999523162842,
+        0.7050000131130219,
+        1.2200000286102295
+      ],
+      "triangles": 688,
+      "meshes": 1,
+      "materials": 1,
+      "uv_meshes": 1,
+      "images": 1,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_castle_four_poster_bed",
+      "path": "assets/runtime/models/level_castle_four_poster_bed.glb",
+      "sha256": "eddf15f7d5c713fa2a9310cd38ffb99261f9549d5320d09bc74185464b334c36",
+      "blender_min": [
+        -1.0989999771118164,
+        -0.7099999785423279,
+        0.0
+      ],
+      "blender_max": [
+        1.0989999771118164,
+        0.7099999785423279,
+        2.3399999141693115
+      ],
+      "size_m": [
+        2.197999954223633,
+        1.4199999570846558,
+        2.3399999141693115
+      ],
+      "triangles": 828,
+      "meshes": 1,
+      "materials": 2,
+      "uv_meshes": 1,
+      "images": 2,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_kitchen_counter",
+      "path": "assets/runtime/models/level_kitchen_counter.glb",
+      "sha256": "a554b18711ba31848a55a28be3674d7e7d1a11a595e21bb70d9466dc6cdeca53",
+      "blender_min": [
+        -1.190000057220459,
+        -0.3720000088214874,
+        0.0
+      ],
+      "blender_max": [
+        1.2100000381469727,
+        0.32499998807907104,
+        1.1959999799728394
+      ],
+      "size_m": [
+        2.4000000953674316,
+        0.6969999969005585,
+        1.1959999799728394
+      ],
+      "triangles": 1710,
+      "meshes": 1,
+      "materials": 5,
+      "uv_meshes": 1,
+      "images": 5,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_laundry_washer",
+      "path": "assets/runtime/models/level_laundry_washer.glb",
+      "sha256": "d06759ff644e421f9b225c19ccad5b12ee658b23971af02bb5f8f17e8aeb1f14",
+      "blender_min": [
+        -0.3149999976158142,
+        -0.37049999833106995,
+        0.0
+      ],
+      "blender_max": [
+        0.3149999976158142,
+        0.43299999833106995,
+        0.8725000619888306
+      ],
+      "size_m": [
+        0.6299999952316284,
+        0.8034999966621399,
+        0.8725000619888306
+      ],
+      "triangles": 1704,
+      "meshes": 1,
+      "materials": 5,
+      "uv_meshes": 1,
+      "images": 5,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_lived_pantry",
+      "path": "assets/runtime/models/level_lived_pantry.glb",
+      "sha256": "10d0c73e671892f8f9aedcae6f52852981c06ba041af461a1d7059ea827fef5d",
+      "blender_min": [
+        -0.6674999594688416,
+        -0.22499999403953552,
+        0.0
+      ],
+      "blender_max": [
+        0.6675000190734863,
+        0.22499999403953552,
+        1.8624999523162842
+      ],
+      "size_m": [
+        1.3349999785423279,
+        0.44999998807907104,
+        1.8624999523162842
+      ],
+      "triangles": 3760,
+      "meshes": 1,
+      "materials": 5,
+      "uv_meshes": 1,
+      "images": 5,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_hay_bale",
+      "path": "assets/runtime/models/level_hay_bale.glb",
+      "sha256": "f5e62e630477eae7d27d51c70876b87eb055512b67af99d3c075b85d70582fd2",
+      "blender_min": [
+        -0.6000000238418579,
+        -0.3880000114440918,
+        0.0
+      ],
+      "blender_max": [
+        0.6000000238418579,
+        0.3880000114440918,
+        0.6899999976158142
+      ],
+      "size_m": [
+        1.2000000476837158,
+        0.7760000228881836,
+        0.6899999976158142
+      ],
+      "triangles": 980,
+      "meshes": 1,
+      "materials": 3,
+      "uv_meshes": 1,
+      "images": 3,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_work_crew_footlocker",
+      "path": "assets/runtime/models/level_work_crew_footlocker.glb",
+      "sha256": "ffba4584f2c145810ccfbba2c4a39571b27a1fc8ea8ed636baf78b72f27f9b82",
+      "blender_min": [
+        -0.49799999594688416,
+        -0.2849999964237213,
+        0.0
+      ],
+      "blender_max": [
+        0.49799999594688416,
+        0.4425083100795746,
+        0.8807303309440613
+      ],
+      "size_m": [
+        0.9959999918937683,
+        0.7275083065032959,
+        0.8807303309440613
+      ],
+      "triangles": 1120,
+      "meshes": 1,
+      "materials": 11,
+      "uv_meshes": 1,
+      "images": 11,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "level_lived_linen_press",
+      "path": "assets/runtime/models/level_lived_linen_press.glb",
+      "sha256": "44aff6476554aa54b8c017ad66f8fabe3cf927dd4333089a025630149c913af4",
+      "blender_min": [
+        -0.550000011920929,
+        -0.35199999809265137,
+        0.0
+      ],
+      "blender_max": [
+        0.550000011920929,
+        0.25999999046325684,
+        2.0399999618530273
+      ],
+      "size_m": [
+        1.100000023841858,
+        0.6119999885559082,
+        2.0399999618530273
+      ],
+      "triangles": 276,
+      "meshes": 1,
+      "materials": 3,
+      "uv_meshes": 1,
+      "images": 3,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "kenney_detail_bench",
+      "path": "assets/runtime/models/kenney_detail_bench.glb",
+      "sha256": "f05da8012bf94efe55071d2eea8483bddc935ddad756d40dde93418b1cf20385",
+      "blender_min": [
+        -0.30195000767707825,
+        -0.16106250882148743,
+        0.0
+      ],
+      "blender_max": [
+        0.30195000767707825,
+        0.16106249392032623,
+        0.4090921878814697
+      ],
+      "size_m": [
+        0.6039000153541565,
+        0.32212500274181366,
+        0.4090921878814697
+      ],
+      "triangles": 84,
+      "meshes": 1,
+      "materials": 2,
+      "uv_meshes": 1,
+      "images": 2,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    },
+    {
+      "asset": "wardrobe_mp_1",
+      "path": "assets/runtime/models/wardrobe_mp_1.glb",
+      "sha256": "37af12c6fce0f2a5083a4a65fa51d5af69147d94a594a011f121a053d2cd5851",
+      "blender_min": [
+        -0.6700044870376587,
+        -0.3199980854988098,
+        -2.077027687619193e-07
+      ],
+      "blender_max": [
+        0.6700044870376587,
+        0.32000207901000977,
+        2.1000003814697266
+      ],
+      "size_m": [
+        1.3400089740753174,
+        0.6400001645088196,
+        2.1000005891724953
+      ],
+      "triangles": 1426,
+      "meshes": 4,
+      "materials": 2,
+      "uv_meshes": 4,
+      "images": 2,
+      "status": "SOURCE_LIBRARY_MEASURED_NOT_PLACED_OR_ACCEPTED"
+    }
+  ],
+  "inspection": "development/levels/rebuild/captures/furnishing-batch/library-pilot.png"
+}

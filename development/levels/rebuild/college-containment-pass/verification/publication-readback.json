@@ -1,0 +1,57 @@
+{
+  "implementation_commit": "fab9fa656c546316c468d3ff558f14f4510333e1",
+  "remote_tree": "1b81788f30d094499ca638537cc9fff46b40aa71",
+  "blobs": {
+    "development/levels/rebuild/college-containment-pass/college/college-containment.glb": {
+      "git_blob": "f661d61149e4e6217b71ceecaafed4f62bde5862",
+      "sha256": "92de55770a64288b2cf7a69933c3e5e58d4b583d8bd6e520650ae680dc1d66ac",
+      "bytes": 9088956
+    },
+    "development/levels/rebuild/college-containment-pass/college/college-containment.hcs2": {
+      "git_blob": "6cf062888371d845858041a20dee7d4013715bd1",
+      "sha256": "51cebea2ecacad01239870c254bd22d8491236d3ecb4739445cdf4a0023080f5",
+      "bytes": 3089950
+    },
+    "development/levels/rebuild/college-containment-pass/college/college-containment.blend": {
+      "git_blob": "496de09c8bcbc4f1123e73bd12911c11cc18ebd5",
+      "sha256": "3b46c9046e32404a3d4c2545f4f8d721cb2539a38ca4e223296dbf2309f2b26f",
+      "bytes": 2070484
+    },
+    "development/levels/rebuild/captures/college-containment-batch/college-native-parcel.png": {
+      "git_blob": "e367c4f2fb282ab3418944119893354430748eae",
+      "sha256": "bffe68ec165afd9ad9ebb606ebde7c7a22bf4f6c4a21fe0f4be0bf4f0ab57fdc",
+      "bytes": 1412198
+    },
+    "development/levels/rebuild/captures/college-containment-batch/college-opengl-service-gate.png": {
+      "git_blob": "f8af85bf7768d399a36ef1b7ccd3257517e4cd84",
+      "sha256": "f5b2a2499b5b2706a09433c04827d41865903a3c6241061c40bc4848a8bf3469",
+      "bytes": 165121
+    }
+  },
+  "status": "COLLEGE_NATIVE_CONTAINMENT_DRAFT_WITH_VERIFIED_GALLERY",
+  "authorized_branch": "map/roster-structure-batch",
+  "held_pr": "https://github.com/mrcalzon02/The-Beckenburg-Project/pull/86",
+  "held_base": {
+    "branch": "map/house-default",
+    "sha": "5c3daf923a7359554dc075c9e99be139bbcb1441"
+  },
+  "first_hosted_gallery": {
+    "run": 44265615318,
+    "conclusion": "failure",
+    "cause": "DEV-600 working preview hash"
+  },
+  "corrected_gallery": {
+    "commit": "119d7c01c8f27760f7470489452c6dcb7b766a04",
+    "remote_tree": "8b687dfba45135c9539a259d8ebaa916a9906cda",
+    "run": 44266566943,
+    "conclusion": "success",
+    "report": "verification/gallery-source-test.txt",
+    "url": "https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44266566943"
+  },
+  "public_gallery": {
+    "branch": "main",
+    "main_commit": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+    "public_gallery_http": 200,
+    "holdout_draft_capture_http": 404
+  }
+}

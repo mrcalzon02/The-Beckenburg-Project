@@ -1,0 +1,67 @@
+{
+  "status": "EIGHT_SOURCE_TERRAIN_BATCH_REVIEWED_NOT_LANDSCAPE_OR_MAP_ACCEPTANCE",
+  "sites": [
+    "ACADEMY",
+    "FARMHOUSE",
+    "WLD-05",
+    "WLD-08",
+    "WLD-09",
+    "WLD-10",
+    "WLD-13",
+    "WLD-18"
+  ],
+  "construction_score": 2,
+  "finish_score": 1,
+  "final_frames": 48,
+  "sheets": [
+    {
+      "site": "ACADEMY",
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/academy-terrain-final-sheet.png",
+      "sha256": "9717074f20523ce2f2943f8cb6fd1361ab95cb02304818e7797608d221b3ab8b"
+    },
+    {
+      "site": "FARMHOUSE",
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/farmhouse-terrain-final-sheet.png",
+      "sha256": "75a52e07db15a98d893fe6560b1832725b8c8ada64a729e2a5ebc99912571d93"
+    },
+    {
+      "site": "WLD-05",
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-05-terrain-final-sheet.png",
+      "sha256": "d6884bb4538e8a41bccf71924a84330a33cf5cfd467abe7d0b3b13cee953e80f"
+    },
+    {
+      "site": "WLD-08",
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-08-terrain-final-sheet.png",
+      "sha256": "a022617f3b10239e2544fbc5d37287b4526860c5280fc8d642d5fdac31eca503"
+    },
+    {
+      "site": "WLD-09",
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-09-terrain-final-sheet.png",
+      "sha256": "060f07038e4f899437bd13c6fc7165801b74b17044c5c29630ef5d1aa9d03bb8"
+    },
+    {
+      "site": "WLD-10",
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-10-terrain-final-sheet.png",
+      "sha256": "16d8bf880d45750d78b0d549c6b3c28446f1f26db190785cb98922a00bf7b3f2"
+    },
+    {
+      "site": "WLD-13",
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-13-terrain-final-sheet.png",
+      "sha256": "48be28bc81438d872283960d89348b431182212008e667b58397d9730610861c"
+    },
+    {
+      "site": "WLD-18",
+      "path": "development/levels/rebuild/captures/flat-terrain-batch/wld-18-terrain-final-sheet.png",
+      "sha256": "730528da741bd23989ffc1d48211dfc2f56e5d6be37eb58b34d13db473065312"
+    }
+  ],
+  "all_sheets_observed": true,
+  "findings": [
+    "All eight actual before/after whole-site, isolated terrain and diagnosed contact sheets viewed. Original macroform and punched holes remain.",
+    "Native foot standing verifies every one of the713diagnosed terrain contact poses; images do not replace those checks.",
+    "Coarse cut banks at quarry/hotel/camp and unfinished protective edges need retaining/landscape refinement. Rough blue pavement is construction material, not final surfacing.",
+    "Academy perimeter still leaves the landform. Genuine shaft/opening interfaces need individual route/rim/guard design, not blind filling.",
+    "Original roof caps, voids, fixtures/furniture, dark seams and canonical van arrangement retain individual audits. Bed components need consolidation before performance acceptance.",
+    "Native Workbench frames do not establish gameplay sky/fog/light, full-map optical, runtime/network or physical hardware acceptance."
+  ]
+}

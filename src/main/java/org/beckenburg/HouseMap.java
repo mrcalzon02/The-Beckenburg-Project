@@ -7,7 +7,7 @@ import org.beckenburg.LevelDefinition.*;
 public final class HouseMap {
     public static final int COLS=3,ROWS=5,INDOOR_ROOMS=12,ROOM_COUNT=15;
     public static final int WIDTH=128,HEIGHT=128,GRAND_WIDTH=128,GRAND_HEIGHT=128,EXTRACTION_ROOM=14;
-    public enum Site { HOUSE,FARMHOUSE,SCHOOL,MANSION,PRISON,ASYLUM,ACADEMY,COLLEGE,CHURCH,HOLLOW_CREEK,USER }
+    public enum Site { HOUSE,FARMHOUSE,SCHOOL,MANSION,PRISON,ASYLUM,ACADEMY,COLLEGE,CHURCH,HOLLOW_CREEK,USER,SEACLIFF,BLACKPINE }
     private final Site site;
     private volatile List<SafeAreaBarrier.Volume> temporarySafeAreas=List.of();
     public List<SafeAreaBarrier.Volume> temporarySafeAreas(){return temporarySafeAreas;}
@@ -15,8 +15,14 @@ public final class HouseMap {
     private final LevelDefinition level;
     private final SiteTerrain terrain;
     private final AuthoredSitePhysics nativeSite;
+    private final NativeInvestigationScene nativeInvestigation;
+    NativeInvestigationScene nativeInvestigation(){return nativeInvestigation;}
     private final List<List<Portal>> wallPortals;
-    private final AuthoredSitePhysics worldSurface;
+    /** Immutable owner-only portal index for repeated cold architectural
+     * shadow rays. Unlike wallPortals, this must not inherit child-room
+     * apertures: the shadow algorithm historically checks direct owners only. */
+    private final List<List<Portal>> lightPortals;
+    private final AuthoredSitePhysics worldSurface,parcelBoundary;
     private final boolean editorTerrainWalking;
     private final HouseRebuildEnvelope.Geometry envelope,services;
     HouseRebuildEnvelope.Geometry services(){return services;}
@@ -82,24 +88,72 @@ public final class HouseMap {
         this(site,definition,WorldTerrainSurface.of(definition));
     }
     HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface){
+        this(site,definition,worldSurface,site==Site.SEACLIFF
+            ?SeacliffNativeLevel.sceneFor(definition):CollegeNativeLevel.sceneFor(site,definition));
+    }
+    static HouseMap forNetworkRevision(Site site,String revision){
+        var map=new HouseMap(site);
+        if(!map.level().revision().equals(revision))throw new IllegalArgumentException("incompatible level revision");
+        return map;
+    }
+    HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface,NativeInvestigationScene nativeInvestigation){
         this.site=Objects.requireNonNull(site);level=Objects.requireNonNull(definition);guards=level.guards();
         wallPortals=level.rooms().stream().map(r->level.wallPortals(r.id())).toList();
+        var ownerPortals=new ArrayList<List<Portal>>(level.rooms().size());
+        for(int i=0;i<level.rooms().size();i++)ownerPortals.add(new ArrayList<>());
+        // Preserve the source portal iteration order for visibility parity,
+        // including portals whose endpoints coincide.
+        for(Portal p:level.portals()){
+            ownerPortals.get(p.a()).add(p);
+            if(p.b()!=p.a())ownerPortals.get(p.b()).add(p);
+        }
+        lightPortals=ownerPortals.stream().map(List::copyOf).toList();
         this.worldSurface=worldSurface;
         editorTerrainWalking=worldSurface!=null&&WorldTerrainSurface.walking(level);
         envelope=HouseRebuildEnvelope.geometry(level);
+        var authoredBoundary=HouseParcelBoundary.geometry(level);
+        parcelBoundary=authoredBoundary==null?null:authoredBoundary.physics();
         services=HouseServiceNetwork.geometry(level);
         terrain=SiteTerrain.of(level);
-        nativeSite=HollowCreekLevel.is(level)?HollowCreekLevel.physics():null;
+        if(nativeInvestigation!=null)for(var door:nativeInvestigation.doors())
+            if(!level.portals().contains(door.spec().portal()))
+                throw new IllegalArgumentException("Native leaf is missing its shared portal: "+door.spec().frameId());
+        this.nativeInvestigation=nativeInvestigation;
+        nativeSite=nativeInvestigation!=null?nativeInvestigation.physics():HollowCreekLevel.is(level)?HollowCreekLevel.physics():null;
         Dock d=level.dock();van=new VanStaging(new VanStaging.Placement(d.x(),d.y(),d.z(),d.yaw()));
         // Fixture anchors must be fixed before door state or difficulty can change.
         // Author access against every potential cupboard, then restore the default.
         configureHiding(100);fixtures=new HauntedFixtures(this);configureHiding(70);
     }
+    private boolean nativeDoorBodyBlocked(Vec feet,double height,double radius){
+        if(nativeInvestigation!=null)for(var door:nativeInvestigation.doors())
+            if(door.pose(doorOpen(door.spec().portal().id())).physics().bodyBlocked(feet,height,radius))return true;
+        return false;
+    }
+
+    private boolean nativeDoorSightClear(Vec from,Vec to,int selectedPortal){
+        if(nativeInvestigation!=null)for(var door:nativeInvestigation.doors()){
+            int id=door.spec().portal().id();
+            if(id!=selectedPortal&&!door.pose(doorOpen(id)).physics().clearSight(from,to))return false;
+        }
+        return true;
+    }
+
     public Site site(){return site;}
     public LevelDefinition level(){return level;}
+    /** No per-ray filtering or stream allocation; topology belongs to this map instance. */
+    List<Portal> lightPortals(int room){return lightPortals.get(room);}
     public boolean authoredArchitecture(){return true;}
     public VanStaging van(){return van;}
-    public boolean sheltered(double x,double eyeY,double z){if(nativeSite!=null)return !nativeSite.clearSight(new Vec(x,eyeY+.03,z),new Vec(x,eyeY+10,z))||!van.clearSight(x,eyeY+.03,z,x,eyeY+10,z);int room=roomAt(x,eyeY-1.3,z);return room>=0&&!outside(room);}
+    public boolean sheltered(double x,double eyeY,double z){
+        if(nativeSite!=null){
+            var from=new Vec(x,eyeY+.03,z);
+            var to=new Vec(x,eyeY+10,z);
+            return !nativeSite.clearSight(from,to)||!nativeDoorSightClear(from,to,-1)
+                ||!van.clearSight(x,eyeY+.03,z,x,eyeY+10,z);
+        }
+        int room=roomAt(x,eyeY-1.3,z);return room>=0&&!outside(room);
+    }
     public int width(){return (int)Math.ceil(level.rooms().stream().mapToDouble(Room::x1).max().orElse(100))+3;}
     public int height(){return (int)Math.ceil(level.rooms().stream().mapToDouble(Room::z1).max().orElse(100))+3;}
     public int cellWidth(){return 8;}
@@ -114,9 +168,72 @@ public final class HouseMap {
     public double centerZ(int room){return spawn(room).z();}
     public String roomName(int room){return room<0||room>=15?"OUTSIDE":level.room(room).name();}
     public String roomName(double x,double z){return roomName(roomAt(x,z));}
+    /** Stable architectural child-room identity at a real world-space point.
+     * These rooms are backed by native four-wall/door/ceiling construction and
+     * retain their parent's fifteen-zone network and ghost-evidence owner. */
+    public String architecturalRoomAt(double x,double y,double z){
+        if(!finite(x,y,z))return null;
+        if(nativeInvestigation!=null){
+            var space=nativeInvestigation.spaceAt(x,y,z);
+            return space==null||space.outside()?null:space.id();
+        }
+        for(var socket:level.sockets())if(socket.type().equals(MissionArchitecturalRoom.ROOF_TYPE)
+            &&socket.id().startsWith(MissionArchitecturalRoom.ROOF_STEM)){
+            String[] shape=socket.style().split(":",-1);
+            if(shape.length!=5)throw new IllegalStateException("Invalid native architectural roof socket");
+            double width=Double.parseDouble(shape[0]),depth=Double.parseDouble(shape[1]),
+                floor=Double.parseDouble(shape[4]);
+            if(y>=floor-.04&&y<socket.y()&&
+                Math.abs(x-socket.x())<width/2-MissionArchitecturalRoom.WALL_THICKNESS*.5&&
+                Math.abs(z-socket.z())<depth/2-MissionArchitecturalRoom.WALL_THICKNESS*.5)
+                return socket.id().substring(MissionArchitecturalRoom.ROOF_STEM.length());
+        }
+        return null;
+    }
+    /**
+     * Additional sound attenuation across authored physical child-room
+     * thresholds, even when both points retain the SAME gameplay-zone ID.
+     * Read only source-backed wall sockets and live native door state; never
+     * invent room-graph edges or transmit a new multiplayer room number.
+     */
+    public int architecturalSoundLoss(double sourceX,double sourceY,double sourceZ,
+                                      double listenerX,double listenerY,double listenerZ){
+        if(!finite(sourceX,sourceY,sourceZ,listenerX,listenerY,listenerZ))
+            throw new IllegalArgumentException("Sound endpoints must be finite");
+        String from=architecturalRoomAt(sourceX,sourceY,sourceZ);
+        String to=architecturalRoomAt(listenerX,listenerY,listenerZ);
+        if(Objects.equals(from,to))return 0;
+        if(nativeInvestigation!=null)return clearLineOfSight(
+            sourceX,sourceY+1.1,sourceZ,listenerX,listenerY+1.1,listenerZ)?1:3;
+        return (from==null?0:architecturalThresholdLoss(from))
+            +(to==null?0:architecturalThresholdLoss(to));
+    }
+    private int architecturalThresholdLoss(String id){
+        String prefix=MissionStructuralWall.NODE_PREFIX+MissionArchitecturalRoom.WALL_STEM+id+"-";
+        int doorId=-1;
+        for(var socket:level.sockets()){
+            if(!socket.type().equals(MissionStructuralWall.SOCKET_TYPE))continue;
+            boolean member=socket.id().equals(prefix+"N")||socket.id().equals(prefix+"E")||
+                socket.id().equals(prefix+"S")||socket.id().equals(prefix+"W");
+            if(!member)continue;
+            String[] packet=socket.style().split(":",-1);
+            if(packet.length==8){
+                if(doorId>=0)throw new IllegalStateException("Child room has multiple physical doors");
+                doorId=Integer.parseInt(packet[7]);
+            }
+        }
+        if(doorId<0)throw new IllegalStateException("Child room lost its native acoustic doorway");
+        boolean portalFound=false;
+        for(var p:level.portals())if(p.id()==doorId&&p.door()){
+            portalFound=true;break;
+        }
+        if(!portalFound)throw new IllegalStateException("Child-room acoustic portal is not in the game");
+        // The real leaf, collision and replicated door snapshot own this state.
+        return doorOpen(doorId)?1:3;
+    }
     public int roomAt(double x,double y,double z){
         if(!finite(x,y,z))return -1;
-        if(nativeSite!=null){var local=van.local(x,z);if(Math.abs(local.x())<VanStaging.INTERIOR_HALF_WIDTH&&local.z()>=VanStaging.FRONT&&local.z()<VanStaging.REAR&&y>=van.floorY()-.22&&y<van.placement().y()+VanStaging.ROOF_Y)return 14;var support=nativeSite.support(x,z,y,4);return support==null?-1:HollowCreekLevel.owner(x,z);}
+        if(nativeSite!=null){var local=van.local(x,z);if(Math.abs(local.x())<VanStaging.INTERIOR_HALF_WIDTH&&local.z()>=VanStaging.FRONT&&local.z()<VanStaging.REAR&&y>=van.floorY()-.22&&y<van.placement().y()+VanStaging.ROOF_Y)return 14;var support=nativeSite.support(x,z,y,4);return support==null?-1:nativeOwner(x,y,z);}
         for(Stair s:level.stairs())if(s.contains(x,z,0)&&Math.abs(y-s.yAt(x,z))<.25)
             return s.t(x,z)<.5?s.a():s.b();
         Room owner=null;
@@ -128,10 +245,13 @@ public final class HouseMap {
     /** Legacy ground-plane adapter; authoritative callers must supply feet Y. */
     public int roomAt(double x,double z){
         var cargo=van.local(x,z);if(Math.abs(cargo.x())<VanStaging.INTERIOR_HALF_WIDTH&&cargo.z()>=VanStaging.FRONT&&cargo.z()<VanStaging.REAR)return 14;
-        if(nativeSite!=null){var support=nativeSite.support(x,z,0,4);return support==null?-1:HollowCreekLevel.owner(x,z);}
+        if(nativeSite!=null){var support=nativeSite.support(x,z,0,4);return support==null?-1:nativeOwner(x,support.y(),z);}
         if(terrain!=null||editorTerrainWalking){int graded=roomAt(x,groundHeight(x,z,12),z);if(graded>=0)return graded;}
         int room=roomAt(x,0,z);if(room>=0)return room;
         for(Room r:level.rooms())if(r.contains(x,r.y(),z))return r.id();return -1;
+    }
+    int nativeOwner(double x,double y,double z){
+        return nativeInvestigation==null?HollowCreekLevel.owner(x,z):nativeInvestigation.ownerAt(x,y,z);
     }
     private static void checkRoom(int room){if(room<0||room>=15)throw new IllegalArgumentException("invalid room");}
     private static boolean finite(double... values){for(double v:values)if(!Double.isFinite(v))return false;return true;}
@@ -212,7 +332,16 @@ public final class HouseMap {
         if(!LevelClosets.available(level,room,density))return null;
         Socket s=level.socket("hide",room);return s==null?null:new VanStaging.Position(s.x(),s.z());
     }
+    private static boolean onTop(Collider c,double x,double z,double radius){
+        double dx=x-c.x(),dz=z-c.z(),cs=Math.cos(c.yaw()),sn=Math.sin(c.yaw());
+        return Math.abs(dx*cs+dz*sn)<=c.halfX()-radius&&Math.abs(-dx*sn+dz*cs)<=c.halfZ()-radius;
+    }
+    private boolean colliderSupport(double x,double y,double z){
+        for(Collider c:level.colliders())if(Math.abs(y-c.y()-c.height())<.02&&onTop(c,x,z,-.22))return true;
+        return false;
+    }
     private boolean supported(double x,double y,double z,double radius){
+        if(colliderSupport(x,y,z))return true;
         Double vanY=van.supportHeight(x,z);if(vanY!=null)return Math.abs(y-vanY)<.10;
         for(Stair s:level.stairs())if(s.contains(x,z,radius)&&Math.abs(y-s.yAt(x,z))<.24)return true;
         for(Room r:level.rooms())if(Math.abs(y-surface(r,x,z))<.08&&x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()&&!level.floorVoid(x,r.y(),z))return true;
@@ -265,16 +394,28 @@ public final class HouseMap {
     }
     public boolean traversable(double x,double y,double z){return traversable(x,y,z,HunterPosture.STANDING_HEIGHT);}
     public boolean traversable(double x,double y,double z,double bodyHeight){
+        return capsuleClear(x,y,z,bodyHeight,true);
+    }
+    /** Collision volume without requiring grounded feet, for swept jump physics. */
+    public boolean airborneClear(double x,double y,double z,double bodyHeight){
+        return capsuleClear(x,y,z,bodyHeight,false);
+    }
+    private boolean capsuleClear(double x,double y,double z,double bodyHeight,boolean grounded){
+        if(!grounded&&(x<.22||z<.22||x>width()-.22||z>height()-.22))return false;
         if(!finite(x,y,z,bodyHeight)||bodyHeight<.9||bodyHeight>2.0)return false;double radius=.22;
         if(worldSurface!=null&&worldSurface.bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(envelope!=null&&envelope.physics().bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(services!=null&&services.physics().bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
-        if(nativeSite!=null){Double sy=van.supportHeight(x,z);boolean blocked=van.collides(x,z,radius)&&y+bodyHeight>van.placement().y()&&y<van.placement().y()+VanStaging.ROOF_Y;
-            if(sy!=null)return Math.abs(y-sy)<.08&&!blocked&&!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius);
+        if(parcelBoundary!=null&&parcelBoundary.bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
+        if(nativeSite!=null){
+            if(nativeDoorBodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
+            Double sy=van.supportHeight(x,z);boolean blocked=van.collides(x,z,radius)&&y+bodyHeight>van.placement().y()&&y<van.placement().y()+VanStaging.ROOF_Y;
+            if(sy!=null)return (!grounded||Math.abs(y-sy)<.08)&&!blocked&&!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius);
             if(WorldWater.module(level.water()).bodies().stream().anyMatch(w->y<w.y()-.01&&w.wet(x,z)))return false;
-            return !blocked&&nativeSite.traversable(new Vec(x,y,z),bodyHeight);}
-        if(!supported(x,y,z,radius)||wallBlocked(x,y,z,radius,false,-1,bodyHeight))return false;
-        for(double[] d:new double[][]{{-radius,0},{radius,0},{0,-radius},{0,radius}})
+            return !blocked&&(grounded?nativeSite.traversable(new Vec(x,y,z),bodyHeight):!nativeSite.bodyBlocked(new Vec(x,y,z),bodyHeight,radius));}
+        if((grounded&&!supported(x,y,z,radius))||wallBlocked(x,y,z,radius,false,-1,bodyHeight))return false;
+        if(DeckSlabs.blocksBody(level,x,y,z,bodyHeight,radius))return false;
+        if(grounded&&!colliderSupport(x,y,z))for(double[] d:new double[][]{{-radius,0},{radius,0},{0,-radius},{0,radius}})
             if(!supported(x+d[0],y,z+d[1],0)&&!(terrain!=null&&terrain.playable(x+d[0],z+d[1])&&!terrain.indoors(x+d[0],z+d[1])&&Math.abs(y-terrain.height(x+d[0],z+d[1]))<.20))return false;
         for(Portal p:level.portals())if(p.door()&&!doorOpen(p.id())&&boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.alongX()?p.width()/2:.10,p.alongX()?.10:p.width()/2,2.4,0,bodyHeight))return false;
         for(Collider p:level.colliders())if(boxHit(x,y,z,radius,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw(),bodyHeight)&&!DeckSlabs.landingContact(level,p,x,y,z))return false;
@@ -295,7 +436,16 @@ public final class HouseMap {
     }
     /** Physical support for entities: preserve a room's lower storey underneath an overlapping loft. */
     public double groundHeight(double x,double z,int roomHint){
-        if(nativeSite!=null){Double deck=van.supportHeight(x,z);if(deck!=null)return deck;var support=nativeSite.support(x,z,roomHint>=0&&roomHint<15?level.floorY(roomHint):0,4);return support==null?Double.NaN:support.y();}
+        if(nativeSite!=null){
+            Double deck=van.supportHeight(x,z);
+            if(deck!=null)return deck;
+            double datum=roomHint>=0&&roomHint<ROOM_COUNT?level.floorY(roomHint):0;
+            // Native support picks the highest triangle in its band. Start at
+            // the room datum so an overlapping upper floor cannot steal it.
+            var support=nativeSite.support(x,z,datum,.251);
+            if(support==null)support=nativeSite.support(x,z,datum,4);
+            return support==null?Double.NaN:support.y();
+        }
         // Stair surfaces must win over the nominal room floor even on ordinary
         // (non-terrain) maps. The former early return flattened every stair
         // query to its room's ground plane, including cellar approaches.
@@ -322,7 +472,16 @@ public final class HouseMap {
         if(best!=null)return best;
         for(Room r:level.rooms())if(x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()&&!level.floorVoid(x,r.y(),z)){double sy=surface(r,x,z),d=Math.abs(sy-previousY);if(d<delta){best=sy;delta=d;}}
         for(Portal p:level.portals())if(!p.kind().equals("stair")&&!p.kind().equals("window")&&inPortal(p,x,z,.22)){double d=Math.abs(p.y()-previousY);if(d<delta){best=p.y();delta=d;}}
+        for(Collider c:level.colliders()){
+            double top=c.y()+c.height(),d=Math.abs(top-previousY);
+            if(d<delta&&onTop(c,x,z,-.22)){best=top;delta=d;}
+        }
         return best;
+    }
+    double jumpLanding(double x,double z,double fromY,double toY){
+        Double floor=supportNear(x,z,(fromY+toY)/2);
+        return floor!=null&&floor<=fromY+.0001&&floor>=toY-.0001
+            &&traversable(x,floor,z,HunterPosture.CROUCH_HEIGHT)?floor:Double.NaN;
     }
     /** Swept horizontal input; elevation comes solely from contiguous authored support. */
     public Vec resolveMove(Vec from,double x,double z){return resolveMove(from,x,z,HunterPosture.STANDING_HEIGHT);}
@@ -339,13 +498,24 @@ public final class HouseMap {
     /** Small-body sweep, including its radius, ceiling and furnishing contact. */
     public boolean clearObjectPath(double ax,double ay,double az,double bx,double by,double bz,double radius,double half){
         if(!finite(ax,ay,az,bx,by,bz,radius,half)||radius<0||radius>.3||half<0||half>.4)return false;
-        if(worldSurface!=null)for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})
-            if(!worldSurface.clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;
-        if(envelope!=null)for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})
-            if(!envelope.physics().clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;
-        if(services!=null)for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})
-            if(!services.physics().clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;
-        if(nativeSite!=null){for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}})if(!nativeSite.clearSight(new Vec(ax+d[0],ay+d[1],az+d[2]),new Vec(bx+d[0],by+d[1],bz+d[2])))return false;return true;}
+        if(worldSurface!=null||envelope!=null||services!=null||parcelBoundary!=null){
+            for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}}){
+                var from=new Vec(ax+d[0],ay+d[1],az+d[2]);
+                var to=new Vec(bx+d[0],by+d[1],bz+d[2]);
+                if(worldSurface!=null&&!worldSurface.clearSight(from,to)
+                    ||envelope!=null&&!envelope.physics().clearSight(from,to)
+                    ||services!=null&&!services.physics().clearSight(from,to)
+                    ||parcelBoundary!=null&&!parcelBoundary.clearSight(from,to))return false;
+            }
+        }
+        if(nativeSite!=null){
+            for(double[] d:new double[][]{{0,0,0},{radius,0,0},{-radius,0,0},{0,half,0},{0,-half,0},{0,0,radius},{0,0,-radius}}){
+                var from=new Vec(ax+d[0],ay+d[1],az+d[2]);
+                var to=new Vec(bx+d[0],by+d[1],bz+d[2]);
+                if(!nativeSite.clearSight(from,to)||!nativeDoorSightClear(from,to,-1))return false;
+            }
+            return true;
+        }
         int steps=Math.max(1,(int)Math.ceil(Math.sqrt((bx-ax)*(bx-ax)+(by-ay)*(by-ay)+(bz-az)*(bz-az))/.025));
         for(int n=1;n<=steps;n++){
             double t=n/(double)steps,x=ax+(bx-ax)*t,y=ay+(by-ay)*t,z=az+(bz-az)*t;
@@ -371,7 +541,13 @@ public final class HouseMap {
         if(worldSurface!=null&&!worldSurface.clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
         if(envelope!=null&&!envelope.physics().clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
         if(services!=null&&!services.physics().clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
-        if(nativeSite!=null)return nativeSite.clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz))&&van.clearSight(ax,ay,az,bx,by,bz);
+        if(parcelBoundary!=null&&!parcelBoundary.clearSight(new Vec(ax,ay,az),new Vec(bx,by,bz)))return false;
+        if(nativeSite!=null){
+            var from=new Vec(ax,ay,az);
+            var to=new Vec(bx,by,bz);
+            return nativeSite.clearSight(from,to)&&nativeDoorSightClear(from,to,selectedPortal)
+                &&van.clearSight(ax,ay,az,bx,by,bz);
+        }
         double distance=Math.sqrt((bx-ax)*(bx-ax)+(by-ay)*(by-ay)+(bz-az)*(bz-az));if(distance>40)return false;if(distance<.01)return true;
         int steps=(int)Math.ceil(distance/.075);
         for(int i=1;i<steps;i++){
@@ -379,12 +555,20 @@ public final class HouseMap {
             boolean inside=false;
             for(Room r:level.rooms())if(r.contains(x,y,z)){inside=true;break;}
             for(Portal p:level.portals())if(!p.kind().equals("stair")&&y>=p.y()&&y<p.y()+2.4&&inPortal(p,x,z,0)){inside=true;if(p.door()&&!doorOpen(p.id())&&p.id()!=selectedPortal)return false;}
-            if(!inside||wallBlocked(x,y,z,.015,true,selectedPortal))return false;
+            // The House room outline indexes gameplay. Its authored exterior
+            // remains visible through actual fence gaps above the saved ground.
+            if((!inside&&!parcelExteriorSight(x,y,z))||wallBlocked(x,y,z,.015,true,selectedPortal)
+                ||DeckSlabs.blocksRay(level,x,y,z))return false;
             for(Room r:level.rooms())if((Math.abs(y-surface(r,x,z))<.06||terrain!=null&&r.outside()&&r.id()!=14&&y<terrain.height(x,z))&&x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()&&!level.floorVoid(x,r.y(),z))return false;
             for(Collider p:level.colliders())if(y>p.y()&&y<p.y()+p.height()&&boxHit(x,y-1,z,0,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw()))return false;
             for(Collider p:closetColliders)if(y>p.y()&&y<p.y()+p.height()&&boxHit(x,y-1,z,0,p.x(),p.y(),p.z(),p.halfX(),p.halfZ(),p.height(),p.yaw()))return false;
         }
         return true;
+    }
+    private boolean parcelExteriorSight(double x,double y,double z){
+        if(parcelBoundary==null||worldSurface==null)return false;
+        var ground=worldSurface.support(x,z,level.dock().y(),2);
+        return ground!=null&&y>ground.y()+.06;
     }
     public boolean clearLineOfSight(double ax,double az,double bx,double bz){int a=roomAt(ax,az),b=roomAt(bx,bz);return a>=0&&b>=0&&clearLineOfSight(ax,floorY(a)+1.3,az,bx,floorY(b)+1.3,bz);}
     /** Legacy map-overlay sampling; production rendering reads level surfaces directly. */

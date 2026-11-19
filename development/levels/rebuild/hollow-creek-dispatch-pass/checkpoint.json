@@ -1,0 +1,30 @@
+{
+  "status": "HOLLOW_CREEK_HELD_SOLO_LAN_REVIEW_VERIFIED",
+  "baseline": "56210c0acf168898a3ce964168a2babbf847cb12",
+  "review_property": "-Dbeckenburg.review.hollowCreek=true",
+  "level_revision": "native-site-v1-91bcce0d098df35d",
+  "standing_route_points": 969,
+  "normal_world_sweeps": 939,
+  "canonical_deck_spawn_pads": 6,
+  "tcp_peers": 4,
+  "three_supported_rituals": true,
+  "deck": [
+    31.75,
+    2,
+    76.9
+  ],
+  "approach": [
+    31.75,
+    1.5,
+    74.11
+  ],
+  "software_capture": {
+    "path": "development/levels/rebuild/captures/hollow-creek-dispatch-batch/hollow-creek-review-van-arrival.png",
+    "sha256": "9f0306bc08ed4f24136fd087b23e21d1bcb2a1e47c07a407d1e38823f8aa5c79"
+  },
+  "held_draft": 86,
+  "remaining": [
+    "Host ghost breaker trip, GPU performance, complete case and public acceptance.",
+    "Seacliff remains a staged source probe. It has no packaged normal site identity or installed power contract."
+  ]
+}

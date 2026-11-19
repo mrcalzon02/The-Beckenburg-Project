@@ -1,0 +1,100 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-03": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 11
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 4605,
+        "valid_standing": 4605,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-11": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 11
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 4056,
+        "valid_standing": 4056,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-03": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/wld-03/construction.json",
+        "contract_sha256": "59d00e0ac50ad1b1a79b37eef3235ee9a88f5d0070d79d758d570411c62c0031",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-03/authored-layout.json",
+        "layout_sha256": "367f260d73ecd9827abb20ed673218d974098bfa222b3ef3de752b22c484e785",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.hcs2",
+        "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/canyon-marsh-pass/wld-03/construction.json",
+        "contract_sha256": "78985f659b930dfea08b8f3e33fc95f7a1cf467a45ad028d04ab7e64bcf63d92",
+        "layout": "development/levels/rebuild/canyon-marsh-pass/wld-03/authored-layout.json",
+        "layout_sha256": "4c9982ac2e8afb0aeef1ab59ad133a5e8addce5f66b656c43aaf1cdfab5e84bb",
+        "native": "development/levels/rebuild/canyon-marsh-pass/wld-03/canyon-marsh.hcs2",
+        "native_sha256": "a489b1480fc43b74f530a01c7d5839a87c6b1d779a0afbd7cbb747bb73b166e1"
+      }
+    },
+    "WLD-11": {
+      "before": {
+        "contract": "development/levels/rebuild/arrival-bearing-pass/wld-11/construction.json",
+        "contract_sha256": "9bc7ad1fbcc449ea6e1ec42032f96c7b4f662e2ee18c3c384dedb83848553daf",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-11/authored-layout.json",
+        "layout_sha256": "71287aa9fbad58cfe1e216b0e647cd7f4d442940ac70dd1f05579fc0782a48ed",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-11/supported-arrival.hcs2",
+        "native_sha256": "d47d1abfd8f43d2a3606e966ee1e390c472946edd45abc423d1006844bfa5703"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/canyon-marsh-pass/wld-11/construction.json",
+        "contract_sha256": "8910d96921d38dbbc5ad2804b8384b03008b9b3819cc95768b0b20ae4dac5e41",
+        "layout": "development/levels/rebuild/canyon-marsh-pass/wld-11/authored-layout.json",
+        "layout_sha256": "484bb5e0ce6c7559a4dfb89804a95bc22314a365dcd5409806c3d68aa0549b01",
+        "native": "development/levels/rebuild/canyon-marsh-pass/wld-11/canyon-marsh.hcs2",
+        "native_sha256": "2867a8e7895a6a70c3ec2bc09491bb3034a4805854592e18fbded49cad99d8ca"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/coast-entrances-pass/roster.json": "7c38d763bafeac39506e48f6b0eba7a50070d827699e38c9214cffdff758226e"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/canyon-marsh-pass/verification/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "development/levels/rebuild/canyon-marsh-pass/verification/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "development/levels/rebuild/canyon-marsh-pass/verification/flat/current-flat-lane-input.tsv": "d28d1ba20a14e014b52f3155ad9bcc7444b6c70ec53e062c8d19b64714694159",
+    "development/levels/rebuild/canyon-marsh-pass/verification/flat/current-flat-lane-names.tsv": "6255791de06eecf90a61b787c16fbbb6c10db4b23e59df8fc567093a8ef80068",
+    "development/levels/rebuild/canyon-marsh-pass/verification/flat/current-flat-lanes.tsv": "2c817294a0f5512788272195d525c5dd688af9ea008104cb081a549157cb47ce",
+    "development/levels/rebuild/canyon-marsh-pass/verification/flat/current-flat-links.tsv": "09bcff6e6096b963af8bb8ce15cdd46f72a7dd933cdb7c4e519cbdeb81b9dbbf",
+    "development/levels/rebuild/canyon-marsh-pass/verification/flat/current-flat-names.tsv": "b9bc8f74261fa4ebe8e290836897d6c0aa03034eb4daa30ba2c8c39256c9b80b",
+    "development/levels/rebuild/canyon-marsh-pass/verification/flat/current-flat-paths.tsv": "33e7915a3681cda2557c93ae2611ec4c6a6a844aa9e901b23c0f9b5392558a9e"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

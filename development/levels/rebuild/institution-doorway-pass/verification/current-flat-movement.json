@@ -1,0 +1,378 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "ASYLUM": {
+      "before": {
+        "flat_links": 43,
+        "pass_both_directions": 35
+      },
+      "after": {
+        "flat_links": 43,
+        "pass_both_directions": 34
+      },
+      "current_lanes": {
+        "samples": 8724,
+        "valid_standing": 6840,
+        "invalid_standing": 1884,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 249,
+          "NO_CENTRE_SUPPORT": 1562,
+          "NO_FOOT_SUPPORT_0.0_0.22": 6,
+          "FOOT_HEIGHT_SPREAD": 56,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+          "NO_FOOT_SUPPORT_0.22_0.0": 8
+        },
+        "physical_components": [
+          [
+            "136:Wall main-stair E",
+            24
+          ],
+          [
+            "213:Wall clinical-clean N",
+            12
+          ],
+          [
+            "226:Wall clinical-service N",
+            12
+          ],
+          [
+            "262:Wall hydro-dry S",
+            12
+          ],
+          [
+            "279:Wall washup N",
+            12
+          ],
+          [
+            "39:Wall ground-linen S",
+            10
+          ],
+          [
+            "10:Wall ground-north-b E",
+            9
+          ],
+          [
+            "216:Wall clinical-clean E",
+            9
+          ],
+          [
+            "223:Wall clinical-soiled E",
+            9
+          ],
+          [
+            "303:Wall service W.001",
+            9
+          ],
+          [
+            "281:Wall washup E",
+            9
+          ],
+          [
+            "340:Wall quiet-lobby E",
+            7
+          ],
+          [
+            "292:Wall food-store E",
+            7
+          ],
+          [
+            "ASYLUM-x-35-52 indexed jambs and head",
+            6
+          ],
+          [
+            "ASYLUM-z-54-39.5 indexed jambs and head",
+            6
+          ],
+          [
+            "214:Wall clinical-clean S",
+            6
+          ],
+          [
+            "Flat route shell Wall clinical-soiled N.001",
+            5
+          ],
+          [
+            "548:L77 flight0 step17",
+            5
+          ],
+          [
+            "547:L77 flight0 step16",
+            5
+          ],
+          [
+            "549:L77 flight0 step18",
+            4
+          ],
+          [
+            "545:L77 flight0 step14",
+            4
+          ],
+          [
+            "312:Wall refuse S",
+            4
+          ],
+          [
+            "Flat route shell Wall treatment E.002",
+            4
+          ],
+          [
+            "Flat route shell Wall main-stair S",
+            4
+          ],
+          [
+            "Flat route shell Wall service E",
+            4
+          ]
+        ]
+      }
+    },
+    "PRISON": {
+      "before": {
+        "flat_links": 36,
+        "pass_both_directions": 31
+      },
+      "after": {
+        "flat_links": 36,
+        "pass_both_directions": 30
+      },
+      "current_lanes": {
+        "samples": 7206,
+        "valid_standing": 6137,
+        "invalid_standing": 1069,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 19,
+          "NO_CENTRE_SUPPORT": 1019,
+          "FOOT_HEIGHT_SPREAD": 19,
+          "NO_FOOT_SUPPORT_0.0_0.22": 9,
+          "NO_FOOT_SUPPORT_0.22_0.0": 3
+        },
+        "physical_components": [
+          [
+            "PRISON-x-18-65 indexed jambs and head",
+            8
+          ],
+          [
+            "Flat route shell Wall medical-link E",
+            3
+          ],
+          [
+            "Flat route shell Wall a-lower-gallery S",
+            2
+          ],
+          [
+            "Flat route shell Wall b-lower-gallery S.001",
+            2
+          ],
+          [
+            "Flat route shell Wall plant-stair W.001",
+            2
+          ],
+          [
+            "585:Wall plant-stair S.001",
+            1
+          ],
+          [
+            "584:Wall plant-stair S",
+            1
+          ]
+        ]
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "flat_links": 42,
+        "pass_both_directions": 33
+      },
+      "after": {
+        "flat_links": 42,
+        "pass_both_directions": 32
+      },
+      "current_lanes": {
+        "samples": 6528,
+        "valid_standing": 5405,
+        "invalid_standing": 1123,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 57,
+          "NO_FOOT_SUPPORT_0.0_0.22": 8,
+          "NO_CENTRE_SUPPORT": 1014,
+          "FOOT_HEIGHT_SPREAD": 35,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 9
+        },
+        "physical_components": [
+          [
+            "418:L44 flight0 step17",
+            8
+          ],
+          [
+            "SCHOOL-x-25-31.5 indexed jambs and head",
+            6
+          ],
+          [
+            "SCHOOL-x-25-34.5 indexed jambs and head",
+            6
+          ],
+          [
+            "SCHOOL-z-33-28.75 indexed jambs and head",
+            6
+          ],
+          [
+            "410:L44 flight0 step9",
+            6
+          ],
+          [
+            "415:L44 flight0 step14",
+            6
+          ],
+          [
+            "411:L44 flight0 step10",
+            3
+          ],
+          [
+            "412:L44 flight0 step11",
+            3
+          ],
+          [
+            "413:L44 flight0 step12",
+            3
+          ],
+          [
+            "414:L44 flight0 step13",
+            3
+          ],
+          [
+            "416:L44 flight0 step15",
+            3
+          ],
+          [
+            "417:L44 flight0 step16",
+            3
+          ],
+          [
+            "382:L43 flight0 step1",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "ASYLUM": {
+      "before": {
+        "contract": "development/levels/rebuild/institution-roof-pass/asylum/construction.json",
+        "contract_sha256": "db30a9ec9abf8c3add2052ed597f41d70d9eddbdbc02c0bc273d98337404dd94",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/asylum/authored-layout.json",
+        "layout_sha256": "71ce31e14d3a9ff51bd1dc53d7bd62c995f6d5d5d9b474d55925d671ef59be56",
+        "native": "development/levels/rebuild/institution-roof-pass/asylum/enclosed-roofs.hcs2",
+        "native_sha256": "f93eeb4507a8be044b33de347229066baf8e35aa5918f0a205801a6d0bc87053"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/institution-doorway-pass/asylum/construction.json",
+        "contract_sha256": "4e6cbd217f82e9cf276ec82dc7d680a00cb8220c661fd56a6bbd180dd0c15d36",
+        "layout": "development/levels/rebuild/institution-doorway-pass/asylum/authored-layout.json",
+        "layout_sha256": "880cf69e0cc2f06dfc6daabe820cb1b54bc622eb88e7b12626d137baeb75300c",
+        "native": "development/levels/rebuild/institution-doorway-pass/asylum/clean-doorways.hcs2",
+        "native_sha256": "8b45f4f57150b8f3676f8578be5a1c37fd68f648eff71dd5f3ba4bcb6b7f6ad2"
+      }
+    },
+    "PRISON": {
+      "before": {
+        "contract": "development/levels/rebuild/secure-sacred-roof-pass/prison/construction.json",
+        "contract_sha256": "dea5d6ea869acd8028b5e38773ce67b4f80394cbe53fe6a0b614c4ff6b441c9b",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/prison/authored-layout.json",
+        "layout_sha256": "6372b06e9251e02d76adf24fda6a1382c37c5b674f0fcd56676b8744f6c4eb85",
+        "native": "development/levels/rebuild/secure-sacred-roof-pass/prison/enclosed-roofs.hcs2",
+        "native_sha256": "df46effe467c327ab261ddc26a4b06d20c302b2b131248e11d9010376c7e4bc9"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/institution-doorway-pass/prison/construction.json",
+        "contract_sha256": "0273dac634e8468db8773696f7d67a9ef64725c5c34a7360ea60fab8bf12e91c",
+        "layout": "development/levels/rebuild/institution-doorway-pass/prison/authored-layout.json",
+        "layout_sha256": "a60cd7850699de55f9de63e7cee0d973e3fc95f29a854ff8610828bb017870b3",
+        "native": "development/levels/rebuild/institution-doorway-pass/prison/clean-doorways.hcs2",
+        "native_sha256": "5b647d3208892c23cb1dd59f10c7cb4c449c3d8ef70e8e4aa59d7f9138d77e9e"
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "contract": "development/levels/rebuild/roof-construction-pass/school/construction.json",
+        "contract_sha256": "472d58f7f57a7669cf546b5ff216075acb337b05e46c0e2bb47d28aac0d337d0",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/school/authored-layout.json",
+        "layout_sha256": "e659b75d67ce08bbbcd9a68efc66bceb69b487fcce241d2527e03ddd46739e11",
+        "native": "development/levels/rebuild/roof-construction-pass/school/enclosed-roofs.hcs2",
+        "native_sha256": "35532dc7ce334d0d6752dc93143896e4f4bac97e66cf4f8a1693c3504b063211"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/institution-doorway-pass/school/construction.json",
+        "contract_sha256": "b65f9188b485966f0f5c29f0c246b93b2fb5fb6990acaa52b371c2c9165fc6c2",
+        "layout": "development/levels/rebuild/institution-doorway-pass/school/authored-layout.json",
+        "layout_sha256": "78f207e426a234a84b7af83d7e7f5ce6acaaea2ac6d5102df884b0ecbf5ac189",
+        "native": "development/levels/rebuild/institution-doorway-pass/school/clean-doorways.hcs2",
+        "native_sha256": "e24fa37ec0292082628b1039890644c90cdd8602db7bc007f7c556248adbffd7"
+      }
+    }
+  },
+  "complete_link_regressions": [
+    {
+      "site": "ASYLUM",
+      "link": "L26",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_48_OF_50"
+    },
+    {
+      "site": "ASYLUM",
+      "link": "L26",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "PRISON",
+      "link": "L080",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_48_OF_50"
+    },
+    {
+      "site": "PRISON",
+      "link": "L080",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_19_OF_180"
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L40",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_18_OF_20"
+    },
+    {
+      "site": "SCHOOL",
+      "link": "L40",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_205_OF_207"
+    }
+  ],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/doorway-construction-pass/roster.json": "9f40081884efac1b4d64f0add0daccd268b2ffdfe9f35a2e8e01c2618c22da93"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/institution-doorway-pass/verification/current-flat-failure-contacts.tsv": "8ceb0cdd863591e7e002419a31b0997e141af7c6cba771359d3ea0bebc811ebf",
+    "development/levels/rebuild/institution-doorway-pass/verification/current-flat-failure-input.tsv": "84308bded78aaa84b98a2693adeb6fe9df7fb5cc690142d35aac24431204471e",
+    "development/levels/rebuild/institution-doorway-pass/verification/current-flat-lane-input.tsv": "92a15a19a5185b2c9bee7062000ef4533799546b0f3424caae2f1d0f79e6400f",
+    "development/levels/rebuild/institution-doorway-pass/verification/current-flat-lane-names.tsv": "322e063dd4733bbe6f232e639c063c950e97d57c764af9d1fbe1e32365c0848a",
+    "development/levels/rebuild/institution-doorway-pass/verification/current-flat-lanes.tsv": "e40319101af76a01672faff5e467da85e1681302acc34142bcc91f0a63b08e68",
+    "development/levels/rebuild/institution-doorway-pass/verification/current-flat-links.tsv": "563658b1890cb5128608cead526adb1ed7243ff93929f3eebdcb9be232bc4fc0",
+    "development/levels/rebuild/institution-doorway-pass/verification/current-flat-names.tsv": "322e063dd4733bbe6f232e639c063c950e97d57c764af9d1fbe1e32365c0848a",
+    "development/levels/rebuild/institution-doorway-pass/verification/current-flat-paths.tsv": "3521548de12459c0a012979d7a909844dc34debc976e76d7490341208f48dcd1"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

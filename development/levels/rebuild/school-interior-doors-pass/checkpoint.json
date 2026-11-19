@@ -1,0 +1,164 @@
+{
+  "status": "SCHOOL_SEVENTEEN_FITTED_FRAMES_STAGED_GAMEPLAY",
+  "prior_commit": "3b6b0588b311ccbaab70be97ed89772cba6e22ab",
+  "roster": "development/levels/rebuild/school-interior-doors-pass/roster.json",
+  "native_scene_revision": "620d47062ecd86da3425336b79357a0f716c3d6822ca0f46734d44d8407efd2d",
+  "construction": {
+    "fitted_new_frames": 16,
+    "preserved_front_frame": 1,
+    "leaf_sets": 17,
+    "editor_poses": 34,
+    "matching_editor_and_game_triangles": 31328,
+    "retained_search_spaces": 40
+  },
+  "checks": {
+    "normal_body_route_directions_postures": 156,
+    "cargo_to_foyer_round_trip_both_postures": true,
+    "simultaneous_open_leaf_replay": true,
+    "retained_ritual_anchors": 3,
+    "scope": "Production movement, optics, objects, aimed interactions, acoustics, and door replication in two staged HouseMap instances."
+  },
+  "retained_native_assets": [
+    {
+      "path": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.glb",
+      "bytes": 3353792,
+      "sha256": "9ec1c402adbb1815de8524bef67d8d65bde331b8b6a81fc301889fbf3923a6e1"
+    },
+    {
+      "path": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.hcs2",
+      "bytes": 717086,
+      "sha256": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865"
+    },
+    {
+      "path": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.blend",
+      "bytes": 829939,
+      "sha256": "8bb708eb67e0d1ce4b8563973330dea1800a4a6bcbe77c8de466596987f92189"
+    }
+  ],
+  "leaf_source": {
+    "path": "assets/runtime/models/door_1_loose.glb",
+    "bytes": 162124,
+    "sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+  },
+  "assets": [
+    {
+      "path": "development/levels/rebuild/school-interior-doors-pass/school-fitted-doors.blend",
+      "bytes": 1025319,
+      "sha256": "5dccf7f74b7ee5d43dd6c2e18bb5115fef999b82f0a01bdcc1925f27d2c27d80"
+    },
+    {
+      "path": "development/levels/rebuild/school-interior-doors-pass/door-schedule.tsv",
+      "bytes": 2946,
+      "sha256": "3e9d1c0a376ded184c8b95d852be479072b5d5abd3cdbaa9e3e87fdab03e1cb2"
+    },
+    {
+      "path": "development/levels/rebuild/school-interior-doors-pass/circulation.tsv",
+      "bytes": 6880,
+      "sha256": "3daede8cd86fef86fa1b5a8ee6c06bf74f021148472cacb25d1561cb27fe8cf2"
+    },
+    {
+      "path": "development/levels/rebuild/school-interior-doors-pass/fitted-thresholds-plan.svg",
+      "bytes": 11071,
+      "sha256": "1ee85d623cbf9a80172c4c80c3222117f8aff5299131a639296ddc2ea49416e0"
+    }
+  ],
+  "verification": [
+    {
+      "path": "development/levels/rebuild/school-interior-doors-pass/verification/editor-comparison.tsv",
+      "bytes": 768,
+      "sha256": "14704654f53e2ca247527c5fad5ed5ab5ef3cb54c3d33dc67f4deff5e59736bf"
+    },
+    {
+      "path": "development/levels/rebuild/school-interior-doors-pass/verification/opengl-readback.txt",
+      "bytes": 3425,
+      "sha256": "28e85a04c578bc2db6f21911c9d81305031df8eb551c038b7a12705c68b89f2c"
+    },
+    {
+      "path": "development/levels/rebuild/school-interior-doors-pass/verification/opengl.tsv",
+      "bytes": 2135,
+      "sha256": "949f6a73ed452c2860b046bad0cc95bc34abe40a452056f71adf12c5bf9a68f7"
+    },
+    {
+      "path": "development/levels/rebuild/school-interior-doors-pass/verification/software.tsv",
+      "bytes": 2135,
+      "sha256": "949f6a73ed452c2860b046bad0cc95bc34abe40a452056f71adf12c5bf9a68f7"
+    }
+  ],
+  "standing_captures": [
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-401-closed.png",
+      "bytes": 403164,
+      "sha256": "b009c273479d5ead86d9d9fd73cfc7fcbce3e08e0ff3b206ecf12dce6a0530c7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-401-open.png",
+      "bytes": 368431,
+      "sha256": "aa76756df2fdd3301178c782a98f98151d69ebb6dd281939ada9d2170c9a4faa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-414-closed.png",
+      "bytes": 399133,
+      "sha256": "aa47730d5bd036d56d3535f110bad949865ce781ea27ac7fab77248cb04dd78a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-414-open.png",
+      "bytes": 351414,
+      "sha256": "2ef62235f99c84500712508a68d744728f5473cb2ff7d75214aecaf79a1d3088"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-417-closed.png",
+      "bytes": 384284,
+      "sha256": "95eb0357e82323a39ade41f93d7cb1e41d4f476ddda34231e6b9493686893a61"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-417-open.png",
+      "bytes": 342829,
+      "sha256": "899015c87c8a51811fb8801bee53c46cb5a6b9b64ff9ec9fbb87ff084cd85406"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-401-closed.png",
+      "bytes": 400145,
+      "sha256": "546e9bc97bbf646929e99144ae1d69f22efd85e8cab0dc32bda629f68e51362e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-401-open.png",
+      "bytes": 365404,
+      "sha256": "ee2e78006f3aed8b21c829700465a954ff1d09b569d26007de997cbffea68577"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-404-closed.png",
+      "bytes": 387830,
+      "sha256": "d4e2b1eff6e379abc56da5b6bd51c2bdfaf585637f95e4ffee6a90ef087e526c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-404-open.png",
+      "bytes": 368162,
+      "sha256": "8363dd3999d85142e0e8e8231d35e38cee097901ed4993569478255266d04616"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-413-closed.png",
+      "bytes": 374033,
+      "sha256": "7fd126e22063344fabd99684c970481a2005a4cdc116b54248a6486e898be895"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-413-open.png",
+      "bytes": 340545,
+      "sha256": "f77b8b8f253045ee1ed6412f75f506cc20c06c6f0214c8d2053a11f104a9e654"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-417-closed.png",
+      "bytes": 382608,
+      "sha256": "767da3b2a829506b96453d0fda2a8f7408b6c50ff046312d23a2b089ab5bb462"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-417-open.png",
+      "bytes": 342134,
+      "sha256": "5cfe2e991f65faa341b8119b1e3907706cf1c4ee29c3f88399d3277e47b17bbd"
+    }
+  ],
+  "remaining": [
+    "Survey remaining open passage edges and bind supported anchors and physical transitions to the full 15-owner runtime graph.",
+    "Complete site containment, electrical services and three hiding candidates on the actual native architecture.",
+    "Verify packaged solo, live TCP case and public acceptance through the normal held dispatch."
+  ]
+}

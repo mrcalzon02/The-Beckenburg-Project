@@ -1,0 +1,21 @@
+{
+  "format":"hunter-reactions-v1",
+  "generator":"built-in image_gen",
+  "frames":[
+    {"entry":"cleric/pain/front.png","sha256":"2e18d92c707158a95ee852a67f7c1b630972bf109e218cb9ff8dfb3685f0ade8","source":"art/hunters/reactions-v1/cleric.png","source_sha256":"69868e731050f05e84cf9e9a6397db53752147653efb9df006b8b18f60438355"},
+    {"entry":"cleric/pain/side.png","sha256":"fa53e7cf6dc9188a1c0190de3ce688899410fb9e72eb6171974e2f14cc0a21cc","source":"art/hunters/reactions-v1/cleric.png","source_sha256":"69868e731050f05e84cf9e9a6397db53752147653efb9df006b8b18f60438355"},
+    {"entry":"cleric/pain/back.png","sha256":"48e32512629f619fece0eaf8565891e9ddbaf192fd534924d5abeeef19053689","source":"art/hunters/reactions-v1/cleric.png","source_sha256":"69868e731050f05e84cf9e9a6397db53752147653efb9df006b8b18f60438355"},
+    {"entry":"cleric/pain/three_quarter.png","sha256":"334f40c16a516ee7be62c161e38344678ae9590d986beb1501180fdef19bbec8","source":"art/hunters/reactions-v1/cleric.png","source_sha256":"69868e731050f05e84cf9e9a6397db53752147653efb9df006b8b18f60438355"},
+    {"entry":"cleric/body.png","sha256":"d35276dddc9eb4b8154fa744c0f8a241e85ce391931267f1fcb3f5fb4947155b","source":"art/hunters/reactions-v1/cleric.png","source_sha256":"69868e731050f05e84cf9e9a6397db53752147653efb9df006b8b18f60438355"},
+    {"entry":"observer/pain/front.png","sha256":"e1c4f5e071295f0907b5ec2a04172811bedafa04d89aa7c62022fd8d0b7203d4","source":"art/hunters/reactions-v1/observer.png","source_sha256":"3534d5045be22606922886cade47f73d96306aae7095fd6b85d94165e104f1b3"},
+    {"entry":"observer/pain/side.png","sha256":"8e4843fdc64a4485d64b3f05c0549e2a0bdd481133b58386140ffafc23416bb3","source":"art/hunters/reactions-v1/observer.png","source_sha256":"3534d5045be22606922886cade47f73d96306aae7095fd6b85d94165e104f1b3"},
+    {"entry":"observer/pain/back.png","sha256":"70adc8ac2eb170d46be55b15b97ff8478851217b9dd41538bc7621a5b8d91924","source":"art/hunters/reactions-v1/observer.png","source_sha256":"3534d5045be22606922886cade47f73d96306aae7095fd6b85d94165e104f1b3"},
+    {"entry":"observer/pain/three_quarter.png","sha256":"15b47163b0e8e8845391a03736f007ea16c06deeb8d8323200df7c6a63c73268","source":"art/hunters/reactions-v1/observer.png","source_sha256":"3534d5045be22606922886cade47f73d96306aae7095fd6b85d94165e104f1b3"},
+    {"entry":"observer/body.png","sha256":"f7068ddfda222f0d96db63d1b91510019fb3fb30b5ebd663ed54e9c1fb19a6d2","source":"art/hunters/reactions-v1/observer.png","source_sha256":"3534d5045be22606922886cade47f73d96306aae7095fd6b85d94165e104f1b3"},
+    {"entry":"demonologist/pain/front.png","sha256":"cac5be2c6f6d476005c60ccf3eeaf1c624e8cce34008af52cf0b9dd52681dbe8","source":"art/hunters/reactions-v1/demonologist-alpha-v2.png","source_sha256":"759c999358ce55c75c693493e75032c9160181bc1b1e00537a32d2faeb6ebd31"},
+    {"entry":"demonologist/pain/side.png","sha256":"d2dfa462fffa4056bb3e77658c47e923ce3999471548d44bb99a4464eaf9e913","source":"art/hunters/reactions-v1/demonologist-alpha-v2.png","source_sha256":"759c999358ce55c75c693493e75032c9160181bc1b1e00537a32d2faeb6ebd31"},
+    {"entry":"demonologist/pain/back.png","sha256":"53b91a65e9b84543fcdd5b2e68764f4b222be8d9cda0746f0ad55cd504b1faf4","source":"art/hunters/reactions-v1/demonologist-alpha-v2.png","source_sha256":"759c999358ce55c75c693493e75032c9160181bc1b1e00537a32d2faeb6ebd31"},
+    {"entry":"demonologist/pain/three_quarter.png","sha256":"ed92192e18dcfa872e51b5ce8ecb3327965e5f4b0689f06052351ec335866cc0","source":"art/hunters/reactions-v1/demonologist-alpha-v2.png","source_sha256":"759c999358ce55c75c693493e75032c9160181bc1b1e00537a32d2faeb6ebd31"},
+    {"entry":"demonologist/body.png","sha256":"e6bee52bfab2e8ef73d78a33ad1c574719be36dbe1e4849796c451d323e46569","source":"art/hunters/reactions-v1/demonologist-alpha-v2.png","source_sha256":"759c999358ce55c75c693493e75032c9160181bc1b1e00537a32d2faeb6ebd31"}
+  ]
+}

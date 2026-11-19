@@ -90,6 +90,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  uniform float u_lampIntensity;
  uniform float u_lampReach;
  uniform float u_lampWidth;
+ uniform int u_fogEnabled;
+ uniform vec3 u_fogColour;
+ uniform vec2 u_fogRangeSquared;
  out vec4 fragColor;
  void main(){
   vec4 surface=texture(u_texture,mix(v_uv,v_uvAffine,u_affineWarp));
@@ -104,7 +107,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
    float cone=u_flameLamp!=0?1.0:max(0.0,1.0-aim/u_lampWidth);
    beam=u_lampIntensity*depthFalloff*cone;
   }
-  fragColor=vec4(clamp(surface.rgb*(v_light+vec3(beam)),0.0,1.0),surface.a);
+  vec3 lit=clamp(surface.rgb*(v_light+vec3(beam)),0.0,1.0);
+  float fog=u_fogEnabled!=0?smoothstep(u_fogRangeSquared.x,u_fogRangeSquared.y,dot(v_cameraPoint,v_cameraPoint)):0.0;
+  fragColor=vec4(mix(lit,u_fogColour,fog),surface.a);
  }
  """;
  private final AtomicReference<Frame> pending=new AtomicReference<>();
@@ -281,6 +286,10 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   shader.setUniformf("u_lampIntensity",frame.lampIntensity());
   shader.setUniformf("u_lampReach",frame.lampReach());
   shader.setUniformf("u_lampWidth",frame.lampWidth());
+  var fog=frame.atmosphere();shader.setUniformi("u_fogEnabled",fog==null?0:1);
+  int fogRgb=fog==null?0:fog.fogRgb();
+  shader.setUniformf("u_fogColour",((fogRgb>>>16)&255)/255f,((fogRgb>>>8)&255)/255f,(fogRgb&255)/255f);
+  shader.setUniformf("u_fogRangeSquared",fog==null?36:fog.clearMetres()*fog.clearMetres(),fog==null?576:fog.opaqueMetres()*fog.opaqueMetres());
   for(Surface surface:frame.surfaces()){
    int vertexCount=surface.vertexCount();
    if(vertexCount==0)continue;

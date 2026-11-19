@@ -1,0 +1,259 @@
+{
+  "status": "COLLEGE_FITTED_UTILITIES_VERIFIED_FULL_ACCEPTANCE_OPEN",
+  "baseline": "57858965f58ee05830e774aff7d86c64c8419e6f",
+  "scene_revision": "e80366f411643069531a4dd087473012eb07081f599404919c44f8a762383907",
+  "native_collision_sha256": "396bdae97a3eb9a7c0f8d3575e0107c537efef032e3c30a477d8a1dced8c6afa",
+  "roster": "roster.json",
+  "layout": "college/authored-layout.json",
+  "construction": "college/construction.json",
+  "native_files": {
+    "college-services.blend": {
+      "sha256": "fc67fc65ad62dde693af43636d1f50cd9f7d4a9f4157b082cc9356a1b8a7bb04"
+    },
+    "college-services.glb": {
+      "sha256": "75894ba104362afd296af116945d58b23099cf5c17a0994e531ba7ce93e8e5f8"
+    },
+    "college-services.hcs2": {
+      "sha256": "396bdae97a3eb9a7c0f8d3575e0107c537efef032e3c30a477d8a1dced8c6afa"
+    }
+  },
+  "installation": "college/services.json",
+  "plan": "college-services-plan.svg",
+  "reopened_geometry": "verification/structural-readback.json",
+  "services": {
+    "installed_fixtures": 30,
+    "asset_counts": {
+      "level_boiler_modern_worn": 1,
+      "level_blockout_cellar_service_manifold": 1,
+      "level_bath_basin": 7,
+      "toilet_mp_1": 3,
+      "level_laundry_washer": 2,
+      "level_kitchen_counter": 2,
+      "level_bath_shower_worn": 2,
+      "level_radiator_worn": 10,
+      "level_blockout_lab_fume_hood": 1,
+      "level_blockout_domestic_kitchen_range": 1
+    },
+    "measured_connections": 76,
+    "pipe_runs": 78,
+    "roof_ducts": 4,
+    "grade_seated_street_controls": 2,
+    "verified_bearing_rays": 120,
+    "colliding_fixture_sets": 30,
+    "retained_collision_parts": 1395,
+    "native_triangles_verified": 47364
+  },
+  "gameplay": {
+    "context_search_spaces": 40,
+    "stable_owners": 15,
+    "prior_context_samples": 1283,
+    "ten_samples_rechecked_at_new_supported_stances": 10,
+    "portal_route_directions": 88,
+    "postures": 2,
+    "perimeter_supported_sweeps": 7158,
+    "five_well_jump_replays": 5,
+    "full_van_journeys": 2,
+    "operable_doors": 18,
+    "replicated_host_door_actions": 36,
+    "real_tcp_peers": 4,
+    "circuit_loads": 68,
+    "staff_context_door": {
+      "body_probes": 28,
+      "sight_probes": 56,
+      "object_probes": 14
+    }
+  },
+  "renderers": {
+    "software": "verification/software-runtime.txt",
+    "opengl": "verification/opengl-runtime.txt",
+    "hardware": "NVIDIA RTX 5070, OpenGL 3.3.0 616.64",
+    "captures": [
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-native-plant-and-maintenance-cutaway.png",
+        "backend": "native",
+        "category": "native cutaway or overview",
+        "size": [
+          1280,
+          910
+        ],
+        "sha256": "a890abe0c050f656a7598f52ee5353f7e183ab6ec94c8644f71b484be119420d"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-native-roof-terminations.png",
+        "backend": "native",
+        "category": "native cutaway or overview",
+        "size": [
+          1280,
+          910
+        ],
+        "sha256": "78e6392ea06163c1f3f2c319a710d3e0ae3e363b43e51b18447727a3ba3876cf"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-lab-fume-extract.png",
+        "backend": "opengl",
+        "category": "ordinary standing view",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "75cc76ce8c6344e056dc30a1b1659c2514d8d35b9d4126f548652f9f7a89275d"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-lecture-heating.png",
+        "backend": "opengl",
+        "category": "ordinary standing view",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "0dab5766a33ee09be7e43fb4c04d97a75f406f0801c31680e1bd0689ca2fdcd5"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-maintenance-staff-approach.png",
+        "backend": "opengl",
+        "category": "ordinary standing view",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "0718d789cec0a82ab51d05edeaf1fa7851827db17d7bd5557742437d594e1afb"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-kitchen-extract.png",
+        "backend": "opengl",
+        "category": "sealed-room render inspection",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "62931493d74c92f9ce0b1846974f525fd17d82bb2d15949fb0dac8c7902dd83b"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-plant-boiler.png",
+        "backend": "opengl",
+        "category": "sealed-room render inspection",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "8ebb7d6fc3cfa3f133556b55e6309a24b387230aa7e636a8fbc02993e0d18ff4"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-plant-manifold.png",
+        "backend": "opengl",
+        "category": "sealed-room render inspection",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "2f7f30168c8a4fe18435bfc042ca4801f522a0ebfc73df2a182e08b29456aa6e"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-opengl-sealed-residence-showers.png",
+        "backend": "opengl",
+        "category": "sealed-room render inspection",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "d4a066fe225459c01ce60cf8a738227bbd2841c56108649b114c81a5b7bb6861"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-software-lab-fume-extract.png",
+        "backend": "software",
+        "category": "ordinary standing view",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "086055f5796860c1330fdb29a61051fb3a5cd75bbdbec796f430c2f67118f5d8"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-software-lecture-heating.png",
+        "backend": "software",
+        "category": "ordinary standing view",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "01cb81ceef74d4ddefcd614a77b45ecf42404baad916d41e6d47ac84f1ec8552"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-software-maintenance-staff-approach.png",
+        "backend": "software",
+        "category": "ordinary standing view",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "1168514e4aaf906101dabd6f524ab1a7f38fa2497347c032bfef18ae46d7d00f"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-kitchen-extract.png",
+        "backend": "software",
+        "category": "sealed-room render inspection",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "0c0fb3406ffa4216d30378e2d402126b609d9365f20779381dcf9c4e1b1a8830"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-plant-boiler.png",
+        "backend": "software",
+        "category": "sealed-room render inspection",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "0d512c3831e52722964fbfc38fc3be18d6d7df8193dff45d4fc5a730dd493a2b"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-plant-manifold.png",
+        "backend": "software",
+        "category": "sealed-room render inspection",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "60bac309700a4b6cd691e554dddd281c6226874311350c65db040627209b7077"
+      },
+      {
+        "path": "development/levels/rebuild/captures/college-services-batch/college-software-sealed-residence-showers.png",
+        "backend": "software",
+        "category": "sealed-room render inspection",
+        "size": [
+          1120,
+          700
+        ],
+        "sha256": "39caac7cb551ace203fc138e4716e772271d8f095ee7c8155ca14b4d2ecce2b5"
+      }
+    ]
+  },
+  "package": {
+    "log": "verification/package.txt",
+    "regressions": {
+      "InteractionFocusTest": "PASS",
+      "DoorSwingTest": "PASS",
+      "ArchitecturalPlansTest": "PASS",
+      "LevelEnclosureTest": "PASS",
+      "GroundRecoverySupportParityTest": "PASS",
+      "LanWorldRenderTest": "PASS",
+      "LanWorldTest": "PASS",
+      "PlayerJumpTest": "PASS"
+    }
+  },
+  "source_roster": {
+    "native_packets": 25,
+    "exact_unchanged_native_sites": 24,
+    "total_packets": 29
+  },
+  "release": "HELD_DRAFT_REVIEW",
+  "remaining_acceptance": [
+    "Finish College functional furniture and narrative, real child room access as appropriate and final roof, weather and directional scenery.",
+    "Qualify normal College game dispatch, host joins, hardware traversal and complete location acceptance on the integrated source.",
+    "Resolve the earlier House upper window acknowledgement and remaining full roster acceptance items."
+  ],
+  "next_action": "Resolve the known House real window aperture and host acknowledgement, then continue College functional fit-out and ordinary dispatch.",
+  "publication_readback": "verification/publication-readback.json"
+}

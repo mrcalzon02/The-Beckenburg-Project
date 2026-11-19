@@ -1,0 +1,62 @@
+FITTED COLLEGE-COURT-teaching-lobby id=0 owners=0/12 acoustic=7->3
+FITTED COLLEGE-COURT-issue id=1 owners=6/12 acoustic=7->3
+FITTED COLLEGE-COURT-cafe id=2 owners=4/12 acoustic=7->3
+FITTED COLLEGE-COURT-rear-hall id=3 owners=0/13 acoustic=6->3
+FITTED L05 id=4 owners=0/5 acoustic=6->2
+FITTED L06 id=5 owners=0/2 acoustic=6->2
+FITTED L07 id=6 owners=0/3 acoustic=6->2
+FITTED L14 id=7 owners=0/1 acoustic=6->2
+FITTED L52 id=8 owners=8/7 acoustic=6->2
+FITTED L86 id=9 owners=10/7 acoustic=6->2
+FITTED L67 id=16 owners=11/11 acoustic=3->1
+FITTED COLLEGE bay indexed door 0 id=17 owners=6/6 acoustic=3->1
+FITTED COLLEGE bay indexed door 1 id=18 owners=8/8 acoustic=3->1
+FITTED COLLEGE bay indexed door 2 id=19 owners=7/8 acoustic=4->2
+FITTED COLLEGE bay indexed door 3 id=20 owners=11/11 acoustic=3->1
+FITTED COLLEGE bay indexed door 4 id=21 owners=11/11 acoustic=3->1
+FITTED COLLEGE bay indexed door 5 id=22 owners=0/0 acoustic=3->1
+FITTED COLLEGE bay indexed door 6 id=23 owners=10/10 acoustic=3->1
+FITTED res-west-1-door id=24 owners=9/9 acoustic=3->1
+FITTED res-east-1-door id=25 owners=7/9 acoustic=6->2
+GHOST_GRAPH rooms=14 directed_edges=32
+CONTEXT seams=56 samples=1247 body_open=0 optical_open=0
+PASS spaces=40 owners=15 runtime_route_directions=88 aperture_pairs=25 rituals=3 collision_sha=26e528df3a85a452f87653585b139c1194c7dcb5686fd4921f6dbba9a9054f76 scene_sha=19b7e24c082c3556dc89f379a9e778d93cbf66bf8b01b24f21df2e50c1c2e7e1
+PASS continuous van-to-maintenance and van-to-upper-residence journeys in both postures and directions
+PASS 20 fitted doors, 8 local doors, 480 mover sweeps, 360 sight, 360 small-object and 240 jamb rays; 88 route directions in both postures
+FIT res-west-1 working entrance, six standing and crouched use approaches, two physical beds
+FIT res-west-2 fixed sealed entrance, six standing and crouched use approaches, two physical beds
+FIT res-west-3 fixed sealed entrance, six standing and crouched use approaches, two physical beds
+FIT res-west-4 fixed sealed entrance, six standing and crouched use approaches, two physical beds
+FIT res-east-1 working entrance, six standing and crouched use approaches, two physical beds
+FIT res-east-2 fixed sealed entrance, six standing and crouched use approaches, two physical beds
+FIT res-east-3 fixed sealed entrance, six standing and crouched use approaches, two physical beds
+FIT res-east-4 fixed sealed entrance, six standing and crouched use approaches, two physical beds
+PASS eight twin rooms, 16 physical beds, 48 use approaches in both postures and six sealed context rooms
+REPLICATED COLLEGE-COURT-teaching-lobby
+REPLICATED COLLEGE-COURT-issue
+REPLICATED COLLEGE-COURT-cafe
+REPLICATED COLLEGE-COURT-rear-hall
+REPLICATED L05
+REPLICATED L06
+REPLICATED L07
+REPLICATED L14
+REPLICATED L52
+REPLICATED L86
+REPLICATED L67
+REPLICATED COLLEGE bay indexed door 0
+REPLICATED COLLEGE bay indexed door 1
+REPLICATED COLLEGE bay indexed door 2
+REPLICATED COLLEGE bay indexed door 3
+REPLICATED COLLEGE bay indexed door 4
+REPLICATED COLLEGE bay indexed door 5
+REPLICATED COLLEGE bay indexed door 6
+REPLICATED res-west-1-door
+REPLICATED res-east-1-door
+PASS 40 real host door actions broadcast to a second native scene
+PASS 68 hardwired loads, all twelve room switch effects and independent van battery; minimum energy drop 2.6452, max blackout sample 0.9000
+PASS four real TCP peers: exact College revision, supported move, room switching, source stop/start, authorized ghost trip, blackout view and reconnect resync, physical reset and rejected distant/ghost control
+2026-11-18T10:28:22.315456600Z [main] RENDER SLOW stage=idle faces=184992 visible_faces=70339 culled_faces=114653 target=1120x700 build_ms=56 lighting_raster_ms=1063
+2026-11-18T10:28:24.310209200Z [main] RENDER SLOW stage=idle faces=187128 visible_faces=63428 culled_faces=123700 target=1120x700 build_ms=29 lighting_raster_ms=891
+2026-11-18T10:28:27.508274300Z [main] RENDER SLOW stage=idle faces=184992 visible_faces=95674 culled_faces=89318 target=1120x700 build_ms=20 lighting_raster_ms=1211
+RESIDENCE LEVEL authored-campus-candidate-ffb69966d951e26e
+RESIDENCE SCENE 19b7e24c082c3556dc89f379a9e778d93cbf66bf8b01b24f21df2e50c1c2e7e1

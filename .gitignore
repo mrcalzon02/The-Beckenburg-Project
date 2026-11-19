@@ -23,3 +23,44 @@ invitation.secret
 
 # Transient lock files are recreated by native editor scene readers.
 development/levels/rebuild/**/terrain-world/**/*.editor.lock
+# Blender's automatic backups are not new candidate deliverables. Rejected
+# studies are retained explicitly with their manifests and inspection captures.
+development/levels/rebuild/terrain-fit-pass/**/*.blend[0-9]
+# Recreated native-loader cache from hidden OpenGL verification.
+/.lwjgl/
+
+# Scoped Blender deck construction backups.
+development/levels/rebuild/deck-fit-pass/**/*.blend[0-9]
+
+# Scoped occupied-room terrain Blender backups.
+development/levels/rebuild/terrain-occupancy-pass/**/*.blend[0-9]
+
+# Scoped floor/cap Blender construction backups.
+development/levels/rebuild/floor-closure-pass/**/*.blend[0-9]
+
+# Scoped stair construction backups.
+development/levels/rebuild/stair-landing-pass/**/*.blend[0-9]
+
+# Scoped structural opening Blender backups.
+development/levels/rebuild/stair-opening-pass/**/*.blend[0-9]
+
+# Scoped authored bay Blender backups.
+development/levels/rebuild/stair-bay-pass/**/*.blend[0-9]
+
+# Scoped saved terrain review backups/transient editor locks.
+development/levels/rebuild/stair-terrain-pass/**/*.blend[0-9]
+development/levels/rebuild/stair-terrain-pass/**/*.lock
+
+# Scoped connection source backups.
+development/levels/rebuild/stair-connection-pass/**/*.blend[0-9]
+
+development/levels/rebuild/stair-connection-pass/**/*.lock
+
+development/levels/rebuild/flat-circulation-pass/**/*.blend[0-9]
+
+# Arrival authoring scene backups.
+development/levels/rebuild/arrival-bearing-pass/**/*.blend[0-9]
+
+# Saved circulation terrain authoring backups.
+development/levels/rebuild/flat-terrain-pass/**/*.blend[0-9]
+development/levels/rebuild/flat-terrain-pass/**/*.lock

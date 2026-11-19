@@ -1,0 +1,5 @@
+site	link	segment	direction	x	y	z	reason	component
+WLD-09	L18	0	up	63.56666666666667	-10.0	43.0	PHYSICAL_COMPONENT	WLD-09 return-east E end region0
+WLD-09	L18	0	down	70.0	-5.0	43.0	START_UNSUPPORTED	-
+WLD-09	L18	2	up	74.0	-5.0	43.0	START_UNSUPPORTED	-
+WLD-09	L18	2	down	74.0	0.0	28.05	START_UNSUPPORTED	-

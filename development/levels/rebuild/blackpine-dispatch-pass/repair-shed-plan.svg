@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" role="img" aria-labelledby="title desc">
+  <title id="title">Blackpine equipment repair shed and power aisle</title>
+  <desc id="desc">Measured plan of the six by eight metre shed showing the real west yard door and south door, generator skid, wall breaker, and tested walking approach.</desc>
+  <style>
+    text{font-family:Arial,sans-serif;fill:#1e2826}
+    .small{font-size:14px}.label{font-size:16px;font-weight:bold}
+    .wall{fill:none;stroke:#263a35;stroke-width:8;stroke-linecap:square}
+    .guide{fill:none;stroke:#23796d;stroke-width:3;stroke-dasharray:8 5}
+  </style>
+  <rect width="800" height="620" fill="#f8f5eb"/>
+  <text x="40" y="45" font-size="26" font-weight="bold">Blackpine repair shed</text>
+  <text x="40" y="70" class="small">6 × 8 m · Floor +0.552 m · North at top</text>
+  <rect x="218" y="105" width="306" height="408" fill="#eae3d2"/>
+  <path class="wall" d="M218 278.4V105H524V513H401.6M340.4 513H218V339.6"/>
+  <path d="M218 278.4V339.6M340.4 513H401.6" stroke="#aa7739" stroke-width="4"/>
+  <rect x="234.6" y="174.4" width="79" height="45" rx="4" fill="#758d6e" stroke="#314c35"/>
+  <rect x="218" y="194" width="9" height="25" fill="#a77634" stroke="#593b17"/>
+  <rect x="283.4" y="199.8" width="7" height="9" fill="#eed8ab" stroke="#593b17"/>
+  <rect x="308" y="110" width="126" height="52" rx="3" fill="#babbad"/>
+  <rect x="224" y="383" width="109" height="55" rx="3" fill="#babbad"/>
+  <text x="319" y="140" class="small">Repair bench</text>
+  <text x="235" y="416" class="small">Bandsaw</text>
+  <text x="238" y="166" class="small">Generator skid</text>
+  <path class="guide" d="M181.28 309H371M292 309V261.6"/>
+  <circle cx="371" cy="309" r="5" fill="#23796d"/>
+  <circle cx="292" cy="261.6" r="5" fill="#23796d"/>
+  <path d="M292 261.6 286.9 204.3M292 261.6 223 207" stroke="#a77634" fill="none" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <path d="M114 206H218" stroke="#a77634" fill="none"/>
+  <text x="42" y="198" class="small">Wall breaker</text>
+  <text x="42" y="221" class="small">BPK-MAIN</text>
+  <text x="42" y="304" class="label">Timber yard</text>
+  <text x="42" y="328" class="small">West door · 1.20 m</text>
+  <text x="330" y="540" class="small">South door · 1.20 m</text>
+  <text x="393" y="315" class="small">Shed spawn</text>
+  <path d="M295 262H515" stroke="#23796d" stroke-width="1.5" stroke-dasharray="3 4"/>
+  <text x="552" y="257" class="label">Control stance</text>
+  <text x="552" y="282" class="small">X 45.45 m · Z 49.07 m</text>
+  <text x="552" y="304" class="small">Aim at the starter or breaker</text>
+  <text x="218" y="582" class="small">Dashed green marks the tested walk across the built floor and existing doorway.</text>
+</svg>

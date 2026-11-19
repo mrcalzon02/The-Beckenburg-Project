@@ -1,0 +1,58 @@
+{
+  "status": "PASS_SCOPED_TERRAIN_AND_REPAIR_EXPORT_CHECKS",
+  "sites": [
+    {
+      "id": "WLD-03",
+      "preserved_original_meshes": 203,
+      "preserved_native_parts": 203,
+      "saved_terrain_triangles": 9462,
+      "new_closed_solids": 0,
+      "glb_sha256": "f701f6f728c5b70c8f9d436076d1d798051ab756ebfb02c5e23c46531de1a804",
+      "physics_sha256": "842b83b7a9aa2b839a1e0fe554e9ff853bf40d7ae51136cff8fe503152f0c12c",
+      "saved_world_body_optical_and_reopen": true
+    },
+    {
+      "id": "WLD-04",
+      "preserved_original_meshes": 241,
+      "preserved_native_parts": 241,
+      "saved_terrain_triangles": 8375,
+      "new_closed_solids": 12,
+      "glb_sha256": "b2a7f7098eeec354036c86c826b8d6a67448546db3ce34840b78e35e252c379a",
+      "physics_sha256": "bf1ad671016f9f75c7bc189066a8d5ad430081935875e3d6a9eb3455b5a23d26",
+      "saved_world_body_optical_and_reopen": true
+    },
+    {
+      "id": "WLD-09",
+      "preserved_original_meshes": 366,
+      "preserved_native_parts": 366,
+      "saved_terrain_triangles": 10894,
+      "new_closed_solids": 0,
+      "glb_sha256": "f49b69c3ec1bd68accef5c71c6c4d3725874cedd32e08f0e90e40c6396e1a1be",
+      "physics_sha256": "6a7598c901dd7090738b1474c120be4b62d2c82eea3dc164a47c8ee169fa02af",
+      "saved_world_body_optical_and_reopen": true
+    },
+    {
+      "id": "WLD-14",
+      "preserved_original_meshes": 386,
+      "preserved_native_parts": 386,
+      "saved_terrain_triangles": 10144,
+      "new_closed_solids": 50,
+      "glb_sha256": "52103b4b63a0044459a5071cd77ea2a5f3cf4c2df44917e1ae5f54c9329e2f88",
+      "physics_sha256": "653091d0b2f7fab8ca86f345de2588831f6f8d904679bf0d784e655f1a3d8783",
+      "saved_world_body_optical_and_reopen": true
+    },
+    {
+      "id": "WLD-17",
+      "preserved_original_meshes": 257,
+      "preserved_native_parts": 257,
+      "saved_terrain_triangles": 9317,
+      "new_closed_solids": 0,
+      "glb_sha256": "16e14a7dc6105b52c7a5c8c3ea7032b0ed32486211922302ccae4568ca971b75",
+      "physics_sha256": "f48d004caddf529a36b5fcb49528328dd7bd72c09b9b0f90ca0f595a0f870bfd",
+      "saved_world_body_optical_and_reopen": true
+    }
+  ],
+  "all25_room_audit_clear": true,
+  "checker_sha256": "5eb3fc1d5209ab0a8848ec81f11ebc0db6c911249e7f1fab0505c568c7729116",
+  "limitation": "Half-metre architectural-envelope sampling and native construction checks; not full wall clearance, whole landscape, physical boundaries, engineering or runtime/network/performance acceptance."
+}

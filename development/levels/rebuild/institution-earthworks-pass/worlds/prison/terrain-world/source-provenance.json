@@ -1,0 +1,74 @@
+{
+  "source_world": "development/levels/rebuild/terrain-overall-pass/worlds/prison/terrain-world",
+  "source_files_sha256": {
+    "adaptive-topology.bin": "a628ea4ee0a11276b10d802b25a996972772d8f0916f754afb15fd16bef1b7c4",
+    "authored-cuts.tsv": "5c0c1b613fa6ce778202b72ccc73d378d232fe941eb2775f14d427b1db2404ff",
+    "source-provenance.json": "32dc26540a38cf871de2f3c6b8d881b4c86549be59000a3c5e11e744408f79ed",
+    "terrain-physics.hcs2": "6587d01d051a33e56cd40661b6db6c6cd5593bd1a7d143ff11cdbb7d4f7493e1",
+    "tile_0_0.png": "fadf21858d548b61dafba6cf3675b97a9f61e933d798f712f6a1ced97dfcbed0",
+    "verification.json": "9f96ad46648735948f6ac3342fddb33efa1e843a560ba9a043fd16032e1d77c6",
+    "world.properties": "9b4c960ef5cc6582f9c60dede6dcf80cda7e382fab7651905ff3e47e8dd6091a",
+    "scene-package/.scene.bin.editor.previous": "cbd842754c5c1ae1ed01d8d6e25275ab52b4c8f892a297ba636609a0e8dd9376",
+    "scene-package/scene.bin": "fe64ec63d43e270e28029c1525c8e4eb2f5598dfd34627ddc41a2930291320d4",
+    "scene-package/meshes/site-0-0.obj": "69d4888e36b30f6c0b444b30442a3e78c1cb8bca22f34aa2908b0091a9eda870",
+    "scene-package/meshes/site-0-1.obj": "3a71886bc728d511a0d15e23f3a9a9a8ba381c8a571a7235f4b9ecb180ce5fd6",
+    "scene-package/meshes/site-1-0.obj": "6eb689a6080da11827063b6e8ad90512ab396d5cb67286fd9c2152c697043255",
+    "scene-package/meshes/site-1-1.obj": "405e7049a883ef479a5631aa171801a40dc3218d8c787c8f4a2227b2d00ae58f"
+  },
+  "earthworks_features": [
+    {
+      "name": "Prison public and service arrival grounds",
+      "material": "GRAVEL",
+      "feather": 5,
+      "profile": "arrival",
+      "polygon": [
+        [
+          0,
+          68
+        ],
+        [
+          18,
+          67
+        ],
+        [
+          34,
+          68
+        ],
+        [
+          58,
+          67
+        ],
+        [
+          73,
+          70
+        ],
+        [
+          77,
+          81
+        ],
+        [
+          73,
+          94
+        ],
+        [
+          59,
+          97
+        ],
+        [
+          18,
+          97
+        ],
+        [
+          1,
+          89
+        ],
+        [
+          -2,
+          76
+        ]
+      ]
+    }
+  ],
+  "source_height_and_punched_topology_preserved": true,
+  "authoring": "Actual TerrainLayerStack geographic sculpt, not route support"
+}

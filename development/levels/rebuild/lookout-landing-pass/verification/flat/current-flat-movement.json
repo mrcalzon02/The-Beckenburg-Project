@@ -1,0 +1,65 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-04": {
+      "before": {
+        "flat_links": 5,
+        "pass_both_directions": 5
+      },
+      "after": {
+        "flat_links": 5,
+        "pass_both_directions": 5
+      },
+      "current_lanes": {
+        "samples": 3441,
+        "valid_standing": 3441,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-04": {
+      "before": {
+        "contract": "development/levels/rebuild/service-ground-bay-pass/wld-04/construction.json",
+        "contract_sha256": "3800363e4cb41ea9280cf23eaab0dd95526d245e8233fe864de311143835db41",
+        "layout": "development/levels/rebuild/service-ground-bay-pass/wld-04/authored-layout.json",
+        "layout_sha256": "c0a5bc0ec108e76fd1756f311ffba10455af0b68c93cdb77c27938043c6f23e9",
+        "native": "development/levels/rebuild/service-ground-bay-pass/wld-04/authored-service-bay.hcs2",
+        "native_sha256": "837b74ce8ae499eab2feae7e7b03f90f588e9d3eab8d2ff95e82186071e8c097"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/lookout-landing-pass/wld-04/construction.json",
+        "contract_sha256": "1e067e50de9d90c77908e03aaeb35babba65eaa7f63b34a203d57fe41409e22c",
+        "layout": "development/levels/rebuild/lookout-landing-pass/wld-04/authored-layout.json",
+        "layout_sha256": "bd22cf4fa213a76407a45608d8f178b3c7991d7f1c8e31a042864ca8aba7736f",
+        "native": "development/levels/rebuild/lookout-landing-pass/wld-04/lookout-landings.hcs2",
+        "native_sha256": "26de207fb6ea651786cd91a4ebc6d44d8f7c263c4cfeb350f7e6b0e5374aa8be"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/dam-east-hall-pass/roster.json": "80512379d3c420ed61a37993d17fc5cdd64ae2fe46b28f57cbafab1f531936cb"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/lookout-landing-pass/verification/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "development/levels/rebuild/lookout-landing-pass/verification/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "development/levels/rebuild/lookout-landing-pass/verification/flat/current-flat-lane-input.tsv": "4b0547150ebef1d83f8a2bc545f6a620d548bca4b1ea33fd9b5780415583fb03",
+    "development/levels/rebuild/lookout-landing-pass/verification/flat/current-flat-lane-names.tsv": "c5e6897c22b77513001b3819652fe1beedf90963ede759f0476d0e6a366c6fec",
+    "development/levels/rebuild/lookout-landing-pass/verification/flat/current-flat-lanes.tsv": "5be1ff70ab0e5d7c98c5e44177dbe498944a1ad227dae6cd29b54c7ce07843c0",
+    "development/levels/rebuild/lookout-landing-pass/verification/flat/current-flat-links.tsv": "1ebc4b1d59c374bd37e0d653b3278e7a2c5816f047cb3a08cfdb94c6f6f7a6f4",
+    "development/levels/rebuild/lookout-landing-pass/verification/flat/current-flat-names.tsv": "b362a775c81b3036ff8ab5c4adf672326b1320c6e3fe2f65122cdc8fb54c41f9",
+    "development/levels/rebuild/lookout-landing-pass/verification/flat/current-flat-paths.tsv": "f23395cf721c2e31ea53ec980fbc84c3f9e7672da946d318fdada88e988af78d"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

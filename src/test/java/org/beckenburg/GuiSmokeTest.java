@@ -31,7 +31,7 @@ public final class GuiSmokeTest {
         SwingUtilities.invokeAndWait(()->{
             boolean visible=false;
             for(Component shown:((Container)frame[0].getContentPane()).getComponents())
-                if(shown.getClass().getName().contains("GamePanel") && shown.isShowing())visible=true;
+                if(shown.getClass().getName().contains("LanWorldPanel") && shown.isShowing())visible=true;
             if(!visible)throw new AssertionError("game card not shown");
         });
         Robot robot=new Robot();robot.setAutoDelay(40);

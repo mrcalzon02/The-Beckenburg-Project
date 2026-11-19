@@ -1,0 +1,174 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "COLLEGE": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 30
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 32
+      },
+      "current_lanes": {
+        "samples": 9351,
+        "valid_standing": 8735,
+        "invalid_standing": 616,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 2,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 33,
+          "NO_CENTRE_SUPPORT": 405,
+          "NO_FOOT_SUPPORT_0.22_0.0": 2,
+          "FOOT_HEIGHT_SPREAD": 22,
+          "PHYSICAL_COMPONENT": 146,
+          "NO_FOOT_SUPPORT_0.0_0.22": 6
+        },
+        "physical_components": [
+          [
+            "160:Wall union-common W",
+            17
+          ],
+          [
+            "164:Wall cafe W",
+            14
+          ],
+          [
+            "159:Wall union-common S",
+            10
+          ],
+          [
+            "92:Wall meeting S",
+            9
+          ],
+          [
+            "643:L82 flight0 step15",
+            9
+          ],
+          [
+            "156:Wall laundry W",
+            8
+          ],
+          [
+            "Flat route shell Wall admin S",
+            7
+          ],
+          [
+            "185:Wall staff-rest E",
+            7
+          ],
+          [
+            "641:L82 flight0 step13",
+            7
+          ],
+          [
+            "644:L82 flight0 step16",
+            7
+          ],
+          [
+            "COLLEGE retained outside wall 3",
+            6
+          ],
+          [
+            "642:L82 flight0 step14",
+            6
+          ],
+          [
+            "157:Wall laundry E",
+            6
+          ],
+          [
+            "Flat route shell Wall meeting W",
+            5
+          ],
+          [
+            "183:Wall staff-rest S",
+            5
+          ],
+          [
+            "640:L82 flight0 step12",
+            4
+          ],
+          [
+            "184:Wall staff-rest W",
+            4
+          ],
+          [
+            "98:Wall records S",
+            3
+          ],
+          [
+            "22:Wall teaching-lobby E",
+            3
+          ],
+          [
+            "440:Wall res-east-1 W",
+            3
+          ],
+          [
+            "43:Wall lab S.001",
+            2
+          ],
+          [
+            "Flat route shell Wall teaching-lobby S.001",
+            1
+          ],
+          [
+            "Flat route shell Wall teaching-hall S.001",
+            1
+          ],
+          [
+            "Flat route shell Wall teaching-lobby E.001",
+            1
+          ],
+          [
+            "645:L82 flight0 step17",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "COLLEGE": {
+      "before": {
+        "contract": "development/levels/rebuild/institution-roof-pass/college/construction.json",
+        "contract_sha256": "04869cf4b93c374bfd0cc4fbc252cdb5ec2834b472b1b667124fca011b69dc38",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/college/authored-layout.json",
+        "layout_sha256": "4c0b5d9c1813f55763daa617f716ce442d7f34cb01888b7baf6dac24d74fd752",
+        "native": "development/levels/rebuild/institution-roof-pass/college/enclosed-roofs.hcs2",
+        "native_sha256": "b9c87b36b4df8a3101092838cb26e7cd9d833a5667b0157c8438a88ac88cc42d"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/service-ground-bay-pass/college/construction.json",
+        "contract_sha256": "ab1c3fda270d3011aba79cdab780d352de201d51470ebd6af3949b35b466f8d9",
+        "layout": "development/levels/rebuild/service-ground-bay-pass/college/authored-layout.json",
+        "layout_sha256": "b86db6f86650d507bddb7c35e12a062c19ad8beb3934be5f35517ce8d97fcd00",
+        "native": "development/levels/rebuild/service-ground-bay-pass/college/authored-bays.hcs2",
+        "native_sha256": "69732edabc42400709d504bc099747f8daaebb0b867a3574cfc86bd2d9a6d009"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/household-sacred-bay-pass/roster.json": "059bd570da8c93d507c18bae927dfca3846c8abbc205145beb0300840df987a1"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/service-ground-bay-pass/college/verification/flat/current-flat-failure-contacts.tsv": "6dda9bf7ca0cd319bd8583c043cb0202447f2e4561ac519b6ba751705080d85c",
+    "development/levels/rebuild/service-ground-bay-pass/college/verification/flat/current-flat-failure-input.tsv": "529d347e2b63bef5c11345dbf95b3bee2da8d0348b50445bb29cec5f60de2ce1",
+    "development/levels/rebuild/service-ground-bay-pass/college/verification/flat/current-flat-lane-input.tsv": "52ea34fd5975a0b58112c1cd58a9bad3ff83a8ef9cbc6f963a267f1ea2a94ff4",
+    "development/levels/rebuild/service-ground-bay-pass/college/verification/flat/current-flat-lane-names.tsv": "295cb7eb72e01c6c71b2237d7da59357e928d3c23d607e52754c99c517dc0b88",
+    "development/levels/rebuild/service-ground-bay-pass/college/verification/flat/current-flat-lanes.tsv": "24259d120f192ada9b9f3adbe4e8dc18b5120b7e2976425467b790b3a80a772f",
+    "development/levels/rebuild/service-ground-bay-pass/college/verification/flat/current-flat-links.tsv": "30e0aae5096fea824f68150ddc83d03fa57c8a3483a0aa5f51c59302564b1912",
+    "development/levels/rebuild/service-ground-bay-pass/college/verification/flat/current-flat-names.tsv": "c663ec49ab5ca2d7f618a7ce9dfecb0f4385cad4a71d84b188e9810afee49668",
+    "development/levels/rebuild/service-ground-bay-pass/college/verification/flat/current-flat-paths.tsv": "08d699bc44895590f06e58fc71bb63593349685ef35e4a247261a75e5b34e861"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

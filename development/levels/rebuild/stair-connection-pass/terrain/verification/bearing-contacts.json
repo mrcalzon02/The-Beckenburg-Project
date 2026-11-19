@@ -1,0 +1,494 @@
+{
+  "status": "MEASURED_BEARING_FIT_FINDINGS_NOT_TERRAIN_ACCEPTANCE",
+  "sites": [
+    {
+      "id": "WLD-17",
+      "samples": [
+        {
+          "part": "Bearing skirt 0000",
+          "point": [
+            8.0,
+            3.4699996948242187,
+            25.65
+          ],
+          "original_foot_y": 3.4699996948242187,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0000",
+          "point": [
+            10.0,
+            3.4699996948242187,
+            25.65
+          ],
+          "original_foot_y": 3.4699996948242187,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0001",
+          "point": [
+            10.0,
+            3.4699996948242187,
+            25.65
+          ],
+          "original_foot_y": 3.4699996948242187,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0001",
+          "point": [
+            12.0,
+            3.470446014404297,
+            25.65
+          ],
+          "original_foot_y": 3.470446014404297,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0002",
+          "point": [
+            12.0,
+            3.470446014404297,
+            25.65
+          ],
+          "original_foot_y": 3.470446014404297,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0002",
+          "point": [
+            14.0,
+            3.472559356689453,
+            25.65
+          ],
+          "original_foot_y": 3.472559356689453,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0003",
+          "point": [
+            14.0,
+            3.472559356689453,
+            25.65
+          ],
+          "original_foot_y": 3.472559356689453,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0003",
+          "point": [
+            16.0,
+            3.550001525878906,
+            25.65
+          ],
+          "original_foot_y": 3.550001525878906,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0004",
+          "point": [
+            16.0,
+            3.550001525878906,
+            25.65
+          ],
+          "original_foot_y": 3.550001525878906,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0004",
+          "point": [
+            18.0,
+            3.472559356689453,
+            25.65
+          ],
+          "original_foot_y": 3.472559356689453,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0005",
+          "point": [
+            18.0,
+            3.472559356689453,
+            25.65
+          ],
+          "original_foot_y": 3.472559356689453,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0005",
+          "point": [
+            20.0,
+            3.20291748046875,
+            25.65
+          ],
+          "original_foot_y": 3.20291748046875,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0006",
+          "point": [
+            20.0,
+            3.20291748046875,
+            25.65
+          ],
+          "original_foot_y": 3.20291748046875,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0006",
+          "point": [
+            22.0,
+            2.7839988708496093,
+            25.65
+          ],
+          "original_foot_y": 2.7839988708496093,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0007",
+          "point": [
+            24.35,
+            3.4698165893554687,
+            28.0
+          ],
+          "original_foot_y": 3.4698165893554687,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0007",
+          "point": [
+            24.35,
+            3.4986289978027343,
+            30.0
+          ],
+          "original_foot_y": 3.4986289978027343,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0008",
+          "point": [
+            24.35,
+            3.550001525878906,
+            32.0
+          ],
+          "original_foot_y": 3.550001525878906,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0008",
+          "point": [
+            24.35,
+            3.4699996948242187,
+            34.0
+          ],
+          "original_foot_y": 3.4699996948242187,
+          "before_terrain_y": 3.8198814392089844,
+          "after_terrain_y": 3.6645050048828125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0009",
+          "point": [
+            24.35,
+            3.4699996948242187,
+            34.0
+          ],
+          "original_foot_y": 3.4699996948242187,
+          "before_terrain_y": 3.8198814392089844,
+          "after_terrain_y": 3.6645050048828125,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0009",
+          "point": [
+            24.35,
+            3.491766357421875,
+            36.0
+          ],
+          "original_foot_y": 3.491766357421875,
+          "before_terrain_y": 3.8416366577148438,
+          "after_terrain_y": 3.656829833984375,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0010",
+          "point": [
+            46.0,
+            2.7839988708496093,
+            25.65
+          ],
+          "original_foot_y": 2.7839988708496093,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0010",
+          "point": [
+            48.0,
+            3.20291748046875,
+            25.65
+          ],
+          "original_foot_y": 3.20291748046875,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0011",
+          "point": [
+            48.0,
+            3.20291748046875,
+            25.65
+          ],
+          "original_foot_y": 3.20291748046875,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0011",
+          "point": [
+            50.0,
+            3.472559356689453,
+            25.65
+          ],
+          "original_foot_y": 3.472559356689453,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0012",
+          "point": [
+            50.0,
+            3.472559356689453,
+            25.65
+          ],
+          "original_foot_y": 3.472559356689453,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0012",
+          "point": [
+            52.0,
+            3.550001525878906,
+            25.65
+          ],
+          "original_foot_y": 3.550001525878906,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0013",
+          "point": [
+            52.0,
+            3.550001525878906,
+            25.65
+          ],
+          "original_foot_y": 3.550001525878906,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0013",
+          "point": [
+            54.0,
+            3.472559356689453,
+            25.65
+          ],
+          "original_foot_y": 3.472559356689453,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0014",
+          "point": [
+            54.0,
+            3.472559356689453,
+            25.65
+          ],
+          "original_foot_y": 3.472559356689453,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0014",
+          "point": [
+            56.0,
+            3.4480613708496093,
+            25.65
+          ],
+          "original_foot_y": 3.4480613708496093,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0015",
+          "point": [
+            56.0,
+            3.4480613708496093,
+            25.65
+          ],
+          "original_foot_y": 3.4480613708496093,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0015",
+          "point": [
+            58.0,
+            3.4699996948242187,
+            25.65
+          ],
+          "original_foot_y": 3.4699996948242187,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0016",
+          "point": [
+            58.0,
+            3.4699996948242187,
+            25.65
+          ],
+          "original_foot_y": 3.4699996948242187,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0016",
+          "point": [
+            60.0,
+            3.4699996948242187,
+            25.65
+          ],
+          "original_foot_y": 3.4699996948242187,
+          "before_terrain_y": 3.8198814392089844,
+          "after_terrain_y": 3.766773223876953,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0017",
+          "point": [
+            43.65,
+            3.4698165893554687,
+            28.0
+          ],
+          "original_foot_y": 3.4698165893554687,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0017",
+          "point": [
+            43.65,
+            3.4986328125,
+            30.0
+          ],
+          "original_foot_y": 3.4986328125,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0018",
+          "point": [
+            43.65,
+            3.550001525878906,
+            32.0
+          ],
+          "original_foot_y": 3.550001525878906,
+          "before_terrain_y": null,
+          "after_terrain_y": null,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0018",
+          "point": [
+            43.65,
+            3.4699996948242187,
+            34.0
+          ],
+          "original_foot_y": 3.4699996948242187,
+          "before_terrain_y": 3.8198814392089844,
+          "after_terrain_y": 3.664501190185547,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0019",
+          "point": [
+            43.65,
+            3.4699996948242187,
+            34.0
+          ],
+          "original_foot_y": 3.4699996948242187,
+          "before_terrain_y": 3.8198814392089844,
+          "after_terrain_y": 3.664501190185547,
+          "new_exposed_footing": false
+        },
+        {
+          "part": "Bearing skirt 0019",
+          "point": [
+            43.65,
+            3.491766357421875,
+            36.0
+          ],
+          "original_foot_y": 3.491766357421875,
+          "before_terrain_y": 3.8416366577148438,
+          "after_terrain_y": 3.656829833984375,
+          "new_exposed_footing": false
+        }
+      ],
+      "new_exposed_footing_samples": 0,
+      "affected_parts": []
+    }
+  ],
+  "auditor_sha256": "55352289691423fd941f5263e68480e698a13c8f2c52a365b789b0172cd83c31",
+  "scope": "Actual before/after soil rays at prior authored footing probes; original source feet retained; actual new native extension vertices used where present. New gaps require individual load-path/support revisions, not a gameplay or terrain acceptance claim."
+}

@@ -8,7 +8,15 @@
 
 **2026-11-01 owner priority update:** finish a small reusable service over proven existing editor operations first, then continue G0–G12. [Implemented service and evidence](EDITOR_AGENT_SERVICE.md) covers native mission and Castle adapters, shared human/agent transactions/history, save/reopen, genuine captures, structured tests and local headless protocol. No authenticated network/MCP adapter is claimed. Terrain-specific controls still require their human/runtime gates; the broader milestone acceptance below remains open.
 
+**Current implementation design:** [Agentic Map Builder Architecture](AGENTIC_MAP_BUILDER_ARCHITECTURE.md), [stage-by-stage runbook](AGENTIC_MAP_BUILDER_IMPLEMENTATION_STAGES.md) and [stage DAG](AGENTIC_MAP_BUILDER_STAGES.json). Complete the task-critical editor upgrades before automated full-roster rebuild. These are future-stage specifications, not proof of implementation.
+
+**Current full-map readiness audit:** [Agentic Map Builder Capability and Acceptance Register](AGENTIC_MAP_BUILDER_READINESS.md) and its [machine-readable requirements](AGENTIC_MAP_BUILDER_REQUIREMENTS.json). The proven agent transport is not the complete 29-site construction interface; see the detailed gap/status matrix.
+
 ## 1. User outcome and scope
+
+On November 8, 2026, the Windows editor passed authenticated loopback observation, isolated local playtests and MCP editing. In the installed executable a client repaired a wall across the Castle spawn, captured the renderer, saved the repair and returned control to the human editor, whose Undo restored the wall. Other Castle audit findings remain independent of this repair. [Installed Windows acceptance](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42473083566)
+
+The installed upper-floor fixture subsequently inspected an authored lodging bed, placed an armchair from the human palette, checked its collision and the neighboring aisle, and returned gameplay and editor captures. The repair survived save/reopen and reversed through human Undo. The separate Material Editor and native mesh stdio host also passed against the same BTOP document and rendered pixels. [Installed furnishing and mesh acceptance](https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/42492463902)
 
 An authorized agent must eventually be able to carry out: **"Open Castle Beckenburg; inspect the second floor; find and fix misplaced geometry; furnish the room; check collisions; playtest; show me an actual rendered result."** It must perform operations on the *same* editor/game scene that human tools use, not manufacture a second approximation or merely commit scene-looking code.
 
@@ -165,9 +173,9 @@ For **every** task store a ledger entry with:
 
 Status vocabulary: `planned`, `in_progress`, `implemented_unverified`, `tested`, `blocked`. Do not use `tested` without evidence of source tests, and do not conflate source tests with live installed acceptance. Only objective essential-function breakage gates shipping; visual and editorial findings remain advisory.
 
-## 8. First next task
+## 8. Remaining work
 
-**Prerequisite first: terrain-world gates T0–T8** in [`TERRAIN_WORLD_SYSTEM_PLAN.md`](TERRAIN_WORLD_SYSTEM_PLAN.md). Finish real human authoring, original terrain collision/rendering integration, stitched images, LOD/scope-safe visibility, streaming and validated loading transitions before making those features agent-controllable. The original M1-01 read-only in-process observation service is retained as a later task; M1–M5 remain planned. A portable tile module does not qualify as complete world rendering or agent access.
+Continue M2-02 for outstanding native command families and M3-03 for House and basement adapter diagnostics. Terrain-specific agent controls still depend on the human authoring, collision, rendering, streaming and loading-zone checks in the [terrain world plan](TERRAIN_WORLD_SYSTEM_PLAN.md). The machine ledger records the installed Castle, House and Material Editor evidence separately from those gates.
 
 ## 9. Current checkpoint
 

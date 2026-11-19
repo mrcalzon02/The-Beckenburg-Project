@@ -1,0 +1,173 @@
+{
+  "site": "FARMHOUSE",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/farmhouse/rough-layout.json",
+  "source_layout_sha256": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727",
+  "structure_glb_sha256": "df15f7b8c18658684d55de3867f11624da54bba34a7aa16e4f884afa42609df7",
+  "furnished_glb_sha256": "1badb2ec0dcd257154607221785bf5afae2f333610ce50f727799bfb308d8bc6",
+  "native_sha256": "90f0a90dabc2f894bd05b7c760b7dde908b9888e7376605db51ce42d2272c52c",
+  "requests": 6,
+  "placements": [
+    {
+      "id": "FARMHOUSE:stall-a:0:0",
+      "zone": "stall-a",
+      "purpose": "Livestock stall A and access gate / Stable stall wall and trough / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_barn_stall",
+      "asset": "level_blockout_barn_stall",
+      "source_sha256": "d3b54a580732cfaef3bd41c354e719175ab5af3f8eae14a65bdeb31f6647c8a8",
+      "bounds": [
+        31.435998916625977,
+        -10.289999961853027,
+        0.0,
+        33.736000061035156,
+        -9.15999984741211,
+        1.5500000715255737
+      ],
+      "rect": [
+        31.43600000953674,
+        9.16,
+        33.735999961853025,
+        10.29000001013279
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 72
+    },
+    {
+      "id": "FARMHOUSE:repair:1:0",
+      "zone": "repair",
+      "purpose": "Tool repair bench and clear work aisle / Workshop or classroom bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_workbench",
+      "asset": "level_blockout_workbench",
+      "source_sha256": "118331bca686c16c1e75042c6d56bf917218bdc8902c68ba05b722869725c589",
+      "bounds": [
+        31.74599838256836,
+        -32.84000015258789,
+        0.0,
+        33.49599838256836,
+        -32.060001373291016,
+        0.9100000262260437
+      ],
+      "rect": [
+        31.745999999999995,
+        32.06000002861023,
+        33.495999999999995,
+        32.84
+      ],
+      "floor_y": 0,
+      "yaw": 0,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 72
+    },
+    {
+      "id": "FARMHOUSE:parts:2:0",
+      "zone": "parts",
+      "purpose": "Repair parts and dry tools / Three-level freestanding shelf / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_storage_shelf",
+      "asset": "level_blockout_storage_shelf",
+      "source_sha256": "9e7baa1f1c128734b572d4e83de878db8ed2643eba544287eeb3034e74d88df1",
+      "bounds": [
+        36.36600112915039,
+        -26.90999984741211,
+        0.0,
+        38.0160026550293,
+        -26.15999984741211,
+        1.7999999523162842
+      ],
+      "rect": [
+        36.36600000476837,
+        26.16,
+        38.01599998092651,
+        26.91
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    },
+    {
+      "id": "FARMHOUSE:hayloft:3:0",
+      "zone": "hayloft",
+      "purpose": "Supported hay deck with clear retrieval aisle / Barn loft hay bale and ladder silhouette / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_barn_hayloft_bales",
+      "asset": "level_blockout_barn_hayloft_bales",
+      "source_sha256": "c5a8e1e52a45297bc2cd137786b35d0c976883bc412dc9c4965770a1d65bac6d",
+      "bounds": [
+        32.299198150634766,
+        -17.29199981689453,
+        3.0,
+        34.283199310302734,
+        -16.15999984741211,
+        4.319999694824219
+      ],
+      "rect": [
+        32.299199996948246,
+        16.16,
+        34.28320001220703,
+        17.291999969482422
+      ],
+      "floor_y": 3,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 0.8,
+      "triangles": 144
+    },
+    {
+      "id": "FARMHOUSE:kitchen:4:0",
+      "zone": "kitchen",
+      "purpose": "Cooking and sink cleanup / Freestanding stove with four hot plates and oven / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_domestic_kitchen_range",
+      "asset": "level_blockout_domestic_kitchen_range",
+      "source_sha256": "9a024553c055d319ecbe298eaf4868045c7ed7ec3d6dfffd8912b452183ef396",
+      "bounds": [
+        13.503999710083008,
+        -13.90999984741211,
+        0.0,
+        14.464000701904297,
+        -13.15999984741211,
+        1.534999966621399
+      ],
+      "rect": [
+        13.504000004291534,
+        13.16,
+        14.463999982833862,
+        13.91
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 208
+    },
+    {
+      "id": "FARMHOUSE:parents:5:0",
+      "zone": "parents",
+      "purpose": "Parents bedroom and personal storage / Double motel bed with separate bedding and pillows / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_motel_guest_bed",
+      "asset": "level_blockout_motel_guest_bed",
+      "source_sha256": "0fce06210c86ee53490e58cbea525e26aeb2efdfc5bc86221ed9b1567bc7d210",
+      "bounds": [
+        13.317998886108398,
+        -22.549999237060547,
+        3.0,
+        15.207999229431152,
+        -20.15999984741211,
+        4.539999961853027
+      ],
+      "rect": [
+        13.318000002861023,
+        20.16,
+        15.207999988555908,
+        22.549999985694885
+      ],
+      "floor_y": 3,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 120
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "94c31f2b9e507f5d23a339a1bde9e0cde1377cbc162f1875d0194fc05876a3bc",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 6,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

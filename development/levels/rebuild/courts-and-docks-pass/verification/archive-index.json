@@ -1,0 +1,15 @@
+{
+  "status": "LOSSLESS_RAW_VERIFICATION_ARCHIVES_NOT_NEW_TEST_ACCEPTANCE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/courts-and-docks-pass/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/courts-and-docks-pass/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 7178993,
+      "original_sha256": "303df004977f4abede2b6cd53429f8482bc3a642088d59d624f938adc1f8b119",
+      "archive_bytes": 109374,
+      "archive_sha256": "d22f99568b6eddddaea4f50eca73d703e1e3ce63d970bde5f3d3c2d22d5c0e43",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    }
+  ],
+  "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."
+}

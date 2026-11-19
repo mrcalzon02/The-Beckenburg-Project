@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1208 800" role="img" aria-labelledby="title desc">
+<title id="title">Ravenshade School fitted door and landing plan</title>
+<desc id="desc">Ground, upper and lower level plans showing seventeen surveyed frames and the open park direction of their operable leaves.</desc>
+<style>
+text{font-family:Arial,sans-serif;fill:#1f302e}.heading{font-size:21px;font-weight:bold}
+.room{fill:#e5eae1;stroke:#82948c;stroke-width:1}.air{fill:#f7f6ef;stroke:#a7b2a8;stroke-width:1}
+.frame{stroke:#96491f;stroke-width:3}.swing{stroke:#914c29;stroke-width:2;fill:none}
+.note{font-size:14px}.label{font-size:11px}.portal{font-size:10px;font-weight:bold;paint-order:stroke;stroke:#fff;stroke-width:2.5px}
+</style>
+<rect width="1208" height="800" fill="#f8f7ef"/>
+<text x="32" y="39" font-size="27" font-weight="bold">Ravenshade School door and landing plan</text>
+<text x="32" y="63" class="note">Surveyed frames and parked leaves · World metres · North at top</text>
+<text class="heading" x="43" y="90">Ground  0.00 m</text>
+<rect class="room" x="199.00" y="414.00" width="65.00" height="78.00"/>
+<text class="label" x="231.50" y="453.00" text-anchor="middle">Foyer</text>
+<rect class="room" x="264.00" y="414.00" width="65.00" height="39.00"/>
+<text class="label" x="296.50" y="433.50" text-anchor="middle">Interview</text>
+<rect class="room" x="264.00" y="453.00" width="32.50" height="39.00"/>
+<text class="label" x="280.25" y="481" text-anchor="middle">Visitor<tspan x="280.25" dy="11">WC</tspan></text>
+<rect class="room" x="296.50" y="453.00" width="32.50" height="39.00"/>
+<text class="label" x="312.75" y="472.50" text-anchor="middle">Office</text>
+<rect class="room" x="199.00" y="180.00" width="39.00" height="234.00"/>
+<text class="label" x="218.50" y="297.00" text-anchor="middle" transform="rotate(-90 218.50 297.00)">Corridor</text>
+<rect class="room" x="238.00" y="219.00" width="54.60" height="65.00"/>
+<rect class="room" x="238.00" y="180.00" width="26.00" height="39.00"/>
+<rect class="room" x="264.00" y="180.00" width="28.60" height="39.00"/>
+<rect class="room" x="292.60" y="180.00" width="36.40" height="104.00"/>
+<text class="label" x="310.80" y="226" text-anchor="middle">Service<tspan x="310.80" dy="12">stair</tspan></text>
+<rect class="room" x="238.00" y="284.00" width="91.00" height="130.00"/>
+<text class="label" x="283.50" y="349.00" text-anchor="middle">Main stair</text>
+<rect class="room" x="69.00" y="336.00" width="130.00" height="130.00"/>
+<text class="label" x="134.00" y="401.00" text-anchor="middle">Classroom</text>
+<rect class="room" x="69.00" y="466.00" width="130.00" height="26.00"/>
+<rect class="room" x="69.00" y="180.00" width="130.00" height="117.00"/>
+<text class="label" x="134.00" y="238.50" text-anchor="middle">Science</text>
+<rect class="room" x="69.00" y="297.00" width="130.00" height="39.00"/>
+<rect class="room" x="329.00" y="336.00" width="104.00" height="156.00"/>
+<text class="label" x="381.00" y="414.00" text-anchor="middle">Dining</text>
+<rect class="room" x="433.00" y="388.00" width="52.00" height="104.00"/>
+<rect class="room" x="485.00" y="388.00" width="52.00" height="104.00"/>
+<text class="label" x="511.00" y="468" text-anchor="middle">Receiving</text>
+<rect class="room" x="433.00" y="336.00" width="52.00" height="52.00"/>
+<rect class="room" x="329.00" y="180.00" width="26.00" height="156.00"/>
+<text class="label" x="342.00" y="258.00" text-anchor="middle" transform="rotate(-90 342.00 258.00)">Health link</text>
+<rect class="room" x="355.00" y="258.00" width="78.00" height="78.00"/>
+<rect class="room" x="355.00" y="180.00" width="52.00" height="39.00"/>
+<rect class="room" x="407.00" y="180.00" width="26.00" height="39.00"/>
+<rect class="room" x="355.00" y="219.00" width="52.00" height="39.00"/>
+<rect class="room" x="407.00" y="219.00" width="26.00" height="39.00"/>
+<rect class="room" x="433.00" y="128.00" width="156.00" height="208.00"/>
+<text class="label" x="511.00" y="232.00" text-anchor="middle">Gym</text>
+<path class="frame" d="M219.80 490.44 L243.20 490.44"/>
+<path class="swing" d="M219.80 490.44 L219.80 502.14"/>
+<circle fill="#914c29" cx="219.80" cy="490.44" r="2.2"/>
+<path class="swing" d="M243.20 490.44 L243.20 502.14"/>
+<circle fill="#914c29" cx="243.20" cy="490.44" r="2.2"/>
+<text class="portal" x="231.50" y="482.64" text-anchor="middle">400</text>
+<path class="frame" d="M206.80 414.00 L230.20 414.00"/>
+<path class="swing" d="M206.80 414.00 L206.80 425.70"/>
+<circle fill="#914c29" cx="206.80" cy="414.00" r="2.2"/>
+<path class="swing" d="M230.20 414.00 L230.20 425.70"/>
+<circle fill="#914c29" cx="230.20" cy="414.00" r="2.2"/>
+<text class="portal" x="218.50" y="406.20" text-anchor="middle">401</text>
+<path class="frame" d="M264.00 426.68 L264.00 440.32"/>
+<path class="swing" d="M264.00 426.68 L277.65 426.68"/>
+<circle fill="#914c29" cx="264.00" cy="426.68" r="2.2"/>
+<text class="portal" x="256.20" y="433.50" text-anchor="middle">403</text>
+<path class="frame" d="M264.00 465.68 L264.00 479.32"/>
+<path class="swing" d="M264.00 479.32 L250.35 479.32"/>
+<circle fill="#914c29" cx="264.00" cy="479.32" r="2.2"/>
+<text class="portal" x="273.49" y="472.50" text-anchor="middle">404</text>
+<path class="frame" d="M305.93 453.00 L319.57 453.00"/>
+<path class="swing" d="M319.57 453.00 L319.57 466.65"/>
+<circle fill="#914c29" cx="319.57" cy="453.00" r="2.2"/>
+<text class="portal" x="312.75" y="445.20" text-anchor="middle">405</text>
+<path class="frame" d="M70.56 225.18 L70.56 238.82"/>
+<path class="swing" d="M70.56 225.18 L56.91 225.18"/>
+<circle fill="#914c29" cx="70.56" cy="225.18" r="2.2"/>
+<text class="portal" x="80.05" y="232.00" text-anchor="middle">406</text>
+<path class="frame" d="M70.56 381.18 L70.56 394.82"/>
+<path class="swing" d="M70.56 394.82 L56.91 394.82"/>
+<circle fill="#914c29" cx="70.56" cy="394.82" r="2.2"/>
+<text class="portal" x="80.05" y="388.00" text-anchor="middle">407</text>
+<path class="frame" d="M499.30 129.56 L522.70 129.56"/>
+<path class="swing" d="M499.30 129.56 L499.30 117.86"/>
+<circle fill="#914c29" cx="499.30" cy="129.56" r="2.2"/>
+<path class="swing" d="M522.70 129.56 L522.70 117.86"/>
+<circle fill="#914c29" cx="522.70" cy="129.56" r="2.2"/>
+<text class="portal" x="511.00" y="139.05" text-anchor="middle">408</text>
+<path class="frame" d="M535.44 428.30 L535.44 451.70"/>
+<path class="swing" d="M535.44 428.30 L547.14 428.30"/>
+<circle fill="#914c29" cx="535.44" cy="428.30" r="2.2"/>
+<path class="swing" d="M535.44 451.70 L547.14 451.70"/>
+<circle fill="#914c29" cx="535.44" cy="451.70" r="2.2"/>
+<text class="portal" x="527.64" y="440.00" text-anchor="middle">409</text>
+<path class="frame" d="M303.98 284.00 L317.62 284.00"/>
+<path class="swing" d="M303.98 284.00 L303.98 297.65"/>
+<circle fill="#914c29" cx="303.98" cy="284.00" r="2.2"/>
+<text class="portal" x="310.80" y="276.20" text-anchor="middle">410</text>
+<path class="frame" d="M239.04 290.18 L239.04 303.82"/>
+<path class="swing" d="M239.04 290.18 L225.39 290.18"/>
+<circle fill="#914c29" cx="239.04" cy="290.18" r="2.2"/>
+<text class="portal" x="248.53" y="297.00" text-anchor="middle">411</text>
+<path class="frame" d="M327.96 290.18 L327.96 303.82"/>
+<path class="swing" d="M327.96 303.82 L341.61 303.82"/>
+<circle fill="#914c29" cx="327.96" cy="303.82" r="2.2"/>
+<text class="portal" x="320.16" y="297.00" text-anchor="middle">412</text>
+<path class="frame" d="M327.96 355.18 L327.96 368.82"/>
+<path class="swing" d="M327.96 355.18 L341.61 355.18"/>
+<circle fill="#914c29" cx="327.96" cy="355.18" r="2.2"/>
+<text class="portal" x="320.16" y="362.00" text-anchor="middle">413</text>
+<path class="frame" d="M310.48 181.56 L324.12 181.56"/>
+<path class="swing" d="M324.12 181.56 L324.12 167.91"/>
+<circle fill="#914c29" cx="324.12" cy="181.56" r="2.2"/>
+<text class="portal" x="317.30" y="191.05" text-anchor="middle">416</text>
+<text class="heading" x="658" y="90">Upper  +3.60 m</text>
+<rect class="room" x="790.00" y="168.00" width="33.00" height="264.00"/>
+<text class="label" x="806.50" y="300.00" text-anchor="middle" transform="rotate(-90 806.50 300.00)">Upper corridor</text>
+<rect class="room" x="823.00" y="168.00" width="77.00" height="55.00"/>
+<rect class="room" x="823.00" y="223.00" width="77.00" height="55.00"/>
+<rect class="room" x="823.00" y="278.00" width="77.00" height="88.00"/>
+<text class="label" x="861.50" y="322.00" text-anchor="middle">Upper stair</text>
+<rect class="room" x="823.00" y="366.00" width="77.00" height="66.00"/>
+<text class="label" x="861.50" y="399.00" text-anchor="middle">Upper lobby</text>
+<rect class="room" x="680.00" y="300.00" width="110.00" height="132.00"/>
+<text class="label" x="735.00" y="366.00" text-anchor="middle">Library</text>
+<rect class="room" x="680.00" y="168.00" width="110.00" height="110.00"/>
+<rect class="room" x="680.00" y="278.00" width="110.00" height="22.00"/>
+<rect class="room" x="900.00" y="300.00" width="132.00" height="132.00"/>
+<text class="label" x="966.00" y="366.00" text-anchor="middle">Assembly</text>
+<path class="frame" d="M851.60 366.00 L871.40 366.00"/>
+<path class="swing" d="M851.60 366.00 L851.60 375.90"/>
+<circle fill="#914c29" cx="851.60" cy="366.00" r="2.2"/>
+<path class="swing" d="M871.40 366.00 L871.40 375.90"/>
+<circle fill="#914c29" cx="871.40" cy="366.00" r="2.2"/>
+<text class="portal" x="861.50" y="359.40" text-anchor="middle">414</text>
+<path class="frame" d="M823.88 349.23 L823.88 360.77"/>
+<path class="swing" d="M823.88 360.77 L812.33 360.77"/>
+<circle fill="#914c29" cx="823.88" cy="360.77" r="2.2"/>
+<text class="portal" x="831.91" y="355.00" text-anchor="middle">415</text>
+<text class="heading" x="658" y="463">Lower  −3.00 m</text>
+<rect class="room" x="773.20" y="482.00" width="44.80" height="128.00"/>
+<text class="label" x="795.60" y="544" text-anchor="middle">Lower<tspan x="795.60" dy="12">stair</tspan></text>
+<rect class="room" x="706.00" y="482.00" width="67.20" height="128.00"/>
+<text class="label" x="739.60" y="546.00" text-anchor="middle">Plant</text>
+<rect class="room" x="706.00" y="610.00" width="112.00" height="160.00"/>
+<text class="label" x="762.00" y="690.00" text-anchor="middle">Plant store</text>
+<path class="frame" d="M773.20 489.60 L773.20 506.40"/>
+<path class="swing" d="M773.20 489.60 L756.40 489.60"/>
+<circle fill="#914c29" cx="773.20" cy="489.60" r="2.2"/>
+<text class="portal" x="784.88" y="498.00" text-anchor="middle">417</text>
+<path class="frame" d="M43 536h20"/><text class="note" x="74" y="541">Fitted frame</text>
+<path class="swing" d="M43 562h20"/><circle fill="#914c29" cx="43" cy="562" r="2.2"/><text class="note" x="74" y="567">Hinge and parked leaf</text>
+<text class="note" x="43" y="603">The door schedule records the exact frame span, floor and leaf transforms.</text>
+<text class="note" x="43" y="627">The existing site plan records the approach, grounds and terrain.</text>
+</svg>

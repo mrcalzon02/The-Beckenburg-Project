@@ -1,0 +1,371 @@
+{
+  "source": {
+    "id": "WLD-15",
+    "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-15/construction.json",
+    "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-15/authored-layout.json",
+    "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.glb",
+    "native": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.hcs2",
+    "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-15/access-routes.blend",
+    "glb_sha256": "0ff9378ee4178e923048299a562dd86b9fdab5ba462f814d18fa5d883829717b",
+    "native_sha256": "96fbab703fb380fbc79c08e2e4af90aabe5eb62c0c468856ba49321dfec437f8"
+  },
+  "retired": [
+    "Bay landing WLD-15 route-17 1 region0",
+    "Bay landing WLD-15 route-17 2 region0",
+    "Bay landing WLD-15 route-17 4 region0",
+    "Bearing pile 0000",
+    "Bearing pile 0001",
+    "Ceiling cap processing",
+    "Flat route shell Wall bridge W",
+    "Flat route shell Wall bridge W.001",
+    "Flat route shell Wall crew W",
+    "Flat route shell Wall crew W.001",
+    "Flat route shell Wall engine W",
+    "Flat route shell Wall engine W.001",
+    "Flat route shell Wall galley S",
+    "Flat route shell Wall galley S.001",
+    "Flat route shell Wall mess S",
+    "Flat route shell Wall mess S.001",
+    "Flat route shell Wall net W",
+    "Flat route shell Wall net W.001",
+    "Flat route shell Wall processing W",
+    "Flat route shell Wall processing W.001",
+    "Floor exterior deck portpier 20",
+    "Floor exterior deck portpier 21",
+    "Floor exterior deck portpier 22",
+    "Floor exterior deck portpier 23",
+    "Floor exterior deck portpier 24",
+    "Floor exterior deck portpier 25",
+    "Floor exterior deck portpier 26",
+    "Floor exterior deck portpier 27",
+    "Floor exterior deck quay 0",
+    "Floor exterior deck quay 1",
+    "Floor exterior deck quay 10",
+    "Floor exterior deck quay 11",
+    "Floor exterior deck quay 12",
+    "Floor exterior deck quay 13",
+    "Floor exterior deck quay 14",
+    "Floor exterior deck quay 15",
+    "Floor exterior deck quay 16",
+    "Floor exterior deck quay 17",
+    "Floor exterior deck quay 18",
+    "Floor exterior deck quay 19",
+    "Floor exterior deck quay 2",
+    "Floor exterior deck quay 3",
+    "Floor exterior deck quay 4",
+    "Floor exterior deck quay 5",
+    "Floor exterior deck quay 6",
+    "Floor exterior deck quay 7",
+    "Floor exterior deck quay 8",
+    "Floor exterior deck quay 9",
+    "Floor fore",
+    "Floor fore.001",
+    "Floor fore.002",
+    "Floor fore.003",
+    "Floor fore.004",
+    "Floor fore.005",
+    "Floor fore.006",
+    "Floor fore.007",
+    "Header bridge W",
+    "Header crew W",
+    "Header engine W",
+    "Header galley S",
+    "Header mess S",
+    "Header net W",
+    "Header processing W",
+    "route-01 support 0",
+    "route-02 support 0",
+    "route-03 support 0",
+    "route-04 support 0",
+    "route-05 support 0",
+    "route-06 support 0",
+    "route-07 support 0",
+    "route-11 support 0",
+    "route-12 support 0",
+    "route-13 landing0",
+    "route-13 landing2",
+    "route-17 landing0",
+    "route-17 landing2",
+    "route-18 support 0",
+    "route-19 landing0",
+    "route-19 landing2"
+  ],
+  "superseded_guides": {
+    "route-01": {
+      "id": "route-01",
+      "a": "stage",
+      "b": "entry",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          86.0
+        ],
+        [
+          32.0,
+          0,
+          78.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-02": {
+      "id": "route-02",
+      "a": "entry",
+      "b": "quay",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          78.0
+        ],
+        [
+          32.0,
+          0,
+          70.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-03": {
+      "id": "route-03",
+      "a": "quay",
+      "b": "aft",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32,
+          0,
+          68
+        ],
+        [
+          32,
+          0,
+          48
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-04": {
+      "id": "route-04",
+      "a": "quay",
+      "b": "portpier",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          28,
+          0,
+          68
+        ],
+        [
+          19,
+          0,
+          68
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-05": {
+      "id": "route-05",
+      "a": "portpier",
+      "b": "aft",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          19,
+          0,
+          46
+        ],
+        [
+          26,
+          0,
+          46
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-06": {
+      "id": "route-06",
+      "a": "aft",
+      "b": "galley",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          31.5,
+          0.0,
+          45.5
+        ],
+        [
+          28.0,
+          0.0,
+          35.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-07": {
+      "id": "route-07",
+      "a": "aft",
+      "b": "mess",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.5,
+          0.0,
+          45.5
+        ],
+        [
+          36.0,
+          0.0,
+          35.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-11": {
+      "id": "route-11",
+      "a": "fore",
+      "b": "side",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32,
+          0,
+          3
+        ],
+        [
+          41,
+          0,
+          10
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-12": {
+      "id": "route-12",
+      "a": "side",
+      "b": "aft",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          41.0,
+          0,
+          24.0
+        ],
+        [
+          32.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-13": {
+      "id": "route-13",
+      "a": "processing",
+      "b": "engine",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          25,
+          0,
+          24
+        ],
+        [
+          23,
+          0,
+          24
+        ],
+        [
+          23,
+          -3,
+          34
+        ],
+        [
+          25,
+          -3,
+          34
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    },
+    "route-17": {
+      "id": "route-17",
+      "a": "aft",
+      "b": "crew",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          26,
+          0,
+          46
+        ],
+        [
+          23,
+          0,
+          46
+        ],
+        [
+          23,
+          3,
+          36
+        ],
+        [
+          26,
+          3,
+          36
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    },
+    "route-19": {
+      "id": "route-19",
+      "a": "net",
+      "b": "bridge",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          30,
+          3,
+          14
+        ],
+        [
+          23,
+          3,
+          14
+        ],
+        [
+          23,
+          6,
+          24
+        ],
+        [
+          30,
+          6,
+          24
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    }
+  }
+}

@@ -676,6 +676,17 @@ public final class FixtureLighting {
   eachInfluenceCell(source,key->influence.computeIfAbsent(key,ignored->new ArrayList<>()).add(source));
  }
  public List<Source> sources(){return List.copyOf(sources);}
+ /** Conservative fixture reach for native faces whose corners miss a lamp. */
+ boolean nativeLoadNear(double x0,double y0,double z0,double x1,double y1,double z1){
+  for(var light:sources){
+   if(light.room==HouseMap.EXTRACTION_ROOM)continue;
+   double dx=Math.max(0,Math.max(x0-light.x,light.x-x1));
+   double dy=Math.max(0,Math.max(y0-light.y,light.y-y1));
+   double dz=Math.max(0,Math.max(z0-light.z,light.z-z1));
+   if(dx*dx+dy*dy+dz*dz<=light.radius*light.radius)return true;
+  }
+  return false;
+ }
  /** Opening a single portal changes only lights whose radius intersects it.
   * Mark their entire influence cells: rays can reach receivers far from the
   * actual door, so testing just the door cell would leak light through walls. */

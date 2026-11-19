@@ -1,0 +1,32 @@
+{
+  "wall_plane_x": [
+    29.92,
+    30.08
+  ],
+  "run_z": [
+    24,
+    36
+  ],
+  "sill": 3.6,
+  "header": 6.05,
+  "wall_head": 8.1,
+  "opening_z": [
+    32.38,
+    33.62
+  ],
+  "retired_wall_components": [
+    "Header upper-lobby E",
+    "Header assembly W",
+    "Flat route shell Wall upper-lobby E",
+    "Flat route shell Wall upper-lobby E.001",
+    "Flat route shell Wall assembly W",
+    "Flat route shell Wall assembly W.001"
+  ],
+  "retained_native_components": 506,
+  "triangle_count_added": 36,
+  "exports": {
+    "blend": "bd24398fc443f4df5948eba839bae6a1847b0b7d5ae40bd6727d4272cb1a5b4e",
+    "glb": "ee76c4d559237fa8e6a0d9cd79ba9cfd62e803a00c6c9d284fb752ed3cba54e2",
+    "hcs2": "0b0c35536f4cf662fdcb359536ef6d0669e4e70b139ce5496d8e5de472915c64"
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "id": "CHURCH",
+  "status": "SECURE_SACRED_WING_ROOF_CONSTRUCTION_CANDIDATE_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/arrival-bearing-pass/church/construction.json",
+  "source_contract_sha256": "98b0aed5798e4a56b102c499396313995ac507f0678242374e8ebab42d785eb7",
+  "source_glb": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.glb",
+  "source_glb_sha256": "6c84ab22e599b8ed9e00b04d7ab52ec0f08955b267023086a0cc64f37f54eee7",
+  "source_physics": "development/levels/rebuild/arrival-bearing-pass/church/supported-arrival.hcs2",
+  "source_physics_sha256": "749e68015c83f9f0a6533014bfd7dbf50d0a2aa8637a5b0d8d370e5aff34631b",
+  "before_layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+  "before_layout_sha256": "a59c9747db58f7b573ac966b176e4b62b23440b4697fb7050bf27f146841d430",
+  "layout": "development/levels/rebuild/arrival-bearing-pass/church/authored-layout.json",
+  "layout_sha256": "a59c9747db58f7b573ac966b176e4b62b23440b4697fb7050bf27f146841d430",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "306:L33 flight0 step1",
+    "307:L33 flight0 step2",
+    "308:L33 flight0 step3",
+    "309:L33 flight0 step4",
+    "310:L33 flight0 step5",
+    "311:L33 flight0 step6",
+    "312:L33 flight0 step7",
+    "313:L33 flight0 step8",
+    "314:L33 flight0 step9",
+    "315:L33 flight0 step10",
+    "316:L33 flight0 step11",
+    "317:L33 flight0 step12",
+    "318:L33 flight0 step13",
+    "319:L33 flight0 step14",
+    "320:L33 flight0 step15",
+    "321:L33 flight0 step16",
+    "322:L33 flight0 step17",
+    "323:L34 flight0 step1",
+    "324:L34 flight0 step2",
+    "325:L34 flight0 step3",
+    "326:L34 flight0 step4",
+    "327:L34 flight0 step5",
+    "328:L34 flight0 step6",
+    "329:L34 flight0 step7",
+    "330:L34 flight0 step8",
+    "331:L34 flight0 step9",
+    "332:L34 flight0 step10",
+    "333:L34 flight0 step11",
+    "334:L34 flight0 step12",
+    "335:L34 flight0 step13",
+    "336:L34 flight0 step14",
+    "337:L34 flight0 step15",
+    "338:L34 flight0 step16",
+    "339:L34 flight0 step17",
+    "340:L35 flight0 step1",
+    "341:L35 flight0 step2",
+    "342:L35 flight0 step3",
+    "343:L35 flight0 step4",
+    "344:L35 flight0 step5",
+    "345:L35 flight0 step6",
+    "346:L35 flight0 step7",
+    "347:L35 flight0 step8",
+    "348:L35 flight0 step9",
+    "349:L35 flight0 step10",
+    "350:L35 flight0 step11",
+    "351:L35 flight0 step12",
+    "352:L35 flight0 step13",
+    "353:L35 flight0 step14",
+    "354:L35 flight0 step15",
+    "355:L35 flight0 step16",
+    "356:L35 flight0 step17"
+  ],
+  "stair_components": [
+    "306:L33 flight0 step1",
+    "307:L33 flight0 step2",
+    "308:L33 flight0 step3",
+    "309:L33 flight0 step4",
+    "310:L33 flight0 step5",
+    "311:L33 flight0 step6",
+    "312:L33 flight0 step7",
+    "313:L33 flight0 step8",
+    "314:L33 flight0 step9",
+    "315:L33 flight0 step10",
+    "316:L33 flight0 step11",
+    "317:L33 flight0 step12",
+    "318:L33 flight0 step13",
+    "319:L33 flight0 step14",
+    "320:L33 flight0 step15",
+    "321:L33 flight0 step16",
+    "322:L33 flight0 step17",
+    "323:L34 flight0 step1",
+    "324:L34 flight0 step2",
+    "325:L34 flight0 step3",
+    "326:L34 flight0 step4",
+    "327:L34 flight0 step5",
+    "328:L34 flight0 step6",
+    "329:L34 flight0 step7",
+    "330:L34 flight0 step8",
+    "331:L34 flight0 step9",
+    "332:L34 flight0 step10",
+    "333:L34 flight0 step11",
+    "334:L34 flight0 step12",
+    "335:L34 flight0 step13",
+    "336:L34 flight0 step14",
+    "337:L34 flight0 step15",
+    "338:L34 flight0 step16",
+    "339:L34 flight0 step17",
+    "340:L35 flight0 step1",
+    "341:L35 flight0 step2",
+    "342:L35 flight0 step3",
+    "343:L35 flight0 step4",
+    "344:L35 flight0 step5",
+    "345:L35 flight0 step6",
+    "346:L35 flight0 step7",
+    "347:L35 flight0 step8",
+    "348:L35 flight0 step9",
+    "349:L35 flight0 step10",
+    "350:L35 flight0 step11",
+    "351:L35 flight0 step12",
+    "352:L35 flight0 step13",
+    "353:L35 flight0 step14",
+    "354:L35 flight0 step15",
+    "355:L35 flight0 step16",
+    "356:L35 flight0 step17"
+  ],
+  "glb_sha256": "84ee88f60592122265f88493ea1398331f1199dfc5133285320d2af346ecf9c1",
+  "physics_sha256": "cd59f34898b1a431da79a35abb6943d1133b3654860b526defba0cf0bcc014bf",
+  "arrival_bearing": {
+    "link": "L01",
+    "anchor": [
+      22.0,
+      0,
+      51.5
+    ],
+    "route_width": 1.2,
+    "extension_metres": 0.35,
+    "contact_owner": "L01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        21.4,
+        51.85
+      ],
+      [
+        21.4,
+        51.5
+      ],
+      [
+        22.6,
+        51.5
+      ],
+      [
+        22.6,
+        51.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          21.4,
+          51.85
+        ],
+        [
+          21.4,
+          51.5
+        ],
+        [
+          22.6,
+          51.5
+        ],
+        [
+          22.6,
+          51.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing CHURCH 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": 50,
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f",
+  "blend_sha256": "a77f21b5b54b9c6b88ee7a86895e0860896aaf8baf4941955b35e41925a91891",
+  "roof_generator_sha256": "df3d626b33285cd350a451cd113571b615df645d7e59618a1f67711b424b9c58",
+  "geometry_unchanged": false,
+  "roof_wings": [
+    {
+      "wing": "nave-and-choir",
+      "bounds": [
+        18,
+        12,
+        26,
+        34
+      ],
+      "ceiling": 6,
+      "ridge": 9.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "vestibule",
+      "bounds": [
+        18,
+        34,
+        26,
+        39
+      ],
+      "ceiling": 3,
+      "ridge": 4.74,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "chancel",
+      "bounds": [
+        18,
+        6,
+        26,
+        12
+      ],
+      "ceiling": 5,
+      "ridge": 7.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "side-chapel",
+      "bounds": [
+        26,
+        14,
+        34,
+        26
+      ],
+      "ceiling": 4,
+      "ridge": 6.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "vestry",
+      "bounds": [
+        26,
+        6,
+        34,
+        14
+      ],
+      "ceiling": 3,
+      "ridge": 5.04,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "music-and-crypt-entry",
+      "bounds": [
+        26,
+        26,
+        34,
+        34
+      ],
+      "ceiling": 6,
+      "ridge": 8.040000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "belfry",
+      "bounds": [
+        10,
+        26,
+        18,
+        34
+      ],
+      "ceiling": 9,
+      "ridge": 12.74,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "hip",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "confessional-and-consultation",
+      "bounds": [
+        10,
+        18,
+        18,
+        26
+      ],
+      "ceiling": 3,
+      "ridge": 5.04,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    }
+  ],
+  "roof_coverage_rays": 616,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/roof-construction-batch/church.png",
+      "sha256": "6f2ad52fe2496d55f73003d2e56c7903017a71ae515039bd7cbc4ad9fd48002e",
+      "type": "native exported roof construction overview, not gameplay"
+    }
+  ],
+  "aboveground_indoor_roof_probes": 207,
+  "wing_plan_builder": "tools/build_secure_sacred_roof_batch.py",
+  "wing_plan_sha256": "6f791db6028130471f88e4bfaa06743bb7d8142ff8af8a297bcecd24dec2706b",
+  "remaining": "Roof-step flashing/drainage, structural join review, complete terrain/room connectivity and actual runtime integration remain open. Roofs do not add accessible search spaces or satisfy availability gates.",
+  "roof_generator_source": "tools/build_roster_enclosed_roofs.py"
+}

@@ -1,0 +1,267 @@
+{
+  "id": "WLD-17",
+  "status": "ACTUAL_STAIR_END_SUPPORT_CANDIDATE_FULL_ROUTE_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-17/closed-floors.glb",
+  "source_glb_sha256": "16e14a7dc6105b52c7a5c8c3ea7032b0ed32486211922302ccae4568ca971b75",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-17/closed-floors.hcs2",
+  "source_physics_sha256": "f48d004caddf529a36b5fcb49528328dd7bd72c09b9b0f90ca0f595a0f870bfd",
+  "layout": "development/levels/layouts/wld-17/layout.json",
+  "layout_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37",
+  "targeted_segments": [
+    {
+      "link": "route-11",
+      "segment": 1
+    },
+    {
+      "link": "route-12",
+      "segment": 1
+    }
+  ],
+  "new_parts": 2,
+  "new_triangles": 52,
+  "platforms": [],
+  "landing_trims": [
+    {
+      "name": "Trimmed landing WLD-17 route-11 0",
+      "source_mesh": "route-11 landing0",
+      "link": "route-11",
+      "segment": 1,
+      "cut_polygon": [
+        [
+          12.347826086956522,
+          16.75
+        ],
+        [
+          20.05,
+          16.75
+        ],
+        [
+          20.05,
+          15.25
+        ],
+        [
+          12.347826086956522,
+          15.25
+        ]
+      ],
+      "removed_top_area_m2": 0.3016304347825951,
+      "final_tread_metres": 0.34782608695652173,
+      "pivot_preserved": true,
+      "source_uv_material_layers_copied": true
+    },
+    {
+      "name": "Trimmed landing WLD-17 route-12 1",
+      "source_mesh": "route-12 landing0",
+      "link": "route-12",
+      "segment": 1,
+      "cut_polygon": [
+        [
+          48.34782608695652,
+          16.75
+        ],
+        [
+          56.05,
+          16.75
+        ],
+        [
+          56.05,
+          15.25
+        ],
+        [
+          48.34782608695652,
+          15.25
+        ]
+      ],
+      "removed_top_area_m2": 0.3016304347826235,
+      "final_tread_metres": 0.34782608695652173,
+      "pivot_preserved": true,
+      "source_uv_material_layers_copied": true
+    }
+  ],
+  "removed_source_meshes": [
+    "route-11 landing0",
+    "route-12 landing0"
+  ],
+  "removed_native_parts": [
+    "179:route-11 landing0",
+    "204:route-12 landing0"
+  ],
+  "decisions": [
+    {
+      "link": "route-11",
+      "segment": 1,
+      "end": "low",
+      "authored_point": [
+        20,
+        0,
+        16
+      ],
+      "actual_existing_top_receivers": [
+        "Floor barracks"
+      ],
+      "new_parts": []
+    },
+    {
+      "link": "route-11",
+      "segment": 1,
+      "end": "high",
+      "authored_point": [
+        12,
+        4,
+        16
+      ],
+      "actual_existing_top_receivers": [
+        "Floor magazine.001"
+      ],
+      "new_parts": []
+    },
+    {
+      "link": "route-12",
+      "segment": 1,
+      "end": "low",
+      "authored_point": [
+        56,
+        0,
+        16
+      ],
+      "actual_existing_top_receivers": [
+        "Floor plant"
+      ],
+      "new_parts": []
+    },
+    {
+      "link": "route-12",
+      "segment": 1,
+      "end": "high",
+      "authored_point": [
+        48,
+        4,
+        16
+      ],
+      "actual_existing_top_receivers": [
+        "Floor service.001"
+      ],
+      "new_parts": []
+    }
+  ],
+  "stair_components": [
+    "129:route-02 landing0",
+    "130:route-02 flight0 step1",
+    "131:route-02 flight0 step2",
+    "132:route-02 flight0 step3",
+    "133:route-02 flight0 step4",
+    "134:route-02 flight0 step5",
+    "135:route-02 flight0 step6",
+    "136:route-02 flight0 step7",
+    "137:route-02 flight0 step8",
+    "138:route-02 flight0 step9",
+    "139:route-02 flight0 step10",
+    "140:route-02 flight0 step11",
+    "141:route-02 flight0 step12",
+    "142:route-03 landing0",
+    "143:route-03 flight0 step1",
+    "144:route-03 flight0 step2",
+    "145:route-03 flight0 step3",
+    "146:route-03 flight0 step4",
+    "147:route-03 flight0 step5",
+    "148:route-03 flight0 step6",
+    "149:route-03 flight0 step7",
+    "150:route-03 flight0 step8",
+    "151:route-03 flight0 step9",
+    "152:route-03 flight0 step10",
+    "153:route-03 flight0 step11",
+    "154:route-03 flight0 step12",
+    "161:route-10 landing0",
+    "162:route-10 flight0 step1",
+    "163:route-10 flight0 step2",
+    "164:route-10 flight0 step3",
+    "165:route-10 flight0 step4",
+    "166:route-10 flight0 step5",
+    "167:route-10 flight0 step6",
+    "168:route-10 flight0 step7",
+    "169:route-10 flight0 step8",
+    "170:route-10 flight0 step9",
+    "171:route-10 flight0 step10",
+    "172:route-10 flight0 step11",
+    "173:route-10 flight0 step12",
+    "174:route-10 flight0 step13",
+    "175:route-10 flight0 step14",
+    "176:route-10 flight0 step15",
+    "177:route-10 flight0 step16",
+    "178:route-10 flight0 step17",
+    "180:route-11 landing2",
+    "181:route-11 flight0 step1",
+    "182:route-11 flight0 step2",
+    "183:route-11 flight0 step3",
+    "184:route-11 flight0 step4",
+    "185:route-11 flight0 step5",
+    "186:route-11 flight0 step6",
+    "187:route-11 flight0 step7",
+    "188:route-11 flight0 step8",
+    "189:route-11 flight0 step9",
+    "190:route-11 flight0 step10",
+    "191:route-11 flight0 step11",
+    "192:route-11 flight0 step12",
+    "193:route-11 flight0 step13",
+    "194:route-11 flight0 step14",
+    "195:route-11 flight0 step15",
+    "196:route-11 flight0 step16",
+    "197:route-11 flight0 step17",
+    "198:route-11 flight0 step18",
+    "199:route-11 flight0 step19",
+    "200:route-11 flight0 step20",
+    "201:route-11 flight0 step21",
+    "202:route-11 flight0 step22",
+    "203:route-11 flight0 step23",
+    "205:route-12 landing2",
+    "206:route-12 flight0 step1",
+    "207:route-12 flight0 step2",
+    "208:route-12 flight0 step3",
+    "209:route-12 flight0 step4",
+    "210:route-12 flight0 step5",
+    "211:route-12 flight0 step6",
+    "212:route-12 flight0 step7",
+    "213:route-12 flight0 step8",
+    "214:route-12 flight0 step9",
+    "215:route-12 flight0 step10",
+    "216:route-12 flight0 step11",
+    "217:route-12 flight0 step12",
+    "218:route-12 flight0 step13",
+    "219:route-12 flight0 step14",
+    "220:route-12 flight0 step15",
+    "221:route-12 flight0 step16",
+    "222:route-12 flight0 step17",
+    "223:route-12 flight0 step18",
+    "224:route-12 flight0 step19",
+    "225:route-12 flight0 step20",
+    "226:route-12 flight0 step21",
+    "227:route-12 flight0 step22",
+    "228:route-12 flight0 step23",
+    "Trimmed landing WLD-17 route-11 0",
+    "Trimmed landing WLD-17 route-12 1"
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1523764,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      179,
+      204
+    ]
+  },
+  "glb_sha256": "fd52b03c98c7c17e1eff251a7b36441d23893ac5e3a66c8b7d1707cf0d460129",
+  "physics_sha256": "2799840268f0a2380313655d37ae258c84cd9830bd658df23f24e7be2506073a",
+  "generator_sha256": "bccc24db381647ee99214ea387c402c29d34b3f80dd57763a0dd1ba2367bf3b0",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-whole-site.png",
+      "sha256": "dd58194ef2a2c34528e3e9fee8976ff09164474f8a43fd32b7a330032cbaf87e",
+      "type": "native full scene"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-17-new-landings.png",
+      "sha256": "37ad0c6079089e286e767dc44bb3f97576e75c0265a42256fb79fc89c4070560",
+      "type": "native isolated actual landing changes; context hidden"
+    }
+  ],
+  "remaining": "Independent solids/material/pivot/native checks and all25flat/continuous stair regressions. Wall/terrain penetrations, crossed flights, circulation, supports/guards and actual runtime/network/hardware gates remain open."
+}

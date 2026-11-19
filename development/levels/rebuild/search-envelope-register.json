@@ -131,10 +131,10 @@
       "id": "WLD-05",
       "folder": "wld-05",
       "maximum": 40,
-      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
-      "accessible": null,
+      "status": "NAMED_NATIVE_SPACES_COUNTED_CONTAINMENT_AND_RUNTIME_OPEN",
+      "accessible": 17,
       "sealed": null,
-      "evidence": null
+      "evidence": "development/levels/rebuild/mine-yard-pass/checkpoint.json"
     },
     {
       "id": "WLD-06",
@@ -149,10 +149,10 @@
       "id": "WLD-07",
       "folder": "wld-07",
       "maximum": 40,
-      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
-      "accessible": null,
+      "status": "NAMED_NATIVE_SPACES_COUNTED_CONTAINMENT_AND_RUNTIME_OPEN",
+      "accessible": 13,
       "sealed": null,
-      "evidence": null
+      "evidence": "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
     },
     {
       "id": "WLD-08",
@@ -257,10 +257,10 @@
       "id": "WLD-07-MORTUARY",
       "folder": "wld-07-mortuary",
       "maximum": 40,
-      "status": "ROOM_LEVEL_ENVELOPE_AUDIT_REQUIRED",
-      "accessible": null,
+      "status": "NAMED_NATIVE_SPACES_COUNTED_CONTAINMENT_AND_RUNTIME_OPEN",
+      "accessible": 22,
       "sealed": null,
-      "evidence": null
+      "evidence": "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
     }
   ]
 }

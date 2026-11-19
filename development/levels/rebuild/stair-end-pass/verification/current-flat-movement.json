@@ -1,0 +1,183 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 11
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 11
+      },
+      "current_lanes": {
+        "samples": 4182,
+        "valid_standing": 4004,
+        "invalid_standing": 178,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 33,
+          "NO_FOOT_SUPPORT_0.0_0.22": 8,
+          "NO_CENTRE_SUPPORT": 117,
+          "NO_FOOT_SUPPORT_0.22_0.0": 1,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 9,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 10
+        },
+        "physical_components": [
+          [
+            "43:Wall fish S",
+            26
+          ],
+          [
+            "Flat route shell Wall fish W",
+            7
+          ]
+        ]
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 11
+      },
+      "current_lanes": {
+        "samples": 4920,
+        "valid_standing": 3852,
+        "invalid_standing": 1068,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "NO_CENTRE_SUPPORT": 947,
+          "NO_FOOT_SUPPORT_0.0_0.22": 21,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 18,
+          "NO_FOOT_SUPPORT_0.22_0.0": 19,
+          "PHYSICAL_COMPONENT": 57,
+          "FOOT_HEIGHT_SPREAD": 2
+        },
+        "physical_components": [
+          [
+            "80:Ceiling cap tunnel",
+            27
+          ],
+          [
+            "84:Ceiling cap tunnel.004",
+            27
+          ],
+          [
+            "171:L20 flight0 step2",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 9
+      },
+      "current_lanes": {
+        "samples": 4701,
+        "valid_standing": 4130,
+        "invalid_standing": 571,
+        "reasons": {
+          "FOOT_HEIGHT_SPREAD": 4,
+          "NO_FOOT_SUPPORT_0.22_0.0": 35,
+          "NO_CENTRE_SUPPORT": 474,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 37,
+          "NO_FOOT_SUPPORT_0.0_0.22": 13,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+          "PHYSICAL_COMPONENT": 5
+        },
+        "physical_components": [
+          [
+            "terrain-site-0-0:surface",
+            5
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-06": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-guard-pass/wld-06/construction.json",
+        "contract_sha256": "acdf41528e7e4bc413606bc1aba8c2077ef2831b0e5272499cc09a0d546f29cd",
+        "layout": "development/levels/rebuild/orthogonal-stair-pass/wld-06/authored-layout.json",
+        "layout_sha256": "2a07100b96b1150b16fd6e79ed47d2d873495a5eea88e3783fed69552bdd302f",
+        "native": "development/levels/rebuild/stair-guard-pass/wld-06/guarded-stairs.hcs2",
+        "native_sha256": "9fd0698a76fe72757c018ea3a5446a75711643ccfe2f61761c3e7c937187a406"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/stair-end-pass/wld-06/construction.json",
+        "contract_sha256": "38b6003ae303db33f0cf61ce29f0c4f6aa54da2b109872012b5381681c39efa1",
+        "layout": "development/levels/rebuild/stair-end-pass/wld-06/authored-layout.json",
+        "layout_sha256": "47f85ecfe5f400fadb6d92c9e1668b32c8bf5f8b27cf53e23adbc703ce8bc93f",
+        "native": "development/levels/rebuild/stair-end-pass/wld-06/finished-ends.hcs2",
+        "native_sha256": "9d69730ef93913151d60b3339071605fc21bf827929a994f183b4ccfa7b6f066"
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-guard-pass/wld-08/construction.json",
+        "contract_sha256": "14a76cd3a232888894e1f85b84d3ab915ad84e9e60e9747ae84edb49184cc66a",
+        "layout": "development/levels/rebuild/orthogonal-stair-pass/wld-08/authored-layout.json",
+        "layout_sha256": "f52b795b0661867f4f4de7efb526a62605a5c8f1377920a276444f3969348738",
+        "native": "development/levels/rebuild/stair-guard-pass/wld-08/guarded-stairs.hcs2",
+        "native_sha256": "0fe10b08d0381f861b30ce20c746788085298b1ce81afc38cb855f29259a009e"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/stair-end-pass/wld-08/construction.json",
+        "contract_sha256": "e9442f18e08252bfd5774d12a3a67281021804f40e62ede05c0bd1a4c3c21fb4",
+        "layout": "development/levels/rebuild/orthogonal-stair-pass/wld-08/authored-layout.json",
+        "layout_sha256": "f52b795b0661867f4f4de7efb526a62605a5c8f1377920a276444f3969348738",
+        "native": "development/levels/rebuild/stair-end-pass/wld-08/finished-ends.hcs2",
+        "native_sha256": "3e17a546d4e6a3f0ae1edcc35198dd13e484719d5cb1ff4f932b5459da8b853d"
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-guard-pass/wld-12/construction.json",
+        "contract_sha256": "f6b1ba3d9ec51221bd0f2cea884e0f30cf3996ee918510cce43bbefc0040cc80",
+        "layout": "development/levels/rebuild/orthogonal-stair-pass/wld-12/authored-layout.json",
+        "layout_sha256": "806532626a0efe8315ed240c95a8482cf0322bb37842478603f5aae273c64367",
+        "native": "development/levels/rebuild/stair-guard-pass/wld-12/guarded-stairs.hcs2",
+        "native_sha256": "eb19944cdc489a9bd92441253455f6016b9a6b454060afe5c78b05757f2ef591"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/stair-end-pass/wld-12/construction.json",
+        "contract_sha256": "8b58aa269ccb784309d70e7e9b8683cef4e24099c0069748abefd07db7bdbc19",
+        "layout": "development/levels/rebuild/orthogonal-stair-pass/wld-12/authored-layout.json",
+        "layout_sha256": "806532626a0efe8315ed240c95a8482cf0322bb37842478603f5aae273c64367",
+        "native": "development/levels/rebuild/stair-end-pass/wld-12/finished-ends.hcs2",
+        "native_sha256": "47b56fbc85061ad253238f08f6af3c4e8bb8f5932f171533bf03a4939a7e740a"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/stair-guard-pass/roster.json": "d94d74c12aa4f86fd6cdd3c5e5d2e3731235d5e599e21728f2be7696101bec2b"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/stair-end-pass/verification/current-flat-failure-contacts.tsv": "21890fe63e1a575cd4d75375f98d45c9d5a681c9567b8d8c76c429bb8557986f",
+    "development/levels/rebuild/stair-end-pass/verification/current-flat-failure-input.tsv": "4afc30b3bee8efc620a2c3669ae80b9392fd942cdc2fe12d1daeec1092bebc89",
+    "development/levels/rebuild/stair-end-pass/verification/current-flat-lane-input.tsv": "395fafac4e1837d91d8acb36532cfc9f2a369241e7ad0886837d8786f0cc22df",
+    "development/levels/rebuild/stair-end-pass/verification/current-flat-lane-names.tsv": "64d0ad86eb65872ec6060c0c869e2f88fa080b9c71617a7304bd778b986c9a38",
+    "development/levels/rebuild/stair-end-pass/verification/current-flat-lanes.tsv": "b6404ec1978f41a7e9947dd589a2fe1bd7e449144991d2dd4a982ee9273f07db",
+    "development/levels/rebuild/stair-end-pass/verification/current-flat-links.tsv": "02ea8c99641ecc15366fdd27579f42f9157631f5840664c206f9ada948821c80",
+    "development/levels/rebuild/stair-end-pass/verification/current-flat-names.tsv": "ff896ccc2cb845d446a2f92e5b8d0196f3b985bec9200edc05cb738bb044b470",
+    "development/levels/rebuild/stair-end-pass/verification/current-flat-paths.tsv": "f869c7006f11cf783b2912d1561fec97096309887ddd7c5c998304a502000b1a"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

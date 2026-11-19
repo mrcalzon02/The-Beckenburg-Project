@@ -1,0 +1,25 @@
+HOUSE first-principles-functional-furnishings-v1-c788f7e17276da3e owner=6 initial=Vec[x=15.8, y=2.8, z=17.1]
+OLD 1 position=Body[x=15.49, y=2.8, z=17.1, heading=270, room=6] nearest=outside reach
+OLD 2 position=Body[x=15.18, y=2.8, z=17.1, heading=270, room=6] nearest=outside reach
+OLD 3 position=Body[x=14.87, y=2.8, z=17.1, heading=270, room=6] nearest=outside reach
+OLD 4 position=Body[x=14.559999999999999, y=2.8, z=17.1, heading=270, room=6] nearest=outside reach
+OLD 5 position=Body[x=14.249999999999998, y=2.8, z=17.1, heading=270, room=6] nearest=outside reach
+UPPER Portal[id=22, a=6, b=12, x=12.0, y=2.8, z=17.6, width=1.25, alongX=false, kind=window, loss=3.0] distance=3.8327535793473606
+UPPER Portal[id=23, a=6, b=13, x=15.0, y=2.8, z=20.5, width=1.25, alongX=true, kind=window, loss=3.0] distance=3.492849839314595
+UPPER Portal[id=24, a=7, b=12, x=15.0, y=2.8, z=10.0, width=1.25, alongX=true, kind=window, loss=3.0] distance=7.144928271158502
+UPPER Portal[id=25, a=8, b=12, x=19.8, y=2.8, z=10.0, width=1.25, alongX=true, kind=window, loss=3.0] distance=8.149233092751736
+UPPER Portal[id=26, a=5, b=13, x=19.8, y=2.8, z=20.5, width=1.25, alongX=true, kind=window, loss=3.0] distance=5.2497618993626745
+FOUND window=23 stable=Vec[x=15.8, y=2.8, z=18.959999999999994] steps=[Motion[dx=0, dz=1], Motion[dx=0, dz=1], Motion[dx=0, dz=1], Motion[dx=0, dz=1], Motion[dx=0, dz=1], Motion[dx=0, dz=1]]
+FARMHOUSE production-2026-10-20-lived-location-v1-51c40097d2dcf39e owner=6 initial=Vec[x=16.0, y=3.0, z=23.0]
+OLD 1 position=Body[x=15.69, y=3.0, z=23.0, heading=270, room=6] nearest=outside reach
+OLD 2 position=Body[x=15.379999999999999, y=3.0, z=23.0, heading=270, room=6] nearest=outside reach
+OLD 3 position=Body[x=15.069999999999999, y=3.0, z=23.0, heading=270, room=6] nearest=outside reach
+OLD 4 position=Body[x=14.759999999999998, y=3.0, z=23.0, heading=270, room=6] nearest=outside reach
+OLD 5 position=Body[x=14.449999999999998, y=3.0, z=23.0, heading=270, room=6] nearest=outside reach
+OLD 6 position=Body[x=14.139999999999997, y=3.0, z=23.0, heading=270, room=6] nearest=outside reach
+OLD 7 position=Body[x=13.829999999999997, y=3.0, z=23.0, heading=270, room=6] nearest=18
+OLD 8 position=Body[x=13.519999999999996, y=3.0, z=23.0, heading=270, room=6] nearest=18
+OLD 9 position=Body[x=13.209999999999996, y=3.0, z=23.0, heading=270, room=6] nearest=18
+UPPER Portal[id=18, a=6, b=12, x=12.0, y=3.0, z=23.0, width=1.25, alongX=false, kind=window, loss=3.0] distance=4.0
+UPPER Portal[id=19, a=7, b=12, x=12.0, y=3.0, z=15.0, width=1.25, alongX=false, kind=window, loss=3.0] distance=8.94427190999916
+FOUND window=18 stable=Vec[x=13.829999999999997, y=3.0, z=23.0] steps=[Motion[dx=-1, dz=0], Motion[dx=-1, dz=0], Motion[dx=-1, dz=0], Motion[dx=-1, dz=0], Motion[dx=-1, dz=0], Motion[dx=-1, dz=0], Motion[dx=-1, dz=0]]

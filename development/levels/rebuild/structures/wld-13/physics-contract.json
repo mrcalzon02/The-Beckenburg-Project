@@ -1,0 +1,147 @@
+{
+  "source_glb_sha256": "d7a3bc3daa6449abcabde4dd3e23d0ab22d7b67e95d52b6702fe659bdee7ff04",
+  "physics_sha256": "6484039ad47ba100f36d4c80f5857940e3632b218c7c9374a4c36011a12cbac8",
+  "exporter_sha256": "0eebf9807ce7c05feaf327ec33e7ced6557034c1f7e579cc05cadad89d07284b",
+  "stair_components": [
+    "127:L19 flight0 step1",
+    "128:L19 flight0 step2",
+    "129:L19 flight0 step3",
+    "130:L19 flight0 step4",
+    "131:L19 flight0 step5",
+    "132:L19 flight0 step6",
+    "133:L19 flight0 step7",
+    "134:L19 flight0 step8",
+    "135:L19 flight0 step9",
+    "136:L19 flight0 step10",
+    "137:L19 flight0 step11",
+    "138:L19 flight0 step12",
+    "139:L19 flight0 step13",
+    "140:L19 flight0 step14",
+    "141:L19 flight0 step15",
+    "142:L19 flight0 step16",
+    "143:L19 flight0 step17"
+  ],
+  "tread_centres": [
+    {
+      "link": "L19",
+      "component": "127:L19 flight0 step1",
+      "x": 35.735294342041016,
+      "y": 0.1764705777168274,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "128:L19 flight0 step2",
+      "x": 35.20588302612305,
+      "y": 0.3529411852359772,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "129:L19 flight0 step3",
+      "x": 34.67647171020508,
+      "y": 0.529411792755127,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "130:L19 flight0 step4",
+      "x": 34.14706039428711,
+      "y": 0.7058823108673096,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "131:L19 flight0 step5",
+      "x": 33.617645263671875,
+      "y": 0.8823529481887817,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "132:L19 flight0 step6",
+      "x": 33.088233947753906,
+      "y": 1.058823585510254,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "133:L19 flight0 step7",
+      "x": 32.55882263183594,
+      "y": 1.2352941036224365,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "134:L19 flight0 step8",
+      "x": 32.02941131591797,
+      "y": 1.4117646217346191,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "135:L19 flight0 step9",
+      "x": 31.5,
+      "y": 1.5882353782653809,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "136:L19 flight0 step10",
+      "x": 30.97058868408203,
+      "y": 1.7647058963775635,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "137:L19 flight0 step11",
+      "x": 30.441177368164062,
+      "y": 1.941176414489746,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "138:L19 flight0 step12",
+      "x": 29.91176414489746,
+      "y": 2.117647171020508,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "139:L19 flight0 step13",
+      "x": 29.382352828979492,
+      "y": 2.2941174507141113,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "140:L19 flight0 step14",
+      "x": 28.852941513061523,
+      "y": 2.470588207244873,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "141:L19 flight0 step15",
+      "x": 28.323530197143555,
+      "y": 2.6470589637756348,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "142:L19 flight0 step16",
+      "x": 27.794116973876953,
+      "y": 2.8235292434692383,
+      "z": 41.0
+    },
+    {
+      "link": "L19",
+      "component": "143:L19 flight0 step17",
+      "x": 27.264705657958984,
+      "y": 3.0,
+      "z": 41.0
+    }
+  ],
+  "dropped_degenerate_triangles": 0,
+  "scope": "Candidate native collision; gameplay/ownership/terrain/network gates remain open"
+}

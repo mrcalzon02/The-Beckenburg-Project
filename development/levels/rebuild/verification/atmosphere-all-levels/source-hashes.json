@@ -1,0 +1,16 @@
+{
+  "src/main/java/org/beckenburg/LevelAtmosphere.java": "137baba0c408f1a180c4dd89285257866da3ca69843aa7fd4dde3127b0b4150e",
+  "src/main/java/org/beckenburg/SceneRenderer.java": "d7978215d70aba3075e5e45c82f2d176bc27a1c182dd7b1a55e669ea093560f6",
+  "src/main/java/org/beckenburg/GpuWorldRenderer.java": "25aebd309e524afcba3263743dd28243162c1d89a8cbadfc1e85e682856088c2",
+  "src/main/java/org/beckenburg/DirectionalSprites.java": "3192c77c7369f735f2e04b58ae11e182dde5f7cc4d11bd940c4becccc8449699",
+  "src/main/java/org/beckenburg/SafeAreaHaze.java": "b9d37884305a28efd5df2a198148849e6221a794681fc0cad9a21b9201d1b172",
+  "src/main/java/org/beckenburg/EntityFootShadow.java": "06b2f325ceff682b4951f3d7036965d887976cec5d988d54934aa90e723fe916",
+  "gpu-client/src/main/java/org/beckenburg/gpu/OpenGlWorldRenderer.java": "30b5e06a4c61a9961370c5c4d1ede23b9b34d23c71df5c7d38bb288d51af2772",
+  "src/main/java/dev/mrcalzon/weather/WeatherSky.java": "40785a60051e65b4a891b9dd5bee13ce6c70ea56483d78d597c73fe623968816",
+  "src/test/java/org/beckenburg/LevelAtmosphereTest.java": "361cffbc354fc00066f94c45048560e7ae763483ac02e8fc830e7654a3b1c2ea",
+  "src/test/java/org/beckenburg/AllLevelAtmosphereCapture.java": "9459f966a609e5314ae6bf67fdd2e2588b91703c0af9b0eaf0a2f6050a08b334",
+  "gpu-client/src/test/java/org/beckenburg/gpu/LevelAtmosphereGpuCapture.java": "ee3bef6ee54e7d2c189d770d723dc979c4e2ecbffa62c4fa92fdfec95d2c8a7f",
+  "tools/verify_level_atmosphere.py": "79636af669a105eccc760c67d65750bb2f08daf00f07b3862e231e03d8ba2835",
+  "build.cmd": "3117b0b91b7aa0d856c7c7f895eeea56312466b1334cc4e69b9b95a745612c69",
+  "regression-tests.txt": "9574da4aa11ac6bf7489b98c073365353e1ac67c230ac87a196925abe28c626d"
+}

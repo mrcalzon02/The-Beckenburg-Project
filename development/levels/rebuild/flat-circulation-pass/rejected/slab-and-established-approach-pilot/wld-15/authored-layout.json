@@ -1,0 +1,1901 @@
+{
+  "version": 1,
+  "id": "WLD-15",
+  "title": "MV Saint Elara",
+  "region": "Beckenburg coast and hinterland",
+  "scale": "Measured rough site / metres",
+  "status": "rough-layout-only",
+  "intent": "A retired catcher/processor permanently moored for investigation. Processing, cold storage, crew life and bridge occupy different decks; the ship does not sail.",
+  "site_bounds": [
+    0,
+    -14,
+    64,
+    98
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Quayside van apron",
+      "bounds": [
+        24,
+        80,
+        40,
+        92
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Quayside van apron"
+    },
+    {
+      "id": "entry",
+      "name": "Quay cargo lane",
+      "bounds": [
+        24,
+        76,
+        40,
+        80
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Quay cargo lane"
+    },
+    {
+      "id": "quay",
+      "name": "Mooring quay",
+      "bounds": [
+        24,
+        64,
+        40,
+        76
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Mooring quay"
+    },
+    {
+      "id": "portpier",
+      "name": "Port service pier",
+      "bounds": [
+        16,
+        40,
+        22,
+        72
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Port service pier"
+    },
+    {
+      "id": "aft",
+      "name": "Aft working deck",
+      "bounds": [
+        22,
+        40,
+        42,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Aft working deck"
+    },
+    {
+      "id": "processing",
+      "name": "Fish processing hall",
+      "bounds": [
+        24,
+        8,
+        40,
+        30
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Fish processing hall"
+    },
+    {
+      "id": "galley",
+      "name": "Galley",
+      "bounds": [
+        24,
+        30,
+        32,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Galley"
+    },
+    {
+      "id": "mess",
+      "name": "Crew mess",
+      "bounds": [
+        32,
+        30,
+        40,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Crew mess"
+    },
+    {
+      "id": "side",
+      "name": "Starboard deck walkway",
+      "bounds": [
+        40,
+        8,
+        42,
+        40
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Starboard deck walkway"
+    },
+    {
+      "id": "fore",
+      "name": "Foredeck",
+      "bounds": [
+        24,
+        -2,
+        40,
+        8
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Foredeck",
+      "constructed_surface": "Authored ship foredeck, not a ground/sea-zone stamp"
+    },
+    {
+      "id": "engine",
+      "name": "Engine room",
+      "bounds": [
+        24,
+        24,
+        40,
+        40
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Engine room"
+    },
+    {
+      "id": "hold",
+      "name": "Chilled fish hold",
+      "bounds": [
+        24,
+        4,
+        40,
+        24
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Chilled fish hold"
+    },
+    {
+      "id": "pump",
+      "name": "Bilge pump room",
+      "bounds": [
+        24,
+        -2,
+        40,
+        4
+      ],
+      "y": -3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Bilge pump room"
+    },
+    {
+      "id": "crew",
+      "name": "Crew bunks",
+      "bounds": [
+        24,
+        30,
+        40,
+        40
+      ],
+      "y": 3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Crew bunks"
+    },
+    {
+      "id": "bridge",
+      "name": "Wheelhouse",
+      "bounds": [
+        24,
+        18,
+        40,
+        30
+      ],
+      "y": 6,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Wheelhouse"
+    },
+    {
+      "id": "net",
+      "name": "Net and gear store",
+      "bounds": [
+        24,
+        8,
+        40,
+        18
+      ],
+      "y": 3,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Net and gear store"
+    }
+  ],
+  "links": [
+    {
+      "id": "route-01",
+      "a": "stage",
+      "b": "entry",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          86.0
+        ],
+        [
+          32.0,
+          0,
+          78.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-02",
+      "a": "entry",
+      "b": "quay",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          78.0
+        ],
+        [
+          32.0,
+          0,
+          70.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-03",
+      "a": "quay",
+      "b": "aft",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32,
+          0,
+          68
+        ],
+        [
+          32,
+          0,
+          48
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-04",
+      "a": "quay",
+      "b": "portpier",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          28,
+          0,
+          68
+        ],
+        [
+          19,
+          0,
+          68
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-05",
+      "a": "portpier",
+      "b": "aft",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          19,
+          0,
+          46
+        ],
+        [
+          26,
+          0,
+          46
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-06",
+      "a": "aft",
+      "b": "galley",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          47.0
+        ],
+        [
+          28.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-07",
+      "a": "aft",
+      "b": "mess",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          47.0
+        ],
+        [
+          36.0,
+          0,
+          35.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-08",
+      "a": "galley",
+      "b": "processing",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          28.0,
+          0,
+          35.0
+        ],
+        [
+          32.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-09",
+      "a": "mess",
+      "b": "processing",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          36.0,
+          0,
+          35.0
+        ],
+        [
+          32.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-10",
+      "a": "processing",
+      "b": "fore",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          19.0
+        ],
+        [
+          32.0,
+          0,
+          3.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-11",
+      "a": "fore",
+      "b": "side",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32,
+          0,
+          3
+        ],
+        [
+          41,
+          0,
+          10
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-12",
+      "a": "side",
+      "b": "aft",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          41.0,
+          0,
+          24.0
+        ],
+        [
+          32.0,
+          0,
+          47.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-13",
+      "a": "processing",
+      "b": "engine",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          25,
+          0,
+          24
+        ],
+        [
+          23,
+          0,
+          24
+        ],
+        [
+          23,
+          -3,
+          34
+        ],
+        [
+          25,
+          -3,
+          34
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    },
+    {
+      "id": "route-14",
+      "a": "fore",
+      "b": "pump",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          34.6,
+          0,
+          1
+        ],
+        [
+          28.6,
+          -3,
+          1
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Authored flight coordinates; riser<=180mm, tread>=240mm. Actual export support/headroom and later runtime capsule/guard tests remain required.",
+      "rise_m": 3,
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5
+    },
+    {
+      "id": "route-15",
+      "a": "pump",
+      "b": "hold",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          -3,
+          1.0
+        ],
+        [
+          32.0,
+          -3,
+          14.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-16",
+      "a": "hold",
+      "b": "engine",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          -3,
+          14.0
+        ],
+        [
+          32.0,
+          -3,
+          32.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-17",
+      "a": "aft",
+      "b": "crew",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          26,
+          0,
+          46
+        ],
+        [
+          23,
+          0,
+          46
+        ],
+        [
+          23,
+          3,
+          36
+        ],
+        [
+          26,
+          3,
+          36
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    },
+    {
+      "id": "route-18",
+      "a": "crew",
+      "b": "net",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          3,
+          35.0
+        ],
+        [
+          32.0,
+          3,
+          13.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-19",
+      "a": "net",
+      "b": "bridge",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          30,
+          3,
+          14
+        ],
+        [
+          23,
+          3,
+          14
+        ],
+        [
+          23,
+          6,
+          24
+        ],
+        [
+          30,
+          6,
+          24
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    }
+  ],
+  "loops": [
+    [
+      "quay",
+      "aft",
+      "portpier",
+      "quay"
+    ],
+    [
+      "processing",
+      "fore",
+      "side",
+      "aft",
+      "galley",
+      "processing"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      86.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        82.372
+      ],
+      [
+        32.0,
+        0,
+        78.0
+      ]
+    ],
+    "logistics": "Reuse the canonical van on the roadhead/quay; remote travel is an expedition transition. No new driving or sailing system."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "processing",
+      "point": [
+        32.0,
+        0,
+        19.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "mess",
+      "point": [
+        36.0,
+        0,
+        35.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    },
+    {
+      "rite": "Absolution",
+      "zone": "hold",
+      "point": [
+        32.0,
+        -3,
+        14.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    }
+  ],
+  "circulation": "Two declared graph cycles reserve retreat options. Optional tower/bridge branches must never host mandatory evidence without separate fairness review. Actual physical routes and timing remain unaccepted.",
+  "systems": "Terrain and water boundaries first; then solid architecture with floor depth, fitted doors and circuit isolation. Separate exterior/interior acoustics, supported fixtures and surface-mounted UV evidence. All gameplay integration remains locked.",
+  "campaign": "Fictional location and records connect to the district investigation; narrative never predetermines the ghost or prevents an evidence-led outcome.",
+  "refine": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "Owner fleet reference informs processor function only; this is an original retired vessel, not a replica.",
+    "Low-deck cutaway and both independent gangway clearances need review; sea must never fill the hold."
+  ],
+  "sources": [
+    "https://www.oceanpeaceinc.com/fleet"
+  ],
+  "terrain": {
+    "profile": "quay",
+    "water_y": -1.6,
+    "hull_outline": [
+      [
+        22,
+        50
+      ],
+      [
+        22,
+        6
+      ],
+      [
+        25,
+        -4
+      ],
+      [
+        32,
+        -10
+      ],
+      [
+        39,
+        -4
+      ],
+      [
+        42,
+        6
+      ],
+      [
+        42,
+        50
+      ],
+      [
+        39,
+        56
+      ],
+      [
+        25,
+        56
+      ]
+    ],
+    "description": "Static moored cannery vessel beside retained quay; sea bed and stepped shoreline are separate from the watertight ship hull."
+  },
+  "needed_models": [
+    "Purpose-built pointed hull, watertight lower liner and deck/bulkhead kit",
+    "Fish processing benches, conveyors, chutes and freezer door modules",
+    "Ship engine, bilge pumps and supported service pipes",
+    "Mooring bollards, ropes, guarded paired gangways and deck railing",
+    "Wheelhouse consoles, glazing, berth furniture and galley fittings",
+    "Static net handling boom, nets and weathered maritime clutter"
+  ],
+  "structural_route_revision": {
+    "status": "AUTHORED_NATIVE_ROUTE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+    "original_source": "development/levels/layouts/wld-15/layout.json",
+    "original_sha256": "7e73e778acdf196caf28e4be5a9bf264035eb9ffa6f8bdaff413aadf280c10c3",
+    "original_links": {
+      "route-14": {
+        "id": "route-14",
+        "a": "fore",
+        "b": "pump",
+        "width": 1.5,
+        "kind": "stairs",
+        "points": [
+          [
+            26,
+            0,
+            3
+          ],
+          [
+            23,
+            0,
+            3
+          ],
+          [
+            23,
+            -3,
+            0
+          ],
+          [
+            26,
+            -3,
+            0
+          ]
+        ],
+        "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+        "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+        "rise_m": 3
+      }
+    },
+    "reason": "Replace eight zero/short-run reservations with physically measurable circulation; shared native export/headroom checks follow"
+  },
+  "stair_bay_revision": {
+    "reason": "Add closed full-width low/high approach and endpoint support while retaining the existing passing physical flight.",
+    "shared_physical_flights": {}
+  },
+  "physical_flat_circulation_revision": {
+    "ceiling_revisions": {},
+    "route_changes": [],
+    "corridors": [
+      {
+        "link": "route-01",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            86.0
+          ],
+          [
+            32.0,
+            0,
+            78.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-02",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            78.0
+          ],
+          [
+            32.0,
+            0,
+            70.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-03",
+        "segment": 0,
+        "points": [
+          [
+            32,
+            0,
+            68
+          ],
+          [
+            32,
+            0,
+            48
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-04",
+        "segment": 0,
+        "points": [
+          [
+            28,
+            0,
+            68
+          ],
+          [
+            19,
+            0,
+            68
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-05",
+        "segment": 0,
+        "points": [
+          [
+            19,
+            0,
+            46
+          ],
+          [
+            26,
+            0,
+            46
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-06",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            47.0
+          ],
+          [
+            28.0,
+            0,
+            35.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-07",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            47.0
+          ],
+          [
+            36.0,
+            0,
+            35.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-08",
+        "segment": 0,
+        "points": [
+          [
+            28.0,
+            0,
+            35.0
+          ],
+          [
+            32.0,
+            0,
+            19.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-09",
+        "segment": 0,
+        "points": [
+          [
+            36.0,
+            0,
+            35.0
+          ],
+          [
+            32.0,
+            0,
+            19.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-10",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            0,
+            19.0
+          ],
+          [
+            32.0,
+            0,
+            3.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-11",
+        "segment": 0,
+        "points": [
+          [
+            32,
+            0,
+            3
+          ],
+          [
+            41,
+            0,
+            10
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-12",
+        "segment": 0,
+        "points": [
+          [
+            41.0,
+            0,
+            24.0
+          ],
+          [
+            32.0,
+            0,
+            47.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-13",
+        "segment": 0,
+        "points": [
+          [
+            25,
+            0,
+            24
+          ],
+          [
+            23,
+            0,
+            24
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-13",
+        "segment": 2,
+        "points": [
+          [
+            23,
+            -3,
+            34
+          ],
+          [
+            25,
+            -3,
+            34
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-15",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            -3,
+            1.0
+          ],
+          [
+            32.0,
+            -3,
+            14.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-16",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            -3,
+            14.0
+          ],
+          [
+            32.0,
+            -3,
+            32.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-17",
+        "segment": 0,
+        "points": [
+          [
+            26,
+            0,
+            46
+          ],
+          [
+            23,
+            0,
+            46
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-17",
+        "segment": 2,
+        "points": [
+          [
+            23,
+            3,
+            36
+          ],
+          [
+            26,
+            3,
+            36
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-18",
+        "segment": 0,
+        "points": [
+          [
+            32.0,
+            3,
+            35.0
+          ],
+          [
+            32.0,
+            3,
+            13.0
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-19",
+        "segment": 0,
+        "points": [
+          [
+            30,
+            3,
+            14
+          ],
+          [
+            23,
+            3,
+            14
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      },
+      {
+        "link": "route-19",
+        "segment": 2,
+        "points": [
+          [
+            23,
+            6,
+            24
+          ],
+          [
+            30,
+            6,
+            24
+          ]
+        ],
+        "width": 1.54,
+        "terminal_extension": 0.35,
+        "wall_bottom": -0.25,
+        "slab_bottom": 0.005,
+        "headroom": 2.2
+      }
+    ],
+    "shell_changes": [
+      {
+        "source_mesh": "Wall processing N",
+        "new_mesh": "Flat route shell Wall processing N",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040161128044176,
+        "cutters": [
+          "Flat body route-10 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall processing N.001",
+        "new_mesh": "Flat route shell Wall processing N.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.8899923465740844,
+        "cutters": [
+          "Flat body route-10 0 True",
+          "Flat body route-11 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall processing S",
+        "new_mesh": "Flat route shell Wall processing S",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.015381804264403165,
+        "cutters": [
+          "Flat body route-08 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall processing S.001",
+        "new_mesh": "Flat route shell Wall processing S.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.09236320941485876,
+        "cutters": [
+          "Flat body route-08 0 True",
+          "Flat body route-09 0 True",
+          "Flat body route-12 0 True",
+          "Flat body route-18 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall processing S.002",
+        "new_mesh": "Flat route shell Wall processing S.002",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.5974848383716815,
+        "cutters": [
+          "Flat body route-09 0 True",
+          "Flat body route-12 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall processing W",
+        "new_mesh": "Flat route shell Wall processing W",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.0686401963722707,
+        "cutters": [
+          "Flat body route-13 0 True",
+          "Flat body route-19 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall processing W.001",
+        "new_mesh": "Flat route shell Wall processing W.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040161128044176,
+        "cutters": [
+          "Flat body route-13 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall processing E",
+        "new_mesh": "Flat route shell Wall processing E",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 2.1743376085586217,
+        "cutters": [
+          "Flat body route-11 0 True",
+          "Flat body route-12 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall galley N.001",
+        "new_mesh": "Flat route shell Wall galley N.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.04618182478474808,
+        "cutters": [
+          "Flat body route-08 0 True",
+          "Flat body route-09 0 True",
+          "Flat body route-12 0 True",
+          "Flat body route-18 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall galley S",
+        "new_mesh": "Flat route shell Wall galley S",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.021701398115250736,
+        "cutters": [
+          "Flat body route-06 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall galley S.001",
+        "new_mesh": "Flat route shell Wall galley S.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.021701306323588243,
+        "cutters": [
+          "Flat body route-06 0 True",
+          "Flat body route-07 0 True",
+          "Flat body route-12 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall galley W",
+        "new_mesh": "Flat route shell Wall galley W",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.06160003524422564,
+        "cutters": [
+          "Flat body route-17 2 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall galley E",
+        "new_mesh": "Flat route shell Wall galley E",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.21399993418157237,
+        "cutters": [
+          "Flat body route-06 0 True",
+          "Flat body route-07 0 True",
+          "Flat body route-08 0 True",
+          "Flat body route-09 0 True",
+          "Flat body route-12 0 True",
+          "Flat body route-18 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall mess N",
+        "new_mesh": "Flat route shell Wall mess N",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.04618137303796199,
+        "cutters": [
+          "Flat body route-08 0 True",
+          "Flat body route-09 0 True",
+          "Flat body route-12 0 True",
+          "Flat body route-18 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall mess S",
+        "new_mesh": "Flat route shell Wall mess S",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.021702060574799287,
+        "cutters": [
+          "Flat body route-06 0 True",
+          "Flat body route-07 0 True",
+          "Flat body route-12 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall mess S.001",
+        "new_mesh": "Flat route shell Wall mess S.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.16989161880595294,
+        "cutters": [
+          "Flat body route-07 0 True",
+          "Flat body route-12 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall engine N",
+        "new_mesh": "Flat route shell Wall engine N",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.11278810606204548,
+        "cutters": [
+          "Flat body route-08 0 True",
+          "Flat body route-09 0 True",
+          "Flat body route-12 0 True",
+          "Flat body route-13 0 True",
+          "Flat body route-16 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall engine N.001",
+        "new_mesh": "Flat route shell Wall engine N.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.058788043598400286,
+        "cutters": [
+          "Flat body route-08 0 True",
+          "Flat body route-09 0 True",
+          "Flat body route-12 0 True",
+          "Flat body route-16 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Header engine N",
+        "new_mesh": "Flat route shell Header engine N",
+        "source_role": "rough opening header",
+        "removed_volume_m3": 0.02349584057997084,
+        "cutters": [
+          "Flat body route-08 0 True",
+          "Flat body route-09 0 True",
+          "Flat body route-12 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall engine S",
+        "new_mesh": "Flat route shell Wall engine S",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.1467041378454894,
+        "cutters": [
+          "Flat body route-06 0 True",
+          "Flat body route-07 0 True",
+          "Flat body route-12 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall engine W",
+        "new_mesh": "Flat route shell Wall engine W",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.037840178559417126,
+        "cutters": [
+          "Flat body route-13 0 True",
+          "Flat body route-13 2 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall engine W.001",
+        "new_mesh": "Flat route shell Wall engine W.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160937304751,
+        "cutters": [
+          "Flat body route-13 2 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall engine E",
+        "new_mesh": "Flat route shell Wall engine E",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.16904510353932878,
+        "cutters": [
+          "Flat body route-12 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall hold N",
+        "new_mesh": "Flat route shell Wall hold N",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.00784017922996938,
+        "cutters": [
+          "Flat body route-10 0 True",
+          "Flat body route-15 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall hold N.001",
+        "new_mesh": "Flat route shell Wall hold N.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.07863645472165448,
+        "cutters": [
+          "Flat body route-10 0 True",
+          "Flat body route-11 0 True",
+          "Flat body route-15 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Header hold N",
+        "new_mesh": "Flat route shell Header hold N",
+        "source_role": "rough opening header",
+        "removed_volume_m3": 0.05999999865889549,
+        "cutters": [
+          "Flat body route-10 0 True",
+          "Flat body route-11 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall hold W",
+        "new_mesh": "Flat route shell Wall hold W",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.03080001762211282,
+        "cutters": [
+          "Flat body route-13 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall hold E",
+        "new_mesh": "Flat route shell Wall hold E",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.07803869120354001,
+        "cutters": [
+          "Flat body route-11 0 True",
+          "Flat body route-12 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall crew N",
+        "new_mesh": "Flat route shell Wall crew N",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160365087367,
+        "cutters": [
+          "Flat body route-18 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall crew N.001",
+        "new_mesh": "Flat route shell Wall crew N.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160365087367,
+        "cutters": [
+          "Flat body route-18 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall crew W",
+        "new_mesh": "Flat route shell Wall crew W",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160365087367,
+        "cutters": [
+          "Flat body route-17 2 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall crew W.001",
+        "new_mesh": "Flat route shell Wall crew W.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160365087145,
+        "cutters": [
+          "Flat body route-17 2 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall bridge W",
+        "new_mesh": "Flat route shell Wall bridge W",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160365087367,
+        "cutters": [
+          "Flat body route-19 2 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall bridge W.001",
+        "new_mesh": "Flat route shell Wall bridge W.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160365087367,
+        "cutters": [
+          "Flat body route-19 2 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall net S",
+        "new_mesh": "Flat route shell Wall net S",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160365087367,
+        "cutters": [
+          "Flat body route-18 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall net S.001",
+        "new_mesh": "Flat route shell Wall net S.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160365087367,
+        "cutters": [
+          "Flat body route-18 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall net W",
+        "new_mesh": "Flat route shell Wall net W",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160365087367,
+        "cutters": [
+          "Flat body route-19 0 True"
+        ]
+      },
+      {
+        "source_mesh": "Wall net W.001",
+        "new_mesh": "Flat route shell Wall net W.001",
+        "source_role": "rough shell wall",
+        "removed_volume_m3": 0.007040160365087145,
+        "cutters": [
+          "Flat body route-19 0 True"
+        ]
+      }
+    ],
+    "indoor_bearings": [],
+    "limitation": "Source coordinate construction only; actual portals/services/runtime integration and finish remain open"
+  },
+  "floor_surface_ownership": {
+    "removed_redundant_prisms": [
+      {
+        "name": "route-08 support 0",
+        "native_name": "92:route-08 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              28.72760772705078,
+              35.18190002441406
+            ],
+            [
+              32.72760772705078,
+              19.181901931762695
+            ],
+            [
+              31.27239227294922,
+              18.818098068237305
+            ]
+          ],
+          [
+            [
+              28.72760772705078,
+              35.18190002441406
+            ],
+            [
+              31.27239227294922,
+              18.818098068237305
+            ],
+            [
+              27.27239227294922,
+              34.81809997558594
+            ]
+          ]
+        ],
+        "original_top_area_m2": 24.73865509033203,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor galley",
+          "Floor processing"
+        ],
+        "source_native_record_sha256": "493f6471880bc9d84208c21727f09354a4eed9f67437aa22e7498091edf9eb16",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "route-09 support 0",
+        "native_name": "93:route-09 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              36.72760772705078,
+              34.81809997558594
+            ],
+            [
+              32.72760772705078,
+              18.818098068237305
+            ],
+            [
+              31.27239227294922,
+              19.181901931762695
+            ]
+          ],
+          [
+            [
+              36.72760772705078,
+              34.81809997558594
+            ],
+            [
+              31.27239227294922,
+              19.181901931762695
+            ],
+            [
+              35.27239227294922,
+              35.18190002441406
+            ]
+          ]
+        ],
+        "original_top_area_m2": 24.73865509033203,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor mess",
+          "Floor processing"
+        ],
+        "source_native_record_sha256": "ed3f32fe5b1c615b3412b0c6c872f20e94a73eb26023ee56fef25625360e5d06",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "route-10 support 0",
+        "native_name": "94:route-10 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              32.75,
+              19.0
+            ],
+            [
+              32.75,
+              3.0
+            ],
+            [
+              31.25,
+              3.0
+            ]
+          ],
+          [
+            [
+              32.75,
+              19.0
+            ],
+            [
+              31.25,
+              3.0
+            ],
+            [
+              31.25,
+              19.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 24.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor fore.004",
+          "Floor processing"
+        ],
+        "source_native_record_sha256": "38a83ac7782130bf92ce4ef8de656f20cf06cb7c96f31ff19ea9686f90be1b63",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "route-15 support 0",
+        "native_name": "133:route-15 support 0",
+        "top_y": -3.0,
+        "original_top_polygons": [
+          [
+            [
+              31.25,
+              1.0
+            ],
+            [
+              31.25,
+              14.0
+            ],
+            [
+              32.75,
+              14.0
+            ]
+          ],
+          [
+            [
+              31.25,
+              1.0
+            ],
+            [
+              32.75,
+              14.0
+            ],
+            [
+              32.75,
+              1.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 19.5,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor hold",
+          "Floor pump"
+        ],
+        "source_native_record_sha256": "a5a3e4331413dbc390362e09d9bd1211f7ef2793ee53db26aff0bf81002bb12a",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "route-16 support 0",
+        "native_name": "134:route-16 support 0",
+        "top_y": -3.0,
+        "original_top_polygons": [
+          [
+            [
+              31.25,
+              14.0
+            ],
+            [
+              31.25,
+              32.0
+            ],
+            [
+              32.75,
+              32.0
+            ]
+          ],
+          [
+            [
+              31.25,
+              14.0
+            ],
+            [
+              32.75,
+              32.0
+            ],
+            [
+              32.75,
+              14.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 27.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor engine",
+          "Floor hold"
+        ],
+        "source_native_record_sha256": "be79130a10afa9461c6e32565cb1fd817b9ae8830997bd0e00d877d6ac017ace",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      }
+    ],
+    "input_hashes": {
+      "glb_sha256": "ae61b1e7d7a68d60070a0ed11694a36c4d1030f946d13c87d4561be6dac20690",
+      "native_sha256": "8eddb9abfd92ee3cd9b47d0b09b1aeb343bea5d5aa7c54b48961f70c31aa3297"
+    },
+    "generator_sha256": "4bea872e82b97ad6cd92abe4f578b261bb2e64210650faca50e2bfe126c28f0b",
+    "limitation": "Only completely covered original rough flat-route prisms; partial overlays, other duplicate structural surfaces, all optical/runtime and whole-map support acceptance remain open"
+  }
+}

@@ -1,0 +1,11 @@
+# Authored circulation across the roster
+
+Current direct source: roster.json, with29explicit decisions and25exact candidate source rows. This pass authors51flat-link revisions across14maps on byte-identical exported meshes, native collision and editable scenes. Required doorway points, original widths, staging/van anchors, source props, floor elevations, stairs, terrain punches, sealed context and all other layout fields are preserved. Functional sockets remain original; this is not a claim that they are all reachable.
+
+Independent current native replay improves complete flat links from393to444of566 with zero regressions of previously passing directions. All221stairflights,84completevertical links and both14segmentcemeteryloops still pass both ways. Current119,511centre/sidefull-foot samples have10,309invalid. These route sample coordinates intentionally differ from the earlier119,775positions; do not subtract invalid totals as unchanged-coordinate recoveries. Physical sources are exact copies, not new unique props.
+
+Native room-socket checking covers88room/elevation groups touched by these changes. Seven groups retain invalid original endpoints;29groups have multiple components under direct5cmsweeps. These are explicit follow-up obligations; direct failures do not rule out indirect connections. Three full-width route proposals leave their intended room pair and remain rejected/unadopted.
+
+104actual export-backed frames and26before/aftersheets cover every affected floor. Orange/cyan curves are authoring guides; higher/lower scene layers are hidden. All sheets viewed. Construction2/5,finish1/5; no terrain, whole-map, runtime or visual-light acceptance. Keep the32partialframes from the rejected metadata-selector capture study labeled separately. No local editor UI or round-duration testing.
+
+Verification source-preservation.json binds all51changes to actual source/GLB/native/editable hashes, full25site native movement and real PNGs. Raw large tables are losslessly archived after verification; archive-index.json retains exact decoded hashes. Run python tools/verify_access_route_sources.py and python tools/archive_flat_verification.py --root development/levels/rebuild/access-route-pass --check. Shared atmosphere source remains unchanged. No runtime unlock or held-parent/main merge.

@@ -19,7 +19,7 @@ public final class SiteSelectionTest {
             SiteCatalog.Location.FARMHOUSE,SiteCatalog.Location.SCHOOL,SiteCatalog.Location.MANSION,
             SiteCatalog.Location.PRISON,SiteCatalog.Location.ASYLUM,SiteCatalog.Location.ACADEMY,
             SiteCatalog.Location.COLLEGE,SiteCatalog.Location.CHURCH);
-        ok(SiteCatalog.Location.values().length==builtins.size()+1,
+        ok(SiteCatalog.soloLocations().length==builtins.size()+1,
             "nine built-in families and the separate USER authoring slot remain indexed");
         int ready=0;
         Set<String> sourceIds=new HashSet<>();

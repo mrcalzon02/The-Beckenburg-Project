@@ -1,0 +1,9 @@
+Beckenburg GPU initialized: OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+2026-11-19T09:12:40.508745300Z [main] ACTIVE_RENDERER GPU OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64 / scene triangles OpenGL, UI Swing
+2026-11-19T09:12:41.284711100Z [main] RENDER SLOW stage=idle faces=21099 visible_faces=7910 culled_faces=13189 target=840x560 build_ms=80 lighting_raster_ms=142
+2026-11-19T09:12:41.397729900Z [beckenburg-opengl] GPU SCENE FIRST FRAME scene=2 frame=207 surface_batches=205 vbo_uploaded_batches=205 vbo_uploaded_bytes=1438176 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=30 texture_uploaded_bytes=522192 gl_worker_ms=111.0653 readback_ms=13.1825 measurement=gl_worker_not_gpu_timestamp
+barracks-records native door and acoustic 6 -> 2
+records-pump native door and acoustic 6 -> 2
+pump-plant native door and acoustic 6 -> 2
+records-gallery native door and acoustic 6 -> 2
+pump-gallery native door and acoustic 5 -> 2

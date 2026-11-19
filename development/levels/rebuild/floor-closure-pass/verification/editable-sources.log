@@ -1,0 +1,55 @@
+00:00.766  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\academy\closed-floors.blend"
+C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\tools\check_floor_editable_sources.py:9: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  images={n.image for m in bpy.data.materials if m.use_nodes for n in m.node_tree.nodes if n.type=='TEX_IMAGE' and n.image}
+PASS_EDITABLE_FLOOR_SOURCE ACADEMY 13
+00:00.844  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\asylum\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE ASYLUM 10
+00:00.922  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\church\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE CHURCH 7
+00:00.953  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\college\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE COLLEGE 10
+00:01.047  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\farmhouse\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE FARMHOUSE 10
+00:01.109  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\mansion\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE MANSION 12
+00:01.156  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\prison\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE PRISON 7
+00:01.266  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\school\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE SCHOOL 11
+00:01.328  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-03\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-03 12
+00:01.359  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-04\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-04 6
+00:01.406  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-05\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-05 12
+00:01.437  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-06\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-06 9
+00:01.484  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-07\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-07 8
+00:01.516  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-07-mortuary\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-07-MORTUARY 14
+00:01.547  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-08\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-08 14
+00:01.594  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-09\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-09 12
+00:01.641  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-10\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-10 9
+00:01.687  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-11\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-11 6
+00:01.734  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-12\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-12 9
+00:01.781  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-13\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-13 11
+00:01.828  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-14\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-14 9
+00:02.000  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-15\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-15 13
+00:02.031  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-16\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-16 10
+00:02.062  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-17\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-17 11
+00:02.094  blend            | Read blend: "C:\Users\Admin\.codex\worktrees\castle-textiles\The-Beckenburg-Project\development\levels\rebuild\floor-closure-pass\wld-18\closed-floors.blend"
+PASS_EDITABLE_FLOOR_SOURCE WLD-18 13
+Blender 5.0.0 (hash a37564c4df7a built 2025-11-18 11:06:54)
+
+Blender quit

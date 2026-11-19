@@ -1,0 +1,71 @@
+{
+  "collision_sha256": "0c7acf61448a2bea8af7a03ee18af666c58e26a0b1d189b4f9ab40e3fbd0ed8e",
+  "closed_loops": {
+    "cloister": [
+      "L04",
+      "L05",
+      "L06",
+      "L07"
+    ],
+    "garden": [
+      "L08",
+      "L09",
+      "L06",
+      "L07"
+    ],
+    "catacombs": [
+      "L05",
+      "L19",
+      "L21"
+    ],
+    "service": [
+      "L15",
+      "L17",
+      "L18",
+      "-L14"
+    ]
+  },
+  "results": [
+    {
+      "site": "WLD-10",
+      "variant": "monastery",
+      "link": "cloister",
+      "segments": "14",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-10",
+      "variant": "monastery",
+      "link": "garden",
+      "segments": "13",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-10",
+      "variant": "monastery",
+      "link": "catacombs",
+      "segments": "17",
+      "legacy_forward": "BLOCKED_SEGMENT_8_AT_1_OF_54",
+      "legacy_reverse": "BLOCKED_SEGMENT_3_AT_1_OF_54",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-10",
+      "variant": "monastery",
+      "link": "service",
+      "segments": "15",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    }
+  ],
+  "mode": "Continuous native movement in both directions, with exact matching link endpoints"
+}

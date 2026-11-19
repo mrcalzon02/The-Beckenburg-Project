@@ -18,6 +18,8 @@ CloseApplications=yes
 RestartApplications=no
 UninstallDisplayIcon={app}\Beckenburg.exe
 [Files]
+Source: "..\tools\editor_mcp.py"; DestDir: "{app}\tools"; Flags: ignoreversion
+Source: "..\tools\editor_mcp_requirements.txt"; DestDir: "{app}\tools"; Flags: ignoreversion
 Source: "..\dist\Beckenburg\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
 [Icons]
 Name: "{group}\Beckenburg"; Filename: "{app}\Beckenburg.exe"

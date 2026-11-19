@@ -1,0 +1,15 @@
+{
+  "status": "LOSSLESS_RAW_VERIFICATION_ARCHIVES_NOT_NEW_TEST_ACCEPTANCE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/arrival-grounds-construction-pass/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/arrival-grounds-construction-pass/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 6616554,
+      "original_sha256": "8c36339b60b21b59bc5ed1b9fc101f082f8685772fd0ccd3aacb5730c8e79348",
+      "archive_bytes": 116731,
+      "archive_sha256": "e103ad18f859a6dd98f63ce2999aae5518d5520ef9fa7e397d77cce17b880d85",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    }
+  ],
+  "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."
+}

@@ -1,0 +1,2617 @@
+{
+  "observed_utc": "2026-11-08T13:06:08.907739+00:00",
+  "source_checkpoint": "49ad38e520e428d7120caa81d205e1e0de7bc035",
+  "remote_head_verified": "c56772602e58952eab733d50df912fc602e972ca",
+  "remote_tree_sha": "9a74cdc97d00405daea9ff2046a13d01eaef232f",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for union of flat circulation sources, protected context, floor ownership, frozen baseline inputs, raw evidence archives and actual captures and checkpoint binding paths",
+  "checkpoints": [
+    {
+      "commit": "49ad38e520e428d7120caa81d205e1e0de7bc035",
+      "changed_files": 636
+    },
+    {
+      "commit": "c8d19ff349324636896e2663b81497a84ce1cf0b",
+      "changed_files": 26
+    },
+    {
+      "commit": "8f77d72cd7e56a0db3443932c19dfd375ea9e6f0",
+      "changed_files": 1
+    },
+    {
+      "commit": "c56772602e58952eab733d50df912fc602e972ca",
+      "changed_files": 4
+    }
+  ],
+  "verified_file_count": 644,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "87f2209be6c8464fa10ba6093549bfa97ab08c03"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "35c579f3d3c464874709cf9653ba4074d0602ec6"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "4592fb17d935a0866939a5481e2bbce21b8e0f4c"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "04fbffc1ebb21f156b0a39832220343dcc4cf9d8"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "0726f7169a96477af6f35d68571ed9514f0b261d"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "421c2ee760a99cf46543c19290d1e6b42b095d69"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "3562c17345f5ef59dbfc30d1787204c100cfb0ad"
+    },
+    {
+      "path": "development/levels/rebuild/WORKFLOW.md",
+      "sha": "a736f0ab30a9bfed25657fcd6c44ab34f938426b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-after.png",
+      "sha": "57c7a57e66b15263036f9460f003c5461e864a83"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-before.png",
+      "sha": "36ccbb8618317f474f9e4d280331471125ba8c0b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-whole-site.png",
+      "sha": "8210ef2afcad1980aebbe4a1c7b2005a397e9c8c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-0--1.png",
+      "sha": "c2d4138f1913525898eae39742c191a7a90fb671"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-0-1.png",
+      "sha": "01f86ace00d58831ddf233a761fea7ffa8f7b1f8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-1--1.png",
+      "sha": "1b3ba935e43e142f2c41421e7b6a0f46aadfcaf9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-1-1.png",
+      "sha": "c9be56c3b7eca0f0e1a050147d525e229905befd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-2--1.png",
+      "sha": "c3771b6cd0c67b23e17385cbb20e81e2c0ca6425"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-2-1.png",
+      "sha": "77cc410ae83eb523fe930dd9e5ba64db284dc72d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-3--1.png",
+      "sha": "c2c97a1e7a381f3d3f26525fb4906be7403dcc0d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-profile-3-1.png",
+      "sha": "6ebab8c620c0d528af3cd185532eabfc7c289ec2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/asylum-whole-site.png",
+      "sha": "f44d8510d48976406eca34759bb75a1ea4b0946e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/church-whole-site.png",
+      "sha": "91b265ef484df535d0281029bc15a4f12936b946"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/college-whole-site.png",
+      "sha": "1ec80482a8065150262b7e9afbcd338ece58ebd8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/farmhouse-whole-site.png",
+      "sha": "b6c074cf2fe0b9628507bd241926c68f69684571"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-pilot-sheet.png",
+      "sha": "66bdce56e817e6218812002265f159642f65672f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-profiles-sheet-1.png",
+      "sha": "33d3e34c9bd45d920624cfc19d513c1f155d268a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-profiles-sheet-2.png",
+      "sha": "26a2eb433312ebee9b8fd0475356da31c7b5a134"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-1.png",
+      "sha": "fe0e53518c348e0456d9563170f10c482c5d580d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-2.png",
+      "sha": "ebc292dc6a067a93fe5b65d6e175cc2b1f1aea1c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-3.png",
+      "sha": "41c52f1291e6c02923d21dba559ce7de71c42042"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-4.png",
+      "sha": "76c58be02ad76d86a80b2dfb5ad62d792b91e4bf"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-5.png",
+      "sha": "7dc57dc4feb72230e6170ac428e4659027abfa35"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/mansion-whole-site.png",
+      "sha": "37b574bd772ef38cc9e8faa90a062c22184220b7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/prison-whole-site.png",
+      "sha": "8a4542f20edbc54191548f0b08d3c75220a3e09f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/rejected-coplanar-wld-08-threshold-after.png",
+      "sha": "54a14b4f9c8e5a0e785f814dc484aec8a39c94dd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/rejected-partial-cap-wld-08-threshold-after.png",
+      "sha": "14e8f603afe673b69f96c8a08b1d0b43626fd512"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/rejected-partial-cap-wld-08-threshold-before.png",
+      "sha": "ded8da009a94442bcdab3c07e7e0cd64a0e28271"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/rejected-partial-cap-wld-08-whole-site.png",
+      "sha": "295bc5867bd1bc6725936c495e47827978656c60"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/rejected-precision-wld-09-whole-site.png",
+      "sha": "7be680b9f8fde452ef3e6e4bcf4381c3c9e2be38"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/school-whole-site.png",
+      "sha": "f208150e3b5f7846ab202976683d8e2dabc09123"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-03-whole-site.png",
+      "sha": "70a4a118f0d06403b5b17e804c9f9dd05b2d17a9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-04-whole-site.png",
+      "sha": "d785b351bf3aecae86dee05cab0b91bdbda73e8e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-05-whole-site.png",
+      "sha": "d5693d4d5503c872fee3a3b31068ae9fa39e47e8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-06-whole-site.png",
+      "sha": "4e7a17d2d4eb64a43ada2cbc1dd81575b1e42b4c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-07-mortuary-whole-site.png",
+      "sha": "bb7543fcc3980217c8bd57a3b8c000f959433210"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-07-whole-site.png",
+      "sha": "43fed651a122115d0854904862cb7536cb52f44c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-threshold-after.png",
+      "sha": "4efb967922d0aa8db78210551dee8e197b68f67c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-threshold-before.png",
+      "sha": "938b5f3840dd51a938c1047aa964dad2b2f2181b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-whole-site.png",
+      "sha": "1781721f567725e7debe6b88d17a97515f6b8c3a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-09-whole-site.png",
+      "sha": "91aa451691dfdc34456ee6094a249adbb269f5a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-10-whole-site.png",
+      "sha": "a50ae5fdba95e91584929d59f562b76e9444c362"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-11-whole-site.png",
+      "sha": "ed89759b466b4122575b95fb2cbed735a48f9179"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-12-whole-site.png",
+      "sha": "1f8c29288266a2e5be3a1be5927f72a236869f81"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-13-whole-site.png",
+      "sha": "fefc7a1eb983829bfa7bc4f38b9e115fe2717dc1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-14-whole-site.png",
+      "sha": "f8ff492ed2c5217cd0b50d470e02ecf334206b0d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-15-whole-site.png",
+      "sha": "82c821a68df7fde124bfe84386eda90fb18670a8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-16-whole-site.png",
+      "sha": "0fb1637711afc043286c8fc6c2ff2d196f74e6f2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-17-whole-site.png",
+      "sha": "b1338b9771ef7b05ef66e81b85090f578fa0e0f1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-18-whole-site.png",
+      "sha": "08d26d0869b58deadb2562082f98532eb763e4cf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/NEXT.md",
+      "sha": "583bc76b28c5982c3bd89919b6b2dbc869260532"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/academy/authored-layout.json",
+      "sha": "12c8ec7c2a24bbf1b51d1e136137e9ee5d8da314"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/academy/construction.json",
+      "sha": "9f7afc567e4d96d3e13008617a48f1ae5d6d7621"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/academy/open-circulation.blend",
+      "sha": "fde4a662ed062b26a4ccfe3557a8726dd3c944f0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/academy/open-circulation.glb",
+      "sha": "83fdf98443389d5232bd72bf1e8189ef8786aff1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/academy/open-circulation.hcs2",
+      "sha": "099a05c3eedcee0329e0776730fbb5d3ed51dae5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/asylum/authored-layout.json",
+      "sha": "a7b0901b89846a42591fa71153295930233d2d24"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/asylum/construction.json",
+      "sha": "9fdfa2fc18b4791ae85f2daef1ce1141ea88b51b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/asylum/open-circulation.blend",
+      "sha": "222da1748aa2e3030424c4691ee04fb807afbc9d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/asylum/open-circulation.glb",
+      "sha": "bd3bd79e91c2f4390123788fb1dd5c9130fdcfb5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/asylum/open-circulation.hcs2",
+      "sha": "4e5edf4d97d2f426343c35de7d0c38b15db7c198"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/church/authored-layout.json",
+      "sha": "0106ca21e7a16338ae83d936b006607b7b2828e0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/church/construction.json",
+      "sha": "d07a7817204ec6d1622aeef2c7a7efb345fbb3c0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/church/open-circulation.blend",
+      "sha": "ad31909bd492d1a3d46dcf103892d4b831d4c1e7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/church/open-circulation.glb",
+      "sha": "27e1ef01b2d20da50b8a237f40351a6e4b8db424"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/church/open-circulation.hcs2",
+      "sha": "09149143fff26b1813a7d3e3d8e68f02fac3a733"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/college/authored-layout.json",
+      "sha": "28224a015c6cc90b9fd34ecee6d9764ceb19ffa3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/college/construction.json",
+      "sha": "905d14fe27154241255b650d15b891a41677e7b5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/college/open-circulation.blend",
+      "sha": "34b28396aee99ede98f675d1a70ed9d2c782f051"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/college/open-circulation.glb",
+      "sha": "aa6278c6cd538953cd1f8d26291e610a694e8abe"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/college/open-circulation.hcs2",
+      "sha": "479fea2a3e86abf5aad35bfbf7a5330c25a08b4b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/established-flat-links.json",
+      "sha": "cd1b2c9ec435b548cf2b025076378e94aad98cad"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/farmhouse/authored-layout.json",
+      "sha": "8a0cdcee65f0e9aad1dfe668714413b82a7f049d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/farmhouse/construction.json",
+      "sha": "8684cb149bc03f813ace6bd61ae6fd273bd239e9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/farmhouse/open-circulation.blend",
+      "sha": "681c6b2ae82c0ca0bea1643a45de1fdc1f6906c7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/farmhouse/open-circulation.glb",
+      "sha": "b350f8ad3020827146a33213151b380f39c09742"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/farmhouse/open-circulation.hcs2",
+      "sha": "9f84c914bd2ba19265b0fdf1d6a02cc2200ba7be"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/mansion/authored-layout.json",
+      "sha": "0673a24e3651a7013f71eb796396f8c008820725"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/mansion/construction.json",
+      "sha": "36d2fedcf54b2723ee5e3375c997fa4bb2d192b4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/mansion/open-circulation.blend",
+      "sha": "70845c9b4cf69f86047a4a1d8e6a0b87ec980b4c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/mansion/open-circulation.glb",
+      "sha": "6237947ca450112c1dd886f48398da00777fe6b0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/mansion/open-circulation.hcs2",
+      "sha": "a15fd4ba0ff2b3f5a1a599ca6c1f245a453bdfc1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/prison/authored-layout.json",
+      "sha": "ae9a77708da85c070453f6aec6d28e93dca7da9d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/prison/construction.json",
+      "sha": "37c6741cde7aa2bcb1a9014a4c366efa5264f7d3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/prison/open-circulation.blend",
+      "sha": "03fa943f0cdb6ae0bda837efe065f44d9414ecce"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/prison/open-circulation.glb",
+      "sha": "e4f13a915ab8db5221b553d67ab64a87127e433c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/prison/open-circulation.hcs2",
+      "sha": "42e2aac8ee13c8fd630e00a4383c34e05c520c7c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/README.md",
+      "sha": "ef3d4cb6a3fe32f8c467f839cccace781ca40c0f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/coplanar-floor-pilot/native-dark-floor-rays-driver.py",
+      "sha": "ceed336f04fd9414e9b578b24859ce60dd9f6580"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/coplanar-floor-pilot/wld-08/authored-layout.json",
+      "sha": "8284d0f7b9218e12db03f751359e4abdd569de83"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/coplanar-floor-pilot/wld-08/construction.json",
+      "sha": "462ab6ada717e3b217f66e90f52497ef6d984d27"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/coplanar-floor-pilot/wld-08/open-circulation.blend",
+      "sha": "3f969fb241a797e5374303bfa49fdbde1d23084d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/coplanar-floor-pilot/wld-08/open-circulation.glb",
+      "sha": "51c11e443f951afff51a0cf73a7840210cdbbdb0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/coplanar-floor-pilot/wld-08/open-circulation.hcs2",
+      "sha": "82f71c9b6eef8d0295517606c48b457427e858a2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/precision-repair-driver-v2.py",
+      "sha": "731ab31ab754b35ab1a39dfb04c5cd575fee206e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/wld-03/authored-layout.json",
+      "sha": "09191ee48f1520a1014d6040e8b940dbb9f3f714"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/wld-03/construction.json",
+      "sha": "09fbf1e4661a0d0266453a7376349e87a8e6c1d5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/wld-03/open-circulation.blend",
+      "sha": "91a3bfd0ddb85d506dbc573dd2d5607cdd3a54e6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/wld-03/open-circulation.glb",
+      "sha": "ea4e079cdb644bde521c1ec3d342a2161457d19a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/wld-03/open-circulation.hcs2",
+      "sha": "b0df78721f5bef97a6b762140627352d2012fba2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/wld-09/authored-layout.json",
+      "sha": "92ae39ba12e554ecfa131303cbe2b6ee7352ea5c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/wld-09/construction.json",
+      "sha": "e2daf98f3ba6b51ccf1e24c05a609b5dc609ae83"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/wld-09/open-circulation.blend",
+      "sha": "45a89ce7a513e345327c730316285cbb40e38320"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/wld-09/open-circulation.glb",
+      "sha": "6ed6ed89ebfbf3083fb2d33ddc0e01ab35271063"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/final-native-precision-input/wld-09/open-circulation.hcs2",
+      "sha": "bd9e16a364b62ba6a8d2e1a5850b094768ccdbdc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/academy/authored-layout.json",
+      "sha": "bf4f20063fd6b365c1920fc1ce40e2dd22c62940"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/academy/construction.json",
+      "sha": "c7aeb52ba160c3c17e87010351e95f4f873b2f03"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/academy/open-circulation.blend",
+      "sha": "bd431696eb23866406e3c079d447e660fc427fe3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/academy/open-circulation.glb",
+      "sha": "c9b7c570af64ea2d7f7728c9525e5d4ec850aace"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/academy/open-circulation.hcs2",
+      "sha": "66e9ab58206aaabca1ff43097286c36a8fc36248"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/asylum/authored-layout.json",
+      "sha": "60ff2551aaf7cd4a3e11e697858278a3687fc47e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/asylum/construction.json",
+      "sha": "17075201642872df437dd0142e64acb60ac2183c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/asylum/open-circulation.blend",
+      "sha": "1eccfe468e1a1f4e472d20a189b8ab379c072673"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/asylum/open-circulation.glb",
+      "sha": "a6491da8cef1034255b265c5eae3c139238abfb9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/asylum/open-circulation.hcs2",
+      "sha": "e4046860d95fe2b7b631da46f195b8aa20928a8d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/church/authored-layout.json",
+      "sha": "f8f6c13d2f783cd74e860cca2655b59400e4412b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/church/construction.json",
+      "sha": "7e6833c0fa19d37eb83abb5efd67de0a87f3f7a5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/church/open-circulation.blend",
+      "sha": "7d2852eba8c2db5f3a0b147243e286249169d772"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/church/open-circulation.glb",
+      "sha": "d5b0020e08aab3e79bfd6ffe0db08cb3268badf3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/church/open-circulation.hcs2",
+      "sha": "d52ff3c8b5e8cf4836f56994d399d133bc8ce088"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/college/authored-layout.json",
+      "sha": "14f1400b78100445ee4395e73e0b628f74267c8c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/college/construction.json",
+      "sha": "43f73b4fd7ea76a9b326b979aaf54bad64da85b4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/college/open-circulation.blend",
+      "sha": "e089aa808ddc43c18f698461117a7bbaa85c62ba"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/college/open-circulation.glb",
+      "sha": "462ec73ad52de93a68c89bddc04428f402430a2b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/college/open-circulation.hcs2",
+      "sha": "1ad9b8bf3be1a9670eac391fad091b920727ca33"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/farmhouse/authored-layout.json",
+      "sha": "304766ebf1f88f37ba84714a0078669fa69c0b88"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/farmhouse/construction.json",
+      "sha": "77a67935757ecbe2f4e8d9f247606a6d0091ab91"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/farmhouse/open-circulation.blend",
+      "sha": "135d2cee389813f406c6a2d92b319930fbef0f82"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/farmhouse/open-circulation.glb",
+      "sha": "112185d421b36f216584bd4d170da76c6c638bae"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/farmhouse/open-circulation.hcs2",
+      "sha": "489551ad53a3d00c67d93965ac6841443d852fe1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/flat-builder-v2.py",
+      "sha": "2ec005a35b14bf77960eee0c138b6c2a87504353"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/mansion/authored-layout.json",
+      "sha": "305c27ed5d13039be006f86b82503a69117a40e3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/mansion/construction.json",
+      "sha": "fb69eb2690cede42db73b5c0fb90804293e3e64d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/mansion/open-circulation.blend",
+      "sha": "17fd8a6bf6d4973f0991622f7676f2044f5d2b70"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/mansion/open-circulation.glb",
+      "sha": "e1283c0700fef8a2314aaeefa4c03e5ff8c4ecea"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/mansion/open-circulation.hcs2",
+      "sha": "2f0176355e419d0fa4855bf0b9fcddd1efe14981"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/prison/authored-layout.json",
+      "sha": "d8b3f8c33f0415404ecf4bb73dc29d451cc63c9f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/prison/construction.json",
+      "sha": "8dcefbe097088933384beb42dadde42717c900f0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/prison/open-circulation.blend",
+      "sha": "839db41f1c5072dd6d6bc746e913ff110501f0cd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/prison/open-circulation.glb",
+      "sha": "9654d5615c974f324436268abc98f7f39ee06cdd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/prison/open-circulation.hcs2",
+      "sha": "52c220112c2e8b92cb7f87d0f4fb1e68ba40bd5b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/school/authored-layout.json",
+      "sha": "c634341f1363d50acb13cc67c2682aadc780ad5c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/school/construction.json",
+      "sha": "167cbfc0d1f3d0a672ca7bfdec14b9bebdac21ec"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/school/open-circulation.blend",
+      "sha": "4bd2bd0ad3af6474a0974146148f7f6a7b2b257b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/school/open-circulation.glb",
+      "sha": "99c733d6b58b5f9dbadbbe4e3a9073d2cebf7d86"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/school/open-circulation.hcs2",
+      "sha": "df806eca909a02e39cf4125c64bd62c4225bcf5b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/captures.json",
+      "sha": "82fc91959e8c2b8c89b6eb47c454d6ee48dd58c4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/ceiling-ownership.json",
+      "sha": "ed5d3292f5e2c66d24396a9430e4240adee7d3cf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/complete-route-sweeps.tsv",
+      "sha": "ce5fccea5474325f641e8b006f602f21d28169e6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-failure-contacts.tsv",
+      "sha": "5f3ffb9f30cb9e331a2bb7f374c08e7b880e779f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-failure-input.tsv.gz",
+      "sha": "c0788b9c53d0dbd6c020d1fc8446d2fc7cc6efd0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-lane-input.tsv.gz",
+      "sha": "f2b4b0ff65829e662c27f20e1d266eae250d7843"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-lane-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-lanes.tsv.gz",
+      "sha": "07eeeb57cbcbf2c99c2dbd6c6b8dff32288ff4bc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-links.tsv",
+      "sha": "4ffa7a3fa3d6cf1519aefee080a1b4bed5d09519"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-movement.json",
+      "sha": "beb73f9b9c20a10e157906e04d24ca174ce63cc6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-paths.tsv",
+      "sha": "816a1bfaf142da82f455bf2bdccd13733ea11973"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat-pilot.log",
+      "sha": "edae1b1e3bb159bc0086807cf5cb20a21e60c3ea"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/current-flat.log",
+      "sha": "994c9c54c746ad2cbb9a384646587b71ba4f743a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/fixed-boundary-before.log",
+      "sha": "ec90a31e8fc2d81787e1f4ef448a6a7176c6d8e0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-build-batch.log",
+      "sha": "ca570cedb5105e5e438d2c1166b9fc1c589caf36"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-build-final.log",
+      "sha": "cd55e2adf7f43eb56910cf97e40b97046fe3bae4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-build-pilot.log",
+      "sha": "f305481b9f25cc1b7024beb28868946ed78efc3d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-captures.log",
+      "sha": "43caf09b6178aa0d5ceab2a2f4ddf8dfc8ab0a79"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-check-pilot.log",
+      "sha": "6f6ea9b6f53de6f4749bc1f7c626400791757604"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-check.log",
+      "sha": "74ed3dfe799f1a5e3158dcb221d8c1fe00973c95"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-floor-ownership-captures.log",
+      "sha": "f998610e5adbc9625cb40122e2914fddffc78864"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-movement-pilot.log",
+      "sha": "3755ebb1c802eec66030ff519ac9e53b8d53c977"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-pilot-captures.log",
+      "sha": "57d20579b78e7e0fafcbb075fb0518b10e730b28"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-precision-captures.log",
+      "sha": "fef69bf5d7fd04d31bb061d84922507fef79edfe"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-regression.log",
+      "sha": "8aa9e6cd4e6594ffe3a69d7b517e8b9576914a5a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-stacked-pilot-captures.log",
+      "sha": "2852f281b2835754ab90871ec6f95ae17065711b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-stairs-pilot.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flat-stairs.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/flight-sweeps.tsv",
+      "sha": "35ac4e0d16412b9b769c55d17bdd006d5e596f22"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/floor-ownership-batch.log",
+      "sha": "e0129bfba71dbbf899eec27cc2f2540aa1a3c5d8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/floor-ownership-final.log",
+      "sha": "f2164cf2f87a696c75ccb1448d308c1990513100"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/floor-ownership-pilot.log",
+      "sha": "a76de3ac32ff3a5fe67cce4a5ebca463124448be"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/floor-surface-ownership.json",
+      "sha": "62f51e81ab8d74d4002bccf561703ecac965d234"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/independent-sources.json",
+      "sha": "25d2438ee150e7937688535ddaa728d23dbf8d93"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/initial-failure-contacts.tsv",
+      "sha": "1fc7b2d42eff6da9309e9894113e0ecc20663a93"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/initial-failure-input.tsv",
+      "sha": "15cf71234235d874f3a08148682a828343646b09"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/native-dark-floor-rays.json",
+      "sha": "d3e4b0ffdda513813799f8ed1052303db16dea2c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/native-dark-floor-rays.log",
+      "sha": "48a50f4f102bd4832e566c51c5beea70ec179a6a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/native-route-fit.json",
+      "sha": "57e730a69d205a7017c2cb10e2799c2d6f50d8a5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/native-route-probes.tsv.gz",
+      "sha": "b7afef42384f30a0f19ecf03f4daf48a49a16c13"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/pre-repair-native-precision.json",
+      "sha": "1788eeb99c3a95d089abd6f4ddf9afeba6a5bf37"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/precision-repair-final.log",
+      "sha": "4842c4fc0aaef2f049676681604af73ef38968da"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/precision-repair-wld03.log",
+      "sha": "eb6c08a32992d74186da610a1ce8dc455ec05675"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/precision-repair.log",
+      "sha": "71eb2026cf9890dba0dc029cc34635b7599a59e1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/rejected-checker-import.log",
+      "sha": "d2443271f18f947ac2ae73f4d3573726e29d7983"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/fixed-boundary-and-bearing-pilot/verification/stair-movement.json",
+      "sha": "6cbf150ceeac9a924ac49829fd346fe5d8cf685f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/academy/authored-layout.json",
+      "sha": "7eefd5fb3ba658f4d07dea4b82cf9f29563d9ff1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/academy/construction.json",
+      "sha": "adb69ed7632477f52b216e7ba3eadd27b0aa48cc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/academy/open-circulation.blend",
+      "sha": "1e144b7806a99161b0b57a3f3cac8a9664e14d72"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/academy/open-circulation.glb",
+      "sha": "8b934416a50e57c5c4a4363ac0a42bfa296e697f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/academy/open-circulation.hcs2",
+      "sha": "52cef34cb03042aa00d7a560837b998f7470f7ac"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/complete-route-sweeps.tsv",
+      "sha": "ce5fccea5474325f641e8b006f602f21d28169e6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/flat-build-pilot.log",
+      "sha": "67f81dc2315b8d5e1ed3761ed2d93c16af3f5d55"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/flat-check-pilot.log",
+      "sha": "472163323eb3ab93b1b490838ffaa5ca01411e22"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/flat-movement-pilot.log",
+      "sha": "3755ebb1c802eec66030ff519ac9e53b8d53c977"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/flat-stairs-pilot.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/flight-sweeps.tsv",
+      "sha": "35ac4e0d16412b9b769c55d17bdd006d5e596f22"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/independent-sources.json",
+      "sha": "f2470ec9f40fed1cb0245f72da6a100474402c88"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/native-route-fit.json",
+      "sha": "ddaa1074c84e5d4deb867ab478ae9ca954ad0041"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/native-route-probes.tsv.gz",
+      "sha": "c9ea42bd8493c02f7b39924f807071f2368f1c88"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/verification/stair-movement.json",
+      "sha": "3645c19c567a506a0f298a9491607d42f87bfb9d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/wld-08/authored-layout.json",
+      "sha": "07f3f51c54d6cf81cc35d5e784a57490bc8e1d6f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/wld-08/construction.json",
+      "sha": "5791e27421040f28a86c544797c2e480302c711c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/wld-08/open-circulation.blend",
+      "sha": "f0ee696288fff2921ae668331ed542dfee7351cc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/wld-08/open-circulation.glb",
+      "sha": "c0ff31ae5c55e8057051b203f2e43fb1788dfac3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/grazing-approach-pilot/wld-08/open-circulation.hcs2",
+      "sha": "e724905cb02dc01af6224a7c398d78b7265706e7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse/precision-repair-driver-v1.py",
+      "sha": "17595ae6b9b735423309183618e40d1ae7269e78"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse/verification/current-flat.log",
+      "sha": "e2003f5ec1a0a054972932ece6de4131c58b306e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse/verification/flat-check.log",
+      "sha": "537b2c4876729a4dbac0884ae6aaf1d3b4cddf84"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse/verification/flat-regression.log",
+      "sha": "e311ac03af92b73a372002b993e7d90b07790485"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse/verification/flat-stairs.log",
+      "sha": "1e00229342fa116a15a63cd993730d5c95d7f6c8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse/wld-09/authored-layout.json",
+      "sha": "29f18d3e8018c82087a20eb3a34e021940fb52e7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse/wld-09/construction.json",
+      "sha": "8e568835c35371f00acb3be553b3dfc9b9ecfde7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse/wld-09/open-circulation.blend",
+      "sha": "a41dc3261f252afb6377a70f7bd36c555f467049"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse/wld-09/open-circulation.glb",
+      "sha": "26ac47a95edc5f3f0e8b707d203bfee12716fc6c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/native-precision-collapse/wld-09/open-circulation.hcs2",
+      "sha": "5ba00d38ef8721753fbd23c287ec1af3d5b3dbc8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/captures.json",
+      "sha": "ee93c0b5e321534c5f6ef25de43a5e1e4fbc7f0c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/complete-route-sweeps.tsv",
+      "sha": "ce5fccea5474325f641e8b006f602f21d28169e6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-failure-contacts.tsv",
+      "sha": "014137425a219c1e745fb72bfafd0cba3baa6e4e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-failure-input.tsv.gz",
+      "sha": "1e7156fe57ecb2102c96c0a584244f2a283ce773"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-lane-input.tsv.gz",
+      "sha": "4b6cae09f6396760dc8865ee9a3d0f615e4d2cb1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-lane-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-lanes.tsv.gz",
+      "sha": "0ba6e659338b469c2c3f5907d82fe8cacdf96eef"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-links.tsv",
+      "sha": "c876952a3a8a9d242b508a36d46dcc9fbc9d4eff"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-movement.json",
+      "sha": "cee4137418e8b983bb103b286079564ddc10723d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-paths.tsv",
+      "sha": "6eabfc47be1740fbbf62ded100fd057864e495c6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/current-flat-pilot.log",
+      "sha": "edae1b1e3bb159bc0086807cf5cb20a21e60c3ea"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/flat-build-pilot.log",
+      "sha": "0296e2ce83f854d41922be4dcc5073c073196d39"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/flat-check-pilot.log",
+      "sha": "472163323eb3ab93b1b490838ffaa5ca01411e22"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/flat-movement-pilot.log",
+      "sha": "3755ebb1c802eec66030ff519ac9e53b8d53c977"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/flat-pilot-captures.log",
+      "sha": "57d20579b78e7e0fafcbb075fb0518b10e730b28"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/flat-stairs-pilot.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/flight-sweeps.tsv",
+      "sha": "35ac4e0d16412b9b769c55d17bdd006d5e596f22"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/independent-sources.json",
+      "sha": "f2470ec9f40fed1cb0245f72da6a100474402c88"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/native-route-fit.json",
+      "sha": "ddaa1074c84e5d4deb867ab478ae9ca954ad0041"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/native-route-probes.tsv.gz",
+      "sha": "c9ea42bd8493c02f7b39924f807071f2368f1c88"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/verification/stair-movement.json",
+      "sha": "3645c19c567a506a0f298a9491607d42f87bfb9d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/wld-08/authored-layout.json",
+      "sha": "c919b05f1f35cb3dfe495acda317d60d07408424"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/wld-08/construction.json",
+      "sha": "fb41ad069f9cadf34f664998779fd492347247bd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/wld-08/open-circulation.blend",
+      "sha": "a1770ffab7cc935b8b22dc4ed3f3d156cb1e1399"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/wld-08/open-circulation.glb",
+      "sha": "7813662721bf2e2f65d1d9cdfc7325308b313e11"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/partial-ceiling-trench/wld-08/open-circulation.hcs2",
+      "sha": "97f5d07aea786902adf45c253d86105e669fbb0f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/asylum/authored-layout.json",
+      "sha": "230650070cf47f13ebcaabdcfd3b473e1a896872"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/asylum/construction.json",
+      "sha": "9f6595683e92d7fd52bf45e076b404fd79ff1c0a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/asylum/open-circulation.blend",
+      "sha": "2c53b010410d271fead4821ba35b2583b9a26fb2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/asylum/open-circulation.glb",
+      "sha": "22ed6070dcc12fa2468d87477aed50d0aeb6f83c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/asylum/open-circulation.hcs2",
+      "sha": "4f9315e40a39727dc246509dcd65f8703feb2710"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/failed-weld-repair.log",
+      "sha": "546ea5f9f6f3915ef808ed97fbaec3c6ceaf22a5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/flat-builder-v4.py",
+      "sha": "738c97c6411131fee7be82cd9b9ce9ef88c4a37d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-03/authored-layout.json",
+      "sha": "e240e84722deca27bfa8906ff366f56d99beea95"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-03/construction.json",
+      "sha": "6422a2ac0c8bd67051d639ca260d9f4c921ea45e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-03/open-circulation.blend",
+      "sha": "980352f574bb1e94ec6fa3e7cd43e10a1683bd16"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-03/open-circulation.glb",
+      "sha": "a2cf738696a38ae4fbfd729b7968ac32bdf3dd98"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-03/open-circulation.hcs2",
+      "sha": "691ff5ef6d1fdb3893cda720a9ba4d7b3574492b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-09/authored-layout.json",
+      "sha": "53cc97066812b85080ebf721efa1eabc208a7c75"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-09/construction.json",
+      "sha": "31b17239dae35879a9d971bada06b27c6172ef5c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-09/open-circulation.blend",
+      "sha": "aa9b6247c3545629f797ef517e831573687193e8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-09/open-circulation.glb",
+      "sha": "6b63c8dd76c67d0336688975a6255ebfafa937e7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-09/open-circulation.hcs2",
+      "sha": "3a46866e7e757b1369cfec625df6e77c7b19ee4c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-14/authored-layout.json",
+      "sha": "3f1d7909a92abd4538436fc345d70d0c9f3c0d46"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-14/construction.json",
+      "sha": "a3b7f69020bdd25f398c670a1923e077411a8f44"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-14/open-circulation.blend",
+      "sha": "9a25a475f31e40d00a6c6a89869976f70f579d88"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-14/open-circulation.glb",
+      "sha": "647b033ca3498ba7d208f47762e24d71b96e310c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/protected-native-precision-input/wld-14/open-circulation.hcs2",
+      "sha": "81ae6c7c4c7c88e10c6f5e5e681a0e26c6eabee4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/academy/authored-layout.json",
+      "sha": "8424bcfe1b17adeed0f533ba8ca7c434ae3b2e80"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/academy/construction.json",
+      "sha": "35c85bb5cd906e13c56174785b2447ffb0b1ee72"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/academy/open-circulation.blend",
+      "sha": "dfc7676f7490f73fd91317c288a0fbcb835dc1e6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/academy/open-circulation.glb",
+      "sha": "477b078761789467d38537818b9ca361d2932c15"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/academy/open-circulation.hcs2",
+      "sha": "6db28d887c9be692f4ee5cc15a214e286c6b5f6b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/asylum/authored-layout.json",
+      "sha": "8a1e103f8e8f83a36ca9f920e50b5de6a719312d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/asylum/construction.json",
+      "sha": "ce1b6c25a0c26cdf586ae93b7cccdab7d359ad34"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/asylum/open-circulation.blend",
+      "sha": "3a84a5a43f5cd53e66b130c28658002310c11452"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/asylum/open-circulation.glb",
+      "sha": "f7fca98ea0c9b7e7fe2fc9dd6d14ae348dc4ba33"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/asylum/open-circulation.hcs2",
+      "sha": "9e6eccae73cf154d0fa7c1508857ff2ff971f331"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/church/authored-layout.json",
+      "sha": "5cba3325fad22c5cca4d73b1f8c084f3c7309e86"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/church/construction.json",
+      "sha": "28f4401c27e694c40303c98de3289de0fcbc39c9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/church/open-circulation.blend",
+      "sha": "ed326c547e940427dcdad0c7be53d9279e4d5fb1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/church/open-circulation.glb",
+      "sha": "a28191454606ba10b0070d4b46d44a0e0f8b7d82"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/church/open-circulation.hcs2",
+      "sha": "7d549286aeb294ec8e8534941d0f62b02d911e52"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/college/authored-layout.json",
+      "sha": "a8a08af317be6d66479d304e8885e99015fb784a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/college/construction.json",
+      "sha": "0275e76ddcba727ec4d9fa548adbcb7fcf90d199"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/college/open-circulation.blend",
+      "sha": "1653c5e65b6ec0de85c26ff640a1453956297aa6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/college/open-circulation.glb",
+      "sha": "79609bb4854f8c950d785642b3283d359d8a51e7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/college/open-circulation.hcs2",
+      "sha": "adb8672a40af3f4a9fe9e2583a0edcb5e0a5624b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/farmhouse/authored-layout.json",
+      "sha": "f59ceec8426f5ba8d221c5a654edad77a212d152"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/farmhouse/construction.json",
+      "sha": "4645aade701e588ec6ed7401ab774a32851a6ab0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/farmhouse/open-circulation.blend",
+      "sha": "7dc55f330f48918094784be3a833080a479c358c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/farmhouse/open-circulation.glb",
+      "sha": "783166150ab24ac5b9cd477e49b5f82f4f7ce4b7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/farmhouse/open-circulation.hcs2",
+      "sha": "9cd7df2d67f028c631c0c92793f7636580209e3e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/mansion/authored-layout.json",
+      "sha": "a0b4502af0b3fc192dad5f38af2831973be19a37"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/mansion/construction.json",
+      "sha": "ffdf1bbec7174822f9bd8274c176e80b2e123125"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/mansion/open-circulation.blend",
+      "sha": "fc2b6bbd4b0671f643decc8326c64e1c60b39457"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/mansion/open-circulation.glb",
+      "sha": "d2355485e99223ba691791db36ad51f7c270663e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/mansion/open-circulation.hcs2",
+      "sha": "8d4a31757e7be32ca0258e0eb30c39829b7284bc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/prison/authored-layout.json",
+      "sha": "325ab58894985b8201e61753e6b538c5caa99b7a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/prison/construction.json",
+      "sha": "7052662ec682da2dc39f2c6a767a8b471f9b2d39"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/prison/open-circulation.blend",
+      "sha": "b573711fff335d4cb922a039607108dd96a26f48"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/prison/open-circulation.glb",
+      "sha": "910379b5cf0cb6ae5b011623cd26c758fa44a93f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/prison/open-circulation.hcs2",
+      "sha": "3ed5ef5a3c58a4481c6549d9305f5b2c2d98fb2e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/school/authored-layout.json",
+      "sha": "6e2dfdeed8012da1d46743b1254c9323ee6c4443"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/school/construction.json",
+      "sha": "5765c815de2befa32f9f4284cc88c3563a973f9a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/school/open-circulation.blend",
+      "sha": "97e6a74cd7e6f35fbfc81a8ac5c39e141a40604c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/school/open-circulation.glb",
+      "sha": "c1ab4d045330cd3cdbdefa3c63e11a31ac5f9909"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/school/open-circulation.hcs2",
+      "sha": "e09d30473800ce2eb28ab5296bbb6ef879f61268"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/captures.json",
+      "sha": "2a89073373f9c46c4ffb4f906cf2e8411d86ba45"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/ceiling-ownership.json",
+      "sha": "ed5d3292f5e2c66d24396a9430e4240adee7d3cf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/complete-route-sweeps.tsv",
+      "sha": "2d9070aed25191e5a8966d22b53a0fe2ada2c62a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-failure-contacts.tsv",
+      "sha": "c05028d81bbd08a7632991f63dfaaf866cc00b0a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-failure-input.tsv.gz",
+      "sha": "976e01e82c6c9e58e63dd29252c24af6d9c9b6f7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-lane-input.tsv.gz",
+      "sha": "dfd608d2d790c1a8590f0fac0cd7fc9ad6b76697"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-lane-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-lanes.tsv.gz",
+      "sha": "7db1d77a3e0f32920ff328faf52495effeed692b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-links.tsv",
+      "sha": "9605a49ad4ffaecea28e1c7490ee8e82f9f03b8e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-movement.json",
+      "sha": "369616ccc794b659d2ddf90e75c05ec374f631a7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-paths.tsv",
+      "sha": "e31520db7ae71a3b4bb885112e9a05b37852212d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat-pilot.log",
+      "sha": "edae1b1e3bb159bc0086807cf5cb20a21e60c3ea"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/current-flat.log",
+      "sha": "666c3985826f45c6f9564555cbdde965fe0ebd79"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-build-batch.log",
+      "sha": "ca570cedb5105e5e438d2c1166b9fc1c589caf36"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-build-pilot.log",
+      "sha": "f305481b9f25cc1b7024beb28868946ed78efc3d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-captures.log",
+      "sha": "fa80168a788f75d781cc8e8f087e3bef78ba0df5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-check-pilot.log",
+      "sha": "6f6ea9b6f53de6f4749bc1f7c626400791757604"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-check.log",
+      "sha": "fbd27b8337d5a1bfb005b9f35b719488c99f664f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-floor-ownership-captures.log",
+      "sha": "f998610e5adbc9625cb40122e2914fddffc78864"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-movement-pilot.log",
+      "sha": "3755ebb1c802eec66030ff519ac9e53b8d53c977"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-pilot-captures.log",
+      "sha": "57d20579b78e7e0fafcbb075fb0518b10e730b28"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-precision-captures.log",
+      "sha": "fef69bf5d7fd04d31bb061d84922507fef79edfe"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-regression.log",
+      "sha": "3e475a23cd3c4a831589c5c68838de32087eca55"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-stacked-pilot-captures.log",
+      "sha": "2852f281b2835754ab90871ec6f95ae17065711b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-stairs-pilot.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flat-stairs.log",
+      "sha": "510cf18b869d1ecfeb45bb6de1e9e33f7d0dc39a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/flight-sweeps.tsv",
+      "sha": "35ac4e0d16412b9b769c55d17bdd006d5e596f22"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/floor-ownership-batch.log",
+      "sha": "e0129bfba71dbbf899eec27cc2f2540aa1a3c5d8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/floor-ownership-pilot.log",
+      "sha": "a76de3ac32ff3a5fe67cce4a5ebca463124448be"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/floor-surface-ownership.json",
+      "sha": "62f51e81ab8d74d4002bccf561703ecac965d234"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/independent-sources.json",
+      "sha": "25d2438ee150e7937688535ddaa728d23dbf8d93"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/initial-failure-contacts.tsv",
+      "sha": "1fc7b2d42eff6da9309e9894113e0ecc20663a93"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/initial-failure-input.tsv",
+      "sha": "15cf71234235d874f3a08148682a828343646b09"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/native-dark-floor-rays.json",
+      "sha": "d3e4b0ffdda513813799f8ed1052303db16dea2c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/native-dark-floor-rays.log",
+      "sha": "48a50f4f102bd4832e566c51c5beea70ec179a6a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/native-route-fit.json",
+      "sha": "4d2db8d71fe30b1a9d42b2b3bcc7090956314953"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/native-route-probes.tsv.gz",
+      "sha": "f698e68d828edfd473ae120b784fe8ae503f36f9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/precision-repair.log",
+      "sha": "71eb2026cf9890dba0dc029cc34635b7599a59e1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/rejected-checker-import.log",
+      "sha": "d2443271f18f947ac2ae73f4d3573726e29d7983"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/verification/stair-movement.json",
+      "sha": "38c28b195f7bd7d2f51f363d5cdd2309197ab279"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-03/authored-layout.json",
+      "sha": "1b2e1021918f4bab5892eb48ae504b752d08a078"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-03/construction.json",
+      "sha": "31f0505ac079dab404944c9b0981af6521b4609a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-03/open-circulation.blend",
+      "sha": "5f3d8d0f3e709094939499ac17658bc2a818c64f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-03/open-circulation.glb",
+      "sha": "c1375eca6b4f4e49c7785b67b1d183b02cd60658"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-03/open-circulation.hcs2",
+      "sha": "f4a0691772d91aad95f4df9abcdcf3c0efc1e6f4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-04/authored-layout.json",
+      "sha": "ccbf71ee0dae2ac5658c807bb1159f776a2a3958"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-04/construction.json",
+      "sha": "f44f3cc068d56bdad868b624ef46b1500180fb0f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-04/open-circulation.blend",
+      "sha": "b126175ef9fdecda5655cf80a700d2febbe3c04a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-04/open-circulation.glb",
+      "sha": "aa69f85c604e93176f04a363b345894bb50be502"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-04/open-circulation.hcs2",
+      "sha": "6846519a142f60032306324c2e6e61aa434729c6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-05/authored-layout.json",
+      "sha": "b34893ccd5c40bafafae4046e8c5765dd78962ab"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-05/construction.json",
+      "sha": "4bc34c2aeff4c3196e20ea4768ecff6a90cc3a61"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-05/open-circulation.blend",
+      "sha": "a3d8c4ed0800d9b97e3fc8dd14fb0a0d729fb5c3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-05/open-circulation.glb",
+      "sha": "f3f86701aa0a36c8a74f01470bd193a008243407"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-05/open-circulation.hcs2",
+      "sha": "86faf1ae15112c1e11f523850b03196109d9ef44"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-06/authored-layout.json",
+      "sha": "5e47a7668b3de3ac8c18c91d10b27a2ec65171cd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-06/construction.json",
+      "sha": "ab230524a72dc66d69217ac6a8e655e4e1b3fe6e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-06/open-circulation.blend",
+      "sha": "c7640c5ecd20137c7b5faa193fc5966709d6189a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-06/open-circulation.glb",
+      "sha": "dd66b7d6e26e8f12f10fdab055c076a94eb8b6b0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-06/open-circulation.hcs2",
+      "sha": "e497972558874619fa828c886789047779a77b40"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-07-mortuary/authored-layout.json",
+      "sha": "06ddd8cb38465805ca9436c8a62e59c39fde1d72"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-07-mortuary/construction.json",
+      "sha": "aaaf3b781cdcc146bc9e796cd321ec20d5ee7b3f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-07-mortuary/open-circulation.blend",
+      "sha": "876cac4c50fdf3f09445974e331e985d92b0f927"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-07-mortuary/open-circulation.glb",
+      "sha": "bf26b99e488cd5e906ac0789e66e9b0359fde6b0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-07-mortuary/open-circulation.hcs2",
+      "sha": "e09c3d4826c14ed120e58db1e62eb13fe1ed4f4e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-07/authored-layout.json",
+      "sha": "e388e4b301b95a39dc8d39a2c58a93cc4bdfe621"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-07/construction.json",
+      "sha": "7030fd2dcc88055fa9bc477a4557b0e15b9461c2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-07/open-circulation.blend",
+      "sha": "a88a71a00108b2e32efbc74d22c7a8aacae36acb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-07/open-circulation.glb",
+      "sha": "5b24a374e94d0b7a8ce9dc2d9831f4846e986619"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-07/open-circulation.hcs2",
+      "sha": "dae28be5386e95c6cd4471b162ae5fa3d3a5a5df"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-08/authored-layout.json",
+      "sha": "a3589bd2db250f7dfd6f692620df78adc83b25a8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-08/construction.json",
+      "sha": "171cf92ad7ddf735f3c6d81096ec6db4a9a54637"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-08/open-circulation.blend",
+      "sha": "d2b8691ae03924732ffc945f78da75788cb637f3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-08/open-circulation.glb",
+      "sha": "e31000dfc614a1d91574a523b71b94c8bfb26d7a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-08/open-circulation.hcs2",
+      "sha": "bc05e3b77c3e0cb22df7419bd87989a57a13dd92"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-09/authored-layout.json",
+      "sha": "3bc74e7d1f6ca36add7a2c6226027fd14f9a3d99"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-09/construction.json",
+      "sha": "393da5282476cf85d5dd3a9668742951bd29655a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-09/open-circulation.blend",
+      "sha": "130aab5a081dc3fda8bef124f72b1743e8e84d9d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-09/open-circulation.glb",
+      "sha": "b96c6278c24145f0c4abd5e38a539a96601e0dff"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-09/open-circulation.hcs2",
+      "sha": "70c1625bce647c2e50340a0e093d6ffac7fdb213"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-10/authored-layout.json",
+      "sha": "94d9f147b030111d0c6cbb71fb1a2ff79273392c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-10/construction.json",
+      "sha": "7c7852bc9510e7061c81b2c3be50fc2f53b4a9fa"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-10/open-circulation.blend",
+      "sha": "8e409341275eddc1e475b06bd573035cc0834f85"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-10/open-circulation.glb",
+      "sha": "c2ea6c0be0ec8f1dd0f578ae7a25ebacf5ca2596"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-10/open-circulation.hcs2",
+      "sha": "31fc2a930960b85b38b86d720f3821f1bb5363bd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-11/authored-layout.json",
+      "sha": "892f17f1112f466fff9b646b3f02c67650ee04b9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-11/construction.json",
+      "sha": "308a3f7b242e177edef3e17f44550460f34c8e29"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-11/open-circulation.blend",
+      "sha": "2639275a5c2df7099f05f4cf40eff2ac552729d1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-11/open-circulation.glb",
+      "sha": "eaa2042a5f88e53ea90ed8abf077ef736eb103ec"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-11/open-circulation.hcs2",
+      "sha": "cd71128f2d8812579ebf246291707055d5a9ccec"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-12/authored-layout.json",
+      "sha": "b0860ab353c22237a9aa0bc039b1e49be759b468"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-12/construction.json",
+      "sha": "52b19a87118d2df1e743d6148000cbfad08ed63f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-12/open-circulation.blend",
+      "sha": "e1288c0f3443776d2b038502fcd983bcd5cc7cfd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-12/open-circulation.glb",
+      "sha": "c365ccc1396a01bc58e5cb3eb46797f9dcb87275"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-12/open-circulation.hcs2",
+      "sha": "7886e3a40e5487ede36afe537ab1aa7c27918c0d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-13/authored-layout.json",
+      "sha": "15a5953fae75d8accf047341ce63de645c7f1bf5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-13/construction.json",
+      "sha": "20c3297dd2073b85700179759625eb0456d60ef3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-13/open-circulation.blend",
+      "sha": "ce6dd63c951a6d7db7b4a95b649245de5b83cc48"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-13/open-circulation.glb",
+      "sha": "e7edc384880ce91cff2a83ce516274cb2157c4e2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-13/open-circulation.hcs2",
+      "sha": "00e060db9b0c82d63dc5d4d187047c2ee3443d66"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-14/authored-layout.json",
+      "sha": "b945bfcfd89557e6ef9150f71cdacad7cb69a65b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-14/construction.json",
+      "sha": "bcba2ac09b504262869e3970e5780635f60bbec1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-14/open-circulation.blend",
+      "sha": "de31b35fc644919e1748327165a0ee8e5d367415"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-14/open-circulation.glb",
+      "sha": "09a7c02e78e0e0d78a485349809650e811fcb2e2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-14/open-circulation.hcs2",
+      "sha": "4fd36836a6273b6b3e9a083f51c6c772a60b149b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-15/authored-layout.json",
+      "sha": "0f95c6eb1d4e7c30e8f2991241c20e49958a4133"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-15/construction.json",
+      "sha": "3fe7bef97bef737db406e3df39009bd8fe73f7bb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-15/open-circulation.blend",
+      "sha": "ff00a6f0d7e148730663082d041e693ce65e9c39"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-15/open-circulation.glb",
+      "sha": "8db95067db8932930b135e6f7e1eae0e854d282a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-15/open-circulation.hcs2",
+      "sha": "9ec6e88c63f166e8350b219db1309a316948a4ee"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-16/authored-layout.json",
+      "sha": "ae7585304b3889fc78325960f130547c507cbe2a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-16/construction.json",
+      "sha": "1f55589e4ac7ea432fa9d2e633be2a2442276ec2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-16/open-circulation.blend",
+      "sha": "91cc23f39981182a4239b05dd304a3151a86290a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-16/open-circulation.glb",
+      "sha": "c15b2ecec97ab9be80f5f5590ee89e6c17cebae6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-16/open-circulation.hcs2",
+      "sha": "a0d9e53f9b4f05cc93116f6b06d3f2c6955e5741"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-17/authored-layout.json",
+      "sha": "1bdfb25da976e785bc247765dbe6433ece2481e2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-17/construction.json",
+      "sha": "06be00fa133f0628da6f2a48c0986e08425581b5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-17/open-circulation.blend",
+      "sha": "70c6e64bbbc8371755d19ec1550f4dc3eb271310"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-17/open-circulation.glb",
+      "sha": "e55115a35be25630a3b6dcddd96c98c8edf26819"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-17/open-circulation.hcs2",
+      "sha": "c9fa576a5b7c7adcf642c995a1f00e9f5bfc52c6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-18/authored-layout.json",
+      "sha": "9347550a0abfb4cf981fd77241df4cff958624e1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-18/construction.json",
+      "sha": "354f2073e2988754fa612726c77902e265fefcff"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-18/open-circulation.blend",
+      "sha": "543664d4caad5b846c4902c3f9adf3c909e964a5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-18/open-circulation.glb",
+      "sha": "76d2f262f5dbd9949679eddb9f802c328f76d032"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/slab-and-established-approach-pilot/wld-18/open-circulation.hcs2",
+      "sha": "e2d662b41d658c726d46664a272b004bde05d085"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/union-guard-nonmanifold/failed-build.log",
+      "sha": "2dc78763b266004ec7bac1af12939ae62b6e7478"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/union-guard-nonmanifold/flat-builder-v3.py",
+      "sha": "0e15aa70e347bdb0a9085f075902a746eed04c7a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/world-coordinate-collinear-input/asylum/authored-layout.json",
+      "sha": "69c2226fac52882c362a10740262907e54439c51"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/world-coordinate-collinear-input/asylum/construction.json",
+      "sha": "a3f99c303b56b9fe165088a3d9cba9d2d5126b52"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/world-coordinate-collinear-input/asylum/open-circulation.blend",
+      "sha": "24d65765f27b2dd3dff9b833051f13fec22a80ed"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/world-coordinate-collinear-input/asylum/open-circulation.glb",
+      "sha": "ef535974a50d73029649840b92531b49130517c2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/world-coordinate-collinear-input/asylum/open-circulation.hcs2",
+      "sha": "5f8db2b3a316e3500e6fdf42afc7c3d5cfc45825"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/world-coordinate-collinear-input/failed-global-weld.log",
+      "sha": "4364c29dadbe74784d838676a1a70ebe5815db1f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/world-coordinate-collinear-input/pre-profile-native-precision.json",
+      "sha": "e3635074580ca52c70bafc0e589fa082f111e7a2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/rejected/world-coordinate-collinear-input/precision-repair-old-weld-driver.py",
+      "sha": "0a033e777a6dabc627b8eafce29c37c6759bf615"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/roster.json",
+      "sha": "3d3f0a60e6bfcd724c9192e85800ffac88d20fe5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/school/authored-layout.json",
+      "sha": "703864eb2114d753eae5505805a73a608377357a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/school/construction.json",
+      "sha": "3c41139b53886118087993f2e2546e47b5cbd8a2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/school/open-circulation.blend",
+      "sha": "103b39e87a7fff7818a76076595ecae29c129826"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/school/open-circulation.glb",
+      "sha": "9ca6115f876be9ce20f455724dad05de4acba60e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/school/open-circulation.hcs2",
+      "sha": "4dd922d1273d511dd494a11bba5b520341829e70"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-06-inherited-layout.json",
+      "sha": "147e5121f2731bc50279a04e69892af1109f3b52"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-08-inherited-layout.json",
+      "sha": "408a44b00343b682c2edc63d78305eb351cbfc23"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-11-inherited-layout.json",
+      "sha": "396d8c7a695f1d9623a53603140e0b0eb1b351c4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-13-inherited-layout.json",
+      "sha": "17df2e4d3e67f87edd69c84ec7a8608619a04648"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/source-layouts/wld-17-inherited-layout.json",
+      "sha": "212e0e43b1bcdaecc3f69e8bcb5a0a30c6754be0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/archive-index.json",
+      "sha": "e36242fa1868c1a60f2500b0a8e02edcbefac876"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/captures.json",
+      "sha": "81f79c2831e4b48c222d84798c498671c3a79add"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/ceiling-ownership.json",
+      "sha": "d720ad8033f91a9d651347ea9a408718ecd5f9f3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/collinear-edge-repair.log",
+      "sha": "e2fbd9413b7b90a934337305a849e22a8485a209"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/complete-route-sweeps.tsv",
+      "sha": "ce5fccea5474325f641e8b006f602f21d28169e6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-failure-contacts.tsv",
+      "sha": "1eadff0a7e2941446ec1c38f66ec22cce327c95f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-failure-input.tsv.gz",
+      "sha": "1da9dffa8cf90d5f858d3e9f22086c5945561c6d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-lane-input.tsv.gz",
+      "sha": "160c5aa6f16c0b16b24b1e9910ee9ea836582f62"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-lane-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-lanes.tsv.gz",
+      "sha": "23b097b8b40056bc2484d199a4d1ca2b3249b1cb"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-links.tsv",
+      "sha": "9d9d9a2bece77402468ccfd4510c5ed700f5e5df"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-movement.json",
+      "sha": "5911e7a1ab9195e5dd48e3912d69823dd84e925f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-names.tsv",
+      "sha": "b98584c63a8b67d8b5c46b4de1d9e236093e18bf"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-paths.tsv",
+      "sha": "7d73fe7235e4d9a972285740fd33cd8a424d8c80"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat-pilot.log",
+      "sha": "edae1b1e3bb159bc0086807cf5cb20a21e60c3ea"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/current-flat.log",
+      "sha": "9fe6fc839b29f373cfc24020fd4636eb258dcb0a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/failure-contacts.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/final-native-precision.json",
+      "sha": "d2e28637653b6cf94a28ac660283eecf583ab4b3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/fixed-boundary-before.log",
+      "sha": "ec90a31e8fc2d81787e1f4ef448a6a7176c6d8e0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/fixed-context-boundaries.json",
+      "sha": "9e0775ff8c90035d0033be252b7cfb4cdee70acd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-build-batch.log",
+      "sha": "ca570cedb5105e5e438d2c1166b9fc1c589caf36"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-build-final.log",
+      "sha": "cd55e2adf7f43eb56910cf97e40b97046fe3bae4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-build-pilot.log",
+      "sha": "f305481b9f25cc1b7024beb28868946ed78efc3d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-build-protected.log",
+      "sha": "6e2276767e95d5f4d3ede31a5e1ea09818743d6b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-captures.log",
+      "sha": "1536dc2dd6bf54fd584556c57227c147572c5fa6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-check-pilot.log",
+      "sha": "6f6ea9b6f53de6f4749bc1f7c626400791757604"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-check.log",
+      "sha": "f63058c5fbf34161efeefd64708e095d23a278c0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-floor-ownership-captures.log",
+      "sha": "f998610e5adbc9625cb40122e2914fddffc78864"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-movement-pilot.log",
+      "sha": "3755ebb1c802eec66030ff519ac9e53b8d53c977"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-pilot-captures.log",
+      "sha": "57d20579b78e7e0fafcbb075fb0518b10e730b28"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-precision-captures.log",
+      "sha": "fef69bf5d7fd04d31bb061d84922507fef79edfe"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-regression.log",
+      "sha": "a652d055b4cc1aebdb7ea517a3115c1cb61704e2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-stacked-pilot-captures.log",
+      "sha": "2852f281b2835754ab90871ec6f95ae17065711b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-stairs-pilot.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flat-stairs.log",
+      "sha": "cd07ed78c47f36c1e39cb5c1891db880374b74db"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/flight-sweeps.tsv",
+      "sha": "35ac4e0d16412b9b769c55d17bdd006d5e596f22"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/floor-ownership-batch.log",
+      "sha": "e0129bfba71dbbf899eec27cc2f2540aa1a3c5d8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/floor-ownership-final.log",
+      "sha": "f2164cf2f87a696c75ccb1448d308c1990513100"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/floor-ownership-pilot.log",
+      "sha": "a76de3ac32ff3a5fe67cce4a5ebca463124448be"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/floor-ownership-protected.log",
+      "sha": "695149acbae73767ef77b0b421562c82d47d61cc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/floor-ownership-world-precision.log",
+      "sha": "54542de5ef900c1e81808f82f7f0ddd594f23749"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/floor-surface-ownership.json",
+      "sha": "6ddcd0b9f8e643ee15bd9cac85cdc6a981387c50"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/generator-versions.json",
+      "sha": "140a60c9bd70c347e2989b63293bde409dfb3a64"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/generators/build_flat_circulation-v5.py",
+      "sha": "056b610c6be9c2cd1b6d94fb5ac5065ad95ef6e1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/independent-sources.json",
+      "sha": "5b0848febcc5981e6d6b8405dfd8f6bae61a3fbd"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/initial-failure-contacts.tsv",
+      "sha": "1fc7b2d42eff6da9309e9894113e0ecc20663a93"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/initial-failure-input.tsv",
+      "sha": "15cf71234235d874f3a08148682a828343646b09"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/native-dark-floor-rays.json",
+      "sha": "d3e4b0ffdda513813799f8ed1052303db16dea2c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/native-dark-floor-rays.log",
+      "sha": "48a50f4f102bd4832e566c51c5beea70ec179a6a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/native-route-fit.json",
+      "sha": "acc7f9e67ce3593da96bcb4c763ac968ba537254"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/native-route-probes.tsv.gz",
+      "sha": "1281c75370dcfe7f1dbdaa58fce0d1d274140d2c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/original-bearing-contacts.tsv",
+      "sha": "4757049b1dd07c7eca0248513eaf40adc95e52ee"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/original-bearing-probes.tsv",
+      "sha": "a6b997885ed52b6dd5c8796e7cd42c7d4d447146"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/pre-repair-native-precision.json",
+      "sha": "1788eeb99c3a95d089abd6f4ddf9afeba6a5bf37"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/precision-repair-final.log",
+      "sha": "4842c4fc0aaef2f049676681604af73ef38968da"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/precision-repair-wld03.log",
+      "sha": "eb6c08a32992d74186da610a1ce8dc455ec05675"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/precision-repair.log",
+      "sha": "71eb2026cf9890dba0dc029cc34635b7599a59e1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/protected-bearing-contacts.tsv",
+      "sha": "4757049b1dd07c7eca0248513eaf40adc95e52ee"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/protected-bearing-probes.tsv",
+      "sha": "b507855ec00187e7e83d8f25ecedd6cbf55c776b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/protected-native-precision-input.json",
+      "sha": "26e00ed37f4ffdf762281ea640d157a96772d2a9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/protected-native-precision-repair.log",
+      "sha": "546ea5f9f6f3915ef808ed97fbaec3c6ceaf22a5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/protected-pilot-check.log",
+      "sha": "be97d02b30166308d7fd6e21445a3337dcac9bc8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/rejected-checker-import.log",
+      "sha": "d2443271f18f947ac2ae73f4d3573726e29d7983"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/source-layout-aliases.json",
+      "sha": "f24b3c019e84fde2ecb5875a664efd7e2b1335e0"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/stair-movement.json",
+      "sha": "c6ad58dfe11d77abcea49e57af00e6b311455c4b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/visual-review.json",
+      "sha": "90acaa9fd50cf173742fbf753fd84f858a3ca577"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/wall-profile-captures.log",
+      "sha": "b43a509c09b207bf1f39e0aed4de76cc9c2d4a5a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/wall-profile-rebuild.log",
+      "sha": "1d49c26e44b09513f4eefc99a3501bdd08cedfad"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/world-precision-build.log",
+      "sha": "32dc5ecc64af0ebdfaed98c6a9f04ae597c7963e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/verification/world-precision-collinear-repair.log",
+      "sha": "4364c29dadbe74784d838676a1a70ebe5815db1f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-03/authored-layout.json",
+      "sha": "4b5c03d863ffe651547248e89522b2dee55eb9b2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-03/construction.json",
+      "sha": "6754a1688d9ddb376f98edd53ba90b380a724d37"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-03/open-circulation.blend",
+      "sha": "896220176e2c31e9210515f7eb93621cffbb7d64"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-03/open-circulation.glb",
+      "sha": "f4561b1034f0992f23a64c58079ad65a7fe37d9c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-03/open-circulation.hcs2",
+      "sha": "948bff788774b9dc10fc821034d65fab6bcc5325"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-04/authored-layout.json",
+      "sha": "a55eea3e666fd9ac6fd03bbc641e3e2fe4ed2503"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-04/construction.json",
+      "sha": "16ababe05cf8b516eb1e3a9f067d6f7c2e9d502d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-04/open-circulation.blend",
+      "sha": "c4184ac65913941189892184019540c743dc8a6d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-04/open-circulation.glb",
+      "sha": "061b626bf6fcbb2bc5083bd6f19d13a1a389c341"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-04/open-circulation.hcs2",
+      "sha": "e2a5c0302593ba56e515ce0967c99e0354efb7e3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-05/authored-layout.json",
+      "sha": "fc8c769b6697d7c38851c41cd079a8a2cbcafa25"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-05/construction.json",
+      "sha": "2857adad0710de1d76d83610439a55c48ae659ae"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-05/open-circulation.blend",
+      "sha": "21d8386697991fb18deca4a34b6200ee55e4b0f9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-05/open-circulation.glb",
+      "sha": "c47e1345f55fcf6c199f1ba5bd49382ea873f79b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-05/open-circulation.hcs2",
+      "sha": "465375dca0312a61f2f507e308c9a6e4b119c288"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-06/authored-layout.json",
+      "sha": "22fb729806bdf67ce05cfafb34c0304ba421a97a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-06/construction.json",
+      "sha": "dbf4bea10df04818297888823c1ecaed5c57258d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-06/open-circulation.blend",
+      "sha": "98a3e56a09c5d818f171c307997333f6fcf8af32"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-06/open-circulation.glb",
+      "sha": "b4baefca0f8a2420c1bb5adea6cdd4a5d104451e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-06/open-circulation.hcs2",
+      "sha": "53e7138513d67f918dd358ff74e42ef7a6d99636"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/authored-layout.json",
+      "sha": "d8e3ca98997aa64925ebbc724b725461f1c41d95"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/construction.json",
+      "sha": "351ccd70c3d93caf1bb9d654e4f3f38d1c0273b5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.blend",
+      "sha": "48f250b383b67f441d6c89e1748f61c86238e989"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.glb",
+      "sha": "3b5a20774de60990c25237329cae6a78fcb4d5e1"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-07-mortuary/open-circulation.hcs2",
+      "sha": "6c0bb22c5e7f5f936f5a7705dba4e6f644e3ef5a"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-07/authored-layout.json",
+      "sha": "608b33a0868493498597e99dd4ab4d8231d84e02"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-07/construction.json",
+      "sha": "2141013d14db7e72b955655991d004f52f7ee575"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.blend",
+      "sha": "8eb5c4feef9a934949991b96b078d0ed6b8be312"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.glb",
+      "sha": "ce1436264a428feb0bd325f359ed88d3ad4f66af"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-07/open-circulation.hcs2",
+      "sha": "bdf030326e1b8d067eea08f02620f62efb4fc347"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-08/authored-layout.json",
+      "sha": "14ad506f08f81ce26d6ae7b0540f8db8a2d36b32"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-08/construction.json",
+      "sha": "1f09b53345991b10e1711a2cfc8becb180edab3f"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-08/open-circulation.blend",
+      "sha": "b0ece672ef39e2cefdc8389d5300cb77aa287ad3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-08/open-circulation.glb",
+      "sha": "2c0f589fae520a8bb2074cec080ec4e0c502b600"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-08/open-circulation.hcs2",
+      "sha": "e75a9b7a9d810fc877acfe9c7370145b7e17284c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-09/authored-layout.json",
+      "sha": "bd4b50b7126460b95a828b5a5026f7df56763ad2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-09/construction.json",
+      "sha": "32ecdaec40ba472ba85c21190853ef956ab15cab"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-09/open-circulation.blend",
+      "sha": "2f850ec658b1979eb14652493db5fcf4ee7dd813"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-09/open-circulation.glb",
+      "sha": "f10a3a0e4d332cc13e9f21743e8fe08fd4d915b4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-09/open-circulation.hcs2",
+      "sha": "6357a2574a5ee77318f040d751dcbad99febb8dc"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-10/authored-layout.json",
+      "sha": "ce8aea7de1cdcbd4949cb560ee2ad35b8f755cee"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-10/construction.json",
+      "sha": "e236dd95575b573f65c9936a984c568eb6edba04"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-10/open-circulation.blend",
+      "sha": "76ab15d5deaeaa2f0b4491edd102238e5dd411d7"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-10/open-circulation.glb",
+      "sha": "5c56734828ef2cbd54756702c5d62db4150e9938"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-10/open-circulation.hcs2",
+      "sha": "1956544047d7aea144f8061264915e1cb33832f4"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-11/authored-layout.json",
+      "sha": "b7798e128df46a37bbfa5e3d1a2264c52f72b306"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-11/construction.json",
+      "sha": "cfd6871e9aee4bcde677e6b28c76a7b0e9e0279c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-11/open-circulation.blend",
+      "sha": "63e96a5fe9cdedd7aa5f3ff1eca332a2df58ae01"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-11/open-circulation.glb",
+      "sha": "289958af666e85a334b151989941ee03800cfbfe"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-11/open-circulation.hcs2",
+      "sha": "14bafe3fb659467174837bab1debe7124fcf52c8"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-12/authored-layout.json",
+      "sha": "2a92fcb9b0fab16f3f8b7e3a89d859a6e8eceae2"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-12/construction.json",
+      "sha": "ed214ad2f5fd3f1d15fc3a9d9238cd10ee25ab90"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-12/open-circulation.blend",
+      "sha": "9d254f742b964738b8de107b092c1110c2c5eea6"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-12/open-circulation.glb",
+      "sha": "593a7d9eeefb87c14c0408cd5d8343c2bda63bce"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-12/open-circulation.hcs2",
+      "sha": "c427a7f1b9988b3984427b397218a6af5eec743b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-13/authored-layout.json",
+      "sha": "927d9761751e017ac22e0064a4712d98c65d761d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-13/construction.json",
+      "sha": "66cf4bf3e80f9a8e50ed035720dcae56963dcd6b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-13/open-circulation.blend",
+      "sha": "52a95d0192d66004b034e49d528bd5666ddea998"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-13/open-circulation.glb",
+      "sha": "b3863b3a99263ac343fd7cd72b2d4fe66e5e417c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-13/open-circulation.hcs2",
+      "sha": "c37848a97b2f93f2c8d5c23601a5f855d66f8636"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-14/authored-layout.json",
+      "sha": "e598e69e2004fa1b719d58ff36e71d48e26f930d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-14/construction.json",
+      "sha": "916bec8df18ad91a663be7860754689e2294ee3e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-14/open-circulation.blend",
+      "sha": "4a556e3b9d8e756c4fc28b8558e0be19d3e08c1c"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-14/open-circulation.glb",
+      "sha": "fb8169d2bc31048906b301f114c04f725f461467"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-14/open-circulation.hcs2",
+      "sha": "46ef50e29e2b2c1eef0820ff098ddec6d27f05ac"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-15/authored-layout.json",
+      "sha": "9ca51bc603d854257d2afcf8ad2c5b48684b5a41"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-15/construction.json",
+      "sha": "bd0dd60edf93be369195e650d154c01d424eed0e"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.blend",
+      "sha": "00a96508c8466e9636883ca2b822b25dd1ce49ab"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.glb",
+      "sha": "811b125029e4ebdd9aa1c7ad93528878a5ebe5de"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-15/open-circulation.hcs2",
+      "sha": "051f568b9f22d3eb0762bd2c58713e247844d8c5"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-16/authored-layout.json",
+      "sha": "40fbf483e09354ca8ae97a4f37cc0e43c8eab907"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-16/construction.json",
+      "sha": "d61a2bc3547865fc62e236c2dd134ea434d22fb3"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-16/open-circulation.blend",
+      "sha": "cb0f823c6b1ad8e85f0cd57cfa83974bd94cb052"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-16/open-circulation.glb",
+      "sha": "1b5e842760f38b79208f1e5ceff15d244513e5a9"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-16/open-circulation.hcs2",
+      "sha": "7b5824bce42d8ea98151f35d548c38eddf8bea53"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-17/authored-layout.json",
+      "sha": "f51fdd4ee1574cda713b83e0de01c803a0099f6b"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-17/construction.json",
+      "sha": "6c26fa896e860c7f770a35ca81a96ce0621a6e6d"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-17/open-circulation.blend",
+      "sha": "48a34186ab9bb671f68d57ab24de346f491244aa"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-17/open-circulation.glb",
+      "sha": "9032d5e88020c802a137a31686833fecf523c625"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-17/open-circulation.hcs2",
+      "sha": "d4addc1ecc0bc627c19e873bb1bddb87460804fe"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-18/authored-layout.json",
+      "sha": "80bece78e55d7ae5a64e9baf629bd11b05f1aa69"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-18/construction.json",
+      "sha": "81118448b14df8f7c0271985d189ced8706c0e49"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-18/open-circulation.blend",
+      "sha": "86a3dcc5fce86cba601bdf9e5576f939083b2c80"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-18/open-circulation.glb",
+      "sha": "b20a6eddc297ae3b7363d319c9787f48d97f6e27"
+    },
+    {
+      "path": "development/levels/rebuild/flat-circulation-pass/wld-18/open-circulation.hcs2",
+      "sha": "98a710950fa674209308c45b86a16c5f7286aab0"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "d142d043459825ab61f612cd8627a4b958d28b09"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "dd3628cc7d1d9da6d105c5039d5c93502192b471"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "f1d728ba67d6923881a18af08f467329f5682af2"
+    },
+    {
+      "path": "src/test/java/org/beckenburg/LanVanExtractionIntegrationTest.java",
+      "sha": "c3c1a1a2275b178752b0ad6eab73042b7688ff98"
+    },
+    {
+      "path": "tools/archive_flat_verification.py",
+      "sha": "a24b25bb1289fbc826d0fd6e7ccdf9e27cbed7c9"
+    },
+    {
+      "path": "tools/audit_current_flat_routes.py",
+      "sha": "c0560ad06696c1b974b7a12a4c3dd7d04dbfcb5c"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "ecd51017eda2ea5804e3fccc02b01955c311efc0"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "b11887df9efe5df26044bccf996415a6ef30a245"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "386395757609e49095def06f5225c1295d35069d"
+    },
+    {
+      "path": "tools/build_flat_circulation.py",
+      "sha": "f54829e9ebd20fb39a830df49116d27bd06128b8"
+    },
+    {
+      "path": "tools/check_flat_circulation.py",
+      "sha": "870f1aeb6f223e1738eda5e4bc740db01ca55318"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "79dd396977949c70b82fe457e3d77a44a9e9b841"
+    },
+    {
+      "path": "tools/java/FurnishingRouteProbe.java",
+      "sha": "e984b1ec031df0b7a7836522e061be9dcb2775ee"
+    },
+    {
+      "path": "tools/rebuild_flat_wall_profiles.py",
+      "sha": "898a7ad925ddc7d8c5340fe3a6db5990bc0ec4d5"
+    },
+    {
+      "path": "tools/render_flat_circulation.py",
+      "sha": "c94f40f47597c078dd69931f524946e9af2efc01"
+    },
+    {
+      "path": "tools/render_flat_wall_profiles.py",
+      "sha": "dc163ad9ac29564269b462e48f8b14f346c6e334"
+    },
+    {
+      "path": "tools/repair_flat_native_precision.py",
+      "sha": "9247dc5ae858c855c1feff141cddaea6720271db"
+    },
+    {
+      "path": "tools/resolve_flat_floor_ownership.py",
+      "sha": "38dbbe9d70fdc694b70b806f176dadd988c8e8b3"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/flat-circulation-batch/flat-roster-sheet-2.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred.",
+  "provenance_correction": "c8d19ff349324636896e2663b81497a84ce1cf0b"
+}

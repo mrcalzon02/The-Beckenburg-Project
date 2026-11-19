@@ -1,0 +1,152 @@
+{
+  "id": "WLD-05",
+  "source_world": "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world",
+  "source_height_sha256": "e13d2136218a123648d0325daeaf37bbd3efa4352b71e92f2d341001b735ac88",
+  "source_native_sha256": "9cb46f5b8320fb1eada9da90e54e36ee63d3d62e37c2cc0039c08e7ef0cfd9db",
+  "source": {
+    "id": "WLD-05",
+    "construction": "development/levels/rebuild/arrival-bearing-pass/wld-05/construction.json",
+    "layout": "development/levels/rebuild/arrival-bearing-pass/wld-05/authored-layout.json",
+    "glb": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.glb",
+    "native": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.hcs2",
+    "blend": "development/levels/rebuild/arrival-bearing-pass/wld-05/supported-arrival.blend",
+    "native_sha256": "9d82c6c1a087a9074e57dffef7bc034f5d3386aa960914327760f41ce434c1e2",
+    "glb_sha256": "f7ffd6d8cef1cfe3b114b33ceeb5308946690c1992288af0e3dca6e1c2c2ca5c"
+  },
+  "program": [
+    {
+      "link": "L05",
+      "segment": 0,
+      "points": [
+        [
+          8.0,
+          0,
+          38.0
+        ],
+        [
+          30.0,
+          0,
+          52.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L08",
+      "segment": 0,
+      "points": [
+        [
+          47.0,
+          0,
+          38.0
+        ],
+        [
+          47.0,
+          0,
+          44.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L08",
+      "segment": 1,
+      "points": [
+        [
+          47.0,
+          0,
+          44.0
+        ],
+        [
+          40.0,
+          0,
+          44.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L08",
+      "segment": 2,
+      "points": [
+        [
+          40.0,
+          0,
+          44.0
+        ],
+        [
+          30.0,
+          0,
+          44.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    },
+    {
+      "link": "L08",
+      "segment": 3,
+      "points": [
+        [
+          30.0,
+          0,
+          44.0
+        ],
+        [
+          30.0,
+          0,
+          52.0
+        ]
+      ],
+      "bed_offset_metres": -0.2,
+      "half_width_metres": 2.5,
+      "shoulder_metres": 2.5,
+      "reason": "Actual native terrain body contacts on this planned circulation link; no new floor support inferred"
+    }
+  ],
+  "grading_limit": "LOWER_ONLY",
+  "prior_grades_retained_exactly": true,
+  "new_basement_punches": [],
+  "reason": "Remove measured soil/body intersections while preserving original landform away from circulation and every saved basement punch",
+  "source_world_files_preserved": {
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/adaptive-topology.bin": "837e9334125baa9923ebdef382fe2839e9c4d147e9b9f6f852684f0484f56b9a",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/authored-cuts.tsv": "650180e121f5d9df0af3775b680323f3b759c53c750186829175b17ca66a438c",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/source-provenance.json": "986dc98a3e6242637be33e8ee29e3045bb47d0747c8c3a78322ba1c3d350506a",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/terrain-physics.hcs2": "9cb46f5b8320fb1eada9da90e54e36ee63d3d62e37c2cc0039c08e7ef0cfd9db",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/tile_0_0.png": "e13d2136218a123648d0325daeaf37bbd3efa4352b71e92f2d341001b735ac88",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/verification.json": "5f9b8087f18bee516f7db6ae2e1a1dfe021bf7ad950e486af0d38f5ad7afd802",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/world.properties": "b1e50e68c14b6a0e99243b1bd4af8272a25baf58ff6e013708685b4f3f634c03",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/scene-package/scene.bin": "27cfd4b1f8e65c3e4ea8a32a884ee352cb18b5f359306af04379bbe100b9abce",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-05/terrain-world/scene-package/meshes/site.obj": "07a5fd18690cb6c25fcf4504085990194aa8b97cf64dcdf0633ba9d310aab754"
+  },
+  "world": "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/adaptive-topology.bin": "837e9334125baa9923ebdef382fe2839e9c4d147e9b9f6f852684f0484f56b9a",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/authored-cuts.tsv": "650180e121f5d9df0af3775b680323f3b759c53c750186829175b17ca66a438c",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/authored-path-grading.sha256": "e10492edf09a92d83f5bfbe41b6349f95bfafdfc34b6a16e25bf4508fcb5f6f6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/source-provenance.json": "a7e789f4bc5cac22f93486440fcaf4730b701cc947b2b41a78107395f76829e6",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/terrain-physics.hcs2": "347c321f29160b5fe313f1959e31b11956022ab6143b01937ddf79a18c247571",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/tile_0_0.png": "e13d2136218a123648d0325daeaf37bbd3efa4352b71e92f2d341001b735ac88",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/verification.json": "9ce9c35491a6e17818df54164b2d65d222bb41e4a1adccdff896c5431ed8c4c7",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/world.properties": "b1e50e68c14b6a0e99243b1bd4af8272a25baf58ff6e013708685b4f3f634c03",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/scene-package/.scene.bin.editor.previous": "27cfd4b1f8e65c3e4ea8a32a884ee352cb18b5f359306af04379bbe100b9abce",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/scene-package/scene.bin": "6d725bfdff3d12721802285ca42c35b8b47aa462c1e80f5c7fc790026f2b9486",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/terrain-layers/tile_0_0.bin": "b69dbed7ef01b97986a0d0b237c54aae5fec7acfe7ff170183810db0950a7876",
+    "development/levels/rebuild/flat-terrain-pass/worlds/wld-05/terrain-world/scene-package/meshes/site.obj": "5dd8f3335845a9ec25bb675e47c31da70d0127cba04ec600d94b932c7b8d1f32"
+  },
+  "author_sha256": "4ef03772427ff6f31acae5b21b8146d5357fae01628e8dc18541c6a0e1b46fa4",
+  "builder_sha256": "de0763d64f58440f0f7b97ef0247443df44f6553d318030836385ca08052f2b8",
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "status": "SAVED_EDITOR_CIRCULATION_CUT_CANDIDATE_NOT_TERRAIN_ACCEPTANCE"
+}

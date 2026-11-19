@@ -1,0 +1,169 @@
+{
+  "status": "PASS_SCOPED_INTEGRITY_NOT_TERRAIN_ACCEPTANCE",
+  "sites": [
+    {
+      "id": "ACADEMY",
+      "quarter_metre_cells_checked": 84480,
+      "cutouts": 1757,
+      "clear_hole_probes": 901,
+      "terrain_triangles": 5678,
+      "chunk_count": 1,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "ASYLUM",
+      "quarter_metre_cells_checked": 94208,
+      "cutouts": 2073,
+      "clear_hole_probes": 1381,
+      "terrain_triangles": 7193,
+      "chunk_count": 1,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "CHURCH",
+      "quarter_metre_cells_checked": 38912,
+      "cutouts": 712,
+      "clear_hole_probes": 528,
+      "terrain_triangles": 2831,
+      "chunk_count": 1,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "COLLEGE",
+      "quarter_metre_cells_checked": 130240,
+      "cutouts": 2230,
+      "clear_hole_probes": 1603,
+      "terrain_triangles": 8601,
+      "chunk_count": 1,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "FARMHOUSE",
+      "quarter_metre_cells_checked": 36800,
+      "cutouts": 891,
+      "clear_hole_probes": 665,
+      "terrain_triangles": 3796,
+      "chunk_count": 1,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "MANSION",
+      "quarter_metre_cells_checked": 77056,
+      "cutouts": 1344,
+      "clear_hole_probes": 980,
+      "terrain_triangles": 5411,
+      "chunk_count": 1,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "PRISON",
+      "quarter_metre_cells_checked": 146432,
+      "cutouts": 2328,
+      "clear_hole_probes": 1384,
+      "terrain_triangles": 8286,
+      "chunk_count": 4,
+      "excavation_rims_open": 2
+    },
+    {
+      "id": "SCHOOL",
+      "quarter_metre_cells_checked": 100096,
+      "cutouts": 1684,
+      "clear_hole_probes": 1309,
+      "terrain_triangles": 8001,
+      "chunk_count": 1,
+      "excavation_rims_open": 5
+    },
+    {
+      "id": "WLD-03",
+      "quarter_metre_cells_checked": 147200,
+      "cutouts": 1522,
+      "clear_hole_probes": 1440,
+      "terrain_triangles": 10254,
+      "chunk_count": 4,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "WLD-04",
+      "quarter_metre_cells_checked": 94080,
+      "cutouts": 1168,
+      "clear_hole_probes": 1168,
+      "terrain_triangles": 8599,
+      "chunk_count": 1,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "WLD-05",
+      "quarter_metre_cells_checked": 107520,
+      "cutouts": 1745,
+      "clear_hole_probes": 1152,
+      "terrain_triangles": 9592,
+      "chunk_count": 1,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "WLD-06",
+      "quarter_metre_cells_checked": 105984,
+      "cutouts": 1774,
+      "clear_hole_probes": 1320,
+      "terrain_triangles": 8536,
+      "chunk_count": 1,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "WLD-08",
+      "quarter_metre_cells_checked": 131712,
+      "cutouts": 2014,
+      "clear_hole_probes": 1508,
+      "terrain_triangles": 8472,
+      "chunk_count": 4,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "WLD-09",
+      "quarter_metre_cells_checked": 134848,
+      "cutouts": 2439,
+      "clear_hole_probes": 1725,
+      "terrain_triangles": 11318,
+      "chunk_count": 4,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "WLD-10",
+      "quarter_metre_cells_checked": 147200,
+      "cutouts": 2280,
+      "clear_hole_probes": 1697,
+      "terrain_triangles": 9528,
+      "chunk_count": 4,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "WLD-11",
+      "quarter_metre_cells_checked": 123200,
+      "cutouts": 1517,
+      "clear_hole_probes": 1517,
+      "terrain_triangles": 11060,
+      "chunk_count": 1,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "WLD-12",
+      "quarter_metre_cells_checked": 150784,
+      "cutouts": 2574,
+      "clear_hole_probes": 1828,
+      "terrain_triangles": 12695,
+      "chunk_count": 4,
+      "excavation_rims_open": 0
+    },
+    {
+      "id": "WLD-13",
+      "quarter_metre_cells_checked": 163072,
+      "cutouts": 2497,
+      "clear_hole_probes": 1917,
+      "terrain_triangles": 10437,
+      "chunk_count": 4,
+      "excavation_rims_open": 0
+    }
+  ],
+  "checker_sha256": "7f5e65bb38dff87dd375e2a195a9d4f6b94fa19f0526fa8d220fe8f764cc48bb",
+  "limits": "No visual/route/terrain construction acceptance inferred. Existing native movement failures are in native-route-fit.json; canonical van, foundations/retaining rims/guards/water/runtime remain open."
+}

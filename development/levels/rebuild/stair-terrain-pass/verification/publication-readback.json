@@ -1,0 +1,1196 @@
+{
+  "observed_utc": "2026-11-08T10:46:59.129412+00:00",
+  "source_checkpoint": "e5426fb97a70046c80defd06b78be5e3ce7fe21f",
+  "remote_head_verified": "969b0435c11bebd379601ecaba346689ddc32413",
+  "remote_tree_sha": "9b78f3982d3089eba85701d6f75ff72edeaed2a3",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for union of saved terrain circulation, basement punches, physical bearings, consumer controls and checkpoint binding paths",
+  "checkpoints": [
+    {
+      "commit": "e5426fb97a70046c80defd06b78be5e3ce7fe21f",
+      "changed_files": 289
+    },
+    {
+      "commit": "8f77d72cd7e56a0db3443932c19dfd375ea9e6f0",
+      "changed_files": 1
+    },
+    {
+      "commit": "969b0435c11bebd379601ecaba346689ddc32413",
+      "changed_files": 4
+    }
+  ],
+  "verified_file_count": 290,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "2cb14ccb49bca135264f76ff8b9bd95be5f9972f"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "e1e0b6f95ce09d15710dfe131095db82106cf376"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "74837fc70af89cd2f6bd5e5a331bf8cbf35439b1"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "9210c999745c0acc7f34e4e6fb2d5ff631b08b04"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "5c1c8eee09fcfb90a4ab3bbbe136d3de1fd8064a"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "f541a7840d5067f2cf767ae3e0813a7ba5fa691d"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "6647ccb6b9a64004d9853d7bd4947c979c662148"
+    },
+    {
+      "path": "development/levels/blockouts/build_blockouts.py",
+      "sha": "4fcd1e067209241d70caf19977808dea1a148451"
+    },
+    {
+      "path": "development/levels/blockouts/structural_pass.py",
+      "sha": "9e4eaf0a7b4bff214c830b98faa70acd911021e6"
+    },
+    {
+      "path": "development/levels/rebuild/WORKFLOW.md",
+      "sha": "1fcbb88a0aed2182f486eca7f686b8b1b8001a04"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-raising-grade/wld-03-saved-terrain.png",
+      "sha": "bd816ea37fe6d5eaaec1a1d9e603b24604314753"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-raising-grade/wld-04-saved-terrain.png",
+      "sha": "c0ceb85e358f53becf006ff0780ff0d1f8510533"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-raising-grade/wld-12-saved-terrain.png",
+      "sha": "c55cbf78dac9c17bdf2b4c97327fed7da96100cb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-upper-only-cut/wld-03-saved-terrain.png",
+      "sha": "bd816ea37fe6d5eaaec1a1d9e603b24604314753"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-upper-only-cut/wld-04-saved-terrain.png",
+      "sha": "c0ceb85e358f53becf006ff0780ff0d1f8510533"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/rejected-upper-only-cut/wld-12-saved-terrain.png",
+      "sha": "c55cbf78dac9c17bdf2b4c97327fed7da96100cb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-1.png",
+      "sha": "91394bf872a6a39b7cb4ad83dcc79a06a1e5ff53"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-2.png",
+      "sha": "52c05f53ca86f996c4608e57d01357f8e5079484"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-3.png",
+      "sha": "82306d0cc3d762bc7a530f5658a59bbe57054611"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-4.png",
+      "sha": "5eee3ed39f86b5250401de471d72692b43104341"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-saved-terrain.png",
+      "sha": "bd816ea37fe6d5eaaec1a1d9e603b24604314753"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-stair-after.png",
+      "sha": "095213a31c1339abce91d3742946341d5f2c8163"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-stair-before.png",
+      "sha": "0fc6915e7872d268f05ea44454512dfa0acf8a75"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-03-whole-site.png",
+      "sha": "03e7505d178759328ca7b73b054e910609872143"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-saved-terrain.png",
+      "sha": "c0ceb85e358f53becf006ff0780ff0d1f8510533"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-stair-after.png",
+      "sha": "906ffc1067ee424d1bd634cd0d04b222561272c9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-stair-before.png",
+      "sha": "05e17a9dd0851e8a14ff2dce3513adb02e4c0332"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-threshold-after.png",
+      "sha": "15b3a10d7c426f0ce11a2c57cfb2f434d14dfa2f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-threshold-before.png",
+      "sha": "397255c9ba9afc36b03091f2512e3b08fe472907"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-04-whole-site.png",
+      "sha": "9f02054b240582ebaf56e1152bb981226dbe4d62"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0016-soil-bearing.png",
+      "sha": "a98a1de87b7da8ab1079692c4f1bc24149e5ce27"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0017-soil-bearing.png",
+      "sha": "5d32442aa72c860d38e94e8563974464144b3722"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0018-soil-bearing.png",
+      "sha": "2c899b43d816dc60557dd1e4e2d83346374bef4f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0022-soil-bearing.png",
+      "sha": "596860518ba14473e3f5acd283183bac3056f4c6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-bearing-skirt-0042-soil-bearing.png",
+      "sha": "e67908f62229edb7a75f0780486ebeed386c4f79"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-saved-terrain.png",
+      "sha": "c55cbf78dac9c17bdf2b4c97327fed7da96100cb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-stair-after.png",
+      "sha": "f541c9c78dcc33d8b91a41c406385e4426873e61"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-stair-before.png",
+      "sha": "7d1bf46df41bc344c78530380430181ee8feb499"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-terrain-batch/wld-12-whole-site.png",
+      "sha": "b905fb2ded8c529410bc45805327a442223fb540"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "bb1f7da1aef39180793aaaa3d513d240f9a0a516"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/NEXT.md",
+      "sha": "2607a17879f4960c0c1c8a2ebd292f4dbb85c7a4"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/authored-layout.json",
+      "sha": "d1a3b6cf94e3b0d9ff5579357e6617d77d29ccf6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/benched-terrain.blend",
+      "sha": "99d7e88ffb24310b253a0b1e654371155d91cb55"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/benched-terrain.glb",
+      "sha": "424ced48511fe794c905b8c56bf7bfc61731ab7d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/benched-terrain.hcs2",
+      "sha": "af03af55235fff84de8a26a4d0394801acb9cef8"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-03/construction.json",
+      "sha": "49df174c4ef8045e06f88622ab8e05ed59995cf7"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-04/authored-layout.json",
+      "sha": "c8ace6256cb07319eb65c794a33b8a5b39efb730"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-04/benched-terrain.blend",
+      "sha": "e4fa706a891be27d678a6061751b17941049eb38"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-04/benched-terrain.glb",
+      "sha": "3330a2a752817d66f56eca5db834c0fdbafdb29d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-04/benched-terrain.hcs2",
+      "sha": "d94d7211cad7e46f328b27e8b19f3608d6164a99"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-04/construction.json",
+      "sha": "78d6a1a802fcc4e6842a8350a2ac2510f22b4944"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/authored-layout.json",
+      "sha": "998d698552524820c1d4f9f9398f632586922ff9"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/benched-terrain.blend",
+      "sha": "09a6460cc917cef40ea81a69a02308730117b4c2"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/benched-terrain.glb",
+      "sha": "9eca21eb72ccf4a57c69fbe9c86b35696d1c059b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/benched-terrain.hcs2",
+      "sha": "912f400fb6770dc17a66addbfdf63316865a89d5"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/assemblies/wld-12/construction.json",
+      "sha": "0c92d9b8a4897d40fd8b63138106953291fb7ffa"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/README.md",
+      "sha": "4393b959916d3a3e2a10ca310a5faf5fc66d7593"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/bench-flat-contacts.tsv",
+      "sha": "08a493d521f0928ab83016ded470ad59838d4c88"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/bench-flat-invalid.tsv",
+      "sha": "5e8da621b9449add7fe3ee304e0b3d7f4108159c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/bench-flat-sweep-contacts.tsv",
+      "sha": "db4c57b07571cb61cf07db6e59b007ce4c2e997b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/bench-flat-sweeps.tsv",
+      "sha": "3d4f2eeb44196bdeb0af88fcd9b296081cb2cc04"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/pre-extension-bearing-contacts.json",
+      "sha": "573eec827dcbefc91def6ff081cf509dd827a649"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-03/authored-layout.json",
+      "sha": "b63d92081efeb042d04950a001da06589d9f7a19"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-03/benched-terrain.blend",
+      "sha": "f7c1ce16f77f9c86a992bf6341a2ef097c1c4adc"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-03/benched-terrain.glb",
+      "sha": "b7266a101cc9797bc0dc72c2270930d9bda84918"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-03/benched-terrain.hcs2",
+      "sha": "fa716a1810d64dbf4d54a56bfce4012252789ff2"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-03/construction.json",
+      "sha": "a499f08187105bebd86c7a07d973791742a9aae4"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-04/authored-layout.json",
+      "sha": "79247168bee2c2c147da83849df06ec9e9795dcd"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-04/benched-terrain.blend",
+      "sha": "fc758ca891d7fc3d4fab388884884f21397393c2"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-04/benched-terrain.glb",
+      "sha": "cfafb6464dbe2d8e9898a9c56a88242e7ddffcc5"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-04/benched-terrain.hcs2",
+      "sha": "255ab563aa21071d4b9f672139e48bb21a3f259e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-04/construction.json",
+      "sha": "108c4a750658a28135586561dff04c8247442b33"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-12/authored-layout.json",
+      "sha": "46a265980460cbc56434e32b00eb9c65b2a15205"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-12/benched-terrain.blend",
+      "sha": "4c35e77e5b5faac3b6c794495caef938764d4bdb"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-12/benched-terrain.glb",
+      "sha": "3fea7fcb15054d8cbf601c42755b5c505f2e784c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-12/benched-terrain.hcs2",
+      "sha": "25c2be89513c51c8291537749eee88ed402d154e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-assemblies/wld-12/construction.json",
+      "sha": "ff9f05606d3737140293f6362991cdae0fa210b3"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-verification/complete-route-sweeps.tsv",
+      "sha": "0f23b313bd9d41952ee96edcfbc3b9d9116ea99c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-verification/failure-contacts.tsv",
+      "sha": "a27c7dedee65489ead2c23bac616b9e6622be839"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-verification/flight-sweeps.tsv",
+      "sha": "fb231a850c88a8e5fc244157eae1ff0f40ff3f2b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-verification/native-route-fit.json",
+      "sha": "5e75cbf3d1ed6f4c2eb471e55a80ee185ec6f484"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-verification/native-route-probes.tsv",
+      "sha": "dbc0566b1edbc873dfbd3e39c5b8a91935ed591f"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-verification/stair-movement.json",
+      "sha": "f4155dd296e09d5b8529b9c3527da378626ab323"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-wld-03-world.json",
+      "sha": "2bf64ca81b88297f6b89deb8e65bcb75f46832df"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-wld-04-world.json",
+      "sha": "6939ea29117c2a8f7429b68bfaa387d87633ab32"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-wld-12-world.json",
+      "sha": "413c0ec335b7e9e6c809dc06a9bf25769d72785e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/adaptive-topology.bin",
+      "sha": "0f299d3a609ad7a95caaa5cb6ca92addc4f4156c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/authored-cuts.tsv",
+      "sha": "9e02be3354706befc65318d62f375d055caa8127"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/authored-path-grading.sha256",
+      "sha": "de1d7d08fe764f3e3649fad3b8e0710b6b1b368e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "423dad5bc8e6eb5730497d5d5fb08a9228e3681d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "9d21b0a685202abdc33314c2a3f4be6fd0f620b8"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "440cd5517396e3a4e24361768ee28ad321d93c02"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "befa79402b6c7b6fa9c4d555d8d7539a5661f578"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "7371e1c480f5b0fd7fcd5a99400d5b7e264926ad"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/scene-package/scene.bin",
+      "sha": "d375ca3d7f8b23de9bc73a54e1fff0045557d338"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/source-provenance.json",
+      "sha": "25d023ffc6bdc3c6fc97cf2ca88f2b236bd37860"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "ada4d23fbdb1d48fa7b78e3301362c84f6b62b20"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/terrain-physics.hcs2",
+      "sha": "06fd39795b9d242fb2f7b4123e483c46dc621e72"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/tile_0_0.png",
+      "sha": "56047e844183d09c2e118e184144d4c5299e3224"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/verification.json",
+      "sha": "5765980abbb56d8d98be71544cfa4254460c4874"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-03/terrain-world/world.properties",
+      "sha": "33d5803c482aa81906073fe23effe1ac96852d9c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/adaptive-topology.bin",
+      "sha": "d8ba50df547bbfbeb8a36e15c94112523004cfc6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/authored-cuts.tsv",
+      "sha": "4189562371e8ba1df26b0452453457df6dcae7af"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/authored-path-grading.sha256",
+      "sha": "c652b8ae96ada7a654d07aab3fe1142ec528b84a"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "83c13d0b78078915eb2dc856b6d64eaf50dd9e34"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/scene-package/meshes/site.obj",
+      "sha": "e967832df47b502dc37fb1ecdd731f1aab803b4a"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/scene-package/scene.bin",
+      "sha": "970b4f7af390d0a11d42868c72e28c48077cfa3a"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/source-provenance.json",
+      "sha": "b035b6d6668ba688dcfd7626f3c85eabe511afb7"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "75e6fd9946e7a6e87818ad3805f0ee85a657a0ec"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/terrain-physics.hcs2",
+      "sha": "0e0fa61285cab28abc5859215cf868e0c42d6109"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/tile_0_0.png",
+      "sha": "c91b8e605b74d22197d9a19bcfc2e16028ad679c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/verification.json",
+      "sha": "6cbf5e924ec96631c0871574d19f4cbdf93cc289"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-04/terrain-world/world.properties",
+      "sha": "87756329f2a14dccb2a97381e4e47e3aa225dcab"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/adaptive-topology.bin",
+      "sha": "4953e6ceb555995ef4a14ce5d25f2f7007223d2c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/authored-cuts.tsv",
+      "sha": "71a1aee0b985af61fdcc810aa9681f0be62f3677"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/authored-path-grading.sha256",
+      "sha": "562eeb32b99948cbabe6f136d7a08d02dd44388e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "b7f0ea6808be698b09e90880c30585e0538a28bc"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "d282aea5ce6eb96f850cacef8f4e4717d9489070"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "42ed54ceb3c303e67e91ec7cc5aec242c56e36f6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "ea6569e82e290d51567d336875dd0c51e552e2a4"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "718cdbba7ef754edfe125ee9ad014e63eb752d44"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/scene-package/scene.bin",
+      "sha": "6f55340666e3ee42d25d4687671e89662e13c7b1"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/source-provenance.json",
+      "sha": "8275ba4cb7182177b22b2d0a9325029fe315649e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "b537649b12fbcb356023cdcf25887bc9959256a4"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/terrain-physics.hcs2",
+      "sha": "0702f183e2655fa47fc4b6f3911287a625bef2ed"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/tile_0_0.png",
+      "sha": "e8ee2f3cfcead7971b3c28c7356273d9b0a224b3"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/verification.json",
+      "sha": "0ada2f9033eaf5b39f4e2d076f67f847085cc707"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/raised-grade-worlds/wld-12/terrain-world/world.properties",
+      "sha": "b59cb0a638b3287047ba1a283351eb57896eb094"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/ruin-threshold-before.hcs2",
+      "sha": "d8394534ec10a9c08cc3a7ed6b7d5bcad9d1b59e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-03/authored-layout.json",
+      "sha": "f75258261ded0810a00a45e5d51714fe4e78eaea"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-03/benched-terrain.blend",
+      "sha": "f92e91f8963e51269abdd8c06e6e60cd6fc7dbbc"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-03/benched-terrain.glb",
+      "sha": "e7a09ab3f3f0f400ce6b1f9fdc93287eda832f81"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-03/benched-terrain.hcs2",
+      "sha": "0bed4f3e4f92b902e3adbe14087c1cf27d520211"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-03/construction.json",
+      "sha": "29923812f61af4464e29883de6ba540619871b04"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-04/authored-layout.json",
+      "sha": "b96e2153d849811ae907387ec461a57c5ab5c6be"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-04/benched-terrain.blend",
+      "sha": "f5a6050bd35694199c1a6e2d8670c5c844e11de7"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-04/benched-terrain.glb",
+      "sha": "cc1496f6eeee4609306ef70321468cebea2920e4"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-04/benched-terrain.hcs2",
+      "sha": "19825cf69ba77c2039827f6f5c9355d1538cfb6e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-04/construction.json",
+      "sha": "b9d72d1df62df6b151a7b0505fd2c955a911413b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-12/authored-layout.json",
+      "sha": "a70bbcc0fbde4a1e3e1a4f4bbcf7610c8722b8a3"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-12/benched-terrain.blend",
+      "sha": "5356a6afeebfba88844a36aba780b02fcc0b0597"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-12/benched-terrain.glb",
+      "sha": "74b1d46a223eef02f9b7a678244e6205896ba74d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-12/benched-terrain.hcs2",
+      "sha": "42d03a6c315601a858569fa3b33de0a1c8cbfd8d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-assemblies/wld-12/construction.json",
+      "sha": "685d9a7f6ab2cc24ff269f1892c4507e41f1fea7"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-verification/complete-route-sweeps.tsv",
+      "sha": "0cff39168925d1a08a3f8428afdd533ab7160a17"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-verification/failure-contacts.tsv",
+      "sha": "f2db06b64a8343706fc53767af97bb702d8f6c52"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-verification/flight-sweeps.tsv",
+      "sha": "8e692476694c7cf0a6c4670aededeaf9b1633b07"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-verification/independent-sources.json",
+      "sha": "63de49228bf6c16a9bca7d221aad506bbdbc2c89"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-verification/native-route-fit.json",
+      "sha": "b66d756109566c976c876a6f6fb16c989488cf73"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-verification/native-route-probes.tsv",
+      "sha": "b8e6727f9942355c63fecea65e1848dac09bd294"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-verification/stair-movement.json",
+      "sha": "ebd63e38c3b4598c7927df18287c319e2ee84606"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-wld-03-world.json",
+      "sha": "6a3070352488fc0a7da39f09d6ea65fb12317f8d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-wld-04-world.json",
+      "sha": "e4deea33f22395ba28a419f4bccf78b4786de023"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-wld-12-world.json",
+      "sha": "d8d1297d21663815aa727ba864b41d60abac1d49"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/adaptive-topology.bin",
+      "sha": "0f299d3a609ad7a95caaa5cb6ca92addc4f4156c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/authored-cuts.tsv",
+      "sha": "9e02be3354706befc65318d62f375d055caa8127"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/authored-path-grading.sha256",
+      "sha": "f22be96a379f3a5b3350544aa67ef469de1e19de"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "0e8b275269ab66c1c663a0fc77a530b63154c17b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "e2c3351afaf572bc39f7f439ea17c68e58c36951"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "440cd5517396e3a4e24361768ee28ad321d93c02"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "befa79402b6c7b6fa9c4d555d8d7539a5661f578"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "7371e1c480f5b0fd7fcd5a99400d5b7e264926ad"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/scene-package/scene.bin",
+      "sha": "6cbfdc4d25bc4559509efe2119db21393f928fa0"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/source-provenance.json",
+      "sha": "6bca85beef07a0775da3656bf4de0703b8787efc"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "ffff8a2b4f262cf87048f26b83d171d10caddb9e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/terrain-physics.hcs2",
+      "sha": "8c9b4c88a09e2ba2773cafe5f10ce62d1ab69caf"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/tile_0_0.png",
+      "sha": "56047e844183d09c2e118e184144d4c5299e3224"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/verification.json",
+      "sha": "569e63cdf28d4c17c5a52d56fdea9f1dea917838"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-03/terrain-world/world.properties",
+      "sha": "33d5803c482aa81906073fe23effe1ac96852d9c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/adaptive-topology.bin",
+      "sha": "d8ba50df547bbfbeb8a36e15c94112523004cfc6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/authored-cuts.tsv",
+      "sha": "4189562371e8ba1df26b0452453457df6dcae7af"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/authored-path-grading.sha256",
+      "sha": "279cfb4ad7d528ce069d913442541535139da1e9"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "83c13d0b78078915eb2dc856b6d64eaf50dd9e34"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/scene-package/meshes/site.obj",
+      "sha": "d98737b0e9acbf96ec1898d4ff90df679866c57a"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/scene-package/scene.bin",
+      "sha": "7683bd16e43a0f7c479bbbdb8e34505d2dcea5ca"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/source-provenance.json",
+      "sha": "b8ca442fcd6cd6cef9428af759f5bf9e8b880126"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "3e8c4df4deaee186af4d9b1f110c7e19fa429523"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/terrain-physics.hcs2",
+      "sha": "224066294157b685746f26fba07d575fa309248d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/tile_0_0.png",
+      "sha": "c91b8e605b74d22197d9a19bcfc2e16028ad679c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/verification.json",
+      "sha": "40efd7d8ea87e6985206e911b3fcbe1c04d77aef"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-04/terrain-world/world.properties",
+      "sha": "87756329f2a14dccb2a97381e4e47e3aa225dcab"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/adaptive-topology.bin",
+      "sha": "4953e6ceb555995ef4a14ce5d25f2f7007223d2c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/authored-cuts.tsv",
+      "sha": "71a1aee0b985af61fdcc810aa9681f0be62f3677"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/authored-path-grading.sha256",
+      "sha": "df9b6bb1ef00a66b1fe491015949293c2c2b11a6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "489e01c4147e0b257ac22f91280503c66c6c5084"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "8793565c27a8739985d4385d3f2c69f5dba59259"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "42ed54ceb3c303e67e91ec7cc5aec242c56e36f6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "ea6569e82e290d51567d336875dd0c51e552e2a4"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "718cdbba7ef754edfe125ee9ad014e63eb752d44"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/scene-package/scene.bin",
+      "sha": "c8fa7923cc5b261a049c2547f15f2c3689c85967"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/source-provenance.json",
+      "sha": "b63e5f79b1907eca2ec774bf8253de3e4e7ff4dc"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "8469cf9cf63e24e3847754edbfcec7707c7eae1c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/terrain-physics.hcs2",
+      "sha": "e30d5504b95362a45e2184f91859934f58ae64b5"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/tile_0_0.png",
+      "sha": "e8ee2f3cfcead7971b3c28c7356273d9b0a224b3"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/verification.json",
+      "sha": "11e8458d864d538f4635920f3c0a29b595b3fe4d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/rejected/upper-only-cut-worlds/wld-12/terrain-world/world.properties",
+      "sha": "b59cb0a638b3287047ba1a283351eb57896eb094"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/roster.json",
+      "sha": "40012c862cda9727f5ed8a8d6efb8fde9abacb4e"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-03/cuts.tsv",
+      "sha": "9e02be3354706befc65318d62f375d055caa8127"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-03/grades.tsv",
+      "sha": "e4145047fe97610b0499fc7fdbeb89d18a23fe82"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-03/heights.txt",
+      "sha": "3585ddd2b4aeaceffec7515cf492b4ff09a18e57"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-03/provenance.json",
+      "sha": "7b599c738d7cc63cbd622534adf0336e770b44f8"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-03/settings.tsv",
+      "sha": "e1ab7f346ff4fef78170b4eadf04509920ffd689"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-04/cuts.tsv",
+      "sha": "4189562371e8ba1df26b0452453457df6dcae7af"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-04/grades.tsv",
+      "sha": "2cdf56775d1dcf5ba289df4ff4a286c58b910037"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-04/heights.txt",
+      "sha": "ccb8a02591b5a187ffd19d212ae4a877b55afe08"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-04/provenance.json",
+      "sha": "fec4bd9ce409d862541cc44f514239b25b73362c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-04/settings.tsv",
+      "sha": "72ccc0d4f6fa5ea01e0b0eee8c1e5b4a54b8790b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-12/cuts.tsv",
+      "sha": "71a1aee0b985af61fdcc810aa9681f0be62f3677"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-12/grades.tsv",
+      "sha": "5a759f839eceeb6c1d0ed6616c514ff23183b4b6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-12/heights.txt",
+      "sha": "425a19c8d4308b498fdd31f63fdf031baa72cb57"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-12/provenance.json",
+      "sha": "6d196429a02ea003841255977cbdba8047b240e8"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/samples/wld-12/settings.tsv",
+      "sha": "cc81ed3682d1701f382877a1759cc5e972f89895"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/bearing-contacts.json",
+      "sha": "0ef56177d2a2dc8879f6a613e043dd458e788eb0"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/captures.json",
+      "sha": "2122d947abdea20a205638887426859ec998dfc4"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/complete-route-sweeps.tsv",
+      "sha": "0cff39168925d1a08a3f8428afdd533ab7160a17"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/failure-contacts.tsv",
+      "sha": "f2db06b64a8343706fc53767af97bb702d8f6c52"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/flight-sweeps.tsv",
+      "sha": "8e692476694c7cf0a6c4670aededeaf9b1633b07"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/independent-sources.json",
+      "sha": "cb72205382a546b0e57cd664fd192fe1a2070dc7"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/native-route-fit.json",
+      "sha": "03007c381418e88e0a1f506a30f9311af4d0503d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/native-route-probes.tsv",
+      "sha": "5ffa851d7c47b0fc74d6b0bdd0e920c98fd130b1"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/remaining-links.json",
+      "sha": "88f037513158bba774d5b5aaf5780e49406ab071"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/stair-movement.json",
+      "sha": "7bc5c7de0bc13d0add81d73215e9649e65c8c1d8"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/terrain-contract-consumer.json",
+      "sha": "d313fff9041a1d725956f659ecc1798608f4f791"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/threshold-control.json",
+      "sha": "e7aa4e75fcb4ded166660ac98dd154be723676d5"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/threshold-negative-results.tsv",
+      "sha": "db4c57b07571cb61cf07db6e59b007ce4c2e997b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/threshold-positive-results.tsv",
+      "sha": "1d6361ed1d13282f592100dad34a1ebb95c186dd"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/verification/visual-review.json",
+      "sha": "a3348a137ffff5f360c41548383fbdceda2d4b65"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/wld-03-world.json",
+      "sha": "2f0815128faa253aa288a3d95f2378f2297e2b60"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/wld-04-world.json",
+      "sha": "df0ed458a67326af22f7952d08e76b0cd4e89469"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/wld-12-world.json",
+      "sha": "77feb96bf220a00d5a79eead51a31e3edc7c05e1"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/adaptive-topology.bin",
+      "sha": "0f299d3a609ad7a95caaa5cb6ca92addc4f4156c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/authored-cuts.tsv",
+      "sha": "9e02be3354706befc65318d62f375d055caa8127"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/authored-path-grading.sha256",
+      "sha": "8db91d48a296f156c7e6b0532593149fba3c16df"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "caa218a0825c69f32efb7c9cc8f6d72e446a7cce"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "7fbe5f5c294f6dc4922dde92f0cadbc169811ad6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "e4a139abf2deae09835ae8d0174156619460dc12"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "1151d33f62aa5010d00293fa522cfbeb70dc4fd2"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "7371e1c480f5b0fd7fcd5a99400d5b7e264926ad"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/scene-package/scene.bin",
+      "sha": "fb82308cb70904cf34ab1c0f2329669cdcf64827"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/source-provenance.json",
+      "sha": "7b599c738d7cc63cbd622534adf0336e770b44f8"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "ab1646e61723a4550103429d7f5808be368e222b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/terrain-physics.hcs2",
+      "sha": "d993f0368a9e4a2a1d6b456d5caf6d88f3cac8ac"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/tile_0_0.png",
+      "sha": "56047e844183d09c2e118e184144d4c5299e3224"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/verification.json",
+      "sha": "237fb6f15f35f62fb4475410052bb05a2c71ee0f"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-03/terrain-world/world.properties",
+      "sha": "33d5803c482aa81906073fe23effe1ac96852d9c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/adaptive-topology.bin",
+      "sha": "d8ba50df547bbfbeb8a36e15c94112523004cfc6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/authored-cuts.tsv",
+      "sha": "4189562371e8ba1df26b0452453457df6dcae7af"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/authored-path-grading.sha256",
+      "sha": "2e6fdf4ccd26a8c3b6ef75cfc66103e24ad23554"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "83c13d0b78078915eb2dc856b6d64eaf50dd9e34"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/scene-package/meshes/site.obj",
+      "sha": "b44a30f910aed5890c98cd41c961f7f163c98f23"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/scene-package/scene.bin",
+      "sha": "0b3ac82a226cd979bde9393c2d2bef7630aff23c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/source-provenance.json",
+      "sha": "fec4bd9ce409d862541cc44f514239b25b73362c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "b83279ef0ad6e2f2921fa04636d736dedac965cb"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/terrain-physics.hcs2",
+      "sha": "af33407c22fc621348ca7b606b93278f83ab93f3"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/tile_0_0.png",
+      "sha": "c91b8e605b74d22197d9a19bcfc2e16028ad679c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/verification.json",
+      "sha": "727639837d5161412587ef579bd7996dfca6f7de"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-04/terrain-world/world.properties",
+      "sha": "87756329f2a14dccb2a97381e4e47e3aa225dcab"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/adaptive-topology.bin",
+      "sha": "4953e6ceb555995ef4a14ce5d25f2f7007223d2c"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/authored-cuts.tsv",
+      "sha": "71a1aee0b985af61fdcc810aa9681f0be62f3677"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/authored-path-grading.sha256",
+      "sha": "07c4c98a5a8131e0dde8d4126fc32f410144e0e4"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/.scene.bin.editor.previous",
+      "sha": "d3285cca065b7ffd0068e2cd3ffaa9cbff3f1d9d"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-0.obj",
+      "sha": "8a65a1776f07b31153787bd61a59dd01ba4cd6b6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-1.obj",
+      "sha": "d24aeac8535fcd254161db7896f94d1171546b34"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-0.obj",
+      "sha": "a65e6b69479d322cc06ae0de519eb7c7c8c40a8b"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-1.obj",
+      "sha": "3d392a620041501d0cee9bd70a53e3b764f6dd38"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/scene.bin",
+      "sha": "24aadc890b261bb1fa1d4373d2b697c8a36ddc01"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/source-provenance.json",
+      "sha": "6d196429a02ea003841255977cbdba8047b240e8"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/terrain-layers/tile_0_0.bin",
+      "sha": "3026b4f0ba181bc95be2e21dfcd3f0fed3f3f293"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/terrain-physics.hcs2",
+      "sha": "eb9ba2ee05259f3a35e4a61d5d697c14f581e7a6"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/tile_0_0.png",
+      "sha": "e8ee2f3cfcead7971b3c28c7356273d9b0a224b3"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/verification.json",
+      "sha": "3a3448abdc74e572572c8162821bbf07bb1f112a"
+    },
+    {
+      "path": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/world.properties",
+      "sha": "b59cb0a638b3287047ba1a283351eb57896eb094"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "453eedcc3f35bf0b59d918766921beedddc5309e"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "8ef5f77c15f10b17622d5f3040efeeae5cb8cee9"
+    },
+    {
+      "path": "src/test/java/org/beckenburg/LanVanExtractionIntegrationTest.java",
+      "sha": "c3c1a1a2275b178752b0ad6eab73042b7688ff98"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "6f3a6585f8e042353f0edba6b9c410281097362d"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "cccb704ea837d1bd74c644cf1904f1f35c062431"
+    },
+    {
+      "path": "tools/audit_roster_terrain_envelopes.py",
+      "sha": "453991efb9bd30e844a4fc5a95674a238174014c"
+    },
+    {
+      "path": "tools/audit_stair_terrain_bearings.py",
+      "sha": "d2100b28d264148ca586a18afdb458c4ab352715"
+    },
+    {
+      "path": "tools/author_stair_terrain.py",
+      "sha": "62446aea69a5b404bb35d7537727bdab819e69aa"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "c492602cf485fce34252edc5ce6cf9540aeb5776"
+    },
+    {
+      "path": "tools/check_saved_terrain_consumer.py",
+      "sha": "a2238e552359f39300077dcf4aedcc708863b5dd"
+    },
+    {
+      "path": "tools/check_stair_terrain.py",
+      "sha": "efcd16ff22f6a810f58bc7b17b79220c70c4ebae"
+    },
+    {
+      "path": "tools/compose_stair_terrain.py",
+      "sha": "5eb044b6ac08ec477f0c07f50903c4071c9ba5e3"
+    },
+    {
+      "path": "tools/export_roster_collision.py",
+      "sha": "512507f1dc6cbcd586005af457faff848d04b66a"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "bb0c05624678a2d8fcc15834d56ef7e87a3aabdf"
+    },
+    {
+      "path": "tools/java/RosterTerrainBuild.java",
+      "sha": "9c3f616018bdb025ceb204db5d289712389ac0c1"
+    },
+    {
+      "path": "tools/render_stair_terrain.py",
+      "sha": "de12da575663d7ab35fc3748fdd96b0cd3caba8e"
+    },
+    {
+      "path": "tools/render_stair_threshold.py",
+      "sha": "b159260c97a53609bfb52ed2ce2f249601324689"
+    },
+    {
+      "path": "tools/review_roster_furnishings.py",
+      "sha": "f0196197b46cb1b629bd0d85bbe4b156f0838c47"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/stair-terrain-batch/terrain-sheet-2.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}

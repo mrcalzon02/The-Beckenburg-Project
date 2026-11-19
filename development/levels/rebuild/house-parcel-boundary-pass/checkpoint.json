@@ -1,0 +1,55 @@
+{
+  "status": "HOUSE_PARCEL_GAMEPLAY_VERIFIED_ROSTER_ACCEPTANCE_OPEN",
+  "source_baseline": "88a6a109d26a0c9d77b3533462362b6effb79823",
+  "active_house_revision": "first-principles-functional-furnishings-v1-c788f7e17276da3e",
+  "scope": "Primary active House enclosure on saved grade and shared gameplay from actual panels",
+  "active_roster": "roster.json",
+  "survey": "boundary-survey.json",
+  "plan": "parcel-plan.svg",
+  "construction": "construction.md",
+  "controls": "verification/house-controls.json",
+  "test_results": {
+    "LevelEnclosureTest": "PASS",
+    "HouseParcelBoundaryTest": "PASS",
+    "HouseRebuildEnvelopeTest": "PASS",
+    "HouseRebuildPhysicsTest": "PASS",
+    "HouseRebuildLandscapeTest": "PASS",
+    "HouseRebuildServicesTest": "PASS",
+    "HouseRebuildFurnishingsTest": "PASS",
+    "HouseRebuildUpgradeTest": "PASS",
+    "ArchitecturalPlansTest": "PASS",
+    "DoorSwingTest": "PASS",
+    "LanWorldTest": "PASS",
+    "LanWorldRenderTest": "PASS",
+    "PlayerJumpTest": "PASS",
+    "GroundRecoverySupportParityTest": "PASS"
+  },
+  "stair_support_control": {
+    "prior_commit_result": "FAIL on original nominal support assertion with active House coordinates",
+    "current_commit_result": "PASS with explicit original version for original under-stair case; current movement, recovery and spawns also verified"
+  },
+  "retained_native_sources": {
+    "roster_locations_including_annex": 29,
+    "unchanged_native_packets_with_asset_sha256_readback": 25,
+    "prior_native_sweep_evidence": "../seacliff-receiving-pass/checkpoint.json"
+  },
+  "acceptance": {
+    "house_parcel": "PASS",
+    "whole_house": "OPEN",
+    "remaining_roster": "OPEN",
+    "public_map_registration": "HELD"
+  },
+  "next_action": "Fit College service equipment and distribution to the actual maintenance rooms and grounded exterior. Verify stable owners, real door and circuit behavior, and normal host dispatch.",
+  "packaged_runtime": {
+    "command": "build.cmd package",
+    "java_release": 17,
+    "result": "PASS",
+    "tests": {
+      "HouseParcelBoundaryTest": "PASS",
+      "LevelEnclosureTest": "PASS",
+      "GroundRecoverySupportParityTest": "PASS",
+      "ArchitecturalPlansTest": "PASS",
+      "DoorSwingTest": "PASS"
+    }
+  }
+}

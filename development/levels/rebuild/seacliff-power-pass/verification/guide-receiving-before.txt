@@ -1,0 +1,18 @@
+route-01 forward PASS | return PASS
+route-02 wrong receiving height Vec[x=32.0, y=0.1666666716337204, z=68.0] for Vec[x=32.0, y=0.0, z=68.0] | wrong receiving height Vec[x=32.0, y=0.1666666716337204, z=68.0] for Vec[x=32.0, y=0.0, z=68.0]
+route-03 wrong receiving height Vec[x=40.0, y=2.1666667461395264, z=56.0] for Vec[x=40.0, y=2.0, z=56.0] | wrong receiving height Vec[x=40.0, y=2.1666667461395264, z=56.0] for Vec[x=40.0, y=2.0, z=56.0]
+route-04 forward PASS | return PASS
+route-05 forward PASS | return PASS
+route-06 forward PASS | return PASS
+route-07 forward PASS | return PASS
+route-08 forward PASS | return PASS
+route-09 forward PASS | return PASS
+route-10 wrong receiving height Vec[x=31.1, y=4.176470756530762, z=22.0] for Vec[x=31.1, y=4.0, z=22.0] | wrong receiving height Vec[x=31.1, y=4.176470756530762, z=22.0] for Vec[x=31.1, y=4.0, z=22.0]
+route-11 wrong receiving height Vec[x=20.0, y=0.17391304671764374, z=16.0] for Vec[x=20.0, y=0.0, z=16.0] | wrong receiving height Vec[x=20.0, y=0.17391304671764374, z=16.0] for Vec[x=20.0, y=0.0, z=16.0]
+route-12 wrong receiving height Vec[x=56.0, y=0.17391304671764374, z=16.0] for Vec[x=56.0, y=0.0, z=16.0] | wrong receiving height Vec[x=56.0, y=0.17391304671764374, z=16.0] for Vec[x=56.0, y=0.0, z=16.0]
+route-13 forward PASS | return PASS
+route-14 forward PASS | return PASS
+route-15 forward PASS | return PASS
+route-16 forward PASS | return PASS
+route-17 forward PASS | return PASS
+Sampled guide replays with the built door open 12/17

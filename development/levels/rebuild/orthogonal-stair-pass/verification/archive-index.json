@@ -1,0 +1,15 @@
+{
+  "status": "LOSSLESS_RAW_VERIFICATION_ARCHIVES_NOT_NEW_TEST_ACCEPTANCE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/orthogonal-stair-pass/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/orthogonal-stair-pass/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 6410307,
+      "original_sha256": "783bfd0d5d7a56af7e545e3d90087f800073834f1816569ef729e5ae5e293824",
+      "archive_bytes": 135833,
+      "archive_sha256": "033d25a47450feadf0040e292f54b410b893ed0a111cfbc728e8e6df46ffd0b5",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    }
+  ],
+  "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."
+}

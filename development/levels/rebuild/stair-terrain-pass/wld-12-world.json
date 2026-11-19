@@ -1,0 +1,1545 @@
+{
+  "id": "WLD-12",
+  "source_world": "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world",
+  "source_height_sha256": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+  "layout": "development/levels/rebuild/stair-bay-pass/wld-12/authored-layout.json",
+  "layout_sha256": "48e3490e8c678432fbe841a03dbb5e1bdd46c618ca172184555dcc7495cd328c",
+  "program": [
+    {
+      "link": "L16",
+      "points": [
+        [
+          31,
+          0,
+          33.4
+        ],
+        [
+          28,
+          0,
+          33.4
+        ],
+        [
+          28,
+          0,
+          32.3
+        ],
+        [
+          28,
+          -3,
+          28
+        ],
+        [
+          28,
+          -3,
+          26.5
+        ],
+        [
+          31,
+          -3,
+          26.5
+        ],
+        [
+          31,
+          -3,
+          28
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    },
+    {
+      "link": "L17",
+      "points": [
+        [
+          31,
+          -3,
+          32
+        ],
+        [
+          31,
+          -3,
+          36
+        ],
+        [
+          11,
+          0,
+          42
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5
+    },
+    {
+      "link": "L01",
+      "segment": 0,
+      "points": [
+        [
+          36.0,
+          0,
+          94.0
+        ],
+        [
+          36.0,
+          0,
+          88.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L01",
+      "segment": 1,
+      "points": [
+        [
+          36.0,
+          0,
+          88.0
+        ],
+        [
+          36.0,
+          0,
+          82.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L02",
+      "segment": 0,
+      "points": [
+        [
+          36.0,
+          0,
+          82.0
+        ],
+        [
+          20.0,
+          0,
+          69.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L03",
+      "segment": 0,
+      "points": [
+        [
+          20.0,
+          0,
+          69.0
+        ],
+        [
+          28.0,
+          0,
+          69.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L03",
+      "segment": 1,
+      "points": [
+        [
+          28.0,
+          0,
+          69.0
+        ],
+        [
+          34.0,
+          0,
+          59.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L04",
+      "segment": 0,
+      "points": [
+        [
+          36.0,
+          0,
+          82.0
+        ],
+        [
+          57.0,
+          0,
+          53.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L05",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          0,
+          59.0
+        ],
+        [
+          20.0,
+          0,
+          54.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L06",
+      "segment": 0,
+      "points": [
+        [
+          20.0,
+          0,
+          54.0
+        ],
+        [
+          16.0,
+          0,
+          54.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L06",
+      "segment": 1,
+      "points": [
+        [
+          16.0,
+          0,
+          54.0
+        ],
+        [
+          11.0,
+          0,
+          42.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L07",
+      "segment": 0,
+      "points": [
+        [
+          11.0,
+          0,
+          42.0
+        ],
+        [
+          14.0,
+          0,
+          62.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L07",
+      "segment": 1,
+      "points": [
+        [
+          14.0,
+          0,
+          62.0
+        ],
+        [
+          20.0,
+          0,
+          69.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L08",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          0,
+          59.0
+        ],
+        [
+          48.0,
+          0,
+          54.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L09",
+      "segment": 0,
+      "points": [
+        [
+          48.0,
+          0,
+          54.0
+        ],
+        [
+          52.0,
+          0,
+          54.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L09",
+      "segment": 1,
+      "points": [
+        [
+          52.0,
+          0,
+          54.0
+        ],
+        [
+          57.0,
+          0,
+          53.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L10",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          0,
+          59.0
+        ],
+        [
+          34.0,
+          0,
+          42.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L10",
+      "segment": 1,
+      "points": [
+        [
+          34.0,
+          0,
+          42.0
+        ],
+        [
+          34.0,
+          0,
+          32.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L11",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          0,
+          32.0
+        ],
+        [
+          34.0,
+          0,
+          22.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L11",
+      "segment": 1,
+      "points": [
+        [
+          34.0,
+          0,
+          22.0
+        ],
+        [
+          34.0,
+          0,
+          7.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L12",
+      "segment": 0,
+      "points": [
+        [
+          34.0,
+          0,
+          7.0
+        ],
+        [
+          40.0,
+          0,
+          6.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L12",
+      "segment": 1,
+      "points": [
+        [
+          40.0,
+          0,
+          6.0
+        ],
+        [
+          46.0,
+          0,
+          6.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.55,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L13",
+      "segment": 0,
+      "points": [
+        [
+          46.0,
+          0,
+          6.0
+        ],
+        [
+          46.0,
+          0,
+          12.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L13",
+      "segment": 1,
+      "points": [
+        [
+          46.0,
+          0,
+          12.0
+        ],
+        [
+          51.0,
+          0,
+          17.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L14",
+      "segment": 0,
+      "points": [
+        [
+          51.0,
+          0,
+          17.0
+        ],
+        [
+          57.0,
+          0,
+          53.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L15",
+      "segment": 0,
+      "points": [
+        [
+          57.0,
+          0,
+          53.0
+        ],
+        [
+          57.0,
+          0,
+          30.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L15",
+      "segment": 1,
+      "points": [
+        [
+          57.0,
+          0,
+          30.0
+        ],
+        [
+          58.0,
+          0,
+          23.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L16",
+      "segment": 0,
+      "points": [
+        [
+          31,
+          0,
+          33.4
+        ],
+        [
+          28,
+          0,
+          33.4
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L16",
+      "segment": 1,
+      "points": [
+        [
+          28,
+          0,
+          33.4
+        ],
+        [
+          28,
+          0,
+          32.3
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L16",
+      "segment": 3,
+      "points": [
+        [
+          28,
+          -3,
+          28
+        ],
+        [
+          28,
+          -3,
+          26.5
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L16",
+      "segment": 4,
+      "points": [
+        [
+          28,
+          -3,
+          26.5
+        ],
+        [
+          31,
+          -3,
+          26.5
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L16",
+      "segment": 5,
+      "points": [
+        [
+          31,
+          -3,
+          26.5
+        ],
+        [
+          31,
+          -3,
+          28
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L17",
+      "segment": 0,
+      "points": [
+        [
+          31,
+          -3,
+          32
+        ],
+        [
+          31,
+          -3,
+          36
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    },
+    {
+      "link": "L18",
+      "segment": 0,
+      "points": [
+        [
+          51.0,
+          0,
+          17.0
+        ],
+        [
+          34.0,
+          0,
+          32.0
+        ]
+      ],
+      "bed_offset_metres": -0.35,
+      "half_width_metres": 1.8,
+      "shoulder_metres": 3.5,
+      "purpose": "Protect the existing lower circulation plane during upper stair excavation"
+    }
+  ],
+  "grading_limit": "LOWER_ONLY",
+  "new_basement_punches": [
+    [
+      27.25,
+      27.0,
+      28.75,
+      27.25,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      27.25,
+      29.0,
+      27.5,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      27.5,
+      29.0,
+      27.75,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      27.75,
+      29.0,
+      28.0,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      28.0,
+      29.0,
+      28.25,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      28.25,
+      29.0,
+      28.5,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      28.5,
+      29.0,
+      28.75,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      28.75,
+      29.0,
+      29.0,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      29.0,
+      29.0,
+      29.25,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      29.25,
+      29.0,
+      29.5,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      29.5,
+      29.0,
+      29.75,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      29.75,
+      29.0,
+      30.0,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      30.0,
+      29.0,
+      30.25,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      30.25,
+      29.0,
+      30.5,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      30.5,
+      29.0,
+      30.75,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      30.75,
+      29.0,
+      31.0,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      31.0,
+      29.0,
+      31.25,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      31.25,
+      29.0,
+      31.5,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      31.5,
+      29.0,
+      31.75,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      31.75,
+      29.0,
+      32.0,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.0,
+      32.0,
+      29.0,
+      32.25,
+      "stair-basement-L16-2"
+    ],
+    [
+      27.25,
+      25.5,
+      28.75,
+      25.75,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      25.75,
+      29.0,
+      26.0,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      26.0,
+      29.0,
+      26.25,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      26.25,
+      29.0,
+      26.5,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      26.5,
+      29.0,
+      26.75,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      26.75,
+      29.0,
+      27.0,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      27.0,
+      29.0,
+      27.25,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      27.25,
+      29.0,
+      27.5,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      27.5,
+      29.0,
+      27.75,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      27.75,
+      29.0,
+      28.0,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      28.0,
+      29.0,
+      28.25,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      28.25,
+      29.0,
+      28.5,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.0,
+      28.5,
+      29.0,
+      28.75,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.25,
+      28.75,
+      28.75,
+      29.0,
+      "stair-basement-L16-3"
+    ],
+    [
+      27.25,
+      25.5,
+      31.75,
+      25.75,
+      "stair-basement-L16-4"
+    ],
+    [
+      27.0,
+      25.75,
+      32.0,
+      26.0,
+      "stair-basement-L16-4"
+    ],
+    [
+      27.0,
+      26.0,
+      32.0,
+      26.25,
+      "stair-basement-L16-4"
+    ],
+    [
+      27.0,
+      26.25,
+      32.0,
+      26.5,
+      "stair-basement-L16-4"
+    ],
+    [
+      27.0,
+      26.5,
+      32.0,
+      26.75,
+      "stair-basement-L16-4"
+    ],
+    [
+      27.0,
+      26.75,
+      32.0,
+      27.0,
+      "stair-basement-L16-4"
+    ],
+    [
+      27.0,
+      27.0,
+      32.0,
+      27.25,
+      "stair-basement-L16-4"
+    ],
+    [
+      27.25,
+      27.25,
+      31.75,
+      27.5,
+      "stair-basement-L16-4"
+    ],
+    [
+      30.25,
+      25.5,
+      31.75,
+      25.75,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      25.75,
+      32.0,
+      26.0,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      26.0,
+      32.0,
+      26.25,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      26.25,
+      32.0,
+      26.5,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      26.5,
+      32.0,
+      26.75,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      26.75,
+      32.0,
+      27.0,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      27.0,
+      32.0,
+      27.25,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      27.25,
+      32.0,
+      27.5,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      27.5,
+      32.0,
+      27.75,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      27.75,
+      32.0,
+      28.0,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      28.0,
+      32.0,
+      28.25,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      28.25,
+      32.0,
+      28.5,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.0,
+      28.5,
+      32.0,
+      28.75,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.25,
+      28.75,
+      31.75,
+      29.0,
+      "stair-basement-L16-5"
+    ],
+    [
+      30.25,
+      31.0,
+      31.75,
+      31.25,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      31.25,
+      32.0,
+      31.5,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      31.5,
+      32.0,
+      31.75,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      31.75,
+      32.0,
+      32.0,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      32.0,
+      32.0,
+      32.25,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      32.25,
+      32.0,
+      32.5,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      32.5,
+      32.0,
+      32.75,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      32.75,
+      32.0,
+      33.0,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      33.0,
+      32.0,
+      33.25,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      33.25,
+      32.0,
+      33.5,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      33.5,
+      32.0,
+      33.75,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      33.75,
+      32.0,
+      34.0,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      34.0,
+      32.0,
+      34.25,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      34.25,
+      32.0,
+      34.5,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      34.5,
+      32.0,
+      34.75,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      34.75,
+      32.0,
+      35.0,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      35.0,
+      32.0,
+      35.25,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      35.25,
+      32.0,
+      35.5,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      35.5,
+      32.0,
+      35.75,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      35.75,
+      32.0,
+      36.0,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      36.0,
+      32.0,
+      36.25,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      36.25,
+      32.0,
+      36.5,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      36.5,
+      32.0,
+      36.75,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.25,
+      36.75,
+      31.75,
+      37.0,
+      "stair-basement-L17-0"
+    ],
+    [
+      30.0,
+      35.0,
+      31.75,
+      35.25,
+      "stair-basement-L17-1"
+    ],
+    [
+      29.25,
+      35.25,
+      32.0,
+      35.5,
+      "stair-basement-L17-1"
+    ],
+    [
+      28.5,
+      35.5,
+      32.0,
+      35.75,
+      "stair-basement-L17-1"
+    ],
+    [
+      27.5,
+      35.75,
+      32.0,
+      36.0,
+      "stair-basement-L17-1"
+    ],
+    [
+      26.75,
+      36.0,
+      32.0,
+      36.25,
+      "stair-basement-L17-1"
+    ],
+    [
+      26.0,
+      36.25,
+      32.0,
+      36.5,
+      "stair-basement-L17-1"
+    ],
+    [
+      25.0,
+      36.5,
+      32.0,
+      36.75,
+      "stair-basement-L17-1"
+    ],
+    [
+      24.25,
+      36.75,
+      31.75,
+      37.0,
+      "stair-basement-L17-1"
+    ],
+    [
+      23.5,
+      37.0,
+      31.0,
+      37.25,
+      "stair-basement-L17-1"
+    ],
+    [
+      22.5,
+      37.25,
+      30.25,
+      37.5,
+      "stair-basement-L17-1"
+    ],
+    [
+      21.75,
+      37.5,
+      29.5,
+      37.75,
+      "stair-basement-L17-1"
+    ],
+    [
+      21.0,
+      37.75,
+      28.5,
+      38.0,
+      "stair-basement-L17-1"
+    ],
+    [
+      20.0,
+      38.0,
+      27.75,
+      38.25,
+      "stair-basement-L17-1"
+    ],
+    [
+      19.25,
+      38.25,
+      27.0,
+      38.5,
+      "stair-basement-L17-1"
+    ],
+    [
+      18.5,
+      38.5,
+      26.0,
+      38.75,
+      "stair-basement-L17-1"
+    ],
+    [
+      17.5,
+      38.75,
+      25.25,
+      39.0,
+      "stair-basement-L17-1"
+    ],
+    [
+      16.75,
+      39.0,
+      24.5,
+      39.25,
+      "stair-basement-L17-1"
+    ],
+    [
+      16.0,
+      39.25,
+      23.5,
+      39.5,
+      "stair-basement-L17-1"
+    ],
+    [
+      15.0,
+      39.5,
+      22.75,
+      39.75,
+      "stair-basement-L17-1"
+    ],
+    [
+      14.25,
+      39.75,
+      22.0,
+      40.0,
+      "stair-basement-L17-1"
+    ],
+    [
+      13.5,
+      40.0,
+      21.0,
+      40.25,
+      "stair-basement-L17-1"
+    ],
+    [
+      12.5,
+      40.25,
+      20.25,
+      40.5,
+      "stair-basement-L17-1"
+    ],
+    [
+      11.75,
+      40.5,
+      19.5,
+      40.75,
+      "stair-basement-L17-1"
+    ],
+    [
+      11.5,
+      40.75,
+      18.5,
+      41.0,
+      "stair-basement-L17-1"
+    ],
+    [
+      11.5,
+      41.0,
+      17.75,
+      41.25,
+      "stair-basement-L17-1"
+    ],
+    [
+      11.5,
+      41.25,
+      17.0,
+      41.5,
+      "stair-basement-L17-1"
+    ],
+    [
+      11.5,
+      41.5,
+      16.0,
+      41.75,
+      "stair-basement-L17-1"
+    ],
+    [
+      11.75,
+      41.75,
+      15.25,
+      42.0,
+      "stair-basement-L17-1"
+    ],
+    [
+      11.75,
+      42.0,
+      14.5,
+      42.25,
+      "stair-basement-L17-1"
+    ],
+    [
+      11.75,
+      42.25,
+      13.5,
+      42.5,
+      "stair-basement-L17-1"
+    ],
+    [
+      12.0,
+      42.5,
+      12.75,
+      42.75,
+      "stair-basement-L17-1"
+    ]
+  ],
+  "method": "Actual editor non-destructive lower-only bench layers and persistent footprint topology punches; retain source landforms/source16bitPNG and previous holes; no room-pad snapping or render-only hole.",
+  "source_glb": "development/levels/rebuild/stair-bay-pass/wld-12/bayed-stairs.glb",
+  "source_glb_sha256": "492ce0fae4f521c6260eb98bf6119c77edc1ca2d20ac00535787ff0166abcd11",
+  "source_physics": "development/levels/rebuild/stair-bay-pass/wld-12/bayed-stairs.hcs2",
+  "source_physics_sha256": "63ac0bf239737b5afe9b49d6a1709be4ec346825d938161336ee8519b369f55c",
+  "source_world_files_preserved": {
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/adaptive-topology.bin": "c33e34f84ed91a5bdaf4bed72e05898a4978c1516458a4e5931b61152cc7d2fd",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/authored-cuts.tsv": "280ea82a636711c36c1af60f22116763846248c263780d85377d2b3940c681bc",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/source-provenance.json": "22c6dc032799a4b242c6511879295213a4c6e5f84f77538d4968435fc7af9370",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/terrain-physics.hcs2": "158a181624ded5ece43386f97c379c71ce521b2bc0334826f6c7a7af4b04f18f",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/tile_0_0.png": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/verification.json": "fe6372010925f5fd7428f72f07acf0fecc2c4017d75323e91968d8b1f90e0e6d",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/world.properties": "ce1bdef52e93322565338582604f0aa81a8f072fb3f4909e4f1f192af98a9a2f",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/.scene.bin.editor.previous": "0606849e449f2d9ff2b78efc68a5b06ec9814d207fb125070ed632766fd5b278",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/scene.bin": "a10b07bfe3f5f8e4b88efed8fa037ee2e1c6eabf62ae942f69fb59a940da670c",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-0.obj": "391dd87d793d341ffa2cc72ba22181fc5ff2cdc8d222c757727e2e4f5b446f72",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-1.obj": "9a3d53ad3d9702cc5142007d753e817f8498c622e5e5bc6b65937d7ca6795a72",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-0.obj": "f29b30ea7344195695151c7c7ead620a0a91ae31bda23316857377dea59eaca7",
+    "development/levels/rebuild/terrain-overall-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-1.obj": "abcc924decb544b8dbf48cefc7c900b28d6dd09273df4d7d412a09e601747f04"
+  },
+  "world": "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/adaptive-topology.bin": "9dc0268d4f305252f5ef08e952814650eaf7e2e781ac0cf33aef1a02068f6431",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/authored-cuts.tsv": "47b4e89866a0bbf2771bb7250fe680d392802465df0ccf038217ac641fc59756",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/authored-path-grading.sha256": "794d815cc7cae67f2b92b8b7fc5c95866d90ad5277da5dc55fb547bc8c297858",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/source-provenance.json": "2225e50573bb084a77d72e5c6695c01e1771c4fdc86f4c55322893e304f3dc5b",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/terrain-physics.hcs2": "14db9b98c1091f14fe5da2819febb65c7cae88e2617c8acf8e3144c1c864531d",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/tile_0_0.png": "7061a02d78be96ba09939bcbdb32a120002d95f4302fd8c1206bdf5231ed78a3",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/verification.json": "18c8f8298331342ebb7adb4d64bece728cb0ef94b3542073b7c16188c8f11698",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/world.properties": "ce1bdef52e93322565338582604f0aa81a8f072fb3f4909e4f1f192af98a9a2f",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/.scene.bin.editor.previous": "1f0d2fb6550bc78ae64825f4b6f4ba54cfc4ff84e6b3fa160e565eadefd80a33",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/scene.bin": "b63571a049fdb57808b86353a90bc3e041f4a2b342afbb6df9cf679d4a7708ff",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/terrain-layers/tile_0_0.bin": "f64f8e8caa97aafd2da7090459029f880b2df7ad3dce8de638fe7e2c54a17339",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-0.obj": "9c2be7a828c8c744f4a922fd50806bae2a0e1dfc31f3faf9e7bc1b0ef796b082",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-0-1.obj": "2b1c53cc4e063582392a58753a2a370502dd6f8b26cd73fb49f0259f624c0111",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-0.obj": "8ad897fb847a95a7ced43c1eab83dbea5929fd922d0334b58d435e41dff11a6c",
+    "development/levels/rebuild/stair-terrain-pass/worlds/wld-12/terrain-world/scene-package/meshes/site-1-1.obj": "e0d454904e070d5f667f671f9a77e03b8004bc08f2380e676fef8006c207c3fc"
+  },
+  "author_sha256": "fcb72cb807c8a6c116f3b43078318d0460ffcf432bc451b66eccb3932d6e6732",
+  "builder_sha256": "de0763d64f58440f0f7b97ef0247443df44f6553d318030836385ca08052f2b8",
+  "dependency_jar_sha256": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+  "status": "SAVED_EDITOR_STAIR_BED_AND_BASEMENT_PUNCH_CANDIDATE_NOT_TERRAIN_ACCEPTANCE",
+  "remaining": "Actual composite/export/native regression and full-site landscape, retaining/cave/edge/arrival acceptance; no runtime integration or unlock."
+}

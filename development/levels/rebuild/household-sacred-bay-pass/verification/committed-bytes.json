@@ -1,0 +1,26 @@
+{
+  "status": "PASS_EXACT_COMMITTED_SOURCE_BYTES",
+  "construction_commit": "b8307964d84197db668961bc0768e073d2da74e7",
+  "sites": [
+    {
+      "site": "CHURCH",
+      "glb_sha256": "1c4da9a5d134fb1316286253fb61bd719f754a5766906dcfbe7d2d32d023bcfa",
+      "native_sha256": "b09df6f48933680654c099c624f27e4dd7d1c5de4ad342b55973a1a717af3f39",
+      "construction_sha256": "413588eae6253e18653af97d3392c235f1d2c64d869678379ffa87ec95610ec4"
+    },
+    {
+      "site": "FARMHOUSE",
+      "glb_sha256": "b637b12b0e330696ef84aeb7e0607917f62e0195c33116b6a95e2f11df2aa90d",
+      "native_sha256": "fcfe5fc44ab2764dabd544596567363c312bebbacfe83010a247a56fb5bbd707",
+      "construction_sha256": "186b7e460fda3998a76d8641fadbf3efbdd12a0f5f49df35b3cee870b8eb5509"
+    },
+    {
+      "site": "MANSION",
+      "glb_sha256": "482d043aecfe03c1bf1fdeb010bf95d1bfa6818bf3f770d8660e9d0064b6cec0",
+      "native_sha256": "bc2c380fb6ea20d9254833d74b3b24f1c8309f26668bb34da2fe2e17450cd494",
+      "construction_sha256": "554e541132fac3475ddd22360ecf6d46c822e4c23ad460059d007fee05912911"
+    }
+  ],
+  "captures": 18,
+  "layout_builder_blend_model_native_and_capture_bindings": true
+}

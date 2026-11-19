@@ -1,0 +1,3 @@
+Rejected route-only design study
+
+Thirty-four incomplete flat links in Academy, Asylum, WLD06, WLD11 and WLD12 were tested against exact current native physics. No candidate met the original full width, original endpoints, required thresholds, sealed-context exclusions and bounded design envelope. No route was adopted and no model or physics threshold changed. This does not prove no possible design exists outside that envelope. Tools retain actual source bindings and per-link decisions. The study led to physical arrival-end repair; terrain, stair conflicts and protected-context spatial redesign remain necessary.

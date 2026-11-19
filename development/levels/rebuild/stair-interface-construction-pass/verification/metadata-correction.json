@@ -1,0 +1,23 @@
+{
+  "corrections": [
+    {
+      "site": "ACADEMY",
+      "execution_contract_sha256": "7b3e485737d8b762b8c00c0138708674e10f313e6e226ac8f58a484034212f44",
+      "current_contract_sha256": "cc21aa748af7edd690b663d46afd162f3d61d0cef9cdb0bb7dd7be5452e182a5",
+      "physical_files_unchanged": true
+    },
+    {
+      "site": "WLD-09",
+      "execution_contract_sha256": "e0370e48ac89c0e6b21c7bb56745dca1004adf6073bad8458c06592e6a7d9be9",
+      "current_contract_sha256": "498b8258a7da69d0c3e8a17bbc21f09e91fe5f4796483daadd49c51367955039",
+      "physical_files_unchanged": true
+    },
+    {
+      "site": "WLD-04",
+      "execution_contract_sha256": "462769ced7adc60d5fac235dd89d57ac8c3a060e3960b57b7c9c4a427394a7e8",
+      "current_contract_sha256": "2ae93c4fa892bf453eb2e26d519cde6057df2c2990e82cbcc7ba8807f63ae303",
+      "physical_files_unchanged": true
+    }
+  ],
+  "scope": "Correction of inherited descriptive flag and exact executed generator path only; tests and capture SHA identify unchanged physical inputs."
+}

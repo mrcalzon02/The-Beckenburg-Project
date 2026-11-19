@@ -1,0 +1,3315 @@
+{
+  "id": "WLD-10",
+  "status": "PHYSICAL_FLAT_CIRCULATION_SOURCE_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-10/closed-floors.glb",
+  "source_glb_sha256": "e1c26be107b1abff82c5cebc3a111e866a3485fc4da20641ea205ef55e2e2f8b",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-10/closed-floors.hcs2",
+  "source_physics_sha256": "9e2122cdd84950ba1fec8d3f25d3428e33e49608e2d79d2d3d5f27efc813cd17",
+  "before_layout": "development/levels/rebuild/wld-10/rough-layout.json",
+  "before_layout_sha256": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9",
+  "layout": "development/levels/rebuild/flat-circulation-pass/wld-10/authored-layout.json",
+  "layout_sha256": "07e5d5d1fb890f6e390bd08f42c49aa44d48fcf90bdd6956156b83e67334c4ad",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "160:L16 flight0 step1",
+    "161:L16 flight0 step2",
+    "162:L16 flight0 step3",
+    "163:L16 flight0 step4",
+    "164:L16 flight0 step5",
+    "165:L16 flight0 step6",
+    "166:L16 flight0 step7",
+    "167:L16 flight0 step8",
+    "168:L16 flight0 step9",
+    "169:L16 flight0 step10",
+    "170:L16 flight0 step11",
+    "171:L16 flight0 step12",
+    "172:L16 flight0 step13",
+    "173:L16 flight0 step14",
+    "174:L16 flight0 step15",
+    "175:L16 flight0 step16",
+    "176:L16 flight0 step17",
+    "177:L16 flight0 step18",
+    "178:L16 flight0 step19",
+    "179:L16 flight0 step20",
+    "180:L16 flight0 step21",
+    "181:L16 flight0 step22",
+    "182:L16 flight0 step23",
+    "183:L16 flight0 step24",
+    "184:L16 flight0 step25",
+    "185:L16 flight0 step26",
+    "186:L16 flight0 step27",
+    "187:L16 flight0 step28",
+    "188:L16 flight0 step29",
+    "189:L16 flight0 step30",
+    "190:L16 flight0 step31",
+    "191:L16 flight0 step32",
+    "192:L16 flight0 step33",
+    "193:L16 flight0 step34",
+    "198:L19 flight0 step1",
+    "199:L19 flight0 step2",
+    "200:L19 flight0 step3",
+    "201:L19 flight0 step4",
+    "202:L19 flight0 step5",
+    "203:L19 flight0 step6",
+    "204:L19 flight0 step7",
+    "205:L19 flight0 step8",
+    "206:L19 flight0 step9",
+    "207:L19 flight0 step10",
+    "208:L19 flight0 step11",
+    "209:L19 flight0 step12",
+    "210:L19 flight0 step13",
+    "211:L19 flight0 step14",
+    "212:L19 flight0 step15",
+    "213:L19 flight0 step16",
+    "214:L19 flight0 step17",
+    "217:L21 landing1",
+    "218:L21 landing2",
+    "219:L21 flight0 step1",
+    "220:L21 flight0 step2",
+    "221:L21 flight0 step3",
+    "222:L21 flight0 step4",
+    "223:L21 flight0 step5",
+    "224:L21 flight0 step6",
+    "225:L21 flight0 step7",
+    "226:L21 flight0 step8",
+    "227:L21 flight0 step9",
+    "228:L21 flight0 step10",
+    "229:L21 flight0 step11",
+    "230:L21 flight0 step12",
+    "231:L21 flight0 step13",
+    "232:L21 flight0 step14",
+    "233:L21 flight0 step15",
+    "234:L21 flight0 step16",
+    "235:L21 flight0 step17"
+  ],
+  "stair_components": [
+    "160:L16 flight0 step1",
+    "161:L16 flight0 step2",
+    "162:L16 flight0 step3",
+    "163:L16 flight0 step4",
+    "164:L16 flight0 step5",
+    "165:L16 flight0 step6",
+    "166:L16 flight0 step7",
+    "167:L16 flight0 step8",
+    "168:L16 flight0 step9",
+    "169:L16 flight0 step10",
+    "170:L16 flight0 step11",
+    "171:L16 flight0 step12",
+    "172:L16 flight0 step13",
+    "173:L16 flight0 step14",
+    "174:L16 flight0 step15",
+    "175:L16 flight0 step16",
+    "176:L16 flight0 step17",
+    "177:L16 flight0 step18",
+    "178:L16 flight0 step19",
+    "179:L16 flight0 step20",
+    "180:L16 flight0 step21",
+    "181:L16 flight0 step22",
+    "182:L16 flight0 step23",
+    "183:L16 flight0 step24",
+    "184:L16 flight0 step25",
+    "185:L16 flight0 step26",
+    "186:L16 flight0 step27",
+    "187:L16 flight0 step28",
+    "188:L16 flight0 step29",
+    "189:L16 flight0 step30",
+    "190:L16 flight0 step31",
+    "191:L16 flight0 step32",
+    "192:L16 flight0 step33",
+    "193:L16 flight0 step34",
+    "198:L19 flight0 step1",
+    "199:L19 flight0 step2",
+    "200:L19 flight0 step3",
+    "201:L19 flight0 step4",
+    "202:L19 flight0 step5",
+    "203:L19 flight0 step6",
+    "204:L19 flight0 step7",
+    "205:L19 flight0 step8",
+    "206:L19 flight0 step9",
+    "207:L19 flight0 step10",
+    "208:L19 flight0 step11",
+    "209:L19 flight0 step12",
+    "210:L19 flight0 step13",
+    "211:L19 flight0 step14",
+    "212:L19 flight0 step15",
+    "213:L19 flight0 step16",
+    "214:L19 flight0 step17",
+    "217:L21 landing1",
+    "218:L21 landing2",
+    "219:L21 flight0 step1",
+    "220:L21 flight0 step2",
+    "221:L21 flight0 step3",
+    "222:L21 flight0 step4",
+    "223:L21 flight0 step5",
+    "224:L21 flight0 step6",
+    "225:L21 flight0 step7",
+    "226:L21 flight0 step8",
+    "227:L21 flight0 step9",
+    "228:L21 flight0 step10",
+    "229:L21 flight0 step11",
+    "230:L21 flight0 step12",
+    "231:L21 flight0 step13",
+    "232:L21 flight0 step14",
+    "233:L21 flight0 step15",
+    "234:L21 flight0 step16",
+    "235:L21 flight0 step17"
+  ],
+  "removed_source_meshes": [
+    "Wall gatehouse N",
+    "Wall gatehouse N.001",
+    "Wall gatehouse S",
+    "Wall gatehouse S.001",
+    "Wall west N",
+    "Wall west N.001",
+    "Wall west S",
+    "Wall west S.001",
+    "Wall west W",
+    "Wall west W.001",
+    "Wall east N",
+    "Wall east N.001",
+    "Wall east S",
+    "Wall east S.001",
+    "Wall east E",
+    "Wall east E.001",
+    "Wall east E.002",
+    "Wall north N",
+    "Wall north N.001",
+    "Wall north N.002",
+    "Wall north S.001",
+    "Wall north S.002",
+    "Wall south N.001",
+    "Wall south N.002",
+    "Wall south S",
+    "Wall south S.001",
+    "Wall archive S.001",
+    "Wall archive E",
+    "Wall archive E.001",
+    "Wall refectory N",
+    "Wall refectory N.001",
+    "Wall refectory W",
+    "Wall tower-base W",
+    "Wall tower-base W.001",
+    "Wall tower-base E",
+    "Wall tower-base E.001",
+    "Wall catacombs N",
+    "Wall catacombs N.001",
+    "Header catacombs N",
+    "Wall catacombs S",
+    "Wall chamber S.001",
+    "Wall chamber E",
+    "Wall vestry S",
+    "Wall vestry S.001",
+    "L02 support 1",
+    "L03 support 0",
+    "L03 support 1",
+    "L04 support 1",
+    "L05 support 0",
+    "L06 support 1",
+    "L07 support 0",
+    "L08 support 0",
+    "L10 support 0",
+    "L10 support 1",
+    "L11 support 1",
+    "L12 support 0",
+    "L12 support 1",
+    "L13 support 0",
+    "L14 support 0",
+    "L14 support 1",
+    "L15 support 0",
+    "L15 support 1",
+    "L17 support 0",
+    "L20 support 0",
+    "L20 support 1"
+  ],
+  "removed_native_parts": [
+    "2:Wall gatehouse N",
+    "3:Wall gatehouse N.001",
+    "5:Wall gatehouse S",
+    "6:Wall gatehouse S.001",
+    "12:Wall west N",
+    "13:Wall west N.001",
+    "15:Wall west S",
+    "16:Wall west S.001",
+    "18:Wall west W",
+    "19:Wall west W.001",
+    "24:Wall east N",
+    "25:Wall east N.001",
+    "27:Wall east S",
+    "28:Wall east S.001",
+    "31:Wall east E",
+    "32:Wall east E.001",
+    "33:Wall east E.002",
+    "50:Wall north N",
+    "51:Wall north N.001",
+    "52:Wall north N.002",
+    "55:Wall north S.001",
+    "56:Wall north S.002",
+    "62:Wall south N.001",
+    "63:Wall south N.002",
+    "65:Wall south S",
+    "66:Wall south S.001",
+    "72:Wall archive S.001",
+    "74:Wall archive E",
+    "75:Wall archive E.001",
+    "79:Wall refectory N",
+    "80:Wall refectory N.001",
+    "83:Wall refectory W",
+    "93:Wall tower-base W",
+    "94:Wall tower-base W.001",
+    "96:Wall tower-base E",
+    "97:Wall tower-base E.001",
+    "113:Wall catacombs N",
+    "114:Wall catacombs N.001",
+    "115:Header catacombs N",
+    "116:Wall catacombs S",
+    "121:Wall chamber S.001",
+    "123:Wall chamber E",
+    "127:Wall vestry S",
+    "128:Wall vestry S.001",
+    "133:L02 support 1",
+    "134:L03 support 0",
+    "135:L03 support 1",
+    "137:L04 support 1",
+    "138:L05 support 0",
+    "141:L06 support 1",
+    "142:L07 support 0",
+    "144:L08 support 0",
+    "148:L10 support 0",
+    "149:L10 support 1",
+    "151:L11 support 1",
+    "152:L12 support 0",
+    "153:L12 support 1",
+    "154:L13 support 0",
+    "156:L14 support 0",
+    "157:L14 support 1",
+    "158:L15 support 0",
+    "159:L15 support 1",
+    "194:L17 support 0",
+    "215:L20 support 0",
+    "216:L20 support 1"
+  ],
+  "new_parts": 44,
+  "new_triangles": 1536,
+  "ceiling_revisions": {},
+  "route_changes": [
+    {
+      "link": "L03",
+      "before": [
+        [
+          32.0,
+          0,
+          59.0
+        ],
+        [
+          32.0,
+          0,
+          56.0
+        ],
+        [
+          29.0,
+          0,
+          53.0
+        ]
+      ],
+      "after": [
+        [
+          32.0,
+          0,
+          59.0
+        ],
+        [
+          32.0,
+          0,
+          56.0
+        ],
+        [
+          32.0,
+          0,
+          53.0
+        ],
+        [
+          29.0,
+          0,
+          53.0
+        ]
+      ],
+      "threshold": [
+        32.0,
+        0,
+        56.0
+      ],
+      "crossing_axis": 2,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    },
+    {
+      "link": "L04",
+      "before": [
+        [
+          29.0,
+          0,
+          53.0
+        ],
+        [
+          11.0,
+          0,
+          50.0
+        ],
+        [
+          11.0,
+          0,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0,
+          53.0
+        ],
+        [
+          11.0,
+          0,
+          53.0
+        ],
+        [
+          11.0,
+          0,
+          50.0
+        ],
+        [
+          11.0,
+          0,
+          36.0
+        ]
+      ],
+      "threshold": [
+        11.0,
+        0,
+        50.0
+      ],
+      "crossing_axis": 2,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    },
+    {
+      "link": "L05",
+      "before": [
+        [
+          11.0,
+          0,
+          36.0
+        ],
+        [
+          11.0,
+          0,
+          22.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          11.0,
+          0,
+          36.0
+        ],
+        [
+          11.0,
+          0,
+          22.0
+        ],
+        [
+          11.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        11.0,
+        0,
+        22.0
+      ],
+      "crossing_axis": 2,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    },
+    {
+      "link": "L06",
+      "before": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          22.0
+        ],
+        [
+          47.0,
+          0,
+          36.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          22.0
+        ],
+        [
+          47.0,
+          0,
+          36.0
+        ]
+      ],
+      "threshold": [
+        47.0,
+        0,
+        22.0
+      ],
+      "crossing_axis": 2,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    },
+    {
+      "link": "L07",
+      "before": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          50.0
+        ],
+        [
+          29.0,
+          0,
+          53.0
+        ]
+      ],
+      "after": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          50.0
+        ],
+        [
+          47.0,
+          0,
+          53.0
+        ],
+        [
+          29.0,
+          0,
+          53.0
+        ]
+      ],
+      "threshold": [
+        47.0,
+        0,
+        50.0
+      ],
+      "crossing_axis": 2,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    },
+    {
+      "link": "L11",
+      "before": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          16.0
+        ],
+        [
+          18.0,
+          0,
+          9.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          16.0
+        ],
+        [
+          18.0,
+          0,
+          9.0
+        ]
+      ],
+      "threshold": [
+        18.0,
+        0,
+        16.0
+      ],
+      "crossing_axis": 2,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    },
+    {
+      "link": "L13",
+      "before": [
+        [
+          36.0,
+          0,
+          9.0
+        ],
+        [
+          36.0,
+          0,
+          16.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "after": [
+        [
+          36.0,
+          0,
+          9.0
+        ],
+        [
+          36.0,
+          0,
+          16.0
+        ],
+        [
+          36.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "threshold": [
+        36.0,
+        0,
+        16.0
+      ],
+      "crossing_axis": 2,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    },
+    {
+      "link": "L14",
+      "before": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          50.0,
+          0,
+          40.0
+        ],
+        [
+          59.0,
+          0,
+          40.0
+        ]
+      ],
+      "after": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          40.0
+        ],
+        [
+          50.0,
+          0,
+          40.0
+        ],
+        [
+          59.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        50.0,
+        0,
+        40.0
+      ],
+      "crossing_axis": 0,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    },
+    {
+      "link": "L15",
+      "before": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          50.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          23.0
+        ]
+      ],
+      "after": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          26.0
+        ],
+        [
+          50.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          23.0
+        ]
+      ],
+      "threshold": [
+        50.0,
+        0,
+        26.0
+      ],
+      "crossing_axis": 0,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    },
+    {
+      "link": "L18",
+      "before": [
+        [
+          64.0,
+          0,
+          23.0
+        ],
+        [
+          64.0,
+          0,
+          30.0
+        ],
+        [
+          59.0,
+          0,
+          40.0
+        ]
+      ],
+      "after": [
+        [
+          64.0,
+          0,
+          23.0
+        ],
+        [
+          64.0,
+          0,
+          30.0
+        ],
+        [
+          64.0,
+          0,
+          40.0
+        ],
+        [
+          59.0,
+          0,
+          40.0
+        ]
+      ],
+      "threshold": [
+        64.0,
+        0,
+        30.0
+      ],
+      "crossing_axis": 2,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    },
+    {
+      "link": "L20",
+      "before": [
+        [
+          29.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          16.0
+        ],
+        [
+          18.0,
+          -3,
+          9.0
+        ]
+      ],
+      "after": [
+        [
+          29.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          16.0
+        ],
+        [
+          18.0,
+          -3,
+          9.0
+        ]
+      ],
+      "threshold": [
+        18.0,
+        -3,
+        16.0
+      ],
+      "crossing_axis": 2,
+      "reason": "Normal approach to actual shared wall; preserve source endpoints/threshold and avoid grazing-wall slots"
+    }
+  ],
+  "shell_changes": [
+    {
+      "source_mesh": "Wall gatehouse N",
+      "new_mesh": "Flat route shell Wall gatehouse N",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L03 0 True",
+        "Flat body L03 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall gatehouse N.001",
+      "new_mesh": "Flat route shell Wall gatehouse N.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L03 0 True",
+        "Flat body L03 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall gatehouse S",
+      "new_mesh": "Flat route shell Wall gatehouse S",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.0070401611280437315,
+      "cutters": [
+        "Flat body L02 0 True",
+        "Flat body L02 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall gatehouse S.001",
+      "new_mesh": "Flat route shell Wall gatehouse S.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L02 0 True",
+        "Flat body L02 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall west N",
+      "new_mesh": "Flat route shell Wall west N",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.0070401611280439536,
+      "cutters": [
+        "Flat body L05 0 True",
+        "Flat body L05 1 True",
+        "Flat body L21 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall west N.001",
+      "new_mesh": "Flat route shell Wall west N.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L05 0 True",
+        "Flat body L05 1 True",
+        "Flat body L21 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall west S",
+      "new_mesh": "Flat route shell Wall west S",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L04 1 True",
+        "Flat body L04 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall west S.001",
+      "new_mesh": "Flat route shell Wall west S.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L04 1 True",
+        "Flat body L04 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall west W",
+      "new_mesh": "Flat route shell Wall west W",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128045064,
+      "cutters": [
+        "Flat body L10 0 True",
+        "Flat body L10 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall west W.001",
+      "new_mesh": "Flat route shell Wall west W.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L10 0 True",
+        "Flat body L10 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall east N",
+      "new_mesh": "Flat route shell Wall east N",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L06 1 True",
+        "Flat body L06 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall east N.001",
+      "new_mesh": "Flat route shell Wall east N.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.0070401611280439536,
+      "cutters": [
+        "Flat body L06 1 True",
+        "Flat body L06 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall east S",
+      "new_mesh": "Flat route shell Wall east S",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.0070401611280439536,
+      "cutters": [
+        "Flat body L07 0 True",
+        "Flat body L07 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall east S.001",
+      "new_mesh": "Flat route shell Wall east S.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L07 0 True",
+        "Flat body L07 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall east E",
+      "new_mesh": "Flat route shell Wall east E",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.0070401611280439536,
+      "cutters": [
+        "Flat body L15 1 True",
+        "Flat body L15 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall east E.001",
+      "new_mesh": "Flat route shell Wall east E.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.01408032225608924,
+      "cutters": [
+        "Flat body L14 1 True",
+        "Flat body L14 2 True",
+        "Flat body L15 1 True",
+        "Flat body L15 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall east E.002",
+      "new_mesh": "Flat route shell Wall east E.002",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L14 1 True",
+        "Flat body L14 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall north N",
+      "new_mesh": "Flat route shell Wall north N",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L11 1 True",
+        "Flat body L11 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall north N.001",
+      "new_mesh": "Flat route shell Wall north N.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.014080322256090128,
+      "cutters": [
+        "Flat body L11 1 True",
+        "Flat body L11 2 True",
+        "Flat body L13 0 True",
+        "Flat body L13 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall north N.002",
+      "new_mesh": "Flat route shell Wall north N.002",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L13 0 True",
+        "Flat body L13 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall north S.001",
+      "new_mesh": "Flat route shell Wall north S.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.01408032225608924,
+      "cutters": [
+        "Flat body L05 0 True",
+        "Flat body L05 1 True",
+        "Flat body L09 0 True",
+        "Flat body L09 1 True",
+        "Flat body L21 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall north S.002",
+      "new_mesh": "Flat route shell Wall north S.002",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.014080322256088351,
+      "cutters": [
+        "Flat body L06 1 True",
+        "Flat body L06 2 True",
+        "Flat body L09 0 True",
+        "Flat body L09 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall south N.001",
+      "new_mesh": "Flat route shell Wall south N.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.01408032225608924,
+      "cutters": [
+        "Flat body L04 1 True",
+        "Flat body L04 2 True",
+        "Flat body L08 0 True",
+        "Flat body L08 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall south N.002",
+      "new_mesh": "Flat route shell Wall south N.002",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.01408032225608924,
+      "cutters": [
+        "Flat body L07 0 True",
+        "Flat body L07 1 True",
+        "Flat body L08 0 True",
+        "Flat body L08 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall south S",
+      "new_mesh": "Flat route shell Wall south S",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128042399,
+      "cutters": [
+        "Flat body L03 0 True",
+        "Flat body L03 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall south S.001",
+      "new_mesh": "Flat route shell Wall south S.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128045952,
+      "cutters": [
+        "Flat body L03 0 True",
+        "Flat body L03 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall archive S.001",
+      "new_mesh": "Flat route shell Wall archive S.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L11 1 True",
+        "Flat body L11 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall archive E",
+      "new_mesh": "Flat route shell Wall archive E",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.00704016112804462,
+      "cutters": [
+        "Flat body L12 0 True",
+        "Flat body L12 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall archive E.001",
+      "new_mesh": "Flat route shell Wall archive E.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L12 0 True",
+        "Flat body L12 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall refectory N",
+      "new_mesh": "Flat route shell Wall refectory N",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128045952,
+      "cutters": [
+        "Flat body L18 0 True",
+        "Flat body L18 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall refectory N.001",
+      "new_mesh": "Flat route shell Wall refectory N.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007038818354607512,
+      "cutters": [
+        "Flat body L18 0 True",
+        "Flat body L18 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall refectory W",
+      "new_mesh": "Flat route shell Wall refectory W",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L14 1 True",
+        "Flat body L14 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall tower-base W",
+      "new_mesh": "Flat route shell Wall tower-base W",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L15 1 True",
+        "Flat body L15 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall tower-base W.001",
+      "new_mesh": "Flat route shell Wall tower-base W.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L15 1 True",
+        "Flat body L15 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall tower-base E",
+      "new_mesh": "Flat route shell Wall tower-base E",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L17 0 True",
+        "Flat body L17 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall tower-base E.001",
+      "new_mesh": "Flat route shell Wall tower-base E.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L17 0 True",
+        "Flat body L17 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall catacombs N",
+      "new_mesh": "Flat route shell Wall catacombs N",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.00784017922996938,
+      "cutters": [
+        "Flat body L11 1 True",
+        "Flat body L11 2 True",
+        "Flat body L20 1 True",
+        "Flat body L20 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall catacombs N.001",
+      "new_mesh": "Flat route shell Wall catacombs N.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.06944021447419502,
+      "cutters": [
+        "Flat body L11 1 True",
+        "Flat body L11 2 True",
+        "Flat body L13 0 True",
+        "Flat body L13 1 True",
+        "Flat body L20 1 True",
+        "Flat body L20 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Header catacombs N",
+      "new_mesh": "Flat route shell Header catacombs N",
+      "source_role": "rough opening header",
+      "removed_volume_m3": 0.05999999865889549,
+      "cutters": [
+        "Flat body L11 1 True",
+        "Flat body L11 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall catacombs S",
+      "new_mesh": "Flat route shell Wall catacombs S",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.20480010528563852,
+      "cutters": [
+        "Flat body L05 0 True",
+        "Flat body L05 1 True",
+        "Flat body L06 1 True",
+        "Flat body L06 2 True",
+        "Flat body L09 0 True",
+        "Flat body L09 1 True",
+        "Flat body L21 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall chamber S.001",
+      "new_mesh": "Flat route shell Wall chamber S.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007840179229970268,
+      "cutters": [
+        "Flat body L11 1 True",
+        "Flat body L11 2 True",
+        "Flat body L20 1 True",
+        "Flat body L20 2 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall chamber E",
+      "new_mesh": "Flat route shell Wall chamber E",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.061600035244226525,
+      "cutters": [
+        "Flat body L12 0 True",
+        "Flat body L12 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall vestry S",
+      "new_mesh": "Flat route shell Wall vestry S",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L13 0 True",
+        "Flat body L13 1 True"
+      ]
+    },
+    {
+      "source_mesh": "Wall vestry S.001",
+      "new_mesh": "Flat route shell Wall vestry S.001",
+      "source_role": "rough shell wall",
+      "removed_volume_m3": 0.007040161128044176,
+      "cutters": [
+        "Flat body L13 0 True",
+        "Flat body L13 1 True"
+      ]
+    }
+  ],
+  "indoor_bearings": [],
+  "corridors": [
+    {
+      "link": "L01",
+      "segment": 0,
+      "points": [
+        [
+          32.0,
+          0,
+          80.0
+        ],
+        [
+          32.0,
+          0,
+          74.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L01",
+      "segment": 1,
+      "points": [
+        [
+          32.0,
+          0,
+          74.0
+        ],
+        [
+          32.0,
+          0,
+          68.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L02",
+      "segment": 0,
+      "points": [
+        [
+          32.0,
+          0,
+          68.0
+        ],
+        [
+          32.0,
+          0,
+          62.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L02",
+      "segment": 1,
+      "points": [
+        [
+          32.0,
+          0,
+          62.0
+        ],
+        [
+          32.0,
+          0,
+          59.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L03",
+      "segment": 0,
+      "points": [
+        [
+          32.0,
+          0,
+          59.0
+        ],
+        [
+          32.0,
+          0,
+          56.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L03",
+      "segment": 1,
+      "points": [
+        [
+          32.0,
+          0,
+          56.0
+        ],
+        [
+          32.0,
+          0,
+          53.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L03",
+      "segment": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          53.0
+        ],
+        [
+          29.0,
+          0,
+          53.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L04",
+      "segment": 0,
+      "points": [
+        [
+          29.0,
+          0,
+          53.0
+        ],
+        [
+          11.0,
+          0,
+          53.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L04",
+      "segment": 1,
+      "points": [
+        [
+          11.0,
+          0,
+          53.0
+        ],
+        [
+          11.0,
+          0,
+          50.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L04",
+      "segment": 2,
+      "points": [
+        [
+          11.0,
+          0,
+          50.0
+        ],
+        [
+          11.0,
+          0,
+          36.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L05",
+      "segment": 0,
+      "points": [
+        [
+          11.0,
+          0,
+          36.0
+        ],
+        [
+          11.0,
+          0,
+          22.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L05",
+      "segment": 1,
+      "points": [
+        [
+          11.0,
+          0,
+          22.0
+        ],
+        [
+          11.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L05",
+      "segment": 2,
+      "points": [
+        [
+          11.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L06",
+      "segment": 0,
+      "points": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L06",
+      "segment": 1,
+      "points": [
+        [
+          47.0,
+          0,
+          19.0
+        ],
+        [
+          47.0,
+          0,
+          22.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L06",
+      "segment": 2,
+      "points": [
+        [
+          47.0,
+          0,
+          22.0
+        ],
+        [
+          47.0,
+          0,
+          36.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L07",
+      "segment": 0,
+      "points": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          50.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L07",
+      "segment": 1,
+      "points": [
+        [
+          47.0,
+          0,
+          50.0
+        ],
+        [
+          47.0,
+          0,
+          53.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L07",
+      "segment": 2,
+      "points": [
+        [
+          47.0,
+          0,
+          53.0
+        ],
+        [
+          29.0,
+          0,
+          53.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L08",
+      "segment": 0,
+      "points": [
+        [
+          29.0,
+          0,
+          53.0
+        ],
+        [
+          29.0,
+          0,
+          50.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L08",
+      "segment": 1,
+      "points": [
+        [
+          29.0,
+          0,
+          50.0
+        ],
+        [
+          29.0,
+          0,
+          36.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L09",
+      "segment": 0,
+      "points": [
+        [
+          29.0,
+          0,
+          36.0
+        ],
+        [
+          29.0,
+          0,
+          22.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L09",
+      "segment": 1,
+      "points": [
+        [
+          29.0,
+          0,
+          22.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L10",
+      "segment": 0,
+      "points": [
+        [
+          11.0,
+          0,
+          36.0
+        ],
+        [
+          8.0,
+          0,
+          36.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L10",
+      "segment": 1,
+      "points": [
+        [
+          8.0,
+          0,
+          36.0
+        ],
+        [
+          0.0,
+          0,
+          36.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L11",
+      "segment": 0,
+      "points": [
+        [
+          29.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L11",
+      "segment": 1,
+      "points": [
+        [
+          18.0,
+          0,
+          19.0
+        ],
+        [
+          18.0,
+          0,
+          16.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L11",
+      "segment": 2,
+      "points": [
+        [
+          18.0,
+          0,
+          16.0
+        ],
+        [
+          18.0,
+          0,
+          9.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L12",
+      "segment": 0,
+      "points": [
+        [
+          18.0,
+          0,
+          9.0
+        ],
+        [
+          28.0,
+          0,
+          9.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L12",
+      "segment": 1,
+      "points": [
+        [
+          28.0,
+          0,
+          9.0
+        ],
+        [
+          36.0,
+          0,
+          9.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L13",
+      "segment": 0,
+      "points": [
+        [
+          36.0,
+          0,
+          9.0
+        ],
+        [
+          36.0,
+          0,
+          16.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L13",
+      "segment": 1,
+      "points": [
+        [
+          36.0,
+          0,
+          16.0
+        ],
+        [
+          36.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L13",
+      "segment": 2,
+      "points": [
+        [
+          36.0,
+          0,
+          19.0
+        ],
+        [
+          29.0,
+          0,
+          19.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L14",
+      "segment": 0,
+      "points": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          40.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L14",
+      "segment": 1,
+      "points": [
+        [
+          47.0,
+          0,
+          40.0
+        ],
+        [
+          50.0,
+          0,
+          40.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L14",
+      "segment": 2,
+      "points": [
+        [
+          50.0,
+          0,
+          40.0
+        ],
+        [
+          59.0,
+          0,
+          40.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L15",
+      "segment": 0,
+      "points": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          47.0,
+          0,
+          26.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L15",
+      "segment": 1,
+      "points": [
+        [
+          47.0,
+          0,
+          26.0
+        ],
+        [
+          50.0,
+          0,
+          26.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L15",
+      "segment": 2,
+      "points": [
+        [
+          50.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          26.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L15",
+      "segment": 3,
+      "points": [
+        [
+          55.0,
+          0,
+          26.0
+        ],
+        [
+          55.0,
+          0,
+          23.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L17",
+      "segment": 0,
+      "points": [
+        [
+          55.0,
+          0,
+          23.0
+        ],
+        [
+          60.0,
+          0,
+          23.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L17",
+      "segment": 1,
+      "points": [
+        [
+          60.0,
+          0,
+          23.0
+        ],
+        [
+          64.0,
+          0,
+          23.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L18",
+      "segment": 0,
+      "points": [
+        [
+          64.0,
+          0,
+          23.0
+        ],
+        [
+          64.0,
+          0,
+          30.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L18",
+      "segment": 1,
+      "points": [
+        [
+          64.0,
+          0,
+          30.0
+        ],
+        [
+          64.0,
+          0,
+          40.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L18",
+      "segment": 2,
+      "points": [
+        [
+          64.0,
+          0,
+          40.0
+        ],
+        [
+          59.0,
+          0,
+          40.0
+        ]
+      ],
+      "width": 2.04,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L20",
+      "segment": 0,
+      "points": [
+        [
+          29.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          19.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L20",
+      "segment": 1,
+      "points": [
+        [
+          18.0,
+          -3,
+          19.0
+        ],
+        [
+          18.0,
+          -3,
+          16.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L20",
+      "segment": 2,
+      "points": [
+        [
+          18.0,
+          -3,
+          16.0
+        ],
+        [
+          18.0,
+          -3,
+          9.0
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L21",
+      "segment": 1,
+      "points": [
+        [
+          12.6,
+          0,
+          19
+        ],
+        [
+          11,
+          0,
+          19
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    },
+    {
+      "link": "L21",
+      "segment": 2,
+      "points": [
+        [
+          11,
+          0,
+          19
+        ],
+        [
+          11,
+          0,
+          24
+        ]
+      ],
+      "width": 1.54,
+      "terminal_extension": 0.35,
+      "wall_bottom": -0.25,
+      "slab_bottom": 0.005,
+      "headroom": 2.2
+    }
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1313228,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      2,
+      3,
+      5,
+      6,
+      12,
+      13,
+      15,
+      16,
+      18,
+      19,
+      24,
+      25,
+      27,
+      28,
+      31,
+      32,
+      33,
+      50,
+      51,
+      52,
+      55,
+      56,
+      62,
+      63,
+      65,
+      66,
+      72,
+      74,
+      75,
+      79,
+      80,
+      83,
+      93,
+      94,
+      96,
+      97,
+      113,
+      114,
+      115,
+      116,
+      121,
+      123,
+      127,
+      128
+    ]
+  },
+  "glb_sha256": "1aadbf0ab3fe12d6fa6330c6b8bf393d3347e26d8e0e072d265f5f86cb30b374",
+  "physics_sha256": "96837b0ad66e0923c60fbf935c864b2ed88bcb45f44935d9b0dd615cf8f84344",
+  "generator_sha256": "1f2adbb0b89dac66a8179e62158249637998034f88340d2dd99ff748b1bab69a",
+  "remaining": "Independent native/export/editable checks; all flat/vertical comparisons; terrain, intersecting stair/flat reservations, physical connections, framing/roof/light/material/art/services/runtime remain open.",
+  "floor_surface_ownership": {
+    "removed_redundant_prisms": [
+      {
+        "name": "L02 support 1",
+        "native_name": "133:L02 support 1",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              33.0,
+              62.0
+            ],
+            [
+              33.0,
+              59.0
+            ],
+            [
+              31.0,
+              59.0
+            ]
+          ],
+          [
+            [
+              33.0,
+              62.0
+            ],
+            [
+              31.0,
+              59.0
+            ],
+            [
+              31.0,
+              62.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 6.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor gatehouse"
+        ],
+        "source_native_record_sha256": "2e390c7b9780271023b98e131eb16a465001335a0e7277e439d3b3bcfab1885f",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L03 support 0",
+        "native_name": "134:L03 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              32.75,
+              59.0
+            ],
+            [
+              32.75,
+              56.0
+            ],
+            [
+              31.25,
+              56.0
+            ]
+          ],
+          [
+            [
+              32.75,
+              59.0
+            ],
+            [
+              31.25,
+              56.0
+            ],
+            [
+              31.25,
+              59.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 4.5,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor gatehouse"
+        ],
+        "source_native_record_sha256": "194e8730c506e8e1ab192d76ac8bbc422fbe47aa6d4859c45653730df373ffc1",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L03 support 1",
+        "native_name": "135:L03 support 1",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              32.530330657958984,
+              55.469669342041016
+            ],
+            [
+              29.530330657958984,
+              52.469669342041016
+            ],
+            [
+              28.469669342041016,
+              53.530330657958984
+            ]
+          ],
+          [
+            [
+              32.530330657958984,
+              55.469669342041016
+            ],
+            [
+              28.469669342041016,
+              53.530330657958984
+            ],
+            [
+              31.469669342041016,
+              56.530330657958984
+            ]
+          ]
+        ],
+        "original_top_area_m2": 6.3639678955078125,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor gatehouse",
+          "Floor south"
+        ],
+        "source_native_record_sha256": "3a01d6dfff398c7acc82226d3f1df69cf66fd7b6e0bd0358f1e9ae8c2d2d29f1",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L04 support 1",
+        "native_name": "137:L04 support 1",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              11.75,
+              50.0
+            ],
+            [
+              11.75,
+              36.0
+            ],
+            [
+              10.25,
+              36.0
+            ]
+          ],
+          [
+            [
+              11.75,
+              50.0
+            ],
+            [
+              10.25,
+              36.0
+            ],
+            [
+              10.25,
+              50.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 21.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor west"
+        ],
+        "source_native_record_sha256": "b3acef5cf51dedf466a6dedccb1c0bdb0f5d6bec917328018a39ad426932251a",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L05 support 0",
+        "native_name": "138:L05 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              11.75,
+              36.0
+            ],
+            [
+              11.75,
+              22.0
+            ],
+            [
+              10.25,
+              22.0
+            ]
+          ],
+          [
+            [
+              11.75,
+              36.0
+            ],
+            [
+              10.25,
+              22.0
+            ],
+            [
+              10.25,
+              36.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 21.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor west"
+        ],
+        "source_native_record_sha256": "535f76bb4ec10558ab0381647a99c8a833d68fadaa37a77dcbdcbf71311c9277",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L06 support 1",
+        "native_name": "141:L06 support 1",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              46.25,
+              22.0
+            ],
+            [
+              46.25,
+              36.0
+            ],
+            [
+              47.75,
+              36.0
+            ]
+          ],
+          [
+            [
+              46.25,
+              22.0
+            ],
+            [
+              47.75,
+              36.0
+            ],
+            [
+              47.75,
+              22.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 21.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor east"
+        ],
+        "source_native_record_sha256": "0ac5390108dc0e6f8ce03ee50373d5bb559ac59d2665e1b970e20a869afc63bd",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L07 support 0",
+        "native_name": "142:L07 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              46.25,
+              36.0
+            ],
+            [
+              46.25,
+              50.0
+            ],
+            [
+              47.75,
+              50.0
+            ]
+          ],
+          [
+            [
+              46.25,
+              36.0
+            ],
+            [
+              47.75,
+              50.0
+            ],
+            [
+              47.75,
+              36.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 21.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor east"
+        ],
+        "source_native_record_sha256": "3838b8fd97df710a670d136bd973182c98dd498cf3c05e42b0c68687ba3f580d",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L08 support 0",
+        "native_name": "144:L08 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              30.0,
+              53.0
+            ],
+            [
+              30.0,
+              50.0
+            ],
+            [
+              28.0,
+              50.0
+            ]
+          ],
+          [
+            [
+              30.0,
+              53.0
+            ],
+            [
+              28.0,
+              50.0
+            ],
+            [
+              28.0,
+              53.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 6.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor south"
+        ],
+        "source_native_record_sha256": "d6adfccdad1b4372c92baad7c8977cf6691e122d7daf170b82c6f730474eb7b2",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L10 support 0",
+        "native_name": "148:L10 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              11.0,
+              35.25
+            ],
+            [
+              8.0,
+              35.25
+            ],
+            [
+              8.0,
+              36.75
+            ]
+          ],
+          [
+            [
+              11.0,
+              35.25
+            ],
+            [
+              8.0,
+              36.75
+            ],
+            [
+              11.0,
+              36.75
+            ]
+          ]
+        ],
+        "original_top_area_m2": 4.5,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor west"
+        ],
+        "source_native_record_sha256": "271f84c5d3d613dc8f28b9792ff6a1ae386f973a163ffc8460524f9411cd8f31",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L10 support 1",
+        "native_name": "149:L10 support 1",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              8.0,
+              35.25
+            ],
+            [
+              0.0,
+              35.25
+            ],
+            [
+              0.0,
+              36.75
+            ]
+          ],
+          [
+            [
+              8.0,
+              35.25
+            ],
+            [
+              0.0,
+              36.75
+            ],
+            [
+              8.0,
+              36.75
+            ]
+          ]
+        ],
+        "original_top_area_m2": 12.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor dorm"
+        ],
+        "source_native_record_sha256": "275a38efaa076d11b3ab5e8714def50c0b16b0a16bb5ebc6837f00049b724219",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L11 support 1",
+        "native_name": "151:L11 support 1",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              18.75,
+              16.0
+            ],
+            [
+              18.75,
+              9.0
+            ],
+            [
+              17.25,
+              9.0
+            ]
+          ],
+          [
+            [
+              18.75,
+              16.0
+            ],
+            [
+              17.25,
+              9.0
+            ],
+            [
+              17.25,
+              16.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 10.5,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor archive"
+        ],
+        "source_native_record_sha256": "504e4a045808c769d00a4fe93c92e2e4e8ccfc9060c2cda2431849b26afa1863",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L12 support 0",
+        "native_name": "152:L12 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              18.0,
+              9.75
+            ],
+            [
+              28.0,
+              9.75
+            ],
+            [
+              28.0,
+              8.25
+            ]
+          ],
+          [
+            [
+              18.0,
+              9.75
+            ],
+            [
+              28.0,
+              8.25
+            ],
+            [
+              18.0,
+              8.25
+            ]
+          ]
+        ],
+        "original_top_area_m2": 15.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor archive"
+        ],
+        "source_native_record_sha256": "9f458536465c65641d1760b8486c5d969501454f56f8518ba38026139f32993c",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L12 support 1",
+        "native_name": "153:L12 support 1",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              28.0,
+              9.75
+            ],
+            [
+              36.0,
+              9.75
+            ],
+            [
+              36.0,
+              8.25
+            ]
+          ],
+          [
+            [
+              28.0,
+              9.75
+            ],
+            [
+              36.0,
+              8.25
+            ],
+            [
+              28.0,
+              8.25
+            ]
+          ]
+        ],
+        "original_top_area_m2": 12.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor vestry"
+        ],
+        "source_native_record_sha256": "ce697d75294453c5539712e62d1dc15ef24a95e2886e35088d527cff749a88b7",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L13 support 0",
+        "native_name": "154:L13 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              35.25,
+              9.0
+            ],
+            [
+              35.25,
+              16.0
+            ],
+            [
+              36.75,
+              16.0
+            ]
+          ],
+          [
+            [
+              35.25,
+              9.0
+            ],
+            [
+              36.75,
+              16.0
+            ],
+            [
+              36.75,
+              9.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 10.5,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor vestry"
+        ],
+        "source_native_record_sha256": "7080806e15cb2804a270f1baf2eae83d0cf1cc1334e63af5aaf85f7f8e566c1c",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L14 support 0",
+        "native_name": "156:L14 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              46.400001525878906,
+              36.45000076293945
+            ],
+            [
+              49.400001525878906,
+              40.45000076293945
+            ],
+            [
+              50.599998474121094,
+              39.54999923706055
+            ]
+          ],
+          [
+            [
+              46.400001525878906,
+              36.45000076293945
+            ],
+            [
+              50.599998474121094,
+              39.54999923706055
+            ],
+            [
+              47.599998474121094,
+              35.54999923706055
+            ]
+          ]
+        ],
+        "original_top_area_m2": 7.499992370605469,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor east",
+          "Floor refectory"
+        ],
+        "source_native_record_sha256": "5c68200901bcd04e046ebf4bd045b7f78cb6759b41c3e8cd22e9e098b0b00ae5",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L14 support 1",
+        "native_name": "157:L14 support 1",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              50.0,
+              40.75
+            ],
+            [
+              59.0,
+              40.75
+            ],
+            [
+              59.0,
+              39.25
+            ]
+          ],
+          [
+            [
+              50.0,
+              40.75
+            ],
+            [
+              59.0,
+              39.25
+            ],
+            [
+              50.0,
+              39.25
+            ]
+          ]
+        ],
+        "original_top_area_m2": 13.5,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor refectory"
+        ],
+        "source_native_record_sha256": "33fa1e51c23eae1172a2149f05e9fbcf36a3a70c31baa839c664e62826704995",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L15 support 0",
+        "native_name": "158:L15 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              47.71836853027344,
+              36.215511322021484
+            ],
+            [
+              50.71836853027344,
+              26.215511322021484
+            ],
+            [
+              49.28163146972656,
+              25.784488677978516
+            ]
+          ],
+          [
+            [
+              47.71836853027344,
+              36.215511322021484
+            ],
+            [
+              49.28163146972656,
+              25.784488677978516
+            ],
+            [
+              46.28163146972656,
+              35.784488677978516
+            ]
+          ]
+        ],
+        "original_top_area_m2": 15.660438537597656,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor east",
+          "Floor tower-base"
+        ],
+        "source_native_record_sha256": "23f2b8c170731a35b3a1cdcf98b7c11c032362baf2e53d90d9167d513d5e8b0b",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L15 support 1",
+        "native_name": "159:L15 support 1",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              50.38587188720703,
+              26.64311981201172
+            ],
+            [
+              55.38587188720703,
+              23.64311981201172
+            ],
+            [
+              54.61412811279297,
+              22.35688018798828
+            ]
+          ],
+          [
+            [
+              50.38587188720703,
+              26.64311981201172
+            ],
+            [
+              54.61412811279297,
+              22.35688018798828
+            ],
+            [
+              49.61412811279297,
+              25.35688018798828
+            ]
+          ]
+        ],
+        "original_top_area_m2": 8.746429443359375,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor east",
+          "Floor tower-base"
+        ],
+        "source_native_record_sha256": "21e526258e357a2a57c5257d7172267950684b7525b72e4dcb5990cab3ee1c5e",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L17 support 0",
+        "native_name": "194:L17 support 0",
+        "top_y": 0.0,
+        "original_top_polygons": [
+          [
+            [
+              55.0,
+              24.0
+            ],
+            [
+              60.0,
+              24.0
+            ],
+            [
+              60.0,
+              22.0
+            ]
+          ],
+          [
+            [
+              55.0,
+              24.0
+            ],
+            [
+              60.0,
+              22.0
+            ],
+            [
+              55.0,
+              22.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 10.0,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor tower-base"
+        ],
+        "source_native_record_sha256": "844b2acae6eeba478336f7b4684452c65f4cace4b578cc68efcfbd3bc5166d68",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L20 support 0",
+        "native_name": "215:L20 support 0",
+        "top_y": -3.0,
+        "original_top_polygons": [
+          [
+            [
+              29.197338104248047,
+              18.276426315307617
+            ],
+            [
+              18.197338104248047,
+              15.276427268981934
+            ],
+            [
+              17.802661895751953,
+              16.723573684692383
+            ]
+          ],
+          [
+            [
+              29.197338104248047,
+              18.276426315307617
+            ],
+            [
+              17.802661895751953,
+              16.723573684692383
+            ],
+            [
+              28.802661895751953,
+              19.723573684692383
+            ]
+          ]
+        ],
+        "original_top_area_m2": 17.10264425531568,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor catacombs",
+          "Floor chamber"
+        ],
+        "source_native_record_sha256": "a361508868ce40e357e432649e19108db3371b49b821a0e2146ec0165cded49b",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      },
+      {
+        "name": "L20 support 1",
+        "native_name": "216:L20 support 1",
+        "top_y": -3.0,
+        "original_top_polygons": [
+          [
+            [
+              18.75,
+              16.0
+            ],
+            [
+              18.75,
+              9.0
+            ],
+            [
+              17.25,
+              9.0
+            ]
+          ],
+          [
+            [
+              18.75,
+              16.0
+            ],
+            [
+              17.25,
+              9.0
+            ],
+            [
+              17.25,
+              16.0
+            ]
+          ]
+        ],
+        "original_top_area_m2": 10.5,
+        "unowned_top_area_m2": 0,
+        "actual_floor_owners": [
+          "Floor chamber"
+        ],
+        "source_native_record_sha256": "215e2677c559cf3ec7038c44c1bc049f6337a7040ebd3c679c13ce08e04a8844",
+        "reason": "Complete actual equal-height floor coverage, not a reservation rectangle; no geometry needed for duplicate rough prism"
+      }
+    ],
+    "input_hashes": {
+      "glb_sha256": "ac0245064f5549e65c222bc98d7e93e67725437b5b507b0d75c2cc0084cb5230",
+      "native_sha256": "8287a1cd9ef422c37d268d8ef53b23220c027f2ed14abd86026cfddcc516da58"
+    },
+    "generator_sha256": "4bea872e82b97ad6cd92abe4f578b261bb2e64210650faca50e2bfe126c28f0b",
+    "limitation": "Only completely covered original rough flat-route prisms; partial overlays, other duplicate structural surfaces, all optical/runtime and whole-map support acceptance remain open"
+  }
+}

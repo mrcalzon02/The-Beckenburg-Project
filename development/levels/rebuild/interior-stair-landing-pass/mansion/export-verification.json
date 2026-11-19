@@ -1,0 +1,58 @@
+{
+  "bindings": {
+    "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.glb": "38637985f51a5b79639a62d67c990e259992bfefa0b20a2c0dc8a30bd9034093",
+    "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.hcs2": "667917ce7806310b8d44c63418bf4066a5e6ea68771c4e42f53d57650e173dee",
+    "development/levels/rebuild/estate-parish-pass/mansion/estate-parish.glb": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d",
+    "development/levels/rebuild/estate-parish-pass/mansion/estate-parish.hcs2": "096bb68ec37f982eb49e764e38e43f4ce2995c890f9aefe42d7dde20c517fd46"
+  },
+  "retained_native_records": 654,
+  "exact_terrain_records": 1,
+  "closed_additions": 16,
+  "controls": {
+    "aperture_rays": 36,
+    "standing_sills": 24,
+    "solid_jamb_rays": 8
+  },
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/mansion-ground-service-door.png",
+      "sha256": "2d96fee7ca203f8741c118771acdb3193a36310788194a812859ecab67de70fc",
+      "source_glb_sha256": "38637985f51a5b79639a62d67c990e259992bfefa0b20a2c0dc8a30bd9034093"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/mansion-first-floor-transfer.png",
+      "sha256": "4233fcb69770fea2c03d457784d97bba4f8387a9c27633bb1ccb1317ebc969e5",
+      "source_glb_sha256": "38637985f51a5b79639a62d67c990e259992bfefa0b20a2c0dc8a30bd9034093"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/mansion-attic-service-door.png",
+      "sha256": "b4fa9e8df7cd1b15574f618cfa901bbedb6caec33ab4cdc86ce5dbf18cb0ff30",
+      "source_glb_sha256": "38637985f51a5b79639a62d67c990e259992bfefa0b20a2c0dc8a30bd9034093"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/mansion-great-stair-west-aisle.png",
+      "sha256": "29224339d7670312023129c93bff76d55f896d59e9ad92219517993ffc682ea4",
+      "source_glb_sha256": "38637985f51a5b79639a62d67c990e259992bfefa0b20a2c0dc8a30bd9034093"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/mansion-ground-service-door-before.png",
+      "sha256": "fd77822461443749382e6fdd0b77e92d7b8c141b226c51b044f1d177c8530562",
+      "source_glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/mansion-first-floor-transfer-before.png",
+      "sha256": "83a35812bafafd4e7aff41d06f2229d492af8cf0d833f5f98e1892cc8a894b13",
+      "source_glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/mansion-attic-service-door-before.png",
+      "sha256": "8278d1156175020ad78a27ff7b4b124bdea31dcdda5ba4760f2cf1980166c3c9",
+      "source_glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/interior-stair-landing-batch/mansion-great-stair-west-aisle-before.png",
+      "sha256": "ca1811b5eaf69476387c4045825e1d77459f41450b2483b50e3f4eb1fcb9a14e",
+      "source_glb_sha256": "0f5691a384aea77aca17ab6013c9dabcc5e539d75f835e717a84d8cec963579d"
+    }
+  ]
+}

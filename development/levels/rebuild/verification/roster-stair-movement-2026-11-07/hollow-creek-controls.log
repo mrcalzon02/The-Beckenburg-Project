@@ -1,0 +1,3 @@
+PASS 12 actual native standing zone anchors
+PASS native query fidelity: 1041 support points, 8 no-roof-support cases, 346 optical rays (281 clear/65 blocked), 14 actual bank interiors; max support error 2.065571173992531E-6m
+ROUTE READINESS: 969 standing source-route points; 939 source-route sweeps pass; 0 unresolved capsule/sweep findings in build\hollow-creek-runtime-route-findings.txt. This is not full map acceptance.

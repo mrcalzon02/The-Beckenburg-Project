@@ -1,0 +1,4211 @@
+{
+  "id": "ASYLUM",
+  "status": "FLOOR_CAP_RESTORATION_CANDIDATE_RUNTIME_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/terrain-fit-pass/asylum/supported-terrain.glb",
+  "source_glb_sha256": "252b6e9dc4f9c1f795891e6f245604eb226747632ac4178d8494d22dd7e0faf7",
+  "source_physics": "development/levels/rebuild/terrain-fit-pass/asylum/supported-terrain.hcs2",
+  "source_physics_sha256": "5306941b5135d5dc5d6a43ec84b0ce31c3cfca8c40e2aaf2be1995675d0f098e",
+  "layout": "development/levels/rebuild/asylum/rough-layout.json",
+  "layout_sha256": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30",
+  "new_parts": 0,
+  "new_triangles": 0,
+  "restored_area_m2": 0,
+  "plates": [],
+  "decisions": [
+    {
+      "zone": "ground-north-a",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor ground-north-a",
+        "L01 support 0",
+        "L01 support 1",
+        "L71 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-north-a",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-north-a",
+        "L10 support 0",
+        "L10 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-north-b",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor ground-north-b",
+        "L01 support 1",
+        "L71 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-north-b",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-north-b",
+        "L10 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-south-a",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor ground-south-a",
+        "L03 support 0",
+        "L03 support 1",
+        "L27 support 0",
+        "L27 support 1",
+        "L71 support 0",
+        "L72 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-south-a",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-south-a",
+        "L12 support 0",
+        "L12 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-south-b",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor ground-south-b",
+        "L03 support 1",
+        "L27 support 1",
+        "L71 support 0",
+        "L72 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-south-b",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-south-b",
+        "L12 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-ward-link",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor ground-ward-link",
+        "L01 support 1",
+        "L03 support 1",
+        "L05 support 1",
+        "L09 support 0",
+        "L09 support 1",
+        "L71 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-ward-link",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-ward-link",
+        "L10 support 1",
+        "L12 support 1",
+        "L18 support 0",
+        "L18 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-observation",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor ground-observation",
+        "L05 support 0",
+        "L05 support 1",
+        "L71 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-observation",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-observation"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-linen",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor ground-linen",
+        "L05 support 1",
+        "L71 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-linen",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-linen"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-wc",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor ground-wc",
+        "L05 support 1",
+        "L07 support 0",
+        "L07 support 1",
+        "L09 support 1",
+        "L71 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-wc",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-wc",
+        "L16 support 0",
+        "L16 support 1",
+        "L18 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-wash",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor ground-wash",
+        "L05 support 1",
+        "L07 support 1",
+        "L09 support 1",
+        "L71 support 0",
+        "L72 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "ground-wash",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-wash",
+        "L16 support 1",
+        "L18 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-north-a",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-north-a",
+        "L10 support 0",
+        "L10 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-north-a",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-north-a"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-north-b",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-north-b",
+        "L10 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-north-b",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-north-b"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-south-a",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-south-a",
+        "L12 support 0",
+        "L12 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-south-a",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-south-a"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-south-b",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-south-b",
+        "L12 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-south-b",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-south-b"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-ward-link",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-ward-link",
+        "L10 support 1",
+        "L12 support 1",
+        "L18 support 0",
+        "L18 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-ward-link",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-ward-link"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-observation",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-observation"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-observation",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-observation"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-linen",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-linen"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-linen",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-linen"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-wc",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-wc",
+        "L16 support 0",
+        "L16 support 1",
+        "L18 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-wc",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-wc"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-wash",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-wash",
+        "L16 support 1",
+        "L18 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-wash",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-wash"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "spine",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor spine",
+        "L05 support 1",
+        "L07 support 0",
+        "L07 support 1",
+        "L09 support 1",
+        "L24 support 0",
+        "L24 support 1",
+        "L25 support 0",
+        "L28 support 0",
+        "L32 support 0",
+        "L32 support 1",
+        "L33 support 0",
+        "L44 support 0",
+        "L71 support 0",
+        "L72 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "spine",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap spine",
+        "Floor upper-spine",
+        "L16 support 0",
+        "L16 support 1",
+        "L18 support 1",
+        "L62 support 0",
+        "L62 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "main-stair",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor main-stair",
+        "L28 support 0",
+        "L32 support 0",
+        "L32 support 1",
+        "L71 support 0",
+        "L72 support 0",
+        "L73 support 0",
+        "L74 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "main-stair",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-stair",
+        "Floor upper-stair.001",
+        "Floor upper-stair.002",
+        "Floor upper-stair.003",
+        "Floor upper-stair.004",
+        "Floor upper-stair.005",
+        "Floor upper-stair.006",
+        "Floor upper-stair.007",
+        "L62 support 0",
+        "L62 support 1",
+        "L77 flight0 step19"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "staff-office",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor staff-office",
+        "L28 support 0",
+        "L28 support 1",
+        "L29 support 0",
+        "L71 support 0",
+        "L74 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "staff-office",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap staff-office"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "service-link",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor service-link",
+        "L29 support 0",
+        "L29 support 1",
+        "L54 support 1",
+        "L55 support 0",
+        "L55 support 1",
+        "L74 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "service-link",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap service-link"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "admission",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor admission",
+        "L20 support 0",
+        "L20 support 1",
+        "L22 support 0",
+        "L24 support 0",
+        "L73 support 0",
+        "L73 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "admission",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap admission"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "interview",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor interview",
+        "L22 support 0",
+        "L22 support 1",
+        "L23 support 0",
+        "L23 support 1",
+        "L73 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "interview",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap interview"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "visitor-wc",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor visitor-wc",
+        "L22 support 0",
+        "L23 support 0",
+        "L73 support 0",
+        "L73 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "visitor-wc",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap visitor-wc"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "records",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor records",
+        "L23 support 0",
+        "L23 support 1",
+        "L73 support 0",
+        "L73 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "records",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap records"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "day",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor day",
+        "L25 support 0",
+        "L25 support 1",
+        "L26 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "day",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap day"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clinical-link",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor clinical-link",
+        "L28 support 0",
+        "L32 support 0",
+        "L33 support 0",
+        "L33 support 1",
+        "L34 support 0",
+        "L44 support 0",
+        "L72 support 0",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clinical-link",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap clinical-link"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "treatment",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor treatment",
+        "L34 support 1",
+        "L39 support 0",
+        "L40 support 0",
+        "L43 support 1",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "treatment",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap treatment"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clinical-clean",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor clinical-clean",
+        "L39 support 0",
+        "L73 support 0",
+        "L74 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clinical-clean",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap clinical-clean"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clinical-soiled",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor clinical-soiled",
+        "L37 support 0",
+        "L37 support 1",
+        "L39 support 0",
+        "L39 support 1",
+        "L73 support 0",
+        "L74 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clinical-soiled",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap clinical-soiled"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clinical-service",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor clinical-service",
+        "L35 support 0",
+        "L35 support 1",
+        "L37 support 0",
+        "L74 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clinical-service",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap clinical-service"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "staff-rest",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor staff-rest",
+        "L74 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "staff-rest",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap staff-rest"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "staff-wc",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor staff-wc",
+        "L74 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "staff-wc",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap staff-wc"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "hydro-change",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor hydro-change",
+        "L40 support 0",
+        "L40 support 1",
+        "L41 support 0",
+        "L41 support 1",
+        "L42 support 0",
+        "L43 support 1",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "hydro-change",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap hydro-change"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "hydro-bath",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor hydro-bath",
+        "L35 support 0",
+        "L41 support 1",
+        "L42 support 0",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "hydro-bath",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap hydro-bath"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "hydro-dry",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor hydro-dry",
+        "L40 support 0",
+        "L41 support 1",
+        "L42 support 0",
+        "L42 support 1",
+        "L43 support 0",
+        "L43 support 1",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "hydro-dry",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap hydro-dry"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "dining",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor dining",
+        "L24 support 0",
+        "L44 support 0",
+        "L44 support 1",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "dining",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap dining"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "kitchen",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor kitchen",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "kitchen",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap kitchen"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "washup",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor washup",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "washup",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap washup"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "meal-return",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor meal-return",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "meal-return",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap meal-return"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "food-store",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor food-store",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "food-store",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap food-store"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "receiving",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor receiving",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "receiving",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap receiving"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "service",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor service",
+        "L35 support 0",
+        "L53 support 0",
+        "L53 support 1",
+        "L73 support 0",
+        "L74 support 0",
+        "L76 support 0",
+        "L76 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "service",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap service"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "refuse",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor refuse",
+        "L73 support 0",
+        "L76 support 0",
+        "L76 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "refuse",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap refuse"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "service-stair",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor service-stair",
+        "Floor service-stair.001",
+        "Floor service-stair.002",
+        "Floor service-stair.003",
+        "Floor service-stair.004",
+        "Floor service-stair.005",
+        "Floor service-stair.006",
+        "Floor service-stair.007",
+        "L53 support 1",
+        "L54 support 0",
+        "L74 support 0",
+        "L74 support 1",
+        "L78 flight0 step17"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "service-stair",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap service-stair"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "quiet-lobby",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor quiet-lobby",
+        "L55 support 0",
+        "L55 support 1",
+        "L56 support 0",
+        "L74 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "quiet-lobby",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap quiet-lobby"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "quiet",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor quiet",
+        "L56 support 0",
+        "L56 support 1",
+        "L74 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "quiet",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap quiet"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "quiet-observation",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor quiet-observation",
+        "L74 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "quiet-observation",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap quiet-observation"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "quiet-wc",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor quiet-wc"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "quiet-wc",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap quiet-wc"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "chapel",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor chapel",
+        "L71 support 0",
+        "L71 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "chapel",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap chapel"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "lift",
+      "role": "floor",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor lift",
+        "L05 support 1",
+        "L07 support 1",
+        "L09 support 1",
+        "L25 support 0",
+        "L72 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "lift",
+      "role": "ceiling-cap",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-lift"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-spine",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-spine",
+        "L16 support 0",
+        "L16 support 1",
+        "L18 support 1",
+        "L62 support 0",
+        "L62 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-spine",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-spine"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-stair",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-stair",
+        "Floor upper-stair.001",
+        "Floor upper-stair.002",
+        "Floor upper-stair.003",
+        "Floor upper-stair.004",
+        "Floor upper-stair.005",
+        "Floor upper-stair.006",
+        "Floor upper-stair.007",
+        "L62 support 0",
+        "L62 support 1",
+        "L77 flight0 step19"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-stair",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-stair"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-lift",
+      "role": "floor",
+      "elevation": 3.4,
+      "actual_shafts": [
+        {
+          "link": "L77",
+          "segment": 0,
+          "polygon": [
+            [
+              31.05,
+              22.0
+            ],
+            [
+              31.05,
+              27.44
+            ],
+            [
+              32.95,
+              27.44
+            ],
+            [
+              32.95,
+              22.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor upper-lift"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "upper-lift",
+      "role": "ceiling-cap",
+      "elevation": 6.8,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Ceiling cap upper-lift"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "cellar-stair",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor cellar-stair",
+        "L63 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "cellar-stair",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor service-stair",
+        "Floor service-stair.001",
+        "Floor service-stair.002",
+        "Floor service-stair.003",
+        "Floor service-stair.004",
+        "Floor service-stair.005",
+        "Floor service-stair.006",
+        "Floor service-stair.007",
+        "L53 support 1",
+        "L54 support 0",
+        "L74 support 0",
+        "L74 support 1",
+        "L78 flight0 step17"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "cellar-service",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor cellar-service",
+        "L63 support 0",
+        "L63 support 1",
+        "L64 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "cellar-service",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor service",
+        "L35 support 0",
+        "L53 support 0",
+        "L53 support 1",
+        "L73 support 0",
+        "L74 support 0",
+        "L76 support 0",
+        "L76 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "cellar-cross",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor cellar-cross",
+        "L64 support 0",
+        "L64 support 1",
+        "L65 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "cellar-cross",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor hydro-bath",
+        "Floor hydro-dry",
+        "Floor treatment",
+        "L35 support 0",
+        "L42 support 0",
+        "L42 support 1",
+        "L43 support 0",
+        "L43 support 1",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "plant",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor plant",
+        "L65 support 0",
+        "L65 support 1"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "plant",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor clinical-clean",
+        "Floor clinical-service",
+        "Floor clinical-soiled",
+        "Floor treatment",
+        "L34 support 1",
+        "L35 support 1",
+        "L37 support 0",
+        "L37 support 1",
+        "L39 support 0",
+        "L39 support 1",
+        "L40 support 0",
+        "L43 support 1",
+        "L73 support 0",
+        "L74 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "maintenance",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor maintenance"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "maintenance",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Ceiling cap maintenance",
+        "Ceiling cap maintenance.001",
+        "Floor clinical-service",
+        "Floor hydro-bath",
+        "Floor hydro-change",
+        "Floor hydro-dry",
+        "L35 support 0",
+        "L35 support 1",
+        "L40 support 0",
+        "L40 support 1",
+        "L41 support 0",
+        "L41 support 1",
+        "L42 support 0",
+        "L43 support 1",
+        "L73 support 0",
+        "L74 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "dirty-laundry",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor dirty-laundry"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "dirty-laundry",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor dining",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clean-laundry",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor clean-laundry"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clean-laundry",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor dining",
+        "Floor food-store",
+        "Floor kitchen",
+        "Floor meal-return",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clean-store",
+      "role": "floor",
+      "elevation": -3,
+      "actual_shafts": [],
+      "retained_receivers": [
+        "Floor clean-store"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    },
+    {
+      "zone": "clean-store",
+      "role": "ceiling-cap",
+      "elevation": 0,
+      "actual_shafts": [
+        {
+          "link": "L78",
+          "segment": 0,
+          "polygon": [
+            [
+              56.1,
+              14.0
+            ],
+            [
+              56.1,
+              18.8
+            ],
+            [
+              57.9,
+              18.8
+            ],
+            [
+              57.9,
+              14.0
+            ]
+          ]
+        }
+      ],
+      "retained_receivers": [
+        "Floor food-store",
+        "Floor kitchen",
+        "Floor meal-return",
+        "Floor receiving",
+        "Floor washup",
+        "L73 support 0",
+        "L76 support 0"
+      ],
+      "new_parts": 0,
+      "restored_area_m2": 0
+    }
+  ],
+  "discarded_boundary_noise": [
+    {
+      "zone": "service-stair",
+      "role": "floor",
+      "area_m2": 3.662108781554707e-06,
+      "reason": "Sub0.1mm source-edge residual"
+    },
+    {
+      "zone": "service-stair",
+      "role": "floor",
+      "area_m2": 3.662108781554707e-06,
+      "reason": "Sub0.1mm source-edge residual"
+    }
+  ],
+  "retained_glb_resources": {
+    "original_static_resources_preserved": true,
+    "no_new_geometry": true
+  },
+  "glb_sha256": "252b6e9dc4f9c1f795891e6f245604eb226747632ac4178d8494d22dd7e0faf7",
+  "physics_sha256": "5306941b5135d5dc5d6a43ec84b0ce31c3cfca8c40e2aaf2be1995675d0f098e",
+  "generator_sha256": "6effb668806dddf424cf37763d4115b2553afe829684efd5d5748b5dba0c5d1b",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/asylum-whole-site.png",
+      "sha256": "b4beeae80a7d92d1f1ca82321ae9ae5b9328165c76dc2dab28c5854eb3ec0d59",
+      "type": "native full export overview"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/asylum-repaired-plates.png",
+      "sha256": "399e84e09234f5533fb9edd1b5f800bda0eac295dcfaef6ac1a5f6b3169a23a9",
+      "type": "native isolated newly restored structural plates; context hidden for inspection"
+    }
+  ],
+  "remaining": "Independent exact export/solid/shaft/optical checks, continuous flat/stair regression, standing captures and whole-site structure/light/runtime/network/performance acceptance."
+}

@@ -1,0 +1,357 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 7
+      },
+      "current_lanes": {
+        "samples": 4923,
+        "valid_standing": 3494,
+        "invalid_standing": 1429,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 1349,
+          "NO_FOOT_SUPPORT_0.0_0.22": 17,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 28,
+          "NO_FOOT_SUPPORT_0.22_0.0": 18,
+          "FOOT_HEIGHT_SPREAD": 2,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 15
+        },
+        "physical_components": []
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 11
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 7
+      },
+      "current_lanes": {
+        "samples": 5166,
+        "valid_standing": 3575,
+        "invalid_standing": 1591,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 1542,
+          "NO_FOOT_SUPPORT_0.0_0.22": 17,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 8,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 4,
+          "NO_FOOT_SUPPORT_0.22_0.0": 5,
+          "FOOT_HEIGHT_SPREAD": 12,
+          "PHYSICAL_COMPONENT": 3
+        },
+        "physical_components": [
+          [
+            "171:L20 flight0 step2",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 11
+      },
+      "current_lanes": {
+        "samples": 5178,
+        "valid_standing": 3970,
+        "invalid_standing": 1208,
+        "reasons": {
+          "NO_CENTRE_SUPPORT": 1169,
+          "NO_FOOT_SUPPORT_0.0_0.22": 3,
+          "FOOT_HEIGHT_SPREAD": 18,
+          "NO_FOOT_SUPPORT_0.22_0.0": 3,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 1,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 14
+        },
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-06": {
+      "before": {
+        "contract": "development/levels/rebuild/circulation-construction-pass/wld-06/construction.json",
+        "contract_sha256": "0adf820d9c9738d19deea3cb828e9c0ca34a7306c9064bf9e1403cd7ba5c33b1",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-06/authored-layout.json",
+        "layout_sha256": "922344d8621457b13a9b753064de4ce035b3b58b5047e51063db2f287c7e6907",
+        "native": "development/levels/rebuild/circulation-construction-pass/wld-06/constructed-circulation.hcs2",
+        "native_sha256": "6e669bdcc8b290966a7aa0c8f7d71a00b0601a790aef6aa6973eeb3ebbc89cb5"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/study-solid-removal-pass/wld-06/construction.json",
+        "contract_sha256": "99f43e8c045984aacf6f989cda792e0f4236c36b05e294c3d82ad24414291f65",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-06/authored-layout.json",
+        "layout_sha256": "922344d8621457b13a9b753064de4ce035b3b58b5047e51063db2f287c7e6907",
+        "native": "development/levels/rebuild/study-solid-removal-pass/wld-06/architecture-without-guides.hcs2",
+        "native_sha256": "f50a4f8a045c3c130553431073ac083b917436c0b8f9d490cc71b63cb49e57ae"
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/circulation-construction-pass/wld-08/construction.json",
+        "contract_sha256": "5f303fadc05c90230134c16aa035e1e96917559da154a2b86d84cbb2a0d34841",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "36d2e5e00a0eaad2ddaed75c55f88d678f5c299ea43d46afb42b3232efb2b534",
+        "native": "development/levels/rebuild/circulation-construction-pass/wld-08/constructed-circulation.hcs2",
+        "native_sha256": "7c99926a5fa16a2dfe8770a601570fc396af5e2945e66ebb920fa50e19c00dd1"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/study-solid-removal-pass/wld-08/construction.json",
+        "contract_sha256": "c832ee22dfbcd78d32b9f26bdd53acbb81c87a2b08de85c19864a813aa0d5e50",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "36d2e5e00a0eaad2ddaed75c55f88d678f5c299ea43d46afb42b3232efb2b534",
+        "native": "development/levels/rebuild/study-solid-removal-pass/wld-08/architecture-without-guides.hcs2",
+        "native_sha256": "cb965d6d18efbd70102fd955562ebd699919b7b1efcc18b02de4e75fa0040903"
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "contract": "development/levels/rebuild/circulation-construction-pass/wld-13/construction.json",
+        "contract_sha256": "4d135657de2bb42ada67ebdb4203d47f4c9f7cb08bb87966bf6803f2e319f5a8",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-13/authored-layout.json",
+        "layout_sha256": "75322df84869e38bdf90ca2cbd87b6ccd9f384003060d11b34ad372468e4f771",
+        "native": "development/levels/rebuild/circulation-construction-pass/wld-13/constructed-circulation.hcs2",
+        "native_sha256": "15ae1976493b66297ec624829039cd9aefbd3b1ca76359f077a7a71c5a121481"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/study-solid-removal-pass/wld-13/construction.json",
+        "contract_sha256": "88216a4aa430d0ca3222ef18bf073040215ba507a9e123b41346348cd35bfa0a",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-13/authored-layout.json",
+        "layout_sha256": "75322df84869e38bdf90ca2cbd87b6ccd9f384003060d11b34ad372468e4f771",
+        "native": "development/levels/rebuild/study-solid-removal-pass/wld-13/architecture-without-guides.hcs2",
+        "native_sha256": "fd567796fa4b4cdfefc9ec137ddaa258532042bf426cfad0e427d718ff97f0e2"
+      }
+    }
+  },
+  "complete_link_regressions": [
+    {
+      "site": "WLD-06",
+      "link": "L01",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L01",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_11_OF_70"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L04",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_11_OF_70"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L04",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_41_OF_90"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L08",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_8_OF_130"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L08",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L09",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L09",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L11",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_9_OF_45"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L11",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_78_OF_80"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L12",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L12",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_58_OF_60"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L13",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_BLOCKED"
+    },
+    {
+      "site": "WLD-06",
+      "link": "L13",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_68_OF_70"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L01",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L01",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_11_OF_70"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L02",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_31_OF_70"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L02",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L16",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_2_AT_83_OF_125"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L16",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_38_OF_125"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L19",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_122_OF_229"
+    },
+    {
+      "site": "WLD-08",
+      "link": "L19",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_96_OF_229"
+    },
+    {
+      "site": "WLD-13",
+      "link": "L07",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_88_OF_90"
+    },
+    {
+      "site": "WLD-13",
+      "link": "L07",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "START_UNSUPPORTED"
+    },
+    {
+      "site": "WLD-13",
+      "link": "L17",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_78_OF_80"
+    },
+    {
+      "site": "WLD-13",
+      "link": "L17",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_1_AT_38_OF_40"
+    },
+    {
+      "site": "WLD-13",
+      "link": "L18",
+      "field": "authored_forward",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_1_AT_38_OF_40"
+    },
+    {
+      "site": "WLD-13",
+      "link": "L18",
+      "field": "authored_reverse",
+      "before": "PASS",
+      "after": "BLOCKED_SEGMENT_0_AT_78_OF_80"
+    }
+  ],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/circulation-construction-pass/roster.json": "c7bec2cb38820568628a39540fb21678b2e698313bfefc2fbf8d076b197616de"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/study-solid-removal-pass/verification/current-flat-failure-contacts.tsv": "ef445cad4d23441c2bf64b8c9cfc03cc1f22854454d9446a5ca61b793c77ab97",
+    "development/levels/rebuild/study-solid-removal-pass/verification/current-flat-failure-input.tsv": "d37d8e93ea43192f25aa83df9a5d36c96b3ffb0d16eeb4d594b165e040fa8a03",
+    "development/levels/rebuild/study-solid-removal-pass/verification/current-flat-lane-input.tsv": "dd772f712bb99b2e34f0c6be10a3acd8d105083db3885c9ba66e91cc50884a58",
+    "development/levels/rebuild/study-solid-removal-pass/verification/current-flat-lane-names.tsv": "5adf88502dbf199bd7149c9284abcb4a7a037c262a8c8332c20108f6c6051993",
+    "development/levels/rebuild/study-solid-removal-pass/verification/current-flat-lanes.tsv": "2974a9efcfd36ecae37d281996491a71a58cfa656d50cb8892dce0db5a8effca",
+    "development/levels/rebuild/study-solid-removal-pass/verification/current-flat-links.tsv": "b8fdf72c83ff20ffa7dac8fa4b6799ba9cc4634fe49d02e3ec8b88e8d86a8b09",
+    "development/levels/rebuild/study-solid-removal-pass/verification/current-flat-names.tsv": "1432a06e413eb89f431540cd9870b84286cb7641a0ae61d9195b47d02b1d5ff9",
+    "development/levels/rebuild/study-solid-removal-pass/verification/current-flat-paths.tsv": "69f40c9b68310f686ab4928acb90b192f2b49fd93faa3e9150f304961dc72763"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

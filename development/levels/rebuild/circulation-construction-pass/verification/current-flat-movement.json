@@ -1,0 +1,158 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 11
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 4923,
+        "valid_standing": 4802,
+        "invalid_standing": 121,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_0.22": 12,
+          "NO_CENTRE_SUPPORT": 97,
+          "NO_FOOT_SUPPORT_0.22_0.0": 3,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 7,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 2
+        },
+        "physical_components": []
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 11
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 11
+      },
+      "current_lanes": {
+        "samples": 5166,
+        "valid_standing": 4608,
+        "invalid_standing": 558,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 4,
+          "NO_CENTRE_SUPPORT": 499,
+          "NO_FOOT_SUPPORT_0.0_0.22": 17,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 16,
+          "NO_FOOT_SUPPORT_0.22_0.0": 17,
+          "FOOT_HEIGHT_SPREAD": 2,
+          "PHYSICAL_COMPONENT": 3
+        },
+        "physical_components": [
+          [
+            "171:L20 flight0 step2",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 5178,
+        "valid_standing": 4864,
+        "invalid_standing": 314,
+        "reasons": {
+          "NO_FOOT_SUPPORT_-0.22_0.0": 12,
+          "NO_CENTRE_SUPPORT": 286,
+          "NO_FOOT_SUPPORT_0.0_0.22": 3,
+          "NO_FOOT_SUPPORT_0.22_0.0": 5,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 8
+        },
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-06": {
+      "before": {
+        "contract": "development/levels/rebuild/entrance-construction-pass/wld-06/construction.json",
+        "contract_sha256": "110d33a294f887ed6941bce7b9988b37f4928a66c75bb13f3e88e0933e5ae6de",
+        "layout": "development/levels/rebuild/entrance-construction-pass/wld-06/authored-layout.json",
+        "layout_sha256": "8bab030ea4df565bd85e1578c07d461a590b177aa74c063f7cf9d2291ecebffe",
+        "native": "development/levels/rebuild/entrance-construction-pass/wld-06/rebuilt-entrances.hcs2",
+        "native_sha256": "9e247a8979cf01773ff7f7dba8db483dcb527b2c1530981fccea6188a3885006"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/circulation-construction-pass/wld-06/construction.json",
+        "contract_sha256": "0adf820d9c9738d19deea3cb828e9c0ca34a7306c9064bf9e1403cd7ba5c33b1",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-06/authored-layout.json",
+        "layout_sha256": "922344d8621457b13a9b753064de4ce035b3b58b5047e51063db2f287c7e6907",
+        "native": "development/levels/rebuild/circulation-construction-pass/wld-06/constructed-circulation.hcs2",
+        "native_sha256": "6e669bdcc8b290966a7aa0c8f7d71a00b0601a790aef6aa6973eeb3ebbc89cb5"
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/entrance-construction-pass/wld-08/construction.json",
+        "contract_sha256": "2d5bf9cd2b0ea56b2c04c81a94cda3953658cf1d13a1b29c6f6ca432c2e7f0e8",
+        "layout": "development/levels/rebuild/entrance-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "72ca5b1748fbc4f12167f375ba145097aed7a68cb9417e84d9f3ee8ec01c1568",
+        "native": "development/levels/rebuild/entrance-construction-pass/wld-08/rebuilt-entrances.hcs2",
+        "native_sha256": "8a7fd3773f7a377eb0bd54c3aca642a8ed4f2e1753b1ef77492539520b161616"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/circulation-construction-pass/wld-08/construction.json",
+        "contract_sha256": "5f303fadc05c90230134c16aa035e1e96917559da154a2b86d84cbb2a0d34841",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-08/authored-layout.json",
+        "layout_sha256": "36d2e5e00a0eaad2ddaed75c55f88d678f5c299ea43d46afb42b3232efb2b534",
+        "native": "development/levels/rebuild/circulation-construction-pass/wld-08/constructed-circulation.hcs2",
+        "native_sha256": "7c99926a5fa16a2dfe8770a601570fc396af5e2945e66ebb920fa50e19c00dd1"
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "contract": "development/levels/rebuild/entrance-construction-pass/wld-13/construction.json",
+        "contract_sha256": "0bc93834b5720bab790165c2415f82ca828654b7c901ab76241bbef75c28246c",
+        "layout": "development/levels/rebuild/entrance-construction-pass/wld-13/authored-layout.json",
+        "layout_sha256": "fc3d50b23ea898eab68e6e51a9e0adda96be89dfcadd8971745b5a333be6608e",
+        "native": "development/levels/rebuild/entrance-construction-pass/wld-13/rebuilt-entrances.hcs2",
+        "native_sha256": "5d1767a5b6792fe058fb17c847477cafb70ec48c2a5e862c561c9b7f0a06d98c"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/circulation-construction-pass/wld-13/construction.json",
+        "contract_sha256": "4d135657de2bb42ada67ebdb4203d47f4c9f7cb08bb87966bf6803f2e319f5a8",
+        "layout": "development/levels/rebuild/circulation-construction-pass/wld-13/authored-layout.json",
+        "layout_sha256": "75322df84869e38bdf90ca2cbd87b6ccd9f384003060d11b34ad372468e4f771",
+        "native": "development/levels/rebuild/circulation-construction-pass/wld-13/constructed-circulation.hcs2",
+        "native_sha256": "15ae1976493b66297ec624829039cd9aefbd3b1ca76359f077a7a71c5a121481"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/entrance-construction-pass/roster.json": "4569ce1d44492f4a396eb112d5ef7787edf9fd444c2ad05f3d7b7e96d3716fda"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/circulation-construction-pass/verification/current-flat-failure-contacts.tsv": "4dceaec2577648c7137563f8190892cfe6086657ea9ffb8ba00d4410987f430a",
+    "development/levels/rebuild/circulation-construction-pass/verification/current-flat-failure-input.tsv": "38df69192f5c1db7139d5fdf6e1f6989ff4feb785f022498d50620e419c7be71",
+    "development/levels/rebuild/circulation-construction-pass/verification/current-flat-lane-input.tsv": "61861496a6ce48e38d00740c0d49275d2e2290971093a4500ec7b467d179a4db",
+    "development/levels/rebuild/circulation-construction-pass/verification/current-flat-lane-names.tsv": "39cbaf29e39c48672bab4981aa93bc946bffe2d13cfca6fbe6f172f2187df584",
+    "development/levels/rebuild/circulation-construction-pass/verification/current-flat-lanes.tsv": "f768e8b7baf9798ff48d26c9f4c07f1e328362c3c35a22b45d5cfe295e226516",
+    "development/levels/rebuild/circulation-construction-pass/verification/current-flat-links.tsv": "5ec64888e87a7a3e9b0aab0d12d98d67277920fcecd04239a2b80903961ef5a0",
+    "development/levels/rebuild/circulation-construction-pass/verification/current-flat-names.tsv": "556cfe5beb28f87d6380a754b744d1c5097c6e75857d63fd76d89f1569c815b6",
+    "development/levels/rebuild/circulation-construction-pass/verification/current-flat-paths.tsv": "040d901ebb3c5c9a3574b39d1b4188f01cfdc428f24452ba7ff3f440335ae17e"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

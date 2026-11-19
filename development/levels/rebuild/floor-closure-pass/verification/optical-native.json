@@ -1,0 +1,13 @@
+{
+  "status": "PASS_NATIVE_BIDIRECTIONAL_STRUCTURAL_OPACITY",
+  "samples": 914,
+  "prior_open_rays_closed": 886,
+  "source_hashes": {
+    "tools/java/FloorClosureOpticalProbe.java": "9ffcac43a058529d1d88692811a114711f2dfefca056c906730de7e3e35c3499",
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "build/beckenburg-game.jar": "e8421aea395d23fc48b13a73de227a19332f1068a927e8dfd8aca4e2e461ecec",
+    "tools/audit_floor_closure_optics.py": "7656cbecaf744188370bdad45c2532d5dd8edbc2bb8b8ef60f6ca26080f1937e",
+    "development/levels/rebuild/floor-closure-pass/verification/optical-input.tsv": "ddb5a7e327208d96b0c332b867ea245adb492febe8adf60331e30c4c0d3b1a41"
+  },
+  "limitation": "Actual native geometry rays through new0.16m plates; not installed circuit/torch fixtures, all joins, runtime or multiplayer acceptance."
+}

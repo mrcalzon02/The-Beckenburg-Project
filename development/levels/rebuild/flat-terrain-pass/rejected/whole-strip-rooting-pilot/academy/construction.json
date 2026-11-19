@@ -1,0 +1,3484 @@
+{
+  "id": "ACADEMY",
+  "stair_components": [
+    "479:L66 flight0 step1",
+    "480:L66 flight0 step2",
+    "481:L66 flight0 step3",
+    "482:L66 flight0 step4",
+    "483:L66 flight0 step5",
+    "484:L66 flight0 step6",
+    "485:L66 flight0 step7",
+    "486:L66 flight0 step8",
+    "487:L66 flight0 step9",
+    "488:L66 flight0 step10",
+    "489:L66 flight0 step11",
+    "490:L66 flight0 step12",
+    "491:L66 flight0 step13",
+    "492:L66 flight0 step14",
+    "493:L66 flight0 step15",
+    "494:L66 flight0 step16",
+    "495:L66 flight0 step17",
+    "496:L66 flight0 step18",
+    "497:L66 flight0 step19",
+    "498:L66 flight0 step20",
+    "499:L67 flight0 step1",
+    "500:L67 flight0 step2",
+    "501:L67 flight0 step3",
+    "502:L67 flight0 step4",
+    "503:L67 flight0 step5",
+    "504:L67 flight0 step6",
+    "505:L67 flight0 step7",
+    "506:L67 flight0 step8",
+    "507:L67 flight0 step9",
+    "508:L67 flight0 step10",
+    "509:L67 flight0 step11",
+    "510:L67 flight0 step12",
+    "511:L67 flight0 step13",
+    "512:L67 flight0 step14",
+    "513:L67 flight0 step15",
+    "514:L67 flight0 step16",
+    "515:L67 flight0 step17",
+    "516:L67 flight0 step18",
+    "517:L67 flight0 step19",
+    "518:L67 flight0 step20",
+    "519:L68 flight0 step1",
+    "520:L68 flight0 step2",
+    "521:L68 flight0 step3",
+    "522:L68 flight0 step4",
+    "523:L68 flight0 step5",
+    "524:L68 flight0 step6",
+    "525:L68 flight0 step7",
+    "526:L68 flight0 step8",
+    "527:L68 flight0 step9",
+    "528:L68 flight0 step10",
+    "529:L68 flight0 step11",
+    "530:L68 flight0 step12",
+    "531:L68 flight0 step13",
+    "532:L68 flight0 step14",
+    "533:L68 flight0 step15",
+    "534:L68 flight0 step16",
+    "535:L68 flight0 step17"
+  ],
+  "source_segment_map": {},
+  "status": "SAVED_EDITOR_CIRCULATION_TERRAIN_SOURCE_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/arrival-bearing-pass/academy/construction.json",
+  "source_contract_sha256": "cb9412fbf1d780eaa35a9411cbd4a49dab8c9644c324561176f913f75cfbfac6",
+  "source_glb": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.glb",
+  "source_glb_sha256": "0d6c919e196d88efe872824cc56d77980547ae74fb515382238be19ba3677243",
+  "source_physics": "development/levels/rebuild/arrival-bearing-pass/academy/supported-arrival.hcs2",
+  "source_physics_sha256": "bc6dfb54d2f18ff364a8d336400117a98b90da3c0a2c7d3c3cf3cf28d43732c1",
+  "before_layout": "development/levels/rebuild/arrival-bearing-pass/academy/authored-layout.json",
+  "before_layout_sha256": "958f9309fbacafb8000636cefc2e30c425d538ff41b22f13e79e37304a590a42",
+  "before_segment_map": {},
+  "before_stair_components": [
+    "479:L66 flight0 step1",
+    "480:L66 flight0 step2",
+    "481:L66 flight0 step3",
+    "482:L66 flight0 step4",
+    "483:L66 flight0 step5",
+    "484:L66 flight0 step6",
+    "485:L66 flight0 step7",
+    "486:L66 flight0 step8",
+    "487:L66 flight0 step9",
+    "488:L66 flight0 step10",
+    "489:L66 flight0 step11",
+    "490:L66 flight0 step12",
+    "491:L66 flight0 step13",
+    "492:L66 flight0 step14",
+    "493:L66 flight0 step15",
+    "494:L66 flight0 step16",
+    "495:L66 flight0 step17",
+    "496:L66 flight0 step18",
+    "497:L66 flight0 step19",
+    "498:L66 flight0 step20",
+    "499:L67 flight0 step1",
+    "500:L67 flight0 step2",
+    "501:L67 flight0 step3",
+    "502:L67 flight0 step4",
+    "503:L67 flight0 step5",
+    "504:L67 flight0 step6",
+    "505:L67 flight0 step7",
+    "506:L67 flight0 step8",
+    "507:L67 flight0 step9",
+    "508:L67 flight0 step10",
+    "509:L67 flight0 step11",
+    "510:L67 flight0 step12",
+    "511:L67 flight0 step13",
+    "512:L67 flight0 step14",
+    "513:L67 flight0 step15",
+    "514:L67 flight0 step16",
+    "515:L67 flight0 step17",
+    "516:L67 flight0 step18",
+    "517:L67 flight0 step19",
+    "518:L67 flight0 step20",
+    "519:L68 flight0 step1",
+    "520:L68 flight0 step2",
+    "521:L68 flight0 step3",
+    "522:L68 flight0 step4",
+    "523:L68 flight0 step5",
+    "524:L68 flight0 step6",
+    "525:L68 flight0 step7",
+    "526:L68 flight0 step8",
+    "527:L68 flight0 step9",
+    "528:L68 flight0 step10",
+    "529:L68 flight0 step11",
+    "530:L68 flight0 step12",
+    "531:L68 flight0 step13",
+    "532:L68 flight0 step14",
+    "533:L68 flight0 step15",
+    "534:L68 flight0 step16",
+    "535:L68 flight0 step17"
+  ],
+  "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/academy/authored-layout.json",
+  "layout_sha256": "8f6cc29c527416c27747b429e46bacc4e0da52415f56c943ad164bf7a54d65b7",
+  "glb_sha256": "e4702eca9898232e2f146a97ccbc7e3914abdd8abc1aa47bc3b290536e69be50",
+  "physics_sha256": "d33a241a622ed46e388ecc73bc1a57cfd40809447e06a1dae936ad40f9c5e9be",
+  "removed_source_meshes": [
+    "Saved editor macroterrain ACADEMY"
+  ],
+  "removed_native_parts": [
+    "terrain-site:surface"
+  ],
+  "new_terrain_mesh": "Saved editor circulation terrain ACADEMY",
+  "native_terrain_parts": [
+    "terrain-site:surface"
+  ],
+  "new_closed_parts": [
+    "Rooted cut walkway ACADEMY 0",
+    "Rooted cut walkway ACADEMY 1",
+    "Rooted cut walkway ACADEMY 2",
+    "Rooted cut walkway ACADEMY 3",
+    "Rooted cut walkway ACADEMY 4",
+    "Rooted cut walkway ACADEMY 5",
+    "Rooted cut walkway ACADEMY 6",
+    "Rooted cut walkway ACADEMY 7",
+    "Rooted cut walkway ACADEMY 8",
+    "Rooted cut walkway ACADEMY 9",
+    "Rooted cut walkway ACADEMY 10",
+    "Rooted cut walkway ACADEMY 11",
+    "Rooted cut walkway ACADEMY 12",
+    "Rooted cut walkway ACADEMY 13",
+    "Rooted cut walkway ACADEMY 14",
+    "Rooted cut walkway ACADEMY 15",
+    "Rooted cut walkway ACADEMY 16",
+    "Rooted cut walkway ACADEMY 17",
+    "Rooted cut walkway ACADEMY 18",
+    "Rooted cut walkway ACADEMY 19",
+    "Rooted cut walkway ACADEMY 20",
+    "Rooted cut walkway ACADEMY 21",
+    "Rooted cut walkway ACADEMY 22",
+    "Rooted cut walkway ACADEMY 23",
+    "Rooted cut walkway ACADEMY 24",
+    "Rooted cut walkway ACADEMY 25",
+    "Rooted cut walkway ACADEMY 26",
+    "Rooted cut walkway ACADEMY 27",
+    "Rooted cut walkway ACADEMY 28",
+    "Rooted cut walkway ACADEMY 29",
+    "Rooted cut walkway ACADEMY 30",
+    "Rooted cut walkway ACADEMY 31",
+    "Rooted cut walkway ACADEMY 32",
+    "Rooted cut walkway ACADEMY 33",
+    "Rooted cut walkway ACADEMY 34",
+    "Rooted cut walkway ACADEMY 35",
+    "Rooted cut walkway ACADEMY 36",
+    "Rooted cut walkway ACADEMY 37"
+  ],
+  "new_closed_triangles": 488,
+  "world": "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world",
+  "world_files_sha256": {
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/adaptive-topology.bin": "0ce8b023109a00280be8d85407e37447ab484844cdfd7d72bac6490116f1b3bc",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/authored-cuts.tsv": "70890708e26f1172286e0c3be15cfe08e85bda3718aceb3946c7963fd3cf493b",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/authored-path-grading.sha256": "8102ea0be6d08a202ea230ea9a5393cb86cee2e16c19372ca210aa7733f7f2e0",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/source-provenance.json": "de7f333715d3f11bfd656306016fbb9eca4fa61f8b7137d9d7d3fc3f476e9506",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/terrain-physics.hcs2": "4fe9ab026da67efe124dec35b95a2a4a468a32687d1dcc9518586bb8efc3a7d9",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/tile_0_0.png": "53d0c844bc6619c7600d65d662b18e9512cac5a175b5794e10a2923e9862841f",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/verification.json": "ab1ca3e965cfdfa404e10aea18d69eb2b13764260b250797ce62468f7fd89ab8",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/world.properties": "da9399f6bfa565e7d2e2b313b6cc52dbdd6ec141e1c07d29aeeaa576e85601de",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/scene-package/.scene.bin.editor.previous": "b1ed403cbd97640d7a48c6bd197703b9a823dd457bae0413cc924988c1c796c2",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/scene-package/scene.bin": "eac9e7f1cd8a4b7b8471c956199f987c9434fa8074bc0bfe0c91d97cf6ad6fd5",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/terrain-layers/tile_0_0.bin": "cd65e28f21a74e9f4583a1c3b147a555163f2fb118c3fb9c2e984ed01a38fd1c",
+    "development/levels/rebuild/flat-terrain-pass/worlds/academy/terrain-world/scene-package/meshes/site.obj": "f134f688d51bd2fc6cc8b65e01d861222af4c5022f843a0f8e9c24bfc83d209b"
+  },
+  "footing_extensions": [],
+  "unresolved_footings": [],
+  "rooted_walkway_beds": [
+    {
+      "name": "Rooted cut walkway ACADEMY 0",
+      "link": "L02",
+      "footprint": [
+        [
+          33.10192146526332,
+          62.15
+        ],
+        [
+          34.464285714285715,
+          62.15
+        ],
+        [
+          34.464285714285715,
+          61.70362304093002
+        ],
+        [
+          33.111665057286295,
+          62.02333337803897
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.44254531860351565,
+      "terrain_probe_points": [
+        [
+          33.10192146526332,
+          62.15
+        ],
+        [
+          34.464285714285715,
+          62.15
+        ],
+        [
+          34.464285714285715,
+          61.70362304093002
+        ],
+        [
+          33.111665057286295,
+          62.02333337803897
+        ],
+        [
+          33.78310358977451,
+          62.15
+        ],
+        [
+          34.464285714285715,
+          61.92681152046501
+        ],
+        [
+          33.787975385786005,
+          61.8634782094845
+        ],
+        [
+          33.1067932612748,
+          62.08666668901948
+        ],
+        [
+          33.78553948778026,
+          62.00673910474225
+        ]
+      ],
+      "terrain_y": [
+        -0.2923316955566406,
+        -0.28790283203125,
+        -0.28891754150390625,
+        -0.2925453186035156,
+        -0.2900047302246094,
+        -0.2883720397949219,
+        -0.2905464172363281,
+        -0.2924385070800781,
+        -0.29027557373046875
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 1",
+      "link": "L02",
+      "footprint": [
+        [
+          34.464285714285715,
+          62.15
+        ],
+        [
+          36.42857142857143,
+          62.15
+        ],
+        [
+          36.42857142857143,
+          61.2393373266443
+        ],
+        [
+          34.464285714285715,
+          61.70362304093002
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.43891754150390627,
+      "terrain_probe_points": [
+        [
+          34.464285714285715,
+          62.15
+        ],
+        [
+          36.42857142857143,
+          62.15
+        ],
+        [
+          36.42857142857143,
+          61.2393373266443
+        ],
+        [
+          34.464285714285715,
+          61.70362304093002
+        ],
+        [
+          35.44642857142857,
+          62.15
+        ],
+        [
+          36.42857142857143,
+          61.69466866332215
+        ],
+        [
+          35.44642857142857,
+          61.471480183787165
+        ],
+        [
+          34.464285714285715,
+          61.92681152046501
+        ],
+        [
+          35.44642857142857,
+          61.81074009189358
+        ]
+      ],
+      "terrain_y": [
+        -0.28790283203125,
+        -0.2821464538574219,
+        -0.2839241027832031,
+        -0.28891754150390625,
+        -0.28502655029296875,
+        -0.2830352783203125,
+        -0.2866058349609375,
+        -0.2883720397949219,
+        -0.2857818603515625
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 2",
+      "link": "L02",
+      "footprint": [
+        [
+          36.42857142857143,
+          62.15
+        ],
+        [
+          38.392857142857146,
+          62.15
+        ],
+        [
+          38.392857142857146,
+          60.85
+        ],
+        [
+          38.07576781052809,
+          60.85
+        ],
+        [
+          36.42857142857143,
+          61.2393373266443
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.43392410278320315,
+      "terrain_probe_points": [
+        [
+          36.42857142857143,
+          62.15
+        ],
+        [
+          38.392857142857146,
+          62.15
+        ],
+        [
+          38.392857142857146,
+          60.85
+        ],
+        [
+          38.07576781052809,
+          60.85
+        ],
+        [
+          36.42857142857143,
+          61.2393373266443
+        ],
+        [
+          37.41071428571429,
+          62.15
+        ],
+        [
+          38.392857142857146,
+          61.5
+        ],
+        [
+          38.23431247669262,
+          60.85
+        ],
+        [
+          37.25216961954976,
+          61.044668663322156
+        ],
+        [
+          36.42857142857143,
+          61.69466866332215
+        ],
+        [
+          37.54372499067705,
+          61.44786746532886
+        ]
+      ],
+      "terrain_y": [
+        -0.2821464538574219,
+        -0.2760810852050781,
+        -0.2785491943359375,
+        -0.27978515625,
+        -0.2839241027832031,
+        -0.279266357421875,
+        -0.2772789001464844,
+        -0.27916717529296875,
+        -0.2818946838378906,
+        -0.2830352783203125,
+        -0.28025054931640625
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 3",
+      "link": "L02",
+      "footprint": [
+        [
+          38.392857142857146,
+          62.15
+        ],
+        [
+          40.357142857142854,
+          62.15
+        ],
+        [
+          40.357142857142854,
+          60.85
+        ],
+        [
+          38.392857142857146,
+          60.85
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.4285491943359375,
+      "terrain_probe_points": [
+        [
+          38.392857142857146,
+          62.15
+        ],
+        [
+          40.357142857142854,
+          62.15
+        ],
+        [
+          40.357142857142854,
+          60.85
+        ],
+        [
+          38.392857142857146,
+          60.85
+        ],
+        [
+          39.375,
+          62.15
+        ],
+        [
+          40.357142857142854,
+          61.5
+        ],
+        [
+          39.375,
+          60.85
+        ],
+        [
+          38.392857142857146,
+          61.5
+        ],
+        [
+          39.375,
+          61.5
+        ]
+      ],
+      "terrain_y": [
+        -0.2760810852050781,
+        -0.26805877685546875,
+        -0.2705230712890625,
+        -0.2785491943359375,
+        -0.272247314453125,
+        -0.269256591796875,
+        -0.27471160888671875,
+        -0.2772789001464844,
+        -0.2734413146972656
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 4",
+      "link": "L02",
+      "footprint": [
+        [
+          40.357142857142854,
+          62.15
+        ],
+        [
+          42.32142857142857,
+          62.15
+        ],
+        [
+          42.32142857142857,
+          60.85
+        ],
+        [
+          40.357142857142854,
+          60.85
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.4205230712890625,
+      "terrain_probe_points": [
+        [
+          40.357142857142854,
+          62.15
+        ],
+        [
+          42.32142857142857,
+          62.15
+        ],
+        [
+          42.32142857142857,
+          60.85
+        ],
+        [
+          40.357142857142854,
+          60.85
+        ],
+        [
+          41.33928571428571,
+          62.15
+        ],
+        [
+          42.32142857142857,
+          61.5
+        ],
+        [
+          41.33928571428571,
+          60.85
+        ],
+        [
+          40.357142857142854,
+          61.5
+        ],
+        [
+          41.33928571428571,
+          61.5
+        ]
+      ],
+      "terrain_y": [
+        -0.26805877685546875,
+        -0.25736236572265625,
+        -0.25911712646484375,
+        -0.2705230712890625,
+        -0.2632637023925781,
+        -0.2581634521484375,
+        -0.2654914855957031,
+        -0.269256591796875,
+        -0.26445770263671875
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 5",
+      "link": "L02",
+      "footprint": [
+        [
+          42.32142857142857,
+          62.15
+        ],
+        [
+          44.285714285714285,
+          62.15
+        ],
+        [
+          44.285714285714285,
+          60.85
+        ],
+        [
+          42.32142857142857,
+          60.85
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.40911712646484377,
+      "terrain_probe_points": [
+        [
+          42.32142857142857,
+          62.15
+        ],
+        [
+          44.285714285714285,
+          62.15
+        ],
+        [
+          44.285714285714285,
+          60.85
+        ],
+        [
+          42.32142857142857,
+          60.85
+        ],
+        [
+          43.30357142857143,
+          62.15
+        ],
+        [
+          44.285714285714285,
+          61.5
+        ],
+        [
+          43.30357142857143,
+          60.85
+        ],
+        [
+          42.32142857142857,
+          61.5
+        ],
+        [
+          43.30357142857143,
+          61.5
+        ]
+      ],
+      "terrain_y": [
+        -0.25736236572265625,
+        -0.2380218505859375,
+        -0.23822021484375,
+        -0.25911712646484375,
+        -0.24872589111328125,
+        -0.2378997802734375,
+        -0.2500457763671875,
+        -0.2581634521484375,
+        -0.24953460693359375
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 6",
+      "link": "L02",
+      "footprint": [
+        [
+          44.285714285714285,
+          62.15
+        ],
+        [
+          46.25,
+          62.15
+        ],
+        [
+          46.25,
+          60.85
+        ],
+        [
+          44.285714285714285,
+          60.85
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.38822021484375,
+      "terrain_probe_points": [
+        [
+          44.285714285714285,
+          62.15
+        ],
+        [
+          46.25,
+          62.15
+        ],
+        [
+          46.25,
+          60.85
+        ],
+        [
+          44.285714285714285,
+          60.85
+        ],
+        [
+          45.26785714285714,
+          62.15
+        ],
+        [
+          46.25,
+          61.5
+        ],
+        [
+          45.26785714285714,
+          60.85
+        ],
+        [
+          44.285714285714285,
+          61.5
+        ],
+        [
+          45.26785714285714,
+          61.5
+        ]
+      ],
+      "terrain_y": [
+        -0.2380218505859375,
+        -0.20642471313476562,
+        -0.20489883422851562,
+        -0.23822021484375,
+        -0.22075653076171875,
+        -0.20584869384765625,
+        -0.2201385498046875,
+        -0.2378997802734375,
+        -0.22063446044921875
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 7",
+      "link": "L02",
+      "footprint": [
+        [
+          46.25,
+          62.15
+        ],
+        [
+          48.214285714285715,
+          62.15
+        ],
+        [
+          48.214285714285715,
+          60.85
+        ],
+        [
+          46.25,
+          60.85
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35642471313476565,
+      "terrain_probe_points": [
+        [
+          46.25,
+          62.15
+        ],
+        [
+          48.214285714285715,
+          62.15
+        ],
+        [
+          48.214285714285715,
+          60.85
+        ],
+        [
+          46.25,
+          60.85
+        ],
+        [
+          47.23214285714286,
+          62.15
+        ],
+        [
+          48.214285714285715,
+          61.5
+        ],
+        [
+          47.23214285714286,
+          60.85
+        ],
+        [
+          46.25,
+          61.5
+        ],
+        [
+          47.23214285714286,
+          61.5
+        ]
+      ],
+      "terrain_y": [
+        -0.20642471313476562,
+        -0.19952392578125,
+        -0.20000076293945312,
+        -0.20489883422851562,
+        -0.202728271484375,
+        -0.20000076293945312,
+        -0.20176315307617188,
+        -0.20584869384765625,
+        -0.20215606689453125
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 8",
+      "link": "L02",
+      "footprint": [
+        [
+          48.214285714285715,
+          62.15
+        ],
+        [
+          50.17857142857143,
+          62.15
+        ],
+        [
+          50.17857142857143,
+          60.85
+        ],
+        [
+          48.214285714285715,
+          60.85
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000076293945315,
+      "terrain_probe_points": [
+        [
+          48.214285714285715,
+          62.15
+        ],
+        [
+          50.17857142857143,
+          62.15
+        ],
+        [
+          50.17857142857143,
+          60.85
+        ],
+        [
+          48.214285714285715,
+          60.85
+        ],
+        [
+          49.19642857142857,
+          62.15
+        ],
+        [
+          50.17857142857143,
+          61.5
+        ],
+        [
+          49.19642857142857,
+          60.85
+        ],
+        [
+          48.214285714285715,
+          61.5
+        ],
+        [
+          49.19642857142857,
+          61.5
+        ]
+      ],
+      "terrain_y": [
+        -0.19952392578125,
+        -0.19910812377929688,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.19952392578125,
+        -0.20000076293945312,
+        -0.1999969482421875,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 9",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          56.625
+        ],
+        [
+          60.65,
+          55.0
+        ],
+        [
+          60.0,
+          55.0
+        ],
+        [
+          60.38409322534736,
+          56.625
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000457763671877,
+      "terrain_probe_points": [
+        [
+          60.65,
+          56.625
+        ],
+        [
+          60.65,
+          55.0
+        ],
+        [
+          60.0,
+          55.0
+        ],
+        [
+          60.38409322534736,
+          56.625
+        ],
+        [
+          60.65,
+          55.8125
+        ],
+        [
+          60.325,
+          55.0
+        ],
+        [
+          60.19204661267368,
+          55.8125
+        ],
+        [
+          60.51704661267368,
+          56.625
+        ],
+        [
+          60.42102330633684,
+          55.8125
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.1999969482421875,
+        -0.20000076293945312,
+        -0.20000457763671875
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 10",
+      "link": "L02",
+      "footprint": [
+        [
+          59.35,
+          55.82154511885209
+        ],
+        [
+          59.35,
+          56.625
+        ],
+        [
+          60.38409322534736,
+          56.625
+        ],
+        [
+          60.14951705932617,
+          55.632568359375
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000076293945315,
+      "terrain_probe_points": [
+        [
+          59.35,
+          55.82154511885209
+        ],
+        [
+          59.35,
+          56.625
+        ],
+        [
+          60.38409322534736,
+          56.625
+        ],
+        [
+          60.14951705932617,
+          55.632568359375
+        ],
+        [
+          59.35,
+          56.22327255942605
+        ],
+        [
+          59.867046612673676,
+          56.625
+        ],
+        [
+          60.266805142336764,
+          56.1287841796875
+        ],
+        [
+          59.74975852966308,
+          55.72705673911355
+        ],
+        [
+          59.808402571168386,
+          56.176028369556775
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.1999969482421875
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 11",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          54.73076478371238
+        ],
+        [
+          60.65,
+          53.035714285714285
+        ],
+        [
+          59.535711485843855,
+          53.035714285714285
+        ],
+        [
+          59.71547254702399,
+          53.796237265919295
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000457763671877,
+      "terrain_probe_points": [
+        [
+          60.65,
+          54.73076478371238
+        ],
+        [
+          60.65,
+          53.035714285714285
+        ],
+        [
+          59.535711485843855,
+          53.035714285714285
+        ],
+        [
+          59.71547254702399,
+          53.796237265919295
+        ],
+        [
+          60.65,
+          53.88323953471333
+        ],
+        [
+          60.09285574292193,
+          53.035714285714285
+        ],
+        [
+          59.62559201643393,
+          53.41597577581679
+        ],
+        [
+          60.18273627351199,
+          54.26350102481584
+        ],
+        [
+          60.13779600821697,
+          53.649607655265065
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000457763671875,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 12",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          55.0
+        ],
+        [
+          60.65,
+          54.73076478371238
+        ],
+        [
+          60.459617614746044,
+          54.540382385253864
+        ],
+        [
+          60.0,
+          55.0
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000076293945315,
+      "terrain_probe_points": [
+        [
+          60.65,
+          55.0
+        ],
+        [
+          60.65,
+          54.73076478371238
+        ],
+        [
+          60.459617614746044,
+          54.540382385253864
+        ],
+        [
+          60.0,
+          55.0
+        ],
+        [
+          60.65,
+          54.86538239185619
+        ],
+        [
+          60.55480880737302,
+          54.635573584483126
+        ],
+        [
+          60.22980880737302,
+          54.77019119262693
+        ],
+        [
+          60.325,
+          55.0
+        ],
+        [
+          60.43990440368651,
+          54.81778679224156
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 13",
+      "link": "L02",
+      "footprint": [
+        [
+          59.535711485843855,
+          53.035714285714285
+        ],
+        [
+          59.35,
+          53.035714285714285
+        ],
+        [
+          59.35,
+          53.43076469354681
+        ],
+        [
+          59.71547254702399,
+          53.796237265919295
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000457763671877,
+      "terrain_probe_points": [
+        [
+          59.535711485843855,
+          53.035714285714285
+        ],
+        [
+          59.35,
+          53.035714285714285
+        ],
+        [
+          59.35,
+          53.43076469354681
+        ],
+        [
+          59.71547254702399,
+          53.796237265919295
+        ],
+        [
+          59.44285574292193,
+          53.035714285714285
+        ],
+        [
+          59.35,
+          53.23323948963055
+        ],
+        [
+          59.532736273512,
+          53.613500979733054
+        ],
+        [
+          59.62559201643393,
+          53.41597577581679
+        ],
+        [
+          59.48779600821696,
+          53.32460763272367
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000457763671875,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 14",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          53.035714285714285
+        ],
+        [
+          60.65,
+          51.07142857142857
+        ],
+        [
+          59.35,
+          51.07142857142857
+        ],
+        [
+          59.35,
+          53.035714285714285
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000457763671877,
+      "terrain_probe_points": [
+        [
+          60.65,
+          53.035714285714285
+        ],
+        [
+          60.65,
+          51.07142857142857
+        ],
+        [
+          59.35,
+          51.07142857142857
+        ],
+        [
+          59.35,
+          53.035714285714285
+        ],
+        [
+          60.65,
+          52.05357142857143
+        ],
+        [
+          60.0,
+          51.07142857142857
+        ],
+        [
+          59.35,
+          52.05357142857143
+        ],
+        [
+          60.0,
+          53.035714285714285
+        ],
+        [
+          60.0,
+          52.05357142857143
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000457763671875,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 15",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          51.07142857142857
+        ],
+        [
+          60.65,
+          49.107142857142854
+        ],
+        [
+          59.35,
+          49.107142857142854
+        ],
+        [
+          59.35,
+          51.07142857142857
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000076293945315,
+      "terrain_probe_points": [
+        [
+          60.65,
+          51.07142857142857
+        ],
+        [
+          60.65,
+          49.107142857142854
+        ],
+        [
+          59.35,
+          49.107142857142854
+        ],
+        [
+          59.35,
+          51.07142857142857
+        ],
+        [
+          60.65,
+          50.08928571428571
+        ],
+        [
+          60.0,
+          49.107142857142854
+        ],
+        [
+          59.35,
+          50.08928571428571
+        ],
+        [
+          60.0,
+          51.07142857142857
+        ],
+        [
+          60.0,
+          50.08928571428571
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 16",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          49.107142857142854
+        ],
+        [
+          60.65,
+          47.142857142857146
+        ],
+        [
+          59.35,
+          47.142857142857146
+        ],
+        [
+          59.35,
+          49.107142857142854
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000457763671877,
+      "terrain_probe_points": [
+        [
+          60.65,
+          49.107142857142854
+        ],
+        [
+          60.65,
+          47.142857142857146
+        ],
+        [
+          59.35,
+          47.142857142857146
+        ],
+        [
+          59.35,
+          49.107142857142854
+        ],
+        [
+          60.65,
+          48.125
+        ],
+        [
+          60.0,
+          47.142857142857146
+        ],
+        [
+          59.35,
+          48.125
+        ],
+        [
+          60.0,
+          49.107142857142854
+        ],
+        [
+          60.0,
+          48.125
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000457763671875,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 17",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          47.142857142857146
+        ],
+        [
+          60.65,
+          45.17857142857143
+        ],
+        [
+          59.35,
+          45.17857142857143
+        ],
+        [
+          59.35,
+          47.142857142857146
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000076293945315,
+      "terrain_probe_points": [
+        [
+          60.65,
+          47.142857142857146
+        ],
+        [
+          60.65,
+          45.17857142857143
+        ],
+        [
+          59.35,
+          45.17857142857143
+        ],
+        [
+          59.35,
+          47.142857142857146
+        ],
+        [
+          60.65,
+          46.16071428571429
+        ],
+        [
+          60.0,
+          45.17857142857143
+        ],
+        [
+          59.35,
+          46.16071428571429
+        ],
+        [
+          60.0,
+          47.142857142857146
+        ],
+        [
+          60.0,
+          46.160714285714285
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 18",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          45.17857142857143
+        ],
+        [
+          60.65,
+          43.214285714285715
+        ],
+        [
+          59.35,
+          43.214285714285715
+        ],
+        [
+          59.35,
+          45.17857142857143
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000076293945315,
+      "terrain_probe_points": [
+        [
+          60.65,
+          45.17857142857143
+        ],
+        [
+          60.65,
+          43.214285714285715
+        ],
+        [
+          59.35,
+          43.214285714285715
+        ],
+        [
+          59.35,
+          45.17857142857143
+        ],
+        [
+          60.65,
+          44.19642857142857
+        ],
+        [
+          60.0,
+          43.214285714285715
+        ],
+        [
+          59.35,
+          44.19642857142857
+        ],
+        [
+          60.0,
+          45.17857142857143
+        ],
+        [
+          60.0,
+          44.19642857142857
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 19",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          43.214285714285715
+        ],
+        [
+          60.65,
+          41.25
+        ],
+        [
+          59.35,
+          41.25
+        ],
+        [
+          59.35,
+          43.214285714285715
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35538711547851565,
+      "terrain_probe_points": [
+        [
+          60.65,
+          43.214285714285715
+        ],
+        [
+          60.65,
+          41.25
+        ],
+        [
+          59.35,
+          41.25
+        ],
+        [
+          59.35,
+          43.214285714285715
+        ],
+        [
+          60.65,
+          42.23214285714286
+        ],
+        [
+          60.0,
+          41.25
+        ],
+        [
+          59.35,
+          42.23214285714286
+        ],
+        [
+          60.0,
+          43.214285714285715
+        ],
+        [
+          60.0,
+          42.23214285714286
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20538711547851562,
+        -0.20506668090820312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20538330078125,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 20",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          41.25
+        ],
+        [
+          60.65,
+          39.285714285714285
+        ],
+        [
+          59.35,
+          39.285714285714285
+        ],
+        [
+          59.35,
+          41.25
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.3746360778808594,
+      "terrain_probe_points": [
+        [
+          60.65,
+          41.25
+        ],
+        [
+          60.65,
+          39.285714285714285
+        ],
+        [
+          59.35,
+          39.285714285714285
+        ],
+        [
+          59.35,
+          41.25
+        ],
+        [
+          60.65,
+          40.26785714285714
+        ],
+        [
+          60.0,
+          39.285714285714285
+        ],
+        [
+          59.35,
+          40.26785714285714
+        ],
+        [
+          60.0,
+          41.25
+        ],
+        [
+          60.0,
+          40.26785714285714
+        ]
+      ],
+      "terrain_y": [
+        -0.20538711547851562,
+        -0.22463607788085938,
+        -0.22368240356445312,
+        -0.20506668090820312,
+        -0.21355438232421875,
+        -0.22272872924804688,
+        -0.21212005615234375,
+        -0.20538330078125,
+        -0.21243667602539062
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 21",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          39.285714285714285
+        ],
+        [
+          60.65,
+          37.32142857142857
+        ],
+        [
+          59.35,
+          37.32142857142857
+        ],
+        [
+          59.35,
+          39.285714285714285
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.3943656921386719,
+      "terrain_probe_points": [
+        [
+          60.65,
+          39.285714285714285
+        ],
+        [
+          60.65,
+          37.32142857142857
+        ],
+        [
+          59.35,
+          37.32142857142857
+        ],
+        [
+          59.35,
+          39.285714285714285
+        ],
+        [
+          60.65,
+          38.30357142857143
+        ],
+        [
+          60.0,
+          37.32142857142857
+        ],
+        [
+          59.35,
+          38.30357142857143
+        ],
+        [
+          60.0,
+          39.285714285714285
+        ],
+        [
+          60.0,
+          38.30357142857143
+        ]
+      ],
+      "terrain_y": [
+        -0.22463607788085938,
+        -0.24309921264648438,
+        -0.24436569213867188,
+        -0.22368240356445312,
+        -0.23513031005859375,
+        -0.24309539794921875,
+        -0.23519134521484375,
+        -0.22272872924804688,
+        -0.2342376708984375
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 22",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          37.32142857142857
+        ],
+        [
+          60.65,
+          35.35714285714286
+        ],
+        [
+          59.35,
+          35.35714285714286
+        ],
+        [
+          59.35,
+          37.32142857142857
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.4081443786621094,
+      "terrain_probe_points": [
+        [
+          60.65,
+          37.32142857142857
+        ],
+        [
+          60.65,
+          35.35714285714286
+        ],
+        [
+          59.35,
+          35.35714285714286
+        ],
+        [
+          59.35,
+          37.32142857142857
+        ],
+        [
+          60.65,
+          36.339285714285715
+        ],
+        [
+          60.0,
+          35.35714285714286
+        ],
+        [
+          59.35,
+          36.339285714285715
+        ],
+        [
+          60.0,
+          37.32142857142857
+        ],
+        [
+          60.0,
+          36.339285714285715
+        ]
+      ],
+      "terrain_y": [
+        -0.24309921264648438,
+        -0.25560760498046875,
+        -0.2581443786621094,
+        -0.24436569213867188,
+        -0.2503204345703125,
+        -0.256561279296875,
+        -0.2520408630371094,
+        -0.24309539794921875,
+        -0.25077056884765625
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 23",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          35.35714285714286
+        ],
+        [
+          60.65,
+          33.39285714285714
+        ],
+        [
+          59.35,
+          33.39285714285714
+        ],
+        [
+          59.35,
+          35.35714285714286
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.4171470642089844,
+      "terrain_probe_points": [
+        [
+          60.65,
+          35.35714285714286
+        ],
+        [
+          60.65,
+          33.39285714285714
+        ],
+        [
+          59.35,
+          33.39285714285714
+        ],
+        [
+          59.35,
+          35.35714285714286
+        ],
+        [
+          60.65,
+          34.375
+        ],
+        [
+          60.0,
+          33.39285714285714
+        ],
+        [
+          59.35,
+          34.375
+        ],
+        [
+          60.0,
+          35.35714285714286
+        ],
+        [
+          60.0,
+          34.375
+        ]
+      ],
+      "terrain_y": [
+        -0.25560760498046875,
+        -0.2636756896972656,
+        -0.2671470642089844,
+        -0.2581443786621094,
+        -0.2601356506347656,
+        -0.2652626037597656,
+        -0.2629432678222656,
+        -0.256561279296875,
+        -0.2613563537597656
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 24",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          33.39285714285714
+        ],
+        [
+          60.65,
+          31.428571428571427
+        ],
+        [
+          59.35,
+          31.428571428571427
+        ],
+        [
+          59.35,
+          33.39285714285714
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.42332305908203127,
+      "terrain_probe_points": [
+        [
+          60.65,
+          33.39285714285714
+        ],
+        [
+          60.65,
+          31.428571428571427
+        ],
+        [
+          59.35,
+          31.428571428571427
+        ],
+        [
+          59.35,
+          33.39285714285714
+        ],
+        [
+          60.65,
+          32.410714285714285
+        ],
+        [
+          60.0,
+          31.428571428571427
+        ],
+        [
+          59.35,
+          32.410714285714285
+        ],
+        [
+          60.0,
+          33.39285714285714
+        ],
+        [
+          60.0,
+          32.410714285714285
+        ]
+      ],
+      "terrain_y": [
+        -0.2636756896972656,
+        -0.2695159912109375,
+        -0.27332305908203125,
+        -0.2671470642089844,
+        -0.26691436767578125,
+        -0.2714195251464844,
+        -0.2705268859863281,
+        -0.2652626037597656,
+        -0.2686195373535156
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 25",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          31.428571428571427
+        ],
+        [
+          60.65,
+          29.464285714285715
+        ],
+        [
+          59.35,
+          29.464285714285715
+        ],
+        [
+          59.35,
+          31.428571428571427
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.4281181335449219,
+      "terrain_probe_points": [
+        [
+          60.65,
+          31.428571428571427
+        ],
+        [
+          60.65,
+          29.464285714285715
+        ],
+        [
+          59.35,
+          29.464285714285715
+        ],
+        [
+          59.35,
+          31.428571428571427
+        ],
+        [
+          60.65,
+          30.44642857142857
+        ],
+        [
+          60.0,
+          29.464285714285715
+        ],
+        [
+          59.35,
+          30.44642857142857
+        ],
+        [
+          60.0,
+          31.428571428571427
+        ],
+        [
+          60.0,
+          30.446428571428573
+        ]
+      ],
+      "terrain_y": [
+        -0.2695159912109375,
+        -0.2743110656738281,
+        -0.2781181335449219,
+        -0.27332305908203125,
+        -0.27191162109375,
+        -0.276214599609375,
+        -0.2757225036621094,
+        -0.2714195251464844,
+        -0.2738151550292969
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 26",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          29.464285714285715
+        ],
+        [
+          60.65,
+          27.5
+        ],
+        [
+          59.35,
+          27.5
+        ],
+        [
+          59.35,
+          29.464285714285715
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.4326690673828125,
+      "terrain_probe_points": [
+        [
+          60.65,
+          29.464285714285715
+        ],
+        [
+          60.65,
+          27.5
+        ],
+        [
+          59.35,
+          27.5
+        ],
+        [
+          59.35,
+          29.464285714285715
+        ],
+        [
+          60.65,
+          28.482142857142858
+        ],
+        [
+          60.0,
+          27.5
+        ],
+        [
+          59.35,
+          28.482142857142858
+        ],
+        [
+          60.0,
+          29.464285714285715
+        ],
+        [
+          60.0,
+          28.48214285714286
+        ]
+      ],
+      "terrain_y": [
+        -0.2743110656738281,
+        -0.27886199951171875,
+        -0.2826690673828125,
+        -0.2781181335449219,
+        -0.27671051025390625,
+        -0.2807655334472656,
+        -0.280517578125,
+        -0.276214599609375,
+        -0.2786102294921875
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 27",
+      "link": "L02",
+      "footprint": [
+        [
+          59.35,
+          26.85
+        ],
+        [
+          58.035714285714285,
+          26.85
+        ],
+        [
+          58.035714285714285,
+          28.15
+        ],
+        [
+          59.35,
+          28.15
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.4377922058105469,
+      "terrain_probe_points": [
+        [
+          59.35,
+          26.85
+        ],
+        [
+          58.035714285714285,
+          26.85
+        ],
+        [
+          58.035714285714285,
+          28.15
+        ],
+        [
+          59.35,
+          28.15
+        ],
+        [
+          58.69285714285714,
+          26.85
+        ],
+        [
+          58.035714285714285,
+          27.5
+        ],
+        [
+          58.69285714285714,
+          28.15
+        ],
+        [
+          59.35,
+          27.5
+        ],
+        [
+          58.69285714285714,
+          27.5
+        ]
+      ],
+      "terrain_y": [
+        -0.2839393615722656,
+        -0.2877922058105469,
+        -0.28517913818359375,
+        -0.2813262939453125,
+        -0.28586578369140625,
+        -0.28652191162109375,
+        -0.2832527160644531,
+        -0.2826690673828125,
+        -0.2845916748046875
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 28",
+      "link": "L02",
+      "footprint": [
+        [
+          60.0,
+          26.85
+        ],
+        [
+          59.35,
+          26.85
+        ],
+        [
+          59.35,
+          27.5
+        ],
+        [
+          60.0,
+          27.5
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.43393936157226565,
+      "terrain_probe_points": [
+        [
+          60.0,
+          26.85
+        ],
+        [
+          59.35,
+          26.85
+        ],
+        [
+          59.35,
+          27.5
+        ],
+        [
+          60.0,
+          27.5
+        ],
+        [
+          59.675,
+          26.85
+        ],
+        [
+          59.35,
+          27.175
+        ],
+        [
+          59.675,
+          27.5
+        ],
+        [
+          60.0,
+          27.175
+        ],
+        [
+          59.675,
+          27.175
+        ]
+      ],
+      "terrain_y": [
+        -0.2820320129394531,
+        -0.2839393615722656,
+        -0.2826690673828125,
+        -0.2807655334472656,
+        -0.2829856872558594,
+        -0.2833061218261719,
+        -0.2817192077636719,
+        -0.2813987731933594,
+        -0.2823524475097656
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 29",
+      "link": "L02",
+      "footprint": [
+        [
+          58.035714285714285,
+          26.85
+        ],
+        [
+          57.1,
+          26.85
+        ],
+        [
+          57.1,
+          28.15
+        ],
+        [
+          58.035714285714285,
+          28.15
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.44053115844726565,
+      "terrain_probe_points": [
+        [
+          58.035714285714285,
+          26.85
+        ],
+        [
+          57.1,
+          26.85
+        ],
+        [
+          57.1,
+          28.15
+        ],
+        [
+          58.035714285714285,
+          28.15
+        ],
+        [
+          57.56785714285714,
+          26.85
+        ],
+        [
+          57.1,
+          27.5
+        ],
+        [
+          57.56785714285714,
+          28.15
+        ],
+        [
+          58.035714285714285,
+          27.5
+        ],
+        [
+          57.56785714285714,
+          27.5
+        ]
+      ],
+      "terrain_y": [
+        -0.2877922058105469,
+        -0.2905311584472656,
+        -0.2879219055175781,
+        -0.28517913818359375,
+        -0.28916168212890625,
+        -0.2892608642578125,
+        -0.2865486145019531,
+        -0.28652191162109375,
+        -0.2878913879394531
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 30",
+      "link": "L02",
+      "footprint": [
+        [
+          40.35714285714286,
+          26.85
+        ],
+        [
+          38.39285714285714,
+          26.85
+        ],
+        [
+          38.39285714285714,
+          28.15
+        ],
+        [
+          40.35714285714286,
+          28.15
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.4972900390625,
+      "terrain_probe_points": [
+        [
+          40.35714285714286,
+          26.85
+        ],
+        [
+          38.39285714285714,
+          26.85
+        ],
+        [
+          38.39285714285714,
+          28.15
+        ],
+        [
+          40.35714285714286,
+          28.15
+        ],
+        [
+          39.375,
+          26.85
+        ],
+        [
+          38.39285714285714,
+          27.5
+        ],
+        [
+          39.375,
+          28.15
+        ],
+        [
+          40.35714285714286,
+          27.5
+        ],
+        [
+          39.375,
+          27.5
+        ]
+      ],
+      "terrain_y": [
+        -0.3415374755859375,
+        -0.3472900390625,
+        -0.34474945068359375,
+        -0.33892059326171875,
+        -0.34441375732421875,
+        -0.3460235595703125,
+        -0.3418731689453125,
+        -0.34026336669921875,
+        -0.3431434631347656
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 31",
+      "link": "L02",
+      "footprint": [
+        [
+          38.39285714285714,
+          26.85
+        ],
+        [
+          36.42857142857143,
+          26.85
+        ],
+        [
+          36.42857142857143,
+          28.15
+        ],
+        [
+          38.39285714285714,
+          28.15
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.5030464172363281,
+      "terrain_probe_points": [
+        [
+          38.39285714285714,
+          26.85
+        ],
+        [
+          36.42857142857143,
+          26.85
+        ],
+        [
+          36.42857142857143,
+          28.15
+        ],
+        [
+          38.39285714285714,
+          28.15
+        ],
+        [
+          37.410714285714285,
+          26.85
+        ],
+        [
+          36.42857142857143,
+          27.5
+        ],
+        [
+          37.410714285714285,
+          28.15
+        ],
+        [
+          38.39285714285714,
+          27.5
+        ],
+        [
+          37.410714285714285,
+          27.5
+        ]
+      ],
+      "terrain_y": [
+        -0.3472900390625,
+        -0.3530464172363281,
+        -0.3505058288574219,
+        -0.34474945068359375,
+        -0.35016632080078125,
+        -0.351776123046875,
+        -0.3476295471191406,
+        -0.3460235595703125,
+        -0.34889984130859375
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 32",
+      "link": "L02",
+      "footprint": [
+        [
+          36.42857142857143,
+          26.85
+        ],
+        [
+          34.464285714285715,
+          26.85
+        ],
+        [
+          34.464285714285715,
+          28.15
+        ],
+        [
+          36.42857142857143,
+          28.15
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.5087989807128906,
+      "terrain_probe_points": [
+        [
+          36.42857142857143,
+          26.85
+        ],
+        [
+          34.464285714285715,
+          26.85
+        ],
+        [
+          34.464285714285715,
+          28.15
+        ],
+        [
+          36.42857142857143,
+          28.15
+        ],
+        [
+          35.44642857142857,
+          26.85
+        ],
+        [
+          34.464285714285715,
+          27.5
+        ],
+        [
+          35.44642857142857,
+          28.15
+        ],
+        [
+          36.42857142857143,
+          27.5
+        ],
+        [
+          35.44642857142857,
+          27.5
+        ]
+      ],
+      "terrain_y": [
+        -0.3530464172363281,
+        -0.3587989807128906,
+        -0.35626220703125,
+        -0.3505058288574219,
+        -0.3559226989746094,
+        -0.3575286865234375,
+        -0.35338592529296875,
+        -0.351776123046875,
+        -0.35465240478515625
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 33",
+      "link": "L02",
+      "footprint": [
+        [
+          33.09693824701195,
+          26.85
+        ],
+        [
+          32.650001525878906,
+          26.85
+        ],
+        [
+          32.650001525878906,
+          27.336664860545724
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.5141166687011719,
+      "terrain_probe_points": [
+        [
+          33.09693824701195,
+          26.85
+        ],
+        [
+          32.650001525878906,
+          26.85
+        ],
+        [
+          32.650001525878906,
+          27.336664860545724
+        ],
+        [
+          32.87346988644543,
+          26.85
+        ],
+        [
+          32.650001525878906,
+          27.093332430272863
+        ],
+        [
+          32.87346988644543,
+          27.093332430272863
+        ],
+        [
+          32.79898043292325,
+          27.012221620181908
+        ]
+      ],
+      "terrain_y": [
+        -0.3628044128417969,
+        -0.3641166687011719,
+        -0.36316680908203125,
+        -0.3634605407714844,
+        -0.36363983154296875,
+        -0.36298370361328125,
+        -0.36336517333984375
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 34",
+      "link": "L02",
+      "footprint": [
+        [
+          33.149997302602365,
+          26.85
+        ],
+        [
+          33.09693824701195,
+          26.85
+        ],
+        [
+          32.93966293334961,
+          27.021255493164062
+        ],
+        [
+          32.96003424777543,
+          27.039963843146964
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.5129302978515625,
+      "terrain_probe_points": [
+        [
+          33.149997302602365,
+          26.85
+        ],
+        [
+          33.09693824701195,
+          26.85
+        ],
+        [
+          32.93966293334961,
+          27.021255493164062
+        ],
+        [
+          32.96003424777543,
+          27.039963843146964
+        ],
+        [
+          33.12346777480715,
+          26.85
+        ],
+        [
+          33.01830059018078,
+          26.935627746582032
+        ],
+        [
+          32.949848590562524,
+          27.030609668155513
+        ],
+        [
+          33.0550157751889,
+          26.944981921573483
+        ],
+        [
+          33.03665818268484,
+          26.940304834077757
+        ]
+      ],
+      "terrain_y": [
+        -0.36264801025390625,
+        -0.3628044128417969,
+        -0.3629302978515625,
+        -0.3628349304199219,
+        -0.3627281188964844,
+        -0.3628692626953125,
+        -0.362884521484375,
+        -0.3627433776855469,
+        -0.3628082275390625
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 35",
+      "link": "L02",
+      "footprint": [
+        [
+          34.464285714285715,
+          26.85
+        ],
+        [
+          33.149997302602365,
+          26.85
+        ],
+        [
+          32.96003424777543,
+          27.039963843146964
+        ],
+        [
+          34.168740285237625,
+          28.15
+        ],
+        [
+          34.464285714285715,
+          28.15
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.5128349304199219,
+      "terrain_probe_points": [
+        [
+          34.464285714285715,
+          26.85
+        ],
+        [
+          33.149997302602365,
+          26.85
+        ],
+        [
+          32.96003424777543,
+          27.039963843146964
+        ],
+        [
+          34.168740285237625,
+          28.15
+        ],
+        [
+          34.464285714285715,
+          28.15
+        ],
+        [
+          33.80714150844404,
+          26.85
+        ],
+        [
+          33.0550157751889,
+          26.944981921573483
+        ],
+        [
+          33.56438726650653,
+          27.59498192157348
+        ],
+        [
+          34.31651299976167,
+          28.15
+        ],
+        [
+          34.464285714285715,
+          27.5
+        ],
+        [
+          33.84146865283737,
+          27.407992768629395
+        ]
+      ],
+      "terrain_y": [
+        -0.3587989807128906,
+        -0.36264801025390625,
+        -0.3628349304199219,
+        -0.35712432861328125,
+        -0.35626220703125,
+        -0.36072540283203125,
+        -0.3627433776855469,
+        -0.35997772216796875,
+        -0.3566932678222656,
+        -0.3575286865234375,
+        -0.35953521728515625
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 36",
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          27.5
+        ],
+        [
+          60.0,
+          27.5
+        ],
+        [
+          60.0,
+          26.85
+        ],
+        [
+          60.24874423103731,
+          26.899478303867664
+        ],
+        [
+          60.45961940777126,
+          27.040380592228743
+        ],
+        [
+          60.60052169613233,
+          27.25125576896269
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.43203201293945315,
+      "terrain_probe_points": [
+        [
+          60.65,
+          27.5
+        ],
+        [
+          60.0,
+          27.5
+        ],
+        [
+          60.0,
+          26.85
+        ],
+        [
+          60.24874423103731,
+          26.899478303867664
+        ],
+        [
+          60.45961940777126,
+          27.040380592228743
+        ],
+        [
+          60.60052169613233,
+          27.25125576896269
+        ],
+        [
+          60.325,
+          27.5
+        ],
+        [
+          60.0,
+          27.175
+        ],
+        [
+          60.12437211551865,
+          26.87473915193383
+        ],
+        [
+          60.35418181940428,
+          26.969929448048205
+        ],
+        [
+          60.530070551951795,
+          27.145818180595718
+        ],
+        [
+          60.62526084806616,
+          27.375627884481347
+        ],
+        [
+          60.32648088915681,
+          27.173519110843184
+        ]
+      ],
+      "terrain_y": [
+        -0.27886199951171875,
+        -0.2807655334472656,
+        -0.2820320129394531,
+        -0.28121185302734375,
+        -0.2803153991699219,
+        -0.2794914245605469,
+        -0.2798118591308594,
+        -0.2813987731933594,
+        -0.28162384033203125,
+        -0.28076171875,
+        -0.2799034118652344,
+        -0.2791786193847656,
+        -0.28044891357421875
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    },
+    {
+      "name": "Rooted cut walkway ACADEMY 37",
+      "link": "L42",
+      "footprint": [
+        [
+          57.65,
+          50.0
+        ],
+        [
+          57.60052169613234,
+          50.24874423103731
+        ],
+        [
+          57.45961940777126,
+          50.45961940777126
+        ],
+        [
+          57.24874423103731,
+          50.60052169613234
+        ],
+        [
+          57.0,
+          50.65
+        ],
+        [
+          57.0,
+          50.0
+        ],
+        [
+          57.4363673252398,
+          49.52484404739408
+        ],
+        [
+          57.45961940777126,
+          49.54038059222874
+        ],
+        [
+          57.60052169613233,
+          49.75125576896269
+        ]
+      ],
+      "top_y": 0,
+      "bottom_y": -0.35000457763671877,
+      "terrain_probe_points": [
+        [
+          57.65,
+          50.0
+        ],
+        [
+          57.60052169613234,
+          50.24874423103731
+        ],
+        [
+          57.45961940777126,
+          50.45961940777126
+        ],
+        [
+          57.24874423103731,
+          50.60052169613234
+        ],
+        [
+          57.0,
+          50.65
+        ],
+        [
+          57.0,
+          50.0
+        ],
+        [
+          57.4363673252398,
+          49.52484404739408
+        ],
+        [
+          57.45961940777126,
+          49.54038059222874
+        ],
+        [
+          57.60052169613233,
+          49.75125576896269
+        ],
+        [
+          57.62526084806617,
+          50.12437211551865
+        ],
+        [
+          57.530070551951795,
+          50.35418181940428
+        ],
+        [
+          57.35418181940428,
+          50.530070551951795
+        ],
+        [
+          57.12437211551865,
+          50.62526084806617
+        ],
+        [
+          57.0,
+          50.325
+        ],
+        [
+          57.2181836626199,
+          49.76242202369704
+        ],
+        [
+          57.44799336650553,
+          49.53261231981141
+        ],
+        [
+          57.530070551951795,
+          49.64581818059572
+        ],
+        [
+          57.62526084806616,
+          49.87562788448135
+        ],
+        [
+          57.383932640453814,
+          50.08615174928072
+        ]
+      ],
+      "terrain_y": [
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000457763671875,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312,
+        -0.20000076293945312
+      ],
+      "embedding_metres": 0.15,
+      "excluded_actual_shafts": true,
+      "excluded_sealed_context": true
+    }
+  ],
+  "deferred_walkway_beds": [
+    {
+      "link": "L02",
+      "footprint": [
+        [
+          50.17857142857143,
+          62.15
+        ],
+        [
+          52.14285714285714,
+          62.15
+        ],
+        [
+          52.14285714285714,
+          60.85
+        ],
+        [
+          50.17857142857143,
+          60.85
+        ]
+      ],
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L02",
+      "footprint": [
+        [
+          52.14285714285714,
+          62.15
+        ],
+        [
+          54.10714285714286,
+          62.15
+        ],
+        [
+          54.10714285714286,
+          60.85
+        ],
+        [
+          52.14285714285714,
+          60.85
+        ]
+      ],
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L02",
+      "footprint": [
+        [
+          54.10714285714286,
+          62.15
+        ],
+        [
+          56.07142857142857,
+          62.15
+        ],
+        [
+          56.07142857142857,
+          60.85
+        ],
+        [
+          54.10714285714286,
+          60.85
+        ]
+      ],
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L02",
+      "footprint": [
+        [
+          56.07142857142857,
+          62.15
+        ],
+        [
+          58.035714285714285,
+          62.15
+        ],
+        [
+          58.035714285714285,
+          60.85
+        ],
+        [
+          56.07142857142857,
+          60.85
+        ]
+      ],
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L02",
+      "footprint": [
+        [
+          58.035714285714285,
+          62.15
+        ],
+        [
+          60.0,
+          62.15
+        ],
+        [
+          60.0,
+          60.85
+        ],
+        [
+          58.035714285714285,
+          60.85
+        ]
+      ],
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          61.5
+        ],
+        [
+          60.65,
+          59.875
+        ],
+        [
+          59.35,
+          59.875
+        ],
+        [
+          59.35,
+          61.5
+        ]
+      ],
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          59.875
+        ],
+        [
+          60.65,
+          58.25
+        ],
+        [
+          59.35,
+          58.25
+        ],
+        [
+          59.35,
+          59.875
+        ]
+      ],
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          58.25
+        ],
+        [
+          60.65,
+          56.625
+        ],
+        [
+          59.35,
+          56.625
+        ],
+        [
+          59.35,
+          58.25
+        ]
+      ],
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L02",
+      "footprint": [
+        [
+          41.92459165724287,
+          26.85
+        ],
+        [
+          40.35714285714286,
+          26.85
+        ],
+        [
+          40.35714285714286,
+          28.15
+        ],
+        [
+          42.0,
+          28.15
+        ],
+        [
+          42.0,
+          27.679491866215056
+        ]
+      ],
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    },
+    {
+      "link": "L02",
+      "footprint": [
+        [
+          60.65,
+          61.5
+        ],
+        [
+          60.60052169613234,
+          61.74874423103731
+        ],
+        [
+          60.45961940777126,
+          61.95961940777126
+        ],
+        [
+          60.24874423103731,
+          62.10052169613234
+        ],
+        [
+          60.0,
+          62.15
+        ],
+        [
+          59.75125576896269,
+          62.10052169613234
+        ],
+        [
+          59.54038059222874,
+          61.95961940777126
+        ],
+        [
+          59.39947830386766,
+          61.74874423103731
+        ],
+        [
+          59.35,
+          61.5
+        ],
+        [
+          59.39947830386766,
+          61.25125576896269
+        ],
+        [
+          59.54038059222874,
+          61.04038059222874
+        ],
+        [
+          59.75125576896269,
+          60.89947830386767
+        ],
+        [
+          60.0,
+          60.85
+        ],
+        [
+          60.24874423103731,
+          60.89947830386767
+        ],
+        [
+          60.45961940777126,
+          61.04038059222874
+        ],
+        [
+          60.60052169613233,
+          61.25125576896269
+        ]
+      ],
+      "reason": "No complete shallow below-walking-plane soil receiver; requires a real bridge/deck/terrain design, not blind fill"
+    }
+  ],
+  "walkway_builder_sha256": "b4c16f549e537b9362ccb39ce695fd556d03d8136cbaa50a93253d0c81d747a8",
+  "reused_rejected_arrival_cap": [],
+  "composer_sha256": "ea8fe8f8f84b40ac9f26d0a57a021e7e723b2bb2c05d7967d4a338e931d9b22f",
+  "remaining": "Actual native/current-route/standing/vertical regression, physical footing probes, exported/editable/visual checks and all per-map terrain/edge/runtime/services/art/network/hardware gates; no unlock or production-ready claim."
+}

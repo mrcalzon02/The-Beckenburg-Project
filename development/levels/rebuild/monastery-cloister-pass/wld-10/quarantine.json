@@ -1,0 +1,678 @@
+{
+  "source": {
+    "id": "WLD-10",
+    "construction": "development/levels/rebuild/secure-sacred-roof-pass/wld-10/construction.json",
+    "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-10/authored-layout.json",
+    "glb": "development/levels/rebuild/secure-sacred-roof-pass/wld-10/enclosed-roofs.glb",
+    "native": "development/levels/rebuild/secure-sacred-roof-pass/wld-10/enclosed-roofs.hcs2",
+    "blend": "development/levels/rebuild/secure-sacred-roof-pass/wld-10/enclosed-roofs.blend",
+    "glb_sha256": "ba20299a6d3a738a1b36d0e2a9292db5d10291393fd8e9602adb72d87696ae22",
+    "native_sha256": "b13a1c1216c585751423192eb4d7947b3c09af24bc66ac78afda0d86aef6897e"
+  },
+  "retired": [
+    "Arrival end bearing WLD-10 0",
+    "Flat route shell Wall archive E",
+    "Flat route shell Wall archive E.001",
+    "Flat route shell Wall archive S.001",
+    "Flat route shell Wall catacombs N",
+    "Flat route shell Wall catacombs N.001",
+    "Flat route shell Wall chamber S.001",
+    "Flat route shell Wall east E",
+    "Flat route shell Wall east E.001",
+    "Flat route shell Wall east E.002",
+    "Flat route shell Wall east N",
+    "Flat route shell Wall east N.001",
+    "Flat route shell Wall east S",
+    "Flat route shell Wall east S.001",
+    "Flat route shell Wall gatehouse N",
+    "Flat route shell Wall gatehouse N.001",
+    "Flat route shell Wall gatehouse S",
+    "Flat route shell Wall gatehouse S.001",
+    "Flat route shell Wall north N",
+    "Flat route shell Wall north N.001",
+    "Flat route shell Wall north N.002",
+    "Flat route shell Wall north S.001",
+    "Flat route shell Wall north S.002",
+    "Flat route shell Wall refectory N",
+    "Flat route shell Wall refectory N.001",
+    "Flat route shell Wall refectory W",
+    "Flat route shell Wall south N.001",
+    "Flat route shell Wall south N.002",
+    "Flat route shell Wall south S",
+    "Flat route shell Wall south S.001",
+    "Flat route shell Wall tower-base E",
+    "Flat route shell Wall tower-base E.001",
+    "Flat route shell Wall tower-base W",
+    "Flat route shell Wall tower-base W.001",
+    "Flat route shell Wall vestry S",
+    "Flat route shell Wall vestry S.001",
+    "Flat route shell Wall west N",
+    "Flat route shell Wall west N.001",
+    "Flat route shell Wall west S",
+    "Flat route shell Wall west S.001",
+    "Flat route shell Wall west W",
+    "Flat route shell Wall west W.001",
+    "Floor bell",
+    "Floor bell.001",
+    "Floor bell.002",
+    "Floor bell.003",
+    "Floor bell.004",
+    "Floor bell.005",
+    "Floor bell.006",
+    "Floor bell.007",
+    "Floor north",
+    "Floor north.001",
+    "Floor north.002",
+    "Floor north.003",
+    "Floor north.004",
+    "Floor north.005",
+    "Floor north.006",
+    "Floor north.007",
+    "Floor north.008",
+    "Floor north.009",
+    "Floor north.010",
+    "Floor north.011",
+    "Floor north.012",
+    "Header archive E",
+    "Header catacombs N",
+    "Header east E",
+    "Header east E.002",
+    "Header east N",
+    "Header east S",
+    "Header gatehouse N",
+    "Header gatehouse S",
+    "Header north N",
+    "Header north N.002",
+    "Header north S.004",
+    "Header refectory N",
+    "Header south N.004",
+    "Header tower-base E",
+    "Header tower-base W",
+    "Header west N",
+    "Header west S",
+    "Header west W",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L04 support 0",
+    "L05 support 1",
+    "L06 support 0",
+    "L07 support 1",
+    "L08 support 1",
+    "L09 support 0",
+    "L09 support 1",
+    "L11 support 0",
+    "L13 support 1",
+    "L16 flight0 step1",
+    "L16 flight0 step10",
+    "L16 flight0 step11",
+    "L16 flight0 step12",
+    "L16 flight0 step13",
+    "L16 flight0 step14",
+    "L16 flight0 step15",
+    "L16 flight0 step16",
+    "L16 flight0 step17",
+    "L16 flight0 step18",
+    "L16 flight0 step19",
+    "L16 flight0 step2",
+    "L16 flight0 step20",
+    "L16 flight0 step21",
+    "L16 flight0 step22",
+    "L16 flight0 step23",
+    "L16 flight0 step24",
+    "L16 flight0 step25",
+    "L16 flight0 step26",
+    "L16 flight0 step27",
+    "L16 flight0 step28",
+    "L16 flight0 step29",
+    "L16 flight0 step3",
+    "L16 flight0 step30",
+    "L16 flight0 step31",
+    "L16 flight0 step32",
+    "L16 flight0 step33",
+    "L16 flight0 step34",
+    "L16 flight0 step4",
+    "L16 flight0 step5",
+    "L16 flight0 step6",
+    "L16 flight0 step7",
+    "L16 flight0 step8",
+    "L16 flight0 step9",
+    "L17 support 1",
+    "L18 support 0",
+    "L18 support 1",
+    "L21 landing1",
+    "L21 landing2",
+    "Saved editor circulation terrain WLD-10",
+    "Wall north E"
+  ],
+  "superseded_guides": {
+    "L01": {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          80.0
+        ],
+        [
+          32.0,
+          0,
+          74.0
+        ],
+        [
+          32.0,
+          0,
+          68.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          74.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L03": {
+      "id": "L03",
+      "a": "gatehouse",
+      "b": "south",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          32.0,
+          0,
+          59.0
+        ],
+        [
+          32.0,
+          0,
+          56.0
+        ],
+        [
+          29.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          56.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    "L04": {
+      "id": "L04",
+      "a": "south",
+      "b": "west",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          29.0,
+          0,
+          53.0
+        ],
+        [
+          11.0,
+          0,
+          53.0
+        ],
+        [
+          11.0,
+          0,
+          50.0
+        ],
+        [
+          11.0,
+          0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          11.0,
+          0,
+          50.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    "L05": {
+      "id": "L05",
+      "a": "west",
+      "b": "north",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          11.0,
+          0.0,
+          36.0
+        ],
+        [
+          11.0,
+          0.0,
+          21.5
+        ],
+        [
+          11.5,
+          0.0,
+          21.0
+        ],
+        [
+          25.5,
+          0.0,
+          20.5
+        ],
+        [
+          25.5,
+          0.0,
+          17.5
+        ],
+        [
+          27.5,
+          0.0,
+          17.0
+        ],
+        [
+          29.0,
+          0.0,
+          17.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          11.0,
+          0,
+          22.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    "L06": {
+      "id": "L06",
+      "a": "north",
+      "b": "east",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          29.0,
+          0.0,
+          17.0
+        ],
+        [
+          26.0,
+          0.0,
+          17.0
+        ],
+        [
+          25.5,
+          0.0,
+          18.0
+        ],
+        [
+          25.5,
+          0.0,
+          20.5
+        ],
+        [
+          28.0,
+          0.0,
+          21.0
+        ],
+        [
+          46.5,
+          0.0,
+          21.0
+        ],
+        [
+          47.0,
+          0.0,
+          21.5
+        ],
+        [
+          47.0,
+          0.0,
+          36.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          47.0,
+          0,
+          22.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    "L09": {
+      "id": "L09",
+      "a": "garden",
+      "b": "north",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          29.0,
+          0.0,
+          36.0
+        ],
+        [
+          29.0,
+          0.0,
+          21.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          29.0,
+          0,
+          22.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L14": {
+      "id": "L14",
+      "a": "east",
+      "b": "refectory",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          47.0,
+          0,
+          36.0
+        ],
+        [
+          50.0,
+          0,
+          40.0
+        ],
+        [
+          59.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          50.0,
+          0,
+          40.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    "L15": {
+      "id": "L15",
+      "a": "east",
+      "b": "tower-base",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          47.0,
+          0.0,
+          36.0
+        ],
+        [
+          49.0,
+          0.0,
+          26.5
+        ],
+        [
+          49.5,
+          0.0,
+          26.0
+        ],
+        [
+          51.0,
+          0.0,
+          26.0
+        ],
+        [
+          53.5,
+          0.0,
+          23.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          50.0,
+          0,
+          26.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    "L16": {
+      "id": "L16",
+      "a": "tower-base",
+      "b": "bell",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          55,
+          0,
+          17.5
+        ],
+        [
+          55,
+          6,
+          27.5
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 6,
+      "construction": "Authored flight coordinates; riser<=180mm, tread>=240mm. Actual export support/headroom and later runtime capsule/guard tests remain required.",
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5
+    },
+    "L17": {
+      "id": "L17",
+      "a": "tower-base",
+      "b": "rear",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          53.0,
+          0.0,
+          23.0
+        ],
+        [
+          53.0,
+          0.0,
+          28.0
+        ],
+        [
+          54.0,
+          0.0,
+          28.5
+        ],
+        [
+          58.0,
+          0.0,
+          28.5
+        ],
+        [
+          59.0,
+          0.0,
+          23.5
+        ],
+        [
+          59.5,
+          0.0,
+          23.0
+        ],
+        [
+          63.0,
+          0.0,
+          23.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          60.0,
+          0,
+          23.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L18": {
+      "id": "L18",
+      "a": "rear",
+      "b": "refectory",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          64.0,
+          0,
+          23.0
+        ],
+        [
+          64.0,
+          0,
+          30.0
+        ],
+        [
+          64.0,
+          0,
+          40.0
+        ],
+        [
+          59.0,
+          0,
+          40.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          64.0,
+          0,
+          30.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L19": {
+      "id": "L19",
+      "a": "north",
+      "b": "catacombs",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          31.7,
+          0,
+          19
+        ],
+        [
+          26.3,
+          -3,
+          19
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "Authored flight coordinates; riser<=180mm, tread>=240mm. Actual export support/headroom and later runtime capsule/guard tests remain required.",
+      "headroom_m": 2.2,
+      "landing_depth_m": 1.5
+    },
+    "L20": {
+      "id": "L20",
+      "a": "catacombs",
+      "b": "chamber",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          29.0,
+          -3.0,
+          17.5
+        ],
+        [
+          18.5,
+          -3.0,
+          17.0
+        ],
+        [
+          18.0,
+          -3.0,
+          16.5
+        ],
+        [
+          18.0,
+          -3.0,
+          9.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          18.0,
+          -3,
+          16.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    "L21": {
+      "id": "L21",
+      "a": "catacombs",
+      "b": "west",
+      "kind": "stairs",
+      "width": 1.5,
+      "points": [
+        [
+          18,
+          -3,
+          19
+        ],
+        [
+          12.6,
+          0,
+          19
+        ],
+        [
+          11,
+          0,
+          19
+        ],
+        [
+          11,
+          0,
+          24
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 3,
+      "construction": "West catacomb stair in its own shaft; avoid crossing beneath the north stair. Measured 5.4m ascending flight, 1.5m clear width and authored level connections."
+    }
+  }
+}

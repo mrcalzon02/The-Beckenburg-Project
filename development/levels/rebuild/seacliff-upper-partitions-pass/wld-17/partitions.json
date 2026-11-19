@@ -1,0 +1,237 @@
+{
+  "source": {
+    "blend": "da4cb77021d6a83af3b40f423ccc1821153464cde0af2f695cd7cea059eccae7",
+    "glb": "6e0ed73df261a31413aac4e7858914386f33d1b1a4f0235d36f3597a5972db09",
+    "hcs2": "27369d23fc0a887bdefde02bcf23ef37f00b056bc3e6db6829ad15b36e1349d3"
+  },
+  "export": {
+    "blend": "c7d8d98b3aa0b3883cbd7b62868f19032f4319456870951175d4f81b955db4b3",
+    "glb": "70582d39f9315c83aa57f54febe0d516d7539e4db14cd8f1b833c946ca557076",
+    "hcs2": "aea82b0af7a52985f7bca963cd0ef82165da40a2b96ec9b1a743de93eae0502d"
+  },
+  "footprints": [
+    {
+      "label": "west casemate east partition",
+      "axis": "x",
+      "boundary": 24,
+      "ends": [
+        26,
+        40
+      ]
+    },
+    {
+      "label": "east casemate west partition",
+      "axis": "x",
+      "boundary": 44,
+      "ends": [
+        26,
+        40
+      ]
+    },
+    {
+      "label": "magazine south partition",
+      "axis": "z",
+      "boundary": 26,
+      "ends": [
+        8,
+        23.88
+      ]
+    },
+    {
+      "label": "service south partition",
+      "axis": "z",
+      "boundary": 26,
+      "ends": [
+        44.12,
+        60
+      ]
+    }
+  ],
+  "fitted_frames": [
+    {
+      "id": "west-gallery",
+      "axis": "x",
+      "boundary": 24,
+      "along": 31.67,
+      "sill_y": 4,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "west",
+        "gallery"
+      ],
+      "frame_center": [
+        24,
+        4,
+        31.67
+      ],
+      "frame_span": [
+        23.88,
+        24.12
+      ],
+      "portal_id": 426,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": -1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    {
+      "id": "west-courtyard",
+      "axis": "x",
+      "boundary": 24,
+      "along": 37.889,
+      "sill_y": 4,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "west",
+        "yard"
+      ],
+      "frame_center": [
+        24,
+        4,
+        37.889
+      ],
+      "frame_span": [
+        23.88,
+        24.12
+      ],
+      "portal_id": 427,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": -1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    {
+      "id": "gallery-east",
+      "axis": "x",
+      "boundary": 44,
+      "along": 31.67,
+      "sill_y": 4,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "gallery",
+        "east"
+      ],
+      "frame_center": [
+        44,
+        4,
+        31.67
+      ],
+      "frame_span": [
+        43.88,
+        44.12
+      ],
+      "portal_id": 428,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    {
+      "id": "courtyard-east",
+      "axis": "x",
+      "boundary": 44,
+      "along": 37.889,
+      "sill_y": 4,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "yard",
+        "east"
+      ],
+      "frame_center": [
+        44,
+        4,
+        37.889
+      ],
+      "frame_span": [
+        43.88,
+        44.12
+      ],
+      "portal_id": 429,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": 1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    {
+      "id": "magazine-west",
+      "axis": "z",
+      "boundary": 26,
+      "along": 16,
+      "sill_y": 4,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "magazine",
+        "west"
+      ],
+      "frame_center": [
+        16,
+        4,
+        26
+      ],
+      "frame_span": [
+        25.88,
+        26.12
+      ],
+      "portal_id": 430,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": -1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    },
+    {
+      "id": "service-east",
+      "axis": "z",
+      "boundary": 26,
+      "along": 52,
+      "sill_y": 4,
+      "clear_width": 1.4,
+      "clear_height": 2.22,
+      "rooms": [
+        "service",
+        "east"
+      ],
+      "frame_center": [
+        52,
+        4,
+        26
+      ],
+      "frame_span": [
+        25.88,
+        26.12
+      ],
+      "portal_id": 431,
+      "leaves": 1,
+      "hinge_side": -1,
+      "swing_direction": -1,
+      "leaf_sha256": "f1f0c2d39023e8c172fc8c85e20520f9a7d1d9d4ee8b380c57aacf4ce4530ed9"
+    }
+  ],
+  "retired_wall_components": [
+    "Flat route shell Wall east N",
+    "Flat route shell Wall east N.001",
+    "Flat route shell Wall east W",
+    "Flat route shell Wall east W.001",
+    "Flat route shell Wall east W.002",
+    "Flat route shell Wall gallery E.001",
+    "Flat route shell Wall gallery W.001",
+    "Flat route shell Wall west E",
+    "Flat route shell Wall west E.001",
+    "Flat route shell Wall west E.002",
+    "Flat route shell Wall west N",
+    "Flat route shell Wall west N.001",
+    "Header east N",
+    "Header east W",
+    "Header east W.001",
+    "Header west E",
+    "Header west E.001",
+    "Header west N"
+  ],
+  "receiving_floor_probes": 54,
+  "retained_native_components": 306,
+  "actual_new_surface_triangles": 408
+}

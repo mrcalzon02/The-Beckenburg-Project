@@ -1,0 +1,24 @@
+{
+  "status": "LOSSLESS_RAW_VERIFICATION_ARCHIVES_NOT_NEW_TEST_ACCEPTANCE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/institution-courts-pass/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/institution-courts-pass/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 11438994,
+      "original_sha256": "c3b88728276e82f6ce94cc37b16615f1fd875d797511d98e0be82eb4d8c70d98",
+      "archive_bytes": 191574,
+      "archive_sha256": "d2238ee00ac8a240305b8577052453d5fff1710e0f4569a7524d72bf499f0b05",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/institution-courts-pass/verification/current-flat-lanes.tsv",
+      "archive_path": "development/levels/rebuild/institution-courts-pass/verification/current-flat-lanes.tsv.gz",
+      "original_bytes": 2011919,
+      "original_sha256": "40d7b2e7966ed93a771c07459b059ee408b3b062f6cc19a0d2fba0f5dfc72535",
+      "archive_bytes": 123517,
+      "archive_sha256": "d518d57d1ab1dc6520ab589ab1101bfb629c45d94c84da7ba4d377d8ccf99859",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    }
+  ],
+  "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."
+}

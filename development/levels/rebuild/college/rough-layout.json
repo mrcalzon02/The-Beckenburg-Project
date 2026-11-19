@@ -1,7 +1,7 @@
 {
   "version": 2,
   "id": "COLLEGE",
-  "title": "Beckenburg College — revised three-building campus rough",
+  "title": "Beckenburg College \u2014 revised three-building campus rough",
   "status": "S02_DESIGN_STUDY_NOT_RUNTIME_ACCEPTED",
   "site_bounds": [
     3,
@@ -3968,14 +3968,14 @@
       "width": 1.5,
       "points": [
         [
-          27,
+          28.3,
           0,
-          36
+          36.6
         ],
         [
-          27,
+          28.3,
           3.6,
-          41.76
+          42.36
         ]
       ],
       "rise_m": 3.6,
@@ -3983,7 +3983,7 @@
       "headroom_m": 2.2,
       "landing_depth_m": 1.5,
       "risers": 20,
-      "construction": "Full-run voids and structural undersides; clear side bypass and both end landings remain to be physically built.",
+      "construction": "Authored separated flight/landing coordinates. Verify actual exported support, head/body clearance, approaches, guards and continuous runtime sweeps; no acceptance from centre lines.",
       "note": "Separate real entrance/return flights; no floor-hopping graph substitute.",
       "player_access": "OPEN_ROUTE"
     },
@@ -4077,22 +4077,32 @@
       "width": 1.4,
       "points": [
         [
-          27,
+          25.7,
           -3,
-          36
+          42
         ],
         [
-          27,
+          25.7,
           0,
-          40.8
+          37.35
+        ],
+        [
+          25.7,
+          0,
+          36.6
+        ],
+        [
+          28.3,
+          0,
+          36.6
         ]
       ],
       "rise_m": 3,
-      "run_m": 4.800000000000001,
+      "run_m": 4.649999999999999,
       "headroom_m": 2.2,
       "landing_depth_m": 1.5,
-      "risers": 18,
-      "construction": "Full-run voids and structural undersides; clear side bypass and both end landings remain to be physically built.",
+      "risers": 17,
+      "construction": "Straight approach landing before the sideways turn; preserve clear width and remove upper landing overhang above incoming treads. Native complete path/guards/runtime integration remain required.",
       "note": "Separate real entrance/return flights; no floor-hopping graph substitute.",
       "player_access": "OPEN_ROUTE"
     },
@@ -4936,5 +4946,91 @@
     "gameplay_rule": "Evidence, ghost spawn/anchor, hiding, switches/tasks, ritual sites, loose objective props and required travel belong only to the connected open envelope. Context windows may show rooms, but no interaction or required search crosses the seal.",
     "context_rule": "Retain coherent historical rooms/assets behind permanent boundaries. Restrict whole wings to their hallways where useful; do not count shuttable ordinary doors as permanent seals.",
     "next_gate": "Build actual permanent seals and audit runtime player/ghost/object/optical boundaries and all objective placements; construct the maps inside the forty-space cap. Round-duration testing is outside this rebuild task."
+  },
+  "circulation_revision": {
+    "status": "AUTHORED_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+    "source": "development/levels/rebuild/college/rough-layout.json",
+    "source_sha256": "b3496cb939a39eed91a43eaf396f8548d15d3445d843fd96336a17fe54e86d8c",
+    "original_links": {
+      "L80": {
+        "id": "L80",
+        "a": "teaching-stair",
+        "b": "upper-teaching-stair",
+        "kind": "stairs",
+        "width": 1.5,
+        "points": [
+          [
+            27,
+            0,
+            36
+          ],
+          [
+            27,
+            3.6,
+            41.76
+          ]
+        ],
+        "rise_m": 3.6,
+        "run_m": 5.760000000000001,
+        "headroom_m": 2.2,
+        "landing_depth_m": 1.5,
+        "risers": 20,
+        "construction": "Full-run voids and structural undersides; clear side bypass and both end landings remain to be physically built.",
+        "note": "Separate real entrance/return flights; no floor-hopping graph substitute.",
+        "player_access": "OPEN_ROUTE"
+      },
+      "L84": {
+        "id": "L84",
+        "a": "west-cellar-stair",
+        "b": "teaching-stair",
+        "kind": "stairs",
+        "width": 1.4,
+        "points": [
+          [
+            27,
+            -3,
+            36
+          ],
+          [
+            27,
+            0,
+            40.8
+          ]
+        ],
+        "rise_m": 3,
+        "run_m": 4.800000000000001,
+        "headroom_m": 2.2,
+        "landing_depth_m": 1.5,
+        "risers": 18,
+        "construction": "Full-run voids and structural undersides; clear side bypass and both end landings remain to be physically built.",
+        "note": "Separate real entrance/return flights; no floor-hopping graph substitute.",
+        "player_access": "OPEN_ROUTE"
+      }
+    },
+    "reason": "Separate intersecting flights and remove folded-back landing obstructions; preserve functions and search envelope. Terrain holes and complete capsule sweeps remain required."
+  },
+  "landing_clearance_revision": {
+    "source_ref": "fe7f4972330a433473ce80428785c3cc597fba87",
+    "previous_layout_sha256": "6762dc357a7c05c9f215c5d111ff67ba77c07c3125ef537f835a764cc1c95657",
+    "previous_points": {
+      "L84": [
+        [
+          25.7,
+          -3,
+          42
+        ],
+        [
+          25.7,
+          0,
+          36.6
+        ],
+        [
+          28.3,
+          0,
+          36.6
+        ]
+      ]
+    },
+    "purpose": "Actual native failure contacts: turn landing intrudes over incoming treads; curved end joints and final lantern landing need continuous full-body support."
   }
 }

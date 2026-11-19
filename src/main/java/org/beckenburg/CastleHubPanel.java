@@ -30,10 +30,12 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
     private final AtmosphereAudio atmosphere=new AtmosphereAudio(AtmosphereAudio.Scene.CASTLE);
     private long last=System.nanoTime();
     private double clock;
+    double gameplaySeconds(){return clock;}
     private double clutterClock;
     private int clutterTick;
     private double elevation;
     private boolean castleLightsOn=true,crouched,storeOpen;
+    private final CrouchCamera crouchCamera=new CrouchCamera();
     private double gateExitSeconds=-1;
     private boolean gateExitCancelled;
     private final JPanel quartermaster;
@@ -205,7 +207,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
         double norm=Math.hypot(forward,strafe);
         if(norm>0){
             double priorX=renderer.x,priorZ=renderer.z;
-            double speed=(crouched?2.6*HunterPosture.CROUCH_SPEED:down.contains(KeyEvent.VK_SHIFT)?3.9:2.6)*dt/norm;
+            double speed=(crouched?2.6*HunterPosture.CROUCH_SPEED:down.contains(GameControls.RUN)?3.9:2.6)*dt/norm;
             double dx=(Math.sin(renderer.yaw)*forward-Math.cos(renderer.yaw)*strafe)*speed;
             double dz=(Math.cos(renderer.yaw)*forward+Math.sin(renderer.yaw)*strafe)*speed;
             double targetX=renderer.x+dx,targetZ=renderer.z+dz;
@@ -229,7 +231,7 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             }
         }
         clock+=dt;
-        renderer.eyeHeight=HunterPosture.eye(crouched)+elevation;
+        renderer.eyeHeight=crouchCamera.advance(crouched,dt)+elevation;
         GraphicsOptions.current().configure(renderer,getWidth(),getHeight(),true);
         renderer.drawCastle(map,clock,castleLightsOn);
         if(noticeTicks>0)noticeTicks--;
@@ -388,8 +390,8 @@ public final class CastleHubPanel extends JPanel implements KeyListener,FocusLis
             }else use(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null?
                 null:map.aimed(renderer.x,renderer.z,renderer.yaw));
         }
-        if(key==KeyEvent.VK_CONTROL){crouched=!crouched;notice=crouched?"Crouched / Ctrl to stand":"Standing";noticeTicks=60;}
-        if(key==KeyEvent.VK_F)renderer.lamp=!renderer.lamp;
+        if((key==GameControls.CROUCH)&&!down.contains(key)){crouched=!crouched;notice=crouched?"Crouched / Ctrl to stand":"Standing";noticeTicks=60;}
+        if(key==GameControls.LIGHT)renderer.lamp=!renderer.lamp;
         if(key==KeyEvent.VK_L){
             if(CastleHubDecor.aimed(map,renderer.x,elevation,renderer.z,renderer.yaw)!=null)use(null);
             else {notice="Face a mounted wall switch to operate this room's lights.";noticeTicks=120;}

@@ -1,0 +1,921 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "ACADEMY": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 39
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 39
+      },
+      "current_lanes": {
+        "samples": 8781,
+        "valid_standing": 8781,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "ASYLUM": {
+      "before": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "after": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "current_lanes": {
+        "samples": 10929,
+        "valid_standing": 10929,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "CHURCH": {
+      "before": {
+        "flat_links": 28,
+        "pass_both_directions": 28
+      },
+      "after": {
+        "flat_links": 28,
+        "pass_both_directions": 28
+      },
+      "current_lanes": {
+        "samples": 3906,
+        "valid_standing": 3906,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "COLLEGE": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 39
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 39
+      },
+      "current_lanes": {
+        "samples": 10071,
+        "valid_standing": 10071,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "FARMHOUSE": {
+      "before": {
+        "flat_links": 33,
+        "pass_both_directions": 33
+      },
+      "after": {
+        "flat_links": 33,
+        "pass_both_directions": 33
+      },
+      "current_lanes": {
+        "samples": 5448,
+        "valid_standing": 5448,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "MANSION": {
+      "before": {
+        "flat_links": 45,
+        "pass_both_directions": 45
+      },
+      "after": {
+        "flat_links": 45,
+        "pass_both_directions": 45
+      },
+      "current_lanes": {
+        "samples": 8565,
+        "valid_standing": 8565,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "PRISON": {
+      "before": {
+        "flat_links": 36,
+        "pass_both_directions": 36
+      },
+      "after": {
+        "flat_links": 36,
+        "pass_both_directions": 36
+      },
+      "current_lanes": {
+        "samples": 7563,
+        "valid_standing": 7563,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "after": {
+        "flat_links": 43,
+        "pass_both_directions": 43
+      },
+      "current_lanes": {
+        "samples": 8376,
+        "valid_standing": 8376,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-03": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 4605,
+        "valid_standing": 4605,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-04": {
+      "before": {
+        "flat_links": 5,
+        "pass_both_directions": 5
+      },
+      "after": {
+        "flat_links": 5,
+        "pass_both_directions": 5
+      },
+      "current_lanes": {
+        "samples": 3441,
+        "valid_standing": 3441,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-05": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 4938,
+        "valid_standing": 4938,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 5196,
+        "valid_standing": 5196,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-07": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 3795,
+        "valid_standing": 3795,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "current_lanes": {
+        "samples": 5355,
+        "valid_standing": 5355,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 6087,
+        "valid_standing": 6087,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-10": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "current_lanes": {
+        "samples": 5283,
+        "valid_standing": 5283,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-11": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 4056,
+        "valid_standing": 4056,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 5289,
+        "valid_standing": 5289,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "after": {
+        "flat_links": 18,
+        "pass_both_directions": 18
+      },
+      "current_lanes": {
+        "samples": 5139,
+        "valid_standing": 5139,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-14": {
+      "before": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "after": {
+        "flat_links": 17,
+        "pass_both_directions": 17
+      },
+      "current_lanes": {
+        "samples": 2880,
+        "valid_standing": 2880,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-15": {
+      "before": {
+        "flat_links": 15,
+        "pass_both_directions": 15
+      },
+      "after": {
+        "flat_links": 15,
+        "pass_both_directions": 15
+      },
+      "current_lanes": {
+        "samples": 3843,
+        "valid_standing": 3843,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-16": {
+      "before": {
+        "flat_links": 22,
+        "pass_both_directions": 22
+      },
+      "after": {
+        "flat_links": 22,
+        "pass_both_directions": 22
+      },
+      "current_lanes": {
+        "samples": 3438,
+        "valid_standing": 3438,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-17": {
+      "before": {
+        "flat_links": 12,
+        "pass_both_directions": 12
+      },
+      "after": {
+        "flat_links": 12,
+        "pass_both_directions": 12
+      },
+      "current_lanes": {
+        "samples": 2871,
+        "valid_standing": 2857,
+        "invalid_standing": 14,
+        "reasons": {
+          "NO_FOOT_SUPPORT_0.0_-0.22": 3,
+          "PHYSICAL_COMPONENT": 11
+        },
+        "physical_components": [
+          [
+            "Rebuilt stair WLD-17 route-11 flight0 part1",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-17 route-12 flight0 part1",
+            4
+          ],
+          [
+            "163:route-10 flight0 step2",
+            3
+          ]
+        ]
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "after": {
+        "flat_links": 14,
+        "pass_both_directions": 14
+      },
+      "current_lanes": {
+        "samples": 3990,
+        "valid_standing": 3990,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "before": {
+        "flat_links": 24,
+        "pass_both_directions": 24
+      },
+      "after": {
+        "flat_links": 24,
+        "pass_both_directions": 24
+      },
+      "current_lanes": {
+        "samples": 6705,
+        "valid_standing": 6705,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "ACADEMY": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-interface-construction-pass/academy/construction.json",
+        "contract_sha256": "cc21aa748af7edd690b663d46afd162f3d61d0cef9cdb0bb7dd7be5452e182a5",
+        "layout": "development/levels/rebuild/stair-interface-construction-pass/academy/authored-layout.json",
+        "layout_sha256": "c8c6c28fdd24ec0f792105045dccc33790818690195251c1fb13a841049d8b49",
+        "native": "development/levels/rebuild/stair-interface-construction-pass/academy/joined-stairs.hcs2",
+        "native_sha256": "954a3d3d5f74394f4c3fb8077371ac3537e73e0d5f5118370943c157daca99ea"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/construction.json",
+        "contract_sha256": "d6b8065d92f6caf61b6f4c546ff0f81706f9535460a5945aac2d241fd30c9ef0",
+        "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/authored-layout.json",
+        "layout_sha256": "a0aac3f558e46449f2744ecabde6407120edb3b3115c0b5e4e1dbb5b234f6669",
+        "native": "development/levels/rebuild/flush-porch-and-threshold-pass/academy/surveyed-thresholds.hcs2",
+        "native_sha256": "954a3d3d5f74394f4c3fb8077371ac3537e73e0d5f5118370943c157daca99ea"
+      }
+    },
+    "ASYLUM": {
+      "before": {
+        "contract": "development/levels/rebuild/institution-earthworks-pass/asylum/construction.json",
+        "contract_sha256": "5ce9a4bd9d3d133e7648f24cbbc926c61f6eb62956a5c002f5b9f7bbd9641796",
+        "layout": "development/levels/rebuild/institution-earthworks-pass/asylum/authored-layout.json",
+        "layout_sha256": "2953f04e828ea4b5367b39f3355ba803f0ad0114f0c77e7e462d7fd3e7fd44e9",
+        "native": "development/levels/rebuild/institution-earthworks-pass/asylum/saved-earthworks.hcs2",
+        "native_sha256": "ee36e88718b20d74d9baa0fc62b132684ab9ce45e6087fc74cebdbf7d9a93fb9"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/construction.json",
+        "contract_sha256": "e90cef18e06d3ee7877c7c648a30a73c259030e93d5cf63fdb373fba7eeb52ed",
+        "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/authored-layout.json",
+        "layout_sha256": "d07b86884bdd431363e2f4ba3cd50e9e9bfdc95c1efda9a5f2c37a515b94f9e0",
+        "native": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/surveyed-thresholds.hcs2",
+        "native_sha256": "ee36e88718b20d74d9baa0fc62b132684ab9ce45e6087fc74cebdbf7d9a93fb9"
+      }
+    },
+    "CHURCH": {
+      "before": {
+        "contract": "development/levels/rebuild/native-foyer-door-pass/church/construction.json",
+        "contract_sha256": "493db34007c225e700d571d59de3120618011bbbc62d232e36988667ba5ceeee",
+        "layout": "development/levels/rebuild/native-foyer-door-pass/church/authored-layout.json",
+        "layout_sha256": "5fc8bd682d042ca70b84d449a4dcc2b997cdbd14ec1d07306cb4543df64577b9",
+        "native": "development/levels/rebuild/native-foyer-door-pass/church/fitted-approaches.hcs2",
+        "native_sha256": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/native-foyer-door-pass/church/construction.json",
+        "contract_sha256": "493db34007c225e700d571d59de3120618011bbbc62d232e36988667ba5ceeee",
+        "layout": "development/levels/rebuild/native-foyer-door-pass/church/authored-layout.json",
+        "layout_sha256": "5fc8bd682d042ca70b84d449a4dcc2b997cdbd14ec1d07306cb4543df64577b9",
+        "native": "development/levels/rebuild/native-foyer-door-pass/church/fitted-approaches.hcs2",
+        "native_sha256": "f9514ce4f84ff3df798b870ac61161e6cc7d2d663d5fe4f2ba5d1e38ad900f82"
+      }
+    },
+    "COLLEGE": {
+      "before": {
+        "contract": "development/levels/rebuild/college-ground-pass/college/construction.json",
+        "contract_sha256": "36956f2be71f81ce3032dd1d4b2f178fc24de8a74f10ee184778ade363644f2e",
+        "layout": "development/levels/rebuild/college-ground-pass/college/authored-layout.json",
+        "layout_sha256": "d2cb5341768ebdd586f75a3981745ece9a78a09433f7214636957eaed2f642ad",
+        "native": "development/levels/rebuild/college-ground-pass/college/campus-grounds.hcs2",
+        "native_sha256": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/college-ground-pass/college/construction.json",
+        "contract_sha256": "36956f2be71f81ce3032dd1d4b2f178fc24de8a74f10ee184778ade363644f2e",
+        "layout": "development/levels/rebuild/college-ground-pass/college/authored-layout.json",
+        "layout_sha256": "d2cb5341768ebdd586f75a3981745ece9a78a09433f7214636957eaed2f642ad",
+        "native": "development/levels/rebuild/college-ground-pass/college/campus-grounds.hcs2",
+        "native_sha256": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768"
+      }
+    },
+    "FARMHOUSE": {
+      "before": {
+        "contract": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/construction.json",
+        "contract_sha256": "d0284dd7aea702850cc0c306c2dd9ecd9b91b117a63499425a4b29a8007ae52e",
+        "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/authored-layout.json",
+        "layout_sha256": "9d49fbd2fe2012705a6f7f57094076273548d5604fae3ccf469e738593aac192",
+        "native": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.hcs2",
+        "native_sha256": "042f0ab01cd546fe561173102255e0d53b5cf505f8b8d630686d5986a3bc3810"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/construction.json",
+        "contract_sha256": "d0284dd7aea702850cc0c306c2dd9ecd9b91b117a63499425a4b29a8007ae52e",
+        "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/authored-layout.json",
+        "layout_sha256": "9d49fbd2fe2012705a6f7f57094076273548d5604fae3ccf469e738593aac192",
+        "native": "development/levels/rebuild/measured-arrival-and-approach-pass/farmhouse/measured-architecture.hcs2",
+        "native_sha256": "042f0ab01cd546fe561173102255e0d53b5cf505f8b8d630686d5986a3bc3810"
+      }
+    },
+    "MANSION": {
+      "before": {
+        "contract": "development/levels/rebuild/interior-stair-landing-pass/mansion/construction.json",
+        "contract_sha256": "fe9560b8c2cb6dd3ec5d4d3be79482cc1fcf7af478880983763437ca75c6ed9d",
+        "layout": "development/levels/rebuild/interior-stair-landing-pass/mansion/authored-layout.json",
+        "layout_sha256": "941b29b1bfeabb850ad28bd96eb61d6f45fc618289c13542773239f01630b2e6",
+        "native": "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.hcs2",
+        "native_sha256": "667917ce7806310b8d44c63418bf4066a5e6ea68771c4e42f53d57650e173dee"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/interior-stair-landing-pass/mansion/construction.json",
+        "contract_sha256": "fe9560b8c2cb6dd3ec5d4d3be79482cc1fcf7af478880983763437ca75c6ed9d",
+        "layout": "development/levels/rebuild/interior-stair-landing-pass/mansion/authored-layout.json",
+        "layout_sha256": "941b29b1bfeabb850ad28bd96eb61d6f45fc618289c13542773239f01630b2e6",
+        "native": "development/levels/rebuild/interior-stair-landing-pass/mansion/interior-stair-landings.hcs2",
+        "native_sha256": "667917ce7806310b8d44c63418bf4066a5e6ea68771c4e42f53d57650e173dee"
+      }
+    },
+    "PRISON": {
+      "before": {
+        "contract": "development/levels/rebuild/stair-cell-construction-pass/prison/construction.json",
+        "contract_sha256": "81b5164a3a5e93272852b20d0308ae2616614d281f283c77b525fca6b1a4f99e",
+        "layout": "development/levels/rebuild/stair-cell-construction-pass/prison/authored-layout.json",
+        "layout_sha256": "276b327e6e015f0383e5b2f0c4a9307b830f72a37d244a8e328e0d4d6c9b5972",
+        "native": "development/levels/rebuild/stair-cell-construction-pass/prison/constructed-cells.hcs2",
+        "native_sha256": "6791f0e6cd2e8fe12fb58fa1210ed5f075b034a1cbc9b378c9358b9278c7077d"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/construction.json",
+        "contract_sha256": "dff52e20e95c9def9115def9813fbc7a15704c9d67d71a80fb523a543be95231",
+        "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/authored-layout.json",
+        "layout_sha256": "2ac5dd668521b115a9fc93146eee16856b69512af4faff66117a0c8d41406808",
+        "native": "development/levels/rebuild/flush-porch-and-threshold-pass/prison/surveyed-thresholds.hcs2",
+        "native_sha256": "6791f0e6cd2e8fe12fb58fa1210ed5f075b034a1cbc9b378c9358b9278c7077d"
+      }
+    },
+    "SCHOOL": {
+      "before": {
+        "contract": "development/levels/rebuild/measured-arrival-and-approach-pass/school/construction.json",
+        "contract_sha256": "7d734c0d7c08d675cab45c85142089aa954c66ac96a9ed85d5cbcc42adcde0fb",
+        "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/school/authored-layout.json",
+        "layout_sha256": "870e4232b1357508a48e3c9b466a3a1def070af4d7eeb64d3d8644448c5f3b09",
+        "native": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.hcs2",
+        "native_sha256": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/measured-arrival-and-approach-pass/school/construction.json",
+        "contract_sha256": "7d734c0d7c08d675cab45c85142089aa954c66ac96a9ed85d5cbcc42adcde0fb",
+        "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/school/authored-layout.json",
+        "layout_sha256": "870e4232b1357508a48e3c9b466a3a1def070af4d7eeb64d3d8644448c5f3b09",
+        "native": "development/levels/rebuild/measured-arrival-and-approach-pass/school/measured-architecture.hcs2",
+        "native_sha256": "edc646bb3662c1e15b2a77135cc1f9d2b79b6f41fc8e633ec0b1afe9ea9fb865"
+      }
+    },
+    "WLD-03": {
+      "before": {
+        "contract": "development/levels/rebuild/canyon-marsh-pass/wld-03/construction.json",
+        "contract_sha256": "78985f659b930dfea08b8f3e33fc95f7a1cf467a45ad028d04ab7e64bcf63d92",
+        "layout": "development/levels/rebuild/canyon-marsh-pass/wld-03/authored-layout.json",
+        "layout_sha256": "4c9982ac2e8afb0aeef1ab59ad133a5e8addce5f66b656c43aaf1cdfab5e84bb",
+        "native": "development/levels/rebuild/canyon-marsh-pass/wld-03/canyon-marsh.hcs2",
+        "native_sha256": "a489b1480fc43b74f530a01c7d5839a87c6b1d779a0afbd7cbb747bb73b166e1"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/canyon-marsh-pass/wld-03/construction.json",
+        "contract_sha256": "78985f659b930dfea08b8f3e33fc95f7a1cf467a45ad028d04ab7e64bcf63d92",
+        "layout": "development/levels/rebuild/canyon-marsh-pass/wld-03/authored-layout.json",
+        "layout_sha256": "4c9982ac2e8afb0aeef1ab59ad133a5e8addce5f66b656c43aaf1cdfab5e84bb",
+        "native": "development/levels/rebuild/canyon-marsh-pass/wld-03/canyon-marsh.hcs2",
+        "native_sha256": "a489b1480fc43b74f530a01c7d5839a87c6b1d779a0afbd7cbb747bb73b166e1"
+      }
+    },
+    "WLD-04": {
+      "before": {
+        "contract": "development/levels/rebuild/lookout-landing-pass/wld-04/construction.json",
+        "contract_sha256": "1e067e50de9d90c77908e03aaeb35babba65eaa7f63b34a203d57fe41409e22c",
+        "layout": "development/levels/rebuild/lookout-landing-pass/wld-04/authored-layout.json",
+        "layout_sha256": "bd22cf4fa213a76407a45608d8f178b3c7991d7f1c8e31a042864ca8aba7736f",
+        "native": "development/levels/rebuild/lookout-landing-pass/wld-04/lookout-landings.hcs2",
+        "native_sha256": "26de207fb6ea651786cd91a4ebc6d44d8f7c263c4cfeb350f7e6b0e5374aa8be"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/lookout-landing-pass/wld-04/construction.json",
+        "contract_sha256": "1e067e50de9d90c77908e03aaeb35babba65eaa7f63b34a203d57fe41409e22c",
+        "layout": "development/levels/rebuild/lookout-landing-pass/wld-04/authored-layout.json",
+        "layout_sha256": "bd22cf4fa213a76407a45608d8f178b3c7991d7f1c8e31a042864ca8aba7736f",
+        "native": "development/levels/rebuild/lookout-landing-pass/wld-04/lookout-landings.hcs2",
+        "native_sha256": "26de207fb6ea651786cd91a4ebc6d44d8f7c263c4cfeb350f7e6b0e5374aa8be"
+      }
+    },
+    "WLD-05": {
+      "before": {
+        "contract": "development/levels/rebuild/mine-yard-pass/wld-05/construction.json",
+        "contract_sha256": "1fe6fb503fa5980e644e5b0dbddc3429f0b7e27bc80fc6a57c582adc42850c43",
+        "layout": "development/levels/rebuild/mine-yard-pass/wld-05/authored-layout.json",
+        "layout_sha256": "e1b4884ee2e2ee6c6756433a384c61a58253ba2f11a9b14b44964ceb27ce25d4",
+        "native": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.hcs2",
+        "native_sha256": "892154e00cb1f7186e283a13a82e47d00febbddc0101f3f9060be4654919d94c"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/mine-yard-pass/wld-05/construction.json",
+        "contract_sha256": "1fe6fb503fa5980e644e5b0dbddc3429f0b7e27bc80fc6a57c582adc42850c43",
+        "layout": "development/levels/rebuild/mine-yard-pass/wld-05/authored-layout.json",
+        "layout_sha256": "e1b4884ee2e2ee6c6756433a384c61a58253ba2f11a9b14b44964ceb27ce25d4",
+        "native": "development/levels/rebuild/mine-yard-pass/wld-05/mine-yard.hcs2",
+        "native_sha256": "892154e00cb1f7186e283a13a82e47d00febbddc0101f3f9060be4654919d94c"
+      }
+    },
+    "WLD-06": {
+      "before": {
+        "contract": "development/levels/rebuild/native-foyer-door-pass/wld-06/construction.json",
+        "contract_sha256": "fabf8c3be55742667bc9aefa2723af17d1aad36b089eafbe03da93492919a0ce",
+        "layout": "development/levels/rebuild/native-foyer-door-pass/wld-06/authored-layout.json",
+        "layout_sha256": "7b9030890de464421b6c957cd888a157d20b87936868523808b4b08a8ae2d719",
+        "native": "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.hcs2",
+        "native_sha256": "f252b1ccd7f9a043aa5bf58dce841ec31557f3a6f9546d0f6f7a259f4b70d252"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/native-foyer-door-pass/wld-06/construction.json",
+        "contract_sha256": "fabf8c3be55742667bc9aefa2723af17d1aad36b089eafbe03da93492919a0ce",
+        "layout": "development/levels/rebuild/native-foyer-door-pass/wld-06/authored-layout.json",
+        "layout_sha256": "7b9030890de464421b6c957cd888a157d20b87936868523808b4b08a8ae2d719",
+        "native": "development/levels/rebuild/native-foyer-door-pass/wld-06/fitted-approaches.hcs2",
+        "native_sha256": "f252b1ccd7f9a043aa5bf58dce841ec31557f3a6f9546d0f6f7a259f4b70d252"
+      }
+    },
+    "WLD-07": {
+      "before": {
+        "contract": "development/levels/rebuild/cemetery-grounds-pass/wld-07/construction.json",
+        "contract_sha256": "0416fe2d3bd0674bcd3f7ead8deb71e5777b512626c7cc60e7c18720c3eb0a9c",
+        "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-layout.json",
+        "layout_sha256": "5e507a81bac767c0f3b48a88e20518303fd1cefdf8bfa60df146e5d51d18c8b1",
+        "native": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.hcs2",
+        "native_sha256": "bb378e3de593724d7a45163b151041e7287cd57fe90077dcda1d3e5701c2c6f4"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/cemetery-grounds-pass/wld-07/construction.json",
+        "contract_sha256": "0416fe2d3bd0674bcd3f7ead8deb71e5777b512626c7cc60e7c18720c3eb0a9c",
+        "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-layout.json",
+        "layout_sha256": "5e507a81bac767c0f3b48a88e20518303fd1cefdf8bfa60df146e5d51d18c8b1",
+        "native": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.hcs2",
+        "native_sha256": "bb378e3de593724d7a45163b151041e7287cd57fe90077dcda1d3e5701c2c6f4"
+      }
+    },
+    "WLD-08": {
+      "before": {
+        "contract": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/construction.json",
+        "contract_sha256": "2137ff6a7022dc358700bae0c542713e530e6f511e44a03cd0afd7d5f71836b0",
+        "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/authored-layout.json",
+        "layout_sha256": "afa6c3c3aadc5f47d34d6790dc80f6c96686bc690c587280aa58a8ed48a0f53d",
+        "native": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.hcs2",
+        "native_sha256": "cb13ae092e0eaf67650a48817dbd84ebe0240a38a0127e2f273e61f9fd1ae66c"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/construction.json",
+        "contract_sha256": "2137ff6a7022dc358700bae0c542713e530e6f511e44a03cd0afd7d5f71836b0",
+        "layout": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/authored-layout.json",
+        "layout_sha256": "afa6c3c3aadc5f47d34d6790dc80f6c96686bc690c587280aa58a8ed48a0f53d",
+        "native": "development/levels/rebuild/measured-arrival-and-approach-pass/wld-08/measured-architecture.hcs2",
+        "native_sha256": "cb13ae092e0eaf67650a48817dbd84ebe0240a38a0127e2f273e61f9fd1ae66c"
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "contract": "development/levels/rebuild/dam-east-hall-pass/wld-09/construction.json",
+        "contract_sha256": "9153641e4ce904485903c01bc01ab201617d14a28d003cf962972e77fa5f0b2d",
+        "layout": "development/levels/rebuild/dam-east-hall-pass/wld-09/authored-layout.json",
+        "layout_sha256": "85081e1de6fd6282c514f20e07f91b10e4126d6b37e04dd7879099412d6d6576",
+        "native": "development/levels/rebuild/dam-east-hall-pass/wld-09/east-hall-bearings.hcs2",
+        "native_sha256": "f2aff54d45c3671868a5fc34c278c1b3ed18e9672c05550b75a4753dd4b4ead9"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/dam-east-hall-pass/wld-09/construction.json",
+        "contract_sha256": "9153641e4ce904485903c01bc01ab201617d14a28d003cf962972e77fa5f0b2d",
+        "layout": "development/levels/rebuild/dam-east-hall-pass/wld-09/authored-layout.json",
+        "layout_sha256": "85081e1de6fd6282c514f20e07f91b10e4126d6b37e04dd7879099412d6d6576",
+        "native": "development/levels/rebuild/dam-east-hall-pass/wld-09/east-hall-bearings.hcs2",
+        "native_sha256": "f2aff54d45c3671868a5fc34c278c1b3ed18e9672c05550b75a4753dd4b4ead9"
+      }
+    },
+    "WLD-10": {
+      "before": {
+        "contract": "development/levels/rebuild/monastery-cloister-pass/wld-10/construction.json",
+        "contract_sha256": "47983844c7db185dbcfaa528177c3ca32e2c09db2f7a23990a6b1ed5470c318b",
+        "layout": "development/levels/rebuild/monastery-cloister-pass/wld-10/authored-layout.json",
+        "layout_sha256": "a7d8cc1582ba87b1c6569fae9c659a3662d108ae72fd2e2d5e4d406f159d8b2f",
+        "native": "development/levels/rebuild/monastery-cloister-pass/wld-10/monastery-cloister.hcs2",
+        "native_sha256": "0c7acf61448a2bea8af7a03ee18af666c58e26a0b1d189b4f9ab40e3fbd0ed8e"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/monastery-cloister-pass/wld-10/construction.json",
+        "contract_sha256": "47983844c7db185dbcfaa528177c3ca32e2c09db2f7a23990a6b1ed5470c318b",
+        "layout": "development/levels/rebuild/monastery-cloister-pass/wld-10/authored-layout.json",
+        "layout_sha256": "a7d8cc1582ba87b1c6569fae9c659a3662d108ae72fd2e2d5e4d406f159d8b2f",
+        "native": "development/levels/rebuild/monastery-cloister-pass/wld-10/monastery-cloister.hcs2",
+        "native_sha256": "0c7acf61448a2bea8af7a03ee18af666c58e26a0b1d189b4f9ab40e3fbd0ed8e"
+      }
+    },
+    "WLD-11": {
+      "before": {
+        "contract": "development/levels/rebuild/canyon-marsh-pass/wld-11/construction.json",
+        "contract_sha256": "8910d96921d38dbbc5ad2804b8384b03008b9b3819cc95768b0b20ae4dac5e41",
+        "layout": "development/levels/rebuild/canyon-marsh-pass/wld-11/authored-layout.json",
+        "layout_sha256": "484bb5e0ce6c7559a4dfb89804a95bc22314a365dcd5409806c3d68aa0549b01",
+        "native": "development/levels/rebuild/canyon-marsh-pass/wld-11/canyon-marsh.hcs2",
+        "native_sha256": "2867a8e7895a6a70c3ec2bc09491bb3034a4805854592e18fbded49cad99d8ca"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/canyon-marsh-pass/wld-11/construction.json",
+        "contract_sha256": "8910d96921d38dbbc5ad2804b8384b03008b9b3819cc95768b0b20ae4dac5e41",
+        "layout": "development/levels/rebuild/canyon-marsh-pass/wld-11/authored-layout.json",
+        "layout_sha256": "484bb5e0ce6c7559a4dfb89804a95bc22314a365dcd5409806c3d68aa0549b01",
+        "native": "development/levels/rebuild/canyon-marsh-pass/wld-11/canyon-marsh.hcs2",
+        "native_sha256": "2867a8e7895a6a70c3ec2bc09491bb3034a4805854592e18fbded49cad99d8ca"
+      }
+    },
+    "WLD-12": {
+      "before": {
+        "contract": "development/levels/rebuild/workyard-station-pass/wld-12/construction.json",
+        "contract_sha256": "012b6519d8533c49e728063fb313ac5e5d185d6da0d13f1e8285d5cced734295",
+        "layout": "development/levels/rebuild/workyard-station-pass/wld-12/authored-layout.json",
+        "layout_sha256": "7cf29de2df23931406983621a0c808e29b0973bed031db969052593d71716730",
+        "native": "development/levels/rebuild/workyard-station-pass/wld-12/workyard-station.hcs2",
+        "native_sha256": "4cd10a7f7086c0e769103fc504ae164b7ebc5fa19b766d700dfbf117e59dc424"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/workyard-station-pass/wld-12/construction.json",
+        "contract_sha256": "012b6519d8533c49e728063fb313ac5e5d185d6da0d13f1e8285d5cced734295",
+        "layout": "development/levels/rebuild/workyard-station-pass/wld-12/authored-layout.json",
+        "layout_sha256": "7cf29de2df23931406983621a0c808e29b0973bed031db969052593d71716730",
+        "native": "development/levels/rebuild/workyard-station-pass/wld-12/workyard-station.hcs2",
+        "native_sha256": "4cd10a7f7086c0e769103fc504ae164b7ebc5fa19b766d700dfbf117e59dc424"
+      }
+    },
+    "WLD-13": {
+      "before": {
+        "contract": "development/levels/rebuild/workyard-station-pass/wld-13/construction.json",
+        "contract_sha256": "04bb402d3f8109e762aa6ebac4d235f7225b21e1135f388fb1c594675c7868b6",
+        "layout": "development/levels/rebuild/workyard-station-pass/wld-13/authored-layout.json",
+        "layout_sha256": "12c5783d50d43b56ca67e7ae5107c637c3988e64924b035a70bb5d5879b9837a",
+        "native": "development/levels/rebuild/workyard-station-pass/wld-13/workyard-station.hcs2",
+        "native_sha256": "c0f2810f1bd0d1b7f8f055c3c659c3184bf0d4971f19f49410839faa49e9f11f"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/workyard-station-pass/wld-13/construction.json",
+        "contract_sha256": "04bb402d3f8109e762aa6ebac4d235f7225b21e1135f388fb1c594675c7868b6",
+        "layout": "development/levels/rebuild/workyard-station-pass/wld-13/authored-layout.json",
+        "layout_sha256": "12c5783d50d43b56ca67e7ae5107c637c3988e64924b035a70bb5d5879b9837a",
+        "native": "development/levels/rebuild/workyard-station-pass/wld-13/workyard-station.hcs2",
+        "native_sha256": "c0f2810f1bd0d1b7f8f055c3c659c3184bf0d4971f19f49410839faa49e9f11f"
+      }
+    },
+    "WLD-14": {
+      "before": {
+        "contract": "development/levels/rebuild/coast-entrances-pass/wld-14/construction.json",
+        "contract_sha256": "6d06ad81545bd51166a32085fc71c037b5a9ce1a9bfbd27c4d5086af77f8fd68",
+        "layout": "development/levels/rebuild/coast-entrances-pass/wld-14/authored-layout.json",
+        "layout_sha256": "3e004cf4ac5b6f4a0efc6b82a3aa4c6465a8536fd44a32a0c411b8efef5980e9",
+        "native": "development/levels/rebuild/coast-entrances-pass/wld-14/coast-entrances.hcs2",
+        "native_sha256": "546bff4601ddf038e4efa0463f359cf4bd4b6e3f1fe99417a972563e2c6e41f0"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/coast-entrances-pass/wld-14/construction.json",
+        "contract_sha256": "6d06ad81545bd51166a32085fc71c037b5a9ce1a9bfbd27c4d5086af77f8fd68",
+        "layout": "development/levels/rebuild/coast-entrances-pass/wld-14/authored-layout.json",
+        "layout_sha256": "3e004cf4ac5b6f4a0efc6b82a3aa4c6465a8536fd44a32a0c411b8efef5980e9",
+        "native": "development/levels/rebuild/coast-entrances-pass/wld-14/coast-entrances.hcs2",
+        "native_sha256": "546bff4601ddf038e4efa0463f359cf4bd4b6e3f1fe99417a972563e2c6e41f0"
+      }
+    },
+    "WLD-15": {
+      "before": {
+        "contract": "development/levels/rebuild/coast-entrances-pass/wld-15/construction.json",
+        "contract_sha256": "08863124fc1e145446435beca5dfac5fd22784525cb04ee2308cb6791682e59a",
+        "layout": "development/levels/rebuild/coast-entrances-pass/wld-15/authored-layout.json",
+        "layout_sha256": "d389c14e47618257dfe6a890dc0541cb3cb2e4e24fc2af80f05f13f2873c1d18",
+        "native": "development/levels/rebuild/coast-entrances-pass/wld-15/coast-entrances.hcs2",
+        "native_sha256": "1383ce663a5678bb3eafca6e61730d9c3ac8b3d1f250f14fec29e804486cff8e"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/coast-entrances-pass/wld-15/construction.json",
+        "contract_sha256": "08863124fc1e145446435beca5dfac5fd22784525cb04ee2308cb6791682e59a",
+        "layout": "development/levels/rebuild/coast-entrances-pass/wld-15/authored-layout.json",
+        "layout_sha256": "d389c14e47618257dfe6a890dc0541cb3cb2e4e24fc2af80f05f13f2873c1d18",
+        "native": "development/levels/rebuild/coast-entrances-pass/wld-15/coast-entrances.hcs2",
+        "native_sha256": "1383ce663a5678bb3eafca6e61730d9c3ac8b3d1f250f14fec29e804486cff8e"
+      }
+    },
+    "WLD-16": {
+      "before": {
+        "contract": "development/levels/rebuild/native-foyer-door-pass/wld-16/construction.json",
+        "contract_sha256": "c2af78b01356e276c262ec258dbff6a7f71089600e7d3792e3aa3ba2c2605b3d",
+        "layout": "development/levels/rebuild/native-foyer-door-pass/wld-16/authored-layout.json",
+        "layout_sha256": "1ffaa1194008dce75a7ff457f53168c0e7f72d0a0c3658e625c6eb881ad40f8e",
+        "native": "development/levels/rebuild/native-foyer-door-pass/wld-16/fitted-approaches.hcs2",
+        "native_sha256": "fbe5f3d984b059456fa7dbc368c8c4001ea3679f6fc872d20a100913c9455eb9"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/native-foyer-door-pass/wld-16/construction.json",
+        "contract_sha256": "c2af78b01356e276c262ec258dbff6a7f71089600e7d3792e3aa3ba2c2605b3d",
+        "layout": "development/levels/rebuild/native-foyer-door-pass/wld-16/authored-layout.json",
+        "layout_sha256": "1ffaa1194008dce75a7ff457f53168c0e7f72d0a0c3658e625c6eb881ad40f8e",
+        "native": "development/levels/rebuild/native-foyer-door-pass/wld-16/fitted-approaches.hcs2",
+        "native_sha256": "fbe5f3d984b059456fa7dbc368c8c4001ea3679f6fc872d20a100913c9455eb9"
+      }
+    },
+    "WLD-17": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/wld-17/construction.json",
+        "contract_sha256": "7fe44efb76ffff6059cee427415f591503b51c2286d51037b1a63f7559a16e9a",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-17/authored-layout.json",
+        "layout_sha256": "bf10438c0785f251426e68048a315a9bf3c8fb68c8a4e6d8e21f663c6e9f8639",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.hcs2",
+        "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/wld-17/construction.json",
+        "contract_sha256": "7fe44efb76ffff6059cee427415f591503b51c2286d51037b1a63f7559a16e9a",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-17/authored-layout.json",
+        "layout_sha256": "bf10438c0785f251426e68048a315a9bf3c8fb68c8a4e6d8e21f663c6e9f8639",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.hcs2",
+        "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c"
+      }
+    },
+    "WLD-18": {
+      "before": {
+        "contract": "development/levels/rebuild/service-portal-construction-pass/wld-18/construction.json",
+        "contract_sha256": "8c3bf39eb2a9ab2aa0bd4ce36dc5d5b7467ca50d32cc971cb817b31983877069",
+        "layout": "development/levels/rebuild/service-portal-construction-pass/wld-18/authored-layout.json",
+        "layout_sha256": "0d3c7097b0c374258c2c7f7a68a36b7427317fa599a2d7098669486fc39e8f4c",
+        "native": "development/levels/rebuild/service-portal-construction-pass/wld-18/clean-doorways.hcs2",
+        "native_sha256": "4196a2394355763752a3ef1d62425e3d4579c895469b931e61da6da50ed20f5b"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/construction.json",
+        "contract_sha256": "765b94a1a7cd43f6daff48666e48622a71ab0e4a4c92a5b5c0ec201e1e078d39",
+        "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/authored-layout.json",
+        "layout_sha256": "25762edbc49fc1e3480123bd09e801a946c0b40887264610ae9fe6cd95c7d16e",
+        "native": "development/levels/rebuild/flush-porch-and-threshold-pass/wld-18/surveyed-thresholds.hcs2",
+        "native_sha256": "4196a2394355763752a3ef1d62425e3d4579c895469b931e61da6da50ed20f5b"
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "before": {
+        "contract": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/construction.json",
+        "contract_sha256": "dd1c196d966c04feebd58a02d3da29dff4c849f48ddcf31d45869a86b41c98b1",
+        "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-layout.json",
+        "layout_sha256": "4a021c79f3fb595440bd53663d06f98000e4ef74f675df8dbc413e926501e404",
+        "native": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-grounds.hcs2",
+        "native_sha256": "3a27ce278fe7acc0a44a9bdb16cf6bb9c0c0f8f061999ef4f7f3ca97e5a3c695"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/construction.json",
+        "contract_sha256": "dd1c196d966c04feebd58a02d3da29dff4c849f48ddcf31d45869a86b41c98b1",
+        "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-layout.json",
+        "layout_sha256": "4a021c79f3fb595440bd53663d06f98000e4ef74f675df8dbc413e926501e404",
+        "native": "development/levels/rebuild/cemetery-grounds-pass/wld-07-mortuary/authored-grounds.hcs2",
+        "native_sha256": "3a27ce278fe7acc0a44a9bdb16cf6bb9c0c0f8f061999ef4f7f3ca97e5a3c695"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "5c13704ab659a7518088419616b23c2ffce34dbd72f3a707b0da3671418be453",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/native-foyer-door-pass/roster.json": "029b4119a4ff4829658d9644cabb262ba8cb88bbaabf8959af175922a2ed7237"
+  },
+  "evidence_hashes": {
+    "build/flush-porch/full-flat/current-flat-failure-contacts.tsv": "7a1106248a592a6af83e2f742400edc0e8922475dd49a892ad2e146362be398e",
+    "build/flush-porch/full-flat/current-flat-failure-input.tsv": "b0b47a0ee4e57788fdf2507554ca0a300e93b0abc03bbcaa8853199d6fcbd76c",
+    "build/flush-porch/full-flat/current-flat-lane-input.tsv": "4417e1cb9913c0d594ae214f503ee9e0b1fc7f5369b7f3e616678de0b7db0c2f",
+    "build/flush-porch/full-flat/current-flat-lane-names.tsv": "8d39b1b8a30e787e38eda4aba0a77c9306117533b523f03e76715722d69d9a86",
+    "build/flush-porch/full-flat/current-flat-lanes.tsv": "e9a0cdff40e5b12cc1fef56e57bb1f3635d56f60e51387883f05a3c2324bd69f",
+    "build/flush-porch/full-flat/current-flat-links.tsv": "edff99b09c76ab8a6e9b76a14d09f00527f3e90abab0872315676de7d3ecb45b",
+    "build/flush-porch/full-flat/current-flat-names.tsv": "8d39b1b8a30e787e38eda4aba0a77c9306117533b523f03e76715722d69d9a86",
+    "build/flush-porch/full-flat/current-flat-paths.tsv": "ea4278ab903c8386bb7accd7c78a1068325040ea7fa513b6218cff60f5854b87"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

@@ -1,0 +1,43 @@
+{
+  "glb_sha256": "27f29f6b208ec6b95103765e309783931bcf3b97a78ec225f34a709c123e6781",
+  "native_sha256": "546bff4601ddf038e4efa0463f359cf4bd4b6e3f1fe99417a972563e2c6e41f0",
+  "added_closed_parts": 91,
+  "retained_native_records": 642,
+  "aperture_rays": 54,
+  "sill_controls": 36,
+  "other_standing": 6,
+  "canonical_van_triangles": 2689,
+  "canonical_van_source": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/coast-entrances-batch/wld-14-overview.png",
+      "sha256": "7c7d2381b995ac0966e44440081fd06a155d8b1a25bba9c2128f9a07f4fc6c63",
+      "hidden": [],
+      "source_glb_sha256": "27f29f6b208ec6b95103765e309783931bcf3b97a78ec225f34a709c123e6781"
+    },
+    {
+      "path": "development/levels/rebuild/captures/coast-entrances-batch/wld-14-keeper-arrival.png",
+      "sha256": "751ea8a2c7fe491d8bbb353a7fb6434863a566037ca0199be9fff13634f78df2",
+      "hidden": [],
+      "source_glb_sha256": "27f29f6b208ec6b95103765e309783931bcf3b97a78ec225f34a709c123e6781"
+    },
+    {
+      "path": "development/levels/rebuild/captures/coast-entrances-batch/wld-14-oil-house-yard.png",
+      "sha256": "fb1c779ef04d49d2451040f1553e62f985109430c85f12c94e1c40d3a6b96f28",
+      "hidden": [],
+      "source_glb_sha256": "27f29f6b208ec6b95103765e309783931bcf3b97a78ec225f34a709c123e6781"
+    },
+    {
+      "path": "development/levels/rebuild/captures/coast-entrances-batch/wld-14-main-stair-landing.png",
+      "sha256": "61c1aea06aada985aa11660a783d8ff739fcd4df930e2101ce25a7ecef0a0bf8",
+      "hidden": [],
+      "source_glb_sha256": "27f29f6b208ec6b95103765e309783931bcf3b97a78ec225f34a709c123e6781"
+    },
+    {
+      "path": "development/levels/rebuild/captures/coast-entrances-batch/wld-14-tower-sill.png",
+      "sha256": "2f40102db61536785cc18de034f1afff3b2faa4ce32de2992a14dcd81963950c",
+      "hidden": [],
+      "source_glb_sha256": "27f29f6b208ec6b95103765e309783931bcf3b97a78ec225f34a709c123e6781"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "status": "PASS_SCOPED_SOURCE_SOLID_NATIVE_EDITABLE_CHECKS",
+  "sites": [
+    {
+      "id": "WLD-03",
+      "retained_source_meshes": 2,
+      "replaced_shell_parts": 1,
+      "closed_new_parts": 1,
+      "new_triangles": 40,
+      "independent_shaft_samples": 273,
+      "packed_images": 12,
+      "blend_sha256": "5ca9f11ac5b28d66eb40d77f092b78f86c9e3015babd6365e9a94c55ab1b69b0",
+      "glb_sha256": "141dbe4da15d1ff10059478606c00a86519fd3aeca39843d3db492273c1fffda",
+      "physics_sha256": "3ceb5739144d5a805f070e225019fa5ad01b52eaa72b7ec7da44bfc8af4237e4"
+    },
+    {
+      "id": "WLD-04",
+      "retained_source_meshes": 2,
+      "replaced_shell_parts": 1,
+      "closed_new_parts": 1,
+      "new_triangles": 36,
+      "independent_shaft_samples": 246,
+      "packed_images": 6,
+      "blend_sha256": "460e78a142a1c56e69379f3e2da0304c187d64f940031ef431fe29ce6ef49d04",
+      "glb_sha256": "1ce88b37867f4ca8b1a65398dca3a3b4f01565c246f81bd48037ccca6810c4de",
+      "physics_sha256": "8d7482e29fbbcdb5d4bd6008f9817a7b1a0f525baed5547f5b0de9c22e25cfd6"
+    },
+    {
+      "id": "WLD-05",
+      "retained_source_meshes": 2,
+      "replaced_shell_parts": 1,
+      "closed_new_parts": 1,
+      "new_triangles": 32,
+      "independent_shaft_samples": 288,
+      "packed_images": 12,
+      "blend_sha256": "cbb47980dcccd733523e3bad3e06b6d504e270756e0fd1edc6e340fcd7303188",
+      "glb_sha256": "f988ab35517dee90e7de0ff42cdfbae1c618534997e3449e7540d769abe48775",
+      "physics_sha256": "627ece13f6cf307e970fbb8dc5ad51fec70edac6e5280c24fd659999ee753780"
+    },
+    {
+      "id": "WLD-06",
+      "retained_source_meshes": 1,
+      "replaced_shell_parts": 2,
+      "closed_new_parts": 2,
+      "new_triangles": 80,
+      "independent_shaft_samples": 438,
+      "packed_images": 9,
+      "blend_sha256": "24b65b236461ecda35a74e1da2487aad7bffa2f4dc7ad317e7c453bfec091d7f",
+      "glb_sha256": "d5d32696363ceca0accdc61f924683d3519f715a83d6eeac5c71ff7e2b7e30cc",
+      "physics_sha256": "81a1c3cc7fa52ab16bb34e26084f149c964ef25d25d2ee997a9be886909e1956"
+    },
+    {
+      "id": "WLD-08",
+      "retained_source_meshes": -2,
+      "replaced_shell_parts": 5,
+      "closed_new_parts": 5,
+      "new_triangles": 156,
+      "independent_shaft_samples": 726,
+      "packed_images": 14,
+      "blend_sha256": "8d6220916ca824e9ffc8f538619c4c7c277c8ab4d67c840904f381bc13e56544",
+      "glb_sha256": "5847fa47893086dfe45c274e9df08b4562cc07bc6edcdfef26d3e5ff44ad853d",
+      "physics_sha256": "7c05868ea7e2e2bd70c9edbdc689b3285511f9017f030237fa98b484b0f30e99"
+    },
+    {
+      "id": "WLD-09",
+      "retained_source_meshes": -4,
+      "replaced_shell_parts": 7,
+      "closed_new_parts": 7,
+      "new_triangles": 280,
+      "independent_shaft_samples": 1635,
+      "packed_images": 12,
+      "blend_sha256": "6065f3324db9496a06f41f573e18b6e7b76f41089980059a1339d18a59a1235b",
+      "glb_sha256": "9abc8639c04cc23d8e2377f7a9408424e86ceeff1bd9829ef0aa36e74af0d885",
+      "physics_sha256": "2d45c79f8fc779e3d7524f34c0634f62ec566b801454bbaac248dc6ea3dca108"
+    },
+    {
+      "id": "WLD-13",
+      "retained_source_meshes": 2,
+      "replaced_shell_parts": 1,
+      "closed_new_parts": 1,
+      "new_triangles": 32,
+      "independent_shaft_samples": 138,
+      "packed_images": 11,
+      "blend_sha256": "6534340a59ba1b0016b05b1991875ba214786566debdc653b1e9d9f0b899ca16",
+      "glb_sha256": "191b5e8e3990565770e1c6c7213e56925a5a75d2fc182d3c6ecb1c59715f67a0",
+      "physics_sha256": "a619ca847615a001e3a6af167c715e166209650d9d9871cdb5bfa192627fe664"
+    },
+    {
+      "id": "WLD-18",
+      "retained_source_meshes": -8,
+      "replaced_shell_parts": 11,
+      "closed_new_parts": 11,
+      "new_triangles": 368,
+      "independent_shaft_samples": 1305,
+      "packed_images": 13,
+      "blend_sha256": "78b95de15c2e5eb442848b2ba026b97b5b0b3a1908daeb24bafa07f6e76e430f",
+      "glb_sha256": "445ff0760d4ad3287214c4d99969b494a4d993415737aa10a1a94a7fe102a4bc",
+      "physics_sha256": "355ab82aa8c178d34c779c8b48be4b57c7e6e7f22d0e97d938fb871c703669b0"
+    }
+  ],
+  "checker_sha256": "7641d2d5f46c65a334a78a0206ff7d381e21b519235ee9c9c2fd12038b16c822",
+  "limitations": "No full map, guard/support engineering, runtime/network or hardware acceptance."
+}

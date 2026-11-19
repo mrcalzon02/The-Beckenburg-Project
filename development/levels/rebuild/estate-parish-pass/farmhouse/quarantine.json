@@ -1,0 +1,325 @@
+{
+  "source": {
+    "id": "FARMHOUSE",
+    "construction": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/construction.json",
+    "layout": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/authored-layout.json",
+    "glb": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/authored-bays.glb",
+    "native": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/authored-bays.hcs2",
+    "blend": "development/levels/rebuild/household-sacred-bay-pass/farmhouse/authored-bays.blend",
+    "glb_sha256": "b637b12b0e330696ef84aeb7e0607917f62e0195c33116b6a95e2f11df2aa90d",
+    "native_sha256": "fcfe5fc44ab2764dabd544596567363c312bebbacfe83010a247a56fb5bbd707"
+  },
+  "retired": [
+    "Arrival end bearing FARMHOUSE 0",
+    "FARMHOUSE bay retained outside L02 support 1 region0",
+    "FARMHOUSE bay retained outside L02 support 1 region1",
+    "FARMHOUSE bay retained outside L03 support 0 region0",
+    "FARMHOUSE bay retained outside L03 support 0 region1",
+    "FARMHOUSE bay retained outside L11 support 1 region0",
+    "FARMHOUSE bay retained outside L23 support 0 region0",
+    "FARMHOUSE bay retained outside L30 support 0 region0",
+    "FARMHOUSE bay retained outside L33 support 0 region0",
+    "FARMHOUSE seated wall cap 4",
+    "FARMHOUSE seated wall cap 5",
+    "Flat route shell Wall barn-aisle N",
+    "Flat route shell Wall barn-aisle N.001",
+    "Flat route shell Wall laundry S",
+    "Flat route shell Wall laundry S.001",
+    "Flat route shell Wall mudroom S",
+    "Flat route shell Wall mudroom S.001",
+    "Flat route shell Wall prep N",
+    "Flat route shell Wall prep N.001",
+    "Header barn-aisle N",
+    "Header laundry S",
+    "Header mudroom S",
+    "Header prep N",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L11 support 0",
+    "L22 support 1",
+    "L22 support 2",
+    "L22 support 3",
+    "L30 support 1",
+    "Saved editor circulation terrain FARMHOUSE",
+    "Wall repair S"
+  ],
+  "superseded_guides": {
+    "L01": {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          26.0,
+          0,
+          44.0
+        ],
+        [
+          26,
+          0,
+          38
+        ],
+        [
+          26.5,
+          0,
+          42.0
+        ]
+      ],
+      "threshold": [
+        26,
+        0,
+        38
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L02": {
+      "id": "L02",
+      "a": "entry",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          26.5,
+          0,
+          42.0
+        ],
+        [
+          24,
+          0,
+          42.0
+        ],
+        [
+          24,
+          0,
+          34
+        ],
+        [
+          24,
+          0,
+          17.0
+        ],
+        [
+          25.5,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        24,
+        0,
+        34
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L03": {
+      "id": "L03",
+      "a": "grounds",
+      "b": "mudroom",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          23,
+          0,
+          28
+        ],
+        [
+          23.0,
+          0,
+          25.0
+        ]
+      ],
+      "threshold": [
+        23,
+        0,
+        28
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L11": {
+      "id": "L11",
+      "a": "prep",
+      "b": "grounds",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          17.5,
+          0,
+          11.5
+        ],
+        [
+          17,
+          0,
+          10
+        ],
+        [
+          25.5,
+          0,
+          17.0
+        ]
+      ],
+      "threshold": [
+        17,
+        0,
+        10
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L22": {
+      "id": "L22",
+      "a": "grounds",
+      "b": "barn-aisle",
+      "kind": "level",
+      "width": 2.4,
+      "points": [
+        [
+          28.5,
+          0,
+          16.5
+        ],
+        [
+          28.5,
+          0,
+          6.5
+        ],
+        [
+          37,
+          0,
+          6.5
+        ],
+        [
+          37,
+          0,
+          9
+        ],
+        [
+          37,
+          0,
+          16.5
+        ]
+      ],
+      "threshold": [
+        37,
+        0,
+        9
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L23": {
+      "id": "L23",
+      "a": "grounds",
+      "b": "barn-aisle",
+      "kind": "level",
+      "width": 2.4,
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          37,
+          0,
+          24
+        ],
+        [
+          37.0,
+          0,
+          16.5
+        ]
+      ],
+      "threshold": [
+        37,
+        0,
+        24
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L30": {
+      "id": "L30",
+      "a": "grounds",
+      "b": "repair",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          33,
+          0,
+          26
+        ],
+        [
+          33.5,
+          0,
+          29.5
+        ]
+      ],
+      "threshold": [
+        33,
+        0,
+        26
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    },
+    "L33": {
+      "id": "L33",
+      "a": "grounds",
+      "b": "laundry",
+      "kind": "level",
+      "width": 1.2,
+      "points": [
+        [
+          25.5,
+          0,
+          17.0
+        ],
+        [
+          29,
+          0,
+          33
+        ],
+        [
+          29.0,
+          0,
+          29.5
+        ]
+      ],
+      "threshold": [
+        29,
+        0,
+        33
+      ],
+      "access": "household",
+      "note": "Proposed opening; diagram connectivity is not actual capsule traversal.",
+      "player_access": "OPEN_ROUTE"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "site": "WLD-03",
+    "zone": "chamber",
+    "eye": [
+      74.0,
+      9.620000000000001,
+      13.0
+    ],
+    "target": [
+      74.0,
+      8.5,
+      4.8
+    ],
+    "pose_source": "Recovered actual native route probe: before invalid, after body/support valid"
+  },
+  {
+    "site": "WLD-04",
+    "zone": "ruin",
+    "eye": [
+      47.0,
+      7.62,
+      22.0
+    ],
+    "target": [
+      47.0,
+      6.5,
+      14.8
+    ],
+    "pose_source": "Recovered actual native route probe: before invalid, after body/support valid"
+  },
+  {
+    "site": "WLD-09",
+    "zone": "plant",
+    "eye": [
+      45.0,
+      -4.38,
+      15.0
+    ],
+    "target": [
+      45.0,
+      -5.5,
+      8.8
+    ],
+    "pose_source": "Authored inspection eye only; no avatar acceptance claim"
+  },
+  {
+    "site": "WLD-17",
+    "zone": "plant",
+    "eye": [
+      50.0,
+      1.62,
+      20.0
+    ],
+    "target": [
+      52.0,
+      0.5,
+      20.0
+    ],
+    "pose_source": "Recovered actual native route probe: before invalid, after body/support valid"
+  },
+  {
+    "site": "WLD-14",
+    "zone": "tower0",
+    "eye": [
+      32,
+      1.62,
+      10
+    ],
+    "target": [
+      32,
+      0.4,
+      5.9
+    ],
+    "pose_source": "Authored inspection eye only; no avatar acceptance claim"
+  }
+]

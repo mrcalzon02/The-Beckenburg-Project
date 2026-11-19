@@ -1,0 +1,52 @@
+{
+  "sites": {
+    "WLD-12": {
+      "profiles": 33,
+      "failed": []
+    },
+    "WLD-16": {
+      "profiles": 42,
+      "failed": [
+        "WLD-16-z-42-18-y0/center",
+        "WLD-16-z-42-18-y0/left",
+        "WLD-16-z-42-18-y0/right",
+        "WLD-16-z-50-18-y0/center",
+        "WLD-16-z-50-18-y0/left",
+        "WLD-16-z-50-18-y0/right",
+        "WLD-16-x-46-49-y0/center",
+        "WLD-16-x-46-49-y0/left",
+        "WLD-16-x-46-49-y0/right",
+        "WLD-16-x-13-22.5-y0/center",
+        "WLD-16-x-13-22.5-y0/left",
+        "WLD-16-x-13-22.5-y0/right",
+        "WLD-16-x-13-27.5-y0/center",
+        "WLD-16-x-13-27.5-y0/left",
+        "WLD-16-x-13-27.5-y0/right",
+        "WLD-16-x-13-32.5-y0/center",
+        "WLD-16-x-13-32.5-y0/left",
+        "WLD-16-x-13-32.5-y0/right",
+        "WLD-16-x-13-37.5-y0/center",
+        "WLD-16-x-13-37.5-y0/left",
+        "WLD-16-x-13-37.5-y0/right",
+        "WLD-16-x-39-22.5-y0/center",
+        "WLD-16-x-39-22.5-y0/left",
+        "WLD-16-x-39-22.5-y0/right",
+        "WLD-16-x-39-27.5-y0/center",
+        "WLD-16-x-39-27.5-y0/left",
+        "WLD-16-x-39-27.5-y0/right",
+        "WLD-16-x-39-32.5-y0/center",
+        "WLD-16-x-39-32.5-y0/left",
+        "WLD-16-x-39-32.5-y0/right",
+        "WLD-16-x-39-37.5-y0/center",
+        "WLD-16-x-39-37.5-y0/left",
+        "WLD-16-x-39-37.5-y0/right"
+      ]
+    },
+    "WLD-18": {
+      "profiles": 33,
+      "failed": []
+    }
+  },
+  "status": "MOTEL_TERRAIN_BLOCKERS_RETAINED_NOT_ACCEPTANCE",
+  "results_sha256": "1f903d5f21252e69b4d4776c6374fa58536dc07dbde0cef725cf266f5049ccac"
+}

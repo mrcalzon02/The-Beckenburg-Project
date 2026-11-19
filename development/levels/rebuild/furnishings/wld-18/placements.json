@@ -1,0 +1,147 @@
+{
+  "site": "WLD-18",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/wld-18/rough-layout.json",
+  "source_layout_sha256": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d",
+  "structure_glb_sha256": "61d9b3f46afb0c53d41b6923ab3d62b5e6870963468af8dfdabae71c177df4ad",
+  "furnished_glb_sha256": "a19b539b5712add8136ce780993b8322e3b38143590c364d6aa0ed4008802f95",
+  "native_sha256": "177dc29bf714f6b3797b27f5195bfded5b9b90c227476691c508a0b7a13b01a2",
+  "requests": 5,
+  "placements": [
+    {
+      "id": "WLD-18:shop:0:0",
+      "zone": "shop",
+      "purpose": "Maintenance workshop / Workshop or classroom bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_workbench",
+      "asset": "level_blockout_workbench",
+      "source_sha256": "118331bca686c16c1e75042c6d56bf917218bdc8902c68ba05b722869725c589",
+      "bounds": [
+        42.54600143432617,
+        -42.939998626708984,
+        0.0,
+        44.29600143432617,
+        -42.15999984741211,
+        0.9100000262260437
+      ],
+      "rect": [
+        42.546,
+        42.16,
+        44.296,
+        42.93999997138977
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 72
+    },
+    {
+      "id": "WLD-18:exhibit:1:0",
+      "zone": "exhibit",
+      "purpose": "Inert control equipment room / Operations desk and unlit console / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_console",
+      "asset": "level_blockout_console",
+      "source_sha256": "63b4f6691794b22bb0800edbc6100392c87bf927f3cae6cd130d784d19c8f096",
+      "bounds": [
+        44.57600021362305,
+        -18.90999984741211,
+        -3.999999761581421,
+        46.17599868774414,
+        -18.15999984741211,
+        -2.4649999141693115
+      ],
+      "rect": [
+        44.575999995231626,
+        18.16,
+        46.176000019073484,
+        18.91
+      ],
+      "floor_y": -4,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 96
+    },
+    {
+      "id": "WLD-18:crew:2:0",
+      "zone": "crew",
+      "purpose": "Lower crew room / Dormitory bunk, divider and ladder / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_dorm_bunk_partition",
+      "asset": "level_blockout_dorm_bunk_partition",
+      "source_sha256": "4ee12b23e3261c963d1d4ac53b54249982a81cf1af761b156ecf4d324122a699",
+      "bounds": [
+        19.459999084472656,
+        -36.410499572753906,
+        -8.0,
+        21.84000015258789,
+        -34.260498046875,
+        -5.730000019073486
+      ],
+      "rect": [
+        19.459999885559082,
+        34.26050002026558,
+        21.84,
+        36.410499996423724
+      ],
+      "floor_y": -8,
+      "yaw": -1.5707963267948966,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 180
+    },
+    {
+      "id": "WLD-18:records:3:0",
+      "zone": "records",
+      "purpose": "Maintenance records / Archival filing case / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_archive_cabinet",
+      "asset": "level_blockout_archive_cabinet",
+      "source_sha256": "e4b5e2e6f085980a68b8d151aa4fdbec3ee359f5e7a8ccf02d6c3a0d4f6583ec",
+      "bounds": [
+        10.680000305175781,
+        -38.6870002746582,
+        -4.0,
+        11.760000228881836,
+        -38.15999984741211,
+        -2.0
+      ],
+      "rect": [
+        10.679999991416931,
+        38.16,
+        11.760000034332275,
+        38.686999995112416
+      ],
+      "floor_y": -4,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "WLD-18:servicehouse:4:0",
+      "zone": "servicehouse",
+      "purpose": "Surface service building / Logging/campsite first-aid storage and wall cabinet / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_field_first_aid",
+      "asset": "level_blockout_field_first_aid",
+      "source_sha256": "fba127a60895b2efdb7339bbe9ee4fedcab10a30a4f2cd43947df76d09084de6",
+      "bounds": [
+        13.480000495910645,
+        -54.82950210571289,
+        0.0,
+        14.5600004196167,
+        -54.15999984741211,
+        1.9649999141693115
+      ],
+      "rect": [
+        13.479999991416932,
+        54.16,
+        14.560000034332276,
+        54.82950000822544
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "5b5201cc8195ac5a9211bde5b76b4f23f51b6633c7daae5b0c0115b58bbb381f",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 5,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

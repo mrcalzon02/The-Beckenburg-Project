@@ -44,10 +44,11 @@ public final class HouseRebuildPowerTest {
             a.client.ready();b.client.ready();c.client.ready();ghost.client.ready();a.await("LOBBY|3|HUMAN|4|WAITING");a.client.start();a.await("INFO|mission started");
             for(int next:AuthoredLevelNetworkTest.path(map,14,13)){a.client.move(next);a.await("ACCEPT|MOVE|"+next);}
             a.client.view3D();a.await("ACCEPT|VIEW3D");a.await("SOURCE|1");
+            b.client.view3D();b.await("ACCEPT|VIEW3D");b.await("SOURCE|1");
             var world=(LanWorld)LanSafeAreaBarrierTest.field(host,"world");var authority=(RoomLighting)LanSafeAreaBarrierTest.field(host,"lights");
-            interact(host,map,world,a,starter);b.await("SOURCE|0");a.await("ACCEPT|INTERACT|");check(!authority.sourceRunning()&&authority.breaker(),"Physical host source stop");
+            interact(host,map,world,a,starter);a.await("ACCEPT|INTERACT|");check(!authority.sourceRunning()&&authority.breaker(),"Physical host source stop");b.await("SOURCE|0");
             interact(host,map,world,a,breaker);a.await("ACCEPT|INTERACT|");check(!authority.breaker(),"Ordinary breaker trips independently");
-            interact(host,map,world,a,starter);b.await("SOURCE|1");a.await("ACCEPT|INTERACT|");check(authority.sourceRunning()&&!authority.breaker()&&!authority.supplied(),"Network restart preserves tripped breaker");
+            interact(host,map,world,a,starter);a.await("ACCEPT|INTERACT|");check(authority.sourceRunning()&&!authority.breaker()&&!authority.supplied(),"Network restart preserves tripped breaker");b.await("SOURCE|1");
             interact(host,map,world,a,breaker);a.await("ACCEPT|INTERACT|");check(authority.supplied(),"Physical network breaker reset");
             a.client.view3D();a.await("ACCEPT|VIEW3D");a.await("SOURCE|1");check(authority.supplied(),"Re-entering view preserves authoritative source");
             var target=InteractionFocus.pick(map,starter,List.of());ghost.client.interact(target,starter.yaw(),starter.pitch());ghost.await("REJECT|");check(authority.supplied(),"Ghost cannot submit hunter generator control");

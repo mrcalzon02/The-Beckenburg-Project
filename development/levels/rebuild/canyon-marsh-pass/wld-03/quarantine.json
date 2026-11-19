@@ -1,0 +1,434 @@
+{
+  "source": {
+    "id": "WLD-03",
+    "construction": "development/levels/rebuild/access-route-pass/assemblies/wld-03/construction.json",
+    "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-03/authored-layout.json",
+    "glb": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.glb",
+    "native": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.hcs2",
+    "blend": "development/levels/rebuild/access-route-pass/assemblies/wld-03/access-routes.blend",
+    "glb_sha256": "02364175c5e663eebbba54f1badcbaeff2d4740e2d33a66b03a1e7aa58879827",
+    "native_sha256": "53bb18456bb62ce280f2c98518216773c990ffcf25f91b90e89047d22394755d"
+  },
+  "retired": [
+    "Arrival end bearing WLD-03 0",
+    "Authored stair end WLD-03 L04 0 high region0",
+    "Authored stair end WLD-03 L07 0 high region0",
+    "Authored stair end WLD-03 L07 0 high region1",
+    "Authored stair end WLD-03 L07 0 low region0",
+    "Authored stair end WLD-03 L07 0 low region1",
+    "Ceiling cap shelter",
+    "Ceiling cap shelter.001",
+    "Ceiling cap shelter.002",
+    "Ceiling cap shelter.003",
+    "Ceiling cap shelter.004",
+    "Flat route shell Wall chamber W",
+    "Flat route shell Wall chamber W.001",
+    "Flat route shell Wall gallery W",
+    "Flat route shell Wall gallery W.001",
+    "Floor gallery",
+    "Floor gallery.001",
+    "Floor gallery.002",
+    "Floor gallery.003",
+    "Floor gallery.004",
+    "Floor gallery.005",
+    "Floor gallery.006",
+    "Floor gallery.007",
+    "Floor lower-cave",
+    "Header chamber W",
+    "Header gallery W",
+    "L01 support 0",
+    "L01 support 1",
+    "L02 support 0",
+    "L02 support 1",
+    "L03 support 0",
+    "L04 flight0 step1",
+    "L04 flight0 step10",
+    "L04 flight0 step11",
+    "L04 flight0 step12",
+    "L04 flight0 step13",
+    "L04 flight0 step14",
+    "L04 flight0 step15",
+    "L04 flight0 step16",
+    "L04 flight0 step17",
+    "L04 flight0 step18",
+    "L04 flight0 step19",
+    "L04 flight0 step2",
+    "L04 flight0 step20",
+    "L04 flight0 step21",
+    "L04 flight0 step22",
+    "L04 flight0 step23",
+    "L04 flight0 step3",
+    "L04 flight0 step4",
+    "L04 flight0 step5",
+    "L04 flight0 step6",
+    "L04 flight0 step7",
+    "L04 flight0 step8",
+    "L04 flight0 step9",
+    "L05 support 0",
+    "L06 support 1",
+    "L07 flight0 step1",
+    "L07 flight0 step10",
+    "L07 flight0 step11",
+    "L07 flight0 step12",
+    "L07 flight0 step13",
+    "L07 flight0 step14",
+    "L07 flight0 step15",
+    "L07 flight0 step16",
+    "L07 flight0 step17",
+    "L07 flight0 step18",
+    "L07 flight0 step19",
+    "L07 flight0 step2",
+    "L07 flight0 step20",
+    "L07 flight0 step21",
+    "L07 flight0 step22",
+    "L07 flight0 step23",
+    "L07 flight0 step3",
+    "L07 flight0 step4",
+    "L07 flight0 step5",
+    "L07 flight0 step6",
+    "L07 flight0 step7",
+    "L07 flight0 step8",
+    "L07 flight0 step9",
+    "L08 support 0",
+    "L08 support 1",
+    "L09 support 0",
+    "L12 support 0",
+    "L14 support 1",
+    "L15 support 0",
+    "Opened stair shell Wall shelter N",
+    "Saved editor stair bench terrain WLD-03",
+    "Wall lower-cave S"
+  ],
+  "superseded_guides": {
+    "L01": {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          86.0
+        ],
+        [
+          34.0,
+          0,
+          80.0
+        ],
+        [
+          34.0,
+          0,
+          73.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          34.0,
+          0,
+          80.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L03": {
+      "id": "L03",
+      "a": "floor",
+      "b": "shelter",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          53.0
+        ],
+        [
+          20.0,
+          0,
+          52.0
+        ],
+        [
+          12.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          20.0,
+          0,
+          52.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L04": {
+      "id": "L04",
+      "a": "shelter",
+      "b": "lower-path",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          12.0,
+          0,
+          52.0
+        ],
+        [
+          12.0,
+          4,
+          34.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 4,
+      "construction": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    "L05": {
+      "id": "L05",
+      "a": "floor",
+      "b": "wash",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          0,
+          53.0
+        ],
+        [
+          48.0,
+          0,
+          52.0
+        ],
+        [
+          54.0,
+          0,
+          52.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.0,
+          0,
+          52.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L06": {
+      "id": "L06",
+      "a": "wash",
+      "b": "floor",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          54.0,
+          0,
+          52.0
+        ],
+        [
+          48.0,
+          0,
+          52.0
+        ],
+        [
+          34.0,
+          0,
+          53.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.0,
+          0,
+          52.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L07": {
+      "id": "L07",
+      "a": "lower-path",
+      "b": "upper-path",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          12.0,
+          4,
+          34.0
+        ],
+        [
+          34.0,
+          8,
+          16.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 4,
+      "construction": "Reserve at least 6.4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    "L08": {
+      "id": "L08",
+      "a": "upper-path",
+      "b": "dwellings",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          34.0,
+          8,
+          16.0
+        ],
+        [
+          34.0,
+          8,
+          22.0
+        ],
+        [
+          34.0,
+          8,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          34.0,
+          8,
+          22.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L09": {
+      "id": "L09",
+      "a": "dwellings",
+      "b": "gallery",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          36.0,
+          8.0,
+          31.0
+        ],
+        [
+          55.0,
+          8.0,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          48.0,
+          8,
+          31.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    "L10": {
+      "id": "L10",
+      "a": "gallery",
+      "b": "fork",
+      "kind": "level",
+      "width": 1.5,
+      "points": [
+        [
+          55.0,
+          8.0,
+          31.0
+        ],
+        [
+          55.0,
+          8.0,
+          33.0
+        ],
+        [
+          55.5,
+          8.0,
+          34.5
+        ],
+        [
+          65.0,
+          8.0,
+          34.0
+        ],
+        [
+          65.0,
+          8.0,
+          31.5
+        ],
+        [
+          65.5,
+          8.0,
+          31.0
+        ],
+        [
+          71.0,
+          8.0,
+          31.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          66.0,
+          8,
+          31.0
+        ],
+        "clear_width_m": 1.5
+      }
+    },
+    "L12": {
+      "id": "L12",
+      "a": "chamber",
+      "b": "upper-path",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          74.0,
+          8,
+          13.0
+        ],
+        [
+          34.0,
+          8,
+          16.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    "L15": {
+      "id": "L15",
+      "a": "return",
+      "b": "lower-path",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          57.0,
+          4,
+          13.0
+        ],
+        [
+          12.0,
+          4,
+          34.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    }
+  }
+}

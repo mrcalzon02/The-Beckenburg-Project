@@ -1,0 +1,50 @@
+{
+  "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+  "native_sha256": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768",
+  "retained_native_records": 930,
+  "added_parts": 18,
+  "terrain_matches_saved_editor_mesh": true,
+  "clear_door_profile_rays": 36,
+  "level_sill_control_rays": 48,
+  "crown_soffit_control_rays": 12,
+  "review_van_triangle_count": 2689,
+  "review_van_source_sha256": "2a1d919c203193bb0b81fbd4214f4dc5b4d8576c51dc6aa3cd63fffab47e0e73",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/college-ground-batch/campus-overview.png",
+      "sha256": "91375b61491575994ebeb1bdd27fe7072a173598dcc5ab93cf57457e8148f385",
+      "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-ground-batch/canonical-arrival.png",
+      "sha256": "a496b0a4f10867a5746af7a911a64b2c54973e26c7be4c402f426ed52b4b95f6",
+      "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-ground-batch/teaching-entrance.png",
+      "sha256": "e7cd198c6c76ed084bc82d0eb4548dbe3b69d22917fadcc1d052d0a53f9725d0",
+      "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-ground-batch/cafe-entrance.png",
+      "sha256": "69828d89f240fcedd44c9a54f3b7d0b2e4ca2db3b8d4fd3571718127100c4b7d",
+      "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-ground-batch/library-court.png",
+      "sha256": "c9c28839727f96cf110dda508cac61b3668a5ca103e0f0eafade1de4e624fa24",
+      "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+      "hidden": []
+    },
+    {
+      "path": "development/levels/rebuild/captures/college-ground-batch/cross-tunnel-crown.png",
+      "sha256": "12e790b751e69813a5a02d03615dddd2d4742d0e5203a16a51cca200b273e3a2",
+      "glb_sha256": "d8e0c6d957e593ff2d8ccea7d3d681a706c67e362b3135a3530007794bd89bef",
+      "hidden": []
+    }
+  ]
+}

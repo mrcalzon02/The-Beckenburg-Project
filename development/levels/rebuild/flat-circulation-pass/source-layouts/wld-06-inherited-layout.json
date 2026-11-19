@@ -1,0 +1,844 @@
+{
+  "version": 1,
+  "id": "WLD-06",
+  "title": "Drowned Fisherman's Wharf",
+  "region": "Coastal Territories",
+  "scale": "Medium / shore and piers",
+  "status": "rough-layout-only",
+  "intent": "A shore street feeds two parallel working piers joined by a cross-dock. Cottages sit on land, work sheds on piles, and a dry tidal undercroft is reached by two guarded descents.",
+  "site_bounds": [
+    0,
+    2,
+    64,
+    84
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Shore-road van apron",
+      "bounds": [
+        24,
+        68,
+        40,
+        80
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "entry",
+      "name": "Shore street",
+      "bounds": [
+        20,
+        54,
+        44,
+        68
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cottage-a",
+      "name": "West fisherman cottage",
+      "bounds": [
+        4,
+        42,
+        20,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "cottage-b",
+      "name": "East fisherman cottage",
+      "bounds": [
+        44,
+        42,
+        60,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "quay",
+      "name": "Quay apron",
+      "bounds": [
+        20,
+        36,
+        44,
+        54
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "pier-w",
+      "name": "West dock walkway",
+      "bounds": [
+        20,
+        10,
+        24,
+        36
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "pier-e",
+      "name": "East dock walkway",
+      "bounds": [
+        40,
+        10,
+        44,
+        36
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "crossdock",
+      "name": "Cross-dock",
+      "bounds": [
+        20,
+        6,
+        44,
+        10
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "boathouse",
+      "name": "Boathouse",
+      "bounds": [
+        4,
+        10,
+        20,
+        28
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "net",
+      "name": "Net shed",
+      "bounds": [
+        44,
+        10,
+        56,
+        24
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "fish",
+      "name": "Fish house",
+      "bounds": [
+        24,
+        10,
+        40,
+        24
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "undercroft",
+      "name": "Dry tidal undercroft",
+      "bounds": [
+        24,
+        24,
+        40,
+        36
+      ],
+      "y": -2.5,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "west-stair",
+      "name": "West shore stair bay",
+      "bounds": [
+        12,
+        28,
+        24,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    },
+    {
+      "id": "east-stair",
+      "name": "East shore stair bay",
+      "bounds": [
+        40,
+        28,
+        52,
+        38
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Investigation and ordinary objects"
+    }
+  ],
+  "links": [
+    {
+      "id": "L01",
+      "a": "stage",
+      "b": "entry",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          74.0
+        ],
+        [
+          32.0,
+          0,
+          68.0
+        ],
+        [
+          32.0,
+          0,
+          61.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          68.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L02",
+      "a": "entry",
+      "b": "cottage-a",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          61.0
+        ],
+        [
+          12.0,
+          0,
+          48.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L03",
+      "a": "entry",
+      "b": "cottage-b",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          61.0
+        ],
+        [
+          52.0,
+          0,
+          48.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic. Connecting path needs an explicit supported corridor during shell/terrain refinement."
+    },
+    {
+      "id": "L04",
+      "a": "entry",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          61.0
+        ],
+        [
+          32.0,
+          0,
+          54.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          54.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L05",
+      "a": "cottage-a",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          12.0,
+          0,
+          48.0
+        ],
+        [
+          20.0,
+          0,
+          48.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          20.0,
+          0,
+          48.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L06",
+      "a": "cottage-b",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          52.0,
+          0,
+          48.0
+        ],
+        [
+          44.0,
+          0,
+          48.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          44.0,
+          0,
+          48.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L07",
+      "a": "quay",
+      "b": "pier-w",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          45.0
+        ],
+        [
+          22.0,
+          0,
+          36.0
+        ],
+        [
+          22.0,
+          0,
+          23.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          22.0,
+          0,
+          36.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L08",
+      "a": "pier-w",
+      "b": "crossdock",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          22.0,
+          0,
+          23.0
+        ],
+        [
+          22.0,
+          0,
+          10.0
+        ],
+        [
+          32.0,
+          0,
+          8.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          22.0,
+          0,
+          10.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L09",
+      "a": "crossdock",
+      "b": "pier-e",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          8.0
+        ],
+        [
+          42.0,
+          0,
+          10.0
+        ],
+        [
+          42.0,
+          0,
+          23.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          42.0,
+          0,
+          10.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L10",
+      "a": "pier-e",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          42.0,
+          0,
+          23.0
+        ],
+        [
+          42.0,
+          0,
+          36.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          42.0,
+          0,
+          36.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L11",
+      "a": "pier-w",
+      "b": "boathouse",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          22.0,
+          0,
+          23.0
+        ],
+        [
+          20.0,
+          0,
+          19.0
+        ],
+        [
+          12.0,
+          0,
+          19.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          20.0,
+          0,
+          19.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L12",
+      "a": "pier-e",
+      "b": "net",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          42.0,
+          0,
+          23.0
+        ],
+        [
+          44.0,
+          0,
+          17.0
+        ],
+        [
+          50.0,
+          0,
+          17.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          44.0,
+          0,
+          17.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L13",
+      "a": "crossdock",
+      "b": "fish",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          0,
+          8.0
+        ],
+        [
+          32.0,
+          0,
+          10.0
+        ],
+        [
+          32.0,
+          0,
+          17.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          32.0,
+          0,
+          10.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L14",
+      "a": "boathouse",
+      "b": "west-stair",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          12.0,
+          0,
+          19.0
+        ],
+        [
+          16.0,
+          0,
+          28.0
+        ],
+        [
+          18.0,
+          0,
+          33.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          16.0,
+          0,
+          28.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L15",
+      "a": "west-stair",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          18.0,
+          0,
+          33.0
+        ],
+        [
+          22.0,
+          0,
+          37.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          22.0,
+          0,
+          37.0
+        ],
+        "clear_width_m": 2
+      }
+    },
+    {
+      "id": "L16",
+      "a": "west-stair",
+      "b": "undercroft",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          18.0,
+          0,
+          33.0
+        ],
+        [
+          32.0,
+          -2.5,
+          30.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 2.5,
+      "construction": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L17",
+      "a": "undercroft",
+      "b": "east-stair",
+      "kind": "stairs",
+      "width": 2,
+      "points": [
+        [
+          32.0,
+          -2.5,
+          30.0
+        ],
+        [
+          46.0,
+          0,
+          33.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "rise_m": 2.5,
+      "construction": "Reserve at least 4 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+    },
+    {
+      "id": "L18",
+      "a": "east-stair",
+      "b": "quay",
+      "kind": "level",
+      "width": 2,
+      "points": [
+        [
+          46.0,
+          0,
+          33.0
+        ],
+        [
+          42.0,
+          0,
+          37.0
+        ],
+        [
+          32.0,
+          0,
+          45.0
+        ]
+      ],
+      "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+      "threshold_reservation": {
+        "point": [
+          42.0,
+          0,
+          37.0
+        ],
+        "clear_width_m": 2
+      }
+    }
+  ],
+  "loops": [
+    [
+      "quay",
+      "pier-w",
+      "crossdock",
+      "pier-e",
+      "quay"
+    ],
+    [
+      "quay",
+      "west-stair",
+      "undercroft",
+      "east-stair",
+      "quay"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      74.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        70.372
+      ],
+      [
+        32.0,
+        0,
+        61.0
+      ]
+    ],
+    "logistics": "Van is already staged on a prepared roadhead/service apron through expedition logistics. Travel to this remote region is a campaign transition; no new vehicle, ferry or flight gameplay is assumed."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "boathouse",
+      "point": [
+        12.0,
+        0,
+        19.0
+      ],
+      "installation": "Moored iron containment frame"
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "fish",
+      "point": [
+        32.0,
+        0,
+        17.0
+      ],
+      "installation": "Fish-house purification wash"
+    },
+    {
+      "rite": "Absolution",
+      "zone": "cottage-a",
+      "point": [
+        12.0,
+        0,
+        48.0
+      ],
+      "installation": "Departure remembrance table"
+    }
+  ],
+  "circulation": "A pier ladder is never the only way out: wide supported deck returns run on both sides. Undercroft remains dry for the entire mission seed; rising-tide hazards cannot strand a player or remove the required extraction path.",
+  "systems": "Tidal boundary, wave impacts, wet timber, cold storage and wind have stable baselines. Boat silhouettes are scenery with collision barriers, not undeclared transport. Safe van stays on land.",
+  "campaign": "Logbooks at fish house and cottage, storm records in boathouse. A shipment record can link Greywater Cannery while contradicting departure dates.",
+  "refine": [
+    "Refine support piles, edge rails, guard openings and at least 2 m clear deck paths; diagrams show deck envelopes.",
+    "Choose and lock tide envelope before mission start; no required wading.",
+    "Research working-wharf and fish-house construction before detailed shell authoring."
+  ],
+  "sources": [
+    "docs/environments/WILDERNESS_AND_REMOTE_SITE_ROSTER.md",
+    "docs/CAMPAIGN_AND_ALLIED_INVESTIGATORS_DESIGN.md",
+    "docs/environments/SHARED_VAN_MODULE.md"
+  ]
+}

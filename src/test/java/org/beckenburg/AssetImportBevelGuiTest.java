@@ -10,22 +10,48 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import org.beckenburg.editor.*;
 
+import static org.beckenburg.ModelEditorGuiTestSupport.*;
+
 /** Actual bevel inspector, visible native picking, transactions, archives and game readback. */
 public final class AssetImportBevelGuiTest {
-    private static void check(boolean ok,String why){if(!ok)throw new AssertionError(why);}
-    private static Object field(Object o,String name)throws Exception{var f=o.getClass().getDeclaredField(name);f.setAccessible(true);return f.get(o);}
-    private static Object call(Object o,String name,Class<?>[] types,Object... args)throws Exception{var m=o.getClass().getDeclaredMethod(name,types);m.setAccessible(true);return m.invoke(o,args);}
-    private static void button(Object o,String name)throws Exception{((JButton)field(o,name)).doClick();}
-    private static boolean ready(AssetImportDialog ui){try{return !((Boolean)field(ui,"busy"))&&((JButton)field(ui,"apply")).isEnabled();}catch(Exception e){throw new RuntimeException(e);}}
-    private static boolean reviewed(AssetImportDialog ui){try{return !((Boolean)field(ui,"busy"))&&field(ui,"modelingPreview")!=null;}catch(Exception e){throw new RuntimeException(e);}}
-    private static void await(java.util.function.BooleanSupplier condition)throws Exception{long end=System.nanoTime()+30_000_000_000L;while(System.nanoTime()<end){var done=new java.util.concurrent.atomic.AtomicBoolean();SwingUtilities.invokeAndWait(()->done.set(condition.getAsBoolean()));if(done.get())return;Thread.sleep(20);}throw new AssertionError("Human bevel worker did not complete");}
-    private static JToggleButton tool(java.awt.Container parent,String name){for(var child:parent.getComponents()){if(child instanceof JToggleButton b&&b.getText().equals(name))return b;if(child instanceof java.awt.Container nested){var found=tool(nested,name);if(found!=null)return found;}}return null;}
-    private static void capture(AssetImportDialog ui,Path path)throws Exception{var content=((JDialog)field(ui,"dialog")).getContentPane();var image=new BufferedImage(content.getWidth(),content.getHeight(),BufferedImage.TYPE_INT_ARGB);var g=image.createGraphics();try{content.printAll(g);}finally{g.dispose();}ImageIO.write(image,"png",path.toFile());}
+    private static EditorMeshPicking.Hit verifyHover(AssetImportDialog ui, EditorTopologyProject project,
+                                                     JPanel canvas, int x, int y) throws Exception {
+        var before = project.snapshot();
+        long revision = project.revision();
+        Object selected = field(ui, "selectedHit");
+        var move = new MouseEvent(canvas, MouseEvent.MOUSE_MOVED, System.currentTimeMillis(), 0, x, y, 0, false);
+        canvas.dispatchEvent(move);
+        var hit = (EditorMeshPicking.Hit) field(ui, "hoverHit");
+        var prepared = field(ui, "preparedPicking");
+        canvas.dispatchEvent(move);
+        check(prepared != null && field(ui, "preparedPicking") == prepared, "Hover reuses picking data for the same native state and camera");
+        check(project.snapshot() == before && project.revision() == revision && field(ui, "selectedHit") == selected,
+                "Hover preserves native geometry, revision and committed selection");
+        if (hit != null) {
+            var image = new BufferedImage(canvas.getWidth(), canvas.getHeight(), BufferedImage.TYPE_INT_RGB);
+            var graphics = image.createGraphics();
+            try { canvas.paint(graphics); } finally { graphics.dispose(); }
+            boolean highlighted = false;
+            for (int py = 0; py < image.getHeight() && !highlighted; py++) {
+                for (int px = 0; px < ui.workingViewportWidth(); px++) {
+                    if ((image.getRGB(px, py) & 0xffffff) == 0x5adcff) { highlighted = true; break; }
+                }
+            }
+            check(highlighted, "Working canvas paints the hovered native component");
+            String mode = String.valueOf(((JComboBox<?>) field(ui, "selectionMode")).getSelectedItem());
+            capture(ui, Path.of("build/editor-agent-evidence/human-hover-" + mode + ".png"));
+        }
+        canvas.dispatchEvent(new MouseEvent(canvas, MouseEvent.MOUSE_EXITED, System.currentTimeMillis(), 0, -1, -1, 0, false));
+        check(field(ui, "hoverHit") == null, "Leaving the working canvas clears preselection");
+        return hit;
+    }
     private static void pick(AssetImportDialog ui,EditorTopologyProject p,boolean corner)throws Exception{
         ((JComboBox<?>)field(ui,"selectionMode")).setSelectedItem(corner?"VERTEX":"EDGE");var reference=call(ui,"workingReference",new Class<?>[0]);var camera=(EditorMeshPicking.Projector)call(ui,"projector",new Class<?>[]{List.class},reference);var view=call(ui,"viewport",new Class<?>[]{List.class,int.class,int.class},reference,0,ui.workingViewportWidth());var canvas=(JPanel)field(ui,"preview");
         for(var t:p.mesh().triangles()){var vertices=List.of(t.a(),t.b(),t.c());double cx=(t.a().x()+t.b().x()+t.c().x())/3,cy=(t.a().y()+t.b().y()+t.c().y())/3,cz=(t.a().z()+t.b().z()+t.c().z())/3;
             for(int i=0;i<3;i++){var a=vertices.get(i);var b=vertices.get((i+1)%3);double x=corner?a.x():(a.x()+b.x())/2,y=corner?a.y():(a.y()+b.y())/2,z=corner?a.z():(a.z()+b.z())/2;var projected=camera.project(x*.97+cx*.03,y*.97+cy*.03,z*.97+cz*.03);int px=(Integer)call(view,"x",new Class<?>[]{double.class},projected.x()),py=(Integer)call(view,"y",new Class<?>[]{double.class},projected.y());
-                canvas.dispatchEvent(new MouseEvent(canvas,MouseEvent.MOUSE_PRESSED,System.currentTimeMillis(),0,px,py,1,false,MouseEvent.BUTTON1));canvas.dispatchEvent(new MouseEvent(canvas,MouseEvent.MOUSE_RELEASED,System.currentTimeMillis(),0,px,py,1,false,MouseEvent.BUTTON1));var hit=(EditorMeshPicking.Hit)field(ui,"selectedHit");if(hit==null)continue;try{var probe=p.previewBevel(corner?hit.vertexId():hit.edgeA(),corner?hit.vertexId():hit.edgeB(),hit.faceId(),.2);p.cancelPreview(probe);check(((JButton)field(ui,"previewBevel")).isEnabled(),"Actual native pick enables visible bevel control");return;}catch(IllegalArgumentException refused){}
+                var mode=(JComboBox<?>)field(ui,"selectionMode");mode.setSelectedItem("FACE");var faceHover=verifyHover(ui,p,canvas,px,py);
+                mode.setSelectedItem(corner?"VERTEX":"EDGE");var hovered=verifyHover(ui,p,canvas,px,py);
+                canvas.dispatchEvent(new MouseEvent(canvas,MouseEvent.MOUSE_PRESSED,System.currentTimeMillis(),0,px,py,1,false,MouseEvent.BUTTON1));canvas.dispatchEvent(new MouseEvent(canvas,MouseEvent.MOUSE_RELEASED,System.currentTimeMillis(),0,px,py,1,false,MouseEvent.BUTTON1));var hit=(EditorMeshPicking.Hit)field(ui,"selectedHit");if(hit==null)continue;try{var probe=p.previewBevel(corner?hit.vertexId():hit.edgeA(),corner?hit.vertexId():hit.edgeB(),hit.faceId(),.2);p.cancelPreview(probe);check(hit.equals(hovered)&&faceHover!=null&&faceHover.faceId()==hit.faceId(),"Face and component hover match the real perspective click");check(((JButton)field(ui,"previewBevel")).isEnabled(),"Actual native pick enables visible bevel control");return;}catch(IllegalArgumentException refused){}
             }
         }throw new AssertionError("No visible native convex edge/corner selected");
     }

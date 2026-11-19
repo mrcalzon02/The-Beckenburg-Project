@@ -1,0 +1,122 @@
+{
+  "bindings": {
+    "WLD-03": {
+      "native_sha256": "a489b1480fc43b74f530a01c7d5839a87c6b1d779a0afbd7cbb747bb73b166e1",
+      "layout_sha256": "4c9982ac2e8afb0aeef1ab59ad133a5e8addce5f66b656c43aaf1cdfab5e84bb"
+    },
+    "WLD-11": {
+      "native_sha256": "2867a8e7895a6a70c3ec2bc09491bb3034a4805854592e18fbded49cad99d8ca",
+      "layout_sha256": "484bb5e0ce6c7559a4dfb89804a95bc22314a365dcd5409806c3d68aa0549b01"
+    }
+  },
+  "route_chains": {
+    "WLD-03": {
+      "roadhead-to-upper-terrace": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8
+      ],
+      "upper-terrace-circuit": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "roadhead-to-lower-cave-via-ledge": [
+        1,
+        2,
+        3,
+        4,
+        -15,
+        -14
+      ]
+    },
+    "WLD-11": {
+      "roadhead-to-ferry": [
+        1,
+        2,
+        3,
+        5,
+        13
+      ],
+      "settlement-boardwalk-circuit": [
+        3,
+        5,
+        6,
+        -4
+      ],
+      "dry-warehouse-circuit": [
+        -3,
+        4,
+        -11,
+        -10
+      ]
+    }
+  },
+  "results": [
+    {
+      "site": "WLD-03",
+      "variant": "site",
+      "link": "roadhead-to-upper-terrace",
+      "segments": "26",
+      "legacy_forward": "BLOCKED_SEGMENT_8_AT_12_OF_14",
+      "legacy_reverse": "BLOCKED_SEGMENT_5_AT_1_OF_38",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-03",
+      "variant": "site",
+      "link": "upper-terrace-circuit",
+      "segments": "20",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-03",
+      "variant": "site",
+      "link": "roadhead-to-lower-cave-via-ledge",
+      "segments": "33",
+      "legacy_forward": "BLOCKED_SEGMENT_8_AT_12_OF_14",
+      "legacy_reverse": "BLOCKED_SEGMENT_21_AT_1_OF_38",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-11",
+      "variant": "site",
+      "link": "roadhead-to-ferry",
+      "segments": "14",
+      "legacy_forward": "BLOCKED_SEGMENT_4_AT_47_OF_48",
+      "legacy_reverse": "BLOCKED_SEGMENT_8_AT_3_OF_35",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-11",
+      "variant": "site",
+      "link": "settlement-boardwalk-circuit",
+      "segments": "8",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    },
+    {
+      "site": "WLD-11",
+      "variant": "site",
+      "link": "dry-warehouse-circuit",
+      "segments": "10",
+      "legacy_forward": "PASS",
+      "legacy_reverse": "PASS",
+      "authored_forward": "PASS",
+      "authored_reverse": "PASS"
+    }
+  ]
+}

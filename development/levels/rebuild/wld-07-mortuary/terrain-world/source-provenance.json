@@ -1,0 +1,15 @@
+{
+  "source_commit": "de4edf80de20b86f9ac42f6a616913e109505894",
+  "source_glb": "development/levels/rebuild/structures/wld-07-mortuary/rough-shell.glb",
+  "source_glb_sha256": "a4943c387d7120757e3c8d2be3011e3d9dd8c0ce7986cec29b2ce749413fe099",
+  "source_layout": "development/levels/layout-expansions/wld-07-mortuary/layout.json",
+  "source_layout_sha256": "d6c6c8a4c083cffc3e14d2a4c1cadb93d364eaa05d7897dcf4987573cf33b148",
+  "cut_layout": "development/levels/rebuild/wld-07-mortuary/rough-layout.json",
+  "cut_definition_sha256": "b44e20e49efa6e13800007187fd319c5bcd701c817e059021cf5a2ddf39931fc",
+  "sampler_sha256": "22562058716727becd4eba8d4a3543634a26d3a0c2fb59d612fa5a8942063a48",
+  "grid_metres": 2,
+  "cut_grid_metres": 0.25,
+  "edge_and_void_resampling": "Quarter-metre cells classify immutable source footprint; current authored foundations/entrances supply persistent cut requests; no final terrain/edge acceptance",
+  "nearest_fallback_samples": 2247,
+  "cuts": 693
+}

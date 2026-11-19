@@ -1,15 +1,19 @@
 package org.beckenburg;
 import java.util.*;
 
-/** Host-owned physical EMF device. Stable identity is owner seat+1 across redrops.
+/** Host-owned physical instruments. Stable per-owner/device identity across redrops.
  * Cross-owner transfers and save migration are not implemented in this first slice.
  */
 final class LanDroppedGear {
+    static final int MAX_ID=6*(FieldEquipment.workingTools().size()+1);
+    private static long identity(int owner,String tool){
+        return owner+1L+6L*(tool.equals("EMF_READER")?0:FieldEquipment.workingTools().indexOf(tool)+1);
+    }
     record Drop(long id,int owner,int sourceSlot,String tool,EquipmentTiers.Tier tier,
             int room,double x,double y,double z) {
         Drop {
-            if(owner<0||owner>=6||id!=owner+1L||sourceSlot<0||sourceSlot>=FieldEquipment.SLOTS
-                    ||!"EMF_READER".equals(tool)||tier==null||room<0||room>=HouseMap.INDOOR_ROOMS
+            if(owner<0||owner>=6||id!=identity(owner,tool)||sourceSlot<0||sourceSlot>=FieldEquipment.SLOTS
+                    ||!FieldEquipment.functional(tool)||tier==null||room<0||room>=HouseMap.ROOM_COUNT
                     ||!Double.isFinite(x)||!Double.isFinite(y)||!Double.isFinite(z))
                 throw new IllegalArgumentException("invalid dropped gear identity or pose");
         }
@@ -20,10 +24,10 @@ final class LanDroppedGear {
         static Drop decode(List<String> p){
             if(p.size()!=11||!p.get(0).equals("GEARDROP")||!p.get(1).equals("ITEM"))
                 throw new IllegalArgumentException("invalid dropped gear frame");
-            return new Drop(LanProtocol.integer(p.get(2),1,6),
+            return new Drop(LanProtocol.integer(p.get(2),1,MAX_ID),
                 LanProtocol.integer(p.get(3),0,5),LanProtocol.integer(p.get(4),0,3),
                 p.get(5),EquipmentTiers.Tier.valueOf(p.get(6)),
-                LanProtocol.integer(p.get(7),0,HouseMap.INDOOR_ROOMS-1),
+                LanProtocol.integer(p.get(7),0,HouseMap.ROOM_COUNT-1),
                 LanProtocol.integer(p.get(8),0,99999999)/1000.0,
                 LanProtocol.integer(p.get(9),-50000,50000)/1000.0,
                 LanProtocol.integer(p.get(10),0,99999999)/1000.0);
@@ -31,9 +35,9 @@ final class LanDroppedGear {
     }
     private final Map<Long,Drop> inWorld=new LinkedHashMap<>();
     List<Drop> snapshot(){return List.copyOf(inWorld.values());}
-    boolean hasOwner(int owner){return inWorld.containsKey(owner+1L);}
+    boolean hasOwner(int owner){return inWorld.values().stream().anyMatch(d->d.owner()==owner);}
     boolean heldInWorld(int owner,String tool){
-        Drop d=inWorld.get(owner+1L);return d!=null&&d.tool().equals(tool);
+        Drop d=inWorld.get(identity(owner,tool));return d!=null&&d.tool().equals(tool);
     }
     Set<String> worldKeys(){
         Set<String> keys=new HashSet<>();
@@ -41,10 +45,10 @@ final class LanDroppedGear {
         return Set.copyOf(keys);
     }
     Drop drop(FieldEquipment kit,int owner,LanWorld.Body body,HouseMap map){
-        if(hasOwner(owner))throw new IllegalArgumentException("instrument already dropped");
         String tool=kit.active();
-        if(!"EMF_READER".equals(tool))
-            throw new IllegalArgumentException("only EMF reader supports world drop in this slice");
+        if(!FieldEquipment.functional(tool))
+            throw new IllegalArgumentException("no carried instrument to drop");
+        if(heldInWorld(owner,tool))throw new IllegalArgumentException("instrument already dropped");
         if(body.room()<0||body.room()>=HouseMap.INDOOR_ROOMS)
             throw new IllegalArgumentException("drop requires a physical indoor floor");
         double angle=Math.toRadians(body.heading());
@@ -57,7 +61,7 @@ final class LanDroppedGear {
         int slot=kit.activeSlot();
         EquipmentTiers.Tier tier=kit.owned(tool);
         if(tier==null)throw new IllegalArgumentException("equipment not owned");
-        Drop item=new Drop(owner+1L,owner,slot,tool,tier,body.room(),xx,floor,zz);
+        Drop item=new Drop(identity(owner,tool),owner,slot,tool,tier,body.room(),xx,floor,zz);
         kit.dropActive(tool); // No fallible validation after removing it from the belt.
         inWorld.put(item.id(),item);
         return item;

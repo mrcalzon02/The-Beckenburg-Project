@@ -1,0 +1,331 @@
+{
+  "status": "NATIVE_CONSTRUCTION_REVIEWED_RUNTIME_INTEGRATION_OPEN",
+  "baseline": "6acc2a1a698b9bbda89d71c1cdcd9f5d9c2d4e1e",
+  "observed_main": "10fe52cb1feba1267efcf4edce67a5ca1bd3823e",
+  "site": "WLD-09",
+  "source": {
+    "id": "WLD-09",
+    "construction": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/construction.json",
+    "layout": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/authored-layout.json",
+    "glb": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/spillway-gallery.glb",
+    "native": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/spillway-gallery.hcs2",
+    "blend": "development/levels/rebuild/dam-spillway-gallery-pass/wld-09/spillway-gallery.blend",
+    "glb_sha256": "a5ccd3bf7585b304eb8513eb52be3b866509d0b3e68996d6ca1cf34a62b6526b",
+    "native_sha256": "acb40c7c046e1f3512286db59a867c619889532733982f7dae6c8309881f7daf"
+  },
+  "export": {
+    "glb_sha256": "a5ccd3bf7585b304eb8513eb52be3b866509d0b3e68996d6ca1cf34a62b6526b",
+    "native_sha256": "acb40c7c046e1f3512286db59a867c619889532733982f7dae6c8309881f7daf",
+    "new_closed_solids": 14,
+    "retained_native_records": 483,
+    "saved_terrain_samples": 702,
+    "joint_controls": {
+      "open_door_seam_rays": 18,
+      "level_sill_rays": 12,
+      "closed_pier_and_header_controls": 5,
+      "retained_crest_soffit_rays": 9
+    },
+    "captures": [
+      {
+        "path": "development/levels/rebuild/captures/dam-spillway-gallery-batch/lower-door-standing.png",
+        "sha256": "c55c7f7c1a722a80db4578483d637061806f10ecf69ec0ff813e6f5b1c5d039e",
+        "glb_sha256": "a5ccd3bf7585b304eb8513eb52be3b866509d0b3e68996d6ca1cf34a62b6526b",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/dam-spillway-gallery-batch/screen-standing.png",
+        "sha256": "eb429088b8268294ad318386ef956ac1424964154ab448375cac8eb26b321bbc",
+        "glb_sha256": "a5ccd3bf7585b304eb8513eb52be3b866509d0b3e68996d6ca1cf34a62b6526b",
+        "hidden": []
+      },
+      {
+        "path": "development/levels/rebuild/captures/dam-spillway-gallery-batch/crest-and-gallery-cutaway.png",
+        "sha256": "a41d77a524e1890907fb4c93048c0cbdebb168fc99610940092890e79d66f5ec",
+        "glb_sha256": "a5ccd3bf7585b304eb8513eb52be3b866509d0b3e68996d6ca1cf34a62b6526b",
+        "hidden": [
+          "Floor control",
+          "Ceiling cap control",
+          "Header control N",
+          "Header control S",
+          "Wall control W",
+          "Wall control E",
+          "Floor office",
+          "Ceiling cap office",
+          "Wall office N",
+          "Wall office W",
+          "Header west-stair S",
+          "level_blockout_console.001",
+          "level_blockout_archive_cabinet.001",
+          "Flat route shell Wall control N",
+          "Flat route shell Wall control N.001",
+          "Flat route shell Wall control S",
+          "Flat route shell Wall control S.001",
+          "Retaining shoulder WLD-09 L01 0 -1 0",
+          "Retaining shoulder WLD-09 L01 0 -1 1",
+          "Retaining shoulder WLD-09 L01 0 -1 2",
+          "Retaining shoulder WLD-09 L01 1 -1 0",
+          "Retaining shoulder WLD-09 L01 1 -1 1",
+          "Retaining shoulder WLD-09 L01 1 -1 2",
+          "Retaining shoulder WLD-09 L01 1 -1 3",
+          "Retaining shoulder WLD-09 L02 0 -1 0",
+          "Retaining shoulder WLD-09 L02 0 -1 1",
+          "Retaining shoulder WLD-09 L03 0 -1 5",
+          "Retaining shoulder WLD-09 L03 0 -1 6",
+          "Retaining shoulder WLD-09 L03 0 -1 7",
+          "Retaining shoulder WLD-09 L03 0 -1 8",
+          "Retaining shoulder WLD-09 L03 0 -1 9",
+          "Retaining shoulder WLD-09 L03 0 -1 10",
+          "Retaining shoulder WLD-09 L03 0 -1 11",
+          "WLD-09 complete bridge arrival forecourt region0",
+          "WLD-09 complete structural crest deck region0",
+          "WLD-09 supported crest guard arrival west void edge 0",
+          "WLD-09 supported crest guard arrival west void edge 1",
+          "WLD-09 supported crest guard arrival west void edge 2",
+          "WLD-09 supported crest guard arrival west void edge 3",
+          "WLD-09 supported crest guard arrival west void edge 4",
+          "WLD-09 supported crest guard crest south west void edge 0",
+          "WLD-09 supported crest guard crest south west void edge 1",
+          "WLD-09 supported crest guard crest south west void edge 2",
+          "WLD-09 supported crest guard crest south west void edge 3",
+          "WLD-09 supported crest guard crest south west void edge 4",
+          "WLD-09 supported crest guard crest south west void edge 5",
+          "WLD-09 supported crest guard crest south west void edge 6",
+          "WLD-09 supported crest guard crest south west void edge 7",
+          "WLD-09 supported crest guard crest south west void edge 8",
+          "WLD-09 supported crest guard crest south west void edge 9",
+          "WLD-09 supported crest guard crest west return 0",
+          "WLD-09 supported crest guard crest west return 1",
+          "WLD-09 supported crest guard crest west return 2",
+          "WLD-09 supported crest guard crest west return 3",
+          "WLD-09 supported crest guard crest south east void edge 0",
+          "WLD-09 supported crest guard crest south east void edge 1",
+          "WLD-09 supported crest guard crest south east void edge 2",
+          "WLD-09 supported crest guard crest south east void edge 3",
+          "WLD-09 supported crest guard crest south east void edge 4",
+          "WLD-09 supported crest guard crest south east void edge 5",
+          "WLD-09 supported crest guard crest south east void edge 6",
+          "WLD-09 supported crest guard crest south east void edge 7",
+          "WLD-09 supported crest guard crest south east void edge 8",
+          "WLD-09 supported crest guard crest east return 0",
+          "WLD-09 supported crest guard crest east return 1",
+          "WLD-09 supported crest guard crest east return 2",
+          "WLD-09 supported crest guard crest east return 3",
+          "WLD-09 supported crest guard arrival east void edge 0",
+          "WLD-09 supported crest guard arrival east void edge 1",
+          "WLD-09 supported crest guard arrival east void edge 2",
+          "WLD-09 supported crest guard arrival east void edge 3",
+          "WLD-09 supported crest guard arrival east void edge 4",
+          "WLD-09 supported crest guard north west void edge 0",
+          "WLD-09 supported crest guard north west void edge 1",
+          "WLD-09 supported crest guard north west void edge 2",
+          "WLD-09 supported crest guard north west void edge 3",
+          "WLD-09 supported crest guard north west void edge 4",
+          "WLD-09 supported crest guard north west void edge 5",
+          "WLD-09 supported crest guard north west void edge 6",
+          "WLD-09 supported crest guard north west void edge 7",
+          "WLD-09 supported crest guard north west void edge 8",
+          "WLD-09 supported crest guard north west void edge 9",
+          "WLD-09 supported crest guard north west void edge 10",
+          "WLD-09 supported crest guard north west void edge 11",
+          "WLD-09 supported crest guard north west void edge 12",
+          "WLD-09 supported crest guard north west void edge 13",
+          "WLD-09 supported crest guard north west void edge 14",
+          "WLD-09 supported crest guard north west void edge 15",
+          "WLD-09 supported crest guard north east void return 0",
+          "WLD-09 supported crest guard north east void return 1",
+          "WLD-09 supported crest guard south west return 0",
+          "WLD-09 supported crest guard south west return 1",
+          "WLD-09 supported crest guard south east return 0",
+          "WLD-09 supported crest guard south east return 1",
+          "WLD-09 supported crest guard south east return 2",
+          "WLD-09 supported crest guard south east return 3",
+          "WLD-09 supported crest guard south east return 4",
+          "WLD-09 supported crest guard south east return 5",
+          "WLD-09 supported crest guard south east return 6",
+          "WLD-09 east hall upper floor and rectangular well region0",
+          "WLD-09 east hall enclosed roof region0",
+          "WLD-09 turbine enclosed roof region0",
+          "WLD-09 retained external service catwalk region0",
+          "WLD-09 west hall upper floor and rectangular well region0",
+          "WLD-09 west hall enclosed roof region0",
+          "WLD-09 hall E header0 region0",
+          "WLD-09 west-hall S header0 region0",
+          "WLD-09 west-hall W header0 region0",
+          "WLD-09 office-east E pier0 region0",
+          "WLD-09 office-east E header0 region0",
+          "WLD-09 office-east E end region0",
+          "DAM-HALL-z-48-68-0 indexed frame",
+          "DAM-HALL-x-70.5-47-0 indexed frame",
+          "DAM-HALL-z-48-31-0 indexed frame",
+          "DAM-HALL-x-26-28-0 indexed frame",
+          "WLD-09 contained main tread 32",
+          "WLD-09 contained main tread 33",
+          "WLD-09 contained upper flight 66.17 guard 4",
+          "WLD-09 contained upper flight 67.83 guard 4",
+          "WLD-09 east well enclosed side 65.7 region0",
+          "WLD-09 east well enclosed side 68.1 region0",
+          "WLD-09 east well closed north end region0",
+          "WLD-09 west contained main tread 32 west",
+          "WLD-09 west contained main tread 33 west",
+          "WLD-09 contained upper flight 66.17 guard 4 west",
+          "WLD-09 contained upper flight 67.83 guard 4 west",
+          "WLD-09 west well enclosed side 65.7 region0 west",
+          "WLD-09 west well enclosed side 68.1 region0 west",
+          "WLD-09 west well closed north end region0 west",
+          "WLD-09 contained catwalk outside guard 0",
+          "WLD-09 contained catwalk outside guard 1",
+          "WLD-09 contained catwalk outside guard 2",
+          "WLD-09 contained catwalk outside guard 3",
+          "WLD-09 contained catwalk outside guard 4",
+          "WLD-09 contained catwalk outside guard 5",
+          "WLD-09 contained catwalk outside guard 6",
+          "WLD-09 contained catwalk outside guard 7",
+          "WLD-09 contained catwalk north guard 0",
+          "WLD-09 contained catwalk north guard 1",
+          "WLD-09 contained catwalk south guard 0",
+          "WLD-09 contained catwalk south guard 1",
+          "WLD-09 saved contained hall terrain",
+          "Dam spillway shared hall retained crest opening lintel region0"
+        ]
+      },
+      {
+        "path": "development/levels/rebuild/captures/dam-spillway-gallery-batch/spillway-exterior.png",
+        "sha256": "f36105523344bd64d996ba6a5dadbee47ae83215222e71f1e914e23b3dcd8642",
+        "glb_sha256": "a5ccd3bf7585b304eb8513eb52be3b866509d0b3e68996d6ca1cf34a62b6526b",
+        "hidden": []
+      }
+    ]
+  },
+  "previous_vertical_routes": 5,
+  "current_vertical_routes": 6,
+  "flights": 13,
+  "ordinary_links": {
+    "flat_links": 13,
+    "pass_both_directions": 13
+  },
+  "broad_lanes": {
+    "samples": 6120,
+    "valid_standing": 5889,
+    "invalid_standing": 231,
+    "reasons": {
+      "PHYSICAL_COMPONENT": 137,
+      "NO_FOOT_SUPPORT_-0.22_0.0": 41,
+      "NO_FOOT_SUPPORT_0.22_0.0": 41,
+      "NO_FOOT_SUPPORT_0.0_0.22": 10,
+      "NO_FOOT_SUPPORT_0.0_-0.22": 2
+    },
+    "physical_components": [
+      [
+        "WLD-09 middle landing column 68.22 34.25 region0",
+        21
+      ],
+      [
+        "DAM-HALL-x-64-35--6 indexed frame",
+        18
+      ],
+      [
+        "WLD-09 middle landing column 68.22 35.75 region0",
+        12
+      ],
+      [
+        "WLD-09 rim column 68.22 31.5 region0",
+        12
+      ],
+      [
+        "349:level_blockout_hydro_turbine.001",
+        11
+      ],
+      [
+        "WLD-09 middle landing column 65.78 35.75 region0",
+        9
+      ],
+      [
+        "WLD-09 middle landing column 65.78 34.25 region0",
+        9
+      ],
+      [
+        "DAM-SPILLWAY-LOWER-68 indexed frame",
+        6
+      ],
+      [
+        "WLD-09-restart-shared turbine workshop north indexed frame",
+        4
+      ],
+      [
+        "WLD-09 restart shared turbine workshop north pier 0 0 region0",
+        4
+      ],
+      [
+        "WLD-09 contained lower flight 66.17 guard 0",
+        4
+      ],
+      [
+        "WLD-09 contained lower flight 67.83 guard 0",
+        4
+      ],
+      [
+        "WLD-09 contained upper flight 66.17 guard 4",
+        4
+      ],
+      [
+        "WLD-09 contained upper flight 67.83 guard 4",
+        4
+      ],
+      [
+        "DAM-HALL-z-48-68-0 indexed frame",
+        4
+      ],
+      [
+        "WLD-09 rim column 68.22 38.5 region0",
+        3
+      ],
+      [
+        "WLD-09 service bay lower flight 61.13 guard 1",
+        2
+      ],
+      [
+        "WLD-09 service bay upper flight 61.67 guard 0",
+        2
+      ],
+      [
+        "WLD-09 service bay west stair cheek region0",
+        1
+      ],
+      [
+        "WLD-09 service bay lower flight 61.13 guard 0",
+        1
+      ],
+      [
+        "WLD-09 service bay upper flight 63.33 guard 1",
+        1
+      ],
+      [
+        "WLD-09 service bay upper flight 61.67 guard 1",
+        1
+      ]
+    ]
+  },
+  "reused_saved_excavation": true,
+  "prior_roster_entries_preserved": 28,
+  "drawing_sha256": "cc4151a7f9806d538e02d220160b034296a2ab79ffb923684e28c63676136e4d",
+  "runtime_acceptance": false,
+  "prior_recovery_runs": {
+    "multiplayer": 44153590389,
+    "gpu": 44016080200,
+    "installer": 44153590626
+  },
+  "publication": {
+    "construction_commit": "66fe3286e13cb569b61797ee43a10e952ba4e5ff",
+    "branch": "map/roster-structure-batch",
+    "pr": 86,
+    "pr_base": "map/house-default",
+    "pr_draft": true,
+    "committed_bytes_verified": true,
+    "gallery_run": 44183961989,
+    "gallery_run_status": "completed",
+    "gallery_run_conclusion": "success",
+    "gallery_page_http": 200,
+    "new_capture_http": 404,
+    "deployed_capture_verified": false
+  }
+}

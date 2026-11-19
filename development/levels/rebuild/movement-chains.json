@@ -1,0 +1,15 @@
+{
+  "scope": "Declared source-coordinate circulation checks; no invented connector or runtime unlock",
+  "sites": {
+    "WLD-05": [
+      {"id": "headhouse-haul-and-ventilation-loop", "closed": true, "links": [{"link": "L09"}, {"link": "L10"}, {"link": "L18"}, {"link": "L17"}]},
+      {"id": "main-ore-circuit", "closed": true, "links": [{"link": "L10"}, {"link": "L11"}, {"link": "L12"}, {"link": "L13"}]}
+    ],
+    "WLD-07": [
+      {"id": "ossuary-and-surface-loop", "closed": true, "links": [{"link": "L12"}, {"link": "L14"}, {"link": "L15"}, {"link": "L13", "reverse": true}, {"link": "L10", "reverse": true}, {"link": "L09", "reverse": true}]}
+    ],
+    "WLD-07-MORTUARY": [
+      {"id": "ossuary-and-surface-loop", "closed": true, "links": [{"link": "L12"}, {"link": "L14"}, {"link": "L15"}, {"link": "L13", "reverse": true}, {"link": "L10", "reverse": true}, {"link": "L09", "reverse": true}]}
+    ]
+  }
+}

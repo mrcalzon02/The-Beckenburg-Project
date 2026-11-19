@@ -1,0 +1,7904 @@
+{
+  "status": "ACTUAL_ORIGINAL_TERRAIN_CONTACT_DISPOSITION_NOT_FULL_MAP_CLEARANCE",
+  "sites": {
+    "ACADEMY": {
+      "original_terrain_contacts": 14,
+      "after_valid": 14,
+      "remaining_reasons": {},
+      "samples": [
+        {
+          "link": "L02:1/right",
+          "point": [
+            59.62,
+            0.0,
+            55.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:1/right",
+          "point": [
+            59.62,
+            0.0,
+            55.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:1/right",
+          "point": [
+            59.62,
+            0.0,
+            55.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:2/centre",
+          "point": [
+            60.0,
+            0.0,
+            54.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:2/centre",
+          "point": [
+            60.0,
+            0.0,
+            54.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:2/right",
+          "point": [
+            59.62,
+            0.0,
+            55.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:2/right",
+          "point": [
+            59.62,
+            0.0,
+            54.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:2/right",
+          "point": [
+            59.62,
+            0.0,
+            54.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:2/right",
+          "point": [
+            59.62,
+            0.0,
+            54.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:2/right",
+          "point": [
+            59.62,
+            0.0,
+            54.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L42:0/right",
+          "point": [
+            57.0,
+            0.0,
+            49.62
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L42:1/centre",
+          "point": [
+            56.81716417910448,
+            0.0,
+            49.832089552238806
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L42:1/left",
+          "point": [
+            57.07419807894362,
+            0.0,
+            49.55220819463619
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L42:1/left",
+          "point": [
+            56.89136225804809,
+            0.0,
+            49.38429774687499
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        }
+      ]
+    },
+    "FARMHOUSE": {
+      "original_terrain_contacts": 8,
+      "after_valid": 8,
+      "remaining_reasons": {},
+      "samples": [
+        {
+          "link": "L22:3/right",
+          "point": [
+            37.93,
+            0.0,
+            6.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L22:3/right",
+          "point": [
+            37.93,
+            0.0,
+            6.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L22:3/right",
+          "point": [
+            37.93,
+            0.0,
+            7.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L22:3/right",
+          "point": [
+            37.93,
+            0.0,
+            7.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L22:3/right",
+          "point": [
+            37.93,
+            0.0,
+            7.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L22:3/right",
+          "point": [
+            37.93,
+            0.0,
+            7.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L22:3/right",
+          "point": [
+            37.93,
+            0.0,
+            8.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L22:3/right",
+          "point": [
+            37.93,
+            0.0,
+            8.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        }
+      ]
+    },
+    "WLD-05": {
+      "original_terrain_contacts": 167,
+      "after_valid": 167,
+      "remaining_reasons": {},
+      "samples": [
+        {
+          "link": "L05:0/centre",
+          "point": [
+            16.38095238095238,
+            0.0,
+            43.333333333333336
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            16.59047619047619,
+            0.0,
+            43.46666666666667
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            16.8,
+            0.0,
+            43.6
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            17.00952380952381,
+            0.0,
+            43.733333333333334
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            17.21904761904762,
+            0.0,
+            43.86666666666667
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            17.42857142857143,
+            0.0,
+            44.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            17.63809523809524,
+            0.0,
+            44.13333333333333
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            17.847619047619048,
+            0.0,
+            44.266666666666666
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            18.057142857142857,
+            0.0,
+            44.4
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            18.266666666666666,
+            0.0,
+            44.53333333333333
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            18.476190476190474,
+            0.0,
+            44.666666666666664
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            18.685714285714283,
+            0.0,
+            44.8
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            18.895238095238096,
+            0.0,
+            44.93333333333334
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            19.104761904761904,
+            0.0,
+            45.06666666666666
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            19.314285714285717,
+            0.0,
+            45.2
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            19.523809523809526,
+            0.0,
+            45.333333333333336
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            19.733333333333334,
+            0.0,
+            45.46666666666667
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            19.942857142857143,
+            0.0,
+            45.6
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            20.152380952380952,
+            0.0,
+            45.733333333333334
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            20.36190476190476,
+            0.0,
+            45.86666666666667
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            20.57142857142857,
+            0.0,
+            46.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            20.78095238095238,
+            0.0,
+            46.13333333333333
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            20.99047619047619,
+            0.0,
+            46.266666666666666
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            21.2,
+            0.0,
+            46.4
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            21.40952380952381,
+            0.0,
+            46.53333333333333
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            21.61904761904762,
+            0.0,
+            46.666666666666664
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            21.82857142857143,
+            0.0,
+            46.8
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            22.038095238095238,
+            0.0,
+            46.93333333333334
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            22.247619047619047,
+            0.0,
+            47.06666666666666
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            22.457142857142856,
+            0.0,
+            47.2
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            22.666666666666664,
+            0.0,
+            47.333333333333336
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            22.876190476190477,
+            0.0,
+            47.46666666666667
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            23.085714285714285,
+            0.0,
+            47.6
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            23.295238095238098,
+            0.0,
+            47.733333333333334
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            23.504761904761907,
+            0.0,
+            47.86666666666667
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            23.714285714285715,
+            0.0,
+            48.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            23.923809523809524,
+            0.0,
+            48.13333333333333
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            24.133333333333333,
+            0.0,
+            48.266666666666666
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            24.34285714285714,
+            0.0,
+            48.4
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            24.552380952380954,
+            0.0,
+            48.53333333333333
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            24.761904761904763,
+            0.0,
+            48.666666666666664
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            24.97142857142857,
+            0.0,
+            48.8
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            25.18095238095238,
+            0.0,
+            48.93333333333334
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            25.39047619047619,
+            0.0,
+            49.06666666666666
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            25.6,
+            0.0,
+            49.2
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            25.80952380952381,
+            0.0,
+            49.333333333333336
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            26.01904761904762,
+            0.0,
+            49.46666666666667
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            26.228571428571428,
+            0.0,
+            49.6
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/centre",
+          "point": [
+            26.438095238095237,
+            0.0,
+            49.733333333333334
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            15.150938033556136,
+            0.0,
+            43.41587288604443
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            15.360461843079946,
+            0.0,
+            43.54920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            15.569985652603755,
+            0.0,
+            43.6825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            15.779509462127564,
+            0.0,
+            43.81587288604444
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            15.989033271651373,
+            0.0,
+            43.94920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            16.19855708117518,
+            0.0,
+            44.082539552711104
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            16.408080890698994,
+            0.0,
+            44.21587288604444
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            16.617604700222802,
+            0.0,
+            44.34920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            16.82712850974661,
+            0.0,
+            44.4825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            17.036652319270424,
+            0.0,
+            44.615872886044436
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            17.246176128794232,
+            0.0,
+            44.74920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            17.45569993831804,
+            0.0,
+            44.8825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            17.66522374784185,
+            0.0,
+            45.015872886044434
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            17.87474755736566,
+            0.0,
+            45.14920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            18.084271366889467,
+            0.0,
+            45.2825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            18.293795176413276,
+            0.0,
+            45.41587288604443
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            18.50331898593709,
+            0.0,
+            45.54920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            18.712842795460897,
+            0.0,
+            45.6825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            18.92236660498471,
+            0.0,
+            45.81587288604444
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            19.13189041450852,
+            0.0,
+            45.94920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            19.341414224032327,
+            0.0,
+            46.082539552711104
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            19.969985652603754,
+            0.0,
+            46.4825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            20.179509462127562,
+            0.0,
+            46.615872886044436
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            20.389033271651375,
+            0.0,
+            46.74920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            20.598557081175183,
+            0.0,
+            46.8825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            20.808080890698992,
+            0.0,
+            47.015872886044434
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            21.017604700222805,
+            0.0,
+            47.14920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            21.227128509746613,
+            0.0,
+            47.2825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            21.436652319270422,
+            0.0,
+            47.41587288604443
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            21.64617612879423,
+            0.0,
+            47.54920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            21.85569993831804,
+            0.0,
+            47.6825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            22.06522374784185,
+            0.0,
+            47.81587288604444
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            22.274747557365657,
+            0.0,
+            47.94920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            22.48427136688947,
+            0.0,
+            48.082539552711104
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            22.69379517641328,
+            0.0,
+            48.21587288604444
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            22.90331898593709,
+            0.0,
+            48.34920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            23.1128427954609,
+            0.0,
+            48.4825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            23.32236660498471,
+            0.0,
+            48.615872886044436
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            23.531890414508517,
+            0.0,
+            48.74920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            23.741414224032326,
+            0.0,
+            48.8825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            23.950938033556135,
+            0.0,
+            49.015872886044434
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            24.160461843079947,
+            0.0,
+            49.14920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            24.369985652603756,
+            0.0,
+            49.2825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            24.579509462127564,
+            0.0,
+            49.41587288604443
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            24.789033271651373,
+            0.0,
+            49.54920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            24.998557081175182,
+            0.0,
+            49.6825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            25.208080890698994,
+            0.0,
+            49.81587288604444
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            25.417604700222803,
+            0.0,
+            49.94920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            25.627128509746612,
+            0.0,
+            50.082539552711104
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            25.83665231927042,
+            0.0,
+            50.21587288604444
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            26.04617612879423,
+            0.0,
+            50.34920621937777
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            26.255699938318042,
+            0.0,
+            50.4825395527111
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/left",
+          "point": [
+            26.46522374784185,
+            0.0,
+            50.615872886044436
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            17.401442918824817,
+            0.0,
+            43.1174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            17.610966728348625,
+            0.0,
+            43.25079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            17.820490537872438,
+            0.0,
+            43.384127113955564
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            18.030014347396246,
+            0.0,
+            43.5174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            18.239538156920055,
+            0.0,
+            43.65079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            18.449061966443864,
+            0.0,
+            43.78412711395556
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            18.658585775967673,
+            0.0,
+            43.917460447288896
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            18.86810958549148,
+            0.0,
+            44.05079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            19.07763339501529,
+            0.0,
+            44.18412711395556
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            19.287157204539103,
+            0.0,
+            44.3174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            19.49668101406291,
+            0.0,
+            44.45079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            19.706204823586724,
+            0.0,
+            44.58412711395557
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            19.915728633110533,
+            0.0,
+            44.7174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            20.12525244263434,
+            0.0,
+            44.85079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            20.33477625215815,
+            0.0,
+            44.984127113955566
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            20.54430006168196,
+            0.0,
+            45.1174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            20.753823871205768,
+            0.0,
+            45.25079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            20.963347680729576,
+            0.0,
+            45.384127113955564
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            21.17287149025339,
+            0.0,
+            45.5174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            21.382395299777198,
+            0.0,
+            45.65079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            21.591919109301006,
+            0.0,
+            45.78412711395556
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            21.80144291882482,
+            0.0,
+            45.917460447288896
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            22.010966728348627,
+            0.0,
+            46.05079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            22.220490537872436,
+            0.0,
+            46.18412711395556
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            22.430014347396245,
+            0.0,
+            46.3174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            22.639538156920054,
+            0.0,
+            46.45079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            22.849061966443863,
+            0.0,
+            46.58412711395557
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            23.05858577596767,
+            0.0,
+            46.7174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            23.268109585491484,
+            0.0,
+            46.85079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            23.477633395015292,
+            0.0,
+            46.984127113955566
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            23.687157204539105,
+            0.0,
+            47.1174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            23.896681014062914,
+            0.0,
+            47.25079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            24.106204823586722,
+            0.0,
+            47.384127113955564
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            24.31572863311053,
+            0.0,
+            47.5174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            24.52525244263434,
+            0.0,
+            47.65079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            24.73477625215815,
+            0.0,
+            47.78412711395556
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            24.94430006168196,
+            0.0,
+            47.917460447288896
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            25.15382387120577,
+            0.0,
+            48.05079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            25.36334768072958,
+            0.0,
+            48.18412711395556
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            25.572871490253387,
+            0.0,
+            48.3174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            25.782395299777196,
+            0.0,
+            48.45079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            25.99191910930101,
+            0.0,
+            48.58412711395557
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            26.201442918824817,
+            0.0,
+            48.7174604472889
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            26.410966728348626,
+            0.0,
+            48.85079378062223
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L05:0/right",
+          "point": [
+            26.620490537872435,
+            0.0,
+            48.984127113955566
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:1/centre",
+          "point": [
+            40.0,
+            0.0,
+            44.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:1/left",
+          "point": [
+            40.0,
+            0.0,
+            43.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:1/right",
+          "point": [
+            40.0,
+            0.0,
+            44.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/centre",
+          "point": [
+            40.0,
+            0.0,
+            44.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/centre",
+          "point": [
+            39.75,
+            0.0,
+            44.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/centre",
+          "point": [
+            39.5,
+            0.0,
+            44.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/centre",
+          "point": [
+            39.25,
+            0.0,
+            44.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/centre",
+          "point": [
+            39.0,
+            0.0,
+            44.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/centre",
+          "point": [
+            38.75,
+            0.0,
+            44.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/left",
+          "point": [
+            40.0,
+            0.0,
+            43.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/left",
+          "point": [
+            39.75,
+            0.0,
+            43.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/right",
+          "point": [
+            40.0,
+            0.0,
+            44.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/right",
+          "point": [
+            39.75,
+            0.0,
+            44.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/right",
+          "point": [
+            39.5,
+            0.0,
+            44.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/right",
+          "point": [
+            39.25,
+            0.0,
+            44.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/right",
+          "point": [
+            39.0,
+            0.0,
+            44.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/right",
+          "point": [
+            38.75,
+            0.0,
+            44.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/right",
+          "point": [
+            38.5,
+            0.0,
+            44.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/right",
+          "point": [
+            38.25,
+            0.0,
+            44.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L08:2/right",
+          "point": [
+            38.0,
+            0.0,
+            44.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        }
+      ]
+    },
+    "WLD-08": {
+      "original_terrain_contacts": 25,
+      "after_valid": 25,
+      "remaining_reasons": {},
+      "samples": [
+        {
+          "link": "L16:1/centre",
+          "point": [
+            60.25,
+            0.0,
+            14.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/centre",
+          "point": [
+            60.5,
+            0.0,
+            14.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/centre",
+          "point": [
+            60.75,
+            0.0,
+            14.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/centre",
+          "point": [
+            61.0,
+            0.0,
+            14.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/centre",
+          "point": [
+            61.25,
+            0.0,
+            14.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/centre",
+          "point": [
+            61.5,
+            0.0,
+            14.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/centre",
+          "point": [
+            61.75,
+            0.0,
+            14.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/centre",
+          "point": [
+            62.0,
+            0.0,
+            14.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            58.5,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            58.75,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            59.0,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            59.25,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            59.5,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            59.75,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            60.0,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            60.25,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            60.5,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            60.75,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            61.0,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            61.25,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            61.5,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            61.75,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:1/right",
+          "point": [
+            62.0,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:2/centre",
+          "point": [
+            62.0,
+            0.0,
+            14.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L16:2/right",
+          "point": [
+            62.0,
+            0.0,
+            13.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        }
+      ]
+    },
+    "WLD-09": {
+      "original_terrain_contacts": 241,
+      "after_valid": 241,
+      "remaining_reasons": {},
+      "samples": [
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            81.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            81.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            81.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            81.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            80.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            80.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            80.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            80.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            79.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            79.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            79.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            79.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            78.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            78.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            78.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            78.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            77.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            77.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            77.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            77.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            76.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            76.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            76.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            76.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            81.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            81.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            81.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            81.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            80.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            80.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            80.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            80.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            79.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            79.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            79.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            79.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            78.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            78.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            78.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            78.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            77.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            77.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            77.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            77.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            76.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            76.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            76.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/left",
+          "point": [
+            36.73,
+            0.0,
+            76.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            81.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            81.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            81.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            81.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            80.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            80.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            80.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            80.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            79.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            79.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            79.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            79.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            78.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            78.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            78.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            78.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            77.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            77.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            77.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            77.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            76.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            76.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            76.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:0/right",
+          "point": [
+            35.27,
+            0.0,
+            76.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            76.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            75.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            75.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            75.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            75.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            74.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            74.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            74.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            74.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            73.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            73.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            73.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            73.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            72.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            72.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            72.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            72.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            71.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            71.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            71.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            71.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            70.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            70.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            70.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            70.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            69.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            69.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            69.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/centre",
+          "point": [
+            36.0,
+            0.0,
+            69.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            76.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            75.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            75.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            75.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            75.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            74.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            74.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            74.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            74.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            73.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            73.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            73.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            73.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            72.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            72.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            72.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            72.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            71.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            71.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            71.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            71.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            70.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            70.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            70.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            70.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            69.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            69.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            69.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/left",
+          "point": [
+            36.73,
+            0.0,
+            69.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            76.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            75.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            75.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            75.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            75.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            74.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            74.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            74.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            74.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            73.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            73.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            73.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            73.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            72.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            72.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            72.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            72.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            71.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            71.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            71.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            71.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            70.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            70.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            70.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            70.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            69.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            69.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            69.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L01:1/right",
+          "point": [
+            35.27,
+            0.0,
+            69.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.0,
+            0.0,
+            69.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.05714285714286,
+            0.0,
+            68.75714285714285
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.114285714285714,
+            0.0,
+            68.51428571428572
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.17142857142857,
+            0.0,
+            68.27142857142857
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.22857142857143,
+            0.0,
+            68.02857142857142
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.285714285714285,
+            0.0,
+            67.78571428571429
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.34285714285714,
+            0.0,
+            67.54285714285714
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.4,
+            0.0,
+            67.3
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.457142857142856,
+            0.0,
+            67.05714285714286
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.51428571428571,
+            0.0,
+            66.81428571428572
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.57142857142857,
+            0.0,
+            66.57142857142857
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.628571428571426,
+            0.0,
+            66.32857142857142
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.68571428571428,
+            0.0,
+            66.08571428571429
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.74285714285714,
+            0.0,
+            65.84285714285714
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.8,
+            0.0,
+            65.6
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.857142857142854,
+            0.0,
+            65.35714285714286
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.91428571428571,
+            0.0,
+            65.11428571428571
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            36.97142857142857,
+            0.0,
+            64.87142857142857
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.028571428571425,
+            0.0,
+            64.62857142857143
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.08571428571429,
+            0.0,
+            64.38571428571429
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.142857142857146,
+            0.0,
+            64.14285714285714
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.2,
+            0.0,
+            63.9
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.25714285714286,
+            0.0,
+            63.65714285714286
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.31428571428572,
+            0.0,
+            63.41428571428571
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.371428571428574,
+            0.0,
+            63.17142857142857
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.42857142857143,
+            0.0,
+            62.92857142857143
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.48571428571429,
+            0.0,
+            62.68571428571428
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.542857142857144,
+            0.0,
+            62.44285714285714
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.6,
+            0.0,
+            62.2
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/centre",
+          "point": [
+            37.65714285714286,
+            0.0,
+            61.957142857142856
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            36.71059453288351,
+            0.0,
+            69.16719871361965
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            36.76773739002637,
+            0.0,
+            68.92434157076251
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            36.824880247169226,
+            0.0,
+            68.68148442790537
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            36.88202310431208,
+            0.0,
+            68.43862728504823
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            36.93916596145494,
+            0.0,
+            68.19577014219108
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            36.9963088185978,
+            0.0,
+            67.95291299933395
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.053451675740654,
+            0.0,
+            67.7100558564768
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.11059453288351,
+            0.0,
+            67.46719871361965
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.16773739002637,
+            0.0,
+            67.22434157076252
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.224880247169224,
+            0.0,
+            66.98148442790537
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.28202310431208,
+            0.0,
+            66.73862728504822
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.33916596145494,
+            0.0,
+            66.49577014219108
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.396308818597795,
+            0.0,
+            66.25291299933394
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.45345167574065,
+            0.0,
+            66.0100558564768
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.51059453288351,
+            0.0,
+            65.76719871361965
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.567737390026366,
+            0.0,
+            65.52434157076252
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.62488024716922,
+            0.0,
+            65.28148442790537
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.68202310431208,
+            0.0,
+            65.03862728504822
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.73916596145494,
+            0.0,
+            64.79577014219109
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.7963088185978,
+            0.0,
+            64.55291299933394
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.85345167574066,
+            0.0,
+            64.3100558564768
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.910594532883515,
+            0.0,
+            64.06719871361965
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/left",
+          "point": [
+            37.96773739002637,
+            0.0,
+            63.824341570762506
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.346548324259345,
+            0.0,
+            68.5899441435232
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.4036911814022,
+            0.0,
+            68.34708700066606
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.46083403854506,
+            0.0,
+            68.10422985780892
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.517976895687916,
+            0.0,
+            67.86137271495177
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.57511975283077,
+            0.0,
+            67.61851557209464
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.63226260997363,
+            0.0,
+            67.37565842923749
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.68940546711649,
+            0.0,
+            67.13280128638034
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.746548324259344,
+            0.0,
+            66.88994414352321
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.8036911814022,
+            0.0,
+            66.64708700066606
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.86083403854506,
+            0.0,
+            66.40422985780891
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.917976895687914,
+            0.0,
+            66.16137271495177
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            35.97511975283077,
+            0.0,
+            65.91851557209463
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.03226260997363,
+            0.0,
+            65.67565842923749
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.089405467116485,
+            0.0,
+            65.43280128638034
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.14654832425934,
+            0.0,
+            65.1899441435232
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.2036911814022,
+            0.0,
+            64.94708700066606
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.260834038545056,
+            0.0,
+            64.70422985780891
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.31797689568791,
+            0.0,
+            64.46137271495178
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.37511975283078,
+            0.0,
+            64.21851557209463
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.432262609973634,
+            0.0,
+            63.97565842923749
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.48940546711649,
+            0.0,
+            63.73280128638035
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.54654832425935,
+            0.0,
+            63.48994414352321
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.603691181402205,
+            0.0,
+            63.24708700066606
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.66083403854506,
+            0.0,
+            63.00422985780892
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.71797689568792,
+            0.0,
+            62.76137271495178
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.775119752830776,
+            0.0,
+            62.518515572094636
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.83226260997363,
+            0.0,
+            62.275658429237495
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.88940546711649,
+            0.0,
+            62.032801286380355
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L02:0/right",
+          "point": [
+            36.946548324259346,
+            0.0,
+            61.78994414352321
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        }
+      ]
+    },
+    "WLD-10": {
+      "original_terrain_contacts": 142,
+      "after_valid": 142,
+      "remaining_reasons": {},
+      "samples": [
+        {
+          "link": "L17:0/centre",
+          "point": [
+            60.0,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:0/left",
+          "point": [
+            60.0,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:0/right",
+          "point": [
+            60.0,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            60.0,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            60.25,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            60.5,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            60.75,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            61.0,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            61.25,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            61.5,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            61.75,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            62.0,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            62.25,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            62.5,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            62.75,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            63.0,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            63.25,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            63.5,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            63.75,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            64.0,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            60.0,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            60.25,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            60.5,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            60.75,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            61.0,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            61.25,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            61.5,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            61.75,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            62.0,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            62.25,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            62.5,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            62.75,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            63.0,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            63.25,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            63.5,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            63.75,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            64.0,
+            0.0,
+            23.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            60.0,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            60.25,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            60.5,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            60.75,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            61.0,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            61.25,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            61.5,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            61.75,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            62.0,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            62.25,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            62.5,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            62.75,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            63.0,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            63.25,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            63.5,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/right",
+          "point": [
+            63.75,
+            0.0,
+            22.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            23.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            23.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            23.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            24.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            24.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            24.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            24.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            25.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            25.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            25.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            25.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            26.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            26.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            26.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            26.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            27.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            27.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            27.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            27.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            28.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            28.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            28.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            28.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            29.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            29.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            29.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            29.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            64.0,
+            0.0,
+            30.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            23.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            23.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            23.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            23.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            24.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            24.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            24.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            24.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            25.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            25.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            25.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            25.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            26.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            26.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            26.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            26.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            27.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            27.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            27.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            27.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            28.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            28.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            28.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            28.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            29.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            29.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            29.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            29.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            63.27,
+            0.0,
+            30.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            23.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            23.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            23.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            24.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            24.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            24.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            24.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            25.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            25.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            25.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            25.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            26.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            26.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            26.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            26.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            27.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            27.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            27.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            27.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            28.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            28.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            28.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            28.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            29.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            29.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            29.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            29.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/right",
+          "point": [
+            64.73,
+            0.0,
+            30.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/centre",
+          "point": [
+            64.0,
+            0.0,
+            30.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/left",
+          "point": [
+            63.27,
+            0.0,
+            30.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/right",
+          "point": [
+            64.73,
+            0.0,
+            30.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        }
+      ]
+    },
+    "WLD-13": {
+      "original_terrain_contacts": 64,
+      "after_valid": 64,
+      "remaining_reasons": {},
+      "samples": [
+        {
+          "link": "L17:0/centre",
+          "point": [
+            -8.0,
+            0.0,
+            53.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:0/left",
+          "point": [
+            -8.0,
+            0.0,
+            52.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            -8.0,
+            0.0,
+            53.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            -8.5,
+            0.0,
+            53.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/centre",
+          "point": [
+            -8.75,
+            0.0,
+            53.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            -8.0,
+            0.0,
+            52.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            -8.25,
+            0.0,
+            52.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            -8.5,
+            0.0,
+            52.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            -8.75,
+            0.0,
+            52.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:1/left",
+          "point": [
+            -9.0,
+            0.0,
+            52.27
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/centre",
+          "point": [
+            -12.0,
+            0.0,
+            45.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/centre",
+          "point": [
+            -12.0,
+            0.0,
+            45.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/centre",
+          "point": [
+            -12.0,
+            0.0,
+            45.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/centre",
+          "point": [
+            -12.0,
+            0.0,
+            45.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/centre",
+          "point": [
+            -12.0,
+            0.0,
+            44.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/centre",
+          "point": [
+            -12.0,
+            0.0,
+            44.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/centre",
+          "point": [
+            -12.0,
+            0.0,
+            44.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            47.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            47.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            47.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            46.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            46.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            46.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            46.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            45.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            45.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            45.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            45.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            44.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            44.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            44.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L17:2/left",
+          "point": [
+            -11.27,
+            0.0,
+            44.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            -12.0,
+            0.0,
+            43.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            -12.0,
+            0.0,
+            43.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            -12.0,
+            0.0,
+            43.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            -12.0,
+            0.0,
+            43.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            -12.0,
+            0.0,
+            42.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            -12.0,
+            0.0,
+            42.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/centre",
+          "point": [
+            -12.0,
+            0.0,
+            42.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            44.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            43.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            43.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            43.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            43.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            42.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            42.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            42.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            42.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            41.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            41.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            41.25
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            41.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            40.75
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:0/left",
+          "point": [
+            -11.27,
+            0.0,
+            40.5
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/centre",
+          "point": [
+            -8.75,
+            0.0,
+            35.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/centre",
+          "point": [
+            -8.5,
+            0.0,
+            35.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/centre",
+          "point": [
+            -8.0,
+            0.0,
+            35.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/left",
+          "point": [
+            -9.0,
+            0.0,
+            35.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/left",
+          "point": [
+            -8.75,
+            0.0,
+            35.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/left",
+          "point": [
+            -8.5,
+            0.0,
+            35.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/left",
+          "point": [
+            -8.25,
+            0.0,
+            35.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:1/left",
+          "point": [
+            -8.0,
+            0.0,
+            35.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:2/centre",
+          "point": [
+            -8.0,
+            0.0,
+            35.0
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "L18:2/left",
+          "point": [
+            -8.0,
+            0.0,
+            35.73
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        }
+      ]
+    },
+    "WLD-18": {
+      "original_terrain_contacts": 52,
+      "after_valid": 52,
+      "remaining_reasons": {},
+      "samples": [
+        {
+          "link": "route-07:0/left",
+          "point": [
+            25.5,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            25.25,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            25.0,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            24.75,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            24.5,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            24.25,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            24.0,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            23.75,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            23.5,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            23.25,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            23.0,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            22.75,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            22.5,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            22.25,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            22.0,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            21.75,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            21.5,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            21.25,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            21.0,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            20.75,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            20.5,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            20.25,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            20.0,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            19.75,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            19.5,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            19.25,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/left",
+          "point": [
+            19.0,
+            0.0,
+            47.52
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            24.25,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            24.0,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            23.75,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            23.5,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            23.25,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            23.0,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            22.75,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            22.5,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            22.25,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            22.0,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            21.75,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            21.5,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            21.25,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            21.0,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            20.75,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            20.5,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            20.25,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            20.0,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            19.75,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            19.5,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            19.25,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            19.0,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            18.75,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            18.5,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        },
+        {
+          "link": "route-07:0/right",
+          "point": [
+            18.25,
+            0.0,
+            48.48
+          ],
+          "after_valid": true,
+          "remaining_reason": null,
+          "remaining_component": null
+        }
+      ]
+    }
+  }
+}

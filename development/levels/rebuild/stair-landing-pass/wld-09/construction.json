@@ -1,0 +1,1238 @@
+{
+  "id": "WLD-09",
+  "status": "ACTUAL_STAIR_END_SUPPORT_CANDIDATE_FULL_ROUTE_GATES_OPEN",
+  "source_glb": "development/levels/rebuild/floor-closure-pass/wld-09/closed-floors.glb",
+  "source_glb_sha256": "740862241b4611cdf9ed6ec4d8bf8bec733a4e87a18778ab9519ddca0e4bddd9",
+  "source_physics": "development/levels/rebuild/floor-closure-pass/wld-09/closed-floors.hcs2",
+  "source_physics_sha256": "81b5b8a20cef4453701820fbde5b67c4893cf3fa01cab2c1c442bba214cd4ac7",
+  "layout": "development/levels/rebuild/stair-landing-pass/wld-09/authored-layout.json",
+  "layout_sha256": "84a4808f12234d1241011b495ac80bb290e07eea11eadc6ff1ec52b62badc272",
+  "targeted_segments": [
+    {
+      "link": "L07",
+      "segment": 0
+    },
+    {
+      "link": "L09",
+      "segment": 0
+    },
+    {
+      "link": "L11",
+      "segment": 0
+    },
+    {
+      "link": "L12",
+      "segment": 0
+    },
+    {
+      "link": "L18",
+      "segment": 0
+    },
+    {
+      "link": "L18",
+      "segment": 2
+    }
+  ],
+  "new_parts": 39,
+  "new_triangles": 476,
+  "platforms": [
+    {
+      "name": "Authored stair end WLD-09 L09 0 high region0",
+      "link": "L09",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          70.62469504755443,
+          35.780868809443035
+        ],
+        [
+          71.24939009510885,
+          35.2811127713995
+        ],
+        [
+          70.0,
+          33.71937515251343
+        ],
+        [
+          69.37530495244557,
+          34.219131190556965
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-09 L09 0 high region1",
+      "link": "L09",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          70.62469504755443,
+          35.780868809443035
+        ],
+        [
+          71.24939009510885,
+          35.2811127713995
+        ],
+        [
+          70.0,
+          33.71937515251343
+        ],
+        [
+          69.37530495244557,
+          34.219131190556965
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-09 L09 0 high region2",
+      "link": "L09",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          70.62469504755443,
+          35.780868809443035
+        ],
+        [
+          71.24939009510885,
+          35.2811127713995
+        ],
+        [
+          70.0,
+          33.71937515251343
+        ],
+        [
+          69.37530495244557,
+          34.219131190556965
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-09 L11 0 high region0",
+      "link": "L11",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          70.0,
+          36.0
+        ],
+        [
+          70.8,
+          36.0
+        ],
+        [
+          70.8,
+          34.0
+        ],
+        [
+          70.0,
+          34.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-09 L11 0 high region1",
+      "link": "L11",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          70.0,
+          36.0
+        ],
+        [
+          70.8,
+          36.0
+        ],
+        [
+          70.8,
+          34.0
+        ],
+        [
+          70.0,
+          34.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-09 L11 0 high region2",
+      "link": "L11",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          70.0,
+          36.0
+        ],
+        [
+          70.8,
+          36.0
+        ],
+        [
+          70.8,
+          34.0
+        ],
+        [
+          70.0,
+          34.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-09 L12 0 low region0",
+      "link": "L12",
+      "segment": 0,
+      "end": "low",
+      "top_y": -6,
+      "bottom_y": -6.16,
+      "pad_polygon": [
+        [
+          71.0,
+          55.8
+        ],
+        [
+          71.0,
+          55.0
+        ],
+        [
+          69.0,
+          55.0
+        ],
+        [
+          69.0,
+          55.8
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-09 L12 0 high region0",
+      "link": "L12",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          71.0,
+          35.0
+        ],
+        [
+          71.0,
+          34.2
+        ],
+        [
+          69.0,
+          34.2
+        ],
+        [
+          69.0,
+          35.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-09 L12 0 high region1",
+      "link": "L12",
+      "segment": 0,
+      "end": "high",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          71.0,
+          35.0
+        ],
+        [
+          71.0,
+          34.2
+        ],
+        [
+          69.0,
+          34.2
+        ],
+        [
+          69.0,
+          35.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-09 L18 2 corner-bridge region0",
+      "link": "L18",
+      "segment": 2,
+      "end": "corner-bridge",
+      "top_y": 0,
+      "bottom_y": -0.16,
+      "pad_polygon": [
+        [
+          73.0,
+          27.0
+        ],
+        [
+          73.0,
+          28.05
+        ],
+        [
+          75.0,
+          28.05
+        ],
+        [
+          75.0,
+          27.0
+        ]
+      ]
+    },
+    {
+      "name": "Authored stair end WLD-09 L18 2 low region0",
+      "link": "L18",
+      "segment": 2,
+      "end": "low",
+      "top_y": -5,
+      "bottom_y": -5.16,
+      "pad_polygon": [
+        [
+          75.0,
+          43.8
+        ],
+        [
+          75.0,
+          43.0
+        ],
+        [
+          73.0,
+          43.0
+        ],
+        [
+          73.0,
+          43.8
+        ]
+      ]
+    }
+  ],
+  "landing_trims": [],
+  "removed_source_meshes": [
+    "L18 flight1 step1",
+    "L18 flight1 step2",
+    "L18 flight1 step3",
+    "L18 flight1 step4",
+    "L18 flight1 step5",
+    "L18 flight1 step6",
+    "L18 flight1 step7",
+    "L18 flight1 step8",
+    "L18 flight1 step9",
+    "L18 flight1 step10",
+    "L18 flight1 step11",
+    "L18 flight1 step12",
+    "L18 flight1 step13",
+    "L18 flight1 step14",
+    "L18 flight1 step15",
+    "L18 flight1 step16",
+    "L18 flight1 step17",
+    "L18 flight1 step18",
+    "L18 flight1 step19",
+    "L18 flight1 step20",
+    "L18 flight1 step21",
+    "L18 flight1 step22",
+    "L18 flight1 step23",
+    "L18 flight1 step24",
+    "L18 flight1 step25",
+    "L18 flight1 step26",
+    "L18 flight1 step27",
+    "L18 flight1 step28"
+  ],
+  "removed_native_parts": [
+    "321:L18 flight1 step1",
+    "322:L18 flight1 step2",
+    "323:L18 flight1 step3",
+    "324:L18 flight1 step4",
+    "325:L18 flight1 step5",
+    "326:L18 flight1 step6",
+    "327:L18 flight1 step7",
+    "328:L18 flight1 step8",
+    "329:L18 flight1 step9",
+    "330:L18 flight1 step10",
+    "331:L18 flight1 step11",
+    "332:L18 flight1 step12",
+    "333:L18 flight1 step13",
+    "334:L18 flight1 step14",
+    "335:L18 flight1 step15",
+    "336:L18 flight1 step16",
+    "337:L18 flight1 step17",
+    "338:L18 flight1 step18",
+    "339:L18 flight1 step19",
+    "340:L18 flight1 step20",
+    "341:L18 flight1 step21",
+    "342:L18 flight1 step22",
+    "343:L18 flight1 step23",
+    "344:L18 flight1 step24",
+    "345:L18 flight1 step25",
+    "346:L18 flight1 step26",
+    "347:L18 flight1 step27",
+    "348:L18 flight1 step28"
+  ],
+  "decisions": [
+    {
+      "link": "L07",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        50.0,
+        -6,
+        35.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor turbine.002"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L07",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        31.0,
+        0,
+        35.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor west-stair.001"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L09",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        45.0,
+        -6,
+        55.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor workshop"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L09",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        70.0,
+        0,
+        35.0
+      ],
+      "actual_existing_top_receivers": [
+        "L09 flight0 step34",
+        "L11 flight0 step34",
+        "L12 flight0 step34"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            70.22449987798926,
+            34.0
+          ],
+          [
+            70.00000138901784,
+            33.719376888785725
+          ],
+          [
+            69.6492225,
+            34.0
+          ]
+        ],
+        [
+          [
+            71.02449987798926,
+            35.0
+          ],
+          [
+            70.22449987798926,
+            34.0
+          ],
+          [
+            70.0,
+            34.0
+          ],
+          [
+            70.0,
+            34.99999999999999
+          ]
+        ],
+        [
+          [
+            71.0,
+            35.48062484748658
+          ],
+          [
+            71.24939009510885,
+            35.2811127713995
+          ],
+          [
+            71.02449987798926,
+            35.0
+          ],
+          [
+            71.0,
+            35.0
+          ]
+        ],
+        [
+          [
+            70.62469504755443,
+            35.780868809443035
+          ],
+          [
+            70.86549355935821,
+            35.58823
+          ],
+          [
+            70.470584,
+            35.58823
+          ]
+        ],
+        [
+          [
+            69.41176,
+            34.189969999999995
+          ],
+          [
+            69.37531,
+            34.21913
+          ],
+          [
+            69.41176,
+            34.26469293761706
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-09 L09 0 high region0",
+        "Authored stair end WLD-09 L09 0 high region1",
+        "Authored stair end WLD-09 L09 0 high region2"
+      ]
+    },
+    {
+      "link": "L11",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        50.0,
+        -6,
+        35.0
+      ],
+      "actual_existing_top_receivers": [
+        "Floor turbine.002"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L11",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        70.0,
+        0,
+        35.0
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-09 L09 0 high region1",
+        "Authored stair end WLD-09 L09 0 high region2",
+        "L09 flight0 step34",
+        "L12 flight0 step34"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            70.8,
+            34.71937499999999
+          ],
+          [
+            70.8,
+            34.0
+          ],
+          [
+            70.2245,
+            34.0
+          ]
+        ],
+        [
+          [
+            70.8,
+            36.0
+          ],
+          [
+            70.8,
+            35.640622
+          ],
+          [
+            70.62469,
+            35.78087
+          ]
+        ],
+        [
+          [
+            70.35077656868911,
+            36.0
+          ],
+          [
+            70.79999231626263,
+            36.0
+          ],
+          [
+            70.62469,
+            35.78087
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-09 L11 0 high region0",
+        "Authored stair end WLD-09 L11 0 high region1",
+        "Authored stair end WLD-09 L11 0 high region2"
+      ]
+    },
+    {
+      "link": "L12",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        70.0,
+        -6,
+        55.0
+      ],
+      "actual_existing_top_receivers": [],
+      "authored_patch_polygons": [
+        [
+          [
+            71.0,
+            55.8
+          ],
+          [
+            71.0,
+            55.0
+          ],
+          [
+            69.0,
+            55.0
+          ],
+          [
+            69.0,
+            55.8
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-09 L12 0 low region0"
+      ]
+    },
+    {
+      "link": "L12",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        70.0,
+        0,
+        35.0
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-09 L09 0 high region0",
+        "Authored stair end WLD-09 L09 0 high region1",
+        "Authored stair end WLD-09 L11 0 high region1",
+        "L09 flight0 step34",
+        "L11 flight0 step34"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            69.3992225,
+            34.2
+          ],
+          [
+            69.0,
+            34.2
+          ],
+          [
+            69.0,
+            34.519378
+          ]
+        ],
+        [
+          [
+            71.0,
+            34.96937499999999
+          ],
+          [
+            71.0,
+            34.2
+          ],
+          [
+            70.8,
+            34.2
+          ],
+          [
+            70.8,
+            34.71937499999999
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-09 L12 0 high region0",
+        "Authored stair end WLD-09 L12 0 high region1"
+      ]
+    },
+    {
+      "link": "L18",
+      "segment": 0,
+      "end": "low",
+      "authored_point": [
+        58,
+        -10,
+        43
+      ],
+      "actual_existing_top_receivers": [
+        "Floor return"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L18",
+      "segment": 0,
+      "end": "high",
+      "authored_point": [
+        70,
+        -5,
+        43
+      ],
+      "actual_existing_top_receivers": [
+        "L18 landing1"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    },
+    {
+      "link": "L18",
+      "segment": 2,
+      "end": "corner-bridge",
+      "authored_point": [
+        74,
+        0,
+        27
+      ],
+      "actual_existing_top_receivers": [
+        "L18 landing3"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            74.0,
+            28.05
+          ],
+          [
+            75.0,
+            28.05
+          ],
+          [
+            75.0,
+            27.0
+          ],
+          [
+            74.0,
+            27.0
+          ]
+        ],
+        [
+          [
+            73.0,
+            28.0
+          ],
+          [
+            73.0,
+            28.05
+          ],
+          [
+            74.0,
+            28.05
+          ],
+          [
+            74.0,
+            28.0
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-09 L18 2 corner-bridge region0"
+      ]
+    },
+    {
+      "link": "L18",
+      "segment": 2,
+      "end": "low",
+      "authored_point": [
+        74,
+        -5,
+        43
+      ],
+      "actual_existing_top_receivers": [
+        "L18 landing1"
+      ],
+      "authored_patch_polygons": [
+        [
+          [
+            75.0,
+            43.8
+          ],
+          [
+            75.0,
+            43.0
+          ],
+          [
+            74.0,
+            43.0
+          ],
+          [
+            74.0,
+            43.8
+          ]
+        ]
+      ],
+      "new_parts": [
+        "Authored stair end WLD-09 L18 2 low region0"
+      ]
+    },
+    {
+      "link": "L18",
+      "segment": 2,
+      "end": "high",
+      "authored_point": [
+        74.0,
+        0,
+        28.05
+      ],
+      "actual_existing_top_receivers": [
+        "Authored stair end WLD-09 L18 2 corner-bridge region0",
+        "L18 landing3"
+      ],
+      "authored_patch_polygons": [],
+      "new_parts": []
+    }
+  ],
+  "stair_components": [
+    "121:L07 flight0 step1",
+    "122:L07 flight0 step2",
+    "123:L07 flight0 step3",
+    "124:L07 flight0 step4",
+    "125:L07 flight0 step5",
+    "126:L07 flight0 step6",
+    "127:L07 flight0 step7",
+    "128:L07 flight0 step8",
+    "129:L07 flight0 step9",
+    "130:L07 flight0 step10",
+    "131:L07 flight0 step11",
+    "132:L07 flight0 step12",
+    "133:L07 flight0 step13",
+    "134:L07 flight0 step14",
+    "135:L07 flight0 step15",
+    "136:L07 flight0 step16",
+    "137:L07 flight0 step17",
+    "138:L07 flight0 step18",
+    "139:L07 flight0 step19",
+    "140:L07 flight0 step20",
+    "141:L07 flight0 step21",
+    "142:L07 flight0 step22",
+    "143:L07 flight0 step23",
+    "144:L07 flight0 step24",
+    "145:L07 flight0 step25",
+    "146:L07 flight0 step26",
+    "147:L07 flight0 step27",
+    "148:L07 flight0 step28",
+    "149:L07 flight0 step29",
+    "150:L07 flight0 step30",
+    "151:L07 flight0 step31",
+    "152:L07 flight0 step32",
+    "153:L07 flight0 step33",
+    "154:L07 flight0 step34",
+    "157:L09 flight0 step1",
+    "158:L09 flight0 step2",
+    "159:L09 flight0 step3",
+    "160:L09 flight0 step4",
+    "161:L09 flight0 step5",
+    "162:L09 flight0 step6",
+    "163:L09 flight0 step7",
+    "164:L09 flight0 step8",
+    "165:L09 flight0 step9",
+    "166:L09 flight0 step10",
+    "167:L09 flight0 step11",
+    "168:L09 flight0 step12",
+    "169:L09 flight0 step13",
+    "170:L09 flight0 step14",
+    "171:L09 flight0 step15",
+    "172:L09 flight0 step16",
+    "173:L09 flight0 step17",
+    "174:L09 flight0 step18",
+    "175:L09 flight0 step19",
+    "176:L09 flight0 step20",
+    "177:L09 flight0 step21",
+    "178:L09 flight0 step22",
+    "179:L09 flight0 step23",
+    "180:L09 flight0 step24",
+    "181:L09 flight0 step25",
+    "182:L09 flight0 step26",
+    "183:L09 flight0 step27",
+    "184:L09 flight0 step28",
+    "185:L09 flight0 step29",
+    "186:L09 flight0 step30",
+    "187:L09 flight0 step31",
+    "188:L09 flight0 step32",
+    "189:L09 flight0 step33",
+    "190:L09 flight0 step34",
+    "192:L11 flight0 step1",
+    "193:L11 flight0 step2",
+    "194:L11 flight0 step3",
+    "195:L11 flight0 step4",
+    "196:L11 flight0 step5",
+    "197:L11 flight0 step6",
+    "198:L11 flight0 step7",
+    "199:L11 flight0 step8",
+    "200:L11 flight0 step9",
+    "201:L11 flight0 step10",
+    "202:L11 flight0 step11",
+    "203:L11 flight0 step12",
+    "204:L11 flight0 step13",
+    "205:L11 flight0 step14",
+    "206:L11 flight0 step15",
+    "207:L11 flight0 step16",
+    "208:L11 flight0 step17",
+    "209:L11 flight0 step18",
+    "210:L11 flight0 step19",
+    "211:L11 flight0 step20",
+    "212:L11 flight0 step21",
+    "213:L11 flight0 step22",
+    "214:L11 flight0 step23",
+    "215:L11 flight0 step24",
+    "216:L11 flight0 step25",
+    "217:L11 flight0 step26",
+    "218:L11 flight0 step27",
+    "219:L11 flight0 step28",
+    "220:L11 flight0 step29",
+    "221:L11 flight0 step30",
+    "222:L11 flight0 step31",
+    "223:L11 flight0 step32",
+    "224:L11 flight0 step33",
+    "225:L11 flight0 step34",
+    "226:L12 flight0 step1",
+    "227:L12 flight0 step2",
+    "228:L12 flight0 step3",
+    "229:L12 flight0 step4",
+    "230:L12 flight0 step5",
+    "231:L12 flight0 step6",
+    "232:L12 flight0 step7",
+    "233:L12 flight0 step8",
+    "234:L12 flight0 step9",
+    "235:L12 flight0 step10",
+    "236:L12 flight0 step11",
+    "237:L12 flight0 step12",
+    "238:L12 flight0 step13",
+    "239:L12 flight0 step14",
+    "240:L12 flight0 step15",
+    "241:L12 flight0 step16",
+    "242:L12 flight0 step17",
+    "243:L12 flight0 step18",
+    "244:L12 flight0 step19",
+    "245:L12 flight0 step20",
+    "246:L12 flight0 step21",
+    "247:L12 flight0 step22",
+    "248:L12 flight0 step23",
+    "249:L12 flight0 step24",
+    "250:L12 flight0 step25",
+    "251:L12 flight0 step26",
+    "252:L12 flight0 step27",
+    "253:L12 flight0 step28",
+    "254:L12 flight0 step29",
+    "255:L12 flight0 step30",
+    "256:L12 flight0 step31",
+    "257:L12 flight0 step32",
+    "258:L12 flight0 step33",
+    "259:L12 flight0 step34",
+    "262:L14 flight0 step1",
+    "263:L14 flight0 step2",
+    "264:L14 flight0 step3",
+    "265:L14 flight0 step4",
+    "266:L14 flight0 step5",
+    "267:L14 flight0 step6",
+    "268:L14 flight0 step7",
+    "269:L14 flight0 step8",
+    "270:L14 flight0 step9",
+    "271:L14 flight0 step10",
+    "272:L14 flight0 step11",
+    "273:L14 flight0 step12",
+    "274:L14 flight0 step13",
+    "275:L14 flight0 step14",
+    "276:L14 flight0 step15",
+    "277:L14 flight0 step16",
+    "278:L14 flight0 step17",
+    "279:L14 flight0 step18",
+    "280:L14 flight0 step19",
+    "281:L14 flight0 step20",
+    "282:L14 flight0 step21",
+    "283:L14 flight0 step22",
+    "284:L14 flight0 step23",
+    "291:L18 landing1",
+    "292:L18 landing3",
+    "293:L18 flight0 step1",
+    "294:L18 flight0 step2",
+    "295:L18 flight0 step3",
+    "296:L18 flight0 step4",
+    "297:L18 flight0 step5",
+    "298:L18 flight0 step6",
+    "299:L18 flight0 step7",
+    "300:L18 flight0 step8",
+    "301:L18 flight0 step9",
+    "302:L18 flight0 step10",
+    "303:L18 flight0 step11",
+    "304:L18 flight0 step12",
+    "305:L18 flight0 step13",
+    "306:L18 flight0 step14",
+    "307:L18 flight0 step15",
+    "308:L18 flight0 step16",
+    "309:L18 flight0 step17",
+    "310:L18 flight0 step18",
+    "311:L18 flight0 step19",
+    "312:L18 flight0 step20",
+    "313:L18 flight0 step21",
+    "314:L18 flight0 step22",
+    "315:L18 flight0 step23",
+    "316:L18 flight0 step24",
+    "317:L18 flight0 step25",
+    "318:L18 flight0 step26",
+    "319:L18 flight0 step27",
+    "320:L18 flight0 step28",
+    "Rebuilt stair WLD-09 L18 flight1 part0",
+    "Rebuilt stair WLD-09 L18 flight1 part1",
+    "Rebuilt stair WLD-09 L18 flight1 part2",
+    "Rebuilt stair WLD-09 L18 flight1 part3",
+    "Rebuilt stair WLD-09 L18 flight1 part4",
+    "Rebuilt stair WLD-09 L18 flight1 part5",
+    "Rebuilt stair WLD-09 L18 flight1 part6",
+    "Rebuilt stair WLD-09 L18 flight1 part7",
+    "Rebuilt stair WLD-09 L18 flight1 part8",
+    "Rebuilt stair WLD-09 L18 flight1 part9",
+    "Rebuilt stair WLD-09 L18 flight1 part10",
+    "Rebuilt stair WLD-09 L18 flight1 part11",
+    "Rebuilt stair WLD-09 L18 flight1 part12",
+    "Rebuilt stair WLD-09 L18 flight1 part13",
+    "Rebuilt stair WLD-09 L18 flight1 part14",
+    "Rebuilt stair WLD-09 L18 flight1 part15",
+    "Rebuilt stair WLD-09 L18 flight1 part16",
+    "Rebuilt stair WLD-09 L18 flight1 part17",
+    "Rebuilt stair WLD-09 L18 flight1 part18",
+    "Rebuilt stair WLD-09 L18 flight1 part19",
+    "Rebuilt stair WLD-09 L18 flight1 part20",
+    "Rebuilt stair WLD-09 L18 flight1 part21",
+    "Rebuilt stair WLD-09 L18 flight1 part22",
+    "Rebuilt stair WLD-09 L18 flight1 part23",
+    "Rebuilt stair WLD-09 L18 flight1 part24",
+    "Rebuilt stair WLD-09 L18 flight1 part25",
+    "Rebuilt stair WLD-09 L18 flight1 part26",
+    "Rebuilt stair WLD-09 L18 flight1 part27",
+    "Authored stair end WLD-09 L09 0 high region0",
+    "Authored stair end WLD-09 L09 0 high region1",
+    "Authored stair end WLD-09 L09 0 high region2",
+    "Authored stair end WLD-09 L11 0 high region0",
+    "Authored stair end WLD-09 L11 0 high region1",
+    "Authored stair end WLD-09 L11 0 high region2",
+    "Authored stair end WLD-09 L12 0 low region0",
+    "Authored stair end WLD-09 L12 0 high region0",
+    "Authored stair end WLD-09 L12 0 high region1",
+    "Authored stair end WLD-09 L18 2 corner-bridge region0",
+    "Authored stair end WLD-09 L18 2 low region0"
+  ],
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 2637028,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      321,
+      322,
+      323,
+      324,
+      325,
+      326,
+      327,
+      328,
+      329,
+      330,
+      331,
+      332,
+      333,
+      334,
+      335,
+      336,
+      337,
+      338,
+      339,
+      340,
+      341,
+      342,
+      343,
+      344,
+      345,
+      346,
+      347,
+      348
+    ]
+  },
+  "glb_sha256": "20116d5d0567d5e78533161b6be34eecf51f6dea492d635231a9bda2766b5c6b",
+  "physics_sha256": "7b2cc3a5ea88c05b6456800521a1565bc0caf3f0487a0b7b93bc9e8cf9d6e5e7",
+  "generator_sha256": "38c042e4dfd641a017597a9f399273da313a7d655fe66ee9492578fb1fa77838",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-09-whole-site.png",
+      "sha256": "a2d0078f10aeb6aabbdf31f5e30133254dfec8c37f2f8ab981b21f57fcf0ff40",
+      "type": "native full scene"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-landing-fit-batch/wld-09-new-landings.png",
+      "sha256": "37490eacd26c19aab06a3d327e53a2a04013eabad3fa9730d20f21a3852a170b",
+      "type": "native isolated actual landing changes; context hidden"
+    }
+  ],
+  "source_layout": "development/levels/rebuild/wld-09/rough-layout.json",
+  "source_layout_sha256": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4",
+  "flight_replacements": [
+    {
+      "link": "L18",
+      "source_segment": 2,
+      "old_points": [
+        [
+          74,
+          -5,
+          43
+        ],
+        [
+          74,
+          0,
+          27
+        ]
+      ],
+      "new_points": [
+        [
+          74,
+          -5,
+          43
+        ],
+        [
+          74.0,
+          0,
+          28.05
+        ]
+      ],
+      "shift_metres": 1.05,
+      "original_landings_retained": [
+        "L18 landing3"
+      ],
+      "new_stair_parts": [
+        "Rebuilt stair WLD-09 L18 flight1 part0",
+        "Rebuilt stair WLD-09 L18 flight1 part1",
+        "Rebuilt stair WLD-09 L18 flight1 part2",
+        "Rebuilt stair WLD-09 L18 flight1 part3",
+        "Rebuilt stair WLD-09 L18 flight1 part4",
+        "Rebuilt stair WLD-09 L18 flight1 part5",
+        "Rebuilt stair WLD-09 L18 flight1 part6",
+        "Rebuilt stair WLD-09 L18 flight1 part7",
+        "Rebuilt stair WLD-09 L18 flight1 part8",
+        "Rebuilt stair WLD-09 L18 flight1 part9",
+        "Rebuilt stair WLD-09 L18 flight1 part10",
+        "Rebuilt stair WLD-09 L18 flight1 part11",
+        "Rebuilt stair WLD-09 L18 flight1 part12",
+        "Rebuilt stair WLD-09 L18 flight1 part13",
+        "Rebuilt stair WLD-09 L18 flight1 part14",
+        "Rebuilt stair WLD-09 L18 flight1 part15",
+        "Rebuilt stair WLD-09 L18 flight1 part16",
+        "Rebuilt stair WLD-09 L18 flight1 part17",
+        "Rebuilt stair WLD-09 L18 flight1 part18",
+        "Rebuilt stair WLD-09 L18 flight1 part19",
+        "Rebuilt stair WLD-09 L18 flight1 part20",
+        "Rebuilt stair WLD-09 L18 flight1 part21",
+        "Rebuilt stair WLD-09 L18 flight1 part22",
+        "Rebuilt stair WLD-09 L18 flight1 part23",
+        "Rebuilt stair WLD-09 L18 flight1 part24",
+        "Rebuilt stair WLD-09 L18 flight1 part25",
+        "Rebuilt stair WLD-09 L18 flight1 part26",
+        "Rebuilt stair WLD-09 L18 flight1 part27"
+      ]
+    }
+  ],
+  "corner_bridges": [
+    {
+      "link": "L18",
+      "source_segment": 2,
+      "points": [
+        [
+          74,
+          0,
+          27
+        ],
+        [
+          74.0,
+          0,
+          28.05
+        ]
+      ],
+      "width": 2
+    }
+  ],
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {
+      "0": 0
+    },
+    "L08": {},
+    "L09": {
+      "0": 0
+    },
+    "L10": {},
+    "L11": {
+      "0": 0
+    },
+    "L12": {
+      "0": 0
+    },
+    "L13": {},
+    "L14": {
+      "0": 0
+    },
+    "L15": {},
+    "L16": {},
+    "L17": {},
+    "L18": {
+      "0": 0,
+      "2": 2
+    }
+  },
+  "open_findings": [],
+  "remaining": "Independent solids/material/pivot/native checks and all25flat/continuous stair regressions. Wall/terrain penetrations, crossed flights, circulation, supports/guards and actual runtime/network/hardware gates remain open."
+}

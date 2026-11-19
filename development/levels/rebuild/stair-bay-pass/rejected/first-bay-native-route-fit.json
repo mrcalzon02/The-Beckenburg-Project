@@ -1,0 +1,391 @@
+{
+  "status": "MEASURED_FIT_FINDINGS_NOT_TERRAIN_ACCEPTANCE",
+  "sites": {
+    "ACADEMY": {
+      "samples": 7908,
+      "baseline_valid": 7041,
+      "new_block": 0,
+      "baseline_sweep": 6690,
+      "new_sweep_block": 0,
+      "after_valid": 7041,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "ASYLUM": {
+      "samples": 7956,
+      "baseline_valid": 7172,
+      "new_block": 0,
+      "baseline_sweep": 6731,
+      "new_sweep_block": 0,
+      "after_valid": 7172,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "CHURCH": {
+      "samples": 3420,
+      "baseline_valid": 3176,
+      "new_block": 0,
+      "baseline_sweep": 2922,
+      "new_sweep_block": 0,
+      "after_valid": 3176,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "COLLEGE": {
+      "samples": 8289,
+      "baseline_valid": 7607,
+      "new_block": 0,
+      "baseline_sweep": 7211,
+      "new_sweep_block": 0,
+      "after_valid": 7607,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "FARMHOUSE": {
+      "samples": 4101,
+      "baseline_valid": 3707,
+      "new_block": 0,
+      "baseline_sweep": 3366,
+      "new_sweep_block": 0,
+      "after_valid": 3707,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "MANSION": {
+      "samples": 7311,
+      "baseline_valid": 6924,
+      "new_block": 0,
+      "baseline_sweep": 6492,
+      "new_sweep_block": 0,
+      "after_valid": 6924,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "PRISON": {
+      "samples": 6636,
+      "baseline_valid": 6034,
+      "new_block": 0,
+      "baseline_sweep": 5725,
+      "new_sweep_block": 0,
+      "after_valid": 6034,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "SCHOOL": {
+      "samples": 5811,
+      "baseline_valid": 5193,
+      "new_block": 0,
+      "baseline_sweep": 4759,
+      "new_sweep_block": 0,
+      "after_valid": 5193,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-03": {
+      "samples": 3549,
+      "baseline_valid": 3175,
+      "new_block": 0,
+      "baseline_sweep": 3012,
+      "new_sweep_block": 0,
+      "after_valid": 3175,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-04": {
+      "samples": 1413,
+      "baseline_valid": 1092,
+      "new_block": 0,
+      "baseline_sweep": 992,
+      "new_sweep_block": 0,
+      "after_valid": 1092,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-05": {
+      "samples": 3510,
+      "baseline_valid": 2849,
+      "new_block": 0,
+      "baseline_sweep": 2729,
+      "new_sweep_block": 0,
+      "after_valid": 3111,
+      "recovered_pose": 262,
+      "affected_segments": {}
+    },
+    "WLD-06": {
+      "samples": 3744,
+      "baseline_valid": 3543,
+      "new_block": 0,
+      "baseline_sweep": 3400,
+      "new_sweep_block": 0,
+      "after_valid": 3543,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-07": {
+      "samples": 3579,
+      "baseline_valid": 3557,
+      "new_block": 0,
+      "baseline_sweep": 3460,
+      "new_sweep_block": 0,
+      "after_valid": 3557,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-08": {
+      "samples": 4062,
+      "baseline_valid": 3275,
+      "new_block": 0,
+      "baseline_sweep": 3110,
+      "new_sweep_block": 0,
+      "after_valid": 3275,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-09": {
+      "samples": 3123,
+      "baseline_valid": 2322,
+      "new_block": 1,
+      "baseline_sweep": 2223,
+      "new_sweep_block": 2,
+      "after_valid": 2346,
+      "recovered_pose": 25,
+      "affected_segments": {
+        "L10:0": 2
+      }
+    },
+    "WLD-10": {
+      "samples": 4152,
+      "baseline_valid": 3695,
+      "new_block": 0,
+      "baseline_sweep": 3547,
+      "new_sweep_block": 0,
+      "after_valid": 3695,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-11": {
+      "samples": 3663,
+      "baseline_valid": 3451,
+      "new_block": 0,
+      "baseline_sweep": 3310,
+      "new_sweep_block": 0,
+      "after_valid": 3451,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-12": {
+      "samples": 4173,
+      "baseline_valid": 3388,
+      "new_block": 0,
+      "baseline_sweep": 3267,
+      "new_sweep_block": 1,
+      "after_valid": 3389,
+      "recovered_pose": 1,
+      "affected_segments": {
+        "L07:0": 1
+      }
+    },
+    "WLD-13": {
+      "samples": 4239,
+      "baseline_valid": 3920,
+      "new_block": 0,
+      "baseline_sweep": 3795,
+      "new_sweep_block": 0,
+      "after_valid": 3920,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-14": {
+      "samples": 2583,
+      "baseline_valid": 2441,
+      "new_block": 0,
+      "baseline_sweep": 2352,
+      "new_sweep_block": 0,
+      "after_valid": 2441,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-15": {
+      "samples": 2940,
+      "baseline_valid": 2835,
+      "new_block": 0,
+      "baseline_sweep": 2728,
+      "new_sweep_block": 0,
+      "after_valid": 2835,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-16": {
+      "samples": 3243,
+      "baseline_valid": 2980,
+      "new_block": 0,
+      "baseline_sweep": 2881,
+      "new_sweep_block": 0,
+      "after_valid": 2980,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-17": {
+      "samples": 2913,
+      "baseline_valid": 2717,
+      "new_block": 0,
+      "baseline_sweep": 2629,
+      "new_sweep_block": 0,
+      "after_valid": 2717,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-18": {
+      "samples": 3033,
+      "baseline_valid": 2881,
+      "new_block": 0,
+      "baseline_sweep": 2762,
+      "new_sweep_block": 0,
+      "after_valid": 2881,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    },
+    "WLD-07-MORTUARY": {
+      "samples": 5058,
+      "baseline_valid": 5012,
+      "new_block": 0,
+      "baseline_sweep": 4879,
+      "new_sweep_block": 0,
+      "after_valid": 5012,
+      "recovered_pose": 0,
+      "affected_segments": {}
+    }
+  },
+  "source_bindings": {
+    "ACADEMY": {
+      "before": "5cb1dbeb02f8a08ca2c8dfe174246034610526e66128a95476d4307abfdaab41",
+      "after": "5cb1dbeb02f8a08ca2c8dfe174246034610526e66128a95476d4307abfdaab41",
+      "layout_sha256": "5fc6eb736017becfda5cb86a133e0bfac07dab98511e75d9b306ede9bb7e1ec6"
+    },
+    "ASYLUM": {
+      "before": "5306941b5135d5dc5d6a43ec84b0ce31c3cfca8c40e2aaf2be1995675d0f098e",
+      "after": "5306941b5135d5dc5d6a43ec84b0ce31c3cfca8c40e2aaf2be1995675d0f098e",
+      "layout_sha256": "ccf60d8128b8937c54c1f81203e4d18c7b64d0527f4a36c362d8062e814d9f30"
+    },
+    "CHURCH": {
+      "before": "eda5a20f20c7a803e2caa75bfc706a0a8e21108a71812eb4f6b50be1210250fd",
+      "after": "eda5a20f20c7a803e2caa75bfc706a0a8e21108a71812eb4f6b50be1210250fd",
+      "layout_sha256": "ecbdd6aec2a671c81c4dd46143dc5660fdc9dd568f62772ca472afc40976ca05"
+    },
+    "COLLEGE": {
+      "before": "a0abc59c7784c618bb0881ec946e548854df076da6269463ea560f690f1a7295",
+      "after": "a0abc59c7784c618bb0881ec946e548854df076da6269463ea560f690f1a7295",
+      "layout_sha256": "6b50a48a38f2bcd7b2036749fda15ec92aed6a4dfe9e7762fc953c20ffbc0b2d"
+    },
+    "FARMHOUSE": {
+      "before": "106153346b7697e77b0f86042be61345c127a01a9247e5c5d88aa7b090a7cee8",
+      "after": "106153346b7697e77b0f86042be61345c127a01a9247e5c5d88aa7b090a7cee8",
+      "layout_sha256": "232298bbcf6445cbe4db945820730a339cab60f0e615b6efee930544a363f727"
+    },
+    "MANSION": {
+      "before": "ac058d9645730ed6d118bbe1e3567a20cc584807e0de273717e17b88546eb3f1",
+      "after": "ac058d9645730ed6d118bbe1e3567a20cc584807e0de273717e17b88546eb3f1",
+      "layout_sha256": "6817c7f5dd0c69b81ac7773a49824be2ae46917f07432d6e21c0ab4ab05ffd2d"
+    },
+    "PRISON": {
+      "before": "5f0445f96cb144c20c36bd83189e99eef79345846817a2543dff5c413dc7e7fa",
+      "after": "5f0445f96cb144c20c36bd83189e99eef79345846817a2543dff5c413dc7e7fa",
+      "layout_sha256": "548b61dcf583118aae41252fb898139c440801532f4fee8cb45aae9a216b0e6c"
+    },
+    "SCHOOL": {
+      "before": "d98772e3780cb28a1e16f326231d12752e65e8fff91d5527c7819ddc83cd097f",
+      "after": "d98772e3780cb28a1e16f326231d12752e65e8fff91d5527c7819ddc83cd097f",
+      "layout_sha256": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e"
+    },
+    "WLD-03": {
+      "before": "3ceb5739144d5a805f070e225019fa5ad01b52eaa72b7ec7da44bfc8af4237e4",
+      "after": "3ceb5739144d5a805f070e225019fa5ad01b52eaa72b7ec7da44bfc8af4237e4",
+      "layout_sha256": "c47d8e1884c077d768b9cfe321d0d606937fad5c63e519b84e1cd731ec51a102"
+    },
+    "WLD-04": {
+      "before": "8d7482e29fbbcdb5d4bd6008f9817a7b1a0f525baed5547f5b0de9c22e25cfd6",
+      "after": "8d7482e29fbbcdb5d4bd6008f9817a7b1a0f525baed5547f5b0de9c22e25cfd6",
+      "layout_sha256": "89430b74df791d484a7dd38df353a011d241bb727f7ff1c0a344f64f2e738104"
+    },
+    "WLD-05": {
+      "before": "627ece13f6cf307e970fbb8dc5ad51fec70edac6e5280c24fd659999ee753780",
+      "after": "f011699596e5b580f2ca152b09975ad0a490c46fb85f07ca9ec9f2c269f8c301",
+      "layout_sha256": "17b6cfd01a82cb37b3ff4e351cd8078f4b60d274752c9a6bf96097a705d8a467"
+    },
+    "WLD-06": {
+      "before": "81a1c3cc7fa52ab16bb34e26084f149c964ef25d25d2ee997a9be886909e1956",
+      "after": "81a1c3cc7fa52ab16bb34e26084f149c964ef25d25d2ee997a9be886909e1956",
+      "layout_sha256": "f37184525debe30440a0d215c685e22ef40561077ee6ae6fb823e7587dc99304"
+    },
+    "WLD-07": {
+      "before": "cc908857dd10a717c0a729fc823d0f90241200a1d96c1e314cc2b4db61980524",
+      "after": "cc908857dd10a717c0a729fc823d0f90241200a1d96c1e314cc2b4db61980524",
+      "layout_sha256": "ca8e2f1c2fd69cc210cc4c72a980231274a3e0b4a6bd36ae815e9471a286806a"
+    },
+    "WLD-08": {
+      "before": "7c05868ea7e2e2bd70c9edbdc689b3285511f9017f030237fa98b484b0f30e99",
+      "after": "7c05868ea7e2e2bd70c9edbdc689b3285511f9017f030237fa98b484b0f30e99",
+      "layout_sha256": "616f6928fa4a55515027b3b3dd434ba6db6d044df2ab9ecb19e862efb675955b"
+    },
+    "WLD-09": {
+      "before": "2d45c79f8fc779e3d7524f34c0634f62ec566b801454bbaac248dc6ea3dca108",
+      "after": "da38fd2af70ac16f26d75a6f006dff3b9ba3b3589c5c578c0636d0e6722d675e",
+      "layout_sha256": "8d0eda0c66da33cf9b75c0d54a9efd12634bb6d2b9646ff1e9274506fb04b3c4"
+    },
+    "WLD-10": {
+      "before": "9e2122cdd84950ba1fec8d3f25d3428e33e49608e2d79d2d3d5f27efc813cd17",
+      "after": "9e2122cdd84950ba1fec8d3f25d3428e33e49608e2d79d2d3d5f27efc813cd17",
+      "layout_sha256": "def95a294d30c062f7a094058eace403c534471c814768f0c745864bb394adb9"
+    },
+    "WLD-11": {
+      "before": "a9a9f4ef211b8bdcd3d2118309bdd06ea673bb53e26c9348157fcba0176b4742",
+      "after": "a9a9f4ef211b8bdcd3d2118309bdd06ea673bb53e26c9348157fcba0176b4742",
+      "layout_sha256": "a16ce066da5d6eb9bc7a008c07f1ba9713f49573f85f86647dd3d38d327ab5bf"
+    },
+    "WLD-12": {
+      "before": "c7e4f8fd4d1e9147540502e7525f4035cee5b61c5e18aed02aa0fa54cbd9ae18",
+      "after": "706bca4e7d0abf258d2e98d2c70ad1cde0a56a4ecccc54797f09673d5386de00",
+      "layout_sha256": "fa046a161697963df497145ab559be4608d837140c9e9c375aeb5c5c28c086b8"
+    },
+    "WLD-13": {
+      "before": "a619ca847615a001e3a6af167c715e166209650d9d9871cdb5bfa192627fe664",
+      "after": "a619ca847615a001e3a6af167c715e166209650d9d9871cdb5bfa192627fe664",
+      "layout_sha256": "4d8dd90826c02b30cb4c64073f745a847f63e16110aaa4f8297b4543e0c6a732"
+    },
+    "WLD-14": {
+      "before": "8b1718fdb15ac04bf780dabfd8d82ad9057aef0bc1fc0ab7eb8ac39bf152829a",
+      "after": "8b1718fdb15ac04bf780dabfd8d82ad9057aef0bc1fc0ab7eb8ac39bf152829a",
+      "layout_sha256": "ce25135534ea444a3be34c186a29a0ff6e6b493c478dddabac5a458f687dbd2e"
+    },
+    "WLD-15": {
+      "before": "b836230754987dc7f3ce21d5be84c985cfe4d61d6c2bd0a7c22582ab217b95b3",
+      "after": "b836230754987dc7f3ce21d5be84c985cfe4d61d6c2bd0a7c22582ab217b95b3",
+      "layout_sha256": "61b30866a5835365252340c1c5b13ccebc5119386dd3f11a6e05a6d99ce5c64f"
+    },
+    "WLD-16": {
+      "before": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a",
+      "after": "e5d8de5aab164b62c1f582363367b94e4586e8cfea4fd74159538e8e1a2c693a",
+      "layout_sha256": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb"
+    },
+    "WLD-17": {
+      "before": "79f897cb0258ec71ae0da5afbed78cc01f5e28099515c2b25ee382da19f0aac0",
+      "after": "79f897cb0258ec71ae0da5afbed78cc01f5e28099515c2b25ee382da19f0aac0",
+      "layout_sha256": "392474ba8bbdd4c03ac96283355bc4f08023fc72d745fe0643c608f5f75e9e37"
+    },
+    "WLD-18": {
+      "before": "355ab82aa8c178d34c779c8b48be4b57c7e6e7f22d0e97d938fb871c703669b0",
+      "after": "355ab82aa8c178d34c779c8b48be4b57c7e6e7f22d0e97d938fb871c703669b0",
+      "layout_sha256": "14c93d8b8b1f04d84d9c0c830662ec23ff1e08b0eb2969310179eee59a5e414d"
+    },
+    "WLD-07-MORTUARY": {
+      "before": "2ae50247d945d2c6d5b3b60aedbfdfea2b9b27975cfae041648f0ba80243aa5d",
+      "after": "2ae50247d945d2c6d5b3b60aedbfdfea2b9b27975cfae041648f0ba80243aa5d",
+      "layout_sha256": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c"
+    }
+  },
+  "kernel_sha256": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+  "probe_sha256": "ca64670ea183536a5e9b61ae77697c632af5e80dc4017bb15cd80691c08bb242",
+  "auditor_sha256": "2904fc4b0abbbc3a132d4393f97f09d5af0c8f9618a811cded5232fea3ae3241",
+  "scope": "All25 authored shared/separate stair bays compared to latest physical shell candidates; unchanged authored flat centre/side routes with production capsules and qualified sweeps. Vertical routes, moved blockouts, terrain edges and runtime remain open.",
+  "next_action": "Revise blockout/terrain relationships at actual failed contacts. Original route coordinates are review inputs, not fixed constraints. Do not bury failures by increasing tolerances or flattening land around reservation pads."
+}

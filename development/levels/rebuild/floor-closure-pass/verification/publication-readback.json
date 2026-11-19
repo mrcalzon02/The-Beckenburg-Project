@@ -1,0 +1,1020 @@
+{
+  "observed_utc": "2026-11-08T08:18:29.983392+00:00",
+  "source_checkpoint": "60088739088bdfab11f0b15d6bafe07606acc44a",
+  "remote_head_verified": "8aa0c6ceb11851c6001671af3983cc24221d9a58",
+  "remote_tree_sha": "0c0d97ab174c0e8a15b81efee0718fd648c19c56",
+  "method": "Complete non-truncated GitHub recursive tree compared to exact local Git tree for union of floor/cap source and checkpoint binding paths",
+  "checkpoints": [
+    {
+      "commit": "60088739088bdfab11f0b15d6bafe07606acc44a",
+      "changed_files": 247
+    },
+    {
+      "commit": "8aa0c6ceb11851c6001671af3983cc24221d9a58",
+      "changed_files": 3
+    }
+  ],
+  "verified_file_count": 247,
+  "verified_blobs": [
+    {
+      "path": ".gitattributes",
+      "sha": "fedd99c47ef72c69e36d03a608a73a21c3231d10"
+    },
+    {
+      "path": ".gitignore",
+      "sha": "20d6c10932387327ff7237ae3ef08079c95a04da"
+    },
+    {
+      "path": "ASSET_LIBRARY.md",
+      "sha": "d02f32a379f73cc63535f855810ae66b9b3e6c86"
+    },
+    {
+      "path": "beckenburg-development-gallery.html",
+      "sha": "30afbaa9b02a79df43ead12773422a43311d2c3a"
+    },
+    {
+      "path": "development/RECOVERY_PLAN_2026-10-25.md",
+      "sha": "fe8ac537e407649b506832dc36e6ff6c1aad5dd6"
+    },
+    {
+      "path": "development/assets/asset-library-index.json",
+      "sha": "ea38e65e5dfb4fc53b4def31b5ac4a13370b48ac"
+    },
+    {
+      "path": "development/gallery/index.json",
+      "sha": "83d3b845357a0d6dcdbb8198736b752e164ae6bf"
+    },
+    {
+      "path": "development/levels/blockouts/structural_pass.py",
+      "sha": "a74d2f1eb37239e6a57eda9a22939c1e452bcb31"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/academy-repaired-plates.png",
+      "sha": "a4d0d0b15c11b4d8a7f41b971cf71ee56ac333ff"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/academy-whole-site.png",
+      "sha": "64e15b3a70e8dd31e617c5cc4d42c0213bcbf07e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/asylum-repaired-plates.png",
+      "sha": "7e11eb60f80bd0440dab85a36f43c2d264fcde06"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/asylum-whole-site.png",
+      "sha": "2f150e47d0929f65f0686a39216af0cd6e762974"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/church-repaired-plates.png",
+      "sha": "1fc2c6d21d3ce248452adee4a2a7626884085219"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/church-whole-site.png",
+      "sha": "b1e3ce0787bf9a7788479a1967841880fa4d8289"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-01.png",
+      "sha": "8a5768b6fa1aaf50093cef0896ee0205392214d6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-02.png",
+      "sha": "50130ac5a82fc5c90a166668e239f9b4288ed891"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-03.png",
+      "sha": "49e52e24e17d9d2e7f3945b8af15baf65078c20f"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-04.png",
+      "sha": "6effa85f722e023c160d952b6a8392d9527962cc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-05.png",
+      "sha": "0bbe9dd57f96e51509fcb05b20af5c1a916d4f1a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-06.png",
+      "sha": "4a3917041eb6d25421387ab66a7ebdedc5af2f38"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-07.png",
+      "sha": "3460ec5a749cbbff8bd73e3322c1cb0ba229601a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-08.png",
+      "sha": "496378b262d9f1ebe06728e2a4c8d6debb27e6a8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/closure-sheet-09.png",
+      "sha": "a1ca7309338cd3b2c1e694f423974684a16fa4ad"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/college-repaired-plates.png",
+      "sha": "a0d920d0a1a15d08f9300c9dc357928fc28f8bd5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/college-whole-site.png",
+      "sha": "897dab0da0aa9ccfd7887f3c6713b470879fa392"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/farmhouse-repaired-plates.png",
+      "sha": "fc938b1fea867490c2d20f37aa80a9bee457c1b8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/farmhouse-whole-site.png",
+      "sha": "991be160ce97380204777c717579c87c48f6b175"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/mansion-repaired-plates.png",
+      "sha": "f2af68c0bc66802a62d46b34a742a1e9dbe1bbf3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/mansion-whole-site.png",
+      "sha": "7f227174f78bdf662eb7c426df1bb68e5336b0bb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/paired-closure-sheet-01.png",
+      "sha": "dd339185ea1f972b248627bc80c321f16bd82d0a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/paired-closure-sheet-02.png",
+      "sha": "1ae09d21794cab473373ae29ed40fcff157da3ab"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/paired-room-captures.json",
+      "sha": "8bd3d802186bb0e63b4c87f5a1ba5f04ddce1dab"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/prison-repaired-plates.png",
+      "sha": "fe936d81b56a242395aee83872913c608a46ad1b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/prison-whole-site.png",
+      "sha": "d2a48eefdd9c53d31abf39e794e533c6ec5e4790"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/school-repaired-plates.png",
+      "sha": "fe936d81b56a242395aee83872913c608a46ad1b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/school-whole-site.png",
+      "sha": "c132a4f3dd00d2f0a97311f4a845537cc14b28ed"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-03-repaired-plates.png",
+      "sha": "083a2ed365017f4c12369b5a586bbd2c5ed514b3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-03-whole-site.png",
+      "sha": "bac9ff1c44138a340905ae42af73c691fad4c773"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-04-repaired-plates.png",
+      "sha": "8d5e29e1761e6133bbd9c3cbb2aed9eded2412dd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-04-room-after.png",
+      "sha": "4bcb56a7a92e9ad2dfbd4ce36407ce69b313bad1"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-04-room-before.png",
+      "sha": "5c9947b331fb7440af1a05471022c4d9f570688d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-04-whole-site.png",
+      "sha": "d20ce174d1401168e7b1f38bce75a4d4d0a795e3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-05-repaired-plates.png",
+      "sha": "128fc50230ba4247b284cb24d50b3e5c7021657d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-05-room-after.png",
+      "sha": "33a57758a3113d06d29925e66bcc3756d0a07b6d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-05-room-before.png",
+      "sha": "6cc27ba88fbeab7f914a1cc4eea5cf80973f1b58"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-05-whole-site.png",
+      "sha": "3bea7f822b6615b9ea85701d3ebfea271e90f231"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-06-repaired-plates.png",
+      "sha": "45a2cd03d356c5d2080cb10947e70ab6c7874862"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-06-room-after.png",
+      "sha": "2b4a9f321029807c3a90b7ea816b4fb47785e8a2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-06-room-before.png",
+      "sha": "013fc97d1ad2a91a3d2145a4e10a49f33aefaa4d"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-06-whole-site.png",
+      "sha": "5ae53552b2fe3ebfe13cae7ae8357de0117ab9ce"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-07-mortuary-repaired-plates.png",
+      "sha": "c83201fec760c0420014e6b98db505a7b74824f3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-07-mortuary-whole-site.png",
+      "sha": "f932344968ace63969f15e3ae8534c1574fce2b4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-07-repaired-plates.png",
+      "sha": "a786d2a1adb12fc4d964f674671402662a6e1348"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-07-whole-site.png",
+      "sha": "a6740774e2101966ff9179745b8f0865d87865f3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-08-repaired-plates.png",
+      "sha": "47513908e94adf8dd0166f006882f0d3934bc5cc"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-08-room-after.png",
+      "sha": "95b6febe2c6c3c03f84ae01a9dfe398644444271"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-08-room-before.png",
+      "sha": "a56db789fca3fdd805012d6e004476b5544f9742"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-08-whole-site.png",
+      "sha": "db07cff1730f854518a56c9656aa1dba9661a12a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-09-repaired-plates.png",
+      "sha": "62466e0b58c484bce7589074a3aef754004a6597"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-09-room-after.png",
+      "sha": "6fd77f32392e6877c20d69cdeeba53880dfba5b5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-09-room-before.png",
+      "sha": "94431e4dc6edb0d7c62028c0516670c8d3cd02da"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-09-whole-site.png",
+      "sha": "80573db691ac0456e86a2ed0d72e880951229996"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-10-repaired-plates.png",
+      "sha": "481790eb17e6f3d8dd052ac0d40492f7c69a4355"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-10-whole-site.png",
+      "sha": "4215065d0cceb47648167af302bacb12736dfcb9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-11-repaired-plates.png",
+      "sha": "481790eb17e6f3d8dd052ac0d40492f7c69a4355"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-11-whole-site.png",
+      "sha": "2a34084549f979f73895278b4d57c9ffd3dc07cb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-12-repaired-plates.png",
+      "sha": "b93ef7da78d2fb3488ba100d8c89def8ed9531ee"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-12-whole-site.png",
+      "sha": "fc173e91a48d5f1f45ce61ec01c1bb0cb351ae66"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-13-repaired-plates.png",
+      "sha": "b93ef7da78d2fb3488ba100d8c89def8ed9531ee"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-13-whole-site.png",
+      "sha": "e4fddb5fc1813f1ce68de570682e5c11ae9b97e5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-14-repaired-plates.png",
+      "sha": "1c670d49cef89bfb7e1b4af5d945ecb4ffdf5a6c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-14-room-after.png",
+      "sha": "77d1b9ca45d2578e8415089ae01e061ce5785832"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-14-room-before.png",
+      "sha": "ffd7495b03849dd5a298a7e73f3d9652be32c3b7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-14-whole-site.png",
+      "sha": "a8557eaca6e72d3a51aa96f28b6dc4868eaf68d6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-15-repaired-plates.png",
+      "sha": "6765dec305884c52f8f7d8e1078b5fbd44fc0e6b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-15-whole-site.png",
+      "sha": "4622702f8d5e5d93203bd12341b1a59e183ba345"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-16-repaired-plates.png",
+      "sha": "6765dec305884c52f8f7d8e1078b5fbd44fc0e6b"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-16-whole-site.png",
+      "sha": "7419bd5a0b4f01ae258b509211533fc0d21e3cd9"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-17-repaired-plates.png",
+      "sha": "88d68e4c6ad89e7ba21046bc2c1b896431b9042c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-17-whole-site.png",
+      "sha": "d4e033c8c200e31066e9ba88627f4d255dd4ea0e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-18-repaired-plates.png",
+      "sha": "c83201fec760c0420014e6b98db505a7b74824f3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/floor-closure-batch/wld-18-whole-site.png",
+      "sha": "a9f646960b5ac99e3f87801cbdf0e7063e612a06"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/README.md",
+      "sha": "894cb1013e98859ef84948c6dfee1cd231cc06a0"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/academy/NEXT.md",
+      "sha": "d0ca395a64f469e037c28db4e07cbdc30d7b84e9"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/academy/closed-floors.blend",
+      "sha": "b4870c87812d514fe03cd80e94541ca487186211"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/academy/closed-floors.glb",
+      "sha": "1d0132d4388e754fada7ab39d873734468d5ca89"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/academy/closed-floors.hcs2",
+      "sha": "6e2342f2e81433293d93b4a050cb7a2da57577ee"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/academy/construction.json",
+      "sha": "1e739bb9bbac0ef2c9ebf6fec5e31181ab9b7793"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/asylum/NEXT.md",
+      "sha": "91ddbc62996f52f84fd9ae1a1b9c16c5249f356d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/asylum/closed-floors.blend",
+      "sha": "5986099c3162b271eb69ad5b7eb6c88fd9231112"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/asylum/closed-floors.glb",
+      "sha": "de1f27577462b111dd63f7740904c892397e1fe2"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/asylum/closed-floors.hcs2",
+      "sha": "16945c42361319027fc63cac7a6c4001138f00f6"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/asylum/construction.json",
+      "sha": "33a8743ccc9d1a2c3d02703f8ec437552828eb66"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/church/NEXT.md",
+      "sha": "d7f92154ffc58ec3f76c473f270e8864e851421a"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/church/closed-floors.blend",
+      "sha": "3c73ffb8e1f02dc7c03142361dcbc0f72d72538f"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/church/closed-floors.glb",
+      "sha": "9468a03452a0eb0efdd1d41f9016f15f5b9902b3"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/church/closed-floors.hcs2",
+      "sha": "8648910a9570d453104a0057e3644a52f8a381de"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/church/construction.json",
+      "sha": "953496b1cd3054522cb7a6ec3a5c5dedbbbfef6a"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/college/NEXT.md",
+      "sha": "b143be085a9e28e02905384167681859a5749a69"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/college/closed-floors.blend",
+      "sha": "b39dd7cce7c7c0ca262393e3e032dd25ca99b868"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/college/closed-floors.glb",
+      "sha": "5dc5cff6041ff934d2e9ccf81bfce76b45ece43d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/college/closed-floors.hcs2",
+      "sha": "b3795716b8f68131a02068d644efc9c455ddd4e8"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/college/construction.json",
+      "sha": "5ef6494468e7a19b3b8028a74687739a83b6dc75"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/farmhouse/NEXT.md",
+      "sha": "ddf0ad03167cb839be76be6e2f7f0bb965e0292d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/farmhouse/closed-floors.blend",
+      "sha": "ef27cbccb4bb9bed2a472452008e4620e8b4f928"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/farmhouse/closed-floors.glb",
+      "sha": "dd1cdde575e7d14bf74a95aa705d6439fa796b34"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/farmhouse/closed-floors.hcs2",
+      "sha": "f3b324c4d0981b5dcda7300421d946096e9b8ff5"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/farmhouse/construction.json",
+      "sha": "45315b7f744e336f6f958b2b77cbfbb8134c9031"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/mansion/NEXT.md",
+      "sha": "ca6c57006a1e4b39be5fa002d27ed2fef1f9be80"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/mansion/closed-floors.blend",
+      "sha": "d7976a0cb7047ee82d6b497d695aa65eba24340d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/mansion/closed-floors.glb",
+      "sha": "2ed95fe5e22e565d8b513c6deb1ee5e761348273"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/mansion/closed-floors.hcs2",
+      "sha": "8a7be3895203fe9ea689dd72a5af20951c72e125"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/mansion/construction.json",
+      "sha": "491ddb0d541ba9d08e42d99b5cb5014b3026f738"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/prison/NEXT.md",
+      "sha": "51024b96a56fadee132aa710d399549539dcde02"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/prison/closed-floors.blend",
+      "sha": "18651b71bbca8bcd57727639d9b5ad19e66a8608"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/prison/closed-floors.glb",
+      "sha": "0f5b9e50dbc4de4254f5983b0a2ff2f0f4e0536b"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/prison/closed-floors.hcs2",
+      "sha": "c43fac01e72e36e8679777baa087593bb75e62ee"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/prison/construction.json",
+      "sha": "22532390c46d23cca498267e69f79f50c7d01a54"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/roster.json",
+      "sha": "9637d4c91d5c7d7bc9e97e63314b6c0d8ddf5af4"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/school/NEXT.md",
+      "sha": "c84d7ecab346ce2582c01f3ca373d9cb0fbfac5d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/school/closed-floors.blend",
+      "sha": "c70bcf0f7327bb6e89fc17753d1d0977abce1446"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/school/closed-floors.glb",
+      "sha": "bbf1fc2648cd39d448c1215456baddf9719850e0"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/school/closed-floors.hcs2",
+      "sha": "384d72fe56eb906c0d69a5c986dda8a4346137d5"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/school/construction.json",
+      "sha": "4c8889550d1e4a22cb55a8c99104b16af2bf8860"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/complete-route-sweeps.tsv",
+      "sha": "6f9ba5cf9618e6c1046e4e09f36810e033e0fa34"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/editable-sources.json",
+      "sha": "1253cd21f50766ee33f5aac6b628d9ae486138da"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/editable-sources.log",
+      "sha": "90155d5f8227ed113feadc3919db3adc7552f6ce"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/failure-contacts.tsv",
+      "sha": "c804b62f2d4f493e681f591f2784245ec8ee8356"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/flat-movement.log",
+      "sha": "30612e5159c0ab1f997669a6e34c9d0c374dfff7"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/flight-sweeps.tsv",
+      "sha": "3618ab112947c7009a12d053765da422feb28319"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/generation.log",
+      "sha": "3fd8e0657322861260baa712e10ba8511d20f881"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
+      "sha": "f882c7e877ee62070afce5b9b6f34e43b65c9ff4"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/independent-export.log",
+      "sha": "dbbbe0e3ba639fb686b6f166618ec1ce3b6cf816"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/native-route-fit.json",
+      "sha": "b9e27167d1ccf8280b806f2f5c2a0a848f637fdf"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/native-route-probes.tsv",
+      "sha": "a614b75d53476cb6284eed2b4d32e5c3dd9f54a0"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/optical-input.tsv",
+      "sha": "38bdab13bcda7438cc3c46a8616048d057c3f1bf"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+      "sha": "67d87cc565a5805a9d4f1a9af3562fd2c6ca4b38"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/optical-native.log",
+      "sha": "1bd8cb22aac8f42444eb4a0e2eb73e5b3127f66d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/optical-probes.tsv",
+      "sha": "86969728d4ad06ccf2609bc965ad92643ed40c78"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/paired-native-views.log",
+      "sha": "730d07d9f1823acb87b27fa9f0c8856e9e759677"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/rejected-fragmented-floor-study.json",
+      "sha": "babf828d676abcb5c2401f18b23d90b1b87d3c96"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/rejected-native-degenerate.log",
+      "sha": "112006c52d50cd0fe25e4fffa5737fa6fa4b7a5f"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/rejected-unjoined-spiral-flights.tsv",
+      "sha": "339c99fee7a6ebe211bdbfc8dfa2923d51d59532"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/rejected-unjoined-spiral-stairs.json",
+      "sha": "751520b34d6a1c8421250f4056a808bf384be856"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
+      "sha": "d232b4ed96f21682c351a6a3b4099907e4f0a197"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/stair-movement.log",
+      "sha": "36f0849f395bb66b6f2071d39e788da099fb9ec5"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/tool-source-hashes.json",
+      "sha": "22db1849b80c6252dbbc0ae3b063404cc1acf6c3"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/verification/visual-review.json",
+      "sha": "ec19288c9b28531890d961ffa51143a25cb4dab1"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-03/NEXT.md",
+      "sha": "9e5deb412208f491a16a70129b831541ec0fe82a"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-03/closed-floors.blend",
+      "sha": "2f59e4ddd830c8d4aef752a05bccb0c7e4056e9d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-03/closed-floors.glb",
+      "sha": "3e5ddaafb44fd362cfa34ee5ba265cb93fc930f8"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-03/closed-floors.hcs2",
+      "sha": "95b3f7d55c27ea9b6509330d55cd3b68997dc165"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-03/construction.json",
+      "sha": "c8b4da424abe731564b3934e5ea3160dc5ad3d9c"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-04/NEXT.md",
+      "sha": "63999a01842e8f99d3d54186c8dc9ca5f23f0a57"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-04/closed-floors.blend",
+      "sha": "afeff540ee286a7263acf7964c95025267b12b50"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-04/closed-floors.glb",
+      "sha": "75d07b900897511182bb9b56e4f6267545fe487f"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-04/closed-floors.hcs2",
+      "sha": "bd5a047633ebd6176ddb74f7c36e53d559a7f20f"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-04/construction.json",
+      "sha": "179d14517f233f03559999252a8bc0e0e1619eff"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-05/NEXT.md",
+      "sha": "a84df735f79045deadd9ec1f29cb2078aa49d190"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-05/closed-floors.blend",
+      "sha": "c8408dabdd3f4621ddbb8d58c6fdcb8e8edd552f"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-05/closed-floors.glb",
+      "sha": "a44c59ae84edd67bd203cc0a43f023d3419d33e6"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-05/closed-floors.hcs2",
+      "sha": "3c84e5f76a52fdc54f91625986d8b0af55018102"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-05/construction.json",
+      "sha": "69bcb9bdd3840fd282c8bb4c0b44cdf13ad4a782"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-06/NEXT.md",
+      "sha": "8635780f5289c8c0b7cc84a6550ccdf893a40c68"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-06/closed-floors.blend",
+      "sha": "e3581df7a734c5f02c3d07b2eef91994a17ca123"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-06/closed-floors.glb",
+      "sha": "3899b92468649455ff5b872bf04b0f141709a98c"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-06/closed-floors.hcs2",
+      "sha": "1ccf23baf7067f4ae005237ac15b7c7e38e22f88"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-06/construction.json",
+      "sha": "ab2480c9880643c4309b1a6a3d254e0a2301e5cf"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/NEXT.md",
+      "sha": "a08d727a3764384481481fb6a2063701a52cb665"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/closed-floors.blend",
+      "sha": "370fba20813fc17b318db136be9d779d5ea5e5aa"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/closed-floors.glb",
+      "sha": "0205b26ce5fd7ae96bbd044e2e6c6f88eba517ab"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/closed-floors.hcs2",
+      "sha": "e1920d06c997e558bc6500956131a53f0628014d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07-mortuary/construction.json",
+      "sha": "5528722ba29dedc70caec79cf3763627bb0c5d6e"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07/NEXT.md",
+      "sha": "c7497cf026619296a24a2b95ecc1baeea5dd699d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07/closed-floors.blend",
+      "sha": "c1a0a63399f65483b84b91a039762a5cd6cc3ed8"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07/closed-floors.glb",
+      "sha": "263159b4bec2f5420d6e26622df31221b9fef211"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07/closed-floors.hcs2",
+      "sha": "3d58aa6b8c4932566c710b6545a32afe2aa17561"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-07/construction.json",
+      "sha": "a154299cdb5bf28c2d759395cb6d1e0964dc15a6"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-08/NEXT.md",
+      "sha": "1ae2b137225a56ebb2f0579c1ab4ca22b56e226d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-08/closed-floors.blend",
+      "sha": "d28a0e13a1a6eaa0ef29bcffc3de720d4f11e556"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-08/closed-floors.glb",
+      "sha": "cbaa81540134c62bee256723e2f98464efef0390"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-08/closed-floors.hcs2",
+      "sha": "e14b86d6fb54ba87985ed4e3b4c99d65955fa2dd"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-08/construction.json",
+      "sha": "8c25fea22501bbb260018822791b40b0b99d3ef7"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-09/NEXT.md",
+      "sha": "9212421841600e879364402dda91a100f79e50c3"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-09/closed-floors.blend",
+      "sha": "9e578d550f461eae852618ab6c7bf3f0b66eba8c"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-09/closed-floors.glb",
+      "sha": "066e39fff92bae8ca00080e5e8ae13c0947efd47"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-09/closed-floors.hcs2",
+      "sha": "4134a6441007144e486449f1e0b8f14ac8e9da26"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-09/construction.json",
+      "sha": "23729b59e9da0ceb15084f5a4815606fd8c0617d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-10/NEXT.md",
+      "sha": "bb724bdcffc5acba688713c1a2e460765782f7a3"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-10/closed-floors.blend",
+      "sha": "a7b4b011095537eb5710a7d53b43f6cbe1fae5c5"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-10/closed-floors.glb",
+      "sha": "b0a48b0354562a7a1c858acb98e4481ce69374a4"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-10/closed-floors.hcs2",
+      "sha": "0f6ba84051144b7a589c05018f02c71a23f39e63"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-10/construction.json",
+      "sha": "4f5fe8b9117ca3a9ccb116ae9d4d13481221bcd4"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-11/NEXT.md",
+      "sha": "1721125867da63782fa97c9443c9fce988481614"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-11/closed-floors.blend",
+      "sha": "e116746407d97fb21a513585140b9c7b7a9c83b6"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-11/closed-floors.glb",
+      "sha": "ee53075116c4a4e6222a78c664f9ce8014066127"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-11/closed-floors.hcs2",
+      "sha": "8ab8f031f0f2fb03e803061eaa583beb8134dec0"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-11/construction.json",
+      "sha": "76681a136a3695c6130363284e1e7746b8102657"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-12/NEXT.md",
+      "sha": "025dc96141e2e5a10a89980ef4b8194cbea0632e"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-12/closed-floors.blend",
+      "sha": "947c2f46da2da425ec9a58584667f6006d71faa6"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-12/closed-floors.glb",
+      "sha": "46481ab9cab47cad06c7a7d887588e2004d26d11"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-12/closed-floors.hcs2",
+      "sha": "21ba9fd8d6ea23cedc7c2af9f0ae7bec8c1a119f"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-12/construction.json",
+      "sha": "e08ccaec7e3f41f52936b155e50b68fe4674276d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-13/NEXT.md",
+      "sha": "dc02197ad58899fc46d5b4144b80abc38cfc770e"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-13/closed-floors.blend",
+      "sha": "d83e98849a457f99664dd129837922cfc5750281"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-13/closed-floors.glb",
+      "sha": "93a1417cc42d034f7acd86dcb69c85a69f2f7244"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-13/closed-floors.hcs2",
+      "sha": "d6b14077303d4d4d42b12193c046bd19dd6b1d15"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-13/construction.json",
+      "sha": "4990d383bcc07f9fd287b6f8e5104807ff220a8d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-14/NEXT.md",
+      "sha": "9d0ab4afafc7288b82a23665043b008f8d0ad9f9"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-14/closed-floors.blend",
+      "sha": "faba0140fbfd514fa75f68f9635fde9aeedc9d6b"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-14/closed-floors.glb",
+      "sha": "25765b1ffddf8ba469e17b083ecc61c65f112411"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-14/closed-floors.hcs2",
+      "sha": "e7989625cd908a1de6651a6e15bec3157fdbc397"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-14/construction.json",
+      "sha": "a76072e61777bf10abbfa37a63a71da771bf1a5d"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-15/NEXT.md",
+      "sha": "78eada1893d1e1005caa77ef6e579a35de170184"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-15/closed-floors.blend",
+      "sha": "7b89ff693c835a561d2f322ce8941bdfc6cab3f6"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-15/closed-floors.glb",
+      "sha": "14383dd11e444d1dcf809a1dcaeb23859cff03c3"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-15/closed-floors.hcs2",
+      "sha": "e867249ac9198f2ba6e9843daa62ac3e3b73b6a7"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-15/construction.json",
+      "sha": "71ed1edc3daf057596c6b60b6e47e1807bec5382"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-16/NEXT.md",
+      "sha": "0a784d33f0fb3658af27cb1a035c7ad1b640e148"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-16/closed-floors.blend",
+      "sha": "6d7f6a3c8a4562ae71b8cec80f219d11193580da"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-16/closed-floors.glb",
+      "sha": "8590d20c99083df4ac5f4ab3a48608b391a1db20"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-16/closed-floors.hcs2",
+      "sha": "56d0b10caa57058be9134a40d7b28c8f47aba1f6"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-16/construction.json",
+      "sha": "0d0613b2d0ea46896ca36f207bb68a08d462c8cb"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-17/NEXT.md",
+      "sha": "4f54f9513c3ae558e4574369acc3bdb608472c92"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-17/closed-floors.blend",
+      "sha": "63be0a282ffe18ec2ff28b9d01335445eb52fc51"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-17/closed-floors.glb",
+      "sha": "31179daae58de949652c80122bfdb4a2d5db0c3b"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-17/closed-floors.hcs2",
+      "sha": "384c18e61b74f503f29933255b5ac0fea6d8f886"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-17/construction.json",
+      "sha": "30c080660f6c61292c8d4048414bb91c06976eaf"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-18/NEXT.md",
+      "sha": "6c768536d9215ecc5c620ebbd0069cd7a93da461"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-18/closed-floors.blend",
+      "sha": "2dc49b62c8f2ddec87982c3a0fe99b74276467a0"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-18/closed-floors.glb",
+      "sha": "14a9aae07ffbf4c026c258a325b659a7c680df90"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-18/closed-floors.hcs2",
+      "sha": "4fa98fa58e88eda669a0b2016230c13199dd1d8b"
+    },
+    {
+      "path": "development/levels/rebuild/floor-closure-pass/wld-18/construction.json",
+      "sha": "d4288dc7025374c6e08298facc5bd51f04641256"
+    },
+    {
+      "path": "development/levels/rebuild/stage-register.json",
+      "sha": "b97968e5881923222d1de03d384f3bc9fd2bf539"
+    },
+    {
+      "path": "development/quality/DEFECT_LEDGER.md",
+      "sha": "4a56acc7308c2748e6ad49bff29c2c7dbf540775"
+    },
+    {
+      "path": "development/quality/defects.json",
+      "sha": "333bc738c120d64e31e958e0b5753a561811deb3"
+    },
+    {
+      "path": "tools/audit_floor_closure_optics.py",
+      "sha": "6a1319a693e5b47aa2b905c1b5e7684cf65bde0e"
+    },
+    {
+      "path": "tools/audit_macroterrain_fit.py",
+      "sha": "94abfabee80edfec1f84b274d5c28aa93a168514"
+    },
+    {
+      "path": "tools/audit_roster_stairs.py",
+      "sha": "9863e1b40a60f7d5b933fa4f2df4cb16fcdd3feb"
+    },
+    {
+      "path": "tools/build_development_gallery.py",
+      "sha": "d913252978902ad63966b13f8793f7351b57d3f3"
+    },
+    {
+      "path": "tools/build_roster_floor_closures.py",
+      "sha": "33516aa42ffa9535fa3bc090879bb06c621dfd33"
+    },
+    {
+      "path": "tools/check_floor_editable_sources.py",
+      "sha": "9b6315c16f547312f94b22eda9b4f2d551535d44"
+    },
+    {
+      "path": "tools/check_roster_floor_closures.py",
+      "sha": "af02aed555a45de553ed63090a406359d2d3e1ef"
+    },
+    {
+      "path": "tools/index_staged_map_models.py",
+      "sha": "cb4fccb0ecf244e9abdc20bee15e953b0c80cffd"
+    },
+    {
+      "path": "tools/java/FloorClosureOpticalProbe.java",
+      "sha": "d27049a8ee91ec1224c76026bb4547e37ba9898c"
+    },
+    {
+      "path": "tools/planar_structure.py",
+      "sha": "555cad683b644880eff9b7258470e18c162112b7"
+    },
+    {
+      "path": "tools/render_floor_closure_rooms.py",
+      "sha": "6d2966f2992b37748810eb66ec2b852a52c6144d"
+    }
+  ],
+  "gallery_observations": [
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/beckenburg-development-gallery.html",
+      "status": 200,
+      "sha256": "f3113929a9810b2793fd9dc20ef25d8744fb54eb6734eb885cf6cc55f2d3fd39"
+    },
+    {
+      "url": "https://mrcalzon02.github.io/The-Beckenburg-Project/development/levels/rebuild/captures/floor-closure-batch/paired-closure-sheet-01.png",
+      "status": 404
+    }
+  ],
+  "limitation": "Remote source delivery only; new gallery image deployment pending accepted integration. No gameplay or hardware acceptance inferred."
+}

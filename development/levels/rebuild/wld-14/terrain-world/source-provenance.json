@@ -1,0 +1,12 @@
+{
+  "source_commit": "de4edf80de20b86f9ac42f6a616913e109505894",
+  "source_glb": "development/levels/rebuild/structures/wld-14/rough-shell.glb",
+  "source_glb_sha256": "907e6482f80f6272f22557966ad8036c7b5c9eb88e8c04c53bf2ae1be06d0f04",
+  "source_layout": "development/levels/rebuild/wld-14/rough-layout.json",
+  "source_layout_sha256": "f6a06a44c824f2e8c47fd293e12a6625d95796a02061e08bf0de5615a3895901",
+  "grid_metres": 2,
+  "cut_grid_metres": 0.25,
+  "edge_and_void_resampling": "Quarter-metre cells classify actual source footprint; no final terrain/edge acceptance",
+  "nearest_fallback_samples": 2440,
+  "cuts": 781
+}

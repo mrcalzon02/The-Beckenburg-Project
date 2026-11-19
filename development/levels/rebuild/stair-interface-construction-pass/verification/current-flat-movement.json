@@ -1,0 +1,195 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "ACADEMY": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 37
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 39
+      },
+      "current_lanes": {
+        "samples": 8733,
+        "valid_standing": 8725,
+        "invalid_standing": 8,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 8
+        },
+        "physical_components": [
+          [
+            "ACADEMY L66 single flight tread1",
+            2
+          ],
+          [
+            "297:Wall student-wc S.001",
+            2
+          ],
+          [
+            "Flat route shell Wall upper-north N.001",
+            2
+          ],
+          [
+            "ACADEMY mounted stair guard 50",
+            1
+          ],
+          [
+            "ACADEMY mounted stair guard 53",
+            1
+          ]
+        ]
+      }
+    },
+    "WLD-04": {
+      "before": {
+        "flat_links": 7,
+        "pass_both_directions": 2
+      },
+      "after": {
+        "flat_links": 7,
+        "pass_both_directions": 2
+      },
+      "current_lanes": {
+        "samples": 1713,
+        "valid_standing": 1494,
+        "invalid_standing": 219,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 6,
+          "NO_FOOT_SUPPORT_-0.22_0.0": 9,
+          "NO_CENTRE_SUPPORT": 190,
+          "NO_FOOT_SUPPORT_0.22_0.0": 13,
+          "NO_FOOT_SUPPORT_0.0_0.22": 1
+        },
+        "physical_components": [
+          [
+            "121:L10 flight0 step1",
+            2
+          ],
+          [
+            "WLD-04 mounted stair guard 33",
+            2
+          ],
+          [
+            "WLD-04 mounted stair guard 35",
+            2
+          ]
+        ]
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "flat_links": 12,
+        "pass_both_directions": 9
+      },
+      "after": {
+        "flat_links": 12,
+        "pass_both_directions": 12
+      },
+      "current_lanes": {
+        "samples": 4536,
+        "valid_standing": 4516,
+        "invalid_standing": 20,
+        "reasons": {
+          "PHYSICAL_COMPONENT": 14,
+          "NO_FOOT_SUPPORT_0.22_0.0": 3,
+          "NO_FOOT_SUPPORT_0.0_0.22": 1,
+          "NO_FOOT_SUPPORT_0.0_-0.22": 2
+        },
+        "physical_components": [
+          [
+            "349:level_blockout_hydro_turbine.001",
+            6
+          ],
+          [
+            "352:level_blockout_workbench.001",
+            4
+          ],
+          [
+            "Rebuilt stair WLD-09 L18 flight1 part1",
+            4
+          ]
+        ]
+      }
+    }
+  },
+  "source_bindings": {
+    "ACADEMY": {
+      "before": {
+        "contract": "development/levels/rebuild/terrain-ownership-construction-pass/academy/construction.json",
+        "contract_sha256": "f5fdf49028fd242e4979789b8a610c0d6a612fc89819d5540a435bfa888ee081",
+        "layout": "development/levels/rebuild/terrain-ownership-construction-pass/academy/authored-layout.json",
+        "layout_sha256": "ce8f0cd6c93e4c265528a292ac2ac9d81cfea61304475b76853667158887611f",
+        "native": "development/levels/rebuild/terrain-ownership-construction-pass/academy/saved-earthworks.hcs2",
+        "native_sha256": "555dc1ed1515f0f1fb95fc14d453724551acc50bb73f40cd05a66e3dc0a32468"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/stair-interface-construction-pass/academy/construction.json",
+        "contract_sha256": "7b3e485737d8b762b8c00c0138708674e10f313e6e226ac8f58a484034212f44",
+        "layout": "development/levels/rebuild/stair-interface-construction-pass/academy/authored-layout.json",
+        "layout_sha256": "c8c6c28fdd24ec0f792105045dccc33790818690195251c1fb13a841049d8b49",
+        "native": "development/levels/rebuild/stair-interface-construction-pass/academy/joined-stairs.hcs2",
+        "native_sha256": "954a3d3d5f74394f4c3fb8077371ac3537e73e0d5f5118370943c157daca99ea"
+      }
+    },
+    "WLD-04": {
+      "before": {
+        "contract": "development/levels/rebuild/access-route-pass/assemblies/wld-04/construction.json",
+        "contract_sha256": "f384d0c860c98d03839b606b7e7a31ced3b010b749cd6619bc6253cfd6941043",
+        "layout": "development/levels/rebuild/access-route-pass/assemblies/wld-04/authored-layout.json",
+        "layout_sha256": "50c8e710135b36abda5022e6e13fc5ac8b14f72e8ebba79f28a507ba258b5b96",
+        "native": "development/levels/rebuild/access-route-pass/assemblies/wld-04/access-routes.hcs2",
+        "native_sha256": "48bf36601e3e525f3a7b6e12599d9ca08f71b7fed1414b0835113463923f4be0"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/stair-interface-construction-pass/wld-04/construction.json",
+        "contract_sha256": "462769ced7adc60d5fac235dd89d57ac8c3a060e3960b57b7c9c4a427394a7e8",
+        "layout": "development/levels/rebuild/stair-interface-construction-pass/wld-04/authored-layout.json",
+        "layout_sha256": "50c8e710135b36abda5022e6e13fc5ac8b14f72e8ebba79f28a507ba258b5b96",
+        "native": "development/levels/rebuild/stair-interface-construction-pass/wld-04/joined-stairs.hcs2",
+        "native_sha256": "bceea053dbb4c618c7c83a0dc4886a674cfcd00bd304836b3686338497e58207"
+      }
+    },
+    "WLD-09": {
+      "before": {
+        "contract": "development/levels/rebuild/terrain-ownership-construction-pass/wld-09/construction.json",
+        "contract_sha256": "f2544ef5bb03cee839863b1b950f4916d718497d4e9645e49b785e1b76ad3a68",
+        "layout": "development/levels/rebuild/terrain-ownership-construction-pass/wld-09/authored-layout.json",
+        "layout_sha256": "388664f5bd247f098df99dc2767b21f807637a587ec92378b331d114f9334d2b",
+        "native": "development/levels/rebuild/terrain-ownership-construction-pass/wld-09/saved-earthworks.hcs2",
+        "native_sha256": "de71de43a1192017694802f679b8e880dca14907876d0567d72817108d18dd63"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/stair-interface-construction-pass/wld-09/construction.json",
+        "contract_sha256": "e0370e48ac89c0e6b21c7bb56745dca1004adf6073bad8458c06592e6a7d9be9",
+        "layout": "development/levels/rebuild/stair-interface-construction-pass/wld-09/authored-layout.json",
+        "layout_sha256": "643a67d094ad723b6f0c1e37acf8e19e3693162e423b2d49cfa38d7da3b1c34f",
+        "native": "development/levels/rebuild/stair-interface-construction-pass/wld-09/joined-stairs.hcs2",
+        "native_sha256": "cffb44ad8ea7af2199350eea2ea985004ceb77c970be27eaea00979912979a67"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "2544d2a6bd5fb459800ff8cbf3badc779e5b42b6ac1bafd6d6b3312ac67bf43a",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/terrain-ownership-construction-pass/roster.json": "bdea42987ce31ede737f8a12d4af8f96f842a117b954c5db3ee29db6744f6c63"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/stair-interface-construction-pass/verification/current-flat-failure-contacts.tsv": "8685909ca451dff80715084981f2f02747c6177531f5c38f30e9c439c3268eed",
+    "development/levels/rebuild/stair-interface-construction-pass/verification/current-flat-failure-input.tsv": "c243af2a39d586ca8cb6d4219aff6bd29e9cc0e65885054604f1f28c1df9c8a9",
+    "development/levels/rebuild/stair-interface-construction-pass/verification/current-flat-lane-input.tsv": "7d3b1ad37fe418bc82a003401d3646857939c4cf99133c8a1c7ddbe5538accc1",
+    "development/levels/rebuild/stair-interface-construction-pass/verification/current-flat-lane-names.tsv": "3326a473722b6fd9feecea6368f7e6661ad4db5c9821560186b1209f37354ed2",
+    "development/levels/rebuild/stair-interface-construction-pass/verification/current-flat-lanes.tsv": "81797ef519a1352b1586c5c07d6f80f7aef42793a3de6f3a23186f35c3901968",
+    "development/levels/rebuild/stair-interface-construction-pass/verification/current-flat-links.tsv": "167cbd7be921848b9113fc82cf8648d8e75638ba7d28a53071b36a4f9ffc785e",
+    "development/levels/rebuild/stair-interface-construction-pass/verification/current-flat-names.tsv": "9f2f55f879d15c1c2ab8a03c7c280a1e07df5e5f6744873f84192fd6889c4304",
+    "development/levels/rebuild/stair-interface-construction-pass/verification/current-flat-paths.tsv": "1a54f02b5d65ee1bab41595f2d5cd7e4b5a63677ee07a68adf4ac1511cee0832"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

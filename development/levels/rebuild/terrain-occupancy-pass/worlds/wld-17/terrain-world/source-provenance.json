@@ -1,0 +1,15 @@
+{
+  "source_commit": "1afdca43bee6e0713913d0e4d141e794f51858c4",
+  "source_glb": "development/levels/rebuild/structures/wld-17/rough-shell.glb",
+  "source_glb_sha256": "47fc637027476bed7d1fc7a94b1759800cbdea7a9e3d11be3f7e3f5ad14eadcc",
+  "source_layout": "development/levels/layouts/wld-17/layout.json",
+  "source_layout_sha256": "c8b7ee372a00703088e125ff980d81b8ceadece4f4aa99c5b78254d1d580675d",
+  "cut_layout": "development/levels/layouts/wld-17/layout.json",
+  "cut_definition_sha256": "e5ca3ae4edd8f88d4b41b8ea1369146ad43fe4d53c5cf389f2f6edc9d084308a",
+  "sampler_sha256": "22562058716727becd4eba8d4a3543634a26d3a0c2fb59d612fa5a8942063a48",
+  "grid_metres": 2,
+  "cut_grid_metres": 0.25,
+  "edge_and_void_resampling": "Quarter-metre cells classify immutable source footprint; current authored foundations/entrances supply persistent cut requests; no final terrain/edge acceptance",
+  "nearest_fallback_samples": 2542,
+  "cuts": 732
+}

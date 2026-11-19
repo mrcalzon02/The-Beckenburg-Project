@@ -1,0 +1,16 @@
+{
+  "id": "WLD-04",
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-04-0-L09--1.png",
+      "sha256": "56db5c11a9617049fb1495c800b3df0f6ebf9d8e3f57ddf38b35255a81304aa9",
+      "type": "native aperture inspection; construction camera, not runtime"
+    },
+    {
+      "path": "development/levels/rebuild/captures/stair-opening-batch/wld-04-0-L09-1.png",
+      "sha256": "074397a85e16f9bf8d76c218a703049dc5f75b40a75704b63e04353b19fdfa59",
+      "type": "native aperture inspection; construction camera, not runtime"
+    }
+  ],
+  "renderer": "Blender native Workbench; actual GLB reimport, not runtime"
+}

@@ -1,0 +1,14 @@
+Note: src\main\java\org\beckenburg\LanLobbyPanel.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Baked 200 approved model-render UI icons, Castle splash and native desktop icon
+PASS: authored 126 textured PSX GLBs, 788556 bytes (42 equipment categories x 3 physical tiers)
+Prepared 15 CC0 medieval castle meshes
+java.nio.file.AccessDeniedException: C:\Users\Admin\AppData\Local\Packages\openai.codex_2p2nqsd0c76g0\AC\#!sandbox.{fd9f90c8-f7ee-4f38-a5fb-b6f493b6f80d}\Temp\beckenburg-game.jar3972583072400459932.jar -> build\beckenburg-game.jar
+	at java.base/sun.nio.fs.WindowsException.translateToIOException(WindowsException.java:89)
+	at java.base/sun.nio.fs.WindowsException.rethrowAsIOException(WindowsException.java:103)
+	at java.base/sun.nio.fs.WindowsFileCopy.move(WindowsFileCopy.java:403)
+	at java.base/sun.nio.fs.WindowsFileSystemProvider.move(WindowsFileSystemProvider.java:293)
+	at java.base/java.nio.file.Files.move(Files.java:1432)
+	at jdk.jartool/sun.tools.jar.Main.validateAndClose(Main.java:469)
+	at jdk.jartool/sun.tools.jar.Main.run(Main.java:333)
+	at jdk.jartool/sun.tools.jar.Main.main(Main.java:1689)

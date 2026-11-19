@@ -1,0 +1,173 @@
+{
+  "site": "SCHOOL",
+  "status": "SOURCE_LIBRARY_NATIVE_CANDIDATE_NOT_RUNTIME_ACCEPTED",
+  "source_layout": "development/levels/rebuild/school/rough-layout.json",
+  "source_layout_sha256": "f63f0a5606fe1cb18fec602d096400af399bb0e314f4cd8ff238e5c26927c79e",
+  "structure_glb_sha256": "e2dc8c47873a5c920bd4f344dfe527a941e9f02f82b83ba2cc719ec2ed58b833",
+  "furnished_glb_sha256": "a47981703f2d94c102d3f231ccca3b91a4f00145f62976153d3124a1c7a4c1e0",
+  "native_sha256": "cda98c618074e9c11899aab7ed91e3a48a39ef9382a3ff12ba62532ff3483230",
+  "requests": 6,
+  "placements": [
+    {
+      "id": "SCHOOL:class-a:0:0",
+      "zone": "class-a",
+      "purpose": "Class A: 24 desks and teaching area / Student desk and chair proxy / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_student_desk",
+      "asset": "level_blockout_student_desk",
+      "source_sha256": "8b81ec9782fe083ed4357e27bb14da4deeee4db206be8d0fa7d7954a199c8d80",
+      "bounds": [
+        11.955999374389648,
+        -25.365001678466797,
+        0.0,
+        12.656000137329102,
+        -24.160001754760742,
+        1.034999966621399
+      ],
+      "rect": [
+        11.956000002384187,
+        24.16,
+        12.655999990463258,
+        25.365000028014183
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "SCHOOL:class-b:1:0",
+      "zone": "class-b",
+      "purpose": "Class B: 24 desks and teaching area / Student desk and chair proxy / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_student_desk",
+      "asset": "level_blockout_student_desk",
+      "source_sha256": "8b81ec9782fe083ed4357e27bb14da4deeee4db206be8d0fa7d7954a199c8d80",
+      "bounds": [
+        11.955999374389648,
+        -13.364999771118164,
+        3.5999999046325684,
+        12.656000137329102,
+        -12.159998893737793,
+        4.634999752044678
+      ],
+      "rect": [
+        11.956000002384187,
+        12.16,
+        12.655999990463258,
+        13.365000028014183
+      ],
+      "floor_y": 3.6,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "SCHOOL:science:2:0",
+      "zone": "science",
+      "purpose": "Shared practical science teaching / School laboratory demonstration and optical bench / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_science_instrument_table",
+      "asset": "level_blockout_science_instrument_table",
+      "source_sha256": "37ad81a14c0dbcc369602bc756422a4be2d5cbd09dc3d01633cba1002b5387a9",
+      "bounds": [
+        11.730000495910645,
+        -13.0,
+        0.0,
+        13.5600004196167,
+        -12.15999984741211,
+        1.598637342453003
+      ],
+      "rect": [
+        11.729999991416932,
+        12.16,
+        13.560000034332276,
+        12.999999973773956
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 244
+    },
+    {
+      "id": "SCHOOL:dining:3:0",
+      "zone": "dining",
+      "purpose": "Dining: two classes in one sitting / School cafeteria bench table / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_school_cafeteria_table",
+      "asset": "level_blockout_school_cafeteria_table",
+      "source_sha256": "019b3d3218e8b1e740e206fb7859fe549a24ff82c92ec88ea82f94f09081d849",
+      "bounds": [
+        31.240001678466797,
+        -25.950000762939453,
+        0.0,
+        33.52000045776367,
+        -24.15999984741211,
+        0.8650000095367432
+      ],
+      "rect": [
+        31.240000005722045,
+        24.16,
+        33.519999977111816,
+        25.949999961853027
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 108
+    },
+    {
+      "id": "SCHOOL:change-a:4:0",
+      "zone": "change-a",
+      "purpose": "Changing group A lockers and bench / Three separate school lockers / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_school_locker_bank",
+      "asset": "level_blockout_school_locker_bank",
+      "source_sha256": "4411c6991bf39cd0b30fea5585068e1bdaf3d47d74835f4ac8378cc9c44ed1d9",
+      "bounds": [
+        32.448001861572266,
+        -12.762499809265137,
+        0.0,
+        34.6879997253418,
+        -12.15999984741211,
+        2.0799999237060547
+      ],
+      "rect": [
+        32.44799999809265,
+        12.16,
+        34.68800000762939,
+        12.76249999165535
+      ],
+      "floor_y": 0,
+      "yaw": 3.141592653589793,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 216
+    },
+    {
+      "id": "SCHOOL:office:5:0",
+      "zone": "office",
+      "purpose": "Administration work room / Headmaster's desk and writing accessories / existing rough spatial allocation, refinement later",
+      "recipe": "level_blockout_headmaster_desk",
+      "asset": "level_blockout_headmaster_desk",
+      "source_sha256": "0c5e6f6383716091ccd60c36337dc6bae4fa2b0d9b0320e7b46c55c04516a617",
+      "bounds": [
+        27.72599983215332,
+        -35.84000015258789,
+        0.0,
+        29.575998306274414,
+        -34.97999954223633,
+        0.8050000071525574
+      ],
+      "rect": [
+        27.72599999523163,
+        34.97999998569489,
+        29.576000019073486,
+        35.84
+      ],
+      "floor_y": 0,
+      "yaw": 0,
+      "uniform_rough_fit_scale": 1,
+      "triangles": 84
+    }
+  ],
+  "issues": [],
+  "authored_program_sha256": "69d6670a7f063d9c9dbbe9d9ffdbe508048aaef256df4a2b17248939909254fd",
+  "staged_asset_bounds_sha256": "c500668ee00e763571545811625992303b0eae125fbc514aad91985091f71c52",
+  "independently_reimported_instances": 6,
+  "source_builder_sha256": "2e2b9c3fa8916327f0a53f664e6bbca25bab8ad88811b0a8c6d331044a74e939"
+}

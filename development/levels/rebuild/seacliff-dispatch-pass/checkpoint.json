@@ -1,0 +1,139 @@
+{
+  "status": "PACKAGED_SOLO_AND_LAN_REVIEW_COMPLETE_CASE_OPEN",
+  "prior_commit": "0feff426e2c0e7d2eeb4755b7e3843757cf122de",
+  "review_property": "-Dbeckenburg.review.seacliff=true",
+  "level_revision": "authored-battery-candidate-864a77c235293daa",
+  "native_scene_revision": "5dc065bc3eca40d1398cd921164d9f9032f162fd7c6f449c59611d8d73d8020a",
+  "roster": "development/levels/rebuild/seacliff-dispatch-pass/roster.json",
+  "measured_floor_plan": "development/levels/rebuild/seacliff-upper-partitions-pass/seacliff-upper-casemate-plan.svg",
+  "search_packet_geometry": {
+    "room_owners": 15,
+    "volume_bindings": 21,
+    "fitted_doors": 12,
+    "physical_ramp_and_stair_transitions": 5,
+    "physical_cupboards": 3,
+    "cupboard_slab_contacts": 36,
+    "posture_direction_guide_replays": 68
+  },
+  "packaged_runtime": {
+    "peer_count": 4,
+    "actual_normal_edition_launch": [
+      "solo",
+      "LAN"
+    ],
+    "van_deck": [
+      31.75,
+      0.5,
+      86.9
+    ],
+    "forecourt": [
+      31.75,
+      0,
+      84.11
+    ],
+    "records_door": 424,
+    "records_hiding_pose": [
+      26.56,
+      0,
+      15.43
+    ],
+    "ghost_electrical_disturbance": true,
+    "recovery_preserved_breaker_source_and_open_door": true,
+    "negative_controls": [
+      "through-wall guide does not change traversal, visibility or revision",
+      "zero difficulty cover disables hiding while keeping cupboard collision"
+    ]
+  },
+  "regressions_passed": [
+    "SiteSelectionTest",
+    "MissionBoardIntegrationTest",
+    "LevelAuthoringIdentityTest",
+    "HidingBudgetTest",
+    "RoomAcousticPresetsTest",
+    "SafeAreaBarrierTest",
+    "LevelOpeningFlyoverTest",
+    "HollowCreekDispatchTest",
+    "CollegeNativeDispatchTest"
+  ],
+  "assets": [
+    {
+      "path": "development/levels/rebuild/seacliff-dispatch-pass/wld-17/authored-layout.json",
+      "bytes": 68750,
+      "sha256": "8f710ce972ee1be55b68cee2617c8afc3d98eed1119fd49762e92f7d99f29b10"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-dispatch-pass/wld-17/battery-cupboards.blend",
+      "bytes": 919230,
+      "sha256": "3bbc8687d0fb349561e17b159daa29ae773b0582d1f320f586f84fd950399dd0"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-dispatch-pass/wld-17/battery-cupboards.glb",
+      "bytes": 4534676,
+      "sha256": "a5839ee9735cbbc98a662a2552b1500ceb379d9deb9f01a49ccc6a4018968ced"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-dispatch-pass/wld-17/battery-cupboards.hcs2",
+      "bytes": 879460,
+      "sha256": "d0500fe8d0da0e543a7ffc46df72dcde90dc45d60de2d668ad9001339c2a58e1"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-dispatch-pass/wld-17/construction.json",
+      "bytes": 29807,
+      "sha256": "1f19de3b35e58c4a146b814cf181e477d5220392edf0851dce3b4d6080d01984"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-dispatch-pass/wld-17/cupboards.json",
+      "bytes": 1914,
+      "sha256": "f8a0f81f8ffd26df8440cae5dafc974e698938471e878ee014992981e144cd3f"
+    }
+  ],
+  "verification": [
+    {
+      "path": "development/levels/rebuild/seacliff-dispatch-pass/verification/opengl-readback.txt",
+      "bytes": 1435,
+      "sha256": "76ad20881b91f0487fbe189aaee0025955f03af688b67e81afc259fd0e3b936a"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-dispatch-pass/verification/packaged-dispatch.txt",
+      "bytes": 680,
+      "sha256": "95c2dc11e0cf99d0a716f099b292feaf8a7e0d27558564d3edd223e742cf0311"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-dispatch-pass/verification/physical-replay.tsv",
+      "bytes": 1342,
+      "sha256": "85a9b636f42a6d4e10326dba98705e494e43c9fa44d7b27843aafd6701174805"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-dispatch-pass/verification/runtime.tsv",
+      "bytes": 12510,
+      "sha256": "f08d2f8b94d3486f00647118e5c482232848a167efed8302578445c5eaa60195"
+    }
+  ],
+  "standing_captures": [
+    {
+      "path": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-opengl-records-cupboard.png",
+      "bytes": 590984,
+      "sha256": "225a5f0d2f71113080231808028c7d9c1d1c38b1e9e8366fbe082ecb1eab7842"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-opengl-records-threshold.png",
+      "bytes": 468715,
+      "sha256": "7bdb399b7dd379ef36e1fbc819448e2f0aab0ac41a0ec2ef0f84335f6254aaca"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-records-cupboard.png",
+      "bytes": 589224,
+      "sha256": "e06a3dacad3e06d399306f267383ea9ed867213a9a4e11990983e492094041fb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-records-threshold.png",
+      "bytes": 480503,
+      "sha256": "c8083d8cad022a77d6a36d3b09d18221cdb30dbe992c5f1b4438f19acf81f285"
+    }
+  ],
+  "remaining": [
+    "Room-by-room electrical fit-out outside the lower plant and upper service room",
+    "Individual evidence installations, perimeter and sealed context acceptance, and architectural finish",
+    "Whole-case acceptance and public release remain held"
+  ]
+}

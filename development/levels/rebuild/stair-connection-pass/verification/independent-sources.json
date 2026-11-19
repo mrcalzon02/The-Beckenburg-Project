@@ -1,0 +1,72 @@
+{
+  "status": "PASS_SCOPED_SOURCE_SOLID_NATIVE_EDITABLE_CHECKS",
+  "sites": [
+    {
+      "id": "WLD-04",
+      "retained_source_meshes": 225,
+      "replaced_source_parts": 52,
+      "new_parts": 63,
+      "closed_new_parts": 63,
+      "terrain_parts": 0,
+      "new_triangles": 788,
+      "packed_images": 6,
+      "blend_sha256": "d3c2d5cd4827affb672f6c4d5de9875aec22f68565f2ff534a8ac97aa52487ef",
+      "glb_sha256": "0b651d47c432a6a166cde1caf60cf6590330841d6832611177e08125928209b6",
+      "physics_sha256": "766d059f61672303843b9586bccefd4f584237c156cb37f89470d2c962596a85"
+    },
+    {
+      "id": "WLD-05",
+      "retained_source_meshes": 210,
+      "replaced_source_parts": 72,
+      "new_parts": 80,
+      "closed_new_parts": 80,
+      "terrain_parts": 0,
+      "new_triangles": 1166,
+      "packed_images": 12,
+      "blend_sha256": "83eec5942a2e0eee52f3915d2aa0b70c8ad77a6cdc818c7622fbb2971ea60f3a",
+      "glb_sha256": "cc60805247fc26bfc05669ebc51d0ab564c4ea62f26a22636ec700494c7b11dc",
+      "physics_sha256": "f9f6fa9a23a62ae5a00fccdfbad9828d495d96c0385c9b14d9a6e76f3069d18a"
+    },
+    {
+      "id": "WLD-15",
+      "retained_source_meshes": 219,
+      "replaced_source_parts": 0,
+      "new_parts": 3,
+      "closed_new_parts": 3,
+      "terrain_parts": 0,
+      "new_triangles": 60,
+      "packed_images": 13,
+      "blend_sha256": "14130cc04f0841f530f5eb42e12c504a58e9fadef4dbc9d89a91fa173627891b",
+      "glb_sha256": "dfb08915bb4aca584cb6f3640441853b37256a3e7cc6d8c1c51ac00baa2fe6f6",
+      "physics_sha256": "65ea86d5f1c611f2d35cd6c1198e57dca62302302e4b4ba401be50e47640c21c"
+    },
+    {
+      "id": "WLD-17",
+      "retained_source_meshes": 259,
+      "replaced_source_parts": 1,
+      "new_parts": 6,
+      "closed_new_parts": 5,
+      "terrain_parts": 1,
+      "new_triangles": 9409,
+      "packed_images": 11,
+      "blend_sha256": "3ad17408f6c5adf1609bfbb8cc8dccf2b2ab231da58aec4a305692e3fa97f47e",
+      "glb_sha256": "f78ae198db1ff17d7504bcce2f0fde3539c8e25b0931384f72f2a7e005177ac8",
+      "physics_sha256": "3a7f0af68702dcfaa0244a777020b56464d13be376a87c6154995fef1751c32f"
+    },
+    {
+      "id": "WLD-18",
+      "retained_source_meshes": 332,
+      "replaced_source_parts": 0,
+      "new_parts": 1,
+      "closed_new_parts": 1,
+      "terrain_parts": 0,
+      "new_triangles": 12,
+      "packed_images": 13,
+      "blend_sha256": "c970914b0a21f6a5e47393c2bb246e19f470a2cbc9024ebfd18ac94874476c46",
+      "glb_sha256": "8628719c0b461e64f89f25e018ed3fc260ce372e250380d26e3ea34e59441a74",
+      "physics_sha256": "022550b758eb5fac8e443659de182827d1aa5e5230408c81dbcf0c4dd0324346"
+    }
+  ],
+  "checker_sha256": "437aaf450ce6431e368d578969c3fe880e2e5234611a3cc67a818add18f7368b",
+  "limitations": "No full map, guard/support engineering, runtime/network or hardware acceptance."
+}

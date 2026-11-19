@@ -1,0 +1,6 @@
+{
+  "id": "WLD-14",
+  "source_world": "development/levels/rebuild/wld-14/terrain-world",
+  "source_height_sha256": "8099d45bfb8351aad146d87bf77654f925f260170fd11b5d0b2ce377ef85d7e2",
+  "method": "Exact existing saved source PNG decoded to identical16bit input; existing sculpt/topology retained; add occupied-room cut program only"
+}

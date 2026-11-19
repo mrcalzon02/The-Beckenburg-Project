@@ -1,0 +1,714 @@
+{
+  "version": 1,
+  "id": "WLD-17",
+  "title": "Battery Brackenhead",
+  "region": "Beckenburg coast and hinterland",
+  "scale": "Measured rough site / metres",
+  "status": "rough-layout-only",
+  "intent": "An abandoned WWII coastal emplacement with empty gun positions, protected galleries, lower crew/service rooms and a separate observation post.",
+  "site_bounds": [
+    0,
+    0,
+    68,
+    100
+  ],
+  "zones": [
+    {
+      "id": "stage",
+      "name": "Lower access van apron",
+      "bounds": [
+        24,
+        82,
+        40,
+        94
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "staging",
+      "purpose": "Lower access van apron"
+    },
+    {
+      "id": "entry",
+      "name": "Lower access track",
+      "bounds": [
+        24,
+        68,
+        40,
+        82
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Lower access track"
+    },
+    {
+      "id": "approach",
+      "name": "Cut hillside approach",
+      "bounds": [
+        24,
+        54,
+        40,
+        68
+      ],
+      "y": 2,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Cut hillside approach"
+    },
+    {
+      "id": "yard",
+      "name": "Upper battery yard",
+      "bounds": [
+        24,
+        34,
+        44,
+        54
+      ],
+      "y": 4,
+      "height": 3,
+      "kind": "outside",
+      "purpose": "Upper battery yard"
+    },
+    {
+      "id": "west",
+      "name": "West casemate",
+      "bounds": [
+        8,
+        26,
+        24,
+        40
+      ],
+      "y": 4,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "West casemate"
+    },
+    {
+      "id": "east",
+      "name": "East casemate",
+      "bounds": [
+        44,
+        26,
+        60,
+        40
+      ],
+      "y": 4,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "East casemate"
+    },
+    {
+      "id": "gallery",
+      "name": "Upper protected gallery",
+      "bounds": [
+        24,
+        26,
+        44,
+        34
+      ],
+      "y": 4,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Upper protected gallery"
+    },
+    {
+      "id": "magazine",
+      "name": "Empty magazine",
+      "bounds": [
+        8,
+        14,
+        24,
+        26
+      ],
+      "y": 4,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Empty magazine"
+    },
+    {
+      "id": "service",
+      "name": "Maintenance shelter",
+      "bounds": [
+        44,
+        14,
+        60,
+        26
+      ],
+      "y": 4,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Maintenance shelter"
+    },
+    {
+      "id": "director",
+      "name": "Observation director post",
+      "bounds": [
+        28,
+        10,
+        40,
+        26
+      ],
+      "y": 7,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Observation director post"
+    },
+    {
+      "id": "barracks",
+      "name": "Lower barrack room",
+      "bounds": [
+        8,
+        14,
+        24,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Lower barrack room"
+    },
+    {
+      "id": "lowgallery",
+      "name": "Lower gallery",
+      "bounds": [
+        24,
+        26,
+        44,
+        34
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "circulation",
+      "purpose": "Lower gallery"
+    },
+    {
+      "id": "plant",
+      "name": "Ventilation and power room",
+      "bounds": [
+        44,
+        14,
+        60,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Ventilation and power room"
+    },
+    {
+      "id": "records",
+      "name": "Duty records room",
+      "bounds": [
+        24,
+        14,
+        34,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Duty records room"
+    },
+    {
+      "id": "pump",
+      "name": "Drainage pump chamber",
+      "bounds": [
+        34,
+        14,
+        44,
+        26
+      ],
+      "y": 0,
+      "height": 3,
+      "kind": "inside",
+      "purpose": "Drainage pump chamber"
+    }
+  ],
+  "links": [
+    {
+      "id": "route-01",
+      "a": "stage",
+      "b": "entry",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          88.0
+        ],
+        [
+          32.0,
+          0,
+          75.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-02",
+      "a": "entry",
+      "b": "approach",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          32,
+          0,
+          72
+        ],
+        [
+          32,
+          0,
+          68
+        ],
+        [
+          32,
+          2,
+          58
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 2
+    },
+    {
+      "id": "route-03",
+      "a": "approach",
+      "b": "yard",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          32,
+          2,
+          58
+        ],
+        [
+          40,
+          2,
+          56
+        ],
+        [
+          40,
+          4,
+          48
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 2
+    },
+    {
+      "id": "route-04",
+      "a": "yard",
+      "b": "west",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          34.0,
+          4,
+          44.0
+        ],
+        [
+          16.0,
+          4,
+          33.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-05",
+      "a": "yard",
+      "b": "east",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          34.0,
+          4,
+          44.0
+        ],
+        [
+          52.0,
+          4,
+          33.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-06",
+      "a": "west",
+      "b": "gallery",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          16.0,
+          4,
+          33.0
+        ],
+        [
+          34.0,
+          4,
+          30.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-07",
+      "a": "gallery",
+      "b": "east",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          34.0,
+          4,
+          30.0
+        ],
+        [
+          52.0,
+          4,
+          33.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-08",
+      "a": "west",
+      "b": "magazine",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          16.0,
+          4,
+          33.0
+        ],
+        [
+          16.0,
+          4,
+          20.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-09",
+      "a": "east",
+      "b": "service",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          52.0,
+          4,
+          33.0
+        ],
+        [
+          52.0,
+          4,
+          20.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-10",
+      "a": "gallery",
+      "b": "director",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          30,
+          4,
+          30
+        ],
+        [
+          30,
+          4,
+          22
+        ],
+        [
+          38,
+          7,
+          22
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    },
+    {
+      "id": "route-11",
+      "a": "magazine",
+      "b": "barracks",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          12,
+          4,
+          22
+        ],
+        [
+          12,
+          4,
+          16
+        ],
+        [
+          20,
+          0,
+          16
+        ],
+        [
+          20,
+          0,
+          22
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 4
+    },
+    {
+      "id": "route-12",
+      "a": "service",
+      "b": "plant",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          48,
+          4,
+          22
+        ],
+        [
+          48,
+          4,
+          16
+        ],
+        [
+          56,
+          0,
+          16
+        ],
+        [
+          56,
+          0,
+          22
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 4
+    },
+    {
+      "id": "route-13",
+      "a": "barracks",
+      "b": "lowgallery",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          16.0,
+          0,
+          20.0
+        ],
+        [
+          34.0,
+          0,
+          30.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-14",
+      "a": "lowgallery",
+      "b": "plant",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          34.0,
+          0,
+          30.0
+        ],
+        [
+          52.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-15",
+      "a": "lowgallery",
+      "b": "records",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          34.0,
+          0,
+          30.0
+        ],
+        [
+          29.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-16",
+      "a": "records",
+      "b": "pump",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          29.0,
+          0,
+          20.0
+        ],
+        [
+          39.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    {
+      "id": "route-17",
+      "a": "pump",
+      "b": "plant",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          39.0,
+          0,
+          20.0
+        ],
+        [
+          52.0,
+          0,
+          20.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    }
+  ],
+  "loops": [
+    [
+      "yard",
+      "west",
+      "gallery",
+      "east",
+      "yard"
+    ],
+    [
+      "west",
+      "magazine",
+      "barracks",
+      "lowgallery",
+      "plant",
+      "service",
+      "east",
+      "gallery",
+      "west"
+    ]
+  ],
+  "staging": {
+    "zone": "stage",
+    "point": [
+      32.0,
+      0,
+      88.0
+    ],
+    "yaw": 0,
+    "cargo_route": [
+      [
+        32.0,
+        0,
+        84.372
+      ],
+      [
+        32.0,
+        0,
+        75.0
+      ]
+    ],
+    "logistics": "Reuse the canonical van on the roadhead/quay; remote travel is an expedition transition. No new driving or sailing system."
+  },
+  "rituals": [
+    {
+      "rite": "Banishment",
+      "zone": "yard",
+      "point": [
+        34.0,
+        4,
+        44.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    },
+    {
+      "rite": "Cleansing",
+      "zone": "plant",
+      "point": [
+        52.0,
+        0,
+        20.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    },
+    {
+      "rite": "Absolution",
+      "zone": "records",
+      "point": [
+        29.0,
+        0,
+        20.0
+      ],
+      "installation": "Removable modern investigation fitting on a clear 4.4 m floor square; reserve access around it."
+    }
+  ],
+  "circulation": "Two declared graph cycles reserve retreat options. Optional tower/bridge branches must never host mandatory evidence without separate fairness review. Actual physical routes and timing remain unaccepted.",
+  "systems": "Terrain and water boundaries first; then solid architecture with floor depth, fitted doors and circuit isolation. Separate exterior/interior acoustics, supported fixtures and surface-mounted UV evidence. All gameplay integration remains locked.",
+  "campaign": "Fictional location and records connect to the district investigation; narrative never predetermines the ghost or prevents an evidence-led outcome.",
+  "refine": [
+    "Terrain-first massing is not terrain acceptance: resolve drainage, incised paths, retaining edges, foundation contacts and every grade before detailed structures.",
+    "Check floor/wall/roof joins, upper-deck undersides and corners with adjacent lights toggled; log every discovered failure.",
+    "Engineer stairs, landings, openings, guards, door swings and two exits before collision/navigation approval.",
+    "Inspect each model purpose, scale, UVs and true support surface before placing furniture or clutter.",
+    "Historic coastal-site functional reference only; original fictional battery with removed/inert equipment.",
+    "Roof cover over lower rooms requires full sealed slabs and stair voids; grade reservations are not accepted routes."
+  ],
+  "sources": [
+    "https://www.nps.gov/places/000/battery-townsley.htm"
+  ],
+  "terrain": {
+    "profile": "battery",
+    "description": "Coastal hillside rises from roadhead to a +4 m retained battery terrace, earth-covered lower galleries and an exposed +7 m observation crest."
+  },
+  "needed_models": [
+    "Casemate shells, empty mount rings and blocked embrasure frames",
+    "Earth-covered gallery roof, drainage and retaining-wall kit",
+    "Inert period ventilation, power fittings and blast-door shells",
+    "Barrack bunks, lockers, duty desk and weathered signage",
+    "Observation instruments as static props and guarded access stairs",
+    "Coastal rock berms, boundary fence and overgrown concrete apron"
+  ]
+}

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 496" role="img">
+<title>Hollowmere Farm measured approach plan</title>
+<style>
+text{fill:#253847;font:16px "Segoe UI",sans-serif} .title{font-size:26px;font-weight:700} .small{font-size:13px}
+.floor{fill:#dae7ed;stroke:#426073;stroke-width:1.7} .well{fill:#f2e5d9;stroke:#8a6243;stroke-width:1.6}
+.flight{fill:#dac7a7;stroke:#896641;stroke-width:1.6} .vehicle{fill:#a5aead;stroke:#425758;stroke-width:1.5}
+.gravel{fill:#e3e5d9;stroke:#7c8572;stroke-width:1.5}
+.door,.guide,.guard{fill:none} .door{stroke:#0b786a;stroke-width:4.5}
+.guide{stroke:#b34f20;stroke-width:2.5;stroke-dasharray:5 4} .guard{stroke:#405466;stroke-width:4}
+</style>
+<rect width="840" height="496" fill="#f9faf8"/>
+<text x="36" y="36" class="title">Hollowmere Farm</text><text x="36" y="70" class="">Ground stair spine and barn loft approach · north up</text><rect x="105.000" y="117.000" width="174.000" height="290.000" class="floor"/><rect x="120.950" y="156.150" width="55.100" height="146.450" class="well"/><rect x="213.750" y="163.400" width="43.500" height="139.200" class="flight"/><polyline points="176.775,117.000 207.225,117.000" class="door"/><polyline points="176.775,407.000 207.225,407.000" class="door"/><polyline points="105.000,310.575 105.000,341.025" class="door"/><polyline points="192.000,407.000 192.000,357.700 195.770,325.800 195.770,262.000" class="guide"/><polyline points="105.000,325.800 195.770,325.800 195.770,262.000" class="guide"/><polyline points="195.770,262.000 195.770,147.450 192.000,135.850 192.000,117.000" class="guide"/><polyline points="195.770,262.000 195.770,140.200 235.500,140.200 235.500,163.400" class="guide"/><text x="108" y="429" class="small">Main transfer · 1.16 m between guards</text><rect x="454.000" y="117.000" width="116.000" height="232.000" class="floor"/><rect x="490.250" y="160.500" width="43.500" height="139.200" class="flight"/><polyline points="454.000,145.275 454.000,175.725" class="door"/><polyline points="425.000,160.500 454.000,160.500 468.500,160.500 473.140,160.500 473.140,140.200 512.000,140.200 512.000,160.500" class="guide"/><text x="454" y="367" class="small">Loft approach · 1.09 m between wall and guard</text><polyline points="45.000,467.000 75.000,467.000" class="guide"/><text x="84" y="472" class="small">Nonphysical circulation guide</text><polyline points="295.000,467.000 328.000,467.000" class="door"/><text x="338" y="472" class="small">Measured doorway</text><rect x="490.000" y="458.000" width="15.000" height="13.000" class="floor"/><text x="515" y="471" class="small">Floor or paving</text><rect x="641.000" y="458.000" width="15.000" height="13.000" class="well"/><text x="666" y="471" class="small">Stair well</text>
+</svg>

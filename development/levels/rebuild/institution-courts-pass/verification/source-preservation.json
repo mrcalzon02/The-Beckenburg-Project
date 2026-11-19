@@ -1,0 +1,566 @@
+{
+  "method": "Retained native records byte-for-byte; unchanged semantic fields exact equality",
+  "sites": [
+    {
+      "site": "school",
+      "retained_native_records": 457,
+      "unchanged": [
+        "saved terrain/native topology",
+        "all floors, basement roofs and stairs",
+        "prior doorway frames, models and props",
+        "zones/access/elevations",
+        "capacity",
+        "staging/van",
+        "terrain_cutouts"
+      ],
+      "removed_only": [
+        "Flat route shell Wall class-a W",
+        "Flat route shell Wall class-a W.001",
+        "Flat route shell Wall gym N",
+        "Flat route shell Wall gym N.001",
+        "Flat route shell Wall receiving E",
+        "Flat route shell Wall receiving E.001",
+        "Flat route shell Wall science W",
+        "Flat route shell Wall science W.001",
+        "Header class-a W",
+        "Header gym N",
+        "Header receiving E",
+        "Header science W"
+      ],
+      "foundation_exclusion": "All source ground/below-grade room footprints and actual stair apertures excluded from new pavement and foundation polygons",
+      "authored_courts": [
+        {
+          "area": "north school playground",
+          "architectural_footprint": [
+            [
+              5,
+              2
+            ],
+            [
+              55,
+              2
+            ],
+            [
+              55,
+              12
+            ],
+            [
+              5,
+              12
+            ]
+          ],
+          "constructed_polygons": [
+            [
+              [
+                5,
+                2
+              ],
+              [
+                55,
+                2
+              ],
+              [
+                55.0,
+                8.0
+              ],
+              [
+                5.0,
+                8.0
+              ]
+            ],
+            [
+              [
+                55.0,
+                8.0
+              ],
+              [
+                55,
+                12
+              ],
+              [
+                50.0,
+                12.0
+              ],
+              [
+                50.0,
+                8.0
+              ]
+            ],
+            [
+              [
+                38.0,
+                12.0
+              ],
+              [
+                5,
+                12
+              ],
+              [
+                5.0,
+                8.0
+              ],
+              [
+                38.0,
+                8.0
+              ]
+            ]
+          ],
+          "surface_y": 0,
+          "pavement_depth": 0.2,
+          "foundation_bottom_y": -0.9088455200195312,
+          "soil_range": [
+            -0.5588455200195312,
+            -0.42066001892089844
+          ],
+          "soil_samples": 452,
+          "saved_hole_samples": 0,
+          "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+        },
+        {
+          "area": "east receiving and gym service court",
+          "architectural_footprint": [
+            [
+              46,
+              12
+            ],
+            [
+              55,
+              12
+            ],
+            [
+              55,
+              36
+            ],
+            [
+              46,
+              36
+            ]
+          ],
+          "constructed_polygons": [
+            [
+              [
+                50.0,
+                12.0
+              ],
+              [
+                55,
+                12
+              ],
+              [
+                55,
+                36
+              ],
+              [
+                50.0,
+                36.0
+              ]
+            ],
+            [
+              [
+                50.0,
+                24.0
+              ],
+              [
+                50.0,
+                36.0
+              ],
+              [
+                46,
+                36
+              ],
+              [
+                46.0,
+                24.0
+              ]
+            ]
+          ],
+          "surface_y": 0,
+          "pavement_depth": 0.2,
+          "foundation_bottom_y": -0.7757869720458984,
+          "soil_range": [
+            -0.42578697204589844,
+            -0.34424400329589844
+          ],
+          "soil_samples": 168,
+          "saved_hole_samples": 0,
+          "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+        },
+        {
+          "area": "west teaching-room court",
+          "architectural_footprint": [
+            [
+              5,
+              12
+            ],
+            [
+              10,
+              12
+            ],
+            [
+              10,
+              36
+            ],
+            [
+              5,
+              36
+            ]
+          ],
+          "constructed_polygons": [
+            [
+              [
+                5,
+                12
+              ],
+              [
+                10,
+                12
+              ],
+              [
+                10,
+                36
+              ],
+              [
+                5,
+                36
+              ]
+            ]
+          ],
+          "surface_y": 0,
+          "pavement_depth": 0.2,
+          "foundation_bottom_y": -1.067052459716797,
+          "soil_range": [
+            -0.7170524597167969,
+            -0.43848419189453125
+          ],
+          "soil_samples": 120,
+          "saved_hole_samples": 0,
+          "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+        },
+        {
+          "area": "south school forecourt",
+          "architectural_footprint": [
+            [
+              5,
+              36
+            ],
+            [
+              55,
+              36
+            ],
+            [
+              55,
+              42
+            ],
+            [
+              5,
+              42
+            ]
+          ],
+          "constructed_polygons": [
+            [
+              [
+                25.0,
+                36.0
+              ],
+              [
+                55,
+                36
+              ],
+              [
+                55,
+                42
+              ],
+              [
+                25.0,
+                42.0
+              ]
+            ],
+            [
+              [
+                25.0,
+                39.0
+              ],
+              [
+                25.0,
+                42.0
+              ],
+              [
+                5,
+                42
+              ],
+              [
+                5.0,
+                39.0
+              ]
+            ],
+            [
+              [
+                5,
+                36
+              ],
+              [
+                20.0,
+                36.0
+              ],
+              [
+                20.0,
+                39.0
+              ],
+              [
+                5.0,
+                39.0
+              ]
+            ]
+          ],
+          "surface_y": 0,
+          "pavement_depth": 0.2,
+          "foundation_bottom_y": -1.169347381591797,
+          "soil_range": [
+            -0.8193473815917969,
+            -0.3002967834472656
+          ],
+          "soil_samples": 285,
+          "saved_hole_samples": 0,
+          "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+        }
+      ]
+    },
+    {
+      "site": "prison",
+      "retained_native_records": 1033,
+      "unchanged": [
+        "saved terrain/native topology",
+        "all floors, basement roofs and stairs",
+        "prior doorway frames, models and props",
+        "zones/access/elevations",
+        "capacity",
+        "staging/van",
+        "terrain_cutouts"
+      ],
+      "removed_only": [
+        "Flat route shell Wall sally N",
+        "Flat route shell Wall sally N.001",
+        "Header sally N"
+      ],
+      "foundation_exclusion": "All source ground/below-grade room footprints and actual stair apertures excluded from new pavement and foundation polygons",
+      "authored_courts": [
+        {
+          "area": "secure exercise yard",
+          "architectural_footprint": [
+            [
+              22,
+              22
+            ],
+            [
+              46,
+              22
+            ],
+            [
+              46,
+              58
+            ],
+            [
+              22,
+              58
+            ]
+          ],
+          "constructed_polygons": [
+            [
+              [
+                46.0,
+                42.0
+              ],
+              [
+                46,
+                58
+              ],
+              [
+                32.0,
+                58.0
+              ],
+              [
+                32.0,
+                42.0
+              ]
+            ],
+            [
+              [
+                32.0,
+                42.0
+              ],
+              [
+                32.0,
+                58.0
+              ],
+              [
+                22,
+                58
+              ],
+              [
+                22.0,
+                42.0
+              ]
+            ],
+            [
+              [
+                28.0,
+                42.0
+              ],
+              [
+                22.0,
+                42.0
+              ],
+              [
+                22.0,
+                34.0
+              ],
+              [
+                28.0,
+                34.0
+              ]
+            ],
+            [
+              [
+                22,
+                22
+              ],
+              [
+                28.0,
+                22.0
+              ],
+              [
+                28.0,
+                34.0
+              ],
+              [
+                22.0,
+                34.0
+              ]
+            ]
+          ],
+          "surface_y": 0,
+          "pavement_depth": 0.2,
+          "foundation_bottom_y": -0.9017654418945312,
+          "soil_range": [
+            -0.5517654418945312,
+            -0.40039634704589844
+          ],
+          "soil_samples": 504,
+          "saved_hole_samples": 0,
+          "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+        }
+      ]
+    },
+    {
+      "site": "asylum",
+      "retained_native_records": 800,
+      "unchanged": [
+        "saved terrain/native topology",
+        "all floors, basement roofs and stairs",
+        "prior doorway frames, models and props",
+        "zones/access/elevations",
+        "capacity",
+        "staging/van",
+        "terrain_cutouts"
+      ],
+      "removed_only": [
+        "Flat route shell Wall day N",
+        "Flat route shell Wall day N.001",
+        "Flat route shell Wall ground-south-a S",
+        "Flat route shell Wall ground-south-a S.001",
+        "Header day N",
+        "Header ground-south-a S"
+      ],
+      "foundation_exclusion": "All source ground/below-grade room footprints and actual stair apertures excluded from new pavement and foundation polygons",
+      "authored_courts": [
+        {
+          "area": "enclosed patient exercise court",
+          "architectural_footprint": [
+            [
+              10,
+              29
+            ],
+            [
+              26,
+              29
+            ],
+            [
+              26,
+              40
+            ],
+            [
+              10,
+              40
+            ]
+          ],
+          "constructed_polygons": [
+            [
+              [
+                10,
+                29
+              ],
+              [
+                26,
+                29
+              ],
+              [
+                26.0,
+                31.0
+              ],
+              [
+                10.0,
+                31.0
+              ]
+            ],
+            [
+              [
+                26.0,
+                36.0
+              ],
+              [
+                26,
+                40
+              ],
+              [
+                10,
+                40
+              ],
+              [
+                10.0,
+                36.0
+              ]
+            ],
+            [
+              [
+                22.0,
+                36.0
+              ],
+              [
+                10.0,
+                36.0
+              ],
+              [
+                10.0,
+                31.0
+              ],
+              [
+                22.0,
+                31.0
+              ]
+            ]
+          ],
+          "surface_y": 0,
+          "pavement_depth": 0.2,
+          "foundation_bottom_y": -0.7950759887695312,
+          "soil_range": [
+            -0.44507598876953125,
+            -0.22876358032226562
+          ],
+          "soil_samples": 156,
+          "saved_hole_samples": 0,
+          "excluded": "Actual ground/below-grade rooms, retained basement roof footprints, saved stair apertures and existing entrance landings"
+        }
+      ]
+    }
+  ]
+}

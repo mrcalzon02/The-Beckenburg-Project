@@ -1,0 +1,116 @@
+{
+  "id": "WLD-18",
+  "status": "EXISTING_NATIVE_FULL_WIDTH_ROUTE_DESIGN_CANDIDATE",
+  "source": {
+    "contract": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/construction.json",
+    "contract_sha256": "beb22f89bf272269a95534e67c663f70399f7f67fc11fdc2fc6d18b91c8e201e",
+    "layout": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/authored-layout.json",
+    "layout_sha256": "2ffd24c383c6fd68c7d56bae2b23d13877eca9347f091a8ba172d8cd835ff15d",
+    "native": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/cut-terrain.hcs2",
+    "native_sha256": "8a7c9515c86a7c7eb4baf342b2e6ac81d3a40c9002638fe4e950530de3f2703c",
+    "glb": "development/levels/rebuild/flat-terrain-pass/assemblies/wld-18/cut-terrain.glb",
+    "glb_sha256": "0116d3fee17e9aa2d56c47cb2a20c273c4cae11a7d0545c6e6b2d3571188630e"
+  },
+  "layout": "development/levels/rebuild/circulation-layout-pass/wld-18/authored-layout.json",
+  "layout_sha256": "b382376c8e416a048f56150f39ef4a2ab4d9e5440796ddcd1d40dc3304f4d535",
+  "changes": [
+    {
+      "link": "route-17",
+      "before": [
+        [
+          15.0,
+          -8,
+          32.0
+        ],
+        [
+          15.0,
+          -8,
+          20.0
+        ]
+      ],
+      "after": [
+        [
+          15.0,
+          -8.0,
+          32.0
+        ],
+        [
+          11.5,
+          -8.0,
+          30.5
+        ],
+        [
+          11.0,
+          -8.0,
+          29.5
+        ],
+        [
+          11.0,
+          -8.0,
+          27.0
+        ],
+        [
+          14.5,
+          -8.0,
+          27.0
+        ],
+        [
+          15.0,
+          -8.0,
+          26.5
+        ],
+        [
+          15.0,
+          -8.0,
+          20.0
+        ]
+      ],
+      "width": 1.5,
+      "required_threshold": null
+    }
+  ],
+  "decisions": [
+    {
+      "site": "WLD-18",
+      "link": "route-03",
+      "status": "NO_FULL_WIDTH_ROUTE_IN_DESIGN_ENVELOPE",
+      "checked_edges": "83",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-11",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-12",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-15",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-16",
+      "status": "ANCHOR_REQUIRES_CONSTRUCTION",
+      "checked_edges": "0",
+      "points": ""
+    },
+    {
+      "site": "WLD-18",
+      "link": "route-17",
+      "status": "REROUTED_FULL_WIDTH",
+      "checked_edges": "570",
+      "points": "15.0,-8.0,32.0;11.5,-8.0,30.5;11.0,-8.0,29.5;11.0,-8.0,27.0;14.5,-8.0,27.0;15.0,-8.0,26.5;15.0,-8.0,20.0"
+    }
+  ]
+}

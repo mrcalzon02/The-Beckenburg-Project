@@ -1,0 +1,83 @@
+{
+  "status": "EXISTING_COURT_TUNNEL_DATUM_REQUIRES_RECONSTRUCTION_REVIEW",
+  "source_physics": "development/levels/rebuild/stair-end-pass/wld-08/finished-ends.hcs2",
+  "source_physics_sha256": "3e17a546d4e6a3f0ae1edcc35198dd13e484719d5cb1ff4f932b5459da8b853d",
+  "parts": [
+    {
+      "part": "80:Ceiling cap tunnel",
+      "bottom_y": 0.3399999737739563,
+      "top_y": 0.5
+    },
+    {
+      "part": "81:Ceiling cap tunnel.001",
+      "bottom_y": 0.3399999737739563,
+      "top_y": 0.5
+    },
+    {
+      "part": "82:Ceiling cap tunnel.002",
+      "bottom_y": 0.3399999737739563,
+      "top_y": 0.5
+    },
+    {
+      "part": "83:Ceiling cap tunnel.003",
+      "bottom_y": 0.3399999737739563,
+      "top_y": 0.5
+    },
+    {
+      "part": "84:Ceiling cap tunnel.004",
+      "bottom_y": 0.3399999737739563,
+      "top_y": 0.5
+    },
+    {
+      "part": "85:Ceiling cap tunnel.005",
+      "bottom_y": 0.3399999737739563,
+      "top_y": 0.5
+    },
+    {
+      "part": "Restored ceiling-cap tunnel 6 region0",
+      "bottom_y": 0.3400000035762787,
+      "top_y": 0.5
+    },
+    {
+      "part": "Restored ceiling-cap tunnel 6 region1",
+      "bottom_y": 0.3400000035762787,
+      "top_y": 0.5
+    },
+    {
+      "part": "Restored ceiling-cap tunnel 6 region2",
+      "bottom_y": 0.3400000035762787,
+      "top_y": 0.5
+    },
+    {
+      "part": "Restored ceiling-cap tunnel 6 region3",
+      "bottom_y": 0.3400000035762787,
+      "top_y": 0.5
+    },
+    {
+      "part": "Restored bay WLD-08 tunnel ceiling-cap patch0 region0",
+      "bottom_y": 0.3400000035762787,
+      "top_y": 0.5
+    },
+    {
+      "part": "Restored bay WLD-08 tunnel ceiling-cap patch1 region0",
+      "bottom_y": 0.3400000035762787,
+      "top_y": 0.5
+    },
+    {
+      "part": "Restored bay WLD-08 tunnel ceiling-cap patch2 region0",
+      "bottom_y": 0.3400000035762787,
+      "top_y": 0.5
+    },
+    {
+      "part": "Restored bay WLD-08 tunnel ceiling-cap patch3 region0",
+      "bottom_y": 0.3400000035762787,
+      "top_y": 0.5
+    },
+    {
+      "part": "Restored bay WLD-08 tunnel ceiling-cap patch4 region0",
+      "bottom_y": 0.3400000035762787,
+      "top_y": 0.5
+    }
+  ],
+  "scope": "Current roof batch leaves this source geometry untouched. The tunnel cap above the y0 court must be reconciled physically; no roof/terrain/runtime acceptance inferred."
+}

@@ -53,6 +53,58 @@ public final class EditorMeshTopology {
     private static double zero(double value){return value==0?0:value;}
     private static Vertex point(String part,EditorMeshPipeline.Vertex v){return new Vertex(part,zero(v.x()),zero(v.y()),zero(v.z()));}
     private static boolean sameUv(EditorMeshPipeline.Vertex a,EditorMeshPipeline.Vertex b){return a.u()==b.u()&&a.v()==b.v();}
+    /** Retain connectivity only while native indexed identity and geometric diagnostics still agree. */
+    EditorMeshTopology update(EditorMeshPipeline.Mesh before,EditorMeshPipeline.Mesh after,
+            List<EditorTopologyProject.Vertex> oldVertices,List<EditorTopologyProject.Vertex> nextVertices) {
+        if (oldVertices.size()!=nextVertices.size() || !before.cornerVertexIds().equals(after.cornerVertexIds())) return null;
+        ArrayList<Vertex> moved=null;
+        if (oldVertices!=nextVertices) for (int i=0;i<oldVertices.size();i++) {
+            var old=oldVertices.get(i);
+            var v=nextVertices.get(i);
+            if (old.equals(v)) continue;
+            if (old.id()!=v.id() || !old.part().equals(v.part()) || issueCount!=0) return null;
+            if (moved==null) moved=new ArrayList<>(vertices);
+            moved.set(i,new Vertex(v.part(),v.x(),v.y(),v.z()));
+        }
+        ArrayList<HalfEdge> updated=null;
+        int seams=uvSeams;
+        for (int i=0;i<faces.size();i++) {
+            var a=before.triangles().get(i);
+            var b=after.triangles().get(i);
+            if (a==b) continue;
+            if (!a.part().equals(b.part()) || (moved!=null && degenerate(b))) return null;
+            if (sameUv(a.a(),b.a()) && sameUv(a.b(),b.b()) && sameUv(a.c(),b.c())) continue;
+            for (int e=i*3;e<i*3+3;e++) {
+                var edge=updated==null ? edges.get(e) : updated.get(e);
+                int twin=edge.twin();
+                if (twin<0) continue;
+                boolean seam=!sameUv(corner(after,e),corner(after,next(twin))) ||
+                    !sameUv(corner(after,next(e)),corner(after,twin));
+                if (seam==edge.uvSeam()) continue;
+                if (updated==null) updated=new ArrayList<>(edges);
+                updated.set(e,withSeam(edge,seam));
+                updated.set(twin,withSeam(edges.get(twin),seam));
+                seams+=seam ? 1 : -1;
+            }
+        }
+        if (updated==null && moved==null) return this;
+        return new EditorMeshTopology(moved==null ? vertices : moved,updated==null ? edges : updated,
+            faces,issues,issueCount,islands,boundaryEdges,seams);
+    }
+    private static boolean degenerate(EditorMeshPipeline.Triangle t) {
+        double ax=t.b().x()-t.a().x(),ay=t.b().y()-t.a().y(),az=t.b().z()-t.a().z();
+        double bx=t.c().x()-t.a().x(),by=t.c().y()-t.a().y(),bz=t.c().z()-t.a().z();
+        double area=Math.hypot(Math.hypot(ay*bz-az*by,az*bx-ax*bz),ax*by-ay*bx);
+        return area==0 || !Double.isFinite(area);
+    }
+    private static EditorMeshPipeline.Vertex corner(EditorMeshPipeline.Mesh mesh,int e) {
+        var t=mesh.triangles().get(e/3);
+        return switch(e%3) { case 0->t.a(); case 1->t.b(); default->t.c(); };
+    }
+    private static HalfEdge withSeam(HalfEdge edge,boolean seam) {
+        return new HalfEdge(edge.origin(),edge.destination(),edge.face(),edge.next(),edge.previous(),edge.twin(),
+            edge.boundary(),seam);
+    }
     private static int next(int edge){return edge/3*3+(edge%3+1)%3;}
     private record SourceVertex(String part,long id){}
     public static EditorMeshTopology build(EditorMeshPipeline.Mesh mesh){return build(mesh,null,null);}
@@ -94,10 +146,7 @@ public final class EditorMeshTopology {
                     origin[e]=id;
                 }
             }
-            double ax=t.b().x()-t.a().x(),ay=t.b().y()-t.a().y(),az=t.b().z()-t.a().z();
-            double bx=t.c().x()-t.a().x(),by=t.c().y()-t.a().y(),bz=t.c().z()-t.a().z();
-            double area=Math.hypot(Math.hypot(ay*bz-az*by,az*bx-ax*bz),ax*by-ay*bx);
-            if(area==0||!Double.isFinite(area))findings.add(Code.DEGENERATE_FACE,i,"Zero or non-finite triangle area");
+            if(degenerate(t))findings.add(Code.DEGENERATE_FACE,i,"Zero or non-finite triangle area");
             for(int j=0;j<3;j++){
                 int e=i*3+j,a=origin[e],b=origin[next(e)];
                 long key=((long)Math.min(a,b)<<19)|Math.max(a,b);

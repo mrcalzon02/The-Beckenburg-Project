@@ -1,0 +1,109 @@
+{
+  "scope": "Independent reimported instance bounds and sill/outer head/depth; physical apertures separately swept in native kernel",
+  "frames": [
+    {
+      "site": "ASYLUM",
+      "portal": "ASYLUM-z-50-27.5",
+      "bottom_y": 0.0,
+      "top_y": 2.462352991104126,
+      "frame_depth": 0.480000000000004,
+      "actual_outer_width": 2.2319984436035156
+    },
+    {
+      "site": "ASYLUM",
+      "portal": "ASYLUM-z-58-30",
+      "bottom_y": 0.0,
+      "top_y": 2.462352991104126,
+      "frame_depth": 0.240000000000002,
+      "actual_outer_width": 2.2319984436035156
+    },
+    {
+      "site": "ASYLUM",
+      "portal": "ASYLUM-x-35-52",
+      "bottom_y": 0.0,
+      "top_y": 2.2482354640960693,
+      "frame_depth": 0.480000000000004,
+      "actual_outer_width": 1.302001953125
+    },
+    {
+      "site": "ASYLUM",
+      "portal": "ASYLUM-z-54-39.5",
+      "bottom_y": 0.0,
+      "top_y": 2.2482354640960693,
+      "frame_depth": 0.480000000000004,
+      "actual_outer_width": 1.302001953125
+    },
+    {
+      "site": "PRISON",
+      "portal": "PRISON-z-62-14",
+      "bottom_y": 0.0,
+      "top_y": 2.462352991104126,
+      "frame_depth": 0.480000000000004,
+      "actual_outer_width": 2.2320003509521484
+    },
+    {
+      "site": "PRISON",
+      "portal": "PRISON-z-68-14",
+      "bottom_y": 0.0,
+      "top_y": 2.462352991104126,
+      "frame_depth": 0.23999999999999488,
+      "actual_outer_width": 2.2320003509521484
+    },
+    {
+      "site": "PRISON",
+      "portal": "PRISON-x-18-65",
+      "bottom_y": 0.0,
+      "top_y": 2.2482354640960693,
+      "frame_depth": 0.4799999999999969,
+      "actual_outer_width": 1.302001953125
+    },
+    {
+      "site": "PRISON",
+      "portal": "PRISON-z-58-14",
+      "bottom_y": 0.0,
+      "top_y": 2.462352991104126,
+      "frame_depth": 0.480000000000004,
+      "actual_outer_width": 2.2320003509521484
+    },
+    {
+      "site": "SCHOOL",
+      "portal": "SCHOOL-z-30-21.5",
+      "bottom_y": 0.0,
+      "top_y": 2.462352991104126,
+      "frame_depth": 0.4799999999999969,
+      "actual_outer_width": 2.2319984436035156
+    },
+    {
+      "site": "SCHOOL",
+      "portal": "SCHOOL-z-36-22.5",
+      "bottom_y": 0.0,
+      "top_y": 2.462352991104126,
+      "frame_depth": 0.240000000000002,
+      "actual_outer_width": 2.2319984436035156
+    },
+    {
+      "site": "SCHOOL",
+      "portal": "SCHOOL-x-25-31.5",
+      "bottom_y": 0.0,
+      "top_y": 2.2482354640960693,
+      "frame_depth": 0.4799999999999969,
+      "actual_outer_width": 1.3020000457763672
+    },
+    {
+      "site": "SCHOOL",
+      "portal": "SCHOOL-x-25-34.5",
+      "bottom_y": 0.0,
+      "top_y": 2.2482354640960693,
+      "frame_depth": 0.4799999999999969,
+      "actual_outer_width": 1.302001953125
+    },
+    {
+      "site": "SCHOOL",
+      "portal": "SCHOOL-z-33-28.75",
+      "bottom_y": 0.0,
+      "top_y": 2.2482354640960693,
+      "frame_depth": 0.480000000000004,
+      "actual_outer_width": 1.3019981384277344
+    }
+  ]
+}

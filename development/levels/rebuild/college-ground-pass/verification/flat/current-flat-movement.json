@@ -1,0 +1,65 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "COLLEGE": {
+      "before": {
+        "flat_links": 39,
+        "pass_both_directions": 32
+      },
+      "after": {
+        "flat_links": 39,
+        "pass_both_directions": 39
+      },
+      "current_lanes": {
+        "samples": 10071,
+        "valid_standing": 10071,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "COLLEGE": {
+      "before": {
+        "contract": "development/levels/rebuild/service-ground-bay-pass/college/construction.json",
+        "contract_sha256": "ab1c3fda270d3011aba79cdab780d352de201d51470ebd6af3949b35b466f8d9",
+        "layout": "development/levels/rebuild/service-ground-bay-pass/college/authored-layout.json",
+        "layout_sha256": "b86db6f86650d507bddb7c35e12a062c19ad8beb3934be5f35517ce8d97fcd00",
+        "native": "development/levels/rebuild/service-ground-bay-pass/college/authored-bays.hcs2",
+        "native_sha256": "69732edabc42400709d504bc099747f8daaebb0b867a3574cfc86bd2d9a6d009"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/college-ground-pass/college/construction.json",
+        "contract_sha256": "36956f2be71f81ce3032dd1d4b2f178fc24de8a74f10ee184778ade363644f2e",
+        "layout": "development/levels/rebuild/college-ground-pass/college/authored-layout.json",
+        "layout_sha256": "d2cb5341768ebdd586f75a3981745ece9a78a09433f7214636957eaed2f642ad",
+        "native": "development/levels/rebuild/college-ground-pass/college/campus-grounds.hcs2",
+        "native_sha256": "0d42c85afc830eef009616fa8d283b46ffd5ba5b14039372d0aee5d2622a9768"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/dam-spillway-gallery-pass/roster.json": "dad24c9e74f4b48b244bf5cd0081396fcc5fccb7a93ac75d80a3d2d7b50c0781"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/college-ground-pass/verification/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "development/levels/rebuild/college-ground-pass/verification/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "development/levels/rebuild/college-ground-pass/verification/flat/current-flat-lane-input.tsv": "6dd32c6de5b1be97c8a52dc73cec594f9f6b4a097a1b433d0a645507418591b9",
+    "development/levels/rebuild/college-ground-pass/verification/flat/current-flat-lane-names.tsv": "295cb7eb72e01c6c71b2237d7da59357e928d3c23d607e52754c99c517dc0b88",
+    "development/levels/rebuild/college-ground-pass/verification/flat/current-flat-lanes.tsv": "af2c6778640e3fb8128151256a53f537b41c46936b687ed4b4f61db4e10ab5c7",
+    "development/levels/rebuild/college-ground-pass/verification/flat/current-flat-links.tsv": "ae782e0c7a8cf71df698d49792df26176db9511499efdb89a41cfdec8ace5e7a",
+    "development/levels/rebuild/college-ground-pass/verification/flat/current-flat-names.tsv": "295cb7eb72e01c6c71b2237d7da59357e928d3c23d607e52754c99c517dc0b88",
+    "development/levels/rebuild/college-ground-pass/verification/flat/current-flat-paths.tsv": "49cc84391c8f7845b48c59228262799d3408827f568055782e08218feb672946"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

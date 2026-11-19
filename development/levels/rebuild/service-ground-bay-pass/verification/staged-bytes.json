@@ -1,0 +1,29 @@
+{
+  "status": "PASS_EXACT_STAGED_SOURCE_BYTES",
+  "sites": [
+    {
+      "site": "COLLEGE",
+      "glb_sha256": "7f5e8feeb59c9c31789f7c7bc0bbd75ddb60e40fbd867ea60ab1cb3d5e320db5",
+      "native_sha256": "69732edabc42400709d504bc099747f8daaebb0b867a3574cfc86bd2d9a6d009",
+      "builder_sha256": "05ee08210440e7e47efe6a98b9e0ab58043c4f30702c3bf6e764fa6c8aaa5878",
+      "construction_sha256": "ab1c3fda270d3011aba79cdab780d352de201d51470ebd6af3949b35b466f8d9"
+    },
+    {
+      "site": "WLD-04",
+      "glb_sha256": "2ed6049a3baac03f08939e7409fc4dd1e72f74d047168f751e25d18680fd2fcd",
+      "native_sha256": "837b74ce8ae499eab2feae7e7b03f90f588e9d3eab8d2ff95e82186071e8c097",
+      "builder_sha256": "dafc6f506db4a8fdf88893fbcdfe7196a39c6ba4785becc4ff739ef96ae4c7f5",
+      "construction_sha256": "3800363e4cb41ea9280cf23eaab0dd95526d245e8233fe864de311143835db41"
+    },
+    {
+      "site": "WLD-09",
+      "glb_sha256": "9ca45264727b42c43c206538de28dbeb1f69e714434fd76a146a984cbd23321c",
+      "native_sha256": "6cf09c50961ff302ba1091e2f6cc64207a3d6f4adaee76d5405afa89c31daaa4",
+      "builder_sha256": "10df6d8306e9de6e11dc4de74fd50cac3c95b8a4d26a48f988addd3607c1bf17",
+      "construction_sha256": "e9ec38e31644206c5a3ee6b14f19ea1db65fb610828be6c894decfb2f422b795"
+    }
+  ],
+  "captures": 20,
+  "all_29_source_decisions_retained": true,
+  "layout_builder_blend_model_native_capture_saved_world_bindings": true
+}

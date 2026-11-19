@@ -7,6 +7,9 @@ on:
       - 'src/test/java/org/beckenburg/editor/**'
       - 'tools/build-editor-kit.cmd'
       - 'tools/build-editor-kit.sh'
+      - 'tools/editor_mcp.py'
+      - 'tools/editor_mcp_requirements.txt'
+      - 'tools/verify_editor_mcp.py'
       - '.github/workflows/standalone-editor-kit.yml'
   workflow_dispatch:
 permissions:
@@ -23,6 +26,11 @@ jobs:
       - name: Build reusable jar without game files or 3D assets
         shell: cmd
         run: call tools\build-editor-kit.cmd
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install SDK for independent project MCP test
+        run: python -m pip install -r tools/editor_mcp_requirements.txt
       - name: Verify persisted railway meshes and shared scene publication
         shell: cmd
         run: |
@@ -32,6 +40,8 @@ jobs:
           java -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.TerrainRailScenePackageTest
           if errorlevel 1 exit /b 1
       - name: Prove editor library works with an unrelated project adapter
+        env:
+          EDITOR_MCP_PYTHON: python
         shell: cmd
         run: |
           if not exist build\editor-kit\test mkdir build\editor-kit\test
@@ -374,6 +384,55 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorMeshBevelTest.java
           if errorlevel 1 exit /b 1
           java -Xmx256m -Djava.awt.headless=true -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshBevelTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify authored quad provenance in native and interchange formats
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorMeshQuadTest.java src\test\java\org\beckenburg\editor\EditorMeshBevelTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshQuadTest
+          if errorlevel 1 exit /b 1
+      - name: Verify interior quad loop and ring traversal under the topology budget
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorMeshEdgesTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMeshEdgesTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify vertex snap provenance, precision and maximum topology
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorVertexSnapTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorVertexSnapTest --stress
+          if errorlevel 1 exit /b 1
+      - name: Verify atomic native workspace persistence and recovery
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorModelWorkspaceTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorModelWorkspaceTest
+          if errorlevel 1 exit /b 1
+      - name: Verify sparse pencil history and native material roundtrip
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorMaterialPencilTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx64m -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorMaterialPencilTest
+          if errorlevel 1 exit /b 1
+      - name: Recover native paint edits after real process interruption
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorPaintRecoveryTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx128m -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorPaintRecoveryTest
+          if errorlevel 1 exit /b 1
+      - name: Verify fixed-boundary UV relaxation at the native face budget
+        shell: cmd
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\editor-kit\LevelEditorKit-Java17.jar -d build\editor-kit\test src\test\java\org\beckenburg\editor\EditorUvRelaxTest.java
+          if errorlevel 1 exit /b 1
+          java -Xmx256m -ea -cp build\editor-kit\LevelEditorKit-Java17.jar;build\editor-kit\test org.beckenburg.editor.EditorUvRelaxTest --stress
           if errorlevel 1 exit /b 1
       - uses: actions/upload-artifact@v4
         with:

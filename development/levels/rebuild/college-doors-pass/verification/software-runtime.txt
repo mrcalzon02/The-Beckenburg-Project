@@ -1,0 +1,46 @@
+FITTED COLLEGE-COURT-teaching-lobby id=0 owners=0/12 acoustic=7->3
+FITTED COLLEGE-COURT-issue id=1 owners=6/12 acoustic=7->3
+FITTED COLLEGE-COURT-cafe id=2 owners=4/12 acoustic=7->3
+FITTED COLLEGE-COURT-rear-hall id=3 owners=0/13 acoustic=6->3
+FITTED L05 id=4 owners=0/5 acoustic=6->2
+FITTED L06 id=5 owners=0/2 acoustic=6->2
+FITTED L07 id=6 owners=0/3 acoustic=6->2
+FITTED L14 id=7 owners=0/1 acoustic=6->2
+FITTED L52 id=8 owners=8/7 acoustic=6->2
+FITTED L86 id=9 owners=10/7 acoustic=6->2
+FITTED L67 id=16 owners=11/11 acoustic=3->1
+FITTED COLLEGE bay indexed door 0 id=17 owners=6/6 acoustic=3->1
+FITTED COLLEGE bay indexed door 1 id=18 owners=8/8 acoustic=3->1
+FITTED COLLEGE bay indexed door 2 id=19 owners=7/8 acoustic=4->2
+FITTED COLLEGE bay indexed door 3 id=20 owners=11/11 acoustic=3->1
+FITTED COLLEGE bay indexed door 4 id=21 owners=11/11 acoustic=3->1
+FITTED COLLEGE bay indexed door 5 id=22 owners=0/0 acoustic=3->1
+FITTED COLLEGE bay indexed door 6 id=23 owners=10/10 acoustic=3->1
+GHOST_GRAPH rooms=14 directed_edges=30
+CONTEXT seams=56 samples=1283 body_open=0 optical_open=0
+PASS spaces=40 owners=15 runtime_route_directions=88 aperture_pairs=23 rituals=3 collision_sha=54d8d16f5b49ee1f00931f115e932ab507721b4c0356abc8f56782c1b9051014 scene_sha=1386962ea9c07d9c23408a0ca64da8a374b0f8fc8c489f9d436aa225d3b87379
+PASS continuous van-to-maintenance and van-to-upper-residence journeys in both postures and directions
+PASS 18 fitted doors, 7 local doors, 432 mover sweeps, 324 sight, 324 small-object and 216 jamb rays; 88 route directions in both postures
+REPLICATED COLLEGE-COURT-teaching-lobby
+REPLICATED COLLEGE-COURT-issue
+REPLICATED COLLEGE-COURT-cafe
+REPLICATED COLLEGE-COURT-rear-hall
+REPLICATED L05
+REPLICATED L06
+REPLICATED L07
+REPLICATED L14
+REPLICATED L52
+REPLICATED L86
+REPLICATED L67
+REPLICATED COLLEGE bay indexed door 0
+REPLICATED COLLEGE bay indexed door 1
+REPLICATED COLLEGE bay indexed door 2
+REPLICATED COLLEGE bay indexed door 3
+REPLICATED COLLEGE bay indexed door 4
+REPLICATED COLLEGE bay indexed door 5
+REPLICATED COLLEGE bay indexed door 6
+PASS 36 real host door actions broadcast to a second native scene
+PASS 68 hardwired loads, all twelve room switch effects and independent van battery; minimum energy drop 2.6452, max blackout sample 0.9000
+PASS four real TCP peers: exact College revision, supported move, room switching, source stop/start, authorized ghost trip, blackout view and reconnect resync, physical reset and rejected distant/ghost control
+2026-11-18T06:58:07.333018400Z [main] RENDER SLOW stage=idle faces=50567 visible_faces=38523 culled_faces=12044 target=1000x625 build_ms=35 lighting_raster_ms=645
+2026-11-18T06:58:09.466330300Z [main] RENDER SLOW stage=idle faces=47057 visible_faces=10972 culled_faces=36085 target=1000x625 build_ms=0 lighting_raster_ms=236

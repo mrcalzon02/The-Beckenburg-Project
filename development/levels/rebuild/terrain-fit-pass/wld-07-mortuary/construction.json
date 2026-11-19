@@ -1,0 +1,980 @@
+{
+  "id": "WLD-07-MORTUARY",
+  "status": "NATIVE_BEARING_CONSTRUCTION_CANDIDATE_REVIEW_OPEN",
+  "source_glb": "development/levels/rebuild/furnishings/wld-07-mortuary/furnished.glb",
+  "source_glb_sha256": "d939dc7bf418a5bf445a4164460ed644952e2a7779ed139f11dd2ef8d1aea893",
+  "source_physics": "development/levels/rebuild/furnishings/wld-07-mortuary/furnished-physics.hcs2",
+  "source_physics_sha256": "3e4074303668851ac3c8c646fd12353d4cbd9c56f1cc96c6889be1f25ba2f322",
+  "layout": "development/levels/rebuild/wld-07-mortuary/rough-layout.json",
+  "layout_sha256": "b10be63f5beb5e4e9d033201955a1b4adc63c7fec994ff907f932d0797ba623c",
+  "new_parts": 13,
+  "new_triangles": 156,
+  "original_physics_parts_byte_preserved": true,
+  "render_native_new_parts_exact": true,
+  "construction": [
+    {
+      "name": "Bearing skirt 0000",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          54.35,
+          42.0
+        ],
+        [
+          54.35,
+          44.0
+        ]
+      ],
+      "ground_y": [
+        -0.17965316772460938,
+        -0.08156204223632812
+      ],
+      "bottom_y": [
+        -0.5296531677246094,
+        -0.4315620422363281,
+        -0.4315620422363281,
+        -0.5296531677246094
+      ],
+      "footprint": [
+        [
+          53.9,
+          42.0
+        ],
+        [
+          53.9,
+          44.0
+        ],
+        [
+          54.35,
+          44.0
+        ],
+        [
+          54.35,
+          42.0
+        ]
+      ],
+      "supports": "Floor tool",
+      "bearing_point": [
+        53.96,
+        43.0
+      ]
+    },
+    {
+      "name": "Bearing skirt 0001",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          54.35,
+          50.0
+        ],
+        [
+          54.35,
+          52.0
+        ]
+      ],
+      "ground_y": [
+        -0.08156204223632812,
+        -0.17965316772460938
+      ],
+      "bottom_y": [
+        -0.4315620422363281,
+        -0.5296531677246094,
+        -0.5296531677246094,
+        -0.4315620422363281
+      ],
+      "footprint": [
+        [
+          53.9,
+          50.0
+        ],
+        [
+          53.9,
+          52.0
+        ],
+        [
+          54.35,
+          52.0
+        ],
+        [
+          54.35,
+          50.0
+        ]
+      ],
+      "supports": "Floor tool",
+      "bearing_point": [
+        53.96,
+        51.0
+      ]
+    },
+    {
+      "name": "Bearing skirt 0002",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          55.65,
+          40.0
+        ],
+        [
+          55.65,
+          42.0
+        ]
+      ],
+      "ground_y": [
+        -0.10788726806640625,
+        -0.17770004272460938
+      ],
+      "bottom_y": [
+        -0.45788726806640623,
+        -0.5277000427246094,
+        -0.5277000427246094,
+        -0.45788726806640623
+      ],
+      "footprint": [
+        [
+          56.1,
+          40.0
+        ],
+        [
+          56.1,
+          42.0
+        ],
+        [
+          55.65,
+          42.0
+        ],
+        [
+          55.65,
+          40.0
+        ]
+      ],
+      "supports": "Floor mort-hall",
+      "bearing_point": [
+        56.04,
+        41.0
+      ]
+    },
+    {
+      "name": "Bearing skirt 0003",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          55.65,
+          42.0
+        ],
+        [
+          55.65,
+          44.0
+        ]
+      ],
+      "ground_y": [
+        -0.17770004272460938,
+        -0.017299652099609375
+      ],
+      "bottom_y": [
+        -0.5277000427246094,
+        -0.36729965209960935,
+        -0.36729965209960935,
+        -0.5277000427246094
+      ],
+      "footprint": [
+        [
+          56.1,
+          42.0
+        ],
+        [
+          56.1,
+          44.0
+        ],
+        [
+          55.65,
+          44.0
+        ],
+        [
+          55.65,
+          42.0
+        ]
+      ],
+      "supports": "Floor mort-hall",
+      "bearing_point": [
+        56.04,
+        43.0
+      ]
+    },
+    {
+      "name": "Bearing skirt 0004",
+      "kind": "skirt",
+      "top_y": -0.15999996662139893,
+      "terrain_probe_points": [
+        [
+          55.65,
+          50.0
+        ],
+        [
+          55.65,
+          52.0
+        ]
+      ],
+      "ground_y": [
+        -0.017299652099609375,
+        -0.17770004272460938
+      ],
+      "bottom_y": [
+        -0.36729965209960935,
+        -0.5277000427246094,
+        -0.5277000427246094,
+        -0.36729965209960935
+      ],
+      "footprint": [
+        [
+          56.1,
+          50.0
+        ],
+        [
+          56.1,
+          52.0
+        ],
+        [
+          55.65,
+          52.0
+        ],
+        [
+          55.65,
+          50.0
+        ]
+      ],
+      "supports": "Floor mort-hall",
+      "bearing_point": [
+        56.04,
+        51.0
+      ]
+    },
+    {
+      "name": "Bearing skirt 0005",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          55.65,
+          52.0
+        ],
+        [
+          55.65,
+          54.0
+        ]
+      ],
+      "ground_y": [
+        -0.17770004272460938,
+        -0.14061355590820312
+      ],
+      "bottom_y": [
+        -0.5277000427246094,
+        -0.4906135559082031,
+        -0.4906135559082031,
+        -0.5277000427246094
+      ],
+      "footprint": [
+        [
+          56.1,
+          52.0
+        ],
+        [
+          56.1,
+          54.0
+        ],
+        [
+          55.65,
+          54.0
+        ],
+        [
+          55.65,
+          52.0
+        ]
+      ],
+      "supports": "Floor mort-hall",
+      "bearing_point": [
+        56.04,
+        53.0
+      ]
+    },
+    {
+      "name": "Bearing skirt 0006",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          70.0,
+          39.65
+        ],
+        [
+          72.0,
+          39.65
+        ]
+      ],
+      "ground_y": [
+        -0.16582107543945312,
+        -0.1714630126953125
+      ],
+      "bottom_y": [
+        -0.5158210754394531,
+        -0.5214630126953125,
+        -0.5214630126953125,
+        -0.5158210754394531
+      ],
+      "footprint": [
+        [
+          70.0,
+          40.1
+        ],
+        [
+          72.0,
+          40.1
+        ],
+        [
+          72.0,
+          39.65
+        ],
+        [
+          70.0,
+          39.65
+        ]
+      ],
+      "supports": "Floor mort-viewing",
+      "bearing_point": [
+        71.0,
+        40.04
+      ]
+    },
+    {
+      "name": "Bearing skirt 0007",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          72.0,
+          39.65
+        ],
+        [
+          74.0,
+          39.65
+        ]
+      ],
+      "ground_y": [
+        -0.1714630126953125,
+        -0.17590713500976562
+      ],
+      "bottom_y": [
+        -0.5214630126953125,
+        -0.5259071350097656,
+        -0.5259071350097656,
+        -0.5214630126953125
+      ],
+      "footprint": [
+        [
+          72.0,
+          40.1
+        ],
+        [
+          74.0,
+          40.1
+        ],
+        [
+          74.0,
+          39.65
+        ],
+        [
+          72.0,
+          39.65
+        ]
+      ],
+      "supports": "Floor mort-prep",
+      "bearing_point": [
+        73.0,
+        40.04
+      ]
+    },
+    {
+      "name": "Bearing skirt 0008",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          74.0,
+          39.65
+        ],
+        [
+          76.0,
+          39.65
+        ]
+      ],
+      "ground_y": [
+        -0.17590713500976562,
+        -0.16636276245117188
+      ],
+      "bottom_y": [
+        -0.5259071350097656,
+        -0.5163627624511719,
+        -0.5163627624511719,
+        -0.5259071350097656
+      ],
+      "footprint": [
+        [
+          74.0,
+          40.1
+        ],
+        [
+          76.0,
+          40.1
+        ],
+        [
+          76.0,
+          39.65
+        ],
+        [
+          74.0,
+          39.65
+        ]
+      ],
+      "supports": "Floor mort-prep",
+      "bearing_point": [
+        75.0,
+        40.04
+      ]
+    },
+    {
+      "name": "Bearing skirt 0009",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          78.0,
+          39.65
+        ],
+        [
+          80.0,
+          39.65
+        ]
+      ],
+      "ground_y": [
+        -0.11309432983398438,
+        -0.17491912841796875
+      ],
+      "bottom_y": [
+        -0.46309432983398435,
+        -0.5249191284179687,
+        -0.5249191284179687,
+        -0.46309432983398435
+      ],
+      "footprint": [
+        [
+          78.0,
+          40.1
+        ],
+        [
+          80.0,
+          40.1
+        ],
+        [
+          80.0,
+          39.65
+        ],
+        [
+          78.0,
+          39.65
+        ]
+      ],
+      "supports": "Floor mort-prep",
+      "bearing_point": [
+        79.0,
+        40.04
+      ]
+    },
+    {
+      "name": "Bearing skirt 0010",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          80.0,
+          39.65
+        ],
+        [
+          82.0,
+          39.65
+        ]
+      ],
+      "ground_y": [
+        -0.17491912841796875,
+        -0.17778778076171875
+      ],
+      "bottom_y": [
+        -0.5249191284179687,
+        -0.5277877807617187,
+        -0.5277877807617187,
+        -0.5249191284179687
+      ],
+      "footprint": [
+        [
+          80.0,
+          40.1
+        ],
+        [
+          82.0,
+          40.1
+        ],
+        [
+          82.0,
+          39.65
+        ],
+        [
+          80.0,
+          39.65
+        ]
+      ],
+      "supports": "Floor mort-prep",
+      "bearing_point": [
+        81.0,
+        40.04
+      ]
+    },
+    {
+      "name": "Bearing skirt 0011",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          82.0,
+          39.65
+        ],
+        [
+          84.0,
+          39.65
+        ]
+      ],
+      "ground_y": [
+        -0.17778778076171875,
+        -0.1740264892578125
+      ],
+      "bottom_y": [
+        -0.5277877807617187,
+        -0.5240264892578125,
+        -0.5240264892578125,
+        -0.5277877807617187
+      ],
+      "footprint": [
+        [
+          82.0,
+          40.1
+        ],
+        [
+          84.0,
+          40.1
+        ],
+        [
+          84.0,
+          39.65
+        ],
+        [
+          82.0,
+          39.65
+        ]
+      ],
+      "supports": "Floor mort-prep",
+      "bearing_point": [
+        83.0,
+        40.04
+      ]
+    },
+    {
+      "name": "Bearing skirt 0012",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          72.0,
+          66.35
+        ],
+        [
+          74.0,
+          66.35
+        ]
+      ],
+      "ground_y": [
+        -0.17522430419921875,
+        -0.0399017333984375
+      ],
+      "bottom_y": [
+        -0.5252243041992187,
+        -0.3899017333984375,
+        -0.3899017333984375,
+        -0.5252243041992187
+      ],
+      "footprint": [
+        [
+          72.0,
+          65.9
+        ],
+        [
+          74.0,
+          65.9
+        ],
+        [
+          74.0,
+          66.35
+        ],
+        [
+          72.0,
+          66.35
+        ]
+      ],
+      "supports": "Floor mort-office",
+      "bearing_point": [
+        73.0,
+        65.96
+      ]
+    }
+  ],
+  "open_findings": [
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          6.0,
+          12.0
+        ],
+        [
+          8.0,
+          12.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          8.0,
+          12.0
+        ],
+        [
+          10.0,
+          12.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          10.0,
+          12.0
+        ],
+        [
+          12.0,
+          12.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          14.0,
+          12.0
+        ],
+        [
+          16.0,
+          12.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          6.0,
+          12.0
+        ],
+        [
+          6.0,
+          14.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          16.0,
+          12.0
+        ],
+        [
+          16.0,
+          14.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          16.0,
+          14.0
+        ],
+        [
+          16.0,
+          16.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          16.0,
+          16.0
+        ],
+        [
+          16.0,
+          18.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          16.0,
+          18.0
+        ],
+        [
+          16.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          14.0,
+          56.0
+        ],
+        [
+          16.0,
+          56.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          16.0,
+          56.0
+        ],
+        [
+          18.0,
+          56.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          40.0,
+          12.0
+        ],
+        [
+          40.0,
+          14.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          40.0,
+          14.0
+        ],
+        [
+          40.0,
+          16.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          40.0,
+          16.0
+        ],
+        [
+          40.0,
+          18.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          40.0,
+          18.0
+        ],
+        [
+          40.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          46.0,
+          52.0
+        ],
+        [
+          46.0,
+          54.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          58.0,
+          64.0
+        ],
+        [
+          60.0,
+          64.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          60.0,
+          64.0
+        ],
+        [
+          60.0,
+          66.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_NATIVE_GROUND",
+      "edge": [
+        [
+          72.0,
+          66.0
+        ],
+        [
+          72.0,
+          68.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          74.0,
+          66.0
+        ],
+        [
+          76.0,
+          66.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          76.0,
+          66.0
+        ],
+        [
+          78.0,
+          66.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          78.0,
+          66.0
+        ],
+        [
+          80.0,
+          66.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "EARTH_OVERTOPS_WALKING_FLOOR",
+      "edge": [
+        [
+          80.0,
+          66.0
+        ],
+        [
+          82.0,
+          66.0
+        ]
+      ],
+      "elevation": 0
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-mortuary-overview.png",
+      "sha256": "b4128e92d5db17d295b3bb77c249fe87ecab35392ddbce746b8d77a9bc07def1",
+      "type": "native exported terrain/support construction candidate"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-07-mortuary-support-side.png",
+      "sha256": "61e32716e55c8b21c1b7c2993f261c2714bc891dbecfcc3e1603d3707424c1c3",
+      "type": "native exported terrain/support construction candidate"
+    }
+  ],
+  "glb_sha256": "90dc20ba98abca7fd91f7e3ddbae1e5363dcc9b5d15ac37f28cc1bdda3322101",
+  "physics_sha256": "2ae50247d945d2c6d5b3b60aedbfdfea2b9b27975cfae041648f0ba80243aa5d",
+  "generator_sha256": "e2710b3e7d4fa7c3178a2bff2d1252284d16962cc78031c091911e4673b2c94b",
+  "limitations": "No master replacement or runtime unlock. Coarse foundation/pile construction only; actual native route regression, whole-site terrain fit, remaining unsupported spans/retaining/caves/water/guards and canonical van arrival require separate evidence."
+}

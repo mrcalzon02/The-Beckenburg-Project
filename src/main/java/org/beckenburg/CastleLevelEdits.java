@@ -103,6 +103,12 @@ public final class CastleLevelEdits {
         CastleDoorSlots.require(slotId);
         if(doorAssignments.remove(slotId)!=null)revision++;
     }
+    synchronized void setSocketLeaf(String slotId,CastleDoorSlots.Type type){
+        var slot=CastleDoorSlots.require(slotId);
+        if(!CastleDoorSlots.available(slot))throw new IllegalArgumentException("Door socket is absent from the active layout");
+        if(type==doorType(slotId))throw new IllegalArgumentException("Socket already has that assignment");
+        if(type==CastleDoorSlots.Type.EMPTY)removeDoor(slotId);else installDoor(slotId,type);
+    }
     private long geometryCacheVersion=-1;
     private List<CastleHubArchitecturalPlan.Wall> cachedWalls=List.of();
     private List<CastleHubArchitecturalPlan.Deck> cachedDecks=List.of();
@@ -116,6 +122,23 @@ public final class CastleLevelEdits {
         return false;
     }
     public synchronized List<Surface> surfaces(){return List.copyOf(surfaces.values());}
+    /** Ordered references to just the editable objects requested by a hierarchy page. */
+    record ObjectSlice(int objectCount,List<Surface> surfaces,List<Prop> props,List<Lamp> lamps) {}
+    synchronized ObjectSlice objectSlice(int offset,int limit) {
+        int lampStart=surfaces.size()+props.size();
+        long end=(long)offset+limit;
+        return new ObjectSlice(lampStart+lamps.size(),slice(surfaces,0,offset,end),
+            slice(props,surfaces.size(),offset,end),slice(lamps,lampStart,offset,end));
+    }
+    private static <T> List<T> slice(Map<String,T> items,int start,int offset,long end) {
+        int first=Math.max(0,offset-start);
+        long last=Math.min(items.size(),end-start);
+        if (first>=last) return List.of();
+        return items.values().stream().skip(first).limit(last-first).toList();
+    }
+    synchronized Surface surfaceById(String id) { return surfaces.get(id); }
+    synchronized Prop propById(String id) { return props.get(id); }
+    synchronized Lamp lampById(String id) { return lamps.get(id); }
     /** Cached immutable collision/shadow primitives: per-pixel light rays must
      * never rebuild or allocate entire geometry lists while rendering. */
     private void ensureGeometryCache(){
@@ -219,10 +242,16 @@ public final class CastleLevelEdits {
         @Override public Map<String,double[]> stations(){return copyStations(stations);}
         @Override public boolean equals(Object value){
             if(this==value)return true;if(!(value instanceof Snapshot other))return false;
+            return Double.compare(spawnX,other.spawnX)==0 && Double.compare(spawnZ,other.spawnZ)==0 &&
+                Double.compare(spawnYaw,other.spawnYaw)==0 && sameWorld(other);
+        }
+        /** Compare world geometry/services only. Spawn is an independent hierarchy node,
+         * whose change must publish its own stable-ID delta rather than whole-scene invalidation. */
+        boolean sameWorld(Snapshot other){
             if(!props.equals(other.props)||!lamps.equals(other.lamps)||!surfaces.equals(other.surfaces)
                 ||!floorPaint.equals(other.floorPaint)||!wallPaint.equals(other.wallPaint)||!navBlocked.equals(other.navBlocked)
-                ||!doors.equals(other.doors)||Double.compare(spawnX,other.spawnX)!=0||Double.compare(spawnZ,other.spawnZ)!=0
-                ||Double.compare(spawnYaw,other.spawnYaw)!=0||rebuildLayout!=other.rebuildLayout||!stations.keySet().equals(other.stations.keySet()))return false;
+                ||!doors.equals(other.doors)||rebuildLayout!=other.rebuildLayout
+                ||!stations.keySet().equals(other.stations.keySet()))return false;
             for(var entry:stations.entrySet())if(!java.util.Arrays.equals(entry.getValue(),other.stations.get(entry.getKey())))return false;
             return true;
         }
@@ -389,6 +418,49 @@ public final class CastleLevelEdits {
             throw new IllegalStateException("Castle prop count exceeded");
         props.put(prop.id(),prop);revision++;
     }
+    /** Place a new model with the Castle palette's scale, orientation and collision footprint. */
+    synchronized void placePaletteProp(String id,String mesh,double x,double y,double z){
+        requireNewId(id);
+        put(new Prop(id,mesh,x,y,z,.8,0,.4,.4,y>2));
+    }
+    private void requireNewId(String id){
+        if(props.containsKey(id)||surfaces.containsKey(id)||lamps.containsKey(id)||"start".equals(id)||
+            stations.keySet().stream().anyMatch(station->station.name().equals(id)))
+            throw new IllegalArgumentException("Castle hierarchy ID already in use: "+id);
+    }
+    synchronized void placeCeilingLamp(String id,double x,double floorY,double z,double radius,double power){
+        requireNewId(id);
+        if(!Double.isFinite(floorY)||floorY< -12||floorY>24)throw new IllegalArgumentException("Invalid editor work plane");
+        // A ceiling fixture's imported GLB is anchored by its TOP face. Mount that
+        // face at the native room soffit, not inside the structural 22 cm slab.
+        // Keep the previous fallback only for nonstandard/cellar editor planes.
+        boolean authoredFloor=Math.abs(floorY)<1e-7
+            ||Math.abs(floorY-CastleHubArchitecturalPlan.GROUND_CEILING)<1e-7;
+        double y=authoredFloor
+            ?CastleRooms.mountHeight(x,z,floorY>2)
+            :Math.max(CastleWorldBounds.MIN_Y,Math.min(9,floorY+3.38));
+        put(new Lamp(id,"ceiling_lamp_1_on","ceiling_lamp_1_off",x,y,z,.8,0,CastleHubDecor.Mount.CEILING,radius,power));
+    }
+    enum Field { X,Y,Z,SCALE,YAW_DEGREES,COLLISION_X,COLLISION_Z,RADIUS,POWER }
+    synchronized void editProp(String id,Map<Field,Double> fields){
+        var p=props.get(id);
+        if(p==null||fields.isEmpty()||fields.containsKey(Field.RADIUS)||fields.containsKey(Field.POWER))
+            throw new IllegalArgumentException("Unknown Castle prop or property");
+        put(new Prop(id,p.mesh(),fields.getOrDefault(Field.X,p.x()),fields.getOrDefault(Field.Y,p.y()),fields.getOrDefault(Field.Z,p.z()),
+            fields.getOrDefault(Field.SCALE,p.scale()),yaw(fields,p.yaw()),fields.getOrDefault(Field.COLLISION_X,p.halfX()),
+            fields.getOrDefault(Field.COLLISION_Z,p.halfZ()),p.upper()));
+    }
+    synchronized void editLamp(String id,Map<Field,Double> fields){
+        var l=lamps.get(id);
+        if(l==null||fields.isEmpty()||fields.containsKey(Field.COLLISION_X)||fields.containsKey(Field.COLLISION_Z))
+            throw new IllegalArgumentException("Unknown Castle lamp or property");
+        put(new Lamp(id,l.on(),l.off(),fields.getOrDefault(Field.X,l.x()),fields.getOrDefault(Field.Y,l.y()),fields.getOrDefault(Field.Z,l.z()),
+            fields.getOrDefault(Field.SCALE,l.scale()),yaw(fields,l.yaw()),l.mount(),fields.getOrDefault(Field.RADIUS,l.radius()),
+            fields.getOrDefault(Field.POWER,l.power())));
+    }
+    private static double yaw(Map<Field,Double> fields,double previous){
+        var degrees=fields.get(Field.YAW_DEGREES);return degrees==null?previous:Math.toRadians(degrees);
+    }
     public synchronized void removeProp(String id){if(props.remove(id)!=null)revision++;}
     public synchronized void put(Lamp light){
         Objects.requireNonNull(light);if(lamps.size()>=192&&!lamps.containsKey(light.id()))
@@ -485,6 +557,7 @@ public final class CastleLevelEdits {
     public static void recoverSavedDocument()throws IOException{recoverPreviousDocument(defaultPath());}
     private static void recoverPreviousDocument(Path path)throws IOException{EditorDocumentStore.restorePrevious(path,CastleLevelEdits::decode);}
     public synchronized void recoverPrevious()throws IOException{recoverPreviousDocument(path);reopen();}
+    synchronized boolean matchesSaved(Snapshot live)throws IOException{return live.equals(decode(path).snapshot());}
     private void decode(Properties p)throws IOException{
         if(!"1".equals(p.getProperty("format")))
             throw new IOException("Unsupported castle editor document version");

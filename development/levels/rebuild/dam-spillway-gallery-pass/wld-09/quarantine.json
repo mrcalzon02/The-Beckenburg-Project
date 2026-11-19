@@ -1,0 +1,120 @@
+{
+  "original_source": {
+    "id": "WLD-09",
+    "construction": "development/levels/rebuild/service-ground-bay-pass/wld-09/construction.json",
+    "layout": "development/levels/rebuild/service-ground-bay-pass/wld-09/authored-layout.json",
+    "glb": "development/levels/rebuild/service-ground-bay-pass/wld-09/authored-service-bay.glb",
+    "native": "development/levels/rebuild/service-ground-bay-pass/wld-09/authored-service-bay.hcs2",
+    "blend": "development/levels/rebuild/service-ground-bay-pass/wld-09/authored-service-bay.blend",
+    "glb_sha256": "9ca45264727b42c43c206538de28dbeb1f69e714434fd76a146a984cbd23321c",
+    "native_sha256": "6cf09c50961ff302ba1091e2f6cc64207a3d6f4adaee76d5405afa89c31daaa4"
+  },
+  "rejected_link": {
+    "id": "L12",
+    "a": "east-stair",
+    "b": "spillway",
+    "kind": "stairs",
+    "width": 2,
+    "points": [
+      [
+        67,
+        0,
+        46.5
+      ],
+      [
+        67,
+        0,
+        45
+      ],
+      [
+        67,
+        -3,
+        35.9
+      ],
+      [
+        67,
+        -3,
+        34.1
+      ],
+      [
+        67,
+        -6,
+        25
+      ],
+      [
+        67,
+        -6,
+        23.5
+      ],
+      [
+        69.2,
+        -6,
+        23.5
+      ],
+      [
+        69.2,
+        -6,
+        35
+      ],
+      [
+        50,
+        -6,
+        35
+      ],
+      [
+        52,
+        -6,
+        35
+      ],
+      [
+        52,
+        -6,
+        43
+      ],
+      [
+        45,
+        -6,
+        43
+      ],
+      [
+        45,
+        -6,
+        48
+      ],
+      [
+        45,
+        -6,
+        55
+      ],
+      [
+        43.75,
+        -6,
+        56
+      ],
+      [
+        43.75,
+        -6,
+        58
+      ],
+      [
+        70,
+        -6,
+        58
+      ],
+      [
+        70,
+        -6,
+        55
+      ]
+    ],
+    "note": "Reserve a supported route and actual boundary opening; centre line is schematic.",
+    "rise_m": 6,
+    "construction": "Reserve at least 9.6 m total stair run plus 1.5 m landings, 1.5 m clear width, 2.2 m headroom, matching deck/ceiling voids and guards. Split into flights inside connector footprint during refinement."
+  },
+  "retired_complete_wall": [
+    "WLD-09 hall S end region0",
+    "WLD-09 hall S header0 region0",
+    "WLD-09 hall S pier0 region0",
+    "WLD-09 hall S sill0 region0"
+  ]
+}

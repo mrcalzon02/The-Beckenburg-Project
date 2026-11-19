@@ -1,0 +1,4327 @@
+{
+  "id": "WLD-06",
+  "status": "WHARF_RECTANGULAR_STAIR_CELLS_RECONSTRUCTED_REVIEW_OPEN",
+  "source_glb": "development/levels/rebuild/site-earthworks-pass/wld-06/saved-earthworks.glb",
+  "source_glb_sha256": "4ed8877dfc080638e5eeec2494bcf91d733879feea9a0030ebe1e9ea8a264223",
+  "source_physics": "development/levels/rebuild/site-earthworks-pass/wld-06/saved-earthworks.hcs2",
+  "source_physics_sha256": "583ba481446fcabdd75507261e1640b3d7bf60405435afebefdc53a2068fd84a",
+  "before_layout": "development/levels/rebuild/site-earthworks-pass/wld-06/authored-layout.json",
+  "before_layout_sha256": "0f36a73f23ea0e3d2314039ac4368761ef7e7155f06f647da76c6304b6535ff2",
+  "layout": "development/levels/rebuild/wharf-stair-cells-pass/wld-06/authored-layout.json",
+  "layout_sha256": "4991a5bfa84fe096e1f986aba305102e9152190c9f2bf48ce3f46daa0187f655",
+  "before_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "0": 0
+    },
+    "L17": {
+      "3": 0
+    },
+    "L18": {}
+  },
+  "source_segment_map": {
+    "L01": {},
+    "L02": {},
+    "L03": {},
+    "L04": {},
+    "L05": {},
+    "L06": {},
+    "L07": {},
+    "L08": {},
+    "L09": {},
+    "L10": {},
+    "L11": {},
+    "L12": {},
+    "L13": {},
+    "L14": {},
+    "L15": {},
+    "L16": {
+      "0": 0
+    },
+    "L17": {
+      "3": 0
+    },
+    "L18": {}
+  },
+  "before_stair_components": [
+    "Authored stair end WLD-06 L16 0 high region0",
+    "Authored stair end WLD-06 L16 0 high region1",
+    "Authored stair end WLD-06 L16 0 high region2",
+    "Authored stair end WLD-06 L16 0 high region3",
+    "Authored stair end WLD-06 L17 0 high region0",
+    "Authored stair end WLD-06 L17 0 high region1",
+    "Orthogonal stair WLD-06 L16 step0",
+    "Orthogonal stair WLD-06 L16 step1",
+    "Orthogonal stair WLD-06 L16 step2",
+    "Orthogonal stair WLD-06 L16 step3",
+    "Orthogonal stair WLD-06 L16 step4",
+    "Orthogonal stair WLD-06 L16 step5",
+    "Orthogonal stair WLD-06 L16 step6",
+    "Orthogonal stair WLD-06 L16 step7",
+    "Orthogonal stair WLD-06 L16 step8",
+    "Orthogonal stair WLD-06 L16 step9",
+    "Orthogonal stair WLD-06 L16 step10",
+    "Orthogonal stair WLD-06 L16 step11",
+    "Orthogonal stair WLD-06 L16 step12",
+    "Orthogonal stair WLD-06 L16 step13",
+    "Orthogonal stair WLD-06 L16 step14",
+    "Orthogonal stair WLD-06 L16 step15",
+    "Orthogonal stair WLD-06 L17 step0",
+    "Orthogonal stair WLD-06 L17 step1",
+    "Orthogonal stair WLD-06 L17 step2",
+    "Orthogonal stair WLD-06 L17 step3",
+    "Orthogonal stair WLD-06 L17 step4",
+    "Orthogonal stair WLD-06 L17 step5",
+    "Orthogonal stair WLD-06 L17 step6",
+    "Orthogonal stair WLD-06 L17 step7",
+    "Orthogonal stair WLD-06 L17 step8",
+    "Orthogonal stair WLD-06 L17 step9",
+    "Orthogonal stair WLD-06 L17 step10",
+    "Orthogonal stair WLD-06 L17 step11",
+    "Orthogonal stair WLD-06 L17 step12",
+    "Orthogonal stair WLD-06 L17 step13",
+    "Orthogonal stair WLD-06 L17 step14",
+    "Orthogonal stair WLD-06 L17 step15",
+    "Bay landing WLD-06 L16 1 region0",
+    "Bay landing WLD-06 L16 1 region1",
+    "Bay landing WLD-06 L16 1 region2",
+    "Bay landing WLD-06 L16 1 region3",
+    "Bay landing WLD-06 L17 3 region0",
+    "Bay landing WLD-06 L17 3 region1",
+    "Flared tread WLD-06 L16 -1 0 region0",
+    "Flared tread WLD-06 L16 -1 1 region0",
+    "Flared tread WLD-06 L16 -1 2 region0",
+    "Flared tread WLD-06 L16 -1 3 region0",
+    "Flared tread WLD-06 L16 -1 4 region0",
+    "Flared tread WLD-06 L16 -1 5 region0",
+    "Flared tread WLD-06 L16 -1 6 region0",
+    "Flared tread WLD-06 L16 -1 7 region0",
+    "Flared tread WLD-06 L16 -1 8 region0",
+    "Flared tread WLD-06 L16 -1 9 region0",
+    "Flared tread WLD-06 L16 -1 10 region0",
+    "Flared tread WLD-06 L16 -1 11 region0",
+    "Flared tread WLD-06 L16 -1 12 region0",
+    "Flared tread WLD-06 L16 -1 13 region0",
+    "Flared tread WLD-06 L16 -1 14 region0",
+    "Flared tread WLD-06 L16 -1 15 region0",
+    "Flared tread WLD-06 L16 1 16 region0",
+    "Flared tread WLD-06 L16 1 17 region0",
+    "Flared tread WLD-06 L16 1 18 region0",
+    "Flared tread WLD-06 L16 1 19 region0",
+    "Flared tread WLD-06 L16 1 20 region0",
+    "Flared tread WLD-06 L16 1 21 region0",
+    "Flared tread WLD-06 L16 1 22 region0",
+    "Flared tread WLD-06 L16 1 23 region0",
+    "Flared tread WLD-06 L16 1 24 region0",
+    "Flared tread WLD-06 L16 1 25 region0",
+    "Flared tread WLD-06 L16 1 26 region0",
+    "Flared tread WLD-06 L16 1 27 region0",
+    "Flared tread WLD-06 L16 1 28 region0",
+    "Flared tread WLD-06 L16 1 29 region0",
+    "Flared tread WLD-06 L16 1 30 region0",
+    "Flared tread WLD-06 L16 1 31 region0",
+    "Flared tread WLD-06 L17 -1 32 region0",
+    "Flared tread WLD-06 L17 -1 33 region0",
+    "Flared tread WLD-06 L17 -1 34 region0",
+    "Flared tread WLD-06 L17 -1 35 region0",
+    "Flared tread WLD-06 L17 -1 36 region0",
+    "Flared tread WLD-06 L17 -1 37 region0",
+    "Flared tread WLD-06 L17 -1 38 region0",
+    "Flared tread WLD-06 L17 -1 39 region0",
+    "Flared tread WLD-06 L17 -1 40 region0",
+    "Flared tread WLD-06 L17 -1 41 region0",
+    "Flared tread WLD-06 L17 -1 42 region0",
+    "Flared tread WLD-06 L17 -1 43 region0",
+    "Flared tread WLD-06 L17 -1 44 region0",
+    "Flared tread WLD-06 L17 -1 45 region0",
+    "Flared tread WLD-06 L17 -1 46 region0",
+    "Flared tread WLD-06 L17 -1 47 region0",
+    "Flared tread WLD-06 L17 1 48 region0",
+    "Flared tread WLD-06 L17 1 49 region0",
+    "Flared tread WLD-06 L17 1 50 region0",
+    "Flared tread WLD-06 L17 1 51 region0",
+    "Flared tread WLD-06 L17 1 52 region0",
+    "Flared tread WLD-06 L17 1 53 region0",
+    "Flared tread WLD-06 L17 1 54 region0",
+    "Flared tread WLD-06 L17 1 55 region0",
+    "Flared tread WLD-06 L17 1 56 region0",
+    "Flared tread WLD-06 L17 1 57 region0",
+    "Flared tread WLD-06 L17 1 58 region0",
+    "Flared tread WLD-06 L17 1 59 region0",
+    "Flared tread WLD-06 L17 1 60 region0",
+    "Flared tread WLD-06 L17 1 61 region0",
+    "Flared tread WLD-06 L17 1 62 region0",
+    "Flared tread WLD-06 L17 1 63 region0"
+  ],
+  "stair_components": [
+    "Wharf west full supported upper landing region0",
+    "Wharf rectangular L16 tread 0 region0",
+    "Wharf rectangular L16 tread 1 region0",
+    "Wharf rectangular L16 tread 2 region0",
+    "Wharf rectangular L16 tread 3 region0",
+    "Wharf rectangular L16 tread 4 region0",
+    "Wharf rectangular L16 tread 5 region0",
+    "Wharf rectangular L16 tread 6 region0",
+    "Wharf rectangular L16 tread 7 region0",
+    "Wharf rectangular L16 tread 8 region0",
+    "Wharf rectangular L16 tread 9 region0",
+    "Wharf rectangular L16 tread 10 region0",
+    "Wharf rectangular L16 tread 11 region0",
+    "Wharf rectangular L16 tread 12 region0",
+    "Wharf rectangular L16 tread 13 region0",
+    "Wharf rectangular L17 tread 0 region0",
+    "Wharf rectangular L17 tread 1 region0",
+    "Wharf rectangular L17 tread 2 region0",
+    "Wharf rectangular L17 tread 3 region0",
+    "Wharf rectangular L17 tread 4 region0",
+    "Wharf rectangular L17 tread 5 region0",
+    "Wharf rectangular L17 tread 6 region0",
+    "Wharf rectangular L17 tread 7 region0",
+    "Wharf rectangular L17 tread 8 region0",
+    "Wharf rectangular L17 tread 9 region0",
+    "Wharf rectangular L17 tread 10 region0",
+    "Wharf rectangular L17 tread 11 region0",
+    "Wharf rectangular L17 tread 12 region0",
+    "Wharf rectangular L17 tread 13 region0"
+  ],
+  "removed_source_meshes": [
+    "L16 flight0 step1",
+    "L16 flight0 step2",
+    "L16 flight0 step3",
+    "L16 flight0 step4",
+    "L16 flight0 step5",
+    "L16 flight0 step6",
+    "L16 flight0 step7",
+    "L16 flight0 step8",
+    "L16 flight0 step9",
+    "L16 flight0 step10",
+    "L16 flight0 step11",
+    "L16 flight0 step12",
+    "L16 flight0 step13",
+    "L16 flight0 step14",
+    "L17 flight0 step1",
+    "L17 flight0 step2",
+    "L17 flight0 step3",
+    "L17 flight0 step4",
+    "L17 flight0 step5",
+    "L17 flight0 step6",
+    "L17 flight0 step7",
+    "L17 flight0 step8",
+    "L17 flight0 step9",
+    "L17 flight0 step10",
+    "L17 flight0 step11",
+    "L17 flight0 step12",
+    "L17 flight0 step13",
+    "L17 flight0 step14",
+    "Floor undercroft",
+    "Opened stair shell Wall undercroft W",
+    "Opened stair shell Wall undercroft E"
+  ],
+  "removed_native_parts": [
+    "57:L01 support 0",
+    "58:L01 support 1",
+    "61:L04 support 0",
+    "62:L04 support 1",
+    "69:L08 support 0",
+    "70:L08 support 1",
+    "71:L09 support 0",
+    "72:L09 support 1",
+    "73:L10 support 0",
+    "74:L10 support 1",
+    "75:L11 support 0",
+    "77:L12 support 0",
+    "79:L13 support 0",
+    "113:L18 support 0",
+    "114:L18 support 1",
+    "Arrival end bearing WLD-06 0"
+  ],
+  "new_parts": 30,
+  "new_triangles": 832,
+  "restored_shaft_parts": [
+    "Restored bay WLD-06 undercroft ceiling-cap region0",
+    "Restored bay WLD-06 undercroft ceiling-cap region1",
+    "Restored bay WLD-06 pier-w floor region0",
+    "Restored bay WLD-06 pier-e floor region0"
+  ],
+  "shell_changes": [
+    {
+      "source_mesh": "Floor undercroft",
+      "new_mesh": "Bayed shell Floor undercroft",
+      "removed_volume_m3": 0.3551234485565473
+    },
+    {
+      "source_mesh": "Opened stair shell Wall undercroft W",
+      "new_mesh": "Bayed shell Opened stair shell Wall undercroft W",
+      "removed_volume_m3": 0.5978479210084675
+    },
+    {
+      "source_mesh": "Opened stair shell Wall undercroft E",
+      "new_mesh": "Bayed shell Opened stair shell Wall undercroft E",
+      "removed_volume_m3": 0.5978479270870354
+    }
+  ],
+  "design": {
+    "points": {
+      "L16": [
+        [
+          18,
+          0,
+          33
+        ],
+        [
+          26,
+          -2.5,
+          33
+        ],
+        [
+          26,
+          -2.5,
+          30
+        ],
+        [
+          32,
+          -2.5,
+          30
+        ]
+      ],
+      "L17": [
+        [
+          32,
+          -2.5,
+          30
+        ],
+        [
+          38,
+          -2.5,
+          30
+        ],
+        [
+          38,
+          -2.5,
+          33
+        ],
+        [
+          46,
+          0,
+          33
+        ]
+      ]
+    },
+    "build": [
+      "L16",
+      "L17"
+    ],
+    "shared": {},
+    "reason": "Wharf: opposed straight access flights follow west/east stair bays; level turns enter undercroft instead of diagonal columns crossing the quay.",
+    "preserve_upper_hubs": false
+  },
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 1288352,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      46,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      392,
+      393
+    ]
+  },
+  "glb_sha256": "5f639e0debfa00d5843521a6effb7981d0bf5f1c939f48c66fc148b8b7f9d808",
+  "physics_sha256": "102fa9d66b7a64347ab7cfce79ad23e5c8031ed02a1c880a0aae8fd7b5312366",
+  "generator_sha256": "e834a77051dac69dba57dbd96ca23ee2198a81df81f2f9977f44ea405d798fea",
+  "remaining": "Independent movement and physical review; full map/load/terrain detail, finish and actual runtime integration remain open. No acceptance inferred from checks.",
+  "source_contract": "development/levels/rebuild/site-earthworks-pass/wld-06/construction.json",
+  "blend_sha256": "51cfd42685e32ec5968bcddea127ceece56ef0ae9c10311d4753716db468dd80",
+  "roof_generator_sha256": "df3d626b33285cd350a451cd113571b615df645d7e59618a1f67711b424b9c58",
+  "geometry_unchanged": false,
+  "roof_wings": [
+    {
+      "wing": "west-cottage",
+      "bounds": [
+        4,
+        42,
+        20,
+        54
+      ],
+      "ceiling": 3,
+      "ridge": 5.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "east-cottage",
+      "bounds": [
+        44,
+        42,
+        60,
+        54
+      ],
+      "ceiling": 3,
+      "ridge": 5.44,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    },
+    {
+      "wing": "boathouse",
+      "bounds": [
+        4,
+        10,
+        20,
+        28
+      ],
+      "ceiling": 3,
+      "ridge": 6.24,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "net-store",
+      "bounds": [
+        44,
+        10,
+        56,
+        24
+      ],
+      "ceiling": 3,
+      "ridge": 5.640000000000001,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "z",
+      "facade_closures": []
+    },
+    {
+      "wing": "fish-house",
+      "bounds": [
+        24,
+        10,
+        40,
+        24
+      ],
+      "ceiling": 3,
+      "ridge": 5.84,
+      "roof_depth": 0.22,
+      "gable_depth": 0.24,
+      "roof_shape": "gable",
+      "ridge_axis": "x",
+      "facade_closures": []
+    }
+  ],
+  "roof_coverage_rays": 1064,
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/wharf-stair-cells-batch/wharf-stair-cells.png",
+      "sha256": "6f957975ca5c34b7b67e8313cd3c4c9a110096d73af4cbc542ee3d9c13ffbd23",
+      "type": "native actual reconstructed stair-cell close view; pitched roofs hidden, not gameplay"
+    }
+  ],
+  "aboveground_indoor_roof_probes": 45,
+  "wing_plan_builder": "tools/build_harbor_research_roof_batch.py",
+  "wing_plan_sha256": "bb6d9e381bf7ae078d694de63b7585c6863fa2c4b2a5e99dceb0080186f14b56",
+  "entrance_builder": "tools/build_deliberate_entrances.py",
+  "entrance_builder_sha256": "036df9604d0d3cd198105bb025a07ed7ee09b37286d31a596842423c4285d70e",
+  "entrances": [
+    {
+      "zone": "cottage-a",
+      "side": "S",
+      "center": 12,
+      "width": 2.6,
+      "height": 2.45,
+      "wall_depth": 0.24
+    },
+    {
+      "zone": "cottage-a",
+      "side": "E",
+      "center": 48,
+      "width": 2.6,
+      "height": 2.45,
+      "wall_depth": 0.24
+    },
+    {
+      "zone": "cottage-b",
+      "side": "S",
+      "center": 52,
+      "width": 2.6,
+      "height": 2.45,
+      "wall_depth": 0.24
+    },
+    {
+      "zone": "cottage-b",
+      "side": "W",
+      "center": 48,
+      "width": 2.6,
+      "height": 2.45,
+      "wall_depth": 0.24
+    }
+  ],
+  "removed_parts": [
+    "Floor exterior deck quay 0",
+    "Floor exterior deck quay 1",
+    "Floor exterior deck quay 2",
+    "Floor exterior deck quay 3",
+    "Floor exterior deck quay 4",
+    "Floor exterior deck quay 5",
+    "Floor exterior deck quay 6",
+    "Floor exterior deck quay 7",
+    "Floor exterior deck quay 8",
+    "Floor exterior deck quay 9",
+    "Floor exterior deck quay 10",
+    "Floor exterior deck quay 11",
+    "Floor exterior deck quay 12",
+    "Floor exterior deck quay 13",
+    "Floor exterior deck quay 14",
+    "Floor exterior deck quay 15",
+    "Floor exterior deck quay 16",
+    "Floor exterior deck quay 17",
+    "Floor exterior deck quay 18",
+    "Floor exterior deck quay 19",
+    "Floor exterior deck quay 20",
+    "Floor exterior deck quay 21",
+    "Floor exterior deck quay 22",
+    "Floor exterior deck quay 23",
+    "Floor exterior deck quay 24",
+    "Floor exterior deck quay 25",
+    "Floor exterior deck quay 26",
+    "Floor exterior deck quay 27",
+    "Floor exterior deck quay 28",
+    "Floor exterior deck quay 29",
+    "Floor exterior deck quay 30",
+    "Floor exterior deck quay 31",
+    "Floor exterior deck quay 32",
+    "Floor exterior deck quay 33",
+    "Floor exterior deck quay 34",
+    "Floor exterior deck quay 35",
+    "Floor exterior deck quay 36",
+    "Floor exterior deck quay 37",
+    "Floor exterior deck quay 38",
+    "Floor exterior deck quay 39",
+    "Floor exterior deck quay 40",
+    "Floor exterior deck quay 41",
+    "Floor exterior deck quay 42",
+    "Floor exterior deck quay 43",
+    "Floor exterior deck quay 44",
+    "Floor exterior deck quay 45",
+    "Floor exterior deck quay 46",
+    "Floor exterior deck quay 47",
+    "Floor exterior deck quay 48",
+    "Floor exterior deck quay 49",
+    "Floor exterior deck quay 50",
+    "Floor exterior deck quay 51",
+    "Floor exterior deck quay 52",
+    "Floor exterior deck quay 53",
+    "Floor exterior deck quay 54",
+    "Floor exterior deck quay 55",
+    "Floor exterior deck quay 56",
+    "Floor exterior deck quay 57",
+    "Floor exterior deck quay 58",
+    "Floor exterior deck quay 59",
+    "Floor exterior deck quay 60",
+    "Floor exterior deck quay 61",
+    "Floor exterior deck quay 62",
+    "Floor exterior deck quay 63",
+    "Floor exterior deck quay 64",
+    "Floor exterior deck quay 65",
+    "Floor exterior deck quay 66",
+    "Floor exterior deck quay 67",
+    "Floor exterior deck quay 68",
+    "Floor exterior deck quay 69",
+    "Floor exterior deck quay 70",
+    "Floor exterior deck quay 71",
+    "Floor exterior deck quay 72",
+    "Floor exterior deck quay 73",
+    "Floor exterior deck quay 74",
+    "Floor exterior deck quay 75",
+    "Floor exterior deck quay 76",
+    "Floor exterior deck quay 77",
+    "Floor exterior deck quay 78",
+    "Floor exterior deck quay 79",
+    "Floor exterior deck quay 80",
+    "Floor exterior deck quay 81",
+    "Floor exterior deck quay 82",
+    "Floor exterior deck quay 83",
+    "Floor exterior deck quay 84",
+    "Floor exterior deck quay 85",
+    "Floor exterior deck quay 86",
+    "Floor exterior deck quay 87",
+    "Floor exterior deck quay 88",
+    "Floor exterior deck quay 89",
+    "Floor exterior deck quay 90",
+    "Floor exterior deck quay 91",
+    "Floor exterior deck quay 92",
+    "Floor exterior deck quay 93",
+    "Floor exterior deck pier-w 94",
+    "Floor exterior deck pier-w 95",
+    "Floor exterior deck pier-w 96",
+    "Floor exterior deck pier-w 97",
+    "Floor exterior deck pier-w 98",
+    "Floor exterior deck pier-w 99",
+    "Floor exterior deck pier-w 100",
+    "Floor exterior deck pier-w 101",
+    "Floor exterior deck pier-w 102",
+    "Floor exterior deck pier-w 103",
+    "Floor exterior deck pier-w 104",
+    "Floor exterior deck pier-w 105",
+    "Floor exterior deck pier-w 106",
+    "Floor exterior deck pier-w 107",
+    "Floor exterior deck pier-w 108",
+    "Floor exterior deck pier-e 112",
+    "Floor exterior deck pier-e 113",
+    "Floor exterior deck pier-e 114",
+    "Floor exterior deck pier-e 115",
+    "Floor exterior deck pier-e 116",
+    "Floor exterior deck pier-e 117",
+    "Floor exterior deck pier-e 118",
+    "Floor exterior deck pier-e 119",
+    "Floor exterior deck pier-e 120",
+    "Floor exterior deck pier-e 121",
+    "Floor exterior deck pier-e 122",
+    "Floor exterior deck pier-e 123",
+    "Floor exterior deck pier-e 125",
+    "Floor exterior deck crossdock 127",
+    "Floor exterior deck crossdock 128",
+    "Floor exterior deck crossdock 129",
+    "Floor exterior deck crossdock 130",
+    "Floor exterior deck crossdock 131",
+    "Floor exterior deck crossdock 132",
+    "Floor exterior deck crossdock 133",
+    "Floor exterior deck crossdock 134",
+    "Floor exterior deck crossdock 135",
+    "Floor exterior deck crossdock 136",
+    "Floor exterior deck crossdock 137",
+    "Floor exterior deck crossdock 138",
+    "Floor exterior deck crossdock 139",
+    "Floor exterior deck crossdock 140",
+    "Floor exterior deck crossdock 141",
+    "Floor exterior deck crossdock 142",
+    "Floor exterior deck crossdock 143",
+    "Floor exterior deck crossdock 144",
+    "Floor exterior deck crossdock 145",
+    "Closed flared opening Floor exterior deck pier-w 109 0 region0",
+    "Closed flared opening Floor exterior deck pier-w 110 0 region0",
+    "Closed flared opening Floor exterior deck pier-w 111 0 region0",
+    "Closed flared opening Floor exterior deck pier-w 111 1 region0",
+    "Closed flared opening Floor exterior deck pier-w 111 2 region0",
+    "Closed flared opening Floor exterior deck pier-w 111 3 region0",
+    "Closed flared opening Floor exterior deck pier-w 111 4 region0",
+    "Closed flared opening Floor exterior deck pier-e 124 0 region0",
+    "Closed flared opening Floor exterior deck pier-e 124 1 region0",
+    "Closed flared opening Floor exterior deck pier-e 126 0 region0",
+    "Closed flared opening Floor exterior deck pier-e 126 1 region0",
+    "Closed flared opening Floor exterior deck pier-e 126 2 region0",
+    "Closed flared opening Floor exterior deck pier-e 126 3 region0",
+    "Closed flared opening Floor exterior deck pier-e 126 4 region0",
+    "Closed flared opening Floor exterior deck pier-e 126 6 region0",
+    "Closed flared opening Restored bay WLD-06 pier-w floor region0 0 region0",
+    "Closed flared opening Restored bay WLD-06 pier-w floor region0 1 region0",
+    "Closed flared opening Restored bay WLD-06 pier-e floor region0 0 region0",
+    "Closed flared opening Restored bay WLD-06 pier-e floor region0 1 region0",
+    "Wharf bypass deck 0 region0",
+    "Wharf bypass deck 1 region0",
+    "Entrance rebuild WLD-06 continuous approach pavement region0",
+    "Entrance rebuild WLD-06 continuous approach pavement region1",
+    "Wharf continuous west perimeter boardwalk region0",
+    "Wharf continuous perimeter guard 25 0",
+    "Wharf continuous perimeter guard 25 1",
+    "Wharf continuous perimeter guard 25 2",
+    "Wharf continuous perimeter guard 26 0",
+    "Wharf continuous perimeter guard 28 0",
+    "Wharf continuous perimeter guard 29 0",
+    "Wharf continuous perimeter guard 37 0",
+    "Wharf continuous perimeter guard 44 0",
+    "Wharf continuous perimeter guard 45 0",
+    "Wharf continuous perimeter guard 46 0",
+    "Wharf continuous perimeter guard 47 0",
+    "Wharf continuous perimeter guard 48 0",
+    "Wharf continuous perimeter guard 49 0",
+    "Wharf continuous perimeter guard 50 0",
+    "Wharf continuous perimeter guard 50 1",
+    "Wharf continuous perimeter guard 50 2",
+    "Wharf continuous perimeter guard 51 0",
+    "Wharf continuous perimeter guard 52 0",
+    "Wharf continuous perimeter guard 54 0",
+    "Wharf continuous perimeter guard 58 0",
+    "Wharf continuous perimeter guard 59 0"
+  ],
+  "rooted_beds": [
+    {
+      "threshold": [
+        12.0,
+        54.0
+      ],
+      "bearing": "Existing room floor overlap and retained foundation",
+      "owners": [
+        "cottage-a"
+      ]
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 1",
+      "ground_y": [
+        -0.39468955993652344,
+        -0.3585948944091797,
+        -0.3506450653076172,
+        -0.3700389862060547
+      ],
+      "probe_points": [
+        [
+          11.78,
+          55.53
+        ],
+        [
+          12.22,
+          55.53
+        ],
+        [
+          12.22,
+          55.97
+        ],
+        [
+          11.78,
+          55.97
+        ]
+      ],
+      "bottom_y": -0.5946895599365234,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 2",
+      "ground_y": [
+        -0.36686134338378906,
+        -0.35010528564453125,
+        -0.35010337829589844,
+        -0.36686134338378906
+      ],
+      "probe_points": [
+        [
+          11.78,
+          57.28
+        ],
+        [
+          12.22,
+          57.28
+        ],
+        [
+          12.22,
+          57.72
+        ],
+        [
+          11.78,
+          57.72
+        ]
+      ],
+      "bottom_y": -0.566861343383789,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 3",
+      "ground_y": [
+        -0.352142333984375,
+        -0.35010337829589844,
+        -0.35010337829589844,
+        -0.352142333984375
+      ],
+      "probe_points": [
+        [
+          11.78,
+          59.03
+        ],
+        [
+          12.22,
+          59.03
+        ],
+        [
+          12.22,
+          59.47
+        ],
+        [
+          11.78,
+          59.47
+        ]
+      ],
+      "bottom_y": -0.552142333984375,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 4",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.35010337829589844,
+        -0.35010337829589844,
+        -0.35010337829589844
+      ],
+      "probe_points": [
+        [
+          11.78,
+          60.78
+        ],
+        [
+          12.22,
+          60.78
+        ],
+        [
+          12.22,
+          61.22
+        ],
+        [
+          11.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 5",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.35010337829589844,
+        -0.35010337829589844,
+        -0.35010337829589844
+      ],
+      "probe_points": [
+        [
+          13.78,
+          60.78
+        ],
+        [
+          14.22,
+          60.78
+        ],
+        [
+          14.22,
+          61.22
+        ],
+        [
+          13.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 6",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.35010337829589844
+      ],
+      "probe_points": [
+        [
+          15.78,
+          60.78
+        ],
+        [
+          16.22,
+          60.78
+        ],
+        [
+          16.22,
+          61.22
+        ],
+        [
+          15.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 7",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          17.78,
+          60.78
+        ],
+        [
+          18.22,
+          60.78
+        ],
+        [
+          18.22,
+          61.22
+        ],
+        [
+          17.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "threshold": [
+        20.0,
+        48.0
+      ],
+      "bearing": "Existing room floor overlap and retained foundation",
+      "owners": [
+        "cottage-a"
+      ]
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 9",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          19.78,
+          60.78
+        ],
+        [
+          20.22,
+          60.78
+        ],
+        [
+          20.22,
+          61.22
+        ],
+        [
+          19.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 10",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1070575714111328,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          21.78,
+          47.78
+        ],
+        [
+          22.22,
+          47.78
+        ],
+        [
+          22.22,
+          48.22
+        ],
+        [
+          21.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 11",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          21.78,
+          60.78
+        ],
+        [
+          22.22,
+          60.78
+        ],
+        [
+          22.22,
+          61.22
+        ],
+        [
+          21.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 12",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1070575714111328,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          23.78,
+          47.78
+        ],
+        [
+          24.22,
+          47.78
+        ],
+        [
+          24.22,
+          48.22
+        ],
+        [
+          23.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 13",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          23.78,
+          60.78
+        ],
+        [
+          24.22,
+          60.78
+        ],
+        [
+          24.22,
+          61.22
+        ],
+        [
+          23.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 14",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1070575714111328,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          25.78,
+          47.78
+        ],
+        [
+          26.22,
+          47.78
+        ],
+        [
+          26.22,
+          48.22
+        ],
+        [
+          25.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 15",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          25.78,
+          60.78
+        ],
+        [
+          26.22,
+          60.78
+        ],
+        [
+          26.22,
+          61.22
+        ],
+        [
+          25.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 16",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1070575714111328,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          27.78,
+          47.78
+        ],
+        [
+          28.22,
+          47.78
+        ],
+        [
+          28.22,
+          48.22
+        ],
+        [
+          27.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 17",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3501014709472656,
+        -0.35010337829589844,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          27.78,
+          60.78
+        ],
+        [
+          28.22,
+          60.78
+        ],
+        [
+          28.22,
+          61.22
+        ],
+        [
+          27.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 18",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1070575714111328,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          29.78,
+          47.78
+        ],
+        [
+          30.22,
+          47.78
+        ],
+        [
+          30.22,
+          48.22
+        ],
+        [
+          29.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 19",
+      "ground_y": [
+        -0.35010337829589844,
+        -0.3499946594238281,
+        -0.3499946594238281,
+        -0.3501014709472656
+      ],
+      "probe_points": [
+        [
+          29.78,
+          60.78
+        ],
+        [
+          30.22,
+          60.78
+        ],
+        [
+          30.22,
+          61.22
+        ],
+        [
+          29.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5501033782958984,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 20",
+      "ground_y": [
+        -1.7218704223632812,
+        -1.7218704223632812,
+        -1.6258354187011719,
+        -1.6258354187011719
+      ],
+      "probe_points": [
+        [
+          31.78,
+          44.78
+        ],
+        [
+          32.22,
+          44.78
+        ],
+        [
+          32.22,
+          45.22
+        ],
+        [
+          31.78,
+          45.22
+        ]
+      ],
+      "bottom_y": -1.9218704223632812,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 21",
+      "ground_y": [
+        -1.4007644653320312,
+        -1.400655746459961,
+        -1.3145027160644531,
+        -1.3146095275878906
+      ],
+      "probe_points": [
+        [
+          31.78,
+          46.28
+        ],
+        [
+          32.22,
+          46.28
+        ],
+        [
+          32.22,
+          46.72
+        ],
+        [
+          31.78,
+          46.72
+        ]
+      ],
+      "bottom_y": -1.6007644653320312,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 22",
+      "ground_y": [
+        -1.1070575714111328,
+        -1.1069488525390625,
+        -1.0279922485351562,
+        -1.0279922485351562
+      ],
+      "probe_points": [
+        [
+          31.78,
+          47.78
+        ],
+        [
+          32.22,
+          47.78
+        ],
+        [
+          32.22,
+          48.22
+        ],
+        [
+          31.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3070575714111328,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 23",
+      "ground_y": [
+        -0.34923553466796875,
+        -0.34902000427246094,
+        -0.3490180969238281,
+        -0.34923362731933594
+      ],
+      "probe_points": [
+        [
+          31.78,
+          60.78
+        ],
+        [
+          32.22,
+          60.78
+        ],
+        [
+          32.22,
+          61.22
+        ],
+        [
+          31.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5492355346679687,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 24",
+      "ground_y": [
+        -1.1061878204345703,
+        -1.1061878204345703,
+        -1.0270156860351562,
+        -1.027231216430664
+      ],
+      "probe_points": [
+        [
+          33.78,
+          47.78
+        ],
+        [
+          34.22,
+          47.78
+        ],
+        [
+          34.22,
+          48.22
+        ],
+        [
+          33.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3061878204345703,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 25",
+      "ground_y": [
+        -0.34825897216796875,
+        -0.3478279113769531,
+        -0.3478279113769531,
+        -0.34825897216796875
+      ],
+      "probe_points": [
+        [
+          33.78,
+          60.78
+        ],
+        [
+          34.22,
+          60.78
+        ],
+        [
+          34.22,
+          61.22
+        ],
+        [
+          33.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5482589721679687,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 26",
+      "ground_y": [
+        -1.1061878204345703,
+        -1.1060810089111328,
+        -1.0268020629882812,
+        -1.0270156860351562
+      ],
+      "probe_points": [
+        [
+          35.78,
+          47.78
+        ],
+        [
+          36.22,
+          47.78
+        ],
+        [
+          36.22,
+          48.22
+        ],
+        [
+          35.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3061878204345703,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 27",
+      "ground_y": [
+        -0.34554290771484375,
+        -0.3444671630859375,
+        -0.3444690704345703,
+        -0.34554290771484375
+      ],
+      "probe_points": [
+        [
+          35.78,
+          60.78
+        ],
+        [
+          36.22,
+          60.78
+        ],
+        [
+          36.22,
+          61.22
+        ],
+        [
+          35.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5455429077148437,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 28",
+      "ground_y": [
+        -1.1053199768066406,
+        -1.1049976348876953,
+        -1.0256118774414062,
+        -1.026041030883789
+      ],
+      "probe_points": [
+        [
+          37.78,
+          47.78
+        ],
+        [
+          38.22,
+          47.78
+        ],
+        [
+          38.22,
+          48.22
+        ],
+        [
+          37.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.3053199768066406,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 29",
+      "ground_y": [
+        -0.3396263122558594,
+        -0.3375835418701172,
+        -0.3373680114746094,
+        -0.33940887451171875
+      ],
+      "probe_points": [
+        [
+          37.78,
+          60.78
+        ],
+        [
+          38.22,
+          60.78
+        ],
+        [
+          38.22,
+          61.22
+        ],
+        [
+          37.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5396263122558593,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 30",
+      "ground_y": [
+        -1.1034736633300781,
+        -1.1030445098876953,
+        -1.0233345031738281,
+        -1.024087905883789
+      ],
+      "probe_points": [
+        [
+          39.78,
+          47.78
+        ],
+        [
+          40.22,
+          47.78
+        ],
+        [
+          40.22,
+          48.22
+        ],
+        [
+          39.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.303473663330078,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 31",
+      "ground_y": [
+        -0.3281707763671875,
+        -0.32430267333984375,
+        -0.3238716125488281,
+        -0.3277397155761719
+      ],
+      "probe_points": [
+        [
+          39.78,
+          60.78
+        ],
+        [
+          40.22,
+          60.78
+        ],
+        [
+          40.22,
+          61.22
+        ],
+        [
+          39.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5281707763671875,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 32",
+      "ground_y": [
+        -1.100759506225586,
+        -1.0998992919921875,
+        -1.0198688507080078,
+        -1.0210494995117188
+      ],
+      "probe_points": [
+        [
+          41.78,
+          47.78
+        ],
+        [
+          42.22,
+          47.78
+        ],
+        [
+          42.22,
+          48.22
+        ],
+        [
+          41.78,
+          48.22
+        ]
+      ],
+      "bottom_y": -1.300759506225586,
+      "top_y": -0.22
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 33",
+      "ground_y": [
+        -0.30797386169433594,
+        -0.301849365234375,
+        -0.30055999755859375,
+        -0.3066825866699219
+      ],
+      "probe_points": [
+        [
+          41.78,
+          60.78
+        ],
+        [
+          42.22,
+          60.78
+        ],
+        [
+          42.22,
+          61.22
+        ],
+        [
+          41.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.5079738616943359,
+      "top_y": -0.22
+    },
+    {
+      "threshold": [
+        44.0,
+        48.0
+      ],
+      "bearing": "Existing room floor overlap and retained foundation",
+      "owners": [
+        "cottage-b"
+      ]
+    },
+    {
+      "name": "Entrance rebuild WLD-06 approach bearing 35",
+      "ground_y": [
+        -0.2751312255859375,
+        -0.26567840576171875,
+        -0.2637443542480469,
+        -0.2731971740722656
+      ],
+      "probe_points": [
+        [
+          43.78,
+          60.78
+        ],
+        [
+          44.22,
+          60.78
+        ],
+        [
+          44.22,
+          61.22
+        ],
+        [
+          43.78,
+          61.22
+        ]
+      ],
+      "bottom_y": -0.4751312255859375,
+      "top_y": -0.22
+    },
+    {
+      "threshold": [
+        52.0,
+        54.0
+      ],
+      "bearing": "Existing room floor overlap and retained foundation",
+      "owners": [
+        "cottage-b"
+      ]
+    }
+  ],
+  "deferred_beds": [],
+  "changed_routes": [
+    "L02",
+    "L03",
+    "L05",
+    "L06"
+  ],
+  "circulation_builder": "tools/build_circulation_construction.py",
+  "circulation_builder_sha256": "55486ade0ec5720b4beaf4456124a54d96c924a0e0c8f6d142056703979bf021",
+  "intermediate_stair_source": null,
+  "construction_proof": [
+    {
+      "pier": [
+        32,
+        45
+      ],
+      "terrain_y": [
+        -1.7175064086914062,
+        -1.7175064086914062,
+        -1.6301994323730469,
+        -1.6301994323730469
+      ],
+      "bottom_y": -2.0675064086914063
+    },
+    {
+      "pier": [
+        30,
+        45
+      ],
+      "terrain_y": [
+        -1.7175064086914062,
+        -1.7175064086914062,
+        -1.6301994323730469,
+        -1.6301994323730469
+      ],
+      "bottom_y": -2.0675064086914063
+    },
+    {
+      "pier": [
+        27,
+        45
+      ],
+      "terrain_y": [
+        -1.7175064086914062,
+        -1.7175064086914062,
+        -1.6301994323730469,
+        -1.6301994323730469
+      ],
+      "bottom_y": -2.0675064086914063
+    },
+    {
+      "pier": [
+        24,
+        45
+      ],
+      "terrain_y": [
+        -1.7175064086914062,
+        -1.7175064086914062,
+        -1.6301994323730469,
+        -1.6301994323730469
+      ],
+      "bottom_y": -2.0675064086914063
+    },
+    {
+      "pier": [
+        22,
+        45
+      ],
+      "terrain_y": [
+        -1.7175064086914062,
+        -1.7175064086914062,
+        -1.6301994323730469,
+        -1.6301994323730469
+      ],
+      "bottom_y": -2.0675064086914063
+    },
+    {
+      "pier": [
+        22,
+        42
+      ],
+      "terrain_y": [
+        -2.39593505859375,
+        -2.39593505859375,
+        -2.3043289184570312,
+        -2.3043289184570312
+      ],
+      "bottom_y": -2.74593505859375
+    },
+    {
+      "pier": [
+        22,
+        39
+      ],
+      "terrain_y": [
+        -3.0694808959960938,
+        -3.0694808959960938,
+        -2.9823684692382812,
+        -2.9823684692382812
+      ],
+      "bottom_y": -3.419480895996094
+    },
+    {
+      "pier": [
+        20,
+        39
+      ],
+      "terrain_y": [
+        -3.0694808959960938,
+        -3.0694808959960938,
+        -2.9823684692382812,
+        -2.9823684692382812
+      ],
+      "bottom_y": -3.419480895996094
+    },
+    {
+      "pier": [
+        17,
+        39
+      ],
+      "terrain_y": [
+        -3.2024917602539062,
+        -3.1581573486328125,
+        -3.071044921875,
+        -3.0989761352539062
+      ],
+      "bottom_y": -3.5524917602539063
+    },
+    {
+      "pier": [
+        14,
+        39
+      ],
+      "terrain_y": [
+        -3.617046356201172,
+        -3.595855712890625,
+        -3.4999542236328125,
+        -3.5211448669433594
+      ],
+      "bottom_y": -3.967046356201172
+    },
+    {
+      "pier": [
+        14,
+        36
+      ],
+      "terrain_y": [
+        -4.2307281494140625,
+        -4.237857818603516,
+        -4.158851623535156,
+        -4.165981292724609
+      ],
+      "bottom_y": -4.587857818603515
+    },
+    {
+      "pier": [
+        14,
+        33
+      ],
+      "terrain_y": [
+        -4.6241912841796875,
+        -4.645481109619141,
+        -4.606224060058594,
+        -4.584934234619141
+      ],
+      "bottom_y": -4.99548110961914
+    },
+    {
+      "pier": [
+        14,
+        30
+      ],
+      "terrain_y": [
+        -4.719306945800781,
+        -4.726047515869141,
+        -4.752021789550781,
+        -4.722629547119141
+      ],
+      "bottom_y": -5.102021789550781
+    },
+    {
+      "pier": [
+        14,
+        29
+      ],
+      "terrain_y": [
+        -4.547920227050781,
+        -4.554660797119141,
+        -4.6232147216796875,
+        -4.616477966308594
+      ],
+      "bottom_y": -4.973214721679687
+    },
+    {
+      "pier": [
+        22,
+        27
+      ],
+      "terrain_y": [
+        -4.350162506103516,
+        -4.350162506103516,
+        -4.350162506103516,
+        -4.350162506103516
+      ],
+      "bottom_y": -4.700162506103515
+    },
+    {
+      "pier": [
+        22,
+        25
+      ],
+      "terrain_y": [
+        -4.350162506103516,
+        -4.350162506103516,
+        -4.350162506103516,
+        -4.350162506103516
+      ],
+      "bottom_y": -4.700162506103515
+    },
+    {
+      "pier": [
+        22,
+        23
+      ],
+      "terrain_y": [
+        -4.350162506103516,
+        -4.350162506103516,
+        -4.350162506103516,
+        -4.350162506103516
+      ],
+      "bottom_y": -4.700162506103515
+    }
+  ],
+  "changed_flat_routes": [
+    "L07",
+    "L14",
+    "L15"
+  ],
+  "study_solid_removal": [
+    "L01 support 0",
+    "L01 support 1",
+    "L04 support 0",
+    "L04 support 1",
+    "L08 support 0",
+    "L08 support 1",
+    "L09 support 0",
+    "L09 support 1",
+    "L10 support 0",
+    "L10 support 1",
+    "L11 support 0",
+    "L12 support 0",
+    "L13 support 0",
+    "L18 support 0",
+    "L18 support 1",
+    "Arrival end bearing WLD-06 0"
+  ],
+  "correction_builder": "tools/remove_study_solids.py",
+  "correction_builder_sha256": "e824e5cdcf731922eff22afaa948f4e08d14a7304a5bbb4ce19d0bed5c60bb9d",
+  "area_construction": [
+    {
+      "area": "quay platform",
+      "footprint": [
+        [
+          20,
+          36
+        ],
+        [
+          44,
+          36
+        ],
+        [
+          44,
+          54
+        ],
+        [
+          20,
+          54
+        ]
+      ],
+      "kind": "timber",
+      "surface_y": 0,
+      "depth": 0.2,
+      "piers": [
+        {
+          "x": 20.4,
+          "z": 36.4,
+          "bottom_y": -3.9411407470703126,
+          "soil_y": [
+            -3.5911407470703125,
+            -3.5911407470703125,
+            -3.5243988037109375,
+            -3.5243988037109375
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 39.266666666666666,
+          "bottom_y": -3.354871368408203,
+          "soil_y": [
+            -3.004871368408203,
+            -3.004871368408203,
+            -2.930828094482422,
+            -2.930828094482422
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 42.13333333333333,
+          "bottom_y": -2.7085281372070313,
+          "soil_y": [
+            -2.3585281372070312,
+            -2.3585281372070312,
+            -2.2806663513183594,
+            -2.2806663513183594
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 45.0,
+          "bottom_y": -2.060960388183594,
+          "soil_y": [
+            -1.7109603881835938,
+            -1.7109565734863281,
+            -1.636749267578125,
+            -1.636749267578125
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 47.86666666666667,
+          "bottom_y": -1.4733749389648438,
+          "soil_y": [
+            -1.1233749389648438,
+            -1.1233749389648438,
+            -1.0579833984375,
+            -1.0579814910888672
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 50.733333333333334,
+          "bottom_y": -1.0194374084472657,
+          "soil_y": [
+            -0.6694355010986328,
+            -0.6694374084472656,
+            -0.6287612915039062,
+            -0.6287612915039062
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 53.599999999999994,
+          "bottom_y": -0.7546993255615234,
+          "soil_y": [
+            -0.40469932556152344,
+            -0.4046974182128906,
+            -0.3826179504394531,
+            -0.3826179504394531
+          ]
+        },
+        {
+          "x": 23.299999999999997,
+          "z": 36.4,
+          "bottom_y": -3.9411407470703126,
+          "soil_y": [
+            -3.5911407470703125,
+            -3.5911407470703125,
+            -3.524402618408203,
+            -3.5243988037109375
+          ]
+        },
+        {
+          "x": 23.299999999999997,
+          "z": 39.266666666666666,
+          "bottom_y": -3.354871368408203,
+          "soil_y": [
+            -3.004871368408203,
+            -3.004871368408203,
+            -2.930828094482422,
+            -2.930828094482422
+          ]
+        },
+        {
+          "x": 23.299999999999997,
+          "z": 42.13333333333333,
+          "bottom_y": -2.7085281372070313,
+          "soil_y": [
+            -2.3585281372070312,
+            -2.3585281372070312,
+            -2.2806663513183594,
+            -2.2806663513183594
+          ]
+        },
+        {
+          "x": 23.299999999999997,
+          "z": 45.0,
+          "bottom_y": -2.060960388183594,
+          "soil_y": [
+            -1.710958480834961,
+            -1.7109603881835938,
+            -1.636749267578125,
+            -1.636749267578125
+          ]
+        },
+        {
+          "x": 23.299999999999997,
+          "z": 47.86666666666667,
+          "bottom_y": -1.4733749389648438,
+          "soil_y": [
+            -1.1233749389648438,
+            -1.1233749389648438,
+            -1.0579814910888672,
+            -1.0579814910888672
+          ]
+        },
+        {
+          "x": 23.299999999999997,
+          "z": 50.733333333333334,
+          "bottom_y": -1.0194374084472657,
+          "soil_y": [
+            -0.6694374084472656,
+            -0.66943359375,
+            -0.6287612915039062,
+            -0.6287631988525391
+          ]
+        },
+        {
+          "x": 23.299999999999997,
+          "z": 53.599999999999994,
+          "bottom_y": -0.7546993255615234,
+          "soil_y": [
+            -0.40469932556152344,
+            -0.4046974182128906,
+            -0.3826179504394531,
+            -0.3826179504394531
+          ]
+        },
+        {
+          "x": 26.2,
+          "z": 36.4,
+          "bottom_y": -3.9411407470703126,
+          "soil_y": [
+            -3.5911407470703125,
+            -3.5911407470703125,
+            -3.524402618408203,
+            -3.524402618408203
+          ]
+        },
+        {
+          "x": 26.2,
+          "z": 39.266666666666666,
+          "bottom_y": -3.354875183105469,
+          "soil_y": [
+            -3.0048751831054688,
+            -3.0048751831054688,
+            -2.930828094482422,
+            -2.930828094482422
+          ]
+        },
+        {
+          "x": 26.2,
+          "z": 42.13333333333333,
+          "bottom_y": -2.7085281372070313,
+          "soil_y": [
+            -2.3585281372070312,
+            -2.3585281372070312,
+            -2.2806663513183594,
+            -2.2806663513183594
+          ]
+        },
+        {
+          "x": 26.2,
+          "z": 45.0,
+          "bottom_y": -2.060956573486328,
+          "soil_y": [
+            -1.7109565734863281,
+            -1.7109565734863281,
+            -1.6367473602294922,
+            -1.636749267578125
+          ]
+        },
+        {
+          "x": 26.2,
+          "z": 47.86666666666667,
+          "bottom_y": -1.4733749389648438,
+          "soil_y": [
+            -1.1233749389648438,
+            -1.1233749389648438,
+            -1.0579833984375,
+            -1.0579814910888672
+          ]
+        },
+        {
+          "x": 26.2,
+          "z": 50.733333333333334,
+          "bottom_y": -1.0194374084472657,
+          "soil_y": [
+            -0.6694374084472656,
+            -0.6694355010986328,
+            -0.6287612915039062,
+            -0.6287612915039062
+          ]
+        },
+        {
+          "x": 26.2,
+          "z": 53.599999999999994,
+          "bottom_y": -0.7546974182128906,
+          "soil_y": [
+            -0.4046974182128906,
+            -0.4046974182128906,
+            -0.3826179504394531,
+            -0.3826179504394531
+          ]
+        },
+        {
+          "x": 29.099999999999998,
+          "z": 36.4,
+          "bottom_y": -3.9411407470703126,
+          "soil_y": [
+            -3.5911407470703125,
+            -3.5911407470703125,
+            -3.5243988037109375,
+            -3.524402618408203
+          ]
+        },
+        {
+          "x": 29.099999999999998,
+          "z": 39.266666666666666,
+          "bottom_y": -3.354871368408203,
+          "soil_y": [
+            -3.004871368408203,
+            -3.004871368408203,
+            -2.930828094482422,
+            -2.930828094482422
+          ]
+        },
+        {
+          "x": 29.099999999999998,
+          "z": 42.13333333333333,
+          "bottom_y": -2.7085281372070313,
+          "soil_y": [
+            -2.3585281372070312,
+            -2.3585281372070312,
+            -2.2806663513183594,
+            -2.2806663513183594
+          ]
+        },
+        {
+          "x": 29.099999999999998,
+          "z": 45.0,
+          "bottom_y": -2.060958480834961,
+          "soil_y": [
+            -1.710958480834961,
+            -1.7109565734863281,
+            -1.636749267578125,
+            -1.636749267578125
+          ]
+        },
+        {
+          "x": 29.099999999999998,
+          "z": 47.86666666666667,
+          "bottom_y": -1.4733749389648438,
+          "soil_y": [
+            -1.1233749389648438,
+            -1.123373031616211,
+            -1.0579795837402344,
+            -1.0579833984375
+          ]
+        },
+        {
+          "x": 29.099999999999998,
+          "z": 50.733333333333334,
+          "bottom_y": -1.0194374084472657,
+          "soil_y": [
+            -0.6694374084472656,
+            -0.6694355010986328,
+            -0.6287612915039062,
+            -0.6287612915039062
+          ]
+        },
+        {
+          "x": 29.099999999999998,
+          "z": 53.599999999999994,
+          "bottom_y": -0.754245376586914,
+          "soil_y": [
+            -0.40424537658691406,
+            -0.4040794372558594,
+            -0.38199806213378906,
+            -0.38216400146484375
+          ]
+        },
+        {
+          "x": 32.0,
+          "z": 36.4,
+          "bottom_y": -3.9411407470703126,
+          "soil_y": [
+            -3.5911407470703125,
+            -3.5911407470703125,
+            -3.5243988037109375,
+            -3.5243988037109375
+          ]
+        },
+        {
+          "x": 32.0,
+          "z": 39.266666666666666,
+          "bottom_y": -3.354871368408203,
+          "soil_y": [
+            -3.004871368408203,
+            -3.004871368408203,
+            -2.930828094482422,
+            -2.930828094482422
+          ]
+        },
+        {
+          "x": 32.0,
+          "z": 42.13333333333333,
+          "bottom_y": -2.7085281372070313,
+          "soil_y": [
+            -2.3585281372070312,
+            -2.3585281372070312,
+            -2.2806663513183594,
+            -2.2806663513183594
+          ]
+        },
+        {
+          "x": 32.0,
+          "z": 45.0,
+          "bottom_y": -2.060958480834961,
+          "soil_y": [
+            -1.7109565734863281,
+            -1.710958480834961,
+            -1.636749267578125,
+            -1.636749267578125
+          ]
+        },
+        {
+          "x": 32.0,
+          "z": 47.86666666666667,
+          "bottom_y": -1.4733749389648438,
+          "soil_y": [
+            -1.1233749389648438,
+            -1.123291015625,
+            -1.0579185485839844,
+            -1.0579814910888672
+          ]
+        },
+        {
+          "x": 32.0,
+          "z": 50.733333333333334,
+          "bottom_y": -1.019435501098633,
+          "soil_y": [
+            -0.6694355010986328,
+            -0.6693534851074219,
+            -0.6286773681640625,
+            -0.6287612915039062
+          ]
+        },
+        {
+          "x": 32.0,
+          "z": 53.599999999999994,
+          "bottom_y": -0.7539993286132812,
+          "soil_y": [
+            -0.40399932861328125,
+            -0.40399932861328125,
+            -0.38175201416015625,
+            -0.38175392150878906
+          ]
+        },
+        {
+          "x": 34.9,
+          "z": 36.4,
+          "bottom_y": -3.9411407470703126,
+          "soil_y": [
+            -3.5911407470703125,
+            -3.5911407470703125,
+            -3.524402618408203,
+            -3.524402618408203
+          ]
+        },
+        {
+          "x": 34.9,
+          "z": 39.266666666666666,
+          "bottom_y": -3.354871368408203,
+          "soil_y": [
+            -3.004871368408203,
+            -3.004871368408203,
+            -2.930828094482422,
+            -2.930828094482422
+          ]
+        },
+        {
+          "x": 34.9,
+          "z": 42.13333333333333,
+          "bottom_y": -2.7085281372070313,
+          "soil_y": [
+            -2.3585281372070312,
+            -2.3585281372070312,
+            -2.2806663513183594,
+            -2.2806663513183594
+          ]
+        },
+        {
+          "x": 34.9,
+          "z": 45.0,
+          "bottom_y": -2.060958480834961,
+          "soil_y": [
+            -1.7109565734863281,
+            -1.710958480834961,
+            -1.636749267578125,
+            -1.636749267578125
+          ]
+        },
+        {
+          "x": 34.9,
+          "z": 47.86666666666667,
+          "bottom_y": -1.4725471496582032,
+          "soil_y": [
+            -1.1225452423095703,
+            -1.1225471496582031,
+            -1.0570068359375,
+            -1.0570068359375
+          ]
+        },
+        {
+          "x": 34.9,
+          "z": 50.733333333333334,
+          "bottom_y": -1.018804168701172,
+          "soil_y": [
+            -0.6688041687011719,
+            -0.6686382293701172,
+            -0.6277980804443359,
+            -0.6279640197753906
+          ]
+        },
+        {
+          "x": 34.9,
+          "z": 53.599999999999994,
+          "bottom_y": -0.7530094146728515,
+          "soil_y": [
+            -0.40300941467285156,
+            -0.4026775360107422,
+            -0.3805961608886719,
+            -0.38092994689941406
+          ]
+        },
+        {
+          "x": 37.8,
+          "z": 36.4,
+          "bottom_y": -3.9411407470703126,
+          "soil_y": [
+            -3.5911407470703125,
+            -3.5911407470703125,
+            -3.5243988037109375,
+            -3.5243988037109375
+          ]
+        },
+        {
+          "x": 37.8,
+          "z": 39.266666666666666,
+          "bottom_y": -3.354875183105469,
+          "soil_y": [
+            -3.004871368408203,
+            -3.0048751831054688,
+            -2.930828094482422,
+            -2.930828094482422
+          ]
+        },
+        {
+          "x": 37.8,
+          "z": 42.13333333333333,
+          "bottom_y": -2.7085281372070313,
+          "soil_y": [
+            -2.3585281372070312,
+            -2.3585281372070312,
+            -2.280517578125,
+            -2.280517578125
+          ]
+        },
+        {
+          "x": 37.8,
+          "z": 45.0,
+          "bottom_y": -2.060163116455078,
+          "soil_y": [
+            -1.7101631164550781,
+            -1.7099952697753906,
+            -1.6357879638671875,
+            -1.6359539031982422
+          ]
+        },
+        {
+          "x": 37.8,
+          "z": 47.86666666666667,
+          "bottom_y": -1.4717498779296876,
+          "soil_y": [
+            -1.1217498779296875,
+            -1.1215839385986328,
+            -1.0560264587402344,
+            -1.056192398071289
+          ]
+        },
+        {
+          "x": 37.8,
+          "z": 50.733333333333334,
+          "bottom_y": -1.0165916442871095,
+          "soil_y": [
+            -0.6665916442871094,
+            -0.666259765625,
+            -0.6254196166992188,
+            -0.6257514953613281
+          ]
+        },
+        {
+          "x": 37.8,
+          "z": 53.599999999999994,
+          "bottom_y": -0.7497573852539062,
+          "soil_y": [
+            -0.39975738525390625,
+            -0.3994255065917969,
+            -0.3770122528076172,
+            -0.377410888671875
+          ]
+        },
+        {
+          "x": 40.7,
+          "z": 36.4,
+          "bottom_y": -3.9411407470703126,
+          "soil_y": [
+            -3.5911407470703125,
+            -3.5911407470703125,
+            -3.5243988037109375,
+            -3.524402618408203
+          ]
+        },
+        {
+          "x": 40.7,
+          "z": 39.266666666666666,
+          "bottom_y": -3.3543373107910157,
+          "soil_y": [
+            -3.0043373107910156,
+            -3.0043373107910156,
+            -2.9301300048828125,
+            -2.930126190185547
+          ]
+        },
+        {
+          "x": 40.7,
+          "z": 42.13333333333333,
+          "bottom_y": -2.707555389404297,
+          "soil_y": [
+            -2.357555389404297,
+            -2.3575515747070312,
+            -2.279541015625,
+            -2.279541015625
+          ]
+        },
+        {
+          "x": 40.7,
+          "z": 45.0,
+          "bottom_y": -2.059056854248047,
+          "soil_y": [
+            -1.7090568542480469,
+            -1.7087440490722656,
+            -1.6343498229980469,
+            -1.6346817016601562
+          ]
+        },
+        {
+          "x": 40.7,
+          "z": 47.86666666666667,
+          "bottom_y": -1.468988037109375,
+          "soil_y": [
+            -1.118988037109375,
+            -1.1184883117675781,
+            -1.0527305603027344,
+            -1.0532283782958984
+          ]
+        },
+        {
+          "x": 40.7,
+          "z": 50.733333333333334,
+          "bottom_y": -1.0109554290771485,
+          "soil_y": [
+            -0.6609554290771484,
+            -0.6600761413574219,
+            -0.6186199188232422,
+            -0.6199512481689453
+          ]
+        },
+        {
+          "x": 40.7,
+          "z": 53.599999999999994,
+          "bottom_y": -0.7412467956542969,
+          "soil_y": [
+            -0.3912467956542969,
+            -0.3894176483154297,
+            -0.36667633056640625,
+            -0.3685016632080078
+          ]
+        },
+        {
+          "x": 43.599999999999994,
+          "z": 36.4,
+          "bottom_y": -3.9411407470703126,
+          "soil_y": [
+            -3.5911407470703125,
+            -3.5911407470703125,
+            -3.5243988037109375,
+            -3.5243988037109375
+          ]
+        },
+        {
+          "x": 43.599999999999994,
+          "z": 39.266666666666666,
+          "bottom_y": -3.3543373107910157,
+          "soil_y": [
+            -3.0043373107910156,
+            -3.0043373107910156,
+            -2.930126190185547,
+            -2.9301300048828125
+          ]
+        },
+        {
+          "x": 43.599999999999994,
+          "z": 42.13333333333333,
+          "bottom_y": -2.7068572998046876,
+          "soil_y": [
+            -2.3568572998046875,
+            -2.356689453125,
+            -2.2785301208496094,
+            -2.2786941528320312
+          ]
+        },
+        {
+          "x": 43.599999999999994,
+          "z": 45.0,
+          "bottom_y": -2.0563941955566407,
+          "soil_y": [
+            -1.7063941955566406,
+            -1.7060604095458984,
+            -1.6313533782958984,
+            -1.6316852569580078
+          ]
+        },
+        {
+          "x": 43.599999999999994,
+          "z": 47.86666666666667,
+          "bottom_y": -1.46279296875,
+          "soil_y": [
+            -1.11279296875,
+            -1.1119060516357422,
+            -1.0458526611328125,
+            -1.0468482971191406
+          ]
+        },
+        {
+          "x": 43.599999999999994,
+          "z": 50.733333333333334,
+          "bottom_y": -1.0006328582763673,
+          "soil_y": [
+            -0.6506328582763672,
+            -0.6493034362792969,
+            -0.6071357727050781,
+            -0.6084651947021484
+          ]
+        },
+        {
+          "x": 43.599999999999994,
+          "z": 53.599999999999994,
+          "bottom_y": -0.722314453125,
+          "soil_y": [
+            -0.372314453125,
+            -0.37032318115234375,
+            -0.3462505340576172,
+            -0.3490734100341797
+          ]
+        }
+      ],
+      "omitted_pier_positions_in_saved_soil_voids": [],
+      "framing_grid_x": [
+        20.4,
+        23.299999999999997,
+        26.2,
+        29.099999999999998,
+        32.0,
+        34.9,
+        37.8,
+        40.7,
+        43.599999999999994
+      ],
+      "framing_grid_z": [
+        36.4,
+        39.266666666666666,
+        42.13333333333333,
+        45.0,
+        47.86666666666667,
+        50.733333333333334,
+        53.599999999999994
+      ],
+      "only_actual_stair_shafts_cut": true
+    },
+    {
+      "area": "west jetty",
+      "footprint": [
+        [
+          20,
+          10
+        ],
+        [
+          24,
+          10
+        ],
+        [
+          24,
+          36
+        ],
+        [
+          20,
+          36
+        ]
+      ],
+      "kind": "timber",
+      "surface_y": 0,
+      "depth": 0.2,
+      "piers": [
+        {
+          "x": 20.4,
+          "z": 10.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 13.2,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 16.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 18.799999999999997,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 21.6,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 24.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 27.199999999999996,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 35.6,
+          "bottom_y": -4.07952651977539,
+          "soil_y": [
+            -3.7295265197753906,
+            -3.729522705078125,
+            -3.673908233642578,
+            -3.673908233642578
+          ]
+        },
+        {
+          "x": 22.0,
+          "z": 10.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 22.0,
+          "z": 13.2,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 22.0,
+          "z": 16.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 22.0,
+          "z": 18.799999999999997,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 22.0,
+          "z": 21.6,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 22.0,
+          "z": 24.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 22.0,
+          "z": 27.199999999999996,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 22.0,
+          "z": 35.6,
+          "bottom_y": -4.079522705078125,
+          "soil_y": [
+            -3.729522705078125,
+            -3.729522705078125,
+            -3.6739120483398438,
+            -3.673908233642578
+          ]
+        },
+        {
+          "x": 23.599999999999998,
+          "z": 10.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 23.599999999999998,
+          "z": 13.2,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 23.599999999999998,
+          "z": 16.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 23.599999999999998,
+          "z": 18.799999999999997,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 23.599999999999998,
+          "z": 21.6,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 23.599999999999998,
+          "z": 24.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 23.599999999999998,
+          "z": 27.199999999999996,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 23.599999999999998,
+          "z": 35.6,
+          "bottom_y": -4.079522705078125,
+          "soil_y": [
+            -3.729522705078125,
+            -3.729522705078125,
+            -3.673908233642578,
+            -3.673908233642578
+          ]
+        }
+      ],
+      "omitted_pier_positions_in_saved_soil_voids": [
+        [
+          20.4,
+          30.0
+        ],
+        [
+          22.0,
+          30.0
+        ],
+        [
+          23.599999999999998,
+          30.0
+        ]
+      ],
+      "framing_grid_x": [
+        20.4,
+        22.0,
+        23.599999999999998
+      ],
+      "framing_grid_z": [
+        10.4,
+        13.2,
+        16.0,
+        18.799999999999997,
+        21.6,
+        24.4,
+        27.199999999999996,
+        30.0,
+        32.8,
+        35.6
+      ],
+      "only_actual_stair_shafts_cut": true
+    },
+    {
+      "area": "east jetty and stair-head platform",
+      "footprint": [
+        [
+          40,
+          10
+        ],
+        [
+          44,
+          10
+        ],
+        [
+          44,
+          26
+        ],
+        [
+          40,
+          26
+        ]
+      ],
+      "kind": "timber",
+      "surface_y": 0,
+      "depth": 0.2,
+      "piers": [
+        {
+          "x": 40.4,
+          "z": 10.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 40.4,
+          "z": 12.933333333333334,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 40.4,
+          "z": 15.466666666666667,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 40.4,
+          "z": 18.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 40.4,
+          "z": 20.53333333333333,
+          "bottom_y": -4.700166320800781,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350166320800781,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 40.4,
+          "z": 23.066666666666666,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 40.4,
+          "z": 25.599999999999998,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 42.0,
+          "z": 10.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 42.0,
+          "z": 12.933333333333334,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 42.0,
+          "z": 15.466666666666667,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 42.0,
+          "z": 18.0,
+          "bottom_y": -4.700166320800781,
+          "soil_y": [
+            -4.350166320800781,
+            -4.350162506103516,
+            -4.350166320800781,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 42.0,
+          "z": 20.53333333333333,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 42.0,
+          "z": 23.066666666666666,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 42.0,
+          "z": 25.599999999999998,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 43.6,
+          "z": 10.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 43.6,
+          "z": 12.933333333333334,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 43.6,
+          "z": 15.466666666666667,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 43.6,
+          "z": 18.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 43.6,
+          "z": 20.53333333333333,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 43.6,
+          "z": 23.066666666666666,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 43.6,
+          "z": 25.599999999999998,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        }
+      ],
+      "omitted_pier_positions_in_saved_soil_voids": [],
+      "framing_grid_x": [
+        40.4,
+        42.0,
+        43.6
+      ],
+      "framing_grid_z": [
+        10.4,
+        12.933333333333334,
+        15.466666666666667,
+        18.0,
+        20.53333333333333,
+        23.066666666666666,
+        25.599999999999998
+      ],
+      "only_actual_stair_shafts_cut": true
+    },
+    {
+      "area": "east pier-head landing",
+      "footprint": [
+        [
+          40,
+          26
+        ],
+        [
+          50,
+          26
+        ],
+        [
+          50,
+          39
+        ],
+        [
+          40,
+          39
+        ]
+      ],
+      "kind": "timber",
+      "surface_y": 0,
+      "depth": 0.2,
+      "piers": [
+        {
+          "x": 40.4,
+          "z": 26.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 40.4,
+          "z": 36.16,
+          "bottom_y": -3.9879241943359376,
+          "soil_y": [
+            -3.6379241943359375,
+            -3.6379241943359375,
+            -3.5715103149414062,
+            -3.5715103149414062
+          ]
+        },
+        {
+          "x": 40.4,
+          "z": 38.599999999999994,
+          "bottom_y": -3.4998489379882813,
+          "soil_y": [
+            -3.1498489379882812,
+            -3.1498489379882812,
+            -3.0756378173828125,
+            -3.0756378173828125
+          ]
+        },
+        {
+          "x": 42.699999999999996,
+          "z": 26.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 42.699999999999996,
+          "z": 36.16,
+          "bottom_y": -3.9879241943359376,
+          "soil_y": [
+            -3.6379241943359375,
+            -3.6379241943359375,
+            -3.5715103149414062,
+            -3.5715103149414062
+          ]
+        },
+        {
+          "x": 42.699999999999996,
+          "z": 38.599999999999994,
+          "bottom_y": -3.4998489379882813,
+          "soil_y": [
+            -3.1498489379882812,
+            -3.1498489379882812,
+            -3.0756378173828125,
+            -3.0756378173828125
+          ]
+        },
+        {
+          "x": 45.0,
+          "z": 26.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 45.0,
+          "z": 36.16,
+          "bottom_y": -3.9879241943359376,
+          "soil_y": [
+            -3.6379241943359375,
+            -3.6379241943359375,
+            -3.57135009765625,
+            -3.57135009765625
+          ]
+        },
+        {
+          "x": 45.0,
+          "z": 38.599999999999994,
+          "bottom_y": -3.499444580078125,
+          "soil_y": [
+            -3.149444580078125,
+            -3.1492767333984375,
+            -3.0750656127929688,
+            -3.0752334594726562
+          ]
+        },
+        {
+          "x": 47.3,
+          "z": 26.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 47.3,
+          "z": 28.84,
+          "bottom_y": -4.694276428222656,
+          "soil_y": [
+            -4.344272613525391,
+            -4.344276428222656,
+            -4.341285705566406,
+            -4.341285705566406
+          ]
+        },
+        {
+          "x": 47.3,
+          "z": 31.279999999999998,
+          "bottom_y": -4.610498046875,
+          "soil_y": [
+            -4.260498046875,
+            -4.260498046875,
+            -4.2384185791015625,
+            -4.2384185791015625
+          ]
+        },
+        {
+          "x": 47.3,
+          "z": 33.72,
+          "bottom_y": -4.366517639160156,
+          "soil_y": [
+            -4.016517639160156,
+            -4.016513824462891,
+            -3.975677490234375,
+            -3.9756736755371094
+          ]
+        },
+        {
+          "x": 47.3,
+          "z": 36.16,
+          "bottom_y": -3.9873672485351563,
+          "soil_y": [
+            -3.6373672485351562,
+            -3.6371994018554688,
+            -3.5707931518554688,
+            -3.5709609985351562
+          ]
+        },
+        {
+          "x": 47.3,
+          "z": 38.599999999999994,
+          "bottom_y": -3.498662567138672,
+          "soil_y": [
+            -3.148662567138672,
+            -3.1486587524414062,
+            -3.0742835998535156,
+            -3.0742835998535156
+          ]
+        },
+        {
+          "x": 49.599999999999994,
+          "z": 26.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 49.599999999999994,
+          "z": 28.84,
+          "bottom_y": -4.69427261352539,
+          "soil_y": [
+            -4.344272613525391,
+            -4.344272613525391,
+            -4.341285705566406,
+            -4.341285705566406
+          ]
+        },
+        {
+          "x": 49.599999999999994,
+          "z": 31.279999999999998,
+          "bottom_y": -4.610498046875,
+          "soil_y": [
+            -4.260498046875,
+            -4.260498046875,
+            -4.2384185791015625,
+            -4.2384185791015625
+          ]
+        },
+        {
+          "x": 49.599999999999994,
+          "z": 33.72,
+          "bottom_y": -4.366517639160156,
+          "soil_y": [
+            -4.016517639160156,
+            -4.016517639160156,
+            -3.975677490234375,
+            -3.975677490234375
+          ]
+        },
+        {
+          "x": 49.599999999999994,
+          "z": 36.16,
+          "bottom_y": -3.9869476318359376,
+          "soil_y": [
+            -3.6369476318359375,
+            -3.6369476318359375,
+            -3.57037353515625,
+            -3.57037353515625
+          ]
+        },
+        {
+          "x": 49.599999999999994,
+          "z": 38.599999999999994,
+          "bottom_y": -3.497960662841797,
+          "soil_y": [
+            -3.147960662841797,
+            -3.147796630859375,
+            -3.0734214782714844,
+            -3.0735855102539062
+          ]
+        }
+      ],
+      "omitted_pier_positions_in_saved_soil_voids": [
+        [
+          40.4,
+          28.84
+        ],
+        [
+          40.4,
+          31.279999999999998
+        ],
+        [
+          42.699999999999996,
+          28.84
+        ],
+        [
+          42.699999999999996,
+          31.279999999999998
+        ],
+        [
+          45.0,
+          28.84
+        ],
+        [
+          45.0,
+          31.279999999999998
+        ]
+      ],
+      "framing_grid_x": [
+        40.4,
+        42.699999999999996,
+        45.0,
+        47.3,
+        49.599999999999994
+      ],
+      "framing_grid_z": [
+        26.4,
+        28.84,
+        31.279999999999998,
+        33.72,
+        36.16,
+        38.599999999999994
+      ],
+      "only_actual_stair_shafts_cut": true
+    },
+    {
+      "area": "cross dock",
+      "footprint": [
+        [
+          20,
+          6
+        ],
+        [
+          44,
+          6
+        ],
+        [
+          44,
+          10
+        ],
+        [
+          20,
+          10
+        ]
+      ],
+      "kind": "timber",
+      "surface_y": 0,
+      "depth": 0.2,
+      "piers": [
+        {
+          "x": 20.4,
+          "z": 6.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 8.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 20.4,
+          "z": 9.600000000000001,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 23.299999999999997,
+          "z": 6.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 23.299999999999997,
+          "z": 8.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 23.299999999999997,
+          "z": 9.600000000000001,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 26.2,
+          "z": 6.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 26.2,
+          "z": 8.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 26.2,
+          "z": 9.600000000000001,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 29.099999999999998,
+          "z": 6.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 29.099999999999998,
+          "z": 8.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 29.099999999999998,
+          "z": 9.600000000000001,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 32.0,
+          "z": 6.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 32.0,
+          "z": 8.0,
+          "bottom_y": -4.700166320800781,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350166320800781,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 32.0,
+          "z": 9.600000000000001,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 34.9,
+          "z": 6.4,
+          "bottom_y": -4.700166320800781,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350166320800781
+          ]
+        },
+        {
+          "x": 34.9,
+          "z": 8.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 34.9,
+          "z": 9.600000000000001,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 37.8,
+          "z": 6.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 37.8,
+          "z": 8.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 37.8,
+          "z": 9.600000000000001,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 40.7,
+          "z": 6.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 40.7,
+          "z": 8.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 40.7,
+          "z": 9.600000000000001,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 43.599999999999994,
+          "z": 6.4,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 43.599999999999994,
+          "z": 8.0,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        },
+        {
+          "x": 43.599999999999994,
+          "z": 9.600000000000001,
+          "bottom_y": -4.700162506103515,
+          "soil_y": [
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516,
+            -4.350162506103516
+          ]
+        }
+      ],
+      "omitted_pier_positions_in_saved_soil_voids": [],
+      "framing_grid_x": [
+        20.4,
+        23.299999999999997,
+        26.2,
+        29.099999999999998,
+        32.0,
+        34.9,
+        37.8,
+        40.7,
+        43.599999999999994
+      ],
+      "framing_grid_z": [
+        6.4,
+        8.0,
+        9.600000000000001
+      ],
+      "only_actual_stair_shafts_cut": true
+    }
+  ],
+  "area_builder": "tools/build_site_courts_and_docks.py",
+  "area_builder_sha256": "b14887e9823d4f4634a40bd55e2a6eeee285d158ddfae51e9623164565421376",
+  "saved_world": "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world",
+  "saved_world_files_sha256": {
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/adaptive-topology.bin": "25654aa2897682852b024fc86c60d9e4a3156e1703516d34d8f07ab13000e74a",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/authored-cuts.tsv": "190e206e9ed5c9aee6256efa7b15f49c06a8e4cb70ee7330c06cbfc9f4fe9410",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/earthworks-verification.json": "788b81cf18b5b4bd46ee5dd6e1f95fbae7cbd9e8d1657e13c7f855844e73d2ab",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/source-provenance.json": "361817406d20d6fad8f95ee2cafb6f98aeb7a16566a83887713562f5dd924ce4",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/terrain-physics.hcs2": "ff03afc72f859abb1c42368776cdb9a4829c40fcd6db447a3d102544e4e14cb6",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/tile_0_0.png": "409a17cdef3d263a11251331b70b329b54f22118f571b69eaca1306c3f4ed016",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/verification.json": "788b81cf18b5b4bd46ee5dd6e1f95fbae7cbd9e8d1657e13c7f855844e73d2ab",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/world.properties": "6b147c274f7f0fad8e5e20ad2f49d2e4743824c85318ad89b65616174f691654",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/previous-authoring/source-provenance.json": "85cdc766d12cd8e1f8be99b1915d1a252333afa0a97ea58a31871e1077fa03c2",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/previous-authoring/verification.json": "c12f3c114bf7146940bbe733fd3e5270df1cd868fa1a2e6fb12cd177baf10b4e",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/scene-package/.scene.bin.editor.previous": "c59636b25bbb041b1509a168aa146a34b9891f006077c064266472a25c6b4a5e",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/scene-package/scene.bin": "4723450485d4291bff6d00f41c0fe47aea0893dd4157c0754148330f994c503e",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/scene-package/meshes/site.obj": "02afc2ea8b5f8dddf32f61a4613e394b97407d70a3c538245d2ce939b59ed8bf",
+    "development/levels/rebuild/site-earthworks-pass/worlds/wld-06/terrain-world/terrain-layers/tile_0_0.bin": "4f6d2e8ac69cb23cbf40caac0c0b87ee6a2473eccaafaef5bd4d962f9fdd3a13"
+  },
+  "earthworks": [
+    {
+      "name": "Harbour arrival clearing",
+      "material": "GRAVEL",
+      "feather": 5.0,
+      "profile": "arrival",
+      "polygon": [
+        [
+          7.0,
+          54.0
+        ],
+        [
+          57.0,
+          54.0
+        ],
+        [
+          57.0,
+          60.0
+        ],
+        [
+          44.0,
+          66.0
+        ],
+        [
+          44.0,
+          69.0
+        ],
+        [
+          43.0,
+          79.0
+        ],
+        [
+          38.0,
+          84.0
+        ],
+        [
+          26.0,
+          84.0
+        ],
+        [
+          20.0,
+          78.0
+        ],
+        [
+          20.0,
+          69.0
+        ],
+        [
+          7.0,
+          60.0
+        ]
+      ]
+    }
+  ],
+  "earthworks_verification": {
+    "site": "WLD-06",
+    "changed_vertices": 395,
+    "raised_vertices": 378,
+    "lowered_vertices": 17,
+    "max_change_m": 0.967299938,
+    "source_height_sha256": "409a17cdef3d263a11251331b70b329b54f22118f571b69eaca1306c3f4ed016",
+    "saved_topology_sha256": "25654aa2897682852b024fc86c60d9e4a3156e1703516d34d8f07ab13000e74a",
+    "saved_cuts_sha256": "190e206e9ed5c9aee6256efa7b15f49c06a8e4cb70ee7330c06cbfc9f4fe9410",
+    "hole_controls": 1320,
+    "disk_reopen_verified": true,
+    "physics_sha256": "ff03afc72f859abb1c42368776cdb9a4829c40fcd6db447a3d102544e4e14cb6",
+    "status": "GEOGRAPHIC_SAVED_EARTHWORKS_RUNTIME_OPEN"
+  },
+  "source_terrain": "development/levels/rebuild/terrain-overall-pass/worlds/wld-06/terrain-world",
+  "removed_redundant_cottage_walks": [
+    "Wharf retained walk outside reconstructed dock floors Entrance rebuild WLD-06 continuous approach pavement region0 region0"
+  ],
+  "source_terrain_physics_sha256": "64708a2454ba28e70f47ac1b419ddde02b508d894e73954a6b9887c7cfa3f3f8",
+  "terrain_writer": "tools/java/RebuildSiteEarthworks.java",
+  "terrain_writer_sha256": "8e71ef9d0f62ea7ddaa0b268227a8cfe1472eb1fa1bef6e8eedbdfe740254d4f",
+  "terrain_composer": "tools/compose_site_earthworks.py",
+  "terrain_composer_sha256": "1688d6e16804e6c6e3b7be49fc3efcc0cc2c530964b05ee58d9005ded4639f3b",
+  "stair_cell_builder": "tools/rebuild_wharf_stair_cells.py",
+  "stair_cell_builder_sha256": "b86ff059c5ee288693669d253f10e7fb4f228f11d537177d6b687026f89c9086",
+  "removed_failed_stair_parts": [
+    "Authored stair end WLD-06 L16 0 high region0",
+    "Authored stair end WLD-06 L16 0 high region1",
+    "Authored stair end WLD-06 L16 0 high region2",
+    "Authored stair end WLD-06 L16 0 high region3",
+    "Authored stair end WLD-06 L17 0 high region0",
+    "Authored stair end WLD-06 L17 0 high region1",
+    "Bay landing WLD-06 L16 1 region0",
+    "Bay landing WLD-06 L16 1 region1",
+    "Bay landing WLD-06 L16 1 region2",
+    "Bay landing WLD-06 L16 1 region3",
+    "Bay landing WLD-06 L17 3 region0",
+    "Bay landing WLD-06 L17 3 region1",
+    "Bayed shell Floor undercroft",
+    "Closed flared opening Re-seated Ceiling cap undercroft.001 0 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.001 1 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.001 2 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.001 5 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.001 6 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.005 0 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.005 10 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.005 11 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.005 2 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.005 3 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.005 5 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.005 6 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.005 7 region0",
+    "Closed flared opening Re-seated Ceiling cap undercroft.005 8 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 0 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 1 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 10 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 11 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 12 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 2 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 3 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 4 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 5 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 6 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region0 9 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region1 0 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region1 3 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region1 4 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region1 6 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region1 7 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region1 8 region0",
+    "Closed flared opening Re-seated Restored bay WLD-06 undercroft ceiling-cap region1 9 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region0 0 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region0 1 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region1 0 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region1 1 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region1 10 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region1 11 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region1 2 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region1 3 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region1 4 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region1 7 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region1 8 region0",
+    "Closed flared opening Re-seated Restored ceiling-cap undercroft 0 region1 9 region0",
+    "End-flared guard WLD-06 L16 0 -1 1",
+    "End-flared guard WLD-06 L16 0 -1 2",
+    "End-flared guard WLD-06 L16 0 1 1",
+    "End-flared guard WLD-06 L16 0 1 2",
+    "End-flared guard WLD-06 L17 2 -1 1",
+    "End-flared guard WLD-06 L17 2 -1 2",
+    "End-flared guard WLD-06 L17 2 1 1",
+    "End-flared guard WLD-06 L17 2 1 2",
+    "Flared stringer WLD-06 L16 -1 0",
+    "Flared stringer WLD-06 L16 -1 1.6",
+    "Flared stringer WLD-06 L16 -1 6.4",
+    "Flared stringer WLD-06 L16 1 0",
+    "Flared stringer WLD-06 L16 1 1.6",
+    "Flared stringer WLD-06 L16 1 6.4",
+    "Flared stringer WLD-06 L17 -1 0",
+    "Flared stringer WLD-06 L17 -1 1.6",
+    "Flared stringer WLD-06 L17 -1 6.4",
+    "Flared stringer WLD-06 L17 1 0",
+    "Flared stringer WLD-06 L17 1 1.6",
+    "Flared stringer WLD-06 L17 1 6.4",
+    "Flared tread WLD-06 L16 -1 0 region0",
+    "Flared tread WLD-06 L16 -1 1 region0",
+    "Flared tread WLD-06 L16 -1 10 region0",
+    "Flared tread WLD-06 L16 -1 11 region0",
+    "Flared tread WLD-06 L16 -1 12 region0",
+    "Flared tread WLD-06 L16 -1 13 region0",
+    "Flared tread WLD-06 L16 -1 14 region0",
+    "Flared tread WLD-06 L16 -1 15 region0",
+    "Flared tread WLD-06 L16 -1 2 region0",
+    "Flared tread WLD-06 L16 -1 3 region0",
+    "Flared tread WLD-06 L16 -1 4 region0",
+    "Flared tread WLD-06 L16 -1 5 region0",
+    "Flared tread WLD-06 L16 -1 6 region0",
+    "Flared tread WLD-06 L16 -1 7 region0",
+    "Flared tread WLD-06 L16 -1 8 region0",
+    "Flared tread WLD-06 L16 -1 9 region0",
+    "Flared tread WLD-06 L16 1 16 region0",
+    "Flared tread WLD-06 L16 1 17 region0",
+    "Flared tread WLD-06 L16 1 18 region0",
+    "Flared tread WLD-06 L16 1 19 region0",
+    "Flared tread WLD-06 L16 1 20 region0",
+    "Flared tread WLD-06 L16 1 21 region0",
+    "Flared tread WLD-06 L16 1 22 region0",
+    "Flared tread WLD-06 L16 1 23 region0",
+    "Flared tread WLD-06 L16 1 24 region0",
+    "Flared tread WLD-06 L16 1 25 region0",
+    "Flared tread WLD-06 L16 1 26 region0",
+    "Flared tread WLD-06 L16 1 27 region0",
+    "Flared tread WLD-06 L16 1 28 region0",
+    "Flared tread WLD-06 L16 1 29 region0",
+    "Flared tread WLD-06 L16 1 30 region0",
+    "Flared tread WLD-06 L16 1 31 region0",
+    "Flared tread WLD-06 L17 -1 32 region0",
+    "Flared tread WLD-06 L17 -1 33 region0",
+    "Flared tread WLD-06 L17 -1 34 region0",
+    "Flared tread WLD-06 L17 -1 35 region0",
+    "Flared tread WLD-06 L17 -1 36 region0",
+    "Flared tread WLD-06 L17 -1 37 region0",
+    "Flared tread WLD-06 L17 -1 38 region0",
+    "Flared tread WLD-06 L17 -1 39 region0",
+    "Flared tread WLD-06 L17 -1 40 region0",
+    "Flared tread WLD-06 L17 -1 41 region0",
+    "Flared tread WLD-06 L17 -1 42 region0",
+    "Flared tread WLD-06 L17 -1 43 region0",
+    "Flared tread WLD-06 L17 -1 44 region0",
+    "Flared tread WLD-06 L17 -1 45 region0",
+    "Flared tread WLD-06 L17 -1 46 region0",
+    "Flared tread WLD-06 L17 -1 47 region0",
+    "Flared tread WLD-06 L17 1 48 region0",
+    "Flared tread WLD-06 L17 1 49 region0",
+    "Flared tread WLD-06 L17 1 50 region0",
+    "Flared tread WLD-06 L17 1 51 region0",
+    "Flared tread WLD-06 L17 1 52 region0",
+    "Flared tread WLD-06 L17 1 53 region0",
+    "Flared tread WLD-06 L17 1 54 region0",
+    "Flared tread WLD-06 L17 1 55 region0",
+    "Flared tread WLD-06 L17 1 56 region0",
+    "Flared tread WLD-06 L17 1 57 region0",
+    "Flared tread WLD-06 L17 1 58 region0",
+    "Flared tread WLD-06 L17 1 59 region0",
+    "Flared tread WLD-06 L17 1 60 region0",
+    "Flared tread WLD-06 L17 1 61 region0",
+    "Flared tread WLD-06 L17 1 62 region0",
+    "Flared tread WLD-06 L17 1 63 region0",
+    "Opened flared wall Re-seated Bayed shell Opened stair shell Wall undercroft E",
+    "Opened flared wall Re-seated Bayed shell Opened stair shell Wall undercroft W",
+    "Opened flared wall Re-seated Wall undercroft S",
+    "Orthogonal stair WLD-06 L16 step0",
+    "Orthogonal stair WLD-06 L16 step1",
+    "Orthogonal stair WLD-06 L16 step10",
+    "Orthogonal stair WLD-06 L16 step11",
+    "Orthogonal stair WLD-06 L16 step12",
+    "Orthogonal stair WLD-06 L16 step13",
+    "Orthogonal stair WLD-06 L16 step14",
+    "Orthogonal stair WLD-06 L16 step15",
+    "Orthogonal stair WLD-06 L16 step2",
+    "Orthogonal stair WLD-06 L16 step3",
+    "Orthogonal stair WLD-06 L16 step4",
+    "Orthogonal stair WLD-06 L16 step5",
+    "Orthogonal stair WLD-06 L16 step6",
+    "Orthogonal stair WLD-06 L16 step7",
+    "Orthogonal stair WLD-06 L16 step8",
+    "Orthogonal stair WLD-06 L16 step9",
+    "Orthogonal stair WLD-06 L17 step0",
+    "Orthogonal stair WLD-06 L17 step1",
+    "Orthogonal stair WLD-06 L17 step10",
+    "Orthogonal stair WLD-06 L17 step11",
+    "Orthogonal stair WLD-06 L17 step12",
+    "Orthogonal stair WLD-06 L17 step13",
+    "Orthogonal stair WLD-06 L17 step14",
+    "Orthogonal stair WLD-06 L17 step15",
+    "Orthogonal stair WLD-06 L17 step2",
+    "Orthogonal stair WLD-06 L17 step3",
+    "Orthogonal stair WLD-06 L17 step4",
+    "Orthogonal stair WLD-06 L17 step5",
+    "Orthogonal stair WLD-06 L17 step6",
+    "Orthogonal stair WLD-06 L17 step7",
+    "Orthogonal stair WLD-06 L17 step8",
+    "Orthogonal stair WLD-06 L17 step9",
+    "Re-seated Ceiling cap undercroft",
+    "Re-seated Ceiling cap undercroft.002",
+    "Re-seated Ceiling cap undercroft.003",
+    "Re-seated Ceiling cap undercroft.004",
+    "Re-seated Restored ceiling-cap undercroft 0 region2",
+    "Re-seated Wall undercroft N",
+    "WLD-06 east pier shaft rim 0",
+    "WLD-06 east pier shaft rim 0.001",
+    "WLD-06 east pier shaft rim 1",
+    "WLD-06 east pier shaft rim 1.001",
+    "WLD-06 east pier shaft rim 2",
+    "WLD-06 east pier shaft rim 2.001",
+    "WLD-06 east pier-head landing bearing 0 0 region0",
+    "WLD-06 east pier-head landing bearing 0 0 region1",
+    "WLD-06 east pier-head landing bearing 0 1 region0",
+    "WLD-06 east pier-head landing bearing 0 1 region1",
+    "WLD-06 east pier-head landing bearing 0 2 region0",
+    "WLD-06 east pier-head landing bearing 0 2 region1",
+    "WLD-06 east pier-head landing structural surface region0",
+    "WLD-06 west jetty bearing 0 0 region0",
+    "WLD-06 west jetty bearing 0 0 region1",
+    "WLD-06 west jetty bearing 0 1 region0",
+    "WLD-06 west jetty bearing 0 1 region1",
+    "WLD-06 west jetty bearing 0 2 region0",
+    "WLD-06 west jetty bearing 0 2 region1",
+    "WLD-06 west jetty structural surface region0",
+    "WLD-06 west jetty structural surface region1",
+    "WLD-06 west pier shaft rim 0",
+    "WLD-06 west pier shaft rim 0.001",
+    "WLD-06 west pier shaft rim 1",
+    "WLD-06 west pier shaft rim 1.001",
+    "Wharf retained walk outside reconstructed dock floors Wharf continuous west perimeter boardwalk region0 region0"
+  ],
+  "stair_cells": {
+    "clear_well_width": 2.6,
+    "gross_tread_width": 2.4,
+    "walking_width": 2,
+    "rise": 2.5,
+    "run": 8,
+    "risers": 14,
+    "lower_floor_y": -2.5,
+    "roof_top_y": 0,
+    "roof_depth": 0.3,
+    "cellar_clear_height": 2.2,
+    "rectangular_roof_penetrations": [
+      [
+        [
+          18,
+          31.45
+        ],
+        [
+          28.3,
+          31.45
+        ],
+        [
+          28.3,
+          34.55
+        ],
+        [
+          18,
+          34.55
+        ]
+      ],
+      [
+        [
+          35.7,
+          31.45
+        ],
+        [
+          46,
+          31.45
+        ],
+        [
+          46,
+          34.55
+        ],
+        [
+          35.7,
+          34.55
+        ]
+      ]
+    ],
+    "clear_openings": [
+      [
+        [
+          18,
+          31.7
+        ],
+        [
+          28.3,
+          31.7
+        ],
+        [
+          28.3,
+          34.3
+        ],
+        [
+          18,
+          34.3
+        ]
+      ],
+      [
+        [
+          35.7,
+          31.7
+        ],
+        [
+          46,
+          31.7
+        ],
+        [
+          46,
+          34.3
+        ],
+        [
+          35.7,
+          34.3
+        ]
+      ]
+    ],
+    "upper_landings": "West cast platform16..18; east existing full pier-head platform46..48",
+    "landings": "Actual shared cellar floor; no route-box landings or flared extensions"
+  }
+}

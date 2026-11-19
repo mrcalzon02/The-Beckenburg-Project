@@ -1,0 +1,42 @@
+{
+  "status": "LOSSLESS_RAW_VERIFICATION_ARCHIVES_NOT_NEW_TEST_ACCEPTANCE",
+  "files": [
+    {
+      "original_path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-failure-input.tsv",
+      "archive_path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-failure-input.tsv.gz",
+      "original_bytes": 3737623,
+      "original_sha256": "2f61a2bf593b3db93aa6ba7bf93f4fd376e5a0c61ca40e66f259888ffa24b7aa",
+      "archive_bytes": 126897,
+      "archive_sha256": "430787c5dec89001013886e8635ad1269b2abf79ba213aeb89619174169ec920",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-lane-input.tsv",
+      "archive_path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-lane-input.tsv.gz",
+      "original_bytes": 56387091,
+      "original_sha256": "d94b1cd3caf02f7066659962bd3d09076aff22000eebc872873cd3e9ebeb3fe7",
+      "archive_bytes": 1151155,
+      "archive_sha256": "bc1ca3317978ab8f3604e5d09402485270aff04fed0281aa8d8fbc3cbc9ac5c3",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-lanes.tsv",
+      "archive_path": "development/levels/rebuild/arrival-bearing-pass/verification/current-flat-lanes.tsv.gz",
+      "original_bytes": 10453770,
+      "original_sha256": "069e5cb49c4ddc6742092d2af875b45325612733e0ac919a9eadd11ab66178d7",
+      "archive_bytes": 789777,
+      "archive_sha256": "36051142850fcbb394f555690e742e6f01368c20e6e57180f8b71263ac707723",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    },
+    {
+      "original_path": "development/levels/rebuild/arrival-bearing-pass/verification/native-route-probes.tsv",
+      "archive_path": "development/levels/rebuild/arrival-bearing-pass/verification/native-route-probes.tsv.gz",
+      "original_bytes": 10242835,
+      "original_sha256": "b5116ace7b32464deadbd73b37828a1532351bcf19dc78c751b3efd1b8d510ed",
+      "archive_bytes": 1046065,
+      "archive_sha256": "80654e51b3aff7a78611a3fa16223c5ea34b3fd5f1d9d01947f2cbc27a38d3f3",
+      "encoding": "gzip, exact original raw bytes including Java CRLF"
+    }
+  ],
+  "scope": "Large raw TSVs archived after terminal verification. JSON evidence hashes still identify exact decoded original bytes; reconstruct with --restore-to build/flat-evidence-replay. Original absolute payload references remain historical and SHA-bound."
+}

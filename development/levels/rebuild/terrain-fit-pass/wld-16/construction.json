@@ -1,0 +1,1224 @@
+{
+  "id": "WLD-16",
+  "status": "NATIVE_BEARING_CONSTRUCTION_CANDIDATE_REVIEW_OPEN",
+  "source_glb": "development/levels/rebuild/furnishings/wld-16/furnished.glb",
+  "source_glb_sha256": "1e3341905eedc10272186cc845893acb244840c31ffecba58837f4b8e26d23fc",
+  "source_physics": "development/levels/rebuild/furnishings/wld-16/furnished-physics.hcs2",
+  "source_physics_sha256": "fdd525f5bfe137795e3747f283905753e30cbba90d4bd0b24d671e79c626ee20",
+  "layout": "development/levels/rebuild/wld-16/rough-layout.json",
+  "layout_sha256": "06ed2a033d19123f48dd5f7b65a9c5d40bf699c47ed0c7f3ee91668c9f2e71cb",
+  "new_parts": 7,
+  "new_triangles": 84,
+  "original_physics_parts_byte_preserved": true,
+  "render_native_new_parts_exact": true,
+  "construction": [
+    {
+      "name": "Bearing skirt 0000",
+      "kind": "skirt",
+      "top_y": -0.15999998152256012,
+      "terrain_probe_points": [
+        [
+          17.75,
+          41.65
+        ],
+        [
+          19.5,
+          41.65
+        ]
+      ],
+      "ground_y": [
+        -0.1194000244140625,
+        -0.18904876708984375
+      ],
+      "bottom_y": [
+        -0.4694000244140625,
+        -0.5390487670898437,
+        -0.5390487670898437,
+        -0.4694000244140625
+      ],
+      "footprint": [
+        [
+          17.75,
+          42.1
+        ],
+        [
+          19.5,
+          42.1
+        ],
+        [
+          19.5,
+          41.65
+        ],
+        [
+          17.75,
+          41.65
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        18.625,
+        42.04
+      ]
+    },
+    {
+      "name": "Bearing skirt 0001",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          19.5,
+          41.65
+        ],
+        [
+          21.25,
+          41.65
+        ]
+      ],
+      "ground_y": [
+        -0.18904876708984375,
+        -0.2151031494140625
+      ],
+      "bottom_y": [
+        -0.5390487670898437,
+        -0.5651031494140625,
+        -0.5651031494140625,
+        -0.5390487670898437
+      ],
+      "footprint": [
+        [
+          19.5,
+          42.1
+        ],
+        [
+          21.25,
+          42.1
+        ],
+        [
+          21.25,
+          41.65
+        ],
+        [
+          19.5,
+          41.65
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        20.375,
+        42.04
+      ]
+    },
+    {
+      "name": "Bearing skirt 0002",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          21.25,
+          41.65
+        ],
+        [
+          23.0,
+          41.65
+        ]
+      ],
+      "ground_y": [
+        -0.2151031494140625,
+        -0.26140594482421875
+      ],
+      "bottom_y": [
+        -0.5651031494140625,
+        -0.6114059448242187,
+        -0.6114059448242187,
+        -0.5651031494140625
+      ],
+      "footprint": [
+        [
+          21.25,
+          42.1
+        ],
+        [
+          23.0,
+          42.1
+        ],
+        [
+          23.0,
+          41.65
+        ],
+        [
+          21.25,
+          41.65
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        22.125,
+        42.04
+      ]
+    },
+    {
+      "name": "Bearing skirt 0003",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          23.35,
+          42.0
+        ],
+        [
+          23.35,
+          44.0
+        ]
+      ],
+      "ground_y": [
+        -0.2309722900390625,
+        -0.2248687744140625
+      ],
+      "bottom_y": [
+        -0.5809722900390625,
+        -0.5748687744140625,
+        -0.5748687744140625,
+        -0.5809722900390625
+      ],
+      "footprint": [
+        [
+          22.9,
+          42.0
+        ],
+        [
+          22.9,
+          44.0
+        ],
+        [
+          23.35,
+          44.0
+        ],
+        [
+          23.35,
+          42.0
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        22.96,
+        43.0
+      ]
+    },
+    {
+      "name": "Bearing skirt 0004",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          23.35,
+          44.0
+        ],
+        [
+          23.35,
+          46.0
+        ]
+      ],
+      "ground_y": [
+        -0.2248687744140625,
+        -0.21765899658203125
+      ],
+      "bottom_y": [
+        -0.5748687744140625,
+        -0.5676589965820312,
+        -0.5676589965820312,
+        -0.5748687744140625
+      ],
+      "footprint": [
+        [
+          22.9,
+          44.0
+        ],
+        [
+          22.9,
+          46.0
+        ],
+        [
+          23.35,
+          46.0
+        ],
+        [
+          23.35,
+          44.0
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        22.96,
+        45.0
+      ]
+    },
+    {
+      "name": "Bearing skirt 0005",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          23.35,
+          46.0
+        ],
+        [
+          23.35,
+          48.0
+        ]
+      ],
+      "ground_y": [
+        -0.21765899658203125,
+        -0.2095184326171875
+      ],
+      "bottom_y": [
+        -0.5676589965820312,
+        -0.5595184326171875,
+        -0.5595184326171875,
+        -0.5676589965820312
+      ],
+      "footprint": [
+        [
+          22.9,
+          46.0
+        ],
+        [
+          22.9,
+          48.0
+        ],
+        [
+          23.35,
+          48.0
+        ],
+        [
+          23.35,
+          46.0
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        22.96,
+        47.0
+      ]
+    },
+    {
+      "name": "Bearing skirt 0006",
+      "kind": "skirt",
+      "top_y": -0.1599999964237213,
+      "terrain_probe_points": [
+        [
+          23.35,
+          48.0
+        ],
+        [
+          23.35,
+          50.0
+        ]
+      ],
+      "ground_y": [
+        -0.2095184326171875,
+        -0.17657470703125
+      ],
+      "bottom_y": [
+        -0.5595184326171875,
+        -0.52657470703125,
+        -0.52657470703125,
+        -0.5595184326171875
+      ],
+      "footprint": [
+        [
+          22.9,
+          48.0
+        ],
+        [
+          22.9,
+          50.0
+        ],
+        [
+          23.35,
+          50.0
+        ],
+        [
+          23.35,
+          48.0
+        ]
+      ],
+      "supports": "Floor office",
+      "bearing_point": [
+        22.96,
+        49.0
+      ]
+    }
+  ],
+  "open_findings": [
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          13.0,
+          17.0
+        ],
+        [
+          14.5,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          14.5,
+          17.0
+        ],
+        [
+          16.0,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          13.0,
+          17.0
+        ],
+        [
+          13.0,
+          18.5
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          13.0,
+          18.5
+        ],
+        [
+          13.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          16.0,
+          20.0
+        ],
+        [
+          16.0,
+          21.666666666666668
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          16.0,
+          21.666666666666668
+        ],
+        [
+          16.0,
+          23.333333333333332
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          16.0,
+          23.333333333333332
+        ],
+        [
+          16.0,
+          25.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          16.0,
+          25.0
+        ],
+        [
+          16.0,
+          26.666666666666668
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          16.0,
+          26.666666666666668
+        ],
+        [
+          16.0,
+          28.333333333333332
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          16.0,
+          28.333333333333332
+        ],
+        [
+          16.0,
+          30.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          30.0
+        ],
+        [
+          16.0,
+          31.666666666666668
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          31.666666666666668
+        ],
+        [
+          16.0,
+          33.333333333333336
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          33.333333333333336
+        ],
+        [
+          16.0,
+          35.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          16.0,
+          35.0
+        ],
+        [
+          16.0,
+          36.666666666666664
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          36.666666666666664
+        ],
+        [
+          16.0,
+          38.333333333333336
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          38.333333333333336
+        ],
+        [
+          16.0,
+          40.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          16.0,
+          40.0
+        ],
+        [
+          16.0,
+          42.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          16.0,
+          17.0
+        ],
+        [
+          17.75,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          17.75,
+          17.0
+        ],
+        [
+          19.5,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          19.5,
+          17.0
+        ],
+        [
+          21.25,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          21.25,
+          17.0
+        ],
+        [
+          23.0,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          16.0,
+          20.0
+        ],
+        [
+          17.75,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          17.75,
+          20.0
+        ],
+        [
+          19.5,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          19.5,
+          20.0
+        ],
+        [
+          21.25,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          21.25,
+          20.0
+        ],
+        [
+          23.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          23.0,
+          17.0
+        ],
+        [
+          24.857142857142858,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          24.857142857142858,
+          17.0
+        ],
+        [
+          26.714285714285715,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          26.714285714285715,
+          17.0
+        ],
+        [
+          28.57142857142857,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          28.57142857142857,
+          17.0
+        ],
+        [
+          30.42857142857143,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          30.42857142857143,
+          17.0
+        ],
+        [
+          32.285714285714285,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          32.285714285714285,
+          17.0
+        ],
+        [
+          34.14285714285714,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          34.14285714285714,
+          17.0
+        ],
+        [
+          36.0,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          23.0,
+          20.0
+        ],
+        [
+          24.857142857142858,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          24.857142857142858,
+          20.0
+        ],
+        [
+          26.714285714285715,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          26.714285714285715,
+          20.0
+        ],
+        [
+          28.57142857142857,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          28.57142857142857,
+          20.0
+        ],
+        [
+          30.42857142857143,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          30.42857142857143,
+          20.0
+        ],
+        [
+          32.285714285714285,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          32.285714285714285,
+          20.0
+        ],
+        [
+          34.14285714285714,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          34.14285714285714,
+          20.0
+        ],
+        [
+          36.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          17.0
+        ],
+        [
+          37.5,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          37.5,
+          17.0
+        ],
+        [
+          39.0,
+          17.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          39.0,
+          17.0
+        ],
+        [
+          39.0,
+          18.5
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          39.0,
+          18.5
+        ],
+        [
+          39.0,
+          20.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          20.0
+        ],
+        [
+          36.0,
+          21.666666666666668
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          21.666666666666668
+        ],
+        [
+          36.0,
+          23.333333333333332
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          23.333333333333332
+        ],
+        [
+          36.0,
+          25.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          25.0
+        ],
+        [
+          36.0,
+          26.666666666666668
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          26.666666666666668
+        ],
+        [
+          36.0,
+          28.333333333333332
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          28.333333333333332
+        ],
+        [
+          36.0,
+          30.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          36.0,
+          30.0
+        ],
+        [
+          36.0,
+          31.666666666666668
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          36.0,
+          31.666666666666668
+        ],
+        [
+          36.0,
+          33.333333333333336
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_STRUCTURAL_FLOOR_BEARING",
+      "edge": [
+        [
+          36.0,
+          33.333333333333336
+        ],
+        [
+          36.0,
+          35.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          35.0
+        ],
+        [
+          36.0,
+          36.666666666666664
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          36.666666666666664
+        ],
+        [
+          36.0,
+          38.333333333333336
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          38.333333333333336
+        ],
+        [
+          36.0,
+          40.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          40.0
+        ],
+        [
+          36.0,
+          42.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          42.0
+        ],
+        [
+          36.0,
+          44.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          44.0
+        ],
+        [
+          36.0,
+          46.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          48.0
+        ],
+        [
+          37.5,
+          48.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          37.5,
+          48.0
+        ],
+        [
+          39.0,
+          48.0
+        ]
+      ],
+      "elevation": 0
+    },
+    {
+      "type": "NO_ACTUAL_DECK_UNDERSIDE",
+      "edge": [
+        [
+          36.0,
+          46.0
+        ],
+        [
+          36.0,
+          48.0
+        ]
+      ],
+      "elevation": 0
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-16-overview.png",
+      "sha256": "6ce85b9cd5868590ee6a0fa27ab7107d56dcbcfe92be157554003edbaba015ac",
+      "type": "native exported terrain/support construction candidate"
+    },
+    {
+      "path": "development/levels/rebuild/captures/terrain-fit-batch/wld-16-support-side.png",
+      "sha256": "7477f03db63a22eb94e4407198ae41cc65c9608c7541f392e7a638a38c2b9786",
+      "type": "native exported terrain/support construction candidate"
+    }
+  ],
+  "glb_sha256": "6ce78d1089cdabc0c63036e907a7011dfd3fbdd336146dacc0d41088c07eea7c",
+  "physics_sha256": "cc806e734ddbe4d5a905068f941b1a08879d2146787aa8ea0026b13feb983ad6",
+  "generator_sha256": "e2710b3e7d4fa7c3178a2bff2d1252284d16962cc78031c091911e4673b2c94b",
+  "limitations": "No master replacement or runtime unlock. Coarse foundation/pile construction only; actual native route regression, whole-site terrain fit, remaining unsupported spans/retaining/caves/water/guards and canonical van arrival require separate evidence."
+}

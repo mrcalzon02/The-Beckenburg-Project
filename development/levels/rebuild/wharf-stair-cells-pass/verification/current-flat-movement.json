@@ -1,0 +1,63 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-06": {
+      "before": {
+        "flat_links": 16,
+        "pass_both_directions": 15
+      },
+      "after": {
+        "flat_links": 16,
+        "pass_both_directions": 16
+      },
+      "current_lanes": {
+        "samples": 5157,
+        "valid_standing": 5157,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-06": {
+      "before": {
+        "contract": "development/levels/rebuild/site-earthworks-pass/wld-06/construction.json",
+        "contract_sha256": "fde52fd261e6c2e7b995469e5b1a21efe72a33fa5f385dcf94952fb2fa66ec3f",
+        "layout": "development/levels/rebuild/site-earthworks-pass/wld-06/authored-layout.json",
+        "layout_sha256": "0f36a73f23ea0e3d2314039ac4368761ef7e7155f06f647da76c6304b6535ff2",
+        "native": "development/levels/rebuild/site-earthworks-pass/wld-06/saved-earthworks.hcs2",
+        "native_sha256": "583ba481446fcabdd75507261e1640b3d7bf60405435afebefdc53a2068fd84a"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/wharf-stair-cells-pass/wld-06/construction.json",
+        "contract_sha256": "4e694531c35bbda9952e2853d451d45c2596e46c7fbc75f80ec35e14fb7981f2",
+        "layout": "development/levels/rebuild/wharf-stair-cells-pass/wld-06/authored-layout.json",
+        "layout_sha256": "4991a5bfa84fe096e1f986aba305102e9152190c9f2bf48ce3f46daa0187f655",
+        "native": "development/levels/rebuild/wharf-stair-cells-pass/wld-06/rectangular-stair-cells.hcs2",
+        "native_sha256": "102fa9d66b7a64347ab7cfce79ad23e5c8031ed02a1c880a0aae8fd7b5312366"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "7d6c8ef374e2ac60d6e599cee6873405c419834795f8a99299551c65e5b74115",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "1dab107cc498b3d0c586d9138a4a136b7e959226efae2ce6745285d567a5be4b",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/site-earthworks-pass/roster.json": "6f747007a70ff7b02756bb5cfa5303805ea9abf64c87398426078cecc54935ef"
+  },
+  "evidence_hashes": {
+    "development/levels/rebuild/wharf-stair-cells-pass/verification/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "development/levels/rebuild/wharf-stair-cells-pass/verification/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "development/levels/rebuild/wharf-stair-cells-pass/verification/current-flat-lane-input.tsv": "a8a61f888a4c865e4408d30fc719fcf8582eefa406e7b0c2880927e2dc35edf7",
+    "development/levels/rebuild/wharf-stair-cells-pass/verification/current-flat-lane-names.tsv": "301456814eb2bb84bb20ad0c7fa7106a14ab344494f128ddeff89a2e0c2ee146",
+    "development/levels/rebuild/wharf-stair-cells-pass/verification/current-flat-lanes.tsv": "fd60d536234fca8d9177a7b861493f5cdc1b5745a1598b91ef9b1d0c2c744de5",
+    "development/levels/rebuild/wharf-stair-cells-pass/verification/current-flat-links.tsv": "b708fd84f824ebbd405e763346a3a67c3b05184dfec1d1fc07adb633a3894245",
+    "development/levels/rebuild/wharf-stair-cells-pass/verification/current-flat-names.tsv": "1194c62768b1cc1dbc873f852cad09cebd5b600db4b7f52f229a8f0777053463",
+    "development/levels/rebuild/wharf-stair-cells-pass/verification/current-flat-paths.tsv": "c48fa5b34c17c65fc3cd78619319d55ccd83be58ef9547416e7be98730dabddc"
+  },
+  "scope": "Every active fully-flat link continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

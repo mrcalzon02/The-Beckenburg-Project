@@ -1,0 +1,4 @@
+Beckenburg GPU initialized: OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+2026-11-19T09:03:15.729874500Z [main] ACTIVE_RENDERER GPU OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64 / scene triangles OpenGL, UI Swing
+2026-11-19T09:03:16.473011200Z [main] RENDER SLOW stage=idle faces=19245 visible_faces=6635 culled_faces=12610 target=840x560 build_ms=74 lighting_raster_ms=141
+2026-11-19T09:03:16.577870400Z [beckenburg-opengl] GPU SCENE FIRST FRAME scene=2 frame=198 surface_batches=196 vbo_uploaded_batches=196 vbo_uploaded_bytes=1315776 vbo_reused_batches=0 vbo_reused_bytes=0 textures_uploaded=29 texture_uploaded_bytes=522176 gl_worker_ms=104.4593 readback_ms=10.7068 measurement=gl_worker_not_gpu_timestamp

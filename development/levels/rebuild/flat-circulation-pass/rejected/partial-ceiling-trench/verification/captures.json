@@ -1,0 +1,90 @@
+[
+  {
+    "site": "ACADEMY",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-before.png",
+    "sha256": "2181540de63acc58e183a69e189ffb9d3c532d1628f528aa03469d95814ec990",
+    "source_glb_sha256": "d4e6ac582bd4f685b73b7330134b5ff810d6bfae4a5d858d94d8c4085c874bff",
+    "eye": [
+      43.5,
+      1.62,
+      48
+    ],
+    "target": [
+      44.3,
+      1.62,
+      54
+    ],
+    "type": "Native intact threshold/cap inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "ACADEMY",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-threshold-after.png",
+    "sha256": "a192ba82801551ece72115ae63f084f905d5cf25975d2381a8708de413760290",
+    "source_glb_sha256": "8176a8ffb6608bea336f57579894842397c8a919c709fa48076c7e88accae826",
+    "eye": [
+      43.5,
+      1.62,
+      48
+    ],
+    "target": [
+      44.3,
+      1.62,
+      54
+    ],
+    "type": "Native intact threshold/cap inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "ACADEMY",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/academy-whole-site.png",
+    "sha256": "a3331621a362aa9826ab28b1e55fd695650a0bf042f58939dfe528427abdc6a6",
+    "source_glb_sha256": "8176a8ffb6608bea336f57579894842397c8a919c709fa48076c7e88accae826",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  },
+  {
+    "site": "WLD-08",
+    "phase": "before",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-threshold-before.png",
+    "sha256": "73d077b36b22c4e0912bd96183888017aa8782bb244d1fdfcad26ae8da67703d",
+    "source_glb_sha256": "5847fa47893086dfe45c274e9df08b4562cc07bc6edcdfef26d3e5ff44ad853d",
+    "eye": [
+      23,
+      1.62,
+      19
+    ],
+    "target": [
+      18,
+      1.62,
+      19
+    ],
+    "type": "Native intact threshold/cap inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-08",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-threshold-after.png",
+    "sha256": "9744c79917d59a149a09062b816f7368fc167799ab716074c4ae588e61d447ba",
+    "source_glb_sha256": "da682b79774c73a407d00cbd284891334b7cc7b27e75a579d65a9345f87fbd2a",
+    "eye": [
+      23,
+      1.62,
+      19
+    ],
+    "target": [
+      18,
+      1.62,
+      19
+    ],
+    "type": "Native intact threshold/cap inspection, neutral150Wfill; not runtime or verified player spawn"
+  },
+  {
+    "site": "WLD-08",
+    "phase": "after",
+    "path": "development/levels/rebuild/captures/flat-circulation-batch/wld-08-whole-site.png",
+    "sha256": "4f1b1ffe7c74c7988343f1ba233171ee3fca17f07ab101a62db8cf9fa829099e",
+    "source_glb_sha256": "da682b79774c73a407d00cbd284891334b7cc7b27e75a579d65a9345f87fbd2a",
+    "type": "Native whole-site architectural construction; no cutaway, no canonical van or complete join/landscape/runtime acceptance"
+  }
+]

@@ -29,6 +29,8 @@ public final class EditorTopologyWorkspace extends JPanel {
         else{setInspectorVisible(restoreInspector);setBrowsersVisible(restoreBrowsers);tools.setVisible(true);}focused=!focused;revalidate();repaint();
     }
     public boolean focused(){return focused;}
+    public boolean savedInspectorVisible(){return focused?restoreInspector:inspectorVisible();}
+    public boolean savedBrowsersVisible(){return focused?restoreBrowsers:browsersVisible();}
     public static JMenu menu(String title,AbstractButton... commands){
         JMenu menu=new JMenu(title);
         for(var command:commands){var item=new JMenuItem(command.getText());item.setToolTipText(command.getToolTipText());item.addActionListener(e->command.doClick());menu.add(item);}

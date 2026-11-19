@@ -1,0 +1,159 @@
+{
+  "id": "ASYLUM",
+  "status": "PHYSICAL_ARRIVAL_END_BEARING_SOURCE_CANDIDATE_NOT_MAP_ACCEPTANCE",
+  "source_contract": "development/levels/rebuild/flat-circulation-pass/asylum/construction.json",
+  "source_contract_sha256": "4864791efd068aa226e97df30a29c0fb5d2b71a89c0ec508507340251a5b8e91",
+  "source_glb": "development/levels/rebuild/flat-circulation-pass/asylum/open-circulation.glb",
+  "source_glb_sha256": "abeb53b241297f971e0e45580c6c0bf3f76a415e8bc60c605efe89f23e9a4f3b",
+  "source_physics": "development/levels/rebuild/flat-circulation-pass/asylum/open-circulation.hcs2",
+  "source_physics_sha256": "aa6b4b6ebf4584d978f77158ec399713a173976e562159ddbe527897c61fbab3",
+  "before_layout": "development/levels/rebuild/flat-circulation-pass/asylum/authored-layout.json",
+  "before_layout_sha256": "ae527fd8c5f0c2a05f668f62670862618abbfe467b46e5aeaa21e36cc311fa1f",
+  "layout": "development/levels/rebuild/arrival-bearing-pass/asylum/authored-layout.json",
+  "layout_sha256": "27c3cad304a8cc697ed9a3e5718c625a2f3d54b47954bb5acdd00790d4b4755f",
+  "before_segment_map": {},
+  "source_segment_map": {},
+  "before_stair_components": [
+    "532:L77 flight0 step1",
+    "533:L77 flight0 step2",
+    "534:L77 flight0 step3",
+    "535:L77 flight0 step4",
+    "536:L77 flight0 step5",
+    "537:L77 flight0 step6",
+    "538:L77 flight0 step7",
+    "539:L77 flight0 step8",
+    "540:L77 flight0 step9",
+    "541:L77 flight0 step10",
+    "542:L77 flight0 step11",
+    "543:L77 flight0 step12",
+    "544:L77 flight0 step13",
+    "545:L77 flight0 step14",
+    "546:L77 flight0 step15",
+    "547:L77 flight0 step16",
+    "548:L77 flight0 step17",
+    "549:L77 flight0 step18",
+    "550:L77 flight0 step19",
+    "551:L78 flight0 step1",
+    "552:L78 flight0 step2",
+    "553:L78 flight0 step3",
+    "554:L78 flight0 step4",
+    "555:L78 flight0 step5",
+    "556:L78 flight0 step6",
+    "557:L78 flight0 step7",
+    "558:L78 flight0 step8",
+    "559:L78 flight0 step9",
+    "560:L78 flight0 step10",
+    "561:L78 flight0 step11",
+    "562:L78 flight0 step12",
+    "563:L78 flight0 step13",
+    "564:L78 flight0 step14",
+    "565:L78 flight0 step15",
+    "566:L78 flight0 step16",
+    "567:L78 flight0 step17"
+  ],
+  "stair_components": [
+    "532:L77 flight0 step1",
+    "533:L77 flight0 step2",
+    "534:L77 flight0 step3",
+    "535:L77 flight0 step4",
+    "536:L77 flight0 step5",
+    "537:L77 flight0 step6",
+    "538:L77 flight0 step7",
+    "539:L77 flight0 step8",
+    "540:L77 flight0 step9",
+    "541:L77 flight0 step10",
+    "542:L77 flight0 step11",
+    "543:L77 flight0 step12",
+    "544:L77 flight0 step13",
+    "545:L77 flight0 step14",
+    "546:L77 flight0 step15",
+    "547:L77 flight0 step16",
+    "548:L77 flight0 step17",
+    "549:L77 flight0 step18",
+    "550:L77 flight0 step19",
+    "551:L78 flight0 step1",
+    "552:L78 flight0 step2",
+    "553:L78 flight0 step3",
+    "554:L78 flight0 step4",
+    "555:L78 flight0 step5",
+    "556:L78 flight0 step6",
+    "557:L78 flight0 step7",
+    "558:L78 flight0 step8",
+    "559:L78 flight0 step9",
+    "560:L78 flight0 step10",
+    "561:L78 flight0 step11",
+    "562:L78 flight0 step12",
+    "563:L78 flight0 step13",
+    "564:L78 flight0 step14",
+    "565:L78 flight0 step15",
+    "566:L78 flight0 step16",
+    "567:L78 flight0 step17"
+  ],
+  "glb_sha256": "acd8b378d3172e6be668bccb272612b12959a9edbf9e920b83f1e4b8450fc5cc",
+  "physics_sha256": "2bbf2e3847d3cfcf1fe5cd5854e007a5c85fad64f44a78fc741ec909d22a025f",
+  "arrival_bearing": {
+    "link": "L19",
+    "anchor": [
+      32.0,
+      0,
+      76.5
+    ],
+    "route_width": 1.4,
+    "extension_metres": 0.35,
+    "contact_owner": "L19 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        31.3,
+        76.85
+      ],
+      [
+        31.3,
+        76.5
+      ],
+      [
+        32.7,
+        76.5
+      ],
+      [
+        32.7,
+        76.85
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          31.3,
+          76.85
+        ],
+        [
+          31.3,
+          76.5
+        ],
+        [
+          32.7,
+          76.5
+        ],
+        [
+          32.7,
+          76.85
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing ASYLUM 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing ASYLUM 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "7f4a5b7532532d27ca0a1ad9c9548f50469d5e278d5836dff25c4239ba79265f"
+}

@@ -23,7 +23,7 @@ public final class LanIncapacitationHudTest {
                     p.onEvent("HUNTER|DOWN|0");
                     press(p,KeyEvent.VK_E);
                     ok(p.caseFeedback().contains("INCAPACITATED"),"door input suppressed when down");
-                    press(p,KeyEvent.VK_R);
+                    press(p,GameControls.USE);
                     ok(p.caseFeedback().contains("CANNOT USE DEVICE"),"scanner hotkey suppressed");
                     press(p,KeyEvent.VK_W);
                     BufferedImage image=new BufferedImage(850,555,BufferedImage.TYPE_INT_RGB);
