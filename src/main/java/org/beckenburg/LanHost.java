@@ -880,6 +880,7 @@ public final class LanHost implements AutoCloseable {
                     boolean bursting=LanProtocol.integer(p.get(3),0,1)==1;
                     acceptGhostPoseSequence(peer,LanProtocol.sequence(p.get(4)));
                     peer.realtimeInputMode=true;
+                    if(dx==0&&dz==0){ghostPose.stopRealtime();return;}
                     int staminaBefore=ghostPose.stamina();
                     boolean moved;
                     try{moved=ghostPose.stepRealtime(dx,dz,tick,bursting,System.nanoTime());}
@@ -929,6 +930,7 @@ public final class LanHost implements AutoCloseable {
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(4)));
                     peer.realtimeInputMode=true;
                     ensureActiveHunter(peer);
+                    if(dx==0&&dz==0){world.stopRealtime(peer.slot);return;}
                     int oldRoom=hunterRooms[peer.slot];
                     boolean moved;
                     try{moved=world.moveRealtime(peer.slot,dx,dz,tick,fast,System.nanoTime());}

@@ -110,6 +110,8 @@ public final class LanGhostSpatial {
         lastStepTick=tick;
         return stepAmount(dx,dz,tick,wantsBurst,seconds);
     }
+    /** Explicitly end this spectral locomotion epoch on key release/focus loss. */
+    void stopRealtime(){motionClock.reset();}
     private boolean stepAmount(int dx,int dz,int tick,boolean wantsBurst,double seconds){
         double length=Math.hypot(dx,dz);
         boolean burst=wantsBurst&&tick>=slowedUntil&&burstStamina>0;

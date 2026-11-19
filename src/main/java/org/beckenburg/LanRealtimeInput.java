@@ -25,6 +25,9 @@ final class LanRealtimeInput implements AutoCloseable {
     private final Consumer<IOException> failure;
     private volatile boolean closed;
     private int lastHeading=-1,lastPitch=Integer.MIN_VALUE;
+    // Pump-thread only. A neutral packet ends each active movement epoch.
+    private boolean movementSent;
+    private static final long STALE_INPUT_NS=500_000_000L;
 
     LanRealtimeInput(LanClient client,boolean ghost,Consumer<IOException> failure){
         this.client=Objects.requireNonNull(client);
@@ -39,15 +42,24 @@ final class LanRealtimeInput implements AutoCloseable {
     void publish(boolean enabled,int forward,int strafe,double yaw,double pitch,boolean sprint){
         controls.set(new Controls(enabled,forward,strafe,yaw,pitch,sprint,System.nanoTime()));
     }
+    /** Pump-thread-only movement sender; client serializes wire ordering. */
+    private void sendMovement(int dx,int dz,boolean sprint)throws IOException {
+        if(ghost)client.ghostMoveInput(dx,dz,sprint);
+        else client.moveInput(dx,dz,sprint);
+    }
     /** Ordered host commands, never UI or geometry operations. */
     private void sendLatest(){
         if(closed)return;
         Controls state=controls.get();
-        if(!state.enabled()||System.nanoTime()-state.updatedNs()>500_000_000L){
-            lastHeading=-1;lastPitch=Integer.MIN_VALUE;
-            return;
-        }
+        boolean active=state.enabled()&&System.nanoTime()-state.updatedNs()<=STALE_INPUT_NS;
         try{
+            if(!active){
+                // A paused, hidden or unresponsive EDT must never leave an
+                // unbounded held movement intention on the authoritative host.
+                if(movementSent){sendMovement(0,0,false);movementSent=false;}
+                lastHeading=-1;lastPitch=Integer.MIN_VALUE;
+                return;
+            }
             int forward=state.forward(),strafe=state.strafe();
             if(forward!=0||strafe!=0){
                 double x=Math.sin(state.yaw())*forward-Math.cos(state.yaw())*strafe;
@@ -57,10 +69,16 @@ final class LanRealtimeInput implements AutoCloseable {
                     int mx=(int)Math.round(100*x/magnitude);
                     int mz=(int)Math.round(100*z/magnitude);
                     if(mx!=0||mz!=0){
-                        if(ghost)client.ghostMoveInput(mx,mz,state.sprint());
-                        else client.moveInput(mx,mz,state.sprint());
+                        sendMovement(mx,mz,state.sprint());
+                        movementSent=true;
+                    }else if(movementSent){
+                        sendMovement(0,0,false);movementSent=false;
                     }
                 }
+            }else if(movementSent){
+                // Keep STEP/GSTEP legacy callers unchanged. Only HINPUT/GINPUT
+                // zero vectors are neutral state transitions, not travel.
+                sendMovement(0,0,false);movementSent=false;
             }
             int heading=Math.floorMod((int)Math.round(Math.toDegrees(state.yaw())),360);
             int pitch=(int)Math.round(state.pitch()*1000);

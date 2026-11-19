@@ -70,7 +70,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         audio.setHearingGain(0);
         // Keep host-bound input and the hearing envelope at their established cadence.
         timer=new javax.swing.Timer(110,e->frame());
-        renderTimer=new javax.swing.Timer(33,e->drawVisibleWorld());
+        // Match the hunter's 50Hz target without overlapping expensive EDT draws.
+        renderTimer=new javax.swing.Timer(20,e->drawVisibleWorld());
+        renderTimer.setRepeats(false);
         timer.start();
     }
     public void close(){timer.stop();renderTimer.stop();realtimeInput.close();keys.clear();soundRipples.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();}
@@ -325,6 +327,12 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         }finally{camera.x=hostX;camera.z=hostZ;camera.eyeHeight=hostEye;}
         perfHud.sample(System.nanoTime()-start,camera,map,companion==null?0:1,"LAN GHOST");
         repaint();
+        // Account for real render duration rather than adding another full
+        // timer interval after a slow frame. No cached/duplicated frames.
+        long remainingNs=renderTimer.getDelay()*1_000_000L-(System.nanoTime()-start);
+        int delayMs=(int)Math.max(1L,(remainingNs+999_999L)/1_000_000L);
+        renderTimer.setInitialDelay(delayMs);
+        renderTimer.restart();
     }
     private List<Integer> exits(){return room<0?List.of():map.ghostExits(room);}
     private void ability(GhostDomain.Action action){

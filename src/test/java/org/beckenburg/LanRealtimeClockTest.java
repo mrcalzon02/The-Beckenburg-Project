@@ -12,13 +12,16 @@ public final class LanRealtimeClockTest {
         check(clock.advance(start+1_001_000_000L)==0,"packet bursts must not create free steps");
         check(Math.abs(clock.advance(start+1_020_000_000L)-.020)<.000001,
             "rejected burst does not reset host elapsed clock");
-        check(Math.abs(clock.advance(start+5_020_000_000L)-.020)<.000001,
-            "idle-to-walk must begin with one small sample, never a 31cm lurch");
+        check(Math.abs(clock.advance(start+5_020_000_000L)-.100)<.000001,
+            "held movement must retain a bounded 100ms quantum across host congestion");
         check(Math.abs(clock.advance(start+5_040_000_000L)-.020)<.000001,
-            "normal 50Hz cadence resumes immediately after idle");
+            "normal 50Hz cadence resumes immediately after congestion");
+        clock.reset();
+        check(Math.abs(clock.advance(start+5_060_000_000L)-.020)<.000001,
+            "explicit neutral key release resets the first subsequent movement to 20ms");
         clock.reset();
         check(Math.abs(clock.advance(start+6_000_000_000L)-.020)<.000001,
             "new movement epoch starts without 100ms lurch");
-        System.out.println("PASS: host realtime movement is time-scaled at 50 Hz, bounded, non-accelerating");
+        System.out.println("PASS: 50Hz realtime movement, bounded congested-host catchup, explicit stop/restart");
     }
 }

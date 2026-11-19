@@ -45,9 +45,21 @@ public final class LanWorldIntegrationTest {
             ok(body!=null&&body.split("\\|").length==7,"replicated movement changed explicit XYZ position");
             a.c.send("STEP|100|0|1");ok(a.waitFor("REJECT|").contains("stale"),"replayed motion rejected");
             a.c.send("DOOR|999");ok(a.waitFor("REJECT|").contains("reachable"),"far door denied");
+            // A neutral HINPUT must be accepted rather than rejected as a
+            // zero-length STEP. Its sequenced transition disables legacy STEP.
+            a.c.moveInput(0,0,false);
+            a.c.step(0,-100);
+            ok(a.waitFor("REJECT|").contains("3D movement unavailable"),
+                "neutral hunter input accepted without granting a legacy extra step");
+            ghost.c.viewGhost3D();
+            ok(ghost.waitFor("ACCEPT|GVIEW3D").startsWith("ACCEPT"),"ghost enters spectral view");
+            ghost.c.ghostMoveInput(0,0,false);
+            ghost.c.ghostStep(100,0);
+            ok(ghost.waitFor("REJECT|").contains("spectral movement requires ghost view"),
+                "neutral spectral input accepted without granting a legacy extra step");
             ghost.noBodies();
             ok(host.running(),"invalid commands do not stop shared case");
-            System.out.println("PASS: 4-socket authoritative world stepping, snapshot privacy, door range, legacy-mode isolation");
+            System.out.println("PASS: 4-socket authoritative movement, neutral stop, replay and role isolation");
         }
     }
 }

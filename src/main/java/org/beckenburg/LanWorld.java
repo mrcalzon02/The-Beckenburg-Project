@@ -154,6 +154,12 @@ public final class LanWorld {
         lastTick[seat]=tick;
         return moveAmount(seat,dx,dz,tick,wantsSprint,seconds);
     }
+    /** A neutral live input ends movement and discards its elapsed-time debt. */
+    void stopRealtime(int seat){
+        seat(seat);
+        motionClocks[seat].reset();
+        momentumX[seat]=momentumZ[seat]=0;
+    }
     private boolean moveAmount(int seat,int dx,int dz,int tick,boolean wantsSprint,double seconds){
         if(jumps[seat].active())return false; // takeoff momentum owns airborne travel.
         double magnitude=Math.hypot(dx,dz);
