@@ -71,9 +71,13 @@ public final class DynamicGeometryRetentionTest {
                 map.clutter().acceptOne(row(item,0,item.yaw(),item.roll(),-1));parity(cached,rebuilt,map);
                 for(var fixture:map.fixtures().states())map.fixtures().activate(fixture.id(),fixture.room(),25);
                 parity(cached,rebuilt,map);
-                cached.roomLightTick=26;
-                check(!parity(cached,rebuilt,map).equals(facesAt(rebuilt,map,25)),"Alarm animation and indicators must change with tick");
-                map.fixtures().advance(26);parity(cached,rebuilt,map);
+                // The actual fire-alarm indicator changes at the 4-tick
+                // flashing boundary. A one-tick check *inside* one phase
+                // falsely fails a rebuilt home without a bedside alarm clock.
+                cached.roomLightTick=28;
+                check(!parity(cached,rebuilt,map).equals(facesAt(rebuilt,map,27)),
+                    "Active event fixture must change at its authored animation boundary");
+                map.fixtures().advance(28);parity(cached,rebuilt,map);
                 map.fixtures().power(false);parity(cached,rebuilt,map);
             }
         }

@@ -147,7 +147,13 @@ java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.To
 rem Camera face art/display diagnostics cannot veto a functional build.
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.CameraViewfinderTest || echo ADVISORY: camera rear-display diagnostic failed (nonblocking)
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.DotsProjectorModelDiagnosticTest || echo ADVISORY: deployed DOTS model artwork check failed (nonblocking)
-if /I "%~1"=="e2e" goto package_jar_only
+if /I "%~1"=="e2e" (
+  rem House gameplay is a launch contract: never return to the retired source.
+  rem This checks authoritative shell, traversable paths, services, saved
+  rem editor authority and no destructive reinterpretation of old files.
+  java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.HouseDefaultPromotionTest || exit /b 1
+  goto package_jar_only
+)
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.SpiritBoxResponsesTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.LanSpiritBoxAudioIntegrationTest || exit /b 1
 java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.SoundCoverageTest || exit /b 1

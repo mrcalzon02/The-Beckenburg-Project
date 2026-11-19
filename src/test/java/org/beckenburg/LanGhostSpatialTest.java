@@ -6,7 +6,7 @@ public final class LanGhostSpatialTest {
     private static void fails(Runnable f,String message){try{f.run();throw new AssertionError("allowed "+message);}catch(IllegalArgumentException expected){}}
     public static void main(String[] args){
         HouseMap map=new HouseMap();LanGhostSpatial view=new LanGhostSpatial(map,4);
-        ok(view.pose().room()==4&&map.roomAt(view.pose().x(),view.pose().z())==4,"initial pose");
+        ok(view.pose().room()==4&&map.roomAt(view.pose().x(),view.pose().y(),view.pose().z())==4,"initial pose");
         ok(view.listening(0),"Stationary ghost initially hears the physical world");
         fails(()->new LanGhostSpatial(map,HouseMap.EXTRACTION_ROOM),"van ghost spawn");
         fails(()->view.step(0,0,1),"zero movement");

@@ -18,11 +18,15 @@ public final class GroundRecoverySupportParityTest {
         var returned=world.body(0);
         check(Math.abs(returned.y()-start.y())<.01&&Math.hypot(returned.x()-start.x(),returned.z()-start.z())<.01,
             "Real host round trip preserves the original floor and position");
+        // The below-stair ambiguity is a measured *original* House fixture.
+        // Keep its support-parity check on archived coordinates; the host and
+        // all-site spawn tests above/below still exercise the rebuilt House.
+        var archived=new HouseMap(HouseMap.Site.HOUSE,LevelPlans.legacyHouseSource());
         var underStair=new Vec(22.24,0,18);
-        check(map.traversable(underStair.x(),underStair.y(),underStair.z()),"Existing collision permits this lower standing surface");
-        check(map.groundHeight(underStair.x(),underStair.z(),4)>underStair.y()+1,"Reproducer contains a different nominal stair support above feet");
-        check(GroundRecovery.recover(map,underStair,4,HunterPosture.STANDING_HEIGHT).equals(underStair),
-            "Recovery uses the same position-relative support as walking, not a higher nominal stair");
+        check(archived.traversable(underStair.x(),underStair.y(),underStair.z()),"Historical lower standing surface");
+        check(archived.groundHeight(underStair.x(),underStair.z(),4)>underStair.y()+1,"Historical stair overlap control");
+        check(GroundRecovery.recover(archived,underStair,4,HunterPosture.STANDING_HEIGHT).equals(underStair),
+            "Recovery retains lower physical support instead of snapping to historical stair");
         for(double depth:new double[]{.06,10}){
             var fixed=GroundRecovery.recover(map,new Vec(start.x(),start.y()-depth,start.z()),4,HunterPosture.STANDING_HEIGHT);
             check(map.traversable(fixed.x(),fixed.y(),fixed.z())&&fixed.y()>=start.y()-.02,"Actual penetration still recovers to valid physical support");
