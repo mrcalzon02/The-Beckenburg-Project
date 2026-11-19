@@ -1263,9 +1263,18 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         renderer.drawNetwork(map,new ArrayList<>(peers.values()),apparition,tick*.1,List.copyOf(counterMarks));
         frameCount++;
     }
+    private final EdtInputFramePacer inputFramePacer=new EdtInputFramePacer();
     private void drawVisibleWorld(){
         if(!isShowing()||opening!=null||!caseResult.isEmpty()){
-            renderTimer.stop();
+            renderTimer.stop();inputFramePacer.reset();
+            return;
+        }
+        // A costly renderer must not immediately monopolize the Swing thread
+        // again while the player has keyboard or mouse events queued. Yield
+        // only twice; keep a real frame and all gameplay clocks guaranteed.
+        if(inputFramePacer.shouldYield(this)){
+            renderTimer.setInitialDelay(1);
+            renderTimer.restart();
             return;
         }
         long now=System.nanoTime();
@@ -1300,7 +1309,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }finally{
             renderer.x=hostX;renderer.z=hostZ;renderer.eyeHeight=hostEye;
         }
-        perfHud.sample(System.nanoTime()-now,renderer,map,peers.size(),"LAN HUNTER");
+        long renderNs=System.nanoTime()-now;
+        inputFramePacer.completed(renderNs);
+        perfHud.sample(renderNs,renderer,map,peers.size(),"LAN HUNTER");
         repaint();
         // Schedule one EDT callback from this frame's start. Overrunning a frame
         // should not also cost the unused part of a second timer period.

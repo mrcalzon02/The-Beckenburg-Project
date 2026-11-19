@@ -332,6 +332,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.GhostListeningFeedTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.FootstepStimulusCadenceTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.PresentedFrameCadenceTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.EdtInputFramePacerTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanEdtPacketQueueTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanLobbyLogTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanLobbySiteCacheTest

@@ -287,9 +287,15 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         if (isShowing() && room >= 0 && !renderTimer.isRunning()) renderTimer.start();
     }
 
+    private final EdtInputFramePacer inputFramePacer=new EdtInputFramePacer();
     private void drawVisibleWorld() {
         if (!isShowing() || finished || room < 0) {
-            renderTimer.stop();
+            renderTimer.stop();inputFramePacer.reset();
+            return;
+        }
+        if(inputFramePacer.shouldYield(this)){
+            renderTimer.setInitialDelay(1);
+            renderTimer.restart();
             return;
         }
         long start = System.nanoTime();
@@ -325,7 +331,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             if(pose!=null){camera.x=pose.x();camera.z=pose.z();camera.eyeHeight=pose.y()+1.62;}
             camera.drawNetwork(map,List.of(),-1,tick*.1);
         }finally{camera.x=hostX;camera.z=hostZ;camera.eyeHeight=hostEye;}
-        perfHud.sample(System.nanoTime()-start,camera,map,companion==null?0:1,"LAN GHOST");
+        long renderNs=System.nanoTime()-start;
+        inputFramePacer.completed(renderNs);
+        perfHud.sample(renderNs,camera,map,companion==null?0:1,"LAN GHOST");
         repaint();
         // Account for real render duration rather than adding another full
         // timer interval after a slow frame. No cached/duplicated frames.

@@ -244,6 +244,7 @@ LanRealtimeClockTest
 GhostListeningFeedTest
 FootstepStimulusCadenceTest
 PresentedFrameCadenceTest
+EdtInputFramePacerTest
 LanEdtPacketQueueTest
 LanLobbyLogTest
 LanLobbySiteCacheTest
