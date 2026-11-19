@@ -2611,6 +2611,12 @@ public final class SceneRenderer {
 
     private void levelArchitecture(List<Face> out,HouseMap map){
         if(map.nativeSite()){nativeArchitecture(out,map);return;}
+        // Scene/source revision invalidation must precede *all* new resident
+        // submissions. Previously we appended the map's services first and
+        // then scenery(map) cleared auxiliaryWorld mid-frame: the first frame
+        // submitted already-released VBO IDs, and the next rebuilt 13 House
+        // resources even though the map/camera had not changed.
+        scenery(map);
         generatorControls(out,map);
         if(map.services()!=null){
             var geometry=authoredFixtureGeometry.computeIfAbsent(map.services(),key->{
@@ -2622,7 +2628,6 @@ public final class SceneRenderer {
             });
             appendRetainedWorld(out,geometry,map.services(),map);
         }
-        scenery(map);
         var enclosure=enclosureFaces.computeIfAbsent(map.level().revision(),
             key->{var owned=new ArrayList<Face>();for(var face:enclosureScenery(map.level()))owned.add(face.owned(13));return List.copyOf(owned);});
         appendRetainedWorld(out,enclosure,"enclosure",map);

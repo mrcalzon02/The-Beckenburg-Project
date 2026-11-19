@@ -106,6 +106,11 @@ public final class WorldResidencyTest {
             renderer.drawNetwork(map,List.of(),-1,2.5);var mapFirst=resident(backend.frame);
             var sourceOwners=renderer.diagnosticResidentOwners();
             check(!mapFirst.isEmpty(),"Real "+site+" scenery must be resident");
+            // A source invalidated after submission cannot be accounted for by
+            // the live cache. This catches the first-frame 13-VBO House churn
+            // before a second frame happens to rebuild the lost resources.
+            check(sourceOwners.keySet().containsAll(mapFirst.keySet()),
+                "Every first-frame "+site+" VBO must retain its live source owner");
             var mapStats=renderer.worldResidentStats();long mapScene=backend.frame.sceneId();
             renderer.drawNetwork(map,List.of(),-1,2.5);
             check(mapScene==backend.frame.sceneId(),"Unchanged "+site+" must not replace its GPU scene generation");
