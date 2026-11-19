@@ -74,6 +74,12 @@ public final class LanHost implements AutoCloseable {
             for(var bot:campaignBots)bot.close();campaignBots.clear();throw failure;
         }
     }
+    /** Developer-only local snapshots, never an untrusted network endpoint. */
+    java.util.List<CampaignGuestBot.LocalDiagnostic> devCampaignBotDiagnostics(){
+        synchronized(mutex){
+            return campaignBots.stream().map(CampaignGuestBot::localDiagnostic).toList();
+        }
+    }
     /** Failed disk saves remain retryable from the owning lobby until saved. */
     public boolean retryCampaignSettlement()throws IOException{
         synchronized(mutex){

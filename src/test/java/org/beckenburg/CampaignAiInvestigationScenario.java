@@ -26,6 +26,7 @@ public final class CampaignAiInvestigationScenario {
     private boolean holdWorked,calledBack,resumed,warded;
     private boolean autonomousOwner,stocked;
     private int firstInterior=-1,firstEvidence=-1,firstWard=-1,firstId=-1,firstRite=-1;
+    private int lastBotDiagnosticTick=-1;
     private final java.util.concurrent.ConcurrentLinkedQueue<String> ownerStartup=new java.util.concurrent.ConcurrentLinkedQueue<>();
     private DevMatchClientAi ownerDriver;
 
@@ -153,6 +154,26 @@ public final class CampaignAiInvestigationScenario {
                         if(state.tick()!=lastTick){lastTick=state.tick();lastAdvance=System.nanoTime();}
                         require(System.nanoTime()-lastAdvance<TimeUnit.SECONDS.toNanos(12),"Host stopped advancing at "+lastTick);
                         inspect(state,log);
+                        if(state.tick()>0&&state.tick()%60==0
+                                &&state.tick()!=lastBotDiagnosticTick){
+                            lastBotDiagnosticTick=state.tick();
+                            for(var diagnostic:host.devCampaignBotDiagnostics()){
+                                var body=diagnostic.body();
+                                log.printf(java.util.Locale.ROOT,
+                                    "%d HIRE %s room=%d x=%.3f y=%.3f z=%.3f "+
+                                    "decision=%s action_tick=%d decisions=%d rejects=%d "+
+                                    "update_faults=%d fault_type=%s%n",
+                                    state.tick(),diagnostic.seat(),
+                                    body==null?-1:body.room(),
+                                    body==null?Double.NaN:body.x(),
+                                    body==null?Double.NaN:body.y(),
+                                    body==null?Double.NaN:body.z(),
+                                    diagnostic.action(),diagnostic.actionTick(),
+                                    diagnostic.decisions(),diagnostic.rejections(),
+                                    diagnostic.updateFailures(),diagnostic.failureType());
+                            }
+                            log.flush();
+                        }
                         if(state.tick()-lastEnergy>=600||state.outcome()!=LanCase.Outcome.ACTIVE){
                             var budget=host.devGhostBudget();
                             require(budget.energy()==100+budget.gained()-budget.spent(),"Ghost energy ledger mismatch");

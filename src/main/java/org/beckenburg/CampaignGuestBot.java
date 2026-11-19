@@ -72,6 +72,19 @@ final class CampaignGuestBot implements AutoCloseable {
     private final CampaignHunterInvestigator brain;
     private final LanWorld.Body[] bodies=new LanWorld.Body[6];
     private boolean entered,started,finished;
+    private final CampaignBotUpdateGuard updateGuard=new CampaignBotUpdateGuard();
+    private volatile LanWorld.Body currentBody;
+    private volatile String lastAction="BOOT",lastReject="NONE";
+    private volatile int actionTick=-1,rejections,decisions;
+    /** Read-only host-local diagnostic. Never part of any client packet. */
+    record LocalDiagnostic(String seat,int tick,LanWorld.Body body,String action,
+                           int actionTick,int decisions,int rejections,
+                           long updateFailures,String failureType){}
+    LocalDiagnostic localDiagnostic(){
+        return new LocalDiagnostic(client.seat(),tick,currentBody,lastAction,
+            actionTick,decisions,rejections,updateGuard.failures(),
+            updateGuard.lastFailureType());
+    }
     private int tick,health=100;
     CampaignGuestBot(int port,String name,String password,HouseMap.Site site,int number,int tickPeriodMillis)throws IOException{
         map=new HouseMap(site);
@@ -84,7 +97,8 @@ final class CampaignGuestBot implements AutoCloseable {
         clock=Executors.newSingleThreadScheduledExecutor(r->{
             Thread t=new Thread(r,"campaign-hire");t.setDaemon(true);return t;
         });
-        clock.scheduleWithFixedDelay(this::update,tickPeriodMillis,tickPeriodMillis,TimeUnit.MILLISECONDS);
+        clock.scheduleWithFixedDelay(()->updateGuard.run(this::update),
+            tickPeriodMillis,tickPeriodMillis,TimeUnit.MILLISECONDS);
     }
     void issueSpecialistTool(ProfileStore profile,int number)throws IOException{
         var loadout=java.util.List.of(profile.catalogLoadout());
@@ -118,8 +132,13 @@ final class CampaignGuestBot implements AutoCloseable {
                 int id=Integer.parseInt(p.get(1));
                 double x=Integer.parseInt(p.get(2))/1000d,y=Integer.parseInt(p.get(3))/1000d,z=Integer.parseInt(p.get(4))/1000d;
                 bodies[id]=new LanWorld.Body(x,y,z,Integer.parseInt(p.get(5)),map.roomAt(x,y,z));
+                if(id==seat())currentBody=bodies[id];
                 tick=Math.max(tick,Integer.parseInt(p.get(6)));
             }else if(frame.startsWith("STATE|"))tick=Math.max(tick,Integer.parseInt(LanProtocol.parts(frame).get(1)));
+            else if(frame.startsWith("REJECT|")){
+                rejections++;
+                lastReject=frame.substring(0,Math.min(85,frame.length()));
+            }
             else if(frame.startsWith("DOORS|"))map.applyDoorSnapshot(LanProtocol.parts(frame).get(1));
             else if(frame.startsWith("PROGRESS|")){
                 var p=LanProtocol.parts(frame);health=Integer.parseInt(p.get(1));finished=!p.get(7).equals("ACTIVE");
@@ -128,8 +147,13 @@ final class CampaignGuestBot implements AutoCloseable {
         if(!started||finished||health<=0)return;
         try{
             if(!entered){client.view3D();entered=true;return;}
-            brain.decide(tick,bodies[seat()],bodies[brain.directorSeat()]).send(client);
-        }catch(IOException disconnected){clock.shutdown();}
+            var action=brain.decide(tick,bodies[seat()],bodies[brain.directorSeat()]);
+            lastAction=action.action().name();actionTick=tick;decisions++;
+            action.send(client);
+        }catch(IOException disconnected){
+            lastAction="TRANSPORT_ENDED";
+            clock.shutdown();
+        }
     }
     int seat(){return Integer.parseInt(client.seat().substring(1))-1;}
     @Override public void close(){clock.shutdownNow();client.close();}
