@@ -1,0 +1,17 @@
+ANCHOR	0	foyer	22.5	0	33
+ANCHOR	1	corridor	21.5	0	21
+ANCHOR	2	class-a	15	0	29
+ANCHOR	3	science	15	0	16.5
+ANCHOR	4	dining	34	0	30
+ANCHOR	5	health-link	31	0	18
+ANCHOR	6	gym	44	0	16
+ANCHOR	7	upper-corridor	21.5	3.6	24
+ANCHOR	8	library	15	3.6	30
+ANCHOR	9	class-b	15	3.6	17
+ANCHOR	10	assembly	36	3.6	30
+ANCHOR	11	plant	25.1	-3	16
+ANCHOR	12	grounds	52	0	26
+ANCHOR	13	entry	22.5	0	40.5
+TRANSITION	421	east yard onto forecourt	12	13	52	0	36	3	z	trail
+TRANSITION	422	main stair at upper slab	1	7	25	3.6	27.76	1.8	z	stair
+TRANSITION	423	service stair at lower slab	1	11	28.04	-3	13.43	1.2	z	stair

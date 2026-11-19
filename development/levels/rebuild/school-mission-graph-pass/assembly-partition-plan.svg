@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 630" role="img" aria-labelledby="title desc">
+<title id="title">Ravenshade assembly hall west partition</title>
+<desc id="desc">Measured elevation of the new continuous partition and a plan of the upper lobby approach to its door.</desc>
+<style>
+text{font-family:Arial,sans-serif;fill:#21342e}.section{font-size:19px;font-weight:bold}.note{font-size:14px}
+.wall{fill:#9aafa3;stroke:#405b4f;stroke-width:2}.floor{stroke:#2b3d35;stroke-width:4}
+.walk{fill:none;stroke:#1c765b;stroke-width:3;stroke-dasharray:7 5}.leaf{fill:none;stroke:#a34d27;stroke-width:3}
+.dim{fill:none;stroke:#68796e;stroke-width:1}.room{fill:#e4eadf;stroke:#7c9084;stroke-width:1}
+</style>
+<rect width="950" height="630" fill="#f7f6ed"/>
+<text x="40" y="47" font-size="28" font-weight="bold">Ravenshade assembly hall</text>
+<text x="40" y="74" class="note">Rebuilt west partition · School upper floor +3.60 m</text>
+<text x="40" y="126" class="section">West partition elevation</text>
+<text x="40" y="149" class="note">X 29.92–30.08 m · Z 24.00–36.00 m</text>
+<path class="wall" d="M70 181H550V361H454.8V263H405.2V361H70Z"/>
+<path class="floor" d="M53 361H567"/>
+<path class="dim" d="M70 382V400m480-18v18M70 391H550"/>
+<text x="297" y="414" class="note">12.00 m</text>
+<path class="dim" d="M405.2 369V383m49.6-14v14M405.2 375h49.6"/>
+<text x="407" y="349" class="note">1.24 m</text>
+<text x="154" y="207" class="note">Partition head +8.10 m</text>
+<path class="dim" d="M402 263H330"/>
+<text x="153" y="268" class="note">Door head +6.05 m</text>
+<text x="70" y="432" class="note">The new north and south piers bear on the existing slab.</text>
+<text x="624" y="126" class="section">Grounded upper approach</text>
+<text x="624" y="149" class="note">Plan section around the door · north at top</text>
+<rect class="room" x="631" y="181" width="126" height="180"/>
+<rect class="room" x="757" y="181" width="126" height="180"/>
+<path class="floor" d="M757 181V252.4m0 37.2V361"/>
+<path class="leaf" d="M757 289.6h37.2"/>
+<circle cx="757" cy="289.6" r="3.8" fill="#a34d27"/>
+<path class="walk" d="M652 271h105l104-68"/>
+<text x="637" y="334" class="note">Upper lobby</text>
+<text x="774" y="334" class="note">Assembly hall</text>
+<text x="632" y="400" class="note">Door shown parked open</text>
+<path class="walk" d="M633 426h30"/><text x="673" y="430" class="note">Verified crossing</text>
+<text x="40" y="514" class="section">Also fitted on this floor</text>
+<text x="40" y="543" class="note">Library and classroom leaves use their existing 1.24 m openings along the upper corridor.</text>
+<text x="40" y="568" class="note">The connected mission uses the actual cargo threshold, both stair flights and the east yard crossing.</text>
+</svg>

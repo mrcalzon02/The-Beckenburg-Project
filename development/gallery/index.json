@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11331,
+  "count": 11339,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -105144,6 +105144,86 @@
       "height": 580,
       "bytes": 342134,
       "sha256": "5cfe2e991f65faa341b8119b1e3907706cf1c4ee29c3f88399d3277e47b17bbd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-opengl-frame-420-closed.png",
+      "url": "development/levels/rebuild/captures/school-mission-graph-batch/school-opengl-frame-420-closed.png",
+      "title": "School opengl frame 420 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 379926,
+      "sha256": "4967ef636eb64ddce338be274aee3b893a2bff5c24fc6601a4ca1ff1bee958a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-opengl-frame-420-open.png",
+      "url": "development/levels/rebuild/captures/school-mission-graph-batch/school-opengl-frame-420-open.png",
+      "title": "School opengl frame 420 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 335331,
+      "sha256": "f8f51acbdf1cfd88fbb946e492fb0f906ae74350cad6a56789bf282a842d9c20"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-418-closed.png",
+      "url": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-418-closed.png",
+      "title": "School software frame 418 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 378607,
+      "sha256": "25f99145c9040e372198c0ba145cc8b4b1a2dc5a255e21e5a6feaaead02932a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-418-open.png",
+      "url": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-418-open.png",
+      "title": "School software frame 418 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 364408,
+      "sha256": "edd12103ba525f3b2d74637cd23441ee1b9f39aaf3f964dd39df4a1c8272d6ca"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-419-closed.png",
+      "url": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-419-closed.png",
+      "title": "School software frame 419 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 379349,
+      "sha256": "3852560167559717c485eb1142cb05388e931926f3e4bd6407952977374777ec"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-419-open.png",
+      "url": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-419-open.png",
+      "title": "School software frame 419 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 349742,
+      "sha256": "d9387cf6e1aaebd3cb1fa476cdbd7c2194306dd734b7d64e2087ff3abe267d35"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-420-closed.png",
+      "url": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-420-closed.png",
+      "title": "School software frame 420 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 379379,
+      "sha256": "5e26e84800cdb712b6812fa330a97fe67228e5e6f1a451b956a46bd722a1b1a8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-420-open.png",
+      "url": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-420-open.png",
+      "title": "School software frame 420 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 335198,
+      "sha256": "99251d1fde53646982e8c7f99c98916f38d874be60944389b9a59eacbb523af4"
     },
     {
       "path": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-opengl-records-cupboard.png",

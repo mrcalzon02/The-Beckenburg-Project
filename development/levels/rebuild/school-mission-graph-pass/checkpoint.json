@@ -1,0 +1,144 @@
+{
+  "status": "NATIVE_SCHOOL_ASSEMBLY_PARTITION_AND_CONNECTED_CASE_STAGED_TCP",
+  "prior_commit": "0df8f55beb553e57891e7f04ed492b698e39f282",
+  "native_scene_revision": "8273ea67751770dba4d29c844cd0da664daac3fd09c2c277389e19c430151964",
+  "roster": "development/levels/rebuild/school-mission-graph-pass/roster.json",
+  "plan": {
+    "path": "development/levels/rebuild/school-mission-graph-pass/assembly-partition-plan.svg",
+    "bytes": 2772,
+    "sha256": "48061a5868a6e9ac793265f379ebc5b3f32b80382161626dc32abbfdfb7f1972"
+  },
+  "replaced_wall_components": 6,
+  "retained_native_components": 506,
+  "new_structural_triangles": 36,
+  "wall_and_head_solid_rays": 41,
+  "authored_search_spaces": 40,
+  "stable_gameplay_owners": 15,
+  "fitted_door_sets": 20,
+  "physical_non_door_transitions": 4,
+  "whole_site_direction_posture_replays": 156,
+  "matched_editor_poses": 40,
+  "matched_editor_triangles": 35600,
+  "staged_tcp_peer_count": 4,
+  "assets": [
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/assembly-partition.blend",
+      "bytes": 821920,
+      "sha256": "bd24398fc443f4df5948eba839bae6a1847b0b7d5ae40bd6727d4272cb1a5b4e"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/assembly-partition.glb",
+      "bytes": 3358924,
+      "sha256": "ee76c4d559237fa8e6a0d9cd79ba9cfd62e803a00c6c9d284fb752ed3cba54e2"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/assembly-partition.hcs2",
+      "bytes": 712729,
+      "sha256": "0b0c35536f4cf662fdcb359536ef6d0669e4e70b139ce5496d8e5de472915c64"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/school-fitted-doors.blend",
+      "bytes": 1037335,
+      "sha256": "ccc7fe465719fd664daec4ffe49bbabb3b3810846c55f989eff3f6798480455c"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/authored-layout.json",
+      "bytes": 279097,
+      "sha256": "3eb7904343397fbb4e4c6d7b18efb66193004f15d7e502b33fa78f3e7c2a33e3"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/construction.json",
+      "bytes": 45659,
+      "sha256": "1e88dfcd651bf4294ef9604dcf37c9daeaada82aa8c0aee331e77830064ef171"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/partition.json",
+      "bytes": 766,
+      "sha256": "01ee9bbb05092c7fc269d3ac2e7036fdc6ad88d558997b23ba8442e8a0073d0a"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/door-schedule.tsv",
+      "bytes": 3405,
+      "sha256": "9aea964ebc6290c8c0edae2c726a09d6140d29040518b77303ab33e0734916d5"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/circulation.tsv",
+      "bytes": 6842,
+      "sha256": "bc9922943aca2f3c435fae8d5d1f16cc3665a5c55a76522e1481f800265eefcd"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/mission.tsv",
+      "bytes": 604,
+      "sha256": "75503c9f8383246cf188d0518a36c5380297cccfa1a25e32460137dc3b715fd3"
+    }
+  ],
+  "verification": [
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/verification/editor-comparison.tsv",
+      "bytes": 894,
+      "sha256": "a9070568fb86280926535678ca6bb97eb434e6b56a8f8e12bac7554c293ab878"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/verification/opengl-readback.txt",
+      "bytes": 2091,
+      "sha256": "a42e3d14e5ed6ea31a9e8562c4dd8ffb0c0d4670a8ba264593e03ec22b1c7b76"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/verification/opengl.tsv",
+      "bytes": 2642,
+      "sha256": "05e51c0887dc4f17d78b2d733aad01c45e5b71ff667daf64575843dd7c6ce859"
+    },
+    {
+      "path": "development/levels/rebuild/school-mission-graph-pass/verification/software-and-tcp.tsv",
+      "bytes": 2727,
+      "sha256": "20ccfa5b6239576abd05984b7786829a65882f28722aba301da44cc08e063165"
+    }
+  ],
+  "standing_captures": [
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-opengl-frame-420-closed.png",
+      "bytes": 379926,
+      "sha256": "4967ef636eb64ddce338be274aee3b893a2bff5c24fc6601a4ca1ff1bee958a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-opengl-frame-420-open.png",
+      "bytes": 335331,
+      "sha256": "f8f51acbdf1cfd88fbb946e492fb0f906ae74350cad6a56789bf282a842d9c20"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-418-closed.png",
+      "bytes": 378607,
+      "sha256": "25f99145c9040e372198c0ba145cc8b4b1a2dc5a255e21e5a6feaaead02932a0"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-418-open.png",
+      "bytes": 364408,
+      "sha256": "edd12103ba525f3b2d74637cd23441ee1b9f39aaf3f964dd39df4a1c8272d6ca"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-419-closed.png",
+      "bytes": 379349,
+      "sha256": "3852560167559717c485eb1142cb05388e931926f3e4bd6407952977374777ec"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-419-open.png",
+      "bytes": 349742,
+      "sha256": "d9387cf6e1aaebd3cb1fa476cdbd7c2194306dd734b7d64e2087ff3abe267d35"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-420-closed.png",
+      "bytes": 379379,
+      "sha256": "5e26e84800cdb712b6812fa330a97fe67228e5e6f1a451b956a46bd722a1b1a8"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-mission-graph-batch/school-software-frame-420-open.png",
+      "bytes": 335198,
+      "sha256": "99251d1fde53646982e8c7f99c98916f38d874be60944389b9a59eacbb523af4"
+    }
+  ],
+  "remaining": [
+    "Mounted services, circuits, hiding and evidence placements",
+    "Site boundary and context containment",
+    "Ordinary packaged solo and LAN review selection, complete case acceptance and public release"
+  ]
+}

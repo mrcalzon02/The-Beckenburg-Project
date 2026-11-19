@@ -8732,6 +8732,26 @@ Use measured tread elevations and replay the complete existing flights in both d
 
 Compare individual approach and riser guide stations to the saved stair profile. [DEV-619 evidence](../levels/rebuild/school-interior-doors-pass/checkpoint.json)
 
+### DEV-620 Duplicate assembly hall wall runs gave the upper door an inconsistent clear width
+
+**Status** CORRECTED_WITH_FOUNDED_CONTINUOUS_PARTITION · **Affected** Ravenshade upper lobby and assembly
+
+Cross-wall sight probes measured different clearance from the edges in the two overlaid wall and header sets. The lobby and assembly carried different-height copies of the same west-east wall interface.
+
+Replace both complete runs and heads with one founded partition. Fit the actual 1.24 m by 2.45 m opening and test both door states and the solid surrounding wall.
+
+Audit opposing partition exports for duplicate pier and header bodies before fitting shared leaves. [DEV-620 evidence](../levels/rebuild/school-mission-graph-pass/checkpoint.json)
+
+### DEV-621 The School paved stage inherited the van extraction owner
+
+**Status** CORRECTED_IN_CONNECTED_NATIVE_MISSION · **Affected** Canonical School cargo threshold and paved forecourt
+
+The native ground volume called stage had owner 14 even beyond the physical van. A source layout label for the van staging yard was carried into gameplay ownership without distinguishing its floor from the cargo body.
+
+Bind the paved stage to forecourt owner 13. Bind owner 14 to the real interior and supported deck spawn. Test a live movement from the vehicle onto the court.
+
+Compare the actual extraction boundary with the layout stage area when binding a canonical van. [DEV-621 evidence](../levels/rebuild/school-mission-graph-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 import org.beckenburg.LevelDefinition.Dock;
 import org.beckenburg.LevelDefinition.Portal;
+import org.beckenburg.LevelDefinition.Room;
 import org.beckenburg.LevelDefinition.Socket;
 import org.beckenburg.LevelDefinition.Vec;
 
@@ -102,6 +103,7 @@ public final class NativeSchoolInteriorReview {
                 double t=(double)k/steps;
                 var next=map.resolveMove(at,start.x()+(end.x()-start.x())*t,start.z()+(end.z()-start.z())*t,height);
                 require(next!=null,"Movement lost at "+label+" near "+at+" to "+end);
+                require(map.roomAt(next.x(),next.y(),next.z())>=0,"Route loses room ownership "+label+" at "+next);
                 at=next;
             }
             require(Math.abs(at.y()-end.y())<.05,"Wrong receiving height "+label+" "+at+" versus "+end);
@@ -195,9 +197,152 @@ public final class NativeSchoolInteriorReview {
         }
     }
 
+    private static List<Room> missionRooms(List<String[]> records, NativeInvestigationScene scene,
+            Dock dock, List<Portal> portals) {
+        var anchors=new Room[HouseMap.ROOM_COUNT];
+        for(var row:records) {
+            if(row[0].equals("TRANSITION")){
+                var portal=new Portal(Integer.parseInt(row[1]),Integer.parseInt(row[3]),Integer.parseInt(row[4]),
+                    d(row,5),d(row,6),d(row,7),d(row,8),row[9].equals("z"),row[10],1);
+                var support=scene.physics().support(portal.x(),portal.z(),portal.y(),.03);
+                require(support!=null,"No physical floor or tread under mission transition "+row[2]);
+                portals.add(portal);
+                continue;
+            }
+            require(row[0].equals("ANCHOR"),"Unknown School mission row "+row[0]);
+            int id=Integer.parseInt(row[1]);
+            var feet=new Vec(d(row,3),d(row,4),d(row,5));
+            var room=scene.spaceAt(feet.x(),feet.y(),feet.z());
+            require(anchors[id]==null&&room!=null&&room.id().equals(row[2])&&room.owner()==id&&room.accessible()
+                &&scene.physics().traversable(feet,HunterPosture.STANDING_HEIGHT),"Bad School anchor "+row[2]);
+            anchors[id]=new Room(id,row[2],room.x0(),room.z0(),room.x1(),room.z1(),room.floor(),room.height(),
+                room.outside()?"ground":"stone",room.outside()?"outdoor":"masonry",feet);
+        }
+        double vanY=dock.y()+VanStaging.FLOOR_Y;
+        var van=new VanStaging(new VanStaging.Placement(dock.x(),dock.y(),dock.z(),dock.yaw()));
+        var lip=van.world(0,VanStaging.FRONT);
+        portals.add(new Portal(424,13,14,lip.x(),vanY,lip.z(),VanStaging.RAMP_HALF_WIDTH*2,
+            Math.abs(Math.sin(dock.yaw()))<.5,"trail",1));
+        anchors[14]=new Room(14,"Expedition van",dock.x()-4,dock.z()-1.3,dock.x()+4,dock.z()+1.3,
+            vanY,VanStaging.INTERIOR_HEIGHT,"van","metal",new Vec(dock.x(),vanY,dock.z()));
+        return List.of(anchors);
+    }
+
+    private static final class Peer implements AutoCloseable {
+        private final java.util.concurrent.BlockingQueue<String> input=new java.util.concurrent.LinkedBlockingQueue<>();
+        final LanClient client;
+
+        Peer(LanHost host,boolean ghost,String name)throws Exception{
+            client=new LanClient("127.0.0.1",host.port(),ghost,name,input::offer);
+        }
+
+        String await(String prefix)throws Exception{
+            long until=System.nanoTime()+5_000_000_000L;
+            while(System.nanoTime()<until){
+                String row=input.poll(100,java.util.concurrent.TimeUnit.MILLISECONDS);
+                if(row!=null&&(row.startsWith(prefix)||row.startsWith("REJECT|"))){
+                    require(row.startsWith(prefix),"Expected "+prefix+" but host sent "+row);
+                    return row;
+                }
+            }
+            throw new AssertionError("Missing live TCP frame "+prefix);
+        }
+
+        @Override public void close(){client.close();}
+    }
+
+    private static Vec body(String row){
+        var fields=LanProtocol.parts(row);
+        return new Vec(Double.parseDouble(fields.get(2))/1000,Double.parseDouble(fields.get(3))/1000,
+            Double.parseDouble(fields.get(4))/1000);
+    }
+
+    private static Vec step(Peer peer,int seat,int x,int z)throws Exception{
+        Thread.sleep(125);
+        peer.client.step(x,z);
+        peer.await("ACCEPT|STEP");
+        return body(peer.await("BODY|"+seat+"|"));
+    }
+
+    private static List<Integer> missionRoute(HouseMap map,int end){
+        var queue=new java.util.ArrayDeque<Integer>();
+        var predecessor=new HashMap<Integer,Integer>();
+        int start=HouseMap.EXTRACTION_ROOM;
+        queue.add(start);
+        predecessor.put(start,start);
+        while(!queue.isEmpty()){
+            int room=queue.remove();
+            for(int neighbor:map.adjacentRooms(room))if(!predecessor.containsKey(neighbor)){
+                predecessor.put(neighbor,room);
+                queue.add(neighbor);
+            }
+        }
+        require(predecessor.containsKey(end),"Assembly owner is disconnected");
+        var route=new ArrayList<Integer>();
+        for(int room=end;room!=start;room=predecessor.get(room))route.add(room);
+        Collections.reverse(route);
+        return route;
+    }
+
+    private static void stagedLan(HouseMap map)throws Exception{
+        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
+            var scout=new Peer(host,false,"Scout");
+            var walker=new Peer(host,false,"Hunter");
+            var observer=new Peer(host,false,"Observer");
+            var ghost=new Peer(host,true,"Spirit")){
+            String site="SITE|SCHOOL|"+map.level().revision();
+            for(var peer:List.of(scout,walker,observer,ghost)){
+                require(peer.await("SITE|").equals(site),"Peer disagreed with the School revision");
+                peer.client.ready();
+            }
+            scout.await("LOBBY|3|HUMAN|4|WAITING");
+            scout.client.start();
+            scout.await("INFO|mission started");
+            scout.client.view3D();
+            scout.await("ACCEPT|VIEW3D");
+            Vec deck=body(scout.await("BODY|0|"));
+            var feet=deck;
+            for(int i=0;i<9;i++) feet=step(scout,0,-100,0);
+            require(map.roomAt(deck.x(),deck.y(),deck.z())==14&&map.roomAt(feet.x(),feet.y(),feet.z())==13
+                &&Math.abs(feet.y())<.005,"Real School arrival missed the forecourt "+feet);
+            for(int room:missionRoute(map,10)){
+                walker.client.move(room);
+                require(walker.await("ACCEPT|MOVE|").equals("ACCEPT|MOVE|"+room),"Wrong room-level arrival");
+            }
+            walker.client.view3D();
+            walker.await("ACCEPT|VIEW3D");
+            feet=body(walker.await("BODY|1|"));
+            require(feet.equals(map.spawn(10)),"Wrong supported assembly start "+feet);
+            for(int i=0;i<10;i++) feet=step(walker,1,0,100);
+            for(int i=0;i<18;i++) feet=step(walker,1,-100,0);
+            Thread.sleep(125);
+            walker.client.step(-100,0);
+            require(walker.await("REJECT|").contains("blocked by world collision"),"Closed assembly leaf leaked");
+            double yaw=-Math.PI/2;
+            var eye=new LooseClutter.Observer(1,feet.x(),feet.y(),feet.z(),yaw,0,true);
+            var focus=InteractionFocus.pick(map,eye,List.of());
+            require(focus!=null&&focus.kind()==InteractionFocus.Kind.DOOR&&focus.id().equals("420"),"No assembly door aim at "+feet);
+            walker.client.turn(270);
+            walker.client.interact(focus,yaw,0);
+            walker.await("ACCEPT|INTERACT|Open door");
+            require(scout.await("DOORS|420").equals("DOORS|420"),"Peer missed assembly door state");
+            for(int i=0;i<4;i++) feet=step(walker,1,-100,0);
+            require("upper-lobby".equals(map.architecturalRoomAt(feet.x(),feet.y()+1,feet.z())),
+                "Host did not cross the real upper assembly door "+feet);
+            ghost.client.viewGhost3D();
+            ghost.await("ACCEPT|GVIEW3D");
+            require(ghost.await("SITE|").equals(site),"Ghost missed the exact native source");
+            ghost.await("GPOSE|");
+            System.out.println("PASS actual staged four-peer School TCP case, forecourt and fitted assembly doorway "+feet);
+        }
+    }
+
     private static void review(String[] args)throws Exception{
         var rows=Files.readAllLines(Path.of(args[0])).stream().map(line->line.split("\t",-1)).toList();
         var source=rows.get(0);
+        int missionArg=List.of(args).indexOf("--mission");
+        var mission=missionArg<0?List.<String[]>of():Files.readAllLines(Path.of(args[missionArg+1])).stream()
+            .map(line->line.split("\t",-1)).toList();
         var rooms=new ArrayList<NativeInvestigationScene.Space>();
         var stairs=new HashSet<String>();
         for(var r:rows)switch(r[0]){
@@ -225,13 +370,25 @@ public final class NativeSchoolInteriorReview {
         }
         var dock=rows.get(1);
         var existing=LevelPlans.buildSource(HouseMap.Site.SCHOOL);
+        var placement=new Dock(d(dock,1),d(dock,2),d(dock,3),d(dock,4));
+        var portals=new ArrayList<>(specs.stream().map(NativeInvestigationDoor.Spec::portal).toList());
+        var anchors=mission.isEmpty()?existing.rooms():missionRooms(mission,scene,placement,portals);
         var definition=new LevelDefinition("school",scene.revision(),"Ravenshade fitted thresholds",
-            existing.rooms(),specs.stream().map(NativeInvestigationDoor.Spec::portal).toList(),
-            List.of(),List.of(),List.of(),sockets,List.of(),new Dock(d(dock,1),d(dock,2),d(dock,3),d(dock,4)),
+            anchors,portals,List.of(),List.of(),List.of(),sockets,List.of(),placement,
             existing.ambience(),existing.water(),existing.sounds());
         var host=new HouseMap(HouseMap.Site.SCHOOL,definition,null,scene);
         var guest=new HouseMap(HouseMap.Site.SCHOOL,definition,null,scene);
-        require(specs.size()==17,"Missing a fitted School frame");
+        require(specs.size()==(mission.isEmpty()?17:20),"Missing a fitted School frame");
+        if(!mission.isEmpty()){
+            require(host.valid()&&guest.valid(),"The connected School does not have fifteen valid anchors");
+            for(var room:anchors){
+                Vec feet=room.spawn();
+                require(host.roomAt(feet.x(),feet.y(),feet.z())==room.id(),"Wrong spawn zone "+room);
+            }
+            var outside=host.van().world(0,VanStaging.FRONT-VanStaging.RAMP_LENGTH-.6);
+            var ground=new Vec(outside.x(),placement.y(),outside.z());
+            require(host.roomAt(ground.x(),ground.y(),ground.z())==13,"The forecourt incorrectly inherits the van owner");
+        }
         require(RitualSites.valid(host),"Existing School ritual installations lost their supported room ownership");
         var output=Path.of(args[3]);
         Files.createDirectories(output);
@@ -243,7 +400,7 @@ public final class NativeSchoolInteriorReview {
             require(sweep(scene.physics(),spec),"Leaf sweeps an unsupported or solid area "+spec.frameId());
             audit(host,spec,false);
             int id=spec.portal().id();
-            boolean capture=id==401||id==404||id==413||id==414||id==417;
+            boolean capture=mission.isEmpty()?id==401||id==404||id==413||id==414||id==417:id>=418;
             if(capture)render(host,spec.portal(),output.resolve("school-frame-"+id+"-closed.png"));
             host.toggleDoor(id,System.nanoTime()-2_000_000_000L);
             guest.applyDoorSnapshot(host.doorSnapshot());
@@ -260,8 +417,28 @@ public final class NativeSchoolInteriorReview {
         for(var spec:specs)audit(host,spec,true);
         report.add("all_open_crossing\tPASS");
         replay(host,rows,report);
+        if(!mission.isEmpty()){
+            report.add("connected_mission_owners\t15 supported spawns and four measured transitions");
+            report.add("cargo_owner_receipt\tVan interior 14, forecourt 13");
+            var physics=scene.physics();
+            int closure=0;
+            for(double z:new double[]{24.15,25,27,29.5,30.5,31.9,34.1,35.7})
+                for(double y:new double[]{3.82,4.9,5.8,6.3,7.6}){
+                    require(!physics.clearSight(new Vec(29.55,y,z),new Vec(30.45,y,z)),
+                        "Rebuilt assembly partition has an open seam at "+y+","+z);
+                    closure++;
+                }
+            require(!physics.clearSight(new Vec(29.55,6.21,33),new Vec(30.45,6.21,33)),
+                "Rebuilt assembly head does not close above the leaf");
+            report.add("assembly_wall_and_head_closure\t"+(closure+1)+" solid rays");
+        }
         report.add("spaces\t"+rooms.stream().filter(NativeInvestigationScene.Space::accessible).count());
+        if(List.of(args).contains("--lan")){
+            require(!mission.isEmpty(),"The staged TCP replay needs the surveyed mission graph");
+            stagedLan(new HouseMap(HouseMap.Site.SCHOOL,definition,null,scene));
+            report.add("staged_tcp_case\tFour peers, physical cargo departure and new assembly door crossing");
+        }
         Files.write(Path.of(args[2]),report);
-        if(args.length>4&&!args[4].equals("--gpu")) exportTriangles(scene,Path.of(args[4]));
+        if(args.length>4&&!args[4].startsWith("--")) exportTriangles(scene,Path.of(args[4]));
     }
 }

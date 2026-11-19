@@ -2035,3 +2035,10 @@ The [Blackpine checkpoint](levels/rebuild/blackpine-dispatch-pass/checkpoint.jso
 The [School checkpoint](levels/rebuild/school-interior-doors-pass/checkpoint.json) fits sixteen native door sets, preserves the prior foyer and verifies the entire supported arrival tree in two staged game worlds. All 156 direction and posture checks pass across 40 accessible spaces. The real software and OpenGL renderers loaded the exact source. The next School work is surveying remaining open passage edges, owner transitions and mounted services before ordinary dispatch.
 
 Main was observed at cdf802b18731a4648edfb6d0c94aea3ed96e5325. Full multiplayer 44496299092 and Windows installer 44496299087 succeeded there. Renderer acceptance 44496299169 failed. The preceding Blackpine held-draft gallery run 44503763411 passed at 3b6b0588b311ccbaab70be97ed89772cba6e22ab. The held map parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.
+
+
+## Ravenshade assembly construction and live staged case
+
+The [School mission checkpoint](levels/rebuild/school-mission-graph-pass/checkpoint.json) closes the measured wall and door conflicts and connects the staged mission on the exact retained terrain and floor datums. Four live TCP peers agree on the scene, and real input walks the van ramp and newly fitted assembly door. The 40 authored spaces and 156 full route replays pass again. Next install the plant breaker, room lighting and physical hiding before packaged review.
+
+Main was observed at cdf802b18731a4648edfb6d0c94aea3ed96e5325 with successful multiplayer 44496299092 and installer 44496299087 and failed renderer acceptance 44496299169. The previous Ravenshade draft gallery run 44507112742 passed at 0df8f55beb553e57891e7f04ed492b698e39f282. The held parent is 5c3daf923a7359554dc075c9e99be139bbcb1441.

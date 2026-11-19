@@ -7183,5 +7183,19 @@
       "route_direction_posture_replays": 156
     },
     "next_action": "Survey physical room ownership and reachable open passages, then bind whole-school mission transitions and services to the retained floors and doors."
+  },
+  "school_mission_graph_checkpoint": {
+    "status": "NATIVE_SCHOOL_ASSEMBLY_PARTITION_AND_CONNECTED_CASE_STAGED_TCP",
+    "baseline": "0df8f55beb553e57891e7f04ed492b698e39f282",
+    "checkpoint": "development/levels/rebuild/school-mission-graph-pass/checkpoint.json",
+    "roster": "development/levels/rebuild/school-mission-graph-pass/roster.json",
+    "native_revision": "8273ea67751770dba4d29c844cd0da664daac3fd09c2c277389e19c430151964",
+    "counts": {
+      "native_doors": 20,
+      "owned_zones": 15,
+      "authored_spaces": 40,
+      "tcp_peers": 4
+    },
+    "next_action": "Fit the School plant breaker and connected fixtures to the retained rooms, then install three supported hiding candidates and test ordinary review selection."
   }
 }

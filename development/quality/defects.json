@@ -6876,6 +6876,28 @@
       "action": "Use measured tread elevations and replay the complete existing flights in both directions on the original native collision.",
       "older_maps": "Compare individual approach and riser guide stations to the saved stair profile.",
       "evidence": "development/levels/rebuild/school-interior-doors-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-620",
+      "title": "Duplicate assembly hall wall runs gave the upper door an inconsistent clear width",
+      "status": "CORRECTED_WITH_FOUNDED_CONTINUOUS_PARTITION",
+      "affected": "Ravenshade upper lobby and assembly",
+      "symptom": "Cross-wall sight probes measured different clearance from the edges in the two overlaid wall and header sets.",
+      "cause": "The lobby and assembly carried different-height copies of the same west-east wall interface.",
+      "action": "Replace both complete runs and heads with one founded partition. Fit the actual 1.24 m by 2.45 m opening and test both door states and the solid surrounding wall.",
+      "older_maps": "Audit opposing partition exports for duplicate pier and header bodies before fitting shared leaves.",
+      "evidence": "development/levels/rebuild/school-mission-graph-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-621",
+      "title": "The School paved stage inherited the van extraction owner",
+      "status": "CORRECTED_IN_CONNECTED_NATIVE_MISSION",
+      "affected": "Canonical School cargo threshold and paved forecourt",
+      "symptom": "The native ground volume called stage had owner 14 even beyond the physical van.",
+      "cause": "A source layout label for the van staging yard was carried into gameplay ownership without distinguishing its floor from the cargo body.",
+      "action": "Bind the paved stage to forecourt owner 13. Bind owner 14 to the real interior and supported deck spawn. Test a live movement from the vehicle onto the court.",
+      "older_maps": "Compare the actual extraction boundary with the layout stage area when binding a canonical van.",
+      "evidence": "development/levels/rebuild/school-mission-graph-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
