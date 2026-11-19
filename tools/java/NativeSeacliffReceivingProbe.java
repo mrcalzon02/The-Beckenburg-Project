@@ -65,13 +65,128 @@ public final class NativeSeacliffReceivingProbe {
         renderer.x=at.x();renderer.z=at.z();renderer.eyeHeight=at.y()+HunterPosture.STANDING_EYE;
         renderer.yaw=yaw;renderer.pitch=pitch;
         renderer.drawNetwork(map,List.of(),-1,0);
+        var gpu=GpuWorldRenderer.active();
+        if(gpu!=null){
+            check(renderer.awaitSubmittedGpuPrewarm(30_000_000_000L,()->false),"No native OpenGL frame");
+            renderer.pinCompletedGpuFrame(gpu.latest());
+            renderer.drawNetwork(map,List.of(),-1,0);
+            check(renderer.frameDiagnostics().gpuReadbackAvailable(),"Missing exact hardware readback");
+        }
         check(renderer.frameDiagnostics().faces()>500&&renderer.frameDiagnostics().frustumFaces()>35,"Native geometry missing in frame");
         var frame=renderer.image();
         check(ImageIO.write(frame,"png",file.toFile()),"PNG encoder unavailable");
         return frame.getRGB(0,0,840,560,null,0,840);
     }
 
+    private static LooseClutter.Observer aim(HouseMap map, Socket s, InteractionFocus.Kind kind) {
+        for (double distance : new double[]{.65,.85,1.10,1.35,1.60})
+            for (double tangent : new double[]{0,-.30,.30}) {
+                double x=s.x()-distance, z=s.z()+tangent;
+                double y=map.level().room(s.room()).y();
+                if(!map.traversable(x,y,z)||map.roomAt(x,y,z)!=s.room())continue;
+                double yaw=Math.atan2(s.x()-x,s.z()-z);
+                double targetHeight=s.y()+(kind==InteractionFocus.Kind.GENERATOR?.10:0);
+                double pitch=Math.atan2(targetHeight-y-HunterPosture.STANDING_EYE,Math.hypot(s.x()-x,s.z()-z));
+                var viewer=new LooseClutter.Observer(0,x,y,z,yaw,pitch,true);
+                var picked=InteractionFocus.pick(map,viewer,List.of());
+                String id=kind==InteractionFocus.Kind.SWITCH?Integer.toString(s.room()):s.id();
+                if(picked!=null&&picked.kind()==kind&&picked.id().equals(id))return viewer;
+            }
+        throw new AssertionError("No supported aim on "+s);
+    }
+
+    private static double light(FixtureLighting field, Socket s) {
+        return field.sampleNormal(s.room(),s.x(),s.y()-.65,s.z(),0,1,0).energy();
+    }
+
+    private static List<String> power(HouseMap map, SceneRenderer renderer, Path folder) throws Exception {
+        var starter=map.level().socket("generator",9);
+        var panel=map.level().socket("breaker",9);
+        var power=new RoomLighting();
+        var field=new FixtureLighting(map);
+        var loads=map.level().sockets().stream().filter(s->s.type().equals("light")).toList();
+        check(loads.size()==7,"Seven physically specified load sockets");
+        var starterPose=aim(map,starter,InteractionFocus.Kind.GENERATOR);
+        var panelPose=aim(map,panel,InteractionFocus.Kind.BREAKER);
+        check(RoomLighting.breakerAimed(map,panelPose.x(),panelPose.y(),panelPose.z(),panelPose.yaw()),"Breaker shortcut aim");
+        for(int room:new int[]{6,9}) {
+            var sw=map.level().socket("switch",room);
+            var pose=aim(map,sw,InteractionFocus.Kind.SWITCH);
+            check(power.aimed(map,pose.x(),pose.y(),pose.z(),pose.yaw())==room,"Switch owner");
+        }
+        for(double posture:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}) {
+            var middle=new Vec(57.0,0,21.65);
+            cross(map,List.of(map.spawn(9),middle,new Vec(57.0,0,starterPose.z()),
+                new Vec(starterPose.x(),0,starterPose.z())),posture,"Walk to diesel starter");
+            cross(map,List.of(map.spawn(9),middle,new Vec(57.0,0,panelPose.z()),
+                new Vec(panelPose.x(),0,panelPose.z())),posture,"Walk to distribution board");
+        }
+        var stair = new ArrayList<>(List.of(map.spawn(6),new Vec(48,4,22),new Vec(48,4,16),
+            new Vec(48.8,4,16),new Vec(56.32,0,16),new Vec(56.95,0,16),new Vec(56.95,0,18),
+            new Vec(56,0,19),new Vec(56,0,22),map.spawn(9)));
+        for(double posture:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}) {
+            cross(map,stair,posture,"Upper switch room to lower plant");
+            var returnTrip=new ArrayList<>(stair);
+            Collections.reverse(returnTrip);
+            cross(map,returnTrip,posture,"Lower plant to upper switch room");
+        }
+        field.frame(power,0);
+        var on=loads.stream().mapToDouble(s->light(field,s)).toArray();
+        int tick=0;
+        for(int room:new int[]{6,9}){
+            power.toggle(room);
+            field.frame(power,++tick);
+            for(int i=0;i<loads.size();i++) {
+                var lamp=loads.get(i);
+                check(lamp.room()==room?light(field,lamp)<on[i]-.015:Math.abs(light(field,lamp)-on[i])<.01,
+                    "Room switch disagrees with physical load "+lamp.id());
+            }
+            power.toggle(room);
+        }
+        power.setSourceRunning(false);
+        field.frame(power,++tick);
+        check(power.breaker()&&!power.supplied(),"Generator changed breaker state");
+        for(int i=0;i<loads.size();i++)
+            check(light(field,loads.get(i))<on[i]-.015,"Generator did not darken "+loads.get(i).id());
+        power.setBreaker(false);
+        power.setSourceRunning(true);
+        check(!power.supplied(),"Restart incorrectly repaired the tripped breaker");
+        renderer.lamp=false;
+        renderer.roomLights=power;
+        var view=new Vec(55.1,0,19.15);
+        int[] failed=capture(renderer,map,folder.resolve("battery-plant-blackout-runtime.png"),view,1.57,-.02);
+        power.setBreaker(true);
+        field.frame(power,++tick);
+        for(int i=0;i<loads.size();i++)
+            check(Math.abs(light(field,loads.get(i))-on[i])<.01,"Reset failed "+loads.get(i).id());
+        int[] working=capture(renderer,map,folder.resolve("battery-plant-powered-runtime.png"),view,1.57,-.02);
+        renderer.lamp=true;
+        capture(renderer,map,folder.resolve("battery-plant-installation-runtime.png"),view,1.57,-.02);
+        int difference=0;
+        for(int i=0;i<working.length;i++)if(working[i]!=failed[i])difference++;
+        check(difference>1000,"The real lighting renderer did not change");
+        return List.of("physical_starter_and_breaker_aim\tPASS "+starterPose+" | "+panelPose,
+            "physical_switch_aim\tPASS rooms 6 and 9","independent_two_circuits_seven_loads\tPASS",
+            "separate_source_and_breaker\tPASS","service_stair_both_directions_and_postures\tPASS",
+            "plant_blackout_pixels_changed\t"+difference);
+    }
+
     public static void main(String[] args)throws Exception{
+        if(args.length<4||!args[3].equals("--gpu")){
+            review(args);
+            return;
+        }
+        var launcher=Class.forName("org.beckenburg.gpu.GpuDesktop");
+        var start=launcher.getDeclaredMethod("startGpu");
+        var stop=launcher.getDeclaredMethod("stopReviewGpu");
+        start.setAccessible(true);
+        stop.setAccessible(true);
+        start.invoke(null);
+        try{review(args);}
+        finally{stop.invoke(null);}
+    }
+
+    private static void review(String[] args)throws Exception{
         var rows=Files.readAllLines(Path.of(args[0])).stream().map(line->line.split("\t",-1)).toList();
         var source=rows.get(0);
         var dock=rows.get(1);
@@ -96,6 +211,8 @@ public final class NativeSeacliffReceivingProbe {
             case "RITUAL" -> sockets.add(new Socket("battery-ritual-"+row[1],"ritual",Integer.parseInt(row[2]),
                 d(row,3),d(row,4),d(row,5),0,row[1]));
             case "TREAD" -> stairs.add(row[1]);
+            case "SOCKET" -> sockets.add(new Socket(row[1],row[2],Integer.parseInt(row[3]),
+                d(row,4),d(row,5),d(row,6),d(row,7),row[8]));
             case "POINT" -> routes.computeIfAbsent(row[1],key->new ArrayList<>()).add(point(row,2));
             default -> throw new IllegalArgumentException(row[0]);
         };
@@ -182,7 +299,7 @@ public final class NativeSeacliffReceivingProbe {
         host.toggleDoor(portal.id());
         guest.applyDoorSnapshot(host.doorSnapshot());
         check(doorState(guest,portal,false)==closed,"Reclosed fitted state");
-        Files.write(Path.of(args[2]),List.of(
+        var report=new ArrayList<>(List.of(
             "measure\tresult",
             "scene_revision\t"+scene.revision(),
             "native_room_volumes\t"+spaces.size(),
@@ -200,5 +317,7 @@ public final class NativeSeacliffReceivingProbe {
             "acoustic_open_cost\t"+open,
             "acoustic_closed_cost\t"+closed,
             "changed_renderer_pixels\t"+differences));
+        if(host.level().socket("generator",9)!=null)report.addAll(power(host,renderer,directory));
+        Files.write(Path.of(args[2]),report);
     }
 }

@@ -1,0 +1,126 @@
+{
+  "status": "SEACLIFF_SERVICE_STACK_POWER_VERIFIED_MISSION_DISPATCH_OPEN",
+  "baseline": "d70770ef8e0683fe2af6497594595c83979509b1",
+  "room_circuits": 2,
+  "loads": 7,
+  "retained_diesel": "level_blockout_diesel_generator_skid.001",
+  "bearing_probes": 55,
+  "roster": "roster.json",
+  "scene_files": [
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/wld-17/authored-layout.json",
+      "bytes": 54760,
+      "sha256": "89f326b4a4784a2d66651850d5686a27bfea21b64f48453ae2d2f2e74e0f3ced"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/wld-17/construction.json",
+      "bytes": 29009,
+      "sha256": "ef22864161325c496e517d348fa8377988a63a681d3e4dd5e4b8b59282ec93d2"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/wld-17/power.json",
+      "bytes": 24178,
+      "sha256": "bf327eb0419fa3f5bc47526520a04ad4e0a1276d3d0c5cb1b4867b01e3fd58b6"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/wld-17/powered-service-stack.blend",
+      "bytes": 782802,
+      "sha256": "9c17359707d063f804429f7133f99103590c4d04737a9c0a81932b1e918e54d8"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/wld-17/powered-service-stack.glb",
+      "bytes": 4260004,
+      "sha256": "c12600526ef49e816924c513e1eae7f180c32aaaaf23623e649c3024d1e5d068"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/wld-17/powered-service-stack.hcs2",
+      "bytes": 658625,
+      "sha256": "4531bb6633c1d4594d8cfd64b79f459ad0bd9529bce5dc1e1d0bf88750dfb848"
+    }
+  ],
+  "plan": {
+    "path": "development/levels/rebuild/seacliff-power-pass/seacliff-service-power.svg",
+    "bytes": 4166,
+    "sha256": "383ff9e2f4089054bd0e873a6cc5b6b6774c2ad407a67455466090da21ef8365"
+  },
+  "verification": [
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/verification/native-readback.json",
+      "bytes": 406,
+      "sha256": "be258c4a1fff04701f01f4486e108651d8bb80219b665dd4a0f8415eb782e5e3"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/verification/opengl-log.txt",
+      "bytes": 586,
+      "sha256": "bf894d4e207a13a65305f714a02d0058486dde5bf199dad4e08c2d3cecec8380"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/verification/opengl-result.tsv",
+      "bytes": 1118,
+      "sha256": "2f3054cb917b15648ec898c9498d6affe0ea235ed429d9f1830dbb5005e34786"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/verification/runtime.tsv",
+      "bytes": 7922,
+      "sha256": "9356002a0c7abe87c8e3d92ca7016f83f9c0dbd3103b4d41be3737e5858a329c"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/verification/software-log.txt",
+      "bytes": 162,
+      "sha256": "478ec8af1a51d89cff4c2cc2688e4c6e9a137f9a1c4c99305b6962aa28339fa9"
+    },
+    {
+      "path": "development/levels/rebuild/seacliff-power-pass/verification/software-result.tsv",
+      "bytes": 1118,
+      "sha256": "6ce5fb6ff544455219ed9bfbb5c3cc5c85a98089966215e815b459d6712d6f39"
+    }
+  ],
+  "captures": [
+    {
+      "renderer": "software",
+      "view": "plant-powered",
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-software-plant-powered.png",
+      "bytes": 250145,
+      "sha256": "5d691f706f8f44637dc9efeecb3537ebb5ccd2011392d924baa003343fb54478"
+    },
+    {
+      "renderer": "software",
+      "view": "plant-blackout",
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-software-plant-blackout.png",
+      "bytes": 176260,
+      "sha256": "de616830cd793e19eb9c832634c7504f0395a7ac9d0b52187442976bd4ee6053"
+    },
+    {
+      "renderer": "software",
+      "view": "plant-installation",
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-software-plant-installation.png",
+      "bytes": 407870,
+      "sha256": "3273c777ab6d2a8525b7863367938d99084f1b400d79eaf4aade2c591ac524f4"
+    },
+    {
+      "renderer": "opengl",
+      "view": "plant-powered",
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-opengl-plant-powered.png",
+      "bytes": 232782,
+      "sha256": "d1a770682a95889ed577ab88d3ba5ba7f0c3c5ec9363d49fc9d9ead08c47161e"
+    },
+    {
+      "renderer": "opengl",
+      "view": "plant-blackout",
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-opengl-plant-blackout.png",
+      "bytes": 176399,
+      "sha256": "485bef3a5ac5c3bf726566d37a8662f80bbea0f42060774a86433a5a99819a6a"
+    },
+    {
+      "renderer": "opengl",
+      "view": "plant-installation",
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-opengl-plant-installation.png",
+      "bytes": 396366,
+      "sha256": "a2655fe42ee95977c7b316d0f978cae214bd62729a2110be377a73e198d9745a"
+    }
+  ],
+  "acceptance_remaining": [
+    "Complete lower and upper mission ownership, physical connections, evidence and hiding.",
+    "Package normal solo and LAN selection, host ghost disturbance trip and reconnect, remaining site loads, and full case."
+  ]
+}

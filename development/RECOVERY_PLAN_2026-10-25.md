@@ -2004,3 +2004,7 @@ Main remains at 10fe52cb1feba1267efcf4edce67a5ca1bd3823e with the draft parent a
 ## Hollow Creek draft selection
 
 The [Hollow Creek selection checkpoint](levels/rebuild/hollow-creek-dispatch-pass/checkpoint.json) adds ordinary solo and LAN review selection, verified by physical host movement and peer snapshots. Prior College packaged dispatch passed again. Main was observed at af7d662e1efc0bc7857619c7e0b907f07b111181 with successful multiplayer and installer runs 44456199823 and 44456199835. GPU run 44445981592 failed the stationary-world resource and lighting check on 917585ce3ae311fa57bcfb9c48d0326ba9248250. The held map draft and parent remain separate from these upstream runs.
+
+## Seacliff Battery service power
+
+The [Battery electrical checkpoint](levels/rebuild/seacliff-power-pass/checkpoint.json) verifies two fitted room circuits and exact software and hardware rendering. Its staged kernel still needs the complete mission adapter and network authority check. Main was checked at af7d662e1efc0bc7857619c7e0b907f07b111181 with multiplayer and installer runs 44456199823 and 44456199835. The earlier GPU stationary-world failure remains tracked separately. The held parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.

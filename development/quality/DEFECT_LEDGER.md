@@ -8592,6 +8592,34 @@ Evidence and verification: development/levels/rebuild/college-residence-pass/che
 
 Older-map obligation: Include HVAC, plumbing and electrical geometry in retained-mesh contact audits for furniture templates.
 
+### DEV-608 — Seacliff diesel skid and distribution had no operational service circuits
+
+**Status:** CORRECTED_FOR_THE_TWO_STAGED_SERVICE_ROOMS · **Affected:** Battery lower plant and upper service room
+
+The existing founded diesel skid had no starter socket and there were no working service loads.
+
+Cause / uncertainty: The native construction packet carried the source model as scenery.
+
+Fix / next action: Fit the actual casing starter, rail-mounted distribution bank, measured terminal takeoffs, sealed feed, and two switched circuits. Test the actual mounted controls and blackout in both renderers.
+
+Evidence and verification: development/levels/rebuild/seacliff-power-pass/checkpoint.json
+
+Older-map obligation: Audit source-to-board takeoffs and interstorey bearings as well as circuit state. Recheck other site loads and host ghost authority separately.
+
+### DEV-609 — Battery service route marked the last tread as the lower slab
+
+**Status:** GUIDANCE_DATUM_CORRECTED_AND_MOVEMENT_REPLAYED · **Affected:** WLD-17 route-12 plant stair
+
+Shared movement landed at Y 0.173913 m at the former X 56.0 m mark, where the guide claimed Y 0.
+
+Cause / uncertainty: The guide switched elevations at the last riser plane.
+
+Fix / next action: Move the lower-floor inspection point to the measured slab at X 56.32 m. Verify both directions in both postures using retained stair geometry.
+
+Evidence and verification: development/levels/rebuild/seacliff-power-pass/checkpoint.json
+
+Older-map obligation: Measure either side of the actual end riser when publishing a level guide.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

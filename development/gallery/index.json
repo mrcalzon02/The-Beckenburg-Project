@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11297,
+  "count": 11303,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -104984,6 +104984,66 @@
       "height": 900,
       "bytes": 705867,
       "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-opengl-plant-blackout.png",
+      "url": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-opengl-plant-blackout.png",
+      "title": "Seacliff opengl plant blackout",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 176399,
+      "sha256": "485bef3a5ac5c3bf726566d37a8662f80bbea0f42060774a86433a5a99819a6a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-opengl-plant-installation.png",
+      "url": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-opengl-plant-installation.png",
+      "title": "Seacliff opengl plant installation",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 396366,
+      "sha256": "a2655fe42ee95977c7b316d0f978cae214bd62729a2110be377a73e198d9745a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-opengl-plant-powered.png",
+      "url": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-opengl-plant-powered.png",
+      "title": "Seacliff opengl plant powered",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 232782,
+      "sha256": "d1a770682a95889ed577ab88d3ba5ba7f0c3c5ec9363d49fc9d9ead08c47161e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-software-plant-blackout.png",
+      "url": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-software-plant-blackout.png",
+      "title": "Seacliff software plant blackout",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 176260,
+      "sha256": "de616830cd793e19eb9c832634c7504f0395a7ac9d0b52187442976bd4ee6053"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-software-plant-installation.png",
+      "url": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-software-plant-installation.png",
+      "title": "Seacliff software plant installation",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 407870,
+      "sha256": "3273c777ab6d2a8525b7863367938d99084f1b400d79eaf4aade2c591ac524f4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-software-plant-powered.png",
+      "url": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-software-plant-powered.png",
+      "title": "Seacliff software plant powered",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 250145,
+      "sha256": "5d691f706f8f44637dc9efeecb3537ebb5ccd2011392d924baa003343fb54478"
     },
     {
       "path": "development/levels/rebuild/captures/seacliff-receiving-batch/battery-director-lower-after.png",

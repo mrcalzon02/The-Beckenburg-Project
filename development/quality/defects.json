@@ -6744,6 +6744,28 @@
       "action": "Move the storage to the next usable wall station. Verify no retained-geometry contact and repeat the approach and the sealed threshold sweep.",
       "evidence": "development/levels/rebuild/college-residence-pass/checkpoint.json",
       "older_maps": "Include HVAC, plumbing and electrical geometry in retained-mesh contact audits for furniture templates."
+    },
+    {
+      "id": "DEV-608",
+      "title": "Seacliff diesel skid and distribution had no operational service circuits",
+      "status": "CORRECTED_FOR_THE_TWO_STAGED_SERVICE_ROOMS",
+      "affected": "Battery lower plant and upper service room",
+      "symptom": "The existing founded diesel skid had no starter socket and there were no working service loads.",
+      "cause": "The native construction packet carried the source model as scenery.",
+      "action": "Fit the actual casing starter, rail-mounted distribution bank, measured terminal takeoffs, sealed feed, and two switched circuits. Test the actual mounted controls and blackout in both renderers.",
+      "older_maps": "Audit source-to-board takeoffs and interstorey bearings as well as circuit state. Recheck other site loads and host ghost authority separately.",
+      "evidence": "development/levels/rebuild/seacliff-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-609",
+      "title": "Battery service route marked the last tread as the lower slab",
+      "status": "GUIDANCE_DATUM_CORRECTED_AND_MOVEMENT_REPLAYED",
+      "affected": "WLD-17 route-12 plant stair",
+      "symptom": "Shared movement landed at Y 0.173913 m at the former X 56.0 m mark, where the guide claimed Y 0.",
+      "cause": "The guide switched elevations at the last riser plane.",
+      "action": "Move the lower-floor inspection point to the measured slab at X 56.32 m. Verify both directions in both postures using retained stair geometry.",
+      "older_maps": "Measure either side of the actual end riser when publishing a level guide.",
+      "evidence": "development/levels/rebuild/seacliff-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

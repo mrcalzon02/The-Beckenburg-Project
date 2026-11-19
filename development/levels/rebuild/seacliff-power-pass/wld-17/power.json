@@ -1,0 +1,1219 @@
+{
+  "scope": "Plant and upstairs service stack",
+  "generator": "level_blockout_diesel_generator_skid.001",
+  "source": {
+    "blend": "fbd1b89c7c6da75a88b36d65dfbc623b87215cd66324cac5477d210bfcb0e9da",
+    "glb": "18c7d1befe82c819ea63589435d0112b9e6070afd661b3cccdac76bd24593e8e",
+    "hcs2": "6c49fc48e68c19c696d73857160bf2b9fed82b9fe18314839dc75bdea5a4f5ce"
+  },
+  "export": {
+    "blend": "9c17359707d063f804429f7133f99103590c4d04737a9c0a81932b1e918e54d8",
+    "glb": "c12600526ef49e816924c513e1eae7f180c32aaaaf23623e649c3024d1e5d068",
+    "hcs2": "4531bb6633c1d4594d8cfd64b79f459ad0bd9529bce5dc1e1d0bf88750dfb848"
+  },
+  "mounts": [
+    {
+      "id": "diesel starter backplate",
+      "support": "level_blockout_diesel_generator_skid.001",
+      "position": [
+        58.78000259399414,
+        0.7200000286102295,
+        17.240001678466797
+      ],
+      "normal": [
+        -1.0,
+        3.714033312007814e-07,
+        0.0
+      ]
+    },
+    {
+      "id": "diesel starter backplate",
+      "support": "level_blockout_diesel_generator_skid.001",
+      "position": [
+        58.78000259399414,
+        1.0299999713897705,
+        17.240001678466797
+      ],
+      "normal": [
+        -1.0,
+        3.714033312007814e-07,
+        0.0
+      ]
+    },
+    {
+      "id": "diesel starter backplate",
+      "support": "level_blockout_diesel_generator_skid.001",
+      "position": [
+        58.78000259399414,
+        0.7200000286102295,
+        17.500001907348633
+      ],
+      "normal": [
+        -1.0,
+        3.714033312007814e-07,
+        0.0
+      ]
+    },
+    {
+      "id": "diesel starter backplate",
+      "support": "level_blockout_diesel_generator_skid.001",
+      "position": [
+        58.78000259399414,
+        1.0299999713897705,
+        17.500001907348633
+      ],
+      "normal": [
+        -1.0,
+        3.714033312007814e-07,
+        0.0
+      ]
+    },
+    {
+      "id": "main board fixing rail",
+      "support": "Wall plant E",
+      "position": [
+        59.91999816894531,
+        0.4700000286102295,
+        19.31999969482422
+      ],
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "main board fixing rail",
+      "support": "Wall plant E",
+      "position": [
+        59.91999816894531,
+        1.6399999856948853,
+        19.31999969482422
+      ],
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "main board fixing rail",
+      "support": "Wall plant E",
+      "position": [
+        59.91999816894531,
+        0.4700000286102295,
+        20.299999237060547
+      ],
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "main board fixing rail",
+      "support": "Wall plant E",
+      "position": [
+        59.91999816894531,
+        1.6399999856948853,
+        20.299999237060547
+      ],
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "main board fixing rail",
+      "support": "Wall plant E",
+      "position": [
+        59.91999816894531,
+        0.4700000286102295,
+        21.280000686645508
+      ],
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "main board fixing rail",
+      "support": "Wall plant E",
+      "position": [
+        59.91999816894531,
+        1.6399999856948853,
+        21.280000686645508
+      ],
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "main distribution takeoff 1",
+      "support": "Seacliff main distribution bank 01",
+      "position": [
+        59.81800079345703,
+        2.1661691665649414,
+        19.682552337646484
+      ]
+    },
+    {
+      "id": "main distribution takeoff 2",
+      "support": "Seacliff main distribution bank 01",
+      "position": [
+        59.81800079345703,
+        2.1661691665649414,
+        20.44255256652832
+      ]
+    },
+    {
+      "id": "main distribution takeoff 3",
+      "support": "Seacliff main distribution bank 01",
+      "position": [
+        59.81800079345703,
+        2.1661691665649414,
+        21.202552795410156
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT switch fixing",
+      "support": "Wall plant E",
+      "position": [
+        59.91999816894531,
+        1.25,
+        23.149999618530273
+      ],
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT switch fixing",
+      "support": "Wall plant E",
+      "position": [
+        59.91999816894531,
+        1.25,
+        23.25
+      ],
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        50.439998626708984,
+        2.8400001525878906,
+        19.489999771118164
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        50.439998626708984,
+        2.8400001525878906,
+        19.709999084472656
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        51.560001373291016,
+        2.8400001525878906,
+        19.489999771118164
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        51.560001373291016,
+        2.8400001525878906,
+        19.709999084472656
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        55.84000015258789,
+        2.8400001525878906,
+        19.489999771118164
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        55.84000015258789,
+        2.8400001525878906,
+        19.709999084472656
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.007",
+      "position": [
+        56.959999084472656,
+        2.8400001525878906,
+        19.489999771118164
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.007",
+      "position": [
+        56.959999084472656,
+        2.8400001525878906,
+        19.709999084472656
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        50.439998626708984,
+        2.8400001525878906,
+        23.09000015258789
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        50.439998626708984,
+        2.8400001525878906,
+        23.309999465942383
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        51.560001373291016,
+        2.8400001525878906,
+        23.09000015258789
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        51.560001373291016,
+        2.8400001525878906,
+        23.309999465942383
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        55.84000015258789,
+        2.8400001525878906,
+        23.09000015258789
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        55.84000015258789,
+        2.8400001525878906,
+        23.309999465942383
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.007",
+      "position": [
+        56.959999084472656,
+        2.8400001525878906,
+        23.09000015258789
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT load seat",
+      "support": "Ceiling cap plant.007",
+      "position": [
+        56.959999084472656,
+        2.8400001525878906,
+        23.309999465942383
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT conduit support",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        52.0,
+        2.8400001525878906,
+        23.3799991607666
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT conduit support",
+      "support": "Ceiling cap plant.004",
+      "position": [
+        54.0,
+        2.8400001525878906,
+        23.3799991607666
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT conduit support",
+      "support": "Ceiling cap plant.007",
+      "position": [
+        56.0,
+        2.8400001525878906,
+        23.3799991607666
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT conduit support",
+      "support": "Ceiling cap plant.007",
+      "position": [
+        58.0,
+        2.8400001525878906,
+        23.3799991607666
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-PLANT conduit support",
+      "support": "Ceiling cap plant.007",
+      "position": [
+        59.5,
+        2.8400001525878906,
+        23.3799991607666
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE switch fixing",
+      "support": "Wall service E",
+      "position": [
+        59.91999816894531,
+        5.25,
+        23.149999618530273
+      ],
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE switch fixing",
+      "support": "Wall service E",
+      "position": [
+        59.91999816894531,
+        5.25,
+        23.25
+      ],
+      "normal": [
+        -1.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        51.439998626708984,
+        6.840000152587891,
+        23.09000015258789
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        51.439998626708984,
+        6.840000152587891,
+        23.309999465942383
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        52.560001373291016,
+        6.840000152587891,
+        23.09000015258789
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        52.560001373291016,
+        6.840000152587891,
+        23.309999465942383
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        54.540000915527344,
+        6.840000152587891,
+        23.09000015258789
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        54.540000915527344,
+        6.840000152587891,
+        23.309999465942383
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        55.65999984741211,
+        6.840000152587891,
+        23.09000015258789
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        55.65999984741211,
+        6.840000152587891,
+        23.309999465942383
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        57.63999938964844,
+        6.840000152587891,
+        23.09000015258789
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        57.63999938964844,
+        6.840000152587891,
+        23.309999465942383
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        58.7599983215332,
+        6.840000152587891,
+        23.09000015258789
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE load seat",
+      "support": "Ceiling cap service",
+      "position": [
+        58.7599983215332,
+        6.840000152587891,
+        23.309999465942383
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE conduit support",
+      "support": "Ceiling cap service",
+      "position": [
+        52.0,
+        6.840000152587891,
+        23.3799991607666
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE conduit support",
+      "support": "Ceiling cap service",
+      "position": [
+        54.0,
+        6.840000152587891,
+        23.3799991607666
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE conduit support",
+      "support": "Ceiling cap service",
+      "position": [
+        56.0,
+        6.840000152587891,
+        23.3799991607666
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE conduit support",
+      "support": "Ceiling cap service",
+      "position": [
+        58.0,
+        6.840000152587891,
+        23.3799991607666
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "id": "BATTERY-SERVICE conduit support",
+      "support": "Ceiling cap service",
+      "position": [
+        59.5,
+        6.840000152587891,
+        23.3799991607666
+      ],
+      "normal": [
+        0.0,
+        0.0,
+        -1.0
+      ]
+    }
+  ],
+  "installed": [
+    {
+      "id": "diesel starter",
+      "asset": "button_12",
+      "parts": [
+        "Seacliff diesel starter 01"
+      ],
+      "bounds": [
+        [
+          58.69203,
+          0.71817,
+          17.36329,
+          58.714,
+          1.05473,
+          17.3963
+        ]
+      ],
+      "source": "assets/runtime/models/button_12.glb",
+      "sha256": "5b1b74c3c82f9aea7c8263ff12bc37ae205c0b1b396b135449d9cd728bb01e5e"
+    },
+    {
+      "id": "main distribution bank",
+      "asset": "level_electrical_bank_worn",
+      "parts": [
+        "Seacliff main distribution bank 01"
+      ],
+      "bounds": [
+        [
+          59.548,
+          0.055,
+          19.19,
+          59.918,
+          2.17331,
+          21.41
+        ]
+      ],
+      "source": "assets/runtime/models/level_electrical_bank_worn.glb",
+      "sha256": "385bd50c39a063e415a68aeb995cfccd88ee4a8f19234aeb7b9798a0316432ab"
+    },
+    {
+      "id": "BATTERY-PLANT switch",
+      "asset": "light_switch_1",
+      "parts": [
+        "Seacliff BATTERY-PLANT switch 01"
+      ],
+      "bounds": [
+        [
+          59.899,
+          1.193,
+          23.146,
+          59.919,
+          1.306,
+          23.256
+        ]
+      ],
+      "source": "assets/runtime/models/light_switch_1.glb",
+      "sha256": "6cc8c501605743d0d13bb96b840e8da01d5ea8825d8c13ee284f72f90742159e"
+    },
+    {
+      "id": "BATTERY-PLANT lamp 1",
+      "asset": "level_utility_light",
+      "parts": [
+        "Seacliff BATTERY-PLANT lamp 1 01"
+      ],
+      "bounds": [
+        [
+          50.42,
+          2.683,
+          19.475,
+          51.58,
+          2.839,
+          19.725
+        ]
+      ],
+      "source": "assets/runtime/models/level_utility_light.glb",
+      "sha256": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+    },
+    {
+      "id": "BATTERY-PLANT lamp 2",
+      "asset": "level_utility_light",
+      "parts": [
+        "Seacliff BATTERY-PLANT lamp 2 01"
+      ],
+      "bounds": [
+        [
+          55.82,
+          2.683,
+          19.475,
+          56.98,
+          2.839,
+          19.725
+        ]
+      ],
+      "source": "assets/runtime/models/level_utility_light.glb",
+      "sha256": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+    },
+    {
+      "id": "BATTERY-PLANT lamp 3",
+      "asset": "level_utility_light",
+      "parts": [
+        "Seacliff BATTERY-PLANT lamp 3 01"
+      ],
+      "bounds": [
+        [
+          50.42,
+          2.683,
+          23.075,
+          51.58,
+          2.839,
+          23.325
+        ]
+      ],
+      "source": "assets/runtime/models/level_utility_light.glb",
+      "sha256": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+    },
+    {
+      "id": "BATTERY-PLANT lamp 4",
+      "asset": "level_utility_light",
+      "parts": [
+        "Seacliff BATTERY-PLANT lamp 4 01"
+      ],
+      "bounds": [
+        [
+          55.82,
+          2.683,
+          23.075,
+          56.98,
+          2.839,
+          23.325
+        ]
+      ],
+      "source": "assets/runtime/models/level_utility_light.glb",
+      "sha256": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+    },
+    {
+      "id": "BATTERY-SERVICE switch",
+      "asset": "light_switch_1",
+      "parts": [
+        "Seacliff BATTERY-SERVICE switch 01"
+      ],
+      "bounds": [
+        [
+          59.899,
+          5.193,
+          23.146,
+          59.919,
+          5.306,
+          23.256
+        ]
+      ],
+      "source": "assets/runtime/models/light_switch_1.glb",
+      "sha256": "6cc8c501605743d0d13bb96b840e8da01d5ea8825d8c13ee284f72f90742159e"
+    },
+    {
+      "id": "BATTERY-SERVICE lamp 1",
+      "asset": "level_utility_light",
+      "parts": [
+        "Seacliff BATTERY-SERVICE lamp 1 01"
+      ],
+      "bounds": [
+        [
+          51.42,
+          6.683,
+          23.075,
+          52.58,
+          6.839,
+          23.325
+        ]
+      ],
+      "source": "assets/runtime/models/level_utility_light.glb",
+      "sha256": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+    },
+    {
+      "id": "BATTERY-SERVICE lamp 2",
+      "asset": "level_utility_light",
+      "parts": [
+        "Seacliff BATTERY-SERVICE lamp 2 01"
+      ],
+      "bounds": [
+        [
+          54.52,
+          6.683,
+          23.075,
+          55.68,
+          6.839,
+          23.325
+        ]
+      ],
+      "source": "assets/runtime/models/level_utility_light.glb",
+      "sha256": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+    },
+    {
+      "id": "BATTERY-SERVICE lamp 3",
+      "asset": "level_utility_light",
+      "parts": [
+        "Seacliff BATTERY-SERVICE lamp 3 01"
+      ],
+      "bounds": [
+        [
+          57.62,
+          6.683,
+          23.075,
+          58.78,
+          6.839,
+          23.325
+        ]
+      ],
+      "source": "assets/runtime/models/level_utility_light.glb",
+      "sha256": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+    }
+  ],
+  "circuits": {
+    "6": [
+      "BATTERY-SERVICE-switch",
+      "BATTERY-SERVICE-light-1",
+      "BATTERY-SERVICE-light-2",
+      "BATTERY-SERVICE-light-3"
+    ],
+    "9": [
+      "battery-generator",
+      "battery-breaker",
+      "BATTERY-PLANT-switch",
+      "BATTERY-PLANT-light-1",
+      "BATTERY-PLANT-light-2",
+      "BATTERY-PLANT-light-3",
+      "BATTERY-PLANT-light-4"
+    ]
+  },
+  "raceways": [
+    {
+      "id": "main distribution takeoff 1",
+      "points": [
+        [
+          59.81800079345703,
+          2.1661691665649414,
+          19.682552337646484
+        ],
+        [
+          59.81800079345703,
+          2.75,
+          19.682552337646484
+        ],
+        [
+          59.88,
+          2.75,
+          19.682552337646484
+        ]
+      ],
+      "radius": 0.017
+    },
+    {
+      "id": "main distribution takeoff 2",
+      "points": [
+        [
+          59.81800079345703,
+          2.1661691665649414,
+          20.44255256652832
+        ],
+        [
+          59.81800079345703,
+          2.75,
+          20.44255256652832
+        ],
+        [
+          59.88,
+          2.75,
+          20.44255256652832
+        ]
+      ],
+      "radius": 0.017
+    },
+    {
+      "id": "main distribution takeoff 3",
+      "points": [
+        [
+          59.81800079345703,
+          2.1661691665649414,
+          21.202552795410156
+        ],
+        [
+          59.81800079345703,
+          2.75,
+          21.202552795410156
+        ],
+        [
+          59.88,
+          2.75,
+          21.202552795410156
+        ]
+      ],
+      "radius": 0.017
+    },
+    {
+      "id": "diesel isolated feeder",
+      "points": [
+        [
+          59.82,
+          0.34,
+          17.42
+        ],
+        [
+          59.88,
+          0.34,
+          17.42
+        ],
+        [
+          59.88,
+          0.34,
+          20.3
+        ],
+        [
+          59.88,
+          2.75,
+          20.3
+        ]
+      ],
+      "radius": 0.027
+    },
+    {
+      "id": "east plant wall trunk",
+      "points": [
+        [
+          59.88,
+          2.75,
+          19.65
+        ],
+        [
+          59.88,
+          2.75,
+          23.55
+        ]
+      ],
+      "radius": 0.027
+    },
+    {
+      "id": "protected service riser",
+      "points": [
+        [
+          59.88,
+          2.75,
+          23.55
+        ],
+        [
+          59.88,
+          6.75,
+          23.55
+        ]
+      ],
+      "radius": 0.023
+    },
+    {
+      "id": "BATTERY-PLANT overhead raceway",
+      "points": [
+        [
+          59.88,
+          2.75,
+          23.55
+        ],
+        [
+          59.88,
+          2.75,
+          23.2
+        ],
+        [
+          51,
+          2.75,
+          23.2
+        ]
+      ],
+      "radius": 0.023
+    },
+    {
+      "id": "BATTERY-PLANT switch drop",
+      "points": [
+        [
+          59.902,
+          1.3,
+          23.2
+        ],
+        [
+          59.902,
+          2.75,
+          23.2
+        ]
+      ],
+      "radius": 0.016
+    },
+    {
+      "id": "BATTERY-PLANT forward branch",
+      "points": [
+        [
+          56.4,
+          2.75,
+          23.2
+        ],
+        [
+          56.4,
+          2.75,
+          19.6
+        ],
+        [
+          51,
+          2.75,
+          19.6
+        ]
+      ],
+      "radius": 0.023
+    },
+    {
+      "id": "BATTERY-SERVICE overhead raceway",
+      "points": [
+        [
+          59.88,
+          6.75,
+          23.55
+        ],
+        [
+          59.88,
+          6.75,
+          23.2
+        ],
+        [
+          52,
+          6.75,
+          23.2
+        ]
+      ],
+      "radius": 0.023
+    },
+    {
+      "id": "BATTERY-SERVICE switch drop",
+      "points": [
+        [
+          59.902,
+          5.3,
+          23.2
+        ],
+        [
+          59.902,
+          6.75,
+          23.2
+        ]
+      ],
+      "radius": 0.016
+    }
+  ],
+  "native_triangle_additions": 3460,
+  "retained_physical_parts": 263
+}

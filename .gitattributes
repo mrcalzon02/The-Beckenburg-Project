@@ -327,6 +327,7 @@ tools/review_house_porch.py -text whitespace=cr-at-eol
 tools/java/HousePorchFormation.java -text whitespace=cr-at-eol
 
 development/levels/rebuild/seacliff-receiving-pass/** -text whitespace=cr-at-eol
+development/levels/rebuild/seacliff-power-pass/** -text whitespace=cr-at-eol
 tools/build_seacliff_battery.py -text whitespace=cr-at-eol
 tools/prepare_seacliff_battery.py -text whitespace=cr-at-eol
 tools/review_seacliff_battery.py -text whitespace=cr-at-eol

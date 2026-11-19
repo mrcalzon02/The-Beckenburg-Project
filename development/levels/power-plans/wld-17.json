@@ -1,7 +1,7 @@
 {
   "id": "WLD-17",
   "title": "Battery Brackenhead",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "Two service circuits fitted and verified in the staged native campus. Whole-site loads, mission dispatch and host ghost trip remain open.",
   "generator_required": true,
   "generator_location_intent": "Maintenance/service enclosure serving only authored active site loads",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",
@@ -21,5 +21,10 @@
     "Human switching, blackout navigation, evidence/cameras and CPU/GPU visual parity",
     "LAN authority/reconnect and human/native acceptance"
   ],
-  "source_layout": "development/levels/layouts/wld-17/layout.json"
+  "source_layout": "development/levels/layouts/wld-17/layout.json",
+  "verified_installation": "development/levels/rebuild/seacliff-power-pass/checkpoint.json",
+  "installed_circuits": {
+    "BATTERY-PLANT": 4,
+    "BATTERY-SERVICE": 3
+  }
 }
