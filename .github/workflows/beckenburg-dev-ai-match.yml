@@ -18,6 +18,8 @@ on:
       - 'src/main/java/org/beckenburg/Campaign*'
       - 'src/main/java/org/beckenburg/HunterDiagnosticEquipment.java'
       - 'src/main/java/org/beckenburg/HunterFieldNavigation.java'
+      - 'src/main/java/org/beckenburg/AuthoredSitePhysics.java'
+      - 'src/test/java/org/beckenburg/DevMatchNavigationTest.java'
       - 'src/main/java/org/beckenburg/HunterWitnessExperiment.java'
       - 'src/test/java/org/beckenburg/CampaignWitnessWatchScenario.java'
       - 'src/test/java/org/beckenburg/CampaignDirectedCameraScenario.java'
