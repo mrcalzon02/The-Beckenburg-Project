@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.AtomicInteger;
 import javax.swing.JComponent;
 import javax.swing.RepaintManager;
 import javax.swing.SwingUtilities;
@@ -30,7 +29,10 @@ public final class LanViewportPerformanceReview extends RepaintManager {
     private final CountDownLatch started = new CountDownLatch(1);
     private final CountDownLatch entered = new CountDownLatch(1);
     private final CountDownLatch warmed = new CountDownLatch(10);
-    private final AtomicInteger acceptedSteps = new AtomicInteger();
+    // HINPUT is intentionally acknowledged through authoritative BODY poses.
+    // No production 50Hz movement path sends the old ACCEPT|STEP packet.
+    private final AuthoritativeBodyMotionProbe approvedMovement=
+        new AuthoritativeBodyMotionProbe(0);
     private volatile String phase = "warmup";
     private LanWorldPanel panel;
     private SceneRenderer scene;
@@ -77,7 +79,7 @@ public final class LanViewportPerformanceReview extends RepaintManager {
         String atArrival = phase;
         if (frame.equals("LOBBY|2|HUMAN|3|WAITING")) ready.countDown();
         if (frame.startsWith("INFO|mission started")) started.countDown();
-        if (frame.equals("ACCEPT|STEP")) acceptedSteps.incrementAndGet();
+        approvedMovement.accept(frame,"moving".equals(atArrival));
         SwingUtilities.invokeLater(() -> {
             if (panel == null || finished) return;
             if (frame.equals("ACCEPT|VIEW3D")) inView = true;
@@ -188,17 +190,19 @@ public final class LanViewportPerformanceReview extends RepaintManager {
             for (var s : states)
                 out.write(String.format(Locale.ROOT, "%s,%d,%d,%d%n", s.phase(), s.tick(), s.received(), s.delivered()));
         }
-        String details = String.format(Locale.ROOT, "mode=%s%nrendered_hunters=1%nother_tcp_peers=%d%nviewport=offscreen%nrenderer=%s%nvisible_peer_hunters=%d%nmoving_seconds=%.6f%naccepted_steps=%d%nmax_travel_metres=%.6f%n",
-            solo ? "solo" : "multiplayer", solo ? 0 : 2, GpuWorldRenderer.active() == null ? "software" : GpuWorldRenderer.active().rendererDescription(), peers, movingNs / 1e9, solo ? -1 : acceptedSteps.get(), maxTravel);
+        String details = String.format(Locale.ROOT, "mode=%s%nrendered_hunters=1%nother_tcp_peers=%d%nviewport=offscreen%nrenderer=%s%nvisible_peer_hunters=%d%nmoving_seconds=%.6f%naccepted_steps=%d%nconfirmed_body_travel_metres=%.6f%nmax_travel_metres=%.6f%n",
+            solo ? "solo" : "multiplayer", solo ? 0 : 2, GpuWorldRenderer.active() == null ? "software" : GpuWorldRenderer.active().rendererDescription(), peers, movingNs / 1e9, solo ? -1 : approvedMovement.samples(), solo ? -1 : approvedMovement.metres(), maxTravel);
         if (GpuWorldRenderer.active() != null && frames.stream()
                 .filter(f -> f.phase().equals("idle") && f.compositedFrame() >= 0)
                 .mapToLong(Frame::compositedFrame).distinct().count() < 2)
             throw new AssertionError("Live panel never composited advancing OpenGL readbacks");
         Files.writeString(output.resolve("summary.txt"), details);
         System.out.print(details);
-        if ((!solo && (peers < 1 || states.isEmpty() || acceptedSteps.get() == 0)) || maxTravel < .1 ||
+        if ((!solo && (peers < 1 || states.isEmpty()
+                || approvedMovement.samples()<2 || approvedMovement.metres()<.10))
+                || maxTravel < .1 ||
                 frames.stream().filter(f -> f.phase().equals("idle")).count() < 2)
-            throw new AssertionError("Missing live peer, timed frame, snapshot or host-approved movement");
+            throw new AssertionError("Missing live peer, timed frame, snapshot or host-approved BODY movement");
     }
 
     private void mount(java.util.function.Supplier<LanWorldPanel> open) throws Exception {
