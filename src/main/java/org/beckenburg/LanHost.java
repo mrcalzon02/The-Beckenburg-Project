@@ -949,7 +949,10 @@ public final class LanHost implements AutoCloseable {
                     }
                     if(!moved)return;
                     hunterRooms[peer.slot]=world.body(peer.slot).room();
-                    recordSound(peer.slot,LanGhostPursuit.Sound.FOOTSTEP);
+                    // HINPUT may arrive five times per host tick. Legacy STEP
+                    // and MOVE keep separate, location-sensitive footsteps.
+                    if(footstepStimulus.accept(peer.slot,tick))
+                        recordSound(peer.slot,LanGhostPursuit.Sound.FOOTSTEP);
                     // Live motion must not resend every fixture, door, and body.
                     notifyHunters(world.bodyFrame(peer.slot,tick));
                     reply(peer,"HIDING|"+(world.hidden(peer.slot)?1:0));
@@ -2267,11 +2270,9 @@ public final class LanHost implements AutoCloseable {
     /** Host owns the sound source and ghost hearing stimulus; cue picks only its texture. */
     private void recordSound(int seat,LanGhostPursuit.Sound type,LanSound.Cue selectedCue,
                              GhostSoundProfile.Profile profile){
-        // Realtime locomotion sends 50 physical input updates/s, but acoustic
-        // footfalls retain their established host-tick cadence. Suppress only
-        // repeated FOOTSTEP stimuli within the same 100ms tick, before costly
-        // weather, collision/acoustic-ray, sensor and AI-hearing evaluation.
-        if(type==LanGhostPursuit.Sound.FOOTSTEP&&!footstepStimulus.accept(seat,tick))return;
+        // Legacy room travel and other actual sound sources must be evaluated
+        // independently even when several arrive within the same host tick.
+        // Only the high-frequency HINPUT caller gates duplicate stimuli.
         LanWorld.Body body=world.body(seat);
         // Chat and live voice use ghost cues but never invent speech PCM for
         // other hunters; actual voice packets continue through the UDP relay.
