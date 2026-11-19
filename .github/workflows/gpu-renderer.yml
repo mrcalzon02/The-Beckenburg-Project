@@ -26,6 +26,9 @@ on:
       - 'src/main/java/org/beckenburg/DebugPerformanceHud.java'
       - 'src/main/java/org/beckenburg/FixtureLighting.java'
       - 'src/main/java/org/beckenburg/HouseMap.java'
+      # Source-authored House geometry must undergo actual visual and VBO acceptance.
+      - 'src/main/java/org/beckenburg/HouseRebuildEnvelope.java'
+      - 'src/test/java/org/beckenburg/DevMatchNavigationTest.java'
       - 'src/main/java/org/beckenburg/ArchitecturalLightOcclusion.java'
       - 'src/test/java/org/beckenburg/ArchitecturalLightOcclusionAllocationParityTest.java'
       - 'src/test/java/org/beckenburg/VanHouseViewportProfileTest.java'
