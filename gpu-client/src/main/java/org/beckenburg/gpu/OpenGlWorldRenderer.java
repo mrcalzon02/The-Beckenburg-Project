@@ -17,6 +17,7 @@ import org.beckenburg.BeckenburgDiagnostics;
 import org.beckenburg.GlbProps;
 import org.beckenburg.CastleShelfLabels;
 import org.beckenburg.LevelMaterials;
+import org.beckenburg.RuntimeTextureMipPolicy;
 import org.beckenburg.MaterialAtlas;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
@@ -120,6 +121,14 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  private FloatBuffer depthFloats;
  private final Map<Integer,Texture> textures=new HashMap<>();
  private final Map<Integer,Long> textureRevisions=new HashMap<>();
+ // Conservative A/B only: real runtime mip chains for immutable architectural
+ // diffuse textures, never readouts, decals, imported glTF alpha or live CRTs.
+ private final boolean staticWorldMipmaps=Boolean.getBoolean(RuntimeTextureMipPolicy.OPT_IN_PROPERTY);
+ public record MipStats(long frameId,int builtChains,long extraRgbaBytesEstimate){}
+ private volatile MipStats mipStats;
+ private int frameMipChains;
+ private long frameMipExtraBytesEstimate;
+ public MipStats mipStats(){return mipStats;}
  public record TextureStats(long frameId,int uploads,long uploadedBytes){}
  private volatile TextureStats textureStats;
  private int frameTextureUploads;
@@ -235,14 +244,27 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   }
   if(found!=null)return found;
   Pixmap bitmap=pixelsFor(material);
-  Texture image=new Texture(bitmap);
-  frameTextureUploads++;frameTextureBytes+=4L*bitmap.getWidth()*bitmap.getHeight();
-  bitmap.dispose();
-  // Signage is information, not scenery: preserve readable lettering at distance.
+  // A full mip chain costs extra VRAM and startup work, so it is intentionally
+  // opt-in until on-device aliasing, cold-upload and p99 frame traces pass.
+  // Only immutable environment diffuse IDs qualify; never downsample
+  // readable signage, camera displays or a glTF alpha/evidence material.
   boolean display=GlbProps.isVanDisplayMaterial(material);
-  Texture.TextureFilter filter=display||CastleShelfLabels.isLabelMaterial(material)
+  boolean label=CastleShelfLabels.isLabelMaterial(material);
+  boolean mip=staticWorldMipmaps&&RuntimeTextureMipPolicy.eligible(material,
+      bitmap.getWidth(),bitmap.getHeight(),revision>=0,display||label);
+  Texture image=new Texture(bitmap,mip);
+  frameTextureUploads++;frameTextureBytes+=4L*bitmap.getWidth()*bitmap.getHeight();
+  if(mip){
+   frameMipChains++;
+   frameMipExtraBytesEstimate+=RuntimeTextureMipPolicy.extraRgbaBytes(
+       bitmap.getWidth(),bitmap.getHeight());
+  }
+  bitmap.dispose();
+  // Preserve original near-field nearest sampling and readable text.
+  // Far mip selection is nearest-level/nearest-texel (PSX-compatible baseline).
+  Texture.TextureFilter filter=display||label
       ?Texture.TextureFilter.Linear:Texture.TextureFilter.Nearest;
-  image.setFilter(filter,filter);
+  image.setFilter(mip?Texture.TextureFilter.MipMapNearestNearest:filter,filter);
   image.setWrap(display?Texture.TextureWrap.ClampToEdge:Texture.TextureWrap.Repeat,
       display?Texture.TextureWrap.ClampToEdge:Texture.TextureWrap.Repeat);
   textures.put(material,image);if(revision>=0)textureRevisions.put(material,revision);return image;
@@ -274,6 +296,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   }
   long frameUploadBytes=0,frameReusedBytes=0;
   frameTextureUploads=0;frameTextureBytes=0;
+  frameMipChains=0;frameMipExtraBytesEstimate=0;
   int frameUploadedBatches=0,frameReusedBatches=0;
   resizeTarget(frame.width(),frame.height());
   target.begin();
@@ -377,6 +400,7 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
       frameUploadedBatches,frameReusedBatches,
       frameUploadBytes,frameReusedBytes);
   textureStats=new TextureStats(frame.frameId(),frameTextureUploads,frameTextureBytes);
+  mipStats=new MipStats(frame.frameId(),frameMipChains,frameMipExtraBytesEstimate);
   long finished=System.nanoTime();
   frameTiming=new FrameTiming(frame.sceneId(),frame.frameId(),
       rasterReady-started,finished-rasterReady,finished-started);
@@ -395,6 +419,9 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
       +" vbo_reused_bytes="+frameReusedBytes
       +" textures_uploaded="+frameTextureUploads
       +" texture_uploaded_bytes="+frameTextureBytes
+      +" static_world_mip_opt_in="+staticWorldMipmaps
+      +" mip_chain_builds="+frameMipChains
+      +" mip_extra_rgba_bytes_estimate="+frameMipExtraBytesEstimate
       +" gl_worker_ms="+(finished-started)/1_000_000.0
       +" readback_ms="+(finished-rasterReady)/1_000_000.0
       +" measurement=gl_worker_not_gpu_timestamp");
