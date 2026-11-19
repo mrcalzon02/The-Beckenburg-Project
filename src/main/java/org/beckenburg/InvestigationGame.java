@@ -321,7 +321,7 @@ public final class InvestigationGame {
             rolePicker=new JComboBox<>(InvestigationSession.Role.values());
             assistantRolePicker=new JComboBox<>(CharacterVisuals.Hunter.values());
             assistantRolePicker.setSelectedItem(CharacterVisuals.Hunter.OBSERVER);
-            locationPicker=new JComboBox<>(SiteCatalog.Location.values());
+            locationPicker=new JComboBox<>(SiteCatalog.soloLocations());
             weatherModePicker=new JComboBox<>(MissionWeather.Mode.values());
             weatherPicker=new JComboBox<>(EvidenceSignals.Weather.values());
             weatherSeverityPicker=new JComboBox<>(new Integer[]{1,2,3});

@@ -9,7 +9,8 @@ public final class SiteCatalog {
         HOUSE(MissionSites.title("HOUSE"),true), MANSION(MissionSites.title("MANSION"),true), PRISON(MissionSites.title("PRISON"),true),
         ASYLUM(MissionSites.title("ASYLUM"),true), SCHOOL(MissionSites.title("SCHOOL"),true), FARMHOUSE(MissionSites.title("FARMHOUSE"),true),
         ACADEMY(MissionSites.title("ACADEMY"),true), COLLEGE(MissionSites.title("COLLEGE"),true),
-        CHURCH(MissionSites.title("CHURCH"),true), USER("User authored level",true);
+        CHURCH(MissionSites.title("CHURCH"),true), USER("User authored level",true),
+        HOLLOW_CREEK(MissionSites.title("HOLLOW_CREEK"),false);
         public final String label;
         private final boolean playable;
         private volatile Boolean geometryValidated;
@@ -18,7 +19,9 @@ public final class SiteCatalog {
          * 15-room level every time Swing paints a combo-box label. */
         public synchronized boolean playable(){
             if(this==USER)return UserLevelLibrary.activeId()!=null;
-            if(!playable)return false;
+            if(this==HOLLOW_CREEK){
+                if(!Boolean.getBoolean("beckenburg.review.hollowCreek"))return false;
+            }else if(!playable)return false;
             if(geometryValidated!=null)return geometryValidated;
             try{geometryValidated=LevelPlans.build(HouseMap.Site.valueOf(name())).rooms().size()==15;}
             catch(IllegalArgumentException unavailable){geometryValidated=false;}
@@ -44,6 +47,11 @@ public final class SiteCatalog {
         public double fogMultiplier(){return fog;}
         public boolean initiallyPowered(){return powered;}
         @Override public String toString(){return label;}
+    }
+    static Location[] soloLocations(){
+        return java.util.Arrays.stream(Location.values())
+            .filter(location->location!=Location.HOLLOW_CREEK||location.playable())
+            .toArray(Location[]::new);
     }
     public static void requirePlayable(Location chosen){
         if(!Objects.requireNonNull(chosen).playable())

@@ -1251,3 +1251,9 @@ The [measured upper-storey plan](college-residence-pass/college-residence-plan.s
 The [checkpoint](college-residence-pass/checkpoint.json) records 48 furniture approaches in both postures, six sealed-room controls, the existing 88 route directions, 40 replicated door actions and live switches and source recovery. The held College package uses this exact export. An ordinary host movement replay stops at the closed west bedroom leaf, uses the physical handle and reaches the interior through the open doorway.
 
 Teaching, library, café and the remaining working rooms need their own fitted furniture and clearance reviews. Final surface treatment, physical hiding, evidence anchors and whole-case acceptance remain open.
+
+## Hollow Creek ordinary draft play
+
+The [checkpoint](hollow-creek-dispatch-pass/checkpoint.json) makes Camp Hollow Creek available to the normal solo and LAN selectors when `-Dbeckenburg.review.hollowCreek=true` is set. Four peers agreed on the native revision. Real host movement went from the elevated cargo deck onto the supported woodland approach and back. The existing site rechecked 969 standing positions and 939 sweeps, the ground and water boundaries, all three ritual positions and six van pads. The actual generator and breaker can be aimed at from supported positions. The campaign chapter remains under its existing progression gate.
+
+Complete case, host ghost power disturbance and GPU performance acceptance remain open. Seacliff is the next remote integration candidate. Its existing probe proves two supported routes to the director landing, but its construction still needs a power contract and a native mission identity.

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11296,
+  "count": 11297,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -101934,6 +101934,16 @@
       "height": 1000,
       "bytes": 1010126,
       "sha256": "104f9a238e026f3a7cb85c0d806435a454beb37f7b3afce68fa9a958ce1f31cd"
+    },
+    {
+      "path": "development/levels/rebuild/captures/hollow-creek-dispatch-batch/hollow-creek-review-van-arrival.png",
+      "url": "development/levels/rebuild/captures/hollow-creek-dispatch-batch/hollow-creek-review-van-arrival.png",
+      "title": "Hollow creek review van arrival",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 1021266,
+      "sha256": "9f0306bc08ed4f24136fd087b23e21d1bcb2a1e47c07a407d1e38823f8aa5c79"
     },
     {
       "path": "development/levels/rebuild/captures/house-graybox/house_rebuild/00-entrance-and-coat-vestibule/east.png",
