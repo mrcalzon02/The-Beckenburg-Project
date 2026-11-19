@@ -1,8 +1,8 @@
 {
   "status": "LOCAL_SOURCE_INDEX_COMPLETE_NAMED_CHAT_HISTORY_PARTIALLY_RECOVERED",
   "rule": "Use map-specific staged props and their refinements first, retaining source history. Rough assets are authorized for spatial blocking, model budgets and placement now; refinement follows. Source rough status is not a reason to replace them with generic furniture or invent duplicates. A furniture pilot is not the master inventory.",
-  "local_files": 2061,
-  "unique_local_file_hashes": 1880,
+  "local_files": 2062,
+  "unique_local_file_hashes": 1881,
   "collections": {
     "existing_map_specific_roughs": 298,
     "existing_map_specific_refinements": 15,
@@ -12,7 +12,7 @@
     "additional_custom_model_sources": 102,
     "review_assemblies": 173,
     "reference_and_rejected_studies": 101,
-    "native_map_exports": 287
+    "native_map_exports": 288
   },
   "archive_index": {
     "path": "development/assets/local-library-manifest.json",
@@ -29221,6 +29221,18 @@
       "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
       "sha256": "97cd14efb251c2666c4ab66d9ce82fb74d99858e75a9d78fef89c26a8563e9b3",
       "bytes": 2114568
+    },
+    {
+      "id": "lower-service-partitions",
+      "label": "lower-service-partitions",
+      "maps": [],
+      "category": "native_map_exports",
+      "path": "development/levels/rebuild/seacliff-lower-partitions-pass/wld-17/lower-service-partitions.glb",
+      "collection": "native_map_exports",
+      "status": "EXISTING_SOURCE_CLASSIFY_BEFORE_PLACEMENT",
+      "notes": "Retained source, alias or assembly. Consult its neighbouring manifest and refinement history; a review assembly is not an individual prop.",
+      "sha256": "6e0ed73df261a31413aac4e7858914386f33d1b1a4f0235d36f3597a5972db09",
+      "bytes": 4299100
     },
     {
       "id": "powered-service-stack",

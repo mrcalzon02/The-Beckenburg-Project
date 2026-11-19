@@ -1,0 +1,25 @@
+measure	result
+scene_revision	785a38c56fb57ce326f5ad6f0f4d6b1565bf33c7ada00bced07474bc767c2e1f
+native_room_volumes	17
+van_to_director_west_and_east_standing_crouched	PASS
+director_to_van_west_and_east_standing_crouched	PASS
+canonical_ramp_receipt	PASS
+six_cargo_positions_reach_hatch	PASS
+upper_guard_and_opaque_roof	PASS
+physical_room_anchors	14
+preserved_ritual_socket_ownership	PASS
+closed_cargo_hatch	BLOCKED
+gallery_frame_closed_and_open_body_object_optics	PASS
+local_van_and_director_room_ownership	PASS
+door_state_host_guest_snapshots	PASS
+acoustic_open_cost	2
+acoustic_closed_cost	6
+changed_renderer_pixels	137661
+lower_fitted_doors_and_closed_former_gaps	5
+surveyed_guides_both_directions_and_postures	17
+physical_starter_and_breaker_aim	PASS Observer[seat=0, x=58.064, y=0.0, z=17.38, yaw=1.5707963267948966, pitch=-0.8697048959236562, exposed=true, eye=1.62] | Observer[seat=0, x=58.89, y=0.0, z=20.3, yaw=1.5707963267948966, pitch=-0.8398896196381807, exposed=true, eye=1.62]
+physical_switch_aim	PASS rooms 6 and 9
+independent_two_circuits_seven_loads	PASS
+separate_source_and_breaker	PASS
+service_stair_both_directions_and_postures	PASS
+plant_blackout_pixels_changed	413367

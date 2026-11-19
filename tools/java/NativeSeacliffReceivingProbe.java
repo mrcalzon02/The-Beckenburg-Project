@@ -60,6 +60,61 @@ public final class NativeSeacliffReceivingProbe {
         return LanAcoustics.physicalCostAt(map,p.a(),gallery,p.b(),bay);
     }
 
+    private static Vec lowerApproach(Portal p,double side,double lane) {
+        return p.alongX()?new Vec(p.x()+lane,p.y(),p.z()+side):new Vec(p.x()+side,p.y(),p.z()+lane);
+    }
+
+    private static int checkLowerDoor(HouseMap map, Portal p, boolean open) {
+        for(double lane:new double[]{-.23,0,.23}){
+            var a=lowerApproach(p,-.84,lane);
+            var b=lowerApproach(p,.84,lane);
+            check(map.roomAt(a.x(),a.y(),a.z())==p.a()&&map.roomAt(b.x(),b.y(),b.z())==p.b(),
+                "Wrong fitted lower room owners "+p.id());
+            for(double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+                check(map.traversable(a.x(),a.y(),a.z(),height)&&map.traversable(b.x(),b.y(),b.z(),height),
+                    "Blocked receiver at lower leaf "+p.id());
+                check(walk(map,List.of(a,b),height).isEmpty()==open
+                    &&walk(map,List.of(b,a),height).isEmpty()==open,"Lower moving leaf collision "+p.id());
+            }
+            for(double height:new double[]{.3,1.2,2.10}){
+                check(map.clearLineOfSight(a.x(),height,a.z(),b.x(),height,b.z())==open,"Lower leaf sight "+p.id());
+                check(map.clearObjectPath(a.x(),height,a.z(),b.x(),height,b.z(),.035,.035)==open,
+                    "Lower leaf object motion "+p.id());
+            }
+        }
+        for(double lane:new double[]{-.89,.89}){
+            var a=lowerApproach(p,-.84,lane);
+            var b=lowerApproach(p,.84,lane);
+            check(!map.clearLineOfSight(a.x(),1.25,a.z(),b.x(),1.25,b.z()),"Lower frame detached from pier "+p.id());
+        }
+        if(!open){
+            var at=lowerApproach(p,-1,0);
+            double yaw=p.alongX()?0:Math.PI/2;
+            var observer=new LooseClutter.Observer(0,at.x(),at.y(),at.z(),yaw,-.18,true);
+            var target=InteractionFocus.pick(map,observer,List.of());
+            check(target!=null&&target.kind()==InteractionFocus.Kind.DOOR&&target.id().equals(Integer.toString(p.id())),
+                "Actual closed lower leaf cannot be aimed at "+p.id());
+        }
+        return LanAcoustics.physicalCostAt(map,p.a(),lowerApproach(p,-.84,0),p.b(),lowerApproach(p,.84,0));
+    }
+
+    private static void closedOldGaps(HouseMap map){
+        // Former oblique clearances in the inherited wall fragments.
+        for(double[] station:new double[][]{{24,24.44,0},{44,24.44,0},{26.8,26,1},{32,26,1},{41.2,26,1}}){
+            double x=station[0],z=station[1],dz=station[2]*.8,dx=.8-dz;
+            check(!map.clearLineOfSight(x-dx,1.25,z-dz,x+dx,1.25,z+dz),"Old lower wall gap remains visible");
+            check(!map.clearObjectPath(x-dx,1.25,z-dz,x+dx,1.25,z+dz,.035,.035),"Old lower wall passes a small object");
+            var a=new Vec(x-dx,0,z-dz);
+            var b=new Vec(x+dx,0,z+dz);
+            for(double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
+                check(map.traversable(a.x(),0,a.z(),height)&&map.traversable(b.x(),0,b.z(),height),
+                    "Former gap test lacks supported approaches");
+                check(!walk(map,List.of(a,b),height).isEmpty()&&!walk(map,List.of(b,a),height).isEmpty(),
+                    "Old lower wall gap still passes a body");
+            }
+        }
+    }
+
     private static int[] capture(SceneRenderer renderer,HouseMap map,Path file,Vec at,double yaw,double pitch)throws Exception{
         check(map.traversable(at.x(),at.y(),at.z()),"Unsupported standing view "+at);
         renderer.x=at.x();renderer.z=at.z();renderer.eyeHeight=at.y()+HunterPosture.STANDING_EYE;
@@ -200,6 +255,7 @@ public final class NativeSeacliffReceivingProbe {
         var sockets=new ArrayList<Socket>();
         var routes=new LinkedHashMap<String,List<Vec>>();
         var guides=new LinkedHashMap<String,List<Vec>>();
+        var lower=new ArrayList<String[]>();
         for(var row:rows.subList(3,rows.size()))switch(row[0]){
             case "SPACE" -> {
                 var space=new NativeInvestigationScene.Space(row[1],Integer.parseInt(row[2]),d(row,3),d(row,4),d(row,5),
@@ -215,17 +271,28 @@ public final class NativeSeacliffReceivingProbe {
             case "SOCKET" -> sockets.add(new Socket(row[1],row[2],Integer.parseInt(row[3]),
                 d(row,4),d(row,5),d(row,6),d(row,7),row[8]));
             case "POINT" -> routes.computeIfAbsent(row[1],key->new ArrayList<>()).add(point(row,2));
+            case "BAY" -> lower.add(row);
             case "LINK" -> guides.computeIfAbsent(row[1],key->new ArrayList<>()).add(point(row,2));
             default -> throw new IllegalArgumentException(row[0]);
         };
+        var doors=new ArrayList<NativeInvestigationDoor.Spec>();
+        doors.add(door);
+        for(var row:lower){
+            int a=spaces.stream().filter(space->space.id().equals(row[3])).findFirst().orElseThrow().owner();
+            int b=spaces.stream().filter(space->space.id().equals(row[4])).findFirst().orElseThrow().owner();
+            var p=new Portal(Integer.parseInt(row[1]),a,b,d(row,5),d(row,6),d(row,7),d(row,8),
+                row[9].equals("z"),"door",1);
+            doors.add(new NativeInvestigationDoor.Spec(row[2],row[3],row[4],p,d(row,10),d(row,11),d(row,12),
+                1,Integer.parseInt(row[13]),Integer.parseInt(row[14]),row[15]));
+        }
         NativeInvestigationScene scene;
         try(var glb=Files.newInputStream(Path.of(source[1]));var hcs=Files.newInputStream(Path.of(source[3]))){
-            scene=NativeInvestigationScene.read(glb,source[2],hcs,source[4],stairs,spaces,List.of(door));
+            scene=NativeInvestigationScene.read(glb,source[2],hcs,source[4],stairs,spaces,doors);
         }
         var staging=new Dock(d(dock,1),d(dock,2),d(dock,3),d(dock,4));
         rooms[14]=new Room(14,"Van",staging.x()-1.25,staging.z()-2,staging.x()+1.25,staging.z()+3,
             staging.y(),3,"metal","van",new Vec(staging.x(),staging.y(),staging.z()));
-        var level=new LevelDefinition("wld-17",scene.revision(),"Seacliff Battery",List.of(rooms),List.of(portal),
+        var level=new LevelDefinition("wld-17",scene.revision(),"Seacliff Battery",List.of(rooms),doors.stream().map(NativeInvestigationDoor.Spec::portal).toList(),
             List.of(),List.of(),List.of(),sockets,List.of(),staging,"coast");
         var host=new HouseMap(HouseMap.Site.USER,level,null,scene);
         var guest=new HouseMap(HouseMap.Site.USER,level,null,scene);
@@ -293,6 +360,23 @@ public final class NativeSeacliffReceivingProbe {
             var destination=inbound.get(inbound.size()-1);
             check(host.roomAt(destination.x(),destination.y(),destination.z())==2,"Upper director room ownership");
         }
+        if(!lower.isEmpty()){
+            var lowerView=new Vec(29.25,0,28.1);
+            capture(renderer,host,directory.resolve("battery-lower-gallery-closed.png"),lowerView,Math.PI,-.055);
+            closedOldGaps(host);
+            for(var spec:doors.subList(1,doors.size())){
+                var p=spec.portal();
+                int closedLoss=checkLowerDoor(host,p,false);
+                host.toggleDoor(p.id(),System.nanoTime()-2_000_000_000L);
+                guest.applyDoorSnapshot(host.doorSnapshot());
+                int openLoss=checkLowerDoor(host,p,true);
+                check(checkLowerDoor(guest,p,true)==openLoss&&closedLoss>openLoss,
+                    "Lower acoustic and replicated door disagreement "+spec.frameId());
+                System.out.println(spec.frameId()+" native door and acoustic "+closedLoss+" -> "+openLoss);
+            }
+            closedOldGaps(guest);
+            capture(renderer,host,directory.resolve("battery-lower-gallery-open.png"),lowerView,Math.PI,-.055);
+        }
         for(var entry:guides.entrySet()){
             var reverse=new ArrayList<>(entry.getValue());
             Collections.reverse(reverse);
@@ -327,6 +411,7 @@ public final class NativeSeacliffReceivingProbe {
             "acoustic_open_cost\t"+open,
             "acoustic_closed_cost\t"+closed,
             "changed_renderer_pixels\t"+differences));
+        if(!lower.isEmpty())report.add("lower_fitted_doors_and_closed_former_gaps\t"+lower.size());
         if(!guides.isEmpty())report.add("surveyed_guides_both_directions_and_postures\t"+guides.size());
         if(host.level().socket("generator",9)!=null)report.addAll(power(host,renderer,directory));
         Files.write(Path.of(args[2]),report);

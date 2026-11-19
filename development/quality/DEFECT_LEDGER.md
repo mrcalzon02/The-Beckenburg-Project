@@ -8620,6 +8620,20 @@ Evidence and verification: development/levels/rebuild/seacliff-power-pass/checkp
 
 Older-map obligation: Measure either side of the actual end riser when publishing a level guide.
 
+### DEV-610 — Battery lower guides crossed oblique gaps in duplicated shared walls
+
+**Status:** CORRECTED_WITH_COMPLETE_PARTITION_RUNS_AND_FITTED_FRAMES · **Affected:** Seacliff barracks, records, pump, plant and lower gallery
+
+The lower guide showed a direct barracks-to-gallery leg even though the built volumes meet through Records. Several old wall gaps supported oblique movement.
+
+Cause / uncertainty: Inherited room shells duplicated their shared wall faces and carried openings aligned to older movement strips.
+
+Fix / next action: Replace four complete shared runs on the existing slab. Fit five doors to the real adjacent rooms, close the former gaps and replay routes, sight, acoustic and object states.
+
+Evidence and verification: development/levels/rebuild/seacliff-lower-partitions-pass/checkpoint.json
+
+Older-map obligation: Survey the actual room sequence and wall cavity behind each apparent diagonal opening before binding mission portals.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

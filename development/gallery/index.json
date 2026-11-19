@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11303,
+  "count": 11307,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -104984,6 +104984,46 @@
       "height": 900,
       "bytes": 705867,
       "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-opengl-lower-gallery-closed.png",
+      "url": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-opengl-lower-gallery-closed.png",
+      "title": "Seacliff opengl lower gallery closed",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 365327,
+      "sha256": "e7e2b43d703d9ea641139cb7002ab64e07a016b542f1f1a7b79b176f4ab230d5"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-opengl-lower-gallery-open.png",
+      "url": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-opengl-lower-gallery-open.png",
+      "title": "Seacliff opengl lower gallery open",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 320658,
+      "sha256": "2c4e41ce855cbbebc8aacc039de505197aca6db00fbea66967da7e7b6d2423e2"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-software-lower-gallery-closed.png",
+      "url": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-software-lower-gallery-closed.png",
+      "title": "Seacliff software lower gallery closed",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 365058,
+      "sha256": "f18e1bcde09870d4cfc4294696ee1df68b759b6a43774912226b112480fc89a3"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-software-lower-gallery-open.png",
+      "url": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-software-lower-gallery-open.png",
+      "title": "Seacliff software lower gallery open",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 324062,
+      "sha256": "1cb8a2624126cca24693bc46d1389f1ca959db1ef73c36350018a02691ae3150"
     },
     {
       "path": "development/levels/rebuild/captures/seacliff-power-batch/seacliff-opengl-plant-blackout.png",

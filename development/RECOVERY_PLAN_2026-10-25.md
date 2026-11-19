@@ -2008,3 +2008,7 @@ The [Hollow Creek selection checkpoint](levels/rebuild/hollow-creek-dispatch-pas
 ## Seacliff Battery service power
 
 The [Battery electrical checkpoint](levels/rebuild/seacliff-power-pass/checkpoint.json) verifies two fitted room circuits and exact software and hardware rendering. Its staged kernel still needs the complete mission adapter and network authority check. Main was checked at af7d662e1efc0bc7857619c7e0b907f07b111181 with multiplayer and installer runs 44456199823 and 44456199835. The earlier GPU stationary-world failure remains tracked separately. The held parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.
+
+## Seacliff lower service rooms
+
+The [lower service checkpoint](levels/rebuild/seacliff-lower-partitions-pass/checkpoint.json) verifies the rebuilt partitions, native door poses, room-to-room guide replay and retained power on the held draft. Main was checked at d63cff9422935fa7ab7860e0ace0613249e38c4b. GPU run 44491728314 failed at that revision and the latest multiplayer and installer checks were still running when inspected. The measured upper and exterior mission links and actual multiplayer dispatch are the next Seacliff work.
