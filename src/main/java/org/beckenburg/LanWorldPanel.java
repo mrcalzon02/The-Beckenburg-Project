@@ -36,6 +36,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private int chatVisibleUntil;
     private final javax.swing.Timer timer;
     private final javax.swing.Timer renderTimer;
+    private final LanRealtimeInput realtimeInput;
     private final CrouchCamera crouchCamera=new CrouchCamera();
     private long lastVisualFrame=System.nanoTime();
     private final LanVisualMotion visualMotion=new LanVisualMotion();
@@ -176,7 +177,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         renderer.yaw=-Math.PI/2;renderer.pitch=-.08;
         renderer.roomLights=lights;
         renderer.lamp=false; // a real torch begins OFF until the player switches it on
-        mouseLook=new MouseLook(this,(dx,dy)->MouseLook.rotate(renderer,dx,dy),
+        realtimeInput=new LanRealtimeInput(client,false,
+            ex->{feedback="LAN movement disconnected: "+ex.getMessage();close();});
+        mouseLook=new MouseLook(this,(dx,dy)->{
+            MouseLook.rotate(renderer,dx,dy);refreshRealtimeInput();
+        },
             ()->opening==null&&!casefileOpen&&interfaceOpen.isEmpty());
         addKeyListener(this);addMouseListener(mouseLook);addMouseMotionListener(mouseLook);
         addMouseListener(new MouseAdapter(){
@@ -230,7 +235,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             }
         });
         addFocusListener(mouseLook);addFocusListener(this);
-        // The host consumes movement and equipment at the original input cadence.
+        // Equipment/ambient UI remains slow; locomotion runs independently at 50 Hz.
         timer=new javax.swing.Timer(110,e->updateHunter());
         renderTimer=new javax.swing.Timer(20,e->drawVisibleWorld());
         renderTimer.setRepeats(false);
@@ -284,7 +289,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         releaseCameraAttention();
         if(opening!=null){opening.close();opening=null;}
         clearPlacementSelection();
-        toolGrip.reset();releaseVoice();timer.stop();renderTimer.stop();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
+        toolGrip.reset();releaseVoice();timer.stop();renderTimer.stop();realtimeInput.close();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
         VanLiveScreens.suspendCamera();
         capturedCameraImage=null;
         pendingPhoto=null;
@@ -1304,6 +1309,15 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         renderTimer.setInitialDelay(delayMs);
         renderTimer.restart();
     }
+    private void refreshRealtimeInput(){
+        boolean enabled=isShowing()&&isDisplayable()&&visualMotion.authoritative()!=null
+            &&health>0&&caseResult.isEmpty()&&opening==null&&!chatInput.isVisible()
+            &&!casefileOpen&&interfaceOpen.isEmpty()&&!helpVisible;
+        int forward=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
+        int strafe=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
+        realtimeInput.publish(enabled,forward,strafe,renderer.yaw,renderer.pitch,
+            !crouched&&keys.contains(GameControls.RUN));
+    }
     private void updateHunter(){
         toolGrip.advance();
         if(toolGrip.held()&&!toolPlacement&&ToolBeltHud.repeatable(equippedGear[activeGearSlot])
@@ -1360,26 +1374,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 VanLiveScreens.suspendCamera();
             }
         }
-        int right=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
-        int forward=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
-        try{
-            if(!chatInput.isVisible()&&health>0&&(forward!=0||right!=0)){
-                double dx=Math.sin(renderer.yaw)*forward-Math.cos(renderer.yaw)*right;
-                double dz=Math.cos(renderer.yaw)*forward+Math.sin(renderer.yaw)*right;
-                double len=Math.hypot(dx,dz);
-                int mx=(int)Math.round(dx/len*100),mz=(int)Math.round(dz/len*100);
-                if(mx!=0||mz!=0){
-                    concealed=false;
-                    client.step(mx,mz,!crouched&&keys.contains(GameControls.RUN));
-                }
-            }
-            int heading=Math.floorMod((int)Math.round(Math.toDegrees(renderer.yaw)),360);
-            updateCameraAttention(desiredCameraAttention());
-            int pitch=(int)Math.round(renderer.pitch*1000);
-            if(heading!=lastTurn||pitch!=lastPitch){
-                client.turn(heading,pitch);lastTurn=heading;lastPitch=pitch;
-            }
-        }catch(IOException e){feedback="LAN disconnected: "+e.getMessage();close();return;}
+        // The EDT publishes state; the independent pump sends movement even
+        // while this panel's renderer is processing an expensive world frame.
+        refreshRealtimeInput();
+        try{updateCameraAttention(desiredCameraAttention());}
+        catch(IOException e){feedback="LAN disconnected: "+e.getMessage();close();return;}
         GraphicsOptions.current().configure(renderer,getWidth(),getHeight(),true);
         renderer.roomLightTick=tick;
         renderer.uvLamp=uvLightOn;
@@ -1910,6 +1909,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         return true;
     }
     @Override public void keyPressed(KeyEvent e){
+        try{
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         if(e.getKeyCode()==KeyEvent.VK_TAB){
             if(ledgerTabHeld)return;
@@ -2089,6 +2089,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             case KeyEvent.VK_DOWN -> renderer.pitch=Math.max(-1.05,renderer.pitch-.06);
             default -> {if(health>0)keys.add(e.getKeyCode());}
         }
+        }finally{refreshRealtimeInput();}
     }
     void fieldAction(int action){
         switch(action){
@@ -2203,10 +2204,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         keys.remove(e.getKeyCode());
         if(e.getKeyCode()==KeyEvent.VK_V&&heldVoice==LanChat.Channel.LOCAL)releaseVoice();
         if(e.getKeyCode()==KeyEvent.VK_C&&heldVoice==LanChat.Channel.RADIO)releaseVoice();
+        refreshRealtimeInput();
     }
     @Override public void keyTyped(KeyEvent e){}
     @Override public void focusGained(FocusEvent e){}
     @Override public void focusLost(FocusEvent e){releaseCameraAttention();interactionHeld=false;ledgerTabHeld=false;toolGrip.release();toolPlacement=false;
-        keys.clear();releaseVoice();mouseLook.release();
+        keys.clear();releaseVoice();mouseLook.release();refreshRealtimeInput();
     }
 }

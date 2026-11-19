@@ -25,6 +25,7 @@ final class LanVisualMotion {
     private Pose authoritative, displayed, stopPose;
     private long lastPositionNs, intentStartNs, stopUntilNs;
     private double stepMetres = DEFAULT_STEP_METRES;
+    private double observedStepSeconds = STEP_SECONDS;
     private double priorDirectionX, priorDirectionZ;
     private boolean previouslyMoving;
     // Collision sweeps are expensive in authored worlds. Each render interpolates
@@ -38,6 +39,7 @@ final class LanVisualMotion {
         authoritative = displayed = stopPose = null;
         lastPositionNs = intentStartNs = stopUntilNs = 0;
         stepMetres = DEFAULT_STEP_METRES;
+        observedStepSeconds = STEP_SECONDS;
         priorDirectionX = priorDirectionZ = 0;
         previouslyMoving = false;
         invalidateCollision();
@@ -58,8 +60,13 @@ final class LanVisualMotion {
         if (travelled > .002 || Math.abs(next.y() - authoritative.y()) > .002) {
             // One accepted host movement is a distance budget, not an FPS-derived velocity.
             // Learn custom walk/sprint/crouch speed without changing the host's 10 Hz rules.
-            if (travelled >= .055 && travelled < .8)
+            if (travelled >= .012 && travelled < .8) {
                 stepMetres = travelled;
+                if (lastPositionNs != 0) {
+                    observedStepSeconds = Math.max(.016, Math.min(.110,
+                        (nowNs - lastPositionNs) / 1e9));
+                }
+            }
             authoritative = next;
             lastPositionNs = nowNs;
             stopUntilNs = 0;
@@ -97,7 +104,7 @@ final class LanVisualMotion {
         if (moving) {
             long anchor = Math.max(lastPositionNs, intentStartNs);
             double seconds = Math.max(0, Math.min(.126, (nowNs - anchor) / 1e9));
-            double fraction = Math.min(1, seconds / STEP_SECONDS);
+            double fraction = Math.min(1, seconds / observedStepSeconds);
             if (fraction > 0 && collision != null) {
                 // Full-path collision is validated only when the host changes
                 // pose, the input heading changes or a world barrier moves.

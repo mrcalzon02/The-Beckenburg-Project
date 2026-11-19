@@ -20,6 +20,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     private final Set<Integer> keys=new HashSet<>();
     private final javax.swing.Timer timer;
     private final javax.swing.Timer renderTimer;
+    private final LanRealtimeInput realtimeInput;
     private final LanVisualMotion visualMotion=new LanVisualMotion();
     private String lastDoorState,lastWindowState;
     private long lastVisualFrame=System.nanoTime();
@@ -59,7 +60,11 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         if(!"GHOST".equals(client.seat()))throw new IllegalArgumentException("ghost seat required");
         setFocusable(true);setBackground(Color.BLACK);setPreferredSize(new Dimension(850,555));
         camera.yaw=.55;camera.pitch=-.14;camera.roomLights=lights;
-        mouseLook=new MouseLook(this,(dx,dy)->MouseLook.rotate(camera,dx,dy));
+        realtimeInput=new LanRealtimeInput(client,true,
+            ex->{feedback="Spectral movement disconnected: "+ex.getMessage();close();});
+        mouseLook=new MouseLook(this,(dx,dy)->{
+            MouseLook.rotate(camera,dx,dy);refreshRealtimeInput();
+        });
         addKeyListener(this);addMouseListener(mouseLook);addMouseMotionListener(mouseLook);
         addFocusListener(this);addFocusListener(mouseLook);
         audio.setHearingGain(0);
@@ -68,7 +73,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         renderTimer=new javax.swing.Timer(33,e->drawVisibleWorld());
         timer.start();
     }
-    public void close(){timer.stop();renderTimer.stop();keys.clear();soundRipples.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();}
+    public void close(){timer.stop();renderTimer.stop();realtimeInput.close();keys.clear();soundRipples.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();}
     /** Accept only frames addressed to ghost; never interpret BODY/TEAMMAP/PROGRESS. */
     public void onEvent(String packet){
         if(!SwingUtilities.isEventDispatchThread())throw new IllegalStateException("ghost UI update must be on EDT");
@@ -258,6 +263,13 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         }catch(IllegalArgumentException ex){feedback="Invalid spectral snapshot rejected";}
         repaint();
     }
+    private void refreshRealtimeInput(){
+        boolean enabled=isShowing()&&isDisplayable()&&room>=0&&!finished;
+        int forward=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
+        int strafe=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
+        realtimeInput.publish(enabled,forward,strafe,camera.yaw,camera.pitch,
+            keys.contains(KeyEvent.VK_SHIFT));
+    }
     private void frame(){
         double hearingGain=hearingFade.advance(hearingEnabled(),System.nanoTime());
         audio.setHearingGain(hearingGain);
@@ -269,19 +281,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         buildingAudio.setContext(room,lights.breaker());buildingAudio.listener(camera.x,camera.eyeHeight,camera.z,camera.yaw,lights.breaker());camera.roomLightTick=tick;
         atmosphere.setOutside(room>=0&&map.outside(room));
         if(!isDisplayable()||finished){repaint();return;}
-        try{
-            int f=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
-            int r=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
-            if(room>=0&&(f!=0||r!=0)){
-                double dx=Math.sin(camera.yaw)*f-Math.cos(camera.yaw)*r;
-                double dz=Math.cos(camera.yaw)*f+Math.sin(camera.yaw)*r;
-                double length=Math.hypot(dx,dz);
-                client.ghostStep((int)Math.round(dx/length*100),
-                    (int)Math.round(dz/length*100),keys.contains(KeyEvent.VK_SHIFT));
-            }
-            int heading=Math.floorMod((int)Math.round(Math.toDegrees(camera.yaw)),360);
-            if(room>=0&&lastTurn!=heading){client.ghostTurn(heading);lastTurn=heading;}
-        }catch(IOException ex){feedback="Disconnected: "+ex.getMessage();close();return;}
+        refreshRealtimeInput();
         if (isShowing() && room >= 0 && !renderTimer.isRunning()) renderTimer.start();
     }
 
@@ -377,6 +377,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 ?hearing.caption():"";
     }
     @Override public void keyPressed(KeyEvent e){
+        try{
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         switch(e.getKeyCode()){
             case KeyEvent.VK_E -> {
@@ -404,11 +405,12 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             case KeyEvent.VK_DOWN -> camera.pitch=Math.max(-1.05,camera.pitch-.06);
             default -> keys.add(e.getKeyCode());
         }
+        }finally{refreshRealtimeInput();}
     }
-    @Override public void keyReleased(KeyEvent e){keys.remove(e.getKeyCode());}
+    @Override public void keyReleased(KeyEvent e){keys.remove(e.getKeyCode());refreshRealtimeInput();}
     @Override public void keyTyped(KeyEvent e){}
     @Override public void focusGained(FocusEvent e){}
-    @Override public void focusLost(FocusEvent e){keys.clear();mouseLook.release();}
+    @Override public void focusLost(FocusEvent e){keys.clear();mouseLook.release();refreshRealtimeInput();}
     @Override protected void paintComponent(Graphics base){
         super.paintComponent(base);
         Graphics2D g=(Graphics2D)base.create();

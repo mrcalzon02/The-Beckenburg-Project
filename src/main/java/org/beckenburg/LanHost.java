@@ -90,6 +90,7 @@ public final class LanHost implements AutoCloseable {
     private final ExecutorService workers=Executors.newCachedThreadPool(r->{Thread t=new Thread(r,"beckenburg-lan-peer");t.setDaemon(true);return t;});
     private final ScheduledExecutorService clock=Executors.newSingleThreadScheduledExecutor(r->{Thread t=new Thread(r,"beckenburg-lan-tick");t.setDaemon(true);return t;});
     private final Object mutex=new Object();
+    private int lastRealtimeApparitionTick=-1;
     private static final int HUNTERS=6,GHOST_SEAT=HUNTERS;
     private final Peer[] seats=new Peer[HUNTERS+1];
     private final Reservation[] reserved=new Reservation[HUNTERS+1];
@@ -872,8 +873,34 @@ public final class LanHost implements AutoCloseable {
                     if(twinCompanion!=null)reply(peer,twinCompanion.playerFrame(ghostType.ancient(),tick));
                     broadcastState();sendGhostPrompt();
                 }
+                case "GINPUT" -> {
+                    if(!running||peer.slot!=GHOST_SEAT||!peer.ghostWorldMode||p.size()!=5)
+                        throw new IllegalArgumentException("spectral input requires ghost view");
+                    int dx=LanProtocol.integer(p.get(1),-100,100),dz=LanProtocol.integer(p.get(2),-100,100);
+                    boolean bursting=LanProtocol.integer(p.get(3),0,1)==1;
+                    acceptGhostPoseSequence(peer,LanProtocol.sequence(p.get(4)));
+                    peer.realtimeInputMode=true;
+                    int staminaBefore=ghostPose.stamina();
+                    boolean moved;
+                    try{moved=ghostPose.stepRealtime(dx,dz,tick,bursting,System.nanoTime());}
+                    catch(IllegalArgumentException boundary){
+                        if("spectral room boundary; use DRIFT".equals(boundary.getMessage())
+                                ||"spectral hiding pocket is inaccessible".equals(boundary.getMessage())
+                                ||"anti-ghost safe-area barrier".equals(boundary.getMessage()))return;
+                        throw boundary;
+                    }
+                    if(!moved)return;
+                    animation.moved(tick,ghostPose.stamina()<staminaBefore);
+                    reply(peer,ghostPose.frame(tick));
+                    reply(peer,"GLISTEN|"+(ghostPose.listening(tick)?1:0)+"|"+tick);
+                    if(lastRealtimeApparitionTick!=tick){
+                        lastRealtimeApparitionTick=tick;
+                        broadcastApparitions();
+                        if(ghost.manifested()&&tick%5==0)broadcastGhostSound(LanSound.Cue.FOOTFALL);
+                    }
+                }
                 case "GSTEP" -> {
-                    if(!running||peer.slot!=GHOST_SEAT||!peer.ghostWorldMode
+                    if(!running||peer.slot!=GHOST_SEAT||!peer.ghostWorldMode||peer.realtimeInputMode
                             ||(p.size()!=4&&p.size()!=5))
                         throw new IllegalArgumentException("spectral movement requires ghost view");
                     int dx=LanProtocol.integer(p.get(1),-100,100),dz=LanProtocol.integer(p.get(2),-100,100);
@@ -894,8 +921,33 @@ public final class LanHost implements AutoCloseable {
                     acceptGhostPoseSequence(peer,LanProtocol.sequence(p.get(2)));
                     ghostPose.turn(heading);reply(peer,ghostPose.frame(tick));
                 }
+                case "HINPUT" -> {
+                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||p.size()!=5)
+                        throw new IllegalArgumentException("hunter input requires world view");
+                    int dx=LanProtocol.integer(p.get(1),-100,100),dz=LanProtocol.integer(p.get(2),-100,100);
+                    boolean fast=LanProtocol.integer(p.get(3),0,1)==1;
+                    acceptHunterSequence(peer,LanProtocol.sequence(p.get(4)));
+                    peer.realtimeInputMode=true;
+                    ensureActiveHunter(peer);
+                    int oldRoom=hunterRooms[peer.slot];
+                    boolean moved;
+                    try{moved=world.moveRealtime(peer.slot,dx,dz,tick,fast,System.nanoTime());}
+                    catch(IllegalArgumentException blocked){
+                        if("blocked by world collision".equals(blocked.getMessage()))return;
+                        if("frenzy sealed the van extraction threshold".equals(blocked.getMessage()))
+                            sealedDoorRattle(peer);
+                        throw blocked;
+                    }
+                    if(!moved)return;
+                    hunterRooms[peer.slot]=world.body(peer.slot).room();
+                    recordSound(peer.slot,LanGhostPursuit.Sound.FOOTSTEP);
+                    // Live motion must not resend every fixture, door, and body.
+                    notifyHunters(world.bodyFrame(peer.slot,tick));
+                    reply(peer,"HIDING|"+(world.hidden(peer.slot)?1:0));
+                    if(oldRoom!=hunterRooms[peer.slot])broadcastState();
+                }
                 case "STEP" -> {
-                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||(p.size()!=4&&p.size()!=5))
+                    if(!running||peer.slot==GHOST_SEAT||!peer.worldMode||peer.realtimeInputMode||(p.size()!=4&&p.size()!=5))
                         throw new IllegalArgumentException("3D movement unavailable");
                     int dx=LanProtocol.integer(p.get(1),-100,100),dz=LanProtocol.integer(p.get(2),-100,100);
                     acceptHunterSequence(peer,LanProtocol.sequence(p.get(p.size()-1)));
@@ -3480,7 +3532,7 @@ public final class LanHost implements AutoCloseable {
         String previousResumeToken; // erased after client confirms durable replacement
         String hunterVisual="observer"; // no gameplay authority, never sent to ghost
         long unconfirmedResumeDeadlineNanos; // no unlimited grace via failed reconnect loop
-        boolean ready,worldMode,ghostWorldMode,intentionalLeave;
+        boolean ready,worldMode,ghostWorldMode,intentionalLeave,realtimeInputMode;
 
         boolean twinInSight,witnessOptics;
         final boolean[] twinOnCamera=new boolean[HUNTERS+1];

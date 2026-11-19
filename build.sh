@@ -325,6 +325,7 @@ java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.La
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanCaseIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanWorldTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanVisualMotionTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanRealtimeClockTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanWorldIntegrationTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanWorldRenderTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.LanLobbyTest

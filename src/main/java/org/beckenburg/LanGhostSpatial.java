@@ -11,6 +11,7 @@ public final class LanGhostSpatial {
     }
     private final HouseMap map;
     private int room,heading=180,lastStepTick=-1,slowedUntil=-1;
+    private final LanRealtimeClock motionClock=new LanRealtimeClock();
     // Authoritative movement gate: actual displacement, not WASD presses.
     // The bounded tolerance/settling variation is fixed per movement epoch.
     public static final int LISTEN_SETTLE_TICKS=4,LISTEN_SETTLE_VARIATION_TICKS=1;
@@ -89,7 +90,7 @@ public final class LanGhostSpatial {
     }
     public void syncRoom(int newRoom){
         if(newRoom<0||newRoom>=HouseMap.EXTRACTION_ROOM)throw new IllegalArgumentException("ghost cannot occupy safe van");
-        if(newRoom!=room||x==0&&z==0){var spawn=SafeAreaBarrier.ghostSpawn(map,newRoom);
+        if(newRoom!=room||x==0&&z==0){motionClock.reset();var spawn=SafeAreaBarrier.ghostSpawn(map,newRoom);
             if(spawn==null)throw new IllegalArgumentException("ghost destination is protected");
             room=newRoom;x=spawn.x();y=spawn.y();z=spawn.z();}
     }
@@ -98,9 +99,21 @@ public final class LanGhostSpatial {
         if(dx< -100||dx>100||dz< -100||dz>100||(dx==0&&dz==0))throw new IllegalArgumentException("invalid spectral input");
         if(tick<=lastStepTick)throw new IllegalArgumentException("ghost step rate exceeded");
         lastStepTick=tick;
+        return stepAmount(dx,dz,tick,wantsBurst,.100);
+    }
+    /** Host-monotonic realtime motion, independent of ghost energy/hearing ticks. */
+    boolean stepRealtime(int dx,int dz,int tick,boolean wantsBurst,long nowNanos){
+        if(dx< -100||dx>100||dz< -100||dz>100||(dx==0&&dz==0))
+            throw new IllegalArgumentException("invalid spectral input");
+        double seconds=motionClock.advance(nowNanos);
+        if(seconds<=0)return false;
+        lastStepTick=tick;
+        return stepAmount(dx,dz,tick,wantsBurst,seconds);
+    }
+    private boolean stepAmount(int dx,int dz,int tick,boolean wantsBurst,double seconds){
         double length=Math.hypot(dx,dz);
         boolean burst=wantsBurst&&tick>=slowedUntil&&burstStamina>0;
-        double speed=(tick<slowedUntil?.105:.31)*ghostSpeed*speciesSpeed*(burst?1.50:1.0);
+        double speed=(tick<slowedUntil?.105:.31)*(seconds/.100)*ghostSpeed*speciesSpeed*(burst?1.50:1.0);
         double nx=x+speed*dx/length,nz=z+speed*dz/length;
         // Move around furnishings; crossing room boundaries is a paid, cooldown-gated DRIFT only.
         var destination=map.resolveMove(new LevelDefinition.Vec(x,y,z),nx,nz);
@@ -126,7 +139,10 @@ public final class LanGhostSpatial {
         if(significantMotion(distance,
                 Math.hypot(x-movementAnchorX,z-movementAnchorZ),movementGateMetres))
             markTravel(tick);
-        if(burst){burstStamina--;lastBurstTick=tick;}
+        if(burst){
+            if(lastBurstTick!=tick)burstStamina--;
+            lastBurstTick=tick;
+        }
         return true;
     }
     public void turn(int degrees){

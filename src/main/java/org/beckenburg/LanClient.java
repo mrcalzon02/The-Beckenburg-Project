@@ -146,6 +146,13 @@ public final class LanClient implements AutoCloseable {
         send("GSTEP|"+dx+"|"+dz+"|"+(bursting?1:0)+"|"+(++sequence));
     }
     public synchronized void ghostTurn(int degrees)throws IOException {send("GTURN|"+degrees+"|"+(++sequence));}
+    /** Live input is sampled at 50Hz; host integrates monotonic elapsed time. */
+    synchronized void ghostMoveInput(int dx,int dz,boolean bursting)throws IOException {
+        send("GINPUT|"+dx+"|"+dz+"|"+(bursting?1:0)+"|"+(++sequence));
+    }
+    synchronized void moveInput(int dx,int dz,boolean sprinting)throws IOException {
+        send("HINPUT|"+dx+"|"+dz+"|"+(sprinting?1:0)+"|"+(++sequence));
+    }
     public synchronized void step(int dx,int dz)throws IOException {step(dx,dz,false);}
     public synchronized void step(int dx,int dz,boolean running)throws IOException {
         send("STEP|"+dx+"|"+dz+"|"+(running?1:0)+"|"+(++sequence));

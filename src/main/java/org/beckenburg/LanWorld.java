@@ -8,6 +8,7 @@ public final class LanWorld {
         public Body(double x,double z,int heading,int room){this(x,0,z,heading,room);}
     }
     private static final double SPEED=.31;
+    private final LanRealtimeClock[] motionClocks={new LanRealtimeClock(),new LanRealtimeClock(),new LanRealtimeClock(),new LanRealtimeClock(),new LanRealtimeClock(),new LanRealtimeClock()};
     private final HouseMap map;
     private final org.beckenburg.editor.DefaultPlayerMotion[] jumps=new org.beckenburg.editor.DefaultPlayerMotion[6];
     private final double[] momentumX=new double[6],momentumZ=new double[6];
@@ -115,7 +116,7 @@ public final class LanWorld {
     public void setRoom(int seat,int room){
         seat(seat);
         if(room<0||room>=HouseMap.ROOM_COUNT)throw new IllegalArgumentException("invalid room");
-        jumps[seat].reset();requestedCrouch[seat]=false;momentumX[seat]=momentumZ[seat]=0;
+        jumps[seat].reset();requestedCrouch[seat]=false;momentumX[seat]=momentumZ[seat]=0;motionClocks[seat].reset();
         var spawn=map.spawn(room);xs[seat]=spawn.x();ys[seat]=spawn.y();zs[seat]=spawn.z();safeRooms[seat]=room;hiding[seat]=false;shrubHiding[seat]=false;crouched[seat]=false;
     }
     public Body body(int seat){seat(seat);return new Body(xs[seat],ys[seat],zs[seat],headings[seat],map.roomAt(xs[seat],ys[seat],zs[seat]));}
@@ -141,11 +142,24 @@ public final class LanWorld {
         if(dx< -100||dx>100||dz< -100||dz>100||(dx==0&&dz==0))throw new IllegalArgumentException("invalid motion vector");
         if(tick<=lastTick[seat])throw new IllegalArgumentException("movement rate exceeded");
         lastTick[seat]=tick; // failed collisions and airborne input consume the allowance.
+        return moveAmount(seat,dx,dz,tick,wantsSprint,.100);
+    }
+    /** Host-monotonic motion updates are independent of the 10Hz gameplay clock. */
+    boolean moveRealtime(int seat,int dx,int dz,int tick,boolean wantsSprint,long nowNanos){
+        seat(seat);
+        if(dx< -100||dx>100||dz< -100||dz>100||(dx==0&&dz==0))
+            throw new IllegalArgumentException("invalid motion vector");
+        double seconds=motionClocks[seat].advance(nowNanos);
+        if(seconds<=0)return false;
+        lastTick[seat]=tick;
+        return moveAmount(seat,dx,dz,tick,wantsSprint,seconds);
+    }
+    private boolean moveAmount(int seat,int dx,int dz,int tick,boolean wantsSprint,double seconds){
         if(jumps[seat].active())return false; // takeoff momentum owns airborne travel.
         double magnitude=Math.hypot(dx,dz);
         boolean running=wantsSprint&&!crouched[seat]&&sprint!=CustomContract.Sprint.DISABLED
             &&(sprint==CustomContract.Sprint.UNLIMITED||stamina[seat]>0);
-        double speed=SPEED*playerSpeed*HunterPosture.speed(crouched[seat])*(running?sprintSpeed:1);
+        double speed=SPEED*(seconds/.100)*playerSpeed*HunterPosture.speed(crouched[seat])*(running?sprintSpeed:1);
         double x=xs[seat]+speed*dx/magnitude,z=zs[seat]+speed*dz/magnitude;
         var destination=map.resolveMove(new LevelDefinition.Vec(xs[seat],ys[seat],zs[seat]),x,z,HunterPosture.height(crouched[seat]));
         if(destination==null)throw new IllegalArgumentException("blocked by world collision");
@@ -156,11 +170,12 @@ public final class LanWorld {
         if(map.resolveMove(new LevelDefinition.Vec(xs[seat],ys[seat],zs[seat]),x,zs[seat],HunterPosture.height(crouched[seat]))==null
             ||map.resolveMove(new LevelDefinition.Vec(xs[seat],ys[seat],zs[seat]),xs[seat],z,HunterPosture.height(crouched[seat]))==null)
             throw new IllegalArgumentException("blocked by world collision");
-        momentumX[seat]=(destination.x()-xs[seat])*10;momentumZ[seat]=(destination.z()-zs[seat])*10;
+        momentumX[seat]=(destination.x()-xs[seat])/seconds;momentumZ[seat]=(destination.z()-zs[seat])/seconds;
         xs[seat]=destination.x();ys[seat]=destination.y();zs[seat]=destination.z();hiding[seat]=false;shrubHiding[seat]=false;
         if(running){
+            // A fast movement packet must not drain a full 100ms stamina quantum.
+            if(lastSprintTick[seat]!=tick&&sprint==CustomContract.Sprint.LIMITED)stamina[seat]--;
             lastSprintTick[seat]=tick;
-            if(sprint==CustomContract.Sprint.LIMITED)stamina[seat]--;
         }
         return true;
     }
