@@ -90,6 +90,11 @@ public final class LanHost implements AutoCloseable {
     private final ExecutorService workers=Executors.newCachedThreadPool(r->{Thread t=new Thread(r,"beckenburg-lan-peer");t.setDaemon(true);return t;});
     private final ScheduledExecutorService clock=Executors.newSingleThreadScheduledExecutor(r->{Thread t=new Thread(r,"beckenburg-lan-tick");t.setDaemon(true);return t;});
     private final Object mutex=new Object();
+    /** Explicit local opt-in; never expose host contention or session telemetry over LAN. */
+    private final LanHostLockTelemetry hostLockTelemetry=
+        new LanHostLockTelemetry(Boolean.getBoolean("beckenburg.host.lockProfile"));
+    private int lastLockLogTick=-1;
+    LanHostLockTelemetry.Snapshot devHostLockSnapshot(){return hostLockTelemetry.snapshot();}
     private int lastRealtimeApparitionTick=-1;
     /** Preserve exact host-owned hearing, but avoid redundant 50Hz updates. */
     private void sendGhostListening(Peer peer,boolean heartbeat){
@@ -630,7 +635,18 @@ public final class LanHost implements AutoCloseable {
             }
             socket.setSoTimeout(0);
             while(!closed){String frame=LanProtocol.read(in);if(frame==null)break;
-                synchronized(mutex){if(closed)break;handle(peer,frame);}
+                long queuedAt=hostLockTelemetry.enabled()?System.nanoTime():0;
+                synchronized(mutex){
+                    long enteredAt=queuedAt==0?0:System.nanoTime();
+                    try{if(closed)break;handle(peer,frame);}
+                    finally{
+                        if(enteredAt!=0)hostLockTelemetry.record(
+                            frame.startsWith("HINPUT|")||frame.startsWith("GINPUT|")
+                                ?LanHostLockTelemetry.Section.REALTIME_INPUT
+                                :LanHostLockTelemetry.Section.OTHER_COMMAND,
+                            enteredAt-queuedAt,System.nanoTime()-enteredAt);
+                    }
+                }
             }
         }catch(Exception e){if(!closed&&peer!=null){synchronized(mutex){reply(peer,"REJECT|connection terminated");}}}
         finally {
@@ -2948,7 +2964,11 @@ public final class LanHost implements AutoCloseable {
         broadcastProgress();
     }
     private static String safeReason(String s){return s==null?"invalid command":s.replaceAll("[^A-Za-z0-9 ._-]","").substring(0,Math.min(85,s.replaceAll("[^A-Za-z0-9 ._-]","").length()));}
-    private void tickSafely(){if(closed)return; synchronized(mutex){
+    private void tickSafely(){if(closed)return;
+        long queuedAt=hostLockTelemetry.enabled()?System.nanoTime():0;
+        synchronized(mutex){
+            long enteredAt=queuedAt==0?0:System.nanoTime();
+            try{
         if(!running)return;
         long tickTime=aiDiagnostics.begin();
         try{tick++;
@@ -3210,7 +3230,18 @@ public final class LanHost implements AutoCloseable {
             finishIfComplete();
         }catch(RuntimeException ex){running=false;notifyAllPeers("INFO|host simulation stopped");System.err.println("LAN tick failure: "+ex.getMessage());}
         finally{aiDiagnostics.end(org.beckenburg.editor.ai.NpcAiTelemetry.Metric.HOST_TICK,tickTime);}
-    }}
+            }finally{
+                if(enteredAt!=0){
+                    hostLockTelemetry.record(LanHostLockTelemetry.Section.HOST_TICK,
+                        enteredAt-queuedAt,System.nanoTime()-enteredAt);
+                    if(tick>0&&tick%100==0&&tick!=lastLockLogTick){
+                        lastLockLogTick=tick;
+                        System.err.println(hostLockTelemetry.localReport());
+                    }
+                }
+            }
+        }
+    }
     /** 5-second heartbeat and 20-second stale-link cutoff; never trust player clocks.
      * A dead TCP peer enters the normal bounded seat-recovery flow when serve() exits.
      */
