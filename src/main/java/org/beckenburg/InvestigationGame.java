@@ -378,6 +378,40 @@ public final class InvestigationGame {
         JLabel label=new JLabel(text);label.setHorizontalAlignment(SwingConstants.RIGHT);
         grid.add(label);grid.add(control);
     }
+    private static JPanel optionGrid(){
+        JPanel grid=new JPanel(new GridLayout(0,2,7,7));
+        grid.setOpaque(false);
+        grid.setBorder(BorderFactory.createEmptyBorder(12,12,12,12));
+        return grid;
+    }
+    /** One real, scrollable setting category per PSX-styled tab. The fixed
+     * APPLY/BACK footer is deliberately outside the tabbed scroll regions. */
+    static JTabbedPane optionTabs(JComponent display,JComponent graphics,
+            JComponent lighting,JComponent audio,JComponent accessibility,
+            JComponent controls){
+        JTabbedPane tabs=new JTabbedPane(JTabbedPane.TOP,JTabbedPane.SCROLL_TAB_LAYOUT);
+        tabs.setName("options.tabs");
+        String[] names={"DISPLAY","GRAPHICS","LIGHTING","AUDIO","ACCESSIBILITY","CONTROLS"};
+        JComponent[] views={display,graphics,lighting,audio,accessibility,controls};
+        for(int i=0;i<names.length;i++){
+            // Short categories stay compact at the top, rather than stretching
+            // four controls to the height of the whole settings viewport.
+            JComponent body=views[i];
+            if(i!=5){
+                JPanel anchored=new JPanel(new BorderLayout());
+                anchored.setOpaque(false);
+                anchored.add(body,BorderLayout.NORTH);
+                body=anchored;
+            }
+            JScrollPane pane=PsxMenuScreen.scroll(body);
+            pane.setName("options.tab."+names[i].toLowerCase(java.util.Locale.ROOT));
+            tabs.addTab(names[i],pane);
+        }
+        tabs.setFont(new Font(Font.SANS_SERIF,Font.BOLD,13));
+        tabs.getAccessibleContext().setAccessibleName("Options categories");
+        PsxHorrorUi.styleTabs(tabs);
+        return tabs;
+    }
     private void openOptions(){
         final String returnScreen=currentScreen;
         GraphicsOptions old=GraphicsOptions.current();
@@ -445,46 +479,54 @@ public final class InvestigationGame {
         environmentVolume.setMajorTickSpacing(25);environmentVolume.setPaintTicks(true);
         JSlider effectsVolume=new JSlider(0,100,LanAudio.effectsVolume());
         effectsVolume.setMajorTickSpacing(25);effectsVolume.setPaintTicks(true);
-        JPanel grid=new JPanel(new GridLayout(0,2,7,7));
-        grid.setBorder(BorderFactory.createEmptyBorder(9,9,9,9));
-        setting(grid,"Display mode",mode);
-        setting(grid,"Window size (fullscreen uses native)",desktop);
-        setting(grid,"Real 3D rendering height",detail);
-        setting(grid,"Aspect ratio",aspect);
-        setting(grid,"Upscaling filter",upscale);
-        setting(grid,"Anti-aliasing",aa);
-        setting(grid,"PSX shader treatment",psx);
-        setting(grid,"Field of view (degrees)",fov);
-        setting(grid,"Brightness",brightness);
-        setting(grid,"Contrast",contrast);
-        setting(grid,"Atmospheric effects",new JLabel("Optional CPU post-processing"));
-        grid.add(scanlines);grid.add(vignette);
-        grid.add(grain);grid.add(chromatic);
-        grid.add(large);grid.add(highContrast);
-        setting(grid,"Music volume",musicVolume);
-        setting(grid,"Environment volume",environmentVolume);
-        setting(grid,"Effects volume (voice separate)",effectsVolume);
-        setting(grid,"LIGHTING — Rendering only",new JLabel("Game rules and ghost perception unchanged"));
-        setting(grid,"Lighting preset",lightingPreset);
-        setting(grid,"Ambient fill (%)",ambientLight);
-        setting(grid,"World fixture strength (%)",sourceLight);
-        setting(grid,"Fixture reach (%)",lightReach);
-        setting(grid,"Light falloff edge (% of reach)",diffusionEdge);
-        setting(grid,"Cosmetic candle / TV flicker (%)",lightFlicker);
-        setting(grid,"Lighting cache allowance (%)",lightingCache);
-        setting(grid,"Lighting invalidation cell (metres)",lightingCells);
-        setting(grid,"Outdoor probe detail",distantLightLod);
-        setting(grid,"Changed vertex uploads",changedOnlyLights);
-        setting(grid,"Source-dependency cache",lightDependencies);
-        JScrollPane scroll=new JScrollPane(grid,
-            ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scroll.setPreferredSize(new Dimension(610,Math.min(540,grid.getPreferredSize().height+18)));
+        JPanel display=optionGrid(),graphics=optionGrid(),lighting=optionGrid();
+        JPanel audio=optionGrid(),accessibility=optionGrid();
+        setting(display,"Display mode",mode);
+        setting(display,"Window size (fullscreen uses native)",desktop);
+        setting(display,"Aspect ratio",aspect);
+        setting(display,"Field of view (degrees)",fov);
+        setting(graphics,"Real 3D rendering height",detail);
+        setting(graphics,"Upscaling filter",upscale);
+        setting(graphics,"Anti-aliasing",aa);
+        setting(graphics,"PSX shader treatment",psx);
+        setting(graphics,"Brightness",brightness);
+        setting(graphics,"Contrast",contrast);
+        graphics.add(scanlines);graphics.add(vignette);
+        graphics.add(grain);graphics.add(chromatic);
+        setting(lighting,"Lighting preset",lightingPreset);
+        setting(lighting,"Ambient fill (%)",ambientLight);
+        setting(lighting,"World fixture strength (%)",sourceLight);
+        setting(lighting,"Fixture reach (%)",lightReach);
+        setting(lighting,"Light falloff edge (% of reach)",diffusionEdge);
+        setting(lighting,"Cosmetic candle / TV flicker (%)",lightFlicker);
+        setting(lighting,"Lighting cache allowance (%)",lightingCache);
+        setting(lighting,"Lighting invalidation cell (metres)",lightingCells);
+        setting(lighting,"Outdoor probe detail",distantLightLod);
+        setting(lighting,"Changed vertex uploads",changedOnlyLights);
+        setting(lighting,"Source-dependency cache",lightDependencies);
+        setting(audio,"Music volume",musicVolume);
+        setting(audio,"Environment volume",environmentVolume);
+        setting(audio,"Effects volume (voice separate)",effectsVolume);
+        setting(accessibility,"Text sizing",large);
+        setting(accessibility,"Menu contrast",highContrast);
+        JTextArea controlsHelp=new JTextArea(GameControls.help());
+        controlsHelp.setName("options.controls.help");
+        controlsHelp.setEditable(false);
+        controlsHelp.setFocusable(false);
+        controlsHelp.setLineWrap(true);
+        controlsHelp.setWrapStyleWord(true);
+        controlsHelp.setMargin(new Insets(12,12,12,12));
+        controlsHelp.setBackground(new Color(24,30,38));
+        controlsHelp.setForeground(new Color(235,224,201));
+        controlsHelp.setFont(new Font(Font.MONOSPACED,Font.PLAIN,13));
+        JTabbedPane tabs=optionTabs(display,graphics,lighting,audio,accessibility,controlsHelp);
         JLabel status=PsxMenuScreen.label("Changes are applied only when you choose APPLY.");
         JButton apply=button("APPLY OPTIONS"),back=button("BACK");
         back.addActionListener(e->returnFromMenu(returnScreen));
         JPanel content=transparentPanel(new BorderLayout(0,8));
-        content.add(PsxMenuScreen.scroll(grid),BorderLayout.CENTER);content.add(status,BorderLayout.SOUTH);
-        optionsScreen=PsxMenuScreen.screen("options","OPTIONS","Display / sound / accessibility",content,apply,back);
+        content.add(tabs,BorderLayout.CENTER);content.add(status,BorderLayout.SOUTH);
+        optionsScreen=PsxMenuScreen.screen("options","OPTIONS",
+            "Display / graphics / lighting / sound / accessibility / controls",content,apply,back);
         castlePage("options",optionsScreen);
         apply.addActionListener(event->{
         GraphicsOptions previous=GraphicsOptions.current();

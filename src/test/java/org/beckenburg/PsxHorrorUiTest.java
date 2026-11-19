@@ -49,7 +49,27 @@ public final class PsxHorrorUiTest{
   if(Math.max(red,Math.max(green,blue))>100)
    throw new AssertionError("Solo contract tab content has a bright platform background: #"+
        Integer.toHexString(background&0xffffff));
+  JTabbedPane options=InvestigationGame.optionTabs(new JPanel(),new JPanel(),
+      new JPanel(),new JPanel(),new JPanel(),new JTextArea(GameControls.help()));
+  if(!"options.tabs".equals(options.getName())||
+      options.getTabLayoutPolicy()!=JTabbedPane.SCROLL_TAB_LAYOUT||
+      options.getTabCount()!=6)
+   throw new AssertionError("Options require six scrollable, delineated categories");
+  String[] categories={"DISPLAY","GRAPHICS","LIGHTING","AUDIO","ACCESSIBILITY","CONTROLS"};
+  for(int i=0;i<categories.length;i++){
+   if(!categories[i].equals(options.getTitleAt(i))||
+       !(options.getComponentAt(i) instanceof JScrollPane pane)||
+       !("options.tab."+categories[i].toLowerCase(java.util.Locale.ROOT)).equals(pane.getName()))
+    throw new AssertionError("Options tab missing or unscrollable: "+categories[i]);
+   options.setSelectedIndex(i);
+   if(options.getSelectedIndex()!=i)
+    throw new AssertionError("Cannot select options category: "+categories[i]);
+  }
+  options.setSize(720,430);options.doLayout();
+  BufferedImage optionsFrame=new BufferedImage(720,430,BufferedImage.TYPE_INT_RGB);
+  Graphics2D optionsPaint=optionsFrame.createGraphics();
+  try{options.paint(optionsPaint);}finally{optionsPaint.dispose();}
   System.out.println("PASS PSX Horror UI / "+PsxHorrorUi.imageCount()+
-      " images / 3 scales / dark contract tab / compact readable dropdowns");
+      " images / 3 scales / dark contract tab / compact readable dropdowns / six options tabs");
  }
 }

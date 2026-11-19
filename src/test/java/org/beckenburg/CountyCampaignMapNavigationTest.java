@@ -95,7 +95,32 @@ public final class CountyCampaignMapNavigationTest {
             check(map.selected().id().equals("WLD-06") && selections.get() == 2,
                 "castle focus cannot select or deploy a field chapter");
             check(map.zoomFactor() > 1, "castle point focuses headquarters without dispatch");
+            // Reproduce the user's 960x230 Castle campaign viewport: the 4:3
+            // source has genuine letterbox margins, not repeated paper strips.
+            reset.doClick();
+            canvas.setSize(960, 230);
+            Rectangle fitted = map.imageScreenBounds();
+            check(fitted.x > 20 && fitted.width < canvas.getWidth() - 40,
+                "widescreen full-map view preserves approved image aspect ratio");
+            BufferedImage wide = new BufferedImage(960, 230, BufferedImage.TYPE_INT_ARGB);
+            Graphics2D painter = wide.createGraphics();
+            try {
+                painter.setColor(Color.MAGENTA);
+                painter.fillRect(0, 0, 960, 230);
+                canvas.paint(painter);
+            } finally { painter.dispose(); }
+            int matte = canvas.getBackground().getRGB() & 0xffffff;
+            for (int x : new int[]{3, fitted.x / 2, fitted.x - 5,
+                    fitted.x + fitted.width + 5, 956}) {
+                check((wide.getRGB(x, 115) & 0xffffff) == matte,
+                    "no stale or repeated map-edge paint in margin x=" + x);
+            }
+            JButton focus = named(map, "campaign.county.zoom.focus", JButton.class);
+            focus.doClick();
+            check(map.imageScreenBounds().width >= canvas.getWidth(),
+                "focus zoom fills widescreen viewport instead of retaining edge bands");
+            coversViewportAtZoom(map, canvas);
         });
-        System.out.println("PASS county navigation: cluster focus, site chooser, live labels, clamped pan, reset, castle safety");
+        System.out.println("PASS county navigation: selection, zoom, labels, pan, reset, castle safety, widescreen matte/focus");
     }
 }

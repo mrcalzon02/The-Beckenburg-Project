@@ -35,3 +35,7 @@ The initial points in `locations.tsv` are proposed cartographic positions only; 
 ## Castle world-space selector
 
 The ground-floor Castle briefing room now has a real, fixed-position framed board carrying this approved map as an embedded diffuse texture. The old contract table/book workstation is replaced by `level_county_campaign_board`. Face the board and press **E** to open the **COUNTY MAP** page of the existing campaign selector, retaining all chapter gates. The physical board is editor-available, solid, and follows its authoritative Castle station coordinate. See [Castle board construction, verification and source](COUNTY_CASTLE_BILLBOARD.md).
+
+## Widescreen zoom / edge-bleed guard — 2026-11-18
+
+The approved 1448×1086 image remains unaltered. A wide Castle campaign panel exposes side margins when the whole 4:3 map is fitted; the canvas must clear those margins to its opaque matte every paint and clip the rasterized map to its actual image bounds. Wheel input outside the map anchors to its nearest real edge. FOCUS SITE scales far enough to fill the width of shallow widescreen panels while retaining the existing 4.5× cap and pan bounds. `CountyCampaignMapNavigationTest` now paints over magenta stale pixels in a 960×230 viewport and asserts that both letterbox margins are matte, followed by focus and pan coverage. The headless test does not replace a visual check in the shipped Windows game.

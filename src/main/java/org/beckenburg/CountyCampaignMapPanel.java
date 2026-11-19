@@ -263,10 +263,11 @@ public final class CountyCampaignMapPanel extends JPanel {
                 @Override public void actionPerformed(ActionEvent event) {command.run();}
             });
         }
-        private double imageScale() {
+        private double fitScale() {
             if (getWidth() <= 0 || getHeight() <= 0) return 1;
-            return Math.min(getWidth() / (double) background.getWidth(), getHeight() / (double) background.getHeight()) * zoom;
+            return Math.min(getWidth() / (double) background.getWidth(), getHeight() / (double) background.getHeight());
         }
+        private double imageScale() { return fitScale() * zoom; }
         /** At minimum zoom keep the fitted map centered; at higher zoom never expose empty
          * space beyond the genuine map edges. This applies to dragging, keys and zoom. */
         private void clampPan() {
@@ -292,6 +293,11 @@ public final class CountyCampaignMapPanel extends JPanel {
                 (int)Math.round(getHeight() / 2.0 + panY + (marker.y - .5) * background.getHeight() * scale));
         }
         void zoomAt(double factor, double mouseX, double mouseY) {
+            // Letterbox margins are not map coordinates. Anchor wheel/button zoom to
+            // the nearest real map edge instead of pulling in phantom terrain.
+            Rectangle bounds = imageBounds();
+            mouseX = Math.max(bounds.getMinX(), Math.min(bounds.getMaxX(), mouseX));
+            mouseY = Math.max(bounds.getMinY(), Math.min(bounds.getMaxY(), mouseY));
             double old = imageScale();
             double imageX = (mouseX - getWidth() / 2.0 - panX) / old;
             double imageY = (mouseY - getHeight() / 2.0 - panY) / old;
@@ -307,7 +313,10 @@ public final class CountyCampaignMapPanel extends JPanel {
         void reset() {zoom = 1; panX = panY = 0; clampPan(); repaint();}
         void focus(String id) {
             for (Marker marker : markers) if (marker.id.equals(id)) {
-                zoom = 2.4;
+                // Very wide Castle service panes otherwise focus at 2.4x yet
+                // still leave broad empty margins around a tiny county map.
+                double fillWidth = getWidth() / Math.max(1.0, background.getWidth() * fitScale());
+                zoom = Math.min(4.5, Math.max(2.4, fillWidth * 1.02));
                 panX = (.5 - marker.x) * background.getWidth() * imageScale();
                 panY = (.5 - marker.y) * background.getHeight() * imageScale();
                 clampPan();
@@ -375,8 +384,19 @@ public final class CountyCampaignMapPanel extends JPanel {
                 g.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
                 g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
                 clampPan();
+                // Clear the *entire* viewport, including margins exposed by
+                // fitting the approved 4:3 image into the wide campaign panel.
+                // Without an explicit matte/clip, repaints can leave repeated
+                // parchment-edge columns outside the real map bounds.
+                g.setColor(getBackground());
+                g.fillRect(0, 0, getWidth(), getHeight());
+                g.clipRect(0, 0, getWidth(), getHeight());
                 Rectangle frame = imageBounds();
-                g.drawImage(background, frame.x, frame.y, frame.width, frame.height, null);
+                Graphics2D mapLayer = (Graphics2D) g.create();
+                try {
+                    mapLayer.clip(frame);
+                    mapLayer.drawImage(background, frame.x, frame.y, frame.width, frame.height, null);
+                } finally { mapLayer.dispose(); }
                 for (Marker marker : markers) {
                     Point p = position(marker);
                     if (p.x < -24 || p.y < -24 || p.x > getWidth() + 24 || p.y > getHeight() + 24) continue;
