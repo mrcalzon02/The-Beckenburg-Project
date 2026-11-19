@@ -76,6 +76,13 @@ public final class HouseRebuildEnvelope {
         var entry=portals.stream().filter(q->q.door()&&q.alongX()&&Math.abs(q.z()-z1)<.01&&q.y()==0&&(q.a()==13||q.b()==13)).findFirst().orElseThrow();
         double px0=entry.x()-p[3]/2,px1=entry.x()+p[3]/2,pz=z1+p[4];
         b.box("porch-deck",px0,-.12,z1,px1,p[7],pz,LevelMaterials.STONE,-1,true);
+        // The genuine 4cm porch lip previously caught a 22cm player capsule
+        // BEFORE its centre entered the raised floor: bots stopped at z22.55
+        // despite a completely open route. A 65cm low-grade bevel is physical
+        // source geometry and support, NOT a collision bypass or teleport.
+        // Keep the original deck top, posts, doorway, wall and finite capsule.
+        b.walkableBevel("porch-approach-bevel",px0,px1,pz,pz+.65,
+            p[7],0.0,.12,LevelMaterials.STONE);
         for(double x:new double[]{px0+.13,px1-.13}){
             b.box("porch-post-"+x,x-.075,p[7],pz-.25,x+.075,p[6]-.06,pz-.10,LevelMaterials.WOOD,-1,false);
             b.box("porch-post-foot-"+x,x-.12,p[7],pz-.295,x+.12,p[7]+.16,pz-.055,LevelMaterials.STONE,-1,false);
@@ -124,6 +131,31 @@ public final class HouseRebuildEnvelope {
             quad(v(x0,y1,z1),v(x1,y1,z1),v(x1,y1,z0),v(x0,y1,z0),mat,hidden!=4);
             quad(v(x0,y0,z0),v(x1,y0,z0),v(x1,y0,z1),v(x0,y0,z1),mat,hidden!=5);
             parts.add(new Part(name,triangles,support));
+        }
+        /** A low, continuous support transition from level terrain to a raised
+         * deck. Both the visible triangles and authoritative foot/capsule
+         * collision come from this SAME source geometry. Normal-up triangles
+         * are walkable support; side and underside triangles remain solids. */
+        void walkableBevel(String name,double x0,double x1,double zNear,double zFar,
+                           double nearY,double farY,double thickness,int mat){
+            if(!(x1>x0&&zFar>zNear&&nearY>farY&&thickness>0
+                    &&(nearY-farY)/(zFar-zNear)<AuthoredSitePhysics.MAX_GRADE))
+                throw new IllegalArgumentException("Invalid walkable bevel");
+            triangles=new ArrayList<>();
+            // The top face is wound upward for HCS2 SUPPORT identification.
+            quad(v(x0,farY,zFar),v(x1,farY,zFar),
+                v(x1,nearY,zNear),v(x0,nearY,zNear),mat,true);
+            quad(v(x0,nearY-thickness,zNear),v(x1,nearY-thickness,zNear),
+                v(x1,farY-thickness,zFar),v(x0,farY-thickness,zFar),mat,true);
+            quad(v(x0,farY-thickness,zFar),v(x1,farY-thickness,zFar),
+                v(x1,farY,zFar),v(x0,farY,zFar),mat,true);
+            quad(v(x1,nearY-thickness,zNear),v(x0,nearY-thickness,zNear),
+                v(x0,nearY,zNear),v(x1,nearY,zNear),mat,true);
+            quad(v(x0,farY-thickness,zFar),v(x0,farY,zFar),
+                v(x0,nearY,zNear),v(x0,nearY-thickness,zNear),mat,true);
+            quad(v(x1,farY,zFar),v(x1,farY-thickness,zFar),
+                v(x1,nearY-thickness,zNear),v(x1,nearY,zNear),mat,true);
+            parts.add(new Part(name,triangles,true));
         }
         void prism(String name,double[][] ring,double z0,double z1,int mat){
             triangles=new ArrayList<>();

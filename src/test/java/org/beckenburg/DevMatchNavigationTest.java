@@ -47,7 +47,13 @@ public final class DevMatchNavigationTest {
         // Real campaign run 64 got stuck at (19.59, 0.001, 22.55).
         // Report which authored triangle actually blocks the short porch approach.
         // This is diagnostic, not an excuse to remove any wall/door collision.
-        var stalled=new LevelDefinition.Vec(19.595,.001,22.555);
+        var historic=new LevelDefinition.Vec(19.595,.001,22.555);
+        Double adjusted=map.supportNear(historic.x(),historic.z(),historic.y());
+        check(adjusted!=null,"The rebuilt porch must support the formerly stalled hunter");
+        var stalled=new LevelDefinition.Vec(historic.x(),adjusted,historic.z());
+        check(map.envelope()!=null&&map.envelope().parts().stream()
+                .anyMatch(part->part.name().equals("porch-approach-bevel")&&part.support()),
+            "A real authored support surface must bridge the porch, not a collision exemption");
         var entry=map.level().portalsFrom(13).stream()
             .filter(p->p.door()&&p.joins(13,0)).findFirst().orElseThrow();
         var command=new HunterFieldNavigation(map).to(150,
@@ -73,6 +79,36 @@ public final class DevMatchNavigationTest {
         System.out.printf(java.util.Locale.ROOT,
             "DEV PORCH direct_short_step=%s nearestDoor=%s%n",
             after,map.nearestDoor(stalled.x(),stalled.y(),stalled.z()));
+        check(after!=null,"A 31cm physical step must cross the former porch collision deadlock");
+        check(command.action()==CampaignGuestBot.Action.WALK,
+            "Hired hunter must issue an actual walking command from the supported porch edge");
+        // Validate the full physical approach with the SAME swept capsule that
+        // a human/hired hunter uses. No scene-only ramp or bypassed walls.
+        double approachZ=23.14,approachX=19.8;
+        double approachY=map.groundHeight(approachX,approachZ,13);
+        var position=new LevelDefinition.Vec(approachX,approachY,approachZ);
+        for(int step=0;step<14&&position.z()>21.26;step++){
+            double nextZ=Math.max(21.26,position.z()-.24);
+            var next=map.resolveMove(position,approachX,nextZ);
+            check(next!=null,"Actual capsule cannot climb authored porch at z="+nextZ+
+                " from "+position);
+            position=next;
+        }
+        check(position.z()<=21.26+.001&&Math.hypot(
+                position.x()-entry.x(),position.z()-entry.z())<1.5,
+            "Physical approach must reach the genuine closed door's interaction radius");
+        check(map.nearestDoor(position.x(),position.y(),position.z())!=null,
+            "The existing door must be reached normally");
+        check(map.toggleNearestDoor(position.x(),position.y(),position.z()),
+            "Open the SAME authored door a player interacts with");
+        for(int step=0;step<10&&position.z()>20.14;step++){
+            var next=map.resolveMove(position,approachX,Math.max(20.14,position.z()-.24));
+            check(next!=null,"Open physical doorway must admit a normal 31cm movement step from "+position);
+            position=next;
+        }
+        check(map.roomAt(position.x(),position.y(),position.z())==0,
+            "Physical walk must enter the interior foyer without a room jump: "+position);
+        System.out.println("PASS: genuine 4cm walkable porch bevel, open door and continuous capsule entry");
         System.out.println("PASS: six van aisle routes, supported ramps and two genuine house entrances");
     }
 }
