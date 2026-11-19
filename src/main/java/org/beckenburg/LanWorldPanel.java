@@ -2030,7 +2030,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 if(id>0){int chosen=id;sendAction("drop object",()->client.clutter("DROP",chosen,renderer.pitch));}
                 else sendAction("drop equipment",client::dropHeldEquipment);
             }
-            case KeyEvent.VK_ESCAPE -> {keys.clear();releaseVoice();mouseLook.release();InGamePauseMenu.execute(this);}
+            case KeyEvent.VK_ESCAPE -> {
+                keys.clear();releaseVoice();mouseLook.release();
+                refreshRealtimeInput(); // release motion before blocking modal UI
+                InGamePauseMenu.execute(this);
+            }
             case KeyEvent.VK_E -> {
                 if(!interfaceOpen.isEmpty()||helpVisible||opening!=null||chatInput.isVisible())return;
                 var dropped=aimedDroppedGear();

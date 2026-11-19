@@ -384,7 +384,11 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 var device=map.fixtures().aimed(camera.x,camera.eyeHeight-1.62,camera.z,camera.yaw,camera.pitch);
                 if(device!=null)try{client.ghostFixture(device.id());feedback="Requesting fixture haunting: "+device.kind();}catch(java.io.IOException failure){feedback="Fixture request failed: "+failure.getMessage();}
             }
-            case KeyEvent.VK_ESCAPE -> {keys.clear();mouseLook.release();InGamePauseMenu.execute(this);}
+            case KeyEvent.VK_ESCAPE -> {
+                keys.clear();mouseLook.release();
+                refreshRealtimeInput(); // release motion before blocking modal UI
+                InGamePauseMenu.execute(this);
+            }
             case KeyEvent.VK_Z -> choice--;
             case KeyEvent.VK_Q -> choice++;
             case KeyEvent.VK_SPACE,KeyEvent.VK_ENTER -> ability(GhostDomain.Action.DRIFT);

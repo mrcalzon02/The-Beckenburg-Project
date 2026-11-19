@@ -14,6 +14,9 @@ final class LanRealtimeClock {
         long elapsed=nowNanos-lastNanos;
         if(elapsed<5_000_000L)return 0; // bursts cannot mint more displacement
         lastNanos=nowNanos;
+        // Releasing WASD for a second must not credit 100ms of motion to
+        // the very first fresh input. Keep start/stop latency genuinely low.
+        if(elapsed>200_000_000L)return INITIAL_SECONDS;
         return Math.min(MAX_SECONDS,elapsed/1_000_000_000.0);
     }
     void reset(){lastNanos=Long.MIN_VALUE;}
