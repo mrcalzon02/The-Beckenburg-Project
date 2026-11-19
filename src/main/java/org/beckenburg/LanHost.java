@@ -817,6 +817,7 @@ public final class LanHost implements AutoCloseable {
                 case "VIEW3D" -> {
                     if(!running||peer.slot==GHOST_SEAT||p.size()!=1)throw new IllegalArgumentException("3D view requires active hunter");
                     peer.worldMode=true;
+                    peer.uvVisibilityFeed.invalidate(); // Reentered/rebuilt viewport requires one fresh snapshot.
                     rackSent.remove(peer);
                     reply(peer,"ACCEPT|VIEW3D");
                     if(campaignProfile!=null){
@@ -3203,8 +3204,18 @@ public final class LanHost implements AutoCloseable {
                 if(recorders[seat].due(tick))stopRecording(seat);
                 if(tick%10==0&&recorders[seat].recording())sendRecorderState(seat);
                 if(tick%3==0&&seats[seat]!=null){
-                    reply(seats[seat],"UVTRACE|RESET");
-                    for(var mark:uvEvidence.visible(map,world.body(seat),equipment[seat].owned("UV_LIGHT"),tick,equipment[seat].powered("UV_LIGHT")))reply(seats[seat],mark.frame());
+                    Peer viewer=seats[seat];
+                    var visible=uvEvidence.visible(map,world.body(seat),
+                        equipment[seat].owned("UV_LIGHT"),tick,
+                        equipment[seat].powered("UV_LIGHT"));
+                    // UV marks are genuine host evidence and fade at their
+                    // authored born tick. Repeating an identical 96-mark list
+                    // every 300ms wastes TCP bandwidth and UI work. TCP FIFO
+                    // preserves the complete reset+list transaction.
+                    if(viewer.uvVisibilityFeed.changed(visible)){
+                        reply(viewer,"UVTRACE|RESET");
+                        for(var mark:visible)reply(viewer,mark.frame());
+                    }
                 }
             }
             // Powered device gauges receive real host charge updates once per second.
@@ -3586,6 +3597,7 @@ public final class LanHost implements AutoCloseable {
         long unconfirmedResumeDeadlineNanos; // no unlimited grace via failed reconnect loop
         boolean ready,worldMode,ghostWorldMode,intentionalLeave,realtimeInputMode;
         final GhostListeningFeed hearingFeed=new GhostListeningFeed();
+        final UvVisibleSnapshotFeed uvVisibilityFeed=new UvVisibleSnapshotFeed();
 
         boolean twinInSight,witnessOptics;
         final boolean[] twinOnCamera=new boolean[HUNTERS+1];
