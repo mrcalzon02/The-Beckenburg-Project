@@ -8702,6 +8702,36 @@ Bind the saved height delta digest into the normal level revision and reject dis
 
 When authoring adds independent support geometry, include its actual data in the host and client revision. [DEV-616 evidence](../levels/rebuild/blackpine-dispatch-pass/checkpoint.json)
 
+### DEV-617 School interiors lacked leaves at their measured frames
+
+**Status** CORRECTED_FOR_SEVENTEEN_SURVEYED_FRAMES · **Affected** Ravenshade foyer, courts, classrooms and stair compartments
+
+The south foyer was the only verified operable door in the native School packet. Sixteen retained complete frames had been verified for opening clearance alone.
+
+Fit canonical leaves to the actual opening widths and elevations. Replay both states for body, aim, moving objects, sight and sound.
+
+Audit every scheduled bare frame independently of the planned circulation strip. [DEV-617 evidence](../levels/rebuild/school-interior-doors-pass/checkpoint.json)
+
+### DEV-618 School open leaves could occupy real turning lanes
+
+**Status** CORRECTED_WITH_MEASURED_HINGES_AND_SWINGS · **Affected** Main stair to service, health and dining landings
+
+The first door fit passed individual straight crossing yet stopped normal movement during turns at X29.25 Z18.685, X30.62 Z26.232 and X31 Z20.875 m. The parked leaf occupied part of the actual approach turn after the doorway.
+
+Park the service leaf on the larger main landing. Swap health and dining to the opposite jamb and align the health crossing through its center. Replay the full arrival tree in both directions and postures.
+
+Test whole approaches with adjacent leaves open, including turn-around space after the threshold. [DEV-618 evidence](../levels/rebuild/school-interior-doors-pass/checkpoint.json)
+
+### DEV-619 Two School stair guidance stations reported landing elevations on actual treads
+
+**Status** GUIDE_DATUM_CORRECTED_NO_CONSTRUCTION_CHANGE · **Affected** Lower service stair and ground-to-upper main stair
+
+The exact loaded support at Z13.5 m was −2.823529 m and at Z22 m was +0.180 m. The previous station elevations read −3 and 0 m. Those two guide stations lie on existing treads.
+
+Use measured tread elevations and replay the complete existing flights in both directions on the original native collision.
+
+Compare individual approach and riser guide stations to the saved stair profile. [DEV-619 evidence](../levels/rebuild/school-interior-doors-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

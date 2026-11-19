@@ -1293,3 +1293,12 @@ The [repair shed plan](blackpine-dispatch-pass/repair-shed-plan.svg) records the
 The [dispatch checkpoint](blackpine-dispatch-pass/checkpoint.json) covers ordinary solo and live four-peer LAN with `-Dbeckenburg.review.blackpine=true`. The host walker left the raised van, stopped at the closed shed leaf, opened it and crossed onto the real yard grade and back. The ordinary generator and panel interactions work from one supported stance. A ghost trip and seat recovery retain the blackout and independent source. Restarting the source leaves the breaker tripped until the hunter uses the mounted panel. A saved height edit also changes the terrain revision and rejects a mismatched peer.
 
 The active [29-location roster](blackpine-dispatch-pass/roster.json) records the new Blackpine decision. Its public campaign selection and full acceptance remain held. The next architecture gate is Ravenshade's interior door and stair schedule beyond the existing south foyer.
+
+
+## 2026-11-19 / Ravenshade fitted interior doors and full arrival walk
+
+The [door and landing plan](school-interior-doors-pass/fitted-thresholds-plan.svg) locates sixteen new operable sets and the retained paired foyer doors across the ground, upper and lower floors. The frames, stairs, walls and terrain keep their exact existing GLB and collision bytes. The editable scene has separate closed and parked-open leaf collections at the measured hinge positions. A Blender reopen matches all 31,328 game triangles across 34 poses.
+
+The [checkpoint](school-interior-doors-pass/checkpoint.json) verifies sweep clearance, interaction aim, body, small object, sight and acoustic behavior in both door states. The same door snapshots passed in a second staged world. The whole route exposed parked-leaf conflicts beside the main and service stairs. The service leaf now swings onto the larger main landing, and the health and dining leaves park clear of their room-side turns. Two original guide elevations have been set to measured tread heights.
+
+With all leaves open, the real mover can leave the canonical cargo deck and return. All 39 connected links traverse in both directions while standing or crouched, covering the 40-space limit. All three reserved ritual positions still have support and ownership. Software and Windows RTX 5070 OpenGL captured the same staged source. The [29-location roster](school-interior-doors-pass/roster.json) records the scope. Whole-school mission transitions, service installation, physical containment and ordinary packaged dispatch remain ahead.

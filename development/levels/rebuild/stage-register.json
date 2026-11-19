@@ -7170,5 +7170,18 @@
       "roster_packets": 29
     },
     "next_action": "Survey the remaining Ravenshade internal door frames and stair thresholds from the exact native scene; keep the accessible envelope at 40."
+  },
+  "school_interior_doors_checkpoint": {
+    "status": "SCHOOL_SEVENTEEN_FITTED_FRAMES_STAGED_GAMEPLAY",
+    "baseline": "3b6b0588b311ccbaab70be97ed89772cba6e22ab",
+    "roster": "development/levels/rebuild/school-interior-doors-pass/roster.json",
+    "checkpoint": "development/levels/rebuild/school-interior-doors-pass/checkpoint.json",
+    "native_revision": "620d47062ecd86da3425336b79357a0f716c3d6822ca0f46734d44d8407efd2d",
+    "counts": {
+      "fitted_openings": 17,
+      "scene_spaces": 40,
+      "route_direction_posture_replays": 156
+    },
+    "next_action": "Survey physical room ownership and reachable open passages, then bind whole-school mission transitions and services to the retained floors and doors."
   }
 }

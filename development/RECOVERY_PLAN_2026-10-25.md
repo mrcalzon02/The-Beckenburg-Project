@@ -2028,3 +2028,10 @@ Main was inspected at cdf802b18731a4648edfb6d0c94aea3ed96e5325. Full multiplayer
 ## Blackpine powered shed and normal map selection
 
 The [Blackpine checkpoint](levels/rebuild/blackpine-dispatch-pass/checkpoint.json) advances a second map to packaged solo and four-peer LAN review. It covers the fitted repair shed door, retained terrain, named load circuits, mounted controls and normal ghost and reconnect authority. Seacliff, Hollow Creek and College dispatch passed again on this package. Main remains cdf802b18731a4648edfb6d0c94aea3ed96e5325, with passing multiplayer 44496299092 and installer 44496299087. GPU renderer acceptance 44496299169 failed. The exact Seacliff draft gallery check 44500974788 succeeded at 497d94c1dacf7b4e4a406528cb462d9dc91a5016. The next draft scope is Ravenshade interior thresholds.
+
+
+## Ravenshade fitted threshold and landing replay
+
+The [School checkpoint](levels/rebuild/school-interior-doors-pass/checkpoint.json) fits sixteen native door sets, preserves the prior foyer and verifies the entire supported arrival tree in two staged game worlds. All 156 direction and posture checks pass across 40 accessible spaces. The real software and OpenGL renderers loaded the exact source. The next School work is surveying remaining open passage edges, owner transitions and mounted services before ordinary dispatch.
+
+Main was observed at cdf802b18731a4648edfb6d0c94aea3ed96e5325. Full multiplayer 44496299092 and Windows installer 44496299087 succeeded there. Renderer acceptance 44496299169 failed. The preceding Blackpine held-draft gallery run 44503763411 passed at 3b6b0588b311ccbaab70be97ed89772cba6e22ab. The held map parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.

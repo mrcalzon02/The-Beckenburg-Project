@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11317,
+  "count": 11331,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -105004,6 +105004,146 @@
       "height": 900,
       "bytes": 705867,
       "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-401-closed.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-401-closed.png",
+      "title": "School opengl frame 401 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 403164,
+      "sha256": "b009c273479d5ead86d9d9fd73cfc7fcbce3e08e0ff3b206ecf12dce6a0530c7"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-401-open.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-401-open.png",
+      "title": "School opengl frame 401 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 368431,
+      "sha256": "aa76756df2fdd3301178c782a98f98151d69ebb6dd281939ada9d2170c9a4faa"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-414-closed.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-414-closed.png",
+      "title": "School opengl frame 414 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 399133,
+      "sha256": "aa47730d5bd036d56d3535f110bad949865ce781ea27ac7fab77248cb04dd78a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-414-open.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-414-open.png",
+      "title": "School opengl frame 414 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 351414,
+      "sha256": "2ef62235f99c84500712508a68d744728f5473cb2ff7d75214aecaf79a1d3088"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-417-closed.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-417-closed.png",
+      "title": "School opengl frame 417 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 384284,
+      "sha256": "95eb0357e82323a39ade41f93d7cb1e41d4f476ddda34231e6b9493686893a61"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-417-open.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-opengl-frame-417-open.png",
+      "title": "School opengl frame 417 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 342829,
+      "sha256": "899015c87c8a51811fb8801bee53c46cb5a6b9b64ff9ec9fbb87ff084cd85406"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-401-closed.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-401-closed.png",
+      "title": "School software frame 401 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 400145,
+      "sha256": "546e9bc97bbf646929e99144ae1d69f22efd85e8cab0dc32bda629f68e51362e"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-401-open.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-401-open.png",
+      "title": "School software frame 401 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 365404,
+      "sha256": "ee2e78006f3aed8b21c829700465a954ff1d09b569d26007de997cbffea68577"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-404-closed.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-404-closed.png",
+      "title": "School software frame 404 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 387830,
+      "sha256": "d4e2b1eff6e379abc56da5b6bd51c2bdfaf585637f95e4ffee6a90ef087e526c"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-404-open.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-404-open.png",
+      "title": "School software frame 404 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 368162,
+      "sha256": "8363dd3999d85142e0e8e8231d35e38cee097901ed4993569478255266d04616"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-413-closed.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-413-closed.png",
+      "title": "School software frame 413 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 374033,
+      "sha256": "7fd126e22063344fabd99684c970481a2005a4cdc116b54248a6486e898be895"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-413-open.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-413-open.png",
+      "title": "School software frame 413 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 340545,
+      "sha256": "f77b8b8f253045ee1ed6412f75f506cc20c06c6f0214c8d2053a11f104a9e654"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-417-closed.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-417-closed.png",
+      "title": "School software frame 417 closed",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 382608,
+      "sha256": "767da3b2a829506b96453d0fda2a8f7408b6c50ff046312d23a2b089ab5bb462"
+    },
+    {
+      "path": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-417-open.png",
+      "url": "development/levels/rebuild/captures/school-interior-doors-batch/school-software-frame-417-open.png",
+      "title": "School software frame 417 open",
+      "kind": "Runtime capture",
+      "width": 880,
+      "height": 580,
+      "bytes": 342134,
+      "sha256": "5cfe2e991f65faa341b8119b1e3907706cf1c4ee29c3f88399d3277e47b17bbd"
     },
     {
       "path": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-opengl-records-cupboard.png",

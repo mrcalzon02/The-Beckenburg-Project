@@ -6843,6 +6843,39 @@
       "action": "Bind the saved height delta digest into the normal level revision and reject disagreement. Verify with a real saved terrain edit outside the arrival.",
       "older_maps": "When authoring adds independent support geometry, include its actual data in the host and client revision.",
       "evidence": "development/levels/rebuild/blackpine-dispatch-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-617",
+      "title": "School interiors lacked leaves at their measured frames",
+      "status": "CORRECTED_FOR_SEVENTEEN_SURVEYED_FRAMES",
+      "affected": "Ravenshade foyer, courts, classrooms and stair compartments",
+      "symptom": "The south foyer was the only verified operable door in the native School packet.",
+      "cause": "Sixteen retained complete frames had been verified for opening clearance alone.",
+      "action": "Fit canonical leaves to the actual opening widths and elevations. Replay both states for body, aim, moving objects, sight and sound.",
+      "older_maps": "Audit every scheduled bare frame independently of the planned circulation strip.",
+      "evidence": "development/levels/rebuild/school-interior-doors-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-618",
+      "title": "School open leaves could occupy real turning lanes",
+      "status": "CORRECTED_WITH_MEASURED_HINGES_AND_SWINGS",
+      "affected": "Main stair to service, health and dining landings",
+      "symptom": "The first door fit passed individual straight crossing yet stopped normal movement during turns at X29.25 Z18.685, X30.62 Z26.232 and X31 Z20.875 m.",
+      "cause": "The parked leaf occupied part of the actual approach turn after the doorway.",
+      "action": "Park the service leaf on the larger main landing. Swap health and dining to the opposite jamb and align the health crossing through its center. Replay the full arrival tree in both directions and postures.",
+      "older_maps": "Test whole approaches with adjacent leaves open, including turn-around space after the threshold.",
+      "evidence": "development/levels/rebuild/school-interior-doors-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-619",
+      "title": "Two School stair guidance stations reported landing elevations on actual treads",
+      "status": "GUIDE_DATUM_CORRECTED_NO_CONSTRUCTION_CHANGE",
+      "affected": "Lower service stair and ground-to-upper main stair",
+      "symptom": "The exact loaded support at Z13.5 m was −2.823529 m and at Z22 m was +0.180 m. The previous station elevations read −3 and 0 m.",
+      "cause": "Those two guide stations lie on existing treads.",
+      "action": "Use measured tread elevations and replay the complete existing flights in both directions on the original native collision.",
+      "older_maps": "Compare individual approach and riser guide stations to the saved stair profile.",
+      "evidence": "development/levels/rebuild/school-interior-doors-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
