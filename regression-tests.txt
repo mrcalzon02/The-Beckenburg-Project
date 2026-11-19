@@ -242,6 +242,9 @@ LanWorldTest
 LanVisualMotionTest
 LanRealtimeClockTest
 PresentedFrameCadenceTest
+LanEdtPacketQueueTest
+LanLobbyLogTest
+LanLobbySiteCacheTest
 LanWorldIntegrationTest
 LanWorldRenderTest
 LanLobbyTest

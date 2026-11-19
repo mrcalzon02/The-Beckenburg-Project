@@ -27,6 +27,8 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         new JComboBox<>(java.util.Arrays.stream(HouseMap.Site.values())
             .filter(SiteCatalog::playable).toArray(HouseMap.Site[]::new));
     private HouseMap.Site selectedSite=HouseMap.Site.HOUSE;
+    // Only metadata is read from this map; do not rebuild a level per status tick.
+    private final LanLobbySiteCache siteMaps=new LanLobbySiteCache();
     private final JButton tuneContract=new JButton("Contract options");
     private CustomContract custom=CustomContract.standard(3);
     private final JTextArea log=new JTextArea(12,52);
@@ -222,8 +224,8 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         pages.addTab("CASTLE RELATIONS",socialContent);
         pages.setEnabledAt(pages.indexOfComponent(socialContent),false);
         JButton retrySave=PsxHorrorUi.button("RETRY CAMPAIGN SAVE");
-        retrySave.addActionListener(e->{try{if(hosted!=null&&hosted.retryCampaignSettlement())log.append("Campaign result saved.\n");}
-            catch(IOException failed){log.append("Campaign save failed: "+failed.getMessage()+"\n");}});
+        retrySave.addActionListener(e->{try{if(hosted!=null&&hosted.retryCampaignSettlement())appendLog("Campaign result saved.\n");}
+            catch(IOException failed){appendLog("Campaign save failed: "+failed.getMessage()+"\n");}});
         if(campaignLaunch!=null)launchActions.add(retrySave);
         lobbyContents=PsxMenuScreen.screen("network.lobby.content",
             campaignLaunch==null?"MULTIPLAYER LOBBY":campaignLaunch.coop()?"CAMPAIGN / CO-OP LOBBY":"CAMPAIGN / SOLO LOBBY",
@@ -266,7 +268,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         lobbyLock.addActionListener(e->{
             if(hosted==null){lobbyLock.setSelected(false);return;}
             hosted.setLobbyLocked(lobbyLock.isSelected());
-            log.append(lobbyLock.isSelected()?"Lobby locked to new joins (existing reservations may reconnect).\n":
+            appendLog(lobbyLock.isSelected()?"Lobby locked to new joins (existing reservations may reconnect).\n":
                 "Lobby open to eligible LAN joins.\n");
         });
         reconnect.addActionListener(e->reconnect());
@@ -348,7 +350,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                     Throwable reason=ex.getCause()==null?ex:ex.getCause();
                     String detail=reason.getMessage()==null?reason.toString():reason.getMessage();
                     status.setText("Round not started: "+detail);
-                    log.append("Team preparation failed: "+detail+"\n");
+                    appendLog("Team preparation failed: "+detail+"\n");
                     setCommandEnabled(connection!=null);
                 }
             }
@@ -390,9 +392,9 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             resumeTicket=new LanClient.ResumeTicket(last.seat(),last.token(),last.sequence());
             reconnect.setEnabled(true);
             status.setText("Previous LAN seat may be recoverable — Reconnect");
-            log.append("Saved recovery ticket found. The original host must still be running and keeping your seat.\n");
+            appendLog("Saved recovery ticket found. The original host must still be running and keeping your seat.\n");
         }catch(IOException ex){
-            log.append("Stored reconnect ticket could not be read; original file was preserved: "+"Operation unavailable (NET-04)"+"\n");
+            appendLog("Stored reconnect ticket could not be read; original file was preserved: "+"Operation unavailable (NET-04)"+"\n");
         }
     }
     private boolean saveResume(LanClient client){
@@ -404,13 +406,13 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                     ticket.seat(),ticket.token(),ticket.nextSequence());
             return true;
         }catch(IOException ex){
-            log.append("Session recovery file unavailable: "+"Operation unavailable (NET-04)"+"\n");
+            appendLog("Session recovery file unavailable: "+"Operation unavailable (NET-04)"+"\n");
             return false;
         }
     }
     private void clearSavedResume(){
         try { LanResumeStore.clear(LanResumeStore.defaultPath()); }
-        catch(IOException ex){ log.append("Cannot clear stale recovery ticket: "+"Operation unavailable (NET-04)"+"\n"); }
+        catch(IOException ex){ appendLog("Cannot clear stale recovery ticket: "+"Operation unavailable (NET-04)"+"\n"); }
     }
     private static JSpinner spin(int value,int low,int high,int step){
         return new JSpinner(new SpinnerNumberModel(value,low,high,step));
@@ -485,7 +487,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                 (int)weatherIntensity.getValue(),
                 (int)hunterEndurance.getValue(),(int)ghostEndurance.getValue(),
                 (HardEvidenceQuota.Level)hardEvidence.getSelectedItem());
-            log.append("Custom settings armed for next hosted case, "+custom.hunters()+
+            appendLog("Custom settings armed for next hosted case, "+custom.hunters()+
                 " hunters / difficulty +"+custom.partyDifficulty()+
                 " / evidence "+custom.evidenceLevel()+
                 " / weather "+custom.weatherMode()+" "+custom.fixedWeather()+
@@ -493,21 +495,21 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         }
     }
     private void sendLobbyMessage(){
-        if(connection==null){log.append("Connect before using lobby chat.\n");return;}
+        if(connection==null){appendLog("Connect before using lobby chat.\n");return;}
         try{
             connection.lobbyChat(lobbyChat.getText());
             lobbyChat.setText("");
         }catch(IOException|IllegalArgumentException ex){
-            log.append("Lobby chat: "+"Operation unavailable (NET-04)"+"\n");
+            appendLog("Lobby chat: "+"Operation unavailable (NET-04)"+"\n");
         }
     }
     @FunctionalInterface private interface Command {void send()throws IOException;}
     private void action(Command command){try{if(connection==null)throw new IOException("not connected");command.send();}
-        catch(Exception ex){log.append("Send failed: "+"Operation unavailable (NET-04)"+"\n");}}
+        catch(Exception ex){appendLog("Send failed: "+"Operation unavailable (NET-04)"+"\n");}}
     private void connect(boolean localHost){
         if(busy||connection!=null)return;
         if(hosted!=null){
-            log.append("Your LAN host is still running. Reconnect its reserved seat before starting another room; closing this window ends hosting.\n");
+            appendLog("Your LAN host is still running. Reconnect its reserved seat before starting another room; closing this window ends hosting.\n");
             return;
         }
         busy=true;
@@ -550,7 +552,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                 }
                 // A remote guest cannot race the local player to H1 or ghost-owner seat.
                 String localProof=newHost==null?"":newHost.localOwnerCredential();
-                java.util.function.Consumer<String> events=frame->SwingUtilities.invokeLater(()->{if(generation==connectionGeneration)receive(frame);});
+                java.util.function.Consumer<String> events=edtNetworkEvents(generation);
                 LanClient client=encrypted?new LanClient(localHost?"127.0.0.1":hostname,portNumber,ghost,nickname,localProof,events,tls):new LanClient(localHost?"127.0.0.1":hostname,portNumber,ghost,nickname,requestedPassword,localProof,events);
                 activeSecure=tls;
                 final LanHost own=newHost;
@@ -576,7 +578,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                     if("GHOST".equals(client.seat()))avatar.showGhost(
                         remoteLook!=null?remoteLook:localLook,remoteLook!=null);
                     else avatar.showHunter((CharacterVisuals.Hunter)hunterAppearance.getSelectedItem());
-                    setCommandEnabled(true);log.append("Connected. Ready when your team is assembled.\n");
+                    setCommandEnabled(true);appendLog("Connected. Ready when your team is assembled.\n");
                     if(pendingStart)SwingUtilities.invokeLater(this::requestStartRound);
                 });
             }catch(Exception ex){
@@ -586,7 +588,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                     if(generation!=connectionGeneration)return;
                     busy=false;pendingStart=false;waitingReadyAck=false;
                     status.setText("Connection failed");
-                    log.append(LanNetworkDiagnostics.explain(ex)+"\nDetail: "+msg+"\n");
+                    appendLog(LanNetworkDiagnostics.explain(ex)+"\nDetail: "+msg+"\n");
                 });
             }
         },"beckenburg-connect");task.setDaemon(true);task.start();
@@ -599,10 +601,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         long generation=++connectionGeneration;
         Thread task=new Thread(()->{
             try{
-                java.util.function.Consumer<String> restoreEvents=
-                    frame->SwingUtilities.invokeLater(()->{
-                        if(generation==connectionGeneration)receive(frame);
-                    });
+                java.util.function.Consumer<String> restoreEvents=edtNetworkEvents(generation);
                 LanClient restored=activeSecure==null?new LanClient(address,reconnectPort,ticket,restoreEvents):new LanClient(address,reconnectPort,ticket,restoreEvents,activeSecure);
                 SwingUtilities.invokeLater(()->{
                     if(generation!=connectionGeneration){restored.close();return;}
@@ -613,17 +612,17 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                         // No stale on-disk guest ticket is written for a listen host.
                         try{restored.acknowledgeStoredResume();}
                         catch(IOException ex){
-                            log.append("Local host reconnect acknowledgement unavailable: "+"Operation unavailable (NET-04)"+"\n");
+                            appendLog("Local host reconnect acknowledgement unavailable: "+"Operation unavailable (NET-04)"+"\n");
                         }
                     }else if(saveResume(restored)){
                         // Only retire the old host capability AFTER the replacement
                         // has been durably persisted for process-restart recovery.
                         try{restored.acknowledgeStoredResume();}
                         catch(IOException ex){
-                            log.append("Recovery acknowledgement unavailable: "+"Operation unavailable (NET-04)"+"\n");
+                            appendLog("Recovery acknowledgement unavailable: "+"Operation unavailable (NET-04)"+"\n");
                         }
                     }else{
-                        log.append("Old recovery token remains valid during this match if the connection drops again.\n");
+                        appendLog("Old recovery token remains valid during this match if the connection drops again.\n");
                     }
                     missionRunning=true;worldMode=false;
                     role.setSelectedIndex("GHOST".equals(restored.seat())?1:0);
@@ -636,7 +635,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                     status.setText("Seat "+restored.seat()+" restored - enter 3D world");
                     caseStatus.setText("Case: mission resumed");
                     setCommandEnabled(true);
-                    log.append("Reconnected to the same mission. Reopen 3D view to restore live audio and scene.\n");
+                    appendLog("Reconnected to the same mission. Reopen 3D view to restore live audio and scene.\n");
                 });
             }catch(Exception ex){
                 SwingUtilities.invokeLater(()->{
@@ -646,7 +645,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                         resumeTicket=null;reconnect.setEnabled(false);clearSavedResume();
                     }
                     status.setText("Reconnect unavailable");
-                    log.append("Reconnect failed: "+"Operation unavailable (NET-04)"+"\n");
+                    appendLog("Reconnect failed: "+"Operation unavailable (NET-04)"+"\n");
                 });
             }
         },"beckenburg-resume");
@@ -658,7 +657,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             JComponent active=worldView!=null?worldView:ghostView;if(active!=null)active.requestFocusInWindow();return;}
         boolean ghost="GHOST".equals(connection.seat());
         try{if(ghost)connection.viewGhost3D();else connection.view3D();}
-        catch(IOException ex){log.append("3D start failed: "+"Operation unavailable (NET-04)"+"\n");return;}
+        catch(IOException ex){appendLog("3D start failed: "+"Operation unavailable (NET-04)"+"\n");return;}
         worldMode=true;setCommandEnabled(true);
         JComponent active;
         if(ghost){ghostView=new LanGhostPanel(connection);active=ghostView;}
@@ -673,6 +672,14 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         // The host itself now replays the role-filtered casefile, notes, equipment,
         // progress and 3D world on VIEW3D; do not race or duplicate a second journal reset.
         // Subsequent frames update this viewport.
+    }
+    private void appendLog(String message){LanLobbyLog.append(log,message);}
+    /** Keep high-frequency position traffic from flooding the Swing event queue. */
+    private java.util.function.Consumer<String> edtNetworkEvents(long generation){
+        LanEdtPacketQueue queue=new LanEdtPacketQueue(frame->{
+            if(generation==connectionGeneration)receive(frame);
+        });
+        return queue::post;
     }
     private void receive(String event){
         if(event.equals("INFO|network connection ended")){
@@ -716,7 +723,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             caseStatus.setText(localHostSurvives?"Case: active on local host":"Case: connection ended");
             teamStatus.setText("Team: disconnected");
             setCommandEnabled(false);equipmentPage.disconnect();closeWorld();
-            log.append(resumeTicket==null?"Connection ended. You can host or join a fresh match.\n":
+            appendLog(resumeTicket==null?"Connection ended. You can host or join a fresh match.\n":
                 "Connection interrupted. Reconnect to the same mission while the host reserves your seat.\n");
             return;
         }
@@ -746,19 +753,21 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             var parts=LanProtocol.parts(event);
             if(parts.size()==3){
                 try{
-                    selectedSite=HouseMap.Site.valueOf(parts.get(1));
-                    if(!new HouseMap(selectedSite).level().revision().equals(parts.get(2)))throw new IllegalArgumentException("incompatible level revision");
-                    siteChoice.setSelectedItem(selectedSite);
+                    HouseMap.Site receivedSite=HouseMap.Site.valueOf(parts.get(1));
+                    if(!siteMaps.get(receivedSite).level().revision().equals(parts.get(2)))
+                        throw new IllegalArgumentException("incompatible level revision");
+                    selectedSite=receivedSite;
+                    siteChoice.setSelectedItem(receivedSite);
 
                 }catch(IllegalArgumentException rejected){
-                    log.append("Unsupported location version received.\n");
+                    appendLog("Unsupported location version received.\n");
                 }
             }
             return;
         }
         if(event.startsWith("MODE|CAMPAIGN")){
             campaignGuest=true;equipmentPage.setCampaign(true);
-            log.append("CAMPAIGN GUEST SESSION / story and rewards belong to the host.\n");return;
+            appendLog("CAMPAIGN GUEST SESSION / story and rewards belong to the host.\n");return;
         }
         if(event.startsWith("STORYSOCIAL|")){
             try{
@@ -769,12 +778,14 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                 pages.setEnabledAt(pages.indexOfComponent(socialContent),true);
                 showHostConversation();
             }catch(IllegalArgumentException bad){
-                log.append("Invalid host story relations snapshot.\n");
+                appendLog("Invalid host story relations snapshot.\n");
             }
             return;
         }
-        if(event.startsWith("SUPPLY|")||event.startsWith("GEARSTATE|")||event.startsWith("GEAROWNED|"))
+        if(event.startsWith("SUPPLY|")||event.startsWith("GEARSTATE|")||event.startsWith("GEAROWNED|")){
             equipmentPage.receive(event);
+            return; // Already handled; no raw gear-state text spam.
+        }
         if(event.startsWith("PAYOUT|")){
             try{
                 ContractRewards.Settlement settlement=ContractRewards.Settlement.decode(event);
@@ -783,7 +794,7 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                     wallet.load();
                     boolean applied=wallet.addNetworkPayout(settlement.id(),
                         settlement.credits(),settlement.xp());
-                    log.append("CASE SETTLEMENT / "+
+                    appendLog("CASE SETTLEMENT / "+
                         (settlement.victory()?"RITUAL VICTORY":"ENTITY UNRESOLVED")+
                         " / "+(settlement.identified()?"IDENTIFIED":"UNIDENTIFIED")+
                         " / "+(applied?"PAID":"ALREADY RECORDED")+
@@ -792,21 +803,21 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
                         " / DAILY "+settlement.dailyDone()+"\n");
                 }
             }catch(IOException|IllegalArgumentException|ArithmeticException ex){
-                log.append("Payout could not be saved locally: "+"Operation unavailable (NET-04)"+"\n");
+                appendLog("Payout could not be saved locally: "+"Operation unavailable (NET-04)"+"\n");
             }
             log.setCaretPosition(log.getDocument().getLength());
             return;
         }
         if(event.startsWith("OBJECTIVES|")||event.startsWith("TASK|DONE|")
                 ||event.startsWith("EVIDENCELEVEL|")){
-            log.append(event.replace('|',' ')+"\n");
+            appendLog(event.replace('|',' ')+"\n");
             return;
         }
         if(event.startsWith("HUNT|"))return; // Forwarded to active 3D view; suppress 1Hz lobby log spam.
         if(event.startsWith("LOBBYCHAT|")){
             var line=LanProtocol.parts(event);
             if(line.size()==4){
-                log.append("["+line.get(1)+" / "+line.get(2)+"] "+line.get(3)+"\n");
+                appendLog("["+line.get(1)+" / "+line.get(2)+"] "+line.get(3)+"\n");
                 log.setCaretPosition(log.getDocument().getLength());
             }
             return;
@@ -832,12 +843,12 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
             }
         }else if(event.startsWith("STATE|")){
             var p=LanProtocol.parts(event);if(p.size()>=4)try{myRoom=Integer.parseInt(p.get(2));}catch(NumberFormatException ignored){}
-            status.setText("Room: "+new HouseMap(selectedSite).roomName(myRoom)+
+            status.setText("Room: "+siteMaps.get(selectedSite).roomName(myRoom)+
                 "  |  tick "+p.get(1)+"  |  energy "+p.get(4));
         }else if(event.startsWith("TEAMMAP|")){
             var parts=LanProtocol.parts(event);
             if(parts.size()==7){
-                HouseMap layout=new HouseMap(selectedSite);
+                HouseMap layout=siteMaps.get(selectedSite);
                 StringBuilder summary=new StringBuilder("Hunters");
                 for(int i=1;i<=6;i++)summary.append(" H").append(i).append(':')
                         .append(teamRoom(layout,parts.get(i)));
@@ -849,7 +860,10 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         }else if(event.startsWith("PROGRESS|")){
             var fields=LanProtocol.parts(event);
             if(fields.size()==8)caseStatus.setText("Health "+fields.get(1)+"  Fear "+fields.get(2)+"  Wards "+fields.get(3)+"  Evidence "+fields.get(4)+"/3  Circle "+fields.get(5)+"  Ritual "+fields.get(6)+"  "+fields.get(7));
-        }else{log.append(event+"\n");log.setCaretPosition(log.getDocument().getLength());}
+        }else if(LanLobbyLog.recordUnrecognized(event)){
+            appendLog(event+"\n");
+            log.setCaretPosition(log.getDocument().getLength());
+        }
     }
     private static String teamRoom(HouseMap map,String raw){
         int room=LanProtocol.integer(raw,-1,HouseMap.ROOM_COUNT-1);
@@ -874,5 +888,5 @@ public final class LanLobbyPanel extends JPanel implements AutoCloseable {
         enter3D.setEnabled(available&&missionRunning&&connection!=null);
     }
     private void send(String frame){try{if(connection==null)throw new IOException("not connected");connection.send(frame);}
-        catch(Exception e){log.append("Send failed: "+"Operation unavailable (NET-04)"+"\n");}}
+        catch(Exception e){appendLog("Send failed: "+"Operation unavailable (NET-04)"+"\n");}}
 }
