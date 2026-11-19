@@ -100,6 +100,7 @@ public final class SceneRenderer {
         // full-resolution scratch buffer (up to 8 MiB at 1080p).
         graphicsEffectsScratch=null;
         distanceDetailScratch=null;
+        nativeSkyScratch=null;
         focal=nativeFocal*height/H;
     }
     private static final int[] BAYER={0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5};
@@ -115,6 +116,9 @@ public final class SceneRenderer {
     /** Single reusable source copy for depth-aware distant filtering on native maps.
      * Its contents are overwritten before every pass; no per-frame image clone. */
     private int[] distanceDetailScratch;
+    /** Retain the sky sampled by distant atmosphere; do not allocate a
+     * second framebuffer clone on each native-site frame. */
+    private int[] nativeSkyScratch;
     /** Allocated once per active framebuffer resolution when AA or chromatic
      * sampling needs an unmodified source. Never cloned on each game frame. */
     private int[] graphicsEffectsScratch;
@@ -3751,7 +3755,13 @@ public final class SceneRenderer {
         activateResidentScene(map);
         waterCastle=null;activeWater=waterOverride==null?WorldWater.module(map.level().water()):waterOverride;
         paintSky(map,clock);
-        int[] hazeBackground=map.nativeSite()?pixels.clone():null;
+        int[] hazeBackground=null;
+        if(map.nativeSite()){
+            if(nativeSkyScratch==null||nativeSkyScratch.length!=pixels.length)
+                nativeSkyScratch=new int[pixels.length];
+            System.arraycopy(pixels,0,nativeSkyScratch,0,pixels.length);
+            hazeBackground=nativeSkyScratch;
+        }
         Arrays.fill(depths,Double.POSITIVE_INFINITY);
         if(houseLightingMap!=map){houseLightingMap=map;houseLighting=new FixtureLighting(map);}
         lightingMap=map;fixtureLighting=houseLighting;fixtureLighting.frame(roomLights,roomLightTick);

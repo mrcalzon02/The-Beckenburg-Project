@@ -43,6 +43,9 @@ public final class DistanceDetailScratchTest {
         try{DistanceDetail.apply(pixels,depth,2,2,sky,new int[3]);
             throw new AssertionError("incorrect scratch size accepted");}
         catch(IllegalArgumentException expected){}
-        System.out.println("PASS: 25 exact depth-filter frame comparisons, scratch reuse, alias guards");
+        try{DistanceDetail.apply(pixels,depth,2,2,sky,sky);
+            throw new AssertionError("sky/scratch alias accepted");}
+        catch(IllegalArgumentException expected){}
+        System.out.println("PASS: 25 exact depth-filter frame comparisons, scratch reuse, sky alias guards");
     }
 }

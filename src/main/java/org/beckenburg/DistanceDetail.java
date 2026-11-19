@@ -10,7 +10,8 @@ public final class DistanceDetail {
   * Exact sampling, neighbour depth rejection and fog mathematics are unchanged. */
  static void apply(int[] pixels,double[] depth,int width,int height,int[] background,int[] scratch){
   if(background.length!=pixels.length)throw new IllegalArgumentException("Sky frame");
-  if(scratch==null||scratch.length!=pixels.length||scratch==pixels)throw new IllegalArgumentException("Distance detail scratch");
+  if(scratch==null||scratch.length!=pixels.length||scratch==pixels||scratch==background)
+   throw new IllegalArgumentException("Distance detail scratch");
   apply(pixels,depth,width,height,0,background,scratch);
  }
  private static void apply(int[] pixels,double[] depth,int width,int height,int horizon,int[] background,int[] scratch){
