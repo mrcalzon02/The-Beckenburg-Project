@@ -239,6 +239,10 @@ public final class GlbProps {
         liveSurfaceRevisions.putIfAbsent(material,0L);
         return material;
     }
+    /** Information displays keep perspective UVs and readable texture filtering. */
+    public static synchronized boolean isVanDisplayMaterial(int material){
+        return material==VAN_MAP_MATERIAL||liveSurfaceRevisions.containsKey(material);
+    }
     public static synchronized void updateLiveSurface(int material,BufferedImage image){
         if(!liveSurfaceRevisions.containsKey(material)||image==null)
             throw new IllegalArgumentException("unknown live monitor");
@@ -362,8 +366,8 @@ public final class GlbProps {
     }
     /** Preserve authored atlas resolution during GPU upload; tightly packed UV
      * islands cannot survive an unconditional 128px nearest downsample. */
-    public static synchronized int textureWidth(int material){int i=material-TEXTURE_BASE;return i>=0&&i<textures.size()?textures.get(i).getWidth():128;}
-    public static synchronized int textureHeight(int material){int i=material-TEXTURE_BASE;return i>=0&&i<textures.size()?textures.get(i).getHeight():128;}
+    public static synchronized int textureWidth(int material){if(material==VAN_MAP_MATERIAL)return vanMapImage.getWidth();int i=material-TEXTURE_BASE;return i>=0&&i<textures.size()?textures.get(i).getWidth():128;}
+    public static synchronized int textureHeight(int material){if(material==VAN_MAP_MATERIAL)return vanMapImage.getHeight();int i=material-TEXTURE_BASE;return i>=0&&i<textures.size()?textures.get(i).getHeight():128;}
     /** Immutable imported material. Shared pixels belong to the decoded PNG. */
     public static final class StaticSampler {
         private final BufferedImage image;

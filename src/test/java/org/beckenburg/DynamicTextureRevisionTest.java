@@ -15,9 +15,19 @@ public final class DynamicTextureRevisionTest {
         GlbProps.updateTelevision(tv,true,11);check(active!=GlbProps.dynamicTextureRevision(tv),"Next actual TV frame is live");
         GlbProps.updateTelevision(tv,false,11);long off=GlbProps.dynamicTextureRevision(tv);
         GlbProps.updateTelevision(tv,false,12);check(off==GlbProps.dynamicTextureRevision(tv),"Powered-off TV pixels stay unchanged");
+        check(!GlbProps.isVanDisplayMaterial(tv),
+            "decorative TV static should retain the normal PSX sampler");
         long map=GlbProps.dynamicTextureRevision(GlbProps.VAN_MAP_MATERIAL);
+        GlbProps.updateVanMap(new BufferedImage(768,512,BufferedImage.TYPE_INT_RGB));
+        check(map!=GlbProps.dynamicTextureRevision(GlbProps.VAN_MAP_MATERIAL),
+            "Actual map-image publication changes its texture revision");
+        check(GlbProps.textureWidth(GlbProps.VAN_MAP_MATERIAL)==768
+                &&GlbProps.textureHeight(GlbProps.VAN_MAP_MATERIAL)==512,
+            "GPU upload must preserve the authored 768x512 map");
         GlbProps.updateVanMap(new BufferedImage(256,256,BufferedImage.TYPE_INT_RGB));
-        check(map!=GlbProps.dynamicTextureRevision(GlbProps.VAN_MAP_MATERIAL),"Actual map-image publication changes its texture revision");
+        check(GlbProps.textureWidth(GlbProps.VAN_MAP_MATERIAL)==256
+                &&GlbProps.textureHeight(GlbProps.VAN_MAP_MATERIAL)==256,
+            "standby dimensions update after disconnect/resume");
         System.out.println("PASS separately revisioned live TV/map pixels and static material independence");
     }
 }

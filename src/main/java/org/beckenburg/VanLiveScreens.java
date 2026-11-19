@@ -17,7 +17,8 @@ import java.util.Map;
 public final class VanLiveScreens {
     private VanLiveScreens(){}
     public enum Panel { MAP, CAMERA, TEAM, ACTIVITY, SOUND, CONTRACT }
-    public static final int WIDTH=320, HEIGHT=180;
+    public static final int WIDTH=480, HEIGHT=270;
+    private static final int LAYOUT_W=320, LAYOUT_H=180;
     private static final Color BACK=new Color(8,18,26), INK=new Color(208,237,226),
         GREEN=new Color(123,230,179), AMBER=new Color(240,206,137), DIM=new Color(111,157,163);
     private static final java.util.EnumMap<Panel,Integer> MATERIALS=new java.util.EnumMap<>(Panel.class);
@@ -71,18 +72,37 @@ public final class VanLiveScreens {
             GlbProps.liveSurfaceMaterial("van live screen "+p.name().toLowerCase(),
                 WIDTH,HEIGHT));
     }
+    /** Render in a sparse virtual layout with higher density and antialiased glyphs. */
+    private static Graphics2D panelGraphics(BufferedImage image){
+        Graphics2D g=image.createGraphics();
+        g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_ON);
+        g.scale(WIDTH/(double)LAYOUT_W,HEIGHT/(double)LAYOUT_H);
+        return g;
+    }
+    /** Never let a text line silently overflow its physical screen. */
+    private static void drawFitted(Graphics2D g,String message,int x,int y,int maxWidth){
+        String line=clip(message,200);
+        FontMetrics fm=g.getFontMetrics();
+        if(fm.stringWidth(line)>maxWidth){
+            int end=line.length();
+            while(end>0&&fm.stringWidth(line.substring(0,end)+"...")>maxWidth)end--;
+            line=line.substring(0,end)+"...";
+        }
+        g.drawString(line,x,y);
+    }
     private static BufferedImage canvas(String title,String status){
         BufferedImage out=new BufferedImage(WIDTH,HEIGHT,BufferedImage.TYPE_INT_RGB);
-        Graphics2D g=out.createGraphics();
+        Graphics2D g=panelGraphics(out);
         try{
-            g.setColor(BACK);g.fillRect(0,0,WIDTH,HEIGHT);
-            g.setColor(new Color(39,71,77));g.drawRect(1,1,WIDTH-3,HEIGHT-3);
-            g.setColor(GREEN);g.fillRect(0,0,WIDTH,4);
-            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,17));
-            g.drawString(title,12,27);
-            g.setColor(DIM);g.drawLine(12,35,WIDTH-12,35);
-            g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,11));
-            g.drawString(clip(status,46),12,HEIGHT-9);
+            g.setColor(BACK);g.fillRect(0,0,LAYOUT_W,LAYOUT_H);
+            g.setColor(new Color(39,71,77));g.drawRect(1,1,LAYOUT_W-3,LAYOUT_H-3);
+            g.setColor(GREEN);g.fillRect(0,0,LAYOUT_W,4);
+            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,21));
+            drawFitted(g,title,12,27,LAYOUT_W-24);
+            g.setColor(DIM);g.drawLine(12,35,LAYOUT_W-12,35);
+            g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,14));
+            drawFitted(g,status,12,LAYOUT_H-8,LAYOUT_W-24);
         }finally{g.dispose();}
         return out;
     }
@@ -98,17 +118,18 @@ public final class VanLiveScreens {
     }
     public static void contract(String site,String difficulty,List<String> tasks){
         BufferedImage image=canvas("CONTRACT / LIVE",clip(site,34)+"  /  "+clip(difficulty,15));
-        Graphics2D g=image.createGraphics();
+        Graphics2D g=panelGraphics(image);
         try{
-            g.setColor(AMBER);g.setFont(new Font(Font.MONOSPACED,Font.BOLD,15));
-            g.drawString(clip(site,31),12,59);
-            g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,13));
-            g.setColor(INK);g.drawString("OBJECTIVES",12,81);
+            g.setColor(AMBER);g.setFont(new Font(Font.MONOSPACED,Font.BOLD,20));
+            drawFitted(g,site,12,60,LAYOUT_W-24);
+            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,15));
+            g.setColor(INK);g.drawString("OBJECTIVES",12,82);
+            g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,16));
             if(tasks==null||tasks.isEmpty()){
-                g.setColor(DIM);g.drawString("Awaiting contract tasks",12,104);
+                g.setColor(DIM);drawFitted(g,"Awaiting contract tasks",12,104,LAYOUT_W-24);
             }else for(int i=0;i<Math.min(tasks.size(),3);i++){
                 g.setColor(tasks.get(i).startsWith("[DONE]")?GREEN:INK);
-                g.drawString(clip(tasks.get(i),43),12,103+i*19);
+                drawFitted(g,tasks.get(i),12,103+i*20,LAYOUT_W-24);
             }
         }finally{g.dispose();}
         publish(Panel.CONTRACT,image);
@@ -116,10 +137,10 @@ public final class VanLiveScreens {
     public static void team(VanTelemetry.Display values){
         BufferedImage image=canvas("TEAM / SANITY",
             values==null?"AWAITING HOST METERS":"SAMPLED T"+values.tick());
-        Graphics2D g=image.createGraphics();
+        Graphics2D g=panelGraphics(image);
         try{
             int[] sanity=values==null?new int[]{-1,-1,-1,-1,-1,-1}:values.sanity();
-            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,12));
+            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,16));
             for(int i=0;i<6;i++){
                 int v=sanity[i],y=52+i*19;
                 g.setColor(INK);g.drawString("H"+(i+1),13,y);
@@ -137,9 +158,9 @@ public final class VanLiveScreens {
     public static void activity(VanTelemetry.Display values,List<Integer> samples){
         BufferedImage image=canvas("ACTIVITY / INDIRECT",
             values==null?"AWAITING HOST METERS":"NOISY SENSOR  /  T"+values.tick());
-        Graphics2D g=image.createGraphics();
+        Graphics2D g=panelGraphics(image);
         try{
-            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,18));
+            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,24));
             g.setColor(AMBER);g.drawString(values==null?"-- / 10":values.activity()+" / 10",12,61);
             int x=14,y=74,w=290,h=68;
             g.setColor(new Color(23,40,49));g.fillRect(x,y,w,h);
@@ -154,17 +175,17 @@ public final class VanLiveScreens {
                 if(lastX>=0)g.drawLine(lastX,lastY,px,py);
                 lastX=px;lastY=py;index++;
             }
-            g.setColor(DIM);g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,12));
-            g.drawString("Instrument estimate only",12,160);
+            g.setColor(DIM);g.setFont(new Font(Font.MONOSPACED,Font.PLAIN,13));
+            drawFitted(g,"Instrument estimate only",12,155,LAYOUT_W-24);
         }finally{g.dispose();}
         publish(Panel.ACTIVITY,image);
     }
     public static void sound(Map<Integer,VanSiteMapScreen.Reading> readings,
                              List<VanSensorStations.Station> sensors,String caption){
         BufferedImage image=canvas("SOUND / MOTION",clip(caption,42));
-        Graphics2D g=image.createGraphics();
+        Graphics2D g=panelGraphics(image);
         try{
-            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,13));int row=0;
+            g.setFont(new Font(Font.MONOSPACED,Font.BOLD,16));int row=0;
             if(sensors!=null)for(var sensor:sensors){
                 if(!sensor.tool().equals("SOUND_SENSOR")&&
                     !sensor.tool().equals("MOTION_SENSOR"))continue;
@@ -173,12 +194,12 @@ public final class VanLiveScreens {
                 String line="R"+sensor.room()+" "+sensor.tool().replace("_SENSOR","")+
                     ": "+(reading==null?"STANDBY":reading.text());
                 g.setColor(reading==null?DIM:GREEN);
-                g.drawString(clip(line,41),12,57+row*22);
+                drawFitted(g,line,12,57+row*22,LAYOUT_W-24);
                 row++;
             }
             if(row==0){
                 g.setColor(DIM);g.drawString("NO DEPLOYED SENSOR ARRAY",12,67);
-                g.drawString("Install and activate field nodes",12,93);
+                drawFitted(g,"Install and activate field nodes",12,93,LAYOUT_W-24);
             }
         }finally{g.dispose();}
         publish(Panel.SOUND,image);
@@ -187,13 +208,13 @@ public final class VanLiveScreens {
      * an additional scene, and cannot expose undisclosed ghosts. */
     public static void camera(BufferedImage source,String label){
         BufferedImage image=canvas("CAMERA / LIVE",clip(label,42));
-        Graphics2D g=image.createGraphics();
+        Graphics2D g=panelGraphics(image);
         try{
             if(source!=null){
                 g.drawImage(source,10,41,300,119,null);
                 g.setColor(GREEN);g.drawRect(9,40,301,120);
             }else{
-                g.setColor(DIM);g.setFont(new Font(Font.MONOSPACED,Font.BOLD,21));
+                g.setColor(DIM);g.setFont(new Font(Font.MONOSPACED,Font.BOLD,25));
                 g.drawString("NO CAMERA SIGNAL",48,107);
             }
         }finally{g.dispose();}

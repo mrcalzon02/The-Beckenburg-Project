@@ -219,6 +219,13 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
  private Texture texture(int material){
   Texture found=textures.get(material);
   long revision=found==null||textureRevisions.containsKey(material)?GlbProps.dynamicTextureRevision(material):-1;
+  // The live site map changes from standby dimensions to its authored size.
+  // Never draw an enlarged update into a smaller resident GL texture.
+  if(found!=null&&revision>=0
+      &&(found.getWidth()!=GlbProps.textureWidth(material)
+          ||found.getHeight()!=GlbProps.textureHeight(material))){
+   found.dispose();textures.remove(material);textureRevisions.remove(material);found=null;
+  }
   if(found!=null&&revision>=0&&!Objects.equals(textureRevisions.get(material),revision)){
    // Live CRT/TV pixels are separately revisioned. Repeated draws of the
    // same pixels neither freeze the screen nor reallocate/upload a Pixmap.
@@ -232,10 +239,12 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   frameTextureUploads++;frameTextureBytes+=4L*bitmap.getWidth()*bitmap.getHeight();
   bitmap.dispose();
   // Signage is information, not scenery: preserve readable lettering at distance.
-  Texture.TextureFilter filter=CastleShelfLabels.isLabelMaterial(material)
+  boolean display=GlbProps.isVanDisplayMaterial(material);
+  Texture.TextureFilter filter=display||CastleShelfLabels.isLabelMaterial(material)
       ?Texture.TextureFilter.Linear:Texture.TextureFilter.Nearest;
   image.setFilter(filter,filter);
-  image.setWrap(Texture.TextureWrap.Repeat,Texture.TextureWrap.Repeat);
+  image.setWrap(display?Texture.TextureWrap.ClampToEdge:Texture.TextureWrap.Repeat,
+      display?Texture.TextureWrap.ClampToEdge:Texture.TextureWrap.Repeat);
   textures.put(material,image);if(revision>=0)textureRevisions.put(material,revision);return image;
  }
  private Mesh mesh(MeshKey key,int vertices){
@@ -294,9 +303,18 @@ public final class OpenGlWorldRenderer extends ApplicationAdapter implements Gpu
   shader.setUniformf("u_lampIntensity",frame.lampIntensity());
   shader.setUniformf("u_lampReach",frame.lampReach());
   shader.setUniformf("u_lampWidth",frame.lampWidth());
+  int lastDisplayMode=-1;
   for(Surface surface:frame.surfaces()){
    int vertexCount=surface.vertexCount();
    if(vertexCount==0)continue;
+   // The retro distortion remains on scenery, never on the readable faces.
+   int displayMode=surface.material()>=GlbProps.TEXTURE_BASE
+       &&GlbProps.isVanDisplayMaterial(surface.material())?1:0;
+   if(displayMode!=lastDisplayMode){
+    shader.setUniformf("u_vertexSnap",displayMode==1?0f:frame.vertexSnap());
+    shader.setUniformf("u_affineWarp",displayMode==1?0f:frame.affineWarp());
+    lastDisplayMode=displayMode;
+   }
    MeshKey key=new MeshKey(surface.material(),surface.resourceId());
    boolean resident=surface.resourceId()>0;
    boolean drawOnly=resident&&surface.vertices().length==0;

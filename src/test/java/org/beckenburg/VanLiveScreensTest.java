@@ -25,17 +25,30 @@ public final class VanLiveScreensTest {
             fitted.add(VanLiveScreens.forPurpose(fixture.purpose()));
         }
         check(count==6&&fitted.size()==6,"six independent live stations expected");
+        check(VanLiveScreens.WIDTH==480&&VanLiveScreens.HEIGHT==270,
+            "readable 16:9 monitor source must have 1.5x sampling density");
         int contract=VanLiveScreens.material(VanLiveScreens.Panel.CONTRACT);
         int team=VanLiveScreens.material(VanLiveScreens.Panel.TEAM);
         int camera=VanLiveScreens.material(VanLiveScreens.Panel.CAMERA);
         check(contract!=team&&contract!=camera&&team!=camera,
             "monitor faces cannot share a single image material");
+        check(GlbProps.isVanDisplayMaterial(contract)
+                &&GlbProps.isVanDisplayMaterial(team)
+                &&GlbProps.isVanDisplayMaterial(GlbProps.VAN_MAP_MATERIAL),
+            "information faces use stable UVs and readable GPU sampling");
         long teamRevision=GlbProps.dynamicTextureRevision(team);
         long contractRevision=GlbProps.dynamicTextureRevision(contract);
         VanLiveScreens.contract("House / First Investigation","MEDIUM",
             List.of("[OPEN] EMF sample","[DONE] Temperature","[OPEN] Survive"));
         check(GlbProps.dynamicTextureRevision(contract)==contractRevision+1,
             "contract change must upload its own face only");
+        BufferedImage contractPixels=VanLiveScreens.snapshot(VanLiveScreens.Panel.CONTRACT);
+        check(contractPixels.getWidth()==VanLiveScreens.WIDTH
+                &&contractPixels.getHeight()==VanLiveScreens.HEIGHT,
+            "physical and expanded screens share the high-density contract image");
+        check(GlbProps.textureWidth(contract)==VanLiveScreens.WIDTH
+                &&GlbProps.textureHeight(contract)==VanLiveScreens.HEIGHT,
+            "GPU upload keeps the full monitor bitmap");
         check(GlbProps.dynamicTextureRevision(team)==teamRevision,
             "contract must not dirty team monitor");
         VanLiveScreens.team(new VanTelemetry.Display(40,3,new int[]{73,42,-1,-1,-1,-1}));

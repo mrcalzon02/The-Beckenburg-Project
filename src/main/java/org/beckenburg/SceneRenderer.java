@@ -4252,9 +4252,16 @@ public final class SceneRenderer {
             double roomLevel,double wet,double snow){
         Point a=va.p,b=vb.p,c=vc.p;
         int color=tint;
-        double x0=PsxPipeline.snap(renderWidth*.5+a.x/a.z*focal,psxPreset),y0=PsxPipeline.snap(renderHeight*.5-a.y/a.z*focal,psxPreset);
-        double x1=PsxPipeline.snap(renderWidth*.5+b.x/b.z*focal,psxPreset),y1=PsxPipeline.snap(renderHeight*.5-b.y/b.z*focal,psxPreset);
-        double x2=PsxPipeline.snap(renderWidth*.5+c.x/c.z*focal,psxPreset),y2=PsxPipeline.snap(renderHeight*.5-c.y/c.z*focal,psxPreset);
+        // Information screens should not inherit PSX vertex jitter or affine UV skew.
+        boolean readableSurface=material>=GlbProps.TEXTURE_BASE&&GlbProps.isVanDisplayMaterial(material);
+        double x0=renderWidth*.5+a.x/a.z*focal,y0=renderHeight*.5-a.y/a.z*focal;
+        double x1=renderWidth*.5+b.x/b.z*focal,y1=renderHeight*.5-b.y/b.z*focal;
+        double x2=renderWidth*.5+c.x/c.z*focal,y2=renderHeight*.5-c.y/c.z*focal;
+        if(!readableSurface){
+            x0=PsxPipeline.snap(x0,psxPreset);y0=PsxPipeline.snap(y0,psxPreset);
+            x1=PsxPipeline.snap(x1,psxPreset);y1=PsxPipeline.snap(y1,psxPreset);
+            x2=PsxPipeline.snap(x2,psxPreset);y2=PsxPipeline.snap(y2,psxPreset);
+        }
         double denom=(y1-y2)*(x0-x2)+(x2-x1)*(y0-y2);
         if(Math.abs(denom)<1e-8)return;
         // Decode material transparency once per face, not for every pixel.
@@ -4278,10 +4285,12 @@ public final class SceneRenderer {
             if(material>=0) {
                 // Perspective-correct material lookup. Screen-space UV interpolation
                 // distorts strongly at PS-era FOV and is unsuitable for room walls.
-                double uu=PsxPipeline.uv((u*va.u/a.z + v*vb.u/b.z + w*vc.u/c.z)/inv,
-                    u*va.u+v*vb.u+w*vc.u,psxPreset);
-                double vv=PsxPipeline.uv((u*va.v/a.z + v*vb.v/b.z + w*vc.v/c.z)/inv,
-                    u*va.v+v*vb.v+w*vc.v,psxPreset);
+                double perspU=(u*va.u/a.z + v*vb.u/b.z + w*vc.u/c.z)/inv;
+                double perspV=(u*va.v/a.z + v*vb.v/b.z + w*vc.v/c.z)/inv;
+                double uu=readableSurface?perspU:PsxPipeline.uv(
+                    perspU,u*va.u+v*vb.u+w*vc.u,psxPreset);
+                double vv=readableSurface?perspV:PsxPipeline.uv(
+                    perspV,u*va.v+v*vb.v+w*vc.v,psxPreset);
                 if(material==UV_RESIDUE&&GlbProps.sampleAlpha(material,uu,vv)<.5)continue;
                 int texel;
                 if(gltfBlend||gltfCutoff>=0){
