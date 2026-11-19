@@ -95,7 +95,9 @@ public final class UserLevelLibrary {
     }
     /** Never overwrite a previous authored level, including an incomplete one. */
     public static void create(String id,HouseMap.Site template)throws IOException {
-        create(id,template,template==HouseMap.Site.HOUSE?HOUSE_ORIGINAL:SHIPPED);
+        // New House projects use the rebuild. Historical USER documents
+        // without architecture metadata still resolve HOUSE_ORIGINAL.
+        create(id,template,template==HouseMap.Site.HOUSE?HOUSE_REBUILD:SHIPPED);
     }
     static void create(String id,HouseMap.Site template,String generation)throws IOException {
         id=validateId(id);

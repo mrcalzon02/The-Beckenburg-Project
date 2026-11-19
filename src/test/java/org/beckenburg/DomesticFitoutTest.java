@@ -5,7 +5,10 @@ public final class DomesticFitoutTest {
  static void check(boolean yes,String why){if(!yes)throw new AssertionError(why);}
  static long count(HouseMap map,String id){return map.level().props().stream().filter(p->LivedAssets.base(p.mesh()).equals(id)).count();}
  public static void main(String[]args){
-  var map=new HouseMap();check(count(map,"toilet_mp_1")==1,"house lost its toilet");
+  // Keep the historical fixture-fit contract as an archived reference.
+  // The live House has independent source-accurate plumbing tests.
+  var map=new HouseMap(HouseMap.Site.HOUSE,LevelPlans.legacyHouseSource());
+  check(count(map,"toilet_mp_1")==1,"archived house lost its toilet");
   for(String id:new String[]{"level_bath_basin","level_bathtub","level_bath_shower_rail","level_laundry_washer","level_bathroom_wall_set","level_laundry_shelf"})check(count(map,id)==1,"house missing "+id);
   check(count(map,"level_laundry_hamper")>=2,"bathroom and laundry need their hampers");
   for(var p:map.level().props())if(p.mesh().equals("level_bath_basin")){

@@ -13,6 +13,10 @@ public final class LevelAuthoringRecoveryTest {
         var home=Files.createTempDirectory("native-editor-recovery-");
         String previous=System.getProperty("user.home");System.setProperty("user.home",home.toString());
         try{
+            // Recovery's original fixture is a real historical versionless
+            // House file; the test explicitly switches generation later.
+            LevelAuthoringSession.saveProps(LevelAuthoringSession.path(HouseMap.Site.HOUSE),
+                "beckenburg/house",LevelPlans.legacyHouseSource().props());
             var session=new LevelAuthoringSession(HouseMap.Site.HOUSE);var history=new EditorHistory<>(session,60);
             var service=new EditorAgentService<>(new LevelEditorAgent(session,()->new HouseMap(HouseMap.Site.HOUSE,session.level()),
                 new SceneRenderer(),()->{}),history);

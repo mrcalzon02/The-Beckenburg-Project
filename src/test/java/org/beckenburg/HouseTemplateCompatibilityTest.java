@@ -28,8 +28,15 @@ public final class HouseTemplateCompatibilityTest {
             check(HouseRebuildServices.source().revision().equals("first-principles-heating-v1-1d5d95258b105737"),"Fridge relocation must preserve accepted underlying construction coordinates");
             check(legacy.rooms().get(5).y()==3&&rebuilt.rooms().get(5).y()==2.8,"Independent old/new floor reference");
             check(legacy.rooms().get(9).y()==-3&&rebuilt.rooms().get(9).y()==-2.4,"Independent old/new cellar reference");
-            UserLevelLibrary.create("BeforeRebuild",HouseMap.Site.HOUSE);
-            check(UserLevelLibrary.HOUSE_ORIGINAL.equals(metadata("BeforeRebuild").getProperty("architecture")),"New legacy project pins architectural generation");
+            UserLevelLibrary.create("FreshDefault",HouseMap.Site.HOUSE);
+            check(UserLevelLibrary.HOUSE_REBUILD.equals(metadata("FreshDefault").getProperty("architecture")),
+                "Fresh House template must pin the rebuilt geometry");
+            check(new LevelAuthoringSession(HouseMap.Site.USER).sourceLevel().rooms().equals(rebuilt.rooms())
+                &&new HouseMap(HouseMap.Site.USER).level().props().equals(rebuilt.props()),
+                "Fresh House template must open complete new architecture in editor/game");
+            UserLevelLibrary.create("BeforeRebuild",HouseMap.Site.HOUSE,UserLevelLibrary.HOUSE_ORIGINAL);
+            check(UserLevelLibrary.HOUSE_ORIGINAL.equals(metadata("BeforeRebuild").getProperty("architecture")),
+                "Explicit archival House template preserves historical generation");
             var oldMeta=metadata("BeforeRebuild");oldMeta.remove("architecture");writeMetadata("BeforeRebuild",oldMeta);
             var oldSession=new LevelAuthoringSession(HouseMap.Site.USER);
             String first=oldSession.nodeId(0);Prop p=oldSession.prop(0);

@@ -23,7 +23,7 @@ public final class LevelAuthoringSessionTest {
             int index=-1;
             for(int i=0;i<session.size();i++){
                 var p=session.prop(i);
-                if(p.halfX()>0&&p.halfZ()>0){index=i;break;}
+                if(p.halfX()>0&&p.halfZ()>0&&p.mesh().equals("chair_mp_5")){index=i;break;}
             }
             check(index>=0,"House has a colliding real object to edit");
             Prop before=session.prop(index);
@@ -33,16 +33,16 @@ public final class LevelAuthoringSessionTest {
             session.put(index,moved);
             var staged=session.level();
             check(staged.props().get(index).equals(moved),"Editor preview uses changed source object");
-            check(staged.colliders().contains(LevelPlans.propCollider(moved)),
-                "Edited prop gets physical collision in preview");
+            check(staged.colliders().containsAll(LevelPlans.propColliders(nativeSource,moved)),
+                "Editor preview uses actual source model collision");
             session.save();
             check(Files.isRegularFile(session.documentPath()),"Scene document was not persisted");
             var reopened=new LevelAuthoringSession(site);
             check(reopened.prop(index).equals(moved),"Open reuses the exact serialized position");
             var gameLevel=LevelPlans.build(site);
             check(gameLevel.props().get(index).equals(moved),"Game loads editor-modified prop");
-            check(gameLevel.colliders().contains(LevelPlans.propCollider(moved)),
-                "Game uses editor-modified collider");
+            check(gameLevel.colliders().containsAll(LevelPlans.propColliders(nativeSource,moved)),
+                "Game uses editor-modified source model collision");
             check(new HouseMap(site).level().props().get(index).equals(moved),
                 "Playable HouseMap uses the saved edited level, not a disconnected preview");
             check(LevelPlans.build(HouseMap.Site.SCHOOL).props().equals(

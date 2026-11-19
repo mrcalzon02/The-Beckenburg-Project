@@ -111,7 +111,8 @@ public final class HousePortalDepthReferenceTest {
         var renderer=new SceneRenderer();
         renderer.setRenderSize(160,120);
         var stair=map.level().stairs().stream()
-            .filter(s->s.a()==9&&s.b()==4 || s.a()==4&&s.b()==9)
+            // Rebuilt cellar connects zone 9 to kitchen 2, not the old hall 4.
+            .filter(s->s.a()==9||s.b()==9)
             .findFirst().orElseThrow();
         var door=map.level().portals().stream().filter(p->p.door())
             .findFirst().orElseThrow();

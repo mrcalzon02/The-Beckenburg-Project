@@ -11,7 +11,11 @@ public final class LivedLevelDressingTest {
     }
     public static void main(String[] args)throws Exception{
         for(var site:AuthoredTestSupport.SITES){
-            HouseMap map=new HouseMap(site);var level=map.level();
+            // Archived generic dressing benchmark; the reconstructed House
+            // has dedicated furnishing, cover and fitout acceptance.
+            HouseMap map=site==HouseMap.Site.HOUSE
+                ?new HouseMap(site,LevelPlans.legacyHouseSource()):new HouseMap(site);
+            var level=map.level();
             for(var door:level.portals())if(door.door())map.openDoorBetweenRooms(door.a(),door.b());
             long kits=level.props().stream().filter(p->LivedAssets.ORIGINAL.contains(LivedAssets.base(p.mesh()))).count();
             check(level.props().stream().noneMatch(p->LivedAssets.ORIGINAL.contains(p.mesh())),"game must use the worn texture variants");

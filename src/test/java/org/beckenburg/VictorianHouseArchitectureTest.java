@@ -3,7 +3,8 @@ import java.util.*;
 /** Compact domestic concept: 12m by 14m, three actual storeys and source furnishings. */
 public final class VictorianHouseArchitectureTest {
  public static void main(String[] args){
-  HouseMap map=new HouseMap();var rooms=map.level().rooms().stream().filter(r->!r.outside()).toList();
+  // Historical footprint contract; do not redispatch the old building.
+  HouseMap map=new HouseMap(HouseMap.Site.HOUSE,LevelPlans.legacyHouseSource());var rooms=map.level().rooms().stream().filter(r->!r.outside()).toList();
   double x0=rooms.stream().mapToDouble(LevelDefinition.Room::x0).min().orElseThrow(),x1=rooms.stream().mapToDouble(LevelDefinition.Room::x1).max().orElseThrow();
   double z0=rooms.stream().mapToDouble(LevelDefinition.Room::z0).min().orElseThrow(),z1=rooms.stream().mapToDouble(LevelDefinition.Room::z1).max().orElseThrow();
   AuthoredTestSupport.check(x1-x0==12&&z1-z0==14,"approved compact house footprint");
@@ -13,9 +14,12 @@ public final class VictorianHouseArchitectureTest {
   AuthoredTestSupport.check(map.level().props().size()>=35,"substantial original source furnishings");
   for(var r:rooms){var p=r.spawn();AuthoredTestSupport.check(map.roomAt(p.x(),p.y(),p.z())==r.id()&&map.traversable(p.x(),p.y(),p.z()),"owned clear room spawn "+r.name());}
   for(var p:map.level().portals())if(p.door())map.openDoorBetweenRooms(p.a(),p.b());
-  HouseMap peer=new HouseMap();peer.applyDoorSnapshot(map.doorSnapshot());AuthoredTestSupport.check(peer.doorSnapshot().equals(map.doorSnapshot()),"door synchronization");
+  HouseMap peer=new HouseMap(HouseMap.Site.HOUSE,LevelPlans.legacyHouseSource());peer.applyDoorSnapshot(map.doorSnapshot());AuthoredTestSupport.check(peer.doorSnapshot().equals(map.doorSnapshot()),"door synchronization");
   AuthoredTestSupport.check(map.valid()&&RitualSites.valid(map),"room and ritual validity");
   // Swept capsule flood is the physical reachability gate, including stairs and furniture.
+  AuthoredTestSupport.check(new HouseMap().level().id().equals("briar-rebuild"),
+      "Fresh built-in House must use reconstructed architecture");
+  // The live physical reachability audit now tests the new House.
   AuthoredLevelReachabilityTest.main(new String[]{"HOUSE"});
   System.out.println("PASS compact concept house, three storeys, source furnishings, swept van routes and peer doors");
  }

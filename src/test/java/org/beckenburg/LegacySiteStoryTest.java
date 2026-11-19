@@ -11,7 +11,11 @@ public final class LegacySiteStoryTest {
         var out=Path.of("development/levels/previews/site-case-files");Files.createDirectories(out);
         Set<Integer> sheets=new HashSet<>();int records=0;
         for(var site:List.of(HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL)){
-            var map=new HouseMap(site);var level=map.level();String id=level.id();
+            // Original room-history dressing stays archived; the new House
+            // uses the supported HouseRebuildStory records/loose belongings.
+            var map=site==HouseMap.Site.HOUSE
+                ?new HouseMap(site,LevelPlans.legacyHouseSource()):new HouseMap(site);
+            var level=map.level();String id=level.id();
             check(LegacySiteStories.rooms(id).size()==12,"every indoor room has authored history");
             check(level.sockets().stream().filter(s->s.type().equals("site_history")).count()==12,"history in authoritative map data");
             check(!SiteCaseFiles.forSite(id).name().equalsIgnoreCase(id),"proper case name");
