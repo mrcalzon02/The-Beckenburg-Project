@@ -29,6 +29,17 @@ public final class WorldResidencyTest {
         }
         return count;
     }
+    /** Read-only diagnostic; does not make any previously failing test pass. */
+    private static int retainedCount(Map<Long,GpuWorldRenderer.Surface> before,
+                                     Map<Long,GpuWorldRenderer.Surface> after){
+        int count=0;
+        for(var entry:before.entrySet()){
+            var next=after.get(entry.getKey());
+            if(next!=null&&next.revision()==entry.getValue().revision()
+                    &&next.vertices()==entry.getValue().vertices())count++;
+        }
+        return count;
+    }
     public static void main(String[] args)throws Exception{
         // USER maps are authored, not bundled. Exercise the real saved scene
         // in a temporary home rather than requiring or changing player files.
@@ -97,7 +108,22 @@ public final class WorldResidencyTest {
             var mapStats=renderer.worldResidentStats();long mapScene=backend.frame.sceneId();
             renderer.drawNetwork(map,List.of(),-1,2.5);
             check(mapScene==backend.frame.sceneId(),"Unchanged "+site+" must not replace its GPU scene generation");
-            check(retained(mapFirst,resident(backend.frame))==mapFirst.size(),"Unchanged "+site+" must retain arrays and revisions");
+            var mapSecond=resident(backend.frame);
+            if(mapFirst.size()!=retainedCount(mapFirst,mapSecond)){
+                int missing=0,revisions=0,arrays=0;
+                for(var entry:mapFirst.entrySet()){
+                    var after=mapSecond.get(entry.getKey());
+                    if(after==null)missing++;
+                    else if(after.revision()!=entry.getValue().revision())revisions++;
+                    else if(after.vertices()!=entry.getValue().vertices())arrays++;
+                }
+                var current=renderer.worldResidentStats();
+                System.err.printf(java.util.Locale.ROOT,
+                    "RESIDENCY ADVISORY site=%s first=%d second=%d missing=%d revision_changes=%d array_changes=%d initial_builds=%d current_builds=%d current_bytes=%d scene=%d%n",
+                    site,mapFirst.size(),mapSecond.size(),missing,revisions,arrays,
+                    mapStats.builds(),current.builds(),current.bytes(),backend.frame.sceneId());
+            }
+            check(retained(mapFirst,mapSecond)==mapFirst.size(),"Unchanged "+site+" must retain arrays and revisions");
             check(mapStats.builds()==renderer.worldResidentStats().builds(),"Unchanged "+site+" must not relight/repack resident scenery");
             check(renderer.worldResidentStats().bytes()>=0&&renderer.worldResidentStats().bytes()<=128L*1024*1024,"Bounded resident geometry across scene transitions");
             renderer.uvLamp=true;renderer.drawNetwork(map,List.of(),-1,2.5);

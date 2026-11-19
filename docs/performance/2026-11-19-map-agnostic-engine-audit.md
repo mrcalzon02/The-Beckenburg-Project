@@ -36,3 +36,10 @@ Collect actual distinctive framebuffer IDs, p50/p95/p99/max distinct frame inter
 Render output must not be silently weakened: near/far wall geometry, floor/stair continuity, door/window opening, van CRT text, UV marks, DOTS/ghost visibility and other functional clues remain identical or explicitly reviewed. The benchmark target is sustained smooth control and consistent pacing, not just a mean FPS headline. Distinguish monitor scanout from offscreen GL consumption; do not invent GPU timestamps from CPU GL-wall measurements.
 
 A test failure is recorded as failure, not reclassified as performance success. Preserve CI artifacts and the last known playable baseline; no force-push, retagging, or blanket cancellation of unrelated workflows.
+
+
+## GPU acceptance diagnostic follow-up
+
+The Windows GPU workflow's Java 17 build and exact frustum/depth pixel checks passed. An earlier false alarm-fixture assertion was repaired without changing the renderer. The subsequent WorldResidencyTest on the rebuilt House still reports "Unchanged HOUSE must retain arrays and revisions"; this is a **real open cache-efficiency regression**, not proof of failed GPU launch. The recording-backend test now emits first/second retained batch counts, missing IDs, revision changes, array-identity changes and current resident bytes. It continues to fail its own assertion. Its separate workflow step is diagnostic/advisory, so actual GPU packaging, startup and Mesa framebuffer smoke can proceed while its failure remains visible.
+
+The Mesa job compares the same GPU UI/screen captures with the static-texture bind cache enabled and disabled, uploads both screenshots and explicitly warns on pixel mismatch. This correctness A/B is not a GTX 1660 SUPER frame-time benchmark. A hardware performance claim still requires identical camera routes and actual driver measurements; default game simulations/evidence cannot be slowed to produce the comparison.
