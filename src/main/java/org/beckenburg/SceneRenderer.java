@@ -99,6 +99,7 @@ public final class SceneRenderer {
         // A resized or disabled effects pipeline must not pin the previous
         // full-resolution scratch buffer (up to 8 MiB at 1080p).
         graphicsEffectsScratch=null;
+        distanceDetailScratch=null;
         focal=nativeFocal*height/H;
     }
     private static final int[] BAYER={0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5};
@@ -111,6 +112,9 @@ public final class SceneRenderer {
     }
     private BufferedImage frame = new BufferedImage(W,H,BufferedImage.TYPE_INT_RGB);
     private int[] pixels=((DataBufferInt)frame.getRaster().getDataBuffer()).getData();
+    /** Single reusable source copy for depth-aware distant filtering on native maps.
+     * Its contents are overwritten before every pass; no per-frame image clone. */
+    private int[] distanceDetailScratch;
     /** Allocated once per active framebuffer resolution when AA or chromatic
      * sampling needs an unmodified source. Never cloned on each game frame. */
     private int[] graphicsEffectsScratch;
@@ -1918,20 +1922,34 @@ public final class SceneRenderer {
      * Rejects only triangles wholly outside one frustum plane. It does NOT
      * incorrectly classify hidden ghost evidence from network data.
      * Hardware depth and eventual GPU occlusion remain independent concerns. */
-    private boolean faceInFrustum(Face f){
-        double cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
-        double hx=renderWidth*.5/focal+.035,hy=renderHeight*.5/focal+.035;
-        int common=31;
-        for(Point p:new Point[]{f.a,f.b,f.c}){
-            double dx=p.x-x,dz=p.z-z,dy=p.y-eyeHeight;
-            double xx=-dx*cy+dz*sy,forward=dx*sy+dz*cy;
-            double yy=dy*cp-forward*sp,depth=dy*sp+forward*cp;
-            int code=(depth<NEAR?1:0)|(xx>depth*hx?2:0)|
-                (xx< -depth*hx?4:0)|(yy>depth*hy?8:0)|(yy< -depth*hy?16:0);
-            common&=code;
-            if(common==0)return true;
+    // A camera pose usually tests thousands of authored faces/chunks. Reuse
+    // trigonometry and projection bounds until yaw, pitch, FOV or size change.
+    // No triangle reduction, altered culling plane or stale-frame selection.
+    private int frustumWidth=-1,frustumHeight=-1;
+    private double frustumFocal=Double.NaN,frustumHx,frustumHy;
+    private void prepareFrustum(){
+        updateViewBasis();
+        if(frustumWidth!=renderWidth||frustumHeight!=renderHeight||frustumFocal!=focal){
+            frustumWidth=renderWidth;frustumHeight=renderHeight;frustumFocal=focal;
+            frustumHx=renderWidth*.5/focal;
+            frustumHy=renderHeight*.5/focal;
         }
-        return false;
+    }
+    private int faceClipCode(Point p,double hx,double hy){
+        double dx=p.x-x,dz=p.z-z,dy=p.y-eyeHeight;
+        double xx=-dx*viewCosYaw+dz*viewSinYaw,forward=dx*viewSinYaw+dz*viewCosYaw;
+        double yy=dy*viewCosPitch-forward*viewSinPitch;
+        double depth=dy*viewSinPitch+forward*viewCosPitch;
+        return (depth<NEAR?1:0)|(xx>depth*hx?2:0)|
+            (xx< -depth*hx?4:0)|(yy>depth*hy?8:0)|(yy< -depth*hy?16:0);
+    }
+    private boolean faceInFrustum(Face f){
+        prepareFrustum();
+        double hx=frustumHx+.035,hy=frustumHy+.035;
+        int common=faceClipCode(f.a,hx,hy);
+        if(common==0)return true;
+        common&=faceClipCode(f.b,hx,hy);
+        return common==0||(common&faceClipCode(f.c,hx,hy))==0;
     }
     /**
      * C3 DIAGNOSTIC ONLY. Feed the real authored House shell, door leaves,
@@ -1979,9 +1997,10 @@ public final class SceneRenderer {
         double dx=centerX-x,dz=centerZ-z;
         double range=Math.hypot(dx,dz);
         if(range>distance+radius)return false;
-        double forward=dx*Math.sin(yaw)+dz*Math.cos(yaw);
-        double side=-dx*Math.cos(yaw)+dz*Math.sin(yaw);
-        double hfov=renderWidth*.5/focal;
+        prepareFrustum();
+        double forward=dx*viewSinYaw+dz*viewCosYaw;
+        double side=-dx*viewCosYaw+dz*viewSinYaw;
+        double hfov=frustumHx;
         return forward+radius>=0
             &&Math.abs(side)<Math.max(0,forward)*hfov+radius*2.0;
     }
@@ -2561,9 +2580,9 @@ public final class SceneRenderer {
     /** Convex-box rejection: only a shared outside plane for every corner
      * can reject a whole chunk. Extra margin avoids false negatives. */
     private boolean shellChunkInFrustum(ShellChunk chunk){
-        double cy=Math.cos(yaw),sy=Math.sin(yaw);
-        double cp=Math.cos(pitch),sp=Math.sin(pitch);
-        double hx=renderWidth*.5/focal+.055,hy=renderHeight*.5/focal+.055;
+        prepareFrustum();
+        double cy=viewCosYaw,sy=viewSinYaw,cp=viewCosPitch,sp=viewSinPitch;
+        double hx=frustumHx+.055,hy=frustumHy+.055;
         int common=31;
         for(int bits=0;bits<8;bits++){
             double px=(bits&1)==0?chunk.minX:chunk.maxX;
@@ -2876,12 +2895,16 @@ public final class SceneRenderer {
     }
 
     private double cachedViewYaw=Double.NaN,cachedViewPitch=Double.NaN,viewCosYaw,viewSinYaw,viewCosPitch,viewSinPitch;
-    public double[] editorProjection(double x,double y,double z){var p=camera(new Point(x,y,z));return p.z<.065?null:new double[]{renderWidth*.5+p.x/p.z*focal,renderHeight*.5-p.y/p.z*focal};}
-    private Point camera(Point p){
+    private void updateViewBasis(){
         if(cachedViewYaw!=yaw||cachedViewPitch!=pitch){
-            cachedViewYaw=yaw;cachedViewPitch=pitch;viewCosYaw=Math.cos(yaw);viewSinYaw=Math.sin(yaw);
+            cachedViewYaw=yaw;cachedViewPitch=pitch;
+            viewCosYaw=Math.cos(yaw);viewSinYaw=Math.sin(yaw);
             viewCosPitch=Math.cos(pitch);viewSinPitch=Math.sin(pitch);
         }
+    }
+    public double[] editorProjection(double x,double y,double z){var p=camera(new Point(x,y,z));return p.z<.065?null:new double[]{renderWidth*.5+p.x/p.z*focal,renderHeight*.5-p.y/p.z*focal};}
+    private Point camera(Point p){
+        updateViewBasis();
         double dx=p.x-x,dy=p.y-eyeHeight,dz=p.z-z;
         double cy=viewCosYaw,sy=viewSinYaw,xc=-dx*cy+dz*sy,zc=dx*sy+dz*cy;
         double cp=viewCosPitch,sp=viewSinPitch;
@@ -3758,7 +3781,11 @@ public final class SceneRenderer {
                 geometry.size()+residentOmittedFaces,visibleFaces,renderWidth,renderHeight,
                 geometryReady-geometryStart,geometryRendered-geometryReady);
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
-        if(map.nativeSite())DistanceDetail.apply(pixels,depths,renderWidth,renderHeight,hazeBackground);
+        if(map.nativeSite()){
+            if(distanceDetailScratch==null||distanceDetailScratch.length!=pixels.length)
+                distanceDetailScratch=new int[pixels.length];
+            DistanceDetail.apply(pixels,depths,renderWidth,renderHeight,hazeBackground,distanceDetailScratch);
+        }
         renderWeatherMeshes();
         renderSafeAreas(map,markers,clock);
         long psxStart=System.nanoTime();

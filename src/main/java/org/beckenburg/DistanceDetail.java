@@ -4,11 +4,20 @@ package org.beckenburg;
  * Applied to the world before precipitation/HUD; nearby objects remain sharp.
  * Samples never cross a foreground depth discontinuity. */
 public final class DistanceDetail {
- public static void apply(int[] pixels,double[] depth,int width,int height,int horizon){apply(pixels,depth,width,height,horizon,null);}
- public static void apply(int[] pixels,double[] depth,int width,int height,int[] background){if(background.length!=pixels.length)throw new IllegalArgumentException("Sky frame");apply(pixels,depth,width,height,0,background);}
- private static void apply(int[] pixels,double[] depth,int width,int height,int horizon,int[] background){
+ public static void apply(int[] pixels,double[] depth,int width,int height,int horizon){apply(pixels,depth,width,height,horizon,null,null);}
+ public static void apply(int[] pixels,double[] depth,int width,int height,int[] background){if(background.length!=pixels.length)throw new IllegalArgumentException("Sky frame");apply(pixels,depth,width,height,0,background,null);}
+ /** Reuse an owning renderer's scratch pixels rather than allocating/cloning each frame.
+  * Exact sampling, neighbour depth rejection and fog mathematics are unchanged. */
+ static void apply(int[] pixels,double[] depth,int width,int height,int[] background,int[] scratch){
+  if(background.length!=pixels.length)throw new IllegalArgumentException("Sky frame");
+  if(scratch==null||scratch.length!=pixels.length||scratch==pixels)throw new IllegalArgumentException("Distance detail scratch");
+  apply(pixels,depth,width,height,0,background,scratch);
+ }
+ private static void apply(int[] pixels,double[] depth,int width,int height,int horizon,int[] background,int[] scratch){
   if(pixels.length!=width*height||depth.length!=pixels.length)throw new IllegalArgumentException("Distance detail frame");
-  int[] source=pixels.clone();
+  int[] source;
+  if(scratch==null)source=pixels.clone();
+  else{System.arraycopy(pixels,0,scratch,0,pixels.length);source=scratch;}
   for(int y=0;y<height;y++)for(int x=0;x<width;x++){
    int i=y*width+x;double d=depth[i];if(!Double.isFinite(d)||d<=24)continue;
    double amount=Math.min(1,(d-24)/50),fog=1-Math.exp(-Math.pow((d-24)/45,2));int radius=1+(int)(amount*2);

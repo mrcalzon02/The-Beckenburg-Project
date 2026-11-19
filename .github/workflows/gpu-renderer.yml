@@ -56,6 +56,11 @@ jobs:
           javac --release 17 -cp gpu-client/target/classes -d build/contract-test src/test/java/org/beckenburg/GpuWorldRendererContractTest.java src/test/java/org/beckenburg/RendererVisibilityTest.java
           java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.GpuWorldRendererContractTest
           java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.RendererVisibilityTest
+          # Executed before hardware jobs: map-independent geometry culling
+          # and native-site postprocess must retain exact baseline pixels.
+          javac --release 17 -cp gpu-client/target/classes -d build/contract-test src/test/java/org/beckenburg/FrustumMathParityTest.java src/test/java/org/beckenburg/DistanceDetailScratchTest.java
+          java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.FrustumMathParityTest
+          java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.DistanceDetailScratchTest
           javac --release 17 -cp gpu-client/target/classes -d build/contract-test src/test/java/org/beckenburg/GpuReadbackTest.java
           java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.GpuReadbackTest
   windows-build:

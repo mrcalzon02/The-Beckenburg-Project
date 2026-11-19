@@ -152,6 +152,8 @@ for check in CameraSnapshotTest MergedMaterialMetadataTest HollowCreekFacilities
     java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg."$check"
 done
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.GraphicsOptionsTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.FrustumMathParityTest
+java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.DistanceDetailScratchTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.PsxPipelineTest PsxQuantizationParityTest EmissionCacheBudgetTest DynamicTextureRevisionTest PreparedVertexLightingTest CastleShelfLabelsTest WorldResidencyTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.PsxHorrorUiTest
 java -Djava.awt.headless=true -ea -cp build/classes:build/test org.beckenburg.SoundtrackAudioTest
