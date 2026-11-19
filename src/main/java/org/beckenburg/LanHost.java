@@ -91,6 +91,12 @@ public final class LanHost implements AutoCloseable {
     private final ScheduledExecutorService clock=Executors.newSingleThreadScheduledExecutor(r->{Thread t=new Thread(r,"beckenburg-lan-tick");t.setDaemon(true);return t;});
     private final Object mutex=new Object();
     private int lastRealtimeApparitionTick=-1;
+    /** Preserve exact host-owned hearing, but avoid redundant 50Hz updates. */
+    private void sendGhostListening(Peer peer,boolean heartbeat){
+        boolean listening=ghostPose.listening(tick);
+        if(peer.hearingFeed.send(listening,heartbeat))
+            reply(peer,"GLISTEN|"+(listening?1:0)+"|"+tick);
+    }
     private static final int HUNTERS=6,GHOST_SEAT=HUNTERS;
     private final Peer[] seats=new Peer[HUNTERS+1];
     private final Reservation[] reserved=new Reservation[HUNTERS+1];
@@ -869,7 +875,7 @@ public final class LanHost implements AutoCloseable {
                     if(voice!=null)reply(peer,"VOICEKEY|"+voice.port()+"|"+voice.register(peer.slot,peer.socket.getInetAddress()));else reply(peer,"INFO|Voice disabled on secure transport (NET-VOICE)");
                     reply(peer,"GTYPE|"+ghostType+"|"+ghostType.behavior());
                     for(String safeFrame:SafeAreaBarrier.wardFrames(map,tick))reply(peer,safeFrame);
-                    reply(peer,ghostPose.frame(tick));reply(peer,"GLISTEN|"+(ghostPose.listening(tick)?1:0)+"|"+tick);reply(peer,frenzyFrame());
+                    reply(peer,ghostPose.frame(tick));sendGhostListening(peer,true);reply(peer,frenzyFrame());
                     if(twinCompanion!=null)reply(peer,twinCompanion.playerFrame(ghostType.ancient(),tick));
                     broadcastState();sendGhostPrompt();
                 }
@@ -893,7 +899,7 @@ public final class LanHost implements AutoCloseable {
                     if(!moved)return;
                     animation.moved(tick,ghostPose.stamina()<staminaBefore);
                     reply(peer,ghostPose.frame(tick));
-                    reply(peer,"GLISTEN|"+(ghostPose.listening(tick)?1:0)+"|"+tick);
+                    sendGhostListening(peer,false);
                     if(lastRealtimeApparitionTick!=tick){
                         lastRealtimeApparitionTick=tick;
                         broadcastApparitions();
@@ -911,7 +917,7 @@ public final class LanHost implements AutoCloseable {
                     ghostPose.step(dx,dz,tick,bursting);
                     animation.moved(tick,ghostPose.stamina()<staminaBefore);
                     reply(peer,"ACCEPT|GSTEP");reply(peer,ghostPose.frame(tick));
-                    reply(peer,"GLISTEN|"+(ghostPose.listening(tick)?1:0)+"|"+tick);
+                    sendGhostListening(peer,true);
                     broadcastApparitions();
                     if(ghost.manifested()&&tick%5==0)broadcastGhostSound(LanSound.Cue.FOOTFALL);
                 }
@@ -2417,7 +2423,7 @@ public final class LanHost implements AutoCloseable {
         if(from==to)return;
         ghostPose.markTravel(tick);
         Peer human=seats[GHOST_SEAT];
-        if(human!=null&&human.ghostWorldMode)reply(human,"GLISTEN|0|"+tick);
+        if(human!=null&&human.ghostWorldMode)sendGhostListening(human,true);
         GhostTraits.Profile trait=GhostTraits.of(ghostType);
         if(trait.passage()==GhostTraits.Passage.DOORS && map.openDoorBetweenRooms(from,to))
             broadcastWorld();
@@ -3185,7 +3191,7 @@ public final class LanHost implements AutoCloseable {
             // Host tick (100ms) updates make short +/- tolerance changes
             // responsive without trusting any client clock or camera keys.
             if(seats[GHOST_SEAT]!=null&&seats[GHOST_SEAT].ghostWorldMode)
-                reply(seats[GHOST_SEAT],"GLISTEN|"+(ghostPose.listening(tick)?1:0)+"|"+tick);
+                sendGhostListening(seats[GHOST_SEAT],true);
             if(tick%5==0){broadcastState();broadcastApparitions();broadcastProgress();broadcastWorld();
                 if(seats[GHOST_SEAT]!=null&&seats[GHOST_SEAT].ghostWorldMode){
                     reply(seats[GHOST_SEAT],ghostPose.frame(tick));
@@ -3535,6 +3541,7 @@ public final class LanHost implements AutoCloseable {
         String hunterVisual="observer"; // no gameplay authority, never sent to ghost
         long unconfirmedResumeDeadlineNanos; // no unlimited grace via failed reconnect loop
         boolean ready,worldMode,ghostWorldMode,intentionalLeave,realtimeInputMode;
+        final GhostListeningFeed hearingFeed=new GhostListeningFeed();
 
         boolean twinInSight,witnessOptics;
         final boolean[] twinOnCamera=new boolean[HUNTERS+1];

@@ -3309,6 +3309,27 @@ public final class SceneRenderer {
     public record WorldResidentStats(long topologyBuilds,long builds,long hits,long bytes,int chunks){}
     public WorldResidentStats worldResidentStats(){return new WorldResidentStats(castleTopologyBuilds,
         residentWorldBuilds,residentWorldHits,residentWorldBytes,castleStaticChunks.size()+castleAssemblies.size());}
+    /** Diagnostics only: identify the actual source of resident resource IDs.
+     * Never called from gameplay or the draw loop. No geometry is copied. */
+    java.util.Map<Long,String> diagnosticResidentOwners(){
+        var owners=new java.util.HashMap<Long,String>();
+        for(var e:residentShell.entrySet())
+            owners.put(e.getValue().id(),"shell "+e.getKey());
+        for(var e:residentScenery.entrySet())
+            for(var batch:e.getValue().batches.entrySet())
+                owners.put(batch.getValue().id(),"scenery "+e.getKey().mesh+" material "+batch.getKey());
+        for(var e:auxiliaryWorld.entrySet())
+            for(var chunk:e.getValue().chunks())
+                for(var batch:chunk.batches.entrySet())
+                    owners.put(batch.getValue().id(),"aux "+e.getKey()+" material "+batch.getKey());
+        for(var chunk:castleStaticChunks)
+            for(var batch:chunk.batches.entrySet())
+                owners.put(batch.getValue().id(),"castle-static material "+batch.getKey());
+        for(var entry:castleAssemblies.entrySet())
+            for(var batch:entry.getValue().batches.entrySet())
+                owners.put(batch.getValue().id(),"castle "+entry.getKey()+" material "+batch.getKey());
+        return java.util.Map.copyOf(owners);
+    }
     private static ResidentWorldChunk worldChunk(List<Face> source){
         double x0=Double.POSITIVE_INFINITY,y0=x0,z0=x0,x1=-x0,y1=-x0,z1=-x0;
         for(var face:source)for(var p:List.of(face.a,face.b,face.c)){

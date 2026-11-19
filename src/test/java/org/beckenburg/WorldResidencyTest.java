@@ -104,6 +104,7 @@ public final class WorldResidencyTest {
             var map=new HouseMap(site);var spawn=map.spawn(0);
             renderer.x=spawn.x();renderer.z=spawn.z();renderer.eyeHeight=spawn.y()+1.62;renderer.yaw=Math.PI/3;
             renderer.drawNetwork(map,List.of(),-1,2.5);var mapFirst=resident(backend.frame);
+            var sourceOwners=renderer.diagnosticResidentOwners();
             check(!mapFirst.isEmpty(),"Real "+site+" scenery must be resident");
             var mapStats=renderer.worldResidentStats();long mapScene=backend.frame.sceneId();
             renderer.drawNetwork(map,List.of(),-1,2.5);
@@ -118,6 +119,12 @@ public final class WorldResidencyTest {
                     else if(after.vertices()!=entry.getValue().vertices())arrays++;
                 }
                 var current=renderer.worldResidentStats();
+                var newOwners=renderer.diagnosticResidentOwners();
+                int printed=0;
+                for(var entry:mapFirst.entrySet())if(!mapSecond.containsKey(entry.getKey())&&printed++<25)
+                    System.err.printf("RESIDENCY SOURCE site=%s missing_id=%d owner=%s new_same_owner=%s%n",
+                        site,entry.getKey(),sourceOwners.getOrDefault(entry.getKey(),"unknown"),
+                        newOwners.values().stream().anyMatch(v->v.equals(sourceOwners.get(entry.getKey()))));
                 System.err.printf(java.util.Locale.ROOT,
                     "RESIDENCY ADVISORY site=%s first=%d second=%d missing=%d revision_changes=%d array_changes=%d initial_builds=%d current_builds=%d current_bytes=%d scene=%d%n",
                     site,mapFirst.size(),mapSecond.size(),missing,revisions,arrays,
