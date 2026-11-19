@@ -87,7 +87,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 safeAreas=new SafeAreaBarrier.Receiver();
                 visualMotion.reset();lastRenderedPose=null;lastVisualFrame=System.nanoTime();
             }else if(p.get(0).equals("SAFEBEGIN")||p.get(0).equals("SAFEAREA")||p.get(0).equals("SAFEEND")){
-                safeAreas.accept(map,p);
+                safeAreas.accept(map,p);visualMotion.invalidateCollision();
             }else if(p.size()==5&&p.get(0).equals("DEVICE_SOUND")){
                 var device=map.fixtures().state(LanProtocol.integer(p.get(1),1,100));audio.playFixture(device,new LanSound.CueEvent(device.kind().cue(),LanProtocol.integer(p.get(2),-100,100),LanProtocol.integer(p.get(3),0,100),LanProtocol.integer(p.get(4),0,99999999)));
             }else if(p.size()==6&&p.get(0).equals("FIXTURE")){
@@ -95,13 +95,13 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             }else if(p.size()==2&&p.get(0).equals("CLUTTER")){
                 map.clutter().acceptOne(p.get(1));
             }else if(p.size()==2&&p.get(0).equals("HIDECONFIG")){
-                camera.hidingDensity=LanProtocol.integer(p.get(1),0,100);map.configureHiding(camera.hidingDensity);
+                camera.hidingDensity=LanProtocol.integer(p.get(1),0,100);map.configureHiding(camera.hidingDensity);visualMotion.invalidateCollision();
             }else if(p.size()==3&&p.get(0).equals("LIGHTS")){
                 lights.acceptSnapshot(p.get(1));lights.setBreaker(LanProtocol.integer(p.get(2),0,1)==1);
             }else if(p.size()==2&&p.get(0).equals("DOORS")){
-                map.applyDoorSnapshot(p.get(1));
+                map.applyDoorSnapshot(p.get(1));visualMotion.invalidateCollision();
             }else if(p.size()==2&&p.get(0).equals("WINDOWS")){
-                map.applyWindowSnapshot(p.get(1));
+                map.applyWindowSnapshot(p.get(1));visualMotion.invalidateCollision();
             }else if(p.size()==7&&p.get(0).equals("GPOSE")){
                 int next=LanProtocol.integer(p.get(1),0,HouseMap.EXTRACTION_ROOM-1);
                 double x=LanProtocol.integer(p.get(2),0,map.width()*1000)/1000.0;

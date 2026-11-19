@@ -574,7 +574,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     LanProtocol.integer(p.get(3),0,99999999),
                     LanProtocol.integer(p.get(4),0,99999999));
             }else if(p.size()==2&&p.get(0).equals("DOORS")){
-                map.applyDoorSnapshot(p.get(1));
+                map.applyDoorSnapshot(p.get(1));visualMotion.invalidateCollision();
             }else if(p.size()==7&&p.get(0).equals("STATE")){
                 visibleGhost=LanProtocol.integer(p.get(3),-1,HouseMap.ROOM_COUNT-1);
             }else if(p.size()==8&&p.get(0).equals("PROGRESS")){
@@ -957,9 +957,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                         new LanPortableLights.Light(owner,tool,room,xx,yy,zz,tier,on));
                 }else throw new IllegalArgumentException("invalid portable light packet");
             }else if(p.size()==2&&p.get(0).equals("WINDOWS")){
-                map.applyWindowSnapshot(p.get(1));
+                map.applyWindowSnapshot(p.get(1));visualMotion.invalidateCollision();
             }else if(p.size()==2&&p.get(0).equals("VANDOOR")){
-                map.van().setCargoDoorClosed(LanProtocol.integer(p.get(1),0,1)==1);
+                map.van().setCargoDoorClosed(LanProtocol.integer(p.get(1),0,1)==1);visualMotion.invalidateCollision();
                 feedback=map.van().cargoDoorClosed()
                     ?"VAN CARGO DOOR CLOSED":"VAN CARGO DOOR OPEN";
             }else if(frame.startsWith("BOOK|")){

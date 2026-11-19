@@ -47,6 +47,19 @@ public final class LanVisualMotionTest {
         motion.accept(new LanVisualMotion.Pose(2,0,3),start+ms(70)); // repeated TURN broadcast
         var repeated=motion.sample(start+ms(80),.02,1,0,FREE);
         check(repeated.x()>2.08,"duplicate authoritative pose must not reset prediction clock");
-        System.out.println("PASS: bounded responsive render-clock prediction, stop, correction, collision, teleport, duplicate packets");
+        motion.reset();
+        motion.accept(new LanVisualMotion.Pose(2,0,3),start);
+        int[] sweeps={0};
+        LanVisualMotion.Collision counted=(p,x,z)->{
+            sweeps[0]++;
+            return new LanVisualMotion.Pose(x,p.y(),z);
+        };
+        for(int render=0;render<=100;render+=20)
+            motion.sample(start+ms(render),.02,1,0,counted);
+        check(sweeps[0]==1,"same heading and host pose must reuse one collision sweep");
+        motion.invalidateCollision();
+        motion.sample(start+ms(120),.02,1,0,counted);
+        check(sweeps[0]==2,"door or barrier changes must invalidate the swept segment");
+        System.out.println("PASS: bounded responsive render-clock prediction, stop, correction, collision, teleport, duplicate packets, swept-cache reuse");
     }
 }

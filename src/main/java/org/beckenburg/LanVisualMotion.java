@@ -27,6 +27,12 @@ final class LanVisualMotion {
     private double stepMetres = DEFAULT_STEP_METRES;
     private double priorDirectionX, priorDirectionZ;
     private boolean previouslyMoving;
+    // Collision sweeps are expensive in authored worlds. Each render interpolates
+    // within a cached host-pose/heading segment, rather than re-sweeping geometry.
+    private Pose sweptFrom, sweptEnd;
+    private double sweptDx, sweptDz, sweptStep;
+
+    void invalidateCollision() { sweptFrom = sweptEnd = null; }
 
     void reset() {
         authoritative = displayed = stopPose = null;
@@ -34,6 +40,7 @@ final class LanVisualMotion {
         stepMetres = DEFAULT_STEP_METRES;
         priorDirectionX = priorDirectionZ = 0;
         previouslyMoving = false;
+        invalidateCollision();
     }
 
     void accept(Pose next, long nowNs) {
@@ -44,6 +51,7 @@ final class LanVisualMotion {
             authoritative = displayed = next;
             lastPositionNs = nowNs;
             stopUntilNs = 0;
+            invalidateCollision();
             return;
         }
         double travelled = Math.hypot(next.x() - authoritative.x(), next.z() - authoritative.z());
@@ -55,6 +63,7 @@ final class LanVisualMotion {
             authoritative = next;
             lastPositionNs = nowNs;
             stopUntilNs = 0;
+            invalidateCollision();
         }
         // Duplicated BODY/GPOSE packets from a TURN or host broadcast must not
         // restart the prediction clock and visibly freeze locomotion.
@@ -88,12 +97,28 @@ final class LanVisualMotion {
         if (moving) {
             long anchor = Math.max(lastPositionNs, intentStartNs);
             double seconds = Math.max(0, Math.min(.126, (nowNs - anchor) / 1e9));
-            double reach = Math.min(stepMetres * 1.15, stepMetres * seconds / STEP_SECONDS);
-            if (reach > 0 && collision != null) {
-                Pose clear = collision.resolve(authoritative,
-                    authoritative.x() + directionX * reach,
-                    authoritative.z() + directionZ * reach);
-                if (clear != null) target = clear;
+            double fraction = Math.min(1, seconds / STEP_SECONDS);
+            if (fraction > 0 && collision != null) {
+                // Full-path collision is validated only when the host changes
+                // pose, the input heading changes or a world barrier moves.
+                // Intermediate rendered poses lie inside that valid segment.
+                if (sweptFrom != authoritative ||
+                        directionX * sweptDx + directionZ * sweptDz < .997 ||
+                        stepMetres != sweptStep) {
+                    sweptFrom = authoritative;
+                    sweptDx = directionX;
+                    sweptDz = directionZ;
+                    sweptStep = stepMetres;
+                    sweptEnd = collision.resolve(authoritative,
+                        authoritative.x() + directionX * stepMetres,
+                        authoritative.z() + directionZ * stepMetres);
+                }
+                if (sweptEnd != null) {
+                    target = new Pose(
+                        authoritative.x() + (sweptEnd.x() - authoritative.x()) * fraction,
+                        authoritative.y() + (sweptEnd.y() - authoritative.y()) * fraction,
+                        authoritative.z() + (sweptEnd.z() - authoritative.z()) * fraction);
+                }
             }
         } else if (nowNs < stopUntilNs && stopPose != null) {
             target = stopPose;
