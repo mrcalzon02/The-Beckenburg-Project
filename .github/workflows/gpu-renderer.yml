@@ -29,6 +29,7 @@ on:
       # Source-authored House geometry must undergo actual visual and VBO acceptance.
       - 'src/main/java/org/beckenburg/HouseRebuildEnvelope.java'
       - 'src/test/java/org/beckenburg/DevMatchNavigationTest.java'
+      - 'src/test/java/org/beckenburg/HousePorchVisualCaptureTest.java'
       - 'src/main/java/org/beckenburg/ArchitecturalLightOcclusion.java'
       - 'src/test/java/org/beckenburg/ArchitecturalLightOcclusionAllocationParityTest.java'
       - 'src/test/java/org/beckenburg/VanHouseViewportProfileTest.java'
@@ -78,6 +79,23 @@ jobs:
       - name: Package canonical assets with Java 17
         shell: cmd
         run: call build.cmd package
+      - name: Capture true House porch threshold from both sides with actual renderer
+        continue-on-error: true
+        shell: cmd
+        run: |
+          if not exist build\test mkdir build\test
+          javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\LevelVisualCapture.java src\test\java\org\beckenburg\HousePorchVisualCaptureTest.java
+          if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.HousePorchVisualCaptureTest
+          if errorlevel 1 exit /b 1
+      - name: Save true scene screenshots of porch bevel, opened doorway and foyer
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-house-porch-threshold-game-captures
+          path: build/e2e/house-porch-capture/**
+          if-no-files-found: warn
+          retention-days: 14
       - name: Verify REAL software 3D loading-to-van fly-in and same-renderer cache prewarm
         shell: cmd
         continue-on-error: true
