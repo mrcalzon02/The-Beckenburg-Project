@@ -44,6 +44,35 @@ public final class DevMatchNavigationTest {
             check(van.supportHeight(second.x(),second.z())!=null,
                 "van exit waypoint must have physical ramp support");
         }
+        // Real campaign run 64 got stuck at (19.59, 0.001, 22.55).
+        // Report which authored triangle actually blocks the short porch approach.
+        // This is diagnostic, not an excuse to remove any wall/door collision.
+        var stalled=new LevelDefinition.Vec(19.595,.001,22.555);
+        var entry=map.level().portalsFrom(13).stream()
+            .filter(p->p.door()&&p.joins(13,0)).findFirst().orElseThrow();
+        var command=new HunterFieldNavigation(map).to(150,
+            new LanWorld.Body(stalled.x(),stalled.y(),stalled.z(),180,13),
+            0,map.centerX(0),map.centerZ(0),1.15);
+        System.out.printf(java.util.Locale.ROOT,
+            "DEV PORCH entry=(%.3f,%.3f) from=(%.3f,%.3f) initial=%s%n",
+            entry.x(),entry.z(),stalled.x(),stalled.z(),command.action());
+        for(double z:new double[]{22.70,22.60,22.555,22.50,22.45,22.40,22.35,22.25,22.10,21.90,21.60}){
+            double x=19.60;
+            Double supported=map.supportNear(x,z,.001);
+            var pos=new LevelDefinition.Vec(x,supported==null?.001:supported,z);
+            var env=map.envelope();
+            System.out.printf(java.util.Locale.ROOT,
+                "DEV PORCH x=%.3f z=%.3f feet=%.3f support=%s traversable=%s envelope=%s terrain=%s%n",
+                x,z,pos.y(),supported,map.traversable(pos.x(),pos.y(),pos.z()),
+                env==null?java.util.List.of():env.physics().diagnosticBodyBlockers(
+                    pos,HunterPosture.STANDING_HEIGHT,.22),
+                map.worldSurface()==null?java.util.List.of():map.worldSurface().diagnosticBodyBlockers(
+                    pos,HunterPosture.STANDING_HEIGHT,.22));
+        }
+        var after=map.resolveMove(stalled,19.62,22.245);
+        System.out.printf(java.util.Locale.ROOT,
+            "DEV PORCH direct_short_step=%s nearestDoor=%s%n",
+            after,map.nearestDoor(stalled.x(),stalled.y(),stalled.z()));
         System.out.println("PASS: six van aisle routes, supported ramps and two genuine house entrances");
     }
 }

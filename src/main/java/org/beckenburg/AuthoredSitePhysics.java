@@ -186,6 +186,35 @@ public final class AuthoredSitePhysics {
             for(int i:list)if((flags[i]&BODY)!=0&&capsuleTriangle(a,b,i)<limit)return true;
         }return insideSolid(add(feet,new Vec(0,height/2,0)));
     }
+    /**
+     * Developer collision inspector: reports the *actual* native triangle
+     * components rejected by the same capsule contact used in bodyBlocked.
+     * Never called by normal collision queries or transmitted to clients.
+     */
+    java.util.List<String> diagnosticBodyBlockers(Vec feet,double height,double radius){
+        if(!point(feet)||!finite(height,radius)||radius<.01||radius>.4
+                ||height<radius*2||height>2.5)return List.of("INVALID");
+        var hits=new LinkedHashSet<String>();
+        Vec a=add(feet,new Vec(0,radius,0)),b=add(feet,new Vec(0,height-radius,0));
+        double limit=(radius-CONTACT)*(radius-CONTACT);
+        for(Collider c:blockers){
+            double dx=feet.x()-c.x(),dz=feet.z()-c.z(),cs=Math.cos(c.yaw()),sn=Math.sin(c.yaw());
+            double x=Math.max(0,Math.abs(dx*cs+dz*sn)-c.halfX());
+            double z=Math.max(0,Math.abs(-dx*sn+dz*cs)-c.halfZ());
+            double y=Math.max(0,Math.max(c.y()-b.y(),a.y()-c.y()-c.height()));
+            if(x*x+y*y+z*z<limit)hits.add("movement-only-blocker");
+        }
+        var examined=new HashSet<Integer>();
+        for(int x=cell(feet.x()-radius);x<=cell(feet.x()+radius);x++)
+            for(int z=cell(feet.z()-radius);z<=cell(feet.z()+radius);z++){
+                int[] list=bins.get(key(x,z));if(list==null)continue;
+                for(int i:list)if(examined.add(i)&&(flags[i]&BODY)!=0
+                        &&capsuleTriangle(a,b,i)<limit)
+                    hits.add(parts[owner[i]].name());
+            }
+        if(insideSolid(add(feet,new Vec(0,height/2,0))))hits.add("inside-solid");
+        return List.copyOf(hits);
+    }
     public boolean traversable(Vec feet,double height){
         if(!point(feet)||support(feet.x(),feet.z(),feet.y(),.006)==null||bodyBlocked(feet,height,RADIUS))return false;
         for(double[] d:new double[][]{{RADIUS,0},{-RADIUS,0},{0,RADIUS},{0,-RADIUS}})if(support(feet.x()+d[0],feet.z()+d[1],feet.y(),.08)==null)return false;
