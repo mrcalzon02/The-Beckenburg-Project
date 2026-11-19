@@ -2012,3 +2012,7 @@ The [Battery electrical checkpoint](levels/rebuild/seacliff-power-pass/checkpoin
 ## Seacliff lower service rooms
 
 The [lower service checkpoint](levels/rebuild/seacliff-lower-partitions-pass/checkpoint.json) verifies the rebuilt partitions, native door poses, room-to-room guide replay and retained power on the held draft. Main was checked at d63cff9422935fa7ab7860e0ace0613249e38c4b. GPU run 44491728314 failed at that revision and the latest multiplayer and installer checks were still running when inspected. The measured upper and exterior mission links and actual multiplayer dispatch are the next Seacliff work.
+
+## Seacliff upper casemates and staged TCP
+
+The [upper checkpoint](levels/rebuild/seacliff-upper-partitions-pass/checkpoint.json) adds six fitted doors, connects the physical room graph, and verifies real TCP case start and van departure through the staged scene. Main was inspected at 66264ee8c3b70b97a094b050e9d6ec832be8ad1e. The multiplayer 44494709966, GPU 44494710017 and installer 44494709952 workflows were still running at inspection. Normal packaged map selection and the remaining service and case gates are next on the held draft.

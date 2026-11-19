@@ -1269,3 +1269,9 @@ Both prior van-to-director routes, the fitted gallery door and the two-way servi
 The [lower-floor plan](seacliff-lower-partitions-pass/seacliff-lower-service-plan.svg) locates five fitted doors in four whole rebuilt wall runs. The barracks reaches the gallery through Records. The plant reaches it through the Pump room. Former diagonal wall gaps are sealed. The [checkpoint](seacliff-lower-partitions-pass/checkpoint.json) binds 45 slab bearings, closed and open body and sight tests, small-object sweeps, actual handle aim, acoustic differences and the matching door snapshots in a second native scene.
 
 All 17 site guides replay in both directions and both postures. The existing generator, two switches and seven loads passed again on the exact source in software and OpenGL. The [29-packet roster](seacliff-lower-partitions-pass/roster.json) carries forward the other site records. Normal dispatch still requires the remaining physically surveyed room links and packaged host and peer acceptance.
+
+## Seacliff upper casemates and physical mission graph
+
+The [upper floor plan](seacliff-upper-partitions-pass/seacliff-upper-casemate-plan.svg) binds six working doors to four rebuilt wall runs. Courtyard gates open inward on the retained +4.00 m threshold. Two complete van-to-director journeys use these doors. The [checkpoint](seacliff-upper-partitions-pass/checkpoint.json) verifies all 17 building guides in both directions and postures in software and OpenGL, lower sealed gaps and fitted leaves, and the seven installed service loads.
+
+Five physical ramp and stair transitions link all fifteen room owners. Four TCP peers joined the injected native scene. The investigator walked from the raised van deck onto the existing forecourt and a second client received the supported final pose. The [29-packet roster](seacliff-upper-partitions-pass/roster.json) carries the verified source. Normal packaged selection and complete case acceptance remain open.

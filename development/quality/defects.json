@@ -6777,6 +6777,28 @@
       "action": "Replace four complete shared runs on the existing slab. Fit five doors to the real adjacent rooms, close the former gaps and replay routes, sight, acoustic and object states.",
       "evidence": "development/levels/rebuild/seacliff-lower-partitions-pass/checkpoint.json",
       "older_maps": "Survey the actual room sequence and wall cavity behind each apparent diagonal opening before binding mission portals."
+    },
+    {
+      "id": "DEV-611",
+      "title": "Upper Battery casemates lacked operable doors at their retained entrances",
+      "status": "CORRECTED_WITH_MEASURED_WALL_RUNS_AND_FITTED_DOORS",
+      "affected": "Seacliff courtyard, casemates, gallery, magazine and service room",
+      "symptom": "Old upper wall fragments and headers left six bare openings. Courtyard travel crossed them diagonally.",
+      "cause": "Physical openings were initially used as construction reservations.",
+      "action": "Rebuild all four shared wall runs. Seat six fitted frames on the existing slab and saved courtyard grade, and square the guides before turning inside adjoining rooms.",
+      "older_maps": "Measure both bearing surfaces and door swing clearance before replacing an existing entrance.",
+      "evidence": "development/levels/rebuild/seacliff-upper-partitions-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-612",
+      "title": "Battery staged mission used dock terrain for the raised van room anchor",
+      "status": "CORRECTED_IN_CONNECTED_NATIVE_CASE",
+      "affected": "Seacliff van and staged host startup",
+      "symptom": "The connected fifteen-owner graph failed the map validity check even though the existing loaded geometry carried the cargo deck.",
+      "cause": "The staged room used dock terrain elevation for the cargo spawn.",
+      "action": "Resolve room and spawn elevation from the canonical van floor, then verify a real TCP case start with four peers and supported forecourt departure.",
+      "older_maps": "Check the actual body spawn against the van deck datum before interpreting a map validity failure as a missing connection.",
+      "evidence": "development/levels/rebuild/seacliff-upper-partitions-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

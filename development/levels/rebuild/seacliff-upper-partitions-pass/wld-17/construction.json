@@ -1,0 +1,1058 @@
+{
+  "id": "WLD-17",
+  "status": "FOUNDED_BATTERY_STAIRS_AND_TERRACES_RUNTIME_OPEN",
+  "source_contract": "development/levels/rebuild/arrival-bearing-pass/wld-17/construction.json",
+  "source_contract_sha256": "459133b8b6837f7f4d63325c172d5ff9a0eb6775f6658039a5c3c8acda5b116f",
+  "source_glb": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.glb",
+  "source_glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97",
+  "source_physics": "development/levels/rebuild/access-route-pass/assemblies/wld-17/access-routes.hcs2",
+  "source_physics_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+  "before_layout": "development/levels/rebuild/access-route-pass/assemblies/wld-17/authored-layout.json",
+  "before_layout_sha256": "bf10438c0785f251426e68048a315a9bf3c8fb68c8a4e6d8e21f663c6e9f8639",
+  "layout": "development/levels/rebuild/seacliff-receiving-pass/wld-17/authored-layout.json",
+  "layout_sha256": "3a905b2b47f7dd9c02e989a90b257b4268ce49a4ac5bae13966a3b553d861a81",
+  "before_segment_map": {
+    "route-01": {},
+    "route-02": {
+      "1": 1
+    },
+    "route-03": {
+      "1": 1
+    },
+    "route-04": {},
+    "route-05": {},
+    "route-06": {},
+    "route-07": {},
+    "route-08": {},
+    "route-09": {},
+    "route-10": {
+      "1": 1
+    },
+    "route-11": {
+      "2": 1
+    },
+    "route-12": {
+      "2": 1
+    },
+    "route-13": {},
+    "route-14": {},
+    "route-15": {},
+    "route-16": {},
+    "route-17": {}
+  },
+  "source_segment_map": {
+    "route-01": {},
+    "route-02": {
+      "1": 1
+    },
+    "route-03": {
+      "3": 1
+    },
+    "route-04": {},
+    "route-05": {},
+    "route-06": {},
+    "route-07": {},
+    "route-08": {},
+    "route-09": {},
+    "route-10": {
+      "3": 1
+    },
+    "route-11": {
+      "2": 1
+    },
+    "route-12": {
+      "2": 1
+    },
+    "route-13": {},
+    "route-14": {},
+    "route-15": {},
+    "route-16": {},
+    "route-17": {}
+  },
+  "before_stair_components": [
+    "129:route-02 landing0",
+    "130:route-02 flight0 step1",
+    "131:route-02 flight0 step2",
+    "132:route-02 flight0 step3",
+    "133:route-02 flight0 step4",
+    "134:route-02 flight0 step5",
+    "135:route-02 flight0 step6",
+    "136:route-02 flight0 step7",
+    "137:route-02 flight0 step8",
+    "138:route-02 flight0 step9",
+    "139:route-02 flight0 step10",
+    "140:route-02 flight0 step11",
+    "141:route-02 flight0 step12",
+    "142:route-03 landing0",
+    "143:route-03 flight0 step1",
+    "144:route-03 flight0 step2",
+    "145:route-03 flight0 step3",
+    "146:route-03 flight0 step4",
+    "147:route-03 flight0 step5",
+    "148:route-03 flight0 step6",
+    "149:route-03 flight0 step7",
+    "150:route-03 flight0 step8",
+    "151:route-03 flight0 step9",
+    "152:route-03 flight0 step10",
+    "153:route-03 flight0 step11",
+    "154:route-03 flight0 step12",
+    "161:route-10 landing0",
+    "162:route-10 flight0 step1",
+    "163:route-10 flight0 step2",
+    "164:route-10 flight0 step3",
+    "165:route-10 flight0 step4",
+    "166:route-10 flight0 step5",
+    "167:route-10 flight0 step6",
+    "168:route-10 flight0 step7",
+    "169:route-10 flight0 step8",
+    "170:route-10 flight0 step9",
+    "171:route-10 flight0 step10",
+    "172:route-10 flight0 step11",
+    "173:route-10 flight0 step12",
+    "174:route-10 flight0 step13",
+    "175:route-10 flight0 step14",
+    "176:route-10 flight0 step15",
+    "177:route-10 flight0 step16",
+    "178:route-10 flight0 step17",
+    "179:route-11 landing0",
+    "180:route-11 landing2",
+    "204:route-12 landing0",
+    "205:route-12 landing2",
+    "Rebuilt stair WLD-17 route-11 flight0 part0",
+    "Rebuilt stair WLD-17 route-11 flight0 part1",
+    "Rebuilt stair WLD-17 route-11 flight0 part2",
+    "Rebuilt stair WLD-17 route-11 flight0 part3",
+    "Rebuilt stair WLD-17 route-11 flight0 part4",
+    "Rebuilt stair WLD-17 route-11 flight0 part5",
+    "Rebuilt stair WLD-17 route-11 flight0 part6",
+    "Rebuilt stair WLD-17 route-11 flight0 part7",
+    "Rebuilt stair WLD-17 route-11 flight0 part8",
+    "Rebuilt stair WLD-17 route-11 flight0 part9",
+    "Rebuilt stair WLD-17 route-11 flight0 part10",
+    "Rebuilt stair WLD-17 route-11 flight0 part11",
+    "Rebuilt stair WLD-17 route-11 flight0 part12",
+    "Rebuilt stair WLD-17 route-11 flight0 part13",
+    "Rebuilt stair WLD-17 route-11 flight0 part14",
+    "Rebuilt stair WLD-17 route-11 flight0 part15",
+    "Rebuilt stair WLD-17 route-11 flight0 part16",
+    "Rebuilt stair WLD-17 route-11 flight0 part17",
+    "Rebuilt stair WLD-17 route-11 flight0 part18",
+    "Rebuilt stair WLD-17 route-11 flight0 part19",
+    "Rebuilt stair WLD-17 route-11 flight0 part20",
+    "Rebuilt stair WLD-17 route-11 flight0 part21",
+    "Rebuilt stair WLD-17 route-11 flight0 part22",
+    "Rebuilt stair WLD-17 route-12 flight0 part0",
+    "Rebuilt stair WLD-17 route-12 flight0 part1",
+    "Rebuilt stair WLD-17 route-12 flight0 part2",
+    "Rebuilt stair WLD-17 route-12 flight0 part3",
+    "Rebuilt stair WLD-17 route-12 flight0 part4",
+    "Rebuilt stair WLD-17 route-12 flight0 part5",
+    "Rebuilt stair WLD-17 route-12 flight0 part6",
+    "Rebuilt stair WLD-17 route-12 flight0 part7",
+    "Rebuilt stair WLD-17 route-12 flight0 part8",
+    "Rebuilt stair WLD-17 route-12 flight0 part9",
+    "Rebuilt stair WLD-17 route-12 flight0 part10",
+    "Rebuilt stair WLD-17 route-12 flight0 part11",
+    "Rebuilt stair WLD-17 route-12 flight0 part12",
+    "Rebuilt stair WLD-17 route-12 flight0 part13",
+    "Rebuilt stair WLD-17 route-12 flight0 part14",
+    "Rebuilt stair WLD-17 route-12 flight0 part15",
+    "Rebuilt stair WLD-17 route-12 flight0 part16",
+    "Rebuilt stair WLD-17 route-12 flight0 part17",
+    "Rebuilt stair WLD-17 route-12 flight0 part18",
+    "Rebuilt stair WLD-17 route-12 flight0 part19",
+    "Rebuilt stair WLD-17 route-12 flight0 part20",
+    "Rebuilt stair WLD-17 route-12 flight0 part21",
+    "Rebuilt stair WLD-17 route-12 flight0 part22",
+    "Authored stair end WLD-17 route-11 1 corner-bridge region0",
+    "Authored stair end WLD-17 route-12 1 corner-bridge region0",
+    "East stair hub bearing ledge 0 region0",
+    "Bay landing WLD-17 route-02 2 region0",
+    "Bay landing WLD-17 route-02 2 region1",
+    "Bay landing WLD-17 route-03 1 region0",
+    "Bay landing WLD-17 route-03 2 region0"
+  ],
+  "stair_components": [
+    "179:route-11 landing0",
+    "180:route-11 landing2",
+    "204:route-12 landing0",
+    "205:route-12 landing2",
+    "Rebuilt stair WLD-17 route-11 flight0 part0",
+    "Rebuilt stair WLD-17 route-11 flight0 part1",
+    "Rebuilt stair WLD-17 route-11 flight0 part2",
+    "Rebuilt stair WLD-17 route-11 flight0 part3",
+    "Rebuilt stair WLD-17 route-11 flight0 part4",
+    "Rebuilt stair WLD-17 route-11 flight0 part5",
+    "Rebuilt stair WLD-17 route-11 flight0 part6",
+    "Rebuilt stair WLD-17 route-11 flight0 part7",
+    "Rebuilt stair WLD-17 route-11 flight0 part8",
+    "Rebuilt stair WLD-17 route-11 flight0 part9",
+    "Rebuilt stair WLD-17 route-11 flight0 part10",
+    "Rebuilt stair WLD-17 route-11 flight0 part11",
+    "Rebuilt stair WLD-17 route-11 flight0 part12",
+    "Rebuilt stair WLD-17 route-11 flight0 part13",
+    "Rebuilt stair WLD-17 route-11 flight0 part14",
+    "Rebuilt stair WLD-17 route-11 flight0 part15",
+    "Rebuilt stair WLD-17 route-11 flight0 part16",
+    "Rebuilt stair WLD-17 route-11 flight0 part17",
+    "Rebuilt stair WLD-17 route-11 flight0 part18",
+    "Rebuilt stair WLD-17 route-11 flight0 part19",
+    "Rebuilt stair WLD-17 route-11 flight0 part20",
+    "Rebuilt stair WLD-17 route-11 flight0 part21",
+    "Rebuilt stair WLD-17 route-11 flight0 part22",
+    "Rebuilt stair WLD-17 route-12 flight0 part0",
+    "Rebuilt stair WLD-17 route-12 flight0 part1",
+    "Rebuilt stair WLD-17 route-12 flight0 part2",
+    "Rebuilt stair WLD-17 route-12 flight0 part3",
+    "Rebuilt stair WLD-17 route-12 flight0 part4",
+    "Rebuilt stair WLD-17 route-12 flight0 part5",
+    "Rebuilt stair WLD-17 route-12 flight0 part6",
+    "Rebuilt stair WLD-17 route-12 flight0 part7",
+    "Rebuilt stair WLD-17 route-12 flight0 part8",
+    "Rebuilt stair WLD-17 route-12 flight0 part9",
+    "Rebuilt stair WLD-17 route-12 flight0 part10",
+    "Rebuilt stair WLD-17 route-12 flight0 part11",
+    "Rebuilt stair WLD-17 route-12 flight0 part12",
+    "Rebuilt stair WLD-17 route-12 flight0 part13",
+    "Rebuilt stair WLD-17 route-12 flight0 part14",
+    "Rebuilt stair WLD-17 route-12 flight0 part15",
+    "Rebuilt stair WLD-17 route-12 flight0 part16",
+    "Rebuilt stair WLD-17 route-12 flight0 part17",
+    "Rebuilt stair WLD-17 route-12 flight0 part18",
+    "Rebuilt stair WLD-17 route-12 flight0 part19",
+    "Rebuilt stair WLD-17 route-12 flight0 part20",
+    "Rebuilt stair WLD-17 route-12 flight0 part21",
+    "Rebuilt stair WLD-17 route-12 flight0 part22",
+    "Authored stair end WLD-17 route-11 1 corner-bridge region0",
+    "Authored stair end WLD-17 route-12 1 corner-bridge region0",
+    "Battery route-02 cast nosing 01 region0",
+    "Battery route-02 cast nosing 02 region0",
+    "Battery route-02 cast nosing 03 region0",
+    "Battery route-02 cast nosing 04 region0",
+    "Battery route-02 cast nosing 05 region0",
+    "Battery route-02 cast nosing 06 region0",
+    "Battery route-02 cast nosing 07 region0",
+    "Battery route-02 cast nosing 08 region0",
+    "Battery route-02 cast nosing 09 region0",
+    "Battery route-02 cast nosing 10 region0",
+    "Battery route-02 cast nosing 11 region0",
+    "Battery route-02 cast nosing 12 region0",
+    "Battery route-03 cast nosing 01 region0",
+    "Battery route-03 cast nosing 02 region0",
+    "Battery route-03 cast nosing 03 region0",
+    "Battery route-03 cast nosing 04 region0",
+    "Battery route-03 cast nosing 05 region0",
+    "Battery route-03 cast nosing 06 region0",
+    "Battery route-03 cast nosing 07 region0",
+    "Battery route-03 cast nosing 08 region0",
+    "Battery route-03 cast nosing 09 region0",
+    "Battery route-03 cast nosing 10 region0",
+    "Battery route-03 cast nosing 11 region0",
+    "Battery route-03 cast nosing 12 region0",
+    "Battery route-10 cast nosing 01 region0",
+    "Battery route-10 cast nosing 02 region0",
+    "Battery route-10 cast nosing 03 region0",
+    "Battery route-10 cast nosing 04 region0",
+    "Battery route-10 cast nosing 05 region0",
+    "Battery route-10 cast nosing 06 region0",
+    "Battery route-10 cast nosing 07 region0",
+    "Battery route-10 cast nosing 08 region0",
+    "Battery route-10 cast nosing 09 region0",
+    "Battery route-10 cast nosing 10 region0",
+    "Battery route-10 cast nosing 11 region0",
+    "Battery route-10 cast nosing 12 region0",
+    "Battery route-10 cast nosing 13 region0",
+    "Battery route-10 cast nosing 14 region0",
+    "Battery route-10 cast nosing 15 region0",
+    "Battery route-10 cast nosing 16 region0",
+    "Battery route-10 cast nosing 17 region0"
+  ],
+  "glb_sha256": "70582d39f9315c83aa57f54febe0d516d7539e4db14cd8f1b833c946ca557076",
+  "physics_sha256": "aea82b0af7a52985f7bca963cd0ef82165da40a2b96ec9b1a743de93eae0502d",
+  "arrival_bearing": {
+    "link": "route-01",
+    "anchor": [
+      32.0,
+      0,
+      88.0
+    ],
+    "route_width": 1.5,
+    "extension_metres": 0.35,
+    "contact_owner": "route-01 support 0",
+    "source_bottom_y": -0.11999999731779099,
+    "top_y": 0,
+    "original_polygon": [
+      [
+        31.25,
+        88.35
+      ],
+      [
+        31.25,
+        88.0
+      ],
+      [
+        32.75,
+        88.0
+      ],
+      [
+        32.75,
+        88.35
+      ]
+    ],
+    "actual_polygons": [
+      [
+        [
+          31.25,
+          88.35
+        ],
+        [
+          31.25,
+          88.0
+        ],
+        [
+          32.75,
+          88.0
+        ],
+        [
+          32.75,
+          88.35
+        ]
+      ]
+    ],
+    "coplanar_receivers": [],
+    "new_parts": [
+      "Arrival end bearing WLD-17 0"
+    ],
+    "triangles": 12,
+    "terrain_and_basement_holes": "EXACT_RETAINED_NATIVE_RECORDS_NO_WORLD_EDITS",
+    "limitation": "Small path-end cantilever attached along original full-depth end plane; overall terrain/foundation/art/canonical-van/runtime acceptance remains separate"
+  },
+  "new_parts": [
+    "Arrival end bearing WLD-17 0"
+  ],
+  "new_triangles": 12,
+  "removed_source_meshes": [],
+  "removed_native_parts": [],
+  "generator_sha256": "b9a9c76d30b041f406e9eba87b504b66a069e091b8100233f0743b422397f354",
+  "blend_sha256": "c7d8d98b3aa0b3883cbd7b62868f19032f4319456870951175d4f81b955db4b3",
+  "access_route_changes": [
+    {
+      "site": "WLD-17",
+      "link": "route-04",
+      "rooms": [
+        "yard",
+        "west"
+      ],
+      "before": [
+        [
+          34.0,
+          4,
+          44.0
+        ],
+        [
+          16.0,
+          4,
+          33.0
+        ]
+      ],
+      "after": [
+        [
+          31.5,
+          4.0,
+          42.5
+        ],
+        [
+          16.0,
+          4.0,
+          33.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-17",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-17/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-17/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.blend",
+        "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+        "glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97"
+      }
+    },
+    {
+      "site": "WLD-17",
+      "link": "route-05",
+      "rooms": [
+        "yard",
+        "east"
+      ],
+      "before": [
+        [
+          34.0,
+          4,
+          44.0
+        ],
+        [
+          52.0,
+          4,
+          33.0
+        ]
+      ],
+      "after": [
+        [
+          36.5,
+          4.0,
+          42.5
+        ],
+        [
+          52.0,
+          4.0,
+          33.0
+        ]
+      ],
+      "width": 1.5,
+      "threshold": null,
+      "source": {
+        "id": "WLD-17",
+        "construction": "development/levels/rebuild/arrival-bearing-pass/wld-17/construction.json",
+        "layout": "development/levels/rebuild/arrival-bearing-pass/wld-17/authored-layout.json",
+        "glb": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.glb",
+        "native": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.hcs2",
+        "blend": "development/levels/rebuild/arrival-bearing-pass/wld-17/supported-arrival.blend",
+        "native_sha256": "ed9569eb45bb155244f065446c2db0d40401980218d6afb47bbdfe47c825796c",
+        "glb_sha256": "ba8c6a04d0ac39459d8dcc0edd536af70e3ce7133e4eb446eb1675a799abce97"
+      }
+    }
+  ],
+  "geometry_unchanged": true,
+  "scope": "Upper casemate and courtyard entries, retained lower rooms and power",
+  "saved_world": "development/levels/rebuild/seacliff-receiving-pass/worlds/wld-17/terrain-world",
+  "saved_world_sha256": "a24378fd21f29379836e4eee38c86d51573e12ec8f895154d8b094bea9a3d0d9",
+  "retired_objects": [
+    "Arrival end bearing WLD-17 0",
+    "Bay landing WLD-17 route-02 2 region0",
+    "Bay landing WLD-17 route-02 2 region1",
+    "Bay landing WLD-17 route-03 1 region0",
+    "Bay landing WLD-17 route-03 2 region0",
+    "East stair hub bearing ledge 0 region0",
+    "Flat route shell Wall gallery N",
+    "Flat route shell Wall gallery N.001",
+    "Floor director",
+    "Floor director.001",
+    "Floor director.002",
+    "Floor director.003",
+    "Floor director.004",
+    "Floor director.005",
+    "Floor director.006",
+    "Floor director.007",
+    "Header gallery N",
+    "Saved editor stair bench terrain WLD-17",
+    "route-01 support 0",
+    "route-02 flight0 step1",
+    "route-02 flight0 step10",
+    "route-02 flight0 step11",
+    "route-02 flight0 step12",
+    "route-02 flight0 step2",
+    "route-02 flight0 step3",
+    "route-02 flight0 step4",
+    "route-02 flight0 step5",
+    "route-02 flight0 step6",
+    "route-02 flight0 step7",
+    "route-02 flight0 step8",
+    "route-02 flight0 step9",
+    "route-02 landing0",
+    "route-03 flight0 step1",
+    "route-03 flight0 step10",
+    "route-03 flight0 step11",
+    "route-03 flight0 step12",
+    "route-03 flight0 step2",
+    "route-03 flight0 step3",
+    "route-03 flight0 step4",
+    "route-03 flight0 step5",
+    "route-03 flight0 step6",
+    "route-03 flight0 step7",
+    "route-03 flight0 step8",
+    "route-03 flight0 step9",
+    "route-03 landing0",
+    "route-04 support 0",
+    "route-05 support 0",
+    "route-10 flight0 step1",
+    "route-10 flight0 step10",
+    "route-10 flight0 step11",
+    "route-10 flight0 step12",
+    "route-10 flight0 step13",
+    "route-10 flight0 step14",
+    "route-10 flight0 step15",
+    "route-10 flight0 step16",
+    "route-10 flight0 step17",
+    "route-10 flight0 step2",
+    "route-10 flight0 step3",
+    "route-10 flight0 step4",
+    "route-10 flight0 step5",
+    "route-10 flight0 step6",
+    "route-10 flight0 step7",
+    "route-10 flight0 step8",
+    "route-10 flight0 step9",
+    "route-10 landing0"
+  ],
+  "reconstructed_components": [
+    "WLD-17 saved ground",
+    "Battery intermediate cast concrete switchback court region0",
+    "Battery gallery passage north face WLD-17-gallery-north-stair preceding pier region0",
+    "Battery gallery passage north face WLD-17-gallery-north-stair lintel region0",
+    "Battery WLD-17-gallery-north-stair fitted frame",
+    "Battery gallery passage north face end pier region0",
+    "Battery transfer beam 1 over lower casemate walls region0",
+    "Battery transfer beam 2 over lower casemate walls region0",
+    "Battery lower gallery access and turning slab region0",
+    "Battery director stair base deck region0",
+    "Battery west return region0",
+    "Battery north side region0",
+    "Battery southeast return region0",
+    "Battery flight south side region0",
+    "Battery director continuous deck and rectangular stair well region0",
+    "Battery route-02 cast nosing 01 region0",
+    "Battery route-02 cast nosing 02 region0",
+    "Battery route-02 cast nosing 03 region0",
+    "Battery route-02 cast nosing 04 region0",
+    "Battery route-02 cast nosing 05 region0",
+    "Battery route-02 cast nosing 06 region0",
+    "Battery route-02 cast nosing 07 region0",
+    "Battery route-02 cast nosing 08 region0",
+    "Battery route-02 cast nosing 09 region0",
+    "Battery route-02 cast nosing 10 region0",
+    "Battery route-02 cast nosing 11 region0",
+    "Battery route-02 cast nosing 12 region0",
+    "Battery route-02 continuous founded stair spine region0",
+    "Battery route-02 west anchored parapet region0",
+    "Battery route-02 east anchored parapet region0",
+    "Battery route-03 cast nosing 01 region0",
+    "Battery route-03 cast nosing 02 region0",
+    "Battery route-03 cast nosing 03 region0",
+    "Battery route-03 cast nosing 04 region0",
+    "Battery route-03 cast nosing 05 region0",
+    "Battery route-03 cast nosing 06 region0",
+    "Battery route-03 cast nosing 07 region0",
+    "Battery route-03 cast nosing 08 region0",
+    "Battery route-03 cast nosing 09 region0",
+    "Battery route-03 cast nosing 10 region0",
+    "Battery route-03 cast nosing 11 region0",
+    "Battery route-03 cast nosing 12 region0",
+    "Battery route-03 continuous founded stair spine region0",
+    "Battery route-03 west anchored parapet region0",
+    "Battery route-03 east anchored parapet region0",
+    "Battery route-10 cast nosing 01 region0",
+    "Battery route-10 cast nosing 02 region0",
+    "Battery route-10 cast nosing 03 region0",
+    "Battery route-10 cast nosing 04 region0",
+    "Battery route-10 cast nosing 05 region0",
+    "Battery route-10 cast nosing 06 region0",
+    "Battery route-10 cast nosing 07 region0",
+    "Battery route-10 cast nosing 08 region0",
+    "Battery route-10 cast nosing 09 region0",
+    "Battery route-10 cast nosing 10 region0",
+    "Battery route-10 cast nosing 11 region0",
+    "Battery route-10 cast nosing 12 region0",
+    "Battery route-10 cast nosing 13 region0",
+    "Battery route-10 cast nosing 14 region0",
+    "Battery route-10 cast nosing 15 region0",
+    "Battery route-10 cast nosing 16 region0",
+    "Battery route-10 cast nosing 17 region0",
+    "Battery director well north guard 1",
+    "Battery director well north guard 2",
+    "Battery director well north guard 3",
+    "Battery director well north guard 4",
+    "Battery director well south guard 1",
+    "Battery director well south guard 2",
+    "Battery director well south guard 3",
+    "Battery director well south guard 4",
+    "Battery director well lower end guard 1"
+  ],
+  "exact_retained_native_parts": 192,
+  "retained_glb_resources": {
+    "original_binary_bytes_preserved": 2571568,
+    "original_static_resources_preserved": true,
+    "replaced_scene_nodes": [
+      29,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      156,
+      161,
+      162,
+      163,
+      164,
+      165,
+      166,
+      167,
+      168,
+      169,
+      170,
+      171,
+      172,
+      173,
+      174,
+      175,
+      176,
+      177,
+      178,
+      311,
+      312,
+      313,
+      314,
+      315,
+      316,
+      327,
+      328,
+      347
+    ]
+  },
+  "footing_contacts": [
+    {
+      "part": "Battery intermediate cast concrete switchback court region0",
+      "bounds": [
+        30.75,
+        56,
+        41.25,
+        58
+      ],
+      "footing_y": 1.34,
+      "floor_y": 2,
+      "soil_samples": [
+        [
+          30.8,
+          56.05,
+          1.65
+        ],
+        [
+          30.8,
+          57.0,
+          1.65
+        ],
+        [
+          30.8,
+          57.95,
+          1.65
+        ],
+        [
+          36.0,
+          56.05,
+          1.65
+        ],
+        [
+          36.0,
+          57.0,
+          1.65
+        ],
+        [
+          36.0,
+          57.95,
+          1.65
+        ],
+        [
+          41.2,
+          56.05,
+          1.65
+        ],
+        [
+          41.2,
+          57.0,
+          1.65
+        ],
+        [
+          41.2,
+          57.95,
+          1.65
+        ]
+      ]
+    },
+    {
+      "part": "Battery route-02 continuous founded stair spine region0",
+      "soil_samples": [
+        [
+          31.37,
+          58.35,
+          1.580002
+        ],
+        [
+          31.37,
+          63.0,
+          0.650002
+        ],
+        [
+          31.37,
+          67.65,
+          0.008751
+        ],
+        [
+          32,
+          58.35,
+          1.580002
+        ],
+        [
+          32,
+          63.0,
+          0.650002
+        ],
+        [
+          32,
+          67.65,
+          0.008751
+        ],
+        [
+          32.63,
+          58.35,
+          1.580002
+        ],
+        [
+          32.63,
+          63.0,
+          0.65
+        ],
+        [
+          32.63,
+          67.65,
+          0.008751
+        ]
+      ],
+      "lower_nosing": [
+        32,
+        0,
+        68
+      ],
+      "upper_nosing": [
+        32,
+        2,
+        58
+      ]
+    },
+    {
+      "part": "Battery route-03 continuous founded stair spine region0",
+      "soil_samples": [
+        [
+          39.37,
+          48.35,
+          3.851252
+        ],
+        [
+          39.37,
+          52.0,
+          2.65
+        ],
+        [
+          39.37,
+          55.65,
+          1.737499
+        ],
+        [
+          40,
+          48.35,
+          3.85125
+        ],
+        [
+          40,
+          52.0,
+          2.65
+        ],
+        [
+          40,
+          55.65,
+          1.737499
+        ],
+        [
+          40.63,
+          48.35,
+          3.851252
+        ],
+        [
+          40.63,
+          52.0,
+          2.65
+        ],
+        [
+          40.63,
+          55.65,
+          1.737499
+        ]
+      ],
+      "lower_nosing": [
+        40,
+        2,
+        56
+      ],
+      "upper_nosing": [
+        40,
+        4,
+        48
+      ]
+    }
+  ],
+  "physical_stair_cells": {
+    "route-02": [
+      [
+        32,
+        0,
+        68
+      ],
+      [
+        32,
+        2,
+        58
+      ],
+      12
+    ],
+    "route-03": [
+      [
+        40,
+        2,
+        56
+      ],
+      [
+        40,
+        4,
+        48
+      ],
+      12
+    ],
+    "route-10": [
+      [
+        31.1,
+        4,
+        22
+      ],
+      [
+        38,
+        7,
+        22
+      ],
+      17
+    ]
+  },
+  "derived_source_routes": {
+    "route-01": {
+      "id": "route-01",
+      "a": "stage",
+      "b": "entry",
+      "width": 1.5,
+      "kind": "level",
+      "points": [
+        [
+          32.0,
+          0,
+          88.0
+        ],
+        [
+          32.0,
+          0,
+          75.0
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review."
+    },
+    "route-02": {
+      "id": "route-02",
+      "a": "entry",
+      "b": "approach",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          32,
+          0,
+          72
+        ],
+        [
+          32,
+          0,
+          68
+        ],
+        [
+          32,
+          2,
+          58
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 2
+    },
+    "route-03": {
+      "id": "route-03",
+      "a": "approach",
+      "b": "yard",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          32,
+          2,
+          58
+        ],
+        [
+          40,
+          2,
+          56
+        ],
+        [
+          40,
+          4,
+          48
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 2
+    },
+    "route-10": {
+      "id": "route-10",
+      "a": "gallery",
+      "b": "director",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          30,
+          4,
+          30
+        ],
+        [
+          30,
+          4,
+          22
+        ],
+        [
+          38,
+          7,
+          22
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 3
+    },
+    "route-11": {
+      "id": "route-11",
+      "a": "magazine",
+      "b": "barracks",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          12,
+          4,
+          22
+        ],
+        [
+          12,
+          4,
+          16
+        ],
+        [
+          12.8,
+          4,
+          16.0
+        ],
+        [
+          20,
+          0,
+          16
+        ],
+        [
+          20,
+          0,
+          22
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 4
+    },
+    "route-12": {
+      "id": "route-12",
+      "a": "service",
+      "b": "plant",
+      "width": 1.5,
+      "kind": "stairs",
+      "points": [
+        [
+          48,
+          4,
+          22
+        ],
+        [
+          48,
+          4,
+          16
+        ],
+        [
+          48.8,
+          4,
+          16.0
+        ],
+        [
+          56,
+          0,
+          16
+        ],
+        [
+          56,
+          0,
+          22
+        ]
+      ],
+      "note": "Authored circulation reservation; actual wall apertures, support, swept clearance and sightlines require review.",
+      "construction": "Reserve stair flights, clear landings, floor openings and guards; amber sloped mass is not finished stairs.",
+      "rise_m": 4
+    }
+  },
+  "previous_construction": "development/levels/rebuild/seacliff-lower-partitions-pass/wld-17/construction.json",
+  "service_installation": {
+    "path": "development/levels/rebuild/seacliff-power-pass/wld-17/power.json",
+    "bytes": 24178,
+    "sha256": "bf327eb0419fa3f5bc47526520a04ad4e0a1276d3d0c5cb1b4867b01e3fd58b6"
+  },
+  "lower_partitions": {
+    "path": "development/levels/rebuild/seacliff-lower-partitions-pass/wld-17/partitions.json",
+    "bytes": 4876,
+    "sha256": "0c5e41728c24481ea0a5b112e219ce951878db735d1f2b0b6b16fa8a1bdcb7d3"
+  },
+  "upper_partitions": {
+    "path": "development/levels/rebuild/seacliff-upper-partitions-pass/wld-17/partitions.json",
+    "bytes": 5197,
+    "sha256": "f8fe3eafbf20a421c31b5a67724ab6ec694423b58d696269bab6fa0713c227a5"
+  }
+}

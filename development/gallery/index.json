@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11307,
+  "count": 11311,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -105214,6 +105214,46 @@
       "height": 790,
       "bytes": 677404,
       "sha256": "39a965e75452003d95d28340807fbd3baf8aec5dd4c85c9fe035bb991041dfa6"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-upper-partitions-batch/seacliff-opengl-west-courtyard-closed.png",
+      "url": "development/levels/rebuild/captures/seacliff-upper-partitions-batch/seacliff-opengl-west-courtyard-closed.png",
+      "title": "Seacliff opengl west courtyard closed",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 365239,
+      "sha256": "c20d1c68a0e944468a4430dcc6961c1185f68fdef9c035249118a106dab7750a"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-upper-partitions-batch/seacliff-opengl-west-courtyard-open.png",
+      "url": "development/levels/rebuild/captures/seacliff-upper-partitions-batch/seacliff-opengl-west-courtyard-open.png",
+      "title": "Seacliff opengl west courtyard open",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 327963,
+      "sha256": "3ac011184be2f3b39e914644b6789ded2d11861fe2e9b88673efbb2a279de5df"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-upper-partitions-batch/seacliff-software-west-courtyard-closed.png",
+      "url": "development/levels/rebuild/captures/seacliff-upper-partitions-batch/seacliff-software-west-courtyard-closed.png",
+      "title": "Seacliff software west courtyard closed",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 364321,
+      "sha256": "55e8a44ae5f604527927b6c0af8be87349cc0b7ed1a8c4fd8bd4254051b355d4"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-upper-partitions-batch/seacliff-software-west-courtyard-open.png",
+      "url": "development/levels/rebuild/captures/seacliff-upper-partitions-batch/seacliff-software-west-courtyard-open.png",
+      "title": "Seacliff software west courtyard open",
+      "kind": "Runtime capture",
+      "width": 840,
+      "height": 560,
+      "bytes": 327227,
+      "sha256": "93e68b592dec294df996963285f683a65a247b00c65857a80d7664eb309a9a8b"
     },
     {
       "path": "development/levels/rebuild/captures/service-ground-bay-batch/college-cellar-foot-standing.png",

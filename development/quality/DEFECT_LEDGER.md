@@ -8634,6 +8634,34 @@ Evidence and verification: development/levels/rebuild/seacliff-lower-partitions-
 
 Older-map obligation: Survey the actual room sequence and wall cavity behind each apparent diagonal opening before binding mission portals.
 
+### DEV-611 — Upper Battery casemates lacked operable doors at their retained entrances
+
+**Status:** CORRECTED_WITH_MEASURED_WALL_RUNS_AND_FITTED_DOORS · **Affected:** Seacliff courtyard, casemates, gallery, magazine and service room
+
+Old upper wall fragments and headers left six bare openings. Courtyard travel crossed them diagonally.
+
+Cause / uncertainty: Physical openings were initially used as construction reservations.
+
+Fix / next action: Rebuild all four shared wall runs. Seat six fitted frames on the existing slab and saved courtyard grade, and square the guides before turning inside adjoining rooms.
+
+Evidence and verification: development/levels/rebuild/seacliff-upper-partitions-pass/checkpoint.json
+
+Older-map obligation: Measure both bearing surfaces and door swing clearance before replacing an existing entrance.
+
+### DEV-612 — Battery staged mission used dock terrain for the raised van room anchor
+
+**Status:** CORRECTED_IN_CONNECTED_NATIVE_CASE · **Affected:** Seacliff van and staged host startup
+
+The connected fifteen-owner graph failed the map validity check even though the existing loaded geometry carried the cargo deck.
+
+Cause / uncertainty: The staged room used dock terrain elevation for the cargo spawn.
+
+Fix / next action: Resolve room and spawn elevation from the canonical van floor, then verify a real TCP case start with four peers and supported forecourt departure.
+
+Evidence and verification: development/levels/rebuild/seacliff-upper-partitions-pass/checkpoint.json
+
+Older-map obligation: Check the actual body spawn against the van deck datum before interpreting a map validity failure as a missing connection.
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
