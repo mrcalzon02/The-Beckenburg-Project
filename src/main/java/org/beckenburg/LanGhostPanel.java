@@ -21,6 +21,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     private final javax.swing.Timer timer;
     private final javax.swing.Timer renderTimer;
     private final LanVisualMotion visualMotion=new LanVisualMotion();
+    private String lastDoorState,lastWindowState;
     private long lastVisualFrame=System.nanoTime();
     private LanVisualMotion.Pose lastRenderedPose;
     private final LanAudio audio=new LanAudio();
@@ -86,6 +87,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 audio.setHearingGain(0);
                 safeAreas=new SafeAreaBarrier.Receiver();
                 visualMotion.reset();lastRenderedPose=null;lastVisualFrame=System.nanoTime();
+                lastDoorState=lastWindowState=null;
             }else if(p.get(0).equals("SAFEBEGIN")||p.get(0).equals("SAFEAREA")||p.get(0).equals("SAFEEND")){
                 safeAreas.accept(map,p);visualMotion.invalidateCollision();
             }else if(p.size()==5&&p.get(0).equals("DEVICE_SOUND")){
@@ -99,9 +101,17 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             }else if(p.size()==3&&p.get(0).equals("LIGHTS")){
                 lights.acceptSnapshot(p.get(1));lights.setBreaker(LanProtocol.integer(p.get(2),0,1)==1);
             }else if(p.size()==2&&p.get(0).equals("DOORS")){
-                map.applyDoorSnapshot(p.get(1));visualMotion.invalidateCollision();
+                if(!p.get(1).equals(lastDoorState)){
+                    map.applyDoorSnapshot(p.get(1));
+                    lastDoorState=p.get(1);
+                    visualMotion.invalidateCollision();
+                }
             }else if(p.size()==2&&p.get(0).equals("WINDOWS")){
-                map.applyWindowSnapshot(p.get(1));visualMotion.invalidateCollision();
+                if(!p.get(1).equals(lastWindowState)){
+                    map.applyWindowSnapshot(p.get(1));
+                    lastWindowState=p.get(1);
+                    visualMotion.invalidateCollision();
+                }
             }else if(p.size()==7&&p.get(0).equals("GPOSE")){
                 int next=LanProtocol.integer(p.get(1),0,HouseMap.EXTRACTION_ROOM-1);
                 double x=LanProtocol.integer(p.get(2),0,map.width()*1000)/1000.0;

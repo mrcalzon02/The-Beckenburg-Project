@@ -39,6 +39,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private final CrouchCamera crouchCamera=new CrouchCamera();
     private long lastVisualFrame=System.nanoTime();
     private final LanVisualMotion visualMotion=new LanVisualMotion();
+    private String lastDoorState,lastWindowState;
     private final Set<Integer> keys=new HashSet<>();
     private String feedback="Awaiting host world snapshot";
     private int lastTurn=-1,lastPitch=Integer.MIN_VALUE,tick,visibleGhost=-1,health=100,sanity=100,evidence;
@@ -377,6 +378,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 map.configureHiding(renderer.hidingDensity);
                 if(!map.level().revision().equals(p.get(2)))throw new IllegalArgumentException("incompatible level revision");
                 crouched=false;crouchCamera.reset(false);lastVisualFrame=System.nanoTime();visualMotion.reset();
+                lastDoorState=lastWindowState=null;
                 renderer.eyeHeight=map.floorY(HouseMap.EXTRACTION_ROOM)+crouchCamera.eye();
                 rackSnapshot.reset();
                 buildingAudio.setMap(map);audio.clearFixtures();
@@ -574,7 +576,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     LanProtocol.integer(p.get(3),0,99999999),
                     LanProtocol.integer(p.get(4),0,99999999));
             }else if(p.size()==2&&p.get(0).equals("DOORS")){
-                map.applyDoorSnapshot(p.get(1));visualMotion.invalidateCollision();
+                if(!p.get(1).equals(lastDoorState)){
+                    map.applyDoorSnapshot(p.get(1));
+                    lastDoorState=p.get(1);
+                    visualMotion.invalidateCollision();
+                }
             }else if(p.size()==7&&p.get(0).equals("STATE")){
                 visibleGhost=LanProtocol.integer(p.get(3),-1,HouseMap.ROOM_COUNT-1);
             }else if(p.size()==8&&p.get(0).equals("PROGRESS")){
@@ -957,9 +963,17 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                         new LanPortableLights.Light(owner,tool,room,xx,yy,zz,tier,on));
                 }else throw new IllegalArgumentException("invalid portable light packet");
             }else if(p.size()==2&&p.get(0).equals("WINDOWS")){
-                map.applyWindowSnapshot(p.get(1));visualMotion.invalidateCollision();
+                if(!p.get(1).equals(lastWindowState)){
+                    map.applyWindowSnapshot(p.get(1));
+                    lastWindowState=p.get(1);
+                    visualMotion.invalidateCollision();
+                }
             }else if(p.size()==2&&p.get(0).equals("VANDOOR")){
-                map.van().setCargoDoorClosed(LanProtocol.integer(p.get(1),0,1)==1);visualMotion.invalidateCollision();
+                boolean closed=LanProtocol.integer(p.get(1),0,1)==1;
+                if(map.van().cargoDoorClosed()!=closed){
+                    map.van().setCargoDoorClosed(closed);
+                    visualMotion.invalidateCollision();
+                }
                 feedback=map.van().cargoDoorClosed()
                     ?"VAN CARGO DOOR CLOSED":"VAN CARGO DOOR OPEN";
             }else if(frame.startsWith("BOOK|")){
