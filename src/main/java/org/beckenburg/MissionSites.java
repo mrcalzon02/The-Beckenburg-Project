@@ -46,6 +46,7 @@ public final class MissionSites {
         // USER is an authoring slot, not a campaign chapter or a built-in site.
         // Labeling a lobby must work before a user project has been selected.
         if("USER".equals(id))return "User authored level";
+        if("SEACLIFF".equals(id))return SeacliffNativeLevel.TITLE;
         return byId(id.equals("HOLLOW_CREEK")?"WLD-02":id).title();
     }
 }

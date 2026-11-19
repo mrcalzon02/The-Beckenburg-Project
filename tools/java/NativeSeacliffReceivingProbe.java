@@ -4,13 +4,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import javax.imageio.ImageIO;
-import org.beckenburg.LevelDefinition.Dock;
 import org.beckenburg.LevelDefinition.Portal;
-import org.beckenburg.LevelDefinition.Room;
 import org.beckenburg.LevelDefinition.Socket;
 import org.beckenburg.LevelDefinition.Vec;
 
@@ -313,65 +310,27 @@ public final class NativeSeacliffReceivingProbe {
     private static void review(String[] args)throws Exception{
         var rows=Files.readAllLines(Path.of(args[0])).stream().map(line->line.split("\t",-1)).toList();
         var source=rows.get(0);
-        var dock=rows.get(1);
-        var f=rows.get(2);
-        var portal=new Portal(Integer.parseInt(f[1]),0,1,d(f,3),d(f,4),d(f,5),d(f,6),true,"door",1);
-        var door=new NativeInvestigationDoor.Spec(f[2],"gallery","director-stair",portal,d(f,7),d(f,8),d(f,9),
-            2,-1,1,f[10]);
-        var rooms=new Room[HouseMap.ROOM_COUNT];
-        var spaces=new ArrayList<NativeInvestigationScene.Space>();
-        var stairs=new HashSet<String>();
-        var sockets=new ArrayList<Socket>();
+        SeacliffNativeLevel.Source packet;
+        try(var manifest=Files.newInputStream(Path.of(args[0]));
+            var glb=Files.newInputStream(Path.of(source[1]));
+            var hcs=Files.newInputStream(Path.of(source[3]))){
+            packet=SeacliffNativeLevel.read(manifest,glb,hcs);
+        }
+        var level=packet.definition();
+        var scene=packet.scene();
+        var doors=packet.doors();
+        var portal=doors.get(0).portal();
+        var staging=level.dock();
+        var rooms=level.rooms();
         var routes=new LinkedHashMap<String,List<Vec>>();
         var guides=new LinkedHashMap<String,List<Vec>>();
-        var fitted=new ArrayList<String[]>();
-        var transitions=new ArrayList<Portal>();
-        for(var row:rows.subList(3,rows.size()))switch(row[0]){
-            case "SPACE" -> {
-                var space=new NativeInvestigationScene.Space(row[1],Integer.parseInt(row[2]),d(row,3),d(row,4),d(row,5),
-                    d(row,6),d(row,7),d(row,8),Boolean.parseBoolean(row[9]),true);
-                spaces.add(space);
-                if(row.length>10)rooms[space.owner()]=new Room(space.owner(),space.id(),space.x0(),space.z0(),space.x1(),
-                    space.z1(),space.floor(),space.height(),space.outside()?"earth":"stone",
-                    space.outside()?"exterior":"masonry",point(row,10));
-            }
-            case "RITUAL" -> sockets.add(new Socket("battery-ritual-"+row[1],"ritual",Integer.parseInt(row[2]),
-                d(row,3),d(row,4),d(row,5),0,row[1]));
-            case "TREAD" -> stairs.add(row[1]);
-            case "SOCKET" -> sockets.add(new Socket(row[1],row[2],Integer.parseInt(row[3]),
-                d(row,4),d(row,5),d(row,6),d(row,7),row[8]));
-            case "POINT" -> routes.computeIfAbsent(row[1],key->new ArrayList<>()).add(point(row,2));
-            case "BAY" -> fitted.add(row);
-            case "TRANSITION" -> transitions.add(new Portal(Integer.parseInt(row[1]),Integer.parseInt(row[3]),
-                Integer.parseInt(row[4]),d(row,5),d(row,6),d(row,7),d(row,8),row[9].equals("z"),row[10],1));
-            case "LINK" -> guides.computeIfAbsent(row[1],key->new ArrayList<>()).add(point(row,2));
-            default -> throw new IllegalArgumentException(row[0]);
-        };
-        var doors=new ArrayList<NativeInvestigationDoor.Spec>();
-        doors.add(door);
-        for(var row:fitted){
-            int a=spaces.stream().filter(space->space.id().equals(row[3])).findFirst().orElseThrow().owner();
-            int b=spaces.stream().filter(space->space.id().equals(row[4])).findFirst().orElseThrow().owner();
-            var p=new Portal(Integer.parseInt(row[1]),a,b,d(row,5),d(row,6),d(row,7),d(row,8),
-                row[9].equals("z"),"door",1);
-            doors.add(new NativeInvestigationDoor.Spec(row[2],row[3],row[4],p,d(row,10),d(row,11),d(row,12),
-                1,Integer.parseInt(row[13]),Integer.parseInt(row[14]),row[15]));
+        for(var row:rows){
+            if(row[0].equals("POINT"))routes.computeIfAbsent(row[1],key->new ArrayList<>()).add(point(row,2));
+            if(row[0].equals("LINK"))guides.computeIfAbsent(row[1],key->new ArrayList<>()).add(point(row,2));
         }
-        NativeInvestigationScene scene;
-        try(var glb=Files.newInputStream(Path.of(source[1]));var hcs=Files.newInputStream(Path.of(source[3]))){
-            scene=NativeInvestigationScene.read(glb,source[2],hcs,source[4],stairs,spaces,doors);
-        }
-        var staging=new Dock(d(dock,1),d(dock,2),d(dock,3),d(dock,4));
-        var vanDatum=staging.y()+VanStaging.FLOOR_Y;
-        rooms[14]=new Room(14,"Van",staging.x()-1.25,staging.z()-2,staging.x()+1.25,staging.z()+3,
-            vanDatum,VanStaging.INTERIOR_HEIGHT,"van","metal",new Vec(staging.x(),vanDatum,staging.z()));
-        var portals=new ArrayList<>(doors.stream().map(NativeInvestigationDoor.Spec::portal).toList());
-        portals.addAll(transitions);
-        var level=new LevelDefinition("wld-17",scene.revision(),"Seacliff Battery",List.of(rooms),portals,
-            List.of(),List.of(),List.of(),sockets,List.of(),staging,"coast");
         var host=new HouseMap(HouseMap.Site.USER,level,null,scene);
         var guest=new HouseMap(HouseMap.Site.USER,level,null,scene);
-        if(!transitions.isEmpty())check(host.valid()&&guest.valid(),"Actual physical transitions did not connect all 15 room owners");
+        if(packet.transitionCount()>0)check(host.valid()&&guest.valid(),"Actual physical transitions did not connect all 15 room owners");
         var van=host.van();
         var toe=van.world(0,VanStaging.FRONT-VanStaging.RAMP_LENGTH);
         var deck=van.world(0,VanStaging.FRONT+.45);
@@ -401,9 +360,9 @@ public final class NativeSeacliffReceivingProbe {
             "Director roof admits skylight through the guarded stair opening");
         check(RitualSites.valid(host),"Existing ritual reservations lack supported room ownership");
         for(int i=0;i<14;i++){
-            Vec spawn=rooms[i].spawn();
+            Vec spawn=rooms.get(i).spawn();
             check(host.roomAt(spawn.x(),spawn.y(),spawn.z())==i&&host.traversable(spawn.x(),spawn.y(),spawn.z()),
-                "Unsupported native room anchor "+rooms[i].name()+" at "+spawn);
+                "Unsupported native room anchor "+rooms.get(i).name()+" at "+spawn);
         }
         int closed=doorState(host,portal,false);
         guest.applyDoorSnapshot(host.doorSnapshot());
@@ -466,7 +425,7 @@ public final class NativeSeacliffReceivingProbe {
             var reverse=new ArrayList<>(entry.getValue());
             Collections.reverse(reverse);
             for(double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}){
-                boolean measuredOwnership=!transitions.isEmpty();
+                boolean measuredOwnership=packet.transitionCount()>0;
                 String inbound=walk(host,entry.getValue(),height,measuredOwnership);
                 String outbound=walk(host,reverse,height,measuredOwnership);
                 check(inbound.isEmpty(),entry.getKey()+" guide forward "+inbound);
@@ -484,7 +443,7 @@ public final class NativeSeacliffReceivingProbe {
         var report=new ArrayList<>(List.of(
             "measure\tresult",
             "scene_revision\t"+scene.revision(),
-            "native_room_volumes\t"+spaces.size(),
+            "native_room_volumes\t"+scene.spaces().size(),
             "van_to_director_west_and_east_standing_crouched\tPASS",
             "director_to_van_west_and_east_standing_crouched\tPASS",
             "canonical_ramp_receipt\tPASS",
@@ -501,7 +460,7 @@ public final class NativeSeacliffReceivingProbe {
             "changed_renderer_pixels\t"+differences));
         if(lowerCount>0)report.add("lower_fitted_doors_and_closed_former_gaps\t"+lowerCount);
         if(upperCount>0)report.add("upper_fitted_gallery_and_courtyard_doors\t"+upperCount);
-        if(!transitions.isEmpty())report.add("physical_graph_and_continuous_ownership\t15 owners, "+transitions.size()+" measured stair/ramp transitions");
+        if(packet.transitionCount()>0)report.add("physical_graph_and_continuous_ownership\t15 owners, "+packet.transitionCount()+" measured stair/ramp transitions");
         if(!guides.isEmpty())report.add("surveyed_guides_both_directions_and_postures\t"+guides.size());
         if(host.level().socket("generator",9)!=null)report.addAll(power(host,renderer,directory));
         if(List.of(args).contains("--lan")){

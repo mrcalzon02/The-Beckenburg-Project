@@ -6,22 +6,22 @@ import java.util.Objects;
 public final class SiteCatalog {
     private SiteCatalog(){}
     public enum Location {
-        HOUSE(MissionSites.title("HOUSE"),true), MANSION(MissionSites.title("MANSION"),true), PRISON(MissionSites.title("PRISON"),true),
-        ASYLUM(MissionSites.title("ASYLUM"),true), SCHOOL(MissionSites.title("SCHOOL"),true), FARMHOUSE(MissionSites.title("FARMHOUSE"),true),
-        ACADEMY(MissionSites.title("ACADEMY"),true), COLLEGE(MissionSites.title("COLLEGE"),true),
-        CHURCH(MissionSites.title("CHURCH"),true), USER("User authored level",true),
-        HOLLOW_CREEK(MissionSites.title("HOLLOW_CREEK"),false);
+        HOUSE(MissionSites.title("HOUSE")), MANSION(MissionSites.title("MANSION")), PRISON(MissionSites.title("PRISON")),
+        ASYLUM(MissionSites.title("ASYLUM")), SCHOOL(MissionSites.title("SCHOOL")), FARMHOUSE(MissionSites.title("FARMHOUSE")),
+        ACADEMY(MissionSites.title("ACADEMY")), COLLEGE(MissionSites.title("COLLEGE")),
+        CHURCH(MissionSites.title("CHURCH")), USER("User authored level"),
+        HOLLOW_CREEK(MissionSites.title("HOLLOW_CREEK"),"beckenburg.review.hollowCreek"),
+        SEACLIFF(MissionSites.title("SEACLIFF"),SeacliffNativeLevel.REVIEW_PROPERTY);
         public final String label;
-        private final boolean playable;
+        private final String reviewProperty;
         private volatile Boolean geometryValidated;
-        Location(String label,boolean playable){this.label=label;this.playable=playable;}
+        Location(String label){this(label,null);}
+        Location(String label,String reviewProperty){this.label=label;this.reviewProperty=reviewProperty;}
         /** Authoring availability is static per build. Do not rebuild a complete
          * 15-room level every time Swing paints a combo-box label. */
         public synchronized boolean playable(){
             if(this==USER)return UserLevelLibrary.activeId()!=null;
-            if(this==HOLLOW_CREEK){
-                if(!Boolean.getBoolean("beckenburg.review.hollowCreek"))return false;
-            }else if(!playable)return false;
+            if(reviewProperty!=null&&!Boolean.getBoolean(reviewProperty))return false;
             if(geometryValidated!=null)return geometryValidated;
             try{geometryValidated=LevelPlans.build(HouseMap.Site.valueOf(name())).rooms().size()==15;}
             catch(IllegalArgumentException unavailable){geometryValidated=false;}
@@ -50,7 +50,7 @@ public final class SiteCatalog {
     }
     static Location[] soloLocations(){
         return java.util.Arrays.stream(Location.values())
-            .filter(location->location!=Location.HOLLOW_CREEK||location.playable())
+            .filter(location->location.reviewProperty==null||location.playable())
             .toArray(Location[]::new);
     }
     public static void requirePlayable(Location chosen){

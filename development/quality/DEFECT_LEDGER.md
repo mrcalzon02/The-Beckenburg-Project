@@ -8662,6 +8662,26 @@ Evidence and verification: development/levels/rebuild/seacliff-upper-partitions-
 
 Older-map obligation: Check the actual body spawn against the van deck datum before interpreting a map validity failure as a missing connection.
 
+### DEV-613 Battery normal package lacked physical hiding candidates
+
+**Status** CORRECTED_WITH_THREE_SUPPORTED_NATIVE_CUPBOARDS · **Affected** Battery records and both casemates
+
+The combined hiding allowance audit failed on wld-17 after normal package integration. The approved construction packet had no fitted walk-in cupboards or hiding sockets.
+
+Seat three existing cupboard models on measured slabs. Bind shared collision and difficulty-controlled concealment. Test standing, crouched, solo and host use.
+
+Use each site's actual native source when checking pocket support. Test zero permitted cover separately. [DEV-613 evidence](../levels/rebuild/seacliff-dispatch-pass/checkpoint.json)
+
+### DEV-614 Briar House kitchen and heating fell back to the wrong acoustics after the rebuild
+
+**Status** CORRECTED_FOR_BOTH_HOUSE_SOURCES · **Affected** Rebuilt Briar House kitchen and cellar plant
+
+The kitchen acoustic check failed on the pre-Battery source and the first packaged candidate. The rebuilt source has its own identity. Its composite kitchen name includes cellar and matched the generic cellar fallback.
+
+Bind the kitchen, landing, bathroom, plant and store to their actual acoustic uses. Rerun the all-site acoustic check.
+
+Audit composite room names against their actual use when a rebuild introduces a distinct source identity. [DEV-614 evidence](../levels/rebuild/seacliff-dispatch-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

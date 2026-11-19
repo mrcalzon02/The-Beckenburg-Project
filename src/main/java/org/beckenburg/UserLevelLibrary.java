@@ -25,7 +25,7 @@ public final class UserLevelLibrary {
 
     /** Explicit architectural generation, independent of the current default dispatch. */
     static LevelDefinition templateSource(HouseMap.Site template,String generation){
-        if(template==HouseMap.Site.USER||template==HouseMap.Site.HOLLOW_CREEK)
+        if(!LevelPlans.editableTemplate(template))
             throw new IllegalArgumentException("Choose an existing standard map template");
         if(template==HouseMap.Site.HOUSE){
             if(HOUSE_ORIGINAL.equals(generation))return LevelPlans.legacyHouseSource();
@@ -128,7 +128,7 @@ public final class UserLevelLibrary {
         HouseMap.Site template;
         try{template=HouseMap.Site.valueOf(meta.getProperty("template"));}
         catch(RuntimeException invalid){throw new IllegalStateException("Bad user level source",invalid);}
-        if(template==HouseMap.Site.USER||template==HouseMap.Site.HOLLOW_CREEK)
+        if(!LevelPlans.editableTemplate(template))
             throw new IllegalStateException("User level template cannot refer to itself/native-only prototype");
         // Versionless House projects predate the rebuild. Never reinterpret their
         // authored coordinates against a later default building, or rewrite on open.

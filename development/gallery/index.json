@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11311,
+  "count": 11315,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -104984,6 +104984,46 @@
       "height": 900,
       "bytes": 705867,
       "sha256": "4043605eeff18632513436992693e7db7903e8d617e22af9f97155d36db20711"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-opengl-records-cupboard.png",
+      "url": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-opengl-records-cupboard.png",
+      "title": "Seacliff packaged opengl records cupboard",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 590984,
+      "sha256": "225a5f0d2f71113080231808028c7d9c1d1c38b1e9e8366fbe082ecb1eab7842"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-opengl-records-threshold.png",
+      "url": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-opengl-records-threshold.png",
+      "title": "Seacliff packaged opengl records threshold",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 468715,
+      "sha256": "7bdb399b7dd379ef36e1fbc819448e2f0aab0ac41a0ec2ef0f84335f6254aaca"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-records-cupboard.png",
+      "url": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-records-cupboard.png",
+      "title": "Seacliff packaged records cupboard",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 589224,
+      "sha256": "e06a3dacad3e06d399306f267383ea9ed867213a9a4e11990983e492094041fb"
+    },
+    {
+      "path": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-records-threshold.png",
+      "url": "development/levels/rebuild/captures/seacliff-dispatch-batch/seacliff-packaged-records-threshold.png",
+      "title": "Seacliff packaged records threshold",
+      "kind": "Runtime capture",
+      "width": 1120,
+      "height": 700,
+      "bytes": 480503,
+      "sha256": "c8083d8cad022a77d6a36d3b09d18221cdb30dbe992c5f1b4438f19acf81f285"
     },
     {
       "path": "development/levels/rebuild/captures/seacliff-lower-partitions-batch/seacliff-opengl-lower-gallery-closed.png",

@@ -2016,3 +2016,10 @@ The [lower service checkpoint](levels/rebuild/seacliff-lower-partitions-pass/che
 ## Seacliff upper casemates and staged TCP
 
 The [upper checkpoint](levels/rebuild/seacliff-upper-partitions-pass/checkpoint.json) adds six fitted doors, connects the physical room graph, and verifies real TCP case start and van departure through the staged scene. Main was inspected at 66264ee8c3b70b97a094b050e9d6ec832be8ad1e. The multiplayer 44494709966, GPU 44494710017 and installer 44494709952 workflows were still running at inspection. Normal packaged map selection and the remaining service and case gates are next on the held draft.
+
+
+## Seacliff packaged dispatch and physical cupboards
+
+The [dispatch checkpoint](levels/rebuild/seacliff-dispatch-pass/checkpoint.json) verifies the Windows game package with ordinary solo and four-peer LAN selection, a live fitted door operation, three physical cupboards, and a ghost breaker trip with a reconnect. Software and hidden RTX 5070 OpenGL captures show the exact packaged source. The existing case availability, saved authoring identity, acoustic, hiding, safe-area, flyover, Hollow Creek and College checks pass.
+
+Main was inspected at cdf802b18731a4648edfb6d0c94aea3ed96e5325. Full multiplayer 44496299092 and Windows installer 44496299087 passed at that revision. GPU renderer acceptance 44496299169 failed. The held map parent remained 5c3daf923a7359554dc075c9e99be139bbcb1441. Next work includes Blackpine independent power and review selection and the remaining Battery service and case gates.

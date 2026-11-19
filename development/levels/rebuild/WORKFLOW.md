@@ -1275,3 +1275,12 @@ All 17 site guides replay in both directions and both postures. The existing gen
 The [upper floor plan](seacliff-upper-partitions-pass/seacliff-upper-casemate-plan.svg) binds six working doors to four rebuilt wall runs. Courtyard gates open inward on the retained +4.00 m threshold. Two complete van-to-director journeys use these doors. The [checkpoint](seacliff-upper-partitions-pass/checkpoint.json) verifies all 17 building guides in both directions and postures in software and OpenGL, lower sealed gaps and fitted leaves, and the seven installed service loads.
 
 Five physical ramp and stair transitions link all fifteen room owners. Four TCP peers joined the injected native scene. The investigator walked from the raised van deck onto the existing forecourt and a second client received the supported final pose. The [29-packet roster](seacliff-upper-partitions-pass/roster.json) carries the verified source. Normal packaged selection and complete case acceptance remain open.
+
+
+## 2026-11-19 / Seacliff packaged solo and LAN review
+
+The [dispatch checkpoint](seacliff-dispatch-pass/checkpoint.json) binds ordinary review selection to the exact surveyed Battery. Enable it with `-Dbeckenburg.review.seacliff=true`. The Windows package loads the same walls, floors, stairs, twelve door sets and three cupboards for the host and clients. Edited guides leave the processed scene and its revision unchanged. A test guide crossing a closed masonry run gained neither a body route nor a sight line.
+
+The ordinary solo case starts on the packaged scene. Four TCP peers agree on the revision. A walker leaves the cargo deck onto the forecourt. Another stops at the closed records door, opens it through the normal aim and interaction, and walks to the supported cupboard and hides. The ghost trips the breaker. A reconnect preserves the open door, the tripped breaker and the independent running source. All 17 surveyed guides were replayed in both directions and postures on the updated scene. Three founded cupboards pass real collision, entry and difficulty checks.
+
+The active [29-location roster](seacliff-dispatch-pass/roster.json) carries exact scene files and the remaining site decisions. Seacliff review remains held. The remaining circuits, site containment, evidence, finish and complete case checks stay open. Blackpine is the next mature site to audit for a founded generator and ordinary review entry. Ravenshade still needs its surveyed door schedule extended beyond the one fitted foyer.

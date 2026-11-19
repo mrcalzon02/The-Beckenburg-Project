@@ -87,7 +87,12 @@ while IFS= read -r site || [ -n "$site" ]; do
     test -s "assets/runtime/sites/$site"
     cp "assets/runtime/sites/$site" "build/classes/org/beckenburg/sites/$site"
 done < assets/runtime/site-geometry.txt
-# Package the verified College review source with the normal game resources.
+# Package the verified native review sources with the normal game resources.
+seacliff_packet=development/levels/rebuild/seacliff-dispatch-pass
+for extension in glb hcs2; do
+    cp "$seacliff_packet/wld-17/battery-cupboards.$extension" "build/classes/org/beckenburg/sites/seacliff-native.$extension"
+done
+cp "$seacliff_packet/verification/runtime.tsv" build/classes/org/beckenburg/sites/seacliff-runtime.tsv
 college_packet=development/levels/rebuild/college-residence-pass
 for extension in glb hcs2; do
     cp "$college_packet/college/college-residence.$extension" "build/classes/org/beckenburg/sites/college-native.$extension"

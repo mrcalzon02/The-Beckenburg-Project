@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-18",
+  "updated": "2026-11-19",
   "issues": [
     {
       "id": "DEV-355",
@@ -6799,6 +6799,28 @@
       "action": "Resolve room and spawn elevation from the canonical van floor, then verify a real TCP case start with four peers and supported forecourt departure.",
       "older_maps": "Check the actual body spawn against the van deck datum before interpreting a map validity failure as a missing connection.",
       "evidence": "development/levels/rebuild/seacliff-upper-partitions-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-613",
+      "title": "Battery normal package lacked physical hiding candidates",
+      "status": "CORRECTED_WITH_THREE_SUPPORTED_NATIVE_CUPBOARDS",
+      "affected": "Battery records and both casemates",
+      "symptom": "The combined hiding allowance audit failed on wld-17 after normal package integration.",
+      "cause": "The approved construction packet had no fitted walk-in cupboards or hiding sockets.",
+      "action": "Seat three existing cupboard models on measured slabs. Bind shared collision and difficulty-controlled concealment. Test standing, crouched, solo and host use.",
+      "older_maps": "Use each site's actual native source when checking pocket support. Test zero permitted cover separately.",
+      "evidence": "development/levels/rebuild/seacliff-dispatch-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-614",
+      "title": "Briar House kitchen and heating fell back to the wrong acoustics after the rebuild",
+      "status": "CORRECTED_FOR_BOTH_HOUSE_SOURCES",
+      "affected": "Rebuilt Briar House kitchen and cellar plant",
+      "symptom": "The kitchen acoustic check failed on the pre-Battery source and the first packaged candidate.",
+      "cause": "The rebuilt source has its own identity. Its composite kitchen name includes cellar and matched the generic cellar fallback.",
+      "action": "Bind the kitchen, landing, bathroom, plant and store to their actual acoustic uses. Rerun the all-site acoustic check.",
+      "older_maps": "Audit composite room names against their actual use when a rebuild introduces a distinct source identity.",
+      "evidence": "development/levels/rebuild/seacliff-dispatch-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

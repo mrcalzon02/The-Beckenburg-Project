@@ -1,0 +1,101 @@
+{
+  "source_asset": "assets/runtime/models/level_hiding_cupboard_worn.glb",
+  "asset_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097",
+  "receiver": "70582d39f9315c83aa57f54febe0d516d7539e4db14cd8f1b833c946ca557076",
+  "retained_native_components": 328,
+  "added_native_triangles": 6216,
+  "fitted": [
+    {
+      "id": "west-casemate-stores",
+      "room": "west",
+      "owner": 3,
+      "feet": [
+        11.5,
+        4,
+        27.45
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          10.65,
+          4.0,
+          26.85
+        ],
+        [
+          12.35,
+          6.31,
+          28.152
+        ]
+      ],
+      "source_origin": [
+        11.5,
+        4.0,
+        27.45
+      ],
+      "slab_contacts": 12
+    },
+    {
+      "id": "east-casemate-stores",
+      "room": "east",
+      "owner": 4,
+      "feet": [
+        57.25,
+        4,
+        27.45
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          56.400002,
+          4.0,
+          26.85
+        ],
+        [
+          58.099998,
+          6.31,
+          28.152
+        ]
+      ],
+      "source_origin": [
+        57.25,
+        4.0,
+        27.45
+      ],
+      "slab_contacts": 12
+    },
+    {
+      "id": "records-cupboard",
+      "room": "records",
+      "owner": 10,
+      "feet": [
+        26.5,
+        0,
+        15.45
+      ],
+      "yaw": 0,
+      "bounds": [
+        [
+          25.65,
+          0.0,
+          14.849999
+        ],
+        [
+          27.35,
+          2.31,
+          16.152
+        ]
+      ],
+      "source_origin": [
+        26.5,
+        0.0,
+        15.45
+      ],
+      "slab_contacts": 12
+    }
+  ],
+  "export": {
+    "blend": "3bbc8687d0fb349561e17b159daa29ae773b0582d1f320f586f84fd950399dd0",
+    "glb": "a5839ee9735cbbc98a662a2552b1500ceb379d9deb9f01a49ccc6a4018968ced",
+    "hcs2": "d0500fe8d0da0e543a7ffc46df72dcde90dc45d60de2d668ad9001339c2a58e1"
+  }
+}
