@@ -168,6 +168,7 @@ public final class LanHost implements AutoCloseable {
     private final Map<Integer,java.util.EnumSet<GhostFieldGuide.Clue>> capturedPhotoClues=new HashMap<>();
     private final java.util.EnumSet<GhostFieldGuide.Clue> reportedPrints=java.util.EnumSet.noneOf(GhostFieldGuide.Clue.class);
     private final int[] lastHunterSound={-10000,-10000,-10000,-10000,-10000,-10000};
+    private final FootstepStimulusCadence footstepStimulus=new FootstepStimulusCadence(HUNTERS);
     private volatile boolean closed;
     private boolean running,everStarted;
     private long hostGhostActionSequence=-1;
@@ -2266,6 +2267,11 @@ public final class LanHost implements AutoCloseable {
     /** Host owns the sound source and ghost hearing stimulus; cue picks only its texture. */
     private void recordSound(int seat,LanGhostPursuit.Sound type,LanSound.Cue selectedCue,
                              GhostSoundProfile.Profile profile){
+        // Realtime locomotion sends 50 physical input updates/s, but acoustic
+        // footfalls retain their established host-tick cadence. Suppress only
+        // repeated FOOTSTEP stimuli within the same 100ms tick, before costly
+        // weather, collision/acoustic-ray, sensor and AI-hearing evaluation.
+        if(type==LanGhostPursuit.Sound.FOOTSTEP&&!footstepStimulus.accept(seat,tick))return;
         LanWorld.Body body=world.body(seat);
         // Chat and live voice use ghost cues but never invent speech PCM for
         // other hunters; actual voice packets continue through the UDP relay.
