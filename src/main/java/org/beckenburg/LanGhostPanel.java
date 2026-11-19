@@ -462,12 +462,18 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             g.setColor(new Color(233,210,248));g.drawString("+",w/2,h/2);
             SprintHud.draw(g,12,h-163,Math.min(255,w-24),
                 "GHOST BURST / SHIFT",burstRemaining,burstMax,bursting);
-            if(!currentHearing().isEmpty()){
-                String heard=currentHearing();
-                if(heard.length()>70)heard=heard.substring(0,67)+"...";
-                g.setColor(new Color(28,14,39,220));g.fillRoundRect(12,84,
-                    Math.min(w-24,Math.max(240,g.getFontMetrics().stringWidth(heard)+24)),31,8,8);
-                g.setColor(new Color(199,170,239));g.drawString("HEARD: "+heard,22,105);
+            if(!currentHearing().isEmpty()&&w>44){
+                // Fit the complete caption, including its prefix, in actual
+                // display pixels rather than an arbitrary character count.
+                String caption=HudTextFit.ellipsize(g.getFontMetrics(),
+                    "HEARD: "+currentHearing(),w-44);
+                if(!caption.isEmpty()){
+                    int boxWidth=Math.min(w-24,g.getFontMetrics().stringWidth(caption)+20);
+                    g.setColor(new Color(28,14,39,220));
+                    g.fillRoundRect(12,84,boxWidth,31,8,8);
+                    g.setColor(new Color(199,170,239));
+                    g.drawString(caption,22,105);
+                }
             }
             List<Integer> exits=exits();
             String target=exits.isEmpty()?"None":map.roomName(exits.get(Math.floorMod(choice,exits.size())));
