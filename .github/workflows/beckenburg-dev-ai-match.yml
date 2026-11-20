@@ -18,6 +18,8 @@ on:
       - 'src/main/java/org/beckenburg/Campaign*'
       - 'src/main/java/org/beckenburg/HunterDiagnosticEquipment.java'
       - 'src/main/java/org/beckenburg/HunterFieldNavigation.java'
+      - 'src/test/java/org/beckenburg/HunterReturnNavigationTest.java'
+      - 'src/test/java/org/beckenburg/CampaignHunterRackScenario.java'
       - 'src/main/java/org/beckenburg/AuthoredSitePhysics.java'
       - 'src/test/java/org/beckenburg/DevMatchNavigationTest.java'
       - 'src/main/java/org/beckenburg/HunterWitnessExperiment.java'
@@ -76,6 +78,13 @@ jobs:
         run: |
           & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.CampaignAiInvestigationScenario 21 120
           if ($LASTEXITCODE -ne 0) { throw "Campaign AI scenario failed ($LASTEXITCODE)" }
+
+      - name: Verify authored upstairs and foyer routes return through real doors to van stations
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.HunterReturnNavigationTest
+          if ($LASTEXITCODE -ne 0) { throw "Actual physical House return routes failed ($LASTEXITCODE)" }
 
       - name: Verify hired hunter retrieves a different instrument from the van
         shell: pwsh

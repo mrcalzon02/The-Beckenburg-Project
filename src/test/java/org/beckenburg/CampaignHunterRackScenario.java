@@ -35,11 +35,27 @@ public final class CampaignHunterRackScenario {
                     leader.ready();await(inbox,"OWNREADY|YES");host.prepareCampaignBots(1);
                     leader.start();await(inbox,"INFO|mission started");leader.view3D();await(inbox,"ACCEPT|VIEW3D");
                     boolean uv=false,van=false,resonance=false,ack=false;
+                    var trail=new java.util.ArrayDeque<String>();
+                    int lastTraceTick=-1000;
                     long end=System.nanoTime()+TimeUnit.SECONDS.toNanos(65);
                     int latest=-1;
                     while(System.nanoTime()<end&&!resonance){
                         var state=host.devAdminSnapshot();latest=state.tick();
                         if(uv&&state.hunters().get(1).body().room()==HouseMap.EXTRACTION_ROOM)van=true;
+                        if(latest-lastTraceTick>=65){
+                            lastTraceTick=latest;
+                            var body=state.hunters().get(1).body();
+                            var diagnostic=host.devCampaignBotDiagnostics().stream()
+                                .filter(d->d.seat().equals("H2")).findFirst().orElse(null);
+                            trail.addLast(String.format(java.util.Locale.ROOT,
+                                "tick=%d room=%d x=%.3f y=%.3f z=%.3f act=%s at=%d rejects=%d faults=%d uv=%s ack=%s van=%s",
+                                latest,body.room(),body.x(),body.y(),body.z(),
+                                diagnostic==null?"UNKNOWN":diagnostic.action(),
+                                diagnostic==null?-1:diagnostic.actionTick(),
+                                diagnostic==null?-1:diagnostic.rejections(),
+                                diagnostic==null?-1:diagnostic.updateFailures(),uv,ack,van));
+                            if(trail.size()>30)trail.removeFirst();
+                        }
                         String f=inbox.poll(15,TimeUnit.MILLISECONDS);if(f==null)continue;
                         if(f.startsWith("CHAT|RADIO|1|")&&f.endsWith("|I'll test resonance tuner."))ack=true;
                         if(!f.startsWith("CASEFILE|")||f.equals("CASEFILE|RESET"))continue;
@@ -52,6 +68,8 @@ public final class CampaignHunterRackScenario {
                             resonance=true;System.out.println("H2 tuner reading in R"+entry.room()+" at tick "+entry.tick()+": "+entry.reading());
                         }
                     }
+                    if(!(uv&&van&&ack&&resonance))
+                        System.err.println("RACK ROUTE TRACE: "+String.join(" | ",trail));
                     require(uv&&van&&ack&&resonance,"Field UV="+uv+", radio ACK="+ack+", returned="+van+", field tuner="+resonance+" at "+latest);
                     require(Arrays.equals(original,profile.catalogLoadout()),"Hired seat changed human's saved belt");
                 }
