@@ -173,9 +173,9 @@ public final class GpuUiSmoke {
  private static void move(LanWorldPanel panel,Walk route,boolean returning)throws Exception{
   final long until=System.nanoTime()+TimeUnit.SECONDS.toNanos(18);
   MovePosition start=require(()->position(panel,route),10,"Could not read hunter position");
-  StringBuilder trace=new StringBuilder("pulse,key,other,x,z,distance_from_spawn_m,along_route_m\\n");
+  StringBuilder trace=new StringBuilder("pulse,key,other,x,z,distance_from_spawn_m,along_route_m\n");
   trace.append("0,none,none,").append(start.x()).append(',').append(start.z())
-      .append(',').append(start.range()).append(',').append(start.progress()).append('\\n');
+      .append(',').append(start.range()).append(',').append(start.progress()).append('\n');
   MovePosition last=start;
   boolean verified=false;
   try{
@@ -197,7 +197,7 @@ public final class GpuUiSmoke {
     trace.append(attempt).append(',').append(KeyEvent.getKeyText(code))
         .append(',').append(second==0?"none":KeyEvent.getKeyText(second))
         .append(',').append(last.x()).append(',').append(last.z())
-        .append(',').append(last.range()).append(',').append(last.progress()).append('\\n');
+        .append(',').append(last.range()).append(',').append(last.progress()).append('\n');
    }
    throw new AssertionError("Live WASD movement did not "
        +(returning?"return toward van spawn":"advance the hunter")
@@ -205,7 +205,7 @@ public final class GpuUiSmoke {
        +" final_range="+last.range()+" along="+last.progress()
        +" (see movement trace)");
   }finally{
-   trace.append("# result=").append(verified?"PASS":"FAIL").append('\\n');
+   trace.append("# result=").append(verified?"PASS":"FAIL").append('\n');
    Files.writeString(OUTPUT.resolve("movement-"+route.site().toLowerCase(java.util.Locale.ROOT)
        +(returning?"-return":"-out")+".csv"),trace,StandardCharsets.UTF_8);
   }
