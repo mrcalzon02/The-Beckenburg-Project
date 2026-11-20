@@ -479,6 +479,15 @@ public final class InvestigationGame {
         environmentVolume.setMajorTickSpacing(25);environmentVolume.setPaintTicks(true);
         JSlider effectsVolume=new JSlider(0,100,LanAudio.effectsVolume());
         effectsVolume.setMajorTickSpacing(25);effectsVolume.setPaintTicks(true);
+        var previousMouse=MousePreferences.current();
+        JSlider mouseSensitivity=new JSlider(25,200,previousMouse.sensitivityPercent());
+        mouseSensitivity.setName("options.controls.mouseSensitivity");
+        mouseSensitivity.setMajorTickSpacing(25);
+        mouseSensitivity.setPaintTicks(true);
+        mouseSensitivity.setPaintLabels(true);
+        mouseSensitivity.setToolTipText("100% preserves the original first-person mouse feel.");
+        JCheckBox invertMouseY=new JCheckBox("Invert vertical look",previousMouse.invertY());
+        invertMouseY.setName("options.controls.invertY");
         JPanel display=optionGrid(),graphics=optionGrid(),lighting=optionGrid();
         JPanel audio=optionGrid(),accessibility=optionGrid();
         setting(display,"Display mode",mode);
@@ -519,7 +528,16 @@ public final class InvestigationGame {
         controlsHelp.setBackground(new Color(24,30,38));
         controlsHelp.setForeground(new Color(235,224,201));
         controlsHelp.setFont(new Font(Font.MONOSPACED,Font.PLAIN,13));
-        JTabbedPane tabs=optionTabs(display,graphics,lighting,audio,accessibility,controlsHelp);
+        // Keep the six existing tabs, but give Controls real adjustable
+        // settings instead of a reference-only text wall. The scrollable
+        // controls reference remains visible below the two input settings.
+        JPanel controls=transparentPanel(new BorderLayout(0,8));
+        JPanel controlSettings=optionGrid();
+        setting(controlSettings,"Mouse sensitivity (%)",mouseSensitivity);
+        setting(controlSettings,"Mouse vertical axis",invertMouseY);
+        controls.add(controlSettings,BorderLayout.NORTH);
+        controls.add(controlsHelp,BorderLayout.CENTER);
+        JTabbedPane tabs=optionTabs(display,graphics,lighting,audio,accessibility,controls);
         JLabel status=PsxMenuScreen.label("Changes are applied only when you choose APPLY.");
         JButton apply=button("APPLY OPTIONS"),back=button("BACK");
         back.addActionListener(e->returnFromMenu(returnScreen));
@@ -550,6 +568,10 @@ public final class InvestigationGame {
         chosen.save();
         LightingModule.apply(chosenLighting);
         PsxPipeline.choose((PsxPipeline.Preset)psx.getSelectedItem());
+        // Commit input preferences only on APPLY / KEEP DISPLAY; BACK and
+        // automatic display-revert must leave previous mouse controls intact.
+        MousePreferences.save(new MousePreferences.Settings(
+            mouseSensitivity.getValue(),invertMouseY.isSelected()));
         displayPrefs.putBoolean("largeMenuText",large.isSelected());
         displayPrefs.putBoolean("highContrast",highContrast.isSelected());
         SoundtrackAudio.volume(musicVolume.getValue());

@@ -11,13 +11,26 @@ public final class MouseLookTest {
     public static void main(String[] args){
         SceneRenderer camera=new SceneRenderer();
         double oldYaw=camera.yaw;
-        MouseLook.rotate(camera,100,-100);
-        check(Math.abs(camera.yaw-(oldYaw-.4))<.0001,"horizontal mouse sensitivity");
+        var defaultMouse=new MousePreferences.Settings(100,false);
+        MouseLook.rotate(camera,100,-100,defaultMouse);
+        check(Math.abs(camera.yaw-(oldYaw-.4))<.0001,"original 100% yaw sensitivity");
         check(camera.pitch>0,"moving mouse up raises gaze");
-        MouseLook.rotate(camera,0,-1000);
+        MouseLook.rotate(camera,0,-1000,defaultMouse);
         check(camera.pitch==1.05,"upper pitch clamp");
-        MouseLook.rotate(camera,0,1000);
+        MouseLook.rotate(camera,0,1000,defaultMouse);
         check(camera.pitch==-1.05,"lower pitch clamp");
+        var slowCamera=new SceneRenderer();
+        double before=slowCamera.yaw;
+        MouseLook.rotate(slowCamera,100,-100,new MousePreferences.Settings(50,false));
+        check(Math.abs(slowCamera.yaw-(before-.2))<1e-8&&slowCamera.pitch>0,
+            "50% mouse sensitivity must halve yaw and pitch");
+        var invertedCamera=new SceneRenderer();
+        MouseLook.rotate(invertedCamera,0,-100,new MousePreferences.Settings(100,true));
+        check(invertedCamera.pitch<0,"inverted vertical mouse movement looks down");
+        try{new MousePreferences.Settings(0,false);throw new AssertionError("invalid sensitivity accepted");}
+        catch(IllegalArgumentException expected){}
+        try{new MousePreferences.Settings(201,false);throw new AssertionError("out-of-range sensitivity accepted");}
+        catch(IllegalArgumentException expected){}
         JPanel panel=new JPanel();
         AtomicInteger observed=new AtomicInteger();
         MouseLook look=new MouseLook(panel,(dx,dy)->observed.addAndGet(Math.abs(dx)+Math.abs(dy)));
