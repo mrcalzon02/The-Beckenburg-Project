@@ -10,13 +10,19 @@ public final class EditorChangeIntegrationTest {
     private static Map<String,String> move(String id,LevelDefinition.Prop p,double x){
         return Map.of("id",id,"x",Double.toString(x),"y",Double.toString(p.y()),"z",Double.toString(p.z()));
     }
-    private static void covers(EditorChange.Bounds bounds,LevelDefinition.Prop p){
-        var c=LevelPlans.propCollider(p);
-        for(int sx:new int[]{-1,1})for(int sz:new int[]{-1,1}){
+    private static void covers(EditorChange.Bounds bounds,LevelDefinition source,LevelDefinition.Prop p){
+        // The rebuilt House uses source-derived GLB offsets and occasionally
+        // multiple physical bodies. The old generic propCollider(p) is NOT
+        // the authoritative collision geometry for this map; comparing its
+        // corners to the current dirty region falsely failed every valid edit.
+        var bodies=LevelPlans.propColliders(source,p);
+        check(!bodies.isEmpty(),"Selected loose prop has a real runtime collision body");
+        for(var c:bodies)for(int sx:new int[]{-1,1})for(int sz:new int[]{-1,1}){
             double x=c.x()+Math.cos(c.yaw())*sx*c.halfX()-Math.sin(c.yaw())*sz*c.halfZ();
             double z=c.z()+Math.sin(c.yaw())*sx*c.halfX()+Math.cos(c.yaw())*sz*c.halfZ();
             check(x>=bounds.x0()-1e-9&&x<=bounds.x1()+1e-9&&z>=bounds.z0()-1e-9&&z<=bounds.z1()+1e-9
-                &&bounds.y0()<=c.y()&&bounds.y1()>=c.y()+c.height(),"Dirty region covers every native rotated collider corner");
+                &&bounds.y0()<=c.y()&&bounds.y1()>=c.y()+c.height(),
+                "Dirty region covers every authoritative rotated collider corner");
         }
     }
     public static void main(String[] args)throws Exception{
@@ -46,7 +52,8 @@ public final class EditorChangeIntegrationTest {
             check(event.details().nodes().size()==1&&event.details().nodes().get(0).id().equals(id),"One stable-ID delta for repeated edits");
             var node=event.details().nodes().get(0);check(node.kind()==EditorChange.Kind.UPDATED&&!node.beforeFingerprint().equals(node.fingerprint()),"Native content fingerprint changes");
             check(event.details().assets().contains("assets://models/"+p.mesh())&&event.details().dependencies().contains(EditorChange.Dependency.PHYSICS),"Actual asset and physics dependencies");
-            covers(event.details().physicsBounds(),p);covers(event.details().physicsBounds(),session.prop(index));
+            covers(event.details().physicsBounds(),session.sourceLevel(),p);
+            covers(event.details().physicsBounds(),session.sourceLevel(),session.prop(index));
             var committed=session.snapshot();
             try{service.transact(session.revision(),List.of(command,new EditorAgentService.Command("move-prop",move("absent",p,1))));
                 throw new AssertionError("Invalid batch committed");}catch(IllegalArgumentException expected){}
@@ -67,7 +74,7 @@ public final class EditorChangeIntegrationTest {
             var before=session.snapshot();var old=session.prop(index);
             var rotated=new LevelDefinition.Prop(old.mesh(),old.room(),old.x(),old.y(),old.z(),old.scale(),.713,old.halfX(),old.halfZ(),old.height(),old.support());
             service.edit(()->session.put(chosen,rotated));event=events.get(events.size()-1);
-            check(event.details().nodes().size()==1,"Rotation-only native edit produces delta");covers(event.details().physicsBounds(),rotated);
+            check(event.details().nodes().size()==1,"Rotation-only native edit produces delta");covers(event.details().physicsBounds(),session.sourceLevel(),rotated);
             try{event.details().nodes().clear();throw new AssertionError("Mutable event");}catch(UnsupportedOperationException expected){}
             var independent=new LevelAuthoringSession(HouseMap.Site.SCHOOL);
             try{adapter.changes(before,independent.snapshot());throw new AssertionError("Foreign scene diff accepted");}catch(IllegalArgumentException expected){}
