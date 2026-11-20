@@ -66,6 +66,10 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             MouseLook.rotate(camera,dx,dy);refreshRealtimeInput();
         },this::gameplayInputEnabled);
         addKeyListener(this);addMouseListener(mouseLook);addMouseMotionListener(mouseLook);
+        addMouseMotionListener(new MouseMotionAdapter(){
+            @Override public void mouseMoved(MouseEvent e){perfHud.noteInput(e);}
+            @Override public void mouseDragged(MouseEvent e){perfHud.noteInput(e);}
+        });
         addFocusListener(this);addFocusListener(mouseLook);
         audio.setHearingGain(0);
         // Keep host-bound input and the hearing envelope at their established cadence.
@@ -409,6 +413,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         if(perfHud.captureHotkey(e,"lan-ghost")){
             feedback=perfHud.captureStatus();repaint();return;
         }
+        perfHud.noteInput(e);
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         switch(e.getKeyCode()){
             case KeyEvent.VK_E -> {
@@ -444,6 +449,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     }
     @Override public void keyReleased(KeyEvent e){
         perfHud.captureKeyReleased(e);
+        perfHud.noteInput(e);
         keys.remove(e.getKeyCode());refreshRealtimeInput();
     }
     @Override public void keyTyped(KeyEvent e){}

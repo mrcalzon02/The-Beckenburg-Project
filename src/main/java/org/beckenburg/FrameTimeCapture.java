@@ -29,7 +29,8 @@ final class FrameTimeCapture {
     private final long[] sceneBuild=new long[CAPACITY],geometry=new long[CAPACITY];
     private final long[] effects=new long[CAPACITY],frameId=new long[CAPACITY];
     private final long[] freshInterval=new long[CAPACITY];
-    private final int[] room=new int[CAPACITY];
+    private final int[] room=new int[CAPACITY],dispatchedEvents=new int[CAPACITY];
+    private final long[] queueDelayMs=new long[CAPACITY],postDispatchNs=new long[CAPACITY];
     private final byte[] flags=new byte[CAPACITY]; // bit0 GPU, bit1 new frame
     private int size,duplicates;
     private long lastPresentedNs,lastGpuId=Long.MIN_VALUE;
@@ -45,6 +46,15 @@ final class FrameTimeCapture {
     int size(){return size;}
     boolean record(long atNs,long renderNs,boolean gpu,long consumedFrameId,
                    long buildNs,long geometryNs,long effectsNs,int roomId){
+        return record(atNs,renderNs,gpu,consumedFrameId,
+            buildNs,geometryNs,effectsNs,roomId,0,0,-1L);
+    }
+    /** Input queue lag is observed on the EDT before this render callback.
+     * Delay uses event.getWhen() vs callback time; postDispatchNs is monotonic
+     * time from the last handled event to this sample, or -1 if none. */
+    boolean record(long atNs,long renderNs,boolean gpu,long consumedFrameId,
+                   long buildNs,long geometryNs,long effectsNs,int roomId,
+                   int inputEvents,long maxQueueDelayMs,long postDispatchAgeNs){
         if(size>=CAPACITY)return false;
         if(haveBackend&&gpu!=previousGpu){
             // GPU/CPU fallback cannot turn a backend change into a fake hitch.
@@ -69,15 +79,24 @@ final class FrameTimeCapture {
         frameId[i]=gpu?consumedFrameId:0;
         freshInterval[i]=interval;
         room[i]=roomId;
+        dispatchedEvents[i]=Math.max(0,inputEvents);
+        queueDelayMs[i]=Math.max(0,maxQueueDelayMs);
+        postDispatchNs[i]=postDispatchAgeNs<0?-1L:postDispatchAgeNs;
         flags[i]=(byte)((gpu?1:0)|(fresh?2:0));
         return size<CAPACITY;
     }
     record Summary(int samples,int newFrames,int cadenceIntervals,int duplicateGpuReads,
-                   int over33,int over50,int over100,double p50Ms,double p95Ms,double p99Ms){}
+                   int over33,int over50,int over100,double p50Ms,double p95Ms,double p99Ms,
+                   long inputEvents,int queueDelayOver50,int queueDelayOver100,long maxQueueDelayMs){}
     Summary summary(){
         double[] intervals=new double[size];
-        int seen=0,newFrames=0,over33=0,over50=0,over100=0;
+        int seen=0,newFrames=0,over33=0,over50=0,over100=0,queueOver50=0,queueOver100=0;
+        long totalInputs=0,worstQueueMs=0;
         for(int i=0;i<size;i++){
+            totalInputs+=dispatchedEvents[i];
+            if(queueDelayMs[i]>50)queueOver50++;
+            if(queueDelayMs[i]>100)queueOver100++;
+            worstQueueMs=Math.max(worstQueueMs,queueDelayMs[i]);
             if((flags[i]&2)!=0)newFrames++;
             if(freshInterval[i]<=0)continue;
             double ms=freshInterval[i]/1_000_000.0;
@@ -86,11 +105,13 @@ final class FrameTimeCapture {
             if(ms>50)over50++;
             if(ms>100)over100++;
         }
-        if(seen==0)return new Summary(size,newFrames,0,duplicates,0,0,0,0,0,0);
+        if(seen==0)return new Summary(size,newFrames,0,duplicates,0,0,0,0,0,0,
+            totalInputs,queueOver50,queueOver100,worstQueueMs);
         Arrays.sort(intervals,0,seen);
         return new Summary(size,newFrames,seen,duplicates,over33,over50,over100,
             percentile(intervals,seen,.50),percentile(intervals,seen,.95),
-            percentile(intervals,seen,.99));
+            percentile(intervals,seen,.99),
+            totalInputs,queueOver50,queueOver100,worstQueueMs);
     }
     private static double percentile(double[] sorted,int count,double fraction){
         return sorted[Math.max(0,(int)Math.ceil(count*fraction)-1)];
@@ -123,7 +144,11 @@ final class FrameTimeCapture {
             out.write("# intervals_over_33ms="+s.over33()+"\n");
             out.write("# intervals_over_50ms="+s.over50()+"\n");
             out.write("# intervals_over_100ms="+s.over100()+"\n");
-            out.write("elapsed_ms,render_ms,presented_interval_ms,backend,frame_id,new_frame,scene_build_ms,geometry_ms,effects_ms,room\n");
+            out.write("# dispatched_input_events="+s.inputEvents()+"\n");
+            out.write("# input_queue_frames_over_50ms="+s.queueDelayOver50()+"\n");
+            out.write("# input_queue_frames_over_100ms="+s.queueDelayOver100()+"\n");
+            out.write("# max_input_queue_delay_ms="+s.maxQueueDelayMs()+"\n");
+            out.write("elapsed_ms,render_ms,presented_interval_ms,backend,frame_id,new_frame,scene_build_ms,geometry_ms,effects_ms,room,dispatched_input_events,max_input_queue_delay_ms,post_dispatch_to_frame_sample_ms\n");
             StringBuilder line=new StringBuilder(160);
             for(int i=0;i<size;i++){
                 line.setLength(0);
@@ -136,7 +161,11 @@ final class FrameTimeCapture {
                     .append(ms(sceneBuild[i])).append(',')
                     .append(ms(geometry[i])).append(',')
                     .append(ms(effects[i])).append(',')
-                    .append(room[i]).append('\n');
+                    .append(room[i]).append(',')
+                    .append(dispatchedEvents[i]).append(',')
+                    .append(queueDelayMs[i]).append(',')
+                    .append(postDispatchNs[i]<0?"-1":Double.toString(ms(postDispatchNs[i])))
+                    .append('\n');
                 out.write(line.toString());
             }
         }

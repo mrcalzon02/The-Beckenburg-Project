@@ -184,6 +184,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         },
             this::gameplayInputEnabled);
         addKeyListener(this);addMouseListener(mouseLook);addMouseMotionListener(mouseLook);
+        addMouseMotionListener(new MouseMotionAdapter(){
+            @Override public void mouseMoved(MouseEvent e){perfHud.noteInput(e);}
+            @Override public void mouseDragged(MouseEvent e){perfHud.noteInput(e);}
+        });
         addMouseListener(new MouseAdapter(){
             @Override public void mousePressed(MouseEvent e){
                 if(casefileOpen&&((journalPage==1&&handleJournalClick(e.getX(),e.getY(),
@@ -1946,6 +1950,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(perfHud.captureHotkey(e,"lan-hunter")){
             feedback=perfHud.captureStatus();repaint();return;
         }
+        perfHud.noteInput(e);
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         if(e.getKeyCode()==KeyEvent.VK_TAB){
             if(ledgerTabHeld)return;
@@ -2239,6 +2244,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     public String caseFeedback(){return feedback;}
     @Override public void keyReleased(KeyEvent e){
         perfHud.captureKeyReleased(e);
+        perfHud.noteInput(e);
             if(e.getKeyCode()==KeyEvent.VK_E)interactionHeld=false;
         if(e.getKeyCode()==KeyEvent.VK_TAB)ledgerTabHeld=false;
         keys.remove(e.getKeyCode());

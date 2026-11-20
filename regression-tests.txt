@@ -254,6 +254,7 @@ GhostListeningFeedTest
 FootstepStimulusCadenceTest
 PresentedFrameCadenceTest
 FrameTimeCaptureTest
+InputDispatchTimingTest
 DebugPerformanceCaptureHotkeyTest
 EdtInputFramePacerTest
 LanEdtPacketQueueTest

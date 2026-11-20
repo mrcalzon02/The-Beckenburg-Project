@@ -30,6 +30,12 @@ public final class DebugPerformanceHud {
     private int width,height;
     private static final Font FONT=new Font(Font.MONOSPACED,Font.PLAIN,11);
     private FrameTimeCapture capture;
+    private final InputDispatchTiming inputTiming=new InputDispatchTiming();
+    /** Keyboard/mouse dispatch latency, sampled only while a capture is active. */
+    public void noteInput(InputEvent event){
+        if(capture==null)return;
+        inputTiming.received(event.getWhen(),System.currentTimeMillis(),System.nanoTime());
+    }
     private boolean captureKeyHeld;
     private volatile String captureStatus="CTRL+SHIFT+F8 RECORD FRAMES";
     /** One local viewport owns its recording. Held-key repeat never toggles twice. */
@@ -41,6 +47,7 @@ public final class DebugPerformanceHud {
         if(captureKeyHeld)return true;
         captureKeyHeld=true;
         if(capture==null){
+            inputTiming.reset();
             capture=new FrameTimeCapture(viewport);
             captureStatus="RECORDING / CTRL+SHIFT+F8 TO SAVE";
             // Do not turn on an extra HUD draw just to benchmark frame pacing.
@@ -60,6 +67,7 @@ public final class DebugPerformanceHud {
     public void closeCapture(){
         FrameTimeCapture stopped=capture;
         capture=null;
+        inputTiming.reset();
         if(stopped==null||stopped.size()==0)return;
         try{
             java.nio.file.Path destination=stopped.defaultOutput();
@@ -76,6 +84,7 @@ public final class DebugPerformanceHud {
     private void finishCapture(){
         FrameTimeCapture stopped=capture;
         capture=null;
+        inputTiming.reset();
         if(stopped==null)return;
         if(stopped.size()==0){captureStatus="CAPTURE EMPTY / NO FRAMES";return;}
         captureStatus="SAVING "+stopped.size()+" FRAME SAMPLES";
@@ -123,12 +132,17 @@ public final class DebugPerformanceHud {
         width=scene.width();height=scene.height();
         room=map==null?-1:map.roomAt(x,y-1.62,z);
         FrameTimeCapture recorder=capture;
-        if(recorder!=null&&!recorder.record(now,entireFrameNs,
+        if(recorder!=null){
+            boolean capacityRemaining=recorder.record(now,entireFrameNs,
                 metrics!=null&&metrics.gpu(),scene.consumedGpuFrameId(),
                 metrics==null?0:metrics.sceneBuildNs(),
                 metrics==null?0:metrics.geometryNs(),
-                metrics==null?0:metrics.effectsNs(),room))
-            finishCapture();
+                metrics==null?0:metrics.effectsNs(),room,
+                inputTiming.events(),inputTiming.worstQueueMs(),
+                inputTiming.lastEventAgeNs(now));
+            inputTiming.afterFrame();
+            if(!capacityRemaining)finishCapture();
+        }
         double measured=Double.isNaN(wall)?loopNs/1e6:Math.max(wall,loopNs/1e6);
         if(measured>0 && Double.isFinite(measured)){
             history[next]=measured;

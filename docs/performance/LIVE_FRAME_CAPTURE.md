@@ -34,3 +34,20 @@ Starting a capture does **not** automatically draw the performance HUD:
 turn it on separately with F7 to observe capture status, or use the normal
 in-game feedback line. This keeps overlay drawing out of benchmarks unless
 the tester deliberately enables it.
+
+### Input backlog diagnosis
+
+The recorder also logs keyboard and mouse-movement **event-queue delay**
+without changing input delivery. Each frame includes the number of callbacks
+dispatched since the preceding sample, the **maximum delay before those events
+reached the Swing EDT** (in milliseconds), and the time from the most recently
+dispatched input callback to that frame's sample. The latter is recorded as
+`-1` when no new event occurred during the interval. Summary headers count
+frames with input queue delay over 50 and 100ms and report its maximum.
+
+The delay is estimated from the AWT event timestamp and local callback wall
+clock, so system-clock adjustments and synthetic mouse-centering events can
+affect the number. It is **not** a measured input-to-photon latency. Compare it
+alongside genuine GPU frame IDs, client render intervals and authoritative
+movement traces. Both calculations are local; no events, key data, mouse
+positions, chat messages or network traffic are serialized into the CSV.
