@@ -111,7 +111,8 @@ public final class GpuUiSmoke {
   },15,"UI capture blocked: "+name);
   ImageIO.write(image,"png",OUTPUT.resolve(name+".png").toFile());
  }
- private record Walk(int key,int reverse,int second,int secondReverse,double x,double z){}
+ private record Walk(int key,int reverse,int second,int secondReverse,double x,double z,
+                     double dx,double dz,String site){}
  private static Walk walk(LanWorldPanel panel)throws Exception{
   SceneRenderer scene=(SceneRenderer)field(panel,"renderer");
   HouseMap map=(HouseMap)field(panel,"map");
@@ -131,21 +132,83 @@ public final class GpuUiSmoke {
    var target=map.resolveMove(new LevelDefinition.Vec(scene.x,feet,scene.z),
        scene.x+dx*.6,scene.z+dz*.6,HunterPosture.STANDING_HEIGHT);
    if(target!=null&&Math.hypot(target.x()-scene.x,target.z()-scene.z)>.5)
-    return new Walk(keys[i],reverse[i],second[i],secondReverse[i],scene.x,scene.z);
+    return new Walk(keys[i],reverse[i],second[i],secondReverse[i],
+        scene.x,scene.z,dx,dz,map.site().name());
   }
   throw new AssertionError("No short collision-valid WASD route from van spawn: site="+map.site()+" x="+scene.x+" y="+feet+" z="+scene.z+" yaw="+scene.yaw);
  }
  private static double distance(LanWorldPanel panel,Walk route)throws Exception{
   SceneRenderer scene=(SceneRenderer)field(panel,"renderer");return Math.hypot(scene.x-route.x(),scene.z-route.z());
  }
+ /**
+  * The Mesa renderer can spend hundreds of milliseconds on an EDT frame.
+  * Holding a key until the next EDT distance poll can therefore overshoot the
+  * tiny arrival window, even when the host moved correctly. Drive the real
+  * KeyListeners and 50Hz input pump in bounded, explicitly released pulses;
+  * inspect authoritative BODY positions between pulses, not predicted pixels.
+  * This still rejects a stuck controller or a blocked route.
+  */
+ private record MovePosition(double x,double z,double range,double progress){}
+ private static MovePosition position(LanWorldPanel panel,Walk route)throws Exception{
+  SceneRenderer scene=(SceneRenderer)field(panel,"renderer");
+  double dx=scene.x-route.x(),dz=scene.z-route.z();
+  return new MovePosition(scene.x,scene.z,Math.hypot(dx,dz),
+      dx*route.dx()+dz*route.dz());
+ }
+ private static void pulse(LanWorldPanel panel,int code,int second)throws Exception{
+  require(()->{
+   key(panel,code,true);if(second!=0)key(panel,second,true);
+   return Boolean.TRUE;
+  },10,"Movement input blocked");
+  try{Thread.sleep(175);}
+  finally{
+   // Release on the EDT and await completion, before sampling or reversing.
+   // A queued release alone can leave stale held input during a slow frame.
+   require(()->{
+    key(panel,code,false);if(second!=0)key(panel,second,false);
+    return Boolean.TRUE;
+   },10,"Movement input release blocked");
+  }
+ }
  private static void move(LanWorldPanel panel,Walk route,boolean returning)throws Exception{
-  int code=returning?route.reverse():route.key();
-  int second=returning?route.secondReverse():route.second();
+  final long until=System.nanoTime()+TimeUnit.SECONDS.toNanos(18);
+  MovePosition start=require(()->position(panel,route),10,"Could not read hunter position");
+  StringBuilder trace=new StringBuilder("pulse,key,other,x,z,distance_from_spawn_m,along_route_m\\n");
+  trace.append("0,none,none,").append(start.x()).append(',').append(start.z())
+      .append(',').append(start.range()).append(',').append(start.progress()).append('\\n');
+  MovePosition last=start;
+  boolean verified=false;
   try{
-   require(()->{key(panel,code,true);if(second!=0)key(panel,second,true);return Boolean.TRUE;},10,"Movement input blocked");
-   require(()->(returning?distance(panel,route)<.22:distance(panel,route)>.30)?Boolean.TRUE:null,
-       12,"Live WASD movement did not "+(returning?"return toward van spawn":"advance the hunter"));
-  }finally{SwingUtilities.invokeLater(()->{key(panel,code,false);if(second!=0)key(panel,second,false);});}
+   for(int attempt=1;attempt<=18&&System.nanoTime()<until;attempt++){
+    // Outbound must genuinely advance along the planned clear direction.
+    // Return must both approach the spawn and settle within one host step,
+    // but cannot rely on observing a sub-0.22m window on a busy Swing EDT.
+    if(!returning&&last.range()>.30&&last.progress()>.20){verified=true;return;}
+    if(returning&&attempt>1&&last.range()<.45
+        &&last.range()<start.range()-.12){verified=true;return;}
+    // If a pulse overshoots the origin, approach it from the opposite side
+    // instead of holding the wrong key for another 12 seconds.
+    boolean forward=!returning||last.progress()<0;
+    int code=forward?route.key():route.reverse();
+    int second=forward?route.second():route.secondReverse();
+    pulse(panel,code,second);
+    Thread.sleep(110); // Give the 10Hz authoritative BODY stream a turn.
+    last=require(()->position(panel,route),10,"Host position stopped updating");
+    trace.append(attempt).append(',').append(KeyEvent.getKeyText(code))
+        .append(',').append(second==0?"none":KeyEvent.getKeyText(second))
+        .append(',').append(last.x()).append(',').append(last.z())
+        .append(',').append(last.range()).append(',').append(last.progress()).append('\\n');
+   }
+   throw new AssertionError("Live WASD movement did not "
+       +(returning?"return toward van spawn":"advance the hunter")
+       +": site="+route.site()+" start_range="+start.range()
+       +" final_range="+last.range()+" along="+last.progress()
+       +" (see movement trace)");
+  }finally{
+   trace.append("# result=").append(verified?"PASS":"FAIL").append('\\n');
+   Files.writeString(OUTPUT.resolve("movement-"+route.site().toLowerCase(java.util.Locale.ROOT)
+       +(returning?"-return":"-out")+".csv"),trace,StandardCharsets.UTF_8);
+  }
  }
  private static JFrame launcher(){
   for(Window w:Window.getWindows())
