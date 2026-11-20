@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-391 — Physical benchmark's lateral motion assertion used opposite-handed screen direction
+
+**Status:** Corrected reviewed test and immutable private runner pin committed; Java 17 local camera-vector parity passed; physical House rerun in progress, no physical FPS or movement acceptance yet · **Affected:** Offscreen House physical GPU benchmark HINPUT contract (both solo and TCP trial branches); no change to production hunter or ghost A/D controls
+
+A physical benchmark could abort before measuring gameplay because its test asserted that A moved world-X negative at yaw zero, while the real first-person camera projects positive world-X to screen-left. This mismatch produced a false "Wrong host movement direction key=65" failure.
+
+Cause / uncertainty: The benchmark test assumed world-X was screen-right. SceneRenderer camera right is -dx*cos(yaw)+dz*sin(yaw), so at yaw=0 world positive-X is screen-left. Production LanRealtimeInput, ghost input prediction and Castle movement already use this convention consistently.
+
+Fix / next action: Fix LanViewportMotionVectorTest expectations for A/D at yaw 0 and pi/2, add a screen-projection handedness assertion and retain W/S and rejected menu input tests. Keep host authority and safety gates unchanged. Private runner pins the reviewed test by exact commit and blob SHA; rerun an owner-controlled matched physical baseline/candidate trial. Separately recover artifacts via checksum archive when GitHub storage quota blocks uploads.
+
+Evidence and verification: Earlier physical GPU benchmark failed before trial in the reviewed motion-vector test; Java exception said key=65 yaw=0 expected=-100,0 actual=[100,0]. Source https://github.com/mrcalzon02/The-Beckenburg-Project/commit/dfaf0a2e2c607fd609f0f6987871695cd2a4e041 and source readback; direct Java 17 coordinate/projection parity check passed. Authenticated private-runner test pin and rerun requested; physical terminal result pending.
+
+Older-map obligation: Test is map-agnostic and applies to all hunter/ghost viewports. The incorrect assertion was diagnostic only, not evidence that existing maps or production A/D movement were wrong; Castle, School and other maps retain independent navigation acceptance obligations.
+
 ### DEV-390 — Mesa GPU School return-to-van WASD smoke intermittently misses a valid input reversal
 
 **Status:** Exact-source Java 17, Windows renderer and Linux Mesa GPU acceptance PASSED at be055eb7 (run 44818302130), with two complete House/Farmhouse/School live cycles; physical GTX 1660 SUPER solo/three-seat remains open · **Affected:** GpuUiSmoke live Castle-to-House/Farmhouse/School case cycles and School reverse-walking assertion. No production hunter collision or host movement defect established.
