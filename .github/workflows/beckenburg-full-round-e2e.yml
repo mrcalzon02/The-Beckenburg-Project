@@ -57,6 +57,8 @@ jobs:
         run: |
           java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.LanVisualMotionTest
           if errorlevel 1 exit /b 1
+          java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.LanMovementGateTest
+          if errorlevel 1 exit /b 1
           java -Djava.awt.headless=true -ea -cp "build\classes;build\test" org.beckenburg.LanCameraCollisionTest
 
       - name: Verify authoritative dropped gear, empty slots and TCP pickup

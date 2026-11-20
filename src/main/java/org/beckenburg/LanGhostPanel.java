@@ -64,7 +64,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
             ex->{feedback="Spectral movement disconnected: "+ex.getMessage();close();});
         mouseLook=new MouseLook(this,(dx,dy)->{
             MouseLook.rotate(camera,dx,dy);refreshRealtimeInput();
-        });
+        },this::gameplayInputEnabled);
         addKeyListener(this);addMouseListener(mouseLook);addMouseMotionListener(mouseLook);
         addFocusListener(this);addFocusListener(mouseLook);
         audio.setHearingGain(0);
@@ -265,8 +265,13 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         }catch(IllegalArgumentException ex){feedback="Invalid spectral snapshot rejected";}
         repaint();
     }
+    private boolean gameplayInputEnabled(){
+        return LanMovementGate.enabled(isShowing(),isDisplayable(),isFocusOwner(),
+            room>=0&&visualMotion.authoritative()!=null,true,!finished,true);
+    }
     private void refreshRealtimeInput(){
-        boolean enabled=isShowing()&&isDisplayable()&&room>=0&&!finished;
+        boolean enabled=gameplayInputEnabled();
+        if(!enabled)visualMotion.suspend();
         int forward=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
         int strafe=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
         realtimeInput.publish(enabled,forward,strafe,camera.yaw,camera.pitch,
@@ -301,8 +306,10 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         long start = System.nanoTime();
         double dt=Math.max(0,Math.min(.05,(start-lastVisualFrame)/1e9));
         lastVisualFrame=start;
-        int forward=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
-        int strafe=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
+        boolean enabled=gameplayInputEnabled();
+        if(!enabled)visualMotion.suspend();
+        int forward=enabled?(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0):0;
+        int strafe=enabled?(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0):0;
         double dx=Math.sin(camera.yaw)*forward-Math.cos(camera.yaw)*strafe;
         double dz=Math.cos(camera.yaw)*forward+Math.sin(camera.yaw)*strafe;
         LanVisualMotion.Pose pose=visualMotion.sample(start,dt,dx,dz,(from,targetX,targetZ)->{
@@ -401,7 +408,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                 if(device!=null)try{client.ghostFixture(device.id());feedback="Requesting fixture haunting: "+device.kind();}catch(java.io.IOException failure){feedback="Fixture request failed: "+failure.getMessage();}
             }
             case KeyEvent.VK_ESCAPE -> {
-                keys.clear();mouseLook.release();
+                keys.clear();mouseLook.release();visualMotion.suspend();
                 refreshRealtimeInput(); // release motion before blocking modal UI
                 InGamePauseMenu.execute(this);
             }

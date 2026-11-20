@@ -182,7 +182,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         mouseLook=new MouseLook(this,(dx,dy)->{
             MouseLook.rotate(renderer,dx,dy);refreshRealtimeInput();
         },
-            ()->opening==null&&!casefileOpen&&interfaceOpen.isEmpty());
+            this::gameplayInputEnabled);
         addKeyListener(this);addMouseListener(mouseLook);addMouseMotionListener(mouseLook);
         addMouseListener(new MouseAdapter(){
             @Override public void mousePressed(MouseEvent e){
@@ -257,6 +257,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     private void closeChat(){
         chatInput.setVisible(false);
         chatInput.setText("");
+        keys.clear();
         mouseLook.resume();
         repaint();
     }
@@ -309,10 +310,16 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         LanVoiceClientAudio voice=client.voice();
         if(voice!=null)voice.setPushToTalk(null);
     }
+    /** Publish neutral movement before any blocking modal dialog can stall the EDT. */
+    private void suspendForDialog(){
+        keys.clear();releaseVoice();toolGrip.release();mouseLook.release();
+        visualMotion.suspend();
+        refreshRealtimeInput();
+    }
     private void voiceSettings(){
         LanVoiceClientAudio voice=client.voice();
         if(voice==null){feedback="VOICE LINK UNAVAILABLE";return;}
-        releaseVoice();keys.clear();mouseLook.release();
+        suspendForDialog();
         JCheckBox mute=new JCheckBox("Mute microphone",voice.muted());
         var devices=LanVoiceClientAudio.microphones();
         JComboBox<String> input=new JComboBox<>();
@@ -1132,7 +1139,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(map.van().stationAt(renderer.x,renderer.z)!=VanStaging.Station.EQUIPMENT){
             feedback="PURCHASE MEDICINE AT THE EQUIPMENT RACK";return;
         }
-        mouseLook.release();keys.clear();
+        suspendForDialog();
         String[] options=new String[6];
         int i=0;
         for(FieldSupplies.Kind kind:FieldSupplies.Kind.values())
@@ -1154,7 +1161,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(map.van().stationAt(renderer.x,renderer.z)!=VanStaging.Station.EQUIPMENT){
             feedback="RETURN TO VAN EQUIPMENT RACK";return;
         }
-        mouseLook.release();keys.clear();
+        suspendForDialog();
         rackCatalog=new NetworkEquipmentPanel(choice->{
             if(choice.action()==EquipmentRackDialog.Action.UPGRADE)sendAction("buy "+choice.id(),()->client.buyEquipment(choice.id(),choice.next()));
             else sendAction("equip "+choice.id(),()->client.equipAt(choice.slot(),choice.id()));
@@ -1284,10 +1291,12 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         // The host continues to own the physical body and interactions at 10 Hz.
         // Only the drawn camera is predicted between accepted BODY packets; restore
         // the host pose immediately so targeting, room logic and sound remain authoritative.
+        boolean enabled=gameplayInputEnabled();
+        if(!enabled)visualMotion.suspend();
         int forward=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
         int strafe=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
         double dx=0,dz=0;
-        if(health>0&&!chatInput.isVisible()&&(forward!=0||strafe!=0)){
+        if(enabled&&(forward!=0||strafe!=0)){
             dx=Math.sin(renderer.yaw)*forward-Math.cos(renderer.yaw)*strafe;
             dz=Math.cos(renderer.yaw)*forward+Math.sin(renderer.yaw)*strafe;
         }
@@ -1314,10 +1323,15 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         renderTimer.setInitialDelay(delayMs);
         renderTimer.restart();
     }
+    private boolean gameplayInputEnabled(){
+        return LanMovementGate.enabled(isShowing(),isDisplayable(),isFocusOwner(),
+            visualMotion.authoritative()!=null,health>0,caseResult.isEmpty(),
+            opening==null&&!chatInput.isVisible()&&!casefileOpen
+                &&interfaceOpen.isEmpty()&&!helpVisible);
+    }
     private void refreshRealtimeInput(){
-        boolean enabled=isShowing()&&isDisplayable()&&visualMotion.authoritative()!=null
-            &&health>0&&caseResult.isEmpty()&&opening==null&&!chatInput.isVisible()
-            &&!casefileOpen&&interfaceOpen.isEmpty()&&!helpVisible;
+        boolean enabled=gameplayInputEnabled();
+        if(!enabled)visualMotion.suspend();
         int forward=(keys.contains(KeyEvent.VK_W)?1:0)-(keys.contains(KeyEvent.VK_S)?1:0);
         int strafe=(keys.contains(KeyEvent.VK_D)?1:0)-(keys.contains(KeyEvent.VK_A)?1:0);
         realtimeInput.publish(enabled,forward,strafe,renderer.yaw,renderer.pitch,
@@ -1945,14 +1959,14 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(chatInput.isVisible())return;
         if(!keys.add(e.getKeyCode()))return;
         if(e.getKeyCode()==KeyEvent.VK_M&&insideVan()&&!casefileOpen){
-            if(interfaceOpen.equals("MAP")){interfaceOpen="";mouseLook.resume();}
+            if(interfaceOpen.equals("MAP")){interfaceOpen="";keys.clear();mouseLook.resume();}
             else{interfaceOpen="MAP";vanMapScroll=0;keys.clear();mouseLook.release();}
             repaint();return;
         }
         if(!interfaceOpen.isEmpty()){
             if(interfaceOpen.equals("BRIEFING")||interfaceOpen.startsWith("STORY_")){
                 if(e.getKeyCode()==KeyEvent.VK_ESCAPE||e.getKeyCode()==KeyEvent.VK_E){
-                    interfaceOpen="";mouseLook.resume();
+                    interfaceOpen="";keys.clear();mouseLook.resume();
                 }else (interfaceOpen.equals("BRIEFING")?assignmentReader:storyReader).key(e.getKeyCode());
                 keys.clear();repaint();return;
             }
@@ -1960,7 +1974,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 cycleVanCamera();repaint();return;
             }
             if(e.getKeyCode()==KeyEvent.VK_ESCAPE||e.getKeyCode()==KeyEvent.VK_E){
-                interfaceOpen="";mouseLook.resume();
+                interfaceOpen="";keys.clear();mouseLook.resume();
             }else if(e.getKeyCode()==KeyEvent.VK_PAGE_UP||e.getKeyCode()==KeyEvent.VK_RIGHT){
                 mapFloor++;vanMapScroll=0;
             }else if(e.getKeyCode()==KeyEvent.VK_PAGE_DOWN||e.getKeyCode()==KeyEvent.VK_LEFT){
@@ -1975,16 +1989,16 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             repaint();return;
         }
         if(helpVisible){
-            if(e.getKeyCode()==KeyEvent.VK_ESCAPE){helpVisible=false;mouseLook.resume();}
+            if(e.getKeyCode()==KeyEvent.VK_ESCAPE){helpVisible=false;keys.clear();mouseLook.resume();}
             repaint();return;
         }
         if(e.getKeyCode()==KeyEvent.VK_ESCAPE && casefileOpen){
-            casefileOpen=false;mouseLook.resume();repaint();return;
+            casefileOpen=false;keys.clear();mouseLook.resume();repaint();return;
         }
         if(e.getKeyCode()==KeyEvent.VK_J){
             casefileOpen=!casefileOpen;
             if(casefileOpen){journalPage=0;releaseVoice();toolGrip.release();mouseLook.release();keys.clear();}
-            else mouseLook.resume();
+            else{keys.clear();mouseLook.resume();}
             repaint();return;
         }
         if(casefileOpen&&journalPage==0){
@@ -2036,8 +2050,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 else sendAction("drop equipment",client::dropHeldEquipment);
             }
             case KeyEvent.VK_ESCAPE -> {
-                keys.clear();releaseVoice();mouseLook.release();
-                refreshRealtimeInput(); // release motion before blocking modal UI
+                suspendForDialog();
                 InGamePauseMenu.execute(this);
             }
             case KeyEvent.VK_E -> {
@@ -2125,7 +2138,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         }
     }
     private void showFieldActions(){
-        keys.clear();releaseVoice();toolGrip.release();mouseLook.release();
+        suspendForDialog();
         try{fieldAction(GameControls.choose(this,"Equipment rack","Supplies","Voice settings",
             "Place writing book","Inspect writing book","Retrieve writing book","Place ward",
             "Cleanse anchor","Banish","Absolve","Deploy cross","Throw ward","Deploy salt",

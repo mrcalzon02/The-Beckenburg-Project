@@ -71,6 +71,27 @@ public final class LanVisualMotionTest {
         check(Math.hypot(reversed.x()-2,reversed.z()-3)<turnDistance,
             "sharp opposing input must restart the bounded visual epoch");
 
+        // The user opens a journal mid-step. Authoritative input is neutral
+        // and camera extrapolation must immediately stop without using a
+        // stale held-key direction when the journal closes.
+        motion.reset();
+        motion.accept(new LanVisualMotion.Pose(2,0,3),start);
+        var midStep=motion.sample(start+ms(80),.02,1,0,FREE);
+        check(midStep.x()>2.05,"test must start with a real predicted camera step");
+        motion.suspend();
+        var paused=motion.sample(start+ms(100),.02,0,0,FREE);
+        check(paused.x()==2&&paused.y()==0&&paused.z()==3,
+            "menu/focus suspension must discard predicted travel immediately");
+        motion.accept(new LanVisualMotion.Pose(2.12,0,3),start+ms(110));
+        motion.suspend();
+        var hostCorrection=motion.sample(start+ms(130),.02,0,0,FREE);
+        check(hostCorrection.x()==2.12,
+            "suspended camera uses newer host position without inventing movement");
+        var freshIntent=motion.sample(start+ms(140),.02,1,0,FREE);
+        check(freshIntent.x()==2.12,"re-entering gameplay must start a fresh prediction epoch");
+        var movingAgain=motion.sample(start+ms(160),.02,1,0,FREE);
+        check(movingAgain.x()>freshIntent.x(),"movement resumes promptly on new held input");
+
         motion.reset();
         motion.accept(new LanVisualMotion.Pose(2,0,3),start);
         int[] sweeps={0};

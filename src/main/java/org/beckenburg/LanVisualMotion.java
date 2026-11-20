@@ -41,6 +41,19 @@ final class LanVisualMotion {
 
     void invalidateCollision() { sweptFrom = sweptEnd = null; }
 
+    /** Cancel speculative travel when a menu, focus loss or round end blocks input.
+     * The host remains authoritative and can still update its pose while a UI is open.
+     * Resume begins a fresh movement epoch, never replaying old held-key prediction. */
+    void suspend() {
+        if (authoritative != null) displayed = authoritative;
+        stopPose = null;
+        stopUntilNs = 0;
+        intentStartNs = 0;
+        previouslyMoving = false;
+        priorDirectionX = priorDirectionZ = 0;
+        invalidateCollision();
+    }
+
     void reset() {
         authoritative = displayed = stopPose = null;
         lastPositionNs = intentStartNs = stopUntilNs = 0;
