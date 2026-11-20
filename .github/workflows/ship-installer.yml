@@ -11,9 +11,11 @@ on:
       # Release workflow itself was exercised and published successfully
       # on 6ce17c0c / v0.1.319. Stop repeat installer builds for later
       # workflow-only housekeeping; manual workflow_dispatch is preserved.
-      - '.github/workflows/ship-installer.yml'
-      - '.github/workflows/beckenburg-full-round-e2e.yml'
-      - '.github/workflows/development-gallery.yml'
+      # Test/CI workflow maintenance changes cannot alter a built game's
+      # bytes. A workflow-only push must not reserve a new version, spend a
+      # Windows packaging run, or upload a redundant 760 MB installer.
+      # A mixed source+workflow commit still packages the changed source.
+      - '.github/workflows/**'
       - 'regression-tests.txt'
       - 'src/test/**'
       - 'README.md'
