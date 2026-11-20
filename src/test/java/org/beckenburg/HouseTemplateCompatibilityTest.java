@@ -11,6 +11,54 @@ public final class HouseTemplateCompatibilityTest {
         return level.colliders().stream().collect(java.util.stream.Collectors.groupingBy(
             body->body,java.util.stream.Collectors.counting()));
     }
+    /**
+     * Fridge relocation must not disturb the already approved heating services.
+     * The old full-heating revision pin also included the House's later repaired
+     * porch collision bevels and therefore incorrectly rejected legitimate
+     * architectural updates unrelated to the kitchen fixture.
+     *
+     * Check exact functional anchors, structural preservation and authored
+     * dependencies directly. Never relax the real collider/USER save checks
+     * that exercise the fridge move further below.
+     */
+    private static void acceptedHeatingConstruction(){
+        var story=HouseRebuildStory.source();
+        var assembly=HouseRebuildServices.assembly();
+        var heat=assembly.level();
+        check(heat.revision().startsWith("first-principles-heating-v1-"),
+            "Heating remains a versioned authored source");
+        check(heat.rooms().equals(story.rooms())&&heat.portals().equals(story.portals())
+            &&heat.stairs().equals(story.stairs())&&heat.voids().equals(story.voids())
+            &&heat.dock().equals(story.dock())&&heat.water().equals(story.water())
+            &&heat.sounds().equals(story.sounds()),
+            "Heating preserves accepted room, doorway, staircase, floor and world construction");
+        check(heat.props().subList(0,story.props().size()).equals(story.props())
+            &&heat.colliders().subList(0,story.colliders().size()).equals(story.colliders())
+            &&heat.sockets().subList(0,story.sockets().size()).equals(story.sockets()),
+            "Heating retains every source prop, exact collider and service contact prefix");
+
+        // Approved original radiator centres, not inferred from the changing
+        // whole-scene revision digest (which also hashes exterior architecture).
+        double[][] centres={
+            {1,12.2075,17.6},{2,14.9,10.2075},{3,21.3925,11.8},
+            {5,19.8,20.2925},{6,15,20.2925},{7,15,10.2075},
+            {8,18.2075,12.2}
+        };
+        check(assembly.radiators().size()==centres.length,
+            "Every approved House radiator is retained");
+        for(int i=0;i<centres.length;i++){
+            var radiator=assembly.radiators().get(i);
+            var body=radiator.solid();
+            check(radiator.prop().room()==(int)centres[i][0]
+                &&Math.abs(body.x()-centres[i][1])<1e-8
+                &&Math.abs(body.z()-centres[i][2])<1e-8
+                &&Math.abs(body.y()-story.room((int)centres[i][0]).y())<1e-8
+                &&radiator.prop().mesh().equals("level_radiator_worn"),
+                "Original radiator "+i+" remains at its accepted physical construction coordinates");
+        }
+        check(assembly.contacts().size()==31,
+            "Original heating, hot/cold water and waste terminal contacts remain intact");
+    }
     private static Properties metadata(String id)throws Exception{
         var result=new Properties();
         try(var in=Files.newInputStream(UserLevelLibrary.folder(id).resolve("template.properties"))){result.load(in);}
@@ -25,7 +73,7 @@ public final class HouseTemplateCompatibilityTest {
         System.setProperty("user.home",home.toString());
         try{
             var legacy=LevelPlans.legacyHouseSource();var rebuilt=HouseRebuildFurnishings.source();
-            check(HouseRebuildServices.source().revision().equals("first-principles-heating-v1-1d5d95258b105737"),"Fridge relocation must preserve accepted underlying construction coordinates");
+            acceptedHeatingConstruction();
             check(legacy.rooms().get(5).y()==3&&rebuilt.rooms().get(5).y()==2.8,"Independent old/new floor reference");
             check(legacy.rooms().get(9).y()==-3&&rebuilt.rooms().get(9).y()==-2.4,"Independent old/new cellar reference");
             UserLevelLibrary.create("FreshDefault",HouseMap.Site.HOUSE);
