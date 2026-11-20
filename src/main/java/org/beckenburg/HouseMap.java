@@ -419,6 +419,17 @@ public final class HouseMap {
         for(Stair s:level.stairs())if(s.contains(x,z,.22)){double sy=s.yAt(x,z),d=Math.abs(sy-previousY);if(d<delta){best=sy;delta=d;}}
         // A ramp owns its deck opening; prefer it over the overlapping lower room.
         if(best!=null)return best;
+        // The rebuilt House also has genuine authored *shallow* ramps at both
+        // sides of the raised front porch. Their HCS2 top triangles are actual
+        // walking support, not decorative mesh or a collision exemption.
+        // Resolve them before the overlapping flat indoor room floor: choosing
+        // floor y=0 beneath the 4cm vestibule slope makes its next collision
+        // step fail and strands every hire just inside the entrance at z19.8.
+        // Limit support to the same 25cm contiguous physical step budget.
+        if(envelope!=null){
+            var deck=envelope.physics().support(x,z,previousY,delta);
+            if(deck!=null)return deck.y();
+        }
         for(Room r:level.rooms())if(x>=r.x0()&&x<=r.x1()&&z>=r.z0()&&z<=r.z1()&&!level.floorVoid(x,r.y(),z)){double sy=surface(r,x,z),d=Math.abs(sy-previousY);if(d<delta){best=sy;delta=d;}}
         for(Portal p:level.portals())if(!p.kind().equals("stair")&&!p.kind().equals("window")&&inPortal(p,x,z,.22)){double d=Math.abs(p.y()-previousY);if(d<delta){best=p.y();delta=d;}}
         for(Collider c:level.colliders()){

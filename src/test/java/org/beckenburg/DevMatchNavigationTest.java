@@ -110,6 +110,25 @@ public final class DevMatchNavigationTest {
         }
         check(map.roomAt(position.x(),position.y(),position.z())==0,
             "Physical walk must enter the interior foyer without a room jump: "+position);
+        // Real 3-seat TCP AI and six deterministic return paths once stopped
+        // at x19.7,z19.8 because the interior floor won over the sloped
+        // physical threshold's support. Walk OUT through the same open door,
+        // testing both directions with the production swept capsule.
+        var inside=position;
+        Double shallowSupport=map.supportNear(19.8,20.05,0);
+        check(shallowSupport!=null&&shallowSupport>.005&&shallowSupport<.04,
+            "Inner porch bevel must own its real rising floor instead of flat y=0");
+        for(int step=0;step<12&&position.z()<21.55;step++){
+            var next=map.resolveMove(position,approachX,
+                Math.min(21.55,position.z()+.24));
+            check(next!=null,
+                "Return path blocked at inner porch threshold from "+position);
+            position=next;
+        }
+        check(position.z()>=21.55-.001&&map.roomAt(position.x(),position.y(),position.z())==13,
+            "Return walk must physically exit to front approach, never jump rooms: "+
+                position+" from "+inside);
+        System.out.println("PASS: bidirectional physical doorway/threshold traversal");
         System.out.println("PASS: genuine 4cm walkable porch bevel, open door and continuous capsule entry");
         System.out.println("PASS: six van aisle routes, supported ramps and two genuine house entrances");
     }
