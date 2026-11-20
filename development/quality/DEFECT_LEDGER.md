@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-390 — Mesa GPU School return-to-van WASD smoke intermittently misses a valid input reversal
+
+**Status:** Observed intermittent failure at 7541e89a; unchanged-source GPU retry passed; pulse-and-position diagnostics committed at be055eb7, Java 17 compile passed; new GPU runtime and physical Windows acceptance pending · **Affected:** GpuUiSmoke live Castle-to-House/Farmhouse/School case cycles and School reverse-walking assertion. No production hunter collision or host movement defect established.
+
+Mesa GPU UI acceptance passed Castle, House, Farmhouse and real School dispatch, then failed 'Live WASD movement did not return toward van spawn' in School. The identical-source failed-job rerun succeeded, indicating nondeterministic timing rather than a reproducible OpenGL launch failure.
+
+Cause / uncertainty: Prior harness held reverse keys until the EDT observed distance <0.22m. Slow software GL paint can delay that observation while the independent 50Hz movement pump continues to steer the authoritative 10Hz host; the hunter can pass the narrow distance window. A genuine collision or client-input defect cannot be categorically ruled out from the failing check alone.
+
+Fix / next action: Drive real KeyListeners with bounded 175ms press/release pulses, await EDT key release, observe authoritative BODY x/z between pulses, verify outward translation and return progress, reverse after origin overshoot, and write per-site movement CSV in the uploaded GPU artifact. Keep host collisions, input watchdog, player/ghost tick frequencies and return-to-Castle functional requirements unchanged. Inspect the exact-source GPU run and School CSV; investigate any remaining physical obstruction separately. Validate on physical Windows GTX 1660 SUPER, solo and three-seat.
+
+Evidence and verification: Initial GPU run https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44802310822 (attempt 1 failed at School; same-source attempt 2 passed); harness commits https://github.com/mrcalzon02/The-Beckenburg-Project/commit/27e504667a05597a20e6a7bdb3a912e28670a668 and https://github.com/mrcalzon02/The-Beckenburg-Project/commit/be055eb74a6c45dc2a9361d24d067cc0f18edb66; new exact-source GPU run https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44818302130 (compile-gpu-java17 success at checkpoint; remaining GPU jobs pending).
+
+Older-map obligation: House and Farmhouse also run this smoke and must retain outbound, return, van-door retreat and Castle restoration checks. School collision access has no separate physical completion certificate; other maps remain unaudited.
+
 ### DEV-389 — Castle gate exit accepts unsupported or blocked native apron poses
 
 **Status:** Source gate guard and native-block negative regression committed; exact-source CI and installed Windows crossing/retreat inspection pending · **Affected:** Castle Beckenburg headquarters main portcullis, editable ground-level exit apron and Castle-only exit countdown
