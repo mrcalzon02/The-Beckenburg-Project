@@ -34,14 +34,19 @@ public final class EditorAgentServiceTest {
                 .filter(i->HouseAuthoringAttachments.required(session.sourceLevel(),session.prop(i)))
                 .findFirst().orElseThrow();
             var attached=session.prop(attachedIndex);
+            var beforeProps=List.copyOf(session.props());
             long beforeAttachment=service.inspect().revision();
             rejects(()->service.transact(beforeAttachment,"move-prop",
                 Map.of("id",session.nodeId(attachedIndex),
                     "x",Double.toString(attached.x()+.125),
                     "y",Double.toString(attached.y()),
                     "z",Double.toString(attached.z()))));
+            // EditorHistory rolls a refused edit back through project.restore.
+            // That restore may legitimately advance the optimistic revision to
+            // invalidate outstanding edit commands; physical props and their
+            // attached service source must nevertheless remain bit-exact.
             check(session.prop(attachedIndex).equals(attached)
-                    &&service.inspect().revision()==beforeAttachment,
+                    &&session.props().equals(beforeProps),
                 "Protected House assembly remains untouched after rejected agent edit");
             // Use an actual independently editable object for success/undo
             // coverage; source-attached parent props cannot be moved by
