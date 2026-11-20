@@ -419,22 +419,38 @@ public final class EditorAgentGuiTest {
                     open.setAccessible(true);open.invoke(e,HouseMap.Site.HOUSE);
                     var finish=DeveloperLevelEditor.class.getDeclaredMethod("finishSceneOpen");finish.setAccessible(true);finish.invoke(e);
                     verifyPalette(e,true);
-                    var service=e.agentService();var before=service.inspect();var node=before.hierarchy().get(0);
+                    var service=e.agentService();var before=service.inspect();
+                    var missionState=(LevelAuthoringSession.Snapshot)before.state();
+                    var source=HouseSourceVersions.source(missionState.architecture());
+                    // After House promotion prop-0 is a real plumbed kitchen counter.
+                    // Edit a standalone chair, never bypass attached fixture locks.
+                    int movable=-1;
+                    for(int i=0;i<missionState.props().size();i++){
+                        var prop=missionState.props().get(i);
+                        if(prop.mesh().equals("chair_mp_5")&&prop.support().equals("floor")
+                            &&!HouseAuthoringAttachments.required(source,prop)){
+                            movable=i;break;
+                        }
+                    }
+                    check(movable>=0,"Actual House GUI has independently editable loose furniture");
+                    var node=before.hierarchy().get(movable);
+                    check(node.id().equals(missionState.ids().get(movable)),
+                        "Agent uses the real editable prop's stable ID, not the first service fixture");
                     var currentMap=DeveloperLevelEditor.class.getDeclaredMethod("currentMissionMap");currentMap.setAccessible(true);
                     Object initialMap=currentMap.invoke(e);
                     check(initialMap==currentMap.invoke(e),"Unchanged native revision reuses actual map");
                     service.save(before.revision());
                     service.transact(before.revision(),"move-prop",Map.of("id",node.id(),
                         "x",Double.toString(node.x()+.125),"y",Double.toString(node.y()),"z",Double.toString(node.z())));
-                    check(service.inspect().hierarchy().get(0).x()==node.x()+.125,"Agent edit visible in active human editor");
+                    check(service.inspect().hierarchy().get(movable).x()==node.x()+.125,"Agent edit visible in active human editor");
                     Object editedMap=currentMap.invoke(e);
                     check(initialMap!=editedMap&&editedMap==currentMap.invoke(e),"Committed native change invalidates map exactly until revision is consumed");
-                    check(((HouseMap)editedMap).level().props().get(0).x()==node.x()+.125,"Cache rebuild consumes authoritative native props");
+                    check(((HouseMap)editedMap).level().props().get(movable).x()==node.x()+.125,"Cache rebuild consumes authoritative native props");
                     verifyPlaytest(e,(HouseMap)editedMap,output);
                     var undo=button(e,"UNDO");check(undo!=null,"Human undo button exists");undo.doClick();
-                    check(service.inspect().hierarchy().get(0).x()==node.x(),"Human undo reverses agent edit");
+                    check(service.inspect().hierarchy().get(movable).x()==node.x(),"Human undo reverses agent edit");
                     var redo=button(e,"REDO");redo.doClick();
-                    check(service.inspect().hierarchy().get(0).x()==node.x()+.125,"Human redo restores agent edit");
+                    check(service.inspect().hierarchy().get(movable).x()==node.x()+.125,"Human redo restores agent edit");
                     service.save(service.inspect().revision());
                     service.reopen(service.inspect().revision());
                     check(service.test(service.inspect().revision(),"mission-runtime-parity").result().stream().allMatch(c->c.passed()),
@@ -443,9 +459,9 @@ public final class EditorAgentGuiTest {
                     Files.writeString(output.resolve("house-inspection.json"),EditorAgentProtocol.json(service.inspect()));
                     Files.writeString(service.inspect().document(),"corrupt fixture document");
                     recoverThroughMenu(e);
-                    check(service.inspect().hierarchy().get(0).x()==node.x(),"Human recovery restores previous real saved prop");
+                    check(service.inspect().hierarchy().get(movable).x()==node.x(),"Human recovery restores previous real saved prop");
                     undo.doClick();
-                    check(service.inspect().hierarchy().get(0).x()==node.x()+.125,"Human undo restores pre-recovery unsaved edit");
+                    check(service.inspect().hierarchy().get(movable).x()==node.x()+.125,"Human undo restores pre-recovery unsaved edit");
                     service.transact(service.inspect().revision(),"move-prop",Map.of("id",node.id(),"x",Double.toString(node.x()),
                         "y",Double.toString(node.y()),"z",Double.toString(node.z())));
                     check(service.inspect().operations().contains("rebuild-house"),"Actual human House service exposes native rebuild");
