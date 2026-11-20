@@ -1291,15 +1291,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
             dx=Math.sin(renderer.yaw)*forward-Math.cos(renderer.yaw)*strafe;
             dz=Math.cos(renderer.yaw)*forward+Math.sin(renderer.yaw)*strafe;
         }
-        LanVisualMotion.Pose pose=visualMotion.sample(now,dt,dx,dz,(from,targetX,targetZ)->{
-            var start=new LevelDefinition.Vec(from.x(),from.y(),from.z());
-            double height=HunterPosture.height(crouched);
-            var resolved=map.resolveMove(start,targetX,targetZ,height);
-            // Mirror the host's independent-axis corner gate for diagonals.
-            if(resolved==null||map.resolveMove(start,targetX,from.z(),height)==null
-                    ||map.resolveMove(start,from.x(),targetZ,height)==null)return null;
-            return new LanVisualMotion.Pose(resolved.x(),resolved.y(),resolved.z());
-        });
+        LanVisualMotion.Pose pose=visualMotion.sample(now,dt,dx,dz,
+            (from,targetX,targetZ)->LanCameraCollision.resolve(
+                map,from,targetX,targetZ,HunterPosture.height(crouched)));
         double hostX=renderer.x,hostZ=renderer.z,hostEye=renderer.eyeHeight;
         try{
             if(pose!=null){
