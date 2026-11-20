@@ -18,6 +18,11 @@ on:
       - '.github/workflows/**'
       - 'regression-tests.txt'
       - 'src/test/**'
+      # Editor test harnesses are not part of the shipped game or updater.
+      # Their edits must never reserve another release version or repackage
+      # an unchanged Windows installer.
+      - 'tools/verify_editor_agent_cli.py'
+      - 'tools/verify_editor_agent_host.cmd'
       - 'README.md'
       - 'RELEASES.md'
       - 'IMPLEMENTATION_SLICE.md'

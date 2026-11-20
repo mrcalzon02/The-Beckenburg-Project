@@ -20,8 +20,8 @@ on:
       - 'src/main/java/org/beckenburg/GroundRecovery.java'
       - 'src/main/java/org/beckenburg/HouseMap.java'
       - 'src/test/java/org/beckenburg/GroundRecoverySupportParityTest.java'
-      - 'tools/verify_editor_agent_host.cmd'
-      - 'tools/verify_editor_agent_cli.py'
+      # Harness-only edits run through Editor Agent Service Acceptance;
+      # do not independently reserve a second Windows terrain editor run.
       - 'src/main/java/org/beckenburg/EnvironmentModuleEditor.java'
       - 'src/main/java/org/beckenburg/editor/StitchedWorldEditor.java'
       - 'src/test/java/org/beckenburg/TerrainSceneNativePhysicsTest.java'
