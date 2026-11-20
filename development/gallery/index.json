@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11126,
+  "count": 11133,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -95324,6 +95324,76 @@
       "height": 360,
       "bytes": 103795,
       "sha256": "d4bc9bca0701868305663d1d1ea4f9b5fc880297b59f93f1fe3c2f245d0cbd58"
+    },
+    {
+      "path": "development/levels/previews/true-3d-loading/run-44831053181/real-3d-approach-outside-van.png",
+      "url": "development/levels/previews/true-3d-loading/run-44831053181/real-3d-approach-outside-van.png",
+      "title": "Real 3d approach outside van",
+      "kind": "Development review",
+      "width": 426,
+      "height": 240,
+      "bytes": 56513,
+      "sha256": "5190c4b20b80898d5f20df9d3d28943a50446bcb59292186783d5cc574b4caf8"
+    },
+    {
+      "path": "development/levels/previews/true-3d-loading/run-44831053181/real-3d-crossing-cargo-door.png",
+      "url": "development/levels/previews/true-3d-loading/run-44831053181/real-3d-crossing-cargo-door.png",
+      "title": "Real 3d crossing cargo door",
+      "kind": "Development review",
+      "width": 426,
+      "height": 240,
+      "bytes": 49471,
+      "sha256": "462e0e2a1684dc102a9d8a856ea5f2ccd3cc316d5ec9b07015874fb625c6327b"
+    },
+    {
+      "path": "development/levels/previews/true-3d-loading/run-44831053181/real-3d-first-aerial-geometry.png",
+      "url": "development/levels/previews/true-3d-loading/run-44831053181/real-3d-first-aerial-geometry.png",
+      "title": "Real 3d first aerial geometry",
+      "kind": "Development review",
+      "width": 426,
+      "height": 240,
+      "bytes": 25203,
+      "sha256": "218f1aafd429dc339c0624f0919bdf364bebbee371ba60dfeccebc4e991c29f3"
+    },
+    {
+      "path": "development/levels/previews/true-3d-loading/run-44831053181/real-3d-hunter-camera-handoff.png",
+      "url": "development/levels/previews/true-3d-loading/run-44831053181/real-3d-hunter-camera-handoff.png",
+      "title": "Real 3d hunter camera handoff",
+      "kind": "Development review",
+      "width": 426,
+      "height": 240,
+      "bytes": 39584,
+      "sha256": "257d129a8cc5824fdf3a292f2b4cca8e18d274b7a81cb7bf6169f8d32ae1c64f"
+    },
+    {
+      "path": "development/levels/previews/true-3d-loading/run-44831053181/real-3d-inside-cargo-aisle.png",
+      "url": "development/levels/previews/true-3d-loading/run-44831053181/real-3d-inside-cargo-aisle.png",
+      "title": "Real 3d inside cargo aisle",
+      "kind": "Development review",
+      "width": 426,
+      "height": 240,
+      "bytes": 50412,
+      "sha256": "5fd3c57fb825de26cef574a9b42b5f929b7dd4cc22f1975d95f168869806adfc"
+    },
+    {
+      "path": "development/levels/previews/true-3d-loading/run-44831053181/real-world-3d-first-aerial.png",
+      "url": "development/levels/previews/true-3d-loading/run-44831053181/real-world-3d-first-aerial.png",
+      "title": "Real world 3d first aerial",
+      "kind": "Development review",
+      "width": 533,
+      "height": 300,
+      "bytes": 96644,
+      "sha256": "2fd0b7306d068c2d8c1e92f166e045ed0ee4e446eae6959cc1277bcc2718b982"
+    },
+    {
+      "path": "development/levels/previews/true-3d-loading/run-44831053181/real-world-3d-loading-screen.png",
+      "url": "development/levels/previews/true-3d-loading/run-44831053181/real-world-3d-loading-screen.png",
+      "title": "Real world 3d loading screen",
+      "kind": "Development review",
+      "width": 640,
+      "height": 360,
+      "bytes": 103795,
+      "sha256": "c88efc48f23010b5612929c80c3ca1f0cb2bb5355393046ff72c54379b2f7318"
     },
     {
       "path": "development/levels/previews/ui/01-point-at-cup.png",
