@@ -1942,6 +1942,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     }
     @Override public void keyPressed(KeyEvent e){
         try{
+        if(perfHud.captureHotkey(e,"lan-hunter")){repaint();return;}
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         if(e.getKeyCode()==KeyEvent.VK_TAB){
             if(ledgerTabHeld)return;
@@ -2234,6 +2235,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     public LanCase.Tool selectedTool(){return selected;}
     public String caseFeedback(){return feedback;}
     @Override public void keyReleased(KeyEvent e){
+        perfHud.captureKeyReleased(e);
             if(e.getKeyCode()==KeyEvent.VK_E)interactionHeld=false;
         if(e.getKeyCode()==KeyEvent.VK_TAB)ledgerTabHeld=false;
         keys.remove(e.getKeyCode());
@@ -2244,6 +2246,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     @Override public void keyTyped(KeyEvent e){}
     @Override public void focusGained(FocusEvent e){}
     @Override public void focusLost(FocusEvent e){releaseCameraAttention();interactionHeld=false;ledgerTabHeld=false;toolGrip.release();toolPlacement=false;
+        perfHud.captureFocusLost();
         keys.clear();releaseVoice();mouseLook.release();refreshRealtimeInput();
     }
 }

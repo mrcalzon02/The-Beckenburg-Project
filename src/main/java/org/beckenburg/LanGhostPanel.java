@@ -402,6 +402,7 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     }
     @Override public void keyPressed(KeyEvent e){
         try{
+        if(perfHud.captureHotkey(e,"lan-ghost")){repaint();return;}
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         switch(e.getKeyCode()){
             case KeyEvent.VK_E -> {
@@ -435,10 +436,16 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         }
         }finally{refreshRealtimeInput();}
     }
-    @Override public void keyReleased(KeyEvent e){keys.remove(e.getKeyCode());refreshRealtimeInput();}
+    @Override public void keyReleased(KeyEvent e){
+        perfHud.captureKeyReleased(e);
+        keys.remove(e.getKeyCode());refreshRealtimeInput();
+    }
     @Override public void keyTyped(KeyEvent e){}
     @Override public void focusGained(FocusEvent e){}
-    @Override public void focusLost(FocusEvent e){keys.clear();mouseLook.release();refreshRealtimeInput();}
+    @Override public void focusLost(FocusEvent e){
+        perfHud.captureFocusLost();
+        keys.clear();mouseLook.release();refreshRealtimeInput();
+    }
     @Override protected void paintComponent(Graphics base){
         super.paintComponent(base);
         Graphics2D g=(Graphics2D)base.create();

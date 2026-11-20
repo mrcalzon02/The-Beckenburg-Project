@@ -29,6 +29,51 @@ public final class DebugPerformanceHud {
     private double x,y,z,yaw;
     private int width,height;
     private static final Font FONT=new Font(Font.MONOSPACED,Font.PLAIN,11);
+    private FrameTimeCapture capture;
+    private boolean captureKeyHeld;
+    private volatile String captureStatus="CTRL+SHIFT+F8 RECORD FRAMES";
+    /** One local viewport owns its recording. Held-key repeat never toggles twice. */
+    public boolean captureHotkey(KeyEvent event,String viewport){
+        int mask=InputEvent.CTRL_DOWN_MASK|InputEvent.SHIFT_DOWN_MASK;
+        if(event.getKeyCode()!=KeyEvent.VK_F8||(event.getModifiersEx()&mask)!=mask)
+            return false;
+        event.consume();
+        if(captureKeyHeld)return true;
+        captureKeyHeld=true;
+        if(capture==null){
+            capture=new FrameTimeCapture(viewport);
+            captureStatus="RECORDING / CTRL+SHIFT+F8 TO SAVE";
+            enabled=true;
+            BeckenburgDiagnostics.record("PERF CAPTURE start viewport="+viewport);
+        }else finishCapture();
+        return true;
+    }
+    public void captureKeyReleased(KeyEvent event){
+        if(event.getKeyCode()==KeyEvent.VK_F8)captureKeyHeld=false;
+    }
+    public void captureFocusLost(){captureKeyHeld=false;}
+    private void finishCapture(){
+        FrameTimeCapture stopped=capture;
+        capture=null;
+        if(stopped==null)return;
+        if(stopped.size()==0){captureStatus="CAPTURE EMPTY / NO FRAMES";return;}
+        captureStatus="SAVING "+stopped.size()+" FRAME SAMPLES";
+        Thread writer=new Thread(()->{
+            try{
+                java.nio.file.Path destination=stopped.defaultOutput();
+                stopped.write(destination);
+                captureStatus="SAVED "+destination.getFileName();
+                BeckenburgDiagnostics.record("PERF CAPTURE saved file="+destination+
+                    " samples="+stopped.size()+" p99_ms="+stopped.summary().p99Ms());
+            }catch(java.io.IOException|RuntimeException failure){
+                captureStatus="PERF CAPTURE SAVE FAILED";
+                BeckenburgDiagnostics.record("PERF CAPTURE SAVE FAILED "+
+                    BeckenburgDiagnostics.redact(failure.toString()));
+            }
+        },"beckenburg-perf-trace-writer");
+        writer.setDaemon(true);
+        writer.start();
+    }
     public static boolean enabled(){return enabled;}
     public static boolean hotkey(KeyEvent event){
         int mask=InputEvent.CTRL_DOWN_MASK|InputEvent.SHIFT_DOWN_MASK;
@@ -42,7 +87,7 @@ public final class DebugPerformanceHud {
     /** Only read scene state after the real draw; never force an extra scene. */
     public void sample(long entireFrameNs,SceneRenderer scene,HouseMap map,
                        int actorCount,String viewport){
-        if(!enabled)return;
+        if(!enabled&&capture==null)return;
         long now=System.nanoTime();
         // For screenshots, an actual draw cannot make FPS look faster than
         // its measured wall duration. First-sample display is explicit.
@@ -56,6 +101,13 @@ public final class DebugPerformanceHud {
         x=scene.x;y=scene.eyeHeight;z=scene.z;yaw=scene.yaw;
         width=scene.width();height=scene.height();
         room=map==null?-1:map.roomAt(x,y-1.62,z);
+        FrameTimeCapture recorder=capture;
+        if(recorder!=null&&!recorder.record(now,entireFrameNs,
+                metrics!=null&&metrics.gpu(),scene.consumedGpuFrameId(),
+                metrics==null?0:metrics.sceneBuildNs(),
+                metrics==null?0:metrics.geometryNs(),
+                metrics==null?0:metrics.effectsNs(),room))
+            finishCapture();
         double measured=Double.isNaN(wall)?loopNs/1e6:Math.max(wall,loopNs/1e6);
         if(measured>0 && Double.isFinite(measured)){
             history[next]=measured;
@@ -169,7 +221,9 @@ public final class DebugPerformanceHud {
                     ms>100?94:ms>33?196:225,ms>100?106:ms>33?97:172));
                 out.fillRect(bx,graphTop+graphHeight-bh,bw,bh);
             }
-            text(out,left+12,top+344,"120 LOOP FRAMES / 16 33 50 100ms GRID",0xb9cbd0);
+            String footer=capture==null?captureStatus:
+                "RECORDING "+capture.size()+"/"+FrameTimeCapture.CAPACITY+" / CTRL+SHIFT+F8 SAVE";
+            text(out,left+12,top+344,footer.length()>62?footer.substring(0,62):footer,0xb9cbd0);
         }finally{out.dispose();}
     }
     private static void text(Graphics2D g,int x,int y,String s,int rgb){

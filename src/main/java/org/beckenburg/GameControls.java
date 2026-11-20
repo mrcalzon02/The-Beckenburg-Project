@@ -16,7 +16,8 @@ public final class GameControls {
         "R drop / LMB throw held prop / wheel turn held prop",
         "TAB journal / J casefile / M map / H help / ESC field menu (mouse controls)",
         "C radio voice / V local voice / ENTER local text / SHIFT+ENTER radio text",
-        "K field actions, supplies, rituals and voice options"
+        "K field actions, supplies, rituals and voice options",
+        "CTRL+SHIFT+F7 performance HUD / CTRL+SHIFT+F8 save frame capture"
     };
     public static String help(){return String.join("\n",HINTS)+
         "\n\nSolo and multiplayer use the same equipment and interaction simulation."+
