@@ -21,6 +21,12 @@ final class LanVisualMotion {
     private static final double STEP_SECONDS = .110;
     private static final double DEFAULT_STEP_METRES = .31;
     private static final double TELEPORT_METRES = 1.20;
+    // A held W key rotates with mouse yaw. Treating a routine 14-degree
+    // heading change as a new movement epoch repeatedly re-anchors the
+    // prediction to zero and makes turning while walking visibly staccato.
+    // A near-right-angle input change (including W -> A/D or reversal)
+    // still resets the visual epoch; the host continues to own all motion.
+    private static final double SHARP_DIRECTION_CHANGE_DOT = .20;
     private static final long STOP_HOLD_NS = 130_000_000L;
     private Pose authoritative, displayed, stopPose;
     private long lastPositionNs, intentStartNs, stopUntilNs;
@@ -90,7 +96,7 @@ final class LanVisualMotion {
         boolean moving = Double.isFinite(length) && length > 1e-6;
         if (moving) { directionX /= length; directionZ /= length; }
         if (moving && (!previouslyMoving ||
-                directionX * priorDirectionX + directionZ * priorDirectionZ < .97))
+                directionX * priorDirectionX + directionZ * priorDirectionZ < SHARP_DIRECTION_CHANGE_DOT))
             intentStartNs = nowNs;
         if (!moving && previouslyMoving) {
             stopPose = displayed;

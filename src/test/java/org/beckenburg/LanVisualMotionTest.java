@@ -47,6 +47,30 @@ public final class LanVisualMotionTest {
         motion.accept(new LanVisualMotion.Pose(2,0,3),start+ms(70)); // repeated TURN broadcast
         var repeated=motion.sample(start+ms(80),.02,1,0,FREE);
         check(repeated.x()>2.08,"duplicate authoritative pose must not reset prediction clock");
+        // A player holding W while turning the mouse by 20 degrees per render
+        // frame must keep predicting between real host BODY updates. The old
+        // cosine .97 restart threshold reset every one of these frames and
+        // made the camera remain motionless while the server kept walking.
+        motion.reset();
+        motion.accept(new LanVisualMotion.Pose(2,0,3),start);
+        LanVisualMotion.Pose turning=null;
+        for(int frameIndex=0;frameIndex<=5;frameIndex++){
+            double bearing=Math.toRadians(frameIndex*20);
+            turning=motion.sample(start+ms(frameIndex*20),.02,
+                Math.cos(bearing),Math.sin(bearing),FREE);
+        }
+        double turnDistance=Math.hypot(turning.x()-2,turning.z()-3);
+        check(turnDistance>.12&&turnDistance<=.37,
+            "mouse steering must not restart visual prediction every frame");
+        // A real instantaneous movement-key reversal is different from
+        // rotating a held key: it should restart the prediction to avoid
+        // carrying an obsolete velocity into the opposite direction.
+        double opposite=Math.toRadians(280);
+        var reversed=motion.sample(start+ms(120),.02,
+            Math.cos(opposite),Math.sin(opposite),FREE);
+        check(Math.hypot(reversed.x()-2,reversed.z()-3)<turnDistance,
+            "sharp opposing input must restart the bounded visual epoch");
+
         motion.reset();
         motion.accept(new LanVisualMotion.Pose(2,0,3),start);
         int[] sweeps={0};
