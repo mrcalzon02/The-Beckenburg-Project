@@ -38,6 +38,7 @@ public final class DebugPerformanceHud {
     }
     private boolean captureKeyHeld;
     private volatile String captureStatus="CTRL+SHIFT+F8 RECORD FRAMES";
+    private volatile Thread pendingExport;
     /** One local viewport owns its recording. Held-key repeat never toggles twice. */
     public boolean captureHotkey(KeyEvent event,String viewport){
         int mask=InputEvent.CTRL_DOWN_MASK|InputEvent.SHIFT_DOWN_MASK;
@@ -68,10 +69,12 @@ public final class DebugPerformanceHud {
         FrameTimeCapture stopped=capture;
         capture=null;
         inputTiming.reset();
-        if(stopped==null||stopped.size()==0)return;
+        if(stopped==null||stopped.size()==0){
+            awaitPendingExport();
+            return;
+        }
         try{
-            java.nio.file.Path destination=stopped.defaultOutput();
-            stopped.write(destination);
+            java.nio.file.Path destination=stopped.saveUnique();
             captureStatus="SAVED "+destination.getFileName();
             BeckenburgDiagnostics.record("PERF CAPTURE saved on case close file="+
                 destination+" samples="+stopped.size());
@@ -80,6 +83,18 @@ public final class DebugPerformanceHud {
             BeckenburgDiagnostics.record("PERF CAPTURE CLOSE SAVE FAILED "+
                 BeckenburgDiagnostics.redact(failure.toString()));
         }
+        awaitPendingExport();
+    }
+    private void awaitPendingExport(){
+        Thread writer=pendingExport;
+        if(writer==null||writer==Thread.currentThread()||!writer.isAlive())return;
+        try{writer.join(3_000L);}
+        catch(InterruptedException interrupted){
+            Thread.currentThread().interrupt();
+            BeckenburgDiagnostics.record("PERF CAPTURE export join interrupted");
+        }
+        if(writer.isAlive())BeckenburgDiagnostics.record(
+            "PERF CAPTURE export still running after bounded exit wait");
     }
     private void finishCapture(){
         FrameTimeCapture stopped=capture;
@@ -90,8 +105,7 @@ public final class DebugPerformanceHud {
         captureStatus="SAVING "+stopped.size()+" FRAME SAMPLES";
         Thread writer=new Thread(()->{
             try{
-                java.nio.file.Path destination=stopped.defaultOutput();
-                stopped.write(destination);
+                java.nio.file.Path destination=stopped.saveUnique();
                 captureStatus="SAVED "+destination.getFileName();
                 BeckenburgDiagnostics.record("PERF CAPTURE saved file="+destination+
                     " samples="+stopped.size()+" p99_ms="+stopped.summary().p99Ms());
@@ -102,6 +116,7 @@ public final class DebugPerformanceHud {
             }
         },"beckenburg-perf-trace-writer");
         writer.setDaemon(true);
+        pendingExport=writer;
         writer.start();
     }
     public static boolean enabled(){return enabled;}

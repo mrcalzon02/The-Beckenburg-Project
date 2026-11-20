@@ -51,3 +51,18 @@ affect the number. It is **not** a measured input-to-photon latency. Compare it
 alongside genuine GPU frame IDs, client render intervals and authoritative
 movement traces. Both calculations are local; no events, key data, mouse
 positions, chat messages or network traffic are serialized into the CSV.
+
+### Provenance and rapid recordings
+
+Every saved CSV includes the packaged source revision (when stamped), active
+renderer description, OS/architecture, Java version, selected graphics detail,
+display/aspect, filter, antialiasing, PSX preset and FOV. These values are
+captured once at the start of recording. A renderer description is not a GPU
+timestamp query. The CSV intentionally contains no home paths, hostnames,
+credentials, key identities, mouse coordinates or conversations.
+
+Recordings started within the same UTC millisecond are saved to unique sibling
+filenames (`-2`, `-3`, etc.) using exclusive file creation. A pending explicit
+F8 export is also given a bounded three-second completion window when leaving
+the case. Sudden power loss or forcibly terminating the process cannot guarantee
+preservation; always verify the saved file exists before clearing the test run.

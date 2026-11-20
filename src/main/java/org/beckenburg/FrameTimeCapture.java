@@ -25,6 +25,7 @@ final class FrameTimeCapture {
     private final String role;
     private final Instant startedUtc;
     private final long startedNs;
+    private final FrameCaptureProvenance.Snapshot provenance;
     private final long[] times=new long[CAPACITY],render=new long[CAPACITY];
     private final long[] sceneBuild=new long[CAPACITY],geometry=new long[CAPACITY];
     private final long[] effects=new long[CAPACITY],frameId=new long[CAPACITY];
@@ -36,8 +37,15 @@ final class FrameTimeCapture {
     private long lastPresentedNs,lastGpuId=Long.MIN_VALUE;
     private boolean previousGpu,haveBackend;
 
-    FrameTimeCapture(String role){this(role,System.nanoTime(),Instant.now());}
+    FrameTimeCapture(String role){
+        this(role,System.nanoTime(),Instant.now(),FrameCaptureProvenance.current());
+    }
     FrameTimeCapture(String role,long startedNs,Instant startedUtc){
+        this(role,startedNs,startedUtc,FrameCaptureProvenance.unavailable());
+    }
+    FrameTimeCapture(String role,long startedNs,Instant startedUtc,
+                     FrameCaptureProvenance.Snapshot provenance){
+        this.provenance=java.util.Objects.requireNonNull(provenance);
         String cleaned=role.toLowerCase(Locale.ROOT).replaceAll("[^a-z0-9-]+","-");
         this.role=cleaned.isEmpty()?"viewport":cleaned;
         this.startedNs=startedNs;
@@ -123,6 +131,30 @@ final class FrameTimeCapture {
             :Path.of(override);
         return folder.resolve("frames-"+role+"-"+FILE_DATE.format(startedUtc)+".csv");
     }
+    /**
+     * A fast second hotkey press can share the same UTC millisecond. Use an
+     * atomic CREATE_NEW retry rather than overwrite or silently lose the trace.
+     * Called only after the render-owned recording is detached.
+     */
+    Path saveUnique()throws IOException{
+        Path base=defaultOutput();
+        String file=base.getFileName().toString();
+        int dot=file.lastIndexOf('.');
+        String stem=dot>0?file.substring(0,dot):file;
+        String suffix=dot>0?file.substring(dot):"";
+        for(int attempt=0;attempt<100;attempt++){
+            Path target=attempt==0?base:base.resolveSibling(
+                stem+"-"+(attempt+1)+suffix);
+            try{
+                write(target);
+                return target;
+            }catch(java.nio.file.FileAlreadyExistsException occupied){
+                // Existing evidence belongs to another recording. Never modify it.
+            }
+        }
+        throw new java.nio.file.FileAlreadyExistsException(base.toString(),
+            null,"100 recording filenames already in use");
+    }
     private static double ms(long nanos){return nanos/1_000_000.0;}
     /** Called only after the recording is detached from its EDT owner. */
     void write(Path destination)throws IOException{
@@ -134,6 +166,17 @@ final class FrameTimeCapture {
             out.write("# Beckenburg local frame trace; no host simulation changes\n");
             out.write("# started_utc="+startedUtc+"\n");
             out.write("# viewport="+role+"\n");
+            out.write("# source_revision="+provenance.sourceRevision()+"\n");
+            out.write("# renderer="+provenance.renderer()+"\n");
+            out.write("# os="+provenance.os()+"\n");
+            out.write("# java_version="+provenance.javaVersion()+"\n");
+            out.write("# detail="+provenance.detail()+"\n");
+            out.write("# display_setting="+provenance.display()+"\n");
+            out.write("# aspect_setting="+provenance.aspect()+"\n");
+            out.write("# upscale="+provenance.upscale()+"\n");
+            out.write("# antialias="+provenance.antialias()+"\n");
+            out.write("# psx_preset="+provenance.psxPreset()+"\n");
+            out.write("# field_of_view="+provenance.fieldOfView()+"\n");
             out.write("# samples="+s.samples()+"\n");
             out.write("# new_frames="+s.newFrames()+"\n");
             out.write("# cadence_intervals="+s.cadenceIntervals()+"\n");

@@ -13,8 +13,11 @@ public final class FrameTimeCaptureTest {
     }
     public static void main(String[] args)throws Exception{
         long base=1_000_000_000L;
+        var metadata=new FrameCaptureProvenance.Snapshot(
+            "a1b2c3", "NVIDIA GTX 1660 SUPER", "Windows 10", "17",
+            "HIGH","NATIVE","AUTO","CRISP","OFF","CLASSIC",93);
         var trace=new FrameTimeCapture("LAN HUNTER",base,
-            Instant.parse("2026-11-20T20:00:00Z"));
+            Instant.parse("2026-11-20T20:00:00Z"),metadata);
         trace.record(base,4_000_000,true,0,1,2,3,14);
         trace.record(base+20_000_000L,5_000_000,true,10,1,2,3,14,
             2,48,3_000_000L);
@@ -47,6 +50,9 @@ public final class FrameTimeCaptureTest {
         check(rows.contains("# p99_presented_ms=120.0"),"Exported p99 must match");
         check(rows.contains("# dispatched_input_events=3"),"Input count header missing");
         check(rows.contains("# max_input_queue_delay_ms=124"),"Queue max header missing");
+        check(rows.contains("# source_revision=a1b2c3"),"Build provenance header missing");
+        check(rows.contains("# renderer=NVIDIA GTX 1660 SUPER"),"GPU model header missing");
+        check(rows.contains("# psx_preset=CLASSIC"),"PSX preset header missing");
         check(rows.stream().anyMatch(v->v.endsWith(",14,2,48,3.0")),
             "CSV input columns must preserve per-frame queue delay and event age");
         check(rows.stream().filter(v->v.startsWith("20.0,")).count()==1,
@@ -58,6 +64,23 @@ public final class FrameTimeCaptureTest {
         check(refused,"A second save must never overwrite prior measurements");
         check(trace.defaultOutput().getFileName().toString()
             .startsWith("frames-lan-hunter-20261120-200000"),"UTC/viewport filename");
+        String previous=System.getProperty("beckenburg.performance.capture.dir");
+        Path first,second;
+        try{
+            System.setProperty("beckenburg.performance.capture.dir",dir.toString());
+            first=trace.saveUnique();
+            second=trace.saveUnique();
+            check(!first.equals(second),"Same-millisecond recordings need distinct paths");
+            check(Files.exists(first)&&Files.exists(second),"Both recordings preserved");
+            check(Files.readAllLines(first).equals(Files.readAllLines(second)),
+                "Collision avoidance must not alter captured samples");
+            Files.delete(first);Files.delete(second);
+        }finally{
+            if(previous==null)System.clearProperty("beckenburg.performance.capture.dir");
+            else System.setProperty("beckenburg.performance.capture.dir",previous);
+        }
+        check(FrameCaptureProvenance.clean("GPU\nFake=Header,#oops").indexOf('\n')<0,
+            "Driver information cannot inject a second CSV metadata row");
         Files.delete(csv);Files.delete(dir);
         System.out.println("PASS frame capture true GPU cadence, fallback, p99, CSV and no-overwrite");
     }

@@ -180,7 +180,7 @@ public final class BeckenburgDiagnostics {
         b.append("\n").append(threads());
         return redact(b.toString());
     }
-    private static String sourceRevision(){
+    static String sourceRevision(){
         try(var input=BeckenburgDiagnostics.class.getResourceAsStream("/org/beckenburg/release.properties")){
             if(input==null)return "developer build";
             java.util.Properties p=new java.util.Properties();p.load(input);
