@@ -33,6 +33,13 @@ public final class LanViewportPerformanceReview extends RepaintManager {
     // No production 50Hz movement path sends the old ACCEPT|STEP packet.
     private final AuthoritativeBodyMotionProbe approvedMovement=
         new AuthoritativeBodyMotionProbe(0);
+    // OFFSCREEN benchmark only: a headless Swing component deliberately has no
+    // keyboard focus. New production focus safeguards must not be disabled to
+    // obtain a physical-render measurement. Drive real host-authorized HINPUT
+    // on a matched 50Hz clock instead. The production panel remains unmodified.
+    private static final boolean DIRECT_BODY_DRIVER=
+        Boolean.getBoolean("beckenburg.profile.directBodyDriver");
+    private static final long INPUT_PERIOD_NS=20_000_000L;
     private volatile String phase = "warmup";
     private LanWorldPanel panel;
     private SceneRenderer scene;
@@ -115,6 +122,44 @@ public final class LanViewportPerformanceReview extends RepaintManager {
                 return keys[i];
         }
         throw new AssertionError("No walkable cardinal direction from the authored van spawn");
+    }
+
+    /** Identical keyboard-to-world direction math as the live 50Hz input pump. */
+    static int[] worldInput(int key,double yaw) {
+        int forward=switch(key){
+            case KeyEvent.VK_W->1;
+            case KeyEvent.VK_S->-1;
+            default->0;
+        };
+        int strafe=switch(key){
+            case KeyEvent.VK_D->1;
+            case KeyEvent.VK_A->-1;
+            default->0;
+        };
+        if(forward==0&&strafe==0)throw new IllegalArgumentException("Unknown walking key");
+        double x=Math.sin(yaw)*forward-Math.cos(yaw)*strafe;
+        double z=Math.cos(yaw)*forward+Math.sin(yaw)*strafe;
+        double magnitude=Math.hypot(x,z);
+        return new int[]{(int)Math.round(100*x/magnitude),(int)Math.round(100*z/magnitude)};
+    }
+
+    /** Test-owned 50Hz clock: no GUI focus bypass or speculative movement.
+     * HINPUT still traverses the real LAN host's physics and authority rules. */
+    private static void driveAuthoritativeWalk(LanClient client,int[] vector)
+            throws java.io.IOException {
+        long start=System.nanoTime();
+        try{
+            for(int sample=0;sample<150;sample++){
+                long due=start+sample*INPUT_PERIOD_NS;
+                long delay=due-System.nanoTime();
+                if(delay>0)java.util.concurrent.locks.LockSupport.parkNanos(delay);
+                client.moveInput(vector[0],vector[1],false);
+            }
+            long until=start+150*INPUT_PERIOD_NS-System.nanoTime();
+            if(until>0)java.util.concurrent.locks.LockSupport.parkNanos(until);
+        }finally{
+            client.moveInput(0,0,false);
+        }
     }
 
     private static int opposite(int key) {
@@ -233,15 +278,23 @@ public final class LanViewportPerformanceReview extends RepaintManager {
         Thread.sleep(4000);
         SwingUtilities.invokeAndWait(() -> phase = "idle");
         Thread.sleep(TimeUnit.SECONDS.toMillis(Integer.getInteger("beckenburg.profile.idleSeconds", 8)));
+        int[][] input=new int[1][];
         SwingUtilities.invokeAndWait(() -> {
             moveKey = walkKey();
             startX = scene.x; startZ = scene.z;
             phase = "moving";
-            key(moveKey, true);
+            if(DIRECT_BODY_DRIVER)input[0]=worldInput(moveKey,scene.yaw);
+            else key(moveKey, true);
         });
+        if(DIRECT_BODY_DRIVER && Boolean.getBoolean("beckenburg.profile.sanctuaryStop"))
+            throw new IllegalArgumentException("Direct BODY benchmark is limited to walking trials");
         long begin = System.nanoTime();
-        Thread.sleep(3000);
-        SwingUtilities.invokeAndWait(() -> { key(moveKey, false); phase = "cooldown"; });
+        if(DIRECT_BODY_DRIVER)driveAuthoritativeWalk(client,input[0]);
+        else Thread.sleep(3000);
+        SwingUtilities.invokeAndWait(() -> {
+            if(!DIRECT_BODY_DRIVER)key(moveKey, false);
+            phase = "cooldown";
+        });
         long duration = System.nanoTime() - begin;
         Thread.sleep(500);
         boolean stop = Boolean.getBoolean("beckenburg.profile.sanctuaryStop");
