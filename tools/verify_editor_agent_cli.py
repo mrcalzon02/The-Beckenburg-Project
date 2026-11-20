@@ -39,9 +39,36 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     unrelated_castle.write_text('format=invalid', encoding='utf-8')
     first = run(['inspect'])[0]['result']
     assert 'move-prop' in first['operations'] and 'CAPTURE' in first['capabilities']
-    prop = first['state']['props'][0]
+    # A fresh House now opens its accepted rebuilt generation. Its first
+    # source entries include a plumbed kitchen counter and attached fixtures.
+    # Select ordinary chairs by actual stable IDs instead of assuming the
+    # first two index positions can be independently moved.
+    source_props = first['state']['props']
+    source_nodes = first['hierarchy']
+    assert len(source_nodes) >= len(source_props)
+    candidates = [(i, source_nodes[i]['id']) for i, item in enumerate(source_props)
+                  if item['mesh'] == 'chair_mp_5' and item['support'] == 'floor'
+                  and source_nodes[i]['kind'] == 'PROP']
+    assert len(candidates) >= 2, 'Rebuilt House must expose two movable dining chairs'
+    (first_index, first_id), (second_index, second_id) = candidates[:2]
+    prop = source_props[first_index]
     moved_x = prop['x'] + .125
     revision = first['revision']
+
+    # Make sure the protection itself remains functional. The CLI may
+    # edit loose objects, but a fixture with authored service attachments
+    # must still be rejected without changing revision or native content.
+    counter_index = next(i for i, item in enumerate(source_props)
+                         if item['mesh'] == 'level_kitchen_counter')
+    counter_id = source_nodes[counter_index]['id']
+    counter = source_props[counter_index]
+    rejected, preserved = run([
+        f'edit\t{revision}\tmove-prop\tid={counter_id}\tx={counter["x"] + .125}\ty={counter["y"]}\tz={counter["z"]}',
+        'inspect'
+    ], expected=1)
+    assert not rejected['ok'] and 'attachment conflict' in json.dumps(rejected).lower()
+    assert preserved['ok'] and preserved['result']['state'] == first['state']
+    assert preserved['result']['revision'] == revision
     def verify_local_reads(full):
         rev = full['revision']
         node = full['hierarchy'][0]
@@ -98,12 +125,13 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
         return sizes[0], sizes[-1]
 
     def move(index, delta):
-        item = first['state']['props'][index]
-        return f'move-prop\tid=prop-{index}\tx={item["x"] + delta}\ty={item["y"]}\tz={item["z"]}'
+        item = source_props[index]
+        node_id = source_nodes[index]['id']
+        return f'move-prop\tid={node_id}\tx={item["x"] + delta}\ty={item["y"]}\tz={item["z"]}'
 
-    edits = f'batch\t{revision}\t{move(0, .125)}\t|\t{move(1, .25)}'
+    edits = f'batch\t{revision}\t{move(first_index, .125)}\t|\t{move(second_index, .25)}'
     def verify_prop(rev, x):
-        return f'verify-position\t{rev}\tprop-0\t{x}\t{prop["y"]}\t{prop["z"]}'
+        return f'verify-position\t{rev}\t{first_id}\t{x}\t{prop["y"]}\t{prop["z"]}'
     missing = run([verify_prop(revision, prop['x'])])[0]['result']['result']
     assert missing['verified'] and not missing['committed'] and missing['diskState'] == 'MISSING'
     accepted, inspected = run([edits, 'inspect'])
@@ -117,7 +145,7 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     proof = proof_reply['result']
     assert edit_reply == accepted and full_reply['result']['state'] == inspected['result']['state']
     assert proof['revision'] == after_revision and proof['result']['verified'] and proof['result']['committed']
-    assert proof['result']['actual'] == next(row for row in full_reply['result']['hierarchy'] if row['id'] == 'prop-0')
+    assert proof['result']['actual'] == next(row for row in full_reply['result']['hierarchy'] if row['id'] == first_id)
     assert sizes[2] < sizes[1]
     response_bytes = {'scene': first['sceneId'], 'revision': after_revision, 'unit': 'UTF-8 response bytes',
                       'editReceipt': sizes[0], 'fullInspection': sizes[1], 'positionProof': sizes[2], 'revisionRead': sizes[3]}
@@ -131,7 +159,7 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     details = [row['result']['result'] for row in pages]
     assert all(p['total'] == 2 and p['beforeRevision'] == revision for p in details)
     nodes = details[0]['nodes'] + details[1]['nodes']
-    assert {n['id'] for n in nodes} == {'prop-0', 'prop-1'} and not details[2]['nodes']
+    assert {n['id'] for n in nodes} == {first_id, second_id} and not details[2]['nodes']
     proof = run([edits, verify_prop(after_revision, moved_x), verify_prop(after_revision, prop['x'])])
     matched, mismatch = [r['result']['result'] for r in proof[1:]]
     assert matched['verified'] and matched['committed'] and matched['actual']['x'] == moved_x
@@ -147,40 +175,40 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
                          f'changes\t{after_revision}\t0\t65'], expected=1)
     assert [row['ok'] for row in invalid_pages] == [False, True, False, False]
     after = inspected['result']['state']
-    for index, delta in enumerate((.125, .25)):
-        assert after['props'][index]['x'] == first['state']['props'][index]['x'] + delta
+    for index, delta in ((first_index, .125), (second_index, .25)):
+        assert after['props'][index]['x'] == source_props[index]['x'] + delta
     restored = run([edits, f'undo\t{after_revision}', 'inspect'])[-1]['result']
     assert restored['state'] == first['state'], 'One native undo reverses both edits'
-    bad = run([f'batch\t{revision}\t{move(0, .125)}\t|\tmove-prop\tid=missing-id', 'inspect'], expected=1)
+    bad = run([f'batch\t{revision}\t{move(first_index, .125)}\t|\tmove-prop\tid=missing-id', 'inspect'], expected=1)
     assert not bad[0]['ok'] and bad[1]['result']['state'] == first['state'], 'Second operation failure rolls back the first'
-    malformed = run([edits + '\t|', f'batch\t{revision}\t|\t{move(0, .125)}',
-                     f'batch\t{revision}\t' + '\t|\t'.join([move(0, .125)] * 65), 'inspect'], expected=1)
+    malformed = run([edits + '\t|', f'batch\t{revision}\t|\t{move(first_index, .125)}',
+                     f'batch\t{revision}\t' + '\t|\t'.join([move(first_index, .125)] * 65), 'inspect'], expected=1)
     assert all(not row['ok'] for row in malformed[:-1]) and malformed[-1]['result']['revision'] == revision
 
     house_sizes = verify_local_reads(first)
     rows = run([
         'inspect',
         f'save\t{revision}',
-        f'edit\t{revision}\tmove-prop\tid=prop-0\tx={moved_x}\ty={prop["y"]}\tz={prop["z"]}',
+        f'edit\t{revision}\tmove-prop\tid={first_id}\tx={moved_x}\ty={prop["y"]}\tz={prop["z"]}',
         f'save\t{revision + 1}',
         f'capture\t{revision + 1}\t{output / "headless-house.png"}',
         f'test\t{revision + 1}\tmission-runtime-parity',
         'inspect',
     ])
     assert all(row['ok'] for row in rows)
-    assert rows[-1]['result']['state']['props'][0]['x'] == moved_x
+    assert rows[-1]['result']['state']['props'][first_index]['x'] == moved_x
     assert all(check['passed'] for check in rows[-2]['result']['result'])
     assert Path(rows[4]['result']['result']['file']).read_bytes().startswith(b'\x89PNG\r\n\x1a\n')
     live_proof = run([verify_prop(run(['summary'])[0]['result']['revision'], moved_x)])[0]['result']['result']
     assert live_proof['verified'] and not live_proof['committed'] and live_proof['diskState'] == 'MATCHES'
     fresh_revision = run(['summary'])[0]['result']['revision']
-    local = run([f'node\t{fresh_revision}\tprop-0'])[0]['result']
+    local = run([f'node\t{fresh_revision}\t{first_id}'])[0]['result']
     assert local['result']['x'] == moved_x, 'Fresh host localized read observes the saved move'
     reopened = run(['inspect'])[0]['result']
     assert reopened['state'] == rows[-1]['result']['state'], 'Separate real host loads saved authoring state'
     recovered = run([f'recover\t{reopened["revision"]}', 'inspect'])[-1]['result']
     assert recovered['state'] == first['state'], 'Explicit headless recovery restores exact previous native document'
-    stale = run([f'edit\t0\tmove-prop\tid=prop-0\tx=0\ty=0\tz=0', 'inspect'], expected=1)
+    stale = run([f'edit\t0\tmove-prop\tid={first_id}\tx=0\ty=0\tz=0', 'inspect'], expected=1)
     assert not stale[0]['ok'] and stale[1]['result']['state'] == recovered['state']
     corrupt_file = Path(recovered['document'])
     corrupt_file.write_text('corrupt scene before host initialization', encoding='utf-8')
