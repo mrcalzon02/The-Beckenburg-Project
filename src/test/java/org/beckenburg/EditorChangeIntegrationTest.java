@@ -28,7 +28,15 @@ public final class EditorChangeIntegrationTest {
             var service=new EditorAgentService<>(adapter,new EditorHistory<>(session,60),event->{
                 check(event.revision()==session.revision(),"Publish only after native commit");events.add(event);
             },()->{});
-            int index=0;while(session.prop(index).halfX()<=0||session.prop(index).halfZ()<=0)index++;
+            // Source-attached rebuild furniture controls pipes, sockets or
+            // supported props and cannot be edited in isolation. Exercise the
+            // genuine delta/undo pipeline on the first standalone collider.
+            int index=0;
+            while(index<session.size()&&(session.prop(index).halfX()<=0
+                    ||session.prop(index).halfZ()<=0
+                    ||HouseAuthoringAttachments.required(session.sourceLevel(),session.prop(index))))
+                index++;
+            check(index<session.size(),"House needs an independently editable native collider");
             final int chosen=index;String id=session.nodeId(index);var p=session.prop(index);long revision=session.revision();
             var command=new EditorAgentService.Command("move-prop",move(id,p,p.x()+.25));
             service.transact(revision,List.of(command,new EditorAgentService.Command("move-prop",move(id,p,p.x()+.5))));
