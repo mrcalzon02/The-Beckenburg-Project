@@ -173,8 +173,31 @@ public final class CampaignHunterInvestigatorTest {
         }
         throw new AssertionError("No Absolution from "+map.roomName(origin)+"; stopped at "+world.body(0));
     }
+    private static void directedCamera(HouseMap map)throws ReflectiveOperationException{
+        var hire=new CampaignHunterInvestigator(map,2);
+        hire.assignSeat(1);
+        var gearField=CampaignHunterInvestigator.class.getDeclaredField("equipment");
+        gearField.setAccessible(true);
+        var equipment=(HunterDiagnosticEquipment)gearField.get(hire);
+        equipment.belt[0]="VIDEO_CAMERA";
+        hire.accept("GEAROWNED|VIDEO_CAMERA");
+        String assigned=map.roomName(6);
+        hire.accept("CHAT|RADIO|0|10|H2 search "+assigned);
+        hire.accept("CHAT|RADIO|0|11|H2 test video camera");
+        var feet=body(map,6);
+        // Acknowledging the human's new order is legitimate, but the NEXT
+        // action must use the owned camera in the exact directed room, not
+        // abandon that assignment and wander until incidental haunt evidence.
+        var acknowledge=hire.decide(20,feet,null);
+        require(acknowledge.action()==CampaignGuestBot.Action.RADIO,
+            "H2 must acknowledge direct camera request by radio");
+        var use=hire.decide(21,feet,null);
+        require(use.action()==CampaignGuestBot.Action.SAMPLE&&use.slot()==0,
+            "H2 must deploy an already-owned video camera in the assigned room without a speculative ghost lead; got "+use);
+        System.out.println("PASS directed room remains active through human-requested camera placement");
+    }
     public static void main(String[] args)throws ReflectiveOperationException{
-        var map=new HouseMap();windup(map);abandonedRoomLead(map);memorialLectern(HouseMap.EXTRACTION_ROOM);memorialLectern(4);
+        var map=new HouseMap();directedCamera(map);windup(map);abandonedRoomLead(map);memorialLectern(HouseMap.EXTRACTION_ROOM);memorialLectern(4);
         var ai=new CampaignHunterInvestigator(map,1);ai.assignSeat(1);
         var home=body(map,0);
         reading(ai,1,2,"THERMOMETER","Air -5.5?C / 22.1?F");

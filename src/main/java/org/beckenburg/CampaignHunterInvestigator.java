@@ -337,7 +337,14 @@ final class CampaignHunterInvestigator {
             return;
         }
         if(request.startsWith("test ")){
-            leader=line.seat();order=Order.SEARCH;radio.clear();leaveWatch(line.tick());nextWitnessReview=line.tick()+900;
+            leader=line.seat();
+            // A directed room assignment remains the physical destination for
+            // the requested instrument. Previously 'test video camera' erased
+            // 'H2 search Parents bedroom', leaving the hire roaming for minutes
+            // until ordinary evidence sampling happened to deploy the camera.
+            // Other orders (HOLD/FOLLOW/SEARCH) retain their usual override.
+            if(order!=Order.ROOM)order=Order.SEARCH;
+            radio.clear();leaveWatch(line.tick());nextWitnessReview=line.tick()+900;
             announce(equipment.orderTest(request.substring(5),line.tick(),witnessTest.cameraRoom(seat)>=0));return;
         }
         if(request.equals("follow"))order=Order.FOLLOW;
@@ -430,6 +437,17 @@ final class CampaignHunterInvestigator {
                 if(proposal!=null){lastRadio=tick;return Input.radio(proposal);}
             }
         }
+        if(order==Order.ROOM&&here==orderedRoom&&!ritualActive&&tick-lastSample>=18){
+            // A human explicitly assigned this room and test instrument.
+            // Use it here on the same real physical player command instead of
+            // waiting for ghost evidence to mark the room as a suspected haunt.
+            String requested=equipment.nextTool();
+            int testSlot=equipment.slot(requested);
+            if(testSlot>=0&&equipment.sampleable(requested,true)){
+                lastSample=tick;
+                return Input.sample(testSlot);
+            }
+        }
         if(here<rooms&&!ritualActive&&tick-lastSample>=9&&eventInstrument[here]!=null
                 &&eventTick[here]>lastAnsweredEvent&&tick-eventTick[here]<=15){
             lastAnsweredEvent=eventTick[here];
@@ -452,12 +470,10 @@ final class CampaignHunterInvestigator {
         if(order==Order.HOLD)return Input.simple(Action.WAIT);
         if(order==Order.FOLLOW)
             return orderLeader==null?Input.simple(Action.WAIT):navigation.to(tick,self,orderLeader.room(),orderLeader.x(),orderLeader.y(),orderLeader.z(),1.45);
-        if(order==Order.ROOM){
-            if(here!=orderedRoom||tick-arrived<SURVEY_TICKS||ownSampleTick[here]<arrived)
-                return navigation.to(tick,self,orderedRoom,map.centerX(orderedRoom),map.centerZ(orderedRoom),1.0);
-            announce("Sweep complete in "+map.roomName(orderedRoom)+". Resuming search.");
-            order=Order.SEARCH;lastSurvey[here]=tick;searchRoom=-1;
-        }
+        // Once the camera was physically placed, its assigned observation
+        // requires the hire to return to the real van receiver. This takes
+        // priority over the remaining room-survey timer; otherwise ROOM mode
+        // keeps sending WAIT at the camera location until the feed expires.
         if(identified==null&&!ritualActive&&equipment.visitingCamera(tick)){
             if(atCameraRelay)return attention.screen(tick,seat,self);
             equipment.cameraTravel(tick,self);
@@ -465,6 +481,12 @@ final class CampaignHunterInvestigator {
                 var van=map.van();var display=van.location(VanStaging.Station.RELAY);
                 return navigation.to(tick,self,HouseMap.EXTRACTION_ROOM,display.x(),van.floorY(),display.z(),.11);
             }
+        }
+        if(order==Order.ROOM){
+            if(here!=orderedRoom||tick-arrived<SURVEY_TICKS||ownSampleTick[here]<arrived)
+                return navigation.to(tick,self,orderedRoom,map.centerX(orderedRoom),map.centerZ(orderedRoom),1.0);
+            announce("Sweep complete in "+map.roomName(orderedRoom)+". Resuming search.");
+            order=Order.SEARCH;lastSurvey[here]=tick;searchRoom=-1;
         }
         GhostIdentity.Type candidate=deduction();
         if(identified==null&&candidate!=null&&candidate!=attempted&&tick-lastGuess>=35){
