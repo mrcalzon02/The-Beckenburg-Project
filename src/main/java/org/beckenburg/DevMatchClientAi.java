@@ -288,9 +288,51 @@ final class DevMatchClientAi implements AutoCloseable {
         boolean tracking=heard!=null&&tick-heard.tick()<25;
         if(!tracking&&tick%32>=18)return;
         double heading=tracking?heardHeading():Math.floorMod(tick/32*71,360);
-        double radians=Math.toRadians(heading);
-        int dx=(int)Math.round(100*Math.sin(radians)),dz=(int)Math.round(100*Math.cos(radians));
+        // A known blocked STEP is not an attempt to DRIFT. Rejected steps
+        // otherwise saturate the match's TCP command stream while the ghost
+        // visually sticks to a doorway or the edge of its current room.
+        int[] safe=legalGhostStep(map,room,x,y,z,heading);
+        if(safe==null)return; // Stand still and listen until a legal DRIFT or direction.
+        int dx=safe[0],dz=safe[1];
         sendAction("GSTEP "+dx+","+dz,()->client.ghostStep(dx,dz));
+    }
+    // The host's unbursted STEP is .31 m per 100 ms, with a maximum
+    // 150% configured speed and the highest authored species movement rate.
+    // An extra 2 cm accommodates GPOSE rounding and future small adjustments.
+    // Never change host speed or turn collision failures into room teleports.
+    private static final double GHOST_PREFLIGHT_METRES=.31*1.50*
+        java.util.Arrays.stream(GhostIdentity.Type.values())
+            .mapToInt(GhostTraits::movementPercent).max().orElse(150)/100.0+.02;
+
+    /** Client-owned GPOSE and authored geometry only; no host/private hunter state. */
+    static int[] legalGhostStep(HouseMap map,int room,double x,double y,double z,double heading){
+        if(room<0||room>=HouseMap.EXTRACTION_ROOM)return null;
+        var from=new LevelDefinition.Vec(x,y,z);
+        // Preserve the desired audible bearing when safe, then skirt physical
+        // obstructions in deterministic symmetric directions instead of
+        // transmitting the same guaranteed-invalid GSTEP each host tick.
+        for(int offset:new int[]{0,45,-45,90,-90,135,-135,180}){
+            double radians=Math.toRadians(heading+offset);
+            int dx=(int)Math.round(100*Math.sin(radians));
+            int dz=(int)Math.round(100*Math.cos(radians));
+            double scale=GHOST_PREFLIGHT_METRES/Math.hypot(dx,dz);
+            var next=map.resolveMove(from,x+dx*scale,z+dz*scale);
+            if(next==null||map.roomAt(next.x(),next.y(),next.z())!=room||
+                    SafeAreaBarrier.blocks(map,from,next))continue;
+            // The real ghost checks every 10 cm of travel against authored
+            // hiding pockets, including empty ones. Use that SAME exclusion.
+            int samples=Math.max(1,(int)Math.ceil(
+                Math.hypot(next.x()-x,next.z()-z)/.10));
+            boolean hidden=false;
+            for(int i=1;i<=samples;i++){
+                double fraction=i/(double)samples;
+                if(LanGhostSpatial.hidingPocketAt(map,room,
+                        x+(next.x()-x)*fraction,y+(next.y()-y)*fraction,
+                        z+(next.z()-z)*fraction)){hidden=true;break;}
+            }
+            if(!hidden)return new int[]{dx,dz};
+        }
+        return null;
     }
     private double heardHeading(){
         return ghostHeading+switch(heard.direction()){

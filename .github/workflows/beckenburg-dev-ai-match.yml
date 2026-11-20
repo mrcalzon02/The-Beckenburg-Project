@@ -14,6 +14,7 @@ on:
       - 'src/main/java/org/beckenburg/DevAdminSnapshot.java'
       - 'src/main/java/org/beckenburg/DevMatchSession.java'
       - 'src/main/java/org/beckenburg/DevMatchClientAi.java'
+      - 'src/test/java/org/beckenburg/DevMatchGhostSteeringTest.java'
       - 'src/main/java/org/beckenburg/DevMatchOutcomeReport.java'
       - 'src/main/java/org/beckenburg/Campaign*'
       - 'src/main/java/org/beckenburg/HunterDiagnosticEquipment.java'
@@ -72,6 +73,13 @@ jobs:
           $ErrorActionPreference = 'Stop'
           & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.DevMatchNavigationTest
           if ($LASTEXITCODE -ne 0) { throw "Dev AI navigation acceptance failed: exit $LASTEXITCODE" }
+
+      - name: Reject known-blocked ghost steps before TCP movement
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          & java '-Djava.awt.headless=true' -ea -cp 'build\beckenburg-game.jar;build\test' org.beckenburg.DevMatchGhostSteeringTest
+          if ($LASTEXITCODE -ne 0) { throw "Ghost boundary steering check failed ($LASTEXITCODE)" }
 
       - name: Verify a real van operator, hired hunters and host ghost
         shell: pwsh
