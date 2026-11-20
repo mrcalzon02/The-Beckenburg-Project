@@ -244,7 +244,8 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
                     ||packet.equals("RESULT|ABSOLVED");
                 feedback=victory?"INVESTIGATORS COMPLETED THE RITUAL":
                     "THE ENTITY PREVAILS - RITUAL UNFINISHED";
-                keys.clear();
+                keys.clear();mouseLook.release();visualMotion.suspend();
+                refreshRealtimeInput();
                 atmosphere.setHunt(false);atmosphere.setRitual(false);
             }else if(p.size()>=3&&p.get(0).equals("ACCEPT")&&p.get(1).equals("GHOST")){
                 GhostDomain.Action applied=GhostDomain.Action.valueOf(p.get(2));

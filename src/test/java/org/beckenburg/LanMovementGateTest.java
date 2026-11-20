@@ -13,6 +13,12 @@ public final class LanMovementGateTest {
                 flags[3],flags[4],flags[5],flags[6]),
                 "lost movement condition "+blocked+" must be neutral");
         }
+        check(!LanMovementGate.enabled(true,true,true,true,true,false,true),
+            "host-confirmed round end immediately forbids predicted and network travel");
+        check(!LanMovementGate.enabled(true,true,true,true,false,true,true),
+            "host-confirmed incapacitation immediately forbids predicted and network travel");
+        check(!LanMovementGate.enabled(true,true,true,true,true,true,false),
+            "host-opened equipment/computer interface immediately suppresses movement");
         check(LanMovementGate.enabled(true,true,true,true,true,true,true),
             "closing a menu only restores eligibility when all controls are valid");
         System.out.println("PASS common hunter/ghost movement gate: focus, visibility, host pose, life, round and UI");

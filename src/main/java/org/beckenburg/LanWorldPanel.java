@@ -404,6 +404,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 renderer.z=map.van().placement().z();
                 if(opening!=null)opening.close();
                 opening=new LevelOpeningCinematic(map,renderer,getWidth(),getHeight());
+                // A new site's intro interrupts the previous movement epoch;
+                // stop the 50 Hz input pump before the next 110 ms UI tick.
+                visualMotion.suspend();
+                refreshRealtimeInput();
                 feedback="INVESTIGATION: "+map.site();
             }else if(p.get(0).equals("HAUNT")){
                 GhostHauntingFolio.Occurrence event=GhostHauntingFolio.decode(frame);
@@ -575,7 +579,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                     lastMotionTick=motion.tick();
                 }
             }else if(p.size()==3&&p.get(0).equals("INTERACTED")&&p.get(1).equals("INTERFACE")){
-                if(p.get(2).equals("COMPUTER")){casefileOpen=true;journalPage=0;}else {interfaceOpen=p.get(2);assignmentReader.reset();storyReader.reset();}keys.clear();mouseLook.release();
+                if(p.get(2).equals("COMPUTER")){casefileOpen=true;journalPage=0;}else {interfaceOpen=p.get(2);assignmentReader.reset();storyReader.reset();}
+                keys.clear();mouseLook.release();visualMotion.suspend();refreshRealtimeInput();
                 feedback="Opened "+p.get(2).toLowerCase(java.util.Locale.ROOT);
             }else if(p.size()==2&&p.get(0).equals("SOURCE")){
                 lights.setSourceRunning(LanProtocol.integer(p.get(1),0,1)==1);map.fixtures().power(lights.supplied());feedback=lights.sourceRunning()?"Generator running":"Generator stopped";
@@ -599,7 +604,10 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 health=LanProtocol.integer(p.get(1),0,200);
                 evidence=LanProtocol.integer(p.get(4),0,3);
                 sanity=100-LanProtocol.integer(p.get(2),0,100);
-                if(health==0){keys.clear();feedback="INCAPACITATED - YOU CAN OBSERVE BUT NOT ACT";}
+                if(health==0){
+                    keys.clear();visualMotion.suspend();refreshRealtimeInput();
+                    feedback="INCAPACITATED - YOU CAN OBSERVE BUT NOT ACT";
+                }
             }else if(p.size()==4&&p.get(0).equals("HUNTER")&&p.get(1).equals("HIT")){
                 int who=LanProtocol.integer(p.get(2),0,5);
                 hunterPain.put(who,LanProtocol.integer(p.get(3),0,99999999)*.1);applyHunterReactions();
@@ -608,7 +616,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 if(!downedHunters.add(down))return;
                 hunterPain.remove(down);applyHunterReactions();
                 if(down==seat){
-                    keys.clear();feedback="INCAPACITATED - YOU CAN OBSERVE BUT NOT ACT";
+                    // DOWN is host-confirmed; do not let a delayed PROGRESS
+                    // snapshot keep movement enabled during incapacitation.
+                    health=0;
+                    keys.clear();visualMotion.suspend();refreshRealtimeInput();
+                    feedback="INCAPACITATED - YOU CAN OBSERVE BUT NOT ACT";
                 }else feedback="INVESTIGATOR "+(down+1)+" IS DOWN";
             }else if(p.get(0).equals("IDENTIFIED")&&p.size()==3){
                 feedback="TEAM HYPOTHESIS: "+p.get(1)+" / "+p.get(2);
@@ -768,7 +780,8 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
                 caseResult=frame.substring(7);feedback="CASE CLOSED: "+caseResult;
                 releaseCameraAttention();
                 clearPlacementSelection();
-                keys.clear();
+                keys.clear();releaseVoice();toolGrip.release();mouseLook.release();
+                visualMotion.suspend();refreshRealtimeInput();
             }else if(p.size()==6&&p.get(0).equals("CAMORB")){
                 int owner=LanProtocol.integer(p.get(1),0,5);
                 if(!watchingCamera(owner))return;
