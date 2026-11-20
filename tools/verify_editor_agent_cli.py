@@ -68,7 +68,9 @@ with tempfile.TemporaryDirectory(prefix='editor-agent-cli-') as home:
     ], expected=1)
     assert not rejected['ok'] and 'attachment conflict' in json.dumps(rejected).lower()
     assert preserved['ok'] and preserved['result']['state'] == first['state']
-    assert preserved['result']['revision'] == revision
+    # Transaction rollback restores the immutable snapshot and advances the
+    # revision; stale agents must not be allowed to reuse the rejected token.
+    assert preserved['result']['revision'] > revision
     def verify_local_reads(full):
         rev = full['revision']
         node = full['hierarchy'][0]
