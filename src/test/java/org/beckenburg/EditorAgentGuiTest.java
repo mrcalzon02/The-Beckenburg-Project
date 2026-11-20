@@ -378,6 +378,22 @@ public final class EditorAgentGuiTest {
         Path output=Path.of(args.length==0?"build/editor-agent-evidence":args[0]).toAbsolutePath();Files.createDirectories(output);
         Path home=Files.createTempDirectory("editor-agent-gui-");
         System.setProperty("user.home",home.toString());
+        // Fresh House contracts already dispatch the accepted rebuild. This
+        // GUI acceptance specifically exercises an OLD saved House being
+        // upgraded, including human undo/redo of its source generation.
+        // Stage the real archival document in this isolated temp profile;
+        // never downgrade the default playable House or overwrite user data.
+        var archived=new LevelAuthoringSession(HouseMap.Site.HOUSE);
+        check(archived.sourceLevel().room(5).y()==2.8,
+            "Fresh playable House must keep its reconstructed upper storey");
+        var originalSource=LevelPlans.legacyHouseSource();
+        var originalIds=new java.util.ArrayList<String>();
+        for(int i=0;i<originalSource.props().size();i++)originalIds.add("prop-"+i);
+        archived.restore(new LevelAuthoringSession.Snapshot(
+            archived.id(),originalIds,originalSource.props(),UserLevelLibrary.HOUSE_ORIGINAL));
+        archived.save();
+        check(new LevelAuthoringSession(HouseMap.Site.HOUSE).sourceLevel().room(5).y()==3,
+            "GUI migration must reopen an actual saved original House before rebuilding");
         AtomicReference<JFrame> window=new AtomicReference<>();
         AtomicReference<DeveloperLevelEditor> editor=new AtomicReference<>();
         var joined=new java.util.concurrent.CountDownLatch(1);
