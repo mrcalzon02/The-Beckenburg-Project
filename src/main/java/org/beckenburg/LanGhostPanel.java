@@ -75,7 +75,11 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
         renderTimer.setRepeats(false);
         timer.start();
     }
-    public void close(){timer.stop();renderTimer.stop();realtimeInput.close();keys.clear();soundRipples.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();}
+    public void close(){
+        timer.stop();renderTimer.stop();realtimeInput.close();keys.clear();
+        soundRipples.clear();mouseLook.close();audio.close();atmosphere.close();buildingAudio.close();
+        perfHud.closeCapture();
+    }
     /** Accept only frames addressed to ghost; never interpret BODY/TEAMMAP/PROGRESS. */
     public void onEvent(String packet){
         if(!SwingUtilities.isEventDispatchThread())throw new IllegalStateException("ghost UI update must be on EDT");
@@ -402,7 +406,9 @@ public final class LanGhostPanel extends JPanel implements KeyListener, FocusLis
     }
     @Override public void keyPressed(KeyEvent e){
         try{
-        if(perfHud.captureHotkey(e,"lan-ghost")){repaint();return;}
+        if(perfHud.captureHotkey(e,"lan-ghost")){
+            feedback=perfHud.captureStatus();repaint();return;
+        }
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         switch(e.getKeyCode()){
             case KeyEvent.VK_E -> {

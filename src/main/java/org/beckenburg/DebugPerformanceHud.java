@@ -43,7 +43,8 @@ public final class DebugPerformanceHud {
         if(capture==null){
             capture=new FrameTimeCapture(viewport);
             captureStatus="RECORDING / CTRL+SHIFT+F8 TO SAVE";
-            enabled=true;
+            // Do not turn on an extra HUD draw just to benchmark frame pacing.
+            // If the player wants visual status, F7 remains independently available.
             BeckenburgDiagnostics.record("PERF CAPTURE start viewport="+viewport);
         }else finishCapture();
         return true;
@@ -52,6 +53,26 @@ public final class DebugPerformanceHud {
         if(event.getKeyCode()==KeyEvent.VK_F8)captureKeyHeld=false;
     }
     public void captureFocusLost(){captureKeyHeld=false;}
+    public String captureStatus(){return captureStatus;}
+    /** Leaving a case without pressing F8 must not silently discard evidence.
+     * This path runs only during shutdown, so a complete synchronous write
+     * is safer than a daemon export that a closing JVM may interrupt. */
+    public void closeCapture(){
+        FrameTimeCapture stopped=capture;
+        capture=null;
+        if(stopped==null||stopped.size()==0)return;
+        try{
+            java.nio.file.Path destination=stopped.defaultOutput();
+            stopped.write(destination);
+            captureStatus="SAVED "+destination.getFileName();
+            BeckenburgDiagnostics.record("PERF CAPTURE saved on case close file="+
+                destination+" samples="+stopped.size());
+        }catch(java.io.IOException|RuntimeException failure){
+            captureStatus="PERF CAPTURE SAVE FAILED";
+            BeckenburgDiagnostics.record("PERF CAPTURE CLOSE SAVE FAILED "+
+                BeckenburgDiagnostics.redact(failure.toString()));
+        }
+    }
     private void finishCapture(){
         FrameTimeCapture stopped=capture;
         capture=null;

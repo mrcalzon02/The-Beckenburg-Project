@@ -291,6 +291,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         if(opening!=null){opening.close();opening=null;}
         clearPlacementSelection();
         toolGrip.reset();releaseVoice();timer.stop();renderTimer.stop();realtimeInput.close();keys.clear();mouseLook.close();recorderAudio.close();audio.close();atmosphere.close();buildingAudio.close();
+        perfHud.closeCapture();
         VanLiveScreens.suspendCamera();
         capturedCameraImage=null;
         pendingPhoto=null;
@@ -1942,7 +1943,9 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
     }
     @Override public void keyPressed(KeyEvent e){
         try{
-        if(perfHud.captureHotkey(e,"lan-hunter")){repaint();return;}
+        if(perfHud.captureHotkey(e,"lan-hunter")){
+            feedback=perfHud.captureStatus();repaint();return;
+        }
         if(DebugPerformanceHud.hotkey(e)){repaint();return;}
         if(e.getKeyCode()==KeyEvent.VK_TAB){
             if(ledgerTabHeld)return;

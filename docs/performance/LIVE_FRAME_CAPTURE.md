@@ -25,3 +25,12 @@ This is **client render/presentation evidence**, not GPU timer-query output,
 and not automatic proof of physical hardware performance. Record driver,
 GPU, resolution, presets, build SHA, solo/seat count and cold/warm state with
 each trace. Reproduce the same movement route across comparable test runs.
+
+When a live case ends or the player leaves the viewport while capture is
+still active, the closing view writes the unfinished trace synchronously.
+This does not introduce disk I/O into ongoing game frames. Explicit F8 stop
+remains asynchronous; wait for SAVED before exiting immediately afterward.
+Starting a capture does **not** automatically draw the performance HUD:
+turn it on separately with F7 to observe capture status, or use the normal
+in-game feedback line. This keeps overlay drawing out of benchmarks unless
+the tester deliberately enables it.
