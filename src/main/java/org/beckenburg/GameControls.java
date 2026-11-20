@@ -14,7 +14,7 @@ public final class GameControls {
         "E interact / Q cycle / 1-4 slots / F use or raise camera",
         "LMB use or shutter / RMB power / T light / G place",
         "R drop / LMB throw held prop / wheel turn held prop",
-        "TAB journal / J casefile / M map / H help / ESC field menu (mouse controls)",
+        "TAB journal / J casefile / M map / H help / ESC field menu (Controls / Graphics tabs)",
         "C radio voice / V local voice / ENTER local text / SHIFT+ENTER radio text",
         "K field actions, supplies, rituals and voice options",
         "CTRL+SHIFT+F7 performance HUD / CTRL+SHIFT+F8 save frame capture"
