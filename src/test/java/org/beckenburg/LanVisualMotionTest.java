@@ -76,6 +76,8 @@ public final class LanVisualMotionTest {
         // stale held-key direction when the journal closes.
         motion.reset();
         motion.accept(new LanVisualMotion.Pose(2,0,3),start);
+        var initialIntent=motion.sample(start,.02,1,0,FREE);
+        check(initialIntent.x()==2,"new input starts at the host pose, not a fabricated step");
         var midStep=motion.sample(start+ms(80),.02,1,0,FREE);
         check(midStep.x()>2.05,"test must start with a real predicted camera step");
         motion.suspend();
