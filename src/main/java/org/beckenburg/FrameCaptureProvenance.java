@@ -8,7 +8,8 @@ package org.beckenburg;
 final class FrameCaptureProvenance {
     record Snapshot(String sourceRevision,String renderer,String os,String javaVersion,
                     String detail,String display,String aspect,String upscale,
-                    String antialias,String psxPreset,int fieldOfView) {
+                    String antialias,String psxPreset,int fieldOfView,
+                    int presentationTargetHz) {
         Snapshot {
             sourceRevision=clean(sourceRevision);
             renderer=clean(renderer);
@@ -36,7 +37,7 @@ final class FrameCaptureProvenance {
     }
     static Snapshot unavailable(){
         return new Snapshot("unknown","unknown","unknown","unknown",
-            "unknown","unknown","unknown","unknown","unknown","unknown",0);
+            "unknown","unknown","unknown","unknown","unknown","unknown",0,0);
     }
     static Snapshot current(){
         GraphicsOptions options=GraphicsOptions.current();
@@ -53,6 +54,6 @@ final class FrameCaptureProvenance {
             System.getProperty("java.version","unknown"),options.detail().name(),
             options.display().name(),options.aspect().name(),options.upscale().name(),
             options.antialias().name(),PsxPipeline.selected().name(),
-            options.fieldOfView());
+            options.fieldOfView(),PresentationRate.current().hz());
     }
 }

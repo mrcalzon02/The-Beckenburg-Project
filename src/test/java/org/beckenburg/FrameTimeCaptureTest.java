@@ -15,7 +15,7 @@ public final class FrameTimeCaptureTest {
         long base=1_000_000_000L;
         var metadata=new FrameCaptureProvenance.Snapshot(
             "a1b2c3", "NVIDIA GTX 1660 SUPER", "Windows 10", "17",
-            "HIGH","NATIVE","AUTO","CRISP","OFF","CLASSIC",93);
+            "HIGH","NATIVE","AUTO","CRISP","OFF","CLASSIC",93,60);
         var trace=new FrameTimeCapture("LAN HUNTER",base,
             Instant.parse("2026-11-20T20:00:00Z"),metadata);
         trace.record(base,4_000_000,true,0,1,2,3,14);
@@ -53,6 +53,8 @@ public final class FrameTimeCaptureTest {
         check(rows.contains("# source_revision=a1b2c3"),"Build provenance header missing");
         check(rows.contains("# renderer=NVIDIA GTX 1660 SUPER"),"GPU model header missing");
         check(rows.contains("# psx_preset=CLASSIC"),"PSX preset header missing");
+        check(rows.contains("# presentation_target_hz=60"),
+            "CSV must identify rendering rate for comparable physical traces");
         check(rows.stream().anyMatch(v->v.endsWith(",14,2,48,3.0")),
             "CSV input columns must preserve per-frame queue delay and event age");
         check(rows.stream().filter(v->v.startsWith("20.0,")).count()==1,

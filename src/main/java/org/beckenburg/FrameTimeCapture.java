@@ -177,6 +177,7 @@ final class FrameTimeCapture {
             out.write("# antialias="+provenance.antialias()+"\n");
             out.write("# psx_preset="+provenance.psxPreset()+"\n");
             out.write("# field_of_view="+provenance.fieldOfView()+"\n");
+            out.write("# presentation_target_hz="+provenance.presentationTargetHz()+"\n");
             out.write("# samples="+s.samples()+"\n");
             out.write("# new_frames="+s.newFrames()+"\n");
             out.write("# cadence_intervals="+s.cadenceIntervals()+"\n");

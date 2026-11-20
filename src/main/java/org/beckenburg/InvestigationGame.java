@@ -421,6 +421,9 @@ public final class InvestigationGame {
         JComboBox<GraphicsOptions.Aspect> aspect=select(GraphicsOptions.Aspect.values(),old.aspect());
         JComboBox<GraphicsOptions.Upscale> upscale=select(GraphicsOptions.Upscale.values(),old.upscale());
         JComboBox<GraphicsOptions.Antialias> aa=select(GraphicsOptions.Antialias.values(),old.antialias());
+        JComboBox<PresentationRate.Target> frameRate=select(
+            PresentationRate.Target.values(),PresentationRate.current());
+        frameRate.setName("options.graphics.presentationRate");
         JComboBox<PsxPipeline.Preset> psx=select(PsxPipeline.Preset.values(),PsxPipeline.selected());
         LightingModule.Settings previousLighting=LightingModule.current();
         JComboBox<LightingModule.Preset> lightingPreset=select(
@@ -497,6 +500,7 @@ public final class InvestigationGame {
         setting(graphics,"Real 3D rendering height",detail);
         setting(graphics,"Upscaling filter",upscale);
         setting(graphics,"Anti-aliasing",aa);
+        setting(graphics,"Client frame target (world simulation unchanged)",frameRate);
         setting(graphics,"PSX shader treatment",psx);
         setting(graphics,"Brightness",brightness);
         setting(graphics,"Contrast",contrast);
@@ -568,6 +572,8 @@ public final class InvestigationGame {
         chosen.save();
         LightingModule.apply(chosenLighting);
         PsxPipeline.choose((PsxPipeline.Preset)psx.getSelectedItem());
+        PresentationRate.Target requested=(PresentationRate.Target)frameRate.getSelectedItem();
+        if(requested!=PresentationRate.current())PresentationRate.save(requested);
         // Commit input preferences only on APPLY / KEEP DISPLAY; BACK and
         // automatic display-revert must leave previous mouse controls intact.
         MousePreferences.save(new MousePreferences.Settings(

@@ -241,7 +241,7 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         addFocusListener(mouseLook);addFocusListener(this);
         // Equipment/ambient UI remains slow; locomotion runs independently at 50 Hz.
         timer=new javax.swing.Timer(110,e->updateHunter());
-        renderTimer=new javax.swing.Timer(20,e->drawVisibleWorld());
+        renderTimer=new javax.swing.Timer(PresentationRate.initialDelayMillis(),e->drawVisibleWorld());
         renderTimer.setRepeats(false);
         timer.start();
     }
@@ -1336,9 +1336,11 @@ public final class LanWorldPanel extends JPanel implements KeyListener, FocusLis
         repaint();
         // Schedule one EDT callback from this frame's start. Overrunning a frame
         // should not also cost the unused part of a second timer period.
-        long remainingNs=renderTimer.getDelay()*1_000_000L-(System.nanoTime()-now);
-        int delayMs=(int)Math.max(1L,(remainingNs+999_999L)/1_000_000L);
-        renderTimer.setInitialDelay(delayMs);
+        // Client presentation only. A 60Hz default no longer aliases the
+        // unrelated 50Hz network sender; the EDT still draws one frame at a time.
+        long elapsedNs=System.nanoTime()-now;
+        renderTimer.setDelay(PresentationRate.initialDelayMillis());
+        renderTimer.setInitialDelay(PresentationRate.nextDelayMillis(elapsedNs));
         renderTimer.restart();
     }
     private boolean gameplayInputEnabled(){

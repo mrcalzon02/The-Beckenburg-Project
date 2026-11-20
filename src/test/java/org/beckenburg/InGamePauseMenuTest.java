@@ -49,6 +49,8 @@ public final class InGamePauseMenuTest {
                     &&settings.antialias().getSelectedItem()==baseline.antialias()
                     &&settings.fieldOfView().getValue()==baseline.fieldOfView(),
                 "Field graphics must load the active rendering settings");
+            check(settings.frameRate().getSelectedItem()==PresentationRate.current(),
+                "Current render-only frame target must appear in field graphics tab");
             check(settings.fieldOfView().getMinimum()==50
                     &&settings.fieldOfView().getMaximum()==120,
                 "Field FOV must preserve engine validation bounds");
@@ -57,6 +59,7 @@ public final class InGamePauseMenuTest {
                 ?GraphicsOptions.Detail.HIGH:GraphicsOptions.Detail.RETRO);
             settings.upscale().setSelectedItem(GraphicsOptions.Upscale.SMOOTH);
             settings.antialias().setSelectedItem(GraphicsOptions.Antialias.EDGE);
+            settings.frameRate().setSelectedItem(PresentationRate.Target.HIGH_90);
             settings.fieldOfView().setValue(120);
             var changedGraphics=InGamePauseMenu.selectedGraphics(baseline,settings);
             check(changedGraphics.detail()==settings.detail().getSelectedItem()
@@ -76,6 +79,11 @@ public final class InGamePauseMenuTest {
                 "Editing or canceling graphics must never mutate saved preferences");
             settings.mouse().sensitivity().setValue(160);
             settings.mouse().invertY().setSelected(false);
+            check(InGamePauseMenu.selectedPresentationRate(settings)
+                    ==PresentationRate.Target.HIGH_90,
+                "Selected presentation target is staged without saving");
+            check(PresentationRate.current()!=null,
+                "Cancel leaves valid existing pacing preferences in place");
             check(InGamePauseMenu.selectedMouse(settings).equals(
                     new MousePreferences.Settings(160,false)),
                 "Both settings tabs must retain edits until Apply");

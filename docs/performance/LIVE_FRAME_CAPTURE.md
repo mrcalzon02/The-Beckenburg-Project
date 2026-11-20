@@ -66,3 +66,20 @@ filenames (`-2`, `-3`, etc.) using exclusive file creation. A pending explicit
 F8 export is also given a bounded three-second completion window when leaving
 the case. Sudden power loss or forcibly terminating the process cannot guarantee
 preservation; always verify the saved file exists before clearing the test run.
+
+### Presentation cadence (independent of simulation)
+
+In Castle **OPTIONS → GRAPHICS**, or inside a live investigation at
+**ESC → Field Settings → GRAPHICS**, choose a **client frame target** of
+50 (compatibility), 60 (default), 90 or 120 FPS. This is a presentation
+cap, not a claim that the GPU will deliver that rate: a slow frame is never
+overlapped by another Swing draw. When a draw exceeds its frame budget, its
+next callback is scheduled promptly instead of waiting a second full
+interval. The authoritative host world cadence and the independent
+50 Hz HINPUT sender are *not changed*. Switching presentation targets
+does not change movement speed, evidence, AI or collision.
+
+Use 50 versus 60 for a controlled renderer-scheduling A/B on identical
+hardware and settings. Distinct GPU readback frames, not repeated Swing
+repaints, determine actual presented FPS. Every CSV includes
+`presentation_target_hz` so comparisons identify this setting.

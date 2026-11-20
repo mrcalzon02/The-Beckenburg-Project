@@ -91,6 +91,7 @@ public final class InGamePauseMenu {
                              JComboBox<GraphicsOptions.Detail> detail,
                              JComboBox<GraphicsOptions.Upscale> upscale,
                              JComboBox<GraphicsOptions.Antialias> antialias,
+                             JComboBox<PresentationRate.Target> frameRate,
                              JSlider fieldOfView){}
     private static JPanel settingsRow(String text,JComponent input){
         JPanel row=new JPanel(new BorderLayout(12,0));
@@ -121,6 +122,12 @@ public final class InGamePauseMenu {
         aa.setName("pause.graphics.antialias");
         aa.setSelectedItem(graphics.antialias());
 
+        JComboBox<PresentationRate.Target> frameRate=
+            new JComboBox<>(PresentationRate.Target.values());
+        frameRate.setName("pause.graphics.presentationRate");
+        frameRate.setSelectedItem(PresentationRate.current());
+        frameRate.getAccessibleContext().setAccessibleName("Client rendering frame rate target");
+
         JSlider fieldOfView=new JSlider(50,120,graphics.fieldOfView());
         fieldOfView.setName("pause.graphics.fieldOfView");
         fieldOfView.setMajorTickSpacing(10);
@@ -141,6 +148,8 @@ public final class InGamePauseMenu {
         graphicsPanel.add(settingsRow("Image upscaling",upscale));
         graphicsPanel.add(Box.createVerticalStrut(8));
         graphicsPanel.add(settingsRow("Edge antialiasing",aa));
+        graphicsPanel.add(Box.createVerticalStrut(8));
+        graphicsPanel.add(settingsRow("Client frame target (not simulation)",frameRate));
         graphicsPanel.add(Box.createVerticalStrut(8));
         graphicsPanel.add(settingsRow("Field of view",fieldOfView));
         graphicsPanel.add(Box.createVerticalStrut(10));
@@ -165,7 +174,7 @@ public final class InGamePauseMenu {
             "Live investigation continues; the full settings menu remains at Castle."),
             BorderLayout.SOUTH);
         view.setPreferredSize(new Dimension(574,337));
-        return new FieldSettingsForm(view,tabs,controls,detail,upscale,aa,fieldOfView);
+        return new FieldSettingsForm(view,tabs,controls,detail,upscale,aa,frameRate,fieldOfView);
     }
     /** Copy only live-safe rendering parameters, never window or display mode. */
     static GraphicsOptions selectedGraphics(GraphicsOptions before,FieldSettingsForm form){
@@ -175,6 +184,9 @@ public final class InGamePauseMenu {
             (GraphicsOptions.Antialias)form.antialias().getSelectedItem(),
             form.fieldOfView().getValue(),before.brightness(),before.contrast(),
             before.scanlines(),before.vignette(),before.grain(),before.chromatic());
+    }
+    static PresentationRate.Target selectedPresentationRate(FieldSettingsForm form){
+        return (PresentationRate.Target)form.frameRate().getSelectedItem();
     }
     static MousePreferences.Settings selectedMouse(FieldSettingsForm form){
         return new MousePreferences.Settings(form.mouse().sensitivity().getValue(),
@@ -194,6 +206,8 @@ public final class InGamePauseMenu {
         // unnecessary renderer configuration and preference writes.
         if(!updatedGraphics.equals(currentGraphics))updatedGraphics.save();
         if(!updatedMouse.equals(currentMouse))MousePreferences.save(updatedMouse);
+        PresentationRate.Target target=selectedPresentationRate(form);
+        if(target!=PresentationRate.current())PresentationRate.save(target);
     }
     public static void execute(Component parent){
         Action requested=choose(parent);

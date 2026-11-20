@@ -255,6 +255,7 @@ FootstepStimulusCadenceTest
 PresentedFrameCadenceTest
 FrameTimeCaptureTest
 InputDispatchTimingTest
+PresentationRateTest
 DebugPerformanceCaptureHotkeyTest
 EdtInputFramePacerTest
 LanEdtPacketQueueTest
