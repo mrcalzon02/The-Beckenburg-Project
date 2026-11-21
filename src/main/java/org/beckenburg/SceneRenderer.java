@@ -3644,16 +3644,27 @@ public final class SceneRenderer {
                 }
             }
         }
-
+        long charactersDone=System.nanoTime();
         renderWeatherMeshes();
+        long environmentDone=System.nanoTime();
         safeAreaPixels=SafeAreaHaze.draw(pixels,depths,renderWidth,renderHeight,focal,x,eyeHeight,z,yaw,pitch,clock,
             List.of(SafeAreaBarrier.castle()),sanctuaryRays);
+        long sanctuaryDone=System.nanoTime();
         long psxStart=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         long psxDone=System.nanoTime();
         applyGraphicsEffects(clock);
         long effectsDone=System.nanoTime();
         long finished=effectsDone;
+        // Castle and investigation captures must report the same CPU stages.
+        // No ghost overlay is painted here; never leak a prior House timing.
+        postEffectsDiagnostics=new PostEffectsDiagnostics(
+            charactersDone-geometryRendered,
+            environmentDone-charactersDone,
+            sanctuaryDone-environmentDone,
+            psxDone-psxStart,
+            effectsDone-psxDone,
+            0);
         int count=castleStaticGeometry.size()+dynamic.size();
         for(var assembly:castleActiveAssemblies)count+=assembly.faces.size();
         lastFrameDiagnostics=new FrameDiagnostics(finished-frameBegin,geometryReady-frameBegin,

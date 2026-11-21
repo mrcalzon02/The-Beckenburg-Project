@@ -38,6 +38,40 @@ public final class SafeAreaHazeColumnsTest {
             shaded+=a;
         }
         ok(shaded>2_000,"Moving views must exercise real sanctuary rays");
+        // Reproduce the stop/hold/step/stop sequence that exposed the
+        // suspected sixth-frame sanctuary hitch. Exact colors and depth
+        // must match independent uncached rays through all six repeated
+        // frames, including live occluder-depth and animation changes.
+        var heldCache=new SafeAreaHaze.RayCache();
+        int heldShaded=0;
+        for(int pose=0;pose<4;pose++){
+            int width=pose>=2?321:320,height=pose>=2?201:200;
+            double focal=pose==1?175:210;
+            double x=pose==3?0:pose*.17;
+            double z=pose==3?0:-8+pose*.36;
+            double yaw=pose*.045,pitch=pose==3?-.09:0;
+            for(int frame=0;frame<6;frame++){
+                int[] uncached=new int[width*height],cached=new int[uncached.length];
+                double[] depths=new double[uncached.length];
+                for(int i=0;i<uncached.length;i++){
+                    uncached[i]=cached[i]=random.nextInt(1<<24);
+                    depths[i]=(i+frame)%17==0?2.0:
+                        (i+pose)%11==0?Double.POSITIVE_INFINITY:15.0;
+                }
+                double[] originalDepth=depths.clone();
+                double clock=pose*.37+(frame<3?0:frame<5?.18:.41);
+                int plain=SafeAreaHaze.draw(uncached,depths,width,height,focal,
+                    x,1.62,z,yaw,pitch,clock,region);
+                int retained=SafeAreaHaze.draw(cached,depths,width,height,focal,
+                    x,1.62,z,yaw,pitch,clock,region,heldCache);
+                ok(plain==retained&&Arrays.equals(uncached,cached),
+                    "Held-frame cache changed pixels or occlusion pose="+pose+" frame="+frame);
+                ok(Arrays.equals(depths,originalDepth),
+                    "Held-frame cache changed scene depth pose="+pose+" frame="+frame);
+                heldShaded+=plain;
+            }
+        }
+        ok(heldShaded>2_000,"Stop-and-go test must shade the real sanctuary");
         for(int width:new int[]{1,83,320,321,960,1920}){
             for(double focal:new double[]{.25,42,210,840}){
                 var column=new SafeAreaHaze.RayCache().horizontal(width,focal);
@@ -48,6 +82,6 @@ public final class SafeAreaHazeColumnsTest {
                 }
             }
         }
-        System.out.println("PASS moving van haze pixel, occlusion, clock, resize and exact column parity");
+        System.out.println("PASS moving/held six-frame sanctuary RGB-depth parity, occlusion, clock, resize and exact columns");
     }
 }

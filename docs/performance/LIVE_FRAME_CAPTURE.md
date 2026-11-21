@@ -89,7 +89,10 @@ repaints, determine actual presented FPS. Every CSV includes
 The physical GTX 1660 SUPER House trace shows walking-tail latency
 concentrated after geometry submission. The capture now records independent
 CPU timings for characters, world/weather, sanctuary and hiding haze,
-PSX quantization, graphics post-processing and haunting overlays. These are
+PSX quantization, graphics post-processing and haunting overlays. The live
+Ctrl+Shift+F7 HUD presents these in two compact CPU-labeled rows, in both
+Castle and investigation views; Castle's unused haunting stage is zero
+rather than a stale House value. These are
 not GPU timestamp queries; compare them with frame intervals and verified host
 movement before identifying a bottleneck.
 
@@ -97,7 +100,9 @@ Horizontal screen ray coordinates depend only on column, width and focal
 length. The sanctuary renderer precomputes them exactly once per camera
 resolution/FOV instead of dividing per shaded pixel. Ray intersections,
 opacity, occlusion, motion and final colors remain live. A deterministic
-RGB/depth parity test covers motion, resized viewports and animation. To
+RGB/depth parity test covers motion, resized viewports, animation and six-frame
+stop-and-go held poses with changing opaque scene depths. The existing GPU
+workflow compiles and runs that deterministic Java 17 acceptance contract. To
 recover the original per-pixel division for comparison, set the JVM property
 beckenburg.haze.columnCache.disabled=true. A physical A/B remains necessary
 before claiming a performance gain from this change.

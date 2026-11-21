@@ -6,6 +6,8 @@ on:
       - 'gpu-client/**'
       - 'src/main/java/org/beckenburg/GpuWorldRenderer.java'
       - 'src/main/java/org/beckenburg/SceneRenderer.java'
+      - 'src/main/java/org/beckenburg/SafeAreaHaze.java'
+      - 'src/test/java/org/beckenburg/SafeAreaHazeColumnsTest.java'
       - 'src/main/java/org/beckenburg/DirectionalSprites.java'
       - 'src/main/java/org/beckenburg/GroundedSpriteFeet.java'
       - 'src/main/java/org/beckenburg/CastleResidentAnimation.java'
@@ -67,6 +69,10 @@ jobs:
           java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.DistanceDetailScratchTest
           javac --release 17 -cp gpu-client/target/classes -d build/contract-test src/test/java/org/beckenburg/GpuReadbackTest.java
           java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.GpuReadbackTest
+          # Diagnostic parity: six held identical poses, then real camera steps,
+          # changing wall depth and animated haze. No simulated frame skipping.
+          javac --release 17 -cp gpu-client/target/classes -d build/contract-test src/test/java/org/beckenburg/SafeAreaHazeColumnsTest.java
+          java -Djava.awt.headless=true -ea -cp gpu-client/target/classes:build/contract-test org.beckenburg.SafeAreaHazeColumnsTest
   windows-build:
     runs-on: windows-latest
     timeout-minutes: 40

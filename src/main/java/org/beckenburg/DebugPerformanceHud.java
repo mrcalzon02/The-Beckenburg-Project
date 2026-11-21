@@ -24,6 +24,7 @@ public final class DebugPerformanceHud {
     private long lastFrameAt,lastLog;
     private long loopNs;
     private SceneRenderer.FrameDiagnostics metrics;
+    private SceneRenderer.PostEffectsDiagnostics postStages;
     private String view="UNKNOWN";
     private int actors,room;
     private double x,y,z,yaw;
@@ -140,6 +141,7 @@ public final class DebugPerformanceHud {
         lastFrameAt=now;
         loopNs=Math.max(0,entireFrameNs);
         metrics=scene.frameDiagnostics();
+        postStages=scene.postEffectsDiagnostics();
         presentedCadence.record(now,metrics!=null&&metrics.gpu(),scene.consumedGpuFrameId());
         view=viewport;
         actors=actorCount;
@@ -255,6 +257,20 @@ public final class DebugPerformanceHud {
                 "HEAP %dMB / %dMB  JVM MAX %dMB",
                 (rt.totalMemory()-rt.freeMemory())>>20,
                 rt.totalMemory()>>20,rt.maxMemory()>>20),0xbbcdd2);
+            // These are CPU compositing costs, not OpenGL GPU timestamp queries.
+            var stages=postStages;
+            if(m!=null&&stages!=null){
+                yLine+=17;
+                text(out,left+10,yLine,String.format(Locale.ROOT,
+                    "CPU CHAR %.1f  ENV %.1f  HAZE %.1f",
+                    stages.charactersNs()/1e6,stages.environmentNs()/1e6,
+                    stages.sanctuaryNs()/1e6),0xb8e1cd);
+                yLine+=17;
+                text(out,left+10,yLine,String.format(Locale.ROOT,
+                    "CPU PSX %.1f  FX %.1f  HAUNT %.1f",
+                    stages.psxNs()/1e6,stages.graphicsNs()/1e6,
+                    stages.hauntingNs()/1e6),0xb8e1cd);
+            }
             int graphTop=top+253,graphHeight=71;
             out.setColor(new Color(28,44,53));out.fillRect(left+10,graphTop,w-20,graphHeight);
             out.setColor(new Color(68,98,110));
