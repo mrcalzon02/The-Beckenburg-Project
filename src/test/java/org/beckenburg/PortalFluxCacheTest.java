@@ -54,6 +54,54 @@ public final class PortalFluxCacheTest {
             "Shutting the door must invalidate all outgoing light");
         ok(Double.isNaN(cache.weight(first,4,b.x(),portal.y()+1.35,b.z(),
                 0,0,0,false)),"Closing the door left an active portal source");
+        // A synthetic lamp can demonstrate correct math while NONE of the
+        // shipped lamps reaches an actual doorway. Measure the authoritative
+        // source registry on multiple real maps, rather than reporting the
+        // synthetic test as production light propagation evidence.
+        int physicalTransfers=0,physicalPositive=0;
+        for(var site:new HouseMap.Site[]{
+                HouseMap.Site.HOUSE,HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
+            var real=new HouseMap(site);
+            var authored=new FixtureLighting(real);
+            int actualDoorways=0,sourceDoorPairs=0;
+            for(var p:real.level().portals())if(p.door()){
+                if(!real.doorOpen(p.id()))real.toggleDoor(p.id());
+                if(!real.outside(p.a())&&!real.outside(p.b())){
+                    actualDoorways++;
+                    for(var source:authored.sources())
+                        if(source.room()==p.a()||source.room()==p.b())
+                            sourceDoorPairs++;
+                }
+            }
+            var physical=new PortalFluxCache(real,authored.sources());
+            physicalTransfers+=physical.transfers();
+            int positive=0;
+            for(var p:real.level().portals())if(p.door()
+                    &&!real.outside(p.a())&&!real.outside(p.b())){
+                for(var light:authored.sources()){
+                    int target=light.room()==p.a()?p.b():
+                        light.room()==p.b()?p.a():-1;
+                    if(target<0)continue;
+                    var at=AuthoredTestSupport.side(real,p,target,.75);
+                    double value=physical.weight(light,target,
+                        at.x(),p.y()+1.35,at.z(),0,0,0,false);
+                    if(Double.isFinite(value)&&value>0)positive++;
+                }
+            }
+            physicalPositive+=positive;
+            System.out.println("PHYSICAL PORTAL COVERAGE site="+site
+                +" authored_lamps="+authored.sources().size()
+                +" interior_doors="+actualDoorways
+                +" potential_source_door_pairs="+sourceDoorPairs
+                +" incident_rays="+physical.incidentRays()
+                +" cached_transfers="+physical.transfers()
+                +" positive_receiver_samples="+positive
+                +" receiver_rays="+physical.receiverRays());
+        }
+        ok(physicalTransfers>0&&physicalPositive>0,
+            "No live authored map exercised portal illumination; synthetic lights alone are not production proof");
+        System.out.println("PASS real authored portal illumination coverage: transfers="
+            +physicalTransfers+" positive_samples="+physicalPositive);
         System.out.println("PASS cached real incident flux, receiver ray sharing, and door invalidation");
     }
 }
