@@ -208,3 +208,19 @@ reach door #2, then compares bit-exact RGB and normals against the ungated
 direct-ray oracle with ALL authored House/Farmhouse/School doors open.
 `sourceBlockedConnectedRooms()` counts live emitter/room graph pairs pruned
 specifically by each light's own geometric limits, not frame milliseconds.
+
+### Exact spherical spatial light index (not a cube)
+
+`FixtureLighting.eachInfluenceCell` now registers a light source only in
+2/4/8-metre index cells intersecting its actual light sphere. The former
+cube broadphase allocated candidates and performed later rejections in
+corners of that cube where a sphere could never illuminate a receiver.
+The same radius-safe cell set is used for light intensity invalidation.
+
+No physically reachable point can be removed: the minimum distance to the
+complete cell AABB must exceed the authored radius to prune it. The
+`LightSphereCellIndexTest` exercises real source lists from House,
+Farmhouse and School and randomly samples interior points for all emitters,
+asserting membership plus an exact count of removed cubic cell entries.
+This is an exact geometry and memory/candidate optimization, not a
+lighting visual approximation; normal sample and GPU parity still apply.

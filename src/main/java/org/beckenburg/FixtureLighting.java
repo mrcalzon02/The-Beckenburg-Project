@@ -72,7 +72,22 @@ public final class FixtureLighting {
  private long revision(double x,double y,double z){
   return changedCells.getOrDefault(cell(x,y,z),0L);
  }
- /** Sphere-of-influence preselection only. Actual wall raycasts stay mandatory. */
+ /** Exact lower-bound distance from the light to its enclosing metre-cell.
+  * Reject only cells that have ZERO overlap with the physical spherical
+  * influence volume. A cell containing even a tangent receiver remains
+  * eligible for the original light + wall shadow computation. */
+ static boolean sphereTouchesCell(double x,double y,double z,double radius,
+                                  int cx,int cy,int cz,double step){
+  double ax=cx*step,bx=(cx+1)*step;
+  double ay=cy*step,by=(cy+1)*step;
+  double az=cz*step,bz=(cz+1)*step;
+  double dx=Math.max(0,Math.max(ax-x,x-bx));
+  double dy=Math.max(0,Math.max(ay-y,y-by));
+  double dz=Math.max(0,Math.max(az-z,z-bz));
+  return dx*dx+dy*dy+dz*dz<=radius*radius+1e-8;
+ }
+ /** Spherical influence preselection only. Exact architectural shadow rays
+  * remain mandatory for any sample inside a retained source cell. */
  private void eachInfluenceCell(Source source,java.util.function.Consumer<Cell> use){
   int xa=(int)Math.floor((source.x-source.radius)/cellSize);
   int xb=(int)Math.floor((source.x+source.radius)/cellSize);
@@ -81,7 +96,21 @@ public final class FixtureLighting {
   int za=(int)Math.floor((source.z-source.radius)/cellSize);
   int zb=(int)Math.floor((source.z+source.radius)/cellSize);
   for(int xx=xa;xx<=xb;xx++)for(int yy=ya;yy<=yb;yy++)
-   for(int zz=za;zz<=zb;zz++)use.accept(new Cell(xx,yy,zz));
+   for(int zz=za;zz<=zb;zz++){
+    if(sphereTouchesCell(source.x,source.y,source.z,source.radius,
+        xx,yy,zz,cellSize))use.accept(new Cell(xx,yy,zz));
+   }
+ }
+ /** Diagnostic-only, bounded by the prebuilt source index, not used per frame. */
+ long indexedSourceCellReferences(){
+  long total=0;
+  for(var list:influence.values())total+=list.size();
+  return total;
+ }
+ /** Tests may check real authored source coverage without exposing the index. */
+ boolean indexesSourceAt(int id,double x,double y,double z){
+  for(var source:candidates(x,y,z))if(source.id()==id)return true;
+  return false;
  }
  private void invalidate(Source source){
   long version=++generation;
