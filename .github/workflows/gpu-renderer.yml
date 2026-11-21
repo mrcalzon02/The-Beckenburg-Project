@@ -159,6 +159,20 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -sourcepath src\test\java -d build\test src\test\java\org\beckenburg\DoorwayTransmissionTest.java src\test\java\org\beckenburg\LanAcousticsTest.java || exit /b 1
           javac --release 17 -encoding UTF-8 -cp build\classes -sourcepath src\test\java -d build\test src\test\java\org\beckenburg\PortalLightReachabilityTest.java src\test\java\org\beckenburg\PortalFluxCacheTest.java || exit /b 1
           for %%T in (EmissionCacheBudgetTest DynamicTextureRevisionTest DynamicGeometryRetentionTest PreparedLightWriteTest PreparedLightBatchParityTest ArchitecturalLightOcclusionAllocationParityTest HandheldSurfaceOcclusionTest PreparedVertexLightingTest PsxQuantizationParityTest CastleShelfLabelsTest LanAcousticsTest DoorwayTransmissionTest PortalLightReachabilityTest PortalFluxCacheTest) do java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.%%T || exit /b 1
+      - name: Compare real House open-door illumination with direct-ray reference (advisory)
+        shell: cmd
+        continue-on-error: true
+        run: |
+          javac --release 17 -encoding UTF-8 -cp build\classes;build\test -sourcepath src\test\java -d build\test src\test\java\org\beckenburg\PortalFluxVisualCaptureTest.java || exit /b 1
+          java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.PortalFluxVisualCaptureTest || exit /b 1
+      - name: Preserve real renderer doorway-light A/B PNGs and pixel delta
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: beckenburg-doorway-light-visual-proof
+          path: build/e2e/portal-flux-capture/**
+          if-no-files-found: warn
+          retention-days: 14
       # A changed authored map can exceed the configured VBO residency budget.
       # Preserve the real cache result, but do not prevent an actual GL launch
       # and framebuffer proof because of an advisory retention target.
