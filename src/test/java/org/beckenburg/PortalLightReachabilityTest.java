@@ -50,8 +50,53 @@ public final class PortalLightReachabilityTest {
                 points.add(new LevelDefinition.Vec(xx,y,zz));
         return points;
     }
+    private static void physicalFirstOpeningGate(){
+        var map=new HouseMap(HouseMap.Site.HOUSE);
+        var door=AuthoredTestSupport.door(map,3,4);
+        var at=AuthoredTestSupport.side(map,door,3,2.0);
+        var receiving=AuthoredTestSupport.side(map,door,4,.80);
+        double sy=door.y()+1.35;
+        var isolated=new FixtureLighting.Source(0,FixtureLighting.Kind.BARE_BULB,
+            3,0,at.x(),sy,at.z(),0,-1,0,1.05,3,1,.8,.6);
+        var facing=new FixtureLighting.Source(1,FixtureLighting.Kind.TELEVISION,
+            3,0,at.x(),sy,at.z(),0,0,1,2.25,3,1,1,1);
+        var facingAway=new FixtureLighting.Source(2,FixtureLighting.Kind.TELEVISION,
+            3,0,at.x(),sy,at.z(),0,0,-1,2.25,3,1,1,1);
+        var diffuse=new FixtureLighting.Source(3,FixtureLighting.Kind.FROSTED_DOME,
+            3,0,at.x(),sy,at.z(),0,0,-1,2.25,3,1,1,1);
+        var sources=List.of(isolated,facing,facingAway,diffuse);
+        var gate=new PortalLightReachability(map,sources);
+        ok(gate.sourceConfined()==4,
+            "Closed-door local lights should not reach unrelated rooms");
+        map.toggleDoor(door.id());
+        gate.refresh();
+        ok(!gate.disconnected(facing,4,receiving.x(),sy,receiving.z()),
+            "A forward narrow beam touching the real open doorway was culled");
+        ok(!gate.disconnected(diffuse,4,receiving.x(),sy,receiving.z()),
+            "A diffuse bulb has a nonzero back emission; do not hard-cull it");
+        ok(gate.disconnected(isolated,4,receiving.x(),sy,receiving.z()),
+            "A light whose radius ends before every opening cast into another room");
+        ok(gate.disconnected(facingAway,4,receiving.x(),sy,receiving.z()),
+            "Narrow light aimed away from every opening was sent cross-room");
+        ok(gate.sourceConfined()==2,
+            "The open doorway should release only the two physically reaching emitters");
+        int prior=gate.rebuilds();
+        gate.refresh();
+        ok(gate.rebuilds()==prior,
+            "A static lamp recomputed its aperture/cone on an unchanged frame");
+        map.toggleDoor(door.id());
+        gate.refresh();
+        ok(gate.disconnected(facing,4,receiving.x(),sy,receiving.z()),
+            "Closing the real door failed to isolate the forward beam");
+        // Ambiguous wall receivers retain exact full ray handling.
+        ok(!gate.disconnected(isolated,4,door.x(),sy,door.z()),
+            "Wall/door boundary probe was prematurely culled");
+        System.out.println("PASS light-locality aperture: radius stops, hard beam cone, "
+            +"diffuse backlight, door toggles, boundary fallback and cached frames");
+    }
     public static void main(String[] args){
-        long totalRejected=0;
+        physicalFirstOpeningGate();
+        long totalRejected=0,totalConfined=0;
         for(var site:new HouseMap.Site[]{HouseMap.Site.HOUSE,
                     HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
             var map=new HouseMap(site);
@@ -79,9 +124,12 @@ public final class PortalLightReachabilityTest {
             }
             ok(oracle.portalCandidatesRejected()==0,
                 "Opt-out must preserve all exact direct-ray candidates");
-            System.out.println("PASS "+site+" cached door graph and direct-ray RGB parity");
+            totalConfined+=new PortalLightReachability(map,
+                candidate.sources()).sourceConfined();
+            System.out.println("PASS "+site+" cached first-aperture light and direct-ray RGB parity");
         }
         System.out.println("PASS portal-gated lighting cross-map RGB/normal parity, "
-            +"door/circuit locality; rejected candidate samples="+totalRejected);
+            +"door/circuit locality; rejected candidate samples="+totalRejected
+            +" safe local-only authored sources="+totalConfined);
     }
 }

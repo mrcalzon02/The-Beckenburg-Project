@@ -167,3 +167,25 @@ Ctrl+Shift+F8 captures include separate machine-readable columns
 consecutive samples to attribute work to an interval. These figures count
 CPU architectural-ray decisions, not GPU timestamps or proven frames-per-second.
 No extra simulation ticks, network traffic or per-frame file writes are added.
+
+### Source-owned radius and beam exit gating
+
+A light with no physically reachable *first* opening is now explicitly local to
+its authored room: source-to-other-room candidates are skipped before the
+source shadow rays or portal flux path. The cached `PortalLightReachability`
+rebuild checks both a conservative **entire aperture** radius/volume bound and
+hard directional beams (fluorescent, TV). It never uses only a doorway centre
+sample to decide a source could not reach a jamb or lintel. Frosted dome,
+table lamp and diffuser beams include nonzero backlight and are not falsely
+treated as hard cones. Opaque closed doors block graph transfer; physical
+windows and conservative vertical stair connections remain permitted. Moving
+player flashlights and all source-internal lighting are unchanged.
+
+For compatibility the first aperture is source-specific; paths farther along
+the connected topology stay deliberately optimistic until tested multi-hop
+propagation. Distal surfaces still undergo the original exact architectural
+occlusion and distance checks. The prepared GPU vertex and CPU probe paths
+share this same gating. `PortalLightReachabilityTest` verifies an actual open
+House door with a narrow forward beam, a beam facing away, a short-radius
+local-only emitter, diffuse backlight, closing/reopening and frame reuse,
+alongside bit-exact oracle RGB/normal parity on House, Farmhouse and School.
