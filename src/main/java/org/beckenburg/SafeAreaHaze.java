@@ -10,7 +10,10 @@ import java.util.stream.IntStream;
  * Lower wall reaches head height and joins a soft elliptical dome over the roof. */
 public final class SafeAreaHaze {
     private SafeAreaHaze(){}
-    private static final boolean EXPERIMENTAL_COLUMNS=Boolean.getBoolean("beckenburg.experimental.hazeColumns");
+    // Reuse bit-identical horizontal projection values in moving views.
+    // Opt-out retains the old per-pixel division for physical A/B.
+    private static final boolean COLUMN_CACHE_ENABLED=
+        !Boolean.getBoolean("beckenburg.haze.columnCache.disabled");
     /** A renderer owns the range and opacity of its first sanctuary. Range is tied to
      * the exact projection, while opacity also depends on the current animation clock. */
     static final class RayCache {
@@ -113,9 +116,10 @@ public final class SafeAreaHaze {
             double x,double eye,double z,double yaw,double pitch,double clock,List<? extends Shell> shells,RayCache cache){
         if(!Double.isFinite(clock))throw new IllegalArgumentException("finite barrier animation clock required");
         int changed=0;double cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
-        // Opt-in A/B only: the same horizontal division is otherwise repeated for each row.
-        // Never cache depth, opacity, or final color; those remain live every frame.
-        double[] horizontal=EXPERIMENTAL_COLUMNS&&cache!=null?cache.horizontal(width,focal):null;
+        // Only width/focal determine horizontal projection. Camera movement,
+        // ray depth, opacity, pixels and all dynamic scene effects remain live.
+        double[] horizontal=COLUMN_CACHE_ENABLED&&cache!=null
+            ?cache.horizontal(width,focal):null;
         for(var shell:shells){var a=shell.material();
             if(Math.hypot(x-a.x(),z-a.z())>70+a.radius())continue;
             double ox=x-a.x(),oz=z-a.z();

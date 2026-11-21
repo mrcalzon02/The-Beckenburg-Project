@@ -83,3 +83,21 @@ Use 50 versus 60 for a controlled renderer-scheduling A/B on identical
 hardware and settings. Distinct GPU readback frames, not repeated Swing
 repaints, determine actual presented FPS. Every CSV includes
 `presentation_target_hz` so comparisons identify this setting.
+
+### Post-render stage diagnosis and sanctuary column precompute
+
+The physical GTX 1660 SUPER House trace shows walking-tail latency
+concentrated after geometry submission. The capture now records independent
+CPU timings for characters, world/weather, sanctuary and hiding haze,
+PSX quantization, graphics post-processing and haunting overlays. These are
+not GPU timestamp queries; compare them with frame intervals and verified host
+movement before identifying a bottleneck.
+
+Horizontal screen ray coordinates depend only on column, width and focal
+length. The sanctuary renderer precomputes them exactly once per camera
+resolution/FOV instead of dividing per shaded pixel. Ray intersections,
+opacity, occlusion, motion and final colors remain live. A deterministic
+RGB/depth parity test covers motion, resized viewports and animation. To
+recover the original per-pixel division for comparison, set the JVM property
+beckenburg.haze.columnCache.disabled=true. A physical A/B remains necessary
+before claiming a performance gain from this change.

@@ -154,7 +154,7 @@ public final class DebugPerformanceHud {
                 metrics==null?0:metrics.geometryNs(),
                 metrics==null?0:metrics.effectsNs(),room,
                 inputTiming.events(),inputTiming.worstQueueMs(),
-                inputTiming.lastEventAgeNs(now));
+                inputTiming.lastEventAgeNs(now),scene.postEffectsDiagnostics());
             inputTiming.afterFrame();
             if(!capacityRemaining)finishCapture();
         }

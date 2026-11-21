@@ -2398,6 +2398,18 @@ public final class SceneRenderer {
         FixtureLighting.FrameStats lighting,long depthRejectedFaces) {}
     private volatile FrameDiagnostics lastFrameDiagnostics;
     public FrameDiagnostics frameDiagnostics(){return lastFrameDiagnostics;}
+    /** CPU stages after geometry; not GPU hardware timestamp queries. */
+    public record PostEffectsDiagnostics(long charactersNs,long environmentNs,
+            long sanctuaryNs,long psxNs,long graphicsNs,long hauntingNs) {
+        public PostEffectsDiagnostics {
+            if(charactersNs<0||environmentNs<0||sanctuaryNs<0
+                    ||psxNs<0||graphicsNs<0||hauntingNs<0)
+                throw new IllegalArgumentException("negative post-render timing");
+        }
+    }
+    private volatile PostEffectsDiagnostics postEffectsDiagnostics=
+        new PostEffectsDiagnostics(0,0,0,0,0,0);
+    public PostEffectsDiagnostics postEffectsDiagnostics(){return postEffectsDiagnostics;}
     // Exact GPU framebuffer selected for this composited frame, not the
     // submitted or merely latest driver frame. Zero means no GL result.
     private long consumedGpuFrameId;
@@ -3823,13 +3835,16 @@ public final class SceneRenderer {
                 geometry.size()+residentOmittedFaces,visibleFaces,renderWidth,renderHeight,
                 geometryReady-geometryStart,geometryRendered-geometryReady);
         renderCharacterSprites(map,ghostRoom,visibleGhost,hunterRoom,clock,others,apparition);
+        long charactersDone=System.nanoTime();
         if(map.nativeSite()){
             if(distanceDetailScratch==null||distanceDetailScratch.length!=pixels.length)
                 distanceDetailScratch=new int[pixels.length];
             DistanceDetail.apply(pixels,depths,renderWidth,renderHeight,hazeBackground,distanceDetailScratch);
         }
         renderWeatherMeshes();
+        long environmentDone=System.nanoTime();
         renderSafeAreas(map,markers,clock);
+        long sanctuaryDone=System.nanoTime();
         long psxStart=System.nanoTime();
         PsxPipeline.finishFrame(pixels,renderWidth,renderHeight,psxPreset);
         long psxDone=System.nanoTime();
@@ -3839,6 +3854,13 @@ public final class SceneRenderer {
         GhostHauntingFolio.paint(pixels,renderWidth,renderHeight,hauntings,
             localRoom,(int)Math.floor(clock*10));
         long finished=System.nanoTime();
+        postEffectsDiagnostics=new PostEffectsDiagnostics(
+            charactersDone-geometryRendered,
+            environmentDone-charactersDone,
+            sanctuaryDone-environmentDone,
+            psxDone-psxStart,
+            effectsDone-psxDone,
+            finished-effectsDone);
         lastFrameDiagnostics=new FrameDiagnostics(finished-frameBegin,
             geometryReady-geometryStart,geometryRendered-geometryReady,
             finished-geometryRendered,geometry.size()+residentOmittedFaces,visibleFaces,

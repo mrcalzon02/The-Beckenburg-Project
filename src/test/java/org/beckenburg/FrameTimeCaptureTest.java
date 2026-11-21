@@ -20,7 +20,8 @@ public final class FrameTimeCaptureTest {
             Instant.parse("2026-11-20T20:00:00Z"),metadata);
         trace.record(base,4_000_000,true,0,1,2,3,14);
         trace.record(base+20_000_000L,5_000_000,true,10,1,2,3,14,
-            2,48,3_000_000L);
+            2,48,3_000_000L,new SceneRenderer.PostEffectsDiagnostics(
+                1_000_000L,2_000_000L,3_000_000L,4_000_000L,5_000_000L,6_000_000L));
         trace.record(base+40_000_000L,6_000_000,true,10,1,2,3,14);
         trace.record(base+80_000_000L,7_000_000,true,11,1,2,3,13,
             1,124,14_000_000L);
@@ -55,8 +56,13 @@ public final class FrameTimeCaptureTest {
         check(rows.contains("# psx_preset=CLASSIC"),"PSX preset header missing");
         check(rows.contains("# presentation_target_hz=60"),
             "CSV must identify rendering rate for comparable physical traces");
-        check(rows.stream().anyMatch(v->v.endsWith(",14,2,48,3.0")),
+        check(rows.stream().anyMatch(v->v.contains(",14,2,48,3.0,")),
             "CSV input columns must preserve per-frame queue delay and event age");
+        check(rows.stream().anyMatch(v->v.endsWith(",1.0,2.0,3.0,4.0,5.0,6.0")),
+            "Post-render stage measurements must survive CSV export");
+        check(rows.stream().anyMatch(v->v.startsWith("elapsed_ms,render_ms,")
+                    &&v.endsWith("sanctuary_haze_ms,psx_ms,graphics_post_ms,haunting_overlay_ms")),
+            "CSV must label post-render stages independently");
         check(rows.stream().filter(v->v.startsWith("20.0,")).count()==1,
             "Each measured render callback gets one time-series row");
         check(rows.stream().anyMatch(v->v.startsWith("elapsed_ms,render_ms,")),

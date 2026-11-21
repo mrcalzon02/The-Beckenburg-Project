@@ -31,6 +31,10 @@ final class FrameTimeCapture {
     private final long[] effects=new long[CAPACITY],frameId=new long[CAPACITY];
     private final long[] freshInterval=new long[CAPACITY];
     private final int[] room=new int[CAPACITY],dispatchedEvents=new int[CAPACITY];
+    // Optional six-stage breakdown in bounded integer microseconds.
+    private final int[] charactersUs=new int[CAPACITY],environmentUs=new int[CAPACITY];
+    private final int[] sanctuaryUs=new int[CAPACITY],psxUs=new int[CAPACITY];
+    private final int[] graphicsUs=new int[CAPACITY],hauntingUs=new int[CAPACITY];
     private final long[] queueDelayMs=new long[CAPACITY],postDispatchNs=new long[CAPACITY];
     private final byte[] flags=new byte[CAPACITY]; // bit0 GPU, bit1 new frame
     private int size,duplicates;
@@ -63,6 +67,14 @@ final class FrameTimeCapture {
     boolean record(long atNs,long renderNs,boolean gpu,long consumedFrameId,
                    long buildNs,long geometryNs,long effectsNs,int roomId,
                    int inputEvents,long maxQueueDelayMs,long postDispatchAgeNs){
+        return record(atNs,renderNs,gpu,consumedFrameId,buildNs,geometryNs,
+            effectsNs,roomId,inputEvents,maxQueueDelayMs,postDispatchAgeNs,null);
+    }
+    /** Null stage data is allowed for older callers. No GPU timer claims. */
+    boolean record(long atNs,long renderNs,boolean gpu,long consumedFrameId,
+                   long buildNs,long geometryNs,long effectsNs,int roomId,
+                   int inputEvents,long maxQueueDelayMs,long postDispatchAgeNs,
+                   SceneRenderer.PostEffectsDiagnostics stages){
         if(size>=CAPACITY)return false;
         if(haveBackend&&gpu!=previousGpu){
             // GPU/CPU fallback cannot turn a backend change into a fake hitch.
@@ -90,6 +102,14 @@ final class FrameTimeCapture {
         dispatchedEvents[i]=Math.max(0,inputEvents);
         queueDelayMs[i]=Math.max(0,maxQueueDelayMs);
         postDispatchNs[i]=postDispatchAgeNs<0?-1L:postDispatchAgeNs;
+        if(stages!=null){
+            charactersUs[i]=micros(stages.charactersNs());
+            environmentUs[i]=micros(stages.environmentNs());
+            sanctuaryUs[i]=micros(stages.sanctuaryNs());
+            psxUs[i]=micros(stages.psxNs());
+            graphicsUs[i]=micros(stages.graphicsNs());
+            hauntingUs[i]=micros(stages.hauntingNs());
+        }
         flags[i]=(byte)((gpu?1:0)|(fresh?2:0));
         return size<CAPACITY;
     }
@@ -155,7 +175,11 @@ final class FrameTimeCapture {
         throw new java.nio.file.FileAlreadyExistsException(base.toString(),
             null,"100 recording filenames already in use");
     }
+    private static int micros(long nanos){
+        return (int)Math.min(Integer.MAX_VALUE,Math.max(0,nanos/1_000L));
+    }
     private static double ms(long nanos){return nanos/1_000_000.0;}
+    private static double stageMs(int micros){return micros/1_000.0;}
     /** Called only after the recording is detached from its EDT owner. */
     void write(Path destination)throws IOException{
         Path parent=destination.toAbsolutePath().getParent();
@@ -192,7 +216,7 @@ final class FrameTimeCapture {
             out.write("# input_queue_frames_over_50ms="+s.queueDelayOver50()+"\n");
             out.write("# input_queue_frames_over_100ms="+s.queueDelayOver100()+"\n");
             out.write("# max_input_queue_delay_ms="+s.maxQueueDelayMs()+"\n");
-            out.write("elapsed_ms,render_ms,presented_interval_ms,backend,frame_id,new_frame,scene_build_ms,geometry_ms,effects_ms,room,dispatched_input_events,max_input_queue_delay_ms,post_dispatch_to_frame_sample_ms\n");
+            out.write("elapsed_ms,render_ms,presented_interval_ms,backend,frame_id,new_frame,scene_build_ms,geometry_ms,effects_ms,room,dispatched_input_events,max_input_queue_delay_ms,post_dispatch_to_frame_sample_ms,characters_ms,environment_ms,sanctuary_haze_ms,psx_ms,graphics_post_ms,haunting_overlay_ms\n");
             StringBuilder line=new StringBuilder(160);
             for(int i=0;i<size;i++){
                 line.setLength(0);
@@ -209,6 +233,12 @@ final class FrameTimeCapture {
                     .append(dispatchedEvents[i]).append(',')
                     .append(queueDelayMs[i]).append(',')
                     .append(postDispatchNs[i]<0?"-1":Double.toString(ms(postDispatchNs[i])))
+                    .append(',').append(stageMs(charactersUs[i]))
+                    .append(',').append(stageMs(environmentUs[i]))
+                    .append(',').append(stageMs(sanctuaryUs[i]))
+                    .append(',').append(stageMs(psxUs[i]))
+                    .append(',').append(stageMs(graphicsUs[i]))
+                    .append(',').append(stageMs(hauntingUs[i]))
                     .append('\n');
                 out.write(line.toString());
             }
