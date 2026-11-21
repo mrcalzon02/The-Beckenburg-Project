@@ -58,9 +58,21 @@ public final class PortalFluxCacheTest {
         ok(cache.mayAffectReceiver(first,portal,b.x(),
                 portal.y()+1.35,b.z(),0),
             "A real in-range receiver must remain invalidated by the door");
+        int originalDensity=map.hidingDensity();
+        map.configureHiding(originalDensity==70?60:70);
+        cache.refresh();
+        ok(cache.rebuilds()==3,
+            "Changing real closet occluders did not invalidate portal ray caches");
+        map.configureHiding(originalDensity);
+        cache.refresh();
+        ok(cache.rebuilds()==4,
+            "Restoring a physical hiding layout must invalidate prior receiver rays");
+        cache.refresh();
+        ok(cache.rebuilds()==4,
+            "Unchanged hiding layout must reuse cached portal illumination");
         map.toggleDoor(portal.id());
         cache.refresh();
-        ok(cache.rebuilds()==3&&cache.transfers()==0,
+        ok(cache.rebuilds()==5&&cache.transfers()==0,
             "Shutting the door must invalidate all outgoing light");
         ok(Double.isNaN(cache.weight(first,4,b.x(),portal.y()+1.35,b.z(),
                 0,0,0,false)),"Closing the door left an active portal source");

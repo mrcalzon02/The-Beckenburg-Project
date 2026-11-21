@@ -37,6 +37,7 @@ final class PortalFluxCache {
         double x,double y,double z,double remaining,double strength){}
     private record ReceiverRay(int portal,int room,long x,long y,long z){}
     private String previousDoors,previousWindows;
+    private int previousHidingDensity=-1;
     private int rebuilds,transfers;
     private long incidentRays,receiverRays,receiverHits;
     private static long key(int source,int receiver){
@@ -69,8 +70,13 @@ final class PortalFluxCache {
     }
     void refresh(){
         String doors=map.doorSnapshot(),windows=map.windowSnapshot();
-        if(doors.equals(previousDoors)&&windows.equals(previousWindows))return;
+        int hiding=map.hidingDensity();
+        if(doors.equals(previousDoors)&&windows.equals(previousWindows)
+                &&hiding==previousHidingDensity)return;
+        // A hiding-density change replaces physical closet occluders. Cached
+        // outgoing ray visibility must NEVER survive the old closet layout.
         previousDoors=doors;previousWindows=windows;
+        previousHidingDensity=hiding;
         rebuilds++;
         routes.clear();receiverSight.clear();transfers=0;
         for(var portal:map.level().portals()){
