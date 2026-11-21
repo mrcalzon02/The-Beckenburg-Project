@@ -51,7 +51,7 @@ public final class PortalFluxCacheTest {
         var shortRange=new FixtureLighting.Source(91,
             FixtureLighting.Kind.BARE_BULB,3,0,
             a.x(),portal.y()+1.35,a.z(),0,-1,0,
-            1.1,4,1,.7,.5);
+            .9,4,1,.7,.5);
         ok(!cache.mayAffectReceiver(shortRange,portal,b.x(),
                 portal.y()+1.35,b.z(),0),
             "A short-range lamp cannot dirty receiving-room probes beyond its portal reach");
