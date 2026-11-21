@@ -27,13 +27,17 @@ public final class PortalLightReachabilityTest {
     }
     private static FixtureLighting make(HouseMap map,boolean disabled){
         String prior=System.getProperty("beckenburg.lighting.portalGate.disabled");
+        String oldFlux=System.getProperty("beckenburg.lighting.portalFlux.disabled");
         try{
+            System.setProperty("beckenburg.lighting.portalFlux.disabled","true");
             if(disabled)System.setProperty("beckenburg.lighting.portalGate.disabled","true");
             else System.clearProperty("beckenburg.lighting.portalGate.disabled");
             return new FixtureLighting(map);
         }finally{
             if(prior==null)System.clearProperty("beckenburg.lighting.portalGate.disabled");
             else System.setProperty("beckenburg.lighting.portalGate.disabled",prior);
+            if(oldFlux==null)System.clearProperty("beckenburg.lighting.portalFlux.disabled");
+            else System.setProperty("beckenburg.lighting.portalFlux.disabled",oldFlux);
         }
     }
     private static List<LevelDefinition.Vec> receivers(HouseMap map,int room){

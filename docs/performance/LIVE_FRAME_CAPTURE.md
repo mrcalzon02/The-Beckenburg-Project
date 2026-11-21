@@ -128,3 +128,26 @@ source candidate exclusions, not measured GPU rays or FPS. A physical GTX
 1660 SUPER A/B is still required to claim a latency improvement. Castle uses
 this same FixtureLighting engine but retains full exact rays until its
 architectural room IDs are available for conservative component rejection.
+
+### Production adjacent-room doorway light flux (reversible)
+
+`PortalFluxCache` replaces direct source-to-target-room architectural rays
+for safe adjacent, non-overlapping indoor rooms with open authored doors.
+It computes fixed source-to-aperture incidence on door topology revision;
+subsequent per-vertex or CPU light probes reuse a short receiver-side shadow
+ray across all eligible sources at the same doorway. Transmitted energy is
+bounded, directional on receiving normals, retains the original source RGB
+and is multiplied by live circuit/fixture factors. When door state changes,
+the portal flux and per-receiver visibility cache are invalidated together.
+Shut doors have no virtual light; direct same-room shadows remain exact.
+Window and stair transfer, multi-hop routes, exterior zones, overlapping
+storeys and Castle (without authored room boundaries) continue using exact
+ray tracing. The in-game simulation cadence and ghost evidence are untouched.
+
+For A/B: use `-Dbeckenburg.lighting.portalFlux.disabled=true` to restore the
+exact pre-transport shading; independent `portalGate.disabled` still controls
+the earlier conservative reachability reject. This is a **lighting model
+change**, so do not claim byte-identical final RGB across open doors; compare
+live screenshots and verify no new light leaks. `PortalFluxCacheTest`
+asserts source incidence reuse, shared portal receiver rays, exact-static
+repeats and door-state invalidation in the existing GPU workflow.
