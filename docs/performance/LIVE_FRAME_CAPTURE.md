@@ -224,3 +224,14 @@ Farmhouse and School and randomly samples interior points for all emitters,
 asserting membership plus an exact count of removed cubic cell entries.
 This is an exact geometry and memory/candidate optimization, not a
 lighting visual approximation; normal sample and GPU parity still apply.
+
+### Reuse spherical source-cell keys across every lighting event
+
+Fixture registration now stores each light's exact sphere-intersecting Cell
+records in an immutable source-owned list. Changing its brightness, applying
+ghost light interference, or toggling House/Castle doors reuses those keys;
+no new cubic volume traversal, sphere-AABB math or Cell allocations occur.
+The same source-cell list updates regional illumination and occlusion revisions.
+The `LightSphereCellIndexTest` verifies one registration pass per source,
+identical indexed key counts and no index re-traversal after real circuit and
+door transitions. Movement/gameplay cadence and RGB calculations are unchanged.

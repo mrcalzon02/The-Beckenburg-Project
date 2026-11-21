@@ -20,6 +20,9 @@ public final class FixtureLighting {
  private final LightingModule.Settings options=LightingModule.current();
  private final double cellSize=options.cellMetres();
  private final Map<Cell,List<Source>> influence=new HashMap<>();
+ /** Source-owned immutable sphere-cell keys survive every light/door event. */
+ private final List<List<Cell>> sourceCells=new ArrayList<>();
+ private long sourceIndexBuilds;
  private final Map<Cell,Long> changedCells=new HashMap<>();
  private final Map<Cell,Long> occluderCells=new HashMap<>();
  private final Map<LevelDefinition.Portal,Boolean> portalStates=new HashMap<>();
@@ -89,6 +92,7 @@ public final class FixtureLighting {
  /** Spherical influence preselection only. Exact architectural shadow rays
   * remain mandatory for any sample inside a retained source cell. */
  private void eachInfluenceCell(Source source,java.util.function.Consumer<Cell> use){
+  sourceIndexBuilds++;
   int xa=(int)Math.floor((source.x-source.radius)/cellSize);
   int xb=(int)Math.floor((source.x+source.radius)/cellSize);
   int ya=(int)Math.floor((source.y-source.radius)/cellSize);
@@ -100,6 +104,12 @@ public final class FixtureLighting {
     if(sphereTouchesCell(source.x,source.y,source.z,source.radius,
         xx,yy,zz,cellSize))use.accept(new Cell(xx,yy,zz));
    }
+ }
+ long sourceIndexBuilds(){return sourceIndexBuilds;}
+ long cachedSourceCellReferences(){
+  long total=0;
+  for(var cells:sourceCells)total+=cells.size();
+  return total;
  }
  /** Diagnostic-only, bounded by the prebuilt source index, not used per frame. */
  long indexedSourceCellReferences(){
@@ -114,7 +124,9 @@ public final class FixtureLighting {
  }
  private void invalidate(Source source){
   long version=++generation;
-  eachInfluenceCell(source,key->{changedCells.put(key,version);invalidatedCells++;});
+  for(var key:sourceCells.get(source.id())){
+   changedCells.put(key,version);invalidatedCells++;
+  }
  }
  private List<Source> candidates(double x,double y,double z){
   return influence.getOrDefault(cell(x,y,z),List.of());
@@ -571,14 +583,14 @@ public final class FixtureLighting {
   for(var source:sources){
    if(!castleDoorInfluences(source,slot))continue;
    sourceOcclusionRevisions[source.id]=revision;
-   eachInfluenceCell(source,key->{
+   for(var key:sourceCells.get(source.id())){
     double px=(key.x+.5)*cellSize,py=(key.y+.5)*cellSize,pz=(key.z+.5)*cellSize;
     if(!castleDoorRayCrosses(source.x,source.y,source.z,px,py,pz,slot,
-         cellSize*.5+.45))return;
+         cellSize*.5+.45))continue;
     changedCells.put(key,revision);
     occluderCells.put(key,revision);
     invalidatedCells++;
-   });
+   }
   }
  }
  public FixtureLighting(HouseMap map){this.map=map;this.castle=null;
@@ -741,7 +753,12 @@ public final class FixtureLighting {
   var source=new Source(sources.size(),k,room,fixture,x,y,z,dx,dy,dz,
       radius*options.reachScale(),power*options.sourceScale(),r,g,b);
   sources.add(source);
-  eachInfluenceCell(source,key->influence.computeIfAbsent(key,ignored->new ArrayList<>()).add(source));
+  var cells=new ArrayList<Cell>();
+  eachInfluenceCell(source,key->{
+   influence.computeIfAbsent(key,ignored->new ArrayList<>()).add(source);
+   cells.add(key);
+  });
+  sourceCells.add(List.copyOf(cells));
  }
  public List<Source> sources(){return List.copyOf(sources);}
  /** Opening a single portal changes only lights whose radius intersects it.
@@ -758,7 +775,7 @@ public final class FixtureLighting {
    if(!LightModel.portalInfluences(source.x,source.y,source.z,source.radius,
         portal.x(),portal.y(),portal.z(),portal.width(),portal.alongX()))continue;
    sourceOcclusionRevisions[source.id]=revision;
-   eachInfluenceCell(source,key->{
+   for(var key:sourceCells.get(source.id())){
     // A lamp's entire sphere is NOT a shadow dependency of this door.
     // Only cells reachable by a ray through its aperture need new probes.
     // A lamp's own receiver cell is not automatically a door dependency.
@@ -769,9 +786,9 @@ public final class FixtureLighting {
             portal.width(),portal.alongX(),portal.kind().equals("window"))
         &&(portalFlux==null||!portalFlux.mayAffectReceiver(source,portal,
                 (key.x+.5)*cellSize,(key.y+.5)*cellSize,(key.z+.5)*cellSize,
-                cellSize)))return;
+                cellSize)))continue;
     changedCells.put(key,revision);occluderCells.put(key,revision);invalidatedCells++;
-   });
+   }
   }
  }
  public void frame(RoomLighting circuits,int tick){

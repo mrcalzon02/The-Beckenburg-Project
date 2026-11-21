@@ -58,6 +58,21 @@ public final class LightSphereCellIndexTest {
                 }
             }
             long indexed=lighting.indexedSourceCellReferences();
+            ok(lighting.sourceIndexBuilds()==lighting.sources().size(),
+                "Sphere index must enumerate once per authored emitter");
+            ok(lighting.cachedSourceCellReferences()==indexed,
+                "Cached source cells differ from the authoritative index");
+            var circuits=new RoomLighting();
+            long indexBuilds=lighting.sourceIndexBuilds();
+            long cellReferences=lighting.cachedSourceCellReferences();
+            lighting.frame(circuits,0);
+            circuits.toggle(0);lighting.frame(circuits,1);
+            var door=map.level().portals().stream()
+                .filter(LevelDefinition.Portal::door).findFirst().orElseThrow();
+            map.toggleDoor(door.id());lighting.frame(circuits,2);
+            ok(lighting.sourceIndexBuilds()==indexBuilds
+                &&lighting.cachedSourceCellReferences()==cellReferences,
+                "Light switch / door change rebuilt the static source index: "+site);
             ok(indexed>0&&indexed<=cube,"Invalid source-cell index cardinality");
             ok(indexed<cube,"The source spatial index still covers a full cube");
             actual+=indexed;box+=cube;
