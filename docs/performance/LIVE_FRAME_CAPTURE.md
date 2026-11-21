@@ -106,3 +106,25 @@ workflow compiles and runs that deterministic Java 17 acceptance contract. To
 recover the original per-pixel division for comparison, set the JVM property
 beckenburg.haze.columnCache.disabled=true. A physical A/B remains necessary
 before claiming a performance gain from this change.
+
+### Doorway reachability fast reject (exact light output)
+
+Authored non-native investigation maps now build a tiny light connectivity graph
+once per real door/window topology state. This graph conservatively admits all
+outdoor regions and physical window apertures, and deliberately refuses to
+shortcut overlapping regions, boundary surface probes, native sites, or uncertain
+emitter placement. For fully disconnected interior room components it skips
+source candidates *before* the expensive light attenuation and architecture ray.
+Open or indirectly connected rooms still use the full original ray/normal/prop
+occlusion calculations, so the graph is not a substitute for pixel-correct
+shadows or the planned bounded directional portal-flux transfer.
+
+Set `-Dbeckenburg.lighting.portalGate.disabled=true` for the direct-ray oracle.
+The `PortalLightReachabilityTest` in the existing GPU acceptance job compares
+bit-for-bit RGB and normal shading on House, Farmhouse and School over actual
+door/circuit transitions and asserts that the small connectivity graph is not
+rebuilt on unrelated frames. `FixtureLighting.portalCandidatesRejected()` counts
+source candidate exclusions, not measured GPU rays or FPS. A physical GTX
+1660 SUPER A/B is still required to claim a latency improvement. Castle uses
+this same FixtureLighting engine but retains full exact rays until its
+architectural room IDs are available for conservative component rejection.

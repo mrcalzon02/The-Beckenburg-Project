@@ -93,6 +93,11 @@ public final class FixtureLighting {
  private final Map<DistantCell,DistantProbe> distant=bounded(options.cacheLimit(15000));
  private long lodQueries,lodHits,lodVisibilityChecks;
  private final HouseMap map;private final CastleHubMap castle;
+ /** Opt-out for full-source A/B and cross-map RGB parity. */
+ private final PortalLightReachability portalGate;
+ private long portalCandidatesRejected;
+ public long portalCandidatesRejected(){return portalCandidatesRejected;}
+ public int portalGraphRebuilds(){return portalGate==null?0:portalGate.rebuilds();}
  private final List<Source> sources=new ArrayList<>();
  private final Map<Key,Lit> colours=bounded(options.cacheLimit(150000));
  private final Map<NormalKey,Lit> normalColours=bounded(options.cacheLimit(100000));
@@ -417,6 +422,9 @@ public final class FixtureLighting {
               (exterior?.34:castle!=null?.14:.073)*ambientScale);
   var parts=new ArrayList<Weighted>();
   for(var source:candidates(x,y,z)){
+   if(portalGate!=null&&portalGate.disconnected(source,room,x,y,z)){
+    portalCandidatesRejected++;continue;
+   }
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;
    if(d2>source.radius*source.radius||normal&&d2<1e-8)continue;
    double d=Math.sqrt(d2),angle=!normal&&d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);
@@ -456,7 +464,7 @@ public final class FixtureLighting {
      lodQueries,lodHits,lodVisibilityChecks,consideredSources,invalidatedCells,normalCacheHits);}
  private void resetStatistics(){samples=cacheHits=shadowRays=normalSamples=normalRays=normalCacheHits=0;
   lodQueries=lodHits=lodVisibilityChecks=0;
-  consideredSources=invalidatedCells=0;}
+  consideredSources=invalidatedCells=portalCandidatesRejected=0;}
  private long castleDoorRevision=-1;
  private final Map<String,Boolean> castleDoorStates=new HashMap<>();
  /** Conservative swept volume: wood leaves rotate up to half the slot width
@@ -536,6 +544,8 @@ public final class FixtureLighting {
    add(Kind.VAN_DIFFUSER,14,0,pos.x(),map.van().placement().y()+light.mountY()-.065,pos.z(),0,-1,0,3.8,.95,.92,.97,1);
   }
   factors=new double[sources.size()];sourceOcclusionRevisions=new long[sources.size()];
+  portalGate=map.nativeSite()||Boolean.getBoolean("beckenburg.lighting.portalGate.disabled")
+      ?null:new PortalLightReachability(map,sources);
  }
  private int controller(LevelDefinition.Socket socket){int at=socket.style().indexOf('@');if(at<0)return 0;String key=socket.style().substring(at+1);var plate=map.level().sockets().stream().filter(s->s.id().equals(key)).findFirst().orElseThrow();return map.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.LIGHT_SWITCH&&Math.hypot(f.x()-plate.x(),f.z()-plate.z())<.001).findFirst().orElseThrow().id();}
  public FixtureLighting(CastleHubMap castle){map=null;this.castle=Objects.requireNonNull(castle);
@@ -551,6 +561,7 @@ public final class FixtureLighting {
    add(kind,0,0,mount.x(),y,mount.z(),0,-1,0,edited.radius(),edited.power(),
        1,kind==Kind.CANDLE_CHANDELIER?.69:.83,kind==Kind.CANDLE_CHANDELIER?.34:.57);
   }factors=new double[sources.size()];sourceOcclusionRevisions=new long[sources.size()];
+  portalGate=null; // Castle source registration uses its own authored wall volumes.
  }
  public void castleFrame(boolean on,int tick){
   resetStatistics();
@@ -729,6 +740,7 @@ public final class FixtureLighting {
     // for other rooms must survive this door state, without a second pass.
    }
    lastHidingDensity=map.hidingDensity();portalStateInitialized=true;geometry=nextGeometry;
+   if(portalGate!=null)portalGate.refresh();
   }
   int cosmeticTick=(tick/6)*6;
   for(var source:sources){double f;
@@ -794,6 +806,9 @@ public final class FixtureLighting {
       g=(exterior?.29:(castle!=null?.129:.059))*ambientScale,
       b=(exterior?.34:(castle!=null?.14:.073))*ambientScale;
   for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;
+   if(portalGate!=null&&portalGate.disconnected(source,room,x,y,z)){
+    portalCandidatesRejected++;continue;
+   }
    double dx=x-source.x,dy=y-source.y,dz=z-source.z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius)continue;double d=Math.sqrt(d2);
    double angle=d<.03?1:angular(source.kind,(dx*source.dx+dy*source.dy+dz*source.dz)/d);if(angle<.001)continue;
    double fade=LightModel.diffusionFade(d,source.radius,options.diffusionFraction()),weight=factor*LightModel.attenuation(source.power,angle,fade,d2,1);if(weight<.002)continue;
@@ -825,7 +840,11 @@ public final class FixtureLighting {
   }
   double hemi=.65+.35*Math.max(0,ny),ambientScale=options.ambientScale(),
       r=.27*hemi*ambientScale,g=.29*hemi*ambientScale,b=.34*hemi*ambientScale;
-  for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
+  for(var source:candidates(x,y,z)){consideredSources++;double factor=factors[source.id];if(factor<.001)continue;
+   if(portalGate!=null&&portalGate.disconnected(source,room,x,y,z)){
+    portalCandidatesRejected++;continue;
+   }
+   double dx=source.x-x,dy=source.y-y,dz=source.z-z,d2=dx*dx+dy*dy+dz*dz;if(d2>source.radius*source.radius||d2<1e-8)continue;double d=Math.sqrt(d2),diffuse=Math.max(0,(nx*dx+ny*dy+nz*dz)/d);if(diffuse<.001)continue;
    double angle=angular(source.kind,(-dx*source.dx-dy*source.dy-dz*source.dz)/d),fade=LightModel.diffusionFade(d,source.radius,options.diffusionFraction()),weight=factor*LightModel.attenuation(source.power,angle,fade,d2,diffuse);
    if(weight>.001){
     var shadow=new NormalShadow(source.id,key);Boolean visible=cachedShadow(shadow);
