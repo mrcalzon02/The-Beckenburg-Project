@@ -15,7 +15,8 @@ public final class PortalLightReachabilityTest {
     }
     private static void same(FixtureLighting a,FixtureLighting b,int room,
             double x,double y,double z,String label){
-        var left=a.sample(room,x,y,z),right=b.sample(room,x,y,z);
+        var left=a.sample(room,x,y,z);
+        var right=b.sample(room,x,y,z);
         ok(Double.doubleToLongBits(left.r())==Double.doubleToLongBits(right.r())
             &&Double.doubleToLongBits(left.g())==Double.doubleToLongBits(right.g())
             &&Double.doubleToLongBits(left.b())==Double.doubleToLongBits(right.b()),
@@ -51,7 +52,8 @@ public final class PortalLightReachabilityTest {
                     HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
             var map=new HouseMap(site);
             var circuits=new RoomLighting();
-            var oracle=make(map,true),candidate=make(map,false);
+            var oracle=make(map,true);
+            var candidate=make(map,false);
             ok(oracle.portalGraphRebuilds()==0&&candidate.portalGraphRebuilds()==1,
                 "Portal graph must be created once on the enabled path");
             var doors=map.level().portals().stream().filter(LevelDefinition.Portal::door)
