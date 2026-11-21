@@ -10,6 +10,20 @@ Stable ID, symptom, cause or uncertainty, affected sites, reproduction/evidence,
 
 ## Recorded defects
 
+### DEV-393 — House door stationary-shadow retention diagnostic reports an unexpected same-side ray
+
+**Status:** Open advisory diagnostic only: source 4c0aa803 door-opening profiler failed StationaryDoorShadowRetentionTest on Windows after prior door geometry/shadow parity checks passed; no runtime lighting regression or source-level cause verified · **Affected:** House interior stationary light/door shadow retention around fixture 0; exact test StationaryDoorShadowRetentionTest; other doors and lighting maps not automatically implicated
+
+The door-opening performance workflow failed at a targeted assertion: Expected same-side rays from fixture 0, found 1. This occurred after the House shell regional cache and 216 warm/fresh light-probe checks passed.
+
+Cause / uncertainty: Unknown: the assertion may be too strict about boundary rays or may expose a real same-side shadow-retention discrepancy. The source commit adds sanctuary column precompute and post-render timing, not known stationary door light/occlusion logic; a causal link has not been shown.
+
+Fix / next action: Reproduce StationaryDoorShadowRetentionTest with exact source and verify whether the same fixture/source geometry fails on the last passing independent revision. Inspect individual same-side ray origins, door pose, occluders, retained cache reuse and actual rendered lighting screenshots before changing thresholds, code, or gameplay. Do not alter host simulation, camera evidence, or world geometry to satisfy an unverified test. Keep it advisory, not a release blocker.
+
+Evidence and verification: GitHub Windows diagnostic https://github.com/mrcalzon02/The-Beckenburg-Project/actions/runs/44844995260 failed in job 136662398573 'Verify same-side retained shadow rays across a real House door'. Log showed PASS same-map House shell region caching spatial_checks=68 generation_reuses=102 retained_regions=34; PASS 216 warm versus fresh light probes; AssertionError at StationaryDoorShadowRetentionTest.java:38 expected 0 rays fixture 0 actual 1. No final full GPU/multiplayer acceptance was available at discovery.
+
+Older-map obligation: Door shadow retention may have shared helper logic across other mapped rooms, but the evidence is House fixture 0 only. Audit analogous doors and real screenshots only after verifying this particular assertion.
+
 ### DEV-392 — Walking-frame p95/p99 tail remains in post-geometry effects despite 60 FPS presentation
 
 **Status:** Physical GTX 1660 SUPER 50/60 FPS four-pair A/B completed with real host movement: median frames improve ~15%, solo walking p95/p99 regress slightly and TCP walking p99 regresses; profiling and exact-column sanctuary CPU experiment committed, physical results pending · **Affected:** All first-person hunter and player-ghost investigations; observed on House physical NVIDIA 610.88 solo and three-seat TCP moving route; other maps and live on-screen stop/start remain unverified
