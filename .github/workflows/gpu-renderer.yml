@@ -28,6 +28,7 @@ on:
       - 'src/main/java/org/beckenburg/DebugPerformanceHud.java'
       - 'src/main/java/org/beckenburg/FixtureLighting.java'
       - 'src/test/java/org/beckenburg/LightSphereCellIndexTest.java'
+      - 'src/test/java/org/beckenburg/PortalLightingWorkComparisonTest.java'
       - 'src/main/java/org/beckenburg/DoorwayTransmission.java'
       - 'src/main/java/org/beckenburg/PortalLightReachability.java'
       - 'src/main/java/org/beckenburg/PortalFluxCache.java'
@@ -159,8 +160,8 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\ArchitecturalLightOcclusionAllocationParityTest.java || exit /b 1
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\AuthoredTestSupport.java src\test\java\org\beckenburg\HandheldSurfaceOcclusionTest.java || exit /b 1
           javac --release 17 -encoding UTF-8 -cp build\classes -sourcepath src\test\java -d build\test src\test\java\org\beckenburg\DoorwayTransmissionTest.java src\test\java\org\beckenburg\LanAcousticsTest.java || exit /b 1
-          javac --release 17 -encoding UTF-8 -cp build\classes -sourcepath src\test\java -d build\test src\test\java\org\beckenburg\PortalLightReachabilityTest.java src\test\java\org\beckenburg\PortalFluxCacheTest.java src\test\java\org\beckenburg\FrameTimeCaptureTest.java src\test\java\org\beckenburg\LightSphereCellIndexTest.java || exit /b 1
-          for %%T in (EmissionCacheBudgetTest DynamicTextureRevisionTest DynamicGeometryRetentionTest PreparedLightWriteTest PreparedLightBatchParityTest ArchitecturalLightOcclusionAllocationParityTest HandheldSurfaceOcclusionTest PreparedVertexLightingTest PsxQuantizationParityTest CastleShelfLabelsTest LanAcousticsTest DoorwayTransmissionTest PortalLightReachabilityTest PortalFluxCacheTest FrameTimeCaptureTest LightSphereCellIndexTest) do java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.%%T || exit /b 1
+          javac --release 17 -encoding UTF-8 -cp build\classes -sourcepath src\test\java -d build\test src\test\java\org\beckenburg\PortalLightReachabilityTest.java src\test\java\org\beckenburg\PortalFluxCacheTest.java src\test\java\org\beckenburg\FrameTimeCaptureTest.java src\test\java\org\beckenburg\LightSphereCellIndexTest.java src\test\java\org\beckenburg\PortalLightingWorkComparisonTest.java || exit /b 1
+          for %%T in (EmissionCacheBudgetTest DynamicTextureRevisionTest DynamicGeometryRetentionTest PreparedLightWriteTest PreparedLightBatchParityTest ArchitecturalLightOcclusionAllocationParityTest HandheldSurfaceOcclusionTest PreparedVertexLightingTest PsxQuantizationParityTest CastleShelfLabelsTest LanAcousticsTest DoorwayTransmissionTest PortalLightReachabilityTest PortalFluxCacheTest FrameTimeCaptureTest LightSphereCellIndexTest PortalLightingWorkComparisonTest) do java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.%%T || exit /b 1
       - name: Compare real House open-door illumination with direct-ray reference (advisory)
         shell: cmd
         continue-on-error: true

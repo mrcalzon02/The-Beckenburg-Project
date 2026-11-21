@@ -235,3 +235,17 @@ The same source-cell list updates regional illumination and occlusion revisions.
 The `LightSphereCellIndexTest` verifies one registration pass per source,
 identical indexed key counts and no index re-traversal after real circuit and
 door transitions. Movement/gameplay cadence and RGB calculations are unchanged.
+
+### Matched physical source gate shadow-ray A/B (not FPS)
+
+`PortalLightingWorkComparisonTest` compares the original ungated exact
+source-to-receiver path with the per-source gate using the **same real 3D
+architectural shadow rays** (portal flux is disabled in both for parity).
+It checks byte-exact source RGB and directional normals for all rooms on
+House, Farmhouse and School, with all doors closed then all doors open.
+It writes `build/e2e/portal-light-work/source-mask-ray-ab.csv` containing
+the exact number of avoided architectural shadow rays and rejected candidate
+lights, plus blocked source/room graph pairs and test probe counts. This
+does **not** extrapolate to physical GTX walking p50/p95/p99, which must be
+measured independently. More complete tests cannot substitute for real
+multiplayer and visual acceptance.
