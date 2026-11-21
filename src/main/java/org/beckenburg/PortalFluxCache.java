@@ -27,6 +27,12 @@ final class PortalFluxCache {
     private final List<FixtureLighting.Source> sources;
     private final double diffusion;
     private final Map<Long,List<Transfer>> routes=new HashMap<>();
+    /** Source-to-door incident visibility is geometry-owned and unchanged
+     * by unrelated distant doors or light brightness. Store null as a known
+     * blocked result to avoid repeating the expensive architectural ray. */
+    private final Map<Long,Transfer> incidentCache=new HashMap<>();
+    private final Map<Integer,Portal> portalsById=new HashMap<>();
+    private final Map<Integer,Boolean> previousDoorStates=new HashMap<>();
     private final Map<ReceiverRay,Boolean> receiverSight=
         new LinkedHashMap<ReceiverRay,Boolean>(4096,.75f,true){
             @Override protected boolean removeEldestEntry(Map.Entry<ReceiverRay,Boolean> eldest){
@@ -39,13 +45,15 @@ final class PortalFluxCache {
     private String previousDoors,previousWindows;
     private int previousHidingDensity=-1;
     private int rebuilds,transfers;
-    private long incidentRays,receiverRays,receiverHits;
+    private long incidentRays,incidentCacheHits,receiverRays,receiverHits;
     private static long key(int source,int receiver){
         return ((long)source<<32)|(receiver&0xffffffffL);
     }
     PortalFluxCache(HouseMap map,List<FixtureLighting.Source> sources){
         this.map=java.util.Objects.requireNonNull(map);
         this.sources=List.copyOf(sources);
+        for(var portal:map.level().portals())
+            portalsById.put(portal.id(),portal);
         diffusion=LightingModule.current().diffusionFraction();
         refresh();
     }
@@ -68,16 +76,69 @@ final class PortalFluxCache {
         // neither of which may be approximated as a standing-height door.
         return p.door();
     }
+    /** A door change can affect incident visibility at another doorway only
+     * when its leaf is in that doorway's source/receiver architectural region.
+     * Adjacent or overlapping level volumes are always invalidated; distant
+     * unrelated rooms retain their exact source-to-aperture ray. */
+    private boolean changedDoorAffects(Portal changed,
+            FixtureLighting.Source source,Portal illuminated){
+        if(changed.id()==illuminated.id()
+                ||changed.a()==illuminated.a()||changed.b()==illuminated.a()
+                ||changed.a()==illuminated.b()||changed.b()==illuminated.b())
+            return true;
+        for(int room:new int[]{illuminated.a(),illuminated.b()}){
+            if(!interior(room))return true;
+            Room r=map.level().room(room);
+            if(changed.x()>=r.x0()-.6&&changed.x()<=r.x1()+.6
+                    &&changed.z()>=r.z0()-.6&&changed.z()<=r.z1()+.6
+                    &&changed.y()>=r.y()-.6
+                    &&changed.y()<=r.y()+r.height()+.6)return true;
+        }
+        return false;
+    }
+    private Transfer cachedIncident(FixtureLighting.Source source,
+            Portal portal,int receiver){
+        long cacheKey=key(source.id(),portal.id());
+        if(incidentCache.containsKey(cacheKey)){
+            incidentCacheHits++;
+            return incidentCache.get(cacheKey); // null is a known blocked ray
+        }
+        Transfer result=prepare(source,portal,receiver);
+        incidentCache.put(cacheKey,result);
+        return result;
+    }
     void refresh(){
         String doors=map.doorSnapshot(),windows=map.windowSnapshot();
         int hiding=map.hidingDensity();
         if(doors.equals(previousDoors)&&windows.equals(previousWindows)
                 &&hiding==previousHidingDensity)return;
-        // A hiding-density change replaces physical closet occluders. Cached
-        // outgoing ray visibility must NEVER survive the old closet layout.
+        boolean full=previousDoors==null||!windows.equals(previousWindows)
+                ||hiding!=previousHidingDensity;
+        var changedDoors=new ArrayList<Portal>();
+        for(var portal:map.level().portals())if(portal.door()){
+            boolean open=map.doorOpen(portal.id());
+            Boolean old=previousDoorStates.put(portal.id(),open);
+            if(old!=null&&old.booleanValue()!=open)changedDoors.add(portal);
+        }
+        // A hidden-geometry/window revision changes physical source rays,
+        // not just light intensity. Unknown topology deltas fail closed.
+        if(full||changedDoors.isEmpty())incidentCache.clear();
+        else incidentCache.keySet().removeIf(cacheKey->{
+            int sourceId=(int)(cacheKey>>>32);
+            int portalId=(int)(long)cacheKey;
+            if(sourceId<0||sourceId>=sources.size())return true;
+            var portal=portalsById.get(portalId);
+            if(portal==null)return true;
+            for(var changed:changedDoors)
+                if(changedDoorAffects(changed,sources.get(sourceId),portal))
+                    return true;
+            return false;
+        });
         previousDoors=doors;previousWindows=windows;
         previousHidingDensity=hiding;
         rebuilds++;
+        // Receiver-side visibility is conservatively forgotten on any real
+        // geometry transition; source incidence is the expensive cached part.
         routes.clear();receiverSight.clear();transfers=0;
         for(var portal:map.level().portals()){
             if(!eligible(portal))continue;
@@ -91,7 +152,7 @@ final class PortalFluxCache {
                 int to=from==a?b:a;
                 if(!inside(map.level().room(from),source.x(),source.y(),source.z(),true))
                     continue;
-                Transfer result=prepare(source,portal,to);
+                Transfer result=cachedIncident(source,portal,to);
                 if(result==null)continue;
                 routes.computeIfAbsent(key(source.id(),to),ignored->new ArrayList<>())
                     .add(result);
@@ -213,6 +274,7 @@ final class PortalFluxCache {
     int rebuilds(){return rebuilds;}
     int transfers(){return transfers;}
     long incidentRays(){return incidentRays;}
+    long incidentCacheHits(){return incidentCacheHits;}
     long receiverRays(){return receiverRays;}
     long receiverHits(){return receiverHits;}
 }

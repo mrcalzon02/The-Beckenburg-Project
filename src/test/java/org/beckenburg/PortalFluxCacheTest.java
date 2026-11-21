@@ -76,6 +76,24 @@ public final class PortalFluxCacheTest {
             "Shutting the door must invalidate all outgoing light");
         ok(Double.isNaN(cache.weight(first,4,b.x(),portal.y()+1.35,b.z(),
                 0,0,0,false)),"Closing the door left an active portal source");
+        // Reopen the active physical doorway. Moving an unrelated basement
+        // door must NOT recast the two source-to-door incidence rays.
+        map.toggleDoor(portal.id());
+        cache.refresh();
+        ok(cache.transfers()>=2,"Reopening real doorway lost its fixtures");
+        long raysBefore=cache.incidentRays();
+        var basement=AuthoredTestSupport.door(map,9,10);
+        map.toggleDoor(basement.id());
+        cache.refresh();
+        ok(cache.incidentRays()==raysBefore&&cache.incidentCacheHits()>0,
+            "Distant basement door caused source-to-aperture rays to be recast");
+        ok(cache.transfers()>=2,"Unrelated door change lost cached active light");
+        var near=AuthoredTestSupport.door(map,4,0);
+        map.toggleDoor(near.id());
+        cache.refresh();
+        ok(cache.incidentRays()>raysBefore,
+            "An adjacent changed doorway failed to invalidate potentially changed incident rays");
+        System.out.println("PASS remote-door source incidence retention and adjacent-door eviction");
         // A synthetic lamp can demonstrate correct math while NONE of the
         // shipped lamps reaches an actual doorway. Measure the authoritative
         // source registry on multiple real maps, rather than reporting the

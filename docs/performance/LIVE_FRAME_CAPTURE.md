@@ -249,3 +249,17 @@ lights, plus blocked source/room graph pairs and test probe counts. This
 does **not** extrapolate to physical GTX walking p50/p95/p99, which must be
 measured independently. More complete tests cannot substitute for real
 multiplayer and visual acceptance.
+
+### Retain incident light at untouched doorways across unrelated door changes
+
+`PortalFluxCache` now retains the source-to-aperture illumination sample
+(and even its known blocked result) across door transitions outside the
+source/target architectural volumes. A door attached to or overlapping the
+source/receiving room conservatively invalidates the corresponding incident
+cache; a distant door does not. Changes to windows or hiding geometry still
+invalidate all such samples, because they may change physical ray occlusion.
+Receiver-side visibility and the rebuilt transfer lists remain conservative
+on topology changes. Regular light flicker/circuit factors only multiply the
+saved static geometry samples. `PortalFluxCacheTest` checks that opening a
+remote real cellar door adds **zero** new expensive source-to-aperture rays,
+while an adjacent door triggers re-evaluation.
