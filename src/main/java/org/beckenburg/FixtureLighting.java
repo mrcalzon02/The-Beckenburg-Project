@@ -457,11 +457,13 @@ public final class FixtureLighting {
  public record FrameStats(long samples,long cacheHits,long shadowRays,
                           long normalSamples,long normalRays,int lights,int cachedColours,
                           long lodQueries,long lodHits,long lodVisibilityChecks,
-                          long consideredSources,long invalidatedCells,long normalCacheHits){}
+                          long consideredSources,long invalidatedCells,long normalCacheHits,
+                          long portalRejectedCandidates){}
  private long samples,cacheHits,shadowRays,normalSamples,normalRays,normalCacheHits;
  public FrameStats frameStats(){return new FrameStats(samples,cacheHits,shadowRays,
      normalSamples,normalRays,sources.size(),colours.size(),
-     lodQueries,lodHits,lodVisibilityChecks,consideredSources,invalidatedCells,normalCacheHits);}
+     lodQueries,lodHits,lodVisibilityChecks,consideredSources,invalidatedCells,
+      normalCacheHits,portalCandidatesRejected);}
  private void resetStatistics(){samples=cacheHits=shadowRays=normalSamples=normalRays=normalCacheHits=0;
   lodQueries=lodHits=lodVisibilityChecks=0;
   consideredSources=invalidatedCells=portalCandidatesRejected=0;}

@@ -170,7 +170,7 @@ public final class DebugPerformanceHud {
             lastLog=now;
             var m=metrics;
             BeckenburgDiagnostics.record(String.format(Locale.ROOT,
-                "VIEWPORT PERF viewport=%s room=%d eye=%.2f,%.2f,%.2f yaw=%.2f actors=%d loop_ms=%.1f wall_ms=%.1f backend=%s build_ms=%.1f geometry_ms=%.1f effects_ms=%.1f faces=%d frustum=%d gpu_readback=%s light_cache_hits=%d shadow_rays=%d normal_rays=%d depth_rejected=%d lod_hits=%d lod_queries=%d light_candidates=%d lighting_cells_invalidated=%d",
+                "VIEWPORT PERF viewport=%s room=%d eye=%.2f,%.2f,%.2f yaw=%.2f actors=%d loop_ms=%.1f wall_ms=%.1f backend=%s build_ms=%.1f geometry_ms=%.1f effects_ms=%.1f faces=%d frustum=%d gpu_readback=%s light_cache_hits=%d shadow_rays=%d normal_rays=%d depth_rejected=%d lod_hits=%d lod_queries=%d light_candidates=%d lighting_cells_invalidated=%d portal_rejected_candidates=%d",
                 view,room,x,y,z,yaw,actors,loopNs/1e6,measured,
                 m==null?"not-rendered":m.gpu()?"GPU":"CPU-fallback",
                 m==null?0:m.sceneBuildNs()/1e6,m==null?0:m.geometryNs()/1e6,
@@ -184,7 +184,8 @@ public final class DebugPerformanceHud {
                 m==null?0:m.lighting().lodHits(),
                 m==null?0:m.lighting().lodQueries(),
                 m==null?0:m.lighting().consideredSources(),
-                m==null?0:m.lighting().invalidatedCells()));
+                m==null?0:m.lighting().invalidatedCells(),
+                m==null?0:m.lighting().portalRejectedCandidates()));
         }
     }
     static int graphBarHeight(double ms,int maxHeight){
@@ -247,8 +248,9 @@ public final class DebugPerformanceHud {
                     m.lighting().lodHits(),m.lighting().lodQueries()),
                     0xffddad);yLine+=17;
                 text(out,left+10,yLine,String.format(Locale.ROOT,
-                    "VOLUME %,d  DIRTY %,d  NORMAL CACHE %,d/%,d",
-                    m.lighting().consideredSources(),m.lighting().invalidatedCells(),
+                    "VOLUME %,d  PORTAL REJ %,d  DIRTY %,d  NORMAL %,d/%,d",
+                    m.lighting().consideredSources(),m.lighting().portalRejectedCandidates(),
+                     m.lighting().invalidatedCells(),
                     m.lighting().normalCacheHits(),m.lighting().normalSamples()),
                     0xb8e1cd);yLine+=17;
             }
