@@ -40,11 +40,27 @@ existing authored level data, evidence visibility and host movement simulation.
 - The reachability differential printed **7,924 candidate exclusions** over its
   House/Farmhouse/School suite. That is a candidate count, **not** FPS or direct
   shadow ray savings.
-- The source `03a792c2` Windows contract stage passed with its physically
-  authored positive-transfer assertion. Read full logs for exact site/portal
-  counts before making stronger claims. Camera A/B `58f1c438`, reach-limited
-  update `43c65ebc`, and telemetry `18e6808d` each need exact-source final
-  test readback and screenshot review.
+- Real-source `03a792c2` Windows job 44858573726 **passed** its lighting
+  contract and recorded per-site `PHYSICAL PORTAL COVERAGE`: House **31**
+  authored emitters, **22** cached transfers, **22** positive receiver samples,
+  **22** incident rays, **12** receiver rays; Farmhouse **31/26/26/27/14**;
+  School **56/12/12/13/7** (same order). Across all three maps, this is
+  **60 real cached transfers / 60 positive receiver samples / 62 incident
+  rays / 33 receiver rays**. These are checked probe counts, not a frame
+  benchmark and not an inference of saved GPU draw time.
+- A more discriminating `58f1c438` active-door capture succeeded in run
+  44858766959 (artifact 14689035883). It chose House door **12**, real source
+  **19**, positive incident flux **1.1984638**. Closed-door RGB delta **0**;
+  open-door direct vs portal delta **14,948** of 409,920 pixels. On raw-PNG
+  inspection, **every changed pixel lies within image rows 0-29**, mostly
+  the upper doorway/ceiling surface. This proves active transfer but does not
+  yet prove credible illumination throughout the room. Source `8c521173`
+  therefore adds a second A/B with receiving-room circuits OFF; inspect
+  that evidence before approving visual quality.
+- Reach-limited invalidation `43c65ebc` and telemetry `18e6808d` need
+  exact-source final run readback; cumulative counters are not per-frame.
+  Compare lighting/normal probes with portal opt-out and confirm both
+  cold/open and rapid closing paths preserve other room cache revisions.
 - No matched physical NVIDIA GTX 1660 SUPER solo/three-seat stop-and-go p50,
   p95/p99 or sixth-frame sanctuary result has yet been established **for these
   portal-flux revisions**. Do not extrapolate from Mesa or cold CPU images.
