@@ -151,3 +151,19 @@ change**, so do not claim byte-identical final RGB across open doors; compare
 live screenshots and verify no new light leaks. `PortalFluxCacheTest`
 asserts source incidence reuse, shared portal receiver rays, exact-static
 repeats and door-state invalidation in the existing GPU workflow.
+
+### Quantifying doorway transport in local frame traces
+
+The performance HUD now distinguishes *actual direct shadow rays*, source
+candidates rejected by the portal connectivity graph, and the number of
+probes resolved by the portal-flux path. It also shows active cached transfer
+count plus cumulative incident rays, receiver rays and receiver-ray reuses.
+The HUD's lower graph is moved down to keep these counters readable.
+
+Ctrl+Shift+F8 captures include separate machine-readable columns
+`light_shadow_rays`, `portal_rejected_candidates`,
+`portal_flux_resolved`, and `portal_transfers`. The three
+`portal_*_cumulative` ray totals are **not per-frame counts**; subtract
+consecutive samples to attribute work to an interval. These figures count
+CPU architectural-ray decisions, not GPU timestamps or proven frames-per-second.
+No extra simulation ticks, network traffic or per-frame file writes are added.

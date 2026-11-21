@@ -35,6 +35,11 @@ final class FrameTimeCapture {
     private final int[] charactersUs=new int[CAPACITY],environmentUs=new int[CAPACITY];
     private final int[] sanctuaryUs=new int[CAPACITY],psxUs=new int[CAPACITY];
     private final int[] graphicsUs=new int[CAPACITY],hauntingUs=new int[CAPACITY];
+    // CPU lighting counters. Cumulative columns are explicitly marked in CSV.
+    private final int[] lightingShadowRays=new int[CAPACITY],portalRejected=new int[CAPACITY];
+    private final int[] portalResolved=new int[CAPACITY],portalTransfers=new int[CAPACITY];
+    private final int[] portalIncident=new int[CAPACITY],portalReceiver=new int[CAPACITY];
+    private final int[] portalReceiverReuse=new int[CAPACITY];
     private final long[] queueDelayMs=new long[CAPACITY],postDispatchNs=new long[CAPACITY];
     private final byte[] flags=new byte[CAPACITY]; // bit0 GPU, bit1 new frame
     private int size,duplicates;
@@ -75,6 +80,16 @@ final class FrameTimeCapture {
                    long buildNs,long geometryNs,long effectsNs,int roomId,
                    int inputEvents,long maxQueueDelayMs,long postDispatchAgeNs,
                    SceneRenderer.PostEffectsDiagnostics stages){
+        return record(atNs,renderNs,gpu,consumedFrameId,buildNs,geometryNs,
+            effectsNs,roomId,inputEvents,maxQueueDelayMs,postDispatchAgeNs,stages,null);
+    }
+    /** The attached lighting counters are CPU-side and are captured only
+     * when the HUD's explicit frame recorder is active. */
+    boolean record(long atNs,long renderNs,boolean gpu,long consumedFrameId,
+                   long buildNs,long geometryNs,long effectsNs,int roomId,
+                   int inputEvents,long maxQueueDelayMs,long postDispatchAgeNs,
+                   SceneRenderer.PostEffectsDiagnostics stages,
+                   FixtureLighting.FrameStats lights){
         if(size>=CAPACITY)return false;
         if(haveBackend&&gpu!=previousGpu){
             // GPU/CPU fallback cannot turn a backend change into a fake hitch.
@@ -109,6 +124,15 @@ final class FrameTimeCapture {
             psxUs[i]=micros(stages.psxNs());
             graphicsUs[i]=micros(stages.graphicsNs());
             hauntingUs[i]=micros(stages.hauntingNs());
+        }
+        if(lights!=null){
+            lightingShadowRays[i]=boundedCount(lights.shadowRays()+lights.normalRays());
+            portalRejected[i]=boundedCount(lights.portalRejectedCandidates());
+            portalResolved[i]=boundedCount(lights.portalFluxResolved());
+            portalTransfers[i]=boundedCount(lights.portalTransfers());
+            portalIncident[i]=boundedCount(lights.portalIncidentRays());
+            portalReceiver[i]=boundedCount(lights.portalReceiverRays());
+            portalReceiverReuse[i]=boundedCount(lights.portalReceiverHits());
         }
         flags[i]=(byte)((gpu?1:0)|(fresh?2:0));
         return size<CAPACITY;
@@ -175,6 +199,9 @@ final class FrameTimeCapture {
         throw new java.nio.file.FileAlreadyExistsException(base.toString(),
             null,"100 recording filenames already in use");
     }
+    private static int boundedCount(long number){
+        return (int)Math.max(0,Math.min(Integer.MAX_VALUE,number));
+    }
     private static int micros(long nanos){
         return (int)Math.min(Integer.MAX_VALUE,Math.max(0,nanos/1_000L));
     }
@@ -216,7 +243,7 @@ final class FrameTimeCapture {
             out.write("# input_queue_frames_over_50ms="+s.queueDelayOver50()+"\n");
             out.write("# input_queue_frames_over_100ms="+s.queueDelayOver100()+"\n");
             out.write("# max_input_queue_delay_ms="+s.maxQueueDelayMs()+"\n");
-            out.write("elapsed_ms,render_ms,presented_interval_ms,backend,frame_id,new_frame,scene_build_ms,geometry_ms,effects_ms,room,dispatched_input_events,max_input_queue_delay_ms,post_dispatch_to_frame_sample_ms,characters_ms,environment_ms,sanctuary_haze_ms,psx_ms,graphics_post_ms,haunting_overlay_ms\n");
+            out.write("elapsed_ms,render_ms,presented_interval_ms,backend,frame_id,new_frame,scene_build_ms,geometry_ms,effects_ms,room,dispatched_input_events,max_input_queue_delay_ms,post_dispatch_to_frame_sample_ms,characters_ms,environment_ms,sanctuary_haze_ms,psx_ms,graphics_post_ms,haunting_overlay_ms,light_shadow_rays,portal_rejected_candidates,portal_flux_resolved,portal_transfers,portal_incident_rays_cumulative,portal_receiver_rays_cumulative,portal_receiver_reuse_cumulative\n");
             StringBuilder line=new StringBuilder(160);
             for(int i=0;i<size;i++){
                 line.setLength(0);
@@ -239,6 +266,13 @@ final class FrameTimeCapture {
                     .append(',').append(stageMs(psxUs[i]))
                     .append(',').append(stageMs(graphicsUs[i]))
                     .append(',').append(stageMs(hauntingUs[i]))
+                    .append(',').append(lightingShadowRays[i])
+                    .append(',').append(portalRejected[i])
+                    .append(',').append(portalResolved[i])
+                    .append(',').append(portalTransfers[i])
+                    .append(',').append(portalIncident[i])
+                    .append(',').append(portalReceiver[i])
+                    .append(',').append(portalReceiverReuse[i])
                     .append('\n');
                 out.write(line.toString());
             }

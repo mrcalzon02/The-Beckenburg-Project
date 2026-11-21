@@ -21,7 +21,9 @@ public final class FrameTimeCaptureTest {
         trace.record(base,4_000_000,true,0,1,2,3,14);
         trace.record(base+20_000_000L,5_000_000,true,10,1,2,3,14,
             2,48,3_000_000L,new SceneRenderer.PostEffectsDiagnostics(
-                1_000_000L,2_000_000L,3_000_000L,4_000_000L,5_000_000L,6_000_000L));
+                1_000_000L,2_000_000L,3_000_000L,4_000_000L,5_000_000L,6_000_000L),
+            new FixtureLighting.FrameStats(1,2,3,4,5,6,7,8,9,10,
+                11,12,13,14,15,16,17,18,19));
         trace.record(base+40_000_000L,6_000_000,true,10,1,2,3,14);
         trace.record(base+80_000_000L,7_000_000,true,11,1,2,3,13,
             1,124,14_000_000L);
@@ -58,11 +60,16 @@ public final class FrameTimeCaptureTest {
             "CSV must identify rendering rate for comparable physical traces");
         check(rows.stream().anyMatch(v->v.contains(",14,2,48,3.0,")),
             "CSV input columns must preserve per-frame queue delay and event age");
-        check(rows.stream().anyMatch(v->v.endsWith(",1.0,2.0,3.0,4.0,5.0,6.0")),
-            "Post-render stage measurements must survive CSV export");
+        check(rows.stream().anyMatch(v->v.contains(
+                    ",1.0,2.0,3.0,4.0,5.0,6.0,8,14,15,16,17,18,19")),
+            "Post-render stages and portal ray counters must survive CSV export");
         check(rows.stream().anyMatch(v->v.startsWith("elapsed_ms,render_ms,")
-                    &&v.endsWith("sanctuary_haze_ms,psx_ms,graphics_post_ms,haunting_overlay_ms")),
+                    &&v.endsWith("portal_receiver_reuse_cumulative")),
             "CSV must label post-render stages independently");
+        check(rows.stream().anyMatch(v->v.startsWith("elapsed_ms,render_ms,")
+                &&v.contains("portal_flux_resolved")
+                &&v.contains("light_shadow_rays")),
+            "Capture must label ray counts and portal reuse separately from GPU cadence");
         check(rows.stream().filter(v->v.startsWith("20.0,")).count()==1,
             "Each measured render callback gets one time-series row");
         check(rows.stream().anyMatch(v->v.startsWith("elapsed_ms,render_ms,")),

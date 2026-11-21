@@ -156,7 +156,8 @@ public final class DebugPerformanceHud {
                 metrics==null?0:metrics.geometryNs(),
                 metrics==null?0:metrics.effectsNs(),room,
                 inputTiming.events(),inputTiming.worstQueueMs(),
-                inputTiming.lastEventAgeNs(now),scene.postEffectsDiagnostics());
+                inputTiming.lastEventAgeNs(now),scene.postEffectsDiagnostics(),
+                metrics==null?null:metrics.lighting());
             inputTiming.afterFrame();
             if(!capacityRemaining)finishCapture();
         }
@@ -170,7 +171,7 @@ public final class DebugPerformanceHud {
             lastLog=now;
             var m=metrics;
             BeckenburgDiagnostics.record(String.format(Locale.ROOT,
-                "VIEWPORT PERF viewport=%s room=%d eye=%.2f,%.2f,%.2f yaw=%.2f actors=%d loop_ms=%.1f wall_ms=%.1f backend=%s build_ms=%.1f geometry_ms=%.1f effects_ms=%.1f faces=%d frustum=%d gpu_readback=%s light_cache_hits=%d shadow_rays=%d normal_rays=%d depth_rejected=%d lod_hits=%d lod_queries=%d light_candidates=%d lighting_cells_invalidated=%d portal_rejected_candidates=%d",
+                "VIEWPORT PERF viewport=%s room=%d eye=%.2f,%.2f,%.2f yaw=%.2f actors=%d loop_ms=%.1f wall_ms=%.1f backend=%s build_ms=%.1f geometry_ms=%.1f effects_ms=%.1f faces=%d frustum=%d gpu_readback=%s light_cache_hits=%d shadow_rays=%d normal_rays=%d depth_rejected=%d lod_hits=%d lod_queries=%d light_candidates=%d lighting_cells_invalidated=%d portal_rejected_candidates=%d portal_flux_resolved=%d portal_transfers=%d portal_incident_rays_cumulative=%d portal_receiver_rays_cumulative=%d portal_receiver_reuse_cumulative=%d",
                 view,room,x,y,z,yaw,actors,loopNs/1e6,measured,
                 m==null?"not-rendered":m.gpu()?"GPU":"CPU-fallback",
                 m==null?0:m.sceneBuildNs()/1e6,m==null?0:m.geometryNs()/1e6,
@@ -185,7 +186,12 @@ public final class DebugPerformanceHud {
                 m==null?0:m.lighting().lodQueries(),
                 m==null?0:m.lighting().consideredSources(),
                 m==null?0:m.lighting().invalidatedCells(),
-                m==null?0:m.lighting().portalRejectedCandidates()));
+                m==null?0:m.lighting().portalRejectedCandidates(),
+                m==null?0:m.lighting().portalFluxResolved(),
+                m==null?0:m.lighting().portalTransfers(),
+                m==null?0:m.lighting().portalIncidentRays(),
+                m==null?0:m.lighting().portalReceiverRays(),
+                m==null?0:m.lighting().portalReceiverHits()));
         }
     }
     static int graphBarHeight(double ms,int maxHeight){
@@ -193,8 +199,8 @@ public final class DebugPerformanceHud {
         return Math.min(maxHeight,(int)Math.round(ms*maxHeight/100.0));
     }
     public void draw(Graphics2D g,int canvasWidth,int canvasHeight){
-        if(!enabled||count==0||canvasWidth<340||canvasHeight<372)return;
-        int w=Math.min(476,canvasWidth-16),h=354,left=canvasWidth-w-8,top=8;
+        if(!enabled||count==0||canvasWidth<340||canvasHeight<383)return;
+        int w=Math.min(476,canvasWidth-16),h=375,left=canvasWidth-w-8,top=8;
         double[] sorted=Arrays.copyOf(history,count);Arrays.sort(sorted);
         double p50=sorted[(count-1)/2],p95=sorted[(int)Math.ceil(count*.95)-1],
             p99=sorted[(int)Math.ceil(count*.99)-1];
@@ -273,7 +279,16 @@ public final class DebugPerformanceHud {
                     stages.psxNs()/1e6,stages.graphicsNs()/1e6,
                     stages.hauntingNs()/1e6),0xb8e1cd);
             }
-            int graphTop=top+253,graphHeight=71;
+            if(m!=null){
+                yLine+=17;
+                var light=m.lighting();
+                text(out,left+10,yLine,String.format(Locale.ROOT,
+                    "PORTAL TX %,d  RES %,d  INC %,d  RAY %,d  REUSE %,d",
+                    light.portalTransfers(),light.portalFluxResolved(),
+                    light.portalIncidentRays(),light.portalReceiverRays(),
+                    light.portalReceiverHits()),0xb8e1cd);
+            }
+            int graphTop=top+272,graphHeight=71;
             out.setColor(new Color(28,44,53));out.fillRect(left+10,graphTop,w-20,graphHeight);
             out.setColor(new Color(68,98,110));
             for(int t:new int[]{16,33,50,100}){
@@ -291,7 +306,7 @@ public final class DebugPerformanceHud {
             }
             String footer=capture==null?captureStatus:
                 "RECORDING "+capture.size()+"/"+FrameTimeCapture.CAPACITY+" / CTRL+SHIFT+F8 SAVE";
-            text(out,left+12,top+344,footer.length()>62?footer.substring(0,62):footer,0xb9cbd0);
+            text(out,left+12,top+365,footer.length()>62?footer.substring(0,62):footer,0xb9cbd0);
         }finally{out.dispose();}
     }
     private static void text(Graphics2D g,int x,int y,String s,int rgb){

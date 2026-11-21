@@ -96,7 +96,7 @@ public final class FixtureLighting {
  /** Opt-out for full-source A/B and cross-map RGB parity. */
  private final PortalLightReachability portalGate;
  private final PortalFluxCache portalFlux;
- private long portalCandidatesRejected;
+ private long portalCandidatesRejected,portalFluxResolved;
  public long portalCandidatesRejected(){return portalCandidatesRejected;}
  public int portalGraphRebuilds(){return portalGate==null?0:portalGate.rebuilds();}
  public int portalFluxRebuilds(){return portalFlux==null?0:portalFlux.rebuilds();}
@@ -438,6 +438,7 @@ public final class FixtureLighting {
    double virtual=portalFlux==null?Double.NaN:
        portalFlux.weight(source,room,x,y,z,nx,ny,nz,normal);
    if(Double.isFinite(virtual)){
+    portalFluxResolved++;
     if(virtual>=(normal?.001:.002))parts.add(new Weighted(source,virtual));
     continue;
    }
@@ -474,15 +475,21 @@ public final class FixtureLighting {
                           long normalSamples,long normalRays,int lights,int cachedColours,
                           long lodQueries,long lodHits,long lodVisibilityChecks,
                           long consideredSources,long invalidatedCells,long normalCacheHits,
-                          long portalRejectedCandidates){}
+                          long portalRejectedCandidates,long portalFluxResolved,
+                          int portalTransfers,long portalIncidentRays,
+                          long portalReceiverRays,long portalReceiverHits){}
  private long samples,cacheHits,shadowRays,normalSamples,normalRays,normalCacheHits;
  public FrameStats frameStats(){return new FrameStats(samples,cacheHits,shadowRays,
      normalSamples,normalRays,sources.size(),colours.size(),
      lodQueries,lodHits,lodVisibilityChecks,consideredSources,invalidatedCells,
-      normalCacheHits,portalCandidatesRejected);}
+      normalCacheHits,portalCandidatesRejected,portalFluxResolved,
+      portalFlux==null?0:portalFlux.transfers(),
+      portalFlux==null?0:portalFlux.incidentRays(),
+      portalFlux==null?0:portalFlux.receiverRays(),
+      portalFlux==null?0:portalFlux.receiverHits());}
  private void resetStatistics(){samples=cacheHits=shadowRays=normalSamples=normalRays=normalCacheHits=0;
   lodQueries=lodHits=lodVisibilityChecks=0;
-  consideredSources=invalidatedCells=portalCandidatesRejected=0;}
+  consideredSources=invalidatedCells=portalCandidatesRejected=portalFluxResolved=0;}
  private long castleDoorRevision=-1;
  private final Map<String,Boolean> castleDoorStates=new HashMap<>();
  /** Conservative swept volume: wood leaves rotate up to half the slot width
@@ -837,6 +844,7 @@ public final class FixtureLighting {
    double virtual=portalFlux==null?Double.NaN:
        portalFlux.weight(source,room,x,y,z,0,0,0,false);
    if(Double.isFinite(virtual)){
+    portalFluxResolved++;
     double level=factor*virtual;
     if(level>=.002){r+=level*source.red;g+=level*source.green;b+=level*source.blue;}
     continue;
@@ -879,6 +887,7 @@ public final class FixtureLighting {
    double virtual=portalFlux==null?Double.NaN:
        portalFlux.weight(source,room,x,y,z,nx,ny,nz,true);
    if(Double.isFinite(virtual)){
+    portalFluxResolved++;
     double level=factor*virtual;
     if(level>=.001){r+=level*source.red;g+=level*source.green;b+=level*source.blue;}
     continue;
