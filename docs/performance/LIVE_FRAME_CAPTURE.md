@@ -189,3 +189,22 @@ share this same gating. `PortalLightReachabilityTest` verifies an actual open
 House door with a narrow forward beam, a beam facing away, a short-radius
 local-only emitter, diffuse backlight, closing/reopening and frame reuse,
 alongside bit-exact oracle RGB/normal parity on House, Farmhouse and School.
+
+### Second and subsequent doorway stop test (per-light, per-portal)
+
+Authoritative doors now form a bounded per-source flood. Every edge is
+individually admitted only if the *original light's* sphere intersects the
+full physical opening, and hard-zero beam cones can illuminate any part of
+that opening. Opening one doorway no longer grants that light access to
+every room in the connected component. Open external zones are treated
+conservatively because they have no indoor wall between them; stair and
+overlapping upper/lower room ambiguities still fall back to exact rays.
+
+The flood runs once per door/window snapshot revision; no portal graph walk
+or cone test occurs in the normal vertex or CPU light sampling loop.
+`PortalLightReachabilityTest` now exercises a REAL connected House path
+through two open doors, with light that reaches door #1 but physically cannot
+reach door #2, then compares bit-exact RGB and normals against the ungated
+direct-ray oracle with ALL authored House/Farmhouse/School doors open.
+`sourceBlockedConnectedRooms()` counts live emitter/room graph pairs pruned
+specifically by each light's own geometric limits, not frame milliseconds.

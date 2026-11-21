@@ -94,9 +94,53 @@ public final class PortalLightReachabilityTest {
         System.out.println("PASS light-locality aperture: radius stops, hard beam cone, "
             +"diffuse backlight, door toggles, boundary fallback and cached frames");
     }
+    /** Connected rooms are not automatically illuminated. The same source
+     * must physically reach *each* successive aperture on a two-door route. */
+    private static void physicalSecondOpeningGate(){
+        var map=new HouseMap(HouseMap.Site.HOUSE);
+        var first=AuthoredTestSupport.door(map,3,4);
+        var second=AuthoredTestSupport.door(map,4,0);
+        var local=AuthoredTestSupport.side(map,first,3,1.05);
+        double sy=first.y()+1.35;
+        double firstDistance=Math.sqrt(Math.pow(local.x()-first.x(),2)
+            +Math.pow(local.z()-first.z(),2));
+        double nextDistance=Math.sqrt(Math.pow(local.x()-second.x(),2)
+            +Math.pow(local.z()-second.z(),2)
+            +Math.pow(sy-(second.y()+1.35),2));
+        ok(nextDistance>firstDistance+2.0,
+            "Two-door test must have genuinely distinct architectural openings");
+        double radius=Math.min(firstDistance+1.35,(firstDistance+nextDistance)*.5);
+        var light=new FixtureLighting.Source(0,FixtureLighting.Kind.BARE_BULB,
+            3,0,local.x(),sy,local.z(),0,-1,0,radius,3,1,.8,.6);
+        if(!map.doorOpen(first.id()))map.toggleDoor(first.id());
+        if(!map.doorOpen(second.id()))map.toggleDoor(second.id());
+        var gate=new PortalLightReachability(map,List.of(light));
+        ok(gate.connected(3,0),
+            "Open authored door chain must be connected independent of lighting");
+        ok(gate.sourceCanReach(light,4),
+            "Light that touches first open door must enter its receiving room");
+        ok(!gate.sourceCanReach(light,0),
+            "Light failed to stop at second door outside its physical sphere");
+        ok(gate.sourceBlockedConnectedRooms()>0,
+            "Source-specific mask should prune rooms admitted by global topology");
+        var point=AuthoredTestSupport.side(map,second,0,1);
+        ok(gate.disconnected(light,0,point.x(),second.y()+1.35,point.z()),
+            "Second-room ray was still considered beyond the untouched door");
+        int built=gate.rebuilds();
+        gate.refresh();
+        ok(gate.rebuilds()==built,
+            "Per-source multi-door masks rebuilt on unchanged simulation frame");
+        map.toggleDoor(first.id());
+        gate.refresh();
+        ok(!gate.sourceCanReach(light,4)&&!gate.sourceCanReach(light,0),
+            "Closing the first door must isolate both downstream rooms");
+        System.out.println("PASS per-source second-door radius stop, real room "
+            +"connectivity, shadow candidate prune and revision-only rebuild");
+    }
     public static void main(String[] args){
         physicalFirstOpeningGate();
-        long totalRejected=0,totalConfined=0;
+        physicalSecondOpeningGate();
+        long totalRejected=0,totalConfined=0,totalBlocked=0;
         for(var site:new HouseMap.Site[]{HouseMap.Site.HOUSE,
                     HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
             var map=new HouseMap(site);
@@ -124,12 +168,29 @@ public final class PortalLightReachabilityTest {
             }
             ok(oracle.portalCandidatesRejected()==0,
                 "Opt-out must preserve all exact direct-ray candidates");
-            totalConfined+=new PortalLightReachability(map,
-                candidate.sources()).sourceConfined();
-            System.out.println("PASS "+site+" cached first-aperture light and direct-ray RGB parity");
+            // Re-test the fully open authored graph as a differential oracle.
+            // Long routes with real stairs, windows and external zones are
+            // substantially harder than the first two door toggles.
+            for(var door:map.level().portals())
+                if(door.door()&&!map.doorOpen(door.id()))map.toggleDoor(door.id());
+            oracle.frame(circuits,8);
+            candidate.frame(circuits,8);
+            for(int room=0;room<map.interiorRoomCount();room++)
+                for(var pt:receivers(map,room))
+                    same(oracle,candidate,room,pt.x(),pt.y(),pt.z(),
+                        site+" all-open");
+            totalRejected+=candidate.portalCandidatesRejected();
+            var finalGate=new PortalLightReachability(map,candidate.sources());
+            totalConfined+=finalGate.sourceConfined();
+            totalBlocked+=finalGate.sourceBlockedConnectedRooms();
+            System.out.println("PASS "+site
+                +" cached every-door source reach and direct-ray RGB parity"
+                +" source_blocked_open_room_pairs="
+                +finalGate.sourceBlockedConnectedRooms());
         }
         System.out.println("PASS portal-gated lighting cross-map RGB/normal parity, "
             +"door/circuit locality; rejected candidate samples="+totalRejected
-            +" safe local-only authored sources="+totalConfined);
+            +" safe local-only authored sources="+totalConfined
+            +" connected-but-out-of-reach source-room pairs="+totalBlocked);
     }
 }

@@ -7,10 +7,10 @@ import org.beckenburg.LevelDefinition.Room;
 /**
  * Cached conservative doorway connectivity for static light sources. A room
  * whose portal component is disconnected cannot receive direct illumination
- * from the source room. Critically, an individual light whose sphere or
- * genuinely hard-edged beam cannot even touch the FIRST optical aperture
- * cannot illuminate any other nonoverlapping interior room. This per-source
- * aperture mask is computed only when authored door/window states change.
+ * from the source room. Every edge in that source's actual travel route
+ * must intersect its physical light sphere and genuinely hard-edged beam:
+ * touching the first door does NOT illuminate the entire connected graph.
+ * Per-source doorway masks are computed only when authored topology changes.
  *
  * Real ray tracing is retained for reachable openings, boundary vertices,
  * uncertain source placement, stair/vertical holes, native maps and exterior
@@ -29,7 +29,7 @@ final class PortalLightReachability {
     /** Per-light rooms reached through at least one aperture the source can
      * physically touch. This is NOT one world-wide connected-room mask. */
     private final long[] sourceReachable;
-    private int rebuilds,sourceConfined;
+    private int rebuilds,sourceConfined,sourceBlockedConnectedRooms;
     private String lastDoors,lastWindows;
 
     PortalLightReachability(HouseMap map,List<FixtureLighting.Source> sources){
@@ -137,28 +137,49 @@ final class PortalLightReachability {
             for(int from=0;from<n;from++)
                 if((connected[from]&(1L<<via))!=0)
                     connected[from]|=connected[via];
-        // Compute one conservative source-owned reachability mask per topology
-        // revision. Do not scan portals or do cone math in the render loop.
-        sourceConfined=0;
+        // Source-specific bounded flood: an optical path must touch EVERY
+        // opening along the route with this SAME original emitter. The global
+        // connected graph is too generous: lamp A might reach door 1 but not
+        // door 2, even when those doors connect the entire building.
+        // This work is performed once per real topology revision, never in
+        // the per-frame source-to-receiver rasterizer.
+        sourceConfined=sourceBlockedConnectedRooms=0;
         for(var source:sources){
             int id=source.id(),from=source.room();
             if(id<0||id>=sourceReachable.length||!safeSource[id]){
                 if(id>=0&&id<sourceReachable.length)sourceReachable[id]=-1L;
-                continue; // unknown emitter ownership: retain direct rays
+                continue; // unknown emitter ownership: retain exact rays
             }
-            long reachable=1L<<from;
-            for(var portal:map.lightPortals(from)){
-                int other=portal.a()==from?portal.b():portal.a();
-                if(other<0||other>=n||other==from)continue;
-                if(DoorwayTransmission.opticalTransmission(map,portal,from,other)<=0)
-                    continue;
-                if(!touchesOpticalAperture(source,portal))continue;
-                // After touching the first aperture we conservatively admit
-                // its entire open graph component. Distance and wall occlusion
-                // still bound every later receiver in the existing ray path.
-                reachable|=connected[other];
+            long reachable=1L<<from,frontier=reachable;
+            while(frontier!=0){
+                int current=Long.numberOfTrailingZeros(frontier);
+                frontier&=frontier-1;
+                // Adjacent outdoor zones are not separated by indoor walls.
+                // Keep every external connection as a conservative bypass;
+                // all indoor re-entries still require an actual in-range
+                // optical aperture from the ORIGINAL light.
+                if(map.level().room(current).outside()){
+                    for(int other=0;other<n;other++){
+                        if(!map.level().room(other).outside())continue;
+                        long bit=1L<<other;
+                        if((reachable&bit)!=0)continue;
+                        reachable|=bit;frontier|=bit;
+                    }
+                }
+                for(var portal:map.lightPortals(current)){
+                    if(portal.a()!=current&&portal.b()!=current)continue;
+                    int other=portal.a()==current?portal.b():portal.a();
+                    if(other<0||other>=n||other==current)continue;
+                    long bit=1L<<other;
+                    if((reachable&bit)!=0)continue;
+                    if(DoorwayTransmission.opticalTransmission(map,portal,current,other)<=0)
+                        continue;
+                    if(!touchesOpticalAperture(source,portal))continue;
+                    reachable|=bit;frontier|=bit;
+                }
             }
             sourceReachable[id]=reachable;
+            sourceBlockedConnectedRooms+=Long.bitCount(connected[from]&~reachable);
             if(reachable==(1L<<from))sourceConfined++;
         }
     }
@@ -185,6 +206,9 @@ final class PortalLightReachability {
     /** Count of safe authored emitters that cannot reach any transmissive
      * opening (and therefore never need an inter-room light ray). */
     int sourceConfined(){return sourceConfined;}
+    /** Light/receiver-room pairs that the globally-connected graph would
+     * have admitted, but per-source radius/cone propagation can reject. */
+    int sourceBlockedConnectedRooms(){return sourceBlockedConnectedRooms;}
     boolean sourceCanReach(FixtureLighting.Source source,int room){
         return source!=null&&source.id()>=0&&source.id()<sourceReachable.length
             &&room>=0&&room<connected.length
