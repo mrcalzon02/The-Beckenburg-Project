@@ -27,8 +27,10 @@ on:
       - 'RELEASES.md'
       - 'IMPLEMENTATION_SLICE.md'
       - 'docs/**'
-      # Performance receipts and offline analyzers are outside the shipped game/editor.
-      - 'development/performance/CODEX_PROGRESS_LOG.md'
+      # Performance receipts, comparison tables and offline analyzers are
+      # diagnostics, not shipped game resources. Code+report commits still run
+      # this workflow because source paths remain outside paths-ignore.
+      - 'development/performance/**'
       - 'tools/performance/**'
       - 'development/RECOVERY_PLAN_2026-10-25.md'
       - 'development/quality/defects.json'
