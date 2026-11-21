@@ -19,21 +19,9 @@ public final class LanAcoustics {
         int best=Integer.MAX_VALUE;
         for(LevelDefinition.Portal portal:map.level().portals()){
             if(!portal.joins(from,to))continue;
-            int loss=Math.max(1,(int)Math.ceil(portal.loss()));
-            if(portal.door()&&!map.doorOpen(portal.id()))loss+=2;
-            if(portal.kind().equals("window")&&!map.windowOpen(portal.id()))loss+=2;
-            loss+=Math.max(absorption(map.level().room(from).acoustic()),
-                absorption(map.level().room(to).acoustic()));
-            if(map.outside(from)!=map.outside(to))loss++;
-            best=Math.min(best,loss);
+            best=Math.min(best,DoorwayTransmission.soundLoss(map,portal,from,to));
         }
         return best;
-    }
-    private static int absorption(String material){
-        if(material==null)return 0;
-        String name=material.toLowerCase(java.util.Locale.ROOT);
-        // Masonry rooms retain a longer audible tail; upholstered spaces absorb a threshold.
-        return name.contains("carpet")||name.contains("soft")||name.contains("upholster")?1:0;
     }
     private static boolean valid(HouseMap map,int room){
         return map!=null&&room>=0&&room<map.roomCount();

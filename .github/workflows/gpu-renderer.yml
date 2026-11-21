@@ -27,6 +27,9 @@ on:
       - 'src/main/java/org/beckenburg/InvestigationGame.java'
       - 'src/main/java/org/beckenburg/DebugPerformanceHud.java'
       - 'src/main/java/org/beckenburg/FixtureLighting.java'
+      - 'src/main/java/org/beckenburg/DoorwayTransmission.java'
+      - 'src/main/java/org/beckenburg/LanAcoustics.java'
+      - 'src/test/java/org/beckenburg/DoorwayTransmissionTest.java'
       - 'src/main/java/org/beckenburg/HouseMap.java'
       # Source-authored House geometry must undergo actual visual and VBO acceptance.
       - 'src/main/java/org/beckenburg/HouseRebuildEnvelope.java'
@@ -149,7 +152,8 @@ jobs:
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\PreparedLightBatchParityTest.java || exit /b 1
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\ArchitecturalLightOcclusionAllocationParityTest.java || exit /b 1
           javac --release 17 -encoding UTF-8 -cp build\classes -d build\test src\test\java\org\beckenburg\AuthoredTestSupport.java src\test\java\org\beckenburg\HandheldSurfaceOcclusionTest.java || exit /b 1
-          for %%T in (EmissionCacheBudgetTest DynamicTextureRevisionTest DynamicGeometryRetentionTest PreparedLightWriteTest PreparedLightBatchParityTest ArchitecturalLightOcclusionAllocationParityTest HandheldSurfaceOcclusionTest PreparedVertexLightingTest PsxQuantizationParityTest CastleShelfLabelsTest) do java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.%%T || exit /b 1
+          javac --release 17 -encoding UTF-8 -cp build\classes -sourcepath src\test\java -d build\test src\test\java\org\beckenburg\DoorwayTransmissionTest.java src\test\java\org\beckenburg\LanAcousticsTest.java || exit /b 1
+          for %%T in (EmissionCacheBudgetTest DynamicTextureRevisionTest DynamicGeometryRetentionTest PreparedLightWriteTest PreparedLightBatchParityTest ArchitecturalLightOcclusionAllocationParityTest HandheldSurfaceOcclusionTest PreparedVertexLightingTest PsxQuantizationParityTest CastleShelfLabelsTest LanAcousticsTest DoorwayTransmissionTest) do java -Djava.awt.headless=true -ea -cp build\classes;build\test org.beckenburg.%%T || exit /b 1
       # A changed authored map can exceed the configured VBO residency budget.
       # Preserve the real cache result, but do not prevent an actual GL launch
       # and framebuffer proof because of an advisory retention target.
