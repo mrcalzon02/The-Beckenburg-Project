@@ -31,6 +31,7 @@ on:
       - 'src/main/java/org/beckenburg/PortalLightReachability.java'
       - 'src/main/java/org/beckenburg/PortalFluxCache.java'
       - 'src/test/java/org/beckenburg/PortalFluxCacheTest.java'
+      - 'src/test/java/org/beckenburg/PortalFluxVisualCaptureTest.java'
       - 'src/test/java/org/beckenburg/PortalLightReachabilityTest.java'
       - 'src/main/java/org/beckenburg/LanAcoustics.java'
       - 'src/test/java/org/beckenburg/DoorwayTransmissionTest.java'

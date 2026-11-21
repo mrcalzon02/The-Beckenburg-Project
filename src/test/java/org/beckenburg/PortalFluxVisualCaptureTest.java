@@ -15,7 +15,50 @@ public final class PortalFluxVisualCaptureTest {
     private static void check(boolean ok,String message){
         if(!ok)throw new AssertionError(message);
     }
-    private record Render(BufferedImage image,int[] rgb,long incident,long receiver,long hits){}
+    private record Render(BufferedImage image,int[] rgb){}
+    private record ActiveDoor(HouseMap map,LevelDefinition.Portal portal,
+                              LevelDefinition.Vec observer,LevelDefinition.Vec target,
+                              int emitter,double incidentWeight){}
+    /** Discover a genuine illuminated doorway using the same authored light
+     * registry and shader-side portal transfer as normal gameplay. A door with
+     * no active incident flux is NOT valid proof of the optimization. */
+    private static ActiveDoor selectLitDoor(){
+        for(var site:new HouseMap.Site[]{HouseMap.Site.HOUSE,
+                HouseMap.Site.FARMHOUSE,HouseMap.Site.SCHOOL}){
+            var map=new HouseMap(site);
+            var sources=new FixtureLighting(map).sources();
+            ActiveDoor best=null;
+            for(var door:map.level().portals())if(door.door()
+                    &&!map.outside(door.a())&&!map.outside(door.b())){
+                boolean originallyOpen=map.doorOpen(door.id());
+                if(!originallyOpen)map.toggleDoor(door.id());
+                try{
+                    var cache=new PortalFluxCache(map,sources);
+                    for(var light:sources){
+                        int to=light.room()==door.a()?door.b():
+                            light.room()==door.b()?door.a():-1;
+                        if(to<0)continue;
+                        var receiver=AuthoredTestSupport.side(map,door,to,.75);
+                        double weight=cache.weight(light,to,receiver.x(),
+                            door.y()+1.35,receiver.z(),0,0,0,false);
+                        if(!Double.isFinite(weight)||weight<=0)continue;
+                        var observer=AuthoredTestSupport.side(map,door,to,1.12);
+                        if(!map.traversable(observer.x(),observer.y(),observer.z()))
+                            observer=receiver;
+                        if(map.roomAt(observer.x(),observer.y()+1.25,observer.z())!=to)
+                            continue;
+                        var target=AuthoredTestSupport.side(map,door,light.room(),.65);
+                        if(best==null||weight>best.incidentWeight())
+                            best=new ActiveDoor(map,door,observer,target,light.id(),weight);
+                    }
+                }finally{
+                    if(!originallyOpen)map.toggleDoor(door.id());
+                }
+            }
+            if(best!=null)return best;
+        }
+        throw new AssertionError("No actual authored lamp transmits any doorway flux; synthetic fixture test cannot prove real scene lighting");
+    }
     private static Render render(HouseMap map,LevelDefinition.Vec eye,
             LevelDefinition.Vec target,boolean disabled,double clock){
         String original=System.getProperty(DISABLE);
@@ -40,7 +83,7 @@ public final class PortalFluxVisualCaptureTest {
                 BufferedImage.TYPE_INT_RGB);
             copy.setRGB(0,0,image.getWidth(),image.getHeight(),
                 pixels,0,image.getWidth());
-            return new Render(copy,pixels,0,0,0);
+            return new Render(copy,pixels);
         }finally{
             if(original==null)System.clearProperty(DISABLE);
             else System.setProperty(DISABLE,original);
@@ -74,12 +117,14 @@ public final class PortalFluxVisualCaptureTest {
     }
     public static void main(String[] args)throws Exception{
         LevelVisualCapture.inspection();
-        var map=new HouseMap(HouseMap.Site.HOUSE);
-        var portal=AuthoredTestSupport.door(map,3,4);
-        var observer=AuthoredTestSupport.side(map,portal,4,1.15);
-        if(!map.traversable(observer.x(),observer.y(),observer.z()))
-            observer=map.spawn(4);
-        var target=AuthoredTestSupport.side(map,portal,3,.65);
+        var selected=selectLitDoor();
+        var map=selected.map();
+        var portal=selected.portal();
+        var observer=selected.observer();
+        var target=selected.target();
+        System.out.println("PHYSICAL PORTAL VIEW site="+map.site()
+            +" portal="+portal.id()+" light="+selected.emitter()
+            +" positive_incident="+selected.incidentWeight());
         Path out=Path.of("build","e2e","portal-flux-capture");
         Files.createDirectories(out);
         var closedOld=render(map,observer,target,true,2.75);
@@ -96,7 +141,9 @@ public final class PortalFluxVisualCaptureTest {
         save(openNew,out.resolve("open-portal.png"));
         int openDelta=delta(openOld,openNew,out.resolve("open-delta.png"));
         Files.writeString(out.resolve("comparison.txt"),
-            "Real production SceneRenderer, HOUSE, door="+portal.id()+"\n"
+            "Real production SceneRenderer, site="+map.site()
+                +", door="+portal.id()+", source="+selected.emitter()+"\n"
+            +"Physical portal positive incidence="+selected.incidentWeight()+"\n"
             +"Door states: closed and fully open; same scene, 854x480, PSX off, lamp off.\n"
             +"Original light renderer = portalFlux.disabled=true\n"
             +"Portal light renderer = portalFlux.disabled=false\n"
@@ -104,6 +151,8 @@ public final class PortalFluxVisualCaptureTest {
             +"Source level revision="+map.level().revision()+"\n"
             +"This is rendered color comparison, not physical GPU frame timing.\n");
         check(closedDelta==0,"Closed door changed original scene shading");
-        System.out.println("PASS actual House software-rendered open/closed portal light A/B screenshots; open_delta="+openDelta);
+        if(openDelta==0)
+            System.out.println("WARNING: Actual illuminated doorway has no visible pixel change at selected camera; review material visibility and captured PNGs.");
+        System.out.println("PASS actual "+map.site()+" software-rendered open/closed doorway-light A/B screenshots; open_delta="+openDelta);
     }
 }
