@@ -166,9 +166,23 @@ final class PortalFluxCache {
         }
         return maximum;
     }
-    /** Door changes invalidate every receiver that could have been shaded by
-     * a virtual aperture, not only receivers on the source's straight ray.
-     * This conservative test is also used for prepared VBO shadow journals. */
+    /** Minimum segment distance to the REAL rectangular opening, allowing
+     * either entry height and any point across its physical width. It is
+     * intentionally a lower bound, never a fabricated unobstructed ray. */
+    private static double apertureDistance(Portal portal,double x,double y,double z){
+        double along=portal.alongX()?x-portal.x():z-portal.z();
+        double normal=portal.alongX()?z-portal.z():x-portal.x();
+        double sideways=Math.max(0,Math.abs(along)-portal.width()*.5);
+        double height=Math.max(0,Math.max(portal.y()-.10-y,
+            y-(portal.y()+2.45)));
+        double wall=Math.max(0,Math.abs(normal)-INSET);
+        return Math.sqrt(wall*wall+sideways*sideways+height*height);
+    }
+    /** Door changes invalidate every receiver that COULD have been shaded
+     * by virtual doorway light, including off-axis surfaces. A receiver
+     * beyond every physically possible source-door-receiver path must stay
+     * cached, avoiding a full-room shadow/VBO rebuild on local door changes.
+     * The existing direct-ray portal filter still runs independently. */
     boolean mayAffectReceiver(FixtureLighting.Source source,Portal portal,
                               double x,double y,double z,double margin){
         if(source==null||portal==null||!eligible(portal)
@@ -179,9 +193,16 @@ final class PortalFluxCache {
         if(!interior(from)||!interior(to)
                 ||overlaps(map.level().room(from),map.level().room(to)))return false;
         Room room=map.level().room(to);
-        return x>=room.x0()-margin&&x<=room.x1()+margin
-            &&z>=room.z0()-margin&&z<=room.z1()+margin
-            &&y>=room.y()-margin&&y<=room.y()+room.height()+margin;
+        if(x<room.x0()-margin||x>room.x1()+margin
+            ||z<room.z0()-margin||z>room.z1()+margin
+            ||y<room.y()-margin||y>room.y()+room.height()+margin)return false;
+        // Triangle inequality: any two-segment path through ANY point on
+        // this aperture is at least the sum of these independent minima.
+        // Only reject when even that optimistic path exceeds source reach.
+        double first=apertureDistance(portal,source.x(),source.y(),source.z());
+        if(first>source.radius()+margin)return false;
+        double second=apertureDistance(portal,x,y,z);
+        return first+second<=source.radius()+margin;
     }
     int rebuilds(){return rebuilds;}
     int transfers(){return transfers;}

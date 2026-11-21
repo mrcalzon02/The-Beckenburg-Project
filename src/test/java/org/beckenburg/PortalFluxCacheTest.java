@@ -48,6 +48,16 @@ public final class PortalFluxCacheTest {
         ok(!cache.mayAffectReceiver(first,portal,a.x(),
                 portal.y()+1.35,a.z(),0),
             "The source-side room is not a transferred-light receiver");
+        var shortRange=new FixtureLighting.Source(91,
+            FixtureLighting.Kind.BARE_BULB,3,0,
+            a.x(),portal.y()+1.35,a.z(),0,-1,0,
+            1.1,4,1,.7,.5);
+        ok(!cache.mayAffectReceiver(shortRange,portal,b.x(),
+                portal.y()+1.35,b.z(),0),
+            "A short-range lamp cannot dirty receiving-room probes beyond its portal reach");
+        ok(cache.mayAffectReceiver(first,portal,b.x(),
+                portal.y()+1.35,b.z(),0),
+            "A real in-range receiver must remain invalidated by the door");
         map.toggleDoor(portal.id());
         cache.refresh();
         ok(cache.rebuilds()==3&&cache.transfers()==0,
