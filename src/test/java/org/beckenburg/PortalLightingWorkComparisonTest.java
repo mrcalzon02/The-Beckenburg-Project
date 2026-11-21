@@ -34,7 +34,8 @@ public final class PortalLightingWorkComparisonTest {
     }
     private static void probe(FixtureLighting direct,FixtureLighting optimized,
                               int room,double x,double y,double z,String context){
-        var a=direct.sample(room,x,y,z),b=optimized.sample(room,x,y,z);
+        var a=direct.sample(room,x,y,z);
+        var b=optimized.sample(room,x,y,z);
         check(Double.doubleToLongBits(a.r())==Double.doubleToLongBits(b.r())
             &&Double.doubleToLongBits(a.g())==Double.doubleToLongBits(b.g())
             &&Double.doubleToLongBits(a.b())==Double.doubleToLongBits(b.b()),
