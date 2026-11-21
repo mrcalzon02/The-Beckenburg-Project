@@ -259,6 +259,11 @@ public final class FixtureLighting {
    y=Double.longBitsToDouble(n.y());
    z=Double.longBitsToDouble(n.z());
   }else return true;
+  // An open doorway can bend illumination toward off-axis receivers.
+  // A straight segment which missed the opening may still depend on
+  // that doorway's virtual light. Do not retain stale prepared shadows.
+  if(portalFlux!=null&&portalFlux.mayAffectReceiver(light,p,x,y,z,.15))
+   return true;
   boolean alongX=p.alongX();
   double sourceNormal=alongX?light.z:light.x;
   double destinationNormal=alongX?z:x;
@@ -725,7 +730,10 @@ public final class FixtureLighting {
     // aperture; the conservative filter still retains straddling cells.
     if(!PortalLightCellFilter.mayCross(source.x,source.y,source.z,
             key.x,key.y,key.z,cellSize,portal.x(),portal.y(),portal.z(),
-            portal.width(),portal.alongX(),portal.kind().equals("window")))return;
+            portal.width(),portal.alongX(),portal.kind().equals("window"))
+        &&(portalFlux==null||!portalFlux.mayAffectReceiver(source,portal,
+                (key.x+.5)*cellSize,(key.y+.5)*cellSize,(key.z+.5)*cellSize,
+                cellSize)))return;
     changedCells.put(key,revision);occluderCells.put(key,revision);invalidatedCells++;
    });
   }

@@ -40,6 +40,14 @@ public final class PortalFluxCacheTest {
             "Static receiver contribution changes without a source or door revision");
         cache.refresh();
         ok(cache.rebuilds()==2,"Unchanged door topology rebuilt optical flux");
+        double offAxis=b.x()+(portal.alongX()?.8:0);
+        double offZ=b.z()+(portal.alongX()?0:.8);
+        ok(cache.mayAffectReceiver(first,portal,offAxis,
+                portal.y()+1.35,offZ,0),
+            "Off-axis receiving-room light must be invalidated on door changes");
+        ok(!cache.mayAffectReceiver(first,portal,a.x(),
+                portal.y()+1.35,a.z(),0),
+            "The source-side room is not a transferred-light receiver");
         map.toggleDoor(portal.id());
         cache.refresh();
         ok(cache.rebuilds()==3&&cache.transfers()==0,

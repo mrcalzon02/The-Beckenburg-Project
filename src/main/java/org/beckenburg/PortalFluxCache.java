@@ -166,6 +166,23 @@ final class PortalFluxCache {
         }
         return maximum;
     }
+    /** Door changes invalidate every receiver that could have been shaded by
+     * a virtual aperture, not only receivers on the source's straight ray.
+     * This conservative test is also used for prepared VBO shadow journals. */
+    boolean mayAffectReceiver(FixtureLighting.Source source,Portal portal,
+                              double x,double y,double z,double margin){
+        if(source==null||portal==null||!eligible(portal)
+                ||!Double.isFinite(x+y+z+margin)||margin<0)return false;
+        int from=source.room();
+        if(from!=portal.a()&&from!=portal.b())return false;
+        int to=from==portal.a()?portal.b():portal.a();
+        if(!interior(from)||!interior(to)
+                ||overlaps(map.level().room(from),map.level().room(to)))return false;
+        Room room=map.level().room(to);
+        return x>=room.x0()-margin&&x<=room.x1()+margin
+            &&z>=room.z0()-margin&&z<=room.z1()+margin
+            &&y>=room.y()-margin&&y<=room.y()+room.height()+margin;
+    }
     int rebuilds(){return rebuilds;}
     int transfers(){return transfers;}
     long incidentRays(){return incidentRays;}
