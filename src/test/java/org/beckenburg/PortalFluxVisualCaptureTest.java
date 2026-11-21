@@ -60,7 +60,7 @@ public final class PortalFluxVisualCaptureTest {
         throw new AssertionError("No actual authored lamp transmits any doorway flux; synthetic fixture test cannot prove real scene lighting");
     }
     private static Render render(HouseMap map,LevelDefinition.Vec eye,
-            LevelDefinition.Vec target,boolean disabled,double clock){
+            LevelDefinition.Vec target,boolean disabled,double clock,int darkRoom){
         String original=System.getProperty(DISABLE);
         try{
             if(disabled)System.setProperty(DISABLE,"true");
@@ -68,7 +68,13 @@ public final class PortalFluxVisualCaptureTest {
             var view=new SceneRenderer();
             view.setRenderSize(854,480);
             view.setPsxPreset(PsxPipeline.Preset.OFF);
-            view.roomLights=new RoomLighting();
+            var circuits=new RoomLighting();
+            if(darkRoom>=0){
+                check(darkRoom<HouseMap.INDOOR_ROOMS,
+                    "Only interior receiving-room lighting may be isolated");
+                circuits.toggle(darkRoom);
+            }
+            view.roomLights=circuits;
             view.rackStock=java.util.Set.of();
             view.lamp=false;
             view.x=eye.x();view.z=eye.z();view.eyeHeight=eye.y()+1.62;
@@ -127,19 +133,28 @@ public final class PortalFluxVisualCaptureTest {
             +" positive_incident="+selected.incidentWeight());
         Path out=Path.of("build","e2e","portal-flux-capture");
         Files.createDirectories(out);
-        var closedOld=render(map,observer,target,true,2.75);
-        var closedNew=render(map,observer,target,false,2.75);
+        var closedOld=render(map,observer,target,true,2.75,-1);
+        var closedNew=render(map,observer,target,false,2.75,-1);
         save(closedOld,out.resolve("closed-direct.png"));
         save(closedNew,out.resolve("closed-portal.png"));
         int closedDelta=delta(closedOld,closedNew,out.resolve("closed-delta.png"));
         map.toggleDoor(portal.id());
         // Freeze the physical door in its fully open pose for matched images.
         map.doorOpenFraction(portal.id(),System.nanoTime()+HouseMap.DOOR_SWING_NANOS+1);
-        var openOld=render(map,observer,target,true,2.75);
-        var openNew=render(map,observer,target,false,2.75);
+        var openOld=render(map,observer,target,true,2.75,-1);
+        var openNew=render(map,observer,target,false,2.75,-1);
         save(openOld,out.resolve("open-direct.png"));
         save(openNew,out.resolve("open-portal.png"));
         int openDelta=delta(openOld,openNew,out.resolve("open-delta.png"));
+        int receivingRoom=map.roomAt(observer.x(),observer.y()+1.25,observer.z());
+        check(receivingRoom>=0&&receivingRoom<HouseMap.INDOOR_ROOMS,
+            "An illuminated interior receiver room is required for isolation proof");
+        var darkDirect=render(map,observer,target,true,2.75,receivingRoom);
+        var darkPortal=render(map,observer,target,false,2.75,receivingRoom);
+        save(darkDirect,out.resolve("open-receiver-dark-direct.png"));
+        save(darkPortal,out.resolve("open-receiver-dark-portal.png"));
+        int darkDelta=delta(darkDirect,darkPortal,
+            out.resolve("open-receiver-dark-delta.png"));
         Files.writeString(out.resolve("comparison.txt"),
             "Real production SceneRenderer, site="+map.site()
                 +", door="+portal.id()+", source="+selected.emitter()+"\n"
@@ -147,12 +162,18 @@ public final class PortalFluxVisualCaptureTest {
             +"Door states: closed and fully open; same scene, 854x480, PSX off, lamp off.\n"
             +"Original light renderer = portalFlux.disabled=true\n"
             +"Portal light renderer = portalFlux.disabled=false\n"
-            +"Changed RGB pixels closed="+closedDelta+" open="+openDelta+"\n"
+            +"Changed RGB pixels closed="+closedDelta+" open="+openDelta
+                +" receiver_dark="+darkDelta+"\n"
+            +"Receiver room lights explicitly off="+receivingRoom+"\n"
             +"Source level revision="+map.level().revision()+"\n"
             +"This is rendered color comparison, not physical GPU frame timing.\n");
         check(closedDelta==0,"Closed door changed original scene shading");
+        check(darkDelta>0,
+            "A real lit doorway produced no visible neighboring-room illumination when receiving lights were off");
         if(openDelta==0)
             System.out.println("WARNING: Actual illuminated doorway has no visible pixel change at selected camera; review material visibility and captured PNGs.");
-        System.out.println("PASS actual "+map.site()+" software-rendered open/closed doorway-light A/B screenshots; open_delta="+openDelta);
+        System.out.println("PASS actual "+map.site()
+            +" software-rendered open/closed and receiver-dark doorway-light A/B screenshots; open_delta="
+            +openDelta+" receiver_dark_delta="+darkDelta);
     }
 }
