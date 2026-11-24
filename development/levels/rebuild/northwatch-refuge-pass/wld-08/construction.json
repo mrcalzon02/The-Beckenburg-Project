@@ -1,0 +1,87 @@
+{
+  "exports": {
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/station-with-refuges.blend": "3c5fd18a579a1b564c2fb66134c93a19a7d8ce057c4e933150ee5e7b80e972a1",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/station-with-refuges.glb": "6e5dc761e22ea5127d1c4b23d0a9c93cbed9bba39f0ecc95cb5897a4a54f1bc0",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/station-with-refuges.hcs2": "f0cb96dce4a353f831b4ac870dcb503ff7f1307f968bc8ec0ea038a35d1ff3c4"
+  },
+  "previous_scene": "11ced0aca27ec70d48e2359eab8bedd2961779d0d1e57f7a65cec5a9cbec7bc0",
+  "cupboards": [
+    {
+      "id": "northwatch-lab-cupboard",
+      "space": "lab",
+      "owner": 0,
+      "position": [
+        3.45,
+        0.0,
+        40.7
+      ],
+      "yaw": -1.5707963267948966,
+      "bounds": [
+        [
+          2.85,
+          0.0,
+          39.850002
+        ],
+        [
+          4.152,
+          2.31,
+          41.549999
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "northwatch-dorm-cupboard",
+      "space": "dorm",
+      "owner": 1,
+      "position": [
+        60.55,
+        0.0,
+        30.9
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          59.848,
+          0.0,
+          30.049999
+        ],
+        [
+          61.149998,
+          2.31,
+          31.75
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    },
+    {
+      "id": "northwatch-shelter-cupboard",
+      "space": "shelter",
+      "owner": 9,
+      "position": [
+        68.55,
+        0.0,
+        16.1
+      ],
+      "yaw": 1.5707963267948966,
+      "bounds": [
+        [
+          67.848,
+          0.0,
+          15.25
+        ],
+        [
+          69.150002,
+          2.31,
+          16.950001
+        ]
+      ],
+      "base_contacts": 12,
+      "source_sha256": "c1c06f55f691387fa937c9f96c1bf06d7c28e9f37f75e181664f1594ae936097"
+    }
+  ],
+  "retained_collision_parts": 522,
+  "added_collision_parts": 3
+}

@@ -35,8 +35,11 @@ public final class NorthwatchBoundaryReview {
 
     private static void review(String[] args,boolean gpu)throws Exception {
         Path path=Path.of(args[0]);
-        boolean fitted=List.of(args).contains("--doors");
+        boolean refuges=List.of(args).contains("--refuges");
+        boolean fitted=refuges||List.of(args).contains("--doors");
         Path boundary=fitted?Path.of(args[5]):path;
+        Path geometry=refuges?path:boundary;
+        String sourceStem=refuges?"station-with-refuges":"bounded-station";
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var rooms=new Room[HouseMap.ROOM_COUNT];
         var sockets=new ArrayList<Socket>();
@@ -65,6 +68,8 @@ public final class NorthwatchBoundaryReview {
                 case "OPEN" -> portals.add(new Portal(Integer.parseInt(row[1]),Integer.parseInt(row[2]),
                     Integer.parseInt(row[3]),d(row,4),d(row,5),d(row,6),d(row,8),row[7].equals("z"),row[9],1));
                 case "TREAD" -> treads.add(row[1]);
+                case "COVER" -> sockets.add(new Socket(row[1],"hide",n(row,2),
+                    d(row,3),d(row,4),d(row,5),d(row,6),"walk-in-cupboard"));
                 case "RITUAL" -> sockets.add(new Socket("northwatch-"+row[1],"ritual",Integer.parseInt(row[2]),
                     d(row,3),d(row,4),d(row,5),0,row[1]));
                 case "POINT" -> routes.computeIfAbsent(row[1],ignored->new ArrayList<>()).add(point(row,2));
@@ -85,8 +90,8 @@ public final class NorthwatchBoundaryReview {
         }
         NativeInvestigationScene scene;
         AuthoredSitePhysics prior;
-        try(var model=Files.newInputStream(boundary.resolve("bounded-station.glb"));
-            var collision=Files.newInputStream(boundary.resolve("bounded-station.hcs2"));
+        try(var model=Files.newInputStream(geometry.resolve(sourceStem+".glb"));
+            var collision=Files.newInputStream(geometry.resolve(sourceStem+".hcs2"));
             var original=Files.newInputStream(Path.of(args[3]))) {
             scene=NativeInvestigationScene.read(model,args[1],collision,args[2],treads,spaces,frames);
             prior=AuthoredSitePhysics.read(original,args[4],List.of(),treads);
@@ -111,7 +116,7 @@ public final class NorthwatchBoundaryReview {
         if(fitted) {
             require(map.valid(),"The 15 native owners are disconnected or an anchor is obstructed");
             var replica=new HouseMap(HouseMap.Site.USER,level,null,scene);
-            NorthwatchDoorRuntime.review(map,replica,frames,captures);
+            NorthwatchDoorRuntime.review(map,replica,frames,refuges?null:captures);
         }
         var physics=scene.physics();
         int pastEdge=0;
@@ -209,7 +214,11 @@ public final class NorthwatchBoundaryReview {
                 rows.add("four_peer_van_to_generator_two_aimed_doors\tPASS");
             }
         }
-        String stem=fitted?"doors":"boundary";
+        if(refuges) {
+            NativeSchoolInteriorReview.auditWalkInCover(map,captures,rows,"northwatch",java.util.Map.of());
+            if(!gpu)NorthwatchDoorRuntime.liveCover(level,scene,rows);
+        }
+        String stem=refuges?"refuges":fitted?"doors":"boundary";
         Files.writeString(path.resolve(stem+(gpu?"-opengl.tsv":"-software.tsv")),String.join("\n",rows)+"\n");
         rows.forEach(System.out::println);
     }

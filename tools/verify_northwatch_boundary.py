@@ -89,10 +89,20 @@ def prepare():
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--gpu",action="store_true")
-    parser.add_argument("--doors",action="store_true")
+    stage=parser.add_mutually_exclusive_group()
+    stage.add_argument("--doors",action="store_true")
+    stage.add_argument("--refuges",action="store_true")
     args=parser.parse_args()
-    review=ROOT/"development/levels/rebuild/northwatch-door-pass/wld-08" if args.doors else PACKET
-    meta=json.loads((PACKET/"construction.json").read_bytes()) if args.doors else prepare()
+    fitted=args.doors or args.refuges
+    review=PACKET
+    if fitted:
+        name="northwatch-refuge-pass" if args.refuges else "northwatch-door-pass"
+        review=PACKET.parents[1]/name/"wld-08"
+    meta=json.loads((PACKET/"construction.json").read_bytes()) if fitted else prepare()
+    if args.refuges:
+        source=json.loads((review/"construction.json").read_bytes())["exports"]
+        meta["glb_sha256"]=source[(review/"station-with-refuges.glb").relative_to(ROOT).as_posix()]
+        meta["physics_sha256"]=source[(review/"station-with-refuges.hcs2").relative_to(ROOT).as_posix()]
     build=ROOT/"build/northwatch-boundary-review"
     build.mkdir(parents=True,exist_ok=True)
     java=Path("C:/Program Files/Java/jdk-17/bin")
@@ -106,7 +116,7 @@ def main():
     subprocess.run([str(java/"java.exe"),"-Djava.awt.headless=true","-Xmx3g","-cp",cp,
                     "org.beckenburg.NorthwatchBoundaryReview",str(review),meta["glb_sha256"],meta["physics_sha256"],
                     str(ROOT/meta["source_physics"]),meta["source_physics_sha256"],
-                    *([str(PACKET),"--doors"] if args.doors else []),*(["--gpu"] if args.gpu else [])],cwd=ROOT,check=True)
+                    *([str(PACKET),"--refuges" if args.refuges else "--doors"] if fitted else []),*(["--gpu"] if args.gpu else [])],cwd=ROOT,check=True)
 
 
 if __name__ == "__main__":

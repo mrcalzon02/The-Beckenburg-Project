@@ -1515,3 +1515,7 @@ Continue operating leaves in the actual frames and the native room and acoustic 
 Northwatch now fits all 16 existing frames, including both tunnel doors. The retained geometry is unchanged. The shared game review binds the actual receiving floors and stair bays to 15 connected owners. Both renderers replay 20 links, three joined routes and van retreat. Four-player TCP physically opens both doors from van to generator and validates the replicated state. [Door checkpoint](northwatch-door-pass/checkpoint.json) / [Active roster](northwatch-door-pass/roster.json)
 
 Continue the supported generator and power routes and full walk-in safe zones.
+
+### Northwatch walk-in refuges
+
+The lab, dorm and array shelter now each have an enclosed refuge with a usable threshold and full interior protection. Software and OpenGL verify all 207 sampled floor positions alongside the retained doors and routes. Live TCP verifies walking into and out of each refuge and changing its hiding state. [Refuge checkpoint](northwatch-refuge-pass/checkpoint.json) / [Active roster](northwatch-refuge-pass/roster.json)

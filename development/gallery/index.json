@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12008,
+  "count": 12020,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -115124,6 +115124,126 @@
       "height": 580,
       "bytes": 351979,
       "sha256": "6b4e61048b851162a1316f4dae438c6ca84763b87e02ada251a5981fe21de067"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-dorm-cupboard-enter.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-dorm-cupboard-enter.png",
+      "title": "Northwatch dorm cupboard enter",
+      "kind": "Northwatch walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 479560,
+      "sha256": "00ded8e27e9b039e728429f8097ae5f158493aa2ec688ef86e3a9db11dc37164"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-dorm-cupboard-inside.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-dorm-cupboard-inside.png",
+      "title": "Northwatch dorm cupboard inside",
+      "kind": "Northwatch walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 395540,
+      "sha256": "266a0277a24933472b2340eedba1bf419d5282767a0b1b176391104c264bd0fe"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-lab-cupboard-enter.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-lab-cupboard-enter.png",
+      "title": "Northwatch lab cupboard enter",
+      "kind": "Northwatch walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 479110,
+      "sha256": "a4044d33c1d8aa8f3160a266a909d76d6486a5339ec487d0d758e02038d19229"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-lab-cupboard-inside.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-lab-cupboard-inside.png",
+      "title": "Northwatch lab cupboard inside",
+      "kind": "Northwatch walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401894,
+      "sha256": "0e5f45b95962e267194a97a8a78d3952a85932300c34e8b3e3d405291cf3bea4"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-shelter-cupboard-enter.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-shelter-cupboard-enter.png",
+      "title": "Northwatch shelter cupboard enter",
+      "kind": "Northwatch walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 479762,
+      "sha256": "6e446adf161f35fb9814a65e19275d97e480d58c8646a0d8d89d11408811bef2"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-shelter-cupboard-inside.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-shelter-cupboard-inside.png",
+      "title": "Northwatch shelter cupboard inside",
+      "kind": "Northwatch walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 431026,
+      "sha256": "543ec2c4a01a99541fdef78c02a98ad3c72d5945a10697454cce4f09581da951"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-dorm-cupboard-enter.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-dorm-cupboard-enter.png",
+      "title": "Northwatch dorm cupboard enter",
+      "kind": "Northwatch walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 484614,
+      "sha256": "288d7e44f359aaca9735f984d40d1511264162e32c13e426f583b02f5389e2f6"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-dorm-cupboard-inside.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-dorm-cupboard-inside.png",
+      "title": "Northwatch dorm cupboard inside",
+      "kind": "Northwatch walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 395045,
+      "sha256": "c4195693cc0cd79c4ab782089a7fd0358dff6f534d02c43def9cc154b1755b87"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-lab-cupboard-enter.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-lab-cupboard-enter.png",
+      "title": "Northwatch lab cupboard enter",
+      "kind": "Northwatch walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 483798,
+      "sha256": "c5c397fbf52a6a4ae58288d0ed4e40a660220fdbd29b36a9e9346605493dd25c"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-lab-cupboard-inside.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-lab-cupboard-inside.png",
+      "title": "Northwatch lab cupboard inside",
+      "kind": "Northwatch walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401621,
+      "sha256": "f96491bcd305fd1aa53e74ac43e770d1b8fa6b8f66fbba8b8379602b2ae466ba"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-shelter-cupboard-enter.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-shelter-cupboard-enter.png",
+      "title": "Northwatch shelter cupboard enter",
+      "kind": "Northwatch walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 484860,
+      "sha256": "47313295011f7ab4f6a073d7ae79fc2caa093fb918bb690c563dbeb174fe14f7"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-shelter-cupboard-inside.png",
+      "url": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-shelter-cupboard-inside.png",
+      "title": "Northwatch shelter cupboard inside",
+      "kind": "Northwatch walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 432705,
+      "sha256": "55454f3091c26e1ff8b260033af20ffc78394f2c41145dea8c09ff1895971997"
     },
     {
       "path": "development/levels/rebuild/previews/academy-revised-rough-plan.png",

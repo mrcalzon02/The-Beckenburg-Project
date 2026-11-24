@@ -2255,3 +2255,7 @@ Named Cemetery and Mortuary commit a881aeb79bd3b9ea1c12f067259c1eabb8123465 and 
 ### Northwatch doors and native room connections
 
 Perimeter commit c4ea36264f5125deae4be7c85cfdfebf8f617485 and gallery 45390262508 passed on held draft PR 86. The [Northwatch door checkpoint](levels/rebuild/northwatch-door-pass/checkpoint.json) uses the same exported static shell and mounts working leaves at sixteen measured frames. Named acceptance remains open. Native software and RTX 5070 confirm door states, rooms and existing routes, and four-player TCP reached the actual generator floor from the cargo deck through two aimed doors. Continue walk-in safe zones and electrical service.
+
+### Northwatch walk-in refuges
+
+Door commit d5408b1856b90c7b1ea9763b46b22f2aba5fd1cc and gallery 45391943722 passed on held draft PR 86. The [refuge checkpoint](levels/rebuild/northwatch-refuge-pass/checkpoint.json) adds full walk-in protection in three existing rooms, with software, OpenGL and live TCP evidence. Electrical service, furnishing, case play and named dispatch remain open.

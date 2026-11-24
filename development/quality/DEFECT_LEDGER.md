@@ -9158,3 +9158,7 @@ Forty-one board joints shared overlapping front and back planes, with a maximum 
 ### DEV-692 Northwatch frames had no operating leaves
 
 All sixteen leaves now fit the existing surface and tunnel reveals. Standing and crouched motion, sight, object passage and room acoustics use their live state. Four TCP peers verified the physical van-to-generator approach through the actual courtyard and radio doors. [Evidence](../levels/rebuild/northwatch-door-pass/checkpoint.json)
+
+### DEV-693 Northwatch lacked full walk-in protection
+
+Three floor-supported cupboards protect their full walkable interiors in the lab, dorm and array shelter. Native software and OpenGL verify 207 protected floor positions per run. Four TCP peers verified physical entry, hiding, revealing and exit in each space. [Evidence](../levels/rebuild/northwatch-refuge-pass/checkpoint.json)

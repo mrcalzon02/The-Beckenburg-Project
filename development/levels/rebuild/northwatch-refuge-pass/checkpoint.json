@@ -1,0 +1,72 @@
+{
+  "id": "WLD-08",
+  "status": "NORTHWATCH_STAGED_FULL_WALK_IN_REFUGES_VERIFIED",
+  "previous_commit": "d5408b1856b90c7b1ea9763b46b22f2aba5fd1cc",
+  "previous_gallery": 45391943722,
+  "exports": {
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/station-with-refuges.blend": "3c5fd18a579a1b564c2fb66134c93a19a7d8ce057c4e933150ee5e7b80e972a1",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/station-with-refuges.glb": "6e5dc761e22ea5127d1c4b23d0a9c93cbed9bba39f0ecc95cb5897a4a54f1bc0",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/station-with-refuges.hcs2": "f0cb96dce4a353f831b4ac870dcb503ff7f1307f968bc8ec0ea038a35d1ff3c4"
+  },
+  "evidence": {
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-dorm-cupboard-enter.png": "00ded8e27e9b039e728429f8097ae5f158493aa2ec688ef86e3a9db11dc37164",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-dorm-cupboard-inside.png": "266a0277a24933472b2340eedba1bf419d5282767a0b1b176391104c264bd0fe",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-lab-cupboard-enter.png": "a4044d33c1d8aa8f3160a266a909d76d6486a5339ec487d0d758e02038d19229",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-lab-cupboard-inside.png": "0e5f45b95962e267194a97a8a78d3952a85932300c34e8b3e3d405291cf3bea4",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-shelter-cupboard-enter.png": "6e446adf161f35fb9814a65e19275d97e480d58c8646a0d8d89d11408811bef2",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-shelter-cupboard-inside.png": "543ec2c4a01a99541fdef78c02a98ad3c72d5945a10697454cce4f09581da951",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-dorm-cupboard-enter.png": "288d7e44f359aaca9735f984d40d1511264162e32c13e426f583b02f5389e2f6",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-dorm-cupboard-inside.png": "c4195693cc0cd79c4ab782089a7fd0358dff6f534d02c43def9cc154b1755b87",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-lab-cupboard-enter.png": "c5c397fbf52a6a4ae58288d0ed4e40a660220fdbd29b36a9e9346605493dd25c",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-lab-cupboard-inside.png": "f96491bcd305fd1aa53e74ac43e770d1b8fa6b8f66fbba8b8379602b2ae466ba",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-shelter-cupboard-enter.png": "47313295011f7ab4f6a073d7ae79fc2caa093fb918bb690c563dbeb174fe14f7",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/opengl/northwatch-shelter-cupboard-inside.png": "55454f3091c26e1ff8b260033af20ffc78394f2c41145dea8c09ff1895971997",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/construction.json": "e8fd2aa338cf5f46527d0a90417b51a5c9474dffb2a882044f10b69c2dc907a5",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/door-schedule.tsv": "bae0309561e6cf98b90d741d13a8f7f91a9c9e7da4ce7a4e6f5e82f0d51ac11d",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/refuges-opengl.tsv": "bd46b19e6466c55f042e509ba24428c6be805f7cf6871dbda985e408de181e78",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/refuges-software.tsv": "fdd703e74e03c4100ef264faf1ce7c92e67ed4c0451c496b35d1c6987e7effd9",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/retained-route-datums.tsv": "473412764f097f10ccb3b1485f02d170de54bff53cc8e47098efad44423e9a06",
+    "development/levels/rebuild/northwatch-refuge-pass/wld-08/runtime-input.tsv": "123aaa618b57a10d19bd5e7a5e6bf565699bded075dce6ba54118ebaaf275eff"
+  },
+  "native_scene_revision": "4590b1b872769d9c27b1f117dffee20daf4a5484a7f5238b7846033ee74634c3",
+  "refuges": 3,
+  "supported_floor_contacts": 36,
+  "protected_floor_samples_per_renderer": 207,
+  "clear_interior_metres": {
+    "width": 1.58,
+    "depth": 1.14,
+    "height": 2.02
+  },
+  "renderers": [
+    "Software",
+    "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+  ],
+  "checks": {
+    "scene_revision": "4590b1b872769d9c27b1f117dffee20daf4a5484a7f5238b7846033ee74634c3",
+    "renderer": "Software",
+    "body_contacts_at_perimeter": "1302",
+    "jump_height_contacts": "1302",
+    "standing_optical_contacts": "651",
+    "supported_crossings_blocked": "1172",
+    "original_invisible_edges_with_exterior_ground": "3",
+    "canonical_ramp_retreat_both_postures": "PASS",
+    "measured_tread_datums": "6",
+    "walked_authored_links_and_journeys_both_postures": "23",
+    "working_doors": "16",
+    "connected_supported_owners": "15",
+    "optics_object_passage_room_acoustics_and_replica_state": "PASS",
+    "four_peer_van_to_generator_two_aimed_doors": "PASS",
+    "northwatch-dorm-cupboard_protected_floor_samples": "69",
+    "northwatch-lab-cupboard_protected_floor_samples": "69",
+    "northwatch-shelter-cupboard_protected_floor_samples": "69",
+    "northwatch_cover": "3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss",
+    "northwatch-lab-cupboard_live_entry_hide_reveal_exit": "PASS",
+    "northwatch-dorm-cupboard_live_entry_hide_reveal_exit": "PASS",
+    "northwatch-shelter-cupboard_live_entry_hide_reveal_exit": "PASS"
+  },
+  "remaining_acceptance": [
+    "Electrical and other building systems",
+    "Normal furnishings and case actions",
+    "Named dispatch, detailed finish and release acceptance"
+  ]
+}

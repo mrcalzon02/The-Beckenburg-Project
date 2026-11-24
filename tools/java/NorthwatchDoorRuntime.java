@@ -3,6 +3,7 @@ package org.beckenburg;
 import java.nio.file.Path;
 import java.util.List;
 import org.beckenburg.LevelDefinition.Portal;
+import org.beckenburg.LevelDefinition.Socket;
 import org.beckenburg.LevelDefinition.Vec;
 import org.beckenburg.NativeSchoolInteriorReview.Peer;
 
@@ -23,13 +24,13 @@ final class NorthwatchDoorRuntime {
                 case 854 -> "lower-tunnel-door";
                 default -> null;
             };
-            if(label!=null)NativeSchoolInteriorReview.render(map,frame.portal(),
+            if(label!=null&&captures!=null)NativeSchoolInteriorReview.render(map,frame.portal(),
                 captures.resolve(label+"-closed.png"),-frame.swingDirection());
             map.toggleDoor(frame.portal().id(),System.nanoTime()-2_000_000_000L);
             replica.applyDoorSnapshot(map.doorSnapshot());
             NativeSchoolInteriorReview.audit(map,frame,true);
             NativeSchoolInteriorReview.audit(replica,frame,true);
-            if(label!=null)NativeSchoolInteriorReview.render(map,frame.portal(),
+            if(label!=null&&captures!=null)NativeSchoolInteriorReview.render(map,frame.portal(),
                 captures.resolve(label+"-open.png"),-frame.swingDirection());
             System.out.println("PASS Northwatch fitted "+frame.frameId());
         }
@@ -58,13 +59,7 @@ final class NorthwatchDoorRuntime {
             var witness=new Peer(host,false,"Door observer");
             var crew=new Peer(host,false,"Station crew");
             var ghost=new Peer(host,true,"Station ghost")) {
-            for(var peer:List.of(leader,witness,crew,ghost)) {
-                peer.awaitExact("SITE|USER|"+level.revision());
-                peer.client.ready();
-            }
-            leader.awaitExact("LOBBY|3|HUMAN|4|WAITING");
-            leader.client.start();
-            leader.await("INFO|mission started");
+            start(level,leader,List.of(leader,witness,crew,ghost));
             leader.client.view3D();
             leader.awaitExact("ACCEPT|VIEW3D");
             var at=NativeSchoolInteriorReview.body(leader.await("BODY|0|"));
@@ -78,6 +73,56 @@ final class NorthwatchDoorRuntime {
             require(map.roomAt(at.x(),at.y(),at.z())==5&&"generator".equals(map.architecturalRoomAt(at.x(),at.y(),at.z())),
                 "The live van approach missed the real generator receiving floor");
         }
+    }
+
+    static void liveCover(LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception {
+        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        var contract=new CustomContract(3,100,150,100,100,100,100,100,CustomContract.Sprint.LIMITED,100,true,true);
+        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,map);
+            var lab=new Peer(host,false,"Laboratory refuge");
+            var dorm=new Peer(host,false,"Dormitory refuge");
+            var shelter=new Peer(host,false,"Shelter refuge");
+            var ghost=new Peer(host,true,"Station ghost")) {
+            start(level,lab,List.of(lab,dorm,shelter,ghost));
+            var hunters=List.of(lab,dorm,shelter);
+            int[] owners={0,1,9};
+            for(int seat=0;seat<owners.length;seat++){
+                var hunter=hunters.get(seat);
+                int owner=owners[seat];
+                Socket pocket=level.socket("hide",owner);
+                require(pocket!=null,"Refuge is missing in owner "+owner);
+                for(int room:NativeSchoolInteriorReview.missionRoute(map,owner)){
+                    hunter.client.move(room);
+                    hunter.awaitExact("ACCEPT|MOVE|"+room);
+                }
+                hunter.client.view3D();
+                hunter.awaitExact("ACCEPT|VIEW3D");
+                var at=NativeSchoolInteriorReview.body(hunter.await("BODY|"+seat+"|"));
+                var outside=LevelClosets.world(pocket,0,0,1.24);
+                var inside=LevelClosets.world(pocket,0,0,.22);
+                at=CemeteryRefugeReview.walk(hunter,seat,at,outside);
+                require(!SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Cover starts before "+pocket.id());
+                at=CemeteryRefugeReview.walk(hunter,seat,at,inside);
+                require(SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"No cover after crossing "+pocket.id());
+                hunter.client.hide();
+                hunter.awaitExact("HIDING|1");
+                hunter.client.hide();
+                hunter.awaitExact("HIDING|0");
+                at=CemeteryRefugeReview.walk(hunter,seat,at,outside);
+                require(!SafeAreaBarrier.protectedAt(map,at.x(),at.y(),at.z()),"Cover extends beyond "+pocket.id());
+                report.add(pocket.id()+"_live_entry_hide_reveal_exit\tPASS");
+            }
+        }
+    }
+
+    private static void start(LevelDefinition level,Peer leader,List<Peer> peers)throws Exception {
+        for(var peer:peers) {
+            peer.awaitExact("SITE|USER|"+level.revision());
+            peer.client.ready();
+        }
+        leader.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+        leader.client.start();
+        leader.await("INFO|mission started");
     }
 
     private static Vec open(HouseMap map,HouseMap replica,NativeInvestigationScene scene,Peer leader,Peer witness,

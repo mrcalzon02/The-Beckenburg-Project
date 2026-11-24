@@ -7679,6 +7679,17 @@
       "action": "Fit the canonical operating leaves on the measured receiving faces, map supported rooms and stair bays and replay the actual narrow approach in TCP.",
       "older_maps": "Check fitted leaves at real wall reveals, including supported clearance, acoustics and both network states.",
       "evidence": "development/levels/rebuild/northwatch-door-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-693",
+      "title": "Northwatch lacked full walk-in protection",
+      "status": "NORTHWATCH_STAGED_FULL_WALK_IN_REFUGES_VERIFIED",
+      "affected": "WLD-08 lab, dorm and array shelter",
+      "symptom": "The fitted station had no reachable, physically enclosed hiding space.",
+      "cause": "The staged layout covered supported rooms and doors before the cover volumes were fitted.",
+      "action": "Fit three floor-supported cupboards and verify each full interior, threshold and multiplayer state.",
+      "older_maps": "Verify protection across each refuge floor, at both rear sides and at standing head height.",
+      "evidence": "development/levels/rebuild/northwatch-refuge-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

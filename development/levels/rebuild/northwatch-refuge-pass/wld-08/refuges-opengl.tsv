@@ -1,0 +1,18 @@
+check	result
+scene_revision	4590b1b872769d9c27b1f117dffee20daf4a5484a7f5238b7846033ee74634c3
+renderer	OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+body_contacts_at_perimeter	1302
+jump_height_contacts	1302
+standing_optical_contacts	651
+supported_crossings_blocked	1172
+original_invisible_edges_with_exterior_ground	3
+canonical_ramp_retreat_both_postures	PASS
+measured_tread_datums	6
+walked_authored_links_and_journeys_both_postures	23
+working_doors	16
+connected_supported_owners	15
+optics_object_passage_room_acoustics_and_replica_state	PASS
+northwatch-dorm-cupboard_protected_floor_samples	69
+northwatch-lab-cupboard_protected_floor_samples	69
+northwatch-shelter-cupboard_protected_floor_samples	69
+northwatch_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
