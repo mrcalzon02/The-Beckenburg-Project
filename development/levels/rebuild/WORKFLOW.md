@@ -1551,3 +1551,7 @@ The exact furnished export now loads from the Northwatch solo and LAN entries wi
 ### Blackwater Hydroelectric Dam east bank
 
 The old terrain trench under the catwalk and the overcut outside the lower hall are closed in the saved terrain. The hall wall now bears on a continuous stem and strip footing. The same 13 ordinary links, 13 flights, six complete vertical routes, five joined journeys and 6,087 standing poses pass with all real basement holes retained. The valley extent, controlled water surfaces and gameplay bindings remain open. [Checkpoint](dam-catwalk-ground-pass/checkpoint.json) · [Active roster](dam-catwalk-ground-pass/roster.json)
+
+### Blackwater Hydroelectric Dam isolated downstream water
+
+Fifteen new closed pieces form the founded invert, side walls and terminal bays below the real catwalk. The current water stands 0.36 m deep behind both closed sluices. Two renderers pass exact wet and dry checks, with 42 submerged body controls, 36 blocked boundary rays and six guarded crossing checks. All prior standing, flight and joined route counts still pass. [Plan and section](dam-tailrace-pass/wld-09/channel-plan.svg) · [Checkpoint](dam-tailrace-pass/checkpoint.json)

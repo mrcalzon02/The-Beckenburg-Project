@@ -7789,6 +7789,17 @@
       "action": "Package the exact reviewed source and bind the original campaign entry through the native review selector.",
       "older_maps": "Verify canonical campaign ordinals, exact network revisions, physical routes and bounded case actions in the named host.",
       "evidence": "development/levels/rebuild/northwatch-named-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-703",
+      "title": "Blackwater Dam lacked a contained east-bank water reach",
+      "status": "DAM_FOUNDED_TAILRACE_AND_CONTAINED_WATER_STAGED",
+      "affected": "WLD-09 surveyed bank below the east catwalk",
+      "symptom": "The developed hall and observation gallery faced an unlined ground trough with no physical water boundary.",
+      "cause": "The east-bank source correction retired the obsolete stair cut before the hydraulic geometry was fitted.",
+      "action": "Seat a concrete base and continuous channel walls in the bank, fit two closed terminal sluices, and bind the contained wet volume to the shared render and movement path.",
+      "older_maps": "Verify local water depth, actual bed, perimeter terrain, exclusion controls and access from guarded views.",
+      "evidence": "development/levels/rebuild/dam-tailrace-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12098,
+  "count": 12106,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -112744,6 +112744,86 @@
       "height": 850,
       "bytes": 977055,
       "sha256": "52632d12c40c6892261da9042e4b7c72e00775fb305059941ec0158d61851c56"
+    },
+    {
+      "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/opengl/dam-tailrace-downstream.png",
+      "url": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/opengl/dam-tailrace-downstream.png",
+      "title": "Dam tailrace downstream",
+      "kind": "Blackwater Dam contained downstream water in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 288412,
+      "sha256": "cf06e3a127d4c8d3cc9c7577ed9b29bd7052f541fc832872dec938a5881ee61c"
+    },
+    {
+      "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/opengl/dam-tailrace-dry-control.png",
+      "url": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/opengl/dam-tailrace-dry-control.png",
+      "title": "Dam tailrace dry control",
+      "kind": "Blackwater Dam dry renderer control in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 277073,
+      "sha256": "700f1beabf35846398cdc04d3385888d2719c4188181ea18c58f100614f469f0"
+    },
+    {
+      "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/opengl/dam-tailrace-from-guard.png",
+      "url": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/opengl/dam-tailrace-from-guard.png",
+      "title": "Dam tailrace from guard",
+      "kind": "Blackwater Dam contained downstream water in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 313718,
+      "sha256": "b18fba74a1833bcc7c17c84d05bc89bbdcbe0f11eb3b636b0f7327718b3aca1b"
+    },
+    {
+      "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/software/dam-tailrace-downstream.png",
+      "url": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/software/dam-tailrace-downstream.png",
+      "title": "Dam tailrace downstream",
+      "kind": "Blackwater Dam contained downstream water in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 293030,
+      "sha256": "e4225726136a0ca8e2ff1cd43ab41ea88ef7b691e57e3099bb0a3ca278ddff8d"
+    },
+    {
+      "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/software/dam-tailrace-dry-control.png",
+      "url": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/software/dam-tailrace-dry-control.png",
+      "title": "Dam tailrace dry control",
+      "kind": "Blackwater Dam dry renderer control in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 282661,
+      "sha256": "3914664582c225c5b9c29799a8bb0a1174c70589d82ead347eaf82c2ed48aefd"
+    },
+    {
+      "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/software/dam-tailrace-from-guard.png",
+      "url": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/software/dam-tailrace-from-guard.png",
+      "title": "Dam tailrace from guard",
+      "kind": "Blackwater Dam contained downstream water in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 316254,
+      "sha256": "55fdf4c35a443e4880639c2f07375d1225e5a37bf25494bbbd741cd68aa6e9bf"
+    },
+    {
+      "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/structure/east-bank-stilling-channel.png",
+      "url": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/structure/east-bank-stilling-channel.png",
+      "title": "East bank stilling channel",
+      "kind": "Blackwater Dam cast downstream channel structural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 856549,
+      "sha256": "dddc1987c263ec28e197e94b6fc0df1a23bf584e9d45f3589fab8ae30b77eaa8"
+    },
+    {
+      "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/structure/stilling-channel-cast-invert.png",
+      "url": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/structure/stilling-channel-cast-invert.png",
+      "title": "Stilling channel cast invert",
+      "kind": "Blackwater Dam cast downstream channel structural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 862708,
+      "sha256": "e6ce9d1cc735cdb04d4728e6e14d750e28781f3cb423d73abe8d0dbd26d3c975"
     },
     {
       "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-cargo-approach.png",

@@ -1,0 +1,65 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-09": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 6087,
+        "valid_standing": 6087,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-09": {
+      "before": {
+        "contract": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/construction.json",
+        "contract_sha256": "18b1861ae2fb5685d5cd30622287992001280650ee41c66eab611920f4740e6b",
+        "layout": "development/levels/rebuild/dam-east-hall-pass/wld-09/authored-layout.json",
+        "layout_sha256": "85081e1de6fd6282c514f20e07f91b10e4126d6b37e04dd7879099412d6d6576",
+        "native": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/east-bank.hcs2",
+        "native_sha256": "189ab11673f922d085b2d0c25468b9b0392878885d6698ac5a4f07e0065a5db5"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/dam-tailrace-pass/wld-09/construction.json",
+        "contract_sha256": "b965f9b8d56a839ad6733855733fca5256021175b3524981bb838e2bdbbcee43",
+        "layout": "development/levels/rebuild/dam-east-hall-pass/wld-09/authored-layout.json",
+        "layout_sha256": "85081e1de6fd6282c514f20e07f91b10e4126d6b37e04dd7879099412d6d6576",
+        "native": "development/levels/rebuild/dam-tailrace-pass/wld-09/tailrace.hcs2",
+        "native_sha256": "a96d1cbbafd3d5e42c0dff7feb4f1db74e0c06699cfbd944e7a4e073a91cc6c0"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "4292ef0f20d33a73506f593e76d3cf6d12b15acb64ec9295c4f3d44dcc0710de",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/dam-catwalk-ground-pass/roster.json": "7d1efd7d8fa8a8a6e98136d82759852de24d23d408386acadc2309241305b983"
+  },
+  "evidence_hashes": {
+    "build/dam-tailrace-audit/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "build/dam-tailrace-audit/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "build/dam-tailrace-audit/flat/current-flat-lane-input.tsv": "cb12da5c8e10d09465d6b221e0ea459182d668c57dd9868abe6109a4f4d40d75",
+    "build/dam-tailrace-audit/flat/current-flat-lane-names.tsv": "5412d86f0a37b58929448073a50404451889a28b5bffe74b7a32eca2a70205b3",
+    "build/dam-tailrace-audit/flat/current-flat-lanes.tsv": "e244c9cf9760951bfbca711637949f753f3da83a458b79cf79336c5f4c10d647",
+    "build/dam-tailrace-audit/flat/current-flat-links.tsv": "9697a68856bc646dbb36def8e8e2519b18b8f331229b14b2d029c9e7f31213f3",
+    "build/dam-tailrace-audit/flat/current-flat-names.tsv": "5412d86f0a37b58929448073a50404451889a28b5bffe74b7a32eca2a70205b3",
+    "build/dam-tailrace-audit/flat/current-flat-paths.tsv": "bfc0fc6fc289adc09c0af1178b6bfc68a99c7ab32c31339cd21354fddf765a64"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

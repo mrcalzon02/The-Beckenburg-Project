@@ -2291,3 +2291,7 @@ The furnishing commit 5d73a47ddf5737075122a92c85a00589bc21d23a and gallery 45407
 ### Blackwater Dam east bank civil repair
 
 Northwatch named commit 79cf1ba03b05b3e14c2f3aeefa31ef9c329bbf8b and gallery 45411131828 passed on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d still carries successful full multiplayer 44863686526 and GPU 44863686455. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. The [Dam east bank checkpoint](levels/rebuild/dam-catwalk-ground-pass/checkpoint.json) verifies the saved excavation repair, founded wall, retained architecture and native route regressions. Next fit the wider water and site boundaries before named runtime promotion.
+
+### Blackwater Dam isolated downstream water
+
+East bank commit eccc4e64925a5724fef3bfd3ac22a38f5da63a1d and gallery 45414330303 passed on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d remains at the prior verified recovery baseline. The [downstream checkpoint](levels/rebuild/dam-tailrace-pass/checkpoint.json) fits and verifies the physically isolated water reach in both game renderers and native movement. Continue the covered connection, upstream reservoir, wider valley and playable site limits before named runtime promotion.

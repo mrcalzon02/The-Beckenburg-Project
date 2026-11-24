@@ -9202,3 +9202,7 @@ The original WLD-08 selection now loads the reviewed furnished station with its 
 ### DEV-537 follow-up · Blackwater Dam east bank restored
 
 The saved topology restores the old exterior stair trench and the overshoot beside the east hall wall. The real basement stays open through the editor's existing terrain-hole system. A planted stem and footing now connect the lower wall to the bank. The wider downstream landform and water are tracked under DEV-567. [Evidence](../levels/rebuild/dam-catwalk-ground-pass/checkpoint.json)
+
+### DEV-703 · Blackwater Dam needed a contained downstream reach
+
+The restored east bank now supports a cast channel and two fitted closed sluices. Shared software and OpenGL checks verified the wet invert, dry negative control, retaining faces and guarded catwalk. The upstream connection, reservoir and farther downstream terrain remain part of the Dam’s open civil layout. [Evidence](../levels/rebuild/dam-tailrace-pass/checkpoint.json)
