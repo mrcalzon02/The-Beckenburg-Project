@@ -7019,6 +7019,28 @@
       "action": "Finish the new head at 3.84 m, retain the ceiling cap and seat the replacement eave enclosure at 4.00 m. Verify the roof edge closure across the seam heights.",
       "older_maps": "Inspect fitted fascia and ceiling-cap ends for overlapping planes and retain continuous enclosure at the corrected interface.",
       "evidence": "development/levels/rebuild/prison-vehicle-sally-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-633",
+      "title": "The measured Asylum admission door frames lacked operable leaves",
+      "status": "CORRECTED_IN_NATIVE_ADMISSION_STAGE",
+      "affected": "Asylum admission, interview, records and ward spine",
+      "symptom": "The four physical openings had no movable closure for the native investigation scene.",
+      "cause": "The earlier construction checkpoint surveyed and installed frames before gameplay door fitting.",
+      "action": "Fit six canonical leaves to the four measured jambs. Replay complete supported approaches and the paired states in two separate native game worlds.",
+      "older_maps": "Audit circulation through fitted independent doors after retaining any settled terrain and room structure.",
+      "evidence": "development/levels/rebuild/asylum-admission-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-634",
+      "title": "Asylum van apron carried cargo extraction ownership onto open paving",
+      "status": "CORRECTED_IN_STAGED_ADMISSION_ROOM_BINDING",
+      "affected": "Asylum canonical van and apron",
+      "symptom": "The authored apron envelope used the same gameplay owner as actual van extraction.",
+      "cause": "A reservation for the van parcel was carried into gameplay room labels before fitting the physical vehicle.",
+      "action": "Bind apron ground to exterior owner 13 and keep extraction owner 14 on the actual van. Walk the existing ramp both ways and test ownership at each side.",
+      "older_maps": "Check extraction ownership on the physical deck and outside land beside any canonical van.",
+      "evidence": "development/levels/rebuild/asylum-admission-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

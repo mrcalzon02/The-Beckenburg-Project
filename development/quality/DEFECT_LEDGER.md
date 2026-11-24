@@ -8862,6 +8862,26 @@ Finish the new head at 3.84 m, retain the ceiling cap and seat the replacement e
 
 Inspect fitted fascia and ceiling-cap ends for overlapping planes and retain continuous enclosure at the corrected interface. [DEV-632 evidence](../levels/rebuild/prison-vehicle-sally-pass/checkpoint.json)
 
+### DEV-633 The measured Asylum admission door frames lacked operable leaves
+
+**Status** CORRECTED_IN_NATIVE_ADMISSION_STAGE · **Affected** Asylum admission, interview, records and ward spine
+
+The four physical openings had no movable closure for the native investigation scene.
+
+Fit six canonical leaves to the four measured jambs. Replay complete supported approaches and the paired states in two separate native game worlds.
+
+Audit circulation through fitted independent doors after retaining any settled terrain and room structure. [DEV-633 evidence](../levels/rebuild/asylum-admission-pass/checkpoint.json)
+
+### DEV-634 Asylum van apron carried cargo extraction ownership onto open paving
+
+**Status** CORRECTED_IN_STAGED_ADMISSION_ROOM_BINDING · **Affected** Asylum canonical van and apron
+
+The authored apron envelope used the same gameplay owner as actual van extraction.
+
+Bind apron ground to exterior owner 13 and keep extraction owner 14 on the actual van. Walk the existing ramp both ways and test ownership at each side.
+
+Check extraction ownership on the physical deck and outside land beside any canonical van. [DEV-634 evidence](../levels/rebuild/asylum-admission-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

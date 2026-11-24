@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11382,
+  "count": 11390,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -81804,6 +81804,86 @@
       "height": 933,
       "bytes": 695401,
       "sha256": "f9f55b46a957e4ab59055859cbee35a1ed0c46a2445cadfc384de5ef9bd879e6"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/asylum-470-closed.png",
+      "url": "development/levels/rebuild/asylum-admission-pass/captures/asylum-470-closed.png",
+      "title": "Asylum 470 closed",
+      "kind": "Asylum staged admission thresholds in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 402360,
+      "sha256": "8b62947e3b2b3b506fb6b87e10e2f6017edc1195499a5efa217421225505de62"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/asylum-470-open.png",
+      "url": "development/levels/rebuild/asylum-admission-pass/captures/asylum-470-open.png",
+      "title": "Asylum 470 open",
+      "kind": "Asylum staged admission thresholds in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 357536,
+      "sha256": "101b751781e149013bed379d567ae941ad098bfce431350a5742b85e4d211f54"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/asylum-473-closed.png",
+      "url": "development/levels/rebuild/asylum-admission-pass/captures/asylum-473-closed.png",
+      "title": "Asylum 473 closed",
+      "kind": "Asylum staged admission thresholds in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 400155,
+      "sha256": "2c219060be024ab432bdf72d2633fb8ef52abd6dc3702cbe1dee58a42f8e7ab0"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/asylum-473-open.png",
+      "url": "development/levels/rebuild/asylum-admission-pass/captures/asylum-473-open.png",
+      "title": "Asylum 473 open",
+      "kind": "Asylum staged admission thresholds in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 358438,
+      "sha256": "eb398ae651e7261c89f7305dba7c5a4fbc2000d73222e409e0bce0a351dca1b0"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-470-closed.png",
+      "url": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-470-closed.png",
+      "title": "Asylum 470 closed",
+      "kind": "Asylum staged admission thresholds in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 404983,
+      "sha256": "78bf58ac488e4e8f90fcd432bb724a990be8334d6d2723816c9bbef12a4dba6f"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-470-open.png",
+      "url": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-470-open.png",
+      "title": "Asylum 470 open",
+      "kind": "Asylum staged admission thresholds in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 349498,
+      "sha256": "1c8ea96f60bbf99bd854af8eed29eb155fc0d30c3962b53641be0433f666d3bf"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-473-closed.png",
+      "url": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-473-closed.png",
+      "title": "Asylum 473 closed",
+      "kind": "Asylum staged admission thresholds in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 403152,
+      "sha256": "e82bd2c2b4052f3b15d3ec8b0cdd633c7347555dad110e5d3ca8d0a912b5b659"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-473-open.png",
+      "url": "development/levels/rebuild/asylum-admission-pass/captures/opengl/asylum-473-open.png",
+      "title": "Asylum 473 open",
+      "kind": "Asylum staged admission thresholds in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 350693,
+      "sha256": "984bfebf09986b4dd47d6f08f1b344bc245f61a69d282120a6b8c6eb7431fd0d"
     },
     {
       "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-after.png",

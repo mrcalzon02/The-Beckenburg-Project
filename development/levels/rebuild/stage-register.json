@@ -403,7 +403,8 @@
             "development/levels/rebuild/floor-closure-pass/asylum/construction.json",
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
-            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json"
+            "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
+            "development/levels/rebuild/asylum-admission-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -422,9 +423,10 @@
             "DEV-410",
             "DEV-414",
             "DEV-415",
-            "DEV-416"
+            "DEV-416",
+            "DEV-634"
           ],
-          "next_action": "Resolve remaining35stairsegments/35complete links from actual failed contacts across the roster; finish structure/terrain/retaining/cave/roof identity and all join/circuit light checks. Current additive floor/cap repairs preserve passing movement and source models; migrate frozen broad-bounds producers before direct promotion. Complete shared-coordinate native runtime integration and canonical van/power/hiding/story; preserve40space policy and true earth punches."
+          "next_action": "Continue the full site movement survey through the patient court, service stair and usable end of each wing."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -456,11 +458,15 @@
           "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
         },
         "S05": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/asylum-admission-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-633"
+          ],
+          "next_action": "Fit other measured thresholds and verify their structural closure, services and connected mission graph."
         },
         "S06": {
           "status": "NOT_AUDITED",

@@ -2077,3 +2077,10 @@ Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with passing full multipla
 The [vehicle facade checkpoint](levels/rebuild/prison-vehicle-sally-pass/checkpoint.json) replaces the improvised personnel gap with a grounded vehicle bay, complete lintel and separated eave seat. Its gate can be released from either side during a real ghost outage. The host refused to close on an occupying hunter. Retained yard, plant, concealment and route checks passed. Remaining Prison intake, complete case progression and promotion stay open.
 
 Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with passing full multiplayer 44863686526 and GPU 44863686455. Installer 44863580794 passed at c238cff07d73d4e326b220521974aca5494078ed. The preceding Prison hiding checkpoint 565fcdbe803ff3175692d898673ab92f6ba738f8 passed gallery 45317495751. The held parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.
+
+
+## Asylum admission and grounded van approach
+
+The [Asylum admission checkpoint](levels/rebuild/asylum-admission-pass/checkpoint.json) advances four measured openings to fitted native doors and verifies the actual canonical van route. All 16 scoped physical route replays passed, and software and RTX 5070 viewed the same staged layout. Remaining Asylum work covers patient and service wings, room binding and normal dispatch.
+
+Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with passing full multiplayer 44863686526 and GPU 44863686455. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. Prison vehicle facade checkpoint 5120d6e1b949fead94bc45eee1fb8e609cf7d91d passed gallery 45319497284. The held parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.
