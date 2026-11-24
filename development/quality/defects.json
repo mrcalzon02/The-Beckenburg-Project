@@ -7140,6 +7140,17 @@
       "action": "Fit the canonical safety-rail bays entirely onto the three receiving slab edges and preserve the full top landing. Test native guard collision and actual body traversal.",
       "older_maps": "Inspect slab openings and guard receivers individually, especially retained stairs with earlier route construction.",
       "evidence": "development/levels/rebuild/asylum-upper-spine-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-644",
+      "title": "Asylum main flight had no inclined handrails",
+      "status": "MAIN_FLIGHT_TREAD_MOUNTS_AND_GUARDS_VERIFIED",
+      "affected": "Asylum L77 main stair",
+      "symptom": "The flight edges had bare treads even after the upper slab edges were guarded.",
+      "cause": "The original stair construction provided treads and deck guard placement separately.",
+      "action": "Mount twelve posts to real treads and connect both inclined rail lines into the existing landing guards. Verify exact supports, clearance and live traversal.",
+      "older_maps": "Inspect tread mounts and continuity where stairs meet guarded landings.",
+      "evidence": "development/levels/rebuild/asylum-flight-rails-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

@@ -8956,3 +8956,9 @@ Seven fitted rail bays now stand on the three exposed edges. Native standing
 and crouched hull tests hit the guards, and a four-peer packaged replay
 confirmed the side stop and normal movement down and back up the stair.
 [Evidence](../levels/rebuild/asylum-upper-spine-pass/checkpoint.json)
+
+### DEV-644 Asylum main flight had no inclined handrails
+
+Six posts per side now bear on the measured treads. The rails return into the
+upper guard and expose a 1.42 m clear flight between post faces. Native route
+and exact packaged LAN replays passed. [Evidence](../levels/rebuild/asylum-flight-rails-pass/checkpoint.json)

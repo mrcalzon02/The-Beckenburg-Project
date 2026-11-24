@@ -450,7 +450,8 @@
             "development/levels/rebuild/terrain-fit-pass/README.md",
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
-            "development/levels/rebuild/verification/atmosphere-all-levels/README.md"
+            "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
+            "development/levels/rebuild/asylum-flight-rails-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-390",
@@ -460,9 +461,10 @@
             "DEV-394",
             "DEV-395",
             "DEV-396",
-            "DEV-398"
+            "DEV-398",
+            "DEV-644"
           ],
-          "next_action": "Construct actual missing decks and resolve overall terrain/structure/stair relationships, shared coordinates, foundation/retaining/pile/cave/water/physical edges and canonical van arrival. Bearing additions preserve every baseline passing flat/vertical direction; existing36vertical segments/37complete links and989withheld contacts remain open. Source models/masters/punches preserved; no runtime unlock."
+          "next_action": "Main stair has full inclined handrails and its upper slab is guarded. Continue peripheral and cellar stair audits."
         },
         "S05": {
           "status": "IN_PROGRESS",
@@ -541,12 +543,13 @@
             "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json",
             "development/levels/rebuild/asylum-power-pass/checkpoint.json",
             "development/levels/rebuild/asylum-interior-door-pass/checkpoint.json",
-            "development/levels/rebuild/asylum-upper-spine-pass/checkpoint.json"
+            "development/levels/rebuild/asylum-upper-spine-pass/checkpoint.json",
+            "development/levels/rebuild/asylum-flight-rails-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-637"
           ],
-          "next_action": "Retain the verified full stair movement and power/cover replays. Repeat case actions and verify rescue on the final map for release."
+          "next_action": "Ward evidence, guarded banishment and physical extraction and team reunion replayed on the exact source. Continue remaining rite, camera, solo and release checks."
         }
       },
       "arrival_bearing_pass": {

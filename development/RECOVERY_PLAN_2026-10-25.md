@@ -2119,3 +2119,10 @@ standing movement through the existing flight. The preceding ground-spine
 commit 26b65468996d7419f75bf867ce0417cd249a1790 passed gallery 45326514299.
 Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with multiplayer 44863686526
 and GPU 44863686455 passing. Continue peripheral enclosures and final case acceptance.
+
+The [Asylum main stair and case checkpoint](levels/rebuild/asylum-flight-rails-pass/checkpoint.json)
+fits both inclined rails and preserves the live stair movement and supported
+openings. The exact package also passed ward EMF, guarded banishment, forecourt
+rendezvous and authoritative cargo retreat. Previous upper-spine commit
+1ab063f52cd69f6a75f9afa83554fb4d9f798145 passed gallery 45328610063.
+The remaining site enclosures, camera/solo validation and release stay open.

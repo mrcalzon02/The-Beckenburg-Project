@@ -102,6 +102,7 @@ final class NativeAsylumEntryReview {
         if(upperMasonry){
             auditMainStairGuards(map,table(root.resolve("guard-runs.tsv")),report);
             auditMainStair(map,captures,report);
+            auditFlightHandrails(map,table(root.resolve("handrail-supports.tsv")),captures,report);
         }
         for(var cupboard:HidingBudget.candidates(map.level()))captureCupboard(map,cupboard,captures);
         if(powered)NativeSchoolInteriorReview.auditPower(map,captures,report,"asylum",new Vec(40,-3,27.25),Math.PI);
@@ -216,6 +217,22 @@ final class NativeAsylumEntryReview {
             throw new AssertionError("Main stair misses upper landing "+at);
         captureStanding(map,new Vec(32,3.4,28.7),Math.PI,-.36,captures.resolve("asylum-upper-main-stair.png"));
         report.add("upper_main_stair_headroom\t3 supported upper openings and "+probes+" clear 2.20 m vertical probes");
+    }
+
+    private static void auditFlightHandrails(HouseMap map,List<String[]> rows,Path captures,List<String> report)throws Exception{
+        if(rows.isEmpty())return;
+        if(rows.size()!=13)throw new AssertionError("Expected six mounted posts per stair side");
+        var physics=map.nativeInvestigation().physics();
+        for(var row:rows.subList(1,rows.size())){
+            double x=d(row,2),y=d(row,3),z=d(row,4);
+            var support=physics.support(x,z,y,.04);
+            if(support==null||Math.abs(support.y()-y)>.02||!physics.bodyBlocked(new Vec(x,y+.04,z),1.1,.20))
+                throw new AssertionError("Flight post lacks support or collision at "+x+" "+y+" "+z);
+        }
+        for(double x:new double[]{31.62,32.38})
+            verifyWalk(map,List.of(new Vec(x,0,21.1),new Vec(x,3.4,28.2)),"full flight inside rail at X"+x);
+        captureStanding(map,new Vec(32,0,21.1),0,.20,captures.resolve("asylum-main-stair-lower.png"));
+        report.add("flight_handrails\t12 collidable tread-mounted posts; 8 full flight replays inside both rail lines");
     }
 
     private static void captureStanding(HouseMap map,Vec camera,double yaw,double pitch,Path target)throws Exception{

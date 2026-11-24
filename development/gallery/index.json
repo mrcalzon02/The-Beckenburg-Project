@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11452,
+  "count": 11457,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -81884,6 +81884,56 @@
       "height": 580,
       "bytes": 350693,
       "sha256": "984bfebf09986b4dd47d6f08f1b344bc245f61a69d282120a6b8c6eb7431fd0d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/asylum-main-stair-lower.png",
+      "url": "development/levels/rebuild/asylum-flight-rails-pass/captures/asylum-main-stair-lower.png",
+      "title": "Asylum main stair lower",
+      "kind": "Asylum finished main stair flight in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 389661,
+      "sha256": "c2bbd14c8e5fbe697bb05d4bbf4ce43d45c9ba6fd19730d3b2edb83f41596d2d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/asylum-upper-main-stair.png",
+      "url": "development/levels/rebuild/asylum-flight-rails-pass/captures/asylum-upper-main-stair.png",
+      "title": "Asylum upper main stair",
+      "kind": "Asylum finished main stair flight in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 377744,
+      "sha256": "9b82fac03db16c4ff2f6ad0baec6217f66d77b9d3ff745393de9072a2fcca12e"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/opengl/asylum-main-stair-lower.png",
+      "url": "development/levels/rebuild/asylum-flight-rails-pass/captures/opengl/asylum-main-stair-lower.png",
+      "title": "Asylum main stair lower",
+      "kind": "Asylum finished main stair flight in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 388539,
+      "sha256": "25dc700343682d61f4cbdcb88b0d2d03308a641f28a080d1a01b7e2c178c2fbf"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/opengl/asylum-upper-main-stair.png",
+      "url": "development/levels/rebuild/asylum-flight-rails-pass/captures/opengl/asylum-upper-main-stair.png",
+      "title": "Asylum upper main stair",
+      "kind": "Asylum finished main stair flight in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 377680,
+      "sha256": "9663db0e71ec50c2aa8d35a72ea22ed710428adc008a44d687e7f2571e321c55"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/structure/asylum-flight-sectional.png",
+      "url": "development/levels/rebuild/asylum-flight-rails-pass/captures/structure/asylum-flight-sectional.png",
+      "title": "Asylum flight sectional",
+      "kind": "Asylum main stair handrail structural cutaway",
+      "width": 1440,
+      "height": 710,
+      "bytes": 693032,
+      "sha256": "f5343402ae0888b2f895bce91caeeba3213a2f23b2e5a9d68112105cab227771"
     },
     {
       "path": "development/levels/rebuild/asylum-interior-door-pass/captures/asylum-476-closed.png",

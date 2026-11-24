@@ -48,8 +48,8 @@ final class AsylumNativeLevel {
                 var schedule=resource("door-survey.tsv");
                 var mission=resource("mission.tsv");
                 var services=resource("services.tsv");
-                var model=resource("upper-spine.glb");
-                var collision=resource("upper-spine.hcs2")){
+                var model=resource("stair.glb");
+                var collision=resource("stair.hcs2")){
                 var source=read(rows(arrival),rows(schedule),rows(mission),rows(services),model,collision);
                 var level=source.definition();
                 if(source.doors().size()!=13||level.portals().size()!=17||level.socket("breaker",11)==null

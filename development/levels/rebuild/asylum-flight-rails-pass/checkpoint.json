@@ -1,0 +1,178 @@
+{
+  "status": "ASYLUM_MAIN_STAIR_HANDRAILS_AND_CASE_ACTIONS_PACKAGED_OPT_IN",
+  "prior_commit": "1ab063f52cd69f6a75f9afa83554fb4d9f798145",
+  "native_scene_revision": "7a223b693831b0c377fde72b5067194ca26c3d0f2a9ad581d76fd9cbd2307ac3",
+  "source_authority": {
+    "id": "ASYLUM",
+    "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/construction.json",
+    "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/authored-layout.json",
+    "glb": "development/levels/rebuild/asylum-flight-rails-pass/asylum-stair.glb",
+    "native": "development/levels/rebuild/asylum-flight-rails-pass/asylum-stair.hcs2",
+    "blend": "development/levels/rebuild/asylum-flight-rails-pass/asylum-stair.blend",
+    "glb_sha256": "85f7cf05de5e141711c6db1352660d0def6e58282deae4992ab402c270c00505",
+    "native_sha256": "d8fbb7332bba00af36b27509a4ee92221638091881c19f06963faf588b625160",
+    "fitted_leaf_editor_scene": "development/levels/rebuild/asylum-flight-rails-pass/asylum-stair-fitted.blend",
+    "staged_native_door_schedule": "development/levels/rebuild/asylum-flight-rails-pass/door-survey.tsv",
+    "staged_native_door_verification": "development/levels/rebuild/asylum-flight-rails-pass/verification/staged-admission.tsv",
+    "staged_room_bindings": "development/levels/rebuild/asylum-flight-rails-pass/mission.tsv",
+    "blend_sha256": "3cecca234d3547e07c0cafe66e9b5beefd2a1db5251f0c423bc667d103d8fa4b",
+    "staged_services": "development/levels/rebuild/asylum-flight-rails-pass/services.tsv",
+    "staged_electrical_installation": "development/levels/rebuild/asylum-flight-rails-pass/electrical.json",
+    "aperture_measurements": "development/levels/rebuild/asylum-interior-door-pass/architectural-apertures.tsv",
+    "ground_spine_masonry": "development/levels/rebuild/asylum-spine-masonry-pass/masonry.json",
+    "upper_spine_masonry": "development/levels/rebuild/asylum-upper-spine-pass/masonry.json",
+    "main_stair_deck_guards": "development/levels/rebuild/asylum-upper-spine-pass/guards.json",
+    "main_stair_handrails": "development/levels/rebuild/asylum-flight-rails-pass/handrails.json",
+    "staged_case_actions": "development/levels/rebuild/asylum-flight-rails-pass/verification/case-actions.tsv"
+  },
+  "tread_posts": 12,
+  "flight_parts": 20,
+  "tread_contact_rays": 48,
+  "retained_native_records": 869,
+  "clear_flight_width_m": 1.42,
+  "full_flight_lane_replays": 8,
+  "total_physical_routes": 45,
+  "direction_posture_replays": 180,
+  "lan_peers": 4,
+  "verified": [
+    "Six mounted posts on each side connect the pitched handrail and midrail to the existing upper guard.",
+    "Native and visual geometry agree for all 240 new triangles. Both offset flight lanes clear standing and crouched in both directions.",
+    "A live four-peer session reached the guarded landing, travelled down the full flight and returned.",
+    "Separate bounded four-peer sessions verify ward EMF, guarded banishment, forecourt reunion and authoritative cargo retreat accounting.",
+    "Software, RTX 5070 OpenGL and native cutaway captures on the exact source."
+  ],
+  "still_open": [
+    "Remaining peripheral enclosure and finish, other map sites, remaining rite and solo/camera acceptance and release integration."
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/arrival.tsv",
+      "bytes": 9039,
+      "sha256": "50bbc76c4467e7031fe6ee6e3e57b6e01e61ba0c575fe8c58df059103fbc793d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/asylum-stair-fitted.blend",
+      "bytes": 1302096,
+      "sha256": "4e22f2fb66a9def3dcb51250de530135e8d564bd8f7c2dbe0e222a874be54b42"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/asylum-stair.blend",
+      "bytes": 1101637,
+      "sha256": "3cecca234d3547e07c0cafe66e9b5beefd2a1db5251f0c423bc667d103d8fa4b"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/asylum-stair.glb",
+      "bytes": 3792864,
+      "sha256": "85f7cf05de5e141711c6db1352660d0def6e58282deae4992ab402c270c00505"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/asylum-stair.hcs2",
+      "bytes": 1220360,
+      "sha256": "d8fbb7332bba00af36b27509a4ee92221638091881c19f06963faf588b625160"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/door-survey.tsv",
+      "bytes": 1894,
+      "sha256": "d6f57e067cd12eeb7c9771b2773dceeb11336243afa211359a4ff433e542537d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/electrical.json",
+      "bytes": 19755,
+      "sha256": "b0d2fcb0960dbaf07df69c3aa701513607891b9ed86c469efa778f12095e4369"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/guard-runs.tsv",
+      "bytes": 193,
+      "sha256": "7435ff7d71bb6c24a18f9107ab1f660530397b62c6369e9b7381f08e9fd4bd82"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/handrail-supports.tsv",
+      "bytes": 813,
+      "sha256": "60800009bb6ca233731a31dcfc190c62ba6bb10fd83bf6f570e0c822517e54b5"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/handrails.json",
+      "bytes": 357,
+      "sha256": "8827c3cd7c00ab4281cf14f21e90774c6c54a56f010770f7223b2abd5b54a729"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/main-stair-handrail-section.svg",
+      "bytes": 5374,
+      "sha256": "f25699c4587776d7b699e21eb1c195486caef156a8f533656f23f891048f5b60"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/mission.tsv",
+      "bytes": 524,
+      "sha256": "9f5386bc53f4a42ade52f3d3124709def54bc2ebc9d702e5d459a8706e7a0008"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/roster.json",
+      "bytes": 28092,
+      "sha256": "ec0a0f68a0515966582a8ae2ed877d2936773bafc6fa74c9088d45d454068fbc"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/services.tsv",
+      "bytes": 2793,
+      "sha256": "a52718fc89f097dce64efac48c4eb06630d94d3814c87fa03723481eedd4b83f"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/verified-cargo-guide.tsv",
+      "bytes": 186,
+      "sha256": "b48b89d0b671837c6b6edb24ae00b8f0515aa6d70d1c7dbbae5d18781ebb1d13"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/wall-runs.tsv",
+      "bytes": 194,
+      "sha256": "76308e59e9f080aceb18df66978e9e86ccc9e8d6457a03654092c645234ef171"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/verification/case-actions.tsv",
+      "bytes": 471,
+      "sha256": "11f5d16c2a5829e8b4e6b175f2eeeb596767285a8968583143fd712209d1a856"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/verification/editable-door-poses.tsv",
+      "bytes": 606,
+      "sha256": "88789ae0dd140a86d3547cb78ef246f7f2a6b47e0175bec7f16164caefa956e3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/verification/opengl.tsv",
+      "bytes": 2367,
+      "sha256": "5e902bf062e4fb27c45b5cb2ac7a090eb3ce2595d76100d2e19913ca9d0a7575"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/verification/staged-admission.tsv",
+      "bytes": 2931,
+      "sha256": "3ac89196a52595ec5e3c8f313f831f3a0b33c3489d4ad5cc68fc455d61b3f240"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/asylum-main-stair-lower.png",
+      "bytes": 389661,
+      "sha256": "c2bbd14c8e5fbe697bb05d4bbf4ce43d45c9ba6fd19730d3b2edb83f41596d2d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/asylum-upper-main-stair.png",
+      "bytes": 377744,
+      "sha256": "9b82fac03db16c4ff2f6ad0baec6217f66d77b9d3ff745393de9072a2fcca12e"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/opengl/asylum-main-stair-lower.png",
+      "bytes": 388539,
+      "sha256": "25dc700343682d61f4cbdcb88b0d2d03308a641f28a080d1a01b7e2c178c2fbf"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/opengl/asylum-upper-main-stair.png",
+      "bytes": 377680,
+      "sha256": "9663db0e71ec50c2aa8d35a72ea22ed710428adc008a44d687e7f2571e321c55"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-flight-rails-pass/captures/structure/asylum-flight-sectional.png",
+      "bytes": 693032,
+      "sha256": "f5343402ae0888b2f895bce91caeeba3213a2f23b2e5a9d68112105cab227771"
+    }
+  ]
+}

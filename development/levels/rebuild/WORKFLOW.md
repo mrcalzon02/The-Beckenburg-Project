@@ -1410,3 +1410,11 @@ links the exact model and collision, standing views and structural cutaway.
 The packaged four-peer replay refused a step across the guard and completed
 both stair directions. All 45 movement routes and prior door, power and cover
 replays passed on that source.
+
+## Asylum inclined handrails and bounded case actions
+
+The [stair section](asylum-flight-rails-pass/main-stair-handrail-section.svg)
+locates six actual tread mounts on each side. Standing and crouched replays
+passed on both sides of the flight. The [exact checkpoint](asylum-flight-rails-pass/checkpoint.json)
+links the saved model, collision, live staircase replay and bounded ward,
+chapel and team extraction scenarios.

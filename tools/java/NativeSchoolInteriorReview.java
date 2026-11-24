@@ -214,15 +214,19 @@ public final class NativeSchoolInteriorReview {
         }
 
         String await(String prefix)throws Exception{
-            return awaitMatching(row->row.startsWith(prefix),prefix);
+            return await(prefix,5000);
+        }
+
+        String await(String prefix,long timeoutMs)throws Exception{
+            return awaitMatching(row->row.startsWith(prefix),prefix,timeoutMs);
         }
 
         String awaitExact(String frame)throws Exception{
-            return awaitMatching(frame::equals,frame);
+            return awaitMatching(frame::equals,frame,5000);
         }
 
-        private String awaitMatching(java.util.function.Predicate<String> match,String expected)throws Exception{
-            long until=System.nanoTime()+5_000_000_000L;
+        private String awaitMatching(java.util.function.Predicate<String> match,String expected,long timeoutMs)throws Exception{
+            long until=System.nanoTime()+java.util.concurrent.TimeUnit.MILLISECONDS.toNanos(timeoutMs);
             while(System.nanoTime()<until){
                 String row=input.poll(100,java.util.concurrent.TimeUnit.MILLISECONDS);
                 if(row!=null&&(match.test(row)||row.startsWith("REJECT|"))){
