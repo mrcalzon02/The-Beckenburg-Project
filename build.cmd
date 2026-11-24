@@ -140,9 +140,8 @@ if not exist build\classes\org\beckenburg\sites\wld-09 mkdir build\classes\org\b
 for %%S in (dam-with-ventilation.glb dam-with-ventilation.hcs2 runtime-input.tsv door-schedule.tsv electrical-schedule.tsv blackwater.water) do copy /Y development\levels\rebuild\dam-ventilation-pass\wld-09\%%S build\classes\org\beckenburg\sites\wld-09\%%S >nul || exit /b 1
 copy /Y development\levels\rebuild\dam-named-pass\source-hashes.tsv build\classes\org\beckenburg\sites\wld-09\source-hashes.tsv >nul || exit /b 1
 if not exist build\classes\org\beckenburg\sites\wld-10 mkdir build\classes\org\beckenburg\sites\wld-10 || exit /b 1
-for %%S in (monastery-with-landscape.glb monastery-with-landscape.hcs2 door-schedule.tsv electrical-schedule.tsv) do copy /Y development\levels\rebuild\monastery-landscape-pass\wld-10\%%S build\classes\org\beckenburg\sites\wld-10\%%S >nul || exit /b 1
-copy /Y development\levels\rebuild\monastery-loose-pass\wld-10\runtime-input.tsv build\classes\org\beckenburg\sites\wld-10\runtime-input.tsv >nul || exit /b 1
-copy /Y development\levels\rebuild\monastery-loose-pass\source-hashes.tsv build\classes\org\beckenburg\sites\wld-10\source-hashes.tsv >nul || exit /b 1
+for %%S in (monastery-with-perimeter.glb monastery-with-perimeter.hcs2 runtime-input.tsv door-schedule.tsv electrical-schedule.tsv) do copy /Y development\levels\rebuild\monastery-perimeter-pass\wld-10\%%S build\classes\org\beckenburg\sites\wld-10\%%S >nul || exit /b 1
+copy /Y development\levels\rebuild\monastery-perimeter-pass\source-hashes.tsv build\classes\org\beckenburg\sites\wld-10\source-hashes.tsv >nul || exit /b 1
 for %%S in (glb hcs2) do copy /Y development\levels\rebuild\asylum-flight-rails-pass\asylum-stair.%%S build\classes\org\beckenburg\sites\asylum-stair.%%S >nul || exit /b 1
 for %%S in (arrival door-survey mission services) do copy /Y development\levels\rebuild\asylum-flight-rails-pass\%%S.tsv build\classes\org\beckenburg\sites\asylum-%%S.tsv >nul || exit /b 1
 if not exist build\classes\org\beckenburg\models mkdir build\classes\org\beckenburg\models

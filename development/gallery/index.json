@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12618,
+  "count": 12684,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -119484,6 +119484,666 @@
       "height": 620,
       "bytes": 207676,
       "sha256": "503c832bde1e7dd320badb66ab083ef1ff7c2571f78d05eb8b327195488ab7a7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-archive-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-archive-cupboard-enter.png",
+      "title": "Monastery archive cupboard enter",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 489953,
+      "sha256": "8d484812e5bd44c004b16b2bf11f8899d75240d2aaa8a29e1af08e55d4ce2f54"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-archive-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-archive-cupboard-inside.png",
+      "title": "Monastery archive cupboard inside",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 415446,
+      "sha256": "3b5559b4702d5011b96fb351addfca0fdf475a956bd44b44543b2d79f3cef23c"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-archive-reading-table.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-archive-reading-table.png",
+      "title": "Monastery archive reading table",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 392362,
+      "sha256": "52e4ad1d1d0b4a7e161b6a58f94ee92e4046ba127299fce31cd2e133aa671279"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-chamber-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-chamber-cupboard-enter.png",
+      "title": "Monastery chamber cupboard enter",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 474803,
+      "sha256": "10c3346f84e830ef76c52501314de27c8b55ce362ce1f7dad2d6555cc146a834"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-chamber-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-chamber-cupboard-inside.png",
+      "title": "Monastery chamber cupboard inside",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 402423,
+      "sha256": "6987ec4a56ca7a3e442eb3bf9a7a542fdcdf003a58ae5648fd971595897c2e27"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-court-planted-soil.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-court-planted-soil.png",
+      "title": "Monastery court planted soil",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 366740,
+      "sha256": "101d7c4e1a0a179c6f856c679c15592a409c779d9552e8a5e191f1f635e57931"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-court-well-and-raised-beds.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-court-well-and-raised-beds.png",
+      "title": "Monastery court well and raised beds",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 319451,
+      "sha256": "ae9a06f53921b08fe477559dd576a049098ccb6800ba0458a2df5ab23507780a"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-dorm-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-dorm-cupboard-enter.png",
+      "title": "Monastery dorm cupboard enter",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 485981,
+      "sha256": "4d95d582c2ccaf40829c93318afc8dd5ea786ff2bbeb2b6f7590b06e573298c7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-dorm-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-dorm-cupboard-inside.png",
+      "title": "Monastery dorm cupboard inside",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 395650,
+      "sha256": "ac61a9cb2cbea8094ff27254abfc081e331564c5ad50eb47ad2873dbede640ac"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-dormitory-beds.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-dormitory-beds.png",
+      "title": "Monastery dormitory beds",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 388055,
+      "sha256": "d383f366ecc597d1362e0748e8dfe1810a865871c88fa99a0d28a0af687625bf"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-dressed-forecourt.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-dressed-forecourt.png",
+      "title": "Monastery dressed forecourt",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 385084,
+      "sha256": "708d203a5897ff78a19960f8b2cf1bb1f2c55d4c4b56c5d07878c551265a9074"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-dressed-van-approach.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-dressed-van-approach.png",
+      "title": "Monastery dressed van approach",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 477755,
+      "sha256": "89a55f78106e1074dd57f5bac355aca6a99b3e1e8903df548d184efa2c4a4ca4"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-east-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-east-gate-overflow.png",
+      "title": "Monastery east gate overflow",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 537528,
+      "sha256": "cfdcb6de7546722981505063d1bd96fa9d51ab4672b20a41c83f3adf844bcc8f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-east-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-east-herb-court-grate.png",
+      "title": "Monastery east herb court grate",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 520519,
+      "sha256": "ce377b45a5bef24b6703e5bd92ee610f51d5b39a1ad54fae506a6e6844d93508"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-east-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-east-north-roof-spillway.png",
+      "title": "Monastery east north roof spillway",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 438453,
+      "sha256": "59938e0f8e2eab83d0475d8fd2794f2faa8a8d13500093d74cb2643e65e034a9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-exterior-terrace-wall.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-exterior-terrace-wall.png",
+      "title": "Monastery exterior terrace wall",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 363159,
+      "sha256": "b0083cb2301eed3438dfe9bed701aafa3242f5857b0dbf3cae90da9d1d4e1563"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-fitted-carriage-gate.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-fitted-carriage-gate.png",
+      "title": "Monastery fitted carriage gate",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 277351,
+      "sha256": "300b8e8ed3844e6d1ca0ec79ad05b48f67efe38203ca58a5d9a16f7990833e08"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-gatehouse-porter.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-gatehouse-porter.png",
+      "title": "Monastery gatehouse porter",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 420130,
+      "sha256": "a3f5a022cfe34438248a0cfc5ba663a49d719663a961333fe4a8a48f71115b91"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-herb-court-pipe-inlet.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-herb-court-pipe-inlet.png",
+      "title": "Monastery herb court pipe inlet",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 465701,
+      "sha256": "dbeb75069ddb89f04d58d7157b20389999d765312c250adead8ceddb301fcd11"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-loose-refectory-examined.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-loose-refectory-examined.png",
+      "title": "Monastery loose refectory examined",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 575782,
+      "sha256": "c332bd4e9679be910319a61af6438175af2eb2283938c3321b52e215b9dcc36d"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-loose-refectory-table.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-loose-refectory-table.png",
+      "title": "Monastery loose refectory table",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 612867,
+      "sha256": "69ce5a85a11b88d4d6c031304352744099bca3b9a040e75f691b8e814283ce8b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-named-arrival-van.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-named-arrival-van.png",
+      "title": "Monastery named arrival van",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 443654,
+      "sha256": "af99ada0b9c5f3825775723e002af8d3ea6718760087ecad2361017dc75c8aa3"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-named-lower-memorial.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-named-lower-memorial.png",
+      "title": "Monastery named lower memorial",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 456939,
+      "sha256": "41ce304538e88718da82e4285e575f98765743d7fc4c75190d5a50a2185265b2"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-named-public-gate.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-named-public-gate.png",
+      "title": "Monastery named public gate",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 367174,
+      "sha256": "1f57625d9883deae31949c19672f29a9d13662932ca4e6d142785e307512ac79"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-north-low-ground-receiver.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-north-low-ground-receiver.png",
+      "title": "Monastery north low ground receiver",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 498561,
+      "sha256": "8aa5f1322d3e97f98e5295e273211528178a3b896e53961704c6990916820431"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-refectory-tables.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-refectory-tables.png",
+      "title": "Monastery refectory tables",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 371458,
+      "sha256": "a5e59cfd6b430608121f4126ac94d66dbab7b99e89033e30e6f03b0aace8fdf0"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-service-interceptor.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-service-interceptor.png",
+      "title": "Monastery service interceptor",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 517943,
+      "sha256": "a20be4981845a8b7d314ddce951b5ff0fb1846d301cda85804cdda5c12d3d2bd"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-vestry-wash-trough.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-vestry-wash-trough.png",
+      "title": "Monastery vestry wash trough",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 418659,
+      "sha256": "405c6740b8f6e0920ff286d30b0e63365e3f3acd5899006b41dae058797e5bbc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-west-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-west-gate-overflow.png",
+      "title": "Monastery west gate overflow",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 536101,
+      "sha256": "8697b21f6fce5a693de53f6e8174966100dfd6ceb8297b645f92e5faf0e6eb25"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-west-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-west-herb-court-grate.png",
+      "title": "Monastery west herb court grate",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 522574,
+      "sha256": "0fc9d988eb642173d979b01af59b7886eee28759e3a994ac89475843a1a7fc0a"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-west-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/opengl/monastery-west-north-roof-spillway.png",
+      "title": "Monastery west north roof spillway",
+      "kind": "Monastery perimeter and named routes in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 476091,
+      "sha256": "4f29dc7bc42d6c230bd9cec8bf97b0b72f6e2246c907b3b3cfd85b1d5b534fac"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-archive-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-archive-cupboard-enter.png",
+      "title": "Monastery archive cupboard enter",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 489694,
+      "sha256": "27a280227f0a92b2319a62de0b629f196084fece62aa32ba138ddb6e4e9eebc0"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-archive-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-archive-cupboard-inside.png",
+      "title": "Monastery archive cupboard inside",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 414894,
+      "sha256": "544b89aef77cb3927627c7e07f02a01e13068c990809eb480cccd5adaa4b9e50"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-archive-reading-table.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-archive-reading-table.png",
+      "title": "Monastery archive reading table",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 397018,
+      "sha256": "b25de283526d2ff1201364fc7b07e9c6147470d3264125df1a6157a0e3078232"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-chamber-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-chamber-cupboard-enter.png",
+      "title": "Monastery chamber cupboard enter",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 469813,
+      "sha256": "907ac7ec325a644ec93ee8f8c1db6c1ed34384afc327fc2c98d55a237bd7cc97"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-chamber-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-chamber-cupboard-inside.png",
+      "title": "Monastery chamber cupboard inside",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401489,
+      "sha256": "3a14daa3e95913c6fc5232b09e88192d488e35c3c8420486d5c74172a4f336f9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-court-planted-soil.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-court-planted-soil.png",
+      "title": "Monastery court planted soil",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 364314,
+      "sha256": "a07a392fa571dbbe2f465e6638fd315451ffb8dd776b08e5d63cbefc2044bcf1"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-court-well-and-raised-beds.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-court-well-and-raised-beds.png",
+      "title": "Monastery court well and raised beds",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 316541,
+      "sha256": "7fc2dafccb0aa76c1ace664b00c6568f971fffd12e1abba0766d1e6b31406083"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-dorm-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-dorm-cupboard-enter.png",
+      "title": "Monastery dorm cupboard enter",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 482325,
+      "sha256": "7ebb7556d607340679eb42a25586d1a0a131821f10c22748bd00e3ad0b6c6238"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-dorm-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-dorm-cupboard-inside.png",
+      "title": "Monastery dorm cupboard inside",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401303,
+      "sha256": "45b67238e67a562cd07cc6ad201701f136c33b75e4d777bb81f4998688ec4d53"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-dormitory-beds.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-dormitory-beds.png",
+      "title": "Monastery dormitory beds",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 389103,
+      "sha256": "2fda405ac3fbbcd8c3ac2b1ac34f57ab7d8c016b9068c5743dd9c297ec2ab1c6"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-dressed-forecourt.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-dressed-forecourt.png",
+      "title": "Monastery dressed forecourt",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 386729,
+      "sha256": "a0bf85f4bb64f23321b10d5943396d7efe2daab011749af68748c83b4a69d24b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-dressed-van-approach.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-dressed-van-approach.png",
+      "title": "Monastery dressed van approach",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 477583,
+      "sha256": "ce71176044ecdd92c9265310219de328e069715378baae75b43b61151d5d4b40"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-east-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-east-gate-overflow.png",
+      "title": "Monastery east gate overflow",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 537267,
+      "sha256": "5e53af208c1e87c1623a5918c7e5f43087740fcb79172226e7ef7649b3b7f7a2"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-east-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-east-herb-court-grate.png",
+      "title": "Monastery east herb court grate",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 520023,
+      "sha256": "5d2574120d6a9e21eb9decbd83f671f9ac8495a297afc9e31878b9c802719aa7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-east-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-east-north-roof-spillway.png",
+      "title": "Monastery east north roof spillway",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 437254,
+      "sha256": "8c636cce33c0d4f025b304bef2663d8dd9384cec081f1bd07321a69236e0be89"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-exterior-terrace-wall.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-exterior-terrace-wall.png",
+      "title": "Monastery exterior terrace wall",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 364384,
+      "sha256": "3fa10783afb7241c7cda25600eb70e335b7cdae32190e62bbb8af9637fd95879"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-fitted-carriage-gate.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-fitted-carriage-gate.png",
+      "title": "Monastery fitted carriage gate",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 273231,
+      "sha256": "410ed5cc180777e41f14ce645d6bee291a6a7c13d6528edbd12bf29e8c9d9b53"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-gatehouse-porter.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-gatehouse-porter.png",
+      "title": "Monastery gatehouse porter",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 419827,
+      "sha256": "9b2284acfee0fb9081f50f76565beaea02eca8f8afd7f353ecb4f7512c768cbe"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-herb-court-pipe-inlet.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-herb-court-pipe-inlet.png",
+      "title": "Monastery herb court pipe inlet",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 467295,
+      "sha256": "aa2a630041458fd1e3c4343e78e779b4ceb339eaacfed2fa9affb31b3af6fd60"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-loose-refectory-examined.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-loose-refectory-examined.png",
+      "title": "Monastery loose refectory examined",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 570950,
+      "sha256": "49d09c1d3204792dea4b933ef4098c07854da3ee549dba2e0861de6ab2eb8a76"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-loose-refectory-table.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-loose-refectory-table.png",
+      "title": "Monastery loose refectory table",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 615673,
+      "sha256": "8b3dcc94b6d367e188c5cb70f06838db646d9143429b8da702fff2b4e905d4e5"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-named-arrival-van.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-named-arrival-van.png",
+      "title": "Monastery named arrival van",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 446364,
+      "sha256": "f7a656059514fbeb40902177c28821041fc2cef8d4f80c962ec7709f191a9d95"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-named-lower-memorial.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-named-lower-memorial.png",
+      "title": "Monastery named lower memorial",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 465604,
+      "sha256": "b568b6a04dd9ff538bfa2ce7448c9bfc033ed9a6d0b48eb0f3e3ec42f18bc821"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-named-public-gate.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-named-public-gate.png",
+      "title": "Monastery named public gate",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 368542,
+      "sha256": "dcafa47b2ffe56f5e12d26fccc88a13bd054c7eaa1069e3ac488e0c7780f6420"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-north-low-ground-receiver.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-north-low-ground-receiver.png",
+      "title": "Monastery north low ground receiver",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 499279,
+      "sha256": "2a19a20075c1ddc960d209d0b2126785260ae71be47828b872d03f422bd06089"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-refectory-tables.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-refectory-tables.png",
+      "title": "Monastery refectory tables",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 380576,
+      "sha256": "5285cb3b4001f205f9bd55180129befce4ccd5f19bfd468ec20fe1efbf06f7b7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-service-interceptor.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-service-interceptor.png",
+      "title": "Monastery service interceptor",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 524115,
+      "sha256": "1d2e64005d7056c0753e64511767b1ee5546c1abd5b15c1c0dafa05acd049cd5"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-vestry-wash-trough.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-vestry-wash-trough.png",
+      "title": "Monastery vestry wash trough",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 430240,
+      "sha256": "ba1550864f2536edeff4db0e4b0d8de6bcdbd338f6c497fec59e55cfb2d4431f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-west-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-west-gate-overflow.png",
+      "title": "Monastery west gate overflow",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 537791,
+      "sha256": "fa48953ced65e9dc575b52a98dd3181e48f83c69bdac901939cd1e35d23a8cfa"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-west-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-west-herb-court-grate.png",
+      "title": "Monastery west herb court grate",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 523119,
+      "sha256": "1928a23ebaeb8f3b7017e60a231686f3bdaa7f374ec3de5160804a3bf1c9aa48"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-west-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/software/monastery-west-north-roof-spillway.png",
+      "title": "Monastery west north roof spillway",
+      "kind": "Monastery perimeter and named routes in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 474718,
+      "sha256": "b15d3476600b57e15773f1ce42353a5a4da59fd06dbf230d13a855009f4e1ce8"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/structure/monastery-east-wall-and-ravine.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/structure/monastery-east-wall-and-ravine.png",
+      "title": "Monastery east wall and ravine",
+      "kind": "Native Monastery fitted estate boundary and exterior terrain",
+      "width": 1260,
+      "height": 850,
+      "bytes": 1018638,
+      "sha256": "ed30c91ed0affe4c86533d217f4f6b94d804027472c4beb9a24725f9eef35dcd"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/structure/monastery-estate-and-ravine.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/structure/monastery-estate-and-ravine.png",
+      "title": "Monastery estate and ravine",
+      "kind": "Native Monastery fitted estate boundary and exterior terrain",
+      "width": 1260,
+      "height": 850,
+      "bytes": 1281709,
+      "sha256": "4e5ffd8c8bbd7a41937a0f87ee4e63bc63ada46b7d507ed03cf3c3c3c4886be9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/structure/monastery-outer-carriage-gate.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/structure/monastery-outer-carriage-gate.png",
+      "title": "Monastery outer carriage gate",
+      "kind": "Native Monastery fitted estate boundary and exterior terrain",
+      "width": 1260,
+      "height": 850,
+      "bytes": 1115659,
+      "sha256": "92e3bc3c962447ec30bc3c11106b253b9f4b7c592dc44b440ee747cb6cf0fc57"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-perimeter-pass/captures/structure/monastery-west-bank-and-coping.png",
+      "url": "development/levels/rebuild/monastery-perimeter-pass/captures/structure/monastery-west-bank-and-coping.png",
+      "title": "Monastery west bank and coping",
+      "kind": "Native Monastery fitted estate boundary and exterior terrain",
+      "width": 1260,
+      "height": 850,
+      "bytes": 1054164,
+      "sha256": "b032b1b544dabf035a8207cbd0695b60e47382bd61e2dec5d949ab666b3f192c"
     },
     {
       "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/generator-and-main-board.png",

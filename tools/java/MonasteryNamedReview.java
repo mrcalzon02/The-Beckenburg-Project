@@ -53,7 +53,7 @@ final class MonasteryNamedReview {
         require(campaign.indexOf("WLD-10") == 18 && campaign.get(17).equals("WLD-09") && campaign.get(19).equals("WLD-11"),
             "Ordinary campaign order changed");
         for (var name : List.of("source-hashes.tsv","runtime-input.tsv","door-schedule.tsv","electrical-schedule.tsv",
-                                "monastery-with-landscape.glb","monastery-with-landscape.hcs2")) {
+                                "monastery-with-perimeter.glb","monastery-with-perimeter.hcs2")) {
             var resource = MonasteryNativeLevel.class.getResource(RESOURCE + name);
             require(resource != null && resource.getProtocol().equals("jar"), "Resource is outside the game archive " + name);
         }
@@ -125,6 +125,10 @@ final class MonasteryNamedReview {
         captureNorth(map,captures);
         verifyLandscape(map,captures,report);
         MonasteryLooseReview.review(map,captures,report);
+        report.addAll(MonasteryPerimeterReview.audit(source.scene().physics(),stage.resolve("wld-10/boundary-survey.tsv")));
+        report.add(MonasteryPerimeterReview.playBoundary(map));
+        capture(map,new Vec(32,0,87),new Vec(32,1,94.18),captures.resolve("monastery-fitted-carriage-gate.png"),true);
+        capture(map,new Vec(64,0,23),new Vec(82,2,27),captures.resolve("monastery-exterior-terrace-wall.png"),true);
         if (!gpu) {
             BlackwaterNamedReview.solo(map,report);
             MonasteryPowerReview.live(scene,report,site);

@@ -8940,6 +8940,30 @@ Evidence and verification: development/levels/rebuild/monastery-loose-pass/check
 
 Older-map obligation: Audit old throwing test coordinates against current physical layouts.
 
+### DEV-734 — Monastery road and hillsides stopped at an unenclosed terrain edge
+
+**Status** MONASTERY_FOUNDED_PERIMETER_VERIFIED_NAMED_REVIEW_LOCKED · **Affected** WLD-10 western bank, northern shoulder, eastern ravine and south arrival
+
+The saved roadway ended at its old ground edge. The baseline ray crossed the proposed road gate opening without hitting a physical barrier.
+
+Cause or uncertainty. The approved estate plan reserved ground and enclosure, while the earlier landscape pass finished the terrain already inside the reservation.
+
+Join terrain at the saved exterior seam, with founded stone walls and a closed two-leaf timber gate beyond the van.
+
+Verify measured horizontal and vertical containment at terrain seams, especially exterior portals beyond staging. [DEV-734 evidence](../levels/rebuild/monastery-perimeter-pass/checkpoint.json)
+
+### DEV-735 — The Monastery jump boundary followed the old room rectangle
+
+**Status** MONASTERY_RUNNING_JUMP_TESTS_FITTED_COLLISION · **Affected** WLD-10 exterior jump authority
+
+The nominal gameplay zone blocked airborne motion on supported road about five metres inside the new gate.
+
+Cause or uncertainty. HouseMap applied the legacy airborne rectangle before testing the native scene.
+
+Use the enclosed Monastery scenery as its jump collision authority. A running jump now reaches the real closed gate and lands on the existing grade.
+
+Audit airborne extent independently of standing movement when adding real outside ground and barriers. [DEV-735 evidence](../levels/rebuild/monastery-perimeter-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

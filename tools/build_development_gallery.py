@@ -26,7 +26,13 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/monastery-loose-pass/' in path:
+    if '/monastery-perimeter-pass/' in path:
+        if '/structure/' in path:
+            kind='Native Monastery fitted estate boundary and exterior terrain'
+        else:
+            renderer='OpenGL' if '/opengl/' in path else 'software'
+            kind='Monastery perimeter and named routes in the '+renderer+' game renderer'
+    elif '/monastery-loose-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Monastery of Ashen Bells native belongings and playable routes in the '+renderer+' game renderer'
     elif '/monastery-landscape-pass/' in path:

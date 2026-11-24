@@ -8130,6 +8130,28 @@
       "action": "Locate a demonstrably open lane through normal movement and repeat the collision and contact assertions there.",
       "older_maps": "Audit old throwing test coordinates against current physical layouts.",
       "evidence": "development/levels/rebuild/monastery-loose-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-734",
+      "title": "Monastery road and hillsides stopped at an unenclosed terrain edge",
+      "status": "MONASTERY_FOUNDED_PERIMETER_VERIFIED_NAMED_REVIEW_LOCKED",
+      "affected": "WLD-10 western bank, northern shoulder, eastern ravine and south arrival",
+      "symptom": "The saved roadway ended at its old ground edge. The baseline ray crossed the proposed road gate opening without hitting a physical barrier.",
+      "cause": "The approved estate plan reserved ground and enclosure, while the earlier landscape pass finished the terrain already inside the reservation.",
+      "action": "Join terrain at the saved exterior seam, with founded stone walls and a closed two-leaf timber gate beyond the van.",
+      "older_maps": "Verify measured horizontal and vertical containment at terrain seams, especially exterior portals beyond staging.",
+      "evidence": "development/levels/rebuild/monastery-perimeter-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-735",
+      "title": "The Monastery jump boundary followed the old room rectangle",
+      "status": "MONASTERY_RUNNING_JUMP_TESTS_FITTED_COLLISION",
+      "affected": "WLD-10 exterior jump authority",
+      "symptom": "The nominal gameplay zone blocked airborne motion on supported road about five metres inside the new gate.",
+      "cause": "HouseMap applied the legacy airborne rectangle before testing the native scene.",
+      "action": "Use the enclosed Monastery scenery as its jump collision authority. A running jump now reaches the real closed gate and lands on the existing grade.",
+      "older_maps": "Audit airborne extent independently of standing movement when adding real outside ground and barriers.",
+      "evidence": "development/levels/rebuild/monastery-perimeter-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

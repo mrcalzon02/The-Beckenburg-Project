@@ -413,7 +413,9 @@ public final class HouseMap {
         return capsuleClear(x,y,z,bodyHeight,false);
     }
     private boolean capsuleClear(double x,double y,double z,double bodyHeight,boolean grounded){
-        if(!grounded&&(x<.22||z<.22||x>width()-.22||z>height()-.22))return false;
+        // Monastery's founded perimeter extends beyond the nominal gameplay rooms.
+        boolean physicalPerimeter=site==Site.MONASTERY && nativeInvestigation!=null;
+        if(!grounded && !physicalPerimeter && (x<.22||z<.22||x>width()-.22||z>height()-.22))return false;
         if(!finite(x,y,z,bodyHeight)||bodyHeight<.9||bodyHeight>2.0)return false;double radius=.22;
         if(worldSurface!=null&&worldSurface.bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;
         if(envelope!=null&&envelope.physics().bodyBlocked(new Vec(x,y,z),bodyHeight,radius))return false;

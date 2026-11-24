@@ -1591,3 +1591,10 @@ The ordinary Windows archive now contains the current Blackwater native geometry
 ### Monastery of Ashen Bells operating thresholds
 
 Thirteen operating leaves now share the measured architecture with player bodies, shadows, door sight and acoustics. The van, floors, stairs and open cloister arcade passages retain the approved source. Both renderers pass all 21 routes in both directions and postures. The live crew can open five leaves from the van to the memorial chamber. [Door plan](monastery-door-pass/wld-10/monastery-door-plan.svg) · [Checkpoint](monastery-door-pass/checkpoint.json)
+
+
+### Monastery of Ashen Bells founded estate perimeter
+
+The [measured plan](monastery-perimeter-pass/wld-10/perimeter-plan.svg) links the closed outer carriage gate and masonry enclosure to the original site. The extended ground joins 1,137 retained edges. Sealed room and garden cuts, 1,634 prior collision parts, operating doors, and the van placement retain their exact source. [Checkpoint](monastery-perimeter-pass/checkpoint.json)
+
+Both named renderer reviews passed 5,048 supported boundary sweeps, over-gate and spectral tests, all 84 route replays, and the three walk-in refuges. Software also passed the four-player power and furnishing checks. Wall and landscape finishes, directional scenery, authored encounters, full investigation and installer acceptance remain open. Publication remains pending on the held draft branch.
