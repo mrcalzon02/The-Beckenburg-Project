@@ -1,0 +1,78 @@
+{
+  "exports": {
+    "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.blend": "5b2665a55307a9e3a788eb5718cf324f01acd1c14355d4239abab40d94a130a8",
+    "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.glb": "0c53e4168c7809a7122714808ad44426883923e52f1354b3ad9475641fe14478",
+    "development/levels/rebuild/cemetery-furnishings-pass/wld-07/furnished-grounds.hcs2": "c87f45da4bf51df3fd448b79a1397c20c36a0fea88b515385a7369a4de18083a"
+  },
+  "retained_native_parts": 434,
+  "added_native_parts": 2,
+  "supported_records": [
+    {
+      "document": "MEMORIAL_REGISTER",
+      "owner": 6,
+      "space": "chamber",
+      "desktop": -2.21,
+      "reading_stance": [
+        20.2,
+        -3,
+        6.6
+      ],
+      "aim": [
+        18.745001,
+        -2.17694,
+        6.617
+      ],
+      "furniture": {
+        "asset": "level_blockout_headmaster_desk",
+        "sha256": "0c5e6f6383716091ccd60c36337dc6bae4fa2b0d9b0320e7b46c55c04516a617",
+        "bounds": [
+          [
+            18.289999,
+            -3.0,
+            5.675
+          ],
+          [
+            19.15,
+            -2.195,
+            7.525
+          ]
+        ],
+        "pivot": [
+          18.719999313354492,
+          -3.065000057220459,
+          6.599999904632568
+        ],
+        "yaw": 1.5707963267948966,
+        "scale": 1,
+        "support": "measured existing slab"
+      },
+      "record": {
+        "asset": "level_trace_journal",
+        "sha256": "156d7cbc6a3273df7d2d1e305424c5c14705e8bf891d13f2a4e3320f1f3e29c5",
+        "bounds": [
+          [
+            18.5198,
+            -2.2095,
+            6.468
+          ],
+          [
+            18.920198,
+            -2.17474,
+            6.732
+          ]
+        ],
+        "pivot": [
+          18.719999313354492,
+          -2.2095000743865967,
+          6.599999904632568
+        ],
+        "yaw": 0,
+        "scale": 0.88,
+        "support": [
+          "Mine case memorial register desk 01"
+        ]
+      }
+    }
+  ],
+  "furnishings": []
+}

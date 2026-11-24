@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11887,
+  "count": 11927,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -111344,6 +111344,406 @@
       "height": 580,
       "bytes": 287966,
       "sha256": "a224f84c902312d81f848bfd007c907c1a519d6fa0cb97ce3c58e9dde90d0c5a"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 332665,
+      "sha256": "c1ba13c70530e7628e2c42b8658a7526000a75d0e4411195d687666505f224da"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 225926,
+      "sha256": "b86ec45e04337342a4ba43cbe694b14c7d8a84848af3242867463b31ed7a9a48"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-desk-MEMORIAL_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-desk-MEMORIAL_REGISTER.png",
+      "title": "Cemetery desk memorial register",
+      "kind": "Cemetery and Vale Mortuary supported record in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 374233,
+      "sha256": "d72aa86cab3e64be28f025c71b2d96ab6ec1ee1de5c740f5cd7d73f15cc2f5b9"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-desk-VISITOR_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-desk-VISITOR_REGISTER.png",
+      "title": "Cemetery desk visitor register",
+      "kind": "Cemetery and Vale Mortuary supported record in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 366155,
+      "sha256": "6a62a02691aa95294bb254ec1d1467e4fc0b4cdbcb4a4a23f143fb83d260f5e5"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-chapel-off.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-chapel-off.png",
+      "title": "Cemetery load chapel off",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 156442,
+      "sha256": "e9ad1884cf1595734b502e0742d10e0861af7180c3bef5a5633f45538eb18318"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-chapel-on.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-chapel-on.png",
+      "title": "Cemetery load chapel on",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 182343,
+      "sha256": "04d6ee7cf538f7eb048308baad2543e4b662d223d5078c50994c912426c57310"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-off.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-off.png",
+      "title": "Cemetery load mort viewing off",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 171714,
+      "sha256": "a746e7b0d9790016231c517fa0cbbc8cd43cd704d47413ebeaeebfccbfeb7fef"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-on.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-on.png",
+      "title": "Cemetery load mort viewing on",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 202734,
+      "sha256": "a1d37fd079f9b786dd0898874390d1cef8fc2229c89c11eda9078e36fa78a82a"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-record-MEMORIAL_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-record-MEMORIAL_REGISTER.png",
+      "title": "Cemetery record memorial register",
+      "kind": "Cemetery and Vale Mortuary readable case record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11770,
+      "sha256": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-record-VISITOR_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/cemetery-record-VISITOR_REGISTER.png",
+      "title": "Cemetery record visitor register",
+      "kind": "Cemetery and Vale Mortuary readable case record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11195,
+      "sha256": "8bdef3d974c5d33725aca0b8b5e29acb8631cfa6624182cf035aebfa748f5e1e"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 310208,
+      "sha256": "628bddd7e701a9941df73b47f645a776aa8e06348b35c927aade881c73a0ba59"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 210277,
+      "sha256": "bb99f2e861ee4c80db67ba789116d4242c5455df58da85ad94001b50f84c7203"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-desk-MEMORIAL_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-desk-MEMORIAL_REGISTER.png",
+      "title": "Cemetery desk memorial register",
+      "kind": "Cemetery and Vale Mortuary supported record in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 373066,
+      "sha256": "579d659351cc9193cde31a1754507a97acff5d64f49879409d7d575c3000b24c"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-desk-VISITOR_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-desk-VISITOR_REGISTER.png",
+      "title": "Cemetery desk visitor register",
+      "kind": "Cemetery and Vale Mortuary supported record in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 365913,
+      "sha256": "efc562a31dee6488d0ed994ccbf3da43ea19a988185f6457a7638c63da107187"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-off.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-off.png",
+      "title": "Cemetery load chapel off",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 154363,
+      "sha256": "3a379abf8eb3d063477ef0ec7dfa7b8a3cd16c8e933a336deb1b25859af6b708"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-on.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-on.png",
+      "title": "Cemetery load chapel on",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 172788,
+      "sha256": "fcd2dc997c6d1cdcbf04df0ede2371ccbc46f6ce98ecdc7ab164df90488c9c12"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-off.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-off.png",
+      "title": "Cemetery load mort viewing off",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 174331,
+      "sha256": "31ab70d2ede5bcd337ac86bc2197618ab6d3f45ecb771aa4b4b3f4b694a04154"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-on.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-on.png",
+      "title": "Cemetery load mort viewing on",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 198021,
+      "sha256": "d2e58bfc8fb96bb2cf6419089bc7c4ce578b907d2e71ee0316302b00c5a2acdc"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-record-MEMORIAL_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-record-MEMORIAL_REGISTER.png",
+      "title": "Cemetery record memorial register",
+      "kind": "Cemetery and Vale Mortuary readable case record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11770,
+      "sha256": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-record-VISITOR_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/opengl/cemetery-record-VISITOR_REGISTER.png",
+      "title": "Cemetery record visitor register",
+      "kind": "Cemetery and Vale Mortuary readable case record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11195,
+      "sha256": "8bdef3d974c5d33725aca0b8b5e29acb8631cfa6624182cf035aebfa748f5e1e"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/cold-drawers.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/cold-drawers.png",
+      "title": "Cold drawers",
+      "kind": "Vale Mortuary rough furnishing and standing aisle study",
+      "width": 1120,
+      "height": 700,
+      "bytes": 824869,
+      "sha256": "097bfd4c1fe8a764f9d38f1aa16c97b45c0d908375693aea7e65cd2fd21e693d"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/preparation-table.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/preparation-table.png",
+      "title": "Preparation table",
+      "kind": "Vale Mortuary rough furnishing and standing aisle study",
+      "width": 1120,
+      "height": 700,
+      "bytes": 818348,
+      "sha256": "8de1177f1fad1d3e4eb58f41521e4e33992c943a84011550d93faa79f84949e1"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/receiving-trolley.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/receiving-trolley.png",
+      "title": "Receiving trolley",
+      "kind": "Vale Mortuary rough furnishing and standing aisle study",
+      "width": 1120,
+      "height": 700,
+      "bytes": 795165,
+      "sha256": "e8b59a5a85bc2c9ffd18c10da49d8a6e85660d715e6f4d41bd738c9d165fe8ec"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/viewing-and-bier.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/captures/structure/viewing-and-bier.png",
+      "title": "Viewing and bier",
+      "kind": "Vale Mortuary rough furnishing and standing aisle study",
+      "width": 1120,
+      "height": 700,
+      "bytes": 802206,
+      "sha256": "f0f9007b6a986319d32e36fb87d0749e35b6993fe6dbbac172b74e42a07530c5"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 330184,
+      "sha256": "3aa7884f8efa50cb26817c42ec4fe79fa79051aea38d249a31648856273884b9"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 222976,
+      "sha256": "fc88d7647979c8f6c98834445dd55456bb7e0ac74422c44614d0c0cbe7630ea9"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-desk-MEMORIAL_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-desk-MEMORIAL_REGISTER.png",
+      "title": "Cemetery desk memorial register",
+      "kind": "Cemetery and Vale Mortuary supported record in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 374233,
+      "sha256": "d72aa86cab3e64be28f025c71b2d96ab6ec1ee1de5c740f5cd7d73f15cc2f5b9"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chamber-off.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chamber-off.png",
+      "title": "Cemetery load chamber off",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 152255,
+      "sha256": "d24448e472c0258faa305b59b57f092b0c3d14364aa96ac1ff8d5053fcb5595a"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chamber-on.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chamber-on.png",
+      "title": "Cemetery load chamber on",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 181258,
+      "sha256": "6f512cb381148c780b7dd38531b56f0626e99d493f2cfed442de50bb2148926b"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chapel-off.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chapel-off.png",
+      "title": "Cemetery load chapel off",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 156442,
+      "sha256": "e9ad1884cf1595734b502e0742d10e0861af7180c3bef5a5633f45538eb18318"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chapel-on.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-load-chapel-on.png",
+      "title": "Cemetery load chapel on",
+      "kind": "Cemetery services retained after furnishing in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 182343,
+      "sha256": "04d6ee7cf538f7eb048308baad2543e4b662d223d5078c50994c912426c57310"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-record-MEMORIAL_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/cemetery-record-MEMORIAL_REGISTER.png",
+      "title": "Cemetery record memorial register",
+      "kind": "Cemetery and Vale Mortuary readable case record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11770,
+      "sha256": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 310169,
+      "sha256": "10629cc21a384486ee1a8ef0eaa5299992de0899599a40e81f6f63e47434e919"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 209950,
+      "sha256": "2f121823a93607dcc34186eb985da9c52c3336d9f154cbb39a6e4f2e01bc9159"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-desk-MEMORIAL_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-desk-MEMORIAL_REGISTER.png",
+      "title": "Cemetery desk memorial register",
+      "kind": "Cemetery and Vale Mortuary supported record in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 373066,
+      "sha256": "579d659351cc9193cde31a1754507a97acff5d64f49879409d7d575c3000b24c"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chamber-off.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chamber-off.png",
+      "title": "Cemetery load chamber off",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 150997,
+      "sha256": "31cf0277d140618d270c5b4afa7b8e0b551a93e238b9d79d1385d8e1c3fbca53"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chamber-on.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chamber-on.png",
+      "title": "Cemetery load chamber on",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 165569,
+      "sha256": "72ee345af3d4e6db9fc7e1e989310af00748a7883297948fc519e46564a23701"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chapel-off.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chapel-off.png",
+      "title": "Cemetery load chapel off",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 154363,
+      "sha256": "3a379abf8eb3d063477ef0ec7dfa7b8a3cd16c8e933a336deb1b25859af6b708"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chapel-on.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-load-chapel-on.png",
+      "title": "Cemetery load chapel on",
+      "kind": "Cemetery services retained after furnishing in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 172788,
+      "sha256": "fcd2dc997c6d1cdcbf04df0ede2371ccbc46f6ce98ecdc7ab164df90488c9c12"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-record-MEMORIAL_REGISTER.png",
+      "url": "development/levels/rebuild/cemetery-furnishings-pass/wld-07/captures/opengl/cemetery-record-MEMORIAL_REGISTER.png",
+      "title": "Cemetery record memorial register",
+      "kind": "Cemetery and Vale Mortuary readable case record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11770,
+      "sha256": "c4053b477a5cd78d7ba50e3697ba05fa2ba7a2d66df296373d630ad6e7f485ff"
     },
     {
       "path": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/caretaker-power-supplied.png",

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.HashSet;
 import org.beckenburg.LevelDefinition.Dock;
 import org.beckenburg.LevelDefinition.Portal;
+import org.beckenburg.LevelDefinition.Prop;
 import org.beckenburg.LevelDefinition.Room;
 import org.beckenburg.LevelDefinition.Socket;
 import org.beckenburg.LevelDefinition.Vec;
@@ -40,6 +41,8 @@ public final class CemeteryDoorReview {
         var titles=new LinkedHashMap<String,String>();
         var anchors=new ArrayList<Anchor>();
         var sockets=new ArrayList<Socket>();
+        var props=new ArrayList<Prop>();
+        var stories=new ArrayList<CemeteryFurnishingsReview.Story>();
         var switchFeet=new LinkedHashMap<Integer,Vec>();
         var stairs=new HashSet<String>();
         var openings=new ArrayList<Portal>();
@@ -47,6 +50,15 @@ public final class CemeteryDoorReview {
         for(String line:Files.readAllLines(folder.resolve("room-layout.tsv"))) {
             var r=line.split("\t");
             switch(r[0]){
+                case "SOURCE" -> require(r[1].equals(args[2])&&r[2].equals(args[4]),"Furnishings source mismatch");
+                case "STORY" -> {
+                    int owner=n(r,3);
+                    var at=point(r,5);
+                    double yaw=d(r,8);
+                    props.add(new Prop(r[4],owner,at.x(),at.y(),at.z(),d(r,9),yaw,0,0,.05,"desk"));
+                    sockets.add(new Socket(r[1],"story",owner,at.x(),at.y(),at.z(),yaw,r[2]));
+                    stories.add(new CemeteryFurnishingsReview.Story(r[2],owner,point(r,10),point(r,13)));
+                }
                 case "SPACE" -> {
                     spaces.add(new NativeInvestigationScene.Space(r[1],n(r,2),d(r,3),d(r,4),d(r,5),d(r,6),
                         d(r,7),d(r,8),Boolean.parseBoolean(r[9]),true));
@@ -97,7 +109,7 @@ public final class CemeteryDoorReview {
         portals.add(new Portal(920,13,14,lip.x(),van.floorY(),lip.z(),VanStaging.RAMP_HALF_WIDTH*2,true,"trail",1));
         var id=annex?"wld-07-mortuary":"wld-07";
         var level=new LevelDefinition(id,scene.revision(),annex?"Saint Bartholomew's Cemetery and Vale Mortuary":
-            "Saint Bartholomew's Forgotten Cemetery",List.of(rooms),portals,List.of(),List.of(),List.of(),sockets,
+            "Saint Bartholomew's Forgotten Cemetery",List.of(rooms),portals,List.of(),List.of(),props,sockets,
             List.of(),dock,"woodland");
         var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
         var witness=new HouseMap(HouseMap.Site.USER,level,null,scene);
@@ -155,7 +167,7 @@ public final class CemeteryDoorReview {
             "standing_crouched_optical_object_acoustics_and_snapshots\tPASS"));
         if(!cover) report.add("four_peer_tcp_door_interaction\t"+(gpu?"covered by software run":"PASS"));
         report.add("renderer\t"+(gpu?GpuWorldRenderer.active().rendererDescription():"Software"));
-        String prefix=!switchFeet.isEmpty()?"distribution":powered?"power":cover?"refuges":"doors";
+        String prefix=!stories.isEmpty()?"furnishings":!switchFeet.isEmpty()?"distribution":powered?"power":cover?"refuges":"doors";
         if(powered) {
             NativeSchoolInteriorReview.auditHiding(map,report);
             CemeteryPowerReview.audit(map,level,scene,routes.get("caretaker-service"),captures,report,gpu);
@@ -165,6 +177,7 @@ public final class CemeteryDoorReview {
         } else if(cover) {
             CemeteryRefugeReview.audit(map,level,scene,captures,report,annex,gpu);
         }
+        if(!stories.isEmpty()) CemeteryFurnishingsReview.audit(map,scene,stories,captures,report,annex,gpu);
         Files.writeString(folder.resolve(prefix+(gpu?"-opengl.tsv":"-software.tsv")),String.join("\n",report)+"\n");
         report.forEach(System.out::println);
     }

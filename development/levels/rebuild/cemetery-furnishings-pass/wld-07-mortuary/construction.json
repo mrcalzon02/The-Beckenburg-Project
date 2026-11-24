@@ -1,0 +1,281 @@
+{
+  "exports": {
+    "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.blend": "5ecad7192f500328a29f5185a2e1f69cd2f9d4cc58d4fd83ab116c3bb1675f4e",
+    "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.glb": "3a52ff674e6360c2ee8964c17ad162749dea2aec57dd21a48db3232554c10052",
+    "development/levels/rebuild/cemetery-furnishings-pass/wld-07-mortuary/furnished-grounds.hcs2": "95dd97f96ef50c9e0df86feaa722ca414feded898e89f61fa6c5477ff9929d20"
+  },
+  "retained_native_parts": 689,
+  "added_native_parts": 9,
+  "supported_records": [
+    {
+      "document": "MEMORIAL_REGISTER",
+      "owner": 6,
+      "space": "chamber",
+      "desktop": -2.21,
+      "reading_stance": [
+        20.2,
+        -3,
+        6.6
+      ],
+      "aim": [
+        18.745001,
+        -2.17694,
+        6.617
+      ],
+      "furniture": {
+        "asset": "level_blockout_headmaster_desk",
+        "sha256": "0c5e6f6383716091ccd60c36337dc6bae4fa2b0d9b0320e7b46c55c04516a617",
+        "bounds": [
+          [
+            18.289999,
+            -3.0,
+            5.675
+          ],
+          [
+            19.15,
+            -2.195,
+            7.525
+          ]
+        ],
+        "pivot": [
+          18.719999313354492,
+          -3.065000057220459,
+          6.599999904632568
+        ],
+        "yaw": 1.5707963267948966,
+        "scale": 1,
+        "support": "measured existing slab"
+      },
+      "record": {
+        "asset": "level_trace_journal",
+        "sha256": "156d7cbc6a3273df7d2d1e305424c5c14705e8bf891d13f2a4e3320f1f3e29c5",
+        "bounds": [
+          [
+            18.5198,
+            -2.2095,
+            6.468
+          ],
+          [
+            18.920198,
+            -2.17474,
+            6.732
+          ]
+        ],
+        "pivot": [
+          18.719999313354492,
+          -2.2095000743865967,
+          6.599999904632568
+        ],
+        "yaw": 0,
+        "scale": 0.88,
+        "support": [
+          "Mine case memorial register desk 01"
+        ]
+      }
+    },
+    {
+      "document": "VISITOR_REGISTER",
+      "owner": 8,
+      "space": "mort-reception",
+      "desktop": 0.91,
+      "reading_stance": [
+        68.13,
+        0,
+        56.5
+      ],
+      "aim": [
+        69.625,
+        0.9369,
+        56.516998
+      ],
+      "furniture": {
+        "asset": "level_blockout_mortuary_visitors_registry_desk",
+        "sha256": "081a2cafa6821bff9e7b8deed2b04bc31dbb6dd6fa937e893f1b504d47dab73f",
+        "bounds": [
+          [
+            69.25,
+            0.0,
+            55.73
+          ],
+          [
+            69.949997,
+            1.11,
+            57.27
+          ]
+        ],
+        "pivot": [
+          69.5999984741211,
+          -0.009999999776482582,
+          56.5
+        ],
+        "yaw": 1.5707963267948966,
+        "scale": 1,
+        "support": "measured existing slab"
+      },
+      "record": {
+        "asset": "level_story_letters",
+        "sha256": "8b8c58baa89876d9577127e548cc9f6323381a5d0b524b3f1baede5b7c357acc",
+        "bounds": [
+          [
+            69.479477,
+            0.9105,
+            56.406662
+          ],
+          [
+            69.720512,
+            0.941487,
+            56.593342
+          ]
+        ],
+        "pivot": [
+          69.59464263916016,
+          0.9100600481033325,
+          56.500221252441406
+        ],
+        "yaw": 0,
+        "scale": 0.88,
+        "support": [
+          "Mine case visitor register desk 01"
+        ]
+      }
+    }
+  ],
+  "furnishings": [
+    {
+      "space": "mort-viewing",
+      "function": "viewing seat",
+      "asset": "level_blockout_mortuary_viewing_seat",
+      "sha256": "8b3ca97e88681d972d7f188f7bd6b7c8ab688b5d0f4e2bd97794a7ce17348ea1",
+      "bounds": [
+        [
+          69.147499,
+          0.0,
+          42.460003
+        ],
+        [
+          70.852501,
+          1.384,
+          44.34
+        ]
+      ],
+      "pivot": [
+        69.6875,
+        0.0,
+        43.400001525878906
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1,
+      "support": "measured existing slab",
+      "pedestal_detail": {
+        "old_bottom_m": 1.33,
+        "new_bottom_m": 1.284,
+        "support_m": 1.285,
+        "bearing_samples": 4
+      }
+    },
+    {
+      "space": "mort-viewing",
+      "function": "viewing bier",
+      "asset": "level_blockout_mortuary_casket_bier",
+      "sha256": "921290445af53b213ceb4ab227784d0c83d70c275def8e72ee35ad5081e0f9d6",
+      "bounds": [
+        [
+          61.785,
+          0.0,
+          42.82
+        ],
+        [
+          64.014999,
+          1.385,
+          43.980003
+        ]
+      ],
+      "pivot": [
+        62.900001525878906,
+        0.0,
+        43.400001525878906
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "space": "mort-prep",
+      "function": "preparation table",
+      "asset": "level_blockout_mortuary_prep_table",
+      "sha256": "26dff42b0d7790bbecf64a5c5ad2afae0251f89dcc2dca15bf56e42fe0622561",
+      "bounds": [
+        [
+          79.655006,
+          0.0,
+          44.652504
+        ],
+        [
+          81.945,
+          1.22,
+          45.747501
+        ]
+      ],
+      "pivot": [
+        80.80000305175781,
+        -0.014999999664723873,
+        45.16250228881836
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "space": "mort-cold",
+      "function": "cold drawer bank",
+      "asset": "level_blockout_mortuary_cold_drawer_wall",
+      "sha256": "47b83ea2cee127fc9f819db299d6ffb3edae45d54176dd96eef8d93fdd41f1c0",
+      "bounds": [
+        [
+          82.553749,
+          0.0,
+          53.504997
+        ],
+        [
+          83.526253,
+          1.845,
+          55.695
+        ]
+      ],
+      "pivot": [
+        83.07125091552734,
+        -0.004999999888241291,
+        54.599998474121094
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1,
+      "support": "measured existing slab"
+    },
+    {
+      "space": "mort-bay",
+      "function": "receiving trolley",
+      "asset": "level_blockout_mortuary_trolley",
+      "sha256": "2663b6d3b63e46788bbb0b79140dea5d9b2cb727ebc64014d6cf9638f816bef9",
+      "bounds": [
+        [
+          68.724998,
+          0.0,
+          71.385002
+        ],
+        [
+          70.674995,
+          0.93,
+          72.215004
+        ]
+      ],
+      "pivot": [
+        69.69999694824219,
+        0.009999999776482582,
+        71.80000305175781
+      ],
+      "yaw": 1.5707963267948966,
+      "scale": 1,
+      "support": "measured existing slab"
+    }
+  ]
+}

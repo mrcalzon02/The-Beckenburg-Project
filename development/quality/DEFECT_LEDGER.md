@@ -9130,3 +9130,11 @@ The caretaker breaker now supplies seven Cemetery branches and eleven annex bran
 ### DEV-685 First pavilion feeder entered a suspended vault deck
 
 The first cover survey stopped at the west pavilion where the prepared landing spans the vault. Both pavilions now receive the feed from the courtyard through brackets on their external walls and sealed sleeves by the doorways. The retained deck, door leaves and walking routes passed the native review. [Repeatable survey and exports](../levels/rebuild/cemetery-distribution-pass/checkpoint.json)
+
+### DEV-686 Cemetery case rooms had no supported records or useful furniture
+
+The memorial register now has a desk in the archive, and the visitor register sits beside the public route in annex reception. The annex viewing, preparation, cold and receiving furniture fit with passing working aisles and retained door approaches. The game recognizes the records from actual standing stances. [Evidence](../levels/rebuild/cemetery-furnishings-pass/checkpoint.json)
+
+### DEV-687 Mortuary viewing plaque floated above its pedestal
+
+The inherited detail was 45 mm above the top. Four measured contacts seat the placed plaque on the actual pedestal. The original model library remains the source for this assembly. [Fitted instance and standing views](../levels/rebuild/cemetery-furnishings-pass/checkpoint.json)

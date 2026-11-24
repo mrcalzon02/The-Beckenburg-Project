@@ -7602,6 +7602,28 @@
       "action": "Stop each duct at courtyard grade and carry it up the actual masonry into a packed sleeve at the switch.",
       "older_maps": "Distinguish ground-bearing slabs from elevated decks and use true wall-bearing service entries.",
       "evidence": "development/levels/rebuild/cemetery-distribution-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-686",
+      "title": "Cemetery case rooms had no physical record supports or readable registers",
+      "status": "CEMETERY_AND_MORTUARY_STAGED_CASE_ROOMS_AND_RECORDS_VERIFIED",
+      "affected": "WLD-07 archive and WLD-07-MORTUARY archive, reception, viewing and work rooms",
+      "symptom": "The empty rooms did not support physical record reading or distinguish public viewing and staff activity.",
+      "cause": "The previous map pass stopped at room construction and working utilities.",
+      "action": "Fit both registers and rough mortuary furnishings to the real slabs and check reading approaches, ritual space and work aisles.",
+      "older_maps": "Verify case furniture placement, actual document focus, and the retained paths near each installation.",
+      "evidence": "development/levels/rebuild/cemetery-furnishings-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-687",
+      "title": "The mortuary viewing plaque floated above its pedestal",
+      "status": "SEATED_ON_SURVEYED_PEDESTAL_TOP",
+      "affected": "WLD-07-MORTUARY viewing room",
+      "symptom": "The inherited rough plaque was 45 mm above its pedestal.",
+      "cause": "The detail was authored at a nominal height instead of the finished pedestal top.",
+      "action": "Seat the plaque on four measured contacts in the installed instance and verify standing view and exact GLB/collision agreement.",
+      "older_maps": "Inspect inherited decorative subassemblies for actual contact when fitting reused furniture.",
+      "evidence": "development/levels/rebuild/cemetery-furnishings-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

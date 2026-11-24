@@ -19,6 +19,10 @@ public final class SiteStories {
    "The assay office recorded grades and wages for the haul crews. The lower workings closed before Emergence Day. A rescue party returned with a tally and marked its withdrawal through the ventilation route.");
   case "wld-06"->new Identity(WharfNativeLevel.TITLE,"Shore street, Coastal Territories",
    "Fishing households and the two working piers shared a repair berth and fish landing. When the roads broke in late 2022, the crews ferried refugees and rationed their remaining fuel.");
+  case "wld-07"->new Identity("Saint Bartholomew's Forgotten Cemetery","Cemetery lane, Northern Woodlands",
+   "The parish kept separate registers for numbered plots and memorials. The caretaker maintained the grounds and both stairs to the ossuary. A rescue party used the old register to account for missing people in late 2022.");
+  case "wld-07-mortuary"->new Identity("Saint Bartholomew's Cemetery and Vale Mortuary","Cemetery lane, Northern Woodlands",
+   "Vale Mortuary later opened beside the burial grounds, with a public entrance and a separate vehicle receiving bay. The visitor registry and the parish register record different kinds of arrivals.");
   default->new Identity("Beckenburg site","Beckenburg", "Building history not yet authored.");};}
  public static Document document(String site,String id){site=canonical(site);if(id.startsWith("ROOM_"))return LegacySiteStories.document(site,Integer.parseInt(id.substring(5)));if(id.equals("EMERGENCE"))return WorldLore.fieldRecord(site);if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
   case "TRANSMISSION"->lookoutDocument(site,id,"Ranger relay transcript",List.of(
@@ -45,6 +49,14 @@ public final class SiteStories {
    "Fish house sorting bench. The catch weights stop halfway down the sheet.",
    "The remaining lines list fuel issued against crossings and people waiting on the dock. Use the cross-dock to reach the other pier. The loose outer berth is closed until it can be inspected.",
    "A Meridian surveyor later copied this sheet and left the original at the bench."));
+  case "MEMORIAL_REGISTER"->cemeteryDocument(site,id,false,"Memorial register",List.of(
+   "Parish copy. Plot numbers run east from the avenue. Replacement stones keep the original number.",
+   "The last two caretaker signatures overlap. One hand has crossed out the succession date and left room for a parish countersignature.",
+   "Late 2022. The rescue party copied a second list of missing people. Keep it separate from the memorial entries until someone brings word."));
+  case "VISITOR_REGISTER"->cemeteryDocument(site,id,true,"Vale visitor register",List.of(
+   "Visitors sign in at reception and wait for the attendant before entering the viewing room.",
+   "The lined entries are names of visitors. Transfers are recorded on a separate sheet kept at the receiving bay.",
+   "Late 2022. The attendant has circled three addresses for the next search party and written a time to meet at the cemetery gate."));
   case "HISTORY"->new Document(id,place.title(),List.of(place.address(),place.history(),"Local history and household records. These details do not identify the haunting."));
   case "LETTERS"->new Document(id,site.equals("school")?"Caretaker's service papers":"Tied correspondence",site.equals("house")?List.of("17 Briar Lane. Mrs E. Vale, 1983.","Please keep Mother's mending tin. The little blue lid still fits, and her needles are inside.","The plumbing men return on Thursday. Leave the cellar laundry clear; the old photographs can stay on the sideboard."):
    site.equals("farmhouse")?List.of("Hollowmere Farm, Mill Road. Spring work list.","Put the clean linen on the yard line. Boots stay by the shed, not beside the upstairs washbasin.","The 1947 repair receipts are tied beneath these letters. Keep them with the farm papers."):
@@ -52,6 +64,11 @@ public final class SiteStories {
   case "MENDING"->new Document(id,"Inherited mending tin",List.of(place.address(),"A faded tin, wooden thread bobbins, crossed scissors and carefully saved needles. The lid has been kept with it.","Useful things outlived the people who first bought them; the household kept repairing instead of replacing."));
   case "BOOTS"->new Document(id,"Work boots by the laundry",List.of(place.address(),"Mud-darkened leather, worn soles and re-laced eyelets. Left beside the washing area to dry before the next day's work."));
   default->throw new IllegalArgumentException("Unknown readable object");};}
+ private static Document cemeteryDocument(String site,String id,boolean annexOnly,String title,List<String> lines){
+  if(!site.equals("wld-07-mortuary")&&(annexOnly||!site.equals("wld-07")))
+   throw new IllegalArgumentException("Unknown readable object");
+  return new Document(id,title,lines);
+ }
  private static Document wharfDocument(String site,String id,String title,List<String> lines){
   if(!site.equals("wld-06"))throw new IllegalArgumentException("Unknown readable object");
   return new Document(id,title,lines);

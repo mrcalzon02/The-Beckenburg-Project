@@ -14,8 +14,11 @@ def main():
     stages.add_argument("--refuges",action="store_true")
     stages.add_argument("--power",action="store_true")
     stages.add_argument("--distribution",action="store_true")
+    stages.add_argument("--furnishings",action="store_true")
     args=parser.parse_args()
-    if args.distribution:
+    if args.furnishings:
+        review,stem=BASE/"cemetery-furnishings-pass","furnished-grounds"
+    elif args.distribution:
         review,stem=BASE/"cemetery-distribution-pass","distributed-grounds"
     elif args.power:
         review,stem=BASE/"cemetery-power-pass","caretaker-power"
@@ -31,9 +34,11 @@ def main():
     gpu=ROOT/"gpu-client/target/BeckenburgGPU.jar"
     source=ROOT/"tools/java"
     helpers=("CemeteryDoorReview.java","CemeteryRefugeReview.java","CemeteryPowerReview.java","WharfPowerChecks.java",
-             "NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java","CemeteryDistributionReview.java")
+             "NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java","CemeteryDistributionReview.java",
+             "CemeteryFurnishingsReview.java")
+    story=ROOT/"src/main/java/org/beckenburg/SiteStories.java"
     subprocess.run([str(java/"javac.exe"),"-encoding","UTF-8","-cp",str(jar),"-d",str(build),
-                    *(str(source/name) for name in helpers)],cwd=ROOT,check=True)
+                    *(str(source/name) for name in helpers),str(story)],cwd=ROOT,check=True)
     cp=os.pathsep.join(map(str,(build,jar,gpu) if args.gpu else (build,jar)))
     for site in ("wld-07","wld-07-mortuary"):
         if stem is not None:

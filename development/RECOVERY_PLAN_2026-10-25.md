@@ -2239,3 +2239,7 @@ Refuge commit c4ea82293f6209c825b3d79ff3fb881ff989d9df and gallery 45377307998 p
 ### Cemetery and mortuary building distribution
 
 The caretaker power commit 1dc79552d5058e88477726a60ebaf100674181a2 and gallery 45379219384 passed on held draft PR 86. The [distribution checkpoint](levels/rebuild/cemetery-distribution-pass/checkpoint.json) binds the measured conduits, sealed sleeves, room controls and all resulting lamp loads to the exact native exports. Both renderers passed the existing walking, door, acoustic and refuge-entry checks. Four-peer TCP proved independent aimed control and restoration and repeated the caretaker trip, restart, reconnect and reset. Continue with the physical case materials and named dispatch.
+
+### Cemetery and mortuary physical case furnishings
+
+Distribution commit 39963cc5075b41027982abb3cb394ec000f7d78a and gallery 45381880440 passed on held draft PR 86. The [case furnishings checkpoint](levels/rebuild/cemetery-furnishings-pass/checkpoint.json) binds the newly supported record and furniture geometry to verified staging. The archive desks and reception register are operable through the ordinary reading action. Checked aisles, ritual clearance, doors, refuges and circuits stay usable. Continue with normal named solo and LAN dispatch and actual case actions.
