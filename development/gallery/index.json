@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11747,
+  "count": 11779,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -114254,6 +114254,326 @@
       "height": 720,
       "bytes": 555906,
       "sha256": "153ec0f2e7f94d89e0a94932140f5fe484bbb1c8c7053277307a19064fb7c63b"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-bench-CROSSING_SHEET.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-bench-CROSSING_SHEET.png",
+      "title": "Wharf bench crossing sheet",
+      "kind": "Wharf supported case record in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 373171,
+      "sha256": "4c7852506af7146477808a232c4dcb9da9e2a31b8e6d934f58c62536e6a13ff8"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-bench-DEPARTURE_TALLY.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-bench-DEPARTURE_TALLY.png",
+      "title": "Wharf bench departure tally",
+      "kind": "Wharf supported case record in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 362136,
+      "sha256": "9125b9deaeba905b2dceb995357125fd10a8276142e9a77696e36010ddcf0b56"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-circuit-0-off.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-circuit-0-off.png",
+      "title": "Wharf circuit 0 off",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 179185,
+      "sha256": "737faf15f6d7582291a48546b54b4782d9070db46135a7be9be7d8a0971eb0e0"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-circuit-0-on.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-circuit-0-on.png",
+      "title": "Wharf circuit 0 on",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 199407,
+      "sha256": "b7713d40b5f6fd5b60055393511e40db9a11943981b876c05cb95fb59741941f"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-circuit-5-off.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-circuit-5-off.png",
+      "title": "Wharf circuit 5 off",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 223173,
+      "sha256": "f5adc9b91941a3793a63309e158a1b1b1710d973072deb9ba3b9599c2d78f40d"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-circuit-5-on.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-circuit-5-on.png",
+      "title": "Wharf circuit 5 on",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 240362,
+      "sha256": "a6a514d14015cbcc7c536473a1974634071a5721901684de20ebc6bcf1d1a97d"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-cottage-a-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-cottage-a-cupboard-enter.png",
+      "title": "Wharf cottage a cupboard enter",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 473606,
+      "sha256": "801445f8709cb2a0db7e9cce32ceace9e65065c8b2aaa39d4ab1ed42783c8403"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-cottage-a-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-cottage-a-cupboard-inside.png",
+      "title": "Wharf cottage a cupboard inside",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 410532,
+      "sha256": "2b85126d54b93527bb22776339497475cca801423b3d932871eb2e79005d0c82"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-cottage-b-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-cottage-b-cupboard-enter.png",
+      "title": "Wharf cottage b cupboard enter",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 485723,
+      "sha256": "a96d9c4593b87dd7ed8335d16c847f8ec4178582851c3ed1441394e6104afcc5"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-cottage-b-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-cottage-b-cupboard-inside.png",
+      "title": "Wharf cottage b cupboard inside",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 411164,
+      "sha256": "b5c61838ade3da0ebb08a3457ef7c9ce8d22952f8e322201732df298068aa161"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-net-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-net-cupboard-enter.png",
+      "title": "Wharf net cupboard enter",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 484763,
+      "sha256": "b6ffbd367743627e5fb2eb6a580edafb1dbab037073bb053180f0428dff0e9ba"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-net-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-net-cupboard-inside.png",
+      "title": "Wharf net cupboard inside",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 416162,
+      "sha256": "42eefbc38822d8d4d8a04cbcc46ca240c32e94b2d9414a2f63eaf112cddf7714"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-record-CROSSING_SHEET.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-record-CROSSING_SHEET.png",
+      "title": "Wharf record crossing sheet",
+      "kind": "Wharf in-game readable case record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11505,
+      "sha256": "1352ba708b962d113059cad3acbe9cc136d77d47e862311f6b85a78ef1b45cef"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-record-DEPARTURE_TALLY.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-record-DEPARTURE_TALLY.png",
+      "title": "Wharf record departure tally",
+      "kind": "Wharf in-game readable case record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11553,
+      "sha256": "ecbfd3b48e429c65b0d431fd4993b08e5099780a2f96ad38fb58fe19569b7dfc"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-service-blackout.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-service-blackout.png",
+      "title": "Wharf service blackout",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 240428,
+      "sha256": "49e0504c5629654b160de351eb420bf1b12c99de07f2cc7ad18ca09069d54625"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-service-powered.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/opengl/wharf-service-powered.png",
+      "title": "Wharf service powered",
+      "kind": "Named Wharf service and refuge check in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 335875,
+      "sha256": "5b65d31debbfadcc40eb5fd31de24ae857305e14ea43677e759fc6f3676c4d8e"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-bench-CROSSING_SHEET.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-bench-CROSSING_SHEET.png",
+      "title": "Wharf bench crossing sheet",
+      "kind": "Wharf supported case record in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 371912,
+      "sha256": "5a6339826fafa214b8519a3b78b0a63701f53f675bab39b35c811a7c125f385a"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-bench-DEPARTURE_TALLY.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-bench-DEPARTURE_TALLY.png",
+      "title": "Wharf bench departure tally",
+      "kind": "Wharf supported case record in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 361055,
+      "sha256": "a3d5d52e583ecb11ecdc76777cabe198bbc94574bba736245ff1eb20fe4805bd"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-circuit-0-off.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-circuit-0-off.png",
+      "title": "Wharf circuit 0 off",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 178081,
+      "sha256": "1386bee96c2844d98399a46f220b7b0251cd33465c5b8e5dcf38288a9e602059"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-circuit-0-on.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-circuit-0-on.png",
+      "title": "Wharf circuit 0 on",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 201992,
+      "sha256": "10eb773a90f4259c107a7285a07d18a66afc3dcf578e70c82c8b2da10c28aa1a"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-circuit-5-off.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-circuit-5-off.png",
+      "title": "Wharf circuit 5 off",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 221510,
+      "sha256": "70585ee9a483139c563cfaf708f95377660df7c220a5dddcef266d883d130a7b"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-circuit-5-on.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-circuit-5-on.png",
+      "title": "Wharf circuit 5 on",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 270368,
+      "sha256": "0f83951c18acaec0263eb761a056b390940b6ef45794faaee483077bd5469778"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-cottage-a-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-cottage-a-cupboard-enter.png",
+      "title": "Wharf cottage a cupboard enter",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 468342,
+      "sha256": "2f912b2bacd69f6f5f0be8550346458252e3a26d11ca506ff421bdf7d10ae5c9"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-cottage-a-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-cottage-a-cupboard-inside.png",
+      "title": "Wharf cottage a cupboard inside",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 410882,
+      "sha256": "f5829121faa0e32829dd0af87498160b9fc9ed5e1a76b6b7474a1591bd2d6803"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-cottage-b-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-cottage-b-cupboard-enter.png",
+      "title": "Wharf cottage b cupboard enter",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 481017,
+      "sha256": "b0b25148ed7d5ab7ecea75ccdd2d93ef0d200716327dd71b26a4fbb9a269d398"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-cottage-b-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-cottage-b-cupboard-inside.png",
+      "title": "Wharf cottage b cupboard inside",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 412274,
+      "sha256": "b0d67f95b00c7890a162be34bf24e7276c7049c1ed187846ec69788aed1302f3"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-net-cupboard-enter.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-net-cupboard-enter.png",
+      "title": "Wharf net cupboard enter",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 479812,
+      "sha256": "e208a9dfea50c0ce6f67e042b0695f3b4211557d2234fab8d0aa0578cb1e2eb2"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-net-cupboard-inside.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-net-cupboard-inside.png",
+      "title": "Wharf net cupboard inside",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 418650,
+      "sha256": "20c3fdfd06446c866c0410b400d7a4cae80adde61b531b329f11cc22e73a804b"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-record-CROSSING_SHEET.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-record-CROSSING_SHEET.png",
+      "title": "Wharf record crossing sheet",
+      "kind": "Wharf in-game readable case record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11505,
+      "sha256": "1352ba708b962d113059cad3acbe9cc136d77d47e862311f6b85a78ef1b45cef"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-record-DEPARTURE_TALLY.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-record-DEPARTURE_TALLY.png",
+      "title": "Wharf record departure tally",
+      "kind": "Wharf in-game readable case record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11553,
+      "sha256": "ecbfd3b48e429c65b0d431fd4993b08e5099780a2f96ad38fb58fe19569b7dfc"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-service-blackout.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-service-blackout.png",
+      "title": "Wharf service blackout",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 243564,
+      "sha256": "5f9926f03566b4bad32f1790cca5a912c076d5429327ee6f07cdbbc162c0bcae"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-case-pass/captures/wharf-service-powered.png",
+      "url": "development/levels/rebuild/wharf-case-pass/captures/wharf-service-powered.png",
+      "title": "Wharf service powered",
+      "kind": "Named Wharf service and refuge check in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 350118,
+      "sha256": "59682bbda7190683f99a944f784795e5fd6137bf46920fa7eb479b859ec28aab"
     },
     {
       "path": "development/levels/rebuild/wharf-cover-pass/captures/opengl/wharf-cottage-a-cupboard-enter.png",

@@ -4,21 +4,14 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 import dev.mrcalzon.water.WaterDocument;
-import org.beckenburg.LevelDefinition.Dock;
 import org.beckenburg.LevelDefinition.Portal;
-import org.beckenburg.LevelDefinition.Room;
-import org.beckenburg.LevelDefinition.Socket;
 import org.beckenburg.LevelDefinition.Vec;
 
 /** Checks the inspected native Wharf frames using real open and closed leaves. */
 public final class WharfDoorReview {
-    private record Anchor(int id,String space,Vec at) {}
-
     public static void main(String[] args) throws Exception {
         if (!List.of(args).contains("--gpu")) {
             review(args);
@@ -35,70 +28,29 @@ public final class WharfDoorReview {
 
     private static void review(String[] args) throws Exception {
         Path folder=Path.of(args[0]);
-        var spaces=new ArrayList<NativeInvestigationScene.Space>();
-        var titles=new java.util.HashMap<String,String>();
-        var anchors=new ArrayList<Anchor>();
-        var steps=new HashSet<String>();
-        var sockets=new ArrayList<Socket>();
-        var switchFeet=new LinkedHashMap<Integer,Vec>();
-        var portals=new ArrayList<Portal>();
-        var paths=new LinkedHashMap<String,List<Vec>>();
-        for (String line:Files.readAllLines(folder.resolve("room-layout.tsv"))) {
-            var r=line.split("\t");
-            switch(r[0]) {
-                case "SPACE" -> {
-                    spaces.add(new NativeInvestigationScene.Space(r[1],id(r,2),d(r,3),d(r,4),d(r,5),d(r,6),
-                        d(r,7),d(r,8),Boolean.parseBoolean(r[9]),true));
-                    titles.put(r[1],r[10]);
-                }
-                case "TREAD" -> steps.add(r[1]);
-                case "ANCHOR" -> anchors.add(new Anchor(id(r,1),r[2],vec(r,3)));
-                case "SWITCH_FEET" -> switchFeet.put(id(r,1),vec(r,2));
-                case "SERVICE" -> sockets.add(new Socket(r[1],r[2],id(r,3),d(r,4),d(r,5),d(r,6),d(r,7),r[8]));
-                case "COVER" -> sockets.add(new Socket(r[1],"hide",id(r,2),d(r,3),d(r,4),d(r,5),d(r,6),"walk-in-cupboard"));
-                case "RITUAL" -> sockets.add(new Socket("wharf-"+r[1],"ritual",id(r,2),d(r,3),d(r,4),d(r,5),0,r[1]));
-                case "POINT" -> paths.computeIfAbsent(r[1],ignored->new ArrayList<>()).add(vec(r,2));
-                case "TRANSITION" -> portals.add(new Portal(id(r,1),id(r,3),id(r,4),d(r,5),d(r,6),d(r,7),
-                        d(r,9),r[8].equals("z"),r[10],1));
-                default -> throw new IllegalArgumentException("Invalid Wharf row "+r[0]);
-            }
+        WharfNativeLevel.Source source;
+        try (var layout = Files.newInputStream(folder.resolve("room-layout.tsv"));
+             var doors = Files.newInputStream(folder.resolve("door-schedule.tsv"));
+             var glb = Files.newInputStream(Path.of(args[1]));
+             var physics = Files.newInputStream(Path.of(args[3]));
+             var water = Files.newInputStream(Path.of(args[5]))) {
+            source = WharfNativeLevel.read(WharfNativeLevel.rows(layout), WharfNativeLevel.rows(doors),
+                glb, args[2], physics, args[4], WaterDocument.read(water));
         }
-        var openings=List.copyOf(portals);
-        var leaves=new ArrayList<NativeInvestigationDoor.Spec>();
-        for (String line:Files.readAllLines(folder.resolve("door-schedule.tsv"))) {
-            var r=line.split("\t");
-            var p=new Portal(id(r,0),id(r,4),id(r,5),d(r,6),d(r,7),d(r,8),d(r,9),r[10].equals("z"),"door",1);
-            portals.add(p);
-            leaves.add(new NativeInvestigationDoor.Spec(r[1],r[2],r[3],p,d(r,11),d(r,12),d(r,13),
-                      id(r,14),id(r,15),id(r,16),r[17]));
-        }
-        var dock=new Dock(32,0,74,0);
-        var van=new VanStaging(new VanStaging.Placement(dock.x(),dock.y(),dock.z(),dock.yaw()));
-        var lip=van.world(0,VanStaging.FRONT);
-        portals.add(new Portal(880,13,14,lip.x(),van.floorY(),lip.z(),VanStaging.RAMP_HALF_WIDTH*2,true,"trail",1));
-        NativeInvestigationScene scene;
-        WaterDocument water;
-        try(var glb=Files.newInputStream(Path.of(args[1]));var physics=Files.newInputStream(Path.of(args[3]));
-            var wet=Files.newInputStream(Path.of(args[5]))) {
-            scene=NativeInvestigationScene.read(glb,args[2],physics,args[4],steps,spaces,leaves);
-            water=WaterDocument.read(wet);
-        }
-        var rooms=new Room[15];
-        for(var a:anchors) {
-            var at=a.at();
-            var space=scene.spaceAt(at.x(),at.y(),at.z());
-            require(space!=null&&space.id().equals(a.space())&&space.owner()==a.id()
-                &&scene.physics().traversable(at,HunterPosture.STANDING_HEIGHT),"Invalid Wharf anchor "+a+": "+space);
-            rooms[a.id()]=new Room(a.id(),titles.get(a.space()),space.x0(),space.z0(),space.x1(),space.z1(),
-                space.floor(),space.height(),space.outside()?"native-outdoor":"wood",
-                space.outside()?"outdoor":"timber",at);
-        }
-        rooms[14]=new Room(14,"Expedition van",30.74,71,33.26,76.4,van.floorY(),VanStaging.INTERIOR_HEIGHT,
-                           "van","metal",new Vec(32,van.floorY(),74));
-        var level=new LevelDefinition("wld-06",scene.revision(),"Drowned Fisherman's Wharf",List.of(rooms),portals,
-                List.of(),List.of(),List.of(),sockets,List.of(),dock,"coast",water);
-        var host=new HouseMap(HouseMap.Site.USER,level,null,scene);
-        var client=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        var level = source.level();
+        var scene = source.scene();
+        var openings = source.openings();
+        var leaves = source.doors();
+        var paths = source.paths();
+        var switchFeet = source.switchFeet();
+        boolean named = !source.stories().isEmpty();
+        var site = named ? HouseMap.Site.WHARF : HouseMap.Site.USER;
+        if (named) WharfCaseChecks.auditDispatch(level, scene);
+        var host = named ? new HouseMap(site) : new HouseMap(site, level, null, scene);
+        var client = named ? new HouseMap(site) : new HouseMap(site, level, null, scene);
+        var dock = level.dock();
+        var van = new VanStaging(new VanStaging.Placement(dock.x(), dock.y(), dock.z(), dock.yaw()));
+        var lip = van.world(0, VanStaging.FRONT);
         require(host.valid()&&RitualSites.valid(host),"Wharf room graph or ritual reservation is invalid");
         for (var opening:openings) auditOpening(host,opening);
         for (var frame:leaves) {
@@ -114,7 +66,7 @@ public final class WharfDoorReview {
             var points=new ArrayList<>(route.getValue());
             if (route.getKey().equals("L01")) {
                 points.add(0,new Vec(lip.x(),van.floorY(),lip.z()));
-                points.add(0,rooms[14].spawn());
+                points.add(0,level.room(14).spawn());
             }
             for(double h:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}) {
                 NativeSchoolInteriorReview.walk(host,points,h,route.getKey());
@@ -136,10 +88,20 @@ public final class WharfDoorReview {
             WharfPowerChecks.audit(host,captures,evidence);
             if(!switchFeet.isEmpty())WharfPowerChecks.auditCircuits(host,switchFeet,captures,evidence);
             if(!gpu){
-                WharfPowerChecks.live(level,scene,evidence);
-                if(!switchFeet.isEmpty())WharfPowerChecks.liveCircuits(level,scene,switchFeet,evidence);
+                WharfPowerChecks.live(named ? new HouseMap(site) : new HouseMap(site,level,null,scene),evidence);
+                if(!switchFeet.isEmpty())WharfPowerChecks.liveCircuits(named ? new HouseMap(site) : new HouseMap(site,level,null,scene),switchFeet,evidence);
             }
-            Files.writeString(folder.resolve(gpu?"power-opengl.tsv":"power-software.tsv"),
+            if (named) {
+                NativeSchoolInteriorReview.auditWalkInCover(host, captures, evidence, "wharf");
+                WharfCaseChecks.audit(host, source.stories(), captures, evidence);
+                if (!gpu) {
+                    auditLiveCover(new HouseMap(site), evidence);
+                    WharfCaseChecks.live(level, source.stories(), evidence);
+                    WharfCaseChecks.fieldActions(level, evidence);
+                }
+            }
+            Files.writeString(folder.resolve(named ? (gpu ? "named-opengl.tsv" : "named-software.tsv")
+                                                   : (gpu ? "power-opengl.tsv" : "power-software.tsv")),
                               String.join("\n",evidence)+"\n");
             evidence.forEach(System.out::println);
             return;
@@ -147,7 +109,7 @@ public final class WharfDoorReview {
         if(cover){
             var evidence=new ArrayList<String>();
             NativeSchoolInteriorReview.auditWalkInCover(host,captures,evidence,"wharf");
-            if(!gpu)auditLiveCover(level,scene,evidence);
+            if(!gpu)auditLiveCover(new HouseMap(site,level,null,scene),evidence);
             Files.writeString(folder.resolve(gpu?"cover-opengl.tsv":"cover-software.tsv"),
                               String.join("\n",evidence)+"\n");
             evidence.forEach(System.out::println);
@@ -165,7 +127,7 @@ public final class WharfDoorReview {
         Files.createDirectories(evidence);
         Files.writeString(evidence.resolve(gpu?"opengl.tsv":"software.tsv"),String.join("\n",
             "check\tresult","native_scene_revision\t"+scene.revision(),"stage_revision\t"+level.revision(),
-            "fitted_frames\t"+leaves.size(),"reachable_owners\t"+rooms.length,
+            "fitted_frames\t"+leaves.size(),"reachable_owners\t"+level.rooms().size(),
             "physical_walks_both_postures_and_directions\t"+paths.size(),
             "native_door_motion_body_optical_acoustic_and_snapshot\tPASS",
             "physically_checked_open_portals\t"+openings.size(),
@@ -173,9 +135,8 @@ public final class WharfDoorReview {
             "renderer\t"+(gpu?GpuWorldRenderer.active().rendererDescription():"Software"))+"\n");
     }
 
-    private static void auditLiveCover(LevelDefinition level,NativeInvestigationScene scene,List<String> report)
-            throws Exception {
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+    private static void auditLiveCover(HouseMap map,List<String> report) throws Exception {
+        var level=map.level();
         map.configureHiding(100);
         var full=new CustomContract(3,100,150,100,100,100,100,100,CustomContract.Sprint.LIMITED,100,true,true);
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,full,map);
@@ -185,7 +146,7 @@ public final class WharfDoorReview {
             var ghost=new NativeSchoolInteriorReview.Peer(host,true,"Wharf Ghost")) {
             var hunters=List.of(one,two,three);
             for(var peer:List.of(one,two,three,ghost)){
-                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.awaitExact("SITE|"+map.site()+"|"+level.revision());
                 peer.client.ready();
             }
             one.awaitExact("LOBBY|3|HUMAN|4|WAITING");
@@ -287,8 +248,5 @@ public final class WharfDoorReview {
         }
     }
 
-    private static Vec vec(String[] r,int i){return new Vec(d(r,i),d(r,i+1),d(r,i+2));}
-    private static double d(String[] r,int i){return Double.parseDouble(r[i]);}
-    private static int id(String[] r,int i){return Integer.parseInt(r[i]);}
     private static void require(boolean v,String context){if(!v)throw new AssertionError(context);}
 }

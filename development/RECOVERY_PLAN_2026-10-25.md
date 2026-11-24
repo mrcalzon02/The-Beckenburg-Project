@@ -2215,3 +2215,7 @@ Refuge commit a4388ff96b30705e7cd7eb8014554667586a3aba is verified on draft PR 8
 ### Drowned Fisherman's Wharf distribution
 
 Service plant commit ba7642b943f9ccfa2bf5a82b8b76b105ee26ec3e is verified on draft PR 86. Gallery 45365492343 passed. The [distribution checkpoint](levels/rebuild/wharf-distribution-pass/checkpoint.json) extends the forecourt supply through the measured land, deck ducts and supported building conduit to six working room circuits. Both renderer runs and independent live cottage and undercroft switches passed. Continue case records, evidence and named dispatch.
+
+### Drowned Fisherman's Wharf named case review
+
+Distribution commit 01c6e583ad13eb6a51c398dd8a1a38b5caeec883 is verified on draft PR 86. Gallery 45367423013 passed. The [named case checkpoint](levels/rebuild/wharf-case-pass/checkpoint.json) binds the exact native Wharf package to the ordinary selection and network revision contracts behind the existing style of review gate. Software and RTX 5070 rendering retained nineteen routes, eight doors, six room circuits and three walk-in refuges. Four-peer LAN verified both readable records, fish-house evidence and camera, all three rites, withdrawal and the individual refuge thresholds. Normal-use subdivision and task fit, later art and encounters, and final acceptance remain open. Continue the architectural pass at the Cemetery and mortuary annex from their measured source.

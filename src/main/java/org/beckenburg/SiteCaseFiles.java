@@ -56,6 +56,13 @@ public final class SiteCaseFiles {
                 "ACCESS: The haul stairs and ventilation stairs connect the headhouse and workings. The collapsed hoist bay is sealed behind a fixed guard.",
                 "SERVICES: The roadhead generator and breaker supply the working lights. The lower sump is guarded.",
                 "RECORDS: The assay ledger and rescue tally describe past work and the return party. Collect instrument evidence for the current case."));
+            case "wld-06" -> new File("BB / WLD-06",identity.title(),identity.address(),List.of(
+                "The shore cottages served two fishing households. Catch passed through the fish house and both piers shared the cross-dock.",
+                "Late 2022: Crews made repeated rescue crossings after the land routes broke. The departure tally and a reused catch sheet record the fuel allotments and landings."),
+                List.of("OBJECTIVE: Investigate the current threat, perform the appropriate rite, and withdraw to the van.",
+                "ACCESS: Follow shore street to the cottages and quay. The cross-dock joins the piers. Both guarded stairs lead to the dry undercroft. Stay on the decks at the water's edge.",
+                "SERVICES: The shore-street generator and breaker supply six room circuits. Refuge cupboards stand in the cottages and net shed.",
+                "RECORDS: Read the boathouse departure tally and fish house crossing sheet. Collect evidence of the current haunting using your instruments."));
             default -> {
                 var story=WorldLore.SITES.stream().filter(s->s.id().equals(id)).findFirst().orElse(null);
                 yield new File("BB / "+id.toUpperCase(java.util.Locale.ROOT),story==null?identity.title():story.title(),identity.address(),

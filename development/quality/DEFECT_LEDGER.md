@@ -9090,3 +9090,11 @@ The generator, breaker and shed lamp now sit in a founded service bay. A ghost t
 ### DEV-675 Wharf buildings and dry undercroft lacked connected room lighting
 
 Six working room circuits now connect to the forecourt plant. Every switch passed aimed operation and its own load test in software and RTX 5070 OpenGL. The west cottage and dry undercroft switches also passed independent live multiplayer operation. [Evidence](../levels/rebuild/wharf-distribution-pass/checkpoint.json)
+
+### DEV-676 Wharf lacked a named mission binding and readable local records
+
+The named review option now opens the same exact native package in solo selection and LAN. Both records are seated on surveyed work surfaces and read through normal aimed interaction. The four-peer replay exercised local evidence, camera, all three installations, retreat and the retained refuges and circuits. [Evidence](../levels/rebuild/wharf-case-pass/checkpoint.json)
+
+### DEV-677 House room 2 switch lacks a clear operating stance
+
+The shared utility test finds no clear approach among nine candidate stances at the plate at (17.915, 1.2, 12.7). The same failure reproduces on the previous source classes. Inspect wall mount, furnishing and aiming approach before changing the switch. [Reproduction](../levels/rebuild/wharf-case-pass/checkpoint.json)

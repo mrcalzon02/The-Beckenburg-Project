@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-11-23",
+  "updated": "2026-11-24",
   "issues": [
     {
       "id": "DEV-355",
@@ -7492,6 +7492,28 @@
       "action": "Fit measured switch and soffit assemblies. Carry protected, continuous ducts from the installed plant boot and verify supported connections and two independent live switches.",
       "older_maps": "Exercise each mounted switch and resulting load, including live neighboring circuits and the shared breaker.",
       "evidence": "development/levels/rebuild/wharf-distribution-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-676",
+      "title": "Wharf lacked a named mission binding and readable local records",
+      "status": "WHARF_NAMED_PACKAGED_CASE_VERIFIED_UNDER_REVIEW_GATE",
+      "affected": "Drowned Fisherman's Wharf case dispatch, boathouse and fish house",
+      "symptom": "The fitted Wharf could only be staged in USER review and had no records in its work rooms.",
+      "cause": "The Wharf service and door review owned an unshipped runtime parser without a named package.",
+      "action": "Bind the exact native source to shared mission selection behind its review property. Seat canonical records on both existing benches and verify named selection, reading, camera, evidence, all rites, retreat, services and walk-in refuge.",
+      "older_maps": "Confirm named revision exchange, actual record support and reach, and bounded case actions individually.",
+      "evidence": "development/levels/rebuild/wharf-case-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-677",
+      "title": "House room 2 mounted switch has no clear operating stance in the utility regression",
+      "status": "OPEN_BASELINE_REPRODUCED",
+      "affected": "The Briar House room 2, switch at (17.915, 1.2, 12.7)",
+      "symptom": "AuthoredUtilitiesTest finds zero clear operation positions among nine candidate stances.",
+      "cause": "Source of the obstruction is unconfirmed. The same result occurs with the pre-Wharf selection and level classes.",
+      "action": "Inspect the physical mount and room furnishing, then verify an actual aimed switch stance without widening interaction or crossing a wall.",
+      "older_maps": "Recheck mounted controls after furnishing changes, including player feet and a real sight line.",
+      "evidence": "development/levels/rebuild/wharf-case-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

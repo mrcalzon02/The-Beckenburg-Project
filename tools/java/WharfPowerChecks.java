@@ -51,8 +51,8 @@ final class WharfPowerChecks {
         }
     }
 
-    static void live(LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception {
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+    static void live(HouseMap map,List<String> report)throws Exception {
+        var level=map.level();
         var generator=level.socket("generator",12);
         var breaker=RoomLighting.breaker(map);
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
@@ -61,7 +61,7 @@ final class WharfPowerChecks {
             var teammate=new Peer(host,false,"Wharf Crew");
             var ghost=new Peer(host,true,"Wharf Ghost")) {
             for(var peer:List.of(player,witness,teammate,ghost)){
-                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.awaitExact("SITE|"+map.site()+"|"+level.revision());
                 peer.client.ready();
             }
             player.awaitExact("LOBBY|3|HUMAN|4|WAITING");
@@ -73,7 +73,7 @@ final class WharfPowerChecks {
             require(map.roomAt(at.x(),at.y(),at.z())==14,"Live start missed the van");
             ghost.client.viewGhost3D();
             ghost.awaitExact("ACCEPT|GVIEW3D");
-            ghost.awaitExact("SITE|USER|"+level.revision());
+            ghost.awaitExact("SITE|"+map.site()+"|"+level.revision());
             ghost.await("GPOSE|");
             NativeSchoolInteriorReview.ghostTrip(host,witness,ghost);
             for(int i=0;i<15;i++)at=NativeSchoolInteriorReview.step(player,0,0,-100);
@@ -98,7 +98,7 @@ final class WharfPowerChecks {
                 await(frames,"INFO|mission resumed");
                 resumed.view3D();
                 await(frames,"ACCEPT|VIEW3D");
-                await(frames,"SITE|USER|"+level.revision());
+                await(frames,"SITE|"+map.site()+"|"+level.revision());
                 await(frames,"LIGHTS|111111111111|0");
                 await(frames,"SOURCE|1");
             }
@@ -174,16 +174,15 @@ final class WharfPowerChecks {
         report.add("room_"+room+"_standing_view_contrast\t"+changed+" changed pixels, "+mean+" mean RGB increase");
     }
 
-    static void liveCircuits(LevelDefinition level,NativeInvestigationScene scene,Map<Integer,Vec> feet,
-            List<String> report)throws Exception {
-        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+    static void liveCircuits(HouseMap map,Map<Integer,Vec> feet,List<String> report)throws Exception {
+        var level=map.level();
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
             var west=new Peer(host,false,"Cottage Electrician");
             var cellar=new Peer(host,false,"Undercroft Electrician");
             var witness=new Peer(host,false,"Wharf Watch");
             var ghost=new Peer(host,true,"Wharf Ghost")){
             for(var peer:List.of(west,cellar,witness,ghost)){
-                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.awaitExact("SITE|"+map.site()+"|"+level.revision());
                 peer.client.ready();
             }
             west.awaitExact("LOBBY|3|HUMAN|4|WAITING");

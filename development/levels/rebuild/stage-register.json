@@ -3861,20 +3861,22 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "ba7642b943f9ccfa2bf5a82b8b76b105ee26ec3e",
+          "source_sha": "01c6e583ad13eb6a51c398dd8a1a38b5caeec883",
           "evidence": [
             "development/levels/rebuild/wharf-door-pass/checkpoint.json",
             "development/levels/rebuild/wharf-cover-pass/checkpoint.json",
             "development/levels/rebuild/wharf-power-pass/checkpoint.json",
-            "development/levels/rebuild/wharf-distribution-pass/checkpoint.json"
+            "development/levels/rebuild/wharf-distribution-pass/checkpoint.json",
+            "development/levels/rebuild/wharf-case-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-672",
             "DEV-673",
             "DEV-674",
-            "DEV-675"
+            "DEV-675",
+            "DEV-676"
           ],
-          "next_action": "Fit case evidence and physical records, then verify named dispatch and the actual Wharf gameplay gates."
+          "next_action": "Named power, cover, camera, evidence, rites, and retreat passed. Complete location-specific loose-physics and encounter fitting and check their named runtime behavior."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -3902,11 +3904,15 @@
           "next_action": "Complete prerequisite stage"
         },
         "S09": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "01c6e583ad13eb6a51c398dd8a1a38b5caeec883",
+          "evidence": [
+            "development/levels/rebuild/wharf-case-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-676"
+          ],
+          "next_action": "Two installed records and dispatch history are verified. Complete the functional furnishing survey and material wear before signing off story."
         },
         "S10": {
           "status": "NOT_AUDITED",
@@ -3916,11 +3922,15 @@
           "next_action": "Complete prerequisite stage"
         },
         "S11": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "01c6e583ad13eb6a51c398dd8a1a38b5caeec883",
+          "evidence": [
+            "development/levels/rebuild/wharf-case-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-676"
+          ],
+          "next_action": "Named exact-package and bounded LAN actions passed. Complete architecture, art, individual encounter, solo and physical-hardware acceptance."
         }
       },
       "arrival_bearing_pass": {

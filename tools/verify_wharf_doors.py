@@ -101,8 +101,9 @@ def main():
     stages.add_argument("--cover",action="store_true")
     stages.add_argument("--power",action="store_true")
     stages.add_argument("--distribution",action="store_true")
+    stages.add_argument("--case",action="store_true")
     args=parser.parse_args()
-    stem="wharf-distribution" if args.distribution else "wharf-power" if args.power else "wharf-cover" if args.cover else None
+    stem="wharf-case" if args.case else "wharf-distribution" if args.distribution else "wharf-power" if args.power else "wharf-cover" if args.cover else None
     stage=BASE/(stem+"-pass") if stem else STAGE
     java=Path("C:/Program Files/Java/jdk-17/bin")
     jar=ROOT/"build/beckenburg-game.jar"
@@ -122,11 +123,11 @@ def main():
         rows, doors = build_inputs(read(SOURCE/"authored-layout.json"))
         tsv(stage/"room-layout.tsv",rows)
         tsv(stage/"door-schedule.tsv",doors)
-    helpers=[ROOT/"tools/java"/f for f in ("WharfDoorReview.java","WharfPowerChecks.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java")]
+    helpers=[ROOT/"tools/java"/f for f in ("WharfDoorReview.java","WharfCaseChecks.java","WharfPowerChecks.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java")]
     subprocess.run([str(java/"javac.exe"),"-encoding","UTF-8","-cp",str(jar),"-d",str(BUILD),*map(str,helpers)],
                    cwd=ROOT,check=True)
     cp=os.pathsep.join(map(str,(BUILD,jar,gpu) if args.gpu else (BUILD,jar)))
-    subprocess.run([str(java/"java.exe"),"-Djava.awt.headless=true","-Xmx3g","-cp",cp,
+    subprocess.run([str(java/"java.exe"),"-Djava.awt.headless=true",*(["-Dbeckenburg.review.wharfNative=true"] if args.case else []),"-Xmx3g","-cp",cp,
                     "org.beckenburg.WharfDoorReview",str(stage),str(glb),hashes[0],str(physics),hashes[1],
                     str(LAND/"wharf-tide.water"),*(["--gpu"] if args.gpu else [])],cwd=ROOT,check=True)
 

@@ -26,7 +26,15 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/wharf-distribution-pass/' in path:
+    if '/wharf-case-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        if p.name.startswith('wharf-record-'):
+            kind='Wharf in-game readable case record'
+        elif p.name.startswith('wharf-bench-'):
+            kind='Wharf supported case record in the '+renderer+' game renderer'
+        else:
+            kind='Named Wharf service and refuge check in the '+renderer+' game renderer'
+    elif '/wharf-distribution-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Wharf fitted room circuit in the '+renderer+' game renderer'
     elif '/wharf-power-pass/' in path:

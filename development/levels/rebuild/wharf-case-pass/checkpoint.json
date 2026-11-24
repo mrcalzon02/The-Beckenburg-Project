@@ -1,0 +1,33 @@
+{
+  "status": "WHARF_NAMED_PACKAGED_CASE_VERIFIED_UNDER_REVIEW_GATE",
+  "previous_commit": "01c6e583ad13eb6a51c398dd8a1a38b5caeec883",
+  "previous_gallery": 45367423013,
+  "scene_revision": "644dcebb85ce9d2749f74e4f6f5e0b7d943d31d515bf21d476ae5e413d6a6184",
+  "published_review_property": "beckenburg.review.wharfNative",
+  "exact_exports": {
+    "development/levels/rebuild/wharf-case-pass/wharf-case.blend": "c73efe0abcf71ac0595cb341c22662126ac23e9dfd2f3789172521669382da9c",
+    "development/levels/rebuild/wharf-case-pass/wharf-case.glb": "afc32644eb9d2c6143039c6c56a73b52045dbf4e009db6fbda8f69efcb770c7e",
+    "development/levels/rebuild/wharf-case-pass/wharf-case.hcs2": "4a98cdb5adf63e98e4be945e9e552b2b60e153709a7bb1aa6eef4ec4c2c4824d"
+  },
+  "packaged_resources": "development/levels/rebuild/wharf-case-pass/package-resources.json",
+  "authoring_and_support": "development/levels/rebuild/wharf-case-pass/construction.json",
+  "runtime_reports": {
+    "software": "development/levels/rebuild/wharf-case-pass/named-software.tsv",
+    "opengl": "development/levels/rebuild/wharf-case-pass/named-opengl.tsv"
+  },
+  "roster": "development/levels/rebuild/wharf-case-pass/roster.json",
+  "stable_owners": 15,
+  "physical_paths": 19,
+  "fitted_leaves": 8,
+  "open_portals": 10,
+  "protected_usable_floor_samples": 207,
+  "switched_room_circuits": 6,
+  "next_action": "Complete cottage normal-use subspaces and fish-house wet/cold tasks, net drying fit, loose-physics and location encounters, material wear, and final solo and hardware checks. Carry the next architectural pass to the cemetery and mortuary, which still lack a staged runtime.",
+  "shared_regression_checks": {
+    "SiteSelectionTest": "PASS",
+    "MissionBoardIntegrationTest": "PASS",
+    "HidingBudgetTest": "PASS on 16 built locations across all 101 settings",
+    "AuthoredLevelRitualCaseTest": "PASS",
+    "AuthoredUtilitiesTest": "Known failing on both this package and prior built source classes at HOUSE room 2 switch. DEV-677."
+  }
+}

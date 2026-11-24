@@ -24,7 +24,8 @@ public final class MissionBoardIntegrationTest {
         var catalog=CampaignBoardPanel.catalog();
         check(catalog.size()==22,"all saved campaign ordinals retained");
         for(int i=0;i<expected.size();i++)check(catalog.get(i).map()==expected.get(i),"saved chapter map retained at "+i);
-        for(int i=9;i<22;i++)check(catalog.get(i).map()==null&&!catalog.get(i).playable(),"remote concepts remain locked");
+        for(int i=9;i<22;i++)check(!catalog.get(i).playable(),"remote chapters remain locked by default");
+        check(catalog.get(14).map()==SiteCatalog.Location.WHARF,"Wharf retains its saved chapter ordinal");
         for(var site:HouseMap.Site.values())check(!MissionSites.title(site.name()).isBlank(),"lobby can label every authoring enum");
         check(!SiteCatalog.playable(HouseMap.Site.HOLLOW_CREEK),"lore alias does not unlock prototype geometry");
         for(var entry:MissionSites.all())try(var in=MissionBoardPanel.class.getResourceAsStream(
@@ -47,6 +48,7 @@ public final class MissionBoardIntegrationTest {
             check(picture[0].isVisible(),"site pictures card opens");
             picture[0].select("SCHOOL");check(!dispatch.isEnabled(),"browsing locked School cannot bypass story checkpoint");
             picture[0].select("WLD-02");check(!dispatch.isEnabled(),"browsing remote concept cannot dispatch");
+            picture[0].select("WLD-06");check(!dispatch.isEnabled(),"named Wharf cannot bypass its review gate");
             picture[0].select("CASTLE");check(!dispatch.isEnabled(),"headquarters cannot become an investigation");
             picture[0].select("HOUSE");check(dispatch.isEnabled(),"unlocked House remains dispatchable");
             dispatch.doClick();check(launches.get()==1,"real campaign dispatch action retained");

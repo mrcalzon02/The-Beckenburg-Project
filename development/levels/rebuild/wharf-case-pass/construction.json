@@ -1,0 +1,96 @@
+{
+  "exports": {
+    "development/levels/rebuild/wharf-case-pass/wharf-case.blend": "c73efe0abcf71ac0595cb341c22662126ac23e9dfd2f3789172521669382da9c",
+    "development/levels/rebuild/wharf-case-pass/wharf-case.glb": "afc32644eb9d2c6143039c6c56a73b52045dbf4e009db6fbda8f69efcb770c7e",
+    "development/levels/rebuild/wharf-case-pass/wharf-case.hcs2": "4a98cdb5adf63e98e4be945e9e552b2b60e153709a7bb1aa6eef4ec4c2c4824d"
+  },
+  "prior_exports": {
+    "development/levels/rebuild/wharf-distribution-pass/wharf-distribution.blend": "2cf9d45380fd7c3519f7a5169da326873a8c13102ea96fbc18b4472954666b23",
+    "development/levels/rebuild/wharf-distribution-pass/wharf-distribution.glb": "1becc3501a1dfe57dbbd2c61fb3e47f7c0cb9056dc77870e141647f2e2bd4c35",
+    "development/levels/rebuild/wharf-distribution-pass/wharf-distribution.hcs2": "a5ce4a2fc972c443db77f29262794b1098de2d2f6d5de29c821f7b3edf8f79a5"
+  },
+  "retained_parts": 904,
+  "added_parts": 2,
+  "supported_records": [
+    {
+      "document": "DEPARTURE_TALLY",
+      "owner": 2,
+      "zone": "boathouse",
+      "top_m": 0.9100000858306885,
+      "approach": [
+        7.825,
+        0,
+        11.9
+      ],
+      "aim": [
+        7.825,
+        0.92604,
+        10.577
+      ],
+      "asset": "level_trace_journal",
+      "sha256": "156d7cbc6a3273df7d2d1e305424c5c14705e8bf891d13f2a4e3320f1f3e29c5",
+      "bounds": [
+        [
+          7.70445,
+          0.9105,
+          10.497001
+        ],
+        [
+          7.89555,
+          0.92709,
+          10.623
+        ]
+      ],
+      "pivot": [
+        7.800000190734863,
+        0.9105001091957092,
+        10.5600004196167
+      ],
+      "yaw": 0,
+      "scale": 0.42,
+      "support": [
+        "level_blockout_workbench.001"
+      ]
+    },
+    {
+      "document": "CROSSING_SHEET",
+      "owner": 4,
+      "zone": "fish",
+      "top_m": 1.059999942779541,
+      "approach": [
+        37.94,
+        0,
+        13.577
+      ],
+      "aim": [
+        39.314999,
+        1.07184,
+        13.577
+      ],
+      "asset": "level_story_letters",
+      "sha256": "8b8c58baa89876d9577127e548cc9f6323381a5d0b524b3f1baede5b7c357acc",
+      "bounds": [
+        [
+          39.232479,
+          1.0605,
+          13.515451
+        ],
+        [
+          39.347523,
+          1.075289,
+          13.604549
+        ]
+      ],
+      "pivot": [
+        39.287445068359375,
+        1.0602898597717285,
+        13.560105323791504
+      ],
+      "yaw": 0,
+      "scale": 0.42,
+      "support": [
+        "level_blockout_fish_sorting_bench.001"
+      ]
+    }
+  ]
+}

@@ -129,6 +129,14 @@ for table in arrival door-survey mission; do
     cp "$mine_packet/$table.tsv" "build/classes/org/beckenburg/sites/mine-$table.tsv"
 done
 cp "$mine_packet/mine-sump.water" build/classes/org/beckenburg/sites/mine-sump.water
+wharf_packet=development/levels/rebuild/wharf-case-pass
+for extension in glb hcs2; do
+    cp "$wharf_packet/wharf-case.$extension" "build/classes/org/beckenburg/sites/wharf-case.$extension"
+done
+for table in room-layout door-schedule; do
+    cp "$wharf_packet/$table.tsv" "build/classes/org/beckenburg/sites/wharf-$table.tsv"
+done
+cp development/levels/rebuild/wharf-landward-pass/wharf-tide.water build/classes/org/beckenburg/sites/wharf-tide.water
 asylum_packet=development/levels/rebuild/asylum-flight-rails-pass
 for extension in glb hcs2; do
     cp "$asylum_packet/asylum-stair.$extension" "build/classes/org/beckenburg/sites/asylum-stair.$extension"

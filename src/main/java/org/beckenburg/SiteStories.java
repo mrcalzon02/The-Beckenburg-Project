@@ -17,6 +17,8 @@ public final class SiteStories {
    "The station logged weather, wind and smoke bearings. It became an emergency relay in late 2022. A radio keeper later maintained the road signal for travellers.");
   case "wld-05"->new Identity("Dead Man's Claim","Highland Frontier mine service road",
    "The assay office recorded grades and wages for the haul crews. The lower workings closed before Emergence Day. A rescue party returned with a tally and marked its withdrawal through the ventilation route.");
+  case "wld-06"->new Identity(WharfNativeLevel.TITLE,"Shore street, Coastal Territories",
+   "Fishing households and the two working piers shared a repair berth and fish landing. When the roads broke in late 2022, the crews ferried refugees and rationed their remaining fuel.");
   default->new Identity("Beckenburg site","Beckenburg", "Building history not yet authored.");};}
  public static Document document(String site,String id){site=canonical(site);if(id.startsWith("ROOM_"))return LegacySiteStories.document(site,Integer.parseInt(id.substring(5)));if(id.equals("EMERGENCE"))return WorldLore.fieldRecord(site);if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
   case "TRANSMISSION"->lookoutDocument(site,id,"Ranger relay transcript",List.of(
@@ -35,6 +37,14 @@ public final class SiteStories {
    "Crew house dispatch bench. Late 2022.",
    "The return party checked the haul stairs and marked the ventilation way back to the headhouse. Two names are ticked on return. The last line is blank.",
    "The writer asks the next party to carry a lamp and leave someone at the roadhead. The lift remains out of service."));
+  case "DEPARTURE_TALLY"->wharfDocument(site,id,"Boathouse departure tally",List.of(
+   "Boathouse repair bench. First week after the shore road closed.",
+   "The coxswain lists the people aboard each crossing by household. The transferred fuel cans are struck off as they go. Two berths were left empty for the return crew.",
+   "A later hand rings the last landing time. Leave the western mooring line out for boats returning in the dark."));
+  case "CROSSING_SHEET"->wharfDocument(site,id,"Catch and crossing sheet",List.of(
+   "Fish house sorting bench. The catch weights stop halfway down the sheet.",
+   "The remaining lines list fuel issued against crossings and people waiting on the dock. Use the cross-dock to reach the other pier. The loose outer berth is closed until it can be inspected.",
+   "A Meridian surveyor later copied this sheet and left the original at the bench."));
   case "HISTORY"->new Document(id,place.title(),List.of(place.address(),place.history(),"Local history and household records. These details do not identify the haunting."));
   case "LETTERS"->new Document(id,site.equals("school")?"Caretaker's service papers":"Tied correspondence",site.equals("house")?List.of("17 Briar Lane. Mrs E. Vale, 1983.","Please keep Mother's mending tin. The little blue lid still fits, and her needles are inside.","The plumbing men return on Thursday. Leave the cellar laundry clear; the old photographs can stay on the sideboard."):
    site.equals("farmhouse")?List.of("Hollowmere Farm, Mill Road. Spring work list.","Put the clean linen on the yard line. Boots stay by the shed, not beside the upstairs washbasin.","The 1947 repair receipts are tied beneath these letters. Keep them with the farm papers."):
@@ -42,6 +52,10 @@ public final class SiteStories {
   case "MENDING"->new Document(id,"Inherited mending tin",List.of(place.address(),"A faded tin, wooden thread bobbins, crossed scissors and carefully saved needles. The lid has been kept with it.","Useful things outlived the people who first bought them; the household kept repairing instead of replacing."));
   case "BOOTS"->new Document(id,"Work boots by the laundry",List.of(place.address(),"Mud-darkened leather, worn soles and re-laced eyelets. Left beside the washing area to dry before the next day's work."));
   default->throw new IllegalArgumentException("Unknown readable object");};}
+ private static Document wharfDocument(String site,String id,String title,List<String> lines){
+  if(!site.equals("wld-06"))throw new IllegalArgumentException("Unknown readable object");
+  return new Document(id,title,lines);
+ }
  private static Document mineDocument(String site,String id,String title,List<String> lines){
   if(!site.equals("wld-05"))throw new IllegalArgumentException("Unknown readable object");
   return new Document(id,title,lines);
