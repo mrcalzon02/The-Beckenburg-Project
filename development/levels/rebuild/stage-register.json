@@ -2530,27 +2530,33 @@
           "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
           "evidence": [
             "development/levels/rebuild/interior-stair-landing-pass/checkpoint.json",
-            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
+            "development/levels/rebuild/school-electrical-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-573",
             "DEV-574",
-            "DEV-578"
+            "DEV-578",
+            "DEV-620",
+            "DEV-621"
           ],
-          "next_action": "Carry forward the measured and tested entry leaves. Verify remaining building doors, real map registration, services and host/guest transport."
+          "next_action": "Complete room-by-room standing views and optical enclosure checks across the packaged geometry."
         },
         "S06": {
           "status": "IN_PROGRESS",
           "source_sha": "1cbdba402ab1de42e0e6d1a52c0cda7acfed81fa",
           "evidence": [
             "development/levels/rebuild/measured-arrival-and-approach-pass/checkpoint.json",
-            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json"
+            "development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
+            "development/levels/rebuild/school-electrical-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-574",
-            "DEV-578"
+            "DEV-578",
+            "DEV-622",
+            "DEV-623"
           ],
-          "next_action": "Carry forward the measured and tested entry leaves. Verify remaining building doors, real map registration, services and host/guest transport."
+          "next_action": "Verify remaining plumbing, vents, device use and physical containment room by room."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -2592,11 +2598,13 @@
           "next_action": "Complete prerequisite stage"
         },
         "S11": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
+          "evidence": [
+            "development/levels/rebuild/school-electrical-pass/checkpoint.json"
+          ],
           "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "next_action": "Verify complete evidence, rituals, rescue, extraction and progression and the Windows hardware envelope before promotion."
         }
       },
       "arrival_bearing_pass": {

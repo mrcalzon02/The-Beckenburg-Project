@@ -1311,3 +1311,12 @@ The [measured plan](school-mission-graph-pass/assembly-partition-plan.svg) recor
 The [mission checkpoint](school-mission-graph-pass/checkpoint.json) verifies 20 fitted sets and all 156 direction and posture walk replays across 40 authored spaces. The exact editor and game match 35,600 triangles across 40 poses. Supported anchors and surveyed stair, yard and cargo transitions connect all 15 gameplay owners. The paved van approach uses forecourt owner 13 and the vehicle interior receives extraction owner 14. The movement guides are used in verification and create zero runtime portals or surfaces.
 
 Four real TCP clients joined the staged case at the same revision. A scout walked from the deck onto the forecourt. A hunter stopped at the closed assembly door, aimed at its leaf, opened it and crossed into the upper lobby. Another peer received the door state. Ordinary packaged selection, mounted services and full-case acceptance remain open.
+
+
+## Ravenshade packaged powered review
+
+The [Ravenshade checkpoint](school-electrical-pass/checkpoint.json) packages the native School source for opt-in solo and LAN review using `-Dbeckenburg.review.schoolNative=true`. The school retains the audited stairs, full assembly partition, 20 fitted doors, 509 original collision components and 40 measured search spaces. Native structure and real door states govern movement. All 156 standing and crouched route replays pass against the packaged scene.
+
+The [service and cupboard schedule](school-electrical-pass/electrical.json) records the mounted breaker, 12 independent circuits, 26 fitted lights, 12 measured alarm sockets and three floor-supported cupboards. The plant feed joins three measured canonical terminals into a wall-backed junction. Software and RTX 5070 OpenGL readbacks capture the same powered and blackout states. The reopened editable scene matches all 35,600 fitted runtime triangles.
+
+Ordinary solo selection spawns on the actual van deck. Four peers select School through the normal packaged host. Movement crosses the forecourt and the fitted assembly door after opening it, and the ghost trips the breaker before a hunter aims at the physical panel and resets it. The Blackpine compatibility run timed out waiting for its ghost disturbance under concurrent verification and passed in isolation. The [29-location roster](school-electrical-pass/roster.json) retains the other source authorities. Remaining School work includes full containment, evidence, ritual and progression checks, and controlled hardware performance acceptance.

@@ -88,8 +88,11 @@ public final class HouseMap {
         this(site,definition,WorldTerrainSurface.of(definition));
     }
     HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface){
-        this(site,definition,worldSurface,site==Site.SEACLIFF
-            ?SeacliffNativeLevel.sceneFor(definition):CollegeNativeLevel.sceneFor(site,definition));
+        this(site,definition,worldSurface,switch(site){
+            case SCHOOL -> SchoolNativeLevel.sceneFor(definition);
+            case SEACLIFF -> SeacliffNativeLevel.sceneFor(definition);
+            default -> CollegeNativeLevel.sceneFor(site,definition);
+        });
     }
     static HouseMap forNetworkRevision(Site site,String revision){
         var map=new HouseMap(site);

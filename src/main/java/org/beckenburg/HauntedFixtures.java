@@ -30,6 +30,9 @@ public final class HauntedFixtures {
             if(p.mesh().equals("level_bath_basin"))add(Kind.SINK_BATH,p.room(),p.x(),p.y()+.86*p.scale(),p.z(),p.yaw(),p.scale());
             if(p.mesh().equals("level_kitchen_counter"))add(Kind.SINK_KITCHEN,p.room(),p.x()-Math.cos(p.yaw())*.6*p.scale(),p.y()+.92*p.scale(),p.z()-Math.sin(p.yaw())*.6*p.scale(),p.yaw(),p.scale());
         }
+        // Native rooms have authored device sockets on their actual walls.
+        // The legacy fallback searches the synthetic rectangular room shell.
+        if(map.nativeInvestigation()!=null)return;
         for(var s:map.level().sockets())if(s.type().equals("switch")){
             var r=map.level().room(s.room());double x=s.x(),z=s.z(),yaw;
             if(Math.abs(x-r.x0())<.2){x=r.x0()+.108;yaw=-Math.PI/2;}

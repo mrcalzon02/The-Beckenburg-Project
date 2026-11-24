@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11339,
+  "count": 11344,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -110064,6 +110064,56 @@
       "height": 1000,
       "bytes": 61389,
       "sha256": "e5b0b1c52592b54ebc51ac3e556f092797eed6b7b1b1ae4a04e992f461ba773f"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/captures/school-assembly-door-open-software.png",
+      "url": "development/levels/rebuild/school-electrical-pass/captures/school-assembly-door-open-software.png",
+      "title": "School assembly door open software",
+      "kind": "Ravenshade packaged standing view in the software renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 338792,
+      "sha256": "2ce55f5fc3611094900af9d449c88a9ce10f3643d9be439d01084cd7bf8939cb"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/captures/school-plant-blackout-opengl.png",
+      "url": "development/levels/rebuild/school-electrical-pass/captures/school-plant-blackout-opengl.png",
+      "title": "School plant blackout opengl",
+      "kind": "Ravenshade packaged standing view in the OpenGL renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 242525,
+      "sha256": "b98fe03a8df02bf20b51ca8e1890fc78ab98bfb2090cafe40073250eeae8647b"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/captures/school-plant-blackout-software.png",
+      "url": "development/levels/rebuild/school-electrical-pass/captures/school-plant-blackout-software.png",
+      "title": "School plant blackout software",
+      "kind": "Ravenshade packaged standing view in the software renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 241098,
+      "sha256": "6a1c38b6745439358b9b86e5204ce01321d70d2db5a922ddaf9ffa7a3ac8beed"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/captures/school-plant-powered-opengl.png",
+      "url": "development/levels/rebuild/school-electrical-pass/captures/school-plant-powered-opengl.png",
+      "title": "School plant powered opengl",
+      "kind": "Ravenshade packaged standing view in the OpenGL renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 398111,
+      "sha256": "9380f419a58843c1b583bb7ee998df87b82cbbba64398caf078fc2f5f5669aad"
+    },
+    {
+      "path": "development/levels/rebuild/school-electrical-pass/captures/school-plant-powered-software.png",
+      "url": "development/levels/rebuild/school-electrical-pass/captures/school-plant-powered-software.png",
+      "title": "School plant powered software",
+      "kind": "Ravenshade packaged standing view in the software renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 409779,
+      "sha256": "09d0fe829354f0b5fdc1a243487991537ea3f56426ac3c53c9a707b53df01721"
     },
     {
       "path": "development/levels/rebuild/service-ground-bay-pass/wld-09/captures/bay-structural-section.png",

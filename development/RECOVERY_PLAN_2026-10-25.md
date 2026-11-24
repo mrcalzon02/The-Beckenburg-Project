@@ -2042,3 +2042,10 @@ Main was observed at cdf802b18731a4648edfb6d0c94aea3ed96e5325. Full multiplayer 
 The [School mission checkpoint](levels/rebuild/school-mission-graph-pass/checkpoint.json) closes the measured wall and door conflicts and connects the staged mission on the exact retained terrain and floor datums. Four live TCP peers agree on the scene, and real input walks the van ramp and newly fitted assembly door. The 40 authored spaces and 156 full route replays pass again. Next install the plant breaker, room lighting and physical hiding before packaged review.
 
 Main was observed at cdf802b18731a4648edfb6d0c94aea3ed96e5325 with successful multiplayer 44496299092 and installer 44496299087 and failed renderer acceptance 44496299169. The previous Ravenshade draft gallery run 44507112742 passed at 0df8f55beb553e57891e7f04ed492b698e39f282. The held parent is 5c3daf923a7359554dc075c9e99be139bbcb1441.
+
+
+## Ravenshade power and packaged review
+
+The [Ravenshade checkpoint](levels/rebuild/school-electrical-pass/checkpoint.json) verifies ordinary solo and four-peer LAN dispatch in the Windows package, all 156 supported route checks, 20 fitted doors, independent power, real breaker trip/reset and three physical cupboards. Same-source software and RTX 5070 capture checks passed. Continue complete room containment, evidence, ritual, progression and hardware acceptance before promotion.
+
+Main was observed at cb220372fb721fbe588f49d3dc488f6dbba1602d. Full multiplayer 44863686526 and GPU renderer acceptance 44863686455 passed there. The latest successful installer was 44863580794 at c238cff07d73d4e326b220521974aca5494078ed. The preceding exact draft gallery run 44509396374 passed at 476ee987a34620f109d6f59e1335e5ef8d1ae779. The held map parent remains 5c3daf923a7359554dc075c9e99be139bbcb1441.

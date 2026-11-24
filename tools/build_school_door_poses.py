@@ -43,7 +43,7 @@ def build(source, schedule, asset, target, vertices):
         group = bpy.data.collections.new(f"School door leaves {state}")
         scene.collection.children.link(group)
         for row in csv.reader(schedule.open(encoding="utf-8"), delimiter="\t"):
-            if row[0] == "RITUAL":
+            if not row[0].isdigit():
                 continue
             portal, key, room_a, room_b, _, _, x, y, z, width, axis, near, far, height, count, hinge, swing, sha = row
             assert asset_sha == sha, key

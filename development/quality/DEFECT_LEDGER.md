@@ -8752,6 +8752,26 @@ Bind the paved stage to forecourt owner 13. Bind owner 14 to the real interior a
 
 Compare the actual extraction boundary with the layout stage area when binding a canonical van. [DEV-621 evidence](../levels/rebuild/school-mission-graph-pass/checkpoint.json)
 
+### DEV-622 Native School circuits triggered a synthetic alarm mounting search
+
+**Status** CORRECTED_WITH_AUTHORED_ALARM_SOCKETS · **Affected** Ravenshade School native case launch
+
+Native case construction threw No mounted reachable fire alarm: SCHOOL foyer after the measured switches were registered.
+
+Bind twelve explicit wall-supported fire alarm sockets to the native School and keep the legacy fallback for legacy rooms. Verify regular solo and four-player TCP case construction.
+
+Audit native institutional fixture sockets against actual wall contacts before enabling cases. [DEV-622 evidence](../levels/rebuild/school-electrical-pass/checkpoint.json)
+
+### DEV-623 Ravenshade incoming conduit missed the canonical cabinet lugs
+
+**Status** CORRECTED_WITH_MEASURED_TERMINAL_JOINTS · **Affected** Ravenshade plant switchgear
+
+The standing software capture showed three visible air gaps between the installed drops and the authored cabinet lugs.
+
+Measure the installed source terminals. Join each lug to its drop, all drops to the manifold and the riser to the wall-backed feed box. Verify the reopened export and capture both renderers.
+
+Inspect exposed service endpoints in standing views and confirm geometry contact against placed source assets. [DEV-623 evidence](../levels/rebuild/school-electrical-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed
