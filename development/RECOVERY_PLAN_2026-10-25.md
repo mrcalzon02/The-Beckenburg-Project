@@ -2211,3 +2211,7 @@ Door commit 7bd96d75823e5615c2cfb499a22eb9e06ad827e3 was verified on draft PR 86
 ### Drowned Fisherman's Wharf above-tide service plant
 
 Refuge commit a4388ff96b30705e7cd7eb8014554667586a3aba is verified on draft PR 86. Gallery 45363694877 passed. The [power checkpoint](levels/rebuild/wharf-power-pass/checkpoint.json) verifies the fitted forecourt generator, distribution panel and local lamp in both renderers. Four TCP peers tested a ghost trip, independent generator stop and restart, resuming while still tripped and aimed breaker reset. Continue building circuits and named case review.
+
+### Drowned Fisherman's Wharf distribution
+
+Service plant commit ba7642b943f9ccfa2bf5a82b8b76b105ee26ec3e is verified on draft PR 86. Gallery 45365492343 passed. The [distribution checkpoint](levels/rebuild/wharf-distribution-pass/checkpoint.json) extends the forecourt supply through the measured land, deck ducts and supported building conduit to six working room circuits. Both renderer runs and independent live cottage and undercroft switches passed. Continue case records, evidence and named dispatch.

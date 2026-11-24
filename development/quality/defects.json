@@ -7481,6 +7481,17 @@
       "action": "Fit the 58-part framed plant, test support, and verify host-authoritative trips, independent restart, reconnect and physical reset.",
       "older_maps": "Fit real generator, panel and connected loads, then verify trips, independent source state and resume.",
       "evidence": "development/levels/rebuild/wharf-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-675",
+      "title": "Wharf buildings and dry undercroft lacked connected room lighting",
+      "status": "WHARF_SIX_STAGED_SWITCHED_CIRCUITS_VERIFIED",
+      "affected": "Both cottages, boathouse, net and fish houses, and dry undercroft",
+      "symptom": "The local service light worked, but the six occupied rooms had no independent working circuits.",
+      "cause": "The previous electrical stage stopped at the forecourt plant and its local load.",
+      "action": "Fit measured switch and soffit assemblies. Carry protected, continuous ducts from the installed plant boot and verify supported connections and two independent live switches.",
+      "older_maps": "Exercise each mounted switch and resulting load, including live neighboring circuits and the shared breaker.",
+      "evidence": "development/levels/rebuild/wharf-distribution-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

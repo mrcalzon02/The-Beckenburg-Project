@@ -9086,3 +9086,7 @@ Both cottages and the net shed now have a real fitted walk-in refuge. Each refug
 ### DEV-674 Wharf lacked an operating, supported above-tide supply plant
 
 The generator, breaker and shed lamp now sit in a founded service bay. A ghost trip cuts the lamp. Restarting the generator leaves the breaker tripped, and a reconnect receives both states. Aimed reset at the panel restores the lamp. [Evidence](../levels/rebuild/wharf-power-pass/checkpoint.json)
+
+### DEV-675 Wharf buildings and dry undercroft lacked connected room lighting
+
+Six working room circuits now connect to the forecourt plant. Every switch passed aimed operation and its own load test in software and RTX 5070 OpenGL. The west cottage and dry undercroft switches also passed independent live multiplayer operation. [Evidence](../levels/rebuild/wharf-distribution-pass/checkpoint.json)

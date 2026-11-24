@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11735,
+  "count": 11747,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -114374,6 +114374,126 @@
       "height": 580,
       "bytes": 413446,
       "sha256": "7aa6b6bfb6140e62a6a7afb4c7601e49e0c23b4dd1dddbfd5886cf7d1d3c89cf"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-circuit-0-off.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-circuit-0-off.png",
+      "title": "Wharf circuit 0 off",
+      "kind": "Wharf fitted room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 179185,
+      "sha256": "737faf15f6d7582291a48546b54b4782d9070db46135a7be9be7d8a0971eb0e0"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-circuit-0-on.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-circuit-0-on.png",
+      "title": "Wharf circuit 0 on",
+      "kind": "Wharf fitted room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 199407,
+      "sha256": "b7713d40b5f6fd5b60055393511e40db9a11943981b876c05cb95fb59741941f"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-circuit-5-off.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-circuit-5-off.png",
+      "title": "Wharf circuit 5 off",
+      "kind": "Wharf fitted room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 223173,
+      "sha256": "f5adc9b91941a3793a63309e158a1b1b1710d973072deb9ba3b9599c2d78f40d"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-circuit-5-on.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-circuit-5-on.png",
+      "title": "Wharf circuit 5 on",
+      "kind": "Wharf fitted room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 240362,
+      "sha256": "a6a514d14015cbcc7c536473a1974634071a5721901684de20ebc6bcf1d1a97d"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-service-blackout.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-service-blackout.png",
+      "title": "Wharf service blackout",
+      "kind": "Wharf fitted room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 240428,
+      "sha256": "49e0504c5629654b160de351eb420bf1b12c99de07f2cc7ad18ca09069d54625"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-service-powered.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/opengl/wharf-service-powered.png",
+      "title": "Wharf service powered",
+      "kind": "Wharf fitted room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 335875,
+      "sha256": "5b65d31debbfadcc40eb5fd31de24ae857305e14ea43677e759fc6f3676c4d8e"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-circuit-0-off.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-circuit-0-off.png",
+      "title": "Wharf circuit 0 off",
+      "kind": "Wharf fitted room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 178081,
+      "sha256": "1386bee96c2844d98399a46f220b7b0251cd33465c5b8e5dcf38288a9e602059"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-circuit-0-on.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-circuit-0-on.png",
+      "title": "Wharf circuit 0 on",
+      "kind": "Wharf fitted room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 201992,
+      "sha256": "10eb773a90f4259c107a7285a07d18a66afc3dcf578e70c82c8b2da10c28aa1a"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-circuit-5-off.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-circuit-5-off.png",
+      "title": "Wharf circuit 5 off",
+      "kind": "Wharf fitted room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 221510,
+      "sha256": "70585ee9a483139c563cfaf708f95377660df7c220a5dddcef266d883d130a7b"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-circuit-5-on.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-circuit-5-on.png",
+      "title": "Wharf circuit 5 on",
+      "kind": "Wharf fitted room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 270368,
+      "sha256": "0f83951c18acaec0263eb761a056b390940b6ef45794faaee483077bd5469778"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-service-blackout.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-service-blackout.png",
+      "title": "Wharf service blackout",
+      "kind": "Wharf fitted room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 243564,
+      "sha256": "5f9926f03566b4bad32f1790cca5a912c076d5429327ee6f07cdbbc162c0bcae"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-service-powered.png",
+      "url": "development/levels/rebuild/wharf-distribution-pass/captures/wharf-service-powered.png",
+      "title": "Wharf service powered",
+      "kind": "Wharf fitted room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 350118,
+      "sha256": "59682bbda7190683f99a944f784795e5fd6137bf46920fa7eb479b859ec28aab"
     },
     {
       "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-810-closed.png",

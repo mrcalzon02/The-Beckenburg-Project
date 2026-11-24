@@ -1,0 +1,1992 @@
+{
+  "plant_boot": [
+    34.51,
+    -0.37,
+    54.87
+  ],
+  "surveys": [
+    [
+      "shelter service boot",
+      "buried land duct",
+      14
+    ],
+    [
+      "west cottage street duct",
+      "buried land duct",
+      103
+    ],
+    [
+      "east cottage street duct",
+      "buried land duct",
+      103
+    ],
+    [
+      "quay duct transition",
+      "buried land duct",
+      3
+    ],
+    [
+      "west cottage threshold sleeve",
+      "duct inside deck sections",
+      5
+    ],
+    [
+      "east cottage threshold sleeve",
+      "duct inside deck sections",
+      5
+    ],
+    [
+      "quay and central roof duct",
+      "duct inside deck sections",
+      315
+    ],
+    [
+      "west boardwalk duct",
+      "duct inside deck sections",
+      291
+    ],
+    [
+      "east pier-head duct beside the stair well",
+      "duct inside deck sections",
+      309
+    ],
+    [
+      "dry-cell roof takeoff",
+      "duct inside deck sections",
+      7
+    ]
+  ],
+  "actual_supports": [
+    [
+      "WH-00 switch drop clip",
+      [
+        13.3,
+        1.7424,
+        53.731
+      ],
+      [
+        13.3,
+        1.7424,
+        53.759998
+      ]
+    ],
+    [
+      "WH-00 switch drop clip",
+      [
+        13.3,
+        2.3296,
+        53.731
+      ],
+      [
+        13.3,
+        2.3296,
+        53.759998
+      ]
+    ],
+    [
+      "WH-00 wall riser clip",
+      [
+        13.3,
+        0.26,
+        53.731
+      ],
+      [
+        13.3,
+        0.26,
+        53.759998
+      ]
+    ],
+    [
+      "WH-00 wall riser clip",
+      [
+        13.3,
+        0.74,
+        53.731
+      ],
+      [
+        13.3,
+        0.74,
+        53.759998
+      ]
+    ],
+    [
+      "WH-00 wall riser clip",
+      [
+        13.3,
+        1.13,
+        53.731
+      ],
+      [
+        13.3,
+        1.13,
+        53.759998
+      ]
+    ],
+    [
+      "WH-00 overhead saddle",
+      [
+        12.65,
+        2.775,
+        53.731
+      ],
+      [
+        12.65,
+        2.84,
+        53.730999
+      ]
+    ],
+    [
+      "WH-00 overhead saddle",
+      [
+        12.0,
+        2.775,
+        52.783714
+      ],
+      [
+        12.0,
+        2.84,
+        52.783714
+      ]
+    ],
+    [
+      "WH-00 overhead saddle",
+      [
+        12.0,
+        2.775,
+        51.836428
+      ],
+      [
+        12.0,
+        2.84,
+        51.83643
+      ]
+    ],
+    [
+      "WH-00 overhead saddle",
+      [
+        12.0,
+        2.775,
+        50.889142
+      ],
+      [
+        12.0,
+        2.84,
+        50.889141
+      ]
+    ],
+    [
+      "WH-00 overhead saddle",
+      [
+        12.0,
+        2.775,
+        49.941856
+      ],
+      [
+        12.0,
+        2.84,
+        49.941856
+      ]
+    ],
+    [
+      "WH-00 overhead saddle",
+      [
+        12.0,
+        2.775,
+        48.99457
+      ],
+      [
+        12.0,
+        2.84,
+        48.994572
+      ]
+    ],
+    [
+      "WH-00 overhead saddle",
+      [
+        12.0,
+        2.775,
+        48.047284
+      ],
+      [
+        12.0,
+        2.84,
+        48.047283
+      ]
+    ],
+    [
+      "WH-01 switch drop clip",
+      [
+        53.3,
+        1.7424,
+        53.731
+      ],
+      [
+        53.299999,
+        1.7424,
+        53.759998
+      ]
+    ],
+    [
+      "WH-01 switch drop clip",
+      [
+        53.3,
+        2.3296,
+        53.731
+      ],
+      [
+        53.299999,
+        2.3296,
+        53.759998
+      ]
+    ],
+    [
+      "WH-01 wall riser clip",
+      [
+        53.3,
+        0.26,
+        53.731
+      ],
+      [
+        53.299999,
+        0.26,
+        53.759998
+      ]
+    ],
+    [
+      "WH-01 wall riser clip",
+      [
+        53.3,
+        0.74,
+        53.731
+      ],
+      [
+        53.299999,
+        0.74,
+        53.759998
+      ]
+    ],
+    [
+      "WH-01 wall riser clip",
+      [
+        53.3,
+        1.13,
+        53.731
+      ],
+      [
+        53.299999,
+        1.13,
+        53.759998
+      ]
+    ],
+    [
+      "WH-01 overhead saddle",
+      [
+        52.65,
+        2.775,
+        53.731
+      ],
+      [
+        52.650002,
+        2.84,
+        53.730999
+      ]
+    ],
+    [
+      "WH-01 overhead saddle",
+      [
+        52.0,
+        2.775,
+        52.783714
+      ],
+      [
+        52.0,
+        2.84,
+        52.783714
+      ]
+    ],
+    [
+      "WH-01 overhead saddle",
+      [
+        52.0,
+        2.775,
+        51.836428
+      ],
+      [
+        52.0,
+        2.84,
+        51.83643
+      ]
+    ],
+    [
+      "WH-01 overhead saddle",
+      [
+        52.0,
+        2.775,
+        50.889142
+      ],
+      [
+        52.0,
+        2.84,
+        50.889141
+      ]
+    ],
+    [
+      "WH-01 overhead saddle",
+      [
+        52.0,
+        2.775,
+        49.941856
+      ],
+      [
+        52.0,
+        2.84,
+        49.941856
+      ]
+    ],
+    [
+      "WH-01 overhead saddle",
+      [
+        52.0,
+        2.775,
+        48.99457
+      ],
+      [
+        52.0,
+        2.84,
+        48.994572
+      ]
+    ],
+    [
+      "WH-01 overhead saddle",
+      [
+        52.0,
+        2.775,
+        48.047284
+      ],
+      [
+        52.0,
+        2.84,
+        48.047283
+      ]
+    ],
+    [
+      "WH-02 switch drop clip",
+      [
+        19.731,
+        1.7424,
+        20.65
+      ],
+      [
+        19.76,
+        1.7424,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 switch drop clip",
+      [
+        19.731,
+        2.3296,
+        20.65
+      ],
+      [
+        19.76,
+        2.3296,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 wall riser clip",
+      [
+        19.731,
+        0.26,
+        20.65
+      ],
+      [
+        19.76,
+        0.26,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 wall riser clip",
+      [
+        19.731,
+        0.74,
+        20.65
+      ],
+      [
+        19.76,
+        0.74,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 wall riser clip",
+      [
+        19.731,
+        1.13,
+        20.65
+      ],
+      [
+        19.76,
+        1.13,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 overhead saddle",
+      [
+        18.764625000000002,
+        2.775,
+        20.65
+      ],
+      [
+        18.764626,
+        2.84,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 overhead saddle",
+      [
+        17.798250000000003,
+        2.775,
+        20.65
+      ],
+      [
+        17.79825,
+        2.84,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 overhead saddle",
+      [
+        16.831875,
+        2.775,
+        20.65
+      ],
+      [
+        16.831875,
+        2.84,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 overhead saddle",
+      [
+        15.8655,
+        2.775,
+        20.65
+      ],
+      [
+        15.8655,
+        2.84,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 overhead saddle",
+      [
+        14.899125000000002,
+        2.775,
+        20.65
+      ],
+      [
+        14.899125,
+        2.84,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 overhead saddle",
+      [
+        13.93275,
+        2.775,
+        20.65
+      ],
+      [
+        13.93275,
+        2.84,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 overhead saddle",
+      [
+        12.966375,
+        2.775,
+        20.65
+      ],
+      [
+        12.966375,
+        2.84,
+        20.65
+      ]
+    ],
+    [
+      "WH-02 overhead saddle",
+      [
+        12.0,
+        2.775,
+        19.766666666666666
+      ],
+      [
+        12.0,
+        2.84,
+        19.766666
+      ]
+    ],
+    [
+      "WH-02 overhead saddle",
+      [
+        12.0,
+        2.775,
+        18.883333333333333
+      ],
+      [
+        12.0,
+        2.84,
+        18.883333
+      ]
+    ],
+    [
+      "WH-03 switch drop clip",
+      [
+        44.269,
+        1.7424,
+        18.48
+      ],
+      [
+        44.240002,
+        1.7424,
+        18.48
+      ]
+    ],
+    [
+      "WH-03 switch drop clip",
+      [
+        44.269,
+        2.3296,
+        18.48
+      ],
+      [
+        44.240002,
+        2.3296,
+        18.48
+      ]
+    ],
+    [
+      "WH-03 wall riser clip",
+      [
+        44.269,
+        0.26,
+        18.48
+      ],
+      [
+        44.240002,
+        0.26,
+        18.48
+      ]
+    ],
+    [
+      "WH-03 wall riser clip",
+      [
+        44.269,
+        0.74,
+        18.48
+      ],
+      [
+        44.240002,
+        0.74,
+        18.48
+      ]
+    ],
+    [
+      "WH-03 wall riser clip",
+      [
+        44.269,
+        1.13,
+        18.48
+      ],
+      [
+        44.240002,
+        1.13,
+        18.48
+      ]
+    ],
+    [
+      "WH-03 overhead saddle",
+      [
+        45.22416666666666,
+        2.775,
+        18.48
+      ],
+      [
+        45.224167,
+        2.84,
+        18.48
+      ]
+    ],
+    [
+      "WH-03 overhead saddle",
+      [
+        46.17933333333333,
+        2.775,
+        18.48
+      ],
+      [
+        46.179333,
+        2.84,
+        18.48
+      ]
+    ],
+    [
+      "WH-03 overhead saddle",
+      [
+        47.1345,
+        2.775,
+        18.48
+      ],
+      [
+        47.134499,
+        2.84,
+        18.48
+      ]
+    ],
+    [
+      "WH-03 overhead saddle",
+      [
+        48.089666666666666,
+        2.775,
+        18.48
+      ],
+      [
+        48.089668,
+        2.84,
+        18.48
+      ]
+    ],
+    [
+      "WH-03 overhead saddle",
+      [
+        49.04483333333333,
+        2.775,
+        18.48
+      ],
+      [
+        49.044834,
+        2.84,
+        18.48
+      ]
+    ],
+    [
+      "WH-03 overhead saddle",
+      [
+        50.0,
+        2.775,
+        17.490000000000002
+      ],
+      [
+        50.0,
+        2.84,
+        17.49
+      ]
+    ],
+    [
+      "WH-04 switch drop clip",
+      [
+        33.65,
+        1.7424,
+        10.269
+      ],
+      [
+        33.650005,
+        1.7424,
+        10.24
+      ]
+    ],
+    [
+      "WH-04 switch drop clip",
+      [
+        33.65,
+        2.3296,
+        10.269
+      ],
+      [
+        33.650005,
+        2.3296,
+        10.24
+      ]
+    ],
+    [
+      "WH-04 wall riser clip",
+      [
+        33.65,
+        0.26,
+        10.269
+      ],
+      [
+        33.650005,
+        0.26,
+        10.24
+      ]
+    ],
+    [
+      "WH-04 wall riser clip",
+      [
+        33.65,
+        0.74,
+        10.269
+      ],
+      [
+        33.650005,
+        0.74,
+        10.24
+      ]
+    ],
+    [
+      "WH-04 wall riser clip",
+      [
+        33.65,
+        1.13,
+        10.269
+      ],
+      [
+        33.650005,
+        1.13,
+        10.24
+      ]
+    ],
+    [
+      "WH-04 overhead saddle",
+      [
+        32.825,
+        2.775,
+        10.269
+      ],
+      [
+        32.825001,
+        2.84,
+        10.269
+      ]
+    ],
+    [
+      "WH-04 overhead saddle",
+      [
+        32.0,
+        2.775,
+        11.307500000000001
+      ],
+      [
+        32.0,
+        2.84,
+        11.3075
+      ]
+    ],
+    [
+      "WH-04 overhead saddle",
+      [
+        32.0,
+        2.775,
+        12.346
+      ],
+      [
+        32.0,
+        2.84,
+        12.346
+      ]
+    ],
+    [
+      "WH-04 overhead saddle",
+      [
+        32.0,
+        2.775,
+        13.3845
+      ],
+      [
+        32.0,
+        2.84,
+        13.3845
+      ]
+    ],
+    [
+      "WH-04 overhead saddle",
+      [
+        32.0,
+        2.775,
+        14.423
+      ],
+      [
+        32.0,
+        2.84,
+        14.423
+      ]
+    ],
+    [
+      "WH-04 overhead saddle",
+      [
+        32.0,
+        2.775,
+        15.461500000000001
+      ],
+      [
+        32.0,
+        2.84,
+        15.4615
+      ]
+    ],
+    [
+      "WH-05 switch drop clip",
+      [
+        31.2,
+        -0.9496,
+        35.721
+      ],
+      [
+        31.200003,
+        -0.9496,
+        35.75
+      ]
+    ],
+    [
+      "WH-05 switch drop clip",
+      [
+        31.2,
+        -0.6184000000000001,
+        35.721
+      ],
+      [
+        31.200003,
+        -0.6184,
+        35.75
+      ]
+    ],
+    [
+      "WH-05 overhead saddle",
+      [
+        31.4,
+        -0.365,
+        34.7568
+      ],
+      [
+        31.4,
+        -0.3,
+        34.756802
+      ]
+    ],
+    [
+      "WH-05 overhead saddle",
+      [
+        31.4,
+        -0.365,
+        33.7926
+      ],
+      [
+        31.4,
+        -0.3,
+        33.792599
+      ]
+    ],
+    [
+      "WH-05 overhead saddle",
+      [
+        31.4,
+        -0.365,
+        32.828399999999995
+      ],
+      [
+        31.4,
+        -0.3,
+        32.8284
+      ]
+    ],
+    [
+      "WH-05 overhead saddle",
+      [
+        31.4,
+        -0.365,
+        31.864199999999997
+      ],
+      [
+        31.4,
+        -0.3,
+        31.864201
+      ]
+    ]
+  ],
+  "routes": [
+    {
+      "id": "EM-00 switch drop",
+      "points": [
+        [
+          13.3,
+          1.302,
+          53.730999
+        ],
+        [
+          13.3,
+          2.770000152587891,
+          53.730999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-01 switch drop",
+      "points": [
+        [
+          53.299999,
+          1.302,
+          53.730999
+        ],
+        [
+          53.299999,
+          2.770000152587891,
+          53.730999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-02 switch drop",
+      "points": [
+        [
+          19.731001,
+          1.302,
+          20.65
+        ],
+        [
+          19.731001,
+          2.770000152587891,
+          20.65
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-03 switch drop",
+      "points": [
+        [
+          44.269001,
+          1.302,
+          18.48
+        ],
+        [
+          44.269001,
+          2.770000152587891,
+          18.48
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-04 switch drop",
+      "points": [
+        [
+          33.650002,
+          1.302,
+          10.269
+        ],
+        [
+          33.650002,
+          2.770000152587891,
+          10.269
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-05 switch drop",
+      "points": [
+        [
+          31.200001,
+          -1.198,
+          35.721001
+        ],
+        [
+          31.200001,
+          -0.3699999523162842,
+          35.721001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "shelter service boot",
+      "points": [
+        [
+          34.51,
+          -0.37,
+          54.87
+        ],
+        [
+          32,
+          -0.37,
+          54.87
+        ]
+      ],
+      "radius": 0.029,
+      "visible": false,
+      "installation": "buried"
+    },
+    {
+      "id": "west cottage street duct",
+      "points": [
+        [
+          32,
+          -0.37,
+          54.87
+        ],
+        [
+          13.3,
+          -0.37,
+          54.87
+        ],
+        [
+          13.3,
+          -0.37,
+          54.19
+        ],
+        [
+          13.3,
+          -0.12,
+          54.19
+        ]
+      ],
+      "radius": 0.029,
+      "visible": false,
+      "installation": "buried"
+    },
+    {
+      "id": "east cottage street duct",
+      "points": [
+        [
+          34.51,
+          -0.37,
+          54.87
+        ],
+        [
+          53.3,
+          -0.37,
+          54.87
+        ],
+        [
+          53.3,
+          -0.37,
+          54.19
+        ],
+        [
+          53.3,
+          -0.12,
+          54.19
+        ]
+      ],
+      "radius": 0.029,
+      "visible": false,
+      "installation": "buried"
+    },
+    {
+      "id": "quay duct transition",
+      "points": [
+        [
+          32,
+          -0.37,
+          54.87
+        ],
+        [
+          32,
+          -0.12,
+          54.87
+        ]
+      ],
+      "radius": 0.029,
+      "visible": false,
+      "installation": "buried"
+    },
+    {
+      "id": "west cottage threshold sleeve",
+      "points": [
+        [
+          13.3,
+          -0.12,
+          54.19
+        ],
+        [
+          13.3,
+          -0.12,
+          53.731
+        ]
+      ],
+      "radius": 0.018,
+      "visible": false,
+      "installation": "deck duct"
+    },
+    {
+      "id": "east cottage threshold sleeve",
+      "points": [
+        [
+          53.3,
+          -0.12,
+          54.19
+        ],
+        [
+          53.3,
+          -0.12,
+          53.731
+        ]
+      ],
+      "radius": 0.018,
+      "visible": false,
+      "installation": "deck duct"
+    },
+    {
+      "id": "quay and central roof duct",
+      "points": [
+        [
+          32,
+          -0.12,
+          54.87
+        ],
+        [
+          32,
+          -0.12,
+          39
+        ],
+        [
+          32,
+          -0.12,
+          35.721
+        ],
+        [
+          32,
+          -0.12,
+          18
+        ],
+        [
+          33.65,
+          -0.12,
+          18
+        ],
+        [
+          33.65,
+          -0.12,
+          10.269
+        ]
+      ],
+      "radius": 0.018,
+      "visible": false,
+      "installation": "deck duct"
+    },
+    {
+      "id": "west boardwalk duct",
+      "points": [
+        [
+          32,
+          -0.12,
+          39
+        ],
+        [
+          22,
+          -0.12,
+          39
+        ],
+        [
+          14,
+          -0.12,
+          39
+        ],
+        [
+          14,
+          -0.12,
+          29
+        ],
+        [
+          16,
+          -0.12,
+          29
+        ],
+        [
+          16,
+          -0.12,
+          27.6
+        ],
+        [
+          16,
+          -0.12,
+          20.65
+        ],
+        [
+          19.731,
+          -0.12,
+          20.65
+        ]
+      ],
+      "radius": 0.018,
+      "visible": false,
+      "installation": "deck duct"
+    },
+    {
+      "id": "east pier-head duct beside the stair well",
+      "points": [
+        [
+          32,
+          -0.12,
+          39
+        ],
+        [
+          42,
+          -0.12,
+          39
+        ],
+        [
+          42,
+          -0.12,
+          37
+        ],
+        [
+          48,
+          -0.12,
+          37
+        ],
+        [
+          48,
+          -0.12,
+          29
+        ],
+        [
+          42,
+          -0.12,
+          29
+        ],
+        [
+          42,
+          -0.12,
+          18.48
+        ],
+        [
+          44.269,
+          -0.12,
+          18.48
+        ]
+      ],
+      "radius": 0.018,
+      "visible": false,
+      "installation": "deck duct"
+    },
+    {
+      "id": "dry-cell roof takeoff",
+      "points": [
+        [
+          32,
+          -0.12,
+          35.721
+        ],
+        [
+          31.2,
+          -0.12,
+          35.721
+        ]
+      ],
+      "radius": 0.018,
+      "visible": false,
+      "installation": "deck duct"
+    },
+    {
+      "id": "WH-00 sealed floor sleeve",
+      "points": [
+        [
+          13.3,
+          -0.12,
+          53.731
+        ],
+        [
+          13.3,
+          0.032,
+          53.731
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "sealed sleeve"
+    },
+    {
+      "id": "WH-00 mounted wall riser",
+      "points": [
+        [
+          13.3,
+          0.032,
+          53.731
+        ],
+        [
+          13.3,
+          1.302,
+          53.731
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "wall riser"
+    },
+    {
+      "id": "WH-00 service-box return",
+      "points": [
+        [
+          13.3,
+          2.77,
+          53.731
+        ],
+        [
+          13.3,
+          2.775,
+          53.731
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "mounted return"
+    },
+    {
+      "id": "WH-00 switched lamp conduit",
+      "points": [
+        [
+          13.3,
+          2.775,
+          53.731
+        ],
+        [
+          12.0,
+          2.775,
+          53.731
+        ],
+        [
+          12.0,
+          2.775,
+          47.1
+        ],
+        [
+          12.0,
+          2.828,
+          47.1
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "soffit conduit"
+    },
+    {
+      "id": "WH-01 sealed floor sleeve",
+      "points": [
+        [
+          53.3,
+          -0.12,
+          53.731
+        ],
+        [
+          53.3,
+          0.032,
+          53.731
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "sealed sleeve"
+    },
+    {
+      "id": "WH-01 mounted wall riser",
+      "points": [
+        [
+          53.3,
+          0.032,
+          53.731
+        ],
+        [
+          53.3,
+          1.302,
+          53.731
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "wall riser"
+    },
+    {
+      "id": "WH-01 service-box return",
+      "points": [
+        [
+          53.3,
+          2.77,
+          53.731
+        ],
+        [
+          53.3,
+          2.775,
+          53.731
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "mounted return"
+    },
+    {
+      "id": "WH-01 switched lamp conduit",
+      "points": [
+        [
+          53.3,
+          2.775,
+          53.731
+        ],
+        [
+          52.0,
+          2.775,
+          53.731
+        ],
+        [
+          52.0,
+          2.775,
+          47.1
+        ],
+        [
+          52.0,
+          2.828,
+          47.1
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "soffit conduit"
+    },
+    {
+      "id": "WH-02 sealed floor sleeve",
+      "points": [
+        [
+          19.731,
+          -0.12,
+          20.65
+        ],
+        [
+          19.731,
+          0.032,
+          20.65
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "sealed sleeve"
+    },
+    {
+      "id": "WH-02 mounted wall riser",
+      "points": [
+        [
+          19.731,
+          0.032,
+          20.65
+        ],
+        [
+          19.731,
+          1.302,
+          20.65
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "wall riser"
+    },
+    {
+      "id": "WH-02 service-box return",
+      "points": [
+        [
+          19.731,
+          2.77,
+          20.65
+        ],
+        [
+          19.731,
+          2.775,
+          20.65
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "mounted return"
+    },
+    {
+      "id": "WH-02 switched lamp conduit",
+      "points": [
+        [
+          19.731,
+          2.775,
+          20.65
+        ],
+        [
+          12.0,
+          2.775,
+          20.65
+        ],
+        [
+          12.0,
+          2.775,
+          18.0
+        ],
+        [
+          12.0,
+          2.828,
+          18.0
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "soffit conduit"
+    },
+    {
+      "id": "WH-03 sealed floor sleeve",
+      "points": [
+        [
+          44.269,
+          -0.12,
+          18.48
+        ],
+        [
+          44.269,
+          0.032,
+          18.48
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "sealed sleeve"
+    },
+    {
+      "id": "WH-03 mounted wall riser",
+      "points": [
+        [
+          44.269,
+          0.032,
+          18.48
+        ],
+        [
+          44.269,
+          1.302,
+          18.48
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "wall riser"
+    },
+    {
+      "id": "WH-03 service-box return",
+      "points": [
+        [
+          44.269,
+          2.77,
+          18.48
+        ],
+        [
+          44.269,
+          2.775,
+          18.48
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "mounted return"
+    },
+    {
+      "id": "WH-03 switched lamp conduit",
+      "points": [
+        [
+          44.269,
+          2.775,
+          18.48
+        ],
+        [
+          50.0,
+          2.775,
+          18.48
+        ],
+        [
+          50.0,
+          2.775,
+          16.5
+        ],
+        [
+          50.0,
+          2.828,
+          16.5
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "soffit conduit"
+    },
+    {
+      "id": "WH-04 sealed floor sleeve",
+      "points": [
+        [
+          33.65,
+          -0.12,
+          10.269
+        ],
+        [
+          33.65,
+          0.032,
+          10.269
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "sealed sleeve"
+    },
+    {
+      "id": "WH-04 mounted wall riser",
+      "points": [
+        [
+          33.65,
+          0.032,
+          10.269
+        ],
+        [
+          33.65,
+          1.302,
+          10.269
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "wall riser"
+    },
+    {
+      "id": "WH-04 service-box return",
+      "points": [
+        [
+          33.65,
+          2.77,
+          10.269
+        ],
+        [
+          33.65,
+          2.775,
+          10.269
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "mounted return"
+    },
+    {
+      "id": "WH-04 switched lamp conduit",
+      "points": [
+        [
+          33.65,
+          2.775,
+          10.269
+        ],
+        [
+          32.0,
+          2.775,
+          10.269
+        ],
+        [
+          32.0,
+          2.775,
+          16.5
+        ],
+        [
+          32.0,
+          2.828,
+          16.5
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "soffit conduit"
+    },
+    {
+      "id": "sealed dry-cell ceiling sleeve",
+      "points": [
+        [
+          31.2,
+          -0.12,
+          35.721
+        ],
+        [
+          31.2,
+          -0.365,
+          35.721
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "sealed sleeve"
+    },
+    {
+      "id": "WH-05 service-box return",
+      "points": [
+        [
+          31.2,
+          -0.37,
+          35.721
+        ],
+        [
+          31.2,
+          -0.365,
+          35.721
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "mounted return"
+    },
+    {
+      "id": "WH-05 switched lamp conduit",
+      "points": [
+        [
+          31.2,
+          -0.365,
+          35.721
+        ],
+        [
+          31.4,
+          -0.365,
+          35.721
+        ],
+        [
+          31.4,
+          -0.365,
+          30.9
+        ],
+        [
+          31.4,
+          -0.312,
+          30.9
+        ]
+      ],
+      "radius": 0.021,
+      "visible": true,
+      "installation": "soffit conduit"
+    }
+  ],
+  "switches": [
+    {
+      "id": "college-switch-00",
+      "circuit": "EM-00",
+      "space": "cottage-a",
+      "room": 0,
+      "at": [
+        13.3,
+        1.25,
+        53.758999
+      ],
+      "support": "WLD-06 clean cottage-a S end",
+      "feet": [
+        13.3,
+        0.0,
+        52.9
+      ]
+    },
+    {
+      "id": "college-switch-01",
+      "circuit": "EM-01",
+      "space": "cottage-b",
+      "room": 1,
+      "at": [
+        53.299999,
+        1.25,
+        53.758999
+      ],
+      "support": "WLD-06 clean cottage-b S end",
+      "feet": [
+        53.3,
+        0.0,
+        52.9
+      ]
+    },
+    {
+      "id": "college-switch-02",
+      "circuit": "EM-02",
+      "space": "boathouse",
+      "room": 2,
+      "at": [
+        19.759001,
+        1.25,
+        20.65
+      ],
+      "support": "WLD-06 clean boathouse E end",
+      "feet": [
+        18.85,
+        0.0,
+        20.65
+      ]
+    },
+    {
+      "id": "college-switch-03",
+      "circuit": "EM-03",
+      "space": "net",
+      "room": 3,
+      "at": [
+        44.241001,
+        1.25,
+        18.48
+      ],
+      "support": "WLD-06 clean net W end",
+      "feet": [
+        45.12,
+        0.0,
+        18.48
+      ]
+    },
+    {
+      "id": "college-switch-04",
+      "circuit": "EM-04",
+      "space": "fish",
+      "room": 4,
+      "at": [
+        33.650002,
+        1.25,
+        10.241
+      ],
+      "support": "WLD-06 clean fish N end",
+      "feet": [
+        33.65,
+        0.0,
+        11.18
+      ]
+    },
+    {
+      "id": "college-switch-05",
+      "circuit": "EM-05",
+      "space": "undercroft",
+      "room": 5,
+      "at": [
+        31.200001,
+        -1.25,
+        35.749001
+      ],
+      "support": "Wharf cellar south wall region0",
+      "feet": [
+        31.2,
+        -2.5,
+        34.62
+      ]
+    }
+  ],
+  "loads": [
+    {
+      "id": "wharf-load-cottage-a",
+      "room": 0,
+      "space": "cottage-a",
+      "circuit": "EM-00",
+      "mount": [
+        12.0,
+        2.84,
+        47.099998
+      ],
+      "emitter": [
+        12.0,
+        2.656,
+        47.099998
+      ],
+      "support": "Ceiling cap cottage-a"
+    },
+    {
+      "id": "wharf-load-cottage-b",
+      "room": 1,
+      "space": "cottage-b",
+      "circuit": "EM-01",
+      "mount": [
+        52.0,
+        2.84,
+        47.099998
+      ],
+      "emitter": [
+        52.0,
+        2.656,
+        47.099998
+      ],
+      "support": "Ceiling cap cottage-b"
+    },
+    {
+      "id": "wharf-load-boathouse",
+      "room": 2,
+      "space": "boathouse",
+      "circuit": "EM-02",
+      "mount": [
+        12.0,
+        2.84,
+        18.0
+      ],
+      "emitter": [
+        12.0,
+        2.656,
+        18.0
+      ],
+      "support": "Ceiling cap boathouse"
+    },
+    {
+      "id": "wharf-load-net",
+      "room": 3,
+      "space": "net",
+      "circuit": "EM-03",
+      "mount": [
+        50.0,
+        2.84,
+        16.5
+      ],
+      "emitter": [
+        50.0,
+        2.656,
+        16.5
+      ],
+      "support": "Ceiling cap net"
+    },
+    {
+      "id": "wharf-load-fish",
+      "room": 4,
+      "space": "fish",
+      "circuit": "EM-04",
+      "mount": [
+        32.0,
+        2.84,
+        16.5
+      ],
+      "emitter": [
+        32.0,
+        2.656,
+        16.5
+      ],
+      "support": "Ceiling cap fish"
+    },
+    {
+      "id": "wharf-load-undercroft",
+      "room": 5,
+      "space": "undercroft",
+      "circuit": "EM-05",
+      "mount": [
+        31.4,
+        -0.3,
+        30.9
+      ],
+      "emitter": [
+        31.4,
+        -0.484,
+        30.9
+      ],
+      "support": "Wharf cellar roof deck rectangular openings region0"
+    }
+  ],
+  "retained_parts": 749,
+  "new_parts": 155,
+  "exports": {
+    "development/levels/rebuild/wharf-distribution-pass/wharf-distribution.blend": "2cf9d45380fd7c3519f7a5169da326873a8c13102ea96fbc18b4472954666b23",
+    "development/levels/rebuild/wharf-distribution-pass/wharf-distribution.glb": "1becc3501a1dfe57dbbd2c61fb3e47f7c0cb9056dc77870e141647f2e2bd4c35",
+    "development/levels/rebuild/wharf-distribution-pass/wharf-distribution.hcs2": "a5ce4a2fc972c443db77f29262794b1098de2d2f6d5de29c821f7b3edf8f79a5"
+  }
+}

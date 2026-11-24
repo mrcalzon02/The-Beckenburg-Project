@@ -1,0 +1,14 @@
+scene_revision	3f0dec1ffa7a3742a7ccad38d7c51ba7f1dae559af3da28fe0819f09049723c0
+renderer	Software
+route_and_door_replays	19 paths and 8 doors
+supported_load_energy	3.41261391344303 supplied, 0.9000000000000001 stopped, 0.9000000000000001 tripped
+room_0_fixture	2.8647505380683342 on / 0.187 off
+room_1_fixture	2.8647505380683342 on / 0.187 off
+room_2_fixture	2.8647505380683342 on / 0.187 off
+room_3_fixture	2.8647505380683342 on / 0.187 off
+room_4_fixture	2.8647505380683342 on / 0.187 off
+room_5_fixture	2.8647505380683342 on / 0.187 off
+room_0_standing_view_contrast	381865 changed pixels, 1.0631171630094043 mean RGB increase
+room_5_standing_view_contrast	381848 changed pixels, 3.0088251044932077 mean RGB increase
+four_peer_power	PASS ghost trip, physical arrival and controls, source stop/restart, tripped reconnect, breaker reset
+four_peer_independent_circuits	PASS cottage and dry undercroft switches

@@ -3861,18 +3861,20 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "a4388ff96b30705e7cd7eb8014554667586a3aba",
+          "source_sha": "ba7642b943f9ccfa2bf5a82b8b76b105ee26ec3e",
           "evidence": [
             "development/levels/rebuild/wharf-door-pass/checkpoint.json",
             "development/levels/rebuild/wharf-cover-pass/checkpoint.json",
-            "development/levels/rebuild/wharf-power-pass/checkpoint.json"
+            "development/levels/rebuild/wharf-power-pass/checkpoint.json",
+            "development/levels/rebuild/wharf-distribution-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-672",
             "DEV-673",
-            "DEV-674"
+            "DEV-674",
+            "DEV-675"
           ],
-          "next_action": "Extend working distribution to the occupied buildings and undercroft, then fit case evidence and verify named dispatch."
+          "next_action": "Fit case evidence and physical records, then verify named dispatch and the actual Wharf gameplay gates."
         },
         "S07": {
           "status": "IN_PROGRESS",
