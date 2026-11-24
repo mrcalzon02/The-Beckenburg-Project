@@ -3338,14 +3338,17 @@
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json",
-            "development/levels/rebuild/lookout-cover-pass/checkpoint.json"
+            "development/levels/rebuild/lookout-cover-pass/checkpoint.json",
+            "development/levels/rebuild/lookout-power-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-646",
             "DEV-648",
-            "DEV-649"
+            "DEV-649",
+            "DEV-651",
+            "DEV-652"
           ],
-          "next_action": "Area, ritual and three walk-in safe zones verified in the staged case. Fit and test remote power and circuits."
+          "next_action": "Remote power, room controls, rites and cover verified in the staged case. Recheck these in the normal packaged selection and case."
         },
         "S07": {
           "status": "IN_PROGRESS",

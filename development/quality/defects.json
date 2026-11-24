@@ -7217,6 +7217,28 @@
       "action": "Select the explicit legacy House source in the fixture, then rerun the crouch, sanctuary, haze and live LAN regressions.",
       "older_maps": "Bind fixed-coordinate tests to the source revision that owns those coordinates.",
       "evidence": "development/RECOVERY_PLAN_2026-10-25.md"
+    },
+    {
+      "id": "DEV-651",
+      "title": "Lookout had no physical source for staged case power",
+      "status": "NATIVE_SERVICE_SHELTER_COMMISSIONED",
+      "affected": "Widow’s Peak Fire Lookout",
+      "symptom": "The staged Lookout had no generator, breaker, or fitted room circuits.",
+      "cause": "The earlier terrain and arrival work retained the service reservation without installing the power chain.",
+      "action": "Fit the roadhead shelter on existing grade, mount the source, breaker, branch fixtures and wall-supported service wiring, and test ghost trip, restart and reset.",
+      "older_maps": "Verify physical controls, service mountings and ghost breaker behavior for each remote site.",
+      "evidence": "development/levels/rebuild/lookout-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-652",
+      "title": "Lookout shelter entrance lip caught the movement capsule",
+      "status": "FORMED_SHELTER_SILL_AND_ROUTE_VERIFIED",
+      "affected": "Lookout roadhead service shelter",
+      "symptom": "An exposed slab edge stopped the continuous body sweep; a flush test slab flickered against the ground.",
+      "cause": "The first fit used a vertical exposed sill and the next fit used coincident top elevations.",
+      "action": "Use one founded slab with a low formed bevel and a distinct finish datum. Verify exact ground contact, both renderer views and ordinary body movement.",
+      "older_maps": "Check slab-to-ground height changes, actual swept body clearance and coincident surfaces.",
+      "evidence": "development/levels/rebuild/lookout-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

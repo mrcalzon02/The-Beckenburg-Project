@@ -346,3 +346,6 @@ development/levels/rebuild/college-residence-pass/** -text whitespace=cr-at-eol
 
 # Fitted Lookout safe areas and receipts bind the native export bytes.
 development/levels/rebuild/lookout-cover-pass/** -text
+
+# The native power package binds exact render, physics and evidence bytes.
+development/levels/rebuild/lookout-power-pass/** -text

@@ -8986,3 +8986,11 @@ The native Lookout arrival pass had no usable cover. Three floor-mounted walk-in
 ### DEV-650 House shrub regression loaded the wrong source revision
 
 The legacy shrub route ran against rebuilt House geometry. The regression now explicitly loads the source that owns its fixture coordinates. The crouch, sanctuary, haze and live LAN checks passed. [Evidence](../RECOVERY_PLAN_2026-10-25.md)
+
+### DEV-651 Lookout had no physical source for staged case power
+
+The existing roadhead now has a founded equipment shelter with mounted diesel controls, distribution and switched room loads. The actual ghost trip, source restart and breaker reset passed. [Evidence](../levels/rebuild/lookout-power-pass/checkpoint.json)
+
+### DEV-652 Lookout shelter entrance lip caught the movement capsule
+
+A formed bevel joins the existing apron to the shelter floor. The distinct floor finish clears the saved ground surface and stands fully supported. The native routes and four-peer crossing passed. [Evidence](../levels/rebuild/lookout-power-pass/checkpoint.json)

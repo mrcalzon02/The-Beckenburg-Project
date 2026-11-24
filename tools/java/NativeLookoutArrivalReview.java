@@ -47,6 +47,8 @@ public final class NativeLookoutArrivalReview {
             case "TREAD" -> treads.add(row[1]);
             case "RITUAL" -> sockets.add(new Socket("lookout-ritual-"+row[1],"ritual",Integer.parseInt(row[2]),
                 d(row,3),d(row,4),d(row,5),0,row[1]));
+            case "SERVICE" -> sockets.add(new Socket(row[1],row[2],Integer.parseInt(row[3]),
+                d(row,4),d(row,5),d(row,6),d(row,7),row[8]));
             case "COVER" -> sockets.add(new Socket(row[1],"hide",Integer.parseInt(row[2]),
                 d(row,3),d(row,4),d(row,5),d(row,6),"walk-in-cupboard"));
             case "POINT" -> paths.computeIfAbsent(row[1],ignored->new ArrayList<>()).add(point(row,2));
@@ -128,9 +130,77 @@ public final class NativeLookoutArrivalReview {
         captureStanding(host,new Vec(28,0,72),0,captures.resolve("lookout-cargo-approach.png"));
         captureStanding(host,new Vec(33,15,5),0,captures.resolve("lookout-deck-view.png"));
         if(!HidingBudget.candidates(level).isEmpty())reviewCover(host,captures,evidence);
+        if(host.hasGenerator())reviewPower(host,captures,evidence);
         if(List.of(args).contains("--lan"))live(level,scene,evidence);
         Files.write(output.resolve(gpu?"opengl.tsv":"native-arrival.tsv"),evidence);
         evidence.forEach(System.out::println);
+    }
+
+    private static void reviewPower(HouseMap map,Path captures,List<String> evidence)throws Exception{
+        var plant=new Vec(36.55,.018,67.25);
+        var generator=map.level().socket("generator",13);
+        var panel=RoomLighting.breaker(map);
+        var generatorFeet=new Vec(35.315,.018,67.45);
+        var panelFeet=new Vec(37.75,.018,67.65);
+        replay(map,List.of(plant,generatorFeet),"generator operator approach");
+        replay(map,List.of(plant,panelFeet),"breaker operator approach");
+        require(focus(map,generatorFeet,generator,0).kind()==InteractionFocus.Kind.GENERATOR,
+            "Generator control lacks physical focus");
+        require(focus(map,panelFeet,panel,0).kind()==InteractionFocus.Kind.BREAKER,
+            "Breaker control lacks physical focus");
+        for(int room:new int[]{3,5,10}){
+            var sw=map.level().socket("switch",room);
+            double side=sw.z()>map.spawn(room).z()?-1:1;
+            var at=new Vec(sw.x(),map.spawn(room).y(),sw.z()+side);
+            replay(map,List.of(map.spawn(room),at),sw.id()+" approach");
+            require(focus(map,at,sw,0).kind()==InteractionFocus.Kind.SWITCH,
+                "Switch lacks physical focus "+sw.id());
+        }
+
+        var lights=new RoomLighting();
+        var field=new FixtureLighting(map);
+        var loads=map.level().sockets().stream().filter(s->s.type().equals("light")).toList();
+        require(loads.size()==5,"Unexpected Lookout load count");
+        for(var load:loads){
+            lights.setSourceRunning(true);lights.setBreaker(true);field.frame(lights,0);
+            double bright=field.sample(load.room(),load.x(),load.y()-.65,load.z()).energy();
+            lights.setSourceRunning(false);field.frame(lights,0);
+            double sourceOff=field.sample(load.room(),load.x(),load.y()-.65,load.z()).energy();
+            lights.setBreaker(false);lights.setSourceRunning(true);field.frame(lights,0);
+            double breakerOff=field.sample(load.room(),load.x(),load.y()-.65,load.z()).energy();
+            require(bright>2*sourceOff&&bright>2*breakerOff,
+                "Load does not respond to both state controls "+load.id()+" "+bright+" / "+sourceOff+" / "+breakerOff);
+            evidence.add(load.id()+"\t"+bright+" supplied / "+sourceOff+" source disabled / "+breakerOff+" breaker tripped");
+        }
+        lights.setBreaker(true);
+        powerFrame(map,lights,new Vec(33.5,0,64.5),.66,true,captures.resolve("lookout-power-roadhead.png"));
+        powerFrame(map,lights,new Vec(36.62,.018,66.3),0,true,captures.resolve("lookout-power-plant.png"));
+        powerFrame(map,lights,new Vec(36.62,.018,66.3),0,false,captures.resolve("lookout-power-plant-outage.png"));
+        var hut=new Vec(12,6,20);
+        powerFrame(map,lights,hut,.8,true,captures.resolve("lookout-power-hut.png"));
+        powerFrame(map,lights,hut,.8,false,captures.resolve("lookout-power-hut-outage.png"));
+        evidence.add("power_mounts\tTwo physical plant controls and three room switches reached by ordinary standing/crouched movement and aimed interaction");
+    }
+
+    private static InteractionFocus.Target focus(HouseMap map,Vec at,Socket socket,int seat){
+        double dx=socket.x()-at.x(),dz=socket.z()-at.z();
+        double yaw=Math.atan2(dx,dz);
+        double pitch=Math.atan2(socket.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
+        var target=InteractionFocus.pick(map,new LooseClutter.Observer(seat,at.x(),at.y(),at.z(),yaw,pitch,true),List.of());
+        require(target!=null,"No aimed response from "+at+" at "+socket.id());
+        return target;
+    }
+
+    private static void powerFrame(HouseMap map,RoomLighting lights,Vec at,double yaw,boolean supplied,Path image)
+            throws Exception{
+        require(map.traversable(at.x(),at.y(),at.z()),"Unsupported power review position "+at);
+        lights.setBreaker(supplied);
+        var r=new SceneRenderer();
+        r.setRenderSize(880,580);
+        r.setPsxPreset(PsxPipeline.Preset.OFF);
+        r.roomLights=lights;
+        r.x=at.x();r.eyeHeight=at.y()+HunterPosture.STANDING_EYE;r.z=at.z();r.yaw=yaw;r.pitch=-.12;
+        NativeSchoolInteriorReview.drawFrame(r,map,image);
     }
 
     private static void reviewCover(HouseMap map,Path captures,List<String> evidence)throws Exception{
@@ -220,6 +290,7 @@ public final class NativeLookoutArrivalReview {
             require(map.roomAt(feet.x(),feet.y(),feet.z())==14,"Lookout case started off cargo");
             for(int i=0;i<13;i++)feet=NativeSchoolInteriorReview.step(scout,0,0,-100);
             require(map.roomAt(feet.x(),feet.y(),feet.z())==13&&Math.abs(feet.y())<.03,"Cargo ramp missed roadhead "+feet);
+            if(map.hasGenerator())livePower(clientMap,host,scout,witness,ghost,feet,report);
             for(int room:NativeSchoolInteriorReview.missionRoute(map,10)){
                 lookout.client.move(room);
                 lookout.awaitExact("ACCEPT|MOVE|"+room);
@@ -289,6 +360,49 @@ public final class NativeLookoutArrivalReview {
             }
         }
         report.add("tcp_lookout_review\tFour peers on the exact staged source, real ramp exit, fitted cabin-deck crossing and south hut stair return");
+    }
+
+    private static void livePower(HouseMap map,LanHost host,Peer operator,Peer witness,Peer ghost,Vec at,
+            List<String> report)throws Exception{
+        ghost.client.viewGhost3D();
+        ghost.awaitExact("ACCEPT|GVIEW3D");
+        ghost.awaitExact("SITE|USER|"+map.level().revision());
+        ghost.await("GPOSE|");
+        NativeSchoolInteriorReview.ghostTrip(host,witness,ghost);
+
+        for(int n=0;n<25;n++)at=NativeSchoolInteriorReview.step(operator,0,0,-100);
+        for(int n=0;n<24;n++)at=NativeSchoolInteriorReview.step(operator,0,100,0);
+        for(int n=0;n<7;n++)at=NativeSchoolInteriorReview.step(operator,0,0,100);
+        var generator=map.level().socket("generator",13);
+        var lights=(RoomLighting)NativeSchoolInteriorReview.field(host,"lights");
+        usePowerControl(map,operator,0,at,generator,InteractionFocus.Kind.GENERATOR);
+        witness.awaitExact("SOURCE|0");
+        require(!lights.sourceRunning()&&!lights.breaker()&&!lights.supplied(),"Generator stop changed breaker state");
+        Thread.sleep(400);
+        usePowerControl(map,operator,0,at,generator,InteractionFocus.Kind.GENERATOR);
+        witness.awaitExact("SOURCE|1");
+        require(lights.sourceRunning()&&!lights.breaker()&&!lights.supplied(),"Restart silently bypassed the tripped breaker");
+        for(int n=0;n<8;n++)at=NativeSchoolInteriorReview.step(operator,0,100,0);
+        usePowerControl(map,operator,0,at,RoomLighting.breaker(map),InteractionFocus.Kind.BREAKER);
+        witness.awaitExact("LIGHTS|111111111111|1");
+        require(lights.supplied(),"The aimed roadhead breaker reset did not restore power");
+        operator.client.view3D();
+        operator.awaitExact("ACCEPT|VIEW3D");
+        operator.awaitExact("LIGHTS|111111111111|1");
+        operator.awaitExact("SOURCE|1");
+        report.add("tcp_lookout_power\tActual ghost trip, uninterrupted physical walk from cargo to the roadhead shelter, generator stop/restart, physical breaker reset and view resync");
+    }
+
+    private static void usePowerControl(HouseMap map,Peer player,int seat,Vec at,Socket socket,
+            InteractionFocus.Kind expected)throws Exception{
+        var target=focus(map,at,socket,seat);
+        require(target.kind()==expected,"The live operator did not aim at "+expected+" from "+at+": "+target);
+        double dx=socket.x()-at.x(),dz=socket.z()-at.z();
+        double yaw=Math.atan2(dx,dz);
+        double pitch=Math.atan2(socket.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
+        player.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
+        player.client.interact(target,yaw,pitch);
+        player.awaitExact("ACCEPT|INTERACT|"+target.name());
     }
 
     private static List<Room> owners(NativeInvestigationScene scene,Dock dock,List<String[]> rows,List<Portal> portals)

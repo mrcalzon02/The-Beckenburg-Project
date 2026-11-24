@@ -1433,3 +1433,9 @@ Named dispatch, power, cover and release gates remain open.
 ## Lookout walk-in safe zones
 
 Three canonical cupboards fit the existing hut, ranger store and observation cabin. Twelve measured bearing points per cupboard meet their own floor. The new source retains all 374 prior static components. The standing and crouched walkthroughs verified the actual opening and rear on all three cupboards. All 207 sampled usable floor positions were protected. The cue is visible on both renderers and the four-peer case replay verified a hunter crossing the hut threshold, hiding, revealing and walking back out. Power and named packaged dispatch remain open. [Checkpoint](lookout-cover-pass/checkpoint.json)
+
+## Lookout roadhead power
+
+The founded roadside shelter has an open entry and a formed threshold. It houses the source and breaker on the existing arrival grade, away from the tower stair. The site uses four electrical branches and five mounted loads. Inspection views show the actual structural mounts and the native source retains 377 existing components. The [electrical schedule](lookout-power-pass/electrical.json) records each mapped asset, circuit and conduit segment.
+
+The [checkpoint](lookout-power-pass/checkpoint.json) records software and RTX 5070 captures, 72 site route replays, and checks on the existing doors and hiding zones. Four TCP peers used the exact staged case. A ghost tripped the breaker and the roadhead operator walked from the cargo deck to the shed, restarted the engine and physically reset the breaker. Normal named package dispatch and case completion remain open.
