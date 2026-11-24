@@ -51,7 +51,8 @@ final class NorthwatchDoorRuntime {
         }
     }
 
-    static void live(LevelDefinition level,NativeInvestigationScene scene,List<Vec> serviceRoute,List<String> report)throws Exception {
+    static void live(LevelDefinition level,NativeInvestigationScene scene,List<Vec> serviceRoute,java.util.Map<String,List<Vec>> distributionRoutes,
+                     List<String> report)throws Exception {
         var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
         var replica=new HouseMap(HouseMap.Site.USER,level,null,scene);
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
@@ -78,7 +79,8 @@ final class NorthwatchDoorRuntime {
             at=walk(leader,at,new Vec(13.35,0,19),new Vec(13.35,0,16.05),new Vec(11,0,16));
             require(map.roomAt(at.x(),at.y(),at.z())==5&&"generator".equals(map.architecturalRoomAt(at.x(),at.y(),at.z())),
                 "The live van approach missed the real generator receiving floor");
-            if(serviceRoute!=null)NorthwatchPowerReview.live(map,host,leader,witness,crew,at,serviceRoute,report);
+            if(serviceRoute!=null)at=NorthwatchPowerReview.live(map,host,leader,witness,crew,at,serviceRoute,report);
+            if(distributionRoutes!=null)NorthwatchDistributionReview.live(map,replica,scene,host,leader,witness,at,distributionRoutes,report);
         }
     }
 
@@ -132,13 +134,14 @@ final class NorthwatchDoorRuntime {
         leader.await("INFO|mission started");
     }
 
-    private static Vec open(HouseMap map,HouseMap replica,NativeInvestigationScene scene,Peer leader,Peer witness,
+    static Vec open(HouseMap map,HouseMap replica,NativeInvestigationScene scene,Peer leader,Peer witness,
                             Vec at,int id)throws Exception {
         var frame=scene.doors().stream().map(NativeInvestigationDoor::spec)
             .filter(spec->spec.portal().id()==id).findFirst().orElseThrow();
         var p=frame.portal();
-        at=walk(leader,at,NativeSchoolInteriorReview.point(p,.88,0,0));
-        var crossed=NativeSchoolInteriorReview.point(p,-.86,0,0);
+        double side=Math.copySign(1,p.alongX()?at.z()-p.z():at.x()-p.x());
+        at=walk(leader,at,NativeSchoolInteriorReview.point(p,side*.88,0,0));
+        var crossed=NativeSchoolInteriorReview.point(p,-side*.86,0,0);
         require(map.resolveMove(at,crossed.x(),crossed.z(),HunterPosture.STANDING_HEIGHT)==null,
             "Closed Northwatch door did not stop movement "+id);
         double yaw=Math.atan2(p.x()-at.x(),p.z()-at.z());
@@ -162,7 +165,7 @@ final class NorthwatchDoorRuntime {
         return new Vec(point.x(),bearing.y(),point.z());
     }
 
-    private static Vec walk(Peer leader,Vec at,Vec... points)throws Exception {
+    static Vec walk(Peer leader,Vec at,Vec... points)throws Exception {
         for(var point:points)at=CemeteryRefugeReview.walk(leader,0,at,point);
         return at;
     }

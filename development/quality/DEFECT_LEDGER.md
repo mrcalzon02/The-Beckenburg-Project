@@ -9166,3 +9166,7 @@ Three floor-supported cupboards protect their full walkable interiors in the lab
 ### DEV-694 Northwatch shed had no operational electrical supply
 
 The existing generator and water shed now has a slab-supported source, anchored breaker cabinet and a real switched task light with a connected raceway. Both renderers verify visible blackout. Live TCP verifies the ghost trip, actual walk from the van, independent stop and restart, reconnect, aimed reset and operation of the shed switch. Full-site distribution remains open. [Evidence](../levels/rebuild/northwatch-power-pass/checkpoint.json)
+
+### DEV-695 Northwatch west rooms lacked switched electrical supply
+
+The lab, radio and records now receive separate switched loads from the measured shed main. Closed cable sleeves join the actual walls while preserving their full collision and the operating doorways. Both renderers verified the local switch, source and breaker states. TCP verified walking to each switch through existing doors and the witness receiving only the targeted room change. [Evidence](../levels/rebuild/northwatch-distribution-pass/checkpoint.json)

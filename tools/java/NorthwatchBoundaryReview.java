@@ -35,12 +35,13 @@ public final class NorthwatchBoundaryReview {
 
     private static void review(String[] args,boolean gpu)throws Exception {
         Path path=Path.of(args[0]);
-        boolean power=List.of(args).contains("--power");
+        boolean distribution=List.of(args).contains("--distribution");
+        boolean power=distribution||List.of(args).contains("--power");
         boolean refuges=power||List.of(args).contains("--refuges");
         boolean fitted=refuges||List.of(args).contains("--doors");
         Path boundary=fitted?Path.of(args[5]):path;
         Path geometry=refuges?path:boundary;
-        String sourceStem=power?"station-with-power":refuges?"station-with-refuges":"bounded-station";
+        String sourceStem=distribution?"station-with-distribution":power?"station-with-power":refuges?"station-with-refuges":"bounded-station";
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var rooms=new Room[HouseMap.ROOM_COUNT];
         var sockets=new ArrayList<Socket>();
@@ -213,7 +214,7 @@ public final class NorthwatchBoundaryReview {
             rows.add("optics_object_passage_room_acoustics_and_replica_state\tPASS");
             NorthwatchDoorRuntime.transits(map,portals);
             if(!gpu) {
-                NorthwatchDoorRuntime.live(level,scene,power?routes.get("Northwatch-shed-controls"):null,rows);
+                NorthwatchDoorRuntime.live(level,scene,power?routes.get("Northwatch-shed-controls"):null,distribution?routes:null,rows);
                 rows.add("four_peer_van_to_generator_two_aimed_doors\tPASS");
             }
         }
@@ -231,8 +232,11 @@ public final class NorthwatchBoundaryReview {
             }
             if(!gpu)NorthwatchDoorRuntime.liveCover(level,scene,rows);
         }
-        if(power)NorthwatchPowerReview.audit(map,routes.get("Northwatch-shed-controls"),captures,rows);
-        String stem=power?"power":refuges?"refuges":fitted?"doors":"boundary";
+        if(power)NorthwatchPowerReview.audit(map,routes.get("Northwatch-shed-controls"),distribution?null:captures,rows);
+        if(distribution) {
+            NorthwatchDistributionReview.audit(map,routes,captures,rows);
+        }
+        String stem=distribution?"distribution":power?"power":refuges?"refuges":fitted?"doors":"boundary";
         Files.writeString(path.resolve(stem+(gpu?"-opengl.tsv":"-software.tsv")),String.join("\n",rows)+"\n");
         rows.forEach(System.out::println);
     }

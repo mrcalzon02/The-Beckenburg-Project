@@ -7701,6 +7701,17 @@
       "action": "Mount the source and cabinet to actual bearings and commission a separate, breaker-governed shed circuit.",
       "older_maps": "Verify an actual source, reachable breaker, physical switched leg and independent source and breaker state.",
       "evidence": "development/levels/rebuild/northwatch-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-695",
+      "title": "Three Northwatch west rooms lacked switched electrical supply",
+      "status": "NORTHWATCH_STAGED_WEST_ROOM_DISTRIBUTION_VERIFIED",
+      "affected": "WLD-08 lab, radio and records",
+      "symptom": "The fitted generator supplied the shed but the occupied west rooms had no mounted or usable light circuits.",
+      "cause": "The shed checkpoint installed only the first switched load.",
+      "action": "Add supported overhead feeders, closed sleeves and separately switched ceiling loads with door-side approaches.",
+      "older_maps": "Check continuous raceway, intact walls, local switch isolation, sighted approach and master trip.",
+      "evidence": "development/levels/rebuild/northwatch-distribution-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

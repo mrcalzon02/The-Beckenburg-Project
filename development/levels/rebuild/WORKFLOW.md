@@ -1523,3 +1523,7 @@ The lab, dorm and array shelter now each have an enclosed refuge with a usable t
 ### Northwatch shed electrical supply
 
 The retained shed now supports the station source and breaker and the first commissioned branch. The guards, lab and radio openings and ways around the stair well retain their geometry. Both renderers verify the local electrical response and replay all prior routes and refuge protection. Live TCP walks into the shed in a blackout, restarts without resetting the breaker, reconnects and operates the breaker and switch. [Measured plan](northwatch-power-pass/shed-plan.svg) / [Checkpoint](northwatch-power-pass/checkpoint.json)
+
+### Northwatch west room distribution
+
+Three branches now follow the supported ceilings and connect to measured door-side switches. The lab approach clears the open double leaves before turning. Both renderers verify the four fitted circuits, all retained doors and routes and three full refuges. TCP verified the actual powered walk from the van through each receiving doorway. [Service plan](northwatch-distribution-pass/west-service-plan.svg) / [Checkpoint](northwatch-distribution-pass/checkpoint.json)

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12024,
+  "count": 12036,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -115004,6 +115004,126 @@
       "height": 900,
       "bytes": 1624340,
       "sha256": "d795c60774e83afbe8cc96b1d435f58a83b9c574a39294da7f4f85eb509c67bf"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-lab-supplied.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-lab-supplied.png",
+      "title": "Northwatch lab supplied",
+      "kind": "Northwatch west room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 230635,
+      "sha256": "61f9ffea8ab0e49be61934da06eeb78e6d29eb065d4882f0b4458f12271b087b"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-lab-tripped.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-lab-tripped.png",
+      "title": "Northwatch lab tripped",
+      "kind": "Northwatch west room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 182822,
+      "sha256": "6dc27d84b588dcfa5da77e03f69d9a57521e23ae0b2699bd8e13727c66de5be6"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-radio-supplied.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-radio-supplied.png",
+      "title": "Northwatch radio supplied",
+      "kind": "Northwatch west room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 211520,
+      "sha256": "1f556de958f0ecbab96b31ac59f3cb44b97c044ca0b6d9c33d12c46c00fc2202"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-radio-tripped.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-radio-tripped.png",
+      "title": "Northwatch radio tripped",
+      "kind": "Northwatch west room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 152897,
+      "sha256": "c1ddbb67e2882dc1cb86cc87b3b40ed5b15aeb8bb188c9abbf44aa3821007e2e"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-records-supplied.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-records-supplied.png",
+      "title": "Northwatch records supplied",
+      "kind": "Northwatch west room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 207636,
+      "sha256": "f6be76ca8a1235ad3c565cbd78138013f8178c8d9486264e262c360ec5b2b947"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-records-tripped.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-records-tripped.png",
+      "title": "Northwatch records tripped",
+      "kind": "Northwatch west room circuit in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 148902,
+      "sha256": "22c58cf74befb0e8508948c49c4c1fb34955a30b7f79f94986b4853c654b53cb"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-lab-supplied.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-lab-supplied.png",
+      "title": "Northwatch lab supplied",
+      "kind": "Northwatch west room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 226249,
+      "sha256": "51423090f07f14cb317c461b28f23757d78d7ea8a99872fd2d6b0a25505aa187"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-lab-tripped.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-lab-tripped.png",
+      "title": "Northwatch lab tripped",
+      "kind": "Northwatch west room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 181958,
+      "sha256": "8e46178b9b2aaa28a363354e333187b6946f9e80702d8d980935cbcf3be4ced6"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-radio-supplied.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-radio-supplied.png",
+      "title": "Northwatch radio supplied",
+      "kind": "Northwatch west room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 199859,
+      "sha256": "edcbe49e940637fb6822a19b52648922bc1794709bc83cf2e68c2d398ed16d00"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-radio-tripped.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-radio-tripped.png",
+      "title": "Northwatch radio tripped",
+      "kind": "Northwatch west room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 153324,
+      "sha256": "9444c2e54d47a5097a908de6b74c20212a9e0e80802f0ae244074fc413908756"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-records-supplied.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-records-supplied.png",
+      "title": "Northwatch records supplied",
+      "kind": "Northwatch west room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 194708,
+      "sha256": "67d005b5995e880b93973d975f9f3d087fc2d4220145e96389d5fa8e04b1b76f"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-records-tripped.png",
+      "url": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/opengl/northwatch-records-tripped.png",
+      "title": "Northwatch records tripped",
+      "kind": "Northwatch west room circuit in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 148429,
+      "sha256": "970408e9c35ab430fb1359be9f31a517979f5be30f390ad97207504d44d4d4f7"
     },
     {
       "path": "development/levels/rebuild/northwatch-door-pass/wld-08/captures/court-radio-closed.png",

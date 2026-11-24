@@ -2263,3 +2263,7 @@ Door commit d5408b1856b90c7b1ea9763b46b22f2aba5fd1cc and gallery 45391943722 pas
 ### Northwatch shed electrical supply
 
 Refuge commit 68a3806416a5e81a9d3166ea96f607decc038be5 and gallery 45393163408 passed on held draft PR 86. The [shed power checkpoint](levels/rebuild/northwatch-power-pass/checkpoint.json) fits the generator and main breaker and commissions the first physical circuit. The live four-peer replay verifies the blackout, both existing doors, controls, and reconnect. Continue supported station distribution, water service, furnishings and named case integration.
+
+### Northwatch west room distribution
+
+Shed commit 55b38faee64d2b218d7be2c26baedf89cca814d3 and gallery 45395381907 passed on held draft PR 86. The [west distribution checkpoint](levels/rebuild/northwatch-distribution-pass/checkpoint.json) adds a supported supply and independent switch for the lab, radio and records. Software, OpenGL and live TCP verify fixture response, breaker loss, reconnect and clearance through existing doors. Continue remaining building and tunnel distribution, water service, furnishing and named case integration.

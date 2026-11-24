@@ -1,0 +1,25 @@
+check	result
+scene_revision	14c72a89ad6baeb56eaee74cc0f0954675207e97dc1dc6d17d89fa9c782351e5
+renderer	OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+body_contacts_at_perimeter	1302
+jump_height_contacts	1302
+standing_optical_contacts	651
+supported_crossings_blocked	1172
+original_invisible_edges_with_exterior_ground	3
+canonical_ramp_retreat_both_postures	PASS
+measured_tread_datums	6
+walked_authored_links_and_journeys_both_postures	27
+working_doors	16
+connected_supported_owners	15
+optics_object_passage_room_acoustics_and_replica_state	PASS
+northwatch-dorm-cupboard_protected_floor_samples	69
+northwatch-lab-cupboard_protected_floor_samples	69
+northwatch-shelter-cupboard_protected_floor_samples	69
+northwatch_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+shed_task_light_energy	2.7330460062003774 supplied, 0.187 stopped, 0.187 tripped, 0.187 switched off
+lab_visible_blackout	253732 changed pixels; 1.6356112852664577 mean RGB increase
+lab_circuit_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+radio_visible_blackout	291176 changed pixels; 2.318717998955068 mean RGB increase
+radio_circuit_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped
+records_visible_blackout	296232 changed pixels; 2.317238113897597 mean RGB increase
+records_circuit_energy	2.755237008024455 supplied, 0.187 switch off, 0.187 source stopped, 0.187 breaker tripped

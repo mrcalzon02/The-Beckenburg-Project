@@ -51,6 +51,7 @@ final class NorthwatchPowerReview {
         report.add("shed_task_light_energy\t" + supplied + " supplied, " + stopped + " stopped, "
                 + tripped + " tripped, " + switchedOff + " switched off");
 
+        if(captures==null)return;
         Path suppliedImage = captures.resolve("northwatch-shed-supplied.png");
         Path trippedImage = captures.resolve("northwatch-shed-tripped.png");
         render(map, lighting, suppliedImage);
@@ -76,7 +77,7 @@ final class NorthwatchPowerReview {
         report.add("shed_visible_response\t" + changed + " changed pixels; " + mean + " mean RGB increase");
     }
 
-    static void live(HouseMap map, LanHost host, Peer leader, Peer witness, Peer crew, Vec at,
+    static Vec live(HouseMap map, LanHost host, Peer leader, Peer witness, Peer crew, Vec at,
                      List<Vec> route, List<String> report) throws Exception {
         var generator = map.level().socket("generator", SHED);
         var breaker = RoomLighting.breaker(map);
@@ -123,6 +124,7 @@ final class NorthwatchPowerReview {
         witness.awaitExact("LIGHTS|111110111111|1");
         require(lighting.supplied() && !lighting.on(SHED), "Shed switch changed the main supply");
         report.add("northwatch_live_shed_supply\tPASS ghost trip, van and two doors in blackout, aimed source stop/start, reconnect, breaker and branch switch");
+        return at;
     }
 
     private static double energy(FixtureLighting fixtures, RoomLighting lighting, Socket lamp) {

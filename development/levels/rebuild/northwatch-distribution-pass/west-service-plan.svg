@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 700" role="img">
+<title>Northwatch west services and supported switch approaches</title>
+<style>
+text{fill:#253641;font:16px sans-serif}.heading{font-size:27px;font-weight:700}.small{font-size:13px}
+.room{fill:#e2ebee;stroke:#5d7886;stroke-width:2}.well{fill:#b4c4ce;stroke:#52687a}
+.main,.branch,.door,.sleeve,.guide{fill:none}.main{stroke:#996014;stroke-width:3.2}
+.branch{stroke:#a77938;stroke-width:2}.door{stroke:#3c6d9d;stroke-width:6}
+.sleeve{stroke:#76421e;stroke-width:3.2;stroke-dasharray:2 2}.guide{stroke:#247567;stroke-width:2;stroke-dasharray:5 3}
+.switch{fill:#59676d;stroke:#223740}.lamp{fill:#fdde7b;stroke:#765525}
+</style><rect width="810" height="700" fill="#f9fbfc"/>
+<text class="heading" x="38.00" y="42.00">Northwatch west services</text>
+<text class="" x="39.00" y="67.00">Ground floor · north up</text>
+<rect class="room" x="54.00" y="118.00" width="297.00" height="270.00"/>
+<rect class="room" x="351.00" y="178.00" width="198.00" height="210.00"/>
+<rect class="room" x="549.00" y="178.00" width="198.00" height="210.00"/>
+<rect class="room" x="54.00" y="388.00" width="297.00" height="270.00"/>
+<rect class="well" x="182.29" y="253.00" width="40.43" height="81.38"/>
+<polyline class="door" points="121.65,391.66 151.35,391.66"/>
+<polyline class="door" points="355.03,275.12 355.03,290.88"/>
+<polyline class="door" points="553.03,275.12 553.03,290.88"/>
+<polyline class="sleeve" points="346.38,195.25 355.62,195.25"/>
+<polyline class="sleeve" points="544.38,195.25 553.62,195.25"/>
+<polyline class="sleeve" points="268.50,383.80 268.50,392.20"/>
+<polyline class="branch" points="166.20,392.03 166.20,392.03"/>
+<polyline class="branch" points="355.44,256.00 355.44,256.00"/>
+<polyline class="branch" points="553.44,256.00 553.44,256.00"/>
+<polyline class="main" points="217.35,122.35 268.50,122.35 268.50,122.35"/>
+<polyline class="main" points="268.50,122.35 268.50,195.25 268.50,383.80"/>
+<polyline class="main" points="268.50,195.25 346.38,195.25"/>
+<polyline class="main" points="355.62,195.25 544.38,195.25"/>
+<polyline class="branch" points="268.50,392.20 268.50,392.35 166.20,392.35"/>
+<polyline class="branch" points="166.20,392.35 166.20,392.03"/>
+<polyline class="branch" points="166.20,392.03 166.20,392.03"/>
+<polyline class="branch" points="166.20,392.03 166.20,499.00 219.00,499.00"/>
+<polyline class="branch" points="355.78,195.25 355.78,256.00"/>
+<polyline class="branch" points="355.78,256.00 355.44,256.00"/>
+<polyline class="branch" points="355.44,256.00 355.44,256.00"/>
+<polyline class="branch" points="355.44,256.00 450.00,256.00 450.00,238.00"/>
+<polyline class="branch" points="553.62,195.25 553.78,195.25 553.78,256.00"/>
+<polyline class="branch" points="553.78,256.00 553.44,256.00"/>
+<polyline class="branch" points="553.44,256.00 553.44,256.00"/>
+<polyline class="branch" points="553.44,256.00 648.00,256.00 648.00,238.00"/>
+<polyline class="guide" points="136.50,391.66 136.50,407.20 136.50,436.75 166.20,436.75 166.20,409.60"/>
+<polyline class="guide" points="355.03,283.00 369.15,283.00 374.76,274.00 374.76,256.00"/>
+<polyline class="guide" points="553.03,283.00 567.15,283.00 572.76,274.00 572.76,256.00"/>
+<circle class="switch" cx="166.20" cy="391.61" r="4.5"/>
+<circle class="lamp" cx="219.00" cy="499.00" r="4.5"/>
+<circle class="switch" cx="354.98" cy="256.00" r="4.5"/>
+<circle class="lamp" cx="450.00" cy="238.00" r="4.5"/>
+<circle class="switch" cx="552.98" cy="256.00" r="4.5"/>
+<circle class="lamp" cx="648.00" cy="238.00" r="4.5"/>
+<text class="" x="75.45" y="154.00">Generator and water shed</text>
+<text class="" x="384.00" y="353.50">Radio · NW-03</text>
+<text class="" x="582.00" y="353.50">Records · NW-04</text>
+<text class="" x="78.75" y="545.50">Laboratory · NW-00</text>
+<text class="small" x="181.38" y="301.75">Stair well</text>
+<path class="main" d="M388 495h38"/>
+<text class="small" x="435.00" y="500.00">Main feeder</text>
+<path class="sleeve" d="M388 519h38"/>
+<text class="small" x="435.00" y="524.00">Embedded cable sleeve</text>
+<path class="branch" d="M388 543h38"/>
+<text class="small" x="435.00" y="548.00">Local circuit</text>
+<path class="guide" d="M388 567h38"/>
+<text class="small" x="435.00" y="572.00">Door-to-switch guide</text>
+<path class="door" d="M388 591h38"/>
+<text class="small" x="435.00" y="596.00">Existing door</text>
+<circle class="switch" cx="407" cy="615" r="4.5"/>
+<text class="small" x="435.00" y="620.00">Switch</text>
+<circle class="lamp" cx="407" cy="639" r="4.5"/>
+<text class="small" x="435.00" y="644.00">Ceiling light</text>
+</svg>
