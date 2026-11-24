@@ -9290,3 +9290,7 @@ Both ordinary archives embed the exact staged room, door, electrical, collision 
 ### DEV-725 · Monastery furnished interiors and native record focus
 
 Fit supported furnishings around the gatehouse, refectory, archive, dormitory and vestry approaches. The reading interaction uses the first optical hit on each record's exact collision component. Verify the existing routes, door sweeps and walk-in refuge coverage against the furnished scene. [Verification checkpoint](../levels/rebuild/monastery-furnishing-pass/checkpoint.json)
+
+### DEV-726 · Monastery exterior runoff stopped at the forecourt sumps
+
+Fit a founded overflow at each gate sump and grade the two receiving swales into lower soil on either side of the forecourt. A separate uphill interceptor protects the service court. The public lane and thresholds retain their original datums. Northern slopes and the herb court have separate open drainage work. [Verification checkpoint](../levels/rebuild/monastery-ground-drainage-pass/checkpoint.json)

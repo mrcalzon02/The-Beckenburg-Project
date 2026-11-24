@@ -1,0 +1,26 @@
+check	result
+packaged_native_scene	d8982b067ea126d24148613b0177ac9763c2f637c34face835545bceb6735e79
+named_network_revision	d8982b067ea126d24148613b0177ac9763c2f637c34face835545bceb6735e79-e18e6c925ed73d36
+collision_sha256	221dbc24b1d816e5e67fae49f55e467b6fffca6714c0e5a79f1e30734220dddf
+renderer	Software
+default_lock_review_flag_campaign_and_stale_revision	PASS
+retained_fitted_doors	13
+route_replays	84
+staged_switches	12
+staged_lamps	36
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+monastery-archive-cupboard_protected_floor_samples	69
+monastery-dorm-cupboard_protected_floor_samples	69
+monastery-chamber-cupboard_protected_floor_samples	69
+monastery_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+west gate overflow_native_fall	58 surveyed native bed points
+east gate overflow_native_fall	68 surveyed native bed points
+service court interceptor_native_fall	93 surveyed native bed points
+named_solo_ai_cargo_apron_and_retreat	PASS
+REFECTORY_RATION_SHEET_live_reading	PASS walked to record and opened its reading interface
+live_east_range_independent_switches	PASS
+ASHEN_BELLS_REGISTER_live_reading	PASS walked to record and opened its reading interface
+live_north_range_independent_switches	PASS
+live_west_range_independent_switches	PASS
+live_vertical_range_independent_switches	PASS two bell flights and existing catacomb stairs
+live_four_player_blackout	PASS actual van route, four operating doors, ghost trip, independent generator and breaker, reconnect and both switches

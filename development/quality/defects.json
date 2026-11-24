@@ -8042,6 +8042,17 @@
       "action": "Install the scheduled canonical furniture around existing door and refuge approaches. Use the actual native optical page hit, with the existing shared interaction sight check, to identify the two records.",
       "older_maps": "Verify real floor and table supports as well as host-authorized reading focus from a walkable stance. Recheck protected floor coverage after adding furniture.",
       "evidence": "development/levels/rebuild/monastery-furnishing-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-726",
+      "title": "Monastery forecourt drainage did not discharge to lower terrain",
+      "status": "MONASTERY_FORECOURT_AND_SERVICE_RUNOFF_STAGED",
+      "affected": "WLD-10 public gate forecourt and eastern service terrace",
+      "symptom": "Forecourt sumps had no overflow and the hillside could drain across the service shoulder.",
+      "cause": "Roof collection ended in isolated gravel pans and the saved ground did not include an uphill interceptor.",
+      "action": "Fit two founded overflow sills and grade three swales into surveyed lower soil. Preserve door approaches, van placement and original occupied datums.",
+      "older_maps": "Trace the full runoff path in source and collision to a measured receiver. Review uphill slopes and enclosed courts independently.",
+      "evidence": "development/levels/rebuild/monastery-ground-drainage-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

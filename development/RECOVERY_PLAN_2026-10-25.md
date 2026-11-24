@@ -2379,3 +2379,7 @@ Vertical power checkpoint 869a8575c8d0c70bfe747cec1b56899ae558dd78 is local. The
 ### Monastery of Ashen Bells ground-floor furnishing and refuge verification
 
 Named archive checkpoint 176f75be645291ddf34c475d82a9a910ca14e0f0 is local. The last verified draft head is 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports multiplayer 44863686526 and GPU 44863686455. The [furnishing checkpoint](levels/rebuild/monastery-furnishing-pass/checkpoint.json) records supported ground-floor furnishings, two readable records tied to the actual page geometry, and measured protection from each refuge threshold across its usable interior. Outlying drainage, remaining finishes and loose physics, installer acceptance and the full named investigation are still open.
+
+### Monastery of Ashen Bells exterior runoff
+
+Furnishing checkpoint 21e71a59aac4a9fba0634eb944d52034d624a45b is local. The last verified draft head is 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports multiplayer 44863686526, GPU 44863686455 and Pages 44863686232. Installer 44863580794 is from c238cff07d73d4e326b220521974aca5494078ed. The [exterior runoff checkpoint](levels/rebuild/monastery-ground-drainage-pass/checkpoint.json) routes the gate sumps and service terrace to measured lower terrain. Continue northern slope and herb-court drainage, finishing, loose physics, named full-round and installer acceptance.

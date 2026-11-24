@@ -53,7 +53,7 @@ final class MonasteryNamedReview {
         require(campaign.indexOf("WLD-10") == 18 && campaign.get(17).equals("WLD-09") && campaign.get(19).equals("WLD-11"),
             "Ordinary campaign order changed");
         for (var name : List.of("source-hashes.tsv","runtime-input.tsv","door-schedule.tsv","electrical-schedule.tsv",
-                                "monastery-with-furnishings.glb","monastery-with-furnishings.hcs2")) {
+                                "monastery-with-ground-drainage.glb","monastery-with-ground-drainage.hcs2")) {
             var resource = MonasteryNativeLevel.class.getResource(RESOURCE + name);
             require(resource != null && resource.getProtocol().equals("jar"), "Resource is outside the game archive " + name);
         }
@@ -113,12 +113,39 @@ final class MonasteryNamedReview {
         capture(map,new Vec(0,0,36),new Vec(-3.35,.64,44),captures.resolve("monastery-dormitory-beds.png"));
         capture(map,new Vec(36,0,9),new Vec(38.53,1,4.14),captures.resolve("monastery-vestry-wash-trough.png"));
         capture(map,new Vec(32,0,59),new Vec(38.7,.48,59.25),captures.resolve("monastery-gatehouse-porter.png"));
+        verifyDrainage(stage,source.scene().physics(),report);
+        capture(map,new Vec(26,0,65),new Vec(24.55,-.056,63.2),captures.resolve("monastery-west-gate-overflow.png"));
+        capture(map,new Vec(38,0,65),new Vec(39.45,-.056,63.2),captures.resolve("monastery-east-gate-overflow.png"));
+        capture(map,new Vec(67.5,0,25),new Vec(70.45,-.06,27.1),captures.resolve("monastery-service-interceptor.png"));
         if (!gpu) {
             BlackwaterNamedReview.solo(map,report);
             MonasteryPowerReview.live(scene,report,site);
         }
         Files.write(stage.resolve(gpu?"named-opengl.tsv":"named-software.tsv"),report);
         report.forEach(System.out::println);
+    }
+
+    private static void verifyDrainage(Path stage,AuthoredSitePhysics physics,List<String> report) throws Exception {
+        var profiles = new LinkedHashMap<String,List<Double>>();
+        try (var rows = Files.newBufferedReader(stage.resolve("wld-10/drainage-survey.tsv"))) {
+            require("swale\tdistance\tx\tnative_invert_y\tz".equals(rows.readLine()), "Invalid drainage survey heading");
+            for (String row; (row = rows.readLine()) != null; ) {
+                var fields = row.split("\t");
+                double x = Double.parseDouble(fields[2]), y = Double.parseDouble(fields[3]), z = Double.parseDouble(fields[4]);
+                var hit = physics.firstOpticalHit(new Vec(x,y+.006,z),new Vec(x,y-.006,z));
+                require(hit != null && hit.component().equals("WLD-10 graded exterior ground")
+                    && Math.abs(hit.fraction() - .5) < .035, "Runoff survey misses packaged ground at " + row);
+                profiles.computeIfAbsent(fields[0],name -> new ArrayList<>()).add(y);
+            }
+        }
+        require(profiles.size()==3, "Missing exterior drainage profiles");
+        for (var channel : profiles.entrySet()) {
+            var heights = channel.getValue();
+            require(heights.size()>30 && heights.get(0)-heights.get(heights.size()-1)>.17, channel.getKey()+" has no fall");
+            for (int i=1;i<heights.size();i++)
+                require(heights.get(i)-heights.get(i-1)<=.001, channel.getKey()+" has a raised bed");
+            report.add(channel.getKey()+"_native_fall\t"+heights.size()+" surveyed native bed points");
+        }
     }
 
     private static void capture(HouseMap map,Vec at,Vec target,Path image) throws Exception {
