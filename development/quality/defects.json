@@ -7448,6 +7448,17 @@
       "action": "Fit bonded returns, grounded retaining runs, iron guards and a fixed road gate. Continue the land and road beyond the gate for visible context. Check exact collision, gate gaps, jump-height clearance and connected ground.",
       "older_maps": "Walk both shoulders and the road beyond each van, check real wing-wall joins and include an open-edge negative control.",
       "evidence": "development/levels/rebuild/wharf-landward-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-672",
+      "title": "Wharf frames lacked operating door leaves and fitted acoustic room transitions",
+      "status": "STAGED_WHARF_DOORS_AND_ACOUSTIC_TRANSITIONS_VERIFIED",
+      "affected": "Drowned Fisherman's Wharf cottages, boathouse, net shed, fish house and native room graph",
+      "symptom": "Players could use the molded door frames but there was no leaf state, threshold acoustic loss or supported runtime room graph for the native Wharf.",
+      "cause": "The native enclosure review intentionally used the site geometry before case bindings.",
+      "action": "Fit the shared hinged leaves to all eight measured frames. Bind supported room and stair crossings, run open and closed checks, and exercise staged live interaction and replication.",
+      "older_maps": "Validate each door against its retained frames and both nearby rooms. Exercise sound, object, line-of-sight and host-authoritative crossing.",
+      "evidence": "development/levels/rebuild/wharf-door-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

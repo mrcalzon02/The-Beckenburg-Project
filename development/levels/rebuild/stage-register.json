@@ -3730,7 +3730,7 @@
         },
         "S03": {
           "status": "IN_PROGRESS",
-          "source_sha": "740cd177631c2f492776f053df01d9a7de610e36",
+          "source_sha": "07e33bbf0d49cb578cec841b4dc80938f8ddfd3b",
           "evidence": [
             "development/levels/rebuild/structures/wld-06/implementation.json",
             "development/levels/rebuild/structures/verification.json",
@@ -3766,7 +3766,8 @@
             "development/levels/rebuild/native-foyer-door-pass/checkpoint.json",
             "development/levels/rebuild/wharf-foundation-pass/checkpoint.json",
             "development/levels/rebuild/wharf-tidal-pass/checkpoint.json",
-            "development/levels/rebuild/wharf-landward-pass/checkpoint.json"
+            "development/levels/rebuild/wharf-landward-pass/checkpoint.json",
+            "development/levels/rebuild/wharf-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -3793,9 +3794,10 @@
             "DEV-579",
             "DEV-669",
             "DEV-670",
-            "DEV-671"
+            "DEV-671",
+            "DEV-672"
           ],
-          "next_action": "Fit and exercise all eight door leaves with the authored room and acoustic graph. Install the site electricity and full walk-in refuges, then verify multiplayer and named entry."
+          "next_action": "Fit powered services and full walk-in refuges. Install and verify case evidence, rituals, navigation and named dispatch against this staged room and door authority."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -3842,25 +3844,31 @@
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "740cd177631c2f492776f053df01d9a7de610e36",
+          "source_sha": "07e33bbf0d49cb578cec841b4dc80938f8ddfd3b",
           "evidence": [
             "development/levels/rebuild/wharf-foundation-pass/checkpoint.json",
             "development/levels/rebuild/wharf-tidal-pass/checkpoint.json",
-            "development/levels/rebuild/wharf-landward-pass/checkpoint.json"
+            "development/levels/rebuild/wharf-landward-pass/checkpoint.json",
+            "development/levels/rebuild/wharf-door-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-669",
             "DEV-670",
-            "DEV-671"
+            "DEV-671",
+            "DEV-672"
           ],
-          "next_action": "Fit and exercise all eight door leaves with the authored room and acoustic graph. Install the site electricity and full walk-in refuges, then verify multiplayer and named entry."
+          "next_action": "Fit powered services and full walk-in refuges. Install and verify case evidence, rituals, navigation and named dispatch against this staged room and door authority."
         },
         "S06": {
-          "status": "NOT_AUDITED",
-          "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "status": "IN_PROGRESS",
+          "source_sha": "07e33bbf0d49cb578cec841b4dc80938f8ddfd3b",
+          "evidence": [
+            "development/levels/rebuild/wharf-door-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-672"
+          ],
+          "next_action": "Fit powered services and full walk-in refuges. Install and verify case evidence, rituals, navigation and named dispatch against this staged room and door authority."
         },
         "S07": {
           "status": "IN_PROGRESS",

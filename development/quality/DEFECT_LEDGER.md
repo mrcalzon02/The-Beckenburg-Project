@@ -9074,3 +9074,7 @@ The continuous lower bed follows measured shore slopes below the saved cut. Eigh
 ### DEV-671 Wharf arrival road and cottage shoulders led outside the playable landward enclosure
 
 Raw native collision previously supported the unobstructed road up to Z86 and supported escape near both van shoulders. The new enclosure uses twenty-two surveyed retaining runs, cottage masonry returns, and an eight-metre gate reservation. The actual gate bars stop player bodies while their openings pass sight and appropriately small objects. All sampled walking and jump-height crossings stop at the installed geometry. [Evidence](../levels/rebuild/wharf-landward-pass/checkpoint.json)
+
+### DEV-672 Wharf frames lacked operating door leaves and fitted acoustic room transitions
+
+Eight site-fitted frames now carry the shared door leaves in the staged game. Both renderers passed the open and closed body, object, sight, sound and snapshot checks. A four-peer TCP case opened the west cottage door after a physical rejection with it shut, and the witness saw the state change. [Evidence](../levels/rebuild/wharf-door-pass/checkpoint.json)

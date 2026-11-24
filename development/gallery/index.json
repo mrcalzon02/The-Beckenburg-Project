@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11705,
+  "count": 11717,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -114254,6 +114254,126 @@
       "height": 720,
       "bytes": 555906,
       "sha256": "153ec0f2e7f94d89e0a94932140f5fe484bbb1c8c7053277307a19064fb7c63b"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-810-closed.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-810-closed.png",
+      "title": "Wharf 810 closed",
+      "kind": "Wharf fitted door leaf in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 396334,
+      "sha256": "a0ccea4d779b01e38d813013852f76ad17d9d437a04b2e3aacee9c500025241c"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-810-open.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-810-open.png",
+      "title": "Wharf 810 open",
+      "kind": "Wharf fitted door leaf in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 355027,
+      "sha256": "5be33210f2777694189e6ec50f8c9bea98794c7b558cede3d02064e4836622cc"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-814-closed.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-814-closed.png",
+      "title": "Wharf 814 closed",
+      "kind": "Wharf fitted door leaf in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 404964,
+      "sha256": "72beb64e5772d6f6d3266ef303b2bc2ace99d1d0469cd562cfcb1aba029cca8a"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-814-open.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-814-open.png",
+      "title": "Wharf 814 open",
+      "kind": "Wharf fitted door leaf in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 338109,
+      "sha256": "d66092fb55f9959ef972c7a958d97849d39a8b6e62b2685127341ed65a1c7e21"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-817-closed.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-817-closed.png",
+      "title": "Wharf 817 closed",
+      "kind": "Wharf fitted door leaf in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401481,
+      "sha256": "a1c090f39ad59433bc568d01e46a1471917fc728c799f5699d356197e14f237b"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-817-open.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/opengl/wharf-817-open.png",
+      "title": "Wharf 817 open",
+      "kind": "Wharf fitted door leaf in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 333826,
+      "sha256": "182662a2015c7d39d053a8d556f9763feaaabd1f507535f8779c16d422102c1e"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-810-closed.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/wharf-810-closed.png",
+      "title": "Wharf 810 closed",
+      "kind": "Wharf fitted door leaf in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 394698,
+      "sha256": "33d14838fff36c2a4e096be7efa3def66443dde1482cce974495eb47a80cdfb9"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-810-open.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/wharf-810-open.png",
+      "title": "Wharf 810 open",
+      "kind": "Wharf fitted door leaf in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 354568,
+      "sha256": "58db2a2c16d27d736e9f64d66e208cab20122b58168e09b207713dc9b7cdeaa7"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-814-closed.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/wharf-814-closed.png",
+      "title": "Wharf 814 closed",
+      "kind": "Wharf fitted door leaf in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 402370,
+      "sha256": "d4337d87360200469097bc0e366efdb5c5e933b9512e1c31b1955e2413e15613"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-814-open.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/wharf-814-open.png",
+      "title": "Wharf 814 open",
+      "kind": "Wharf fitted door leaf in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 336760,
+      "sha256": "4b349d5079470f460bc05e327355ece1cbb9fd85b88df0160de3e7a612a24b6e"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-817-closed.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/wharf-817-closed.png",
+      "title": "Wharf 817 closed",
+      "kind": "Wharf fitted door leaf in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 399337,
+      "sha256": "34b1ad6e49dafcee9665fc5e45a19905582315fa1ef165966a8f9151d26e0c23"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-door-pass/captures/wharf-817-open.png",
+      "url": "development/levels/rebuild/wharf-door-pass/captures/wharf-817-open.png",
+      "title": "Wharf 817 open",
+      "kind": "Wharf fitted door leaf in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 332031,
+      "sha256": "3f9ff285d892f78dee99ad7d30342546c25b866cbaae564fd164ec250d1fd1ce"
     },
     {
       "path": "development/levels/rebuild/wharf-foundation-pass/captures/wharf-deck-and-shore.png",

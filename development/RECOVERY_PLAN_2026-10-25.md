@@ -2199,3 +2199,7 @@ Wharf foundation commit 39ebf8dc7c73ddb047597c57696c62b12943e675 is verified on 
 ### Drowned Fisherman's Wharf landward enclosure
 
 Tidal commit 740cd177631c2f492776f053df01d9a7de610e36 is verified on draft PR 86. Gallery 45358990271 passed. The [landward checkpoint](levels/rebuild/wharf-landward-pass/checkpoint.json) verifies twenty-two founded runs, two bonded cottage returns and a visible closed gate behind the van. Passed software and RTX 5070 replay of the nineteen approach/stair routes, the canonical van ramp, dry undercroft and physical boundary controls. Continue with operating leaves, acoustics, services, walk-in cover and named dispatch.
+
+### Drowned Fisherman's Wharf doors and room graph
+
+Landward enclosure commit 07e33bbf0d49cb578cec841b4dc80938f8ddfd3b is published on the held draft PR 86. The [door checkpoint](levels/rebuild/wharf-door-pass/checkpoint.json) verifies eight fitted doors, ten physical open portals, canonical cargo access and a connected graph of fifteen stable owners. Software, RTX 5070 and staged live cottage-door checks passed. Continue powered services, live walk-in refuge coverage and named dispatch.
