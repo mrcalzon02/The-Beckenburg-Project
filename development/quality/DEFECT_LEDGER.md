@@ -9114,3 +9114,11 @@ Seven cemetery frames and 17 annex frames now have working staged leaves. The vi
 ### DEV-681 Cemetery and mortuary had no functioning walk-in protection
 
 Both variants now have three fitted walk-in refuges. Each protected all 69 sampled usable floor positions and passed live entry, hiding, reveal and exit. The mortuary office refuge is reached through two real staff doors. [Evidence](../levels/rebuild/cemetery-refuge-pass/checkpoint.json)
+
+### DEV-682 Cemetery and mortuary had no operating caretaker power source
+
+The shared service yard now has a fitted generator, breaker and connected lamp. Both renderers show its working and tripped states. Separate four-peer cases preserved the breaker trip across stop, restart and reconnect, then reset it at its physical board. [Evidence](../levels/rebuild/cemetery-power-pass/checkpoint.json)
+
+### DEV-683 First caretaker ramp caught moving players at its toe
+
+The first toe stood just above actual soil and made physical capsule contact before the player reached its slope. The leading edge is now below the surveyed grade. Both staged routes ascend and descend the fitted threshold. [Evidence](../levels/rebuild/cemetery-power-pass/checkpoint.json)

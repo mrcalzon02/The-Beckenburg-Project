@@ -219,7 +219,7 @@ final class WharfPowerChecks {
         return lights.sample(s.room(),s.x(),s.y()-.50,s.z()).energy();
     }
 
-    private static void await(java.util.concurrent.BlockingQueue<String> frames,String prefix)throws Exception{
+    static void await(java.util.concurrent.BlockingQueue<String> frames,String prefix)throws Exception{
         long stop=System.nanoTime()+5_000_000_000L;
         while(System.nanoTime()<stop){
             var frame=frames.poll(100,java.util.concurrent.TimeUnit.MILLISECONDS);
@@ -230,7 +230,7 @@ final class WharfPowerChecks {
 
     private static Vec operator(Socket s){return new Vec(s.x(),.018,s.z()+1.18);}
 
-    private static InteractionFocus.Target focus(HouseMap map,Vec feet,Socket s){
+    static InteractionFocus.Target focus(HouseMap map,Vec feet,Socket s){
         double dx=s.x()-feet.x(),dz=s.z()-feet.z(),yaw=Math.atan2(dx,dz);
         double pitch=Math.atan2(s.y()-feet.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
         var observer=new LooseClutter.Observer(0,feet.x(),feet.y(),feet.z(),yaw,pitch,true);
@@ -239,7 +239,7 @@ final class WharfPowerChecks {
         return result;
     }
 
-    private static void use(HouseMap map,Peer peer,Vec feet,Socket s)throws Exception{
+    static void use(HouseMap map,Peer peer,Vec feet,Socket s)throws Exception{
         var target=focus(map,feet,s);
         require(target.id().equals(s.id()),"Wrong live service focus "+target+" for "+s.id());
         double dx=s.x()-feet.x(),dz=s.z()-feet.z(),yaw=Math.atan2(dx,dz);

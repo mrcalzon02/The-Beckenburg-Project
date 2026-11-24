@@ -4105,16 +4105,19 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "05edfb05abf6679e3ac0f23a18c3546fbae332a9",
+          "source_sha": "c4ea82293f6209c825b3d79ff3fb881ff989d9df",
           "evidence": [
             "development/levels/rebuild/cemetery-door-pass/checkpoint.json",
-            "development/levels/rebuild/cemetery-refuge-pass/checkpoint.json"
+            "development/levels/rebuild/cemetery-refuge-pass/checkpoint.json",
+            "development/levels/rebuild/cemetery-power-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-680",
-            "DEV-681"
+            "DEV-681",
+            "DEV-682",
+            "DEV-683"
           ],
-          "next_action": "Full walk-in refuges work in both variants. Fit the shared caretaker service yard, route the actual building circuits and verify named case integration."
+          "next_action": "Reachable source, breaker, local lamp and persistent LAN trip state are verified. Complete measured branch routing and individual building switches, then case and named runtime integration."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -6736,16 +6739,19 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "05edfb05abf6679e3ac0f23a18c3546fbae332a9",
+          "source_sha": "c4ea82293f6209c825b3d79ff3fb881ff989d9df",
           "evidence": [
             "development/levels/rebuild/cemetery-door-pass/checkpoint.json",
-            "development/levels/rebuild/cemetery-refuge-pass/checkpoint.json"
+            "development/levels/rebuild/cemetery-refuge-pass/checkpoint.json",
+            "development/levels/rebuild/cemetery-power-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-680",
-            "DEV-681"
+            "DEV-681",
+            "DEV-682",
+            "DEV-683"
           ],
-          "next_action": "Full walk-in refuges work in both variants. Fit the shared caretaker service yard, route the actual building circuits and verify named case integration."
+          "next_action": "Reachable source, breaker, local lamp and persistent LAN trip state are verified. Complete measured branch routing and individual building switches, then case and named runtime integration."
         },
         "S07": {
           "status": "IN_PROGRESS",

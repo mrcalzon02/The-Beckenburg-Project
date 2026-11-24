@@ -2231,3 +2231,7 @@ Boundary commit fa9b1e1495a114fc985641b011d726b25b315ffd and gallery 45373857791
 ### Cemetery and mortuary walk-in refuges
 
 Door commit 05edfb05abf6679e3ac0f23a18c3546fbae332a9 and gallery 45376266580 are verified on held draft PR 86. The [refuge checkpoint](levels/rebuild/cemetery-refuge-pass/checkpoint.json) adds three full walk-in refuges per variant, retains all 24 operating doors and 42 walking routes, and verifies all 414 usable floor samples. Both renderers see the protection cue. Four-peer TCP entered and used every refuge, including two aimed staff doors before the mortuary office. Continue the supported common caretaker yard and distribution, then case and named dispatch.
+
+### Cemetery and mortuary caretaker supply
+
+Refuge commit c4ea82293f6209c825b3d79ff3fb881ff989d9df and gallery 45377307998 passed on held draft PR 86. The [caretaker power checkpoint](levels/rebuild/cemetery-power-pass/checkpoint.json) fits the shared site generator, breaker and local light to the actual yard on both variants. Both software and RTX 5070 replayed the complete walks, door and refuge checks and power contrast. Four peers confirmed physical control and independent source and breaker state with trip, restart, reconnect and reset on both variants. Continue supported building branch circuits, case and named dispatch.

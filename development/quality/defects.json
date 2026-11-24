@@ -7558,6 +7558,28 @@
       "action": "Seat canonical cupboards on verified floors, couple their usable interiors to the shared protection volume and difficulty budget, and test every threshold at standing and crouched height and in live TCP.",
       "older_maps": "Ensure the protected volume follows the canonical shelf-free floor and head area, with clearing upon exit or zero availability.",
       "evidence": "development/levels/rebuild/cemetery-refuge-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-682",
+      "title": "Cemetery and mortuary had no operating caretaker power source",
+      "status": "CEMETERY_AND_MORTUARY_CARETAKER_SUPPLY_AND_BREAKER_VERIFIED",
+      "affected": "Both cemetery variants",
+      "symptom": "No installed generator and breaker served an actual native load.",
+      "cause": "The earlier native packet stopped at room and refuge placement.",
+      "action": "Seat the canonical screened plant on a surveyed formed slab, connect its supported lamp and preserve shared host breaker, generator and reconnect behavior.",
+      "older_maps": "Check real interaction stance and separately controlled source and breaker under the expected shared ghost events.",
+      "evidence": "development/levels/rebuild/cemetery-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-683",
+      "title": "First caretaker slab had a raised toe that caught moving bodies",
+      "status": "RAMP_TOE_REFIT_AND_STAGED_APPROACH_PASSED",
+      "affected": "Shared caretaker service approach in both cemetery variants",
+      "symptom": "A walking capsule contacted the first ramp just before the slope despite floor support.",
+      "cause": "The thin exposed toe was mounted above the actual soil by a nominal finish allowance.",
+      "action": "Bury the leading edge beneath the irregular grade so the ramp emerges flush, then pass normal approach in both postures.",
+      "older_maps": "Check supported toe joins from native body travel in both directions as well as geometric support.",
+      "evidence": "development/levels/rebuild/cemetery-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

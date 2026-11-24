@@ -1,0 +1,283 @@
+{
+  "footprint": [
+    46.6,
+    53.2,
+    52.2,
+    56.8
+  ],
+  "soil_and_ramp": {
+    "soil_min": -0.10706686973571777,
+    "soil_max": 0.15482652187347412,
+    "soil_samples": 609,
+    "slab_floor": 0.2,
+    "footing_bottom": -0.37,
+    "threshold_x": [
+      48.6,
+      50.2
+    ],
+    "ramp_ends_z": [
+      56.8,
+      58.35
+    ],
+    "toe_height": [
+      0.03687153339385986,
+      -0.007715601921081543
+    ]
+  },
+  "placement_offset": [
+    12.65,
+    0.182,
+    -14.15
+  ],
+  "source_plant": {
+    "blend": "d4ff369f9b19f58f51a452dc7a06163609a3ffaf4ef31be5f79fb931d56b5d79",
+    "glb": "e68dbbaa1062ee96a8ad400537c8a0e1de022ab964d0a2c36679e9c37e1329f4",
+    "hcs2": "d7d4e9aa3fa2eae7b124a2ffe2ed3c1749a749a1dc8ad27a8c2987b875707f00"
+  },
+  "services": [
+    {
+      "id": "cemetery-generator",
+      "type": "generator",
+      "room": 12,
+      "position": [
+        50.885,
+        0.657,
+        54.291
+      ],
+      "yaw": 0.0,
+      "style": "CT-MAIN"
+    },
+    {
+      "id": "cemetery-breaker",
+      "type": "breaker",
+      "room": 12,
+      "position": [
+        48.45,
+        1.082,
+        53.905
+      ],
+      "yaw": 0.0,
+      "style": "CT-MAIN"
+    },
+    {
+      "id": "cemetery-service-light",
+      "type": "light",
+      "room": 12,
+      "position": [
+        49.519999,
+        2.638,
+        55.640001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ],
+  "plant_routes": [
+    {
+      "id": "weatherproof generator feed",
+      "points": [
+        [
+          51.1,
+          0.472,
+          53.6
+        ],
+        [
+          51.1,
+          0.482,
+          53.42
+        ],
+        [
+          51.1,
+          2.474,
+          53.42
+        ],
+        [
+          47.62,
+          2.474,
+          53.42
+        ]
+      ],
+      "radius": 0.029,
+      "visible": true
+    },
+    {
+      "id": "bank lead 1",
+      "points": [
+        [
+          49.3478,
+          2.35,
+          53.63
+        ],
+        [
+          49.3478,
+          2.474,
+          53.63
+        ],
+        [
+          49.3478,
+          2.474,
+          53.42
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "bank lead 2",
+      "points": [
+        [
+          48.5878,
+          2.35,
+          53.63
+        ],
+        [
+          48.5878,
+          2.474,
+          53.63
+        ],
+        [
+          48.5878,
+          2.474,
+          53.42
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "bank lead 3",
+      "points": [
+        [
+          47.8278,
+          2.35,
+          53.63
+        ],
+        [
+          47.8278,
+          2.474,
+          53.63
+        ],
+        [
+          47.8278,
+          2.474,
+          53.42
+        ]
+      ],
+      "radius": 0.018,
+      "visible": true
+    },
+    {
+      "id": "buried main from shelter wall service boot",
+      "points": [
+        [
+          47.62,
+          2.474,
+          53.42
+        ],
+        [
+          46.81,
+          2.474,
+          53.42
+        ],
+        [
+          46.81,
+          -0.188,
+          53.42
+        ],
+        [
+          46.41,
+          -0.188,
+          53.42
+        ]
+      ],
+      "radius": 0.032,
+      "visible": true
+    },
+    {
+      "id": "shed light branch on rear wall, sidewall and soffit",
+      "points": [
+        [
+          47.62,
+          2.474,
+          53.42
+        ],
+        [
+          46.8,
+          2.474,
+          53.42
+        ],
+        [
+          46.8,
+          2.474,
+          55.640001
+        ],
+        [
+          46.8,
+          3.105,
+          55.640001
+        ],
+        [
+          48.798,
+          3.105,
+          55.640001
+        ],
+        [
+          48.798,
+          2.822,
+          55.640001
+        ],
+        [
+          49.519999,
+          2.822,
+          55.640001
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    }
+  ],
+  "approach": [
+    [
+      28,
+      0,
+      66
+    ],
+    [
+      39,
+      0,
+      62
+    ],
+    [
+      46,
+      0.0,
+      62
+    ],
+    [
+      49.4,
+      -0.005663,
+      60
+    ],
+    [
+      49.4,
+      0.034597,
+      58.4
+    ],
+    [
+      49.4,
+      0.2,
+      56.8
+    ],
+    [
+      49.4,
+      0.2,
+      55.85
+    ]
+  ],
+  "retained_collision_parts": 191,
+  "new_collision_parts": 58,
+  "exports": {
+    "development/levels/rebuild/cemetery-power-pass/wld-07/caretaker-power.blend": "59587cb0e03cec1388ede7aabcdc3123e28aed56c181569cea9c601db6a1205a",
+    "development/levels/rebuild/cemetery-power-pass/wld-07/caretaker-power.glb": "c33243e10a947f16c9789d1e293a2be59b69a5da05cd79c7cca5b29eeae966b9",
+    "development/levels/rebuild/cemetery-power-pass/wld-07/caretaker-power.hcs2": "f9a02bf9e93df3caeed6334c76810dfdb73c6a71daa5fc40cdc395b00d646b98"
+  }
+}

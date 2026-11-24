@@ -52,6 +52,7 @@ public final class CemeteryDoorReview {
                     titles.put(r[1],r[10]);
                 }
                 case "ANCHOR" -> anchors.add(new Anchor(n(r,1),r[2],point(r,3)));
+                case "SERVICE" -> sockets.add(new Socket(r[1],r[2],n(r,3),d(r,4),d(r,5),d(r,6),d(r,7),r[8]));
                 case "COVER" -> sockets.add(new Socket(r[1],"hide",n(r,2),
                     d(r,3),d(r,4),d(r,5),d(r,6),"walk-in-cupboard"));
                 case "TREAD" -> stairs.add(r[1]);
@@ -113,6 +114,7 @@ public final class CemeteryDoorReview {
         }
 
         boolean cover=!HidingBudget.candidates(level).isEmpty();
+        boolean powered=map.hasGenerator();
         var captures=folder.resolve(gpu?"captures/opengl":"captures");
         Files.createDirectories(captures);
         for(var frame:frames){
@@ -151,8 +153,13 @@ public final class CemeteryDoorReview {
             "standing_crouched_optical_object_acoustics_and_snapshots\tPASS"));
         if(!cover) report.add("four_peer_tcp_door_interaction\t"+(gpu?"covered by software run":"PASS"));
         report.add("renderer\t"+(gpu?GpuWorldRenderer.active().rendererDescription():"Software"));
-        String prefix=cover?"refuges":"doors";
-        if(cover) CemeteryRefugeReview.audit(map,level,scene,captures,report,annex,gpu);
+        String prefix=powered?"power":cover?"refuges":"doors";
+        if(powered) {
+            NativeSchoolInteriorReview.auditHiding(map,report);
+            CemeteryPowerReview.audit(map,level,scene,routes.get("caretaker-service"),captures,report,gpu);
+        } else if(cover) {
+            CemeteryRefugeReview.audit(map,level,scene,captures,report,annex,gpu);
+        }
         Files.writeString(folder.resolve(prefix+(gpu?"-opengl.tsv":"-software.tsv")),String.join("\n",report)+"\n");
         report.forEach(System.out::println);
     }

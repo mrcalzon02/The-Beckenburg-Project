@@ -97,7 +97,7 @@ final class CemeteryRefugeReview {
         return at;
     }
 
-    private static Vec walk(Peer hunter,int seat,Vec at,Vec target)throws Exception{
+    static Vec walk(Peer hunter,int seat,Vec at,Vec target)throws Exception{
         for(int i=0;i<72;i++){
             double dx=target.x()-at.x(),dz=target.z()-at.z(),distance=Math.hypot(dx,dz);
             if(distance<.19)return at;

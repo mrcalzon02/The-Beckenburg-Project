@@ -380,3 +380,6 @@ development/levels/rebuild/cemetery-door-pass/** -text
 
 # Exact two-site safe-zone geometry and native replay evidence.
 development/levels/rebuild/cemetery-refuge-pass/** -text
+
+# Exact cemetery power meshes, operating schedules, and replay reports.
+development/levels/rebuild/cemetery-power-pass/** -text

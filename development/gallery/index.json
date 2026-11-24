@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11851,
+  "count": 11861,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -111084,6 +111084,106 @@
       "height": 580,
       "bytes": 287966,
       "sha256": "a224f84c902312d81f848bfd007c907c1a519d6fa0cb97ce3c58e9dde90d0c5a"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery caretaker generator, breaker and actual lamp in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 332930,
+      "sha256": "aa9ee800cd72a090af310fb9755f8f621caf28fec8ed5fe13aa42d2bc06fad6d"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery caretaker generator, breaker and actual lamp in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 225852,
+      "sha256": "568437ad60ce057ee8c67eb27bf5cc8d621055c9d4621395c9ec258012e0b49c"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/opengl/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/opengl/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery caretaker generator, breaker and actual lamp in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 310067,
+      "sha256": "260564759378da04b58d423208908bede0b3bd577b9464aae155a88810c53663"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/opengl/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/opengl/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery caretaker generator, breaker and actual lamp in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 210204,
+      "sha256": "817c26a7b79148f785706a9c394e67887c99380670cecd77344e783cfe7cb122"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/structure/caretaker-service-yard.png",
+      "url": "development/levels/rebuild/cemetery-power-pass/wld-07-mortuary/captures/structure/caretaker-service-yard.png",
+      "title": "Caretaker service yard",
+      "kind": "Cemetery caretaker yard slab, ramp and service shelter",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1434778,
+      "sha256": "62e4d29f5725834409500e10f8b01818e12263bc817010242d1bd71f4aef3efd"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-power-pass/wld-07/captures/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-power-pass/wld-07/captures/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery caretaker generator, breaker and actual lamp in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 330049,
+      "sha256": "f35ec0996253d4ad42df7890e2a1e58acbfd3a24d3eecc4e2145680f0d501eb0"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-power-pass/wld-07/captures/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-power-pass/wld-07/captures/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery caretaker generator, breaker and actual lamp in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 222890,
+      "sha256": "bc29881eedef251a4ba0d4ec28ef1507d9b153292e69e0e1ec7d1e19b123eb2b"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-power-pass/wld-07/captures/opengl/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-power-pass/wld-07/captures/opengl/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery caretaker generator, breaker and actual lamp in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 310047,
+      "sha256": "b8d33d0439226ccd18e1294c6c38998391fab2a4148c51b6e56af75d8893332d"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-power-pass/wld-07/captures/opengl/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-power-pass/wld-07/captures/opengl/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery caretaker generator, breaker and actual lamp in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 209859,
+      "sha256": "90175dbc66424925bf604901ef7f5a496ffbe86ecc8c5893aa64b5de69b60493"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-power-pass/wld-07/captures/structure/caretaker-service-yard.png",
+      "url": "development/levels/rebuild/cemetery-power-pass/wld-07/captures/structure/caretaker-service-yard.png",
+      "title": "Caretaker service yard",
+      "kind": "Cemetery caretaker yard slab, ramp and service shelter",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1477854,
+      "sha256": "96a998631a1f86dff2ab52b90f3b1537cf33df97b80d78c68deedc3005fb4f72"
     },
     {
       "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-cottage-cupboard-enter.png",
