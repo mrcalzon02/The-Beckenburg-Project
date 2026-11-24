@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12112,
+  "count": 12128,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -112744,6 +112744,166 @@
       "height": 850,
       "bytes": 977055,
       "sha256": "52632d12c40c6892261da9042e4b7c72e00775fb305059941ec0158d61851c56"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/crest-control-closed.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/crest-control-closed.png",
+      "title": "Crest control closed",
+      "kind": "Blackwater Dam fitted closed door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 404120,
+      "sha256": "a9789e6a823df448a05ed21da3d661f916f01e2fe3516b9f901dc22cc8ae2956"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/crest-control-open.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/crest-control-open.png",
+      "title": "Crest control open",
+      "kind": "Blackwater Dam fitted open door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 336923,
+      "sha256": "91ffbd8f180342eae262a19f5ccdf7c8209a1fb86a5a5aaac3b11e525f13c7c9"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/gallery-valve-closed.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/gallery-valve-closed.png",
+      "title": "Gallery valve closed",
+      "kind": "Blackwater Dam fitted closed door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 377897,
+      "sha256": "b36fcb5ac5eb797ceb055baf287d8aaede0df0ec4f9e2b5e0801a5ebd3fafc45"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/gallery-valve-open.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/gallery-valve-open.png",
+      "title": "Gallery valve open",
+      "kind": "Blackwater Dam fitted open door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 318876,
+      "sha256": "15e8386e6897032d952968c1532cd79150d18139ae63a4715c421d53cf55583f"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/spillway-closed.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/spillway-closed.png",
+      "title": "Spillway closed",
+      "kind": "Blackwater Dam fitted closed door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 400457,
+      "sha256": "a41327e5b1c8e9616c8065bffa7c62bf56801e99d117c3f37dd1b57fb9f5ed4b"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/spillway-open.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/spillway-open.png",
+      "title": "Spillway open",
+      "kind": "Blackwater Dam fitted open door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 321329,
+      "sha256": "f9b48c05dfba5fad4394b5791767846213b7d9ae674ac9561b145960c91c2d5d"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/turbine-east-closed.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/turbine-east-closed.png",
+      "title": "Turbine east closed",
+      "kind": "Blackwater Dam fitted closed door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 397678,
+      "sha256": "724fb6a3e0f5a9ad6ce1dbf0cf443d31b19ba2a061cfe866af3c48ae5fe77f39"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/turbine-east-open.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/opengl/turbine-east-open.png",
+      "title": "Turbine east open",
+      "kind": "Blackwater Dam fitted open door in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 294791,
+      "sha256": "41771f23c8ae7f4dfd012bcd2b101156eaf740d5cca3eb74dbf9d0f56c91dfbc"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/crest-control-closed.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/crest-control-closed.png",
+      "title": "Crest control closed",
+      "kind": "Blackwater Dam fitted closed door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 405664,
+      "sha256": "9b6dab96fa9d094d21a418c2c5c3cb0ba321a600c3556e6c074f13f22ad2c4f5"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/crest-control-open.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/crest-control-open.png",
+      "title": "Crest control open",
+      "kind": "Blackwater Dam fitted open door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 338844,
+      "sha256": "bc3f6638faf4ff82e113c8c91e5858be458aefdb016847efecfc80d594d30599"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/gallery-valve-closed.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/gallery-valve-closed.png",
+      "title": "Gallery valve closed",
+      "kind": "Blackwater Dam fitted closed door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 389604,
+      "sha256": "dd9d0b1547b473761f027cd53b5d5f8ae857c823513a85d988a0b82b7cbfa71c"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/gallery-valve-open.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/gallery-valve-open.png",
+      "title": "Gallery valve open",
+      "kind": "Blackwater Dam fitted open door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 332941,
+      "sha256": "64663c3934a26f2c760e94a57a4023ab989bce2b81e45e68d5892dbb83c6fd7a"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/spillway-closed.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/spillway-closed.png",
+      "title": "Spillway closed",
+      "kind": "Blackwater Dam fitted closed door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 397408,
+      "sha256": "b53e3ca26aaa188be066dd73166cab932ac1d7e5bee3b10e89685b9e82c96d5a"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/spillway-open.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/spillway-open.png",
+      "title": "Spillway open",
+      "kind": "Blackwater Dam fitted open door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 318004,
+      "sha256": "7c8a86df098067052a538cfca9ddaf123f1f946cb091d1228a368dc3003f7436"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/turbine-east-closed.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/turbine-east-closed.png",
+      "title": "Turbine east closed",
+      "kind": "Blackwater Dam fitted closed door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 394575,
+      "sha256": "a92c6e17636caf56003d6a20f3d7553f9d2ff8eaeca314b0bc91606ecb77f698"
+    },
+    {
+      "path": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/turbine-east-open.png",
+      "url": "development/levels/rebuild/dam-door-pass/wld-09/captures/software/turbine-east-open.png",
+      "title": "Turbine east open",
+      "kind": "Blackwater Dam fitted open door in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 291943,
+      "sha256": "ec46009e0107d5dd7d6dc8bb9c001554d76d5a8d7e3ccb5975686549a1a203d2"
     },
     {
       "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/opengl/dam-tailrace-downstream.png",

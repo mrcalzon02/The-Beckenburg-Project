@@ -2299,3 +2299,7 @@ East bank commit eccc4e64925a5724fef3bfd3ac22a38f5da63a1d and gallery 4541433030
 ### Blackwater Dam valley and founded site limits
 
 Tailrace commit d28cdbb2a07fd5c00aafb1a8819dbd7ce0a4fc6a and gallery 45417734486 passed on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d remains at the previous verified recovery baseline. The [valley checkpoint](levels/rebuild/dam-valley-pass/checkpoint.json) verifies an authored extended terrain, closed boundaries, retained water and the existing native routes. The upstream reservoir and full named runtime still require integration.
+
+### Blackwater Dam fitted door and acoustic ownership
+
+Valley commit dc64d376ed81f98d652756f34f8bca9229ba1b67 and gallery 45421087615 passed on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d remains at the prior verified recovery baseline. The [operating threshold checkpoint](levels/rebuild/dam-door-pass/checkpoint.json) verifies fourteen doors and the connected room authority with both renderers and live TCP. Continue the full refuges and supported services before named dispatch, with the upstream hydraulic connection and finish still open.

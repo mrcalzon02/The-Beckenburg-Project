@@ -26,7 +26,11 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/dam-valley-pass/' in path:
+    if '/dam-door-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        position='open' if '-open.png' in path else 'closed'
+        kind='Blackwater Dam fitted '+position+' door in the '+renderer+' game renderer'
+    elif '/dam-valley-pass/' in path:
         if '/structure/' in path:
             kind='Blackwater Dam joined valley and founded perimeter architectural review'
         else:

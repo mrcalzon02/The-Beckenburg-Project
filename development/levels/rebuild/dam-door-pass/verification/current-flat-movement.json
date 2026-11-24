@@ -1,0 +1,65 @@
+{
+  "status": "CURRENT_AUTHORED_FLAT_MOVEMENT_MEASURED_NOT_MAP_ACCEPTANCE",
+  "sites": {
+    "WLD-09": {
+      "before": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "after": {
+        "flat_links": 13,
+        "pass_both_directions": 13
+      },
+      "current_lanes": {
+        "samples": 6066,
+        "valid_standing": 6066,
+        "invalid_standing": 0,
+        "reasons": {},
+        "physical_components": []
+      }
+    }
+  },
+  "source_bindings": {
+    "WLD-09": {
+      "before": {
+        "contract": "development/levels/rebuild/dam-valley-pass/wld-09/construction.json",
+        "contract_sha256": "971e5e758df474c6e8e054e348139cae93ee9660fdd9be53ecf404844f2dc222",
+        "layout": "development/levels/rebuild/dam-east-hall-pass/wld-09/authored-layout.json",
+        "layout_sha256": "85081e1de6fd6282c514f20e07f91b10e4126d6b37e04dd7879099412d6d6576",
+        "native": "development/levels/rebuild/dam-valley-pass/wld-09/bounded-dam.hcs2",
+        "native_sha256": "ab88e0df4d6372932d10913d3695677d91e3e8353a1300c1792242fefb8acfbe"
+      },
+      "after": {
+        "contract": "development/levels/rebuild/dam-door-pass/wld-09/construction.json",
+        "contract_sha256": "74b291c2ce876f9d1d8a720886d29e7a73a73b9d0eb1ef42df053e2739b0a512",
+        "layout": "development/levels/rebuild/dam-door-pass/wld-09/authored-layout.json",
+        "layout_sha256": "087227b49dbadf20f68fd632ae5870ccb4734f5d168fcfb464a6bc89a56224db",
+        "native": "development/levels/rebuild/dam-door-pass/wld-09/door-fitted-dam.hcs2",
+        "native_sha256": "508d0a3ecd1670283f913bf56b98c945e9eb89c622d913afa9511c6b844f8849"
+      }
+    }
+  },
+  "complete_link_regressions": [],
+  "new_complete_links": [],
+  "new_complete_link_failures": [],
+  "source_hashes": {
+    "src/main/java/org/beckenburg/AuthoredSitePhysics.java": "4292ef0f20d33a73506f593e76d3cf6d12b15acb64ec9295c4f3d44dcc0710de",
+    "tools/java/RosterStairMovementProbe.java": "ba00a284d7cad72a4f612f5e020fdd6471097e846de5d8b187b969ce0c1ba8eb",
+    "tools/java/FurnishingRouteProbe.java": "4997ae8939865f6e06fe8d33d296fd6f4ab41efb84ee934cc6130b685e8ecf8a",
+    "tools/java/RosterFailureContacts.java": "2bffe6405d98c111f936880694d8930ef41fa634733c557c912f42da81c05376",
+    "tools/audit_current_flat_routes.py": "d94ea0a44cad8b8ccde154c04b8b5d88acce418687372aa2c1fdf42f070f13da",
+    "tools/roster_candidate_sources.py": "df49c8ee2a2f89f4afe9ca3f783336215528055363baf48aa12bd1a3d59f4e66",
+    "development/levels/rebuild/dam-valley-pass/roster.json": "a8803f1748c9b877b5672a7b4ddff9391dd4116b542815113db7c02daccd3d88"
+  },
+  "evidence_hashes": {
+    "build/dam-door-audit/flat/current-flat-failure-contacts.tsv": "e3c39d7f5d52624026bdc6eafdaa60d70023526591dde4584ff8daba1eccbbdc",
+    "build/dam-door-audit/flat/current-flat-failure-input.tsv": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "build/dam-door-audit/flat/current-flat-lane-input.tsv": "690c2047ae4c0c7b395af990913f307054b871416f14a6549fd2845ed6e586d7",
+    "build/dam-door-audit/flat/current-flat-lane-names.tsv": "5412d86f0a37b58929448073a50404451889a28b5bffe74b7a32eca2a70205b3",
+    "build/dam-door-audit/flat/current-flat-lanes.tsv": "6bfc83fc6bd3f6d8228916db6c0b610853d096832cf06849ae06f6fbb0411118",
+    "build/dam-door-audit/flat/current-flat-links.tsv": "7c5e15c5477c15b1dbd70b204d8be6d206ec82cb0c7d0d01b4726df46afe6c86",
+    "build/dam-door-audit/flat/current-flat-names.tsv": "5412d86f0a37b58929448073a50404451889a28b5bffe74b7a32eca2a70205b3",
+    "build/dam-door-audit/flat/current-flat-paths.tsv": "6a77b1f07b9115d9ee9ccd0b1f5247be9822b0ef8d886c8cc6e4c5354afc7bde"
+  },
+  "scope": "Every active fully-flat link and every baseline ordinary link that now uses a real entrance stair continuously forward/reverse with original endpoints and actual authored current points; all flat segments including vertical-link approaches sampled in centre/side lanes with strict production traversable full footprints. Original unchanged-coordinate body/sweep regression remains separate. Native candidate evidence, not runtime unlock, arbitrary movement, visual or multiplayer acceptance."
+}

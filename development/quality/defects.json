@@ -7811,6 +7811,17 @@
       "action": "Join the saved rim to a sculpted valley and drainage depression. Fit retaining walls and shore grilles to real soils and seat a closed vehicle gate beyond the van.",
       "older_maps": "Reimport joined rim vertices, inspect normal arrival and overview views, and test ordinary and raised body crossings over actual terrain.",
       "evidence": "development/levels/rebuild/dam-valley-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-705",
+      "title": "Blackwater Dam openings lacked operating leaves and the lower valve jamb leaked",
+      "status": "DAM_FITTED_DOORS_AND_OWNED_CIRCULATION_STAGED",
+      "affected": "WLD-09 fourteen physical thresholds and their door approaches",
+      "symptom": "Bare cased or masonry openings had no replicated leaf control. The old valve aperture also extended beside its right jamb.",
+      "cause": "The civil fit did not bind the doorway schedule to the shared game. A previous cut remained in the lower division wall.",
+      "action": "Fit existing jambs and casing to each measured opening, close the verified valve bypass, and align approaches to the fitted doorways and stair landings.",
+      "older_maps": "Check complete jambs and heads, swing clearance, threshold profiles, paired room ownership and audible, visual and movement behavior on both sides.",
+      "evidence": "development/levels/rebuild/dam-door-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

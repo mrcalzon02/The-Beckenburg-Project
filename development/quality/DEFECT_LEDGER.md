@@ -9210,3 +9210,7 @@ The restored east bank now supports a cast channel and two fitted closed sluices
 ### DEV-704 · Blackwater Dam valley edges and roadhead
 
 The rebuilt valley follows the exact saved terrain rim. Founded concrete retaining spans, shore grilles and the reused steel roadhead leaves contain the compound. The existing cargo route and isolated water remain clear. The exact station measurements include grounded, crouched and elevated body tests. [Evidence](../levels/rebuild/dam-valley-pass/checkpoint.json)
+
+### DEV-705 · Blackwater Dam operating thresholds and valve jamb
+
+All fourteen fitted thresholds bind to shared movement, sight, object and acoustic checks. A solid masonry return closes the valve-room aperture beyond its actual jamb. The switched approaches cross square through their doors and use the existing clear landings. Live peers confirmed both operated leaves on the journey into the spillway. [Evidence](../levels/rebuild/dam-door-pass/checkpoint.json)

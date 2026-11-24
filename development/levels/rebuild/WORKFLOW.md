@@ -1559,3 +1559,7 @@ Fifteen new closed pieces form the founded invert, side walls and terminal bays 
 ### Blackwater Hydroelectric Dam valley and physical limits
 
 The saved Dam rim now joins a continuous modeled valley with a road bend and downstream depression. The closed road gate sits beyond the canonical van on the measured level apron. Retaining spans and shore grilles block bodies at 648 stations, including elevated poses and both sweep directions where feet remain supported. Both game renderers retain the isolated water checks. All 6,087 standing samples, 13 ordinary links, 13 flights, six vertical links and five joined walks pass. [Valley plan](dam-valley-pass/wld-09/valley-plan.svg) · [Checkpoint](dam-valley-pass/checkpoint.json)
+
+### Blackwater Hydroelectric Dam operating thresholds
+
+Six bare masonry entries received indexed casings and all fourteen frames now use shared operating leaves. The lower valve bypass is closed in the wall. Both renderers passed 19 owned routes, all fifteen spawns and the fitted doors in both states. Live four-peer TCP walked from the van, operated the crest and lower doors, and reached the spillway. All 6,066 standing footprints and the prior perimeter and vertical checks passed on the final collision export. [Door plan](dam-door-pass/wld-09/door-plan.svg) · [Checkpoint](dam-door-pass/checkpoint.json)
