@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11861,
+  "count": 11887,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -110804,6 +110804,266 @@
       "height": 980,
       "bytes": 1875415,
       "sha256": "8783bcbf75a1ce2a242cea75d57bc0e857064fccf90ad44cd840b8238f8fa6ae"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery caretaker plant in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 332665,
+      "sha256": "c1ba13c70530e7628e2c42b8658a7526000a75d0e4411195d687666505f224da"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery caretaker plant in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 225926,
+      "sha256": "b86ec45e04337342a4ba43cbe694b14c7d8a84848af3242867463b31ed7a9a48"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-chapel-off.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-chapel-off.png",
+      "title": "Cemetery load chapel off",
+      "kind": "Cemetery and Vale Mortuary switched loads in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 156442,
+      "sha256": "e9ad1884cf1595734b502e0742d10e0861af7180c3bef5a5633f45538eb18318"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-chapel-on.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-chapel-on.png",
+      "title": "Cemetery load chapel on",
+      "kind": "Cemetery and Vale Mortuary switched loads in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 182343,
+      "sha256": "04d6ee7cf538f7eb048308baad2543e4b662d223d5078c50994c912426c57310"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-off.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-off.png",
+      "title": "Cemetery load mort viewing off",
+      "kind": "Cemetery and Vale Mortuary switched loads in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 159115,
+      "sha256": "ba4720a2706c94edcbc22e916ba646eab6a006c16d5892a01b9bdc7c7a55da88"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-on.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-on.png",
+      "title": "Cemetery load mort viewing on",
+      "kind": "Cemetery and Vale Mortuary switched loads in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 179061,
+      "sha256": "e674b064fa83ef874b18d21f9ee7a3ed1d4920fa7a8a9e18d8d2678bf0d8380f"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery caretaker plant in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 310208,
+      "sha256": "628bddd7e701a9941df73b47f645a776aa8e06348b35c927aade881c73a0ba59"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery caretaker plant in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 210277,
+      "sha256": "bb99f2e861ee4c80db67ba789116d4242c5455df58da85ad94001b50f84c7203"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-off.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-off.png",
+      "title": "Cemetery load chapel off",
+      "kind": "Cemetery and Vale Mortuary switched loads in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 154363,
+      "sha256": "3a379abf8eb3d063477ef0ec7dfa7b8a3cd16c8e933a336deb1b25859af6b708"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-on.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-on.png",
+      "title": "Cemetery load chapel on",
+      "kind": "Cemetery and Vale Mortuary switched loads in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 172788,
+      "sha256": "fcd2dc997c6d1cdcbf04df0ede2371ccbc46f6ce98ecdc7ab164df90488c9c12"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-off.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-off.png",
+      "title": "Cemetery load mort viewing off",
+      "kind": "Cemetery and Vale Mortuary switched loads in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 158803,
+      "sha256": "40ff87bdf9ebbe691d4427c147acb37ca5cfce2241be8bf77a836e6fff99591e"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-on.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-on.png",
+      "title": "Cemetery load mort viewing on",
+      "kind": "Cemetery and Vale Mortuary switched loads in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 175704,
+      "sha256": "3d8344a18597fd43daf0db9ea40a733022f069aa6f3ade3ea5a4fe936ed0490a"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/structure/west-pavilion-exterior-feed.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/structure/west-pavilion-exterior-feed.png",
+      "title": "West pavilion exterior feed",
+      "kind": "Cemetery surveyed pavilion wall riser and existing doorway",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1336863,
+      "sha256": "ffea27f2c9ac25b8655495f7873a0f5c860b67a68a0a720d0ae89446998bede9"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery caretaker plant in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 330184,
+      "sha256": "3aa7884f8efa50cb26817c42ec4fe79fa79051aea38d249a31648856273884b9"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery caretaker plant in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 222976,
+      "sha256": "fc88d7647979c8f6c98834445dd55456bb7e0ac74422c44614d0c0cbe7630ea9"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chamber-off.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chamber-off.png",
+      "title": "Cemetery load chamber off",
+      "kind": "Cemetery and Vale Mortuary switched loads in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 152255,
+      "sha256": "d24448e472c0258faa305b59b57f092b0c3d14364aa96ac1ff8d5053fcb5595a"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chamber-on.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chamber-on.png",
+      "title": "Cemetery load chamber on",
+      "kind": "Cemetery and Vale Mortuary switched loads in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 181258,
+      "sha256": "6f512cb381148c780b7dd38531b56f0626e99d493f2cfed442de50bb2148926b"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chapel-off.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chapel-off.png",
+      "title": "Cemetery load chapel off",
+      "kind": "Cemetery and Vale Mortuary switched loads in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 156442,
+      "sha256": "e9ad1884cf1595734b502e0742d10e0861af7180c3bef5a5633f45538eb18318"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chapel-on.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chapel-on.png",
+      "title": "Cemetery load chapel on",
+      "kind": "Cemetery and Vale Mortuary switched loads in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 182343,
+      "sha256": "04d6ee7cf538f7eb048308baad2543e4b662d223d5078c50994c912426c57310"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/caretaker-power-supplied.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/caretaker-power-supplied.png",
+      "title": "Caretaker power supplied",
+      "kind": "Cemetery caretaker plant in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 310169,
+      "sha256": "10629cc21a384486ee1a8ef0eaa5299992de0899599a40e81f6f63e47434e919"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/caretaker-power-tripped.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/caretaker-power-tripped.png",
+      "title": "Caretaker power tripped",
+      "kind": "Cemetery caretaker plant in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 209950,
+      "sha256": "2f121823a93607dcc34186eb985da9c52c3336d9f154cbb39a6e4f2e01bc9159"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chamber-off.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chamber-off.png",
+      "title": "Cemetery load chamber off",
+      "kind": "Cemetery and Vale Mortuary switched loads in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 150997,
+      "sha256": "31cf0277d140618d270c5b4afa7b8e0b551a93e238b9d79d1385d8e1c3fbca53"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chamber-on.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chamber-on.png",
+      "title": "Cemetery load chamber on",
+      "kind": "Cemetery and Vale Mortuary switched loads in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 165569,
+      "sha256": "72ee345af3d4e6db9fc7e1e989310af00748a7883297948fc519e46564a23701"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chapel-off.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chapel-off.png",
+      "title": "Cemetery load chapel off",
+      "kind": "Cemetery and Vale Mortuary switched loads in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 154363,
+      "sha256": "3a379abf8eb3d063477ef0ec7dfa7b8a3cd16c8e933a336deb1b25859af6b708"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chapel-on.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chapel-on.png",
+      "title": "Cemetery load chapel on",
+      "kind": "Cemetery and Vale Mortuary switched loads in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 172788,
+      "sha256": "fcd2dc997c6d1cdcbf04df0ede2371ccbc46f6ce98ecdc7ab164df90488c9c12"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/structure/west-pavilion-exterior-feed.png",
+      "url": "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/structure/west-pavilion-exterior-feed.png",
+      "title": "West pavilion exterior feed",
+      "kind": "Cemetery surveyed pavilion wall riser and existing doorway",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1336863,
+      "sha256": "367ecf83835b6fa0791d6914f8d611118dc64088e9b08b0c96bfe2e0744baadd"
     },
     {
       "path": "development/levels/rebuild/cemetery-door-pass/wld-07-mortuary/captures/caretaker-cottage-closed.png",

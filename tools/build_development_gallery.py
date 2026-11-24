@@ -26,7 +26,15 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/cemetery-power-pass/' in path:
+    if '/cemetery-distribution-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        if '/structure/' in path:
+            kind='Cemetery surveyed pavilion wall riser and existing doorway'
+        elif p.name.startswith('caretaker-power-'):
+            kind='Cemetery caretaker plant in the '+renderer+' game renderer'
+        else:
+            kind='Cemetery and Vale Mortuary switched loads in the '+renderer+' game renderer'
+    elif '/cemetery-power-pass/' in path:
         if '/structure/' in path:
             kind='Cemetery caretaker yard slab, ramp and service shelter'
         else:

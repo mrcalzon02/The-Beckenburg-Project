@@ -1,0 +1,32 @@
+check	result
+native_scene_revision	d9faf5cb1251665f9a779d9ffa1e6c3dbfa89edfb6ce2d636bf4ac0ed53e56e2
+stage_revision	d9faf5cb1251665f9a779d9ffa1e6c3dbfa89edfb6ce2d636bf4ac0ed53e56e2-52878365d0b0513f
+actual_fitted_doors	17
+bound_native_room_volumes	26
+connected_stable_owners	15
+retained_paths_both_ways_and_postures	27
+physical_open_transitions	3
+standing_crouched_optical_object_acoustics_and_snapshots	PASS
+renderer	Software
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+caretaker_lamp_energy	3.446046006200377 supplied, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+caretaker_lamp_visible_response	441373 changed pixels; 6.692582941483804 mean RGB increase
+four_peer_caretaker_supply	PASS ghost trip, actual van-to-plant walk, aimed generator stop/restart, tripped reconnect and aimed breaker reset
+fixture_cemetery-load-chapel	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-cottage	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-tool	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-west-stair	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-east-stair	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-ossuary	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-chamber	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-hall	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-reception	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-viewing	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-transfer	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-bay	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-office	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-cold	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-mort-prep	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+standing_cemetery-load-chapel	290628 changed pixels, 1.3884724399164055 mean RGB increase
+standing_cemetery-load-mort-viewing	273520 changed pixels, 0.9335566875653083 mean RGB increase
+four_peer_independent_circuits	PASS aimed cottage and archive toggles with independent restoration, also cold store and preparation

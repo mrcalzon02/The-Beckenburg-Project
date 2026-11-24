@@ -1487,3 +1487,9 @@ The formed lower well owns a bounded water document rendered by the shared game 
 ### Dead Man’s Claim named case review
 
 The ordinary mission roster loads Dead Man’s Claim from both package builders under the Mine review setting. Six runtime payloads match their source bytes. Software, RTX 5070 OpenGL and packaged LAN scenarios verify the supported rooms, the two physical records, the sealed hoist exhibit, all three refuges with maximum cover, lighting, the guarded sump, camera evidence, three rites and van retreat. The default release gate remains in place. [Case checkpoint](mine-case-pass/checkpoint.json)
+
+### Cemetery and Vale Mortuary room power
+
+The shared caretaker board now drives seven base circuits and eleven annex circuits. The pavilion feeders stop at surveyed courtyard grade and rise along masonry beside the doors. The vault and mortuary receive separate protected branches along actual structural supports. The software and OpenGL reviews tested 22 lamps, 18 controls, 44 retained routes and all 24 door leaves across the variants. Four-player LAN verified independent branches plus separate breaker and generator behavior on both maps. [Distribution checkpoint](cemetery-distribution-pass/checkpoint.json) · [Active roster](cemetery-distribution-pass/roster.json)
+
+The next pass fits local case materials to actual supported furniture and binds both variants to their named dispatch. Normal-use spaces, detailed construction and release acceptance remain open.

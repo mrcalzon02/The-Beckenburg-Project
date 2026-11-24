@@ -40,6 +40,7 @@ public final class CemeteryDoorReview {
         var titles=new LinkedHashMap<String,String>();
         var anchors=new ArrayList<Anchor>();
         var sockets=new ArrayList<Socket>();
+        var switchFeet=new LinkedHashMap<Integer,Vec>();
         var stairs=new HashSet<String>();
         var openings=new ArrayList<Portal>();
         var routes=new LinkedHashMap<String,List<Vec>>();
@@ -55,6 +56,7 @@ public final class CemeteryDoorReview {
                 case "SERVICE" -> sockets.add(new Socket(r[1],r[2],n(r,3),d(r,4),d(r,5),d(r,6),d(r,7),r[8]));
                 case "COVER" -> sockets.add(new Socket(r[1],"hide",n(r,2),
                     d(r,3),d(r,4),d(r,5),d(r,6),"walk-in-cupboard"));
+                case "SWITCH_FEET" -> require(switchFeet.put(n(r,1),point(r,2))==null,"Duplicate switch stance");
                 case "TREAD" -> stairs.add(r[1]);
                 case "RITUAL" -> sockets.add(new Socket("cemetery-"+r[1],"ritual",n(r,2),
                     d(r,3),d(r,4),d(r,5),0,r[1]));
@@ -153,10 +155,13 @@ public final class CemeteryDoorReview {
             "standing_crouched_optical_object_acoustics_and_snapshots\tPASS"));
         if(!cover) report.add("four_peer_tcp_door_interaction\t"+(gpu?"covered by software run":"PASS"));
         report.add("renderer\t"+(gpu?GpuWorldRenderer.active().rendererDescription():"Software"));
-        String prefix=powered?"power":cover?"refuges":"doors";
+        String prefix=!switchFeet.isEmpty()?"distribution":powered?"power":cover?"refuges":"doors";
         if(powered) {
             NativeSchoolInteriorReview.auditHiding(map,report);
             CemeteryPowerReview.audit(map,level,scene,routes.get("caretaker-service"),captures,report,gpu);
+            if(!switchFeet.isEmpty()) {
+                CemeteryDistributionReview.audit(map,scene,switchFeet,captures,report,annex,gpu);
+            }
         } else if(cover) {
             CemeteryRefugeReview.audit(map,level,scene,captures,report,annex,gpu);
         }

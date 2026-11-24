@@ -1,0 +1,4763 @@
+{
+  "source_terminal": [
+    47.62,
+    2.474,
+    53.42
+  ],
+  "connected_junctions": 132,
+  "duct_checks": [
+    {
+      "label": "caretaker buried yard feeder",
+      "samples": 23,
+      "depth": -0.55
+    },
+    {
+      "label": "south forecourt distribution",
+      "samples": 160,
+      "depth": -0.55
+    },
+    {
+      "label": "cottage south footing",
+      "samples": 11,
+      "depth": -0.55
+    },
+    {
+      "label": "chapel south footing",
+      "samples": 11,
+      "depth": -0.55
+    },
+    {
+      "label": "tool-room footing feed",
+      "samples": 59,
+      "depth": -0.55
+    },
+    {
+      "label": "burial-avenue service duct",
+      "samples": 177,
+      "depth": -0.55
+    },
+    {
+      "label": "west-stair courtyard duct",
+      "samples": 113,
+      "depth": -0.55
+    },
+    {
+      "label": "east-stair courtyard duct",
+      "samples": 103,
+      "depth": -0.55
+    },
+    {
+      "label": "vault wall buried approach",
+      "samples": 14,
+      "depth": -0.55
+    },
+    {
+      "label": "annex forecourt service duct",
+      "samples": 67,
+      "depth": -0.55
+    },
+    {
+      "label": "visitor hall footing",
+      "samples": 10,
+      "depth": -0.55
+    },
+    {
+      "label": "viewing partition footing",
+      "samples": 100,
+      "depth": -0.55
+    },
+    {
+      "label": "staff-side sub-slab trunk",
+      "samples": 104,
+      "depth": -0.55
+    },
+    {
+      "label": "staff vestibule wall riser feed",
+      "samples": 14,
+      "depth": -0.55
+    },
+    {
+      "label": "cold room under-slab feed",
+      "samples": 31,
+      "depth": -0.55
+    }
+  ],
+  "mount_contacts": [
+    {
+      "label": "chapel switch-drop clip",
+      "raceway": [
+        16.65,
+        1.7424,
+        55.851
+      ],
+      "bearing": [
+        16.65,
+        1.7424,
+        55.88
+      ]
+    },
+    {
+      "label": "chapel switch-drop clip",
+      "raceway": [
+        16.65,
+        2.3589599999999997,
+        55.851
+      ],
+      "bearing": [
+        16.65,
+        2.35896,
+        55.88
+      ]
+    },
+    {
+      "label": "cottage switch-drop clip",
+      "raceway": [
+        40.5,
+        1.7424,
+        55.851
+      ],
+      "bearing": [
+        40.5,
+        1.7424,
+        55.88
+      ]
+    },
+    {
+      "label": "cottage switch-drop clip",
+      "raceway": [
+        40.5,
+        2.3589599999999997,
+        55.851
+      ],
+      "bearing": [
+        40.5,
+        2.35896,
+        55.88
+      ]
+    },
+    {
+      "label": "tool switch-drop clip",
+      "raceway": [
+        46.149,
+        1.7424,
+        48.4
+      ],
+      "bearing": [
+        46.12,
+        1.7424,
+        48.4
+      ]
+    },
+    {
+      "label": "tool switch-drop clip",
+      "raceway": [
+        46.149,
+        2.3589599999999997,
+        48.4
+      ],
+      "bearing": [
+        46.12,
+        2.35896,
+        48.4
+      ]
+    },
+    {
+      "label": "west-stair switch-drop clip",
+      "raceway": [
+        9.4,
+        1.7424,
+        19.851
+      ],
+      "bearing": [
+        9.4,
+        1.7424,
+        19.88
+      ]
+    },
+    {
+      "label": "west-stair switch-drop clip",
+      "raceway": [
+        9.4,
+        2.3589599999999997,
+        19.851
+      ],
+      "bearing": [
+        9.4,
+        2.35896,
+        19.88
+      ]
+    },
+    {
+      "label": "east-stair switch-drop clip",
+      "raceway": [
+        46.4,
+        1.7424,
+        19.851
+      ],
+      "bearing": [
+        46.4,
+        1.7424,
+        19.88
+      ]
+    },
+    {
+      "label": "east-stair switch-drop clip",
+      "raceway": [
+        46.4,
+        2.3589599999999997,
+        19.851
+      ],
+      "bearing": [
+        46.4,
+        2.35896,
+        19.88
+      ]
+    },
+    {
+      "label": "ossuary switch-drop clip",
+      "raceway": [
+        28.9,
+        -1.2996,
+        12.109
+      ],
+      "bearing": [
+        28.9,
+        -1.2996,
+        12.08
+      ]
+    },
+    {
+      "label": "ossuary switch-drop clip",
+      "raceway": [
+        28.9,
+        -0.74184,
+        12.109
+      ],
+      "bearing": [
+        28.9,
+        -0.74184,
+        12.08
+      ]
+    },
+    {
+      "label": "chamber switch-drop clip",
+      "raceway": [
+        23.4,
+        -1.2996,
+        11.891
+      ],
+      "bearing": [
+        23.4,
+        -1.2996,
+        11.92
+      ]
+    },
+    {
+      "label": "chamber switch-drop clip",
+      "raceway": [
+        23.4,
+        -0.74184,
+        11.891
+      ],
+      "bearing": [
+        23.4,
+        -0.74184,
+        11.92
+      ]
+    },
+    {
+      "label": "mort-hall switch-drop clip",
+      "raceway": [
+        56.109,
+        1.7424,
+        62.3
+      ],
+      "bearing": [
+        56.08,
+        1.7424,
+        62.3
+      ]
+    },
+    {
+      "label": "mort-hall switch-drop clip",
+      "raceway": [
+        56.109,
+        2.3589599999999997,
+        62.3
+      ],
+      "bearing": [
+        56.08,
+        2.35896,
+        62.3
+      ]
+    },
+    {
+      "label": "mort-viewing switch-drop clip",
+      "raceway": [
+        60.149,
+        1.7424,
+        48.35
+      ],
+      "bearing": [
+        60.12,
+        1.7424,
+        48.35
+      ]
+    },
+    {
+      "label": "mort-viewing switch-drop clip",
+      "raceway": [
+        60.149,
+        2.3589599999999997,
+        48.35
+      ],
+      "bearing": [
+        60.12,
+        2.35896,
+        48.35
+      ]
+    },
+    {
+      "label": "mort-transfer switch-drop clip",
+      "raceway": [
+        75.851,
+        1.7424,
+        60.45
+      ],
+      "bearing": [
+        75.88,
+        1.7424,
+        60.45
+      ]
+    },
+    {
+      "label": "mort-transfer switch-drop clip",
+      "raceway": [
+        75.851,
+        2.3589599999999997,
+        60.45
+      ],
+      "bearing": [
+        75.88,
+        2.35896,
+        60.45
+      ]
+    },
+    {
+      "label": "mort-cold switch-drop clip",
+      "raceway": [
+        75.4,
+        1.7424,
+        57.851
+      ],
+      "bearing": [
+        75.4,
+        1.7424,
+        57.88
+      ]
+    },
+    {
+      "label": "mort-cold switch-drop clip",
+      "raceway": [
+        75.4,
+        2.3589599999999997,
+        57.851
+      ],
+      "bearing": [
+        75.4,
+        2.35896,
+        57.88
+      ]
+    },
+    {
+      "label": "caretaker cabinet riser bracket",
+      "raceway": [
+        47.62,
+        0.48,
+        53.42
+      ],
+      "bearing": [
+        47.62,
+        0.48,
+        53.38
+      ]
+    },
+    {
+      "label": "caretaker cabinet riser bracket",
+      "raceway": [
+        47.62,
+        1.25,
+        53.42
+      ],
+      "bearing": [
+        47.62,
+        1.25,
+        53.38
+      ]
+    },
+    {
+      "label": "caretaker cabinet riser bracket",
+      "raceway": [
+        47.62,
+        2.05,
+        53.42
+      ],
+      "bearing": [
+        47.62,
+        2.05,
+        53.38
+      ]
+    },
+    {
+      "label": "cottage low riser clip",
+      "raceway": [
+        40.5,
+        0.25,
+        55.851
+      ],
+      "bearing": [
+        40.5,
+        0.25,
+        55.88
+      ]
+    },
+    {
+      "label": "cottage low riser clip",
+      "raceway": [
+        40.5,
+        0.73,
+        55.851
+      ],
+      "bearing": [
+        40.5,
+        0.73,
+        55.88
+      ]
+    },
+    {
+      "label": "cottage low riser clip",
+      "raceway": [
+        40.5,
+        1.13,
+        55.851
+      ],
+      "bearing": [
+        40.5,
+        1.13,
+        55.88
+      ]
+    },
+    {
+      "label": "chapel low riser clip",
+      "raceway": [
+        16.65,
+        0.25,
+        55.851
+      ],
+      "bearing": [
+        16.65,
+        0.25,
+        55.88
+      ]
+    },
+    {
+      "label": "chapel low riser clip",
+      "raceway": [
+        16.65,
+        0.73,
+        55.851
+      ],
+      "bearing": [
+        16.65,
+        0.73,
+        55.88
+      ]
+    },
+    {
+      "label": "chapel low riser clip",
+      "raceway": [
+        16.65,
+        1.13,
+        55.851
+      ],
+      "bearing": [
+        16.65,
+        1.13,
+        55.88
+      ]
+    },
+    {
+      "label": "tool low riser clip",
+      "raceway": [
+        46.149,
+        0.25,
+        48.4
+      ],
+      "bearing": [
+        46.12,
+        0.25,
+        48.4
+      ]
+    },
+    {
+      "label": "tool low riser clip",
+      "raceway": [
+        46.149,
+        0.73,
+        48.4
+      ],
+      "bearing": [
+        46.12,
+        0.73,
+        48.4
+      ]
+    },
+    {
+      "label": "tool low riser clip",
+      "raceway": [
+        46.149,
+        1.13,
+        48.4
+      ],
+      "bearing": [
+        46.12,
+        1.13,
+        48.4
+      ]
+    },
+    {
+      "label": "west-stair weatherproof wall saddle",
+      "raceway": [
+        9.4,
+        0.23,
+        20.19
+      ],
+      "bearing": [
+        9.4,
+        0.23,
+        20.12
+      ]
+    },
+    {
+      "label": "west-stair weatherproof wall saddle",
+      "raceway": [
+        9.4,
+        0.64,
+        20.19
+      ],
+      "bearing": [
+        9.4,
+        0.64,
+        20.12
+      ]
+    },
+    {
+      "label": "west-stair weatherproof wall saddle",
+      "raceway": [
+        9.4,
+        1.1,
+        20.19
+      ],
+      "bearing": [
+        9.4,
+        1.1,
+        20.12
+      ]
+    },
+    {
+      "label": "west-stair interior sleeve collar",
+      "raceway": [
+        9.4,
+        1.302,
+        19.851
+      ],
+      "bearing": [
+        9.4,
+        1.302,
+        19.88
+      ]
+    },
+    {
+      "label": "west-stair exterior sleeve collar",
+      "raceway": [
+        9.4,
+        1.302,
+        20.19
+      ],
+      "bearing": [
+        9.4,
+        1.302,
+        20.12
+      ]
+    },
+    {
+      "label": "east-stair weatherproof wall saddle",
+      "raceway": [
+        46.4,
+        0.23,
+        20.19
+      ],
+      "bearing": [
+        46.4,
+        0.23,
+        20.12
+      ]
+    },
+    {
+      "label": "east-stair weatherproof wall saddle",
+      "raceway": [
+        46.4,
+        0.64,
+        20.19
+      ],
+      "bearing": [
+        46.4,
+        0.64,
+        20.12
+      ]
+    },
+    {
+      "label": "east-stair weatherproof wall saddle",
+      "raceway": [
+        46.4,
+        1.1,
+        20.19
+      ],
+      "bearing": [
+        46.4,
+        1.1,
+        20.12
+      ]
+    },
+    {
+      "label": "east-stair interior sleeve collar",
+      "raceway": [
+        46.4,
+        1.302,
+        19.851
+      ],
+      "bearing": [
+        46.4,
+        1.302,
+        19.88
+      ]
+    },
+    {
+      "label": "east-stair exterior sleeve collar",
+      "raceway": [
+        46.4,
+        1.302,
+        20.19
+      ],
+      "bearing": [
+        46.4,
+        1.302,
+        20.12
+      ]
+    },
+    {
+      "label": "vault upper service backbone soffit saddle",
+      "raceway": [
+        28.9,
+        -0.365,
+        18.880000000000003
+      ],
+      "bearing": [
+        28.9,
+        -0.3,
+        18.88
+      ]
+    },
+    {
+      "label": "vault upper service backbone soffit saddle",
+      "raceway": [
+        28.9,
+        -0.365,
+        17.98
+      ],
+      "bearing": [
+        28.9,
+        -0.3,
+        17.98
+      ]
+    },
+    {
+      "label": "vault upper service backbone soffit saddle",
+      "raceway": [
+        28.9,
+        -0.365,
+        17.080000000000002
+      ],
+      "bearing": [
+        28.9,
+        -0.3,
+        17.08
+      ]
+    },
+    {
+      "label": "vault upper service backbone soffit saddle",
+      "raceway": [
+        28.9,
+        -0.365,
+        16.18
+      ],
+      "bearing": [
+        28.9,
+        -0.3,
+        16.18
+      ]
+    },
+    {
+      "label": "vault upper service backbone soffit saddle",
+      "raceway": [
+        28.9,
+        -0.365,
+        15.280000000000001
+      ],
+      "bearing": [
+        28.9,
+        -0.3,
+        15.28
+      ]
+    },
+    {
+      "label": "vault ingress saddle",
+      "raceway": [
+        28.9,
+        -0.365,
+        19.78
+      ],
+      "bearing": [
+        28.9,
+        -0.3,
+        19.78
+      ]
+    },
+    {
+      "label": "vault switch supply soffit saddle",
+      "raceway": [
+        28.9,
+        -0.365,
+        13.623000000000001
+      ],
+      "bearing": [
+        28.9,
+        -0.3,
+        13.623
+      ]
+    },
+    {
+      "label": "vault switch supply soffit saddle",
+      "raceway": [
+        28.9,
+        -0.365,
+        12.866
+      ],
+      "bearing": [
+        28.9,
+        -0.3,
+        12.866
+      ]
+    },
+    {
+      "label": "archive wall approach soffit saddle",
+      "raceway": [
+        27.98333333333333,
+        -0.365,
+        14.38
+      ],
+      "bearing": [
+        27.98333,
+        -0.3,
+        14.38
+      ]
+    },
+    {
+      "label": "archive wall approach soffit saddle",
+      "raceway": [
+        27.066666666666666,
+        -0.365,
+        14.38
+      ],
+      "bearing": [
+        27.06667,
+        -0.3,
+        14.38
+      ]
+    },
+    {
+      "label": "archive wall approach soffit saddle",
+      "raceway": [
+        26.15,
+        -0.365,
+        14.38
+      ],
+      "bearing": [
+        26.15,
+        -0.3,
+        14.38
+      ]
+    },
+    {
+      "label": "archive wall approach soffit saddle",
+      "raceway": [
+        25.23333333333333,
+        -0.365,
+        14.38
+      ],
+      "bearing": [
+        25.23333,
+        -0.3,
+        14.38
+      ]
+    },
+    {
+      "label": "archive wall approach soffit saddle",
+      "raceway": [
+        24.316666666666666,
+        -0.365,
+        14.38
+      ],
+      "bearing": [
+        24.31667,
+        -0.3,
+        14.38
+      ]
+    },
+    {
+      "label": "archive wall approach soffit saddle",
+      "raceway": [
+        23.4,
+        -0.365,
+        13.663333333333334
+      ],
+      "bearing": [
+        23.4,
+        -0.3,
+        13.66333
+      ]
+    },
+    {
+      "label": "archive wall approach soffit saddle",
+      "raceway": [
+        23.4,
+        -0.365,
+        12.946666666666667
+      ],
+      "bearing": [
+        23.4,
+        -0.3,
+        12.94667
+      ]
+    },
+    {
+      "label": "archive sleeve receiving saddle",
+      "raceway": [
+        23.4,
+        -0.365,
+        11.77
+      ],
+      "bearing": [
+        23.4,
+        -0.3,
+        11.77
+      ]
+    },
+    {
+      "label": "chapel switched raceway soffit saddle",
+      "raceway": [
+        15.9,
+        2.775,
+        54.93727272727273
+      ],
+      "bearing": [
+        15.9,
+        2.84,
+        54.93727
+      ]
+    },
+    {
+      "label": "chapel switched raceway soffit saddle",
+      "raceway": [
+        15.9,
+        2.775,
+        54.023545454545456
+      ],
+      "bearing": [
+        15.9,
+        2.84,
+        54.02354
+      ]
+    },
+    {
+      "label": "chapel switched raceway soffit saddle",
+      "raceway": [
+        15.9,
+        2.775,
+        53.10981818181818
+      ],
+      "bearing": [
+        15.9,
+        2.84,
+        53.10982
+      ]
+    },
+    {
+      "label": "chapel switched raceway soffit saddle",
+      "raceway": [
+        15.9,
+        2.775,
+        52.196090909090906
+      ],
+      "bearing": [
+        15.9,
+        2.84,
+        52.19609
+      ]
+    },
+    {
+      "label": "chapel switched raceway soffit saddle",
+      "raceway": [
+        15.9,
+        2.775,
+        51.282363636363634
+      ],
+      "bearing": [
+        15.9,
+        2.84,
+        51.28236
+      ]
+    },
+    {
+      "label": "chapel switched raceway soffit saddle",
+      "raceway": [
+        15.9,
+        2.775,
+        50.36863636363636
+      ],
+      "bearing": [
+        15.9,
+        2.84,
+        50.36864
+      ]
+    },
+    {
+      "label": "chapel switched raceway soffit saddle",
+      "raceway": [
+        15.9,
+        2.775,
+        49.45490909090909
+      ],
+      "bearing": [
+        15.9,
+        2.84,
+        49.45491
+      ]
+    },
+    {
+      "label": "chapel switched raceway soffit saddle",
+      "raceway": [
+        15.9,
+        2.775,
+        48.54118181818181
+      ],
+      "bearing": [
+        15.9,
+        2.84,
+        48.54118
+      ]
+    },
+    {
+      "label": "chapel switched raceway soffit saddle",
+      "raceway": [
+        15.9,
+        2.775,
+        47.62745454545454
+      ],
+      "bearing": [
+        15.9,
+        2.84,
+        47.62745
+      ]
+    },
+    {
+      "label": "chapel switched raceway soffit saddle",
+      "raceway": [
+        15.9,
+        2.775,
+        46.71372727272727
+      ],
+      "bearing": [
+        15.9,
+        2.84,
+        46.71373
+      ]
+    },
+    {
+      "label": "cottage switched raceway soffit saddle",
+      "raceway": [
+        39.8,
+        2.775,
+        55.851
+      ],
+      "bearing": [
+        39.8,
+        2.84,
+        55.851
+      ]
+    },
+    {
+      "label": "cottage switched raceway soffit saddle",
+      "raceway": [
+        39.1,
+        2.775,
+        54.94533333333333
+      ],
+      "bearing": [
+        39.1,
+        2.84,
+        54.94533
+      ]
+    },
+    {
+      "label": "cottage switched raceway soffit saddle",
+      "raceway": [
+        39.1,
+        2.775,
+        54.03966666666667
+      ],
+      "bearing": [
+        39.1,
+        2.84,
+        54.03966
+      ]
+    },
+    {
+      "label": "cottage switched raceway soffit saddle",
+      "raceway": [
+        39.1,
+        2.775,
+        53.134
+      ],
+      "bearing": [
+        39.1,
+        2.84,
+        53.134
+      ]
+    },
+    {
+      "label": "cottage switched raceway soffit saddle",
+      "raceway": [
+        39.1,
+        2.775,
+        52.22833333333333
+      ],
+      "bearing": [
+        39.1,
+        2.84,
+        52.22833
+      ]
+    },
+    {
+      "label": "cottage switched raceway soffit saddle",
+      "raceway": [
+        39.1,
+        2.775,
+        51.32266666666667
+      ],
+      "bearing": [
+        39.1,
+        2.84,
+        51.32267
+      ]
+    },
+    {
+      "label": "cottage switched raceway soffit saddle",
+      "raceway": [
+        39.1,
+        2.775,
+        50.417
+      ],
+      "bearing": [
+        39.1,
+        2.84,
+        50.417
+      ]
+    },
+    {
+      "label": "cottage switched raceway soffit saddle",
+      "raceway": [
+        39.1,
+        2.775,
+        49.51133333333333
+      ],
+      "bearing": [
+        39.1,
+        2.84,
+        49.51133
+      ]
+    },
+    {
+      "label": "cottage switched raceway soffit saddle",
+      "raceway": [
+        39.1,
+        2.775,
+        48.60566666666667
+      ],
+      "bearing": [
+        39.1,
+        2.84,
+        48.60567
+      ]
+    },
+    {
+      "label": "tool switched raceway soffit saddle",
+      "raceway": [
+        46.919200000000004,
+        2.775,
+        48.4
+      ],
+      "bearing": [
+        46.9192,
+        2.84,
+        48.4
+      ]
+    },
+    {
+      "label": "tool switched raceway soffit saddle",
+      "raceway": [
+        47.6894,
+        2.775,
+        48.4
+      ],
+      "bearing": [
+        47.6894,
+        2.84,
+        48.4
+      ]
+    },
+    {
+      "label": "tool switched raceway soffit saddle",
+      "raceway": [
+        48.4596,
+        2.775,
+        48.4
+      ],
+      "bearing": [
+        48.4596,
+        2.84,
+        48.4
+      ]
+    },
+    {
+      "label": "tool switched raceway soffit saddle",
+      "raceway": [
+        49.2298,
+        2.775,
+        48.4
+      ],
+      "bearing": [
+        49.2298,
+        2.84,
+        48.4
+      ]
+    },
+    {
+      "label": "tool switched raceway soffit saddle",
+      "raceway": [
+        50.0,
+        2.775,
+        47.575
+      ],
+      "bearing": [
+        50.0,
+        2.84,
+        47.575
+      ]
+    },
+    {
+      "label": "tool switched raceway soffit saddle",
+      "raceway": [
+        50.0,
+        2.775,
+        46.75
+      ],
+      "bearing": [
+        50.0,
+        2.84,
+        46.75
+      ]
+    },
+    {
+      "label": "tool switched raceway soffit saddle",
+      "raceway": [
+        50.0,
+        2.775,
+        45.925
+      ],
+      "bearing": [
+        50.0,
+        2.84,
+        45.925
+      ]
+    },
+    {
+      "label": "west-stair switched raceway soffit saddle",
+      "raceway": [
+        8.5,
+        2.775,
+        19.1755
+      ],
+      "bearing": [
+        8.5,
+        2.84,
+        19.1755
+      ]
+    },
+    {
+      "label": "east-stair switched raceway soffit saddle",
+      "raceway": [
+        46.9,
+        2.775,
+        19.851
+      ],
+      "bearing": [
+        46.9,
+        2.84,
+        19.851
+      ]
+    },
+    {
+      "label": "east-stair switched raceway soffit saddle",
+      "raceway": [
+        47.4,
+        2.775,
+        19.1255
+      ],
+      "bearing": [
+        47.4,
+        2.84,
+        19.1255
+      ]
+    },
+    {
+      "label": "ossuary switched raceway soffit saddle",
+      "raceway": [
+        28.7,
+        -0.365,
+        13.007200000000001
+      ],
+      "bearing": [
+        28.7,
+        -0.3,
+        13.0072
+      ]
+    },
+    {
+      "label": "ossuary switched raceway soffit saddle",
+      "raceway": [
+        28.7,
+        -0.365,
+        13.9054
+      ],
+      "bearing": [
+        28.7,
+        -0.3,
+        13.9054
+      ]
+    },
+    {
+      "label": "ossuary switched raceway soffit saddle",
+      "raceway": [
+        28.7,
+        -0.365,
+        14.803600000000001
+      ],
+      "bearing": [
+        28.7,
+        -0.3,
+        14.8036
+      ]
+    },
+    {
+      "label": "ossuary switched raceway soffit saddle",
+      "raceway": [
+        28.7,
+        -0.365,
+        15.701800000000002
+      ],
+      "bearing": [
+        28.7,
+        -0.3,
+        15.7018
+      ]
+    },
+    {
+      "label": "chamber switched raceway soffit saddle",
+      "raceway": [
+        22.7,
+        -0.365,
+        11.891
+      ],
+      "bearing": [
+        22.7,
+        -0.3,
+        11.891
+      ]
+    },
+    {
+      "label": "chamber switched raceway soffit saddle",
+      "raceway": [
+        22.0,
+        -0.365,
+        10.9675
+      ],
+      "bearing": [
+        22.0,
+        -0.3,
+        10.9675
+      ]
+    },
+    {
+      "label": "chamber switched raceway soffit saddle",
+      "raceway": [
+        22.0,
+        -0.365,
+        10.044
+      ],
+      "bearing": [
+        22.0,
+        -0.3,
+        10.044
+      ]
+    },
+    {
+      "label": "chamber switched raceway soffit saddle",
+      "raceway": [
+        22.0,
+        -0.365,
+        9.1205
+      ],
+      "bearing": [
+        22.0,
+        -0.3,
+        9.1205
+      ]
+    },
+    {
+      "label": "chamber switched raceway soffit saddle",
+      "raceway": [
+        22.0,
+        -0.365,
+        8.197
+      ],
+      "bearing": [
+        22.0,
+        -0.3,
+        8.197
+      ]
+    },
+    {
+      "label": "chamber switched raceway soffit saddle",
+      "raceway": [
+        22.0,
+        -0.365,
+        7.273499999999999
+      ],
+      "bearing": [
+        22.0,
+        -0.3,
+        7.2735
+      ]
+    },
+    {
+      "label": "mort-hall low riser clip",
+      "raceway": [
+        56.109,
+        0.25,
+        62.3
+      ],
+      "bearing": [
+        56.08,
+        0.25,
+        62.3
+      ]
+    },
+    {
+      "label": "mort-hall low riser clip",
+      "raceway": [
+        56.109,
+        0.73,
+        62.3
+      ],
+      "bearing": [
+        56.08,
+        0.73,
+        62.3
+      ]
+    },
+    {
+      "label": "mort-hall low riser clip",
+      "raceway": [
+        56.109,
+        1.13,
+        62.3
+      ],
+      "bearing": [
+        56.08,
+        1.13,
+        62.3
+      ]
+    },
+    {
+      "label": "mort-viewing low riser clip",
+      "raceway": [
+        60.149,
+        0.25,
+        48.35
+      ],
+      "bearing": [
+        60.12,
+        0.25,
+        48.35
+      ]
+    },
+    {
+      "label": "mort-viewing low riser clip",
+      "raceway": [
+        60.149,
+        0.73,
+        48.35
+      ],
+      "bearing": [
+        60.12,
+        0.73,
+        48.35
+      ]
+    },
+    {
+      "label": "mort-viewing low riser clip",
+      "raceway": [
+        60.149,
+        1.13,
+        48.35
+      ],
+      "bearing": [
+        60.12,
+        1.13,
+        48.35
+      ]
+    },
+    {
+      "label": "mort-transfer low riser clip",
+      "raceway": [
+        75.851,
+        0.25,
+        60.45
+      ],
+      "bearing": [
+        75.88,
+        0.25,
+        60.45
+      ]
+    },
+    {
+      "label": "mort-transfer low riser clip",
+      "raceway": [
+        75.851,
+        0.73,
+        60.45
+      ],
+      "bearing": [
+        75.88,
+        0.73,
+        60.45
+      ]
+    },
+    {
+      "label": "mort-transfer low riser clip",
+      "raceway": [
+        75.851,
+        1.13,
+        60.45
+      ],
+      "bearing": [
+        75.88,
+        1.13,
+        60.45
+      ]
+    },
+    {
+      "label": "mort-cold low riser clip",
+      "raceway": [
+        75.4,
+        0.25,
+        57.851
+      ],
+      "bearing": [
+        75.4,
+        0.25,
+        57.88
+      ]
+    },
+    {
+      "label": "mort-cold low riser clip",
+      "raceway": [
+        75.4,
+        0.73,
+        57.851
+      ],
+      "bearing": [
+        75.4,
+        0.73,
+        57.88
+      ]
+    },
+    {
+      "label": "mort-cold low riser clip",
+      "raceway": [
+        75.4,
+        1.13,
+        57.851
+      ],
+      "bearing": [
+        75.4,
+        1.13,
+        57.88
+      ]
+    },
+    {
+      "label": "hall branching tray soffit saddle",
+      "raceway": [
+        56.739333333333335,
+        2.775,
+        62.3
+      ],
+      "bearing": [
+        56.73933,
+        2.84,
+        62.3
+      ]
+    },
+    {
+      "label": "hall branching tray soffit saddle",
+      "raceway": [
+        57.36966666666667,
+        2.775,
+        62.3
+      ],
+      "bearing": [
+        57.36967,
+        2.84,
+        62.3
+      ]
+    },
+    {
+      "label": "mort-hall switched raceway soffit saddle",
+      "raceway": [
+        58.0,
+        2.775,
+        61.416666666666664
+      ],
+      "bearing": [
+        58.0,
+        2.84,
+        61.41667
+      ]
+    },
+    {
+      "label": "mort-hall switched raceway soffit saddle",
+      "raceway": [
+        58.0,
+        2.775,
+        60.53333333333333
+      ],
+      "bearing": [
+        58.0,
+        2.84,
+        60.53333
+      ]
+    },
+    {
+      "label": "mort-hall switched raceway soffit saddle",
+      "raceway": [
+        58.0,
+        2.775,
+        59.65
+      ],
+      "bearing": [
+        58.0,
+        2.84,
+        59.65
+      ]
+    },
+    {
+      "label": "mort-hall switched raceway soffit saddle",
+      "raceway": [
+        58.0,
+        2.775,
+        58.766666666666666
+      ],
+      "bearing": [
+        58.0,
+        2.84,
+        58.76667
+      ]
+    },
+    {
+      "label": "mort-hall switched raceway soffit saddle",
+      "raceway": [
+        58.0,
+        2.775,
+        57.88333333333333
+      ],
+      "bearing": [
+        58.0,
+        2.84,
+        57.88334
+      ]
+    },
+    {
+      "label": "mort-reception switched raceway soffit saddle",
+      "raceway": [
+        58.0,
+        2.775,
+        61.43333333333333
+      ],
+      "bearing": [
+        58.0,
+        2.84,
+        61.43333
+      ]
+    },
+    {
+      "label": "mort-reception switched raceway soffit saddle",
+      "raceway": [
+        58.0,
+        2.775,
+        60.56666666666667
+      ],
+      "bearing": [
+        58.0,
+        2.84,
+        60.56667
+      ]
+    },
+    {
+      "label": "mort-reception switched raceway soffit saddle",
+      "raceway": [
+        58.885000000000005,
+        2.775,
+        59.7
+      ],
+      "bearing": [
+        58.885,
+        2.84,
+        59.7
+      ]
+    },
+    {
+      "label": "mort-reception switched raceway soffit saddle",
+      "raceway": [
+        61.097142857142856,
+        2.775,
+        59.7
+      ],
+      "bearing": [
+        61.09714,
+        2.84,
+        59.7
+      ]
+    },
+    {
+      "label": "mort-reception switched raceway soffit saddle",
+      "raceway": [
+        61.96428571428571,
+        2.775,
+        59.7
+      ],
+      "bearing": [
+        61.96429,
+        2.84,
+        59.7
+      ]
+    },
+    {
+      "label": "mort-reception switched raceway soffit saddle",
+      "raceway": [
+        62.83142857142857,
+        2.775,
+        59.7
+      ],
+      "bearing": [
+        62.83143,
+        2.84,
+        59.7
+      ]
+    },
+    {
+      "label": "mort-reception switched raceway soffit saddle",
+      "raceway": [
+        63.69857142857143,
+        2.775,
+        59.7
+      ],
+      "bearing": [
+        63.69857,
+        2.84,
+        59.7
+      ]
+    },
+    {
+      "label": "mort-reception switched raceway soffit saddle",
+      "raceway": [
+        64.56571428571428,
+        2.775,
+        59.7
+      ],
+      "bearing": [
+        64.56571,
+        2.84,
+        59.7
+      ]
+    },
+    {
+      "label": "mort-reception switched raceway soffit saddle",
+      "raceway": [
+        65.43285714285715,
+        2.775,
+        59.7
+      ],
+      "bearing": [
+        65.43285,
+        2.84,
+        59.7
+      ]
+    },
+    {
+      "label": "mort-viewing switched raceway soffit saddle",
+      "raceway": [
+        60.7245,
+        2.775,
+        48.35
+      ],
+      "bearing": [
+        60.7245,
+        2.84,
+        48.35
+      ]
+    },
+    {
+      "label": "mort-viewing switched raceway soffit saddle",
+      "raceway": [
+        61.3,
+        2.775,
+        47.56666666666667
+      ],
+      "bearing": [
+        61.3,
+        2.84,
+        47.56667
+      ]
+    },
+    {
+      "label": "mort-viewing switched raceway soffit saddle",
+      "raceway": [
+        61.3,
+        2.775,
+        46.78333333333333
+      ],
+      "bearing": [
+        61.3,
+        2.84,
+        46.78333
+      ]
+    },
+    {
+      "label": "mort-viewing switched raceway soffit saddle",
+      "raceway": [
+        62.08333333333333,
+        2.775,
+        46.0
+      ],
+      "bearing": [
+        62.08333,
+        2.84,
+        46.0
+      ]
+    },
+    {
+      "label": "mort-viewing switched raceway soffit saddle",
+      "raceway": [
+        62.86666666666667,
+        2.775,
+        46.0
+      ],
+      "bearing": [
+        62.86666,
+        2.84,
+        46.0
+      ]
+    },
+    {
+      "label": "mort-viewing switched raceway soffit saddle",
+      "raceway": [
+        63.65,
+        2.775,
+        46.0
+      ],
+      "bearing": [
+        63.65,
+        2.84,
+        46.0
+      ]
+    },
+    {
+      "label": "mort-viewing switched raceway soffit saddle",
+      "raceway": [
+        64.43333333333334,
+        2.775,
+        46.0
+      ],
+      "bearing": [
+        64.43333,
+        2.84,
+        46.0
+      ]
+    },
+    {
+      "label": "mort-viewing switched raceway soffit saddle",
+      "raceway": [
+        65.21666666666667,
+        2.775,
+        46.0
+      ],
+      "bearing": [
+        65.21667,
+        2.84,
+        46.0
+      ]
+    },
+    {
+      "label": "transfer branching tray soffit saddle",
+      "raceway": [
+        74.9255,
+        2.775,
+        60.45
+      ],
+      "bearing": [
+        74.9255,
+        2.84,
+        60.45
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        74.0,
+        2.775,
+        61.36
+      ],
+      "bearing": [
+        74.0,
+        2.84,
+        61.36
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        74.0,
+        2.775,
+        62.27
+      ],
+      "bearing": [
+        74.0,
+        2.84,
+        62.27
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        74.0,
+        2.775,
+        63.18
+      ],
+      "bearing": [
+        74.0,
+        2.84,
+        63.18
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        74.0,
+        2.775,
+        64.09
+      ],
+      "bearing": [
+        74.0,
+        2.84,
+        64.09
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        73.11500000000001,
+        2.775,
+        65.0
+      ],
+      "bearing": [
+        73.115,
+        2.84,
+        65.0
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        70.90666666666667,
+        2.775,
+        65.0
+      ],
+      "bearing": [
+        70.90667,
+        2.84,
+        65.0
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        70.04333333333334,
+        2.775,
+        65.0
+      ],
+      "bearing": [
+        70.04333,
+        2.84,
+        65.0
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        69.17999999999999,
+        2.775,
+        65.0
+      ],
+      "bearing": [
+        69.18,
+        2.84,
+        65.0
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        68.31666666666666,
+        2.775,
+        65.0
+      ],
+      "bearing": [
+        68.31667,
+        2.84,
+        65.0
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        67.45333333333333,
+        2.775,
+        65.0
+      ],
+      "bearing": [
+        67.45333,
+        2.84,
+        65.0
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        66.59,
+        2.775,
+        65.0
+      ],
+      "bearing": [
+        66.59,
+        2.84,
+        65.0
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        65.72666666666666,
+        2.775,
+        65.0
+      ],
+      "bearing": [
+        65.72667,
+        2.84,
+        65.0
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        64.86333333333333,
+        2.775,
+        65.0
+      ],
+      "bearing": [
+        64.86334,
+        2.84,
+        65.0
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        64.0,
+        2.775,
+        65.91666666666667
+      ],
+      "bearing": [
+        64.0,
+        2.84,
+        65.91666
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        64.0,
+        2.775,
+        66.83333333333333
+      ],
+      "bearing": [
+        64.0,
+        2.84,
+        66.83334
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        64.0,
+        2.775,
+        67.75
+      ],
+      "bearing": [
+        64.0,
+        2.84,
+        67.75
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        64.0,
+        2.775,
+        68.66666666666667
+      ],
+      "bearing": [
+        64.0,
+        2.84,
+        68.66666
+      ]
+    },
+    {
+      "label": "mort-bay switched raceway soffit saddle",
+      "raceway": [
+        64.0,
+        2.775,
+        69.58333333333333
+      ],
+      "bearing": [
+        64.0,
+        2.84,
+        69.58334
+      ]
+    },
+    {
+      "label": "mort-office switched raceway soffit saddle",
+      "raceway": [
+        74.88499999999999,
+        2.775,
+        61.3
+      ],
+      "bearing": [
+        74.885,
+        2.84,
+        61.3
+      ]
+    },
+    {
+      "label": "mort-office switched raceway soffit saddle",
+      "raceway": [
+        76.9975,
+        2.775,
+        61.3
+      ],
+      "bearing": [
+        76.9975,
+        2.84,
+        61.3
+      ]
+    },
+    {
+      "label": "mort-office switched raceway soffit saddle",
+      "raceway": [
+        77.765,
+        2.775,
+        61.3
+      ],
+      "bearing": [
+        77.765,
+        2.84,
+        61.3
+      ]
+    },
+    {
+      "label": "mort-office switched raceway soffit saddle",
+      "raceway": [
+        78.5325,
+        2.775,
+        61.3
+      ],
+      "bearing": [
+        78.5325,
+        2.84,
+        61.3
+      ]
+    },
+    {
+      "label": "cold room branching tray soffit saddle",
+      "raceway": [
+        76.03333333333333,
+        2.775,
+        57.851
+      ],
+      "bearing": [
+        76.03333,
+        2.84,
+        57.851
+      ]
+    },
+    {
+      "label": "cold room branching tray soffit saddle",
+      "raceway": [
+        76.66666666666667,
+        2.775,
+        57.851
+      ],
+      "bearing": [
+        76.66666,
+        2.84,
+        57.851
+      ]
+    },
+    {
+      "label": "mort-cold switched raceway soffit saddle",
+      "raceway": [
+        77.3,
+        2.775,
+        57.0408
+      ],
+      "bearing": [
+        77.3,
+        2.84,
+        57.0408
+      ]
+    },
+    {
+      "label": "mort-cold switched raceway soffit saddle",
+      "raceway": [
+        77.3,
+        2.775,
+        56.230599999999995
+      ],
+      "bearing": [
+        77.3,
+        2.84,
+        56.2306
+      ]
+    },
+    {
+      "label": "mort-cold switched raceway soffit saddle",
+      "raceway": [
+        77.3,
+        2.775,
+        55.4204
+      ],
+      "bearing": [
+        77.3,
+        2.84,
+        55.4204
+      ]
+    },
+    {
+      "label": "mort-cold switched raceway soffit saddle",
+      "raceway": [
+        77.3,
+        2.775,
+        54.6102
+      ],
+      "bearing": [
+        77.3,
+        2.84,
+        54.6102
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        57.00422222222222
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        57.00422
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        56.157444444444444
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        56.15744
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        55.31066666666666
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        55.31067
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        54.46388888888889
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        54.46389
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        53.61711111111111
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        53.61711
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        52.77033333333333
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        52.77033
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        51.92355555555555
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        51.92356
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        51.07677777777778
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        51.07678
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        48.896
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        48.896
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        48.022
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        48.022
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        47.148
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        47.148
+      ]
+    },
+    {
+      "label": "mort-prep switched raceway soffit saddle",
+      "raceway": [
+        78.1,
+        2.775,
+        46.274
+      ],
+      "bearing": [
+        78.1,
+        2.84,
+        46.274
+      ]
+    }
+  ],
+  "conduits": [
+    {
+      "id": "EM-00 switch drop",
+      "points": [
+        [
+          16.65,
+          1.302,
+          55.851002
+        ],
+        [
+          16.65,
+          2.770000152587891,
+          55.851002
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-01 switch drop",
+      "points": [
+        [
+          40.5,
+          1.302,
+          55.851002
+        ],
+        [
+          40.5,
+          2.770000152587891,
+          55.851002
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-02 switch drop",
+      "points": [
+        [
+          46.148998,
+          1.302,
+          48.400002
+        ],
+        [
+          46.148998,
+          2.770000152587891,
+          48.400002
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-03 switch drop",
+      "points": [
+        [
+          9.4,
+          1.302,
+          19.851
+        ],
+        [
+          9.4,
+          2.770000152587891,
+          19.851
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-04 switch drop",
+      "points": [
+        [
+          46.400002,
+          1.302,
+          19.851
+        ],
+        [
+          46.400002,
+          2.770000152587891,
+          19.851
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-05 switch drop",
+      "points": [
+        [
+          28.9,
+          -1.698,
+          12.109
+        ],
+        [
+          28.9,
+          -0.36999983310699464,
+          12.109
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-06 switch drop",
+      "points": [
+        [
+          23.4,
+          -1.698,
+          11.891
+        ],
+        [
+          23.4,
+          -0.3699999523162842,
+          11.891
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-08 switch drop",
+      "points": [
+        [
+          56.109001,
+          1.302,
+          62.299999
+        ],
+        [
+          56.109001,
+          2.770000152587891,
+          62.299999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-09 switch drop",
+      "points": [
+        [
+          60.148998,
+          1.302,
+          48.349998
+        ],
+        [
+          60.148998,
+          2.770000152587891,
+          48.349998
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-10 switch drop",
+      "points": [
+        [
+          75.850998,
+          1.302,
+          60.450001
+        ],
+        [
+          75.850998,
+          2.770000152587891,
+          60.450001
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "EM-11 switch drop",
+      "points": [
+        [
+          75.400002,
+          1.302,
+          57.851002
+        ],
+        [
+          75.400002,
+          2.770000152587891,
+          57.851002
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "caretaker cabinet outgoing riser",
+      "points": [
+        [
+          47.62,
+          2.474,
+          53.42
+        ],
+        [
+          47.62,
+          -0.55,
+          53.42
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounted plant riser"
+    },
+    {
+      "id": "caretaker buried yard feeder",
+      "points": [
+        [
+          47.62,
+          -0.55,
+          53.42
+        ],
+        [
+          47.62,
+          -0.55,
+          57.8
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "south forecourt distribution",
+      "points": [
+        [
+          47.62,
+          -0.55,
+          57.8
+        ],
+        [
+          40.5,
+          -0.55,
+          57.8
+        ],
+        [
+          28.9,
+          -0.55,
+          57.8
+        ],
+        [
+          16.65,
+          -0.55,
+          57.8
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "cottage south footing",
+      "points": [
+        [
+          40.5,
+          -0.55,
+          57.8
+        ],
+        [
+          40.5,
+          -0.55,
+          55.851
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "cottage sealed floor sleeve",
+      "points": [
+        [
+          40.5,
+          -0.55,
+          55.851
+        ],
+        [
+          40.5,
+          0.035,
+          55.851
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true,
+      "installation": "sealed floor sleeve"
+    },
+    {
+      "id": "cottage protected wall riser",
+      "points": [
+        [
+          40.5,
+          0.035,
+          55.851
+        ],
+        [
+          40.5,
+          1.302,
+          55.851
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported wall riser"
+    },
+    {
+      "id": "chapel south footing",
+      "points": [
+        [
+          16.65,
+          -0.55,
+          57.8
+        ],
+        [
+          16.65,
+          -0.55,
+          55.851
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "chapel sealed floor sleeve",
+      "points": [
+        [
+          16.65,
+          -0.55,
+          55.851
+        ],
+        [
+          16.65,
+          0.035,
+          55.851
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true,
+      "installation": "sealed floor sleeve"
+    },
+    {
+      "id": "chapel protected wall riser",
+      "points": [
+        [
+          16.65,
+          0.035,
+          55.851
+        ],
+        [
+          16.65,
+          1.302,
+          55.851
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported wall riser"
+    },
+    {
+      "id": "tool-room footing feed",
+      "points": [
+        [
+          47.62,
+          -0.55,
+          57.8
+        ],
+        [
+          47.62,
+          -0.55,
+          52.45
+        ],
+        [
+          46.149,
+          -0.55,
+          52.45
+        ],
+        [
+          46.149,
+          -0.55,
+          48.4
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "tool sealed floor sleeve",
+      "points": [
+        [
+          46.149,
+          -0.55,
+          48.4
+        ],
+        [
+          46.149,
+          0.035,
+          48.4
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true,
+      "installation": "sealed floor sleeve"
+    },
+    {
+      "id": "tool protected wall riser",
+      "points": [
+        [
+          46.149,
+          0.035,
+          48.4
+        ],
+        [
+          46.149,
+          1.302,
+          48.4
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported wall riser"
+    },
+    {
+      "id": "burial-avenue service duct",
+      "points": [
+        [
+          28.9,
+          -0.55,
+          57.8
+        ],
+        [
+          28.9,
+          -0.55,
+          22.7
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "west-stair courtyard duct",
+      "points": [
+        [
+          28.9,
+          -0.55,
+          22.7
+        ],
+        [
+          9.4,
+          -0.55,
+          22.7
+        ],
+        [
+          9.4,
+          -0.55,
+          20.19
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "west-stair sealed grade boot",
+      "points": [
+        [
+          9.4,
+          -0.55,
+          20.19
+        ],
+        [
+          9.4,
+          0.055,
+          20.19
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true,
+      "installation": "sealed grade sleeve"
+    },
+    {
+      "id": "west-stair exterior wall riser",
+      "points": [
+        [
+          9.4,
+          0.055,
+          20.19
+        ],
+        [
+          9.4,
+          1.302,
+          20.19
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported exterior riser"
+    },
+    {
+      "id": "west-stair packed pavilion wall sleeve",
+      "points": [
+        [
+          9.4,
+          1.302,
+          20.19
+        ],
+        [
+          9.4,
+          1.302,
+          19.851
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true,
+      "installation": "sealed masonry sleeve"
+    },
+    {
+      "id": "east-stair courtyard duct",
+      "points": [
+        [
+          28.9,
+          -0.55,
+          22.7
+        ],
+        [
+          46.4,
+          -0.55,
+          22.7
+        ],
+        [
+          46.4,
+          -0.55,
+          20.19
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "east-stair sealed grade boot",
+      "points": [
+        [
+          46.4,
+          -0.55,
+          20.19
+        ],
+        [
+          46.4,
+          0.055,
+          20.19
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true,
+      "installation": "sealed grade sleeve"
+    },
+    {
+      "id": "east-stair exterior wall riser",
+      "points": [
+        [
+          46.4,
+          0.055,
+          20.19
+        ],
+        [
+          46.4,
+          1.302,
+          20.19
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported exterior riser"
+    },
+    {
+      "id": "east-stair packed pavilion wall sleeve",
+      "points": [
+        [
+          46.4,
+          1.302,
+          20.19
+        ],
+        [
+          46.4,
+          1.302,
+          19.851
+        ]
+      ],
+      "radius": 0.016,
+      "visible": true,
+      "installation": "sealed masonry sleeve"
+    },
+    {
+      "id": "vault wall buried approach",
+      "points": [
+        [
+          28.9,
+          -0.55,
+          22.7
+        ],
+        [
+          28.9,
+          -0.55,
+          20.24
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "packed sleeve through vault south wall",
+      "points": [
+        [
+          28.9,
+          -0.55,
+          20.24
+        ],
+        [
+          28.9,
+          -0.365,
+          20.24
+        ],
+        [
+          28.9,
+          -0.365,
+          19.78
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "sealed masonry sleeve"
+    },
+    {
+      "id": "vault upper service backbone",
+      "points": [
+        [
+          28.9,
+          -0.365,
+          19.78
+        ],
+        [
+          28.9,
+          -0.365,
+          14.38
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "vault switch supply",
+      "points": [
+        [
+          28.9,
+          -0.365,
+          14.38
+        ],
+        [
+          28.9,
+          -0.365,
+          12.109
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "vault switch junction",
+      "points": [
+        [
+          28.9,
+          -0.365,
+          12.109
+        ],
+        [
+          28.9,
+          -0.37,
+          12.109
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "surface junction"
+    },
+    {
+      "id": "archive wall approach",
+      "points": [
+        [
+          28.9,
+          -0.365,
+          14.38
+        ],
+        [
+          23.4,
+          -0.365,
+          14.38
+        ],
+        [
+          23.4,
+          -0.365,
+          12.23
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "packed archive upper-wall sleeve",
+      "points": [
+        [
+          23.4,
+          -0.365,
+          12.23
+        ],
+        [
+          23.4,
+          -0.365,
+          11.77
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "sealed masonry sleeve"
+    },
+    {
+      "id": "archive switch junction",
+      "points": [
+        [
+          23.4,
+          -0.365,
+          11.77
+        ],
+        [
+          23.4,
+          -0.365,
+          11.891
+        ],
+        [
+          23.4,
+          -0.37,
+          11.891
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "surface junction"
+    },
+    {
+      "id": "chapel junction return",
+      "points": [
+        [
+          16.65,
+          2.77,
+          55.851
+        ],
+        [
+          16.65,
+          2.775,
+          55.851
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "chapel switched raceway",
+      "points": [
+        [
+          16.65,
+          2.775,
+          55.851
+        ],
+        [
+          15.9,
+          2.775,
+          55.851
+        ],
+        [
+          15.9,
+          2.775,
+          45.8
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "chapel fixture termination",
+      "points": [
+        [
+          15.9,
+          2.775,
+          45.8
+        ],
+        [
+          15.9,
+          2.828,
+          45.8
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "cottage junction return",
+      "points": [
+        [
+          40.5,
+          2.77,
+          55.851
+        ],
+        [
+          40.5,
+          2.775,
+          55.851
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "cottage switched raceway",
+      "points": [
+        [
+          40.5,
+          2.775,
+          55.851
+        ],
+        [
+          39.1,
+          2.775,
+          55.851
+        ],
+        [
+          39.1,
+          2.775,
+          47.7
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "cottage fixture termination",
+      "points": [
+        [
+          39.1,
+          2.775,
+          47.7
+        ],
+        [
+          39.1,
+          2.828,
+          47.7
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "tool junction return",
+      "points": [
+        [
+          46.149,
+          2.77,
+          48.4
+        ],
+        [
+          46.149,
+          2.775,
+          48.4
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "tool switched raceway",
+      "points": [
+        [
+          46.149,
+          2.775,
+          48.4
+        ],
+        [
+          50,
+          2.775,
+          48.4
+        ],
+        [
+          50.0,
+          2.775,
+          45.1
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "tool fixture termination",
+      "points": [
+        [
+          50.0,
+          2.775,
+          45.1
+        ],
+        [
+          50.0,
+          2.828,
+          45.1
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "west-stair junction return",
+      "points": [
+        [
+          9.4,
+          2.77,
+          19.851
+        ],
+        [
+          9.4,
+          2.775,
+          19.851
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "west-stair switched raceway",
+      "points": [
+        [
+          9.4,
+          2.775,
+          19.851
+        ],
+        [
+          8.5,
+          2.775,
+          19.851
+        ],
+        [
+          8.5,
+          2.775,
+          18.5
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "west-stair fixture termination",
+      "points": [
+        [
+          8.5,
+          2.775,
+          18.5
+        ],
+        [
+          8.5,
+          2.828,
+          18.5
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "east-stair junction return",
+      "points": [
+        [
+          46.4,
+          2.77,
+          19.851
+        ],
+        [
+          46.4,
+          2.775,
+          19.851
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "east-stair switched raceway",
+      "points": [
+        [
+          46.4,
+          2.775,
+          19.851
+        ],
+        [
+          47.4,
+          2.775,
+          19.851
+        ],
+        [
+          47.4,
+          2.775,
+          18.4
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "east-stair fixture termination",
+      "points": [
+        [
+          47.4,
+          2.775,
+          18.4
+        ],
+        [
+          47.4,
+          2.828,
+          18.4
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "ossuary junction return",
+      "points": [
+        [
+          28.9,
+          -0.37,
+          12.109
+        ],
+        [
+          28.9,
+          -0.365,
+          12.109
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "ossuary switched raceway",
+      "points": [
+        [
+          28.9,
+          -0.365,
+          12.109
+        ],
+        [
+          28.7,
+          -0.365,
+          12.109
+        ],
+        [
+          28.7,
+          -0.365,
+          16.6
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "ossuary fixture termination",
+      "points": [
+        [
+          28.7,
+          -0.365,
+          16.6
+        ],
+        [
+          28.7,
+          -0.312,
+          16.6
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "chamber junction return",
+      "points": [
+        [
+          23.4,
+          -0.37,
+          11.891
+        ],
+        [
+          23.4,
+          -0.365,
+          11.891
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "chamber switched raceway",
+      "points": [
+        [
+          23.4,
+          -0.365,
+          11.891
+        ],
+        [
+          22,
+          -0.365,
+          11.891
+        ],
+        [
+          22.0,
+          -0.365,
+          6.35
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "chamber fixture termination",
+      "points": [
+        [
+          22.0,
+          -0.365,
+          6.35
+        ],
+        [
+          22.0,
+          -0.312,
+          6.35
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "annex forecourt service duct",
+      "points": [
+        [
+          47.62,
+          -0.55,
+          57.8
+        ],
+        [
+          47.62,
+          -0.55,
+          62.9
+        ],
+        [
+          55.4,
+          -0.55,
+          62.9
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "visitor hall footing",
+      "points": [
+        [
+          55.4,
+          -0.55,
+          62.9
+        ],
+        [
+          55.4,
+          -0.55,
+          62.3
+        ],
+        [
+          56.109,
+          -0.55,
+          62.3
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "mort-hall sealed floor sleeve",
+      "points": [
+        [
+          56.109,
+          -0.55,
+          62.3
+        ],
+        [
+          56.109,
+          0.035,
+          62.3
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true,
+      "installation": "sealed floor sleeve"
+    },
+    {
+      "id": "mort-hall protected wall riser",
+      "points": [
+        [
+          56.109,
+          0.035,
+          62.3
+        ],
+        [
+          56.109,
+          1.302,
+          62.3
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported wall riser"
+    },
+    {
+      "id": "viewing partition footing",
+      "points": [
+        [
+          55.4,
+          -0.55,
+          62.9
+        ],
+        [
+          55.4,
+          -0.55,
+          50.9
+        ],
+        [
+          60.149,
+          -0.55,
+          50.9
+        ],
+        [
+          60.149,
+          -0.55,
+          48.35
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "mort-viewing sealed floor sleeve",
+      "points": [
+        [
+          60.149,
+          -0.55,
+          48.35
+        ],
+        [
+          60.149,
+          0.035,
+          48.35
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true,
+      "installation": "sealed floor sleeve"
+    },
+    {
+      "id": "mort-viewing protected wall riser",
+      "points": [
+        [
+          60.149,
+          0.035,
+          48.35
+        ],
+        [
+          60.149,
+          1.302,
+          48.35
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported wall riser"
+    },
+    {
+      "id": "staff-side sub-slab trunk",
+      "points": [
+        [
+          55.4,
+          -0.55,
+          62.9
+        ],
+        [
+          75.851,
+          -0.55,
+          62.9
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "staff vestibule wall riser feed",
+      "points": [
+        [
+          75.851,
+          -0.55,
+          62.9
+        ],
+        [
+          75.851,
+          -0.55,
+          60.45
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "mort-transfer sealed floor sleeve",
+      "points": [
+        [
+          75.851,
+          -0.55,
+          60.45
+        ],
+        [
+          75.851,
+          0.035,
+          60.45
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true,
+      "installation": "sealed floor sleeve"
+    },
+    {
+      "id": "mort-transfer protected wall riser",
+      "points": [
+        [
+          75.851,
+          0.035,
+          60.45
+        ],
+        [
+          75.851,
+          1.302,
+          60.45
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported wall riser"
+    },
+    {
+      "id": "cold room under-slab feed",
+      "points": [
+        [
+          75.851,
+          -0.55,
+          62.9
+        ],
+        [
+          75.4,
+          -0.55,
+          62.9
+        ],
+        [
+          75.4,
+          -0.55,
+          57.851
+        ]
+      ],
+      "radius": 0.028,
+      "visible": false,
+      "installation": "buried duct"
+    },
+    {
+      "id": "mort-cold sealed floor sleeve",
+      "points": [
+        [
+          75.4,
+          -0.55,
+          57.851
+        ],
+        [
+          75.4,
+          0.035,
+          57.851
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true,
+      "installation": "sealed floor sleeve"
+    },
+    {
+      "id": "mort-cold protected wall riser",
+      "points": [
+        [
+          75.4,
+          0.035,
+          57.851
+        ],
+        [
+          75.4,
+          1.302,
+          57.851
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported wall riser"
+    },
+    {
+      "id": "hall ceiling junction",
+      "points": [
+        [
+          56.109,
+          2.77,
+          62.3
+        ],
+        [
+          56.109,
+          2.775,
+          62.3
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "hall branching tray",
+      "points": [
+        [
+          56.109,
+          2.775,
+          62.3
+        ],
+        [
+          58,
+          2.775,
+          62.3
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-hall switched raceway",
+      "points": [
+        [
+          58,
+          2.775,
+          62.3
+        ],
+        [
+          58.0,
+          2.775,
+          57.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-hall fixture termination",
+      "points": [
+        [
+          58.0,
+          2.775,
+          57.0
+        ],
+        [
+          58.0,
+          2.828,
+          57.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "mort-reception switched raceway",
+      "points": [
+        [
+          58,
+          2.775,
+          62.3
+        ],
+        [
+          58,
+          2.775,
+          59.7
+        ],
+        [
+          59.77,
+          2.775,
+          59.7
+        ],
+        [
+          60.23,
+          2.775,
+          59.7
+        ],
+        [
+          66.3,
+          2.775,
+          59.7
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-reception fixture termination",
+      "points": [
+        [
+          66.3,
+          2.775,
+          59.7
+        ],
+        [
+          66.3,
+          2.828,
+          59.7
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "mort-viewing junction return",
+      "points": [
+        [
+          60.149,
+          2.77,
+          48.35
+        ],
+        [
+          60.149,
+          2.775,
+          48.35
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "mort-viewing switched raceway",
+      "points": [
+        [
+          60.149,
+          2.775,
+          48.35
+        ],
+        [
+          61.3,
+          2.775,
+          48.35
+        ],
+        [
+          61.3,
+          2.775,
+          46
+        ],
+        [
+          66.0,
+          2.775,
+          46.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-viewing fixture termination",
+      "points": [
+        [
+          66.0,
+          2.775,
+          46.0
+        ],
+        [
+          66.0,
+          2.828,
+          46.0
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "transfer switch return",
+      "points": [
+        [
+          75.851,
+          2.77,
+          60.45
+        ],
+        [
+          75.851,
+          2.775,
+          60.45
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "transfer branching tray",
+      "points": [
+        [
+          75.851,
+          2.775,
+          60.45
+        ],
+        [
+          74,
+          2.775,
+          60.45
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-transfer switched raceway",
+      "points": [
+        [
+          74,
+          2.775,
+          60.45
+        ],
+        [
+          74.0,
+          2.775,
+          61.3
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-transfer fixture termination",
+      "points": [
+        [
+          74.0,
+          2.775,
+          61.3
+        ],
+        [
+          74.0,
+          2.828,
+          61.3
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "mort-bay switched raceway",
+      "points": [
+        [
+          74,
+          2.775,
+          60.45
+        ],
+        [
+          74,
+          2.775,
+          65
+        ],
+        [
+          72.23,
+          2.775,
+          65
+        ],
+        [
+          71.77,
+          2.775,
+          65
+        ],
+        [
+          64,
+          2.775,
+          65
+        ],
+        [
+          64.0,
+          2.775,
+          70.5
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-bay fixture termination",
+      "points": [
+        [
+          64.0,
+          2.775,
+          70.5
+        ],
+        [
+          64.0,
+          2.828,
+          70.5
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "mort-office switched raceway",
+      "points": [
+        [
+          74,
+          2.775,
+          60.45
+        ],
+        [
+          74,
+          2.775,
+          61.3
+        ],
+        [
+          75.77,
+          2.775,
+          61.3
+        ],
+        [
+          76.23,
+          2.775,
+          61.3
+        ],
+        [
+          79.3,
+          2.775,
+          61.3
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-office fixture termination",
+      "points": [
+        [
+          79.3,
+          2.775,
+          61.3
+        ],
+        [
+          79.3,
+          2.828,
+          61.3
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "cold switch junction",
+      "points": [
+        [
+          75.4,
+          2.77,
+          57.851
+        ],
+        [
+          75.4,
+          2.775,
+          57.851
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported service return"
+    },
+    {
+      "id": "cold room branching tray",
+      "points": [
+        [
+          75.4,
+          2.775,
+          57.851
+        ],
+        [
+          77.3,
+          2.775,
+          57.851
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-cold switched raceway",
+      "points": [
+        [
+          77.3,
+          2.775,
+          57.851
+        ],
+        [
+          77.3,
+          2.775,
+          53.8
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-cold fixture termination",
+      "points": [
+        [
+          77.3,
+          2.775,
+          53.8
+        ],
+        [
+          77.3,
+          2.828,
+          53.8
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    },
+    {
+      "id": "mort-prep switched raceway",
+      "points": [
+        [
+          77.3,
+          2.775,
+          57.851
+        ],
+        [
+          78.1,
+          2.775,
+          57.851
+        ],
+        [
+          78.1,
+          2.775,
+          50.23
+        ],
+        [
+          78.1,
+          2.775,
+          49.77
+        ],
+        [
+          78.1,
+          2.775,
+          45.4
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "supported overhead raceway"
+    },
+    {
+      "id": "mort-prep fixture termination",
+      "points": [
+        [
+          78.1,
+          2.775,
+          45.4
+        ],
+        [
+          78.1,
+          2.828,
+          45.4
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true,
+      "installation": "mounting-box connection"
+    }
+  ],
+  "switches": [
+    {
+      "id": "college-switch-00",
+      "circuit": "EM-00",
+      "space": "chapel",
+      "room": 0,
+      "at": [
+        16.65,
+        1.25,
+        55.879002
+      ],
+      "support": "WLD-07-MORTUARY chapel S return region0",
+      "feet": [
+        16.65,
+        0.0,
+        54.8
+      ]
+    },
+    {
+      "id": "college-switch-01",
+      "circuit": "EM-01",
+      "space": "cottage",
+      "room": 1,
+      "at": [
+        40.5,
+        1.25,
+        55.879002
+      ],
+      "support": "WLD-07-MORTUARY cottage S return region0",
+      "feet": [
+        40.5,
+        0.0,
+        54.8
+      ]
+    },
+    {
+      "id": "college-switch-02",
+      "circuit": "EM-02",
+      "space": "tool",
+      "room": 2,
+      "at": [
+        46.120998,
+        1.25,
+        48.400002
+      ],
+      "support": "WLD-07-MORTUARY caretaker tool-room partition return region0",
+      "feet": [
+        47.25,
+        0.0,
+        48.4
+      ]
+    },
+    {
+      "id": "college-switch-03",
+      "circuit": "EM-03",
+      "space": "west-stair",
+      "room": 3,
+      "at": [
+        9.4,
+        1.25,
+        19.879
+      ],
+      "support": "WLD-07-MORTUARY west-stair S return region0",
+      "feet": [
+        9.4,
+        0.0,
+        19.13
+      ]
+    },
+    {
+      "id": "college-switch-04",
+      "circuit": "EM-04",
+      "space": "east-stair",
+      "room": 4,
+      "at": [
+        46.400002,
+        1.25,
+        19.879
+      ],
+      "support": "WLD-07-MORTUARY east-stair S pier 0 region0",
+      "feet": [
+        46.4,
+        0.0,
+        19.13
+      ]
+    },
+    {
+      "id": "college-switch-05",
+      "circuit": "EM-05",
+      "space": "ossuary",
+      "room": 5,
+      "at": [
+        28.9,
+        -1.75,
+        12.081
+      ],
+      "support": "Flat route shell Wall ossuary N.001",
+      "feet": [
+        28.9,
+        -3.0,
+        13.25
+      ]
+    },
+    {
+      "id": "college-switch-06",
+      "circuit": "EM-06",
+      "space": "chamber",
+      "room": 6,
+      "at": [
+        23.4,
+        -1.75,
+        11.919
+      ],
+      "support": "Flat route shell Wall ossuary N.001",
+      "feet": [
+        23.4,
+        -3.0,
+        10.8
+      ]
+    },
+    {
+      "id": "college-switch-08",
+      "circuit": "EM-08",
+      "space": "mort-hall",
+      "room": 8,
+      "at": [
+        56.081001,
+        1.25,
+        62.299999
+      ],
+      "support": "Flat route shell Wall mort-hall W",
+      "feet": [
+        57,
+        0.0,
+        62.3
+      ]
+    },
+    {
+      "id": "college-switch-09",
+      "circuit": "EM-09",
+      "space": "mort-viewing",
+      "room": 9,
+      "at": [
+        60.120998,
+        1.25,
+        48.349998
+      ],
+      "support": "WLD-07-MORTUARY visitor hall shared wall pier 1 region0",
+      "feet": [
+        61.2,
+        0.0,
+        48.35
+      ]
+    },
+    {
+      "id": "college-switch-10",
+      "circuit": "EM-10",
+      "space": "mort-transfer",
+      "room": 10,
+      "at": [
+        75.878998,
+        1.25,
+        60.450001
+      ],
+      "support": "WLD-07-MORTUARY staff office enclosure pier 0 region0",
+      "feet": [
+        74.9,
+        0.0,
+        60.45
+      ]
+    },
+    {
+      "id": "college-switch-11",
+      "circuit": "EM-11",
+      "space": "mort-cold",
+      "room": 11,
+      "at": [
+        75.400002,
+        1.25,
+        57.879002
+      ],
+      "support": "WLD-07-MORTUARY cold storage service face return region0",
+      "feet": [
+        75.4,
+        0.0,
+        56.7
+      ]
+    }
+  ],
+  "loads": [
+    {
+      "id": "cemetery-load-chapel",
+      "room": 0,
+      "space": "chapel",
+      "circuit": "EM-00",
+      "mount": [
+        15.9,
+        2.84,
+        45.799999
+      ],
+      "emitter": [
+        15.9,
+        2.656,
+        45.799999
+      ],
+      "support": "Ceiling cap chapel"
+    },
+    {
+      "id": "cemetery-load-cottage",
+      "room": 1,
+      "space": "cottage",
+      "circuit": "EM-01",
+      "mount": [
+        39.099998,
+        2.84,
+        47.700001
+      ],
+      "emitter": [
+        39.099998,
+        2.656,
+        47.700001
+      ],
+      "support": "Ceiling cap cottage"
+    },
+    {
+      "id": "cemetery-load-tool",
+      "room": 2,
+      "space": "tool",
+      "circuit": "EM-02",
+      "mount": [
+        50.0,
+        2.84,
+        45.099998
+      ],
+      "emitter": [
+        50.0,
+        2.656,
+        45.099998
+      ],
+      "support": "Ceiling cap tool"
+    },
+    {
+      "id": "cemetery-load-west-stair",
+      "room": 3,
+      "space": "west-stair",
+      "circuit": "EM-03",
+      "mount": [
+        8.5,
+        2.84,
+        18.5
+      ],
+      "emitter": [
+        8.5,
+        2.656,
+        18.5
+      ],
+      "support": "Ceiling cap west-stair"
+    },
+    {
+      "id": "cemetery-load-east-stair",
+      "room": 4,
+      "space": "east-stair",
+      "circuit": "EM-04",
+      "mount": [
+        47.400002,
+        2.84,
+        18.4
+      ],
+      "emitter": [
+        47.400002,
+        2.656,
+        18.4
+      ],
+      "support": "Ceiling cap east-stair"
+    },
+    {
+      "id": "cemetery-load-ossuary",
+      "room": 5,
+      "space": "ossuary",
+      "circuit": "EM-05",
+      "mount": [
+        28.700001,
+        -0.3,
+        16.6
+      ],
+      "emitter": [
+        28.700001,
+        -0.484,
+        16.6
+      ],
+      "support": "WLD-07-MORTUARY ossuary full deck region0"
+    },
+    {
+      "id": "cemetery-load-chamber",
+      "room": 6,
+      "space": "chamber",
+      "circuit": "EM-06",
+      "mount": [
+        22.0,
+        -0.3,
+        6.35
+      ],
+      "emitter": [
+        22.0,
+        -0.484,
+        6.35
+      ],
+      "support": "WLD-07-MORTUARY archive full cover region0"
+    },
+    {
+      "id": "cemetery-load-mort-hall",
+      "room": 8,
+      "space": "mort-hall",
+      "circuit": "EM-08",
+      "mount": [
+        58.0,
+        2.84,
+        57.0
+      ],
+      "emitter": [
+        58.0,
+        2.656,
+        57.0
+      ],
+      "support": "Ceiling cap mort-hall"
+    },
+    {
+      "id": "cemetery-load-mort-reception",
+      "room": 8,
+      "space": "mort-reception",
+      "circuit": "EM-08",
+      "mount": [
+        66.300003,
+        2.84,
+        59.700001
+      ],
+      "emitter": [
+        66.300003,
+        2.656,
+        59.700001
+      ],
+      "support": "Ceiling cap mort-reception"
+    },
+    {
+      "id": "cemetery-load-mort-viewing",
+      "room": 9,
+      "space": "mort-viewing",
+      "circuit": "EM-09",
+      "mount": [
+        66.0,
+        2.84,
+        46.0
+      ],
+      "emitter": [
+        66.0,
+        2.656,
+        46.0
+      ],
+      "support": "Ceiling cap mort-viewing"
+    },
+    {
+      "id": "cemetery-load-mort-transfer",
+      "room": 10,
+      "space": "mort-transfer",
+      "circuit": "EM-10",
+      "mount": [
+        74.0,
+        2.84,
+        61.299999
+      ],
+      "emitter": [
+        74.0,
+        2.656,
+        61.299999
+      ],
+      "support": "Ceiling cap mort-office"
+    },
+    {
+      "id": "cemetery-load-mort-bay",
+      "room": 10,
+      "space": "mort-bay",
+      "circuit": "EM-10",
+      "mount": [
+        64.0,
+        2.84,
+        70.5
+      ],
+      "emitter": [
+        64.0,
+        2.656,
+        70.5
+      ],
+      "support": "Ceiling cap mort-bay"
+    },
+    {
+      "id": "cemetery-load-mort-office",
+      "room": 10,
+      "space": "mort-office",
+      "circuit": "EM-10",
+      "mount": [
+        79.300003,
+        2.84,
+        61.299999
+      ],
+      "emitter": [
+        79.300003,
+        2.656,
+        61.299999
+      ],
+      "support": "Ceiling cap mort-office"
+    },
+    {
+      "id": "cemetery-load-mort-cold",
+      "room": 11,
+      "space": "mort-cold",
+      "circuit": "EM-11",
+      "mount": [
+        77.300003,
+        2.84,
+        53.799999
+      ],
+      "emitter": [
+        77.300003,
+        2.656,
+        53.799999
+      ],
+      "support": "Ceiling cap mort-cold"
+    },
+    {
+      "id": "cemetery-load-mort-prep",
+      "room": 11,
+      "space": "mort-prep",
+      "circuit": "EM-11",
+      "mount": [
+        78.099998,
+        2.84,
+        45.400002
+      ],
+      "emitter": [
+        78.099998,
+        2.656,
+        45.400002
+      ],
+      "support": "Ceiling cap mort-prep"
+    }
+  ],
+  "retained_collision_parts": 342,
+  "new_parts": 347,
+  "exports": {
+    "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/distributed-grounds.blend": "f75d1bab5e06c38549af54bc1b73032575cded2b165d1c6f7d1d7fa46fd938a5",
+    "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/distributed-grounds.glb": "8f2d4abc49a2342cd447c9029d8f905395b6782819c9323fb72710c615eb5cd9",
+    "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/distributed-grounds.hcs2": "875b177ff27f000ccb933f0f4294850559f7f24f3b589bf7303ff58949170e46"
+  }
+}

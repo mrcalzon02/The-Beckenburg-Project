@@ -1,0 +1,22 @@
+check	result
+native_scene_revision	e7b359ce11584ad3b446734fdcedc0c8b754333b739377654d2acc74e7e38131
+stage_revision	e7b359ce11584ad3b446734fdcedc0c8b754333b739377654d2acc74e7e38131-defc1790f2ac9b45
+actual_fitted_doors	7
+bound_native_room_volumes	18
+connected_stable_owners	15
+retained_paths_both_ways_and_postures	17
+physical_open_transitions	8
+standing_crouched_optical_object_acoustics_and_snapshots	PASS
+renderer	OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+founded_cupboards	Three physical pockets and zero cover at maximum difficulty
+caretaker_lamp_energy	3.446046006200377 supplied, 0.9000000000000001 source stopped, 0.9000000000000001 breaker tripped
+caretaker_lamp_visible_response	399915 changed pixels; 6.263103448275862 mean RGB increase
+fixture_cemetery-load-chapel	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-cottage	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-tool	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-west-stair	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-east-stair	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-ossuary	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+fixture_cemetery-load-chamber	2.8647505380683342 switched on / 0.187 switched off / 0.187 source stopped and breaker tripped
+standing_cemetery-load-chapel	250866 changed pixels, 0.8348223615464995 mean RGB increase
+standing_cemetery-load-chamber	171903 changed pixels, 0.3532954545454545 mean RGB increase

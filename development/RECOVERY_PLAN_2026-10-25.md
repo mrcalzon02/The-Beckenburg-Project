@@ -2235,3 +2235,7 @@ Door commit 05edfb05abf6679e3ac0f23a18c3546fbae332a9 and gallery 45376266580 are
 ### Cemetery and mortuary caretaker supply
 
 Refuge commit c4ea82293f6209c825b3d79ff3fb881ff989d9df and gallery 45377307998 passed on held draft PR 86. The [caretaker power checkpoint](levels/rebuild/cemetery-power-pass/checkpoint.json) fits the shared site generator, breaker and local light to the actual yard on both variants. Both software and RTX 5070 replayed the complete walks, door and refuge checks and power contrast. Four peers confirmed physical control and independent source and breaker state with trip, restart, reconnect and reset on both variants. Continue supported building branch circuits, case and named dispatch.
+
+### Cemetery and mortuary building distribution
+
+The caretaker power commit 1dc79552d5058e88477726a60ebaf100674181a2 and gallery 45379219384 passed on held draft PR 86. The [distribution checkpoint](levels/rebuild/cemetery-distribution-pass/checkpoint.json) binds the measured conduits, sealed sleeves, room controls and all resulting lamp loads to the exact native exports. Both renderers passed the existing walking, door, acoustic and refuge-entry checks. Four-peer TCP proved independent aimed control and restoration and repeated the caretaker trip, restart, reconnect and reset. Continue with the physical case materials and named dispatch.

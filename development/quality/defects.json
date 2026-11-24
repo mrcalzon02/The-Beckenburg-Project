@@ -7580,6 +7580,28 @@
       "action": "Bury the leading edge beneath the irregular grade so the ramp emerges flush, then pass normal approach in both postures.",
       "older_maps": "Check supported toe joins from native body travel in both directions as well as geometric support.",
       "evidence": "development/levels/rebuild/cemetery-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-684",
+      "title": "Cemetery and mortuary buildings had no switched distribution",
+      "status": "CEMETERY_AND_MORTUARY_STAGED_ROOM_DISTRIBUTION_VERIFIED",
+      "affected": "WLD-07 and WLD-07-MORTUARY occupied buildings and vault",
+      "symptom": "The caretaker plant supplied its local light only. Occupied rooms had no operating fixture branches.",
+      "cause": "The previous construction ended at the caretaker plant enclosure.",
+      "action": "Run a supported protected feed into the buildings and vault, mount canonical fixtures and switches, and verify each circuit and shared source cutoff.",
+      "older_maps": "Trace power from the actual source through supported ducts and sleeves, then verify every physical switch and load.",
+      "evidence": "development/levels/rebuild/cemetery-distribution-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-685",
+      "title": "The first pavilion feeder entered the suspended floor over the vault",
+      "status": "PAVILION_DUCTS_RELOCATED_TO_SURVEYED_EXTERIOR_RISERS",
+      "affected": "Both ossuary stair pavilions in each Cemetery variant",
+      "symptom": "The west feeder lost surveyed soil cover at x=9.4 and z=19.851.",
+      "cause": "The original routing assumed soil beneath a finished landing suspended over the vault.",
+      "action": "Stop each duct at courtyard grade and carry it up the actual masonry into a packed sleeve at the switch.",
+      "older_maps": "Distinguish ground-bearing slabs from elevated decks and use true wall-bearing service entries.",
+      "evidence": "development/levels/rebuild/cemetery-distribution-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

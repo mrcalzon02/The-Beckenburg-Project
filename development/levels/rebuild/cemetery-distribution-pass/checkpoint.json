@@ -1,0 +1,114 @@
+{
+  "status": "CEMETERY_AND_MORTUARY_STAGED_ROOM_DISTRIBUTION_VERIFIED",
+  "verified_supply_commit": "1dc79552d5058e88477726a60ebaf100674181a2",
+  "verified_supply_gallery": 45379219384,
+  "distribution_source_checkpoint": "3844222abe79e811844c7f2840297f5ff0273396",
+  "sites": {
+    "WLD-07": {
+      "exports": {
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/distributed-grounds.blend": "e2f5c36e6c2083c4edcec7a7667ca0d6191c4529e1dcbc7da3becb42848b35ec",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/distributed-grounds.glb": "8a635661a4d863a3ed89a64b5591b7831f7330de75a8e4b61d9b0a92995d6331",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/distributed-grounds.hcs2": "ce80fec697bc35d14dd04916b1794f9e50d45d0180142ead6f647c9953fa7d54"
+      },
+      "evidence": {
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/construction.json": "9acd750e14bc5b2d00eea187f99f881ddebede40503b4faeabb2c27ef4405101",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/room-layout.tsv": "9aabe882b3c5a48a0ff76b465559b6f64b13b3400ff4390fdce45efbfa961405",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/door-schedule.tsv": "1719e83617068b04793ed5f6c0ceb7a7c6c1c51daa4778523d723104066829c6",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/distribution-software.tsv": "5ae2922d0f3f72f653962f1400851dfc3d3e70640c305a36d1323e940be58b6e",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/distribution-opengl.tsv": "75a2c841e1eda08aa48c0685055167003c2dc22b6019037446cf59247e8e62f3",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/caretaker-power-supplied.png": "3aa7884f8efa50cb26817c42ec4fe79fa79051aea38d249a31648856273884b9",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/caretaker-power-tripped.png": "fc88d7647979c8f6c98834445dd55456bb7e0ac74422c44614d0c0cbe7630ea9",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chamber-off.png": "d24448e472c0258faa305b59b57f092b0c3d14364aa96ac1ff8d5053fcb5595a",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chamber-on.png": "6f512cb381148c780b7dd38531b56f0626e99d493f2cfed442de50bb2148926b",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chapel-off.png": "e9ad1884cf1595734b502e0742d10e0861af7180c3bef5a5633f45538eb18318",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/cemetery-load-chapel-on.png": "04d6ee7cf538f7eb048308baad2543e4b662d223d5078c50994c912426c57310",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/caretaker-power-supplied.png": "10629cc21a384486ee1a8ef0eaa5299992de0899599a40e81f6f63e47434e919",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/caretaker-power-tripped.png": "2f121823a93607dcc34186eb985da9c52c3336d9f154cbb39a6e4f2e01bc9159",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chamber-off.png": "31cf0277d140618d270c5b4afa7b8e0b551a93e238b9d79d1385d8e1c3fbca53",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chamber-on.png": "72ee345af3d4e6db9fc7e1e989310af00748a7883297948fc519e46564a23701",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chapel-off.png": "3a379abf8eb3d063477ef0ec7dfa7b8a3cd16c8e933a336deb1b25859af6b708",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/opengl/cemetery-load-chapel-on.png": "fcd2dc997c6d1cdcbf04df0ede2371ccbc46f6ce98ecdc7ab164df90488c9c12",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07/captures/structure/west-pavilion-exterior-feed.png": "367ecf83835b6fa0791d6914f8d611118dc64088e9b08b0c96bfe2e0744baadd"
+      },
+      "native_scene_revision": "e7b359ce11584ad3b446734fdcedc0c8b754333b739377654d2acc74e7e38131",
+      "staged_revision": "e7b359ce11584ad3b446734fdcedc0c8b754333b739377654d2acc74e7e38131-defc1790f2ac9b45",
+      "retained_native_parts": 249,
+      "added_native_parts": 185,
+      "covered_duct_checks": 671,
+      "raceway_mount_contacts": 91,
+      "connected_junctions": 72,
+      "switches": 7,
+      "controlled_fixtures": 7,
+      "retained_routes": 17,
+      "fitted_doors": 7,
+      "live_independent_circuits": "PASS aimed cottage and archive toggles with independent restoration",
+      "live_caretaker_supply": "PASS ghost trip, actual van-to-plant walk, aimed generator stop/restart, tripped reconnect and aimed breaker reset",
+      "standing_lamp_response": {
+        "software": {
+          "standing_cemetery-load-chapel": "290628 changed pixels, 1.3884724399164055 mean RGB increase",
+          "standing_cemetery-load-chamber": "188153 changed pixels, 0.40525600835945663 mean RGB increase"
+        },
+        "opengl": {
+          "standing_cemetery-load-chapel": "250866 changed pixels, 0.8348223615464995 mean RGB increase",
+          "standing_cemetery-load-chamber": "171903 changed pixels, 0.3532954545454545 mean RGB increase"
+        }
+      }
+    },
+    "WLD-07-MORTUARY": {
+      "exports": {
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/distributed-grounds.blend": "f75d1bab5e06c38549af54bc1b73032575cded2b165d1c6f7d1d7fa46fd938a5",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/distributed-grounds.glb": "8f2d4abc49a2342cd447c9029d8f905395b6782819c9323fb72710c615eb5cd9",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/distributed-grounds.hcs2": "875b177ff27f000ccb933f0f4294850559f7f24f3b589bf7303ff58949170e46"
+      },
+      "evidence": {
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/construction.json": "912633d1fc0bc2a96aacadaa77ad516682f0996ccf4c18adc8a96f4a89667ae9",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/room-layout.tsv": "09b6b875771ebe831e0613876cc2c5756145b094c35bf19bf5fc033da77c0cdd",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/door-schedule.tsv": "c3dcf26f4c96173568b0eb4f888fa15bd5274799b5b3e466e7ce653fae253f77",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/distribution-software.tsv": "266dff1bb9e3f918e8194863afad984e84b5390c646573817eb00b3f93557dde",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/distribution-opengl.tsv": "30960896306386849ca6eb0f6792e478d226ed709fb08fbec19c18ff25d1389b",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/caretaker-power-supplied.png": "c1ba13c70530e7628e2c42b8658a7526000a75d0e4411195d687666505f224da",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/caretaker-power-tripped.png": "b86ec45e04337342a4ba43cbe694b14c7d8a84848af3242867463b31ed7a9a48",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-chapel-off.png": "e9ad1884cf1595734b502e0742d10e0861af7180c3bef5a5633f45538eb18318",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-chapel-on.png": "04d6ee7cf538f7eb048308baad2543e4b662d223d5078c50994c912426c57310",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-off.png": "ba4720a2706c94edcbc22e916ba646eab6a006c16d5892a01b9bdc7c7a55da88",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/cemetery-load-mort-viewing-on.png": "e674b064fa83ef874b18d21f9ee7a3ed1d4920fa7a8a9e18d8d2678bf0d8380f",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/caretaker-power-supplied.png": "628bddd7e701a9941df73b47f645a776aa8e06348b35c927aade881c73a0ba59",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/caretaker-power-tripped.png": "bb99f2e861ee4c80db67ba789116d4242c5455df58da85ad94001b50f84c7203",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-off.png": "3a379abf8eb3d063477ef0ec7dfa7b8a3cd16c8e933a336deb1b25859af6b708",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-chapel-on.png": "fcd2dc997c6d1cdcbf04df0ede2371ccbc46f6ce98ecdc7ab164df90488c9c12",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-off.png": "40ff87bdf9ebbe691d4427c147acb37ca5cfce2241be8bf77a836e6fff99591e",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/opengl/cemetery-load-mort-viewing-on.png": "3d8344a18597fd43daf0db9ea40a733022f069aa6f3ade3ea5a4fe936ed0490a",
+        "development/levels/rebuild/cemetery-distribution-pass/wld-07-mortuary/captures/structure/west-pavilion-exterior-feed.png": "ffea27f2c9ac25b8655495f7873a0f5c860b67a68a0a720d0ae89446998bede9"
+      },
+      "native_scene_revision": "d9faf5cb1251665f9a779d9ffa1e6c3dbfa89edfb6ce2d636bf4ac0ed53e56e2",
+      "staged_revision": "d9faf5cb1251665f9a779d9ffa1e6c3dbfa89edfb6ce2d636bf4ac0ed53e56e2-52878365d0b0513f",
+      "retained_native_parts": 342,
+      "added_native_parts": 347,
+      "covered_duct_checks": 997,
+      "raceway_mount_contacts": 176,
+      "connected_junctions": 132,
+      "switches": 11,
+      "controlled_fixtures": 15,
+      "retained_routes": 27,
+      "fitted_doors": 17,
+      "live_independent_circuits": "PASS aimed cottage and archive toggles with independent restoration, also cold store and preparation",
+      "live_caretaker_supply": "PASS ghost trip, actual van-to-plant walk, aimed generator stop/restart, tripped reconnect and aimed breaker reset",
+      "standing_lamp_response": {
+        "software": {
+          "standing_cemetery-load-chapel": "290628 changed pixels, 1.3884724399164055 mean RGB increase",
+          "standing_cemetery-load-mort-viewing": "273520 changed pixels, 0.9335566875653083 mean RGB increase"
+        },
+        "opengl": {
+          "standing_cemetery-load-chapel": "250866 changed pixels, 0.8348223615464995 mean RGB increase",
+          "standing_cemetery-load-mort-viewing": "236669 changed pixels, 0.7002671107628005 mean RGB increase"
+        }
+      }
+    }
+  },
+  "remaining_acceptance": [
+    "Case furnishing and readable local records",
+    "Normal named package selection and case actions",
+    "Detailed architecture, services, landscape and standing material review",
+    "Release acceptance"
+  ]
+}

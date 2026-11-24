@@ -9122,3 +9122,11 @@ The shared service yard now has a fitted generator, breaker and connected lamp. 
 ### DEV-683 First caretaker ramp caught moving players at its toe
 
 The first toe stood just above actual soil and made physical capsule contact before the player reached its slope. The leading edge is now below the surveyed grade. Both staged routes ascend and descend the fitted threshold. [Evidence](../levels/rebuild/cemetery-power-pass/checkpoint.json)
+
+### DEV-684 Cemetery and mortuary buildings had no switched distribution
+
+The caretaker breaker now supplies seven Cemetery branches and eleven annex branches. The shared software and OpenGL checks exercised every switched load. Four peers exercised independent cottage and archive switches and the annex cold-store switch with unchanged neighboring states. [Circuit evidence](../levels/rebuild/cemetery-distribution-pass/checkpoint.json)
+
+### DEV-685 First pavilion feeder entered a suspended vault deck
+
+The first cover survey stopped at the west pavilion where the prepared landing spans the vault. Both pavilions now receive the feed from the courtyard through brackets on their external walls and sealed sleeves by the doorways. The retained deck, door leaves and walking routes passed the native review. [Repeatable survey and exports](../levels/rebuild/cemetery-distribution-pass/checkpoint.json)

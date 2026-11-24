@@ -132,6 +132,22 @@ class CemeteryDistribution(Assembly):
         for height in (.25,.73,1.13):
             self.clip(name+" low riser clip",(x,height,z),point(dx,0,dz))
 
+    def pavilion_entry(self,name,head):
+        # The pavilion floor is suspended over the ossuary. Terminate the
+        # buried leg outside the wall and enter at the switch backplate.
+        x,y,z=self.tails[name]
+        outside=20.19
+        boot=self.buried(name+" courtyard duct",[head,(x,head[1]),(x,outside)])
+        toe=(x,.055,outside)
+        entry=(x,y,outside)
+        self.pipe(name+" sealed grade boot",[boot,toe],"sealed grade sleeve",.023)
+        self.pipe(name+" exterior wall riser",[toe,entry],"supported exterior riser")
+        for height in (.23,.64,1.10):
+            self.clip(name+" weatherproof wall saddle",(x,height,outside),point(0,0,-1))
+        self.clip(name+" interior sleeve collar",(x,y,z),point(0,0,1))
+        self.clip(name+" exterior sleeve collar",entry,point(0,0,-1))
+        self.pipe(name+" packed pavilion wall sleeve",[entry,(x,y,z)],"sealed masonry sleeve",.016)
+
     def overhead(self,label,points):
         chain=[stable(p) for i,p in enumerate(points) if not i or stable(p)!=stable(points[i-1])]
         for a,b in zip(chain,chain[1:]):
@@ -165,8 +181,6 @@ class CemeteryDistribution(Assembly):
         chapel=self.tails["chapel"]
         cottage=self.tails["cottage"]
         tool=self.tails["tool"]
-        west=self.tails["west-stair"]
-        east=self.tails["east-stair"]
         hub=(tx,57.8)
         yard=(28.9,57.8)
         head=(28.9,22.7)
@@ -177,8 +191,8 @@ class CemeteryDistribution(Assembly):
         self.floor_riser("tool",self.buried("tool-room footing feed",
                          [hub,(47.62,52.45),(tool[0],52.45),(tool[0],tool[2])]))
         self.buried("burial-avenue service duct",[yard,head])
-        self.floor_riser("west-stair",self.buried("west pavilion footing feed",[head,(west[0],22.7),(west[0],west[2])]))
-        self.floor_riser("east-stair",self.buried("east pavilion footing feed",[head,(east[0],22.7),(east[0],east[2])]))
+        self.pavilion_entry("west-stair",head)
+        self.pavilion_entry("east-stair",head)
         return hub,head
 
     def vault_network(self,head):
@@ -323,7 +337,37 @@ def build(site,authority):
           sum(row["samples"] for row in assembly.ducts),"buried samples",len(assembly.clips),"mounted clips")
 
 
+def capture_pavilion(site):
+    packet=OUTPUT/site
+    source=packet/"distributed-grounds.glb"
+    assert sha(source)==load(packet/"construction.json")["exports"][relative(source)]
+    bpy.ops.wm.read_factory_settings(use_empty=True)
+    bpy.ops.import_scene.gltf(filepath=str(source))
+    scene=bpy.context.scene
+    scene.render.engine="BLENDER_WORKBENCH"
+    scene.display.shading.color_type="MATERIAL"
+    scene.display.shading.show_cavity=True
+    scene.display.shading.cavity_type="BOTH"
+    scene.render.resolution_x=1440
+    scene.render.resolution_y=900
+    scene.render.resolution_percentage=100
+    bpy.ops.object.camera_add(location=point(13.8,3.32,27.2))
+    camera=bpy.context.object
+    camera.rotation_euler=(point(9.4,1.04,20.0)-camera.location).to_track_quat("-Z","Y").to_euler()
+    camera.data.type="ORTHO"
+    camera.data.ortho_scale=6.2
+    scene.camera=camera
+    folder=packet/"captures"/"structure"
+    folder.mkdir(parents=True,exist_ok=True)
+    scene.render.filepath=str(folder/"west-pavilion-exterior-feed.png")
+    bpy.ops.render.render(write_still=True)
+
+
 if __name__=="__main__":
-    checkpoint=load(POWER/"checkpoint.json")
-    for site in ("wld-07","wld-07-mortuary"):
-        build(site,checkpoint["sites"][site.upper()])
+    sites=("wld-07","wld-07-mortuary")
+    if "--captures-only" not in sys.argv:
+        checkpoint=load(POWER/"checkpoint.json")
+        for site in sites:
+            build(site,checkpoint["sites"][site.upper()])
+    for site in sites:
+        capture_pavilion(site)
