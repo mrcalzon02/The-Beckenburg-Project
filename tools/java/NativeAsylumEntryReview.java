@@ -126,9 +126,13 @@ final class NativeAsylumEntryReview {
             var outside=LevelClosets.world(socket,0,0,.68);
             var entry=LevelClosets.world(socket,0,0,.51);
             var rear=LevelClosets.world(socket,0,0,-.44);
+            var airborne=LevelClosets.world(socket,0,.55,.51);
+            var above=LevelClosets.world(socket,0,2.15,.51);
             if(SafeAreaBarrier.protectedAt(map,outside.x(),outside.y(),outside.z())
                     ||!SafeAreaBarrier.protectedAt(map,entry.x(),entry.y(),entry.z())
                     ||!SafeAreaBarrier.protectedAt(map,rear.x(),rear.y(),rear.z())
+                    ||!SafeAreaBarrier.protectedAt(map,airborne.x(),airborne.y(),airborne.z())
+                    ||SafeAreaBarrier.protectedAt(map,above.x(),above.y(),above.z())
                     ||!SafeAreaBarrier.blocks(map,outside,entry))
                 throw new AssertionError("Incorrect cupboard protection at actual threshold "+socket.id());
             var interior=LevelClosets.world(socket,0,0,-.24);
@@ -142,7 +146,7 @@ final class NativeAsylumEntryReview {
                 throw new AssertionError("Disabled cupboard still protects "+socket.id());
         }
         map.configureHiding(70);
-        report.add("full_cupboard_safe_thresholds\tThree usable interiors, hunter crossing both ways and zero protection with cover disabled");
+        report.add("full_cupboard_safe_thresholds\tThree usable interiors, full protection height, hunter crossing both ways and zero protection with cover disabled");
     }
 
     private static void captureCupboard(HouseMap map,LevelDefinition.Socket cupboard,Path captures)throws Exception{

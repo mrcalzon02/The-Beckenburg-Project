@@ -67,6 +67,12 @@ public final class SafeAreaBarrierTest {
             check(SafeAreaBarrier.protectedAt(map,entrance.x(),entrance.y(),entrance.z())
                 &&SafeAreaBarrier.protectedAt(map,rear.x(),rear.y(),rear.z()),"Ordinary entry and rear corners share the full cover zone");
             check(SafeAreaBarrier.blocks(map,beyond,entrance),"Spectral movement cannot cross the entrance plane");
+            var aboveEntrance=new Vec(entrance.x(),entrance.y()+.55,entrance.z());
+            var aboveApproach=new Vec(beyond.x(),beyond.y()+.55,beyond.z());
+            check(SafeAreaBarrier.protectedAt(map,aboveEntrance.x(),aboveEntrance.y(),aboveEntrance.z())
+                &&SafeAreaBarrier.blocks(map,aboveApproach,aboveEntrance),"Protection extends above the feet to fill the visible enclosure");
+            check(!SafeAreaBarrier.protectedAt(map,entrance.x(),entrance.y()+2.15,entrance.z()),
+                "Space above the cupboard head stays exposed");
             check(!SafeAreaBarrier.blocks(map,new Vec(beyond.x(),beyond.y()+3.4,beyond.z()),
                 new Vec(entrance.x(),entrance.y()+3.4,entrance.z())),"Cupboard cover does not leak across floors");
         }

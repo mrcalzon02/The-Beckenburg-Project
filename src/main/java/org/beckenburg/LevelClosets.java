@@ -18,14 +18,17 @@ public final class LevelClosets {
         double c=Math.cos(s.yaw()),sn=Math.sin(s.yaw());return new Vec(s.x()+x*c-z*sn,s.y()+y,s.z()+x*sn+z*c);
     }
     public static boolean inside(Socket s,double x,double y,double z){
-        if(s==null||Math.abs(y-s.y())>FLOOR_TOLERANCE)return false;
+        return s!=null&&Math.abs(y-s.y())<=FLOOR_TOLERANCE&&containsFloorPoint(s,x,z);
+    }
+    private static boolean containsFloorPoint(Socket s,double x,double z){
         double dx=x-s.x(),dz=z-s.z(),c=Math.cos(s.yaw()),sn=Math.sin(s.yaw());
         double localX=dx*c+dz*sn,localZ=-dx*sn+dz*c;
         return Math.abs(localX)<=HALF_X&&localZ>=BACK_Z&&localZ<=ENTRY_Z;
     }
     static boolean protectedAt(LevelDefinition level,double x,double y,double z,int density){
         for(var socket:HidingBudget.candidates(level))
-            if(socket.type().equals("hide")&&HidingBudget.available(level,socket,density)&&inside(socket,x,y,z))
+            if(socket.type().equals("hide")&&HidingBudget.available(level,socket,density)
+                    &&y>=socket.y()-FLOOR_TOLERANCE&&y<=socket.y()+HEAD&&containsFloorPoint(socket,x,z))
                 return true;
         return false;
     }
@@ -38,7 +41,7 @@ public final class LevelClosets {
     private static boolean crosses(Socket socket,Vec from,Vec to){
         double c=Math.cos(socket.yaw()),s=Math.sin(socket.yaw());
         double[] a=local(socket,from,c,s),b=local(socket,to,c,s);
-        double[] lower={-HALF_X,-FLOOR_TOLERANCE,BACK_Z},upper={HALF_X,FLOOR_TOLERANCE,ENTRY_Z};
+        double[] lower={-HALF_X,-FLOOR_TOLERANCE,BACK_Z},upper={HALF_X,HEAD,ENTRY_Z};
         double enter=0,exit=1;
         for(int axis=0;axis<3;axis++){
             double delta=b[axis]-a[axis];
