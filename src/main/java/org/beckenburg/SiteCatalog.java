@@ -18,7 +18,8 @@ public final class SiteCatalog {
         WHARF(WharfNativeLevel.TITLE,WharfNativeLevel.REVIEW_PROPERTY),
         CEMETERY(CemeteryNativeLevel.TITLE,CemeteryNativeLevel.REVIEW_PROPERTY),
         MORTUARY(CemeteryNativeLevel.ANNEX_TITLE,CemeteryNativeLevel.REVIEW_PROPERTY),
-        NORTHWATCH(NorthwatchNativeLevel.TITLE,NorthwatchNativeLevel.REVIEW_PROPERTY);
+        NORTHWATCH(NorthwatchNativeLevel.TITLE,NorthwatchNativeLevel.REVIEW_PROPERTY),
+        BLACKWATER(BlackwaterNativeLevel.TITLE,BlackwaterNativeLevel.REVIEW_PROPERTY);
         public final String label;
         private final String reviewProperty;
         private volatile Boolean geometryValidated;

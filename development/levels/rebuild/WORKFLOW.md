@@ -1583,3 +1583,7 @@ The reservoir intake now opens into a covered conduit that skirts the investigat
 ### Blackwater Hydroelectric Dam generator ventilation
 
 The switchgear wall now carries the installed generator exhaust and weather air louver. Both renderers see the same fitted wall and confirm separation from personnel. The exact scene retains the carrier, five physical routes, perimeter and live power behavior. [Ventilation section](dam-ventilation-pass/wld-09/ventilation-elevation.svg) · [Checkpoint](dam-ventilation-pass/checkpoint.json)
+
+### Blackwater Hydroelectric Dam named dispatch
+
+The ordinary Windows archive now contains the current Blackwater native geometry, room and door schedules, electrical fittings, and water. The named review property exposes solo and LAN entries. Both renderers load the exact stage revision, and the secure solo and four-peer TCP reviews confirm van retreat, three operating blackout doors, power, camera, and walk-in cover. Broader distributions, site audio and story, and full installed acceptance remain open. [Checkpoint](dam-named-pass/checkpoint.json)

@@ -42,7 +42,7 @@ public final class LevelPlans {
     public static LevelDefinition build(HouseMap.Site site) {
         var source=buildSource(site);
         if(site==HouseMap.Site.SEACLIFF||site==HouseMap.Site.BLACKPINE||site==HouseMap.Site.LOOKOUT||site==HouseMap.Site.MINE||site==HouseMap.Site.WHARF
-            ||site==HouseMap.Site.CEMETERY||site==HouseMap.Site.MORTUARY||site==HouseMap.Site.NORTHWATCH)return source;
+            ||site==HouseMap.Site.CEMETERY||site==HouseMap.Site.MORTUARY||site==HouseMap.Site.NORTHWATCH||site==HouseMap.Site.BLACKWATER)return source;
         if(site==HouseMap.Site.ASYLUM&&AsylumNativeLevel.reviewEnabled())
             return LevelAuthoringSession.apply(site,source,AsylumNativeLevel::definition);
         if(site==HouseMap.Site.PRISON&&PrisonNativeLevel.reviewEnabled())
@@ -56,7 +56,7 @@ public final class LevelPlans {
     static boolean editableTemplate(HouseMap.Site site) {
         return site!=HouseMap.Site.USER && site!=HouseMap.Site.HOLLOW_CREEK
             && site!=HouseMap.Site.SEACLIFF && site!=HouseMap.Site.BLACKPINE && site!=HouseMap.Site.LOOKOUT && site!=HouseMap.Site.MINE && site!=HouseMap.Site.WHARF
-            && site!=HouseMap.Site.CEMETERY && site!=HouseMap.Site.MORTUARY && site!=HouseMap.Site.NORTHWATCH;
+            && site!=HouseMap.Site.CEMETERY && site!=HouseMap.Site.MORTUARY && site!=HouseMap.Site.NORTHWATCH && site!=HouseMap.Site.BLACKWATER;
     }
 
     /** Unmodified shipped authoring source; shared by editor and gameplay. */
@@ -71,6 +71,7 @@ public final class LevelPlans {
             case "WHARF" -> WharfNativeLevel.definition();
             case "CEMETERY","MORTUARY" -> CemeteryNativeLevel.packaged(site==HouseMap.Site.MORTUARY).level();
             case "NORTHWATCH" -> NorthwatchNativeLevel.packaged().level();
+            case "BLACKWATER" -> BlackwaterNativeLevel.packaged().level();
             case "BLACKPINE" -> BlackpineLevel.build();
             case "MANSION" -> wing("mansion","Blackthorn Manor",10,20,26,38,3.6,
                 new String[]{"Grand staircase hall","Library","Dining hall","Scullery","Ballroom","Drawing room","Morning room","Upper gallery","Master suite","Servants corridor","Attic archive","Wine cellar"},"parquet","estate");

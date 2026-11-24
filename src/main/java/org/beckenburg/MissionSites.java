@@ -4,7 +4,7 @@ import java.util.*;
 public final class MissionSites {
     private MissionSites(){}
     public record Entry(String id,String title,String region,String scale,String description,String imageKey,String imageCaption){
-        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(switch(id){case "WLD-04" -> "LOOKOUT"; case "WLD-05" -> "MINE"; case "WLD-06" -> "WHARF"; case "WLD-07" -> "CEMETERY"; case "WLD-07-MORTUARY" -> "MORTUARY"; case "WLD-08" -> "NORTHWATCH"; default -> id;});}catch(IllegalArgumentException planned){return null;}}
+        public SiteCatalog.Location location(){try{return SiteCatalog.Location.valueOf(switch(id){case "WLD-04" -> "LOOKOUT"; case "WLD-05" -> "MINE"; case "WLD-06" -> "WHARF"; case "WLD-07" -> "CEMETERY"; case "WLD-07-MORTUARY" -> "MORTUARY"; case "WLD-08" -> "NORTHWATCH"; case "WLD-09" -> "BLACKWATER"; default -> id;});}catch(IllegalArgumentException planned){return null;}}
         public boolean headquarters(){return id.equals("CASTLE");}
         public boolean playable(){var site=location();return site!=null&&site.playable();}
         public String status(){return headquarters()?"HEADQUARTERS / NO INVESTIGATION":playable()?"AVAILABLE":"IN DEVELOPMENT / NOT DISPATCHABLE";}
@@ -31,7 +31,7 @@ public final class MissionSites {
         new Entry("WLD-07-MORTUARY",CemeteryNativeLevel.ANNEX_TITLE,"Northern Woodlands","Medium / cemetery and mortuary",
             "The burial grounds and ossuary join a mortuary with separate visitor and receiving entrances.","wld-07","CEMETERY GROUNDS VIEW"),
         new Entry("WLD-08",NorthwatchNativeLevel.TITLE,"Northern Expanse","Medium / polar compound","A compact ring of insulated prefabs surrounds a flagged service court. A heated tunnel links lab, dormitory and generator while the instrument array remains an exposed optional branch.","wld-08","NORTHWATCH STATION VIEW"),
-        new Entry("WLD-09","Blackwater Hydroelectric Dam","Highland Frontier","Large / industrial vertical","The roadhead feeds a dam crest and an offset powerhouse. A guarded external stair and internal service stair connect crest, turbine floor and lower galleries without entering the spillway.","wld-09","STATIC BLOCKOUT VIEW"),
+        new Entry("WLD-09",BlackwaterNativeLevel.TITLE,"Highland Frontier","Large / industrial vertical","The roadhead feeds a dam crest and an offset powerhouse. A guarded external stair and internal service stair connect crest, turbine floor and lower galleries without entering the spillway.","wld-09","STATIC BLOCKOUT VIEW"),
         new Entry("WLD-10","Monastery of Ashen Bells","Highland Frontier","Medium-large / remote cloister","A compact enclosed monastery wraps a high garden, with a detached bell stair on the east and catacombs below the north range. Its service path and terraces distinguish it from the urban academy.","wld-10","STATIC BLOCKOUT VIEW"),
         new Entry("WLD-11","Mourning Marsh","Coastal Territories","Medium / stilt settlement","A small settlement straddles a main raised boardwalk and a parallel service boardwalk. Homes, chapel and warehouse are reachable on dry supported decks; flooded terrain is a visible boundary.","wld-11","STATIC BLOCKOUT VIEW"),
         new Entry("WLD-12","Gallows Pass Railway","Highland Frontier","Medium-large / linear railway with return","A bounded railway cutting runs past derailed coaches to a tunnel. A maintenance siding path parallels the track, while a guarded trestle has a service walkway beneath its deck.","wld-12","STATIC BLOCKOUT VIEW"),
@@ -58,6 +58,7 @@ public final class MissionSites {
             case "CEMETERY" -> "WLD-07";
             case "MORTUARY" -> "WLD-07-MORTUARY";
             case "NORTHWATCH" -> "WLD-08";
+            case "BLACKWATER" -> "WLD-09";
             default -> id;
         }).title();
     }

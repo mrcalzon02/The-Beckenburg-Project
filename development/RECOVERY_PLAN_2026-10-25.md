@@ -2323,3 +2323,7 @@ Reservoir and foundation commit 4f515317d7b6f2dc170e0d8e0bb825be4f115513 passed 
 ### Blackwater Dam generator ventilation
 
 The covered carrier commit 3a96b7942c818761b6db2104168dd666e62707ea passed gallery 45439502613 on draft PR 86. The [ventilation checkpoint](levels/rebuild/dam-ventilation-pass/checkpoint.json) records both mounted services and exact carrier, access and four-peer power regressions. Remaining priorities are broader utility distribution and named case integration.
+
+### Blackwater Dam ordinary archive with named review dispatch
+
+The generator ventilation commit ccc2d1e9af371dcfa038f1b1013878d611dcf0cf passed gallery 45441543236 on draft PR 86. The [named checkpoint](levels/rebuild/dam-named-pass/checkpoint.json) documents the exact ordinary Windows archive and actual named solo and LAN reviews. Default availability remains locked and the installation, full named case and remaining utilities and finishes are open.

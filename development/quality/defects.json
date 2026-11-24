@@ -7888,6 +7888,17 @@
       "action": "Open sized service sleeves in the north wall, fit a muffler-backed flue and supported downturned exhaust, and install a separate fixed weather louver.",
       "older_maps": "Verify service penetrations, paired mounting contacts, and clear air passages against the same player collision and optical surfaces.",
       "evidence": "development/levels/rebuild/dam-ventilation-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-712",
+      "title": "Blackwater had no named packaged review dispatch",
+      "status": "DAM_NAMED_SOLO_AND_LAN_ARCHIVE_REVIEW_STAGED",
+      "affected": "WLD-09 packaged solo and multiplayer case",
+      "symptom": "The surveyed scene was exercised through a staging harness and could not be dispatched by its named host entry.",
+      "cause": "The map roster and production packagers did not resolve WLD-09 to its shared geometry, room, door and utility authority.",
+      "action": "Package the measured source and bind its named entries behind the existing review-only convention. Check the package from the real named host and client paths.",
+      "older_maps": "Verify exact archived sources, stable campaign order, ordinary van departure and named revision rejection before any public unlock.",
+      "evidence": "development/levels/rebuild/dam-named-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

@@ -1,0 +1,81 @@
+{
+  "id": "WLD-09",
+  "status": "DAM_NAMED_SOLO_AND_LAN_ARCHIVE_REVIEW_STAGED",
+  "review_property": "beckenburg.review.blackwaterNative",
+  "prior_commit": "ccc2d1e9af371dcfa038f1b1013878d611dcf0cf",
+  "prior_gallery": 45441543236,
+  "other_roster_entries_preserved": 28,
+  "production_windows_archive_sha256": "bcc28bd085444ba5bd4f8f6c19165b49ae0345702a44af183ee500666395751f",
+  "windows_packaging": "build.cmd package succeeded and archive audio audit passed",
+  "posix_packaging": "build.sh parsed successfully with bash -n",
+  "catalog_regressions": [
+    "SiteSelectionTest",
+    "CampaignCareerTest",
+    "CampaignStoryProgressionTest",
+    "MissionBoardIntegrationTest"
+  ],
+  "packaged_payloads": {
+    "dam-with-ventilation.glb": "b4a76395b6b6497b8e0417c525eae7a8d78667023d398ab689a7697ed6e6dfca",
+    "dam-with-ventilation.hcs2": "f03a75eb9bcf332d00c1ca5fb7896eeb0f8bb682f5157801202a61e499368e7e",
+    "runtime-input.tsv": "0989fa834e68d8faf60ee5b336c338189359a6d6652efa606c009a292bfed800",
+    "door-schedule.tsv": "e211d1d2fb065c054c658b88feeb34f031f5a8aba8aeebabc9a8a1feff2c6047",
+    "electrical-schedule.tsv": "bd5eaa1091b867ea9133601247d88f54922466dd1d9678cebe0cd017239940ff",
+    "blackwater.water": "aff5c7744467cc5ce880756607be1738d075f1d72389f1b93ef8e89d48f3b61c"
+  },
+  "software": {
+    "packaged_native_scene": "f420f84caeacf84bb618c9da42e09e4fda156f08c1aa78b9c92c80813e9e737e",
+    "named_network_revision": "f420f84caeacf84bb618c9da42e09e4fda156f08c1aa78b9c92c80813e9e737e-501c9f5565c03395",
+    "collision_sha256": "f03a75eb9bcf332d00c1ca5fb7896eeb0f8bb682f5157801202a61e499368e7e",
+    "water_revision": "d35c1760d3a56a9ab743116a3e29347ae377e896e0b21a2c505e4a57eacce01f",
+    "renderer": "Software",
+    "review_gate_archive_campaign_stale_revision": "PASS",
+    "retained_fitted_doors_both_states": "14",
+    "named_solo_ai_cargo_apron_and_retreat": "PASS",
+    "named_four_peer_blackout_three_leaves_and_power_reset": "PASS",
+    "named_switchgear_camera_and_van_feed": "PASS",
+    "named_switchgear_refuge_enter_hide_exit": "PASS"
+  },
+  "opengl": {
+    "packaged_native_scene": "f420f84caeacf84bb618c9da42e09e4fda156f08c1aa78b9c92c80813e9e737e",
+    "named_network_revision": "f420f84caeacf84bb618c9da42e09e4fda156f08c1aa78b9c92c80813e9e737e-501c9f5565c03395",
+    "collision_sha256": "f03a75eb9bcf332d00c1ca5fb7896eeb0f8bb682f5157801202a61e499368e7e",
+    "water_revision": "d35c1760d3a56a9ab743116a3e29347ae377e896e0b21a2c505e4a57eacce01f",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+    "review_gate_archive_campaign_stale_revision": "PASS",
+    "retained_fitted_doors_both_states": "14"
+  },
+  "remaining_acceptance": [
+    "Additional room circuits and water-service installations",
+    "Final furnishing, site soundscape, surfaces and narrative",
+    "Full named ritual, evidence, and case completion",
+    "Installed Windows and reference performance acceptance"
+  ],
+  "project_bytes_sha256": {
+    "build.cmd": "a68d57437b2333807ed095fd89e7facef0983eac5aade630be38b4a6c6fa73f6",
+    "build.sh": "4d08387f38205f5b7dfba02e32472800bef95a9d01e2c6226f8437f37d99a12e",
+    "development/levels/rebuild/dam-named-pass/captures/opengl/blackwater-named-arrival.png": "c6564ca3a79b8c04028f3dd37c9c5bfbc90230628ba269c02861279c03581589",
+    "development/levels/rebuild/dam-named-pass/captures/opengl/blackwater-named-crest.png": "3d1c1c0f2360772f18ca6defbb3601faf8749f9abfc0227e18f99566e8cd2504",
+    "development/levels/rebuild/dam-named-pass/captures/opengl/blackwater-named-switchgear.png": "4462bfe8204024f7ff0fc70525843cd5ccb2ae3d36dd06e1039d1bc5f4b5debb",
+    "development/levels/rebuild/dam-named-pass/captures/software/blackwater-named-arrival.png": "1d1eb9d96904e7b1ec9d98fcd6d09c117b4e9c70a8d05db330e23e956f9c6e47",
+    "development/levels/rebuild/dam-named-pass/captures/software/blackwater-named-crest.png": "483fe35f00b0ac4ed72bfd45cf7b8b7d89e7e8e0aada030eff3d424219963372",
+    "development/levels/rebuild/dam-named-pass/captures/software/blackwater-named-switchgear.png": "700f6bd27aab5c0b1001ac9866f972202d00fc923dd8291e20883504b67d7c29",
+    "development/levels/rebuild/dam-named-pass/named-opengl.tsv": "6b5b63415a7d98a16da7cd9f9f98026cc7001d66cafdafbb9abae5009a495abe",
+    "development/levels/rebuild/dam-named-pass/named-software.tsv": "a0c350691205101d8b80b2a09b6270df8a18d754eda7cdbe5dd145978dbab9a2",
+    "development/levels/rebuild/dam-named-pass/README.md": "204da43fa45ac89fe2dd6d883dfff2b15b786dfd5b8a2eecd4da55d78f049aa7",
+    "development/levels/rebuild/dam-named-pass/roster.json": "24d8fabe05ea52a813bf4d64799f1f57214f4481ca47db56088c6cfbee30e784",
+    "development/levels/rebuild/dam-named-pass/source-hashes.tsv": "c338c66fabaa7a3a4cc0b253dfdd922f2a2f4bf727442c9d9a7b968826592e3d",
+    "development/levels/rebuild/dam-ventilation-pass/wld-09/blackwater.water": "aff5c7744467cc5ce880756607be1738d075f1d72389f1b93ef8e89d48f3b61c",
+    "development/levels/rebuild/dam-ventilation-pass/wld-09/dam-with-ventilation.glb": "b4a76395b6b6497b8e0417c525eae7a8d78667023d398ab689a7697ed6e6dfca",
+    "development/levels/rebuild/dam-ventilation-pass/wld-09/dam-with-ventilation.hcs2": "f03a75eb9bcf332d00c1ca5fb7896eeb0f8bb682f5157801202a61e499368e7e",
+    "development/levels/rebuild/dam-ventilation-pass/wld-09/door-schedule.tsv": "e211d1d2fb065c054c658b88feeb34f031f5a8aba8aeebabc9a8a1feff2c6047",
+    "development/levels/rebuild/dam-ventilation-pass/wld-09/electrical-schedule.tsv": "bd5eaa1091b867ea9133601247d88f54922466dd1d9678cebe0cd017239940ff",
+    "development/levels/rebuild/dam-ventilation-pass/wld-09/runtime-input.tsv": "0989fa834e68d8faf60ee5b336c338189359a6d6652efa606c009a292bfed800",
+    "src/main/java/org/beckenburg/BlackwaterNativeLevel.java": "269ab3690621eff64786ccfdab6fc10e993428383ea16e5c2e0faa3703ae911b",
+    "src/main/java/org/beckenburg/HouseMap.java": "cbcaea9bb609b832f649216a02cfe1672e606df9626fb4bfe579ab377df2faf2",
+    "src/main/java/org/beckenburg/LevelPlans.java": "19fbde10851d837205d59c70209cc9ec6bc74e4bdf36a37f81d3bd114afa5a77",
+    "src/main/java/org/beckenburg/MissionSites.java": "8906f3b0558fc1f9fbfd19da06e24d5680bc04e43ab89db2840db7047b2978c6",
+    "src/main/java/org/beckenburg/SiteCatalog.java": "92af1c1edbb4948fd0dd57adf0e91312754850e87a291d05190e35a46845ce60",
+    "tools/java/BlackwaterNamedReview.java": "5e9fa2f543591a011f281f6916ff1289614a27c55b9286e3838fadc308cbb0a6",
+    "tools/verify_blackwater_named.py": "f4dd151c5b0f67490cc6cd872f14bcf1555f554231e44678e7efa04a8d0dced9"
+  }
+}

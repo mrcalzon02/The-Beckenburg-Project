@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12179,
+  "count": 12185,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -112994,6 +112994,66 @@
       "height": 580,
       "bytes": 291943,
       "sha256": "ec46009e0107d5dd7d6dc8bb9c001554d76d5a8d7e3ccb5975686549a1a203d2"
+    },
+    {
+      "path": "development/levels/rebuild/dam-named-pass/captures/opengl/blackwater-named-arrival.png",
+      "url": "development/levels/rebuild/dam-named-pass/captures/opengl/blackwater-named-arrival.png",
+      "title": "Blackwater named arrival",
+      "kind": "Blackwater Dam named packaged site in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 479610,
+      "sha256": "c6564ca3a79b8c04028f3dd37c9c5bfbc90230628ba269c02861279c03581589"
+    },
+    {
+      "path": "development/levels/rebuild/dam-named-pass/captures/opengl/blackwater-named-crest.png",
+      "url": "development/levels/rebuild/dam-named-pass/captures/opengl/blackwater-named-crest.png",
+      "title": "Blackwater named crest",
+      "kind": "Blackwater Dam named packaged site in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 405024,
+      "sha256": "3d1c1c0f2360772f18ca6defbb3601faf8749f9abfc0227e18f99566e8cd2504"
+    },
+    {
+      "path": "development/levels/rebuild/dam-named-pass/captures/opengl/blackwater-named-switchgear.png",
+      "url": "development/levels/rebuild/dam-named-pass/captures/opengl/blackwater-named-switchgear.png",
+      "title": "Blackwater named switchgear",
+      "kind": "Blackwater Dam named packaged site in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 392232,
+      "sha256": "4462bfe8204024f7ff0fc70525843cd5ccb2ae3d36dd06e1039d1bc5f4b5debb"
+    },
+    {
+      "path": "development/levels/rebuild/dam-named-pass/captures/software/blackwater-named-arrival.png",
+      "url": "development/levels/rebuild/dam-named-pass/captures/software/blackwater-named-arrival.png",
+      "title": "Blackwater named arrival",
+      "kind": "Blackwater Dam named packaged site in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 476650,
+      "sha256": "1d1eb9d96904e7b1ec9d98fcd6d09c117b4e9c70a8d05db330e23e956f9c6e47"
+    },
+    {
+      "path": "development/levels/rebuild/dam-named-pass/captures/software/blackwater-named-crest.png",
+      "url": "development/levels/rebuild/dam-named-pass/captures/software/blackwater-named-crest.png",
+      "title": "Blackwater named crest",
+      "kind": "Blackwater Dam named packaged site in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 408823,
+      "sha256": "483fe35f00b0ac4ed72bfd45cf7b8b7d89e7e8e0aada030eff3d424219963372"
+    },
+    {
+      "path": "development/levels/rebuild/dam-named-pass/captures/software/blackwater-named-switchgear.png",
+      "url": "development/levels/rebuild/dam-named-pass/captures/software/blackwater-named-switchgear.png",
+      "title": "Blackwater named switchgear",
+      "kind": "Blackwater Dam named packaged site in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 394440,
+      "sha256": "700f6bd27aab5c0b1001ac9866f972202d00fc923dd8291e20883504b67d7c29"
     },
     {
       "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/distribution-inspection.png",
