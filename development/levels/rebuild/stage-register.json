@@ -3531,6 +3531,7 @@
           "status": "IN_PROGRESS",
           "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
+            "development/levels/rebuild/mine-drainage-pass/checkpoint.json",
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
             "development/levels/rebuild/terrain-overall-pass/BATCH.md",
@@ -3546,6 +3547,7 @@
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-665",
             "DEV-390",
             "DEV-391",
             "DEV-392",
@@ -3557,18 +3559,20 @@
             "DEV-546",
             "DEV-547"
           ],
-          "next_action": "Finish explicit drainage slopes, edge retention and uninterrupted grade around the four surface building wings."
+          "next_action": "Roof and yard runoff reach two off-route filter beds in the saved terrain, with all excavation controls and the existing yard routes verified. Fit the underground sump and verify water containment."
         },
         "S05": {
           "status": "IN_PROGRESS",
           "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
+            "development/levels/rebuild/mine-drainage-pass/checkpoint.json",
             "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json",
             "development/levels/rebuild/mine-handrail-pass/checkpoint.json",
             "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json",
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-665",
             "DEV-664",
             "DEV-663",
             "DEV-660",
@@ -3578,12 +3582,13 @@
             "DEV-546",
             "DEV-547"
           ],
-          "next_action": "The two receiving slabs, measured stair opening, reinforced soffit, founded columns and continuous three-sided upper guard are verified. Complete whole-site enclosure, drainage and finish checks."
+          "next_action": "Surface weather roofs, braces, gutters, paired seams and the haul apron are verified on the native stage. Continue lower workings sump and case finish before named acceptance."
         },
         "S06": {
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
+            "development/levels/rebuild/mine-drainage-pass/checkpoint.json",
             "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json",
             "development/levels/rebuild/mine-distribution-pass/checkpoint.json",
             "development/levels/rebuild/mine-service-yard-pass/checkpoint.json",

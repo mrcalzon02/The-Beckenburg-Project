@@ -26,7 +26,13 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/mine-lower-slabs-pass/' in path:
+    if '/mine-drainage-pass/' in path:
+        if '/structure/' in path:
+            kind='Dead Man’s Claim roof runoff and terrain drainage construction'
+        else:
+            renderer='OpenGL' if '/opengl/' in path else 'software'
+            kind='Dead Man’s Claim surface drainage and retained routes in the '+renderer+' game renderer'
+    elif '/mine-lower-slabs-pass/' in path:
         if '/structure/' in path:
             kind='Dead Man’s Claim lower and ore-west slabs structural cutaway'
         else:

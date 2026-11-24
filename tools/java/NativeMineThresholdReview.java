@@ -149,6 +149,8 @@ public final class NativeMineThresholdReview {
             auditRails(map,scene,packet,captures,evidence);
         var slabProbes=packet.resolve("slab-probes.tsv");
         if(Files.isRegularFile(slabProbes))auditSlabs(map,scene,rows(slabProbes),captures,evidence);
+        var drainageProbes=packet.resolve("drainage-probes.tsv");
+        if(Files.isRegularFile(drainageProbes))auditDrainage(map,scene,rows(drainageProbes),captures,evidence);
         boolean refuges=!HidingBudget.candidates(level).isEmpty();
         if(refuges)NativeSchoolInteriorReview.auditWalkInCover(map,captures,evidence,"mine");
         var switchFeet=packet.resolve("switches.tsv");
@@ -221,6 +223,45 @@ public final class NativeMineThresholdReview {
         capture(map,new Vec(7.75,-10,25.6),-.70,captures.resolve("mine-lower-landing-slab.png"));
         report.add("lower_and_ore_west_slab_probes\t"+probes.size()+" native probes, "+opening+
             " open tread-bay points, six physical rail intersections, both-posture guard rejection on three sides");
+    }
+
+    private static void auditDrainage(HouseMap map,NativeInvestigationScene scene,List<String[]> probes,
+            Path captures,List<String> report)throws Exception{
+        var physics=scene.physics();
+        int roofs=0, mouths=0, pans=0, soil=0;
+        var lastGrade=new java.util.HashMap<String,Double>();
+        for(var row:probes){
+            var at=point(row,2);
+            switch(row[0]){
+                case "ROOF" -> {
+                    require(!physics.clearSight(new Vec(at.x(),at.y()+.032,at.z()),new Vec(at.x(),at.y()-.013,at.z())),
+                            "No native weather skin at "+row[1]+" / "+at);
+                    roofs++;
+                }
+                case "OPEN" -> {
+                    require(physics.clearSight(new Vec(at.x(),at.y()+.12,at.z()),new Vec(at.x(),at.y()-.054,at.z())),
+                            "Obstructed physical gutter opening at "+row[1]+" / "+at);
+                    mouths++;
+                }
+                case "PAN" -> {
+                    require(!physics.clearSight(new Vec(at.x(),at.y()+.028,at.z()),new Vec(at.x(),at.y()-.015,at.z())),
+                            "Missing gutter pan beside outlet "+row[1]+" / "+at);
+                    pans++;
+                }
+                case "BED" -> {
+                    var support=physics.support(at.x(),at.z(),at.y(),.012);
+                    require(support!=null&&Math.abs(support.y()-at.y())<.002,"Saved filter bed mismatch "+row[1]+" / "+at);
+                    var prior=lastGrade.put(row[1],support.y());
+                    require(prior==null||support.y()<prior-.007,"Filter apron lacks clear fall "+row[1]+" / "+at);
+                    soil++;
+                }
+                default -> throw new IOException("Unknown Mine runoff probe "+row[0]);
+            }
+        }
+        require(roofs==28&&mouths==6&&pans==6&&soil==6,"Incomplete Mine roof, pipe and terrain drainage probes");
+        capture(map,new Vec(28,0,73.52),1.83,captures.resolve("mine-roadhead-weathering.png"));
+        capture(map,new Vec(38.05,0,58.4),-2.30,captures.resolve("mine-shaft-weathering.png"));
+        report.add("mine_runoff_geometry\t28 physical roof surface locations, six open gutter throats and adjacent pans, six saved terrain samples with verified downhill fall");
     }
 
     private static void capture(HouseMap map,Vec at,double yaw,Path target)throws Exception{

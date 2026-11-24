@@ -7371,6 +7371,17 @@
       "action": "Install bolted upper guards on three sides of the formed opening, clear the actual high receiving landing, and verify standing and crouched approaches and physical collision.",
       "older_maps": "Check deck-side guards in addition to rails on open treads. Verify the actual stair mouth stays open while every accessible drop edge has real collision.",
       "evidence": "development/levels/rebuild/mine-lower-slabs-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-665",
+      "title": "Mine flat roof caps and exterior yard had no runoff route",
+      "status": "MINE_SURFACE_RUNOFF_VERIFIED_UNDERGROUND_SUMP_OPEN",
+      "affected": "Dead Man’s Claim surface camp, shaft covers and service apron",
+      "symptom": "Flat roof caps and a level roadhead lacked planned runoff between roof edges and the lower terrain.",
+      "cause": "The existing caps covered the building and shaft geometry without pitched weather layers, collectors or a lower runoff bed.",
+      "action": "Fit supported pitched roofs and open collectors to the fixed caps. Carry water downhill in hollow conduits to two sculpted off-route beds and verify native geometry and retained play routes.",
+      "older_maps": "Check where rain from roof edges and high terrain reaches grade. Preserve real thresholds and drainage paths in shared terrain and native collision.",
+      "evidence": "development/levels/rebuild/mine-drainage-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

@@ -2175,3 +2175,7 @@ Mine service commit c790f5b5fc270e266bbad68593c56f1fd147c10d is verified on draf
 ### Mine lower and ore-west slabs
 
 Distribution commit cbd2604dd753fa8e3597d876731bccbf5855b251 is verified on draft PR 86. Gallery 45345977593 passed. The [slab checkpoint](levels/rebuild/mine-lower-slabs-pass/checkpoint.json) replaces eighteen pieces with continuous supported floor slabs and guards the original stair opening. Native scene checks cover 3,168 floor and opening probes, plus the full routes, both posture classes, powered rooms and walk-in refuges. Continue the whole-site enclosure and drainage pass before normal named game acceptance.
+
+### Mine surface roof and yard drainage
+
+Slab commit 28002e5c3c05efdee322475fb0a28a0aafbff3ac is verified on draft PR 86. Gallery 45347122474 passed. The [drainage checkpoint](levels/rebuild/mine-drainage-pass/checkpoint.json) adds supported roof pitch, six open gutters and two filter beds in a reloaded saved terrain layer. Native software, RTX 5070 OpenGL and staged four-player routes, switching and cover pass. Fit underground sump containment and continue case and named game acceptance.

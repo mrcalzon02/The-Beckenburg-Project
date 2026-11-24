@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11648,
+  "count": 11656,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -112034,6 +112034,86 @@
       "height": 900,
       "bytes": 1023179,
       "sha256": "04a77443c7943708cbcd0181c7c2314bd4aeb4690afc8db818b9221422ba4efe"
+    },
+    {
+      "path": "development/levels/rebuild/mine-drainage-pass/captures/mine-roadhead-weathering.png",
+      "url": "development/levels/rebuild/mine-drainage-pass/captures/mine-roadhead-weathering.png",
+      "title": "Mine roadhead weathering",
+      "kind": "Dead Man’s Claim surface drainage and retained routes in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 248599,
+      "sha256": "bf27b47264044a6931c48a024178685f0ffcfd88fc61faf568569e929f609a52"
+    },
+    {
+      "path": "development/levels/rebuild/mine-drainage-pass/captures/mine-shaft-weathering.png",
+      "url": "development/levels/rebuild/mine-drainage-pass/captures/mine-shaft-weathering.png",
+      "title": "Mine shaft weathering",
+      "kind": "Dead Man’s Claim surface drainage and retained routes in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 260532,
+      "sha256": "20b3fd3b4ea8a3dea24351facc21a6fd90eb3c9e42e9fb33e6dc4ed2522918c3"
+    },
+    {
+      "path": "development/levels/rebuild/mine-drainage-pass/captures/opengl/mine-roadhead-weathering.png",
+      "url": "development/levels/rebuild/mine-drainage-pass/captures/opengl/mine-roadhead-weathering.png",
+      "title": "Mine roadhead weathering",
+      "kind": "Dead Man’s Claim surface drainage and retained routes in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 245329,
+      "sha256": "e58aec7f51849aefad5a2a19011f36c80b21d089cbe0641d0f822ac0fc33ac85"
+    },
+    {
+      "path": "development/levels/rebuild/mine-drainage-pass/captures/opengl/mine-shaft-weathering.png",
+      "url": "development/levels/rebuild/mine-drainage-pass/captures/opengl/mine-shaft-weathering.png",
+      "title": "Mine shaft weathering",
+      "kind": "Dead Man’s Claim surface drainage and retained routes in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 256628,
+      "sha256": "6e985daecc1d90d268a00f7f5bd7b12aa4e0f639bd1986f00d681089969aca82"
+    },
+    {
+      "path": "development/levels/rebuild/mine-drainage-pass/captures/structure/mine-crew-gutter-throat.png",
+      "url": "development/levels/rebuild/mine-drainage-pass/captures/structure/mine-crew-gutter-throat.png",
+      "title": "Mine crew gutter throat",
+      "kind": "Dead Man’s Claim roof runoff and terrain drainage construction",
+      "width": 1450,
+      "height": 940,
+      "bytes": 1467831,
+      "sha256": "baa1a0ee3d687c1b8eab1188e87c645cb671e602c94e341cee01d650d72757a9"
+    },
+    {
+      "path": "development/levels/rebuild/mine-drainage-pass/captures/structure/mine-shaft-roof-and-downpipe.png",
+      "url": "development/levels/rebuild/mine-drainage-pass/captures/structure/mine-shaft-roof-and-downpipe.png",
+      "title": "Mine shaft roof and downpipe",
+      "kind": "Dead Man’s Claim roof runoff and terrain drainage construction",
+      "width": 1450,
+      "height": 940,
+      "bytes": 1686300,
+      "sha256": "41d8eb5ededef83aa499111c574c3b6eb0b5f507e6ea1977d46a40113f73dd2f"
+    },
+    {
+      "path": "development/levels/rebuild/mine-drainage-pass/captures/structure/mine-weather-roof-overview.png",
+      "url": "development/levels/rebuild/mine-drainage-pass/captures/structure/mine-weather-roof-overview.png",
+      "title": "Mine weather roof overview",
+      "kind": "Dead Man’s Claim roof runoff and terrain drainage construction",
+      "width": 1450,
+      "height": 940,
+      "bytes": 1475028,
+      "sha256": "38171758dec3b66adbaee27b24922be0e0de0971cac608b73e134128b57255d5"
+    },
+    {
+      "path": "development/levels/rebuild/mine-drainage-pass/captures/structure/mine-yard-eastern-filter-bed.png",
+      "url": "development/levels/rebuild/mine-drainage-pass/captures/structure/mine-yard-eastern-filter-bed.png",
+      "title": "Mine yard eastern filter bed",
+      "kind": "Dead Man’s Claim roof runoff and terrain drainage construction",
+      "width": 1450,
+      "height": 940,
+      "bytes": 1305806,
+      "sha256": "56f7f1cad04e031d02a7343fc2c4aa2b7ef3bed3852c3c0eb8076114d0417b2f"
     },
     {
       "path": "development/levels/rebuild/mine-handrail-pass/captures/mine-706-open.png",

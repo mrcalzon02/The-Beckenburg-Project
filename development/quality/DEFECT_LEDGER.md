@@ -9046,3 +9046,7 @@ The [slab replacement](../levels/rebuild/mine-lower-slabs-pass/checkpoint.json) 
 ### DEV-664 Ore-west upper stair aperture lacked edge guards
 
 The stair rails descend with the flight. Eleven anchored posts now carry a separate three-sided guard for the surrounding upper floor. Standing and crouched bodies were stopped at all three edges and left through the actual high landing. [Evidence](../levels/rebuild/mine-lower-slabs-pass/checkpoint.json)
+
+### DEV-665 Mine flat roof caps and exterior yard had no runoff route
+
+Seven cap-backed pitched roof surfaces feed six collectors, each with an open throat and a supported downpipe. Two lower filter beds are carved into saved terrain outside door and stair routes. Direct native tests covered the roofs, the six actual openings and adjacent pan faces, and downhill terrain. Underground sump containment remains open. [Evidence](../levels/rebuild/mine-drainage-pass/checkpoint.json)

@@ -1475,3 +1475,7 @@ A buried run feeds the surface buildings and headhouse. The underground trunk us
 ### Dead Man’s Claim lower receiving slabs
 
 Eighteen coplanar landing and floor pieces were replaced by two continuous slabs at the original floor heights. The ore-west slab bears on girders, end walls and eight founded columns, with a reinforced opening for the existing flight. The upper edge guard protects three sides and leaves the upper landing clear. The real aisle now loops around the opening to reach the west switch. Native movement, full lighting and walk-in cover pass on the revised stage. [Slab checkpoint](mine-lower-slabs-pass/checkpoint.json)
+
+### Dead Man’s Claim surface runoff
+
+The stores and crew roofs share one continuous fall. The wash and assay roofs share another. The shaft and headhouse roofs meet at a fitted flashing, and six open gutters carry runoff into buried conductors. The downhill terrain beds are saved and reloaded through the same native surface that drives movement. None of the 1,153 excavation controls changed. The lower sump and underground water checks remain open. [Drainage checkpoint](mine-drainage-pass/checkpoint.json)
