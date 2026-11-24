@@ -183,7 +183,11 @@ public final class MonasteryPowerReview {
     }
 
     private static String focusId(Socket socket) {
-        return socket.type().equals("switch")?Integer.toString(socket.room()):socket.id();
+        return switch (socket.type()) {
+            case "switch" -> Integer.toString(socket.room());
+            case "native_story" -> "STORY_"+socket.style();
+            default -> socket.id();
+        };
     }
 
     private static InteractionFocus.Target focus(HouseMap map,Vec feet,Socket socket) {
@@ -203,7 +207,14 @@ public final class MonasteryPowerReview {
         double pitch=Math.atan2(socket.y()-feet.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
         peer.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
         peer.client.interact(aim,yaw,pitch);
+        if (socket.type().equals("native_story")) peer.awaitExact("INTERACTED|INTERFACE|"+aim.id());
         peer.awaitExact("ACCEPT|INTERACT|"+aim.name());
+    }
+
+    private static void read(HouseMap map,Peer peer,Vec feet,Socket record,List<String> report) throws Exception {
+        require(map.roomAt(feet.x(),feet.y(),feet.z())==record.room(),"Reading stance left "+record.id());
+        use(map,peer,feet,record);
+        report.add(record.style()+"_live_reading\tPASS walked to record and opened its reading interface");
     }
 
     static void live(MonasteryDoorReview.Scene data,List<String> report) throws Exception {
@@ -297,7 +308,16 @@ public final class MonasteryPowerReview {
                 use(map,engineer,at,refectorySwitch);
                 witness.awaitExact("LIGHTS|111101011110|1");
                 require(!lights.on(4)&&lights.on(2),"Refectory switch interrupted the unswitched cloister feed");
-                at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(62.36,0,35),new Vec(59,0,40));
+                var rationSheet=map.level().socket("native_story",4);
+                if (rationSheet!=null) {
+                    at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(62.36,0,36.95),new Vec(54.45,0,37.8),
+                        new Vec(54.45,0,34.64),new Vec(54.88,0,34.64));
+                    read(map,engineer,at,rationSheet,report);
+                    at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(54.45,0,34.64),new Vec(54.45,0,38.15),
+                        new Vec(59,0,40));
+                } else {
+                    at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(62.36,0,35),new Vec(59,0,40));
+                }
                 at=NorthwatchDoorRuntime.open(map,replica,data.nativeScene(),engineer,witness,at,944);
                 at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(47,0,40),operator(cloisterSwitch));
                 use(map,engineer,at,cloisterSwitch);
@@ -321,6 +341,11 @@ public final class MonasteryPowerReview {
                     use(map,engineer,at,archive);
                     witness.awaitExact("LIGHTS|110001011100|1");
                     require(!lights.on(3)&&lights.supplied(),"Archive switch changed the main supply");
+                    var bellRegister=map.level().socket("native_story",3);
+                    if (bellRegister!=null) {
+                        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(19.75,0,14.62),new Vec(19.75,0,13.73));
+                        read(map,engineer,at,bellRegister,report);
+                    }
                     report.add("live_north_range_independent_switches\tPASS");
                     var dorm=map.level().socket("switch",5);
                     if (dorm!=null) {
@@ -368,7 +393,7 @@ public final class MonasteryPowerReview {
             new Vec(51.4,0,26),new Vec(52.97,0,24.5));
         var bellStair=data.paths().get("L16");
         for (var knot:bellStair) at=CemeteryRefugeReview.walk(engineer,0,at,knot);
-        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(58.8,6,22.3),operator(bell));
+        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(58.8,6,22.3),new Vec(58.36,6,26.8));
         use(map,engineer,at,bell);
         witness.awaitExact("LIGHTS|000000001100|1");
         require(lights.on(8)&&lights.on(9),"Bell switch cut the lower rooms");

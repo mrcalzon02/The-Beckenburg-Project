@@ -103,6 +103,12 @@ final class PackagedInvestigationLevel {
                     number(row, 3), number(row, 4), number(row, 5), 0, row[1]));
                 case "COVER" -> sockets.add(new Socket(row[1], "hide", integer(row, 2),
                     number(row, 3), number(row, 4), number(row, 5), number(row, 6), "walk-in-cupboard"));
+                case "STORY" -> {
+                    check(row.length == 12, "Invalid native story placement");
+                    SiteStories.document(profile.id(), row[2]);
+                    sockets.add(new Socket(row[1], "native_story", integer(row, 3),
+                        number(row, 5), number(row, 6), number(row, 7), number(row, 8), row[2]));
+                }
                 case "OPEN" -> portals.add(new Portal(integer(row, 1), integer(row, 2), integer(row, 3), number(row, 4),
                     number(row, 5), number(row, 6), number(row, 7), row[8].equals("z"), row[9], 1));
                 case "POINT" -> { /* Survey paths are review input. Geometry governs movement. */ }
@@ -128,6 +134,10 @@ final class PackagedInvestigationLevel {
             new Vec(dock.x(), van.floorY(), dock.z()));
         for (int i = 0; i < rooms.length; i++) check(rooms[i] != null, "Missing native room owner " + i);
         var scene = NativeInvestigationScene.read(model, modelHash, collision, collisionHash, treads, spaces, doors);
+        var nativeComponents = new HashSet<String>();
+        for (int i = 0; i < scene.physics().componentCount(); i++) nativeComponents.add(scene.physics().componentName(i));
+        for (var socket : sockets) if (socket.type().equals("native_story"))
+            check(nativeComponents.contains(socket.id()), "Missing native readable component " + socket.id());
         var level = new LevelDefinition(profile.id(), scene.revision(), profile.title(), List.of(rooms), portals, List.of(),
             List.of(), List.of(), sockets, List.of(), dock, "highland", water);
         return new Source(level, scene);

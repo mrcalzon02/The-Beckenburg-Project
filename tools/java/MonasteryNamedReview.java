@@ -53,7 +53,7 @@ final class MonasteryNamedReview {
         require(campaign.indexOf("WLD-10") == 18 && campaign.get(17).equals("WLD-09") && campaign.get(19).equals("WLD-11"),
             "Ordinary campaign order changed");
         for (var name : List.of("source-hashes.tsv","runtime-input.tsv","door-schedule.tsv","electrical-schedule.tsv",
-                                "monastery-with-vertical-distribution.glb","monastery-with-vertical-distribution.hcs2")) {
+                                "monastery-with-furnishings.glb","monastery-with-furnishings.hcs2")) {
             var resource = MonasteryNativeLevel.class.getResource(RESOURCE + name);
             require(resource != null && resource.getProtocol().equals("jar"), "Resource is outside the game archive " + name);
         }
@@ -106,6 +106,13 @@ final class MonasteryNamedReview {
         capture(map,new Vec(35,0,70.6),new Vec(32,1.08,80),captures.resolve("monastery-named-arrival-van.png"));
         capture(map,new Vec(32,0,67),new Vec(32,1.71,62),captures.resolve("monastery-named-public-gate.png"));
         capture(map,new Vec(23,-3,17.42),new Vec(18,-1.4,16),captures.resolve("monastery-named-lower-memorial.png"));
+        NativeSchoolInteriorReview.auditWalkInCover(map,captures,report,"monastery",java.util.Map.of(
+            3,List.of(new Vec(22,0,7)),5,List.of(new Vec(-3,0,39)),9,List.of(new Vec(23,-3,7))));
+        capture(map,new Vec(18,0,9),new Vec(19.74,.85,12.2),captures.resolve("monastery-archive-reading-table.png"));
+        capture(map,new Vec(59,0,40),new Vec(56.15,.9,34.6),captures.resolve("monastery-refectory-tables.png"));
+        capture(map,new Vec(0,0,36),new Vec(-3.35,.64,44),captures.resolve("monastery-dormitory-beds.png"));
+        capture(map,new Vec(36,0,9),new Vec(38.53,1,4.14),captures.resolve("monastery-vestry-wash-trough.png"));
+        capture(map,new Vec(32,0,59),new Vec(38.7,.48,59.25),captures.resolve("monastery-gatehouse-porter.png"));
         if (!gpu) {
             BlackwaterNamedReview.solo(map,report);
             MonasteryPowerReview.live(scene,report,site);

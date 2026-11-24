@@ -9286,3 +9286,7 @@ The bell gallery, catacomb passage and memorial chamber have supported risers, s
 ### DEV-724 · Monastery named archive dispatch
 
 Both ordinary archives embed the exact staged room, door, electrical, collision and render resources. The named case keeps its ordinary dispatch lock, rejects stale revisions and passed named solo and live review. [Verification checkpoint](../levels/rebuild/monastery-named-pass/checkpoint.json)
+
+### DEV-725 · Monastery furnished interiors and native record focus
+
+Fit supported furnishings around the gatehouse, refectory, archive, dormitory and vestry approaches. The reading interaction uses the first optical hit on each record's exact collision component. Verify the existing routes, door sweeps and walk-in refuge coverage against the furnished scene. [Verification checkpoint](../levels/rebuild/monastery-furnishing-pass/checkpoint.json)

@@ -8031,6 +8031,17 @@
       "action": "Embed the same render, physics, room, door and power resources. Bind the review flag, verify stable campaign order and exact network revision, and replay named solo and four-player power/route behavior.",
       "older_maps": "Verify named users load the exact packaged scene through ordinary dispatch, with availability locked until applicable gates pass.",
       "evidence": "development/levels/rebuild/monastery-named-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-725",
+      "title": "Monastery lacked grounded room fittings and native document focus",
+      "status": "MONASTERY_GROUND_FLOOR_FURNISHING_STAGED",
+      "affected": "WLD-10 gatehouse, refectory, archive, dormitory and vestry",
+      "symptom": "The main ground-floor rooms lacked their planned fixtures and the two embedded document meshes did not prompt a reading interaction.",
+      "cause": "Previous source work covered structures, lighting and minimal case geometry. The legacy reading path expects a distinct runtime prop.",
+      "action": "Install the scheduled canonical furniture around existing door and refuge approaches. Use the actual native optical page hit, with the existing shared interaction sight check, to identify the two records.",
+      "older_maps": "Verify real floor and table supports as well as host-authorized reading focus from a walkable stance. Recheck protected floor coverage after adding furniture.",
+      "evidence": "development/levels/rebuild/monastery-furnishing-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

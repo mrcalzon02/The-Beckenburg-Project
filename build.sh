@@ -159,13 +159,13 @@ for payload in dam-with-ventilation.glb dam-with-ventilation.hcs2 runtime-input.
     cp "$blackwater_packet/$payload" "$blackwater_resource/$payload"
 done
 cp development/levels/rebuild/dam-named-pass/source-hashes.tsv "$blackwater_resource/source-hashes.tsv"
-monastery_packet=development/levels/rebuild/monastery-vertical-power-pass/wld-10
+monastery_packet=development/levels/rebuild/monastery-furnishing-pass/wld-10
 monastery_resource=build/classes/org/beckenburg/sites/wld-10
 mkdir -p "$monastery_resource"
-for payload in monastery-with-vertical-distribution.glb monastery-with-vertical-distribution.hcs2 runtime-input.tsv door-schedule.tsv electrical-schedule.tsv; do
+for payload in monastery-with-furnishings.glb monastery-with-furnishings.hcs2 runtime-input.tsv door-schedule.tsv electrical-schedule.tsv; do
     cp "$monastery_packet/$payload" "$monastery_resource/$payload"
 done
-cp development/levels/rebuild/monastery-named-pass/source-hashes.tsv "$monastery_resource/source-hashes.tsv"
+cp development/levels/rebuild/monastery-furnishing-pass/source-hashes.tsv "$monastery_resource/source-hashes.tsv"
 asylum_packet=development/levels/rebuild/asylum-flight-rails-pass
 for extension in glb hcs2; do
     cp "$asylum_packet/asylum-stair.$extension" "build/classes/org/beckenburg/sites/asylum-stair.$extension"

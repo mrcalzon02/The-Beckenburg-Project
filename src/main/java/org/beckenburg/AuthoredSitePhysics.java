@@ -198,6 +198,26 @@ public final class AuthoredSitePhysics {
         if(!point(a)||!point(b)||norm2(sub(b,a))>128*128)return false;Vec d=sub(b,a);if(norm2(d)<1e-16)return true;
         return rayCells(a,b,i->{if((flags[i]&OPTICAL)==0)return true;double t=ray(i,a,d);return !Double.isFinite(t)||t<=1e-6||t>=1-1e-6;});
     }
+    record OpticalHit(String component, double fraction) {}
+
+    OpticalHit firstOpticalHit(Vec start, Vec end) {
+        if (!point(start) || !point(end)) return null;
+        Vec delta = sub(end, start);
+        double[] nearest = {Double.POSITIVE_INFINITY};
+        int[] component = {-1};
+        rayCells(start, end, i -> {
+            if ((flags[i]&OPTICAL) != 0) {
+                double fraction = ray(i, start, delta);
+                if (fraction > 1e-6 && fraction < nearest[0]) {
+                    nearest[0] = fraction;
+                    component[0] = owner[i];
+                }
+            }
+            return true;
+        });
+        return component[0] < 0 ? null : new OpticalHit(componentName(component[0]), nearest[0]);
+    }
+
     /** Per closed component parity preserves hollow rooms and overlapping solids. */
     private boolean insideSolid(Vec p){
         for(int part=0;part<parts.length;part++){
