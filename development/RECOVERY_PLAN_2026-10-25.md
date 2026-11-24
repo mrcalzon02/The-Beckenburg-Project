@@ -2363,3 +2363,7 @@ The local service power checkpoint is 7d66dc139cf5ef42344802ca8465c00fab909413. 
 ### Monastery of Ashen Bells north-range distribution
 
 East-range checkpoint f3a2196482d0aceaedd151cb9ffbd34f43f369f7 is committed locally. The last verified draft head remains 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports multiplayer 44863686526 and GPU 44863686455. The [north-range checkpoint](levels/rebuild/monastery-north-power-pass/checkpoint.json) adds two independent branches, six mounted lights, and four-player interaction at both rooms with the east circuit off. Continue remaining room distribution, furnishing and named package work.
+
+### Monastery of Ashen Bells western distribution
+
+North-range checkpoint 472297b8694591a378b2d06792a592b900ebeb96 is committed locally. The last verified draft head remains 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf pending upload approval. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports multiplayer 44863686526 and GPU 44863686455. The [west-range checkpoint](levels/rebuild/monastery-west-power-pass/checkpoint.json) fits the gatehouse, cloister and dormitory circuits and verifies ordinary power and route behavior. Continue the bell gallery, lower crypt, outlying drainage and named case.

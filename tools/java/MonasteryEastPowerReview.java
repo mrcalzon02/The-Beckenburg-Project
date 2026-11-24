@@ -16,9 +16,9 @@ public final class MonasteryEastPowerReview {
 
     public static void main(String[] args) throws Exception {
         var packet=Path.of(args[0]);
-        var north=List.of(args).contains("--north");
+        String range=List.of(args).contains("--west")?"west":List.of(args).contains("--north")?"north":"east";
         if (!List.of(args).contains("--gpu")) {
-            review(packet,false,north);
+            review(packet,false,range);
             return;
         }
         var desktop=Class.forName("org.beckenburg.gpu.GpuDesktop");
@@ -27,11 +27,11 @@ public final class MonasteryEastPowerReview {
         start.setAccessible(true);
         stop.setAccessible(true);
         start.invoke(null);
-        try { review(packet,true,north); } finally { stop.invoke(null); }
+        try { review(packet,true,range); } finally { stop.invoke(null); }
     }
 
-    private static void review(Path packet,boolean gpu,boolean north) throws Exception {
-        var data=MonasteryPowerReview.read(packet,north?"monastery-with-north-distribution":"monastery-with-east-distribution");
+    private static void review(Path packet,boolean gpu,String range) throws Exception {
+        var data=MonasteryPowerReview.read(packet,"monastery-with-"+range+"-distribution");
         var map=data.map();
         require(map.valid()&&RitualSites.valid(map),"Installed circuits disturbed ownership or rites");
         var report=new ArrayList<>(List.of("check\tresult","native_scene_revision\t"+data.nativeScene().revision(),
@@ -59,7 +59,8 @@ public final class MonasteryEastPowerReview {
         var lighting=new RoomLighting();
         var fixture=new FixtureLighting(map);
         var lamps=map.level().sockets().stream().filter(s->s.type().equals("light")).toList();
-        require(lamps.size()==(north?18:12),"Unexpected mounted light count");
+        int count=switch(range) { case "west" -> 28; case "north" -> 18; default -> 12; };
+        require(lamps.size()==count,"Unexpected mounted light count");
         for (var lamp:lamps) {
             double on=energy(fixture,lighting,lamp);
             lighting.setSourceRunning(false);
@@ -77,7 +78,12 @@ public final class MonasteryEastPowerReview {
         }
         var captures=packet.resolve(gpu?"captures/opengl":"captures/software");
         Files.createDirectories(captures);
-        if (north) {
+        if (range.equals("west")) {
+            witness(map,lighting,captures,0,"gatehouse",new Vec(32,0,59),new Vec(27.4,2.56,59),report);
+            witness(map,lighting,captures,1,"west-cloister",new Vec(11,0,34),new Vec(11,2.55,42.1),report);
+            witness(map,lighting,captures,1,"south-cloister",new Vec(26,0,53),new Vec(32,2.55,53),report);
+            witness(map,lighting,captures,5,"dormitory",new Vec(0,0,36),new Vec(-3.1,2.55,26),report);
+        } else if (range.equals("north")) {
             witness(map,lighting,captures,3,"archive",new Vec(18,0,10.2),new Vec(18.3,2.6,5.65),report);
             witness(map,lighting,captures,10,"vestry",new Vec(36,0,12),new Vec(36.4,2.62,6),report);
         } else {
@@ -86,7 +92,7 @@ public final class MonasteryEastPowerReview {
         }
         NativeSchoolInteriorReview.auditHiding(map,report);
         if (!gpu) MonasteryPowerReview.live(data,report);
-        String stage=north?"north-power":"east-power";
+        String stage=range+"-power";
         Files.write(packet.resolve(stage+(gpu?"-opengl.tsv":"-software.tsv")),report);
         report.forEach(System.out::println);
     }

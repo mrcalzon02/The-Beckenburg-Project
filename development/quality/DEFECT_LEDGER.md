@@ -9274,3 +9274,7 @@ The service source now supplies independently switched refectory and east cloist
 ### DEV-721 · Monastery archive and vestry power
 
 A supported unswitched feeder now supplies the two independent north-range branches. Six ceiling fixtures and their own wall switches run through sealed masonry sleeves. Existing doors, refuges and routes passed again. [Verification checkpoint](../levels/rebuild/monastery-north-power-pass/checkpoint.json)
+
+### DEV-722 · Monastery western distribution
+
+The west and south cloisters share a switched branch. The dormitory and gatehouse have their own branches from the unswitched feeder. All ten fixtures bear on existing ceilings and the original route and door checks pass. [Verification checkpoint](../levels/rebuild/monastery-west-power-pass/checkpoint.json)

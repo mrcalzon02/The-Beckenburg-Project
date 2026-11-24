@@ -20,29 +20,35 @@ ROOMS=(
 )
 
 
-def install(assembly):
-    receivers = {}
-    fixings = []
+class ConduitMounts:
+    def __init__(self, assembly):
+        self.assembly=assembly
+        self.receivers={}
+        self.fixings=[]
 
-    def attach(label, p, direction, receiver, offset=.043, radius=.027):
-        if receiver not in receivers:
-            receivers[receiver]=bvh([o for o in assembly.scene.objects if o.type=="MESH"
+    def attach(self,label, p, direction, receiver, offset=.043, radius=.027):
+        if receiver not in self.receivers:
+            self.receivers[receiver]=bvh([o for o in self.assembly.scene.objects if o.type=="MESH"
                 and any(o.name.startswith(prefix) for prefix in receiver)])
         origin,normal=point(*p),point(*direction)
-        at,n,_,_=receivers[receiver].ray_cast(origin,normal,offset+.04)
+        at,n,_,_=self.receivers[receiver].ray_cast(origin,normal,offset+.04)
         assert at is not None and abs((at-origin).length-offset)<.005 and n.dot(normal)<-.985,(label,p,at)
-        assembly.tube(label+" seated saddle",p,world(at+normal*.007),radius,assembly.mount)["role"]="measured masonry or ceiling fixing"
-        fixings.append(dict(run=label,point=world(at),receiver=" / ".join(receiver)))
+        self.assembly.tube(label+" seated saddle",p,world(at+normal*.007),radius,self.assembly.mount)["role"]="measured masonry or ceiling fixing"
+        self.fixings.append(dict(run=label,point=world(at),receiver=" / ".join(receiver)))
 
-    def run(label,nodes,direction,receiver,radius=.017):
-        assembly.raceway(label,nodes,radius)
+    def run(self,label,nodes,direction,receiver,radius=.017):
+        self.assembly.raceway(label,nodes,radius)
         for a,b in zip(nodes,nodes[1:]):
             count=max(1,math.ceil(math.dist(a,b)/1.14))
             for i in range(count):
                 t=(i+.5)/count
                 p=tuple(x+(y-x)*t for x,y in zip(a,b))
-                attach(label,p,direction,receiver,radius=radius+.011)
+                self.attach(label,p,direction,receiver,radius=radius+.011)
 
+
+def install(assembly):
+    mounts=ConduitMounts(assembly)
+    attach,run=mounts.attach,mounts.run
     east=("Monastery western tower elevation","Monastery refectory cloister wall")
     north=("Monastery north range doors",)
     # This starts on the incoming side of the east-cloister switch. A
@@ -84,7 +90,7 @@ def install(assembly):
     for obj in assembly.built:
         if obj.name.startswith("College "):
             obj.name="Monastery north range "+obj.name.removeprefix("College ").replace("college-switch","wall-switch")
-    return fixings
+    return mounts.fixings
 
 
 if __name__=="__main__":

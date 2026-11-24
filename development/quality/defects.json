@@ -7998,6 +7998,17 @@
       "action": "Fit an unswitched north feeder and independently controlled archive and vestry ceiling branches through sealed stone sleeves.",
       "older_maps": "Audit shared feeders and verify that each local switch preserves neighbouring circuits.",
       "evidence": "development/levels/rebuild/monastery-north-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-722",
+      "title": "Monastery west cloister, dormitory and gatehouse had no permanent electric light",
+      "status": "MONASTERY_WEST_CLOISTER_DORMITORY_AND_GATEHOUSE_POWERED_STAGED",
+      "affected": "WLD-10 west and south cloister aisles, dormitory and gatehouse",
+      "symptom": "The arrival and western routes had no working wall switches or wired fixtures.",
+      "cause": "The previous distribution stage ended at the north range.",
+      "action": "Extend the unswitched feeder along existing walls and support three independent ceiling branches. Replay the original room routes and live switch sequence.",
+      "older_maps": "Verify that individual room switches preserve unaffected supply and that feeder transitions use the actual building.",
+      "evidence": "development/levels/rebuild/monastery-west-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12305,
+  "count": 12321,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -117044,6 +117044,166 @@
       "height": 640,
       "bytes": 385336,
       "sha256": "5d0cd5efe12f900a79c07fcc32553ad588fe3072ce04e60081466bdbc40052b8"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/dormitory-isolated.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/dormitory-isolated.png",
+      "title": "Dormitory isolated",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 161233,
+      "sha256": "ec5f5e2c72f9c69f014fc3c92452ef1afae4b9f322ba613e64e9112757c692c1"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/dormitory-supplied.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/dormitory-supplied.png",
+      "title": "Dormitory supplied",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 188767,
+      "sha256": "9e805b9d5986de645e9334f93355b99718e5c27b971bc0e0f2bb33fe980323ff"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/gatehouse-isolated.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/gatehouse-isolated.png",
+      "title": "Gatehouse isolated",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 157194,
+      "sha256": "6b13c09bbe6d2496546d1299286bfac6646ce85b6a9f36125230576cd1090b5a"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/gatehouse-supplied.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/gatehouse-supplied.png",
+      "title": "Gatehouse supplied",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 252469,
+      "sha256": "a00b6fb5e8f93531875fb408c76323e09abd93304205333e471352aa211037fd"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/south-cloister-isolated.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/south-cloister-isolated.png",
+      "title": "South cloister isolated",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 224242,
+      "sha256": "7a8ab996bdc35a6cf1dcbf27d2fc5fe5de36e02f2d6aed89912d7ff6781861e9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/south-cloister-supplied.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/south-cloister-supplied.png",
+      "title": "South cloister supplied",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 284576,
+      "sha256": "8f8050f1978a02bf3afaa5d2c887f26ddaaa02e3596e4b45bbef928a18d2c55c"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/west-cloister-isolated.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/west-cloister-isolated.png",
+      "title": "West cloister isolated",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 165470,
+      "sha256": "eb494889df458ed924819381de0cd42b9777d2ae4c06fa400872b85933b61f27"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/west-cloister-supplied.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/opengl/west-cloister-supplied.png",
+      "title": "West cloister supplied",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 226160,
+      "sha256": "546dd1bb11c1e3bf7463e477474479815a813fcd197466cb1c0e9be5ba2062aa"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/dormitory-isolated.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/dormitory-isolated.png",
+      "title": "Dormitory isolated",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 162302,
+      "sha256": "9b8b0d49a359ab1979f280ddc8c0e1ad8489e69716cd401bbaf68530a15bb2b0"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/dormitory-supplied.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/dormitory-supplied.png",
+      "title": "Dormitory supplied",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 188475,
+      "sha256": "dcd71c873eb8e5586b482f0f8767fc11281511e946f0f58d8103ecd2f9b467f8"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/gatehouse-isolated.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/gatehouse-isolated.png",
+      "title": "Gatehouse isolated",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 159370,
+      "sha256": "86fe337715ca1cc36580b027fc4e71d394a7febc0e5c2f6ad09d6a82b24b6787"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/gatehouse-supplied.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/gatehouse-supplied.png",
+      "title": "Gatehouse supplied",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 257398,
+      "sha256": "affb875f825001a3508268bc1478db59c1a01c24c0ccb9d8f5ea8f50d1e70f7d"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/south-cloister-isolated.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/south-cloister-isolated.png",
+      "title": "South cloister isolated",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 226770,
+      "sha256": "3137a649b0f9b026b7597354ed6af80703acc8c2d16ec2a890189883591f71ab"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/south-cloister-supplied.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/south-cloister-supplied.png",
+      "title": "South cloister supplied",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 283670,
+      "sha256": "5dae2041842fdc3b6245e78042a61cc1837b3bc29a95e97e294f64361e1b5ba0"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/west-cloister-isolated.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/west-cloister-isolated.png",
+      "title": "West cloister isolated",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 166280,
+      "sha256": "a7c0b6c4539cf09592505b2ef9e2cd21ce5f41a569895426e7d55edd0c8e801e"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/west-cloister-supplied.png",
+      "url": "development/levels/rebuild/monastery-west-power-pass/wld-10/captures/software/west-cloister-supplied.png",
+      "title": "West cloister supplied",
+      "kind": "Monastery of Ashen Bells gate and western circuit lighting in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 226119,
+      "sha256": "745af6b65aa422a55d0c0e528e9b15947de98c9316f4c9a2bf2d31d81d122f56"
     },
     {
       "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/array-edge-screen.png",

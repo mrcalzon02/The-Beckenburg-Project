@@ -312,6 +312,32 @@ public final class MonasteryPowerReview {
                     witness.awaitExact("LIGHTS|110001011100|1");
                     require(!lights.on(3)&&lights.supplied(),"Archive switch changed the main supply");
                     report.add("live_north_range_independent_switches\tPASS");
+                    var dorm=map.level().socket("switch",5);
+                    if (dorm!=null) {
+                        var west=map.level().socket("switch",1);
+                        var gate=map.level().socket("switch",0);
+                        require(lights.on(0)&&lights.on(1)&&lights.on(5),"North room switches interrupted the west main feeder");
+                        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(18,0,14.2));
+                        at=NorthwatchDoorRuntime.open(map,replica,data.nativeScene(),engineer,witness,at,938);
+                        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(18,0,17),new Vec(11,0,17),new Vec(11,0,24),
+                            new Vec(11,0,32),new Vec(11,0,37.75),operator(west));
+                        use(map,engineer,at,west);
+                        witness.awaitExact("LIGHTS|100001011100|1");
+                        require(lights.on(5)&&lights.on(0),"West cloister switch interrupted dormitory or gatehouse supply");
+                        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(11,0,37.75),new Vec(11,0,36));
+                        at=NorthwatchDoorRuntime.open(map,replica,data.nativeScene(),engineer,witness,at,941);
+                        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(5.2,0,36),operator(dorm));
+                        use(map,engineer,at,dorm);
+                        witness.awaitExact("LIGHTS|100000011100|1");
+                        require(lights.on(0),"Dormitory switch interrupted gatehouse supply");
+                        at=NorthwatchDoorRuntime.walk(engineer,at,new Vec(6.45,0,36),new Vec(11,0,36),
+                            new Vec(11,0,45),new Vec(11,0,53),new Vec(20,0,53),new Vec(29,0,53),
+                            new Vec(32,0,54.9),new Vec(32,0,58.7),new Vec(29.42,0,58.7),operator(gate));
+                        use(map,engineer,at,gate);
+                        witness.awaitExact("LIGHTS|000000011100|1");
+                        require(lights.supplied()&&!lights.on(0)&&!lights.on(1)&&!lights.on(5),"Western switches altered main supply");
+                        report.add("live_west_range_independent_switches\tPASS");
+                    }
                 }
             }
         }
