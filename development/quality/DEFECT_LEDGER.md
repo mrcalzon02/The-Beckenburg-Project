@@ -9186,3 +9186,11 @@ A supported cistern and two plumbed basins now share the ordinary fixture state.
 ### DEV-699 Fixture sound test depended on an absent default-house phone
 
 The baseline package and fresh compilation both failed the old default selection. The test now chooses an authored map with a reachable telephone and passes unchanged source lifetime and audio mixing assertions. [Regression](../../src/test/java/org/beckenburg/FixtureSoundscapeTest.java)
+
+### DEV-700 Northwatch needed furnishings and readable station records
+
+Eight fitted models and two supported papers give the rooms their ordinary uses. Both renderers and real TCP verify the exact paper surfaces, reading approach and host action while retaining the previous route and service gates. [Evidence](../levels/rebuild/northwatch-furnishing-pass/checkpoint.json)
+
+### DEV-701 Sixteen empty triangles rejected the records desk
+
+Native loading identified the placed desk as the only added part with degenerate faces. The placed mesh removes those sixteen zero-area faces and keeps the model source intact. The repaired renderer and collision exports agree. [Construction record](../levels/rebuild/northwatch-furnishing-pass/wld-08/construction.json)

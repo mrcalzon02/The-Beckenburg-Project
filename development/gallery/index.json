@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12078,
+  "count": 12088,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -115404,6 +115404,106 @@
       "height": 580,
       "bytes": 351979,
       "sha256": "6b4e61048b851162a1316f4dae438c6ca84763b87e02ada251a5981fe21de067"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-array-instruments.png",
+      "url": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-array-instruments.png",
+      "title": "Northwatch array instruments",
+      "kind": "Northwatch fitted furnishings in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 369957,
+      "sha256": "e57acbdf3aa03d7a4145ecfed157617c4afe057de35e79e3ca86f920afce992e"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-desk-FUEL_AND_HEAT_WORKSHEET.png",
+      "url": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-desk-FUEL_AND_HEAT_WORKSHEET.png",
+      "title": "Northwatch desk fuel and heat worksheet",
+      "kind": "Northwatch fitted furnishings in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 378528,
+      "sha256": "bc87b6957a44d652ee24be029a093cdcc0c9146594f58df28fedb7670ebb3796"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-desk-WINTER_RELAY_LOG.png",
+      "url": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-desk-WINTER_RELAY_LOG.png",
+      "title": "Northwatch desk winter relay log",
+      "kind": "Northwatch fitted furnishings in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 428413,
+      "sha256": "1d1e4d67bfe91a617ba3dd5bdf82cf88e5ea49f39a1c13603f8bc44fd9bf832d"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-lab-instruments.png",
+      "url": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-lab-instruments.png",
+      "title": "Northwatch lab instruments",
+      "kind": "Northwatch fitted furnishings in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 387735,
+      "sha256": "7ce4cfa4b0839c7b3634310c388389622ccfe6ca5ebbd8551cb5b76eff34123d"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-record-FUEL_AND_HEAT_WORKSHEET.png",
+      "url": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-record-FUEL_AND_HEAT_WORKSHEET.png",
+      "title": "Northwatch record fuel and heat worksheet",
+      "kind": "Northwatch readable station record",
+      "width": 880,
+      "height": 580,
+      "bytes": 11029,
+      "sha256": "a28dc8049171a59b30ab07b684e1e21832fd3cc19cb15ebb9354f1f3ada2d677"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-record-WINTER_RELAY_LOG.png",
+      "url": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/northwatch-record-WINTER_RELAY_LOG.png",
+      "title": "Northwatch record winter relay log",
+      "kind": "Northwatch readable station record",
+      "width": 880,
+      "height": 580,
+      "bytes": 12018,
+      "sha256": "15486807ef52adbcda9c6fe1c4594fad243a245847f0b199a42c510c1d7a3235"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/opengl/northwatch-array-instruments.png",
+      "url": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/opengl/northwatch-array-instruments.png",
+      "title": "Northwatch array instruments",
+      "kind": "Northwatch fitted furnishings in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 337272,
+      "sha256": "bd99130912bffd9ea19bca13d0520e7f5f97bc59b5644660fdba35e195eb53ed"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/opengl/northwatch-desk-FUEL_AND_HEAT_WORKSHEET.png",
+      "url": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/opengl/northwatch-desk-FUEL_AND_HEAT_WORKSHEET.png",
+      "title": "Northwatch desk fuel and heat worksheet",
+      "kind": "Northwatch fitted furnishings in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 379055,
+      "sha256": "cd89ddf0020369c151e3c5bb2b283d35979ac2c0ec0a06694bfe806d11a7b673"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/opengl/northwatch-desk-WINTER_RELAY_LOG.png",
+      "url": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/opengl/northwatch-desk-WINTER_RELAY_LOG.png",
+      "title": "Northwatch desk winter relay log",
+      "kind": "Northwatch fitted furnishings in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 427733,
+      "sha256": "2a6f048c1ac053a056d44ca33272554e0df2fd86c85a875b39731b919c925566"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/opengl/northwatch-lab-instruments.png",
+      "url": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/captures/opengl/northwatch-lab-instruments.png",
+      "title": "Northwatch lab instruments",
+      "kind": "Northwatch fitted furnishings in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 385896,
+      "sha256": "48ad33345fa53254bc41ff2594abab3945f2d132edef9c0e7617bd4fb47d3245"
     },
     {
       "path": "development/levels/rebuild/northwatch-power-pass/wld-08/captures/northwatch-shed-supplied.png",

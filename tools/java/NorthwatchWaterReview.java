@@ -26,26 +26,30 @@ final class NorthwatchWaterReview {
             var target=InteractionFocus.pick(map,look,List.of());
             require(target!=null&&target.kind()==InteractionFocus.Kind.FIXTURE&&target.id().equals(""+f.id()),
                 "Actual basin could not be aimed at from "+feet+" / "+target);
-            Path dry=captures.resolve("northwatch-"+key+"-dry.png");
-            Path wet=captures.resolve("northwatch-"+key+"-running.png");
-            render(map,look,dry);
+            Path dry=captures==null?null:captures.resolve("northwatch-"+key+"-dry.png");
+            Path wet=captures==null?null:captures.resolve("northwatch-"+key+"-running.png");
+            if(captures!=null)render(map,look,dry);
             fixtures.toggleFocused(f.id(),look,1);
             boolean sound=false;
             for(int tick=1;tick<=135;tick++)
                 sound|=fixtures.advance(tick).stream().anyMatch(cue->cue.source().id()==f.id()
                     &&cue.cue()==LanSound.Cue.RUNNING_WATER);
             require(sound&&fixtures.state(f.id()).water()==810,"Water did not fill or emit its ordinary sound with power off");
-            render(map,look,wet);
-            var dryImage=ImageIO.read(dry.toFile());
-            var wetImage=ImageIO.read(wet.toFile());
-            int changed=0;
-            for(int y=0;y<dryImage.getHeight();y++)for(int x=0;x<dryImage.getWidth();x++)
-                if(dryImage.getRGB(x,y)!=wetImage.getRGB(x,y))changed++;
-            require(changed>=60,"Running water was not visible in "+key+": "+changed);
+            String imageEvidence="";
+            if(captures!=null){
+                render(map,look,wet);
+                var dryImage=ImageIO.read(dry.toFile());
+                var wetImage=ImageIO.read(wet.toFile());
+                int changed=0;
+                for(int y=0;y<dryImage.getHeight();y++)for(int x=0;x<dryImage.getWidth();x++)
+                    if(dryImage.getRGB(x,y)!=wetImage.getRGB(x,y))changed++;
+                require(changed>=60,"Running water was not visible in "+key+": "+changed);
+                imageEvidence=" and "+changed+" changed render pixels";
+            }
             fixtures.toggleFocused(f.id(),look,136);
             for(int tick=136;tick<=220;tick++)fixtures.advance(tick);
             require(!fixtures.state(f.id()).active()&&fixtures.state(f.id()).water()==0,"Basin did not drain");
-            report.add(key+"_water\tPASS fill, shutoff, drain, sound and "+changed+" changed render pixels with mains off");
+            report.add(key+"_water\tPASS fill, shutoff, drain, sound"+imageEvidence+" with mains off");
         }
     }
 

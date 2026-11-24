@@ -35,7 +35,8 @@ public final class NorthwatchBoundaryReview {
 
     private static void review(String[] args,boolean gpu)throws Exception {
         Path path=Path.of(args[0]);
-        boolean water=List.of(args).contains("--water");
+        boolean furnishings=List.of(args).contains("--furnishings");
+        boolean water=furnishings||List.of(args).contains("--water");
         boolean complete=water||List.of(args).contains("--complete-power");
         boolean surface=complete||List.of(args).contains("--surface-power");
         boolean distribution=surface||List.of(args).contains("--distribution");
@@ -44,10 +45,12 @@ public final class NorthwatchBoundaryReview {
         boolean fitted=refuges||List.of(args).contains("--doors");
         Path boundary=fitted?Path.of(args[5]):path;
         Path geometry=refuges?path:boundary;
-        String sourceStem=water?"station-with-water":complete?"station-with-complete-power":surface?"station-with-surface-power":distribution?"station-with-distribution":power?"station-with-power":refuges?"station-with-refuges":"bounded-station";
+        String sourceStem=furnishings?"station-with-furnishings":water?"station-with-water":complete?"station-with-complete-power":surface?"station-with-surface-power":distribution?"station-with-distribution":power?"station-with-power":refuges?"station-with-refuges":"bounded-station";
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var rooms=new Room[HouseMap.ROOM_COUNT];
         var sockets=new ArrayList<Socket>();
+        var props=new ArrayList<LevelDefinition.Prop>();
+        var stories=new ArrayList<NorthwatchFurnishingReview.Record>();
         var treads=new LinkedHashSet<String>();
         var routes=new LinkedHashMap<String,List<Vec>>();
         var arrivals=new ArrayList<Vec>();
@@ -75,6 +78,16 @@ public final class NorthwatchBoundaryReview {
                 case "TREAD" -> treads.add(row[1]);
                 case "COVER" -> sockets.add(new Socket(row[1],"hide",n(row,2),
                     d(row,3),d(row,4),d(row,5),d(row,6),"walk-in-cupboard"));
+                case "STORY" -> {
+                    int owner=n(row,3);
+                    var at=point(row,5);
+                    double yaw=d(row,8);
+                    // Mesh triangles are already part of the native export.
+                    // The prop here gives InteractionFocus its matching model pose.
+                    props.add(new LevelDefinition.Prop(row[4],owner,at.x(),at.y(),at.z(),d(row,9),yaw,0,0,.05,"desk"));
+                    sockets.add(new Socket(row[1],"story",owner,at.x(),at.y(),at.z(),yaw,row[2]));
+                    stories.add(new NorthwatchFurnishingReview.Record(row[2],owner,point(row,10),point(row,13)));
+                }
                 case "SERVICE" -> sockets.add(new Socket(row[1],row[2],n(row,3),
                     d(row,4),d(row,5),d(row,6),d(row,7),row[8]));
                 case "RITUAL" -> sockets.add(new Socket("northwatch-"+row[1],"ritual",Integer.parseInt(row[2]),
@@ -114,7 +127,7 @@ public final class NorthwatchBoundaryReview {
                 true,"trail",1));
         }
         var level=new LevelDefinition("wld-08",scene.revision(),"Northwatch Research Station",
-            List.of(rooms),portals,List.of(),List.of(),List.of(),sockets,List.of(),dock,"polar");
+            List.of(rooms),portals,List.of(),List.of(),props,sockets,List.of(),dock,"polar");
         var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
         require(RitualSites.valid(map),"New perimeter affected a ritual approach or supported floor");
 
@@ -217,7 +230,7 @@ public final class NorthwatchBoundaryReview {
             rows.add("optics_object_passage_room_acoustics_and_replica_state\tPASS");
             NorthwatchDoorRuntime.transits(map,portals);
             if(!gpu) {
-                NorthwatchDoorRuntime.live(level,scene,power?routes.get("Northwatch-shed-controls"):null,distribution?routes:null,rows);
+                NorthwatchDoorRuntime.live(level,scene,power?routes.get("Northwatch-shed-controls"):null,distribution?routes:null,stories,rows);
                 rows.add("four_peer_van_to_generator_two_aimed_doors\tPASS");
             }
         }
@@ -240,8 +253,13 @@ public final class NorthwatchBoundaryReview {
             NorthwatchDistributionReview.audit(map,routes,captures,rows);
         }
         if(surface&&!complete)render(map,physics,new Vec(47.5,0,11.5),new Vec(44,1.25,13.8),"northwatch-east-service-riser",captures);
-        if(water)NorthwatchWaterReview.audit(map,routes,captures,rows);
-        String stem=water?"water":complete?"complete-power":surface?"surface-power":distribution?"distribution":power?"power":refuges?"refuges":fitted?"doors":"boundary";
+        if(water)NorthwatchWaterReview.audit(map,routes,furnishings?null:captures,rows);
+        if(furnishings) {
+            NorthwatchFurnishingReview.audit(map,routes,stories,captures,rows,gpu);
+            render(map,physics,new Vec(54,0,10),new Vec(57.8,1.18,8),"northwatch-array-instruments",captures);
+            render(map,physics,new Vec(11,0,31.2),new Vec(13.6,1.02,29.25),"northwatch-lab-instruments",captures);
+        }
+        String stem=furnishings?"furnishings":water?"water":complete?"complete-power":surface?"surface-power":distribution?"distribution":power?"power":refuges?"refuges":fitted?"doors":"boundary";
         Files.writeString(path.resolve(stem+(gpu?"-opengl.tsv":"-software.tsv")),String.join("\n",rows)+"\n");
         rows.forEach(System.out::println);
     }

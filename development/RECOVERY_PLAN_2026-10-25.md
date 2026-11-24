@@ -2279,3 +2279,7 @@ Surface electrical commit 6340d29f972962992f877869912f594548fc4913 and gallery 4
 ### Northwatch wash-water service
 
 Electrical commit 17cb71947cc247c58a3b67911e27f0d01c0619de and gallery 45402170467 passed on held draft PR 86. The [water checkpoint](levels/rebuild/northwatch-water-pass/checkpoint.json) adds the floor-supported cistern, two live basins and shared west-wall service. Full Java compilation and legacy fixture and sound tests pass. Continue room furnishing, readable records and named case integration.
+
+### Northwatch furnishings and station records
+
+Wash-water commit 78a7542d50da4c76ef003c8f50d5f3311509de9a and gallery 45405248378 passed on held draft PR 86. The [furnishing checkpoint](levels/rebuild/northwatch-furnishing-pass/checkpoint.json) adds eight supported room pieces and two readable station records. Both renderers and live TCP verify the physical reading targets and existing architecture and services. Continue named dispatch, packaged case and finish review.

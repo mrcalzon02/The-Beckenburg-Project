@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 670" role="img">
+<title>Northwatch furnished rooms and readable records</title>
+<style>
+text{fill:#293943;font:16px sans-serif}.title{font-size:27px;font-weight:700}.small{font-size:13px}
+.room{fill:#e2ebef;stroke:#698091;stroke-width:2}.ground{fill:#edf2e8;stroke:#dde4da}
+.well{fill:#aabecd;stroke:#5e7b8f}.furniture{fill:#627e7e;stroke:#31494b}.paper{fill:#fbd983;stroke:#88672d}
+.door,.guide{fill:none}.door{stroke:#356388;stroke-width:5}.guide{stroke:#34816e;stroke-width:2;stroke-dasharray:5 4}
+</style><rect width="920" height="670" fill="#fafcf9"/>
+<text class="title" x="38.00" y="44.00">Northwatch furnishings and station records</text>
+<text class="" x="40.00" y="69.00">Ground floor · north up</text>
+<rect class="ground" x="563.80" y="108.00" width="214.20" height="176.40"/>
+<rect class="ground" x="278.20" y="284.40" width="285.60" height="294.00"/>
+<rect class="room" x="64.00" y="108.00" width="214.20" height="176.40"/>
+<text class="small" x="71.73" y="273.13">Generator shed</text>
+<rect class="room" x="278.20" y="147.20" width="142.80" height="137.20"/>
+<text class="small" x="285.94" y="273.13">Radio</text>
+<rect class="room" x="421.00" y="147.20" width="142.80" height="137.20"/>
+<text class="small" x="428.74" y="273.13">Records</text>
+<rect class="room" x="64.00" y="284.40" width="214.20" height="176.40"/>
+<text class="small" x="71.73" y="449.53">Lab</text>
+<rect class="room" x="64.00" y="460.80" width="214.20" height="117.60"/>
+<text class="small" x="71.73" y="567.13">Cold store</text>
+<rect class="room" x="563.80" y="284.40" width="214.20" height="176.40"/>
+<text class="small" x="571.54" y="449.53">Dorm</text>
+<rect class="room" x="563.80" y="460.80" width="214.20" height="117.60"/>
+<text class="small" x="571.54" y="567.13">Mess</text>
+<rect class="room" x="778.00" y="108.00" width="95.20" height="117.60"/>
+<text class="small" x="785.74" y="214.33">Array shelter</text>
+<rect class="well" x="156.52" y="196.20" width="29.16" height="52.92"/>
+<rect class="well" x="171.10" y="364.27" width="107.10" height="16.66"/>
+<rect class="well" x="563.80" y="364.27" width="107.10" height="16.66"/>
+<polyline class="door" points="112.79,286.79 134.21,286.79"/>
+<polyline class="door" points="281.10,210.66 281.10,220.94"/>
+<polyline class="door" points="160.39,463.19 181.81,463.19"/>
+<polyline class="door" points="275.30,426.26 275.30,436.55"/>
+<polyline class="door" points="160.39,576.01 181.81,576.01"/>
+<polyline class="door" points="343.35,282.01 355.85,282.01"/>
+<polyline class="door" points="423.90,210.66 423.90,220.94"/>
+<polyline class="door" points="486.15,282.01 498.65,282.01"/>
+<polyline class="door" points="560.90,177.58 560.90,195.22"/>
+<polyline class="door" points="664.65,286.79 677.15,286.79"/>
+<polyline class="door" points="664.65,463.19 677.15,463.19"/>
+<polyline class="door" points="566.70,426.26 566.70,436.55"/>
+<polyline class="door" points="664.65,576.01 677.15,576.01"/>
+<polyline class="door" points="780.90,161.66 780.90,171.94"/>
+<rect class="furniture" x="75.44" y="214.08" width="11.86" height="24.01"/>
+<rect class="furniture" x="460.39" y="171.95" width="13.09" height="6.37"/>
+<rect class="furniture" x="74.59" y="513.62" width="2.62" height="8.04"/>
+<rect class="furniture" x="622.70" y="522.54" width="20.23" height="10.78"/>
+<rect class="furniture" x="712.40" y="292.39" width="28.87" height="5.58"/>
+<rect class="furniture" x="826.67" y="119.17" width="9.76" height="2.16"/>
+<rect class="furniture" x="191.15" y="312.13" width="21.78" height="8.23"/>
+<rect class="furniture" x="718.20" y="104.62" width="19.63" height="6.76"/>
+<circle class="paper" cx="467.15" cy="174.95" r="4.6"/>
+<text class="small" x="489.76" y="197.49">Winter relay log</text>
+<circle class="paper" cx="82.66" cy="227.48" r="4.6"/>
+<text class="small" x="105.27" y="250.02">Fuel and heat worksheet</text>
+<polyline class="guide" points="492.40,215.80 492.40,187.38 466.93,187.38"/>
+<polyline class="guide" points="171.10,186.40 123.50,186.40 100.89,186.40 100.89,227.36"/>
+<path class="door" d="M50 629h24"/>
+<text class="small" x="82.00" y="634.00">Existing door</text>
+<path class="guide" d="M270 629h24"/>
+<text class="small" x="302.00" y="634.00">Reading approach</text>
+<rect class="furniture" x="481" y="624" width="16" height="9"/>
+<text class="small" x="505.00" y="634.00">Fitted furnishing</text>
+<circle class="paper" cx="688" cy="629" r="4.6"/>
+<text class="small" x="702.00" y="634.00">Readable record</text>
+</svg>

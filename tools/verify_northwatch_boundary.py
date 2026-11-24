@@ -19,7 +19,7 @@ def draw_plan(meta,layout):
         return 128+7*x,110+7*z
 
     body=[svg_text(30,42,"Northwatch Research Station","title"),
-          svg_text(30,69,"Built perimeter and retained ground-level approaches ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· north up","small")]
+          svg_text(30,69,"Built perimeter and retained ground-level approaches ÃƒÆ’Ã†â€™ÃƒÂ¢Ã¢â€šÂ¬Ã…Â¡ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â· north up","small")]
     for zone in layout["zones"]:
         if zone["y"]!=0:
             continue
@@ -97,16 +97,17 @@ def main():
     stage.add_argument("--surface-power",action="store_true")
     stage.add_argument("--complete-power",action="store_true")
     stage.add_argument("--water",action="store_true")
+    stage.add_argument("--furnishings",action="store_true")
     args=parser.parse_args()
-    fitted=args.doors or args.refuges or args.power or args.distribution or args.surface_power or args.complete_power or args.water
-    stage_name="water" if args.water else "complete-power" if args.complete_power else "surface-power" if args.surface_power else "distribution" if args.distribution else "power" if args.power else "refuges" if args.refuges else "doors"
+    fitted=args.doors or args.refuges or args.power or args.distribution or args.surface_power or args.complete_power or args.water or args.furnishings
+    stage_name="furnishings" if args.furnishings else "water" if args.water else "complete-power" if args.complete_power else "surface-power" if args.surface_power else "distribution" if args.distribution else "power" if args.power else "refuges" if args.refuges else "doors"
     review=PACKET
     if fitted:
-        name={"water":"northwatch-water-pass","complete-power":"northwatch-complete-power-pass","surface-power":"northwatch-surface-power-pass","distribution":"northwatch-distribution-pass","power":"northwatch-power-pass","refuges":"northwatch-refuge-pass","doors":"northwatch-door-pass"}[stage_name]
+        name={"furnishings":"northwatch-furnishing-pass","water":"northwatch-water-pass","complete-power":"northwatch-complete-power-pass","surface-power":"northwatch-surface-power-pass","distribution":"northwatch-distribution-pass","power":"northwatch-power-pass","refuges":"northwatch-refuge-pass","doors":"northwatch-door-pass"}[stage_name]
         review=PACKET.parents[1]/name/"wld-08"
     meta=json.loads((PACKET/"construction.json").read_bytes()) if fitted else prepare()
-    if args.refuges or args.power or args.distribution or args.surface_power or args.complete_power or args.water:
-        stem="station-with-water" if args.water else "station-with-complete-power" if args.complete_power else "station-with-surface-power" if args.surface_power else "station-with-distribution" if args.distribution else "station-with-power" if args.power else "station-with-refuges"
+    if args.refuges or args.power or args.distribution or args.surface_power or args.complete_power or args.water or args.furnishings:
+        stem="station-with-furnishings" if args.furnishings else "station-with-water" if args.water else "station-with-complete-power" if args.complete_power else "station-with-surface-power" if args.surface_power else "station-with-distribution" if args.distribution else "station-with-power" if args.power else "station-with-refuges"
         source=json.loads((review/"construction.json").read_bytes())["exports"]
         meta["glb_sha256"]=source[(review/(stem+".glb")).relative_to(ROOT).as_posix()]
         meta["physics_sha256"]=source[(review/(stem+".hcs2")).relative_to(ROOT).as_posix()]
@@ -116,15 +117,15 @@ def main():
     jar=ROOT/"build/beckenburg-game.jar"
     gpu=ROOT/"gpu-client/target/BeckenburgGPU.jar"
     tools=ROOT/"tools/java"
-    names=("NorthwatchBoundaryReview.java","NorthwatchDoorRuntime.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java","CemeteryRefugeReview.java","NorthwatchPowerReview.java","WharfPowerChecks.java","NorthwatchDistributionReview.java","NorthwatchWaterReview.java")
+    names=("NorthwatchBoundaryReview.java","NorthwatchDoorRuntime.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java","CemeteryRefugeReview.java","NorthwatchPowerReview.java","WharfPowerChecks.java","NorthwatchDistributionReview.java","NorthwatchWaterReview.java","NorthwatchFurnishingReview.java")
     subprocess.run([str(java/"javac.exe"),"-encoding","UTF-8","-cp",str(jar),"-d",str(build),
                     *(str(tools/name) for name in names)],cwd=ROOT,check=True)
     # Compile the shared fixture binding from the checkout over the baseline
     # game package so the staged native review uses the same production code.
-    if args.water:
+    if args.water or args.furnishings:
         game=ROOT/"src/main/java/org/beckenburg"
         subprocess.run([str(java/"javac.exe"),"--release","17","-encoding","UTF-8","-cp",str(jar),"-d",str(build),
-                        str(game/"HauntedFixtures.java"),str(game/"InteractionFocus.java")],cwd=ROOT,check=True)
+                        str(game/"HauntedFixtures.java"),str(game/"InteractionFocus.java"),str(game/"SiteStories.java")],cwd=ROOT,check=True)
     cp=os.pathsep.join(map(str,(build,jar,gpu) if args.gpu else (build,jar)))
     subprocess.run([str(java/"java.exe"),"-Djava.awt.headless=true","-Xmx3g","-cp",cp,
                     "org.beckenburg.NorthwatchBoundaryReview",str(review),meta["glb_sha256"],meta["physics_sha256"],

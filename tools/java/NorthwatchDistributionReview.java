@@ -81,7 +81,8 @@ final class NorthwatchDistributionReview {
     }
 
     static void live(HouseMap map,HouseMap replica,NativeInvestigationScene scene,LanHost host,Peer leader,
-                     Peer witness,Vec at,Map<String,List<Vec>> routes,List<String> report)throws Exception {
+                     Peer witness,Vec at,Map<String,List<Vec>> routes,List<NorthwatchFurnishingReview.Record> stories,
+                     List<String> report)throws Exception {
         var lighting=(RoomLighting)NativeSchoolInteriorReview.field(host,"lights");
         at=NorthwatchDoorRuntime.walk(leader,at,new Vec(11.9,0,11.03),new Vec(11,0,13),
             new Vec(11,0,16),new Vec(7,0,16),new Vec(7,0,25.05));
@@ -106,6 +107,7 @@ final class NorthwatchDistributionReview {
         at=NorthwatchDoorRuntime.walk(leader,at,new Vec(21.44,0,18.4),new Vec(23,0,19),new Vec(31.3,0,19));
         at=NorthwatchDoorRuntime.open(map,replica,scene,leader,witness,at,846);
         at=switchRoom(map,leader,witness,lighting,at,routes,CIRCUITS.get(2),report);
+        if(!stories.isEmpty())at=NorthwatchFurnishingReview.readRecords(map,leader,at,routes,stories,report);
         if(surface)at=visitEast(map,replica,scene,leader,witness,lighting,at,routes,report);
         if(routes.containsKey("Northwatch-switch-tunnel"))
             visitLowerAndYard(map,replica,scene,leader,witness,lighting,at,routes,report);

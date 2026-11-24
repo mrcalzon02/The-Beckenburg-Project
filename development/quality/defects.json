@@ -7756,6 +7756,28 @@
       "action": "Select an existing legacy site containing an authored phone and run the same physical aim, manual and ghost assertions.",
       "older_maps": "Avoid assuming all map revisions have the same optional fixture inventory.",
       "evidence": "src/test/java/org/beckenburg/FixtureSoundscapeTest.java"
+    },
+    {
+      "id": "DEV-700",
+      "title": "Northwatch lacked ordinary furnishings and supported readable records",
+      "status": "NORTHWATCH_STAGED_FURNISHINGS_AND_STATION_RECORDS_VERIFIED",
+      "affected": "WLD-08 lab, shed, records, cold store, mess, dorm, shelter and instrument array",
+      "symptom": "The principal rooms had only representative fitout, and neither the relay nor heat records could be read in place.",
+      "cause": "The earlier rebuild completed geometry, electrical and water systems before case dress.",
+      "action": "Seat eight canonical furnishings, bind two desktop records and measure their actual approach and aim.",
+      "older_maps": "Verify physical bearings, room clearance, actual record aim and repeated host authorization.",
+      "evidence": "development/levels/rebuild/northwatch-furnishing-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-701",
+      "title": "The student desk source included sixteen zero-area triangles",
+      "status": "NORTHWATCH_PLACED_DESK_NATIVE_COLLISION_VERIFIED",
+      "affected": "WLD-08 records desk and future native imports of level_student_desk",
+      "symptom": "The first Northwatch furniture export failed the native collision reader with Degenerate native triangle.",
+      "cause": "Sixteen faces at the desk corners contained repeated vertices and no area.",
+      "action": "Remove exactly those sixteen faces from the placed mesh, then verify renderer and native collision against the reimported GLB.",
+      "older_maps": "Audit this prop in earlier map exports for degenerate triangles before runtime promotion.",
+      "evidence": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/construction.json"
     }
   ],
   "audit_categories": [

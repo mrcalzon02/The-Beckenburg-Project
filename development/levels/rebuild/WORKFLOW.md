@@ -1539,3 +1539,7 @@ Twelve circuits now serve the eight occupied surface interiors, two tunnel rooms
 ### Northwatch wash-water service
 
 The shed cistern and two floor-supported basins now use the ordinary running-water effect, sound and host authority. The gravity main follows the west wall through a sealed sleeve. Waste branches terminate in capped below-grade stubs. The two real basin approaches, twelve electrical circuits, doors and three refuges pass in the same build. [Plan](northwatch-water-pass/wash-water-plan.svg) / [Checkpoint](northwatch-water-pass/checkpoint.json)
+
+### Northwatch furnishings and station records
+
+Eight supported pieces and two desk records now serve the fitted station. Both renderers verify physical aim at standing and crouched eye heights. In real TCP the investigator reaches the shed and records room from the van and reads both papers. Named dispatch and packaged case review remain open. [Plan](northwatch-furnishing-pass/furnished-station-plan.svg) / [Checkpoint](northwatch-furnishing-pass/checkpoint.json)

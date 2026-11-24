@@ -23,6 +23,8 @@ public final class SiteStories {
    "The parish kept separate registers for numbered plots and memorials. The caretaker maintained the grounds and both stairs to the ossuary. A rescue party used the old register to account for missing people in late 2022.");
   case "wld-07-mortuary"->new Identity("Saint Bartholomew's Cemetery and Vale Mortuary","Cemetery lane, Northern Woodlands",
    "Vale Mortuary later opened beside the burial grounds, with a public entrance and a separate vehicle receiving bay. The visitor registry and the parish register record different kinds of arrivals.");
+  case "wld-08"->new Identity("Northwatch Research Station","Northwatch service road, Northern Expanse",
+   "An insulated research station kept weather and radio logs. After the first attacks the remaining crew rationed heat and tried to re-establish a safe link.");
   default->new Identity("Beckenburg site","Beckenburg", "Building history not yet authored.");};}
  public static Document document(String site,String id){site=canonical(site);if(id.startsWith("ROOM_"))return LegacySiteStories.document(site,Integer.parseInt(id.substring(5)));if(id.equals("EMERGENCE"))return WorldLore.fieldRecord(site);if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
   case "TRANSMISSION"->lookoutDocument(site,id,"Ranger relay transcript",List.of(
@@ -57,6 +59,14 @@ public final class SiteStories {
    "Visitors sign in at reception and wait for the attendant before entering the viewing room.",
    "The lined entries are names of visitors. Transfers are recorded on a separate sheet kept at the receiving bay.",
    "Late 2022. The attendant has circled three addresses for the next search party and written a time to meet at the cemetery gate."));
+  case "WINTER_RELAY_LOG"->northwatchDocument(site,id,"Winter relay log",List.of(
+   "Northwatch operations record, late 2022. The regular weather call moved to the emergency channel after the road was cut.",
+   "The instrument array still sent hourly readings. The signal faded when ice loaded the mast, then returned after the crew cleared it.",
+   "The last two replies are marked unconfirmed. The next crew should compare this log with the fuel and heat worksheet in the shed."));
+  case "FUEL_AND_HEAT_WORKSHEET"->northwatchDocument(site,id,"Fuel and heat worksheet",List.of(
+   "Shed copy. Keep the tunnel lamps on during travel and run the service court lights only while the crew crosses.",
+   "The spare fuel went to the generator. A crew member marked the fuel level again after the last interrupted relay call.",
+   "Keep water in the cistern and the lab approach clear for the relief team."));
   case "HISTORY"->new Document(id,place.title(),List.of(place.address(),place.history(),"Local history and household records. These details do not identify the haunting."));
   case "LETTERS"->new Document(id,site.equals("school")?"Caretaker's service papers":"Tied correspondence",site.equals("house")?List.of("17 Briar Lane. Mrs E. Vale, 1983.","Please keep Mother's mending tin. The little blue lid still fits, and her needles are inside.","The plumbing men return on Thursday. Leave the cellar laundry clear; the old photographs can stay on the sideboard."):
    site.equals("farmhouse")?List.of("Hollowmere Farm, Mill Road. Spring work list.","Put the clean linen on the yard line. Boots stay by the shed, not beside the upstairs washbasin.","The 1947 repair receipts are tied beneath these letters. Keep them with the farm papers."):
@@ -64,6 +74,10 @@ public final class SiteStories {
   case "MENDING"->new Document(id,"Inherited mending tin",List.of(place.address(),"A faded tin, wooden thread bobbins, crossed scissors and carefully saved needles. The lid has been kept with it.","Useful things outlived the people who first bought them; the household kept repairing instead of replacing."));
   case "BOOTS"->new Document(id,"Work boots by the laundry",List.of(place.address(),"Mud-darkened leather, worn soles and re-laced eyelets. Left beside the washing area to dry before the next day's work."));
   default->throw new IllegalArgumentException("Unknown readable object");};}
+ private static Document northwatchDocument(String site,String id,String title,List<String> lines){
+  if(!site.equals("wld-08"))throw new IllegalArgumentException("Unknown readable object");
+  return new Document(id,title,lines);
+ }
  private static Document cemeteryDocument(String site,String id,boolean annexOnly,String title,List<String> lines){
   if(!site.equals("wld-07-mortuary")&&(annexOnly||!site.equals("wld-07")))
    throw new IllegalArgumentException("Unknown readable object");

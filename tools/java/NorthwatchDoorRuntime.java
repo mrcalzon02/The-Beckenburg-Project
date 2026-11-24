@@ -52,7 +52,7 @@ final class NorthwatchDoorRuntime {
     }
 
     static void live(LevelDefinition level,NativeInvestigationScene scene,List<Vec> serviceRoute,java.util.Map<String,List<Vec>> distributionRoutes,
-                     List<String> report)throws Exception {
+                     List<NorthwatchFurnishingReview.Record> stories,List<String> report)throws Exception {
         var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
         var replica=new HouseMap(HouseMap.Site.USER,level,null,scene);
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
@@ -83,7 +83,8 @@ final class NorthwatchDoorRuntime {
             if(distributionRoutes!=null){
                 if(distributionRoutes.containsKey("Northwatch-switch-shed-wash-basin"))
                     at=NorthwatchWaterReview.liveShed(map,leader,witness,at,distributionRoutes,report);
-                NorthwatchDistributionReview.live(map,replica,scene,host,leader,witness,at,distributionRoutes,report);
+                if(!stories.isEmpty())at=NorthwatchFurnishingReview.readShed(map,leader,at,distributionRoutes,stories,report);
+                NorthwatchDistributionReview.live(map,replica,scene,host,leader,witness,at,distributionRoutes,stories,report);
             }
         }
     }

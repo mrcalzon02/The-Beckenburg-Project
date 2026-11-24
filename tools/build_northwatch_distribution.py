@@ -117,14 +117,14 @@ def install(assembly):
                 canonical_assets={key:sha(ASSETS/(key+".glb")) for key in ("light_switch_1","level_utility_light")})
 
 
-def build(parent_dir=PARENT, output=OUT, rooms=ROOMS, fit=install, stem="station-with-distribution"):
+def build(parent_dir=PARENT, output=OUT, rooms=ROOMS, fit=install, stem="station-with-distribution", assembly_factory=Assembly):
     parent=json.loads((parent_dir/"checkpoint.json").read_bytes())
     for name,digest in (parent["exports"]|parent["evidence"]).items():
         assert sha(ROOT/name)==digest,name
     old={Path(name).suffix[1:]:ROOT/name for name in parent["exports"]}
     bpy.ops.wm.open_mainfile(filepath=str(old["blend"]))
     bpy.context.preferences.filepaths.save_version=0
-    assembly=Assembly()
+    assembly=assembly_factory()
     receipt=fit(assembly)
     for obj in assembly.built:
         obj.name="Northwatch distribution "+obj.name.removeprefix("College ")
@@ -149,6 +149,7 @@ def build(parent_dir=PARENT, output=OUT, rooms=ROOMS, fit=install, stem="station
     rows=[("SERVICE",s["id"],s["type"],s["room"],*s["position"],s["yaw"],s["style"]) for s in assembly.sockets]
     for name,_,_,_,route in rooms:
         rows.extend(("POINT",f"Northwatch-switch-{name}",*p) for p in route)
+    rows.extend(receipt.pop("runtime_rows",[]))
     (output/"runtime-input.tsv").write_bytes((prior/"runtime-input.tsv").read_bytes()
         +"".join("\t".join(map(str,row))+"\n" for row in rows).encode())
     (output/"door-schedule.tsv").write_bytes((prior/"door-schedule.tsv").read_bytes())
