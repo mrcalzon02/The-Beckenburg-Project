@@ -1,0 +1,19 @@
+check	result
+native_scene_revision	dbff609e9b46efbef6fc51e44e1550740ce36e1af3878fee6bb9342825965595
+collision_sha256	8b2479c800316bb74223160b7e47dced971d6916a3e9961f511995f36dd6a41d
+level_revision	dbff609e9b46efbef6fc51e44e1550740ce36e1af3878fee6bb9342825965595-501c9f5565c03395
+water_revision	d35c1760d3a56a9ab743116a3e29347ae377e896e0b21a2c505e4a57eacce01f
+renderer	Software
+retained_fitted_doors	14
+dam-office-cupboard_protected_floor_samples	69
+dam-workshop-cupboard_protected_floor_samples	69
+dam-plant-cupboard_protected_floor_samples	69
+dam_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+van_to_controls_and_back_both_postures	16
+dam-switchgear-light-41.75	2.6996139134430304 supplied / 0.187 stopped / 0.187 tripped / 0.187 switch open
+dam-switchgear-light-49.2	2.6996139134430304 supplied / 0.187 stopped / 0.187 tripped / 0.187 switch open
+dam-turbine-north-light-53.2	2.674897778179365 supplied / 0.187 stopped / 0.187 tripped / 0.187 switch open
+dam-turbine-north-light-56.4	2.6748977781793655 supplied / 0.187 stopped / 0.187 tripped / 0.187 switch open
+switchgear-supply_same_camera_response	308376 changed pixels / 2.3263571055381402 mean RGB
+turbine-lighting_same_camera_response	421044 changed pixels / 4.032648249738767 mean RGB
+live_four_peer_auxiliary_power	PASS van, three physical leaves in blackout, ghost trip, source stop/restart, reconnect, breaker and both switches

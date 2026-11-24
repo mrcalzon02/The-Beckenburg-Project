@@ -9226,3 +9226,7 @@ The switchgear slab carries the existing generator and distribution models. Supp
 ### DEV-708 and DEV-709 · Blackwater headpond and west wing support
 
 The north basin now shows water at the surveyed contour, with an actual screened and founded intake. The older exposed void under the west wing was reproduced in the source and is now occupied by the bank-keyed bearing plinth. Runtime rays close along the full tested faces. The cap, original floor levels, doors and established journeys remain verifiable. [Evidence](../levels/rebuild/dam-reservoir-pass/checkpoint.json)
+
+### DEV-710 · Blackwater Dam covered hydraulic connection
+
+A 150.3 m closed steel carrier now joins the actual intake to the channel receiver. Its supported covers fit two bounded cuts and the original isolation gate closes the receiving chamber. Both renderer runs verify 4,275 clear bore rays and player exclusion. [Evidence](../levels/rebuild/dam-carrier-pass/checkpoint.json)

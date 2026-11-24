@@ -2315,3 +2315,7 @@ Refuge commit de8eca0565808b69ad557e546d1f313ac5eed860 passed gallery 4542810435
 ### Blackwater Dam headpond, screened intake and west wing foundation
 
 Auxiliary power commit 7be36391f215fb65152813a19c1fdaf0c4a2ce97 and gallery 45431430388 passed on draft PR 86. The [reservoir checkpoint](levels/rebuild/dam-reservoir-pass/checkpoint.json) records wet and dry shared-renderer checks, a supported intake and west slab bearing, and retained live blackout and source recovery. Continue the covered carrier, remaining utilities, and named packaged gate.
+
+### Blackwater Dam covered carrier and isolated receiving headwall
+
+Reservoir and foundation commit 4f515317d7b6f2dc170e0d8e0bb825be4f115513 passed gallery 45435402489 on draft PR 86. The [carrier checkpoint](levels/rebuild/dam-carrier-pass/checkpoint.json) records the built connection, supported cover and retained closed sluice, matching render and physical checks, and preserved TCP blackout behavior. Continue remaining supported utilities, finish and named package acceptance.

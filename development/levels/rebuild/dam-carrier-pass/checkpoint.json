@@ -1,0 +1,119 @@
+{
+  "id": "WLD-09",
+  "status": "DAM_COVERED_HYDRAULIC_CARRIER_AND_ISOLATED_TERMINALS_STAGED",
+  "other_roster_entries_preserved": 28,
+  "prior_commit": "4f515317d7b6f2dc170e0d8e0bb825be4f115513",
+  "prior_gallery": 45435402489,
+  "covered_carrier": {
+    "length_m": 150.304,
+    "stations": 476,
+    "geometric_stations": 137,
+    "inner_radius_m": 0.218,
+    "outer_radius_m": 0.27,
+    "minimum_buried_cover_m": 0.584848,
+    "buried_stations": 437,
+    "owned_personnel_space_crossings": 0,
+    "source_terminal": [
+      28.7,
+      -4.04,
+      -28
+    ],
+    "receiving_mouth": [
+      73.89,
+      -6.93,
+      44.74
+    ],
+    "isolation_leaf": "existing closed upstream tailrace sluice",
+    "active_hydraulic_simulation": false
+  },
+  "terrain_benches": {
+    "intake": [
+      30.18,
+      -28.32,
+      31.66,
+      -27.68
+    ],
+    "receiving": [
+      73.56,
+      45.1,
+      74.22,
+      46.3
+    ],
+    "locally_cut_faces": 10,
+    "amended_native_records": {
+      "terrain-site-1-0:surface": 8,
+      "Blackwater joined valley terrain": 2
+    },
+    "seated_pipe_shoes": 4
+  },
+  "retained_native_records": 765,
+  "added_native_records": 24,
+  "joined_journeys": 5,
+  "software": {
+    "native_scene_revision": "dbff609e9b46efbef6fc51e44e1550740ce36e1af3878fee6bb9342825965595",
+    "collision_sha256": "8b2479c800316bb74223160b7e47dced971d6916a3e9961f511995f36dd6a41d",
+    "level_revision": "dbff609e9b46efbef6fc51e44e1550740ce36e1af3878fee6bb9342825965595-501c9f5565c03395",
+    "water_revision": "d35c1760d3a56a9ab743116a3e29347ae377e896e0b21a2c505e4a57eacce01f",
+    "renderer": "Software",
+    "carrier_stations": "476",
+    "unobstructed_axial_and_offset_rays": "4275",
+    "steel_wall_cross_sections_rejected": "1264",
+    "hunter_capsules_rejected": "190",
+    "occupied_room_crossings": "0",
+    "intake_new_open_bore_and_closed_downstream_isolation": "PASS",
+    "retained_intake_and_tailrace_water_pixels": "166453/25752"
+  },
+  "opengl": {
+    "native_scene_revision": "dbff609e9b46efbef6fc51e44e1550740ce36e1af3878fee6bb9342825965595",
+    "collision_sha256": "8b2479c800316bb74223160b7e47dced971d6916a3e9961f511995f36dd6a41d",
+    "level_revision": "dbff609e9b46efbef6fc51e44e1550740ce36e1af3878fee6bb9342825965595-501c9f5565c03395",
+    "water_revision": "d35c1760d3a56a9ab743116a3e29347ae377e896e0b21a2c505e4a57eacce01f",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+    "carrier_stations": "476",
+    "unobstructed_axial_and_offset_rays": "4275",
+    "steel_wall_cross_sections_rejected": "1264",
+    "hunter_capsules_rejected": "190",
+    "occupied_room_crossings": "0",
+    "intake_new_open_bore_and_closed_downstream_isolation": "PASS",
+    "retained_intake_and_tailrace_water_pixels": "166392/25750"
+  },
+  "retained_live_services": "PASS van, three physical leaves in blackout, ghost trip, source stop/restart, reconnect, breaker and both switches",
+  "remaining_acceptance": [
+    "Remaining electrical, mechanical and water service distribution",
+    "Final surfaces, canonical furnishings and stories",
+    "Named case, installed, performance, release evidence"
+  ],
+  "project_bytes_sha256": {
+    "development/levels/rebuild/dam-carrier-pass/README.md": "cb59313fb1f89a4012f337ce2a8677a15dc68727497fdc7bc92253492f3ada65",
+    "development/levels/rebuild/dam-carrier-pass/roster.json": "12e41063cd6cbef235142c8e43fe658a13ba4421aac8a365162f42101fe2edef",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/blackwater.water": "aff5c7744467cc5ce880756607be1738d075f1d72389f1b93ef8e89d48f3b61c",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/boundary-body-review.tsv": "a2fa675ff8c780e1e6c6bfbc4d1443f5e5091fa944ffff82de8bd8b3a8c81ea8",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/captures/opengl/covered-intake-from-bank.png": "6e33b7b5a75d55557e631ec0a01095a8d3bdbe286ff35d0e0fa92ef1c57621e7",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/captures/opengl/receiving-headwall-from-east-bank.png": "ac3b7405bd0d1ab595d4b7cf44f6b86a6997c5aa58429a3ff2fb08269bf12af8",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/captures/opengl/retained-isolated-tailrace.png": "9a53ad0f018b6d42704a6e71f25e361959d87c6ace6890a8eda2acf2465a91cd",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/captures/software/covered-intake-from-bank.png": "3bf961ae5d233cf2a7da110848d5b84cddb0a8ec05b66a40f50d76e82f780fb6",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/captures/software/receiving-headwall-from-east-bank.png": "1a507b278fec14fdde6e5d8c10713ea3e5396898462940afa117626c16775025",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/captures/software/retained-isolated-tailrace.png": "7594c64625db3306e6384d2ae026020fb2aff40764d80c46314e53063d941eb1",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/captures/structure/carrier-receiving-cutaway.png": "0208f2e978565001d8081664a9b61bc5c5001da2a2e9feba6d2cd65dcb03d672",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/captures/structure/intake-fitted-cover.png": "7068df5b6196346fb70f64690564528a13ee1dd0abf03a63b5c17929629f6bda",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/captures/structure/tailrace-receiving-cover.png": "40720e11ee5d7e240e2fc49ab6ee82f76ac0b031ebdd0b2f7a29c475a3a4ad4e",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/carrier-opengl.tsv": "23125fdbe0fc5d75578c587e6f639d8965f2a804de1aab7509ce00a84135be9c",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/carrier-plan-and-section.svg": "34203e97836835dd034c5146e887d6f96779243e4fcfa42fbc3618d4b4317cb8",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/carrier-profile.tsv": "40e868c7d3a39d5c78ace490c42130148152a5d7def2abc75068c2d2c8e14e70",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/carrier-software.tsv": "f410a2dc81020fd1fab2a66d54c3d0079e86ca62655f2c3e0536667a94c66001",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/construction.json": "20df0475d71dd1df21b7720664e4f88c03630775967da66c6fdab3650f137e6e",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/dam-with-carrier.blend": "1aaa56dfbed99b82f9ede127e610f2a529816af0b3bcc25a55cbd421dff537f1",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/dam-with-carrier.glb": "a3c32d895465b0bb825957a853f32921b2f95ce9881d2e86165d461a6b9648b6",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/dam-with-carrier.hcs2": "8b2479c800316bb74223160b7e47dced971d6916a3e9961f511995f36dd6a41d",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/door-schedule.tsv": "e211d1d2fb065c054c658b88feeb34f031f5a8aba8aeebabc9a8a1feff2c6047",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/electrical-schedule.tsv": "bd5eaa1091b867ea9133601247d88f54922466dd1d9678cebe0cd017239940ff",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/joined-journeys.tsv": "be7e9c5b84166a8c38eeffaa8ce07ed31b3b2a37895fc22922ab3ba283bcd5ff",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/retained-power-live.tsv": "117d5c9710a7756ba6362f4e6288167de0c10ce240c661d268c9395a8d634ddb",
+    "development/levels/rebuild/dam-carrier-pass/wld-09/runtime-input.tsv": "0989fa834e68d8faf60ee5b336c338189359a6d6652efa606c009a292bfed800",
+    "development/levels/rebuild/dam-door-pass/wld-09/authored-layout.json": "087227b49dbadf20f68fd632ae5870ccb4734f5d168fcfb464a6bc89a56224db",
+    "tools/build_dam_carrier.py": "389d3a4bdae1c827e6e6d1f4bdfd5a19a6f5d49f3679dcea3810552786db2f70",
+    "tools/dam_carrier_terrain.py": "38784b3c3b321fce0895194d4150513ba82f45bf59c2aa4721a9bee69f0d2799",
+    "tools/java/DamCarrierReview.java": "00018e99f00208deefcf6bddbc660047f10451349e2afddc27b1539ce95fde54",
+    "tools/review_dam_carrier_structure.py": "6a74b2bd7c4138f0f6c2159e1eae7cccf3cc23ac8e9503a76a98e28e9d25caa6"
+  }
+}

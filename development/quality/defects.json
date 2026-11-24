@@ -7866,6 +7866,17 @@
       "action": "Fit a continuous bank-keyed foundation, enclosed structural fill, slab cap and wall stems joined to the stair core. Verify matching before/after captures and old open rays.",
       "older_maps": "Inspect all elevated exterior slabs from their actual lower ground and test foundation continuity along the full cut perimeter.",
       "evidence": "development/levels/rebuild/dam-reservoir-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-710",
+      "title": "Blackwater Dam intake and tailrace lacked a covered carrier",
+      "status": "DAM_COVERED_HYDRAULIC_CARRIER_AND_ISOLATED_TERMINALS_STAGED",
+      "affected": "WLD-09 intake, exterior banks and tailrace receiving end",
+      "symptom": "The reservoir ended at a temporary capped plate, with no installed link to the downstream works.",
+      "cause": "The two water bodies and terminal structures were staged independently.",
+      "action": "Install the sleeve and continuous steel bore under surveyed grade, fit the small transition benches and supports, and keep the established downstream isolation leaf.",
+      "older_maps": "Trace utility volumes from exact end to end, including the local transition cuts, cover, access exclusion and original maintenance controls.",
+      "evidence": "development/levels/rebuild/dam-carrier-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

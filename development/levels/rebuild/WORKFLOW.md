@@ -1575,3 +1575,7 @@ The measured switchgear slab and partition determine the generator, cabinet, wal
 ### Blackwater Hydroelectric Dam north headpond and west foundations
 
 The north headpond uses the existing landscape depression. A dry ring encloses it beyond the playable boundary and the screened intake sits on supported construction. The west office and control slabs now bear on a continuous plinth tying the banks to the stair core. Both renderers verify the wet and dry states and all fourteen doors. The native route and perimeter replays, all three refuge thresholds and the final four-peer power replay pass. Build the covered carrier between the two hydraulic terminals next. [Shoreline plan](dam-reservoir-pass/wld-09/headpond-plan.svg) · [Checkpoint](dam-reservoir-pass/checkpoint.json)
+
+### Blackwater Hydroelectric Dam covered carrier
+
+The reservoir intake now opens into a covered conduit that skirts the investigation compound and terminates behind the existing closed tailrace gate. Both renderer runs and the shared collision agree on the open bore and route exclusion. Ten terrain triangles needed local trimming at the founded terminal benches. Five joined routes, the perimeter, three refuges, all operating doors and the four-player blackout replay passed on the exact export. [Plan and section](dam-carrier-pass/wld-09/carrier-plan-and-section.svg) · [Checkpoint](dam-carrier-pass/checkpoint.json)

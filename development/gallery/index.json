@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12166,
+  "count": 12175,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -112684,6 +112684,96 @@
       "height": 580,
       "bytes": 413854,
       "sha256": "1f061b081517e04dd6607c85e8b7aa7517e937b03fd1b635a5268cb96cc08e0b"
+    },
+    {
+      "path": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/opengl/covered-intake-from-bank.png",
+      "url": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/opengl/covered-intake-from-bank.png",
+      "title": "Covered intake from bank",
+      "kind": "Blackwater Dam covered carrier and retained water in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 417583,
+      "sha256": "6e33b7b5a75d55557e631ec0a01095a8d3bdbe286ff35d0e0fa92ef1c57621e7"
+    },
+    {
+      "path": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/opengl/receiving-headwall-from-east-bank.png",
+      "url": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/opengl/receiving-headwall-from-east-bank.png",
+      "title": "Receiving headwall from east bank",
+      "kind": "Blackwater Dam covered carrier and retained water in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 371972,
+      "sha256": "ac3b7405bd0d1ab595d4b7cf44f6b86a6997c5aa58429a3ff2fb08269bf12af8"
+    },
+    {
+      "path": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/opengl/retained-isolated-tailrace.png",
+      "url": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/opengl/retained-isolated-tailrace.png",
+      "title": "Retained isolated tailrace",
+      "kind": "Blackwater Dam covered carrier and retained water in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 372384,
+      "sha256": "9a53ad0f018b6d42704a6e71f25e361959d87c6ace6890a8eda2acf2465a91cd"
+    },
+    {
+      "path": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/software/covered-intake-from-bank.png",
+      "url": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/software/covered-intake-from-bank.png",
+      "title": "Covered intake from bank",
+      "kind": "Blackwater Dam covered carrier and retained water in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 419054,
+      "sha256": "3bf961ae5d233cf2a7da110848d5b84cddb0a8ec05b66a40f50d76e82f780fb6"
+    },
+    {
+      "path": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/software/receiving-headwall-from-east-bank.png",
+      "url": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/software/receiving-headwall-from-east-bank.png",
+      "title": "Receiving headwall from east bank",
+      "kind": "Blackwater Dam covered carrier and retained water in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 387706,
+      "sha256": "1a507b278fec14fdde6e5d8c10713ea3e5396898462940afa117626c16775025"
+    },
+    {
+      "path": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/software/retained-isolated-tailrace.png",
+      "url": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/software/retained-isolated-tailrace.png",
+      "title": "Retained isolated tailrace",
+      "kind": "Blackwater Dam covered carrier and retained water in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 387476,
+      "sha256": "7594c64625db3306e6384d2ae026020fb2aff40764d80c46314e53063d941eb1"
+    },
+    {
+      "path": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/structure/carrier-receiving-cutaway.png",
+      "url": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/structure/carrier-receiving-cutaway.png",
+      "title": "Carrier receiving cutaway",
+      "kind": "Blackwater Dam isolated carrier and sluice cutaway",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1023452,
+      "sha256": "0208f2e978565001d8081664a9b61bc5c5001da2a2e9feba6d2cd65dcb03d672"
+    },
+    {
+      "path": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/structure/intake-fitted-cover.png",
+      "url": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/structure/intake-fitted-cover.png",
+      "title": "Intake fitted cover",
+      "kind": "Blackwater Dam assembled covered carrier terminal structural source",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1060635,
+      "sha256": "7068df5b6196346fb70f64690564528a13ee1dd0abf03a63b5c17929629f6bda"
+    },
+    {
+      "path": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/structure/tailrace-receiving-cover.png",
+      "url": "development/levels/rebuild/dam-carrier-pass/wld-09/captures/structure/tailrace-receiving-cover.png",
+      "title": "Tailrace receiving cover",
+      "kind": "Blackwater Dam assembled covered carrier terminal structural source",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1071426,
+      "sha256": "40720e11ee5d7e240e2fc49ab6ee82f76ac0b031ebdd0b2f7a29c475a3a4ad4e"
     },
     {
       "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-exterior-before.png",
