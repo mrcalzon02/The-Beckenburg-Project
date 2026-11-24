@@ -1,0 +1,21 @@
+check	result
+native_scene_revision	776bfc774209072f39f5b9850894c2b3c6c584cc512c6aeac7baa57f21496595
+level_revision	776bfc774209072f39f5b9850894c2b3c6c584cc512c6aeac7baa57f21496595-6954156789f703d0
+collision_sha256	0c7acf61448a2bea8af7a03ee18af666c58e26a0b1d189b4f9ab40e3fbd0ed8e
+renderer	Software
+door_930	PASS public gate closed, open, replicated, acoustic and optical
+door_931	PASS inner gatehouse door closed, open, replicated, acoustic and optical
+door_933	PASS south garden door closed, open, replicated, acoustic and optical
+door_936	PASS north garden door closed, open, replicated, acoustic and optical
+door_938	PASS archive cloister door closed, open, replicated, acoustic and optical
+door_939	PASS vestry cloister door closed, open, replicated, acoustic and optical
+door_940	PASS archive vestry door closed, open, replicated, acoustic and optical
+door_941	PASS dormitory cloister door closed, open, replicated, acoustic and optical
+door_942	PASS tower cloister door closed, open, replicated, acoustic and optical
+door_943	PASS tower service door closed, open, replicated, acoustic and optical
+door_944	PASS dining hall cloister door closed, open, replicated, acoustic and optical
+door_945	PASS refectory receiving door closed, open, replicated, acoustic and optical
+door_946	PASS memorial chamber door closed, open, replicated, acoustic and optical
+directional_route_replays	84
+four_peer_van_to_herb_court	PASS public gate, inner gate and garden leaf replicated
+four_peer_garden_to_lower_memorial_chamber	PASS existing stairs and five real leaves from cargo

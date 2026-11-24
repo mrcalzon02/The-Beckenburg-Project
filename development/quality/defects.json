@@ -7899,6 +7899,17 @@
       "action": "Package the measured source and bind its named entries behind the existing review-only convention. Check the package from the real named host and client paths.",
       "older_maps": "Verify exact archived sources, stable campaign order, ordinary van departure and named revision rejection before any public unlock.",
       "evidence": "development/levels/rebuild/dam-named-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-713",
+      "title": "Monastery of Ashen Bells had measured frames without working door leaves",
+      "status": "MONASTERY_FITTED_DOORS_AND_OPEN_CLOISTER_STAGED",
+      "affected": "WLD-10 main gate, cloister access, rooms, service court, tower and lower memorial",
+      "symptom": "The built thresholds had no working doors, room-aware sight and sound gates, or multiplayer state.",
+      "cause": "The cloister construction pass provided framed openings and tried the stairs without installing leaves.",
+      "action": "Fit operating leaves at thirteen measured frames. Keep the arcade open. Verify the exact thresholds, stair landings and four-player route into the memorial chamber.",
+      "older_maps": "Fit doors at surveyed frames and keep sheltered cloister circulation open where the building calls for it.",
+      "evidence": "development/levels/rebuild/monastery-door-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12185,
+  "count": 12201,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -115844,6 +115844,166 @@
       "height": 960,
       "bytes": 1466197,
       "sha256": "f8f09e4747e3056270126359b1a0c335a709b80c7df691d65d9343425a6dfca7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/bell-tower-entry-closed.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/bell-tower-entry-closed.png",
+      "title": "Bell tower entry closed",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 378492,
+      "sha256": "ece165802224f09cded9278242ae63b848689917633633ef90d0c68172bde826"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/bell-tower-entry-open.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/bell-tower-entry-open.png",
+      "title": "Bell tower entry open",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 331990,
+      "sha256": "436b6f25112f00d19bbf628d10340ba9615ddbb55b97dc09f08d888c199d7e0c"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/garden-door-closed.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/garden-door-closed.png",
+      "title": "Garden door closed",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 493820,
+      "sha256": "c0ebce1251fbdcc8a850a4b11b68fae84fb8c575b0b9e51fba7c07b6befd6d42"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/garden-door-open.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/garden-door-open.png",
+      "title": "Garden door open",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 406529,
+      "sha256": "9ed894ea0f2f77e1b863932ab30a0e642d67b1c6f180cd7d5a13ae92fa25d0ea"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/memorial-chamber-closed.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/memorial-chamber-closed.png",
+      "title": "Memorial chamber closed",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 380250,
+      "sha256": "1a718d9acce52e99417c1538e968ea4cd542f1c724b09f4ce5b49bff457b112d"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/memorial-chamber-open.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/memorial-chamber-open.png",
+      "title": "Memorial chamber open",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 310843,
+      "sha256": "1dc7cf59071e3b56f6567d277eec318e578cea91aff36c91a93ede13917955c9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/public-gate-closed.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/public-gate-closed.png",
+      "title": "Public gate closed",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 505992,
+      "sha256": "7fec6107761f1aa6110058a677759d2d71bcf553ee169d76b538a6f5877df7a3"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/public-gate-open.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/opengl/public-gate-open.png",
+      "title": "Public gate open",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 427749,
+      "sha256": "f9f8a1c6128eb048f5066bfc21560e952a7d21012531084258b8e20ae6cf8c9e"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/bell-tower-entry-closed.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/bell-tower-entry-closed.png",
+      "title": "Bell tower entry closed",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 379356,
+      "sha256": "a172541d8f39e021c62bea7d70b82060c1713cf16213db8f2b0b8e106148127e"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/bell-tower-entry-open.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/bell-tower-entry-open.png",
+      "title": "Bell tower entry open",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 332987,
+      "sha256": "40e581333ad44e888b3a1c191b82a562351eee2d5bcdba5bf9f38db4ff98c652"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/garden-door-closed.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/garden-door-closed.png",
+      "title": "Garden door closed",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 494114,
+      "sha256": "762d00afaa6e3aaff704035a98eac4c8a77616363361b36b9b08faa37ecebf05"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/garden-door-open.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/garden-door-open.png",
+      "title": "Garden door open",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 407563,
+      "sha256": "30e1ed31654b3ddb3ad3b2d223a7bf8ea55d129c250d04a9428d24ac1b7e5071"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/memorial-chamber-closed.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/memorial-chamber-closed.png",
+      "title": "Memorial chamber closed",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 383624,
+      "sha256": "fcd98be2bfbc4dd1f7c72bbb60b09fb19342def0f79464b0c61ca043f07e03a4"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/memorial-chamber-open.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/memorial-chamber-open.png",
+      "title": "Memorial chamber open",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 312405,
+      "sha256": "c1b4bca738a93857a6b6a5a09a3f34cdd42f43637d50928be62a7ed05015f482"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/public-gate-closed.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/public-gate-closed.png",
+      "title": "Public gate closed",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 505777,
+      "sha256": "f88438cdda8159c0de99741c396891edcab962fa416b29193899165d3b948d87"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/public-gate-open.png",
+      "url": "development/levels/rebuild/monastery-door-pass/wld-10/captures/software/public-gate-open.png",
+      "title": "Public gate open",
+      "kind": "Monastery of Ashen Bells operating masonry threshold in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 428940,
+      "sha256": "facaacc7e0cdd273fb28b54e00155a63d59290a46b8921a93fcf0f18993c9039"
     },
     {
       "path": "development/levels/rebuild/northwatch-boundary-pass/wld-08/captures/array-edge-screen.png",

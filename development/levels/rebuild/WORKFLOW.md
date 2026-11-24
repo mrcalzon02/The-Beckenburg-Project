@@ -1587,3 +1587,7 @@ The switchgear wall now carries the installed generator exhaust and weather air 
 ### Blackwater Hydroelectric Dam named dispatch
 
 The ordinary Windows archive now contains the current Blackwater native geometry, room and door schedules, electrical fittings, and water. The named review property exposes solo and LAN entries. Both renderers load the exact stage revision, and the secure solo and four-peer TCP reviews confirm van retreat, three operating blackout doors, power, camera, and walk-in cover. Broader distributions, site audio and story, and full installed acceptance remain open. [Checkpoint](dam-named-pass/checkpoint.json)
+
+### Monastery of Ashen Bells operating thresholds
+
+Thirteen operating leaves now share the measured architecture with player bodies, shadows, door sight and acoustics. The van, floors, stairs and open cloister arcade passages retain the approved source. Both renderers pass all 21 routes in both directions and postures. The live crew can open five leaves from the van to the memorial chamber. [Door plan](monastery-door-pass/wld-10/monastery-door-plan.svg) · [Checkpoint](monastery-door-pass/checkpoint.json)

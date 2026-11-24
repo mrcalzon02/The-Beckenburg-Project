@@ -2327,3 +2327,7 @@ The covered carrier commit 3a96b7942c818761b6db2104168dd666e62707ea passed galle
 ### Blackwater Dam ordinary archive with named review dispatch
 
 The generator ventilation commit ccc2d1e9af371dcfa038f1b1013878d611dcf0cf passed gallery 45441543236 on draft PR 86. The [named checkpoint](levels/rebuild/dam-named-pass/checkpoint.json) documents the exact ordinary Windows archive and actual named solo and LAN reviews. Default availability remains locked and the installation, full named case and remaining utilities and finishes are open.
+
+### Monastery of Ashen Bells working doors and live lower route
+
+The Blackwater package checkpoint fafd12e4ffd4d33ad3494edfe8365f23bf2196b4 passed gallery 45444399960 on draft PR 86. The [Monastery threshold checkpoint](levels/rebuild/monastery-door-pass/checkpoint.json) advances the next map in the roster, with thirteen fitted leaves and the live van-to-memorial route on the original fitted stair geometry. Further services and named integration remain pending.

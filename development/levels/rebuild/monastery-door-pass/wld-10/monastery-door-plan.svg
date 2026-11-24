@@ -1,0 +1,70 @@
+<svg viewBox="0 0 850 730" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="name desc">
+<title id="name">Monastery operating thresholds and open cloister</title>
+<desc id="desc">The gold lines show fitted door leaves across the actual wall reveals. Green lines show the four open arcade connections. Blue dashed routes follow measured floors. An inset shows the lower memorial entrance.</desc>
+<style>
+text{font:15px Arial,sans-serif;fill:#e8eee9} .title{font-size:27px;font-weight:bold}
+.room{font-size:11px} .muted{fill:#abc0ba} .door{stroke:#ffd19e;stroke-width:5;stroke-linecap:round}
+.arc{stroke:#92d7ad;stroke-width:5} .guide{fill:none;stroke:#79bdce;stroke-width:1.6;stroke-dasharray:5 4;opacity:.75}
+</style>
+<rect width="850" height="730" fill="#1a292b"/>
+<text class="title" x="36" y="42">Monastery of Ashen Bells</text>
+<text class="muted" x="36" y="70">Operating thresholds and cloister circulation · North up</text>
+<text x="60" y="98">Ground plan · ±0.00 m</text>
+  <rect x="251" y="547" width="96" height="72" fill="#39504f" stroke="#a5a9a0"/>
+  <text class="room" x="299.0" y="587.0" text-anchor="middle">Van apron</text>
+  <rect x="251" y="475" width="96" height="72" fill="#39504f" stroke="#a5a9a0"/>
+  <text class="room" x="299.0" y="515.0" text-anchor="middle">gate terrace</text>
+  <rect x="251" y="439" width="96" height="36" fill="#46504c" stroke="#a5a9a0"/>
+  <text class="room" x="299.0" y="461.0" text-anchor="middle">Gatehouse</text>
+  <rect x="155" y="235" width="36" height="168" fill="#46504c" stroke="#a5a9a0"/>
+  <rect x="371" y="235" width="36" height="168" fill="#46504c" stroke="#a5a9a0"/>
+  <rect x="155" y="199" width="252" height="36" fill="#46504c" stroke="#a5a9a0"/>
+  <rect x="155" y="403" width="252" height="36" fill="#46504c" stroke="#a5a9a0"/>
+  <rect x="191" y="235" width="180" height="168" fill="#39504f" stroke="#a5a9a0"/>
+  <text class="room" x="281.0" y="323.0" text-anchor="middle">Herb garden</text>
+  <rect x="155" y="115" width="120" height="84" fill="#46504c" stroke="#a5a9a0"/>
+  <text class="room" x="215.0" y="161.0" text-anchor="middle">Archive</text>
+  <rect x="407" y="283" width="108" height="120" fill="#46504c" stroke="#a5a9a0"/>
+  <text class="room" x="461.0" y="347.0" text-anchor="middle">Refectory</text>
+  <rect x="59" y="235" width="96" height="168" fill="#46504c" stroke="#a5a9a0"/>
+  <text class="room" x="107.0" y="323.0" text-anchor="middle">Dormitory</text>
+  <rect x="407" y="199" width="60" height="84" fill="#46504c" stroke="#a5a9a0"/>
+  <text class="room" x="437.0" y="245.0" text-anchor="middle">Bell tower</text>
+  <rect x="275" y="115" width="96" height="84" fill="#46504c" stroke="#a5a9a0"/>
+  <text class="room" x="323.0" y="161.0" text-anchor="middle">Vestry</text>
+  <rect x="467" y="199" width="48" height="84" fill="#39504f" stroke="#a5a9a0"/>
+  <text class="room" x="491.0" y="245.0" text-anchor="middle">Rear service terrace</text>
+  <polyline class="guide" points="299.0,561.2 299.0,547.0 299.0,511.0"/>
+  <polyline class="guide" points="299.0,511.0 299.0,475.0 299.0,457.0"/>
+  <polyline class="guide" points="299.0,457.0 299.0,439.0 299.0,432.4 281.0,421.0"/>
+  <polyline class="guide" points="281.0,421.0 173.0,421.0 173.0,403.0 173.0,319.0"/>
+  <polyline class="guide" points="173.0,319.0 173.0,235.0 173.0,228.9 248.6,228.9 248.6,205.0 281.0,205.0"/>
+  <polyline class="guide" points="281.0,205.0 389.0,205.0 389.0,235.0 389.0,319.0"/>
+  <polyline class="guide" points="389.0,319.0 389.0,403.0 389.0,421.0 281.0,421.0"/>
+  <polyline class="guide" points="281.0,421.0 281.0,403.0 281.0,319.0"/>
+  <polyline class="guide" points="281.0,319.0 281.0,235.0 281.0,228.9 248.6,228.9 248.6,205.0 281.0,205.0"/>
+  <polyline class="guide" points="281.0,205.0 218.0,205.0 215.0,202.0 215.0,157.0"/>
+  <polyline class="guide" points="215.0,157.0 275.0,157.0 323.0,157.0"/>
+  <polyline class="guide" points="323.0,157.0 323.0,202.0 320.0,205.0 281.0,205.0"/>
+  <polyline class="guide" points="389.0,319.0 389.0,343.0 407.0,343.0 461.0,343.0"/>
+  <polyline class="guide" points="389.0,319.0 389.0,259.0 407.0,259.0 415.4,259.0 424.8,250.0"/>
+  <polyline class="guide" points="424.8,250.0 424.8,265.0 461.2,265.0 461.2,241.0 467.0,241.0 491.0,241.0"/>
+  <polyline class="guide" points="491.0,241.0 491.0,283.0 491.0,343.0 461.0,343.0"/>
+  <path class="arc" d="M167.24,403.00L178.76,403.00"/>
+  <path class="arc" d="M383.24,403.00L394.76,403.00"/>
+  <path class="arc" d="M167.24,235.00L178.76,235.00"/>
+  <path class="arc" d="M383.24,235.00L394.76,235.00"/>
+<text x="560" y="120">Lower memorial · −3.00 m</text>
+<rect x="560" y="145" width="153" height="98" fill="#46504c" stroke="#a5a9a0"/>
+<rect x="560" y="243" width="235" height="43" fill="#46504c" stroke="#a5a9a0"/>
+<text class="room" x="579" y="181">Memorial chamber</text>
+<text class="room" x="661" y="272">Catacomb passage</text>
+<path class="guide" d="M745 262H635V203"/>
+<path class="door" d="M627 243h17"/>
+<text class="muted" x="637" y="221">Fitted chamber door</text>
+<path class="door" d="M562 394h35"/><text x="610" y="399">Operating leaves</text>
+<path class="arc" d="M562 428h35"/><text x="610" y="433">Open arcade</text>
+<path class="guide" d="M562 462h35"/><text x="610" y="467">Circulation guide</text>
+<path d="M60 649h60m-60-5v10m60-10v10" stroke="#e9eee9" stroke-width="2"/>
+<text class="muted" x="72" y="678">10 m</text>
+</svg>

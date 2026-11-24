@@ -9238,3 +9238,7 @@ The generator has a muffler-backed flue with supported exterior riser and a sepa
 ### DEV-712 · Blackwater named packaged review
 
 The normal Windows archive binds WLD-09 to the measured exported source. The review gate preserves the default lock and campaign order. The named TCP cases verify solo retreat, blackout traversal, power recovery, a camera visible from the van, and refuge entry and exit. [Evidence](../levels/rebuild/dam-named-pass/checkpoint.json)
+
+### DEV-713 · Monastery operating thresholds
+
+Thirteen original frames now carry fitted, replicated leaves. The four cloister arcades remain open. Both game renderers verify closed and open acoustic, optical and physical response and all 84 directional route replays. Four live peers validate the walk from the van to the lower memorial chamber. [Evidence](../levels/rebuild/monastery-door-pass/checkpoint.json)
