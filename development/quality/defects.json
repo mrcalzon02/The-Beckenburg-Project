@@ -5967,12 +5967,12 @@
     {
       "id": "DEV-537",
       "title": "Older Dam terrain cuts remain exposed outside the east catwalk",
-      "status": "REVISE_EXTERNAL_CIVIL_TERRAIN_WATER_JOIN",
+      "status": "DAM_EAST_BANK_EXCAVATION_RESTORED_AND_FOUNDED",
       "affected": "WLD-09 east catwalk ground and adjacent hydraulic edge",
       "symptom": "Unhidden exterior inspection shows long black openings in existing terrain beside the catwalk and the lower foundation below the soil edge.",
       "cause": "Existing excavation and terrain meshes do not yet include the final channel, ground closure and retaining surfaces.",
-      "action": "Design the complete exposed channel and retaining transition against existing measured terrain and foundation owners. Recheck external bounds, guard posts, render views and lower-room terrain controls.",
-      "evidence": "development/levels/rebuild/captures/dam-spillway-gallery-batch/spillway-exterior.png",
+      "action": "Restore the obsolete exterior cut leaves to saved grade and seat a continuous stem and strip footing below the east hall wall. The valley extent and channel remain covered by DEV-567.",
+      "evidence": "development/levels/rebuild/dam-catwalk-ground-pass/checkpoint.json",
       "older_maps": "Look beyond passing traversal centerlines. Check original terrace cuts, visible exposed edges and retaining/bedrock continuity from exterior views."
     },
     {

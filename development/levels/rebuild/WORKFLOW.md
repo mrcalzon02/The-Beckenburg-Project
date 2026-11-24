@@ -1547,3 +1547,7 @@ Eight supported pieces and two desk records now serve the fitted station. Both r
 ### Northwatch named dispatch and case
 
 The exact furnished export now loads from the Northwatch solo and LAN entries with the native review flag. Arrival and forecourt captures use supported floor positions. A live investigator walks from the van through the radio and records doors. The prior checkpoint carries the measurements for all three walk-in refuges. [Checkpoint](northwatch-named-pass/checkpoint.json)
+
+### Blackwater Hydroelectric Dam east bank
+
+The old terrain trench under the catwalk and the overcut outside the lower hall are closed in the saved terrain. The hall wall now bears on a continuous stem and strip footing. The same 13 ordinary links, 13 flights, six complete vertical routes, five joined journeys and 6,087 standing poses pass with all real basement holes retained. The valley extent, controlled water surfaces and gameplay bindings remain open. [Checkpoint](dam-catwalk-ground-pass/checkpoint.json) · [Active roster](dam-catwalk-ground-pass/roster.json)

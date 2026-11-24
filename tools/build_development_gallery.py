@@ -26,7 +26,10 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/northwatch-named-pass/' in path:
+    if '/dam-catwalk-ground-pass/' in path:
+        phase='baseline' if '-before.png' in path else 'revised'
+        kind='Blackwater Dam '+phase+' east bank native architectural review'
+    elif '/northwatch-named-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         view='forecourt and radio entrance' if 'forecourt' in path else 'arrival van'
         kind='Northwatch named review '+view+' in the '+renderer+' game renderer'

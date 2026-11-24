@@ -9198,3 +9198,7 @@ Native loading identified the placed desk as the only added part with degenerate
 ### DEV-702 Northwatch lacked a named packaged case
 
 The original WLD-08 selection now loads the reviewed furnished station with its exact room, door and collision schedules under a review flag. The named host verifies departure and retreat, physical records access, a shared camera feed and the three installed rites. [Evidence](../levels/rebuild/northwatch-named-pass/checkpoint.json)
+
+### DEV-537 follow-up · Blackwater Dam east bank restored
+
+The saved topology restores the old exterior stair trench and the overshoot beside the east hall wall. The real basement stays open through the editor's existing terrain-hole system. A planted stem and footing now connect the lower wall to the bank. The wider downstream landform and water are tracked under DEV-567. [Evidence](../levels/rebuild/dam-catwalk-ground-pass/checkpoint.json)

@@ -2287,3 +2287,7 @@ Wash-water commit 78a7542d50da4c76ef003c8f50d5f3311509de9a and gallery 454052483
 ### Northwatch named dispatch and case
 
 The furnishing commit 5d73a47ddf5737075122a92c85a00589bc21d23a and gallery 45407855257 passed on held draft PR 86. WLD-08 now loads its exact furnished scene through named solo and LAN selection with the review flag. The package and bounded case checks are recorded in the [named checkpoint](levels/rebuild/northwatch-named-pass/checkpoint.json). Finish review and release acceptance remain open.
+
+### Blackwater Dam east bank civil repair
+
+Northwatch named commit 79cf1ba03b05b3e14c2f3aeefa31ef9c329bbf8b and gallery 45411131828 passed on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d still carries successful full multiplayer 44863686526 and GPU 44863686455. Installer 44863580794 passed on c238cff07d73d4e326b220521974aca5494078ed. The [Dam east bank checkpoint](levels/rebuild/dam-catwalk-ground-pass/checkpoint.json) verifies the saved excavation repair, founded wall, retained architecture and native route regressions. Next fit the wider water and site boundaries before named runtime promotion.

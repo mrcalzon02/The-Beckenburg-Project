@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12092,
+  "count": 12098,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -112684,6 +112684,66 @@
       "height": 580,
       "bytes": 413854,
       "sha256": "1f061b081517e04dd6607c85e8b7aa7517e937b03fd1b635a5268cb96cc08e0b"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-exterior-before.png",
+      "url": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-exterior-before.png",
+      "title": "East bank exterior before",
+      "kind": "Blackwater Dam baseline east bank native architectural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1000259,
+      "sha256": "a81b85fe99686474e3669181ca0c4cb3e1c33313feaa9f813f5268e99765ae33"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-exterior.png",
+      "url": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-exterior.png",
+      "title": "East bank exterior",
+      "kind": "Blackwater Dam revised east bank native architectural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1017235,
+      "sha256": "b041cd76259706a8e3258fd23130c9df461e6c65b883e50e4915b3616874bb60"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-overview-before.png",
+      "url": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-overview-before.png",
+      "title": "East bank overview before",
+      "kind": "Blackwater Dam baseline east bank native architectural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1104113,
+      "sha256": "5cff8befd8681bb593cb15a488b84ef041bc1f8fca3c4542578ee3f8d7753764"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-overview.png",
+      "url": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-bank-overview.png",
+      "title": "East bank overview",
+      "kind": "Blackwater Dam revised east bank native architectural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1113365,
+      "sha256": "2937161b2894096d025dac3e159665176c9053af7494bc54f97006ec57861e3e"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-catwalk-standing-before.png",
+      "url": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-catwalk-standing-before.png",
+      "title": "East catwalk standing before",
+      "kind": "Blackwater Dam baseline east bank native architectural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 977055,
+      "sha256": "f9c4ec3ae4863528b0aee3dccc6e9c524cdd8f5b1ce37537a3b95b70bbc95680"
+    },
+    {
+      "path": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-catwalk-standing.png",
+      "url": "development/levels/rebuild/dam-catwalk-ground-pass/wld-09/captures/east-catwalk-standing.png",
+      "title": "East catwalk standing",
+      "kind": "Blackwater Dam revised east bank native architectural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 977055,
+      "sha256": "52632d12c40c6892261da9042e4b7c72e00775fb305059941ec0158d61851c56"
     },
     {
       "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-cargo-approach.png",
