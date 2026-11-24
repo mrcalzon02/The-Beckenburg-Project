@@ -133,6 +133,9 @@ for %%M in (wld-07 wld-07-mortuary) do (
   if not exist build\classes\org\beckenburg\sites\%%M mkdir build\classes\org\beckenburg\sites\%%M || exit /b 1
   for %%S in (furnished-grounds.glb furnished-grounds.hcs2 room-layout.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\cemetery-furnishings-pass\%%M\%%S build\classes\org\beckenburg\sites\%%M\%%S >nul || exit /b 1
 )
+if not exist build\classes\org\beckenburg\sites\wld-08 mkdir build\classes\org\beckenburg\sites\wld-08 || exit /b 1
+for %%S in (station-with-furnishings.glb station-with-furnishings.hcs2 runtime-input.tsv door-schedule.tsv) do copy /Y development\levels\rebuild\northwatch-furnishing-pass\wld-08\%%S build\classes\org\beckenburg\sites\wld-08\%%S >nul || exit /b 1
+copy /Y development\levels\rebuild\northwatch-named-pass\source-hashes.tsv build\classes\org\beckenburg\sites\wld-08\source-hashes.tsv >nul || exit /b 1
 for %%S in (glb hcs2) do copy /Y development\levels\rebuild\asylum-flight-rails-pass\asylum-stair.%%S build\classes\org\beckenburg\sites\asylum-stair.%%S >nul || exit /b 1
 for %%S in (arrival door-survey mission services) do copy /Y development\levels\rebuild\asylum-flight-rails-pass\%%S.tsv build\classes\org\beckenburg\sites\asylum-%%S.tsv >nul || exit /b 1
 if not exist build\classes\org\beckenburg\models mkdir build\classes\org\beckenburg\models

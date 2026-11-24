@@ -9194,3 +9194,7 @@ Eight fitted models and two supported papers give the rooms their ordinary uses.
 ### DEV-701 Sixteen empty triangles rejected the records desk
 
 Native loading identified the placed desk as the only added part with degenerate faces. The placed mesh removes those sixteen zero-area faces and keeps the model source intact. The repaired renderer and collision exports agree. [Construction record](../levels/rebuild/northwatch-furnishing-pass/wld-08/construction.json)
+
+### DEV-702 Northwatch lacked a named packaged case
+
+The original WLD-08 selection now loads the reviewed furnished station with its exact room, door and collision schedules under a review flag. The named host verifies departure and retreat, physical records access, a shared camera feed and the three installed rites. [Evidence](../levels/rebuild/northwatch-named-pass/checkpoint.json)

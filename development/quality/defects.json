@@ -7778,6 +7778,17 @@
       "action": "Remove exactly those sixteen faces from the placed mesh, then verify renderer and native collision against the reimported GLB.",
       "older_maps": "Audit this prop in earlier map exports for degenerate triangles before runtime promotion.",
       "evidence": "development/levels/rebuild/northwatch-furnishing-pass/wld-08/construction.json"
+    },
+    {
+      "id": "DEV-702",
+      "title": "Northwatch lacked a named packaged case",
+      "status": "NORTHWATCH_PACKAGED_NAMED_CASE_VERIFIED_UNDER_REVIEW_GATE",
+      "affected": "WLD-08 dispatch in solo, LAN and the campaign board",
+      "symptom": "The authored station could not be selected by its real site name.",
+      "cause": "The furnished native scene had only been mounted by the staged review harness.",
+      "action": "Package the exact reviewed source and bind the original campaign entry through the native review selector.",
+      "older_maps": "Verify canonical campaign ordinals, exact network revisions, physical routes and bounded case actions in the named host.",
+      "evidence": "development/levels/rebuild/northwatch-named-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

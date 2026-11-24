@@ -2283,3 +2283,7 @@ Electrical commit 17cb71947cc247c58a3b67911e27f0d01c0619de and gallery 454021704
 ### Northwatch furnishings and station records
 
 Wash-water commit 78a7542d50da4c76ef003c8f50d5f3311509de9a and gallery 45405248378 passed on held draft PR 86. The [furnishing checkpoint](levels/rebuild/northwatch-furnishing-pass/checkpoint.json) adds eight supported room pieces and two readable station records. Both renderers and live TCP verify the physical reading targets and existing architecture and services. Continue named dispatch, packaged case and finish review.
+
+### Northwatch named dispatch and case
+
+The furnishing commit 5d73a47ddf5737075122a92c85a00589bc21d23a and gallery 45407855257 passed on held draft PR 86. WLD-08 now loads its exact furnished scene through named solo and LAN selection with the review flag. The package and bounded case checks are recorded in the [named checkpoint](levels/rebuild/northwatch-named-pass/checkpoint.json). Finish review and release acceptance remain open.

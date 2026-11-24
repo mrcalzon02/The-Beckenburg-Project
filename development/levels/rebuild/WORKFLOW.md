@@ -1543,3 +1543,7 @@ The shed cistern and two floor-supported basins now use the ordinary running-wat
 ### Northwatch furnishings and station records
 
 Eight supported pieces and two desk records now serve the fitted station. Both renderers verify physical aim at standing and crouched eye heights. In real TCP the investigator reaches the shed and records room from the van and reads both papers. Named dispatch and packaged case review remain open. [Plan](northwatch-furnishing-pass/furnished-station-plan.svg) / [Checkpoint](northwatch-furnishing-pass/checkpoint.json)
+
+### Northwatch named dispatch and case
+
+The exact furnished export now loads from the Northwatch solo and LAN entries with the native review flag. Arrival and forecourt captures use supported floor positions. A live investigator walks from the van through the radio and records doors. The prior checkpoint carries the measurements for all three walk-in refuges. [Checkpoint](northwatch-named-pass/checkpoint.json)

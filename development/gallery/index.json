@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12088,
+  "count": 12092,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -115504,6 +115504,46 @@
       "height": 640,
       "bytes": 385896,
       "sha256": "48ad33345fa53254bc41ff2594abab3945f2d132edef9c0e7617bd4fb47d3245"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-named-pass/captures/northwatch-named-arrival.png",
+      "url": "development/levels/rebuild/northwatch-named-pass/captures/northwatch-named-arrival.png",
+      "title": "Northwatch named arrival",
+      "kind": "Northwatch named review arrival van in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 419778,
+      "sha256": "e49e9774a69c2a0545e507e76dd61d4a765aca959e9bdaa2897eeafd71afdb3b"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-named-pass/captures/northwatch-named-forecourt.png",
+      "url": "development/levels/rebuild/northwatch-named-pass/captures/northwatch-named-forecourt.png",
+      "title": "Northwatch named forecourt",
+      "kind": "Northwatch named review forecourt and radio entrance in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 476391,
+      "sha256": "a18ddf7edc65d5674f63a25c037079a499c6c5b979f3da93f3358ee70bab3634"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-named-pass/captures/opengl/northwatch-named-arrival.png",
+      "url": "development/levels/rebuild/northwatch-named-pass/captures/opengl/northwatch-named-arrival.png",
+      "title": "Northwatch named arrival",
+      "kind": "Northwatch named review arrival van in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 431347,
+      "sha256": "2625ae3450e711108a7cf5e738c5aca5d3902c0e1cc10cf5e8ec828298797021"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-named-pass/captures/opengl/northwatch-named-forecourt.png",
+      "url": "development/levels/rebuild/northwatch-named-pass/captures/opengl/northwatch-named-forecourt.png",
+      "title": "Northwatch named forecourt",
+      "kind": "Northwatch named review forecourt and radio entrance in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 405559,
+      "sha256": "6e63990624b81b581314582cd2ac444f3a12ed1d5afa601d41e89b5b6f73f1eb"
     },
     {
       "path": "development/levels/rebuild/northwatch-power-pass/wld-08/captures/northwatch-shed-supplied.png",

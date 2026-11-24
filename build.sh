@@ -145,6 +145,13 @@ for site in wld-07 wld-07-mortuary; do
         cp "$cemetery_packet/$payload" "$cemetery_resource/$payload"
     done
 done
+northwatch_packet=development/levels/rebuild/northwatch-furnishing-pass/wld-08
+northwatch_resource=build/classes/org/beckenburg/sites/wld-08
+mkdir -p "$northwatch_resource"
+for payload in station-with-furnishings.glb station-with-furnishings.hcs2 runtime-input.tsv door-schedule.tsv; do
+    cp "$northwatch_packet/$payload" "$northwatch_resource/$payload"
+done
+cp development/levels/rebuild/northwatch-named-pass/source-hashes.tsv "$northwatch_resource/source-hashes.tsv"
 asylum_packet=development/levels/rebuild/asylum-flight-rails-pass
 for extension in glb hcs2; do
     cp "$asylum_packet/asylum-stair.$extension" "build/classes/org/beckenburg/sites/asylum-stair.$extension"
