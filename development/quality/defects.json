@@ -7734,6 +7734,28 @@
       "action": "Fit wall and deck-supported conduit, shift the array return beside the plate and commission all four circuits from the common breaker.",
       "older_maps": "Verify every installed lamp, supported aim, breaker isolation and retained stair and door routes.",
       "evidence": "development/levels/rebuild/northwatch-complete-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-698",
+      "title": "Northwatch shed and lab lacked usable wash water",
+      "status": "NORTHWATCH_STAGED_WASH_WATER_VERIFIED",
+      "affected": "WLD-08 water shed and observation lab",
+      "symptom": "The shed had no cistern connection, and neither room had a basin a player could aim at and operate.",
+      "cause": "The staged station covered architecture, safe zones and electrical distribution before wet services.",
+      "action": "Fit the cistern and both basins to measured surfaces, route a shared gravity supply and use existing fixture state and acoustics.",
+      "older_maps": "Check basin support, genuine player aim, fill/drain and running water with the mains off.",
+      "evidence": "development/levels/rebuild/northwatch-water-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-699",
+      "title": "The fixture sound regression assumed the current default house had a phone",
+      "status": "AUTHORED_PHONE_SOUND_LIFETIME_CHECK_RESTORED",
+      "affected": "FixtureSoundscapeTest and full validation builds",
+      "symptom": "The unchanged package and the rebuilt code both threw NoSuchElementException before testing manual and ghost sound lifetimes.",
+      "cause": "The test selected the current default house even when its authored equipment did not include a telephone.",
+      "action": "Select an existing legacy site containing an authored phone and run the same physical aim, manual and ghost assertions.",
+      "older_maps": "Avoid assuming all map revisions have the same optional fixture inventory.",
+      "evidence": "src/test/java/org/beckenburg/FixtureSoundscapeTest.java"
     }
   ],
   "audit_categories": [

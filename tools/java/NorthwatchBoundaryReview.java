@@ -35,7 +35,8 @@ public final class NorthwatchBoundaryReview {
 
     private static void review(String[] args,boolean gpu)throws Exception {
         Path path=Path.of(args[0]);
-        boolean complete=List.of(args).contains("--complete-power");
+        boolean water=List.of(args).contains("--water");
+        boolean complete=water||List.of(args).contains("--complete-power");
         boolean surface=complete||List.of(args).contains("--surface-power");
         boolean distribution=surface||List.of(args).contains("--distribution");
         boolean power=distribution||List.of(args).contains("--power");
@@ -43,7 +44,7 @@ public final class NorthwatchBoundaryReview {
         boolean fitted=refuges||List.of(args).contains("--doors");
         Path boundary=fitted?Path.of(args[5]):path;
         Path geometry=refuges?path:boundary;
-        String sourceStem=complete?"station-with-complete-power":surface?"station-with-surface-power":distribution?"station-with-distribution":power?"station-with-power":refuges?"station-with-refuges":"bounded-station";
+        String sourceStem=water?"station-with-water":complete?"station-with-complete-power":surface?"station-with-surface-power":distribution?"station-with-distribution":power?"station-with-power":refuges?"station-with-refuges":"bounded-station";
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var rooms=new Room[HouseMap.ROOM_COUNT];
         var sockets=new ArrayList<Socket>();
@@ -239,7 +240,8 @@ public final class NorthwatchBoundaryReview {
             NorthwatchDistributionReview.audit(map,routes,captures,rows);
         }
         if(surface&&!complete)render(map,physics,new Vec(47.5,0,11.5),new Vec(44,1.25,13.8),"northwatch-east-service-riser",captures);
-        String stem=complete?"complete-power":surface?"surface-power":distribution?"distribution":power?"power":refuges?"refuges":fitted?"doors":"boundary";
+        if(water)NorthwatchWaterReview.audit(map,routes,captures,rows);
+        String stem=water?"water":complete?"complete-power":surface?"surface-power":distribution?"distribution":power?"power":refuges?"refuges":fitted?"doors":"boundary";
         Files.writeString(path.resolve(stem+(gpu?"-opengl.tsv":"-software.tsv")),String.join("\n",rows)+"\n");
         rows.forEach(System.out::println);
     }

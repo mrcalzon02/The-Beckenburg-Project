@@ -9178,3 +9178,11 @@ The cold store, dorm, mess and array shelter now receive separately switched loa
 ### DEV-697 Northwatch tunnel and yard circuits were absent
 
 Ten mounted lights and four controls now share the original main breaker. The array riser moved beside the switch plate after its first aim check exposed the obstruction. Final verification covers the individual loads and switches, both renderers, live host authority, and the existing walls, doors and stair approaches. [Evidence](../levels/rebuild/northwatch-complete-power-pass/checkpoint.json)
+
+### DEV-698 Northwatch lacked usable wash water
+
+A supported cistern and two plumbed basins now share the ordinary fixture state. Both renderers verified aimed fill, visible flow, running-water sound and draining with mains power off. The live review verifies the physical basin approaches and fixture updates on a second interactive client. [Evidence](../levels/rebuild/northwatch-water-pass/checkpoint.json)
+
+### DEV-699 Fixture sound test depended on an absent default-house phone
+
+The baseline package and fresh compilation both failed the old default selection. The test now chooses an authored map with a reachable telephone and passes unchanged source lifetime and audio mixing assertions. [Regression](../../src/test/java/org/beckenburg/FixtureSoundscapeTest.java)

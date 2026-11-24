@@ -11,12 +11,17 @@ public final class HauntedFixtures {
     public record Sound(State source,LanSound.Cue cue){}
     private static final class Fixture {int id,room,water,until,revision;Kind kind;double x,y,z,yaw,scale=1;boolean active;
         State state(){return new State(id,kind,room,x,y,z,yaw,scale,active,water,until,revision);}}
+    static final String NATIVE_BASIN_SOCKET="water-basin";
+    static final double BASIN_RIM_Y=.86;
     private boolean powered=true;
     public synchronized void power(boolean on){powered=on;if(!on)for(var f:fixtures)if((f.kind==Kind.TELEVISION||f.kind==Kind.TABLE_LAMP)&&f.active){f.active=false;f.revision++;}}
     private final HouseMap map;private final List<Fixture> fixtures=new ArrayList<>();
     private void add(Kind kind,int room,double x,double y,double z,double yaw){add(kind,room,x,y,z,yaw,1);}
     private void add(Kind kind,int room,double x,double y,double z,double yaw,double scale){var f=new Fixture();f.id=fixtures.size()+1;f.kind=kind;f.room=room;f.x=x;f.y=y;f.z=z;f.yaw=yaw;f.scale=scale;fixtures.add(f);}
     public HauntedFixtures(HouseMap map){this.map=map;
+        if(map.nativeInvestigation()!=null)
+            for(var s:map.level().sockets())if(s.type().equals(NATIVE_BASIN_SOCKET))
+                add(Kind.SINK_BATH,s.room(),s.x(),s.y(),s.z(),s.yaw());
         if(map.site()!=HouseMap.Site.HOUSE&&map.site()!=HouseMap.Site.FARMHOUSE&&map.site()!=HouseMap.Site.SCHOOL)return;
         for(var s:map.level().sockets())if(s.type().equals("device")){add(Kind.valueOf(s.style()),s.room(),s.x(),s.y(),s.z(),s.yaw());if(s.style().equals("LIGHT_SWITCH"))fixtures.get(fixtures.size()-1).active=true;}
         for(var p:map.level().props()){

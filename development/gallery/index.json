@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12070,
+  "count": 12078,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -115744,6 +115744,86 @@
       "height": 580,
       "bytes": 150894,
       "sha256": "2bad17f7d81b470dd071f1c4b2b210d11d7859f06911f37377448c025a88eb89"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/northwatch-lab-wash-basin-dry.png",
+      "url": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/northwatch-lab-wash-basin-dry.png",
+      "title": "Northwatch lab wash basin dry",
+      "kind": "Northwatch independent wash-water service in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 380855,
+      "sha256": "09685d6b19a6506a3b39cc80e1009feaa8070cfefdc2d142125ebeb2a94e8432"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/northwatch-lab-wash-basin-running.png",
+      "url": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/northwatch-lab-wash-basin-running.png",
+      "title": "Northwatch lab wash basin running",
+      "kind": "Northwatch independent wash-water service in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 379704,
+      "sha256": "6a084c2abb78e6ad08a90da56a0fd30a335da7f648ea2a46596902f88eb98575"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/northwatch-shed-wash-basin-dry.png",
+      "url": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/northwatch-shed-wash-basin-dry.png",
+      "title": "Northwatch shed wash basin dry",
+      "kind": "Northwatch independent wash-water service in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 433914,
+      "sha256": "7db0360fd4e39314f97cbd306294b474cba2ca677b3a02f179ff1d8703e9902f"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/northwatch-shed-wash-basin-running.png",
+      "url": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/northwatch-shed-wash-basin-running.png",
+      "title": "Northwatch shed wash basin running",
+      "kind": "Northwatch independent wash-water service in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 432710,
+      "sha256": "6fd2927097c102313fde9d45805005fdf50888b7b0916f74dd1e7a5e7c1b95c0"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/opengl/northwatch-lab-wash-basin-dry.png",
+      "url": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/opengl/northwatch-lab-wash-basin-dry.png",
+      "title": "Northwatch lab wash basin dry",
+      "kind": "Northwatch independent wash-water service in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 381669,
+      "sha256": "50fce5674422efafe001e0140112b53f983ab7711efa965fb40c9886a00db891"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/opengl/northwatch-lab-wash-basin-running.png",
+      "url": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/opengl/northwatch-lab-wash-basin-running.png",
+      "title": "Northwatch lab wash basin running",
+      "kind": "Northwatch independent wash-water service in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 375199,
+      "sha256": "7ee697c61269794f06de8d884645f43e613b6740ecf5f994365473abb2f8d748"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/opengl/northwatch-shed-wash-basin-dry.png",
+      "url": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/opengl/northwatch-shed-wash-basin-dry.png",
+      "title": "Northwatch shed wash basin dry",
+      "kind": "Northwatch independent wash-water service in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 434599,
+      "sha256": "cc9c475ad2e36c4224fffd2dfa578a33d97e0d149ea4dab85658255c600cdb7c"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/opengl/northwatch-shed-wash-basin-running.png",
+      "url": "development/levels/rebuild/northwatch-water-pass/wld-08/captures/opengl/northwatch-shed-wash-basin-running.png",
+      "title": "Northwatch shed wash basin running",
+      "kind": "Northwatch independent wash-water service in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 428249,
+      "sha256": "aa33033548cc3a15a40e068829000729dd2d63b9cfa9f877c4ad4843f285f16d"
     },
     {
       "path": "development/levels/rebuild/previews/academy-revised-rough-plan.png",

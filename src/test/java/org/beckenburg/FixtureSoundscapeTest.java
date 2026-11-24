@@ -14,7 +14,11 @@ public final class FixtureSoundscapeTest {
   gate.state(1,true);mixed=LanAudio.mixFixtureBlock(new byte[][]{a,b},new int[]{1,2},new int[]{first,second},gate);check(Arrays.equals(mixed,b),"off/on resurrects stale queued voice");
   gate.state(2,false);check(Arrays.equals(LanAudio.mixFixtureBlock(new byte[][]{a,b},new int[]{1,2},new int[]{first,second},gate),new byte[2048]),"off sources leak audio into next mixer block");
   check(Arrays.equals(LanAudio.mixFixtureBlock(new byte[][]{b},new int[]{-1},new int[]{0},gate),b),"fixture mute cuts unrelated game sound");
-  var map=new HouseMap();var f=map.fixtures().states().stream().filter(s->s.kind()==HauntedFixtures.Kind.PHONE).findFirst().orElseThrow();var operator=HauntedFixturesTest.operator(map,f);
+  var map=Arrays.stream(AuthoredTestSupport.SITES).map(HouseMap::new)
+    .filter(site->site.fixtures().states().stream().anyMatch(f->f.kind()==HauntedFixtures.Kind.PHONE))
+    .findFirst().orElseThrow(()->new AssertionError("No authored telephone for the sound lifetime check"));
+  var f=map.fixtures().states().stream().filter(s->s.kind()==HauntedFixtures.Kind.PHONE).findFirst().orElseThrow();
+  var operator=HauntedFixturesTest.operator(map,f);
   map.fixtures().toggle(f.id(),operator,1);map.fixtures().advance(10000);check(map.fixtures().state(f.id()).active(),"player-started sound times out");
   map.fixtures().toggle(f.id(),operator,10001);check(!map.fixtures().state(f.id()).active(),"player cannot stop own sound");
   map.fixtures().activate(f.id(),f.room(),10002);map.fixtures().advance(10203);check(!map.fixtures().state(f.id()).active(),"ghost activation lost bounded duration");

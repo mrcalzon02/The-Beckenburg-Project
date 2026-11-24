@@ -2275,3 +2275,7 @@ West distribution commit b9f7405f2da2bcb892b4c545cc49410d569c591d and gallery 45
 ### Northwatch tunnel and yard electrical service
 
 Surface electrical commit 6340d29f972962992f877869912f594548fc4913 and gallery 45399739191 passed on held draft PR 86. The [complete staged supply](levels/rebuild/northwatch-complete-power-pass/checkpoint.json) adds six tunnel lights and four exterior fixtures. Both renderers and live TCP verify the actual routes, controls and existing common breaker. Continue water service, furnishing and named case review, with packaged acceptance still open.
+
+### Northwatch wash-water service
+
+Electrical commit 17cb71947cc247c58a3b67911e27f0d01c0619de and gallery 45402170467 passed on held draft PR 86. The [water checkpoint](levels/rebuild/northwatch-water-pass/checkpoint.json) adds the floor-supported cistern, two live basins and shared west-wall service. Full Java compilation and legacy fixture and sound tests pass. Continue room furnishing, readable records and named case integration.

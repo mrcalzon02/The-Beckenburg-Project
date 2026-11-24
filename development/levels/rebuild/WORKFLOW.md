@@ -1535,3 +1535,7 @@ All eight occupied surface interiors now have useful light from the fitted shed 
 ### Northwatch tunnel and yard electrical service
 
 Twelve circuits now serve the eight occupied surface interiors, two tunnel rooms, instrument array and court. The fitted basement feed follows the external wall, then the tunnel structure. The exterior return uses a surveyed buried alignment. Software and OpenGL verify every new load, and live TCP reaches the controls through the actual ground and lower elevations. [Service plan](northwatch-complete-power-pass/tunnel-and-yard-service-plan.svg) / [Checkpoint](northwatch-complete-power-pass/checkpoint.json)
+
+### Northwatch wash-water service
+
+The shed cistern and two floor-supported basins now use the ordinary running-water effect, sound and host authority. The gravity main follows the west wall through a sealed sleeve. Waste branches terminate in capped below-grade stubs. The two real basin approaches, twelve electrical circuits, doors and three refuges pass in the same build. [Plan](northwatch-water-pass/wash-water-plan.svg) / [Checkpoint](northwatch-water-pass/checkpoint.json)

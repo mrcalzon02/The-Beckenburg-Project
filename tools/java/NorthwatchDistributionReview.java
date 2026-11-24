@@ -60,7 +60,8 @@ final class NorthwatchDistributionReview {
             lighting.setSourceRunning(false);
             double[] stopped=energies(fixtures,lighting,lamps);
             lighting.setSourceRunning(true);
-            boolean capture=complete?LOWER_AND_YARD.contains(circuit):!surface||SURFACE.contains(circuit);
+            boolean capture=!routes.containsKey("Northwatch-switch-shed-wash-basin")
+                &&(complete?LOWER_AND_YARD.contains(circuit):!surface||SURFACE.contains(circuit));
             Path on=captures.resolve("northwatch-"+circuit.room()+"-supplied.png");
             Path off=captures.resolve("northwatch-"+circuit.room()+"-tripped.png");
             if(capture)render(map,lighting,circuit,lamp,on);
@@ -86,6 +87,8 @@ final class NorthwatchDistributionReview {
             new Vec(11,0,16),new Vec(7,0,16),new Vec(7,0,25.05));
         at=NorthwatchDoorRuntime.open(map,replica,scene,leader,witness,at,840);
         at=switchRoom(map,leader,witness,lighting,at,routes,CIRCUITS.get(0),report);
+        if(routes.containsKey("Northwatch-switch-lab-wash-basin"))
+            at=NorthwatchWaterReview.liveLab(map,leader,witness,at,routes,report);
         boolean surface=routes.containsKey("Northwatch-switch-store");
         if(surface) {
             var labFeet=at;

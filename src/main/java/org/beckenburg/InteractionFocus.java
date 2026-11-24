@@ -56,7 +56,15 @@ public final class InteractionFocus {
         if(!observer.exposed()||!Double.isFinite(observer.x()+observer.y()+observer.z()+observer.yaw()+observer.pitch())||Math.abs(observer.pitch())>1.4)return null;
         double[] r=ray(observer);List<Target> targets=new ArrayList<>();double blocker=Double.POSITIVE_INFINITY;
         for(var item:map.clutter().states())if(item.holder()==-1&&map.clutter().held(observer.seat())<0)candidate(targets,Kind.CLUTTER,""+item.id(),label(item.kind().name()),hit(item.kind().mesh(),r,item.x(),item.y(),item.z(),item.yaw(),1,1,1,item.roll(),item.kind().half));
-        for(var f:map.fixtures().states())if(f.kind().mesh()!=null)candidate(targets,Kind.FIXTURE,""+f.id(),label(f.kind().name()),hit(f.kind().mesh(),r,f.x(),f.y(),f.z(),f.yaw(),f.scale()));
+        for(var f:map.fixtures().states()){
+            String mesh=f.kind().mesh();
+            if(mesh!=null)candidate(targets,Kind.FIXTURE,""+f.id(),label(f.kind().name()),hit(mesh,r,f.x(),f.y(),f.z(),f.yaw(),f.scale()));
+            else if(f.kind()==HauntedFixtures.Kind.SINK_BATH&&map.nativeInvestigation()!=null
+                    &&map.level().sockets().stream().anyMatch(s->s.type().equals(HauntedFixtures.NATIVE_BASIN_SOCKET)
+                        &&s.room()==f.room()&&s.x()==f.x()&&s.y()==f.y()&&s.z()==f.z()))
+                candidate(targets,Kind.FIXTURE,""+f.id(),"Wash basin",
+                    hit("level_bath_basin",r,f.x(),f.y()-HauntedFixtures.BASIN_RIM_Y,f.z(),f.yaw(),f.scale()));
+        }
         for(var prop:map.level().props()){
             double distance=hit(prop.mesh(),r,prop.x(),prop.y(),prop.z(),prop.yaw(),prop.scale());blocker=Math.min(blocker,distance);
             for(var story:map.level().sockets())if(story.type().equals("story")&&story.room()==prop.room()&&Math.hypot(story.x()-prop.x(),story.z()-prop.z())<.02&&prop.mesh().startsWith("level_"))

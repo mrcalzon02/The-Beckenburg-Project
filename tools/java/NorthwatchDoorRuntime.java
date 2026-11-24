@@ -80,7 +80,11 @@ final class NorthwatchDoorRuntime {
             require(map.roomAt(at.x(),at.y(),at.z())==5&&"generator".equals(map.architecturalRoomAt(at.x(),at.y(),at.z())),
                 "The live van approach missed the real generator receiving floor");
             if(serviceRoute!=null)at=NorthwatchPowerReview.live(map,host,leader,witness,crew,at,serviceRoute,report);
-            if(distributionRoutes!=null)NorthwatchDistributionReview.live(map,replica,scene,host,leader,witness,at,distributionRoutes,report);
+            if(distributionRoutes!=null){
+                if(distributionRoutes.containsKey("Northwatch-switch-shed-wash-basin"))
+                    at=NorthwatchWaterReview.liveShed(map,leader,witness,at,distributionRoutes,report);
+                NorthwatchDistributionReview.live(map,replica,scene,host,leader,witness,at,distributionRoutes,report);
+            }
         }
     }
 
