@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12279,
+  "count": 12289,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -116474,6 +116474,106 @@
       "height": 640,
       "bytes": 388325,
       "sha256": "92b816dc5caa77e7833ab9255d5a130489b568c1195ca239e0c9e11385890fa7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/generator-and-main-board.png",
+      "url": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/generator-and-main-board.png",
+      "title": "Generator and main board",
+      "kind": "Monastery of Ashen Bells service power and switched fixtures in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 453859,
+      "sha256": "382e1eb79b3d27f69b2f38c0adf97bde529f2e036cfc5dcae145719101826cfa"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/service-court-isolated.png",
+      "url": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/service-court-isolated.png",
+      "title": "Service court isolated",
+      "kind": "Monastery of Ashen Bells service power and switched fixtures in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 142561,
+      "sha256": "4969c12f10c774ae52106eb14469be5aada293f303e61da26e2c1dbbc7b77fc5"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/service-court-supplied.png",
+      "url": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/service-court-supplied.png",
+      "title": "Service court supplied",
+      "kind": "Monastery of Ashen Bells service power and switched fixtures in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 314701,
+      "sha256": "ddf1ec51cc3de26293069990f008f1f037913e8423230db56c09a01b33224198"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/tower-base-isolated.png",
+      "url": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/tower-base-isolated.png",
+      "title": "Tower base isolated",
+      "kind": "Monastery of Ashen Bells service power and switched fixtures in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 129017,
+      "sha256": "4a2fcca7a4e6e762b110c0c25d67c3cf9d08ef9dec96ae6bcb2b5438c903087f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/tower-base-supplied.png",
+      "url": "development/levels/rebuild/monastery-power-pass/wld-10/captures/opengl/tower-base-supplied.png",
+      "title": "Tower base supplied",
+      "kind": "Monastery of Ashen Bells service power and switched fixtures in the OpenGL game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 198754,
+      "sha256": "e58084a5d838ecb18db8226655001041c815a4f769fd9bf92b04e40ad020252a"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/software/generator-and-main-board.png",
+      "url": "development/levels/rebuild/monastery-power-pass/wld-10/captures/software/generator-and-main-board.png",
+      "title": "Generator and main board",
+      "kind": "Monastery of Ashen Bells service power and switched fixtures in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 457089,
+      "sha256": "163472e7ebe79dd5fa92f9a2273638bb80d80cda0b383d9ca370cc44e3f641cf"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/software/service-court-isolated.png",
+      "url": "development/levels/rebuild/monastery-power-pass/wld-10/captures/software/service-court-isolated.png",
+      "title": "Service court isolated",
+      "kind": "Monastery of Ashen Bells service power and switched fixtures in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 143204,
+      "sha256": "7cae96a2029d83863be8600a8a7b3c4cdd5cea2b1c42e3094a57e93fe941b6ee"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/software/service-court-supplied.png",
+      "url": "development/levels/rebuild/monastery-power-pass/wld-10/captures/software/service-court-supplied.png",
+      "title": "Service court supplied",
+      "kind": "Monastery of Ashen Bells service power and switched fixtures in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 363553,
+      "sha256": "cfc136ae26a05abbdc346701ce6fb22109a5a0adaaf2c1a43e5dd70c50418552"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/software/tower-base-isolated.png",
+      "url": "development/levels/rebuild/monastery-power-pass/wld-10/captures/software/tower-base-isolated.png",
+      "title": "Tower base isolated",
+      "kind": "Monastery of Ashen Bells service power and switched fixtures in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 127554,
+      "sha256": "662c36b9ae245c7cb4c4d6b627863d9cdb29ae7b8d89c1ed5ecba0f8880400ac"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-power-pass/wld-10/captures/software/tower-base-supplied.png",
+      "url": "development/levels/rebuild/monastery-power-pass/wld-10/captures/software/tower-base-supplied.png",
+      "title": "Tower base supplied",
+      "kind": "Monastery of Ashen Bells service power and switched fixtures in the software game renderer",
+      "width": 920,
+      "height": 620,
+      "bytes": 252405,
+      "sha256": "f4e67d22b4c2f540239d3719b3b3df821e0d03a5771f0c5391bd04b0eb7aeeb8"
     },
     {
       "path": "development/levels/rebuild/monastery-refuge-pass/wld-10/captures/opengl/monastery-archive-cupboard-disabled.png",

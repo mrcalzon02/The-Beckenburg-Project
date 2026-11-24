@@ -9262,3 +9262,7 @@ Three tower abutments and four cloister gable shoulders now have measured lead f
 ### DEV-718 · Monastery gate and herb court eaves
 
 Five roof runs now drain to ten physically open outfalls beside supported piers. The archive–vestry roof step has a fitted lap. Both game renderers and the live memorial arrival replay passed with the same doors, stairs and refuge sites. Outlying and tower eaves remain open. [Verification checkpoint](../levels/rebuild/monastery-eave-pass/checkpoint.json)
+
+### DEV-719 · Monastery service court and tower power
+
+A founded service-court generator, mounted main cabinet and supported conduit now supply four real fixtures on independently switched court and tower circuits. The ordinary host tripped and reset the breaker. Source restart and reconnect preserved the trip. Remaining room power and named acceptance are open. [Verification checkpoint](../levels/rebuild/monastery-power-pass/checkpoint.json)

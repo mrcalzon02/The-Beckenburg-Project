@@ -2351,3 +2351,7 @@ Valley checkpoint 325435d53579537e5b4c98a46241bac5d2e03c8c passed gallery 454530
 ### Monastery of Ashen Bells gate and herb court eaves
 
 Flashing checkpoint 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf passed gallery 45454967742 on draft PR 86. Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with multiplayer 44863686526 and GPU acceptance 44863686455. The [eave checkpoint](levels/rebuild/monastery-eave-pass/checkpoint.json) records five fitted gutters, open pipes and gravel beds, the archive–vestry lap and a live walk from the van to the memorial chamber. Continue the outlying roof edges and supported service distribution before named packaged acceptance.
+
+### Monastery of Ashen Bells service court and tower power
+
+Eave checkpoint 322a8045c5c8d275a27741f027e30e4b7cbd6604 remains local following an automatic upload rejection. The last verified draft remote head is 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Main cb220372fb721fbe588f49d3dc488f6dbba1602d still reports multiplayer acceptance 44863686526 and GPU acceptance 44863686455. The [service-power checkpoint](levels/rebuild/monastery-power-pass/checkpoint.json) records four wired loads, two independent switches and live ghost trip, restart, reconnect and reset. Continue room-by-room service distribution, remaining outfalls and named packaged acceptance.

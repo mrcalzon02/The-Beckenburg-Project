@@ -7965,6 +7965,17 @@
       "action": "Fit five graded gutter runs with open notches, supported pipes and founded gravel beds. Lap the roof step and replay ordinary access and hiding.",
       "older_maps": "Audit eaves above arrival, doors or stairs and trace each supported outlet to its discharge.",
       "evidence": "development/levels/rebuild/monastery-eave-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-719",
+      "title": "Monastery service court had no installed power source or working circuits",
+      "status": "MONASTERY_FOUNDED_SERVICE_SOURCE_AND_TWO_SWITCHED_CIRCUITS_STAGED",
+      "affected": "WLD-10 service court and bell tower base",
+      "symptom": "The approved source and breaker had no fitted equipment, named wires or functioning loads.",
+      "cause": "The court and tower geometry predated placement, service routing and socket binding.",
+      "action": "Fit a founded source, cabinet, weather hood and two switched branches. Verify actual fixture output, host ghost trip, independent restart, reconnect and reset.",
+      "older_maps": "Verify approved remote power against mounted equipment and replicated source and breaker state.",
+      "evidence": "development/levels/rebuild/monastery-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
