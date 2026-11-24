@@ -1563,3 +1563,7 @@ The saved Dam rim now joins a continuous modeled valley with a road bend and dow
 ### Blackwater Hydroelectric Dam operating thresholds
 
 Six bare masonry entries received indexed casings and all fourteen frames now use shared operating leaves. The lower valve bypass is closed in the wall. Both renderers passed 19 owned routes, all fifteen spawns and the fitted doors in both states. Live four-peer TCP walked from the van, operated the crest and lower doors, and reached the spillway. All 6,066 standing footprints and the prior perimeter and vertical checks passed on the final collision export. [Door plan](dam-door-pass/wld-09/door-plan.svg) · [Checkpoint](dam-door-pass/checkpoint.json)
+
+### Blackwater Hydroelectric Dam walk-in refuges
+
+Three supported enclosures leave the fitted doors, stairs and retained routes clear. Both game renderers verify 207 usable floor samples, 2,475 protected samples across the entire enclosure, and 12 van-to-refuge and return replays. Live hunters enter, hide, reveal and leave in each room. The workshop ghost is stopped at 100% cover and can cross the same threshold at zero. [Refuge plan](dam-refuge-pass/wld-09/refuge-plan.svg) · [Checkpoint](dam-refuge-pass/checkpoint.json)

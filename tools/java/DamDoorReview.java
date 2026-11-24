@@ -22,7 +22,7 @@ import java.util.Map;
 /** Exercises operating Dam leaves in the shared game, including live client movement. */
 public final class DamDoorReview {
     private static final double[] POSTURES={HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT};
-    private record Scene(LevelDefinition level,NativeInvestigationScene nativeScene,
+    record Scene(LevelDefinition level,NativeInvestigationScene nativeScene,
                          List<NativeInvestigationDoor.Spec> doors,Map<String,List<Vec>> paths) {
         HouseMap map(){return new HouseMap(HouseMap.Site.USER,level,null,nativeScene);}
     }
@@ -42,7 +42,7 @@ public final class DamDoorReview {
         try{review(folder,waterPath,true);}finally{stop.invoke(null);}
     }
 
-    private static Scene read(Path folder,Path waterPath)throws Exception {
+    static Scene read(Path folder,Path waterPath,String stem)throws Exception {
         var rooms=new Room[HouseMap.ROOM_COUNT];
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var stairs=new HashSet<String>();
@@ -65,6 +65,7 @@ public final class DamDoorReview {
                 }
                 case "STEP" -> stairs.add(p[1]);
                 case "RITUAL" -> sockets.add(new Socket("dam-"+p[1],"ritual",n(p,2),d(p,3),d(p,4),d(p,5),0,p[1]));
+                case "COVER" -> sockets.add(new Socket(p[1],"hide",n(p,2),d(p,3),d(p,4),d(p,5),d(p,6),"walk-in-cupboard"));
                 case "OPEN" -> portals.add(new Portal(n(p,1),n(p,2),n(p,3),d(p,4),d(p,5),d(p,6),
                     d(p,7),p[8].equals("z"),p[9],1));
                 case "POINT" -> paths.computeIfAbsent(p[1],id->new ArrayList<>()).add(point(p,2));
@@ -82,8 +83,8 @@ public final class DamDoorReview {
         var van=new VanStaging(new VanStaging.Placement(dock.x(),dock.y(),dock.z(),dock.yaw()));
         rooms[14]=new Room(14,"Expedition van",34.74,79,37.26,84.4,van.floorY(),VanStaging.INTERIOR_HEIGHT,
             "van","metal",new Vec(36,van.floorY(),82));
-        var glb=folder.resolve("door-fitted-dam.glb");
-        var collision=folder.resolve("door-fitted-dam.hcs2");
+        var glb=folder.resolve(stem+".glb");
+        var collision=folder.resolve(stem+".hcs2");
         NativeInvestigationScene scene;
         try(var model=Files.newInputStream(glb);var physics=Files.newInputStream(collision)){
             scene=NativeInvestigationScene.read(model,sha(glb),physics,sha(collision),stairs,spaces,specs);
@@ -95,7 +96,7 @@ public final class DamDoorReview {
     }
 
     private static void review(Path folder,Path water,boolean gpu)throws Exception {
-        var data=read(folder,water);
+        var data=read(folder,water,"door-fitted-dam");
         var map=data.map();
         var replica=data.map();
         var captures=folder.resolve(gpu?"captures/opengl":"captures/software");

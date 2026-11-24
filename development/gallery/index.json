@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12128,
+  "count": 12142,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -112904,6 +112904,146 @@
       "height": 580,
       "bytes": 291943,
       "sha256": "ec46009e0107d5dd7d6dc8bb9c001554d76d5a8d7e3ccb5975686549a1a203d2"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-office-cupboard-enter.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-office-cupboard-enter.png",
+      "title": "Dam office cupboard enter",
+      "kind": "Blackwater Dam full walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 485419,
+      "sha256": "af4330ae9b208500c9cd3b1e4cddfa6333822f5f46d0e3081e69340489b43a8e"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-office-cupboard-inside.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-office-cupboard-inside.png",
+      "title": "Dam office cupboard inside",
+      "kind": "Blackwater Dam full walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 404900,
+      "sha256": "251cc249090b06db18d07ad8d0e638d40f341df2d6ac52be7050bb287018fb96"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-plant-cupboard-enter.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-plant-cupboard-enter.png",
+      "title": "Dam plant cupboard enter",
+      "kind": "Blackwater Dam full walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 478445,
+      "sha256": "9cffd7f146d96fe5003c6c13fc7ea252393e494435828e7ae6db16d952adadde"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-plant-cupboard-inside.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-plant-cupboard-inside.png",
+      "title": "Dam plant cupboard inside",
+      "kind": "Blackwater Dam full walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 387658,
+      "sha256": "8fb3719522a063611bf2214bfb8d57730b5d4086639e65cbc2ef7e6f9a02cc09"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-workshop-cupboard-enter.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-workshop-cupboard-enter.png",
+      "title": "Dam workshop cupboard enter",
+      "kind": "Blackwater Dam full walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 483762,
+      "sha256": "93ecda7442c8bfbc7839fc0e2a4be94bc5f3b573842934d44ad07996df9bd719"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-workshop-cupboard-inside.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-workshop-cupboard-inside.png",
+      "title": "Dam workshop cupboard inside",
+      "kind": "Blackwater Dam full walk-in refuge in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 394288,
+      "sha256": "88d612edc82d54fa7513926c4ab80d27a85c790dcb77e46287a7a3bef1c98391"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-workshop-disabled.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-workshop-disabled.png",
+      "title": "Dam workshop disabled",
+      "kind": "Blackwater Dam zero-cover refuge control in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 369487,
+      "sha256": "01ace251d0d091c50ea8b38edbbaf942f2a509531414361ac7a5a414de09d4f3"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-office-cupboard-enter.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-office-cupboard-enter.png",
+      "title": "Dam office cupboard enter",
+      "kind": "Blackwater Dam full walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 480548,
+      "sha256": "c03f2801576fc37c1a14176ab9d4acf16c308e0f1b9cd3c93a16f48e2fb9494b"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-office-cupboard-inside.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-office-cupboard-inside.png",
+      "title": "Dam office cupboard inside",
+      "kind": "Blackwater Dam full walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 405080,
+      "sha256": "88b95c1c84e24f6af866d269205a9c981c8de9ae5679b1a6fe9edb271265b059"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-plant-cupboard-enter.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-plant-cupboard-enter.png",
+      "title": "Dam plant cupboard enter",
+      "kind": "Blackwater Dam full walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 474957,
+      "sha256": "8166a216f14e73bcca268c3d7aff944b89c4ff6f1510ae908f925e338f2d1154"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-plant-cupboard-inside.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-plant-cupboard-inside.png",
+      "title": "Dam plant cupboard inside",
+      "kind": "Blackwater Dam full walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 388675,
+      "sha256": "b0e54a19ce848d760f8567d657e0351a5cd4082d6d3664290cde14a7531358ab"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-workshop-cupboard-enter.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-workshop-cupboard-enter.png",
+      "title": "Dam workshop cupboard enter",
+      "kind": "Blackwater Dam full walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 478675,
+      "sha256": "e3f8c680dff495013d4cd4d370b5009881ad4890cb8b0e092205807d6d1c06ba"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-workshop-cupboard-inside.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-workshop-cupboard-inside.png",
+      "title": "Dam workshop cupboard inside",
+      "kind": "Blackwater Dam full walk-in refuge in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 395575,
+      "sha256": "8d24972f58336a59a8c7d34a5890d7cdbfcb5d1bf275bd56003b3e4217cb295f"
+    },
+    {
+      "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-workshop-disabled.png",
+      "url": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/software/dam-workshop-disabled.png",
+      "title": "Dam workshop disabled",
+      "kind": "Blackwater Dam zero-cover refuge control in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 371695,
+      "sha256": "8b54321f991b81c708bd1bfec9f82bf278337da9117379ffb6a5e837bdbe09a8"
     },
     {
       "path": "development/levels/rebuild/dam-tailrace-pass/wld-09/captures/opengl/dam-tailrace-downstream.png",

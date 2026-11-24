@@ -7822,6 +7822,17 @@
       "action": "Fit existing jambs and casing to each measured opening, close the verified valve bypass, and align approaches to the fitted doorways and stair landings.",
       "older_maps": "Check complete jambs and heads, swing clearance, threshold profiles, paired room ownership and audible, visual and movement behavior on both sides.",
       "evidence": "development/levels/rebuild/dam-door-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-706",
+      "title": "Blackwater Dam lacked full walk-in protection",
+      "status": "DAM_THREE_FOUNDED_WALK_IN_REFUGES_STAGED",
+      "affected": "WLD-09 office, workshop and switchgear room",
+      "symptom": "The existing room routes supplied no usable protected interior for concealment.",
+      "cause": "The civil and door stages did not yet fit dedicated refuge enclosures or bind them to the shared protection volume.",
+      "action": "Seat three canonical enclosures on actual slabs. Bind protection, cues and difficulty to their complete interiors and verify the entrance, exit and ghost crossing.",
+      "older_maps": "Measure the full width, depth and head height and test the same physical entry at maximum and zero cover.",
+      "evidence": "development/levels/rebuild/dam-refuge-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

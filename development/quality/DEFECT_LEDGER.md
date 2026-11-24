@@ -9214,3 +9214,7 @@ The rebuilt valley follows the exact saved terrain rim. Founded concrete retaini
 ### DEV-705 · Blackwater Dam operating thresholds and valve jamb
 
 All fourteen fitted thresholds bind to shared movement, sight, object and acoustic checks. A solid masonry return closes the valve-room aperture beyond its actual jamb. The switched approaches cross square through their doors and use the existing clear landings. Live peers confirmed both operated leaves on the journey into the spillway. [Evidence](../levels/rebuild/dam-door-pass/checkpoint.json)
+
+### DEV-706 · Blackwater Dam walk-in protection
+
+Actual cupboards now use the surveyed office, workshop and switchgear slabs. Protection and the visual cue cover the full walk-in enclosure. Both renderers replay entry and retreat, and live hosts verify concealment, reveal, exit, and the different spectral result at 100% and 0% cover. [Evidence](../levels/rebuild/dam-refuge-pass/checkpoint.json)
