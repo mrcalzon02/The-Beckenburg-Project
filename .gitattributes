@@ -352,3 +352,6 @@ development/levels/rebuild/lookout-power-pass/** -text
 
 # Named Lookout package review binds exact evidence exports.
 development/levels/rebuild/lookout-dispatch-pass/** -text
+
+# Lookout case attachments, receipts and exact native assets.
+development/levels/rebuild/lookout-case-pass/** -text

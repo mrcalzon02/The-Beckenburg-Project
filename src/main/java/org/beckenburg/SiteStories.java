@@ -13,8 +13,18 @@ public final class SiteStories {
   case "farmhouse"->new Identity("Hollowmere Farm","4 Mill Road, Beckenburg","Farmhouse dated 1798. Repaired after the 1947 winter; the landing washroom and shed laundry were later additions. The orchard and drying yard remain in use.");
   case "blackpine"->new Identity("Blackpine Logging Camp","North Forest logging road","A shuttered working camp. Payroll records and a shipping manifest disagree about the final crews. This fictional history does not identify the current haunting.");
   case "school"->new Identity("Ravenshade School","8 School Road, Beckenburg","Founded in 1894. The infant department opened in 1911 and a secondary extension followed in 1956. Successive coal, oil and modern boilers survive below the school.");
+  case "wld-04"->new Identity("Widow's Peak Fire Lookout","North Forest service road, Widow's Peak",
+   "The station logged weather, wind and smoke bearings. It became an emergency relay in late 2022. A radio keeper later maintained the road signal for travellers.");
   default->new Identity("Beckenburg site","Beckenburg", "Building history not yet authored.");};}
  public static Document document(String site,String id){site=canonical(site);if(id.startsWith("ROOM_"))return LegacySiteStories.document(site,Integer.parseInt(id.substring(5)));if(id.equals("EMERGENCE"))return WorldLore.fieldRecord(site);if(site.equals("blackpine"))return BlackpineStoryDressing.document(id);var place=identity(site);return switch(id){
+  case "TRANSMISSION"->lookoutDocument(site,id,"Ranger relay transcript",List.of(
+   "Final entry on the regular ranger frequency, late 2022.",
+   "Ground crews reported the forest road interrupted beyond the lower gate. The radio keeper relayed travellers' reports from the ranger room and directed groups to the roadhead.",
+   "A later hand copied the channel numbers and marked which replies were heard. The missing replies remain unconfirmed."));
+  case "SIGHTING_LOG"->lookoutDocument(site,id,"Cab sighting log",List.of(
+   "Fire watch bearings and wind log, Widow's Peak observation deck.",
+   "Ordinary smoke bearings stop halfway down the page. The following lines list an emergency frequency and times of calls from the road.",
+   "A Meridian team added a return bearing to the lower gate. Its note recommends making contact from the ranger room when the tower stairs are unsafe."));
   case "HISTORY"->new Document(id,place.title(),List.of(place.address(),place.history(),"Local history and household records. These details do not identify the haunting."));
   case "LETTERS"->new Document(id,site.equals("school")?"Caretaker's service papers":"Tied correspondence",site.equals("house")?List.of("17 Briar Lane. Mrs E. Vale, 1983.","Please keep Mother's mending tin. The little blue lid still fits, and her needles are inside.","The plumbing men return on Thursday. Leave the cellar laundry clear; the old photographs can stay on the sideboard."):
    site.equals("farmhouse")?List.of("Hollowmere Farm, Mill Road. Spring work list.","Put the clean linen on the yard line. Boots stay by the shed, not beside the upstairs washbasin.","The 1947 repair receipts are tied beneath these letters. Keep them with the farm papers."):
@@ -22,6 +32,10 @@ public final class SiteStories {
   case "MENDING"->new Document(id,"Inherited mending tin",List.of(place.address(),"A faded tin, wooden thread bobbins, crossed scissors and carefully saved needles. The lid has been kept with it.","Useful things outlived the people who first bought them; the household kept repairing instead of replacing."));
   case "BOOTS"->new Document(id,"Work boots by the laundry",List.of(place.address(),"Mud-darkened leather, worn soles and re-laced eyelets. Left beside the washing area to dry before the next day's work."));
   default->throw new IllegalArgumentException("Unknown readable object");};}
+ private static Document lookoutDocument(String site,String id,String title,List<String> lines){
+  if(!site.equals("wld-04"))throw new IllegalArgumentException("Unknown readable object");
+  return new Document(id,title,lines);
+ }
  private static void reading(LevelPlans.B b,String id,String mesh,int room,String parent,double top,double side,double depth){
   var support=b.props.stream().filter(p->p.room()==room&&p.mesh().equals(parent)).findFirst().orElse(null);if(support==null)throw new IllegalStateException("Missing narrative support "+b.id+" "+parent+" room "+room);
   double x=support.x()+side*Math.cos(support.yaw())-depth*Math.sin(support.yaw()),z=support.z()+side*Math.sin(support.yaw())+depth*Math.cos(support.yaw());

@@ -121,8 +121,8 @@ for %%S in (glb hcs2) do copy /Y development\levels\rebuild\prison-vehicle-sally
 for %%S in (arrival door-survey mission gate vehicle-gate services) do copy /Y development\levels\rebuild\prison-vehicle-sally-pass\%%S.tsv build\classes\org\beckenburg\sites\prison-%%S.tsv >nul || exit /b 1
 copy /Y development\levels\rebuild\prison-sally-gate-pass\sally-moving-panel.glb build\classes\org\beckenburg\sites\prison-sally-moving-panel.glb >nul || exit /b 1
 copy /Y development\levels\rebuild\prison-vehicle-sally-pass\vehicle-moving-panel.glb build\classes\org\beckenburg\sites\prison-vehicle-moving-panel.glb >nul || exit /b 1
-for %%S in (glb hcs2) do copy /Y development\levels\rebuild\lookout-power-pass\lookout-power.%%S build\classes\org\beckenburg\sites\lookout-power.%%S >nul || exit /b 1
-for %%S in (arrival door-survey mission) do copy /Y development\levels\rebuild\lookout-power-pass\%%S.tsv build\classes\org\beckenburg\sites\lookout-%%S.tsv >nul || exit /b 1
+for %%S in (glb hcs2) do copy /Y development\levels\rebuild\lookout-case-pass\lookout-case.%%S build\classes\org\beckenburg\sites\lookout-case.%%S >nul || exit /b 1
+for %%S in (arrival door-survey mission) do copy /Y development\levels\rebuild\lookout-case-pass\%%S.tsv build\classes\org\beckenburg\sites\lookout-%%S.tsv >nul || exit /b 1
 for %%S in (glb hcs2) do copy /Y development\levels\rebuild\asylum-flight-rails-pass\asylum-stair.%%S build\classes\org\beckenburg\sites\asylum-stair.%%S >nul || exit /b 1
 for %%S in (arrival door-survey mission services) do copy /Y development\levels\rebuild\asylum-flight-rails-pass\%%S.tsv build\classes\org\beckenburg\sites\asylum-%%S.tsv >nul || exit /b 1
 if not exist build\classes\org\beckenburg\models mkdir build\classes\org\beckenburg\models

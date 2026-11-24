@@ -3354,6 +3354,7 @@
           "status": "IN_PROGRESS",
           "source_sha": "b182395d759dd5edebef1e5e5217aaaa872100c1",
           "evidence": [
+            "development/levels/rebuild/lookout-case-pass/checkpoint.json",
             "development/levels/rebuild/furnishings/wld-04/placements.json",
             "development/levels/rebuild/furnishings/verification.json",
             "development/levels/rebuild/verification/roster-prop-allocation-2026-11-07/route-regressions.json",
@@ -3363,10 +3364,11 @@
             "development/levels/rebuild/verification/roster-basements-2026-11-07/accepted-prop-routes/route-regressions.json"
           ],
           "defects": [
+            "DEV-654",
             "DEV-370",
             "DEV-371"
           ],
-          "next_action": "Prioritize overall terrain layers/elevations, slopes/drainage/foundations; reshuffle blockouts/stair bays and update affected placements as appropriate. Preserve source IDs/pivots/UVs,40accessible spaces and shared geometry/owner/navigation/services/van coordinates. Current candidates remain unaccepted; full model capacities and runtime integration still open."
+          "next_action": "The ranger receiver and bench, transcript and cab log are fitted and verified. Continue individual site dressing and loose physics."
         },
         "S08": {
           "status": "NOT_AUDITED",
@@ -3393,14 +3395,16 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
+            "development/levels/rebuild/lookout-case-pass/checkpoint.json",
             "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json",
             "development/levels/rebuild/lookout-dispatch-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-654",
             "DEV-645",
             "DEV-653"
           ],
-          "next_action": "Named package review passed in solo and four-player LAN. Complete case behavior and public release gates."
+          "next_action": "Named package verified documents, evidence, camera, reconnect, retreat and all rites. Complete site-specific encounters and release acceptance."
         }
       },
       "arrival_bearing_pass": {

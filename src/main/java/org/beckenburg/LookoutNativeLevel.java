@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import org.beckenburg.LevelDefinition.Dock;
 import org.beckenburg.LevelDefinition.Portal;
+import org.beckenburg.LevelDefinition.Prop;
 import org.beckenburg.LevelDefinition.Room;
 import org.beckenburg.LevelDefinition.Socket;
 import org.beckenburg.LevelDefinition.Vec;
@@ -17,6 +18,11 @@ import org.beckenburg.LevelDefinition.Vec;
 /** Exact authored Lookout source selected by the ordinary gameplay entry points. */
 final class LookoutNativeLevel {
     static final String REVIEW_PROPERTY="beckenburg.review.lookoutNative";
+    private static final List<String> OWNER_NAMES=List.of(
+        "Lower signed trail","Boulder bend","Hillside clearing","Maintenance hut",
+        "Ranger station","Ranger store","Contour return","Tower foot",
+        "Midway landing","Upper turn platform","Observation cabin","Observation deck",
+        "Cab access gallery","Lower gate and roadhead");
     record Source(LevelDefinition level,NativeInvestigationScene scene,List<NativeInvestigationDoor.Spec> doors){}
 
     private LookoutNativeLevel(){}
@@ -34,13 +40,13 @@ final class LookoutNativeLevel {
 
         private static Source load(){
             try(var arrival=resource("arrival.tsv");var mission=resource("mission.tsv");
-                var schedule=resource("door-survey.tsv");var model=resource("power.glb");
-                var collision=resource("power.hcs2")){
+                var schedule=resource("door-survey.tsv");var model=resource("case.glb");
+                var collision=resource("case.hcs2")){
                 var source=read(rows(arrival),rows(schedule),rows(mission),model,collision);
                 var level=source.level();
                 if(source.doors().size()!=7||level.portals().size()!=16
                         ||level.socket("breaker",13)==null||level.socket("generator",13)==null
-                        ||HidingBudget.candidates(level).size()!=3)
+                        ||HidingBudget.candidates(level).size()!=3||level.props().size()!=2)
                     throw new IOException("Incomplete powered Lookout packet");
                 return source;
             }catch(IOException problem){
@@ -72,6 +78,7 @@ final class LookoutNativeLevel {
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var treads=new HashSet<String>();
         var sockets=new ArrayList<Socket>();
+        var props=new ArrayList<Prop>();
         for(var row:arrival)switch(row[0]){
             case "SPACE" -> spaces.add(new NativeInvestigationScene.Space(row[1],Integer.parseInt(row[2]),
                 d(row,3),d(row,4),d(row,5),d(row,6),d(row,7),d(row,8),
@@ -81,6 +88,12 @@ final class LookoutNativeLevel {
                 d(row,3),d(row,4),d(row,5),0,row[1]));
             case "SERVICE" -> sockets.add(new Socket(row[1],row[2],Integer.parseInt(row[3]),
                 d(row,4),d(row,5),d(row,6),d(row,7),row[8]));
+            case "STORY" -> {
+                int owner=Integer.parseInt(row[3]);
+                var at=point(row,5);
+                props.add(new Prop(row[4],owner,at.x(),at.y(),at.z(),d(row,9),d(row,8),0,0,.05,row[10]));
+                sockets.add(new Socket(row[1],"story",owner,at.x(),at.y(),at.z(),d(row,8),row[2]));
+            }
             case "COVER" -> sockets.add(new Socket(row[1],"hide",Integer.parseInt(row[2]),
                 d(row,3),d(row,4),d(row,5),d(row,6),"walk-in-cupboard"));
             case "SOURCE","DOCK","POINT" -> {}
@@ -98,7 +111,7 @@ final class LookoutNativeLevel {
         var rooms=owners(scene,dock,mission,portals);
         sockets.add(new Socket("lookout-scene-hash","native_scene",13,dock.x(),dock.y(),dock.z(),0,scene.revision()));
         var level=new LevelDefinition("wld-04",scene.revision(),MissionSites.title("LOOKOUT"),rooms,portals,
-            List.of(),List.of(),List.of(),sockets,List.of(),dock,"woodland");
+            List.of(),List.of(),props,sockets,List.of(),dock,"woodland");
         return new Source(level,scene,List.copyOf(frames));
     }
 
@@ -113,7 +126,7 @@ final class LookoutNativeLevel {
                 if(space==null||space.owner()!=id||!space.id().equals(row[2])
                         ||!scene.physics().traversable(at,HunterPosture.STANDING_HEIGHT))
                     throw new IOException("Unsupported Lookout owner "+row[2]+" at "+at+" / "+space);
-                result[id]=new Room(id,space.id(),space.x0(),space.z0(),space.x1(),space.z1(),space.floor(),space.height(),
+                result[id]=new Room(id,OWNER_NAMES.get(id),space.x0(),space.z0(),space.x1(),space.z1(),space.floor(),space.height(),
                     space.outside()?"native-outdoor":"wood",space.outside()?"outdoor":"timber",at);
             }
             case "TRANSITION" -> {

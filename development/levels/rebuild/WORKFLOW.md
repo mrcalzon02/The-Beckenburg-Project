@@ -1443,3 +1443,9 @@ The [checkpoint](lookout-power-pass/checkpoint.json) records software and RTX 50
 ## Lookout named package review
 
 Widow's Peak Fire Lookout retains campaign identity WLD-04 and loads the same checked maps, schedules and collision through normal solo and LAN selection. Review launches use the package flag. The package verified real cargo spawn, the 18 routes, three safe zones, room and door behavior and the actual ghost breaker trip. Its 38 runtime captures match the earlier published figures byte for byte. The [dispatch checkpoint](lookout-dispatch-pass/checkpoint.json) links the exact package audit and the [roster](lookout-dispatch-pass/roster.json). Complete the public case and release gates before removing the review flag.
+
+## Lookout physical records and full case actions
+
+The ranger receiver and transcript use a grounded bench assembled from the existing shop fixture. The optional cab log bears on the original spotter table. The map preserves all 485 existing components and reads both documents through the real aim interaction. The source-derived radio remains historical. The named briefing and actual room names use the preserved WLD-04 identity.
+
+Four-player tests opened both records, verified local camera sight and van monitor state, restored the field hunter and camera after a direct reconnect, and exercised all three rites and cargo retreat. Supplying the engine and tripping the breaker remained independent. The package repeated all 18 supported routes in both directions and postures. [Case checkpoint](lookout-case-pass/checkpoint.json) · [Current roster](lookout-case-pass/roster.json)

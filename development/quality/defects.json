@@ -7250,6 +7250,28 @@
       "action": "Bind the existing WLD-04 mission-board identity to the packaged native scene and verify normal solo and LAN dispatch under the review flag.",
       "older_maps": "Preserve saved campaign identities and require named launch from each packaged native source.",
       "evidence": "development/levels/rebuild/lookout-dispatch-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-654",
+      "title": "Named Lookout dispatched with a generic case file and no readable records",
+      "status": "SUPPORTED_LOOKOUT_RECORDS_AND_CASE_VERIFIED",
+      "affected": "Widow’s Peak Fire Lookout",
+      "symptom": "The occupied ranger room and cab lacked their planned documents and the departure file used generic text.",
+      "cause": "Named dispatch bound the native geometry without authoring its briefing or room records.",
+      "action": "Fit the existing radio and notes to the measured ranger bench and spotter table; test both interactions and the surrounding case in the exact package.",
+      "older_maps": "Audit public briefings and walk up to all supported site records after native integration.",
+      "evidence": "development/levels/rebuild/lookout-case-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-655",
+      "title": "Standalone lore test expects retired art approval copy",
+      "status": "OPEN_HISTORICAL_TEST_FIXTURE",
+      "affected": "WorldLoreTest, historical Castle archive test",
+      "symptom": "Its first art assertion expects a sentence beginning No approved master art.",
+      "cause": "The historical assertion predates approved Matthis Rook art committed in 774f8dce.",
+      "action": "Audit the standalone Castle archive fixture against the current approved source before using it as evidence.",
+      "older_maps": "Tie historical art checks to the approved model and date instead of a retired display sentence.",
+      "evidence": "development/levels/rebuild/lookout-case-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

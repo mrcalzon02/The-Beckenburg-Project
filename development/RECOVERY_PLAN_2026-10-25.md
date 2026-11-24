@@ -2147,3 +2147,7 @@ The [powered native checkpoint](levels/rebuild/lookout-power-pass/checkpoint.jso
 ### Lookout normal package review
 
 Remote source 620982236738d88c91e59e50541476dea6b574b2 published to draft PR 86. The power capture verified by SHA-256 and gallery run 45335746208 passed. The [named dispatch checkpoint](levels/rebuild/lookout-dispatch-pass/checkpoint.json) binds the verified map to the preserved WLD-04 campaign identity. Windows package assembly, solo selection, four named TCP peers, RTX 5070 runtime and five shared sanctuary regressions passed. The flag remains required until the remaining story, evidence and release gates pass.
+
+### Lookout physical records and case actions
+
+The prior named dispatch published at 590973af66a992e5333b3425ca57014bb69ca919 and gallery run 45336694384 passed. The [current exact package checkpoint](levels/rebuild/lookout-case-pass/checkpoint.json) covers physical story interaction, range-based EMF, deployed camera and van monitor state, all three rites, direct resume and cargo retreat. Current renderer and five focused regressions passed. Standalone WorldLoreTest still asserts the retired Castle portrait status, recorded in DEV-655. Continue site-specific encounters and public acceptance, and carry the verified structural method to other roster locations.

@@ -41,6 +41,14 @@ public final class SiteCaseFiles {
                 "ACCESS: Ground classrooms, cafeteria, nurse room and gym; upper library and assembly rooms; basement plant. Corridors are the main withdrawal routes.",
                 "SERVICES: Old coal and oil plant retained out of service beside a modern boiler. Radiators heat occupied rooms; no underfloor heat. Toilets and washbasins show later repairs.",
                 "TRACES: Coursework beneath relief registers, meal records, medical supplies and caretaker isolation notes. Children's belongings are human history, never automatic evidence of a child ghost."));
+            case "wld-04" -> new File("BB / WLD-04",identity.title(),identity.address(),List.of(
+                "The ranger station recorded wind and smoke bearings from the tower. A roadhead supply shelter serves the lower approach.",
+                "Late 2022: The lookout relayed interrupted calls from the forest road. A radio keeper maintained the signal for travellers.",
+                "During return surveys, Meridian volunteers copied bearings and kept the ranger-room transcript with the receiver."),List.of(
+                "OBJECTIVE: Investigate the ranger station and clearing, identify the current threat, and carry out the appropriate rite.",
+                "ACCESS: The hut and ranger store have walk-in refuges. The contour return reaches the roadhead. The tower is an optional branch with one stair approach.",
+                "SERVICES: The roadhead shelter holds the diesel generator and breaker. Starting the engine leaves a tripped breaker open.",
+                "RECORDS: Read the ranger transcript on the lower circuit. The optional cab log preserves later bearings. Gather instrument evidence for the current case."));
             default -> {
                 var story=WorldLore.SITES.stream().filter(s->s.id().equals(id)).findFirst().orElse(null);
                 yield new File("BB / "+id.toUpperCase(java.util.Locale.ROOT),story==null?identity.title():story.title(),identity.address(),

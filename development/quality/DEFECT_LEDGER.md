@@ -8998,3 +8998,11 @@ A formed bevel joins the existing apron to the shelter floor. The distinct floor
 ### DEV-653 Lookout required the custom-site harness to launch
 
 The exact powered Lookout now loads through its named mission-board and LAN selection with the review flag. The normal solo launcher and four-peer native replay pass on the packaged JAR. [Evidence](../levels/rebuild/lookout-dispatch-pass/checkpoint.json)
+
+### DEV-654 Named Lookout dispatched with a generic case file and no readable records
+
+A source-supported radio bench in the ranger room holds the lower-circuit transcript. The cabin log rests on the original spotter table. Both open at physical field positions, and the package uses the named case briefing. [Evidence](../levels/rebuild/lookout-case-pass/checkpoint.json)
+
+### DEV-655 Standalone lore test expects retired art approval copy
+
+The historical Castle archive test still expects pre-approval status text. The product and approval were already updated in 774f8dce. Audit the remaining historical fixture assumptions before treating the test as current evidence. [Evidence](../levels/rebuild/lookout-case-pass/checkpoint.json)

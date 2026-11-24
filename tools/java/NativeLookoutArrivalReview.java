@@ -107,6 +107,7 @@ public final class NativeLookoutArrivalReview {
         captureStanding(host,new Vec(33,15,5),0,captures.resolve("lookout-deck-view.png"));
         if(!HidingBudget.candidates(level).isEmpty())reviewCover(host,captures,evidence);
         if(host.hasGenerator())reviewPower(host,captures,evidence);
+        if(!level.props().isEmpty())reviewRecords(host,captures,evidence);
         if(packaged){
             require(MissionSites.byId("WLD-04").location()==SiteCatalog.Location.LOOKOUT
                 &&SiteCatalog.Location.LOOKOUT.playable(),"The normal mission board did not offer Lookout");
@@ -116,6 +117,34 @@ public final class NativeLookoutArrivalReview {
         if(List.of(args).contains("--lan"))live(level,scene,packaged,evidence);
         Files.write(output.resolve(gpu?"opengl.tsv":"native-arrival.tsv"),evidence);
         evidence.forEach(System.out::println);
+    }
+
+    private static void reviewRecords(HouseMap map,Path output,List<String> report)throws Exception{
+        for(var socket:map.level().sockets())if(socket.type().equals("story")){
+            var room=map.spawn(socket.room());
+            var feet=socket.room()==10?new Vec(25.45,room.y(),3.76):new Vec(socket.x(),room.y(),socket.z()+1.33);
+            replay(map,List.of(room,new Vec(feet.x(),room.y(),room.z()),feet),socket.id()+" approach");
+            double yaw=Math.atan2(socket.x()-feet.x(),socket.z()-feet.z());
+            double pitch=Math.atan2(socket.y()+.012-feet.y()-HunterPosture.STANDING_EYE,
+                Math.hypot(socket.x()-feet.x(),socket.z()-feet.z()));
+            var observer=new LooseClutter.Observer(0,feet.x(),feet.y(),feet.z(),yaw,pitch,true);
+            var target=InteractionFocus.pick(map,observer,List.of());
+            require(target!=null&&target.id().equals("STORY_"+socket.style()),
+                "Story item cannot be aimed from supported approach: "+socket.id());
+            var renderer=new SceneRenderer();
+            renderer.setRenderSize(880,580);
+            renderer.setPsxPreset(PsxPipeline.Preset.OFF);
+            renderer.x=feet.x();renderer.z=feet.z();renderer.eyeHeight=observer.eyeY();
+            renderer.yaw=yaw;renderer.pitch=pitch;renderer.lamp=true;
+            renderer.setLampHardware(EquipmentTiers.Tier.III,false);
+            NativeSchoolInteriorReview.drawFrame(renderer,map,output.resolve(socket.id()+".png"));
+            var frame=renderer.image();
+            var graphics=frame.createGraphics();
+            try{SiteStories.draw(graphics,frame.getWidth(),frame.getHeight(),map,socket.style());}
+            finally{graphics.dispose();}
+            javax.imageio.ImageIO.write(frame,"png",output.resolve(socket.id()+"-open.png").toFile());
+        }
+        report.add("lookout_documents\tTwo supported native documents with measured standing and crouched approach, exact focus and actual readable pages");
     }
 
     private static void reviewPower(HouseMap map,Path captures,List<String> evidence)throws Exception{

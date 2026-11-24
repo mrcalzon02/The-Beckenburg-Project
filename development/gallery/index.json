@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11541,
+  "count": 11551,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -110604,6 +110604,106 @@
       "height": 850,
       "bytes": 945357,
       "sha256": "583b640d50f3e25cd4c5b7b8091f308eace6a99f68992cb0285d75633aac38ed"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-cargo-approach.png",
+      "url": "development/levels/rebuild/lookout-case-pass/captures/lookout-cargo-approach.png",
+      "title": "Lookout cargo approach",
+      "kind": "Widow’s Peak Lookout verified case view in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 473499,
+      "sha256": "6dc93f8dd26932b967a9dbd09c00b70f69ccf1896130ca645792476a18a8bfe6"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-story-sighting_log-open.png",
+      "url": "development/levels/rebuild/lookout-case-pass/captures/lookout-story-sighting_log-open.png",
+      "title": "Lookout story sighting log open",
+      "kind": "Widow’s Peak Lookout readable record in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 116265,
+      "sha256": "4818ebcb946e2a977083f685d9a62daffbbd42b2982b80df367d620dbdb13055"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-story-sighting_log.png",
+      "url": "development/levels/rebuild/lookout-case-pass/captures/lookout-story-sighting_log.png",
+      "title": "Lookout story sighting log",
+      "kind": "Widow’s Peak Lookout readable record in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 325853,
+      "sha256": "9a3cfbc8488240f6ad3f9327f896e7aa2568c8f315727ed9b873640ea1e26d8a"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-story-transmission-open.png",
+      "url": "development/levels/rebuild/lookout-case-pass/captures/lookout-story-transmission-open.png",
+      "title": "Lookout story transmission open",
+      "kind": "Widow’s Peak Lookout readable record in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 110877,
+      "sha256": "8ee4ef41f0c18a07735d7118ff716b7cc05344da537399a36be303b1fff7c8c0"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-story-transmission.png",
+      "url": "development/levels/rebuild/lookout-case-pass/captures/lookout-story-transmission.png",
+      "title": "Lookout story transmission",
+      "kind": "Widow’s Peak Lookout readable record in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 368941,
+      "sha256": "ea15d4d9bacb9bfb7a454d42d583ebc2d4606867a47204b46f51589d4f21cab6"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-case-pass/captures/opengl/lookout-cargo-approach.png",
+      "url": "development/levels/rebuild/lookout-case-pass/captures/opengl/lookout-cargo-approach.png",
+      "title": "Lookout cargo approach",
+      "kind": "Widow’s Peak Lookout verified case view in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 476771,
+      "sha256": "38aed64aeff4a419678f83ecf2a5f05b2382fe8dee095b330c29de089d3b952b"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-case-pass/captures/opengl/lookout-story-sighting_log-open.png",
+      "url": "development/levels/rebuild/lookout-case-pass/captures/opengl/lookout-story-sighting_log-open.png",
+      "title": "Lookout story sighting log open",
+      "kind": "Widow’s Peak Lookout readable record in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 115601,
+      "sha256": "429600f778317b7985eb345d789bfec8f08f2c8514bfc0576c430f2524f5e089"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-case-pass/captures/opengl/lookout-story-sighting_log.png",
+      "url": "development/levels/rebuild/lookout-case-pass/captures/opengl/lookout-story-sighting_log.png",
+      "title": "Lookout story sighting log",
+      "kind": "Widow’s Peak Lookout readable record in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 324048,
+      "sha256": "6d15208aeb5389c706ef79caad7a4518beb332dae834217585cfee9b804c9897"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-case-pass/captures/opengl/lookout-story-transmission-open.png",
+      "url": "development/levels/rebuild/lookout-case-pass/captures/opengl/lookout-story-transmission-open.png",
+      "title": "Lookout story transmission open",
+      "kind": "Widow’s Peak Lookout readable record in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 111519,
+      "sha256": "d231261f5b5261d166336064f8f28cf338ec6a6a738548669a46daf88e3ea34e"
+    },
+    {
+      "path": "development/levels/rebuild/lookout-case-pass/captures/opengl/lookout-story-transmission.png",
+      "url": "development/levels/rebuild/lookout-case-pass/captures/opengl/lookout-story-transmission.png",
+      "title": "Lookout story transmission",
+      "kind": "Widow’s Peak Lookout readable record in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 369410,
+      "sha256": "65dd631c94587f8af170fc240b4838e658bdcf78b77bd80fc9ff1797fb15e5b7"
     },
     {
       "path": "development/levels/rebuild/lookout-cover-pass/captures/lookout-601-closed.png",

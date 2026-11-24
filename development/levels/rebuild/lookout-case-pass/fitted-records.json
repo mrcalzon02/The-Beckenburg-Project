@@ -1,0 +1,87 @@
+{
+  "exports": {
+    "blend": "fbba97a8a380a0dae694bada3c1e123777424080261588247e831bc0d5110719",
+    "glb": "9b93dcab1b1a3f62fd2c103b52b35a6b9252f629959507f024fd4741ae89af38",
+    "hcs2": "e8c1aae2c60928d311f412fb436c4bc0b2ebb0ab9b4fa6a33c75e61631f4a0ab"
+  },
+  "retained_components": 485,
+  "added_components": 4,
+  "preserved_bench_source": "level_blockout_workbench.001",
+  "records": [
+    {
+      "id": "TRANSMISSION",
+      "asset": "level_story_letters",
+      "asset_sha256": "8b8c58baa89876d9577127e548cc9f6323381a5d0b524b3f1baede5b7c357acc",
+      "owner": 4,
+      "position": [
+        43.05,
+        6.9104,
+        15.73
+      ],
+      "scale": 1,
+      "support": "Ranger station radio workbench",
+      "bounds": [
+        [
+          42.919125,
+          6.9109,
+          15.62368
+        ],
+        [
+          43.193039,
+          6.946112,
+          15.835818
+        ]
+      ]
+    },
+    {
+      "id": "disconnected station radio",
+      "asset": "level_event_radio_worn",
+      "asset_sha256": "faf827c0cedc0239c0f276e61f35f99b9cea92204b0b562f6dce0d79bb389627",
+      "owner": 4,
+      "position": [
+        42.41,
+        6.910399,
+        15.58
+      ],
+      "scale": 1,
+      "support": "Ranger station radio workbench",
+      "bounds": [
+        [
+          42.241436,
+          6.910399,
+          15.515
+        ],
+        [
+          42.560001,
+          7.360809,
+          15.663
+        ]
+      ]
+    },
+    {
+      "id": "SIGHTING_LOG",
+      "asset": "level_trace_journal",
+      "asset_sha256": "156d7cbc6a3273df7d2d1e305424c5c14705e8bf891d13f2a4e3320f1f3e29c5",
+      "owner": 10,
+      "position": [
+        25.28,
+        15.7154,
+        2.42
+      ],
+      "scale": 0.48,
+      "support": "level_blockout_lookout_spotter.001",
+      "bounds": [
+        [
+          25.170801,
+          15.7154,
+          2.348
+        ],
+        [
+          25.3892,
+          15.73436,
+          2.492
+        ]
+      ]
+    }
+  ]
+}
