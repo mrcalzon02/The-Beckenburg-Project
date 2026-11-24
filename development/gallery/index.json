@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11344,
+  "count": 11348,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -110064,6 +110064,46 @@
       "height": 1000,
       "bytes": 61389,
       "sha256": "e5b0b1c52592b54ebc51ac3e556f092797eed6b7b1b1ae4a04e992f461ba773f"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-450-closed.png",
+      "url": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-450-closed.png",
+      "title": "Prison entry 450 closed",
+      "kind": "Prison staged public entrances in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 402364,
+      "sha256": "ccd3e4e22748ac35b8768a14104386fb427e4e8ea978aebd6ed80ecc913a00f8"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-450-open.png",
+      "url": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-450-open.png",
+      "title": "Prison entry 450 open",
+      "kind": "Prison staged public entrances in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 365367,
+      "sha256": "07071d4b58fb1bc507aca36c6da1f76397e09e92a64ac6b30cf005976ce3038f"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-451-closed.png",
+      "url": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-451-closed.png",
+      "title": "Prison entry 451 closed",
+      "kind": "Prison staged public entrances in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 387851,
+      "sha256": "cca767cd8ff3065fd448855e1f42c249587ab25ebe8fe2c031a57249d25bf90a"
+    },
+    {
+      "path": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-451-open.png",
+      "url": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-451-open.png",
+      "title": "Prison entry 451 open",
+      "kind": "Prison staged public entrances in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 365531,
+      "sha256": "05c8359520b27849895fb531414786e29792065455d3a7b1ed2dea84746e4da9"
     },
     {
       "path": "development/levels/rebuild/school-electrical-pass/captures/school-assembly-door-open-software.png",

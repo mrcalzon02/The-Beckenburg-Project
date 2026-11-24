@@ -56,7 +56,7 @@ public final class NativeSchoolInteriorReview {
         return Math.abs(at.y()-b.y())<.05;
     }
 
-    private static void audit(HouseMap map, NativeInvestigationDoor.Spec spec, boolean open) {
+    static void audit(HouseMap map, NativeInvestigationDoor.Spec spec, boolean open) {
         var p=spec.portal();
         for (double lane:new double[]{-.18,0,.18}) {
             var a=point(p,-.68,lane,0);
@@ -92,7 +92,7 @@ public final class NativeSchoolInteriorReview {
         }
     }
 
-    private static Vec walk(HouseMap map,List<Vec> route,double height,String label) {
+    static Vec walk(HouseMap map,List<Vec> route,double height,String label) {
         Vec at=route.get(0);
         require(map.traversable(at.x(),at.y(),at.z(),height),"Unsupported start "+label+" "+at);
         for(int j=1;j<route.size();j++){
@@ -149,13 +149,17 @@ public final class NativeSchoolInteriorReview {
     }
 
     private static void render(HouseMap map, Portal p, Path target) throws Exception {
+        render(map,p,target,-1);
+    }
+
+    static void render(HouseMap map, Portal p, Path target,int side) throws Exception {
         var renderer=new SceneRenderer();
         renderer.setRenderSize(880,580);
         renderer.setPsxPreset(PsxPipeline.Preset.OFF);
         renderer.lamp=true;
         renderer.setLampHardware(EquipmentTiers.Tier.III,false);
-        Vec camera=point(p,-1.45,-.22,0);
-        if(!map.traversable(camera.x(),camera.y(),camera.z())) camera=point(p,-.82,0,0);
+        Vec camera=point(p,side*1.45,-.22,0);
+        if(!map.traversable(camera.x(),camera.y(),camera.z())) camera=point(p,side*.82,0,0);
         require(map.traversable(camera.x(),camera.y(),camera.z()),"Unsupported review camera "+p.id());
         renderer.x=camera.x();
         renderer.z=camera.z();
@@ -188,7 +192,7 @@ public final class NativeSchoolInteriorReview {
         try{review(args);}finally{stop.invoke(null);}
     }
 
-    private static void exportTriangles(NativeInvestigationScene scene, Path file)throws Exception {
+    static void exportTriangles(NativeInvestigationScene scene, Path file)throws Exception {
         try(var out=Files.newBufferedWriter(file)){
             for(var door:scene.doors())for(boolean open:new boolean[]{false,true}){
                 for(var triangle:door.pose(open).model().triangles()){

@@ -6920,6 +6920,17 @@
       "action": "Measure the installed source terminals. Join each lug to its drop, all drops to the manifold and the riser to the wall-backed feed box. Verify the reopened export and capture both renderers.",
       "older_maps": "Inspect exposed service endpoints in standing views and confirm geometry contact against placed source assets.",
       "evidence": "development/levels/rebuild/school-electrical-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-624",
+      "title": "Prison public reception and records frames had no physical leaves",
+      "status": "CORRECTED_IN_STAGED_PUBLIC_DOOR_REVIEW",
+      "affected": "Public Prison entrance and reception-to-records doorway",
+      "symptom": "The measured jambs were walkable but could never close for body, sight or sound.",
+      "cause": "The retained static architecture provided the apertures only.",
+      "action": "Fit a paired outward entrance set and the records leaf within the measured frames. Reopen the editable scene and replay the exact game door states and arrival.",
+      "older_maps": "Check public and custody transitions separately. Audit appropriate secure leaves and manual release before dispatch.",
+      "evidence": "development/levels/rebuild/prison-public-entry-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

@@ -8772,6 +8772,16 @@ Measure the installed source terminals. Join each lug to its drop, all drops to 
 
 Inspect exposed service endpoints in standing views and confirm geometry contact against placed source assets. [DEV-623 evidence](../levels/rebuild/school-electrical-pass/checkpoint.json)
 
+### DEV-624 Prison public reception and records frames had no physical leaves
+
+**Status** CORRECTED_IN_STAGED_PUBLIC_DOOR_REVIEW · **Affected** Public Prison entrance and reception-to-records doorway
+
+The measured jambs were walkable but could never close for body, sight or sound.
+
+Fit a paired outward entrance set and the records leaf within the measured frames. Reopen the editable scene and replay both game door states and arrival.
+
+Check public and custody transitions separately. Audit appropriate secure leaves and manual release before dispatch. [DEV-624 evidence](../levels/rebuild/prison-public-entry-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

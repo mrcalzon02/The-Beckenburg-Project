@@ -1,4 +1,4 @@
-"""Add editable closed and parked-open leaf poses to the retained School scene."""
+"""Add editable closed and parked-open leaf poses to the retained native scene."""
 import argparse
 import csv
 import hashlib
@@ -25,7 +25,7 @@ def leaf_transform(axis, center, frame, width, side, swing, opened):
             @ Matrix.Rotation(-math.atan2(sin, cos), 4, "Z"))
 
 
-def build(source, schedule, asset, target, vertices):
+def build(source, schedule, asset, target, vertices, site="School"):
     bpy.ops.wm.open_mainfile(filepath=str(source.resolve()))
     bpy.context.preferences.filepaths.save_version = 0
     scene = bpy.context.scene
@@ -40,7 +40,7 @@ def build(source, schedule, asset, target, vertices):
         bpy.data.objects.remove(obj, do_unlink=True)
 
     for state, opened in (("closed", False), ("open", True)):
-        group = bpy.data.collections.new(f"School door leaves {state}")
+        group = bpy.data.collections.new(f"{site} door leaves {state}")
         scene.collection.children.link(group)
         for row in csv.reader(schedule.open(encoding="utf-8"), delimiter="\t"):
             if not row[0].isdigit():
@@ -59,7 +59,7 @@ def build(source, schedule, asset, target, vertices):
                 for index, (mesh, local) in enumerate(meshes):
                     fitted = mesh.copy()
                     fitted.transform(scale @ centered @ local)
-                    obj = bpy.data.objects.new(f"School {portal} {state} {side:+} {index}", fitted)
+                    obj = bpy.data.objects.new(f"{site} {portal} {state} {side:+} {index}", fitted)
                     group.objects.link(obj)
                     obj.matrix_world = pivot
                     obj["portal"] = int(portal)
@@ -89,5 +89,6 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     for name in ("source", "schedule", "asset", "target", "vertices"):
         parser.add_argument(name, type=Path)
+    parser.add_argument("--site", default="School")
     args = parser.parse_args(sys.argv[sys.argv.index("--") + 1:])
-    build(args.source, args.schedule, args.asset, args.target, args.vertices)
+    build(args.source, args.schedule, args.asset, args.target, args.vertices, args.site)
