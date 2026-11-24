@@ -1,0 +1,217 @@
+{
+  "replaced": [
+    "Flat route shell Wall sally S",
+    "Flat route shell Wall sally S.001",
+    "Header sally S",
+    "sally-port eave closure south"
+  ],
+  "retained_components": 1137,
+  "new_static_components": 18,
+  "facade_layers": [
+    "founded west pier",
+    "founded east pier",
+    "continuous lintel and head",
+    "eave closure founded on the retained ceiling cap"
+  ],
+  "clear_opening_m": [
+    3.0,
+    3.04
+  ],
+  "travel_m": 3.13,
+  "slab_bearings": [
+    {
+      "component": "Floor sally",
+      "contact": [
+        26.35,
+        -0.0,
+        67.790001
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        26.35,
+        -0.0,
+        67.949997
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        28.0,
+        -0.0,
+        67.790001
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        28.0,
+        -0.0,
+        67.949997
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        32.349998,
+        -0.0,
+        67.790001
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        32.349998,
+        -0.0,
+        67.949997
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        35.650002,
+        -0.0,
+        67.790001
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        35.650002,
+        -0.0,
+        67.949997
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        40.0,
+        -0.0,
+        67.790001
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        40.0,
+        -0.0,
+        67.949997
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        41.650002,
+        -0.0,
+        67.790001
+      ]
+    },
+    {
+      "component": "Floor sally",
+      "contact": [
+        41.650002,
+        -0.0,
+        67.949997
+      ]
+    }
+  ],
+  "rail_bearings": [
+    {
+      "component": "Entrance rebuild Prison south vehicle facade continuous lintel and head",
+      "contact": [
+        32.080002,
+        3.185,
+        67.760002
+      ]
+    },
+    {
+      "component": "Entrance rebuild Prison south vehicle facade continuous lintel and head",
+      "contact": [
+        33.18,
+        3.185,
+        67.760002
+      ]
+    },
+    {
+      "component": "Entrance rebuild Prison south vehicle facade continuous lintel and head",
+      "contact": [
+        34.279999,
+        3.185,
+        67.760002
+      ]
+    },
+    {
+      "component": "Entrance rebuild Prison south vehicle facade continuous lintel and head",
+      "contact": [
+        35.380001,
+        3.185,
+        67.760002
+      ]
+    },
+    {
+      "component": "Entrance rebuild Prison south vehicle facade continuous lintel and head",
+      "contact": [
+        36.48,
+        3.185,
+        67.760002
+      ]
+    },
+    {
+      "component": "Entrance rebuild Prison south vehicle facade continuous lintel and head",
+      "contact": [
+        37.580002,
+        3.185,
+        67.760002
+      ]
+    },
+    {
+      "component": "Entrance rebuild Prison south vehicle facade continuous lintel and head",
+      "contact": [
+        38.580002,
+        3.185,
+        67.760002
+      ]
+    }
+  ],
+  "releases": [
+    {
+      "id": "vehicle-release-sally",
+      "owner": 2,
+      "at": [
+        32.1,
+        1.3,
+        67.69100213623047
+      ],
+      "receiver": [
+        32.099998,
+        1.3,
+        67.760002
+      ],
+      "component": "Entrance rebuild Prison south vehicle facade west pier"
+    },
+    {
+      "id": "vehicle-release-forecourt",
+      "owner": 13,
+      "at": [
+        32.1,
+        1.3,
+        68.069
+      ],
+      "receiver": [
+        32.099998,
+        1.3,
+        68.0
+      ],
+      "component": "Entrance rebuild Prison south vehicle facade west pier"
+    }
+  ],
+  "asset": "development/levels/primitive-props-v1/models/level_blockout_prison_sally_gate.glb",
+  "asset_sha256": "957a63a8a769ebe53c6032ea4074c65ef131733d8452ac779cfc37b8aac09df3",
+  "leaf_sha256": "87d14f73ab08b7ccca4d24ffd1e5cb6646bdfffce8bbc7f9209acfb2ee15fb39",
+  "exports": {
+    "blend": "547ed3626fc5f59df37030dd5a62d702c4cd3405a45b23652afc57f4312186f0",
+    "glb": "6dffd2d22029521e7a07a63c9e1260bfb2b90afa28de4a2b58a032b6c7909bb1",
+    "hcs2": "c0b786825f6d999ec7aaacd57777daf3883e9d63e209d61b1d5d61d6cab5840b"
+  }
+}

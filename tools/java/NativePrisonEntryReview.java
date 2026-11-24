@@ -54,6 +54,7 @@ final class NativePrisonEntryReview {
         var schedule=table(packet.resolve("door-survey.tsv"));
         var records=table(packet.resolve("mission.tsv"));
         var gate=table(packet.resolve("gate.tsv"));
+        var vehicle=table(packet.resolve("vehicle-gate.tsv"));
         var services=table(packet.resolve("services.tsv"));
         var source=rows.get(0);
         var path=new ArrayList<Vec>();
@@ -61,8 +62,12 @@ final class NativePrisonEntryReview {
         PrisonNativeLevel.Source staged;
         try(var model=Files.newInputStream(Path.of(source[1]));
             var collision=Files.newInputStream(Path.of(source[3]));
-            var leaf=gate.isEmpty()?null:Files.newInputStream(Path.of(gate.get(0)[14]))){
-            staged=PrisonNativeLevel.read(rows,schedule,records,gate,services,model,collision,leaf);
+            var leaf=gate.isEmpty()?null:Files.newInputStream(Path.of(gate.get(0)[14]));
+            var vehicleLeaf=vehicle.isEmpty()?null:Files.newInputStream(Path.of(vehicle.get(0)[14]))){
+            var gates=new ArrayList<PrisonNativeLevel.GateSource>();
+            if(leaf!=null)gates.add(new PrisonNativeLevel.GateSource(gate,leaf));
+            if(vehicleLeaf!=null)gates.add(new PrisonNativeLevel.GateSource(vehicle,vehicleLeaf));
+            staged=PrisonNativeLevel.read(rows,schedule,records,gates,services,model,collision);
         }
         var scene=staged.scene();
         var definition=staged.definition();
@@ -100,16 +105,18 @@ final class NativePrisonEntryReview {
             report.add(spec.frameId()+"\tClosed/open/guest body, sight, aim, acoustics and object checks passed");
         }
         if(!gate.isEmpty())NativePrisonGateReview.audit(map,guest,captures,report);
+        if(!vehicle.isEmpty())NativePrisonVehicleReview.audit(map,guest,captures,report);
         NativeSchoolInteriorReview.auditHiding(map,report);
         for(var cabinet:HidingBudget.candidates(map.level()))renderCupboard(map,cabinet,captures);
         if(!services.isEmpty())
             NativeSchoolInteriorReview.auditPower(map,captures,report,"prison",new Vec(38,-3,24.95),Math.PI);
         if(!records.isEmpty()){
             NativePrisonMissionReview.audit(map,records,report);
-            if(List.of(args).contains("--lan"))
-                NativePrisonGateReview.liveRelease(
-                    packaged?new HouseMap(HouseMap.Site.PRISON):new HouseMap(HouseMap.Site.PRISON,definition,null,scene),
-                    packaged,report);
+            if(List.of(args).contains("--lan")){
+                var fresh=packaged?new HouseMap(HouseMap.Site.PRISON):new HouseMap(HouseMap.Site.PRISON,definition,null,scene);
+                NativePrisonGateReview.liveRelease(fresh,packaged,report);
+                if(!vehicle.isEmpty())NativePrisonVehicleReview.live(definition,scene,packaged,report);
+            }
         }
         var lip=map.van().world(0,VanStaging.FRONT);
         var grade=map.van().world(0,VanStaging.FRONT-VanStaging.RAMP_LENGTH-.6);

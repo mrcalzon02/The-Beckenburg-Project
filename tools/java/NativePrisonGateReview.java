@@ -16,7 +16,7 @@ final class NativePrisonGateReview {
     }
 
     static void audit(HouseMap map,HouseMap guest,Path captures,List<String> report)throws Exception{
-        var gate=map.nativeInvestigation().doors().stream().filter(door->door.sliding()).findFirst().orElseThrow();
+        var gate=map.nativeInvestigation().doors().stream().filter(door->door.spec().portal().id()==GATE).findFirst().orElseThrow();
         var portal=gate.spec().portal();
         var inside=new Vec(34,0,59.1);
         var outside=new Vec(34,0,57);
@@ -216,7 +216,7 @@ final class NativePrisonGateReview {
         operator.await("ACCEPT|INTERACT|"+action);
     }
 
-    private static void checkCrossing(HouseMap map,Vec a,Vec b,boolean open){
+    static void checkCrossing(HouseMap map,Vec a,Vec b,boolean open){
         for(double h:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT})
             for(var from:List.of(a,b)){
                 var to=from.equals(a)?b:a;
@@ -250,7 +250,7 @@ final class NativePrisonGateReview {
         double pitch=Math.atan2(release.y()-HunterPosture.STANDING_EYE,.80);
         var eye=new LooseClutter.Observer(0,feet.x(),feet.y(),feet.z(),yaw,pitch,true);
         var target=InteractionFocus.pick(map,eye,List.of());
-        require(target!=null&&target.kind()==InteractionFocus.Kind.DOOR&&target.id().equals("452")
+        require(target!=null&&target.kind()==InteractionFocus.Kind.DOOR&&target.id().equals(release.style())
             &&target.name().equals(name),"Wrong gate aim at "+id+" "+target);
         return target;
     }

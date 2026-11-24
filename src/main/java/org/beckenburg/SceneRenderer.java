@@ -2799,8 +2799,11 @@ public final class SceneRenderer {
             appendRetainedWorld(out,nativeInvestigationFaces,map.nativeInvestigation(),map);
             for(var door:map.nativeInvestigation().doors()){
                 var portal=door.spec().portal();
-                if(!objectInView(portal.x(),portal.z(),Math.max(2,portal.width()),24))continue;
                 boolean open=map.doorOpen(portal.id());
+                double slide=open?door.slideTravel():0;
+                double x=portal.x()+(portal.alongX()?slide:0);
+                double z=portal.z()+(portal.alongX()?0:slide);
+                if(!objectInView(x,z,Math.max(2,portal.width()),24))continue;
                 var key=new NativeDoorGeometryKey(map.nativeInvestigation().revision(),portal.id(),open);
                 var geometry=authoredFixtureGeometry.computeIfAbsent(key,k->{
                     var part=new ArrayList<Face>();

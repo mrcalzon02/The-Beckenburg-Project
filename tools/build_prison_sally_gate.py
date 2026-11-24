@@ -218,17 +218,17 @@ def build(out, editor_probe=None):
     print("PASS six wall bearings, two manual release controls and",len(retained),"unchanged components")
 
 
-def export_editor_poses(source,target):
+def export_editor_poses(source,target,group_name="Sally gate",portal=452):
     bpy.ops.wm.open_mainfile(filepath=str(source))
     with target.open("w",encoding="utf-8",newline="\n") as stream:
         for state in ("closed","open"):
-            group=bpy.data.collections[f"Sally gate {state} pose"]
+            group=bpy.data.collections[f"{group_name} {state} pose"]
             for obj in group.objects:
                 obj.data.calc_loop_triangles()
                 for triangle in obj.data.loop_triangles:
                     vertices=[obj.matrix_basis @ obj.data.vertices[i].co for i in triangle.vertices]
                     coords=[value for p in vertices for value in (p.x,p.z,-p.y)]
-                    stream.write(f"452\t{state}\t"+"\t".join(f"{v:.8f}" for v in coords)+"\n")
+                    stream.write(f"{portal}\t{state}\t"+"\t".join(f"{v:.8f}" for v in coords)+"\n")
 
 
 if __name__=="__main__":

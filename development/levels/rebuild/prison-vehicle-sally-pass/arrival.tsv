@@ -1,0 +1,106 @@
+SOURCE	development/levels/rebuild/prison-vehicle-sally-pass/prison-vehicle-sally.glb	6dffd2d22029521e7a07a63c9e1260bfb2b90afa28de4a2b58a032b6c7909bb1	development/levels/rebuild/prison-vehicle-sally-pass/prison-vehicle-sally.hcs2	c0b786825f6d999ec7aaacd57777daf3883e9d63e209d61b1d5d61d6cab5840b
+DOCK	34	0	85	-1.5707963267948966
+SPACE	a-lower-cell-01	0	10	24.0	14	27.5	0	3	false	true
+SPACE	a-lower-cell-02	0	10	27.5	14	31.0	0	3	false	false
+SPACE	a-lower-cell-03	0	10	31.0	14	34.5	0	3	false	false
+SPACE	a-lower-cell-04	0	10	34.5	14	38.0	0	3	false	false
+SPACE	a-lower-cell-05	0	10	38.0	14	41.5	0	3	false	false
+SPACE	a-lower-cell-06	0	10	41.5	14	45.0	0	3	false	false
+SPACE	a-lower-cell-07	0	10	45.0	14	48.5	0	3	false	false
+SPACE	a-lower-cell-08	0	10	48.5	14	52.0	0	3	false	false
+SPACE	a-lower-gallery	0	14	24	16	52	0	3	false	true
+SPACE	a-upper-cell-01	7	10	24.0	14	27.5	3.4	3	false	true
+SPACE	a-upper-cell-02	7	10	27.5	14	31.0	3.4	3	false	false
+SPACE	a-upper-cell-03	7	10	31.0	14	34.5	3.4	3	false	false
+SPACE	a-upper-cell-04	7	10	34.5	14	38.0	3.4	3	false	false
+SPACE	a-upper-cell-05	7	10	38.0	14	41.5	3.4	3	false	false
+SPACE	a-upper-cell-06	7	10	41.5	14	45.0	3.4	3	false	false
+SPACE	a-upper-cell-07	7	10	45.0	14	48.5	3.4	3	false	false
+SPACE	a-upper-cell-08	7	10	48.5	14	52.0	3.4	3	false	false
+SPACE	a-upper-gallery	7	14	24	16	58	3.4	3	false	true
+SPACE	a-rear-link	0	10	22	16	24	0	3	false	true
+SPACE	a-front-link	0	10	52	16	58	0	3	false	true
+SPACE	a-dayhall	0	16	38	22	46	0	6.8	false	false
+SPACE	a-rear-stair	0	16	28	20	38	0	3.4	false	false
+SPACE	a-rear-bypass	0	20	28	22	38	0	6.8	false	false
+SPACE	a-upper-rear-stair	7	16	28	20	38	3.4	3	false	false
+SPACE	a-change	0	16	22	19	28	0	3	false	false
+SPACE	a-showers	0	19	22	22	28	0	3	false	false
+SPACE	a-stair	0	16	46	20	58	0	3.4	false	true
+SPACE	a-upper-stair	7	16	46	20	58	3.4	3	false	true
+SPACE	a-front-aisle	0	20	46	22	58	0	3	false	false
+SPACE	b-lower-cell-01	4	54	24.0	58	27.5	0	3	false	true
+SPACE	b-lower-cell-02	4	54	27.5	58	31.0	0	3	false	false
+SPACE	b-lower-cell-03	4	54	31.0	58	34.5	0	3	false	false
+SPACE	b-lower-cell-04	4	54	34.5	58	38.0	0	3	false	false
+SPACE	b-lower-cell-05	4	54	38.0	58	41.5	0	3	false	false
+SPACE	b-lower-cell-06	4	54	41.5	58	45.0	0	3	false	false
+SPACE	b-lower-cell-07	4	54	45.0	58	48.5	0	3	false	false
+SPACE	b-lower-cell-08	4	54	48.5	58	52.0	0	3	false	false
+SPACE	b-lower-gallery	4	52	24	54	52	0	3	false	true
+SPACE	b-upper-cell-01	10	54	24.0	58	27.5	3.4	3	false	true
+SPACE	b-upper-cell-02	10	54	27.5	58	31.0	3.4	3	false	false
+SPACE	b-upper-cell-03	10	54	31.0	58	34.5	3.4	3	false	false
+SPACE	b-upper-cell-04	10	54	34.5	58	38.0	3.4	3	false	false
+SPACE	b-upper-cell-05	10	54	38.0	58	41.5	3.4	3	false	false
+SPACE	b-upper-cell-06	10	54	41.5	58	45.0	3.4	3	false	false
+SPACE	b-upper-cell-07	10	54	45.0	58	48.5	3.4	3	false	false
+SPACE	b-upper-cell-08	10	54	48.5	58	52.0	3.4	3	false	false
+SPACE	b-upper-gallery	10	52	24	54	58	3.4	3	false	true
+SPACE	b-rear-link	4	52	22	58	24	0	3	false	true
+SPACE	b-front-link	4	52	52	58	58	0	3	false	true
+SPACE	b-dayhall	4	46	38	52	46	0	6.8	false	false
+SPACE	b-rear-stair	4	48	28	52	38	0	3.4	false	false
+SPACE	b-rear-bypass	4	46	28	48	38	0	6.8	false	false
+SPACE	b-upper-rear-stair	10	48	28	52	38	3.4	3	false	false
+SPACE	b-change	4	49	22	52	28	0	3	false	false
+SPACE	b-showers	4	46	22	49	28	0	3	false	false
+SPACE	b-stair	4	48	46	52	58	0	3.4	false	true
+SPACE	b-upper-stair	10	48	46	52	58	3.4	3	false	true
+SPACE	b-front-aisle	4	46	46	48	58	0	3	false	false
+SPACE	reception	1	10	62	18	68	0	3	false	true
+SPACE	intake	1	10	58	18	62	0	3	false	true
+SPACE	holding	1	18	58	22	62	0	3	false	false
+SPACE	search	1	22	58	26	64	0	3	false	false
+SPACE	records	9	18	62	22	68	0	3	false	true
+SPACE	public-wc	9	22	64	26	68	0	3	false	false
+SPACE	sally	2	26	58	42	68	0	4	false	true
+SPACE	guard	2	42	58	50	64	0	3	false	true
+SPACE	staff	2	42	64	46.8	68	0	3	false	false
+SPACE	staff-wc	2	46.8	64	50	68	0	3	false	false
+SPACE	guard-link	2	50	58	58	68	0	3	false	true
+SPACE	visitors	6	0	58	6	68	0	3	false	false
+SPACE	visitor-custody	6	6	58	10	68	0	3	false	false
+SPACE	cross	2	10	16	58	22	0	3	false	true
+SPACE	dining	3	10	4	22	16	0	3	false	true
+SPACE	kitchen	3	22	4	28	12	0	3	false	false
+SPACE	food-store	3	22	12	25	16	0	3	false	false
+SPACE	wash-up	3	25	12	28	16	0	3	false	false
+SPACE	medical-link	5	28	4	32	16	0	3	false	true
+SPACE	exam	5	32	4	39	10	0	3	false	false
+SPACE	recovery	5	39	4	46	10	0	3	false	false
+SPACE	medical-store	5	32	10	39	16	0	3	false	true
+SPACE	sluice	5	39	10	46	16	0	3	false	true
+SPACE	chapel	6	58	34	70	52	0	4	false	true
+SPACE	isolation-link	8	58	16	61	34	0	3	false	true
+SPACE	isolation-cell-1	8	61	18	66	22.5	0	3	false	true
+SPACE	isolation-cell-2	8	61	22.5	66	27	0	3	false	false
+SPACE	observation	8	61	16	70	18	0	3	false	false
+SPACE	isolation-service	8	66	18	70	27	0	3	false	false
+SPACE	isolation-wash	8	61	27	70	34	0	3	false	true
+SPACE	plant-stair	11	28	22	32	34	0	3	false	true
+SPACE	lower-stair	11	28	22	32	34	-3	3	false	true
+SPACE	plant	11	32	22	46	34	-3	3	false	true
+SPACE	laundry	11	28	34	46	42	-3	3	false	false
+SPACE	yard	12	22	22	46	58	0	12	true	true
+SPACE	entry	13	0	68	76	94	0	12	true	true
+SPACE	north-service	13	0	0	76	4	0	12	true	false
+SPACE	east-service	13	70	4	76	68	0	12	true	false
+SPACE	west-service	13	0	4	6	58	0	12	true	false
+RITUAL	banishment	8	65.5	0	30.5
+RITUAL	cleansing	5	42.5	0	13
+RITUAL	absolution	6	64	0	43
+POINT	34	0	81
+POINT	34	0	73
+POINT	14	0	73
+POINT	14	0	65

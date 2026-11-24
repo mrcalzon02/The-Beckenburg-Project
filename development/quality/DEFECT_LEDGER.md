@@ -8832,6 +8832,36 @@ Move the cupboard forward against the surveyed finish. Check all 12 support cont
 
 Compare the rear of each cupboard to the actual fitted face and use the native mover for both directions. [DEV-629 evidence](../levels/rebuild/prison-hiding-pass/checkpoint.json)
 
+### DEV-630 The Prison south vehicle sally had a personnel-sized opening
+
+**Status** CORRECTED_WITH_COMPLETE_VEHICLE_FACADE · **Affected** Prison south vehicle access
+
+The 1.23 m gap and 2.445 m head could not admit the measured canonical vehicle profile.
+
+Replace the entire south wall pair and head with founded piers and a continuous head around a 3.00 m by 3.04 m bay. Fit the vehicle leaf and two manual releases while retaining the actual apron.
+
+Compare vehicle openings to the existing in-game dimensions and prove full-width grounded approaches. [DEV-630 evidence](../levels/rebuild/prison-vehicle-sally-pass/checkpoint.json)
+
+### DEV-631 Native rendering culled parked sliding gates around their closed centers
+
+**Status** CORRECTED_WITH_BOUNDS_AT_THE_ACTUAL_SLIDING_POSE · **Affected** Prison staged and packaged movable gates
+
+Looking east at the vehicle gate parking pier rendered the wall without the parked bars. The old renderer and the old closed view differed by at most one channel value.
+
+Use the open pose travel in the native visibility test. Compare exact same-camera pixels and retain the prior renderer negative control.
+
+Review future sliding panels from the actual parking location as well as from the opening. [DEV-631 evidence](../levels/rebuild/prison-vehicle-sally-pass/checkpoint.json)
+
+### DEV-632 The Prison south eave closure overlapped the ceiling cap face
+
+**Status** CORRECTED_WITH_ADJACENT_BEARING_DATUMS · **Affected** Prison south vehicle facade roof line
+
+The exterior view showed a speckled band where the inherited eave closure and ceiling cap occupied the same south face.
+
+Finish the new head at 3.84 m, retain the ceiling cap and seat the replacement eave enclosure at 4.00 m. Verify the roof edge closure across the seam heights.
+
+Inspect fitted fascia and ceiling-cap ends for overlapping planes and retain continuous enclosure at the corrected interface. [DEV-632 evidence](../levels/rebuild/prison-vehicle-sally-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

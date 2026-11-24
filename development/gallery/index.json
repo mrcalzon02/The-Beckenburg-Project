@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11374,
+  "count": 11382,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -110364,6 +110364,86 @@
       "height": 640,
       "bytes": 381495,
       "sha256": "9f54a6565a65d90dfe8ed9807be20ee4c44e9d3a122cb805eccc09846524eebc"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-closed.png",
+      "url": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-closed.png",
+      "title": "Prison vehicle closed",
+      "kind": "Complete Prison vehicle facade and gate in the OpenGL game renderer",
+      "width": 1050,
+      "height": 680,
+      "bytes": 422710,
+      "sha256": "1092eb8d247af2897bf42bb984dc65dad2bb5a01a915b4e7438f32517c0d773a"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-open.png",
+      "url": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-open.png",
+      "title": "Prison vehicle open",
+      "kind": "Complete Prison vehicle facade and gate in the OpenGL game renderer",
+      "width": 1050,
+      "height": 680,
+      "bytes": 448660,
+      "sha256": "6a2c1ce2d9af45a04683c6a8ab9b45551a2adc7e9c1a0fe084e5846a946cd747"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-parked-detail.png",
+      "url": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-parked-detail.png",
+      "title": "Prison vehicle parked detail",
+      "kind": "Complete Prison vehicle facade and gate in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 379224,
+      "sha256": "2206c8ecae2c176578b09472b3d1dbd0c25a6398d6dfd7ccbe21d5b1304f9581"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-parking-empty.png",
+      "url": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-parking-empty.png",
+      "title": "Prison vehicle parking empty",
+      "kind": "Complete Prison vehicle facade and gate in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 381273,
+      "sha256": "a40186cb5f50952b6db7e8ba67bfc3a2917361d597f44f63f0a259c4ba53a7c1"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-closed.png",
+      "url": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-closed.png",
+      "title": "Prison vehicle closed",
+      "kind": "Complete Prison vehicle facade and gate in the software game renderer",
+      "width": 1050,
+      "height": 680,
+      "bytes": 450730,
+      "sha256": "2506941ee4edcaa3c5c0c17b8fd739ce384832e27638076674d4fb049701efb4"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-open.png",
+      "url": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-open.png",
+      "title": "Prison vehicle open",
+      "kind": "Complete Prison vehicle facade and gate in the software game renderer",
+      "width": 1050,
+      "height": 680,
+      "bytes": 445728,
+      "sha256": "a69d9cd99ebaab606e04b123f240e6f6ae75b9f9945eb4a521b300f6b94447dc"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-parked-detail.png",
+      "url": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-parked-detail.png",
+      "title": "Prison vehicle parked detail",
+      "kind": "Complete Prison vehicle facade and gate in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 381499,
+      "sha256": "2784bf64d191d1d8adb7fd63c96c536d34105c4b5c512f8374caa4d5dab31c16"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-parking-empty.png",
+      "url": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-parking-empty.png",
+      "title": "Prison vehicle parking empty",
+      "kind": "Complete Prison vehicle facade and gate in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 379417,
+      "sha256": "61d3149b2e203eccb169ac5f7f1c7b101e6e241da9308df6b36df4105166f0a5"
     },
     {
       "path": "development/levels/rebuild/school-electrical-pass/captures/school-assembly-door-open-software.png",

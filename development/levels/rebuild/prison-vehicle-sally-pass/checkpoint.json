@@ -1,0 +1,164 @@
+{
+  "status": "NATIVE_PRISON_COMPLETE_SOUTH_FACADE_AND_TWO_MANUAL_GATES",
+  "previous_commit": "565fcdbe803ff3175692d898673ab92f6ba738f8",
+  "native_scene_revision": "295f03774d610ef29ca9bcfd35915510fe2fe07d4f91d8a5b1fa46209f5c1b04",
+  "review_property": "beckenburg.review.prisonNative",
+  "replaced_facade_and_eave_components": 4,
+  "retained_components": 1137,
+  "facade_bearing_probes": 12,
+  "rail_bearing_probes": 7,
+  "geometric_solid_rays": 85,
+  "supported_approach_points": 30,
+  "vehicle_envelope_rays": 25,
+  "width_m": 3.0,
+  "clear_height_m": 3.04,
+  "slide_travel_m": 3.13,
+  "measured_path_replays": 60,
+  "matched_editor_poses": 8,
+  "matched_editor_triangles": 4944,
+  "packaged_cases": [
+    "Ordinary solo",
+    "Four-peer yard and plant round-trip",
+    "Three-peer south gate blackout and occupied closure rejection"
+  ],
+  "renderer_checks": {
+    "software": "97034 changed pixels looking east with the closed threshold behind the operator",
+    "rtx_5070_opengl": "97044 changed pixels looking east with the closed threshold behind the operator"
+  },
+  "still_open": [
+    "Intake and west cellhouse custody closures",
+    "Complete room and ritual evidence, rescue, extraction and progression",
+    "Hardware operating envelope and production acceptance"
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/construction.json",
+      "bytes": 4402,
+      "sha256": "73a73b599cbabad9ee5b85da485927095c2c83fb23fc60bcad492ef7ec742840"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/prison-vehicle-sally.blend",
+      "bytes": 1257006,
+      "sha256": "547ed3626fc5f59df37030dd5a62d702c4cd3405a45b23652afc57f4312186f0"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/prison-vehicle-fitted.blend",
+      "bytes": 1427479,
+      "sha256": "52e59a8ab934c144e8d59e88fd101cfb5212b5a83b2f49c2c8ceeb984c577a9d"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/prison-vehicle-sally.glb",
+      "bytes": 4372664,
+      "sha256": "6dffd2d22029521e7a07a63c9e1260bfb2b90afa28de4a2b58a032b6c7909bb1"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/prison-vehicle-sally.hcs2",
+      "bytes": 1415747,
+      "sha256": "c0b786825f6d999ec7aaacd57777daf3883e9d63e209d61b1d5d61d6cab5840b"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/vehicle-moving-panel.glb",
+      "bytes": 22664,
+      "sha256": "87d14f73ab08b7ccca4d24ffd1e5cb6646bdfffce8bbc7f9209acfb2ee15fb39"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/arrival.tsv",
+      "bytes": 5370,
+      "sha256": "871ecea52aded5d740c18edff7e466559654c36076f434b2d9ab4c14c7487f2b"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/mission.tsv",
+      "bytes": 3854,
+      "sha256": "5c8546b6b301e3d455b099f7893eacf0ec7f46dfb572ef44f63f2655d0a227a1"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/services.tsv",
+      "bytes": 2831,
+      "sha256": "043b00352c6ced18c3b32b6376511691cd755327a00316358bd37ce2acd5cbbb"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/door-survey.tsv",
+      "bytes": 281,
+      "sha256": "35c3febfdef458b1b804c6dd26334430dffec09003ac398367dee9202d4f2523"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/gate.tsv",
+      "bytes": 311,
+      "sha256": "2cdbeb22df9c20131f4236bac4072680437feef91d2558a58bb48c11b71a00aa"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/vehicle-gate.tsv",
+      "bytes": 332,
+      "sha256": "938ccff90139e19b2b4bcecdb01c871f8187e5e8476764641f58275da650609a"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/vehicle-sally-plan.svg",
+      "bytes": 2604,
+      "sha256": "46875d217fbc30f33af3c74a050d0029edbfceb7b2c1facee8b0c295959b7eae"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/verification/editable-door-poses.tsv",
+      "bytes": 214,
+      "sha256": "505c967c299f81afecd945488e3fd110d3e143e7df1a09207c10a50a0b5ec15e"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/verification/opengl.tsv",
+      "bytes": 1537,
+      "sha256": "cbbd41ff185ff807937775b384c99ba73a6def060b7ad619bfff85948fcbcb74"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/verification/prior-parked-culling-negative.txt",
+      "bytes": 102,
+      "sha256": "d39594f5f90ced8bba6c38312dbff314f3aca88e288912906844a0c97f6687ed"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/verification/staged-approach.tsv",
+      "bytes": 1997,
+      "sha256": "e439b4f4e5715c9d17467d582b6578d0ee197d109476fa1575a4fd336d4ae174"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-closed.png",
+      "bytes": 422710,
+      "sha256": "1092eb8d247af2897bf42bb984dc65dad2bb5a01a915b4e7438f32517c0d773a"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-open.png",
+      "bytes": 448660,
+      "sha256": "6a2c1ce2d9af45a04683c6a8ab9b45551a2adc7e9c1a0fe084e5846a946cd747"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-parked-detail.png",
+      "bytes": 379224,
+      "sha256": "2206c8ecae2c176578b09472b3d1dbd0c25a6398d6dfd7ccbe21d5b1304f9581"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/opengl/prison-vehicle-parking-empty.png",
+      "bytes": 381273,
+      "sha256": "a40186cb5f50952b6db7e8ba67bfc3a2917361d597f44f63f0a259c4ba53a7c1"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-closed.png",
+      "bytes": 450730,
+      "sha256": "2506941ee4edcaa3c5c0c17b8fd739ce384832e27638076674d4fb049701efb4"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-open.png",
+      "bytes": 445728,
+      "sha256": "a69d9cd99ebaab606e04b123f240e6f6ae75b9f9945eb4a521b300f6b94447dc"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-parked-detail.png",
+      "bytes": 381499,
+      "sha256": "2784bf64d191d1d8adb7fd63c96c536d34105c4b5c512f8374caa4d5dab31c16"
+    },
+    {
+      "path": "development/levels/rebuild/prison-vehicle-sally-pass/captures/prison-vehicle-parking-empty.png",
+      "bytes": 379417,
+      "sha256": "61d3149b2e203eccb169ac5f7f1c7b101e6e241da9308df6b36df4105166f0a5"
+    }
+  ]
+}

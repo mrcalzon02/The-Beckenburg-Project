@@ -17,8 +17,9 @@ final class NativePrisonMissionReview {
         var walks=new LinkedHashMap<String,List<Vec>>();
         for(var row:records)if(row[0].equals("WALK"))
             walks.computeIfAbsent(row[1],key->new ArrayList<>()).add(xyz(row,2));
-        var portal=map.nativeInvestigation().doors().stream().filter(d->d.sliding()).findFirst().orElseThrow().spec().portal();
-        map.toggleDoor(portal.id());
+        var gates=map.nativeInvestigation().doors().stream().filter(NativeInvestigationDoor::sliding)
+            .map(door->door.spec().portal().id()).toList();
+        for(int gate:gates)map.toggleDoor(gate);
         for(var walk:walks.entrySet()){
             var forward=walk.getValue();
             var backward=new ArrayList<>(forward);
@@ -28,7 +29,7 @@ final class NativePrisonMissionReview {
                 NativeSchoolInteriorReview.walk(map,backward,height,walk.getKey()+" backward");
             }
         }
-        map.toggleDoor(portal.id());
+        for(int gate:gates)map.toggleDoor(gate);
         if(!map.valid()||!RitualSites.valid(map))throw new AssertionError("Invalid staged Prison mission");
         for(var room:map.level().rooms()){
             var at=room.spawn();

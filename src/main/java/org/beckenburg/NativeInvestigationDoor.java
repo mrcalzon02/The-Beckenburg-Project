@@ -6,7 +6,7 @@ import java.util.List;
 import org.beckenburg.LevelDefinition.Portal;
 
 /** The fitted portal, canonical leaf mesh and its two authoritative physical poses. */
-record NativeInvestigationDoor(Spec spec, Pose closedPose, Pose openPose, boolean sliding) {
+record NativeInvestigationDoor(Spec spec, Pose closedPose, Pose openPose, double slideTravel) {
     static final String ASSET = "door_1_loose";
     private static final double SOURCE_HEIGHT = 2.1;
     private static final double SOURCE_HALF_DEPTH = .03;
@@ -33,7 +33,7 @@ record NativeInvestigationDoor(Spec spec, Pose closedPose, Pose openPose, boolea
     record Pose(GlbProps.Model model, AuthoredSitePhysics physics) { }
 
     static NativeInvestigationDoor fit(Spec spec, GlbProps.Model source) throws IOException {
-        return new NativeInvestigationDoor(spec, pose(spec,source,false), pose(spec,source,true), false);
+        return new NativeInvestigationDoor(spec, pose(spec,source,false), pose(spec,source,true), 0);
     }
 
     static NativeInvestigationDoor slide(Spec spec, GlbProps.Model closed, double travel) throws IOException {
@@ -44,11 +44,15 @@ record NativeInvestigationDoor(Spec spec, Pose closedPose, Pose openPose, boolea
             offset(face.a(),x,z),offset(face.b(),x,z),offset(face.c(),x,z),face.material())).toList());
         return new NativeInvestigationDoor(spec,
             new Pose(closed,AuthoredSitePhysics.meshObstacles(spec.frameId(),closed)),
-            new Pose(open,AuthoredSitePhysics.meshObstacles(spec.frameId(),open)),true);
+            new Pose(open,AuthoredSitePhysics.meshObstacles(spec.frameId(),open)),travel);
     }
 
     private static GlbProps.Vertex offset(GlbProps.Vertex v,double x,double z){
         return new GlbProps.Vertex((float)(v.x()+x),v.y(),(float)(v.z()+z),v.u(),v.v(),v.nx(),v.ny(),v.nz());
+    }
+
+    boolean sliding(){
+        return slideTravel!=0;
     }
 
     Pose pose(boolean open) {

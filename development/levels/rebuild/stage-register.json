@@ -2319,14 +2319,17 @@
           "source_sha": null,
           "evidence": [
             "development/levels/rebuild/prison-public-entry-pass/checkpoint.json",
-            "development/levels/rebuild/prison-sally-gate-pass/checkpoint.json"
+            "development/levels/rebuild/prison-sally-gate-pass/checkpoint.json",
+            "development/levels/rebuild/prison-vehicle-sally-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-624",
             "DEV-625",
-            "DEV-626"
+            "DEV-626",
+            "DEV-630",
+            "DEV-632"
           ],
-          "next_action": "Fit the remaining custody leaves into the existing measured frames, then check passage closure and manual release."
+          "next_action": "Fit the intake and west cellhouse steel closures to their measured frames, then audit the remaining enclosure."
         },
         "S06": {
           "status": "IN_PROGRESS",
@@ -2388,12 +2391,14 @@
           "evidence": [
             "development/levels/rebuild/prison-sally-gate-pass/checkpoint.json",
             "development/levels/rebuild/prison-plant-pass/checkpoint.json",
-            "development/levels/rebuild/prison-hiding-pass/checkpoint.json"
+            "development/levels/rebuild/prison-hiding-pass/checkpoint.json",
+            "development/levels/rebuild/prison-vehicle-sally-pass/checkpoint.json"
           ],
           "defects": [
-            "DEV-627"
+            "DEV-627",
+            "DEV-631"
           ],
-          "next_action": "Verify all required evidence and rituals, rescue, extraction and progression, and the hardware and release gates."
+          "next_action": "Complete evidence, rituals, rescue, extraction, progression and the controlled hardware operating envelope."
         }
       },
       "arrival_bearing_pass": {

@@ -6986,6 +6986,39 @@
       "action": "Move the cupboard forward against the surveyed finish. Check all 12 support contacts and verify the native body pocket, sight closure and live host concealment.",
       "older_maps": "Compare the rear of each cupboard to the actual fitted face and use the native mover for both directions.",
       "evidence": "development/levels/rebuild/prison-hiding-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-630",
+      "title": "The Prison south vehicle sally had a personnel-sized opening",
+      "status": "CORRECTED_WITH_COMPLETE_VEHICLE_FACADE",
+      "affected": "Prison south vehicle access",
+      "symptom": "The 1.23 m gap and 2.445 m head could not admit the measured canonical vehicle profile.",
+      "cause": "The inherited opening was a standard personnel rough frame in the vehicle facade.",
+      "action": "Replace the entire south wall pair and head with founded piers and a continuous head around a 3.00 m by 3.04 m bay. Fit the vehicle leaf and two manual releases while retaining the actual apron.",
+      "older_maps": "Compare vehicle openings to the existing in-game dimensions and prove full-width grounded approaches.",
+      "evidence": "development/levels/rebuild/prison-vehicle-sally-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-631",
+      "title": "Native rendering culled parked sliding gates around their closed centers",
+      "status": "CORRECTED_WITH_BOUNDS_AT_THE_ACTUAL_SLIDING_POSE",
+      "affected": "Prison staged and packaged movable gates",
+      "symptom": "Looking east at the vehicle gate parking pier rendered the wall without the parked bars. The old renderer and the old closed view differed by at most one channel value.",
+      "cause": "The renderer culled the gate using the center of its closed portal in both poses.",
+      "action": "Use the open pose travel in the native visibility test. Compare exact same-camera pixels and retain the prior renderer negative control.",
+      "older_maps": "Review future sliding panels from the actual parking location as well as from the opening.",
+      "evidence": "development/levels/rebuild/prison-vehicle-sally-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-632",
+      "title": "The Prison south eave closure overlapped the ceiling cap face",
+      "status": "CORRECTED_WITH_ADJACENT_BEARING_DATUMS",
+      "affected": "Prison south vehicle facade roof line",
+      "symptom": "The exterior view showed a speckled band where the inherited eave closure and ceiling cap occupied the same south face.",
+      "cause": "The closure began at 3.88 m while the retained ceiling cap continued to 4.00 m.",
+      "action": "Finish the new head at 3.84 m, retain the ceiling cap and seat the replacement eave enclosure at 4.00 m. Verify the roof edge closure across the seam heights.",
+      "older_maps": "Inspect fitted fascia and ceiling-cap ends for overlapping planes and retain continuous enclosure at the corrected interface.",
+      "evidence": "development/levels/rebuild/prison-vehicle-sally-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

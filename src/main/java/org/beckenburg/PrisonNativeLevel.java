@@ -21,6 +21,8 @@ final class PrisonNativeLevel {
     record Source(LevelDefinition definition, NativeInvestigationScene scene,
                   List<NativeInvestigationDoor.Spec> swingingDoors) {}
 
+    record GateSource(List<String[]> rows,InputStream panel) {}
+
     private PrisonNativeLevel(){}
 
     static boolean reviewEnabled(){
@@ -48,13 +50,16 @@ final class PrisonNativeLevel {
                 var doors=resource("door-survey.tsv");
                 var mission=resource("mission.tsv");
                 var gate=resource("gate.tsv");
+                var vehicle=resource("vehicle-gate.tsv");
                 var services=resource("services.tsv");
-                var model=resource("hiding.glb");
-                var collision=resource("hiding.hcs2");
-                var leaf=resource("sally-moving-panel.glb")){
-                var source=read(rows(arrival),rows(doors),rows(mission),rows(gate),rows(services),model,collision,leaf);
+                var model=resource("vehicle-sally.glb");
+                var collision=resource("vehicle-sally.hcs2");
+                var leaf=resource("sally-moving-panel.glb");
+                var vehicleLeaf=resource("vehicle-moving-panel.glb")){
+                var gates=List.of(new GateSource(rows(gate),leaf),new GateSource(rows(vehicle),vehicleLeaf));
+                var source=read(rows(arrival),rows(doors),rows(mission),gates,rows(services),model,collision);
                 var level=source.definition();
-                if(source.scene().doors().size()!=3||level.portals().size()!=15
+                if(source.scene().doors().size()!=4||level.portals().size()!=15
                     ||level.socket("breaker",11)==null||HidingBudget.candidates(level).size()!=3)
                     throw new IOException("Incomplete Prison review packet");
                 return source;
@@ -77,8 +82,8 @@ final class PrisonNativeLevel {
         return rows;
     }
 
-    static Source read(List<String[]> rows,List<String[]> schedule,List<String[]> records,List<String[]> gateRows,
-            List<String[]> services,InputStream model,InputStream collision,InputStream leaf)throws IOException{
+    static Source read(List<String[]> rows,List<String[]> schedule,List<String[]> records,List<GateSource> gates,
+            List<String[]> services,InputStream model,InputStream collision)throws IOException{
         if(rows.size()<2||!rows.get(0)[0].equals("SOURCE")||!rows.get(1)[0].equals("DOCK"))
             throw new IOException("Prison manifest needs source hashes and a dock");
         var source=rows.get(0);
@@ -104,15 +109,22 @@ final class PrisonNativeLevel {
         var stairParts=records.stream().filter(r->r[0].equals("TREAD")).map(r->r[1])
             .collect(java.util.stream.Collectors.toSet());
         var scene=NativeInvestigationScene.read(model,source[2],collision,source[4],stairParts,spaces,specs);
-        if(!gateRows.isEmpty()){
+        for(var gate:gates){
+            var gateRows=gate.rows();
+            if(gateRows.size()!=3||gate.panel()==null)
+                throw new IOException("A Prison gate needs its moving leaf and two releases");
             var f=gateRows.get(0);
             var portal=new Portal(Integer.parseInt(f[0]),Integer.parseInt(f[4]),Integer.parseInt(f[5]),
                 d(f,6),d(f,7),d(f,8),d(f,9),f[10].equals("z"),"door",1);
             var spec=new NativeInvestigationDoor.Spec(f[1],f[2],f[3],portal,d(f,11),d(f,12),d(f,13),1,1,1,f[15]);
-            if(leaf==null)throw new IOException("Missing Prison gate leaf");
-            scene=scene.withSlidingDoor(spec,leaf,d(f,16));
-            for(var r:gateRows.subList(1,gateRows.size()))
-                sockets.add(new Socket(r[0],"gate_release",Integer.parseInt(r[1]),d(r,2),d(r,3),d(r,4),d(r,5),r[6]));
+            scene=scene.withSlidingDoor(spec,gate.panel(),d(f,16));
+            var owners=new java.util.HashSet<Integer>();
+            for(var r:gateRows.subList(1,gateRows.size())){
+                int owner=Integer.parseInt(r[1]);
+                if(!r[6].equals(f[0])||(owner!=portal.a()&&owner!=portal.b())||!owners.add(owner))
+                    throw new IOException("Invalid release ownership for "+spec.frameId());
+                sockets.add(new Socket(r[0],"gate_release",owner,d(r,2),d(r,3),d(r,4),d(r,5),r[6]));
+            }
         }
         for(var r:services)
             sockets.add(new Socket(r[0],r[1],Integer.parseInt(r[2]),d(r,3),d(r,4),d(r,5),d(r,6),r[7]));
