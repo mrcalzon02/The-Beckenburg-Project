@@ -51,7 +51,7 @@ final class NorthwatchDoorRuntime {
         }
     }
 
-    static void live(LevelDefinition level,NativeInvestigationScene scene)throws Exception {
+    static void live(LevelDefinition level,NativeInvestigationScene scene,List<Vec> serviceRoute,List<String> report)throws Exception {
         var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
         var replica=new HouseMap(HouseMap.Site.USER,level,null,scene);
         try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
@@ -64,6 +64,12 @@ final class NorthwatchDoorRuntime {
             leader.awaitExact("ACCEPT|VIEW3D");
             var at=NativeSchoolInteriorReview.body(leader.await("BODY|0|"));
             require(map.roomAt(at.x(),at.y(),at.z())==14,"Live case must begin on the cargo floor");
+            if(serviceRoute!=null) {
+                ghost.client.viewGhost3D();
+                ghost.awaitExact("ACCEPT|GVIEW3D");
+                ghost.await("GPOSE|");
+                NativeSchoolInteriorReview.ghostTrip(host,witness,ghost);
+            }
             for(int i=0;i<15;i++)at=NativeSchoolInteriorReview.step(leader,0,0,-100);
             at=walk(leader,at,new Vec(32,0,63),new Vec(32,0,56),new Vec(32,0,41),new Vec(26,0,41));
             at=open(map,replica,scene,leader,witness,at,845);
@@ -72,6 +78,7 @@ final class NorthwatchDoorRuntime {
             at=walk(leader,at,new Vec(13.35,0,19),new Vec(13.35,0,16.05),new Vec(11,0,16));
             require(map.roomAt(at.x(),at.y(),at.z())==5&&"generator".equals(map.architecturalRoomAt(at.x(),at.y(),at.z())),
                 "The live van approach missed the real generator receiving floor");
+            if(serviceRoute!=null)NorthwatchPowerReview.live(map,host,leader,witness,crew,at,serviceRoute,report);
         }
     }
 

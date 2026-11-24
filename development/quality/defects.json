@@ -7690,6 +7690,17 @@
       "action": "Fit three floor-supported cupboards and verify each full interior, threshold and multiplayer state.",
       "older_maps": "Verify protection across each refuge floor, at both rear sides and at standing head height.",
       "evidence": "development/levels/rebuild/northwatch-refuge-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-694",
+      "title": "Northwatch shed had no operational source or local electrical circuit",
+      "status": "NORTHWATCH_STAGED_SHED_SOURCE_BREAKER_AND_LOCAL_CIRCUIT_VERIFIED",
+      "affected": "WLD-08 generator and water shed",
+      "symptom": "The shed route reached a supported interior without a usable source, breaker, switch or fitted light.",
+      "cause": "The route, door and refuge stages ended before the original shed received its equipment.",
+      "action": "Mount the source and cabinet to actual bearings and commission a separate, breaker-governed shed circuit.",
+      "older_maps": "Verify an actual source, reachable breaker, physical switched leg and independent source and breaker state.",
+      "evidence": "development/levels/rebuild/northwatch-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

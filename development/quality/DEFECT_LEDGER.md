@@ -9162,3 +9162,7 @@ All sixteen leaves now fit the existing surface and tunnel reveals. Standing and
 ### DEV-693 Northwatch lacked full walk-in protection
 
 Three floor-supported cupboards protect their full walkable interiors in the lab, dorm and array shelter. Native software and OpenGL verify 207 protected floor positions per run. Four TCP peers verified physical entry, hiding, revealing and exit in each space. [Evidence](../levels/rebuild/northwatch-refuge-pass/checkpoint.json)
+
+### DEV-694 Northwatch shed had no operational electrical supply
+
+The existing generator and water shed now has a slab-supported source, anchored breaker cabinet and a real switched task light with a connected raceway. Both renderers verify visible blackout. Live TCP verifies the ghost trip, actual walk from the van, independent stop and restart, reconnect, aimed reset and operation of the shed switch. Full-site distribution remains open. [Evidence](../levels/rebuild/northwatch-power-pass/checkpoint.json)

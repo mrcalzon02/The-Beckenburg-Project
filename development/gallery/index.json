@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12020,
+  "count": 12024,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -115124,6 +115124,46 @@
       "height": 580,
       "bytes": 351979,
       "sha256": "6b4e61048b851162a1316f4dae438c6ca84763b87e02ada251a5981fe21de067"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-power-pass/wld-08/captures/northwatch-shed-supplied.png",
+      "url": "development/levels/rebuild/northwatch-power-pass/wld-08/captures/northwatch-shed-supplied.png",
+      "title": "Northwatch shed supplied",
+      "kind": "Northwatch shed electrical supply and blackout in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 296868,
+      "sha256": "8e6afab136ba92be4a679c0436b8df32e46832b1c4a2d7ee2cfa757ce2567bc2"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-power-pass/wld-08/captures/northwatch-shed-tripped.png",
+      "url": "development/levels/rebuild/northwatch-power-pass/wld-08/captures/northwatch-shed-tripped.png",
+      "title": "Northwatch shed tripped",
+      "kind": "Northwatch shed electrical supply and blackout in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 232245,
+      "sha256": "3d0bcf7dff232c9a898f843bf5fde90e65b1d1ecb89ab45dcb751588a74f37df"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-power-pass/wld-08/captures/opengl/northwatch-shed-supplied.png",
+      "url": "development/levels/rebuild/northwatch-power-pass/wld-08/captures/opengl/northwatch-shed-supplied.png",
+      "title": "Northwatch shed supplied",
+      "kind": "Northwatch shed electrical supply and blackout in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 304768,
+      "sha256": "db42cd90df2cfdde4a24f7d97b740ed57becaa5e4d39ec4f47e64362a02b0785"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-power-pass/wld-08/captures/opengl/northwatch-shed-tripped.png",
+      "url": "development/levels/rebuild/northwatch-power-pass/wld-08/captures/opengl/northwatch-shed-tripped.png",
+      "title": "Northwatch shed tripped",
+      "kind": "Northwatch shed electrical supply and blackout in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 233171,
+      "sha256": "6cb9ba15d34a3cba2eeb46fea5910bfb44dc976181aafed9f69dbf429563b7f7"
     },
     {
       "path": "development/levels/rebuild/northwatch-refuge-pass/wld-08/captures/northwatch-dorm-cupboard-enter.png",

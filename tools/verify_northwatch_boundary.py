@@ -92,31 +92,34 @@ def main():
     stage=parser.add_mutually_exclusive_group()
     stage.add_argument("--doors",action="store_true")
     stage.add_argument("--refuges",action="store_true")
+    stage.add_argument("--power",action="store_true")
     args=parser.parse_args()
-    fitted=args.doors or args.refuges
+    fitted=args.doors or args.refuges or args.power
+    stage_name="power" if args.power else "refuges" if args.refuges else "doors"
     review=PACKET
     if fitted:
-        name="northwatch-refuge-pass" if args.refuges else "northwatch-door-pass"
+        name={"power":"northwatch-power-pass","refuges":"northwatch-refuge-pass","doors":"northwatch-door-pass"}[stage_name]
         review=PACKET.parents[1]/name/"wld-08"
     meta=json.loads((PACKET/"construction.json").read_bytes()) if fitted else prepare()
-    if args.refuges:
+    if args.refuges or args.power:
+        stem="station-with-power" if args.power else "station-with-refuges"
         source=json.loads((review/"construction.json").read_bytes())["exports"]
-        meta["glb_sha256"]=source[(review/"station-with-refuges.glb").relative_to(ROOT).as_posix()]
-        meta["physics_sha256"]=source[(review/"station-with-refuges.hcs2").relative_to(ROOT).as_posix()]
+        meta["glb_sha256"]=source[(review/(stem+".glb")).relative_to(ROOT).as_posix()]
+        meta["physics_sha256"]=source[(review/(stem+".hcs2")).relative_to(ROOT).as_posix()]
     build=ROOT/"build/northwatch-boundary-review"
     build.mkdir(parents=True,exist_ok=True)
     java=Path("C:/Program Files/Java/jdk-17/bin")
     jar=ROOT/"build/beckenburg-game.jar"
     gpu=ROOT/"gpu-client/target/BeckenburgGPU.jar"
     tools=ROOT/"tools/java"
-    names=("NorthwatchBoundaryReview.java","NorthwatchDoorRuntime.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java","CemeteryRefugeReview.java")
+    names=("NorthwatchBoundaryReview.java","NorthwatchDoorRuntime.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java","CemeteryRefugeReview.java","NorthwatchPowerReview.java","WharfPowerChecks.java")
     subprocess.run([str(java/"javac.exe"),"-encoding","UTF-8","-cp",str(jar),"-d",str(build),
                     *(str(tools/name) for name in names)],cwd=ROOT,check=True)
     cp=os.pathsep.join(map(str,(build,jar,gpu) if args.gpu else (build,jar)))
     subprocess.run([str(java/"java.exe"),"-Djava.awt.headless=true","-Xmx3g","-cp",cp,
                     "org.beckenburg.NorthwatchBoundaryReview",str(review),meta["glb_sha256"],meta["physics_sha256"],
                     str(ROOT/meta["source_physics"]),meta["source_physics_sha256"],
-                    *([str(PACKET),"--refuges" if args.refuges else "--doors"] if fitted else []),*(["--gpu"] if args.gpu else [])],cwd=ROOT,check=True)
+                    *([str(PACKET),"--"+stage_name] if fitted else []),*(["--gpu"] if args.gpu else [])],cwd=ROOT,check=True)
 
 
 if __name__ == "__main__":

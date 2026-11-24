@@ -35,11 +35,12 @@ public final class NorthwatchBoundaryReview {
 
     private static void review(String[] args,boolean gpu)throws Exception {
         Path path=Path.of(args[0]);
-        boolean refuges=List.of(args).contains("--refuges");
+        boolean power=List.of(args).contains("--power");
+        boolean refuges=power||List.of(args).contains("--refuges");
         boolean fitted=refuges||List.of(args).contains("--doors");
         Path boundary=fitted?Path.of(args[5]):path;
         Path geometry=refuges?path:boundary;
-        String sourceStem=refuges?"station-with-refuges":"bounded-station";
+        String sourceStem=power?"station-with-power":refuges?"station-with-refuges":"bounded-station";
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var rooms=new Room[HouseMap.ROOM_COUNT];
         var sockets=new ArrayList<Socket>();
@@ -70,6 +71,8 @@ public final class NorthwatchBoundaryReview {
                 case "TREAD" -> treads.add(row[1]);
                 case "COVER" -> sockets.add(new Socket(row[1],"hide",n(row,2),
                     d(row,3),d(row,4),d(row,5),d(row,6),"walk-in-cupboard"));
+                case "SERVICE" -> sockets.add(new Socket(row[1],row[2],n(row,3),
+                    d(row,4),d(row,5),d(row,6),d(row,7),row[8]));
                 case "RITUAL" -> sockets.add(new Socket("northwatch-"+row[1],"ritual",Integer.parseInt(row[2]),
                     d(row,3),d(row,4),d(row,5),0,row[1]));
                 case "POINT" -> routes.computeIfAbsent(row[1],ignored->new ArrayList<>()).add(point(row,2));
@@ -210,15 +213,26 @@ public final class NorthwatchBoundaryReview {
             rows.add("optics_object_passage_room_acoustics_and_replica_state\tPASS");
             NorthwatchDoorRuntime.transits(map,portals);
             if(!gpu) {
-                NorthwatchDoorRuntime.live(level,scene);
+                NorthwatchDoorRuntime.live(level,scene,power?routes.get("Northwatch-shed-controls"):null,rows);
                 rows.add("four_peer_van_to_generator_two_aimed_doors\tPASS");
             }
         }
         if(refuges) {
-            NativeSchoolInteriorReview.auditWalkInCover(map,captures,rows,"northwatch",java.util.Map.of());
+            Path coverCaptures=power?Files.createTempDirectory("northwatch-cover-review"):captures;
+            try {
+                NativeSchoolInteriorReview.auditWalkInCover(map,coverCaptures,rows,"northwatch",java.util.Map.of());
+            } finally {
+                if(power) {
+                    try(var images=Files.list(coverCaptures)) {
+                        for(Path image:images.toList())Files.delete(image);
+                    }
+                    Files.delete(coverCaptures);
+                }
+            }
             if(!gpu)NorthwatchDoorRuntime.liveCover(level,scene,rows);
         }
-        String stem=refuges?"refuges":fitted?"doors":"boundary";
+        if(power)NorthwatchPowerReview.audit(map,routes.get("Northwatch-shed-controls"),captures,rows);
+        String stem=power?"power":refuges?"refuges":fitted?"doors":"boundary";
         Files.writeString(path.resolve(stem+(gpu?"-opengl.tsv":"-software.tsv")),String.join("\n",rows)+"\n");
         rows.forEach(System.out::println);
     }

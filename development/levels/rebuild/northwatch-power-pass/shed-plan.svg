@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 680" role="img">
+<title>Northwatch generator shed and switch circuit</title>
+<style>
+text{fill:#263741;font:15px sans-serif}.title{font-size:26px;font-weight:700}.legend,.small{font-size:13px}
+.floor{fill:#e4ecef;stroke:#597485;stroke-width:2}.well{fill:#bccad3;stroke:#596c7b;stroke-width:2}
+.plant{fill:#5f7b85;stroke:#405c66}.door,.race,.approach{fill:none}
+.door{stroke:#356991;stroke-width:6}.race{stroke:#956b22;stroke-width:2.6}
+.approach{stroke:#317466;stroke-width:2.4;stroke-dasharray:6 4}
+</style><rect width="820" height="680" fill="#fafcfc"/>
+<rect class="floor" x="73.00" y="106.00" width="522.00" height="522.00"/>
+<rect class="well" x="298.48" y="367.00" width="71.05" height="157.33"/>
+<polyline class="door" points="191.90,635.08 244.10,635.08"/>
+<polyline class="door" points="602.08,409.78 602.08,440.22"/>
+<rect class="plant" x="254.98" y="125.72" width="44.95" height="25.52"/>
+<rect class="plant" x="143.76" y="117.60" width="64.38" height="10.73"/>
+<polyline class="race" points="284.70,129.87 284.70,114.41 284.70,114.41 156.81,114.41"/>
+<polyline class="race" points="157.91,120.50 157.91,120.50 157.91,114.41"/>
+<polyline class="race" points="179.95,120.50 179.95,120.50 179.95,114.41"/>
+<polyline class="race" points="201.99,120.50 201.99,120.50 201.99,114.41"/>
+<polyline class="race" points="360.10,113.80 360.10,113.80"/>
+<polyline class="race" points="254.25,114.41 360.10,114.41 360.10,113.80 360.10,113.80"/>
+<polyline class="race" points="360.10,113.80 236.85,113.80 236.85,113.80 236.85,181.40"/>
+<polyline class="approach" points="602.08,425.00 402.15,425.00 402.15,339.45 334.00,338.00 334.00,251.00 278.47,193.87 175.95,193.87"/>
+<text class="title" x="38.00" y="46.00">Northwatch generator shed</text>
+<text class="" x="39.00" y="72.00">Ground floor Â· north up</text>
+<text class="" x="137.09" y="154.43">Breaker cabinet</text>
+<text class="" x="254.25" y="154.43">Generator</text>
+<text class="" x="363.87" y="146.60">Shed switch</text>
+<text class="" x="204.95" y="224.90">Task light overhead</text>
+<text class="small" x="304.27" y="449.07">Guarded</text>
+<text class="small" x="307.03" y="472.27">stair well</text>
+<text class="" x="605.73" y="429.93">Radio door</text>
+<text class="" x="190.16" y="659.32">Lab door</text>
+<text class="legend" x="640.00" y="145.00">Electrical conduit</text>
+<text class="legend" x="640.00" y="172.00">Operator approach</text>
+<text class="legend" x="640.00" y="199.00">Existing doorway</text>
+<path class="race" d="M608 140h25"/><path class="approach" d="M608 167h25"/><path class="door" d="M608 194h25"/>
+</svg>

@@ -247,10 +247,14 @@ public final class NativeSchoolInteriorReview {
     }
 
     static Vec step(Peer peer,int seat,int x,int z)throws Exception{
-        Thread.sleep(125);
-        peer.client.step(x,z);
-        peer.await("ACCEPT|STEP");
-        return body(peer.await("BODY|"+seat+"|"));
+        String retryable = "REJECT|movement rate exceeded";
+        for(int attempt=0;attempt<3;attempt++){
+            Thread.sleep(attempt==0?125:200);
+            peer.client.step(x,z);
+            String response=peer.awaitMatching(row->row.equals("ACCEPT|STEP")||row.equals(retryable),"ACCEPT|STEP",5000);
+            if(response.equals("ACCEPT|STEP"))return body(peer.await("BODY|"+seat+"|"));
+        }
+        throw new AssertionError("Live movement did not advance across three host tick attempts");
     }
 
     static List<Integer> missionRoute(HouseMap map,int end){

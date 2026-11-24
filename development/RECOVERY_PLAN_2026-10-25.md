@@ -2259,3 +2259,7 @@ Perimeter commit c4ea36264f5125deae4be7c85cfdfebf8f617485 and gallery 4539026250
 ### Northwatch walk-in refuges
 
 Door commit d5408b1856b90c7b1ea9763b46b22f2aba5fd1cc and gallery 45391943722 passed on held draft PR 86. The [refuge checkpoint](levels/rebuild/northwatch-refuge-pass/checkpoint.json) adds full walk-in protection in three existing rooms, with software, OpenGL and live TCP evidence. Electrical service, furnishing, case play and named dispatch remain open.
+
+### Northwatch shed electrical supply
+
+Refuge commit 68a3806416a5e81a9d3166ea96f607decc038be5 and gallery 45393163408 passed on held draft PR 86. The [shed power checkpoint](levels/rebuild/northwatch-power-pass/checkpoint.json) fits the generator and main breaker and commissions the first physical circuit. The live four-peer replay verifies the blackout, both existing doors, controls, and reconnect. Continue supported station distribution, water service, furnishings and named case integration.

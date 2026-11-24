@@ -1519,3 +1519,7 @@ Continue the supported generator and power routes and full walk-in safe zones.
 ### Northwatch walk-in refuges
 
 The lab, dorm and array shelter now each have an enclosed refuge with a usable threshold and full interior protection. Software and OpenGL verify all 207 sampled floor positions alongside the retained doors and routes. Live TCP verifies walking into and out of each refuge and changing its hiding state. [Refuge checkpoint](northwatch-refuge-pass/checkpoint.json) / [Active roster](northwatch-refuge-pass/roster.json)
+
+### Northwatch shed electrical supply
+
+The retained shed now supports the station source and breaker and the first commissioned branch. The guards, lab and radio openings and ways around the stair well retain their geometry. Both renderers verify the local electrical response and replay all prior routes and refuge protection. Live TCP walks into the shed in a blackout, restarts without resetting the breaker, reconnects and operates the breaker and switch. [Measured plan](northwatch-power-pass/shed-plan.svg) / [Checkpoint](northwatch-power-pass/checkpoint.json)
