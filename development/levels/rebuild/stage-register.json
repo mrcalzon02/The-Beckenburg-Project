@@ -2332,10 +2332,13 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
-            "development/levels/rebuild/prison-sally-gate-pass/checkpoint.json"
+            "development/levels/rebuild/prison-sally-gate-pass/checkpoint.json",
+            "development/levels/rebuild/prison-plant-pass/checkpoint.json"
           ],
-          "defects": [],
-          "next_action": "Build the plant breaker, circuits and physically connected fixtures on surveyed wall and ceiling supports."
+          "defects": [
+            "DEV-628"
+          ],
+          "next_action": "Complete remaining plant, plumbing and ventilation details plus physically supported hiding fixtures."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -2380,10 +2383,13 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
-            "development/levels/rebuild/prison-sally-gate-pass/checkpoint.json"
+            "development/levels/rebuild/prison-sally-gate-pass/checkpoint.json",
+            "development/levels/rebuild/prison-plant-pass/checkpoint.json"
           ],
-          "defects": [],
-          "next_action": "Verify ordinary packaged dispatch, complete investigation progression and controlled hardware acceptance."
+          "defects": [
+            "DEV-627"
+          ],
+          "next_action": "Verify complete evidence, rescue and extraction, room-by-room containment, controlled Windows hardware performance and release acceptance."
         }
       },
       "arrival_bearing_pass": {

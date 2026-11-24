@@ -42,6 +42,8 @@ public final class LevelPlans {
     public static LevelDefinition build(HouseMap.Site site) {
         var source=buildSource(site);
         if(site==HouseMap.Site.SEACLIFF||site==HouseMap.Site.BLACKPINE)return source;
+        if(site==HouseMap.Site.PRISON&&PrisonNativeLevel.reviewEnabled())
+            return LevelAuthoringSession.apply(site,source,PrisonNativeLevel::definition);
         if(site==HouseMap.Site.SCHOOL&&SchoolNativeLevel.reviewEnabled())
             return LevelAuthoringSession.apply(site,source,SchoolNativeLevel::definition);
         if(site==HouseMap.Site.COLLEGE&&CollegeNativeLevel.reviewEnabled())

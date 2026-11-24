@@ -214,15 +214,23 @@ public final class NativeSchoolInteriorReview {
         }
 
         String await(String prefix)throws Exception{
+            return awaitMatching(row->row.startsWith(prefix),prefix);
+        }
+
+        String awaitExact(String frame)throws Exception{
+            return awaitMatching(frame::equals,frame);
+        }
+
+        private String awaitMatching(java.util.function.Predicate<String> match,String expected)throws Exception{
             long until=System.nanoTime()+5_000_000_000L;
             while(System.nanoTime()<until){
                 String row=input.poll(100,java.util.concurrent.TimeUnit.MILLISECONDS);
-                if(row!=null&&(row.startsWith(prefix)||row.startsWith("REJECT|"))){
-                    require(row.startsWith(prefix),"Expected "+prefix+" but host sent "+row);
+                if(row!=null&&(match.test(row)||row.startsWith("REJECT|"))){
+                    require(match.test(row),"Expected "+expected+" but host sent "+row);
                     return row;
                 }
             }
-            throw new AssertionError("Missing live TCP frame "+prefix);
+            throw new AssertionError("Missing live TCP frame "+expected);
         }
 
         @Override public void close(){client.close();}
@@ -316,17 +324,17 @@ public final class NativeSchoolInteriorReview {
         }
     }
 
-    private static void auditSolo(LevelDefinition expected)throws Exception{
+    static void auditSolo(SiteCatalog.Location location,LevelDefinition expected)throws Exception{
         var directory=Files.createTempDirectory("beckenburg-school-solo-review");
         var profile=directory.resolve("career.properties");
-        try(var local=new LocalInvestigation(new ProfileStore(profile),SiteCatalog.Location.SCHOOL,
+        try(var local=new LocalInvestigation(new ProfileStore(profile),location,
                 CharacterVisuals.Hunter.OBSERVER,MissionWeather.Mode.FIXED,EvidenceSignals.Weather.CLEAR,1,null,0)){
             var host=(LanHost)field(local,"host");
             var map=(HouseMap)field(host,"map");
             var player=((LanWorld)field(host,"world")).body(0);
             require(local.running()&&map.level().equals(expected)
                 &&map.roomAt(player.x(),player.y(),player.z())==HouseMap.EXTRACTION_ROOM,
-                "Normal solo selection missed the Ravenshade source or supported van spawn");
+                "Normal solo selection missed the "+location+" source or supported van spawn");
         }finally{
             Files.deleteIfExists(profile);
             Files.deleteIfExists(directory);
@@ -340,20 +348,7 @@ public final class NativeSchoolInteriorReview {
     }
 
     private static void stagedBreaker(LanHost host,Peer scout,Peer observer,Peer ghost,HouseMap map)throws Exception{
-        var mutex=field(host,"mutex");
-        int room;
-        synchronized(mutex){
-            room=((GhostDomain)field(host,"ghost")).room();
-            long seed=0;
-            while(!new GhostHauntingFolio(seed).choose(GhostDomain.Action.DISTURB,GhostIdentity.Type.SPIRIT,room,1)
-                    .entry().id().equals("lightning_static"))seed++;
-            var folio=field(host,"hauntingFolio");
-            ((java.util.Random)field(folio,"random")).setSeed(seed);
-        }
-        ghost.client.ghost(GhostDomain.Action.DISTURB,room);
-        ghost.await("ACCEPT|GHOST|DISTURB");
-        scout.await("LIGHTS|111111111111|0");
-        require(!((RoomLighting)field(host,"lights")).supplied(),"Live School disturbance did not cut power");
+        ghostTrip(host,scout,ghost);
         for(int zone:missionRoute(map,11)){
             observer.client.move(zone);
             require(observer.await("ACCEPT|MOVE|").equals("ACCEPT|MOVE|"+zone),"Wrong route to School plant");
@@ -374,6 +369,23 @@ public final class NativeSchoolInteriorReview {
         scout.await("LIGHTS|111111111111|1");
         require(((RoomLighting)field(host,"lights")).supplied(),"Live School board reset did not restore power");
         System.out.println("PASS live School ghost trip and aimed breaker reset " +at);
+    }
+
+    static void ghostTrip(LanHost host,Peer witness,Peer ghost)throws Exception{
+        var mutex=field(host,"mutex");
+        int room;
+        synchronized(mutex){
+            room=((GhostDomain)field(host,"ghost")).room();
+            long seed=0;
+            while(!new GhostHauntingFolio(seed).choose(GhostDomain.Action.DISTURB,GhostIdentity.Type.SPIRIT,room,1)
+                    .entry().id().equals("lightning_static"))seed++;
+            var folio=field(host,"hauntingFolio");
+            ((java.util.Random)field(folio,"random")).setSeed(seed);
+        }
+        ghost.client.ghost(GhostDomain.Action.DISTURB,room);
+        ghost.await("ACCEPT|GHOST|DISTURB");
+        witness.await("LIGHTS|111111111111|0");
+        require(!((RoomLighting)field(host,"lights")).supplied(),"Live ghost disturbance did not cut power");
     }
 
     private static double fixtureEnergy(FixtureLighting lights, Socket load){
@@ -407,12 +419,16 @@ public final class NativeSchoolInteriorReview {
     }
 
     private static void auditPower(HouseMap map,Path output,List<String> report)throws Exception{
+        require(map.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.FIRE_ALARM).count()==12,
+            "Missing physically authored fire alarms");
+        auditPower(map,output,report,"school",new Vec(25.64,-3,16.43),-Math.PI/2);
+    }
+
+    static void auditPower(HouseMap map,Path output,List<String> report,String site,Vec camera,double yaw)throws Exception{
         var state=new RoomLighting();
         var lighting=new FixtureLighting(map);
         var loads=map.level().sockets().stream().filter(s->s.type().equals("light")).toList();
         require(loads.size()==26,"Missing circuit fittings");
-        require(map.fixtures().states().stream().filter(f->f.kind()==HauntedFixtures.Kind.FIRE_ALARM).count()==12,
-            "Missing physically authored fire alarms");
         lighting.frame(state,0);
         var supplied=loads.stream().mapToDouble(s->fixtureEnergy(lighting,s)).toArray();
         for(int room=0;room<12;room++){
@@ -434,15 +450,15 @@ public final class NativeSchoolInteriorReview {
         }
         var panel=RoomLighting.breaker(map);
         require(aimControl(map,panel,InteractionFocus.Kind.BREAKER)!=null,"Cannot aim at the plant panel");
-        var lit=serviceFrame(map,state,output.resolve("school-plant-powered.png"));
+        var lit=serviceFrame(map,state,output.resolve(site+"-plant-powered.png"),camera,yaw);
         state.setBreaker(false);
         lighting.frame(state,26);
         for(int i=0;i<loads.size();i++)
             require(supplied[i]-fixtureEnergy(lighting,loads.get(i))>.018,"Blackout missed "+loads.get(i).id());
-        var dark=serviceFrame(map,state,output.resolve("school-plant-blackout.png"));
+        var dark=serviceFrame(map,state,output.resolve(site+"-plant-blackout.png"),camera,yaw);
         int pixels=0;
         for(int i=0;i<lit.length;i++)if(lit[i]!=dark[i])pixels++;
-        require(pixels>1000,"No visible School blackout");
+        require(pixels>1000,"No visible plant blackout");
         report.add("plant_breaker_and_independent_room_switches\t12 controls and 26 fitted loads");
         report.add("global_breaker_blackout\t26 extinguished loads and "+pixels+" altered pixels");
     }
@@ -465,18 +481,17 @@ public final class NativeSchoolInteriorReview {
         return null;
     }
 
-    private static int[] serviceFrame(HouseMap map,RoomLighting power,Path path)throws Exception{
+    private static int[] serviceFrame(HouseMap map,RoomLighting power,Path path,Vec camera,double yaw)throws Exception{
         var renderer=new SceneRenderer();
         renderer.setRenderSize(880,580);
         renderer.setPsxPreset(PsxPipeline.Preset.OFF);
         renderer.roomLights=power;
         renderer.lamp=false;
-        Vec camera=new Vec(25.64,-3,16.43);
         require(map.traversable(camera.x(),camera.y(),camera.z()),"Unsupported plant view");
         renderer.x=camera.x();
         renderer.z=camera.z();
         renderer.eyeHeight=camera.y()+HunterPosture.STANDING_EYE;
-        renderer.yaw=-Math.PI/2;
+        renderer.yaw=yaw;
         renderer.pitch=-.10;
         drawFrame(renderer,map,path);
         return renderer.image().getRGB(0,0,880,580,null,0,880);
@@ -505,7 +520,7 @@ public final class NativeSchoolInteriorReview {
         if(packaged){
             require(host.level().equals(definition)&&guest.level().equals(definition),
                 "Packaged School differs from the surveyed source");
-            auditSolo(definition);
+            auditSolo(SiteCatalog.Location.SCHOOL,definition);
         }
         require(specs.size()==(mission.isEmpty()?17:20),"Missing a fitted School frame");
         if(!mission.isEmpty()){

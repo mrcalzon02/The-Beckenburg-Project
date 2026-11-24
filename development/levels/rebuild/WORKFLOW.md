@@ -1336,3 +1336,12 @@ The [sally gate plan](prison-sally-gate-pass/sally-gate-plan.svg) fits a retaine
 The [Prison checkpoint](prison-sally-gate-pass/checkpoint.json) verifies the bar and gap geometry for bodies, objects, sight and sound. A hunter opened it from sally, walked into the yard, closed and reopened it there, and walked back in a four-peer TCP case. The review switched the host breaker off to isolate manual operation. The plant breaker and ghost-triggered outage remain a service pass. All 15 gameplay owners, the three ritual positions and 60 direction and posture combinations passed. Software and RTX 5070 rendered the same source, and the reopened Blender poses match 336 game triangles.
 
 The [29-location roster](prison-sally-gate-pass/roster.json) records the held sources. The remaining secure leaves, full services, room containment and ordinary packaged dispatch stay in progress.
+
+
+## Prison powered plant and packaged case
+
+The [plant plan and circuit schedule](prison-plant-pass/plant-power-plan.svg) ties the mounted utility breaker to twelve independent room switches and 26 wall- or ceiling-supported loads. The bank bears on the −3 m plant slab and the north masonry wall. Three measured cabinet joints meet the manifold and wall-backed incoming feed. All original collision components survive in the new export. The [current roster](prison-plant-pass/roster.json) records the updated Prison packet.
+
+The [checkpoint](prison-plant-pass/checkpoint.json) verifies the ordinary Windows game launcher under `-Dbeckenburg.review.prisonNative=true`. Solo starts on the actual cargo deck. In a four-peer normal LAN case, the ghost trips the shared breaker, a hunter operates the sally gate from both sides without supply, and another walks the plant aisle and restores power using the physical panel. The independent review peer receives the live gate snapshots. The 60 route replays and three ritual mounts pass again. All 4,608 game door triangles match the six fitted poses from the reopened editable scene. Software and RTX 5070 show the same source powered and blacked out.
+
+Remaining Prison work covers additional custody leaves, physical hiding, detailed containment and full investigation and hardware acceptance.

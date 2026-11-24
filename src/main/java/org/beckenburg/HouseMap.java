@@ -89,6 +89,7 @@ public final class HouseMap {
     }
     HouseMap(Site site,LevelDefinition definition,AuthoredSitePhysics worldSurface){
         this(site,definition,worldSurface,switch(site){
+            case PRISON -> PrisonNativeLevel.sceneFor(definition);
             case SCHOOL -> SchoolNativeLevel.sceneFor(definition);
             case SEACLIFF -> SeacliffNativeLevel.sceneFor(definition);
             default -> CollegeNativeLevel.sceneFor(site,definition);

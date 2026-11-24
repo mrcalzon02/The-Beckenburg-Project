@@ -105,6 +105,14 @@ done
 for table in circulation door-schedule mission; do
     cp "$school_packet/$table.tsv" "build/classes/org/beckenburg/sites/school-$table.tsv"
 done
+prison_packet=development/levels/rebuild/prison-plant-pass
+for extension in glb hcs2; do
+    cp "$prison_packet/prison-plant.$extension" "build/classes/org/beckenburg/sites/prison-plant.$extension"
+done
+for table in arrival door-survey mission gate services; do
+    cp "$prison_packet/$table.tsv" "build/classes/org/beckenburg/sites/prison-$table.tsv"
+done
+cp development/levels/rebuild/prison-sally-gate-pass/sally-moving-panel.glb build/classes/org/beckenburg/sites/prison-sally-moving-panel.glb
 # Licensed in-game subset, not the upstream paid PSX asset archive.
 mkdir -p build/classes/org/beckenburg/models
 for name in light_switch_1 ceiling_lamp_1_off door_1_loose shelf_mp_6 chair_mp_5 ceiling_lamp_1_on cross_mp_2 flashlight_mp_1 armchair_1 sofa_1 dinner_table_1 wardrobe_mp_1 display_cabinet_mp_2 tv_mp_1 tv_table_1_4 lamp_3_on lamp_3_off ceiling_lamp_4_on ceiling_lamp_4_off pc_keyboard_mp_1 vape_mp_1 dosimeter_1 dosimeter_2 walkie_talkie_2 handheld_tablet_1 monitoring_screen_mp_1 pc_mp_1 button_12 book_mp_1 open_book_mp_1 dosimeter_4 walkie_talkie_1 exploration_emf_detector exploration_flashlight exploration_flashlight_poquet exploration_photo_camera exploration_spirit_box exploration_thermal_camera exploration_thermometer exploration_voice_recorder ggbot_car08_van_shell ggbot_car01 ggbot_car05 ggbot_car07 kenney_road_asphalt_straight kenney_road_asphalt_side kenney_road_asphalt_damaged kenney_detail_light_single kenney_detail_dumpster_closed kenney_detail_bench kenney_detail_barrier_type_a blender_sound_recorder_1 blender_sound_recorder_2 blender_sound_recorder_3; do

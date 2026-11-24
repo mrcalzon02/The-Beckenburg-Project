@@ -8802,6 +8802,26 @@ Begin the cellhouse routes on the actual floors at Z47.1 m. Replay the plant fli
 
 Compare every stair guide station to actual tread and landing elevations before using it as review evidence. [DEV-626 evidence](../levels/rebuild/prison-sally-gate-pass/checkpoint.json)
 
+### DEV-627 Prison gate acceptance reused the wrong peer pose when launched by the standard LAN host
+
+**Status** CORRECTED_WITH_REAL_CLIENT_DOOR_SNAPSHOTS · **Affected** Opt-in packaged Prison LAN review harness
+
+A peer could cross the open gate but the next release check offered Open instead of Close in the local review map.
+
+Use a separate review peer map in both modes. Apply the actual TCP door snapshots before each next action.
+
+Require independent client state in any staged-to-packaged door review. [DEV-627 evidence](../levels/rebuild/prison-plant-pass/checkpoint.json)
+
+### DEV-628 Prison commissioning lamps left the breaker working aisle dim
+
+**Status** CORRECTED_WITH_CEILING_MOUNT_ABOVE_THE_WORKING_AISLE · **Affected** Prison lower plant breaker model and controls
+
+The initial powered capture left the distribution handles in deep shadow while the two fitted fixtures lit the middle and far side of the plant.
+
+Mount a fixture over the real aisle in front of the grounded distribution bank and the second farther into the room. Repeat software and RTX powered and blackout readbacks.
+
+Check the operator side of the mounted breaker under only the actual fitted plant circuit. [DEV-628 evidence](../levels/rebuild/prison-plant-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

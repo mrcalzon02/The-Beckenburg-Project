@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11356,
+  "count": 11368,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -110064,6 +110064,126 @@
       "height": 1000,
       "bytes": 61389,
       "sha256": "e5b0b1c52592b54ebc51ac3e556f092797eed6b7b1b1ae4a04e992f461ba773f"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/prison-plant-blackout.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/opengl/prison-plant-blackout.png",
+      "title": "Prison plant blackout",
+      "kind": "Prison packaged gate or plant in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 221411,
+      "sha256": "91533aeb8e642ceee8a3489d38022efb71e073326cfd9768c6e762fe8f8ffd5e"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/prison-plant-powered.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/opengl/prison-plant-powered.png",
+      "title": "Prison plant powered",
+      "kind": "Prison packaged gate or plant in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 332676,
+      "sha256": "c6f9fded7de683d875e8ae5af630929354cda3568675c60b102ed75af4018798"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-gate-closed-yard.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-gate-closed-yard.png",
+      "title": "Sally gate closed yard",
+      "kind": "Prison packaged gate or plant in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 408603,
+      "sha256": "1ae6ae00572e185a59319df95890ec3503b3d3d6614144718f9093389d4f552b"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-gate-open-yard.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-gate-open-yard.png",
+      "title": "Sally gate open yard",
+      "kind": "Prison packaged gate or plant in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 328793,
+      "sha256": "2fecce47f43eda05ef7fcf0bb486fb4fe53841819bab9b0209763c9e688a0888"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-mechanism-closed.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-mechanism-closed.png",
+      "title": "Sally mechanism closed",
+      "kind": "Prison packaged gate or plant in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 418019,
+      "sha256": "1588cea4d26f6e7d549b934594147857e11d1e9de9ed3f4deabb39da13dd2b38"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-mechanism-open.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-mechanism-open.png",
+      "title": "Sally mechanism open",
+      "kind": "Prison packaged gate or plant in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 402830,
+      "sha256": "1a1b08451a3c1129ddcad0880e3e369c7a9996f106578340ce6d061a5a0ded14"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/prison-plant-blackout.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/prison-plant-blackout.png",
+      "title": "Prison plant blackout",
+      "kind": "Prison packaged gate or plant in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 220878,
+      "sha256": "4caf4af4fa39c2a44dee3f16956e454ed6bf3638e311147502978e252902677f"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/prison-plant-powered.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/prison-plant-powered.png",
+      "title": "Prison plant powered",
+      "kind": "Prison packaged gate or plant in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 343366,
+      "sha256": "cf43c7940304902b2c206d9adefb8d670614a5dc3ee1c809bbeb2fb99cba092e"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/sally-gate-closed-yard.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/sally-gate-closed-yard.png",
+      "title": "Sally gate closed yard",
+      "kind": "Prison packaged gate or plant in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 431473,
+      "sha256": "4dcbdcd0777968d586c8e7829db4ad30bc3157e1f50867119dfd2c0d3ab0d9a5"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/sally-gate-open-yard.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/sally-gate-open-yard.png",
+      "title": "Sally gate open yard",
+      "kind": "Prison packaged gate or plant in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 332020,
+      "sha256": "8d5e2ff4a7e89dd56747d8c84ec8178ed7a942f8d7e4743f183026a6df9aef5d"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/sally-mechanism-closed.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/sally-mechanism-closed.png",
+      "title": "Sally mechanism closed",
+      "kind": "Prison packaged gate or plant in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 419349,
+      "sha256": "a5b5660a4a6e7af0edc11edd322f5534bf71ca141bb9c4df1e4bbcc4aac07e09"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/sally-mechanism-open.png",
+      "url": "development/levels/rebuild/prison-plant-pass/captures/sally-mechanism-open.png",
+      "title": "Sally mechanism open",
+      "kind": "Prison packaged gate or plant in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 404627,
+      "sha256": "54f50e2293c31ab5d2a682d3c78d5e2413a65dda9bab73c09b4ff282caaa9100"
     },
     {
       "path": "development/levels/rebuild/prison-public-entry-pass/captures/prison-entry-450-closed.png",

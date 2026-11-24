@@ -1,0 +1,180 @@
+{
+  "status": "NATIVE_PRISON_PACKAGED_REVIEW_AND_POWERED_CASE",
+  "prior_commit": "560238beadd50eee07fb0a554ed7dd11812763e1",
+  "native_scene_revision": "6291632de2cdbf98ea25253e1b823a2f10cc965a88b19768a6f26404275477c1",
+  "review_property": "beckenburg.review.prisonNative",
+  "source_roster": "development/levels/rebuild/prison-plant-pass/roster.json",
+  "authored_search_spaces": 37,
+  "stable_gameplay_owners": 15,
+  "retained_ritual_anchors": 3,
+  "measured_link_direction_and_posture_replays": 60,
+  "retained_room_transition_doors": 3,
+  "retained_native_components": 1065,
+  "new_service_components": 73,
+  "mounted_controls": 12,
+  "fitted_loads": 26,
+  "connected_breaker_terminals": 3,
+  "matched_editor_poses": 6,
+  "matched_editor_triangles": 4608,
+  "verified": [
+    "Windows game JAR ordinary solo with the opt-in source and canonical cargo spawn",
+    "Normal four-peer host selection with matching native peer revision",
+    "Live ghost trip, operable gate on both sides during the blackout and physically aimed panel reset",
+    "Independent room circuit control and global blackout in software and RTX 5070 OpenGL",
+    "Open and closed poses of all three fitted assemblies matched reopened Blender"
+  ],
+  "still_open": [
+    "Remaining custody leaves, physical hiding and room-by-room containment/prop inspection",
+    "Complete investigation progression, rescue and extraction and controlled hardware performance gates",
+    "Release promotion"
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/arrival.tsv",
+      "bytes": 5338,
+      "sha256": "baa3aa98a8bdecc8de5df46dddd83f594b0ca9fbc959ccb5ab629e9e4143fe5b"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/mission.tsv",
+      "bytes": 3899,
+      "sha256": "ed5fb9cee1fd55af8e8eb3f67a48a8fe3acca342a4dfc452fbf81481d52436a2"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/door-survey.tsv",
+      "bytes": 281,
+      "sha256": "35c3febfdef458b1b804c6dd26334430dffec09003ac398367dee9202d4f2523"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/gate.tsv",
+      "bytes": 311,
+      "sha256": "2cdbeb22df9c20131f4236bac4072680437feef91d2558a58bb48c11b71a00aa"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/services.tsv",
+      "bytes": 2643,
+      "sha256": "41596a4c2c7b13ef930297fe8aecd0c7d0e2f8666b2f33a9f242fe939beb350d"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/survey.json",
+      "bytes": 25936,
+      "sha256": "f7f381af42c653da89b46a57458286c79423700a1d72b20c9b1f335f63ff1e86"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/prison-plant.blend",
+      "bytes": 1158114,
+      "sha256": "f601618c503e6970c6f116ab9be68dc5c60ed96a90092803027248198060eeaf"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/prison-plant-fitted.blend",
+      "bytes": 1313828,
+      "sha256": "265a86dd02f9e7686669b786472fa492525a26b99b6a770507d079b7dea43637"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/prison-plant.glb",
+      "bytes": 4153292,
+      "sha256": "6b180a6e9eff3b39fa6ae1234045b3a0dffa196c429bc51cfe1c013d488eb2cb"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/prison-plant.hcs2",
+      "bytes": 1180158,
+      "sha256": "80ba93b598230ba98fcb4b220f4a8935e93ccf9c9a91ae8f6e89437888cc824d"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/plant-power-plan.svg",
+      "bytes": 4697,
+      "sha256": "58ae4f975fd87b6f4538ff1e87cf4cde3e2aeb41b9e1a07f19e02a4ecae504da"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/verification/editable-door-poses.tsv",
+      "bytes": 172,
+      "sha256": "9fae8631fb49e1847e0b32f5600d638797f98e7738c335f29dc031a52ba321da"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/verification/opengl.tsv",
+      "bytes": 1064,
+      "sha256": "554b36de5ac16000ff3df1541df5d23d7567bad6d08a8afee1d877719e6b10dd"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/verification/staged-approach.tsv",
+      "bytes": 1308,
+      "sha256": "8b70ecde5d507e1f66989143aac04eb0a78a4b3429bc4b912fc471fbcb67392f"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/prison-plant-blackout.png",
+      "bytes": 221411,
+      "sha256": "91533aeb8e642ceee8a3489d38022efb71e073326cfd9768c6e762fe8f8ffd5e"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/prison-plant-powered.png",
+      "bytes": 332676,
+      "sha256": "c6f9fded7de683d875e8ae5af630929354cda3568675c60b102ed75af4018798"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-gate-closed-yard.png",
+      "bytes": 408603,
+      "sha256": "1ae6ae00572e185a59319df95890ec3503b3d3d6614144718f9093389d4f552b"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-gate-open-yard.png",
+      "bytes": 328793,
+      "sha256": "2fecce47f43eda05ef7fcf0bb486fb4fe53841819bab9b0209763c9e688a0888"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-mechanism-closed.png",
+      "bytes": 418019,
+      "sha256": "1588cea4d26f6e7d549b934594147857e11d1e9de9ed3f4deabb39da13dd2b38"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/opengl/sally-mechanism-open.png",
+      "bytes": 402830,
+      "sha256": "1a1b08451a3c1129ddcad0880e3e369c7a9996f106578340ce6d061a5a0ded14"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/prison-plant-blackout.png",
+      "bytes": 220878,
+      "sha256": "4caf4af4fa39c2a44dee3f16956e454ed6bf3638e311147502978e252902677f"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/prison-plant-powered.png",
+      "bytes": 343366,
+      "sha256": "cf43c7940304902b2c206d9adefb8d670614a5dc3ee1c809bbeb2fb99cba092e"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/sally-gate-closed-yard.png",
+      "bytes": 431473,
+      "sha256": "4dcbdcd0777968d586c8e7829db4ad30bc3157e1f50867119dfd2c0d3ab0d9a5"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/sally-gate-open-yard.png",
+      "bytes": 332020,
+      "sha256": "8d5e2ff4a7e89dd56747d8c84ec8178ed7a942f8d7e4743f183026a6df9aef5d"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/sally-mechanism-closed.png",
+      "bytes": 419349,
+      "sha256": "a5b5660a4a6e7af0edc11edd322f5534bf71ca141bb9c4df1e4bbcc4aac07e09"
+    },
+    {
+      "path": "development/levels/rebuild/prison-plant-pass/captures/sally-mechanism-open.png",
+      "bytes": 404627,
+      "sha256": "54f50e2293c31ab5d2a682d3c78d5e2413a65dda9bab73c09b4ff282caaa9100"
+    }
+  ],
+  "verifications_by_renderer": {
+    "software": "26 extinguished loads and 501375 altered pixels",
+    "rtx_5070_opengl": "26 extinguished loads and 483071 altered pixels"
+  },
+  "compatibility_checks": [
+    "Site selection",
+    "Native authoring identity",
+    "LAN acoustics",
+    "Hiding budget",
+    "Legacy authored LAN movement and privacy",
+    "Seacliff and Blackpine dispatch and power",
+    "Ravenshade packaged solo and LAN"
+  ]
+}

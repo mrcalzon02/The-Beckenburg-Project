@@ -74,8 +74,12 @@ final class NativePrisonGateReview {
         NativeSchoolInteriorReview.drawFrame(renderer,map,path);
     }
 
-    static void liveRelease(HouseMap map,List<String> report)throws Exception{
-        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
+    static void liveRelease(HouseMap map,boolean packaged,List<String> report)throws Exception{
+        var peerMap=packaged?HouseMap.forNetworkRevision(HouseMap.Site.PRISON,map.level().revision())
+            :new HouseMap(HouseMap.Site.PRISON,map.level(),null,map.nativeInvestigation());
+        try(var host=packaged
+                ?new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),false,false,HouseMap.Site.PRISON)
+                :new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
             var operator=new NativeSchoolInteriorReview.Peer(host,false,"Operator");
             var witness=new NativeSchoolInteriorReview.Peer(host,false,"Witness");
             var scout=new NativeSchoolInteriorReview.Peer(host,false,"Scout");
@@ -92,31 +96,74 @@ final class NativePrisonGateReview {
                 operator.client.move(owner);
                 require(operator.await("ACCEPT|MOVE|").equals("ACCEPT|MOVE|"+owner),"Wrong sally approach owner");
             }
-            // Inject loss of source at the host for this scope. The Prison plant
-            // breaker and circuits are still a separate construction pass.
             var lights=(RoomLighting)NativeSchoolInteriorReview.field(host,"lights");
-            synchronized(NativeSchoolInteriorReview.field(host,"mutex")){lights.setBreaker(false);}
+            boolean hasBreaker=map.level().socket("breaker",11)!=null;
+            if(hasBreaker){
+                ghost.client.viewGhost3D();
+                ghost.await("ACCEPT|GVIEW3D");
+                ghost.await("GPOSE|");
+                NativeSchoolInteriorReview.ghostTrip(host,witness,ghost);
+            }else synchronized(NativeSchoolInteriorReview.field(host,"mutex")){lights.setBreaker(false);}
             operator.client.view3D();
             operator.await("ACCEPT|VIEW3D");
             var feet=NativeSchoolInteriorReview.body(operator.await("BODY|0|"));
             require(map.roomAt(feet.x(),feet.y(),feet.z())==2,"Wrong physical operator start");
-            engage(operator,map,feet,"sally-release-sally","Open gate manually");
-            require(witness.await("DOORS|452").equals("DOORS|452"),"Witness missed the gate opening");
+            engage(operator,peerMap,feet,"sally-release-sally","Open gate manually");
+            syncGate(witness,peerMap,true);
             steps(operator,5,100,0);
             steps(operator,7,0,-100);
             feet=steps(operator,5,-100,0);
             require(map.roomAt(feet.x(),feet.y(),feet.z())==12,"TCP mover did not reach the yard");
-            engage(operator,map,feet,"sally-release-yard","Close gate manually");
+            engage(operator,peerMap,feet,"sally-release-yard","Close gate manually");
+            syncGate(witness,peerMap,false);
             Thread.sleep(350);
-            engage(operator,map,feet,"sally-release-yard","Open gate manually");
+            engage(operator,peerMap,feet,"sally-release-yard","Open gate manually");
+            syncGate(witness,peerMap,true);
             steps(operator,5,100,0);
             feet=steps(operator,7,0,100);
             require(map.roomAt(feet.x(),feet.y(),feet.z())==2,"TCP mover did not return from the exercise yard");
             synchronized(NativeSchoolInteriorReview.field(host,"mutex")){
-                require(!lights.supplied()&&map.doorOpen(GATE),"Manual gate changed the host power state");
+                require(!lights.supplied()&&peerMap.doorOpen(GATE),"Manual gate changed the host power state");
+            }
+            if(hasBreaker){
+                restorePower(peerMap,scout,witness,lights);
+                report.add("tcp_ghost_trip_and_plant_reset\tGhost triggered the outage and a hunter physically reset the native Prison breaker");
             }
         }
-        report.add("staged_tcp_blackout_release\tLive host began with an injected breaker outage. A hunter opened from sally, closed and reopened from the yard, and walked the actual threshold twice.");
+        report.add("tcp_blackout_gate_release\tA hunter opened from sally, closed and reopened from the yard, and walked the actual threshold twice.");
+    }
+
+    private static void syncGate(NativeSchoolInteriorReview.Peer witness,HouseMap peerMap,boolean open)throws Exception{
+        var frame=witness.awaitExact(open?"DOORS|452":"DOORS|");
+        peerMap.applyDoorSnapshot(frame.substring("DOORS|".length()));
+        require(peerMap.doorOpen(GATE)==open,"Client gate pose disagreed with the host");
+    }
+
+    private static void restorePower(HouseMap map,NativeSchoolInteriorReview.Peer scout,
+            NativeSchoolInteriorReview.Peer witness,RoomLighting lights)throws Exception{
+        for(int room:NativeSchoolInteriorReview.missionRoute(map,11)){
+            scout.client.move(room);
+            require(scout.await("ACCEPT|MOVE|").equals("ACCEPT|MOVE|"+room),"Wrong plant approach owner");
+        }
+        scout.client.view3D();
+        scout.await("ACCEPT|VIEW3D");
+        var at=NativeSchoolInteriorReview.body(scout.await("BODY|2|"));
+        require(at.equals(map.spawn(11)),"Wrong supported Prison plant start");
+        // Walk from the room anchor to the working aisle in front of the breaker.
+        for(int i=0;i<6;i++)at=NativeSchoolInteriorReview.step(scout,2,100,0);
+        for(int i=0;i<21;i++)at=NativeSchoolInteriorReview.step(scout,2,0,-100);
+        var release=RoomLighting.breaker(map);
+        double dx=release.x()-at.x(),dz=release.z()-at.z();
+        double yaw=Math.atan2(dx,dz),pitch=Math.atan2(release.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
+        var eye=new LooseClutter.Observer(2,at.x(),at.y(),at.z(),yaw,pitch,true);
+        var focus=InteractionFocus.pick(map,eye,List.of());
+        require(focus!=null&&focus.kind()==InteractionFocus.Kind.BREAKER&&focus.id().equals(release.id()),
+            "Prison breaker could not be aimed at from "+at+" got "+focus);
+        scout.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
+        scout.client.interact(focus,yaw,pitch);
+        scout.await("ACCEPT|INTERACT|Electrical breaker");
+        witness.await("LIGHTS|111111111111|1");
+        require(lights.supplied()&&map.doorOpen(GATE),"Reset must restore power and leave the manual gate position");
     }
 
     private static Vec steps(NativeSchoolInteriorReview.Peer operator,int count,int dx,int dz)throws Exception{
