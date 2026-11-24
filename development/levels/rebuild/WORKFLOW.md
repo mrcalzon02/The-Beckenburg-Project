@@ -1418,3 +1418,14 @@ locates six actual tread mounts on each side. Standing and crouched replays
 passed on both sides of the flight. The [exact checkpoint](asylum-flight-rails-pass/checkpoint.json)
 links the saved model, collision, live staircase replay and bounded ward,
 chapel and team extraction scenarios.
+
+## Widow’s Peak Lookout native arrival and fitted openings
+
+The [approach plan](lookout-native-arrival-pass/lookout-approaches-plan.svg)
+places seven doors at the actual measured walls, including both hut porches.
+The [staged checkpoint](lookout-native-arrival-pass/checkpoint.json) links the
+retained terrain and construction, fitted Blender scene, area owners and
+standing captures. All 17 routes and the joined cargo-to-observation deck
+journey pass in both directions and both postures. Four TCP peers confirmed
+physical cargo departure and the cabin and south hut door movements.
+Named dispatch, power, cover and release gates remain open.

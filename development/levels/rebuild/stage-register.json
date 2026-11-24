@@ -3324,19 +3324,26 @@
           "status": "IN_PROGRESS",
           "source_sha": "9dfc9555433c64774e3c8414bd3c9b40dc3fcb1d",
           "evidence": [
-            "development/levels/rebuild/lookout-landing-pass/checkpoint.json"
+            "development/levels/rebuild/lookout-landing-pass/checkpoint.json",
+            "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json"
           ],
           "defects": [
-            "DEV-571"
+            "DEV-571",
+            "DEV-647"
           ],
-          "next_action": "Complete structural enclosure, furnishing, lighting and service fit beyond the verified footings and doors."
+          "next_action": "Seven fitted doors on the verified shell. Continue full room enclosures and finish."
         },
         "S06": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-646",
+            "DEV-648"
+          ],
+          "next_action": "Area and ritual bindings staged. Fit remote power, circuits and three authored hiding candidates."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -3378,11 +3385,15 @@
           "next_action": "Complete prerequisite stage"
         },
         "S11": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-645"
+          ],
+          "next_action": "Native route and staged LAN case pass. Integrate named packaged dispatch and exact services, then test the full case."
         }
       },
       "arrival_bearing_pass": {

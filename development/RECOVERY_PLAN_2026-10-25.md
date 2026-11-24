@@ -2126,3 +2126,10 @@ openings. The exact package also passed ward EMF, guarded banishment, forecourt
 rendezvous and authoritative cargo retreat. Previous upper-spine commit
 1ab063f52cd69f6a75f9afa83554fb4d9f798145 passed gallery 45328610063.
 The remaining site enclosures, camera/solo validation and release stay open.
+
+The [Widow’s Peak Lookout native arrival checkpoint](levels/rebuild/lookout-native-arrival-pass/checkpoint.json)
+fits seven doorways and binds supported area spawns, the physical van ramp
+and the climb to the +15 m observation deck. The exact staged case passed
+four-peer door and arrival checks. The preceding Asylum main-stair commit
+8c36ac6db9195baef60dbfb056380cd680f979a2 passed gallery 45329964464.
+Continue Lookout services, hiding and named packaged dispatch.

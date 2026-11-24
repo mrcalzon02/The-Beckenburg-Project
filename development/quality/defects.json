@@ -7151,6 +7151,50 @@
       "action": "Mount twelve posts to real treads and connect both inclined rail lines into the existing landing guards. Verify exact supports, clearance and live traversal.",
       "older_maps": "Inspect tread mounts and continuity where stairs meet guarded landings.",
       "evidence": "development/levels/rebuild/asylum-flight-rails-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-645",
+      "title": "Lookout route stations shared their exact first-riser positions",
+      "status": "STAGED_NATIVE_CORRECTION_VERIFIED",
+      "affected": "Widow’s Peak Fire Lookout native investigation review",
+      "symptom": "Walking to several guide points selected the first tread instead of the stated lower landing.",
+      "cause": "Station coordinates used nominal stair ends on a discontinuous support edge.",
+      "action": "Move guidance onto the adjacent supported side of each physical riser and verify reverse movement.",
+      "older_maps": "Check both directions at the actual stair support discontinuities.",
+      "evidence": "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-646",
+      "title": "Lookout east return stair lost ownership below its upper zone",
+      "status": "STAGED_NATIVE_CORRECTION_VERIFIED",
+      "affected": "Widow’s Peak Fire Lookout native investigation review",
+      "symptom": "The lower portion of the trip down the east return lost investigation ownership near Y1.4.",
+      "cause": "The original upper zone volume ended above the receiving ground and its actual connected flight.",
+      "action": "Use a distinct lower-flight ownership volume on the measured return bay and interface with the roadhead at its real slab edge.",
+      "older_maps": "Check room ownership at every floor transition rather than only level spawns.",
+      "evidence": "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-647",
+      "title": "Both physical hut doorways lacked operable leaves",
+      "status": "STAGED_NATIVE_CORRECTION_VERIFIED",
+      "affected": "Widow’s Peak Fire Lookout native investigation review",
+      "symptom": "The east porch connected through an always-open portal and the south porch served an unbound doorway and stair.",
+      "cause": "The previous five-door schedule omitted the hut shell apertures.",
+      "action": "Fit both measured openings and validate the alternate south stair on the existing continuous terrain band.",
+      "older_maps": "Check every visible stoop and landing for a corresponding fitted or intentionally open passage.",
+      "evidence": "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-648",
+      "title": "Lookout clearing ritual was above the terrace datum",
+      "status": "STAGED_NATIVE_CORRECTION_VERIFIED",
+      "affected": "Widow’s Peak Fire Lookout native investigation review",
+      "symptom": "The clearing socket was at Y6 while its physical walking surface was at Y5.65.",
+      "cause": "The ritual retained a nominal construction height after terrain commissioning.",
+      "action": "Use the measured clearing elevation and verify all three physical ritual positions are supported.",
+      "older_maps": "Recheck installed socket height after terrain or slab edits.",
+      "evidence": "development/levels/rebuild/lookout-native-arrival-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

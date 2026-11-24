@@ -8962,3 +8962,19 @@ confirmed the side stop and normal movement down and back up the stair.
 Six posts per side now bear on the measured treads. The rails return into the
 upper guard and expose a 1.42 m clear flight between post faces. Native route
 and exact packaged LAN replays passed. [Evidence](../levels/rebuild/asylum-flight-rails-pass/checkpoint.json)
+
+### DEV-645 Lookout route stations shared their exact first-riser positions
+
+Walking to several guide points selected the first tread instead of the stated lower landing. Move guidance onto the adjacent supported side of each physical riser and verify reverse movement. Check both directions at the actual stair support discontinuities. [Evidence](../levels/rebuild/lookout-native-arrival-pass/checkpoint.json)
+
+### DEV-646 Lookout east return stair lost ownership below its upper zone
+
+The lower portion of the trip down the east return lost investigation ownership near Y1.4. Use a distinct lower-flight ownership volume on the measured return bay and interface with the roadhead at its real slab edge. Check room ownership at every floor transition rather than only level spawns. [Evidence](../levels/rebuild/lookout-native-arrival-pass/checkpoint.json)
+
+### DEV-647 Both physical hut doorways lacked operable leaves
+
+The east porch connected through an always-open portal and the south porch served an unbound doorway and stair. Fit both measured openings and validate the alternate south stair on the existing continuous terrain band. Check every visible stoop and landing for a corresponding fitted or intentionally open passage. [Evidence](../levels/rebuild/lookout-native-arrival-pass/checkpoint.json)
+
+### DEV-648 Lookout clearing ritual was above the terrace datum
+
+The clearing socket was at Y6 while its physical walking surface was at Y5.65. Use the measured clearing elevation and verify all three physical ritual positions are supported. Recheck installed socket height after terrain or slab edits. [Evidence](../levels/rebuild/lookout-native-arrival-pass/checkpoint.json)
