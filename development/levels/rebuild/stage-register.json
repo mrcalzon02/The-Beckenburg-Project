@@ -4105,14 +4105,16 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "fa9b1e1495a114fc985641b011d726b25b315ffd",
+          "source_sha": "05edfb05abf6679e3ac0f23a18c3546fbae332a9",
           "evidence": [
-            "development/levels/rebuild/cemetery-door-pass/checkpoint.json"
+            "development/levels/rebuild/cemetery-door-pass/checkpoint.json",
+            "development/levels/rebuild/cemetery-refuge-pass/checkpoint.json"
           ],
           "defects": [
-            "DEV-680"
+            "DEV-680",
+            "DEV-681"
           ],
-          "next_action": "Measure full walk-in refuge placement and power plant/distribution. Verify native live cover and each circuit, then complete case and named review."
+          "next_action": "Full walk-in refuges work in both variants. Fit the shared caretaker service yard, route the actual building circuits and verify named case integration."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -6734,14 +6736,16 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "fa9b1e1495a114fc985641b011d726b25b315ffd",
+          "source_sha": "05edfb05abf6679e3ac0f23a18c3546fbae332a9",
           "evidence": [
-            "development/levels/rebuild/cemetery-door-pass/checkpoint.json"
+            "development/levels/rebuild/cemetery-door-pass/checkpoint.json",
+            "development/levels/rebuild/cemetery-refuge-pass/checkpoint.json"
           ],
           "defects": [
-            "DEV-680"
+            "DEV-680",
+            "DEV-681"
           ],
-          "next_action": "Measure full walk-in refuge placement and power plant/distribution. Verify native live cover and each circuit, then complete case and named review."
+          "next_action": "Full walk-in refuges work in both variants. Fit the shared caretaker service yard, route the actual building circuits and verify named case integration."
         },
         "S07": {
           "status": "IN_PROGRESS",

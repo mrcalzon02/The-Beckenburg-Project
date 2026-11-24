@@ -377,3 +377,6 @@ development/levels/rebuild/cemetery-boundary-pass/**/*.tsv whitespace=-blank-at-
 
 # Hash-bound cemetery frame surveys, door schedules and runtime replay receipts.
 development/levels/rebuild/cemetery-door-pass/** -text
+
+# Exact two-site safe-zone geometry and native replay evidence.
+development/levels/rebuild/cemetery-refuge-pass/** -text

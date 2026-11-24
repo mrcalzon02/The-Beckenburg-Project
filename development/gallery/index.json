@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11827,
+  "count": 11851,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -111084,6 +111084,246 @@
       "height": 580,
       "bytes": 287966,
       "sha256": "a224f84c902312d81f848bfd007c907c1a519d6fa0cb97ce3c58e9dde90d0c5a"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-cottage-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-cottage-cupboard-enter.png",
+      "title": "Wld 07 mortuary cottage cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 475837,
+      "sha256": "3bd82b153debae65bf070f218843745e42943c353a52cf808ea317e77680faa3"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-cottage-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-cottage-cupboard-inside.png",
+      "title": "Wld 07 mortuary cottage cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 393455,
+      "sha256": "0197fa7d7fb58492225b71543fa5de2c2aa0cb668f6a903c29a1458ffcb1466f"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-mort-office-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-mort-office-cupboard-enter.png",
+      "title": "Wld 07 mortuary mort office cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 482624,
+      "sha256": "47508b927541cee3b7f53b9f7284af08973c02e87c8fe88ef76611eb171480b2"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-mort-office-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-mort-office-cupboard-inside.png",
+      "title": "Wld 07 mortuary mort office cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 430838,
+      "sha256": "d7f698842cc5c0ab9d7d12bd30959acd8601dea159b8dc180552706bbb80541f"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-tool-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-tool-cupboard-enter.png",
+      "title": "Wld 07 mortuary tool cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 479920,
+      "sha256": "efc49ddc2b6db14386ea50a471e3f65e9a6bc471d3fdf164897686536e806428"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-tool-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/opengl/wld-07-mortuary-tool-cupboard-inside.png",
+      "title": "Wld 07 mortuary tool cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 415237,
+      "sha256": "b60561ba9b06e048db5f3f72226fca1ce04ee34c7c480c6b7537cc6e6212f0d5"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-cottage-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-cottage-cupboard-enter.png",
+      "title": "Wld 07 mortuary cottage cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 470862,
+      "sha256": "c7a07d97edc93c2a8d8e7b9f5b36860910d5f9bf98047a9fa7d015f30da6fe4b"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-cottage-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-cottage-cupboard-inside.png",
+      "title": "Wld 07 mortuary cottage cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 393490,
+      "sha256": "f8c2df6a83eff24036b468df7db16d5f87a04968c5f80647981121d550b3ed88"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-mort-office-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-mort-office-cupboard-enter.png",
+      "title": "Wld 07 mortuary mort office cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 477372,
+      "sha256": "4aeb89ba64773828cabd740d525a8e3e929b620f33eb2c7e62f5c2e143ce89a4"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-mort-office-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-mort-office-cupboard-inside.png",
+      "title": "Wld 07 mortuary mort office cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 429721,
+      "sha256": "b0227a855149b5e947c3201f1a323f672808e93d819a1eecc7be384fb61f8f51"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-tool-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-tool-cupboard-enter.png",
+      "title": "Wld 07 mortuary tool cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 475373,
+      "sha256": "654e6314f11ae5e825578ad1605161766fe0b8744f22018c1cb778ddb73a9632"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-tool-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07-mortuary/captures/wld-07-mortuary-tool-cupboard-inside.png",
+      "title": "Wld 07 mortuary tool cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 413854,
+      "sha256": "1f061b081517e04dd6607c85e8b7aa7517e937b03fd1b635a5268cb96cc08e0b"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-chapel-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-chapel-cupboard-enter.png",
+      "title": "Wld 07 chapel cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 488421,
+      "sha256": "819f58ea00a11d82f4ba791dd74c7c3c34b312bb5baee3f6f23e336429dae093"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-chapel-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-chapel-cupboard-inside.png",
+      "title": "Wld 07 chapel cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 386796,
+      "sha256": "886126764261b317fabf07f5ea3e952697e36e69980d7a75e5c0ed0f9c64e72f"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-cottage-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-cottage-cupboard-enter.png",
+      "title": "Wld 07 cottage cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 475837,
+      "sha256": "3bd82b153debae65bf070f218843745e42943c353a52cf808ea317e77680faa3"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-cottage-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-cottage-cupboard-inside.png",
+      "title": "Wld 07 cottage cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 393455,
+      "sha256": "0197fa7d7fb58492225b71543fa5de2c2aa0cb668f6a903c29a1458ffcb1466f"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-tool-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-tool-cupboard-enter.png",
+      "title": "Wld 07 tool cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 479920,
+      "sha256": "efc49ddc2b6db14386ea50a471e3f65e9a6bc471d3fdf164897686536e806428"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-tool-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/opengl/wld-07-tool-cupboard-inside.png",
+      "title": "Wld 07 tool cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 415237,
+      "sha256": "b60561ba9b06e048db5f3f72226fca1ce04ee34c7c480c6b7537cc6e6212f0d5"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-chapel-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-chapel-cupboard-enter.png",
+      "title": "Wld 07 chapel cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 484042,
+      "sha256": "1987bd94cc3a8344190bd2834207543fdde04c14305c91923629b44e28509b62"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-chapel-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-chapel-cupboard-inside.png",
+      "title": "Wld 07 chapel cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 387052,
+      "sha256": "1e571fdb62b1313d08ec7c37b85e468152cf871ff8a7d56ba82710cf511bccb3"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-cottage-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-cottage-cupboard-enter.png",
+      "title": "Wld 07 cottage cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 470862,
+      "sha256": "c7a07d97edc93c2a8d8e7b9f5b36860910d5f9bf98047a9fa7d015f30da6fe4b"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-cottage-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-cottage-cupboard-inside.png",
+      "title": "Wld 07 cottage cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 393490,
+      "sha256": "f8c2df6a83eff24036b468df7db16d5f87a04968c5f80647981121d550b3ed88"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-tool-cupboard-enter.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-tool-cupboard-enter.png",
+      "title": "Wld 07 tool cupboard enter",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 475373,
+      "sha256": "654e6314f11ae5e825578ad1605161766fe0b8744f22018c1cb778ddb73a9632"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-tool-cupboard-inside.png",
+      "url": "development/levels/rebuild/cemetery-refuge-pass/wld-07/captures/wld-07-tool-cupboard-inside.png",
+      "title": "Wld 07 tool cupboard inside",
+      "kind": "Cemetery and Vale Mortuary full walk-in safe zones in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 413854,
+      "sha256": "1f061b081517e04dd6607c85e8b7aa7517e937b03fd1b635a5268cb96cc08e0b"
     },
     {
       "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-cargo-approach.png",

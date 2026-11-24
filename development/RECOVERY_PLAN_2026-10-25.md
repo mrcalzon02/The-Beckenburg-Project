@@ -2227,3 +2227,7 @@ Wharf case commit a9169804fa1b99df2323a32161f4c2b23286e29f and gallery run 45370
 ### Cemetery and mortuary operating doors and acoustics
 
 Boundary commit fa9b1e1495a114fc985641b011d726b25b315ffd and gallery 45373857791 are verified on held draft PR 86. The [staged door checkpoint](levels/rebuild/cemetery-door-pass/checkpoint.json) reuses the exact enclosed terrain and its building geometry with seven base and 17 annex leaves. Both renderers checked the whole route, each door's body and optical state, room adjacency/acoustics, and client snapshots. Separate four-peer cases used the physical cottage and mortuary preparation doors. Continue fitted walk-in refuges and power, normal-use subspaces, and named mission acceptance.
+
+### Cemetery and mortuary walk-in refuges
+
+Door commit 05edfb05abf6679e3ac0f23a18c3546fbae332a9 and gallery 45376266580 are verified on held draft PR 86. The [refuge checkpoint](levels/rebuild/cemetery-refuge-pass/checkpoint.json) adds three full walk-in refuges per variant, retains all 24 operating doors and 42 walking routes, and verifies all 414 usable floor samples. Both renderers see the protection cue. Four-peer TCP entered and used every refuge, including two aimed staff doors before the mortuary office. Continue the supported common caretaker yard and distribution, then case and named dispatch.

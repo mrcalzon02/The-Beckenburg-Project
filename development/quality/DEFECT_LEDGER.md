@@ -9110,3 +9110,7 @@ The first layout blocked both directions and 47 full-footprint positions on the 
 ### DEV-680 Cemetery frames lacked leaves and two mortuary openings were unscheduled
 
 Seven cemetery frames and 17 annex frames now have working staged leaves. The viewing/reception and cold/preparation openings use their measured 160 mm jamb depth. Both software and RTX 5070 replayed 42 complete paths in standing and crouched postures. Four-peer LAN verified aimed operation and physical crossing at the cottage and the annex preparation door. [Evidence](../levels/rebuild/cemetery-door-pass/checkpoint.json)
+
+### DEV-681 Cemetery and mortuary had no functioning walk-in protection
+
+Both variants now have three fitted walk-in refuges. Each protected all 69 sampled usable floor positions and passed live entry, hiding, reveal and exit. The mortuary office refuge is reached through two real staff doors. [Evidence](../levels/rebuild/cemetery-refuge-pass/checkpoint.json)

@@ -7547,6 +7547,17 @@
       "action": "Measure and fit 24 existing frames, bind room acoustics, verify open/closed movement and exact replicated state, and recover the two omitted openings from their actual jambs.",
       "older_maps": "Compare every runtime leaf and acoustic portal with actual frame geometry, including legacy openings and shared gameplay-owner rooms.",
       "evidence": "development/levels/rebuild/cemetery-door-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-681",
+      "title": "Cemetery and mortuary had no functioning walk-in protection",
+      "status": "CEMETERY_AND_MORTUARY_FULL_WALK_IN_REFUGES_VERIFIED",
+      "affected": "Both cemetery variants, three candidates per variant",
+      "symptom": "No walk-in refuges granted spatial protection or live host concealment.",
+      "cause": "The native staged schedules had no fitted refuge assets or sockets.",
+      "action": "Seat canonical cupboards on verified floors, couple their usable interiors to the shared protection volume and difficulty budget, and test every threshold at standing and crouched height and in live TCP.",
+      "older_maps": "Ensure the protected volume follows the canonical shelf-free floor and head area, with clearing upon exit or zero availability.",
+      "evidence": "development/levels/rebuild/cemetery-refuge-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

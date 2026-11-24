@@ -26,7 +26,10 @@ for path in sorted(set(paths)):
     if data[:8]!=b'\x89PNG\r\n\x1a\n':raise ValueError('Invalid PNG: '+path)
     w,h=struct.unpack('>II',data[16:24])
     kind='Development review'
-    if '/cemetery-door-pass/' in path:
+    if '/cemetery-refuge-pass/' in path:
+        renderer='OpenGL' if '/opengl/' in path else 'software'
+        kind='Cemetery and Vale Mortuary full walk-in safe zones in the '+renderer+' game renderer'
+    elif '/cemetery-door-pass/' in path:
         renderer='OpenGL' if '/opengl/' in path else 'software'
         kind='Cemetery and Vale Mortuary operating doors in the '+renderer+' game renderer'
     elif '/cemetery-boundary-pass/' in path:

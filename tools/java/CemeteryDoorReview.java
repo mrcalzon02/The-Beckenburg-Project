@@ -52,6 +52,8 @@ public final class CemeteryDoorReview {
                     titles.put(r[1],r[10]);
                 }
                 case "ANCHOR" -> anchors.add(new Anchor(n(r,1),r[2],point(r,3)));
+                case "COVER" -> sockets.add(new Socket(r[1],"hide",n(r,2),
+                    d(r,3),d(r,4),d(r,5),d(r,6),"walk-in-cupboard"));
                 case "TREAD" -> stairs.add(r[1]);
                 case "RITUAL" -> sockets.add(new Socket("cemetery-"+r[1],"ritual",n(r,2),
                     d(r,3),d(r,4),d(r,5),0,r[1]));
@@ -110,13 +112,14 @@ public final class CemeteryDoorReview {
             }
         }
 
+        boolean cover=!HidingBudget.candidates(level).isEmpty();
         var captures=folder.resolve(gpu?"captures/opengl":"captures");
         Files.createDirectories(captures);
         for(var frame:frames){
             var portal=frame.portal();
             require(NativeSchoolInteriorReview.sweep(scene.physics(),frame),"Unsupported operating swing "+frame.frameId());
             NativeSchoolInteriorReview.audit(map,frame,false);
-            String label=captureName(frame.frameId());
+            String label=cover?null:captureName(frame.frameId());
             if(label!=null) NativeSchoolInteriorReview.render(map,portal,captures.resolve(label+"-closed.png"),-frame.swingDirection());
             map.toggleDoor(portal.id(),System.nanoTime()-2_000_000_000L);
             witness.applyDoorSnapshot(map.doorSnapshot());
@@ -136,19 +139,21 @@ public final class CemeteryDoorReview {
                 NativeSchoolInteriorReview.walk(map,reversed,height,route.getKey()+" return");
             }
         }
-        if(!gpu) {
+        if(!gpu&&!cover) {
             var frame=frames.stream().filter(f->f.frameId().equals(annex?"cold storage and preparation":"cottage S 1"))
                 .findFirst().orElseThrow();
             liveDoor(level,scene,frame,annex);
         }
-        var report=List.of("check\tresult","native_scene_revision\t"+scene.revision(),"stage_revision\t"+level.revision(),
+        var report=new ArrayList<>(List.of("check\tresult","native_scene_revision\t"+scene.revision(),"stage_revision\t"+level.revision(),
             "actual_fitted_doors\t"+frames.size(),"bound_native_room_volumes\t"+spaces.size(),
             "connected_stable_owners\t"+rooms.length,"retained_paths_both_ways_and_postures\t"+routes.size(),
             "physical_open_transitions\t"+(openings.size()-2),
-            "standing_crouched_optical_object_acoustics_and_snapshots\tPASS",
-            "four_peer_tcp_door_interaction\t"+(gpu?"covered by software run":"PASS"),
-            "renderer\t"+(gpu?GpuWorldRenderer.active().rendererDescription():"Software"));
-        Files.writeString(folder.resolve(gpu?"doors-opengl.tsv":"doors-software.tsv"),String.join("\n",report)+"\n");
+            "standing_crouched_optical_object_acoustics_and_snapshots\tPASS"));
+        if(!cover) report.add("four_peer_tcp_door_interaction\t"+(gpu?"covered by software run":"PASS"));
+        report.add("renderer\t"+(gpu?GpuWorldRenderer.active().rendererDescription():"Software"));
+        String prefix=cover?"refuges":"doors";
+        if(cover) CemeteryRefugeReview.audit(map,level,scene,captures,report,annex,gpu);
+        Files.writeString(folder.resolve(prefix+(gpu?"-opengl.tsv":"-software.tsv")),String.join("\n",report)+"\n");
         report.forEach(System.out::println);
     }
 

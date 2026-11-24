@@ -397,6 +397,11 @@ public final class NativeSchoolInteriorReview {
     }
 
     static void auditWalkInCover(HouseMap map,Path captures,List<String> evidence,String prefix)throws Exception{
+        auditWalkInCover(map,captures,evidence,prefix,java.util.Map.of());
+    }
+
+    static void auditWalkInCover(HouseMap map,Path captures,List<String> evidence,String prefix,
+                                 java.util.Map<Integer,List<Vec>> approaches)throws Exception{
         var candidates=HidingBudget.candidates(map.level());
         require(candidates.size()==3,"Expected three independently fitted cupboards");
         map.configureHiding(100);
@@ -409,7 +414,11 @@ public final class NativeSchoolInteriorReview {
             var right=LevelClosets.world(pocket,.10,0,-.27);
             require(!coverProtects(map,approach)&&coverProtects(map,entry),
                 pocket.id()+" protection must start at the actual opening");
-            walkCoverBothWays(map,List.of(map.spawn(pocket.room()),outside,approach,entry,rear,left),pocket.id()+" left");
+            var route=new ArrayList<Vec>();
+            route.add(map.spawn(pocket.room()));
+            route.addAll(approaches.getOrDefault(pocket.room(),List.of()));
+            route.addAll(List.of(outside,approach,entry,rear,left));
+            walkCoverBothWays(map,route,pocket.id()+" left");
             walkCoverBothWays(map,List.of(entry,rear,right),pocket.id()+" right");
             for(var at:List.of(entry,rear,left,right)){
                 require(coverProtects(map,at)&&coverProtects(map,new Vec(at.x(),at.y()+1.6,at.z())),

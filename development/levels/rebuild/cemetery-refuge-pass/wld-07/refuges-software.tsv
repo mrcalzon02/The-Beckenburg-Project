@@ -1,0 +1,17 @@
+check	result
+native_scene_revision	419cdbd6704c8139271777de15d97ba76863157a42f0e42ee3570bf7ff8af7a6
+stage_revision	419cdbd6704c8139271777de15d97ba76863157a42f0e42ee3570bf7ff8af7a6-435202800044561a
+actual_fitted_doors	7
+bound_native_room_volumes	16
+connected_stable_owners	15
+retained_paths_both_ways_and_postures	16
+physical_open_transitions	8
+standing_crouched_optical_object_acoustics_and_snapshots	PASS
+renderer	Software
+wld-07-cottage-cupboard_protected_floor_samples	69
+wld-07-chapel-cupboard_protected_floor_samples	69
+wld-07-tool-cupboard_protected_floor_samples	69
+cemetery_cover	3 measured thresholds, standing/crouched entry and exit, both rear sides, full head-height protection, ghost sweep exclusion and zero-percent loss
+wld-07-cottage-cupboard_live_entry_hide_reveal_exit	PASS
+wld-07-tool-cupboard_live_entry_hide_reveal_exit	PASS
+wld-07-chapel-cupboard_live_entry_hide_reveal_exit	PASS
