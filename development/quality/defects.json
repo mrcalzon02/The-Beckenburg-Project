@@ -7943,6 +7943,17 @@
       "action": "Fit lapped and graded liners, seven open downpipes with wall straps, and founded outfalls clear of doors. Check exported crossfalls, bores, outlet beds, and normal routes.",
       "older_maps": "Audit opposing eaves at each measured building and take runoff to supported outfalls clear of stairs and door landings.",
       "evidence": "development/levels/rebuild/monastery-valley-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-717",
+      "title": "Monastery tower abutments and cloister gable junctions lacked fitted flashing",
+      "status": "MONASTERY_SEVEN_FITTED_ROOF_JUNCTIONS_STAGED",
+      "affected": "WLD-10 three bell tower roof abutments and four cloister gable corners",
+      "symptom": "The wall and pitched roof changes had no lapped flashing, and the west tower apron had no outlet into the refectory valley.",
+      "cause": "The measured pitched roofs and first valley stage left tower and gable transitions unfinished.",
+      "action": "Fit folded profiles to measured slate and wall faces, lap the shallow ends, and connect the west tower gutter to the existing valley. Verify native geometry and routes.",
+      "older_maps": "Measure lower roof and receiving face separately at each abutment. Use saddles or wall laps appropriate to the actual pitch.",
+      "evidence": "development/levels/rebuild/monastery-flashing-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

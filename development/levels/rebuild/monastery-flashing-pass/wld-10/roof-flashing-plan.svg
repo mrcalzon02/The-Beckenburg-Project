@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 680" role="img" aria-labelledby="title desc">
+<title id="title">Monastery tower and cloister roof flashings</title>
+<desc id="desc">North-up roof plan showing the seven fitted tower and cloister seams and how the west tower gutter joins the refectory roof valley.</desc>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#273733}
+.title{font-size:31px;font-weight:650}.head{font-size:17px;font-weight:650}.body{font-size:14px}.small{font-size:12px}
+.roof{fill:#e0e2d9;stroke:#797469}.ridge{stroke:#88877c;stroke-width:1}
+.step{stroke:#a65224;stroke-width:4;stroke-linecap:round;fill:none}
+.gable{stroke:#674f75;stroke-width:4;stroke-linecap:round;fill:none}
+.valley{stroke:#34786f;stroke-width:2.5;stroke-linecap:round;fill:none}
+.label{paint-order:stroke;stroke:#e0e2d9;stroke-width:3}
+</style>
+<rect width="1060" height="680" fill="#f2ece0"/>
+<text x="26" y="47" class="title">Monastery of Ashen Bells · Roof flashings</text>
+<text x="27" y="76" class="body">Three tower abutments and four cloister gable joins, fitted to the existing roofs.</text>
+<rect x="24" y="92" width="610" height="565" rx="8" fill="#fbf7eb" stroke="#cfc3ad"/>
+<rect x="650" y="92" width="386" height="565" rx="8" fill="#fbf7eb" stroke="#cfc3ad"/>
+<rect class="roof" x="283.08" y="532.52" width="118.72" height="44.52"/>
+<path class="ridge" d="M283.08 554.78H401.80"/>
+<rect class="roof" x="164.36" y="280.24" width="44.52" height="207.76"/>
+<path class="ridge" d="M186.62 280.24V488.00"/>
+<rect class="roof" x="431.48" y="280.24" width="44.52" height="207.76"/>
+<path class="ridge" d="M453.74 280.24V488.00"/>
+<rect class="roof" x="164.36" y="235.72" width="311.64" height="44.52"/>
+<path class="ridge" d="M164.36 257.98H476.00"/>
+<rect class="roof" x="164.36" y="488.00" width="311.64" height="44.52"/>
+<path class="ridge" d="M164.36 510.26H476.00"/>
+<rect class="roof" x="164.36" y="131.84" width="148.40" height="103.88"/>
+<path class="ridge" d="M164.36 183.78H312.76"/>
+<rect class="roof" x="312.76" y="131.84" width="118.72" height="103.88"/>
+<path class="ridge" d="M312.76 183.78H431.48"/>
+<rect class="roof" x="476.00" y="339.60" width="133.56" height="148.40"/>
+<path class="ridge" d="M542.78 339.60V488.00"/>
+<rect class="roof" x="45.64" y="280.24" width="118.72" height="207.76"/>
+<path class="ridge" d="M105.00 280.24V488.00"/>
+<rect class="roof" x="476.00" y="235.72" width="74.20" height="103.88"/>
+<path class="ridge" d="M513.10 287.66L476.00 235.72"/>
+<path class="ridge" d="M513.10 287.66L476.00 339.60"/>
+<path class="ridge" d="M513.10 287.66L550.20 235.72"/>
+<path class="ridge" d="M513.10 287.66L550.20 339.60"/>
+<path class="valley" d="M283.08 532.52L401.80 532.52"/>
+<path class="valley" d="M164.36 280.24L164.36 488.00"/>
+<path class="valley" d="M476.00 339.60L476.00 488.00"/>
+<path class="valley" d="M164.36 235.72L431.48 235.72"/>
+<path class="step" d="M474.76 280.24L474.76 339.60"/>
+<path class="step" d="M474.76 235.72L474.76 280.24"/>
+<path class="step" d="M476.00 340.54L550.20 340.54"/>
+<path class="gable" d="M164.62 279.98L208.62 279.98"/>
+<path class="gable" d="M431.74 279.98L475.74 279.98"/>
+<path class="gable" d="M164.62 488.26L208.62 488.26"/>
+<path class="gable" d="M431.74 488.26L475.74 488.26"/>
+<text class="small label" x="513.10" y="280.24" text-anchor="middle">Bell tower</text>
+<text class="small label" x="557.62" y="406.38" text-anchor="middle">Refectory</text>
+<text class="small label" x="320.18" y="376.70" text-anchor="middle">Herb court</text>
+<text class="small label" x="342.44" y="569.62" text-anchor="middle">Gatehouse</text>
+<text class="small label" x="105.00" y="376.70" text-anchor="middle">Dormitory</text>
+<text class="small label" x="238.56" y="176.36" text-anchor="middle">Archive</text>
+<text class="small label" x="372.12" y="176.36" text-anchor="middle">Vestry</text>
+<path d="M594 148v-27l-5 7m5-7l5 7" fill="none" stroke="#273733"/><text class="small" x="594" y="165" text-anchor="middle">N</text>
+<path d="M49 609h74.2v-5M49 604v5" fill="none" stroke="#273733"/><text class="small" x="86" y="629" text-anchor="middle">10 m</text>
+<text x="671" y="131" class="head">Fitted roof joins</text>
+<path class="step" d="M674 155h32"/><text x="718" y="161" class="body">Tower flashings</text>
+<path class="gable" d="M674 184h32"/><text x="718" y="190" class="body">Cloister gable flashings</text>
+<path class="valley" d="M674 212h32"/><text x="718" y="218" class="body">Previously fitted roof valleys</text>
+<text x="671" y="285" class="head">West tower gutter</text>
+<text x="671" y="312" class="body">The apron falls south along the actual wall.</text>
+<text x="671" y="337" class="body">A short bridge overlaps the refectory liner.</text>
+<path d="M701 390l195 16 75 13" fill="none" stroke="#a65224" stroke-width="4"/>
+<path d="M943 424l59 9" class="valley"/>
+<text x="671" y="459" class="small">Longitudinal section, vertical fall exaggerated</text>
+<text x="671" y="526" class="head">Cloister gable shoulders</text>
+<text x="671" y="554" class="body">A wall upstand follows the higher gable face.</text>
+<text x="671" y="578" class="body">At the shoulders it laps onto the adjacent slate.</text>
+<text x="671" y="622" class="small">The archive–vestry seam and exposed eaves remain open.</text>
+</svg>

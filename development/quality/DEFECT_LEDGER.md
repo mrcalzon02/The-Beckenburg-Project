@@ -9254,3 +9254,7 @@ Both bell flights and both crypt flights lacked graspable, mounted hardware. The
 ### DEV-716 · Monastery opposing-eave roof valleys
 
 Four trough junctions previously had no positive grade or outlets. The staged revision fits roof laps, hollow wall-mounted downpipes and seven founded gravel outfalls. Both runtime renderers verified the fitted components and retained movement furnished by the existing architecture. Tower steps, gable corners and exposed eaves still require review. [Verification checkpoint](../levels/rebuild/monastery-valley-pass/checkpoint.json)
+
+### DEV-717 · Monastery tower and cloister roof flashings
+
+Three tower abutments and four cloister gable shoulders now have measured lead folds and lapped ends. The west tower apron connects into the refectory valley. The staged software and OpenGL scenes agree on the new folds and preserved doors, refuges and routes. The archive–vestry seam and exposed eaves remain separate work. [Verification checkpoint](../levels/rebuild/monastery-flashing-pass/checkpoint.json)

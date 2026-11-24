@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12260,
+  "count": 12269,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -116004,6 +116004,96 @@
       "height": 580,
       "bytes": 428940,
       "sha256": "facaacc7e0cdd273fb28b54e00155a63d59290a46b8921a93fcf0f18993c9039"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/north-cloister-gable-pair.png",
+      "url": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/north-cloister-gable-pair.png",
+      "title": "North cloister gable pair",
+      "kind": "Monastery of Ashen Bells exported tower and cloister roof flashing inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1342132,
+      "sha256": "ee130cc7951c1cdbd7a3321eede6b71f7f64a17f4650583acdedf80533ff1e2e"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/north-west-cloister-gable-shoulder.png",
+      "url": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/north-west-cloister-gable-shoulder.png",
+      "title": "North west cloister gable shoulder",
+      "kind": "Monastery of Ashen Bells exported tower and cloister roof flashing inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1145729,
+      "sha256": "d5fb3ab450eee2b234b049acce489ba4055f2f97d8015b0114250aa12914d588"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/south-cloister-gable-pair.png",
+      "url": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/south-cloister-gable-pair.png",
+      "title": "South cloister gable pair",
+      "kind": "Monastery of Ashen Bells exported tower and cloister roof flashing inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1360073,
+      "sha256": "f34922d97271f3f42dca4d7dfd7d838de33059020dc6d04f4ac153a0348edff9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/tower-gutter-to-refectory-valley.png",
+      "url": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/tower-gutter-to-refectory-valley.png",
+      "title": "Tower gutter to refectory valley",
+      "kind": "Monastery of Ashen Bells exported tower and cloister roof flashing inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1148438,
+      "sha256": "6294a68eb25f72781b3c656367cf20cc2bd84e0ea159a908e044765e55e53578"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/tower-three-fitted-abutments.png",
+      "url": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/export-inspection/tower-three-fitted-abutments.png",
+      "title": "Tower three fitted abutments",
+      "kind": "Monastery of Ashen Bells exported tower and cloister roof flashing inspection",
+      "width": 1280,
+      "height": 900,
+      "bytes": 1297851,
+      "sha256": "c7c3d1b806df0ab8b04f5cdcb0e55c98a2a1199206450965356eef8a116e109f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/opengl/north-west-roof-step-from-herb-court.png",
+      "url": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/opengl/north-west-roof-step-from-herb-court.png",
+      "title": "North west roof step from herb court",
+      "kind": "Monastery of Ashen Bells fitted roof abutment in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 370183,
+      "sha256": "10967fcc909c5a97740986bb0497f283603ee3861960a90157229783aac6f871"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/opengl/tower-refectory-step-from-service-court.png",
+      "url": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/opengl/tower-refectory-step-from-service-court.png",
+      "title": "Tower refectory step from service court",
+      "kind": "Monastery of Ashen Bells fitted roof abutment in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 366625,
+      "sha256": "d0f45b341104ab6604069e65fe5e5baa349f2e5c95e29af7cafcd63aa543608f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/software/north-west-roof-step-from-herb-court.png",
+      "url": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/software/north-west-roof-step-from-herb-court.png",
+      "title": "North west roof step from herb court",
+      "kind": "Monastery of Ashen Bells fitted roof abutment in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 369661,
+      "sha256": "c7d2c1b3412991653c87f2220627778002c8e67b38271e72ef46d2930c22faec"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/software/tower-refectory-step-from-service-court.png",
+      "url": "development/levels/rebuild/monastery-flashing-pass/wld-10/captures/software/tower-refectory-step-from-service-court.png",
+      "title": "Tower refectory step from service court",
+      "kind": "Monastery of Ashen Bells fitted roof abutment in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 374135,
+      "sha256": "a6bddadea844f41eea3e8ff235e016725ecc883b866db9234eb2fc5a7ab27918"
     },
     {
       "path": "development/levels/rebuild/monastery-handrail-pass/wld-10/captures/opengl/bell-lower-flight.png",
