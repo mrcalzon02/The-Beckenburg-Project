@@ -1,0 +1,39 @@
+site	probe	height	result	x	y	z	grade	visibility
+wld-07	road behind van	1.78	stopped	28.000	0.209	87.732	no_beyond_support	open_sight
+wld-07	road behind van	1.05	stopped	28.000	0.209	87.732	no_beyond_support	open_sight
+wld-07	west van shoulder	1.78	stopped	3.000	0.431	77.000	no_beyond_support	open_sight
+wld-07	west van shoulder	1.05	stopped	3.000	0.431	77.000	no_beyond_support	open_sight
+wld-07	east van shoulder	1.78	stopped	57.722	0.022	77.000	no_beyond_support	open_sight
+wld-07	east van shoulder	1.05	stopped	57.722	0.022	77.000	no_beyond_support	open_sight
+wld-07	west lawn	1.78	stopped	3.032	0.132	33.000	no_beyond_support	open_sight
+wld-07	west lawn	1.05	stopped	3.032	0.132	33.000	no_beyond_support	open_sight
+wld-07	north old cemetery	1.78	stopped	28.000	0.076	0.800	beyond_support	open_sight
+wld-07	north old cemetery	1.05	stopped	28.000	0.076	0.800	beyond_support	open_sight
+wld-07	east graves	1.78	stopped	47.994	0.057	32.000	beyond_support	open_sight
+wld-07	east graves	1.05	stopped	47.994	0.057	32.000	beyond_support	open_sight
+wld-07	west chapel court	1.78	stopped	2.473	0.375	59.000	no_beyond_support	open_sight
+wld-07	west chapel court	1.05	stopped	2.473	0.375	59.000	no_beyond_support	open_sight
+wld-07	east caretaker court	1.78	stopped	57.723	-0.117	58.000	no_beyond_support	open_sight
+wld-07	east caretaker court	1.05	stopped	57.723	-0.117	58.000	no_beyond_support	open_sight
+wld-07-mortuary	road behind van	1.78	stopped	28.000	0.209	87.732	no_beyond_support	open_sight
+wld-07-mortuary	road behind van	1.05	stopped	28.000	0.209	87.732	no_beyond_support	open_sight
+wld-07-mortuary	west van shoulder	1.78	stopped	3.000	0.431	77.000	no_beyond_support	open_sight
+wld-07-mortuary	west van shoulder	1.05	stopped	3.000	0.431	77.000	no_beyond_support	open_sight
+wld-07-mortuary	east van shoulder	1.78	clear	58.000	0.000	77.000	beyond_support	open_sight
+wld-07-mortuary	east van shoulder	1.05	clear	58.000	0.000	77.000	beyond_support	open_sight
+wld-07-mortuary	west lawn	1.78	stopped	3.032	0.132	33.000	no_beyond_support	open_sight
+wld-07-mortuary	west lawn	1.05	stopped	3.032	0.132	33.000	no_beyond_support	open_sight
+wld-07-mortuary	north old cemetery	1.78	stopped	28.000	0.076	0.800	beyond_support	open_sight
+wld-07-mortuary	north old cemetery	1.05	stopped	28.000	0.076	0.800	beyond_support	open_sight
+wld-07-mortuary	east graves	1.78	stopped	47.994	0.057	32.000	beyond_support	open_sight
+wld-07-mortuary	east graves	1.05	stopped	47.994	0.057	32.000	beyond_support	open_sight
+wld-07-mortuary	west chapel court	1.78	stopped	2.473	0.375	59.000	no_beyond_support	open_sight
+wld-07-mortuary	west chapel court	1.05	stopped	2.473	0.375	59.000	no_beyond_support	open_sight
+wld-07-mortuary	east caretaker court	1.78	stopped	55.647	-0.000	58.000	beyond_support	blocked_sight
+wld-07-mortuary	east caretaker court	1.05	stopped	55.647	-0.000	58.000	beyond_support	blocked_sight
+wld-07-mortuary	annex receiving yard south	1.78	stopped	66.000	0.098	87.760	no_beyond_support	open_sight
+wld-07-mortuary	annex receiving yard south	1.05	stopped	66.000	0.098	87.760	no_beyond_support	open_sight
+wld-07-mortuary	annex receiving yard east	1.78	stopped	89.004	0.442	81.000	no_beyond_support	open_sight
+wld-07-mortuary	annex receiving yard east	1.05	stopped	89.004	0.442	81.000	no_beyond_support	open_sight
+wld-07-mortuary	annex cold room service side	1.78	stopped	89.720	0.332	54.000	no_beyond_support	open_sight
+wld-07-mortuary	annex cold room service side	1.05	stopped	89.720	0.332	54.000	no_beyond_support	open_sight

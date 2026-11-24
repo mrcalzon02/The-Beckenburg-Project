@@ -4058,7 +4058,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "02b1440cd09c8af23ae963b190dfff5444753b3a",
+          "source_sha": "a9169804fa1b99df2323a32161f4c2b23286e29f",
           "evidence": [
             "development/levels/rebuild/terrain-overall-pass/terrain-envelopes.json",
             "development/levels/rebuild/terrain-overall-pass/README.md",
@@ -4072,28 +4072,34 @@
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
             "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
-            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json",
+            "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-395",
             "DEV-396",
             "DEV-398",
             "DEV-543",
-            "DEV-544"
+            "DEV-544",
+            "DEV-678",
+            "DEV-679"
           ],
-          "next_action": "Finish site perimeter, slope and drainage transitions with graves and fixtures rooted to the saved terrain."
+          "next_action": "Founded boundary and road gate checks passed. Complete drainage, rooted landscape, edge transition and skyline inspection."
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "02b1440cd09c8af23ae963b190dfff5444753b3a",
+          "source_sha": "a9169804fa1b99df2323a32161f4c2b23286e29f",
           "evidence": [
-            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json",
+            "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-543",
-            "DEV-544"
+            "DEV-544",
+            "DEV-678",
+            "DEV-679"
           ],
-          "next_action": "Finish cottage and annex envelope, roof joins, hardware and final attic/ceiling treatment."
+          "next_action": "Preserve verified boundary clearance. Finish cottage and annex envelope, door leaves, measured thresholds, room ownership and acoustics."
         },
         "S06": {
           "status": "NOT_AUDITED",
@@ -6669,7 +6675,7 @@
         },
         "S04": {
           "status": "IN_PROGRESS",
-          "source_sha": "02b1440cd09c8af23ae963b190dfff5444753b3a",
+          "source_sha": "a9169804fa1b99df2323a32161f4c2b23286e29f",
           "evidence": [
             "development/levels/rebuild/wld-07-mortuary/terrain-world/verification.json",
             "development/levels/rebuild/verification/roster-editor-terrain-2026-11-07/README.md",
@@ -6685,7 +6691,8 @@
             "development/levels/rebuild/terrain-fit-pass/verification/bearing-contact.json",
             "development/levels/rebuild/terrain-fit-pass/verification/stairs/stair-movement.json",
             "development/levels/rebuild/verification/atmosphere-all-levels/README.md",
-            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json",
+            "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-363",
@@ -6695,22 +6702,27 @@
             "DEV-398",
             "DEV-543",
             "DEV-544",
-            "DEV-545"
+            "DEV-545",
+            "DEV-678",
+            "DEV-679"
           ],
-          "next_action": "Finish site perimeter, slope and drainage transitions with graves and fixtures rooted to the saved terrain."
+          "next_action": "Founded boundary and road gate checks passed. Complete drainage, rooted landscape, edge transition and skyline inspection."
         },
         "S05": {
           "status": "IN_PROGRESS",
-          "source_sha": "02b1440cd09c8af23ae963b190dfff5444753b3a",
+          "source_sha": "a9169804fa1b99df2323a32161f4c2b23286e29f",
           "evidence": [
-            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json"
+            "development/levels/rebuild/cemetery-grounds-pass/checkpoint.json",
+            "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-543",
             "DEV-544",
-            "DEV-545"
+            "DEV-545",
+            "DEV-678",
+            "DEV-679"
           ],
-          "next_action": "Finish cottage and annex envelope, roof joins, hardware and final attic/ceiling treatment."
+          "next_action": "Preserve verified boundary clearance. Finish cottage and annex envelope, door leaves, measured thresholds, room ownership and acoustics."
         },
         "S06": {
           "status": "NOT_AUDITED",

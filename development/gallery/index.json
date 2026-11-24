@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11779,
+  "count": 11799,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -110604,6 +110604,206 @@
       "height": 850,
       "bytes": 945357,
       "sha256": "583b640d50f3e25cd4c5b7b8091f308eace6a99f68992cb0285d75633aac38ed"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/boundary-chapel-shoulder.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/boundary-chapel-shoulder.png",
+      "title": "Boundary chapel shoulder",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 300431,
+      "sha256": "b95170d0ab0dfb6a1d3a136add9e1dafc1ae87f86075f6536c3ab580f323fd24"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/boundary-receiving-gate.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/boundary-receiving-gate.png",
+      "title": "Boundary receiving gate",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 333153,
+      "sha256": "a6be094354e752956aa6387bb1229599d9ee28225c60804c38fb0c213f22acd5"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/boundary-road-gate-close.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/boundary-road-gate-close.png",
+      "title": "Boundary road gate close",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 458192,
+      "sha256": "5200eef8d0d3b794afd440ae0f9e48728f8778d4eab1029cb3314aff745325d3"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/boundary-van-road-gate.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/boundary-van-road-gate.png",
+      "title": "Boundary van road gate",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 446781,
+      "sha256": "9e2e045272be651ddfc57a0750310ddadd53e699b4604f5e0b90f32081022262"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/opengl/boundary-chapel-shoulder.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/opengl/boundary-chapel-shoulder.png",
+      "title": "Boundary chapel shoulder",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 301257,
+      "sha256": "2828cdbc6451a5d520f421468c066337eb6b412650b28c3601efccdefaa71728"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/opengl/boundary-receiving-gate.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/opengl/boundary-receiving-gate.png",
+      "title": "Boundary receiving gate",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 331556,
+      "sha256": "b2893d394799ce479c79ad183de8298743fd5bcf613af198b6cc78708a5ecc36"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/opengl/boundary-road-gate-close.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/opengl/boundary-road-gate-close.png",
+      "title": "Boundary road gate close",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 457827,
+      "sha256": "84644079250dbb63f40c055515bc0b669678ec3101e46d705bd14643b1310c7b"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/opengl/boundary-van-road-gate.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/opengl/boundary-van-road-gate.png",
+      "title": "Boundary van road gate",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 465152,
+      "sha256": "2f988c4751e17ba77d66a58690714e2aecb760deea5b737bb93051f8cb7c9cce"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/structure/arrival-inner-gate.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/structure/arrival-inner-gate.png",
+      "title": "Arrival inner gate",
+      "kind": "Cemetery and Vale Mortuary fitted enclosure and joined ground",
+      "width": 1540,
+      "height": 980,
+      "bytes": 1165785,
+      "sha256": "3ca2f954e4ce68f7d80aea27f5d2d41ecdc4b7452a4c228a48aff1812909222c"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/structure/boundary-overview.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/structure/boundary-overview.png",
+      "title": "Boundary overview",
+      "kind": "Cemetery and Vale Mortuary fitted enclosure and joined ground",
+      "width": 1540,
+      "height": 980,
+      "bytes": 1942101,
+      "sha256": "c21b608d756086fd6ef6ea939b5dbb62d0635a19e607628fb3f53c8c0146a267"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/structure/founded-road-gate.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07-mortuary/captures/structure/founded-road-gate.png",
+      "title": "Founded road gate",
+      "kind": "Cemetery and Vale Mortuary fitted enclosure and joined ground",
+      "width": 1540,
+      "height": 980,
+      "bytes": 1892363,
+      "sha256": "e873492b4f97f7c68912d626bd1df76640cf8dd4fc2b1469709d7dd53cac3970"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/boundary-chapel-shoulder.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/boundary-chapel-shoulder.png",
+      "title": "Boundary chapel shoulder",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 300431,
+      "sha256": "b95170d0ab0dfb6a1d3a136add9e1dafc1ae87f86075f6536c3ab580f323fd24"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/boundary-road-gate-close.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/boundary-road-gate-close.png",
+      "title": "Boundary road gate close",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 457978,
+      "sha256": "318646c4714d7cb06ffdb4cfcda2e27c44854f1f8b0c9876ded61bda966350f0"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/boundary-van-road-gate.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/boundary-van-road-gate.png",
+      "title": "Boundary van road gate",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 446839,
+      "sha256": "653a1619605d485a302fe86e7e365f25dcbccae78d9d50e9ee92a33f2aa48086"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/opengl/boundary-chapel-shoulder.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/opengl/boundary-chapel-shoulder.png",
+      "title": "Boundary chapel shoulder",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 301257,
+      "sha256": "2828cdbc6451a5d520f421468c066337eb6b412650b28c3601efccdefaa71728"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/opengl/boundary-road-gate-close.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/opengl/boundary-road-gate-close.png",
+      "title": "Boundary road gate close",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 457605,
+      "sha256": "66f90b38f7881481d2b62a1d49cc30e24a36c016462e4abadad891871df3d9f0"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/opengl/boundary-van-road-gate.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/opengl/boundary-van-road-gate.png",
+      "title": "Boundary van road gate",
+      "kind": "Cemetery and Vale Mortuary standing boundary review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 465219,
+      "sha256": "27cb8a48ec1900b4b5a1d227f3733ac3ee1405b4b299a36e8a6de4230af15fd3"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/structure/arrival-inner-gate.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/structure/arrival-inner-gate.png",
+      "title": "Arrival inner gate",
+      "kind": "Cemetery and Vale Mortuary fitted enclosure and joined ground",
+      "width": 1540,
+      "height": 980,
+      "bytes": 1165752,
+      "sha256": "d4c3ee24e74f48128fed68b3016a6335da35d3315c19c08d0b610650c03b86f8"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/structure/boundary-overview.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/structure/boundary-overview.png",
+      "title": "Boundary overview",
+      "kind": "Cemetery and Vale Mortuary fitted enclosure and joined ground",
+      "width": 1540,
+      "height": 980,
+      "bytes": 1918262,
+      "sha256": "5c55b600acdf3dd09358b7d4b2c72ae5fc0297dea8fb5e90c3597e9a9d1f95a2"
+    },
+    {
+      "path": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/structure/founded-road-gate.png",
+      "url": "development/levels/rebuild/cemetery-boundary-pass/wld-07/captures/structure/founded-road-gate.png",
+      "title": "Founded road gate",
+      "kind": "Cemetery and Vale Mortuary fitted enclosure and joined ground",
+      "width": 1540,
+      "height": 980,
+      "bytes": 1875415,
+      "sha256": "8783bcbf75a1ce2a242cea75d57bc0e857064fccf90ad44cd840b8238f8fa6ae"
     },
     {
       "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-cargo-approach.png",

@@ -2219,3 +2219,7 @@ Service plant commit ba7642b943f9ccfa2bf5a82b8b76b105ee26ec3e is verified on dra
 ### Drowned Fisherman's Wharf named case review
 
 Distribution commit 01c6e583ad13eb6a51c398dd8a1a38b5caeec883 is verified on draft PR 86. Gallery 45367423013 passed. The [named case checkpoint](levels/rebuild/wharf-case-pass/checkpoint.json) binds the exact native Wharf package to the ordinary selection and network revision contracts behind the existing style of review gate. Software and RTX 5070 rendering retained nineteen routes, eight doors, six room circuits and three walk-in refuges. Four-peer LAN verified both readable records, fish-house evidence and camera, all three rites, withdrawal and the individual refuge thresholds. Normal-use subdivision and task fit, later art and encounters, and final acceptance remain open. Continue the architectural pass at the Cemetery and mortuary annex from their measured source.
+
+### Cemetery and mortuary physical boundaries
+
+Wharf case commit a9169804fa1b99df2323a32161f4c2b23286e29f and gallery run 45370891387 passed on held draft PR 86. The [cemetery and mortuary boundary checkpoint](levels/rebuild/cemetery-boundary-pass/checkpoint.json) adds surveyed masonry and canonical gates, with separate mortuary receiving access. Exact native and software/RTX 5070 checks verify physical stops, original cargo and ramp access, and all 38 ordinary links and four existing stair chains. Next fit operating building doors and their acoustics, and resolve service, refuges, furnishing, landscape/drainage and the annex roof.

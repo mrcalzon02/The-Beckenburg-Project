@@ -1,0 +1,10 @@
+check	result
+scene_revision	f81c2e22bfbdcc0ad6273f75a256ec21e82eadba080785c9befcccec6d862ee0
+renderer	OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64
+boundary_capsule_contacts	1102
+boundary_jump_height_contacts	1102
+masonry_optical_contacts	509
+sampled_exterior_support	545
+supported_crossings_blocked	1048
+gate_bar_and_gap_controls	1
+canonical_ramp_and_court_both_directions_and_postures	PASS

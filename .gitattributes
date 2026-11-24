@@ -370,3 +370,7 @@ development/levels/rebuild/mine-lower-slabs-pass/** -text
 development/levels/rebuild/mine-drainage-pass/** -text
 development/levels/rebuild/mine-sump-pass/** -text
 development/levels/rebuild/mine-case-pass/** -text
+
+# Hash-bound cemetery boundary construction and raw replay evidence.
+development/levels/rebuild/cemetery-boundary-pass/** -text
+development/levels/rebuild/cemetery-boundary-pass/**/*.tsv whitespace=-blank-at-eol,cr-at-eol

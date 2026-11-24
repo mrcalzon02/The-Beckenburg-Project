@@ -9098,3 +9098,11 @@ The named review option now opens the same exact native package in solo selectio
 ### DEV-677 House room 2 switch lacks a clear operating stance
 
 The shared utility test finds no clear approach among nine candidate stances at the plate at (17.915, 1.2, 12.7). The same failure reproduces on the previous source classes. Inspect wall mount, furnishing and aiming approach before changing the switch. [Reproduction](../levels/rebuild/wharf-case-pass/checkpoint.json)
+
+### DEV-678 Cemetery and mortuary movement ended at bare terrain edges
+
+The new surveyed masonry and canonical gates stop supported movement at visible boundaries. Exterior ground continues at the original rim. Both canonical van approaches and the existing stairs remain passable. [Evidence](../levels/rebuild/cemetery-boundary-pass/checkpoint.json)
+
+### DEV-679 First mortuary boundary return crossed the receiving lane
+
+The first layout blocked both directions and 47 full-footprint positions on the existing service approach. The wall now bears on the outer bank south of the drive. All 10,500 cemetery and mortuary samples pass after the correction. [Regression and verification](../levels/rebuild/cemetery-boundary-pass/checkpoint.json)

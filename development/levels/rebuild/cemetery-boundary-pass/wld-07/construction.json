@@ -1,0 +1,1450 @@
+{
+  "id": "WLD-07",
+  "source_glb": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.glb",
+  "source_physics": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-grounds.hcs2",
+  "source_glb_sha256": "b5ef66e325b3a842fbb0f1c46be2b465bae0e97d7c22e208266df521cba75019",
+  "source_physics_sha256": "bb378e3de593724d7a45163b151041e7287cd57fe90077dcda1d3e5701c2c6f4",
+  "source_segment_map": {},
+  "before_segment_map": {},
+  "stair_components": [
+    "104:L14 flight0 step1",
+    "105:L14 flight0 step2",
+    "106:L14 flight0 step3",
+    "107:L14 flight0 step4",
+    "108:L14 flight0 step5",
+    "109:L14 flight0 step6",
+    "110:L14 flight0 step7",
+    "111:L14 flight0 step8",
+    "112:L14 flight0 step9",
+    "113:L14 flight0 step10",
+    "114:L14 flight0 step11",
+    "115:L14 flight0 step12",
+    "116:L14 flight0 step13",
+    "117:L14 flight0 step14",
+    "118:L14 flight0 step15",
+    "119:L14 flight0 step16",
+    "120:L14 flight0 step17",
+    "122:L15 flight0 step1",
+    "123:L15 flight0 step2",
+    "124:L15 flight0 step3",
+    "125:L15 flight0 step4",
+    "126:L15 flight0 step5",
+    "127:L15 flight0 step6",
+    "128:L15 flight0 step7",
+    "129:L15 flight0 step8",
+    "130:L15 flight0 step9",
+    "131:L15 flight0 step10",
+    "132:L15 flight0 step11",
+    "133:L15 flight0 step12",
+    "134:L15 flight0 step13",
+    "135:L15 flight0 step14",
+    "136:L15 flight0 step15",
+    "137:L15 flight0 step16",
+    "138:L15 flight0 step17"
+  ],
+  "before_stair_components": [
+    "104:L14 flight0 step1",
+    "105:L14 flight0 step2",
+    "106:L14 flight0 step3",
+    "107:L14 flight0 step4",
+    "108:L14 flight0 step5",
+    "109:L14 flight0 step6",
+    "110:L14 flight0 step7",
+    "111:L14 flight0 step8",
+    "112:L14 flight0 step9",
+    "113:L14 flight0 step10",
+    "114:L14 flight0 step11",
+    "115:L14 flight0 step12",
+    "116:L14 flight0 step13",
+    "117:L14 flight0 step14",
+    "118:L14 flight0 step15",
+    "119:L14 flight0 step16",
+    "120:L14 flight0 step17",
+    "122:L15 flight0 step1",
+    "123:L15 flight0 step2",
+    "124:L15 flight0 step3",
+    "125:L15 flight0 step4",
+    "126:L15 flight0 step5",
+    "127:L15 flight0 step6",
+    "128:L15 flight0 step7",
+    "129:L15 flight0 step8",
+    "130:L15 flight0 step9",
+    "131:L15 flight0 step10",
+    "132:L15 flight0 step11",
+    "133:L15 flight0 step12",
+    "134:L15 flight0 step13",
+    "135:L15 flight0 step14",
+    "136:L15 flight0 step15",
+    "137:L15 flight0 step16",
+    "138:L15 flight0 step17"
+  ],
+  "layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-layout.json",
+  "before_layout": "development/levels/rebuild/cemetery-grounds-pass/wld-07/authored-layout.json",
+  "layout_sha256": "5e507a81bac767c0f3b48a88e20518303fd1cefdf8bfa60df146e5d51d18c8b1",
+  "before_layout_sha256": "5e507a81bac767c0f3b48a88e20518303fd1cefdf8bfa60df146e5d51d18c8b1",
+  "glb_sha256": "ba66ad066c2781e775220d961850c40dca36e5469b845b33e43970754760d316",
+  "physics_sha256": "f0c45a79c99c72e30902c0580d6f9bce680f0c5e7b309c810db3eccc03aa729e",
+  "terrain": {
+    "matched_rim_edges": 471,
+    "retained_cut_edges": [
+      36,
+      40,
+      64
+    ],
+    "triangles": 2123,
+    "square_metres": 20446.0,
+    "continuous_road_throats": 1
+  },
+  "perimeter": [
+    [
+      18,
+      84.8
+    ],
+    [
+      13.2,
+      79.3
+    ],
+    [
+      10,
+      72
+    ],
+    [
+      7,
+      67
+    ],
+    [
+      4.45,
+      60.5
+    ],
+    [
+      4.5,
+      44
+    ],
+    [
+      5,
+      36
+    ],
+    [
+      3.8,
+      27
+    ],
+    [
+      4.35,
+      14
+    ],
+    [
+      7.5,
+      7.5
+    ],
+    [
+      12,
+      3.5
+    ],
+    [
+      15,
+      -1.8
+    ],
+    [
+      24.5,
+      -2.1
+    ],
+    [
+      34.5,
+      -1.5
+    ],
+    [
+      41.5,
+      1.4
+    ],
+    [
+      47,
+      6.2
+    ],
+    [
+      52.5,
+      11
+    ],
+    [
+      54.2,
+      20
+    ],
+    [
+      53.7,
+      29
+    ],
+    [
+      53.8,
+      37.6
+    ],
+    [
+      56.1,
+      42
+    ],
+    [
+      56.1,
+      53
+    ],
+    [
+      53.75,
+      60
+    ],
+    [
+      48.4,
+      66.5
+    ],
+    [
+      42.6,
+      69
+    ],
+    [
+      38.65,
+      74
+    ],
+    [
+      37.8,
+      81
+    ],
+    [
+      35.55,
+      85
+    ],
+    [
+      29.9272,
+      85
+    ],
+    [
+      26.0728,
+      85
+    ]
+  ],
+  "gates": [
+    {
+      "style": "road",
+      "centers": [
+        [
+          29.9272,
+          85
+        ],
+        [
+          26.0728,
+          85
+        ]
+      ],
+      "source": "development/levels/primitive-props-v1/models/level_blockout_cemetery_gate.glb",
+      "sha256": "37fc583e31d6c396b8676d9302172d030e10d2387290eed607911f008b793951",
+      "elevation": 0.02790275764465332,
+      "grade_min": 0.00717926025390625,
+      "grade_max": 0.01590275764465332,
+      "scale_x": 1.32
+    }
+  ],
+  "span_surveys": [
+    {
+      "name": "Cemetery boundary masonry 01",
+      "a": [
+        18.0,
+        84.8
+      ],
+      "b": [
+        15.6,
+        82.05
+      ],
+      "grade_min": 0.039112210273742676,
+      "grade_max": 0.3202519416809082,
+      "footing_bottom": -0.28088778972625733,
+      "crest": 2.840251941680908,
+      "samples": 60,
+      "outward": [
+        -0.7534246575342465,
+        0.6575342465753425
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 02",
+      "a": [
+        15.6,
+        82.05
+      ],
+      "b": [
+        13.2,
+        79.3
+      ],
+      "grade_min": 0.27387452125549316,
+      "grade_max": 0.5722314119338989,
+      "footing_bottom": -0.04612547874450684,
+      "crest": 3.092231411933899,
+      "samples": 60,
+      "outward": [
+        -0.7534246575342465,
+        0.6575342465753425
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 03",
+      "a": [
+        13.2,
+        79.3
+      ],
+      "b": [
+        11.6,
+        75.65
+      ],
+      "grade_min": 0.5644066333770752,
+      "grade_max": 0.7019108533859253,
+      "footing_bottom": 0.2444066333770752,
+      "crest": 3.2219108533859253,
+      "samples": 63,
+      "outward": [
+        -0.9158691540042244,
+        0.40147688942651016
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 04",
+      "a": [
+        11.6,
+        75.65
+      ],
+      "b": [
+        10.0,
+        72.0
+      ],
+      "grade_min": 0.6865553855895996,
+      "grade_max": 0.7196240425109863,
+      "footing_bottom": 0.3665553855895996,
+      "crest": 3.2396240425109863,
+      "samples": 63,
+      "outward": [
+        -0.915869154004225,
+        0.40147688942650883
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 05",
+      "a": [
+        10.0,
+        72.0
+      ],
+      "b": [
+        8.5,
+        69.5
+      ],
+      "grade_min": 0.6583328247070312,
+      "grade_max": 0.7187943458557129,
+      "footing_bottom": 0.33833282470703124,
+      "crest": 3.238794345855713,
+      "samples": 48,
+      "outward": [
+        -0.8574929257125441,
+        0.5144957554275265
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 06",
+      "a": [
+        8.5,
+        69.5
+      ],
+      "b": [
+        7.0,
+        67.0
+      ],
+      "grade_min": 0.5606696605682373,
+      "grade_max": 0.6671614646911621,
+      "footing_bottom": 0.2406696605682373,
+      "crest": 3.187161464691162,
+      "samples": 48,
+      "outward": [
+        -0.8574929257125441,
+        0.5144957554275265
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 07",
+      "a": [
+        7.0,
+        67.0
+      ],
+      "b": [
+        5.725,
+        63.75
+      ],
+      "grade_min": 0.5089008808135986,
+      "grade_max": 0.5896432399749756,
+      "footing_bottom": 0.18890088081359863,
+      "crest": 3.1096432399749756,
+      "samples": 57,
+      "outward": [
+        -0.9309254666735182,
+        0.36520922154114954
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 08",
+      "a": [
+        5.725,
+        63.75
+      ],
+      "b": [
+        4.45,
+        60.5
+      ],
+      "grade_min": 0.4367537498474121,
+      "grade_max": 0.5388569831848145,
+      "footing_bottom": 0.1167537498474121,
+      "crest": 3.0588569831848145,
+      "samples": 57,
+      "outward": [
+        -0.9309254666735183,
+        0.3652092215411493
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 09",
+      "a": [
+        4.45,
+        60.5
+      ],
+      "b": [
+        4.4625,
+        56.375
+      ],
+      "grade_min": 0.0458073616027832,
+      "grade_max": 0.4532703161239624,
+      "footing_bottom": -0.2741926383972168,
+      "crest": 2.9732703161239624,
+      "samples": 66,
+      "outward": [
+        -0.9999954086633931,
+        -0.0030302891171618404
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 10",
+      "a": [
+        4.4625,
+        56.375
+      ],
+      "b": [
+        4.475,
+        52.25
+      ],
+      "grade_min": -0.03482699394226074,
+      "grade_max": 0.11385226249694824,
+      "footing_bottom": -0.35482699394226075,
+      "crest": 2.6338522624969483,
+      "samples": 66,
+      "outward": [
+        -0.9999954086633931,
+        -0.003030289117161625
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 11",
+      "a": [
+        4.475,
+        52.25
+      ],
+      "b": [
+        4.4875,
+        48.125
+      ],
+      "grade_min": -0.057032108306884766,
+      "grade_max": 0.03701627254486084,
+      "footing_bottom": -0.3770321083068848,
+      "crest": 2.557016272544861,
+      "samples": 66,
+      "outward": [
+        -0.9999954086633931,
+        -0.0030302891171618404
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 12",
+      "a": [
+        4.4875,
+        48.125
+      ],
+      "b": [
+        4.5,
+        44.0
+      ],
+      "grade_min": -0.07588005065917969,
+      "grade_max": 0.00390625,
+      "footing_bottom": -0.3958800506591797,
+      "crest": 2.52390625,
+      "samples": 66,
+      "outward": [
+        -0.9999954086633931,
+        -0.0030302891171618404
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 13",
+      "a": [
+        4.5,
+        44.0
+      ],
+      "b": [
+        4.75,
+        40.0
+      ],
+      "grade_min": -0.09681034088134766,
+      "grade_max": -0.023891210556030273,
+      "footing_bottom": -0.41681034088134766,
+      "crest": 2.4961087894439697,
+      "samples": 66,
+      "outward": [
+        -0.9980525784828885,
+        -0.06237828615518053
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 14",
+      "a": [
+        4.75,
+        40.0
+      ],
+      "b": [
+        5.0,
+        36.0
+      ],
+      "grade_min": -0.08373570442199707,
+      "grade_max": 0.016777753829956055,
+      "footing_bottom": -0.4037357044219971,
+      "crest": 2.536777753829956,
+      "samples": 66,
+      "outward": [
+        -0.9980525784828885,
+        -0.06237828615518053
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 15",
+      "a": [
+        5.0,
+        36.0
+      ],
+      "b": [
+        4.4,
+        31.5
+      ],
+      "grade_min": -0.007089138031005859,
+      "grade_max": 0.08345675468444824,
+      "footing_bottom": -0.32708913803100587,
+      "crest": 2.6034567546844483,
+      "samples": 72,
+      "outward": [
+        -0.9912279006826346,
+        0.13216372009101787
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 16",
+      "a": [
+        4.4,
+        31.5
+      ],
+      "b": [
+        3.8,
+        27.0
+      ],
+      "grade_min": 0.05885934829711914,
+      "grade_max": 0.12183833122253418,
+      "footing_bottom": -0.26114065170288087,
+      "crest": 2.641838331222534,
+      "samples": 72,
+      "outward": [
+        -0.9912279006826346,
+        0.13216372009101807
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 17",
+      "a": [
+        3.8,
+        27.0
+      ],
+      "b": [
+        3.983333333333333,
+        22.666666666666668
+      ],
+      "grade_min": 0.01614856719970703,
+      "grade_max": 0.12282490730285645,
+      "footing_bottom": -0.303851432800293,
+      "crest": 2.6428249073028565,
+      "samples": 69,
+      "outward": [
+        -0.999106229254549,
+        -0.04226987893000011
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 18",
+      "a": [
+        3.983333333333333,
+        22.666666666666668
+      ],
+      "b": [
+        4.166666666666666,
+        18.333333333333336
+      ],
+      "grade_min": 0.0,
+      "grade_max": 0.06751346588134766,
+      "footing_bottom": -0.32,
+      "crest": 2.5875134658813477,
+      "samples": 69,
+      "outward": [
+        -0.999106229254549,
+        -0.04226987893000011
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 19",
+      "a": [
+        4.166666666666666,
+        18.333333333333336
+      ],
+      "b": [
+        4.35,
+        14.0
+      ],
+      "grade_min": 0.0,
+      "grade_max": 0.018745064735412598,
+      "footing_bottom": -0.32,
+      "crest": 2.5387450647354126,
+      "samples": 69,
+      "outward": [
+        -0.999106229254549,
+        -0.04226987893000018
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 20",
+      "a": [
+        4.35,
+        14.0
+      ],
+      "b": [
+        5.925,
+        10.75
+      ],
+      "grade_min": 1.1920928955078125e-07,
+      "grade_max": 0.12733209133148193,
+      "footing_bottom": -0.31999988079071046,
+      "crest": 2.647332091331482,
+      "samples": 60,
+      "outward": [
+        -0.8998964379962338,
+        -0.43610365841355947
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 21",
+      "a": [
+        5.925,
+        10.75
+      ],
+      "b": [
+        7.5,
+        7.5
+      ],
+      "grade_min": 0.08232665061950684,
+      "grade_max": 0.5693374872207642,
+      "footing_bottom": -0.23767334938049317,
+      "crest": 3.089337487220764,
+      "samples": 60,
+      "outward": [
+        -0.8998964379962338,
+        -0.43610365841355947
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 22",
+      "a": [
+        7.5,
+        7.5
+      ],
+      "b": [
+        9.75,
+        5.5
+      ],
+      "grade_min": 0.5607463121414185,
+      "grade_max": 0.6637479066848755,
+      "footing_bottom": 0.24074631214141845,
+      "crest": 3.1837479066848755,
+      "samples": 51,
+      "outward": [
+        -0.6643638388299198,
+        -0.7474093186836597
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 23",
+      "a": [
+        9.75,
+        5.5
+      ],
+      "b": [
+        12.0,
+        3.5
+      ],
+      "grade_min": 0.62870192527771,
+      "grade_max": 0.7351793050765991,
+      "footing_bottom": 0.30870192527770995,
+      "crest": 3.255179305076599,
+      "samples": 51,
+      "outward": [
+        -0.6643638388299198,
+        -0.7474093186836597
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 24",
+      "a": [
+        12.0,
+        3.5
+      ],
+      "b": [
+        13.5,
+        0.8500000000000001
+      ],
+      "grade_min": 0.6699832677841187,
+      "grade_max": 0.7685142755508423,
+      "footing_bottom": 0.34998326778411865,
+      "crest": 3.2885142755508423,
+      "samples": 51,
+      "outward": [
+        -0.8702568550714597,
+        -0.49259821985176966
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 25",
+      "a": [
+        13.5,
+        0.8500000000000001
+      ],
+      "b": [
+        15.0,
+        -1.7999999999999998
+      ],
+      "grade_min": 0.7648742198944092,
+      "grade_max": 0.7916239500045776,
+      "footing_bottom": 0.4448742198944092,
+      "crest": 3.3116239500045777,
+      "samples": 51,
+      "outward": [
+        -0.8702568550714597,
+        -0.49259821985176966
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 26",
+      "a": [
+        15.0,
+        -1.8
+      ],
+      "b": [
+        19.75,
+        -1.9500000000000002
+      ],
+      "grade_min": 0.7072595357894897,
+      "grade_max": 0.7900433540344238,
+      "footing_bottom": 0.38725953578948974,
+      "crest": 3.310043354034424,
+      "samples": 75,
+      "outward": [
+        -0.03156321339970191,
+        -0.9995017576572264
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 27",
+      "a": [
+        19.75,
+        -1.9500000000000002
+      ],
+      "b": [
+        24.5,
+        -2.1
+      ],
+      "grade_min": 0.4320948123931885,
+      "grade_max": 0.7481480836868286,
+      "footing_bottom": 0.11209481239318847,
+      "crest": 3.2681480836868286,
+      "samples": 75,
+      "outward": [
+        -0.03156321339970187,
+        -0.9995017576572264
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 28",
+      "a": [
+        24.5,
+        -2.1
+      ],
+      "b": [
+        29.5,
+        -1.8
+      ],
+      "grade_min": 0.31454479694366455,
+      "grade_max": 0.48493874073028564,
+      "footing_bottom": -0.005455203056335456,
+      "crest": 3.0049387407302857,
+      "samples": 81,
+      "outward": [
+        0.059892290727946725,
+        -0.9982048454657786
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 29",
+      "a": [
+        29.5,
+        -1.8
+      ],
+      "b": [
+        34.5,
+        -1.5
+      ],
+      "grade_min": 0.148443341255188,
+      "grade_max": 0.3602055311203003,
+      "footing_bottom": -0.17155665874481202,
+      "crest": 2.8802055311203003,
+      "samples": 81,
+      "outward": [
+        0.059892290727946725,
+        -0.9982048454657786
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 30",
+      "a": [
+        34.5,
+        -1.5
+      ],
+      "b": [
+        38.0,
+        -0.050000000000000044
+      ],
+      "grade_min": -0.009697914123535156,
+      "grade_max": 0.15242457389831543,
+      "footing_bottom": -0.32969791412353516,
+      "crest": 2.6724245738983154,
+      "samples": 60,
+      "outward": [
+        0.38274032777977623,
+        -0.9238559636063565
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 31",
+      "a": [
+        38.0,
+        -0.050000000000000044
+      ],
+      "b": [
+        41.5,
+        1.4
+      ],
+      "grade_min": -0.12074995040893555,
+      "grade_max": -0.0009021759033203125,
+      "footing_bottom": -0.44074995040893555,
+      "crest": 2.5190978240966797,
+      "samples": 60,
+      "outward": [
+        0.38274032777977623,
+        -0.9238559636063565
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 32",
+      "a": [
+        41.5,
+        1.4
+      ],
+      "b": [
+        44.25,
+        3.8000000000000003
+      ],
+      "grade_min": -0.15458250045776367,
+      "grade_max": -0.11010003089904785,
+      "footing_bottom": -0.4745825004577637,
+      "crest": 2.409899969100952,
+      "samples": 60,
+      "outward": [
+        0.6575342465753425,
+        -0.7534246575342465
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 33",
+      "a": [
+        44.25,
+        3.8000000000000003
+      ],
+      "b": [
+        47.0,
+        6.200000000000001
+      ],
+      "grade_min": -0.15438222885131836,
+      "grade_max": -0.11562538146972656,
+      "footing_bottom": -0.47438222885131837,
+      "crest": 2.4043746185302735,
+      "samples": 60,
+      "outward": [
+        0.6575342465753427,
+        -0.7534246575342465
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 34",
+      "a": [
+        47.0,
+        6.2
+      ],
+      "b": [
+        49.75,
+        8.6
+      ],
+      "grade_min": -0.127547025680542,
+      "grade_max": -0.06375741958618164,
+      "footing_bottom": -0.447547025680542,
+      "crest": 2.4562425804138184,
+      "samples": 60,
+      "outward": [
+        0.6575342465753424,
+        -0.7534246575342467
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 35",
+      "a": [
+        49.75,
+        8.6
+      ],
+      "b": [
+        52.5,
+        11.0
+      ],
+      "grade_min": -0.07780647277832031,
+      "grade_max": 0.028984904289245605,
+      "footing_bottom": -0.3978064727783203,
+      "crest": 2.5489849042892456,
+      "samples": 60,
+      "outward": [
+        0.6575342465753425,
+        -0.7534246575342465
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 36",
+      "a": [
+        52.5,
+        11.0
+      ],
+      "b": [
+        53.35,
+        15.5
+      ],
+      "grade_min": -0.013341426849365234,
+      "grade_max": 0.19844579696655273,
+      "footing_bottom": -0.33334142684936524,
+      "crest": 2.7184457969665528,
+      "samples": 72,
+      "outward": [
+        0.9826241016603985,
+        -0.18560677475807558
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 37",
+      "a": [
+        53.35,
+        15.5
+      ],
+      "b": [
+        54.2,
+        20.0
+      ],
+      "grade_min": 0.13164615631103516,
+      "grade_max": 0.3563404083251953,
+      "footing_bottom": -0.18835384368896485,
+      "crest": 2.8763404083251953,
+      "samples": 72,
+      "outward": [
+        0.9826241016603985,
+        -0.18560677475807558
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 38",
+      "a": [
+        54.2,
+        20.0
+      ],
+      "b": [
+        53.95,
+        24.5
+      ],
+      "grade_min": 0.33597731590270996,
+      "grade_max": 0.5103774070739746,
+      "footing_bottom": 0.015977315902709954,
+      "crest": 3.0303774070739746,
+      "samples": 72,
+      "outward": [
+        0.9984603532054125,
+        0.05547001962252291
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 39",
+      "a": [
+        53.95,
+        24.5
+      ],
+      "b": [
+        53.7,
+        29.0
+      ],
+      "grade_min": 0.46924424171447754,
+      "grade_max": 0.6310515403747559,
+      "footing_bottom": 0.14924424171447753,
+      "crest": 3.151051540374756,
+      "samples": 72,
+      "outward": [
+        0.9984603532054125,
+        0.05547001962252291
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 40",
+      "a": [
+        53.7,
+        29.0
+      ],
+      "b": [
+        53.75,
+        33.3
+      ],
+      "grade_min": 0.5685491561889648,
+      "grade_max": 0.680851936340332,
+      "footing_bottom": 0.24854915618896484,
+      "crest": 3.200851936340332,
+      "samples": 69,
+      "outward": [
+        0.9999324027443715,
+        -0.0116271209621432
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 41",
+      "a": [
+        53.75,
+        33.3
+      ],
+      "b": [
+        53.8,
+        37.6
+      ],
+      "grade_min": 0.519431471824646,
+      "grade_max": 0.7000817060470581,
+      "footing_bottom": 0.199431471824646,
+      "crest": 3.220081706047058,
+      "samples": 69,
+      "outward": [
+        0.9999324027443715,
+        -0.01162712096214318
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 42",
+      "a": [
+        53.8,
+        37.6
+      ],
+      "b": [
+        56.1,
+        42.0
+      ],
+      "grade_min": -0.18017864227294922,
+      "grade_max": 0.5509819984436035,
+      "footing_bottom": -0.5001786422729493,
+      "crest": 3.0709819984436035,
+      "samples": 78,
+      "outward": [
+        0.8862254439618364,
+        -0.4632542093436883
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 43",
+      "a": [
+        56.1,
+        42.0
+      ],
+      "b": [
+        56.1,
+        45.666666666666664
+      ],
+      "grade_min": -0.18017864227294922,
+      "grade_max": -0.16552972793579102,
+      "footing_bottom": -0.5001786422729493,
+      "crest": 2.354470272064209,
+      "samples": 60,
+      "outward": [
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 44",
+      "a": [
+        56.1,
+        45.666666666666664
+      ],
+      "b": [
+        56.1,
+        49.333333333333336
+      ],
+      "grade_min": -0.18017864227294922,
+      "grade_max": -0.1625046730041504,
+      "footing_bottom": -0.5001786422729493,
+      "crest": 2.3574953269958496,
+      "samples": 60,
+      "outward": [
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 45",
+      "a": [
+        56.1,
+        49.333333333333336
+      ],
+      "b": [
+        56.1,
+        53.0
+      ],
+      "grade_min": -0.18017864227294922,
+      "grade_max": -0.1625046730041504,
+      "footing_bottom": -0.5001786422729493,
+      "crest": 2.3574953269958496,
+      "samples": 60,
+      "outward": [
+        1.0,
+        -0.0
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 46",
+      "a": [
+        56.1,
+        53.0
+      ],
+      "b": [
+        54.925,
+        56.5
+      ],
+      "grade_min": -0.18017864227294922,
+      "grade_max": -0.05937051773071289,
+      "footing_bottom": -0.5001786422729493,
+      "crest": 2.460629482269287,
+      "samples": 60,
+      "outward": [
+        0.9480039773687038,
+        0.31825847811663743
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 47",
+      "a": [
+        54.925,
+        56.5
+      ],
+      "b": [
+        53.75,
+        60.0
+      ],
+      "grade_min": -0.10991907119750977,
+      "grade_max": -0.031726837158203125,
+      "footing_bottom": -0.4299190711975098,
+      "crest": 2.488273162841797,
+      "samples": 60,
+      "outward": [
+        0.9480039773687043,
+        0.3182584781166357
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 48",
+      "a": [
+        53.75,
+        60.0
+      ],
+      "b": [
+        51.075,
+        63.25
+      ],
+      "grade_min": -0.07851886749267578,
+      "grade_max": -0.020808696746826172,
+      "footing_bottom": -0.3985188674926758,
+      "crest": 2.499191303253174,
+      "samples": 69,
+      "outward": [
+        0.7721016496245774,
+        0.635499050075613
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 49",
+      "a": [
+        51.075,
+        63.25
+      ],
+      "b": [
+        48.4,
+        66.5
+      ],
+      "grade_min": -0.11186337471008301,
+      "grade_max": -0.07499504089355469,
+      "footing_bottom": -0.431863374710083,
+      "crest": 2.4450049591064453,
+      "samples": 69,
+      "outward": [
+        0.7721016496245764,
+        0.6354990500756139
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 50",
+      "a": [
+        48.4,
+        66.5
+      ],
+      "b": [
+        45.5,
+        67.75
+      ],
+      "grade_min": -0.13161873817443848,
+      "grade_max": -0.07232785224914551,
+      "footing_bottom": -0.4516187381744385,
+      "crest": 2.4476721477508545,
+      "samples": 51,
+      "outward": [
+        0.39582934757177574,
+        0.9183240863665193
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 51",
+      "a": [
+        45.5,
+        67.75
+      ],
+      "b": [
+        42.6,
+        69.0
+      ],
+      "grade_min": -0.08739852905273438,
+      "grade_max": -0.016642332077026367,
+      "footing_bottom": -0.4073985290527344,
+      "crest": 2.5033576679229737,
+      "samples": 51,
+      "outward": [
+        0.39582934757177574,
+        0.9183240863665193
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 52",
+      "a": [
+        42.6,
+        69.0
+      ],
+      "b": [
+        40.625,
+        71.5
+      ],
+      "grade_min": -0.07279610633850098,
+      "grade_max": -0.022646665573120117,
+      "footing_bottom": -0.392796106338501,
+      "crest": 2.49735333442688,
+      "samples": 51,
+      "outward": [
+        0.7846818671653418,
+        0.6198986750606206
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 53",
+      "a": [
+        40.625,
+        71.5
+      ],
+      "b": [
+        38.65,
+        74.0
+      ],
+      "grade_min": -0.060506582260131836,
+      "grade_max": -0.004492759704589844,
+      "footing_bottom": -0.38050658226013184,
+      "crest": 2.51550724029541,
+      "samples": 51,
+      "outward": [
+        0.7846818671653418,
+        0.6198986750606206
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 54",
+      "a": [
+        38.65,
+        74.0
+      ],
+      "b": [
+        38.224999999999994,
+        77.5
+      ],
+      "grade_min": -0.008689403533935547,
+      "grade_max": 0.0014858245849609375,
+      "footing_bottom": -0.32868940353393555,
+      "crest": 2.521485824584961,
+      "samples": 57,
+      "outward": [
+        0.9927080914950802,
+        0.12054312539583238
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 55",
+      "a": [
+        38.224999999999994,
+        77.5
+      ],
+      "b": [
+        37.8,
+        81.0
+      ],
+      "grade_min": -0.0028243064880371094,
+      "grade_max": 0.006114482879638672,
+      "footing_bottom": -0.3228243064880371,
+      "crest": 2.5261144828796387,
+      "samples": 57,
+      "outward": [
+        0.9927080914950805,
+        0.1205431253958304
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 56",
+      "a": [
+        37.8,
+        81.0
+      ],
+      "b": [
+        35.55,
+        85.0
+      ],
+      "grade_min": -0.030805587768554688,
+      "grade_max": 0.0018540620803833008,
+      "footing_bottom": -0.3508055877685547,
+      "crest": 2.5218540620803833,
+      "samples": 72,
+      "outward": [
+        0.8715755371245493,
+        0.49026123963255896
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 57",
+      "a": [
+        35.55,
+        85.0
+      ],
+      "b": [
+        32.7386,
+        85.0
+      ],
+      "grade_min": -0.006825685501098633,
+      "grade_max": 0.01356816291809082,
+      "footing_bottom": -0.32682568550109864,
+      "crest": 2.533568162918091,
+      "samples": 48,
+      "outward": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 58",
+      "a": [
+        32.7386,
+        85.0
+      ],
+      "b": [
+        29.9272,
+        85.0
+      ],
+      "grade_min": 0.0045757293701171875,
+      "grade_max": 0.012862324714660645,
+      "footing_bottom": -0.3154242706298828,
+      "crest": 2.5328623247146607,
+      "samples": 48,
+      "outward": [
+        0.0,
+        1.0
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 59",
+      "a": [
+        26.0728,
+        85.0
+      ],
+      "b": [
+        22.0364,
+        84.9
+      ],
+      "grade_min": 0.00412750244140625,
+      "grade_max": 0.0186612606048584,
+      "footing_bottom": -0.31587249755859376,
+      "crest": 2.5386612606048584,
+      "samples": 66,
+      "outward": [
+        -0.024766952036373704,
+        0.9996932519962451
+      ]
+    },
+    {
+      "name": "Cemetery boundary masonry 60",
+      "a": [
+        22.0364,
+        84.9
+      ],
+      "b": [
+        18.0,
+        84.8
+      ],
+      "grade_min": 0.00212252140045166,
+      "grade_max": 0.08178877830505371,
+      "footing_bottom": -0.31787747859954835,
+      "crest": 2.6017887783050537,
+      "samples": 66,
+      "outward": [
+        -0.02476695203637722,
+        0.9996932519962449
+      ]
+    }
+  ],
+  "retained_parts": 124,
+  "added_parts": 64,
+  "exports": {
+    "development/levels/rebuild/cemetery-boundary-pass/wld-07/bounded-grounds.blend": "032dd29b957f926582a3aae01c40fe160bfc4c32b5d78618baa7d60a88a48a55",
+    "development/levels/rebuild/cemetery-boundary-pass/wld-07/bounded-grounds.glb": "ba66ad066c2781e775220d961850c40dca36e5469b845b33e43970754760d316",
+    "development/levels/rebuild/cemetery-boundary-pass/wld-07/bounded-grounds.hcs2": "f0c45a79c99c72e30902c0580d6f9bce680f0c5e7b309c810db3eccc03aa729e"
+  }
+}

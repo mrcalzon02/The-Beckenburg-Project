@@ -7514,6 +7514,28 @@
       "action": "Inspect the physical mount and room furnishing, then verify an actual aimed switch stance without widening interaction or crossing a wall.",
       "older_maps": "Recheck mounted controls after furnishing changes, including player feet and a real sight line.",
       "evidence": "development/levels/rebuild/wharf-case-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-678",
+      "title": "Cemetery and mortuary walking stops depended on the raw terrain rim",
+      "status": "CEMETERY_AND_MORTUARY_FOUNDED_BOUNDARIES_VERIFIED",
+      "affected": "WLD-07 and WLD-07-MORTUARY outside grounds and staging",
+      "symptom": "Native movement stopped behind the van and around open lawns while standing sight remained clear and in many cases no soil continued outside.",
+      "cause": "The two saved terrain patches reached bare edges with no authored enclosure.",
+      "action": "Fit bounded masonry spans to surveyed soil, seat canonical road and receiving gates, and join additional exterior soil at the exact original rim. Recheck movement and sight.",
+      "older_maps": "Compare physical visible barriers against raw terrain stops and preserve canonical ramps.",
+      "evidence": "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-679",
+      "title": "First mortuary boundary return cut the existing receiving lane",
+      "status": "ANNEX_RETURN_MOVED_AND_BOTH_DIRECTIONS_REVERIFIED",
+      "affected": "WLD-07-MORTUARY receiving approach mort-25",
+      "symptom": "The first curved return stopped both route directions and invalidated 47 strict lane positions.",
+      "cause": "The first south return used a blind setback adjoining the shoulder instead of the outside bank beyond the whole active service drive.",
+      "action": "Relocate the founded return beyond both service shoulders and keep the actual receiving door approach and saved grade.",
+      "older_maps": "Check both directions and both shoulders after adding physical boundary returns.",
+      "evidence": "development/levels/rebuild/cemetery-boundary-pass/checkpoint.json"
     }
   ],
   "audit_categories": [
