@@ -1,0 +1,187 @@
+{
+  "status": "ASYLUM_UPPER_SPINE_AND_MAIN_STAIR_GUARDS_PACKAGED_OPT_IN",
+  "prior_commit": "26b65468996d7419f75bf867ce0417cd249a1790",
+  "native_scene_revision": "3586fcab0f09c56103b2a36b1575f693e70225290de3779296cb8c2a37c0d2f0",
+  "source_authority": {
+    "id": "ASYLUM",
+    "construction": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/construction.json",
+    "layout": "development/levels/rebuild/flush-porch-and-threshold-pass/asylum/authored-layout.json",
+    "glb": "development/levels/rebuild/asylum-upper-spine-pass/asylum-upper-spine.glb",
+    "native": "development/levels/rebuild/asylum-upper-spine-pass/asylum-upper-spine.hcs2",
+    "blend": "development/levels/rebuild/asylum-upper-spine-pass/asylum-upper-spine.blend",
+    "glb_sha256": "e4bd286e0ceec4b40a4b15c5ffe8382d6a1d5d116b591315dc2104629436e6de",
+    "native_sha256": "1a880b4b59768eeb20538783f752adb13ee2ceb6344c6874c14272117af036bb",
+    "fitted_leaf_editor_scene": "development/levels/rebuild/asylum-upper-spine-pass/asylum-upper-spine-fitted.blend",
+    "staged_native_door_schedule": "development/levels/rebuild/asylum-upper-spine-pass/door-survey.tsv",
+    "staged_native_door_verification": "development/levels/rebuild/asylum-upper-spine-pass/verification/staged-admission.tsv",
+    "staged_room_bindings": "development/levels/rebuild/asylum-upper-spine-pass/mission.tsv",
+    "blend_sha256": "0a283d452d11cf6cff56d08951f78903a7eb15e26f95ead2b5fab0b83ed3dd19",
+    "staged_services": "development/levels/rebuild/asylum-upper-spine-pass/services.tsv",
+    "staged_electrical_installation": "development/levels/rebuild/asylum-upper-spine-pass/electrical.json",
+    "aperture_measurements": "development/levels/rebuild/asylum-interior-door-pass/architectural-apertures.tsv",
+    "ground_spine_masonry": "development/levels/rebuild/asylum-spine-masonry-pass/masonry.json",
+    "upper_spine_masonry": "development/levels/rebuild/asylum-upper-spine-pass/masonry.json",
+    "main_stair_deck_guards": "development/levels/rebuild/asylum-upper-spine-pass/guards.json"
+  },
+  "upper_wall_runs": 5,
+  "retired_wall_bodies": 15,
+  "retained_native_records": 857,
+  "upper_openings": 3,
+  "guard_runs": 3,
+  "fitted_guard_bays": 7,
+  "stair_headroom_probes": 171,
+  "guard_blocking_stations": 92,
+  "physical_routes": 45,
+  "direction_posture_replays": 180,
+  "fitted_door_sets": 13,
+  "matched_editor_poses": 26,
+  "matched_editor_triangles": 29904,
+  "lan_peers": 4,
+  "verified": [
+    "Five rebuilt 160 mm wall runs between the upper slab and ceiling datum retain the three original header openings.",
+    "Seven canonical guard bays mount entirely on the three exposed slab faces.",
+    "A hunter reached the stair on the upper floor, met the guard at the exposed side and physically descended and returned through the open landing.",
+    "The 13 door sets, grounded switch mounts, independent lights, breaker and full-height cupboard safety repeated in the exact package.",
+    "Software renderer, RTX 5070 OpenGL and actual isolated Blender structural view."
+  ],
+  "still_open": [
+    "Peripheral room enclosure, inclined flight handrails, remaining sites, and Asylum release acceptance.",
+    "Finish repeatable rescue and retain the scoped evidence, rite and physical van results on the final accepted source."
+  ],
+  "packet": [
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/arrival.tsv",
+      "bytes": 9049,
+      "sha256": "8c3610f742cc0b6d977881ac653bb538977a4ff8443fbc9b4b28567d96d4d77a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/asylum-upper-spine-fitted.blend",
+      "bytes": 1320360,
+      "sha256": "ff4cc2a16bbffa5b2d864953c22986c2156ccac8135e9ca3ba0632240392638c"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/asylum-upper-spine.blend",
+      "bytes": 1090776,
+      "sha256": "0a283d452d11cf6cff56d08951f78903a7eb15e26f95ead2b5fab0b83ed3dd19"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/asylum-upper-spine.glb",
+      "bytes": 3760140,
+      "sha256": "e4bd286e0ceec4b40a4b15c5ffe8382d6a1d5d116b591315dc2104629436e6de"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/asylum-upper-spine.hcs2",
+      "bytes": 1210720,
+      "sha256": "1a880b4b59768eeb20538783f752adb13ee2ceb6344c6874c14272117af036bb"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/door-survey.tsv",
+      "bytes": 1894,
+      "sha256": "d6f57e067cd12eeb7c9771b2773dceeb11336243afa211359a4ff433e542537d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/electrical.json",
+      "bytes": 19478,
+      "sha256": "39195abe0bc4ae0f20c20c530d78ef2eaad325dadd3367847f8a3042e004f85d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/guard-runs.tsv",
+      "bytes": 193,
+      "sha256": "7435ff7d71bb6c24a18f9107ab1f660530397b62c6369e9b7381f08e9fd4bd82"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/guards.json",
+      "bytes": 1029,
+      "sha256": "e1e0f6820f4e624993c3b2fa372b79df1713fb9c0a180b53d4e29f7c8257d7a3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/masonry.json",
+      "bytes": 2686,
+      "sha256": "8a476a7995dd9e73d256b65b5eedc87a470ab9dfb8a8dd1415dc49f0a268d5db"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/mission.tsv",
+      "bytes": 524,
+      "sha256": "9f5386bc53f4a42ade52f3d3124709def54bc2ebc9d702e5d459a8706e7a0008"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/roster.json",
+      "bytes": 27893,
+      "sha256": "36de09f4dc97cca34a2e883dd035e5bcd69ecd6be7596b078f3675d507d626df"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/services.tsv",
+      "bytes": 2793,
+      "sha256": "a52718fc89f097dce64efac48c4eb06630d94d3814c87fa03723481eedd4b83f"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/upper-spine-and-stair-plan.svg",
+      "bytes": 4927,
+      "sha256": "2cbf9bd4567d46a2f24f43140797e1203e9ff65351b5383aadee3ca516decd7e"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/verified-cargo-guide.tsv",
+      "bytes": 186,
+      "sha256": "b48b89d0b671837c6b6edb24ae00b8f0515aa6d70d1c7dbbae5d18781ebb1d13"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/wall-runs.tsv",
+      "bytes": 194,
+      "sha256": "76308e59e9f080aceb18df66978e9e86ccc9e8d6457a03654092c645234ef171"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/verification/editable-door-poses.tsv",
+      "bytes": 606,
+      "sha256": "88789ae0dd140a86d3547cb78ef246f7f2a6b47e0175bec7f16164caefa956e3"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/verification/opengl.tsv",
+      "bytes": 2269,
+      "sha256": "16116e14a4afa6bb14b8a52ecc9b54c1f0d529c946c584c100e6517125f180fb"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/verification/staged-admission.tsv",
+      "bytes": 2833,
+      "sha256": "3f0aa38b5add0bfdb27b2e80463ede559c2e7bdba332b141ae1191b1f0692129"
+    }
+  ],
+  "captures": [
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/asylum-upper-main-stair.png",
+      "bytes": 356186,
+      "sha256": "02f2215c1bb56d8278bb7273a82b7443d789705897fbfbfff6fd7623be2d952a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/asylum-upper-spine-north.png",
+      "bytes": 445544,
+      "sha256": "91a0111214beeb699096f0334826c16b4842a36da241d176e7370c6a1eaeba1b"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/asylum-upper-spine-south.png",
+      "bytes": 449973,
+      "sha256": "293b3cd82817240ed493ff181da13a93f17bbbf8315db420c1449e6dd96a670e"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/opengl/asylum-upper-main-stair.png",
+      "bytes": 355711,
+      "sha256": "31895520ff1c96cfbf72b3d456a60199e1017c2a83e9c2bb8e3a595abad79dfb"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/opengl/asylum-upper-spine-north.png",
+      "bytes": 440289,
+      "sha256": "4ff2d50d956c127b832b5eafc53b6430e1dafe3e609758c5041e0ba5e7bf59b2"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/opengl/asylum-upper-spine-south.png",
+      "bytes": 440045,
+      "sha256": "412810cbe06f46c7f129d0b7b6c07b9086eaea5d5d932a6653fdf328fb9f0c62"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/structure/asylum-upper-spine-sectional.png",
+      "bytes": 687802,
+      "sha256": "8757cbf986b0b7b8a17b733f2795a40ba8ed80d6f1a09fdcdc7127551d4bb2c9"
+    }
+  ]
+}

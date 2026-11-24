@@ -96,7 +96,13 @@ final class NativeAsylumEntryReview {
         vehicleApproach.addAll(walks.get("L20").subList(1,walks.get("L20").size()));
         NativeSchoolInteriorReview.auditHiding(map,report);
         auditCoverThresholds(map,report);
-        auditMasonry(map,table(root.resolve("wall-runs.tsv")),captures,report);
+        var masonry=table(root.resolve("wall-runs.tsv"));
+        auditMasonry(map,masonry,captures,report);
+        boolean upperMasonry=masonry.size()==6;
+        if(upperMasonry){
+            auditMainStairGuards(map,table(root.resolve("guard-runs.tsv")),report);
+            auditMainStair(map,captures,report);
+        }
         for(var cupboard:HidingBudget.candidates(map.level()))captureCupboard(map,cupboard,captures);
         if(powered)NativeSchoolInteriorReview.auditPower(map,captures,report,"asylum",new Vec(40,-3,27.25),Math.PI);
         if(connected){
@@ -107,6 +113,8 @@ final class NativeAsylumEntryReview {
             if(List.of(args).contains("--lan"))
                 NativeAsylumMissionReview.live(packaged?new HouseMap(HouseMap.Site.ASYLUM)
                     :new HouseMap(HouseMap.Site.ASYLUM,definition,null,scene),packaged,report);
+            if(upperMasonry&&packaged&&List.of(args).contains("--lan"))
+                NativeAsylumMissionReview.liveMainStair(report);
         }else{
             verifyWalk(map,vehicleApproach,"Asylum van and admission");
             for(String guide:List.of("L22","L23","L24"))verifyWalk(map,walks.get(guide),"Asylum "+guide);
@@ -122,20 +130,26 @@ final class NativeAsylumEntryReview {
 
     private static void auditMasonry(HouseMap map,List<String[]> rows,Path captures,List<String> report)throws Exception{
         if(rows.isEmpty())return;
-        if(rows.size()!=11||!List.of(rows.get(0)).equals(List.of("side","x0","x1","z0","z1","sill","head")))
-            throw new AssertionError("Expected all ten rebuilt ground spine wall runs");
+        if(!List.of(rows.get(0)).equals(List.of("side","x0","x1","z0","z1","sill","head"))
+                ||rows.size()!=11&&rows.size()!=6)
+            throw new AssertionError("Incomplete spine wall schedule");
+        boolean upper=rows.size()==6;
+        double floor=upper?3.4:0;
+        String storey=upper?"upper":"ground";
         var physics=map.nativeInvestigation().physics();
         int bearing=0,occlusion=0;
         for(var row:rows.subList(1,rows.size())){
             boolean west=row[0].equals("west");
             double x0=d(row,1),x1=d(row,2),start=d(row,3),end=d(row,4);
             double sill=d(row,5),head=d(row,6);
+            if(Math.abs(sill-floor)>.001||Math.abs(head-sill-3.4)>.001)
+                throw new AssertionError("Wrong spine wall datum "+row[0]+" "+start);
             int stations=(int)Math.ceil((end-start)/.24);
             for(int i=0;i<=stations;i++){
                 double z=start+.02+(end-start-.04)*i/stations;
                 var support=physics.support(west?x1+.025:x0-.025,z,sill,.035);
                 if(support==null||Math.abs(support.y()-sill)>.03)
-                    throw new AssertionError("Missing ground-spine slab at "+row[0]+" "+z);
+                    throw new AssertionError("Missing "+storey+" spine slab at "+row[0]+" "+z);
                 bearing++;
                 for(double height:new double[]{.07,.45,1.2,2.15,2.25,head-sill-.08}){
                     var near=new Vec(x0-.04,sill+height,z);
@@ -146,25 +160,78 @@ final class NativeAsylumEntryReview {
                 }
             }
         }
-        for(int direction:new int[]{-1,1}){
-            double z=direction<0?46.8:17.4;
-            var camera=new Vec(27.5,0,z);
-            if(!map.traversable(camera.x(),camera.y(),camera.z()))
-                throw new AssertionError("No standing view of the spine at "+camera);
-            var renderer=new SceneRenderer();
-            renderer.setRenderSize(880,580);
-            renderer.setPsxPreset(PsxPipeline.Preset.OFF);
-            renderer.x=camera.x();
-            renderer.z=camera.z();
-            renderer.eyeHeight=HunterPosture.STANDING_EYE;
-            renderer.yaw=direction<0?Math.PI:0;
-            renderer.pitch=-.06;
-            renderer.lamp=true;
-            renderer.setLampHardware(EquipmentTiers.Tier.III,false);
-            NativeSchoolInteriorReview.drawFrame(renderer,map,captures.resolve("asylum-spine-"+(direction<0?"north":"south")+".png"));
-        }
-        report.add("continuous_ground_spine\t"+(rows.size()-1)+" solid wall runs; "+bearing
+        String caption=upper?"asylum-upper-spine-":"asylum-spine-";
+        captureStanding(map,new Vec(27.5,floor,upper?38.7:46.8),Math.PI,-.06,captures.resolve(caption+"north.png"));
+        captureStanding(map,new Vec(27.5,floor,upper?14.3:17.4),0,-.06,captures.resolve(caption+"south.png"));
+        report.add("continuous_"+storey+"_spine\t"+(rows.size()-1)+" solid wall runs; "+bearing
             +" adjacent slab contacts and "+occlusion+" bidirectional wall sight checks");
+    }
+
+    private static void auditMainStairGuards(HouseMap map,List<String[]> rows,List<String> report){
+        if(rows.size()!=4)throw new AssertionError("Expected all three exposed slab edges guarded");
+        var physics=map.nativeInvestigation().physics();
+        int stations=0,bays=0,bearings=0;
+        for(var row:rows.subList(1,rows.size())){
+            double x0=d(row,1),z0=d(row,2),x1=d(row,3),z1=d(row,4),sill=d(row,5);
+            int elements=Integer.parseInt(row[7]);
+            bays+=elements;
+            bearings+=Integer.parseInt(row[8]);
+            int checks=(int)Math.ceil(Math.hypot(x1-x0,z1-z0)/.14);
+            for(int i=1;i<checks;i++){
+                double f=(double)i/checks;
+                var at=new Vec(x0+(x1-x0)*f,sill,z0+(z1-z0)*f);
+                for(double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT})
+                    if(!physics.bodyBlocked(at,height,.22))throw new AssertionError("Guard hull gap "+at);
+                stations++;
+            }
+        }
+        if(bays!=7||bearings<12)throw new AssertionError("Missing guard bays or supported feet");
+        report.add("upper_main_stair_guards\t"+bays+" supported bays on three sides, "+bearings
+            +" slab-bearing vertices and "+stations+" blocking stations in both postures");
+    }
+
+    private static void auditMainStair(HouseMap map,Path captures,List<String> report)throws Exception{
+        for(double[] opening:new double[][]{{26,20.5},{26,24},{29,28}}){
+            Vec left=new Vec(opening[0]-.55,3.4,opening[1]);
+            Vec right=new Vec(opening[0]+.55,3.4,opening[1]);
+            verifyWalk(map,List.of(left,right),"upper-spine threshold "+left.z());
+        }
+        var physics=map.nativeInvestigation().physics();
+        var at=new Vec(32,0,21.1);
+        int probes=0;
+        while(at.z()<27.89){
+            var next=map.resolveMove(at,32,Math.min(27.9,at.z()+.12),HunterPosture.STANDING_HEIGHT);
+            if(next==null||next.z()<=at.z())
+                throw new AssertionError("Main stair interrupted "+at);
+            for(double x:new double[]{31.68,32,32.32}){
+                var foot=new Vec(x,next.y()+.025,next.z());
+                var above=new Vec(x,next.y()+2.20,next.z());
+                if(!physics.clearSight(foot,above))
+                    throw new AssertionError("Main stair headroom below 2.20 m at "+foot);
+                probes++;
+            }
+            at=next;
+        }
+        if(Math.abs(at.y()-3.4)>.025||map.roomAt(at.x(),at.y(),at.z())!=7)
+            throw new AssertionError("Main stair misses upper landing "+at);
+        captureStanding(map,new Vec(32,3.4,28.7),Math.PI,-.36,captures.resolve("asylum-upper-main-stair.png"));
+        report.add("upper_main_stair_headroom\t3 supported upper openings and "+probes+" clear 2.20 m vertical probes");
+    }
+
+    private static void captureStanding(HouseMap map,Vec camera,double yaw,double pitch,Path target)throws Exception{
+        if(!map.traversable(camera.x(),camera.y(),camera.z()))
+            throw new AssertionError("No standing view of the spine at "+camera);
+        var renderer=new SceneRenderer();
+        renderer.setRenderSize(880,580);
+        renderer.setPsxPreset(PsxPipeline.Preset.OFF);
+        renderer.x=camera.x();
+        renderer.z=camera.z();
+        renderer.eyeHeight=camera.y()+HunterPosture.STANDING_EYE;
+        renderer.yaw=yaw;
+        renderer.pitch=pitch;
+        renderer.lamp=true;
+        renderer.setLampHardware(EquipmentTiers.Tier.III,false);
+        NativeSchoolInteriorReview.drawFrame(renderer,map,target);
     }
 
     private static void auditCoverThresholds(HouseMap map,List<String> report){

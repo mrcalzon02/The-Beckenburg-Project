@@ -8949,3 +8949,10 @@ Several coincident wall bodies cover the same run. The spine west segment overla
 ### DEV-642 Inherited route cuts left scalloped jamb edges on the Asylum ground spine
 
 Mesh triangles confirmed irregular cuts inside the last 20 mm of nominal jamb faces. The ground spine now uses ten solid wall runs between measured openings with full-depth slab support and the retained headers. Audit other floors and sites individually for older cuts and duplicated wall bodies. [Evidence](../levels/rebuild/asylum-spine-masonry-pass/checkpoint.json)
+
+### DEV-643 Asylum main-stair upper slab had three unguarded exposed edges
+
+Seven fitted rail bays now stand on the three exposed edges. Native standing
+and crouched hull tests hit the guards, and a four-peer packaged replay
+confirmed the side stop and normal movement down and back up the stair.
+[Evidence](../levels/rebuild/asylum-upper-spine-pass/checkpoint.json)

@@ -7111,13 +7111,13 @@
     {
       "id": "DEV-641",
       "title": "Asylum shared ward and spine walls contain redundant coplanar segments",
-      "status": "GROUND_SPINE_REBUILT_OTHER_SHARED_RUNS_OPEN",
+      "status": "GROUND_AND_UPPER_SPINE_REBUILT_OTHER_SHARED_RUNS_OPEN",
       "affected": "Asylum powered native revision and retained rough masonry where stated",
       "symptom": "Several coincident wall bodies cover the same run. The spine west segment overlaps the day east segment from Z40 to Z44.30 at X25.92–26.08.",
       "cause": "Adjacent room shells retained ownership copies when their shared wall was built.",
       "action": "Replace overlapping runs with single shared masonry sections while preserving their fitted jambs and electrical mounting faces.",
       "older_maps": "Inspect shared partitions and corners; verify any replacement from both sides with collision, renders and retained routes.",
-      "evidence": "development/levels/rebuild/asylum-spine-masonry-pass/checkpoint.json"
+      "evidence": "development/levels/rebuild/asylum-upper-spine-pass/checkpoint.json"
     },
     {
       "id": "DEV-642",
@@ -7129,6 +7129,17 @@
       "action": "Reconstruct the full slab-to-ceiling runs to the measured jamb faces and retain the fitted heads, sill support and actual doorway openings.",
       "older_maps": "Inspect side and head faces on exported wall meshes around previous route cuts and check resulting supported door movement.",
       "evidence": "development/levels/rebuild/asylum-spine-masonry-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-643",
+      "title": "Asylum main-stair upper slab had three unguarded exposed edges",
+      "status": "UPPER_SLAB_GUARDS_FITTED_AND_VERIFIED",
+      "affected": "Asylum upper floor at the main stair, X31.05..32.95 by Z22..27.44",
+      "symptom": "Standing and structural render review exposed the open west, east and north edges beside the stairwell.",
+      "cause": "Floor sections and treads were present without slab-mounted guards.",
+      "action": "Fit the canonical safety-rail bays entirely onto the three receiving slab edges and preserve the full top landing. Test native guard collision and actual body traversal.",
+      "older_maps": "Inspect slab openings and guard receivers individually, especially retained stairs with earlier route construction.",
+      "evidence": "development/levels/rebuild/asylum-upper-spine-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

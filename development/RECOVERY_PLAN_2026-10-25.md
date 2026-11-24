@@ -2111,3 +2111,11 @@ breaker scenario. Previous checkpoint 923551251856c7027400ff9bf121055a9a00f878 p
 gallery 45324950991. Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with
 multiplayer 44863686526 and GPU 44863686455 passing. Continue upper and peripheral
 masonry and the full case chain.
+
+The [upper spine and guarded main stair](levels/rebuild/asylum-upper-spine-pass/checkpoint.json)
+retain three measured openings through five rebuilt wall runs. The exact
+package passed collision against the new slab guards and live down-and-up
+standing movement through the existing flight. The preceding ground-spine
+commit 26b65468996d7419f75bf867ce0417cd249a1790 passed gallery 45326514299.
+Main remains cb220372fb721fbe588f49d3dc488f6dbba1602d with multiplayer 44863686526
+and GPU 44863686455 passing. Continue peripheral enclosures and final case acceptance.

@@ -1,0 +1,100 @@
+{
+  "level": "upper",
+  "partitions": [
+    {
+      "component": "Entrance rebuild Asylum shared upper spine west 1",
+      "side": "west",
+      "x0": 25.92,
+      "x1": 26.08,
+      "z0": 12,
+      "z1": 19.8,
+      "sill": 3.4,
+      "head": 6.8,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall upper-spine W",
+        "Wall upper-observation E",
+        "Wall upper-linen E",
+        "Flat route shell Wall upper-ward-link E"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared upper spine west 2",
+      "side": "west",
+      "x0": 25.92,
+      "x1": 26.08,
+      "z0": 21.2,
+      "z1": 23.3,
+      "sill": 3.4,
+      "head": 6.8,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall upper-spine W.001",
+        "Flat route shell Wall upper-ward-link E.001",
+        "Flat route shell Wall upper-wc E"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared upper spine west 3",
+      "side": "west",
+      "x0": 25.92,
+      "x1": 26.08,
+      "z0": 24.7,
+      "z1": 40,
+      "sill": 3.4,
+      "head": 6.8,
+      "finish": "Neutral shell.002",
+      "replaced": [
+        "Profile Flat route shell Wall upper-spine W.002 region0",
+        "Flat route shell Wall upper-wc E.001",
+        "Wall upper-wash E",
+        "Wall upper-lift E"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared upper spine east 1",
+      "side": "east",
+      "x0": 28.92,
+      "x1": 29.08,
+      "z0": 12,
+      "z1": 27.3,
+      "sill": 3.4,
+      "head": 6.8,
+      "finish": "Neutral shell.002",
+      "replaced": [
+        "Profile Flat route shell Wall upper-spine E region0",
+        "Flat route shell Wall upper-stair W"
+      ]
+    },
+    {
+      "component": "Entrance rebuild Asylum shared upper spine east 2",
+      "side": "east",
+      "x0": 28.92,
+      "x1": 29.08,
+      "z0": 28.7,
+      "z1": 40,
+      "sill": 3.4,
+      "head": 6.8,
+      "finish": "Neutral shell.001",
+      "replaced": [
+        "Flat route shell Wall upper-spine E.001",
+        "Flat route shell Wall upper-stair W.001"
+      ]
+    }
+  ],
+  "removed": 15,
+  "assemblies": 5,
+  "retained_native_records": 857,
+  "transferred_mounts": {
+    "asylum-switch-07": {
+      "prior_support": "Wall upper-lift E",
+      "new_support": "Entrance rebuild Asylum shared upper spine west 3",
+      "contact_x": 26.08
+    }
+  },
+  "exports": {
+    "blend": "0a283d452d11cf6cff56d08951f78903a7eb15e26f95ead2b5fab0b83ed3dd19",
+    "glb": "e4bd286e0ceec4b40a4b15c5ffe8382d6a1d5d116b591315dc2104629436e6de",
+    "hcs2": "1a880b4b59768eeb20538783f752adb13ee2ceb6344c6874c14272117af036bb"
+  }
+}

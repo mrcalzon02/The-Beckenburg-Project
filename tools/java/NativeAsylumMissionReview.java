@@ -94,6 +94,51 @@ final class NativeAsylumMissionReview {
         report.add((packaged?"packaged":"staged")+"_tcp_asylum_case\tFour peers, actual ramp discharge, closed court threshold refusal and live door crossing in both directions");
     }
 
+    static void liveMainStair(List<String> report)throws Exception{
+        var map=new HouseMap(HouseMap.Site.ASYLUM);
+        var contract=CustomContract.standard(3);
+        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,contract,false,false,HouseMap.Site.ASYLUM);
+            var walker=new Peer(host,false,"Stair survey");
+            var observer=new Peer(host,false,"Observer");
+            var witness=new Peer(host,false,"Witness");
+            var ghost=new Peer(host,true,"Ghost")){
+            String source="SITE|ASYLUM|"+map.level().revision();
+            for(var peer:List.of(walker,observer,witness,ghost)){
+                peer.awaitExact(source);
+                peer.client.ready();
+            }
+            walker.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+            walker.client.start();
+            walker.await("INFO|mission started");
+            for(int room:NativeSchoolInteriorReview.missionRoute(map,7)){
+                walker.client.move(room);
+                walker.awaitExact("ACCEPT|MOVE|"+room);
+            }
+            walker.client.view3D();
+            walker.awaitExact("ACCEPT|VIEW3D");
+            var at=NativeSchoolInteriorReview.body(walker.await("BODY|0|"));
+            require(at.equals(map.spawn(7)),"Peer missed the retained upper-floor spawn "+at);
+            for(int i=0;i<10;i++)at=NativeSchoolInteriorReview.step(walker,0,0,-100);
+            for(int i=0;i<10;i++)at=NativeSchoolInteriorReview.step(walker,0,100,0);
+            for(int i=0;i<3;i++)at=NativeSchoolInteriorReview.step(walker,0,0,-100);
+            require(Math.abs(at.x()-30.6)<.02&&Math.abs(at.y()-3.4)<.02,"Peer missed the guarded slab "+at);
+            Thread.sleep(125);
+            walker.client.step(100,0);
+            walker.awaitExact("REJECT|blocked by world collision");
+            for(int i=0;i<3;i++)at=NativeSchoolInteriorReview.step(walker,0,0,100);
+            for(int i=0;i<5;i++)at=NativeSchoolInteriorReview.step(walker,0,100,0);
+            require(Math.abs(at.x()-32)<.2&&Math.abs(at.z()-27.9)<.05&&Math.abs(at.y()-3.4)<.02,
+                "Peer missed the actual stair landing "+at);
+            for(int i=0;i<21;i++)at=NativeSchoolInteriorReview.step(walker,0,0,-100);
+            require(Math.abs(at.y())<.02&&map.roomAt(at.x(),at.y(),at.z())==0,"Main stair missed lower support "+at);
+            for(int i=0;i<21;i++)at=NativeSchoolInteriorReview.step(walker,0,0,100);
+            require(Math.abs(at.y()-3.4)<.02&&map.roomAt(at.x(),at.y(),at.z())==7,"Main stair failed upward movement "+at);
+            for(int i=0;i<15;i++)at=NativeSchoolInteriorReview.step(walker,0,-100,0);
+            require(Math.abs(at.x()-27.5)<.02&&map.roomAt(at.x(),at.y(),at.z())==7,"Peer missed return through upper opening "+at);
+        }
+        report.add("tcp_asylum_main_stair\tLive guard refusal and standing traversal down and up the actual stair with both floor owners");
+    }
+
     private static Vec useDayCupboard(HouseMap map,Peer walker)throws Exception{
         for(int step=0;step<19;step++)NativeSchoolInteriorReview.step(walker,1,-100,0);
         Vec at=null;

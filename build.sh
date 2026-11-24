@@ -114,9 +114,9 @@ for table in arrival door-survey mission gate vehicle-gate services; do
 done
 cp development/levels/rebuild/prison-sally-gate-pass/sally-moving-panel.glb build/classes/org/beckenburg/sites/prison-sally-moving-panel.glb
 cp development/levels/rebuild/prison-vehicle-sally-pass/vehicle-moving-panel.glb build/classes/org/beckenburg/sites/prison-vehicle-moving-panel.glb
-asylum_packet=development/levels/rebuild/asylum-spine-masonry-pass
+asylum_packet=development/levels/rebuild/asylum-upper-spine-pass
 for extension in glb hcs2; do
-    cp "$asylum_packet/asylum-spine.$extension" "build/classes/org/beckenburg/sites/asylum-spine.$extension"
+    cp "$asylum_packet/asylum-upper-spine.$extension" "build/classes/org/beckenburg/sites/asylum-upper-spine.$extension"
 done
 for table in arrival door-survey mission services; do
     cp "$asylum_packet/$table.tsv" "build/classes/org/beckenburg/sites/asylum-$table.tsv"

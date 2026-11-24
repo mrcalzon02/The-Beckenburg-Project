@@ -1400,3 +1400,13 @@ the editable scene, collision, standing views and isolated assembly view.
 Twenty-five overlapping or irregularly cut wall bodies were replaced.
 All 45 movement routes, 13 door sets, the transferred switch mount and
 full-height cupboard protection passed the exact packaged review.
+
+## Asylum upper spine and main stair
+
+The [upper plan](asylum-upper-spine-pass/upper-spine-and-stair-plan.svg) shows
+five rebuilt wall runs, the ward and WC crossings, and the main-stair landing.
+The guard surrounds the other three slab edges. The [checkpoint](asylum-upper-spine-pass/checkpoint.json)
+links the exact model and collision, standing views and structural cutaway.
+The packaged four-peer replay refused a step across the guard and completed
+both stair directions. All 45 movement routes and prior door, power and cover
+replays passed on that source.

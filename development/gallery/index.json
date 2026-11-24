@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11445,
+  "count": 11452,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -82434,6 +82434,76 @@
       "height": 540,
       "bytes": 422950,
       "sha256": "ab22df8c5e6f3d146d6e4cb4e567a70cddb5a93d3f3f941564f507e25b421c91"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/asylum-upper-main-stair.png",
+      "url": "development/levels/rebuild/asylum-upper-spine-pass/captures/asylum-upper-main-stair.png",
+      "title": "Asylum upper main stair",
+      "kind": "Asylum upper spine and guarded staircase in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 356186,
+      "sha256": "02f2215c1bb56d8278bb7273a82b7443d789705897fbfbfff6fd7623be2d952a"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/asylum-upper-spine-north.png",
+      "url": "development/levels/rebuild/asylum-upper-spine-pass/captures/asylum-upper-spine-north.png",
+      "title": "Asylum upper spine north",
+      "kind": "Asylum upper spine and guarded staircase in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 445544,
+      "sha256": "91a0111214beeb699096f0334826c16b4842a36da241d176e7370c6a1eaeba1b"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/asylum-upper-spine-south.png",
+      "url": "development/levels/rebuild/asylum-upper-spine-pass/captures/asylum-upper-spine-south.png",
+      "title": "Asylum upper spine south",
+      "kind": "Asylum upper spine and guarded staircase in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 449973,
+      "sha256": "293b3cd82817240ed493ff181da13a93f17bbbf8315db420c1449e6dd96a670e"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/opengl/asylum-upper-main-stair.png",
+      "url": "development/levels/rebuild/asylum-upper-spine-pass/captures/opengl/asylum-upper-main-stair.png",
+      "title": "Asylum upper main stair",
+      "kind": "Asylum upper spine and guarded staircase in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 355711,
+      "sha256": "31895520ff1c96cfbf72b3d456a60199e1017c2a83e9c2bb8e3a595abad79dfb"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/opengl/asylum-upper-spine-north.png",
+      "url": "development/levels/rebuild/asylum-upper-spine-pass/captures/opengl/asylum-upper-spine-north.png",
+      "title": "Asylum upper spine north",
+      "kind": "Asylum upper spine and guarded staircase in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 440289,
+      "sha256": "4ff2d50d956c127b832b5eafc53b6430e1dafe3e609758c5041e0ba5e7bf59b2"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/opengl/asylum-upper-spine-south.png",
+      "url": "development/levels/rebuild/asylum-upper-spine-pass/captures/opengl/asylum-upper-spine-south.png",
+      "title": "Asylum upper spine south",
+      "kind": "Asylum upper spine and guarded staircase in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 440045,
+      "sha256": "412810cbe06f46c7f129d0b7b6c07b9086eaea5d5d932a6653fdf328fb9f0c62"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-upper-spine-pass/captures/structure/asylum-upper-spine-sectional.png",
+      "url": "development/levels/rebuild/asylum-upper-spine-pass/captures/structure/asylum-upper-spine-sectional.png",
+      "title": "Asylum upper spine sectional",
+      "kind": "Asylum upper masonry and stairwell guard structural cutaway",
+      "width": 1440,
+      "height": 710,
+      "bytes": 687802,
+      "sha256": "8757cbf986b0b7b8a17b733f2795a40ba8ed80d6f1a09fdcdc7127551d4bb2c9"
     },
     {
       "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-after.png",
