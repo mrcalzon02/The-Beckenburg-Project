@@ -97,9 +97,11 @@ def build_inputs(layout):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument("--gpu",action="store_true")
-    parser.add_argument("--cover",action="store_true")
+    stages=parser.add_mutually_exclusive_group()
+    stages.add_argument("--cover",action="store_true")
+    stages.add_argument("--power",action="store_true")
     args=parser.parse_args()
-    stage=BASE/"wharf-cover-pass" if args.cover else STAGE
+    stage=BASE/"wharf-power-pass" if args.power else BASE/"wharf-cover-pass" if args.cover else STAGE
     java=Path("C:/Program Files/Java/jdk-17/bin")
     jar=ROOT/"build/beckenburg-game.jar"
     gpu=ROOT/"gpu-client/target/BeckenburgGPU.jar"
@@ -109,16 +111,17 @@ def main():
     hashes=[exports[p.relative_to(ROOT).as_posix()] for p in (glb,physics)]
     stage.mkdir(exist_ok=True)
     BUILD.mkdir(parents=True,exist_ok=True)
-    if args.cover:
-        glb=stage/"wharf-cover.glb"
-        physics=stage/"wharf-cover.hcs2"
+    if args.cover or args.power:
+        stem="wharf-power" if args.power else "wharf-cover"
+        glb=stage/(stem+".glb")
+        physics=stage/(stem+".hcs2")
         exports=read(stage/"construction.json")["exports"]
         hashes=[exports[p.relative_to(ROOT).as_posix()] for p in (glb,physics)]
     else:
         rows, doors = build_inputs(read(SOURCE/"authored-layout.json"))
         tsv(stage/"room-layout.tsv",rows)
         tsv(stage/"door-schedule.tsv",doors)
-    helpers=[ROOT/"tools/java"/f for f in ("WharfDoorReview.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java")]
+    helpers=[ROOT/"tools/java"/f for f in ("WharfDoorReview.java","WharfPowerChecks.java","NativeSchoolInteriorReview.java","NativeSchoolDoorReview.java")]
     subprocess.run([str(java/"javac.exe"),"-encoding","UTF-8","-cp",str(jar),"-d",str(BUILD),*map(str,helpers)],
                    cwd=ROOT,check=True)
     cp=os.pathsep.join(map(str,(BUILD,jar,gpu) if args.gpu else (BUILD,jar)))

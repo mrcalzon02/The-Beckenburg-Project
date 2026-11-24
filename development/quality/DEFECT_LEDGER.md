@@ -9082,3 +9082,7 @@ Eight site-fitted frames now carry the shared door leaves in the staged game. Bo
 ### DEV-673 Wharf lacked physical walk-in safe areas
 
 Both cottages and the net shed now have a real fitted walk-in refuge. Each refuge covers all 69 sampled usable positions and passed live entry, hiding, reveal and exit. [Evidence](../levels/rebuild/wharf-cover-pass/checkpoint.json)
+
+### DEV-674 Wharf lacked an operating, supported above-tide supply plant
+
+The generator, breaker and shed lamp now sit in a founded service bay. A ghost trip cuts the lamp. Restarting the generator leaves the breaker tripped, and a reconnect receives both states. Aimed reset at the panel restores the lamp. [Evidence](../levels/rebuild/wharf-power-pass/checkpoint.json)

@@ -7470,6 +7470,17 @@
       "action": "Fit three ground-supported cupboard instances and test actual thresholds, both rear sides, head height, disabled coverage and live use.",
       "older_maps": "Exercise the entire accessible volume and real threshold for every hiding candidate.",
       "evidence": "development/levels/rebuild/wharf-cover-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-674",
+      "title": "Wharf lacked an operating, supported above-tide supply plant",
+      "status": "WHARF_SOURCE_BREAKER_AND_LOCAL_LOAD_VERIFIED",
+      "affected": "Wharf forecourt and service lighting",
+      "symptom": "The site had no reachable generator, breaker and supported powered lamp.",
+      "cause": "Arrival and safe-zone checkpoints preceded site electrical installation.",
+      "action": "Fit the 58-part framed plant, test support, and verify host-authoritative trips, independent restart, reconnect and physical reset.",
+      "older_maps": "Fit real generator, panel and connected loads, then verify trips, independent source state and resume.",
+      "evidence": "development/levels/rebuild/wharf-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

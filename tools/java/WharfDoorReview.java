@@ -52,6 +52,7 @@ public final class WharfDoorReview {
                 }
                 case "TREAD" -> steps.add(r[1]);
                 case "ANCHOR" -> anchors.add(new Anchor(id(r,1),r[2],vec(r,3)));
+                case "SERVICE" -> sockets.add(new Socket(r[1],r[2],id(r,3),d(r,4),d(r,5),d(r,6),d(r,7),r[8]));
                 case "COVER" -> sockets.add(new Socket(r[1],"hide",id(r,2),d(r,3),d(r,4),d(r,5),d(r,6),"walk-in-cupboard"));
                 case "RITUAL" -> sockets.add(new Socket("wharf-"+r[1],"ritual",id(r,2),d(r,3),d(r,4),d(r,5),0,r[1]));
                 case "POINT" -> paths.computeIfAbsent(r[1],ignored->new ArrayList<>()).add(vec(r,2));
@@ -125,6 +126,18 @@ public final class WharfDoorReview {
         if (!gpu&&!cover) auditLive(level,scene);
         var captures=folder.resolve(gpu?"captures/opengl":"captures");
         Files.createDirectories(captures);
+        if(host.hasGenerator()){
+            var evidence=new ArrayList<String>();
+            evidence.add("scene_revision\t"+scene.revision());
+            evidence.add("renderer\t"+(gpu?GpuWorldRenderer.active().rendererDescription():"Software"));
+            evidence.add("route_and_door_replays\t"+paths.size()+" paths and "+leaves.size()+" doors");
+            WharfPowerChecks.audit(host,captures,evidence);
+            if(!gpu)WharfPowerChecks.live(level,scene,evidence);
+            Files.writeString(folder.resolve(gpu?"power-opengl.tsv":"power-software.tsv"),
+                              String.join("\n",evidence)+"\n");
+            evidence.forEach(System.out::println);
+            return;
+        }
         if(cover){
             var evidence=new ArrayList<String>();
             NativeSchoolInteriorReview.auditWalkInCover(host,captures,evidence,"wharf");

@@ -2207,3 +2207,7 @@ Landward enclosure commit 07e33bbf0d49cb578cec841b4dc80938f8ddfd3b is published 
 ### Drowned Fisherman's Wharf walk-in refuges
 
 Door commit 7bd96d75823e5615c2cfb499a22eb9e06ad827e3 was verified on draft PR 86. Gallery 45362440723 passed. The [refuge checkpoint](levels/rebuild/wharf-cover-pass/checkpoint.json) verifies three fitted volumes, 207 covered usable floor samples, two renderers, and entry, hide, reveal and exit for all three in live TCP. Continue Wharf electricity and case/named review.
+
+### Drowned Fisherman's Wharf above-tide service plant
+
+Refuge commit a4388ff96b30705e7cd7eb8014554667586a3aba is verified on draft PR 86. Gallery 45363694877 passed. The [power checkpoint](levels/rebuild/wharf-power-pass/checkpoint.json) verifies the fitted forecourt generator, distribution panel and local lamp in both renderers. Four TCP peers tested a ghost trip, independent generator stop and restart, resuming while still tripped and aimed breaker reset. Continue building circuits and named case review.

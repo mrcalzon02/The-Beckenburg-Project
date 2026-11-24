@@ -1,0 +1,149 @@
+{
+  "status": "WHARF_ABOVE_TIDE_SUPPLY_SHED_WORKING_WITH_HOST_TRIP_AND_RECONNECT",
+  "previous_commit": "a4388ff96b30705e7cd7eb8014554667586a3aba",
+  "previous_gallery": 45363694877,
+  "exact_fit": {
+    "footprint": [
+      34.7,
+      54.65,
+      40.3,
+      58.25
+    ],
+    "placement_offset": [
+      0.75,
+      0,
+      -12.7
+    ],
+    "ground_checks": 713,
+    "covered_service_source": {
+      "blend": "d4ff369f9b19f58f51a452dc7a06163609a3ffaf4ef31be5f79fb931d56b5d79",
+      "glb": "e68dbbaa1062ee96a8ad400537c8a0e1de022ab964d0a2c36679e9c37e1329f4",
+      "hcs2": "d7d4e9aa3fa2eae7b124a2ffe2ed3c1749a749a1dc8ad27a8c2987b875707f00"
+    },
+    "retained_collision_parts": 691,
+    "fitted_parts": 58,
+    "sockets": [
+      {
+        "id": "wharf-generator",
+        "type": "generator",
+        "room": 12,
+        "position": [
+          38.985,
+          0.475,
+          55.741
+        ],
+        "yaw": 0.0,
+        "style": "WH-MAIN"
+      },
+      {
+        "id": "wharf-breaker",
+        "type": "breaker",
+        "room": 12,
+        "position": [
+          36.55,
+          0.9,
+          55.355
+        ],
+        "yaw": 0.0,
+        "style": "WH-MAIN"
+      },
+      {
+        "id": "wharf-service-light",
+        "type": "light",
+        "room": 12,
+        "position": [
+          37.619999,
+          2.456,
+          57.090001
+        ],
+        "yaw": 0,
+        "style": "native-string"
+      }
+    ],
+    "approach": [
+      [
+        32,
+        0,
+        61
+      ],
+      [
+        37.5,
+        0,
+        61
+      ],
+      [
+        37.5,
+        0,
+        58.75
+      ],
+      [
+        37.5,
+        0.018,
+        57.65
+      ]
+    ],
+    "exports": {
+      "development/levels/rebuild/wharf-power-pass/wharf-power.blend": "884a65037a973014fb069da91c0fdd8ce17603fbb059147f72a304da55793118",
+      "development/levels/rebuild/wharf-power-pass/wharf-power.glb": "03be2d44feb5e3f76a291b92609bfe2e21058138966830ef2d1f585b8f8becc1",
+      "development/levels/rebuild/wharf-power-pass/wharf-power.hcs2": "a6178c8885ac0cb33327c15392ed9568002487082b641218da9a3a76f4e23360"
+    }
+  },
+  "software": {
+    "scene_revision": "ff2e4d87c13f8db9279cdcf988cb1489e286e4ee5f04efe2008ef270a988047b",
+    "renderer": "Software",
+    "route_and_door_replays": "19 paths and 8 doors",
+    "supported_load_energy": "3.41261391344303 supplied, 0.9000000000000001 stopped, 0.9000000000000001 tripped",
+    "four_peer_power": "PASS ghost trip, physical arrival and controls, source stop/restart, tripped reconnect, breaker reset"
+  },
+  "opengl": {
+    "scene_revision": "ff2e4d87c13f8db9279cdcf988cb1489e286e4ee5f04efe2008ef270a988047b",
+    "renderer": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64",
+    "route_and_door_replays": "19 paths and 8 doors",
+    "supported_load_energy": "3.41261391344303 supplied, 0.9000000000000001 stopped, 0.9000000000000001 tripped"
+  },
+  "evidence_sha256": {
+    "development/levels/rebuild/wharf-power-pass/construction.json": "532aa626d1511251264db5197f18e6b61dfe29a342fd74182ed23ad75984a72b",
+    "development/levels/rebuild/wharf-power-pass/room-layout.tsv": "e93b6b621411362e52b480d2f8b2f51a71a7ef138f8a16966e774881c23fd93b",
+    "development/levels/rebuild/wharf-power-pass/door-schedule.tsv": "0f5bd05208f580731ddc4456b1d652b4608477ebadd2edf9af1d0fd70f1685e7",
+    "development/levels/rebuild/wharf-power-pass/power-software.tsv": "c35468974fa324873d0b0891326be56a41de6ab9ba3ed5f3a88e3de0b9bf9d5d",
+    "development/levels/rebuild/wharf-power-pass/power-opengl.tsv": "ce6733639ad68ea2e5d4353ca3b148cd2ba79377b47b00b93ade85b855c53ff2",
+    "tools/build_wharf_power.py": "bb38539f3d12373e9598ab97c5dcd5baa3911c52d8d2202a39acc4287cde0ef8",
+    "tools/render_wharf_power.py": "1f082baf31a1aceaf6da661041c5207f0f45f7055cf8819993054a9e44dad56c",
+    "tools/java/WharfPowerChecks.java": "d4900781f609341c2db09aa9b8c97b0a87db96411fce4fbe13a44b72b18aaff6",
+    "tools/java/WharfDoorReview.java": "18dac89e8f48a808274a029465df357f8b601b45542649b26092e8b3c2a62286",
+    "tools/verify_wharf_doors.py": "37c5072696e6833fdff7063a345794e185bfbca60e709cebf5ebbc5a463b7e39"
+  },
+  "captures": [
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/opengl/wharf-service-blackout.png",
+      "sha256": "49e0504c5629654b160de351eb420bf1b12c99de07f2cc7ad18ca09069d54625",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/opengl/wharf-service-powered.png",
+      "sha256": "5b65d31debbfadcc40eb5fd31de24ae857305e14ea43677e759fc6f3676c4d8e",
+      "type": "OpenGL NVIDIA GeForce RTX 5070/PCIe/SSE2 / 3.3.0 NVIDIA 616.64"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/structure/wharf-service-forecourt.png",
+      "sha256": "c282c8477ab0264d8926c86821aa0b6ab2d98dcafb2e72e00a08d8fdf9df7b3a",
+      "type": "Native structural inspection"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/structure/wharf-service-framing.png",
+      "sha256": "9065c9187d3cc441f3ebaa33be4215dbfed0a2f7fad7b1492a165a11a0fc4968",
+      "type": "Native structural inspection"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/wharf-service-blackout.png",
+      "sha256": "5f9926f03566b4bad32f1790cca5a912c076d5429327ee6f07cdbbc162c0bcae",
+      "type": "Software"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/wharf-service-powered.png",
+      "sha256": "59682bbda7190683f99a944f784795e5fd6137bf46920fa7eb479b859ec28aab",
+      "type": "Software"
+    }
+  ],
+  "open": "Extend working distribution to the occupied buildings and undercroft, then fit case evidence and verify named dispatch."
+}

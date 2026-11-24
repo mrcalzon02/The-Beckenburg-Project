@@ -3861,16 +3861,18 @@
         },
         "S06": {
           "status": "IN_PROGRESS",
-          "source_sha": "7bd96d75823e5615c2cfb499a22eb9e06ad827e3",
+          "source_sha": "a4388ff96b30705e7cd7eb8014554667586a3aba",
           "evidence": [
             "development/levels/rebuild/wharf-door-pass/checkpoint.json",
-            "development/levels/rebuild/wharf-cover-pass/checkpoint.json"
+            "development/levels/rebuild/wharf-cover-pass/checkpoint.json",
+            "development/levels/rebuild/wharf-power-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-672",
-            "DEV-673"
+            "DEV-673",
+            "DEV-674"
           ],
-          "next_action": "Install the Wharf electrical source, distribution and case evidence before named game dispatch."
+          "next_action": "Extend working distribution to the occupied buildings and undercroft, then fit case evidence and verify named dispatch."
         },
         "S07": {
           "status": "IN_PROGRESS",

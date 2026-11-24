@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11729,
+  "count": 11735,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -114654,6 +114654,66 @@
       "height": 580,
       "bytes": 299887,
       "sha256": "8b198306a4fd72d328c87742b5d78d292a3e16de730473c0213b49ec29330ad2"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/opengl/wharf-service-blackout.png",
+      "url": "development/levels/rebuild/wharf-power-pass/captures/opengl/wharf-service-blackout.png",
+      "title": "Wharf service blackout",
+      "kind": "Wharf fitted electrical supply and lamp, OpenGL",
+      "width": 880,
+      "height": 580,
+      "bytes": 240428,
+      "sha256": "49e0504c5629654b160de351eb420bf1b12c99de07f2cc7ad18ca09069d54625"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/opengl/wharf-service-powered.png",
+      "url": "development/levels/rebuild/wharf-power-pass/captures/opengl/wharf-service-powered.png",
+      "title": "Wharf service powered",
+      "kind": "Wharf fitted electrical supply and lamp, OpenGL",
+      "width": 880,
+      "height": 580,
+      "bytes": 335875,
+      "sha256": "5b65d31debbfadcc40eb5fd31de24ae857305e14ea43677e759fc6f3676c4d8e"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/structure/wharf-service-forecourt.png",
+      "url": "development/levels/rebuild/wharf-power-pass/captures/structure/wharf-service-forecourt.png",
+      "title": "Wharf service forecourt",
+      "kind": "Wharf fitted electrical supply and lamp, structural inspection",
+      "width": 1320,
+      "height": 960,
+      "bytes": 1425573,
+      "sha256": "c282c8477ab0264d8926c86821aa0b6ab2d98dcafb2e72e00a08d8fdf9df7b3a"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/structure/wharf-service-framing.png",
+      "url": "development/levels/rebuild/wharf-power-pass/captures/structure/wharf-service-framing.png",
+      "title": "Wharf service framing",
+      "kind": "Wharf fitted electrical supply and lamp, structural inspection",
+      "width": 1320,
+      "height": 960,
+      "bytes": 1426127,
+      "sha256": "9065c9187d3cc441f3ebaa33be4215dbfed0a2f7fad7b1492a165a11a0fc4968"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/wharf-service-blackout.png",
+      "url": "development/levels/rebuild/wharf-power-pass/captures/wharf-service-blackout.png",
+      "title": "Wharf service blackout",
+      "kind": "Wharf fitted electrical supply and lamp, software",
+      "width": 880,
+      "height": 580,
+      "bytes": 243564,
+      "sha256": "5f9926f03566b4bad32f1790cca5a912c076d5429327ee6f07cdbbc162c0bcae"
+    },
+    {
+      "path": "development/levels/rebuild/wharf-power-pass/captures/wharf-service-powered.png",
+      "url": "development/levels/rebuild/wharf-power-pass/captures/wharf-service-powered.png",
+      "title": "Wharf service powered",
+      "kind": "Wharf fitted electrical supply and lamp, software",
+      "width": 880,
+      "height": 580,
+      "bytes": 350118,
+      "sha256": "59682bbda7190683f99a944f784795e5fd6137bf46920fa7eb479b859ec28aab"
     },
     {
       "path": "development/levels/rebuild/wharf-tidal-pass/captures/opengl/wharf-canonical-arrival.png",
