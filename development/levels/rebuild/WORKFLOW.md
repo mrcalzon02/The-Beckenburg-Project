@@ -1366,3 +1366,10 @@ The [checkpoint](prison-vehicle-sally-pass/checkpoint.json) verifies the 3.13 m 
 The [admission plan](asylum-admission-pass/asylum-admission-plan.svg) fits the two paired admission and ward-spine sets and two individual interview and records leaves inside the measured openings. The complete retained GLB, HCS2, native floors, walls and yard support supply the staged game geometry. The actual canonical van retains extraction owner 14. The apron is outside with owner 13.
 
 The [Asylum checkpoint](asylum-admission-pass/checkpoint.json) verifies four individual door sets, 8,544 triangles across eight reopened editor poses, and 16 direction and posture replays across four physical routes. Independent staged worlds agree on the leaf states and passing body, aim, hearing, sight and object results. Software and RTX 5070 captured the same source. The [29-location roster](asylum-admission-pass/roster.json) preserves the other map authorities. Patient court, services, full mission binding and ordinary dispatch remain open.
+
+
+## Asylum patient court and staged connected case
+
+The [patient court and stair plan](asylum-patient-court-pass/patient-court-plan.svg) fits two outward-opening sets to the measured day-room and south-ward openings. All saved static GLB and HCS2 bytes are retained. The route corrections use the real cargo deck and the two lower stair landings. The grounds-to-entry boundary now matches the verified crossing at X18.
+
+The [checkpoint](asylum-patient-court-pass/checkpoint.json) verifies six door sets, 12 reopened editor poses and 12,816 runtime triangles. All 45 physical routes pass both directions standing and crouched. The 15 gameplay owners and three supported ritual mounts connect on the exact source. In a staged four-peer case one hunter walked off the canonical ramp and another met the closed court leaf, opened it and crossed to the court and back. Software and RTX 5070 rendered the same source. Plant commissioning, further fitted interior doors and normal dispatch remain open in the [29-location roster](asylum-patient-court-pass/roster.json).

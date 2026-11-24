@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="600" viewBox="0 0 780 600" role="img" aria-labelledby="title desc">
+ <title id="title">Asylum patient court and measured stairs</title>
+ <desc id="desc">The real day-room and patient-wing doorways face the retained court floor. The ground-to-upper and cellar flights are replayed from measured lower and upper landings. Dashed lines depict verified travel.</desc>
+ <rect width="780" height="600" fill="#16212d"/>
+ <g fill="#e7edf4" font-family="sans-serif" font-size="14">
+  <text x="30" y="43" font-size="25">Asylum · patient court and supported stairs</text>
+  <text x="30" y="70" fill="#a8bdd0">North-up ground plan and stair profiles · metres</text>
+  <path d="M48 228 H368 V360 H48Z" fill="#2a4550" stroke="#73899d"/>
+  <path d="M48 360 H368 V480 H48Z M48 144 H168 V228 H48Z" fill="#243448" stroke="#73899d"/>
+  <text x="61" y="165">Ground south ward</text>
+  <text x="97" y="270">Retained patient court</text>
+  <text x="61" y="460">Day room</text>
+  <path d="M97.5 228 H118.5 M190 360 H226" stroke="#f0bc71" stroke-width="6"/>
+  <path d="M108 186 V294 H208 V420" fill="none" stroke="#89d2c7" stroke-width="2.5" stroke-dasharray="6 5"/>
+  <text x="218" y="405" fill="#89d2c7">Verified movement</text>
+  <text x="30" y="511" fill="#a8bdd0">Ground and court datum 0.00</text>
+  <path d="M437 113 V529" stroke="#3e5367"/>
+  <text x="461" y="150" font-size="16">Main ward flight</text>
+  <path d="M463 295 H497 L667 225 H737" fill="none" stroke="#89d2c7" stroke-width="3"/>
+  <path d="M468 305 H497 M667 235 H737" stroke="#748b9f"/>
+  <text x="459" y="328">Ground landing 0.00</text>
+  <text x="618" y="207">Upper landing +3.40</text>
+  <text x="461" y="406" font-size="16">Cellar service flight</text>
+  <path d="M463 514 H497 L645 451 H737" fill="none" stroke="#89d2c7" stroke-width="3"/>
+  <path d="M468 524 H497 M645 461 H737" stroke="#748b9f"/>
+  <text x="459" y="548">Cellar landing −3.00</text>
+  <text x="620" y="434">Service landing 0.00</text>
+  <path d="M31 566 h26" stroke="#f0bc71" stroke-width="5"/>
+  <text x="65" y="571">Fitted leaf in the surveyed opening</text>
+ </g>
+</svg>

@@ -8882,6 +8882,36 @@ Bind apron ground to exterior owner 13 and keep extraction owner 14 on the actua
 
 Check extraction ownership on the physical deck and outside land beside any canonical van. [DEV-634 evidence](../levels/rebuild/asylum-admission-pass/checkpoint.json)
 
+### DEV-635 The Asylum patient court lacked fitted leaves on its two measured openings
+
+**Status** CORRECTED_IN_CONNECTED_NATIVE_COURT_REVIEW · **Affected** Asylum day-room and south ward court doors
+
+The retained two court openings had no moving doors for the native presentation or traversal.
+
+Fit the public pair and individual ward leaf to the physical jambs, then verify both states and the actual live passage.
+
+Verify controlled courtyard routes against the fitted door sweep, leaf state and full receiving floor. [DEV-635 evidence](../levels/rebuild/asylum-patient-court-pass/checkpoint.json)
+
+### DEV-636 Three Asylum guide starts missed the real deck and stair landings
+
+**Status** GUIDES_CORRECTED_TO_ACTUAL_SUPPORT · **Affected** Asylum canonical departure and both retained stair flights
+
+The raw apron start lay below the van cargo deck. The first flights at Z22 and Z14 were already one riser above the stated lower floor.
+
+Start from the actual van deck and ramp. Place the main and cellar lower walk stations on their real landings at Z21.1 and Z13.1. Keep all geometry.
+
+Measure the deck, ramp and every stair lower and upper guide on the exact geometry before mission binding. [DEV-636 evidence](../levels/rebuild/asylum-patient-court-pass/checkpoint.json)
+
+### DEV-637 The Asylum grounds-to-entry threshold annotation was displaced from the physical route
+
+**Status** BINDING_CORRECTED_TO_ACTUAL_OPEN_GROUNDS_CONNECTION · **Affected** Asylum outdoor room ownership between grounds and entry
+
+L73 named X60 for the boundary connection even though its supported path crossed Z58 at X18.
+
+Bind the gameplay link to X18, check both adjacent owners and replay the supported route on the retained ground.
+
+Verify the exact portal coordinate, both owners and movement even where the historic link name is retained. [DEV-637 evidence](../levels/rebuild/asylum-patient-court-pass/checkpoint.json)
+
 ## Required audit categories
 
 - Corner, floor/wall, wall/wall, wall/roof and roof intersection light bleed

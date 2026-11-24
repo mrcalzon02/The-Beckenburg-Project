@@ -7041,6 +7041,39 @@
       "action": "Bind apron ground to exterior owner 13 and keep extraction owner 14 on the actual van. Walk the existing ramp both ways and test ownership at each side.",
       "older_maps": "Check extraction ownership on the physical deck and outside land beside any canonical van.",
       "evidence": "development/levels/rebuild/asylum-admission-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-635",
+      "title": "The Asylum patient court lacked fitted leaves on its two measured openings",
+      "status": "CORRECTED_IN_CONNECTED_NATIVE_COURT_REVIEW",
+      "affected": "Asylum day-room and south ward court doors",
+      "symptom": "The retained two court openings had no moving doors for the native presentation or traversal.",
+      "cause": "Their architectural frames were completed before the next door-fitting pass.",
+      "action": "Fit the public pair and individual ward leaf to the physical jambs, then verify both states and the actual live passage.",
+      "older_maps": "Verify controlled courtyard routes against the fitted door sweep, leaf state and full receiving floor.",
+      "evidence": "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-636",
+      "title": "Three Asylum guide starts missed the real deck and stair landings",
+      "status": "GUIDES_CORRECTED_TO_ACTUAL_SUPPORT",
+      "affected": "Asylum canonical departure and both retained stair flights",
+      "symptom": "The raw apron start lay below the van cargo deck. The first flights at Z22 and Z14 were already one riser above the stated lower floor.",
+      "cause": "Earlier guide stations used nominal ground and floor datums without the actual constructed vertical interfaces.",
+      "action": "Start from the actual van deck and ramp. Place the main and cellar lower walk stations on their real landings at Z21.1 and Z13.1. Keep all geometry.",
+      "older_maps": "Measure the deck, ramp and every stair lower and upper guide on the exact geometry before mission binding.",
+      "evidence": "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-637",
+      "title": "The Asylum grounds-to-entry threshold annotation was displaced from the physical route",
+      "status": "BINDING_CORRECTED_TO_ACTUAL_OPEN_GROUNDS_CONNECTION",
+      "affected": "Asylum outdoor room ownership between grounds and entry",
+      "symptom": "L73 named X60 for the boundary connection even though its supported path crossed Z58 at X18.",
+      "cause": "Nominal layout metadata survived the rerouting of the authored guide to an existing physical connection.",
+      "action": "Bind the gameplay link to X18, check both adjacent owners and replay the supported route on the retained ground.",
+      "older_maps": "Verify the exact portal coordinate, both owners and movement even where the historic link name is retained.",
+      "evidence": "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

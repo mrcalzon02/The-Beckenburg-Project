@@ -404,7 +404,8 @@
             "development/levels/rebuild/floor-closure-pass/verification/independent-export.json",
             "development/levels/rebuild/floor-closure-pass/verification/stair-movement.json",
             "development/levels/rebuild/floor-closure-pass/verification/optical-native.json",
-            "development/levels/rebuild/asylum-admission-pass/checkpoint.json"
+            "development/levels/rebuild/asylum-admission-pass/checkpoint.json",
+            "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json"
           ],
           "defects": [
             "DEV-354",
@@ -424,9 +425,10 @@
             "DEV-414",
             "DEV-415",
             "DEV-416",
-            "DEV-634"
+            "DEV-634",
+            "DEV-636"
           ],
-          "next_action": "Continue the full site movement survey through the patient court, service stair and usable end of each wing."
+          "next_action": "Inspect each remaining route and verify courtyard and flight enclosure and movement at normal playing reach."
         },
         "S04": {
           "status": "IN_PROGRESS",
@@ -461,12 +463,14 @@
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
-            "development/levels/rebuild/asylum-admission-pass/checkpoint.json"
+            "development/levels/rebuild/asylum-admission-pass/checkpoint.json",
+            "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json"
           ],
           "defects": [
-            "DEV-633"
+            "DEV-633",
+            "DEV-635"
           ],
-          "next_action": "Fit other measured thresholds and verify their structural closure, services and connected mission graph."
+          "next_action": "Complete remaining individual interior leaf and enclosure checks."
         },
         "S06": {
           "status": "NOT_AUDITED",
@@ -515,11 +519,15 @@
           "next_action": "Complete prerequisite stage"
         },
         "S11": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/asylum-patient-court-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-637"
+          ],
+          "next_action": "Verify complete electrically commissioned case launch and real evidence, ritual, rescue and extraction."
         }
       },
       "arrival_bearing_pass": {

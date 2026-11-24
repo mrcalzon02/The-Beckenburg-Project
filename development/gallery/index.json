@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11390,
+  "count": 11398,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -81884,6 +81884,86 @@
       "height": 580,
       "bytes": 350693,
       "sha256": "984bfebf09986b4dd47d6f08f1b344bc245f61a69d282120a6b8c6eb7431fd0d"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-patient-court-pass/captures/asylum-474-closed.png",
+      "url": "development/levels/rebuild/asylum-patient-court-pass/captures/asylum-474-closed.png",
+      "title": "Asylum 474 closed",
+      "kind": "Asylum fitted patient court in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 402614,
+      "sha256": "ac96dc8a96054d3fb2c95d086b1b231c5f0e35e328d67c2f6146b650df12f668"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-patient-court-pass/captures/asylum-474-open.png",
+      "url": "development/levels/rebuild/asylum-patient-court-pass/captures/asylum-474-open.png",
+      "title": "Asylum 474 open",
+      "kind": "Asylum fitted patient court in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 341280,
+      "sha256": "12d02481e740be9a08f836e012e075efd412039aa3d4e87317527fe1150e7119"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-patient-court-pass/captures/asylum-475-closed.png",
+      "url": "development/levels/rebuild/asylum-patient-court-pass/captures/asylum-475-closed.png",
+      "title": "Asylum 475 closed",
+      "kind": "Asylum fitted patient court in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 384535,
+      "sha256": "c9ece0ef9944159500d2b492717b9db1e790d8644aab7ac811594888854caf02"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-patient-court-pass/captures/asylum-475-open.png",
+      "url": "development/levels/rebuild/asylum-patient-court-pass/captures/asylum-475-open.png",
+      "title": "Asylum 475 open",
+      "kind": "Asylum fitted patient court in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 333307,
+      "sha256": "8a9a92006b9100aa89e4cca53f1a901f53a7b985f3bca50cfcc4cd78674e2c60"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-patient-court-pass/captures/opengl/asylum-474-closed.png",
+      "url": "development/levels/rebuild/asylum-patient-court-pass/captures/opengl/asylum-474-closed.png",
+      "title": "Asylum 474 closed",
+      "kind": "Asylum fitted patient court in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 403969,
+      "sha256": "2f088460ee9467c759084e3a4756f5d438b76aed9e2b948166c49377192b000b"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-patient-court-pass/captures/opengl/asylum-474-open.png",
+      "url": "development/levels/rebuild/asylum-patient-court-pass/captures/opengl/asylum-474-open.png",
+      "title": "Asylum 474 open",
+      "kind": "Asylum fitted patient court in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 330977,
+      "sha256": "0818a3b4a2077ec5c5ad6fec27b3e3b8176d67f218ee6450e5cda5945f8b8c61"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-patient-court-pass/captures/opengl/asylum-475-closed.png",
+      "url": "development/levels/rebuild/asylum-patient-court-pass/captures/opengl/asylum-475-closed.png",
+      "title": "Asylum 475 closed",
+      "kind": "Asylum fitted patient court in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 385837,
+      "sha256": "ba5420e1e1012513fdb3e7d1bb8ec8f53a5ff664d6081ad8c55bf7022f07cdf4"
+    },
+    {
+      "path": "development/levels/rebuild/asylum-patient-court-pass/captures/opengl/asylum-475-open.png",
+      "url": "development/levels/rebuild/asylum-patient-court-pass/captures/opengl/asylum-475-open.png",
+      "title": "Asylum 475 open",
+      "kind": "Asylum fitted patient court in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 331686,
+      "sha256": "fbd07113acc868904821b19f64073b610f7524a38a4f3166adc41001c455f146"
     },
     {
       "path": "development/levels/rebuild/captures/access-route-batch/20261108T154407878568Z/asylum-floor-plan-after.png",
