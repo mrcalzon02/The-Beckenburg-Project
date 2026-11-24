@@ -20,7 +20,7 @@ import java.util.Map;
 
 /** Runs the Monastery’s original geometry with its newly fitted dynamic doors. */
 public final class MonasteryDoorReview {
-    private record Scene(LevelDefinition level, NativeInvestigationScene nativeScene, Map<String,List<Vec>> paths) {
+    record Scene(LevelDefinition level, NativeInvestigationScene nativeScene, Map<String,List<Vec>> paths) {
         HouseMap map(){return new HouseMap(HouseMap.Site.USER,level,null,nativeScene);}
     }
 
@@ -43,6 +43,10 @@ public final class MonasteryDoorReview {
     }
 
     private static Scene read(Path packet,Path geometry)throws Exception {
+        return read(packet,geometry,"monastery-cloister");
+    }
+
+    static Scene read(Path packet,Path geometry,String stem)throws Exception {
         var rooms=new Room[HouseMap.ROOM_COUNT];
         var spaces=new ArrayList<NativeInvestigationScene.Space>();
         var portals=new ArrayList<Portal>();
@@ -66,6 +70,8 @@ public final class MonasteryDoorReview {
                 }
                 case "STEP" -> stairs.add(p[1]);
                 case "RITUAL" -> sockets.add(new Socket("monastery-"+p[1],"ritual",n(p,2),d(p,3),d(p,4),d(p,5),0,p[1]));
+                case "COVER" -> sockets.add(new Socket(p[1],"hide",n(p,2),d(p,3),d(p,4),d(p,5),d(p,6),
+                    "walk-in-cupboard"));
                 case "OPEN" -> portals.add(new Portal(n(p,1),n(p,2),n(p,3),d(p,4),d(p,5),d(p,6),
                     d(p,7),p[8].equals("z"),p[9],1));
                 case "POINT" -> paths.computeIfAbsent(p[1],id->new ArrayList<>()).add(point(p,2));
@@ -83,8 +89,8 @@ public final class MonasteryDoorReview {
         var van=new VanStaging(new VanStaging.Placement(dock.x(),dock.y(),dock.z(),dock.yaw()));
         rooms[14]=new Room(14,"Expedition van",30.74,77,33.26,82.4,van.floorY(),VanStaging.INTERIOR_HEIGHT,
             "van","metal",new Vec(32,van.floorY(),80));
-        var model=geometry.resolve("monastery-cloister.glb");
-        var collision=geometry.resolve("monastery-cloister.hcs2");
+        var model=geometry.resolve(stem+".glb");
+        var collision=geometry.resolve(stem+".hcs2");
         NativeInvestigationScene scene;
         try(var src=Files.newInputStream(model);var shapes=Files.newInputStream(collision)){
             scene=NativeInvestigationScene.read(src,sha(model),shapes,sha(collision),stairs,spaces,specs);

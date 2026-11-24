@@ -9242,3 +9242,7 @@ The normal Windows archive binds WLD-09 to the measured exported source. The rev
 ### DEV-713 · Monastery operating thresholds
 
 Thirteen original frames now carry fitted, replicated leaves. The four cloister arcades remain open. Both game renderers verify closed and open acoustic, optical and physical response and all 84 directional route replays. Four live peers validate the walk from the van to the lower memorial chamber. [Evidence](../levels/rebuild/monastery-door-pass/checkpoint.json)
+
+### DEV-714 · Monastery walk-in refuges
+
+The operating-door stage left the Monastery without sanctuary coverage. Three canonical cupboards now sit clear of existing circulation on the archive, dormitory and lower memorial floors. The staged runtime verifies full protection and cue bounds, entrance and exit, 0% cover, and preserved stair and door routes. Audit older levels against their own physical refuge thresholds. [Verification checkpoint](../levels/rebuild/monastery-refuge-pass/checkpoint.json)

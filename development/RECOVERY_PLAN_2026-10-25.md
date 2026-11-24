@@ -2331,3 +2331,7 @@ The generator ventilation commit ccc2d1e9af371dcfa038f1b1013878d611dcf0cf passed
 ### Monastery of Ashen Bells working doors and live lower route
 
 The Blackwater package checkpoint fafd12e4ffd4d33ad3494edfe8365f23bf2196b4 passed gallery 45444399960 on draft PR 86. The [Monastery threshold checkpoint](levels/rebuild/monastery-door-pass/checkpoint.json) advances the next map in the roster, with thirteen fitted leaves and the live van-to-memorial route on the original fitted stair geometry. Further services and named integration remain pending.
+
+### Monastery of Ashen Bells walk-in refuges
+
+The operating-door commit eee9cb613e2ad5112030d5059f82f6206e4042a7 passed gallery 45446430399 on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d still has full multiplayer and GPU acceptance from runs 44863686526 and 44863686455. The [refuge checkpoint](levels/rebuild/monastery-refuge-pass/checkpoint.json) records the three founded sanctuary interiors, matching runtime captures, and live host behavior at 100% and 0% cover. Continue the bell and catacomb handrails, roof drainage and supported utilities before named packaged acceptance.

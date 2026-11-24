@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 585" role="img" aria-labelledby="title desc">
+<title id="title">Monastery of Ashen Bells walk-in refuges</title>
+<desc id="desc">Same-scale plans of the three refuge rooms, showing approaches from existing doors, and the dimensions of the protected interior.</desc>
+<defs><marker id="arrow" markerWidth="7" markerHeight="7" refX="5.5" refY="3.5" orient="auto">
+<path d="M0 0L6 3.5L0 7" fill="none" stroke="#216954" stroke-width="1.3"/></marker></defs>
+<style>
+text{font-family:Segoe UI,Arial,sans-serif;fill:#273631}
+.title{font-size:32px;font-weight:650}.head{font-size:17px;font-weight:650}.body{font-size:14px}
+.small{font-size:12px}.route{fill:none;stroke:#216954;stroke-width:2;stroke-dasharray:5 4;marker-end:url(#arrow)}
+.room{fill:#fbf7ed;stroke:#80725e;stroke-width:1.4}.shell{fill:#c0a77d;stroke:#544530;stroke-width:2}
+.cover{fill:#81bd9d;stroke:#216954;stroke-width:1}.door{stroke:#9c4f35;stroke-width:4}
+</style>
+<rect width="1160" height="585" fill="#f3eee3"/>
+<text x="30" y="46" class="title">Monastery of Ashen Bells · Walk-in refuges</text>
+<text x="30" y="75" class="body">The three cupboards sit on existing floors. Protection starts at each open face and fills the usable interior.</text>
+
+<rect x="26" y="98" width="353" height="330" rx="9" fill="#f8f4e9" stroke="#ccc1ad"/>
+<text x="40" y="126" class="head">Archive</text>
+<text x="364" y="126" class="body" text-anchor="end">0 m</text>
+<rect class="room" x="82.00" y="216.00" width="180.00" height="126.00"/>
+<path class="door" d="M163.8 342.0L180.2 342.0"/>
+<rect class="shell" x="200.35" y="222.75" width="15.30" height="11.72"/>
+<rect class="cover" x="200.89" y="223.29" width="14.22" height="10.26"/>
+<polyline class="route" points="172.00,342.00 172.00,279.00 208.00,261.00 208.00,240.03 208.00,228.15"/>
+<text x="40" y="414" class="small">Enters through the existing cloister door.</text>
+<rect x="406" y="98" width="353" height="330" rx="9" fill="#f8f4e9" stroke="#ccc1ad"/>
+<text x="420" y="126" class="head">Dormitory</text>
+<text x="744" y="126" class="body" text-anchor="end">0 m</text>
+<rect class="room" x="480.00" y="153.00" width="144.00" height="252.00"/>
+<path class="door" d="M624.0 270.7L624.0 287.3"/>
+<rect class="shell" x="486.75" y="298.35" width="11.72" height="15.30"/>
+<rect class="cover" x="487.29" y="298.89" width="10.26" height="14.22"/>
+<polyline class="route" points="624.00,279.00 552.00,279.00 525.00,306.00 504.03,306.00 492.15,306.00"/>
+<text x="420" y="414" class="small">Enters through the existing cloister door.</text>
+<rect x="786" y="98" width="353" height="330" rx="9" fill="#f8f4e9" stroke="#ccc1ad"/>
+<text x="800" y="126" class="head">Lower memorial chamber</text>
+<text x="1124" y="126" class="body" text-anchor="end">−3 m</text>
+<rect class="room" x="842.00" y="216.00" width="180.00" height="126.00"/>
+<path class="door" d="M923.8 342.0L940.2 342.0"/>
+<rect class="shell" x="969.35" y="222.75" width="15.30" height="11.72"/>
+<rect class="cover" x="969.89" y="223.29" width="14.22" height="10.26"/>
+<polyline class="route" points="932.00,342.00 932.00,279.00 977.00,261.00 977.00,240.03 977.00,228.15"/>
+<text x="800" y="414" class="small">Uses the existing north catacomb stair.</text>
+<rect x="26" y="449" width="1113" height="110" rx="9" fill="#f8f4e9" stroke="#ccc1ad"/>
+<rect x="44" y="472" width="16" height="13" class="cover"/><text x="70" y="484" class="body">Protected volume</text>
+<path class="door" d="M44 508h16"/><text x="70" y="512" class="body">Operating door</text>
+<path class="route" d="M43 538h19"/><text x="70" y="542" class="body">Walked approach</text>
+<text x="264" y="485" class="head">1.58 m wide × 1.14 m deep × 2.02 m high</text>
+<text x="264" y="513" class="body">The cue and spectral boundary follow the entrance, sides, back and ceiling.</text>
+<text x="264" y="540" class="body">At zero cover the cupboards remain walkable and the energy cue is disabled.</text>
+<path d="M1042 525h45v-5m-45 0v5" stroke="#273631" stroke-width="1.5" fill="none"/>
+<text x="1064" y="545" text-anchor="middle" class="small">5 m</text>
+<path d="M1098 496v-23l-4 5m4-5l4 5" stroke="#273631" stroke-width="1.5" fill="none"/>
+<text x="1098" y="513" text-anchor="middle" class="small">N</text></svg>
