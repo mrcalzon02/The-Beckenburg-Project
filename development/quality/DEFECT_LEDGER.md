@@ -9006,3 +9006,15 @@ A source-supported radio bench in the ranger room holds the lower-circuit transc
 ### DEV-655 Standalone lore test expects retired art approval copy
 
 The historical Castle archive test still expects pre-approval status text. The product and approval were already updated in 774f8dce. Audit the remaining historical fixture assumptions before treating the test as current evidence. [Evidence](../levels/rebuild/lookout-case-pass/checkpoint.json)
+
+### DEV-656 Mine stair doors met shallow shaft-side top landings
+
+Both upper flights were rebuilt inside their physical shafts so the measured frames now open onto a 1.10 m or 1.15 m level receiving landing. Standing floor probes, retained routes and actual multiplayer crossings passed. [Evidence](../levels/rebuild/mine-stair-threshold-pass/checkpoint.json)
+
+### DEV-657 Mine route stations at stair nosings selected the next tread
+
+The guide points now use the measured receiving side of each nosing. Both directions and postures replayed through the actual lower and upper stairs. [Evidence](../levels/rebuild/mine-stair-threshold-pass/checkpoint.json)
+
+### DEV-658 Mine’s eight existing framed openings lacked operable leaves
+
+All eight frames received canonical leaves. The two stair sets swing toward the shared headhouse. The editor and runtime matched on all 16 positions, and players opened both stair doors over four-peer LAN. [Evidence](../levels/rebuild/mine-stair-threshold-pass/checkpoint.json)

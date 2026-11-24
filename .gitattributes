@@ -355,3 +355,6 @@ development/levels/rebuild/lookout-dispatch-pass/** -text
 
 # Lookout case attachments, receipts and exact native assets.
 development/levels/rebuild/lookout-case-pass/** -text
+
+# Mine staged native construction and exact verification receipts.
+development/levels/rebuild/mine-stair-threshold-pass/** -text

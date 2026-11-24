@@ -2151,3 +2151,7 @@ Remote source 620982236738d88c91e59e50541476dea6b574b2 published to draft PR 86.
 ### Lookout physical records and case actions
 
 The prior named dispatch published at 590973af66a992e5333b3425ca57014bb69ca919 and gallery run 45336694384 passed. The [current exact package checkpoint](levels/rebuild/lookout-case-pass/checkpoint.json) covers physical story interaction, range-based EMF, deployed camera and van monitor state, all three rites, direct resume and cargo retreat. Current renderer and five focused regressions passed. Standalone WorldLoreTest still asserts the retired Castle portrait status, recorded in DEV-655. Continue site-specific encounters and public acceptance, and carry the verified structural method to other roster locations.
+
+### Dead Man's Claim stair thresholds
+
+Lookout case commit 523905fd9493a727114c157231263417892e8bcf published to draft PR 86 with gallery run 45338423734 passing. The [Mine threshold checkpoint](levels/rebuild/mine-stair-threshold-pass/checkpoint.json) rebuilds both complete upper flights and full-width receiving landings inside the existing headhouse and shafts. Eight fitted frames match reopened editor poses and the actual game collision. Exact native software, RTX 5070 and four-peer LAN checks passed. Continue Mine handrails, cover, services and normal packaged dispatch.

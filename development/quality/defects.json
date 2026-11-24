@@ -7272,6 +7272,39 @@
       "action": "Audit the standalone Castle archive fixture against the current approved source before using it as evidence.",
       "older_maps": "Tie historical art checks to the approved model and date instead of a retired display sentence.",
       "evidence": "development/levels/rebuild/lookout-case-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-656",
+      "title": "Mine stair doors met shallow shaft-side top landings",
+      "status": "FULL_RECEIVING_LANDINGS_AND_NEW_UPPER_FLIGHTS_VERIFIED",
+      "affected": "Dead Man’s Claim haul and ventilation shaft entries",
+      "symptom": "The shaft-side landing slabs extended only .20 m and .25 m from the fixed frames.",
+      "cause": "The initial upper-flight runs were set before door approach depths were measured on both sides.",
+      "action": "Replace each full upper flight and land it on a full-width supported headhouse receiving slab. Confirm standing at .96 m inside each door and check the unchanged lower flights and route loops.",
+      "older_maps": "Test actual level support before and after framed stair thresholds, with a standing movement sweep and a cutaway.",
+      "evidence": "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-657",
+      "title": "Mine route stations at stair nosings selected the next tread",
+      "status": "MEASURED_RECEIVING_STATIONS_VERIFIED",
+      "affected": "Mine haul and lower working approaches",
+      "symptom": "Some guide coordinates snapped the moving body to the first tread rather than the stated landing datum.",
+      "cause": "The saved guide used the exact contact line where two adjacent elevations meet.",
+      "action": "Set receiving guide points on measured points off the nosing. Repeat the untouched stair routes in both directions.",
+      "older_maps": "Check bracketing support around each discontinuity and run both direction and posture variants.",
+      "evidence": "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-658",
+      "title": "Mine’s eight existing framed openings lacked operable leaves",
+      "status": "EIGHT_FITTED_NATIVE_DOOR_SETS_VERIFIED",
+      "affected": "Mine roadhead, crew buildings and headhouse",
+      "symptom": "The active construction had the physical sills and frames without usable door states in the shared world.",
+      "cause": "Framed construction preceded native gameplay fittings.",
+      "action": "Use the canonical leaves on the measured openings. Both headhouse stair sets swing into the common level room. Verify editor pose parity and physical access, camera/aim, object and sound queries.",
+      "older_maps": "Test swing into level receiving areas and inspect both loaded states in the world.",
+      "evidence": "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

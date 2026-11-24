@@ -3563,20 +3563,27 @@
           "status": "IN_PROGRESS",
           "source_sha": "02b98c9cf06bc701865920949436d36c10bb0acd",
           "evidence": [
+            "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json",
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-656",
+            "DEV-658",
             "DEV-546",
             "DEV-547"
           ],
-          "next_action": "Complete rail attachments, door leaves, roof edges and mechanical service clearances in the covered shafts."
+          "next_action": "Both Mine upper flights and full receiving landings were rebuilt. Eight actual doorways are fitted. Fit the handrails and complete enclosure inspection."
         },
         "S06": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-658"
+          ],
+          "next_action": "The native owner graph and three supported rituals pass. Fit physical safe zones, remote generator, breaker branch and mine lights."
         },
         "S07": {
           "status": "IN_PROGRESS",
@@ -3618,11 +3625,17 @@
           "next_action": "Complete prerequisite stage"
         },
         "S11": {
-          "status": "NOT_AUDITED",
+          "status": "IN_PROGRESS",
           "source_sha": null,
-          "evidence": [],
-          "defects": [],
-          "next_action": "Complete prerequisite stage"
+          "evidence": [
+            "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json"
+          ],
+          "defects": [
+            "DEV-656",
+            "DEV-657",
+            "DEV-658"
+          ],
+          "next_action": "Exact native stage passes 19 routes, cargo circuit, eight leaves and four-peer stair-door replay. Complete normal packaged dispatch and case."
         }
       },
       "arrival_bearing_pass": {

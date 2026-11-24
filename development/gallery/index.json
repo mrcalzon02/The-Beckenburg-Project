@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11551,
+  "count": 11569,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -111544,6 +111544,186 @@
       "height": 800,
       "bytes": 1039906,
       "sha256": "1470e898a02a9377f6bd51c10d514a6b3f0fdc6bd858f043b747f5c171a5f638"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-705-closed.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-705-closed.png",
+      "title": "Mine 705 closed",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 387469,
+      "sha256": "0eeb12577b47e928c88dcb2ae5c730ee03f9e670f485111ef8f2c0b9d5df949c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-705-open.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-705-open.png",
+      "title": "Mine 705 open",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 340675,
+      "sha256": "13227658189f638d87edc81e78f0a60cb67b773e2119245d1330dd4eeb45166d"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-706-closed.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-706-closed.png",
+      "title": "Mine 706 closed",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 387466,
+      "sha256": "db4797200d9b9dc7441bd78987cfea4b9be5f2ec298e848f9a13623a3f133277"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-706-open.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-706-open.png",
+      "title": "Mine 706 open",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 332089,
+      "sha256": "61fcdb45b2b563550c6b99e3e5aedcdbda2fba5af90667de35e5160978f79f5f"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-707-closed.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-707-closed.png",
+      "title": "Mine 707 closed",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 388001,
+      "sha256": "6b18be4eb3a42984e4f74e015494415aaa85762791d757cb2ae8bd47d9c11f80"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-707-open.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-707-open.png",
+      "title": "Mine 707 open",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 330582,
+      "sha256": "e2260a96c67064fc72d5a825737deb4e5812ef44071fc62c658cb0a81bb02632"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-lower-haul-stair.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-lower-haul-stair.png",
+      "title": "Mine lower haul stair",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 286243,
+      "sha256": "ee28fda61f41ed8b94642c293c32a1cb5e28d0b9136daf1ff3f611c97423942c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-roadhead-and-van.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/mine-roadhead-and-van.png",
+      "title": "Mine roadhead and van",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 364647,
+      "sha256": "644c8088dc0ec9fb2d18f239475558dd397bb8ed570b1e32164868b23b4365a4"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-705-closed.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-705-closed.png",
+      "title": "Mine 705 closed",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 390026,
+      "sha256": "027d7a88eb5ffbffd2cde2bdb21fa9c3f6c3a1737b9a533fc56c6e884645d3f6"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-705-open.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-705-open.png",
+      "title": "Mine 705 open",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 337206,
+      "sha256": "48fbf5dc6e4f206af1137fe9da1ec7ecc40f16ece3f6c890fd90c5b0b9d8d3c5"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-706-closed.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-706-closed.png",
+      "title": "Mine 706 closed",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 390012,
+      "sha256": "f3175ba6ed32d554ba0032a9d974ed1792c6cc0ed64ebfdcdf5eae7c7e392508"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-706-open.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-706-open.png",
+      "title": "Mine 706 open",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 326425,
+      "sha256": "ff6df823954fcd6f9c7d3fb9df85a44125525aeabc8c7059277506574392bda6"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-707-closed.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-707-closed.png",
+      "title": "Mine 707 closed",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 388494,
+      "sha256": "303905ac635c121f35b7eb0d9bf9084e0b42c05b2b6450aee94c3558ea150ee1"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-707-open.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-707-open.png",
+      "title": "Mine 707 open",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 320012,
+      "sha256": "18a9d32c3f93cd9f513591eacfe9430a16bbe3072384c64f59bda3b39c23940a"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-lower-haul-stair.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-lower-haul-stair.png",
+      "title": "Mine lower haul stair",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 279696,
+      "sha256": "6e8b0f3831192cff9caf1f9d52084e377776c60ec210dad9d6a724e9e7b350d6"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-roadhead-and-van.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/opengl/mine-roadhead-and-van.png",
+      "title": "Mine roadhead and van",
+      "kind": "Dead Man’s Claim fitted stairs and doorways in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 362694,
+      "sha256": "790d308bd6480970f1c0c7bfb21fea0355122b8079891f4573b43dcc26b4563c"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/structure/headhouse-open-landings.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/structure/headhouse-open-landings.png",
+      "title": "Headhouse open landings",
+      "kind": "Dead Man’s Claim headhouse structural cutaway",
+      "width": 1280,
+      "height": 920,
+      "bytes": 1287947,
+      "sha256": "51a9fe983842ee9871469a89cb9bf2c28cd44e832d033db88aa5f518f6c2c8f5"
+    },
+    {
+      "path": "development/levels/rebuild/mine-stair-threshold-pass/captures/structure/headhouse-roof-cutaway.png",
+      "url": "development/levels/rebuild/mine-stair-threshold-pass/captures/structure/headhouse-roof-cutaway.png",
+      "title": "Headhouse roof cutaway",
+      "kind": "Dead Man’s Claim headhouse structural cutaway",
+      "width": 1280,
+      "height": 920,
+      "bytes": 1434801,
+      "sha256": "fe9baa67f2c590b2a1ad2c704d108e0c240356e3ad9a3f1e9bfc975ac6efe43a"
     },
     {
       "path": "development/levels/rebuild/previews/academy-revised-rough-plan.png",
