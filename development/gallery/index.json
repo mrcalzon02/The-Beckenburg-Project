@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12142,
+  "count": 12154,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -112904,6 +112904,126 @@
       "height": 580,
       "bytes": 291943,
       "sha256": "ec46009e0107d5dd7d6dc8bb9c001554d76d5a8d7e3ccb5975686549a1a203d2"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/distribution-inspection.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/distribution-inspection.png",
+      "title": "Distribution inspection",
+      "kind": "Blackwater Dam fitted equipment with investigator flashlight in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 373785,
+      "sha256": "6b3270727327a141437578b764e490ac35f746d7b0ce1c16cf9ddb96ebe279cc"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/generator-inspection.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/generator-inspection.png",
+      "title": "Generator inspection",
+      "kind": "Blackwater Dam fitted equipment with investigator flashlight in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 339065,
+      "sha256": "179f0a9444cede2f2f49cf77704498ef950b265d339f9c1c261b996fbd067211"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/switchgear-supply-off.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/switchgear-supply-off.png",
+      "title": "Switchgear supply off",
+      "kind": "Blackwater Dam paired auxiliary power state in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 145220,
+      "sha256": "636fd62645fbebdb6d77b25760462fb4ec4fcb6edb16b4b6d984a9a8ad157fab"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/switchgear-supply-on.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/switchgear-supply-on.png",
+      "title": "Switchgear supply on",
+      "kind": "Blackwater Dam paired auxiliary power state in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 179390,
+      "sha256": "8bcbcea6697c30793a4fd12ec23632f249a14eeca6a27c6f43191c986da5aa96"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/turbine-lighting-off.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/turbine-lighting-off.png",
+      "title": "Turbine lighting off",
+      "kind": "Blackwater Dam paired auxiliary power state in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 129021,
+      "sha256": "9310c85647990be2c71ef7b66d94f8863396169b763e63b7edf2b45c4eda62be"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/turbine-lighting-on.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/opengl/turbine-lighting-on.png",
+      "title": "Turbine lighting on",
+      "kind": "Blackwater Dam paired auxiliary power state in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 187502,
+      "sha256": "35b4043d67df8756385c163580f710ca006a84d93f5df1d3cd6e0e6e8e7affc1"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/distribution-inspection.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/distribution-inspection.png",
+      "title": "Distribution inspection",
+      "kind": "Blackwater Dam fitted equipment with investigator flashlight in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 373453,
+      "sha256": "91bc9c1698d7fe5315114f283ce8fef27bab7964cd23e592a9d41fa55c05ad55"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/generator-inspection.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/generator-inspection.png",
+      "title": "Generator inspection",
+      "kind": "Blackwater Dam fitted equipment with investigator flashlight in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 337692,
+      "sha256": "d1e2ef3bda5455a5dcf0a39459a9b6c53ee8a350bbc2fbb3c64183f780097e41"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/switchgear-supply-off.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/switchgear-supply-off.png",
+      "title": "Switchgear supply off",
+      "kind": "Blackwater Dam paired auxiliary power state in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 145324,
+      "sha256": "d286631686f63071baa87d8179fe8d033e3b2797f321b7cb7f7b051284eeccd5"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/switchgear-supply-on.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/switchgear-supply-on.png",
+      "title": "Switchgear supply on",
+      "kind": "Blackwater Dam paired auxiliary power state in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 178041,
+      "sha256": "a867da90b56c4b88daf41eb718d047675841480c048a5330fccfbcf03c34ddc9"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/turbine-lighting-off.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/turbine-lighting-off.png",
+      "title": "Turbine lighting off",
+      "kind": "Blackwater Dam paired auxiliary power state in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 127766,
+      "sha256": "fa0a7891b0eb3afb8d7e7970e4c35d0a07e7abf26fdf82b567bc00d8eb8294c4"
+    },
+    {
+      "path": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/turbine-lighting-on.png",
+      "url": "development/levels/rebuild/dam-power-pass/wld-09/captures/software/turbine-lighting-on.png",
+      "title": "Turbine lighting on",
+      "kind": "Blackwater Dam paired auxiliary power state in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 228324,
+      "sha256": "89dafc46db760c494f6cedb2dfd774052b9e46bfe472fd0f83d7997fd05551d5"
     },
     {
       "path": "development/levels/rebuild/dam-refuge-pass/wld-09/captures/opengl/dam-office-cupboard-enter.png",

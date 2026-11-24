@@ -7833,6 +7833,17 @@
       "action": "Seat three canonical enclosures on actual slabs. Bind protection, cues and difficulty to their complete interiors and verify the entrance, exit and ghost crossing.",
       "older_maps": "Measure the full width, depth and head height and test the same physical entry at maximum and zero cover.",
       "evidence": "development/levels/rebuild/dam-refuge-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-707",
+      "title": "Blackwater Dam auxiliary supply and service lighting were absent",
+      "status": "DAM_FOUNDED_AUXILIARY_POWER_AND_TWO_CIRCUITS_STAGED",
+      "affected": "WLD-09 switchgear room and north turbine hall",
+      "symptom": "The local scene had no physical auxiliary source, breaker, or room light controls.",
+      "cause": "The architectural stage supplied rooms and doorways before commissioning the electrical loads.",
+      "action": "Seat the canonical generator and switchboard on the actual slab, fit two routes and four fixtures, then verify the existing ghost trip, restart, reconnect, and physical breaker reset.",
+      "older_maps": "Verify each circuit against its fitted load, exact support and uninterrupted blackout approach. Preserve breaker independence on source restart.",
+      "evidence": "development/levels/rebuild/dam-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

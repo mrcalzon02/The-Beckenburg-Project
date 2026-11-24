@@ -1,7 +1,8 @@
 {
   "id": "WLD-09",
   "title": "Blackwater Hydroelectric Dam",
-  "status": "mandatory authored requirement; placement and runtime acceptance pending",
+  "status": "staged physical source, board, and two verified circuits; remaining distribution and packaged acceptance pending",
+  "staged_electrical_checkpoint": "development/levels/rebuild/dam-power-pass/checkpoint.json",
   "generator_required": true,
   "generator_location_intent": "Auxiliary maintenance generator outside operating turbine hazards",
   "source_state": "Generator availability/running state is separate from breaker state; do not auto-reset a ghost trip.",

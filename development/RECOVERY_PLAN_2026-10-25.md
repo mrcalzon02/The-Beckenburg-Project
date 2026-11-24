@@ -2307,3 +2307,7 @@ Valley commit dc64d376ed81f98d652756f34f8bca9229ba1b67 and gallery 45421087615 p
 ### Blackwater Dam walk-in refuge protection
 
 Door commit ca2cec31cf1e2a3998ae297d98189dda022864a5 and gallery 45425138901 passed on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d remains at the prior verified recovery baseline. The [refuge checkpoint](levels/rebuild/dam-refuge-pass/checkpoint.json) verifies three supported volumes in both game renderers and with actual live entry, exit and spectral controls. Continue supported utilities, upstream hydraulics and named runtime packaging.
+
+### Blackwater Dam auxiliary switchgear and north turbine bay
+
+Refuge commit de8eca0565808b69ad557e546d1f313ac5eed860 passed gallery 45428104353 on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d continues to report full multiplayer and GPU acceptance success. The [auxiliary power checkpoint](levels/rebuild/dam-power-pass/checkpoint.json) records the exact new stage, both renderer power states, and a live four-peer host blackout and reconnect. Continue service distribution and upstream works before the named package gate.

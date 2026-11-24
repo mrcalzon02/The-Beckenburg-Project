@@ -401,3 +401,7 @@ development/levels/rebuild/dam-tailrace-pass/** -text whitespace=cr-at-eol
 development/levels/rebuild/dam-valley-pass/** -text whitespace=cr-at-eol
 development/levels/rebuild/dam-door-pass/** -text whitespace=cr-at-eol
 development/levels/rebuild/dam-refuge-pass/** -text whitespace=cr-at-eol
+development/levels/rebuild/dam-power-pass/** -text whitespace=cr-at-eol
+tools/build_dam_power.py -text whitespace=cr-at-eol
+tools/java/DamPowerReview.java -text whitespace=cr-at-eol
+tools/java/DamDoorReview.java text eol=lf

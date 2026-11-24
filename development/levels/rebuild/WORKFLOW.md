@@ -1567,3 +1567,7 @@ Six bare masonry entries received indexed casings and all fourteen frames now us
 ### Blackwater Hydroelectric Dam walk-in refuges
 
 Three supported enclosures leave the fitted doors, stairs and retained routes clear. Both game renderers verify 207 usable floor samples, 2,475 protected samples across the entire enclosure, and 12 van-to-refuge and return replays. Live hunters enter, hide, reveal and leave in each room. The workshop ghost is stopped at 100% cover and can cross the same threshold at zero. [Refuge plan](dam-refuge-pass/wld-09/refuge-plan.svg) · [Checkpoint](dam-refuge-pass/checkpoint.json)
+
+### Blackwater Hydroelectric Dam auxiliary power
+
+The measured switchgear slab and partition determine the generator, cabinet, wall panels, clips and 4 fixtures. The native source retains 628 prior parts, all 14 door fits and the three refuges. The exact stage repeats 16 van and control routes and exercises real TCP power events through three closed leaves and a blackout. Continue the remaining electrical and mechanical supports and the upstream reservoir connection. [Service plan](dam-power-pass/wld-09/switchgear-plan.svg) · [Checkpoint](dam-power-pass/checkpoint.json)

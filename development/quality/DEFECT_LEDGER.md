@@ -9218,3 +9218,7 @@ All fourteen fitted thresholds bind to shared movement, sight, object and acoust
 ### DEV-706 · Blackwater Dam walk-in protection
 
 Actual cupboards now use the surveyed office, workshop and switchgear slabs. Protection and the visual cue cover the full walk-in enclosure. Both renderers replay entry and retreat, and live hosts verify concealment, reveal, exit, and the different spectral result at 100% and 0% cover. [Evidence](../levels/rebuild/dam-refuge-pass/checkpoint.json)
+
+### DEV-707 · Blackwater Dam auxiliary supply and switching
+
+The switchgear slab carries the existing generator and distribution models. Supported raceways and four real fixtures serve two separately switched branches. Both renderers verify all four load states, and the live host verifies ghost trip, blackout access, source restart without reset, reconnect and the aimed breaker reset. Remaining distribution and mechanical services are open. [Evidence](../levels/rebuild/dam-power-pass/checkpoint.json)
