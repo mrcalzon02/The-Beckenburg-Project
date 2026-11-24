@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12501,
+  "count": 12560,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -117664,6 +117664,596 @@
       "height": 640,
       "bytes": 388325,
       "sha256": "92b816dc5caa77e7833ab9255d5a130489b568c1195ca239e0c9e11385890fa7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-archive-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-archive-cupboard-enter.png",
+      "title": "Monastery archive cupboard enter",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 489953,
+      "sha256": "8d484812e5bd44c004b16b2bf11f8899d75240d2aaa8a29e1af08e55d4ce2f54"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-archive-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-archive-cupboard-inside.png",
+      "title": "Monastery archive cupboard inside",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 415318,
+      "sha256": "5e1be068b007b6fbb4e048da9ad84be5f88f1078763e710b5e933b859e44441d"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-archive-reading-table.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-archive-reading-table.png",
+      "title": "Monastery archive reading table",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 391601,
+      "sha256": "6fa16994d819c8e9174c308e7a6b677875b68841c40097403798d6da93b83a2b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-chamber-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-chamber-cupboard-enter.png",
+      "title": "Monastery chamber cupboard enter",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 474803,
+      "sha256": "10c3346f84e830ef76c52501314de27c8b55ce362ce1f7dad2d6555cc146a834"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-chamber-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-chamber-cupboard-inside.png",
+      "title": "Monastery chamber cupboard inside",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 402285,
+      "sha256": "5ed26c8d0250511d9450ca7a921146640fea505c73349356b18b02b4de13dd79"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-court-planted-soil.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-court-planted-soil.png",
+      "title": "Monastery court planted soil",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 366740,
+      "sha256": "101d7c4e1a0a179c6f856c679c15592a409c779d9552e8a5e191f1f635e57931"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-court-well-and-raised-beds.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-court-well-and-raised-beds.png",
+      "title": "Monastery court well and raised beds",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 319451,
+      "sha256": "ae9a06f53921b08fe477559dd576a049098ccb6800ba0458a2df5ab23507780a"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-dorm-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-dorm-cupboard-enter.png",
+      "title": "Monastery dorm cupboard enter",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 485981,
+      "sha256": "4d95d582c2ccaf40829c93318afc8dd5ea786ff2bbeb2b6f7590b06e573298c7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-dorm-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-dorm-cupboard-inside.png",
+      "title": "Monastery dorm cupboard inside",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 395650,
+      "sha256": "ac61a9cb2cbea8094ff27254abfc081e331564c5ad50eb47ad2873dbede640ac"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-dormitory-beds.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-dormitory-beds.png",
+      "title": "Monastery dormitory beds",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 388055,
+      "sha256": "d383f366ecc597d1362e0748e8dfe1810a865871c88fa99a0d28a0af687625bf"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-dressed-forecourt.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-dressed-forecourt.png",
+      "title": "Monastery dressed forecourt",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 385084,
+      "sha256": "708d203a5897ff78a19960f8b2cf1bb1f2c55d4c4b56c5d07878c551265a9074"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-dressed-van-approach.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-dressed-van-approach.png",
+      "title": "Monastery dressed van approach",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 470611,
+      "sha256": "676afb14cb4f66dd6a537b76331bcfac20d8d5c9930ead6a761349a6599893e4"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-east-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-east-gate-overflow.png",
+      "title": "Monastery east gate overflow",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 537528,
+      "sha256": "cfdcb6de7546722981505063d1bd96fa9d51ab4672b20a41c83f3adf844bcc8f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-east-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-east-herb-court-grate.png",
+      "title": "Monastery east herb court grate",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 520519,
+      "sha256": "ce377b45a5bef24b6703e5bd92ee610f51d5b39a1ad54fae506a6e6844d93508"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-east-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-east-north-roof-spillway.png",
+      "title": "Monastery east north roof spillway",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 438453,
+      "sha256": "59938e0f8e2eab83d0475d8fd2794f2faa8a8d13500093d74cb2643e65e034a9"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-gatehouse-porter.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-gatehouse-porter.png",
+      "title": "Monastery gatehouse porter",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 420130,
+      "sha256": "a3f5a022cfe34438248a0cfc5ba663a49d719663a961333fe4a8a48f71115b91"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-herb-court-pipe-inlet.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-herb-court-pipe-inlet.png",
+      "title": "Monastery herb court pipe inlet",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 465701,
+      "sha256": "dbeb75069ddb89f04d58d7157b20389999d765312c250adead8ceddb301fcd11"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-named-arrival-van.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-named-arrival-van.png",
+      "title": "Monastery named arrival van",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 442399,
+      "sha256": "80420f6e2d6ee692ed2e8682c3902aca61f1c0d581c1ea57d585b20ce36fdbdc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-named-lower-memorial.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-named-lower-memorial.png",
+      "title": "Monastery named lower memorial",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 456939,
+      "sha256": "41ce304538e88718da82e4285e575f98765743d7fc4c75190d5a50a2185265b2"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-named-public-gate.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-named-public-gate.png",
+      "title": "Monastery named public gate",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 367174,
+      "sha256": "1f57625d9883deae31949c19672f29a9d13662932ca4e6d142785e307512ac79"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-north-low-ground-receiver.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-north-low-ground-receiver.png",
+      "title": "Monastery north low ground receiver",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 478271,
+      "sha256": "ee380f1ed16dc7808772c8a63391ae2f2b61b4d67540b8f939a9d7470433eaea"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-refectory-tables.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-refectory-tables.png",
+      "title": "Monastery refectory tables",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 371342,
+      "sha256": "c92d41b92c1acb853eabd46ea59dc73cd80446b9c8c5a0a324e6aad1cd79cbcc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-service-interceptor.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-service-interceptor.png",
+      "title": "Monastery service interceptor",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 505366,
+      "sha256": "74ee81b74023a19cac47ed30cfc76a248bf484448eecf33218689dcd7e4bb1a7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-vestry-wash-trough.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-vestry-wash-trough.png",
+      "title": "Monastery vestry wash trough",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 418659,
+      "sha256": "405c6740b8f6e0920ff286d30b0e63365e3f3acd5899006b41dae058797e5bbc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-west-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-west-gate-overflow.png",
+      "title": "Monastery west gate overflow",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 536101,
+      "sha256": "8697b21f6fce5a693de53f6e8174966100dfd6ceb8297b645f92e5faf0e6eb25"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-west-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-west-herb-court-grate.png",
+      "title": "Monastery west herb court grate",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 522574,
+      "sha256": "0fc9d988eb642173d979b01af59b7886eee28759e3a994ac89475843a1a7fc0a"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-west-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/opengl/monastery-west-north-roof-spillway.png",
+      "title": "Monastery west north roof spillway",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 476091,
+      "sha256": "4f29dc7bc42d6c230bd9cec8bf97b0b72f6e2246c907b3b3cfd85b1d5b534fac"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-archive-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-archive-cupboard-enter.png",
+      "title": "Monastery archive cupboard enter",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 489694,
+      "sha256": "27a280227f0a92b2319a62de0b629f196084fece62aa32ba138ddb6e4e9eebc0"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-archive-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-archive-cupboard-inside.png",
+      "title": "Monastery archive cupboard inside",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 414794,
+      "sha256": "f1dfb2e0f0141dd7fefba5e82b72825755c95d596d1d9a51ab9c86a228725f34"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-archive-reading-table.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-archive-reading-table.png",
+      "title": "Monastery archive reading table",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 396272,
+      "sha256": "a7f02cab0d5bc9af4749f853241d00739c083d7cd844d84678f0ef7064d20aa4"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-chamber-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-chamber-cupboard-enter.png",
+      "title": "Monastery chamber cupboard enter",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 469813,
+      "sha256": "907ac7ec325a644ec93ee8f8c1db6c1ed34384afc327fc2c98d55a237bd7cc97"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-chamber-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-chamber-cupboard-inside.png",
+      "title": "Monastery chamber cupboard inside",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401363,
+      "sha256": "060ee824fe55670d9489a074438f2c6a03539c4f7cbd87eecb7c99122864cf3c"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-court-planted-soil.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-court-planted-soil.png",
+      "title": "Monastery court planted soil",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 364314,
+      "sha256": "a07a392fa571dbbe2f465e6638fd315451ffb8dd776b08e5d63cbefc2044bcf1"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-court-well-and-raised-beds.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-court-well-and-raised-beds.png",
+      "title": "Monastery court well and raised beds",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 316541,
+      "sha256": "7fc2dafccb0aa76c1ace664b00c6568f971fffd12e1abba0766d1e6b31406083"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-dorm-cupboard-enter.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-dorm-cupboard-enter.png",
+      "title": "Monastery dorm cupboard enter",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 482325,
+      "sha256": "7ebb7556d607340679eb42a25586d1a0a131821f10c22748bd00e3ad0b6c6238"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-dorm-cupboard-inside.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-dorm-cupboard-inside.png",
+      "title": "Monastery dorm cupboard inside",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401303,
+      "sha256": "45b67238e67a562cd07cc6ad201701f136c33b75e4d777bb81f4998688ec4d53"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-dormitory-beds.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-dormitory-beds.png",
+      "title": "Monastery dormitory beds",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 389103,
+      "sha256": "2fda405ac3fbbcd8c3ac2b1ac34f57ab7d8c016b9068c5743dd9c297ec2ab1c6"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-dressed-forecourt.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-dressed-forecourt.png",
+      "title": "Monastery dressed forecourt",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 386729,
+      "sha256": "a0bf85f4bb64f23321b10d5943396d7efe2daab011749af68748c83b4a69d24b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-dressed-van-approach.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-dressed-van-approach.png",
+      "title": "Monastery dressed van approach",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 470969,
+      "sha256": "507e3689398b0e61a8fc403f87a3f04719932323da03de39268a0e0d7740e052"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-east-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-east-gate-overflow.png",
+      "title": "Monastery east gate overflow",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 537267,
+      "sha256": "5e53af208c1e87c1623a5918c7e5f43087740fcb79172226e7ef7649b3b7f7a2"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-east-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-east-herb-court-grate.png",
+      "title": "Monastery east herb court grate",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 520023,
+      "sha256": "5d2574120d6a9e21eb9decbd83f671f9ac8495a297afc9e31878b9c802719aa7"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-east-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-east-north-roof-spillway.png",
+      "title": "Monastery east north roof spillway",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 437254,
+      "sha256": "8c636cce33c0d4f025b304bef2663d8dd9384cec081f1bd07321a69236e0be89"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-gatehouse-porter.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-gatehouse-porter.png",
+      "title": "Monastery gatehouse porter",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 419827,
+      "sha256": "9b2284acfee0fb9081f50f76565beaea02eca8f8afd7f353ecb4f7512c768cbe"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-herb-court-pipe-inlet.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-herb-court-pipe-inlet.png",
+      "title": "Monastery herb court pipe inlet",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 467295,
+      "sha256": "aa2a630041458fd1e3c4343e78e779b4ceb339eaacfed2fa9affb31b3af6fd60"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-named-arrival-van.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-named-arrival-van.png",
+      "title": "Monastery named arrival van",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 445133,
+      "sha256": "2ca6ea9e1929275495921de26f32fbbd62432a2779f6a14d37bcf5423a1ba799"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-named-lower-memorial.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-named-lower-memorial.png",
+      "title": "Monastery named lower memorial",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 465604,
+      "sha256": "b568b6a04dd9ff538bfa2ce7448c9bfc033ed9a6d0b48eb0f3e3ec42f18bc821"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-named-public-gate.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-named-public-gate.png",
+      "title": "Monastery named public gate",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 368542,
+      "sha256": "dcafa47b2ffe56f5e12d26fccc88a13bd054c7eaa1069e3ac488e0c7780f6420"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-north-low-ground-receiver.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-north-low-ground-receiver.png",
+      "title": "Monastery north low ground receiver",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 477881,
+      "sha256": "6ac5c9a9ecf433d7e67bebf95b91fc56bab12d0500c36239406f4bbd7cf4bb4f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-refectory-tables.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-refectory-tables.png",
+      "title": "Monastery refectory tables",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 380485,
+      "sha256": "a5f0ae2169b01b01e8243ba7c585dc135ecc35016eb9660796c4e9a552fd6d58"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-service-interceptor.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-service-interceptor.png",
+      "title": "Monastery service interceptor",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 506858,
+      "sha256": "b91e4baf302d9c7b961d63e8e92bffc67868bc6ff5ced161f2d685a3b85d7c31"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-vestry-wash-trough.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-vestry-wash-trough.png",
+      "title": "Monastery vestry wash trough",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 430240,
+      "sha256": "ba1550864f2536edeff4db0e4b0d8de6bcdbd338f6c497fec59e55cfb2d4431f"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-west-gate-overflow.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-west-gate-overflow.png",
+      "title": "Monastery west gate overflow",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 537791,
+      "sha256": "fa48953ced65e9dc575b52a98dd3181e48f83c69bdac901939cd1e35d23a8cfa"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-west-herb-court-grate.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-west-herb-court-grate.png",
+      "title": "Monastery west herb court grate",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 523119,
+      "sha256": "1928a23ebaeb8f3b7017e60a231686f3bdaa7f374ec3de5160804a3bf1c9aa48"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-west-north-roof-spillway.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/software/monastery-west-north-roof-spillway.png",
+      "title": "Monastery west north roof spillway",
+      "kind": "Monastery of Ashen Bells fitted landscape and route review in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 474718,
+      "sha256": "b15d3476600b57e15773f1ce42353a5a4da59fd06dbf230d13a855009f4e1ce8"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/structure/monastery-dressed-roadhead.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/structure/monastery-dressed-roadhead.png",
+      "title": "Monastery dressed roadhead",
+      "kind": "Monastery of Ashen Bells terrain and garden furnishing inspection",
+      "width": 1280,
+      "height": 840,
+      "bytes": 1288096,
+      "sha256": "1d32b226b10fca1c344e525368639a3de242d143d5f9f8eb529b9a2b47cb529b"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/structure/monastery-landscape-and-arrival.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/structure/monastery-landscape-and-arrival.png",
+      "title": "Monastery landscape and arrival",
+      "kind": "Monastery of Ashen Bells terrain and garden furnishing inspection",
+      "width": 1280,
+      "height": 840,
+      "bytes": 943012,
+      "sha256": "cb18d04cac1bddac09cde8ac6e8e8374a527eb4fd226f5c4cad5b206ebd56a1d"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/structure/monastery-planted-northern-hillside.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/structure/monastery-planted-northern-hillside.png",
+      "title": "Monastery planted northern hillside",
+      "kind": "Monastery of Ashen Bells terrain and garden furnishing inspection",
+      "width": 1280,
+      "height": 840,
+      "bytes": 1179670,
+      "sha256": "c5ae8a83dd222c5235715a21360664cecd0382eedbfb65aefe1fbc6f0dc469cf"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/structure/monastery-well-from-herb-aisle.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/structure/monastery-well-from-herb-aisle.png",
+      "title": "Monastery well from herb aisle",
+      "kind": "Monastery of Ashen Bells terrain and garden furnishing inspection",
+      "width": 1280,
+      "height": 840,
+      "bytes": 1151747,
+      "sha256": "4723570350ac07b99add2149f4bd374dc9f37b84074a64a700404cead85ea1bc"
+    },
+    {
+      "path": "development/levels/rebuild/monastery-landscape-pass/captures/structure/monastery-working-garden.png",
+      "url": "development/levels/rebuild/monastery-landscape-pass/captures/structure/monastery-working-garden.png",
+      "title": "Monastery working garden",
+      "kind": "Monastery of Ashen Bells terrain and garden furnishing inspection",
+      "width": 1280,
+      "height": 840,
+      "bytes": 1413635,
+      "sha256": "0a3797d32a721451e9b9acb17060f652c6a2bc89acb1063749a74a2291b1506c"
     },
     {
       "path": "development/levels/rebuild/monastery-named-pass/captures/opengl/monastery-named-arrival-van.png",

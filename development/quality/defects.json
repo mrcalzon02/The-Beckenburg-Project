@@ -8097,6 +8097,17 @@
       "action": "Prune only inactive mesh and accessor data after assembly. Verify retained live bytes, material bindings, transform paths and matched render/collision geometry.",
       "older_maps": "Recheck exact active resource identities when repeated terrain replacements approach the scene limit.",
       "evidence": "development/levels/rebuild/monastery-north-drainage-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-731",
+      "title": "Monastery forecourt and herb garden lacked founded landmarks and planting",
+      "status": "MONASTERY_TERRACE_HERB_COURT_AND_HILLSIDE_FINISHED_STAGED",
+      "affected": "WLD-10 forecourt, herb court and northern hillsides",
+      "symptom": "A bare flat-color landscape and empty beds left the working estate unfinished. The stock well rough also had gaps between masonry pieces.",
+      "cause": "The earlier passes focused on exact structure, circulation and the runoff network.",
+      "action": "Fit the canonical well with a continuous liner and coping. Ground indexed benches, rocks and vegetation, and feather the original terrain bands with a mapped surface finish.",
+      "older_maps": "Verify real root contacts, partner stone joints, kept route clearance and separate visual foliage and solid collision.",
+      "evidence": "development/levels/rebuild/monastery-landscape-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

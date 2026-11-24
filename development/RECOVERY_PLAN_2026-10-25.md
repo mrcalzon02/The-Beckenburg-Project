@@ -2391,3 +2391,7 @@ Exterior runoff checkpoint 200d09f828ab23779911859e598ee3e306ec8f70 is local. Th
 ### Monastery of Ashen Bells northern slope drainage
 
 Herb-court checkpoint e260acb3b8cf25357c9fe8e6c9cc8e1163454be7 is local. The last verified draft head is 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports multiplayer 44863686526, GPU 44863686455 and Pages 44863686232. The [northern runoff checkpoint](levels/rebuild/monastery-north-drainage-pass/checkpoint.json) fits three roof overflows to two graded channels while retaining the measured footings and bringing the live GLB back below 10 MB. Continue vegetation and textures, loose objects, authored encounters, installer and full named investigation.
+
+### Monastery of Ashen Bells landscape and herb court
+
+Northern drainage checkpoint 1c8f7ff4358a6488b4025adea0cf5e7dfa959da5 is local. The last verified draft head is 2fa53f8c5d5156c1d0ac5d548f74a09240aa3dbf. Main cb220372fb721fbe588f49d3dc488f6dbba1602d reports multiplayer 44863686526, GPU 44863686455 and Pages 44863686232. The [landscape checkpoint](levels/rebuild/monastery-landscape-pass/checkpoint.json) grounds the canonical well and benches, plants the court and arrival shoulders, and replaces the flat ground colors without changing physical terrain. Continue the perimeter horizon and building finishes, loose props, authored encounters, full named investigation and installer.

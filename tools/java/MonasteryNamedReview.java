@@ -53,7 +53,7 @@ final class MonasteryNamedReview {
         require(campaign.indexOf("WLD-10") == 18 && campaign.get(17).equals("WLD-09") && campaign.get(19).equals("WLD-11"),
             "Ordinary campaign order changed");
         for (var name : List.of("source-hashes.tsv","runtime-input.tsv","door-schedule.tsv","electrical-schedule.tsv",
-                                "monastery-with-north-drainage.glb","monastery-with-north-drainage.hcs2")) {
+                                "monastery-with-landscape.glb","monastery-with-landscape.hcs2")) {
             var resource = MonasteryNativeLevel.class.getResource(RESOURCE + name);
             require(resource != null && resource.getProtocol().equals("jar"), "Resource is outside the game archive " + name);
         }
@@ -123,6 +123,7 @@ final class MonasteryNamedReview {
         capture(map,new Vec(29,0,35.5),new Vec(31.12,-.042,35.5),captures.resolve("monastery-east-herb-court-grate.png"));
         capture(map,new Vec(16.55,0,25),new Vec(15.7,.045,22.82),captures.resolve("monastery-herb-court-pipe-inlet.png"));
         captureNorth(map,captures);
+        verifyLandscape(map,captures,report);
         if (!gpu) {
             BlackwaterNamedReview.solo(map,report);
             MonasteryPowerReview.live(scene,report,site);
@@ -217,7 +218,33 @@ final class MonasteryNamedReview {
             "North drainage exposed an unintended opening");
     }
 
+    private static void verifyLandscape(HouseMap map,Path captures,List<String> report) throws Exception {
+        var ground=map.nativeInvestigation().physics();
+        require(!ground.clearSight(new Vec(19.4,.35,35.2),new Vec(22.2,.35,35.2)),
+            "Court well lost its rendered masonry collision");
+        var approach=List.of(new Vec(29,0,35.5),new Vec(23.0,0,35.5));
+        var back=new ArrayList<>(approach);
+        Collections.reverse(back);
+        for (double height:new double[]{HunterPosture.STANDING_HEIGHT,HunterPosture.CROUCH_HEIGHT}) {
+            NativeSchoolInteriorReview.walk(map,approach,height,"garden aisle to the fitted well");
+            NativeSchoolInteriorReview.walk(map,back,height,"return from the fitted well to the court aisle");
+        }
+        daylight(map,new Vec(27.3,0,77.2),new Vec(29,1.2,65.5),captures.resolve("monastery-dressed-forecourt.png"));
+        daylight(map,new Vec(37.2,0,73.4),new Vec(34,1.1,79.3),captures.resolve("monastery-dressed-van-approach.png"));
+        daylight(map,new Vec(25.3,0,35.5),new Vec(20.8,1,35.2),captures.resolve("monastery-court-well-and-raised-beds.png"));
+        daylight(map,new Vec(29,0,44.1),new Vec(34.9,.55,40.5),captures.resolve("monastery-court-planted-soil.png"));
+        report.add("landscape_court_well_and_routes\tActual well masonry collision and standing/crouched aisle approach in both directions");
+    }
+
+    private static void daylight(HouseMap map,Vec at,Vec target,Path image) throws Exception {
+        capture(map,at,target,image,true);
+    }
+
     private static void capture(HouseMap map,Vec at,Vec target,Path image) throws Exception {
+        capture(map,at,target,image,false);
+    }
+
+    private static void capture(HouseMap map,Vec at,Vec target,Path image,boolean daylight) throws Exception {
         require(map.traversable(at.x(),at.y(),at.z()), "Unsupported named inspection " + at);
         var r = new SceneRenderer();
         r.setRenderSize(960,640);
@@ -227,7 +254,8 @@ final class MonasteryNamedReview {
         r.eyeHeight = at.y()+HunterPosture.STANDING_EYE;
         r.yaw = Math.atan2(target.x()-at.x(),target.z()-at.z());
         r.pitch = Math.atan2(target.y()-r.eyeHeight,Math.hypot(target.x()-at.x(),target.z()-at.z()));
-        r.lamp = true;
+        r.lamp = !daylight;
+        if (daylight) r.weatherModule().setTimeOfDay(.50);
         r.setLampHardware(EquipmentTiers.Tier.III,false);
         NativeSchoolInteriorReview.drawFrame(r,map,image);
     }

@@ -9310,3 +9310,7 @@ Fit three existing roof sumps to overflow sills and two separate graded northern
 ### DEV-730 · Detached GLB terrain buffers accumulated across saved revisions
 
 The northern terrain replacement prunes inactive static mesh data. A direct binary comparison covers the remaining live mesh accessors, material and texture bindings, and transforms. [Verification checkpoint](../levels/rebuild/monastery-north-drainage-pass/checkpoint.json)
+
+### DEV-731 · Monastery arrival and garden lacked founded landmarks and planting
+
+Dress the real terrace and stone beds with surveyed asset placements. Fit the canonical well with continuous stone and coping. Keep native terrain, runoff and ordinary walking clearance while softening the surface finish. [Verification checkpoint](../levels/rebuild/monastery-landscape-pass/checkpoint.json)
