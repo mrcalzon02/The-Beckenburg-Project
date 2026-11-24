@@ -1555,3 +1555,7 @@ The old terrain trench under the catwalk and the overcut outside the lower hall 
 ### Blackwater Hydroelectric Dam isolated downstream water
 
 Fifteen new closed pieces form the founded invert, side walls and terminal bays below the real catwalk. The current water stands 0.36 m deep behind both closed sluices. Two renderers pass exact wet and dry checks, with 42 submerged body controls, 36 blocked boundary rays and six guarded crossing checks. All prior standing, flight and joined route counts still pass. [Plan and section](dam-tailrace-pass/wld-09/channel-plan.svg) · [Checkpoint](dam-tailrace-pass/checkpoint.json)
+
+### Blackwater Hydroelectric Dam valley and physical limits
+
+The saved Dam rim now joins a continuous modeled valley with a road bend and downstream depression. The closed road gate sits beyond the canonical van on the measured level apron. Retaining spans and shore grilles block bodies at 648 stations, including elevated poses and both sweep directions where feet remain supported. Both game renderers retain the isolated water checks. All 6,087 standing samples, 13 ordinary links, 13 flights, six vertical links and five joined walks pass. [Valley plan](dam-valley-pass/wld-09/valley-plan.svg) · [Checkpoint](dam-valley-pass/checkpoint.json)

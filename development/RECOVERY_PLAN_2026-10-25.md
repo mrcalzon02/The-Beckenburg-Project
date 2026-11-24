@@ -2295,3 +2295,7 @@ Northwatch named commit 79cf1ba03b05b3e14c2f3aeefa31ef9c329bbf8b and gallery 454
 ### Blackwater Dam isolated downstream water
 
 East bank commit eccc4e64925a5724fef3bfd3ac22a38f5da63a1d and gallery 45414330303 passed on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d remains at the prior verified recovery baseline. The [downstream checkpoint](levels/rebuild/dam-tailrace-pass/checkpoint.json) fits and verifies the physically isolated water reach in both game renderers and native movement. Continue the covered connection, upstream reservoir, wider valley and playable site limits before named runtime promotion.
+
+### Blackwater Dam valley and founded site limits
+
+Tailrace commit d28cdbb2a07fd5c00aafb1a8819dbd7ce0a4fc6a and gallery 45417734486 passed on draft PR 86. Main cb220372fb721fbe588f49d3dc488f6dbba1602d remains at the previous verified recovery baseline. The [valley checkpoint](levels/rebuild/dam-valley-pass/checkpoint.json) verifies an authored extended terrain, closed boundaries, retained water and the existing native routes. The upstream reservoir and full named runtime still require integration.

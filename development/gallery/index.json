@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12106,
+  "count": 12112,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -112824,6 +112824,66 @@
       "height": 850,
       "bytes": 862708,
       "sha256": "e6ce9d1cc735cdb04d4728e6e14d750e28781f3cb423d73abe8d0dbd26d3c975"
+    },
+    {
+      "path": "development/levels/rebuild/dam-valley-pass/wld-09/captures/opengl/bounded-dam-water.png",
+      "url": "development/levels/rebuild/dam-valley-pass/wld-09/captures/opengl/bounded-dam-water.png",
+      "title": "Bounded dam water",
+      "kind": "Blackwater Dam valley and retained water in the OpenGL game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 293260,
+      "sha256": "155d46c8ad8e6011e62e6bc7a42acc02323cc48782597a2287f06b05f25c4e5d"
+    },
+    {
+      "path": "development/levels/rebuild/dam-valley-pass/wld-09/captures/software/bounded-dam-water.png",
+      "url": "development/levels/rebuild/dam-valley-pass/wld-09/captures/software/bounded-dam-water.png",
+      "title": "Bounded dam water",
+      "kind": "Blackwater Dam valley and retained water in the software game renderer",
+      "width": 960,
+      "height": 640,
+      "bytes": 297758,
+      "sha256": "cb51d1fee0435c00bfdd3cbdd2b68ffbce3e8e7eebb5ccb9be1ac9288ef9e2e6"
+    },
+    {
+      "path": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/arrival-standing.png",
+      "url": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/arrival-standing.png",
+      "title": "Arrival standing",
+      "kind": "Blackwater Dam joined valley and founded perimeter architectural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 834622,
+      "sha256": "382959428ed516b614533da7f65226962abea663a23aa74bd83805897ccdae0f"
+    },
+    {
+      "path": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/blackwater-valley.png",
+      "url": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/blackwater-valley.png",
+      "title": "Blackwater valley",
+      "kind": "Blackwater Dam joined valley and founded perimeter architectural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1177068,
+      "sha256": "8530740330c39b55c4f33f5c17a8d4aa4e133e06d763511b8ce02bd978c0836a"
+    },
+    {
+      "path": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/east-cut-and-tailrace.png",
+      "url": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/east-cut-and-tailrace.png",
+      "title": "East cut and tailrace",
+      "kind": "Blackwater Dam joined valley and founded perimeter architectural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1126068,
+      "sha256": "1d453142a2442e95bebd35743229b6ad9f4cbce1d2b87e419938b589f0d61f59"
+    },
+    {
+      "path": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/south-roadhead.png",
+      "url": "development/levels/rebuild/dam-valley-pass/wld-09/captures/structure/south-roadhead.png",
+      "title": "South roadhead",
+      "kind": "Blackwater Dam joined valley and founded perimeter architectural review",
+      "width": 1200,
+      "height": 850,
+      "bytes": 1263618,
+      "sha256": "2ef47eca1d09a81071af7991b868b1020c5e518cd4213dea68e996bfd907377f"
     },
     {
       "path": "development/levels/rebuild/lookout-case-pass/captures/lookout-cargo-approach.png",

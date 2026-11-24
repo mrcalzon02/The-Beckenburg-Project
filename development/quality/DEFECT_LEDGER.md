@@ -9206,3 +9206,7 @@ The saved topology restores the old exterior stair trench and the overshoot besi
 ### DEV-703 · Blackwater Dam needed a contained downstream reach
 
 The restored east bank now supports a cast channel and two fitted closed sluices. Shared software and OpenGL checks verified the wet invert, dry negative control, retaining faces and guarded catwalk. The upstream connection, reservoir and farther downstream terrain remain part of the Dam’s open civil layout. [Evidence](../levels/rebuild/dam-tailrace-pass/checkpoint.json)
+
+### DEV-704 · Blackwater Dam valley edges and roadhead
+
+The rebuilt valley follows the exact saved terrain rim. Founded concrete retaining spans, shore grilles and the reused steel roadhead leaves contain the compound. The existing cargo route and isolated water remain clear. The exact station measurements include grounded, crouched and elevated body tests. [Evidence](../levels/rebuild/dam-valley-pass/checkpoint.json)
