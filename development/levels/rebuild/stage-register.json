@@ -3568,6 +3568,7 @@
             "development/levels/rebuild/mine-yard-pass/checkpoint.json"
           ],
           "defects": [
+            "DEV-663",
             "DEV-660",
             "DEV-661",
             "DEV-656",
@@ -3575,12 +3576,13 @@
             "DEV-546",
             "DEV-547"
           ],
-          "next_action": "Both shaft handrails and lower guards are mounted and verified. Complete whole-site enclosure, lighting, drainage and finish checks."
+          "next_action": "Resolve the measured lower slab and landing overlap as a complete floor assembly. Then complete enclosure, drainage and finish checks."
         },
         "S06": {
           "status": "IN_PROGRESS",
           "source_sha": null,
           "evidence": [
+            "development/levels/rebuild/mine-distribution-pass/checkpoint.json",
             "development/levels/rebuild/mine-service-yard-pass/checkpoint.json",
             "development/levels/rebuild/mine-cover-pass/checkpoint.json",
             "development/levels/rebuild/mine-stair-threshold-pass/checkpoint.json"
@@ -3590,7 +3592,7 @@
             "DEV-659",
             "DEV-658"
           ],
-          "next_action": "Service-yard generator, breaker and local lighting pass the staged native and LAN checks. Route supported downstream feeders and fit the working lights and switches. Verify blackouts and restored power in the workings."
+          "next_action": "The service source, twelve switched branches, all thirteen lamps, ghost trip, and live lower-room switch reconnect are verified on the native stage. Repeat power, safe-zone and evidence behavior through named map selection."
         },
         "S07": {
           "status": "IN_PROGRESS",

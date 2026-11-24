@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 11599,
+  "count": 11636,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -111664,6 +111664,376 @@
       "height": 580,
       "bytes": 392531,
       "sha256": "abe134edd80a3dc919867c3ec84cf8c3f7ae962aea53377e966f8ae8b66a6cfa"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-705-closed.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-705-closed.png",
+      "title": "Mine 705 closed",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 443595,
+      "sha256": "1b6efb50845074a12da9ee3ec3802ede980b6124d45af7e111040a668438f6d6"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-705-open.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-705-open.png",
+      "title": "Mine 705 open",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 489985,
+      "sha256": "3527e01a748aa5bcdfda42e70c2e9bc9737b389ab4ffbb3ba4bac62f19bffd73"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-706-closed.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-706-closed.png",
+      "title": "Mine 706 closed",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 486847,
+      "sha256": "1edd8781cc7b5fd45b3ac20275afbb3d965f39917cba21c73d94e1221072a101"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-706-open.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-706-open.png",
+      "title": "Mine 706 open",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 457347,
+      "sha256": "96ec197440953d94fafe067646ef3f4f7aedb87ffdf652b4f3c8f8d0032643a9"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-707-closed.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-707-closed.png",
+      "title": "Mine 707 closed",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 522148,
+      "sha256": "7649c7db09a11ff4e8015d34dfac2c67eeaa4a9d2edec98755585363c4fa6dd2"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-707-open.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-707-open.png",
+      "title": "Mine 707 open",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 481845,
+      "sha256": "5c28ccbec0231b3870cdbe2e056e22664f23e1f09eb42c62d18eb7db5a7f2aa9"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-assay-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-assay-cupboard-inside.png",
+      "title": "Mine assay cupboard inside",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 404686,
+      "sha256": "36973d31b593b4d9c5c47ff44bf531651dece24914bc88472271364e3d2c61b8"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-assay-powered.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-assay-powered.png",
+      "title": "Mine assay powered",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 196210,
+      "sha256": "43e3b9b383b1b3f1395e68ea8afac666528417ed1b0d26055d4c351d7ddd218d"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-assay-tripped.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-assay-tripped.png",
+      "title": "Mine assay tripped",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 146758,
+      "sha256": "d23412a4d7465f6cc3d32b3d63d87c6fc27f6d24e8c3cc3836560c122d1ef3a8"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-haul-powered.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-haul-powered.png",
+      "title": "Mine haul powered",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 187713,
+      "sha256": "d3fa48e16f962d5eb095cbdf6681f534442f3b44915245e6b3eda289df647072"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-haul-tripped.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-haul-tripped.png",
+      "title": "Mine haul tripped",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 146062,
+      "sha256": "c8478152f7a091e5e18d3c87a8a17b03bad8eacdbffe6944d07210122c4b4c89"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-haul-wall-handrails.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-haul-wall-handrails.png",
+      "title": "Mine haul wall handrails",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 304046,
+      "sha256": "71891d42940f08107038d053fad2c54007596923145399907d57fbeefd422f36"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-lower-guard-approach.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-lower-guard-approach.png",
+      "title": "Mine lower guard approach",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 381423,
+      "sha256": "9ae77497b46d6dcaee0ebf348d39b1d95da03e80133388c57655db9643b01719"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-lower-haul-stair.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-lower-haul-stair.png",
+      "title": "Mine lower haul stair",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 326150,
+      "sha256": "b9c6bc53e05be7f0fdf378fcf9d70fdf2ce262a1fdfffdf678efe0c861073eb1"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-lower-powered.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-lower-powered.png",
+      "title": "Mine lower powered",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 186728,
+      "sha256": "f4c989b2811a4e5e5006fafa1bf66106dcdd475ed322c206876e6c348d4fe97a"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-lower-tripped.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-lower-tripped.png",
+      "title": "Mine lower tripped",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 151934,
+      "sha256": "ea37b806a99b86b34814816b0a870e1a39a1ca10c155fe5dfc532adb9ef104c2"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-shack-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-shack-cupboard-inside.png",
+      "title": "Mine shack cupboard inside",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 385588,
+      "sha256": "e7281b39faba812000496b8436c4614e1227c3239c523b90b695577ccf56fe01"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/mine-wash-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/mine-wash-cupboard-inside.png",
+      "title": "Mine wash cupboard inside",
+      "kind": "Dead Man’s Claim working electrical distribution in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 396079,
+      "sha256": "8c46504d89a0eb45c4e0af322f67a54bd6d147fe9a149e39cb1757d6239fd85f"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-705-closed.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-705-closed.png",
+      "title": "Mine 705 closed",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 492352,
+      "sha256": "644c0b544c89f73fa53d1c233d3aae173b6cd52767db4768cbcd59a072f4b068"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-705-open.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-705-open.png",
+      "title": "Mine 705 open",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 491908,
+      "sha256": "9752dddc95d39ca51881629c3b40894af8740029f9894b5cea17679f59f61abd"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-706-closed.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-706-closed.png",
+      "title": "Mine 706 closed",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 479180,
+      "sha256": "f68fa2c6a6c2acf47d1c59f75a790399eb3f55fe31b8904b53f0fda84f4aa138"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-706-open.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-706-open.png",
+      "title": "Mine 706 open",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 410062,
+      "sha256": "63c47a13ccf3a9397120139037ac62f56840c2d2d64b2e0dc7e6097db94a1254"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-707-closed.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-707-closed.png",
+      "title": "Mine 707 closed",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 515299,
+      "sha256": "eff58707f6f333e30ce97eea191ec98384b604b568ad306080a9838472da2e5d"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-707-open.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-707-open.png",
+      "title": "Mine 707 open",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 465217,
+      "sha256": "0662defed0cd476c038e6bf841f79b49a2d5ddce064656e200abc7336897ed1a"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-assay-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-assay-cupboard-inside.png",
+      "title": "Mine assay cupboard inside",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 401923,
+      "sha256": "b03fcd5c1da5c3c2d1c373568d0cb48fbc02f35b7747d4bc90e5c9907fa73fd5"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-assay-powered.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-assay-powered.png",
+      "title": "Mine assay powered",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 184739,
+      "sha256": "52e99bc7562cc03d7697b24cf54bedcaaf749efc27ea25826f49712881c6f2a0"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-assay-tripped.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-assay-tripped.png",
+      "title": "Mine assay tripped",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 147714,
+      "sha256": "22401c6c7325885bac041c83d15a79e255061cd18627ada3ea194111197432eb"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-haul-powered.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-haul-powered.png",
+      "title": "Mine haul powered",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 187418,
+      "sha256": "b71d0dfac0b208ba8af73133937240382c03c225ce24cd95bdbb3382b12dc0c3"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-haul-tripped.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-haul-tripped.png",
+      "title": "Mine haul tripped",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 140902,
+      "sha256": "fe0a6f315231d2a3021b317bc4d25cbd5d128a4954a34089fa7c91994c992f46"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-haul-wall-handrails.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-haul-wall-handrails.png",
+      "title": "Mine haul wall handrails",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 296752,
+      "sha256": "a2ad64104567e9c4ed0fc301558bf1f66e9a0e7b278c71c5621159366f767ad9"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-lower-guard-approach.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-lower-guard-approach.png",
+      "title": "Mine lower guard approach",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 376313,
+      "sha256": "947bdab60d7420baa8d13b1d31ee18e4d5c62490aee7a7f83561f8047053d85a"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-lower-haul-stair.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-lower-haul-stair.png",
+      "title": "Mine lower haul stair",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 319641,
+      "sha256": "bcc6a4fc18379a51bc909f6db3a3ab736fa2bfeed30962368a254a8b1d2928e0"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-lower-powered.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-lower-powered.png",
+      "title": "Mine lower powered",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 165001,
+      "sha256": "e5de5a3ecf27aecaecf63994d8f3d001621bb3728194004bfa853db807e6607a"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-lower-tripped.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-lower-tripped.png",
+      "title": "Mine lower tripped",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 142021,
+      "sha256": "830b2089f0ca379c0066226e7f0d3d2c78161c7f0f383b9209a136b376f0d5e5"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-shack-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-shack-cupboard-inside.png",
+      "title": "Mine shack cupboard inside",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 384430,
+      "sha256": "249e969ca9de7e79f2f9336234e884ec91b225f1605d34849c1b65fcbb3af728"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-wash-cupboard-inside.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/opengl/mine-wash-cupboard-inside.png",
+      "title": "Mine wash cupboard inside",
+      "kind": "Dead Man’s Claim working electrical distribution in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 394170,
+      "sha256": "587bc62fc71428e45eba005331b2a95a0e3b80654a104676f4f2fe0fab20c9d9"
+    },
+    {
+      "path": "development/levels/rebuild/mine-distribution-pass/captures/structure/haul-shaft-service-raceway.png",
+      "url": "development/levels/rebuild/mine-distribution-pass/captures/structure/haul-shaft-service-raceway.png",
+      "title": "Haul shaft service raceway",
+      "kind": "Dead Man’s Claim haul shaft electrical raceway structural cutaway",
+      "width": 1350,
+      "height": 900,
+      "bytes": 1023179,
+      "sha256": "04a77443c7943708cbcd0181c7c2314bd4aeb4690afc8db818b9221422ba4efe"
     },
     {
       "path": "development/levels/rebuild/mine-handrail-pass/captures/mine-706-open.png",

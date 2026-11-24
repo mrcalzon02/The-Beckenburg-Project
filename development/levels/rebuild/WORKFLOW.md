@@ -1467,3 +1467,7 @@ Continuous wall-mounted rails follow both flights of each enclosed shaft and the
 ### Dead Man's Claim service-yard source
 
 A formed slab bears on the saved service yard and slopes into the opening. Timber framing supports the weather roof, plant backing and clipped lamp conduit. Both approaches reach the open front on existing ground. The staged Mine passes 21 routes, the retained safe zones and the live source/trip/reset scenario. Downstream feeders and working lamps remain open. [Service-yard evidence](mine-service-yard-pass/checkpoint.json)
+
+### Dead Man’s Claim working circuits
+
+A buried run feeds the surface buildings and headhouse. The underground trunk uses measured haul shaft brackets and transfers beneath the existing passage lintels. A sleeve at the fixed lower-chamber wall carries the final drop. Each of the twelve controls operates its room light, and the shed lamp follows main supply. The staged source, reset, and lower switch state survived a real ghost trip and reconnect. [Distribution checkpoint](mine-distribution-pass/checkpoint.json)

@@ -2167,3 +2167,7 @@ Mine cover commit aa9f14277e6e0c2ccba1adca0d505a2081ffad54 is verified on draft 
 ### Mine service-yard supply
 
 Rail and guard commit 94cd83feff55fd338cfb899a37d9c0e4203b8d59 is verified on draft PR 86. Development gallery run 45342025663 passed. The [service-yard checkpoint](levels/rebuild/mine-service-yard-pass/checkpoint.json) adds a reachable, supported generator and breaker with a working local lamp. Software and RTX 5070 OpenGL passed on the exact stage. Four TCP peers verified a ghost trip, independent generator stop and restart, and aimed breaker reset. Continue with supported feeders and switched loads in the workings, then enclosure, drainage and named game acceptance.
+
+### Mine working distribution
+
+Mine service commit c790f5b5fc270e266bbad68593c56f1fd147c10d is verified on draft PR 86. Gallery 45343459683 passed. The [distribution checkpoint](levels/rebuild/mine-distribution-pass/checkpoint.json) verifies twelve room switches and thirteen loads in software and RTX 5070 OpenGL, plus a live lower-room reconnect with the breaker tripped. Rebuild the coincident lower chamber landing and floor pieces as one slab, then complete enclosure, drainage and named game acceptance.

@@ -9034,3 +9034,9 @@ Two continuous guards are bolted onto measured tread and landing surfaces. Stand
 ### DEV-662 Mine had no reachable remote power source or working distribution
 
 The van-facing shed now houses a supported generator, distribution bank and powered yard lamp. In the staged four-peer case, a ghost trips the breaker. The generator can stop and restart while it stays tripped. A player must reset the breaker at the fitted panel. Working-area distribution remains open. [Evidence](../levels/rebuild/mine-service-yard-pass/checkpoint.json)
+
+The [distribution follow-up](../levels/rebuild/mine-distribution-pass/checkpoint.json) connects all twelve switched rooms to the service source and verifies all thirteen powered fixtures. A four-peer reconnect preserves the lower-room switch, running source, tripped breaker and supported body position.
+
+### DEV-663 Lower Mine landing has coincident walking surfaces
+
+At X5, Z26.7, the lower slab and two leftover stair-landing meshes each return the same Y−10.00 m top face. An additional route-era bearing remains at the first riser. The powered view records the visible speckling before replacement. [Reproduction checkpoint](../levels/rebuild/mine-distribution-pass/checkpoint.json)

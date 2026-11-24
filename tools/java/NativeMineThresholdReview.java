@@ -149,9 +149,12 @@ public final class NativeMineThresholdReview {
             auditRails(map,scene,packet,captures,evidence);
         boolean refuges=!HidingBudget.candidates(level).isEmpty();
         if(refuges)NativeSchoolInteriorReview.auditWalkInCover(map,captures,evidence,"mine");
+        var switchFeet=packet.resolve("switches.tsv");
         if(map.hasGenerator())auditPower(map,captures,evidence);
+        if(Files.isRegularFile(switchFeet))auditSwitches(map,rows(switchFeet),captures,evidence);
         if(List.of(args).contains("--lan")){
             live(level,scene,evidence);
+            if(Files.isRegularFile(switchFeet))liveSwitches(level,scene,rows(switchFeet),evidence);
             if(refuges)liveCover(level,scene,evidence);
         }
         NativeSchoolInteriorReview.exportTriangles(scene,Path.of(args[1]));
@@ -307,6 +310,64 @@ public final class NativeMineThresholdReview {
         }
     }
 
+    private static void auditSwitches(HouseMap map,List<String[]> positions,Path captures,List<String> report)
+            throws Exception{
+        require(positions.size()==12,"Expected twelve independently mounted Mine room switches");
+        var lights=new RoomLighting();
+        var fixtures=new FixtureLighting(map);
+        for(var row:positions){
+            int room=Integer.parseInt(row[0]);
+            var at=point(row,1);
+            var sw=map.level().socket("switch",room);
+            var load=map.level().socket("light",room);
+            require(sw!=null&&load!=null,"Missing physical Mine switch or connected fixture for "+room);
+            // The shaft occupies the middle of the haul chamber. Follow the clear west aisle.
+            var guide=room==4?List.of(map.spawn(room),new Vec(22,-6,31),at):List.of(map.spawn(room),at);
+            walkBoth(map,guide,sw.id()+" operating position");
+            var focus=powerFocus(map,at,sw);
+            require(focus!=null&&focus.kind()==InteractionFocus.Kind.SWITCH&&focus.id().equals(Integer.toString(room)),
+                "Mine circuit "+room+" misses aimed focus from "+at+": "+focus);
+            double dx=sw.x()-at.x(),dz=sw.z()-at.z();
+            require(lights.aimed(map,at.x(),at.y(),at.z(),Math.atan2(dx,dz))==room,
+                "Mine circuit "+room+" is outside shared switch reach");
+            fixtures.frame(lights,0);
+            double supplied=fixtureEnergy(fixtures,load);
+            require(!lights.toggle(room),"Mine switch did not turn off its room");
+            fixtures.frame(lights,0);
+            double switched=fixtureEnergy(fixtures,load);
+            require(supplied>1.25*switched,"Mine switch failed to darken its actual fixture "+load.id()+" "+supplied+" / "+switched);
+            require(lights.toggle(room),"Mine switch failed to restore the circuit");
+            fixtures.frame(lights,0);
+            require(Math.abs(supplied-fixtureEnergy(fixtures,load))<.0001,"Mine switch did not restore the original output");
+            report.add(sw.id()+"\t"+supplied+" supplied / "+switched+" locally switched off; aimed reach and both-posture approach pass");
+        }
+        for(boolean powered:new boolean[]{true,false}){
+            lights.setBreaker(powered);
+            reviewCircuitView(map,lights,new Vec(43.9,0,54.4),2.15,"assay",powered,captures);
+            reviewCircuitView(map,lights,new Vec(24.2,-6,30.4),1.7,"haul",powered,captures);
+            reviewCircuitView(map,lights,new Vec(15.2,-10,33.8),-2.3,"lower",powered,captures);
+        }
+    }
+
+    private static double fixtureEnergy(FixtureLighting fixtures,Socket load){
+        return fixtures.sampleNormal(load.room(),load.x(),load.y()-.55,load.z(),0,1,0).energy();
+    }
+
+    private static void reviewCircuitView(HouseMap map,RoomLighting lights,Vec at,double yaw,String room,
+            boolean powered,Path captures)throws Exception{
+        require(map.traversable(at.x(),at.y(),at.z()),"Unsupported Mine circuit camera "+at);
+        var renderer=new SceneRenderer();
+        renderer.setRenderSize(880,580);
+        renderer.setPsxPreset(PsxPipeline.Preset.OFF);
+        renderer.roomLights=lights;
+        renderer.x=at.x();
+        renderer.z=at.z();
+        renderer.eyeHeight=at.y()+HunterPosture.STANDING_EYE;
+        renderer.yaw=yaw;
+        renderer.pitch=-.02;
+        NativeSchoolInteriorReview.drawFrame(renderer,map,captures.resolve("mine-"+room+(powered?"-powered":"-tripped")+".png"));
+    }
+
     private static InteractionFocus.Target powerFocus(HouseMap map,Vec at,Socket socket){
         double dx=socket.x()-at.x(),dz=socket.z()-at.z();
         double yaw=Math.atan2(dx,dz),pitch=Math.atan2(socket.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
@@ -323,9 +384,9 @@ public final class NativeMineThresholdReview {
         var generator=map.level().socket("generator",13);
         var breaker=RoomLighting.breaker(map);
         var lights=(RoomLighting)NativeSchoolInteriorReview.field(host,"lights");
-        at=walkOperator(operator,at,28,72.20);
-        at=walkOperator(operator,at,generator.x(),72.20);
-        at=walkOperator(operator,at,generator.x(),generator.z()+1.18);
+        at=walkPeer(operator,0,at,28,72.20);
+        at=walkPeer(operator,0,at,generator.x(),72.20);
+        at=walkPeer(operator,0,at,generator.x(),generator.z()+1.18);
         usePower(map,operator,at,generator);
         witness.awaitExact("SOURCE|0");
         require(!lights.sourceRunning()&&!lights.breaker()&&!lights.supplied(),"Mine source stop changed the tripped breaker");
@@ -333,8 +394,8 @@ public final class NativeMineThresholdReview {
         usePower(map,operator,at,generator);
         witness.awaitExact("SOURCE|1");
         require(lights.sourceRunning()&&!lights.breaker()&&!lights.supplied(),"Mine generator restart bypassed the tripped breaker");
-        at=walkOperator(operator,at,breaker.x(),generator.z()+1.18);
-        at=walkOperator(operator,at,breaker.x(),breaker.z()+1.18);
+        at=walkPeer(operator,0,at,breaker.x(),generator.z()+1.18);
+        at=walkPeer(operator,0,at,breaker.x(),breaker.z()+1.18);
         usePower(map,operator,at,breaker);
         witness.awaitExact("LIGHTS|111111111111|1");
         require(lights.supplied(),"Mine physical breaker reset did not restore supply");
@@ -345,24 +406,106 @@ public final class NativeMineThresholdReview {
         report.add("staged_tcp_mine_power\tGhost tripped the Mine breaker, a peer walked from cargo to the service shed, stopped and restarted the generator, then reset the breaker; witness and view resync confirmed both states");
     }
 
-    private static Vec walkOperator(Peer operator,Vec at,double x,double z)throws Exception{
+    private static Vec walkPeer(Peer operator,int seat,Vec at,double x,double z)throws Exception{
         for(int step=0;step<60;step++){
             double dx=x-at.x(),dz=z-at.z(),distance=Math.hypot(dx,dz);
-            if(distance<.10)return at;
+            if(distance<.165)return at;
             double scale=Math.min(100/distance,310);
-            at=NativeSchoolInteriorReview.step(operator,0,(int)Math.round(dx*scale),(int)Math.round(dz*scale));
+            at=NativeSchoolInteriorReview.step(operator,seat,(int)Math.round(dx*scale),(int)Math.round(dz*scale));
         }
         throw new AssertionError("Mine operator cannot walk to "+x+","+z+" from "+at);
     }
 
     private static void usePower(HouseMap map,Peer operator,Vec at,Socket socket)throws Exception{
         var focus=powerFocus(map,at,socket);
-        require(focus!=null&&focus.id().equals(socket.id()),"Live Mine interaction missed "+socket.id()+" from "+at+": "+focus);
+        String expected=socket.type().equals("switch")?Integer.toString(socket.room()):socket.id();
+        require(focus!=null&&focus.id().equals(expected),"Live Mine interaction missed "+socket.id()+" from "+at+": "+focus);
         double dx=socket.x()-at.x(),dz=socket.z()-at.z();
         double yaw=Math.atan2(dx,dz),pitch=Math.atan2(socket.y()-at.y()-HunterPosture.STANDING_EYE,Math.hypot(dx,dz));
         operator.client.turn(Math.floorMod((int)Math.round(Math.toDegrees(yaw)),360));
         operator.client.interact(focus,yaw,pitch);
         operator.awaitExact("ACCEPT|INTERACT|"+focus.name());
+    }
+
+    private static void liveSwitches(LevelDefinition level,NativeInvestigationScene scene,List<String[]> positions,
+            List<String> report)throws Exception{
+        var map=new HouseMap(HouseMap.Site.USER,level,null,scene);
+        try(var host=new LanHost("127.0.0.1",0,GhostIdentity.Type.SPIRIT,CustomContract.standard(3),map);
+            var assay=new Peer(host,false,"Assay");
+            var lower=new Peer(host,false,"Lower workings");
+            var witness=new Peer(host,false,"Witness");
+            var ghost=new Peer(host,true,"Ghost")){
+            for(var peer:List.of(assay,lower,witness,ghost)){
+                peer.awaitExact("SITE|USER|"+level.revision());
+                peer.client.ready();
+            }
+            assay.awaitExact("LOBBY|3|HUMAN|4|WAITING");
+            assay.client.start();
+            assay.await("INFO|mission started");
+            var lights=(RoomLighting)NativeSchoolInteriorReview.field(host,"lights");
+            var assayFeet=reachCircuit(map,assay,0,1,positions);
+            var lowerFeet=reachCircuit(map,lower,1,9,positions);
+            var lowerSwitch=level.socket("switch",9);
+            usePower(map,assay,assayFeet,level.socket("switch",1));
+            witness.awaitExact("LIGHTS|101111111111|1");
+            require(!lights.on(1)&&lights.on(9)&&lights.supplied(),"Assay switch changed another circuit or the supply");
+            usePower(map,lower,lowerFeet,lowerSwitch);
+            witness.awaitExact("LIGHTS|101111111011|1");
+            require(!lights.on(1)&&!lights.on(9)&&lights.supplied(),"Lower switch changed another circuit or the supply");
+            Thread.sleep(400);
+            usePower(map,assay,assayFeet,level.socket("switch",1));
+            witness.awaitExact("LIGHTS|111111111011|1");
+            usePower(map,lower,lowerFeet,lowerSwitch);
+            witness.awaitExact("LIGHTS|111111111111|1");
+            ghost.client.viewGhost3D();
+            ghost.awaitExact("ACCEPT|GVIEW3D");
+            ghost.await("GPOSE|");
+            NativeSchoolInteriorReview.ghostTrip(host,witness,ghost);
+            Thread.sleep(400);
+            usePower(map,lower,lowerFeet,lowerSwitch);
+            witness.awaitExact("LIGHTS|111111111011|0");
+            require(!lights.on(9)&&lights.sourceRunning()&&!lights.supplied(),"Mine switch bypassed a live breaker trip");
+
+            var ticket=lower.client.resumeTicket();
+            require(ticket!=null,"Missing lower workings resume ticket");
+            ((java.net.Socket)NativeSchoolInteriorReview.field(lower.client,"socket")).close();
+            witness.await("PEER|LOST|1");
+            var frames=new java.util.concurrent.LinkedBlockingQueue<String>();
+            try(var resumed=new LanClient("127.0.0.1",host.port(),ticket,frames::offer)){
+                awaitReconnect(frames,"INFO|mission resumed");
+                resumed.view3D();
+                awaitReconnect(frames,"ACCEPT|VIEW3D");
+                awaitReconnect(frames,"SITE|USER|"+level.revision());
+                awaitReconnect(frames,"LIGHTS|111111111011|0");
+                awaitReconnect(frames,"SOURCE|1");
+                var feet=NativeSchoolInteriorReview.body(awaitReconnect(frames,"BODY|1|"));
+                require(feet.equals(lowerFeet),"Mine reconnect lost the supported body "+feet+" / "+lowerFeet);
+            }
+            report.add("staged_tcp_mine_switches\tAimed assay and lower-working switches replicate independently; a lower switch stays off across ghost trip and reconnect with running source, open breaker and exact supported pose");
+        }
+    }
+
+    private static Vec reachCircuit(HouseMap map,Peer peer,int seat,int room,List<String[]> positions)throws Exception{
+        for(int owner:NativeSchoolInteriorReview.missionRoute(map,room)){
+            peer.client.move(owner);
+            peer.awaitExact("ACCEPT|MOVE|"+owner);
+        }
+        peer.client.view3D();
+        peer.awaitExact("ACCEPT|VIEW3D");
+        var at=NativeSchoolInteriorReview.body(peer.await("BODY|"+seat+"|"));
+        require(at.equals(map.spawn(room)),"Wrong supported spawn for Mine circuit "+room+": "+at);
+        var target=positions.stream().filter(row->Integer.parseInt(row[0])==room).findFirst().orElseThrow();
+        return walkPeer(peer,seat,at,d(target,1),d(target,3));
+    }
+
+    private static String awaitReconnect(java.util.concurrent.BlockingQueue<String> frames,String prefix)throws Exception{
+        long start=System.nanoTime();
+        while(System.nanoTime()-start<5_000_000_000L){
+            var row=frames.poll(100,java.util.concurrent.TimeUnit.MILLISECONDS);
+            if(row!=null&&row.startsWith(prefix))return row;
+            require(row==null||!row.startsWith("REJECT|"),"Mine resume rejected: "+row);
+        }
+        throw new AssertionError("Missing Mine resume frame "+prefix);
     }
 
     private static void liveCover(LevelDefinition level,NativeInvestigationScene scene,List<String> report)throws Exception{

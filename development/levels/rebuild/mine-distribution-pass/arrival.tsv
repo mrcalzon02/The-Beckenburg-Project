@@ -1,0 +1,271 @@
+SOURCE	development/levels/rebuild/mine-distribution-pass/mine-distribution.glb	e0bde74a3480ffc2d9ed40be1a1dae1acdd70270045d32823b14e2f2c7b797d4	development/levels/rebuild/mine-distribution-pass/mine-distribution.hcs2	f7ea6bf7ccf01b844a09f0f5071afb33127e70f64d7fcdd5e8aa9805430d691f
+DOCK	28.0	0	82.0	0
+SPACE	stage	13	20	76	36	88	0	3	true	true
+SPACE	entry	13	20	62	40	76	0	3	true	true
+SPACE	shack	0	2	46	20	62	0	3	false	true
+SPACE	assay	1	40	46	54	62	0	3	false	true
+SPACE	stores	2	2	30	14	46	0	3	false	true
+SPACE	adit	3	26.5	49	31.25	54.25	0	3	false	true
+SPACE	haul	4	20	20	36	42	-6	3	false	true
+SPACE	ore-west	5	2	20	20	42	-6	3	false	true
+SPACE	ore-east	6	36	20	54	42	-6	3	false	true
+SPACE	cross	7	12	8	44	20	-6	3	false	true
+SPACE	lift	8	44	8	54	20	-6	3	false	true
+SPACE	lower	9	2	20	20	42	-10	4	false	true
+SPACE	vent	10	2	42	20	62	-6	3	false	true
+SPACE	wash	11	40	30	54	46	0	3	false	true
+SPACE	adit-court	12	14	41	40	63	0	3	true	true
+SPACE	haul-stair	4	27.35	32.4	29.35	49	-6	9	false	true
+SPACE	vent-stair	10	11.85	51	26.5	53	-6	9	false	true
+TREAD	Authored stair end WLD-05 L15 0 high region0
+TREAD	Bayed stair WLD-05 L15 step0
+TREAD	Bayed stair WLD-05 L15 step1
+TREAD	Bayed stair WLD-05 L15 step2
+TREAD	Bayed stair WLD-05 L15 step3
+TREAD	Bayed stair WLD-05 L15 step4
+TREAD	Bayed stair WLD-05 L15 step5
+TREAD	Bayed stair WLD-05 L15 step6
+TREAD	Bayed stair WLD-05 L15 step7
+TREAD	Bayed stair WLD-05 L15 step8
+TREAD	Bayed stair WLD-05 L15 step9
+TREAD	Bayed stair WLD-05 L15 step10
+TREAD	Bayed stair WLD-05 L15 step11
+TREAD	Bayed stair WLD-05 L15 step12
+TREAD	Bayed stair WLD-05 L15 step13
+TREAD	Bayed stair WLD-05 L15 step14
+TREAD	Bayed stair WLD-05 L15 step15
+TREAD	Bayed stair WLD-05 L15 step16
+TREAD	Bayed stair WLD-05 L15 step17
+TREAD	Bayed stair WLD-05 L15 step18
+TREAD	Bayed stair WLD-05 L15 step19
+TREAD	Bayed stair WLD-05 L15 step20
+TREAD	Bayed stair WLD-05 L15 step21
+TREAD	Bayed stair WLD-05 L15 step22
+TREAD	Bayed stair WLD-05 L15 step23
+TREAD	Bayed stair WLD-05 L15 step24
+TREAD	Bayed stair WLD-05 L15 step25
+TREAD	Bayed stair WLD-05 L15 step26
+TREAD	Bayed stair WLD-05 L15 step27
+TREAD	Mine haul stair flight 1 riser 01 region0
+TREAD	Mine haul stair flight 1 riser 02 region0
+TREAD	Mine haul stair flight 1 riser 03 region0
+TREAD	Mine haul stair flight 1 riser 04 region0
+TREAD	Mine haul stair flight 1 riser 05 region0
+TREAD	Mine haul stair flight 1 riser 06 region0
+TREAD	Mine haul stair flight 1 riser 07 region0
+TREAD	Mine haul stair flight 1 riser 08 region0
+TREAD	Mine haul stair flight 1 riser 09 region0
+TREAD	Mine haul stair flight 1 riser 10 region0
+TREAD	Mine haul stair flight 1 riser 11 region0
+TREAD	Mine haul stair flight 1 riser 12 region0
+TREAD	Mine haul stair flight 1 riser 13 region0
+TREAD	Mine haul stair flight 1 riser 14 region0
+TREAD	Mine haul stair flight 1 riser 15 region0
+TREAD	Mine haul stair flight 1 riser 16 region0
+TREAD	Mine haul stair flight 1 riser 17 region0
+TREAD	Mine haul stair supported middle landing region0
+TREAD	Mine vent stair flight 1 riser 01 region0
+TREAD	Mine vent stair flight 1 riser 02 region0
+TREAD	Mine vent stair flight 1 riser 03 region0
+TREAD	Mine vent stair flight 1 riser 04 region0
+TREAD	Mine vent stair flight 1 riser 05 region0
+TREAD	Mine vent stair flight 1 riser 06 region0
+TREAD	Mine vent stair flight 1 riser 07 region0
+TREAD	Mine vent stair flight 1 riser 08 region0
+TREAD	Mine vent stair flight 1 riser 09 region0
+TREAD	Mine vent stair flight 1 riser 10 region0
+TREAD	Mine vent stair flight 1 riser 11 region0
+TREAD	Mine vent stair flight 1 riser 12 region0
+TREAD	Mine vent stair flight 1 riser 13 region0
+TREAD	Mine vent stair flight 1 riser 14 region0
+TREAD	Mine vent stair flight 1 riser 15 region0
+TREAD	Mine vent stair flight 1 riser 16 region0
+TREAD	Mine vent stair flight 1 riser 17 region0
+TREAD	Mine vent stair supported middle landing region0
+TREAD	Mine haul re-spaced upper tread 01 region0
+TREAD	Mine haul re-spaced upper tread 02 region0
+TREAD	Mine haul re-spaced upper tread 03 region0
+TREAD	Mine haul re-spaced upper tread 04 region0
+TREAD	Mine haul re-spaced upper tread 05 region0
+TREAD	Mine haul re-spaced upper tread 06 region0
+TREAD	Mine haul re-spaced upper tread 07 region0
+TREAD	Mine haul re-spaced upper tread 08 region0
+TREAD	Mine haul re-spaced upper tread 09 region0
+TREAD	Mine haul re-spaced upper tread 10 region0
+TREAD	Mine haul re-spaced upper tread 11 region0
+TREAD	Mine haul re-spaced upper tread 12 region0
+TREAD	Mine haul re-spaced upper tread 13 region0
+TREAD	Mine haul re-spaced upper tread 14 region0
+TREAD	Mine haul re-spaced upper tread 15 region0
+TREAD	Mine haul re-spaced upper tread 16 region0
+TREAD	Mine haul re-spaced upper tread 17 region0
+TREAD	Mine haul full upper receiving landing region0
+TREAD	Mine vent re-spaced upper tread 01 region0
+TREAD	Mine vent re-spaced upper tread 02 region0
+TREAD	Mine vent re-spaced upper tread 03 region0
+TREAD	Mine vent re-spaced upper tread 04 region0
+TREAD	Mine vent re-spaced upper tread 05 region0
+TREAD	Mine vent re-spaced upper tread 06 region0
+TREAD	Mine vent re-spaced upper tread 07 region0
+TREAD	Mine vent re-spaced upper tread 08 region0
+TREAD	Mine vent re-spaced upper tread 09 region0
+TREAD	Mine vent re-spaced upper tread 10 region0
+TREAD	Mine vent re-spaced upper tread 11 region0
+TREAD	Mine vent re-spaced upper tread 12 region0
+TREAD	Mine vent re-spaced upper tread 13 region0
+TREAD	Mine vent re-spaced upper tread 14 region0
+TREAD	Mine vent re-spaced upper tread 15 region0
+TREAD	Mine vent re-spaced upper tread 16 region0
+TREAD	Mine vent re-spaced upper tread 17 region0
+TREAD	Mine vent full upper receiving landing region0
+RITUAL	banishment	5	11.0	-6	31.0
+RITUAL	cleansing	11	47.0	0	38.0
+RITUAL	absolution	1	47.0	0	54.0
+POINT	L01	28	0	78.372
+POINT	L01	28	0	76
+POINT	L01	28	0	71
+POINT	L01	30	0	69
+POINT	L02	30	0	69
+POINT	L02	25	0	64
+POINT	L02	23	0	60
+POINT	L02	23	0	57
+POINT	L02	20	0	57
+POINT	L02	16	0	57
+POINT	L02	11	0	54
+POINT	L03	30	0	69
+POINT	L03	36	0	64
+POINT	L03	37	0	60
+POINT	L03	37	0	57
+POINT	L03	40	0	57
+POINT	L03	43	0	57
+POINT	L03	47	0	54
+POINT	L04	11	0	54
+POINT	L04	8	0	51
+POINT	L04	8	0	46
+POINT	L04	8	0	38
+POINT	L05	8	0	38
+POINT	L05	8	0	46
+POINT	L05	8	0	51
+POINT	L05	13	0	55
+POINT	L05	16	0	57
+POINT	L05	20	0	57
+POINT	L05	23	0	57
+POINT	L05	29	0	57
+POINT	L05	29	0	54.25
+POINT	L05	29	0	52
+POINT	L05	30	0	52
+POINT	L06	30	0	52
+POINT	L06	29	0	52
+POINT	L06	29	0	54.25
+POINT	L06	29	0	58
+POINT	L06	30	0	63
+POINT	L06	30	0	69
+POINT	L07	47.0	0	54.0
+POINT	L07	47.0	0	46.0
+POINT	L07	47.0	0	38.0
+POINT	L08	47	0	38
+POINT	L08	45	0	43
+POINT	L08	40	0	43
+POINT	L08	36	0	43
+POINT	L08	34	0	46
+POINT	L08	34	0	55.8
+POINT	L08	29	0	56.5
+POINT	L08	29	0	54.25
+POINT	L08	29	0	52
+POINT	L08	30	0	52
+POINT	L09	30	0	52
+POINT	L09	28.35	0	52
+POINT	L09	28.35	0	49
+POINT	L09	28.35	0	47.9
+POINT	L09	28.35	-3	41.3
+POINT	L09	28.35	-3	39.9
+POINT	L09	28.35	-6	32.3
+POINT	L09	28.35	-6	31
+POINT	L09	28	-6	31
+POINT	L10	28.0	-6	31.0
+POINT	L10	20.0	-6	31.0
+POINT	L10	11.0	-6	31.0
+POINT	L11	11.0	-6	31.0
+POINT	L11	16.0	-6	20.0
+POINT	L11	28.0	-6	14.0
+POINT	L12	28.0	-6	14.0
+POINT	L12	40.0	-6	20.0
+POINT	L12	45.0	-6	31.0
+POINT	L13	45.0	-6	31.0
+POINT	L13	36.0	-6	31.0
+POINT	L13	28.0	-6	31.0
+POINT	L14	28.0	-6	14.0
+POINT	L14	44.0	-6	14.0
+POINT	L14	49.0	-6	14.0
+POINT	L15	11	-6	34.5
+POINT	L15	5	-6	34.5
+POINT	L15	5	-6	33.65
+POINT	L15	5	-10	27.4
+POINT	L15	5	-10	26.25
+POINT	L15	11	-10	26.25
+POINT	L15	11	-10	27.5
+POINT	L16	11	-10	31
+POINT	L16	11	-10	27.5
+POINT	L16	11	-10	26.25
+POINT	L16	5	-10	26.25
+POINT	L16	5	-10	27.4
+POINT	L16	5	-6	33.65
+POINT	L16	5	-6	34.5
+POINT	L16	5	-6	52
+POINT	L16	11	-6	52
+POINT	L17	11	-6	52
+POINT	L17	11.75	-6	52
+POINT	L17	18.05	-3	52
+POINT	L17	19.75	-3	52
+POINT	L17	25.35	0	52
+POINT	L17	26.5	0	52
+POINT	L17	30	0	52
+POINT	L18	11.0	-6	31.0
+POINT	L18	11.0	-6	42.0
+POINT	L18	11.0	-6	52.0
+POINT	stores-work-door	8	0	38
+POINT	stores-work-door	10	0	42
+POINT	stores-work-door	14	0	42
+POINT	stores-work-door	18	0	42
+COVER	mine-shack-cupboard	0	3.45	0	59	-1.5707963267948966
+COVER	mine-assay-cupboard	1	52.55	0	58	1.5707963267948966
+COVER	mine-wash-cupboard	11	52.55	0	34	1.5707963267948966
+SERVICE	mine-generator	generator	13	38.235	0.475	68.44099999999999	0.0	MC-MAIN
+SERVICE	mine-breaker	breaker	13	35.8	0.9	68.05499999999999	0.0	MC-MAIN
+SERVICE	mine-service-light	light	13	36.869999	2.456	69.790001	0	native-string
+POINT	mine-service-from-arrival	28	0	76
+POINT	mine-service-from-arrival	32.4	0	73.6
+POINT	mine-service-from-arrival	36.75	0	72.25
+POINT	mine-service-from-arrival	36.75	0	71.34
+POINT	mine-service-from-arrival	36.75	0.018	70.75
+POINT	mine-service-from-arrival	36.75	0.018	69.68
+POINT	mine-service-from-yard	30	0	69
+POINT	mine-service-from-yard	32.1	0	71.85
+POINT	mine-service-from-yard	36.75	0	72.25
+POINT	mine-service-from-yard	36.75	0	71.34
+POINT	mine-service-from-yard	36.75	0.018	70.75
+POINT	mine-service-from-yard	36.75	0.018	69.68
+SERVICE	mine-switch-00	switch	0	19.879	1.25	55.25	-1.5707963267948966	MC-00
+SERVICE	mine-shack-light	light	0	12.0	2.656	53.0	0	native-string
+SERVICE	mine-switch-01	switch	1	40.120998	1.25	55.200001	1.5707963267948966	MC-01
+SERVICE	mine-assay-light	light	1	47.0	2.656	52.0	0	native-string
+SERVICE	mine-switch-02	switch	2	13.879	1.25	40.200001	-1.5707963267948966	MC-02
+SERVICE	mine-stores-light	light	2	8.0	2.656	39.0	0	native-string
+SERVICE	mine-switch-03	switch	3	31.129	1.25	52.849998	-1.5707963267948966	MC-03
+SERVICE	mine-adit-light	light	3	29.0	2.816	52.0	0	native-string
+SERVICE	mine-switch-04	switch	4	22.0	-4.75	41.918999	3.141592653589793	MC-04
+SERVICE	mine-haul-light	light	4	29.85	-3.444	30.0	0	native-string
+SERVICE	mine-switch-05	switch	5	2.081	-4.75	28.200001	1.5707963267948966	MC-05
+SERVICE	mine-ore-west-light	light	5	12.0	-3.344	32.0	0	native-string
+SERVICE	mine-switch-06	switch	6	53.918999	-4.75	30.200001	-1.5707963267948966	MC-06
+SERVICE	mine-ore-east-light	light	6	45.0	-3.344	31.0	0	native-string
+SERVICE	mine-switch-07	switch	7	28.0	-4.75	8.081	0.0	MC-07
+SERVICE	mine-cross-light	light	7	28.0	-3.344	15.0	0	native-string
+SERVICE	mine-switch-08	switch	8	53.918999	-4.75	14.2	-1.5707963267948966	MC-08
+SERVICE	mine-lift-light	light	8	48.0	-3.344	16.0	0	native-string
+SERVICE	mine-switch-09	switch	9	11.0	-8.75	41.918999	3.141592653589793	MC-09
+SERVICE	mine-lower-light	light	9	11.0	-6.344	31.0	0	native-string
+SERVICE	mine-switch-10	switch	10	2.081	-4.75	50.799999	1.5707963267948966	MC-10
+SERVICE	mine-vent-light	light	10	11.0	-3.444	52.0	0	native-string
+SERVICE	mine-switch-11	switch	11	40.120998	1.25	41.0	1.5707963267948966	MC-11
+SERVICE	mine-wash-light	light	11	47.0	2.656	39.0	0	native-string
