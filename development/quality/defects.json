@@ -7723,6 +7723,17 @@
       "action": "Install supported overhead feeders, a grade-verified buried trunk, exterior risers and independent loads.",
       "older_maps": "Check continuous feeder, full enclosure, all accessible room controls and independent branch/master loss.",
       "evidence": "development/levels/rebuild/northwatch-surface-power-pass/checkpoint.json"
+    },
+    {
+      "id": "DEV-697",
+      "title": "Northwatch tunnel and yard circuits were absent",
+      "status": "NORTHWATCH_STAGED_ALL_TWELVE_ELECTRICAL_CIRCUITS_VERIFIED",
+      "affected": "WLD-08 main tunnel, generator tunnel, instrument array and court",
+      "symptom": "Below-grade and exterior routes had no connected fixtures or local switches. The first array riser fitting obscured its switch plate.",
+      "cause": "The prior distribution served surface interiors. The first exterior return shared the plate sightline.",
+      "action": "Fit wall and deck-supported conduit, shift the array return beside the plate and commission all four circuits from the common breaker.",
+      "older_maps": "Verify every installed lamp, supported aim, breaker isolation and retained stair and door routes.",
+      "evidence": "development/levels/rebuild/northwatch-complete-power-pass/checkpoint.json"
     }
   ],
   "audit_categories": [

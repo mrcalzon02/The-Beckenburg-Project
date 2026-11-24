@@ -1,7 +1,7 @@
 {
   "version": 1,
   "title": "Beckenburg development gallery",
-  "count": 12054,
+  "count": 12070,
   "images": [
     {
       "path": "development/assets/castle-museum/previews/fireplace-rebuild/fireplace-0-source-material.png",
@@ -115004,6 +115004,166 @@
       "height": 900,
       "bytes": 1624340,
       "sha256": "d795c60774e83afbe8cc96b1d435f58a83b9c574a39294da7f4f85eb509c67bf"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-array-supplied.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-array-supplied.png",
+      "title": "Northwatch array supplied",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 388801,
+      "sha256": "6fb4aa721b5d9febeec271c1c50dd7134a842281a6751540b98cdbb8350c0c72"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-array-tripped.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-array-tripped.png",
+      "title": "Northwatch array tripped",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 230094,
+      "sha256": "64a5a182892a71aac2eab1457087cef84fc430d38090b5fdbcf77daa2e8b6cdb"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-court-supplied.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-court-supplied.png",
+      "title": "Northwatch court supplied",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 314070,
+      "sha256": "1a3cd9d8ddea406a665cc5272ae5aeaf5fb76dfbe455e9371155fc8856772b64"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-court-tripped.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-court-tripped.png",
+      "title": "Northwatch court tripped",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 238749,
+      "sha256": "a7b389406f2ebe7f163a45d001cb82b4b876e97410508f1120c899c68ed4a24f"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-tunnel-n-supplied.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-tunnel-n-supplied.png",
+      "title": "Northwatch tunnel n supplied",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 267985,
+      "sha256": "693f9afcaac4278cab117a4bee80501c9f279f023d0af278cdc062b4e502638b"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-tunnel-n-tripped.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-tunnel-n-tripped.png",
+      "title": "Northwatch tunnel n tripped",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 193080,
+      "sha256": "bab870010c9be07a3b9ff38ce5ca40e5ea86c9b41b1ea10720eebfda468618c1"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-tunnel-supplied.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-tunnel-supplied.png",
+      "title": "Northwatch tunnel supplied",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 356358,
+      "sha256": "a8c7ab374c6ce2407914cdd2ecf02d4df1acab385e9965ae8037d3cc3caa3719"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-tunnel-tripped.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/northwatch-tunnel-tripped.png",
+      "title": "Northwatch tunnel tripped",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the software game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 275187,
+      "sha256": "c72438abf40d3107a5da7ede84d40c44e5c4a535311db5a458b43fa467e7d6f4"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-array-supplied.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-array-supplied.png",
+      "title": "Northwatch array supplied",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 276195,
+      "sha256": "2d95dfaf387d2bec0b4802a12ddfccb85b9484497ef2fd7aae891b9c339bde43"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-array-tripped.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-array-tripped.png",
+      "title": "Northwatch array tripped",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 224369,
+      "sha256": "519b42320759d3fc8a834c6e5b125bad2a2fc09c2aa94acbd427a69dfe17b371"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-court-supplied.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-court-supplied.png",
+      "title": "Northwatch court supplied",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 271586,
+      "sha256": "bc2dc38ba608358193e9430b2254d64c68270566344f576c097226e25606be81"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-court-tripped.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-court-tripped.png",
+      "title": "Northwatch court tripped",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 226565,
+      "sha256": "6f1e00b910b9d802ba2c7748fb6bc5840317d05c196f01a33012b2deb0b87f56"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-tunnel-n-supplied.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-tunnel-n-supplied.png",
+      "title": "Northwatch tunnel n supplied",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 266793,
+      "sha256": "7bb905f30756c87c604ee904900f4c6371a5b4048e8a06cce24cf86255b48f5b"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-tunnel-n-tripped.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-tunnel-n-tripped.png",
+      "title": "Northwatch tunnel n tripped",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 193800,
+      "sha256": "5843ae537f417df6b8e946ce440a6070e756f7cb76d73d245857ca31a796956e"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-tunnel-supplied.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-tunnel-supplied.png",
+      "title": "Northwatch tunnel supplied",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 257612,
+      "sha256": "16a2d0d8b23b35e76b42ff6c53f721abeff7be5dc33614601642fad66a69a393"
+    },
+    {
+      "path": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-tunnel-tripped.png",
+      "url": "development/levels/rebuild/northwatch-complete-power-pass/wld-08/captures/opengl/northwatch-tunnel-tripped.png",
+      "title": "Northwatch tunnel tripped",
+      "kind": "Northwatch heated tunnel and outdoor lighting in the OpenGL game renderer",
+      "width": 880,
+      "height": 580,
+      "bytes": 188809,
+      "sha256": "c125b54cf3a5e2c6de448e9365012069c8764bad7f0fbd9853792375869823ea"
     },
     {
       "path": "development/levels/rebuild/northwatch-distribution-pass/wld-08/captures/northwatch-lab-supplied.png",

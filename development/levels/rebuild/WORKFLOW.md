@@ -1531,3 +1531,7 @@ Three branches now follow the supported ceilings and connect to measured door-si
 ### Northwatch occupied surface electrical service
 
 All eight occupied surface interiors now have useful light from the fitted shed source. The retained structures receive the new feeders at closed sleeves, ceiling saddles and exterior risers, with tested routes through actual doors. The tunnel circuits and exterior loads remain open. [Surface plan](northwatch-surface-power-pass/surface-service-plan.svg) / [Checkpoint](northwatch-surface-power-pass/checkpoint.json)
+
+### Northwatch tunnel and yard electrical service
+
+Twelve circuits now serve the eight occupied surface interiors, two tunnel rooms, instrument array and court. The fitted basement feed follows the external wall, then the tunnel structure. The exterior return uses a surveyed buried alignment. Software and OpenGL verify every new load, and live TCP reaches the controls through the actual ground and lower elevations. [Service plan](northwatch-complete-power-pass/tunnel-and-yard-service-plan.svg) / [Checkpoint](northwatch-complete-power-pass/checkpoint.json)

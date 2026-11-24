@@ -2271,3 +2271,7 @@ Shed commit 55b38faee64d2b218d7be2c26baedf89cca814d3 and gallery 45395381907 pas
 ### Northwatch occupied surface electrical service
 
 West distribution commit b9f7405f2da2bcb892b4c545cc49410d569c591d and gallery 45397319766 passed on held draft PR 86. The [surface electrical checkpoint](levels/rebuild/northwatch-surface-power-pass/checkpoint.json) adds the cold store, dorm, mess and array shelter through an unchanged building shell and grade. Software, OpenGL and live TCP verify all fitted interior surface circuits, the breaker and physical access. Continue heated tunnel service, exterior loads, water, furnishings and named case integration.
+
+### Northwatch tunnel and yard electrical service
+
+Surface electrical commit 6340d29f972962992f877869912f594548fc4913 and gallery 45399739191 passed on held draft PR 86. The [complete staged supply](levels/rebuild/northwatch-complete-power-pass/checkpoint.json) adds six tunnel lights and four exterior fixtures. Both renderers and live TCP verify the actual routes, controls and existing common breaker. Continue water service, furnishing and named case review, with packaged acceptance still open.

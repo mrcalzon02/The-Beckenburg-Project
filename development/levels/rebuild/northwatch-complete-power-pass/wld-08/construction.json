@@ -1,0 +1,2842 @@
+{
+  "sleeves": [
+    {
+      "id": "west shed sleeve",
+      "faces": [
+        [
+          2.0,
+          2.791,
+          23.6
+        ],
+        [
+          2.24,
+          2.791,
+          23.6
+        ]
+      ]
+    },
+    {
+      "id": "west basement sleeve",
+      "faces": [
+        [
+          1.92,
+          -0.349,
+          23.6
+        ],
+        [
+          2.08,
+          -0.349,
+          23.6
+        ]
+      ]
+    },
+    {
+      "id": "generator branch to elbow sleeve",
+      "faces": [
+        [
+          19.76,
+          -0.349,
+          24.719999
+        ],
+        [
+          20.24,
+          -0.349,
+          24.719999
+        ]
+      ]
+    },
+    {
+      "id": "elbow to main tunnel sleeve",
+      "faces": [
+        [
+          23.5,
+          -0.349,
+          25.76
+        ],
+        [
+          23.5,
+          -0.349,
+          26.24
+        ]
+      ]
+    },
+    {
+      "id": "radio court sleeve",
+      "faces": [
+        [
+          24.0,
+          2.791,
+          25.76
+        ],
+        [
+          24.0,
+          2.791,
+          26.0
+        ]
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        14.454545,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        13.363636,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        12.272727,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        11.181818,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        10.090909,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        9.0,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        7.909091,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        6.818182,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        5.727273,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        4.636364,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.545455,
+        2.84,
+        8.29
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        8.836785
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        9.930357
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        11.023929
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        12.1175
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        13.211071
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        14.304643
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        15.398214
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        16.491785
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        17.585358
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        18.678928
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        19.772499
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        20.866072
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        21.959642
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        3.0,
+        2.84,
+        23.053215
+      ]
+    },
+    {
+      "id": "NW-MAIN west shed feeder saddle",
+      "contact": [
+        2.64,
+        2.84,
+        23.6
+      ]
+    },
+    {
+      "id": "west shed sleeve gland",
+      "contact": [
+        2.0,
+        2.791,
+        23.6
+      ]
+    },
+    {
+      "id": "west shed sleeve gland",
+      "contact": [
+        2.24,
+        2.791,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-MAIN outside west shed riser saddle",
+      "contact": [
+        2.0,
+        2.36825,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-MAIN outside west shed riser saddle",
+      "contact": [
+        2.0,
+        1.52275,
+        23.6
+      ]
+    },
+    {
+      "id": "west basement sleeve gland",
+      "contact": [
+        1.92,
+        -0.349,
+        23.6
+      ]
+    },
+    {
+      "id": "west basement sleeve gland",
+      "contact": [
+        2.08,
+        -0.349,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        2.56,
+        -0.3,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        3.0,
+        -0.3,
+        24.16
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        3.557333,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        4.672,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        5.786667,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        6.901333,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        8.016,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        9.130667,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        10.245334,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        11.36,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        12.474667,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        13.589334,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        14.704,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        15.818666,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        16.933332,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        18.048,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead saddle",
+      "contact": [
+        19.162666,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "generator branch to elbow sleeve gland",
+      "contact": [
+        19.76,
+        -0.349,
+        24.719999
+      ]
+    },
+    {
+      "id": "generator branch to elbow sleeve gland",
+      "contact": [
+        20.24,
+        -0.349,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN elbow overhead saddle",
+      "contact": [
+        20.816668,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN elbow overhead saddle",
+      "contact": [
+        21.889999,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN elbow overhead saddle",
+      "contact": [
+        22.963333,
+        -0.3,
+        24.719999
+      ]
+    },
+    {
+      "id": "NW-MAIN elbow overhead saddle",
+      "contact": [
+        23.5,
+        -0.3,
+        25.219999
+      ]
+    },
+    {
+      "id": "elbow to main tunnel sleeve gland",
+      "contact": [
+        23.5,
+        -0.349,
+        25.76
+      ]
+    },
+    {
+      "id": "elbow to main tunnel sleeve gland",
+      "contact": [
+        23.5,
+        -0.349,
+        26.24
+      ]
+    },
+    {
+      "id": "NW-MAIN main tunnel feed saddle",
+      "contact": [
+        23.5,
+        -0.3,
+        26.715
+      ]
+    },
+    {
+      "id": "NW-MAIN main tunnel feed saddle",
+      "contact": [
+        23.875,
+        -0.3,
+        27.15
+      ]
+    },
+    {
+      "id": "NW-MAIN main tunnel feed saddle",
+      "contact": [
+        24.625,
+        -0.3,
+        27.15
+      ]
+    },
+    {
+      "id": "NW-08 switch supply saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        24.186666
+      ]
+    },
+    {
+      "id": "NW-08 switch supply saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        23.120001
+      ]
+    },
+    {
+      "id": "NW-08 switch supply saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        22.053333
+      ]
+    },
+    {
+      "id": "NW-08 switch supply saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        20.986666
+      ]
+    },
+    {
+      "id": "NW-08 switch supply saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        19.92
+      ]
+    },
+    {
+      "id": "NW-08 switch supply saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        18.853333
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        18.802099
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        19.868299
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        20.9345
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        22.0007
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        13.55,
+        -0.3,
+        23.0669
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        13.015625,
+        -0.3,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        11.946875,
+        -0.3,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        10.878125,
+        -0.3,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        9.809375,
+        -0.3,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        8.740625,
+        -0.3,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        7.671875,
+        -0.3,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        6.603125,
+        -0.3,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-08 switched return saddle",
+      "contact": [
+        5.534375,
+        -0.3,
+        23.6
+      ]
+    },
+    {
+      "id": "NW-08 lamp branch 2 saddle",
+      "contact": [
+        14.041667,
+        -0.3,
+        23.0
+      ]
+    },
+    {
+      "id": "NW-08 lamp branch 2 saddle",
+      "contact": [
+        15.025,
+        -0.3,
+        23.0
+      ]
+    },
+    {
+      "id": "NW-08 lamp branch 2 saddle",
+      "contact": [
+        16.008333,
+        -0.3,
+        23.0
+      ]
+    },
+    {
+      "id": "NW-07 switch supply saddle",
+      "contact": [
+        25.0,
+        -0.3,
+        26.735001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        25.0,
+        -0.3,
+        26.790833
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        25.0,
+        -0.3,
+        27.834499
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        25.0,
+        -0.3,
+        28.878166
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        25.0,
+        -0.3,
+        29.85
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        25.0,
+        -0.3,
+        30.75
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        25.5625,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        26.6875,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        27.8125,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        28.9375,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        30.0625,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        31.1875,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        32.3125,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        33.4375,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        34.5625,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        35.6875,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        36.8125,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 switched return saddle",
+      "contact": [
+        37.9375,
+        -0.3,
+        31.200001
+      ]
+    },
+    {
+      "id": "NW-07 lamp branch 2 saddle",
+      "contact": [
+        24.629999,
+        -0.3,
+        27.15
+      ]
+    },
+    {
+      "id": "NW-07 lamp branch 2 saddle",
+      "contact": [
+        23.889999,
+        -0.3,
+        27.15
+      ]
+    },
+    {
+      "id": "NW-07 lamp branch 2 saddle",
+      "contact": [
+        23.52,
+        -0.3,
+        26.709999
+      ]
+    },
+    {
+      "id": "NW-07 lamp branch 3 saddle",
+      "contact": [
+        23.52,
+        -0.3,
+        25.26
+      ]
+    },
+    {
+      "id": "NW-07 lamp branch 3 saddle",
+      "contact": [
+        23.139999,
+        -0.3,
+        24.799999
+      ]
+    },
+    {
+      "id": "NW-07 lamp branch 3 saddle",
+      "contact": [
+        22.379999,
+        -0.3,
+        24.799999
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        13.721364
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        14.864091
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        16.006819
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        17.149546
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        18.292273
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        19.434999
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        20.577726
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        21.720455
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        22.863182
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        24.005909
+      ]
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff saddle",
+      "contact": [
+        24.0,
+        2.84,
+        25.148636
+      ]
+    },
+    {
+      "id": "radio court sleeve gland",
+      "contact": [
+        24.0,
+        2.791,
+        25.76
+      ]
+    },
+    {
+      "id": "radio court sleeve gland",
+      "contact": [
+        24.0,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        24.299999,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        23.700001,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        25.161112,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        26.283333,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        27.405556,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        28.527779,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        29.65,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        30.772223,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        31.894444,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        33.016666,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-11 exterior switched run saddle",
+      "contact": [
+        34.138889,
+        2.791,
+        26.0
+      ]
+    },
+    {
+      "id": "NW-10 exterior switched run saddle",
+      "contact": [
+        44.0,
+        2.791,
+        12.88
+      ]
+    },
+    {
+      "id": "NW-10 sealed outdoor riser saddle",
+      "contact": [
+        44.0,
+        2.333333,
+        12.47
+      ]
+    },
+    {
+      "id": "NW-10 sealed outdoor riser saddle",
+      "contact": [
+        44.0,
+        1.44,
+        12.47
+      ]
+    },
+    {
+      "id": "NW-10 sealed outdoor riser saddle",
+      "contact": [
+        44.0,
+        0.546667,
+        12.47
+      ]
+    },
+    {
+      "id": "NW-10 sealed outdoor riser saddle",
+      "contact": [
+        62.0,
+        2.075,
+        10.55
+      ]
+    },
+    {
+      "id": "NW-10 sealed outdoor riser saddle",
+      "contact": [
+        62.0,
+        1.285,
+        10.55
+      ]
+    },
+    {
+      "id": "NW-10 sealed outdoor riser saddle",
+      "contact": [
+        62.0,
+        0.495,
+        10.55
+      ]
+    }
+  ],
+  "soil_contacts": [
+    {
+      "contact": [
+        44.060001,
+        0.0,
+        12.47
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        44.380001,
+        0.0,
+        12.47
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        44.700001,
+        0.0,
+        12.47
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        44.700001,
+        0.0,
+        12.47
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        44.700001,
+        0.0,
+        12.925
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        44.700001,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        44.700001,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        45.294483,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        45.888966,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        46.483448,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        47.07793,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        47.672413,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        48.266895,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        48.861378,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        49.455864,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        50.050346,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        50.644829,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        51.239311,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        51.833794,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        52.428276,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        53.022758,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        53.617241,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        54.211723,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        54.806206,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        55.400688,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        55.995171,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        56.589657,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        57.184139,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        57.778622,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        58.373104,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        58.967587,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        59.562069,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        60.156551,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        60.751034,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        61.345516,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        61.939999,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        61.939999,
+        0.0,
+        13.38
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        61.939999,
+        0.0,
+        12.814
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        61.939999,
+        0.0,
+        12.248
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        61.939999,
+        0.0,
+        11.682
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        61.939999,
+        0.0,
+        11.116
+      ],
+      "centreline": -0.79
+    },
+    {
+      "contact": [
+        61.939999,
+        0.0,
+        10.55
+      ],
+      "centreline": -0.79
+    }
+  ],
+  "services": [
+    {
+      "id": "northwatch-switch-07",
+      "type": "switch",
+      "room": 7,
+      "position": [
+        25.0,
+        -1.25,
+        26.240999
+      ],
+      "yaw": 0.0,
+      "style": "NW-07"
+    },
+    {
+      "id": "northwatch-switch-08",
+      "type": "switch",
+      "room": 8,
+      "position": [
+        13.55,
+        -1.25,
+        18.240999
+      ],
+      "yaw": 0.0,
+      "style": "NW-08"
+    },
+    {
+      "id": "northwatch-switch-10",
+      "type": "switch",
+      "room": 10,
+      "position": [
+        44.000999,
+        1.25,
+        12.76
+      ],
+      "yaw": 1.5707963267948966,
+      "style": "NW-10"
+    },
+    {
+      "id": "northwatch-switch-11",
+      "type": "switch",
+      "room": 11,
+      "position": [
+        24.6,
+        1.25,
+        26.000999
+      ],
+      "yaw": 0.0,
+      "style": "NW-11"
+    },
+    {
+      "id": "northwatch-array-service-light-01",
+      "type": "light",
+      "room": 10,
+      "position": [
+        44.183998,
+        2.47,
+        13.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-array-service-light-02",
+      "type": "light",
+      "room": 10,
+      "position": [
+        61.816002,
+        2.47,
+        10.55
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-court-service-light-03",
+      "type": "light",
+      "room": 11,
+      "position": [
+        23.4,
+        2.47,
+        26.184
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-court-service-light-04",
+      "type": "light",
+      "room": 11,
+      "position": [
+        34.700001,
+        2.47,
+        26.184
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-tunnel-service-light-05",
+      "type": "light",
+      "room": 7,
+      "position": [
+        25.0,
+        -0.484,
+        29.4
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-tunnel-service-light-06",
+      "type": "light",
+      "room": 7,
+      "position": [
+        32.0,
+        -0.484,
+        31.200001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-tunnel-service-light-07",
+      "type": "light",
+      "room": 7,
+      "position": [
+        38.5,
+        -0.484,
+        31.200001
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-tunnel-service-light-08",
+      "type": "light",
+      "room": 7,
+      "position": [
+        22.0,
+        -0.484,
+        24.799999
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-tunnel-n-service-light-09",
+      "type": "light",
+      "room": 8,
+      "position": [
+        5.0,
+        -0.484,
+        23.6
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    },
+    {
+      "id": "northwatch-tunnel-n-service-light-10",
+      "type": "light",
+      "room": 8,
+      "position": [
+        16.5,
+        -0.484,
+        23.0
+      ],
+      "yaw": 0,
+      "style": "native-string"
+    }
+  ],
+  "loads": [
+    {
+      "id": "northwatch-array-service-light-01",
+      "room": 10,
+      "space": "array",
+      "circuit": "NW-10",
+      "mount": [
+        44.0,
+        2.47,
+        13.0
+      ],
+      "emitter": [
+        44.183998,
+        2.47,
+        13.0
+      ],
+      "support": "WLD-08 clean records E pier0"
+    },
+    {
+      "id": "northwatch-array-service-light-02",
+      "room": 10,
+      "space": "array",
+      "circuit": "NW-10",
+      "mount": [
+        62.0,
+        2.47,
+        10.55
+      ],
+      "emitter": [
+        61.816002,
+        2.47,
+        10.55
+      ],
+      "support": "WLD-08 clean shelter W pier0"
+    },
+    {
+      "id": "northwatch-court-service-light-03",
+      "room": 11,
+      "space": "court",
+      "circuit": "NW-11",
+      "mount": [
+        23.4,
+        2.47,
+        26.0
+      ],
+      "emitter": [
+        23.4,
+        2.47,
+        26.184
+      ],
+      "support": "WLD-08 clean radio S pier0"
+    },
+    {
+      "id": "northwatch-court-service-light-04",
+      "room": 11,
+      "space": "court",
+      "circuit": "NW-11",
+      "mount": [
+        34.700001,
+        2.47,
+        26.0
+      ],
+      "emitter": [
+        34.700001,
+        2.47,
+        26.184
+      ],
+      "support": "WLD-08 clean records S pier0"
+    },
+    {
+      "id": "northwatch-tunnel-service-light-05",
+      "room": 7,
+      "space": "tunnel",
+      "circuit": "NW-07",
+      "mount": [
+        25.0,
+        -0.3,
+        29.4
+      ],
+      "emitter": [
+        25.0,
+        -0.484,
+        29.4
+      ],
+      "support": "Entrance rebuild Research courtyard structural deck region0"
+    },
+    {
+      "id": "northwatch-tunnel-service-light-06",
+      "room": 7,
+      "space": "tunnel",
+      "circuit": "NW-07",
+      "mount": [
+        32.0,
+        -0.3,
+        31.200001
+      ],
+      "emitter": [
+        32.0,
+        -0.484,
+        31.200001
+      ],
+      "support": "Entrance rebuild Research courtyard structural deck region0"
+    },
+    {
+      "id": "northwatch-tunnel-service-light-07",
+      "room": 7,
+      "space": "tunnel",
+      "circuit": "NW-07",
+      "mount": [
+        38.5,
+        -0.3,
+        31.200001
+      ],
+      "emitter": [
+        38.5,
+        -0.484,
+        31.200001
+      ],
+      "support": "Entrance rebuild Research courtyard structural deck region0"
+    },
+    {
+      "id": "northwatch-tunnel-service-light-08",
+      "room": 7,
+      "space": "tunnel",
+      "circuit": "NW-07",
+      "mount": [
+        22.0,
+        -0.3,
+        24.799999
+      ],
+      "emitter": [
+        22.0,
+        -0.484,
+        24.799999
+      ],
+      "support": "WLD-08 tunnel elbow roof underside thickening region0"
+    },
+    {
+      "id": "northwatch-tunnel-n-service-light-09",
+      "room": 8,
+      "space": "tunnel-n",
+      "circuit": "NW-08",
+      "mount": [
+        5.0,
+        -0.3,
+        23.6
+      ],
+      "emitter": [
+        5.0,
+        -0.484,
+        23.6
+      ],
+      "support": "WLD-08 generator floor with rectangular well region0"
+    },
+    {
+      "id": "northwatch-tunnel-n-service-light-10",
+      "room": 8,
+      "space": "tunnel-n",
+      "circuit": "NW-08",
+      "mount": [
+        16.5,
+        -0.3,
+        23.0
+      ],
+      "emitter": [
+        16.5,
+        -0.484,
+        23.0
+      ],
+      "support": "WLD-08 generator floor with rectangular well region0"
+    }
+  ],
+  "controllers": [
+    {
+      "id": "northwatch-switch-07",
+      "circuit": "NW-07",
+      "space": "tunnel",
+      "room": 7,
+      "at": [
+        25.0,
+        -1.25,
+        26.240999
+      ],
+      "support": "WLD-08 cell tunnel N end region0",
+      "feet": [
+        25,
+        -2.5,
+        27.44
+      ]
+    },
+    {
+      "id": "northwatch-switch-08",
+      "circuit": "NW-08",
+      "space": "tunnel-n",
+      "room": 8,
+      "at": [
+        13.55,
+        -1.25,
+        18.240999
+      ],
+      "support": "WLD-08 generator branch north wall east pier region0",
+      "feet": [
+        13.55,
+        -2.5,
+        19.44
+      ]
+    },
+    {
+      "id": "northwatch-switch-10",
+      "circuit": "NW-10",
+      "space": "array",
+      "room": 10,
+      "at": [
+        44.000999,
+        1.25,
+        12.76
+      ],
+      "support": "WLD-08 clean records E pier0",
+      "feet": [
+        45.25,
+        0,
+        12.76
+      ]
+    },
+    {
+      "id": "northwatch-switch-11",
+      "circuit": "NW-11",
+      "space": "court",
+      "room": 11,
+      "at": [
+        24.6,
+        1.25,
+        26.000999
+      ],
+      "support": "WLD-08 clean radio S pier0",
+      "feet": [
+        24.6,
+        0,
+        27.25
+      ]
+    }
+  ],
+  "raceways": [
+    {
+      "id": "NW-07 switch drop",
+      "points": [
+        [
+          25.0,
+          -1.198,
+          26.268999
+        ],
+        [
+          25.0,
+          -0.37000001192092896,
+          26.268999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-08 switch drop",
+      "points": [
+        [
+          13.55,
+          -1.198,
+          18.268999
+        ],
+        [
+          13.55,
+          -0.37000007152557374,
+          18.268999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-10 switch drop",
+      "points": [
+        [
+          44.028999,
+          1.302,
+          12.76
+        ],
+        [
+          44.028999,
+          2.78,
+          12.76
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-11 switch drop",
+      "points": [
+        [
+          24.6,
+          1.302,
+          26.028999
+        ],
+        [
+          24.6,
+          2.78,
+          26.028999
+        ]
+      ],
+      "radius": 0.012,
+      "visible": true
+    },
+    {
+      "id": "NW-MAIN west shed feeder",
+      "points": [
+        [
+          15,
+          2.791,
+          8.29
+        ],
+        [
+          3.0,
+          2.791,
+          8.29
+        ],
+        [
+          3.0,
+          2.791,
+          23.6
+        ],
+        [
+          2.28,
+          2.791,
+          23.6
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true
+    },
+    {
+      "id": "west shed sleeve",
+      "points": [
+        [
+          1.96,
+          2.791,
+          23.6
+        ],
+        [
+          2.2800000000000002,
+          2.791,
+          23.6
+        ]
+      ],
+      "radius": 0.022,
+      "visible": false
+    },
+    {
+      "id": "NW-MAIN outside west shed riser",
+      "points": [
+        [
+          1.95,
+          2.791,
+          23.6
+        ],
+        [
+          1.95,
+          1.1,
+          23.6
+        ]
+      ],
+      "radius": 0.023,
+      "visible": true
+    },
+    {
+      "id": "NW-MAIN below-grade basement entry",
+      "points": [
+        [
+          1.95,
+          1.1,
+          23.6
+        ],
+        [
+          1.86,
+          0.83,
+          23.6
+        ],
+        [
+          1.86,
+          -0.349,
+          23.6
+        ],
+        [
+          1.88,
+          -0.349,
+          23.6
+        ]
+      ],
+      "radius": 0.015,
+      "visible": false
+    },
+    {
+      "id": "west basement sleeve",
+      "points": [
+        [
+          1.88,
+          -0.349,
+          23.6
+        ],
+        [
+          2.12,
+          -0.349,
+          23.6
+        ]
+      ],
+      "radius": 0.022,
+      "visible": false
+    },
+    {
+      "id": "NW-MAIN generator tunnel overhead",
+      "points": [
+        [
+          2.12,
+          -0.349,
+          23.6
+        ],
+        [
+          3.0,
+          -0.349,
+          23.6
+        ],
+        [
+          3.0,
+          -0.349,
+          24.72
+        ],
+        [
+          19.72,
+          -0.349,
+          24.72
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "generator branch to elbow sleeve",
+      "points": [
+        [
+          19.720000000000002,
+          -0.349,
+          24.72
+        ],
+        [
+          20.279999999999998,
+          -0.349,
+          24.72
+        ]
+      ],
+      "radius": 0.022,
+      "visible": false
+    },
+    {
+      "id": "NW-MAIN elbow overhead",
+      "points": [
+        [
+          20.28,
+          -0.349,
+          24.72
+        ],
+        [
+          23.5,
+          -0.349,
+          24.72
+        ],
+        [
+          23.5,
+          -0.349,
+          25.72
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "elbow to main tunnel sleeve",
+      "points": [
+        [
+          23.5,
+          -0.349,
+          25.720000000000002
+        ],
+        [
+          23.5,
+          -0.349,
+          26.279999999999998
+        ]
+      ],
+      "radius": 0.022,
+      "visible": false
+    },
+    {
+      "id": "NW-MAIN main tunnel feed",
+      "points": [
+        [
+          23.5,
+          -0.349,
+          26.28
+        ],
+        [
+          23.5,
+          -0.349,
+          27.15
+        ],
+        [
+          25,
+          -0.349,
+          27.15
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "NW-08 switch supply",
+      "points": [
+        [
+          13.55,
+          -0.349,
+          24.72
+        ],
+        [
+          13.55,
+          -0.349,
+          18.32
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-08 switch junction",
+      "points": [
+        [
+          13.55,
+          -0.349,
+          18.32
+        ],
+        [
+          13.55,
+          -0.37000007152557374,
+          18.268999
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-08 return rise",
+      "points": [
+        [
+          13.55,
+          -0.37000007152557374,
+          18.268999
+        ],
+        [
+          13.55,
+          -0.349,
+          18.268999
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-08 switched return",
+      "points": [
+        [
+          13.55,
+          -0.349,
+          18.268999
+        ],
+        [
+          13.55,
+          -0.349,
+          23.6
+        ],
+        [
+          5,
+          -0.349,
+          23.6
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-08 lamp branch 2",
+      "points": [
+        [
+          13.55,
+          -0.349,
+          23
+        ],
+        [
+          16.5,
+          -0.349,
+          23
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-07 switch supply",
+      "points": [
+        [
+          25,
+          -0.349,
+          27.15
+        ],
+        [
+          25,
+          -0.349,
+          26.32
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-07 switch junction",
+      "points": [
+        [
+          25,
+          -0.349,
+          26.32
+        ],
+        [
+          25.0,
+          -0.37000001192092896,
+          26.268999
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-07 return rise",
+      "points": [
+        [
+          25.0,
+          -0.37000001192092896,
+          26.268999
+        ],
+        [
+          25.0,
+          -0.349,
+          26.268999
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-07 switched return",
+      "points": [
+        [
+          25.0,
+          -0.349,
+          26.268999
+        ],
+        [
+          25.0,
+          -0.349,
+          29.4
+        ],
+        [
+          25,
+          -0.349,
+          31.2
+        ],
+        [
+          38.5,
+          -0.349,
+          31.2
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-07 lamp branch 2",
+      "points": [
+        [
+          25,
+          -0.349,
+          27.15
+        ],
+        [
+          23.52,
+          -0.349,
+          27.15
+        ],
+        [
+          23.52,
+          -0.349,
+          26.27
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-07 lamp branch 3",
+      "points": [
+        [
+          23.52,
+          -0.349,
+          25.72
+        ],
+        [
+          23.52,
+          -0.349,
+          24.8
+        ],
+        [
+          22,
+          -0.349,
+          24.8
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-MAIN courtyard takeoff",
+      "points": [
+        [
+          24,
+          2.791,
+          13.15
+        ],
+        [
+          24,
+          2.791,
+          25.72
+        ]
+      ],
+      "radius": 0.022,
+      "visible": true
+    },
+    {
+      "id": "radio court sleeve",
+      "points": [
+        [
+          24.0,
+          2.791,
+          25.720000000000002
+        ],
+        [
+          24.0,
+          2.791,
+          26.04
+        ]
+      ],
+      "radius": 0.022,
+      "visible": false
+    },
+    {
+      "id": "NW-11 source junction 0",
+      "points": [
+        [
+          24,
+          2.791,
+          26.042
+        ],
+        [
+          24,
+          2.791,
+          26.028999
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-11 source junction 1",
+      "points": [
+        [
+          24,
+          2.791,
+          26.028999
+        ],
+        [
+          24.6,
+          2.791,
+          26.028999
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-11 controller link",
+      "points": [
+        [
+          24.6,
+          2.791,
+          26.028999
+        ],
+        [
+          24.6,
+          2.78,
+          26.028999
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-11 switched takeoff",
+      "points": [
+        [
+          24.6,
+          2.78,
+          26.028999
+        ],
+        [
+          24.6,
+          2.791,
+          26.055
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-11 exterior switched run",
+      "points": [
+        [
+          24.6,
+          2.791,
+          26.055
+        ],
+        [
+          23.4,
+          2.791,
+          26.055
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-11 exterior lamp drop",
+      "points": [
+        [
+          23.4,
+          2.791,
+          26.055
+        ],
+        [
+          23.4,
+          2.47,
+          26.055
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-11 switched takeoff",
+      "points": [
+        [
+          24.6,
+          2.78,
+          26.028999
+        ],
+        [
+          24.6,
+          2.791,
+          26.055
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-11 exterior switched run",
+      "points": [
+        [
+          24.6,
+          2.791,
+          26.055
+        ],
+        [
+          34.7,
+          2.791,
+          26.055
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-11 exterior lamp drop",
+      "points": [
+        [
+          34.7,
+          2.791,
+          26.055
+        ],
+        [
+          34.7,
+          2.47,
+          26.055
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-10 source junction 0",
+      "points": [
+        [
+          44.06,
+          2.791,
+          13.8
+        ],
+        [
+          44.028999,
+          2.791,
+          13.8
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-10 source junction 1",
+      "points": [
+        [
+          44.028999,
+          2.791,
+          13.8
+        ],
+        [
+          44.028999,
+          2.791,
+          12.76
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-10 controller link",
+      "points": [
+        [
+          44.028999,
+          2.791,
+          12.76
+        ],
+        [
+          44.028999,
+          2.78,
+          12.76
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-10 switched takeoff",
+      "points": [
+        [
+          44.028999,
+          2.78,
+          12.76
+        ],
+        [
+          44.055,
+          2.791,
+          12.76
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-10 exterior switched run",
+      "points": [
+        [
+          44.055,
+          2.791,
+          12.76
+        ],
+        [
+          44.055,
+          2.791,
+          13.0
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-10 exterior lamp drop",
+      "points": [
+        [
+          44.055,
+          2.791,
+          13.0
+        ],
+        [
+          44.055,
+          2.47,
+          13.0
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    },
+    {
+      "id": "NW-10 switched underground conductor",
+      "points": [
+        [
+          44.06,
+          -0.79,
+          12.47
+        ],
+        [
+          44.7,
+          -0.79,
+          12.47
+        ],
+        [
+          44.7,
+          -0.79,
+          13.38
+        ],
+        [
+          61.94,
+          -0.79,
+          13.38
+        ],
+        [
+          61.94,
+          -0.79,
+          10.55
+        ]
+      ],
+      "radius": 0.015,
+      "visible": false
+    },
+    {
+      "id": "NW-10 sealed outdoor riser",
+      "points": [
+        [
+          44.06,
+          2.78,
+          12.47
+        ],
+        [
+          44.06,
+          0.1,
+          12.47
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-10 buried riser shoe",
+      "points": [
+        [
+          44.06,
+          0.1,
+          12.47
+        ],
+        [
+          44.06,
+          -0.79,
+          12.47
+        ]
+      ],
+      "radius": 0.015,
+      "visible": false
+    },
+    {
+      "id": "NW-10 sealed outdoor riser",
+      "points": [
+        [
+          61.94,
+          2.47,
+          10.55
+        ],
+        [
+          61.94,
+          0.1,
+          10.55
+        ]
+      ],
+      "radius": 0.017,
+      "visible": true
+    },
+    {
+      "id": "NW-10 buried riser shoe",
+      "points": [
+        [
+          61.94,
+          0.1,
+          10.55
+        ],
+        [
+          61.94,
+          -0.79,
+          10.55
+        ]
+      ],
+      "radius": 0.015,
+      "visible": false
+    },
+    {
+      "id": "NW-10 outbound switch connection",
+      "points": [
+        [
+          44.028999,
+          2.78,
+          12.76
+        ],
+        [
+          44.06,
+          2.78,
+          12.76
+        ],
+        [
+          44.06,
+          2.78,
+          12.47
+        ]
+      ],
+      "radius": 0.015,
+      "visible": true
+    }
+  ],
+  "canonical_assets": {
+    "light_switch_1": "6cc8c501605743d0d13bb96b840e8da01d5ea8825d8c13ee284f72f90742159e",
+    "level_utility_light": "93c135abc2788eedc34f0b0cf7758b09db348e6ed3bc47db5a5cd5781175a6b0"
+  },
+  "exports": {
+    "development/levels/rebuild/northwatch-complete-power-pass/wld-08/station-with-complete-power.blend": "49b87508f10a08c249431b7a74b857abd156d2ad072a4162a4f1d610d2243775",
+    "development/levels/rebuild/northwatch-complete-power-pass/wld-08/station-with-complete-power.glb": "f83fd8bcf611af6ea4c4a914cade2f83e219aab35780a372f32e0ebd6f1bbd40",
+    "development/levels/rebuild/northwatch-complete-power-pass/wld-08/station-with-complete-power.hcs2": "b136ebe2318c86e3883b10d63553b4cc737a1fe7a20f33aeb38631336b2d515d"
+  },
+  "previous_scene": "b5bc9d7afb352fa17a8547ae9da8bff471ecccf1d0eaf6e293fac9c2f7497b39",
+  "retained_collision_parts": 869,
+  "added_collision_parts": 220
+}

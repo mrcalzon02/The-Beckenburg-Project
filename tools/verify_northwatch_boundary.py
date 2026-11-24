@@ -19,7 +19,7 @@ def draw_plan(meta,layout):
         return 128+7*x,110+7*z
 
     body=[svg_text(30,42,"Northwatch Research Station","title"),
-          svg_text(30,69,"Built perimeter and retained ground-level approaches Ã‚Â· north up","small")]
+          svg_text(30,69,"Built perimeter and retained ground-level approaches Ãƒâ€šÃ‚Â· north up","small")]
     for zone in layout["zones"]:
         if zone["y"]!=0:
             continue
@@ -95,16 +95,17 @@ def main():
     stage.add_argument("--power",action="store_true")
     stage.add_argument("--distribution",action="store_true")
     stage.add_argument("--surface-power",action="store_true")
+    stage.add_argument("--complete-power",action="store_true")
     args=parser.parse_args()
-    fitted=args.doors or args.refuges or args.power or args.distribution or args.surface_power
-    stage_name="surface-power" if args.surface_power else "distribution" if args.distribution else "power" if args.power else "refuges" if args.refuges else "doors"
+    fitted=args.doors or args.refuges or args.power or args.distribution or args.surface_power or args.complete_power
+    stage_name="complete-power" if args.complete_power else "surface-power" if args.surface_power else "distribution" if args.distribution else "power" if args.power else "refuges" if args.refuges else "doors"
     review=PACKET
     if fitted:
-        name={"surface-power":"northwatch-surface-power-pass","distribution":"northwatch-distribution-pass","power":"northwatch-power-pass","refuges":"northwatch-refuge-pass","doors":"northwatch-door-pass"}[stage_name]
+        name={"complete-power":"northwatch-complete-power-pass","surface-power":"northwatch-surface-power-pass","distribution":"northwatch-distribution-pass","power":"northwatch-power-pass","refuges":"northwatch-refuge-pass","doors":"northwatch-door-pass"}[stage_name]
         review=PACKET.parents[1]/name/"wld-08"
     meta=json.loads((PACKET/"construction.json").read_bytes()) if fitted else prepare()
-    if args.refuges or args.power or args.distribution or args.surface_power:
-        stem="station-with-surface-power" if args.surface_power else "station-with-distribution" if args.distribution else "station-with-power" if args.power else "station-with-refuges"
+    if args.refuges or args.power or args.distribution or args.surface_power or args.complete_power:
+        stem="station-with-complete-power" if args.complete_power else "station-with-surface-power" if args.surface_power else "station-with-distribution" if args.distribution else "station-with-power" if args.power else "station-with-refuges"
         source=json.loads((review/"construction.json").read_bytes())["exports"]
         meta["glb_sha256"]=source[(review/(stem+".glb")).relative_to(ROOT).as_posix()]
         meta["physics_sha256"]=source[(review/(stem+".hcs2")).relative_to(ROOT).as_posix()]

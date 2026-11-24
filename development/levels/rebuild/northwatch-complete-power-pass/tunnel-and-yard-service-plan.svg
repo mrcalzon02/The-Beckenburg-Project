@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 728" role="img">
+<title>Northwatch lower and exterior electrical service</title>
+<style>
+text{fill:#253641;font:16px sans-serif}.title{font-size:26px;font-weight:700}.small{font-size:13px}.heading{font-size:19px;font-weight:700}
+.room{fill:#e0eaef;stroke:#607989;stroke-width:2}.well{fill:#aebfce;stroke:#607989}
+.ground{fill:#edf2e8;stroke:#dde5d8}.main,.branch,.door,.sleeve,.buried{fill:none}
+.main{stroke:#976425;stroke-width:3.2}.branch{stroke:#aa783b;stroke-width:2}
+.door{stroke:#3b6991;stroke-width:5}.sleeve{stroke:#8b4335;stroke-width:4}
+.buried{stroke:#4c5c73;stroke-width:3;stroke-dasharray:5 3}
+.switch{fill:#53676f;stroke:#253943}.lamp{fill:#fbdc71;stroke:#7a6426}
+</style><rect width="900" height="728" fill="#fafcf9"/>
+<text class="title" x="38.00" y="43.00">Northwatch tunnel and yard electrical service</text>
+<text class="" x="41.00" y="72.00">Ground floor and service-tunnel floor · north up</text>
+<rect class="ground" x="543.20" y="114.00" width="208.80" height="194.40"/>
+<rect class="ground" x="264.80" y="308.40" width="278.40" height="118.80"/>
+<rect class="room" x="56.00" y="114.00" width="208.80" height="194.40"/>
+<text class="small" x="62.96" y="297.60">Generator shed</text>
+<rect class="room" x="264.80" y="157.20" width="139.20" height="151.20"/>
+<text class="small" x="271.76" y="297.60">Radio</text>
+<rect class="room" x="404.00" y="157.20" width="139.20" height="151.20"/>
+<text class="small" x="410.96" y="297.60">Records</text>
+<rect class="room" x="752.00" y="114.00" width="92.80" height="129.60"/>
+<text class="small" x="758.96" y="232.80">Array shelter</text>
+<text class="heading" x="42.00" y="414.00">Heated service tunnels · floor −2.50 m</text>
+<rect class="room" x="56.00" y="457.20" width="208.80" height="105.60"/>
+<rect class="room" x="264.80" y="496.80" width="46.40" height="66.00"/>
+<rect class="room" x="264.80" y="562.80" width="278.40" height="132.00"/>
+<rect class="well" x="146.19" y="444.00" width="28.42" height="71.28"/>
+<text class="small" x="61.80" y="554.88">Generator branch · NW-08</text>
+<text class="small" x="299.60" y="686.88">Main tunnel and elbow · NW-07</text>
+<text class="small" x="554.80" y="240.36">Instrument array · NW-10</text>
+<text class="small" x="299.60" y="402.36">Station court · NW-11</text>
+<polyline class="branch" points="322.80,566.35 322.80,566.35"/>
+<polyline class="branch" points="189.98,460.75 189.98,460.75"/>
+<polyline class="branch" points="543.54,165.41 543.54,165.41"/>
+<polyline class="branch" points="318.16,308.71 318.16,308.71"/>
+<polyline class="main" points="206.80,117.13 67.60,117.13 67.60,282.48 59.25,282.48"/>
+<polyline class="sleeve" points="55.54,282.48 59.25,282.48"/>
+<polyline class="main" points="55.42,282.48 55.42,282.48"/>
+<polyline class="sleeve" points="55.42,282.48 54.38,282.48 54.38,282.48 54.61,282.48"/>
+<polyline class="sleeve" points="54.61,531.12 57.39,531.12"/>
+<polyline class="main" points="57.39,531.12 67.60,531.12 67.60,545.90 261.55,545.90"/>
+<polyline class="sleeve" points="261.55,545.90 268.05,545.90"/>
+<polyline class="main" points="268.05,545.90 305.40,545.90 305.40,559.10"/>
+<polyline class="sleeve" points="305.40,559.10 305.40,566.50"/>
+<polyline class="main" points="305.40,566.50 305.40,577.98 322.80,577.98"/>
+<polyline class="branch" points="189.98,545.90 189.98,461.42"/>
+<polyline class="branch" points="189.98,461.42 189.98,460.75"/>
+<polyline class="branch" points="189.98,460.75 189.98,460.75"/>
+<polyline class="branch" points="189.98,460.75 189.98,531.12 90.80,531.12"/>
+<polyline class="branch" points="189.98,523.20 224.20,523.20"/>
+<polyline class="branch" points="322.80,577.98 322.80,567.02"/>
+<polyline class="branch" points="322.80,567.02 322.80,566.35"/>
+<polyline class="branch" points="322.80,566.35 322.80,566.35"/>
+<polyline class="branch" points="322.80,566.35 322.80,607.68 322.80,631.44 479.40,631.44"/>
+<polyline class="branch" points="322.80,577.98 305.63,577.98 305.63,566.36"/>
+<polyline class="branch" points="305.63,559.10 305.63,546.96 288.00,546.96"/>
+<polyline class="main" points="311.20,169.62 311.20,305.38"/>
+<polyline class="sleeve" points="311.20,305.38 311.20,308.83"/>
+<polyline class="branch" points="311.20,308.85 311.20,308.71"/>
+<polyline class="branch" points="311.20,308.71 318.16,308.71"/>
+<polyline class="branch" points="318.16,308.71 318.16,308.71"/>
+<polyline class="branch" points="318.16,308.71 318.16,308.99"/>
+<polyline class="branch" points="318.16,308.99 304.24,308.99"/>
+<polyline class="branch" points="304.24,308.99 304.24,308.99"/>
+<polyline class="branch" points="318.16,308.71 318.16,308.99"/>
+<polyline class="branch" points="318.16,308.99 435.32,308.99"/>
+<polyline class="branch" points="435.32,308.99 435.32,308.99"/>
+<polyline class="branch" points="543.90,176.64 543.54,176.64"/>
+<polyline class="branch" points="543.54,176.64 543.54,165.41"/>
+<polyline class="branch" points="543.54,165.41 543.54,165.41"/>
+<polyline class="branch" points="543.54,165.41 543.84,165.41"/>
+<polyline class="branch" points="543.84,165.41 543.84,168.00"/>
+<polyline class="branch" points="543.84,168.00 543.84,168.00"/>
+<polyline class="buried" points="543.90,162.28 551.32,162.28 551.32,172.10 751.30,172.10 751.30,141.54"/>
+<polyline class="branch" points="543.90,162.28 543.90,162.28"/>
+<polyline class="sleeve" points="543.90,162.28 543.90,162.28"/>
+<polyline class="branch" points="751.30,141.54 751.30,141.54"/>
+<polyline class="sleeve" points="751.30,141.54 751.30,141.54"/>
+<polyline class="branch" points="543.54,165.41 543.90,165.41 543.90,162.28"/>
+<circle cx="322.80" cy="565.98" r="4.4" class="switch"/>
+<circle cx="189.98" cy="460.38" r="4.4" class="switch"/>
+<circle cx="543.21" cy="165.41" r="4.4" class="switch"/>
+<circle cx="318.16" cy="308.41" r="4.4" class="switch"/>
+<circle cx="545.33" cy="168.00" r="4.4" class="lamp"/>
+<circle cx="749.87" cy="141.54" r="4.4" class="lamp"/>
+<circle cx="304.24" cy="310.39" r="4.4" class="lamp"/>
+<circle cx="435.32" cy="310.39" r="4.4" class="lamp"/>
+<circle cx="322.80" cy="607.68" r="4.4" class="lamp"/>
+<circle cx="404.00" cy="631.44" r="4.4" class="lamp"/>
+<circle cx="479.40" cy="631.44" r="4.4" class="lamp"/>
+<circle cx="288.00" cy="546.96" r="4.4" class="lamp"/>
+<circle cx="90.80" cy="531.12" r="4.4" class="lamp"/>
+<circle cx="224.20" cy="523.20" r="4.4" class="lamp"/>
+<polyline class="door" points="328.31,305.76 340.49,305.76"/>
+<polyline class="door" points="540.37,190.68 540.37,210.12"/>
+<polyline class="door" points="277.56,566.02 298.44,566.02"/>
+<polyline class="door" points="267.63,511.32 267.63,535.08"/>
+<path class="main" d="M600 463h34"/>
+<text class="small" x="647.00" y="468.00">Generator feeder</text>
+<path class="branch" d="M600 487h34"/>
+<text class="small" x="647.00" y="492.00">Switched branch</text>
+<path class="sleeve" d="M600 511h34"/>
+<text class="small" x="647.00" y="516.00">Closed wall sleeve</text>
+<path class="buried" d="M600 535h34"/>
+<text class="small" x="647.00" y="540.00">Buried switched conductor</text>
+<path class="door" d="M600 559h34"/>
+<text class="small" x="647.00" y="564.00">Existing door</text>
+<circle cx="617" cy="585" r="4.4" class="switch"/>
+<text class="small" x="647.00" y="590.00">Local switch</text>
+<circle cx="617" cy="609" r="4.4" class="lamp"/>
+<text class="small" x="647.00" y="614.00">Mounted utility light</text>
+</svg>

@@ -9174,3 +9174,7 @@ The lab, radio and records now receive separate switched loads from the measured
 ### DEV-696 Northwatch surface interiors lacked branch power
 
 The cold store, dorm, mess and array shelter now receive separately switched loads. The buried trunk follows the measured array grade and posts no obstacle on the walking surface. Both renderers and the live host verify local switching, clearance, the shared source and main breaker. [Evidence](../levels/rebuild/northwatch-surface-power-pass/checkpoint.json)
+
+### DEV-697 Northwatch tunnel and yard circuits were absent
+
+Ten mounted lights and four controls now share the original main breaker. The array riser moved beside the switch plate after its first aim check exposed the obstruction. Final verification covers the individual loads and switches, both renderers, live host authority, and the existing walls, doors and stair approaches. [Evidence](../levels/rebuild/northwatch-complete-power-pass/checkpoint.json)
